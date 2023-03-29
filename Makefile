@@ -1,0 +1,21 @@
+PATH_WITH_TOOLS="${PATH}:${HOME}/.pub-cache/bin"
+PROTOBUF=$(shell readlink -f $$(brew --prefix protobuf))/include
+
+.PHONY: buf setup
+
+buf: buf.yaml buf.gen.yaml
+	rm -rf lib/src/gen
+	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/viamrobotics/goutils
+	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/viamrobotics/api
+	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/erdaniels/gostream
+	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/googleapis/googleapis
+	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/any.proto
+	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/duration.proto
+	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/empty.proto
+	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/struct.proto
+	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/timestamp.proto
+	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/wrappers.proto
+
+setup:
+	dart pub global activate protoc_plugin
+	dart pub global activate grpc

@@ -1,0 +1,35 @@
+include: package:fluter_lints/flutter.yaml
+
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_catching_errors
+    - avoid_dynamic_calls
+    - avoid_field_initializers_in_const_classes
+    - avoid_returning_null
+    - avoid_returning_null_for_future
+    - avoid_slow_async_io
+    - avoid_type_to_string
+    - avoid_void_async
+    - camel_case_types
+    - cancel_subscriptions
+    - cast_nullable_to_non_nullable
+    - close_sinks
+    - invariant_booleans
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
+    - only_throw_errors
+    - throw_in_finally
+    - unawaited_futures
+    - unnecessary_statements
+    - unnecessary_await_in_return
+
+analyzer:
+  errors:
+    avoid_function_literals_in_foreach_calls: ignore
+    prefer_for_elements_to_map_fromiterable: ignore
+  exclude:
+    - "**.pb.dart"
+    - "**.pbenum.dart"
+    - "**.pbjson.dart"
+    - "**.pbgrpc.dart"

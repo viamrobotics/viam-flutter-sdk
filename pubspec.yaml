@@ -1,0 +1,24 @@
+name: viam_sdk
+description: Viam Robotics Flutter SDK
+version: 0.0.1
+homepage: https://viam.com
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  auth0_flutter: ^1.1.0
+  collection: ^1.16.0
+  fimber_io: ^0.6.6
+  flutter_webrtc: ^0.9.24
+  grpc: ^3.1.0
+  protobuf: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.4.0
+  flutter_lints: ^2.0.1
