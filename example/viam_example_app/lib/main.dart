@@ -1,6 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:viam_sdk/src/components/arm/client.dart';
+import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/robot/client.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 void main() {
@@ -55,28 +56,43 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _logged_in = false;
   String _resourceNames = '';
   Viam _viam = Viam.instance();
+  late RobotClient _robot;
 
   void _login() {
     if (_logged_in) {
       return;
     }
-    final future = _viam.connect(
-        url: "<URL>",
-        port: 8080,
-        secure: true,
-        disableWebRtc: true,
-        payload: "<PAYLOAD>");
-    future.then((value) => setState(() {
-          _logged_in = true;
-        }));
-    _getResourceNames();
+    final robotFut = RobotClient.atAddress(
+        "testbot-main.tkofq1ck33.viam.cloud", 443, RobotClientOptions(false, false, "a91i8tli4smkyyrqkhn88u4h1ai2uvcgvtv9hgtyvzhd26l0"));
+
+    robotFut.then((value) {
+      _robot = value;
+      setState(() {
+        _logged_in = true;
+      });
+      _doComponentStuff();
+    });
+
+    // final future = _viam.connect(url: "<URL>", port: 8080, secure: true, disableWebRtc: true, payload: "<PAYLOAD>");
+    // future.then((value) => setState(() {
+    //       _logged_in = true;
+    //     }));
+    // _getResourceNames();
   }
 
   void _getResourceNames() {
-    final resourceNames =
-        _viam.viamResourceService.getResourceNames(null, null);
-    resourceNames.then((value) => setState(
-        () => _resourceNames = value.map((e) => e.toString()).join('\n')));
+    final resourceNames = _viam.viamResourceService.getResourceNames(null, null);
+    resourceNames.then((value) => setState(() => _resourceNames = value.map((e) => e.toString()).join('\n')));
+  }
+
+  void _doComponentStuff() {
+    final arm = ArmClient("arm", _robot.channel);
+    final pos = arm.getEndPosition();
+    pos.then((value) => print(value));
+
+    final base = BaseClient("base", _robot.channel);
+    final mov = base.isMoving();
+    mov.then((value) => print(value));
   }
 
   @override

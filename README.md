@@ -4,7 +4,7 @@ Build and connect to robots with Flutter
 ## (In)stability Notice
 
 > **Warning**
-> This is an alpha release of the Viam Flutter SDK. Stability is not guaranteed. Breaking changes are likely to occur, and occur often.
+> This is an alpha release of the Viam Flutter SDK. The only guarantee is that there **WILL** be breaking changes to the API. We will enumerate these changes in the release notes.
 
 ## Getting started
 ### **auth0**
