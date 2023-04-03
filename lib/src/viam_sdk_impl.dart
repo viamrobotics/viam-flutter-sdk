@@ -20,7 +20,9 @@ class ViamImpl implements Viam {
   DataService? _dataService;
 
   @override
-  Future<Credentials> authenticate(String authDomain, String clientId, String? audience, String? scheme) => login(
+  Future<Credentials> authenticate(String authDomain, String clientId,
+          String? audience, String? scheme) =>
+      login(
         authDomain,
         clientId,
         scheme,
