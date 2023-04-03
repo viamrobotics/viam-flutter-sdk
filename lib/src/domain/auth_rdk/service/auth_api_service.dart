@@ -27,6 +27,8 @@ class ViamAuthService {
 
     authRequest.credentials = credentials;
 
+    print("FUUUUUUUCK");
+    print(authRequest.toString());
     final response = await authClient.authenticate(authRequest);
     return response.toDomain();
   }
