@@ -1,5 +1,5 @@
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/resouce/base.dart';
+import 'package:viam_sdk/src/resource/base.dart';
 
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, "base");

@@ -1,0 +1,39 @@
+import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/src/components/arm/arm.dart';
+import 'package:viam_sdk/src/components/arm/client.dart';
+import 'package:viam_sdk/src/components/base/base.dart';
+import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/resource/base.dart';
+
+class ResourceRegistration<T extends Resource> {
+  Subtype subtype;
+  Resource Function(String name, ClientChannelBase channel) rpcClientCreator;
+
+  ResourceRegistration(this.subtype, this.rpcClientCreator);
+}
+
+class Registry {
+  static final Registry instance = Registry._();
+  Registry._() {
+    // Register built-in types
+    this.registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
+    this.registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
+    print(this.subtypes);
+  }
+
+  final Map<Subtype, ResourceRegistration> subtypes = {};
+
+  void registerSubtype(ResourceRegistration registration) {
+    if (this.subtypes.containsKey(registration.subtype)) {
+      throw Exception('Duplicate registration of subtype in registry');
+    }
+    this.subtypes[registration.subtype] = registration;
+  }
+
+  ResourceRegistration lookupSubtype(Subtype subtype) {
+    if (!this.subtypes.containsKey(subtype)) {
+      throw Exception('Subtype not registered in registry');
+    }
+    return this.subtypes[subtype]!;
+  }
+}

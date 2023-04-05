@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:viam_sdk/src/components/arm/client.dart';
-import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/components/arm/arm.dart';
+import 'package:viam_sdk/src/components/base/base.dart';
+// ignore: unused_import
+import 'package:viam_sdk/src/resource/base.dart';
 import 'package:viam_sdk/src/robot/client.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -62,8 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (_logged_in) {
       return;
     }
-    final robotFut = RobotClient.atAddress(
-        "testbot-main.tkofq1ck33.viam.cloud", 443, RobotClientOptions(false, false, "a91i8tli4smkyyrqkhn88u4h1ai2uvcgvtv9hgtyvzhd26l0"));
+    final robotFut = RobotClient.atAddress("<URL>", 443, RobotClientOptions.withSecret("<SECRET>"));
 
     robotFut.then((value) {
       _robot = value;
@@ -72,25 +73,15 @@ class _MyHomePageState extends State<MyHomePage> {
       });
       _doComponentStuff();
     });
-
-    // final future = _viam.connect(url: "<URL>", port: 8080, secure: true, disableWebRtc: true, payload: "<PAYLOAD>");
-    // future.then((value) => setState(() {
-    //       _logged_in = true;
-    //     }));
-    // _getResourceNames();
-  }
-
-  void _getResourceNames() {
-    final resourceNames = _viam.viamResourceService.getResourceNames(null, null);
-    resourceNames.then((value) => setState(() => _resourceNames = value.map((e) => e.toString()).join('\n')));
   }
 
   void _doComponentStuff() {
-    final arm = ArmClient("arm", _robot.channel);
+    // final arm = ArmClient("arm", _robot.channel);
+    final arm = _robot.getResource<Arm>(Arm.subtype.getResourceName("arm"));
     final pos = arm.getEndPosition();
     pos.then((value) => print(value));
 
-    final base = BaseClient("base", _robot.channel);
+    final base = _robot.getResource<Base>(Base.subtype.getResourceName("base"));
     final mov = base.isMoving();
     mov.then((value) => print(value));
   }
