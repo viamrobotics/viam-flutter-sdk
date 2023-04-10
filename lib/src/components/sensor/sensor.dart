@@ -19,6 +19,6 @@ abstract class Sensor extends Resource {
   }
 
   static Sensor fromRobot(RobotClient robot, String name) {
-    return robot.getResource(Sensor.subtype.getResourceName(name));
+    return robot.getResource(Sensor.getResourceName(name));
   }
 }

@@ -47,6 +47,6 @@ abstract class Base extends Resource {
   }
 
   static Base fromRobot(RobotClient robot, String name) {
-    return robot.getResource(Base.subtype.getResourceName(name));
+    return robot.getResource(Base.getResourceName(name));
   }
 }

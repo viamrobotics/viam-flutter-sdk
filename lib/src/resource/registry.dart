@@ -3,6 +3,8 @@ import 'package:viam_sdk/src/components/arm/arm.dart';
 import 'package:viam_sdk/src/components/arm/client.dart';
 import 'package:viam_sdk/src/components/base/base.dart';
 import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/components/movement_sensor/client.dart';
+import 'package:viam_sdk/src/components/movement_sensor/movement_sensor.dart';
 import 'package:viam_sdk/src/components/sensor/client.dart';
 import 'package:viam_sdk/src/components/sensor/sensor.dart';
 import 'package:viam_sdk/src/resource/base.dart';
@@ -21,6 +23,7 @@ class Registry {
     this.registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
+    this.registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
   }
 
   final Map<Subtype, ResourceRegistration> subtypes = {};

@@ -1,11 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:viam_example_app/screens/arm.dart';
 import 'package:viam_sdk/src/components/arm/arm.dart';
 import 'package:viam_sdk/src/components/base/base.dart';
+import 'package:viam_sdk/src/components/movement_sensor/movement_sensor.dart';
 import 'package:viam_sdk/src/components/sensor/sensor.dart';
+import 'package:viam_sdk/src/proto/common.dart';
 // ignore: unused_import
 import 'package:viam_sdk/src/resource/base.dart';
 import 'package:viam_sdk/src/robot/client.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,39 +19,67 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Viam Example',
+  //     theme: ThemeData(
+  //       appBarTheme: const AppBarTheme(color: Colors.black),
+  //       colorScheme: const ColorScheme.light(),
+  //     ),
+  //     home: const MyHomePage(title: 'Viam Example'),
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        appBarTheme: const AppBarTheme(color: Colors.black),
-        colorScheme: const ColorScheme.light(),
+    final materialTheme = ThemeData(
+      cupertinoOverrideTheme: CupertinoThemeData(
+        primaryColor: Color(0xff127EFB),
       ),
-      home: const MyHomePage(title: 'Viam Example'),
+      primarySwatch: Colors.green,
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(EdgeInsets.all(16.0)),
+          foregroundColor: MaterialStateProperty.all(Color(0xFF3DDC84)),
+        ),
+      ),
+    );
+
+    return Theme(
+      data: materialTheme,
+      child: PlatformProvider(
+        settings: PlatformSettingsData(
+          iosUsesMaterialWidgets: true,
+          iosUseZeroPaddingForAppbarPlatformIcon: true,
+        ),
+        builder: (context) => PlatformApp(
+          localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+            DefaultMaterialLocalizations.delegate,
+            DefaultWidgetsLocalizations.delegate,
+            DefaultCupertinoLocalizations.delegate,
+          ],
+          title: 'Viam Example',
+          home: MyHomePage(
+            title: 'Viam Example',
+          ),
+          material: (_, __) => MaterialAppData(
+            theme: materialTheme,
+          ),
+          cupertino: (_, __) => CupertinoAppData(
+            theme: CupertinoThemeData(
+              brightness: Brightness.light,
+              primaryColor: Color(0xff127EFB),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -56,88 +88,115 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool _logged_in = false;
-  Viam _viam = Viam.instance();
+  bool _loggedIn = false;
+  bool _loading = false;
+  final List<ResourceName> _resourceNames = [];
   late RobotClient _robot;
 
   void _login() {
-    if (_logged_in) {
+    if (_loading) {
+      return;
+    }
+    if (_loggedIn) {
       return;
     }
 
-    final robotFut = RobotClient.atAddress("<URL>", 443, RobotClientOptions.withSecret('<SECRET>'));
+    setState(() {
+      _loading = true;
+    });
+    final robotFut = RobotClient.atAddress(
+        'naveed-pi-main.60758fe0f6.viam.cloud', 443, RobotClientOptions.withSecret('pem1epjv07fq2cz2z5723gq6ntuyhue5t30boohkiz3iqht4'));
 
     robotFut.then((value) {
       _robot = value;
+      final services = _robot.resourceNames.where((element) => element.type == ResourceTypeService);
+      final components = _robot.resourceNames.where((element) => element.type == ResourceTypeComponent);
+
       setState(() {
-        _logged_in = true;
+        _loggedIn = true;
+        _loading = false;
+        _resourceNames.addAll(services);
+        _resourceNames.addAll(components);
       });
       _doComponentStuff();
     });
   }
 
-  void _doComponentStuff() {
+  Future<void> _doComponentStuff() async {
+    print("Resource Names:");
     print(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent));
+
+    print("Arm");
     final arm = Arm.fromRobot(_robot, "arm");
-    final pos = arm.getEndPosition();
-    pos.then((value) => print(value));
+    final pos = await arm.getEndPosition();
+    print(pos);
 
+    print("Base");
     final base = Base.fromRobot(_robot, 'base');
-    final mov = base.isMoving();
-    mov.then((value) => print(value));
+    final mov = await base.isMoving();
+    print(mov);
 
+    print("Sensor");
     final sensor = Sensor.fromRobot(_robot, "sensor");
-    final readings = sensor.getReadings();
-    readings.then((value) => print(value));
+    final readings = await sensor.getReadings();
+    print(readings);
+
+    print("Movement Sensor");
+    final ms = MovementSensor.fromRobot(_robot, "movement-sensor");
+    final msReadings = await ms.getReadings();
+    print(msReadings);
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _logged_in
-                ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
-                    const Text('Resource Names: '),
-                    Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join("\n")),
-                  ])
-                : ElevatedButton(
-                    onPressed: () {
-                      _login();
-                    },
-                    child: Text("Login")),
-          ],
-        ),
-      ),
+      iosContentPadding: true,
+      body: _loggedIn
+          ? ListView.builder(
+              itemCount: _robot.resourceNames.length,
+              itemBuilder: (context, index) {
+                final resourceName = _robot.resourceNames[index];
+                return Column(children: [
+                  PlatformListTile(
+                    title: Text(resourceName.name),
+                    subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
+                    trailing: resourceName.type == ResourceTypeComponent ? const Icon(Icons.keyboard_arrow_right) : null,
+                    onTap: () => resourceName.type == ResourceTypeComponent
+                        ? Navigator.push(
+                            context,
+                            platformPageRoute(
+                              context: context,
+                              builder: (context) => ArmScreen(resourceName: resourceName),
+                            ))
+                        : null,
+                  ),
+                  const Divider(height: 0, indent: 0, endIndent: 0)
+                ]);
+              },
+              padding: EdgeInsets.zero,
+            )
+          : Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _loggedIn
+                      ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+                          const Text('Resource Names: '),
+                          Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join("\n")),
+                        ])
+                      : _loading
+                          ? PlatformCircularProgressIndicator()
+                          : PlatformElevatedButton(
+                              onPressed: () {
+                                _login();
+                              },
+                              child: const Text("Login")),
+                ],
+              ),
+            ),
     );
   }
 }

@@ -97,6 +97,6 @@ abstract class MovementSensor extends Sensor {
   }
 
   static MovementSensor fromRobot(RobotClient robot, String name) {
-    return robot.getResource(MovementSensor.subtype.getResourceName(name));
+    return robot.getResource(MovementSensor.getResourceName(name));
   }
 }

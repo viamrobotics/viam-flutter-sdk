@@ -31,7 +31,11 @@ abstract class Arm extends Resource {
   /// Get if the arm is currently moving
   Future<bool> isMoving();
 
+  static ResourceName getResourceName(String name) {
+    return Arm.subtype.getResourceName(name);
+  }
+
   static Arm fromRobot(RobotClient robot, String name) {
-    return robot.getResource(Arm.subtype.getResourceName(name));
+    return robot.getResource(Arm.getResourceName(name));
   }
 }
