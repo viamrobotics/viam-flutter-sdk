@@ -59,11 +59,8 @@ class RobotClient {
         continue;
       }
       try {
-        print(Subtype.fromResourceName(name));
-        print(Registry.instance.subtypes.containsKey(Subtype.fromResourceName(name)));
         manager.register(name, Registry.instance.lookupSubtype(Subtype.fromResourceName(name)).rpcClientCreator(name.name, this.channel));
       } catch (error) {
-        print(error);
         continue;
       }
     }
@@ -74,7 +71,6 @@ class RobotClient {
   }
 
   T getResource<T>(ResourceName name) {
-    print("Getting Resource");
     return this._manager.getResource<T>(name);
   }
 }

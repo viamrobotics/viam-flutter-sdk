@@ -3,6 +3,8 @@ import 'package:viam_sdk/src/components/arm/arm.dart';
 import 'package:viam_sdk/src/components/arm/client.dart';
 import 'package:viam_sdk/src/components/base/base.dart';
 import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/components/sensor/client.dart';
+import 'package:viam_sdk/src/components/sensor/sensor.dart';
 import 'package:viam_sdk/src/resource/base.dart';
 
 class ResourceRegistration<T extends Resource> {
@@ -18,7 +20,7 @@ class Registry {
     // Register built-in types
     this.registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
-    print(this.subtypes);
+    this.registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
   }
 
   final Map<Subtype, ResourceRegistration> subtypes = {};

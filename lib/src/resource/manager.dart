@@ -22,7 +22,7 @@ class ResourceManager {
   T getResource<T>(ResourceName name) {
     final resource = this.resources[name];
     print(this.resources.keys);
-    if (resource == null) throw Exception('REsource not found in manager');
+    if (resource == null) throw Exception('Resource not found in manager');
     return resource as T;
   }
 }

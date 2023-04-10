@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:viam_sdk/src/components/arm/arm.dart';
 import 'package:viam_sdk/src/components/base/base.dart';
+import 'package:viam_sdk/src/components/sensor/sensor.dart';
 // ignore: unused_import
 import 'package:viam_sdk/src/resource/base.dart';
 import 'package:viam_sdk/src/robot/client.dart';
@@ -56,7 +57,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool _logged_in = false;
-  String _resourceNames = '';
   Viam _viam = Viam.instance();
   late RobotClient _robot;
 
@@ -64,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
     if (_logged_in) {
       return;
     }
-    final robotFut = RobotClient.atAddress("<URL>", 443, RobotClientOptions.withSecret("<SECRET>"));
+
+    final robotFut = RobotClient.atAddress("<URL>", 443, RobotClientOptions.withSecret('<SECRET>'));
 
     robotFut.then((value) {
       _robot = value;
@@ -76,14 +77,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _doComponentStuff() {
-    // final arm = ArmClient("arm", _robot.channel);
-    final arm = _robot.getResource<Arm>(Arm.subtype.getResourceName("arm"));
+    print(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent));
+    final arm = Arm.fromRobot(_robot, "arm");
     final pos = arm.getEndPosition();
     pos.then((value) => print(value));
 
-    final base = _robot.getResource<Base>(Base.subtype.getResourceName("base"));
+    final base = Base.fromRobot(_robot, 'base');
     final mov = base.isMoving();
     mov.then((value) => print(value));
+
+    final sensor = Sensor.fromRobot(_robot, "sensor");
+    final readings = sensor.getReadings();
+    readings.then((value) => print(value));
   }
 
   @override
@@ -121,13 +126,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _logged_in
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Text('Resource Names: '),
-                      Text(_resourceNames),
-                    ],
-                  )
+                ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+                    const Text('Resource Names: '),
+                    Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join("\n")),
+                  ])
                 : ElevatedButton(
                     onPressed: () {
                       _login();
