@@ -12,7 +12,10 @@ ViamCameraService _getCameraService(
         client,
         options: getOptionsWithAccessToken(accessToken),
       ),
-      StreamServiceClient(client),
+      StreamServiceClient(
+        client,
+        options: getOptionsWithAccessToken(accessToken),
+      ),
     );
 
 ViamAuthService getAuthService(
