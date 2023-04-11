@@ -15,8 +15,6 @@ abstract class Arm extends Resource {
   Future<Pose> getEndPosition({Map<String, dynamic>? extra});
 
   /// Move the end of the arm to the [Pose] specified.
-  ///
-  /// When obstacles are specified in [WorldState], the motion plan of the arm will avoid them.
   Future<void> moveToPosition(Pose pose, {Map<String, dynamic>? extra});
 
   /// Move each joint on the arm to the corresponding position specified in [JointPositions]

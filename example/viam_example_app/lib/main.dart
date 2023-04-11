@@ -1,15 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:viam_example_app/screens/arm.dart';
-import 'package:viam_sdk/src/components/arm/arm.dart';
-import 'package:viam_sdk/src/components/base/base.dart';
-import 'package:viam_sdk/src/components/movement_sensor/movement_sensor.dart';
-import 'package:viam_sdk/src/components/sensor/sensor.dart';
-import 'package:viam_sdk/src/proto/common.dart';
-// ignore: unused_import
-import 'package:viam_sdk/src/resource/base.dart';
-import 'package:viam_sdk/src/robot/client.dart';
+import 'package:viam_example_app/screens/sensor.dart';
+import 'package:viam_sdk/viam_sdk.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,14 +27,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final materialTheme = ThemeData(
-      cupertinoOverrideTheme: CupertinoThemeData(
+      cupertinoOverrideTheme: const CupertinoThemeData(
         primaryColor: Color(0xff127EFB),
       ),
       primarySwatch: Colors.green,
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(EdgeInsets.all(16.0)),
-          foregroundColor: MaterialStateProperty.all(Color(0xFF3DDC84)),
+          padding: MaterialStateProperty.all(const EdgeInsets.all(16.0)),
+          foregroundColor: MaterialStateProperty.all(const Color(0xFF3DDC84)),
         ),
       ),
     );
@@ -54,20 +47,20 @@ class MyApp extends StatelessWidget {
           iosUseZeroPaddingForAppbarPlatformIcon: true,
         ),
         builder: (context) => PlatformApp(
-          localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+          localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
             DefaultMaterialLocalizations.delegate,
             DefaultWidgetsLocalizations.delegate,
             DefaultCupertinoLocalizations.delegate,
           ],
           title: 'Viam Example',
-          home: MyHomePage(
+          home: const MyHomePage(
             title: 'Viam Example',
           ),
           material: (_, __) => MaterialAppData(
             theme: materialTheme,
           ),
           cupertino: (_, __) => CupertinoAppData(
-            theme: CupertinoThemeData(
+            theme: const CupertinoThemeData(
               brightness: Brightness.light,
               primaryColor: Color(0xff127EFB),
             ),
@@ -104,8 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _loading = true;
     });
-    final robotFut = RobotClient.atAddress(
-        'naveed-pi-main.60758fe0f6.viam.cloud', 443, RobotClientOptions.withSecret('pem1epjv07fq2cz2z5723gq6ntuyhue5t30boohkiz3iqht4'));
+    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
 
     robotFut.then((value) {
       _robot = value;
@@ -156,20 +148,25 @@ class _MyHomePageState extends State<MyHomePage> {
       iosContentPadding: true,
       body: _loggedIn
           ? ListView.builder(
-              itemCount: _robot.resourceNames.length,
+              itemCount: _resourceNames.length,
               itemBuilder: (context, index) {
-                final resourceName = _robot.resourceNames[index];
+                final resourceName = _resourceNames[index];
                 return Column(children: [
                   PlatformListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: resourceName.type == ResourceTypeComponent ? const Icon(Icons.keyboard_arrow_right) : null,
-                    onTap: () => resourceName.type == ResourceTypeComponent
+                    trailing: resourceName.type == ResourceTypeComponent ? Icon(context.platformIcons.rightChevron) : null,
+                    onTap: () => resourceName.subtype == Sensor.subtype.resourceSubtype ||
+                            resourceName.subtype == MovementSensor.subtype.resourceSubtype
                         ? Navigator.push(
                             context,
                             platformPageRoute(
                               context: context,
-                              builder: (context) => ArmScreen(resourceName: resourceName),
+                              builder: (context) => SensorScreen(
+                                  sensor: resourceName.subtype == Sensor.subtype.resourceSubtype
+                                      ? Sensor.fromRobot(_robot, resourceName.name)
+                                      : MovementSensor.fromRobot(_robot, resourceName.name),
+                                  resourceName: resourceName),
                             ))
                         : null,
                   ),
