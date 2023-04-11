@@ -1,5 +1,4 @@
 import 'package:grpc/grpc.dart';
-import 'package:viam_sdk/src/domain/interceptors/auth_header_interceptor.dart';
 import 'package:viam_sdk/src/di/di.dart';
 import 'package:viam_sdk/src/gen/google/rpc/status.pb.dart';
 import 'package:viam_sdk/src/gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart';
@@ -9,12 +8,12 @@ const _rpcHostKey = 'rpc-host';
 
 class WebRtcApiDataSource {
   final ViamClientChannel _client;
-  final AuthHeaderInterceptor _authHeaderInterceptor;
+  final CallOptions options;
   final String hostUrl;
 
   WebRtcApiDataSource(
     this._client,
-    this._authHeaderInterceptor,
+    this.options,
     this.hostUrl,
   );
 
@@ -25,10 +24,9 @@ class WebRtcApiDataSource {
 
     final stub = SignalingServiceClient(
       _client,
-      interceptors: [_authHeaderInterceptor],
       options: CallOptions(
         metadata: metaData,
-      ),
+      ).mergedWith(options),
     );
 
     final request = CallRequest(sdp: sdp);
@@ -47,8 +45,7 @@ class WebRtcApiDataSource {
       _client,
       options: CallOptions(
         metadata: metaData,
-      ),
-      interceptors: [_authHeaderInterceptor],
+      ).mergedWith(options),
     );
 
     late CallUpdateRequest updateRequest;
@@ -75,8 +72,7 @@ class WebRtcApiDataSource {
       _client,
       options: CallOptions(
         metadata: metaData,
-      ),
-      interceptors: [_authHeaderInterceptor],
+      ).mergedWith(options),
     );
 
     final updateRequest = CallUpdateRequest(uuid: uuid, error: Status(message: msg));
@@ -93,8 +89,7 @@ class WebRtcApiDataSource {
       _client,
       options: CallOptions(
         metadata: metaData,
-      ),
-      interceptors: [_authHeaderInterceptor],
+      ).mergedWith(options),
     );
 
     final updateRequest = CallUpdateRequest(uuid: uuid, candidate: cand);
@@ -105,7 +100,7 @@ class WebRtcApiDataSource {
   Future<void> addStreamName(String name) async {
     final stub = StreamServiceClient(
       _client,
-      interceptors: [_authHeaderInterceptor],
+      options: options,
     );
 
     final updateRequest = AddStreamRequest(name: name);

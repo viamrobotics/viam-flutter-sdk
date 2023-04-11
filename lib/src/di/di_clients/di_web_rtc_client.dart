@@ -8,14 +8,7 @@ Future<WebRtcClientChannel> _getWebRtcClient(
 ) async {
   final webRtcDirectDataSource = WebRtcApiDataSource(
     webRtcDirectClient,
-    AuthHeaderInterceptor(
-      ViamAuthService(
-        webRtcDirectClient,
-        url,
-        secure,
-      ),
-      accessToken,
-    ),
+    getOptionsWithAccessToken(accessToken),
     url,
   );
 
