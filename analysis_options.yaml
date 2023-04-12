@@ -23,6 +23,7 @@ linter:
     - unawaited_futures
     - unnecessary_statements
     - unnecessary_await_in_return
+    - prefer_single_quotes
 
 analyzer:
   errors:

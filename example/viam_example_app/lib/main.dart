@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _loading = true;
     });
-    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
+    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<LOCATION>'));
 
     robotFut.then((value) {
       _robot = value;
@@ -110,33 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
         _resourceNames.addAll(services);
         _resourceNames.addAll(components);
       });
-      _doComponentStuff();
     });
   }
 
-  Future<void> _doComponentStuff() async {
-    print("Resource Names:");
-    print(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent));
-
-    print("Arm");
-    final arm = Arm.fromRobot(_robot, "arm");
-    final pos = await arm.getEndPosition();
-    print(pos);
-
-    print("Base");
-    final base = Base.fromRobot(_robot, 'base');
-    final mov = await base.isMoving();
-    print(mov);
-
-    print("Sensor");
-    final sensor = Sensor.fromRobot(_robot, "sensor");
-    final readings = await sensor.getReadings();
-    print(readings);
-
-    print("Movement Sensor");
-    final ms = MovementSensor.fromRobot(_robot, "movement-sensor");
-    final msReadings = await ms.getReadings();
-    print(msReadings);
+  bool _isSensor(ResourceName rn) {
+    return rn.subtype == Sensor.subtype.resourceSubtype || rn.subtype == MovementSensor.subtype.resourceSubtype;
   }
 
   @override
@@ -155,9 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   PlatformListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: resourceName.type == ResourceTypeComponent ? Icon(context.platformIcons.rightChevron) : null,
-                    onTap: () => resourceName.subtype == Sensor.subtype.resourceSubtype ||
-                            resourceName.subtype == MovementSensor.subtype.resourceSubtype
+                    trailing: _isSensor(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
+                    onTap: () => _isSensor(resourceName)
                         ? Navigator.push(
                             context,
                             platformPageRoute(
