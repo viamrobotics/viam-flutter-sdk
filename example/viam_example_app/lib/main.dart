@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_example_app/screens/sensor.dart';
+import 'package:viam_example_app/screens/stream.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 void main() {
@@ -10,19 +11,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     title: 'Viam Example',
-  //     theme: ThemeData(
-  //       appBarTheme: const AppBarTheme(color: Colors.black),
-  //       colorScheme: const ColorScheme.light(),
-  //     ),
-  //     home: const MyHomePage(title: 'Viam Example'),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _loading = true;
     });
-    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<LOCATION>'));
+    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
 
     robotFut.then((value) {
       _robot = value;
@@ -117,6 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return rn.subtype == Sensor.subtype.resourceSubtype || rn.subtype == MovementSensor.subtype.resourceSubtype;
   }
 
+  bool _isCamera(ResourceName rn) {
+    return rn.subtype == 'camera';
+  }
+
+  StreamClient _getStream(ResourceName name) {
+    return _robot.getStream(name.name);
+  }
+
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
@@ -133,18 +129,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   PlatformListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isSensor(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
-                    onTap: () => _isSensor(resourceName)
+                    trailing: _isSensor(resourceName) || _isCamera(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
+                    onTap: () => _isSensor(resourceName) || _isCamera(resourceName)
                         ? Navigator.push(
                             context,
                             platformPageRoute(
-                              context: context,
-                              builder: (context) => SensorScreen(
-                                  sensor: resourceName.subtype == Sensor.subtype.resourceSubtype
-                                      ? Sensor.fromRobot(_robot, resourceName.name)
-                                      : MovementSensor.fromRobot(_robot, resourceName.name),
-                                  resourceName: resourceName),
-                            ))
+                                context: context,
+                                builder: (context) {
+                                  if (_isCamera(resourceName)) {
+                                    return StreamScreen(client: _getStream(resourceName), resourceName: resourceName);
+                                  }
+                                  return SensorScreen(
+                                      sensor: resourceName.subtype == Sensor.subtype.resourceSubtype
+                                          ? Sensor.fromRobot(_robot, resourceName.name)
+                                          : MovementSensor.fromRobot(_robot, resourceName.name),
+                                      resourceName: resourceName);
+                                }))
                         : null,
                   ),
                   const Divider(height: 0, indent: 0, endIndent: 0)
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _loggedIn
                       ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
                           const Text('Resource Names: '),
-                          Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join("\n")),
+                          Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join('\n')),
                         ])
                       : _loading
                           ? PlatformCircularProgressIndicator()
@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               onPressed: () {
                                 _login();
                               },
-                              child: const Text("Login")),
+                              child: const Text('Login')),
                 ],
               ),
             ),

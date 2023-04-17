@@ -1,10 +1,9 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
-import 'package:viam_sdk/src/resource/base.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
-import 'package:viam_sdk/src/resource/registry.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import '../media/stream/client.dart';
 
 class RobotClientOptions {
   bool disableWebRtc = false;
@@ -21,6 +20,7 @@ class RobotClient {
   late RobotServiceClient _client;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
+  Map<String, StreamClient> _streams = {};
   late Viam viam;
 
   RobotClient._();
@@ -72,5 +72,12 @@ class RobotClient {
 
   T getResource<T>(ResourceName name) {
     return this._manager.getResource<T>(name);
+  }
+
+  StreamClient getStream(String name) {
+    if (!_streams.containsKey(name)) {
+      _streams[name] = StreamClient(channel as WebRtcClientChannel);
+    }
+    return _streams[name]!;
   }
 }

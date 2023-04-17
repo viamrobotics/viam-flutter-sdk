@@ -34,9 +34,12 @@ export 'src/domain/movement/model/viam_linear_velocity.dart';
 export 'src/domain/movement/model/viam_position.dart';
 export 'src/domain/resource/model/viam_resource_name.dart';
 export 'src/domain/sensor/model/viam_sensor_readings.dart';
+export 'src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 // Proto
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
+// Media Streams
+export 'src/media/stream/client.dart';
 // Robot, Resource, and Registry
 export 'src/resource/base.dart';
 export 'src/resource/registry.dart';

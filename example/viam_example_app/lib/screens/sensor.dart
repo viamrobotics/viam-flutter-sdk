@@ -43,11 +43,11 @@ class _SensorScreenState extends State<SensorScreen> {
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
             DataTable(
-                columns: const <DataColumn>[DataColumn(label: Text("Reading")), DataColumn(label: Text("Value"))],
+                columns: const <DataColumn>[DataColumn(label: Text('Reading')), DataColumn(label: Text('Value'))],
                 rows: readings.keys.map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(readings[e].toString()))])).toList()),
             const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
             PlatformElevatedButton(
-              child: const Text("Get readings"),
+              child: const Text('Get readings'),
               onPressed: () => _getReadings(),
             )
           ],
