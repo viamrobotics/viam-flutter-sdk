@@ -52,6 +52,7 @@ abstract class MovementSensor extends Sensor {
       readings["altitude"] = pos.altitude;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
+       print('Error: $exception');
     }
 
     try {
