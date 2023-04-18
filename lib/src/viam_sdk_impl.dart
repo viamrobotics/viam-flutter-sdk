@@ -36,8 +36,22 @@ class ViamImpl implements Viam {
     String? payload,
     String? accessToken,
   }) async {
+    String token;
+
     if (disableWebRtc) {
       _clientChannelBase = dialDirect(url, payload, secure, port);
+
+      if (accessToken == null) {
+        final authData = await getAuthService(
+          _clientChannelBase!,
+          url,
+          payload,
+        ).getAuthData();
+
+        token = authData.accessToken;
+      } else {
+        token = accessToken;
+      }
     } else {
       final direct = dialDirect(
         SignallingServerAddress.address,
@@ -46,11 +60,23 @@ class ViamImpl implements Viam {
         SignallingServerAddress.port,
       );
 
+      if (accessToken == null) {
+        final authData = await getAuthService(
+          direct,
+          url,
+          payload,
+        ).getAuthData();
+
+        token = authData.accessToken;
+      } else {
+        token = accessToken;
+      }
+
       _clientChannelBase = await dialWebRtc(
         direct,
         url,
         payload,
-        accessToken,
+        token,
       );
     }
 
@@ -58,42 +84,42 @@ class ViamImpl implements Viam {
       _clientChannelBase!,
       url,
       payload,
-      accessToken,
+      token,
     );
 
     _dataService = getDataService(
       _clientChannelBase!,
       url,
       payload,
-      accessToken,
+      token,
     );
 
     resourceService = getResourceService(
       _clientChannelBase!,
       url,
       payload,
-      accessToken,
+      token,
     );
 
     cameraService = getCameraService(
       _clientChannelBase!,
       url,
       payload,
-      accessToken,
+      token,
     );
 
     movementService = getMovementService(
       _clientChannelBase!,
       url,
       payload,
-      accessToken,
+      token,
     );
 
     sensorService = getSensorService(
       _clientChannelBase!,
       url,
       payload,
-      accessToken,
+      token,
     );
   }
 

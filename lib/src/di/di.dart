@@ -5,7 +5,6 @@ import 'package:viam_sdk/src/domain/app/service/app_api_data_source.dart';
 import 'package:viam_sdk/src/domain/auth_rdk/service/auth_api_service.dart';
 import 'package:viam_sdk/src/domain/camera/service/camera_api_service.dart';
 import 'package:viam_sdk/src/domain/data/service/data_api_service.dart';
-import 'package:viam_sdk/src/domain/interceptors/auth_header_interceptor.dart';
 import 'package:viam_sdk/src/domain/movement/service/viam_movement_service.dart';
 import 'package:viam_sdk/src/domain/resource/service/viam_resource_service.dart';
 import 'package:viam_sdk/src/domain/sensor/service/viam_sensor_service.dart';
@@ -25,8 +24,6 @@ part 'di_service.dart';
 part 'di_clients/di_grpc_client.dart';
 
 part 'di_clients/di_web_rtc_client.dart';
-
-part 'di_interceptors.dart';
 
 part 'di_clients/di_auth0.dart';
 
@@ -86,16 +83,7 @@ ViamResourceService getResourceService(
     ViamResourceService(
       RobotServiceClient(
         client,
-        interceptors: secure != null
-            ? [
-                _getAuthHeaderInterceptor(
-                  client,
-                  url,
-                  secure,
-                  accessToken,
-                ),
-              ]
-            : [],
+        options: getOptionsWithAccessToken(accessToken),
       ),
     );
 
@@ -116,16 +104,7 @@ ViamMovementService getMovementService(
     ViamMovementService(
       MovementSensorServiceClient(
         client,
-        interceptors: secure != null
-            ? [
-                _getAuthHeaderInterceptor(
-                  client,
-                  url,
-                  secure,
-                  accessToken,
-                ),
-              ]
-            : [],
+        options: getOptionsWithAccessToken(accessToken),
       ),
     );
 
@@ -138,16 +117,7 @@ ViamSensorService getSensorService(
     ViamSensorService(
       SensorsServiceClient(
         client,
-        interceptors: secure != null
-            ? [
-                _getAuthHeaderInterceptor(
-                  client,
-                  url,
-                  secure,
-                  accessToken,
-                ),
-              ]
-            : [],
+        options: getOptionsWithAccessToken(accessToken),
       ),
     );
 
