@@ -10,19 +10,15 @@ ViamCameraService _getCameraService(
       client,
       CameraServiceClient(
         client,
-        interceptors: [
-          _getAuthHeaderInterceptor(
-            client,
-            url,
-            secure,
-            accessToken,
-          ),
-        ],
+        options: getOptionsWithAccessToken(accessToken),
       ),
-      StreamServiceClient(client),
+      StreamServiceClient(
+        client,
+        options: getOptionsWithAccessToken(accessToken),
+      ),
     );
 
-ViamAuthService _getAuthService(
+ViamAuthService getAuthService(
   ClientChannelBase client,
   String url,
   String? secure,
@@ -42,14 +38,7 @@ ViamAppService _getViamAppService(
     ViamAppService(
       AppServiceClient(
         client,
-        interceptors: [
-          _getAuthHeaderInterceptor(
-            client,
-            url,
-            secure,
-            accessToken,
-          ),
-        ],
+        options: getOptionsWithAccessToken(accessToken),
       ),
     );
 
@@ -62,13 +51,12 @@ DataService _getDataService(
     DataService(
       DataServiceClient(
         client,
-        interceptors: [
-          _getAuthHeaderInterceptor(
-            client,
-            url,
-            secure,
-            accessToken,
-          ),
-        ],
+        options: getOptionsWithAccessToken(accessToken),
       ),
+    );
+
+CallOptions getOptionsWithAccessToken(String? accessToken) => CallOptions(
+      metadata: {
+        'Authorization': 'Bearer $accessToken',
+      },
     );
