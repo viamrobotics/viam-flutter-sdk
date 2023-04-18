@@ -24,6 +24,9 @@ class ViamResourceName {
         subtype,
         name,
       );
+
+  @override
+  String toString() => '${namespace}:${type}:${subtype}/${name}';
 }
 
 extension ViamResourceNameMapper on ResourceName {

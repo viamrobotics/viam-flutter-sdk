@@ -1,0 +1,13 @@
+{
+    "dart.lineLength": 140,
+    "[dart]": {
+        "editor.rulers": [
+            140
+        ],
+    },
+    "cmake.configureOnOpen": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+}

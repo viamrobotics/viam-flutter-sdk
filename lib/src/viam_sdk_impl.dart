@@ -1,5 +1,6 @@
 import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/src/di/di.dart';
 import 'package:viam_sdk/src/domain/app/service/app_api_data_source.dart';
 import 'package:viam_sdk/src/domain/camera/service/camera_api_service.dart';
 import 'package:viam_sdk/src/domain/data/service/data_api_service.dart';
@@ -7,7 +8,6 @@ import 'package:viam_sdk/src/domain/movement/service/viam_movement_service.dart'
 import 'package:viam_sdk/src/domain/resource/service/viam_resource_service.dart';
 import 'package:viam_sdk/src/domain/sensor/service/viam_sensor_service.dart';
 import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/signalling_server_address.dart';
-import 'package:viam_sdk/src/di/di.dart';
 import 'package:viam_sdk/src/viam_sdk.dart';
 
 class ViamImpl implements Viam {
@@ -182,4 +182,7 @@ class ViamImpl implements Viam {
     String? scheme,
   ) =>
       viamLogout(domain, clientId, scheme);
+
+  @override
+  ClientChannelBase get channel => _clientChannelBase!;
 }
