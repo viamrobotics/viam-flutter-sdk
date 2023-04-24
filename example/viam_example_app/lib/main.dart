@@ -86,7 +86,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _loading = true;
     });
-    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
+    final robotFut = RobotClient.atAddress(
+        'blinker-boi-main.fztgj2gwo0.viam.cloud', 443, RobotClientOptions.withSecret('jnugort7sz3tw8k2514p4r828u8e5kianjx7yyh7kyvkbkig'));
 
     robotFut.then((value) {
       _robot = value;
