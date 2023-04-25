@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_example_app/screens/sensor.dart';
+import 'package:viam_example_app/screens/servo.dart';
 import 'package:viam_example_app/screens/stream.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -101,12 +102,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  //TODO refactor to make all _is methods the same
+
+  bool _isCamera(ResourceName rn) {
+    return rn.subtype == 'camera';
+  }
+
   bool _isSensor(ResourceName rn) {
     return rn.subtype == Sensor.subtype.resourceSubtype || rn.subtype == MovementSensor.subtype.resourceSubtype;
   }
 
-  bool _isCamera(ResourceName rn) {
-    return rn.subtype == 'camera';
+  bool _isServo(ResourceName rn) {
+    return rn.subtype == Servo.subtype.resourceSubtype;
   }
 
   StreamClient _getStream(ResourceName name) {
@@ -129,8 +136,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   PlatformListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isSensor(resourceName) || _isCamera(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
-                    onTap: () => _isSensor(resourceName) || _isCamera(resourceName)
+                    trailing: _isSensor(resourceName) || _isCamera(resourceName) || _isServo(resourceName)
+                        ? Icon(context.platformIcons.rightChevron)
+                        : null,
+                    onTap: () => _isSensor(resourceName) || _isCamera(resourceName) || _isServo(resourceName)
                         ? Navigator.push(
                             context,
                             platformPageRoute(
@@ -138,6 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 builder: (context) {
                                   if (_isCamera(resourceName)) {
                                     return StreamScreen(client: _getStream(resourceName), resourceName: resourceName);
+                                  } else if (_isServo(resourceName)) {
+                                    return ServoScreen(servo: Servo.fromRobot(_robot, resourceName.name), resourceName: resourceName);
                                   }
                                   return SensorScreen(
                                       sensor: resourceName.subtype == Sensor.subtype.resourceSubtype
