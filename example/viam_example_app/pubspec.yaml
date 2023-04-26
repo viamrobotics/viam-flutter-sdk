@@ -32,7 +32,6 @@ dependencies:
     sdk: flutter
   viam_sdk:
     path: ../../
-  flutter_webrtc: ^0.9.26
 
 
   # The following adds the Cupertino Icons font to your application.

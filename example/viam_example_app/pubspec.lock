@@ -180,7 +180,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_webrtc:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_webrtc
       sha256: a6dcf0e092228a801d2a2e922a227d651795963f8ad1b5e3cf9023d085bf071a
