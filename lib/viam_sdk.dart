@@ -12,6 +12,8 @@ export 'src/components/movement_sensor/client.dart';
 export 'src/components/movement_sensor/movement_sensor.dart';
 export 'src/components/sensor/client.dart';
 export 'src/components/sensor/sensor.dart';
+export 'src/components/servo/client.dart';
+export 'src/components/servo/servo.dart';
 // Domain
 export 'src/domain/app/model/viam_location.dart';
 export 'src/domain/app/model/viam_location_auth.dart';
