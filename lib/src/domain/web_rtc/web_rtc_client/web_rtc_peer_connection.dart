@@ -31,14 +31,20 @@ class WebRtcPeerConnection {
   }
 
   Future<void> _webRTCInit() async {
+    final config = await _webRtcDirectDataSource.getOptionalWebRtcConfig();
+    final additionalIceServers = config.additionalIceServers.map((e) => {
+          'urls': e.urls,
+          'credential': e.credential,
+          'username': e.username,
+        });
+
     ///create Peer;
+    final iceServers = additionalIceServers.toList().add({
+      'urls': 'stun:global.stun.twilio.com:3478?transport=udp',
+      'sdpSemantics': 'unified-plan',
+    });
     final rtcConfig = {
-      'iceServers': [
-        {
-          "urls": "stun:global.stun.twilio.com:3478?transport=udp",
-          'sdpSemantics': 'unified-plan',
-        },
-      ]
+      'iceServers': iceServers,
     };
 
     peerConnection = await createPeerConnection(rtcConfig);
@@ -71,10 +77,9 @@ class WebRtcPeerConnection {
       }
     });
 
-    final sdp = RTCSessionDescription(_offer.sdp, 'offer');
-    await peerConnection.setLocalDescription(sdp);
+    await peerConnection.setLocalDescription(_offer);
 
-    final sdpJsonString = _convertSDPtoJsonString(sdp);
+    final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
 
     final encodedBase64String = _encodeSDPJsonStringToBase64String(sdpJsonString);
 
@@ -158,7 +163,6 @@ class WebRtcPeerConnection {
   void _registerPeerConnectionListeners() {
     peerConnection.onIceCandidate = (RTCIceCandidate candidate) async {
       await _setRemoteCompleter.future;
-
       if (candidate.candidate == null) {
         return;
       }
@@ -190,8 +194,7 @@ class WebRtcPeerConnection {
         decodedSDPMap['sdp'],
         decodedSDPMap['type'],
       );
-      final offerCollision =
-          sdp.type == 'offer' && peerConnection.signalingState != RTCSignalingState.RTCSignalingStateStable;
+      final offerCollision = sdp.type == 'offer' && peerConnection.signalingState != RTCSignalingState.RTCSignalingStateStable;
 
       _ignoreOffer = offerCollision;
 
@@ -228,7 +231,7 @@ class WebRtcPeerConnection {
   }
 
   String _encodeSDPJsonStringToBase64String(String sdp) {
-    final bytes = utf8.encode(sdp);
+    final bytes = ascii.encode(sdp);
     return base64.encode(bytes);
   }
 }

@@ -1,5 +1,5 @@
-import 'package:viam_sdk/src/domain/app/model/viam_organization.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_location.dart';
+import 'package:viam_sdk/src/domain/app/model/viam_organization.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_robot.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_robot_part.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
@@ -14,9 +14,7 @@ class ViamAppService {
 
     final ListOrganizationsResponse response = await _appServiceClient.listOrganizations(listOrganizationsRequest);
 
-    return response.organizations
-        .map<ViamOrganization>((organization) => organization.toDomain())
-        .toList(growable: false);
+    return response.organizations.map<ViamOrganization>((organization) => organization.toDomain()).toList(growable: false);
   }
 
   Future<List<ViamLocation>> listLocations(String? organizationId) async {
