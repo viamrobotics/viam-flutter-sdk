@@ -17,6 +17,16 @@ class WebRtcApiDataSource {
     this.hostUrl,
   );
 
+  Future<WebRTCConfig> getOptionalWebRtcConfig() async {
+    final metaData = {
+      _rpcHostKey: hostUrl,
+    };
+    final stub = SignalingServiceClient(_client, options: CallOptions(metadata: metaData).mergedWith(options));
+    final request = OptionalWebRTCConfigRequest();
+    final response = await stub.optionalWebRTCConfig(request);
+    return response.config;
+  }
+
   Future<ResponseStream<CallResponse>> getResponseStream(String sdp) async {
     final metaData = {
       _rpcHostKey: hostUrl,
@@ -30,10 +40,7 @@ class WebRtcApiDataSource {
     );
 
     final request = CallRequest(sdp: sdp);
-
-    final call = stub.call(request);
-
-    return call;
+    return stub.call(request);
   }
 
   Future<void> update(String uuid, {bool done = false}) async {

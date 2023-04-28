@@ -22,6 +22,7 @@ export 'src/domain/app/model/viam_location_auth.dart';
 export 'src/domain/app/model/viam_location_organization.dart';
 export 'src/domain/app/model/viam_organization.dart';
 export 'src/domain/app/model/viam_robot.dart';
+export 'src/domain/app/model/viam_robot_part.dart';
 export 'src/domain/app/model/viam_shared_secret.dart';
 export 'src/domain/app/model/viam_shared_secret_state.dart';
 export 'src/domain/camera/model/camera_frame_data.dart';
