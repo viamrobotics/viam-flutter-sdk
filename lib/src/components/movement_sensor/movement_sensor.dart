@@ -15,7 +15,7 @@ class Position {
 typedef Properties = GetPropertiesResponse;
 
 abstract class MovementSensor extends Sensor {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, "movement_sensor");
+  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'movement_sensor');
 
   MovementSensor(super.name);
 
@@ -48,44 +48,44 @@ abstract class MovementSensor extends Sensor {
     Map<String, dynamic> readings = {};
     try {
       Position pos = await getPosition(extra: extra);
-      readings["position"] = pos.coordinates;
-      readings["altitude"] = pos.altitude;
+      readings['position'] = pos.coordinates;
+      readings['altitude'] = pos.altitude;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
-       print('Error: $exception');
+      print('Error: $exception');
     }
 
     try {
       Vector3 lv = await getLinearVelocity(extra: extra);
-      readings["linear_velocity"] = lv;
+      readings['linear_velocity'] = lv;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
       Vector3 av = await getAngularVelocity(extra: extra);
-      readings["angular_velocity"] = av;
+      readings['angular_velocity'] = av;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
       Vector3 la = await getLinearAcceleration(extra: extra);
-      readings["linear_acceleration"] = la;
+      readings['linear_acceleration'] = la;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
       double comp = await getCompassHeading(extra: extra);
-      readings["compass"] = comp;
+      readings['compass'] = comp;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
       Orientation orient = await getOrientation(extra: extra);
-      readings["orientation"] = orient;
+      readings['orientation'] = orient;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }

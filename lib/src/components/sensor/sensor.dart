@@ -4,7 +4,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../robot/client.dart';
 
 abstract class Sensor extends Resource {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, "sensor");
+  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'sensor');
 
   @override
   String name;

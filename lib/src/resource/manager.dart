@@ -10,7 +10,7 @@ class ResourceManager {
     if (this.resources.containsKey(name)) {
       throw Exception('Duplicate registration of resource in manager');
     }
-    final shortName = name.name.split(":").last;
+    final shortName = name.name.split(':').last;
     if (!(this._shortToLongName[shortName]?.contains(name) ?? true)) {
       var names = this._shortToLongName[shortName] ?? [];
       names.add(name);
