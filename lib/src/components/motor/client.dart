@@ -8,37 +8,53 @@ class MotorClient extends Motor {
   ClientChannelBase _channel;
   MotorServiceClient _client;
 
-  MotorClient(super.name, this._channel) : _client = MotorServiceClient(_channel);
+  MotorClient(super.name, this._channel)
+      : _client = MotorServiceClient(_channel);
 
   @override
-  Future<void> setPower(double power, {Map<String, dynamic>? extra}) async {
-    await _client.setPower(SetPowerRequest(name: name, powerPct: power, extra: extra?.toStruct()));
+  Future<void> setPower(double powerPct, {Map<String, dynamic>? extra}) async {
+    await _client.setPower(SetPowerRequest(
+        name: name, powerPct: powerPct, extra: extra?.toStruct()));
   }
 
   @override
-  Future<void> goFor(double rpm, double revolutions, {Map<String, dynamic>? extra}) async {
-    await _client.goFor(GoForRequest(name: name, rpm: rpm, revolutions: revolutions, extra: extra?.toStruct()));
+  Future<void> goFor(double rpm, double revolutions,
+      {Map<String, dynamic>? extra}) async {
+    await _client.goFor(GoForRequest(
+        name: name,
+        rpm: rpm,
+        revolutions: revolutions,
+        extra: extra?.toStruct()));
   }
 
   @override
-  Future<void> goTo(double rpm, double positionRevolutions, {Map<String, dynamic>? extra}) async {
-    await _client.goTo(GoToRequest(name: name, rpm: rpm, positionRevolutions: positionRevolutions, extra: extra?.toStruct()));
+  Future<void> goTo(double rpm, double positionRevolutions,
+      {Map<String, dynamic>? extra}) async {
+    await _client.goTo(GoToRequest(
+        name: name,
+        rpm: rpm,
+        positionRevolutions: positionRevolutions,
+        extra: extra?.toStruct()));
   }
 
   @override
-  Future<void> resetZeroPosition(double offset, {Map<String, dynamic>? extra}) async {
-    await _client.resetZeroPosition(ResetZeroPositionRequest(name: name, offset: offset, extra: extra?.toStruct()));
+  Future<void> resetZeroPosition(double offset,
+      {Map<String, dynamic>? extra}) async {
+    await _client.resetZeroPosition(ResetZeroPositionRequest(
+        name: name, offset: offset, extra: extra?.toStruct()));
   }
 
   @override
   Future<double> getPosition({Map<String, dynamic>? extra}) async {
-    final result = await _client.getPosition(GetPositionRequest(name: name, extra: extra?.toStruct()));
+    final result = await _client
+        .getPosition(GetPositionRequest(name: name, extra: extra?.toStruct()));
     return result.position;
   }
 
   @override
   Future<MotorProperties> getProperties({Map<String, dynamic>? extra}) async {
-    final result = await _client.getProperties(GetPropertiesRequest(name: name, extra: extra?.toStruct()));
+    final result = await _client.getProperties(
+        GetPropertiesRequest(name: name, extra: extra?.toStruct()));
     return MotorProperties.fromProto(result);
   }
 
@@ -49,7 +65,8 @@ class MotorClient extends Motor {
 
   @override
   Future<PowerState> isPowered({Map<String, dynamic>? extra}) async {
-    final result = await _client.isPowered(IsPoweredRequest(name: name, extra: extra?.toStruct()));
+    final result = await _client
+        .isPowered(IsPoweredRequest(name: name, extra: extra?.toStruct()));
     return PowerState.fromProto(result);
   }
 

@@ -38,14 +38,14 @@ abstract class Motor extends Resource {
   Motor(this.name);
 
   /// Sets the "percentage" of power the [Motor] should employ between -1 and 1.
-  /// When [power] is negative, the rotation will be in the backward direction.
+  /// When [powerPct] is negative, the rotation will be in the backward direction.
   ///
   /// Args:
-  ///     [power] (double): Power between -1 and 1
+  ///     [powerPct] (double): Power between -1 and 1
   ///         (negative implies backwards).
-  Future<void> setPower(double power, {Map<String, dynamic>? extra});
+  Future<void> setPower(double powerPct, {Map<String, dynamic>? extra});
 
-  /// Spin the [motor] the specified number of [revolutions] at specified [rpm].
+  /// Spin the [Motor] the specified number of [revolutions] at specified [rpm].
   /// When [rpm] or [revolutions] is a negative value, the rotation will be in the backward direction.
   /// Note: if both [rpm] and [revolutions] are negative, the motor will spin in the forward direction.
   ///
