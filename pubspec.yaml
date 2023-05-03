@@ -16,6 +16,7 @@ dependencies:
   flutter_webrtc: ^0.9.24
   grpc: ^3.1.0
   protobuf: ^2.1.0
+  image: ^4.0.16
 
 dev_dependencies:
   flutter_test:

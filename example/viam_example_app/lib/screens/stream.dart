@@ -1,15 +1,19 @@
 import 'dart:async' as async;
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:image/image.dart' as img;
 import 'package:viam_sdk/viam_sdk.dart';
 
 class StreamScreen extends StatefulWidget {
+  final Camera camera;
   final StreamClient client;
   final ResourceName resourceName;
 
-  const StreamScreen({Key? key, required this.client, required this.resourceName}) : super(key: key);
+  const StreamScreen({Key? key, required this.camera, required this.client, required this.resourceName}) : super(key: key);
 
   @override
   State<StreamScreen> createState() {
@@ -18,14 +22,59 @@ class StreamScreen extends StatefulWidget {
 }
 
 class _StreamScreenState extends State<StreamScreen> {
+  // Stream
   bool _ready = false;
   late RTCVideoRenderer _renderer;
   late async.StreamSubscription<MediaStream> _streamSub;
 
+  // Single frame
+  ByteData? imageBytes;
+  bool _imgLoaded = false;
+
+  void _getImage() {
+    setState(() {
+      _imgLoaded = false;
+    });
+    final imageFut = widget.camera.getImage();
+    imageFut.then((value) {
+      final convertFut = convertImageToFlutterUi(value);
+      convertFut.then((value) {
+        final pngFut = value.toByteData(format: ui.ImageByteFormat.png);
+        pngFut.then((value) => setState(() {
+              imageBytes = value;
+              _imgLoaded = true;
+            }));
+      });
+    });
+  }
+
+  Future<ui.Image> convertImageToFlutterUi(img.Image image) async {
+    if (image.format != img.Format.uint8 || image.numChannels != 4) {
+      final cmd = img.Command()
+        ..image(image)
+        ..convert(format: img.Format.uint8, numChannels: 4);
+      final rgba8 = await cmd.getImageThread();
+      if (rgba8 != null) {
+        image = rgba8;
+      }
+    }
+
+    ui.ImmutableBuffer buffer = await ui.ImmutableBuffer.fromUint8List(image.toUint8List());
+
+    ui.ImageDescriptor id = ui.ImageDescriptor.raw(buffer, height: image.height, width: image.width, pixelFormat: ui.PixelFormat.rgba8888);
+
+    ui.Codec codec = await id.instantiateCodec(targetHeight: image.height, targetWidth: image.width);
+
+    ui.FrameInfo fi = await codec.getNextFrame();
+    ui.Image uiImage = fi.image;
+
+    return uiImage;
+  }
+
   @override
   initState() {
     super.initState();
-    _startStream();
+    // _startStream();
   }
 
   Future<void> _startStream() async {
@@ -76,11 +125,17 @@ class _StreamScreenState extends State<StreamScreen> {
                     child: RTCVideoView(_renderer),
                   )
                 : const Text(''),
-            Text('Ready? $_ready'),
             const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
             PlatformElevatedButton(
               child: const Text('Start stream'),
               onPressed: () => _startStream(),
+            ),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            _imgLoaded ? Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3) : const Text(''),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            PlatformElevatedButton(
+              child: const Text('Get image'),
+              onPressed: () => _getImage(),
             )
           ],
         ),

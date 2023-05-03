@@ -39,10 +39,11 @@ class WebRtcPeerConnection {
         });
 
     ///create Peer;
-    final iceServers = additionalIceServers.toList().add({
-      'urls': 'stun:global.stun.twilio.com:3478?transport=udp',
-      'sdpSemantics': 'unified-plan',
-    });
+    final iceServers = additionalIceServers.toList()
+      ..add({
+        'urls': 'stun:global.stun.twilio.com:3478?transport=udp',
+        'sdpSemantics': 'unified-plan',
+      });
     final rtcConfig = {
       'iceServers': iceServers,
     };

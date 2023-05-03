@@ -146,7 +146,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                 context: context,
                                 builder: (context) {
                                   if (_isCamera(resourceName)) {
-                                    return StreamScreen(client: _getStream(resourceName), resourceName: resourceName);
+                                    return StreamScreen(
+                                        camera: Camera.fromRobot(_robot, resourceName.name),
+                                        client: _getStream(resourceName),
+                                        resourceName: resourceName);
                                   } else if (_isServo(resourceName)) {
                                     return ServoScreen(servo: Servo.fromRobot(_robot, resourceName.name), resourceName: resourceName);
                                   }

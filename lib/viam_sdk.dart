@@ -8,6 +8,8 @@ export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
 export 'src/components/base/base.dart';
 export 'src/components/base/client.dart';
+export 'src/components/camera/camera.dart';
+export 'src/components/camera/client.dart';
 export 'src/components/motor/client.dart';
 export 'src/components/motor/motor.dart';
 export 'src/components/movement_sensor/client.dart';
