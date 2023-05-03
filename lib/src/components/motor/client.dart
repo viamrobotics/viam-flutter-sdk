@@ -11,8 +11,8 @@ class MotorClient extends Motor {
   MotorClient(super.name, this._channel) : _client = MotorServiceClient(_channel);
 
   @override
-  Future<void> setPower(double powerPct, {Map<String, dynamic>? extra}) async {
-    await _client.setPower(SetPowerRequest(name: name, powerPct: powerPct, extra: extra?.toStruct()));
+  Future<void> setPower(double power, {Map<String, dynamic>? extra}) async {
+    await _client.setPower(SetPowerRequest(name: name, powerPct: power, extra: extra?.toStruct()));
   }
 
   @override
