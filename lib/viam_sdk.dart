@@ -45,7 +45,8 @@ export 'src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 // Proto
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
-// Media Streams
+// Media & Streams
+export 'src/media/image.dart';
 export 'src/media/stream/client.dart';
 // Robot, Resource, and Registry
 export 'src/resource/base.dart';
