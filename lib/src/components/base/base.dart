@@ -4,7 +4,7 @@ import 'package:viam_sdk/src/resource/base.dart';
 import '../../robot/client.dart';
 
 abstract class Base extends Resource {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, "base");
+  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'base');
 
   @override
   String name;

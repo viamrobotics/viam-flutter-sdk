@@ -4,10 +4,10 @@ import 'dart:async';
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/duration.pb.dart' as grpc_duration;
-import 'package:viam_sdk/src/gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
 import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/web_rtc_transport_stream.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/duration.pb.dart' as grpc_duration;
+import 'package:viam_sdk/src/gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
 
 class WebRtcClientConnection extends ClientConnection {
   final WebRtcClientChannel webRtcClientChannel;
@@ -15,13 +15,13 @@ class WebRtcClientConnection extends ClientConnection {
   WebRtcClientConnection(this.webRtcClientChannel);
 
   @override
-  String get authority => "";
+  String get authority => '';
 
   @override
   set onStateChanged(void Function(ConnectionState p1) cb) {}
 
   @override
-  String get scheme => "";
+  String get scheme => '';
 
   @override
   void dispatchCall(ClientCall<dynamic, dynamic> call) {
