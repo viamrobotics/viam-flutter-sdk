@@ -3,34 +3,89 @@ import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 
-enum MimeType {
-  viamRgba,
-  jpeg,
-  png,
-  pcd,
-  unsupported;
+class MimeType {
+  final String _type;
+  final String _name;
+  static final Map<String, MimeType> _map = {
+    'image/vnd.viam.rgba': MimeType.viamRgba,
+    'image/jpeg': MimeType.jpeg,
+    'image/png': MimeType.png,
+    'pointcloud/pcd': MimeType.pcd,
+  };
 
-  String get name {
-    switch (this) {
-      case viamRgba:
-        return 'image/vnd.viam.rgba';
-      case jpeg:
-        return 'image/jpeg';
-      case png:
-        return 'image/png';
-      case pcd:
-        return 'pointcloud/pcd';
-      case unsupported:
-        return 'unsupported';
-    }
-  }
+  /// The name of the MimeType, e.g. 'image/jpeg'
+  /// If the MimeType is not supported, then this [name] is the string of the unsupported MimeType.
+  String get name => _name;
+
+  const MimeType._(this._type, this._name);
+
+  static MimeType get viamRgba => MimeType._('viamRgba', 'image/vnd.viam.rgba');
+  static MimeType get jpeg => MimeType._('jpeg', 'image/jpeg');
+  static MimeType get png => MimeType._('png', 'image/png');
+  static MimeType get pcd => MimeType._('pcd', 'pointcloud/pcd');
+
+  /// An unsupported MimeType takes in the String representation of the mimetype that is not supported.
+  const MimeType.unsupported(this._name) : this._type = 'unsupported';
+
+  static MimeType fromString(String mimeType) => _map[mimeType] ?? MimeType.unsupported(mimeType);
 
   static bool isSupported(String mimeType) {
-    if (mimeType == 'unsupported') {
-      return false;
-    }
-    return MimeType.values.map((e) => e.name).contains(mimeType);
+    return _map.containsKey(mimeType);
   }
+
+  bool operator ==(covariant MimeType other) {
+    return _name == other._name;
+  }
+
+  int get hashCode => Object.hash(_type, _name);
+
+  img.Image? decode(List<int> bytes) {
+    img.Decoder? decoder;
+    switch (_type) {
+      case 'viamRgba':
+        decoder = ViamRGBADecoder();
+        break;
+      case 'jpeg':
+        decoder = img.JpegDecoder();
+        break;
+      case 'png':
+        decoder = img.PngDecoder();
+        break;
+      case 'pcd':
+        decoder = null;
+        break;
+      case 'unsupported':
+        decoder = null;
+        break;
+    }
+    if (decoder == null) {
+      return null;
+    }
+    return decoder.decode(Uint8List.fromList(bytes));
+  }
+}
+
+class ViamImage {
+  /// THe mimetype of the image
+  final MimeType mimeType;
+
+  /// The raw bytes of the image
+  final List<int> raw;
+
+  bool _imageDecoded = false;
+  img.Image? _image;
+
+  /// The decoded image, if available. If the [MimeType] is not supported, this will be null.
+  img.Image? get image {
+    if (_imageDecoded) {
+      return _image;
+    }
+    _image = this.mimeType.decode(this.raw);
+    _imageDecoded = true;
+    return _image;
+  }
+
+  ViamImage(this.raw, this.mimeType);
 }
 
 class ViamRGBAInfo extends img.DecodeInfo {

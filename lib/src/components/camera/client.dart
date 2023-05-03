@@ -1,7 +1,4 @@
-import 'dart:typed_data';
-
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:image/image.dart' as img;
 
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
 import '../../media/image.dart';
@@ -14,14 +11,10 @@ class CameraClient extends Camera {
   CameraClient(super.name, this._channel) : _client = CameraServiceClient(_channel);
 
   @override
-  Future<img.Image> getImage() async {
-    final request = GetImageRequest(name: name, mimeType: MimeType.viamRgba.name);
+  Future<ViamImage> getImage({MimeType? mimeType}) async {
+    final request = GetImageRequest(name: name, mimeType: mimeType?.name);
     final response = await _client.getImage(request);
-    final decoder = ViamRGBADecoder();
-    final image = decoder.decode(Uint8List.fromList(response.image));
-    if (image == null) {
-      return img.Image.empty();
-    }
-    return image;
+    final actualMimeType = MimeType.fromString(response.mimeType);
+    return ViamImage(response.image, actualMimeType);
   }
 }

@@ -37,7 +37,7 @@ class _StreamScreenState extends State<StreamScreen> {
     });
     final imageFut = widget.camera.getImage();
     imageFut.then((value) {
-      final convertFut = convertImageToFlutterUi(value);
+      final convertFut = convertImageToFlutterUi(value.image ?? img.Image.empty());
       convertFut.then((value) {
         final pngFut = value.toByteData(format: ui.ImageByteFormat.png);
         pngFut.then((value) => setState(() {

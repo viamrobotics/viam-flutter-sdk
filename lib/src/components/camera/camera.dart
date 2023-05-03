@@ -1,7 +1,6 @@
-import 'package:image/image.dart' as img;
-
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/camera/v1/camera.pb.dart';
+import '../../media/image.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -30,7 +29,7 @@ abstract class Camera extends Resource {
 
   // Future<void> getPointCloud();
 
-  Future<img.Image> getImage();
+  Future<ViamImage> getImage({MimeType? mimeType});
 
   static ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);
