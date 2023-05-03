@@ -15,7 +15,7 @@ class CameraProperties {
   /// The distortion parameters of the camera
   final DistortionParameters distortionParameters;
 
-  CameraProperties(this.supportsPcd, this.intrinsicParameters, this.distortionParameters);
+  const CameraProperties(this.supportsPcd, this.intrinsicParameters, this.distortionParameters);
 }
 
 /// Camera represents any physical hardware that can capture frames.
@@ -27,9 +27,14 @@ abstract class Camera extends Resource {
 
   Camera(this.name);
 
-  // Future<void> getPointCloud();
-
+  /// Get the next image from the camera.
   Future<ViamImage> getImage({MimeType? mimeType});
+
+  /// Get the next point cloud from the camera.
+  Future<ViamImage> getPointCloud();
+
+  /// Get the camera's intrinsic parameters and the camera's distortion parameters.
+  Future<CameraProperties> getProperties();
 
   static ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);

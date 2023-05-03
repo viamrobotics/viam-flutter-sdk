@@ -17,4 +17,19 @@ class CameraClient extends Camera {
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.image, actualMimeType);
   }
+
+  @override
+  Future<ViamImage> getPointCloud() async {
+    final request = GetPointCloudRequest(name: name, mimeType: MimeType.pcd.name);
+    final response = await _client.getPointCloud(request);
+    final actualMimeType = MimeType.fromString(response.mimeType);
+    return ViamImage(response.pointCloud, actualMimeType);
+  }
+
+  @override
+  Future<CameraProperties> getProperties() async {
+    final request = GetPropertiesRequest(name: name);
+    final response = await _client.getProperties(request);
+    return CameraProperties(response.supportsPcd, response.intrinsicParameters, response.distortionParameters);
+  }
 }

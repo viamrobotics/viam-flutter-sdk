@@ -43,7 +43,7 @@ class MimeType {
     img.Decoder? decoder;
     switch (_type) {
       case 'viamRgba':
-        decoder = ViamRGBADecoder();
+        decoder = _ViamRGBADecoder();
         break;
       case 'jpeg':
         decoder = img.JpegDecoder();
@@ -88,7 +88,7 @@ class ViamImage {
   ViamImage(this.raw, this.mimeType);
 }
 
-class ViamRGBAInfo extends img.DecodeInfo {
+class _ViamRGBAInfo extends img.DecodeInfo {
   @override
   img.Color? get backgroundColor => null;
 
@@ -102,11 +102,11 @@ class ViamRGBAInfo extends img.DecodeInfo {
   int width = 0;
 }
 
-class ViamRGBADecoder extends img.Decoder {
-  final _info = ViamRGBAInfo();
+class _ViamRGBADecoder extends img.Decoder {
+  final _info = _ViamRGBAInfo();
   late img.InputBuffer _input;
 
-  ViamRGBAInfo get info => _info;
+  _ViamRGBAInfo get info => _info;
 
   @override
   img.Image? decode(Uint8List bytes, {int? frame}) {
