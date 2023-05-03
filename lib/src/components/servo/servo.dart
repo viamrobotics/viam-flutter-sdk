@@ -33,7 +33,7 @@ abstract class Servo extends Resource {
   /// Get if the [Servo] is currently moving.
   ///
   /// Returns:
-  ///     bool: Whether the servo is moving
+  ///     bool: Whether the servo is moving.
   Future<bool> isMoving();
 
   static ResourceName getResourceName(String name) {
