@@ -1,8 +1,8 @@
 import 'package:viam_sdk/src/proto/common.dart';
 
-const String ResourceNamespaceRDK = "rdk";
-const String ResourceTypeComponent = "component";
-const String ResourceTypeService = "service";
+const String ResourceNamespaceRDK = 'rdk';
+const String ResourceTypeComponent = 'component';
+const String ResourceTypeService = 'service';
 
 class Subtype {
   final String namespace, resourceType, resourceSubtype;
@@ -19,7 +19,7 @@ class Subtype {
   }
 
   @override
-  String toString() => "${namespace}:${resourceType}:${resourceSubtype}";
+  String toString() => '${namespace}:${resourceType}:${resourceSubtype}';
 
   @override
   int get hashCode => Object.hash(namespace, resourceType, resourceSubtype);

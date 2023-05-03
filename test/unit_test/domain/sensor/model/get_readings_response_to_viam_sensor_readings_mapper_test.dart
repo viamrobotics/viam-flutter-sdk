@@ -7,7 +7,7 @@ import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pb.dart';
 
 void main() {
   group('When map from GetReadingsResponse to ViamSensorReadings', () {
-    test("mapper return correct values ", () {
+    test('mapper return correct values ', () {
       final dto = Readings(
         name: ResourceName(
           namespace: 'namespace',
