@@ -113,6 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _isNavigable(ResourceName rname) {
     return [
       Camera.subtype.resourceSubtype,
+      Motor.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
       Servo.subtype.resourceSubtype,
@@ -122,6 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget? _getScreen(ResourceName rname) {
     if (!_isNavigable(rname)) {
       return null;
+    }
+    if (rname.subtype == Motor.subtype.resourceSubtype) {
+      return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Camera.subtype.resourceSubtype) {
       return StreamScreen(

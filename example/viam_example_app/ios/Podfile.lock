@@ -6,15 +6,15 @@ PODS:
     - Auth0 (~> 2.3)
     - Flutter
   - Flutter (1.0.0)
-  - flutter_webrtc (0.9.20):
+  - flutter_webrtc (0.9.25):
     - Flutter
-    - WebRTC-SDK (= 104.5112.09)
+    - WebRTC-SDK (= 104.5112.16)
   - JWTDecode (3.0.1)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
   - SimpleKeychain (1.0.1)
-  - WebRTC-SDK (104.5112.09)
+  - WebRTC-SDK (104.5112.16)
 
 DEPENDENCIES:
   - auth0_flutter (from `.symlinks/plugins/auth0_flutter/ios`)
@@ -43,12 +43,12 @@ SPEC CHECKSUMS:
   Auth0: 64da28fdc5cd499aa516dc4bfd0ace8efae2c1da
   auth0_flutter: 2db6426f2a0489ff64318a0d2602a54aa9eef796
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_webrtc: 15c5fb4ea324f3178ff97c0f02b9467b85977e42
+  flutter_webrtc: ae7ab6f74d3c4f186594a74863f11433e7ab148a
   JWTDecode: 2eed97c2fa46ccaf3049a787004eedf0be474a87
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   SimpleKeychain: 130211269f88f038d7dc5254cf0b1b9ce978c398
-  WebRTC-SDK: 3fa5c6fa717314fade68bffed85737484a28ad0b
+  WebRTC-SDK: 566e58d2916cb79d770350169a449ea523f5db7c
 
-PODFILE CHECKSUM: 775997f741c536251164e3eacf6e34abf2eb7a17
+PODFILE CHECKSUM: 57c8aed26fba39d3ec9424816221f294a07c58eb
 
 COCOAPODS: 1.12.1
