@@ -8,6 +8,8 @@ export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
 export 'src/components/base/base.dart';
 export 'src/components/base/client.dart';
+export 'src/components/camera/camera.dart';
+export 'src/components/camera/client.dart';
 export 'src/components/motor/client.dart';
 export 'src/components/motor/motor.dart';
 export 'src/components/movement_sensor/client.dart';
@@ -43,7 +45,8 @@ export 'src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 // Proto
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
-// Media Streams
+// Media & Streams
+export 'src/media/image.dart';
 export 'src/media/stream/client.dart';
 // Robot, Resource, and Registry
 export 'src/resource/base.dart';

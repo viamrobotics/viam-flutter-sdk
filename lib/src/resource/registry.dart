@@ -3,6 +3,8 @@ import 'package:viam_sdk/src/components/arm/arm.dart';
 import 'package:viam_sdk/src/components/arm/client.dart';
 import 'package:viam_sdk/src/components/base/base.dart';
 import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/components/camera/camera.dart';
+import 'package:viam_sdk/src/components/camera/client.dart';
 import 'package:viam_sdk/src/components/motor/client.dart';
 import 'package:viam_sdk/src/components/motor/motor.dart';
 import 'package:viam_sdk/src/components/movement_sensor/client.dart';
@@ -26,10 +28,11 @@ class Registry {
     // Register built-in types
     this.registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
+    this.registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
+    this.registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
   }
 
   final Map<Subtype, ResourceRegistration> subtypes = {};

@@ -102,22 +102,34 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  //TODO refactor to make all _is methods the same
-
-  bool _isCamera(ResourceName rn) {
-    return rn.subtype == 'camera';
-  }
-
-  bool _isSensor(ResourceName rn) {
-    return rn.subtype == Sensor.subtype.resourceSubtype || rn.subtype == MovementSensor.subtype.resourceSubtype;
-  }
-
-  bool _isServo(ResourceName rn) {
-    return rn.subtype == Servo.subtype.resourceSubtype;
-  }
-
   StreamClient _getStream(ResourceName name) {
     return _robot.getStream(name.name);
+  }
+
+  bool _isNavigable(ResourceName rname) {
+    return [
+      Camera.subtype.resourceSubtype,
+      MovementSensor.subtype.resourceSubtype,
+      Sensor.subtype.resourceSubtype,
+      Servo.subtype.resourceSubtype,
+    ].contains(rname.subtype);
+  }
+
+  Widget? _getScreen(ResourceName rname) {
+    if (!_isNavigable(rname)) {
+      return null;
+    }
+    if (rname.subtype == Camera.subtype.resourceSubtype) {
+      return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
+    }
+    if (rname.subtype == Servo.subtype.resourceSubtype) {
+      return ServoScreen(servo: Servo.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    return SensorScreen(
+        sensor: rname.subtype == Sensor.subtype.resourceSubtype
+            ? Sensor.fromRobot(_robot, rname.name)
+            : MovementSensor.fromRobot(_robot, rname.name),
+        resourceName: rname);
   }
 
   @override
@@ -136,26 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   PlatformListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isSensor(resourceName) || _isCamera(resourceName) || _isServo(resourceName)
-                        ? Icon(context.platformIcons.rightChevron)
-                        : null,
-                    onTap: () => _isSensor(resourceName) || _isCamera(resourceName) || _isServo(resourceName)
-                        ? Navigator.push(
-                            context,
-                            platformPageRoute(
-                                context: context,
-                                builder: (context) {
-                                  if (_isCamera(resourceName)) {
-                                    return StreamScreen(client: _getStream(resourceName), resourceName: resourceName);
-                                  } else if (_isServo(resourceName)) {
-                                    return ServoScreen(servo: Servo.fromRobot(_robot, resourceName.name), resourceName: resourceName);
-                                  }
-                                  return SensorScreen(
-                                      sensor: resourceName.subtype == Sensor.subtype.resourceSubtype
-                                          ? Sensor.fromRobot(_robot, resourceName.name)
-                                          : MovementSensor.fromRobot(_robot, resourceName.name),
-                                      resourceName: resourceName);
-                                }))
+                    trailing: _isNavigable(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
+                    onTap: () => _isNavigable(resourceName)
+                        ? Navigator.push(context, platformPageRoute(context: context, builder: (context) => _getScreen(resourceName)!))
                         : null,
                   ),
                   const Divider(height: 0, indent: 0, endIndent: 0)
