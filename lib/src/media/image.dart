@@ -66,7 +66,7 @@ class MimeType {
 }
 
 class ViamImage {
-  /// THe mimetype of the image
+  /// The mimetype of the image
   final MimeType mimeType;
 
   /// The raw bytes of the image

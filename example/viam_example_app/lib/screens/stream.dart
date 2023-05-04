@@ -71,12 +71,6 @@ class _StreamScreenState extends State<StreamScreen> {
     return uiImage;
   }
 
-  @override
-  initState() {
-    super.initState();
-    // _startStream();
-  }
-
   Future<void> _startStream() async {
     if (_ready) {
       return;
@@ -112,12 +106,12 @@ class _StreamScreenState extends State<StreamScreen> {
       body: Center(
         child: Column(
           children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            const SizedBox(height: 16),
             PlatformText(
               '${widget.resourceName.namespace}:${widget.resourceName.type}:${widget.resourceName.subtype}/${widget.resourceName.name}',
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            const SizedBox(height: 16),
             // _ready ? RTCVideoView(_renderer) : PlatformCircularProgressIndicator(),
             _ready
                 ? Container(
@@ -125,14 +119,14 @@ class _StreamScreenState extends State<StreamScreen> {
                     child: RTCVideoView(_renderer),
                   )
                 : const Text(''),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            const SizedBox(height: 16),
             PlatformElevatedButton(
               child: const Text('Start stream'),
               onPressed: () => _startStream(),
             ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            const SizedBox(height: 16),
             _imgLoaded ? Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3) : const Text(''),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+            const SizedBox(height: 16),
             PlatformElevatedButton(
               child: const Text('Get image'),
               onPressed: () => _getImage(),

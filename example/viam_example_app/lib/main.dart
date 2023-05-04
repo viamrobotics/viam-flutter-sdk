@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _robot.getStream(name.name);
   }
 
-  bool _isImplemented(ResourceName rname) {
+  bool _isNavigable(ResourceName rname) {
     return [
       Camera.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget? _getScreen(ResourceName rname) {
-    if (!_isImplemented(rname)) {
+    if (!_isNavigable(rname)) {
       return null;
     }
     if (rname.subtype == Camera.subtype.resourceSubtype) {
@@ -148,8 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   PlatformListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isImplemented(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
-                    onTap: () => _isImplemented(resourceName)
+                    trailing: _isNavigable(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
+                    onTap: () => _isNavigable(resourceName)
                         ? Navigator.push(context, platformPageRoute(context: context, builder: (context) => _getScreen(resourceName)!))
                         : null,
                   ),
