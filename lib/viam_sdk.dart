@@ -16,6 +16,7 @@ export 'src/domain/app/model/viam_location_organization.dart';
 export 'src/domain/app/model/viam_shared_secret.dart';
 export 'src/domain/app/model/viam_shared_secret_state.dart';
 export 'src/domain/app/model/viam_robot.dart';
+export 'src/domain/app/model/viam_robot_part.dart';
 export 'src/domain/data/models/viam_binary_data_response.dart';
 export 'src/domain/data/models/viam_capture_interval.dart';
 export 'src/domain/data/models/viam_data_request.dart';
