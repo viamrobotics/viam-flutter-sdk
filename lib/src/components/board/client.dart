@@ -1,4 +1,6 @@
+import 'package:fixnum/src/int64.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/duration.pb.dart' as grpc_duration;
 
 import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../utils.dart';
@@ -11,7 +13,64 @@ class BoardClient extends Board {
   BoardClient(super.name, this._channel) : _client = BoardServiceClient(_channel);
 
   @override
+  Future<BoardStatus> status({Map<String, dynamic>? extra}) async {
+    var response = await _client.status(StatusRequest(name: name, extra: extra?.toStruct()));
+    return BoardStatus.fromProto(response.status);
+  }
+
+  @override
   Future<void> setGPIO(String pin, bool high, {Map<String, dynamic>? extra}) async {
     await _client.setGPIO(SetGPIORequest(name: name, pin: pin, high: high, extra: extra?.toStruct()));
+  }
+
+  @override
+  Future<bool> getGPIO(String pin, {Map<String, dynamic>? extra}) async {
+    var response = await _client.getGPIO(GetGPIORequest(name: name, extra: extra?.toStruct()));
+    return response.high;
+  }
+
+  @override
+  Future<double> pWM(String pin, {Map<String, dynamic>? extra}) async {
+    var response = await _client.pWM(PWMRequest(name: name, extra: extra?.toStruct()));
+    return response.dutyCyclePct;
+  }
+
+  @override
+  Future<void> setPWM(String pin, double dutyCyclePct, {Map<String, dynamic>? extra}) async {
+    await _client.setPWM(SetPWMRequest(name: name, pin: pin, dutyCyclePct: dutyCyclePct, extra: extra?.toStruct()));
+  }
+
+  @override
+  Future<int> pWMFrequency({Map<String, dynamic>? extra}) async {
+    var response = await _client.pWMFrequency(PWMFrequencyRequest(name: name, extra: extra?.toStruct()));
+    return response.frequencyHz as int;
+  }
+
+  @override
+  Future<void> setPWMFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra}) async {
+    await _client.setPWMFrequency(SetPWMFrequencyRequest(name: name, pin: pin, frequencyHz: Int64(frequencyHz), extra: extra?.toStruct()));
+  }
+
+  @override
+  Future<int> readAnalogReader(String analogReaderName, {Map<String, dynamic>? extra}) async {
+    var response = await _client
+        .readAnalogReader(ReadAnalogReaderRequest(boardName: name, analogReaderName: analogReaderName, extra: extra?.toStruct()));
+    return response.value;
+  }
+
+  @override
+  Future<int> getDigitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra}) async {
+    var response = await _client.getDigitalInterruptValue(
+        GetDigitalInterruptValueRequest(boardName: name, digitalInterruptName: digitalInterruptName, extra: extra?.toStruct()));
+    return response.value as int;
+  }
+
+  @override
+  Future<void> setPowerMode(ViamPowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra}) async {
+    await _client.setPowerMode(SetPowerModeRequest(
+        name: name,
+        powerMode: PowerMode.valueOf(powerMode.index),
+        duration: grpc_duration.Duration(seconds: Int64(seconds), nanos: nanos),
+        extra: extra?.toStruct()));
   }
 }
