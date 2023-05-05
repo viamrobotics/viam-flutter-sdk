@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:viam_example_app/screens/board.dart';
 import 'package:viam_example_app/screens/sensor.dart';
 import 'package:viam_example_app/screens/servo.dart';
 import 'package:viam_example_app/screens/stream.dart';
@@ -108,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool _isNavigable(ResourceName rname) {
     return [
+      Board.subtype.resourceSubtype,
       Camera.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
@@ -118,6 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget? _getScreen(ResourceName rname) {
     if (!_isNavigable(rname)) {
       return null;
+    }
+    if (rname.subtype == Board.subtype.resourceSubtype) {
+      return BoardScreen(board: Board.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Camera.subtype.resourceSubtype) {
       return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
