@@ -12,7 +12,7 @@ class BoardStatus {
   factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
     BoardStatus boardStatus = BoardStatus(Map<String, int>(), Map<String, int>());
     pbBoardStatus.analogs.forEach((key, value) => boardStatus.analogs[key] = value.value);
-    pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = value.value.toInt());
+    pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value as int));
     return boardStatus;
   }
 }
