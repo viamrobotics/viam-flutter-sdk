@@ -92,10 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     robotFut.then((value) {
       _robot = value;
-      final services = _robot.resourceNames
-          .where((element) => element.type == ResourceTypeService);
-      final components = _robot.resourceNames
-          .where((element) => element.type == ResourceTypeComponent);
+      final services = _robot.resourceNames.where((element) => element.type == ResourceTypeService);
+      final components = _robot.resourceNames.where((element) => element.type == ResourceTypeComponent);
 
       setState(() {
         _loggedIn = true;
@@ -124,22 +122,14 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!_isNavigable(rname)) {
       return null;
     }
+    if (rname.subtype == Camera.subtype.resourceSubtype) {
+      return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
+    }
     if (rname.subtype == Motor.subtype.resourceSubtype) {
       return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
     }
-    if (rname.subtype == Camera.subtype.resourceSubtype) {
-      return StreamScreen(
-          camera: Camera.fromRobot(_robot, rname.name),
-          client: _getStream(rname),
-          resourceName: rname);
-    }
-    if (rname.subtype == Motor.subtype.resourceSubtype) {
-      return MotorScreen(
-          motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
-    }
     if (rname.subtype == Servo.subtype.resourceSubtype) {
-      return ServoScreen(
-          servo: Servo.fromRobot(_robot, rname.name), resourceName: rname);
+      return ServoScreen(servo: Servo.fromRobot(_robot, rname.name), resourceName: rname);
     }
     return SensorScreen(
         sensor: rname.subtype == Sensor.subtype.resourceSubtype
@@ -163,18 +153,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 return Column(children: [
                   PlatformListTile(
                     title: Text(resourceName.name),
-                    subtitle: Text(
-                        '${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isNavigable(resourceName)
-                        ? Icon(context.platformIcons.rightChevron)
-                        : null,
+                    subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
+                    trailing: _isNavigable(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
                     onTap: () => _isNavigable(resourceName)
-                        ? Navigator.push(
-                            context,
-                            platformPageRoute(
-                                context: context,
-                                builder: (context) =>
-                                    _getScreen(resourceName)!))
+                        ? Navigator.push(context, platformPageRoute(context: context, builder: (context) => _getScreen(resourceName)!))
                         : null,
                   ),
                   const Divider(height: 0, indent: 0, endIndent: 0)
@@ -187,15 +169,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   _loggedIn
-                      ? Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                              const Text('Resource Names: '),
-                              Text(_robot.resourceNames
-                                  .where((element) =>
-                                      element.type == ResourceTypeComponent)
-                                  .join('\n')),
-                            ])
+                      ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+                          const Text('Resource Names: '),
+                          Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join('\n')),
+                        ])
                       : _loading
                           ? PlatformCircularProgressIndicator()
                           : PlatformElevatedButton(
