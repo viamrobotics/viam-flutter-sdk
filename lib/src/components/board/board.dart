@@ -38,7 +38,7 @@ abstract class Board extends Resource {
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra});
 
   /// Get the high/low state of the given pin of a board.
-  Future<bool> isGpioHigh(String pin, {Map<String, dynamic>? extra});
+  Future<bool> gpio(String pin, {Map<String, dynamic>? extra});
 
   /// Get the duty cycle of the given pin of a board.
   Future<double> pwm(String pin, {Map<String, dynamic>? extra});

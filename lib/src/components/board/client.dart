@@ -24,7 +24,7 @@ class BoardClient extends Board {
   }
 
   @override
-  Future<bool> isGpioHigh(String pin, {Map<String, dynamic>? extra}) async {
+  Future<bool> gpio(String pin, {Map<String, dynamic>? extra}) async {
     var response = await _client.getGPIO(GetGPIORequest(name: name, extra: extra?.toStruct()));
     return response.high;
   }
