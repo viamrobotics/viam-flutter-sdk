@@ -12,54 +12,54 @@ class MovementSensorClient extends MovementSensor {
   MovementSensorClient(super.name, this._channel) : _client = MovementSensorServiceClient(_channel);
 
   @override
-  Future<Position> getPosition({Map<String, dynamic>? extra}) async {
+  Future<Position> position({Map<String, dynamic>? extra}) async {
     final response = await _client.getPosition(GetPositionRequest(name: name, extra: extra?.toStruct()));
     return Position(response.coordinate, response.altitudeMm);
   }
 
   @override
-  Future<Vector3> getLinearVelocity({Map<String, dynamic>? extra}) async {
+  Future<Vector3> linearVelocity({Map<String, dynamic>? extra}) async {
     final response = await _client.getLinearVelocity(GetLinearVelocityRequest(name: name, extra: extra?.toStruct()));
     return response.linearVelocity;
   }
 
   @override
-  Future<Vector3> getAngularVelocity({Map<String, dynamic>? extra}) async {
+  Future<Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
     final response = await _client.getAngularVelocity(GetAngularVelocityRequest(name: name, extra: extra?.toStruct()));
     return response.angularVelocity;
   }
 
   @override
-  Future<Vector3> getLinearAcceleration({Map<String, dynamic>? extra}) async {
+  Future<Vector3> linearAcceleration({Map<String, dynamic>? extra}) async {
     final response = await _client.getLinearAcceleration(GetLinearAccelerationRequest(name: name, extra: extra?.toStruct()));
     return response.linearAcceleration;
   }
 
   @override
-  Future<double> getCompassHeading({Map<String, dynamic>? extra}) async {
+  Future<double> compassHeading({Map<String, dynamic>? extra}) async {
     final response = await _client.getCompassHeading(GetCompassHeadingRequest(name: name, extra: extra?.toStruct()));
     return response.value;
   }
 
   @override
-  Future<Orientation> getOrientation({Map<String, dynamic>? extra}) async {
+  Future<Orientation> orientation({Map<String, dynamic>? extra}) async {
     final response = await _client.getOrientation(GetOrientationRequest(name: name, extra: extra?.toStruct()));
     return response.orientation;
   }
 
   @override
-  Future<Properties> getProperties({Map<String, dynamic>? extra}) async {
+  Future<Properties> properties({Map<String, dynamic>? extra}) async {
     return await _client.getProperties(GetPropertiesRequest(name: name, extra: extra?.toStruct()));
   }
 
   @override
-  Future<Map<String, double>> getAccuracy({Map<String, dynamic>? extra}) async {
+  Future<Map<String, double>> accuracy({Map<String, dynamic>? extra}) async {
     final response = await _client.getAccuracy(GetAccuracyRequest(name: name, extra: extra?.toStruct()));
     return response.accuracyMm;
   }
 
   @override
-  Future<Map<String, dynamic>> getReadings({Map<String, dynamic>? extra}) {
+  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) {
     return super.getReadings(extra: extra);
   }
 }
