@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:viam_example_app/screens/motor.dart';
 import 'package:viam_example_app/screens/sensor.dart';
 import 'package:viam_example_app/screens/servo.dart';
 import 'package:viam_example_app/screens/stream.dart';
@@ -86,7 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _loading = true;
     });
-    final robotFut = RobotClient.atAddress('<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
+    final robotFut = RobotClient.atAddress(
+        '<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
 
     robotFut.then((value) {
       _robot = value;
@@ -109,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _isNavigable(ResourceName rname) {
     return [
       Camera.subtype.resourceSubtype,
+      Motor.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
       Servo.subtype.resourceSubtype,
@@ -121,6 +124,9 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Camera.subtype.resourceSubtype) {
       return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
+    }
+    if (rname.subtype == Motor.subtype.resourceSubtype) {
+      return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Servo.subtype.resourceSubtype) {
       return ServoScreen(servo: Servo.fromRobot(_robot, rname.name), resourceName: rname);
