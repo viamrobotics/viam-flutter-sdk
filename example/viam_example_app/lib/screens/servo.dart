@@ -7,8 +7,7 @@ class ServoScreen extends StatefulWidget {
   final Servo servo;
   final ResourceName resourceName;
 
-  const ServoScreen({Key? key, required this.servo, required this.resourceName})
-      : super(key: key);
+  const ServoScreen({Key? key, required this.servo, required this.resourceName}) : super(key: key);
 
   @override
   State<ServoScreen> createState() {
@@ -28,7 +27,7 @@ class _ServoScreenState extends State<ServoScreen> {
   }
 
   void _getPosition() async {
-    angle = await widget.servo.getPosition();
+    angle = await widget.servo.position();
     setState(() {});
   }
 
@@ -57,8 +56,7 @@ class _ServoScreenState extends State<ServoScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
               PlatformText(
                 '${widget.resourceName.namespace}:${widget.resourceName.type}:${widget.resourceName.subtype}/${widget.resourceName.name}',
                 style: const TextStyle(fontWeight: FontWeight.w300),
@@ -72,8 +70,7 @@ class _ServoScreenState extends State<ServoScreen> {
               Row(
                 children: [
                   ElevatedButton(
-                    onPressed:
-                        (angle - 10 < 0) ? null : () => _move(angle - 10),
+                    onPressed: (angle - 10 < 0) ? null : () => _move(angle - 10),
                     child: const Text('-10'),
                   ),
                   const SizedBox(width: 16),
@@ -83,14 +80,12 @@ class _ServoScreenState extends State<ServoScreen> {
                   ),
                   const SizedBox(width: 16),
                   ElevatedButton(
-                    onPressed:
-                        (angle + 1 > 180) ? null : () => _move(angle + 1),
+                    onPressed: (angle + 1 > 180) ? null : () => _move(angle + 1),
                     child: const Text('1'),
                   ),
                   const SizedBox(width: 16),
                   ElevatedButton(
-                    onPressed:
-                        (angle + 10 > 180) ? null : () => _move(angle + 10),
+                    onPressed: (angle + 10 > 180) ? null : () => _move(angle + 10),
                     child: const Text('10'),
                   ),
                 ],
@@ -113,11 +108,7 @@ class _ServoScreenState extends State<ServoScreen> {
                   ),
                   const SizedBox(width: 16),
                   ElevatedButton(
-                    onPressed: (moveTo.isEmpty ||
-                            int.parse(moveTo) > 180 ||
-                            int.parse(moveTo) < 0)
-                        ? null
-                        : () => _move(int.parse(moveTo)),
+                    onPressed: (moveTo.isEmpty || int.parse(moveTo) > 180 || int.parse(moveTo) < 0) ? null : () => _move(int.parse(moveTo)),
                     child: const Text('Go'),
                   ),
                   const Spacer(),
@@ -127,9 +118,7 @@ class _ServoScreenState extends State<ServoScreen> {
               Row(
                 children: [
                   ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.red)),
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.red)),
                     onPressed: () => _stop(),
                     child: const Text('STOP'),
                   ),
