@@ -28,13 +28,13 @@ abstract class Camera extends Resource {
   Camera(this.name);
 
   /// Get the next image from the camera.
-  Future<ViamImage> getImage({MimeType? mimeType});
+  Future<ViamImage> image({MimeType? mimeType});
 
   /// Get the next point cloud from the camera.
-  Future<ViamImage> getPointCloud();
+  Future<ViamImage> pointCloud();
 
   /// Get the camera's intrinsic parameters and the camera's distortion parameters.
-  Future<CameraProperties> getProperties();
+  Future<CameraProperties> properties();
 
   static ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);

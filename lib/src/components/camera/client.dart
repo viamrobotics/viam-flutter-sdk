@@ -11,7 +11,7 @@ class CameraClient extends Camera {
   CameraClient(super.name, this._channel) : _client = CameraServiceClient(_channel);
 
   @override
-  Future<ViamImage> getImage({MimeType? mimeType}) async {
+  Future<ViamImage> image({MimeType? mimeType}) async {
     final request = GetImageRequest(name: name, mimeType: mimeType?.name);
     final response = await _client.getImage(request);
     final actualMimeType = MimeType.fromString(response.mimeType);
@@ -19,7 +19,7 @@ class CameraClient extends Camera {
   }
 
   @override
-  Future<ViamImage> getPointCloud() async {
+  Future<ViamImage> pointCloud() async {
     final request = GetPointCloudRequest(name: name, mimeType: MimeType.pcd.name);
     final response = await _client.getPointCloud(request);
     final actualMimeType = MimeType.fromString(response.mimeType);
@@ -27,7 +27,7 @@ class CameraClient extends Camera {
   }
 
   @override
-  Future<CameraProperties> getProperties() async {
+  Future<CameraProperties> properties() async {
     final request = GetPropertiesRequest(name: name);
     final response = await _client.getProperties(request);
     return CameraProperties(response.supportsPcd, response.intrinsicParameters, response.distortionParameters);
