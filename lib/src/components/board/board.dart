@@ -1,13 +1,14 @@
 import 'package:viam_sdk/src/resource/base.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
+import '../../gen/component/board/v1/board.pbenum.dart';
 import '../../robot/client.dart';
 
 class BoardStatus {
   final Map<String, int> analogs;
   final Map<String, int> digitalInterrupts;
 
-  BoardStatus(this.analogs, this.digitalInterrupts);
+  const BoardStatus(this.analogs, this.digitalInterrupts);
 
   factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
     BoardStatus boardStatus = BoardStatus(Map<String, int>(), Map<String, int>());
@@ -15,12 +16,6 @@ class BoardStatus {
     pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value as int));
     return boardStatus;
   }
-}
-
-enum ViamPowerMode {
-  POWER_MODE_UNSPECIFIED,
-  POWER_MODE_NORMAL,
-  POWER_MODE_OFFLINE_DEEP,
 }
 
 /// Board represents a physical general purpose compute board that contains various
@@ -40,33 +35,33 @@ abstract class Board extends Resource {
   Future<BoardStatus> status({Map<String, dynamic>? extra});
 
   /// Set the high/low state of the given pin of a board.
-  Future<void> setGPIO(String pin, bool high, {Map<String, dynamic>? extra});
+  Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra});
 
   /// Get the high/low state of the given pin of a board.
-  Future<bool> getGPIO(String pin, {Map<String, dynamic>? extra});
+  Future<bool> isGpioHigh(String pin, {Map<String, dynamic>? extra});
 
   /// Get the duty cycle of the given pin of a board.
-  Future<double> pWM(String pin, {Map<String, dynamic>? extra});
+  Future<double> pwm(String pin, {Map<String, dynamic>? extra});
 
   /// Set the duty cycle of the given pin of a board.
-  Future<void> setPWM(String pin, double dutyCyclePct, {Map<String, dynamic>? extra});
+  Future<void> setPwm(String pin, double dutyCyclePct, {Map<String, dynamic>? extra});
 
   /// Get the PWM frequency of the given pin of a board.
-  Future<int> pWMFrequency({Map<String, dynamic>? extra});
+  Future<int> pwmFrequency({Map<String, dynamic>? extra});
 
   /// Set the PWM frequency of the given pin of a board.
-  Future<void> setPWMFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});
+  Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});
 
   // TODO add doCommand()
 
   /// Read the current value of an analog reader of a board.
-  Future<int> readAnalogReader(String analogReaderName, {Map<String, dynamic>? extra});
+  Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra});
 
   /// Return the current value of the interrupt which is based on the type of Interrupt.
-  Future<int> getDigitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
+  Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
 
   /// Set the board to the indicated power mode.
-  Future<void> setPowerMode(ViamPowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});
+  Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});
 
   static common.ResourceName getResourceName(String name) {
     return Board.subtype.getResourceName(name);

@@ -18,11 +18,10 @@ class _BoardScreenState extends State<BoardScreen> {
   String getPin = '';
   String setPin = '';
   bool high = false;
-  late BoardStatus status = BoardStatus(Map<String, int>(), Map<String, int>());
+  late BoardStatus status = const BoardStatus(<String, int>{}, <String, int>{});
 
   Future<void> _fetchStatus() async {
     status = await widget.board.status();
-    print('${status.analogs.toString()}');
     setState(() {});
   }
 
@@ -88,7 +87,7 @@ class _BoardScreenState extends State<BoardScreen> {
             const SizedBox(height: 16),
             PlatformElevatedButton(
               child: const Text('Set Pin State'),
-              onPressed: () => widget.board.setGPIO(setPin, high),
+              onPressed: () => widget.board.setGpioState(setPin, high),
             )
           ],
         ),
