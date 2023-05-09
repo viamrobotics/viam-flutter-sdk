@@ -26,21 +26,21 @@ class _ServoScreenState extends State<ServoScreen> {
     super.initState();
   }
 
-  void _getPosition() async {
+  Future<void> _getPosition() async {
     angle = await widget.servo.position();
     setState(() {});
   }
 
-  void _move(int distance) async {
+  Future<void> _move(int distance) async {
     if (distance < 0 || distance > 180) return;
     await widget.servo.move(distance);
-    _getPosition();
+    await _getPosition();
     setState(() {});
   }
 
-  void _stop() async {
+  Future<void> _stop() async {
     await widget.servo.stop();
-    _getPosition();
+    await _getPosition();
     setState(() {});
   }
 
