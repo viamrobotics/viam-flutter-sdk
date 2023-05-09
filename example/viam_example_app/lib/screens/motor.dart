@@ -38,33 +38,29 @@ class _MotorScreenState extends State<MotorScreen> {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 16),
-            Column(
+            Text('Power %: $power'),
+            Slider(
+              value: power,
+              onChanged: (value) => setState(() {
+                power = value;
+              }),
+              max: 100,
+              min: -100,
+              divisions: 200,
+              label: '$power',
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Power %: $power'),
-                Slider(
-                  value: power,
-                  onChanged: (value) => setState(() {
-                    power = value;
-                  }),
-                  max: 100,
-                  min: -100,
-                  divisions: 200,
-                  label: '$power',
+                ElevatedButton(
+                  onPressed: () => moveMotor(power),
+                  child: const Text('Run'),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () => moveMotor(power),
-                      child: const Text('Run'),
-                    ),
-                    const SizedBox(width: 16),
-                    ElevatedButton(
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.red)),
-                      onPressed: () => widget.motor.stop(),
-                      child: const Text('Stop'),
-                    ),
-                  ],
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.red)),
+                  onPressed: () => widget.motor.stop(),
+                  child: const Text('Stop'),
                 ),
               ],
             ),
