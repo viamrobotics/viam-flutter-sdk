@@ -18,7 +18,7 @@ class _SensorScreenState extends State<SensorScreen> {
   Map<String, dynamic> readings = {};
 
   void _getReadings() {
-    final readingsFut = widget.sensor.getReadings();
+    final readingsFut = widget.sensor.readings();
     readingsFut.then((value) => setState(
           () {
             readings = value;

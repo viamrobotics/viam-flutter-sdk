@@ -12,7 +12,7 @@ abstract class Sensor extends Resource {
   Sensor(this.name);
 
   /// Obtain the measurements/data specific to this [Sensor]
-  Future<Map<String, dynamic>> getReadings({Map<String, dynamic>? extra});
+  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
   static ResourceName getResourceName(String name) {
     return Sensor.subtype.getResourceName(name);
