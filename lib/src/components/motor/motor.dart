@@ -58,17 +58,17 @@ abstract class Motor extends Resource {
   /// Report the position of the motor based on its encoder.
   /// The value returned is the number of revolutions relative to its zero position.
   /// This method will raise an exception if position reporting is not supported by the motor.
-  Future<double> getPosition({Map<String, dynamic>? extra});
+  Future<double> position({Map<String, dynamic>? extra});
 
   /// Report a dictionary mapping optional properties to
   /// whether it is supported by this motor.
-  Future<MotorProperties> getProperties({Map<String, dynamic>? extra});
+  Future<MotorProperties> properties({Map<String, dynamic>? extra});
 
   /// Stop the motor immediately, without any gradual step down.
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Returns whether or not the motor is currently running.
-  Future<PowerState> isPowered({Map<String, dynamic>? extra});
+  Future<PowerState> powerState({Map<String, dynamic>? extra});
 
   /// Get if the [Motor] is currently moving.
   Future<bool> isMoving({Map<String, dynamic>? extra});
