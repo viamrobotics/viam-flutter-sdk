@@ -1,4 +1,4 @@
-include: package:fluter_lints/flutter.yaml
+include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
@@ -11,19 +11,17 @@ linter:
     - avoid_slow_async_io
     - avoid_type_to_string
     - avoid_void_async
-    - camel_case_types
     - cancel_subscriptions
     - cast_nullable_to_non_nullable
     - close_sinks
-    - invariant_booleans
     - literal_only_boolean_expressions
     - no_adjacent_strings_in_list
     - only_throw_errors
+    - prefer_single_quotes
     - throw_in_finally
     - unawaited_futures
     - unnecessary_statements
     - unnecessary_await_in_return
-    - prefer_single_quotes
 
 analyzer:
   errors:
