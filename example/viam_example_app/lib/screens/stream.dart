@@ -35,7 +35,7 @@ class _StreamScreenState extends State<StreamScreen> {
     setState(() {
       _imgLoaded = false;
     });
-    final imageFut = widget.camera.getImage();
+    final imageFut = widget.camera.image();
     imageFut.then((value) {
       final convertFut = convertImageToFlutterUi(value.image ?? img.Image.empty());
       convertFut.then((value) {
@@ -89,7 +89,7 @@ class _StreamScreenState extends State<StreamScreen> {
   }
 
   @override
-  deactivate() {
+  void deactivate() {
     super.deactivate();
     _renderer.dispose();
     widget.client.remove(widget.resourceName.name);
