@@ -16,7 +16,7 @@ class ServoClient extends Servo {
   }
 
   @override
-  Future<int> getPosition({Map<String, dynamic>? extra}) async {
+  Future<int> position({Map<String, dynamic>? extra}) async {
     final response = await _client.getPosition(GetPositionRequest(name: name, extra: extra?.toStruct()));
     return response.positionDeg;
   }

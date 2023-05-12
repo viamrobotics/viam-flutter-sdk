@@ -19,7 +19,7 @@ abstract class Servo extends Resource {
   Future<void> move(int angle, {Map<String, dynamic>? extra});
 
   /// Get the current angle (degrees) of the [Servo].
-  Future<int> getPosition({Map<String, dynamic>? extra});
+  Future<int> position({Map<String, dynamic>? extra});
 
   /// Stop the [Servo]. It is assumed that the servo stops immediately.
   Future<void> stop({Map<String, dynamic>? extra});
