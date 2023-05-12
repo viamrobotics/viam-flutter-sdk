@@ -3,6 +3,8 @@ import 'package:viam_sdk/src/components/arm/arm.dart';
 import 'package:viam_sdk/src/components/arm/client.dart';
 import 'package:viam_sdk/src/components/base/base.dart';
 import 'package:viam_sdk/src/components/base/client.dart';
+import 'package:viam_sdk/src/components/board/board.dart';
+import 'package:viam_sdk/src/components/board/client.dart';
 import 'package:viam_sdk/src/components/camera/camera.dart';
 import 'package:viam_sdk/src/components/camera/client.dart';
 import 'package:viam_sdk/src/components/motor/client.dart';
@@ -27,6 +29,7 @@ class Registry {
   Registry._() {
     // Register built-in types
     this.registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
+    this.registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
     this.registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
