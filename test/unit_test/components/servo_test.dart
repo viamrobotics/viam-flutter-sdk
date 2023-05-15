@@ -11,6 +11,7 @@ class FakeServo extends Fake implements Servo {
   bool isStopped = true;
   Map<String, dynamic>? extra;
 
+  @override
   final String name;
 
   FakeServo(this.name);
@@ -23,7 +24,7 @@ class FakeServo extends Fake implements Servo {
   }
 
   @override
-  Future<int> getPosition({Map<String, dynamic>? extra}) async {
+  Future<int> position({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return angle;
   }
@@ -44,7 +45,7 @@ void main() {
   group('FakeServo Tests', () {
     late FakeServo servo;
     late String name;
-    final int testPosition = 42;
+    const int testPosition = 42;
     setUp(() {
       name = 'servo';
       servo = FakeServo(name);
@@ -79,7 +80,7 @@ void main() {
     });
 
     test('getPosition should return the angle', () async {
-      int testResult = await servo.getPosition();
+      int testResult = await servo.position();
       expect(testResult, servo.angle);
     });
 
@@ -95,7 +96,7 @@ void main() {
     late ServoService service;
     late Server server;
     late String name;
-    final int testPosition = 42;
+    const int testPosition = 42;
 
     setUp(() async {
       name = 'servo';
@@ -109,7 +110,7 @@ void main() {
         'localhost',
         port: 50051,
         options: ChannelOptions(
-          credentials: ChannelCredentials.insecure(),
+          credentials: const ChannelCredentials.insecure(),
           codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
         ),
       );
@@ -120,7 +121,6 @@ void main() {
         CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
       );
       await server.serve(port: 50051);
-      print('Servo Server listening on port ${server.port}...');
     });
 
     tearDown(() async {
@@ -165,7 +165,7 @@ void main() {
     late ServoService service;
     late Server server;
     late String name;
-    final int testPosition = 42;
+    const int testPosition = 42;
     setUp(() async {
       name = 'servo';
       servo = FakeServo(name);
@@ -177,7 +177,7 @@ void main() {
         'localhost',
         port: 50051,
         options: ChannelOptions(
-          credentials: ChannelCredentials.insecure(),
+          credentials: const ChannelCredentials.insecure(),
           codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
         ),
       );
@@ -188,7 +188,6 @@ void main() {
         CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
       );
       await server.serve(port: 50051);
-      print('Servo Server listening on port ${server.port}...');
     });
 
     tearDown(() async {
@@ -204,7 +203,7 @@ void main() {
 
     test('getPosition should return the servos angle', () async {
       ServoClient client = ServoClient(servo.name, channel);
-      final response = await client.getPosition();
+      final response = await client.position();
       expect(response, servo.angle);
     });
 

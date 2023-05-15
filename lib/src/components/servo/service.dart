@@ -36,7 +36,7 @@ class ServoService extends ServoServiceBase {
   @override
   Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     Servo servo = _servoFromManager(request.name);
-    final int positionDeg = await servo.getPosition(extra: request.extra.toMap());
+    final int positionDeg = await servo.position(extra: request.extra.toMap());
     return GetPositionResponse(positionDeg: positionDeg);
   }
 
