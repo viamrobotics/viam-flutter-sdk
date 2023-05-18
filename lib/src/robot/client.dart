@@ -3,8 +3,6 @@ import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
-import '../media/stream/client.dart';
-
 class RobotClientOptions {
   bool disableWebRtc = false;
   String locationSecret;
@@ -27,10 +25,13 @@ class RobotClient {
 
   static Future<RobotClient> atAddress(String url, int port, RobotClientOptions options) async {
     var client = RobotClient._();
-    client.viam = Viam.instance();
-    await client.viam
-        .connect(url: url, port: port, secure: !options.insecure, disableWebRtc: options.disableWebRtc, payload: options.locationSecret);
-    client.channel = client.viam.channel;
+    // client.viam = Viam.instance();
+    // await client.viam
+    //     .connect(url: url, port: port, secure: !options.insecure, disableWebRtc: options.disableWebRtc, payload: options.locationSecret);
+    final webrtcOpts = DialWebRtcOptions()..disable = options.disableWebRtc;
+    final opts = DialOptions()..credentials = Credentials('robot-location-secret', options.locationSecret);
+    client.channel = await dial(url, opts);
+    // client.channel = client.viam.channel;
     client._client = RobotServiceClient(client.channel);
     await client.refresh();
     return client;
