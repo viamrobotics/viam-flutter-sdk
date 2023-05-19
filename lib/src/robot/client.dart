@@ -1,16 +1,20 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
-import 'package:viam_sdk/src/resource/manager.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+
+import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
+import '../gen/common/v1/common.pb.dart';
+import '../gen/robot/v1/robot.pbgrpc.dart';
+import '../media/stream/client.dart';
+import '../resource/base.dart';
+import '../resource/manager.dart';
+import '../resource/registry.dart';
+import '../rpc/dial.dart';
+import '../viam_sdk.dart';
 
 class RobotClientOptions {
-  bool disableWebRtc = false;
-  String locationSecret;
-  bool insecure = false;
+  DialOptions dialOptions;
 
-  RobotClientOptions(this.disableWebRtc, this.insecure, this.locationSecret);
-
-  RobotClientOptions.withSecret(this.locationSecret);
+  RobotClientOptions.withLocationSecret(String locationSecret)
+      : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
 }
 
 class RobotClient {
@@ -18,20 +22,14 @@ class RobotClient {
   late RobotServiceClient _client;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
-  Map<String, StreamClient> _streams = {};
-  late Viam viam;
+  final Map<String, StreamClient> _streams = {};
+  Viam? viam;
 
   RobotClient._();
 
-  static Future<RobotClient> atAddress(String url, int port, RobotClientOptions options) async {
+  static Future<RobotClient> atAddress(String url, RobotClientOptions options) async {
     var client = RobotClient._();
-    // client.viam = Viam.instance();
-    // await client.viam
-    //     .connect(url: url, port: port, secure: !options.insecure, disableWebRtc: options.disableWebRtc, payload: options.locationSecret);
-    final webrtcOpts = DialWebRtcOptions()..disable = options.disableWebRtc;
-    final opts = DialOptions()..credentials = Credentials('robot-location-secret', options.locationSecret);
-    client.channel = await dial(url, opts);
-    // client.channel = client.viam.channel;
+    client.channel = await dial(url, options.dialOptions);
     client._client = RobotServiceClient(client.channel);
     await client.refresh();
     return client;

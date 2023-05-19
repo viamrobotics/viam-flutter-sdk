@@ -11,7 +11,6 @@ class StreamClient {
   // ignore: close_sinks
   final StreamController<MediaStream> _streamController = StreamController<MediaStream>.broadcast();
   MediaStream? _stream;
-  // final Map<String, StreamController<MediaStream>> _streams = {};
   StreamSubscription? _errorHandler;
 
   StreamClient(this._channel) : _client = StreamServiceClient(_channel) {
@@ -44,14 +43,13 @@ class StreamClient {
     return _streamController.stream;
   }
 
-  @override
   Future<void> add(String name) async {
     await _client.addStream(AddStreamRequest(name: _getValidSDPTrackName(name)));
   }
 
-  @override
   Future<void> remove(String name) async {
     await _client.removeStream(RemoveStreamRequest(name: _getValidSDPTrackName(name)));
     _stream = null;
+    await _errorHandler?.cancel();
   }
 }

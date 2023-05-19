@@ -118,8 +118,6 @@ class _ViamRGBADecoder extends img.Decoder {
 
   @override
   img.Image? decodeFrame(int frame) {
-    Uint8List imageData;
-
     final image = img.Image(
       width: info.width,
       height: info.height,

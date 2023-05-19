@@ -113,13 +113,8 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
   _logger.d('Connecting to signaling server: $signalingServer');
   final signalingChannel = await _dialDirectGrpc(signalingServer, options);
   _logger.d('Connected to signaling server: $signalingServer');
-  final signalingClient = SignalingServiceClient(signalingChannel);
-  final callOptions = CallOptions(metadata: {"rpc-host": address});
-  final config = (await signalingClient.optionalWebRTCConfig(
-    OptionalWebRTCConfigRequest(),
-    options: callOptions,
-  ))
-      .config;
+  final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {"rpc-host": address}));
+  final config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
   final iceServers = config.additionalIceServers
       .map((e) => {
             'urls': e.urls,
@@ -171,7 +166,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
           sdpMid: candidate.sdpMid,
           sdpmLineIndex: candidate.sdpMLineIndex,
         );
-        await signalingClient.callUpdate(CallUpdateRequest(uuid: uuid, candidate: candidateProto), options: callOptions);
+        await signalingClient.callUpdate(CallUpdateRequest(uuid: uuid, candidate: candidateProto));
       } catch (error, st) {
         //TODO: Add error handling
         _logger.e('Update ICECandidate error', error, st);
@@ -220,9 +215,8 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
   final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
   final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
   try {
-    callStream = signalingClient.call(
-        CallRequest(sdp: encodedSdp, disableTrickle: options?.webRtcOptions?.disableTrickleIce ?? config.disableTrickle),
-        options: callOptions);
+    callStream = signalingClient
+        .call(CallRequest(sdp: encodedSdp, disableTrickle: options?.webRtcOptions?.disableTrickleIce ?? config.disableTrickle));
   } catch (error, st) {
     //TODO: Add error handling
     _logger.e('Get call stream error', error, st);
@@ -282,7 +276,12 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
     }
   };
 
-  await didConnect.future;
+  try {
+    await didConnect.future;
+  } catch (error, st) {
+    _logger.e('Could not connect via WebRTC', error, st);
+    rethrow;
+  }
   return WebRtcClientChannel(peerConnection, dataChannel);
 }
 

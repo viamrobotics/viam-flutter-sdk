@@ -89,7 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _loading = true;
     });
     final robotFut = RobotClient.atAddress(
-        '<URL>', 443, RobotClientOptions.withSecret('<SECRET>'));
+      '<URL>',
+      RobotClientOptions.withLocationSecret('<SECRET>'),
+    );
 
     robotFut.then((value) {
       _robot = value;
