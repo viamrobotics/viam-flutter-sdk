@@ -23,7 +23,6 @@ class RobotClient {
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
   final Map<String, StreamClient> _streams = {};
-  Viam? viam;
 
   RobotClient._();
 
@@ -37,7 +36,6 @@ class RobotClient {
 
   static Future<RobotClient> withViam(Viam viam) async {
     var client = RobotClient._();
-    client.viam = viam;
     client.channel = viam.channel;
     client._client = RobotServiceClient(client.channel);
     await client.refresh();
@@ -45,8 +43,8 @@ class RobotClient {
   }
 
   Future<void> refresh() async {
-    ResourceNamesResponse response = await this._client.resourceNames(ResourceNamesRequest());
-    if (response.resources == this.resourceNames) {
+    ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
+    if (response.resources == resourceNames) {
       return;
     }
     final manager = ResourceManager();
@@ -63,14 +61,14 @@ class RobotClient {
         continue;
       }
     }
-    this.resourceNames = response.resources;
-    if (this._manager.resources != manager.resources) {
-      this._manager = manager;
+    resourceNames = response.resources;
+    if (_manager.resources != manager.resources) {
+      _manager = manager;
     }
   }
 
   T getResource<T>(ResourceName name) {
-    return this._manager.getResource<T>(name);
+    return _manager.getResource<T>(name);
   }
 
   StreamClient getStream(String name) {

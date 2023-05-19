@@ -1,7 +1,7 @@
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
-import './web_rtc_client_connection.dart';
+import 'web_rtc_client_connection.dart';
 
 class WebRtcClientChannel extends ClientChannelBase {
   final RTCPeerConnection rtcPeerConnection;

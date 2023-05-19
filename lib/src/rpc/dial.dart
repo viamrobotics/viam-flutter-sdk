@@ -10,6 +10,7 @@ import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import '../gen/proto/rpc/v1/auth.pb.dart' as pb;
 import '../gen/proto/rpc/v1/auth.pbgrpc.dart';
 import '../gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart';
+import '../utils.dart';
 
 final _logger = Logger();
 
@@ -84,32 +85,32 @@ class DialWebRtcOptions {
 }
 
 Future<ClientChannelBase> dial(String address, DialOptions? options) async {
+  final opts = options ?? DialOptions();
   _logger.i('Connecting to Robot at $address');
-  if (options?.webRtcOptions?.disable ?? false) {
-    return _dialDirectGrpc(address, options);
+  if (opts.webRtcOptions?.disable ?? false) {
+    return _dialDirectGrpc(address, opts);
   }
-  return _dialWebRtc(address, options);
+  return _dialWebRtc(address, opts);
 }
 
-Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions? options) async {
+Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options) async {
   _logger.d('Dialing direct GRPC to $address');
   return _authenticatedChannel(address, options);
 }
 
-Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) async {
+Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async {
   _logger.d('Dialing WebRTC to $address');
-  DialOptions? opts = options;
-  if ((opts?.authEntity ?? '').isEmpty) {
-    if ((opts?.externalAuthAddress ?? '').isEmpty) {
+  if (options.authEntity.isNullOrEmpty) {
+    if (options.externalAuthAddress.isNullOrEmpty) {
       _logger.d('Auth entity is empty, setting to host: $address');
-      opts?.authEntity = address;
+      options.authEntity = address;
     } else {
-      _logger.d('Auth entity is empty, setting to external auth address: ${opts?.externalAuthAddress}');
-      opts?.authEntity = opts.externalAuthAddress;
+      _logger.d('Auth entity is empty, setting to external auth address: ${options.externalAuthAddress}');
+      options.authEntity = options.externalAuthAddress;
     }
   }
 
-  final signalingServer = options?.webRtcOptions?.signalingServerAddress ?? 'app.viam.com';
+  final signalingServer = options.webRtcOptions?.signalingServerAddress ?? 'app.viam.com';
   _logger.d('Connecting to signaling server: $signalingServer');
   final signalingChannel = await _dialDirectGrpc(signalingServer, options);
   _logger.d('Connected to signaling server: $signalingServer');
@@ -151,7 +152,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
   final didSetRemoteDesc = Completer();
 
   // If tickleICE is enabled, set onIceCandidate handler
-  if (!(options?.webRtcOptions?.disableTrickleIce ?? config.disableTrickle)) {
+  if (!(options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle)) {
     final offer = await peerConnection.createOffer();
 
     peerConnection.onIceCandidate = (RTCIceCandidate candidate) async {
@@ -216,7 +217,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
   final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
   try {
     callStream = signalingClient
-        .call(CallRequest(sdp: encodedSdp, disableTrickle: options?.webRtcOptions?.disableTrickleIce ?? config.disableTrickle));
+        .call(CallRequest(sdp: encodedSdp, disableTrickle: options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle));
   } catch (error, st) {
     //TODO: Add error handling
     _logger.e('Get call stream error', error, st);
@@ -253,13 +254,11 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions? options) asyn
         throw Exception('UUID mismatch in update. Got ${response.uuid}, want $uuid');
       }
 
-      // await Future.delayed(const Duration(seconds: 1));
       final iceCandidate = RTCIceCandidate(
         response.update.candidate.candidate,
         response.update.candidate.sdpMid,
         response.update.candidate.sdpmLineIndex,
       );
-
       try {
         await peerConnection.addCandidate(iceCandidate);
       } catch (error, st) {
@@ -295,9 +294,9 @@ String _encodeSDPJsonStringToBase64String(String sdp) {
   return base64.encode(bytes);
 }
 
-Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions? options) async {
-  String accessToken = options?.accessToken ?? '';
-  if (accessToken.isNotEmpty && (options?.externalAuthAddress ?? '').isEmpty && (options?.externalAuthToEntity ?? '').isEmpty) {
+Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions options) async {
+  String accessToken = options.accessToken ?? '';
+  if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
     return _AuthenticatedChannel(address, accessToken);
   }
@@ -309,7 +308,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions? opt
   ClientChannelBase authChannel = ClientChannel(addr, options: opts);
   final authClient = AuthServiceClient(authChannel);
   final request = pb.AuthenticateRequest(
-      entity: authEntity, credentials: pb.Credentials(type: options?.credentials?.type, payload: options?.credentials?.payload));
+      entity: authEntity, credentials: pb.Credentials(type: options.credentials?.type, payload: options.credentials?.payload));
 
   try {
     final response = await authClient.authenticate(request);
@@ -320,7 +319,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions? opt
     rethrow;
   }
 
-  if ((options?.externalAuthAddress ?? '').isNotEmpty && (options?.externalAuthToEntity ?? '').isNotEmpty) {
+  if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
     _logger.d('Authenticating to external address: ${options!.externalAuthAddress!}, for entity: ${options.externalAuthToEntity}');
     authChannel = _AuthenticatedChannel(options.externalAuthAddress!, accessToken);
     final extAuthClient = ExternalAuthServiceClient(authChannel);

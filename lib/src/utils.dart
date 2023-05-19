@@ -1,5 +1,15 @@
 import 'gen/google/protobuf/struct.pb.dart';
 
+extension NullableStringUtils on String? {
+  bool get isNullOrEmpty {
+    return this?.isEmpty ?? true;
+  }
+
+  bool get isNotNullNorEmpty {
+    return this?.isNotEmpty ?? false;
+  }
+}
+
 extension ValueUtils on Value {
   dynamic toPrimitive() {
     if (hasNullValue()) {
