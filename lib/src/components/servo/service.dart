@@ -1,9 +1,10 @@
 import 'package:grpc/grpc.dart';
-import 'package:viam_sdk/src/components/servo/servo.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/gen/component/servo/v1/servo.pbgrpc.dart';
-import 'package:viam_sdk/src/resource/manager.dart';
-import 'package:viam_sdk/src/utils.dart';
+
+import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/servo/v1/servo.pbgrpc.dart';
+import '../../resource/manager.dart';
+import '../../utils.dart';
+import 'servo.dart';
 
 class ServoService extends ServoServiceBase {
   final ResourceManager _manager;
@@ -14,9 +15,7 @@ class ServoService extends ServoServiceBase {
     try {
       return _manager.getResource(Servo.getResourceName(name));
     } catch (e) {
-      // TODO make rescource not found GRPC error
-      print('Exception details:\n $e');
-      rethrow;
+      throw (GrpcError.notFound(e.toString()));
     }
   }
 
@@ -29,8 +28,9 @@ class ServoService extends ServoServiceBase {
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    // TODO: implement doCommand
-    throw UnimplementedError();
+    Servo servo = _servoFromManager(request.name);
+    var result = await servo.doCommand(request.command.toMap());
+    return DoCommandResponse(result: result.toStruct());
   }
 
   @override

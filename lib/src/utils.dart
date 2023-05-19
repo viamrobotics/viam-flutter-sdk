@@ -69,16 +69,37 @@ extension BoolValueUtils on bool {
 
 extension ListValueUtils<T extends ValueType> on List<T> {
   Value toValue() {
-    return Value(listValue: ListValue(values: this.map((e) => e.toValue())));
+    return Value(listValue: ListValue(values: map((e) => e.toValue())));
   }
 }
 
 extension MapStructUtils on Map<String, dynamic> {
   Struct toStruct({bool skipErrors = false}) {
     Map<String, Value> result = {};
-    for (var entry in this.entries) {
+    for (var entry in entries) {
       try {
-        final v = entry.value.toValue();
+        var value = entry.value;
+        // ignore: prefer_typing_uninitialized_variables
+        var v;
+        // ignore: type_check_with_null, prefer_void_to_null
+        if (value is Null) {
+          v = value.toValue();
+        }
+        if (value is double) {
+          v = value.toValue();
+        }
+        if (value is String) {
+          v = value.toValue();
+        }
+        if (value is bool) {
+          v = value.toValue();
+        }
+        if (value is List<ValueType>) {
+          v = value.toValue();
+        }
+        if (value is Map<String, dynamic>) {
+          v = value.toValue();
+        }
         result[entry.key] = v;
       } catch (exception) {
         if (skipErrors) continue;

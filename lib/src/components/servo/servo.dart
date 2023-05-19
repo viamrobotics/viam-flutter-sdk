@@ -10,11 +10,6 @@ import '../../robot/client.dart';
 abstract class Servo extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'servo');
 
-  @override
-  String name;
-
-  Servo(this.name);
-
   /// Move the [Servo] to the provided angle.
   Future<void> move(int angle, {Map<String, dynamic>? extra});
 
@@ -26,6 +21,8 @@ abstract class Servo extends Resource {
 
   /// Get if the [Servo] is currently moving.
   Future<bool> isMoving();
+
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command);
 
   static ResourceName getResourceName(String name) {
     return Servo.subtype.getResourceName(name);
