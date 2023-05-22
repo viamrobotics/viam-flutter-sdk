@@ -15,6 +15,9 @@ import '../utils.dart';
 final _logger = Logger();
 
 class DialOptions {
+  /// Whether the RPC connection is TLS based
+  bool insecure = false;
+
   /// The entity to authenticate as
   String? authEntity;
 
@@ -151,7 +154,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
   final didConnect = Completer();
   final didSetRemoteDesc = Completer();
 
-  // If tickleICE is enabled, set onIceCandidate handler
+  // If trickleICE is enabled, set onIceCandidate handler
   if (!(options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle)) {
     final offer = await peerConnection.createOffer();
 
@@ -169,7 +172,6 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
         );
         await signalingClient.callUpdate(CallUpdateRequest(uuid: uuid, candidate: candidateProto));
       } catch (error, st) {
-        //TODO: Add error handling
         _logger.e('Update ICECandidate error', error, st);
       }
     };
@@ -278,8 +280,8 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
   try {
     await didConnect.future;
   } catch (error, st) {
-    _logger.e('Could not connect via WebRTC', error, st);
-    rethrow;
+    _logger.e('Could not connect via WebRTC, attempting direct gRPC connection', error, st);
+    return _dialDirectGrpc(address, options);
   }
   return WebRtcClientChannel(peerConnection, dataChannel);
 }
@@ -298,12 +300,15 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
-    return _AuthenticatedChannel(address, accessToken);
+    return _AuthenticatedChannel(address, accessToken, options.insecure);
   }
 
-  final opts = ChannelOptions(codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]));
-  final addr = options?.externalAuthAddress ?? address;
-  final authEntity = options?.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
+  final opts = ChannelOptions(
+    credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
+    codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+  );
+  final addr = options.externalAuthAddress ?? address;
+  final authEntity = options.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
   ClientChannelBase authChannel = ClientChannel(addr, options: opts);
   final authClient = AuthServiceClient(authChannel);
@@ -320,8 +325,8 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   }
 
   if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
-    _logger.d('Authenticating to external address: ${options!.externalAuthAddress!}, for entity: ${options.externalAuthToEntity}');
-    authChannel = _AuthenticatedChannel(options.externalAuthAddress!, accessToken);
+    _logger.d('Authenticating to external address: ${options.externalAuthAddress!}, for entity: ${options.externalAuthToEntity}');
+    authChannel = _AuthenticatedChannel(options.externalAuthAddress!, accessToken, options.insecure);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
     final toRequest = pb.AuthenticateToRequest(entity: options.externalAuthToEntity);
     try {
@@ -334,14 +339,18 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
     }
   }
 
-  return _AuthenticatedChannel(address, accessToken);
+  return _AuthenticatedChannel(address, accessToken, options.insecure);
 }
 
 class _AuthenticatedChannel extends ClientChannel {
   final String accessToken;
 
-  _AuthenticatedChannel(String host, this.accessToken)
-      : super(host, options: ChannelOptions(codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()])));
+  _AuthenticatedChannel(String host, this.accessToken, bool insecure)
+      : super(host,
+            options: ChannelOptions(
+              credentials: insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
+              codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+            ));
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
