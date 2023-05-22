@@ -20,7 +20,7 @@ class CameraProperties {
 
 /// Camera represents any physical hardware that can capture frames.
 abstract class Camera extends Resource {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'camera');
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'camera');
 
   /// Get the next image from the camera.
   Future<ViamImage> image({MimeType? mimeType});

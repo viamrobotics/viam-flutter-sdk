@@ -24,7 +24,7 @@ class BoardStatus {
 /// This acts as an abstract base class for any drivers representing specific
 /// board implementations. This cannot be used on its own.
 abstract class Board extends Resource {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'board');
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'board');
 
   /// Get the status of the Board.
   Future<BoardStatus> status({Map<String, dynamic>? extra});

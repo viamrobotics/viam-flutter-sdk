@@ -95,8 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     robotFut.then((value) {
       _robot = value;
-      final services = _robot.resourceNames.where((element) => element.type == ResourceTypeService);
-      final components = _robot.resourceNames.where((element) => element.type == ResourceTypeComponent);
+      final services = _robot.resourceNames.where((element) => element.type == resourceTypeService);
+      final components = _robot.resourceNames.where((element) => element.type == resourceTypeComponent);
 
       setState(() {
         _loggedIn = true;
@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   _loggedIn
                       ? Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
                           const Text('Resource Names: '),
-                          Text(_robot.resourceNames.where((element) => element.type == ResourceTypeComponent).join('\n')),
+                          Text(_robot.resourceNames.where((element) => element.type == resourceTypeComponent).join('\n')),
                         ])
                       : _loading
                           ? PlatformCircularProgressIndicator()

@@ -8,7 +8,7 @@ import '../../robot/client.dart';
 /// This acts as an abstract base class for any drivers representing specific servo implementations.
 /// This cannot be used on its own.
 abstract class Servo extends Resource {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'servo');
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'servo');
 
   /// Move the [Servo] to the provided angle.
   Future<void> move(int angle, {Map<String, dynamic>? extra});
