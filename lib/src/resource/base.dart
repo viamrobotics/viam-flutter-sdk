@@ -30,5 +30,9 @@ class Subtype {
 }
 
 abstract class Resource {
-  late String name;
+  abstract String name;
+
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) {
+    throw UnimplementedError();
+  }
 }

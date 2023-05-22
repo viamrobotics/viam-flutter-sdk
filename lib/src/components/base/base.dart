@@ -6,11 +6,6 @@ import '../../robot/client.dart';
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'base');
 
-  @override
-  String name;
-
-  Base(this.name);
-
   /// Move the [Base] in a straight line the given [distance], expressed in millimeters,
   /// at the given [velocity], expressed in millimeters per second.
   ///

@@ -22,11 +22,6 @@ class CameraProperties {
 abstract class Camera extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'camera');
 
-  @override
-  String name;
-
-  Camera(this.name);
-
   /// Get the next image from the camera.
   Future<ViamImage> image({MimeType? mimeType});
 

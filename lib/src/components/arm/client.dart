@@ -9,7 +9,10 @@ class ArmClient extends Arm {
   ClientChannelBase _channel;
   ArmServiceClient _client;
 
-  ArmClient(super.name, this._channel) : _client = ArmServiceClient(_channel);
+  @override
+  String name;
+
+  ArmClient(this.name, this._channel) : _client = ArmServiceClient(_channel);
 
   @override
   Future<Pose> getEndPosition({Map<String, dynamic>? extra}) async {

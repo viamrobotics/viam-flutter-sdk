@@ -6,11 +6,6 @@ import 'package:viam_sdk/src/robot/client.dart';
 abstract class Arm extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'arm');
 
-  @override
-  String name;
-
-  Arm(this.name);
-
   /// Get the current [Pose] of the end of the arm.
   Future<Pose> getEndPosition({Map<String, dynamic>? extra});
 

@@ -17,8 +17,6 @@ typedef Properties = GetPropertiesResponse;
 abstract class MovementSensor extends Sensor {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'movement_sensor');
 
-  MovementSensor(super.name);
-
   /// Get the current GeoPoint (latitude, longitude) and altitude (mm)
   Future<Position> position({Map<String, dynamic>? extra});
 
@@ -44,7 +42,7 @@ abstract class MovementSensor extends Sensor {
   Future<Map<String, double>> accuracy({Map<String, dynamic>? extra});
 
   @override
-  Future<Map<String, dynamic>> getReadings({Map<String, dynamic>? extra}) async {
+  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
     Map<String, dynamic> readings = {};
     try {
       Position pos = await position(extra: extra);

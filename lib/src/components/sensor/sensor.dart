@@ -6,11 +6,6 @@ import '../../robot/client.dart';
 abstract class Sensor extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'sensor');
 
-  @override
-  String name;
-
-  Sensor(this.name);
-
   /// Obtain the measurements/data specific to this [Sensor]
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 

@@ -10,7 +10,10 @@ class BoardClient extends Board {
   ClientChannelBase _channel;
   BoardServiceClient _client;
 
-  BoardClient(super.name, this._channel) : _client = BoardServiceClient(_channel);
+  @override
+  String name;
+
+  BoardClient(this.name, this._channel) : _client = BoardServiceClient(_channel);
 
   @override
   Future<BoardStatus> status({Map<String, dynamic>? extra}) async {

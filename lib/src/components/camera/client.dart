@@ -8,7 +8,10 @@ class CameraClient extends Camera {
   ClientChannelBase _channel;
   CameraServiceClient _client;
 
-  CameraClient(super.name, this._channel) : _client = CameraServiceClient(_channel);
+  @override
+  String name;
+
+  CameraClient(this.name, this._channel) : _client = CameraServiceClient(_channel);
 
   @override
   Future<ViamImage> image({MimeType? mimeType}) async {
