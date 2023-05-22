@@ -146,7 +146,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
           })
       .toList()
     ..add({
-      'urls': 'stun:global.stun.twilio.com:3478?transport=udp',
+      'urls': 'stun:global.stun.twilio.com:3478',
       'sdpSemantics': 'unified-plan',
     });
 
@@ -240,8 +240,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
     callStream = signalingClient
         .call(CallRequest(sdp: encodedSdp, disableTrickle: options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle));
   } catch (error, st) {
-    //TODO: Add error handling
-    _logger.e('Get call stream error', error, st);
+    _logger.e('Failed to get call stream', error, st);
     rethrow;
   }
 
