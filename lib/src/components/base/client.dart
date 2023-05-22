@@ -45,4 +45,10 @@ class BaseClient extends Base {
   Future<void> stop({Map<String, dynamic>? extra}) async {
     await _client.stop(StopRequest(name: name, extra: extra?.toStruct()));
   }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    return response.result.toMap();
+  }
 }
