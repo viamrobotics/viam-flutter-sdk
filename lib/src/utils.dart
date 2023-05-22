@@ -1,6 +1,9 @@
 import 'package:grpc/grpc.dart';
+import 'package:logger/logger.dart';
 
 import 'gen/google/protobuf/struct.pb.dart';
+
+final _logger = Logger();
 
 extension NullableStringUtils on String? {
   bool get isNullOrEmpty {
@@ -74,8 +77,8 @@ extension MapStructUtils on Map<String, dynamic> {
         } else {
           throw GrpcError.invalidArgument('Unsupported type');
         }
-      } catch (error) {
-        // TODO log error
+      } catch (error, st) {
+        _logger.e('Error converting the Map to a Struct', error, st);
         rethrow;
       }
     }
