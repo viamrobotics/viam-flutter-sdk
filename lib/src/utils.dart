@@ -1,4 +1,9 @@
+import 'package:grpc/grpc.dart';
+import 'package:logger/logger.dart';
+
 import 'gen/google/protobuf/struct.pb.dart';
+
+final _logger = Logger();
 
 extension NullableStringUtils on String? {
   bool get isNullOrEmpty {
@@ -43,45 +48,37 @@ abstract class ValueType {
   Value toValue();
 }
 
-extension NullValueUtils on Null {
-  Value toValue() {
-    return Value(nullValue: this);
-  }
-}
-
-extension NumValueUtils on num {
-  Value toValue() {
-    return Value(numberValue: toDouble());
-  }
-}
-
-extension StringValueUtils on String {
-  Value toValue() {
-    return Value(stringValue: this);
-  }
-}
-
-extension BoolValueUtils on bool {
-  Value toValue() {
-    return Value(boolValue: this);
-  }
-}
-
+// TODO fix To toValue() for List<T?>
 extension ListValueUtils<T extends ValueType> on List<T> {
   Value toValue() {
-    return Value(listValue: ListValue(values: this.map((e) => e.toValue())));
+    return Value(listValue: ListValue(values: map((e) => e.toValue())));
   }
 }
 
 extension MapStructUtils on Map<String, dynamic> {
-  Struct toStruct({bool skipErrors = false}) {
+  Struct toStruct() {
     Map<String, Value> result = {};
-    for (var entry in this.entries) {
+    for (var entry in entries) {
       try {
-        final v = entry.value.toValue();
-        result[entry.key] = v;
-      } catch (exception) {
-        if (skipErrors) continue;
+        var value = entry.value;
+        if (value is num) {
+          result[entry.key] = Value(numberValue: value.toDouble());
+        } else if (value is String) {
+          result[entry.key] = Value(stringValue: value);
+        } else if (value is bool) {
+          result[entry.key] = Value(boolValue: value);
+        } else if (value is List<ValueType>) {
+          result[entry.key] = value.toValue();
+        } else if (value is Map<String, dynamic>) {
+          result[entry.key] = value.toValue();
+          // ignore: type_check_with_null, prefer_void_to_null
+        } else if (value is Null) {
+          result[entry.key] = Value(nullValue: value);
+        } else {
+          throw GrpcError.invalidArgument('Unsupported type');
+        }
+      } catch (error, st) {
+        _logger.e('Error converting the Map to a Struct', error, st);
         rethrow;
       }
     }

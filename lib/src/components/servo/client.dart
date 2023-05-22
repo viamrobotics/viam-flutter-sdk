@@ -1,14 +1,17 @@
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/viam_sdk.dart';
 
 import '../../gen/component/servo/v1/servo.pbgrpc.dart';
 import '../../utils.dart';
-import 'servo.dart';
 
 class ServoClient extends Servo {
-  ClientChannelBase _channel;
-  ServoServiceClient _client;
+  final ClientChannelBase _channel;
+  final ServoServiceClient _client;
 
-  ServoClient(super.name, this._channel) : _client = ServoServiceClient(_channel);
+  @override
+  String name;
+
+  ServoClient(this.name, this._channel) : _client = ServoServiceClient(_channel);
 
   @override
   Future<void> move(int angle, {Map<String, dynamic>? extra}) async {
@@ -30,5 +33,11 @@ class ServoClient extends Servo {
   Future<bool> isMoving({Map<String, dynamic>? extra}) async {
     final response = await _client.isMoving(IsMovingRequest(name: name));
     return response.isMoving;
+  }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command?.toStruct()));
+    return response.result.toMap();
   }
 }
