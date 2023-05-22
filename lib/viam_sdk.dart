@@ -54,6 +54,8 @@ export 'src/media/stream/client.dart';
 export 'src/resource/base.dart';
 export 'src/resource/registry.dart';
 export 'src/robot/client.dart';
+// RPC
+export 'src/rpc/dial.dart';
 // Misc
 export 'src/viam_sdk.dart';
 export 'src/viam_sdk_base.dart';
