@@ -13,6 +13,10 @@ import '../viam_sdk.dart';
 class RobotClientOptions {
   DialOptions dialOptions;
 
+  RobotClientOptions() : dialOptions = DialOptions();
+
+  RobotClientOptions.withDialOptions(this.dialOptions);
+
   RobotClientOptions.withLocationSecret(String locationSecret)
       : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
 }

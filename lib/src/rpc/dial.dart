@@ -88,9 +88,13 @@ class DialWebRtcOptions {
 }
 
 Future<ClientChannelBase> dial(String address, DialOptions? options) async {
-  final opts = options ?? DialOptions();
   _logger.i('Connecting to Robot at $address');
-  if (opts.webRtcOptions?.disable ?? false) {
+  final opts = options ?? DialOptions();
+  bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
+  if (address.contains('.local.') || address.contains('localhost')) {
+    disableWebRtc = true;
+  }
+  if (disableWebRtc) {
     return _dialDirectGrpc(address, opts);
   }
   return _dialWebRtc(address, opts);
@@ -98,6 +102,15 @@ Future<ClientChannelBase> dial(String address, DialOptions? options) async {
 
 Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options) async {
   _logger.d('Dialing direct GRPC to $address');
+  if (options.credentials == null) {
+    final host = _hostAndPort(address);
+    return ClientChannel(host.host,
+        port: host.port,
+        options: ChannelOptions(
+          credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
+          codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+        ));
+  }
   return _authenticatedChannel(address, options);
 }
 
@@ -118,7 +131,13 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
   final signalingChannel = await _dialDirectGrpc(signalingServer, options);
   _logger.d('Connected to signaling server: $signalingServer');
   final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {"rpc-host": address}));
-  final config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
+  WebRTCConfig config;
+  try {
+    config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
+  } catch (error, st) {
+    _logger.d('Failed to get optional WebRTC config', error, st);
+    config = WebRTCConfig();
+  }
   final iceServers = config.additionalIceServers
       .map((e) => {
             'urls': e.urls,
@@ -280,7 +299,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
   try {
     await didConnect.future;
   } catch (error, st) {
-    _logger.e('Could not connect via WebRTC, attempting direct gRPC connection', error, st);
+    _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error, st);
     return _dialDirectGrpc(address, options);
   }
   return WebRtcClientChannel(peerConnection, dataChannel);
@@ -300,17 +319,18 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
-    return _AuthenticatedChannel(address, accessToken, options.insecure);
+    final addr = _hostAndPort(address);
+    return _AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
   }
 
   final opts = ChannelOptions(
     credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
     codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
   );
-  final addr = options.externalAuthAddress ?? address;
+  final addr = _hostAndPort(options.externalAuthAddress ?? address);
   final authEntity = options.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
-  ClientChannelBase authChannel = ClientChannel(addr, options: opts);
+  ClientChannelBase authChannel = ClientChannel(addr.host, port: addr.port, options: opts);
   final authClient = AuthServiceClient(authChannel);
   final request = pb.AuthenticateRequest(
       entity: authEntity, credentials: pb.Credentials(type: options.credentials?.type, payload: options.credentials?.payload));
@@ -325,8 +345,9 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   }
 
   if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
-    _logger.d('Authenticating to external address: ${options.externalAuthAddress!}, for entity: ${options.externalAuthToEntity}');
-    authChannel = _AuthenticatedChannel(options.externalAuthAddress!, accessToken, options.insecure);
+    final addr = _hostAndPort(options.externalAuthAddress!);
+    _logger.d('Authenticating to external address: $addr, for entity: ${options.externalAuthToEntity}');
+    authChannel = _AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
     final toRequest = pb.AuthenticateToRequest(entity: options.externalAuthToEntity);
     try {
@@ -339,14 +360,16 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
     }
   }
 
-  return _AuthenticatedChannel(address, accessToken, options.insecure);
+  final actual = _hostAndPort(address);
+  return _AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure);
 }
 
 class _AuthenticatedChannel extends ClientChannel {
   final String accessToken;
 
-  _AuthenticatedChannel(String host, this.accessToken, bool insecure)
+  _AuthenticatedChannel(String host, int port, this.accessToken, bool insecure)
       : super(host,
+            port: port,
             options: ChannelOptions(
               credentials: insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
               codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
@@ -357,4 +380,26 @@ class _AuthenticatedChannel extends ClientChannel {
     options = options.mergedWith(CallOptions(metadata: {'Authorization': 'Bearer $accessToken'}));
     return super.createCall(method, requests, options);
   }
+}
+
+class _HostAndPort {
+  String host;
+  int port;
+
+  _HostAndPort(this.host, this.port);
+
+  @override
+  String toString() {
+    return '$host:$port';
+  }
+}
+
+_HostAndPort _hostAndPort(String address) {
+  String host = address.replaceAll(r'^https?\:\/\/', '');
+  int port = 443;
+  if (host.contains(':') && host.split(':').length == 2) {
+    port = int.parse(host.split(':')[1]);
+    host = host.split(':')[0];
+  }
+  return _HostAndPort(host, port);
 }
