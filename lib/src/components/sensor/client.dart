@@ -8,7 +8,10 @@ class SensorClient extends Sensor {
   ClientChannelBase _channel;
   SensorServiceClient _client;
 
-  SensorClient(super.name, this._channel) : _client = SensorServiceClient(_channel);
+  @override
+  String name;
+
+  SensorClient(this.name, this._channel) : _client = SensorServiceClient(_channel);
 
   @override
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {

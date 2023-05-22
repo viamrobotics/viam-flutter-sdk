@@ -10,7 +10,10 @@ class BaseClient extends Base {
   ClientChannelBase _channel;
   BaseServiceClient _client;
 
-  BaseClient(super.name, this._channel) : _client = BaseServiceClient(_channel);
+  @override
+  String name;
+
+  BaseClient(this.name, this._channel) : _client = BaseServiceClient(_channel);
 
   @override
   Future<bool> isMoving() async {

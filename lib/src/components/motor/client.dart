@@ -8,7 +8,10 @@ class MotorClient extends Motor {
   ClientChannelBase _channel;
   MotorServiceClient _client;
 
-  MotorClient(super.name, this._channel) : _client = MotorServiceClient(_channel);
+  @override
+  String name;
+
+  MotorClient(this.name, this._channel) : _client = MotorServiceClient(_channel);
 
   @override
   Future<void> setPower(double powerPct, {Map<String, dynamic>? extra}) async {

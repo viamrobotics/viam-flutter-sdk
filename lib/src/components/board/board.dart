@@ -26,11 +26,6 @@ class BoardStatus {
 abstract class Board extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'board');
 
-  @override
-  String name;
-
-  Board(this.name);
-
   /// Get the status of the Board.
   Future<BoardStatus> status({Map<String, dynamic>? extra});
 

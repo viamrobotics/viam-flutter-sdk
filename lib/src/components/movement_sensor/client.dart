@@ -9,7 +9,10 @@ class MovementSensorClient extends MovementSensor {
   ClientChannelBase _channel;
   MovementSensorServiceClient _client;
 
-  MovementSensorClient(super.name, this._channel) : _client = MovementSensorServiceClient(_channel);
+  @override
+  String name;
+
+  MovementSensorClient(this.name, this._channel) : _client = MovementSensorServiceClient(_channel);
 
   @override
   Future<Position> position({Map<String, dynamic>? extra}) async {
@@ -56,10 +59,5 @@ class MovementSensorClient extends MovementSensor {
   Future<Map<String, double>> accuracy({Map<String, dynamic>? extra}) async {
     final response = await _client.getAccuracy(GetAccuracyRequest(name: name, extra: extra?.toStruct()));
     return response.accuracyMm;
-  }
-
-  @override
-  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) {
-    return super.getReadings(extra: extra);
   }
 }

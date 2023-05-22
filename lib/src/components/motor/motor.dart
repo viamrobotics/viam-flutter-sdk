@@ -32,11 +32,6 @@ class PowerState {
 abstract class Motor extends Resource {
   static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'motor');
 
-  @override
-  String name;
-
-  Motor(this.name);
-
   /// Sets the "percentage" of power the [Motor] should employ between -1 and 1.
   /// When [powerPct] is negative, the rotation will be in the backward direction.
   Future<void> setPower(double powerPct, {Map<String, dynamic>? extra});
