@@ -103,7 +103,7 @@ Future<ClientChannelBase> dial(String address, DialOptions? options) async {
 Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options) async {
   _logger.d('Dialing direct GRPC to $address');
   if (options.credentials == null) {
-    final host = _hostAndPort(address);
+    final host = _hostAndPort(address, options.insecure);
     return ClientChannel(host.host,
         port: host.port,
         options: ChannelOptions(
@@ -319,7 +319,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
-    final addr = _hostAndPort(address);
+    final addr = _hostAndPort(address, options.insecure);
     return _AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
   }
 
@@ -327,7 +327,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
     credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
     codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
   );
-  final addr = _hostAndPort(options.externalAuthAddress ?? address);
+  final addr = _hostAndPort(options.externalAuthAddress ?? address, options.insecure);
   final authEntity = options.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
   ClientChannelBase authChannel = ClientChannel(addr.host, port: addr.port, options: opts);
@@ -345,7 +345,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   }
 
   if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
-    final addr = _hostAndPort(options.externalAuthAddress!);
+    final addr = _hostAndPort(options.externalAuthAddress!, options.insecure);
     _logger.d('Authenticating to external address: $addr, for entity: ${options.externalAuthToEntity}');
     authChannel = _AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
@@ -360,7 +360,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
     }
   }
 
-  final actual = _hostAndPort(address);
+  final actual = _hostAndPort(address, options.insecure);
   return _AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure);
 }
 
@@ -394,9 +394,9 @@ class _HostAndPort {
   }
 }
 
-_HostAndPort _hostAndPort(String address) {
+_HostAndPort _hostAndPort(String address, bool insecure) {
   String host = address.replaceAll(r'^https?\:\/\/', '');
-  int port = 443;
+  int port = insecure ? 80 : 443;
   if (host.contains(':') && host.split(':').length == 2) {
     port = int.parse(host.split(':')[1]);
     host = host.split(':')[0];
