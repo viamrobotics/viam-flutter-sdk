@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _loggedIn = false;
   bool _loading = false;
   late ResourceName _cameraName;
-  String _baseName = '';
+  late ResourceName _baseName;
   final List<ResourceName> _resourceNames = [];
   late RobotClient _robot;
 
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _cameraName = component;
         }
         if (component.subtype == Base.subtype.resourceSubtype) {
-          _baseName = component.name;
+          _baseName = component;
         }
       }
 
@@ -124,7 +124,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   bool _isNavigable(ResourceName rname) {
-    print(rname);
     return [
       Base.subtype.resourceSubtype,
       Board.subtype.resourceSubtype,
@@ -140,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!_isNavigable(rname)) {
       return null;
     }
-    if (rname.subtype == Base.subtype.resourceSubtype) {
+    if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != Null) {
       return BaseScreen(
           base: Base.fromRobot(_robot, rname.name),
           resourceName: rname,
