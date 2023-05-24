@@ -1,3 +1,5 @@
+import 'package:fixnum/src/int64.dart';
+import 'package:viam_sdk/src/proto/common.dart';
 import 'package:viam_sdk/src/resource/base.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
@@ -15,6 +17,13 @@ class BoardStatus {
     pbBoardStatus.analogs.forEach((key, value) => boardStatus.analogs[key] = value.value);
     pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value.toInt()));
     return boardStatus;
+  }
+
+  common.BoardStatus toPbBoardStatus() {
+    common.BoardStatus pbBoardStatus = common.BoardStatus();
+    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = AnalogStatus(value: value));
+    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = DigitalInterruptStatus(value: Int64(value)));
+    return pbBoardStatus;
   }
 }
 
