@@ -1,4 +1,4 @@
-import 'package:viam_sdk/src/proto/common.dart';
+import '../proto/common.dart';
 
 const String resourceNamespaceRDK = 'rdk';
 const String resourceTypeComponent = 'component';

@@ -1,6 +1,5 @@
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/resource/base.dart';
-
+import '../../gen/common/v1/common.pb.dart';
+import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// [Servo] represents a physical servo.
