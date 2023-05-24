@@ -4,23 +4,23 @@ import 'base.dart';
 
 class ResourceManager {
   Map<ResourceName, Resource> resources = {};
-  Map<String, List<ResourceName>> _shortToLongName = {};
+  final Map<String, List<ResourceName>> _shortToLongName = {};
 
   void register(ResourceName name, Resource resource) {
-    if (this.resources.containsKey(name)) {
+    if (resources.containsKey(name)) {
       throw Exception('Duplicate registration of resource in manager');
     }
     final shortName = name.name.split(':').last;
-    if (!(this._shortToLongName[shortName]?.contains(name) ?? true)) {
-      var names = this._shortToLongName[shortName] ?? [];
+    if (!(_shortToLongName[shortName]?.contains(name) ?? true)) {
+      var names = _shortToLongName[shortName] ?? [];
       names.add(name);
-      this._shortToLongName[shortName] = names;
+      _shortToLongName[shortName] = names;
     }
-    this.resources[name] = resource;
+    resources[name] = resource;
   }
 
   T getResource<T>(ResourceName name) {
-    final resource = this.resources[name];
+    final resource = resources[name];
     if (resource == null) throw Exception('Resource not found in manager');
     return resource as T;
   }

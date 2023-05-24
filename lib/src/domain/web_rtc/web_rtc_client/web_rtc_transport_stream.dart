@@ -20,8 +20,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
   bool headersSent = false;
   final List<int> receivedPacketMessageData = <int>[];
 
-  final StreamController<List<int>> _outgoingMessages =
-      StreamController<List<int>>();
+  final StreamController<List<int>> _outgoingMessages = StreamController<List<int>>();
   final StreamController<GrpcMessage> _incomingMessages = StreamController();
 
   @override
@@ -62,13 +61,10 @@ class WebRtcTransportStream extends GrpcTransportStream {
         ),
       );
 
-      final connectionState =
-          webRtcClientChannel.rtcPeerConnection.connectionState;
+      final connectionState = webRtcClientChannel.rtcPeerConnection.connectionState;
 
-      if (connectionState ==
-              RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
-          connectionState ==
-              RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
+      if (connectionState == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
+          connectionState == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
         onRequestFailure(
           const ViamConnectionLostError('RTCPeerConnection lost'),
           StackTrace.current,
@@ -78,11 +74,9 @@ class WebRtcTransportStream extends GrpcTransportStream {
 
       if (!headersSent) {
         headersSent = true;
-        webRtcClientChannel.dataChannel.send(
-            RTCDataChannelMessage.fromBinary(headersRequest.writeToBuffer()));
+        webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(headersRequest.writeToBuffer()));
       }
-      webRtcClientChannel.dataChannel.send(
-          RTCDataChannelMessage.fromBinary(payloadRequest.writeToBuffer()));
+      webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(payloadRequest.writeToBuffer()));
     });
   }
 

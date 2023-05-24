@@ -12,8 +12,7 @@ class ViamOrganization {
   );
 
   @override
-  bool operator ==(covariant ViamOrganization other) =>
-      other.id == id && other.name == name && createdOn.isAtSameMomentAs(other.createdOn);
+  bool operator ==(covariant ViamOrganization other) => other.id == id && other.name == name && createdOn.isAtSameMomentAs(other.createdOn);
 
   @override
   int get hashCode => Object.hash(

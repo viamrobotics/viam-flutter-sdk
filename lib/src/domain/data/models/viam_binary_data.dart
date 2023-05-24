@@ -9,8 +9,7 @@ class ViamBinaryData {
   const ViamBinaryData(this.binary, this.metadata);
 
   @override
-  bool operator ==(covariant ViamBinaryData other) =>
-      const ListEquality().equals(binary, other.binary) && metadata == other.metadata;
+  bool operator ==(covariant ViamBinaryData other) => const ListEquality().equals(binary, other.binary) && metadata == other.metadata;
 
   @override
   int get hashCode => Object.hash(binary, metadata);

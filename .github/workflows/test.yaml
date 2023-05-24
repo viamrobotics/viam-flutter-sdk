@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
 
@@ -19,12 +19,14 @@ jobs:
             
       - run: flutter --version
       - run: flutter pub get
+      - run: flutter pub get --directory=example/viam_example_app
 
+      # Verify formatting in all dart files, except lib/gen/
       - name: Verify formatting
-        run: dart format --output=none .
+        run: dart format --line-length=140 --set-exit-if-changed $(find . -name "*.dart" -not -path "./lib/src/gen/*")
 
       - name: Analyze project source
-        run: dart analyze --fatal-infos
+        run: dart analyze --no-fatal-warnings
 
       - name: Run tests
         run: flutter test

@@ -4,7 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/src/domain/movement/service/viam_movement_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import '../../../mocks/mock_response_future.dart';
 import '../../../mocks/service_clients_mocks.mocks.dart';
@@ -41,15 +40,13 @@ void main() {
         );
         final getPositionRequest = GetPositionRequest(name: resourceName.name);
 
-        when(movementSensorServiceClient.getPosition(getPositionRequest))
-            .thenAnswer(
+        when(movementSensorServiceClient.getPosition(getPositionRequest)).thenAnswer(
           (_) => MockResponseFuture.value(getPositionResponse),
         );
 
         final ViamPosition expectedAnswer = getPositionResponse.toDomain();
 
-        final ViamPosition actualAnswer =
-            await viamMovementService.getPositionData(resourceName);
+        final ViamPosition actualAnswer = await viamMovementService.getPositionData(resourceName);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -57,13 +54,11 @@ void main() {
       test('gets ViamPostion data with failure and throws an error', () async {
         const error = 'error';
 
-        when(movementSensorServiceClient.getPosition(getPositionRequest))
-            .thenAnswer(
+        when(movementSensorServiceClient.getPosition(getPositionRequest)).thenAnswer(
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            viamMovementService.getPositionData(resourceName), throwsA(error));
+        await expectLater(viamMovementService.getPositionData(resourceName), throwsA(error));
       });
     });
 
@@ -78,33 +73,25 @@ void main() {
           linearVelocity: vector3,
         );
 
-        when(movementSensorServiceClient
-                .getLinearVelocity(getLinearVelocityRequest))
-            .thenAnswer(
+        when(movementSensorServiceClient.getLinearVelocity(getLinearVelocityRequest)).thenAnswer(
           (_) => MockResponseFuture.value(getLinearVelocityResponse),
         );
 
-        final ViamLinearVelocity expectedAnswer =
-            getLinearVelocityResponse.toDomain();
+        final ViamLinearVelocity expectedAnswer = getLinearVelocityResponse.toDomain();
 
-        final ViamLinearVelocity actualAnswer =
-            await viamMovementService.getLinearVelocity(resourceName);
+        final ViamLinearVelocity actualAnswer = await viamMovementService.getLinearVelocity(resourceName);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
 
-      test('gets ViamLinearVelocity data with failure and throws an error',
-          () async {
+      test('gets ViamLinearVelocity data with failure and throws an error', () async {
         const error = 'error';
 
-        when(movementSensorServiceClient
-                .getLinearVelocity(getLinearVelocityRequest))
-            .thenAnswer(
+        when(movementSensorServiceClient.getLinearVelocity(getLinearVelocityRequest)).thenAnswer(
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(viamMovementService.getLinearVelocity(resourceName),
-            throwsA(error));
+        await expectLater(viamMovementService.getLinearVelocity(resourceName), throwsA(error));
       });
     });
   });

@@ -7,8 +7,8 @@ import '../../utils.dart';
 import 'board.dart';
 
 class BoardClient extends Board {
-  ClientChannelBase _channel;
-  BoardServiceClient _client;
+  final ClientChannelBase _channel;
+  final BoardServiceClient _client;
 
   @override
   String name;

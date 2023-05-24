@@ -1,7 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/src/domain/sensor/service/viam_sensor_service.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -54,11 +53,9 @@ void main() {
           (_) => MockResponseFuture.value(response),
         );
 
-        final expectedAnswer =
-            response.readings.map((reading) => reading.toDomain());
+        final expectedAnswer = response.readings.map((reading) => reading.toDomain());
 
-        final List<ViamSensorReadings> actualAnswer = await sensorService
-            .getSensorData([viamResourceName], sensorsRequestName);
+        final List<ViamSensorReadings> actualAnswer = await sensorService.getSensorData([viamResourceName], sensorsRequestName);
 
         expect(actualAnswer, equals(expectedAnswer));
       });

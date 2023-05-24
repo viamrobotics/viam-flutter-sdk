@@ -5,8 +5,8 @@ import '../../utils.dart';
 import 'sensor.dart';
 
 class SensorClient extends Sensor {
-  ClientChannelBase _channel;
-  SensorServiceClient _client;
+  final ClientChannelBase _channel;
+  final SensorServiceClient _client;
 
   @override
   String name;

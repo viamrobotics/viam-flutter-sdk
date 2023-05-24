@@ -28,29 +28,29 @@ class Registry {
   static final Registry instance = Registry._();
   Registry._() {
     // Register built-in types
-    this.registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
-    this.registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
+    registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
+    registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
+    registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
+    registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
+    registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
+    registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
+    registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
+    registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
   }
 
   final Map<Subtype, ResourceRegistration> subtypes = {};
 
   void registerSubtype(ResourceRegistration registration) {
-    if (this.subtypes.containsKey(registration.subtype)) {
+    if (subtypes.containsKey(registration.subtype)) {
       throw Exception('Duplicate registration of subtype in registry');
     }
-    this.subtypes[registration.subtype] = registration;
+    subtypes[registration.subtype] = registration;
   }
 
   ResourceRegistration lookupSubtype(Subtype subtype) {
-    if (!this.subtypes.containsKey(subtype)) {
+    if (!subtypes.containsKey(subtype)) {
       throw Exception('Subtype not registered in registry');
     }
-    return this.subtypes[subtype]!;
+    return subtypes[subtype]!;
   }
 }

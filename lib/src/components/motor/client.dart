@@ -5,8 +5,8 @@ import '../../utils.dart';
 import 'motor.dart';
 
 class MotorClient extends Motor {
-  ClientChannelBase _channel;
-  MotorServiceClient _client;
+  final ClientChannelBase _channel;
+  final MotorServiceClient _client;
 
   @override
   String name;

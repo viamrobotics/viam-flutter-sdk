@@ -51,8 +51,7 @@ void main() {
 
         final List<ViamOrganization> expectedAnswer = [viamOrganization];
 
-        final List<ViamOrganization> actualAnswer =
-            await viamAppService.listOrganizations();
+        final List<ViamOrganization> actualAnswer = await viamAppService.listOrganizations();
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -134,8 +133,7 @@ void main() {
 
         final List<ViamLocation> expectedAnswer = [viamLocation];
 
-        final List<ViamLocation> actualAnswer =
-            await viamAppService.listLocations(organizationId);
+        final List<ViamLocation> actualAnswer = await viamAppService.listLocations(organizationId);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -145,8 +143,7 @@ void main() {
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            viamAppService.listLocations(organizationId), throwsA(error));
+        await expectLater(viamAppService.listLocations(organizationId), throwsA(error));
       });
     });
 
@@ -183,8 +180,7 @@ void main() {
 
         final List<ViamRobot> expectedAnswer = [viamRobot];
 
-        final List<ViamRobot> actualAnswer =
-            await viamAppService.listRobots(locationId);
+        final List<ViamRobot> actualAnswer = await viamAppService.listRobots(locationId);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -194,8 +190,7 @@ void main() {
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            viamAppService.listRobots(locationId), throwsA(error));
+        await expectLater(viamAppService.listRobots(locationId), throwsA(error));
       });
     });
 
@@ -225,8 +220,7 @@ void main() {
 
         final ViamOrganization expectedAnswer = viamOrganization;
 
-        final ViamOrganization actualAnswer =
-            await viamAppService.getOrganizatoin(organizationId);
+        final ViamOrganization actualAnswer = await viamAppService.getOrganizatoin(organizationId);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -236,8 +230,7 @@ void main() {
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            viamAppService.getOrganizatoin(organizationId), throwsA(error));
+        await expectLater(viamAppService.getOrganizatoin(organizationId), throwsA(error));
       });
     });
 
@@ -307,8 +300,7 @@ void main() {
 
         final ViamLocation expectedAnswer = viamLocation;
 
-        final ViamLocation actualAnswer =
-            await viamAppService.getLocation(locationId);
+        final ViamLocation actualAnswer = await viamAppService.getLocation(locationId);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -318,8 +310,7 @@ void main() {
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            viamAppService.getLocation(locationId), throwsA(error));
+        await expectLater(viamAppService.getLocation(locationId), throwsA(error));
       });
     });
 

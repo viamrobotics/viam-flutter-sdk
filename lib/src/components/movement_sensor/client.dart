@@ -6,8 +6,8 @@ import '../../utils.dart';
 import 'movement_sensor.dart';
 
 class MovementSensorClient extends MovementSensor {
-  ClientChannelBase _channel;
-  MovementSensorServiceClient _client;
+  final ClientChannelBase _channel;
+  final MovementSensorServiceClient _client;
 
   @override
   String name;

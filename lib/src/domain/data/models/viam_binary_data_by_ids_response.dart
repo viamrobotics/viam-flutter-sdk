@@ -9,8 +9,7 @@ class ViamBinaryDataByIDsResponse {
   const ViamBinaryDataByIDsResponse(this.data, this.count);
 
   @override
-  bool operator ==(covariant ViamBinaryDataByIDsResponse other) =>
-      const ListEquality().equals(data, other.data) && count == other.count;
+  bool operator ==(covariant ViamBinaryDataByIDsResponse other) => const ListEquality().equals(data, other.data) && count == other.count;
 
   @override
   int get hashCode => Object.hash(data, count);

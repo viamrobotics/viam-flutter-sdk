@@ -6,8 +6,8 @@ import '../../utils.dart';
 import 'arm.dart';
 
 class ArmClient extends Arm {
-  ClientChannelBase _channel;
-  ArmServiceClient _client;
+  final ClientChannelBase _channel;
+  final ArmServiceClient _client;
 
   @override
   String name;

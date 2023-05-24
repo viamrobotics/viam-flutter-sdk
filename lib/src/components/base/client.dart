@@ -7,8 +7,8 @@ import '../../utils.dart';
 import 'base.dart';
 
 class BaseClient extends Base {
-  ClientChannelBase _channel;
-  BaseServiceClient _client;
+  final ClientChannelBase _channel;
+  final BaseServiceClient _client;
 
   @override
   String name;
