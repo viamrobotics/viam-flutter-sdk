@@ -5,7 +5,6 @@
             140
         ],
     },
-    "cmake.configureOnOpen": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
