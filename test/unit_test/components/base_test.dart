@@ -4,6 +4,7 @@ import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/base/service.dart';
 import 'package:viam_sdk/src/gen/component/base/v1/base.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
+import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 class FakeBase extends Base {
@@ -157,7 +158,7 @@ void main() {
     test('doCommand', () async {
       final cmd = {'foo': 'bar'};
       final resp = await base.doCommand(cmd);
-      expect(resp, cmd);
+      expect(resp['command'], cmd);
     });
 
     test('extra', () async {
@@ -180,7 +181,7 @@ void main() {
       ResourceManager manager = ResourceManager();
       manager.register(Base.getResourceName(name), base);
       service = BaseService(manager);
-      channel = ClientChannel('localhost', port: 50051);
+      channel = ClientChannel('localhost', port: 50051, options: ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server([service]);
       await server.serve(port: 50051);
     });
@@ -258,26 +259,121 @@ void main() {
         expect(base.isStopped, true);
       });
 
-      // TODO: CONTINUE FROM HERE
       test('isMoving', () async {
-        expect(await base.isMoving(), false);
+        final client = BaseServiceClient(channel);
+        IsMovingResponse resp = await client.isMoving(IsMovingRequest(name: name));
+        expect(resp.isMoving, false);
 
-        await base.moveStraight(1, 1);
-        expect(await base.isMoving(), true);
+        final request = MoveStraightRequest(name: name, distanceMm: Int64(182), mmPerSec: 44);
+        await client.moveStraight(request);
+        resp = await client.isMoving(IsMovingRequest(name: name));
+        expect(resp.isMoving, true);
 
-        await base.stop();
-        expect(await base.isMoving(), false);
+        await client.stop(StopRequest(name: name));
+        resp = await client.isMoving(IsMovingRequest(name: name));
+        expect(resp.isMoving, false);
       });
 
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
-        final resp = await base.doCommand(cmd);
-        expect(resp, cmd);
+
+        final client = BaseServiceClient(channel);
+        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        expect(resp.result.toMap()['command'], cmd);
       });
 
       test('extra', () async {
         expect(base.extra, null);
-        await base.stop(extra: {'foo': 'bar'});
+
+        final client = BaseServiceClient(channel);
+        await client.stop(StopRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        expect(base.extra, {'foo': 'bar'});
+      });
+    });
+    group('Base Client Tests', () {
+      test('moveStraight', () async {
+        expect(base.position, 0);
+        expect(base.isStopped, true);
+
+        final client = BaseClient(name, channel);
+        await client.moveStraight(182, 44);
+
+        expect(base.position, 182);
+        expect(base.isStopped, false);
+      });
+
+      test('spin', () async {
+        expect(base.angle, 0);
+        expect(base.isStopped, true);
+
+        final client = BaseClient(name, channel);
+        await client.spin(182, 44);
+
+        expect(base.angle, 182);
+        expect(base.isStopped, false);
+      });
+
+      test('setPower', () async {
+        expect(base.linearPower, Vector3());
+        expect(base.angularPower, Vector3());
+
+        final linear = Vector3(x: 1, y: 2, z: 3);
+        final angular = Vector3(x: 4, y: 5, z: 6);
+
+        final client = BaseClient(name, channel);
+        await client.setPower(linear, angular);
+
+        expect(base.linearPower, linear);
+        expect(base.angularPower, angular);
+      });
+
+      test('setVelocity', () async {
+        expect(base.linearVel, Vector3());
+        expect(base.angularVel, Vector3());
+
+        final linear = Vector3(x: 1, y: 2, z: 3);
+        final angular = Vector3(x: 4, y: 5, z: 6);
+
+        final client = BaseClient(name, channel);
+        await client.setVelocity(linear, angular);
+
+        expect(base.linearVel, linear);
+        expect(base.angularVel, angular);
+      });
+
+      test('stop', () async {
+        expect(base.isStopped, true);
+
+        final client = BaseClient(name, channel);
+        await client.moveStraight(1, 1);
+        expect(base.isStopped, false);
+
+        await client.stop();
+        expect(base.isStopped, true);
+      });
+
+      test('isMoving', () async {
+        expect(await base.isMoving(), false);
+
+        final client = BaseClient(name, channel);
+        await client.moveStraight(1, 1);
+        expect(await client.isMoving(), true);
+
+        await base.stop();
+        expect(await client.isMoving(), false);
+      });
+
+      test('doCommand', () async {
+        final cmd = {'foo': 'bar'};
+        final client = BaseClient(name, channel);
+        final resp = await client.doCommand(cmd);
+        expect(resp['command'], cmd);
+      });
+
+      test('extra', () async {
+        expect(base.extra, null);
+        final client = BaseClient(name, channel);
+        await client.stop(extra: {'foo': 'bar'});
         expect(base.extra, {'foo': 'bar'});
       });
     });
