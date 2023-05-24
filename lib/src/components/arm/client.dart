@@ -15,7 +15,7 @@ class ArmClient extends Arm {
   ArmClient(this.name, this._channel) : _client = ArmServiceClient(_channel);
 
   @override
-  Future<Pose> getEndPosition({Map<String, dynamic>? extra}) async {
+  Future<Pose> endPosition({Map<String, dynamic>? extra}) async {
     final response = await _client.getEndPosition(GetEndPositionRequest(name: name));
     return response.pose;
   }
