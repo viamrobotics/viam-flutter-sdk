@@ -7,7 +7,7 @@ abstract class Arm extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'arm');
 
   /// Get the current [Pose] of the end of the arm.
-  Future<Pose> getEndPosition({Map<String, dynamic>? extra});
+  Future<Pose> endPosition({Map<String, dynamic>? extra});
 
   /// Move the end of the arm to the [Pose] specified.
   Future<void> moveToPosition(Pose pose, {Map<String, dynamic>? extra});
@@ -16,7 +16,7 @@ abstract class Arm extends Resource {
   Future<void> moveToJointPositions(JointPositions positions, {Map<String, dynamic>? extra});
 
   /// Get the [JointPositions] representing the current position of the arm
-  Future<JointPositions> getJointPositions({Map<String, dynamic>? extra});
+  Future<JointPositions> jointPositions({Map<String, dynamic>? extra});
 
   /// Stops all motion of the arm. It is assumed that the arm stops immediately.
   Future<void> stop({Map<String, dynamic>? extra});
