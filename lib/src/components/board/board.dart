@@ -1,7 +1,9 @@
-import 'package:viam_sdk/src/resource/base.dart';
+import 'package:fixnum/fixnum.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbenum.dart';
+import '../../proto/common.dart';
+import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 class BoardStatus {
@@ -15,6 +17,13 @@ class BoardStatus {
     pbBoardStatus.analogs.forEach((key, value) => boardStatus.analogs[key] = value.value);
     pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value.toInt()));
     return boardStatus;
+  }
+
+  common.BoardStatus get proto {
+    common.BoardStatus pbBoardStatus = common.BoardStatus();
+    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = AnalogStatus(value: value));
+    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = DigitalInterruptStatus(value: Int64(value)));
+    return pbBoardStatus;
   }
 }
 
@@ -46,8 +55,6 @@ abstract class Board extends Resource {
 
   /// Set the PWM frequency of the given pin of a board.
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});
-
-  // TODO add doCommand()
 
   /// Read the current value of an analog reader of a board.
   Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra});
