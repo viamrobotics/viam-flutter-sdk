@@ -1,9 +1,9 @@
-import 'package:fixnum/src/int64.dart';
-import 'package:viam_sdk/src/proto/common.dart';
-import 'package:viam_sdk/src/resource/base.dart';
+import 'package:fixnum/fixnum.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbenum.dart';
+import '../../proto/common.dart';
+import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 class BoardStatus {
@@ -13,13 +13,13 @@ class BoardStatus {
   const BoardStatus(this.analogs, this.digitalInterrupts);
 
   factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
-    BoardStatus boardStatus = BoardStatus(Map<String, int>(), Map<String, int>());
+    BoardStatus boardStatus = const BoardStatus(<String, int>{}, <String, int>{});
     pbBoardStatus.analogs.forEach((key, value) => boardStatus.analogs[key] = value.value);
     pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value.toInt()));
     return boardStatus;
   }
 
-  common.BoardStatus toPbBoardStatus() {
+  common.BoardStatus get proto {
     common.BoardStatus pbBoardStatus = common.BoardStatus();
     analogs.forEach((key, value) => pbBoardStatus.analogs[key] = AnalogStatus(value: value));
     digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = DigitalInterruptStatus(value: Int64(value)));

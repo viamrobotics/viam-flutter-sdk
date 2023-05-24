@@ -1,4 +1,4 @@
-import 'package:fixnum/src/int64.dart';
+import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
@@ -94,6 +94,6 @@ class BoardService extends BoardServiceBase {
   Future<StatusResponse> status(ServiceCall call, StatusRequest request) async {
     Board board = _boardFromManager(request.name);
     BoardStatus result = await board.status(extra: request.extra.toMap());
-    return StatusResponse(status: result.toPbBoardStatus());
+    return StatusResponse(status: result.proto);
   }
 }

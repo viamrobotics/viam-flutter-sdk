@@ -1,9 +1,9 @@
-import 'package:fixnum/src/int64.dart';
+import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/duration.pb.dart' as grpc_duration;
 
 import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbgrpc.dart';
+import '../../gen/google/protobuf/duration.pb.dart' as grpc_duration;
 import '../../utils.dart';
 import 'board.dart';
 
