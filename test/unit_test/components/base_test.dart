@@ -87,11 +87,10 @@ class FakeBase extends Base {
 
 void main() {
   group('Base Tests', () {
+    const String name = 'base';
     late FakeBase base;
-    late String name;
 
     setUp(() {
-      name = 'base';
       base = FakeBase(name);
     });
 
@@ -173,15 +172,14 @@ void main() {
     late FakeBase base;
     late BaseService service;
     late Server server;
-    late String name;
+    const String name = 'base';
 
     setUp(() async {
-      name = 'base';
       base = FakeBase(name);
       ResourceManager manager = ResourceManager();
       manager.register(Base.getResourceName(name), base);
       service = BaseService(manager);
-      channel = ClientChannel('localhost', port: 50051, options: ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel('localhost', port: 50051, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server([service]);
       await server.serve(port: 50051);
     });
