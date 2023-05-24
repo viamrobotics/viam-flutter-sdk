@@ -12,8 +12,7 @@ class ViamTagsFilter {
   });
 
   @override
-  bool operator ==(covariant ViamTagsFilter other) =>
-      type == other.type && const ListEquality().equals(tags, other.tags);
+  bool operator ==(covariant ViamTagsFilter other) => type == other.type && const ListEquality().equals(tags, other.tags);
 
   @override
   int get hashCode => Object.hash(type, tags);

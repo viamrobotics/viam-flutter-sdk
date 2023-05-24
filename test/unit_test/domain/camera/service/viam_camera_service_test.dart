@@ -68,8 +68,7 @@ void main() {
 
         final ViamCameraFrameData expectedAnswer = getImageResponse.toDomain();
 
-        final ViamCameraFrameData actualAnswer =
-            await viamCameraService.getCameraFrame(resourceName);
+        final ViamCameraFrameData actualAnswer = await viamCameraService.getCameraFrame(resourceName);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -81,8 +80,7 @@ void main() {
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            viamCameraService.getCameraFrame(resourceName), throwsA(error));
+        await expectLater(viamCameraService.getCameraFrame(resourceName), throwsA(error));
       });
     });
   });

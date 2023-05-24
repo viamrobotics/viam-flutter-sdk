@@ -2,7 +2,6 @@
 
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/src/domain/resource/service/viam_resource_service.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../../../mocks/mock_response_future.dart';
@@ -29,20 +28,16 @@ void main() {
           type: 'type',
         );
 
-        final resourceNamesResponse =
-            ResourceNamesResponse(resources: [resourceName]);
+        final resourceNamesResponse = ResourceNamesResponse(resources: [resourceName]);
 
         when(robotServiceClient.resourceNames(resourceNamesRequest)).thenAnswer(
           (_) => MockResponseFuture.value(resourceNamesResponse),
         );
 
-        final List<ViamResourceName> expectedAnswer = resourceNamesResponse
-            .resources
-            .map((resource) => resource.toDomain())
-            .toList(growable: false);
+        final List<ViamResourceName> expectedAnswer =
+            resourceNamesResponse.resources.map((resource) => resource.toDomain()).toList(growable: false);
 
-        final List<ViamResourceName> actualAnswer =
-            await resourceService.getResourceNames(null, null);
+        final List<ViamResourceName> actualAnswer = await resourceService.getResourceNames(null, null);
 
         expect(actualAnswer, equals(expectedAnswer));
       });
@@ -54,8 +49,7 @@ void main() {
           (_) => MockResponseFuture.error(error),
         );
 
-        await expectLater(
-            resourceService.getResourceNames(null, null), throwsA(error));
+        await expectLater(resourceService.getResourceNames(null, null), throwsA(error));
       });
     });
   });

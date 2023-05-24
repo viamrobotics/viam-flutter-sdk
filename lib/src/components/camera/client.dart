@@ -5,8 +5,8 @@ import '../../media/image.dart';
 import 'camera.dart';
 
 class CameraClient extends Camera {
-  ClientChannelBase _channel;
-  CameraServiceClient _client;
+  final ClientChannelBase _channel;
+  final CameraServiceClient _client;
 
   @override
   String name;

@@ -130,7 +130,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
   _logger.d('Connecting to signaling server: $signalingServer');
   final signalingChannel = await _dialDirectGrpc(signalingServer, options);
   _logger.d('Connected to signaling server: $signalingServer');
-  final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {"rpc-host": address}));
+  final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {'rpc-host': address}));
   WebRTCConfig config;
   try {
     config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;

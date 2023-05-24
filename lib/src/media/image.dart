@@ -19,13 +19,13 @@ class MimeType {
 
   const MimeType._(this._type, this._name);
 
-  static MimeType get viamRgba => MimeType._('viamRgba', 'image/vnd.viam.rgba');
-  static MimeType get jpeg => MimeType._('jpeg', 'image/jpeg');
-  static MimeType get png => MimeType._('png', 'image/png');
-  static MimeType get pcd => MimeType._('pcd', 'pointcloud/pcd');
+  static MimeType get viamRgba => const MimeType._('viamRgba', 'image/vnd.viam.rgba');
+  static MimeType get jpeg => const MimeType._('jpeg', 'image/jpeg');
+  static MimeType get png => const MimeType._('png', 'image/png');
+  static MimeType get pcd => const MimeType._('pcd', 'pointcloud/pcd');
 
   /// An unsupported MimeType takes in the String representation of the mimetype that is not supported.
-  const MimeType.unsupported(this._name) : this._type = 'unsupported';
+  const MimeType.unsupported(this._name) : _type = 'unsupported';
 
   static MimeType fromString(String mimeType) => _map[mimeType] ?? MimeType.unsupported(mimeType);
 
@@ -33,10 +33,12 @@ class MimeType {
     return _map.containsKey(mimeType);
   }
 
+  @override
   bool operator ==(covariant MimeType other) {
     return _name == other._name;
   }
 
+  @override
   int get hashCode => Object.hash(_type, _name);
 
   img.Image? decode(List<int> bytes) {
@@ -80,7 +82,7 @@ class ViamImage {
     if (_imageDecoded) {
       return _image;
     }
-    _image = this.mimeType.decode(this.raw);
+    _image = mimeType.decode(raw);
     _imageDecoded = true;
     return _image;
   }
@@ -168,7 +170,7 @@ class _ViamRGBADecoder extends img.Decoder {
   img.DecodeInfo? startDecode(Uint8List bytes) {
     final input = img.InputBuffer(bytes, bigEndian: true);
 
-    final rgbaHeader = 'RGBA';
+    const rgbaHeader = 'RGBA';
     final header = input.readBytes(4).readStringUtf8();
     if (header != rgbaHeader) {
       return null;

@@ -42,8 +42,7 @@ Future<Credentials> login(
   return credentials;
 }
 
-ViamClientChannel dialDirect(String url, String? payload, bool secure, int port) =>
-    _getGrpcClient(url, port, payload, secure);
+ViamClientChannel dialDirect(String url, String? payload, bool secure, int port) => _getGrpcClient(url, port, payload, secure);
 
 Future<ClientChannelBase> dialWebRtc(
   ViamClientChannel directClient,

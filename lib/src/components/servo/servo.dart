@@ -22,6 +22,7 @@ abstract class Servo extends Resource {
   /// Get if the [Servo] is currently moving.
   Future<bool> isMoving();
 
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command);
 
   static ResourceName getResourceName(String name) {

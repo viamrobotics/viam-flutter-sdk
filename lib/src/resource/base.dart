@@ -10,23 +10,23 @@ class Subtype {
   const Subtype(this.namespace, this.resourceType, this.resourceSubtype);
 
   Subtype.fromResourceName(ResourceName name)
-      : this.namespace = name.namespace,
-        this.resourceType = name.type,
-        this.resourceSubtype = name.subtype;
+      : namespace = name.namespace,
+        resourceType = name.type,
+        resourceSubtype = name.subtype;
 
   ResourceName getResourceName(String name) {
     return ResourceName(namespace: namespace, type: resourceType, subtype: resourceSubtype, name: name);
   }
 
   @override
-  String toString() => '${namespace}:${resourceType}:${resourceSubtype}';
+  String toString() => '$namespace:$resourceType:$resourceSubtype';
 
   @override
   int get hashCode => Object.hash(namespace, resourceType, resourceSubtype);
 
   @override
   bool operator ==(covariant Subtype other) =>
-      this.namespace == other.namespace && this.resourceType == other.resourceType && this.resourceSubtype == other.resourceSubtype;
+      namespace == other.namespace && resourceType == other.resourceType && resourceSubtype == other.resourceSubtype;
 }
 
 abstract class Resource {

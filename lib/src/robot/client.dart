@@ -60,7 +60,7 @@ class RobotClient {
         continue;
       }
       try {
-        manager.register(name, Registry.instance.lookupSubtype(Subtype.fromResourceName(name)).rpcClientCreator(name.name, this.channel));
+        manager.register(name, Registry.instance.lookupSubtype(Subtype.fromResourceName(name)).rpcClientCreator(name.name, channel));
       } catch (error) {
         continue;
       }

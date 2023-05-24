@@ -14,20 +14,16 @@ import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' as _i20;
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart' as _i19;
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' as _i7;
 import 'package:viam_sdk/src/gen/component/camera/v1/camera.pb.dart' as _i14;
-import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart'
-    as _i13;
-import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pb.dart'
-    as _i6;
-import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart'
-    as _i5;
+import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart' as _i13;
+import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pb.dart' as _i6;
+import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart' as _i5;
 import 'package:viam_sdk/src/gen/google/api/httpbody.pb.dart' as _i15;
 import 'package:viam_sdk/src/gen/proto/stream/v1/stream.pb.dart' as _i17;
 import 'package:viam_sdk/src/gen/proto/stream/v1/stream.pbgrpc.dart' as _i16;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i10;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i9;
 import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pb.dart' as _i12;
-import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart'
-    as _i11;
+import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart' as _i11;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -40,8 +36,7 @@ import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart'
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeResponseFuture_0<R> extends _i1.SmartFake
-    implements _i2.ResponseFuture<R> {
+class _FakeResponseFuture_0<R> extends _i1.SmartFake implements _i2.ResponseFuture<R> {
   _FakeResponseFuture_0(
     Object parent,
     Invocation parentInvocation,
@@ -51,8 +46,7 @@ class _FakeResponseFuture_0<R> extends _i1.SmartFake
         );
 }
 
-class _FakeClientCall_1<Q, R> extends _i1.SmartFake
-    implements _i3.ClientCall<Q, R> {
+class _FakeClientCall_1<Q, R> extends _i1.SmartFake implements _i3.ClientCall<Q, R> {
   _FakeClientCall_1(
     Object parent,
     Invocation parentInvocation,
@@ -62,8 +56,7 @@ class _FakeClientCall_1<Q, R> extends _i1.SmartFake
         );
 }
 
-class _FakeResponseStream_2<R> extends _i1.SmartFake
-    implements _i2.ResponseStream<R> {
+class _FakeResponseStream_2<R> extends _i1.SmartFake implements _i2.ResponseStream<R> {
   _FakeResponseStream_2(
     Object parent,
     Invocation parentInvocation,
@@ -73,8 +66,7 @@ class _FakeResponseStream_2<R> extends _i1.SmartFake
         );
 }
 
-class _FakeClientConnection_3 extends _i1.SmartFake
-    implements _i4.ClientConnection {
+class _FakeClientConnection_3 extends _i1.SmartFake implements _i4.ClientConnection {
   _FakeClientConnection_3(
     Object parent,
     Invocation parentInvocation,
@@ -87,8 +79,7 @@ class _FakeClientConnection_3 extends _i1.SmartFake
 /// A class which mocks [MovementSensorServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMovementSensorServiceClient extends _i1.Mock
-    implements _i5.MovementSensorServiceClient {
+class MockMovementSensorServiceClient extends _i1.Mock implements _i5.MovementSensorServiceClient {
   MockMovementSensorServiceClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -359,8 +350,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
 /// A class which mocks [RobotServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRobotServiceClient extends _i1.Mock
-    implements _i9.RobotServiceClient {
+class MockRobotServiceClient extends _i1.Mock implements _i9.RobotServiceClient {
   MockRobotServiceClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -751,8 +741,7 @@ class MockRobotServiceClient extends _i1.Mock
 /// A class which mocks [SensorsServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSensorsServiceClient extends _i1.Mock
-    implements _i11.SensorsServiceClient {
+class MockSensorsServiceClient extends _i1.Mock implements _i11.SensorsServiceClient {
   MockSensorsServiceClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -903,8 +892,7 @@ class MockSensorsServiceClient extends _i1.Mock
 /// A class which mocks [CameraServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockCameraServiceClient extends _i1.Mock
-    implements _i13.CameraServiceClient {
+class MockCameraServiceClient extends _i1.Mock implements _i13.CameraServiceClient {
   MockCameraServiceClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -1095,8 +1083,7 @@ class MockCameraServiceClient extends _i1.Mock
 /// A class which mocks [StreamServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockStreamServiceClient extends _i1.Mock
-    implements _i16.StreamServiceClient {
+class MockStreamServiceClient extends _i1.Mock implements _i16.StreamServiceClient {
   MockStreamServiceClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -1253,8 +1240,7 @@ class MockClientChannelBase extends _i1.Mock implements _i18.ClientChannelBase {
   }
 
   @override
-  _i8.Stream<_i4.ConnectionState> get onConnectionStateChanged =>
-      (super.noSuchMethod(
+  _i8.Stream<_i4.ConnectionState> get onConnectionStateChanged => (super.noSuchMethod(
         Invocation.getter(#onConnectionStateChanged),
         returnValue: _i8.Stream<_i4.ConnectionState>.empty(),
       ) as _i8.Stream<_i4.ConnectionState>);
@@ -1296,8 +1282,7 @@ class MockClientChannelBase extends _i1.Mock implements _i18.ClientChannelBase {
           #getConnection,
           [],
         ),
-        returnValue:
-            _i8.Future<_i4.ClientConnection>.value(_FakeClientConnection_3(
+        returnValue: _i8.Future<_i4.ClientConnection>.value(_FakeClientConnection_3(
           this,
           Invocation.method(
             #getConnection,
@@ -1443,115 +1428,105 @@ class MockAppServiceClient extends _i1.Mock implements _i19.AppServiceClient {
         ),
       ) as _i2.ResponseFuture<_i20.DeleteOrganizationResponse>);
   @override
-  _i2.ResponseFuture<_i20.ListOrganizationMembersResponse>
-      listOrganizationMembers(
+  _i2.ResponseFuture<_i20.ListOrganizationMembersResponse> listOrganizationMembers(
     _i20.ListOrganizationMembersRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #listOrganizationMembers,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i20.ListOrganizationMembersResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationMembers,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i20.ListOrganizationMembersResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #listOrganizationMembers,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i20.ListOrganizationMembersResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationMembers,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i20.ListOrganizationMembersResponse>);
   @override
-  _i2.ResponseFuture<_i20.CreateOrganizationInviteResponse>
-      createOrganizationInvite(
+  _i2.ResponseFuture<_i20.CreateOrganizationInviteResponse> createOrganizationInvite(
     _i20.CreateOrganizationInviteRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #createOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i20.CreateOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #createOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i20.CreateOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #createOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i20.CreateOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #createOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i20.CreateOrganizationInviteResponse>);
   @override
-  _i2.ResponseFuture<_i20.DeleteOrganizationMemberResponse>
-      deleteOrganizationMember(
+  _i2.ResponseFuture<_i20.DeleteOrganizationMemberResponse> deleteOrganizationMember(
     _i20.DeleteOrganizationMemberRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteOrganizationMember,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i20.DeleteOrganizationMemberResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationMember,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i20.DeleteOrganizationMemberResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteOrganizationMember,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i20.DeleteOrganizationMemberResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationMember,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i20.DeleteOrganizationMemberResponse>);
   @override
-  _i2.ResponseFuture<_i20.DeleteOrganizationInviteResponse>
-      deleteOrganizationInvite(
+  _i2.ResponseFuture<_i20.DeleteOrganizationInviteResponse> deleteOrganizationInvite(
     _i20.DeleteOrganizationInviteRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i20.DeleteOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i20.DeleteOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i20.DeleteOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i20.DeleteOrganizationInviteResponse>);
   @override
-  _i2.ResponseFuture<_i20.ResendOrganizationInviteResponse>
-      resendOrganizationInvite(
+  _i2.ResponseFuture<_i20.ResendOrganizationInviteResponse> resendOrganizationInvite(
     _i20.ResendOrganizationInviteRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #resendOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i20.ResendOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #resendOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i20.ResendOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #resendOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i20.ResendOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #resendOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i20.ResendOrganizationInviteResponse>);
   @override
   _i2.ResponseFuture<_i20.CreateLocationResponse> createLocation(
     _i20.CreateLocationRequest? request, {
