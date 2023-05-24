@@ -53,8 +53,10 @@ class CameraService extends CameraServiceBase {
   }
 
   @override
-  Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) {
-    // TODO: implement renderFrame
-    throw UnimplementedError();
+  Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
+    Camera camera = _cameraFromManager(request.name);
+    var image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
+    var response = HttpBody(data: image.raw, contentType: image.mimeType.toString());
+    return response;
   }
 }
