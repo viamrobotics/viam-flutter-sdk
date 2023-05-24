@@ -56,8 +56,6 @@ abstract class Board extends Resource {
   /// Set the PWM frequency of the given pin of a board.
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});
 
-  // TODO add doCommand()
-
   /// Read the current value of an analog reader of a board.
   Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra});
 

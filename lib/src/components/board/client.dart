@@ -2,6 +2,7 @@ import 'package:fixnum/src/int64.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/duration.pb.dart' as grpc_duration;
 
+import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../utils.dart';
 import 'board.dart';
@@ -14,6 +15,12 @@ class BoardClient extends Board {
   String name;
 
   BoardClient(this.name, this._channel) : _client = BoardServiceClient(_channel);
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
+    final response = await _client.doCommand(common.DoCommandRequest(name: name, command: command?.toStruct()));
+    return response.result.toMap();
+  }
 
   @override
   Future<BoardStatus> status({Map<String, dynamic>? extra}) async {
