@@ -53,7 +53,7 @@ class RobotClient {
     }
     final manager = ResourceManager();
     for (ResourceName name in response.resources) {
-      if (![ResourceTypeComponent, ResourceTypeService].contains(name.type)) {
+      if (![resourceTypeComponent, resourceTypeService].contains(name.type)) {
         continue;
       }
       if (name.subtype == 'remote') {

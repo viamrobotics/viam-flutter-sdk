@@ -15,7 +15,7 @@ class Position {
 typedef Properties = GetPropertiesResponse;
 
 abstract class MovementSensor extends Sensor {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'movement_sensor');
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'movement_sensor');
 
   /// Get the current GeoPoint (latitude, longitude) and altitude (mm)
   Future<Position> position({Map<String, dynamic>? extra});

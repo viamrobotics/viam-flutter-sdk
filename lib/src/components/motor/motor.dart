@@ -30,7 +30,7 @@ class PowerState {
 /// This acts as an abstract base class for any drivers representing specific motor implementations.
 /// This cannot be used on its own.
 abstract class Motor extends Resource {
-  static const Subtype subtype = Subtype(ResourceNamespaceRDK, ResourceTypeComponent, 'motor');
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'motor');
 
   /// Sets the "percentage" of power the [Motor] should employ between -1 and 1.
   /// When [powerPct] is negative, the rotation will be in the backward direction.

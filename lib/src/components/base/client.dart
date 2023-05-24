@@ -1,8 +1,8 @@
 import 'package:fixnum/src/int64.dart';
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/gen/component/base/v1/base.pbgrpc.dart';
 
+import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/base/v1/base.pbgrpc.dart';
 import '../../utils.dart';
 import 'base.dart';
 
@@ -44,5 +44,11 @@ class BaseClient extends Base {
   @override
   Future<void> stop({Map<String, dynamic>? extra}) async {
     await _client.stop(StopRequest(name: name, extra: extra?.toStruct()));
+  }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    return response.result.toMap();
   }
 }

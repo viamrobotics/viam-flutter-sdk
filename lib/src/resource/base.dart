@@ -1,8 +1,8 @@
-import 'package:viam_sdk/src/proto/common.dart';
+import '../proto/common.dart';
 
-const String ResourceNamespaceRDK = 'rdk';
-const String ResourceTypeComponent = 'component';
-const String ResourceTypeService = 'service';
+const String resourceNamespaceRDK = 'rdk';
+const String resourceTypeComponent = 'component';
+const String resourceTypeService = 'service';
 
 class Subtype {
   final String namespace, resourceType, resourceSubtype;
