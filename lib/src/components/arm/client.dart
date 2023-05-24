@@ -37,7 +37,7 @@ class ArmClient extends Arm {
   }
 
   @override
-  Future<JointPositions> getJointPositions({Map<String, dynamic>? extra}) async {
+  Future<JointPositions> jointPositions({Map<String, dynamic>? extra}) async {
     final response = await _client.getJointPositions(GetJointPositionsRequest(name: name, extra: extra?.toStruct()));
     return response.positions;
   }
