@@ -13,7 +13,7 @@ class CameraService extends CameraServiceBase {
 
   CameraService(this._manager);
 
-  Camera _cameraFromManager(String name) {
+  Camera _fromManager(String name) {
     try {
       return _manager.getResource(Camera.getResourceName(name));
     } catch (e) {
@@ -23,40 +23,39 @@ class CameraService extends CameraServiceBase {
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    Camera camera = _cameraFromManager(request.name);
-    var result = await camera.doCommand(request.command.toMap());
+    final Camera camera = _fromManager(request.name);
+    final result = await camera.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
 
   @override
   Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
-    Camera camera = _cameraFromManager(request.name);
-    var result = await camera.image(mimeType: MimeType.fromString(request.mimeType));
-    return GetImageResponse(mimeType: result.mimeType.toString(), image: result.raw);
+    Camera camera = _fromManager(request.name);
+    final ViamImage image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
+    return GetImageResponse(mimeType: image.mimeType.toString(), image: image.raw);
   }
 
   @override
   Future<GetPointCloudResponse> getPointCloud(ServiceCall call, GetPointCloudRequest request) async {
-    Camera camera = _cameraFromManager(request.name);
-    var result = await camera.pointCloud();
-    return GetPointCloudResponse(mimeType: result.mimeType.toString(), pointCloud: result.raw);
+    final Camera camera = _fromManager(request.name);
+    final ViamImage image = await camera.pointCloud();
+    return GetPointCloudResponse(mimeType: image.mimeType.toString(), pointCloud: image.raw);
   }
 
   @override
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
-    Camera camera = _cameraFromManager(request.name);
-    var result = await camera.properties();
+    final Camera camera = _fromManager(request.name);
+    final CameraProperties properties = await camera.properties();
     return GetPropertiesResponse(
-        supportsPcd: result.supportsPcd,
-        intrinsicParameters: result.intrinsicParameters,
-        distortionParameters: result.distortionParameters);
+        supportsPcd: properties.supportsPcd,
+        intrinsicParameters: properties.intrinsicParameters,
+        distortionParameters: properties.distortionParameters);
   }
 
   @override
   Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
-    Camera camera = _cameraFromManager(request.name);
-    var image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
-    var response = HttpBody(data: image.raw, contentType: image.mimeType.toString());
-    return response;
+    final Camera camera = _fromManager(request.name);
+    final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
+    return HttpBody(data: image.raw, contentType: image.mimeType.toString());
   }
 }
