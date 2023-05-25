@@ -88,6 +88,27 @@ class DataServiceClient extends $grpc.Client {
           ($0.TagsByFilterRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.TagsByFilterResponse.fromBuffer(value));
+  static final _$addBoundingBoxToImageByID = $grpc.ClientMethod<
+          $0.AddBoundingBoxToImageByIDRequest,
+          $0.AddBoundingBoxToImageByIDResponse>(
+      '/viam.app.data.v1.DataService/AddBoundingBoxToImageByID',
+      ($0.AddBoundingBoxToImageByIDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.AddBoundingBoxToImageByIDResponse.fromBuffer(value));
+  static final _$removeBoundingBoxFromImageByID = $grpc.ClientMethod<
+          $0.RemoveBoundingBoxFromImageByIDRequest,
+          $0.RemoveBoundingBoxFromImageByIDResponse>(
+      '/viam.app.data.v1.DataService/RemoveBoundingBoxFromImageByID',
+      ($0.RemoveBoundingBoxFromImageByIDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.RemoveBoundingBoxFromImageByIDResponse.fromBuffer(value));
+  static final _$boundingBoxLabelsByFilter = $grpc.ClientMethod<
+          $0.BoundingBoxLabelsByFilterRequest,
+          $0.BoundingBoxLabelsByFilterResponse>(
+      '/viam.app.data.v1.DataService/BoundingBoxLabelsByFilter',
+      ($0.BoundingBoxLabelsByFilterRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.BoundingBoxLabelsByFilterResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -167,6 +188,28 @@ class DataServiceClient extends $grpc.Client {
       $0.TagsByFilterRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$tagsByFilter, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddBoundingBoxToImageByIDResponse>
+      addBoundingBoxToImageByID($0.AddBoundingBoxToImageByIDRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addBoundingBoxToImageByID, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveBoundingBoxFromImageByIDResponse>
+      removeBoundingBoxFromImageByID(
+          $0.RemoveBoundingBoxFromImageByIDRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeBoundingBoxFromImageByID, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.BoundingBoxLabelsByFilterResponse>
+      boundingBoxLabelsByFilter($0.BoundingBoxLabelsByFilterRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$boundingBoxLabelsByFilter, request,
+        options: options);
   }
 }
 
@@ -277,6 +320,34 @@ abstract class DataServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.TagsByFilterRequest.fromBuffer(value),
             ($0.TagsByFilterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddBoundingBoxToImageByIDRequest,
+            $0.AddBoundingBoxToImageByIDResponse>(
+        'AddBoundingBoxToImageByID',
+        addBoundingBoxToImageByID_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AddBoundingBoxToImageByIDRequest.fromBuffer(value),
+        ($0.AddBoundingBoxToImageByIDResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveBoundingBoxFromImageByIDRequest,
+            $0.RemoveBoundingBoxFromImageByIDResponse>(
+        'RemoveBoundingBoxFromImageByID',
+        removeBoundingBoxFromImageByID_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RemoveBoundingBoxFromImageByIDRequest.fromBuffer(value),
+        ($0.RemoveBoundingBoxFromImageByIDResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.BoundingBoxLabelsByFilterRequest,
+            $0.BoundingBoxLabelsByFilterResponse>(
+        'BoundingBoxLabelsByFilter',
+        boundingBoxLabelsByFilter_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.BoundingBoxLabelsByFilterRequest.fromBuffer(value),
+        ($0.BoundingBoxLabelsByFilterResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.TabularDataByFilterResponse> tabularDataByFilter_Pre(
@@ -349,6 +420,26 @@ abstract class DataServiceBase extends $grpc.Service {
     return tagsByFilter(call, await request);
   }
 
+  $async.Future<$0.AddBoundingBoxToImageByIDResponse>
+      addBoundingBoxToImageByID_Pre($grpc.ServiceCall call,
+          $async.Future<$0.AddBoundingBoxToImageByIDRequest> request) async {
+    return addBoundingBoxToImageByID(call, await request);
+  }
+
+  $async.Future<$0.RemoveBoundingBoxFromImageByIDResponse>
+      removeBoundingBoxFromImageByID_Pre(
+          $grpc.ServiceCall call,
+          $async.Future<$0.RemoveBoundingBoxFromImageByIDRequest>
+              request) async {
+    return removeBoundingBoxFromImageByID(call, await request);
+  }
+
+  $async.Future<$0.BoundingBoxLabelsByFilterResponse>
+      boundingBoxLabelsByFilter_Pre($grpc.ServiceCall call,
+          $async.Future<$0.BoundingBoxLabelsByFilterRequest> request) async {
+    return boundingBoxLabelsByFilter(call, await request);
+  }
+
   $async.Future<$0.TabularDataByFilterResponse> tabularDataByFilter(
       $grpc.ServiceCall call, $0.TabularDataByFilterRequest request);
   $async.Future<$0.BinaryDataByFilterResponse> binaryDataByFilter(
@@ -375,4 +466,11 @@ abstract class DataServiceBase extends $grpc.Service {
           $0.RemoveTagsFromBinaryDataByFilterRequest request);
   $async.Future<$0.TagsByFilterResponse> tagsByFilter(
       $grpc.ServiceCall call, $0.TagsByFilterRequest request);
+  $async.Future<$0.AddBoundingBoxToImageByIDResponse> addBoundingBoxToImageByID(
+      $grpc.ServiceCall call, $0.AddBoundingBoxToImageByIDRequest request);
+  $async.Future<$0.RemoveBoundingBoxFromImageByIDResponse>
+      removeBoundingBoxFromImageByID($grpc.ServiceCall call,
+          $0.RemoveBoundingBoxFromImageByIDRequest request);
+  $async.Future<$0.BoundingBoxLabelsByFilterResponse> boundingBoxLabelsByFilter(
+      $grpc.ServiceCall call, $0.BoundingBoxLabelsByFilterRequest request);
 }

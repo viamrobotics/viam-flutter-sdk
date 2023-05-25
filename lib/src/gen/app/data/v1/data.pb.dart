@@ -186,6 +186,7 @@ class Filter extends $pb.GeneratedMessage {
     ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
     ..aOM<CaptureInterval>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'interval', subBuilder: CaptureInterval.create)
     ..aOM<TagsFilter>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tagsFilter', subBuilder: TagsFilter.create)
+    ..pPS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxLabels')
     ..hasRequiredFields = false
   ;
 
@@ -206,6 +207,7 @@ class Filter extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? mimeType,
     CaptureInterval? interval,
     TagsFilter? tagsFilter,
+    $core.Iterable<$core.String>? bboxLabels,
   }) {
     final _result = create();
     if (componentName != null) {
@@ -250,6 +252,9 @@ class Filter extends $pb.GeneratedMessage {
     }
     if (tagsFilter != null) {
       _result.tagsFilter = tagsFilter;
+    }
+    if (bboxLabels != null) {
+      _result.bboxLabels.addAll(bboxLabels);
     }
     return _result;
   }
@@ -380,6 +385,9 @@ class Filter extends $pb.GeneratedMessage {
   void clearTagsFilter() => clearField(14);
   @$pb.TagNumber(14)
   TagsFilter ensureTagsFilter() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $core.List<$core.String> get bboxLabels => $_getList(14);
 }
 
 class TagsFilter extends $pb.GeneratedMessage {
@@ -1273,6 +1281,164 @@ class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
   void clearCount() => clearField(2);
 }
 
+class BoundingBox extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BoundingBox', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
+    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  BoundingBox._() : super();
+  factory BoundingBox({
+    $core.String? id,
+    $core.String? label,
+    $core.double? xMinNormalized,
+    $core.double? yMinNormalized,
+    $core.double? xMaxNormalized,
+    $core.double? yMaxNormalized,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (label != null) {
+      _result.label = label;
+    }
+    if (xMinNormalized != null) {
+      _result.xMinNormalized = xMinNormalized;
+    }
+    if (yMinNormalized != null) {
+      _result.yMinNormalized = yMinNormalized;
+    }
+    if (xMaxNormalized != null) {
+      _result.xMaxNormalized = xMaxNormalized;
+    }
+    if (yMaxNormalized != null) {
+      _result.yMaxNormalized = yMaxNormalized;
+    }
+    return _result;
+  }
+  factory BoundingBox.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BoundingBox.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BoundingBox clone() => BoundingBox()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BoundingBox copyWith(void Function(BoundingBox) updates) => super.copyWith((message) => updates(message as BoundingBox)) as BoundingBox; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static BoundingBox create() => BoundingBox._();
+  BoundingBox createEmptyInstance() => create();
+  static $pb.PbList<BoundingBox> createRepeated() => $pb.PbList<BoundingBox>();
+  @$core.pragma('dart2js:noInline')
+  static BoundingBox getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoundingBox>(create);
+  static BoundingBox? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get xMinNormalized => $_getN(2);
+  @$pb.TagNumber(3)
+  set xMinNormalized($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasXMinNormalized() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearXMinNormalized() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get yMinNormalized => $_getN(3);
+  @$pb.TagNumber(4)
+  set yMinNormalized($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasYMinNormalized() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearYMinNormalized() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get xMaxNormalized => $_getN(4);
+  @$pb.TagNumber(5)
+  set xMaxNormalized($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasXMaxNormalized() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearXMaxNormalized() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get yMaxNormalized => $_getN(5);
+  @$pb.TagNumber(6)
+  set yMaxNormalized($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasYMaxNormalized() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearYMaxNormalized() => clearField(6);
+}
+
+class Annotations extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Annotations', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<BoundingBox>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxes', $pb.PbFieldType.PM, subBuilder: BoundingBox.create)
+    ..hasRequiredFields = false
+  ;
+
+  Annotations._() : super();
+  factory Annotations({
+    $core.Iterable<BoundingBox>? bboxes,
+  }) {
+    final _result = create();
+    if (bboxes != null) {
+      _result.bboxes.addAll(bboxes);
+    }
+    return _result;
+  }
+  factory Annotations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Annotations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Annotations clone() => Annotations()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Annotations copyWith(void Function(Annotations) updates) => super.copyWith((message) => updates(message as Annotations)) as Annotations; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Annotations create() => Annotations._();
+  Annotations createEmptyInstance() => create();
+  static $pb.PbList<Annotations> createRepeated() => $pb.PbList<Annotations>();
+  @$core.pragma('dart2js:noInline')
+  static Annotations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Annotations>(create);
+  static Annotations? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<BoundingBox> get bboxes => $_getList(0);
+}
+
 class BinaryMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
@@ -1282,6 +1448,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileName')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileExt')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'uri')
+    ..aOM<Annotations>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'annotations', subBuilder: Annotations.create)
     ..hasRequiredFields = false
   ;
 
@@ -1294,6 +1461,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     $core.String? fileName,
     $core.String? fileExt,
     $core.String? uri,
+    Annotations? annotations,
   }) {
     final _result = create();
     if (id != null) {
@@ -1316,6 +1484,9 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     }
     if (uri != null) {
       _result.uri = uri;
+    }
+    if (annotations != null) {
+      _result.annotations = annotations;
     }
     return _result;
   }
@@ -1408,6 +1579,17 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   $core.bool hasUri() => $_has(6);
   @$pb.TagNumber(7)
   void clearUri() => clearField(7);
+
+  @$pb.TagNumber(8)
+  Annotations get annotations => $_getN(7);
+  @$pb.TagNumber(8)
+  set annotations(Annotations v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAnnotations() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAnnotations() => clearField(8);
+  @$pb.TagNumber(8)
+  Annotations ensureAnnotations() => $_ensure(7);
 }
 
 class DeleteTabularDataByFilterRequest extends $pb.GeneratedMessage {
@@ -2190,5 +2372,349 @@ class TagsByFilterResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<$core.String> get tags => $_getList(0);
+}
+
+class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddBoundingBoxToImageByIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
+    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  AddBoundingBoxToImageByIDRequest._() : super();
+  factory AddBoundingBoxToImageByIDRequest({
+    $core.String? fileId,
+    $core.String? label,
+    $core.double? xMinNormalized,
+    $core.double? yMinNormalized,
+    $core.double? xMaxNormalized,
+    $core.double? yMaxNormalized,
+  }) {
+    final _result = create();
+    if (fileId != null) {
+      _result.fileId = fileId;
+    }
+    if (label != null) {
+      _result.label = label;
+    }
+    if (xMinNormalized != null) {
+      _result.xMinNormalized = xMinNormalized;
+    }
+    if (yMinNormalized != null) {
+      _result.yMinNormalized = yMinNormalized;
+    }
+    if (xMaxNormalized != null) {
+      _result.xMaxNormalized = xMaxNormalized;
+    }
+    if (yMaxNormalized != null) {
+      _result.yMaxNormalized = yMaxNormalized;
+    }
+    return _result;
+  }
+  factory AddBoundingBoxToImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddBoundingBoxToImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddBoundingBoxToImageByIDRequest clone() => AddBoundingBoxToImageByIDRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddBoundingBoxToImageByIDRequest copyWith(void Function(AddBoundingBoxToImageByIDRequest) updates) => super.copyWith((message) => updates(message as AddBoundingBoxToImageByIDRequest)) as AddBoundingBoxToImageByIDRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AddBoundingBoxToImageByIDRequest create() => AddBoundingBoxToImageByIDRequest._();
+  AddBoundingBoxToImageByIDRequest createEmptyInstance() => create();
+  static $pb.PbList<AddBoundingBoxToImageByIDRequest> createRepeated() => $pb.PbList<AddBoundingBoxToImageByIDRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddBoundingBoxToImageByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddBoundingBoxToImageByIDRequest>(create);
+  static AddBoundingBoxToImageByIDRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fileId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fileId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFileId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFileId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get xMinNormalized => $_getN(2);
+  @$pb.TagNumber(3)
+  set xMinNormalized($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasXMinNormalized() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearXMinNormalized() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get yMinNormalized => $_getN(3);
+  @$pb.TagNumber(4)
+  set yMinNormalized($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasYMinNormalized() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearYMinNormalized() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get xMaxNormalized => $_getN(4);
+  @$pb.TagNumber(5)
+  set xMaxNormalized($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasXMaxNormalized() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearXMaxNormalized() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get yMaxNormalized => $_getN(5);
+  @$pb.TagNumber(6)
+  set yMaxNormalized($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasYMaxNormalized() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearYMaxNormalized() => clearField(6);
+}
+
+class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddBoundingBoxToImageByIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxId')
+    ..hasRequiredFields = false
+  ;
+
+  AddBoundingBoxToImageByIDResponse._() : super();
+  factory AddBoundingBoxToImageByIDResponse({
+    $core.String? bboxId,
+  }) {
+    final _result = create();
+    if (bboxId != null) {
+      _result.bboxId = bboxId;
+    }
+    return _result;
+  }
+  factory AddBoundingBoxToImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddBoundingBoxToImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddBoundingBoxToImageByIDResponse clone() => AddBoundingBoxToImageByIDResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddBoundingBoxToImageByIDResponse copyWith(void Function(AddBoundingBoxToImageByIDResponse) updates) => super.copyWith((message) => updates(message as AddBoundingBoxToImageByIDResponse)) as AddBoundingBoxToImageByIDResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AddBoundingBoxToImageByIDResponse create() => AddBoundingBoxToImageByIDResponse._();
+  AddBoundingBoxToImageByIDResponse createEmptyInstance() => create();
+  static $pb.PbList<AddBoundingBoxToImageByIDResponse> createRepeated() => $pb.PbList<AddBoundingBoxToImageByIDResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddBoundingBoxToImageByIDResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddBoundingBoxToImageByIDResponse>(create);
+  static AddBoundingBoxToImageByIDResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get bboxId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set bboxId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBboxId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBboxId() => clearField(1);
+}
+
+class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveBoundingBoxFromImageByIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxId')
+    ..hasRequiredFields = false
+  ;
+
+  RemoveBoundingBoxFromImageByIDRequest._() : super();
+  factory RemoveBoundingBoxFromImageByIDRequest({
+    $core.String? fileId,
+    $core.String? bboxId,
+  }) {
+    final _result = create();
+    if (fileId != null) {
+      _result.fileId = fileId;
+    }
+    if (bboxId != null) {
+      _result.bboxId = bboxId;
+    }
+    return _result;
+  }
+  factory RemoveBoundingBoxFromImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveBoundingBoxFromImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveBoundingBoxFromImageByIDRequest clone() => RemoveBoundingBoxFromImageByIDRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveBoundingBoxFromImageByIDRequest copyWith(void Function(RemoveBoundingBoxFromImageByIDRequest) updates) => super.copyWith((message) => updates(message as RemoveBoundingBoxFromImageByIDRequest)) as RemoveBoundingBoxFromImageByIDRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RemoveBoundingBoxFromImageByIDRequest create() => RemoveBoundingBoxFromImageByIDRequest._();
+  RemoveBoundingBoxFromImageByIDRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveBoundingBoxFromImageByIDRequest> createRepeated() => $pb.PbList<RemoveBoundingBoxFromImageByIDRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveBoundingBoxFromImageByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBoundingBoxFromImageByIDRequest>(create);
+  static RemoveBoundingBoxFromImageByIDRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fileId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fileId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFileId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFileId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get bboxId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set bboxId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBboxId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBboxId() => clearField(2);
+}
+
+class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveBoundingBoxFromImageByIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  RemoveBoundingBoxFromImageByIDResponse._() : super();
+  factory RemoveBoundingBoxFromImageByIDResponse() => create();
+  factory RemoveBoundingBoxFromImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveBoundingBoxFromImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveBoundingBoxFromImageByIDResponse clone() => RemoveBoundingBoxFromImageByIDResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveBoundingBoxFromImageByIDResponse copyWith(void Function(RemoveBoundingBoxFromImageByIDResponse) updates) => super.copyWith((message) => updates(message as RemoveBoundingBoxFromImageByIDResponse)) as RemoveBoundingBoxFromImageByIDResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RemoveBoundingBoxFromImageByIDResponse create() => RemoveBoundingBoxFromImageByIDResponse._();
+  RemoveBoundingBoxFromImageByIDResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveBoundingBoxFromImageByIDResponse> createRepeated() => $pb.PbList<RemoveBoundingBoxFromImageByIDResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveBoundingBoxFromImageByIDResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBoundingBoxFromImageByIDResponse>(create);
+  static RemoveBoundingBoxFromImageByIDResponse? _defaultInstance;
+}
+
+class BoundingBoxLabelsByFilterRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BoundingBoxLabelsByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
+    ..hasRequiredFields = false
+  ;
+
+  BoundingBoxLabelsByFilterRequest._() : super();
+  factory BoundingBoxLabelsByFilterRequest({
+    Filter? filter,
+  }) {
+    final _result = create();
+    if (filter != null) {
+      _result.filter = filter;
+    }
+    return _result;
+  }
+  factory BoundingBoxLabelsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BoundingBoxLabelsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BoundingBoxLabelsByFilterRequest clone() => BoundingBoxLabelsByFilterRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BoundingBoxLabelsByFilterRequest copyWith(void Function(BoundingBoxLabelsByFilterRequest) updates) => super.copyWith((message) => updates(message as BoundingBoxLabelsByFilterRequest)) as BoundingBoxLabelsByFilterRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static BoundingBoxLabelsByFilterRequest create() => BoundingBoxLabelsByFilterRequest._();
+  BoundingBoxLabelsByFilterRequest createEmptyInstance() => create();
+  static $pb.PbList<BoundingBoxLabelsByFilterRequest> createRepeated() => $pb.PbList<BoundingBoxLabelsByFilterRequest>();
+  @$core.pragma('dart2js:noInline')
+  static BoundingBoxLabelsByFilterRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoundingBoxLabelsByFilterRequest>(create);
+  static BoundingBoxLabelsByFilterRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Filter get filter => $_getN(0);
+  @$pb.TagNumber(1)
+  set filter(Filter v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFilter() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilter() => clearField(1);
+  @$pb.TagNumber(1)
+  Filter ensureFilter() => $_ensure(0);
+}
+
+class BoundingBoxLabelsByFilterResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BoundingBoxLabelsByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'labels')
+    ..hasRequiredFields = false
+  ;
+
+  BoundingBoxLabelsByFilterResponse._() : super();
+  factory BoundingBoxLabelsByFilterResponse({
+    $core.Iterable<$core.String>? labels,
+  }) {
+    final _result = create();
+    if (labels != null) {
+      _result.labels.addAll(labels);
+    }
+    return _result;
+  }
+  factory BoundingBoxLabelsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BoundingBoxLabelsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BoundingBoxLabelsByFilterResponse clone() => BoundingBoxLabelsByFilterResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BoundingBoxLabelsByFilterResponse copyWith(void Function(BoundingBoxLabelsByFilterResponse) updates) => super.copyWith((message) => updates(message as BoundingBoxLabelsByFilterResponse)) as BoundingBoxLabelsByFilterResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static BoundingBoxLabelsByFilterResponse create() => BoundingBoxLabelsByFilterResponse._();
+  BoundingBoxLabelsByFilterResponse createEmptyInstance() => create();
+  static $pb.PbList<BoundingBoxLabelsByFilterResponse> createRepeated() => $pb.PbList<BoundingBoxLabelsByFilterResponse>();
+  @$core.pragma('dart2js:noInline')
+  static BoundingBoxLabelsByFilterResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoundingBoxLabelsByFilterResponse>(create);
+  static BoundingBoxLabelsByFilterResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get labels => $_getList(0);
 }
 

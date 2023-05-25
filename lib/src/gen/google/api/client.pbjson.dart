@@ -17,11 +17,14 @@ const ClientLibraryOrganization$json = const {
     const {'1': 'ADS', '2': 2},
     const {'1': 'PHOTOS', '2': 3},
     const {'1': 'STREET_VIEW', '2': 4},
+    const {'1': 'SHOPPING', '2': 5},
+    const {'1': 'GEO', '2': 6},
+    const {'1': 'GENERATIVE_AI', '2': 7},
   ],
 };
 
 /// Descriptor for `ClientLibraryOrganization`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List clientLibraryOrganizationDescriptor = $convert.base64Decode('ChlDbGllbnRMaWJyYXJ5T3JnYW5pemF0aW9uEisKJ0NMSUVOVF9MSUJSQVJZX09SR0FOSVpBVElPTl9VTlNQRUNJRklFRBAAEgkKBUNMT1VEEAESBwoDQURTEAISCgoGUEhPVE9TEAMSDwoLU1RSRUVUX1ZJRVcQBA==');
+final $typed_data.Uint8List clientLibraryOrganizationDescriptor = $convert.base64Decode('ChlDbGllbnRMaWJyYXJ5T3JnYW5pemF0aW9uEisKJ0NMSUVOVF9MSUJSQVJZX09SR0FOSVpBVElPTl9VTlNQRUNJRklFRBAAEgkKBUNMT1VEEAESBwoDQURTEAISCgoGUEhPVE9TEAMSDwoLU1RSRUVUX1ZJRVcQBBIMCghTSE9QUElORxAFEgcKA0dFTxAGEhEKDUdFTkVSQVRJVkVfQUkQBw==');
 @$core.Deprecated('Use clientLibraryDestinationDescriptor instead')
 const ClientLibraryDestination$json = const {
   '1': 'ClientLibraryDestination',

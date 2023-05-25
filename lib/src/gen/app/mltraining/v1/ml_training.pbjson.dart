@@ -15,11 +15,12 @@ const ModelType$json = const {
     const {'1': 'MODEL_TYPE_UNSPECIFIED', '2': 0},
     const {'1': 'MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION', '2': 1},
     const {'1': 'MODEL_TYPE_MULTI_LABEL_CLASSIFICATION', '2': 2},
+    const {'1': 'MODEL_TYPE_OBJECT_DETECTION', '2': 3},
   ],
 };
 
 /// Descriptor for `ModelType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List modelTypeDescriptor = $convert.base64Decode('CglNb2RlbFR5cGUSGgoWTU9ERUxfVFlQRV9VTlNQRUNJRklFRBAAEioKJk1PREVMX1RZUEVfU0lOR0xFX0xBQkVMX0NMQVNTSUZJQ0FUSU9OEAESKQolTU9ERUxfVFlQRV9NVUxUSV9MQUJFTF9DTEFTU0lGSUNBVElPThAC');
+final $typed_data.Uint8List modelTypeDescriptor = $convert.base64Decode('CglNb2RlbFR5cGUSGgoWTU9ERUxfVFlQRV9VTlNQRUNJRklFRBAAEioKJk1PREVMX1RZUEVfU0lOR0xFX0xBQkVMX0NMQVNTSUZJQ0FUSU9OEAESKQolTU9ERUxfVFlQRV9NVUxUSV9MQUJFTF9DTEFTU0lGSUNBVElPThACEh8KG01PREVMX1RZUEVfT0JKRUNUX0RFVEVDVElPThAD');
 @$core.Deprecated('Use trainingStatusDescriptor instead')
 const TrainingStatus$json = const {
   '1': 'TrainingStatus',
@@ -30,11 +31,12 @@ const TrainingStatus$json = const {
     const {'1': 'TRAINING_STATUS_COMPLETED', '2': 3},
     const {'1': 'TRAINING_STATUS_FAILED', '2': 4},
     const {'1': 'TRAINING_STATUS_CANCELED', '2': 5},
+    const {'1': 'TRAINING_STATUS_CANCELING', '2': 6},
   ],
 };
 
 /// Descriptor for `TrainingStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List trainingStatusDescriptor = $convert.base64Decode('Cg5UcmFpbmluZ1N0YXR1cxIfChtUUkFJTklOR19TVEFUVVNfVU5TUEVDSUZJRUQQABIbChdUUkFJTklOR19TVEFUVVNfUEVORElORxABEh8KG1RSQUlOSU5HX1NUQVRVU19JTl9QUk9HUkVTUxACEh0KGVRSQUlOSU5HX1NUQVRVU19DT01QTEVURUQQAxIaChZUUkFJTklOR19TVEFUVVNfRkFJTEVEEAQSHAoYVFJBSU5JTkdfU1RBVFVTX0NBTkNFTEVEEAU=');
+final $typed_data.Uint8List trainingStatusDescriptor = $convert.base64Decode('Cg5UcmFpbmluZ1N0YXR1cxIfChtUUkFJTklOR19TVEFUVVNfVU5TUEVDSUZJRUQQABIbChdUUkFJTklOR19TVEFUVVNfUEVORElORxABEh8KG1RSQUlOSU5HX1NUQVRVU19JTl9QUk9HUkVTUxACEh0KGVRSQUlOSU5HX1NUQVRVU19DT01QTEVURUQQAxIaChZUUkFJTklOR19TVEFUVVNfRkFJTEVEEAQSHAoYVFJBSU5JTkdfU1RBVFVTX0NBTkNFTEVEEAUSHQoZVFJBSU5JTkdfU1RBVFVTX0NBTkNFTElORxAG');
 @$core.Deprecated('Use submitTrainingJobRequestDescriptor instead')
 const SubmitTrainingJobRequest$json = const {
   '1': 'SubmitTrainingJobRequest',

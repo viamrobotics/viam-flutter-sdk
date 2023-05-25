@@ -17,18 +17,16 @@ const MoveRequest$json = const {
     const {'1': 'component_name', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
     const {'1': 'world_state', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.WorldState', '9': 0, '10': 'worldState', '17': true},
     const {'1': 'constraints', '3': 5, '4': 1, '5': 11, '6': '.viam.service.motion.v1.Constraints', '9': 1, '10': 'constraints', '17': true},
-    const {'1': 'slam_service_name', '3': 6, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '9': 2, '10': 'slamServiceName', '17': true},
     const {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': const [
     const {'1': '_world_state'},
     const {'1': '_constraints'},
-    const {'1': '_slam_service_name'},
   ],
 };
 
 /// Descriptor for `MoveRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List moveRequestDescriptor = $convert.base64Decode('CgtNb3ZlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEj0KC2Rlc3RpbmF0aW9uGAIgASgLMhsudmlhbS5jb21tb24udjEuUG9zZUluRnJhbWVSC2Rlc3RpbmF0aW9uEkMKDmNvbXBvbmVudF9uYW1lGAMgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lUg1jb21wb25lbnROYW1lEkAKC3dvcmxkX3N0YXRlGAQgASgLMhoudmlhbS5jb21tb24udjEuV29ybGRTdGF0ZUgAUgp3b3JsZFN0YXRliAEBEkoKC2NvbnN0cmFpbnRzGAUgASgLMiMudmlhbS5zZXJ2aWNlLm1vdGlvbi52MS5Db25zdHJhaW50c0gBUgtjb25zdHJhaW50c4gBARJNChFzbGFtX3NlcnZpY2VfbmFtZRgGIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZUgCUg9zbGFtU2VydmljZU5hbWWIAQESLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYUIOCgxfd29ybGRfc3RhdGVCDgoMX2NvbnN0cmFpbnRzQhQKEl9zbGFtX3NlcnZpY2VfbmFtZQ==');
+final $typed_data.Uint8List moveRequestDescriptor = $convert.base64Decode('CgtNb3ZlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEj0KC2Rlc3RpbmF0aW9uGAIgASgLMhsudmlhbS5jb21tb24udjEuUG9zZUluRnJhbWVSC2Rlc3RpbmF0aW9uEkMKDmNvbXBvbmVudF9uYW1lGAMgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lUg1jb21wb25lbnROYW1lEkAKC3dvcmxkX3N0YXRlGAQgASgLMhoudmlhbS5jb21tb24udjEuV29ybGRTdGF0ZUgAUgp3b3JsZFN0YXRliAEBEkoKC2NvbnN0cmFpbnRzGAUgASgLMiMudmlhbS5zZXJ2aWNlLm1vdGlvbi52MS5Db25zdHJhaW50c0gBUgtjb25zdHJhaW50c4gBARItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJhQg4KDF93b3JsZF9zdGF0ZUIOCgxfY29uc3RyYWludHM=');
 @$core.Deprecated('Use moveResponseDescriptor instead')
 const MoveResponse$json = const {
   '1': 'MoveResponse',
@@ -39,6 +37,63 @@ const MoveResponse$json = const {
 
 /// Descriptor for `MoveResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moveResponseDescriptor = $convert.base64Decode('CgxNb3ZlUmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3VjY2Vzcw==');
+@$core.Deprecated('Use moveOnMapRequestDescriptor instead')
+const MoveOnMapRequest$json = const {
+  '1': 'MoveOnMapRequest',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'destination'},
+    const {'1': 'component_name', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    const {'1': 'slam_service_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'slamServiceName'},
+    const {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `MoveOnMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOnMapRequestDescriptor = $convert.base64Decode('ChBNb3ZlT25NYXBSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSNgoLZGVzdGluYXRpb24YAiABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgtkZXN0aW5hdGlvbhJDCg5jb21wb25lbnRfbmFtZRgDIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZRJIChFzbGFtX3NlcnZpY2VfbmFtZRgEIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVIPc2xhbVNlcnZpY2VOYW1lEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+@$core.Deprecated('Use moveOnMapResponseDescriptor instead')
+const MoveOnMapResponse$json = const {
+  '1': 'MoveOnMapResponse',
+  '2': const [
+    const {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+  ],
+};
+
+/// Descriptor for `MoveOnMapResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOnMapResponseDescriptor = $convert.base64Decode('ChFNb3ZlT25NYXBSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
+@$core.Deprecated('Use moveOnGlobeRequestDescriptor instead')
+const MoveOnGlobeRequest$json = const {
+  '1': 'MoveOnGlobeRequest',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'destination'},
+    const {'1': 'heading', '3': 3, '4': 1, '5': 1, '9': 0, '10': 'heading', '17': true},
+    const {'1': 'component_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    const {'1': 'movement_sensor_name', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'movementSensorName'},
+    const {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.GeoObstacle', '10': 'obstacles'},
+    const {'1': 'linear_meters_per_sec', '3': 7, '4': 1, '5': 2, '9': 1, '10': 'linearMetersPerSec', '17': true},
+    const {'1': 'angular_deg_per_sec', '3': 8, '4': 1, '5': 2, '9': 2, '10': 'angularDegPerSec', '17': true},
+    const {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+  '8': const [
+    const {'1': '_heading'},
+    const {'1': '_linear_meters_per_sec'},
+    const {'1': '_angular_deg_per_sec'},
+  ],
+};
+
+/// Descriptor for `MoveOnGlobeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOnGlobeRequestDescriptor = $convert.base64Decode('ChJNb3ZlT25HbG9iZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRI6CgtkZXN0aW5hdGlvbhgCIAEoCzIYLnZpYW0uY29tbW9uLnYxLkdlb1BvaW50UgtkZXN0aW5hdGlvbhIdCgdoZWFkaW5nGAMgASgBSABSB2hlYWRpbmeIAQESQwoOY29tcG9uZW50X25hbWUYBCABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVSDWNvbXBvbmVudE5hbWUSTgoUbW92ZW1lbnRfc2Vuc29yX25hbWUYBSABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVSEm1vdmVtZW50U2Vuc29yTmFtZRI5CglvYnN0YWNsZXMYBiADKAsyGy52aWFtLmNvbW1vbi52MS5HZW9PYnN0YWNsZVIJb2JzdGFjbGVzEjYKFWxpbmVhcl9tZXRlcnNfcGVyX3NlYxgHIAEoAkgBUhJsaW5lYXJNZXRlcnNQZXJTZWOIAQESMgoTYW5ndWxhcl9kZWdfcGVyX3NlYxgIIAEoAkgCUhBhbmd1bGFyRGVnUGVyU2VjiAEBEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmFCCgoIX2hlYWRpbmdCGAoWX2xpbmVhcl9tZXRlcnNfcGVyX3NlY0IWChRfYW5ndWxhcl9kZWdfcGVyX3NlYw==');
+@$core.Deprecated('Use moveOnGlobeResponseDescriptor instead')
+const MoveOnGlobeResponse$json = const {
+  '1': 'MoveOnGlobeResponse',
+  '2': const [
+    const {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+  ],
+};
+
+/// Descriptor for `MoveOnGlobeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOnGlobeResponseDescriptor = $convert.base64Decode('ChNNb3ZlT25HbG9iZVJlc3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3M=');
 @$core.Deprecated('Use moveSingleComponentRequestDescriptor instead')
 const MoveSingleComponentRequest$json = const {
   '1': 'MoveSingleComponentRequest',

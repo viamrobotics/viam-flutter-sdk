@@ -86,6 +86,7 @@ const Filter$json = const {
     const {'1': 'mime_type', '3': 12, '4': 3, '5': 9, '10': 'mimeType'},
     const {'1': 'interval', '3': 13, '4': 1, '5': 11, '6': '.viam.app.data.v1.CaptureInterval', '10': 'interval'},
     const {'1': 'tags_filter', '3': 14, '4': 1, '5': 11, '6': '.viam.app.data.v1.TagsFilter', '10': 'tagsFilter'},
+    const {'1': 'bbox_labels', '3': 15, '4': 3, '5': 9, '10': 'bboxLabels'},
     const {
       '1': 'tags',
       '3': 5,
@@ -98,7 +99,7 @@ const Filter$json = const {
 };
 
 /// Descriptor for `Filter`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List filterDescriptor = $convert.base64Decode('CgZGaWx0ZXISJQoOY29tcG9uZW50X25hbWUYASABKAlSDWNvbXBvbmVudE5hbWUSJQoOY29tcG9uZW50X3R5cGUYAiABKAlSDWNvbXBvbmVudFR5cGUSJwoPY29tcG9uZW50X21vZGVsGAMgASgJUg5jb21wb25lbnRNb2RlbBIWCgZtZXRob2QYBCABKAlSBm1ldGhvZBIdCgpyb2JvdF9uYW1lGAYgASgJUglyb2JvdE5hbWUSGQoIcm9ib3RfaWQYByABKAlSB3JvYm90SWQSGwoJcGFydF9uYW1lGAggASgJUghwYXJ0TmFtZRIXCgdwYXJ0X2lkGAkgASgJUgZwYXJ0SWQSIQoMbG9jYXRpb25faWRzGAogAygJUgtsb2NhdGlvbklkcxIXCgdvcmdfaWRzGAsgAygJUgZvcmdJZHMSGwoJbWltZV90eXBlGAwgAygJUghtaW1lVHlwZRI9CghpbnRlcnZhbBgNIAEoCzIhLnZpYW0uYXBwLmRhdGEudjEuQ2FwdHVyZUludGVydmFsUghpbnRlcnZhbBI9Cgt0YWdzX2ZpbHRlchgOIAEoCzIcLnZpYW0uYXBwLmRhdGEudjEuVGFnc0ZpbHRlclIKdGFnc0ZpbHRlchIWCgR0YWdzGAUgAygJQgIYAVIEdGFncw==');
+final $typed_data.Uint8List filterDescriptor = $convert.base64Decode('CgZGaWx0ZXISJQoOY29tcG9uZW50X25hbWUYASABKAlSDWNvbXBvbmVudE5hbWUSJQoOY29tcG9uZW50X3R5cGUYAiABKAlSDWNvbXBvbmVudFR5cGUSJwoPY29tcG9uZW50X21vZGVsGAMgASgJUg5jb21wb25lbnRNb2RlbBIWCgZtZXRob2QYBCABKAlSBm1ldGhvZBIdCgpyb2JvdF9uYW1lGAYgASgJUglyb2JvdE5hbWUSGQoIcm9ib3RfaWQYByABKAlSB3JvYm90SWQSGwoJcGFydF9uYW1lGAggASgJUghwYXJ0TmFtZRIXCgdwYXJ0X2lkGAkgASgJUgZwYXJ0SWQSIQoMbG9jYXRpb25faWRzGAogAygJUgtsb2NhdGlvbklkcxIXCgdvcmdfaWRzGAsgAygJUgZvcmdJZHMSGwoJbWltZV90eXBlGAwgAygJUghtaW1lVHlwZRI9CghpbnRlcnZhbBgNIAEoCzIhLnZpYW0uYXBwLmRhdGEudjEuQ2FwdHVyZUludGVydmFsUghpbnRlcnZhbBI9Cgt0YWdzX2ZpbHRlchgOIAEoCzIcLnZpYW0uYXBwLmRhdGEudjEuVGFnc0ZpbHRlclIKdGFnc0ZpbHRlchIfCgtiYm94X2xhYmVscxgPIAMoCVIKYmJveExhYmVscxIWCgR0YWdzGAUgAygJQgIYAVIEdGFncw==');
 @$core.Deprecated('Use tagsFilterDescriptor instead')
 const TagsFilter$json = const {
   '1': 'TagsFilter',
@@ -249,6 +250,31 @@ const BinaryDataByIDsResponse$json = const {
 
 /// Descriptor for `BinaryDataByIDsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List binaryDataByIDsResponseDescriptor = $convert.base64Decode('ChdCaW5hcnlEYXRhQnlJRHNSZXNwb25zZRIwCgRkYXRhGAEgAygLMhwudmlhbS5hcHAuZGF0YS52MS5CaW5hcnlEYXRhUgRkYXRhEhQKBWNvdW50GAIgASgEUgVjb3VudA==');
+@$core.Deprecated('Use boundingBoxDescriptor instead')
+const BoundingBox$json = const {
+  '1': 'BoundingBox',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
+    const {'1': 'x_min_normalized', '3': 3, '4': 1, '5': 1, '10': 'xMinNormalized'},
+    const {'1': 'y_min_normalized', '3': 4, '4': 1, '5': 1, '10': 'yMinNormalized'},
+    const {'1': 'x_max_normalized', '3': 5, '4': 1, '5': 1, '10': 'xMaxNormalized'},
+    const {'1': 'y_max_normalized', '3': 6, '4': 1, '5': 1, '10': 'yMaxNormalized'},
+  ],
+};
+
+/// Descriptor for `BoundingBox`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List boundingBoxDescriptor = $convert.base64Decode('CgtCb3VuZGluZ0JveBIOCgJpZBgBIAEoCVICaWQSFAoFbGFiZWwYAiABKAlSBWxhYmVsEigKEHhfbWluX25vcm1hbGl6ZWQYAyABKAFSDnhNaW5Ob3JtYWxpemVkEigKEHlfbWluX25vcm1hbGl6ZWQYBCABKAFSDnlNaW5Ob3JtYWxpemVkEigKEHhfbWF4X25vcm1hbGl6ZWQYBSABKAFSDnhNYXhOb3JtYWxpemVkEigKEHlfbWF4X25vcm1hbGl6ZWQYBiABKAFSDnlNYXhOb3JtYWxpemVk');
+@$core.Deprecated('Use annotationsDescriptor instead')
+const Annotations$json = const {
+  '1': 'Annotations',
+  '2': const [
+    const {'1': 'bboxes', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.BoundingBox', '10': 'bboxes'},
+  ],
+};
+
+/// Descriptor for `Annotations`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annotationsDescriptor = $convert.base64Decode('CgtBbm5vdGF0aW9ucxI1CgZiYm94ZXMYASADKAsyHS52aWFtLmFwcC5kYXRhLnYxLkJvdW5kaW5nQm94UgZiYm94ZXM=');
 @$core.Deprecated('Use binaryMetadataDescriptor instead')
 const BinaryMetadata$json = const {
   '1': 'BinaryMetadata',
@@ -260,11 +286,12 @@ const BinaryMetadata$json = const {
     const {'1': 'file_name', '3': 5, '4': 1, '5': 9, '10': 'fileName'},
     const {'1': 'file_ext', '3': 6, '4': 1, '5': 9, '10': 'fileExt'},
     const {'1': 'uri', '3': 7, '4': 1, '5': 9, '10': 'uri'},
+    const {'1': 'annotations', '3': 8, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
   ],
 };
 
 /// Descriptor for `BinaryMetadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List binaryMetadataDescriptor = $convert.base64Decode('Cg5CaW5hcnlNZXRhZGF0YRIOCgJpZBgBIAEoCVICaWQSTAoQY2FwdHVyZV9tZXRhZGF0YRgCIAEoCzIhLnZpYW0uYXBwLmRhdGEudjEuQ2FwdHVyZU1ldGFkYXRhUg9jYXB0dXJlTWV0YWRhdGESQQoOdGltZV9yZXF1ZXN0ZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg10aW1lUmVxdWVzdGVkEj8KDXRpbWVfcmVjZWl2ZWQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgx0aW1lUmVjZWl2ZWQSGwoJZmlsZV9uYW1lGAUgASgJUghmaWxlTmFtZRIZCghmaWxlX2V4dBgGIAEoCVIHZmlsZUV4dBIQCgN1cmkYByABKAlSA3VyaQ==');
+final $typed_data.Uint8List binaryMetadataDescriptor = $convert.base64Decode('Cg5CaW5hcnlNZXRhZGF0YRIOCgJpZBgBIAEoCVICaWQSTAoQY2FwdHVyZV9tZXRhZGF0YRgCIAEoCzIhLnZpYW0uYXBwLmRhdGEudjEuQ2FwdHVyZU1ldGFkYXRhUg9jYXB0dXJlTWV0YWRhdGESQQoOdGltZV9yZXF1ZXN0ZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg10aW1lUmVxdWVzdGVkEj8KDXRpbWVfcmVjZWl2ZWQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgx0aW1lUmVjZWl2ZWQSGwoJZmlsZV9uYW1lGAUgASgJUghmaWxlTmFtZRIZCghmaWxlX2V4dBgGIAEoCVIHZmlsZUV4dBIQCgN1cmkYByABKAlSA3VyaRI/Cgthbm5vdGF0aW9ucxgIIAEoCzIdLnZpYW0uYXBwLmRhdGEudjEuQW5ub3RhdGlvbnNSC2Fubm90YXRpb25z');
 @$core.Deprecated('Use deleteTabularDataByFilterRequestDescriptor instead')
 const DeleteTabularDataByFilterRequest$json = const {
   '1': 'DeleteTabularDataByFilterRequest',
@@ -426,3 +453,66 @@ const TagsByFilterResponse$json = const {
 
 /// Descriptor for `TagsByFilterResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tagsByFilterResponseDescriptor = $convert.base64Decode('ChRUYWdzQnlGaWx0ZXJSZXNwb25zZRISCgR0YWdzGAEgAygJUgR0YWdz');
+@$core.Deprecated('Use addBoundingBoxToImageByIDRequestDescriptor instead')
+const AddBoundingBoxToImageByIDRequest$json = const {
+  '1': 'AddBoundingBoxToImageByIDRequest',
+  '2': const [
+    const {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    const {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
+    const {'1': 'x_min_normalized', '3': 3, '4': 1, '5': 1, '10': 'xMinNormalized'},
+    const {'1': 'y_min_normalized', '3': 4, '4': 1, '5': 1, '10': 'yMinNormalized'},
+    const {'1': 'x_max_normalized', '3': 5, '4': 1, '5': 1, '10': 'xMaxNormalized'},
+    const {'1': 'y_max_normalized', '3': 6, '4': 1, '5': 1, '10': 'yMaxNormalized'},
+  ],
+};
+
+/// Descriptor for `AddBoundingBoxToImageByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addBoundingBoxToImageByIDRequestDescriptor = $convert.base64Decode('CiBBZGRCb3VuZGluZ0JveFRvSW1hZ2VCeUlEUmVxdWVzdBIXCgdmaWxlX2lkGAEgASgJUgZmaWxlSWQSFAoFbGFiZWwYAiABKAlSBWxhYmVsEigKEHhfbWluX25vcm1hbGl6ZWQYAyABKAFSDnhNaW5Ob3JtYWxpemVkEigKEHlfbWluX25vcm1hbGl6ZWQYBCABKAFSDnlNaW5Ob3JtYWxpemVkEigKEHhfbWF4X25vcm1hbGl6ZWQYBSABKAFSDnhNYXhOb3JtYWxpemVkEigKEHlfbWF4X25vcm1hbGl6ZWQYBiABKAFSDnlNYXhOb3JtYWxpemVk');
+@$core.Deprecated('Use addBoundingBoxToImageByIDResponseDescriptor instead')
+const AddBoundingBoxToImageByIDResponse$json = const {
+  '1': 'AddBoundingBoxToImageByIDResponse',
+  '2': const [
+    const {'1': 'bbox_id', '3': 1, '4': 1, '5': 9, '10': 'bboxId'},
+  ],
+};
+
+/// Descriptor for `AddBoundingBoxToImageByIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addBoundingBoxToImageByIDResponseDescriptor = $convert.base64Decode('CiFBZGRCb3VuZGluZ0JveFRvSW1hZ2VCeUlEUmVzcG9uc2USFwoHYmJveF9pZBgBIAEoCVIGYmJveElk');
+@$core.Deprecated('Use removeBoundingBoxFromImageByIDRequestDescriptor instead')
+const RemoveBoundingBoxFromImageByIDRequest$json = const {
+  '1': 'RemoveBoundingBoxFromImageByIDRequest',
+  '2': const [
+    const {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    const {'1': 'bbox_id', '3': 2, '4': 1, '5': 9, '10': 'bboxId'},
+  ],
+};
+
+/// Descriptor for `RemoveBoundingBoxFromImageByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeBoundingBoxFromImageByIDRequestDescriptor = $convert.base64Decode('CiVSZW1vdmVCb3VuZGluZ0JveEZyb21JbWFnZUJ5SURSZXF1ZXN0EhcKB2ZpbGVfaWQYASABKAlSBmZpbGVJZBIXCgdiYm94X2lkGAIgASgJUgZiYm94SWQ=');
+@$core.Deprecated('Use removeBoundingBoxFromImageByIDResponseDescriptor instead')
+const RemoveBoundingBoxFromImageByIDResponse$json = const {
+  '1': 'RemoveBoundingBoxFromImageByIDResponse',
+};
+
+/// Descriptor for `RemoveBoundingBoxFromImageByIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeBoundingBoxFromImageByIDResponseDescriptor = $convert.base64Decode('CiZSZW1vdmVCb3VuZGluZ0JveEZyb21JbWFnZUJ5SURSZXNwb25zZQ==');
+@$core.Deprecated('Use boundingBoxLabelsByFilterRequestDescriptor instead')
+const BoundingBoxLabelsByFilterRequest$json = const {
+  '1': 'BoundingBoxLabelsByFilterRequest',
+  '2': const [
+    const {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.viam.app.data.v1.Filter', '10': 'filter'},
+  ],
+};
+
+/// Descriptor for `BoundingBoxLabelsByFilterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List boundingBoxLabelsByFilterRequestDescriptor = $convert.base64Decode('CiBCb3VuZGluZ0JveExhYmVsc0J5RmlsdGVyUmVxdWVzdBIwCgZmaWx0ZXIYASABKAsyGC52aWFtLmFwcC5kYXRhLnYxLkZpbHRlclIGZmlsdGVy');
+@$core.Deprecated('Use boundingBoxLabelsByFilterResponseDescriptor instead')
+const BoundingBoxLabelsByFilterResponse$json = const {
+  '1': 'BoundingBoxLabelsByFilterResponse',
+  '2': const [
+    const {'1': 'labels', '3': 1, '4': 3, '5': 9, '10': 'labels'},
+  ],
+};
+
+/// Descriptor for `BoundingBoxLabelsByFilterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List boundingBoxLabelsByFilterResponseDescriptor = $convert.base64Decode('CiFCb3VuZGluZ0JveExhYmVsc0J5RmlsdGVyUmVzcG9uc2USFgoGbGFiZWxzGAEgAygJUgZsYWJlbHM=');

@@ -277,6 +277,30 @@ class AppServiceClient extends $grpc.Client {
           ($0.DeleteFragmentRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.DeleteFragmentResponse.fromBuffer(value));
+  static final _$addRole =
+      $grpc.ClientMethod<$0.AddRoleRequest, $0.AddRoleResponse>(
+          '/viam.app.v1.AppService/AddRole',
+          ($0.AddRoleRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.AddRoleResponse.fromBuffer(value));
+  static final _$removeRole =
+      $grpc.ClientMethod<$0.RemoveRoleRequest, $0.RemoveRoleResponse>(
+          '/viam.app.v1.AppService/RemoveRole',
+          ($0.RemoveRoleRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.RemoveRoleResponse.fromBuffer(value));
+  static final _$listAuthorizations = $grpc.ClientMethod<
+          $0.ListAuthorizationsRequest, $0.ListAuthorizationsResponse>(
+      '/viam.app.v1.AppService/ListAuthorizations',
+      ($0.ListAuthorizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.ListAuthorizationsResponse.fromBuffer(value));
+  static final _$checkPermissions = $grpc.ClientMethod<
+          $0.CheckPermissionsRequest, $0.CheckPermissionsResponse>(
+      '/viam.app.v1.AppService/CheckPermissions',
+      ($0.CheckPermissionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.CheckPermissionsResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -544,6 +568,29 @@ class AppServiceClient extends $grpc.Client {
       $0.DeleteFragmentRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteFragment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddRoleResponse> addRole($0.AddRoleRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addRole, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveRoleResponse> removeRole(
+      $0.RemoveRoleRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeRole, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListAuthorizationsResponse> listAuthorizations(
+      $0.ListAuthorizationsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listAuthorizations, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CheckPermissionsResponse> checkPermissions(
+      $0.CheckPermissionsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$checkPermissions, request, options: options);
   }
 }
 
@@ -932,6 +979,38 @@ abstract class AppServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.DeleteFragmentRequest.fromBuffer(value),
         ($0.DeleteFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddRoleRequest, $0.AddRoleResponse>(
+        'AddRole',
+        addRole_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AddRoleRequest.fromBuffer(value),
+        ($0.AddRoleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveRoleRequest, $0.RemoveRoleResponse>(
+        'RemoveRole',
+        removeRole_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RemoveRoleRequest.fromBuffer(value),
+        ($0.RemoveRoleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAuthorizationsRequest,
+            $0.ListAuthorizationsResponse>(
+        'ListAuthorizations',
+        listAuthorizations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListAuthorizationsRequest.fromBuffer(value),
+        ($0.ListAuthorizationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CheckPermissionsRequest,
+            $0.CheckPermissionsResponse>(
+        'CheckPermissions',
+        checkPermissions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CheckPermissionsRequest.fromBuffer(value),
+        ($0.CheckPermissionsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateOrganizationResponse> createOrganization_Pre(
@@ -1185,6 +1264,28 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteFragment(call, await request);
   }
 
+  $async.Future<$0.AddRoleResponse> addRole_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.AddRoleRequest> request) async {
+    return addRole(call, await request);
+  }
+
+  $async.Future<$0.RemoveRoleResponse> removeRole_Pre($grpc.ServiceCall call,
+      $async.Future<$0.RemoveRoleRequest> request) async {
+    return removeRole(call, await request);
+  }
+
+  $async.Future<$0.ListAuthorizationsResponse> listAuthorizations_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.ListAuthorizationsRequest> request) async {
+    return listAuthorizations(call, await request);
+  }
+
+  $async.Future<$0.CheckPermissionsResponse> checkPermissions_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.CheckPermissionsRequest> request) async {
+    return checkPermissions(call, await request);
+  }
+
   $async.Future<$0.CreateOrganizationResponse> createOrganization(
       $grpc.ServiceCall call, $0.CreateOrganizationRequest request);
   $async.Future<$0.ListOrganizationsResponse> listOrganizations(
@@ -1271,4 +1372,12 @@ abstract class AppServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.UpdateFragmentRequest request);
   $async.Future<$0.DeleteFragmentResponse> deleteFragment(
       $grpc.ServiceCall call, $0.DeleteFragmentRequest request);
+  $async.Future<$0.AddRoleResponse> addRole(
+      $grpc.ServiceCall call, $0.AddRoleRequest request);
+  $async.Future<$0.RemoveRoleResponse> removeRole(
+      $grpc.ServiceCall call, $0.RemoveRoleRequest request);
+  $async.Future<$0.ListAuthorizationsResponse> listAuthorizations(
+      $grpc.ServiceCall call, $0.ListAuthorizationsRequest request);
+  $async.Future<$0.CheckPermissionsResponse> checkPermissions(
+      $grpc.ServiceCall call, $0.CheckPermissionsRequest request);
 }

@@ -25,7 +25,7 @@ class ViamPosition {
 
 extension ViamPositionMapper on GetPositionResponse {
   ViamPosition toDomain() => ViamPosition(
-        altitudeMm,
+        altitudeM,
         coordinate.latitude,
         coordinate.longitude,
       );

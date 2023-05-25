@@ -19,6 +19,18 @@ class MotionServiceClient extends $grpc.Client {
       '/viam.service.motion.v1.MotionService/Move',
       ($0.MoveRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.MoveResponse.fromBuffer(value));
+  static final _$moveOnMap =
+      $grpc.ClientMethod<$0.MoveOnMapRequest, $0.MoveOnMapResponse>(
+          '/viam.service.motion.v1.MotionService/MoveOnMap',
+          ($0.MoveOnMapRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MoveOnMapResponse.fromBuffer(value));
+  static final _$moveOnGlobe =
+      $grpc.ClientMethod<$0.MoveOnGlobeRequest, $0.MoveOnGlobeResponse>(
+          '/viam.service.motion.v1.MotionService/MoveOnGlobe',
+          ($0.MoveOnGlobeRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.MoveOnGlobeResponse.fromBuffer(value));
   static final _$moveSingleComponent = $grpc.ClientMethod<
           $0.MoveSingleComponentRequest, $0.MoveSingleComponentResponse>(
       '/viam.service.motion.v1.MotionService/MoveSingleComponent',
@@ -46,6 +58,18 @@ class MotionServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.MoveResponse> move($0.MoveRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$move, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MoveOnMapResponse> moveOnMap(
+      $0.MoveOnMapRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$moveOnMap, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MoveOnGlobeResponse> moveOnGlobe(
+      $0.MoveOnGlobeRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$moveOnGlobe, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.MoveSingleComponentResponse> moveSingleComponent(
@@ -77,6 +101,22 @@ abstract class MotionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MoveRequest.fromBuffer(value),
         ($0.MoveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MoveOnMapRequest, $0.MoveOnMapResponse>(
+        'MoveOnMap',
+        moveOnMap_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.MoveOnMapRequest.fromBuffer(value),
+        ($0.MoveOnMapResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.MoveOnGlobeRequest, $0.MoveOnGlobeResponse>(
+            'MoveOnGlobe',
+            moveOnGlobe_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.MoveOnGlobeRequest.fromBuffer(value),
+            ($0.MoveOnGlobeResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.MoveSingleComponentRequest,
             $0.MoveSingleComponentResponse>(
         'MoveSingleComponent',
@@ -107,6 +147,16 @@ abstract class MotionServiceBase extends $grpc.Service {
     return move(call, await request);
   }
 
+  $async.Future<$0.MoveOnMapResponse> moveOnMap_Pre($grpc.ServiceCall call,
+      $async.Future<$0.MoveOnMapRequest> request) async {
+    return moveOnMap(call, await request);
+  }
+
+  $async.Future<$0.MoveOnGlobeResponse> moveOnGlobe_Pre($grpc.ServiceCall call,
+      $async.Future<$0.MoveOnGlobeRequest> request) async {
+    return moveOnGlobe(call, await request);
+  }
+
   $async.Future<$0.MoveSingleComponentResponse> moveSingleComponent_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.MoveSingleComponentRequest> request) async {
@@ -125,6 +175,10 @@ abstract class MotionServiceBase extends $grpc.Service {
 
   $async.Future<$0.MoveResponse> move(
       $grpc.ServiceCall call, $0.MoveRequest request);
+  $async.Future<$0.MoveOnMapResponse> moveOnMap(
+      $grpc.ServiceCall call, $0.MoveOnMapRequest request);
+  $async.Future<$0.MoveOnGlobeResponse> moveOnGlobe(
+      $grpc.ServiceCall call, $0.MoveOnGlobeRequest request);
   $async.Future<$0.MoveSingleComponentResponse> moveSingleComponent(
       $grpc.ServiceCall call, $0.MoveSingleComponentRequest request);
   $async.Future<$0.GetPoseResponse> getPose(

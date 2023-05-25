@@ -108,12 +108,12 @@ const GetPositionResponse$json = const {
   '1': 'GetPositionResponse',
   '2': const [
     const {'1': 'coordinate', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'coordinate'},
-    const {'1': 'altitude_mm', '3': 2, '4': 1, '5': 2, '10': 'altitudeMm'},
+    const {'1': 'altitude_m', '3': 2, '4': 1, '5': 2, '10': 'altitudeM'},
   ],
 };
 
 /// Descriptor for `GetPositionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPositionResponseDescriptor = $convert.base64Decode('ChNHZXRQb3NpdGlvblJlc3BvbnNlEjgKCmNvb3JkaW5hdGUYASABKAsyGC52aWFtLmNvbW1vbi52MS5HZW9Qb2ludFIKY29vcmRpbmF0ZRIfCgthbHRpdHVkZV9tbRgCIAEoAlIKYWx0aXR1ZGVNbQ==');
+final $typed_data.Uint8List getPositionResponseDescriptor = $convert.base64Decode('ChNHZXRQb3NpdGlvblJlc3BvbnNlEjgKCmNvb3JkaW5hdGUYASABKAsyGC52aWFtLmNvbW1vbi52MS5HZW9Qb2ludFIKY29vcmRpbmF0ZRIdCgphbHRpdHVkZV9tGAIgASgCUglhbHRpdHVkZU0=');
 @$core.Deprecated('Use getPropertiesRequestDescriptor instead')
 const GetPropertiesRequest$json = const {
   '1': 'GetPropertiesRequest',
@@ -155,14 +155,14 @@ final $typed_data.Uint8List getAccuracyRequestDescriptor = $convert.base64Decode
 const GetAccuracyResponse$json = const {
   '1': 'GetAccuracyResponse',
   '2': const [
-    const {'1': 'accuracy_mm', '3': 1, '4': 3, '5': 11, '6': '.viam.component.movementsensor.v1.GetAccuracyResponse.AccuracyMmEntry', '10': 'accuracyMm'},
+    const {'1': 'accuracy', '3': 1, '4': 3, '5': 11, '6': '.viam.component.movementsensor.v1.GetAccuracyResponse.AccuracyEntry', '10': 'accuracy'},
   ],
-  '3': const [GetAccuracyResponse_AccuracyMmEntry$json],
+  '3': const [GetAccuracyResponse_AccuracyEntry$json],
 };
 
 @$core.Deprecated('Use getAccuracyResponseDescriptor instead')
-const GetAccuracyResponse_AccuracyMmEntry$json = const {
-  '1': 'AccuracyMmEntry',
+const GetAccuracyResponse_AccuracyEntry$json = const {
+  '1': 'AccuracyEntry',
   '2': const [
     const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
     const {'1': 'value', '3': 2, '4': 1, '5': 2, '10': 'value'},
@@ -171,7 +171,7 @@ const GetAccuracyResponse_AccuracyMmEntry$json = const {
 };
 
 /// Descriptor for `GetAccuracyResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAccuracyResponseDescriptor = $convert.base64Decode('ChNHZXRBY2N1cmFjeVJlc3BvbnNlEmYKC2FjY3VyYWN5X21tGAEgAygLMkUudmlhbS5jb21wb25lbnQubW92ZW1lbnRzZW5zb3IudjEuR2V0QWNjdXJhY3lSZXNwb25zZS5BY2N1cmFjeU1tRW50cnlSCmFjY3VyYWN5TW0aPQoPQWNjdXJhY3lNbUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgCUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List getAccuracyResponseDescriptor = $convert.base64Decode('ChNHZXRBY2N1cmFjeVJlc3BvbnNlEl8KCGFjY3VyYWN5GAEgAygLMkMudmlhbS5jb21wb25lbnQubW92ZW1lbnRzZW5zb3IudjEuR2V0QWNjdXJhY3lSZXNwb25zZS5BY2N1cmFjeUVudHJ5UghhY2N1cmFjeRo7Cg1BY2N1cmFjeUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgCUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use getLinearAccelerationRequestDescriptor instead')
 const GetLinearAccelerationRequest$json = const {
   '1': 'GetLinearAccelerationRequest',

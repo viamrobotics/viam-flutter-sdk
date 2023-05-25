@@ -13,11 +13,13 @@ class ModelType extends $pb.ProtobufEnum {
   static const ModelType MODEL_TYPE_UNSPECIFIED = ModelType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'MODEL_TYPE_UNSPECIFIED');
   static const ModelType MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION = ModelType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION');
   static const ModelType MODEL_TYPE_MULTI_LABEL_CLASSIFICATION = ModelType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'MODEL_TYPE_MULTI_LABEL_CLASSIFICATION');
+  static const ModelType MODEL_TYPE_OBJECT_DETECTION = ModelType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'MODEL_TYPE_OBJECT_DETECTION');
 
   static const $core.List<ModelType> values = <ModelType> [
     MODEL_TYPE_UNSPECIFIED,
     MODEL_TYPE_SINGLE_LABEL_CLASSIFICATION,
     MODEL_TYPE_MULTI_LABEL_CLASSIFICATION,
+    MODEL_TYPE_OBJECT_DETECTION,
   ];
 
   static final $core.Map<$core.int, ModelType> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -33,6 +35,7 @@ class TrainingStatus extends $pb.ProtobufEnum {
   static const TrainingStatus TRAINING_STATUS_COMPLETED = TrainingStatus._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TRAINING_STATUS_COMPLETED');
   static const TrainingStatus TRAINING_STATUS_FAILED = TrainingStatus._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TRAINING_STATUS_FAILED');
   static const TrainingStatus TRAINING_STATUS_CANCELED = TrainingStatus._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TRAINING_STATUS_CANCELED');
+  static const TrainingStatus TRAINING_STATUS_CANCELING = TrainingStatus._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TRAINING_STATUS_CANCELING');
 
   static const $core.List<TrainingStatus> values = <TrainingStatus> [
     TRAINING_STATUS_UNSPECIFIED,
@@ -41,6 +44,7 @@ class TrainingStatus extends $pb.ProtobufEnum {
     TRAINING_STATUS_COMPLETED,
     TRAINING_STATUS_FAILED,
     TRAINING_STATUS_CANCELED,
+    TRAINING_STATUS_CANCELING,
   ];
 
   static final $core.Map<$core.int, TrainingStatus> _byValue = $pb.ProtobufEnum.initByValue(values);

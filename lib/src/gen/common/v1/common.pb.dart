@@ -1066,6 +1066,63 @@ class GeoPoint extends $pb.GeneratedMessage {
   void clearLongitude() => clearField(2);
 }
 
+class GeoObstacle extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GeoObstacle', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOM<GeoPoint>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'location', subBuilder: GeoPoint.create)
+    ..pc<Geometry>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'geometries', $pb.PbFieldType.PM, subBuilder: Geometry.create)
+    ..hasRequiredFields = false
+  ;
+
+  GeoObstacle._() : super();
+  factory GeoObstacle({
+    GeoPoint? location,
+    $core.Iterable<Geometry>? geometries,
+  }) {
+    final _result = create();
+    if (location != null) {
+      _result.location = location;
+    }
+    if (geometries != null) {
+      _result.geometries.addAll(geometries);
+    }
+    return _result;
+  }
+  factory GeoObstacle.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GeoObstacle.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GeoObstacle clone() => GeoObstacle()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GeoObstacle copyWith(void Function(GeoObstacle) updates) => super.copyWith((message) => updates(message as GeoObstacle)) as GeoObstacle; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GeoObstacle create() => GeoObstacle._();
+  GeoObstacle createEmptyInstance() => create();
+  static $pb.PbList<GeoObstacle> createRepeated() => $pb.PbList<GeoObstacle>();
+  @$core.pragma('dart2js:noInline')
+  static GeoObstacle getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeoObstacle>(create);
+  static GeoObstacle? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  GeoPoint get location => $_getN(0);
+  @$pb.TagNumber(1)
+  set location(GeoPoint v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocation() => clearField(1);
+  @$pb.TagNumber(1)
+  GeoPoint ensureLocation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<Geometry> get geometries => $_getList(1);
+}
+
 class Transform extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transform', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'referenceFrame')

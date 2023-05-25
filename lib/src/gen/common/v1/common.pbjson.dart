@@ -206,6 +206,17 @@ const GeoPoint$json = const {
 
 /// Descriptor for `GeoPoint`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List geoPointDescriptor = $convert.base64Decode('CghHZW9Qb2ludBIaCghsYXRpdHVkZRgBIAEoAVIIbGF0aXR1ZGUSHAoJbG9uZ2l0dWRlGAIgASgBUglsb25naXR1ZGU=');
+@$core.Deprecated('Use geoObstacleDescriptor instead')
+const GeoObstacle$json = const {
+  '1': 'GeoObstacle',
+  '2': const [
+    const {'1': 'location', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'location'},
+    const {'1': 'geometries', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
+  ],
+};
+
+/// Descriptor for `GeoObstacle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List geoObstacleDescriptor = $convert.base64Decode('CgtHZW9PYnN0YWNsZRI0Cghsb2NhdGlvbhgBIAEoCzIYLnZpYW0uY29tbW9uLnYxLkdlb1BvaW50Ughsb2NhdGlvbhI4CgpnZW9tZXRyaWVzGAIgAygLMhgudmlhbS5jb21tb24udjEuR2VvbWV0cnlSCmdlb21ldHJpZXM=');
 @$core.Deprecated('Use transformDescriptor instead')
 const Transform$json = const {
   '1': 'Transform',

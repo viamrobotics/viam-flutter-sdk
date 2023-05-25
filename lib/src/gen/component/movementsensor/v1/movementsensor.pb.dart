@@ -524,21 +524,21 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 class GetPositionResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPositionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOM<$1.GeoPoint>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coordinate', subBuilder: $1.GeoPoint.create)
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeMm', $pb.PbFieldType.OF)
+    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeM', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
   GetPositionResponse._() : super();
   factory GetPositionResponse({
     $1.GeoPoint? coordinate,
-    $core.double? altitudeMm,
+    $core.double? altitudeM,
   }) {
     final _result = create();
     if (coordinate != null) {
       _result.coordinate = coordinate;
     }
-    if (altitudeMm != null) {
-      _result.altitudeMm = altitudeMm;
+    if (altitudeM != null) {
+      _result.altitudeM = altitudeM;
     }
     return _result;
   }
@@ -575,13 +575,13 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   $1.GeoPoint ensureCoordinate() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.double get altitudeMm => $_getN(1);
+  $core.double get altitudeM => $_getN(1);
   @$pb.TagNumber(2)
-  set altitudeMm($core.double v) { $_setFloat(1, v); }
+  set altitudeM($core.double v) { $_setFloat(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAltitudeMm() => $_has(1);
+  $core.bool hasAltitudeM() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAltitudeMm() => clearField(2);
+  void clearAltitudeM() => clearField(2);
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
@@ -829,17 +829,17 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
 
 class GetAccuracyResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetAccuracyResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
-    ..m<$core.String, $core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accuracyMm', entryClassName: 'GetAccuracyResponse.AccuracyMmEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OF, packageName: const $pb.PackageName('viam.component.movementsensor.v1'))
+    ..m<$core.String, $core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accuracy', entryClassName: 'GetAccuracyResponse.AccuracyEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OF, packageName: const $pb.PackageName('viam.component.movementsensor.v1'))
     ..hasRequiredFields = false
   ;
 
   GetAccuracyResponse._() : super();
   factory GetAccuracyResponse({
-    $core.Map<$core.String, $core.double>? accuracyMm,
+    $core.Map<$core.String, $core.double>? accuracy,
   }) {
     final _result = create();
-    if (accuracyMm != null) {
-      _result.accuracyMm.addAll(accuracyMm);
+    if (accuracy != null) {
+      _result.accuracy.addAll(accuracy);
     }
     return _result;
   }
@@ -865,7 +865,7 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
   static GetAccuracyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $core.double> get accuracyMm => $_getMap(0);
+  $core.Map<$core.String, $core.double> get accuracy => $_getMap(0);
 }
 
 class GetLinearAccelerationRequest extends $pb.GeneratedMessage {

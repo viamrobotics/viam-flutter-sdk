@@ -10,8 +10,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $2;
-import '../../google/protobuf/struct.pb.dart' as $3;
+import '../../google/protobuf/timestamp.pb.dart' as $3;
+import '../../google/protobuf/struct.pb.dart' as $4;
 
 import 'app.pbenum.dart';
 
@@ -22,8 +22,8 @@ class Robot extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'location')
-    ..aOM<$2.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastAccess', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastAccess', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -32,8 +32,8 @@ class Robot extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? location,
-    $2.Timestamp? lastAccess,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? lastAccess,
+    $3.Timestamp? createdOn,
   }) {
     final _result = create();
     if (id != null) {
@@ -102,26 +102,26 @@ class Robot extends $pb.GeneratedMessage {
   void clearLocation() => clearField(3);
 
   @$pb.TagNumber(4)
-  $2.Timestamp get lastAccess => $_getN(3);
+  $3.Timestamp get lastAccess => $_getN(3);
   @$pb.TagNumber(4)
-  set lastAccess($2.Timestamp v) { setField(4, v); }
+  set lastAccess($3.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastAccess() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastAccess() => clearField(4);
   @$pb.TagNumber(4)
-  $2.Timestamp ensureLastAccess() => $_ensure(3);
+  $3.Timestamp ensureLastAccess() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $2.Timestamp get createdOn => $_getN(4);
+  $3.Timestamp get createdOn => $_getN(4);
   @$pb.TagNumber(5)
-  set createdOn($2.Timestamp v) { setField(5, v); }
+  set createdOn($3.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedOn() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedOn() => clearField(5);
   @$pb.TagNumber(5)
-  $2.Timestamp ensureCreatedOn() => $_ensure(4);
+  $3.Timestamp ensureCreatedOn() => $_ensure(4);
 }
 
 class RobotPart extends $pb.GeneratedMessage {
@@ -130,15 +130,15 @@ class RobotPart extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robot')
-    ..aOM<$3.Struct>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotConfig', subBuilder: $3.Struct.create)
-    ..aOM<$2.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastAccess', subBuilder: $2.Timestamp.create)
-    ..aOM<$3.Struct>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userSuppliedInfo', subBuilder: $3.Struct.create)
+    ..aOM<$4.Struct>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotConfig', subBuilder: $4.Struct.create)
+    ..aOM<$3.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastAccess', subBuilder: $3.Timestamp.create)
+    ..aOM<$4.Struct>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userSuppliedInfo', subBuilder: $4.Struct.create)
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mainPart')
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fqdn')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dnsName')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'localFqdn')
     ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locationId')
-    ..aOM<$2.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..pc<SharedSecret>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secrets', $pb.PbFieldType.PM, subBuilder: SharedSecret.create)
     ..hasRequiredFields = false
   ;
@@ -149,15 +149,15 @@ class RobotPart extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? secret,
     $core.String? robot,
-    $3.Struct? robotConfig,
-    $2.Timestamp? lastAccess,
-    $3.Struct? userSuppliedInfo,
+    $4.Struct? robotConfig,
+    $3.Timestamp? lastAccess,
+    $4.Struct? userSuppliedInfo,
     $core.bool? mainPart,
     $core.String? fqdn,
     $core.String? dnsName,
     $core.String? localFqdn,
     $core.String? locationId,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? createdOn,
     $core.Iterable<SharedSecret>? secrets,
   }) {
     final _result = create();
@@ -263,37 +263,37 @@ class RobotPart extends $pb.GeneratedMessage {
   void clearRobot() => clearField(4);
 
   @$pb.TagNumber(5)
-  $3.Struct get robotConfig => $_getN(4);
+  $4.Struct get robotConfig => $_getN(4);
   @$pb.TagNumber(5)
-  set robotConfig($3.Struct v) { setField(5, v); }
+  set robotConfig($4.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRobotConfig() => $_has(4);
   @$pb.TagNumber(5)
   void clearRobotConfig() => clearField(5);
   @$pb.TagNumber(5)
-  $3.Struct ensureRobotConfig() => $_ensure(4);
+  $4.Struct ensureRobotConfig() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $2.Timestamp get lastAccess => $_getN(5);
+  $3.Timestamp get lastAccess => $_getN(5);
   @$pb.TagNumber(6)
-  set lastAccess($2.Timestamp v) { setField(6, v); }
+  set lastAccess($3.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLastAccess() => $_has(5);
   @$pb.TagNumber(6)
   void clearLastAccess() => clearField(6);
   @$pb.TagNumber(6)
-  $2.Timestamp ensureLastAccess() => $_ensure(5);
+  $3.Timestamp ensureLastAccess() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $3.Struct get userSuppliedInfo => $_getN(6);
+  $4.Struct get userSuppliedInfo => $_getN(6);
   @$pb.TagNumber(7)
-  set userSuppliedInfo($3.Struct v) { setField(7, v); }
+  set userSuppliedInfo($4.Struct v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasUserSuppliedInfo() => $_has(6);
   @$pb.TagNumber(7)
   void clearUserSuppliedInfo() => clearField(7);
   @$pb.TagNumber(7)
-  $3.Struct ensureUserSuppliedInfo() => $_ensure(6);
+  $4.Struct ensureUserSuppliedInfo() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $core.bool get mainPart => $_getBF(7);
@@ -341,15 +341,15 @@ class RobotPart extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(12);
 
   @$pb.TagNumber(13)
-  $2.Timestamp get createdOn => $_getN(12);
+  $3.Timestamp get createdOn => $_getN(12);
   @$pb.TagNumber(13)
-  set createdOn($2.Timestamp v) { setField(13, v); }
+  set createdOn($3.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasCreatedOn() => $_has(12);
   @$pb.TagNumber(13)
   void clearCreatedOn() => clearField(13);
   @$pb.TagNumber(13)
-  $2.Timestamp ensureCreatedOn() => $_ensure(12);
+  $3.Timestamp ensureCreatedOn() => $_ensure(12);
 
   @$pb.TagNumber(14)
   $core.List<SharedSecret> get secrets => $_getList(13);
@@ -359,7 +359,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RobotPartHistoryEntry', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'part')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robot')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'when', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'when', subBuilder: $3.Timestamp.create)
     ..aOM<RobotPart>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'old', subBuilder: RobotPart.create)
     ..hasRequiredFields = false
   ;
@@ -368,7 +368,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   factory RobotPartHistoryEntry({
     $core.String? part,
     $core.String? robot,
-    $2.Timestamp? when,
+    $3.Timestamp? when,
     RobotPart? old,
   }) {
     final _result = create();
@@ -426,15 +426,15 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   void clearRobot() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get when => $_getN(2);
+  $3.Timestamp get when => $_getN(2);
   @$pb.TagNumber(3)
-  set when($2.Timestamp v) { setField(3, v); }
+  set when($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasWhen() => $_has(2);
   @$pb.TagNumber(3)
   void clearWhen() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureWhen() => $_ensure(2);
+  $3.Timestamp ensureWhen() => $_ensure(2);
 
   @$pb.TagNumber(4)
   RobotPart get old => $_getN(3);
@@ -481,7 +481,7 @@ class Organization extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Organization', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -489,7 +489,7 @@ class Organization extends $pb.GeneratedMessage {
   factory Organization({
     $core.String? id,
     $core.String? name,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? createdOn,
   }) {
     final _result = create();
     if (id != null) {
@@ -543,22 +543,22 @@ class Organization extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdOn => $_getN(2);
+  $3.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($2.Timestamp v) { setField(3, v); }
+  set createdOn($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedOn() => $_ensure(2);
+  $3.Timestamp ensureCreatedOn() => $_ensure(2);
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationMember', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emails')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dateAdded', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dateAdded', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -566,7 +566,7 @@ class OrganizationMember extends $pb.GeneratedMessage {
   factory OrganizationMember({
     $core.String? userId,
     $core.Iterable<$core.String>? emails,
-    $2.Timestamp? dateAdded,
+    $3.Timestamp? dateAdded,
   }) {
     final _result = create();
     if (userId != null) {
@@ -614,15 +614,15 @@ class OrganizationMember extends $pb.GeneratedMessage {
   $core.List<$core.String> get emails => $_getList(1);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get dateAdded => $_getN(2);
+  $3.Timestamp get dateAdded => $_getN(2);
   @$pb.TagNumber(3)
-  set dateAdded($2.Timestamp v) { setField(3, v); }
+  set dateAdded($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDateAdded() => $_has(2);
   @$pb.TagNumber(3)
   void clearDateAdded() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureDateAdded() => $_ensure(2);
+  $3.Timestamp ensureDateAdded() => $_ensure(2);
 }
 
 class ListOrganizationsResponse extends $pb.GeneratedMessage {
@@ -670,7 +670,7 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OrganizationInvite', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotCount')
     ..hasRequiredFields = false
   ;
@@ -679,7 +679,7 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   factory OrganizationInvite({
     $core.String? organizationId,
     $core.String? email,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? createdOn,
     $fixnum.Int64? robotCount,
   }) {
     final _result = create();
@@ -737,15 +737,15 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   void clearEmail() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdOn => $_getN(2);
+  $3.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($2.Timestamp v) { setField(3, v); }
+  set createdOn($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedOn() => $_ensure(2);
+  $3.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $fixnum.Int64 get robotCount => $_getI64(3);
@@ -1249,6 +1249,7 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateOrganizationInviteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
+    ..pc<Authorization>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
 
@@ -1256,6 +1257,7 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
   factory CreateOrganizationInviteRequest({
     $core.String? organizationId,
     $core.String? email,
+    $core.Iterable<Authorization>? authorizations,
   }) {
     final _result = create();
     if (organizationId != null) {
@@ -1263,6 +1265,9 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
     }
     if (email != null) {
       _result.email = email;
+    }
+    if (authorizations != null) {
+      _result.authorizations.addAll(authorizations);
     }
     return _result;
   }
@@ -1304,6 +1309,9 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
   void clearEmail() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<Authorization> get authorizations => $_getList(2);
 }
 
 class CreateOrganizationInviteResponse extends $pb.GeneratedMessage {
@@ -1785,7 +1793,7 @@ class Location extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Location', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'parentLocationId')
     ..aOM<LocationAuth>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'auth', subBuilder: LocationAuth.create)
     ..pc<LocationOrganization>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizations', $pb.PbFieldType.PM, subBuilder: LocationOrganization.create)
@@ -1797,7 +1805,7 @@ class Location extends $pb.GeneratedMessage {
   factory Location({
     $core.String? id,
     $core.String? name,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? createdOn,
     $core.String? parentLocationId,
     LocationAuth? auth,
     $core.Iterable<LocationOrganization>? organizations,
@@ -1867,15 +1875,15 @@ class Location extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdOn => $_getN(2);
+  $3.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($2.Timestamp v) { setField(3, v); }
+  set createdOn($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedOn() => $_ensure(2);
+  $3.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get parentLocationId => $_getSZ(3);
@@ -1914,7 +1922,7 @@ class SharedSecret extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SharedSecret', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..e<SharedSecret_State>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: SharedSecret_State.STATE_UNSPECIFIED, valueOf: SharedSecret_State.valueOf, enumValues: SharedSecret_State.values)
     ..hasRequiredFields = false
   ;
@@ -1923,7 +1931,7 @@ class SharedSecret extends $pb.GeneratedMessage {
   factory SharedSecret({
     $core.String? id,
     $core.String? secret,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? createdOn,
     SharedSecret_State? state,
   }) {
     final _result = create();
@@ -1981,15 +1989,15 @@ class SharedSecret extends $pb.GeneratedMessage {
   void clearSecret() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdOn => $_getN(2);
+  $3.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($2.Timestamp v) { setField(3, v); }
+  set createdOn($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedOn() => $_ensure(2);
+  $3.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
   SharedSecret_State get state => $_getN(3);
@@ -3535,12 +3543,12 @@ class LogEntry extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LogEntry', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'host')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'level')
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $3.Timestamp.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loggerName')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..aOM<$3.Struct>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'caller', subBuilder: $3.Struct.create)
+    ..aOM<$4.Struct>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'caller', subBuilder: $4.Struct.create)
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stack')
-    ..pc<$3.Struct>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $3.Struct.create)
+    ..pc<$4.Struct>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $4.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -3548,12 +3556,12 @@ class LogEntry extends $pb.GeneratedMessage {
   factory LogEntry({
     $core.String? host,
     $core.String? level,
-    $2.Timestamp? time,
+    $3.Timestamp? time,
     $core.String? loggerName,
     $core.String? message,
-    $3.Struct? caller,
+    $4.Struct? caller,
     $core.String? stack,
-    $core.Iterable<$3.Struct>? fields,
+    $core.Iterable<$4.Struct>? fields,
   }) {
     final _result = create();
     if (host != null) {
@@ -3622,15 +3630,15 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearLevel() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get time => $_getN(2);
+  $3.Timestamp get time => $_getN(2);
   @$pb.TagNumber(3)
-  set time($2.Timestamp v) { setField(3, v); }
+  set time($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearTime() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureTime() => $_ensure(2);
+  $3.Timestamp ensureTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get loggerName => $_getSZ(3);
@@ -3651,15 +3659,15 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearMessage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $3.Struct get caller => $_getN(5);
+  $4.Struct get caller => $_getN(5);
   @$pb.TagNumber(6)
-  set caller($3.Struct v) { setField(6, v); }
+  set caller($4.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCaller() => $_has(5);
   @$pb.TagNumber(6)
   void clearCaller() => clearField(6);
   @$pb.TagNumber(6)
-  $3.Struct ensureCaller() => $_ensure(5);
+  $4.Struct ensureCaller() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get stack => $_getSZ(6);
@@ -3671,7 +3679,7 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearStack() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$3.Struct> get fields => $_getList(7);
+  $core.List<$4.Struct> get fields => $_getList(7);
 }
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
@@ -3937,7 +3945,7 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateRobotPartRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$3.Struct>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotConfig', subBuilder: $3.Struct.create)
+    ..aOM<$4.Struct>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotConfig', subBuilder: $4.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -3945,7 +3953,7 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   factory UpdateRobotPartRequest({
     $core.String? id,
     $core.String? name,
-    $3.Struct? robotConfig,
+    $4.Struct? robotConfig,
   }) {
     final _result = create();
     if (id != null) {
@@ -3999,15 +4007,15 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $3.Struct get robotConfig => $_getN(2);
+  $4.Struct get robotConfig => $_getN(2);
   @$pb.TagNumber(3)
-  set robotConfig($3.Struct v) { setField(3, v); }
+  set robotConfig($4.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRobotConfig() => $_has(2);
   @$pb.TagNumber(3)
   void clearRobotConfig() => clearField(3);
   @$pb.TagNumber(3)
-  $3.Struct ensureRobotConfig() => $_ensure(2);
+  $4.Struct ensureRobotConfig() => $_ensure(2);
 }
 
 class UpdateRobotPartResponse extends $pb.GeneratedMessage {
@@ -4247,10 +4255,10 @@ class Fragment extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Fragment', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$3.Struct>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fragment', subBuilder: $3.Struct.create)
+    ..aOM<$4.Struct>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fragment', subBuilder: $4.Struct.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationOwner')
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'public')
-    ..aOM<$2.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationName')
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readonly')
     ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotPartCount', $pb.PbFieldType.O3)
@@ -4263,10 +4271,10 @@ class Fragment extends $pb.GeneratedMessage {
   factory Fragment({
     $core.String? id,
     $core.String? name,
-    $3.Struct? fragment,
+    $4.Struct? fragment,
     $core.String? organizationOwner,
     $core.bool? public,
-    $2.Timestamp? createdOn,
+    $3.Timestamp? createdOn,
     $core.String? organizationName,
     $core.bool? readonly,
     $core.int? robotPartCount,
@@ -4349,15 +4357,15 @@ class Fragment extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $3.Struct get fragment => $_getN(2);
+  $4.Struct get fragment => $_getN(2);
   @$pb.TagNumber(3)
-  set fragment($3.Struct v) { setField(3, v); }
+  set fragment($4.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFragment() => $_has(2);
   @$pb.TagNumber(3)
   void clearFragment() => clearField(3);
   @$pb.TagNumber(3)
-  $3.Struct ensureFragment() => $_ensure(2);
+  $4.Struct ensureFragment() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get organizationOwner => $_getSZ(3);
@@ -4378,15 +4386,15 @@ class Fragment extends $pb.GeneratedMessage {
   void clearPublic() => clearField(5);
 
   @$pb.TagNumber(6)
-  $2.Timestamp get createdOn => $_getN(5);
+  $3.Timestamp get createdOn => $_getN(5);
   @$pb.TagNumber(6)
-  set createdOn($2.Timestamp v) { setField(6, v); }
+  set createdOn($3.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCreatedOn() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreatedOn() => clearField(6);
   @$pb.TagNumber(6)
-  $2.Timestamp ensureCreatedOn() => $_ensure(5);
+  $3.Timestamp ensureCreatedOn() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get organizationName => $_getSZ(6);
@@ -4635,14 +4643,14 @@ class GetFragmentResponse extends $pb.GeneratedMessage {
 class CreateFragmentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateFragmentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$3.Struct>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: $3.Struct.create)
+    ..aOM<$4.Struct>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: $4.Struct.create)
     ..hasRequiredFields = false
   ;
 
   CreateFragmentRequest._() : super();
   factory CreateFragmentRequest({
     $core.String? name,
-    $3.Struct? config,
+    $4.Struct? config,
   }) {
     final _result = create();
     if (name != null) {
@@ -4684,15 +4692,15 @@ class CreateFragmentRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $3.Struct get config => $_getN(1);
+  $4.Struct get config => $_getN(1);
   @$pb.TagNumber(2)
-  set config($3.Struct v) { setField(2, v); }
+  set config($4.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasConfig() => $_has(1);
   @$pb.TagNumber(2)
   void clearConfig() => clearField(2);
   @$pb.TagNumber(2)
-  $3.Struct ensureConfig() => $_ensure(1);
+  $4.Struct ensureConfig() => $_ensure(1);
 }
 
 class CreateFragmentResponse extends $pb.GeneratedMessage {
@@ -4748,7 +4756,7 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateFragmentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$3.Struct>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: $3.Struct.create)
+    ..aOM<$4.Struct>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: $4.Struct.create)
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'public')
     ..hasRequiredFields = false
   ;
@@ -4757,7 +4765,7 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   factory UpdateFragmentRequest({
     $core.String? id,
     $core.String? name,
-    $3.Struct? config,
+    $4.Struct? config,
     $core.bool? public,
   }) {
     final _result = create();
@@ -4815,15 +4823,15 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $3.Struct get config => $_getN(2);
+  $4.Struct get config => $_getN(2);
   @$pb.TagNumber(3)
-  set config($3.Struct v) { setField(3, v); }
+  set config($4.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasConfig() => $_has(2);
   @$pb.TagNumber(3)
   void clearConfig() => clearField(3);
   @$pb.TagNumber(3)
-  $3.Struct ensureConfig() => $_ensure(2);
+  $4.Struct ensureConfig() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.bool get public => $_getBF(3);
@@ -5696,26 +5704,21 @@ class DeleteRobotPartSecretResponse extends $pb.GeneratedMessage {
 
 class Authorization extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Authorization', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizationType')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizationId')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceType')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizationType')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizationId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceType')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
     ..hasRequiredFields = false
   ;
 
   Authorization._() : super();
   factory Authorization({
-    $core.String? identityId,
     $core.String? authorizationType,
     $core.String? authorizationId,
     $core.String? resourceType,
     $core.String? resourceId,
   }) {
     final _result = create();
-    if (identityId != null) {
-      _result.identityId = identityId;
-    }
     if (authorizationType != null) {
       _result.authorizationType = authorizationType;
     }
@@ -5752,49 +5755,40 @@ class Authorization extends $pb.GeneratedMessage {
   static Authorization? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get identityId => $_getSZ(0);
+  $core.String get authorizationType => $_getSZ(0);
   @$pb.TagNumber(1)
-  set identityId($core.String v) { $_setString(0, v); }
+  set authorizationType($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasIdentityId() => $_has(0);
+  $core.bool hasAuthorizationType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIdentityId() => clearField(1);
+  void clearAuthorizationType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get authorizationType => $_getSZ(1);
+  $core.String get authorizationId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set authorizationType($core.String v) { $_setString(1, v); }
+  set authorizationId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAuthorizationType() => $_has(1);
+  $core.bool hasAuthorizationId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAuthorizationType() => clearField(2);
+  void clearAuthorizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get authorizationId => $_getSZ(2);
+  $core.String get resourceType => $_getSZ(2);
   @$pb.TagNumber(3)
-  set authorizationId($core.String v) { $_setString(2, v); }
+  set resourceType($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAuthorizationId() => $_has(2);
+  $core.bool hasResourceType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAuthorizationId() => clearField(3);
+  void clearResourceType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get resourceType => $_getSZ(3);
+  $core.String get resourceId => $_getSZ(3);
   @$pb.TagNumber(4)
-  set resourceType($core.String v) { $_setString(3, v); }
+  set resourceId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasResourceType() => $_has(3);
+  $core.bool hasResourceId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearResourceType() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get resourceId => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set resourceId($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasResourceId() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearResourceId() => clearField(5);
+  void clearResourceId() => clearField(4);
 }
 
 class AddRoleRequest extends $pb.GeneratedMessage {
@@ -5803,6 +5797,7 @@ class AddRoleRequest extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceType')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -5812,6 +5807,7 @@ class AddRoleRequest extends $pb.GeneratedMessage {
     $core.String? roleId,
     $core.String? resourceType,
     $core.String? resourceId,
+    $core.String? organizationId,
   }) {
     final _result = create();
     if (identityId != null) {
@@ -5825,6 +5821,9 @@ class AddRoleRequest extends $pb.GeneratedMessage {
     }
     if (resourceId != null) {
       _result.resourceId = resourceId;
+    }
+    if (organizationId != null) {
+      _result.organizationId = organizationId;
     }
     return _result;
   }
@@ -5884,6 +5883,15 @@ class AddRoleRequest extends $pb.GeneratedMessage {
   $core.bool hasResourceId() => $_has(3);
   @$pb.TagNumber(4)
   void clearResourceId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get organizationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set organizationId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOrganizationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOrganizationId() => clearField(5);
 }
 
 class AddRoleResponse extends $pb.GeneratedMessage {
@@ -5941,6 +5949,7 @@ class RemoveRoleRequest extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roleId')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceType')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -5950,6 +5959,7 @@ class RemoveRoleRequest extends $pb.GeneratedMessage {
     $core.String? roleId,
     $core.String? resourceType,
     $core.String? resourceId,
+    $core.String? organizationId,
   }) {
     final _result = create();
     if (identityId != null) {
@@ -5963,6 +5973,9 @@ class RemoveRoleRequest extends $pb.GeneratedMessage {
     }
     if (resourceId != null) {
       _result.resourceId = resourceId;
+    }
+    if (organizationId != null) {
+      _result.organizationId = organizationId;
     }
     return _result;
   }
@@ -6022,6 +6035,15 @@ class RemoveRoleRequest extends $pb.GeneratedMessage {
   $core.bool hasResourceId() => $_has(3);
   @$pb.TagNumber(4)
   void clearResourceId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get organizationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set organizationId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOrganizationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOrganizationId() => clearField(5);
 }
 
 class RemoveRoleResponse extends $pb.GeneratedMessage {
@@ -6057,6 +6079,7 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAuthorizationsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceType')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -6064,6 +6087,7 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
   factory ListAuthorizationsRequest({
     $core.String? resourceType,
     $core.String? resourceId,
+    $core.String? organizationId,
   }) {
     final _result = create();
     if (resourceType != null) {
@@ -6071,6 +6095,9 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
     }
     if (resourceId != null) {
       _result.resourceId = resourceId;
+    }
+    if (organizationId != null) {
+      _result.organizationId = organizationId;
     }
     return _result;
   }
@@ -6112,17 +6139,81 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
   $core.bool hasResourceId() => $_has(1);
   @$pb.TagNumber(2)
   void clearResourceId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get organizationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set organizationId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrganizationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrganizationId() => clearField(3);
+}
+
+class Authorizations extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Authorizations', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'identityId')
+    ..pc<Authorization>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
+    ..hasRequiredFields = false
+  ;
+
+  Authorizations._() : super();
+  factory Authorizations({
+    $core.String? identityId,
+    $core.Iterable<Authorization>? authorizations,
+  }) {
+    final _result = create();
+    if (identityId != null) {
+      _result.identityId = identityId;
+    }
+    if (authorizations != null) {
+      _result.authorizations.addAll(authorizations);
+    }
+    return _result;
+  }
+  factory Authorizations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Authorizations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Authorizations clone() => Authorizations()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Authorizations copyWith(void Function(Authorizations) updates) => super.copyWith((message) => updates(message as Authorizations)) as Authorizations; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Authorizations create() => Authorizations._();
+  Authorizations createEmptyInstance() => create();
+  static $pb.PbList<Authorizations> createRepeated() => $pb.PbList<Authorizations>();
+  @$core.pragma('dart2js:noInline')
+  static Authorizations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Authorizations>(create);
+  static Authorizations? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get identityId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set identityId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIdentityId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIdentityId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<Authorization> get authorizations => $_getList(1);
 }
 
 class ListAuthorizationsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAuthorizationsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<Authorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
+    ..pc<Authorizations>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorizations.create)
     ..hasRequiredFields = false
   ;
 
   ListAuthorizationsResponse._() : super();
   factory ListAuthorizationsResponse({
-    $core.Iterable<Authorization>? authorizations,
+    $core.Iterable<Authorizations>? authorizations,
   }) {
     final _result = create();
     if (authorizations != null) {
@@ -6152,27 +6243,22 @@ class ListAuthorizationsResponse extends $pb.GeneratedMessage {
   static ListAuthorizationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Authorization> get authorizations => $_getList(0);
+  $core.List<Authorizations> get authorizations => $_getList(0);
 }
 
 class CheckPermissionsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CheckPermissionsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceIds')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissionIds')
+    ..pc<AuthorizedPermissions>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions', $pb.PbFieldType.PM, subBuilder: AuthorizedPermissions.create)
     ..hasRequiredFields = false
   ;
 
   CheckPermissionsRequest._() : super();
   factory CheckPermissionsRequest({
-    $core.Iterable<$core.String>? resourceIds,
-    $core.Iterable<$core.String>? permissionIds,
+    $core.Iterable<AuthorizedPermissions>? permissions,
   }) {
     final _result = create();
-    if (resourceIds != null) {
-      _result.resourceIds.addAll(resourceIds);
-    }
-    if (permissionIds != null) {
-      _result.permissionIds.addAll(permissionIds);
+    if (permissions != null) {
+      _result.permissions.addAll(permissions);
     }
     return _result;
   }
@@ -6198,25 +6284,27 @@ class CheckPermissionsRequest extends $pb.GeneratedMessage {
   static CheckPermissionsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get resourceIds => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $core.List<$core.String> get permissionIds => $_getList(1);
+  $core.List<AuthorizedPermissions> get permissions => $_getList(0);
 }
 
 class AuthorizedPermissions extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AuthorizedPermissions', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions')
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceType')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceId')
+    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions')
     ..hasRequiredFields = false
   ;
 
   AuthorizedPermissions._() : super();
   factory AuthorizedPermissions({
+    $core.String? resourceType,
     $core.String? resourceId,
     $core.Iterable<$core.String>? permissions,
   }) {
     final _result = create();
+    if (resourceType != null) {
+      _result.resourceType = resourceType;
+    }
     if (resourceId != null) {
       _result.resourceId = resourceId;
     }
@@ -6247,16 +6335,25 @@ class AuthorizedPermissions extends $pb.GeneratedMessage {
   static AuthorizedPermissions? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get resourceId => $_getSZ(0);
+  $core.String get resourceType => $_getSZ(0);
   @$pb.TagNumber(1)
-  set resourceId($core.String v) { $_setString(0, v); }
+  set resourceType($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasResourceId() => $_has(0);
+  $core.bool hasResourceType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearResourceId() => clearField(1);
+  void clearResourceType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get permissions => $_getList(1);
+  $core.String get resourceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resourceId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResourceId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get permissions => $_getList(2);
 }
 
 class CheckPermissionsResponse extends $pb.GeneratedMessage {

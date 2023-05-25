@@ -17,7 +17,7 @@ class MovementSensorClient extends MovementSensor {
   @override
   Future<Position> position({Map<String, dynamic>? extra}) async {
     final response = await _client.getPosition(GetPositionRequest(name: name, extra: extra?.toStruct()));
-    return Position(response.coordinate, response.altitudeMm);
+    return Position(response.coordinate, response.altitudeM);
   }
 
   @override
@@ -58,6 +58,6 @@ class MovementSensorClient extends MovementSensor {
   @override
   Future<Map<String, double>> accuracy({Map<String, dynamic>? extra}) async {
     final response = await _client.getAccuracy(GetAccuracyRequest(name: name, extra: extra?.toStruct()));
-    return response.accuracyMm;
+    return response.accuracy;
   }
 }

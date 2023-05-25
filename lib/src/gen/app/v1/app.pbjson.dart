@@ -218,11 +218,12 @@ const CreateOrganizationInviteRequest$json = const {
   '2': const [
     const {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     const {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'authorizations', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
   ],
 };
 
 /// Descriptor for `CreateOrganizationInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createOrganizationInviteRequestDescriptor = $convert.base64Decode('Ch9DcmVhdGVPcmdhbml6YXRpb25JbnZpdGVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWls');
+final $typed_data.Uint8List createOrganizationInviteRequestDescriptor = $convert.base64Decode('Ch9DcmVhdGVPcmdhbml6YXRpb25JbnZpdGVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWlsEkIKDmF1dGhvcml6YXRpb25zGAMgAygLMhoudmlhbS5hcHAudjEuQXV0aG9yaXphdGlvblIOYXV0aG9yaXphdGlvbnM=');
 @$core.Deprecated('Use createOrganizationInviteResponseDescriptor instead')
 const CreateOrganizationInviteResponse$json = const {
   '1': 'CreateOrganizationInviteResponse',
@@ -1087,16 +1088,15 @@ final $typed_data.Uint8List deleteRobotPartSecretResponseDescriptor = $convert.b
 const Authorization$json = const {
   '1': 'Authorization',
   '2': const [
-    const {'1': 'identity_id', '3': 1, '4': 1, '5': 9, '10': 'identityId'},
-    const {'1': 'authorization_type', '3': 2, '4': 1, '5': 9, '10': 'authorizationType'},
-    const {'1': 'authorization_id', '3': 3, '4': 1, '5': 9, '10': 'authorizationId'},
-    const {'1': 'resource_type', '3': 4, '4': 1, '5': 9, '10': 'resourceType'},
-    const {'1': 'resource_id', '3': 5, '4': 1, '5': 9, '10': 'resourceId'},
+    const {'1': 'authorization_type', '3': 1, '4': 1, '5': 9, '10': 'authorizationType'},
+    const {'1': 'authorization_id', '3': 2, '4': 1, '5': 9, '10': 'authorizationId'},
+    const {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
+    const {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
   ],
 };
 
 /// Descriptor for `Authorization`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authorizationDescriptor = $convert.base64Decode('Cg1BdXRob3JpemF0aW9uEh8KC2lkZW50aXR5X2lkGAEgASgJUgppZGVudGl0eUlkEi0KEmF1dGhvcml6YXRpb25fdHlwZRgCIAEoCVIRYXV0aG9yaXphdGlvblR5cGUSKQoQYXV0aG9yaXphdGlvbl9pZBgDIAEoCVIPYXV0aG9yaXphdGlvbklkEiMKDXJlc291cmNlX3R5cGUYBCABKAlSDHJlc291cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgFIAEoCVIKcmVzb3VyY2VJZA==');
+final $typed_data.Uint8List authorizationDescriptor = $convert.base64Decode('Cg1BdXRob3JpemF0aW9uEi0KEmF1dGhvcml6YXRpb25fdHlwZRgBIAEoCVIRYXV0aG9yaXphdGlvblR5cGUSKQoQYXV0aG9yaXphdGlvbl9pZBgCIAEoCVIPYXV0aG9yaXphdGlvbklkEiMKDXJlc291cmNlX3R5cGUYAyABKAlSDHJlc291cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgEIAEoCVIKcmVzb3VyY2VJZA==');
 @$core.Deprecated('Use addRoleRequestDescriptor instead')
 const AddRoleRequest$json = const {
   '1': 'AddRoleRequest',
@@ -1105,11 +1105,12 @@ const AddRoleRequest$json = const {
     const {'1': 'role_id', '3': 2, '4': 1, '5': 9, '10': 'roleId'},
     const {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
     const {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
+    const {'1': 'organization_id', '3': 5, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
 
 /// Descriptor for `AddRoleRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addRoleRequestDescriptor = $convert.base64Decode('Cg5BZGRSb2xlUmVxdWVzdBIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBIXCgdyb2xlX2lkGAIgASgJUgZyb2xlSWQSIwoNcmVzb3VyY2VfdHlwZRgDIAEoCVIMcmVzb3VyY2VUeXBlEh8KC3Jlc291cmNlX2lkGAQgASgJUgpyZXNvdXJjZUlk');
+final $typed_data.Uint8List addRoleRequestDescriptor = $convert.base64Decode('Cg5BZGRSb2xlUmVxdWVzdBIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBIXCgdyb2xlX2lkGAIgASgJUgZyb2xlSWQSIwoNcmVzb3VyY2VfdHlwZRgDIAEoCVIMcmVzb3VyY2VUeXBlEh8KC3Jlc291cmNlX2lkGAQgASgJUgpyZXNvdXJjZUlkEicKD29yZ2FuaXphdGlvbl9pZBgFIAEoCVIOb3JnYW5pemF0aW9uSWQ=');
 @$core.Deprecated('Use addRoleResponseDescriptor instead')
 const AddRoleResponse$json = const {
   '1': 'AddRoleResponse',
@@ -1128,11 +1129,12 @@ const RemoveRoleRequest$json = const {
     const {'1': 'role_id', '3': 2, '4': 1, '5': 9, '10': 'roleId'},
     const {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
     const {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
+    const {'1': 'organization_id', '3': 5, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
 
 /// Descriptor for `RemoveRoleRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeRoleRequestDescriptor = $convert.base64Decode('ChFSZW1vdmVSb2xlUmVxdWVzdBIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBIXCgdyb2xlX2lkGAIgASgJUgZyb2xlSWQSIwoNcmVzb3VyY2VfdHlwZRgDIAEoCVIMcmVzb3VyY2VUeXBlEh8KC3Jlc291cmNlX2lkGAQgASgJUgpyZXNvdXJjZUlk');
+final $typed_data.Uint8List removeRoleRequestDescriptor = $convert.base64Decode('ChFSZW1vdmVSb2xlUmVxdWVzdBIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBIXCgdyb2xlX2lkGAIgASgJUgZyb2xlSWQSIwoNcmVzb3VyY2VfdHlwZRgDIAEoCVIMcmVzb3VyY2VUeXBlEh8KC3Jlc291cmNlX2lkGAQgASgJUgpyZXNvdXJjZUlkEicKD29yZ2FuaXphdGlvbl9pZBgFIAEoCVIOb3JnYW5pemF0aW9uSWQ=');
 @$core.Deprecated('Use removeRoleResponseDescriptor instead')
 const RemoveRoleResponse$json = const {
   '1': 'RemoveRoleResponse',
@@ -1146,43 +1148,55 @@ const ListAuthorizationsRequest$json = const {
   '2': const [
     const {'1': 'resource_type', '3': 1, '4': 1, '5': 9, '10': 'resourceType'},
     const {'1': 'resource_id', '3': 2, '4': 1, '5': 9, '10': 'resourceId'},
+    const {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
 
 /// Descriptor for `ListAuthorizationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAuthorizationsRequestDescriptor = $convert.base64Decode('ChlMaXN0QXV0aG9yaXphdGlvbnNSZXF1ZXN0EiMKDXJlc291cmNlX3R5cGUYASABKAlSDHJlc291cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgCIAEoCVIKcmVzb3VyY2VJZA==');
+final $typed_data.Uint8List listAuthorizationsRequestDescriptor = $convert.base64Decode('ChlMaXN0QXV0aG9yaXphdGlvbnNSZXF1ZXN0EiMKDXJlc291cmNlX3R5cGUYASABKAlSDHJlc291cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgCIAEoCVIKcmVzb3VyY2VJZBInCg9vcmdhbml6YXRpb25faWQYAyABKAlSDm9yZ2FuaXphdGlvbklk');
+@$core.Deprecated('Use authorizationsDescriptor instead')
+const Authorizations$json = const {
+  '1': 'Authorizations',
+  '2': const [
+    const {'1': 'identity_id', '3': 1, '4': 1, '5': 9, '10': 'identityId'},
+    const {'1': 'authorizations', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
+  ],
+};
+
+/// Descriptor for `Authorizations`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authorizationsDescriptor = $convert.base64Decode('Cg5BdXRob3JpemF0aW9ucxIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBJCCg5hdXRob3JpemF0aW9ucxgCIAMoCzIaLnZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25SDmF1dGhvcml6YXRpb25z');
 @$core.Deprecated('Use listAuthorizationsResponseDescriptor instead')
 const ListAuthorizationsResponse$json = const {
   '1': 'ListAuthorizationsResponse',
   '2': const [
-    const {'1': 'authorizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
+    const {'1': 'authorizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Authorizations', '10': 'authorizations'},
   ],
 };
 
 /// Descriptor for `ListAuthorizationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAuthorizationsResponseDescriptor = $convert.base64Decode('ChpMaXN0QXV0aG9yaXphdGlvbnNSZXNwb25zZRJCCg5hdXRob3JpemF0aW9ucxgBIAMoCzIaLnZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25SDmF1dGhvcml6YXRpb25z');
+final $typed_data.Uint8List listAuthorizationsResponseDescriptor = $convert.base64Decode('ChpMaXN0QXV0aG9yaXphdGlvbnNSZXNwb25zZRJDCg5hdXRob3JpemF0aW9ucxgBIAMoCzIbLnZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25zUg5hdXRob3JpemF0aW9ucw==');
 @$core.Deprecated('Use checkPermissionsRequestDescriptor instead')
 const CheckPermissionsRequest$json = const {
   '1': 'CheckPermissionsRequest',
   '2': const [
-    const {'1': 'resource_ids', '3': 1, '4': 3, '5': 9, '10': 'resourceIds'},
-    const {'1': 'permission_ids', '3': 2, '4': 3, '5': 9, '10': 'permissionIds'},
+    const {'1': 'permissions', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.AuthorizedPermissions', '10': 'permissions'},
   ],
 };
 
 /// Descriptor for `CheckPermissionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List checkPermissionsRequestDescriptor = $convert.base64Decode('ChdDaGVja1Blcm1pc3Npb25zUmVxdWVzdBIhCgxyZXNvdXJjZV9pZHMYASADKAlSC3Jlc291cmNlSWRzEiUKDnBlcm1pc3Npb25faWRzGAIgAygJUg1wZXJtaXNzaW9uSWRz');
+final $typed_data.Uint8List checkPermissionsRequestDescriptor = $convert.base64Decode('ChdDaGVja1Blcm1pc3Npb25zUmVxdWVzdBJECgtwZXJtaXNzaW9ucxgBIAMoCzIiLnZpYW0uYXBwLnYxLkF1dGhvcml6ZWRQZXJtaXNzaW9uc1ILcGVybWlzc2lvbnM=');
 @$core.Deprecated('Use authorizedPermissionsDescriptor instead')
 const AuthorizedPermissions$json = const {
   '1': 'AuthorizedPermissions',
   '2': const [
-    const {'1': 'resource_id', '3': 1, '4': 1, '5': 9, '10': 'resourceId'},
-    const {'1': 'permissions', '3': 2, '4': 3, '5': 9, '10': 'permissions'},
+    const {'1': 'resource_type', '3': 1, '4': 1, '5': 9, '10': 'resourceType'},
+    const {'1': 'resource_id', '3': 2, '4': 1, '5': 9, '10': 'resourceId'},
+    const {'1': 'permissions', '3': 3, '4': 3, '5': 9, '10': 'permissions'},
   ],
 };
 
 /// Descriptor for `AuthorizedPermissions`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authorizedPermissionsDescriptor = $convert.base64Decode('ChVBdXRob3JpemVkUGVybWlzc2lvbnMSHwoLcmVzb3VyY2VfaWQYASABKAlSCnJlc291cmNlSWQSIAoLcGVybWlzc2lvbnMYAiADKAlSC3Blcm1pc3Npb25z');
+final $typed_data.Uint8List authorizedPermissionsDescriptor = $convert.base64Decode('ChVBdXRob3JpemVkUGVybWlzc2lvbnMSIwoNcmVzb3VyY2VfdHlwZRgBIAEoCVIMcmVzb3VyY2VUeXBlEh8KC3Jlc291cmNlX2lkGAIgASgJUgpyZXNvdXJjZUlkEiAKC3Blcm1pc3Npb25zGAMgAygJUgtwZXJtaXNzaW9ucw==');
 @$core.Deprecated('Use checkPermissionsResponseDescriptor instead')
 const CheckPermissionsResponse$json = const {
   '1': 'CheckPermissionsResponse',
