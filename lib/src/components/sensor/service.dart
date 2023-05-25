@@ -11,7 +11,7 @@ class SensorService extends SensorServiceBase {
 
   SensorService(this._manager);
 
-  Sensor _sensorFromManager(String name) {
+  Sensor _fromManager(String name) {
     try {
       return _manager.getResource(Sensor.getResourceName(name));
     } catch (e) {
@@ -21,15 +21,15 @@ class SensorService extends SensorServiceBase {
 
   @override
   Future<GetReadingsResponse> getReadings(ServiceCall call, GetReadingsRequest request) async {
-    Sensor sensor = _sensorFromManager(request.name);
-    var result = await sensor.readings(extra: request.extra.toMap());
+    final sensor = _fromManager(request.name);
+    final result = await sensor.readings(extra: request.extra.toMap());
     return GetReadingsResponse(readings: result.toStruct().fields);
   }
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    Sensor sensor = _sensorFromManager(request.name);
-    var result = await sensor.doCommand(request.command.toMap());
+    final sensor = _fromManager(request.name);
+    final result = await sensor.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
 }

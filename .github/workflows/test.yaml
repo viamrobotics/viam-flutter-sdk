@@ -29,4 +29,4 @@ jobs:
         run: dart analyze --no-fatal-warnings
 
       - name: Run tests
-        run: flutter test
+        run: flutter test --concurrency=1

@@ -57,10 +57,10 @@ extension ListValueUtils<T extends ValueType> on List<T> {
 
 extension MapStructUtils on Map<String, dynamic> {
   Struct toStruct() {
-    Map<String, Value> result = {};
+    final Map<String, Value> result = {};
     for (var entry in entries) {
       try {
-        var value = entry.value;
+        final value = entry.value;
         if (value is num) {
           result[entry.key] = Value(numberValue: value.toDouble());
         } else if (value is String) {

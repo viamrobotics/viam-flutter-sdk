@@ -29,7 +29,7 @@ class ServoService extends ServoServiceBase {
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final Servo servo = _fromManager(request.name);
-    var result = await servo.doCommand(request.command.toMap());
+    final result = await servo.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
 

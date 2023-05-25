@@ -13,14 +13,14 @@ class BoardStatus {
   const BoardStatus(this.analogs, this.digitalInterrupts);
 
   factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
-    BoardStatus boardStatus = const BoardStatus(<String, int>{}, <String, int>{});
+    const boardStatus = BoardStatus(<String, int>{}, <String, int>{});
     pbBoardStatus.analogs.forEach((key, value) => boardStatus.analogs[key] = value.value);
     pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value.toInt()));
     return boardStatus;
   }
 
   common.BoardStatus get proto {
-    common.BoardStatus pbBoardStatus = common.BoardStatus();
+    final pbBoardStatus = common.BoardStatus();
     analogs.forEach((key, value) => pbBoardStatus.analogs[key] = AnalogStatus(value: value));
     digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = DigitalInterruptStatus(value: Int64(value)));
     return pbBoardStatus;
