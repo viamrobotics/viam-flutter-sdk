@@ -119,13 +119,14 @@ void main() {
     late Server server;
 
     setUp(() async {
+      final port = 50000 + (StackTrace.current.hashCode % 10000);
       gantry = FakeGantry(name, lengths);
       ResourceManager manager = ResourceManager();
       manager.register(Gantry.getResourceName(name), gantry);
       service = GantryService(manager);
-      channel = ClientChannel('localhost', port: 50051, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server([service]);
-      await server.serve(port: 50051);
+      await server.serve(port: port);
     });
 
     tearDown(() async {
@@ -133,7 +134,7 @@ void main() {
       await server.shutdown();
     });
 
-    group('Base Service Tests', () {
+    group('Gantry Service Tests', () {
       test('position', () async {
         final client = GantryServiceClient(channel);
         final response = await client.getPosition(GetPositionRequest(name: name));
@@ -202,7 +203,7 @@ void main() {
         expect(gantry.extra, {'foo': 'bar'});
       });
     });
-    group('Base Client Tests', () {
+    group('Gantry Client Tests', () {
       test('position', () async {
         final client = GantryClient(name, channel);
         expect(await client.position(), [0, 0, 0]);

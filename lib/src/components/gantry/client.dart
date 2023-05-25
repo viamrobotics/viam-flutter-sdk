@@ -1,7 +1,7 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/proto/common.dart';
 
 import '../../gen/component/gantry/v1/gantry.pbgrpc.dart';
+import '../../proto/common.dart';
 import '../../utils.dart';
 import 'gantry.dart';
 
