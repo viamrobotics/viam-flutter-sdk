@@ -50,7 +50,7 @@ void main() {
   group('FakeServo Tests', () {
     late FakeServo servo;
     late String name;
-    const int testPosition = 42;
+    const testPosition = 42;
     setUp(() {
       name = 'servo';
       servo = FakeServo(name);
