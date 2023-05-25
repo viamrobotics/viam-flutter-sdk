@@ -23,29 +23,29 @@ class CameraService extends CameraServiceBase {
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    final Camera camera = _fromManager(request.name);
+    final camera = _fromManager(request.name);
     final result = await camera.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
 
   @override
   Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
-    Camera camera = _fromManager(request.name);
-    final ViamImage image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
+    final camera = _fromManager(request.name);
+    final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
     return GetImageResponse(mimeType: image.mimeType.toString(), image: image.raw);
   }
 
   @override
   Future<GetPointCloudResponse> getPointCloud(ServiceCall call, GetPointCloudRequest request) async {
-    final Camera camera = _fromManager(request.name);
-    final ViamImage image = await camera.pointCloud();
+    final camera = _fromManager(request.name);
+    final image = await camera.pointCloud();
     return GetPointCloudResponse(mimeType: image.mimeType.toString(), pointCloud: image.raw);
   }
 
   @override
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
-    final Camera camera = _fromManager(request.name);
-    final CameraProperties properties = await camera.properties();
+    final camera = _fromManager(request.name);
+    final properties = await camera.properties();
     return GetPropertiesResponse(
         supportsPcd: properties.supportsPcd,
         intrinsicParameters: properties.intrinsicParameters,
@@ -54,7 +54,7 @@ class CameraService extends CameraServiceBase {
 
   @override
   Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
-    final Camera camera = _fromManager(request.name);
+    final camera = _fromManager(request.name);
     final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
     return HttpBody(data: image.raw, contentType: image.mimeType.toString());
   }
