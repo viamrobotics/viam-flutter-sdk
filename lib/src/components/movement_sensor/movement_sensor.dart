@@ -43,9 +43,9 @@ abstract class MovementSensor extends Sensor {
 
   @override
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
-    Map<String, dynamic> readings = {};
+    final Map<String, dynamic> readings = {};
     try {
-      Position pos = await position(extra: extra);
+      final Position pos = await position(extra: extra);
       readings['position'] = pos.coordinates;
       readings['altitude'] = pos.altitude;
     } catch (exception) {
@@ -54,35 +54,35 @@ abstract class MovementSensor extends Sensor {
     }
 
     try {
-      Vector3 lv = await linearVelocity(extra: extra);
+      final lv = await linearVelocity(extra: extra);
       readings['linear_velocity'] = lv;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
-      Vector3 av = await angularVelocity(extra: extra);
+      final av = await angularVelocity(extra: extra);
       readings['angular_velocity'] = av;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
-      Vector3 la = await linearAcceleration(extra: extra);
+      final la = await linearAcceleration(extra: extra);
       readings['linear_acceleration'] = la;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
-      double comp = await compassHeading(extra: extra);
+      final comp = await compassHeading(extra: extra);
       readings['compass'] = comp;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
 
     try {
-      Orientation orient = await orientation(extra: extra);
+      final orient = await orientation(extra: extra);
       readings['orientation'] = orient;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow

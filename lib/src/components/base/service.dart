@@ -21,49 +21,49 @@ class BaseService extends BaseServiceBase {
 
   @override
   Future<MoveStraightResponse> moveStraight(ServiceCall call, MoveStraightRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     await base.moveStraight(request.distanceMm.toInt(), request.mmPerSec, extra: request.extra.toMap());
     return MoveStraightResponse();
   }
 
   @override
   Future<SpinResponse> spin(ServiceCall call, SpinRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     await base.spin(request.angleDeg, request.degsPerSec, extra: request.extra.toMap());
     return SpinResponse();
   }
 
   @override
   Future<SetPowerResponse> setPower(ServiceCall call, SetPowerRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     await base.setPower(request.linear, request.angular, extra: request.extra.toMap());
     return SetPowerResponse();
   }
 
   @override
   Future<SetVelocityResponse> setVelocity(ServiceCall call, SetVelocityRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     await base.setVelocity(request.linear, request.angular, extra: request.extra.toMap());
     return SetVelocityResponse();
   }
 
   @override
   Future<StopResponse> stop(ServiceCall call, StopRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     await base.stop(extra: request.extra.toMap());
     return StopResponse();
   }
 
   @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     final result = await base.isMoving();
     return IsMovingResponse(isMoving: result);
   }
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    Base base = _fromManager(request.name);
+    final base = _fromManager(request.name);
     final result = await base.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }

@@ -31,7 +31,7 @@ class RobotClient {
   RobotClient._();
 
   static Future<RobotClient> atAddress(String url, RobotClientOptions options) async {
-    var client = RobotClient._();
+    final client = RobotClient._();
     client.channel = await dial(url, options.dialOptions);
     client._client = RobotServiceClient(client.channel);
     await client.refresh();
@@ -39,7 +39,7 @@ class RobotClient {
   }
 
   static Future<RobotClient> withViam(Viam viam) async {
-    var client = RobotClient._();
+    final client = RobotClient._();
     client.channel = viam.channel;
     client._client = RobotServiceClient(client.channel);
     await client.refresh();
@@ -47,7 +47,7 @@ class RobotClient {
   }
 
   Future<void> refresh() async {
-    ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
+    final ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
     if (response.resources == resourceNames) {
       return;
     }

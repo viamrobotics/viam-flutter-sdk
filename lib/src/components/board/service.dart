@@ -22,78 +22,78 @@ class BoardService extends BoardServiceBase {
 
   @override
   Future<common.DoCommandResponse> doCommand(ServiceCall call, common.DoCommandRequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     final result = await board.doCommand(request.command.toMap());
     return common.DoCommandResponse(result: result.toStruct());
   }
 
   @override
   Future<GetDigitalInterruptValueResponse> getDigitalInterruptValue(ServiceCall call, GetDigitalInterruptValueRequest request) async {
-    final Board board = _fromManager(request.boardName);
+    final board = _fromManager(request.boardName);
     final value = await board.digitalInterruptValue(request.digitalInterruptName, extra: request.extra.toMap());
     return GetDigitalInterruptValueResponse(value: Int64(value));
   }
 
   @override
   Future<GetGPIOResponse> getGPIO(ServiceCall call, GetGPIORequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     final high = await board.gpio(request.pin, extra: request.extra.toMap());
     return GetGPIOResponse(high: high);
   }
 
   @override
   Future<PWMResponse> pWM(ServiceCall call, PWMRequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     final dutyCyclePct = await board.pwm(request.pin, extra: request.extra.toMap());
     return PWMResponse(dutyCyclePct: dutyCyclePct);
   }
 
   @override
   Future<PWMFrequencyResponse> pWMFrequency(ServiceCall call, PWMFrequencyRequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     final frequencyHz = await board.pwmFrequency(extra: request.extra.toMap());
     return PWMFrequencyResponse(frequencyHz: Int64(frequencyHz));
   }
 
   @override
   Future<ReadAnalogReaderResponse> readAnalogReader(ServiceCall call, ReadAnalogReaderRequest request) async {
-    final Board board = _fromManager(request.boardName);
+    final board = _fromManager(request.boardName);
     final value = await board.analogReaderValue(request.analogReaderName, extra: request.extra.toMap());
     return ReadAnalogReaderResponse(value: value);
   }
 
   @override
   Future<SetGPIOResponse> setGPIO(ServiceCall call, SetGPIORequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     await board.setGpioState(request.pin, request.high, extra: request.extra.toMap());
     return SetGPIOResponse();
   }
 
   @override
   Future<SetPWMResponse> setPWM(ServiceCall call, SetPWMRequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     await board.setPwm(request.pin, request.dutyCyclePct, extra: request.extra.toMap());
     return SetPWMResponse();
   }
 
   @override
   Future<SetPWMFrequencyResponse> setPWMFrequency(ServiceCall call, SetPWMFrequencyRequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     await board.setPwmFrequency(request.pin, request.frequencyHz.toInt(), extra: request.extra.toMap());
     return SetPWMFrequencyResponse();
   }
 
   @override
   Future<SetPowerModeResponse> setPowerMode(ServiceCall call, SetPowerModeRequest request) async {
-    final Board board = _fromManager(request.name);
+    final board = _fromManager(request.name);
     await board.setPowerMode(request.powerMode, request.duration.seconds.toInt(), request.duration.nanos, extra: request.extra.toMap());
     return SetPowerModeResponse();
   }
 
   @override
   Future<StatusResponse> status(ServiceCall call, StatusRequest request) async {
-    final Board board = _fromManager(request.name);
-    final BoardStatus boardStatus = await board.status(extra: request.extra.toMap());
+    final board = _fromManager(request.name);
+    final boardStatus = await board.status(extra: request.extra.toMap());
     return StatusResponse(status: boardStatus.proto);
   }
 }

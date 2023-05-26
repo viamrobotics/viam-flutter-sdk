@@ -125,7 +125,7 @@ class _ViamRGBADecoder extends img.Decoder {
       height: info.height,
       numChannels: 4,
     );
-    int bitsPerPixel = 32;
+    const int bitsPerPixel = 32;
     final rowStride = ((_info.width * bitsPerPixel + 31) ~/ 32) * 4;
 
     for (var y = image.height - 1; y >= 0; --y) {
@@ -135,10 +135,10 @@ class _ViamRGBADecoder extends img.Decoder {
       var x = 0;
       final p = image.getPixel(0, line);
       while (x < w) {
-        num r = row.readByte();
-        num g = row.readByte();
-        num b = row.readByte();
-        num a = row.readByte();
+        final num r = row.readByte();
+        final num g = row.readByte();
+        final num b = row.readByte();
+        final num a = row.readByte();
         p.setRgba(r, g, b, a);
         p.moveNext();
         x++;

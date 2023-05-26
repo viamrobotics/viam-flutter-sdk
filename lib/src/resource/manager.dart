@@ -12,7 +12,7 @@ class ResourceManager {
     }
     final shortName = name.name.split(':').last;
     if (!(_shortToLongName[shortName]?.contains(name) ?? true)) {
-      var names = _shortToLongName[shortName] ?? [];
+      final names = _shortToLongName[shortName] ?? [];
       names.add(name);
       _shortToLongName[shortName] = names;
     }
