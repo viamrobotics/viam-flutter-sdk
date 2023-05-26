@@ -1,7 +1,7 @@
 import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/movementSensor/v1/movementSensor.pbgrpc.dart';
+import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'movement_sensor.dart';
