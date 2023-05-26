@@ -55,7 +55,7 @@ class _CameraStreamViewState extends State<CameraStreamView> {
   }
 }
 
-class BaseJoystick extends StatelessWidget {
+class BaseJoystick extends StatefulWidget {
   const BaseJoystick({
     super.key,
     required this.base,
@@ -64,14 +64,34 @@ class BaseJoystick extends StatelessWidget {
   final Base base;
 
   @override
+  State<BaseJoystick> createState() => _BaseJoystickState();
+}
+
+class _BaseJoystickState extends State<BaseJoystick> {
+  num y = 0;
+  num z = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return Joystick(
-      listener: ((details) => {
-            base.setPower(
-              Vector3(y: details.y * -1),
-              Vector3(z: details.x * -1),
-            )
-          }),
+    return Column(
+      children: [
+        Text('Y: ${y.round()}% Z: ${z.round()}%'),
+        const SizedBox(height: 16),
+        Joystick(
+          listener: (callSetPower),
+        )
+      ],
     );
+  }
+
+  void callSetPower(details) {
+    widget.base.setPower(
+      Vector3(y: details.y * -1),
+      Vector3(z: details.x * -1),
+    );
+    setState(() {
+      y = details.y * -100;
+      z = details.x * -100;
+    });
   }
 }
