@@ -281,7 +281,6 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveToPositionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOM<$1.Pose>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', subBuilder: $1.Pose.create)
-    ..aOM<$1.WorldState>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'worldState', subBuilder: $1.WorldState.create)
     ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -290,7 +289,6 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   factory MoveToPositionRequest({
     $core.String? name,
     $1.Pose? to,
-    $1.WorldState? worldState,
     $2.Struct? extra,
   }) {
     final _result = create();
@@ -299,9 +297,6 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
     }
     if (to != null) {
       _result.to = to;
-    }
-    if (worldState != null) {
-      _result.worldState = worldState;
     }
     if (extra != null) {
       _result.extra = extra;
@@ -349,27 +344,16 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Pose ensureTo() => $_ensure(1);
 
-  @$pb.TagNumber(3)
-  $1.WorldState get worldState => $_getN(2);
-  @$pb.TagNumber(3)
-  set worldState($1.WorldState v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasWorldState() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearWorldState() => clearField(3);
-  @$pb.TagNumber(3)
-  $1.WorldState ensureWorldState() => $_ensure(2);
-
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(3);
+  $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(3);
+  $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(3);
+  $2.Struct ensureExtra() => $_ensure(2);
 }
 
 class MoveToPositionResponse extends $pb.GeneratedMessage {

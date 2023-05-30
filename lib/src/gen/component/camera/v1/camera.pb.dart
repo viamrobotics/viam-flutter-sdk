@@ -486,6 +486,8 @@ class Webcam extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status')
     ..pc<Property>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'properties', $pb.PbFieldType.PM, subBuilder: Property.create)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
@@ -494,6 +496,8 @@ class Webcam extends $pb.GeneratedMessage {
     $core.String? label,
     $core.String? status,
     $core.Iterable<Property>? properties,
+    $core.String? name,
+    $core.String? id,
   }) {
     final _result = create();
     if (label != null) {
@@ -504,6 +508,12 @@ class Webcam extends $pb.GeneratedMessage {
     }
     if (properties != null) {
       _result.properties.addAll(properties);
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (id != null) {
+      _result.id = id;
     }
     return _result;
   }
@@ -548,6 +558,24 @@ class Webcam extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<Property> get properties => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get name => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set name($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get id => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set id($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearId() => clearField(5);
 }
 
 class Property extends $pb.GeneratedMessage {
@@ -555,6 +583,7 @@ class Property extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'widthPx', $pb.PbFieldType.O3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heightPx', $pb.PbFieldType.O3)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'frameFormat')
+    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'frameRate', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
@@ -563,6 +592,7 @@ class Property extends $pb.GeneratedMessage {
     $core.int? widthPx,
     $core.int? heightPx,
     $core.String? frameFormat,
+    $core.double? frameRate,
   }) {
     final _result = create();
     if (widthPx != null) {
@@ -573,6 +603,9 @@ class Property extends $pb.GeneratedMessage {
     }
     if (frameFormat != null) {
       _result.frameFormat = frameFormat;
+    }
+    if (frameRate != null) {
+      _result.frameRate = frameRate;
     }
     return _result;
   }
@@ -623,6 +656,15 @@ class Property extends $pb.GeneratedMessage {
   $core.bool hasFrameFormat() => $_has(2);
   @$pb.TagNumber(3)
   void clearFrameFormat() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get frameRate => $_getN(3);
+  @$pb.TagNumber(4)
+  set frameRate($core.double v) { $_setFloat(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFrameRate() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFrameRate() => clearField(4);
 }
 
 class IntrinsicParameters extends $pb.GeneratedMessage {

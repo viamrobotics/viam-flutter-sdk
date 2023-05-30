@@ -1,21 +1,24 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/components/arm/arm.dart';
-import 'package:viam_sdk/src/components/arm/client.dart';
-import 'package:viam_sdk/src/components/base/base.dart';
-import 'package:viam_sdk/src/components/base/client.dart';
-import 'package:viam_sdk/src/components/board/board.dart';
-import 'package:viam_sdk/src/components/board/client.dart';
-import 'package:viam_sdk/src/components/camera/camera.dart';
-import 'package:viam_sdk/src/components/camera/client.dart';
-import 'package:viam_sdk/src/components/motor/client.dart';
-import 'package:viam_sdk/src/components/motor/motor.dart';
-import 'package:viam_sdk/src/components/movement_sensor/client.dart';
-import 'package:viam_sdk/src/components/movement_sensor/movement_sensor.dart';
-import 'package:viam_sdk/src/components/sensor/client.dart';
-import 'package:viam_sdk/src/components/sensor/sensor.dart';
-import 'package:viam_sdk/src/components/servo/client.dart';
-import 'package:viam_sdk/src/components/servo/servo.dart';
-import 'package:viam_sdk/src/resource/base.dart';
+
+import '../components/arm/arm.dart';
+import '../components/arm/client.dart';
+import '../components/base/base.dart';
+import '../components/base/client.dart';
+import '../components/board/board.dart';
+import '../components/board/client.dart';
+import '../components/camera/camera.dart';
+import '../components/camera/client.dart';
+import '../components/gantry/client.dart';
+import '../components/gantry/gantry.dart';
+import '../components/motor/client.dart';
+import '../components/motor/motor.dart';
+import '../components/movement_sensor/client.dart';
+import '../components/movement_sensor/movement_sensor.dart';
+import '../components/sensor/client.dart';
+import '../components/sensor/sensor.dart';
+import '../components/servo/client.dart';
+import '../components/servo/servo.dart';
+import '../resource/base.dart';
 
 class ResourceRegistration<T extends Resource> {
   Subtype subtype;
@@ -32,6 +35,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
     registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
     registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
+    registerSubtype(ResourceRegistration(Gantry.subtype, (name, channel) => GantryClient(name, channel)));
     registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
     registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));

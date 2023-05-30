@@ -1,6 +1,6 @@
 ///
 //  Generated code. Do not modify.
-//  source: service/slam/v1/slam.proto
+//  source: component/encoder/v1/encoder.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
@@ -10,37 +10,37 @@ import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
-import 'slam.pb.dart' as $0;
+import 'encoder.pb.dart' as $0;
 import '../../../common/v1/common.pb.dart' as $1;
-export 'slam.pb.dart';
+export 'encoder.pb.dart';
 
-class SLAMServiceClient extends $grpc.Client {
+class EncoderServiceClient extends $grpc.Client {
   static final _$getPosition =
       $grpc.ClientMethod<$0.GetPositionRequest, $0.GetPositionResponse>(
-          '/viam.service.slam.v1.SLAMService/GetPosition',
+          '/viam.component.encoder.v1.EncoderService/GetPosition',
           ($0.GetPositionRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.GetPositionResponse.fromBuffer(value));
-  static final _$getPointCloudMap = $grpc.ClientMethod<
-          $0.GetPointCloudMapRequest, $0.GetPointCloudMapResponse>(
-      '/viam.service.slam.v1.SLAMService/GetPointCloudMap',
-      ($0.GetPointCloudMapRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $0.GetPointCloudMapResponse.fromBuffer(value));
-  static final _$getInternalState = $grpc.ClientMethod<
-          $0.GetInternalStateRequest, $0.GetInternalStateResponse>(
-      '/viam.service.slam.v1.SLAMService/GetInternalState',
-      ($0.GetInternalStateRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $0.GetInternalStateResponse.fromBuffer(value));
+  static final _$resetPosition =
+      $grpc.ClientMethod<$0.ResetPositionRequest, $0.ResetPositionResponse>(
+          '/viam.component.encoder.v1.EncoderService/ResetPosition',
+          ($0.ResetPositionRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.ResetPositionResponse.fromBuffer(value));
+  static final _$getProperties =
+      $grpc.ClientMethod<$0.GetPropertiesRequest, $0.GetPropertiesResponse>(
+          '/viam.component.encoder.v1.EncoderService/GetProperties',
+          ($0.GetPropertiesRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.GetPropertiesResponse.fromBuffer(value));
   static final _$doCommand =
       $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
-          '/viam.service.slam.v1.SLAMService/DoCommand',
+          '/viam.component.encoder.v1.EncoderService/DoCommand',
           ($1.DoCommandRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.DoCommandResponse.fromBuffer(value));
 
-  SLAMServiceClient($grpc.ClientChannel channel,
+  EncoderServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
@@ -51,20 +51,16 @@ class SLAMServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getPosition, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.GetPointCloudMapResponse> getPointCloudMap(
-      $0.GetPointCloudMapRequest request,
+  $grpc.ResponseFuture<$0.ResetPositionResponse> resetPosition(
+      $0.ResetPositionRequest request,
       {$grpc.CallOptions? options}) {
-    return $createStreamingCall(
-        _$getPointCloudMap, $async.Stream.fromIterable([request]),
-        options: options);
+    return $createUnaryCall(_$resetPosition, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.GetInternalStateResponse> getInternalState(
-      $0.GetInternalStateRequest request,
+  $grpc.ResponseFuture<$0.GetPropertiesResponse> getProperties(
+      $0.GetPropertiesRequest request,
       {$grpc.CallOptions? options}) {
-    return $createStreamingCall(
-        _$getInternalState, $async.Stream.fromIterable([request]),
-        options: options);
+    return $createUnaryCall(_$getProperties, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.DoCommandResponse> doCommand(
@@ -74,10 +70,10 @@ class SLAMServiceClient extends $grpc.Client {
   }
 }
 
-abstract class SLAMServiceBase extends $grpc.Service {
-  $core.String get $name => 'viam.service.slam.v1.SLAMService';
+abstract class EncoderServiceBase extends $grpc.Service {
+  $core.String get $name => 'viam.component.encoder.v1.EncoderService';
 
-  SLAMServiceBase() {
+  EncoderServiceBase() {
     $addMethod(
         $grpc.ServiceMethod<$0.GetPositionRequest, $0.GetPositionResponse>(
             'GetPosition',
@@ -87,24 +83,24 @@ abstract class SLAMServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.GetPositionRequest.fromBuffer(value),
             ($0.GetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetPointCloudMapRequest,
-            $0.GetPointCloudMapResponse>(
-        'GetPointCloudMap',
-        getPointCloudMap_Pre,
-        false,
-        true,
-        ($core.List<$core.int> value) =>
-            $0.GetPointCloudMapRequest.fromBuffer(value),
-        ($0.GetPointCloudMapResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetInternalStateRequest,
-            $0.GetInternalStateResponse>(
-        'GetInternalState',
-        getInternalState_Pre,
-        false,
-        true,
-        ($core.List<$core.int> value) =>
-            $0.GetInternalStateRequest.fromBuffer(value),
-        ($0.GetInternalStateResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.ResetPositionRequest, $0.ResetPositionResponse>(
+            'ResetPosition',
+            resetPosition_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.ResetPositionRequest.fromBuffer(value),
+            ($0.ResetPositionResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.GetPropertiesRequest, $0.GetPropertiesResponse>(
+            'GetProperties',
+            getProperties_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.GetPropertiesRequest.fromBuffer(value),
+            ($0.GetPropertiesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -119,16 +115,16 @@ abstract class SLAMServiceBase extends $grpc.Service {
     return getPosition(call, await request);
   }
 
-  $async.Stream<$0.GetPointCloudMapResponse> getPointCloudMap_Pre(
+  $async.Future<$0.ResetPositionResponse> resetPosition_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.GetPointCloudMapRequest> request) async* {
-    yield* getPointCloudMap(call, await request);
+      $async.Future<$0.ResetPositionRequest> request) async {
+    return resetPosition(call, await request);
   }
 
-  $async.Stream<$0.GetInternalStateResponse> getInternalState_Pre(
+  $async.Future<$0.GetPropertiesResponse> getProperties_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.GetInternalStateRequest> request) async* {
-    yield* getInternalState(call, await request);
+      $async.Future<$0.GetPropertiesRequest> request) async {
+    return getProperties(call, await request);
   }
 
   $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call,
@@ -138,10 +134,10 @@ abstract class SLAMServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetPositionResponse> getPosition(
       $grpc.ServiceCall call, $0.GetPositionRequest request);
-  $async.Stream<$0.GetPointCloudMapResponse> getPointCloudMap(
-      $grpc.ServiceCall call, $0.GetPointCloudMapRequest request);
-  $async.Stream<$0.GetInternalStateResponse> getInternalState(
-      $grpc.ServiceCall call, $0.GetInternalStateRequest request);
+  $async.Future<$0.ResetPositionResponse> resetPosition(
+      $grpc.ServiceCall call, $0.ResetPositionRequest request);
+  $async.Future<$0.GetPropertiesResponse> getProperties(
+      $grpc.ServiceCall call, $0.GetPropertiesRequest request);
   $async.Future<$1.DoCommandResponse> doCommand(
       $grpc.ServiceCall call, $1.DoCommandRequest request);
 }

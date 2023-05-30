@@ -19,7 +19,6 @@ class MoveRequest extends $pb.GeneratedMessage {
     ..aOM<$1.ResourceName>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentName', subBuilder: $1.ResourceName.create)
     ..aOM<$1.WorldState>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'worldState', subBuilder: $1.WorldState.create)
     ..aOM<Constraints>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'constraints', subBuilder: Constraints.create)
-    ..aOM<$1.ResourceName>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'slamServiceName', subBuilder: $1.ResourceName.create)
     ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -31,7 +30,6 @@ class MoveRequest extends $pb.GeneratedMessage {
     $1.ResourceName? componentName,
     $1.WorldState? worldState,
     Constraints? constraints,
-    $1.ResourceName? slamServiceName,
     $2.Struct? extra,
   }) {
     final _result = create();
@@ -49,9 +47,6 @@ class MoveRequest extends $pb.GeneratedMessage {
     }
     if (constraints != null) {
       _result.constraints = constraints;
-    }
-    if (slamServiceName != null) {
-      _result.slamServiceName = slamServiceName;
     }
     if (extra != null) {
       _result.extra = extra;
@@ -132,27 +127,16 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   Constraints ensureConstraints() => $_ensure(4);
 
-  @$pb.TagNumber(6)
-  $1.ResourceName get slamServiceName => $_getN(5);
-  @$pb.TagNumber(6)
-  set slamServiceName($1.ResourceName v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasSlamServiceName() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearSlamServiceName() => clearField(6);
-  @$pb.TagNumber(6)
-  $1.ResourceName ensureSlamServiceName() => $_ensure(5);
-
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(6);
+  $2.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(6);
+  $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(6);
+  $2.Struct ensureExtra() => $_ensure(5);
 }
 
 class MoveResponse extends $pb.GeneratedMessage {
@@ -191,6 +175,372 @@ class MoveResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static MoveResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveResponse>(create);
   static MoveResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => clearField(1);
+}
+
+class MoveOnMapRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveOnMapRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOM<$1.Pose>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination', subBuilder: $1.Pose.create)
+    ..aOM<$1.ResourceName>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentName', subBuilder: $1.ResourceName.create)
+    ..aOM<$1.ResourceName>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'slamServiceName', subBuilder: $1.ResourceName.create)
+    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  MoveOnMapRequest._() : super();
+  factory MoveOnMapRequest({
+    $core.String? name,
+    $1.Pose? destination,
+    $1.ResourceName? componentName,
+    $1.ResourceName? slamServiceName,
+    $2.Struct? extra,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (destination != null) {
+      _result.destination = destination;
+    }
+    if (componentName != null) {
+      _result.componentName = componentName;
+    }
+    if (slamServiceName != null) {
+      _result.slamServiceName = slamServiceName;
+    }
+    if (extra != null) {
+      _result.extra = extra;
+    }
+    return _result;
+  }
+  factory MoveOnMapRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOnMapRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOnMapRequest clone() => MoveOnMapRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOnMapRequest copyWith(void Function(MoveOnMapRequest) updates) => super.copyWith((message) => updates(message as MoveOnMapRequest)) as MoveOnMapRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MoveOnMapRequest create() => MoveOnMapRequest._();
+  MoveOnMapRequest createEmptyInstance() => create();
+  static $pb.PbList<MoveOnMapRequest> createRepeated() => $pb.PbList<MoveOnMapRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOnMapRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnMapRequest>(create);
+  static MoveOnMapRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.Pose get destination => $_getN(1);
+  @$pb.TagNumber(2)
+  set destination($1.Pose v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDestination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDestination() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Pose ensureDestination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $1.ResourceName get componentName => $_getN(2);
+  @$pb.TagNumber(3)
+  set componentName($1.ResourceName v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasComponentName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearComponentName() => clearField(3);
+  @$pb.TagNumber(3)
+  $1.ResourceName ensureComponentName() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $1.ResourceName get slamServiceName => $_getN(3);
+  @$pb.TagNumber(4)
+  set slamServiceName($1.ResourceName v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSlamServiceName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSlamServiceName() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.ResourceName ensureSlamServiceName() => $_ensure(3);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(4);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(4);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(4);
+}
+
+class MoveOnMapResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveOnMapResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
+    ..hasRequiredFields = false
+  ;
+
+  MoveOnMapResponse._() : super();
+  factory MoveOnMapResponse({
+    $core.bool? success,
+  }) {
+    final _result = create();
+    if (success != null) {
+      _result.success = success;
+    }
+    return _result;
+  }
+  factory MoveOnMapResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOnMapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOnMapResponse clone() => MoveOnMapResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOnMapResponse copyWith(void Function(MoveOnMapResponse) updates) => super.copyWith((message) => updates(message as MoveOnMapResponse)) as MoveOnMapResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MoveOnMapResponse create() => MoveOnMapResponse._();
+  MoveOnMapResponse createEmptyInstance() => create();
+  static $pb.PbList<MoveOnMapResponse> createRepeated() => $pb.PbList<MoveOnMapResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOnMapResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnMapResponse>(create);
+  static MoveOnMapResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => clearField(1);
+}
+
+class MoveOnGlobeRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveOnGlobeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOM<$1.GeoPoint>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination', subBuilder: $1.GeoPoint.create)
+    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heading', $pb.PbFieldType.OD)
+    ..aOM<$1.ResourceName>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentName', subBuilder: $1.ResourceName.create)
+    ..aOM<$1.ResourceName>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'movementSensorName', subBuilder: $1.ResourceName.create)
+    ..pc<$1.GeoObstacle>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoObstacle.create)
+    ..a<$core.double>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linearMetersPerSec', $pb.PbFieldType.OF)
+    ..a<$core.double>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'angularDegPerSec', $pb.PbFieldType.OF)
+    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  MoveOnGlobeRequest._() : super();
+  factory MoveOnGlobeRequest({
+    $core.String? name,
+    $1.GeoPoint? destination,
+    $core.double? heading,
+    $1.ResourceName? componentName,
+    $1.ResourceName? movementSensorName,
+    $core.Iterable<$1.GeoObstacle>? obstacles,
+    $core.double? linearMetersPerSec,
+    $core.double? angularDegPerSec,
+    $2.Struct? extra,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (destination != null) {
+      _result.destination = destination;
+    }
+    if (heading != null) {
+      _result.heading = heading;
+    }
+    if (componentName != null) {
+      _result.componentName = componentName;
+    }
+    if (movementSensorName != null) {
+      _result.movementSensorName = movementSensorName;
+    }
+    if (obstacles != null) {
+      _result.obstacles.addAll(obstacles);
+    }
+    if (linearMetersPerSec != null) {
+      _result.linearMetersPerSec = linearMetersPerSec;
+    }
+    if (angularDegPerSec != null) {
+      _result.angularDegPerSec = angularDegPerSec;
+    }
+    if (extra != null) {
+      _result.extra = extra;
+    }
+    return _result;
+  }
+  factory MoveOnGlobeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOnGlobeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeRequest clone() => MoveOnGlobeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeRequest copyWith(void Function(MoveOnGlobeRequest) updates) => super.copyWith((message) => updates(message as MoveOnGlobeRequest)) as MoveOnGlobeRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeRequest create() => MoveOnGlobeRequest._();
+  MoveOnGlobeRequest createEmptyInstance() => create();
+  static $pb.PbList<MoveOnGlobeRequest> createRepeated() => $pb.PbList<MoveOnGlobeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeRequest>(create);
+  static MoveOnGlobeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.GeoPoint get destination => $_getN(1);
+  @$pb.TagNumber(2)
+  set destination($1.GeoPoint v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDestination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDestination() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.GeoPoint ensureDestination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.double get heading => $_getN(2);
+  @$pb.TagNumber(3)
+  set heading($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHeading() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHeading() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.ResourceName get componentName => $_getN(3);
+  @$pb.TagNumber(4)
+  set componentName($1.ResourceName v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasComponentName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComponentName() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.ResourceName ensureComponentName() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.ResourceName get movementSensorName => $_getN(4);
+  @$pb.TagNumber(5)
+  set movementSensorName($1.ResourceName v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMovementSensorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMovementSensorName() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.ResourceName ensureMovementSensorName() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.List<$1.GeoObstacle> get obstacles => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.double get linearMetersPerSec => $_getN(6);
+  @$pb.TagNumber(7)
+  set linearMetersPerSec($core.double v) { $_setFloat(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLinearMetersPerSec() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLinearMetersPerSec() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get angularDegPerSec => $_getN(7);
+  @$pb.TagNumber(8)
+  set angularDegPerSec($core.double v) { $_setFloat(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAngularDegPerSec() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAngularDegPerSec() => clearField(8);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(8);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(8);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(8);
+}
+
+class MoveOnGlobeResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MoveOnGlobeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
+    ..hasRequiredFields = false
+  ;
+
+  MoveOnGlobeResponse._() : super();
+  factory MoveOnGlobeResponse({
+    $core.bool? success,
+  }) {
+    final _result = create();
+    if (success != null) {
+      _result.success = success;
+    }
+    return _result;
+  }
+  factory MoveOnGlobeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOnGlobeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeResponse clone() => MoveOnGlobeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeResponse copyWith(void Function(MoveOnGlobeResponse) updates) => super.copyWith((message) => updates(message as MoveOnGlobeResponse)) as MoveOnGlobeResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeResponse create() => MoveOnGlobeResponse._();
+  MoveOnGlobeResponse createEmptyInstance() => create();
+  static $pb.PbList<MoveOnGlobeResponse> createRepeated() => $pb.PbList<MoveOnGlobeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeResponse>(create);
+  static MoveOnGlobeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get success => $_getBF(0);

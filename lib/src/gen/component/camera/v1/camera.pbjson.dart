@@ -102,11 +102,13 @@ const Webcam$json = const {
     const {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
     const {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
     const {'1': 'properties', '3': 3, '4': 3, '5': 11, '6': '.viam.component.camera.v1.Property', '10': 'properties'},
+    const {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'id', '3': 5, '4': 1, '5': 9, '10': 'id'},
   ],
 };
 
 /// Descriptor for `Webcam`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List webcamDescriptor = $convert.base64Decode('CgZXZWJjYW0SFAoFbGFiZWwYASABKAlSBWxhYmVsEhYKBnN0YXR1cxgCIAEoCVIGc3RhdHVzEkIKCnByb3BlcnRpZXMYAyADKAsyIi52aWFtLmNvbXBvbmVudC5jYW1lcmEudjEuUHJvcGVydHlSCnByb3BlcnRpZXM=');
+final $typed_data.Uint8List webcamDescriptor = $convert.base64Decode('CgZXZWJjYW0SFAoFbGFiZWwYASABKAlSBWxhYmVsEhYKBnN0YXR1cxgCIAEoCVIGc3RhdHVzEkIKCnByb3BlcnRpZXMYAyADKAsyIi52aWFtLmNvbXBvbmVudC5jYW1lcmEudjEuUHJvcGVydHlSCnByb3BlcnRpZXMSEgoEbmFtZRgEIAEoCVIEbmFtZRIOCgJpZBgFIAEoCVICaWQ=');
 @$core.Deprecated('Use propertyDescriptor instead')
 const Property$json = const {
   '1': 'Property',
@@ -114,11 +116,12 @@ const Property$json = const {
     const {'1': 'width_px', '3': 1, '4': 1, '5': 5, '10': 'widthPx'},
     const {'1': 'height_px', '3': 2, '4': 1, '5': 5, '10': 'heightPx'},
     const {'1': 'frame_format', '3': 3, '4': 1, '5': 9, '10': 'frameFormat'},
+    const {'1': 'frame_rate', '3': 4, '4': 1, '5': 2, '10': 'frameRate'},
   ],
 };
 
 /// Descriptor for `Property`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List propertyDescriptor = $convert.base64Decode('CghQcm9wZXJ0eRIZCgh3aWR0aF9weBgBIAEoBVIHd2lkdGhQeBIbCgloZWlnaHRfcHgYAiABKAVSCGhlaWdodFB4EiEKDGZyYW1lX2Zvcm1hdBgDIAEoCVILZnJhbWVGb3JtYXQ=');
+final $typed_data.Uint8List propertyDescriptor = $convert.base64Decode('CghQcm9wZXJ0eRIZCgh3aWR0aF9weBgBIAEoBVIHd2lkdGhQeBIbCgloZWlnaHRfcHgYAiABKAVSCGhlaWdodFB4EiEKDGZyYW1lX2Zvcm1hdBgDIAEoCVILZnJhbWVGb3JtYXQSHQoKZnJhbWVfcmF0ZRgEIAEoAlIJZnJhbWVSYXRl');
 @$core.Deprecated('Use intrinsicParametersDescriptor instead')
 const IntrinsicParameters$json = const {
   '1': 'IntrinsicParameters',

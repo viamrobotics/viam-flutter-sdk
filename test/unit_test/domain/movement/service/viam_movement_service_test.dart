@@ -1,10 +1,11 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/src/domain/movement/service/viam_movement_service.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
 import '../../../mocks/mock_response_future.dart';
 import '../../../mocks/service_clients_mocks.mocks.dart';
 
@@ -36,7 +37,7 @@ void main() {
 
         final getPositionResponse = GetPositionResponse(
           coordinate: geoPoint,
-          altitudeMm: altitude,
+          altitudeM: altitude,
         );
         final getPositionRequest = GetPositionRequest(name: resourceName.name);
 

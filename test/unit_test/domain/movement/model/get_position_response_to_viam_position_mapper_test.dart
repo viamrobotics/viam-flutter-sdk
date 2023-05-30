@@ -13,12 +13,12 @@ void main() {
       );
 
       final dto = GetPositionResponse(
-        altitudeMm: 0.0,
+        altitudeM: 0.0,
         coordinate: geoPoint,
       );
 
       final expectedAnswer = ViamPosition(
-        dto.altitudeMm,
+        dto.altitudeM,
         dto.coordinate.latitude,
         dto.coordinate.longitude,
       );

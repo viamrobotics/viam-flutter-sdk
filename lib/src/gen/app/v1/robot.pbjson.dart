@@ -140,11 +140,12 @@ const ServiceConfig$json = const {
     const {'1': 'attributes', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'attributes'},
     const {'1': 'depends_on', '3': 5, '4': 3, '5': 9, '10': 'dependsOn'},
     const {'1': 'model', '3': 6, '4': 1, '5': 9, '10': 'model'},
+    const {'1': 'api', '3': 9, '4': 1, '5': 9, '10': 'api'},
   ],
 };
 
 /// Descriptor for `ServiceConfig`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serviceConfigDescriptor = $convert.base64Decode('Cg1TZXJ2aWNlQ29uZmlnEhIKBG5hbWUYASABKAlSBG5hbWUSHAoJbmFtZXNwYWNlGAIgASgJUgluYW1lc3BhY2USEgoEdHlwZRgDIAEoCVIEdHlwZRI3CgphdHRyaWJ1dGVzGAQgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIKYXR0cmlidXRlcxIdCgpkZXBlbmRzX29uGAUgAygJUglkZXBlbmRzT24SFAoFbW9kZWwYBiABKAlSBW1vZGVs');
+final $typed_data.Uint8List serviceConfigDescriptor = $convert.base64Decode('Cg1TZXJ2aWNlQ29uZmlnEhIKBG5hbWUYASABKAlSBG5hbWUSHAoJbmFtZXNwYWNlGAIgASgJUgluYW1lc3BhY2USEgoEdHlwZRgDIAEoCVIEdHlwZRI3CgphdHRyaWJ1dGVzGAQgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIKYXR0cmlidXRlcxIdCgpkZXBlbmRzX29uGAUgAygJUglkZXBlbmRzT24SFAoFbW9kZWwYBiABKAlSBW1vZGVsEhAKA2FwaRgJIAEoCVIDYXBp');
 @$core.Deprecated('Use networkConfigDescriptor instead')
 const NetworkConfig$json = const {
   '1': 'NetworkConfig',
@@ -453,11 +454,12 @@ const ModuleConfig$json = const {
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'path', '3': 2, '4': 1, '5': 9, '10': 'path'},
+    const {'1': 'log_level', '3': 3, '4': 1, '5': 9, '10': 'logLevel'},
   ],
 };
 
 /// Descriptor for `ModuleConfig`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List moduleConfigDescriptor = $convert.base64Decode('CgxNb2R1bGVDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRwYXRoGAIgASgJUgRwYXRo');
+final $typed_data.Uint8List moduleConfigDescriptor = $convert.base64Decode('CgxNb2R1bGVDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRwYXRoGAIgASgJUgRwYXRoEhsKCWxvZ19sZXZlbBgDIAEoCVIIbG9nTGV2ZWw=');
 @$core.Deprecated('Use packageConfigDescriptor instead')
 const PackageConfig$json = const {
   '1': 'PackageConfig',
