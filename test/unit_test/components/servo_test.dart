@@ -161,7 +161,7 @@ void main() {
 
       test('doCommand', () async {
         final client = ServoServiceClient(channel);
-        Map<String, String> command = {'command': 'args'};
+        final Map<String, String> command = {'command': 'args'};
         final request = DoCommandRequest(name: name, command: command.toStruct());
         final response = await client.doCommand(request);
         expect(response.result.toMap(), {'command': command});
