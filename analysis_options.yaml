@@ -22,6 +22,7 @@ linter:
     - unawaited_futures
     - unnecessary_statements
     - unnecessary_await_in_return
+    - prefer_final_locals
 
 analyzer:
   errors:

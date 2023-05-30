@@ -176,7 +176,7 @@ void main() {
 
     setUp(() async {
       base = FakeBase(name);
-      ResourceManager manager = ResourceManager();
+      final manager = ResourceManager();
       manager.register(Base.getResourceName(name), base);
       service = BaseService(manager);
       channel = ClientChannel('localhost', port: 50051, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
@@ -273,11 +273,10 @@ void main() {
       });
 
       test('doCommand', () async {
-        final cmd = {'foo': 'bar'};
-
+        final Map<String, String> cmd = {'foo': 'bar'};
         final client = BaseServiceClient(channel);
         final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
-        expect(resp.result.toMap()['command'], cmd);
+        expect(resp.result.toMap(), {'command': cmd});
       });
 
       test('extra', () async {

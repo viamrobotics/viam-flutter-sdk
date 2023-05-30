@@ -12,7 +12,7 @@ class ViamSensorService {
     List<ViamResourceName> resourceNames,
     String sensorRequestName,
   ) async {
-    var sensorRequest = GetReadingsRequest();
+    final sensorRequest = GetReadingsRequest();
 
     sensorRequest.name = sensorRequestName;
 
@@ -27,7 +27,7 @@ class ViamSensorService {
 
     sensorRequest.sensorNames.addAll([sensorNames]);
 
-    var response = await _sensorsServiceClient.getReadings(sensorRequest);
+    final response = await _sensorsServiceClient.getReadings(sensorRequest);
 
     return response.readings.map<ViamSensorReadings>((dto) => dto.toDomain()).toList(growable: false);
   }

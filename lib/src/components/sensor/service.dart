@@ -21,14 +21,14 @@ class SensorService extends SensorServiceBase {
 
   @override
   Future<GetReadingsResponse> getReadings(ServiceCall call, GetReadingsRequest request) async {
-    final Sensor sensor = _fromManager(request.name);
+    final sensor = _fromManager(request.name);
     final result = await sensor.readings(extra: request.extra.toMap());
     return GetReadingsResponse(readings: result.toStruct().fields);
   }
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    final Sensor sensor = _fromManager(request.name);
+    final sensor = _fromManager(request.name);
     final result = await sensor.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }

@@ -17,7 +17,7 @@ class BaseClient extends Base {
 
   @override
   Future<bool> isMoving() async {
-    var response = await _client.isMoving(IsMovingRequest(name: name));
+    final response = await _client.isMoving(IsMovingRequest(name: name));
     return response.isMoving;
   }
 

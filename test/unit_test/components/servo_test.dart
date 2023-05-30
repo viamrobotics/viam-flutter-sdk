@@ -50,7 +50,7 @@ void main() {
   group('FakeServo Tests', () {
     late FakeServo servo;
     late String name;
-    const int testPosition = 42;
+    const testPosition = 42;
     setUp(() {
       name = 'servo';
       servo = FakeServo(name);
@@ -102,19 +102,19 @@ void main() {
     late ServoService service;
     late Server server;
     late String name;
-    const int testPosition = 42;
+    const testPosition = 42;
 
     setUp(() async {
       name = 'servo';
       servo = FakeServo(name);
-      ResourceManager manager = ResourceManager();
+      final manager = ResourceManager();
       manager.register(Servo.getResourceName(name), servo);
 
       service = ServoService(manager);
 
       channel = ClientChannel(
         'localhost',
-        port: 50051,
+        port: 50050,
         options: ChannelOptions(
           credentials: const ChannelCredentials.insecure(),
           codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
@@ -126,7 +126,7 @@ void main() {
         const <Interceptor>[],
         CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
       );
-      await server.serve(port: 50051);
+      await server.serve(port: 50050);
     });
 
     tearDown(() async {
@@ -135,33 +135,33 @@ void main() {
     });
     group('Servo Service Tests', () {
       test('move should move the servo to new given position', () async {
-        ServoServiceClient client = ServoServiceClient(channel);
+        final client = ServoServiceClient(channel);
         await client.move(MoveRequest(name: name, angleDeg: testPosition));
         expect(servo.angle, testPosition);
       });
 
       test('getPosition should return the servos angle', () async {
-        ServoServiceClient client = ServoServiceClient(channel);
+        final client = ServoServiceClient(channel);
         final response = await client.getPosition(GetPositionRequest(name: name));
         expect(response.positionDeg, servo.angle);
       });
 
       test('stop should stop the servo', () async {
-        ServoServiceClient client = ServoServiceClient(channel);
+        final client = ServoServiceClient(channel);
         servo.isStopped = false;
         await client.stop(StopRequest(name: name));
         expect(servo.isStopped, true);
       });
 
       test('isMoving should return if the servo is moving', () async {
-        ServoServiceClient client = ServoServiceClient(channel);
-        IsMovingResponse response = await client.isMoving(IsMovingRequest(name: name));
+        final client = ServoServiceClient(channel);
+        final response = await client.isMoving(IsMovingRequest(name: name));
         expect(response.isMoving, !servo.isStopped);
       });
 
       test('doCommand', () async {
-        ServoServiceClient client = ServoServiceClient(channel);
-        final Map<String, String> command = {'command': 'args'};
+        final client = ServoServiceClient(channel);
+        Map<String, String> command = {'command': 'args'};
         final request = DoCommandRequest(name: name, command: command.toStruct());
         final response = await client.doCommand(request);
         expect(response.result.toMap(), {'command': command});
@@ -169,32 +169,32 @@ void main() {
     });
     group('Servo Client Tests', () {
       test('move should move the servo to new given position', () async {
-        ServoClient client = ServoClient(servo.name, channel);
+        final client = ServoClient(servo.name, channel);
         await client.move(testPosition);
         expect(servo.angle, testPosition);
       });
 
       test('getPosition should return the servos angle', () async {
-        ServoClient client = ServoClient(servo.name, channel);
+        final client = ServoClient(servo.name, channel);
         final response = await client.position();
         expect(response, servo.angle);
       });
 
       test('stop should stop the servo', () async {
-        ServoClient client = ServoClient(servo.name, channel);
+        final client = ServoClient(servo.name, channel);
         servo.isStopped = false;
         await client.stop();
         expect(servo.isStopped, true);
       });
 
       test('isMoving should return if the servo is moving', () async {
-        ServoClient client = ServoClient(servo.name, channel);
-        bool response = await client.isMoving();
+        final client = ServoClient(servo.name, channel);
+        final response = await client.isMoving();
         expect(response, !servo.isStopped);
       });
 
       test('doCommand', () async {
-        ServoClient client = ServoClient(servo.name, channel);
+        final client = ServoClient(servo.name, channel);
         final Map<String, String> command = {'command': 'args'};
         final response = await client.doCommand(command);
         expect(response, {'command': command});

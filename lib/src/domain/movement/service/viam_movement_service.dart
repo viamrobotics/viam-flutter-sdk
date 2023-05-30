@@ -11,11 +11,11 @@ class ViamMovementService {
   );
 
   Future<ViamPosition> getPositionData(ViamResourceName name) async {
-    var locationRequest = GetPositionRequest();
+    final locationRequest = GetPositionRequest();
     final resourceName = name.toDto();
     locationRequest.name = resourceName.name;
 
-    var response = await _movementSensorServiceClient.getPosition(locationRequest);
+    final response = await _movementSensorServiceClient.getPosition(locationRequest);
 
     return response.toDomain();
   }

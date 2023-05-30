@@ -21,49 +21,49 @@ class ArmService extends ArmServiceBase {
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
-    final Arm arm = _armFromManager(request.name);
+    final arm = _armFromManager(request.name);
     final result = await arm.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
 
   @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
-    final Arm arm = _armFromManager(request.name);
-    final bool isMoving = await arm.isMoving();
+    final arm = _armFromManager(request.name);
+    final isMoving = await arm.isMoving();
     return IsMovingResponse(isMoving: isMoving);
   }
 
   @override
   Future<StopResponse> stop(ServiceCall call, StopRequest request) async {
-    final Arm arm = _armFromManager(request.name);
+    final arm = _armFromManager(request.name);
     await arm.stop(extra: request.extra.toMap());
     return StopResponse();
   }
 
   @override
   Future<GetEndPositionResponse> getEndPosition(ServiceCall call, GetEndPositionRequest request) async {
-    final Arm arm = _armFromManager(request.name);
-    final Pose pose = await arm.endPosition(extra: request.extra.toMap());
+    final arm = _armFromManager(request.name);
+    final pose = await arm.endPosition(extra: request.extra.toMap());
     return GetEndPositionResponse(pose: pose);
   }
 
   @override
   Future<GetJointPositionsResponse> getJointPositions(ServiceCall call, GetJointPositionsRequest request) async {
-    final Arm arm = _armFromManager(request.name);
-    final JointPositions jointPositions = await arm.jointPositions(extra: request.extra.toMap());
+    final arm = _armFromManager(request.name);
+    final jointPositions = await arm.jointPositions(extra: request.extra.toMap());
     return GetJointPositionsResponse(positions: jointPositions);
   }
 
   @override
   Future<MoveToJointPositionsResponse> moveToJointPositions(ServiceCall call, MoveToJointPositionsRequest request) async {
-    final Arm arm = _armFromManager(request.name);
+    final arm = _armFromManager(request.name);
     await arm.moveToJointPositions(request.positions, extra: request.extra.toMap());
     return MoveToJointPositionsResponse();
   }
 
   @override
   Future<MoveToPositionResponse> moveToPosition(ServiceCall call, MoveToPositionRequest request) async {
-    final Arm arm = _armFromManager(request.name);
+    final arm = _armFromManager(request.name);
     await arm.moveToPosition(request.to, extra: request.extra.toMap());
     return MoveToPositionResponse();
   }
