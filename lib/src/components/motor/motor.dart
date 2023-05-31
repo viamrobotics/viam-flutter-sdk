@@ -64,10 +64,12 @@ abstract class Motor extends Resource {
   /// Get if the [Motor] is currently moving.
   Future<bool> isMoving({Map<String, dynamic>? extra});
 
+  /// Get the [ResourceName] for this [Motor] with the given [name]
   static ResourceName getResourceName(String name) {
     return Motor.subtype.getResourceName(name);
   }
 
+  /// Get the [Motor] named [name] from the provided robot.
   static Motor fromRobot(RobotClient robot, String name) {
     return robot.getResource(Motor.getResourceName(name));
   }

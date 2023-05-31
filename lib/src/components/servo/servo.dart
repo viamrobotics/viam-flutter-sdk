@@ -18,10 +18,12 @@ abstract class Servo extends Resource {
   /// Get if the [Servo] is currently moving.
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Servo] with the given [name]
   static ResourceName getResourceName(String name) {
     return Servo.subtype.getResourceName(name);
   }
 
+  /// Get the [Servo] named [name] from the provided robot.
   static Servo fromRobot(RobotClient robot, String name) {
     return robot.getResource(Servo.getResourceName(name));
   }

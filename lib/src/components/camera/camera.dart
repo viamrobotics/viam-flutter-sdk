@@ -31,10 +31,12 @@ abstract class Camera extends Resource {
   /// Get the camera's intrinsic parameters and the camera's distortion parameters.
   Future<CameraProperties> properties();
 
+  /// Get the [ResourceName] for this [Camera] with the given [name]
   static ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);
   }
 
+  /// Get the [Camera] named [name] from the provided robot.
   static Camera fromRobot(RobotClient robot, String name) {
     return robot.getResource(Camera.getResourceName(name));
   }

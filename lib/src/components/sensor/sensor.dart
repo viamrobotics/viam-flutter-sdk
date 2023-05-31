@@ -9,10 +9,12 @@ abstract class Sensor extends Resource {
   /// Obtain the measurements/data specific to this [Sensor]
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
+  /// Get the [ResourceName] for this [Sensor] with the given [name]
   static ResourceName getResourceName(String name) {
     return Sensor.subtype.getResourceName(name);
   }
 
+  /// Get the [Sensor] named [name] from the provided robot.
   static Sensor fromRobot(RobotClient robot, String name) {
     return robot.getResource(Sensor.getResourceName(name));
   }

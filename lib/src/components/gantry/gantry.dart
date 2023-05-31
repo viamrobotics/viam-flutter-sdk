@@ -21,10 +21,12 @@ abstract class Gantry extends Resource {
   /// If the gantry is currently moving
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Gantry] with the given [name]
   static ResourceName getResourceName(String name) {
     return Gantry.subtype.getResourceName(name);
   }
 
+  /// Get the [Gantry] named [name] from the provided robot.
   static Gantry fromRobot(RobotClient robot, String name) {
     return robot.getResource(Gantry.getResourceName(name));
   }

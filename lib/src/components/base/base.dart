@@ -37,10 +37,12 @@ abstract class Base extends Resource {
   /// Get if the base is currently moving
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Base] with the given [name]
   static ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
 
+  /// Get the [Base] named [name] from the provided robot.
   static Base fromRobot(RobotClient robot, String name) {
     return robot.getResource(Base.getResourceName(name));
   }

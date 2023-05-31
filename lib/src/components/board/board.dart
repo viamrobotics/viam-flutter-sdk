@@ -1,11 +1,11 @@
 import 'package:fixnum/fixnum.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
-import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/board/v1/board.pbenum.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// The values of the [Board]'s analog readers and digital interrupts
 class BoardStatus {
   final Map<String, int> analogs;
   final Map<String, int> digitalInterrupts;
@@ -20,8 +20,8 @@ class BoardStatus {
 
   common.BoardStatus get proto {
     final pbBoardStatus = common.BoardStatus();
-    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = AnalogStatus(value: value));
-    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = DigitalInterruptStatus(value: Int64(value)));
+    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = common.AnalogStatus(value: value));
+    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = common.DigitalInterruptStatus(value: Int64(value)));
     return pbBoardStatus;
   }
 }
@@ -61,10 +61,12 @@ abstract class Board extends Resource {
   /// Set the board to the indicated power mode.
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});
 
+  /// Get the [ResourceName] for this [Board] with the given [name]
   static common.ResourceName getResourceName(String name) {
     return Board.subtype.getResourceName(name);
   }
 
+  /// Get the [Board] named [name] from the provided robot.
   static Board fromRobot(RobotClient robot, String name) {
     return robot.getResource(Board.getResourceName(name));
   }
