@@ -49,10 +49,9 @@ class FakeServo extends Servo {
 void main() {
   group('FakeServo Tests', () {
     late FakeServo servo;
-    late String name;
+    const name = 'servo';
     const testPosition = 42;
     setUp(() {
-      name = 'servo';
       servo = FakeServo(name);
     });
     test('angle should start at 0', () {
@@ -101,11 +100,11 @@ void main() {
     late FakeServo servo;
     late ServoService service;
     late Server server;
-    late String name;
+    const name = 'servo';
     const testPosition = 42;
 
     setUp(() async {
-      name = 'servo';
+      final port = 50000 + (name.hashCode % 10000);
       servo = FakeServo(name);
       final manager = ResourceManager();
       manager.register(Servo.getResourceName(name), servo);
@@ -114,7 +113,7 @@ void main() {
 
       channel = ClientChannel(
         'localhost',
-        port: 50050,
+        port: port,
         options: ChannelOptions(
           credentials: const ChannelCredentials.insecure(),
           codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
@@ -126,7 +125,7 @@ void main() {
         const <Interceptor>[],
         CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
       );
-      await server.serve(port: 50050);
+      await server.serve(port: port);
     });
 
     tearDown(() async {
