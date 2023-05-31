@@ -1,5 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
+import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/motor/v1/motor.pbgrpc.dart';
 import '../../utils.dart';
 import 'motor.dart';
@@ -60,5 +61,11 @@ class MotorClient extends Motor {
   Future<bool> isMoving({Map<String, dynamic>? extra}) async {
     final result = await _client.isMoving(IsMovingRequest(name: name));
     return result.isMoving;
+  }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    return response.result.toMap();
   }
 }
