@@ -1,8 +1,7 @@
-import 'package:viam_sdk/src/components/sensor/sensor.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pb.dart';
-import 'package:viam_sdk/src/resource/base.dart';
-
+import '../../components/sensor/sensor.dart';
+import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/movementsensor/v1/movementsensor.pb.dart';
+import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 class Position {
@@ -14,6 +13,7 @@ class Position {
 
 typedef Properties = GetPropertiesResponse;
 
+/// MovementSensor reports information about the robot's direction, position and speed.
 abstract class MovementSensor extends Sensor {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'movement_sensor');
 

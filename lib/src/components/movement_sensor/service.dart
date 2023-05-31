@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'movement_sensor.dart';
 
+/// gRPC Service for a [MovementSensor]
 class MovementSensorService extends MovementSensorServiceBase {
   final ResourceManager _manager;
 

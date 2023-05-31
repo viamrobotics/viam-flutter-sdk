@@ -5,6 +5,7 @@ import '../../gen/component/sensor/v1/sensor.pbgrpc.dart';
 import '../../utils.dart';
 import 'sensor.dart';
 
+/// gRPC client for the [Sensor] component.
 class SensorClient extends Sensor {
   final ClientChannelBase _channel;
   final SensorServiceClient _client;

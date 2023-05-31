@@ -1,8 +1,8 @@
-import 'package:viam_sdk/src/resource/base.dart';
-
 import '../../gen/common/v1/common.pb.dart';
+import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// Sensor represents a physical sensing device that can provide measurement readings.
 abstract class Sensor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'sensor');
 

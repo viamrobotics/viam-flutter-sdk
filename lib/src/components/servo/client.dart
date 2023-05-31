@@ -5,6 +5,7 @@ import '../../gen/component/servo/v1/servo.pbgrpc.dart';
 import '../../utils.dart';
 import 'servo.dart';
 
+/// gRPC client for the [Servo] component.
 class ServoClient extends Servo {
   final ClientChannelBase _channel;
   final ServoServiceClient _client;

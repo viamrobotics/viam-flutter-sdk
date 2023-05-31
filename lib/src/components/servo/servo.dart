@@ -3,9 +3,6 @@ import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// Servo represents a physical servo.
-///
-/// This acts as an abstract base class for any drivers representing specific servo implementations.
-/// This cannot be used on its own.
 abstract class Servo extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'servo');
 
