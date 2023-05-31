@@ -6,7 +6,7 @@ import '../../robot/client.dart';
 
 /// The camera's supported features and settings
 class CameraProperties {
-  /// Whether this camera supports PointClouds (has a valid implementation of [Camera.getPointCloud])
+  /// Whether this camera supports PointClouds (has a valid implementation of [Camera.pointCloud])
   final bool supportsPcd;
 
   /// The properties of the camera

@@ -1,9 +1,7 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// Robots at your fingertips.
 library viam_sdk;
 
-// Components
+/// Components
 export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
 export 'src/components/base/base.dart';
@@ -22,7 +20,8 @@ export 'src/components/sensor/client.dart';
 export 'src/components/sensor/sensor.dart';
 export 'src/components/servo/client.dart';
 export 'src/components/servo/servo.dart';
-// Domain
+
+/// Domain
 export 'src/domain/app/model/viam_location.dart';
 export 'src/domain/app/model/viam_location_auth.dart';
 export 'src/domain/app/model/viam_location_organization.dart';
@@ -46,20 +45,25 @@ export 'src/domain/movement/model/viam_position.dart';
 export 'src/domain/resource/model/viam_resource_name.dart';
 export 'src/domain/sensor/model/viam_sensor_readings.dart';
 export 'src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
-// Proto
+
+/// Necessary Protos
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
-// Media & Streams
+
+/// Media & Streams
 export 'src/media/image.dart';
 export 'src/media/stream/client.dart';
-// Robot, Resource, and Registry
+
+/// Robot, Resource, and Registry
 export 'src/resource/base.dart';
 export 'src/resource/registry.dart';
 export 'src/robot/client.dart';
-// RPC
+
+/// RPC
 export 'src/rpc/dial.dart';
-// Misc
+
+/// Misc
 export 'src/viam_sdk.dart';
-export 'src/viam_sdk_base.dart';
-// Widgets
+
+/// Widgets
 export 'src/widgets/widgets.dart';

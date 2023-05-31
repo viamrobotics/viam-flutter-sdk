@@ -6,6 +6,7 @@ import '../../media/image.dart';
 import '../../utils.dart';
 import 'camera.dart';
 
+/// gRPC client for the [Camera] component
 class CameraClient extends Camera {
   final ClientChannelBase _channel;
   final CameraServiceClient _client;

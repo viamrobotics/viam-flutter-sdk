@@ -26,9 +26,6 @@ class PowerState {
 }
 
 /// Motor represents a physical motor.
-///
-/// This acts as an abstract base class for any drivers representing specific motor implementations.
-/// This cannot be used on its own.
 abstract class Motor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'motor');
 

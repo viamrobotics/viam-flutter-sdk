@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'motor.dart';
 
+/// gRPC Service for a [Motor]
 class MotorService extends MotorServiceBase {
   final ResourceManager _manager;
 

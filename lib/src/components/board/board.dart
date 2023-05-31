@@ -1,8 +1,8 @@
 import 'package:fixnum/fixnum.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
+import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/board/v1/board.pbenum.dart';
-import '../../proto/common.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -28,9 +28,6 @@ class BoardStatus {
 
 /// Board represents a physical general purpose compute board that contains various
 /// components such as analog readers, and digital interrupts.
-///
-/// This acts as an abstract base class for any drivers representing specific
-/// board implementations. This cannot be used on its own.
 abstract class Board extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'board');
 

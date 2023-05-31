@@ -6,6 +6,7 @@ import '../../gen/component/base/v1/base.pbgrpc.dart';
 import '../../utils.dart';
 import 'base.dart';
 
+/// gRPC client for the [Base] component.
 class BaseClient extends Base {
   final ClientChannelBase _channel;
   final BaseServiceClient _client;

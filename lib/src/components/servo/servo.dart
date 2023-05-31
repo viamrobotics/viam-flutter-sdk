@@ -2,7 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// [Servo] represents a physical servo.
+/// Servo represents a physical servo.
 ///
 /// This acts as an abstract base class for any drivers representing specific servo implementations.
 /// This cannot be used on its own.

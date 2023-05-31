@@ -1,8 +1,9 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/servo/v1/servo.pbgrpc.dart';
 import '../../utils.dart';
+import 'servo.dart';
 
 class ServoClient extends Servo {
   final ClientChannelBase _channel;

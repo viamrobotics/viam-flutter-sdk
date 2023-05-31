@@ -1,4 +1,4 @@
-import '../proto/common.dart';
+import '../gen/common/v1/common.pb.dart';
 
 const String resourceNamespaceRDK = 'rdk';
 const String resourceTypeComponent = 'component';

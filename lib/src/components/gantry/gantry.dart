@@ -1,11 +1,8 @@
-import '../../proto/common.dart';
+import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// Gantry represents a physical gantry and can be used for controlling gantries of N axes.
-///
-/// This acts as an abstract base class for any drivers representing specific gantry implementations.
-/// This cannot be used on its own.
+/// Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
 abstract class Gantry extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'gantry');
 

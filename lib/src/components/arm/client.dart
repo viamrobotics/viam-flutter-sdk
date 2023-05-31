@@ -1,10 +1,13 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/gen/component/arm/v1/arm.pbgrpc.dart';
 
+import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/arm/v1/arm.pbgrpc.dart';
 import '../../utils.dart';
 import 'arm.dart';
 
+/// gRPC client for an [Arm] component.
+///
+/// Used to communicate with an existing [Arm] implementation over gRPC.
 class ArmClient extends Arm {
   final ClientChannelBase _channel;
   final ArmServiceClient _client;

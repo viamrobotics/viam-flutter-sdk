@@ -2,6 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// Base represents a physical base of a robot.
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'base');
 
