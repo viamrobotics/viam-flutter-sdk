@@ -1,0 +1,46 @@
+name: Generate docs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'lib/**'
+      - 'doc/**'
+      - 'README.md'
+      - 'dartdoc_options.yaml'
+    branches: [ main ]
+
+jobs:
+  generate-docs:
+    # if: github.repository_owner == 'viamrobotics'
+    # runs-on: [self-hosted, x64]
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/cirruslabs/flutter:3.7.12
+    steps:
+      - name: Checkout Push/Workflow Dispatch
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2.10.0
+        with:
+          channel: stable
+          flutter-version: '3.7.12'
+
+      - name: Generate docs
+        run: dart doc
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-docs
+          path: doc/api
+
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: github.ref == 'refs/heads/main'
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: doc/api
+      #     publish_branch: docs-gh_pages
+      #     cname: flutter.viam.dev
