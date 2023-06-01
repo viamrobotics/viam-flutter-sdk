@@ -21,11 +21,11 @@ jobs:
       - name: Checkout Push/Workflow Dispatch
         uses: actions/checkout@v3
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2.10.0
-        with:
-          channel: stable
-          flutter-version: '3.7.12'
+      # - name: Setup Flutter
+      #   uses: subosito/flutter-action@v2.10.0
+      #   with:
+      #     channel: stable
+      #     flutter-version: '3.7.12'
 
       - name: Generate docs
         run: dart doc
