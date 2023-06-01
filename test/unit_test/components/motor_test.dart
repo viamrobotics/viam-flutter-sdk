@@ -6,6 +6,8 @@ import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../test_utils.dart';
+
 class FakeMotor extends Motor {
   bool isStopped = true;
   double motorPosition = 0;
@@ -185,7 +187,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = 50000 + (StackTrace.current.hashCode % 10000);
+      final port = generateTestingPortFromName(name);
       motor = FakeMotor(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Motor.getResourceName(name), motor);

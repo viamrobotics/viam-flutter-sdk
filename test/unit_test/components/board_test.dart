@@ -7,6 +7,8 @@ import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../test_utils.dart';
+
 class FakeBoard extends Board {
   final Map<String, bool> gpioMap = {'pin': false};
   final Map<String, double> pwmMap = {'pin': 0.0};
@@ -173,8 +175,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      // TODO make helper
-      final port = 50000 + (name.hashCode % 10000);
+      final port = generateTestingPortFromName(name);
       board = FakeBoard(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Board.getResourceName(name), board);
