@@ -11,7 +11,7 @@ class FakeSensor extends Sensor {
     'String': 'string',
     'int': 1,
     'double': 2.02,
-    'set': [0, 1, 2, 3]
+    'list': [0, 1, 2, 3]
   };
   Map<String, dynamic>? extra;
 
