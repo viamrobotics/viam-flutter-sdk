@@ -75,8 +75,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool _loggedIn = false;
   bool _loading = false;
-  late ResourceName _cameraName;
-  late ResourceName _baseName;
+  late ResourceName? _cameraName;
   final List<ResourceName> _resourceNames = [];
   late RobotClient _robot;
 
@@ -104,9 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
       for (ResourceName component in components) {
         if (component.subtype == Camera.subtype.resourceSubtype) {
           _cameraName = component;
-        }
-        if (component.subtype == Base.subtype.resourceSubtype) {
-          _baseName = component;
         }
       }
 
@@ -139,12 +135,12 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!_isNavigable(rname)) {
       return null;
     }
-    if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != Null) {
+    if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
           base: Base.fromRobot(_robot, rname.name),
           resourceName: rname,
-          camera: Camera.fromRobot(_robot, _cameraName.name),
-          streamClient: _getStream(_cameraName));
+          camera: Camera.fromRobot(_robot, _cameraName!.name),
+          streamClient: _getStream(_cameraName!));
     }
     if (rname.subtype == Board.subtype.resourceSubtype) {
       return BoardScreen(board: Board.fromRobot(_robot, rname.name), resourceName: rname);
