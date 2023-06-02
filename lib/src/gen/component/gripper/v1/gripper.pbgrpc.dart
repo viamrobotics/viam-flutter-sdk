@@ -39,6 +39,12 @@ class GripperServiceClient extends $grpc.Client {
           ($1.DoCommandRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries =
+      $grpc.ClientMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+          '/viam.component.gripper.v1.GripperService/GetGeometries',
+          ($1.GetGeometriesRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.GetGeometriesResponse.fromBuffer(value));
 
   GripperServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -69,6 +75,12 @@ class GripperServiceClient extends $grpc.Client {
       $1.DoCommandRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetGeometriesResponse> getGeometries(
+      $1.GetGeometriesRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
 
@@ -111,6 +123,15 @@ abstract class GripperServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.DoCommandRequest.fromBuffer(value),
         ($1.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+            'GetGeometries',
+            getGeometries_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.GetGeometriesRequest.fromBuffer(value),
+            ($1.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.OpenResponse> open_Pre(
@@ -138,6 +159,12 @@ abstract class GripperServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
+  $async.Future<$1.GetGeometriesResponse> getGeometries_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$1.GetGeometriesRequest> request) async {
+    return getGeometries(call, await request);
+  }
+
   $async.Future<$0.OpenResponse> open(
       $grpc.ServiceCall call, $0.OpenRequest request);
   $async.Future<$0.GrabResponse> grab(
@@ -148,4 +175,6 @@ abstract class GripperServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.IsMovingRequest request);
   $async.Future<$1.DoCommandResponse> doCommand(
       $grpc.ServiceCall call, $1.DoCommandRequest request);
+  $async.Future<$1.GetGeometriesResponse> getGeometries(
+      $grpc.ServiceCall call, $1.GetGeometriesRequest request);
 }

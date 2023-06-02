@@ -45,6 +45,12 @@ class CameraServiceClient extends $grpc.Client {
           ($2.DoCommandRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $2.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries =
+      $grpc.ClientMethod<$2.GetGeometriesRequest, $2.GetGeometriesResponse>(
+          '/viam.component.camera.v1.CameraService/GetGeometries',
+          ($2.GetGeometriesRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $2.GetGeometriesResponse.fromBuffer(value));
 
   CameraServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -77,6 +83,12 @@ class CameraServiceClient extends $grpc.Client {
       $2.DoCommandRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.GetGeometriesResponse> getGeometries(
+      $2.GetGeometriesRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
 
@@ -124,6 +136,15 @@ abstract class CameraServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.DoCommandRequest.fromBuffer(value),
         ($2.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$2.GetGeometriesRequest, $2.GetGeometriesResponse>(
+            'GetGeometries',
+            getGeometries_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $2.GetGeometriesRequest.fromBuffer(value),
+            ($2.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetImageResponse> getImage_Pre(
@@ -153,6 +174,12 @@ abstract class CameraServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
+  $async.Future<$2.GetGeometriesResponse> getGeometries_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$2.GetGeometriesRequest> request) async {
+    return getGeometries(call, await request);
+  }
+
   $async.Future<$0.GetImageResponse> getImage(
       $grpc.ServiceCall call, $0.GetImageRequest request);
   $async.Future<$1.HttpBody> renderFrame(
@@ -163,4 +190,6 @@ abstract class CameraServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.GetPropertiesRequest request);
   $async.Future<$2.DoCommandResponse> doCommand(
       $grpc.ServiceCall call, $2.DoCommandRequest request);
+  $async.Future<$2.GetGeometriesResponse> getGeometries(
+      $grpc.ServiceCall call, $2.GetGeometriesRequest request);
 }

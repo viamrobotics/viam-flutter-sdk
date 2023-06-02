@@ -68,4 +68,10 @@ class BaseService extends BaseServiceBase {
     final result = await base.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

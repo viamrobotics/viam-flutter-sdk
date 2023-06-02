@@ -89,4 +89,10 @@ class MotorService extends MotorServiceBase {
     await motor.setPower(request.powerPct, extra: request.extra.toMap());
     return SetPowerResponse();
   }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

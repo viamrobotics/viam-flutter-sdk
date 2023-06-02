@@ -97,4 +97,10 @@ class BoardService extends BoardServiceBase {
     final boardStatus = await board.status(extra: request.extra.toMap());
     return StatusResponse(status: boardStatus.proto);
   }
+
+  @override
+  Future<common.GetGeometriesResponse> getGeometries(ServiceCall call, common.GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

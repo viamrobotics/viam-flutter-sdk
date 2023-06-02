@@ -59,4 +59,10 @@ class CameraService extends CameraServiceBase {
     final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
     return HttpBody(data: image.raw, contentType: image.mimeType.toString());
   }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

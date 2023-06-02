@@ -8,6 +8,18 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use kinematicsFileFormatDescriptor instead')
+const KinematicsFileFormat$json = const {
+  '1': 'KinematicsFileFormat',
+  '2': const [
+    const {'1': 'KINEMATICS_FILE_FORMAT_UNSPECIFIED', '2': 0},
+    const {'1': 'KINEMATICS_FILE_FORMAT_SVA', '2': 1},
+    const {'1': 'KINEMATICS_FILE_FORMAT_URDF', '2': 2},
+  ],
+};
+
+/// Descriptor for `KinematicsFileFormat`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List kinematicsFileFormatDescriptor = $convert.base64Decode('ChRLaW5lbWF0aWNzRmlsZUZvcm1hdBImCiJLSU5FTUFUSUNTX0ZJTEVfRk9STUFUX1VOU1BFQ0lGSUVEEAASHgoaS0lORU1BVElDU19GSUxFX0ZPUk1BVF9TVkEQARIfChtLSU5FTUFUSUNTX0ZJTEVfRk9STUFUX1VSREYQAg==');
 @$core.Deprecated('Use resourceNameDescriptor instead')
 const ResourceName$json = const {
   '1': 'ResourceName',
@@ -274,3 +286,44 @@ const DoCommandResponse$json = const {
 
 /// Descriptor for `DoCommandResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List doCommandResponseDescriptor = $convert.base64Decode('ChFEb0NvbW1hbmRSZXNwb25zZRIvCgZyZXN1bHQYASABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgZyZXN1bHQ=');
+@$core.Deprecated('Use getKinematicsRequestDescriptor instead')
+const GetKinematicsRequest$json = const {
+  '1': 'GetKinematicsRequest',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetKinematicsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getKinematicsRequestDescriptor = $convert.base64Decode('ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+@$core.Deprecated('Use getKinematicsResponseDescriptor instead')
+const GetKinematicsResponse$json = const {
+  '1': 'GetKinematicsResponse',
+  '2': const [
+    const {'1': 'format', '3': 1, '4': 1, '5': 14, '6': '.viam.common.v1.KinematicsFileFormat', '10': 'format'},
+    const {'1': 'kinematics_data', '3': 2, '4': 1, '5': 12, '10': 'kinematicsData'},
+  ],
+};
+
+/// Descriptor for `GetKinematicsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getKinematicsResponseDescriptor = $convert.base64Decode('ChVHZXRLaW5lbWF0aWNzUmVzcG9uc2USPAoGZm9ybWF0GAEgASgOMiQudmlhbS5jb21tb24udjEuS2luZW1hdGljc0ZpbGVGb3JtYXRSBmZvcm1hdBInCg9raW5lbWF0aWNzX2RhdGEYAiABKAxSDmtpbmVtYXRpY3NEYXRh');
+@$core.Deprecated('Use getGeometriesRequestDescriptor instead')
+const GetGeometriesRequest$json = const {
+  '1': 'GetGeometriesRequest',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetGeometriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getGeometriesRequestDescriptor = $convert.base64Decode('ChRHZXRHZW9tZXRyaWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+@$core.Deprecated('Use getGeometriesResponseDescriptor instead')
+const GetGeometriesResponse$json = const {
+  '1': 'GetGeometriesResponse',
+  '2': const [
+    const {'1': 'geometries', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
+  ],
+};
+
+/// Descriptor for `GetGeometriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getGeometriesResponseDescriptor = $convert.base64Decode('ChVHZXRHZW9tZXRyaWVzUmVzcG9uc2USOAoKZ2VvbWV0cmllcxgBIAMoCzIYLnZpYW0uY29tbW9uLnYxLkdlb21ldHJ5UgpnZW9tZXRyaWVz');

@@ -54,4 +54,10 @@ class ServoService extends ServoServiceBase {
     await servo.stop(extra: request.extra.toMap());
     return StopResponse();
   }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

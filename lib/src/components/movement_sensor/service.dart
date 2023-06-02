@@ -88,4 +88,10 @@ class MovementSensorService extends MovementSensorServiceBase {
         compassHeadingSupported: properties.compassHeadingSupported,
         linearAccelerationSupported: properties.linearAccelerationSupported);
   }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

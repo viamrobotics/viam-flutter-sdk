@@ -12,6 +12,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/struct.pb.dart' as $0;
 
+import 'common.pbenum.dart';
+
+export 'common.pbenum.dart';
+
 class ResourceName extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResourceName', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
@@ -1408,6 +1412,202 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   void clearResult() => clearField(1);
   @$pb.TagNumber(1)
   $0.Struct ensureResult() => $_ensure(0);
+}
+
+class GetKinematicsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetKinematicsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  GetKinematicsRequest._() : super();
+  factory GetKinematicsRequest({
+    $core.String? name,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
+  factory GetKinematicsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetKinematicsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetKinematicsRequest clone() => GetKinematicsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetKinematicsRequest copyWith(void Function(GetKinematicsRequest) updates) => super.copyWith((message) => updates(message as GetKinematicsRequest)) as GetKinematicsRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetKinematicsRequest create() => GetKinematicsRequest._();
+  GetKinematicsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetKinematicsRequest> createRepeated() => $pb.PbList<GetKinematicsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetKinematicsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetKinematicsRequest>(create);
+  static GetKinematicsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+class GetKinematicsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetKinematicsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..e<KinematicsFileFormat>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: KinematicsFileFormat.KINEMATICS_FILE_FORMAT_UNSPECIFIED, valueOf: KinematicsFileFormat.valueOf, enumValues: KinematicsFileFormat.values)
+    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kinematicsData', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  GetKinematicsResponse._() : super();
+  factory GetKinematicsResponse({
+    KinematicsFileFormat? format,
+    $core.List<$core.int>? kinematicsData,
+  }) {
+    final _result = create();
+    if (format != null) {
+      _result.format = format;
+    }
+    if (kinematicsData != null) {
+      _result.kinematicsData = kinematicsData;
+    }
+    return _result;
+  }
+  factory GetKinematicsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetKinematicsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetKinematicsResponse clone() => GetKinematicsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetKinematicsResponse copyWith(void Function(GetKinematicsResponse) updates) => super.copyWith((message) => updates(message as GetKinematicsResponse)) as GetKinematicsResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetKinematicsResponse create() => GetKinematicsResponse._();
+  GetKinematicsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetKinematicsResponse> createRepeated() => $pb.PbList<GetKinematicsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetKinematicsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetKinematicsResponse>(create);
+  static GetKinematicsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  KinematicsFileFormat get format => $_getN(0);
+  @$pb.TagNumber(1)
+  set format(KinematicsFileFormat v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFormat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFormat() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get kinematicsData => $_getN(1);
+  @$pb.TagNumber(2)
+  set kinematicsData($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKinematicsData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKinematicsData() => clearField(2);
+}
+
+class GetGeometriesRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGeometriesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  GetGeometriesRequest._() : super();
+  factory GetGeometriesRequest({
+    $core.String? name,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
+  factory GetGeometriesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetGeometriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetGeometriesRequest clone() => GetGeometriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetGeometriesRequest copyWith(void Function(GetGeometriesRequest) updates) => super.copyWith((message) => updates(message as GetGeometriesRequest)) as GetGeometriesRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetGeometriesRequest create() => GetGeometriesRequest._();
+  GetGeometriesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetGeometriesRequest> createRepeated() => $pb.PbList<GetGeometriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetGeometriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGeometriesRequest>(create);
+  static GetGeometriesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+class GetGeometriesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetGeometriesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..pc<Geometry>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'geometries', $pb.PbFieldType.PM, subBuilder: Geometry.create)
+    ..hasRequiredFields = false
+  ;
+
+  GetGeometriesResponse._() : super();
+  factory GetGeometriesResponse({
+    $core.Iterable<Geometry>? geometries,
+  }) {
+    final _result = create();
+    if (geometries != null) {
+      _result.geometries.addAll(geometries);
+    }
+    return _result;
+  }
+  factory GetGeometriesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetGeometriesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetGeometriesResponse clone() => GetGeometriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetGeometriesResponse copyWith(void Function(GetGeometriesResponse) updates) => super.copyWith((message) => updates(message as GetGeometriesResponse)) as GetGeometriesResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetGeometriesResponse create() => GetGeometriesResponse._();
+  GetGeometriesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetGeometriesResponse> createRepeated() => $pb.PbList<GetGeometriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetGeometriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGeometriesResponse>(create);
+  static GetGeometriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Geometry> get geometries => $_getList(0);
 }
 
 class Common {

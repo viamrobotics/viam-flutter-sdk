@@ -33,4 +33,10 @@ class SensorService extends SensorServiceBase {
     final result = await sensor.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
   }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
 }

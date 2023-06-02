@@ -37,6 +37,12 @@ class AudioInputServiceClient extends $grpc.Client {
           ($2.DoCommandRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $2.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries =
+      $grpc.ClientMethod<$2.GetGeometriesRequest, $2.GetGeometriesResponse>(
+          '/viam.component.audioinput.v1.AudioInputService/GetGeometries',
+          ($2.GetGeometriesRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $2.GetGeometriesResponse.fromBuffer(value));
 
   AudioInputServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -64,6 +70,12 @@ class AudioInputServiceClient extends $grpc.Client {
       $2.DoCommandRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.GetGeometriesResponse> getGeometries(
+      $2.GetGeometriesRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
 
@@ -99,6 +111,15 @@ abstract class AudioInputServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.DoCommandRequest.fromBuffer(value),
         ($2.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$2.GetGeometriesRequest, $2.GetGeometriesResponse>(
+            'GetGeometries',
+            getGeometries_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $2.GetGeometriesRequest.fromBuffer(value),
+            ($2.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Stream<$0.ChunksResponse> chunks_Pre(
@@ -121,6 +142,12 @@ abstract class AudioInputServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
+  $async.Future<$2.GetGeometriesResponse> getGeometries_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$2.GetGeometriesRequest> request) async {
+    return getGeometries(call, await request);
+  }
+
   $async.Stream<$0.ChunksResponse> chunks(
       $grpc.ServiceCall call, $0.ChunksRequest request);
   $async.Future<$0.PropertiesResponse> properties(
@@ -129,4 +156,6 @@ abstract class AudioInputServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.RecordRequest request);
   $async.Future<$2.DoCommandResponse> doCommand(
       $grpc.ServiceCall call, $2.DoCommandRequest request);
+  $async.Future<$2.GetGeometriesResponse> getGeometries(
+      $grpc.ServiceCall call, $2.GetGeometriesRequest request);
 }
