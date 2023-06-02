@@ -37,7 +37,7 @@ jobs:
       #     cname: flutter.viam.dev
 
       - name: Zip artifacts
-        run: zip html-docs.zip ./docs/api -r
+        run: zip html-docs.zip ./doc/api -r
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
