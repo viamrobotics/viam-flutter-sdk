@@ -16,19 +16,19 @@ class ArmClient extends Arm {
 
   @override
   Future<Pose> endPosition({Map<String, dynamic>? extra}) async {
-    final response = await _client.getEndPosition(GetEndPositionRequest(name: name));
+    final response = await _client.getEndPosition(GetEndPositionRequest(name: name, extra: extra?.toStruct()));
     return response.pose;
   }
 
   @override
-  Future<bool> isMoving({Map<String, dynamic>? extra}) async {
+  Future<bool> isMoving() async {
     final response = await _client.isMoving(IsMovingRequest(name: name));
     return response.isMoving;
   }
 
   @override
   Future<void> moveToJointPositions(JointPositions positions, {Map<String, dynamic>? extra}) async {
-    await _client.moveToJointPositions(MoveToJointPositionsRequest(name: name, positions: positions));
+    await _client.moveToJointPositions(MoveToJointPositionsRequest(name: name, positions: positions, extra: extra?.toStruct()));
   }
 
   @override
@@ -44,6 +44,12 @@ class ArmClient extends Arm {
 
   @override
   Future<void> stop({Map<String, dynamic>? extra}) async {
-    await _client.stop(StopRequest(name: name));
+    await _client.stop(StopRequest(name: name, extra: extra?.toStruct()));
+  }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    return response.result.toMap();
   }
 }
