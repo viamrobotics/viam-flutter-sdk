@@ -8,6 +8,7 @@ class BaseScreen extends StatelessWidget {
   final Camera camera;
   final StreamClient streamClient;
 
+  // TODO change BaseScreen to accept camera ResourceName.
   const BaseScreen({Key? key, required this.base, required this.resourceName, required this.camera, required this.streamClient})
       : super(key: key);
 
