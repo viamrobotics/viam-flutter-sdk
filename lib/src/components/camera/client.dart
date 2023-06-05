@@ -1,7 +1,9 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
+import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
 import '../../media/image.dart';
+import '../../utils.dart';
 import 'camera.dart';
 
 class CameraClient extends Camera {
@@ -34,5 +36,11 @@ class CameraClient extends Camera {
     final request = GetPropertiesRequest(name: name);
     final response = await _client.getProperties(request);
     return CameraProperties(response.supportsPcd, response.intrinsicParameters, response.distortionParameters);
+  }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command?.toStruct()));
+    return response.result.toMap();
   }
 }
