@@ -75,7 +75,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool _loggedIn = false;
   bool _loading = false;
-  late ResourceName? _cameraName;
+  ResourceName? _cameraName;
   final List<ResourceName> _resourceNames = [];
   late RobotClient _robot;
 
