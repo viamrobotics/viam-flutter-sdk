@@ -175,13 +175,14 @@ void main() {
     const String name = 'base';
 
     setUp(() async {
+      final port = 50000 + (name.hashCode % 10000);
       base = FakeBase(name);
       final manager = ResourceManager();
       manager.register(Base.getResourceName(name), base);
       service = BaseService(manager);
-      channel = ClientChannel('localhost', port: 50051, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server([service]);
-      await server.serve(port: 50051);
+      await server.serve(port: port);
     });
 
     tearDown(() async {

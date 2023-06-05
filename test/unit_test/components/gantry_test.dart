@@ -119,9 +119,9 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = 50000 + (StackTrace.current.hashCode % 10000);
+      final port = 50000 + (name.hashCode % 10000);
       gantry = FakeGantry(name, lengths);
-      ResourceManager manager = ResourceManager();
+      final ResourceManager manager = ResourceManager();
       manager.register(Gantry.getResourceName(name), gantry);
       service = GantryService(manager);
       channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
