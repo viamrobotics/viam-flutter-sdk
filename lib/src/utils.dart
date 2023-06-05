@@ -48,17 +48,40 @@ abstract class ValueType {
   Value toValue();
 }
 
-// TODO fix To toValue() for List<T?>
-extension ListValueUtils<T extends ValueType> on List<T> {
+extension ListValueUtils<T> on List<T> {
   Value toValue() {
-    return Value(listValue: ListValue(values: map((e) => e.toValue())));
+    final values = map((e) {
+      try {
+        if (e is num) {
+          return Value(numberValue: e.toDouble());
+        } else if (e is String) {
+          return Value(stringValue: e);
+        } else if (e is bool) {
+          return Value(boolValue: e);
+        } else if (e is List<dynamic>) {
+          return e.toValue();
+        } else if (e is Map<String, dynamic>) {
+          return e.toValue();
+          // ignore: type_check_with_null, prefer_void_to_null
+        } else if (e is Null) {
+          return Value(nullValue: e);
+        } else {
+          throw GrpcError.invalidArgument('List contains unsupported type');
+        }
+      } catch (error, st) {
+        _logger.e('Error converting the List to a Value', error, st);
+        rethrow;
+      }
+    });
+
+    return Value(listValue: ListValue(values: values));
   }
 }
 
 extension MapStructUtils on Map<String, dynamic> {
   Struct toStruct() {
     final Map<String, Value> result = {};
-    for (var entry in entries) {
+    for (final entry in entries) {
       try {
         final value = entry.value;
         if (value is num) {
@@ -67,7 +90,7 @@ extension MapStructUtils on Map<String, dynamic> {
           result[entry.key] = Value(stringValue: value);
         } else if (value is bool) {
           result[entry.key] = Value(boolValue: value);
-        } else if (value is List<ValueType>) {
+        } else if (value is List<dynamic>) {
           result[entry.key] = value.toValue();
         } else if (value is Map<String, dynamic>) {
           result[entry.key] = value.toValue();

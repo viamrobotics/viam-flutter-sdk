@@ -123,7 +123,7 @@ void main() {
     setUp(() async {
       final port = generateTestingPortFromName(name);
       gantry = FakeGantry(name, lengths);
-      ResourceManager manager = ResourceManager();
+      final ResourceManager manager = ResourceManager();
       manager.register(Gantry.getResourceName(name), gantry);
       service = GantryService(manager);
       channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
