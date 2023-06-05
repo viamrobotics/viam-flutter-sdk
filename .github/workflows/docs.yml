@@ -12,9 +12,8 @@ on:
 
 jobs:
   generate-docs:
-    # if: github.repository_owner == 'viamrobotics'
-    # runs-on: [self-hosted, x64]
-    runs-on: ubuntu-latest
+    if: github.repository_owner == 'viamrobotics'
+    runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/cirruslabs/flutter:3.7.12
     steps:
@@ -29,7 +28,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/api
