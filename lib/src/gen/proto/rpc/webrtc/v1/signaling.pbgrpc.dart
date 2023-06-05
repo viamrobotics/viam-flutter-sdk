@@ -104,7 +104,7 @@ abstract class SignalingServiceBase extends $grpc.Service {
 
   $async.Stream<$0.CallResponse> call_Pre(
       $grpc.ServiceCall call, $async.Future<$0.CallRequest> request) async* {
-    yield* call(call, await request);
+    yield* this.call(call, await request);
   }
 
   $async.Future<$0.CallUpdateResponse> callUpdate_Pre($grpc.ServiceCall call,

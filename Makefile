@@ -15,6 +15,8 @@ buf: buf.yaml buf.gen.yaml
 	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/struct.proto
 	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/timestamp.proto
 	PATH=$(PATH_WITH_TOOLS) protoc --dart_out=grpc:lib/src/gen -I$(PROTOBUF) $(PROTOBUF)/google/protobuf/wrappers.proto
+	# There's a bug in dart protoc where it doesn't understand that `call` is already taken
+	sed -i '' 's/yield\* call(call, await request);/yield\* this\.call(call, await request);/g' ./lib/src/gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart
 
 setup:
 	dart pub global activate protoc_plugin
