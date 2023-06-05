@@ -140,7 +140,7 @@ void main() {
       test('image', () async {
         final client = CameraClient(name, channel);
         final actualJpeg = await client.image(mimeType: MimeType.jpeg);
-        expect(actualJpeg.mimeType, MimeType.jpeg); // TODO im getting unsupported back
+        expect(actualJpeg.mimeType, MimeType.jpeg);
         expect(actualJpeg.raw, [0, 0, 0]);
 
         final actualPng = await client.image(mimeType: MimeType.png);
@@ -151,7 +151,7 @@ void main() {
       test('pointCloud', () async {
         final client = CameraClient(name, channel);
         final actualPcd = await client.pointCloud();
-        expect(actualPcd.mimeType, MimeType.pcd); // TODO im getting unsupported back
+        expect(actualPcd.mimeType, MimeType.pcd);
         expect(actualPcd.raw, [0, 0, 0]);
       });
 
