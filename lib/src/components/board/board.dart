@@ -13,10 +13,8 @@ class BoardStatus {
   const BoardStatus(this.analogs, this.digitalInterrupts);
 
   factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
-    final Map<String, int> analogs = {};
-    final Map<String, int> digitalInterrupts = {};
-    pbBoardStatus.analogs.forEach((key, value) => analogs[key] = value.value);
-    pbBoardStatus.digitalInterrupts.forEach((key, value) => digitalInterrupts[key] = (value.value.toInt()));
+    final Map<String, int> analogs = pbBoardStatus.analogs.map((key, value) => MapEntry(key, value.value));
+    final Map<String, int> digitalInterrupts = pbBoardStatus.digitalInterrupts.map((key, value) => MapEntry(key, value.value.toInt()));
     return BoardStatus(analogs, digitalInterrupts);
   }
 

@@ -31,7 +31,6 @@ class BoardClient extends Board {
   @override
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra}) async {
     await _client.setGPIO(SetGPIORequest(name: name, pin: pin, high: high, extra: extra?.toStruct()));
-    return;
   }
 
   @override
