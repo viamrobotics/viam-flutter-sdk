@@ -6,6 +6,8 @@ import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../test_utils.dart';
+
 class FakeArm extends Arm {
   bool isStopped = true;
   JointPositions armJoinPositions = JointPositions(values: [0, 0, 0]);
@@ -133,7 +135,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = 50000 + (name.hashCode % 10000); // TODO update to new helper method
+      final port = generateTestingPortFromName(name);
       arm = FakeArm(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Arm.getResourceName(name), arm);
