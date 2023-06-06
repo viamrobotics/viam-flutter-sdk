@@ -26,7 +26,7 @@ jobs:
         run: dart format --line-length=140 --set-exit-if-changed $(find . -name "*.dart" -not -path "./lib/src/gen/*")
 
       - name: Analyze project source
-        run: dart analyze --no-fatal-warnings
+        run: dart analyze
 
       - name: Run tests
         run: flutter test
