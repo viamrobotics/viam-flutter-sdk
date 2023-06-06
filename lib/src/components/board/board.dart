@@ -13,10 +13,9 @@ class BoardStatus {
   const BoardStatus(this.analogs, this.digitalInterrupts);
 
   factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
-    const boardStatus = BoardStatus(<String, int>{}, <String, int>{});
-    pbBoardStatus.analogs.forEach((key, value) => boardStatus.analogs[key] = value.value);
-    pbBoardStatus.digitalInterrupts.forEach((key, value) => boardStatus.digitalInterrupts[key] = (value.value.toInt()));
-    return boardStatus;
+    final Map<String, int> analogs = pbBoardStatus.analogs.map((key, value) => MapEntry(key, value.value));
+    final Map<String, int> digitalInterrupts = pbBoardStatus.digitalInterrupts.map((key, value) => MapEntry(key, value.value.toInt()));
+    return BoardStatus(analogs, digitalInterrupts);
   }
 
   common.BoardStatus get proto {
@@ -51,7 +50,7 @@ abstract class Board extends Resource {
   Future<void> setPwm(String pin, double dutyCyclePct, {Map<String, dynamic>? extra});
 
   /// Get the PWM frequency of the given pin of a board.
-  Future<int> pwmFrequency({Map<String, dynamic>? extra});
+  Future<int> pwmFrequency(String pin, {Map<String, dynamic>? extra});
 
   /// Set the PWM frequency of the given pin of a board.
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});

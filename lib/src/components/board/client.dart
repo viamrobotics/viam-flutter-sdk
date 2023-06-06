@@ -35,13 +35,13 @@ class BoardClient extends Board {
 
   @override
   Future<bool> gpio(String pin, {Map<String, dynamic>? extra}) async {
-    final response = await _client.getGPIO(GetGPIORequest(name: name, extra: extra?.toStruct()));
+    final response = await _client.getGPIO(GetGPIORequest(name: name, pin: pin, extra: extra?.toStruct()));
     return response.high;
   }
 
   @override
   Future<double> pwm(String pin, {Map<String, dynamic>? extra}) async {
-    final response = await _client.pWM(PWMRequest(name: name, extra: extra?.toStruct()));
+    final response = await _client.pWM(PWMRequest(name: name, pin: pin, extra: extra?.toStruct()));
     return response.dutyCyclePct;
   }
 
@@ -51,9 +51,9 @@ class BoardClient extends Board {
   }
 
   @override
-  Future<int> pwmFrequency({Map<String, dynamic>? extra}) async {
-    final response = await _client.pWMFrequency(PWMFrequencyRequest(name: name, extra: extra?.toStruct()));
-    return response.frequencyHz as int;
+  Future<int> pwmFrequency(String pin, {Map<String, dynamic>? extra}) async {
+    final response = await _client.pWMFrequency(PWMFrequencyRequest(name: name, pin: pin, extra: extra?.toStruct()));
+    return response.frequencyHz.toInt();
   }
 
   @override
@@ -72,7 +72,7 @@ class BoardClient extends Board {
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra}) async {
     final response = await _client.getDigitalInterruptValue(
         GetDigitalInterruptValueRequest(boardName: name, digitalInterruptName: digitalInterruptName, extra: extra?.toStruct()));
-    return response.value as int;
+    return response.value.toInt();
   }
 
   @override

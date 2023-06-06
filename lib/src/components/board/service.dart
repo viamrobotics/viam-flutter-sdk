@@ -51,7 +51,7 @@ class BoardService extends BoardServiceBase {
   @override
   Future<PWMFrequencyResponse> pWMFrequency(ServiceCall call, PWMFrequencyRequest request) async {
     final board = _fromManager(request.name);
-    final frequencyHz = await board.pwmFrequency(extra: request.extra.toMap());
+    final frequencyHz = await board.pwmFrequency(request.pin, extra: request.extra.toMap());
     return PWMFrequencyResponse(frequencyHz: Int64(frequencyHz));
   }
 

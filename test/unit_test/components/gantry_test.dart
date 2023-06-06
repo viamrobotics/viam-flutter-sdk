@@ -6,6 +6,8 @@ import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../test_utils.dart';
+
 class FakeGantry extends Gantry {
   List<double> positions = [0, 0, 0];
   List<double> mLengths;
@@ -119,7 +121,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = 50000 + (name.hashCode % 10000);
+      final port = generateTestingPortFromName(name);
       gantry = FakeGantry(name, lengths);
       final ResourceManager manager = ResourceManager();
       manager.register(Gantry.getResourceName(name), gantry);
