@@ -32,14 +32,14 @@ class CameraService extends CameraServiceBase {
   Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
-    return GetImageResponse(mimeType: image.mimeType.toString(), image: image.raw);
+    return GetImageResponse(mimeType: image.mimeType.name, image: image.raw);
   }
 
   @override
   Future<GetPointCloudResponse> getPointCloud(ServiceCall call, GetPointCloudRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.pointCloud();
-    return GetPointCloudResponse(mimeType: image.mimeType.toString(), pointCloud: image.raw);
+    return GetPointCloudResponse(mimeType: image.mimeType.name, pointCloud: image.raw);
   }
 
   @override

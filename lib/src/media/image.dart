@@ -13,6 +13,11 @@ class MimeType {
     'pointcloud/pcd': MimeType.pcd,
   };
 
+  @override
+  String toString() {
+    return _name;
+  }
+
   /// The name of the MimeType, e.g. 'image/jpeg'
   /// If the MimeType is not supported, then this [name] is the string of the unsupported MimeType.
   String get name => _name;
