@@ -6,6 +6,8 @@ import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../test_utils.dart';
+
 class FakeCamera extends Camera {
   Map<String, dynamic>? extra;
 
@@ -85,7 +87,7 @@ void main() {
 
     setUp(() async {
       camera = FakeCamera(name);
-      final port = 50000 + (name.hashCode % 10000); // TODO replace with helper function
+      final port = generateTestingPortFromName(name);
       final manager = ResourceManager();
       manager.register(Camera.getResourceName(name), camera);
       service = CameraService(manager);
