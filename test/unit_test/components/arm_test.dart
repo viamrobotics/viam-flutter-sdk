@@ -10,7 +10,7 @@ import '../../test_utils.dart';
 
 class FakeArm extends Arm {
   bool isStopped = true;
-  JointPositions armJoinPositions = JointPositions(values: [0, 0, 0]);
+  JointPositions armJointPositions = JointPositions(values: [0, 0, 0]);
   Pose armEndPosition = Pose(x: 0, y: 0, z: 0);
   Map<String, dynamic>? extra;
 
@@ -45,13 +45,13 @@ class FakeArm extends Arm {
   @override
   Future<JointPositions> jointPositions({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return armJoinPositions;
+    return armJointPositions;
   }
 
   @override
   Future<void> moveToJointPositions(JointPositions positions, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    armJoinPositions = positions;
+    armJointPositions = positions;
     isStopped = false;
   }
 
@@ -79,13 +79,13 @@ void main() {
 
     test('jointPositions', () async {
       final jointPositions = await arm.jointPositions();
-      expect(jointPositions, arm.armJoinPositions);
+      expect(jointPositions, arm.armJointPositions);
     });
 
     test('moveToJointPositions', () async {
       final expected = JointPositions(values: [1, 1, 1]);
       await arm.moveToJointPositions(expected);
-      expect(arm.armJoinPositions, expected);
+      expect(arm.armJointPositions, expected);
     });
 
     test('moveToPosition', () async {
@@ -162,7 +162,7 @@ void main() {
         final client = ArmServiceClient(channel);
         final request = GetJointPositionsRequest(name: name);
         final response = await client.getJointPositions(request);
-        expect(response.positions, arm.armJoinPositions);
+        expect(response.positions, arm.armJointPositions);
       });
 
       test('moveToJointPositions', () async {
@@ -170,7 +170,7 @@ void main() {
         final expected = JointPositions(values: [1, 1, 1]);
         final request = MoveToJointPositionsRequest(name: name, positions: expected);
         await client.moveToJointPositions(request);
-        expect(arm.armJoinPositions, expected);
+        expect(arm.armJointPositions, expected);
       });
 
       test('moveToPosition', () async {
@@ -225,6 +225,7 @@ void main() {
         expect(arm.extra, {'foo': 'bar'});
       });
     });
+
     group('Arm Client Tests', () {
       test('endPosition', () async {
         final client = ArmClient(name, channel);
@@ -235,14 +236,14 @@ void main() {
       test('jointPositions', () async {
         final client = ArmClient(name, channel);
         final jointPositions = await client.jointPositions();
-        expect(jointPositions, arm.armJoinPositions);
+        expect(jointPositions, arm.armJointPositions);
       });
 
       test('moveToJointPositions', () async {
         final client = ArmClient(name, channel);
         final expected = JointPositions(values: [1, 1, 1]);
         await client.moveToJointPositions(expected);
-        expect(arm.armJoinPositions, expected);
+        expect(arm.armJointPositions, expected);
       });
 
       test('moveToPosition', () async {
