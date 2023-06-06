@@ -5,23 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "viam-flutter-sdk",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "viam-flutter-sdk (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "viam-flutter-sdk (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
             "name": "viam_example_app",
             "cwd": "example/viam_example_app",
             "request": "launch",
