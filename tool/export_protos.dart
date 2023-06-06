@@ -10,6 +10,7 @@ String get _newProtoPath {
   return '${Directory.current.uri.toFilePath()}lib${Platform.pathSeparator}protos${Platform.pathSeparator}';
 }
 
+/// Get a list of all proto files that we care about
 Future<Iterable<File>> _getFiles() async {
   const protoDirs = ['app', 'common', 'component', 'module', 'robot', 'service'];
   final List<File> files = [];
@@ -21,6 +22,9 @@ Future<Iterable<File>> _getFiles() async {
   return files;
 }
 
+/// Get the directory structure.
+/// Key: package name (e.g. app, common, component, ...)
+/// Value: All the files that should live inside the directory
 Map<String, Iterable<File>> _getDirStructure(Iterable<File> files) {
   final dirNameToFiles = <String, List<File>>{};
   for (final file in files) {
@@ -33,12 +37,16 @@ Map<String, Iterable<File>> _getDirStructure(Iterable<File> files) {
   return dirNameToFiles;
 }
 
+/// Create the directories at the new proto path
 Future<void> _createDirs(Iterable<String> dirNames) async {
   for (final dirName in dirNames) {
     await Directory('$_newProtoPath$dirName').create(recursive: true);
   }
 }
 
+/// Get the new file structure
+/// Key: The new filename for the proto library (e.g. arm.dart, vision.dart)
+/// Value: All the files to export (e.g. arm.pb.dart, vision.pbgrpc.dart)
 Map<String, Set<File>> _getFileStructure(Iterable<File> files) {
   final fileNameToExports = <String, Set<File>>{};
   for (final file in files) {
@@ -50,6 +58,7 @@ Map<String, Set<File>> _getFileStructure(Iterable<File> files) {
   return fileNameToExports;
 }
 
+/// Write the exports to the new file
 Future<void> _populateExports(Map<String, Iterable<File>> dirStructure) async {
   for (final entry in dirStructure.entries) {
     final files = _getFileStructure(entry.value);
@@ -80,7 +89,7 @@ Future<void> main(List<String> args) async {
     // Don't actually need to do anything here
   }
   final files = await _getFiles();
-  final dirNameToFiles = await _getDirStructure(files);
+  final dirNameToFiles = _getDirStructure(files);
   await _createDirs(dirNameToFiles.keys);
   await _populateExports(dirNameToFiles);
 }
