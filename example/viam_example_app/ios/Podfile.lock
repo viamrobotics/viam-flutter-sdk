@@ -20,7 +20,7 @@ DEPENDENCIES:
   - auth0_flutter (from `.symlinks/plugins/auth0_flutter/ios`)
   - Flutter (from `Flutter`)
   - flutter_webrtc (from `.symlinks/plugins/flutter_webrtc/ios`)
-  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
 
 SPEC REPOS:
   trunk:
@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
   flutter_webrtc:
     :path: ".symlinks/plugins/flutter_webrtc/ios"
   path_provider_foundation:
-    :path: ".symlinks/plugins/path_provider_foundation/ios"
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
 
 SPEC CHECKSUMS:
   Auth0: 64da28fdc5cd499aa516dc4bfd0ace8efae2c1da
@@ -49,6 +49,6 @@ SPEC CHECKSUMS:
   SimpleKeychain: 130211269f88f038d7dc5254cf0b1b9ce978c398
   WebRTC-SDK: 566e58d2916cb79d770350169a449ea523f5db7c
 
-PODFILE CHECKSUM: 57c8aed26fba39d3ec9424816221f294a07c58eb
+PODFILE CHECKSUM: 775997f741c536251164e3eacf6e34abf2eb7a17
 
 COCOAPODS: 1.12.1

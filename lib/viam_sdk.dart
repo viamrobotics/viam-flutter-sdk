@@ -61,3 +61,5 @@ export 'src/rpc/dial.dart';
 // Misc
 export 'src/viam_sdk.dart';
 export 'src/viam_sdk_base.dart';
+// Widgets
+export 'src/widgets/widgets.dart';
