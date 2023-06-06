@@ -5,13 +5,12 @@ import '../../gen/component/servo/v1/servo.pbgrpc.dart';
 import '../../utils.dart';
 
 class ServoClient extends Servo {
-  final ClientChannelBase _channel;
   final ServoServiceClient _client;
 
   @override
   String name;
 
-  ServoClient(this.name, this._channel) : _client = ServoServiceClient(_channel);
+  ServoClient(this.name, ClientChannelBase channel) : _client = ServoServiceClient(channel);
 
   @override
   Future<void> move(int angle, {Map<String, dynamic>? extra}) async {

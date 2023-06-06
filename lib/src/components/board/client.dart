@@ -8,13 +8,12 @@ import '../../utils.dart';
 import 'board.dart';
 
 class BoardClient extends Board {
-  final ClientChannelBase _channel;
   final BoardServiceClient _client;
 
   @override
   String name;
 
-  BoardClient(this.name, this._channel) : _client = BoardServiceClient(_channel);
+  BoardClient(this.name, ClientChannelBase channel) : _client = BoardServiceClient(channel);
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {

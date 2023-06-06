@@ -5,13 +5,12 @@ import '../../media/image.dart';
 import 'camera.dart';
 
 class CameraClient extends Camera {
-  final ClientChannelBase _channel;
   final CameraServiceClient _client;
 
   @override
   String name;
 
-  CameraClient(this.name, this._channel) : _client = CameraServiceClient(_channel);
+  CameraClient(this.name, ClientChannelBase channel) : _client = CameraServiceClient(channel);
 
   @override
   Future<ViamImage> image({MimeType? mimeType}) async {

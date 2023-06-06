@@ -6,13 +6,12 @@ import '../../utils.dart';
 import 'arm.dart';
 
 class ArmClient extends Arm {
-  final ClientChannelBase _channel;
   final ArmServiceClient _client;
 
   @override
   String name;
 
-  ArmClient(this.name, this._channel) : _client = ArmServiceClient(_channel);
+  ArmClient(this.name, ClientChannelBase channel) : _client = ArmServiceClient(channel);
 
   @override
   Future<Pose> endPosition({Map<String, dynamic>? extra}) async {

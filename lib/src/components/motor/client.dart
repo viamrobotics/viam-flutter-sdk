@@ -6,13 +6,12 @@ import '../../utils.dart';
 import 'motor.dart';
 
 class MotorClient extends Motor {
-  final ClientChannelBase _channel;
   final MotorServiceClient _client;
 
   @override
   String name;
 
-  MotorClient(this.name, this._channel) : _client = MotorServiceClient(_channel);
+  MotorClient(this.name, ClientChannelBase channel) : _client = MotorServiceClient(channel);
 
   @override
   Future<void> setPower(double powerPct, {Map<String, dynamic>? extra}) async {

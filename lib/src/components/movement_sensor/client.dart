@@ -6,13 +6,12 @@ import '../../utils.dart';
 import 'movement_sensor.dart';
 
 class MovementSensorClient extends MovementSensor {
-  final ClientChannelBase _channel;
   final MovementSensorServiceClient _client;
 
   @override
   String name;
 
-  MovementSensorClient(this.name, this._channel) : _client = MovementSensorServiceClient(_channel);
+  MovementSensorClient(this.name, ClientChannelBase channel) : _client = MovementSensorServiceClient(channel);
 
   @override
   Future<Position> position({Map<String, dynamic>? extra}) async {

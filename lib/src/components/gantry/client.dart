@@ -6,13 +6,12 @@ import '../../utils.dart';
 import 'gantry.dart';
 
 class GantryClient extends Gantry {
-  final ClientChannelBase _channel;
   final GantryServiceClient _client;
 
   @override
   String name;
 
-  GantryClient(this.name, this._channel) : _client = GantryServiceClient(_channel);
+  GantryClient(this.name, ClientChannelBase channel) : _client = GantryServiceClient(channel);
 
   @override
   Future<bool> isMoving() async {

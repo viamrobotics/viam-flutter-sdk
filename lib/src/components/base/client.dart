@@ -7,13 +7,12 @@ import '../../utils.dart';
 import 'base.dart';
 
 class BaseClient extends Base {
-  final ClientChannelBase _channel;
   final BaseServiceClient _client;
 
   @override
   String name;
 
-  BaseClient(this.name, this._channel) : _client = BaseServiceClient(_channel);
+  BaseClient(this.name, ClientChannelBase channel) : _client = BaseServiceClient(channel);
 
   @override
   Future<bool> isMoving() async {

@@ -6,13 +6,12 @@ import '../../utils.dart';
 import 'sensor.dart';
 
 class SensorClient extends Sensor {
-  final ClientChannelBase _channel;
   final SensorServiceClient _client;
 
   @override
   String name;
 
-  SensorClient(this.name, this._channel) : _client = SensorServiceClient(_channel);
+  SensorClient(this.name, ClientChannelBase channel) : _client = SensorServiceClient(channel);
 
   @override
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
