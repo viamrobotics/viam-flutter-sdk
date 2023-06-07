@@ -61,4 +61,10 @@ class MovementSensorClient extends MovementSensor {
     final response = await _client.getAccuracy(GetAccuracyRequest(name: name, extra: extra?.toStruct()));
     return response.accuracy;
   }
+
+  @override
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final response = await _client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    return response.result.toMap();
+  }
 }
