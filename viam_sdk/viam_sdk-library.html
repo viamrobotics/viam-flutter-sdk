@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="viam_sdk library API docs, for the Dart programming language.">
+  <title>viam_sdk library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">viam_sdk</a></li>
+    <li class="self-crumb">viam_sdk library</li>
+  </ol>
+  <div class="self-name">viam_sdk</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span class="material-symbols-outlined">
+        brightness_4
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+    
+      <div>
+<h1><span class="kind-library">viam_sdk</span> library 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Robots at your fingertips.</p>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+
+      <dl>
+        <dt id="Arm">
+  <span class="name "><a href="../viam_sdk/Arm-class.html">Arm</a></span> 
+
+</dt>
+<dd>
+  Arm represents a physical robot arm that exists in three-dimensional space.
+</dd>
+
+        <dt id="ArmClient">
+  <span class="name "><a href="../viam_sdk/ArmClient-class.html">ArmClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for an <a href="../viam_sdk/Arm-class.html">Arm</a> component.
+</dd>
+
+        <dt id="Base">
+  <span class="name "><a href="../viam_sdk/Base-class.html">Base</a></span> 
+
+</dt>
+<dd>
+  Base represents a physical base of a robot.
+</dd>
+
+        <dt id="BaseClient">
+  <span class="name "><a href="../viam_sdk/BaseClient-class.html">BaseClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Base-class.html">Base</a> component.
+</dd>
+
+        <dt id="BaseJoystick">
+  <span class="name "><a href="../viam_sdk/BaseJoystick-class.html">BaseJoystick</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Board">
+  <span class="name "><a href="../viam_sdk/Board-class.html">Board</a></span> 
+
+</dt>
+<dd>
+  Board represents a physical general purpose compute board that contains various
+components such as analog readers, and digital interrupts.
+</dd>
+
+        <dt id="BoardClient">
+  <span class="name "><a href="../viam_sdk/BoardClient-class.html">BoardClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Board-class.html">Board</a> component.
+</dd>
+
+        <dt id="BoardStatus">
+  <span class="name "><a href="../viam_sdk/BoardStatus-class.html">BoardStatus</a></span> 
+
+</dt>
+<dd>
+  The values of the <a href="../viam_sdk/Board-class.html">Board</a>'s analog readers and digital interrupts
+</dd>
+
+        <dt id="Camera">
+  <span class="name "><a href="../viam_sdk/Camera-class.html">Camera</a></span> 
+
+</dt>
+<dd>
+  Camera represents any physical hardware that can capture frames.
+</dd>
+
+        <dt id="CameraClient">
+  <span class="name "><a href="../viam_sdk/CameraClient-class.html">CameraClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Camera-class.html">Camera</a> component
+</dd>
+
+        <dt id="CameraProperties">
+  <span class="name "><a href="../viam_sdk/CameraProperties-class.html">CameraProperties</a></span> 
+
+</dt>
+<dd>
+  The camera's supported features and settings
+</dd>
+
+        <dt id="CameraStreamView">
+  <span class="name "><a href="../viam_sdk/CameraStreamView-class.html">CameraStreamView</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Credentials">
+  <span class="name "><a href="../viam_sdk/Credentials-class.html">Credentials</a></span> 
+
+</dt>
+<dd>
+  The credentials used for connecting to the robot
+</dd>
+
+        <dt id="DialOptions">
+  <span class="name "><a href="../viam_sdk/DialOptions-class.html">DialOptions</a></span> 
+
+</dt>
+<dd>
+  Describes the behavior for connecting to a robot
+</dd>
+
+        <dt id="DialWebRtcOptions">
+  <span class="name "><a href="../viam_sdk/DialWebRtcOptions-class.html">DialWebRtcOptions</a></span> 
+
+</dt>
+<dd>
+  Options specific for connecting over WebRTC
+</dd>
+
+        <dt id="DoCommandRequest">
+  <span class="name "><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="DoCommandResponse">
+  <span class="name "><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Gantry">
+  <span class="name "><a href="../viam_sdk/Gantry-class.html">Gantry</a></span> 
+
+</dt>
+<dd>
+  Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
+</dd>
+
+        <dt id="GantryClient">
+  <span class="name "><a href="../viam_sdk/GantryClient-class.html">GantryClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Gantry-class.html">Gantry</a> component.
+</dd>
+
+        <dt id="GeoPoint">
+  <span class="name "><a href="../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="MimeType">
+  <span class="name "><a href="../viam_sdk/MimeType-class.html">MimeType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Motor">
+  <span class="name "><a href="../viam_sdk/Motor-class.html">Motor</a></span> 
+
+</dt>
+<dd>
+  Motor represents a physical motor.
+</dd>
+
+        <dt id="MotorClient">
+  <span class="name "><a href="../viam_sdk/MotorClient-class.html">MotorClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Motor-class.html">Motor</a> component.
+</dd>
+
+        <dt id="MotorProperties">
+  <span class="name "><a href="../viam_sdk/MotorProperties-class.html">MotorProperties</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="MovementSensor">
+  <span class="name "><a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a></span> 
+
+</dt>
+<dd>
+  MovementSensor reports information about the robot's direction, position and speed.
+</dd>
+
+        <dt id="MovementSensorClient">
+  <span class="name "><a href="../viam_sdk/MovementSensorClient-class.html">MovementSensorClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a> component.
+</dd>
+
+        <dt id="Orientation">
+  <span class="name "><a href="../viam_protos.common.common/Orientation-class.html">Orientation</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Pose">
+  <span class="name "><a href="../viam_protos.common.common/Pose-class.html">Pose</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="PoseInFrame">
+  <span class="name "><a href="../viam_protos.common.common/PoseInFrame-class.html">PoseInFrame</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Position">
+  <span class="name "><a href="../viam_sdk/Position-class.html">Position</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="PowerState">
+  <span class="name "><a href="../viam_sdk/PowerState-class.html">PowerState</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Registry">
+  <span class="name "><a href="../viam_sdk/Registry-class.html">Registry</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Resource">
+  <span class="name "><a href="../viam_sdk/Resource-class.html">Resource</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ResourceName">
+  <span class="name "><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ResourceRegistration">
+  <span class="name "><a href="../viam_sdk/ResourceRegistration-class.html">ResourceRegistration</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="../viam_sdk/Resource-class.html">Resource</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="RobotClient">
+  <span class="name "><a href="../viam_sdk/RobotClient-class.html">RobotClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for a Robot. This class should be used for all interactions with a robot.
+</dd>
+
+        <dt id="RobotClientOptions">
+  <span class="name "><a href="../viam_sdk/RobotClientOptions-class.html">RobotClientOptions</a></span> 
+
+</dt>
+<dd>
+  The options that define the behavior of the <a href="../viam_sdk/RobotClient-class.html">RobotClient</a>.
+</dd>
+
+        <dt id="Sensor">
+  <span class="name "><a href="../viam_sdk/Sensor-class.html">Sensor</a></span> 
+
+</dt>
+<dd>
+  Sensor represents a physical sensing device that can provide measurement readings.
+</dd>
+
+        <dt id="SensorClient">
+  <span class="name "><a href="../viam_sdk/SensorClient-class.html">SensorClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Sensor-class.html">Sensor</a> component.
+</dd>
+
+        <dt id="Servo">
+  <span class="name "><a href="../viam_sdk/Servo-class.html">Servo</a></span> 
+
+</dt>
+<dd>
+  Servo represents a physical servo.
+</dd>
+
+        <dt id="ServoClient">
+  <span class="name "><a href="../viam_sdk/ServoClient-class.html">ServoClient</a></span> 
+
+</dt>
+<dd>
+  gRPC client for the <a href="../viam_sdk/Servo-class.html">Servo</a> component.
+</dd>
+
+        <dt id="StreamClient">
+  <span class="name "><a href="../viam_sdk/StreamClient-class.html">StreamClient</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Subtype">
+  <span class="name "><a href="../viam_sdk/Subtype-class.html">Subtype</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Vector3">
+  <span class="name "><a href="../viam_protos.common.common/Vector3-class.html">Vector3</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="Viam">
+  <span class="name "><a href="../viam_sdk/Viam-class.html">Viam</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="ViamImage">
+  <span class="name "><a href="../viam_sdk/ViamImage-class.html">ViamImage</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+
+
+    <section class="summary offset-anchor" id="constants">
+      <h2>Constants</h2>
+
+      <dl class="properties">
+        <dt id="resourceNamespaceRDK" class="constant">
+    <span class="name "><a href="../viam_sdk/resourceNamespaceRDK-constant.html">resourceNamespaceRDK</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>&#39;rdk&#39;</code></span>
+    </div>
+</dd>
+
+        <dt id="resourceTypeComponent" class="constant">
+    <span class="name "><a href="../viam_sdk/resourceTypeComponent-constant.html">resourceTypeComponent</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>&#39;component&#39;</code></span>
+    </div>
+</dd>
+
+        <dt id="resourceTypeService" class="constant">
+    <span class="name "><a href="../viam_sdk/resourceTypeService-constant.html">resourceTypeService</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>&#39;service&#39;</code></span>
+    </div>
+</dd>
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+
+      <dl class="callables">
+        <dt id="dial" class="callable">
+  <span class="name"><a href="../viam_sdk/dial.html">dial</a></span><span class="signature">(<wbr><span class="parameter" id="dial-param-address"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">address</span>, </span><span class="parameter" id="dial-param-options"><span class="type-annotation"><a href="../viam_sdk/DialOptions-class.html">DialOptions</a>?</span> <span class="parameter-name">options</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.1.0/grpc_connection_interface/ClientChannelBase-class.html">ClientChannelBase</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Connect to a robot at the provided address with the given options
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+
+      <dl>
+          
+  <dt id="Properties" class="">
+  <span class="name"><a href="../viam_sdk/Properties.html">Properties</a></span>
+    = <a href="../viam_protos.component.movementsensor/GetPropertiesResponse-class.html">GetPropertiesResponse</a>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+
+      </dl>
+    </section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">viam_sdk</a></li>
+  <li class="self-crumb">viam_sdk library</li>
+</ol>
+
+
+    <h5><span class="package-name">viam_sdk</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Topics</li>
+        <li><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></li>
+      <li class="section-title">Libraries</li>
+      <li><a href="../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
+      <li class="section-subtitle">Protobuf Definitions</li>
+        <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.arm/viam_protos.component.arm-library.html">viam_protos.component.arm</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">viam_protos.component.audioinput</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.base/viam_protos.component.base-library.html">viam_protos.component.base</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.board/viam_protos.component.board-library.html">viam_protos.component.board</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.camera/viam_protos.component.camera-library.html">viam_protos.component.camera</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.encoder/viam_protos.component.encoder-library.html">viam_protos.component.encoder</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gantry/viam_protos.component.gantry-library.html">viam_protos.component.gantry</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.generic/viam_protos.component.generic-library.html">viam_protos.component.generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gripper/viam_protos.component.gripper-library.html">viam_protos.component.gripper</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.input_controller/viam_protos.component.input_controller-library.html">viam_protos.component.input_controller</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.motor/viam_protos.component.motor-library.html">viam_protos.component.motor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">viam_protos.component.movementsensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker/viam_protos.component.pose_tracker-library.html">viam_protos.component.pose_tracker</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.sensor/viam_protos.component.sensor-library.html">viam_protos.component.sensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.servo/viam_protos.component.servo-library.html">viam_protos.component.servo</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.testecho/viam_protos.component.testecho-library.html">viam_protos.component.testecho</a></li>
+        <li class="section-subitem"><a href="../viam_protos.module.module/viam_protos.module.module-library.html">viam_protos.module.module</a></li>
+        <li class="section-subitem"><a href="../viam_protos.robot.robot/viam_protos.robot.robot-library.html">viam_protos.robot.robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.data_manager/viam_protos.service.data_manager-library.html">viam_protos.service.data_manager</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">viam_protos.service.mlmodel</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.navigation/viam_protos.service.navigation-library.html">viam_protos.service.navigation</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.sensors/viam_protos.service.sensors-library.html">viam_protos.service.sensors</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.shell/viam_protos.service.shell-library.html">viam_protos.service.shell</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html">viam_protos.service.slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.vision/viam_protos.service.vision-library.html">viam_protos.service.vision</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>viam_sdk library</h5>
+    <ol>
+      <li class="section-title"><a href="../viam_sdk/viam_sdk-library.html#classes">Classes</a></li>
+        <li><a href="../viam_sdk/Arm-class.html">Arm</a></li>
+        <li><a href="../viam_sdk/ArmClient-class.html">ArmClient</a></li>
+        <li><a href="../viam_sdk/Base-class.html">Base</a></li>
+        <li><a href="../viam_sdk/BaseClient-class.html">BaseClient</a></li>
+        <li><a href="../viam_sdk/BaseJoystick-class.html">BaseJoystick</a></li>
+        <li><a href="../viam_sdk/Board-class.html">Board</a></li>
+        <li><a href="../viam_sdk/BoardClient-class.html">BoardClient</a></li>
+        <li><a href="../viam_sdk/BoardStatus-class.html">BoardStatus</a></li>
+        <li><a href="../viam_sdk/Camera-class.html">Camera</a></li>
+        <li><a href="../viam_sdk/CameraClient-class.html">CameraClient</a></li>
+        <li><a href="../viam_sdk/CameraProperties-class.html">CameraProperties</a></li>
+        <li><a href="../viam_sdk/CameraStreamView-class.html">CameraStreamView</a></li>
+        <li><a href="../viam_sdk/Credentials-class.html">Credentials</a></li>
+        <li><a href="../viam_sdk/DialOptions-class.html">DialOptions</a></li>
+        <li><a href="../viam_sdk/DialWebRtcOptions-class.html">DialWebRtcOptions</a></li>
+        <li><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></li>
+        <li><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></li>
+        <li><a href="../viam_sdk/Gantry-class.html">Gantry</a></li>
+        <li><a href="../viam_sdk/GantryClient-class.html">GantryClient</a></li>
+        <li><a href="../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a></li>
+        <li><a href="../viam_sdk/MimeType-class.html">MimeType</a></li>
+        <li><a href="../viam_sdk/Motor-class.html">Motor</a></li>
+        <li><a href="../viam_sdk/MotorClient-class.html">MotorClient</a></li>
+        <li><a href="../viam_sdk/MotorProperties-class.html">MotorProperties</a></li>
+        <li><a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a></li>
+        <li><a href="../viam_sdk/MovementSensorClient-class.html">MovementSensorClient</a></li>
+        <li><a href="../viam_protos.common.common/Orientation-class.html">Orientation</a></li>
+        <li><a href="../viam_protos.common.common/Pose-class.html">Pose</a></li>
+        <li><a href="../viam_protos.common.common/PoseInFrame-class.html">PoseInFrame</a></li>
+        <li><a href="../viam_sdk/Position-class.html">Position</a></li>
+        <li><a href="../viam_sdk/PowerState-class.html">PowerState</a></li>
+        <li><a href="../viam_sdk/Registry-class.html">Registry</a></li>
+        <li><a href="../viam_sdk/Resource-class.html">Resource</a></li>
+        <li><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a></li>
+        <li><a href="../viam_sdk/ResourceRegistration-class.html">ResourceRegistration</a></li>
+        <li><a href="../viam_sdk/RobotClient-class.html">RobotClient</a></li>
+        <li><a href="../viam_sdk/RobotClientOptions-class.html">RobotClientOptions</a></li>
+        <li><a href="../viam_sdk/Sensor-class.html">Sensor</a></li>
+        <li><a href="../viam_sdk/SensorClient-class.html">SensorClient</a></li>
+        <li><a href="../viam_sdk/Servo-class.html">Servo</a></li>
+        <li><a href="../viam_sdk/ServoClient-class.html">ServoClient</a></li>
+        <li><a href="../viam_sdk/StreamClient-class.html">StreamClient</a></li>
+        <li><a href="../viam_sdk/Subtype-class.html">Subtype</a></li>
+        <li><a href="../viam_protos.common.common/Vector3-class.html">Vector3</a></li>
+        <li><a href="../viam_sdk/Viam-class.html">Viam</a></li>
+        <li><a href="../viam_sdk/ViamImage-class.html">ViamImage</a></li>
+
+
+
+      <li class="section-title"><a href="../viam_sdk/viam_sdk-library.html#constants">Constants</a></li>
+        <li><a href="../viam_sdk/resourceNamespaceRDK-constant.html">resourceNamespaceRDK</a></li>
+        <li><a href="../viam_sdk/resourceTypeComponent-constant.html">resourceTypeComponent</a></li>
+        <li><a href="../viam_sdk/resourceTypeService-constant.html">resourceTypeService</a></li>
+
+
+      <li class="section-title"><a href="../viam_sdk/viam_sdk-library.html#functions">Functions</a></li>
+        <li><a href="../viam_sdk/dial.html">dial</a></li>
+
+
+      <li class="section-title"><a href="../viam_sdk/viam_sdk-library.html#typedefs">Typedefs</a></li>
+        <li><a href="../viam_sdk/Properties.html">Properties</a></li>
+
+</ol>
+
+  </div><!--/sidebar-offcanvas-right-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    viam_sdk
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

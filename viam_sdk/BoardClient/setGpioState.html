@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the setGpioState method from the BoardClient class, for the Dart programming language.">
+  <title>setGpioState method - BoardClient class - viam_sdk library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/BoardClient-class.html">BoardClient</a></li>
+    <li class="self-crumb">setGpioState method</li>
+  </ol>
+  <div class="self-name">setGpioState</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span class="material-symbols-outlined">
+        brightness_4
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">setGpioState</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">setGpioState</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setGpioState-param-pin"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">pin</span>, </span></li>
+<li><span class="parameter" id="setGpioState-param-high"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">high</span>, </span></li>
+<li><span class="parameter" id="setGpioState-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Set the high/low state of the given pin of a board.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Future&lt;void&gt; setGpioState(String pin, bool high, {Map&lt;String, dynamic&gt;? extra}) async {
+  await _client.setGPIO(SetGPIORequest(name: name, pin: pin, high: high, extra: extra?.toStruct()));
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">viam_sdk</a></li>
+  <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
+  <li><a href="../../viam_sdk/BoardClient-class.html">BoardClient</a></li>
+  <li class="self-crumb">setGpioState method</li>
+</ol>
+
+
+    <h5>BoardClient class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../viam_sdk/BoardClient-class.html#constructors">Constructors</a></li>
+          <li><a href="../../viam_sdk/BoardClient/BoardClient.html">BoardClient</a></li>
+
+
+        <li class="section-title">
+          <a href="../../viam_sdk/BoardClient-class.html#instance-properties">Properties</a>
+        </li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../../viam_sdk/BoardClient/name.html">name</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+        <li class="section-title"><a href="../../viam_sdk/BoardClient-class.html#instance-methods">Methods</a></li>
+          <li><a href="../../viam_sdk/BoardClient/analogReaderValue.html">analogReaderValue</a></li>
+          <li><a href="../../viam_sdk/BoardClient/digitalInterruptValue.html">digitalInterruptValue</a></li>
+          <li><a href="../../viam_sdk/BoardClient/doCommand.html">doCommand</a></li>
+          <li><a href="../../viam_sdk/BoardClient/gpio.html">gpio</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+          <li><a href="../../viam_sdk/BoardClient/pwm.html">pwm</a></li>
+          <li><a href="../../viam_sdk/BoardClient/pwmFrequency.html">pwmFrequency</a></li>
+          <li><a href="../../viam_sdk/BoardClient/setGpioState.html">setGpioState</a></li>
+          <li><a href="../../viam_sdk/BoardClient/setPowerMode.html">setPowerMode</a></li>
+          <li><a href="../../viam_sdk/BoardClient/setPwm.html">setPwm</a></li>
+          <li><a href="../../viam_sdk/BoardClient/setPwmFrequency.html">setPwmFrequency</a></li>
+          <li><a href="../../viam_sdk/BoardClient/status.html">status</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+        <li class="section-title inherited"><a href="../../viam_sdk/BoardClient-class.html#operators">Operators</a></li>
+          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    viam_sdk
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
