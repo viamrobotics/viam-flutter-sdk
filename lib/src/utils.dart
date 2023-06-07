@@ -17,23 +17,19 @@ extension NullableStringUtils on String? {
 
 extension ValueUtils on Value {
   dynamic toPrimitive() {
-    if (hasNullValue()) {
-      return nullValue;
-    }
     if (hasNumberValue()) {
       return numberValue;
-    }
-    if (hasStringValue()) {
+    } else if (hasStringValue()) {
       return stringValue;
-    }
-    if (hasBoolValue()) {
+    } else if (hasBoolValue()) {
       return boolValue;
-    }
-    if (hasStructValue()) {
+    } else if (hasStructValue()) {
       return structValue.fields.map((key, value) => MapEntry(key, value.toPrimitive()));
-    }
-    if (hasListValue()) {
+    } else if (hasListValue()) {
       return listValue.values.map((e) => e.toPrimitive());
+    } else {
+      // default to null if no value found
+      return null;
     }
   }
 }
@@ -42,10 +38,6 @@ extension StructUtils on Struct {
   Map<String, dynamic> toMap() {
     return fields.map((key, value) => MapEntry(key, value.toPrimitive()));
   }
-}
-
-abstract class ValueType {
-  Value toValue();
 }
 
 extension ListValueUtils<T> on List<T> {
@@ -62,9 +54,8 @@ extension ListValueUtils<T> on List<T> {
           return e.toValue();
         } else if (e is Map<String, dynamic>) {
           return e.toValue();
-          // ignore: type_check_with_null, prefer_void_to_null
-        } else if (e is Null) {
-          return Value(nullValue: e);
+        } else if (e == null) {
+          return Value(nullValue: null);
         } else {
           throw GrpcError.invalidArgument('List contains unsupported type');
         }
@@ -94,8 +85,7 @@ extension MapStructUtils on Map<String, dynamic> {
           result[entry.key] = value.toValue();
         } else if (value is Map<String, dynamic>) {
           result[entry.key] = value.toValue();
-          // ignore: type_check_with_null, prefer_void_to_null
-        } else if (value is Null) {
+        } else if (value == null) {
           result[entry.key] = Value(nullValue: value);
         } else {
           throw GrpcError.invalidArgument('Unsupported type');
