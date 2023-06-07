@@ -10,17 +10,25 @@ import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../viam_sdk.dart';
 
+/// The options that define the behavior of the [RobotClient].
 class RobotClientOptions {
-  DialOptions dialOptions;
+  /// Options for connecting to the robot
+  final DialOptions dialOptions;
 
   RobotClientOptions() : dialOptions = DialOptions();
 
+  /// Convenience initializer for creating options with specified [DialOptions]
   RobotClientOptions.withDialOptions(this.dialOptions);
 
+  /// Convenience initializer for creating options with a robot location secret
   RobotClientOptions.withLocationSecret(String locationSecret)
       : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
 }
 
+/// gRPC client for a Robot. This class should be used for all interactions with a robot.
+///
+/// Obtain an instance of this client by using the function:
+///     RobotClient.atAddress(...)
 class RobotClient {
   late ClientChannelBase channel;
   late RobotServiceClient _client;
@@ -30,6 +38,7 @@ class RobotClient {
 
   RobotClient._();
 
+  /// Connect to a robot at the specified address with the provided options.
   static Future<RobotClient> atAddress(String url, RobotClientOptions options) async {
     final client = RobotClient._();
     client.channel = await dial(url, options.dialOptions);
@@ -38,6 +47,7 @@ class RobotClient {
     return client;
   }
 
+  @Deprecated('This function will be removed prior to beta launch')
   static Future<RobotClient> withViam(Viam viam) async {
     final client = RobotClient._();
     client.channel = viam.channel;
@@ -46,6 +56,7 @@ class RobotClient {
     return client;
   }
 
+  /// Refresh the resources of this robot
   Future<void> refresh() async {
     final ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
     if (response.resources == resourceNames) {
@@ -71,10 +82,12 @@ class RobotClient {
     }
   }
 
+  /// Get a connected resource by its [ResourceName]
   T getResource<T>(ResourceName name) {
     return _manager.getResource<T>(name);
   }
 
+  /// Get a WebRTC stream client with the given name
   StreamClient getStream(String name) {
     if (!_streams.containsKey(name)) {
       _streams[name] = StreamClient(channel as WebRtcClientChannel);

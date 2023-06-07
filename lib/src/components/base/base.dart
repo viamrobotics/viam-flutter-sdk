@@ -2,6 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// Base represents a physical base of a robot.
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'base');
 
@@ -36,10 +37,12 @@ abstract class Base extends Resource {
   /// Get if the base is currently moving
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Base] with the given [name]
   static ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
 
+  /// Get the [Base] named [name] from the provided robot.
   static Base fromRobot(RobotClient robot, String name) {
     return robot.getResource(Base.getResourceName(name));
   }

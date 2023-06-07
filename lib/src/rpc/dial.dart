@@ -14,6 +14,7 @@ import '../utils.dart';
 
 final _logger = Logger();
 
+/// Describes the behavior for connecting to a robot
 class DialOptions {
   /// Whether the RPC connection is TLS based
   bool insecure = false;
@@ -43,15 +44,21 @@ class DialOptions {
   String? accessToken;
 }
 
+/// The credentials used for connecting to the robot
 class Credentials {
+  /// The type of credential, e.g. 'robot-location-secret'
   final String type;
+
+  /// The payload of the credential
   final String payload;
 
   const Credentials(this.type, this.payload);
 
+  /// Convenience initializer for creating credentials of type 'robot-location-secret' with the provided payload.
   const Credentials.locationSecret(this.payload) : type = 'robot-location-secret';
 }
 
+/// Options specific for connecting over WebRTC
 class DialWebRtcOptions {
   /// Whether to disable WebRTC.
   bool disable = false;
@@ -87,6 +94,7 @@ class DialWebRtcOptions {
   String? signalingAccessToken;
 }
 
+/// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options) async {
   _logger.i('Connecting to Robot at $address');
   final opts = options ?? DialOptions();

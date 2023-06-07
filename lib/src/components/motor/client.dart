@@ -5,6 +5,7 @@ import '../../gen/component/motor/v1/motor.pbgrpc.dart';
 import '../../utils.dart';
 import 'motor.dart';
 
+/// gRPC client for the [Motor] component.
 class MotorClient extends Motor {
   final ClientChannelBase _channel;
   final MotorServiceClient _client;

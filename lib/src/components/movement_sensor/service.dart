@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'movement_sensor.dart';
 
+/// gRPC Service for a [MovementSensor]
 class MovementSensorService extends MovementSensorServiceBase {
   final ResourceManager _manager;
 
@@ -86,5 +87,11 @@ class MovementSensorService extends MovementSensorServiceBase {
         positionSupported: properties.positionSupported,
         compassHeadingSupported: properties.compassHeadingSupported,
         linearAccelerationSupported: properties.linearAccelerationSupported);
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

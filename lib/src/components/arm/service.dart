@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'arm.dart';
 
+/// gRPC Service for an [Arm]
 class ArmService extends ArmServiceBase {
   final ResourceManager _manager;
 
@@ -66,5 +67,17 @@ class ArmService extends ArmServiceBase {
     final arm = _armFromManager(request.name);
     await arm.moveToPosition(request.to, extra: request.extra.toMap());
     return MoveToPositionResponse();
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) {
+    // TODO: implement getKinematics
+    throw UnimplementedError();
   }
 }

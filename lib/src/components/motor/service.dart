@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'motor.dart';
 
+/// gRPC Service for a [Motor]
 class MotorService extends MotorServiceBase {
   final ResourceManager _manager;
 
@@ -87,5 +88,11 @@ class MotorService extends MotorServiceBase {
     final motor = _fromManager(request.name);
     await motor.setPower(request.powerPct, extra: request.extra.toMap());
     return SetPowerResponse();
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

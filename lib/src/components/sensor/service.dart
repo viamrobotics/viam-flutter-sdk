@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'sensor.dart';
 
+/// gRPC Service for a generic [Sensor]
 class SensorService extends SensorServiceBase {
   final ResourceManager _manager;
 
@@ -31,5 +32,11 @@ class SensorService extends SensorServiceBase {
     final sensor = _fromManager(request.name);
     final result = await sensor.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

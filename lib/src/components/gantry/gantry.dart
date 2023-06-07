@@ -1,11 +1,8 @@
-import '../../proto/common.dart';
+import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// Gantry represents a physical gantry and can be used for controlling gantries of N axes.
-///
-/// This acts as an abstract base class for any drivers representing specific gantry implementations.
-/// This cannot be used on its own.
+/// Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
 abstract class Gantry extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'gantry');
 
@@ -24,10 +21,12 @@ abstract class Gantry extends Resource {
   /// If the gantry is currently moving
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Gantry] with the given [name]
   static ResourceName getResourceName(String name) {
     return Gantry.subtype.getResourceName(name);
   }
 
+  /// Get the [Gantry] named [name] from the provided robot.
   static Gantry fromRobot(RobotClient robot, String name) {
     return robot.getResource(Gantry.getResourceName(name));
   }

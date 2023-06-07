@@ -2,10 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// [Servo] represents a physical servo.
-///
-/// This acts as an abstract base class for any drivers representing specific servo implementations.
-/// This cannot be used on its own.
+/// Servo represents a physical servo.
 abstract class Servo extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'servo');
 
@@ -21,10 +18,12 @@ abstract class Servo extends Resource {
   /// Get if the [Servo] is currently moving.
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Servo] with the given [name]
   static ResourceName getResourceName(String name) {
     return Servo.subtype.getResourceName(name);
   }
 
+  /// Get the [Servo] named [name] from the provided robot.
   static Servo fromRobot(RobotClient robot, String name) {
     return robot.getResource(Servo.getResourceName(name));
   }

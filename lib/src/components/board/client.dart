@@ -7,6 +7,7 @@ import '../../gen/google/protobuf/duration.pb.dart' as grpc_duration;
 import '../../utils.dart';
 import 'board.dart';
 
+/// gRPC client for the [Board] component.
 class BoardClient extends Board {
   final ClientChannelBase _channel;
   final BoardServiceClient _client;

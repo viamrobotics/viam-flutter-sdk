@@ -7,6 +7,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'board.dart';
 
+/// gRPC Service for a [Board]
 class BoardService extends BoardServiceBase {
   final ResourceManager _manager;
 
@@ -95,5 +96,11 @@ class BoardService extends BoardServiceBase {
     final board = _fromManager(request.name);
     final boardStatus = await board.status(extra: request.extra.toMap());
     return StatusResponse(status: boardStatus.proto);
+  }
+
+  @override
+  Future<common.GetGeometriesResponse> getGeometries(ServiceCall call, common.GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

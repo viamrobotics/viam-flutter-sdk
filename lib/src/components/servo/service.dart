@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'servo.dart';
 
+/// gRPC Service for a [Servo]
 class ServoService extends ServoServiceBase {
   final ResourceManager _manager;
 
@@ -52,5 +53,11 @@ class ServoService extends ServoServiceBase {
     final servo = _fromManager(request.name);
     await servo.stop(extra: request.extra.toMap());
     return StopResponse();
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

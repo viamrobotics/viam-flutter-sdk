@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'gantry.dart';
 
+/// gRPC Service for a [Gantry]
 class GantryService extends GantryServiceBase {
   final ResourceManager _manager;
 
@@ -59,5 +60,11 @@ class GantryService extends GantryServiceBase {
     final gantry = _fromManager(request.name);
     await gantry.stop(extra: request.extra.toMap());
     return StopResponse();
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

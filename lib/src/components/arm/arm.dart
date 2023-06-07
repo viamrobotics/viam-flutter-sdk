@@ -1,8 +1,9 @@
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-import 'package:viam_sdk/src/gen/component/arm/v1/arm.pb.dart';
-import 'package:viam_sdk/src/resource/base.dart';
-import 'package:viam_sdk/src/robot/client.dart';
+import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/arm/v1/arm.pb.dart';
+import '../../resource/base.dart';
+import '../../robot/client.dart';
 
+/// Arm represents a physical robot arm that exists in three-dimensional space.
 abstract class Arm extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'arm');
 
@@ -24,10 +25,12 @@ abstract class Arm extends Resource {
   /// Get if the arm is currently moving
   Future<bool> isMoving();
 
+  /// Get the [ResourceName] for this [Arm] with the given [name]
   static ResourceName getResourceName(String name) {
     return Arm.subtype.getResourceName(name);
   }
 
+  /// Get the [Arm] named [name] from the provided robot.
   static Arm fromRobot(RobotClient robot, String name) {
     return robot.getResource(Arm.getResourceName(name));
   }

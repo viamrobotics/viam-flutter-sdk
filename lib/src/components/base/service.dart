@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'base.dart';
 
+/// gRPC service for a robotic [Base]
 class BaseService extends BaseServiceBase {
   final ResourceManager _manager;
 
@@ -66,5 +67,11 @@ class BaseService extends BaseServiceBase {
     final base = _fromManager(request.name);
     final result = await base.doCommand(request.command.toMap());
     return DoCommandResponse(result: result.toStruct());
+  }
+
+  @override
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+    // TODO: implement getGeometries
+    throw UnimplementedError();
   }
 }

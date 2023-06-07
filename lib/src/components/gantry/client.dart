@@ -1,10 +1,11 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
+import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/gantry/v1/gantry.pbgrpc.dart';
-import '../../proto/common.dart';
 import '../../utils.dart';
 import 'gantry.dart';
 
+/// gRPC client for the [Gantry] component.
 class GantryClient extends Gantry {
   final ClientChannelBase _channel;
   final GantryServiceClient _client;

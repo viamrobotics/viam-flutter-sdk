@@ -1,7 +1,6 @@
-import 'package:viam_sdk/src/gen/component/motor/v1/motor.pb.dart';
-import 'package:viam_sdk/src/resource/base.dart';
-
 import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/motor/v1/motor.pb.dart';
+import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 class MotorProperties {
@@ -26,9 +25,6 @@ class PowerState {
 }
 
 /// Motor represents a physical motor.
-///
-/// This acts as an abstract base class for any drivers representing specific motor implementations.
-/// This cannot be used on its own.
 abstract class Motor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'motor');
 
@@ -68,10 +64,12 @@ abstract class Motor extends Resource {
   /// Get if the [Motor] is currently moving.
   Future<bool> isMoving({Map<String, dynamic>? extra});
 
+  /// Get the [ResourceName] for this [Motor] with the given [name]
   static ResourceName getResourceName(String name) {
     return Motor.subtype.getResourceName(name);
   }
 
+  /// Get the [Motor] named [name] from the provided robot.
   static Motor fromRobot(RobotClient robot, String name) {
     return robot.getResource(Motor.getResourceName(name));
   }

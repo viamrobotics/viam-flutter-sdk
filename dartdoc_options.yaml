@@ -1,0 +1,7 @@
+dartdoc:
+  categories:
+    "Protobuf Definitions":
+      markdown: doc/Protobuf.md
+      name: Protobuf Definitions
+  categoryOrder: ["Protobuf Definitions"]
+  nodoc: ['**/di/**', '**/domain/**']
