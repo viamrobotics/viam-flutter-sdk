@@ -39,8 +39,8 @@ void main() {
 
     group('ValueUtils toPrimitive', () {
       test('null', () {
-        final nullValue = Value(nullValue: null);
-        expect(nullValue.toPrimitive(), null);
+        final nullValue = Value(nullValue: NullValue.NULL_VALUE);
+        expect(nullValue.toPrimitive(), NullValue.NULL_VALUE);
       });
 
       test('num', () {
@@ -70,7 +70,7 @@ void main() {
 
       test('no value', () {
         final emptyValue = Value();
-        expect(emptyValue.toPrimitive(), null);
+        expect(() => emptyValue.toPrimitive(), throwsA(isA<GrpcError>()));
       });
     });
 
@@ -120,7 +120,6 @@ void main() {
 
       test('invalid argument', () {
         final list = [{}];
-
         expect(() => list.toValue(), throwsA(isA<GrpcError>()));
       });
     });
@@ -167,7 +166,6 @@ void main() {
 
         test('invalid argument', () {
           final map = {'foo': {}};
-
           expect(() => map.toStruct(), throwsA(isA<GrpcError>()));
         });
       });
