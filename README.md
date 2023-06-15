@@ -24,8 +24,9 @@ As this SDK is still in alpha, it is not yet published to [pub.dev](https://pub.
 dependencies:
   ...
   viam_sdk:
-    url: https://github.com/viamrobotics/viam-flutter-sdk.git
-    ref: main
+    git: 
+      url: https://github.com/viamrobotics/viam-flutter-sdk.git
+      ref: main
 ```
 
 Don't forget to run `flutter pub get` after updating your `pubspec.yaml`
