@@ -24,6 +24,7 @@ extension ValueUtils on Value {
     if (hasStringValue()) return stringValue;
     if (hasStructValue()) return structValue.fields.map((key, value) => MapEntry(key, value.toPrimitive()));
 
+    _logger.e('Value does not contain valid type');
     throw GrpcError.invalidArgument('value does not contain valid type');
   }
 }
