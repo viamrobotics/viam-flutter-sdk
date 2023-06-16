@@ -11,7 +11,7 @@ Build and connect to robots with Flutter
 
 ## Getting started
 Make sure your project meets the minimum requirements:
-* Minimum iOS target: 12.0
+* Minimum iOS target: 13.0
 * Minimum Android SDK: 23
 
 As this SDK is still in alpha, it is not yet published to [pub.dev](https://pub.dev). While we have plans to publish there soon, for now you should install the SDK directly from [GitHub](https://github.com/viamrobotics/viam-flutter-sdk):
@@ -24,8 +24,9 @@ As this SDK is still in alpha, it is not yet published to [pub.dev](https://pub.
 dependencies:
   ...
   viam_sdk:
-    url: https://github.com/viamrobotics/viam-flutter-sdk.git
-    ref: main
+    git: 
+      url: https://github.com/viamrobotics/viam-flutter-sdk.git
+      ref: main
 ```
 
 Don't forget to run `flutter pub get` after updating your `pubspec.yaml`
