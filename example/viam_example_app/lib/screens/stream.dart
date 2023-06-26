@@ -24,12 +24,20 @@ class StreamScreen extends StatefulWidget {
 class _StreamScreenState extends State<StreamScreen> {
   // Stream
   bool _ready = false;
+  bool _loading = false;
   late RTCVideoRenderer _renderer;
   late async.StreamSubscription<MediaStream> _streamSub;
 
   // Single frame
   ByteData? imageBytes;
   bool _imgLoaded = false;
+
+  @override
+  void initState() {
+    _ready = false;
+    _loading = false;
+    super.initState();
+  }
 
   void _getImage() {
     setState(() {
@@ -76,13 +84,17 @@ class _StreamScreenState extends State<StreamScreen> {
     if (_ready) {
       return;
     }
+    setState(() {
+      _loading = true;
+    });
     _renderer = RTCVideoRenderer();
     await _renderer.initialize();
-    final stream = widget.client.getStream(widget.resourceName.name);
+    final stream = widget.client.getStream();
     _streamSub = stream.listen((event) {
       _renderer.srcObject = event;
       setState(() {
         _ready = true;
+        _loading = false;
       });
     });
     _streamSub.onError((error, trace) => print(error.toString()));
@@ -93,7 +105,7 @@ class _StreamScreenState extends State<StreamScreen> {
   void deactivate() {
     super.deactivate();
     _renderer.dispose();
-    widget.client.remove(widget.resourceName.name);
+    widget.client.closeStream();
     _streamSub.cancel();
   }
 
@@ -121,10 +133,7 @@ class _StreamScreenState extends State<StreamScreen> {
                   )
                 : const Text(''),
             const SizedBox(height: 16),
-            PlatformElevatedButton(
-              child: const Text('Start stream'),
-              onPressed: () => _startStream(),
-            ),
+            PlatformElevatedButton(child: const Text('Start stream'), onPressed: !_loading ? () => _startStream() : null),
             const SizedBox(height: 16),
             _imgLoaded ? Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3) : const Text(''),
             const SizedBox(height: 16),
