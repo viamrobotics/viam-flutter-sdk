@@ -126,7 +126,7 @@ class _StreamScreenState extends State<StreamScreen> {
                   )
                 : const Text(''),
             const SizedBox(height: 16),
-            PlatformElevatedButton(child: const Text('Start stream'), onPressed: !_loading ? () => _startStream() : null),
+            PlatformElevatedButton(onPressed: !_loading ? () => _startStream() : null, child: const Text('Start stream')),
             const SizedBox(height: 16),
             _imgLoaded ? Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3) : const Text(''),
             const SizedBox(height: 16),
