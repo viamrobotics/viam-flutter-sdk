@@ -19,7 +19,7 @@ class StreamManager {
   StreamManager(this._channel) : _client = StreamServiceClient(_channel) {
     _finalizer.attach(this, _errorHandler);
     _channel.rtcPeerConnection.onAddStream = (MediaStream stream) {
-      addStream(stream);
+      _addStream(stream);
     };
 
     _channel.rtcPeerConnection.onConnectionState = (state) {
@@ -34,45 +34,42 @@ class StreamManager {
     };
   }
 
-  void addStream(MediaStream stream) {
+  void _addStream(MediaStream stream) {
     _streams[stream.id] = stream;
     if (_clients.containsKey(stream.id)) {
       _clients[stream.id]!._internalStreamController.add(stream);
     }
   }
 
-  String getValidSDPTrackName(String name) {
+  String _getValidSDPTrackName(String name) {
     return name.replaceAll(':', '+');
   }
 
   StreamClient getStreamClient(String name) {
-    final sanitizedName = getValidSDPTrackName(name);
+    final sanitizedName = _getValidSDPTrackName(name);
     if (_clients.containsKey(sanitizedName)) {
       return _clients[sanitizedName]!;
     }
-    final client = StreamClient(name, remove);
+    final client = StreamClient(name, _remove);
     _clients[sanitizedName] = client;
 
     if (_streams.containsKey(sanitizedName)) {
-      Future.delayed(const Duration(milliseconds: 100), () {
-        _clients[sanitizedName]!._internalStreamController.add(_streams[sanitizedName]!);
-      });
+      _clients[sanitizedName]!._internalStreamController.add(_streams[sanitizedName]!);
     } else {
-      final fut = add(sanitizedName);
+      final fut = _add(sanitizedName);
       fut.onError((error, stackTrace) => client._streamController.addError(error ?? Exception('Could not add stream named $name')));
     }
     return client;
   }
 
-  Future<void> add(String name) async {
+  Future<void> _add(String name) async {
     await _client.addStream(AddStreamRequest(name: name));
   }
 
-  Future<void> remove(String name) async {
-    final sanitizedName = getValidSDPTrackName(name);
+  Future<void> _remove(String name) async {
+    final sanitizedName = _getValidSDPTrackName(name);
     if (_streams.containsKey(sanitizedName)) {
-      final stream = _streams.remove(sanitizedName)!;
-      await stream.dispose();
+      _streams.remove(sanitizedName)!;
       await _client.removeStream(RemoveStreamRequest(name: sanitizedName));
     }
     if (_clients.containsKey(sanitizedName)) {

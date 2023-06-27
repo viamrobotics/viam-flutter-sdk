@@ -32,13 +32,6 @@ class _StreamScreenState extends State<StreamScreen> {
   ByteData? imageBytes;
   bool _imgLoaded = false;
 
-  @override
-  void initState() {
-    _ready = false;
-    _loading = false;
-    super.initState();
-  }
-
   void _getImage() {
     setState(() {
       _imgLoaded = false;
