@@ -119,7 +119,16 @@ class RobotClient {
     while (true) {
       await Future.delayed(Duration(seconds: interval));
 
-      _connected = await connected();
+      // Failure to grab resources could be for spurious, non-networking reasons. Try three times just to be safe.
+      for (int i = 0; i < 3; i++) {
+        try {
+          await _client.resourceNames(ResourceNamesRequest(), options: CallOptions(timeout: const Duration(seconds: 1)));
+          _connected = true;
+        } catch (e) {
+          _connected = false;
+          await Future.delayed(const Duration(milliseconds: 100));
+        }
+      }
 
       if (_connected) continue;
 
@@ -127,43 +136,36 @@ class RobotClient {
 
       if (reconnectInterval <= 0) continue;
 
-      _logger.d(
-          'Attempting to reconnect to the robot at $_address every $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
+      await _reconnect(reconnectInterval);
+    }
+  }
 
-      while (!_connected) {
-        try {
-          final channel = await dial(_address, _options);
-          final client = RobotServiceClient(channel);
-          await client.resourceNames(ResourceNamesRequest());
+  Future<void> _reconnect(int reconnectInterval) async {
+    _logger
+        .d('Attempting to reconnect to the robot at $_address every $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
 
-          _channel = channel;
-          _client = client;
-          await refresh();
-          _connected = true;
-          _logger.d('Successfully reconnected robot');
-        } catch (e) {
-          await _channel.shutdown();
-          _logger.d('Failed to reconnect, trying again in $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
-          await Future.delayed(Duration(seconds: reconnectInterval));
-        }
+    while (!_connected) {
+      try {
+        final channel = await dial(_address, _options);
+        final client = RobotServiceClient(channel);
+        await client.resourceNames(ResourceNamesRequest());
+
+        _channel = channel;
+        _client = client;
+        await refresh();
+        _connected = true;
+        _logger.d('Successfully reconnected robot');
+      } catch (e) {
+        await _channel.shutdown();
+        _logger.d('Failed to reconnect, trying again in $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
+        await Future.delayed(Duration(seconds: reconnectInterval));
       }
     }
   }
 
   /// Check if the client is connected to the robot.
-  Future<bool> connected() async {
-    bool connected = true;
-    // Failure to grab resources could be for spurious, non-networking reasons. Try three times just to be safe.
-    for (int i = 0; i < 3; i++) {
-      try {
-        await _client.resourceNames(ResourceNamesRequest(), options: CallOptions(timeout: const Duration(seconds: 1)));
-        return true;
-      } catch (e) {
-        connected = false;
-        await Future.delayed(const Duration(milliseconds: 100));
-      }
-    }
-    return connected;
+  bool get isConnected {
+    return _connected;
   }
 
   /// Get a connected resource by its [ResourceName]
