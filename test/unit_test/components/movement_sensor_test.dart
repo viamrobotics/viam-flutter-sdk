@@ -66,6 +66,12 @@ class FakeMovementSensor extends MovementSensor {
     this.extra = extra;
     return Properties(angularVelocitySupported: false);
   }
+
+  @override
+  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return {'test': 'test'};
+  }
 }
 
 void main() {
@@ -115,6 +121,10 @@ void main() {
     test('properties', () async {
       final result = await movementSensor.properties();
       expect(result.angularVelocitySupported, false);
+    });
+
+    test('readings', () async {
+      expect(await movementSensor.readings(), {'test': 'test'});
     });
 
     test('doCommand', () async {
@@ -265,6 +275,24 @@ void main() {
         final client = MovementSensorClient(name, channel);
         final result = await client.properties();
         expect(result.angularVelocitySupported, false);
+      });
+
+      test('readings', () async {
+        final client = MovementSensorClient(name, channel);
+        final result = await client.readings();
+        final expectedKeys = [
+          'position',
+          'altitude',
+          'linear_velocity',
+          'angular_velocity',
+          'linear_acceleration',
+          'compass',
+          'orientation'
+        ];
+        expect(result.keys, expectedKeys);
+
+        final expectedValues = [GeoPoint(latitude: 0.0), 0.0, Vector3(x: 0.0), Vector3(x: 0.0), Vector3(x: 0.0), 0.0, Orientation(oX: 0.0)];
+        expect(result.values, expectedValues);
       });
 
       test('doCommand', () async {

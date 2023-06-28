@@ -1,3 +1,6 @@
+import 'package:grpc/grpc.dart';
+import 'package:grpc/grpc_connection_interface.dart';
+
 import '../gen/common/v1/common.pb.dart';
 
 const String resourceNamespaceRDK = 'rdk';
@@ -35,4 +38,10 @@ abstract class Resource {
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) {
     throw UnimplementedError();
   }
+}
+
+abstract class ResourceRPCClient<T extends Client> {
+  abstract ClientChannelBase channel;
+
+  T get client;
 }
