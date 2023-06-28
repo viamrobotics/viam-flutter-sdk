@@ -74,10 +74,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">StreamClient getStream(String name) {
-  if (!_streams.containsKey(name)) {
-    _streams[name] = StreamClient(channel as WebRtcClientChannel);
-  }
-  return _streams[name]!;
+  return _streamManager.getStreamClient(name);
 }</code></pre>
 </section>
 

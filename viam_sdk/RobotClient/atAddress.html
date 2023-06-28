@@ -78,6 +78,7 @@
   final client = RobotClient._();
   client.channel = await dial(url, options.dialOptions);
   client._client = RobotServiceClient(client.channel);
+  client._streamManager = StreamManager(client.channel as WebRtcClientChannel);
   await client.refresh();
   return client;
 }</code></pre>
