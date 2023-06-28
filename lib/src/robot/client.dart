@@ -129,9 +129,8 @@ class RobotClient {
           await Future.delayed(const Duration(milliseconds: 100));
         }
       }
-      if (_connected) {
-        _logger.d('Robot still connected ${DateTime.now()}');
-      } else {
+
+      if (!_connected) {
         _logger.d('Lost connection to robot');
         if (reconnectInterval > 0) {
           _logger.d(
