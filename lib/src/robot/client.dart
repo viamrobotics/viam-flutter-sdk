@@ -21,7 +21,7 @@ class RobotClientOptions {
   final DialOptions dialOptions;
 
   /// The frequency (in seconds) at which to check if the robot is still connected. 0 (zero) signifies no connection checks
-  final checkConnectionInterval = 1;
+  final checkConnectionInterval = 10;
 
   /// The frequency (in seconds) at which to attempt to reconnect a disconnected robot. 0 (zero) signifies no reconnection attempts
   final attemptReconnectInterval = 1;
@@ -59,7 +59,7 @@ class RobotClient {
     client._options = options.dialOptions;
     client._channel = await dial(url, options.dialOptions);
     client._client = RobotServiceClient(client._channel);
-    client._streamManager = StreamManager(client.channel as WebRtcClientChannel);
+    client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
     unawaited(client._checkConnection(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval));
     return client;
