@@ -29,14 +29,14 @@ class _CameraStreamViewState extends State<CameraStreamView> {
   void deactivate() {
     super.deactivate();
     _renderer.dispose();
-    widget.streamClient.remove(widget.camera.name);
+    widget.streamClient.closeStream();
     _streamSub.cancel();
   }
 
   Future<void> _startStream() async {
     _renderer = RTCVideoRenderer();
     await _renderer.initialize();
-    final stream = widget.streamClient.getStream(widget.camera.name);
+    final stream = widget.streamClient.getStream();
     _streamSub = stream.listen((event) {
       _renderer.srcObject = event;
       setState(() {});

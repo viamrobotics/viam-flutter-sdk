@@ -48,7 +48,7 @@ class RobotClient {
   late RobotServiceClient _client;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
-  final Map<String, StreamClient> _streams = {};
+  late final StreamManager _streamManager;
 
   RobotClient._();
 
@@ -59,6 +59,7 @@ class RobotClient {
     client._options = options.dialOptions;
     client._channel = await dial(url, options.dialOptions);
     client._client = RobotServiceClient(client._channel);
+    client._streamManager = StreamManager(client.channel as WebRtcClientChannel);
     await client.refresh();
     unawaited(client._checkConnection(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval));
     return client;
@@ -165,9 +166,6 @@ class RobotClient {
 
   /// Get a WebRTC stream client with the given name
   StreamClient getStream(String name) {
-    if (!_streams.containsKey(name)) {
-      _streams[name] = StreamClient(_channel as WebRtcClientChannel);
-    }
-    return _streams[name]!;
+    return _streamManager.getStreamClient(name);
   }
 }
