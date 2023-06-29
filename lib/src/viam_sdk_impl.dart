@@ -1,10 +1,8 @@
 import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/app/app.dart';
-import 'package:viam_sdk/src/app/data.dart';
-import 'package:viam_sdk/src/gen/app/v1/app.pb.dart';
-import 'package:viam_sdk/src/robot/client.dart';
 
+import './app/app.dart';
+import './app/data.dart';
 import './di/di.dart';
 import './domain/app/service/app_api_data_source.dart';
 import './domain/camera/service/camera_api_service.dart';
@@ -13,6 +11,8 @@ import './domain/movement/service/viam_movement_service.dart';
 import './domain/resource/service/viam_resource_service.dart';
 import './domain/sensor/service/viam_sensor_service.dart';
 import './domain/web_rtc/web_rtc_client/signalling_server_address.dart';
+import './gen/app/v1/app.pb.dart';
+import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
 
