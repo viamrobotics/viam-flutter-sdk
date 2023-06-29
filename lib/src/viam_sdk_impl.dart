@@ -1,14 +1,18 @@
-import 'package:auth0_flutter/auth0_flutter.dart';
+import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/di/di.dart';
-import 'package:viam_sdk/src/domain/app/service/app_api_data_source.dart';
-import 'package:viam_sdk/src/domain/camera/service/camera_api_service.dart';
-import 'package:viam_sdk/src/domain/data/service/data_api_service.dart';
-import 'package:viam_sdk/src/domain/movement/service/viam_movement_service.dart';
-import 'package:viam_sdk/src/domain/resource/service/viam_resource_service.dart';
-import 'package:viam_sdk/src/domain/sensor/service/viam_sensor_service.dart';
-import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/signalling_server_address.dart';
-import 'package:viam_sdk/src/viam_sdk.dart';
+import 'package:viam_sdk/src/app/app.dart';
+import 'package:viam_sdk/src/app/data.dart';
+
+import './di/di.dart';
+import './domain/app/service/app_api_data_source.dart';
+import './domain/camera/service/camera_api_service.dart';
+import './domain/data/service/data_api_service.dart';
+import './domain/movement/service/viam_movement_service.dart';
+import './domain/resource/service/viam_resource_service.dart';
+import './domain/sensor/service/viam_sensor_service.dart';
+import './domain/web_rtc/web_rtc_client/signalling_server_address.dart';
+import './rpc/dial.dart';
+import './viam_sdk.dart';
 
 class ViamImpl implements Viam {
   ViamAppService? appService;
@@ -18,9 +22,28 @@ class ViamImpl implements Viam {
   ViamMovementService? movementService;
   ViamSensorService? sensorService;
   DataService? _dataService;
+  late AppClient _appClient;
+  late DataClient _dataClient;
+
+  ViamImpl();
+
+  ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel("app.viam.com", 443, accessToken, false) {
+    _appClient = AppClient(_clientChannelBase!);
+    _dataClient = DataClient(_clientChannelBase!);
+  }
 
   @override
-  Future<Credentials> authenticate(String authDomain, String clientId, String? audience, String? scheme) => login(
+  AppClient get appClient {
+    return _appClient;
+  }
+
+  @override
+  DataClient get dataClient {
+    return _dataClient;
+  }
+
+  @override
+  Future<$auth0.Credentials> authenticate(String authDomain, String clientId, String? audience, String? scheme) => login(
         authDomain,
         clientId,
         scheme,
