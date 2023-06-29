@@ -43,8 +43,8 @@ class AppClient {
     return response.robot;
   }
 
-  Future<List<RobotPart>> listRobotParts(String robotId) async {
-    final getRobotPartsRequest = GetRobotPartsRequest(robotId: robotId);
+  Future<List<RobotPart>> listRobotParts(Robot robot) async {
+    final getRobotPartsRequest = GetRobotPartsRequest(robotId: robot.id);
     final response = await _client.getRobotParts(getRobotPartsRequest);
     return response.parts;
   }

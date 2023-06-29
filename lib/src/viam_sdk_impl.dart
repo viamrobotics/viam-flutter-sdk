@@ -2,6 +2,8 @@ import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:viam_sdk/src/app/app.dart';
 import 'package:viam_sdk/src/app/data.dart';
+import 'package:viam_sdk/src/gen/app/v1/app.pb.dart';
+import 'package:viam_sdk/src/robot/client.dart';
 
 import './di/di.dart';
 import './domain/app/service/app_api_data_source.dart';
@@ -40,6 +42,15 @@ class ViamImpl implements Viam {
   @override
   DataClient get dataClient {
     return _dataClient;
+  }
+
+  @override
+  Future<RobotClient> getRobotClient(Robot robot) async {
+    final location = await appClient.getLocation(robot.location);
+    final secret = location.auth.secrets.firstWhere((element) => element.state == SharedSecret_State.STATE_ENABLED);
+    final parts = await appClient.listRobotParts(robot);
+    final part = parts.firstWhere((element) => element.mainPart);
+    return RobotClient.atAddress(part.fqdn, RobotClientOptions.withLocationSecret(secret.secret));
   }
 
   @override
