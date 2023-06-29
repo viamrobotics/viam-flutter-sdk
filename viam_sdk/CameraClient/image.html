@@ -81,7 +81,7 @@
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;ViamImage&gt; image({MimeType? mimeType}) async {
   final request = GetImageRequest(name: name, mimeType: mimeType?.name);
-  final response = await _client.getImage(request);
+  final response = await client.getImage(request);
   final actualMimeType = MimeType.fromString(response.mimeType);
   return ViamImage(response.image, actualMimeType);
 }</code></pre>
@@ -115,6 +115,8 @@ Future&lt;ViamImage&gt; image({MimeType? mimeType}) async {
         <li class="section-title">
           <a href="../../viam_sdk/CameraClient-class.html#instance-properties">Properties</a>
         </li>
+          <li><a href="../../viam_sdk/CameraClient/channel.html">channel</a></li>
+          <li><a href="../../viam_sdk/CameraClient/client.html">client</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
           <li><a href="../../viam_sdk/CameraClient/name.html">name</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>

@@ -80,7 +80,7 @@
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;CameraProperties&gt; properties() async {
   final request = GetPropertiesRequest(name: name);
-  final response = await _client.getProperties(request);
+  final response = await client.getProperties(request);
   return CameraProperties(response.supportsPcd, response.intrinsicParameters, response.distortionParameters);
 }</code></pre>
 </section>
@@ -113,6 +113,8 @@ Future&lt;CameraProperties&gt; properties() async {
         <li class="section-title">
           <a href="../../viam_sdk/CameraClient-class.html#instance-properties">Properties</a>
         </li>
+          <li><a href="../../viam_sdk/CameraClient/channel.html">channel</a></li>
+          <li><a href="../../viam_sdk/CameraClient/client.html">client</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
           <li><a href="../../viam_sdk/CameraClient/name.html">name</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>

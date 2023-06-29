@@ -69,17 +69,6 @@ RobotClient.atAddress(...)</p>
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="channel" class="property">
-  <span class="name"><a href="../viam_sdk/RobotClient/channel.html">channel</a></span>
-  <span class="signature">&#8596; <a href="https://pub.dev/documentation/grpc/3.1.0/grpc_connection_interface/ClientChannelBase-class.html">ClientChannelBase</a></span> 
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">read / write</span></div>
-
-</dd>
-
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
@@ -88,6 +77,17 @@ RobotClient.atAddress(...)</p>
 <dd class="inherited">
   The hash code for this object.
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isConnected" class="property">
+  <span class="name"><a href="../viam_sdk/RobotClient/isConnected.html">isConnected</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  Check if the client is connected to the robot.
+  <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
 
@@ -300,6 +300,7 @@ RobotClient.atAddress(...)</p>
         <li><a href="../viam_sdk/Resource-class.html">Resource</a></li>
         <li><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a></li>
         <li><a href="../viam_sdk/ResourceRegistration-class.html">ResourceRegistration</a></li>
+        <li><a href="../viam_sdk/ResourceRPCClient-class.html">ResourceRPCClient</a></li>
         <li><a href="../viam_sdk/RobotClient-class.html">RobotClient</a></li>
         <li><a href="../viam_sdk/RobotClientOptions-class.html">RobotClientOptions</a></li>
         <li><a href="../viam_sdk/Sensor-class.html">Sensor</a></li>
@@ -339,8 +340,8 @@ RobotClient.atAddress(...)</p>
         <li class="section-title">
           <a href="../viam_sdk/RobotClient-class.html#instance-properties">Properties</a>
         </li>
-          <li><a href="../viam_sdk/RobotClient/channel.html">channel</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+          <li><a href="../viam_sdk/RobotClient/isConnected.html">isConnected</a></li>
           <li><a href="../viam_sdk/RobotClient/resourceNames.html">resourceNames</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 

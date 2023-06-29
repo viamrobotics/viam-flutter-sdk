@@ -82,7 +82,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;void&gt; setPwmFrequency(String pin, int frequencyHz, {Map&lt;String, dynamic&gt;? extra}) async {
-  await _client.setPWMFrequency(SetPWMFrequencyRequest(name: name, pin: pin, frequencyHz: Int64(frequencyHz), extra: extra?.toStruct()));
+  await client.setPWMFrequency(SetPWMFrequencyRequest(name: name, pin: pin, frequencyHz: Int64(frequencyHz), extra: extra?.toStruct()));
 }</code></pre>
 </section>
 
@@ -114,6 +114,8 @@ Future&lt;void&gt; setPwmFrequency(String pin, int frequencyHz, {Map&lt;String, 
         <li class="section-title">
           <a href="../../viam_sdk/BoardClient-class.html#instance-properties">Properties</a>
         </li>
+          <li><a href="../../viam_sdk/BoardClient/channel.html">channel</a></li>
+          <li><a href="../../viam_sdk/BoardClient/client.html">client</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
           <li><a href="../../viam_sdk/BoardClient/name.html">name</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
