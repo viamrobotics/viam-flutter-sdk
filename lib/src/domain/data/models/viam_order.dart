@@ -12,7 +12,7 @@ extension OrderMapper on ViamOrder {
       case ViamOrder.unspecified:
         return Order.ORDER_UNSPECIFIED;
       case ViamOrder.descending:
-        return Order.ORDER_UNSPECIFIED;
+        return Order.ORDER_DESCENDING;
       case ViamOrder.ascending:
         return Order.ORDER_ASCENDING;
     }
