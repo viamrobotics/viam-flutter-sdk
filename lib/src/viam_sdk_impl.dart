@@ -29,7 +29,7 @@ class ViamImpl implements Viam {
 
   ViamImpl();
 
-  ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel("app.viam.com", 443, accessToken, false) {
+  ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
     _appClient = AppClient(_clientChannelBase!);
     _dataClient = DataClient(_clientChannelBase!);
   }
