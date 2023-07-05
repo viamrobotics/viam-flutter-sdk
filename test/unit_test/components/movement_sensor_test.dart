@@ -154,7 +154,7 @@ void main() {
       manager.register(MovementSensor.getResourceName(name), movementSensor);
       service = MovementSensorService(manager);
       channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
-      server = Server([service]);
+      server = Server.create(services: [service]);
       await server.serve(port: port);
     });
 

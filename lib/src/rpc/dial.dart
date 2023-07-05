@@ -327,7 +327,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
     final addr = _hostAndPort(address, options.insecure);
-    return _AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
+    return AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
   }
 
   final opts = ChannelOptions(
@@ -354,7 +354,7 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
     final addr = _hostAndPort(options.externalAuthAddress!, options.insecure);
     _logger.d('Authenticating to external address: $addr, for entity: ${options.externalAuthToEntity}');
-    authChannel = _AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
+    authChannel = AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
     final toRequest = pb.AuthenticateToRequest(entity: options.externalAuthToEntity);
     try {
@@ -368,13 +368,13 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   }
 
   final actual = _hostAndPort(address, options.insecure);
-  return _AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure);
+  return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure);
 }
 
-class _AuthenticatedChannel extends ClientChannel {
+class AuthenticatedChannel extends ClientChannel {
   final String accessToken;
 
-  _AuthenticatedChannel(String host, int port, this.accessToken, bool insecure)
+  AuthenticatedChannel(String host, int port, this.accessToken, bool insecure)
       : super(host,
             port: port,
             options: ChannelOptions(

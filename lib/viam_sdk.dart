@@ -60,7 +60,7 @@ export 'src/resource/registry.dart';
 export 'src/robot/client.dart';
 
 /// RPC
-export 'src/rpc/dial.dart';
+export 'src/rpc/dial.dart' hide AuthenticatedChannel;
 
 /// Misc
 export 'src/viam_sdk.dart';

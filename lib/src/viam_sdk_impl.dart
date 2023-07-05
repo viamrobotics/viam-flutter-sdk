@@ -1,14 +1,19 @@
-import 'package:auth0_flutter/auth0_flutter.dart';
+import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/src/di/di.dart';
-import 'package:viam_sdk/src/domain/app/service/app_api_data_source.dart';
-import 'package:viam_sdk/src/domain/camera/service/camera_api_service.dart';
-import 'package:viam_sdk/src/domain/data/service/data_api_service.dart';
-import 'package:viam_sdk/src/domain/movement/service/viam_movement_service.dart';
-import 'package:viam_sdk/src/domain/resource/service/viam_resource_service.dart';
-import 'package:viam_sdk/src/domain/sensor/service/viam_sensor_service.dart';
-import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/signalling_server_address.dart';
-import 'package:viam_sdk/src/viam_sdk.dart';
+
+import './app/app.dart';
+import './di/di.dart';
+import './domain/app/service/app_api_data_source.dart';
+import './domain/camera/service/camera_api_service.dart';
+import './domain/data/service/data_api_service.dart';
+import './domain/movement/service/viam_movement_service.dart';
+import './domain/resource/service/viam_resource_service.dart';
+import './domain/sensor/service/viam_sensor_service.dart';
+import './domain/web_rtc/web_rtc_client/signalling_server_address.dart';
+import './robot/client.dart';
+import './rpc/dial.dart';
+import './viam_sdk.dart';
+import '../protos/app/app.dart';
 
 class ViamImpl implements Viam {
   ViamAppService? appService;
@@ -18,9 +23,30 @@ class ViamImpl implements Viam {
   ViamMovementService? movementService;
   ViamSensorService? sensorService;
   DataService? _dataService;
+  late AppClient _appClient;
+
+  ViamImpl();
+
+  ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
+    _appClient = AppClient(AppServiceClient(_clientChannelBase!));
+  }
 
   @override
-  Future<Credentials> authenticate(String authDomain, String clientId, String? audience, String? scheme) => login(
+  AppClient get appClient {
+    return _appClient;
+  }
+
+  @override
+  Future<RobotClient> getRobotClient(Robot robot) async {
+    final location = await appClient.getLocation(robot.location);
+    final secret = location.auth.secrets.firstWhere((element) => element.state == SharedSecret_State.STATE_ENABLED);
+    final parts = await appClient.listRobotParts(robot);
+    final part = parts.firstWhere((element) => element.mainPart);
+    return RobotClient.atAddress(part.fqdn, RobotClientOptions.withLocationSecret(secret.secret));
+  }
+
+  @override
+  Future<$auth0.Credentials> authenticate(String authDomain, String clientId, String? audience, String? scheme) => login(
         authDomain,
         clientId,
         scheme,
@@ -79,6 +105,8 @@ class ViamImpl implements Viam {
         token,
       );
     }
+
+    _appClient = AppClient(AppServiceClient(_clientChannelBase!));
 
     appService = getAppService(
       _clientChannelBase!,
