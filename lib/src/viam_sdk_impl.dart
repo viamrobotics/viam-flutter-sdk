@@ -1,5 +1,6 @@
 import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/protos/app/app.dart';
 
 import './app/app.dart';
 import './app/data.dart';
@@ -11,7 +12,6 @@ import './domain/movement/service/viam_movement_service.dart';
 import './domain/resource/service/viam_resource_service.dart';
 import './domain/sensor/service/viam_sensor_service.dart';
 import './domain/web_rtc/web_rtc_client/signalling_server_address.dart';
-import './gen/app/v1/app.pb.dart';
 import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
@@ -30,7 +30,7 @@ class ViamImpl implements Viam {
   ViamImpl();
 
   ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
-    _appClient = AppClient(_clientChannelBase!);
+    _appClient = AppClient(AppServiceClient(_clientChannelBase!));
     _dataClient = DataClient(_clientChannelBase!);
   }
 

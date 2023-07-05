@@ -181,7 +181,7 @@ void main() {
       manager.register(Base.getResourceName(name), base);
       service = BaseService(manager);
       channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
-      server = Server([service]);
+      server = Server.create(services: [service]);
       await server.serve(port: port);
     });
 

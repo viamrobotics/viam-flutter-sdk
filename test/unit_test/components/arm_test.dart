@@ -141,7 +141,7 @@ void main() {
       manager.register(Arm.getResourceName(name), arm);
       service = ArmService(manager);
       channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
-      server = Server([service]);
+      server = Server.create(services: [service]);
       await server.serve(port: port);
     });
 

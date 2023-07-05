@@ -1,11 +1,9 @@
-import 'package:grpc/grpc_connection_interface.dart';
-
 import '../gen/app/v1/app.pbgrpc.dart';
 
 class AppClient {
   final AppServiceClient _client;
 
-  AppClient(ClientChannelBase channel) : _client = AppServiceClient(channel);
+  AppClient(this._client);
 
   Future<List<Organization>> listOrganizations() async {
     final listOrganizationsRequest = ListOrganizationsRequest();

@@ -120,10 +120,10 @@ void main() {
         ),
       );
 
-      server = Server(
-        [service],
-        const <Interceptor>[],
-        CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+      server = Server.create(
+        services: [service],
+        interceptors: const <Interceptor>[],
+        codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
       );
       await server.serve(port: port);
     });
