@@ -1,6 +1,5 @@
 import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/protos/app/app.dart';
 
 import './app/app.dart';
 import './di/di.dart';
@@ -14,6 +13,7 @@ import './domain/web_rtc/web_rtc_client/signalling_server_address.dart';
 import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
+import '../protos/app/app.dart';
 
 class ViamImpl implements Viam {
   ViamAppService? appService;
