@@ -14,6 +14,8 @@ dependencies:
     path: ../../
   cupertino_icons: ^1.0.2
   flutter_platform_widgets: ^3.2.1
+  flutter_webrtc: ^0.9.35
+  image: ^4.0.17
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

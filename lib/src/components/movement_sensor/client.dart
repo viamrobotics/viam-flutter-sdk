@@ -1,13 +1,10 @@
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:logger/logger.dart';
 
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
 import 'movement_sensor.dart';
-
-Logger _logger = Logger();
 
 /// gRPC client for the [MovementSensor] component.
 class MovementSensorClient extends MovementSensor implements ResourceRPCClient {

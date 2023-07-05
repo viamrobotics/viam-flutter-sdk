@@ -84,7 +84,7 @@ class _BaseJoystickState extends State<BaseJoystick> {
     );
   }
 
-  void callSetPower(details) {
+  void callSetPower(StickDragDetails details) {
     widget.base.setPower(
       Vector3(y: details.y * -1),
       Vector3(z: details.x * -1),
