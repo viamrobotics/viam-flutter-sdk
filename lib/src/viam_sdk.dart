@@ -2,7 +2,6 @@ import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
 import './app/app.dart';
-import './app/data.dart';
 import './domain/app/service/app_api_data_source.dart';
 import './domain/camera/service/camera_api_service.dart';
 import './domain/data/service/data_api_service.dart';
@@ -19,7 +18,6 @@ abstract class Viam {
   }
 
   AppClient get appClient;
-  DataClient get dataClient;
 
   Future<RobotClient> getRobotClient(Robot robot);
 

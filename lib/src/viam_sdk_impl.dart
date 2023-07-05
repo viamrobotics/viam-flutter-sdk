@@ -3,7 +3,6 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 
 import './app/app.dart';
-import './app/data.dart';
 import './di/di.dart';
 import './domain/app/service/app_api_data_source.dart';
 import './domain/camera/service/camera_api_service.dart';
@@ -25,23 +24,16 @@ class ViamImpl implements Viam {
   ViamSensorService? sensorService;
   DataService? _dataService;
   late AppClient _appClient;
-  late DataClient _dataClient;
 
   ViamImpl();
 
   ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase!));
-    _dataClient = DataClient(_clientChannelBase!);
   }
 
   @override
   AppClient get appClient {
     return _appClient;
-  }
-
-  @override
-  DataClient get dataClient {
-    return _dataClient;
   }
 
   @override
@@ -113,6 +105,8 @@ class ViamImpl implements Viam {
         token,
       );
     }
+
+    _appClient = AppClient(AppServiceClient(_clientChannelBase!));
 
     appService = getAppService(
       _clientChannelBase!,
