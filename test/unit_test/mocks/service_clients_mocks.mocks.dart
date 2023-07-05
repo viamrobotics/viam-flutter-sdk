@@ -14,20 +14,16 @@ import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' as _i5;
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart' as _i20;
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' as _i8;
 import 'package:viam_sdk/src/gen/component/camera/v1/camera.pb.dart' as _i15;
-import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart'
-    as _i14;
-import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pb.dart'
-    as _i7;
-import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart'
-    as _i6;
+import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart' as _i14;
+import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pb.dart' as _i7;
+import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart' as _i6;
 import 'package:viam_sdk/src/gen/google/api/httpbody.pb.dart' as _i16;
 import 'package:viam_sdk/src/gen/proto/stream/v1/stream.pb.dart' as _i18;
 import 'package:viam_sdk/src/gen/proto/stream/v1/stream.pbgrpc.dart' as _i17;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i11;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i10;
 import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pb.dart' as _i13;
-import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart'
-    as _i12;
+import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart' as _i12;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -40,8 +36,7 @@ import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart'
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeResponseFuture_0<R> extends _i1.SmartFake
-    implements _i2.ResponseFuture<R> {
+class _FakeResponseFuture_0<R> extends _i1.SmartFake implements _i2.ResponseFuture<R> {
   _FakeResponseFuture_0(
     Object parent,
     Invocation parentInvocation,
@@ -51,8 +46,7 @@ class _FakeResponseFuture_0<R> extends _i1.SmartFake
         );
 }
 
-class _FakeClientCall_1<Q1, R1> extends _i1.SmartFake
-    implements _i3.ClientCall<Q1, R1> {
+class _FakeClientCall_1<Q1, R1> extends _i1.SmartFake implements _i3.ClientCall<Q1, R1> {
   _FakeClientCall_1(
     Object parent,
     Invocation parentInvocation,
@@ -62,8 +56,7 @@ class _FakeClientCall_1<Q1, R1> extends _i1.SmartFake
         );
 }
 
-class _FakeResponseStream_2<R1> extends _i1.SmartFake
-    implements _i2.ResponseStream<R1> {
+class _FakeResponseStream_2<R1> extends _i1.SmartFake implements _i2.ResponseStream<R1> {
   _FakeResponseStream_2(
     Object parent,
     Invocation parentInvocation,
@@ -73,8 +66,7 @@ class _FakeResponseStream_2<R1> extends _i1.SmartFake
         );
 }
 
-class _FakeClientConnection_3 extends _i1.SmartFake
-    implements _i4.ClientConnection {
+class _FakeClientConnection_3 extends _i1.SmartFake implements _i4.ClientConnection {
   _FakeClientConnection_3(
     Object parent,
     Invocation parentInvocation,
@@ -84,8 +76,7 @@ class _FakeClientConnection_3 extends _i1.SmartFake
         );
 }
 
-class _FakeCreateOrganizationResponse_4 extends _i1.SmartFake
-    implements _i5.CreateOrganizationResponse {
+class _FakeCreateOrganizationResponse_4 extends _i1.SmartFake implements _i5.CreateOrganizationResponse {
   _FakeCreateOrganizationResponse_4(
     Object parent,
     Invocation parentInvocation,
@@ -95,8 +86,7 @@ class _FakeCreateOrganizationResponse_4 extends _i1.SmartFake
         );
 }
 
-class _FakeListOrganizationsResponse_5 extends _i1.SmartFake
-    implements _i5.ListOrganizationsResponse {
+class _FakeListOrganizationsResponse_5 extends _i1.SmartFake implements _i5.ListOrganizationsResponse {
   _FakeListOrganizationsResponse_5(
     Object parent,
     Invocation parentInvocation,
@@ -106,8 +96,7 @@ class _FakeListOrganizationsResponse_5 extends _i1.SmartFake
         );
 }
 
-class _FakeGetOrganizationResponse_6 extends _i1.SmartFake
-    implements _i5.GetOrganizationResponse {
+class _FakeGetOrganizationResponse_6 extends _i1.SmartFake implements _i5.GetOrganizationResponse {
   _FakeGetOrganizationResponse_6(
     Object parent,
     Invocation parentInvocation,
@@ -117,8 +106,7 @@ class _FakeGetOrganizationResponse_6 extends _i1.SmartFake
         );
 }
 
-class _FakeUpdateOrganizationResponse_7 extends _i1.SmartFake
-    implements _i5.UpdateOrganizationResponse {
+class _FakeUpdateOrganizationResponse_7 extends _i1.SmartFake implements _i5.UpdateOrganizationResponse {
   _FakeUpdateOrganizationResponse_7(
     Object parent,
     Invocation parentInvocation,
@@ -128,8 +116,7 @@ class _FakeUpdateOrganizationResponse_7 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteOrganizationResponse_8 extends _i1.SmartFake
-    implements _i5.DeleteOrganizationResponse {
+class _FakeDeleteOrganizationResponse_8 extends _i1.SmartFake implements _i5.DeleteOrganizationResponse {
   _FakeDeleteOrganizationResponse_8(
     Object parent,
     Invocation parentInvocation,
@@ -139,8 +126,7 @@ class _FakeDeleteOrganizationResponse_8 extends _i1.SmartFake
         );
 }
 
-class _FakeListOrganizationMembersResponse_9 extends _i1.SmartFake
-    implements _i5.ListOrganizationMembersResponse {
+class _FakeListOrganizationMembersResponse_9 extends _i1.SmartFake implements _i5.ListOrganizationMembersResponse {
   _FakeListOrganizationMembersResponse_9(
     Object parent,
     Invocation parentInvocation,
@@ -150,8 +136,7 @@ class _FakeListOrganizationMembersResponse_9 extends _i1.SmartFake
         );
 }
 
-class _FakeCreateOrganizationInviteResponse_10 extends _i1.SmartFake
-    implements _i5.CreateOrganizationInviteResponse {
+class _FakeCreateOrganizationInviteResponse_10 extends _i1.SmartFake implements _i5.CreateOrganizationInviteResponse {
   _FakeCreateOrganizationInviteResponse_10(
     Object parent,
     Invocation parentInvocation,
@@ -161,8 +146,7 @@ class _FakeCreateOrganizationInviteResponse_10 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteOrganizationMemberResponse_11 extends _i1.SmartFake
-    implements _i5.DeleteOrganizationMemberResponse {
+class _FakeDeleteOrganizationMemberResponse_11 extends _i1.SmartFake implements _i5.DeleteOrganizationMemberResponse {
   _FakeDeleteOrganizationMemberResponse_11(
     Object parent,
     Invocation parentInvocation,
@@ -172,8 +156,7 @@ class _FakeDeleteOrganizationMemberResponse_11 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteOrganizationInviteResponse_12 extends _i1.SmartFake
-    implements _i5.DeleteOrganizationInviteResponse {
+class _FakeDeleteOrganizationInviteResponse_12 extends _i1.SmartFake implements _i5.DeleteOrganizationInviteResponse {
   _FakeDeleteOrganizationInviteResponse_12(
     Object parent,
     Invocation parentInvocation,
@@ -183,8 +166,7 @@ class _FakeDeleteOrganizationInviteResponse_12 extends _i1.SmartFake
         );
 }
 
-class _FakeResendOrganizationInviteResponse_13 extends _i1.SmartFake
-    implements _i5.ResendOrganizationInviteResponse {
+class _FakeResendOrganizationInviteResponse_13 extends _i1.SmartFake implements _i5.ResendOrganizationInviteResponse {
   _FakeResendOrganizationInviteResponse_13(
     Object parent,
     Invocation parentInvocation,
@@ -194,8 +176,7 @@ class _FakeResendOrganizationInviteResponse_13 extends _i1.SmartFake
         );
 }
 
-class _FakeCreateLocationResponse_14 extends _i1.SmartFake
-    implements _i5.CreateLocationResponse {
+class _FakeCreateLocationResponse_14 extends _i1.SmartFake implements _i5.CreateLocationResponse {
   _FakeCreateLocationResponse_14(
     Object parent,
     Invocation parentInvocation,
@@ -205,8 +186,7 @@ class _FakeCreateLocationResponse_14 extends _i1.SmartFake
         );
 }
 
-class _FakeGetLocationResponse_15 extends _i1.SmartFake
-    implements _i5.GetLocationResponse {
+class _FakeGetLocationResponse_15 extends _i1.SmartFake implements _i5.GetLocationResponse {
   _FakeGetLocationResponse_15(
     Object parent,
     Invocation parentInvocation,
@@ -216,8 +196,7 @@ class _FakeGetLocationResponse_15 extends _i1.SmartFake
         );
 }
 
-class _FakeUpdateLocationResponse_16 extends _i1.SmartFake
-    implements _i5.UpdateLocationResponse {
+class _FakeUpdateLocationResponse_16 extends _i1.SmartFake implements _i5.UpdateLocationResponse {
   _FakeUpdateLocationResponse_16(
     Object parent,
     Invocation parentInvocation,
@@ -227,8 +206,7 @@ class _FakeUpdateLocationResponse_16 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteLocationResponse_17 extends _i1.SmartFake
-    implements _i5.DeleteLocationResponse {
+class _FakeDeleteLocationResponse_17 extends _i1.SmartFake implements _i5.DeleteLocationResponse {
   _FakeDeleteLocationResponse_17(
     Object parent,
     Invocation parentInvocation,
@@ -238,8 +216,7 @@ class _FakeDeleteLocationResponse_17 extends _i1.SmartFake
         );
 }
 
-class _FakeListLocationsResponse_18 extends _i1.SmartFake
-    implements _i5.ListLocationsResponse {
+class _FakeListLocationsResponse_18 extends _i1.SmartFake implements _i5.ListLocationsResponse {
   _FakeListLocationsResponse_18(
     Object parent,
     Invocation parentInvocation,
@@ -249,8 +226,7 @@ class _FakeListLocationsResponse_18 extends _i1.SmartFake
         );
 }
 
-class _FakeShareLocationResponse_19 extends _i1.SmartFake
-    implements _i5.ShareLocationResponse {
+class _FakeShareLocationResponse_19 extends _i1.SmartFake implements _i5.ShareLocationResponse {
   _FakeShareLocationResponse_19(
     Object parent,
     Invocation parentInvocation,
@@ -260,8 +236,7 @@ class _FakeShareLocationResponse_19 extends _i1.SmartFake
         );
 }
 
-class _FakeUnshareLocationResponse_20 extends _i1.SmartFake
-    implements _i5.UnshareLocationResponse {
+class _FakeUnshareLocationResponse_20 extends _i1.SmartFake implements _i5.UnshareLocationResponse {
   _FakeUnshareLocationResponse_20(
     Object parent,
     Invocation parentInvocation,
@@ -271,8 +246,7 @@ class _FakeUnshareLocationResponse_20 extends _i1.SmartFake
         );
 }
 
-class _FakeLocationAuthResponse_21 extends _i1.SmartFake
-    implements _i5.LocationAuthResponse {
+class _FakeLocationAuthResponse_21 extends _i1.SmartFake implements _i5.LocationAuthResponse {
   _FakeLocationAuthResponse_21(
     Object parent,
     Invocation parentInvocation,
@@ -282,8 +256,7 @@ class _FakeLocationAuthResponse_21 extends _i1.SmartFake
         );
 }
 
-class _FakeCreateLocationSecretResponse_22 extends _i1.SmartFake
-    implements _i5.CreateLocationSecretResponse {
+class _FakeCreateLocationSecretResponse_22 extends _i1.SmartFake implements _i5.CreateLocationSecretResponse {
   _FakeCreateLocationSecretResponse_22(
     Object parent,
     Invocation parentInvocation,
@@ -293,8 +266,7 @@ class _FakeCreateLocationSecretResponse_22 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteLocationSecretResponse_23 extends _i1.SmartFake
-    implements _i5.DeleteLocationSecretResponse {
+class _FakeDeleteLocationSecretResponse_23 extends _i1.SmartFake implements _i5.DeleteLocationSecretResponse {
   _FakeDeleteLocationSecretResponse_23(
     Object parent,
     Invocation parentInvocation,
@@ -304,8 +276,7 @@ class _FakeDeleteLocationSecretResponse_23 extends _i1.SmartFake
         );
 }
 
-class _FakeGetRobotResponse_24 extends _i1.SmartFake
-    implements _i5.GetRobotResponse {
+class _FakeGetRobotResponse_24 extends _i1.SmartFake implements _i5.GetRobotResponse {
   _FakeGetRobotResponse_24(
     Object parent,
     Invocation parentInvocation,
@@ -315,8 +286,7 @@ class _FakeGetRobotResponse_24 extends _i1.SmartFake
         );
 }
 
-class _FakeGetRoverRentalRobotsResponse_25 extends _i1.SmartFake
-    implements _i5.GetRoverRentalRobotsResponse {
+class _FakeGetRoverRentalRobotsResponse_25 extends _i1.SmartFake implements _i5.GetRoverRentalRobotsResponse {
   _FakeGetRoverRentalRobotsResponse_25(
     Object parent,
     Invocation parentInvocation,
@@ -326,8 +296,7 @@ class _FakeGetRoverRentalRobotsResponse_25 extends _i1.SmartFake
         );
 }
 
-class _FakeGetRobotPartsResponse_26 extends _i1.SmartFake
-    implements _i5.GetRobotPartsResponse {
+class _FakeGetRobotPartsResponse_26 extends _i1.SmartFake implements _i5.GetRobotPartsResponse {
   _FakeGetRobotPartsResponse_26(
     Object parent,
     Invocation parentInvocation,
@@ -337,8 +306,7 @@ class _FakeGetRobotPartsResponse_26 extends _i1.SmartFake
         );
 }
 
-class _FakeGetRobotPartResponse_27 extends _i1.SmartFake
-    implements _i5.GetRobotPartResponse {
+class _FakeGetRobotPartResponse_27 extends _i1.SmartFake implements _i5.GetRobotPartResponse {
   _FakeGetRobotPartResponse_27(
     Object parent,
     Invocation parentInvocation,
@@ -348,8 +316,7 @@ class _FakeGetRobotPartResponse_27 extends _i1.SmartFake
         );
 }
 
-class _FakeGetRobotPartLogsResponse_28 extends _i1.SmartFake
-    implements _i5.GetRobotPartLogsResponse {
+class _FakeGetRobotPartLogsResponse_28 extends _i1.SmartFake implements _i5.GetRobotPartLogsResponse {
   _FakeGetRobotPartLogsResponse_28(
     Object parent,
     Invocation parentInvocation,
@@ -359,8 +326,7 @@ class _FakeGetRobotPartLogsResponse_28 extends _i1.SmartFake
         );
 }
 
-class _FakeGetRobotPartHistoryResponse_29 extends _i1.SmartFake
-    implements _i5.GetRobotPartHistoryResponse {
+class _FakeGetRobotPartHistoryResponse_29 extends _i1.SmartFake implements _i5.GetRobotPartHistoryResponse {
   _FakeGetRobotPartHistoryResponse_29(
     Object parent,
     Invocation parentInvocation,
@@ -370,8 +336,7 @@ class _FakeGetRobotPartHistoryResponse_29 extends _i1.SmartFake
         );
 }
 
-class _FakeUpdateRobotPartResponse_30 extends _i1.SmartFake
-    implements _i5.UpdateRobotPartResponse {
+class _FakeUpdateRobotPartResponse_30 extends _i1.SmartFake implements _i5.UpdateRobotPartResponse {
   _FakeUpdateRobotPartResponse_30(
     Object parent,
     Invocation parentInvocation,
@@ -381,8 +346,7 @@ class _FakeUpdateRobotPartResponse_30 extends _i1.SmartFake
         );
 }
 
-class _FakeNewRobotPartResponse_31 extends _i1.SmartFake
-    implements _i5.NewRobotPartResponse {
+class _FakeNewRobotPartResponse_31 extends _i1.SmartFake implements _i5.NewRobotPartResponse {
   _FakeNewRobotPartResponse_31(
     Object parent,
     Invocation parentInvocation,
@@ -392,8 +356,7 @@ class _FakeNewRobotPartResponse_31 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteRobotPartResponse_32 extends _i1.SmartFake
-    implements _i5.DeleteRobotPartResponse {
+class _FakeDeleteRobotPartResponse_32 extends _i1.SmartFake implements _i5.DeleteRobotPartResponse {
   _FakeDeleteRobotPartResponse_32(
     Object parent,
     Invocation parentInvocation,
@@ -403,8 +366,7 @@ class _FakeDeleteRobotPartResponse_32 extends _i1.SmartFake
         );
 }
 
-class _FakeMarkPartAsMainResponse_33 extends _i1.SmartFake
-    implements _i5.MarkPartAsMainResponse {
+class _FakeMarkPartAsMainResponse_33 extends _i1.SmartFake implements _i5.MarkPartAsMainResponse {
   _FakeMarkPartAsMainResponse_33(
     Object parent,
     Invocation parentInvocation,
@@ -414,8 +376,7 @@ class _FakeMarkPartAsMainResponse_33 extends _i1.SmartFake
         );
 }
 
-class _FakeMarkPartForRestartResponse_34 extends _i1.SmartFake
-    implements _i5.MarkPartForRestartResponse {
+class _FakeMarkPartForRestartResponse_34 extends _i1.SmartFake implements _i5.MarkPartForRestartResponse {
   _FakeMarkPartForRestartResponse_34(
     Object parent,
     Invocation parentInvocation,
@@ -425,8 +386,7 @@ class _FakeMarkPartForRestartResponse_34 extends _i1.SmartFake
         );
 }
 
-class _FakeCreateRobotPartSecretResponse_35 extends _i1.SmartFake
-    implements _i5.CreateRobotPartSecretResponse {
+class _FakeCreateRobotPartSecretResponse_35 extends _i1.SmartFake implements _i5.CreateRobotPartSecretResponse {
   _FakeCreateRobotPartSecretResponse_35(
     Object parent,
     Invocation parentInvocation,
@@ -436,8 +396,7 @@ class _FakeCreateRobotPartSecretResponse_35 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteRobotPartSecretResponse_36 extends _i1.SmartFake
-    implements _i5.DeleteRobotPartSecretResponse {
+class _FakeDeleteRobotPartSecretResponse_36 extends _i1.SmartFake implements _i5.DeleteRobotPartSecretResponse {
   _FakeDeleteRobotPartSecretResponse_36(
     Object parent,
     Invocation parentInvocation,
@@ -447,8 +406,7 @@ class _FakeDeleteRobotPartSecretResponse_36 extends _i1.SmartFake
         );
 }
 
-class _FakeListRobotsResponse_37 extends _i1.SmartFake
-    implements _i5.ListRobotsResponse {
+class _FakeListRobotsResponse_37 extends _i1.SmartFake implements _i5.ListRobotsResponse {
   _FakeListRobotsResponse_37(
     Object parent,
     Invocation parentInvocation,
@@ -458,8 +416,7 @@ class _FakeListRobotsResponse_37 extends _i1.SmartFake
         );
 }
 
-class _FakeNewRobotResponse_38 extends _i1.SmartFake
-    implements _i5.NewRobotResponse {
+class _FakeNewRobotResponse_38 extends _i1.SmartFake implements _i5.NewRobotResponse {
   _FakeNewRobotResponse_38(
     Object parent,
     Invocation parentInvocation,
@@ -469,8 +426,7 @@ class _FakeNewRobotResponse_38 extends _i1.SmartFake
         );
 }
 
-class _FakeUpdateRobotResponse_39 extends _i1.SmartFake
-    implements _i5.UpdateRobotResponse {
+class _FakeUpdateRobotResponse_39 extends _i1.SmartFake implements _i5.UpdateRobotResponse {
   _FakeUpdateRobotResponse_39(
     Object parent,
     Invocation parentInvocation,
@@ -480,8 +436,7 @@ class _FakeUpdateRobotResponse_39 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteRobotResponse_40 extends _i1.SmartFake
-    implements _i5.DeleteRobotResponse {
+class _FakeDeleteRobotResponse_40 extends _i1.SmartFake implements _i5.DeleteRobotResponse {
   _FakeDeleteRobotResponse_40(
     Object parent,
     Invocation parentInvocation,
@@ -491,8 +446,7 @@ class _FakeDeleteRobotResponse_40 extends _i1.SmartFake
         );
 }
 
-class _FakeListFragmentsResponse_41 extends _i1.SmartFake
-    implements _i5.ListFragmentsResponse {
+class _FakeListFragmentsResponse_41 extends _i1.SmartFake implements _i5.ListFragmentsResponse {
   _FakeListFragmentsResponse_41(
     Object parent,
     Invocation parentInvocation,
@@ -502,8 +456,7 @@ class _FakeListFragmentsResponse_41 extends _i1.SmartFake
         );
 }
 
-class _FakeGetFragmentResponse_42 extends _i1.SmartFake
-    implements _i5.GetFragmentResponse {
+class _FakeGetFragmentResponse_42 extends _i1.SmartFake implements _i5.GetFragmentResponse {
   _FakeGetFragmentResponse_42(
     Object parent,
     Invocation parentInvocation,
@@ -513,8 +466,7 @@ class _FakeGetFragmentResponse_42 extends _i1.SmartFake
         );
 }
 
-class _FakeCreateFragmentResponse_43 extends _i1.SmartFake
-    implements _i5.CreateFragmentResponse {
+class _FakeCreateFragmentResponse_43 extends _i1.SmartFake implements _i5.CreateFragmentResponse {
   _FakeCreateFragmentResponse_43(
     Object parent,
     Invocation parentInvocation,
@@ -524,8 +476,7 @@ class _FakeCreateFragmentResponse_43 extends _i1.SmartFake
         );
 }
 
-class _FakeUpdateFragmentResponse_44 extends _i1.SmartFake
-    implements _i5.UpdateFragmentResponse {
+class _FakeUpdateFragmentResponse_44 extends _i1.SmartFake implements _i5.UpdateFragmentResponse {
   _FakeUpdateFragmentResponse_44(
     Object parent,
     Invocation parentInvocation,
@@ -535,8 +486,7 @@ class _FakeUpdateFragmentResponse_44 extends _i1.SmartFake
         );
 }
 
-class _FakeDeleteFragmentResponse_45 extends _i1.SmartFake
-    implements _i5.DeleteFragmentResponse {
+class _FakeDeleteFragmentResponse_45 extends _i1.SmartFake implements _i5.DeleteFragmentResponse {
   _FakeDeleteFragmentResponse_45(
     Object parent,
     Invocation parentInvocation,
@@ -546,8 +496,7 @@ class _FakeDeleteFragmentResponse_45 extends _i1.SmartFake
         );
 }
 
-class _FakeAddRoleResponse_46 extends _i1.SmartFake
-    implements _i5.AddRoleResponse {
+class _FakeAddRoleResponse_46 extends _i1.SmartFake implements _i5.AddRoleResponse {
   _FakeAddRoleResponse_46(
     Object parent,
     Invocation parentInvocation,
@@ -557,8 +506,7 @@ class _FakeAddRoleResponse_46 extends _i1.SmartFake
         );
 }
 
-class _FakeRemoveRoleResponse_47 extends _i1.SmartFake
-    implements _i5.RemoveRoleResponse {
+class _FakeRemoveRoleResponse_47 extends _i1.SmartFake implements _i5.RemoveRoleResponse {
   _FakeRemoveRoleResponse_47(
     Object parent,
     Invocation parentInvocation,
@@ -568,8 +516,7 @@ class _FakeRemoveRoleResponse_47 extends _i1.SmartFake
         );
 }
 
-class _FakeListAuthorizationsResponse_48 extends _i1.SmartFake
-    implements _i5.ListAuthorizationsResponse {
+class _FakeListAuthorizationsResponse_48 extends _i1.SmartFake implements _i5.ListAuthorizationsResponse {
   _FakeListAuthorizationsResponse_48(
     Object parent,
     Invocation parentInvocation,
@@ -579,8 +526,7 @@ class _FakeListAuthorizationsResponse_48 extends _i1.SmartFake
         );
 }
 
-class _FakeCheckPermissionsResponse_49 extends _i1.SmartFake
-    implements _i5.CheckPermissionsResponse {
+class _FakeCheckPermissionsResponse_49 extends _i1.SmartFake implements _i5.CheckPermissionsResponse {
   _FakeCheckPermissionsResponse_49(
     Object parent,
     Invocation parentInvocation,
@@ -593,8 +539,7 @@ class _FakeCheckPermissionsResponse_49 extends _i1.SmartFake
 /// A class which mocks [MovementSensorServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMovementSensorServiceClient extends _i1.Mock
-    implements _i6.MovementSensorServiceClient {
+class MockMovementSensorServiceClient extends _i1.Mock implements _i6.MovementSensorServiceClient {
   @override
   _i2.ResponseFuture<_i7.GetLinearVelocityResponse> getLinearVelocity(
     _i7.GetLinearVelocityRequest? request, {
@@ -614,8 +559,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetLinearVelocityResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetLinearVelocityResponse>(
           this,
           Invocation.method(
             #getLinearVelocity,
@@ -643,8 +587,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetAngularVelocityResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetAngularVelocityResponse>(
           this,
           Invocation.method(
             #getAngularVelocity,
@@ -672,8 +615,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetCompassHeadingResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetCompassHeadingResponse>(
           this,
           Invocation.method(
             #getCompassHeading,
@@ -701,8 +643,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetOrientationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetOrientationResponse>(
           this,
           Invocation.method(
             #getOrientation,
@@ -730,8 +671,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetPositionResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetPositionResponse>(
           this,
           Invocation.method(
             #getPosition,
@@ -759,8 +699,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetPropertiesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetPropertiesResponse>(
           this,
           Invocation.method(
             #getProperties,
@@ -788,8 +727,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetAccuracyResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetAccuracyResponse>(
           this,
           Invocation.method(
             #getAccuracy,
@@ -817,8 +755,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i7.GetLinearAccelerationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i7.GetLinearAccelerationResponse>(
           this,
           Invocation.method(
             #getLinearAcceleration,
@@ -874,8 +811,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i8.GetGeometriesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i8.GetGeometriesResponse>(
           this,
           Invocation.method(
             #getGeometries,
@@ -1003,8 +939,7 @@ class MockMovementSensorServiceClient extends _i1.Mock
 /// A class which mocks [RobotServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRobotServiceClient extends _i1.Mock
-    implements _i10.RobotServiceClient {
+class MockRobotServiceClient extends _i1.Mock implements _i10.RobotServiceClient {
   @override
   _i2.ResponseFuture<_i11.GetOperationsResponse> getOperations(
     _i11.GetOperationsRequest? request, {
@@ -1024,8 +959,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.GetOperationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.GetOperationsResponse>(
           this,
           Invocation.method(
             #getOperations,
@@ -1053,8 +987,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.GetSessionsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.GetSessionsResponse>(
           this,
           Invocation.method(
             #getSessions,
@@ -1082,8 +1015,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.ResourceNamesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.ResourceNamesResponse>(
           this,
           Invocation.method(
             #resourceNames,
@@ -1111,8 +1043,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.ResourceRPCSubtypesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.ResourceRPCSubtypesResponse>(
           this,
           Invocation.method(
             #resourceRPCSubtypes,
@@ -1140,8 +1071,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.CancelOperationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.CancelOperationResponse>(
           this,
           Invocation.method(
             #cancelOperation,
@@ -1169,8 +1099,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.BlockForOperationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.BlockForOperationResponse>(
           this,
           Invocation.method(
             #blockForOperation,
@@ -1198,8 +1127,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.DiscoverComponentsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.DiscoverComponentsResponse>(
           this,
           Invocation.method(
             #discoverComponents,
@@ -1227,8 +1155,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.FrameSystemConfigResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.FrameSystemConfigResponse>(
           this,
           Invocation.method(
             #frameSystemConfig,
@@ -1256,8 +1183,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.TransformPoseResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.TransformPoseResponse>(
           this,
           Invocation.method(
             #transformPose,
@@ -1285,8 +1211,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.TransformPCDResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.TransformPCDResponse>(
           this,
           Invocation.method(
             #transformPCD,
@@ -1314,8 +1239,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.GetStatusResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.GetStatusResponse>(
           this,
           Invocation.method(
             #getStatus,
@@ -1343,8 +1267,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseStream_2<_i11.StreamStatusResponse>(
+        returnValueForMissingStub: _FakeResponseStream_2<_i11.StreamStatusResponse>(
           this,
           Invocation.method(
             #streamStatus,
@@ -1400,8 +1323,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.StartSessionResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.StartSessionResponse>(
           this,
           Invocation.method(
             #startSession,
@@ -1429,8 +1351,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i11.SendSessionHeartbeatResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i11.SendSessionHeartbeatResponse>(
           this,
           Invocation.method(
             #sendSessionHeartbeat,
@@ -1558,8 +1479,7 @@ class MockRobotServiceClient extends _i1.Mock
 /// A class which mocks [SensorsServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSensorsServiceClient extends _i1.Mock
-    implements _i12.SensorsServiceClient {
+class MockSensorsServiceClient extends _i1.Mock implements _i12.SensorsServiceClient {
   @override
   _i2.ResponseFuture<_i13.GetSensorsResponse> getSensors(
     _i13.GetSensorsRequest? request, {
@@ -1579,8 +1499,7 @@ class MockSensorsServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i13.GetSensorsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i13.GetSensorsResponse>(
           this,
           Invocation.method(
             #getSensors,
@@ -1608,8 +1527,7 @@ class MockSensorsServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i13.GetReadingsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i13.GetReadingsResponse>(
           this,
           Invocation.method(
             #getReadings,
@@ -1765,8 +1683,7 @@ class MockSensorsServiceClient extends _i1.Mock
 /// A class which mocks [CameraServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockCameraServiceClient extends _i1.Mock
-    implements _i14.CameraServiceClient {
+class MockCameraServiceClient extends _i1.Mock implements _i14.CameraServiceClient {
   @override
   _i2.ResponseFuture<_i15.GetImageResponse> getImage(
     _i15.GetImageRequest? request, {
@@ -1842,8 +1759,7 @@ class MockCameraServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i15.GetPointCloudResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i15.GetPointCloudResponse>(
           this,
           Invocation.method(
             #getPointCloud,
@@ -1871,8 +1787,7 @@ class MockCameraServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i15.GetPropertiesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i15.GetPropertiesResponse>(
           this,
           Invocation.method(
             #getProperties,
@@ -1928,8 +1843,7 @@ class MockCameraServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i8.GetGeometriesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i8.GetGeometriesResponse>(
           this,
           Invocation.method(
             #getGeometries,
@@ -2057,8 +1971,7 @@ class MockCameraServiceClient extends _i1.Mock
 /// A class which mocks [StreamServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockStreamServiceClient extends _i1.Mock
-    implements _i17.StreamServiceClient {
+class MockStreamServiceClient extends _i1.Mock implements _i17.StreamServiceClient {
   @override
   _i2.ResponseFuture<_i18.ListStreamsResponse> listStreams(
     _i18.ListStreamsRequest? request, {
@@ -2078,8 +1991,7 @@ class MockStreamServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i18.ListStreamsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i18.ListStreamsResponse>(
           this,
           Invocation.method(
             #listStreams,
@@ -2107,8 +2019,7 @@ class MockStreamServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i18.AddStreamResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i18.AddStreamResponse>(
           this,
           Invocation.method(
             #addStream,
@@ -2136,8 +2047,7 @@ class MockStreamServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i18.RemoveStreamResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i18.RemoveStreamResponse>(
           this,
           Invocation.method(
             #removeStream,
@@ -2267,8 +2177,7 @@ class MockStreamServiceClient extends _i1.Mock
 /// See the documentation for Mockito's code generation for more information.
 class MockClientChannelBase extends _i1.Mock implements _i19.ClientChannelBase {
   @override
-  _i9.Stream<_i4.ConnectionState> get onConnectionStateChanged =>
-      (super.noSuchMethod(
+  _i9.Stream<_i4.ConnectionState> get onConnectionStateChanged => (super.noSuchMethod(
         Invocation.getter(#onConnectionStateChanged),
         returnValue: _i9.Stream<_i4.ConnectionState>.empty(),
         returnValueForMissingStub: _i9.Stream<_i4.ConnectionState>.empty(),
@@ -2318,16 +2227,14 @@ class MockClientChannelBase extends _i1.Mock implements _i19.ClientChannelBase {
           #getConnection,
           [],
         ),
-        returnValue:
-            _i9.Future<_i4.ClientConnection>.value(_FakeClientConnection_3(
+        returnValue: _i9.Future<_i4.ClientConnection>.value(_FakeClientConnection_3(
           this,
           Invocation.method(
             #getConnection,
             [],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i4.ClientConnection>.value(_FakeClientConnection_3(
+        returnValueForMissingStub: _i9.Future<_i4.ClientConnection>.value(_FakeClientConnection_3(
           this,
           Invocation.method(
             #getConnection,
@@ -2398,8 +2305,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.CreateOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CreateOrganizationResponse>(
           this,
           Invocation.method(
             #createOrganization,
@@ -2427,8 +2333,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.ListOrganizationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ListOrganizationsResponse>(
           this,
           Invocation.method(
             #listOrganizations,
@@ -2456,8 +2361,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetOrganizationResponse>(
           this,
           Invocation.method(
             #getOrganization,
@@ -2485,8 +2389,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.UpdateOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.UpdateOrganizationResponse>(
           this,
           Invocation.method(
             #updateOrganization,
@@ -2514,8 +2417,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteOrganizationResponse>(
           this,
           Invocation.method(
             #deleteOrganization,
@@ -2525,160 +2427,145 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
         ),
       ) as _i2.ResponseFuture<_i5.DeleteOrganizationResponse>);
   @override
-  _i2.ResponseFuture<_i5.ListOrganizationMembersResponse>
-      listOrganizationMembers(
+  _i2.ResponseFuture<_i5.ListOrganizationMembersResponse> listOrganizationMembers(
     _i5.ListOrganizationMembersRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #listOrganizationMembers,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i5.ListOrganizationMembersResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationMembers,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_0<_i5.ListOrganizationMembersResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationMembers,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i5.ListOrganizationMembersResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #listOrganizationMembers,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i5.ListOrganizationMembersResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationMembers,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ListOrganizationMembersResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationMembers,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i5.ListOrganizationMembersResponse>);
   @override
-  _i2.ResponseFuture<_i5.CreateOrganizationInviteResponse>
-      createOrganizationInvite(
+  _i2.ResponseFuture<_i5.CreateOrganizationInviteResponse> createOrganizationInvite(
     _i5.CreateOrganizationInviteRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #createOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i5.CreateOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #createOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_0<_i5.CreateOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #createOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i5.CreateOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #createOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i5.CreateOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #createOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CreateOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #createOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i5.CreateOrganizationInviteResponse>);
   @override
-  _i2.ResponseFuture<_i5.DeleteOrganizationMemberResponse>
-      deleteOrganizationMember(
+  _i2.ResponseFuture<_i5.DeleteOrganizationMemberResponse> deleteOrganizationMember(
     _i5.DeleteOrganizationMemberRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteOrganizationMember,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i5.DeleteOrganizationMemberResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationMember,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_0<_i5.DeleteOrganizationMemberResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationMember,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i5.DeleteOrganizationMemberResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteOrganizationMember,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i5.DeleteOrganizationMemberResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationMember,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteOrganizationMemberResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationMember,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i5.DeleteOrganizationMemberResponse>);
   @override
-  _i2.ResponseFuture<_i5.DeleteOrganizationInviteResponse>
-      deleteOrganizationInvite(
+  _i2.ResponseFuture<_i5.DeleteOrganizationInviteResponse> deleteOrganizationInvite(
     _i5.DeleteOrganizationInviteRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i5.DeleteOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_0<_i5.DeleteOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i5.DeleteOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i5.DeleteOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i5.DeleteOrganizationInviteResponse>);
   @override
-  _i2.ResponseFuture<_i5.ResendOrganizationInviteResponse>
-      resendOrganizationInvite(
+  _i2.ResponseFuture<_i5.ResendOrganizationInviteResponse> resendOrganizationInvite(
     _i5.ResendOrganizationInviteRequest? request, {
     _i2.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #resendOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_0<_i5.ResendOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #resendOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_0<_i5.ResendOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #resendOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i2.ResponseFuture<_i5.ResendOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #resendOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_0<_i5.ResendOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #resendOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ResendOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #resendOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i2.ResponseFuture<_i5.ResendOrganizationInviteResponse>);
   @override
   _i2.ResponseFuture<_i5.CreateLocationResponse> createLocation(
     _i5.CreateLocationRequest? request, {
@@ -2698,8 +2585,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.CreateLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CreateLocationResponse>(
           this,
           Invocation.method(
             #createLocation,
@@ -2727,8 +2613,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetLocationResponse>(
           this,
           Invocation.method(
             #getLocation,
@@ -2756,8 +2641,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.UpdateLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.UpdateLocationResponse>(
           this,
           Invocation.method(
             #updateLocation,
@@ -2785,8 +2669,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteLocationResponse>(
           this,
           Invocation.method(
             #deleteLocation,
@@ -2814,8 +2697,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.ListLocationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ListLocationsResponse>(
           this,
           Invocation.method(
             #listLocations,
@@ -2843,8 +2725,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.ShareLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ShareLocationResponse>(
           this,
           Invocation.method(
             #shareLocation,
@@ -2872,8 +2753,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.UnshareLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.UnshareLocationResponse>(
           this,
           Invocation.method(
             #unshareLocation,
@@ -2901,8 +2781,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.LocationAuthResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.LocationAuthResponse>(
           this,
           Invocation.method(
             #locationAuth,
@@ -2930,8 +2809,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.CreateLocationSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CreateLocationSecretResponse>(
           this,
           Invocation.method(
             #createLocationSecret,
@@ -2959,8 +2837,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteLocationSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteLocationSecretResponse>(
           this,
           Invocation.method(
             #deleteLocationSecret,
@@ -3016,8 +2893,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetRoverRentalRobotsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetRoverRentalRobotsResponse>(
           this,
           Invocation.method(
             #getRoverRentalRobots,
@@ -3045,8 +2921,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetRobotPartsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetRobotPartsResponse>(
           this,
           Invocation.method(
             #getRobotParts,
@@ -3074,8 +2949,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetRobotPartResponse>(
           this,
           Invocation.method(
             #getRobotPart,
@@ -3103,8 +2977,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetRobotPartLogsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetRobotPartLogsResponse>(
           this,
           Invocation.method(
             #getRobotPartLogs,
@@ -3132,8 +3005,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseStream_2<_i5.TailRobotPartLogsResponse>(
+        returnValueForMissingStub: _FakeResponseStream_2<_i5.TailRobotPartLogsResponse>(
           this,
           Invocation.method(
             #tailRobotPartLogs,
@@ -3161,8 +3033,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetRobotPartHistoryResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetRobotPartHistoryResponse>(
           this,
           Invocation.method(
             #getRobotPartHistory,
@@ -3190,8 +3061,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.UpdateRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.UpdateRobotPartResponse>(
           this,
           Invocation.method(
             #updateRobotPart,
@@ -3219,8 +3089,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.NewRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.NewRobotPartResponse>(
           this,
           Invocation.method(
             #newRobotPart,
@@ -3248,8 +3117,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteRobotPartResponse>(
           this,
           Invocation.method(
             #deleteRobotPart,
@@ -3277,8 +3145,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.MarkPartAsMainResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.MarkPartAsMainResponse>(
           this,
           Invocation.method(
             #markPartAsMain,
@@ -3306,8 +3173,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.MarkPartForRestartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.MarkPartForRestartResponse>(
           this,
           Invocation.method(
             #markPartForRestart,
@@ -3335,8 +3201,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.CreateRobotPartSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CreateRobotPartSecretResponse>(
           this,
           Invocation.method(
             #createRobotPartSecret,
@@ -3364,8 +3229,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteRobotPartSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteRobotPartSecretResponse>(
           this,
           Invocation.method(
             #deleteRobotPartSecret,
@@ -3393,8 +3257,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.ListRobotsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ListRobotsResponse>(
           this,
           Invocation.method(
             #listRobots,
@@ -3450,8 +3313,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.UpdateRobotResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.UpdateRobotResponse>(
           this,
           Invocation.method(
             #updateRobot,
@@ -3479,8 +3341,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteRobotResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteRobotResponse>(
           this,
           Invocation.method(
             #deleteRobot,
@@ -3508,8 +3369,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.ListFragmentsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ListFragmentsResponse>(
           this,
           Invocation.method(
             #listFragments,
@@ -3537,8 +3397,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.GetFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.GetFragmentResponse>(
           this,
           Invocation.method(
             #getFragment,
@@ -3566,8 +3425,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.CreateFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CreateFragmentResponse>(
           this,
           Invocation.method(
             #createFragment,
@@ -3595,8 +3453,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.UpdateFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.UpdateFragmentResponse>(
           this,
           Invocation.method(
             #updateFragment,
@@ -3624,8 +3481,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.DeleteFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.DeleteFragmentResponse>(
           this,
           Invocation.method(
             #deleteFragment,
@@ -3681,8 +3537,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.RemoveRoleResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.RemoveRoleResponse>(
           this,
           Invocation.method(
             #removeRole,
@@ -3710,8 +3565,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.ListAuthorizationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.ListAuthorizationsResponse>(
           this,
           Invocation.method(
             #listAuthorizations,
@@ -3739,8 +3593,7 @@ class MockAppServiceClient extends _i1.Mock implements _i20.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_0<_i5.CheckPermissionsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_0<_i5.CheckPermissionsResponse>(
           this,
           Invocation.method(
             #checkPermissions,
@@ -3888,8 +3741,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateOrganizationResponse>.value(
-            _FakeCreateOrganizationResponse_4(
+        returnValue: _i9.Future<_i5.CreateOrganizationResponse>.value(_FakeCreateOrganizationResponse_4(
           this,
           Invocation.method(
             #createOrganization_Pre,
@@ -3899,9 +3751,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateOrganizationResponse>.value(
-                _FakeCreateOrganizationResponse_4(
+        returnValueForMissingStub: _i9.Future<_i5.CreateOrganizationResponse>.value(_FakeCreateOrganizationResponse_4(
           this,
           Invocation.method(
             #createOrganization_Pre,
@@ -3925,8 +3775,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListOrganizationsResponse>.value(
-            _FakeListOrganizationsResponse_5(
+        returnValue: _i9.Future<_i5.ListOrganizationsResponse>.value(_FakeListOrganizationsResponse_5(
           this,
           Invocation.method(
             #listOrganizations_Pre,
@@ -3936,9 +3785,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListOrganizationsResponse>.value(
-                _FakeListOrganizationsResponse_5(
+        returnValueForMissingStub: _i9.Future<_i5.ListOrganizationsResponse>.value(_FakeListOrganizationsResponse_5(
           this,
           Invocation.method(
             #listOrganizations_Pre,
@@ -3962,8 +3809,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetOrganizationResponse>.value(
-            _FakeGetOrganizationResponse_6(
+        returnValue: _i9.Future<_i5.GetOrganizationResponse>.value(_FakeGetOrganizationResponse_6(
           this,
           Invocation.method(
             #getOrganization_Pre,
@@ -3973,9 +3819,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetOrganizationResponse>.value(
-                _FakeGetOrganizationResponse_6(
+        returnValueForMissingStub: _i9.Future<_i5.GetOrganizationResponse>.value(_FakeGetOrganizationResponse_6(
           this,
           Invocation.method(
             #getOrganization_Pre,
@@ -3999,8 +3843,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateOrganizationResponse>.value(
-            _FakeUpdateOrganizationResponse_7(
+        returnValue: _i9.Future<_i5.UpdateOrganizationResponse>.value(_FakeUpdateOrganizationResponse_7(
           this,
           Invocation.method(
             #updateOrganization_Pre,
@@ -4010,9 +3853,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.UpdateOrganizationResponse>.value(
-                _FakeUpdateOrganizationResponse_7(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateOrganizationResponse>.value(_FakeUpdateOrganizationResponse_7(
           this,
           Invocation.method(
             #updateOrganization_Pre,
@@ -4036,8 +3877,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteOrganizationResponse>.value(
-            _FakeDeleteOrganizationResponse_8(
+        returnValue: _i9.Future<_i5.DeleteOrganizationResponse>.value(_FakeDeleteOrganizationResponse_8(
           this,
           Invocation.method(
             #deleteOrganization_Pre,
@@ -4047,9 +3887,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteOrganizationResponse>.value(
-                _FakeDeleteOrganizationResponse_8(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteOrganizationResponse>.value(_FakeDeleteOrganizationResponse_8(
           this,
           Invocation.method(
             #deleteOrganization_Pre,
@@ -4073,8 +3911,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListOrganizationMembersResponse>.value(
-            _FakeListOrganizationMembersResponse_9(
+        returnValue: _i9.Future<_i5.ListOrganizationMembersResponse>.value(_FakeListOrganizationMembersResponse_9(
           this,
           Invocation.method(
             #listOrganizationMembers_Pre,
@@ -4084,9 +3921,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListOrganizationMembersResponse>.value(
-                _FakeListOrganizationMembersResponse_9(
+        returnValueForMissingStub: _i9.Future<_i5.ListOrganizationMembersResponse>.value(_FakeListOrganizationMembersResponse_9(
           this,
           Invocation.method(
             #listOrganizationMembers_Pre,
@@ -4110,8 +3945,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateOrganizationInviteResponse>.value(
-            _FakeCreateOrganizationInviteResponse_10(
+        returnValue: _i9.Future<_i5.CreateOrganizationInviteResponse>.value(_FakeCreateOrganizationInviteResponse_10(
           this,
           Invocation.method(
             #createOrganizationInvite_Pre,
@@ -4121,9 +3955,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateOrganizationInviteResponse>.value(
-                _FakeCreateOrganizationInviteResponse_10(
+        returnValueForMissingStub: _i9.Future<_i5.CreateOrganizationInviteResponse>.value(_FakeCreateOrganizationInviteResponse_10(
           this,
           Invocation.method(
             #createOrganizationInvite_Pre,
@@ -4147,8 +3979,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(
-            _FakeDeleteOrganizationMemberResponse_11(
+        returnValue: _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(_FakeDeleteOrganizationMemberResponse_11(
           this,
           Invocation.method(
             #deleteOrganizationMember_Pre,
@@ -4158,9 +3989,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(
-                _FakeDeleteOrganizationMemberResponse_11(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(_FakeDeleteOrganizationMemberResponse_11(
           this,
           Invocation.method(
             #deleteOrganizationMember_Pre,
@@ -4184,8 +4013,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(
-            _FakeDeleteOrganizationInviteResponse_12(
+        returnValue: _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(_FakeDeleteOrganizationInviteResponse_12(
           this,
           Invocation.method(
             #deleteOrganizationInvite_Pre,
@@ -4195,9 +4023,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(
-                _FakeDeleteOrganizationInviteResponse_12(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(_FakeDeleteOrganizationInviteResponse_12(
           this,
           Invocation.method(
             #deleteOrganizationInvite_Pre,
@@ -4221,8 +4047,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ResendOrganizationInviteResponse>.value(
-            _FakeResendOrganizationInviteResponse_13(
+        returnValue: _i9.Future<_i5.ResendOrganizationInviteResponse>.value(_FakeResendOrganizationInviteResponse_13(
           this,
           Invocation.method(
             #resendOrganizationInvite_Pre,
@@ -4232,9 +4057,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ResendOrganizationInviteResponse>.value(
-                _FakeResendOrganizationInviteResponse_13(
+        returnValueForMissingStub: _i9.Future<_i5.ResendOrganizationInviteResponse>.value(_FakeResendOrganizationInviteResponse_13(
           this,
           Invocation.method(
             #resendOrganizationInvite_Pre,
@@ -4258,8 +4081,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateLocationResponse>.value(
-            _FakeCreateLocationResponse_14(
+        returnValue: _i9.Future<_i5.CreateLocationResponse>.value(_FakeCreateLocationResponse_14(
           this,
           Invocation.method(
             #createLocation_Pre,
@@ -4269,8 +4091,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.CreateLocationResponse>.value(
-            _FakeCreateLocationResponse_14(
+        returnValueForMissingStub: _i9.Future<_i5.CreateLocationResponse>.value(_FakeCreateLocationResponse_14(
           this,
           Invocation.method(
             #createLocation_Pre,
@@ -4294,8 +4115,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetLocationResponse>.value(
-            _FakeGetLocationResponse_15(
+        returnValue: _i9.Future<_i5.GetLocationResponse>.value(_FakeGetLocationResponse_15(
           this,
           Invocation.method(
             #getLocation_Pre,
@@ -4305,8 +4125,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetLocationResponse>.value(
-            _FakeGetLocationResponse_15(
+        returnValueForMissingStub: _i9.Future<_i5.GetLocationResponse>.value(_FakeGetLocationResponse_15(
           this,
           Invocation.method(
             #getLocation_Pre,
@@ -4330,8 +4149,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateLocationResponse>.value(
-            _FakeUpdateLocationResponse_16(
+        returnValue: _i9.Future<_i5.UpdateLocationResponse>.value(_FakeUpdateLocationResponse_16(
           this,
           Invocation.method(
             #updateLocation_Pre,
@@ -4341,8 +4159,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.UpdateLocationResponse>.value(
-            _FakeUpdateLocationResponse_16(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateLocationResponse>.value(_FakeUpdateLocationResponse_16(
           this,
           Invocation.method(
             #updateLocation_Pre,
@@ -4366,8 +4183,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteLocationResponse>.value(
-            _FakeDeleteLocationResponse_17(
+        returnValue: _i9.Future<_i5.DeleteLocationResponse>.value(_FakeDeleteLocationResponse_17(
           this,
           Invocation.method(
             #deleteLocation_Pre,
@@ -4377,8 +4193,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.DeleteLocationResponse>.value(
-            _FakeDeleteLocationResponse_17(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteLocationResponse>.value(_FakeDeleteLocationResponse_17(
           this,
           Invocation.method(
             #deleteLocation_Pre,
@@ -4402,8 +4217,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListLocationsResponse>.value(
-            _FakeListLocationsResponse_18(
+        returnValue: _i9.Future<_i5.ListLocationsResponse>.value(_FakeListLocationsResponse_18(
           this,
           Invocation.method(
             #listLocations_Pre,
@@ -4413,8 +4227,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.ListLocationsResponse>.value(
-            _FakeListLocationsResponse_18(
+        returnValueForMissingStub: _i9.Future<_i5.ListLocationsResponse>.value(_FakeListLocationsResponse_18(
           this,
           Invocation.method(
             #listLocations_Pre,
@@ -4438,8 +4251,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ShareLocationResponse>.value(
-            _FakeShareLocationResponse_19(
+        returnValue: _i9.Future<_i5.ShareLocationResponse>.value(_FakeShareLocationResponse_19(
           this,
           Invocation.method(
             #shareLocation_Pre,
@@ -4449,8 +4261,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.ShareLocationResponse>.value(
-            _FakeShareLocationResponse_19(
+        returnValueForMissingStub: _i9.Future<_i5.ShareLocationResponse>.value(_FakeShareLocationResponse_19(
           this,
           Invocation.method(
             #shareLocation_Pre,
@@ -4474,8 +4285,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UnshareLocationResponse>.value(
-            _FakeUnshareLocationResponse_20(
+        returnValue: _i9.Future<_i5.UnshareLocationResponse>.value(_FakeUnshareLocationResponse_20(
           this,
           Invocation.method(
             #unshareLocation_Pre,
@@ -4485,9 +4295,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.UnshareLocationResponse>.value(
-                _FakeUnshareLocationResponse_20(
+        returnValueForMissingStub: _i9.Future<_i5.UnshareLocationResponse>.value(_FakeUnshareLocationResponse_20(
           this,
           Invocation.method(
             #unshareLocation_Pre,
@@ -4511,8 +4319,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.LocationAuthResponse>.value(
-            _FakeLocationAuthResponse_21(
+        returnValue: _i9.Future<_i5.LocationAuthResponse>.value(_FakeLocationAuthResponse_21(
           this,
           Invocation.method(
             #locationAuth_Pre,
@@ -4522,8 +4329,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.LocationAuthResponse>.value(
-            _FakeLocationAuthResponse_21(
+        returnValueForMissingStub: _i9.Future<_i5.LocationAuthResponse>.value(_FakeLocationAuthResponse_21(
           this,
           Invocation.method(
             #locationAuth_Pre,
@@ -4547,8 +4353,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateLocationSecretResponse>.value(
-            _FakeCreateLocationSecretResponse_22(
+        returnValue: _i9.Future<_i5.CreateLocationSecretResponse>.value(_FakeCreateLocationSecretResponse_22(
           this,
           Invocation.method(
             #createLocationSecret_Pre,
@@ -4558,9 +4363,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateLocationSecretResponse>.value(
-                _FakeCreateLocationSecretResponse_22(
+        returnValueForMissingStub: _i9.Future<_i5.CreateLocationSecretResponse>.value(_FakeCreateLocationSecretResponse_22(
           this,
           Invocation.method(
             #createLocationSecret_Pre,
@@ -4584,8 +4387,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteLocationSecretResponse>.value(
-            _FakeDeleteLocationSecretResponse_23(
+        returnValue: _i9.Future<_i5.DeleteLocationSecretResponse>.value(_FakeDeleteLocationSecretResponse_23(
           this,
           Invocation.method(
             #deleteLocationSecret_Pre,
@@ -4595,9 +4397,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteLocationSecretResponse>.value(
-                _FakeDeleteLocationSecretResponse_23(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteLocationSecretResponse>.value(_FakeDeleteLocationSecretResponse_23(
           this,
           Invocation.method(
             #deleteLocationSecret_Pre,
@@ -4621,8 +4421,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
+        returnValue: _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
           this,
           Invocation.method(
             #getRobot_Pre,
@@ -4632,8 +4431,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
           this,
           Invocation.method(
             #getRobot_Pre,
@@ -4657,8 +4455,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(
-            _FakeGetRoverRentalRobotsResponse_25(
+        returnValue: _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(_FakeGetRoverRentalRobotsResponse_25(
           this,
           Invocation.method(
             #getRoverRentalRobots_Pre,
@@ -4668,9 +4465,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(
-                _FakeGetRoverRentalRobotsResponse_25(
+        returnValueForMissingStub: _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(_FakeGetRoverRentalRobotsResponse_25(
           this,
           Invocation.method(
             #getRoverRentalRobots_Pre,
@@ -4694,8 +4489,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartsResponse>.value(
-            _FakeGetRobotPartsResponse_26(
+        returnValue: _i9.Future<_i5.GetRobotPartsResponse>.value(_FakeGetRobotPartsResponse_26(
           this,
           Invocation.method(
             #getRobotParts_Pre,
@@ -4705,8 +4499,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartsResponse>.value(
-            _FakeGetRobotPartsResponse_26(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartsResponse>.value(_FakeGetRobotPartsResponse_26(
           this,
           Invocation.method(
             #getRobotParts_Pre,
@@ -4730,8 +4523,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartResponse>.value(
-            _FakeGetRobotPartResponse_27(
+        returnValue: _i9.Future<_i5.GetRobotPartResponse>.value(_FakeGetRobotPartResponse_27(
           this,
           Invocation.method(
             #getRobotPart_Pre,
@@ -4741,8 +4533,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartResponse>.value(
-            _FakeGetRobotPartResponse_27(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartResponse>.value(_FakeGetRobotPartResponse_27(
           this,
           Invocation.method(
             #getRobotPart_Pre,
@@ -4766,8 +4557,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartLogsResponse>.value(
-            _FakeGetRobotPartLogsResponse_28(
+        returnValue: _i9.Future<_i5.GetRobotPartLogsResponse>.value(_FakeGetRobotPartLogsResponse_28(
           this,
           Invocation.method(
             #getRobotPartLogs_Pre,
@@ -4777,9 +4567,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRobotPartLogsResponse>.value(
-                _FakeGetRobotPartLogsResponse_28(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartLogsResponse>.value(_FakeGetRobotPartLogsResponse_28(
           this,
           Invocation.method(
             #getRobotPartLogs_Pre,
@@ -4804,8 +4592,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
           ],
         ),
         returnValue: _i9.Stream<_i5.TailRobotPartLogsResponse>.empty(),
-        returnValueForMissingStub:
-            _i9.Stream<_i5.TailRobotPartLogsResponse>.empty(),
+        returnValueForMissingStub: _i9.Stream<_i5.TailRobotPartLogsResponse>.empty(),
       ) as _i9.Stream<_i5.TailRobotPartLogsResponse>);
   @override
   _i9.Future<_i5.GetRobotPartHistoryResponse> getRobotPartHistory_Pre(
@@ -4820,8 +4607,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartHistoryResponse>.value(
-            _FakeGetRobotPartHistoryResponse_29(
+        returnValue: _i9.Future<_i5.GetRobotPartHistoryResponse>.value(_FakeGetRobotPartHistoryResponse_29(
           this,
           Invocation.method(
             #getRobotPartHistory_Pre,
@@ -4831,9 +4617,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRobotPartHistoryResponse>.value(
-                _FakeGetRobotPartHistoryResponse_29(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartHistoryResponse>.value(_FakeGetRobotPartHistoryResponse_29(
           this,
           Invocation.method(
             #getRobotPartHistory_Pre,
@@ -4857,8 +4641,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateRobotPartResponse>.value(
-            _FakeUpdateRobotPartResponse_30(
+        returnValue: _i9.Future<_i5.UpdateRobotPartResponse>.value(_FakeUpdateRobotPartResponse_30(
           this,
           Invocation.method(
             #updateRobotPart_Pre,
@@ -4868,9 +4651,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.UpdateRobotPartResponse>.value(
-                _FakeUpdateRobotPartResponse_30(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateRobotPartResponse>.value(_FakeUpdateRobotPartResponse_30(
           this,
           Invocation.method(
             #updateRobotPart_Pre,
@@ -4894,8 +4675,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.NewRobotPartResponse>.value(
-            _FakeNewRobotPartResponse_31(
+        returnValue: _i9.Future<_i5.NewRobotPartResponse>.value(_FakeNewRobotPartResponse_31(
           this,
           Invocation.method(
             #newRobotPart_Pre,
@@ -4905,8 +4685,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.NewRobotPartResponse>.value(
-            _FakeNewRobotPartResponse_31(
+        returnValueForMissingStub: _i9.Future<_i5.NewRobotPartResponse>.value(_FakeNewRobotPartResponse_31(
           this,
           Invocation.method(
             #newRobotPart_Pre,
@@ -4930,8 +4709,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteRobotPartResponse>.value(
-            _FakeDeleteRobotPartResponse_32(
+        returnValue: _i9.Future<_i5.DeleteRobotPartResponse>.value(_FakeDeleteRobotPartResponse_32(
           this,
           Invocation.method(
             #deleteRobotPart_Pre,
@@ -4941,9 +4719,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteRobotPartResponse>.value(
-                _FakeDeleteRobotPartResponse_32(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotPartResponse>.value(_FakeDeleteRobotPartResponse_32(
           this,
           Invocation.method(
             #deleteRobotPart_Pre,
@@ -4967,8 +4743,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.MarkPartAsMainResponse>.value(
-            _FakeMarkPartAsMainResponse_33(
+        returnValue: _i9.Future<_i5.MarkPartAsMainResponse>.value(_FakeMarkPartAsMainResponse_33(
           this,
           Invocation.method(
             #markPartAsMain_Pre,
@@ -4978,8 +4753,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.MarkPartAsMainResponse>.value(
-            _FakeMarkPartAsMainResponse_33(
+        returnValueForMissingStub: _i9.Future<_i5.MarkPartAsMainResponse>.value(_FakeMarkPartAsMainResponse_33(
           this,
           Invocation.method(
             #markPartAsMain_Pre,
@@ -5003,8 +4777,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.MarkPartForRestartResponse>.value(
-            _FakeMarkPartForRestartResponse_34(
+        returnValue: _i9.Future<_i5.MarkPartForRestartResponse>.value(_FakeMarkPartForRestartResponse_34(
           this,
           Invocation.method(
             #markPartForRestart_Pre,
@@ -5014,9 +4787,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.MarkPartForRestartResponse>.value(
-                _FakeMarkPartForRestartResponse_34(
+        returnValueForMissingStub: _i9.Future<_i5.MarkPartForRestartResponse>.value(_FakeMarkPartForRestartResponse_34(
           this,
           Invocation.method(
             #markPartForRestart_Pre,
@@ -5040,8 +4811,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateRobotPartSecretResponse>.value(
-            _FakeCreateRobotPartSecretResponse_35(
+        returnValue: _i9.Future<_i5.CreateRobotPartSecretResponse>.value(_FakeCreateRobotPartSecretResponse_35(
           this,
           Invocation.method(
             #createRobotPartSecret_Pre,
@@ -5051,9 +4821,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateRobotPartSecretResponse>.value(
-                _FakeCreateRobotPartSecretResponse_35(
+        returnValueForMissingStub: _i9.Future<_i5.CreateRobotPartSecretResponse>.value(_FakeCreateRobotPartSecretResponse_35(
           this,
           Invocation.method(
             #createRobotPartSecret_Pre,
@@ -5077,8 +4845,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(
-            _FakeDeleteRobotPartSecretResponse_36(
+        returnValue: _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(_FakeDeleteRobotPartSecretResponse_36(
           this,
           Invocation.method(
             #deleteRobotPartSecret_Pre,
@@ -5088,9 +4855,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(
-                _FakeDeleteRobotPartSecretResponse_36(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(_FakeDeleteRobotPartSecretResponse_36(
           this,
           Invocation.method(
             #deleteRobotPartSecret_Pre,
@@ -5114,8 +4879,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
+        returnValue: _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
           this,
           Invocation.method(
             #listRobots_Pre,
@@ -5125,8 +4889,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
+        returnValueForMissingStub: _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
           this,
           Invocation.method(
             #listRobots_Pre,
@@ -5150,8 +4913,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
+        returnValue: _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
           this,
           Invocation.method(
             #newRobot_Pre,
@@ -5161,8 +4923,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
+        returnValueForMissingStub: _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
           this,
           Invocation.method(
             #newRobot_Pre,
@@ -5186,8 +4947,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateRobotResponse>.value(
-            _FakeUpdateRobotResponse_39(
+        returnValue: _i9.Future<_i5.UpdateRobotResponse>.value(_FakeUpdateRobotResponse_39(
           this,
           Invocation.method(
             #updateRobot_Pre,
@@ -5197,8 +4957,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.UpdateRobotResponse>.value(
-            _FakeUpdateRobotResponse_39(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateRobotResponse>.value(_FakeUpdateRobotResponse_39(
           this,
           Invocation.method(
             #updateRobot_Pre,
@@ -5222,8 +4981,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteRobotResponse>.value(
-            _FakeDeleteRobotResponse_40(
+        returnValue: _i9.Future<_i5.DeleteRobotResponse>.value(_FakeDeleteRobotResponse_40(
           this,
           Invocation.method(
             #deleteRobot_Pre,
@@ -5233,8 +4991,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotResponse>.value(
-            _FakeDeleteRobotResponse_40(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotResponse>.value(_FakeDeleteRobotResponse_40(
           this,
           Invocation.method(
             #deleteRobot_Pre,
@@ -5258,8 +5015,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListFragmentsResponse>.value(
-            _FakeListFragmentsResponse_41(
+        returnValue: _i9.Future<_i5.ListFragmentsResponse>.value(_FakeListFragmentsResponse_41(
           this,
           Invocation.method(
             #listFragments_Pre,
@@ -5269,8 +5025,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.ListFragmentsResponse>.value(
-            _FakeListFragmentsResponse_41(
+        returnValueForMissingStub: _i9.Future<_i5.ListFragmentsResponse>.value(_FakeListFragmentsResponse_41(
           this,
           Invocation.method(
             #listFragments_Pre,
@@ -5294,8 +5049,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetFragmentResponse>.value(
-            _FakeGetFragmentResponse_42(
+        returnValue: _i9.Future<_i5.GetFragmentResponse>.value(_FakeGetFragmentResponse_42(
           this,
           Invocation.method(
             #getFragment_Pre,
@@ -5305,8 +5059,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetFragmentResponse>.value(
-            _FakeGetFragmentResponse_42(
+        returnValueForMissingStub: _i9.Future<_i5.GetFragmentResponse>.value(_FakeGetFragmentResponse_42(
           this,
           Invocation.method(
             #getFragment_Pre,
@@ -5330,8 +5083,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateFragmentResponse>.value(
-            _FakeCreateFragmentResponse_43(
+        returnValue: _i9.Future<_i5.CreateFragmentResponse>.value(_FakeCreateFragmentResponse_43(
           this,
           Invocation.method(
             #createFragment_Pre,
@@ -5341,8 +5093,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.CreateFragmentResponse>.value(
-            _FakeCreateFragmentResponse_43(
+        returnValueForMissingStub: _i9.Future<_i5.CreateFragmentResponse>.value(_FakeCreateFragmentResponse_43(
           this,
           Invocation.method(
             #createFragment_Pre,
@@ -5366,8 +5117,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateFragmentResponse>.value(
-            _FakeUpdateFragmentResponse_44(
+        returnValue: _i9.Future<_i5.UpdateFragmentResponse>.value(_FakeUpdateFragmentResponse_44(
           this,
           Invocation.method(
             #updateFragment_Pre,
@@ -5377,8 +5127,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.UpdateFragmentResponse>.value(
-            _FakeUpdateFragmentResponse_44(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateFragmentResponse>.value(_FakeUpdateFragmentResponse_44(
           this,
           Invocation.method(
             #updateFragment_Pre,
@@ -5402,8 +5151,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteFragmentResponse>.value(
-            _FakeDeleteFragmentResponse_45(
+        returnValue: _i9.Future<_i5.DeleteFragmentResponse>.value(_FakeDeleteFragmentResponse_45(
           this,
           Invocation.method(
             #deleteFragment_Pre,
@@ -5413,8 +5161,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.DeleteFragmentResponse>.value(
-            _FakeDeleteFragmentResponse_45(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteFragmentResponse>.value(_FakeDeleteFragmentResponse_45(
           this,
           Invocation.method(
             #deleteFragment_Pre,
@@ -5438,8 +5185,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
+        returnValue: _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
           this,
           Invocation.method(
             #addRole_Pre,
@@ -5449,8 +5195,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
+        returnValueForMissingStub: _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
           this,
           Invocation.method(
             #addRole_Pre,
@@ -5474,8 +5219,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
+        returnValue: _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
           this,
           Invocation.method(
             #removeRole_Pre,
@@ -5485,8 +5229,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
+        returnValueForMissingStub: _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
           this,
           Invocation.method(
             #removeRole_Pre,
@@ -5510,8 +5253,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListAuthorizationsResponse>.value(
-            _FakeListAuthorizationsResponse_48(
+        returnValue: _i9.Future<_i5.ListAuthorizationsResponse>.value(_FakeListAuthorizationsResponse_48(
           this,
           Invocation.method(
             #listAuthorizations_Pre,
@@ -5521,9 +5263,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListAuthorizationsResponse>.value(
-                _FakeListAuthorizationsResponse_48(
+        returnValueForMissingStub: _i9.Future<_i5.ListAuthorizationsResponse>.value(_FakeListAuthorizationsResponse_48(
           this,
           Invocation.method(
             #listAuthorizations_Pre,
@@ -5547,8 +5287,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CheckPermissionsResponse>.value(
-            _FakeCheckPermissionsResponse_49(
+        returnValue: _i9.Future<_i5.CheckPermissionsResponse>.value(_FakeCheckPermissionsResponse_49(
           this,
           Invocation.method(
             #checkPermissions_Pre,
@@ -5558,9 +5297,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CheckPermissionsResponse>.value(
-                _FakeCheckPermissionsResponse_49(
+        returnValueForMissingStub: _i9.Future<_i5.CheckPermissionsResponse>.value(_FakeCheckPermissionsResponse_49(
           this,
           Invocation.method(
             #checkPermissions_Pre,
@@ -5584,8 +5321,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateOrganizationResponse>.value(
-            _FakeCreateOrganizationResponse_4(
+        returnValue: _i9.Future<_i5.CreateOrganizationResponse>.value(_FakeCreateOrganizationResponse_4(
           this,
           Invocation.method(
             #createOrganization,
@@ -5595,9 +5331,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateOrganizationResponse>.value(
-                _FakeCreateOrganizationResponse_4(
+        returnValueForMissingStub: _i9.Future<_i5.CreateOrganizationResponse>.value(_FakeCreateOrganizationResponse_4(
           this,
           Invocation.method(
             #createOrganization,
@@ -5621,8 +5355,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListOrganizationsResponse>.value(
-            _FakeListOrganizationsResponse_5(
+        returnValue: _i9.Future<_i5.ListOrganizationsResponse>.value(_FakeListOrganizationsResponse_5(
           this,
           Invocation.method(
             #listOrganizations,
@@ -5632,9 +5365,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListOrganizationsResponse>.value(
-                _FakeListOrganizationsResponse_5(
+        returnValueForMissingStub: _i9.Future<_i5.ListOrganizationsResponse>.value(_FakeListOrganizationsResponse_5(
           this,
           Invocation.method(
             #listOrganizations,
@@ -5658,8 +5389,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetOrganizationResponse>.value(
-            _FakeGetOrganizationResponse_6(
+        returnValue: _i9.Future<_i5.GetOrganizationResponse>.value(_FakeGetOrganizationResponse_6(
           this,
           Invocation.method(
             #getOrganization,
@@ -5669,9 +5399,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetOrganizationResponse>.value(
-                _FakeGetOrganizationResponse_6(
+        returnValueForMissingStub: _i9.Future<_i5.GetOrganizationResponse>.value(_FakeGetOrganizationResponse_6(
           this,
           Invocation.method(
             #getOrganization,
@@ -5695,8 +5423,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateOrganizationResponse>.value(
-            _FakeUpdateOrganizationResponse_7(
+        returnValue: _i9.Future<_i5.UpdateOrganizationResponse>.value(_FakeUpdateOrganizationResponse_7(
           this,
           Invocation.method(
             #updateOrganization,
@@ -5706,9 +5433,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.UpdateOrganizationResponse>.value(
-                _FakeUpdateOrganizationResponse_7(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateOrganizationResponse>.value(_FakeUpdateOrganizationResponse_7(
           this,
           Invocation.method(
             #updateOrganization,
@@ -5732,8 +5457,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteOrganizationResponse>.value(
-            _FakeDeleteOrganizationResponse_8(
+        returnValue: _i9.Future<_i5.DeleteOrganizationResponse>.value(_FakeDeleteOrganizationResponse_8(
           this,
           Invocation.method(
             #deleteOrganization,
@@ -5743,9 +5467,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteOrganizationResponse>.value(
-                _FakeDeleteOrganizationResponse_8(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteOrganizationResponse>.value(_FakeDeleteOrganizationResponse_8(
           this,
           Invocation.method(
             #deleteOrganization,
@@ -5769,8 +5491,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListOrganizationMembersResponse>.value(
-            _FakeListOrganizationMembersResponse_9(
+        returnValue: _i9.Future<_i5.ListOrganizationMembersResponse>.value(_FakeListOrganizationMembersResponse_9(
           this,
           Invocation.method(
             #listOrganizationMembers,
@@ -5780,9 +5501,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListOrganizationMembersResponse>.value(
-                _FakeListOrganizationMembersResponse_9(
+        returnValueForMissingStub: _i9.Future<_i5.ListOrganizationMembersResponse>.value(_FakeListOrganizationMembersResponse_9(
           this,
           Invocation.method(
             #listOrganizationMembers,
@@ -5806,8 +5525,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateOrganizationInviteResponse>.value(
-            _FakeCreateOrganizationInviteResponse_10(
+        returnValue: _i9.Future<_i5.CreateOrganizationInviteResponse>.value(_FakeCreateOrganizationInviteResponse_10(
           this,
           Invocation.method(
             #createOrganizationInvite,
@@ -5817,9 +5535,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateOrganizationInviteResponse>.value(
-                _FakeCreateOrganizationInviteResponse_10(
+        returnValueForMissingStub: _i9.Future<_i5.CreateOrganizationInviteResponse>.value(_FakeCreateOrganizationInviteResponse_10(
           this,
           Invocation.method(
             #createOrganizationInvite,
@@ -5843,8 +5559,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(
-            _FakeDeleteOrganizationMemberResponse_11(
+        returnValue: _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(_FakeDeleteOrganizationMemberResponse_11(
           this,
           Invocation.method(
             #deleteOrganizationMember,
@@ -5854,9 +5569,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(
-                _FakeDeleteOrganizationMemberResponse_11(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteOrganizationMemberResponse>.value(_FakeDeleteOrganizationMemberResponse_11(
           this,
           Invocation.method(
             #deleteOrganizationMember,
@@ -5880,8 +5593,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(
-            _FakeDeleteOrganizationInviteResponse_12(
+        returnValue: _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(_FakeDeleteOrganizationInviteResponse_12(
           this,
           Invocation.method(
             #deleteOrganizationInvite,
@@ -5891,9 +5603,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(
-                _FakeDeleteOrganizationInviteResponse_12(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteOrganizationInviteResponse>.value(_FakeDeleteOrganizationInviteResponse_12(
           this,
           Invocation.method(
             #deleteOrganizationInvite,
@@ -5917,8 +5627,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ResendOrganizationInviteResponse>.value(
-            _FakeResendOrganizationInviteResponse_13(
+        returnValue: _i9.Future<_i5.ResendOrganizationInviteResponse>.value(_FakeResendOrganizationInviteResponse_13(
           this,
           Invocation.method(
             #resendOrganizationInvite,
@@ -5928,9 +5637,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ResendOrganizationInviteResponse>.value(
-                _FakeResendOrganizationInviteResponse_13(
+        returnValueForMissingStub: _i9.Future<_i5.ResendOrganizationInviteResponse>.value(_FakeResendOrganizationInviteResponse_13(
           this,
           Invocation.method(
             #resendOrganizationInvite,
@@ -5954,8 +5661,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateLocationResponse>.value(
-            _FakeCreateLocationResponse_14(
+        returnValue: _i9.Future<_i5.CreateLocationResponse>.value(_FakeCreateLocationResponse_14(
           this,
           Invocation.method(
             #createLocation,
@@ -5965,8 +5671,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.CreateLocationResponse>.value(
-            _FakeCreateLocationResponse_14(
+        returnValueForMissingStub: _i9.Future<_i5.CreateLocationResponse>.value(_FakeCreateLocationResponse_14(
           this,
           Invocation.method(
             #createLocation,
@@ -5990,8 +5695,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetLocationResponse>.value(
-            _FakeGetLocationResponse_15(
+        returnValue: _i9.Future<_i5.GetLocationResponse>.value(_FakeGetLocationResponse_15(
           this,
           Invocation.method(
             #getLocation,
@@ -6001,8 +5705,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetLocationResponse>.value(
-            _FakeGetLocationResponse_15(
+        returnValueForMissingStub: _i9.Future<_i5.GetLocationResponse>.value(_FakeGetLocationResponse_15(
           this,
           Invocation.method(
             #getLocation,
@@ -6026,8 +5729,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateLocationResponse>.value(
-            _FakeUpdateLocationResponse_16(
+        returnValue: _i9.Future<_i5.UpdateLocationResponse>.value(_FakeUpdateLocationResponse_16(
           this,
           Invocation.method(
             #updateLocation,
@@ -6037,8 +5739,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.UpdateLocationResponse>.value(
-            _FakeUpdateLocationResponse_16(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateLocationResponse>.value(_FakeUpdateLocationResponse_16(
           this,
           Invocation.method(
             #updateLocation,
@@ -6062,8 +5763,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteLocationResponse>.value(
-            _FakeDeleteLocationResponse_17(
+        returnValue: _i9.Future<_i5.DeleteLocationResponse>.value(_FakeDeleteLocationResponse_17(
           this,
           Invocation.method(
             #deleteLocation,
@@ -6073,8 +5773,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.DeleteLocationResponse>.value(
-            _FakeDeleteLocationResponse_17(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteLocationResponse>.value(_FakeDeleteLocationResponse_17(
           this,
           Invocation.method(
             #deleteLocation,
@@ -6098,8 +5797,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListLocationsResponse>.value(
-            _FakeListLocationsResponse_18(
+        returnValue: _i9.Future<_i5.ListLocationsResponse>.value(_FakeListLocationsResponse_18(
           this,
           Invocation.method(
             #listLocations,
@@ -6109,8 +5807,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.ListLocationsResponse>.value(
-            _FakeListLocationsResponse_18(
+        returnValueForMissingStub: _i9.Future<_i5.ListLocationsResponse>.value(_FakeListLocationsResponse_18(
           this,
           Invocation.method(
             #listLocations,
@@ -6134,8 +5831,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ShareLocationResponse>.value(
-            _FakeShareLocationResponse_19(
+        returnValue: _i9.Future<_i5.ShareLocationResponse>.value(_FakeShareLocationResponse_19(
           this,
           Invocation.method(
             #shareLocation,
@@ -6145,8 +5841,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.ShareLocationResponse>.value(
-            _FakeShareLocationResponse_19(
+        returnValueForMissingStub: _i9.Future<_i5.ShareLocationResponse>.value(_FakeShareLocationResponse_19(
           this,
           Invocation.method(
             #shareLocation,
@@ -6170,8 +5865,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UnshareLocationResponse>.value(
-            _FakeUnshareLocationResponse_20(
+        returnValue: _i9.Future<_i5.UnshareLocationResponse>.value(_FakeUnshareLocationResponse_20(
           this,
           Invocation.method(
             #unshareLocation,
@@ -6181,9 +5875,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.UnshareLocationResponse>.value(
-                _FakeUnshareLocationResponse_20(
+        returnValueForMissingStub: _i9.Future<_i5.UnshareLocationResponse>.value(_FakeUnshareLocationResponse_20(
           this,
           Invocation.method(
             #unshareLocation,
@@ -6207,8 +5899,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.LocationAuthResponse>.value(
-            _FakeLocationAuthResponse_21(
+        returnValue: _i9.Future<_i5.LocationAuthResponse>.value(_FakeLocationAuthResponse_21(
           this,
           Invocation.method(
             #locationAuth,
@@ -6218,8 +5909,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.LocationAuthResponse>.value(
-            _FakeLocationAuthResponse_21(
+        returnValueForMissingStub: _i9.Future<_i5.LocationAuthResponse>.value(_FakeLocationAuthResponse_21(
           this,
           Invocation.method(
             #locationAuth,
@@ -6243,8 +5933,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateLocationSecretResponse>.value(
-            _FakeCreateLocationSecretResponse_22(
+        returnValue: _i9.Future<_i5.CreateLocationSecretResponse>.value(_FakeCreateLocationSecretResponse_22(
           this,
           Invocation.method(
             #createLocationSecret,
@@ -6254,9 +5943,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateLocationSecretResponse>.value(
-                _FakeCreateLocationSecretResponse_22(
+        returnValueForMissingStub: _i9.Future<_i5.CreateLocationSecretResponse>.value(_FakeCreateLocationSecretResponse_22(
           this,
           Invocation.method(
             #createLocationSecret,
@@ -6280,8 +5967,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteLocationSecretResponse>.value(
-            _FakeDeleteLocationSecretResponse_23(
+        returnValue: _i9.Future<_i5.DeleteLocationSecretResponse>.value(_FakeDeleteLocationSecretResponse_23(
           this,
           Invocation.method(
             #deleteLocationSecret,
@@ -6291,9 +5977,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteLocationSecretResponse>.value(
-                _FakeDeleteLocationSecretResponse_23(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteLocationSecretResponse>.value(_FakeDeleteLocationSecretResponse_23(
           this,
           Invocation.method(
             #deleteLocationSecret,
@@ -6317,8 +6001,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
+        returnValue: _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
           this,
           Invocation.method(
             #getRobot,
@@ -6328,8 +6011,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotResponse>.value(_FakeGetRobotResponse_24(
           this,
           Invocation.method(
             #getRobot,
@@ -6353,8 +6035,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(
-            _FakeGetRoverRentalRobotsResponse_25(
+        returnValue: _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(_FakeGetRoverRentalRobotsResponse_25(
           this,
           Invocation.method(
             #getRoverRentalRobots,
@@ -6364,9 +6045,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(
-                _FakeGetRoverRentalRobotsResponse_25(
+        returnValueForMissingStub: _i9.Future<_i5.GetRoverRentalRobotsResponse>.value(_FakeGetRoverRentalRobotsResponse_25(
           this,
           Invocation.method(
             #getRoverRentalRobots,
@@ -6390,8 +6069,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartsResponse>.value(
-            _FakeGetRobotPartsResponse_26(
+        returnValue: _i9.Future<_i5.GetRobotPartsResponse>.value(_FakeGetRobotPartsResponse_26(
           this,
           Invocation.method(
             #getRobotParts,
@@ -6401,8 +6079,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartsResponse>.value(
-            _FakeGetRobotPartsResponse_26(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartsResponse>.value(_FakeGetRobotPartsResponse_26(
           this,
           Invocation.method(
             #getRobotParts,
@@ -6426,8 +6103,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartResponse>.value(
-            _FakeGetRobotPartResponse_27(
+        returnValue: _i9.Future<_i5.GetRobotPartResponse>.value(_FakeGetRobotPartResponse_27(
           this,
           Invocation.method(
             #getRobotPart,
@@ -6437,8 +6113,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartResponse>.value(
-            _FakeGetRobotPartResponse_27(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartResponse>.value(_FakeGetRobotPartResponse_27(
           this,
           Invocation.method(
             #getRobotPart,
@@ -6462,8 +6137,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartLogsResponse>.value(
-            _FakeGetRobotPartLogsResponse_28(
+        returnValue: _i9.Future<_i5.GetRobotPartLogsResponse>.value(_FakeGetRobotPartLogsResponse_28(
           this,
           Invocation.method(
             #getRobotPartLogs,
@@ -6473,9 +6147,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRobotPartLogsResponse>.value(
-                _FakeGetRobotPartLogsResponse_28(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartLogsResponse>.value(_FakeGetRobotPartLogsResponse_28(
           this,
           Invocation.method(
             #getRobotPartLogs,
@@ -6500,8 +6172,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
           ],
         ),
         returnValue: _i9.Stream<_i5.TailRobotPartLogsResponse>.empty(),
-        returnValueForMissingStub:
-            _i9.Stream<_i5.TailRobotPartLogsResponse>.empty(),
+        returnValueForMissingStub: _i9.Stream<_i5.TailRobotPartLogsResponse>.empty(),
       ) as _i9.Stream<_i5.TailRobotPartLogsResponse>);
   @override
   _i9.Future<_i5.GetRobotPartHistoryResponse> getRobotPartHistory(
@@ -6516,8 +6187,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetRobotPartHistoryResponse>.value(
-            _FakeGetRobotPartHistoryResponse_29(
+        returnValue: _i9.Future<_i5.GetRobotPartHistoryResponse>.value(_FakeGetRobotPartHistoryResponse_29(
           this,
           Invocation.method(
             #getRobotPartHistory,
@@ -6527,9 +6197,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.GetRobotPartHistoryResponse>.value(
-                _FakeGetRobotPartHistoryResponse_29(
+        returnValueForMissingStub: _i9.Future<_i5.GetRobotPartHistoryResponse>.value(_FakeGetRobotPartHistoryResponse_29(
           this,
           Invocation.method(
             #getRobotPartHistory,
@@ -6553,8 +6221,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateRobotPartResponse>.value(
-            _FakeUpdateRobotPartResponse_30(
+        returnValue: _i9.Future<_i5.UpdateRobotPartResponse>.value(_FakeUpdateRobotPartResponse_30(
           this,
           Invocation.method(
             #updateRobotPart,
@@ -6564,9 +6231,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.UpdateRobotPartResponse>.value(
-                _FakeUpdateRobotPartResponse_30(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateRobotPartResponse>.value(_FakeUpdateRobotPartResponse_30(
           this,
           Invocation.method(
             #updateRobotPart,
@@ -6590,8 +6255,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.NewRobotPartResponse>.value(
-            _FakeNewRobotPartResponse_31(
+        returnValue: _i9.Future<_i5.NewRobotPartResponse>.value(_FakeNewRobotPartResponse_31(
           this,
           Invocation.method(
             #newRobotPart,
@@ -6601,8 +6265,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.NewRobotPartResponse>.value(
-            _FakeNewRobotPartResponse_31(
+        returnValueForMissingStub: _i9.Future<_i5.NewRobotPartResponse>.value(_FakeNewRobotPartResponse_31(
           this,
           Invocation.method(
             #newRobotPart,
@@ -6626,8 +6289,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteRobotPartResponse>.value(
-            _FakeDeleteRobotPartResponse_32(
+        returnValue: _i9.Future<_i5.DeleteRobotPartResponse>.value(_FakeDeleteRobotPartResponse_32(
           this,
           Invocation.method(
             #deleteRobotPart,
@@ -6637,9 +6299,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteRobotPartResponse>.value(
-                _FakeDeleteRobotPartResponse_32(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotPartResponse>.value(_FakeDeleteRobotPartResponse_32(
           this,
           Invocation.method(
             #deleteRobotPart,
@@ -6663,8 +6323,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.MarkPartAsMainResponse>.value(
-            _FakeMarkPartAsMainResponse_33(
+        returnValue: _i9.Future<_i5.MarkPartAsMainResponse>.value(_FakeMarkPartAsMainResponse_33(
           this,
           Invocation.method(
             #markPartAsMain,
@@ -6674,8 +6333,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.MarkPartAsMainResponse>.value(
-            _FakeMarkPartAsMainResponse_33(
+        returnValueForMissingStub: _i9.Future<_i5.MarkPartAsMainResponse>.value(_FakeMarkPartAsMainResponse_33(
           this,
           Invocation.method(
             #markPartAsMain,
@@ -6699,8 +6357,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.MarkPartForRestartResponse>.value(
-            _FakeMarkPartForRestartResponse_34(
+        returnValue: _i9.Future<_i5.MarkPartForRestartResponse>.value(_FakeMarkPartForRestartResponse_34(
           this,
           Invocation.method(
             #markPartForRestart,
@@ -6710,9 +6367,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.MarkPartForRestartResponse>.value(
-                _FakeMarkPartForRestartResponse_34(
+        returnValueForMissingStub: _i9.Future<_i5.MarkPartForRestartResponse>.value(_FakeMarkPartForRestartResponse_34(
           this,
           Invocation.method(
             #markPartForRestart,
@@ -6736,8 +6391,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateRobotPartSecretResponse>.value(
-            _FakeCreateRobotPartSecretResponse_35(
+        returnValue: _i9.Future<_i5.CreateRobotPartSecretResponse>.value(_FakeCreateRobotPartSecretResponse_35(
           this,
           Invocation.method(
             #createRobotPartSecret,
@@ -6747,9 +6401,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CreateRobotPartSecretResponse>.value(
-                _FakeCreateRobotPartSecretResponse_35(
+        returnValueForMissingStub: _i9.Future<_i5.CreateRobotPartSecretResponse>.value(_FakeCreateRobotPartSecretResponse_35(
           this,
           Invocation.method(
             #createRobotPartSecret,
@@ -6773,8 +6425,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(
-            _FakeDeleteRobotPartSecretResponse_36(
+        returnValue: _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(_FakeDeleteRobotPartSecretResponse_36(
           this,
           Invocation.method(
             #deleteRobotPartSecret,
@@ -6784,9 +6435,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(
-                _FakeDeleteRobotPartSecretResponse_36(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotPartSecretResponse>.value(_FakeDeleteRobotPartSecretResponse_36(
           this,
           Invocation.method(
             #deleteRobotPartSecret,
@@ -6810,8 +6459,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
+        returnValue: _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
           this,
           Invocation.method(
             #listRobots,
@@ -6821,8 +6469,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
+        returnValueForMissingStub: _i9.Future<_i5.ListRobotsResponse>.value(_FakeListRobotsResponse_37(
           this,
           Invocation.method(
             #listRobots,
@@ -6846,8 +6493,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
+        returnValue: _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
           this,
           Invocation.method(
             #newRobot,
@@ -6857,8 +6503,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
+        returnValueForMissingStub: _i9.Future<_i5.NewRobotResponse>.value(_FakeNewRobotResponse_38(
           this,
           Invocation.method(
             #newRobot,
@@ -6882,8 +6527,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateRobotResponse>.value(
-            _FakeUpdateRobotResponse_39(
+        returnValue: _i9.Future<_i5.UpdateRobotResponse>.value(_FakeUpdateRobotResponse_39(
           this,
           Invocation.method(
             #updateRobot,
@@ -6893,8 +6537,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.UpdateRobotResponse>.value(
-            _FakeUpdateRobotResponse_39(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateRobotResponse>.value(_FakeUpdateRobotResponse_39(
           this,
           Invocation.method(
             #updateRobot,
@@ -6918,8 +6561,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteRobotResponse>.value(
-            _FakeDeleteRobotResponse_40(
+        returnValue: _i9.Future<_i5.DeleteRobotResponse>.value(_FakeDeleteRobotResponse_40(
           this,
           Invocation.method(
             #deleteRobot,
@@ -6929,8 +6571,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotResponse>.value(
-            _FakeDeleteRobotResponse_40(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteRobotResponse>.value(_FakeDeleteRobotResponse_40(
           this,
           Invocation.method(
             #deleteRobot,
@@ -6954,8 +6595,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListFragmentsResponse>.value(
-            _FakeListFragmentsResponse_41(
+        returnValue: _i9.Future<_i5.ListFragmentsResponse>.value(_FakeListFragmentsResponse_41(
           this,
           Invocation.method(
             #listFragments,
@@ -6965,8 +6605,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.ListFragmentsResponse>.value(
-            _FakeListFragmentsResponse_41(
+        returnValueForMissingStub: _i9.Future<_i5.ListFragmentsResponse>.value(_FakeListFragmentsResponse_41(
           this,
           Invocation.method(
             #listFragments,
@@ -6990,8 +6629,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.GetFragmentResponse>.value(
-            _FakeGetFragmentResponse_42(
+        returnValue: _i9.Future<_i5.GetFragmentResponse>.value(_FakeGetFragmentResponse_42(
           this,
           Invocation.method(
             #getFragment,
@@ -7001,8 +6639,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.GetFragmentResponse>.value(
-            _FakeGetFragmentResponse_42(
+        returnValueForMissingStub: _i9.Future<_i5.GetFragmentResponse>.value(_FakeGetFragmentResponse_42(
           this,
           Invocation.method(
             #getFragment,
@@ -7026,8 +6663,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CreateFragmentResponse>.value(
-            _FakeCreateFragmentResponse_43(
+        returnValue: _i9.Future<_i5.CreateFragmentResponse>.value(_FakeCreateFragmentResponse_43(
           this,
           Invocation.method(
             #createFragment,
@@ -7037,8 +6673,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.CreateFragmentResponse>.value(
-            _FakeCreateFragmentResponse_43(
+        returnValueForMissingStub: _i9.Future<_i5.CreateFragmentResponse>.value(_FakeCreateFragmentResponse_43(
           this,
           Invocation.method(
             #createFragment,
@@ -7062,8 +6697,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.UpdateFragmentResponse>.value(
-            _FakeUpdateFragmentResponse_44(
+        returnValue: _i9.Future<_i5.UpdateFragmentResponse>.value(_FakeUpdateFragmentResponse_44(
           this,
           Invocation.method(
             #updateFragment,
@@ -7073,8 +6707,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.UpdateFragmentResponse>.value(
-            _FakeUpdateFragmentResponse_44(
+        returnValueForMissingStub: _i9.Future<_i5.UpdateFragmentResponse>.value(_FakeUpdateFragmentResponse_44(
           this,
           Invocation.method(
             #updateFragment,
@@ -7098,8 +6731,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.DeleteFragmentResponse>.value(
-            _FakeDeleteFragmentResponse_45(
+        returnValue: _i9.Future<_i5.DeleteFragmentResponse>.value(_FakeDeleteFragmentResponse_45(
           this,
           Invocation.method(
             #deleteFragment,
@@ -7109,8 +6741,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub: _i9.Future<_i5.DeleteFragmentResponse>.value(
-            _FakeDeleteFragmentResponse_45(
+        returnValueForMissingStub: _i9.Future<_i5.DeleteFragmentResponse>.value(_FakeDeleteFragmentResponse_45(
           this,
           Invocation.method(
             #deleteFragment,
@@ -7134,8 +6765,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
+        returnValue: _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
           this,
           Invocation.method(
             #addRole,
@@ -7145,8 +6775,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
+        returnValueForMissingStub: _i9.Future<_i5.AddRoleResponse>.value(_FakeAddRoleResponse_46(
           this,
           Invocation.method(
             #addRole,
@@ -7170,8 +6799,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue:
-            _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
+        returnValue: _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
           this,
           Invocation.method(
             #removeRole,
@@ -7181,8 +6809,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
+        returnValueForMissingStub: _i9.Future<_i5.RemoveRoleResponse>.value(_FakeRemoveRoleResponse_47(
           this,
           Invocation.method(
             #removeRole,
@@ -7206,8 +6833,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.ListAuthorizationsResponse>.value(
-            _FakeListAuthorizationsResponse_48(
+        returnValue: _i9.Future<_i5.ListAuthorizationsResponse>.value(_FakeListAuthorizationsResponse_48(
           this,
           Invocation.method(
             #listAuthorizations,
@@ -7217,9 +6843,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.ListAuthorizationsResponse>.value(
-                _FakeListAuthorizationsResponse_48(
+        returnValueForMissingStub: _i9.Future<_i5.ListAuthorizationsResponse>.value(_FakeListAuthorizationsResponse_48(
           this,
           Invocation.method(
             #listAuthorizations,
@@ -7243,8 +6867,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             request,
           ],
         ),
-        returnValue: _i9.Future<_i5.CheckPermissionsResponse>.value(
-            _FakeCheckPermissionsResponse_49(
+        returnValue: _i9.Future<_i5.CheckPermissionsResponse>.value(_FakeCheckPermissionsResponse_49(
           this,
           Invocation.method(
             #checkPermissions,
@@ -7254,9 +6877,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
             ],
           ),
         )),
-        returnValueForMissingStub:
-            _i9.Future<_i5.CheckPermissionsResponse>.value(
-                _FakeCheckPermissionsResponse_49(
+        returnValueForMissingStub: _i9.Future<_i5.CheckPermissionsResponse>.value(_FakeCheckPermissionsResponse_49(
           this,
           Invocation.method(
             #checkPermissions,
@@ -7268,8 +6889,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
         )),
       ) as _i9.Future<_i5.CheckPermissionsResponse>);
   @override
-  void $addMethod(_i2.ServiceMethod<dynamic, dynamic>? method) =>
-      super.noSuchMethod(
+  void $addMethod(_i2.ServiceMethod<dynamic, dynamic>? method) => super.noSuchMethod(
         Invocation.method(
           #$addMethod,
           [method],
@@ -7285,8 +6905,7 @@ class MockAppServiceBase extends _i1.Mock implements _i20.AppServiceBase {
         returnValueForMissingStub: null,
       );
   @override
-  _i2.ServiceMethod<dynamic, dynamic>? $lookupMethod(String? name) =>
-      (super.noSuchMethod(
+  _i2.ServiceMethod<dynamic, dynamic>? $lookupMethod(String? name) => (super.noSuchMethod(
         Invocation.method(
           #$lookupMethod,
           [name],
