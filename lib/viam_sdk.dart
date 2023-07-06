@@ -12,6 +12,8 @@ export 'src/components/camera/camera.dart';
 export 'src/components/camera/client.dart';
 export 'src/components/gantry/client.dart';
 export 'src/components/gantry/gantry.dart';
+export 'src/components/generic/client.dart';
+export 'src/components/generic/generic.dart';
 export 'src/components/motor/client.dart';
 export 'src/components/motor/motor.dart';
 export 'src/components/movement_sensor/client.dart';
