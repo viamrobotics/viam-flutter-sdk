@@ -81,7 +81,7 @@ void main() {
       expect(gantry.positions, [2, 4, 6]);
       expect(gantry.isStopped, false);
 
-      await gantry.moveToPosition([1, 2, 3]);
+      await gantry.moveToPosition([1, 2, 3], []);
       expect(gantry.positions, [1, 2, 3]);
       expect(gantry.isStopped, false);
     });
