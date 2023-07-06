@@ -10,10 +10,9 @@ void main() {
       const viamFilterType = ViamTagsFilterType.tagged;
       const viamTagsFilter = ViamTagsFilter(tags: tags, type: viamFilterType);
 
-      final expectedAnswer = TagsFilter(
-        type: TagsFilterType.TAGS_FILTER_TYPE_TAGGED,
-        tags: tags,
-      );
+      final expectedAnswer = TagsFilter()
+        ..type = TagsFilterType.TAGS_FILTER_TYPE_TAGGED
+        ..tags.addAll(tags);
 
       final actualAnswer = viamTagsFilter.toDto();
 

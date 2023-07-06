@@ -13,10 +13,9 @@ void main() {
         start: date,
       );
 
-      final expectedAnswer = CaptureInterval(
-        start: Timestamp.fromDateTime(date),
-        end: Timestamp.fromDateTime(date),
-      );
+      final expectedAnswer = CaptureInterval()
+        ..start = Timestamp.fromDateTime(date)
+        ..end = Timestamp.fromDateTime(date);
 
       final actualAnswer = viamCaptureInterval.toDto();
 

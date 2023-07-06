@@ -7,21 +7,19 @@ import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
 void main() {
   group('When map from CaptureMetadata to ViamCaptureMetadata', () {
     test('mapper returns correct values', () {
-      final captureMetadata = CaptureMetadata(
-        orgId: 'orgId',
-        locationId: 'locationId',
-        robotName: 'robotName',
-        robotId: 'robotId',
-        partName: 'partName',
-        partId: 'partId',
-        componentType: 'componentType',
-        componentModel: 'componentModel',
-        componentName: 'componentName',
-        methodName: 'methodName',
-        methodParameters: <String, Any>{},
-        tags: ['tags'],
-        mimeType: 'mimeType',
-      );
+      final captureMetadata = CaptureMetadata()
+        ..organizationId = 'orgId'
+        ..locationId = 'locationId'
+        ..robotName = 'robotName'
+        ..robotId = 'robotId'
+        ..partName = 'partName'
+        ..partId = 'partId'
+        ..componentType = 'componentType'
+        ..componentName = 'componentName'
+        ..methodName = 'methodName'
+        ..methodParameters.addAll(<String, Any>{})
+        ..tags.add('tags')
+        ..mimeType = 'mimeType';
 
       final expectedAnswer = ViamCaptureMetadata(
         'orgId',
@@ -31,7 +29,6 @@ void main() {
         'partName',
         'partId',
         'componentType',
-        'componentModel',
         'componentName',
         'methodName',
         <String, Any>{},

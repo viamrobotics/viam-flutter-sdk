@@ -1,12 +1,13 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/src/domain/resource/service/viam_resource_service.dart';
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:viam_sdk/viam_sdk.dart';
+
 import '../../../mocks/mock_response_future.dart';
 import '../../../mocks/service_clients_mocks.mocks.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
 void main() {
   late ViamResourceService resourceService;
@@ -21,14 +22,13 @@ void main() {
     group('getResourceNames', () {
       final resourceNamesRequest = ResourceNamesRequest();
       test('gets data successfully', () async {
-        final resourceName = ResourceName(
-          name: 'name',
-          namespace: 'namespace',
-          subtype: 'subtype',
-          type: 'type',
-        );
+        final resourceName = ResourceName()
+          ..name = 'name'
+          ..namespace = 'namespace'
+          ..subtype = 'subtype'
+          ..type = 'type';
 
-        final resourceNamesResponse = ResourceNamesResponse(resources: [resourceName]);
+        final resourceNamesResponse = ResourceNamesResponse()..resources.add(resourceName);
 
         when(robotServiceClient.resourceNames(resourceNamesRequest)).thenAnswer(
           (_) => MockResponseFuture.value(resourceNamesResponse),

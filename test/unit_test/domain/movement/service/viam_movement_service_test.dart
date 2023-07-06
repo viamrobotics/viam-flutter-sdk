@@ -26,20 +26,21 @@ void main() {
       'name',
     );
     group('getPositionData', () {
-      final getPositionRequest = GetPositionRequest(name: resourceName.name);
+      final getPositionRequest = GetPositionRequest()..name = resourceName.name;
 
       test('gets ViamPostion data successfully', () async {
         const lat = 0.0;
         const lon = 0.0;
         const altitude = 0.0;
 
-        final geoPoint = GeoPoint(latitude: lat, longitude: lon);
+        final geoPoint = GeoPoint()
+          ..latitude = lat
+          ..longitude = lon;
 
-        final getPositionResponse = GetPositionResponse(
-          coordinate: geoPoint,
-          altitudeM: altitude,
-        );
-        final getPositionRequest = GetPositionRequest(name: resourceName.name);
+        final getPositionResponse = GetPositionResponse()
+          ..coordinate = geoPoint
+          ..altitudeM = altitude;
+        final getPositionRequest = GetPositionRequest()..name = resourceName.name;
 
         when(movementSensorServiceClient.getPosition(getPositionRequest)).thenAnswer(
           (_) => MockResponseFuture.value(getPositionResponse),
@@ -64,15 +65,14 @@ void main() {
     });
 
     group('getLinearVelocity', () {
-      final getLinearVelocityRequest = GetLinearVelocityRequest(
-        name: resourceName.name,
-      );
+      final getLinearVelocityRequest = GetLinearVelocityRequest()..name = resourceName.name;
       test('gets ViamLinearVelocity successfully', () async {
-        final vector3 = Vector3(x: 0.0, y: 0.0, z: 0.0);
+        final vector3 = Vector3()
+          ..x = 0.0
+          ..y = 0.0
+          ..z = 0.0;
 
-        final getLinearVelocityResponse = GetLinearVelocityResponse(
-          linearVelocity: vector3,
-        );
+        final getLinearVelocityResponse = GetLinearVelocityResponse()..linearVelocity = vector3;
 
         when(movementSensorServiceClient.getLinearVelocity(getLinearVelocityRequest)).thenAnswer(
           (_) => MockResponseFuture.value(getLinearVelocityResponse),

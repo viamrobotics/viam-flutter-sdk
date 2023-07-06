@@ -8,12 +8,11 @@ import 'package:viam_sdk/viam_sdk.dart';
 void main() {
   group('When map from SharedSecret to ViamSharedSecret', () {
     test('mapper returns correct values', () {
-      final dto = SharedSecret(
-        id: 'id',
-        secret: 'secret',
-        state: SharedSecret_State.STATE_ENABLED,
-        createdOn: Timestamp.create(),
-      );
+      final dto = SharedSecret()
+        ..id = 'id'
+        ..secret = 'secret'
+        ..state = SharedSecret_State.STATE_ENABLED
+        ..createdOn = Timestamp.create();
 
       final expectedAnswer = ViamSharedSecret(
         ViamSharedSecretState.enabled,

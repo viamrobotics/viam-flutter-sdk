@@ -6,12 +6,11 @@ import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 void main() {
   group('When map from ResourceName to ViamResourceName', () {
     test('mapper returns correct values', () {
-      final dto = ResourceName(
-        namespace: 'namespace',
-        type: 'type',
-        subtype: 'subtype',
-        name: 'name',
-      );
+      final dto = ResourceName()
+        ..namespace = 'namespace'
+        ..type = 'type'
+        ..subtype = 'subtype'
+        ..name = 'name';
 
       final expectedAnswer = ViamResourceName(
         dto.namespace,

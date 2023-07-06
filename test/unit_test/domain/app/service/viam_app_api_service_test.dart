@@ -1,17 +1,18 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:viam_sdk/src/domain/app/model/viam_location.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_location_auth.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_location_organization.dart';
+import 'package:viam_sdk/src/domain/app/model/viam_organization.dart';
+import 'package:viam_sdk/src/domain/app/model/viam_robot.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_shared_secret.dart';
 import 'package:viam_sdk/src/domain/app/model/viam_shared_secret_state.dart';
 import 'package:viam_sdk/src/domain/app/service/app_api_data_source.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
-import 'package:viam_sdk/src/domain/app/model/viam_organization.dart';
-import 'package:viam_sdk/src/domain/app/model/viam_location.dart';
-import 'package:viam_sdk/src/domain/app/model/viam_robot.dart';
+
 import '../../../mocks/mock_response_future.dart';
 import '../../../mocks/service_clients_mocks.mocks.dart';
 
@@ -29,15 +30,12 @@ void main() {
     group('listOrganizations', () {
       final request = ListOrganizationsRequest();
       test('gets ViamOrganization list successfully', () async {
-        final organizationDto = Organization(
-          createdOn: Timestamp.create(),
-          id: 'id',
-          name: 'name',
-        );
+        final organizationDto = Organization()
+          ..createdOn = Timestamp.create()
+          ..id = 'id'
+          ..name = 'name';
 
-        final response = ListOrganizationsResponse(
-          organizations: [organizationDto],
-        );
+        final response = ListOrganizationsResponse()..organizations.add(organizationDto);
 
         final viamOrganization = ViamOrganization(
           'id',
@@ -67,39 +65,33 @@ void main() {
 
     group('listLocations', () {
       const organizationId = 'organizationId';
-      final request = ListLocationsRequest(
-        organizationId: organizationId,
-      );
+      final request = ListLocationsRequest()..organizationId = organizationId;
       test('gets ViamLocation list successfully', () async {
         final createdOn = Timestamp.create();
-        final sharedSecretDto = SharedSecret(
-          id: 'id',
-          secret: 'secret',
-          state: SharedSecret_State.STATE_ENABLED,
-          createdOn: createdOn,
-        );
+        final sharedSecretDto = SharedSecret()
+          ..id = 'id'
+          ..secret = 'secret'
+          ..state = SharedSecret_State.STATE_ENABLED
+          ..createdOn = createdOn;
 
-        final locationAuthDto = LocationAuth(
-          locationId: 'locationId',
-          secrets: [sharedSecretDto],
-        );
+        final locationAuthDto = LocationAuth()
+          ..locationId = 'locationId'
+          ..secrets.add(sharedSecretDto);
 
-        final locationOrganizationDto = LocationOrganization(
-          organizationId: 'organizationId',
-          primary: true,
-        );
+        final locationOrganizationDto = LocationOrganization()
+          ..organizationId = 'organizationId'
+          ..primary = true;
 
-        final locationDto = Location(
-          auth: locationAuthDto,
-          createdOn: createdOn,
-          id: 'id',
-          name: 'name',
-          organizations: [locationOrganizationDto],
-          parentLocationId: 'parentLocationId',
-          robotCount: 1,
-        );
+        final locationDto = Location()
+          ..auth = locationAuthDto
+          ..createdOn = createdOn
+          ..id = 'id'
+          ..name = 'name'
+          ..organizations.add(locationOrganizationDto)
+          ..parentLocationId = 'parentLocationId'
+          ..robotCount = 1;
 
-        final response = ListLocationsResponse(locations: [locationDto]);
+        final response = ListLocationsResponse()..locations.add(locationDto);
 
         final viamSharedSecret = ViamSharedSecret(
           ViamSharedSecretState.enabled,
@@ -150,19 +142,16 @@ void main() {
     group('listRobots', () {
       const locationId = 'locationId';
 
-      final listRobotsRequest = ListRobotsRequest(
-        locationId: locationId,
-      );
+      final listRobotsRequest = ListRobotsRequest()..locationId = locationId;
 
       test('gets ViamRobot list successfully', () async {
         final timeStamp = Timestamp.create();
-        final robotDto = Robot(
-          createdOn: timeStamp,
-          id: 'id',
-          lastAccess: timeStamp,
-          location: 'location',
-          name: 'name',
-        );
+        final robotDto = Robot()
+          ..createdOn = timeStamp
+          ..id = 'id'
+          ..lastAccess = timeStamp
+          ..location = 'location'
+          ..name = 'name';
 
         final viamRobot = ViamRobot(
           id: 'id',
@@ -172,7 +161,7 @@ void main() {
           createdOn: timeStamp.toDateTime(),
         );
 
-        final response = ListRobotsResponse(robots: [robotDto]);
+        final response = ListRobotsResponse()..robots.add(robotDto);
 
         when(appServiceClient.listRobots(listRobotsRequest)).thenAnswer(
           (_) => MockResponseFuture.value(response),
@@ -196,17 +185,14 @@ void main() {
 
     group('getOrganization', () {
       const organizationId = 'organizationId';
-      final request = GetOrganizationRequest(
-        organizationId: organizationId,
-      );
+      final request = GetOrganizationRequest()..organizationId = organizationId;
       test('gets ViamOrganization successfully', () async {
-        final organizationDto = Organization(
-          createdOn: Timestamp.create(),
-          id: 'id',
-          name: 'name',
-        );
+        final organizationDto = Organization()
+          ..createdOn = Timestamp.create()
+          ..id = 'id'
+          ..name = 'name';
 
-        final response = GetOrganizationResponse(organization: organizationDto);
+        final response = GetOrganizationResponse()..organization = organizationDto;
 
         final viamOrganization = ViamOrganization(
           'id',
@@ -236,37 +222,33 @@ void main() {
 
     group('getLocation', () {
       const locationId = 'locationId';
-      final request = GetLocationRequest(locationId: locationId);
+      final request = GetLocationRequest()..locationId = locationId;
       test('gets ViamLocation successfully', () async {
         final createdOn = Timestamp.create();
-        final sharedSecretDto = SharedSecret(
-          id: 'id',
-          secret: 'secret',
-          state: SharedSecret_State.STATE_ENABLED,
-          createdOn: createdOn,
-        );
+        final sharedSecretDto = SharedSecret()
+          ..id = 'id'
+          ..secret = 'secret'
+          ..state = SharedSecret_State.STATE_ENABLED
+          ..createdOn = createdOn;
 
-        final locationAuthDto = LocationAuth(
-          locationId: 'locationId',
-          secrets: [sharedSecretDto],
-        );
+        final locationAuthDto = LocationAuth()
+          ..locationId = 'locationId'
+          ..secrets.add(sharedSecretDto);
 
-        final locationOrganizationDto = LocationOrganization(
-          organizationId: 'organizationId',
-          primary: true,
-        );
+        final locationOrganizationDto = LocationOrganization()
+          ..organizationId = 'organizationId'
+          ..primary = true;
 
-        final locationDto = Location(
-          auth: locationAuthDto,
-          createdOn: createdOn,
-          id: 'id',
-          name: 'name',
-          organizations: [locationOrganizationDto],
-          parentLocationId: 'parentLocationId',
-          robotCount: 1,
-        );
+        final locationDto = Location()
+          ..auth = locationAuthDto
+          ..createdOn = createdOn
+          ..id = 'id'
+          ..name = 'name'
+          ..organizations.add(locationOrganizationDto)
+          ..parentLocationId = 'parentLocationId'
+          ..robotCount = 1;
 
-        final response = GetLocationResponse(location: locationDto);
+        final response = GetLocationResponse()..location = locationDto;
 
         final viamSharedSecret = ViamSharedSecret(
           ViamSharedSecretState.enabled,
@@ -317,19 +299,16 @@ void main() {
     group('getRobot', () {
       const robotId = 'robotId';
 
-      final request = GetRobotRequest(
-        id: robotId,
-      );
+      final request = GetRobotRequest()..id = robotId;
 
       test('gets ViamRobot successfully', () async {
         final timeStamp = Timestamp.create();
-        final robotDto = Robot(
-          createdOn: timeStamp,
-          id: 'id',
-          lastAccess: timeStamp,
-          location: 'location',
-          name: 'name',
-        );
+        final robotDto = Robot()
+          ..createdOn = timeStamp
+          ..id = 'id'
+          ..lastAccess = timeStamp
+          ..location = 'location'
+          ..name = 'name';
 
         final viamRobot = ViamRobot(
           id: 'id',
@@ -339,9 +318,7 @@ void main() {
           createdOn: timeStamp.toDateTime(),
         );
 
-        final response = GetRobotResponse(
-          robot: robotDto,
-        );
+        final response = GetRobotResponse()..robot = robotDto;
 
         when(appServiceClient.getRobot(request)).thenAnswer(
           (_) => MockResponseFuture.value(response),
