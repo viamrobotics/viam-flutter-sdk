@@ -10,6 +10,7 @@ class StreamManager {
   final Map<String, StreamClient> _clients = {};
   final WebRtcClientChannel _channel;
   final StreamServiceClient _client;
+  // ignore: cancel_subscriptions
   StreamSubscription? _errorHandler;
 
   static final Finalizer<StreamSubscription?> _finalizer = Finalizer((p0) {
