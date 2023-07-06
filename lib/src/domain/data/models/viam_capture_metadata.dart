@@ -9,7 +9,6 @@ class ViamCaptureMetadata {
   final String partName;
   final String partId;
   final String componentType;
-  final String componentModel;
   final String componentName;
   final String methodName;
   final Map<String, dynamic> methodParameters;
@@ -24,7 +23,6 @@ class ViamCaptureMetadata {
     this.partName,
     this.partId,
     this.componentType,
-    this.componentModel,
     this.componentName,
     this.methodName,
     this.methodParameters,
@@ -41,7 +39,6 @@ class ViamCaptureMetadata {
       partName == other.partName &&
       partId == other.partId &&
       componentType == other.componentType &&
-      componentModel == other.componentModel &&
       componentName == other.componentName &&
       methodName == other.methodName &&
       const ListEquality().equals(
@@ -60,7 +57,6 @@ class ViamCaptureMetadata {
         partName,
         partId,
         componentType,
-        componentModel,
         componentName,
         methodName,
         methodParameters,
@@ -71,14 +67,13 @@ class ViamCaptureMetadata {
 
 extension ViamCaptureMetadataMapper on CaptureMetadata {
   ViamCaptureMetadata toDomain() => ViamCaptureMetadata(
-        orgId,
+        organizationId,
         locationId,
         robotName,
         robotId,
         partName,
         partId,
         componentType,
-        componentModel,
         componentName,
         methodName,
         methodParameters,

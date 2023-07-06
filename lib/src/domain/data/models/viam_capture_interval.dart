@@ -30,8 +30,14 @@ class ViamCaptureInterval {
 }
 
 extension CaptureIntervalMapper on ViamCaptureInterval {
-  CaptureInterval toDto() => CaptureInterval(
-        start: start != null ? Timestamp.fromDateTime(start!) : null,
-        end: end != null ? Timestamp.fromDateTime(end!) : null,
-      );
+  CaptureInterval toDto() {
+    final output = CaptureInterval();
+    if (start != null) {
+      output.start = Timestamp.fromDateTime(start!);
+    }
+    if (end != null) {
+      output.end = Timestamp.fromDateTime(end!);
+    }
+    return output;
+  }
 }

@@ -15,10 +15,10 @@ class DataService {
     required ViamDataRequest viamDataRequest,
     bool? countOnly,
   }) async {
-    final getTabularDataRequest = TabularDataByFilterRequest(
-      dataRequest: viamDataRequest.toDto(),
-      countOnly: countOnly,
-    );
+    final getTabularDataRequest = TabularDataByFilterRequest()..dataRequest = viamDataRequest.toDto();
+    if (countOnly != null) {
+      getTabularDataRequest.countOnly = countOnly;
+    }
 
     final response = await _dataServiceClient.tabularDataByFilter(getTabularDataRequest);
 
@@ -30,11 +30,13 @@ class DataService {
     bool? includeBinary,
     bool? countOnly,
   }) async {
-    final binaryDataByFilterRequest = BinaryDataByFilterRequest(
-      dataRequest: viamDataRequest.toDto(),
-      countOnly: countOnly,
-      includeBinary: includeBinary,
-    );
+    final binaryDataByFilterRequest = BinaryDataByFilterRequest()..dataRequest = viamDataRequest.toDto();
+    if (countOnly != null) {
+      binaryDataByFilterRequest.countOnly = countOnly;
+    }
+    if (includeBinary != null) {
+      binaryDataByFilterRequest.includeBinary = includeBinary;
+    }
 
     final BinaryDataByFilterResponse response = await _dataServiceClient.binaryDataByFilter(binaryDataByFilterRequest);
 
@@ -45,10 +47,10 @@ class DataService {
     required List<String> fileIds,
     bool? includeBinary,
   }) async {
-    final binaryDataByIDsRequest = BinaryDataByIDsRequest(
-      fileIds: fileIds,
-      includeBinary: includeBinary,
-    );
+    final binaryDataByIDsRequest = BinaryDataByIDsRequest()..fileIds.addAll(fileIds);
+    if (includeBinary != null) {
+      binaryDataByIDsRequest.includeBinary = includeBinary;
+    }
 
     final BinaryDataByIDsResponse response = await _dataServiceClient.binaryDataByIDs(binaryDataByIDsRequest);
 

@@ -18,9 +18,7 @@ class ViamAppService {
   }
 
   Future<List<ViamLocation>> listLocations(String? organizationId) async {
-    final listLocationsRequest = ListLocationsRequest(
-      organizationId: organizationId,
-    );
+    final listLocationsRequest = ListLocationsRequest()..organizationId = organizationId ?? '';
 
     final ListLocationsResponse response = await _appServiceClient.listLocations(listLocationsRequest);
 
@@ -28,9 +26,7 @@ class ViamAppService {
   }
 
   Future<List<ViamRobot>> listRobots(String? locationId) async {
-    final listRobotsRequest = ListRobotsRequest(
-      locationId: locationId,
-    );
+    final listRobotsRequest = ListRobotsRequest()..locationId = locationId ?? '';
 
     final ListRobotsResponse response = await _appServiceClient.listRobots(listRobotsRequest);
 
@@ -38,7 +34,7 @@ class ViamAppService {
   }
 
   Future<ViamOrganization> getOrganizatoin(String? organizationId) async {
-    final getOrganizationRequest = GetOrganizationRequest(organizationId: organizationId);
+    final getOrganizationRequest = GetOrganizationRequest()..organizationId = organizationId ?? '';
 
     final GetOrganizationResponse response = await _appServiceClient.getOrganization(getOrganizationRequest);
 
@@ -46,7 +42,7 @@ class ViamAppService {
   }
 
   Future<List<ViamRobotPart>> getRobotParts(String robotId) async {
-    final getRobotPartsRequest = GetRobotPartsRequest(robotId: robotId);
+    final getRobotPartsRequest = GetRobotPartsRequest()..robotId = robotId;
 
     final response = await _appServiceClient.getRobotParts(getRobotPartsRequest);
 
@@ -54,7 +50,7 @@ class ViamAppService {
   }
 
   Future<ViamRobotPart> getRobotPart(String robotId) async {
-    final getRobotPartRequest = GetRobotPartRequest(id: robotId);
+    final getRobotPartRequest = GetRobotPartRequest()..id = robotId;
 
     final response = await _appServiceClient.getRobotPart(getRobotPartRequest);
 
@@ -62,7 +58,7 @@ class ViamAppService {
   }
 
   Future<ViamLocation> getLocation(String? locationId) async {
-    final getLocationRequest = GetLocationRequest(locationId: locationId);
+    final getLocationRequest = GetLocationRequest()..locationId = locationId ?? '';
 
     final GetLocationResponse response = await _appServiceClient.getLocation(getLocationRequest);
 
@@ -70,7 +66,7 @@ class ViamAppService {
   }
 
   Future<ViamRobot> getRobot(String? robotId) async {
-    final getRobotRequest = GetRobotRequest(id: robotId);
+    final getRobotRequest = GetRobotRequest()..id = robotId ?? '';
 
     final GetRobotResponse response = await _appServiceClient.getRobot(getRobotRequest);
 

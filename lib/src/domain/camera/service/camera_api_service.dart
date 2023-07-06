@@ -4,9 +4,9 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:viam_sdk/src/domain/camera/model/camera_frame_data.dart';
 import 'package:viam_sdk/src/domain/resource/model/viam_resource_name.dart';
+import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/proto/stream/v1/stream.pbgrpc.dart';
-import 'package:viam_sdk/src/domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 
 const mimeType = 'image/png';
 
@@ -57,10 +57,9 @@ class ViamCameraService {
   ) async {
     final String name = cameraResourceName.toDto().name;
 
-    final cameraRequest = GetImageRequest(
-      mimeType: mimeType,
-      name: name,
-    );
+    final cameraRequest = GetImageRequest()
+      ..mimeType = mimeType
+      ..name = name;
 
     final GetImageResponse response = await _cameraServiceClient.getImage(cameraRequest);
 
@@ -68,7 +67,7 @@ class ViamCameraService {
   }
 
   Future<void> getCameraVideo(String cameraName) async {
-    final request = AddStreamRequest(name: cameraName);
+    final request = AddStreamRequest()..name = cameraName;
     await _streamServiceClient.addStream(request);
   }
 

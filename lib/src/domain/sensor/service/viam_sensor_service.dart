@@ -18,12 +18,11 @@ class ViamSensorService {
 
     final resourceNamesDto = resourceNames.map<ResourceName>((resource) => resource.toDto()).toList(growable: false);
 
-    final sensorNames = ResourceName(
-      name: resourceNamesDto.first.name,
-      namespace: resourceNamesDto.first.namespace,
-      type: resourceNamesDto.first.type,
-      subtype: resourceNamesDto.first.subtype,
-    );
+    final sensorNames = ResourceName()
+      ..name = resourceNamesDto.first.name
+      ..namespace = resourceNamesDto.first.namespace
+      ..type = resourceNamesDto.first.type
+      ..subtype = resourceNamesDto.first.subtype;
 
     sensorRequest.sensorNames.addAll([sensorNames]);
 

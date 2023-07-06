@@ -19,8 +19,14 @@ class ViamTagsFilter {
 }
 
 extension TagsFilterMapper on ViamTagsFilter {
-  TagsFilter toDto() => TagsFilter(
-        type: type?.toDto(),
-        tags: tags,
-      );
+  TagsFilter toDto() {
+    final output = TagsFilter();
+    if (type != null) {
+      output.type = type!.toDto();
+    }
+    if (tags != null) {
+      output.tags.addAll(tags!);
+    }
+    return output;
+  }
 }
