@@ -69,7 +69,7 @@ extension MapStructUtils on Map<String, dynamic> {
       } else if (value is Map<String, dynamic>) {
         result[entry.key] = value.toValue();
       } else if (value == null) {
-        result[entry.key] = Value()..nullValue = value;
+        result[entry.key] = Value()..nullValue = NullValue.NULL_VALUE;
       } else {
         _logger.e('Error converting the Map to a Struct');
         throw GrpcError.invalidArgument('Unsupported type');
