@@ -116,8 +116,14 @@ void main() {
       expect(base.linearPower, Vector3());
       expect(base.angularPower, Vector3());
 
-      final linear = Vector3(x: 1, y: 2, z: 3);
-      final angular = Vector3(x: 4, y: 5, z: 6);
+      final linear = Vector3()
+        ..x = 1
+        ..y = 2
+        ..z = 3;
+      final angular = Vector3()
+        ..x = 4
+        ..y = 5
+        ..z = 6;
       await base.setPower(linear, angular);
       expect(base.linearPower, linear);
       expect(base.angularPower, angular);
@@ -127,8 +133,14 @@ void main() {
       expect(base.linearVel, Vector3());
       expect(base.angularVel, Vector3());
 
-      final linear = Vector3(x: 1, y: 2, z: 3);
-      final angular = Vector3(x: 4, y: 5, z: 6);
+      final linear = Vector3()
+        ..x = 1
+        ..y = 2
+        ..z = 3;
+      final angular = Vector3()
+        ..x = 4
+        ..y = 5
+        ..z = 6;
       await base.setVelocity(linear, angular);
       expect(base.linearVel, linear);
       expect(base.angularVel, angular);
@@ -196,7 +208,10 @@ void main() {
         expect(base.isStopped, true);
 
         final client = BaseServiceClient(channel);
-        final request = MoveStraightRequest(name: name, distanceMm: Int64(182), mmPerSec: 44);
+        final request = MoveStraightRequest()
+          ..name = name
+          ..distanceMm = Int64(182)
+          ..mmPerSec = 44;
         await client.moveStraight(request);
 
         expect(base.position, 182);
@@ -208,7 +223,10 @@ void main() {
         expect(base.isStopped, true);
 
         final client = BaseServiceClient(channel);
-        final request = SpinRequest(name: name, angleDeg: 182, degsPerSec: 44);
+        final request = SpinRequest()
+          ..name = name
+          ..angleDeg = 182
+          ..degsPerSec = 44;
         await client.spin(request);
 
         expect(base.angle, 182);
@@ -219,11 +237,20 @@ void main() {
         expect(base.linearPower, Vector3());
         expect(base.angularPower, Vector3());
 
-        final linear = Vector3(x: 1, y: 2, z: 3);
-        final angular = Vector3(x: 4, y: 5, z: 6);
+        final linear = Vector3()
+          ..x = 1
+          ..y = 2
+          ..z = 3;
+        final angular = Vector3()
+          ..x = 4
+          ..y = 5
+          ..z = 6;
 
         final client = BaseServiceClient(channel);
-        final request = SetPowerRequest(name: name, linear: linear, angular: angular);
+        final request = SetPowerRequest()
+          ..name = name
+          ..linear = linear
+          ..angular = angular;
         await client.setPower(request);
 
         expect(base.linearPower, linear);
@@ -234,11 +261,20 @@ void main() {
         expect(base.linearVel, Vector3());
         expect(base.angularVel, Vector3());
 
-        final linear = Vector3(x: 1, y: 2, z: 3);
-        final angular = Vector3(x: 4, y: 5, z: 6);
+        final linear = Vector3()
+          ..x = 1
+          ..y = 2
+          ..z = 3;
+        final angular = Vector3()
+          ..x = 4
+          ..y = 5
+          ..z = 6;
 
         final client = BaseServiceClient(channel);
-        final request = SetVelocityRequest(name: name, linear: linear, angular: angular);
+        final request = SetVelocityRequest()
+          ..name = name
+          ..linear = linear
+          ..angular = angular;
         await client.setVelocity(request);
 
         expect(base.linearVel, linear);
@@ -250,33 +286,41 @@ void main() {
 
         final client = BaseServiceClient(channel);
 
-        final request = MoveStraightRequest(name: name, distanceMm: Int64(182), mmPerSec: 44);
+        final request = MoveStraightRequest()
+          ..name = name
+          ..distanceMm = Int64(182)
+          ..mmPerSec = 44;
         await client.moveStraight(request);
         expect(base.isStopped, false);
 
-        await client.stop(StopRequest(name: name));
+        await client.stop(StopRequest()..name = name);
         expect(base.isStopped, true);
       });
 
       test('isMoving', () async {
         final client = BaseServiceClient(channel);
-        IsMovingResponse resp = await client.isMoving(IsMovingRequest(name: name));
+        IsMovingResponse resp = await client.isMoving(IsMovingRequest()..name = name);
         expect(resp.isMoving, false);
 
-        final request = MoveStraightRequest(name: name, distanceMm: Int64(182), mmPerSec: 44);
+        final request = MoveStraightRequest()
+          ..name = name
+          ..distanceMm = Int64(182)
+          ..mmPerSec = 44;
         await client.moveStraight(request);
-        resp = await client.isMoving(IsMovingRequest(name: name));
+        resp = await client.isMoving(IsMovingRequest()..name = name);
         expect(resp.isMoving, true);
 
-        await client.stop(StopRequest(name: name));
-        resp = await client.isMoving(IsMovingRequest(name: name));
+        await client.stop(StopRequest()..name = name);
+        resp = await client.isMoving(IsMovingRequest()..name = name);
         expect(resp.isMoving, false);
       });
 
       test('doCommand', () async {
         final Map<String, String> cmd = {'foo': 'bar'};
         final client = BaseServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap(), {'command': cmd});
       });
 
@@ -284,7 +328,9 @@ void main() {
         expect(base.extra, null);
 
         final client = BaseServiceClient(channel);
-        await client.stop(StopRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        await client.stop(StopRequest()
+          ..name = name
+          ..extra = {'foo': 'bar'}.toStruct());
         expect(base.extra, {'foo': 'bar'});
       });
     });
@@ -315,8 +361,14 @@ void main() {
         expect(base.linearPower, Vector3());
         expect(base.angularPower, Vector3());
 
-        final linear = Vector3(x: 1, y: 2, z: 3);
-        final angular = Vector3(x: 4, y: 5, z: 6);
+        final linear = Vector3()
+          ..x = 1
+          ..y = 2
+          ..z = 3;
+        final angular = Vector3()
+          ..x = 4
+          ..y = 5
+          ..z = 6;
 
         final client = BaseClient(name, channel);
         await client.setPower(linear, angular);
@@ -329,8 +381,14 @@ void main() {
         expect(base.linearVel, Vector3());
         expect(base.angularVel, Vector3());
 
-        final linear = Vector3(x: 1, y: 2, z: 3);
-        final angular = Vector3(x: 4, y: 5, z: 6);
+        final linear = Vector3()
+          ..x = 1
+          ..y = 2
+          ..z = 3;
+        final angular = Vector3()
+          ..x = 4
+          ..y = 5
+          ..z = 6;
 
         final client = BaseClient(name, channel);
         await client.setVelocity(linear, angular);

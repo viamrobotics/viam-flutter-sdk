@@ -28,7 +28,7 @@ class FakeMovementSensor extends MovementSensor {
   @override
   Future<Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Vector3(x: 0);
+    return Vector3()..x = 0;
   }
 
   @override
@@ -40,31 +40,31 @@ class FakeMovementSensor extends MovementSensor {
   @override
   Future<Vector3> linearAcceleration({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Vector3(x: 0);
+    return Vector3()..x = 0;
   }
 
   @override
   Future<Vector3> linearVelocity({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Vector3(x: 0);
+    return Vector3()..x = 0;
   }
 
   @override
   Future<Orientation> orientation({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Orientation(oX: 0);
+    return Orientation()..oX = 0;
   }
 
   @override
   Future<Position> position({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Position(GeoPoint(latitude: 0), 0);
+    return Position(GeoPoint()..latitude = 0, 0);
   }
 
   @override
   Future<Properties> properties({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Properties(angularVelocitySupported: false);
+    return Properties()..angularVelocitySupported = false;
   }
 
   @override
@@ -166,49 +166,49 @@ void main() {
     group('MovementSensor Service Tests', () {
       test('accuracy', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getAccuracy(GetAccuracyRequest(name: name));
+        final result = await client.getAccuracy(GetAccuracyRequest()..name = name);
         expect(result.accuracy, {'accuracy': 0});
       });
 
       test('angularVelocity', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getAngularVelocity(GetAngularVelocityRequest(name: name));
+        final result = await client.getAngularVelocity(GetAngularVelocityRequest()..name = name);
         expect(result.angularVelocity.x, 0);
       });
 
       test('compassHeading', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getCompassHeading(GetCompassHeadingRequest(name: name));
+        final result = await client.getCompassHeading(GetCompassHeadingRequest()..name = name);
         expect(result.value, 0);
       });
 
       test('linearAcceleration', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getLinearAcceleration(GetLinearAccelerationRequest(name: name));
+        final result = await client.getLinearAcceleration(GetLinearAccelerationRequest()..name = name);
         expect(result.linearAcceleration.x, 0);
       });
 
       test('linearVelocity', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getLinearVelocity(GetLinearVelocityRequest(name: name));
+        final result = await client.getLinearVelocity(GetLinearVelocityRequest()..name = name);
         expect(result.linearVelocity.x, 0);
       });
 
       test('orientation', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getOrientation(GetOrientationRequest(name: name));
+        final result = await client.getOrientation(GetOrientationRequest()..name = name);
         expect(result.orientation.oX, 0);
       });
 
       test('position', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getPosition(GetPositionRequest(name: name));
+        final result = await client.getPosition(GetPositionRequest()..name = name);
         expect(result.altitudeM, 0);
       });
 
       test('properties', () async {
         final client = MovementSensorServiceClient(channel);
-        final result = await client.getProperties(GetPropertiesRequest(name: name));
+        final result = await client.getProperties(GetPropertiesRequest()..name = name);
         expect(result.angularVelocitySupported, false);
       });
 
@@ -216,7 +216,9 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = MovementSensorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -224,7 +226,9 @@ void main() {
         expect(movementSensor.extra, null);
 
         final client = MovementSensorServiceClient(channel);
-        await client.getAccuracy(GetAccuracyRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        await client.getAccuracy(GetAccuracyRequest()
+          ..name = name
+          ..extra = {'foo': 'bar'}.toStruct());
         expect(movementSensor.extra, {'foo': 'bar'});
       });
     });
@@ -291,7 +295,15 @@ void main() {
         ];
         expect(result.keys, expectedKeys);
 
-        final expectedValues = [GeoPoint(latitude: 0.0), 0.0, Vector3(x: 0.0), Vector3(x: 0.0), Vector3(x: 0.0), 0.0, Orientation(oX: 0.0)];
+        final expectedValues = [
+          GeoPoint()..latitude = 0.0,
+          0.0,
+          Vector3()..x = 0.0,
+          Vector3()..x = 0.0,
+          Vector3()..x = 0.0,
+          0.0,
+          Orientation()..oX = 0.0
+        ];
         expect(result.values, expectedValues);
       });
 

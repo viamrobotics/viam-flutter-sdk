@@ -10,8 +10,11 @@ import '../../test_utils.dart';
 
 class FakeArm extends Arm {
   bool isStopped = true;
-  JointPositions armJointPositions = JointPositions(values: [0, 0, 0]);
-  Pose armEndPosition = Pose(x: 0, y: 0, z: 0);
+  JointPositions armJointPositions = JointPositions()..values.addAll([0, 0, 0]);
+  Pose armEndPosition = Pose()
+    ..x = 0
+    ..y = 0
+    ..z = 0;
   Map<String, dynamic>? extra;
 
   @override
@@ -83,13 +86,16 @@ void main() {
     });
 
     test('moveToJointPositions', () async {
-      final expected = JointPositions(values: [1, 1, 1]);
+      final expected = JointPositions()..values.addAll([1, 1, 1]);
       await arm.moveToJointPositions(expected);
       expect(arm.armJointPositions, expected);
     });
 
     test('moveToPosition', () async {
-      final expected = Pose(x: 1, y: 1, z: 1);
+      final expected = Pose()
+        ..x = 1
+        ..y = 1
+        ..z = 1;
       await arm.moveToPosition(expected);
       expect(arm.armEndPosition, expected);
     });
@@ -153,37 +159,44 @@ void main() {
     group('Arm Service Tests', () {
       test('endPosition', () async {
         final client = ArmServiceClient(channel);
-        final request = GetEndPositionRequest(name: name);
+        final request = GetEndPositionRequest()..name = name;
         final response = await client.getEndPosition(request);
         expect(response.pose, arm.armEndPosition);
       });
 
       test('jointPositions', () async {
         final client = ArmServiceClient(channel);
-        final request = GetJointPositionsRequest(name: name);
+        final request = GetJointPositionsRequest()..name = name;
         final response = await client.getJointPositions(request);
         expect(response.positions, arm.armJointPositions);
       });
 
       test('moveToJointPositions', () async {
         final client = ArmServiceClient(channel);
-        final expected = JointPositions(values: [1, 1, 1]);
-        final request = MoveToJointPositionsRequest(name: name, positions: expected);
+        final expected = JointPositions()..values.addAll([1, 1, 1]);
+        final request = MoveToJointPositionsRequest()
+          ..name = name
+          ..positions = expected;
         await client.moveToJointPositions(request);
         expect(arm.armJointPositions, expected);
       });
 
       test('moveToPosition', () async {
         final client = ArmServiceClient(channel);
-        final expected = Pose(x: 1, y: 1, z: 1);
-        final request = MoveToPositionRequest(name: name, to: expected);
+        final expected = Pose()
+          ..x = 1
+          ..y = 1
+          ..z = 1;
+        final request = MoveToPositionRequest()
+          ..name = name
+          ..to = expected;
         await client.moveToPosition(request);
         expect(arm.armEndPosition, expected);
       });
 
       test('stop', () async {
         final client = ArmServiceClient(channel);
-        final request = StopRequest(name: name);
+        final request = StopRequest()..name = name;
         expect(await arm.isMoving(), false);
 
         arm.isStopped = false;
@@ -195,7 +208,7 @@ void main() {
 
       test('isMoving', () async {
         final client = ArmServiceClient(channel);
-        final request = IsMovingRequest(name: name);
+        final request = IsMovingRequest()..name = name;
 
         var response = await client.isMoving(request);
         expect(response.isMoving, false);
@@ -213,7 +226,9 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = ArmServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -221,7 +236,9 @@ void main() {
         expect(arm.extra, null);
 
         final client = ArmServiceClient(channel);
-        await client.stop(StopRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        await client.stop(StopRequest()
+          ..name = name
+          ..extra = {'foo': 'bar'}.toStruct());
         expect(arm.extra, {'foo': 'bar'});
       });
     });
@@ -241,14 +258,17 @@ void main() {
 
       test('moveToJointPositions', () async {
         final client = ArmClient(name, channel);
-        final expected = JointPositions(values: [1, 1, 1]);
+        final expected = JointPositions()..values.addAll([1, 1, 1]);
         await client.moveToJointPositions(expected);
         expect(arm.armJointPositions, expected);
       });
 
       test('moveToPosition', () async {
         final client = ArmClient(name, channel);
-        final expected = Pose(x: 1, y: 1, z: 1);
+        final expected = Pose()
+          ..x = 1
+          ..y = 1
+          ..z = 1;
         await client.moveToPosition(expected);
         expect(arm.armEndPosition, expected);
       });

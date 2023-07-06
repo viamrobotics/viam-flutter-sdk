@@ -85,7 +85,7 @@ void main() {
     group('Sensor Service Tests', () {
       test('getReadings', () async {
         final client = SensorServiceClient(channel);
-        final result = await client.getReadings(GetReadingsRequest(name: name));
+        final result = await client.getReadings(GetReadingsRequest()..name = name);
         final resultMap = result.readings.map((key, value) => MapEntry(key, value.toPrimitive()));
         expect(resultMap, sensor.sensorReadings);
       });
@@ -94,7 +94,9 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = SensorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -102,7 +104,9 @@ void main() {
         expect(sensor.extra, null);
 
         final client = SensorServiceClient(channel);
-        await client.getReadings(GetReadingsRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        await client.getReadings(GetReadingsRequest()
+          ..name = name
+          ..extra = {'foo': 'bar'}.toStruct());
         expect(sensor.extra, {'foo': 'bar'});
       });
     });

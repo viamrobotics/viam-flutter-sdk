@@ -36,7 +36,7 @@ class FakeCamera extends Camera {
 
   @override
   Future<CameraProperties> properties() async {
-    return CameraProperties(true, IntrinsicParameters(widthPx: 10), DistortionParameters(model: 'test'));
+    return CameraProperties(true, IntrinsicParameters()..widthPx = 10, DistortionParameters()..model = 'test');
   }
 }
 
@@ -104,13 +104,17 @@ void main() {
     group('Camera Service Tests', () {
       test('image', () async {
         final client = CameraServiceClient(channel);
-        final jpegRequest = GetImageRequest(name: name, mimeType: 'jpeg');
+        final jpegRequest = GetImageRequest()
+          ..name = name
+          ..mimeType = 'jpeg';
 
         final actualJpeg = await client.getImage(jpegRequest);
         expect(actualJpeg.mimeType, 'jpeg');
         expect(actualJpeg.image, [0, 0, 0]);
 
-        final pngRequest = GetImageRequest(name: name, mimeType: 'png');
+        final pngRequest = GetImageRequest()
+          ..name = name
+          ..mimeType = 'png';
 
         final actualPng = await client.getImage(pngRequest);
         expect(actualPng.mimeType, 'png');
@@ -119,14 +123,14 @@ void main() {
 
       test('pointCloud', () async {
         final client = CameraServiceClient(channel);
-        final actualPcd = await client.getPointCloud(GetPointCloudRequest(name: name));
+        final actualPcd = await client.getPointCloud(GetPointCloudRequest()..name = name);
         expect(actualPcd.mimeType, 'pointcloud/pcd');
         expect(actualPcd.pointCloud, [0, 0, 0]);
       });
 
       test('properties', () async {
         final client = CameraServiceClient(channel);
-        final actual = await client.getProperties(GetPropertiesRequest(name: name));
+        final actual = await client.getProperties(GetPropertiesRequest()..name = name);
         expect(actual.distortionParameters.model, 'test');
         expect(actual.intrinsicParameters.widthPx, 10);
       });
@@ -134,7 +138,9 @@ void main() {
       test('doCommand', () async {
         final client = CameraServiceClient(channel);
         final Map<String, String> cmd = {'foo': 'bar'};
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap(), {'command': cmd});
       });
     });
