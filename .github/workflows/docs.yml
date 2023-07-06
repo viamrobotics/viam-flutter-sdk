@@ -15,7 +15,7 @@ jobs:
     if: github.repository_owner == 'viamrobotics'
     runs-on: [self-hosted, x64]
     container:
-      image: ghcr.io/cirruslabs/flutter:3.7.12
+      image: ghcr.io/cirruslabs/flutter:3.10.5
     steps:
       - name: Checkout Push/Workflow Dispatch
         uses: actions/checkout@v3
