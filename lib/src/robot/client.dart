@@ -151,6 +151,7 @@ class RobotClient {
         await client.resourceNames(ResourceNamesRequest());
 
         _channel = channel;
+        _streamManager.channel = _channel as WebRtcClientChannel;
         _client = client;
         await refresh();
         _connected = true;
