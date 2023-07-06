@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/api/resource.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -14,53 +18,22 @@ import 'resource.pbenum.dart';
 export 'resource.pbenum.dart';
 
 class ResourceDescriptor extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResourceDescriptor', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pattern')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nameField')
-    ..e<ResourceDescriptor_History>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'history', $pb.PbFieldType.OE, defaultOrMaker: ResourceDescriptor_History.HISTORY_UNSPECIFIED, valueOf: ResourceDescriptor_History.valueOf, enumValues: ResourceDescriptor_History.values)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plural')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'singular')
-    ..pc<ResourceDescriptor_Style>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'style', $pb.PbFieldType.KE, valueOf: ResourceDescriptor_Style.valueOf, enumValues: ResourceDescriptor_Style.values, defaultEnumValue: ResourceDescriptor_Style.STYLE_UNSPECIFIED)
+  factory ResourceDescriptor() => create();
+  ResourceDescriptor._() : super();
+  factory ResourceDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResourceDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceDescriptor', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'type')
+    ..pPS(2, _omitFieldNames ? '' : 'pattern')
+    ..aOS(3, _omitFieldNames ? '' : 'nameField')
+    ..e<ResourceDescriptor_History>(4, _omitFieldNames ? '' : 'history', $pb.PbFieldType.OE, defaultOrMaker: ResourceDescriptor_History.HISTORY_UNSPECIFIED, valueOf: ResourceDescriptor_History.valueOf, enumValues: ResourceDescriptor_History.values)
+    ..aOS(5, _omitFieldNames ? '' : 'plural')
+    ..aOS(6, _omitFieldNames ? '' : 'singular')
+    ..pc<ResourceDescriptor_Style>(10, _omitFieldNames ? '' : 'style', $pb.PbFieldType.KE, valueOf: ResourceDescriptor_Style.valueOf, enumValues: ResourceDescriptor_Style.values, defaultEnumValue: ResourceDescriptor_Style.STYLE_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
-  ResourceDescriptor._() : super();
-  factory ResourceDescriptor({
-    $core.String? type,
-    $core.Iterable<$core.String>? pattern,
-    $core.String? nameField,
-    ResourceDescriptor_History? history,
-    $core.String? plural,
-    $core.String? singular,
-    $core.Iterable<ResourceDescriptor_Style>? style,
-  }) {
-    final _result = create();
-    if (type != null) {
-      _result.type = type;
-    }
-    if (pattern != null) {
-      _result.pattern.addAll(pattern);
-    }
-    if (nameField != null) {
-      _result.nameField = nameField;
-    }
-    if (history != null) {
-      _result.history = history;
-    }
-    if (plural != null) {
-      _result.plural = plural;
-    }
-    if (singular != null) {
-      _result.singular = singular;
-    }
-    if (style != null) {
-      _result.style.addAll(style);
-    }
-    return _result;
-  }
-  factory ResourceDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResourceDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -70,8 +43,10 @@ class ResourceDescriptor extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResourceDescriptor copyWith(void Function(ResourceDescriptor) updates) => super.copyWith((message) => updates(message as ResourceDescriptor)) as ResourceDescriptor; // ignore: deprecated_member_use
+  ResourceDescriptor copyWith(void Function(ResourceDescriptor) updates) => super.copyWith((message) => updates(message as ResourceDescriptor)) as ResourceDescriptor;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ResourceDescriptor create() => ResourceDescriptor._();
   ResourceDescriptor createEmptyInstance() => create();
@@ -133,28 +108,17 @@ class ResourceDescriptor extends $pb.GeneratedMessage {
 }
 
 class ResourceReference extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResourceReference', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'childType')
+  factory ResourceReference() => create();
+  ResourceReference._() : super();
+  factory ResourceReference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResourceReference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceReference', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'type')
+    ..aOS(2, _omitFieldNames ? '' : 'childType')
     ..hasRequiredFields = false
   ;
 
-  ResourceReference._() : super();
-  factory ResourceReference({
-    $core.String? type,
-    $core.String? childType,
-  }) {
-    final _result = create();
-    if (type != null) {
-      _result.type = type;
-    }
-    if (childType != null) {
-      _result.childType = childType;
-    }
-    return _result;
-  }
-  factory ResourceReference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResourceReference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -164,8 +128,10 @@ class ResourceReference extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResourceReference copyWith(void Function(ResourceReference) updates) => super.copyWith((message) => updates(message as ResourceReference)) as ResourceReference; // ignore: deprecated_member_use
+  ResourceReference copyWith(void Function(ResourceReference) updates) => super.copyWith((message) => updates(message as ResourceReference)) as ResourceReference;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ResourceReference create() => ResourceReference._();
   ResourceReference createEmptyInstance() => create();
@@ -194,9 +160,9 @@ class ResourceReference extends $pb.GeneratedMessage {
 }
 
 class Resource {
-  static final resourceReference = $pb.Extension<ResourceReference>(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.FieldOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceReference', 1055, $pb.PbFieldType.OM, defaultOrMaker: ResourceReference.getDefault, subBuilder: ResourceReference.create);
-  static final resourceDefinition = $pb.Extension<ResourceDescriptor>.repeated(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.FileOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceDefinition', 1053, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: ResourceDescriptor.create);
-  static final resource = $pb.Extension<ResourceDescriptor>(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.MessageOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resource', 1053, $pb.PbFieldType.OM, defaultOrMaker: ResourceDescriptor.getDefault, subBuilder: ResourceDescriptor.create);
+  static final resourceReference = $pb.Extension<ResourceReference>(_omitMessageNames ? '' : 'google.protobuf.FieldOptions', _omitFieldNames ? '' : 'resourceReference', 1055, $pb.PbFieldType.OM, defaultOrMaker: ResourceReference.getDefault, subBuilder: ResourceReference.create);
+  static final resourceDefinition = $pb.Extension<ResourceDescriptor>.repeated(_omitMessageNames ? '' : 'google.protobuf.FileOptions', _omitFieldNames ? '' : 'resourceDefinition', 1053, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: ResourceDescriptor.create);
+  static final resource = $pb.Extension<ResourceDescriptor>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'resource', 1053, $pb.PbFieldType.OM, defaultOrMaker: ResourceDescriptor.getDefault, subBuilder: ResourceDescriptor.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(resourceReference);
     registry.add(resourceDefinition);
@@ -204,3 +170,6 @@ class Resource {
   }
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

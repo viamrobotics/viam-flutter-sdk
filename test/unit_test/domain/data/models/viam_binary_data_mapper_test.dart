@@ -10,38 +10,34 @@ import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 void main() {
   group('When map from BinaryData to ViamBinaryData', () {
     test('mapper returns correct values', () {
-      final captureMetadata = CaptureMetadata(
-        orgId: 'orgId',
-        locationId: 'locationId',
-        robotName: 'robotName',
-        robotId: 'robotId',
-        partName: 'partName',
-        partId: 'partId',
-        componentType: 'componentType',
-        componentModel: 'componentModel',
-        componentName: 'componentName',
-        methodName: 'methodName',
-        methodParameters: <String, Any>{},
-        tags: ['tags'],
-        mimeType: 'mimeType',
-      );
+      final captureMetadata = CaptureMetadata()
+        ..organizationId = 'orgId'
+        ..locationId = 'locationId'
+        ..robotName = 'robotName'
+        ..robotId = 'robotId'
+        ..partName = 'partName'
+        ..partId = 'partId'
+        ..componentType = 'componentType'
+        ..componentName = 'componentName'
+        ..methodName = 'methodName'
+        ..methodParameters.addAll(<String, Any>{})
+        ..tags.addAll(['tags'])
+        ..mimeType = 'mimeType';
 
       final date = DateTime.now();
 
-      final binaryMetadata = BinaryMetadata(
-        id: 'id',
-        captureMetadata: captureMetadata,
-        timeRequested: Timestamp.fromDateTime(date),
-        timeReceived: Timestamp.fromDateTime(date),
-        fileName: 'fileName',
-        fileExt: 'fileExt',
-        uri: 'uri',
-      );
+      final binaryMetadata = BinaryMetadata()
+        ..id = 'id'
+        ..captureMetadata = captureMetadata
+        ..timeRequested = Timestamp.fromDateTime(date)
+        ..timeReceived = Timestamp.fromDateTime(date)
+        ..fileName = 'fileName'
+        ..fileExt = 'fileExt'
+        ..uri = 'uri';
 
-      final binaryData = BinaryData(
-        binary: <int>[1, 2, 3],
-        metadata: binaryMetadata,
-      );
+      final binaryData = BinaryData()
+        ..binary = <int>[1, 2, 3]
+        ..metadata = binaryMetadata;
 
       final viamCaptureMetadata = ViamCaptureMetadata(
         'orgId',
@@ -51,7 +47,6 @@ void main() {
         'partName',
         'partId',
         'componentType',
-        'componentModel',
         'componentName',
         'methodName',
         <String, Any>{},

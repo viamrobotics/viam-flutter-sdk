@@ -4,6 +4,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../gen/google/protobuf/duration.pb.dart' as grpc_duration;
+import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
 import 'board.dart';
@@ -22,70 +23,113 @@ class BoardClient extends Board implements ResourceRPCClient {
   BoardClient(this.name, this.channel);
 
   @override
-  Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
-    final response = await client.doCommand(common.DoCommandRequest(name: name, command: command?.toStruct()));
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final request = common.DoCommandRequest()
+      ..name = name
+      ..command = command.toStruct();
+    final response = await client.doCommand(request);
     return response.result.toMap();
   }
 
   @override
   Future<BoardStatus> status({Map<String, dynamic>? extra}) async {
-    final response = await client.status(StatusRequest(name: name, extra: extra?.toStruct()));
+    final request = StatusRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.status(request);
     return BoardStatus.fromProto(response.status);
   }
 
   @override
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra}) async {
-    await client.setGPIO(SetGPIORequest(name: name, pin: pin, high: high, extra: extra?.toStruct()));
+    final request = SetGPIORequest()
+      ..name = name
+      ..pin = pin
+      ..high = high
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setGPIO(request);
   }
 
   @override
   Future<bool> gpio(String pin, {Map<String, dynamic>? extra}) async {
-    final response = await client.getGPIO(GetGPIORequest(name: name, pin: pin, extra: extra?.toStruct()));
+    final request = GetGPIORequest()
+      ..name = name
+      ..pin = pin
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getGPIO(request);
     return response.high;
   }
 
   @override
   Future<double> pwm(String pin, {Map<String, dynamic>? extra}) async {
-    final response = await client.pWM(PWMRequest(name: name, pin: pin, extra: extra?.toStruct()));
+    final request = PWMRequest()
+      ..name = name
+      ..pin = pin
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.pWM(request);
     return response.dutyCyclePct;
   }
 
   @override
   Future<void> setPwm(String pin, double dutyCyclePct, {Map<String, dynamic>? extra}) async {
-    await client.setPWM(SetPWMRequest(name: name, pin: pin, dutyCyclePct: dutyCyclePct, extra: extra?.toStruct()));
+    final request = SetPWMRequest()
+      ..name = name
+      ..pin = pin
+      ..dutyCyclePct = dutyCyclePct
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setPWM(request);
   }
 
   @override
   Future<int> pwmFrequency(String pin, {Map<String, dynamic>? extra}) async {
-    final response = await client.pWMFrequency(PWMFrequencyRequest(name: name, pin: pin, extra: extra?.toStruct()));
+    final request = PWMFrequencyRequest()
+      ..name = name
+      ..pin = pin
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.pWMFrequency(request);
     return response.frequencyHz.toInt();
   }
 
   @override
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra}) async {
-    await client.setPWMFrequency(SetPWMFrequencyRequest(name: name, pin: pin, frequencyHz: Int64(frequencyHz), extra: extra?.toStruct()));
+    final request = SetPWMFrequencyRequest()
+      ..name = name
+      ..pin = pin
+      ..frequencyHz = Int64(frequencyHz)
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setPWMFrequency(request);
   }
 
   @override
   Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
-    final response = await client
-        .readAnalogReader(ReadAnalogReaderRequest(boardName: name, analogReaderName: analogReaderName, extra: extra?.toStruct()));
+    final request = ReadAnalogReaderRequest()
+      ..boardName = name
+      ..analogReaderName = analogReaderName
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.readAnalogReader(request);
     return response.value;
   }
 
   @override
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra}) async {
-    final response = await client.getDigitalInterruptValue(
-        GetDigitalInterruptValueRequest(boardName: name, digitalInterruptName: digitalInterruptName, extra: extra?.toStruct()));
+    final request = GetDigitalInterruptValueRequest()
+      ..boardName = name
+      ..digitalInterruptName = digitalInterruptName
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getDigitalInterruptValue(request);
     return response.value.toInt();
   }
 
   @override
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra}) async {
-    await client.setPowerMode(SetPowerModeRequest(
-        name: name,
-        powerMode: powerMode,
-        duration: grpc_duration.Duration(seconds: Int64(seconds), nanos: nanos),
-        extra: extra?.toStruct()));
+    final duration = grpc_duration.Duration()
+      ..seconds = Int64(seconds)
+      ..nanos = nanos;
+    final request = SetPowerModeRequest()
+      ..name = name
+      ..powerMode = powerMode
+      ..duration = duration
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setPowerMode(request);
   }
 }

@@ -13,12 +13,11 @@ void main() {
         'name',
       );
 
-      final expectedAnswer = ResourceName(
-        namespace: viamResourceName.namespace,
-        type: viamResourceName.type,
-        subtype: viamResourceName.subtype,
-        name: viamResourceName.name,
-      );
+      final expectedAnswer = ResourceName()
+        ..namespace = viamResourceName.namespace
+        ..type = viamResourceName.type
+        ..subtype = viamResourceName.subtype
+        ..name = viamResourceName.name;
 
       final actualAnswer = viamResourceName.toDto();
 

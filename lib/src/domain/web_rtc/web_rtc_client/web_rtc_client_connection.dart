@@ -38,16 +38,23 @@ class WebRtcClientConnection extends ClientConnection {
     ErrorHandler onRequestFailure, {
     required CallOptions callOptions,
   }) {
-    final stream = grpc.Stream(id: Int64(id++));
-    final grpMetadata = grpc.Metadata(md: metadata.map((key, value) => MapEntry(key, grpc.Strings(values: [value]))));
-    final grpcTimeout = timeout != null
-        ? grpc_duration.Duration(
-            seconds: Int64(timeout.inSeconds),
-            nanos: timeout.inMicroseconds * 1000,
-          )
+    final stream = grpc.Stream()..id = Int64(id++);
+    final grpMetadata = grpc.Metadata()..md.addAll(metadata.map((key, value) => MapEntry(key, grpc.Strings()..values.addAll([value]))));
+    final grpc_duration.Duration? grpcTimeout = timeout != null
+        ? (grpc_duration.Duration()
+          ..seconds = Int64(timeout.inSeconds)
+          ..nanos = timeout.inMicroseconds * 1000)
         : null;
-    final headers = grpc.RequestHeaders(method: path, metadata: grpMetadata, timeout: grpcTimeout);
-    final request = grpc.Request(stream: stream, headers: headers);
+    // final headers = grpc.RequestHeaders(method: path, metadata: grpMetadata, timeout: grpcTimeout);
+    final headers = grpc.RequestHeaders()
+      ..method = path
+      ..metadata = grpMetadata;
+    if (grpcTimeout != null) {
+      headers.timeout = grpcTimeout;
+    }
+    final request = grpc.Request()
+      ..stream = stream
+      ..headers = headers;
     return WebRtcTransportStream(webRtcClientChannel, request, onRequestFailure);
   }
 

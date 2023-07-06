@@ -38,18 +38,18 @@ extension StructUtils on Struct {
 extension ListValueUtils<T> on List<T> {
   Value toValue() {
     final values = map((e) {
-      if (e is bool) return Value(boolValue: e);
+      if (e is bool) return Value()..boolValue = e;
       if (e is List<dynamic>) return e.toValue();
       if (e is Map<String, dynamic>) return e.toValue();
-      if (e is num) return Value(numberValue: e.toDouble());
-      if (e is String) return Value(stringValue: e);
-      if (e == null) return Value(nullValue: null);
+      if (e is num) return Value()..numberValue = e.toDouble();
+      if (e is String) return Value()..stringValue = e;
+      if (e == null) return Value()..nullValue = NullValue.NULL_VALUE;
 
       _logger.e('Error converting the List to a Value');
       throw GrpcError.invalidArgument('List contains unsupported type');
     });
 
-    return Value(listValue: ListValue(values: values));
+    return Value()..listValue = (ListValue()..values.addAll(values));
   }
 }
 
@@ -59,26 +59,26 @@ extension MapStructUtils on Map<String, dynamic> {
     for (final entry in entries) {
       final value = entry.value;
       if (value is num) {
-        result[entry.key] = Value(numberValue: value.toDouble());
+        result[entry.key] = Value()..numberValue = value.toDouble();
       } else if (value is String) {
-        result[entry.key] = Value(stringValue: value);
+        result[entry.key] = Value()..stringValue = value;
       } else if (value is bool) {
-        result[entry.key] = Value(boolValue: value);
+        result[entry.key] = Value()..boolValue = value;
       } else if (value is List<dynamic>) {
         result[entry.key] = value.toValue();
       } else if (value is Map<String, dynamic>) {
         result[entry.key] = value.toValue();
       } else if (value == null) {
-        result[entry.key] = Value(nullValue: value);
+        result[entry.key] = Value()..nullValue = NullValue.NULL_VALUE;
       } else {
         _logger.e('Error converting the Map to a Struct');
         throw GrpcError.invalidArgument('Unsupported type');
       }
     }
-    return Struct(fields: result);
+    return Struct()..fields.addAll(result);
   }
 
   Value toValue() {
-    return Value(structValue: toStruct());
+    return Value()..structValue = toStruct();
   }
 }

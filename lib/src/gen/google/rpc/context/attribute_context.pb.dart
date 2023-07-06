@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/rpc/context/attribute_context.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -11,48 +15,25 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../protobuf/any.pb.dart' as $0;
+import '../../protobuf/duration.pb.dart' as $3;
 import '../../protobuf/struct.pb.dart' as $1;
 import '../../protobuf/timestamp.pb.dart' as $2;
-import '../../protobuf/duration.pb.dart' as $3;
 
 class AttributeContext_Peer extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext.Peer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ip')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'port')
-    ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'labels', entryClassName: 'AttributeContext.Peer.LabelsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'principal')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'regionCode')
+  factory AttributeContext_Peer() => create();
+  AttributeContext_Peer._() : super();
+  factory AttributeContext_Peer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext_Peer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext.Peer', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ip')
+    ..aInt64(2, _omitFieldNames ? '' : 'port')
+    ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'labels', entryClassName: 'AttributeContext.Peer.LabelsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
+    ..aOS(7, _omitFieldNames ? '' : 'principal')
+    ..aOS(8, _omitFieldNames ? '' : 'regionCode')
     ..hasRequiredFields = false
   ;
 
-  AttributeContext_Peer._() : super();
-  factory AttributeContext_Peer({
-    $core.String? ip,
-    $fixnum.Int64? port,
-    $core.Map<$core.String, $core.String>? labels,
-    $core.String? principal,
-    $core.String? regionCode,
-  }) {
-    final _result = create();
-    if (ip != null) {
-      _result.ip = ip;
-    }
-    if (port != null) {
-      _result.port = port;
-    }
-    if (labels != null) {
-      _result.labels.addAll(labels);
-    }
-    if (principal != null) {
-      _result.principal = principal;
-    }
-    if (regionCode != null) {
-      _result.regionCode = regionCode;
-    }
-    return _result;
-  }
-  factory AttributeContext_Peer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext_Peer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -62,8 +43,10 @@ class AttributeContext_Peer extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext_Peer copyWith(void Function(AttributeContext_Peer) updates) => super.copyWith((message) => updates(message as AttributeContext_Peer)) as AttributeContext_Peer; // ignore: deprecated_member_use
+  AttributeContext_Peer copyWith(void Function(AttributeContext_Peer) updates) => super.copyWith((message) => updates(message as AttributeContext_Peer)) as AttributeContext_Peer;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext_Peer create() => AttributeContext_Peer._();
   AttributeContext_Peer createEmptyInstance() => create();
@@ -113,38 +96,19 @@ class AttributeContext_Peer extends $pb.GeneratedMessage {
 }
 
 class AttributeContext_Api extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext.Api', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'service')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'operation')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protocol')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
+  factory AttributeContext_Api() => create();
+  AttributeContext_Api._() : super();
+  factory AttributeContext_Api.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext_Api.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext.Api', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'service')
+    ..aOS(2, _omitFieldNames ? '' : 'operation')
+    ..aOS(3, _omitFieldNames ? '' : 'protocol')
+    ..aOS(4, _omitFieldNames ? '' : 'version')
     ..hasRequiredFields = false
   ;
 
-  AttributeContext_Api._() : super();
-  factory AttributeContext_Api({
-    $core.String? service,
-    $core.String? operation,
-    $core.String? protocol,
-    $core.String? version,
-  }) {
-    final _result = create();
-    if (service != null) {
-      _result.service = service;
-    }
-    if (operation != null) {
-      _result.operation = operation;
-    }
-    if (protocol != null) {
-      _result.protocol = protocol;
-    }
-    if (version != null) {
-      _result.version = version;
-    }
-    return _result;
-  }
-  factory AttributeContext_Api.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext_Api.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -154,8 +118,10 @@ class AttributeContext_Api extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext_Api copyWith(void Function(AttributeContext_Api) updates) => super.copyWith((message) => updates(message as AttributeContext_Api)) as AttributeContext_Api; // ignore: deprecated_member_use
+  AttributeContext_Api copyWith(void Function(AttributeContext_Api) updates) => super.copyWith((message) => updates(message as AttributeContext_Api)) as AttributeContext_Api;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext_Api create() => AttributeContext_Api._();
   AttributeContext_Api createEmptyInstance() => create();
@@ -202,43 +168,20 @@ class AttributeContext_Api extends $pb.GeneratedMessage {
 }
 
 class AttributeContext_Auth extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext.Auth', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'principal')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'audiences')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'presenter')
-    ..aOM<$1.Struct>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'claims', subBuilder: $1.Struct.create)
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessLevels')
+  factory AttributeContext_Auth() => create();
+  AttributeContext_Auth._() : super();
+  factory AttributeContext_Auth.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext_Auth.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext.Auth', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'principal')
+    ..pPS(2, _omitFieldNames ? '' : 'audiences')
+    ..aOS(3, _omitFieldNames ? '' : 'presenter')
+    ..aOM<$1.Struct>(4, _omitFieldNames ? '' : 'claims', subBuilder: $1.Struct.create)
+    ..pPS(5, _omitFieldNames ? '' : 'accessLevels')
     ..hasRequiredFields = false
   ;
 
-  AttributeContext_Auth._() : super();
-  factory AttributeContext_Auth({
-    $core.String? principal,
-    $core.Iterable<$core.String>? audiences,
-    $core.String? presenter,
-    $1.Struct? claims,
-    $core.Iterable<$core.String>? accessLevels,
-  }) {
-    final _result = create();
-    if (principal != null) {
-      _result.principal = principal;
-    }
-    if (audiences != null) {
-      _result.audiences.addAll(audiences);
-    }
-    if (presenter != null) {
-      _result.presenter = presenter;
-    }
-    if (claims != null) {
-      _result.claims = claims;
-    }
-    if (accessLevels != null) {
-      _result.accessLevels.addAll(accessLevels);
-    }
-    return _result;
-  }
-  factory AttributeContext_Auth.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext_Auth.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -248,8 +191,10 @@ class AttributeContext_Auth extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext_Auth copyWith(void Function(AttributeContext_Auth) updates) => super.copyWith((message) => updates(message as AttributeContext_Auth)) as AttributeContext_Auth; // ignore: deprecated_member_use
+  AttributeContext_Auth copyWith(void Function(AttributeContext_Auth) updates) => super.copyWith((message) => updates(message as AttributeContext_Auth)) as AttributeContext_Auth;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext_Auth create() => AttributeContext_Auth._();
   AttributeContext_Auth createEmptyInstance() => create();
@@ -295,78 +240,27 @@ class AttributeContext_Auth extends $pb.GeneratedMessage {
 }
 
 class AttributeContext_Request extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext.Request', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'method')
-    ..m<$core.String, $core.String>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'headers', entryClassName: 'AttributeContext.Request.HeadersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'path')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'host')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'scheme')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'query')
-    ..aOM<$2.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $2.Timestamp.create)
-    ..aInt64(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protocol')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reason')
-    ..aOM<AttributeContext_Auth>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'auth', subBuilder: AttributeContext_Auth.create)
+  factory AttributeContext_Request() => create();
+  AttributeContext_Request._() : super();
+  factory AttributeContext_Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'method')
+    ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'headers', entryClassName: 'AttributeContext.Request.HeadersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
+    ..aOS(4, _omitFieldNames ? '' : 'path')
+    ..aOS(5, _omitFieldNames ? '' : 'host')
+    ..aOS(6, _omitFieldNames ? '' : 'scheme')
+    ..aOS(7, _omitFieldNames ? '' : 'query')
+    ..aOM<$2.Timestamp>(9, _omitFieldNames ? '' : 'time', subBuilder: $2.Timestamp.create)
+    ..aInt64(10, _omitFieldNames ? '' : 'size')
+    ..aOS(11, _omitFieldNames ? '' : 'protocol')
+    ..aOS(12, _omitFieldNames ? '' : 'reason')
+    ..aOM<AttributeContext_Auth>(13, _omitFieldNames ? '' : 'auth', subBuilder: AttributeContext_Auth.create)
     ..hasRequiredFields = false
   ;
 
-  AttributeContext_Request._() : super();
-  factory AttributeContext_Request({
-    $core.String? id,
-    $core.String? method,
-    $core.Map<$core.String, $core.String>? headers,
-    $core.String? path,
-    $core.String? host,
-    $core.String? scheme,
-    $core.String? query,
-    $2.Timestamp? time,
-    $fixnum.Int64? size,
-    $core.String? protocol,
-    $core.String? reason,
-    AttributeContext_Auth? auth,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    if (method != null) {
-      _result.method = method;
-    }
-    if (headers != null) {
-      _result.headers.addAll(headers);
-    }
-    if (path != null) {
-      _result.path = path;
-    }
-    if (host != null) {
-      _result.host = host;
-    }
-    if (scheme != null) {
-      _result.scheme = scheme;
-    }
-    if (query != null) {
-      _result.query = query;
-    }
-    if (time != null) {
-      _result.time = time;
-    }
-    if (size != null) {
-      _result.size = size;
-    }
-    if (protocol != null) {
-      _result.protocol = protocol;
-    }
-    if (reason != null) {
-      _result.reason = reason;
-    }
-    if (auth != null) {
-      _result.auth = auth;
-    }
-    return _result;
-  }
-  factory AttributeContext_Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -376,8 +270,10 @@ class AttributeContext_Request extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext_Request copyWith(void Function(AttributeContext_Request) updates) => super.copyWith((message) => updates(message as AttributeContext_Request)) as AttributeContext_Request; // ignore: deprecated_member_use
+  AttributeContext_Request copyWith(void Function(AttributeContext_Request) updates) => super.copyWith((message) => updates(message as AttributeContext_Request)) as AttributeContext_Request;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext_Request create() => AttributeContext_Request._();
   AttributeContext_Request createEmptyInstance() => create();
@@ -494,43 +390,20 @@ class AttributeContext_Request extends $pb.GeneratedMessage {
 }
 
 class AttributeContext_Response extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext.Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
-    ..m<$core.String, $core.String>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'headers', entryClassName: 'AttributeContext.Response.HeadersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
-    ..aOM<$2.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $2.Timestamp.create)
-    ..aOM<$3.Duration>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'backendLatency', subBuilder: $3.Duration.create)
+  factory AttributeContext_Response() => create();
+  AttributeContext_Response._() : super();
+  factory AttributeContext_Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext_Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext.Response', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'code')
+    ..aInt64(2, _omitFieldNames ? '' : 'size')
+    ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'headers', entryClassName: 'AttributeContext.Response.HeadersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
+    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'time', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Duration>(5, _omitFieldNames ? '' : 'backendLatency', subBuilder: $3.Duration.create)
     ..hasRequiredFields = false
   ;
 
-  AttributeContext_Response._() : super();
-  factory AttributeContext_Response({
-    $fixnum.Int64? code,
-    $fixnum.Int64? size,
-    $core.Map<$core.String, $core.String>? headers,
-    $2.Timestamp? time,
-    $3.Duration? backendLatency,
-  }) {
-    final _result = create();
-    if (code != null) {
-      _result.code = code;
-    }
-    if (size != null) {
-      _result.size = size;
-    }
-    if (headers != null) {
-      _result.headers.addAll(headers);
-    }
-    if (time != null) {
-      _result.time = time;
-    }
-    if (backendLatency != null) {
-      _result.backendLatency = backendLatency;
-    }
-    return _result;
-  }
-  factory AttributeContext_Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext_Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -540,8 +413,10 @@ class AttributeContext_Response extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext_Response copyWith(void Function(AttributeContext_Response) updates) => super.copyWith((message) => updates(message as AttributeContext_Response)) as AttributeContext_Response; // ignore: deprecated_member_use
+  AttributeContext_Response copyWith(void Function(AttributeContext_Response) updates) => super.copyWith((message) => updates(message as AttributeContext_Response)) as AttributeContext_Response;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext_Response create() => AttributeContext_Response._();
   AttributeContext_Response createEmptyInstance() => create();
@@ -595,78 +470,27 @@ class AttributeContext_Response extends $pb.GeneratedMessage {
 }
 
 class AttributeContext_Resource extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext.Resource', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'service')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..m<$core.String, $core.String>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'labels', entryClassName: 'AttributeContext.Resource.LabelsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'uid')
-    ..m<$core.String, $core.String>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'annotations', entryClassName: 'AttributeContext.Resource.AnnotationsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'displayName')
-    ..aOM<$2.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deleteTime', subBuilder: $2.Timestamp.create)
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'etag')
-    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'location')
+  factory AttributeContext_Resource() => create();
+  AttributeContext_Resource._() : super();
+  factory AttributeContext_Resource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext_Resource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext.Resource', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'service')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'type')
+    ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'labels', entryClassName: 'AttributeContext.Resource.LabelsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
+    ..aOS(5, _omitFieldNames ? '' : 'uid')
+    ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'annotations', entryClassName: 'AttributeContext.Resource.AnnotationsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc.context'))
+    ..aOS(7, _omitFieldNames ? '' : 'displayName')
+    ..aOM<$2.Timestamp>(8, _omitFieldNames ? '' : 'createTime', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(9, _omitFieldNames ? '' : 'updateTime', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'deleteTime', subBuilder: $2.Timestamp.create)
+    ..aOS(11, _omitFieldNames ? '' : 'etag')
+    ..aOS(12, _omitFieldNames ? '' : 'location')
     ..hasRequiredFields = false
   ;
 
-  AttributeContext_Resource._() : super();
-  factory AttributeContext_Resource({
-    $core.String? service,
-    $core.String? name,
-    $core.String? type,
-    $core.Map<$core.String, $core.String>? labels,
-    $core.String? uid,
-    $core.Map<$core.String, $core.String>? annotations,
-    $core.String? displayName,
-    $2.Timestamp? createTime,
-    $2.Timestamp? updateTime,
-    $2.Timestamp? deleteTime,
-    $core.String? etag,
-    $core.String? location,
-  }) {
-    final _result = create();
-    if (service != null) {
-      _result.service = service;
-    }
-    if (name != null) {
-      _result.name = name;
-    }
-    if (type != null) {
-      _result.type = type;
-    }
-    if (labels != null) {
-      _result.labels.addAll(labels);
-    }
-    if (uid != null) {
-      _result.uid = uid;
-    }
-    if (annotations != null) {
-      _result.annotations.addAll(annotations);
-    }
-    if (displayName != null) {
-      _result.displayName = displayName;
-    }
-    if (createTime != null) {
-      _result.createTime = createTime;
-    }
-    if (updateTime != null) {
-      _result.updateTime = updateTime;
-    }
-    if (deleteTime != null) {
-      _result.deleteTime = deleteTime;
-    }
-    if (etag != null) {
-      _result.etag = etag;
-    }
-    if (location != null) {
-      _result.location = location;
-    }
-    return _result;
-  }
-  factory AttributeContext_Resource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext_Resource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -676,8 +500,10 @@ class AttributeContext_Resource extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext_Resource copyWith(void Function(AttributeContext_Resource) updates) => super.copyWith((message) => updates(message as AttributeContext_Resource)) as AttributeContext_Resource; // ignore: deprecated_member_use
+  AttributeContext_Resource copyWith(void Function(AttributeContext_Resource) updates) => super.copyWith((message) => updates(message as AttributeContext_Resource)) as AttributeContext_Resource;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext_Resource create() => AttributeContext_Resource._();
   AttributeContext_Resource createEmptyInstance() => create();
@@ -790,58 +616,23 @@ class AttributeContext_Resource extends $pb.GeneratedMessage {
 }
 
 class AttributeContext extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AttributeContext', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.rpc.context'), createEmptyInstance: create)
-    ..aOM<AttributeContext_Peer>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', subBuilder: AttributeContext_Peer.create)
-    ..aOM<AttributeContext_Peer>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination', subBuilder: AttributeContext_Peer.create)
-    ..aOM<AttributeContext_Request>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'request', subBuilder: AttributeContext_Request.create)
-    ..aOM<AttributeContext_Response>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'response', subBuilder: AttributeContext_Response.create)
-    ..aOM<AttributeContext_Resource>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resource', subBuilder: AttributeContext_Resource.create)
-    ..aOM<AttributeContext_Api>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'api', subBuilder: AttributeContext_Api.create)
-    ..aOM<AttributeContext_Peer>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'origin', subBuilder: AttributeContext_Peer.create)
-    ..pc<$0.Any>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $0.Any.create)
+  factory AttributeContext() => create();
+  AttributeContext._() : super();
+  factory AttributeContext.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AttributeContext.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AttributeContext', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc.context'), createEmptyInstance: create)
+    ..aOM<AttributeContext_Peer>(1, _omitFieldNames ? '' : 'source', subBuilder: AttributeContext_Peer.create)
+    ..aOM<AttributeContext_Peer>(2, _omitFieldNames ? '' : 'destination', subBuilder: AttributeContext_Peer.create)
+    ..aOM<AttributeContext_Request>(3, _omitFieldNames ? '' : 'request', subBuilder: AttributeContext_Request.create)
+    ..aOM<AttributeContext_Response>(4, _omitFieldNames ? '' : 'response', subBuilder: AttributeContext_Response.create)
+    ..aOM<AttributeContext_Resource>(5, _omitFieldNames ? '' : 'resource', subBuilder: AttributeContext_Resource.create)
+    ..aOM<AttributeContext_Api>(6, _omitFieldNames ? '' : 'api', subBuilder: AttributeContext_Api.create)
+    ..aOM<AttributeContext_Peer>(7, _omitFieldNames ? '' : 'origin', subBuilder: AttributeContext_Peer.create)
+    ..pc<$0.Any>(8, _omitFieldNames ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $0.Any.create)
     ..hasRequiredFields = false
   ;
 
-  AttributeContext._() : super();
-  factory AttributeContext({
-    AttributeContext_Peer? source,
-    AttributeContext_Peer? destination,
-    AttributeContext_Request? request,
-    AttributeContext_Response? response,
-    AttributeContext_Resource? resource,
-    AttributeContext_Api? api,
-    AttributeContext_Peer? origin,
-    $core.Iterable<$0.Any>? extensions,
-  }) {
-    final _result = create();
-    if (source != null) {
-      _result.source = source;
-    }
-    if (destination != null) {
-      _result.destination = destination;
-    }
-    if (request != null) {
-      _result.request = request;
-    }
-    if (response != null) {
-      _result.response = response;
-    }
-    if (resource != null) {
-      _result.resource = resource;
-    }
-    if (api != null) {
-      _result.api = api;
-    }
-    if (origin != null) {
-      _result.origin = origin;
-    }
-    if (extensions != null) {
-      _result.extensions.addAll(extensions);
-    }
-    return _result;
-  }
-  factory AttributeContext.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AttributeContext.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -851,8 +642,10 @@ class AttributeContext extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AttributeContext copyWith(void Function(AttributeContext) updates) => super.copyWith((message) => updates(message as AttributeContext)) as AttributeContext; // ignore: deprecated_member_use
+  AttributeContext copyWith(void Function(AttributeContext) updates) => super.copyWith((message) => updates(message as AttributeContext)) as AttributeContext;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AttributeContext create() => AttributeContext._();
   AttributeContext createEmptyInstance() => create();
@@ -942,3 +735,6 @@ class AttributeContext extends $pb.GeneratedMessage {
   $core.List<$0.Any> get extensions => $_getList(7);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

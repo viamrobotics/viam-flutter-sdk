@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: proto/rpc/webrtc/v1/grpc.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -14,28 +18,17 @@ import '../../../../google/protobuf/duration.pb.dart' as $1;
 import '../../../../google/rpc/status.pb.dart' as $2;
 
 class PacketMessage extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PacketMessage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eom')
+  factory PacketMessage() => create();
+  PacketMessage._() : super();
+  factory PacketMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PacketMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PacketMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOB(2, _omitFieldNames ? '' : 'eom')
     ..hasRequiredFields = false
   ;
 
-  PacketMessage._() : super();
-  factory PacketMessage({
-    $core.List<$core.int>? data,
-    $core.bool? eom,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data = data;
-    }
-    if (eom != null) {
-      _result.eom = eom;
-    }
-    return _result;
-  }
-  factory PacketMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PacketMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -45,8 +38,10 @@ class PacketMessage extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PacketMessage copyWith(void Function(PacketMessage) updates) => super.copyWith((message) => updates(message as PacketMessage)) as PacketMessage; // ignore: deprecated_member_use
+  PacketMessage copyWith(void Function(PacketMessage) updates) => super.copyWith((message) => updates(message as PacketMessage)) as PacketMessage;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PacketMessage create() => PacketMessage._();
   PacketMessage createEmptyInstance() => create();
@@ -75,23 +70,16 @@ class PacketMessage extends $pb.GeneratedMessage {
 }
 
 class Stream extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Stream', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+  factory Stream() => create();
+  Stream._() : super();
+  factory Stream.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Stream.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Stream', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  Stream._() : super();
-  factory Stream({
-    $fixnum.Int64? id,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    return _result;
-  }
-  factory Stream.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Stream.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -101,8 +89,10 @@ class Stream extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Stream copyWith(void Function(Stream) updates) => super.copyWith((message) => updates(message as Stream)) as Stream; // ignore: deprecated_member_use
+  Stream copyWith(void Function(Stream) updates) => super.copyWith((message) => updates(message as Stream)) as Stream;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Stream create() => Stream._();
   Stream createEmptyInstance() => create();
@@ -129,45 +119,26 @@ enum Request_Type {
 }
 
 class Request extends $pb.GeneratedMessage {
+  factory Request() => create();
+  Request._() : super();
+  factory Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, Request_Type> _Request_TypeByTag = {
     2 : Request_Type.headers,
     3 : Request_Type.message,
     4 : Request_Type.rstStream,
     0 : Request_Type.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Request', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
     ..oo(0, [2, 3, 4])
-    ..aOM<Stream>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stream', subBuilder: Stream.create)
-    ..aOM<RequestHeaders>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'headers', subBuilder: RequestHeaders.create)
-    ..aOM<RequestMessage>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: RequestMessage.create)
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rstStream')
+    ..aOM<Stream>(1, _omitFieldNames ? '' : 'stream', subBuilder: Stream.create)
+    ..aOM<RequestHeaders>(2, _omitFieldNames ? '' : 'headers', subBuilder: RequestHeaders.create)
+    ..aOM<RequestMessage>(3, _omitFieldNames ? '' : 'message', subBuilder: RequestMessage.create)
+    ..aOB(4, _omitFieldNames ? '' : 'rstStream')
     ..hasRequiredFields = false
   ;
 
-  Request._() : super();
-  factory Request({
-    Stream? stream,
-    RequestHeaders? headers,
-    RequestMessage? message,
-    $core.bool? rstStream,
-  }) {
-    final _result = create();
-    if (stream != null) {
-      _result.stream = stream;
-    }
-    if (headers != null) {
-      _result.headers = headers;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    if (rstStream != null) {
-      _result.rstStream = rstStream;
-    }
-    return _result;
-  }
-  factory Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -177,8 +148,10 @@ class Request extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Request copyWith(void Function(Request) updates) => super.copyWith((message) => updates(message as Request)) as Request; // ignore: deprecated_member_use
+  Request copyWith(void Function(Request) updates) => super.copyWith((message) => updates(message as Request)) as Request;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Request create() => Request._();
   Request createEmptyInstance() => create();
@@ -234,33 +207,18 @@ class Request extends $pb.GeneratedMessage {
 }
 
 class RequestHeaders extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RequestHeaders', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'method')
-    ..aOM<Metadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: Metadata.create)
-    ..aOM<$1.Duration>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeout', subBuilder: $1.Duration.create)
+  factory RequestHeaders() => create();
+  RequestHeaders._() : super();
+  factory RequestHeaders.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RequestHeaders.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestHeaders', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'method')
+    ..aOM<Metadata>(2, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
+    ..aOM<$1.Duration>(3, _omitFieldNames ? '' : 'timeout', subBuilder: $1.Duration.create)
     ..hasRequiredFields = false
   ;
 
-  RequestHeaders._() : super();
-  factory RequestHeaders({
-    $core.String? method,
-    Metadata? metadata,
-    $1.Duration? timeout,
-  }) {
-    final _result = create();
-    if (method != null) {
-      _result.method = method;
-    }
-    if (metadata != null) {
-      _result.metadata = metadata;
-    }
-    if (timeout != null) {
-      _result.timeout = timeout;
-    }
-    return _result;
-  }
-  factory RequestHeaders.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RequestHeaders.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -270,8 +228,10 @@ class RequestHeaders extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RequestHeaders copyWith(void Function(RequestHeaders) updates) => super.copyWith((message) => updates(message as RequestHeaders)) as RequestHeaders; // ignore: deprecated_member_use
+  RequestHeaders copyWith(void Function(RequestHeaders) updates) => super.copyWith((message) => updates(message as RequestHeaders)) as RequestHeaders;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RequestHeaders create() => RequestHeaders._();
   RequestHeaders createEmptyInstance() => create();
@@ -313,33 +273,18 @@ class RequestHeaders extends $pb.GeneratedMessage {
 }
 
 class RequestMessage extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RequestMessage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasMessage')
-    ..aOM<PacketMessage>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packetMessage', subBuilder: PacketMessage.create)
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'eos')
+  factory RequestMessage() => create();
+  RequestMessage._() : super();
+  factory RequestMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RequestMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'hasMessage')
+    ..aOM<PacketMessage>(2, _omitFieldNames ? '' : 'packetMessage', subBuilder: PacketMessage.create)
+    ..aOB(3, _omitFieldNames ? '' : 'eos')
     ..hasRequiredFields = false
   ;
 
-  RequestMessage._() : super();
-  factory RequestMessage({
-    $core.bool? hasMessage,
-    PacketMessage? packetMessage,
-    $core.bool? eos,
-  }) {
-    final _result = create();
-    if (hasMessage != null) {
-      _result.hasMessage = hasMessage;
-    }
-    if (packetMessage != null) {
-      _result.packetMessage = packetMessage;
-    }
-    if (eos != null) {
-      _result.eos = eos;
-    }
-    return _result;
-  }
-  factory RequestMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RequestMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -349,8 +294,10 @@ class RequestMessage extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RequestMessage copyWith(void Function(RequestMessage) updates) => super.copyWith((message) => updates(message as RequestMessage)) as RequestMessage; // ignore: deprecated_member_use
+  RequestMessage copyWith(void Function(RequestMessage) updates) => super.copyWith((message) => updates(message as RequestMessage)) as RequestMessage;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RequestMessage create() => RequestMessage._();
   RequestMessage createEmptyInstance() => create();
@@ -397,45 +344,26 @@ enum Response_Type {
 }
 
 class Response extends $pb.GeneratedMessage {
+  factory Response() => create();
+  Response._() : super();
+  factory Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, Response_Type> _Response_TypeByTag = {
     2 : Response_Type.headers,
     3 : Response_Type.message,
     4 : Response_Type.trailers,
     0 : Response_Type.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Response', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
     ..oo(0, [2, 3, 4])
-    ..aOM<Stream>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stream', subBuilder: Stream.create)
-    ..aOM<ResponseHeaders>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'headers', subBuilder: ResponseHeaders.create)
-    ..aOM<ResponseMessage>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: ResponseMessage.create)
-    ..aOM<ResponseTrailers>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'trailers', subBuilder: ResponseTrailers.create)
+    ..aOM<Stream>(1, _omitFieldNames ? '' : 'stream', subBuilder: Stream.create)
+    ..aOM<ResponseHeaders>(2, _omitFieldNames ? '' : 'headers', subBuilder: ResponseHeaders.create)
+    ..aOM<ResponseMessage>(3, _omitFieldNames ? '' : 'message', subBuilder: ResponseMessage.create)
+    ..aOM<ResponseTrailers>(4, _omitFieldNames ? '' : 'trailers', subBuilder: ResponseTrailers.create)
     ..hasRequiredFields = false
   ;
 
-  Response._() : super();
-  factory Response({
-    Stream? stream,
-    ResponseHeaders? headers,
-    ResponseMessage? message,
-    ResponseTrailers? trailers,
-  }) {
-    final _result = create();
-    if (stream != null) {
-      _result.stream = stream;
-    }
-    if (headers != null) {
-      _result.headers = headers;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    if (trailers != null) {
-      _result.trailers = trailers;
-    }
-    return _result;
-  }
-  factory Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -445,8 +373,10 @@ class Response extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Response copyWith(void Function(Response) updates) => super.copyWith((message) => updates(message as Response)) as Response; // ignore: deprecated_member_use
+  Response copyWith(void Function(Response) updates) => super.copyWith((message) => updates(message as Response)) as Response;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Response create() => Response._();
   Response createEmptyInstance() => create();
@@ -504,23 +434,16 @@ class Response extends $pb.GeneratedMessage {
 }
 
 class ResponseHeaders extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResponseHeaders', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOM<Metadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: Metadata.create)
+  factory ResponseHeaders() => create();
+  ResponseHeaders._() : super();
+  factory ResponseHeaders.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResponseHeaders.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseHeaders', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..aOM<Metadata>(1, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
     ..hasRequiredFields = false
   ;
 
-  ResponseHeaders._() : super();
-  factory ResponseHeaders({
-    Metadata? metadata,
-  }) {
-    final _result = create();
-    if (metadata != null) {
-      _result.metadata = metadata;
-    }
-    return _result;
-  }
-  factory ResponseHeaders.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResponseHeaders.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -530,8 +453,10 @@ class ResponseHeaders extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResponseHeaders copyWith(void Function(ResponseHeaders) updates) => super.copyWith((message) => updates(message as ResponseHeaders)) as ResponseHeaders; // ignore: deprecated_member_use
+  ResponseHeaders copyWith(void Function(ResponseHeaders) updates) => super.copyWith((message) => updates(message as ResponseHeaders)) as ResponseHeaders;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ResponseHeaders create() => ResponseHeaders._();
   ResponseHeaders createEmptyInstance() => create();
@@ -553,23 +478,16 @@ class ResponseHeaders extends $pb.GeneratedMessage {
 }
 
 class ResponseMessage extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResponseMessage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOM<PacketMessage>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packetMessage', subBuilder: PacketMessage.create)
+  factory ResponseMessage() => create();
+  ResponseMessage._() : super();
+  factory ResponseMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResponseMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..aOM<PacketMessage>(1, _omitFieldNames ? '' : 'packetMessage', subBuilder: PacketMessage.create)
     ..hasRequiredFields = false
   ;
 
-  ResponseMessage._() : super();
-  factory ResponseMessage({
-    PacketMessage? packetMessage,
-  }) {
-    final _result = create();
-    if (packetMessage != null) {
-      _result.packetMessage = packetMessage;
-    }
-    return _result;
-  }
-  factory ResponseMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResponseMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -579,8 +497,10 @@ class ResponseMessage extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResponseMessage copyWith(void Function(ResponseMessage) updates) => super.copyWith((message) => updates(message as ResponseMessage)) as ResponseMessage; // ignore: deprecated_member_use
+  ResponseMessage copyWith(void Function(ResponseMessage) updates) => super.copyWith((message) => updates(message as ResponseMessage)) as ResponseMessage;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ResponseMessage create() => ResponseMessage._();
   ResponseMessage createEmptyInstance() => create();
@@ -602,28 +522,17 @@ class ResponseMessage extends $pb.GeneratedMessage {
 }
 
 class ResponseTrailers extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResponseTrailers', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOM<$2.Status>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', subBuilder: $2.Status.create)
-    ..aOM<Metadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: Metadata.create)
+  factory ResponseTrailers() => create();
+  ResponseTrailers._() : super();
+  factory ResponseTrailers.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResponseTrailers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseTrailers', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..aOM<$2.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $2.Status.create)
+    ..aOM<Metadata>(2, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
     ..hasRequiredFields = false
   ;
 
-  ResponseTrailers._() : super();
-  factory ResponseTrailers({
-    $2.Status? status,
-    Metadata? metadata,
-  }) {
-    final _result = create();
-    if (status != null) {
-      _result.status = status;
-    }
-    if (metadata != null) {
-      _result.metadata = metadata;
-    }
-    return _result;
-  }
-  factory ResponseTrailers.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ResponseTrailers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -633,8 +542,10 @@ class ResponseTrailers extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ResponseTrailers copyWith(void Function(ResponseTrailers) updates) => super.copyWith((message) => updates(message as ResponseTrailers)) as ResponseTrailers; // ignore: deprecated_member_use
+  ResponseTrailers copyWith(void Function(ResponseTrailers) updates) => super.copyWith((message) => updates(message as ResponseTrailers)) as ResponseTrailers;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ResponseTrailers create() => ResponseTrailers._();
   ResponseTrailers createEmptyInstance() => create();
@@ -667,23 +578,16 @@ class ResponseTrailers extends $pb.GeneratedMessage {
 }
 
 class Strings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Strings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'values')
+  factory Strings() => create();
+  Strings._() : super();
+  factory Strings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Strings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Strings', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'values')
     ..hasRequiredFields = false
   ;
 
-  Strings._() : super();
-  factory Strings({
-    $core.Iterable<$core.String>? values,
-  }) {
-    final _result = create();
-    if (values != null) {
-      _result.values.addAll(values);
-    }
-    return _result;
-  }
-  factory Strings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Strings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -693,8 +597,10 @@ class Strings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Strings copyWith(void Function(Strings) updates) => super.copyWith((message) => updates(message as Strings)) as Strings; // ignore: deprecated_member_use
+  Strings copyWith(void Function(Strings) updates) => super.copyWith((message) => updates(message as Strings)) as Strings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Strings create() => Strings._();
   Strings createEmptyInstance() => create();
@@ -708,23 +614,16 @@ class Strings extends $pb.GeneratedMessage {
 }
 
 class Metadata extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Metadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..m<$core.String, Strings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'md', entryClassName: 'Metadata.MdEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Strings.create, packageName: const $pb.PackageName('proto.rpc.webrtc.v1'))
+  factory Metadata() => create();
+  Metadata._() : super();
+  factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Metadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..m<$core.String, Strings>(1, _omitFieldNames ? '' : 'md', entryClassName: 'Metadata.MdEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Strings.create, valueDefaultOrMaker: Strings.getDefault, packageName: const $pb.PackageName('proto.rpc.webrtc.v1'))
     ..hasRequiredFields = false
   ;
 
-  Metadata._() : super();
-  factory Metadata({
-    $core.Map<$core.String, Strings>? md,
-  }) {
-    final _result = create();
-    if (md != null) {
-      _result.md.addAll(md);
-    }
-    return _result;
-  }
-  factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -734,8 +633,10 @@ class Metadata extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)) as Metadata; // ignore: deprecated_member_use
+  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)) as Metadata;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Metadata create() => Metadata._();
   Metadata createEmptyInstance() => create();
@@ -748,3 +649,6 @@ class Metadata extends $pb.GeneratedMessage {
   $core.Map<$core.String, Strings> get md => $_getMap(0);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

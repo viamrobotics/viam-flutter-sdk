@@ -69,19 +69,46 @@ class ViamFilter {
 }
 
 extension FilterMapper on ViamFilter {
-  Filter toDto() => Filter(
-        componentModel: componentModel,
-        componentName: componentName,
-        componentType: componentType,
-        method: method,
-        locationIds: locationIds,
-        mimeType: mimeType,
-        orgIds: orgIds,
-        partId: partId,
-        partName: partName,
-        robotName: robotName,
-        robotId: robotId,
-        tagsFilter: tagsFilter?.toDto(),
-        interval: captureInterval?.toDto(),
-      );
+  Filter toDto() {
+    final output = Filter();
+
+    if (componentName != null) {
+      output.componentName = componentName!;
+    }
+    if (componentType != null) {
+      output.componentType = componentType!;
+    }
+    if (method != null) {
+      output.method = method!;
+    }
+    if (locationIds != null) {
+      output.locationIds.addAll(locationIds!);
+    }
+    if (mimeType != null) {
+      output.mimeType.addAll(mimeType!);
+    }
+    if (orgIds != null) {
+      output.organizationIds.addAll(orgIds!);
+    }
+    if (partId != null) {
+      output.partId = partId!;
+    }
+    if (partName != null) {
+      output.partName = partName!;
+    }
+    if (robotName != null) {
+      output.robotName = robotName!;
+    }
+    if (robotId != null) {
+      output.robotId = robotId!;
+    }
+    if (tagsFilter != null) {
+      output.tagsFilter = tagsFilter!.toDto();
+    }
+    if (captureInterval != null) {
+      output.interval = captureInterval!.toDto();
+    }
+
+    return output;
+  }
 }

@@ -7,10 +7,9 @@ import 'package:viam_sdk/viam_sdk.dart';
 void main() {
   group('When map from LocationOrganization to ViamLocationOrganization', () {
     test('mapper returns correct values', () {
-      final dto = LocationOrganization(
-        organizationId: 'id',
-        primary: true,
-      );
+      final dto = LocationOrganization()
+        ..organizationId = 'id'
+        ..primary = true;
 
       const expectedAnswer = ViamLocationOrganization(
         'id',

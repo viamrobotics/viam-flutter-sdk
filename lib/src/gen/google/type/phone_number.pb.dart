@@ -1,37 +1,30 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/type/phone_number.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class PhoneNumber_ShortCode extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PhoneNumber.ShortCode', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.type'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'regionCode')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'number')
+  factory PhoneNumber_ShortCode() => create();
+  PhoneNumber_ShortCode._() : super();
+  factory PhoneNumber_ShortCode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PhoneNumber_ShortCode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PhoneNumber.ShortCode', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.type'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'regionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'number')
     ..hasRequiredFields = false
   ;
 
-  PhoneNumber_ShortCode._() : super();
-  factory PhoneNumber_ShortCode({
-    $core.String? regionCode,
-    $core.String? number,
-  }) {
-    final _result = create();
-    if (regionCode != null) {
-      _result.regionCode = regionCode;
-    }
-    if (number != null) {
-      _result.number = number;
-    }
-    return _result;
-  }
-  factory PhoneNumber_ShortCode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PhoneNumber_ShortCode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -41,8 +34,10 @@ class PhoneNumber_ShortCode extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PhoneNumber_ShortCode copyWith(void Function(PhoneNumber_ShortCode) updates) => super.copyWith((message) => updates(message as PhoneNumber_ShortCode)) as PhoneNumber_ShortCode; // ignore: deprecated_member_use
+  PhoneNumber_ShortCode copyWith(void Function(PhoneNumber_ShortCode) updates) => super.copyWith((message) => updates(message as PhoneNumber_ShortCode)) as PhoneNumber_ShortCode;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PhoneNumber_ShortCode create() => PhoneNumber_ShortCode._();
   PhoneNumber_ShortCode createEmptyInstance() => create();
@@ -77,39 +72,24 @@ enum PhoneNumber_Kind {
 }
 
 class PhoneNumber extends $pb.GeneratedMessage {
+  factory PhoneNumber() => create();
+  PhoneNumber._() : super();
+  factory PhoneNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PhoneNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, PhoneNumber_Kind> _PhoneNumber_KindByTag = {
     1 : PhoneNumber_Kind.e164Number,
     2 : PhoneNumber_Kind.shortCode,
     0 : PhoneNumber_Kind.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PhoneNumber', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.type'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PhoneNumber', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.type'), createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'e164Number')
-    ..aOM<PhoneNumber_ShortCode>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'shortCode', subBuilder: PhoneNumber_ShortCode.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extension')
+    ..aOS(1, _omitFieldNames ? '' : 'e164Number')
+    ..aOM<PhoneNumber_ShortCode>(2, _omitFieldNames ? '' : 'shortCode', subBuilder: PhoneNumber_ShortCode.create)
+    ..aOS(3, _omitFieldNames ? '' : 'extension')
     ..hasRequiredFields = false
   ;
 
-  PhoneNumber._() : super();
-  factory PhoneNumber({
-    $core.String? e164Number,
-    PhoneNumber_ShortCode? shortCode,
-    $core.String? extension_3,
-  }) {
-    final _result = create();
-    if (e164Number != null) {
-      _result.e164Number = e164Number;
-    }
-    if (shortCode != null) {
-      _result.shortCode = shortCode;
-    }
-    if (extension_3 != null) {
-      _result.extension_3 = extension_3;
-    }
-    return _result;
-  }
-  factory PhoneNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PhoneNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -119,8 +99,10 @@ class PhoneNumber extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PhoneNumber copyWith(void Function(PhoneNumber) updates) => super.copyWith((message) => updates(message as PhoneNumber)) as PhoneNumber; // ignore: deprecated_member_use
+  PhoneNumber copyWith(void Function(PhoneNumber) updates) => super.copyWith((message) => updates(message as PhoneNumber)) as PhoneNumber;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PhoneNumber create() => PhoneNumber._();
   PhoneNumber createEmptyInstance() => create();
@@ -162,3 +144,6 @@ class PhoneNumber extends $pb.GeneratedMessage {
   void clearExtension_3() => clearField(3);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

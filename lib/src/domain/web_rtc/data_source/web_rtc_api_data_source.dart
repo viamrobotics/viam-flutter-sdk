@@ -39,7 +39,7 @@ class WebRtcApiDataSource {
       ).mergedWith(options),
     );
 
-    final request = CallRequest(sdp: sdp);
+    final request = CallRequest()..sdp = sdp;
     return stub.call(request);
   }
 
@@ -57,14 +57,11 @@ class WebRtcApiDataSource {
 
     late CallUpdateRequest updateRequest;
     if (done) {
-      updateRequest = CallUpdateRequest(
-        uuid: uuid,
-        done: true,
-      );
+      updateRequest = CallUpdateRequest()
+        ..uuid = uuid
+        ..done = true;
     } else {
-      updateRequest = CallUpdateRequest(
-        uuid: uuid,
-      );
+      updateRequest = CallUpdateRequest()..uuid = uuid;
     }
 
     await stub.callUpdate(updateRequest);
@@ -82,7 +79,9 @@ class WebRtcApiDataSource {
       ).mergedWith(options),
     );
 
-    final updateRequest = CallUpdateRequest(uuid: uuid, error: Status(message: msg));
+    final updateRequest = CallUpdateRequest()
+      ..uuid = uuid
+      ..error = (Status()..message = msg);
 
     await stub.callUpdate(updateRequest);
   }
@@ -99,7 +98,9 @@ class WebRtcApiDataSource {
       ).mergedWith(options),
     );
 
-    final updateRequest = CallUpdateRequest(uuid: uuid, candidate: cand);
+    final updateRequest = CallUpdateRequest()
+      ..uuid = uuid
+      ..candidate = cand;
 
     await stub.callUpdate(updateRequest);
   }
@@ -110,7 +111,7 @@ class WebRtcApiDataSource {
       options: options,
     );
 
-    final updateRequest = AddStreamRequest(name: name);
+    final updateRequest = AddStreamRequest()..name = name;
 
     await stub.addStream(updateRequest);
   }

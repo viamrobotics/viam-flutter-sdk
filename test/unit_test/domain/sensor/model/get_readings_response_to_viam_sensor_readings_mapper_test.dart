@@ -8,15 +8,13 @@ import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pb.dart';
 void main() {
   group('When map from GetReadingsResponse to ViamSensorReadings', () {
     test('mapper return correct values ', () {
-      final dto = Readings(
-        name: ResourceName(
-          namespace: 'namespace',
-          type: 'type',
-          subtype: 'subtype',
-          name: 'name',
-        ),
-        readings: {'key': Value(numberValue: 0.0)},
-      );
+      final dto = Readings()
+        ..name = (ResourceName()
+          ..namespace = 'namespace'
+          ..type = 'type'
+          ..subtype = 'subtype'
+          ..name = 'name')
+        ..readings.addAll({'key': Value()..numberValue = 0.0});
 
       final expectedAnswer = ViamSensorReadings(
         dto.name.namespace,

@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: app/data/v1/data.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -11,107 +15,26 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/any.pb.dart' as $1;
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
 import '../../../google/protobuf/struct.pb.dart' as $3;
-
+import '../../../google/protobuf/timestamp.pb.dart' as $2;
 import 'data.pbenum.dart';
 
 export 'data.pbenum.dart';
 
-class Result extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..e<Status>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: Status.STATUS_UNSPECIFIED, valueOf: Status.valueOf, enumValues: Status.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..hasRequiredFields = false
-  ;
-
-  Result._() : super();
-  factory Result({
-    Status? status,
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (status != null) {
-      _result.status = status;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory Result.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Result.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Result clone() => Result()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Result copyWith(void Function(Result) updates) => super.copyWith((message) => updates(message as Result)) as Result; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Result create() => Result._();
-  Result createEmptyInstance() => create();
-  static $pb.PbList<Result> createRepeated() => $pb.PbList<Result>();
-  @$core.pragma('dart2js:noInline')
-  static Result getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Result>(create);
-  static Result? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  Status get status => $_getN(0);
-  @$pb.TagNumber(1)
-  set status(Status v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasStatus() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get message => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set message($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasMessage() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMessage() => clearField(2);
-}
-
 class DataRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'limit', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'last')
-    ..e<Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sortOrder', $pb.PbFieldType.OE, defaultOrMaker: Order.ORDER_UNSPECIFIED, valueOf: Order.valueOf, enumValues: Order.values)
-    ..hasRequiredFields = false
-  ;
-
+  factory DataRequest() => create();
   DataRequest._() : super();
-  factory DataRequest({
-    Filter? filter,
-    $fixnum.Int64? limit,
-    $core.String? last,
-    Order? sortOrder,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    if (limit != null) {
-      _result.limit = limit;
-    }
-    if (last != null) {
-      _result.last = last;
-    }
-    if (sortOrder != null) {
-      _result.sortOrder = sortOrder;
-    }
-    return _result;
-  }
   factory DataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'last')
+    ..e<Order>(4, _omitFieldNames ? '' : 'sortOrder', $pb.PbFieldType.OE, defaultOrMaker: Order.ORDER_UNSPECIFIED, valueOf: Order.valueOf, enumValues: Order.values)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -121,8 +44,10 @@ class DataRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DataRequest copyWith(void Function(DataRequest) updates) => super.copyWith((message) => updates(message as DataRequest)) as DataRequest; // ignore: deprecated_member_use
+  DataRequest copyWith(void Function(DataRequest) updates) => super.copyWith((message) => updates(message as DataRequest)) as DataRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DataRequest create() => DataRequest._();
   DataRequest createEmptyInstance() => create();
@@ -171,95 +96,28 @@ class DataRequest extends $pb.GeneratedMessage {
 }
 
 class Filter extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Filter', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentName')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentType')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentModel')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'method')
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotName')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotId')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'partName')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'partId')
-    ..pPS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locationIds')
-    ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'orgIds')
-    ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
-    ..aOM<CaptureInterval>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'interval', subBuilder: CaptureInterval.create)
-    ..aOM<TagsFilter>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tagsFilter', subBuilder: TagsFilter.create)
-    ..pPS(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxLabels')
+  factory Filter() => create();
+  Filter._() : super();
+  factory Filter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Filter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Filter', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'componentName')
+    ..aOS(2, _omitFieldNames ? '' : 'componentType')
+    ..aOS(4, _omitFieldNames ? '' : 'method')
+    ..aOS(6, _omitFieldNames ? '' : 'robotName')
+    ..aOS(7, _omitFieldNames ? '' : 'robotId')
+    ..aOS(8, _omitFieldNames ? '' : 'partName')
+    ..aOS(9, _omitFieldNames ? '' : 'partId')
+    ..pPS(10, _omitFieldNames ? '' : 'locationIds')
+    ..pPS(11, _omitFieldNames ? '' : 'organizationIds')
+    ..pPS(12, _omitFieldNames ? '' : 'mimeType')
+    ..aOM<CaptureInterval>(13, _omitFieldNames ? '' : 'interval', subBuilder: CaptureInterval.create)
+    ..aOM<TagsFilter>(14, _omitFieldNames ? '' : 'tagsFilter', subBuilder: TagsFilter.create)
+    ..pPS(15, _omitFieldNames ? '' : 'bboxLabels')
     ..hasRequiredFields = false
   ;
 
-  Filter._() : super();
-  factory Filter({
-    $core.String? componentName,
-    $core.String? componentType,
-    $core.String? componentModel,
-    $core.String? method,
-  @$core.Deprecated('This field is deprecated.')
-    $core.Iterable<$core.String>? tags,
-    $core.String? robotName,
-    $core.String? robotId,
-    $core.String? partName,
-    $core.String? partId,
-    $core.Iterable<$core.String>? locationIds,
-    $core.Iterable<$core.String>? orgIds,
-    $core.Iterable<$core.String>? mimeType,
-    CaptureInterval? interval,
-    TagsFilter? tagsFilter,
-    $core.Iterable<$core.String>? bboxLabels,
-  }) {
-    final _result = create();
-    if (componentName != null) {
-      _result.componentName = componentName;
-    }
-    if (componentType != null) {
-      _result.componentType = componentType;
-    }
-    if (componentModel != null) {
-      _result.componentModel = componentModel;
-    }
-    if (method != null) {
-      _result.method = method;
-    }
-    if (tags != null) {
-      // ignore: deprecated_member_use_from_same_package
-      _result.tags.addAll(tags);
-    }
-    if (robotName != null) {
-      _result.robotName = robotName;
-    }
-    if (robotId != null) {
-      _result.robotId = robotId;
-    }
-    if (partName != null) {
-      _result.partName = partName;
-    }
-    if (partId != null) {
-      _result.partId = partId;
-    }
-    if (locationIds != null) {
-      _result.locationIds.addAll(locationIds);
-    }
-    if (orgIds != null) {
-      _result.orgIds.addAll(orgIds);
-    }
-    if (mimeType != null) {
-      _result.mimeType.addAll(mimeType);
-    }
-    if (interval != null) {
-      _result.interval = interval;
-    }
-    if (tagsFilter != null) {
-      _result.tagsFilter = tagsFilter;
-    }
-    if (bboxLabels != null) {
-      _result.bboxLabels.addAll(bboxLabels);
-    }
-    return _result;
-  }
-  factory Filter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Filter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -269,8 +127,10 @@ class Filter extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Filter copyWith(void Function(Filter) updates) => super.copyWith((message) => updates(message as Filter)) as Filter; // ignore: deprecated_member_use
+  Filter copyWith(void Function(Filter) updates) => super.copyWith((message) => updates(message as Filter)) as Filter;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Filter create() => Filter._();
   Filter createEmptyInstance() => create();
@@ -297,122 +157,98 @@ class Filter extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearComponentType() => clearField(2);
 
-  @$pb.TagNumber(3)
-  $core.String get componentModel => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set componentModel($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasComponentModel() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearComponentModel() => clearField(3);
-
   @$pb.TagNumber(4)
-  $core.String get method => $_getSZ(3);
+  $core.String get method => $_getSZ(2);
   @$pb.TagNumber(4)
-  set method($core.String v) { $_setString(3, v); }
+  set method($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(4)
-  $core.bool hasMethod() => $_has(3);
+  $core.bool hasMethod() => $_has(2);
   @$pb.TagNumber(4)
   void clearMethod() => clearField(4);
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(5)
-  $core.List<$core.String> get tags => $_getList(4);
-
   @$pb.TagNumber(6)
-  $core.String get robotName => $_getSZ(5);
+  $core.String get robotName => $_getSZ(3);
   @$pb.TagNumber(6)
-  set robotName($core.String v) { $_setString(5, v); }
+  set robotName($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(6)
-  $core.bool hasRobotName() => $_has(5);
+  $core.bool hasRobotName() => $_has(3);
   @$pb.TagNumber(6)
   void clearRobotName() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get robotId => $_getSZ(6);
+  $core.String get robotId => $_getSZ(4);
   @$pb.TagNumber(7)
-  set robotId($core.String v) { $_setString(6, v); }
+  set robotId($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(7)
-  $core.bool hasRobotId() => $_has(6);
+  $core.bool hasRobotId() => $_has(4);
   @$pb.TagNumber(7)
   void clearRobotId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get partName => $_getSZ(7);
+  $core.String get partName => $_getSZ(5);
   @$pb.TagNumber(8)
-  set partName($core.String v) { $_setString(7, v); }
+  set partName($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(8)
-  $core.bool hasPartName() => $_has(7);
+  $core.bool hasPartName() => $_has(5);
   @$pb.TagNumber(8)
   void clearPartName() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get partId => $_getSZ(8);
+  $core.String get partId => $_getSZ(6);
   @$pb.TagNumber(9)
-  set partId($core.String v) { $_setString(8, v); }
+  set partId($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(9)
-  $core.bool hasPartId() => $_has(8);
+  $core.bool hasPartId() => $_has(6);
   @$pb.TagNumber(9)
   void clearPartId() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<$core.String> get locationIds => $_getList(9);
+  $core.List<$core.String> get locationIds => $_getList(7);
 
   @$pb.TagNumber(11)
-  $core.List<$core.String> get orgIds => $_getList(10);
+  $core.List<$core.String> get organizationIds => $_getList(8);
 
   @$pb.TagNumber(12)
-  $core.List<$core.String> get mimeType => $_getList(11);
+  $core.List<$core.String> get mimeType => $_getList(9);
 
   @$pb.TagNumber(13)
-  CaptureInterval get interval => $_getN(12);
+  CaptureInterval get interval => $_getN(10);
   @$pb.TagNumber(13)
   set interval(CaptureInterval v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasInterval() => $_has(12);
+  $core.bool hasInterval() => $_has(10);
   @$pb.TagNumber(13)
   void clearInterval() => clearField(13);
   @$pb.TagNumber(13)
-  CaptureInterval ensureInterval() => $_ensure(12);
+  CaptureInterval ensureInterval() => $_ensure(10);
 
   @$pb.TagNumber(14)
-  TagsFilter get tagsFilter => $_getN(13);
+  TagsFilter get tagsFilter => $_getN(11);
   @$pb.TagNumber(14)
   set tagsFilter(TagsFilter v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasTagsFilter() => $_has(13);
+  $core.bool hasTagsFilter() => $_has(11);
   @$pb.TagNumber(14)
   void clearTagsFilter() => clearField(14);
   @$pb.TagNumber(14)
-  TagsFilter ensureTagsFilter() => $_ensure(13);
+  TagsFilter ensureTagsFilter() => $_ensure(11);
 
   @$pb.TagNumber(15)
-  $core.List<$core.String> get bboxLabels => $_getList(14);
+  $core.List<$core.String> get bboxLabels => $_getList(12);
 }
 
 class TagsFilter extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TagsFilter', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..e<TagsFilterType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TagsFilterType.TAGS_FILTER_TYPE_UNSPECIFIED, valueOf: TagsFilterType.valueOf, enumValues: TagsFilterType.values)
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+  factory TagsFilter() => create();
+  TagsFilter._() : super();
+  factory TagsFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TagsFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TagsFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..e<TagsFilterType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TagsFilterType.TAGS_FILTER_TYPE_UNSPECIFIED, valueOf: TagsFilterType.valueOf, enumValues: TagsFilterType.values)
+    ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
-  TagsFilter._() : super();
-  factory TagsFilter({
-    TagsFilterType? type,
-    $core.Iterable<$core.String>? tags,
-  }) {
-    final _result = create();
-    if (type != null) {
-      _result.type = type;
-    }
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    return _result;
-  }
-  factory TagsFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TagsFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -422,8 +258,10 @@ class TagsFilter extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TagsFilter copyWith(void Function(TagsFilter) updates) => super.copyWith((message) => updates(message as TagsFilter)) as TagsFilter; // ignore: deprecated_member_use
+  TagsFilter copyWith(void Function(TagsFilter) updates) => super.copyWith((message) => updates(message as TagsFilter)) as TagsFilter;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TagsFilter create() => TagsFilter._();
   TagsFilter createEmptyInstance() => create();
@@ -446,83 +284,27 @@ class TagsFilter extends $pb.GeneratedMessage {
 }
 
 class CaptureMetadata extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CaptureMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'orgId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locationId')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotName')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'robotId')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'partName')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'partId')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentType')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentModel')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'componentName')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'methodName')
-    ..m<$core.String, $1.Any>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.Any.create, packageName: const $pb.PackageName('viam.app.data.v1'))
-    ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
+  factory CaptureMetadata() => create();
+  CaptureMetadata._() : super();
+  factory CaptureMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CaptureMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'locationId')
+    ..aOS(3, _omitFieldNames ? '' : 'robotName')
+    ..aOS(4, _omitFieldNames ? '' : 'robotId')
+    ..aOS(5, _omitFieldNames ? '' : 'partName')
+    ..aOS(6, _omitFieldNames ? '' : 'partId')
+    ..aOS(7, _omitFieldNames ? '' : 'componentType')
+    ..aOS(9, _omitFieldNames ? '' : 'componentName')
+    ..aOS(10, _omitFieldNames ? '' : 'methodName')
+    ..m<$core.String, $1.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.Any.create, valueDefaultOrMaker: $1.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
+    ..pPS(12, _omitFieldNames ? '' : 'tags')
+    ..aOS(13, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
   ;
 
-  CaptureMetadata._() : super();
-  factory CaptureMetadata({
-    $core.String? orgId,
-    $core.String? locationId,
-    $core.String? robotName,
-    $core.String? robotId,
-    $core.String? partName,
-    $core.String? partId,
-    $core.String? componentType,
-    $core.String? componentModel,
-    $core.String? componentName,
-    $core.String? methodName,
-    $core.Map<$core.String, $1.Any>? methodParameters,
-    $core.Iterable<$core.String>? tags,
-    $core.String? mimeType,
-  }) {
-    final _result = create();
-    if (orgId != null) {
-      _result.orgId = orgId;
-    }
-    if (locationId != null) {
-      _result.locationId = locationId;
-    }
-    if (robotName != null) {
-      _result.robotName = robotName;
-    }
-    if (robotId != null) {
-      _result.robotId = robotId;
-    }
-    if (partName != null) {
-      _result.partName = partName;
-    }
-    if (partId != null) {
-      _result.partId = partId;
-    }
-    if (componentType != null) {
-      _result.componentType = componentType;
-    }
-    if (componentModel != null) {
-      _result.componentModel = componentModel;
-    }
-    if (componentName != null) {
-      _result.componentName = componentName;
-    }
-    if (methodName != null) {
-      _result.methodName = methodName;
-    }
-    if (methodParameters != null) {
-      _result.methodParameters.addAll(methodParameters);
-    }
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    if (mimeType != null) {
-      _result.mimeType = mimeType;
-    }
-    return _result;
-  }
-  factory CaptureMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CaptureMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -532,8 +314,10 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CaptureMetadata copyWith(void Function(CaptureMetadata) updates) => super.copyWith((message) => updates(message as CaptureMetadata)) as CaptureMetadata; // ignore: deprecated_member_use
+  CaptureMetadata copyWith(void Function(CaptureMetadata) updates) => super.copyWith((message) => updates(message as CaptureMetadata)) as CaptureMetadata;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CaptureMetadata create() => CaptureMetadata._();
   CaptureMetadata createEmptyInstance() => create();
@@ -543,13 +327,13 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   static CaptureMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get orgId => $_getSZ(0);
+  $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set orgId($core.String v) { $_setString(0, v); }
+  set organizationId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasOrgId() => $_has(0);
+  $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearOrgId() => clearField(1);
+  void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get locationId => $_getSZ(1);
@@ -605,72 +389,52 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearComponentType() => clearField(7);
 
-  @$pb.TagNumber(8)
-  $core.String get componentModel => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set componentModel($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasComponentModel() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearComponentModel() => clearField(8);
-
   @$pb.TagNumber(9)
-  $core.String get componentName => $_getSZ(8);
+  $core.String get componentName => $_getSZ(7);
   @$pb.TagNumber(9)
-  set componentName($core.String v) { $_setString(8, v); }
+  set componentName($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(9)
-  $core.bool hasComponentName() => $_has(8);
+  $core.bool hasComponentName() => $_has(7);
   @$pb.TagNumber(9)
   void clearComponentName() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get methodName => $_getSZ(9);
+  $core.String get methodName => $_getSZ(8);
   @$pb.TagNumber(10)
-  set methodName($core.String v) { $_setString(9, v); }
+  set methodName($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(10)
-  $core.bool hasMethodName() => $_has(9);
+  $core.bool hasMethodName() => $_has(8);
   @$pb.TagNumber(10)
   void clearMethodName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.Map<$core.String, $1.Any> get methodParameters => $_getMap(10);
+  $core.Map<$core.String, $1.Any> get methodParameters => $_getMap(9);
 
   @$pb.TagNumber(12)
-  $core.List<$core.String> get tags => $_getList(11);
+  $core.List<$core.String> get tags => $_getList(10);
 
   @$pb.TagNumber(13)
-  $core.String get mimeType => $_getSZ(12);
+  $core.String get mimeType => $_getSZ(11);
   @$pb.TagNumber(13)
-  set mimeType($core.String v) { $_setString(12, v); }
+  set mimeType($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(13)
-  $core.bool hasMimeType() => $_has(12);
+  $core.bool hasMimeType() => $_has(11);
   @$pb.TagNumber(13)
   void clearMimeType() => clearField(13);
 }
 
 class CaptureInterval extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CaptureInterval', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$2.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'start', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'end', subBuilder: $2.Timestamp.create)
+  factory CaptureInterval() => create();
+  CaptureInterval._() : super();
+  factory CaptureInterval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureInterval', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
-  CaptureInterval._() : super();
-  factory CaptureInterval({
-    $2.Timestamp? start,
-    $2.Timestamp? end,
-  }) {
-    final _result = create();
-    if (start != null) {
-      _result.start = start;
-    }
-    if (end != null) {
-      _result.end = end;
-    }
-    return _result;
-  }
-  factory CaptureInterval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -680,8 +444,10 @@ class CaptureInterval extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CaptureInterval copyWith(void Function(CaptureInterval) updates) => super.copyWith((message) => updates(message as CaptureInterval)) as CaptureInterval; // ignore: deprecated_member_use
+  CaptureInterval copyWith(void Function(CaptureInterval) updates) => super.copyWith((message) => updates(message as CaptureInterval)) as CaptureInterval;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CaptureInterval create() => CaptureInterval._();
   CaptureInterval createEmptyInstance() => create();
@@ -714,28 +480,17 @@ class CaptureInterval extends $pb.GeneratedMessage {
 }
 
 class TabularDataByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TabularDataByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<DataRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dataRequest', subBuilder: DataRequest.create)
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'countOnly')
+  factory TabularDataByFilterRequest() => create();
+  TabularDataByFilterRequest._() : super();
+  factory TabularDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<DataRequest>(1, _omitFieldNames ? '' : 'dataRequest', subBuilder: DataRequest.create)
+    ..aOB(2, _omitFieldNames ? '' : 'countOnly')
     ..hasRequiredFields = false
   ;
 
-  TabularDataByFilterRequest._() : super();
-  factory TabularDataByFilterRequest({
-    DataRequest? dataRequest,
-    $core.bool? countOnly,
-  }) {
-    final _result = create();
-    if (dataRequest != null) {
-      _result.dataRequest = dataRequest;
-    }
-    if (countOnly != null) {
-      _result.countOnly = countOnly;
-    }
-    return _result;
-  }
-  factory TabularDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TabularDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -745,8 +500,10 @@ class TabularDataByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TabularDataByFilterRequest copyWith(void Function(TabularDataByFilterRequest) updates) => super.copyWith((message) => updates(message as TabularDataByFilterRequest)) as TabularDataByFilterRequest; // ignore: deprecated_member_use
+  TabularDataByFilterRequest copyWith(void Function(TabularDataByFilterRequest) updates) => super.copyWith((message) => updates(message as TabularDataByFilterRequest)) as TabularDataByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TabularDataByFilterRequest create() => TabularDataByFilterRequest._();
   TabularDataByFilterRequest createEmptyInstance() => create();
@@ -777,43 +534,20 @@ class TabularDataByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class TabularDataByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TabularDataByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<CaptureMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', $pb.PbFieldType.PM, subBuilder: CaptureMetadata.create)
-    ..pc<TabularData>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.PM, subBuilder: TabularData.create)
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'last')
-    ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalSizeBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+  factory TabularDataByFilterResponse() => create();
+  TabularDataByFilterResponse._() : super();
+  factory TabularDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<CaptureMetadata>(1, _omitFieldNames ? '' : 'metadata', $pb.PbFieldType.PM, subBuilder: CaptureMetadata.create)
+    ..pc<TabularData>(2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: TabularData.create)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, _omitFieldNames ? '' : 'last')
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'totalSizeBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  TabularDataByFilterResponse._() : super();
-  factory TabularDataByFilterResponse({
-    $core.Iterable<CaptureMetadata>? metadata,
-    $core.Iterable<TabularData>? data,
-    $fixnum.Int64? count,
-    $core.String? last,
-    $fixnum.Int64? totalSizeBytes,
-  }) {
-    final _result = create();
-    if (metadata != null) {
-      _result.metadata.addAll(metadata);
-    }
-    if (data != null) {
-      _result.data.addAll(data);
-    }
-    if (count != null) {
-      _result.count = count;
-    }
-    if (last != null) {
-      _result.last = last;
-    }
-    if (totalSizeBytes != null) {
-      _result.totalSizeBytes = totalSizeBytes;
-    }
-    return _result;
-  }
-  factory TabularDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TabularDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -823,8 +557,10 @@ class TabularDataByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TabularDataByFilterResponse copyWith(void Function(TabularDataByFilterResponse) updates) => super.copyWith((message) => updates(message as TabularDataByFilterResponse)) as TabularDataByFilterResponse; // ignore: deprecated_member_use
+  TabularDataByFilterResponse copyWith(void Function(TabularDataByFilterResponse) updates) => super.copyWith((message) => updates(message as TabularDataByFilterResponse)) as TabularDataByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TabularDataByFilterResponse create() => TabularDataByFilterResponse._();
   TabularDataByFilterResponse createEmptyInstance() => create();
@@ -868,38 +604,19 @@ class TabularDataByFilterResponse extends $pb.GeneratedMessage {
 }
 
 class TabularData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TabularData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$3.Struct>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', subBuilder: $3.Struct.create)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadataIndex', $pb.PbFieldType.O3)
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRequested', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeReceived', subBuilder: $2.Timestamp.create)
+  factory TabularData() => create();
+  TabularData._() : super();
+  factory TabularData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularData', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<$3.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $3.Struct.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'metadataIndex', $pb.PbFieldType.OU3)
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
-  TabularData._() : super();
-  factory TabularData({
-    $3.Struct? data,
-    $core.int? metadataIndex,
-    $2.Timestamp? timeRequested,
-    $2.Timestamp? timeReceived,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data = data;
-    }
-    if (metadataIndex != null) {
-      _result.metadataIndex = metadataIndex;
-    }
-    if (timeRequested != null) {
-      _result.timeRequested = timeRequested;
-    }
-    if (timeReceived != null) {
-      _result.timeReceived = timeReceived;
-    }
-    return _result;
-  }
-  factory TabularData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TabularData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -909,8 +626,10 @@ class TabularData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TabularData copyWith(void Function(TabularData) updates) => super.copyWith((message) => updates(message as TabularData)) as TabularData; // ignore: deprecated_member_use
+  TabularData copyWith(void Function(TabularData) updates) => super.copyWith((message) => updates(message as TabularData)) as TabularData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TabularData create() => TabularData._();
   TabularData createEmptyInstance() => create();
@@ -933,7 +652,7 @@ class TabularData extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.int get metadataIndex => $_getIZ(1);
   @$pb.TagNumber(2)
-  set metadataIndex($core.int v) { $_setSignedInt32(1, v); }
+  set metadataIndex($core.int v) { $_setUnsignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasMetadataIndex() => $_has(1);
   @$pb.TagNumber(2)
@@ -963,28 +682,17 @@ class TabularData extends $pb.GeneratedMessage {
 }
 
 class BinaryData extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryData', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'binary', $pb.PbFieldType.OY)
-    ..aOM<BinaryMetadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: BinaryMetadata.create)
+  factory BinaryData() => create();
+  BinaryData._() : super();
+  factory BinaryData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BinaryData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryData', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'binary', $pb.PbFieldType.OY)
+    ..aOM<BinaryMetadata>(2, _omitFieldNames ? '' : 'metadata', subBuilder: BinaryMetadata.create)
     ..hasRequiredFields = false
   ;
 
-  BinaryData._() : super();
-  factory BinaryData({
-    $core.List<$core.int>? binary,
-    BinaryMetadata? metadata,
-  }) {
-    final _result = create();
-    if (binary != null) {
-      _result.binary = binary;
-    }
-    if (metadata != null) {
-      _result.metadata = metadata;
-    }
-    return _result;
-  }
-  factory BinaryData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BinaryData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -994,8 +702,10 @@ class BinaryData extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BinaryData copyWith(void Function(BinaryData) updates) => super.copyWith((message) => updates(message as BinaryData)) as BinaryData; // ignore: deprecated_member_use
+  BinaryData copyWith(void Function(BinaryData) updates) => super.copyWith((message) => updates(message as BinaryData)) as BinaryData;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BinaryData create() => BinaryData._();
   BinaryData createEmptyInstance() => create();
@@ -1026,33 +736,18 @@ class BinaryData extends $pb.GeneratedMessage {
 }
 
 class BinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryDataByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<DataRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dataRequest', subBuilder: DataRequest.create)
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'includeBinary')
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'countOnly')
+  factory BinaryDataByFilterRequest() => create();
+  BinaryDataByFilterRequest._() : super();
+  factory BinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryDataByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<DataRequest>(1, _omitFieldNames ? '' : 'dataRequest', subBuilder: DataRequest.create)
+    ..aOB(2, _omitFieldNames ? '' : 'includeBinary')
+    ..aOB(3, _omitFieldNames ? '' : 'countOnly')
     ..hasRequiredFields = false
   ;
 
-  BinaryDataByFilterRequest._() : super();
-  factory BinaryDataByFilterRequest({
-    DataRequest? dataRequest,
-    $core.bool? includeBinary,
-    $core.bool? countOnly,
-  }) {
-    final _result = create();
-    if (dataRequest != null) {
-      _result.dataRequest = dataRequest;
-    }
-    if (includeBinary != null) {
-      _result.includeBinary = includeBinary;
-    }
-    if (countOnly != null) {
-      _result.countOnly = countOnly;
-    }
-    return _result;
-  }
-  factory BinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1062,8 +757,10 @@ class BinaryDataByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BinaryDataByFilterRequest copyWith(void Function(BinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as BinaryDataByFilterRequest)) as BinaryDataByFilterRequest; // ignore: deprecated_member_use
+  BinaryDataByFilterRequest copyWith(void Function(BinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as BinaryDataByFilterRequest)) as BinaryDataByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BinaryDataByFilterRequest create() => BinaryDataByFilterRequest._();
   BinaryDataByFilterRequest createEmptyInstance() => create();
@@ -1103,33 +800,19 @@ class BinaryDataByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class BinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryDataByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<BinaryData>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.PM, subBuilder: BinaryData.create)
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'last')
+  factory BinaryDataByFilterResponse() => create();
+  BinaryDataByFilterResponse._() : super();
+  factory BinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryDataByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<BinaryData>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: BinaryData.create)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'last')
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'totalSizeBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  BinaryDataByFilterResponse._() : super();
-  factory BinaryDataByFilterResponse({
-    $core.Iterable<BinaryData>? data,
-    $fixnum.Int64? count,
-    $core.String? last,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data.addAll(data);
-    }
-    if (count != null) {
-      _result.count = count;
-    }
-    if (last != null) {
-      _result.last = last;
-    }
-    return _result;
-  }
-  factory BinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1139,8 +822,10 @@ class BinaryDataByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BinaryDataByFilterResponse copyWith(void Function(BinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as BinaryDataByFilterResponse)) as BinaryDataByFilterResponse; // ignore: deprecated_member_use
+  BinaryDataByFilterResponse copyWith(void Function(BinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as BinaryDataByFilterResponse)) as BinaryDataByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BinaryDataByFilterResponse create() => BinaryDataByFilterResponse._();
   BinaryDataByFilterResponse createEmptyInstance() => create();
@@ -1169,31 +854,92 @@ class BinaryDataByFilterResponse extends $pb.GeneratedMessage {
   $core.bool hasLast() => $_has(2);
   @$pb.TagNumber(3)
   void clearLast() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get totalSizeBytes => $_getI64(3);
+  @$pb.TagNumber(4)
+  set totalSizeBytes($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTotalSizeBytes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalSizeBytes() => clearField(4);
 }
 
-class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryDataByIDsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileIds')
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'includeBinary')
+class BinaryID extends $pb.GeneratedMessage {
+  factory BinaryID() => create();
+  BinaryID._() : super();
+  factory BinaryID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BinaryID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryID', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(3, _omitFieldNames ? '' : 'locationId')
     ..hasRequiredFields = false
   ;
 
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BinaryID clone() => BinaryID()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BinaryID copyWith(void Function(BinaryID) updates) => super.copyWith((message) => updates(message as BinaryID)) as BinaryID;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BinaryID create() => BinaryID._();
+  BinaryID createEmptyInstance() => create();
+  static $pb.PbList<BinaryID> createRepeated() => $pb.PbList<BinaryID>();
+  @$core.pragma('dart2js:noInline')
+  static BinaryID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BinaryID>(create);
+  static BinaryID? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fileId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fileId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFileId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFileId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get organizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get locationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set locationId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLocationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLocationId() => clearField(3);
+}
+
+class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
+  factory BinaryDataByIDsRequest() => create();
   BinaryDataByIDsRequest._() : super();
-  factory BinaryDataByIDsRequest({
-    $core.Iterable<$core.String>? fileIds,
-    $core.bool? includeBinary,
-  }) {
-    final _result = create();
-    if (fileIds != null) {
-      _result.fileIds.addAll(fileIds);
-    }
-    if (includeBinary != null) {
-      _result.includeBinary = includeBinary;
-    }
-    return _result;
-  }
   factory BinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
+    ..aOB(2, _omitFieldNames ? '' : 'includeBinary')
+    ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1203,8 +949,10 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BinaryDataByIDsRequest copyWith(void Function(BinaryDataByIDsRequest) updates) => super.copyWith((message) => updates(message as BinaryDataByIDsRequest)) as BinaryDataByIDsRequest; // ignore: deprecated_member_use
+  BinaryDataByIDsRequest copyWith(void Function(BinaryDataByIDsRequest) updates) => super.copyWith((message) => updates(message as BinaryDataByIDsRequest)) as BinaryDataByIDsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BinaryDataByIDsRequest create() => BinaryDataByIDsRequest._();
   BinaryDataByIDsRequest createEmptyInstance() => create();
@@ -1213,6 +961,7 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static BinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BinaryDataByIDsRequest>(create);
   static BinaryDataByIDsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.String> get fileIds => $_getList(0);
 
@@ -1224,31 +973,23 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   $core.bool hasIncludeBinary() => $_has(1);
   @$pb.TagNumber(2)
   void clearIncludeBinary() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<BinaryID> get binaryIds => $_getList(2);
 }
 
 class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryDataByIDsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<BinaryData>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.PM, subBuilder: BinaryData.create)
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+  factory BinaryDataByIDsResponse() => create();
+  BinaryDataByIDsResponse._() : super();
+  factory BinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryDataByIDsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<BinaryData>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: BinaryData.create)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  BinaryDataByIDsResponse._() : super();
-  factory BinaryDataByIDsResponse({
-    $core.Iterable<BinaryData>? data,
-    $fixnum.Int64? count,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data.addAll(data);
-    }
-    if (count != null) {
-      _result.count = count;
-    }
-    return _result;
-  }
-  factory BinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1258,8 +999,10 @@ class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BinaryDataByIDsResponse copyWith(void Function(BinaryDataByIDsResponse) updates) => super.copyWith((message) => updates(message as BinaryDataByIDsResponse)) as BinaryDataByIDsResponse; // ignore: deprecated_member_use
+  BinaryDataByIDsResponse copyWith(void Function(BinaryDataByIDsResponse) updates) => super.copyWith((message) => updates(message as BinaryDataByIDsResponse)) as BinaryDataByIDsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BinaryDataByIDsResponse create() => BinaryDataByIDsResponse._();
   BinaryDataByIDsResponse createEmptyInstance() => create();
@@ -1282,48 +1025,21 @@ class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
 }
 
 class BoundingBox extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BoundingBox', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+  factory BoundingBox() => create();
+  BoundingBox._() : super();
+  factory BoundingBox.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BoundingBox.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoundingBox', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'label')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
-  BoundingBox._() : super();
-  factory BoundingBox({
-    $core.String? id,
-    $core.String? label,
-    $core.double? xMinNormalized,
-    $core.double? yMinNormalized,
-    $core.double? xMaxNormalized,
-    $core.double? yMaxNormalized,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    if (label != null) {
-      _result.label = label;
-    }
-    if (xMinNormalized != null) {
-      _result.xMinNormalized = xMinNormalized;
-    }
-    if (yMinNormalized != null) {
-      _result.yMinNormalized = yMinNormalized;
-    }
-    if (xMaxNormalized != null) {
-      _result.xMaxNormalized = xMaxNormalized;
-    }
-    if (yMaxNormalized != null) {
-      _result.yMaxNormalized = yMaxNormalized;
-    }
-    return _result;
-  }
-  factory BoundingBox.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BoundingBox.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1333,8 +1049,10 @@ class BoundingBox extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BoundingBox copyWith(void Function(BoundingBox) updates) => super.copyWith((message) => updates(message as BoundingBox)) as BoundingBox; // ignore: deprecated_member_use
+  BoundingBox copyWith(void Function(BoundingBox) updates) => super.copyWith((message) => updates(message as BoundingBox)) as BoundingBox;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BoundingBox create() => BoundingBox._();
   BoundingBox createEmptyInstance() => create();
@@ -1399,23 +1117,16 @@ class BoundingBox extends $pb.GeneratedMessage {
 }
 
 class Annotations extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Annotations', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<BoundingBox>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxes', $pb.PbFieldType.PM, subBuilder: BoundingBox.create)
+  factory Annotations() => create();
+  Annotations._() : super();
+  factory Annotations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Annotations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Annotations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<BoundingBox>(1, _omitFieldNames ? '' : 'bboxes', $pb.PbFieldType.PM, subBuilder: BoundingBox.create)
     ..hasRequiredFields = false
   ;
 
-  Annotations._() : super();
-  factory Annotations({
-    $core.Iterable<BoundingBox>? bboxes,
-  }) {
-    final _result = create();
-    if (bboxes != null) {
-      _result.bboxes.addAll(bboxes);
-    }
-    return _result;
-  }
-  factory Annotations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Annotations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1425,8 +1136,10 @@ class Annotations extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Annotations copyWith(void Function(Annotations) updates) => super.copyWith((message) => updates(message as Annotations)) as Annotations; // ignore: deprecated_member_use
+  Annotations copyWith(void Function(Annotations) updates) => super.copyWith((message) => updates(message as Annotations)) as Annotations;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Annotations create() => Annotations._();
   Annotations createEmptyInstance() => create();
@@ -1440,58 +1153,23 @@ class Annotations extends $pb.GeneratedMessage {
 }
 
 class BinaryMetadata extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BinaryMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOM<CaptureMetadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'captureMetadata', subBuilder: CaptureMetadata.create)
-    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRequested', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeReceived', subBuilder: $2.Timestamp.create)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileName')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileExt')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'uri')
-    ..aOM<Annotations>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'annotations', subBuilder: Annotations.create)
+  factory BinaryMetadata() => create();
+  BinaryMetadata._() : super();
+  factory BinaryMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BinaryMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<CaptureMetadata>(2, _omitFieldNames ? '' : 'captureMetadata', subBuilder: CaptureMetadata.create)
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $2.Timestamp.create)
+    ..aOS(5, _omitFieldNames ? '' : 'fileName')
+    ..aOS(6, _omitFieldNames ? '' : 'fileExt')
+    ..aOS(7, _omitFieldNames ? '' : 'uri')
+    ..aOM<Annotations>(8, _omitFieldNames ? '' : 'annotations', subBuilder: Annotations.create)
     ..hasRequiredFields = false
   ;
 
-  BinaryMetadata._() : super();
-  factory BinaryMetadata({
-    $core.String? id,
-    CaptureMetadata? captureMetadata,
-    $2.Timestamp? timeRequested,
-    $2.Timestamp? timeReceived,
-    $core.String? fileName,
-    $core.String? fileExt,
-    $core.String? uri,
-    Annotations? annotations,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    if (captureMetadata != null) {
-      _result.captureMetadata = captureMetadata;
-    }
-    if (timeRequested != null) {
-      _result.timeRequested = timeRequested;
-    }
-    if (timeReceived != null) {
-      _result.timeReceived = timeReceived;
-    }
-    if (fileName != null) {
-      _result.fileName = fileName;
-    }
-    if (fileExt != null) {
-      _result.fileExt = fileExt;
-    }
-    if (uri != null) {
-      _result.uri = uri;
-    }
-    if (annotations != null) {
-      _result.annotations = annotations;
-    }
-    return _result;
-  }
-  factory BinaryMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BinaryMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1501,8 +1179,10 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BinaryMetadata copyWith(void Function(BinaryMetadata) updates) => super.copyWith((message) => updates(message as BinaryMetadata)) as BinaryMetadata; // ignore: deprecated_member_use
+  BinaryMetadata copyWith(void Function(BinaryMetadata) updates) => super.copyWith((message) => updates(message as BinaryMetadata)) as BinaryMetadata;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BinaryMetadata create() => BinaryMetadata._();
   BinaryMetadata createEmptyInstance() => create();
@@ -1593,23 +1273,16 @@ class BinaryMetadata extends $pb.GeneratedMessage {
 }
 
 class DeleteTabularDataByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteTabularDataByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
+  factory DeleteTabularDataByFilterRequest() => create();
+  DeleteTabularDataByFilterRequest._() : super();
+  factory DeleteTabularDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTabularDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTabularDataByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
     ..hasRequiredFields = false
   ;
 
-  DeleteTabularDataByFilterRequest._() : super();
-  factory DeleteTabularDataByFilterRequest({
-    Filter? filter,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    return _result;
-  }
-  factory DeleteTabularDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteTabularDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1619,8 +1292,10 @@ class DeleteTabularDataByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteTabularDataByFilterRequest copyWith(void Function(DeleteTabularDataByFilterRequest) updates) => super.copyWith((message) => updates(message as DeleteTabularDataByFilterRequest)) as DeleteTabularDataByFilterRequest; // ignore: deprecated_member_use
+  DeleteTabularDataByFilterRequest copyWith(void Function(DeleteTabularDataByFilterRequest) updates) => super.copyWith((message) => updates(message as DeleteTabularDataByFilterRequest)) as DeleteTabularDataByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteTabularDataByFilterRequest create() => DeleteTabularDataByFilterRequest._();
   DeleteTabularDataByFilterRequest createEmptyInstance() => create();
@@ -1642,28 +1317,16 @@ class DeleteTabularDataByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteTabularDataByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteTabularDataByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', subBuilder: Result.create)
+  factory DeleteTabularDataByFilterResponse() => create();
+  DeleteTabularDataByFilterResponse._() : super();
+  factory DeleteTabularDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTabularDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTabularDataByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  DeleteTabularDataByFilterResponse._() : super();
-  factory DeleteTabularDataByFilterResponse({
-    $fixnum.Int64? deletedCount,
-    Result? result,
-  }) {
-    final _result = create();
-    if (deletedCount != null) {
-      _result.deletedCount = deletedCount;
-    }
-    if (result != null) {
-      _result.result = result;
-    }
-    return _result;
-  }
-  factory DeleteTabularDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteTabularDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1673,8 +1336,10 @@ class DeleteTabularDataByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteTabularDataByFilterResponse copyWith(void Function(DeleteTabularDataByFilterResponse) updates) => super.copyWith((message) => updates(message as DeleteTabularDataByFilterResponse)) as DeleteTabularDataByFilterResponse; // ignore: deprecated_member_use
+  DeleteTabularDataByFilterResponse copyWith(void Function(DeleteTabularDataByFilterResponse) updates) => super.copyWith((message) => updates(message as DeleteTabularDataByFilterResponse)) as DeleteTabularDataByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteTabularDataByFilterResponse create() => DeleteTabularDataByFilterResponse._();
   DeleteTabularDataByFilterResponse createEmptyInstance() => create();
@@ -1691,37 +1356,19 @@ class DeleteTabularDataByFilterResponse extends $pb.GeneratedMessage {
   $core.bool hasDeletedCount() => $_has(0);
   @$pb.TagNumber(1)
   void clearDeletedCount() => clearField(1);
-
-  @$pb.TagNumber(2)
-  Result get result => $_getN(1);
-  @$pb.TagNumber(2)
-  set result(Result v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasResult() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearResult() => clearField(2);
-  @$pb.TagNumber(2)
-  Result ensureResult() => $_ensure(1);
 }
 
 class DeleteBinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteBinaryDataByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
+  factory DeleteBinaryDataByFilterRequest() => create();
+  DeleteBinaryDataByFilterRequest._() : super();
+  factory DeleteBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBinaryDataByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
     ..hasRequiredFields = false
   ;
 
-  DeleteBinaryDataByFilterRequest._() : super();
-  factory DeleteBinaryDataByFilterRequest({
-    Filter? filter,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    return _result;
-  }
-  factory DeleteBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1731,8 +1378,10 @@ class DeleteBinaryDataByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteBinaryDataByFilterRequest copyWith(void Function(DeleteBinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByFilterRequest)) as DeleteBinaryDataByFilterRequest; // ignore: deprecated_member_use
+  DeleteBinaryDataByFilterRequest copyWith(void Function(DeleteBinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByFilterRequest)) as DeleteBinaryDataByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteBinaryDataByFilterRequest create() => DeleteBinaryDataByFilterRequest._();
   DeleteBinaryDataByFilterRequest createEmptyInstance() => create();
@@ -1754,28 +1403,16 @@ class DeleteBinaryDataByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteBinaryDataByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', subBuilder: Result.create)
+  factory DeleteBinaryDataByFilterResponse() => create();
+  DeleteBinaryDataByFilterResponse._() : super();
+  factory DeleteBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBinaryDataByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  DeleteBinaryDataByFilterResponse._() : super();
-  factory DeleteBinaryDataByFilterResponse({
-    $fixnum.Int64? deletedCount,
-    Result? result,
-  }) {
-    final _result = create();
-    if (deletedCount != null) {
-      _result.deletedCount = deletedCount;
-    }
-    if (result != null) {
-      _result.result = result;
-    }
-    return _result;
-  }
-  factory DeleteBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1785,8 +1422,10 @@ class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteBinaryDataByFilterResponse copyWith(void Function(DeleteBinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByFilterResponse)) as DeleteBinaryDataByFilterResponse; // ignore: deprecated_member_use
+  DeleteBinaryDataByFilterResponse copyWith(void Function(DeleteBinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByFilterResponse)) as DeleteBinaryDataByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteBinaryDataByFilterResponse create() => DeleteBinaryDataByFilterResponse._();
   DeleteBinaryDataByFilterResponse createEmptyInstance() => create();
@@ -1803,37 +1442,20 @@ class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   $core.bool hasDeletedCount() => $_has(0);
   @$pb.TagNumber(1)
   void clearDeletedCount() => clearField(1);
-
-  @$pb.TagNumber(2)
-  Result get result => $_getN(1);
-  @$pb.TagNumber(2)
-  set result(Result v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasResult() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearResult() => clearField(2);
-  @$pb.TagNumber(2)
-  Result ensureResult() => $_ensure(1);
 }
 
 class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteBinaryDataByIDsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileIds')
+  factory DeleteBinaryDataByIDsRequest() => create();
+  DeleteBinaryDataByIDsRequest._() : super();
+  factory DeleteBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
+    ..pc<BinaryID>(2, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
   ;
 
-  DeleteBinaryDataByIDsRequest._() : super();
-  factory DeleteBinaryDataByIDsRequest({
-    $core.Iterable<$core.String>? fileIds,
-  }) {
-    final _result = create();
-    if (fileIds != null) {
-      _result.fileIds.addAll(fileIds);
-    }
-    return _result;
-  }
-  factory DeleteBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1843,8 +1465,10 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteBinaryDataByIDsRequest copyWith(void Function(DeleteBinaryDataByIDsRequest) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByIDsRequest)) as DeleteBinaryDataByIDsRequest; // ignore: deprecated_member_use
+  DeleteBinaryDataByIDsRequest copyWith(void Function(DeleteBinaryDataByIDsRequest) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByIDsRequest)) as DeleteBinaryDataByIDsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteBinaryDataByIDsRequest create() => DeleteBinaryDataByIDsRequest._();
   DeleteBinaryDataByIDsRequest createEmptyInstance() => create();
@@ -1853,33 +1477,25 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static DeleteBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteBinaryDataByIDsRequest>(create);
   static DeleteBinaryDataByIDsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.String> get fileIds => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<BinaryID> get binaryIds => $_getList(1);
 }
 
 class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteBinaryDataByIDsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', subBuilder: Result.create)
+  factory DeleteBinaryDataByIDsResponse() => create();
+  DeleteBinaryDataByIDsResponse._() : super();
+  factory DeleteBinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteBinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBinaryDataByIDsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  DeleteBinaryDataByIDsResponse._() : super();
-  factory DeleteBinaryDataByIDsResponse({
-    $fixnum.Int64? deletedCount,
-    Result? result,
-  }) {
-    final _result = create();
-    if (deletedCount != null) {
-      _result.deletedCount = deletedCount;
-    }
-    if (result != null) {
-      _result.result = result;
-    }
-    return _result;
-  }
-  factory DeleteBinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteBinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1889,8 +1505,10 @@ class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteBinaryDataByIDsResponse copyWith(void Function(DeleteBinaryDataByIDsResponse) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByIDsResponse)) as DeleteBinaryDataByIDsResponse; // ignore: deprecated_member_use
+  DeleteBinaryDataByIDsResponse copyWith(void Function(DeleteBinaryDataByIDsResponse) updates) => super.copyWith((message) => updates(message as DeleteBinaryDataByIDsResponse)) as DeleteBinaryDataByIDsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteBinaryDataByIDsResponse create() => DeleteBinaryDataByIDsResponse._();
   DeleteBinaryDataByIDsResponse createEmptyInstance() => create();
@@ -1907,120 +1525,97 @@ class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
   $core.bool hasDeletedCount() => $_has(0);
   @$pb.TagNumber(1)
   void clearDeletedCount() => clearField(1);
-
-  @$pb.TagNumber(2)
-  Result get result => $_getN(1);
-  @$pb.TagNumber(2)
-  set result(Result v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasResult() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearResult() => clearField(2);
-  @$pb.TagNumber(2)
-  Result ensureResult() => $_ensure(1);
 }
 
-class AddTagsToBinaryDataByFileIDsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddTagsToBinaryDataByFileIDsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileIds')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
+  factory AddTagsToBinaryDataByIDsRequest() => create();
+  AddTagsToBinaryDataByIDsRequest._() : super();
+  factory AddTagsToBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddTagsToBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddTagsToBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
+    ..pPS(2, _omitFieldNames ? '' : 'tags')
+    ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
   ;
 
-  AddTagsToBinaryDataByFileIDsRequest._() : super();
-  factory AddTagsToBinaryDataByFileIDsRequest({
-    $core.Iterable<$core.String>? fileIds,
-    $core.Iterable<$core.String>? tags,
-  }) {
-    final _result = create();
-    if (fileIds != null) {
-      _result.fileIds.addAll(fileIds);
-    }
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    return _result;
-  }
-  factory AddTagsToBinaryDataByFileIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddTagsToBinaryDataByFileIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AddTagsToBinaryDataByFileIDsRequest clone() => AddTagsToBinaryDataByFileIDsRequest()..mergeFromMessage(this);
+  AddTagsToBinaryDataByIDsRequest clone() => AddTagsToBinaryDataByIDsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddTagsToBinaryDataByFileIDsRequest copyWith(void Function(AddTagsToBinaryDataByFileIDsRequest) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByFileIDsRequest)) as AddTagsToBinaryDataByFileIDsRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static AddTagsToBinaryDataByFileIDsRequest create() => AddTagsToBinaryDataByFileIDsRequest._();
-  AddTagsToBinaryDataByFileIDsRequest createEmptyInstance() => create();
-  static $pb.PbList<AddTagsToBinaryDataByFileIDsRequest> createRepeated() => $pb.PbList<AddTagsToBinaryDataByFileIDsRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddTagsToBinaryDataByFileIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddTagsToBinaryDataByFileIDsRequest>(create);
-  static AddTagsToBinaryDataByFileIDsRequest? _defaultInstance;
+  AddTagsToBinaryDataByIDsRequest copyWith(void Function(AddTagsToBinaryDataByIDsRequest) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByIDsRequest)) as AddTagsToBinaryDataByIDsRequest;
 
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddTagsToBinaryDataByIDsRequest create() => AddTagsToBinaryDataByIDsRequest._();
+  AddTagsToBinaryDataByIDsRequest createEmptyInstance() => create();
+  static $pb.PbList<AddTagsToBinaryDataByIDsRequest> createRepeated() => $pb.PbList<AddTagsToBinaryDataByIDsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddTagsToBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddTagsToBinaryDataByIDsRequest>(create);
+  static AddTagsToBinaryDataByIDsRequest? _defaultInstance;
+
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.String> get fileIds => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get tags => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<BinaryID> get binaryIds => $_getList(2);
 }
 
-class AddTagsToBinaryDataByFileIDsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddTagsToBinaryDataByFileIDsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+class AddTagsToBinaryDataByIDsResponse extends $pb.GeneratedMessage {
+  factory AddTagsToBinaryDataByIDsResponse() => create();
+  AddTagsToBinaryDataByIDsResponse._() : super();
+  factory AddTagsToBinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddTagsToBinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddTagsToBinaryDataByIDsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  AddTagsToBinaryDataByFileIDsResponse._() : super();
-  factory AddTagsToBinaryDataByFileIDsResponse() => create();
-  factory AddTagsToBinaryDataByFileIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddTagsToBinaryDataByFileIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AddTagsToBinaryDataByFileIDsResponse clone() => AddTagsToBinaryDataByFileIDsResponse()..mergeFromMessage(this);
+  AddTagsToBinaryDataByIDsResponse clone() => AddTagsToBinaryDataByIDsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddTagsToBinaryDataByFileIDsResponse copyWith(void Function(AddTagsToBinaryDataByFileIDsResponse) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByFileIDsResponse)) as AddTagsToBinaryDataByFileIDsResponse; // ignore: deprecated_member_use
+  AddTagsToBinaryDataByIDsResponse copyWith(void Function(AddTagsToBinaryDataByIDsResponse) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByIDsResponse)) as AddTagsToBinaryDataByIDsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
-  static AddTagsToBinaryDataByFileIDsResponse create() => AddTagsToBinaryDataByFileIDsResponse._();
-  AddTagsToBinaryDataByFileIDsResponse createEmptyInstance() => create();
-  static $pb.PbList<AddTagsToBinaryDataByFileIDsResponse> createRepeated() => $pb.PbList<AddTagsToBinaryDataByFileIDsResponse>();
+  static AddTagsToBinaryDataByIDsResponse create() => AddTagsToBinaryDataByIDsResponse._();
+  AddTagsToBinaryDataByIDsResponse createEmptyInstance() => create();
+  static $pb.PbList<AddTagsToBinaryDataByIDsResponse> createRepeated() => $pb.PbList<AddTagsToBinaryDataByIDsResponse>();
   @$core.pragma('dart2js:noInline')
-  static AddTagsToBinaryDataByFileIDsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddTagsToBinaryDataByFileIDsResponse>(create);
-  static AddTagsToBinaryDataByFileIDsResponse? _defaultInstance;
+  static AddTagsToBinaryDataByIDsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddTagsToBinaryDataByIDsResponse>(create);
+  static AddTagsToBinaryDataByIDsResponse? _defaultInstance;
 }
 
 class AddTagsToBinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddTagsToBinaryDataByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+  factory AddTagsToBinaryDataByFilterRequest() => create();
+  AddTagsToBinaryDataByFilterRequest._() : super();
+  factory AddTagsToBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddTagsToBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddTagsToBinaryDataByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
+    ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
-  AddTagsToBinaryDataByFilterRequest._() : super();
-  factory AddTagsToBinaryDataByFilterRequest({
-    Filter? filter,
-    $core.Iterable<$core.String>? tags,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    return _result;
-  }
-  factory AddTagsToBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddTagsToBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2030,8 +1625,10 @@ class AddTagsToBinaryDataByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddTagsToBinaryDataByFilterRequest copyWith(void Function(AddTagsToBinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByFilterRequest)) as AddTagsToBinaryDataByFilterRequest; // ignore: deprecated_member_use
+  AddTagsToBinaryDataByFilterRequest copyWith(void Function(AddTagsToBinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByFilterRequest)) as AddTagsToBinaryDataByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AddTagsToBinaryDataByFilterRequest create() => AddTagsToBinaryDataByFilterRequest._();
   AddTagsToBinaryDataByFilterRequest createEmptyInstance() => create();
@@ -2056,14 +1653,15 @@ class AddTagsToBinaryDataByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class AddTagsToBinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddTagsToBinaryDataByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+  factory AddTagsToBinaryDataByFilterResponse() => create();
+  AddTagsToBinaryDataByFilterResponse._() : super();
+  factory AddTagsToBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddTagsToBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddTagsToBinaryDataByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  AddTagsToBinaryDataByFilterResponse._() : super();
-  factory AddTagsToBinaryDataByFilterResponse() => create();
-  factory AddTagsToBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddTagsToBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2073,8 +1671,10 @@ class AddTagsToBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddTagsToBinaryDataByFilterResponse copyWith(void Function(AddTagsToBinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByFilterResponse)) as AddTagsToBinaryDataByFilterResponse; // ignore: deprecated_member_use
+  AddTagsToBinaryDataByFilterResponse copyWith(void Function(AddTagsToBinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as AddTagsToBinaryDataByFilterResponse)) as AddTagsToBinaryDataByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AddTagsToBinaryDataByFilterResponse create() => AddTagsToBinaryDataByFilterResponse._();
   AddTagsToBinaryDataByFilterResponse createEmptyInstance() => create();
@@ -2084,91 +1684,82 @@ class AddTagsToBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   static AddTagsToBinaryDataByFilterResponse? _defaultInstance;
 }
 
-class RemoveTagsFromBinaryDataByFileIDsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveTagsFromBinaryDataByFileIDsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileIds')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
+  factory RemoveTagsFromBinaryDataByIDsRequest() => create();
+  RemoveTagsFromBinaryDataByIDsRequest._() : super();
+  factory RemoveTagsFromBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveTagsFromBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveTagsFromBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
+    ..pPS(2, _omitFieldNames ? '' : 'tags')
+    ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
   ;
 
-  RemoveTagsFromBinaryDataByFileIDsRequest._() : super();
-  factory RemoveTagsFromBinaryDataByFileIDsRequest({
-    $core.Iterable<$core.String>? fileIds,
-    $core.Iterable<$core.String>? tags,
-  }) {
-    final _result = create();
-    if (fileIds != null) {
-      _result.fileIds.addAll(fileIds);
-    }
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    return _result;
-  }
-  factory RemoveTagsFromBinaryDataByFileIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveTagsFromBinaryDataByFileIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  RemoveTagsFromBinaryDataByFileIDsRequest clone() => RemoveTagsFromBinaryDataByFileIDsRequest()..mergeFromMessage(this);
+  RemoveTagsFromBinaryDataByIDsRequest clone() => RemoveTagsFromBinaryDataByIDsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveTagsFromBinaryDataByFileIDsRequest copyWith(void Function(RemoveTagsFromBinaryDataByFileIDsRequest) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByFileIDsRequest)) as RemoveTagsFromBinaryDataByFileIDsRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static RemoveTagsFromBinaryDataByFileIDsRequest create() => RemoveTagsFromBinaryDataByFileIDsRequest._();
-  RemoveTagsFromBinaryDataByFileIDsRequest createEmptyInstance() => create();
-  static $pb.PbList<RemoveTagsFromBinaryDataByFileIDsRequest> createRepeated() => $pb.PbList<RemoveTagsFromBinaryDataByFileIDsRequest>();
-  @$core.pragma('dart2js:noInline')
-  static RemoveTagsFromBinaryDataByFileIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveTagsFromBinaryDataByFileIDsRequest>(create);
-  static RemoveTagsFromBinaryDataByFileIDsRequest? _defaultInstance;
+  RemoveTagsFromBinaryDataByIDsRequest copyWith(void Function(RemoveTagsFromBinaryDataByIDsRequest) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByIDsRequest)) as RemoveTagsFromBinaryDataByIDsRequest;
 
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveTagsFromBinaryDataByIDsRequest create() => RemoveTagsFromBinaryDataByIDsRequest._();
+  RemoveTagsFromBinaryDataByIDsRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveTagsFromBinaryDataByIDsRequest> createRepeated() => $pb.PbList<RemoveTagsFromBinaryDataByIDsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveTagsFromBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveTagsFromBinaryDataByIDsRequest>(create);
+  static RemoveTagsFromBinaryDataByIDsRequest? _defaultInstance;
+
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$core.String> get fileIds => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get tags => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<BinaryID> get binaryIds => $_getList(2);
 }
 
-class RemoveTagsFromBinaryDataByFileIDsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveTagsFromBinaryDataByFileIDsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+class RemoveTagsFromBinaryDataByIDsResponse extends $pb.GeneratedMessage {
+  factory RemoveTagsFromBinaryDataByIDsResponse() => create();
+  RemoveTagsFromBinaryDataByIDsResponse._() : super();
+  factory RemoveTagsFromBinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveTagsFromBinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveTagsFromBinaryDataByIDsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  RemoveTagsFromBinaryDataByFileIDsResponse._() : super();
-  factory RemoveTagsFromBinaryDataByFileIDsResponse({
-    $fixnum.Int64? deletedCount,
-  }) {
-    final _result = create();
-    if (deletedCount != null) {
-      _result.deletedCount = deletedCount;
-    }
-    return _result;
-  }
-  factory RemoveTagsFromBinaryDataByFileIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveTagsFromBinaryDataByFileIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  RemoveTagsFromBinaryDataByFileIDsResponse clone() => RemoveTagsFromBinaryDataByFileIDsResponse()..mergeFromMessage(this);
+  RemoveTagsFromBinaryDataByIDsResponse clone() => RemoveTagsFromBinaryDataByIDsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveTagsFromBinaryDataByFileIDsResponse copyWith(void Function(RemoveTagsFromBinaryDataByFileIDsResponse) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByFileIDsResponse)) as RemoveTagsFromBinaryDataByFileIDsResponse; // ignore: deprecated_member_use
+  RemoveTagsFromBinaryDataByIDsResponse copyWith(void Function(RemoveTagsFromBinaryDataByIDsResponse) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByIDsResponse)) as RemoveTagsFromBinaryDataByIDsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
-  static RemoveTagsFromBinaryDataByFileIDsResponse create() => RemoveTagsFromBinaryDataByFileIDsResponse._();
-  RemoveTagsFromBinaryDataByFileIDsResponse createEmptyInstance() => create();
-  static $pb.PbList<RemoveTagsFromBinaryDataByFileIDsResponse> createRepeated() => $pb.PbList<RemoveTagsFromBinaryDataByFileIDsResponse>();
+  static RemoveTagsFromBinaryDataByIDsResponse create() => RemoveTagsFromBinaryDataByIDsResponse._();
+  RemoveTagsFromBinaryDataByIDsResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveTagsFromBinaryDataByIDsResponse> createRepeated() => $pb.PbList<RemoveTagsFromBinaryDataByIDsResponse>();
   @$core.pragma('dart2js:noInline')
-  static RemoveTagsFromBinaryDataByFileIDsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveTagsFromBinaryDataByFileIDsResponse>(create);
-  static RemoveTagsFromBinaryDataByFileIDsResponse? _defaultInstance;
+  static RemoveTagsFromBinaryDataByIDsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveTagsFromBinaryDataByIDsResponse>(create);
+  static RemoveTagsFromBinaryDataByIDsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get deletedCount => $_getI64(0);
@@ -2181,28 +1772,17 @@ class RemoveTagsFromBinaryDataByFileIDsResponse extends $pb.GeneratedMessage {
 }
 
 class RemoveTagsFromBinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveTagsFromBinaryDataByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+  factory RemoveTagsFromBinaryDataByFilterRequest() => create();
+  RemoveTagsFromBinaryDataByFilterRequest._() : super();
+  factory RemoveTagsFromBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveTagsFromBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveTagsFromBinaryDataByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
+    ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
-  RemoveTagsFromBinaryDataByFilterRequest._() : super();
-  factory RemoveTagsFromBinaryDataByFilterRequest({
-    Filter? filter,
-    $core.Iterable<$core.String>? tags,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    return _result;
-  }
-  factory RemoveTagsFromBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveTagsFromBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2212,8 +1792,10 @@ class RemoveTagsFromBinaryDataByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveTagsFromBinaryDataByFilterRequest copyWith(void Function(RemoveTagsFromBinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByFilterRequest)) as RemoveTagsFromBinaryDataByFilterRequest; // ignore: deprecated_member_use
+  RemoveTagsFromBinaryDataByFilterRequest copyWith(void Function(RemoveTagsFromBinaryDataByFilterRequest) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByFilterRequest)) as RemoveTagsFromBinaryDataByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RemoveTagsFromBinaryDataByFilterRequest create() => RemoveTagsFromBinaryDataByFilterRequest._();
   RemoveTagsFromBinaryDataByFilterRequest createEmptyInstance() => create();
@@ -2238,23 +1820,16 @@ class RemoveTagsFromBinaryDataByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class RemoveTagsFromBinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveTagsFromBinaryDataByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+  factory RemoveTagsFromBinaryDataByFilterResponse() => create();
+  RemoveTagsFromBinaryDataByFilterResponse._() : super();
+  factory RemoveTagsFromBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveTagsFromBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveTagsFromBinaryDataByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  RemoveTagsFromBinaryDataByFilterResponse._() : super();
-  factory RemoveTagsFromBinaryDataByFilterResponse({
-    $fixnum.Int64? deletedCount,
-  }) {
-    final _result = create();
-    if (deletedCount != null) {
-      _result.deletedCount = deletedCount;
-    }
-    return _result;
-  }
-  factory RemoveTagsFromBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveTagsFromBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2264,8 +1839,10 @@ class RemoveTagsFromBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveTagsFromBinaryDataByFilterResponse copyWith(void Function(RemoveTagsFromBinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByFilterResponse)) as RemoveTagsFromBinaryDataByFilterResponse; // ignore: deprecated_member_use
+  RemoveTagsFromBinaryDataByFilterResponse copyWith(void Function(RemoveTagsFromBinaryDataByFilterResponse) updates) => super.copyWith((message) => updates(message as RemoveTagsFromBinaryDataByFilterResponse)) as RemoveTagsFromBinaryDataByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RemoveTagsFromBinaryDataByFilterResponse create() => RemoveTagsFromBinaryDataByFilterResponse._();
   RemoveTagsFromBinaryDataByFilterResponse createEmptyInstance() => create();
@@ -2285,23 +1862,16 @@ class RemoveTagsFromBinaryDataByFilterResponse extends $pb.GeneratedMessage {
 }
 
 class TagsByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TagsByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
+  factory TagsByFilterRequest() => create();
+  TagsByFilterRequest._() : super();
+  factory TagsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TagsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TagsByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
     ..hasRequiredFields = false
   ;
 
-  TagsByFilterRequest._() : super();
-  factory TagsByFilterRequest({
-    Filter? filter,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    return _result;
-  }
-  factory TagsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TagsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2311,8 +1881,10 @@ class TagsByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TagsByFilterRequest copyWith(void Function(TagsByFilterRequest) updates) => super.copyWith((message) => updates(message as TagsByFilterRequest)) as TagsByFilterRequest; // ignore: deprecated_member_use
+  TagsByFilterRequest copyWith(void Function(TagsByFilterRequest) updates) => super.copyWith((message) => updates(message as TagsByFilterRequest)) as TagsByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TagsByFilterRequest create() => TagsByFilterRequest._();
   TagsByFilterRequest createEmptyInstance() => create();
@@ -2334,23 +1906,16 @@ class TagsByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class TagsByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TagsByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+  factory TagsByFilterResponse() => create();
+  TagsByFilterResponse._() : super();
+  factory TagsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TagsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TagsByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
-  TagsByFilterResponse._() : super();
-  factory TagsByFilterResponse({
-    $core.Iterable<$core.String>? tags,
-  }) {
-    final _result = create();
-    if (tags != null) {
-      _result.tags.addAll(tags);
-    }
-    return _result;
-  }
-  factory TagsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TagsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2360,8 +1925,10 @@ class TagsByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TagsByFilterResponse copyWith(void Function(TagsByFilterResponse) updates) => super.copyWith((message) => updates(message as TagsByFilterResponse)) as TagsByFilterResponse; // ignore: deprecated_member_use
+  TagsByFilterResponse copyWith(void Function(TagsByFilterResponse) updates) => super.copyWith((message) => updates(message as TagsByFilterResponse)) as TagsByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TagsByFilterResponse create() => TagsByFilterResponse._();
   TagsByFilterResponse createEmptyInstance() => create();
@@ -2375,48 +1942,22 @@ class TagsByFilterResponse extends $pb.GeneratedMessage {
 }
 
 class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddBoundingBoxToImageByIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+  factory AddBoundingBoxToImageByIDRequest() => create();
+  AddBoundingBoxToImageByIDRequest._() : super();
+  factory AddBoundingBoxToImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddBoundingBoxToImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddBoundingBoxToImageByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..aOS(2, _omitFieldNames ? '' : 'label')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+    ..aOM<BinaryID>(7, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
     ..hasRequiredFields = false
   ;
 
-  AddBoundingBoxToImageByIDRequest._() : super();
-  factory AddBoundingBoxToImageByIDRequest({
-    $core.String? fileId,
-    $core.String? label,
-    $core.double? xMinNormalized,
-    $core.double? yMinNormalized,
-    $core.double? xMaxNormalized,
-    $core.double? yMaxNormalized,
-  }) {
-    final _result = create();
-    if (fileId != null) {
-      _result.fileId = fileId;
-    }
-    if (label != null) {
-      _result.label = label;
-    }
-    if (xMinNormalized != null) {
-      _result.xMinNormalized = xMinNormalized;
-    }
-    if (yMinNormalized != null) {
-      _result.yMinNormalized = yMinNormalized;
-    }
-    if (xMaxNormalized != null) {
-      _result.xMaxNormalized = xMaxNormalized;
-    }
-    if (yMaxNormalized != null) {
-      _result.yMaxNormalized = yMaxNormalized;
-    }
-    return _result;
-  }
-  factory AddBoundingBoxToImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddBoundingBoxToImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2426,8 +1967,10 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddBoundingBoxToImageByIDRequest copyWith(void Function(AddBoundingBoxToImageByIDRequest) updates) => super.copyWith((message) => updates(message as AddBoundingBoxToImageByIDRequest)) as AddBoundingBoxToImageByIDRequest; // ignore: deprecated_member_use
+  AddBoundingBoxToImageByIDRequest copyWith(void Function(AddBoundingBoxToImageByIDRequest) updates) => super.copyWith((message) => updates(message as AddBoundingBoxToImageByIDRequest)) as AddBoundingBoxToImageByIDRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AddBoundingBoxToImageByIDRequest create() => AddBoundingBoxToImageByIDRequest._();
   AddBoundingBoxToImageByIDRequest createEmptyInstance() => create();
@@ -2436,12 +1979,16 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   static AddBoundingBoxToImageByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddBoundingBoxToImageByIDRequest>(create);
   static AddBoundingBoxToImageByIDRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get fileId => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set fileId($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasFileId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
 
@@ -2489,26 +2036,30 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   $core.bool hasYMaxNormalized() => $_has(5);
   @$pb.TagNumber(6)
   void clearYMaxNormalized() => clearField(6);
+
+  @$pb.TagNumber(7)
+  BinaryID get binaryId => $_getN(6);
+  @$pb.TagNumber(7)
+  set binaryId(BinaryID v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasBinaryId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBinaryId() => clearField(7);
+  @$pb.TagNumber(7)
+  BinaryID ensureBinaryId() => $_ensure(6);
 }
 
 class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddBoundingBoxToImageByIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxId')
+  factory AddBoundingBoxToImageByIDResponse() => create();
+  AddBoundingBoxToImageByIDResponse._() : super();
+  factory AddBoundingBoxToImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddBoundingBoxToImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddBoundingBoxToImageByIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'bboxId')
     ..hasRequiredFields = false
   ;
 
-  AddBoundingBoxToImageByIDResponse._() : super();
-  factory AddBoundingBoxToImageByIDResponse({
-    $core.String? bboxId,
-  }) {
-    final _result = create();
-    if (bboxId != null) {
-      _result.bboxId = bboxId;
-    }
-    return _result;
-  }
-  factory AddBoundingBoxToImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddBoundingBoxToImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2518,8 +2069,10 @@ class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddBoundingBoxToImageByIDResponse copyWith(void Function(AddBoundingBoxToImageByIDResponse) updates) => super.copyWith((message) => updates(message as AddBoundingBoxToImageByIDResponse)) as AddBoundingBoxToImageByIDResponse; // ignore: deprecated_member_use
+  AddBoundingBoxToImageByIDResponse copyWith(void Function(AddBoundingBoxToImageByIDResponse) updates) => super.copyWith((message) => updates(message as AddBoundingBoxToImageByIDResponse)) as AddBoundingBoxToImageByIDResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AddBoundingBoxToImageByIDResponse create() => AddBoundingBoxToImageByIDResponse._();
   AddBoundingBoxToImageByIDResponse createEmptyInstance() => create();
@@ -2539,28 +2092,18 @@ class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
 }
 
 class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveBoundingBoxFromImageByIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileId')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bboxId')
+  factory RemoveBoundingBoxFromImageByIDRequest() => create();
+  RemoveBoundingBoxFromImageByIDRequest._() : super();
+  factory RemoveBoundingBoxFromImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveBoundingBoxFromImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveBoundingBoxFromImageByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..aOS(2, _omitFieldNames ? '' : 'bboxId')
+    ..aOM<BinaryID>(3, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
     ..hasRequiredFields = false
   ;
 
-  RemoveBoundingBoxFromImageByIDRequest._() : super();
-  factory RemoveBoundingBoxFromImageByIDRequest({
-    $core.String? fileId,
-    $core.String? bboxId,
-  }) {
-    final _result = create();
-    if (fileId != null) {
-      _result.fileId = fileId;
-    }
-    if (bboxId != null) {
-      _result.bboxId = bboxId;
-    }
-    return _result;
-  }
-  factory RemoveBoundingBoxFromImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveBoundingBoxFromImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2570,8 +2113,10 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveBoundingBoxFromImageByIDRequest copyWith(void Function(RemoveBoundingBoxFromImageByIDRequest) updates) => super.copyWith((message) => updates(message as RemoveBoundingBoxFromImageByIDRequest)) as RemoveBoundingBoxFromImageByIDRequest; // ignore: deprecated_member_use
+  RemoveBoundingBoxFromImageByIDRequest copyWith(void Function(RemoveBoundingBoxFromImageByIDRequest) updates) => super.copyWith((message) => updates(message as RemoveBoundingBoxFromImageByIDRequest)) as RemoveBoundingBoxFromImageByIDRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RemoveBoundingBoxFromImageByIDRequest create() => RemoveBoundingBoxFromImageByIDRequest._();
   RemoveBoundingBoxFromImageByIDRequest createEmptyInstance() => create();
@@ -2580,12 +2125,16 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   static RemoveBoundingBoxFromImageByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBoundingBoxFromImageByIDRequest>(create);
   static RemoveBoundingBoxFromImageByIDRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get fileId => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set fileId($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasFileId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
 
@@ -2597,17 +2146,29 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   $core.bool hasBboxId() => $_has(1);
   @$pb.TagNumber(2)
   void clearBboxId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  BinaryID get binaryId => $_getN(2);
+  @$pb.TagNumber(3)
+  set binaryId(BinaryID v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBinaryId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBinaryId() => clearField(3);
+  @$pb.TagNumber(3)
+  BinaryID ensureBinaryId() => $_ensure(2);
 }
 
 class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveBoundingBoxFromImageByIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+  factory RemoveBoundingBoxFromImageByIDResponse() => create();
+  RemoveBoundingBoxFromImageByIDResponse._() : super();
+  factory RemoveBoundingBoxFromImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveBoundingBoxFromImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveBoundingBoxFromImageByIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  RemoveBoundingBoxFromImageByIDResponse._() : super();
-  factory RemoveBoundingBoxFromImageByIDResponse() => create();
-  factory RemoveBoundingBoxFromImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveBoundingBoxFromImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2617,8 +2178,10 @@ class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveBoundingBoxFromImageByIDResponse copyWith(void Function(RemoveBoundingBoxFromImageByIDResponse) updates) => super.copyWith((message) => updates(message as RemoveBoundingBoxFromImageByIDResponse)) as RemoveBoundingBoxFromImageByIDResponse; // ignore: deprecated_member_use
+  RemoveBoundingBoxFromImageByIDResponse copyWith(void Function(RemoveBoundingBoxFromImageByIDResponse) updates) => super.copyWith((message) => updates(message as RemoveBoundingBoxFromImageByIDResponse)) as RemoveBoundingBoxFromImageByIDResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RemoveBoundingBoxFromImageByIDResponse create() => RemoveBoundingBoxFromImageByIDResponse._();
   RemoveBoundingBoxFromImageByIDResponse createEmptyInstance() => create();
@@ -2629,23 +2192,16 @@ class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
 }
 
 class BoundingBoxLabelsByFilterRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BoundingBoxLabelsByFilterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<Filter>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: Filter.create)
+  factory BoundingBoxLabelsByFilterRequest() => create();
+  BoundingBoxLabelsByFilterRequest._() : super();
+  factory BoundingBoxLabelsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BoundingBoxLabelsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoundingBoxLabelsByFilterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: Filter.create)
     ..hasRequiredFields = false
   ;
 
-  BoundingBoxLabelsByFilterRequest._() : super();
-  factory BoundingBoxLabelsByFilterRequest({
-    Filter? filter,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    return _result;
-  }
-  factory BoundingBoxLabelsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BoundingBoxLabelsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2655,8 +2211,10 @@ class BoundingBoxLabelsByFilterRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BoundingBoxLabelsByFilterRequest copyWith(void Function(BoundingBoxLabelsByFilterRequest) updates) => super.copyWith((message) => updates(message as BoundingBoxLabelsByFilterRequest)) as BoundingBoxLabelsByFilterRequest; // ignore: deprecated_member_use
+  BoundingBoxLabelsByFilterRequest copyWith(void Function(BoundingBoxLabelsByFilterRequest) updates) => super.copyWith((message) => updates(message as BoundingBoxLabelsByFilterRequest)) as BoundingBoxLabelsByFilterRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BoundingBoxLabelsByFilterRequest create() => BoundingBoxLabelsByFilterRequest._();
   BoundingBoxLabelsByFilterRequest createEmptyInstance() => create();
@@ -2678,23 +2236,16 @@ class BoundingBoxLabelsByFilterRequest extends $pb.GeneratedMessage {
 }
 
 class BoundingBoxLabelsByFilterResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BoundingBoxLabelsByFilterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'labels')
+  factory BoundingBoxLabelsByFilterResponse() => create();
+  BoundingBoxLabelsByFilterResponse._() : super();
+  factory BoundingBoxLabelsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BoundingBoxLabelsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoundingBoxLabelsByFilterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'labels')
     ..hasRequiredFields = false
   ;
 
-  BoundingBoxLabelsByFilterResponse._() : super();
-  factory BoundingBoxLabelsByFilterResponse({
-    $core.Iterable<$core.String>? labels,
-  }) {
-    final _result = create();
-    if (labels != null) {
-      _result.labels.addAll(labels);
-    }
-    return _result;
-  }
-  factory BoundingBoxLabelsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BoundingBoxLabelsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2704,8 +2255,10 @@ class BoundingBoxLabelsByFilterResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BoundingBoxLabelsByFilterResponse copyWith(void Function(BoundingBoxLabelsByFilterResponse) updates) => super.copyWith((message) => updates(message as BoundingBoxLabelsByFilterResponse)) as BoundingBoxLabelsByFilterResponse; // ignore: deprecated_member_use
+  BoundingBoxLabelsByFilterResponse copyWith(void Function(BoundingBoxLabelsByFilterResponse) updates) => super.copyWith((message) => updates(message as BoundingBoxLabelsByFilterResponse)) as BoundingBoxLabelsByFilterResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static BoundingBoxLabelsByFilterResponse create() => BoundingBoxLabelsByFilterResponse._();
   BoundingBoxLabelsByFilterResponse createEmptyInstance() => create();
@@ -2718,3 +2271,6 @@ class BoundingBoxLabelsByFilterResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get labels => $_getList(0);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

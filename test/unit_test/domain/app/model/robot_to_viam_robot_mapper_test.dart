@@ -8,13 +8,12 @@ import 'package:viam_sdk/viam_sdk.dart';
 void main() {
   group('When map from Robot to ViamRobot', () {
     test('mapper returns correct values', () {
-      final dto = Robot(
-        id: 'id',
-        location: 'location',
-        name: 'name',
-        createdOn: Timestamp.create(),
-        lastAccess: Timestamp.create(),
-      );
+      final dto = Robot()
+        ..id = 'id'
+        ..location = 'location'
+        ..name = 'name'
+        ..createdOn = Timestamp.create()
+        ..lastAccess = Timestamp.create();
 
       final expectedAnswer = ViamRobot(
         id: dto.id,

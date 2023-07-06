@@ -1,61 +1,41 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/api/expr/v1alpha1/checked.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'syntax.pb.dart' as $3;
 import '../../../protobuf/empty.pb.dart' as $4;
-
 import '../../../protobuf/struct.pbenum.dart' as $2;
 import 'checked.pbenum.dart';
+import 'syntax.pb.dart' as $3;
 
 export 'checked.pbenum.dart';
 
 class CheckedExpr extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CheckedExpr', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..m<$fixnum.Int64, Reference>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'referenceMap', entryClassName: 'CheckedExpr.ReferenceMapEntry', keyFieldType: $pb.PbFieldType.O6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Reference.create, packageName: const $pb.PackageName('google.api.expr.v1alpha1'))
-    ..m<$fixnum.Int64, Type>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeMap', entryClassName: 'CheckedExpr.TypeMapEntry', keyFieldType: $pb.PbFieldType.O6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Type.create, packageName: const $pb.PackageName('google.api.expr.v1alpha1'))
-    ..aOM<$3.Expr>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expr', subBuilder: $3.Expr.create)
-    ..aOM<$3.SourceInfo>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceInfo', subBuilder: $3.SourceInfo.create)
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'exprVersion')
+  factory CheckedExpr() => create();
+  CheckedExpr._() : super();
+  factory CheckedExpr.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CheckedExpr.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CheckedExpr', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..m<$fixnum.Int64, Reference>(2, _omitFieldNames ? '' : 'referenceMap', entryClassName: 'CheckedExpr.ReferenceMapEntry', keyFieldType: $pb.PbFieldType.O6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Reference.create, valueDefaultOrMaker: Reference.getDefault, packageName: const $pb.PackageName('google.api.expr.v1alpha1'))
+    ..m<$fixnum.Int64, Type>(3, _omitFieldNames ? '' : 'typeMap', entryClassName: 'CheckedExpr.TypeMapEntry', keyFieldType: $pb.PbFieldType.O6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Type.create, valueDefaultOrMaker: Type.getDefault, packageName: const $pb.PackageName('google.api.expr.v1alpha1'))
+    ..aOM<$3.Expr>(4, _omitFieldNames ? '' : 'expr', subBuilder: $3.Expr.create)
+    ..aOM<$3.SourceInfo>(5, _omitFieldNames ? '' : 'sourceInfo', subBuilder: $3.SourceInfo.create)
+    ..aOS(6, _omitFieldNames ? '' : 'exprVersion')
     ..hasRequiredFields = false
   ;
 
-  CheckedExpr._() : super();
-  factory CheckedExpr({
-    $core.Map<$fixnum.Int64, Reference>? referenceMap,
-    $core.Map<$fixnum.Int64, Type>? typeMap,
-    $3.Expr? expr,
-    $3.SourceInfo? sourceInfo,
-    $core.String? exprVersion,
-  }) {
-    final _result = create();
-    if (referenceMap != null) {
-      _result.referenceMap.addAll(referenceMap);
-    }
-    if (typeMap != null) {
-      _result.typeMap.addAll(typeMap);
-    }
-    if (expr != null) {
-      _result.expr = expr;
-    }
-    if (sourceInfo != null) {
-      _result.sourceInfo = sourceInfo;
-    }
-    if (exprVersion != null) {
-      _result.exprVersion = exprVersion;
-    }
-    return _result;
-  }
-  factory CheckedExpr.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CheckedExpr.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -65,8 +45,10 @@ class CheckedExpr extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CheckedExpr copyWith(void Function(CheckedExpr) updates) => super.copyWith((message) => updates(message as CheckedExpr)) as CheckedExpr; // ignore: deprecated_member_use
+  CheckedExpr copyWith(void Function(CheckedExpr) updates) => super.copyWith((message) => updates(message as CheckedExpr)) as CheckedExpr;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CheckedExpr create() => CheckedExpr._();
   CheckedExpr createEmptyInstance() => create();
@@ -114,23 +96,16 @@ class CheckedExpr extends $pb.GeneratedMessage {
 }
 
 class Type_ListType extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Type.ListType', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOM<Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'elemType', subBuilder: Type.create)
+  factory Type_ListType() => create();
+  Type_ListType._() : super();
+  factory Type_ListType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Type_ListType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Type.ListType', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOM<Type>(1, _omitFieldNames ? '' : 'elemType', subBuilder: Type.create)
     ..hasRequiredFields = false
   ;
 
-  Type_ListType._() : super();
-  factory Type_ListType({
-    Type? elemType,
-  }) {
-    final _result = create();
-    if (elemType != null) {
-      _result.elemType = elemType;
-    }
-    return _result;
-  }
-  factory Type_ListType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Type_ListType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -140,8 +115,10 @@ class Type_ListType extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Type_ListType copyWith(void Function(Type_ListType) updates) => super.copyWith((message) => updates(message as Type_ListType)) as Type_ListType; // ignore: deprecated_member_use
+  Type_ListType copyWith(void Function(Type_ListType) updates) => super.copyWith((message) => updates(message as Type_ListType)) as Type_ListType;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Type_ListType create() => Type_ListType._();
   Type_ListType createEmptyInstance() => create();
@@ -163,28 +140,17 @@ class Type_ListType extends $pb.GeneratedMessage {
 }
 
 class Type_MapType extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Type.MapType', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOM<Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keyType', subBuilder: Type.create)
-    ..aOM<Type>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valueType', subBuilder: Type.create)
+  factory Type_MapType() => create();
+  Type_MapType._() : super();
+  factory Type_MapType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Type_MapType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Type.MapType', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOM<Type>(1, _omitFieldNames ? '' : 'keyType', subBuilder: Type.create)
+    ..aOM<Type>(2, _omitFieldNames ? '' : 'valueType', subBuilder: Type.create)
     ..hasRequiredFields = false
   ;
 
-  Type_MapType._() : super();
-  factory Type_MapType({
-    Type? keyType,
-    Type? valueType,
-  }) {
-    final _result = create();
-    if (keyType != null) {
-      _result.keyType = keyType;
-    }
-    if (valueType != null) {
-      _result.valueType = valueType;
-    }
-    return _result;
-  }
-  factory Type_MapType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Type_MapType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -194,8 +160,10 @@ class Type_MapType extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Type_MapType copyWith(void Function(Type_MapType) updates) => super.copyWith((message) => updates(message as Type_MapType)) as Type_MapType; // ignore: deprecated_member_use
+  Type_MapType copyWith(void Function(Type_MapType) updates) => super.copyWith((message) => updates(message as Type_MapType)) as Type_MapType;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Type_MapType create() => Type_MapType._();
   Type_MapType createEmptyInstance() => create();
@@ -228,28 +196,17 @@ class Type_MapType extends $pb.GeneratedMessage {
 }
 
 class Type_FunctionType extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Type.FunctionType', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOM<Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resultType', subBuilder: Type.create)
-    ..pc<Type>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'argTypes', $pb.PbFieldType.PM, subBuilder: Type.create)
+  factory Type_FunctionType() => create();
+  Type_FunctionType._() : super();
+  factory Type_FunctionType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Type_FunctionType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Type.FunctionType', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOM<Type>(1, _omitFieldNames ? '' : 'resultType', subBuilder: Type.create)
+    ..pc<Type>(2, _omitFieldNames ? '' : 'argTypes', $pb.PbFieldType.PM, subBuilder: Type.create)
     ..hasRequiredFields = false
   ;
 
-  Type_FunctionType._() : super();
-  factory Type_FunctionType({
-    Type? resultType,
-    $core.Iterable<Type>? argTypes,
-  }) {
-    final _result = create();
-    if (resultType != null) {
-      _result.resultType = resultType;
-    }
-    if (argTypes != null) {
-      _result.argTypes.addAll(argTypes);
-    }
-    return _result;
-  }
-  factory Type_FunctionType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Type_FunctionType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -259,8 +216,10 @@ class Type_FunctionType extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Type_FunctionType copyWith(void Function(Type_FunctionType) updates) => super.copyWith((message) => updates(message as Type_FunctionType)) as Type_FunctionType; // ignore: deprecated_member_use
+  Type_FunctionType copyWith(void Function(Type_FunctionType) updates) => super.copyWith((message) => updates(message as Type_FunctionType)) as Type_FunctionType;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Type_FunctionType create() => Type_FunctionType._();
   Type_FunctionType createEmptyInstance() => create();
@@ -285,28 +244,17 @@ class Type_FunctionType extends $pb.GeneratedMessage {
 }
 
 class Type_AbstractType extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Type.AbstractType', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..pc<Type>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'parameterTypes', $pb.PbFieldType.PM, subBuilder: Type.create)
+  factory Type_AbstractType() => create();
+  Type_AbstractType._() : super();
+  factory Type_AbstractType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Type_AbstractType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Type.AbstractType', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pc<Type>(2, _omitFieldNames ? '' : 'parameterTypes', $pb.PbFieldType.PM, subBuilder: Type.create)
     ..hasRequiredFields = false
   ;
 
-  Type_AbstractType._() : super();
-  factory Type_AbstractType({
-    $core.String? name,
-    $core.Iterable<Type>? parameterTypes,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (parameterTypes != null) {
-      _result.parameterTypes.addAll(parameterTypes);
-    }
-    return _result;
-  }
-  factory Type_AbstractType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Type_AbstractType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -316,8 +264,10 @@ class Type_AbstractType extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Type_AbstractType copyWith(void Function(Type_AbstractType) updates) => super.copyWith((message) => updates(message as Type_AbstractType)) as Type_AbstractType; // ignore: deprecated_member_use
+  Type_AbstractType copyWith(void Function(Type_AbstractType) updates) => super.copyWith((message) => updates(message as Type_AbstractType)) as Type_AbstractType;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Type_AbstractType create() => Type_AbstractType._();
   Type_AbstractType createEmptyInstance() => create();
@@ -357,6 +307,11 @@ enum Type_TypeKind {
 }
 
 class Type extends $pb.GeneratedMessage {
+  factory Type() => create();
+  Type._() : super();
+  factory Type.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Type.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, Type_TypeKind> _Type_TypeKindByTag = {
     1 : Type_TypeKind.dyn,
     2 : Type_TypeKind.null_2,
@@ -373,84 +328,24 @@ class Type extends $pb.GeneratedMessage {
     14 : Type_TypeKind.abstractType,
     0 : Type_TypeKind.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Type', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Type', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
     ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14])
-    ..aOM<$4.Empty>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dyn', subBuilder: $4.Empty.create)
-    ..e<$2.NullValue>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'null', $pb.PbFieldType.OE, defaultOrMaker: $2.NullValue.NULL_VALUE, valueOf: $2.NullValue.valueOf, enumValues: $2.NullValue.values)
-    ..e<Type_PrimitiveType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'primitive', $pb.PbFieldType.OE, defaultOrMaker: Type_PrimitiveType.PRIMITIVE_TYPE_UNSPECIFIED, valueOf: Type_PrimitiveType.valueOf, enumValues: Type_PrimitiveType.values)
-    ..e<Type_PrimitiveType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wrapper', $pb.PbFieldType.OE, defaultOrMaker: Type_PrimitiveType.PRIMITIVE_TYPE_UNSPECIFIED, valueOf: Type_PrimitiveType.valueOf, enumValues: Type_PrimitiveType.values)
-    ..e<Type_WellKnownType>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wellKnown', $pb.PbFieldType.OE, defaultOrMaker: Type_WellKnownType.WELL_KNOWN_TYPE_UNSPECIFIED, valueOf: Type_WellKnownType.valueOf, enumValues: Type_WellKnownType.values)
-    ..aOM<Type_ListType>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'listType', subBuilder: Type_ListType.create)
-    ..aOM<Type_MapType>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mapType', subBuilder: Type_MapType.create)
-    ..aOM<Type_FunctionType>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'function', subBuilder: Type_FunctionType.create)
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageType')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeParam')
-    ..aOM<Type>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', subBuilder: Type.create)
-    ..aOM<$4.Empty>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', subBuilder: $4.Empty.create)
-    ..aOM<Type_AbstractType>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'abstractType', subBuilder: Type_AbstractType.create)
+    ..aOM<$4.Empty>(1, _omitFieldNames ? '' : 'dyn', subBuilder: $4.Empty.create)
+    ..e<$2.NullValue>(2, _omitFieldNames ? '' : 'null', $pb.PbFieldType.OE, defaultOrMaker: $2.NullValue.NULL_VALUE, valueOf: $2.NullValue.valueOf, enumValues: $2.NullValue.values)
+    ..e<Type_PrimitiveType>(3, _omitFieldNames ? '' : 'primitive', $pb.PbFieldType.OE, defaultOrMaker: Type_PrimitiveType.PRIMITIVE_TYPE_UNSPECIFIED, valueOf: Type_PrimitiveType.valueOf, enumValues: Type_PrimitiveType.values)
+    ..e<Type_PrimitiveType>(4, _omitFieldNames ? '' : 'wrapper', $pb.PbFieldType.OE, defaultOrMaker: Type_PrimitiveType.PRIMITIVE_TYPE_UNSPECIFIED, valueOf: Type_PrimitiveType.valueOf, enumValues: Type_PrimitiveType.values)
+    ..e<Type_WellKnownType>(5, _omitFieldNames ? '' : 'wellKnown', $pb.PbFieldType.OE, defaultOrMaker: Type_WellKnownType.WELL_KNOWN_TYPE_UNSPECIFIED, valueOf: Type_WellKnownType.valueOf, enumValues: Type_WellKnownType.values)
+    ..aOM<Type_ListType>(6, _omitFieldNames ? '' : 'listType', subBuilder: Type_ListType.create)
+    ..aOM<Type_MapType>(7, _omitFieldNames ? '' : 'mapType', subBuilder: Type_MapType.create)
+    ..aOM<Type_FunctionType>(8, _omitFieldNames ? '' : 'function', subBuilder: Type_FunctionType.create)
+    ..aOS(9, _omitFieldNames ? '' : 'messageType')
+    ..aOS(10, _omitFieldNames ? '' : 'typeParam')
+    ..aOM<Type>(11, _omitFieldNames ? '' : 'type', subBuilder: Type.create)
+    ..aOM<$4.Empty>(12, _omitFieldNames ? '' : 'error', subBuilder: $4.Empty.create)
+    ..aOM<Type_AbstractType>(14, _omitFieldNames ? '' : 'abstractType', subBuilder: Type_AbstractType.create)
     ..hasRequiredFields = false
   ;
 
-  Type._() : super();
-  factory Type({
-    $4.Empty? dyn,
-    $2.NullValue? null_2,
-    Type_PrimitiveType? primitive,
-    Type_PrimitiveType? wrapper,
-    Type_WellKnownType? wellKnown,
-    Type_ListType? listType,
-    Type_MapType? mapType,
-    Type_FunctionType? function,
-    $core.String? messageType,
-    $core.String? typeParam,
-    Type? type,
-    $4.Empty? error,
-    Type_AbstractType? abstractType,
-  }) {
-    final _result = create();
-    if (dyn != null) {
-      _result.dyn = dyn;
-    }
-    if (null_2 != null) {
-      _result.null_2 = null_2;
-    }
-    if (primitive != null) {
-      _result.primitive = primitive;
-    }
-    if (wrapper != null) {
-      _result.wrapper = wrapper;
-    }
-    if (wellKnown != null) {
-      _result.wellKnown = wellKnown;
-    }
-    if (listType != null) {
-      _result.listType = listType;
-    }
-    if (mapType != null) {
-      _result.mapType = mapType;
-    }
-    if (function != null) {
-      _result.function = function;
-    }
-    if (messageType != null) {
-      _result.messageType = messageType;
-    }
-    if (typeParam != null) {
-      _result.typeParam = typeParam;
-    }
-    if (type != null) {
-      _result.type = type;
-    }
-    if (error != null) {
-      _result.error = error;
-    }
-    if (abstractType != null) {
-      _result.abstractType = abstractType;
-    }
-    return _result;
-  }
-  factory Type.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Type.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -460,8 +355,10 @@ class Type extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Type copyWith(void Function(Type) updates) => super.copyWith((message) => updates(message as Type)) as Type; // ignore: deprecated_member_use
+  Type copyWith(void Function(Type) updates) => super.copyWith((message) => updates(message as Type)) as Type;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Type create() => Type._();
   Type createEmptyInstance() => create();
@@ -606,33 +503,18 @@ class Type extends $pb.GeneratedMessage {
 }
 
 class Decl_IdentDecl extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Decl.IdentDecl', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOM<Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', subBuilder: Type.create)
-    ..aOM<$3.Constant>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', subBuilder: $3.Constant.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'doc')
+  factory Decl_IdentDecl() => create();
+  Decl_IdentDecl._() : super();
+  factory Decl_IdentDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Decl_IdentDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Decl.IdentDecl', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOM<Type>(1, _omitFieldNames ? '' : 'type', subBuilder: Type.create)
+    ..aOM<$3.Constant>(2, _omitFieldNames ? '' : 'value', subBuilder: $3.Constant.create)
+    ..aOS(3, _omitFieldNames ? '' : 'doc')
     ..hasRequiredFields = false
   ;
 
-  Decl_IdentDecl._() : super();
-  factory Decl_IdentDecl({
-    Type? type,
-    $3.Constant? value,
-    $core.String? doc,
-  }) {
-    final _result = create();
-    if (type != null) {
-      _result.type = type;
-    }
-    if (value != null) {
-      _result.value = value;
-    }
-    if (doc != null) {
-      _result.doc = doc;
-    }
-    return _result;
-  }
-  factory Decl_IdentDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Decl_IdentDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -642,8 +524,10 @@ class Decl_IdentDecl extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Decl_IdentDecl copyWith(void Function(Decl_IdentDecl) updates) => super.copyWith((message) => updates(message as Decl_IdentDecl)) as Decl_IdentDecl; // ignore: deprecated_member_use
+  Decl_IdentDecl copyWith(void Function(Decl_IdentDecl) updates) => super.copyWith((message) => updates(message as Decl_IdentDecl)) as Decl_IdentDecl;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Decl_IdentDecl create() => Decl_IdentDecl._();
   Decl_IdentDecl createEmptyInstance() => create();
@@ -685,48 +569,21 @@ class Decl_IdentDecl extends $pb.GeneratedMessage {
 }
 
 class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Decl.FunctionDecl.Overload', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overloadId')
-    ..pc<Type>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', $pb.PbFieldType.PM, subBuilder: Type.create)
-    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeParams')
-    ..aOM<Type>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resultType', subBuilder: Type.create)
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isInstanceFunction')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'doc')
+  factory Decl_FunctionDecl_Overload() => create();
+  Decl_FunctionDecl_Overload._() : super();
+  factory Decl_FunctionDecl_Overload.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Decl_FunctionDecl_Overload.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Decl.FunctionDecl.Overload', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'overloadId')
+    ..pc<Type>(2, _omitFieldNames ? '' : 'params', $pb.PbFieldType.PM, subBuilder: Type.create)
+    ..pPS(3, _omitFieldNames ? '' : 'typeParams')
+    ..aOM<Type>(4, _omitFieldNames ? '' : 'resultType', subBuilder: Type.create)
+    ..aOB(5, _omitFieldNames ? '' : 'isInstanceFunction')
+    ..aOS(6, _omitFieldNames ? '' : 'doc')
     ..hasRequiredFields = false
   ;
 
-  Decl_FunctionDecl_Overload._() : super();
-  factory Decl_FunctionDecl_Overload({
-    $core.String? overloadId,
-    $core.Iterable<Type>? params,
-    $core.Iterable<$core.String>? typeParams,
-    Type? resultType,
-    $core.bool? isInstanceFunction,
-    $core.String? doc,
-  }) {
-    final _result = create();
-    if (overloadId != null) {
-      _result.overloadId = overloadId;
-    }
-    if (params != null) {
-      _result.params.addAll(params);
-    }
-    if (typeParams != null) {
-      _result.typeParams.addAll(typeParams);
-    }
-    if (resultType != null) {
-      _result.resultType = resultType;
-    }
-    if (isInstanceFunction != null) {
-      _result.isInstanceFunction = isInstanceFunction;
-    }
-    if (doc != null) {
-      _result.doc = doc;
-    }
-    return _result;
-  }
-  factory Decl_FunctionDecl_Overload.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Decl_FunctionDecl_Overload.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -736,8 +593,10 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Decl_FunctionDecl_Overload copyWith(void Function(Decl_FunctionDecl_Overload) updates) => super.copyWith((message) => updates(message as Decl_FunctionDecl_Overload)) as Decl_FunctionDecl_Overload; // ignore: deprecated_member_use
+  Decl_FunctionDecl_Overload copyWith(void Function(Decl_FunctionDecl_Overload) updates) => super.copyWith((message) => updates(message as Decl_FunctionDecl_Overload)) as Decl_FunctionDecl_Overload;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Decl_FunctionDecl_Overload create() => Decl_FunctionDecl_Overload._();
   Decl_FunctionDecl_Overload createEmptyInstance() => create();
@@ -792,23 +651,16 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
 }
 
 class Decl_FunctionDecl extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Decl.FunctionDecl', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..pc<Decl_FunctionDecl_Overload>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overloads', $pb.PbFieldType.PM, subBuilder: Decl_FunctionDecl_Overload.create)
+  factory Decl_FunctionDecl() => create();
+  Decl_FunctionDecl._() : super();
+  factory Decl_FunctionDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Decl_FunctionDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Decl.FunctionDecl', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..pc<Decl_FunctionDecl_Overload>(1, _omitFieldNames ? '' : 'overloads', $pb.PbFieldType.PM, subBuilder: Decl_FunctionDecl_Overload.create)
     ..hasRequiredFields = false
   ;
 
-  Decl_FunctionDecl._() : super();
-  factory Decl_FunctionDecl({
-    $core.Iterable<Decl_FunctionDecl_Overload>? overloads,
-  }) {
-    final _result = create();
-    if (overloads != null) {
-      _result.overloads.addAll(overloads);
-    }
-    return _result;
-  }
-  factory Decl_FunctionDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Decl_FunctionDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -818,8 +670,10 @@ class Decl_FunctionDecl extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Decl_FunctionDecl copyWith(void Function(Decl_FunctionDecl) updates) => super.copyWith((message) => updates(message as Decl_FunctionDecl)) as Decl_FunctionDecl; // ignore: deprecated_member_use
+  Decl_FunctionDecl copyWith(void Function(Decl_FunctionDecl) updates) => super.copyWith((message) => updates(message as Decl_FunctionDecl)) as Decl_FunctionDecl;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Decl_FunctionDecl create() => Decl_FunctionDecl._();
   Decl_FunctionDecl createEmptyInstance() => create();
@@ -839,39 +693,24 @@ enum Decl_DeclKind {
 }
 
 class Decl extends $pb.GeneratedMessage {
+  factory Decl() => create();
+  Decl._() : super();
+  factory Decl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Decl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, Decl_DeclKind> _Decl_DeclKindByTag = {
     2 : Decl_DeclKind.ident,
     3 : Decl_DeclKind.function,
     0 : Decl_DeclKind.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Decl', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Decl', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
     ..oo(0, [2, 3])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<Decl_IdentDecl>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ident', subBuilder: Decl_IdentDecl.create)
-    ..aOM<Decl_FunctionDecl>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'function', subBuilder: Decl_FunctionDecl.create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<Decl_IdentDecl>(2, _omitFieldNames ? '' : 'ident', subBuilder: Decl_IdentDecl.create)
+    ..aOM<Decl_FunctionDecl>(3, _omitFieldNames ? '' : 'function', subBuilder: Decl_FunctionDecl.create)
     ..hasRequiredFields = false
   ;
 
-  Decl._() : super();
-  factory Decl({
-    $core.String? name,
-    Decl_IdentDecl? ident,
-    Decl_FunctionDecl? function,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (ident != null) {
-      _result.ident = ident;
-    }
-    if (function != null) {
-      _result.function = function;
-    }
-    return _result;
-  }
-  factory Decl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Decl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -881,8 +720,10 @@ class Decl extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Decl copyWith(void Function(Decl) updates) => super.copyWith((message) => updates(message as Decl)) as Decl; // ignore: deprecated_member_use
+  Decl copyWith(void Function(Decl) updates) => super.copyWith((message) => updates(message as Decl)) as Decl;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Decl create() => Decl._();
   Decl createEmptyInstance() => create();
@@ -927,33 +768,18 @@ class Decl extends $pb.GeneratedMessage {
 }
 
 class Reference extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Reference', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'overloadId')
-    ..aOM<$3.Constant>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', subBuilder: $3.Constant.create)
+  factory Reference() => create();
+  Reference._() : super();
+  factory Reference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Reference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Reference', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pPS(3, _omitFieldNames ? '' : 'overloadId')
+    ..aOM<$3.Constant>(4, _omitFieldNames ? '' : 'value', subBuilder: $3.Constant.create)
     ..hasRequiredFields = false
   ;
 
-  Reference._() : super();
-  factory Reference({
-    $core.String? name,
-    $core.Iterable<$core.String>? overloadId,
-    $3.Constant? value,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (overloadId != null) {
-      _result.overloadId.addAll(overloadId);
-    }
-    if (value != null) {
-      _result.value = value;
-    }
-    return _result;
-  }
-  factory Reference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Reference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -963,8 +789,10 @@ class Reference extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Reference copyWith(void Function(Reference) updates) => super.copyWith((message) => updates(message as Reference)) as Reference; // ignore: deprecated_member_use
+  Reference copyWith(void Function(Reference) updates) => super.copyWith((message) => updates(message as Reference)) as Reference;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Reference create() => Reference._();
   Reference createEmptyInstance() => create();
@@ -997,3 +825,6 @@ class Reference extends $pb.GeneratedMessage {
   $3.Constant ensureValue() => $_ensure(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

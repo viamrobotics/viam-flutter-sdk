@@ -24,14 +24,14 @@ class ArmService extends ArmServiceBase {
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final arm = _armFromManager(request.name);
     final result = await arm.doCommand(request.command.toMap());
-    return DoCommandResponse(result: result.toStruct());
+    return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
     final arm = _armFromManager(request.name);
     final isMoving = await arm.isMoving();
-    return IsMovingResponse(isMoving: isMoving);
+    return IsMovingResponse()..isMoving = isMoving;
   }
 
   @override
@@ -45,14 +45,14 @@ class ArmService extends ArmServiceBase {
   Future<GetEndPositionResponse> getEndPosition(ServiceCall call, GetEndPositionRequest request) async {
     final arm = _armFromManager(request.name);
     final pose = await arm.endPosition(extra: request.extra.toMap());
-    return GetEndPositionResponse(pose: pose);
+    return GetEndPositionResponse()..pose = pose;
   }
 
   @override
   Future<GetJointPositionsResponse> getJointPositions(ServiceCall call, GetJointPositionsRequest request) async {
     final arm = _armFromManager(request.name);
     final jointPositions = await arm.jointPositions(extra: request.extra.toMap());
-    return GetJointPositionsResponse(positions: jointPositions);
+    return GetJointPositionsResponse()..positions = jointPositions;
   }
 
   @override

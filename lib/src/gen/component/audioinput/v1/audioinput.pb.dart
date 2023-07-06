@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: component/audioinput/v1/audioinput.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -11,34 +15,22 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/duration.pb.dart' as $3;
-
 import 'audioinput.pbenum.dart';
 
 export 'audioinput.pbenum.dart';
 
 class RecordRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RecordRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$3.Duration>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', subBuilder: $3.Duration.create)
+  factory RecordRequest() => create();
+  RecordRequest._() : super();
+  factory RecordRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RecordRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$3.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $3.Duration.create)
     ..hasRequiredFields = false
   ;
 
-  RecordRequest._() : super();
-  factory RecordRequest({
-    $core.String? name,
-    $3.Duration? duration,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (duration != null) {
-      _result.duration = duration;
-    }
-    return _result;
-  }
-  factory RecordRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RecordRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -48,8 +40,10 @@ class RecordRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RecordRequest copyWith(void Function(RecordRequest) updates) => super.copyWith((message) => updates(message as RecordRequest)) as RecordRequest; // ignore: deprecated_member_use
+  RecordRequest copyWith(void Function(RecordRequest) updates) => super.copyWith((message) => updates(message as RecordRequest)) as RecordRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RecordRequest create() => RecordRequest._();
   RecordRequest createEmptyInstance() => create();
@@ -80,33 +74,18 @@ class RecordRequest extends $pb.GeneratedMessage {
 }
 
 class AudioChunkInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AudioChunkInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
-    ..e<SampleFormat>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sampleFormat', $pb.PbFieldType.OE, defaultOrMaker: SampleFormat.SAMPLE_FORMAT_UNSPECIFIED, valueOf: SampleFormat.valueOf, enumValues: SampleFormat.values)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels', $pb.PbFieldType.OU3)
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'samplingRate')
+  factory AudioChunkInfo() => create();
+  AudioChunkInfo._() : super();
+  factory AudioChunkInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AudioChunkInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AudioChunkInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+    ..e<SampleFormat>(1, _omitFieldNames ? '' : 'sampleFormat', $pb.PbFieldType.OE, defaultOrMaker: SampleFormat.SAMPLE_FORMAT_UNSPECIFIED, valueOf: SampleFormat.valueOf, enumValues: SampleFormat.values)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'channels', $pb.PbFieldType.OU3)
+    ..aInt64(3, _omitFieldNames ? '' : 'samplingRate')
     ..hasRequiredFields = false
   ;
 
-  AudioChunkInfo._() : super();
-  factory AudioChunkInfo({
-    SampleFormat? sampleFormat,
-    $core.int? channels,
-    $fixnum.Int64? samplingRate,
-  }) {
-    final _result = create();
-    if (sampleFormat != null) {
-      _result.sampleFormat = sampleFormat;
-    }
-    if (channels != null) {
-      _result.channels = channels;
-    }
-    if (samplingRate != null) {
-      _result.samplingRate = samplingRate;
-    }
-    return _result;
-  }
-  factory AudioChunkInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AudioChunkInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -116,8 +95,10 @@ class AudioChunkInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AudioChunkInfo copyWith(void Function(AudioChunkInfo) updates) => super.copyWith((message) => updates(message as AudioChunkInfo)) as AudioChunkInfo; // ignore: deprecated_member_use
+  AudioChunkInfo copyWith(void Function(AudioChunkInfo) updates) => super.copyWith((message) => updates(message as AudioChunkInfo)) as AudioChunkInfo;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AudioChunkInfo create() => AudioChunkInfo._();
   AudioChunkInfo createEmptyInstance() => create();
@@ -155,28 +136,17 @@ class AudioChunkInfo extends $pb.GeneratedMessage {
 }
 
 class AudioChunk extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AudioChunk', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'length', $pb.PbFieldType.OU3)
+  factory AudioChunk() => create();
+  AudioChunk._() : super();
+  factory AudioChunk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AudioChunk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AudioChunk', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'length', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
-  AudioChunk._() : super();
-  factory AudioChunk({
-    $core.List<$core.int>? data,
-    $core.int? length,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data = data;
-    }
-    if (length != null) {
-      _result.length = length;
-    }
-    return _result;
-  }
-  factory AudioChunk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AudioChunk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -186,8 +156,10 @@ class AudioChunk extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AudioChunk copyWith(void Function(AudioChunk) updates) => super.copyWith((message) => updates(message as AudioChunk)) as AudioChunk; // ignore: deprecated_member_use
+  AudioChunk copyWith(void Function(AudioChunk) updates) => super.copyWith((message) => updates(message as AudioChunk)) as AudioChunk;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AudioChunk create() => AudioChunk._();
   AudioChunk createEmptyInstance() => create();
@@ -216,28 +188,17 @@ class AudioChunk extends $pb.GeneratedMessage {
 }
 
 class ChunksRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChunksRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..e<SampleFormat>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sampleFormat', $pb.PbFieldType.OE, defaultOrMaker: SampleFormat.SAMPLE_FORMAT_UNSPECIFIED, valueOf: SampleFormat.valueOf, enumValues: SampleFormat.values)
+  factory ChunksRequest() => create();
+  ChunksRequest._() : super();
+  factory ChunksRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChunksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChunksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..e<SampleFormat>(2, _omitFieldNames ? '' : 'sampleFormat', $pb.PbFieldType.OE, defaultOrMaker: SampleFormat.SAMPLE_FORMAT_UNSPECIFIED, valueOf: SampleFormat.valueOf, enumValues: SampleFormat.values)
     ..hasRequiredFields = false
   ;
 
-  ChunksRequest._() : super();
-  factory ChunksRequest({
-    $core.String? name,
-    SampleFormat? sampleFormat,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (sampleFormat != null) {
-      _result.sampleFormat = sampleFormat;
-    }
-    return _result;
-  }
-  factory ChunksRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ChunksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -247,8 +208,10 @@ class ChunksRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChunksRequest copyWith(void Function(ChunksRequest) updates) => super.copyWith((message) => updates(message as ChunksRequest)) as ChunksRequest; // ignore: deprecated_member_use
+  ChunksRequest copyWith(void Function(ChunksRequest) updates) => super.copyWith((message) => updates(message as ChunksRequest)) as ChunksRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChunksRequest create() => ChunksRequest._();
   ChunksRequest createEmptyInstance() => create();
@@ -283,34 +246,23 @@ enum ChunksResponse_Type {
 }
 
 class ChunksResponse extends $pb.GeneratedMessage {
+  factory ChunksResponse() => create();
+  ChunksResponse._() : super();
+  factory ChunksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChunksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, ChunksResponse_Type> _ChunksResponse_TypeByTag = {
     1 : ChunksResponse_Type.info,
     2 : ChunksResponse_Type.chunk,
     0 : ChunksResponse_Type.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChunksResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChunksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOM<AudioChunkInfo>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'info', subBuilder: AudioChunkInfo.create)
-    ..aOM<AudioChunk>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chunk', subBuilder: AudioChunk.create)
+    ..aOM<AudioChunkInfo>(1, _omitFieldNames ? '' : 'info', subBuilder: AudioChunkInfo.create)
+    ..aOM<AudioChunk>(2, _omitFieldNames ? '' : 'chunk', subBuilder: AudioChunk.create)
     ..hasRequiredFields = false
   ;
 
-  ChunksResponse._() : super();
-  factory ChunksResponse({
-    AudioChunkInfo? info,
-    AudioChunk? chunk,
-  }) {
-    final _result = create();
-    if (info != null) {
-      _result.info = info;
-    }
-    if (chunk != null) {
-      _result.chunk = chunk;
-    }
-    return _result;
-  }
-  factory ChunksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ChunksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -320,8 +272,10 @@ class ChunksResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ChunksResponse copyWith(void Function(ChunksResponse) updates) => super.copyWith((message) => updates(message as ChunksResponse)) as ChunksResponse; // ignore: deprecated_member_use
+  ChunksResponse copyWith(void Function(ChunksResponse) updates) => super.copyWith((message) => updates(message as ChunksResponse)) as ChunksResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ChunksResponse create() => ChunksResponse._();
   ChunksResponse createEmptyInstance() => create();
@@ -357,23 +311,16 @@ class ChunksResponse extends $pb.GeneratedMessage {
 }
 
 class PropertiesRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PropertiesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+  factory PropertiesRequest() => create();
+  PropertiesRequest._() : super();
+  factory PropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  PropertiesRequest._() : super();
-  factory PropertiesRequest({
-    $core.String? name,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory PropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -383,8 +330,10 @@ class PropertiesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PropertiesRequest copyWith(void Function(PropertiesRequest) updates) => super.copyWith((message) => updates(message as PropertiesRequest)) as PropertiesRequest; // ignore: deprecated_member_use
+  PropertiesRequest copyWith(void Function(PropertiesRequest) updates) => super.copyWith((message) => updates(message as PropertiesRequest)) as PropertiesRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PropertiesRequest create() => PropertiesRequest._();
   PropertiesRequest createEmptyInstance() => create();
@@ -404,53 +353,22 @@ class PropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class PropertiesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PropertiesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelCount', $pb.PbFieldType.OU3)
-    ..aOM<$3.Duration>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latency', subBuilder: $3.Duration.create)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sampleRate', $pb.PbFieldType.OU3)
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sampleSize', $pb.PbFieldType.OU3)
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isBigEndian')
-    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isFloat')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isInterleaved')
+  factory PropertiesResponse() => create();
+  PropertiesResponse._() : super();
+  factory PropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'channelCount', $pb.PbFieldType.OU3)
+    ..aOM<$3.Duration>(2, _omitFieldNames ? '' : 'latency', subBuilder: $3.Duration.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'sampleRate', $pb.PbFieldType.OU3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'sampleSize', $pb.PbFieldType.OU3)
+    ..aOB(5, _omitFieldNames ? '' : 'isBigEndian')
+    ..aOB(6, _omitFieldNames ? '' : 'isFloat')
+    ..aOB(7, _omitFieldNames ? '' : 'isInterleaved')
     ..hasRequiredFields = false
   ;
 
-  PropertiesResponse._() : super();
-  factory PropertiesResponse({
-    $core.int? channelCount,
-    $3.Duration? latency,
-    $core.int? sampleRate,
-    $core.int? sampleSize,
-    $core.bool? isBigEndian,
-    $core.bool? isFloat,
-    $core.bool? isInterleaved,
-  }) {
-    final _result = create();
-    if (channelCount != null) {
-      _result.channelCount = channelCount;
-    }
-    if (latency != null) {
-      _result.latency = latency;
-    }
-    if (sampleRate != null) {
-      _result.sampleRate = sampleRate;
-    }
-    if (sampleSize != null) {
-      _result.sampleSize = sampleSize;
-    }
-    if (isBigEndian != null) {
-      _result.isBigEndian = isBigEndian;
-    }
-    if (isFloat != null) {
-      _result.isFloat = isFloat;
-    }
-    if (isInterleaved != null) {
-      _result.isInterleaved = isInterleaved;
-    }
-    return _result;
-  }
-  factory PropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -460,8 +378,10 @@ class PropertiesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PropertiesResponse copyWith(void Function(PropertiesResponse) updates) => super.copyWith((message) => updates(message as PropertiesResponse)) as PropertiesResponse; // ignore: deprecated_member_use
+  PropertiesResponse copyWith(void Function(PropertiesResponse) updates) => super.copyWith((message) => updates(message as PropertiesResponse)) as PropertiesResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PropertiesResponse create() => PropertiesResponse._();
   PropertiesResponse createEmptyInstance() => create();
@@ -536,3 +456,6 @@ class PropertiesResponse extends $pb.GeneratedMessage {
   void clearIsInterleaved() => clearField(7);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

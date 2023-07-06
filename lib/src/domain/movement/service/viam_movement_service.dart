@@ -23,9 +23,7 @@ class ViamMovementService {
   Future<ViamLinearVelocity> getLinearVelocity(ViamResourceName name) async {
     final resourceName = name.toDto();
 
-    final GetLinearVelocityRequest request = GetLinearVelocityRequest(
-      name: resourceName.name,
-    );
+    final GetLinearVelocityRequest request = GetLinearVelocityRequest()..name = resourceName.name;
 
     final dto = await _movementSensorServiceClient.getLinearVelocity(request);
 

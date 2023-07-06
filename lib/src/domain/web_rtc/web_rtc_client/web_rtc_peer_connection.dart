@@ -169,11 +169,10 @@ class WebRtcPeerConnection {
       }
 
       try {
-        final candidateProto = ICECandidate(
-          candidate: candidate.candidate,
-          sdpMid: candidate.sdpMid,
-          sdpmLineIndex: candidate.sdpMLineIndex,
-        );
+        final candidateProto = ICECandidate()
+          ..candidate = candidate.candidate ?? ''
+          ..sdpMid = candidate.sdpMid ?? ''
+          ..sdpmLineIndex = candidate.sdpMLineIndex ?? 0;
         await _webRtcDirectDataSource.updateICECandidate(candidateProto, _uuid);
       } catch (error, st) {
         //TODO: Add error handling

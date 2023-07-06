@@ -19,10 +19,9 @@ class ViamAuthService {
     final authClient = AuthServiceClient(_client);
 
     final authRequest = AuthenticateRequest();
-    final credentials = Credentials(
-      type: type,
-      payload: secure,
-    );
+    final credentials = Credentials()
+      ..type = type
+      ..payload = secure ?? '';
     authRequest.entity = url.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
 
     authRequest.credentials = credentials;

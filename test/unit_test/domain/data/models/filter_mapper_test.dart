@@ -12,17 +12,15 @@ void main() {
         type: ViamTagsFilterType.matchByOr,
       );
 
-      final tagsFilter = TagsFilter(
-        tags: <String>['tag', 'tag1'],
-        type: TagsFilterType.TAGS_FILTER_TYPE_MATCH_BY_OR,
-      );
+      final tagsFilter = TagsFilter()
+        ..tags.addAll(<String>['tag', 'tag1'])
+        ..type = TagsFilterType.TAGS_FILTER_TYPE_MATCH_BY_OR;
 
       final date = DateTime.now();
 
-      final captureInterval = CaptureInterval(
-        start: Timestamp.fromDateTime(date),
-        end: Timestamp.fromDateTime(date),
-      );
+      final captureInterval = CaptureInterval()
+        ..start = Timestamp.fromDateTime(date)
+        ..end = Timestamp.fromDateTime(date);
 
       final viamCaptureInterval = ViamCaptureInterval(
         start: date,
@@ -45,21 +43,19 @@ void main() {
         captureInterval: viamCaptureInterval,
       );
 
-      final expectedAnswer = Filter(
-        componentName: 'componentName',
-        componentModel: 'componentModel',
-        componentType: 'componentType',
-        method: 'method',
-        partName: 'partName',
-        partId: 'partId',
-        orgIds: <String>['org', 'org1'],
-        locationIds: <String>['locationId', 'locationId2'],
-        mimeType: <String>['mimeType', 'mimeType2'],
-        robotName: 'robotName',
-        robotId: 'robotId',
-        tagsFilter: tagsFilter,
-        interval: captureInterval,
-      );
+      final expectedAnswer = Filter()
+        ..componentName = 'componentName'
+        ..componentType = 'componentType'
+        ..method = 'method'
+        ..partName = 'partName'
+        ..partId = 'partId'
+        ..organizationIds.addAll(<String>['org', 'org1'])
+        ..locationIds.addAll(<String>['locationId', 'locationId2'])
+        ..mimeType.addAll(<String>['mimeType', 'mimeType2'])
+        ..robotName = 'robotName'
+        ..robotId = 'robotId'
+        ..tagsFilter = tagsFilter
+        ..interval = captureInterval;
 
       final actualAnswer = viamFilter.toDto();
 

@@ -2,6 +2,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/arm/v1/arm.pbgrpc.dart';
+import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
 import 'arm.dart';
@@ -23,40 +24,61 @@ class ArmClient extends Arm implements ResourceRPCClient {
 
   @override
   Future<Pose> endPosition({Map<String, dynamic>? extra}) async {
-    final response = await client.getEndPosition(GetEndPositionRequest(name: name, extra: extra?.toStruct()));
+    final request = GetEndPositionRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getEndPosition(request);
     return response.pose;
   }
 
   @override
   Future<bool> isMoving() async {
-    final response = await client.isMoving(IsMovingRequest(name: name));
+    final request = IsMovingRequest()..name = name;
+    final response = await client.isMoving(request);
     return response.isMoving;
   }
 
   @override
   Future<void> moveToJointPositions(JointPositions positions, {Map<String, dynamic>? extra}) async {
-    await client.moveToJointPositions(MoveToJointPositionsRequest(name: name, positions: positions, extra: extra?.toStruct()));
+    final request = MoveToJointPositionsRequest()
+      ..name = name
+      ..positions = positions
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.moveToJointPositions(request);
   }
 
   @override
   Future<void> moveToPosition(Pose pose, {Map<String, dynamic>? extra}) async {
-    await client.moveToPosition(MoveToPositionRequest(name: name, to: pose, extra: extra?.toStruct()));
+    final request = MoveToPositionRequest()
+      ..name = name
+      ..to = pose
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.moveToPosition(request);
   }
 
   @override
   Future<JointPositions> jointPositions({Map<String, dynamic>? extra}) async {
-    final response = await client.getJointPositions(GetJointPositionsRequest(name: name, extra: extra?.toStruct()));
+    final request = GetJointPositionsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getJointPositions(request);
     return response.positions;
   }
 
   @override
   Future<void> stop({Map<String, dynamic>? extra}) async {
-    await client.stop(StopRequest(name: name, extra: extra?.toStruct()));
+    final request = StopRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.stop(request);
   }
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final response = await client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    final request = DoCommandRequest()
+      ..name = name
+      ..command = command.toStruct();
+    final response = await client.doCommand(request);
     return response.result.toMap();
   }
 }

@@ -2,6 +2,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/servo/v1/servo.pbgrpc.dart';
+import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
 import 'servo.dart';
@@ -21,29 +22,43 @@ class ServoClient extends Servo implements ResourceRPCClient {
 
   @override
   Future<void> move(int angle, {Map<String, dynamic>? extra}) async {
-    await client.move(MoveRequest(name: name, angleDeg: angle, extra: extra?.toStruct()));
+    final request = MoveRequest()
+      ..name = name
+      ..angleDeg = angle
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.move(request);
   }
 
   @override
   Future<int> position({Map<String, dynamic>? extra}) async {
-    final response = await client.getPosition(GetPositionRequest(name: name, extra: extra?.toStruct()));
+    final request = GetPositionRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getPosition(request);
     return response.positionDeg;
   }
 
   @override
   Future<void> stop({Map<String, dynamic>? extra}) async {
-    await client.stop(StopRequest(name: name, extra: extra?.toStruct()));
+    final request = StopRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.stop(request);
   }
 
   @override
   Future<bool> isMoving({Map<String, dynamic>? extra}) async {
-    final response = await client.isMoving(IsMovingRequest(name: name));
+    final request = IsMovingRequest()..name = name;
+    final response = await client.isMoving(request);
     return response.isMoving;
   }
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final response = await client.doCommand(DoCommandRequest(name: name, command: command.toStruct()));
+    final request = DoCommandRequest()
+      ..name = name
+      ..command = command.toStruct();
+    final response = await client.doCommand(request);
     return response.result.toMap();
   }
 }

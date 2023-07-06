@@ -19,10 +19,18 @@ class ViamDataRequest {
 }
 
 extension DataRequestMapper on ViamDataRequest {
-  DataRequest toDto() => DataRequest(
-        filter: filter.toDto(),
-        limit: limit != null ? Int64(limit!) : null,
-        last: last,
-        sortOrder: order?.toDto(),
-      );
+  DataRequest toDto() {
+    final output = DataRequest();
+    output.filter = filter.toDto();
+    if (limit != null) {
+      output.limit = Int64(limit!);
+    }
+    if (last != null) {
+      output.last = last!;
+    }
+    if (order != null) {
+      output.sortOrder = order!.toDto();
+    }
+    return output;
+  }
 }
