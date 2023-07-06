@@ -87,8 +87,7 @@ void main() {
     });
 
     test('home', () async {
-      await gantry.home();
-      expect(gantry.homed, true);
+      expect(await gantry.home(), true);
     });
 
     test('lengths', () async {
