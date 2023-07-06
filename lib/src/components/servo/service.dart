@@ -31,21 +31,21 @@ class ServoService extends ServoServiceBase {
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final servo = _fromManager(request.name);
     final result = await servo.doCommand(request.command.toMap());
-    return DoCommandResponse(result: result.toStruct());
+    return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     final servo = _fromManager(request.name);
     final positionDeg = await servo.position(extra: request.extra.toMap());
-    return GetPositionResponse(positionDeg: positionDeg);
+    return GetPositionResponse()..positionDeg = positionDeg;
   }
 
   @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
     final servo = _fromManager(request.name);
     final isMoving = await servo.isMoving();
-    return IsMovingResponse(isMoving: isMoving);
+    return IsMovingResponse()..isMoving = isMoving;
   }
 
   @override

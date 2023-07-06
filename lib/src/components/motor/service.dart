@@ -24,21 +24,21 @@ class MotorService extends MotorServiceBase {
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final motor = _fromManager(request.name);
     final result = await motor.doCommand(request.command.toMap());
-    return DoCommandResponse(result: result.toStruct());
+    return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     final motor = _fromManager(request.name);
     final position = await motor.position(extra: request.extra.toMap());
-    return GetPositionResponse(position: position);
+    return GetPositionResponse()..position = position;
   }
 
   @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
     final motor = _fromManager(request.name);
     final isMoving = await motor.isMoving();
-    return IsMovingResponse(isMoving: isMoving);
+    return IsMovingResponse()..isMoving = isMoving;
   }
 
   @override
@@ -52,7 +52,7 @@ class MotorService extends MotorServiceBase {
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
     final motor = _fromManager(request.name);
     final properties = await motor.properties(extra: request.extra.toMap());
-    return GetPropertiesResponse(positionReporting: properties.positionReporting);
+    return GetPropertiesResponse()..positionReporting = properties.positionReporting;
   }
 
   @override
@@ -73,7 +73,9 @@ class MotorService extends MotorServiceBase {
   Future<IsPoweredResponse> isPowered(ServiceCall call, IsPoweredRequest request) async {
     final motor = _fromManager(request.name);
     final powerState = await motor.powerState(extra: request.extra.toMap());
-    return IsPoweredResponse(isOn: powerState.isOn, powerPct: powerState.powerPct);
+    return IsPoweredResponse()
+      ..isOn = powerState.isOn
+      ..powerPct = powerState.powerPct;
   }
 
   @override

@@ -25,42 +25,42 @@ class BoardService extends BoardServiceBase {
   Future<common.DoCommandResponse> doCommand(ServiceCall call, common.DoCommandRequest request) async {
     final board = _fromManager(request.name);
     final result = await board.doCommand(request.command.toMap());
-    return common.DoCommandResponse(result: result.toStruct());
+    return common.DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<GetDigitalInterruptValueResponse> getDigitalInterruptValue(ServiceCall call, GetDigitalInterruptValueRequest request) async {
     final board = _fromManager(request.boardName);
     final value = await board.digitalInterruptValue(request.digitalInterruptName, extra: request.extra.toMap());
-    return GetDigitalInterruptValueResponse(value: Int64(value));
+    return GetDigitalInterruptValueResponse()..value = Int64(value);
   }
 
   @override
   Future<GetGPIOResponse> getGPIO(ServiceCall call, GetGPIORequest request) async {
     final board = _fromManager(request.name);
     final high = await board.gpio(request.pin, extra: request.extra.toMap());
-    return GetGPIOResponse(high: high);
+    return GetGPIOResponse()..high = high;
   }
 
   @override
   Future<PWMResponse> pWM(ServiceCall call, PWMRequest request) async {
     final board = _fromManager(request.name);
     final dutyCyclePct = await board.pwm(request.pin, extra: request.extra.toMap());
-    return PWMResponse(dutyCyclePct: dutyCyclePct);
+    return PWMResponse()..dutyCyclePct = dutyCyclePct;
   }
 
   @override
   Future<PWMFrequencyResponse> pWMFrequency(ServiceCall call, PWMFrequencyRequest request) async {
     final board = _fromManager(request.name);
     final frequencyHz = await board.pwmFrequency(request.pin, extra: request.extra.toMap());
-    return PWMFrequencyResponse(frequencyHz: Int64(frequencyHz));
+    return PWMFrequencyResponse()..frequencyHz = Int64(frequencyHz);
   }
 
   @override
   Future<ReadAnalogReaderResponse> readAnalogReader(ServiceCall call, ReadAnalogReaderRequest request) async {
     final board = _fromManager(request.boardName);
     final value = await board.analogReaderValue(request.analogReaderName, extra: request.extra.toMap());
-    return ReadAnalogReaderResponse(value: value);
+    return ReadAnalogReaderResponse()..value = value;
   }
 
   @override
@@ -95,7 +95,7 @@ class BoardService extends BoardServiceBase {
   Future<StatusResponse> status(ServiceCall call, StatusRequest request) async {
     final board = _fromManager(request.name);
     final boardStatus = await board.status(extra: request.extra.toMap());
-    return StatusResponse(status: boardStatus.proto);
+    return StatusResponse()..status = boardStatus.proto;
   }
 
   @override

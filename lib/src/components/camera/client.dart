@@ -22,7 +22,9 @@ class CameraClient extends Camera implements ResourceRPCClient {
 
   @override
   Future<ViamImage> image({MimeType? mimeType}) async {
-    final request = GetImageRequest(name: name, mimeType: mimeType?.name);
+    final request = GetImageRequest()
+      ..name = name
+      ..mimeType = mimeType?.name ?? '';
     final response = await client.getImage(request);
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.image, actualMimeType);
@@ -30,7 +32,9 @@ class CameraClient extends Camera implements ResourceRPCClient {
 
   @override
   Future<ViamImage> pointCloud() async {
-    final request = GetPointCloudRequest(name: name, mimeType: MimeType.pcd.name);
+    final request = GetPointCloudRequest()
+      ..name = name
+      ..mimeType = MimeType.pcd.name;
     final response = await client.getPointCloud(request);
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.pointCloud, actualMimeType);
@@ -38,14 +42,17 @@ class CameraClient extends Camera implements ResourceRPCClient {
 
   @override
   Future<CameraProperties> properties() async {
-    final request = GetPropertiesRequest(name: name);
+    final request = GetPropertiesRequest()..name = name;
     final response = await client.getProperties(request);
     return CameraProperties(response.supportsPcd, response.intrinsicParameters, response.distortionParameters);
   }
 
   @override
-  Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) async {
-    final response = await client.doCommand(DoCommandRequest(name: name, command: command?.toStruct()));
+  Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
+    final request = DoCommandRequest()
+      ..name = name
+      ..command = command.toStruct();
+    final response = await client.doCommand(request);
     return response.result.toMap();
   }
 }

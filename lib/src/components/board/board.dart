@@ -20,8 +20,8 @@ class BoardStatus {
 
   common.BoardStatus get proto {
     final pbBoardStatus = common.BoardStatus();
-    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = common.AnalogStatus(value: value));
-    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = common.DigitalInterruptStatus(value: Int64(value)));
+    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = common.AnalogStatus()..value = value);
+    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = common.DigitalInterruptStatus()..value = Int64(value));
     return pbBoardStatus;
   }
 }
