@@ -38,7 +38,7 @@ class GantryService extends GantryServiceBase {
   Future<HomeResponse> home(ServiceCall call, HomeRequest request) async {
     final gantry = _fromManager(request.name);
     final response = await gantry.home(extra: request.extra.toMap());
-    return HomeResponse()..homed.addAll(response);
+    return HomeResponse()..homed = response;
   }
 
   @override
