@@ -30,7 +30,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
     <li><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html">viam_protos.service.slam</a></li>
-    <li class="self-crumb">SLAMServiceBase abstract class</li>
+    <li class="self-crumb">SLAMServiceBase class</li>
   </ol>
   <div class="self-name">SLAMServiceBase</div>
   <form class="search navbar-right" role="search">
@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,7 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">SLAMServiceBase</span> class 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+    <a href="https://dart.dev/language/classes#abstract-classes" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
  
 </h1></div>
 
@@ -64,7 +67,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service-class.html">Service</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service-class.html">Service</a></li>
       <li>SLAMServiceBase</li>
     </ul>
   </dd>
@@ -75,6 +78,12 @@
 
 
         
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GrpcServiceName-class.html">GrpcServiceName</a>(&#39;viam.service.slam.v1.SLAMService&#39;)</li>
+    </ul>
+  </dd>
 
 
       </dl>
@@ -141,7 +150,7 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$addMethod" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$addMethod-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceMethod-class.html">ServiceMethod</a></span> <span class="parameter-name">method</span></span>)
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$addMethod-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceMethod-class.html">ServiceMethod</a></span> <span class="parameter-name">method</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -154,8 +163,8 @@
 </dd>
 
         <dt id="$lookupMethod" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$lookupMethod-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceMethod-class.html">ServiceMethod</a>?</span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$lookupMethod-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceMethod-class.html">ServiceMethod</a>?</span>
   </span>
   
 
@@ -167,7 +176,7 @@
 </dd>
 
         <dt id="$onMetadata" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></span><span class="signature">(<wbr><span class="parameter" id="$onMetadata-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">context</span></span>)
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></span><span class="signature">(<wbr><span class="parameter" id="$onMetadata-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">context</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -180,7 +189,7 @@
 </dd>
 
         <dt id="doCommand" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/doCommand.html">doCommand</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand-param-request"><span class="type-annotation"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/doCommand.html">doCommand</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand-param-request"><span class="type-annotation"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></span>&gt;</span></span>
   </span>
   
@@ -193,7 +202,7 @@
 </dd>
 
         <dt id="doCommand_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/doCommand_Pre.html">doCommand_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/doCommand_Pre.html">doCommand_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></span>&gt;</span></span>
   </span>
   
@@ -206,7 +215,7 @@
 </dd>
 
         <dt id="getInternalState" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getInternalState.html">getInternalState</a></span><span class="signature">(<wbr><span class="parameter" id="getInternalState-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInternalState-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetInternalStateRequest-class.html">GetInternalStateRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getInternalState.html">getInternalState</a></span><span class="signature">(<wbr><span class="parameter" id="getInternalState-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInternalState-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetInternalStateRequest-class.html">GetInternalStateRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetInternalStateResponse-class.html">GetInternalStateResponse</a></span>&gt;</span></span>
   </span>
   
@@ -219,7 +228,7 @@
 </dd>
 
         <dt id="getInternalState_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getInternalState_Pre.html">getInternalState_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInternalState_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInternalState_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetInternalStateRequest-class.html">GetInternalStateRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getInternalState_Pre.html">getInternalState_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInternalState_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInternalState_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetInternalStateRequest-class.html">GetInternalStateRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetInternalStateResponse-class.html">GetInternalStateResponse</a></span>&gt;</span></span>
   </span>
   
@@ -231,8 +240,34 @@
 
 </dd>
 
+        <dt id="getLatestMapInfo" class="callable">
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getLatestMapInfo.html">getLatestMapInfo</a></span><span class="signature">(<wbr><span class="parameter" id="getLatestMapInfo-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getLatestMapInfo-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetLatestMapInfoRequest-class.html">GetLatestMapInfoRequest</a></span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetLatestMapInfoResponse-class.html">GetLatestMapInfoResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="getLatestMapInfo_Pre" class="callable">
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getLatestMapInfo_Pre.html">getLatestMapInfo_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getLatestMapInfo_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getLatestMapInfo_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetLatestMapInfoRequest-class.html">GetLatestMapInfoRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetLatestMapInfoResponse-class.html">GetLatestMapInfoResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="getPointCloudMap" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPointCloudMap.html">getPointCloudMap</a></span><span class="signature">(<wbr><span class="parameter" id="getPointCloudMap-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPointCloudMap-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetPointCloudMapRequest-class.html">GetPointCloudMapRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPointCloudMap.html">getPointCloudMap</a></span><span class="signature">(<wbr><span class="parameter" id="getPointCloudMap-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPointCloudMap-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetPointCloudMapRequest-class.html">GetPointCloudMapRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPointCloudMapResponse-class.html">GetPointCloudMapResponse</a></span>&gt;</span></span>
   </span>
   
@@ -245,7 +280,7 @@
 </dd>
 
         <dt id="getPointCloudMap_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPointCloudMap_Pre.html">getPointCloudMap_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getPointCloudMap_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPointCloudMap_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPointCloudMapRequest-class.html">GetPointCloudMapRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPointCloudMap_Pre.html">getPointCloudMap_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getPointCloudMap_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPointCloudMap_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPointCloudMapRequest-class.html">GetPointCloudMapRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPointCloudMapResponse-class.html">GetPointCloudMapResponse</a></span>&gt;</span></span>
   </span>
   
@@ -258,7 +293,7 @@
 </dd>
 
         <dt id="getPosition" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPosition.html">getPosition</a></span><span class="signature">(<wbr><span class="parameter" id="getPosition-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPosition-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetPositionRequest-class.html">GetPositionRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPosition.html">getPosition</a></span><span class="signature">(<wbr><span class="parameter" id="getPosition-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPosition-param-request"><span class="type-annotation"><a href="../viam_protos.service.slam/GetPositionRequest-class.html">GetPositionRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPositionResponse-class.html">GetPositionResponse</a></span>&gt;</span></span>
   </span>
   
@@ -271,7 +306,7 @@
 </dd>
 
         <dt id="getPosition_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPosition_Pre.html">getPosition_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getPosition_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPosition_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPositionRequest-class.html">GetPositionRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.service.slam/SLAMServiceBase/getPosition_Pre.html">getPosition_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getPosition_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getPosition_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPositionRequest-class.html">GetPositionRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.slam/GetPositionResponse-class.html">GetPositionResponse</a></span>&gt;</span></span>
   </span>
   
@@ -291,7 +326,7 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a non-existent method or property is accessed.
+  Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
@@ -349,7 +384,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">viam_sdk</a></li>
   <li><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html">viam_protos.service.slam</a></li>
-  <li class="self-crumb">SLAMServiceBase abstract class</li>
+  <li class="self-crumb">SLAMServiceBase class</li>
 </ol>
 
 
@@ -358,6 +393,8 @@
       <li class="section-title"><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html#classes">Classes</a></li>
         <li><a href="../viam_protos.service.slam/GetInternalStateRequest-class.html">GetInternalStateRequest</a></li>
         <li><a href="../viam_protos.service.slam/GetInternalStateResponse-class.html">GetInternalStateResponse</a></li>
+        <li><a href="../viam_protos.service.slam/GetLatestMapInfoRequest-class.html">GetLatestMapInfoRequest</a></li>
+        <li><a href="../viam_protos.service.slam/GetLatestMapInfoResponse-class.html">GetLatestMapInfoResponse</a></li>
         <li><a href="../viam_protos.service.slam/GetPointCloudMapRequest-class.html">GetPointCloudMapRequest</a></li>
         <li><a href="../viam_protos.service.slam/GetPointCloudMapResponse-class.html">GetPointCloudMapResponse</a></li>
         <li><a href="../viam_protos.service.slam/GetPositionRequest-class.html">GetPositionRequest</a></li>
@@ -370,6 +407,8 @@
       <li class="section-title"><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html#constants">Constants</a></li>
         <li><a class="deprecated" href="../viam_protos.service.slam/GetInternalStateRequest$json-constant.html">GetInternalStateRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.service.slam/GetInternalStateResponse$json-constant.html">GetInternalStateResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.service.slam/GetLatestMapInfoRequest$json-constant.html">GetLatestMapInfoRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.service.slam/GetLatestMapInfoResponse$json-constant.html">GetLatestMapInfoResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.service.slam/GetPointCloudMapRequest$json-constant.html">GetPointCloudMapRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.service.slam/GetPointCloudMapResponse$json-constant.html">GetPointCloudMapResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.service.slam/GetPositionRequest$json-constant.html">GetPositionRequest$json</a></li>
@@ -378,6 +417,8 @@
       <li class="section-title"><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html#properties">Properties</a></li>
         <li><a href="../viam_protos.service.slam/getInternalStateRequestDescriptor.html">getInternalStateRequestDescriptor</a></li>
         <li><a href="../viam_protos.service.slam/getInternalStateResponseDescriptor.html">getInternalStateResponseDescriptor</a></li>
+        <li><a href="../viam_protos.service.slam/getLatestMapInfoRequestDescriptor.html">getLatestMapInfoRequestDescriptor</a></li>
+        <li><a href="../viam_protos.service.slam/getLatestMapInfoResponseDescriptor.html">getLatestMapInfoResponseDescriptor</a></li>
         <li><a href="../viam_protos.service.slam/getPointCloudMapRequestDescriptor.html">getPointCloudMapRequestDescriptor</a></li>
         <li><a href="../viam_protos.service.slam/getPointCloudMapResponseDescriptor.html">getPointCloudMapResponseDescriptor</a></li>
         <li><a href="../viam_protos.service.slam/getPositionRequestDescriptor.html">getPositionRequestDescriptor</a></li>
@@ -405,13 +446,15 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../viam_protos.service.slam/SLAMServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/doCommand.html">doCommand</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/doCommand_Pre.html">doCommand_Pre</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/getInternalState.html">getInternalState</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/getInternalState_Pre.html">getInternalState_Pre</a></li>
+          <li><a href="../viam_protos.service.slam/SLAMServiceBase/getLatestMapInfo.html">getLatestMapInfo</a></li>
+          <li><a href="../viam_protos.service.slam/SLAMServiceBase/getLatestMapInfo_Pre.html">getLatestMapInfo_Pre</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/getPointCloudMap.html">getPointCloudMap</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/getPointCloudMap_Pre.html">getPointCloudMap_Pre</a></li>
           <li><a href="../viam_protos.service.slam/SLAMServiceBase/getPosition.html">getPosition</a></li>

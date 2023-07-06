@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">TrainingJobMetadata$json</span> top-level constant 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -72,16 +74,17 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@$core.Deprecated(&#39;Use trainingJobMetadataDescriptor instead&#39;)
-const TrainingJobMetadata$json = const {
+const TrainingJobMetadata$json = {
   &#39;1&#39;: &#39;TrainingJobMetadata&#39;,
-  &#39;2&#39;: const [
-    const {&#39;1&#39;: &#39;request&#39;, &#39;3&#39;: 1, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.viam.app.mltraining.v1.SubmitTrainingJobRequest&#39;, &#39;8&#39;: const {}, &#39;10&#39;: &#39;request&#39;},
-    const {&#39;1&#39;: &#39;status&#39;, &#39;3&#39;: 2, &#39;4&#39;: 1, &#39;5&#39;: 14, &#39;6&#39;: &#39;.viam.app.mltraining.v1.TrainingStatus&#39;, &#39;8&#39;: const {}, &#39;10&#39;: &#39;status&#39;},
-    const {&#39;1&#39;: &#39;created_on&#39;, &#39;3&#39;: 3, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.google.protobuf.Timestamp&#39;, &#39;8&#39;: const {}, &#39;10&#39;: &#39;createdOn&#39;},
-    const {&#39;1&#39;: &#39;last_modified&#39;, &#39;3&#39;: 4, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.google.protobuf.Timestamp&#39;, &#39;8&#39;: const {}, &#39;10&#39;: &#39;lastModified&#39;},
-    const {&#39;1&#39;: &#39;synced_model_id&#39;, &#39;3&#39;: 5, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;8&#39;: const {}, &#39;10&#39;: &#39;syncedModelId&#39;},
-    const {&#39;1&#39;: &#39;user_email&#39;, &#39;3&#39;: 6, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;8&#39;: const {}, &#39;10&#39;: &#39;userEmail&#39;},
-    const {&#39;1&#39;: &#39;id&#39;, &#39;3&#39;: 7, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;8&#39;: const {}, &#39;10&#39;: &#39;id&#39;},
+  &#39;2&#39;: [
+    {&#39;1&#39;: &#39;request&#39;, &#39;3&#39;: 1, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.viam.app.mltraining.v1.SubmitTrainingJobRequest&#39;, &#39;8&#39;: {}, &#39;10&#39;: &#39;request&#39;},
+    {&#39;1&#39;: &#39;status&#39;, &#39;3&#39;: 2, &#39;4&#39;: 1, &#39;5&#39;: 14, &#39;6&#39;: &#39;.viam.app.mltraining.v1.TrainingStatus&#39;, &#39;8&#39;: {}, &#39;10&#39;: &#39;status&#39;},
+    {&#39;1&#39;: &#39;created_on&#39;, &#39;3&#39;: 3, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.google.protobuf.Timestamp&#39;, &#39;8&#39;: {}, &#39;10&#39;: &#39;createdOn&#39;},
+    {&#39;1&#39;: &#39;last_modified&#39;, &#39;3&#39;: 4, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.google.protobuf.Timestamp&#39;, &#39;8&#39;: {}, &#39;10&#39;: &#39;lastModified&#39;},
+    {&#39;1&#39;: &#39;synced_model_id&#39;, &#39;3&#39;: 5, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;8&#39;: {}, &#39;10&#39;: &#39;syncedModelId&#39;},
+    {&#39;1&#39;: &#39;user_email&#39;, &#39;3&#39;: 6, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;8&#39;: {}, &#39;10&#39;: &#39;userEmail&#39;},
+    {&#39;1&#39;: &#39;id&#39;, &#39;3&#39;: 7, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;8&#39;: {}, &#39;10&#39;: &#39;id&#39;},
+    {&#39;1&#39;: &#39;error_status&#39;, &#39;3&#39;: 8, &#39;4&#39;: 1, &#39;5&#39;: 11, &#39;6&#39;: &#39;.google.rpc.Status&#39;, &#39;8&#39;: {}, &#39;10&#39;: &#39;errorStatus&#39;},
   ],
 };</code></pre>
 </section>

@@ -40,8 +40,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -51,15 +54,14 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-method">deleteOrganizationMember</span> method 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/DeleteOrganizationMemberResponse-class.html">DeleteOrganizationMemberResponse</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/DeleteOrganizationMemberResponse-class.html">DeleteOrganizationMemberResponse</a></span>&gt;</span></span>
 <span class="name ">deleteOrganizationMember</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="deleteOrganizationMember-param-request"><span class="type-annotation"><a href="../../viam_protos.app.app/DeleteOrganizationMemberRequest-class.html">DeleteOrganizationMemberRequest</a></span> <span class="parameter-name">request</span>, </span></li>
-<li><span class="parameter" id="deleteOrganizationMember-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span></li>
+<li><span class="parameter" id="deleteOrganizationMember-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span></li>
 </ol>)
 
       
@@ -71,11 +73,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">$grpc.ResponseFuture&lt;$0.DeleteOrganizationMemberResponse&gt;
-    deleteOrganizationMember($0.DeleteOrganizationMemberRequest request,
-        {$grpc.CallOptions? options}) {
-  return $createUnaryCall(_$deleteOrganizationMember, request,
-      options: options);
+  <pre class="language-dart"><code class="language-dart">$grpc.ResponseFuture&lt;$0.DeleteOrganizationMemberResponse&gt; deleteOrganizationMember($0.DeleteOrganizationMemberRequest request, {$grpc.CallOptions? options}) {
+  return $createUnaryCall(_$deleteOrganizationMember, request, options: options);
 }</code></pre>
 </section>
 
@@ -111,14 +110,15 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_protos.app.app/AppServiceClient-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
+          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/addRole.html">addRole</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/checkPermissions.html">checkPermissions</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/createFragment.html">createFragment</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/createLocation.html">createLocation</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/createLocationSecret.html">createLocationSecret</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/createModule.html">createModule</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/createOrganization.html">createOrganization</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/createOrganizationInvite.html">createOrganizationInvite</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/createRobotPartSecret.html">createRobotPartSecret</a></li>
@@ -133,6 +133,7 @@
           <li><a href="../../viam_protos.app.app/AppServiceClient/deleteRobotPartSecret.html">deleteRobotPartSecret</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getFragment.html">getFragment</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getLocation.html">getLocation</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/getModule.html">getModule</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getOrganization.html">getOrganization</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getRobot.html">getRobot</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getRobotPart.html">getRobotPart</a></li>
@@ -140,11 +141,14 @@
           <li><a href="../../viam_protos.app.app/AppServiceClient/getRobotPartLogs.html">getRobotPartLogs</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getRobotParts.html">getRobotParts</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/getRoverRentalRobots.html">getRoverRentalRobots</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/getUserIDByEmail.html">getUserIDByEmail</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/listAuthorizations.html">listAuthorizations</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/listFragments.html">listFragments</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/listLocations.html">listLocations</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/listModules.html">listModules</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/listOrganizationMembers.html">listOrganizationMembers</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/listOrganizations.html">listOrganizations</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/listOrganizationsByUser.html">listOrganizationsByUser</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/listRobots.html">listRobots</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/locationAuth.html">locationAuth</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/markPartAsMain.html">markPartAsMain</a></li>
@@ -160,9 +164,11 @@
           <li><a href="../../viam_protos.app.app/AppServiceClient/unshareLocation.html">unshareLocation</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/updateFragment.html">updateFragment</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/updateLocation.html">updateLocation</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/updateModule.html">updateModule</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/updateOrganization.html">updateOrganization</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/updateRobot.html">updateRobot</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceClient/updateRobotPart.html">updateRobotPart</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceClient/uploadModuleFile.html">uploadModuleFile</a></li>
 
         <li class="section-title inherited"><a href="../../viam_protos.app.app/AppServiceClient-class.html#operators">Operators</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>

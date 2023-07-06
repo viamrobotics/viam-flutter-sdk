@@ -40,8 +40,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -51,7 +54,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-constructor">TestEchoServiceBase</span> constructor 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
@@ -73,15 +75,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.EchoRequest.fromBuffer(value),
       ($0.EchoResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.EchoMultipleRequest, $0.EchoMultipleResponse&gt;(
-          &#39;EchoMultiple&#39;,
-          echoMultiple_Pre,
-          false,
-          true,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.EchoMultipleRequest.fromBuffer(value),
-          ($0.EchoMultipleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.EchoMultipleRequest, $0.EchoMultipleResponse&gt;(
+      &#39;EchoMultiple&#39;,
+      echoMultiple_Pre,
+      false,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.EchoMultipleRequest.fromBuffer(value),
+      ($0.EchoMultipleResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$0.EchoBiDiRequest, $0.EchoBiDiResponse&gt;(
       &#39;EchoBiDi&#39;,
       echoBiDi,
@@ -132,9 +132,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_protos.component.testecho/TestEchoServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../../viam_protos.component.testecho/TestEchoServiceBase/echo.html">echo</a></li>
           <li><a href="../../viam_protos.component.testecho/TestEchoServiceBase/echo_Pre.html">echo_Pre</a></li>
           <li><a href="../../viam_protos.component.testecho/TestEchoServiceBase/echoBiDi.html">echoBiDi</a></li>

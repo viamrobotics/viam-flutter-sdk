@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">currentMonthUsageSummaryDescriptor</span> top-level property 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -69,7 +71,19 @@
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List currentMonthUsageSummaryDescriptor = $convert.base64Decode(&#39;ChhDdXJyZW50TW9udGhVc2FnZVN1bW1hcnkSLgoTY2xvdWRfc3RvcmFnZV91c2FnZRgBIAEoAVIRY2xvdWRTdG9yYWdlVXNhZ2USNwoYY2xvdWRfc3RvcmFnZV91c2FnZV9jb3N0GAIgASgBUhVjbG91ZFN0b3JhZ2VVc2FnZUNvc3QSMwoWZGF0YV91cGxvYWRfdXNhZ2VfY29zdBgDIAEoAVITZGF0YVVwbG9hZFVzYWdlQ29zdBI7ChpkYXRhX3VwbG9hZF91c2FnZV9xdWFudGl0eRgEIAEoAVIXZGF0YVVwbG9hZFVzYWdlUXVhbnRpdHkSMQoVZGF0YV9lZ3Jlc191c2FnZV9jb3N0GAUgASgBUhJkYXRhRWdyZXNVc2FnZUNvc3QSOQoZZGF0YV9lZ3Jlc191c2FnZV9xdWFudGl0eRgGIAEoAVIWZGF0YUVncmVzVXNhZ2VRdWFudGl0eRI9ChtzdGFuZGFyZF9jb21wdXRlX3VzYWdlX2Nvc3QYByABKAFSGHN0YW5kYXJkQ29tcHV0ZVVzYWdlQ29zdBJFCh9zdGFuZGFyZF9jb21wdXRlX3VzYWdlX3F1YW50aXR5GAggASgBUhxzdGFuZGFyZENvbXB1dGVVc2FnZVF1YW50aXR5EjAKFHRvdGFsX3VzYWdlX3F1YW50aXR5GAkgASgBUhJ0b3RhbFVzYWdlUXVhbnRpdHkSOQoZdG90YWxfdXNhZ2Vfd2l0aF9kaXNjb3VudBgKIAEoAVIWdG90YWxVc2FnZVdpdGhEaXNjb3VudBI&#47;Chx0b3RhbF91c2FnZV93aXRob3V0X2Rpc2NvdW50GAsgASgBUhl0b3RhbFVzYWdlV2l0aG91dERpc2NvdW50&#39;);</code></pre>
+  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List currentMonthUsageSummaryDescriptor = $convert.base64Decode(
+    &#39;ChhDdXJyZW50TW9udGhVc2FnZVN1bW1hcnkSLgoTY2xvdWRfc3RvcmFnZV91c2FnZRgBIAEoAV&#39;
+    &#39;IRY2xvdWRTdG9yYWdlVXNhZ2USNwoYY2xvdWRfc3RvcmFnZV91c2FnZV9jb3N0GAIgASgBUhVj&#39;
+    &#39;bG91ZFN0b3JhZ2VVc2FnZUNvc3QSMwoWZGF0YV91cGxvYWRfdXNhZ2VfY29zdBgDIAEoAVITZG&#39;
+    &#39;F0YVVwbG9hZFVzYWdlQ29zdBI7ChpkYXRhX3VwbG9hZF91c2FnZV9xdWFudGl0eRgEIAEoAVIX&#39;
+    &#39;ZGF0YVVwbG9hZFVzYWdlUXVhbnRpdHkSMQoVZGF0YV9lZ3Jlc191c2FnZV9jb3N0GAUgASgBUh&#39;
+    &#39;JkYXRhRWdyZXNVc2FnZUNvc3QSOQoZZGF0YV9lZ3Jlc191c2FnZV9xdWFudGl0eRgGIAEoAVIW&#39;
+    &#39;ZGF0YUVncmVzVXNhZ2VRdWFudGl0eRI9ChtzdGFuZGFyZF9jb21wdXRlX3VzYWdlX2Nvc3QYBy&#39;
+    &#39;ABKAFSGHN0YW5kYXJkQ29tcHV0ZVVzYWdlQ29zdBJFCh9zdGFuZGFyZF9jb21wdXRlX3VzYWdl&#39;
+    &#39;X3F1YW50aXR5GAggASgBUhxzdGFuZGFyZENvbXB1dGVVc2FnZVF1YW50aXR5EjAKFHRvdGFsX3&#39;
+    &#39;VzYWdlX3F1YW50aXR5GAkgASgBUhJ0b3RhbFVzYWdlUXVhbnRpdHkSOQoZdG90YWxfdXNhZ2Vf&#39;
+    &#39;d2l0aF9kaXNjb3VudBgKIAEoAVIWdG90YWxVc2FnZVdpdGhEaXNjb3VudBI&#47;Chx0b3RhbF91c2&#39;
+    &#39;FnZV93aXRob3V0X2Rpc2NvdW50GAsgASgBUhl0b3RhbFVzYWdlV2l0aG91dERpc2NvdW50&#39;);</code></pre>
 </section>
 
 

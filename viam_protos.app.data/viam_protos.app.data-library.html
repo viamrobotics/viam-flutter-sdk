@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.app.data</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -81,22 +83,6 @@
   
 </dd>
 
-        <dt id="AddTagsToBinaryDataByFileIDsRequest">
-  <span class="name "><a href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsRequest-class.html">AddTagsToBinaryDataByFileIDsRequest</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="AddTagsToBinaryDataByFileIDsResponse">
-  <span class="name "><a href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsResponse-class.html">AddTagsToBinaryDataByFileIDsResponse</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
         <dt id="AddTagsToBinaryDataByFilterRequest">
   <span class="name "><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterRequest-class.html">AddTagsToBinaryDataByFilterRequest</a></span> 
 
@@ -107,6 +93,22 @@
 
         <dt id="AddTagsToBinaryDataByFilterResponse">
   <span class="name "><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterResponse-class.html">AddTagsToBinaryDataByFilterResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="AddTagsToBinaryDataByIDsRequest">
+  <span class="name "><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsRequest-class.html">AddTagsToBinaryDataByIDsRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="AddTagsToBinaryDataByIDsResponse">
+  <span class="name "><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsResponse-class.html">AddTagsToBinaryDataByIDsResponse</a></span> 
 
 </dt>
 <dd>
@@ -155,6 +157,14 @@
 
         <dt id="BinaryDataByIDsResponse">
   <span class="name "><a href="../viam_protos.app.data/BinaryDataByIDsResponse-class.html">BinaryDataByIDsResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="BinaryID">
+  <span class="name "><a href="../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span> 
 
 </dt>
 <dd>
@@ -313,22 +323,6 @@
   
 </dd>
 
-        <dt id="RemoveTagsFromBinaryDataByFileIDsRequest">
-  <span class="name "><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsRequest-class.html">RemoveTagsFromBinaryDataByFileIDsRequest</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="RemoveTagsFromBinaryDataByFileIDsResponse">
-  <span class="name "><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsResponse-class.html">RemoveTagsFromBinaryDataByFileIDsResponse</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
         <dt id="RemoveTagsFromBinaryDataByFilterRequest">
   <span class="name "><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterRequest-class.html">RemoveTagsFromBinaryDataByFilterRequest</a></span> 
 
@@ -345,16 +339,16 @@
   
 </dd>
 
-        <dt id="Result">
-  <span class="name "><a href="../viam_protos.app.data/Result-class.html">Result</a></span> 
+        <dt id="RemoveTagsFromBinaryDataByIDsRequest">
+  <span class="name "><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsRequest-class.html">RemoveTagsFromBinaryDataByIDsRequest</a></span> 
 
 </dt>
 <dd>
   
 </dd>
 
-        <dt id="Status">
-  <span class="name "><a href="../viam_protos.app.data/Status-class.html">Status</a></span> 
+        <dt id="RemoveTagsFromBinaryDataByIDsResponse">
+  <span class="name "><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsResponse-class.html">RemoveTagsFromBinaryDataByIDsResponse</a></span> 
 
 </dt>
 <dd>
@@ -437,7 +431,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddBoundingBoxToImageByIDRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;file_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;fil…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddBoundingBoxToImageByIDRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;binary_id&#39;, &#39;3&#39; : 7, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.B…</code></span>
     </div>
 </dd>
 
@@ -452,37 +446,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddBoundingBoxToImageByIDResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;bbox_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;bb…</code></span>
-    </div>
-</dd>
-
-        <dt id="AddTagsToBinaryDataByFileIDsRequest$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsRequest$json-constant.html">AddTagsToBinaryDataByFileIDsRequest$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-    <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddTagsToBinaryDataByFileIDsRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;file_ids&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39…</code></span>
-    </div>
-</dd>
-
-        <dt id="AddTagsToBinaryDataByFileIDsResponse$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsResponse$json-constant.html">AddTagsToBinaryDataByFileIDsResponse$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-    <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddTagsToBinaryDataByFileIDsResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddBoundingBoxToImageByIDResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;bbox_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;bboxId&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -497,7 +461,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddTagsToBinaryDataByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.v…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddTagsToBinaryDataByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Fi…</code></span>
     </div>
 </dd>
 
@@ -512,7 +476,37 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddTagsToBinaryDataByFilterResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddTagsToBinaryDataByFilterResponse&#39;}</code></span>
+    </div>
+</dd>
+
+        <dt id="AddTagsToBinaryDataByIDsRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByIDsRequest$json-constant.html">AddTagsToBinaryDataByIDsRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddTagsToBinaryDataByIDsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;binary_ids&#39;, &#39;3&#39; : 3, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.B…</code></span>
+    </div>
+</dd>
+
+        <dt id="AddTagsToBinaryDataByIDsResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByIDsResponse$json-constant.html">AddTagsToBinaryDataByIDsResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddTagsToBinaryDataByIDsResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -527,7 +521,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Annotations&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;bboxes&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Boundin…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Annotations&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;bboxes&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.BoundingBox&#39;, &#39;10…</code></span>
     </div>
 </dd>
 
@@ -542,7 +536,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BinaryData&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;binary&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;binary&#39;}, const {&#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryData&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;binary&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;binary&#39;}, {&#39;1&#39; : &#39;metadata&…</code></span>
     </div>
 </dd>
 
@@ -557,7 +551,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BinaryDataByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;data_request&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryDataByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;data_request&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.DataR…</code></span>
     </div>
 </dd>
 
@@ -572,7 +566,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BinaryDataByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;data&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.da…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryDataByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;data&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.BinaryData&#…</code></span>
     </div>
 </dd>
 
@@ -587,7 +581,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BinaryDataByIDsRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;file_ids&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;fileIds&#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryDataByIDsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;include_binary&#39;, &#39;3&#39; : 2, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;includeBinary&#39;}, {&#…</code></span>
     </div>
 </dd>
 
@@ -602,7 +596,22 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BinaryDataByIDsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;data&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryDataByIDsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;data&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.BinaryData&#39;…</code></span>
+    </div>
+</dd>
+
+        <dt id="BinaryID$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/BinaryID$json-constant.html">BinaryID$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryID&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;file_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;fileId&#39;}, {&#39;1&#39; : &#39;organizatio…</code></span>
     </div>
 </dd>
 
@@ -617,7 +626,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BinaryMetadata&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#39;1&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BinaryMetadata&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;capture_metada…</code></span>
     </div>
 </dd>
 
@@ -632,7 +641,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BoundingBox&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#39;1&#39; …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BoundingBox&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;label&#39;, &#39;…</code></span>
     </div>
 </dd>
 
@@ -647,7 +656,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BoundingBoxLabelsByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.via…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BoundingBoxLabelsByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Filt…</code></span>
     </div>
 </dd>
 
@@ -662,7 +671,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BoundingBoxLabelsByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;labels&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;lab…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BoundingBoxLabelsByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;labels&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;labels&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -677,7 +686,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CaptureInterval&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;start&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Times…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CaptureInterval&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;start&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Timestamp&#39;, &#39;10…</code></span>
     </div>
 </dd>
 
@@ -692,7 +701,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CaptureMetadata&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;org_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;orgId&#39;}, const {&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CaptureMetadata&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;organizationId&#39;}, {&#39;1&…</code></span>
     </div>
 </dd>
 
@@ -707,7 +716,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MethodParametersEntry&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, const {…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MethodParametersEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;value…</code></span>
     </div>
 </dd>
 
@@ -722,7 +731,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DataRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Filter&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DataRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Filter&#39;, &#39;10&#39;…</code></span>
     </div>
 </dd>
 
@@ -737,7 +746,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeleteBinaryDataByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeleteBinaryDataByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Filte…</code></span>
     </div>
 </dd>
 
@@ -752,7 +761,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeleteBinaryDataByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeleteBinaryDataByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#39;deletedCount&#3…</code></span>
     </div>
 </dd>
 
@@ -767,7 +776,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeleteBinaryDataByIDsRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;file_ids&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;fileId…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeleteBinaryDataByIDsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;binary_ids&#39;, &#39;3&#39; : 2, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Bina…</code></span>
     </div>
 </dd>
 
@@ -782,7 +791,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeleteBinaryDataByIDsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeleteBinaryDataByIDsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#39;deletedCount&#39;}…</code></span>
     </div>
 </dd>
 
@@ -797,7 +806,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeleteTabularDataByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.via…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeleteTabularDataByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Filt…</code></span>
     </div>
 </dd>
 
@@ -812,7 +821,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeleteTabularDataByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeleteTabularDataByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#39;deletedCount&#…</code></span>
     </div>
 </dd>
 
@@ -827,7 +836,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Filter&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;component_name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;componentName&#39;}, c…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Filter&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;component_name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;componentName&#39;}, {&#39;1&#39; : &#39…</code></span>
     </div>
 </dd>
 
@@ -842,7 +851,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Order&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;ORDER_UNSPECIFIED&#39;, &#39;2&#39; : 0}, const {&#39;1&#39; : &#39;ORDER_DESCENDING&#39;, &#39;2&#39; : 1}, const …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Order&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;ORDER_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;ORDER_DESCENDING&#39;, &#39;2&#39; : 1}, {&#39;1&#39; : &#39;ORDER_ASCE…</code></span>
     </div>
 </dd>
 
@@ -857,7 +866,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveBoundingBoxFromImageByIDRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;file_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveBoundingBoxFromImageByIDRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;binary_id&#39;, &#39;3&#39; : 3, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data…</code></span>
     </div>
 </dd>
 
@@ -872,37 +881,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveBoundingBoxFromImageByIDResponse&#39;}</code></span>
-    </div>
-</dd>
-
-        <dt id="RemoveTagsFromBinaryDataByFileIDsRequest$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsRequest$json-constant.html">RemoveTagsFromBinaryDataByFileIDsRequest$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-    <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByFileIDsRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;file_ids&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; :…</code></span>
-    </div>
-</dd>
-
-        <dt id="RemoveTagsFromBinaryDataByFileIDsResponse$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsResponse$json-constant.html">RemoveTagsFromBinaryDataByFileIDsResponse$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-    <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByFileIDsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveBoundingBoxFromImageByIDResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -917,7 +896,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.…</code></span>
     </div>
 </dd>
 
@@ -932,12 +911,12 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#39;deleted…</code></span>
     </div>
 </dd>
 
-        <dt id="Result$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/Result$json-constant.html">Result$json</a></span>
+        <dt id="RemoveTagsFromBinaryDataByIDsRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsRequest$json-constant.html">RemoveTagsFromBinaryDataByIDsRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -947,12 +926,12 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Result&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;status&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.app.data.v1.Status&#39;,…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByIDsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;binary_ids&#39;, &#39;3&#39; : 3, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data…</code></span>
     </div>
 </dd>
 
-        <dt id="Status$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/Status$json-constant.html">Status$json</a></span>
+        <dt id="RemoveTagsFromBinaryDataByIDsResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsResponse$json-constant.html">RemoveTagsFromBinaryDataByIDsResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -962,7 +941,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Status&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;STATUS_UNSPECIFIED&#39;, &#39;2&#39; : 0}, const {&#39;1&#39; : &#39;STATUS_PARTIAL_SUCCESS&#39;, &#39;2&#39; : 1}…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveTagsFromBinaryDataByIDsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;deleted_count&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 4, &#39;10&#39; : &#39;deletedCou…</code></span>
     </div>
 </dd>
 
@@ -977,7 +956,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TabularData&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;data&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Struct&#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TabularData&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;data&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Struct&#39;, &#39;10&#39; : …</code></span>
     </div>
 </dd>
 
@@ -992,7 +971,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TabularDataByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;data_request&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.via…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TabularDataByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;data_request&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Data…</code></span>
     </div>
 </dd>
 
@@ -1007,7 +986,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TabularDataByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;metadata&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.a…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TabularDataByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;metadata&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Capture…</code></span>
     </div>
 </dd>
 
@@ -1022,7 +1001,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TagsByFilterRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TagsByFilterRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;filter&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.data.v1.Filter&#39;, &#39…</code></span>
     </div>
 </dd>
 
@@ -1037,7 +1016,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TagsByFilterResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;tags&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;tags&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TagsByFilterResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;tags&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;tags&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -1052,7 +1031,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TagsFilter&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.app.data.v1.TagsFilter…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TagsFilter&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.app.data.v1.TagsFilterType&#39;, &#39;10…</code></span>
     </div>
 </dd>
 
@@ -1067,7 +1046,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TagsFilterType&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;TAGS_FILTER_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, const {&#39;1&#39; : &#39;TAGS_FILTER_TYPE_MATCH_BY_O…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TagsFilterType&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;TAGS_FILTER_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;TAGS_FILTER_TYPE_MATCH_BY_OR&#39;, &#39;2&#39; : 1}…</code></span>
     </div>
 </dd>
 
@@ -1100,28 +1079,6 @@
 
 </dd>
 
-        <dt id="addTagsToBinaryDataByFileIDsRequestDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.data/addTagsToBinaryDataByFileIDsRequestDescriptor.html">addTagsToBinaryDataByFileIDsRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
-
-</dt>
-<dd>
-  Descriptor for <code>AddTagsToBinaryDataByFileIDsRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="addTagsToBinaryDataByFileIDsResponseDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.data/addTagsToBinaryDataByFileIDsResponseDescriptor.html">addTagsToBinaryDataByFileIDsResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
-
-</dt>
-<dd>
-  Descriptor for <code>AddTagsToBinaryDataByFileIDsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
         <dt id="addTagsToBinaryDataByFilterRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.data/addTagsToBinaryDataByFilterRequestDescriptor.html">addTagsToBinaryDataByFilterRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
@@ -1140,6 +1097,28 @@
 </dt>
 <dd>
   Descriptor for <code>AddTagsToBinaryDataByFilterResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="addTagsToBinaryDataByIDsRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data/addTagsToBinaryDataByIDsRequestDescriptor.html">addTagsToBinaryDataByIDsRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>AddTagsToBinaryDataByIDsRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="addTagsToBinaryDataByIDsResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data/addTagsToBinaryDataByIDsResponseDescriptor.html">addTagsToBinaryDataByIDsResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>AddTagsToBinaryDataByIDsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1206,6 +1185,17 @@
 </dt>
 <dd>
   Descriptor for <code>BinaryData</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="binaryIDDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data/binaryIDDescriptor.html">binaryIDDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>BinaryID</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1397,28 +1387,6 @@
 
 </dd>
 
-        <dt id="removeTagsFromBinaryDataByFileIDsRequestDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFileIDsRequestDescriptor.html">removeTagsFromBinaryDataByFileIDsRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
-
-</dt>
-<dd>
-  Descriptor for <code>RemoveTagsFromBinaryDataByFileIDsRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="removeTagsFromBinaryDataByFileIDsResponseDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFileIDsResponseDescriptor.html">removeTagsFromBinaryDataByFileIDsResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
-
-</dt>
-<dd>
-  Descriptor for <code>RemoveTagsFromBinaryDataByFileIDsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
         <dt id="removeTagsFromBinaryDataByFilterRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFilterRequestDescriptor.html">removeTagsFromBinaryDataByFilterRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
@@ -1441,24 +1409,24 @@
 
 </dd>
 
-        <dt id="resultDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.data/resultDescriptor.html">resultDescriptor</a></span>
+        <dt id="removeTagsFromBinaryDataByIDsRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data/removeTagsFromBinaryDataByIDsRequestDescriptor.html">removeTagsFromBinaryDataByIDsRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
 
 </dt>
 <dd>
-  Descriptor for <code>Result</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  Descriptor for <code>RemoveTagsFromBinaryDataByIDsRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
-        <dt id="statusDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.data/statusDescriptor.html">statusDescriptor</a></span>
+        <dt id="removeTagsFromBinaryDataByIDsResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data/removeTagsFromBinaryDataByIDsResponseDescriptor.html">removeTagsFromBinaryDataByIDsResponseDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
 
 </dt>
 <dd>
-  Descriptor for <code>Status</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  Descriptor for <code>RemoveTagsFromBinaryDataByIDsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -1571,10 +1539,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
@@ -1614,16 +1582,17 @@
       <li class="section-title"><a href="../viam_protos.app.data/viam_protos.app.data-library.html#classes">Classes</a></li>
         <li><a href="../viam_protos.app.data/AddBoundingBoxToImageByIDRequest-class.html">AddBoundingBoxToImageByIDRequest</a></li>
         <li><a href="../viam_protos.app.data/AddBoundingBoxToImageByIDResponse-class.html">AddBoundingBoxToImageByIDResponse</a></li>
-        <li><a href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsRequest-class.html">AddTagsToBinaryDataByFileIDsRequest</a></li>
-        <li><a href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsResponse-class.html">AddTagsToBinaryDataByFileIDsResponse</a></li>
         <li><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterRequest-class.html">AddTagsToBinaryDataByFilterRequest</a></li>
         <li><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterResponse-class.html">AddTagsToBinaryDataByFilterResponse</a></li>
+        <li><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsRequest-class.html">AddTagsToBinaryDataByIDsRequest</a></li>
+        <li><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsResponse-class.html">AddTagsToBinaryDataByIDsResponse</a></li>
         <li><a href="../viam_protos.app.data/Annotations-class.html">Annotations</a></li>
         <li><a href="../viam_protos.app.data/BinaryData-class.html">BinaryData</a></li>
         <li><a href="../viam_protos.app.data/BinaryDataByFilterRequest-class.html">BinaryDataByFilterRequest</a></li>
         <li><a href="../viam_protos.app.data/BinaryDataByFilterResponse-class.html">BinaryDataByFilterResponse</a></li>
         <li><a href="../viam_protos.app.data/BinaryDataByIDsRequest-class.html">BinaryDataByIDsRequest</a></li>
         <li><a href="../viam_protos.app.data/BinaryDataByIDsResponse-class.html">BinaryDataByIDsResponse</a></li>
+        <li><a href="../viam_protos.app.data/BinaryID-class.html">BinaryID</a></li>
         <li><a href="../viam_protos.app.data/BinaryMetadata-class.html">BinaryMetadata</a></li>
         <li><a href="../viam_protos.app.data/BoundingBox-class.html">BoundingBox</a></li>
         <li><a href="../viam_protos.app.data/BoundingBoxLabelsByFilterRequest-class.html">BoundingBoxLabelsByFilterRequest</a></li>
@@ -1643,12 +1612,10 @@
         <li><a href="../viam_protos.app.data/Order-class.html">Order</a></li>
         <li><a href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDRequest-class.html">RemoveBoundingBoxFromImageByIDRequest</a></li>
         <li><a href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDResponse-class.html">RemoveBoundingBoxFromImageByIDResponse</a></li>
-        <li><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsRequest-class.html">RemoveTagsFromBinaryDataByFileIDsRequest</a></li>
-        <li><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsResponse-class.html">RemoveTagsFromBinaryDataByFileIDsResponse</a></li>
         <li><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterRequest-class.html">RemoveTagsFromBinaryDataByFilterRequest</a></li>
         <li><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterResponse-class.html">RemoveTagsFromBinaryDataByFilterResponse</a></li>
-        <li><a href="../viam_protos.app.data/Result-class.html">Result</a></li>
-        <li><a href="../viam_protos.app.data/Status-class.html">Status</a></li>
+        <li><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsRequest-class.html">RemoveTagsFromBinaryDataByIDsRequest</a></li>
+        <li><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsResponse-class.html">RemoveTagsFromBinaryDataByIDsResponse</a></li>
         <li><a href="../viam_protos.app.data/TabularData-class.html">TabularData</a></li>
         <li><a href="../viam_protos.app.data/TabularDataByFilterRequest-class.html">TabularDataByFilterRequest</a></li>
         <li><a href="../viam_protos.app.data/TabularDataByFilterResponse-class.html">TabularDataByFilterResponse</a></li>
@@ -1662,16 +1629,17 @@
       <li class="section-title"><a href="../viam_protos.app.data/viam_protos.app.data-library.html#constants">Constants</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/AddBoundingBoxToImageByIDRequest$json-constant.html">AddBoundingBoxToImageByIDRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/AddBoundingBoxToImageByIDResponse$json-constant.html">AddBoundingBoxToImageByIDResponse$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsRequest$json-constant.html">AddTagsToBinaryDataByFileIDsRequest$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByFileIDsResponse$json-constant.html">AddTagsToBinaryDataByFileIDsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByFilterRequest$json-constant.html">AddTagsToBinaryDataByFilterRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByFilterResponse$json-constant.html">AddTagsToBinaryDataByFilterResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByIDsRequest$json-constant.html">AddTagsToBinaryDataByIDsRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.data/AddTagsToBinaryDataByIDsResponse$json-constant.html">AddTagsToBinaryDataByIDsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/Annotations$json-constant.html">Annotations$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BinaryData$json-constant.html">BinaryData$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BinaryDataByFilterRequest$json-constant.html">BinaryDataByFilterRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BinaryDataByFilterResponse$json-constant.html">BinaryDataByFilterResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BinaryDataByIDsRequest$json-constant.html">BinaryDataByIDsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BinaryDataByIDsResponse$json-constant.html">BinaryDataByIDsResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.data/BinaryID$json-constant.html">BinaryID$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BinaryMetadata$json-constant.html">BinaryMetadata$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BoundingBox$json-constant.html">BoundingBox$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/BoundingBoxLabelsByFilterRequest$json-constant.html">BoundingBoxLabelsByFilterRequest$json</a></li>
@@ -1690,12 +1658,10 @@
         <li><a class="deprecated" href="../viam_protos.app.data/Order$json-constant.html">Order$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDRequest$json-constant.html">RemoveBoundingBoxFromImageByIDRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDResponse$json-constant.html">RemoveBoundingBoxFromImageByIDResponse$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsRequest$json-constant.html">RemoveTagsFromBinaryDataByFileIDsRequest$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFileIDsResponse$json-constant.html">RemoveTagsFromBinaryDataByFileIDsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterRequest$json-constant.html">RemoveTagsFromBinaryDataByFilterRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterResponse$json-constant.html">RemoveTagsFromBinaryDataByFilterResponse$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data/Result$json-constant.html">Result$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data/Status$json-constant.html">Status$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsRequest$json-constant.html">RemoveTagsFromBinaryDataByIDsRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsResponse$json-constant.html">RemoveTagsFromBinaryDataByIDsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/TabularData$json-constant.html">TabularData$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/TabularDataByFilterRequest$json-constant.html">TabularDataByFilterRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data/TabularDataByFilterResponse$json-constant.html">TabularDataByFilterResponse$json</a></li>
@@ -1707,16 +1673,17 @@
       <li class="section-title"><a href="../viam_protos.app.data/viam_protos.app.data-library.html#properties">Properties</a></li>
         <li><a href="../viam_protos.app.data/addBoundingBoxToImageByIDRequestDescriptor.html">addBoundingBoxToImageByIDRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/addBoundingBoxToImageByIDResponseDescriptor.html">addBoundingBoxToImageByIDResponseDescriptor</a></li>
-        <li><a href="../viam_protos.app.data/addTagsToBinaryDataByFileIDsRequestDescriptor.html">addTagsToBinaryDataByFileIDsRequestDescriptor</a></li>
-        <li><a href="../viam_protos.app.data/addTagsToBinaryDataByFileIDsResponseDescriptor.html">addTagsToBinaryDataByFileIDsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/addTagsToBinaryDataByFilterRequestDescriptor.html">addTagsToBinaryDataByFilterRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/addTagsToBinaryDataByFilterResponseDescriptor.html">addTagsToBinaryDataByFilterResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.data/addTagsToBinaryDataByIDsRequestDescriptor.html">addTagsToBinaryDataByIDsRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.data/addTagsToBinaryDataByIDsResponseDescriptor.html">addTagsToBinaryDataByIDsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/annotationsDescriptor.html">annotationsDescriptor</a></li>
         <li><a href="../viam_protos.app.data/binaryDataByFilterRequestDescriptor.html">binaryDataByFilterRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/binaryDataByFilterResponseDescriptor.html">binaryDataByFilterResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/binaryDataByIDsRequestDescriptor.html">binaryDataByIDsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/binaryDataByIDsResponseDescriptor.html">binaryDataByIDsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/binaryDataDescriptor.html">binaryDataDescriptor</a></li>
+        <li><a href="../viam_protos.app.data/binaryIDDescriptor.html">binaryIDDescriptor</a></li>
         <li><a href="../viam_protos.app.data/binaryMetadataDescriptor.html">binaryMetadataDescriptor</a></li>
         <li><a href="../viam_protos.app.data/boundingBoxDescriptor.html">boundingBoxDescriptor</a></li>
         <li><a href="../viam_protos.app.data/boundingBoxLabelsByFilterRequestDescriptor.html">boundingBoxLabelsByFilterRequestDescriptor</a></li>
@@ -1734,12 +1701,10 @@
         <li><a href="../viam_protos.app.data/orderDescriptor.html">orderDescriptor</a></li>
         <li><a href="../viam_protos.app.data/removeBoundingBoxFromImageByIDRequestDescriptor.html">removeBoundingBoxFromImageByIDRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/removeBoundingBoxFromImageByIDResponseDescriptor.html">removeBoundingBoxFromImageByIDResponseDescriptor</a></li>
-        <li><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFileIDsRequestDescriptor.html">removeTagsFromBinaryDataByFileIDsRequestDescriptor</a></li>
-        <li><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFileIDsResponseDescriptor.html">removeTagsFromBinaryDataByFileIDsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFilterRequestDescriptor.html">removeTagsFromBinaryDataByFilterRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/removeTagsFromBinaryDataByFilterResponseDescriptor.html">removeTagsFromBinaryDataByFilterResponseDescriptor</a></li>
-        <li><a href="../viam_protos.app.data/resultDescriptor.html">resultDescriptor</a></li>
-        <li><a href="../viam_protos.app.data/statusDescriptor.html">statusDescriptor</a></li>
+        <li><a href="../viam_protos.app.data/removeTagsFromBinaryDataByIDsRequestDescriptor.html">removeTagsFromBinaryDataByIDsRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.data/removeTagsFromBinaryDataByIDsResponseDescriptor.html">removeTagsFromBinaryDataByIDsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/tabularDataByFilterRequestDescriptor.html">tabularDataByFilterRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.data/tabularDataByFilterResponseDescriptor.html">tabularDataByFilterResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data/tabularDataDescriptor.html">tabularDataDescriptor</a></li>

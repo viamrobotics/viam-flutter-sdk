@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">GetPropertiesResponse$json</span> top-level constant 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -72,11 +74,11 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@$core.Deprecated(&#39;Use getPropertiesResponseDescriptor instead&#39;)
-const GetPropertiesResponse$json = const {
+const GetPropertiesResponse$json = {
   &#39;1&#39;: &#39;GetPropertiesResponse&#39;,
-  &#39;2&#39;: const [
-    const {&#39;1&#39;: &#39;ticks_count_supported&#39;, &#39;3&#39;: 1, &#39;4&#39;: 1, &#39;5&#39;: 8, &#39;10&#39;: &#39;ticksCountSupported&#39;},
-    const {&#39;1&#39;: &#39;angle_degrees_supported&#39;, &#39;3&#39;: 2, &#39;4&#39;: 1, &#39;5&#39;: 8, &#39;10&#39;: &#39;angleDegreesSupported&#39;},
+  &#39;2&#39;: [
+    {&#39;1&#39;: &#39;ticks_count_supported&#39;, &#39;3&#39;: 1, &#39;4&#39;: 1, &#39;5&#39;: 8, &#39;10&#39;: &#39;ticksCountSupported&#39;},
+    {&#39;1&#39;: &#39;angle_degrees_supported&#39;, &#39;3&#39;: 2, &#39;4&#39;: 1, &#39;5&#39;: 8, &#39;10&#39;: &#39;angleDegreesSupported&#39;},
   ],
 };</code></pre>
 </section>

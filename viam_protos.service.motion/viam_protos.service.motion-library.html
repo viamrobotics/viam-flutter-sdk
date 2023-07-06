@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.service.motion</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -221,7 +223,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CollisionSpecification&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;allows&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CollisionSpecification&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;allows&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.motion.v1.Collisio…</code></span>
     </div>
 </dd>
 
@@ -236,7 +238,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AllowedFrameCollisions&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;frame1&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;frame1&#39;}, …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AllowedFrameCollisions&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;frame1&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;frame1&#39;}, {&#39;1&#39; : &#3…</code></span>
     </div>
 </dd>
 
@@ -251,7 +253,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Constraints&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;linear_constraint&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Constraints&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;linear_constraint&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.motion.v1.LinearCo…</code></span>
     </div>
 </dd>
 
@@ -266,7 +268,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPoseRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPoseRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;component_…</code></span>
     </div>
 </dd>
 
@@ -281,7 +283,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPoseResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;pose&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.PoseInF…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPoseResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;pose&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.PoseInFrame&#39;, &#39;10…</code></span>
     </div>
 </dd>
 
@@ -296,7 +298,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;LinearConstraint&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;line_tolerance_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 2, &#39;9&#39; : 0, &#39;10&#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;LinearConstraint&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;line_tolerance_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 2, &#39;9&#39; : 0, &#39;10&#39; : &#39;lineTolera…</code></span>
     </div>
 </dd>
 
@@ -311,7 +313,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveOnGlobeRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveOnGlobeRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;destin…</code></span>
     </div>
 </dd>
 
@@ -326,7 +328,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveOnGlobeResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveOnGlobeResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -341,7 +343,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveOnMapRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveOnMapRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;destinat…</code></span>
     </div>
 </dd>
 
@@ -356,7 +358,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveOnMapResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveOnMapResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -371,7 +373,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&#39;1&#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;destination&#…</code></span>
     </div>
 </dd>
 
@@ -386,7 +388,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -401,7 +403,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveSingleComponentRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveSingleComponentRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#3…</code></span>
     </div>
 </dd>
 
@@ -416,7 +418,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;MoveSingleComponentResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MoveSingleComponentResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;success&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;success&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -431,7 +433,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;OrientationConstraint&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;orientation_tolerance_degs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 2, &#39;9&#39; : 0…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;OrientationConstraint&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;orientation_tolerance_degs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 2, &#39;9&#39; : 0, &#39;10&#39; : &…</code></span>
     </div>
 </dd>
 
@@ -627,10 +629,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>

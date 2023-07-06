@@ -40,8 +40,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -51,7 +54,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-constructor">MovementSensorServiceBase</span> constructor 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
@@ -66,77 +68,61 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MovementSensorServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.GetLinearVelocityRequest,
-          $0.GetLinearVelocityResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$0.GetLinearVelocityRequest, $0.GetLinearVelocityResponse&gt;(
       &#39;GetLinearVelocity&#39;,
       getLinearVelocity_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $0.GetLinearVelocityRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetLinearVelocityRequest.fromBuffer(value),
       ($0.GetLinearVelocityResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetAngularVelocityRequest,
-          $0.GetAngularVelocityResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$0.GetAngularVelocityRequest, $0.GetAngularVelocityResponse&gt;(
       &#39;GetAngularVelocity&#39;,
       getAngularVelocity_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $0.GetAngularVelocityRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetAngularVelocityRequest.fromBuffer(value),
       ($0.GetAngularVelocityResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetCompassHeadingRequest,
-          $0.GetCompassHeadingResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$0.GetCompassHeadingRequest, $0.GetCompassHeadingResponse&gt;(
       &#39;GetCompassHeading&#39;,
       getCompassHeading_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $0.GetCompassHeadingRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetCompassHeadingRequest.fromBuffer(value),
       ($0.GetCompassHeadingResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetOrientationRequest,
-          $0.GetOrientationResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$0.GetOrientationRequest, $0.GetOrientationResponse&gt;(
       &#39;GetOrientation&#39;,
       getOrientation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $0.GetOrientationRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetOrientationRequest.fromBuffer(value),
       ($0.GetOrientationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.GetPositionRequest, $0.GetPositionResponse&gt;(
-          &#39;GetPosition&#39;,
-          getPosition_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.GetPositionRequest.fromBuffer(value),
-          ($0.GetPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.GetPropertiesRequest, $0.GetPropertiesResponse&gt;(
-          &#39;GetProperties&#39;,
-          getProperties_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.GetPropertiesRequest.fromBuffer(value),
-          ($0.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.GetAccuracyRequest, $0.GetAccuracyResponse&gt;(
-          &#39;GetAccuracy&#39;,
-          getAccuracy_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.GetAccuracyRequest.fromBuffer(value),
-          ($0.GetAccuracyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetLinearAccelerationRequest,
-          $0.GetLinearAccelerationResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPositionRequest, $0.GetPositionResponse&gt;(
+      &#39;GetPosition&#39;,
+      getPosition_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPositionRequest.fromBuffer(value),
+      ($0.GetPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPropertiesRequest, $0.GetPropertiesResponse&gt;(
+      &#39;GetProperties&#39;,
+      getProperties_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPropertiesRequest.fromBuffer(value),
+      ($0.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetAccuracyRequest, $0.GetAccuracyResponse&gt;(
+      &#39;GetAccuracy&#39;,
+      getAccuracy_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetAccuracyRequest.fromBuffer(value),
+      ($0.GetAccuracyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetLinearAccelerationRequest, $0.GetLinearAccelerationResponse&gt;(
       &#39;GetLinearAcceleration&#39;,
       getLinearAcceleration_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $0.GetLinearAccelerationRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetLinearAccelerationRequest.fromBuffer(value),
       ($0.GetLinearAccelerationResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
@@ -145,15 +131,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
       ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$1.GetGeometriesRequest, $1.GetGeometriesResponse&gt;(
-          &#39;GetGeometries&#39;,
-          getGeometries_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $1.GetGeometriesRequest.fromBuffer(value),
-          ($1.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.GetGeometriesRequest, $1.GetGeometriesResponse&gt;(
+      &#39;GetGeometries&#39;,
+      getGeometries_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetGeometriesRequest.fromBuffer(value),
+      ($1.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
@@ -190,9 +174,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_protos.component.movementsensor/MovementSensorServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../../viam_protos.component.movementsensor/MovementSensorServiceBase/doCommand.html">doCommand</a></li>
           <li><a href="../../viam_protos.component.movementsensor/MovementSensorServiceBase/doCommand_Pre.html">doCommand_Pre</a></li>
           <li><a href="../../viam_protos.component.movementsensor/MovementSensorServiceBase/getAccuracy.html">getAccuracy</a></li>

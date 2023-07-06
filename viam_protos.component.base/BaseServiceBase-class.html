@@ -30,7 +30,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
     <li><a href="../viam_protos.component.base/viam_protos.component.base-library.html">viam_protos.component.base</a></li>
-    <li class="self-crumb">BaseServiceBase abstract class</li>
+    <li class="self-crumb">BaseServiceBase class</li>
   </ol>
   <div class="self-name">BaseServiceBase</div>
   <form class="search navbar-right" role="search">
@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,7 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">BaseServiceBase</span> class 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+    <a href="https://dart.dev/language/classes#abstract-classes" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
  
 </h1></div>
 
@@ -64,7 +67,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service-class.html">Service</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service-class.html">Service</a></li>
       <li>BaseServiceBase</li>
     </ul>
   </dd>
@@ -75,6 +78,12 @@
 
 
         
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GrpcServiceName-class.html">GrpcServiceName</a>(&#39;viam.component.base.v1.BaseService&#39;)</li>
+    </ul>
+  </dd>
 
 
       </dl>
@@ -141,7 +150,7 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$addMethod" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$addMethod-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceMethod-class.html">ServiceMethod</a></span> <span class="parameter-name">method</span></span>)
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$addMethod-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceMethod-class.html">ServiceMethod</a></span> <span class="parameter-name">method</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -154,8 +163,8 @@
 </dd>
 
         <dt id="$lookupMethod" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$lookupMethod-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceMethod-class.html">ServiceMethod</a>?</span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$lookupMethod-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceMethod-class.html">ServiceMethod</a>?</span>
   </span>
   
 
@@ -167,7 +176,7 @@
 </dd>
 
         <dt id="$onMetadata" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></span><span class="signature">(<wbr><span class="parameter" id="$onMetadata-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">context</span></span>)
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></span><span class="signature">(<wbr><span class="parameter" id="$onMetadata-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">context</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -180,7 +189,7 @@
 </dd>
 
         <dt id="doCommand" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/doCommand.html">doCommand</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand-param-request"><span class="type-annotation"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/doCommand.html">doCommand</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand-param-request"><span class="type-annotation"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></span>&gt;</span></span>
   </span>
   
@@ -193,7 +202,7 @@
 </dd>
 
         <dt id="doCommand_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/doCommand_Pre.html">doCommand_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/doCommand_Pre.html">doCommand_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="doCommand_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></span>&gt;</span></span>
   </span>
   
@@ -206,7 +215,7 @@
 </dd>
 
         <dt id="getGeometries" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/getGeometries.html">getGeometries</a></span><span class="signature">(<wbr><span class="parameter" id="getGeometries-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getGeometries-param-request"><span class="type-annotation"><a href="../viam_protos.common.common/GetGeometriesRequest-class.html">GetGeometriesRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/getGeometries.html">getGeometries</a></span><span class="signature">(<wbr><span class="parameter" id="getGeometries-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getGeometries-param-request"><span class="type-annotation"><a href="../viam_protos.common.common/GetGeometriesRequest-class.html">GetGeometriesRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GetGeometriesResponse-class.html">GetGeometriesResponse</a></span>&gt;</span></span>
   </span>
   
@@ -219,7 +228,7 @@
 </dd>
 
         <dt id="getGeometries_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/getGeometries_Pre.html">getGeometries_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getGeometries_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getGeometries_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GetGeometriesRequest-class.html">GetGeometriesRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/getGeometries_Pre.html">getGeometries_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getGeometries_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getGeometries_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GetGeometriesRequest-class.html">GetGeometriesRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GetGeometriesResponse-class.html">GetGeometriesResponse</a></span>&gt;</span></span>
   </span>
   
@@ -231,8 +240,34 @@
 
 </dd>
 
+        <dt id="getProperties" class="callable">
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/getProperties.html">getProperties</a></span><span class="signature">(<wbr><span class="parameter" id="getProperties-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getProperties-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/GetPropertiesRequest-class.html">GetPropertiesRequest</a></span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/GetPropertiesResponse-class.html">GetPropertiesResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="getProperties_Pre" class="callable">
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/getProperties_Pre.html">getProperties_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getProperties_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getProperties_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/GetPropertiesRequest-class.html">GetPropertiesRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/GetPropertiesResponse-class.html">GetPropertiesResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="isMoving" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/isMoving.html">isMoving</a></span><span class="signature">(<wbr><span class="parameter" id="isMoving-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="isMoving-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/IsMovingRequest-class.html">IsMovingRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/isMoving.html">isMoving</a></span><span class="signature">(<wbr><span class="parameter" id="isMoving-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="isMoving-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/IsMovingRequest-class.html">IsMovingRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/IsMovingResponse-class.html">IsMovingResponse</a></span>&gt;</span></span>
   </span>
   
@@ -245,7 +280,7 @@
 </dd>
 
         <dt id="isMoving_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/isMoving_Pre.html">isMoving_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="isMoving_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="isMoving_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/IsMovingRequest-class.html">IsMovingRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/isMoving_Pre.html">isMoving_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="isMoving_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="isMoving_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/IsMovingRequest-class.html">IsMovingRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/IsMovingResponse-class.html">IsMovingResponse</a></span>&gt;</span></span>
   </span>
   
@@ -258,7 +293,7 @@
 </dd>
 
         <dt id="moveStraight" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/moveStraight.html">moveStraight</a></span><span class="signature">(<wbr><span class="parameter" id="moveStraight-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="moveStraight-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/MoveStraightRequest-class.html">MoveStraightRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/moveStraight.html">moveStraight</a></span><span class="signature">(<wbr><span class="parameter" id="moveStraight-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="moveStraight-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/MoveStraightRequest-class.html">MoveStraightRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/MoveStraightResponse-class.html">MoveStraightResponse</a></span>&gt;</span></span>
   </span>
   
@@ -271,7 +306,7 @@
 </dd>
 
         <dt id="moveStraight_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/moveStraight_Pre.html">moveStraight_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="moveStraight_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="moveStraight_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/MoveStraightRequest-class.html">MoveStraightRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/moveStraight_Pre.html">moveStraight_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="moveStraight_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="moveStraight_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/MoveStraightRequest-class.html">MoveStraightRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/MoveStraightResponse-class.html">MoveStraightResponse</a></span>&gt;</span></span>
   </span>
   
@@ -291,13 +326,13 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a non-existent method or property is accessed.
+  Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="setPower" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setPower.html">setPower</a></span><span class="signature">(<wbr><span class="parameter" id="setPower-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setPower-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/SetPowerRequest-class.html">SetPowerRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setPower.html">setPower</a></span><span class="signature">(<wbr><span class="parameter" id="setPower-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setPower-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/SetPowerRequest-class.html">SetPowerRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetPowerResponse-class.html">SetPowerResponse</a></span>&gt;</span></span>
   </span>
   
@@ -310,7 +345,7 @@
 </dd>
 
         <dt id="setPower_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setPower_Pre.html">setPower_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="setPower_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setPower_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetPowerRequest-class.html">SetPowerRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setPower_Pre.html">setPower_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="setPower_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setPower_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetPowerRequest-class.html">SetPowerRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetPowerResponse-class.html">SetPowerResponse</a></span>&gt;</span></span>
   </span>
   
@@ -323,7 +358,7 @@
 </dd>
 
         <dt id="setVelocity" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setVelocity.html">setVelocity</a></span><span class="signature">(<wbr><span class="parameter" id="setVelocity-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setVelocity-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/SetVelocityRequest-class.html">SetVelocityRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setVelocity.html">setVelocity</a></span><span class="signature">(<wbr><span class="parameter" id="setVelocity-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setVelocity-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/SetVelocityRequest-class.html">SetVelocityRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetVelocityResponse-class.html">SetVelocityResponse</a></span>&gt;</span></span>
   </span>
   
@@ -336,7 +371,7 @@
 </dd>
 
         <dt id="setVelocity_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setVelocity_Pre.html">setVelocity_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="setVelocity_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setVelocity_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetVelocityRequest-class.html">SetVelocityRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/setVelocity_Pre.html">setVelocity_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="setVelocity_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="setVelocity_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetVelocityRequest-class.html">SetVelocityRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SetVelocityResponse-class.html">SetVelocityResponse</a></span>&gt;</span></span>
   </span>
   
@@ -349,7 +384,7 @@
 </dd>
 
         <dt id="spin" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/spin.html">spin</a></span><span class="signature">(<wbr><span class="parameter" id="spin-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="spin-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/SpinRequest-class.html">SpinRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/spin.html">spin</a></span><span class="signature">(<wbr><span class="parameter" id="spin-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="spin-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/SpinRequest-class.html">SpinRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SpinResponse-class.html">SpinResponse</a></span>&gt;</span></span>
   </span>
   
@@ -362,7 +397,7 @@
 </dd>
 
         <dt id="spin_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/spin_Pre.html">spin_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="spin_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="spin_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SpinRequest-class.html">SpinRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/spin_Pre.html">spin_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="spin_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="spin_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SpinRequest-class.html">SpinRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/SpinResponse-class.html">SpinResponse</a></span>&gt;</span></span>
   </span>
   
@@ -375,7 +410,7 @@
 </dd>
 
         <dt id="stop" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/stop.html">stop</a></span><span class="signature">(<wbr><span class="parameter" id="stop-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="stop-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/StopRequest-class.html">StopRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/stop.html">stop</a></span><span class="signature">(<wbr><span class="parameter" id="stop-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="stop-param-request"><span class="type-annotation"><a href="../viam_protos.component.base/StopRequest-class.html">StopRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/StopResponse-class.html">StopResponse</a></span>&gt;</span></span>
   </span>
   
@@ -388,7 +423,7 @@
 </dd>
 
         <dt id="stop_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/stop_Pre.html">stop_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="stop_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="stop_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/StopRequest-class.html">StopRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.component.base/BaseServiceBase/stop_Pre.html">stop_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="stop_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="stop_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/StopRequest-class.html">StopRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.component.base/StopResponse-class.html">StopResponse</a></span>&gt;</span></span>
   </span>
   
@@ -453,7 +488,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">viam_sdk</a></li>
   <li><a href="../viam_protos.component.base/viam_protos.component.base-library.html">viam_protos.component.base</a></li>
-  <li class="self-crumb">BaseServiceBase abstract class</li>
+  <li class="self-crumb">BaseServiceBase class</li>
 </ol>
 
 
@@ -462,6 +497,8 @@
       <li class="section-title"><a href="../viam_protos.component.base/viam_protos.component.base-library.html#classes">Classes</a></li>
         <li><a href="../viam_protos.component.base/BaseServiceBase-class.html">BaseServiceBase</a></li>
         <li><a href="../viam_protos.component.base/BaseServiceClient-class.html">BaseServiceClient</a></li>
+        <li><a href="../viam_protos.component.base/GetPropertiesRequest-class.html">GetPropertiesRequest</a></li>
+        <li><a href="../viam_protos.component.base/GetPropertiesResponse-class.html">GetPropertiesResponse</a></li>
         <li><a href="../viam_protos.component.base/IsMovingRequest-class.html">IsMovingRequest</a></li>
         <li><a href="../viam_protos.component.base/IsMovingResponse-class.html">IsMovingResponse</a></li>
         <li><a href="../viam_protos.component.base/MoveStraightRequest-class.html">MoveStraightRequest</a></li>
@@ -478,6 +515,8 @@
 
 
       <li class="section-title"><a href="../viam_protos.component.base/viam_protos.component.base-library.html#constants">Constants</a></li>
+        <li><a class="deprecated" href="../viam_protos.component.base/GetPropertiesRequest$json-constant.html">GetPropertiesRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.component.base/GetPropertiesResponse$json-constant.html">GetPropertiesResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.component.base/IsMovingRequest$json-constant.html">IsMovingRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.component.base/IsMovingResponse$json-constant.html">IsMovingResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.component.base/MoveStraightRequest$json-constant.html">MoveStraightRequest$json</a></li>
@@ -492,6 +531,8 @@
         <li><a class="deprecated" href="../viam_protos.component.base/StopResponse$json-constant.html">StopResponse$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.component.base/viam_protos.component.base-library.html#properties">Properties</a></li>
+        <li><a href="../viam_protos.component.base/getPropertiesRequestDescriptor.html">getPropertiesRequestDescriptor</a></li>
+        <li><a href="../viam_protos.component.base/getPropertiesResponseDescriptor.html">getPropertiesResponseDescriptor</a></li>
         <li><a href="../viam_protos.component.base/isMovingRequestDescriptor.html">isMovingRequestDescriptor</a></li>
         <li><a href="../viam_protos.component.base/isMovingResponseDescriptor.html">isMovingResponseDescriptor</a></li>
         <li><a href="../viam_protos.component.base/moveStraightRequestDescriptor.html">moveStraightRequestDescriptor</a></li>
@@ -527,13 +568,15 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../viam_protos.component.base/BaseServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/doCommand.html">doCommand</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/doCommand_Pre.html">doCommand_Pre</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/getGeometries.html">getGeometries</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/getGeometries_Pre.html">getGeometries_Pre</a></li>
+          <li><a href="../viam_protos.component.base/BaseServiceBase/getProperties.html">getProperties</a></li>
+          <li><a href="../viam_protos.component.base/BaseServiceBase/getProperties_Pre.html">getProperties_Pre</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/isMoving.html">isMoving</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/isMoving_Pre.html">isMoving_Pre</a></li>
           <li><a href="../viam_protos.component.base/BaseServiceBase/moveStraight.html">moveStraight</a></li>

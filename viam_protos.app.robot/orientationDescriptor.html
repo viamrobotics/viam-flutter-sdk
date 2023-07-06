@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">orientationDescriptor</span> top-level property 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -69,7 +71,25 @@
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List orientationDescriptor = $convert.base64Decode(&#39;CgtPcmllbnRhdGlvbhJPCg5ub19vcmllbnRhdGlvbhgBIAEoCzImLnZpYW0uYXBwLnYxLk9yaWVudGF0aW9uLk5vT3JpZW50YXRpb25IAFINbm9PcmllbnRhdGlvbhJaCg52ZWN0b3JfcmFkaWFucxgCIAEoCzIxLnZpYW0uYXBwLnYxLk9yaWVudGF0aW9uLk9yaWVudGF0aW9uVmVjdG9yUmFkaWFuc0gAUg12ZWN0b3JSYWRpYW5zEloKDnZlY3Rvcl9kZWdyZWVzGAMgASgLMjEudmlhbS5hcHAudjEuT3JpZW50YXRpb24uT3JpZW50YXRpb25WZWN0b3JEZWdyZWVzSABSDXZlY3RvckRlZ3JlZXMSSQoMZXVsZXJfYW5nbGVzGAQgASgLMiQudmlhbS5hcHAudjEuT3JpZW50YXRpb24uRXVsZXJBbmdsZXNIAFILZXVsZXJBbmdsZXMSRgoLYXhpc19hbmdsZXMYBSABKAsyIy52aWFtLmFwcC52MS5PcmllbnRhdGlvbi5BeGlzQW5nbGVzSABSCmF4aXNBbmdsZXMSRQoKcXVhdGVybmlvbhgGIAEoCzIjLnZpYW0uYXBwLnYxLk9yaWVudGF0aW9uLlF1YXRlcm5pb25IAFIKcXVhdGVybmlvbhoPCg1Ob09yaWVudGF0aW9uGmoKGE9yaWVudGF0aW9uVmVjdG9yUmFkaWFucxIkCgV0aGV0YRgBIAEoAUIOmoSeAwlqc29uOiJ0aCJSBXRoZXRhEgwKAXgYAiABKAFSAXgSDAoBeRgDIAEoAVIBeRIMCgF6GAQgASgBUgF6GmoKGE9yaWVudGF0aW9uVmVjdG9yRGVncmVlcxIkCgV0aGV0YRgBIAEoAUIOmoSeAwlqc29uOiJ0aCJSBXRoZXRhEgwKAXgYAiABKAFSAXgSDAoBeRgDIAEoAVIBeRIMCgF6GAQgASgBUgF6GkkKC0V1bGVyQW5nbGVzEhIKBHJvbGwYASABKAFSBHJvbGwSFAoFcGl0Y2gYAiABKAFSBXBpdGNoEhAKA3lhdxgDIAEoAVIDeWF3GlwKCkF4aXNBbmdsZXMSJAoFdGhldGEYASABKAFCDpqEngMJanNvbjoidGgiUgV0aGV0YRIMCgF4GAIgASgBUgF4EgwKAXkYAyABKAFSAXkSDAoBehgEIAEoAVIBehpECgpRdWF0ZXJuaW9uEgwKAXcYASABKAFSAXcSDAoBeBgCIAEoAVIBeBIMCgF5GAMgASgBUgF5EgwKAXoYBCABKAFSAXpCBgoEdHlwZQ==&#39;);</code></pre>
+  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List orientationDescriptor = $convert.base64Decode(
+    &#39;CgtPcmllbnRhdGlvbhJPCg5ub19vcmllbnRhdGlvbhgBIAEoCzImLnZpYW0uYXBwLnYxLk9yaW&#39;
+    &#39;VudGF0aW9uLk5vT3JpZW50YXRpb25IAFINbm9PcmllbnRhdGlvbhJaCg52ZWN0b3JfcmFkaWFu&#39;
+    &#39;cxgCIAEoCzIxLnZpYW0uYXBwLnYxLk9yaWVudGF0aW9uLk9yaWVudGF0aW9uVmVjdG9yUmFkaW&#39;
+    &#39;Fuc0gAUg12ZWN0b3JSYWRpYW5zEloKDnZlY3Rvcl9kZWdyZWVzGAMgASgLMjEudmlhbS5hcHAu&#39;
+    &#39;djEuT3JpZW50YXRpb24uT3JpZW50YXRpb25WZWN0b3JEZWdyZWVzSABSDXZlY3RvckRlZ3JlZX&#39;
+    &#39;MSSQoMZXVsZXJfYW5nbGVzGAQgASgLMiQudmlhbS5hcHAudjEuT3JpZW50YXRpb24uRXVsZXJB&#39;
+    &#39;bmdsZXNIAFILZXVsZXJBbmdsZXMSRgoLYXhpc19hbmdsZXMYBSABKAsyIy52aWFtLmFwcC52MS&#39;
+    &#39;5PcmllbnRhdGlvbi5BeGlzQW5nbGVzSABSCmF4aXNBbmdsZXMSRQoKcXVhdGVybmlvbhgGIAEo&#39;
+    &#39;CzIjLnZpYW0uYXBwLnYxLk9yaWVudGF0aW9uLlF1YXRlcm5pb25IAFIKcXVhdGVybmlvbhoPCg&#39;
+    &#39;1Ob09yaWVudGF0aW9uGmoKGE9yaWVudGF0aW9uVmVjdG9yUmFkaWFucxIkCgV0aGV0YRgBIAEo&#39;
+    &#39;AUIOmoSeAwlqc29uOiJ0aCJSBXRoZXRhEgwKAXgYAiABKAFSAXgSDAoBeRgDIAEoAVIBeRIMCg&#39;
+    &#39;F6GAQgASgBUgF6GmoKGE9yaWVudGF0aW9uVmVjdG9yRGVncmVlcxIkCgV0aGV0YRgBIAEoAUIO&#39;
+    &#39;moSeAwlqc29uOiJ0aCJSBXRoZXRhEgwKAXgYAiABKAFSAXgSDAoBeRgDIAEoAVIBeRIMCgF6GA&#39;
+    &#39;QgASgBUgF6GkkKC0V1bGVyQW5nbGVzEhIKBHJvbGwYASABKAFSBHJvbGwSFAoFcGl0Y2gYAiAB&#39;
+    &#39;KAFSBXBpdGNoEhAKA3lhdxgDIAEoAVIDeWF3GlwKCkF4aXNBbmdsZXMSJAoFdGhldGEYASABKA&#39;
+    &#39;FCDpqEngMJanNvbjoidGgiUgV0aGV0YRIMCgF4GAIgASgBUgF4EgwKAXkYAyABKAFSAXkSDAoB&#39;
+    &#39;ehgEIAEoAVIBehpECgpRdWF0ZXJuaW9uEgwKAXcYASABKAFSAXcSDAoBeBgCIAEoAVIBeBIMCg&#39;
+    &#39;F5GAMgASgBUgF5EgwKAXoYBCABKAFSAXpCBgoEdHlwZQ==&#39;);</code></pre>
 </section>
 
 
@@ -130,6 +150,7 @@
         <li><a href="../viam_protos.app.robot/RobotServiceBase-class.html">RobotServiceBase</a></li>
         <li><a href="../viam_protos.app.robot/RobotServiceClient-class.html">RobotServiceClient</a></li>
         <li><a href="../viam_protos.app.robot/ServiceConfig-class.html">ServiceConfig</a></li>
+        <li><a href="../viam_protos.app.robot/SessionsConfig-class.html">SessionsConfig</a></li>
         <li><a href="../viam_protos.app.robot/Translation-class.html">Translation</a></li>
 
 
@@ -170,6 +191,7 @@
         <li><a class="deprecated" href="../viam_protos.app.robot/ResourceLevelServiceConfig$json-constant.html">ResourceLevelServiceConfig$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.robot/RobotConfig$json-constant.html">RobotConfig$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.robot/ServiceConfig$json-constant.html">ServiceConfig$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.robot/SessionsConfig$json-constant.html">SessionsConfig$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.robot/Translation$json-constant.html">Translation$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html#properties">Properties</a></li>
@@ -201,6 +223,7 @@
         <li><a href="../viam_protos.app.robot/resourceLevelServiceConfigDescriptor.html">resourceLevelServiceConfigDescriptor</a></li>
         <li><a href="../viam_protos.app.robot/robotConfigDescriptor.html">robotConfigDescriptor</a></li>
         <li><a href="../viam_protos.app.robot/serviceConfigDescriptor.html">serviceConfigDescriptor</a></li>
+        <li><a href="../viam_protos.app.robot/sessionsConfigDescriptor.html">sessionsConfigDescriptor</a></li>
         <li><a href="../viam_protos.app.robot/translationDescriptor.html">translationDescriptor</a></li>
 
 

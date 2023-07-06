@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">trainingJobMetadataDescriptor</span> top-level property 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -69,7 +71,21 @@
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decode(&#39;ChNUcmFpbmluZ0pvYk1ldGFkYXRhEm4KB3JlcXVlc3QYASABKAsyMC52aWFtLmFwcC5tbHRyYWluaW5nLnYxLlN1Ym1pdFRyYWluaW5nSm9iUmVxdWVzdEIimoSeAx1ic29uOiJyZXF1ZXN0IiBqc29uOiJyZXF1ZXN0IlIHcmVxdWVzdBJgCgZzdGF0dXMYAiABKA4yJi52aWFtLmFwcC5tbHRyYWluaW5nLnYxLlRyYWluaW5nU3RhdHVzQiCahJ4DG2Jzb246InN0YXR1cyIganNvbjoic3RhdHVzIlIGc3RhdHVzEmMKCmNyZWF0ZWRfb24YAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQiiahJ4DI2Jzb246ImNyZWF0ZWRfb24iIGpzb246ImNyZWF0ZWRfb24iUgljcmVhdGVkT24SbwoNbGFzdF9tb2RpZmllZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCLpqEngMpYnNvbjoibGFzdF9tb2RpZmllZCIganNvbjoibGFzdF9tb2RpZmllZCJSDGxhc3RNb2RpZmllZBJaCg9zeW5jZWRfbW9kZWxfaWQYBSABKAlCMpqEngMtYnNvbjoic3luY2VkX21vZGVsX2lkIiBqc29uOiJzeW5jZWRfbW9kZWxfaWQiUg1zeW5jZWRNb2RlbElkEkcKCnVzZXJfZW1haWwYBiABKAlCKJqEngMjYnNvbjoidXNlcl9lbWFpbCIganNvbjoidXNlcl9lbWFpbCJSCXVzZXJFbWFpbBIzCgJpZBgHIAEoCUIjmoSeAx5ic29uOiJfaWQiIGpzb246ImlkLG9taXRlbXB0eSJSAmlk&#39;);</code></pre>
+  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decode(
+    &#39;ChNUcmFpbmluZ0pvYk1ldGFkYXRhEm4KB3JlcXVlc3QYASABKAsyMC52aWFtLmFwcC5tbHRyYW&#39;
+    &#39;luaW5nLnYxLlN1Ym1pdFRyYWluaW5nSm9iUmVxdWVzdEIimoSeAx1ic29uOiJyZXF1ZXN0IiBq&#39;
+    &#39;c29uOiJyZXF1ZXN0IlIHcmVxdWVzdBJgCgZzdGF0dXMYAiABKA4yJi52aWFtLmFwcC5tbHRyYW&#39;
+    &#39;luaW5nLnYxLlRyYWluaW5nU3RhdHVzQiCahJ4DG2Jzb246InN0YXR1cyIganNvbjoic3RhdHVz&#39;
+    &#39;IlIGc3RhdHVzEmMKCmNyZWF0ZWRfb24YAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW&#39;
+    &#39;1wQiiahJ4DI2Jzb246ImNyZWF0ZWRfb24iIGpzb246ImNyZWF0ZWRfb24iUgljcmVhdGVkT24S&#39;
+    &#39;bwoNbGFzdF9tb2RpZmllZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCLpqEng&#39;
+    &#39;MpYnNvbjoibGFzdF9tb2RpZmllZCIganNvbjoibGFzdF9tb2RpZmllZCJSDGxhc3RNb2RpZmll&#39;
+    &#39;ZBJaCg9zeW5jZWRfbW9kZWxfaWQYBSABKAlCMpqEngMtYnNvbjoic3luY2VkX21vZGVsX2lkIi&#39;
+    &#39;Bqc29uOiJzeW5jZWRfbW9kZWxfaWQiUg1zeW5jZWRNb2RlbElkEkcKCnVzZXJfZW1haWwYBiAB&#39;
+    &#39;KAlCKJqEngMjYnNvbjoidXNlcl9lbWFpbCIganNvbjoidXNlcl9lbWFpbCJSCXVzZXJFbWFpbB&#39;
+    &#39;IzCgJpZBgHIAEoCUIjmoSeAx5ic29uOiJfaWQiIGpzb246ImlkLG9taXRlbXB0eSJSAmlkEmMK&#39;
+    &#39;DGVycm9yX3N0YXR1cxgIIAEoCzISLmdvb2dsZS5ycGMuU3RhdHVzQiyahJ4DJ2Jzb246ImVycm&#39;
+    &#39;9yX3N0YXR1cyIganNvbjoiZXJyb3Jfc3RhdHVzIlILZXJyb3JTdGF0dXM=&#39;);</code></pre>
 </section>
 
 

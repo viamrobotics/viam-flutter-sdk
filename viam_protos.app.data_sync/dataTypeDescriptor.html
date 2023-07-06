@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">dataTypeDescriptor</span> top-level property 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -69,7 +71,10 @@
         
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List dataTypeDescriptor = $convert.base64Decode(&#39;CghEYXRhVHlwZRIZChVEQVRBX1RZUEVfVU5TUEVDSUZJRUQQABIbChdEQVRBX1RZUEVfQklOQVJZX1NFTlNPUhABEhwKGERBVEFfVFlQRV9UQUJVTEFSX1NFTlNPUhACEhIKDkRBVEFfVFlQRV9GSUxFEAM=&#39;);</code></pre>
+  <pre class="language-dart"><code class="language-dart">final $typed_data.Uint8List dataTypeDescriptor = $convert.base64Decode(
+    &#39;CghEYXRhVHlwZRIZChVEQVRBX1RZUEVfVU5TUEVDSUZJRUQQABIbChdEQVRBX1RZUEVfQklOQV&#39;
+    &#39;JZX1NFTlNPUhABEhwKGERBVEFfVFlQRV9UQUJVTEFSX1NFTlNPUhACEhIKDkRBVEFfVFlQRV9G&#39;
+    &#39;SUxFEAM=&#39;);</code></pre>
 </section>
 
 
@@ -93,7 +98,6 @@
     <h5>viam_protos.app.data_sync library</h5>
     <ol>
       <li class="section-title"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html#classes">Classes</a></li>
-        <li><a href="../viam_protos.app.data_sync/BinaryCapture-class.html">BinaryCapture</a></li>
         <li><a href="../viam_protos.app.data_sync/CaptureInterval-class.html">CaptureInterval</a></li>
         <li><a href="../viam_protos.app.data_sync/DataCaptureMetadata-class.html">DataCaptureMetadata</a></li>
         <li><a href="../viam_protos.app.data_sync/DataCaptureUploadRequest-class.html">DataCaptureUploadRequest</a></li>
@@ -106,14 +110,11 @@
         <li><a href="../viam_protos.app.data_sync/FileUploadResponse-class.html">FileUploadResponse</a></li>
         <li><a href="../viam_protos.app.data_sync/SensorData-class.html">SensorData</a></li>
         <li><a href="../viam_protos.app.data_sync/SensorMetadata-class.html">SensorMetadata</a></li>
-        <li><a href="../viam_protos.app.data_sync/TabularCapture-class.html">TabularCapture</a></li>
         <li><a href="../viam_protos.app.data_sync/UploadMetadata-class.html">UploadMetadata</a></li>
 
 
 
       <li class="section-title"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html#constants">Constants</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data_sync/BinaryCapture$json-constant.html">BinaryCapture$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data_sync/BinaryCapture_MethodParametersEntry$json-constant.html">BinaryCapture_MethodParametersEntry$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/CaptureInterval$json-constant.html">CaptureInterval$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureMetadata$json-constant.html">DataCaptureMetadata$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureMetadata_MethodParametersEntry$json-constant.html">DataCaptureMetadata_MethodParametersEntry$json</a></li>
@@ -125,13 +126,10 @@
         <li><a class="deprecated" href="../viam_protos.app.data_sync/FileUploadResponse$json-constant.html">FileUploadResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/SensorData$json-constant.html">SensorData$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/SensorMetadata$json-constant.html">SensorMetadata$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data_sync/TabularCapture$json-constant.html">TabularCapture$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.data_sync/TabularCapture_MethodParametersEntry$json-constant.html">TabularCapture_MethodParametersEntry$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/UploadMetadata$json-constant.html">UploadMetadata$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.data_sync/UploadMetadata_MethodParametersEntry$json-constant.html">UploadMetadata_MethodParametersEntry$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html#properties">Properties</a></li>
-        <li><a href="../viam_protos.app.data_sync/binaryCaptureDescriptor.html">binaryCaptureDescriptor</a></li>
         <li><a href="../viam_protos.app.data_sync/captureIntervalDescriptor.html">captureIntervalDescriptor</a></li>
         <li><a href="../viam_protos.app.data_sync/dataCaptureMetadataDescriptor.html">dataCaptureMetadataDescriptor</a></li>
         <li><a href="../viam_protos.app.data_sync/dataCaptureUploadRequestDescriptor.html">dataCaptureUploadRequestDescriptor</a></li>
@@ -142,7 +140,6 @@
         <li><a href="../viam_protos.app.data_sync/fileUploadResponseDescriptor.html">fileUploadResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.data_sync/sensorDataDescriptor.html">sensorDataDescriptor</a></li>
         <li><a href="../viam_protos.app.data_sync/sensorMetadataDescriptor.html">sensorMetadataDescriptor</a></li>
-        <li><a href="../viam_protos.app.data_sync/tabularCaptureDescriptor.html">tabularCaptureDescriptor</a></li>
         <li><a href="../viam_protos.app.data_sync/uploadMetadataDescriptor.html">uploadMetadataDescriptor</a></li>
 
 

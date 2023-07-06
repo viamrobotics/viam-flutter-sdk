@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.app.packages</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -115,14 +117,6 @@
 
         <dt id="GetPackageResponse">
   <span class="name "><a href="../viam_protos.app.packages/GetPackageResponse-class.html">GetPackageResponse</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="InternalPackage">
-  <span class="name "><a href="../viam_protos.app.packages/InternalPackage-class.html">InternalPackage</a></span> 
 
 </dt>
 <dd>
@@ -205,7 +199,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CreatePackageRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;info&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.packages…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CreatePackageRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;info&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.packages.v1.PackageInfo&#3…</code></span>
     </div>
 </dd>
 
@@ -220,7 +214,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CreatePackageResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CreatePackageResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;version…</code></span>
     </div>
 </dd>
 
@@ -235,7 +229,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeletePackageRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeletePackageRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;version&…</code></span>
     </div>
 </dd>
 
@@ -250,7 +244,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DeletePackageResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DeletePackageResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -265,7 +259,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;FileInfo&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&#39;1&#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;FileInfo&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;size&#39;, &#39;…</code></span>
     </div>
 </dd>
 
@@ -280,7 +274,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPackageRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#39;1…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPackageRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;version&#39…</code></span>
     </div>
 </dd>
 
@@ -295,22 +289,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPackageResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;package&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.package…</code></span>
-    </div>
-</dd>
-
-        <dt id="InternalPackage$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.packages/InternalPackage$json-constant.html">InternalPackage$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-    <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;InternalPackage&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;8&#39; : const {}, &#39;10&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPackageResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;package&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.packages.v1.Package&#39;,…</code></span>
     </div>
 </dd>
 
@@ -325,7 +304,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ListPackagesRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;organiza…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ListPackagesRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;organizationId&#39;}, {&#3…</code></span>
     </div>
 </dd>
 
@@ -340,7 +319,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ListPackagesResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;packages&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.pack…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ListPackagesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;packages&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.packages.v1.Package&#3…</code></span>
     </div>
 </dd>
 
@@ -355,7 +334,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Package&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;info&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.packages.v1.PackageIn…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Package&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;info&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.packages.v1.PackageInfo&#39;, &#39;10&#…</code></span>
     </div>
 </dd>
 
@@ -370,7 +349,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;PackageInfo&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;organizationId&#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PackageInfo&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;organizationId&#39;}, {&#39;1&#39;…</code></span>
     </div>
 </dd>
 
@@ -385,7 +364,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;PackageType&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;PACKAGE_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, const {&#39;1&#39; : &#39;PACKAGE_TYPE_ARCHIVE&#39;, &#39;2&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PackageType&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;PACKAGE_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;PACKAGE_TYPE_ARCHIVE&#39;, &#39;2&#39; : 1}, {&#39;1&#39; …</code></span>
     </div>
 </dd>
 
@@ -469,17 +448,6 @@
 </dt>
 <dd>
   Descriptor for <code>GetPackageResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="internalPackageDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.packages/internalPackageDescriptor.html">internalPackageDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
-
-</dt>
-<dd>
-  Descriptor for <code>InternalPackage</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -584,10 +552,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
@@ -632,7 +600,6 @@
         <li><a href="../viam_protos.app.packages/FileInfo-class.html">FileInfo</a></li>
         <li><a href="../viam_protos.app.packages/GetPackageRequest-class.html">GetPackageRequest</a></li>
         <li><a href="../viam_protos.app.packages/GetPackageResponse-class.html">GetPackageResponse</a></li>
-        <li><a href="../viam_protos.app.packages/InternalPackage-class.html">InternalPackage</a></li>
         <li><a href="../viam_protos.app.packages/ListPackagesRequest-class.html">ListPackagesRequest</a></li>
         <li><a href="../viam_protos.app.packages/ListPackagesResponse-class.html">ListPackagesResponse</a></li>
         <li><a href="../viam_protos.app.packages/Package-class.html">Package</a></li>
@@ -651,7 +618,6 @@
         <li><a class="deprecated" href="../viam_protos.app.packages/FileInfo$json-constant.html">FileInfo$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.packages/GetPackageRequest$json-constant.html">GetPackageRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.packages/GetPackageResponse$json-constant.html">GetPackageResponse$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.packages/InternalPackage$json-constant.html">InternalPackage$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.packages/ListPackagesRequest$json-constant.html">ListPackagesRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.packages/ListPackagesResponse$json-constant.html">ListPackagesResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.packages/Package$json-constant.html">Package$json</a></li>
@@ -666,7 +632,6 @@
         <li><a href="../viam_protos.app.packages/fileInfoDescriptor.html">fileInfoDescriptor</a></li>
         <li><a href="../viam_protos.app.packages/getPackageRequestDescriptor.html">getPackageRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.packages/getPackageResponseDescriptor.html">getPackageResponseDescriptor</a></li>
-        <li><a href="../viam_protos.app.packages/internalPackageDescriptor.html">internalPackageDescriptor</a></li>
         <li><a href="../viam_protos.app.packages/listPackagesRequestDescriptor.html">listPackagesRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.packages/listPackagesResponseDescriptor.html">listPackagesResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.packages/packageDescriptor.html">packageDescriptor</a></li>

@@ -40,8 +40,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -51,14 +54,13 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-method">getRobotPartHistory_Pre</span> method 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/GetRobotPartHistoryResponse-class.html">GetRobotPartHistoryResponse</a></span>&gt;</span></span>
-<span class="name ">getRobotPartHistory_Pre</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getRobotPartHistory_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span></li>
+<span class="name ">getRobotPartHistory_Pre</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getRobotPartHistory_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span></li>
 <li><span class="parameter" id="getRobotPartHistory_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/GetRobotPartHistoryRequest-class.html">GetRobotPartHistoryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span></li>
 </ol>)
 
@@ -71,9 +73,7 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">$async.Future&lt;$0.GetRobotPartHistoryResponse&gt; getRobotPartHistory_Pre(
-    $grpc.ServiceCall call,
-    $async.Future&lt;$0.GetRobotPartHistoryRequest&gt; request) async {
+  <pre class="language-dart"><code class="language-dart">$async.Future&lt;$0.GetRobotPartHistoryResponse&gt; getRobotPartHistory_Pre($grpc.ServiceCall call, $async.Future&lt;$0.GetRobotPartHistoryRequest&gt; request) async {
   return getRobotPartHistory(call, await request);
 }</code></pre>
 </section>
@@ -111,9 +111,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_protos.app.app/AppServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/addRole.html">addRole</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/addRole_Pre.html">addRole_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/checkPermissions.html">checkPermissions</a></li>
@@ -124,6 +124,8 @@
           <li><a href="../../viam_protos.app.app/AppServiceBase/createLocation_Pre.html">createLocation_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/createLocationSecret.html">createLocationSecret</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/createLocationSecret_Pre.html">createLocationSecret_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/createModule.html">createModule</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/createModule_Pre.html">createModule_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/createOrganization.html">createOrganization</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/createOrganization_Pre.html">createOrganization_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/createOrganizationInvite.html">createOrganizationInvite</a></li>
@@ -152,6 +154,8 @@
           <li><a href="../../viam_protos.app.app/AppServiceBase/getFragment_Pre.html">getFragment_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getLocation.html">getLocation</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getLocation_Pre.html">getLocation_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/getModule.html">getModule</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/getModule_Pre.html">getModule_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getOrganization.html">getOrganization</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getOrganization_Pre.html">getOrganization_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getRobot.html">getRobot</a></li>
@@ -166,16 +170,22 @@
           <li><a href="../../viam_protos.app.app/AppServiceBase/getRobotParts_Pre.html">getRobotParts_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getRoverRentalRobots.html">getRoverRentalRobots</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/getRoverRentalRobots_Pre.html">getRoverRentalRobots_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/getUserIDByEmail.html">getUserIDByEmail</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/getUserIDByEmail_Pre.html">getUserIDByEmail_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listAuthorizations.html">listAuthorizations</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listAuthorizations_Pre.html">listAuthorizations_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listFragments.html">listFragments</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listFragments_Pre.html">listFragments_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listLocations.html">listLocations</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listLocations_Pre.html">listLocations_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/listModules.html">listModules</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/listModules_Pre.html">listModules_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listOrganizationMembers.html">listOrganizationMembers</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listOrganizationMembers_Pre.html">listOrganizationMembers_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listOrganizations.html">listOrganizations</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listOrganizations_Pre.html">listOrganizations_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/listOrganizationsByUser.html">listOrganizationsByUser</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/listOrganizationsByUser_Pre.html">listOrganizationsByUser_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listRobots.html">listRobots</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/listRobots_Pre.html">listRobots_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/locationAuth.html">locationAuth</a></li>
@@ -204,12 +214,15 @@
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateFragment_Pre.html">updateFragment_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateLocation.html">updateLocation</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateLocation_Pre.html">updateLocation_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/updateModule.html">updateModule</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/updateModule_Pre.html">updateModule_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateOrganization.html">updateOrganization</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateOrganization_Pre.html">updateOrganization_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateRobot.html">updateRobot</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateRobot_Pre.html">updateRobot_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateRobotPart.html">updateRobotPart</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/updateRobotPart_Pre.html">updateRobotPart_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/uploadModuleFile.html">uploadModuleFile</a></li>
 
         <li class="section-title inherited"><a href="../../viam_protos.app.app/AppServiceBase-class.html#operators">Operators</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>

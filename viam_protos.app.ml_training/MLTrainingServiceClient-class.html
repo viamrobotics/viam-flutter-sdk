@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">MLTrainingServiceClient</span> class 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -64,7 +66,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client-class.html">Client</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client-class.html">Client</a></li>
       <li>MLTrainingServiceClient</li>
     </ul>
   </dd>
@@ -75,6 +77,12 @@
 
 
         
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GrpcServiceName-class.html">GrpcServiceName</a>(&#39;viam.app.mltraining.v1.MLTrainingService&#39;)</li>
+    </ul>
+  </dd>
 
 
       </dl>
@@ -86,7 +94,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="MLTrainingServiceClient" class="callable">
-          <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/MLTrainingServiceClient.html">MLTrainingServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/MLTrainingServiceClient.html">MLTrainingServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -130,8 +138,8 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$createCall" class="callable inherited">
-  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -143,8 +151,8 @@
 </dd>
 
         <dt id="$createStreamingCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -156,8 +164,8 @@
 </dd>
 
         <dt id="$createUnaryCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -169,8 +177,8 @@
 </dd>
 
         <dt id="cancelTrainingJob" class="callable">
-  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/cancelTrainingJob.html">cancelTrainingJob</a></span><span class="signature">(<wbr><span class="parameter" id="cancelTrainingJob-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/CancelTrainingJobRequest-class.html">CancelTrainingJobRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="cancelTrainingJob-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/CancelTrainingJobResponse-class.html">CancelTrainingJobResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/cancelTrainingJob.html">cancelTrainingJob</a></span><span class="signature">(<wbr><span class="parameter" id="cancelTrainingJob-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/CancelTrainingJobRequest-class.html">CancelTrainingJobRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="cancelTrainingJob-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/CancelTrainingJobResponse-class.html">CancelTrainingJobResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -182,8 +190,8 @@
 </dd>
 
         <dt id="getTrainingJob" class="callable">
-  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/getTrainingJob.html">getTrainingJob</a></span><span class="signature">(<wbr><span class="parameter" id="getTrainingJob-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/GetTrainingJobRequest-class.html">GetTrainingJobRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getTrainingJob-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/GetTrainingJobResponse-class.html">GetTrainingJobResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/getTrainingJob.html">getTrainingJob</a></span><span class="signature">(<wbr><span class="parameter" id="getTrainingJob-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/GetTrainingJobRequest-class.html">GetTrainingJobRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getTrainingJob-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/GetTrainingJobResponse-class.html">GetTrainingJobResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -195,8 +203,8 @@
 </dd>
 
         <dt id="listTrainingJobs" class="callable">
-  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/listTrainingJobs.html">listTrainingJobs</a></span><span class="signature">(<wbr><span class="parameter" id="listTrainingJobs-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/ListTrainingJobsRequest-class.html">ListTrainingJobsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listTrainingJobs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/ListTrainingJobsResponse-class.html">ListTrainingJobsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/listTrainingJobs.html">listTrainingJobs</a></span><span class="signature">(<wbr><span class="parameter" id="listTrainingJobs-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/ListTrainingJobsRequest-class.html">ListTrainingJobsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listTrainingJobs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/ListTrainingJobsResponse-class.html">ListTrainingJobsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -215,14 +223,14 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a non-existent method or property is accessed.
+  Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="submitTrainingJob" class="callable">
-  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/submitTrainingJob.html">submitTrainingJob</a></span><span class="signature">(<wbr><span class="parameter" id="submitTrainingJob-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/SubmitTrainingJobRequest-class.html">SubmitTrainingJobRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="submitTrainingJob-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/SubmitTrainingJobResponse-class.html">SubmitTrainingJobResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/submitTrainingJob.html">submitTrainingJob</a></span><span class="signature">(<wbr><span class="parameter" id="submitTrainingJob-param-request"><span class="type-annotation"><a href="../viam_protos.app.ml_training/SubmitTrainingJobRequest-class.html">SubmitTrainingJobRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="submitTrainingJob-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.ml_training/SubmitTrainingJobResponse-class.html">SubmitTrainingJobResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -356,9 +364,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../viam_protos.app.ml_training/MLTrainingServiceClient-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
+          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
           <li><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/cancelTrainingJob.html">cancelTrainingJob</a></li>
           <li><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/getTrainingJob.html">getTrainingJob</a></li>
           <li><a href="../viam_protos.app.ml_training/MLTrainingServiceClient/listTrainingJobs.html">listTrainingJobs</a></li>

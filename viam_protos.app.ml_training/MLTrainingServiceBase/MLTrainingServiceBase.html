@@ -40,8 +40,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -51,7 +54,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-constructor">MLTrainingServiceBase</span> constructor 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
@@ -66,41 +68,33 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MLTrainingServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$1.SubmitTrainingJobRequest,
-          $1.SubmitTrainingJobResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$1.SubmitTrainingJobRequest, $1.SubmitTrainingJobResponse&gt;(
       &#39;SubmitTrainingJob&#39;,
       submitTrainingJob_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $1.SubmitTrainingJobRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.SubmitTrainingJobRequest.fromBuffer(value),
       ($1.SubmitTrainingJobResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.GetTrainingJobRequest,
-          $1.GetTrainingJobResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$1.GetTrainingJobRequest, $1.GetTrainingJobResponse&gt;(
       &#39;GetTrainingJob&#39;,
       getTrainingJob_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $1.GetTrainingJobRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetTrainingJobRequest.fromBuffer(value),
       ($1.GetTrainingJobResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.ListTrainingJobsRequest,
-          $1.ListTrainingJobsResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$1.ListTrainingJobsRequest, $1.ListTrainingJobsResponse&gt;(
       &#39;ListTrainingJobs&#39;,
       listTrainingJobs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $1.ListTrainingJobsRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.ListTrainingJobsRequest.fromBuffer(value),
       ($1.ListTrainingJobsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.CancelTrainingJobRequest,
-          $1.CancelTrainingJobResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$1.CancelTrainingJobRequest, $1.CancelTrainingJobResponse&gt;(
       &#39;CancelTrainingJob&#39;,
       cancelTrainingJob_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $1.CancelTrainingJobRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.CancelTrainingJobRequest.fromBuffer(value),
       ($1.CancelTrainingJobResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
@@ -138,9 +132,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_protos.app.ml_training/MLTrainingServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../../viam_protos.app.ml_training/MLTrainingServiceBase/cancelTrainingJob.html">cancelTrainingJob</a></li>
           <li><a href="../../viam_protos.app.ml_training/MLTrainingServiceBase/cancelTrainingJob_Pre.html">cancelTrainingJob_Pre</a></li>
           <li><a href="../../viam_protos.app.ml_training/MLTrainingServiceBase/getTrainingJob.html">getTrainingJob</a></li>

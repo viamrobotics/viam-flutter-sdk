@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-top-level-property">RemoveRoleResponse$json</span> top-level constant 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -72,7 +74,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@$core.Deprecated(&#39;Use removeRoleResponseDescriptor instead&#39;)
-const RemoveRoleResponse$json = const {
+const RemoveRoleResponse$json = {
   &#39;1&#39;: &#39;RemoveRoleResponse&#39;,
 };</code></pre>
 </section>
@@ -113,6 +115,8 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/CreateLocationResponse-class.html">CreateLocationResponse</a></li>
         <li><a href="../viam_protos.app.app/CreateLocationSecretRequest-class.html">CreateLocationSecretRequest</a></li>
         <li><a href="../viam_protos.app.app/CreateLocationSecretResponse-class.html">CreateLocationSecretResponse</a></li>
+        <li><a href="../viam_protos.app.app/CreateModuleRequest-class.html">CreateModuleRequest</a></li>
+        <li><a href="../viam_protos.app.app/CreateModuleResponse-class.html">CreateModuleResponse</a></li>
         <li><a href="../viam_protos.app.app/CreateOrganizationInviteRequest-class.html">CreateOrganizationInviteRequest</a></li>
         <li><a href="../viam_protos.app.app/CreateOrganizationInviteResponse-class.html">CreateOrganizationInviteResponse</a></li>
         <li><a href="../viam_protos.app.app/CreateOrganizationRequest-class.html">CreateOrganizationRequest</a></li>
@@ -142,6 +146,8 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/GetFragmentResponse-class.html">GetFragmentResponse</a></li>
         <li><a href="../viam_protos.app.app/GetLocationRequest-class.html">GetLocationRequest</a></li>
         <li><a href="../viam_protos.app.app/GetLocationResponse-class.html">GetLocationResponse</a></li>
+        <li><a href="../viam_protos.app.app/GetModuleRequest-class.html">GetModuleRequest</a></li>
+        <li><a href="../viam_protos.app.app/GetModuleResponse-class.html">GetModuleResponse</a></li>
         <li><a href="../viam_protos.app.app/GetOrganizationRequest-class.html">GetOrganizationRequest</a></li>
         <li><a href="../viam_protos.app.app/GetOrganizationResponse-class.html">GetOrganizationResponse</a></li>
         <li><a href="../viam_protos.app.app/GetRobotPartHistoryRequest-class.html">GetRobotPartHistoryRequest</a></li>
@@ -156,14 +162,20 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/GetRobotResponse-class.html">GetRobotResponse</a></li>
         <li><a href="../viam_protos.app.app/GetRoverRentalRobotsRequest-class.html">GetRoverRentalRobotsRequest</a></li>
         <li><a href="../viam_protos.app.app/GetRoverRentalRobotsResponse-class.html">GetRoverRentalRobotsResponse</a></li>
+        <li><a href="../viam_protos.app.app/GetUserIDByEmailRequest-class.html">GetUserIDByEmailRequest</a></li>
+        <li><a href="../viam_protos.app.app/GetUserIDByEmailResponse-class.html">GetUserIDByEmailResponse</a></li>
         <li><a href="../viam_protos.app.app/ListAuthorizationsRequest-class.html">ListAuthorizationsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListAuthorizationsResponse-class.html">ListAuthorizationsResponse</a></li>
         <li><a href="../viam_protos.app.app/ListFragmentsRequest-class.html">ListFragmentsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListFragmentsResponse-class.html">ListFragmentsResponse</a></li>
         <li><a href="../viam_protos.app.app/ListLocationsRequest-class.html">ListLocationsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListLocationsResponse-class.html">ListLocationsResponse</a></li>
+        <li><a href="../viam_protos.app.app/ListModulesRequest-class.html">ListModulesRequest</a></li>
+        <li><a href="../viam_protos.app.app/ListModulesResponse-class.html">ListModulesResponse</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationMembersRequest-class.html">ListOrganizationMembersRequest</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationMembersResponse-class.html">ListOrganizationMembersResponse</a></li>
+        <li><a href="../viam_protos.app.app/ListOrganizationsByUserRequest-class.html">ListOrganizationsByUserRequest</a></li>
+        <li><a href="../viam_protos.app.app/ListOrganizationsByUserResponse-class.html">ListOrganizationsByUserResponse</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationsRequest-class.html">ListOrganizationsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationsResponse-class.html">ListOrganizationsResponse</a></li>
         <li><a href="../viam_protos.app.app/ListRobotsRequest-class.html">ListRobotsRequest</a></li>
@@ -178,6 +190,9 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/MarkPartAsMainResponse-class.html">MarkPartAsMainResponse</a></li>
         <li><a href="../viam_protos.app.app/MarkPartForRestartRequest-class.html">MarkPartForRestartRequest</a></li>
         <li><a href="../viam_protos.app.app/MarkPartForRestartResponse-class.html">MarkPartForRestartResponse</a></li>
+        <li><a href="../viam_protos.app.app/Model-class.html">Model</a></li>
+        <li><a href="../viam_protos.app.app/Module-class.html">Module</a></li>
+        <li><a href="../viam_protos.app.app/ModuleFileInfo-class.html">ModuleFileInfo</a></li>
         <li><a href="../viam_protos.app.app/NewRobotPartRequest-class.html">NewRobotPartRequest</a></li>
         <li><a href="../viam_protos.app.app/NewRobotPartResponse-class.html">NewRobotPartResponse</a></li>
         <li><a href="../viam_protos.app.app/NewRobotRequest-class.html">NewRobotRequest</a></li>
@@ -185,6 +200,7 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/Organization-class.html">Organization</a></li>
         <li><a href="../viam_protos.app.app/OrganizationInvite-class.html">OrganizationInvite</a></li>
         <li><a href="../viam_protos.app.app/OrganizationMember-class.html">OrganizationMember</a></li>
+        <li><a href="../viam_protos.app.app/OrgDetails-class.html">OrgDetails</a></li>
         <li><a href="../viam_protos.app.app/RemoveRoleRequest-class.html">RemoveRoleRequest</a></li>
         <li><a href="../viam_protos.app.app/RemoveRoleResponse-class.html">RemoveRoleResponse</a></li>
         <li><a href="../viam_protos.app.app/ResendOrganizationInviteRequest-class.html">ResendOrganizationInviteRequest</a></li>
@@ -205,12 +221,19 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/UpdateFragmentResponse-class.html">UpdateFragmentResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateLocationRequest-class.html">UpdateLocationRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateLocationResponse-class.html">UpdateLocationResponse</a></li>
+        <li><a href="../viam_protos.app.app/UpdateModuleRequest-class.html">UpdateModuleRequest</a></li>
+        <li><a href="../viam_protos.app.app/UpdateModuleResponse-class.html">UpdateModuleResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateOrganizationRequest-class.html">UpdateOrganizationRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateOrganizationResponse-class.html">UpdateOrganizationResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotPartRequest-class.html">UpdateRobotPartRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotPartResponse-class.html">UpdateRobotPartResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotRequest-class.html">UpdateRobotRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotResponse-class.html">UpdateRobotResponse</a></li>
+        <li><a href="../viam_protos.app.app/UploadModuleFileRequest-class.html">UploadModuleFileRequest</a></li>
+        <li><a href="../viam_protos.app.app/UploadModuleFileResponse-class.html">UploadModuleFileResponse</a></li>
+        <li><a href="../viam_protos.app.app/Uploads-class.html">Uploads</a></li>
+        <li><a href="../viam_protos.app.app/VersionHistory-class.html">VersionHistory</a></li>
+        <li><a href="../viam_protos.app.app/Visibility-class.html">Visibility</a></li>
 
 
 
@@ -228,6 +251,8 @@ const RemoveRoleResponse$json = const {
         <li><a class="deprecated" href="../viam_protos.app.app/CreateLocationResponse$json-constant.html">CreateLocationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateLocationSecretRequest$json-constant.html">CreateLocationSecretRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateLocationSecretResponse$json-constant.html">CreateLocationSecretResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/CreateModuleRequest$json-constant.html">CreateModuleRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/CreateModuleResponse$json-constant.html">CreateModuleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateOrganizationInviteRequest$json-constant.html">CreateOrganizationInviteRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateOrganizationInviteResponse$json-constant.html">CreateOrganizationInviteResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateOrganizationRequest$json-constant.html">CreateOrganizationRequest$json</a></li>
@@ -257,6 +282,8 @@ const RemoveRoleResponse$json = const {
         <li><a class="deprecated" href="../viam_protos.app.app/GetFragmentResponse$json-constant.html">GetFragmentResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetLocationRequest$json-constant.html">GetLocationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetLocationResponse$json-constant.html">GetLocationResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetModuleRequest$json-constant.html">GetModuleRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetModuleResponse$json-constant.html">GetModuleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationRequest$json-constant.html">GetOrganizationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationResponse$json-constant.html">GetOrganizationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRobotPartHistoryRequest$json-constant.html">GetRobotPartHistoryRequest$json</a></li>
@@ -271,14 +298,20 @@ const RemoveRoleResponse$json = const {
         <li><a class="deprecated" href="../viam_protos.app.app/GetRobotResponse$json-constant.html">GetRobotResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRoverRentalRobotsRequest$json-constant.html">GetRoverRentalRobotsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRoverRentalRobotsResponse$json-constant.html">GetRoverRentalRobotsResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetUserIDByEmailRequest$json-constant.html">GetUserIDByEmailRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetUserIDByEmailResponse$json-constant.html">GetUserIDByEmailResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListAuthorizationsRequest$json-constant.html">ListAuthorizationsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListAuthorizationsResponse$json-constant.html">ListAuthorizationsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListFragmentsRequest$json-constant.html">ListFragmentsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListFragmentsResponse$json-constant.html">ListFragmentsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListLocationsRequest$json-constant.html">ListLocationsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListLocationsResponse$json-constant.html">ListLocationsResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListModulesRequest$json-constant.html">ListModulesRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListModulesResponse$json-constant.html">ListModulesResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationMembersRequest$json-constant.html">ListOrganizationMembersRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationMembersResponse$json-constant.html">ListOrganizationMembersResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsByUserRequest$json-constant.html">ListOrganizationsByUserRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsByUserResponse$json-constant.html">ListOrganizationsByUserResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsRequest$json-constant.html">ListOrganizationsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsResponse$json-constant.html">ListOrganizationsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListRobotsRequest$json-constant.html">ListRobotsRequest$json</a></li>
@@ -293,6 +326,9 @@ const RemoveRoleResponse$json = const {
         <li><a class="deprecated" href="../viam_protos.app.app/MarkPartAsMainResponse$json-constant.html">MarkPartAsMainResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/MarkPartForRestartRequest$json-constant.html">MarkPartForRestartRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/MarkPartForRestartResponse$json-constant.html">MarkPartForRestartResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Model$json-constant.html">Model$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Module$json-constant.html">Module$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ModuleFileInfo$json-constant.html">ModuleFileInfo$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/NewRobotPartRequest$json-constant.html">NewRobotPartRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/NewRobotPartResponse$json-constant.html">NewRobotPartResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/NewRobotRequest$json-constant.html">NewRobotRequest$json</a></li>
@@ -300,6 +336,7 @@ const RemoveRoleResponse$json = const {
         <li><a class="deprecated" href="../viam_protos.app.app/Organization$json-constant.html">Organization$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/OrganizationInvite$json-constant.html">OrganizationInvite$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/OrganizationMember$json-constant.html">OrganizationMember$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/OrgDetails$json-constant.html">OrgDetails$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/RemoveRoleRequest$json-constant.html">RemoveRoleRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/RemoveRoleResponse$json-constant.html">RemoveRoleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ResendOrganizationInviteRequest$json-constant.html">ResendOrganizationInviteRequest$json</a></li>
@@ -320,12 +357,19 @@ const RemoveRoleResponse$json = const {
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateFragmentResponse$json-constant.html">UpdateFragmentResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateLocationRequest$json-constant.html">UpdateLocationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateLocationResponse$json-constant.html">UpdateLocationResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UpdateModuleRequest$json-constant.html">UpdateModuleRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UpdateModuleResponse$json-constant.html">UpdateModuleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationRequest$json-constant.html">UpdateOrganizationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationResponse$json-constant.html">UpdateOrganizationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotPartRequest$json-constant.html">UpdateRobotPartRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotPartResponse$json-constant.html">UpdateRobotPartResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotRequest$json-constant.html">UpdateRobotRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotResponse$json-constant.html">UpdateRobotResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UploadModuleFileRequest$json-constant.html">UploadModuleFileRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UploadModuleFileResponse$json-constant.html">UploadModuleFileResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Uploads$json-constant.html">Uploads$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/VersionHistory$json-constant.html">VersionHistory$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Visibility$json-constant.html">Visibility$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.app.app/viam_protos.app.app-library.html#properties">Properties</a></li>
         <li><a href="../viam_protos.app.app/addRoleRequestDescriptor.html">addRoleRequestDescriptor</a></li>
@@ -341,6 +385,8 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/createLocationResponseDescriptor.html">createLocationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createLocationSecretRequestDescriptor.html">createLocationSecretRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createLocationSecretResponseDescriptor.html">createLocationSecretResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/createModuleRequestDescriptor.html">createModuleRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/createModuleResponseDescriptor.html">createModuleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createOrganizationInviteRequestDescriptor.html">createOrganizationInviteRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createOrganizationInviteResponseDescriptor.html">createOrganizationInviteResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createOrganizationRequestDescriptor.html">createOrganizationRequestDescriptor</a></li>
@@ -370,6 +416,8 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/getFragmentResponseDescriptor.html">getFragmentResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getLocationRequestDescriptor.html">getLocationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getLocationResponseDescriptor.html">getLocationResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getModuleRequestDescriptor.html">getModuleRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getModuleResponseDescriptor.html">getModuleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getOrganizationRequestDescriptor.html">getOrganizationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getOrganizationResponseDescriptor.html">getOrganizationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRobotPartHistoryRequestDescriptor.html">getRobotPartHistoryRequestDescriptor</a></li>
@@ -384,14 +432,20 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/getRobotResponseDescriptor.html">getRobotResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRoverRentalRobotsRequestDescriptor.html">getRoverRentalRobotsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRoverRentalRobotsResponseDescriptor.html">getRoverRentalRobotsResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getUserIDByEmailRequestDescriptor.html">getUserIDByEmailRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getUserIDByEmailResponseDescriptor.html">getUserIDByEmailResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listAuthorizationsRequestDescriptor.html">listAuthorizationsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listAuthorizationsResponseDescriptor.html">listAuthorizationsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listFragmentsRequestDescriptor.html">listFragmentsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listFragmentsResponseDescriptor.html">listFragmentsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listLocationsRequestDescriptor.html">listLocationsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listLocationsResponseDescriptor.html">listLocationsResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listModulesRequestDescriptor.html">listModulesRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listModulesResponseDescriptor.html">listModulesResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationMembersRequestDescriptor.html">listOrganizationMembersRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationMembersResponseDescriptor.html">listOrganizationMembersResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listOrganizationsByUserRequestDescriptor.html">listOrganizationsByUserRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listOrganizationsByUserResponseDescriptor.html">listOrganizationsByUserResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationsRequestDescriptor.html">listOrganizationsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationsResponseDescriptor.html">listOrganizationsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listRobotsRequestDescriptor.html">listRobotsRequestDescriptor</a></li>
@@ -406,6 +460,9 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/markPartAsMainResponseDescriptor.html">markPartAsMainResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/markPartForRestartRequestDescriptor.html">markPartForRestartRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/markPartForRestartResponseDescriptor.html">markPartForRestartResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/modelDescriptor.html">modelDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/moduleDescriptor.html">moduleDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/moduleFileInfoDescriptor.html">moduleFileInfoDescriptor</a></li>
         <li><a href="../viam_protos.app.app/newRobotPartRequestDescriptor.html">newRobotPartRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/newRobotPartResponseDescriptor.html">newRobotPartResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/newRobotRequestDescriptor.html">newRobotRequestDescriptor</a></li>
@@ -413,6 +470,7 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/organizationDescriptor.html">organizationDescriptor</a></li>
         <li><a href="../viam_protos.app.app/organizationInviteDescriptor.html">organizationInviteDescriptor</a></li>
         <li><a href="../viam_protos.app.app/organizationMemberDescriptor.html">organizationMemberDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/orgDetailsDescriptor.html">orgDetailsDescriptor</a></li>
         <li><a href="../viam_protos.app.app/removeRoleRequestDescriptor.html">removeRoleRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/removeRoleResponseDescriptor.html">removeRoleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/resendOrganizationInviteRequestDescriptor.html">resendOrganizationInviteRequestDescriptor</a></li>
@@ -432,14 +490,23 @@ const RemoveRoleResponse$json = const {
         <li><a href="../viam_protos.app.app/updateFragmentResponseDescriptor.html">updateFragmentResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateLocationRequestDescriptor.html">updateLocationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateLocationResponseDescriptor.html">updateLocationResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/updateModuleRequestDescriptor.html">updateModuleRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/updateModuleResponseDescriptor.html">updateModuleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateOrganizationRequestDescriptor.html">updateOrganizationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateOrganizationResponseDescriptor.html">updateOrganizationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotPartRequestDescriptor.html">updateRobotPartRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotPartResponseDescriptor.html">updateRobotPartResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotRequestDescriptor.html">updateRobotRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotResponseDescriptor.html">updateRobotResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/uploadModuleFileRequestDescriptor.html">uploadModuleFileRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/uploadModuleFileResponseDescriptor.html">uploadModuleFileResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/uploadsDescriptor.html">uploadsDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/versionHistoryDescriptor.html">versionHistoryDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/visibilityDescriptor.html">visibilityDescriptor</a></li>
 
 
+      <li class="section-title"><a href="../viam_protos.app.app/viam_protos.app.app-library.html#enums">Enums</a></li>
+        <li><a href="../viam_protos.app.app/UploadModuleFileRequest_ModuleFile.html">UploadModuleFileRequest_ModuleFile</a></li>
 
 
 </ol>

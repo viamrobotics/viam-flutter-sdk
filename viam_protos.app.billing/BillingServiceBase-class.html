@@ -30,7 +30,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
     <li><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
-    <li class="self-crumb">BillingServiceBase abstract class</li>
+    <li class="self-crumb">BillingServiceBase class</li>
   </ol>
   <div class="self-name">BillingServiceBase</div>
   <form class="search navbar-right" role="search">
@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,7 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">BillingServiceBase</span> class 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+    <a href="https://dart.dev/language/classes#abstract-classes" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
  
 </h1></div>
 
@@ -64,7 +67,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service-class.html">Service</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service-class.html">Service</a></li>
       <li>BillingServiceBase</li>
     </ul>
   </dd>
@@ -75,6 +78,12 @@
 
 
         
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GrpcServiceName-class.html">GrpcServiceName</a>(&#39;viam.app.v1.BillingService&#39;)</li>
+    </ul>
+  </dd>
 
 
       </dl>
@@ -141,7 +150,7 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$addMethod" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$addMethod-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceMethod-class.html">ServiceMethod</a></span> <span class="parameter-name">method</span></span>)
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$addMethod-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceMethod-class.html">ServiceMethod</a></span> <span class="parameter-name">method</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -154,8 +163,8 @@
 </dd>
 
         <dt id="$lookupMethod" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$lookupMethod-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceMethod-class.html">ServiceMethod</a>?</span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></span><span class="signature">(<wbr><span class="parameter" id="$lookupMethod-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceMethod-class.html">ServiceMethod</a>?</span>
   </span>
   
 
@@ -167,7 +176,7 @@
 </dd>
 
         <dt id="$onMetadata" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></span><span class="signature">(<wbr><span class="parameter" id="$onMetadata-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">context</span></span>)
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></span><span class="signature">(<wbr><span class="parameter" id="$onMetadata-param-context"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">context</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -180,7 +189,7 @@
 </dd>
 
         <dt id="getBillingSummary" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getBillingSummary.html">getBillingSummary</a></span><span class="signature">(<wbr><span class="parameter" id="getBillingSummary-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getBillingSummary-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetBillingSummaryRequest-class.html">GetBillingSummaryRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getBillingSummary.html">getBillingSummary</a></span><span class="signature">(<wbr><span class="parameter" id="getBillingSummary-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getBillingSummary-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetBillingSummaryRequest-class.html">GetBillingSummaryRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetBillingSummaryResponse-class.html">GetBillingSummaryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -193,7 +202,7 @@
 </dd>
 
         <dt id="getBillingSummary_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getBillingSummary_Pre.html">getBillingSummary_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getBillingSummary_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getBillingSummary_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetBillingSummaryRequest-class.html">GetBillingSummaryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getBillingSummary_Pre.html">getBillingSummary_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getBillingSummary_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getBillingSummary_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetBillingSummaryRequest-class.html">GetBillingSummaryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetBillingSummaryResponse-class.html">GetBillingSummaryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -206,7 +215,7 @@
 </dd>
 
         <dt id="getCurrentMonthUsage" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsage.html">getCurrentMonthUsage</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsage-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsage-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetCurrentMonthUsageRequest-class.html">GetCurrentMonthUsageRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsage.html">getCurrentMonthUsage</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsage-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsage-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetCurrentMonthUsageRequest-class.html">GetCurrentMonthUsageRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageResponse-class.html">GetCurrentMonthUsageResponse</a></span>&gt;</span></span>
   </span>
   
@@ -219,7 +228,7 @@
 </dd>
 
         <dt id="getCurrentMonthUsage_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsage_Pre.html">getCurrentMonthUsage_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsage_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsage_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageRequest-class.html">GetCurrentMonthUsageRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsage_Pre.html">getCurrentMonthUsage_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsage_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsage_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageRequest-class.html">GetCurrentMonthUsageRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageResponse-class.html">GetCurrentMonthUsageResponse</a></span>&gt;</span></span>
   </span>
   
@@ -232,7 +241,7 @@
 </dd>
 
         <dt id="getCurrentMonthUsageSummary" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsageSummary.html">getCurrentMonthUsageSummary</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsageSummary-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsageSummary-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetCurrentMonthUsageSummaryRequest-class.html">GetCurrentMonthUsageSummaryRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsageSummary.html">getCurrentMonthUsageSummary</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsageSummary-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsageSummary-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetCurrentMonthUsageSummaryRequest-class.html">GetCurrentMonthUsageSummaryRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageSummaryResponse-class.html">GetCurrentMonthUsageSummaryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -245,7 +254,7 @@
 </dd>
 
         <dt id="getCurrentMonthUsageSummary_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsageSummary_Pre.html">getCurrentMonthUsageSummary_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsageSummary_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsageSummary_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageSummaryRequest-class.html">GetCurrentMonthUsageSummaryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsageSummary_Pre.html">getCurrentMonthUsageSummary_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrentMonthUsageSummary_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getCurrentMonthUsageSummary_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageSummaryRequest-class.html">GetCurrentMonthUsageSummaryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetCurrentMonthUsageSummaryResponse-class.html">GetCurrentMonthUsageSummaryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -258,7 +267,7 @@
 </dd>
 
         <dt id="getInvoiceHistory" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoiceHistory.html">getInvoiceHistory</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoiceHistory-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoiceHistory-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetInvoiceHistoryRequest-class.html">GetInvoiceHistoryRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoiceHistory.html">getInvoiceHistory</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoiceHistory-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoiceHistory-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetInvoiceHistoryRequest-class.html">GetInvoiceHistoryRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoiceHistoryResponse-class.html">GetInvoiceHistoryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -271,7 +280,7 @@
 </dd>
 
         <dt id="getInvoiceHistory_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoiceHistory_Pre.html">getInvoiceHistory_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoiceHistory_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoiceHistory_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoiceHistoryRequest-class.html">GetInvoiceHistoryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoiceHistory_Pre.html">getInvoiceHistory_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoiceHistory_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoiceHistory_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoiceHistoryRequest-class.html">GetInvoiceHistoryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoiceHistoryResponse-class.html">GetInvoiceHistoryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -284,7 +293,7 @@
 </dd>
 
         <dt id="getInvoicePdf" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicePdf.html">getInvoicePdf</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicePdf-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicePdf-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetInvoicePdfRequest-class.html">GetInvoicePdfRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicePdf.html">getInvoicePdf</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicePdf-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicePdf-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetInvoicePdfRequest-class.html">GetInvoicePdfRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicePdfResponse-class.html">GetInvoicePdfResponse</a></span>&gt;</span></span>
   </span>
   
@@ -297,7 +306,7 @@
 </dd>
 
         <dt id="getInvoicePdf_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicePdf_Pre.html">getInvoicePdf_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicePdf_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicePdf_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicePdfRequest-class.html">GetInvoicePdfRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicePdf_Pre.html">getInvoicePdf_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicePdf_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicePdf_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicePdfRequest-class.html">GetInvoicePdfRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicePdfResponse-class.html">GetInvoicePdfResponse</a></span>&gt;</span></span>
   </span>
   
@@ -310,7 +319,7 @@
 </dd>
 
         <dt id="getInvoicesSummary" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicesSummary.html">getInvoicesSummary</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicesSummary-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicesSummary-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetInvoicesSummaryRequest-class.html">GetInvoicesSummaryRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicesSummary.html">getInvoicesSummary</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicesSummary-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicesSummary-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetInvoicesSummaryRequest-class.html">GetInvoicesSummaryRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicesSummaryResponse-class.html">GetInvoicesSummaryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -323,7 +332,7 @@
 </dd>
 
         <dt id="getInvoicesSummary_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicesSummary_Pre.html">getInvoicesSummary_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicesSummary_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicesSummary_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicesSummaryRequest-class.html">GetInvoicesSummaryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getInvoicesSummary_Pre.html">getInvoicesSummary_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getInvoicesSummary_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getInvoicesSummary_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicesSummaryRequest-class.html">GetInvoicesSummaryRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetInvoicesSummaryResponse-class.html">GetInvoicesSummaryResponse</a></span>&gt;</span></span>
   </span>
   
@@ -336,7 +345,7 @@
 </dd>
 
         <dt id="getItemizedInvoice" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getItemizedInvoice.html">getItemizedInvoice</a></span><span class="signature">(<wbr><span class="parameter" id="getItemizedInvoice-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getItemizedInvoice-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetItemizedInvoiceRequest-class.html">GetItemizedInvoiceRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getItemizedInvoice.html">getItemizedInvoice</a></span><span class="signature">(<wbr><span class="parameter" id="getItemizedInvoice-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getItemizedInvoice-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetItemizedInvoiceRequest-class.html">GetItemizedInvoiceRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetItemizedInvoiceResponse-class.html">GetItemizedInvoiceResponse</a></span>&gt;</span></span>
   </span>
   
@@ -349,7 +358,7 @@
 </dd>
 
         <dt id="getItemizedInvoice_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getItemizedInvoice_Pre.html">getItemizedInvoice_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getItemizedInvoice_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getItemizedInvoice_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetItemizedInvoiceRequest-class.html">GetItemizedInvoiceRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getItemizedInvoice_Pre.html">getItemizedInvoice_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getItemizedInvoice_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getItemizedInvoice_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetItemizedInvoiceRequest-class.html">GetItemizedInvoiceRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetItemizedInvoiceResponse-class.html">GetItemizedInvoiceResponse</a></span>&gt;</span></span>
   </span>
   
@@ -362,7 +371,7 @@
 </dd>
 
         <dt id="getOrgBillingInformation" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getOrgBillingInformation.html">getOrgBillingInformation</a></span><span class="signature">(<wbr><span class="parameter" id="getOrgBillingInformation-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getOrgBillingInformation-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetOrgBillingInformationRequest-class.html">GetOrgBillingInformationRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getOrgBillingInformation.html">getOrgBillingInformation</a></span><span class="signature">(<wbr><span class="parameter" id="getOrgBillingInformation-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getOrgBillingInformation-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetOrgBillingInformationRequest-class.html">GetOrgBillingInformationRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetOrgBillingInformationResponse-class.html">GetOrgBillingInformationResponse</a></span>&gt;</span></span>
   </span>
   
@@ -375,7 +384,7 @@
 </dd>
 
         <dt id="getOrgBillingInformation_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getOrgBillingInformation_Pre.html">getOrgBillingInformation_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getOrgBillingInformation_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getOrgBillingInformation_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetOrgBillingInformationRequest-class.html">GetOrgBillingInformationRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getOrgBillingInformation_Pre.html">getOrgBillingInformation_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getOrgBillingInformation_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getOrgBillingInformation_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetOrgBillingInformationRequest-class.html">GetOrgBillingInformationRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetOrgBillingInformationResponse-class.html">GetOrgBillingInformationResponse</a></span>&gt;</span></span>
   </span>
   
@@ -388,7 +397,7 @@
 </dd>
 
         <dt id="getUnpaidBalance" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getUnpaidBalance.html">getUnpaidBalance</a></span><span class="signature">(<wbr><span class="parameter" id="getUnpaidBalance-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getUnpaidBalance-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetUnpaidBalanceRequest-class.html">GetUnpaidBalanceRequest</a></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getUnpaidBalance.html">getUnpaidBalance</a></span><span class="signature">(<wbr><span class="parameter" id="getUnpaidBalance-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getUnpaidBalance-param-request"><span class="type-annotation"><a href="../viam_protos.app.billing/GetUnpaidBalanceRequest-class.html">GetUnpaidBalanceRequest</a></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetUnpaidBalanceResponse-class.html">GetUnpaidBalanceResponse</a></span>&gt;</span></span>
   </span>
   
@@ -401,7 +410,7 @@
 </dd>
 
         <dt id="getUnpaidBalance_Pre" class="callable">
-  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getUnpaidBalance_Pre.html">getUnpaidBalance_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getUnpaidBalance_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getUnpaidBalance_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetUnpaidBalanceRequest-class.html">GetUnpaidBalanceRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
+  <span class="name"><a href="../viam_protos.app.billing/BillingServiceBase/getUnpaidBalance_Pre.html">getUnpaidBalance_Pre</a></span><span class="signature">(<wbr><span class="parameter" id="getUnpaidBalance_Pre-param-call"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ServiceCall-class.html">ServiceCall</a></span> <span class="parameter-name">call</span>, </span><span class="parameter" id="getUnpaidBalance_Pre-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetUnpaidBalanceRequest-class.html">GetUnpaidBalanceRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.billing/GetUnpaidBalanceResponse-class.html">GetUnpaidBalanceResponse</a></span>&gt;</span></span>
   </span>
   
@@ -421,7 +430,7 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a non-existent method or property is accessed.
+  Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
@@ -479,7 +488,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">viam_sdk</a></li>
   <li><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
-  <li class="self-crumb">BillingServiceBase abstract class</li>
+  <li class="self-crumb">BillingServiceBase class</li>
 </ol>
 
 
@@ -589,9 +598,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../viam_protos.app.billing/BillingServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../viam_protos.app.billing/BillingServiceBase/getBillingSummary.html">getBillingSummary</a></li>
           <li><a href="../viam_protos.app.billing/BillingServiceBase/getBillingSummary_Pre.html">getBillingSummary_Pre</a></li>
           <li><a href="../viam_protos.app.billing/BillingServiceBase/getCurrentMonthUsage.html">getCurrentMonthUsage</a></li>

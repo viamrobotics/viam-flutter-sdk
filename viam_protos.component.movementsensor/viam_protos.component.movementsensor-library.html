@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.component.movementsensor</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -229,7 +231,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetAccuracyRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetAccuracyRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;extra&…</code></span>
     </div>
 </dd>
 
@@ -244,7 +246,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetAccuracyResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;accuracy&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.component…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetAccuracyResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;accuracy&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.component.movementsensor.v1…</code></span>
     </div>
 </dd>
 
@@ -259,7 +261,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AccuracyEntry&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, const {&#39;1&#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AccuracyEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;value&#39;, &…</code></span>
     </div>
 </dd>
 
@@ -274,7 +276,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetAngularVelocityRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, c…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetAngularVelocityRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39…</code></span>
     </div>
 </dd>
 
@@ -289,7 +291,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetAngularVelocityResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;angular_velocity&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetAngularVelocityResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;angular_velocity&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Ve…</code></span>
     </div>
 </dd>
 
@@ -304,7 +306,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetCompassHeadingRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, co…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetCompassHeadingRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;…</code></span>
     </div>
 </dd>
 
@@ -319,7 +321,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetCompassHeadingResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;value&#39;}]…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetCompassHeadingResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;value&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -334,7 +336,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetLinearAccelerationRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetLinearAccelerationRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &…</code></span>
     </div>
 </dd>
 
@@ -349,7 +351,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetLinearAccelerationResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;linear_acceleration&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; :…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetLinearAccelerationResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;linear_acceleration&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common…</code></span>
     </div>
 </dd>
 
@@ -364,7 +366,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetLinearVelocityRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, co…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetLinearVelocityRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;…</code></span>
     </div>
 </dd>
 
@@ -379,7 +381,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetLinearVelocityResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;linear_velocity&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.v…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetLinearVelocityResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;linear_velocity&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Vect…</code></span>
     </div>
 </dd>
 
@@ -394,7 +396,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetOrientationRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetOrientationRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;ext…</code></span>
     </div>
 </dd>
 
@@ -409,7 +411,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetOrientationResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;orientation&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.com…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetOrientationResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;orientation&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Orientation…</code></span>
     </div>
 </dd>
 
@@ -424,7 +426,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPositionRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPositionRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;extra&…</code></span>
     </div>
 </dd>
 
@@ -439,7 +441,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPositionResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;coordinate&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPositionResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;coordinate&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GeoPoint&#39;, …</code></span>
     </div>
 </dd>
 
@@ -454,7 +456,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPropertiesRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPropertiesRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;extr…</code></span>
     </div>
 </dd>
 
@@ -469,7 +471,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetPropertiesResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;linear_velocity_supported&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPropertiesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;linear_velocity_supported&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;linearVelocity…</code></span>
     </div>
 </dd>
 
@@ -687,10 +689,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>

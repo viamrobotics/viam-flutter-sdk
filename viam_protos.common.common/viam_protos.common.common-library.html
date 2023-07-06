@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.common.common</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -301,7 +303,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ActuatorStatus&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;is_moving&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;isMoving&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ActuatorStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;is_moving&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;isMoving&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -316,7 +318,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AnalogStatus&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 5, &#39;10&#39; : &#39;value&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AnalogStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 5, &#39;10&#39; : &#39;value&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -331,7 +333,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BoardStatus&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;analogs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.BoardSta…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BoardStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;analogs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.BoardStatus.AnalogsEntry&#…</code></span>
     </div>
 </dd>
 
@@ -346,7 +348,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AnalogsEntry&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, const {&#39;1&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AnalogsEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;value&#39;, &#…</code></span>
     </div>
 </dd>
 
@@ -361,7 +363,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DigitalInterruptsEntry&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, const …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DigitalInterruptsEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;valu…</code></span>
     </div>
 </dd>
 
@@ -376,7 +378,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Capsule&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;radius_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;radiusMm&#39;}, const {&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Capsule&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;radius_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;radiusMm&#39;}, {&#39;1&#39; : &#39;length_m…</code></span>
     </div>
 </dd>
 
@@ -391,7 +393,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DigitalInterruptStatus&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 3, &#39;10&#39; : &#39;value&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DigitalInterruptStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 3, &#39;10&#39; : &#39;value&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -406,7 +408,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DoCommandRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, const {&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DoCommandRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;command&…</code></span>
     </div>
 </dd>
 
@@ -421,7 +423,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DoCommandResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;result&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.St…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DoCommandResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;result&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Struct&#39;, &#39;10…</code></span>
     </div>
 </dd>
 
@@ -436,7 +438,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GeometriesInFrame&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceF…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GeometriesInFrame&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39;}, {&#39;…</code></span>
     </div>
 </dd>
 
@@ -451,7 +453,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Geometry&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;center&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Pose&#39;, &…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Geometry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;center&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Pose&#39;, &#39;10&#39; : &#39…</code></span>
     </div>
 </dd>
 
@@ -466,7 +468,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GeoObstacle&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;location&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GeoPoin…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GeoObstacle&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;location&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GeoPoint&#39;, &#39;10&#3…</code></span>
     </div>
 </dd>
 
@@ -481,7 +483,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GeoPoint&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;latitude&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;latitude&#39;}, const {&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GeoPoint&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;latitude&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;latitude&#39;}, {&#39;1&#39; : &#39;longitud…</code></span>
     </div>
 </dd>
 
@@ -496,7 +498,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetGeometriesRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetGeometriesRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -511,7 +513,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetGeometriesResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;geometries&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.commo…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetGeometriesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;geometries&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Geometry&#39;…</code></span>
     </div>
 </dd>
 
@@ -526,7 +528,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetKinematicsRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetKinematicsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -541,7 +543,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetKinematicsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;format&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.common.v1…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetKinematicsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;format&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.common.v1.KinematicsFileFor…</code></span>
     </div>
 </dd>
 
@@ -556,7 +558,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;KinematicsFileFormat&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;KINEMATICS_FILE_FORMAT_UNSPECIFIED&#39;, &#39;2&#39; : 0}, const {&#39;1&#39; : &#39;KINEMATICS_FILE…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;KinematicsFileFormat&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;KINEMATICS_FILE_FORMAT_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;KINEMATICS_FILE_FORMAT_SVA&#39;, &#39;2…</code></span>
     </div>
 </dd>
 
@@ -571,7 +573,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Orientation&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;o_x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;oX&#39;}, const {&#39;1&#39;…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Orientation&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;o_x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;oX&#39;}, {&#39;1&#39; : &#39;o_y&#39;, &#39;3…</code></span>
     </div>
 </dd>
 
@@ -586,7 +588,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;PointCloudObject&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;point_cloud&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointCloud&#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PointCloudObject&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;point_cloud&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointCloud&#39;}, {&#39;1&#39; :…</code></span>
     </div>
 </dd>
 
@@ -601,7 +603,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Pose&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;x&#39;}, const {&#39;1&#39; : &#39;y&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Pose&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;x&#39;}, {&#39;1&#39; : &#39;y&#39;, &#39;3&#39; : 2, &…</code></span>
     </div>
 </dd>
 
@@ -616,7 +618,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;PoseInFrame&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PoseInFrame&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39;}, {&#39;1&#39;…</code></span>
     </div>
 </dd>
 
@@ -631,7 +633,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RectangularPrism&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;dims_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Vec…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RectangularPrism&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;dims_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Vector3&#39;, &#39;10…</code></span>
     </div>
 </dd>
 
@@ -646,7 +648,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ResourceName&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;namespace&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;namespace&#39;}, cons…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceName&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;namespace&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;namespace&#39;}, {&#39;1&#39; : &#39;ty…</code></span>
     </div>
 </dd>
 
@@ -661,7 +663,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Sphere&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;radius_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;radiusMm&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Sphere&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;radius_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;radiusMm&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -676,7 +678,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Transform&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Transform&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39;}, {&#39;1&#39; :…</code></span>
     </div>
 </dd>
 
@@ -691,7 +693,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Vector3&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;x&#39;}, const {&#39;1&#39; : &#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Vector3&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;x&#39;}, {&#39;1&#39; : &#39;y&#39;, &#39;3&#39; : 2…</code></span>
     </div>
 </dd>
 
@@ -706,7 +708,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;WorldState&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;obstacles&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Geometr…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;WorldState&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;obstacles&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GeometriesInFrame&#39;, &…</code></span>
     </div>
 </dd>
 
@@ -1048,10 +1050,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>

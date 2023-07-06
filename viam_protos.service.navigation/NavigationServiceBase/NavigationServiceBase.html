@@ -40,8 +40,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -51,7 +54,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-constructor">NavigationServiceBase</span> constructor 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
@@ -80,41 +82,33 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.SetModeRequest.fromBuffer(value),
       ($0.SetModeResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.GetLocationRequest, $0.GetLocationResponse&gt;(
-          &#39;GetLocation&#39;,
-          getLocation_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.GetLocationRequest.fromBuffer(value),
-          ($0.GetLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.GetWaypointsRequest, $0.GetWaypointsResponse&gt;(
-          &#39;GetWaypoints&#39;,
-          getWaypoints_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.GetWaypointsRequest.fromBuffer(value),
-          ($0.GetWaypointsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod(
-      $grpc.ServiceMethod&lt;$0.AddWaypointRequest, $0.AddWaypointResponse&gt;(
-          &#39;AddWaypoint&#39;,
-          addWaypoint_Pre,
-          false,
-          false,
-          ($core.List&lt;$core.int&gt; value) =&gt;
-              $0.AddWaypointRequest.fromBuffer(value),
-          ($0.AddWaypointResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.RemoveWaypointRequest,
-          $0.RemoveWaypointResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$0.GetLocationRequest, $0.GetLocationResponse&gt;(
+      &#39;GetLocation&#39;,
+      getLocation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetLocationRequest.fromBuffer(value),
+      ($0.GetLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetWaypointsRequest, $0.GetWaypointsResponse&gt;(
+      &#39;GetWaypoints&#39;,
+      getWaypoints_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetWaypointsRequest.fromBuffer(value),
+      ($0.GetWaypointsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.AddWaypointRequest, $0.AddWaypointResponse&gt;(
+      &#39;AddWaypoint&#39;,
+      addWaypoint_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.AddWaypointRequest.fromBuffer(value),
+      ($0.AddWaypointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.RemoveWaypointRequest, $0.RemoveWaypointResponse&gt;(
       &#39;RemoveWaypoint&#39;,
       removeWaypoint_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt;
-          $0.RemoveWaypointRequest.fromBuffer(value),
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveWaypointRequest.fromBuffer(value),
       ($0.RemoveWaypointResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
@@ -159,9 +153,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_protos.service.navigation/NavigationServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Service/$onMetadata.html">$onMetadata</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$addMethod.html">$addMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../../viam_protos.service.navigation/NavigationServiceBase/addWaypoint.html">addWaypoint</a></li>
           <li><a href="../../viam_protos.service.navigation/NavigationServiceBase/addWaypoint_Pre.html">addWaypoint_Pre</a></li>
           <li><a href="../../viam_protos.service.navigation/NavigationServiceBase/doCommand.html">doCommand</a></li>

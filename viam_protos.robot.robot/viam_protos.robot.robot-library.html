@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.robot.robot</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -421,7 +423,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BlockForOperationRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BlockForOperationRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -436,7 +438,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;BlockForOperationResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;BlockForOperationResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -451,7 +453,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CancelOperationRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CancelOperationRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -466,7 +468,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;CancelOperationResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;CancelOperationResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -481,7 +483,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DiscoverComponentsRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;queries&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robo…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DiscoverComponentsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;queries&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.DiscoveryQuer…</code></span>
     </div>
 </dd>
 
@@ -496,7 +498,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DiscoverComponentsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;discovery&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.r…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DiscoverComponentsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;discovery&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Discovery&…</code></span>
     </div>
 </dd>
 
@@ -511,7 +513,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Discovery&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;query&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.DiscoveryQuer…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Discovery&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;query&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.DiscoveryQuery&#39;, &#39;10&#3…</code></span>
     </div>
 </dd>
 
@@ -526,7 +528,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;DiscoveryQuery&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;subtype&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;subtype&#39;}, const …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;DiscoveryQuery&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;subtype&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;subtype&#39;}, {&#39;1&#39; : &#39;mode…</code></span>
     </div>
 </dd>
 
@@ -541,7 +543,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;FrameSystemConfig&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Tran…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;FrameSystemConfig&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Transform&#39;, &#39;1…</code></span>
     </div>
 </dd>
 
@@ -556,7 +558,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;FrameSystemConfigRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;supplemental_transforms&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;FrameSystemConfigRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;supplemental_transforms&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.…</code></span>
     </div>
 </dd>
 
@@ -571,7 +573,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;FrameSystemConfigResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;frame_system_configs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;FrameSystemConfigResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;frame_system_configs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.…</code></span>
     </div>
 </dd>
 
@@ -586,7 +588,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetOperationsRequest&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetOperationsRequest&#39;}</code></span>
     </div>
 </dd>
 
@@ -601,7 +603,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetOperationsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;operations&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetOperationsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;operations&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Operation&#39;…</code></span>
     </div>
 </dd>
 
@@ -616,7 +618,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetSessionsRequest&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetSessionsRequest&#39;}</code></span>
     </div>
 </dd>
 
@@ -631,7 +633,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetSessionsResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;sessions&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetSessionsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;sessions&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Session&#39;, &#39…</code></span>
     </div>
 </dd>
 
@@ -646,7 +648,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetStatusRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;resource_names&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetStatusRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;resource_names&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceName&#…</code></span>
     </div>
 </dd>
 
@@ -661,7 +663,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;GetStatusResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;status&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Stat…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetStatusResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;status&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Status&#39;, &#39;10&#…</code></span>
     </div>
 </dd>
 
@@ -676,7 +678,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Operation&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#39;1&#39; : …</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Operation&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;method&#39;, &#39;3…</code></span>
     </div>
 </dd>
 
@@ -691,7 +693,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;PeerConnectionInfo&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.robot.v1.PeerC…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PeerConnectionInfo&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.robot.v1.PeerConnectionType&#39;…</code></span>
     </div>
 </dd>
 
@@ -706,7 +708,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;PeerConnectionType&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;PEER_CONNECTION_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, const {&#39;1&#39; : &#39;PEER_CONNECTION_TYP…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PeerConnectionType&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;PEER_CONNECTION_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;PEER_CONNECTION_TYPE_GRPC&#39;, &#39;2&#39;…</code></span>
     </div>
 </dd>
 
@@ -721,7 +723,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ResourceNamesRequest&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceNamesRequest&#39;}</code></span>
     </div>
 </dd>
 
@@ -736,7 +738,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ResourceNamesResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;resources&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceNamesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;resources&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceName&#…</code></span>
     </div>
 </dd>
 
@@ -751,7 +753,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ResourceRPCSubtype&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;subtype&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.R…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceRPCSubtype&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;subtype&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceName&#39;, …</code></span>
     </div>
 </dd>
 
@@ -766,7 +768,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ResourceRPCSubtypesRequest&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceRPCSubtypesRequest&#39;}</code></span>
     </div>
 </dd>
 
@@ -781,7 +783,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ResourceRPCSubtypesResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;resource_rpc_subtypes&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; :…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceRPCSubtypesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;resource_rpc_subtypes&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.…</code></span>
     </div>
 </dd>
 
@@ -796,7 +798,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;SendSessionHeartbeatRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;SendSessionHeartbeatRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -811,7 +813,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;SendSessionHeartbeatResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;SendSessionHeartbeatResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -826,7 +828,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Session&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#39;1&#39; : &#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Session&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;peer_connection_info&…</code></span>
     </div>
 </dd>
 
@@ -841,7 +843,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StartSessionRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;resume&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;resume&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StartSessionRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;resume&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;resume&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -856,7 +858,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StartSessionResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, const {&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StartSessionResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;id&#39;}, {&#39;1&#39; : &#39;heartbea…</code></span>
     </div>
 </dd>
 
@@ -871,7 +873,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;Status&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceName&#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;Status&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceName&#39;, &#39;10&#39; : …</code></span>
     </div>
 </dd>
 
@@ -886,7 +888,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StopAllRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;extra&#39;, &#39;3&#39; : 99, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.StopExt…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StopAllRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;extra&#39;, &#39;3&#39; : 99, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.StopExtraParameters&#39;,…</code></span>
     </div>
 </dd>
 
@@ -901,7 +903,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StopAllResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StopAllResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -916,7 +918,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StopExtraParameters&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Res…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StopExtraParameters&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceName&#39;, &#…</code></span>
     </div>
 </dd>
 
@@ -931,7 +933,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StreamStatusRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;resource_names&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.com…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StreamStatusRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;resource_names&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.ResourceNam…</code></span>
     </div>
 </dd>
 
@@ -946,7 +948,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;StreamStatusResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;status&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.S…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StreamStatusResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;status&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Status&#39;, &#39;1…</code></span>
     </div>
 </dd>
 
@@ -961,7 +963,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TransformPCDRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;point_cloud_pcd&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointCl…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TransformPCDRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;point_cloud_pcd&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointCloudPcd&#39;}, {&#3…</code></span>
     </div>
 </dd>
 
@@ -976,7 +978,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TransformPCDResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;point_cloud_pcd&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointC…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TransformPCDResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;point_cloud_pcd&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointCloudPcd&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -991,7 +993,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TransformPoseRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;source&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TransformPoseRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;source&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.PoseInFrame&#39;, …</code></span>
     </div>
 </dd>
 
@@ -1006,7 +1008,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;TransformPoseResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;pose&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.P…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;TransformPoseResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;pose&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.PoseInFrame&#39;, &…</code></span>
     </div>
 </dd>
 
@@ -1488,10 +1490,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>

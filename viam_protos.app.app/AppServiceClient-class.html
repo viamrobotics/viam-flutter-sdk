@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">AppServiceClient</span> class 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -64,7 +66,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client-class.html">Client</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client-class.html">Client</a></li>
       <li>AppServiceClient</li>
     </ul>
   </dd>
@@ -75,6 +77,12 @@
 
 
         
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GrpcServiceName-class.html">GrpcServiceName</a>(&#39;viam.app.v1.AppService&#39;)</li>
+    </ul>
+  </dd>
 
 
       </dl>
@@ -86,7 +94,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="AppServiceClient" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/AppServiceClient/AppServiceClient.html">AppServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.app.app/AppServiceClient/AppServiceClient.html">AppServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -130,8 +138,8 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$createCall" class="callable inherited">
-  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -143,8 +151,8 @@
 </dd>
 
         <dt id="$createStreamingCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -156,8 +164,8 @@
 </dd>
 
         <dt id="$createUnaryCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -169,8 +177,8 @@
 </dd>
 
         <dt id="addRole" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/addRole.html">addRole</a></span><span class="signature">(<wbr><span class="parameter" id="addRole-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/AddRoleRequest-class.html">AddRoleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addRole-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/AddRoleResponse-class.html">AddRoleResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/addRole.html">addRole</a></span><span class="signature">(<wbr><span class="parameter" id="addRole-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/AddRoleRequest-class.html">AddRoleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addRole-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/AddRoleResponse-class.html">AddRoleResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -182,8 +190,8 @@
 </dd>
 
         <dt id="checkPermissions" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/checkPermissions.html">checkPermissions</a></span><span class="signature">(<wbr><span class="parameter" id="checkPermissions-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CheckPermissionsRequest-class.html">CheckPermissionsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="checkPermissions-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CheckPermissionsResponse-class.html">CheckPermissionsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/checkPermissions.html">checkPermissions</a></span><span class="signature">(<wbr><span class="parameter" id="checkPermissions-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CheckPermissionsRequest-class.html">CheckPermissionsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="checkPermissions-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CheckPermissionsResponse-class.html">CheckPermissionsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -195,8 +203,8 @@
 </dd>
 
         <dt id="createFragment" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createFragment.html">createFragment</a></span><span class="signature">(<wbr><span class="parameter" id="createFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateFragmentRequest-class.html">CreateFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateFragmentResponse-class.html">CreateFragmentResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createFragment.html">createFragment</a></span><span class="signature">(<wbr><span class="parameter" id="createFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateFragmentRequest-class.html">CreateFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateFragmentResponse-class.html">CreateFragmentResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -208,8 +216,8 @@
 </dd>
 
         <dt id="createLocation" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createLocation.html">createLocation</a></span><span class="signature">(<wbr><span class="parameter" id="createLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateLocationRequest-class.html">CreateLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateLocationResponse-class.html">CreateLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createLocation.html">createLocation</a></span><span class="signature">(<wbr><span class="parameter" id="createLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateLocationRequest-class.html">CreateLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateLocationResponse-class.html">CreateLocationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -221,8 +229,21 @@
 </dd>
 
         <dt id="createLocationSecret" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createLocationSecret.html">createLocationSecret</a></span><span class="signature">(<wbr><span class="parameter" id="createLocationSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateLocationSecretRequest-class.html">CreateLocationSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createLocationSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateLocationSecretResponse-class.html">CreateLocationSecretResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createLocationSecret.html">createLocationSecret</a></span><span class="signature">(<wbr><span class="parameter" id="createLocationSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateLocationSecretRequest-class.html">CreateLocationSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createLocationSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateLocationSecretResponse-class.html">CreateLocationSecretResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="createModule" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createModule.html">createModule</a></span><span class="signature">(<wbr><span class="parameter" id="createModule-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateModuleRequest-class.html">CreateModuleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createModule-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateModuleResponse-class.html">CreateModuleResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -234,8 +255,8 @@
 </dd>
 
         <dt id="createOrganization" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createOrganization.html">createOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="createOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateOrganizationRequest-class.html">CreateOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateOrganizationResponse-class.html">CreateOrganizationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createOrganization.html">createOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="createOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateOrganizationRequest-class.html">CreateOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateOrganizationResponse-class.html">CreateOrganizationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -247,8 +268,8 @@
 </dd>
 
         <dt id="createOrganizationInvite" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createOrganizationInvite.html">createOrganizationInvite</a></span><span class="signature">(<wbr><span class="parameter" id="createOrganizationInvite-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest-class.html">CreateOrganizationInviteRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createOrganizationInvite-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateOrganizationInviteResponse-class.html">CreateOrganizationInviteResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createOrganizationInvite.html">createOrganizationInvite</a></span><span class="signature">(<wbr><span class="parameter" id="createOrganizationInvite-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest-class.html">CreateOrganizationInviteRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createOrganizationInvite-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateOrganizationInviteResponse-class.html">CreateOrganizationInviteResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -260,8 +281,8 @@
 </dd>
 
         <dt id="createRobotPartSecret" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createRobotPartSecret.html">createRobotPartSecret</a></span><span class="signature">(<wbr><span class="parameter" id="createRobotPartSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateRobotPartSecretRequest-class.html">CreateRobotPartSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createRobotPartSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateRobotPartSecretResponse-class.html">CreateRobotPartSecretResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/createRobotPartSecret.html">createRobotPartSecret</a></span><span class="signature">(<wbr><span class="parameter" id="createRobotPartSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/CreateRobotPartSecretRequest-class.html">CreateRobotPartSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="createRobotPartSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/CreateRobotPartSecretResponse-class.html">CreateRobotPartSecretResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -273,8 +294,8 @@
 </dd>
 
         <dt id="deleteFragment" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteFragment.html">deleteFragment</a></span><span class="signature">(<wbr><span class="parameter" id="deleteFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteFragmentRequest-class.html">DeleteFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteFragmentResponse-class.html">DeleteFragmentResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteFragment.html">deleteFragment</a></span><span class="signature">(<wbr><span class="parameter" id="deleteFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteFragmentRequest-class.html">DeleteFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteFragmentResponse-class.html">DeleteFragmentResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -286,8 +307,8 @@
 </dd>
 
         <dt id="deleteLocation" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteLocation.html">deleteLocation</a></span><span class="signature">(<wbr><span class="parameter" id="deleteLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteLocationRequest-class.html">DeleteLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteLocationResponse-class.html">DeleteLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteLocation.html">deleteLocation</a></span><span class="signature">(<wbr><span class="parameter" id="deleteLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteLocationRequest-class.html">DeleteLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteLocationResponse-class.html">DeleteLocationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -299,8 +320,8 @@
 </dd>
 
         <dt id="deleteLocationSecret" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteLocationSecret.html">deleteLocationSecret</a></span><span class="signature">(<wbr><span class="parameter" id="deleteLocationSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteLocationSecretRequest-class.html">DeleteLocationSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteLocationSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteLocationSecretResponse-class.html">DeleteLocationSecretResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteLocationSecret.html">deleteLocationSecret</a></span><span class="signature">(<wbr><span class="parameter" id="deleteLocationSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteLocationSecretRequest-class.html">DeleteLocationSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteLocationSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteLocationSecretResponse-class.html">DeleteLocationSecretResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -312,8 +333,8 @@
 </dd>
 
         <dt id="deleteOrganization" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteOrganization.html">deleteOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="deleteOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteOrganizationRequest-class.html">DeleteOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteOrganizationResponse-class.html">DeleteOrganizationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteOrganization.html">deleteOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="deleteOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteOrganizationRequest-class.html">DeleteOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteOrganizationResponse-class.html">DeleteOrganizationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -325,8 +346,8 @@
 </dd>
 
         <dt id="deleteOrganizationInvite" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteOrganizationInvite.html">deleteOrganizationInvite</a></span><span class="signature">(<wbr><span class="parameter" id="deleteOrganizationInvite-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteOrganizationInviteRequest-class.html">DeleteOrganizationInviteRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteOrganizationInvite-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteOrganizationInviteResponse-class.html">DeleteOrganizationInviteResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteOrganizationInvite.html">deleteOrganizationInvite</a></span><span class="signature">(<wbr><span class="parameter" id="deleteOrganizationInvite-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteOrganizationInviteRequest-class.html">DeleteOrganizationInviteRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteOrganizationInvite-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteOrganizationInviteResponse-class.html">DeleteOrganizationInviteResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -338,8 +359,8 @@
 </dd>
 
         <dt id="deleteOrganizationMember" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteOrganizationMember.html">deleteOrganizationMember</a></span><span class="signature">(<wbr><span class="parameter" id="deleteOrganizationMember-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteOrganizationMemberRequest-class.html">DeleteOrganizationMemberRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteOrganizationMember-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteOrganizationMemberResponse-class.html">DeleteOrganizationMemberResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteOrganizationMember.html">deleteOrganizationMember</a></span><span class="signature">(<wbr><span class="parameter" id="deleteOrganizationMember-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteOrganizationMemberRequest-class.html">DeleteOrganizationMemberRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteOrganizationMember-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteOrganizationMemberResponse-class.html">DeleteOrganizationMemberResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -351,8 +372,8 @@
 </dd>
 
         <dt id="deleteRobot" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteRobot.html">deleteRobot</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteRobotRequest-class.html">DeleteRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteRobotResponse-class.html">DeleteRobotResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteRobot.html">deleteRobot</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteRobotRequest-class.html">DeleteRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteRobotResponse-class.html">DeleteRobotResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -364,8 +385,8 @@
 </dd>
 
         <dt id="deleteRobotPart" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteRobotPart.html">deleteRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteRobotPartRequest-class.html">DeleteRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteRobotPartResponse-class.html">DeleteRobotPartResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteRobotPart.html">deleteRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteRobotPartRequest-class.html">DeleteRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteRobotPartResponse-class.html">DeleteRobotPartResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -377,8 +398,8 @@
 </dd>
 
         <dt id="deleteRobotPartSecret" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteRobotPartSecret.html">deleteRobotPartSecret</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRobotPartSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteRobotPartSecretRequest-class.html">DeleteRobotPartSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteRobotPartSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteRobotPartSecretResponse-class.html">DeleteRobotPartSecretResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/deleteRobotPartSecret.html">deleteRobotPartSecret</a></span><span class="signature">(<wbr><span class="parameter" id="deleteRobotPartSecret-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/DeleteRobotPartSecretRequest-class.html">DeleteRobotPartSecretRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteRobotPartSecret-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/DeleteRobotPartSecretResponse-class.html">DeleteRobotPartSecretResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -390,8 +411,8 @@
 </dd>
 
         <dt id="getFragment" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getFragment.html">getFragment</a></span><span class="signature">(<wbr><span class="parameter" id="getFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetFragmentRequest-class.html">GetFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetFragmentResponse-class.html">GetFragmentResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getFragment.html">getFragment</a></span><span class="signature">(<wbr><span class="parameter" id="getFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetFragmentRequest-class.html">GetFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetFragmentResponse-class.html">GetFragmentResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -403,8 +424,21 @@
 </dd>
 
         <dt id="getLocation" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getLocation.html">getLocation</a></span><span class="signature">(<wbr><span class="parameter" id="getLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetLocationRequest-class.html">GetLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetLocationResponse-class.html">GetLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getLocation.html">getLocation</a></span><span class="signature">(<wbr><span class="parameter" id="getLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetLocationRequest-class.html">GetLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetLocationResponse-class.html">GetLocationResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="getModule" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getModule.html">getModule</a></span><span class="signature">(<wbr><span class="parameter" id="getModule-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetModuleRequest-class.html">GetModuleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getModule-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetModuleResponse-class.html">GetModuleResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -416,8 +450,8 @@
 </dd>
 
         <dt id="getOrganization" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getOrganization.html">getOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="getOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetOrganizationRequest-class.html">GetOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetOrganizationResponse-class.html">GetOrganizationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getOrganization.html">getOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="getOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetOrganizationRequest-class.html">GetOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetOrganizationResponse-class.html">GetOrganizationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -429,8 +463,8 @@
 </dd>
 
         <dt id="getRobot" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobot.html">getRobot</a></span><span class="signature">(<wbr><span class="parameter" id="getRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotRequest-class.html">GetRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotResponse-class.html">GetRobotResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobot.html">getRobot</a></span><span class="signature">(<wbr><span class="parameter" id="getRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotRequest-class.html">GetRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotResponse-class.html">GetRobotResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -442,8 +476,8 @@
 </dd>
 
         <dt id="getRobotPart" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotPart.html">getRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartRequest-class.html">GetRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartResponse-class.html">GetRobotPartResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotPart.html">getRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartRequest-class.html">GetRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartResponse-class.html">GetRobotPartResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -455,8 +489,8 @@
 </dd>
 
         <dt id="getRobotPartHistory" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotPartHistory.html">getRobotPartHistory</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotPartHistory-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartHistoryRequest-class.html">GetRobotPartHistoryRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotPartHistory-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartHistoryResponse-class.html">GetRobotPartHistoryResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotPartHistory.html">getRobotPartHistory</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotPartHistory-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartHistoryRequest-class.html">GetRobotPartHistoryRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotPartHistory-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartHistoryResponse-class.html">GetRobotPartHistoryResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -468,8 +502,8 @@
 </dd>
 
         <dt id="getRobotPartLogs" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotPartLogs.html">getRobotPartLogs</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotPartLogs-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartLogsRequest-class.html">GetRobotPartLogsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotPartLogs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartLogsResponse-class.html">GetRobotPartLogsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotPartLogs.html">getRobotPartLogs</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotPartLogs-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartLogsRequest-class.html">GetRobotPartLogsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotPartLogs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartLogsResponse-class.html">GetRobotPartLogsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -481,8 +515,8 @@
 </dd>
 
         <dt id="getRobotParts" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotParts.html">getRobotParts</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotParts-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartsRequest-class.html">GetRobotPartsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotParts-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartsResponse-class.html">GetRobotPartsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRobotParts.html">getRobotParts</a></span><span class="signature">(<wbr><span class="parameter" id="getRobotParts-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRobotPartsRequest-class.html">GetRobotPartsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRobotParts-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRobotPartsResponse-class.html">GetRobotPartsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -494,8 +528,21 @@
 </dd>
 
         <dt id="getRoverRentalRobots" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRoverRentalRobots.html">getRoverRentalRobots</a></span><span class="signature">(<wbr><span class="parameter" id="getRoverRentalRobots-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRoverRentalRobotsRequest-class.html">GetRoverRentalRobotsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRoverRentalRobots-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRoverRentalRobotsResponse-class.html">GetRoverRentalRobotsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getRoverRentalRobots.html">getRoverRentalRobots</a></span><span class="signature">(<wbr><span class="parameter" id="getRoverRentalRobots-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetRoverRentalRobotsRequest-class.html">GetRoverRentalRobotsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getRoverRentalRobots-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetRoverRentalRobotsResponse-class.html">GetRoverRentalRobotsResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="getUserIDByEmail" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/getUserIDByEmail.html">getUserIDByEmail</a></span><span class="signature">(<wbr><span class="parameter" id="getUserIDByEmail-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/GetUserIDByEmailRequest-class.html">GetUserIDByEmailRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getUserIDByEmail-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/GetUserIDByEmailResponse-class.html">GetUserIDByEmailResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -507,8 +554,8 @@
 </dd>
 
         <dt id="listAuthorizations" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listAuthorizations.html">listAuthorizations</a></span><span class="signature">(<wbr><span class="parameter" id="listAuthorizations-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListAuthorizationsRequest-class.html">ListAuthorizationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listAuthorizations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListAuthorizationsResponse-class.html">ListAuthorizationsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listAuthorizations.html">listAuthorizations</a></span><span class="signature">(<wbr><span class="parameter" id="listAuthorizations-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListAuthorizationsRequest-class.html">ListAuthorizationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listAuthorizations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListAuthorizationsResponse-class.html">ListAuthorizationsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -520,8 +567,8 @@
 </dd>
 
         <dt id="listFragments" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listFragments.html">listFragments</a></span><span class="signature">(<wbr><span class="parameter" id="listFragments-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListFragmentsRequest-class.html">ListFragmentsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listFragments-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListFragmentsResponse-class.html">ListFragmentsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listFragments.html">listFragments</a></span><span class="signature">(<wbr><span class="parameter" id="listFragments-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListFragmentsRequest-class.html">ListFragmentsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listFragments-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListFragmentsResponse-class.html">ListFragmentsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -533,8 +580,21 @@
 </dd>
 
         <dt id="listLocations" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listLocations.html">listLocations</a></span><span class="signature">(<wbr><span class="parameter" id="listLocations-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListLocationsRequest-class.html">ListLocationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listLocations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListLocationsResponse-class.html">ListLocationsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listLocations.html">listLocations</a></span><span class="signature">(<wbr><span class="parameter" id="listLocations-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListLocationsRequest-class.html">ListLocationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listLocations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListLocationsResponse-class.html">ListLocationsResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="listModules" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listModules.html">listModules</a></span><span class="signature">(<wbr><span class="parameter" id="listModules-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListModulesRequest-class.html">ListModulesRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listModules-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListModulesResponse-class.html">ListModulesResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -546,8 +606,8 @@
 </dd>
 
         <dt id="listOrganizationMembers" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listOrganizationMembers.html">listOrganizationMembers</a></span><span class="signature">(<wbr><span class="parameter" id="listOrganizationMembers-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListOrganizationMembersRequest-class.html">ListOrganizationMembersRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listOrganizationMembers-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListOrganizationMembersResponse-class.html">ListOrganizationMembersResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listOrganizationMembers.html">listOrganizationMembers</a></span><span class="signature">(<wbr><span class="parameter" id="listOrganizationMembers-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListOrganizationMembersRequest-class.html">ListOrganizationMembersRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listOrganizationMembers-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListOrganizationMembersResponse-class.html">ListOrganizationMembersResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -559,8 +619,21 @@
 </dd>
 
         <dt id="listOrganizations" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listOrganizations.html">listOrganizations</a></span><span class="signature">(<wbr><span class="parameter" id="listOrganizations-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListOrganizationsRequest-class.html">ListOrganizationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listOrganizations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListOrganizationsResponse-class.html">ListOrganizationsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listOrganizations.html">listOrganizations</a></span><span class="signature">(<wbr><span class="parameter" id="listOrganizations-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListOrganizationsRequest-class.html">ListOrganizationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listOrganizations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListOrganizationsResponse-class.html">ListOrganizationsResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="listOrganizationsByUser" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listOrganizationsByUser.html">listOrganizationsByUser</a></span><span class="signature">(<wbr><span class="parameter" id="listOrganizationsByUser-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListOrganizationsByUserRequest-class.html">ListOrganizationsByUserRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listOrganizationsByUser-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListOrganizationsByUserResponse-class.html">ListOrganizationsByUserResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -572,8 +645,8 @@
 </dd>
 
         <dt id="listRobots" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listRobots.html">listRobots</a></span><span class="signature">(<wbr><span class="parameter" id="listRobots-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListRobotsRequest-class.html">ListRobotsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listRobots-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListRobotsResponse-class.html">ListRobotsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/listRobots.html">listRobots</a></span><span class="signature">(<wbr><span class="parameter" id="listRobots-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ListRobotsRequest-class.html">ListRobotsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="listRobots-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ListRobotsResponse-class.html">ListRobotsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -585,8 +658,8 @@
 </dd>
 
         <dt id="locationAuth" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/locationAuth.html">locationAuth</a></span><span class="signature">(<wbr><span class="parameter" id="locationAuth-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/LocationAuthRequest-class.html">LocationAuthRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="locationAuth-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/LocationAuthResponse-class.html">LocationAuthResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/locationAuth.html">locationAuth</a></span><span class="signature">(<wbr><span class="parameter" id="locationAuth-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/LocationAuthRequest-class.html">LocationAuthRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="locationAuth-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/LocationAuthResponse-class.html">LocationAuthResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -598,8 +671,8 @@
 </dd>
 
         <dt id="markPartAsMain" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/markPartAsMain.html">markPartAsMain</a></span><span class="signature">(<wbr><span class="parameter" id="markPartAsMain-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/MarkPartAsMainRequest-class.html">MarkPartAsMainRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="markPartAsMain-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/MarkPartAsMainResponse-class.html">MarkPartAsMainResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/markPartAsMain.html">markPartAsMain</a></span><span class="signature">(<wbr><span class="parameter" id="markPartAsMain-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/MarkPartAsMainRequest-class.html">MarkPartAsMainRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="markPartAsMain-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/MarkPartAsMainResponse-class.html">MarkPartAsMainResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -611,8 +684,8 @@
 </dd>
 
         <dt id="markPartForRestart" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/markPartForRestart.html">markPartForRestart</a></span><span class="signature">(<wbr><span class="parameter" id="markPartForRestart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/MarkPartForRestartRequest-class.html">MarkPartForRestartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="markPartForRestart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/MarkPartForRestartResponse-class.html">MarkPartForRestartResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/markPartForRestart.html">markPartForRestart</a></span><span class="signature">(<wbr><span class="parameter" id="markPartForRestart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/MarkPartForRestartRequest-class.html">MarkPartForRestartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="markPartForRestart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/MarkPartForRestartResponse-class.html">MarkPartForRestartResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -624,8 +697,8 @@
 </dd>
 
         <dt id="newRobot" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/newRobot.html">newRobot</a></span><span class="signature">(<wbr><span class="parameter" id="newRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/NewRobotRequest-class.html">NewRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="newRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/NewRobotResponse-class.html">NewRobotResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/newRobot.html">newRobot</a></span><span class="signature">(<wbr><span class="parameter" id="newRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/NewRobotRequest-class.html">NewRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="newRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/NewRobotResponse-class.html">NewRobotResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -637,8 +710,8 @@
 </dd>
 
         <dt id="newRobotPart" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/newRobotPart.html">newRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="newRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/NewRobotPartRequest-class.html">NewRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="newRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/NewRobotPartResponse-class.html">NewRobotPartResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/newRobotPart.html">newRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="newRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/NewRobotPartRequest-class.html">NewRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="newRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/NewRobotPartResponse-class.html">NewRobotPartResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -657,14 +730,14 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a non-existent method or property is accessed.
+  Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="removeRole" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/removeRole.html">removeRole</a></span><span class="signature">(<wbr><span class="parameter" id="removeRole-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/RemoveRoleRequest-class.html">RemoveRoleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeRole-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/RemoveRoleResponse-class.html">RemoveRoleResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/removeRole.html">removeRole</a></span><span class="signature">(<wbr><span class="parameter" id="removeRole-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/RemoveRoleRequest-class.html">RemoveRoleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeRole-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/RemoveRoleResponse-class.html">RemoveRoleResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -676,8 +749,8 @@
 </dd>
 
         <dt id="resendOrganizationInvite" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/resendOrganizationInvite.html">resendOrganizationInvite</a></span><span class="signature">(<wbr><span class="parameter" id="resendOrganizationInvite-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ResendOrganizationInviteRequest-class.html">ResendOrganizationInviteRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="resendOrganizationInvite-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ResendOrganizationInviteResponse-class.html">ResendOrganizationInviteResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/resendOrganizationInvite.html">resendOrganizationInvite</a></span><span class="signature">(<wbr><span class="parameter" id="resendOrganizationInvite-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ResendOrganizationInviteRequest-class.html">ResendOrganizationInviteRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="resendOrganizationInvite-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ResendOrganizationInviteResponse-class.html">ResendOrganizationInviteResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -689,8 +762,8 @@
 </dd>
 
         <dt id="shareLocation" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/shareLocation.html">shareLocation</a></span><span class="signature">(<wbr><span class="parameter" id="shareLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ShareLocationRequest-class.html">ShareLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="shareLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ShareLocationResponse-class.html">ShareLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/shareLocation.html">shareLocation</a></span><span class="signature">(<wbr><span class="parameter" id="shareLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/ShareLocationRequest-class.html">ShareLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="shareLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/ShareLocationResponse-class.html">ShareLocationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -702,8 +775,8 @@
 </dd>
 
         <dt id="tailRobotPartLogs" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/tailRobotPartLogs.html">tailRobotPartLogs</a></span><span class="signature">(<wbr><span class="parameter" id="tailRobotPartLogs-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/TailRobotPartLogsRequest-class.html">TailRobotPartLogsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tailRobotPartLogs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/TailRobotPartLogsResponse-class.html">TailRobotPartLogsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/tailRobotPartLogs.html">tailRobotPartLogs</a></span><span class="signature">(<wbr><span class="parameter" id="tailRobotPartLogs-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/TailRobotPartLogsRequest-class.html">TailRobotPartLogsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tailRobotPartLogs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/TailRobotPartLogsResponse-class.html">TailRobotPartLogsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -728,8 +801,8 @@
 </dd>
 
         <dt id="unshareLocation" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/unshareLocation.html">unshareLocation</a></span><span class="signature">(<wbr><span class="parameter" id="unshareLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UnshareLocationRequest-class.html">UnshareLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="unshareLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UnshareLocationResponse-class.html">UnshareLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/unshareLocation.html">unshareLocation</a></span><span class="signature">(<wbr><span class="parameter" id="unshareLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UnshareLocationRequest-class.html">UnshareLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="unshareLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UnshareLocationResponse-class.html">UnshareLocationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -741,8 +814,8 @@
 </dd>
 
         <dt id="updateFragment" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateFragment.html">updateFragment</a></span><span class="signature">(<wbr><span class="parameter" id="updateFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateFragmentRequest-class.html">UpdateFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateFragmentResponse-class.html">UpdateFragmentResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateFragment.html">updateFragment</a></span><span class="signature">(<wbr><span class="parameter" id="updateFragment-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateFragmentRequest-class.html">UpdateFragmentRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateFragment-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateFragmentResponse-class.html">UpdateFragmentResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -754,8 +827,21 @@
 </dd>
 
         <dt id="updateLocation" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateLocation.html">updateLocation</a></span><span class="signature">(<wbr><span class="parameter" id="updateLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateLocationRequest-class.html">UpdateLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateLocationResponse-class.html">UpdateLocationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateLocation.html">updateLocation</a></span><span class="signature">(<wbr><span class="parameter" id="updateLocation-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateLocationRequest-class.html">UpdateLocationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateLocation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateLocationResponse-class.html">UpdateLocationResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="updateModule" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateModule.html">updateModule</a></span><span class="signature">(<wbr><span class="parameter" id="updateModule-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateModuleRequest-class.html">UpdateModuleRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateModule-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateModuleResponse-class.html">UpdateModuleResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -767,8 +853,8 @@
 </dd>
 
         <dt id="updateOrganization" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateOrganization.html">updateOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="updateOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateOrganizationRequest-class.html">UpdateOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateOrganizationResponse-class.html">UpdateOrganizationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateOrganization.html">updateOrganization</a></span><span class="signature">(<wbr><span class="parameter" id="updateOrganization-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateOrganizationRequest-class.html">UpdateOrganizationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateOrganization-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateOrganizationResponse-class.html">UpdateOrganizationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -780,8 +866,8 @@
 </dd>
 
         <dt id="updateRobot" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateRobot.html">updateRobot</a></span><span class="signature">(<wbr><span class="parameter" id="updateRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateRobotRequest-class.html">UpdateRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateRobotResponse-class.html">UpdateRobotResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateRobot.html">updateRobot</a></span><span class="signature">(<wbr><span class="parameter" id="updateRobot-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateRobotRequest-class.html">UpdateRobotRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateRobot-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateRobotResponse-class.html">UpdateRobotResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -793,8 +879,21 @@
 </dd>
 
         <dt id="updateRobotPart" class="callable">
-  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateRobotPart.html">updateRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="updateRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateRobotPartRequest-class.html">UpdateRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateRobotPartResponse-class.html">UpdateRobotPartResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/updateRobotPart.html">updateRobotPart</a></span><span class="signature">(<wbr><span class="parameter" id="updateRobotPart-param-request"><span class="type-annotation"><a href="../viam_protos.app.app/UpdateRobotPartRequest-class.html">UpdateRobotPartRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="updateRobotPart-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UpdateRobotPartResponse-class.html">UpdateRobotPartResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="uploadModuleFile" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/AppServiceClient/uploadModuleFile.html">uploadModuleFile</a></span><span class="signature">(<wbr><span class="parameter" id="uploadModuleFile-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UploadModuleFileRequest-class.html">UploadModuleFileRequest</a></span>&gt;</span></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="uploadModuleFile-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/UploadModuleFileResponse-class.html">UploadModuleFileResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -867,6 +966,8 @@
         <li><a href="../viam_protos.app.app/CreateLocationResponse-class.html">CreateLocationResponse</a></li>
         <li><a href="../viam_protos.app.app/CreateLocationSecretRequest-class.html">CreateLocationSecretRequest</a></li>
         <li><a href="../viam_protos.app.app/CreateLocationSecretResponse-class.html">CreateLocationSecretResponse</a></li>
+        <li><a href="../viam_protos.app.app/CreateModuleRequest-class.html">CreateModuleRequest</a></li>
+        <li><a href="../viam_protos.app.app/CreateModuleResponse-class.html">CreateModuleResponse</a></li>
         <li><a href="../viam_protos.app.app/CreateOrganizationInviteRequest-class.html">CreateOrganizationInviteRequest</a></li>
         <li><a href="../viam_protos.app.app/CreateOrganizationInviteResponse-class.html">CreateOrganizationInviteResponse</a></li>
         <li><a href="../viam_protos.app.app/CreateOrganizationRequest-class.html">CreateOrganizationRequest</a></li>
@@ -896,6 +997,8 @@
         <li><a href="../viam_protos.app.app/GetFragmentResponse-class.html">GetFragmentResponse</a></li>
         <li><a href="../viam_protos.app.app/GetLocationRequest-class.html">GetLocationRequest</a></li>
         <li><a href="../viam_protos.app.app/GetLocationResponse-class.html">GetLocationResponse</a></li>
+        <li><a href="../viam_protos.app.app/GetModuleRequest-class.html">GetModuleRequest</a></li>
+        <li><a href="../viam_protos.app.app/GetModuleResponse-class.html">GetModuleResponse</a></li>
         <li><a href="../viam_protos.app.app/GetOrganizationRequest-class.html">GetOrganizationRequest</a></li>
         <li><a href="../viam_protos.app.app/GetOrganizationResponse-class.html">GetOrganizationResponse</a></li>
         <li><a href="../viam_protos.app.app/GetRobotPartHistoryRequest-class.html">GetRobotPartHistoryRequest</a></li>
@@ -910,14 +1013,20 @@
         <li><a href="../viam_protos.app.app/GetRobotResponse-class.html">GetRobotResponse</a></li>
         <li><a href="../viam_protos.app.app/GetRoverRentalRobotsRequest-class.html">GetRoverRentalRobotsRequest</a></li>
         <li><a href="../viam_protos.app.app/GetRoverRentalRobotsResponse-class.html">GetRoverRentalRobotsResponse</a></li>
+        <li><a href="../viam_protos.app.app/GetUserIDByEmailRequest-class.html">GetUserIDByEmailRequest</a></li>
+        <li><a href="../viam_protos.app.app/GetUserIDByEmailResponse-class.html">GetUserIDByEmailResponse</a></li>
         <li><a href="../viam_protos.app.app/ListAuthorizationsRequest-class.html">ListAuthorizationsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListAuthorizationsResponse-class.html">ListAuthorizationsResponse</a></li>
         <li><a href="../viam_protos.app.app/ListFragmentsRequest-class.html">ListFragmentsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListFragmentsResponse-class.html">ListFragmentsResponse</a></li>
         <li><a href="../viam_protos.app.app/ListLocationsRequest-class.html">ListLocationsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListLocationsResponse-class.html">ListLocationsResponse</a></li>
+        <li><a href="../viam_protos.app.app/ListModulesRequest-class.html">ListModulesRequest</a></li>
+        <li><a href="../viam_protos.app.app/ListModulesResponse-class.html">ListModulesResponse</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationMembersRequest-class.html">ListOrganizationMembersRequest</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationMembersResponse-class.html">ListOrganizationMembersResponse</a></li>
+        <li><a href="../viam_protos.app.app/ListOrganizationsByUserRequest-class.html">ListOrganizationsByUserRequest</a></li>
+        <li><a href="../viam_protos.app.app/ListOrganizationsByUserResponse-class.html">ListOrganizationsByUserResponse</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationsRequest-class.html">ListOrganizationsRequest</a></li>
         <li><a href="../viam_protos.app.app/ListOrganizationsResponse-class.html">ListOrganizationsResponse</a></li>
         <li><a href="../viam_protos.app.app/ListRobotsRequest-class.html">ListRobotsRequest</a></li>
@@ -932,6 +1041,9 @@
         <li><a href="../viam_protos.app.app/MarkPartAsMainResponse-class.html">MarkPartAsMainResponse</a></li>
         <li><a href="../viam_protos.app.app/MarkPartForRestartRequest-class.html">MarkPartForRestartRequest</a></li>
         <li><a href="../viam_protos.app.app/MarkPartForRestartResponse-class.html">MarkPartForRestartResponse</a></li>
+        <li><a href="../viam_protos.app.app/Model-class.html">Model</a></li>
+        <li><a href="../viam_protos.app.app/Module-class.html">Module</a></li>
+        <li><a href="../viam_protos.app.app/ModuleFileInfo-class.html">ModuleFileInfo</a></li>
         <li><a href="../viam_protos.app.app/NewRobotPartRequest-class.html">NewRobotPartRequest</a></li>
         <li><a href="../viam_protos.app.app/NewRobotPartResponse-class.html">NewRobotPartResponse</a></li>
         <li><a href="../viam_protos.app.app/NewRobotRequest-class.html">NewRobotRequest</a></li>
@@ -939,6 +1051,7 @@
         <li><a href="../viam_protos.app.app/Organization-class.html">Organization</a></li>
         <li><a href="../viam_protos.app.app/OrganizationInvite-class.html">OrganizationInvite</a></li>
         <li><a href="../viam_protos.app.app/OrganizationMember-class.html">OrganizationMember</a></li>
+        <li><a href="../viam_protos.app.app/OrgDetails-class.html">OrgDetails</a></li>
         <li><a href="../viam_protos.app.app/RemoveRoleRequest-class.html">RemoveRoleRequest</a></li>
         <li><a href="../viam_protos.app.app/RemoveRoleResponse-class.html">RemoveRoleResponse</a></li>
         <li><a href="../viam_protos.app.app/ResendOrganizationInviteRequest-class.html">ResendOrganizationInviteRequest</a></li>
@@ -959,12 +1072,19 @@
         <li><a href="../viam_protos.app.app/UpdateFragmentResponse-class.html">UpdateFragmentResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateLocationRequest-class.html">UpdateLocationRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateLocationResponse-class.html">UpdateLocationResponse</a></li>
+        <li><a href="../viam_protos.app.app/UpdateModuleRequest-class.html">UpdateModuleRequest</a></li>
+        <li><a href="../viam_protos.app.app/UpdateModuleResponse-class.html">UpdateModuleResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateOrganizationRequest-class.html">UpdateOrganizationRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateOrganizationResponse-class.html">UpdateOrganizationResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotPartRequest-class.html">UpdateRobotPartRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotPartResponse-class.html">UpdateRobotPartResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotRequest-class.html">UpdateRobotRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotResponse-class.html">UpdateRobotResponse</a></li>
+        <li><a href="../viam_protos.app.app/UploadModuleFileRequest-class.html">UploadModuleFileRequest</a></li>
+        <li><a href="../viam_protos.app.app/UploadModuleFileResponse-class.html">UploadModuleFileResponse</a></li>
+        <li><a href="../viam_protos.app.app/Uploads-class.html">Uploads</a></li>
+        <li><a href="../viam_protos.app.app/VersionHistory-class.html">VersionHistory</a></li>
+        <li><a href="../viam_protos.app.app/Visibility-class.html">Visibility</a></li>
 
 
 
@@ -982,6 +1102,8 @@
         <li><a class="deprecated" href="../viam_protos.app.app/CreateLocationResponse$json-constant.html">CreateLocationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateLocationSecretRequest$json-constant.html">CreateLocationSecretRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateLocationSecretResponse$json-constant.html">CreateLocationSecretResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/CreateModuleRequest$json-constant.html">CreateModuleRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/CreateModuleResponse$json-constant.html">CreateModuleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateOrganizationInviteRequest$json-constant.html">CreateOrganizationInviteRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateOrganizationInviteResponse$json-constant.html">CreateOrganizationInviteResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CreateOrganizationRequest$json-constant.html">CreateOrganizationRequest$json</a></li>
@@ -1011,6 +1133,8 @@
         <li><a class="deprecated" href="../viam_protos.app.app/GetFragmentResponse$json-constant.html">GetFragmentResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetLocationRequest$json-constant.html">GetLocationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetLocationResponse$json-constant.html">GetLocationResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetModuleRequest$json-constant.html">GetModuleRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetModuleResponse$json-constant.html">GetModuleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationRequest$json-constant.html">GetOrganizationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationResponse$json-constant.html">GetOrganizationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRobotPartHistoryRequest$json-constant.html">GetRobotPartHistoryRequest$json</a></li>
@@ -1025,14 +1149,20 @@
         <li><a class="deprecated" href="../viam_protos.app.app/GetRobotResponse$json-constant.html">GetRobotResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRoverRentalRobotsRequest$json-constant.html">GetRoverRentalRobotsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRoverRentalRobotsResponse$json-constant.html">GetRoverRentalRobotsResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetUserIDByEmailRequest$json-constant.html">GetUserIDByEmailRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetUserIDByEmailResponse$json-constant.html">GetUserIDByEmailResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListAuthorizationsRequest$json-constant.html">ListAuthorizationsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListAuthorizationsResponse$json-constant.html">ListAuthorizationsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListFragmentsRequest$json-constant.html">ListFragmentsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListFragmentsResponse$json-constant.html">ListFragmentsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListLocationsRequest$json-constant.html">ListLocationsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListLocationsResponse$json-constant.html">ListLocationsResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListModulesRequest$json-constant.html">ListModulesRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListModulesResponse$json-constant.html">ListModulesResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationMembersRequest$json-constant.html">ListOrganizationMembersRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationMembersResponse$json-constant.html">ListOrganizationMembersResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsByUserRequest$json-constant.html">ListOrganizationsByUserRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsByUserResponse$json-constant.html">ListOrganizationsByUserResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsRequest$json-constant.html">ListOrganizationsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListOrganizationsResponse$json-constant.html">ListOrganizationsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ListRobotsRequest$json-constant.html">ListRobotsRequest$json</a></li>
@@ -1047,6 +1177,9 @@
         <li><a class="deprecated" href="../viam_protos.app.app/MarkPartAsMainResponse$json-constant.html">MarkPartAsMainResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/MarkPartForRestartRequest$json-constant.html">MarkPartForRestartRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/MarkPartForRestartResponse$json-constant.html">MarkPartForRestartResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Model$json-constant.html">Model$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Module$json-constant.html">Module$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/ModuleFileInfo$json-constant.html">ModuleFileInfo$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/NewRobotPartRequest$json-constant.html">NewRobotPartRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/NewRobotPartResponse$json-constant.html">NewRobotPartResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/NewRobotRequest$json-constant.html">NewRobotRequest$json</a></li>
@@ -1054,6 +1187,7 @@
         <li><a class="deprecated" href="../viam_protos.app.app/Organization$json-constant.html">Organization$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/OrganizationInvite$json-constant.html">OrganizationInvite$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/OrganizationMember$json-constant.html">OrganizationMember$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/OrgDetails$json-constant.html">OrgDetails$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/RemoveRoleRequest$json-constant.html">RemoveRoleRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/RemoveRoleResponse$json-constant.html">RemoveRoleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ResendOrganizationInviteRequest$json-constant.html">ResendOrganizationInviteRequest$json</a></li>
@@ -1074,12 +1208,19 @@
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateFragmentResponse$json-constant.html">UpdateFragmentResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateLocationRequest$json-constant.html">UpdateLocationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateLocationResponse$json-constant.html">UpdateLocationResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UpdateModuleRequest$json-constant.html">UpdateModuleRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UpdateModuleResponse$json-constant.html">UpdateModuleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationRequest$json-constant.html">UpdateOrganizationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationResponse$json-constant.html">UpdateOrganizationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotPartRequest$json-constant.html">UpdateRobotPartRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotPartResponse$json-constant.html">UpdateRobotPartResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotRequest$json-constant.html">UpdateRobotRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotResponse$json-constant.html">UpdateRobotResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UploadModuleFileRequest$json-constant.html">UploadModuleFileRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UploadModuleFileResponse$json-constant.html">UploadModuleFileResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Uploads$json-constant.html">Uploads$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/VersionHistory$json-constant.html">VersionHistory$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/Visibility$json-constant.html">Visibility$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.app.app/viam_protos.app.app-library.html#properties">Properties</a></li>
         <li><a href="../viam_protos.app.app/addRoleRequestDescriptor.html">addRoleRequestDescriptor</a></li>
@@ -1095,6 +1236,8 @@
         <li><a href="../viam_protos.app.app/createLocationResponseDescriptor.html">createLocationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createLocationSecretRequestDescriptor.html">createLocationSecretRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createLocationSecretResponseDescriptor.html">createLocationSecretResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/createModuleRequestDescriptor.html">createModuleRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/createModuleResponseDescriptor.html">createModuleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createOrganizationInviteRequestDescriptor.html">createOrganizationInviteRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createOrganizationInviteResponseDescriptor.html">createOrganizationInviteResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/createOrganizationRequestDescriptor.html">createOrganizationRequestDescriptor</a></li>
@@ -1124,6 +1267,8 @@
         <li><a href="../viam_protos.app.app/getFragmentResponseDescriptor.html">getFragmentResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getLocationRequestDescriptor.html">getLocationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getLocationResponseDescriptor.html">getLocationResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getModuleRequestDescriptor.html">getModuleRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getModuleResponseDescriptor.html">getModuleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getOrganizationRequestDescriptor.html">getOrganizationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getOrganizationResponseDescriptor.html">getOrganizationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRobotPartHistoryRequestDescriptor.html">getRobotPartHistoryRequestDescriptor</a></li>
@@ -1138,14 +1283,20 @@
         <li><a href="../viam_protos.app.app/getRobotResponseDescriptor.html">getRobotResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRoverRentalRobotsRequestDescriptor.html">getRoverRentalRobotsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRoverRentalRobotsResponseDescriptor.html">getRoverRentalRobotsResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getUserIDByEmailRequestDescriptor.html">getUserIDByEmailRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getUserIDByEmailResponseDescriptor.html">getUserIDByEmailResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listAuthorizationsRequestDescriptor.html">listAuthorizationsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listAuthorizationsResponseDescriptor.html">listAuthorizationsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listFragmentsRequestDescriptor.html">listFragmentsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listFragmentsResponseDescriptor.html">listFragmentsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listLocationsRequestDescriptor.html">listLocationsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listLocationsResponseDescriptor.html">listLocationsResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listModulesRequestDescriptor.html">listModulesRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listModulesResponseDescriptor.html">listModulesResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationMembersRequestDescriptor.html">listOrganizationMembersRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationMembersResponseDescriptor.html">listOrganizationMembersResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listOrganizationsByUserRequestDescriptor.html">listOrganizationsByUserRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/listOrganizationsByUserResponseDescriptor.html">listOrganizationsByUserResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationsRequestDescriptor.html">listOrganizationsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listOrganizationsResponseDescriptor.html">listOrganizationsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/listRobotsRequestDescriptor.html">listRobotsRequestDescriptor</a></li>
@@ -1160,6 +1311,9 @@
         <li><a href="../viam_protos.app.app/markPartAsMainResponseDescriptor.html">markPartAsMainResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/markPartForRestartRequestDescriptor.html">markPartForRestartRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/markPartForRestartResponseDescriptor.html">markPartForRestartResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/modelDescriptor.html">modelDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/moduleDescriptor.html">moduleDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/moduleFileInfoDescriptor.html">moduleFileInfoDescriptor</a></li>
         <li><a href="../viam_protos.app.app/newRobotPartRequestDescriptor.html">newRobotPartRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/newRobotPartResponseDescriptor.html">newRobotPartResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/newRobotRequestDescriptor.html">newRobotRequestDescriptor</a></li>
@@ -1167,6 +1321,7 @@
         <li><a href="../viam_protos.app.app/organizationDescriptor.html">organizationDescriptor</a></li>
         <li><a href="../viam_protos.app.app/organizationInviteDescriptor.html">organizationInviteDescriptor</a></li>
         <li><a href="../viam_protos.app.app/organizationMemberDescriptor.html">organizationMemberDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/orgDetailsDescriptor.html">orgDetailsDescriptor</a></li>
         <li><a href="../viam_protos.app.app/removeRoleRequestDescriptor.html">removeRoleRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/removeRoleResponseDescriptor.html">removeRoleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/resendOrganizationInviteRequestDescriptor.html">resendOrganizationInviteRequestDescriptor</a></li>
@@ -1186,14 +1341,23 @@
         <li><a href="../viam_protos.app.app/updateFragmentResponseDescriptor.html">updateFragmentResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateLocationRequestDescriptor.html">updateLocationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateLocationResponseDescriptor.html">updateLocationResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/updateModuleRequestDescriptor.html">updateModuleRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/updateModuleResponseDescriptor.html">updateModuleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateOrganizationRequestDescriptor.html">updateOrganizationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateOrganizationResponseDescriptor.html">updateOrganizationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotPartRequestDescriptor.html">updateRobotPartRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotPartResponseDescriptor.html">updateRobotPartResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotRequestDescriptor.html">updateRobotRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotResponseDescriptor.html">updateRobotResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/uploadModuleFileRequestDescriptor.html">uploadModuleFileRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/uploadModuleFileResponseDescriptor.html">uploadModuleFileResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/uploadsDescriptor.html">uploadsDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/versionHistoryDescriptor.html">versionHistoryDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/visibilityDescriptor.html">visibilityDescriptor</a></li>
 
 
+      <li class="section-title"><a href="../viam_protos.app.app/viam_protos.app.app-library.html#enums">Enums</a></li>
+        <li><a href="../viam_protos.app.app/UploadModuleFileRequest_ModuleFile.html">UploadModuleFileRequest_ModuleFile</a></li>
 
 
 </ol>
@@ -1214,14 +1378,15 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../viam_protos.app.app/AppServiceClient-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
+          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/addRole.html">addRole</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/checkPermissions.html">checkPermissions</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/createFragment.html">createFragment</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/createLocation.html">createLocation</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/createLocationSecret.html">createLocationSecret</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/createModule.html">createModule</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/createOrganization.html">createOrganization</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/createOrganizationInvite.html">createOrganizationInvite</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/createRobotPartSecret.html">createRobotPartSecret</a></li>
@@ -1236,6 +1401,7 @@
           <li><a href="../viam_protos.app.app/AppServiceClient/deleteRobotPartSecret.html">deleteRobotPartSecret</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getFragment.html">getFragment</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getLocation.html">getLocation</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/getModule.html">getModule</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getOrganization.html">getOrganization</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getRobot.html">getRobot</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getRobotPart.html">getRobotPart</a></li>
@@ -1243,11 +1409,14 @@
           <li><a href="../viam_protos.app.app/AppServiceClient/getRobotPartLogs.html">getRobotPartLogs</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getRobotParts.html">getRobotParts</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/getRoverRentalRobots.html">getRoverRentalRobots</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/getUserIDByEmail.html">getUserIDByEmail</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/listAuthorizations.html">listAuthorizations</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/listFragments.html">listFragments</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/listLocations.html">listLocations</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/listModules.html">listModules</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/listOrganizationMembers.html">listOrganizationMembers</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/listOrganizations.html">listOrganizations</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/listOrganizationsByUser.html">listOrganizationsByUser</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/listRobots.html">listRobots</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/locationAuth.html">locationAuth</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/markPartAsMain.html">markPartAsMain</a></li>
@@ -1263,9 +1432,11 @@
           <li><a href="../viam_protos.app.app/AppServiceClient/unshareLocation.html">unshareLocation</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/updateFragment.html">updateFragment</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/updateLocation.html">updateLocation</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/updateModule.html">updateModule</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/updateOrganization.html">updateOrganization</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/updateRobot.html">updateRobot</a></li>
           <li><a href="../viam_protos.app.app/AppServiceClient/updateRobotPart.html">updateRobotPart</a></li>
+          <li><a href="../viam_protos.app.app/AppServiceClient/uploadModuleFile.html">uploadModuleFile</a></li>
 
         <li class="section-title inherited"><a href="../viam_protos.app.app/AppServiceClient-class.html#operators">Operators</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>

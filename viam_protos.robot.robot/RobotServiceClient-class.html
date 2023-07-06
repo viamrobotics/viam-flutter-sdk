@@ -39,8 +39,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">RobotServiceClient</span> class 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -64,7 +66,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client-class.html">Client</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client-class.html">Client</a></li>
       <li>RobotServiceClient</li>
     </ul>
   </dd>
@@ -75,6 +77,12 @@
 
 
         
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GrpcServiceName-class.html">GrpcServiceName</a>(&#39;viam.robot.v1.RobotService&#39;)</li>
+    </ul>
+  </dd>
 
 
       </dl>
@@ -86,7 +94,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="RobotServiceClient" class="callable">
-          <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/RobotServiceClient.html">RobotServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/RobotServiceClient.html">RobotServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -130,8 +138,8 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$createCall" class="callable inherited">
-  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -143,8 +151,8 @@
 </dd>
 
         <dt id="$createStreamingCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -156,8 +164,8 @@
 </dd>
 
         <dt id="$createUnaryCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -169,8 +177,8 @@
 </dd>
 
         <dt id="blockForOperation" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/blockForOperation.html">blockForOperation</a></span><span class="signature">(<wbr><span class="parameter" id="blockForOperation-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/BlockForOperationRequest-class.html">BlockForOperationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="blockForOperation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/BlockForOperationResponse-class.html">BlockForOperationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/blockForOperation.html">blockForOperation</a></span><span class="signature">(<wbr><span class="parameter" id="blockForOperation-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/BlockForOperationRequest-class.html">BlockForOperationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="blockForOperation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/BlockForOperationResponse-class.html">BlockForOperationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -182,8 +190,8 @@
 </dd>
 
         <dt id="cancelOperation" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/cancelOperation.html">cancelOperation</a></span><span class="signature">(<wbr><span class="parameter" id="cancelOperation-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/CancelOperationRequest-class.html">CancelOperationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="cancelOperation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/CancelOperationResponse-class.html">CancelOperationResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/cancelOperation.html">cancelOperation</a></span><span class="signature">(<wbr><span class="parameter" id="cancelOperation-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/CancelOperationRequest-class.html">CancelOperationRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="cancelOperation-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/CancelOperationResponse-class.html">CancelOperationResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -195,8 +203,8 @@
 </dd>
 
         <dt id="discoverComponents" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/discoverComponents.html">discoverComponents</a></span><span class="signature">(<wbr><span class="parameter" id="discoverComponents-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/DiscoverComponentsRequest-class.html">DiscoverComponentsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="discoverComponents-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/DiscoverComponentsResponse-class.html">DiscoverComponentsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/discoverComponents.html">discoverComponents</a></span><span class="signature">(<wbr><span class="parameter" id="discoverComponents-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/DiscoverComponentsRequest-class.html">DiscoverComponentsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="discoverComponents-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/DiscoverComponentsResponse-class.html">DiscoverComponentsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -208,8 +216,8 @@
 </dd>
 
         <dt id="frameSystemConfig" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/frameSystemConfig.html">frameSystemConfig</a></span><span class="signature">(<wbr><span class="parameter" id="frameSystemConfig-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/FrameSystemConfigRequest-class.html">FrameSystemConfigRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="frameSystemConfig-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/FrameSystemConfigResponse-class.html">FrameSystemConfigResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/frameSystemConfig.html">frameSystemConfig</a></span><span class="signature">(<wbr><span class="parameter" id="frameSystemConfig-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/FrameSystemConfigRequest-class.html">FrameSystemConfigRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="frameSystemConfig-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/FrameSystemConfigResponse-class.html">FrameSystemConfigResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -221,8 +229,8 @@
 </dd>
 
         <dt id="getOperations" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/getOperations.html">getOperations</a></span><span class="signature">(<wbr><span class="parameter" id="getOperations-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/GetOperationsRequest-class.html">GetOperationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getOperations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/GetOperationsResponse-class.html">GetOperationsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/getOperations.html">getOperations</a></span><span class="signature">(<wbr><span class="parameter" id="getOperations-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/GetOperationsRequest-class.html">GetOperationsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getOperations-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/GetOperationsResponse-class.html">GetOperationsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -234,8 +242,8 @@
 </dd>
 
         <dt id="getSessions" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/getSessions.html">getSessions</a></span><span class="signature">(<wbr><span class="parameter" id="getSessions-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/GetSessionsRequest-class.html">GetSessionsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getSessions-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/GetSessionsResponse-class.html">GetSessionsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/getSessions.html">getSessions</a></span><span class="signature">(<wbr><span class="parameter" id="getSessions-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/GetSessionsRequest-class.html">GetSessionsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getSessions-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/GetSessionsResponse-class.html">GetSessionsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -247,8 +255,8 @@
 </dd>
 
         <dt id="getStatus" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/getStatus.html">getStatus</a></span><span class="signature">(<wbr><span class="parameter" id="getStatus-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/GetStatusRequest-class.html">GetStatusRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getStatus-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/GetStatusResponse-class.html">GetStatusResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/getStatus.html">getStatus</a></span><span class="signature">(<wbr><span class="parameter" id="getStatus-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/GetStatusRequest-class.html">GetStatusRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getStatus-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/GetStatusResponse-class.html">GetStatusResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -267,14 +275,14 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a non-existent method or property is accessed.
+  Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="resourceNames" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/resourceNames.html">resourceNames</a></span><span class="signature">(<wbr><span class="parameter" id="resourceNames-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/ResourceNamesRequest-class.html">ResourceNamesRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="resourceNames-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/ResourceNamesResponse-class.html">ResourceNamesResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/resourceNames.html">resourceNames</a></span><span class="signature">(<wbr><span class="parameter" id="resourceNames-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/ResourceNamesRequest-class.html">ResourceNamesRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="resourceNames-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/ResourceNamesResponse-class.html">ResourceNamesResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -286,8 +294,8 @@
 </dd>
 
         <dt id="resourceRPCSubtypes" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/resourceRPCSubtypes.html">resourceRPCSubtypes</a></span><span class="signature">(<wbr><span class="parameter" id="resourceRPCSubtypes-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/ResourceRPCSubtypesRequest-class.html">ResourceRPCSubtypesRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="resourceRPCSubtypes-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/ResourceRPCSubtypesResponse-class.html">ResourceRPCSubtypesResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/resourceRPCSubtypes.html">resourceRPCSubtypes</a></span><span class="signature">(<wbr><span class="parameter" id="resourceRPCSubtypes-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/ResourceRPCSubtypesRequest-class.html">ResourceRPCSubtypesRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="resourceRPCSubtypes-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/ResourceRPCSubtypesResponse-class.html">ResourceRPCSubtypesResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -299,8 +307,8 @@
 </dd>
 
         <dt id="sendSessionHeartbeat" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/sendSessionHeartbeat.html">sendSessionHeartbeat</a></span><span class="signature">(<wbr><span class="parameter" id="sendSessionHeartbeat-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/SendSessionHeartbeatRequest-class.html">SendSessionHeartbeatRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="sendSessionHeartbeat-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/SendSessionHeartbeatResponse-class.html">SendSessionHeartbeatResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/sendSessionHeartbeat.html">sendSessionHeartbeat</a></span><span class="signature">(<wbr><span class="parameter" id="sendSessionHeartbeat-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/SendSessionHeartbeatRequest-class.html">SendSessionHeartbeatRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="sendSessionHeartbeat-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/SendSessionHeartbeatResponse-class.html">SendSessionHeartbeatResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -312,8 +320,8 @@
 </dd>
 
         <dt id="startSession" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/startSession.html">startSession</a></span><span class="signature">(<wbr><span class="parameter" id="startSession-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/StartSessionRequest-class.html">StartSessionRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="startSession-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/StartSessionResponse-class.html">StartSessionResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/startSession.html">startSession</a></span><span class="signature">(<wbr><span class="parameter" id="startSession-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/StartSessionRequest-class.html">StartSessionRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="startSession-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/StartSessionResponse-class.html">StartSessionResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -325,8 +333,8 @@
 </dd>
 
         <dt id="stopAll" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/stopAll.html">stopAll</a></span><span class="signature">(<wbr><span class="parameter" id="stopAll-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/StopAllRequest-class.html">StopAllRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="stopAll-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/StopAllResponse-class.html">StopAllResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/stopAll.html">stopAll</a></span><span class="signature">(<wbr><span class="parameter" id="stopAll-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/StopAllRequest-class.html">StopAllRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="stopAll-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/StopAllResponse-class.html">StopAllResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -338,8 +346,8 @@
 </dd>
 
         <dt id="streamStatus" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/streamStatus.html">streamStatus</a></span><span class="signature">(<wbr><span class="parameter" id="streamStatus-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/StreamStatusRequest-class.html">StreamStatusRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="streamStatus-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/StreamStatusResponse-class.html">StreamStatusResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/streamStatus.html">streamStatus</a></span><span class="signature">(<wbr><span class="parameter" id="streamStatus-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/StreamStatusRequest-class.html">StreamStatusRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="streamStatus-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/StreamStatusResponse-class.html">StreamStatusResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -364,8 +372,8 @@
 </dd>
 
         <dt id="transformPCD" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/transformPCD.html">transformPCD</a></span><span class="signature">(<wbr><span class="parameter" id="transformPCD-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/TransformPCDRequest-class.html">TransformPCDRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="transformPCD-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/TransformPCDResponse-class.html">TransformPCDResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/transformPCD.html">transformPCD</a></span><span class="signature">(<wbr><span class="parameter" id="transformPCD-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/TransformPCDRequest-class.html">TransformPCDRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="transformPCD-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/TransformPCDResponse-class.html">TransformPCDResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -377,8 +385,8 @@
 </dd>
 
         <dt id="transformPose" class="callable">
-  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/transformPose.html">transformPose</a></span><span class="signature">(<wbr><span class="parameter" id="transformPose-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/TransformPoseRequest-class.html">TransformPoseRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="transformPose-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.1.0/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/TransformPoseResponse-class.html">TransformPoseResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.robot.robot/RobotServiceClient/transformPose.html">transformPose</a></span><span class="signature">(<wbr><span class="parameter" id="transformPose-param-request"><span class="type-annotation"><a href="../viam_protos.robot.robot/TransformPoseRequest-class.html">TransformPoseRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="transformPose-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.2/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.robot.robot/TransformPoseResponse-class.html">TransformPoseResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -586,9 +594,9 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../viam_protos.robot.robot/RobotServiceClient-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createCall.html">$createCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.1.0/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
+          <li class="inherited"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createCall.html">$createCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></li>
+          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.2/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></li>
           <li><a href="../viam_protos.robot.robot/RobotServiceClient/blockForOperation.html">blockForOperation</a></li>
           <li><a href="../viam_protos.robot.robot/RobotServiceClient/cancelOperation.html">cancelOperation</a></li>
           <li><a href="../viam_protos.robot.robot/RobotServiceClient/discoverComponents.html">discoverComponents</a></li>

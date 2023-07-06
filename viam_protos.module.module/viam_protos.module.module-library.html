@@ -38,8 +38,11 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
@@ -50,7 +53,6 @@
     
       <div>
 <h1><span class="kind-library">viam_protos.module.module</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 </h1></div>
@@ -197,7 +199,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddResourceRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;config&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.Compo…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddResourceRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;config&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.ComponentConfig&#39;, &…</code></span>
     </div>
 </dd>
 
@@ -212,7 +214,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;AddResourceResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddResourceResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -227,7 +229,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;HandlerDefinition&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;subtype&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.Res…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;HandlerDefinition&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;subtype&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.robot.v1.ResourceRPCSubtype&#3…</code></span>
     </div>
 </dd>
 
@@ -242,7 +244,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;HandlerMap&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;handlers&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.module.v1.HandlerD…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;HandlerMap&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;handlers&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.module.v1.HandlerDefinition&#39;, &#…</code></span>
     </div>
 </dd>
 
@@ -257,7 +259,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ReadyRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;parent_address&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;parentAddress&#3…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ReadyRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;parent_address&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;parentAddress&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -272,7 +274,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ReadyResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;ready&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;ready&#39;}, const {&#39…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ReadyResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;ready&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;ready&#39;}, {&#39;1&#39; : &#39;handlerma…</code></span>
     </div>
 </dd>
 
@@ -287,7 +289,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ReconfigureResourceRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;config&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ReconfigureResourceRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;config&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.ComponentConfig…</code></span>
     </div>
 </dd>
 
@@ -302,7 +304,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ReconfigureResourceResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ReconfigureResourceResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -317,7 +319,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveResourceRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveResourceRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -332,7 +334,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;RemoveResourceResponse&#39;}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveResourceResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -347,7 +349,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ValidateConfigRequest&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;config&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.Co…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ValidateConfigRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;config&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.ComponentConfig&#39;…</code></span>
     </div>
 </dd>
 
@@ -362,7 +364,7 @@
   
 
     <div>
-      <span class="signature"><code>const {&#39;1&#39; : &#39;ValidateConfigResponse&#39;, &#39;2&#39; : const [const {&#39;1&#39; : &#39;dependencies&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;dependen…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ValidateConfigResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;dependencies&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 9, &#39;10&#39; : &#39;dependencies&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -536,10 +538,10 @@
       <li class="section-subtitle">Protobuf Definitions</li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.model/viam_protos.app.model-library.html">viam_protos.app.model</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
         <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
