@@ -1,37 +1,30 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: proto/rpc/examples/echoresource/v1/echoresource.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class EchoResourceRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EchoResourceRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+  factory EchoResourceRequest() => create();
+  EchoResourceRequest._() : super();
+  factory EchoResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EchoResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EchoResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
-  EchoResourceRequest._() : super();
-  factory EchoResourceRequest({
-    $core.String? name,
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory EchoResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EchoResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -41,8 +34,10 @@ class EchoResourceRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EchoResourceRequest copyWith(void Function(EchoResourceRequest) updates) => super.copyWith((message) => updates(message as EchoResourceRequest)) as EchoResourceRequest; // ignore: deprecated_member_use
+  EchoResourceRequest copyWith(void Function(EchoResourceRequest) updates) => super.copyWith((message) => updates(message as EchoResourceRequest)) as EchoResourceRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EchoResourceRequest create() => EchoResourceRequest._();
   EchoResourceRequest createEmptyInstance() => create();
@@ -71,23 +66,16 @@ class EchoResourceRequest extends $pb.GeneratedMessage {
 }
 
 class EchoResourceResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EchoResourceResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+  factory EchoResourceResponse() => create();
+  EchoResourceResponse._() : super();
+  factory EchoResourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EchoResourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EchoResourceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
-  EchoResourceResponse._() : super();
-  factory EchoResourceResponse({
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory EchoResourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EchoResourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -97,8 +85,10 @@ class EchoResourceResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EchoResourceResponse copyWith(void Function(EchoResourceResponse) updates) => super.copyWith((message) => updates(message as EchoResourceResponse)) as EchoResourceResponse; // ignore: deprecated_member_use
+  EchoResourceResponse copyWith(void Function(EchoResourceResponse) updates) => super.copyWith((message) => updates(message as EchoResourceResponse)) as EchoResourceResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EchoResourceResponse create() => EchoResourceResponse._();
   EchoResourceResponse createEmptyInstance() => create();
@@ -118,28 +108,17 @@ class EchoResourceResponse extends $pb.GeneratedMessage {
 }
 
 class EchoResourceMultipleRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EchoResourceMultipleRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+  factory EchoResourceMultipleRequest() => create();
+  EchoResourceMultipleRequest._() : super();
+  factory EchoResourceMultipleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EchoResourceMultipleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EchoResourceMultipleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
-  EchoResourceMultipleRequest._() : super();
-  factory EchoResourceMultipleRequest({
-    $core.String? name,
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory EchoResourceMultipleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EchoResourceMultipleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -149,8 +128,10 @@ class EchoResourceMultipleRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EchoResourceMultipleRequest copyWith(void Function(EchoResourceMultipleRequest) updates) => super.copyWith((message) => updates(message as EchoResourceMultipleRequest)) as EchoResourceMultipleRequest; // ignore: deprecated_member_use
+  EchoResourceMultipleRequest copyWith(void Function(EchoResourceMultipleRequest) updates) => super.copyWith((message) => updates(message as EchoResourceMultipleRequest)) as EchoResourceMultipleRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EchoResourceMultipleRequest create() => EchoResourceMultipleRequest._();
   EchoResourceMultipleRequest createEmptyInstance() => create();
@@ -179,23 +160,16 @@ class EchoResourceMultipleRequest extends $pb.GeneratedMessage {
 }
 
 class EchoResourceMultipleResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EchoResourceMultipleResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+  factory EchoResourceMultipleResponse() => create();
+  EchoResourceMultipleResponse._() : super();
+  factory EchoResourceMultipleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EchoResourceMultipleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EchoResourceMultipleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
-  EchoResourceMultipleResponse._() : super();
-  factory EchoResourceMultipleResponse({
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory EchoResourceMultipleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EchoResourceMultipleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -205,8 +179,10 @@ class EchoResourceMultipleResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EchoResourceMultipleResponse copyWith(void Function(EchoResourceMultipleResponse) updates) => super.copyWith((message) => updates(message as EchoResourceMultipleResponse)) as EchoResourceMultipleResponse; // ignore: deprecated_member_use
+  EchoResourceMultipleResponse copyWith(void Function(EchoResourceMultipleResponse) updates) => super.copyWith((message) => updates(message as EchoResourceMultipleResponse)) as EchoResourceMultipleResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EchoResourceMultipleResponse create() => EchoResourceMultipleResponse._();
   EchoResourceMultipleResponse createEmptyInstance() => create();
@@ -226,28 +202,17 @@ class EchoResourceMultipleResponse extends $pb.GeneratedMessage {
 }
 
 class EchoResourceBiDiRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EchoResourceBiDiRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+  factory EchoResourceBiDiRequest() => create();
+  EchoResourceBiDiRequest._() : super();
+  factory EchoResourceBiDiRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EchoResourceBiDiRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EchoResourceBiDiRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
-  EchoResourceBiDiRequest._() : super();
-  factory EchoResourceBiDiRequest({
-    $core.String? name,
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory EchoResourceBiDiRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EchoResourceBiDiRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -257,8 +222,10 @@ class EchoResourceBiDiRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EchoResourceBiDiRequest copyWith(void Function(EchoResourceBiDiRequest) updates) => super.copyWith((message) => updates(message as EchoResourceBiDiRequest)) as EchoResourceBiDiRequest; // ignore: deprecated_member_use
+  EchoResourceBiDiRequest copyWith(void Function(EchoResourceBiDiRequest) updates) => super.copyWith((message) => updates(message as EchoResourceBiDiRequest)) as EchoResourceBiDiRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EchoResourceBiDiRequest create() => EchoResourceBiDiRequest._();
   EchoResourceBiDiRequest createEmptyInstance() => create();
@@ -287,23 +254,16 @@ class EchoResourceBiDiRequest extends $pb.GeneratedMessage {
 }
 
 class EchoResourceBiDiResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EchoResourceBiDiResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
+  factory EchoResourceBiDiResponse() => create();
+  EchoResourceBiDiResponse._() : super();
+  factory EchoResourceBiDiResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EchoResourceBiDiResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EchoResourceBiDiResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.examples.echoresource.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
-  EchoResourceBiDiResponse._() : super();
-  factory EchoResourceBiDiResponse({
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory EchoResourceBiDiResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EchoResourceBiDiResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -313,8 +273,10 @@ class EchoResourceBiDiResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EchoResourceBiDiResponse copyWith(void Function(EchoResourceBiDiResponse) updates) => super.copyWith((message) => updates(message as EchoResourceBiDiResponse)) as EchoResourceBiDiResponse; // ignore: deprecated_member_use
+  EchoResourceBiDiResponse copyWith(void Function(EchoResourceBiDiResponse) updates) => super.copyWith((message) => updates(message as EchoResourceBiDiResponse)) as EchoResourceBiDiResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EchoResourceBiDiResponse create() => EchoResourceBiDiResponse._();
   EchoResourceBiDiResponse createEmptyInstance() => create();
@@ -333,3 +295,6 @@ class EchoResourceBiDiResponse extends $pb.GeneratedMessage {
   void clearMessage() => clearField(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -1,45 +1,34 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: component/posetracker/v1/pose_tracker.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $2;
 import '../../../common/v1/common.pb.dart' as $1;
+import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetPosesRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPosesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyNames')
-    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+  factory GetPosesRequest() => create();
+  GetPosesRequest._() : super();
+  factory GetPosesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPosesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPosesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pPS(2, _omitFieldNames ? '' : 'bodyNames')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
-  GetPosesRequest._() : super();
-  factory GetPosesRequest({
-    $core.String? name,
-    $core.Iterable<$core.String>? bodyNames,
-    $2.Struct? extra,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (bodyNames != null) {
-      _result.bodyNames.addAll(bodyNames);
-    }
-    if (extra != null) {
-      _result.extra = extra;
-    }
-    return _result;
-  }
-  factory GetPosesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetPosesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -49,8 +38,10 @@ class GetPosesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPosesRequest copyWith(void Function(GetPosesRequest) updates) => super.copyWith((message) => updates(message as GetPosesRequest)) as GetPosesRequest; // ignore: deprecated_member_use
+  GetPosesRequest copyWith(void Function(GetPosesRequest) updates) => super.copyWith((message) => updates(message as GetPosesRequest)) as GetPosesRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPosesRequest create() => GetPosesRequest._();
   GetPosesRequest createEmptyInstance() => create();
@@ -84,23 +75,16 @@ class GetPosesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPosesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPosesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
-    ..m<$core.String, $1.PoseInFrame>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyPoses', entryClassName: 'GetPosesResponse.BodyPosesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.PoseInFrame.create, packageName: const $pb.PackageName('viam.component.posetracker.v1'))
+  factory GetPosesResponse() => create();
+  GetPosesResponse._() : super();
+  factory GetPosesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPosesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPosesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
+    ..m<$core.String, $1.PoseInFrame>(1, _omitFieldNames ? '' : 'bodyPoses', entryClassName: 'GetPosesResponse.BodyPosesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.PoseInFrame.create, valueDefaultOrMaker: $1.PoseInFrame.getDefault, packageName: const $pb.PackageName('viam.component.posetracker.v1'))
     ..hasRequiredFields = false
   ;
 
-  GetPosesResponse._() : super();
-  factory GetPosesResponse({
-    $core.Map<$core.String, $1.PoseInFrame>? bodyPoses,
-  }) {
-    final _result = create();
-    if (bodyPoses != null) {
-      _result.bodyPoses.addAll(bodyPoses);
-    }
-    return _result;
-  }
-  factory GetPosesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetPosesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -110,8 +94,10 @@ class GetPosesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPosesResponse copyWith(void Function(GetPosesResponse) updates) => super.copyWith((message) => updates(message as GetPosesResponse)) as GetPosesResponse; // ignore: deprecated_member_use
+  GetPosesResponse copyWith(void Function(GetPosesResponse) updates) => super.copyWith((message) => updates(message as GetPosesResponse)) as GetPosesResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPosesResponse create() => GetPosesResponse._();
   GetPosesResponse createEmptyInstance() => create();
@@ -124,3 +110,6 @@ class GetPosesResponse extends $pb.GeneratedMessage {
   $core.Map<$core.String, $1.PoseInFrame> get bodyPoses => $_getMap(0);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

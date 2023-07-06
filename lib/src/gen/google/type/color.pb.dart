@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/type/color.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -12,38 +16,19 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../protobuf/wrappers.pb.dart' as $0;
 
 class Color extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Color', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.type'), createEmptyInstance: create)
-    ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'red', $pb.PbFieldType.OF)
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'green', $pb.PbFieldType.OF)
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blue', $pb.PbFieldType.OF)
-    ..aOM<$0.FloatValue>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'alpha', subBuilder: $0.FloatValue.create)
+  factory Color() => create();
+  Color._() : super();
+  factory Color.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Color.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Color', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.type'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'red', $pb.PbFieldType.OF)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'green', $pb.PbFieldType.OF)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'blue', $pb.PbFieldType.OF)
+    ..aOM<$0.FloatValue>(4, _omitFieldNames ? '' : 'alpha', subBuilder: $0.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
-  Color._() : super();
-  factory Color({
-    $core.double? red,
-    $core.double? green,
-    $core.double? blue,
-    $0.FloatValue? alpha,
-  }) {
-    final _result = create();
-    if (red != null) {
-      _result.red = red;
-    }
-    if (green != null) {
-      _result.green = green;
-    }
-    if (blue != null) {
-      _result.blue = blue;
-    }
-    if (alpha != null) {
-      _result.alpha = alpha;
-    }
-    return _result;
-  }
-  factory Color.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Color.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -53,8 +38,10 @@ class Color extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Color copyWith(void Function(Color) updates) => super.copyWith((message) => updates(message as Color)) as Color; // ignore: deprecated_member_use
+  Color copyWith(void Function(Color) updates) => super.copyWith((message) => updates(message as Color)) as Color;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Color create() => Color._();
   Color createEmptyInstance() => create();
@@ -102,3 +89,6 @@ class Color extends $pb.GeneratedMessage {
   $0.FloatValue ensureAlpha() => $_ensure(3);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
