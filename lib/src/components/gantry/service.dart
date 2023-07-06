@@ -35,6 +35,13 @@ class GantryService extends GantryServiceBase {
   }
 
   @override
+  Future<HomeResponse> home(ServiceCall call, HomeRequest request) {
+    final gantry = _fromManager(request.name);
+    final response = await gantry.home(extra: request.extra.toMap());
+    return GetHomeResponse()..homed.addAll(response);
+  }
+
+  @override
   Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     final gantry = _fromManager(request.name);
     final response = await gantry.position(extra: request.extra.toMap());
@@ -51,7 +58,7 @@ class GantryService extends GantryServiceBase {
   @override
   Future<MoveToPositionResponse> moveToPosition(ServiceCall call, MoveToPositionRequest request) async {
     final gantry = _fromManager(request.name);
-    await gantry.moveToPosition(request.positionsMm, extra: request.extra.toMap());
+    await gantry.moveToPosition(request.positionsMm, request.speedsMmPerSec, extra: request.extra.toMap());
     return MoveToPositionResponse();
   }
 
@@ -65,12 +72,6 @@ class GantryService extends GantryServiceBase {
   @override
   Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
     // TODO: implement getGeometries
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<HomeResponse> home(ServiceCall call, HomeRequest request) {
-    // TODO: implement home
     throw UnimplementedError();
   }
 }

@@ -37,10 +37,20 @@ class GantryClient extends Gantry implements ResourceRPCClient {
   }
 
   @override
-  Future<void> moveToPosition(List<double> positions, {Map<String, dynamic>? extra}) async {
+  Future<bool> home({Map<String, dynamic>? extra}) async {
+    final request = HomeRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.home(request);
+    return response.homed;
+  }
+
+  @override
+  Future<void> moveToPosition(List<double> positions, List<double> speeds, {Map<String, dynamic>? extra}) async {
     final request = MoveToPositionRequest()
       ..name = name
       ..positionsMm.addAll(positions)
+      ..speedsMmPerSec.addAll(speeds)
       ..extra = extra?.toStruct() ?? Struct();
     await client.moveToPosition(request);
   }
