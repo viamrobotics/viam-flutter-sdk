@@ -79,7 +79,7 @@ void main() {
 
       await gantry.moveToPosition([2, 4, 6], [4, 8, 12]);
       expect(gantry.positions, [2, 4, 6]);
-      expect(gantry.speeds, [4, 8, 12])
+      expect(gantry.speeds, [4, 8, 12]);
       expect(gantry.isStopped, false);
 
       await gantry.moveToPosition([1, 2, 3], []);
@@ -171,7 +171,7 @@ void main() {
         await client.moveToPosition(request);
 
         expect(gantry.positions, [1, 2, 3]);
-        expect(gantry.speeds, [4, 8, 12])
+        expect(gantry.speeds, [4, 8, 12]);
         expect(gantry.isStopped, false);
       });
 
@@ -249,7 +249,7 @@ void main() {
         await client.moveToPosition([1, 2, 3], [4, 8, 12]);
 
         expect(gantry.positions, [1, 2, 3]);
-        expect(gantry.speeds, [4, 8, 12])
+        expect(gantry.speeds, [4, 8, 12]);
         expect(gantry.isStopped, false);
       });
 
