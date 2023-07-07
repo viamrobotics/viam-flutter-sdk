@@ -8,7 +8,7 @@ import '../../gen/proto/stream/v1/stream.pbgrpc.dart';
 class StreamManager {
   final Map<String, MediaStream> _streams = {};
   final Map<String, StreamClient> _clients = {};
-  final WebRtcClientChannel _channel;
+  WebRtcClientChannel _channel;
   final StreamServiceClient _client;
   // ignore: cancel_subscriptions
   StreamSubscription? _errorHandler;
@@ -19,6 +19,12 @@ class StreamManager {
 
   StreamManager(this._channel) : _client = StreamServiceClient(_channel) {
     _finalizer.attach(this, _errorHandler);
+    channel = _channel;
+  }
+
+  set channel(WebRtcClientChannel channel) {
+    _channel = channel;
+
     _channel.rtcPeerConnection.onAddStream = (MediaStream stream) {
       _addStream(stream);
     };
