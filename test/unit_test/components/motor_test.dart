@@ -205,7 +205,9 @@ void main() {
     group('Motor Service Tests', () {
       test('setPower', () async {
         final client = MotorServiceClient(channel);
-        final request = SetPowerRequest(name: name, powerPct: 1);
+        final request = SetPowerRequest()
+          ..name = name
+          ..powerPct = 1;
 
         expect(await motor.position(), 0);
         expect(await motor.isMoving(), false);
@@ -217,7 +219,10 @@ void main() {
 
       test('goFor', () async {
         final client = MotorServiceClient(channel);
-        final request = GoForRequest(name: name, rpm: 2, revolutions: 2);
+        final request = GoForRequest()
+          ..name = name
+          ..rpm = 2
+          ..revolutions = 2;
 
         expect(await motor.position(), 0);
         expect(await motor.isMoving(), false);
@@ -229,7 +234,10 @@ void main() {
 
       test('goTo', () async {
         final client = MotorServiceClient(channel);
-        final request = GoToRequest(name: name, rpm: 3, positionRevolutions: 3);
+        final request = GoToRequest()
+          ..name = name
+          ..rpm = 3
+          ..positionRevolutions = 3;
 
         expect(await motor.position(), 0);
         expect(await motor.isMoving(), false);
@@ -241,7 +249,9 @@ void main() {
 
       test('resetZeroPosition', () async {
         final client = MotorServiceClient(channel);
-        final request = ResetZeroPositionRequest(name: name, offset: 4);
+        final request = ResetZeroPositionRequest()
+          ..name = name
+          ..offset = 4;
         expect(motor.motorOffset, 0);
 
         await client.resetZeroPosition(request);
@@ -250,22 +260,24 @@ void main() {
 
       test('position', () async {
         final client = MotorServiceClient(channel);
-        final response = await client.getPosition(GetPositionRequest(name: name));
+        final response = await client.getPosition(GetPositionRequest()..name = name);
         expect(response.position, 0);
       });
 
       test('properties', () async {
         final client = MotorServiceClient(channel);
-        final response = await client.getProperties(GetPropertiesRequest(name: name));
+        final response = await client.getProperties(GetPropertiesRequest()..name = name);
         expect(response.positionReporting, true);
       });
 
       test('stop', () async {
         final client = MotorServiceClient(channel);
-        final request = StopRequest(name: name);
+        final request = StopRequest()..name = name;
         expect(await motor.isMoving(), false);
 
-        await client.setPower(SetPowerRequest(name: name, powerPct: 1));
+        await client.setPower(SetPowerRequest()
+          ..name = name
+          ..powerPct = 1);
         expect(await motor.isMoving(), true);
 
         await client.stop(request);
@@ -274,28 +286,32 @@ void main() {
 
       test('powerState', () async {
         final client = MotorServiceClient(channel);
-        final firstResponse = await client.isPowered(IsPoweredRequest(name: name));
+        final firstResponse = await client.isPowered(IsPoweredRequest()..name = name);
         expect(firstResponse.isOn, false);
         expect(firstResponse.powerPct, 0);
 
-        await client.setPower(SetPowerRequest(name: name, powerPct: 1));
-        final secondResponse = await client.isPowered(IsPoweredRequest(name: name));
+        await client.setPower(SetPowerRequest()
+          ..name = name
+          ..powerPct = 1);
+        final secondResponse = await client.isPowered(IsPoweredRequest()..name = name);
         expect(secondResponse.isOn, true);
         expect(secondResponse.powerPct, 1);
       });
 
       test('isMoving', () async {
         final client = MotorServiceClient(channel);
-        final request = IsMovingRequest(name: name);
+        final request = IsMovingRequest()..name = name;
 
         final firstResponse = await client.isMoving(request);
         expect(firstResponse.isMoving, false);
 
-        await client.setPower(SetPowerRequest(name: name, powerPct: 1));
+        await client.setPower(SetPowerRequest()
+          ..name = name
+          ..powerPct = 1);
         final secondResponse = await client.isMoving(request);
         expect(secondResponse.isMoving, true);
 
-        await client.stop(StopRequest(name: name));
+        await client.stop(StopRequest()..name = name);
         final thirdResponse = await client.isMoving(request);
         expect(thirdResponse.isMoving, false);
       });
@@ -304,7 +320,9 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = MotorServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -312,7 +330,9 @@ void main() {
         expect(motor.extra, null);
 
         final client = MotorServiceClient(channel);
-        await client.stop(StopRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        await client.stop(StopRequest()
+          ..name = name
+          ..extra = {'foo': 'bar'}.toStruct());
         expect(motor.extra, {'foo': 'bar'});
       });
     });

@@ -26,38 +26,44 @@ class CameraService extends CameraServiceBase {
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final camera = _fromManager(request.name);
     final result = await camera.doCommand(request.command.toMap());
-    return DoCommandResponse(result: result.toStruct());
+    return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
-    return GetImageResponse(mimeType: image.mimeType.name, image: image.raw);
+    return GetImageResponse()
+      ..mimeType = image.mimeType.name
+      ..image = image.raw;
   }
 
   @override
   Future<GetPointCloudResponse> getPointCloud(ServiceCall call, GetPointCloudRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.pointCloud();
-    return GetPointCloudResponse(mimeType: image.mimeType.name, pointCloud: image.raw);
+    return GetPointCloudResponse()
+      ..mimeType = image.mimeType.name
+      ..pointCloud = image.raw;
   }
 
   @override
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
     final camera = _fromManager(request.name);
     final properties = await camera.properties();
-    return GetPropertiesResponse(
-        supportsPcd: properties.supportsPcd,
-        intrinsicParameters: properties.intrinsicParameters,
-        distortionParameters: properties.distortionParameters);
+    return GetPropertiesResponse()
+      ..supportsPcd = properties.supportsPcd
+      ..intrinsicParameters = properties.intrinsicParameters
+      ..distortionParameters = properties.distortionParameters;
   }
 
   @override
   Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
     final camera = _fromManager(request.name);
     final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
-    return HttpBody(data: image.raw, contentType: image.mimeType.toString());
+    return HttpBody()
+      ..data = image.raw
+      ..contentType = image.mimeType.toString();
   }
 
   @override

@@ -10,6 +10,7 @@ import '../../test_utils.dart';
 
 class FakeGantry extends Gantry {
   List<double> positions = [0, 0, 0];
+  List<double> speeds = [0, 0, 0];
   List<double> mLengths;
   bool isStopped = true;
   Map<String, dynamic>? extra;
@@ -41,8 +42,14 @@ class FakeGantry extends Gantry {
   }
 
   @override
-  Future<void> moveToPosition(List<double> positions, {Map<String, dynamic>? extra}) async {
+  Future<bool> home({Map<String, dynamic>? extra}) async {
+    return true;
+  }
+
+  @override
+  Future<void> moveToPosition(List<double> positions, List<double> speeds, {Map<String, dynamic>? extra}) async {
     this.positions = positions;
+    this.speeds = speeds;
     isStopped = false;
   }
 
@@ -70,9 +77,18 @@ void main() {
       expect(await gantry.position(), [0, 0, 0]);
       expect(gantry.isStopped, true);
 
-      await gantry.moveToPosition([1, 2, 3]);
+      await gantry.moveToPosition([2, 4, 6], [4, 8, 12]);
+      expect(gantry.positions, [2, 4, 6]);
+      expect(gantry.speeds, [4, 8, 12]);
+      expect(gantry.isStopped, false);
+
+      await gantry.moveToPosition([1, 2, 3], []);
       expect(gantry.positions, [1, 2, 3]);
       expect(gantry.isStopped, false);
+    });
+
+    test('home', () async {
+      expect(await gantry.home(), true);
     });
 
     test('lengths', () async {
@@ -82,7 +98,7 @@ void main() {
     test('stop', () async {
       expect(gantry.isStopped, true);
 
-      await gantry.moveToPosition([4, 5, 6]);
+      await gantry.moveToPosition([4, 5, 6], [4, 8, 12]);
       expect(gantry.isStopped, false);
 
       await gantry.stop();
@@ -92,7 +108,7 @@ void main() {
     test('isMoving', () async {
       expect(await gantry.isMoving(), false);
 
-      await gantry.moveToPosition([7, 8, 9]);
+      await gantry.moveToPosition([7, 8, 9], [4, 8, 12]);
       expect(await gantry.isMoving(), true);
 
       await gantry.stop();
@@ -139,7 +155,7 @@ void main() {
     group('Gantry Service Tests', () {
       test('position', () async {
         final client = GantryServiceClient(channel);
-        final response = await client.getPosition(GetPositionRequest(name: name));
+        final response = await client.getPosition(GetPositionRequest()..name = name);
         expect(response.positionsMm, [0, 0, 0]);
       });
 
@@ -148,16 +164,20 @@ void main() {
         expect(gantry.isStopped, true);
 
         final client = GantryServiceClient(channel);
-        final request = MoveToPositionRequest(name: name, positionsMm: [1, 2, 3]);
+        final request = MoveToPositionRequest()
+          ..name = name
+          ..positionsMm.addAll([1, 2, 3])
+          ..speedsMmPerSec.addAll([4, 8, 12]);
         await client.moveToPosition(request);
 
         expect(gantry.positions, [1, 2, 3]);
+        expect(gantry.speeds, [4, 8, 12]);
         expect(gantry.isStopped, false);
       });
 
       test('lengths', () async {
         final client = GantryServiceClient(channel);
-        final response = await client.getLengths(GetLengthsRequest(name: name));
+        final response = await client.getLengths(GetLengthsRequest()..name = name);
         expect(response.lengthsMm, lengths);
       });
 
@@ -166,26 +186,32 @@ void main() {
 
         final client = GantryServiceClient(channel);
 
-        final request = MoveToPositionRequest(name: name, positionsMm: [1, 2, 3]);
+        final request = MoveToPositionRequest()
+          ..name = name
+          ..positionsMm.addAll([1, 2, 3])
+          ..speedsMmPerSec.addAll([4, 8, 12]);
         await client.moveToPosition(request);
         expect(gantry.isStopped, false);
 
-        await client.stop(StopRequest(name: name));
+        await client.stop(StopRequest()..name = name);
         expect(gantry.isStopped, true);
       });
 
       test('isMoving', () async {
         final client = GantryServiceClient(channel);
-        IsMovingResponse resp = await client.isMoving(IsMovingRequest(name: name));
+        IsMovingResponse resp = await client.isMoving(IsMovingRequest()..name = name);
         expect(resp.isMoving, false);
 
-        final request = MoveToPositionRequest(name: name, positionsMm: [1, 2, 3]);
+        final request = MoveToPositionRequest()
+          ..name = name
+          ..positionsMm.addAll([1, 2, 3])
+          ..speedsMmPerSec.addAll([4, 8, 12]);
         await client.moveToPosition(request);
-        resp = await client.isMoving(IsMovingRequest(name: name));
+        resp = await client.isMoving(IsMovingRequest()..name = name);
         expect(resp.isMoving, true);
 
-        await client.stop(StopRequest(name: name));
-        resp = await client.isMoving(IsMovingRequest(name: name));
+        await client.stop(StopRequest()..name = name);
+        resp = await client.isMoving(IsMovingRequest()..name = name);
         expect(resp.isMoving, false);
       });
 
@@ -193,7 +219,9 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = GantryServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest(name: name, command: cmd.toStruct()));
+        final resp = await client.doCommand(DoCommandRequest()
+          ..name = name
+          ..command = cmd.toStruct());
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -201,7 +229,9 @@ void main() {
         expect(gantry.extra, null);
 
         final client = GantryServiceClient(channel);
-        await client.stop(StopRequest(name: name, extra: {'foo': 'bar'}.toStruct()));
+        await client.stop(StopRequest()
+          ..name = name
+          ..extra = {'foo': 'bar'}.toStruct());
         expect(gantry.extra, {'foo': 'bar'});
       });
     });
@@ -216,9 +246,10 @@ void main() {
         expect(gantry.isStopped, true);
 
         final client = GantryClient(name, channel);
-        await client.moveToPosition([1, 2, 3]);
+        await client.moveToPosition([1, 2, 3], [4, 8, 12]);
 
         expect(gantry.positions, [1, 2, 3]);
+        expect(gantry.speeds, [4, 8, 12]);
         expect(gantry.isStopped, false);
       });
 
@@ -231,7 +262,7 @@ void main() {
         expect(gantry.isStopped, true);
 
         final client = GantryClient(name, channel);
-        await client.moveToPosition([4, 5, 6]);
+        await client.moveToPosition([4, 5, 6], [4, 8, 12]);
         expect(gantry.isStopped, false);
 
         await client.stop();
@@ -242,7 +273,7 @@ void main() {
         expect(await gantry.isMoving(), false);
 
         final client = GantryClient(name, channel);
-        await client.moveToPosition([7, 8, 9]);
+        await client.moveToPosition([7, 8, 9], [4, 8, 12]);
         expect(await client.isMoving(), true);
 
         await gantry.stop();

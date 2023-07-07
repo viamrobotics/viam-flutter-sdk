@@ -49,17 +49,14 @@ class WebRtcTransportStream extends GrpcTransportStream {
 
   void _listenToOutgoingMessages() {
     _outgoingMessages.stream.listen((List<int> data) {
-      final payloadRequest = grpc.Request(
-        stream: headersRequest.stream,
-        message: grpc.RequestMessage(
-          hasMessage: true,
-          eos: true,
-          packetMessage: grpc.PacketMessage(
-            data: data,
-            eom: true,
-          ),
-        ),
-      );
+      final payloadRequest = grpc.Request()
+        ..stream = headersRequest.stream
+        ..message = (grpc.RequestMessage()
+          ..hasMessage = true
+          ..eos = true
+          ..packetMessage = (grpc.PacketMessage()
+            ..data = data
+            ..eom = true));
 
       final connectionState = webRtcClientChannel.rtcPeerConnection.connectionState;
 

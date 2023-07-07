@@ -18,7 +18,11 @@ class Subtype {
         resourceSubtype = name.subtype;
 
   ResourceName getResourceName(String name) {
-    return ResourceName(namespace: namespace, type: resourceType, subtype: resourceSubtype, name: name);
+    return ResourceName()
+      ..namespace = namespace
+      ..type = resourceType
+      ..subtype = resourceSubtype
+      ..name = name;
   }
 
   @override

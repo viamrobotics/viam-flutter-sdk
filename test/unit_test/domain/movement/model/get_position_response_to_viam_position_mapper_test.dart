@@ -7,15 +7,13 @@ import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pb.d
 void main() {
   group('When map from GetPositionResponse to ViamPosition', () {
     test('mapper returns correct values', () {
-      final geoPoint = GeoPoint(
-        latitude: 0.0,
-        longitude: 0.0,
-      );
+      final geoPoint = GeoPoint()
+        ..latitude = 0.0
+        ..longitude = 0.0;
 
-      final dto = GetPositionResponse(
-        altitudeM: 0.0,
-        coordinate: geoPoint,
-      );
+      final dto = GetPositionResponse()
+        ..altitudeM = 0.0
+        ..coordinate = geoPoint;
 
       final expectedAnswer = ViamPosition(
         dto.altitudeM,

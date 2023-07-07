@@ -8,11 +8,10 @@ import 'package:viam_sdk/viam_sdk.dart';
 void main() {
   group('When map from Organization to ViamOrganization', () {
     test('mapper returns correct values', () {
-      final dto = Organization(
-        id: 'id',
-        name: 'name',
-        createdOn: Timestamp.create(),
-      );
+      final dto = Organization()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
 
       final expectedAnswer = ViamOrganization(
         dto.id,

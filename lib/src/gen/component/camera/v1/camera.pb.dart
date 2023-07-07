@@ -1,37 +1,30 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: component/camera/v1/camera.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class GetImageRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetImageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
+  factory GetImageRequest() => create();
+  GetImageRequest._() : super();
+  factory GetImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
   ;
 
-  GetImageRequest._() : super();
-  factory GetImageRequest({
-    $core.String? name,
-    $core.String? mimeType,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (mimeType != null) {
-      _result.mimeType = mimeType;
-    }
-    return _result;
-  }
-  factory GetImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -41,8 +34,10 @@ class GetImageRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetImageRequest copyWith(void Function(GetImageRequest) updates) => super.copyWith((message) => updates(message as GetImageRequest)) as GetImageRequest; // ignore: deprecated_member_use
+  GetImageRequest copyWith(void Function(GetImageRequest) updates) => super.copyWith((message) => updates(message as GetImageRequest)) as GetImageRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetImageRequest create() => GetImageRequest._();
   GetImageRequest createEmptyInstance() => create();
@@ -71,28 +66,17 @@ class GetImageRequest extends $pb.GeneratedMessage {
 }
 
 class GetImageResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetImageResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', $pb.PbFieldType.OY)
+  factory GetImageResponse() => create();
+  GetImageResponse._() : super();
+  factory GetImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mimeType')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'image', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
-  GetImageResponse._() : super();
-  factory GetImageResponse({
-    $core.String? mimeType,
-    $core.List<$core.int>? image,
-  }) {
-    final _result = create();
-    if (mimeType != null) {
-      _result.mimeType = mimeType;
-    }
-    if (image != null) {
-      _result.image = image;
-    }
-    return _result;
-  }
-  factory GetImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -102,8 +86,10 @@ class GetImageResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetImageResponse copyWith(void Function(GetImageResponse) updates) => super.copyWith((message) => updates(message as GetImageResponse)) as GetImageResponse; // ignore: deprecated_member_use
+  GetImageResponse copyWith(void Function(GetImageResponse) updates) => super.copyWith((message) => updates(message as GetImageResponse)) as GetImageResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetImageResponse create() => GetImageResponse._();
   GetImageResponse createEmptyInstance() => create();
@@ -132,28 +118,17 @@ class GetImageResponse extends $pb.GeneratedMessage {
 }
 
 class RenderFrameRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RenderFrameRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
+  factory RenderFrameRequest() => create();
+  RenderFrameRequest._() : super();
+  factory RenderFrameRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RenderFrameRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenderFrameRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
   ;
 
-  RenderFrameRequest._() : super();
-  factory RenderFrameRequest({
-    $core.String? name,
-    $core.String? mimeType,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (mimeType != null) {
-      _result.mimeType = mimeType;
-    }
-    return _result;
-  }
-  factory RenderFrameRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RenderFrameRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -163,8 +138,10 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RenderFrameRequest copyWith(void Function(RenderFrameRequest) updates) => super.copyWith((message) => updates(message as RenderFrameRequest)) as RenderFrameRequest; // ignore: deprecated_member_use
+  RenderFrameRequest copyWith(void Function(RenderFrameRequest) updates) => super.copyWith((message) => updates(message as RenderFrameRequest)) as RenderFrameRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RenderFrameRequest create() => RenderFrameRequest._();
   RenderFrameRequest createEmptyInstance() => create();
@@ -193,28 +170,17 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
 }
 
 class GetPointCloudRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPointCloudRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
+  factory GetPointCloudRequest() => create();
+  GetPointCloudRequest._() : super();
+  factory GetPointCloudRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPointCloudRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
   ;
 
-  GetPointCloudRequest._() : super();
-  factory GetPointCloudRequest({
-    $core.String? name,
-    $core.String? mimeType,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (mimeType != null) {
-      _result.mimeType = mimeType;
-    }
-    return _result;
-  }
-  factory GetPointCloudRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetPointCloudRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -224,8 +190,10 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPointCloudRequest copyWith(void Function(GetPointCloudRequest) updates) => super.copyWith((message) => updates(message as GetPointCloudRequest)) as GetPointCloudRequest; // ignore: deprecated_member_use
+  GetPointCloudRequest copyWith(void Function(GetPointCloudRequest) updates) => super.copyWith((message) => updates(message as GetPointCloudRequest)) as GetPointCloudRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPointCloudRequest create() => GetPointCloudRequest._();
   GetPointCloudRequest createEmptyInstance() => create();
@@ -254,28 +222,17 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
 }
 
 class GetPointCloudResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPointCloudResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mimeType')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pointCloud', $pb.PbFieldType.OY)
+  factory GetPointCloudResponse() => create();
+  GetPointCloudResponse._() : super();
+  factory GetPointCloudResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPointCloudResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mimeType')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'pointCloud', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
-  GetPointCloudResponse._() : super();
-  factory GetPointCloudResponse({
-    $core.String? mimeType,
-    $core.List<$core.int>? pointCloud,
-  }) {
-    final _result = create();
-    if (mimeType != null) {
-      _result.mimeType = mimeType;
-    }
-    if (pointCloud != null) {
-      _result.pointCloud = pointCloud;
-    }
-    return _result;
-  }
-  factory GetPointCloudResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetPointCloudResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -285,8 +242,10 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPointCloudResponse copyWith(void Function(GetPointCloudResponse) updates) => super.copyWith((message) => updates(message as GetPointCloudResponse)) as GetPointCloudResponse; // ignore: deprecated_member_use
+  GetPointCloudResponse copyWith(void Function(GetPointCloudResponse) updates) => super.copyWith((message) => updates(message as GetPointCloudResponse)) as GetPointCloudResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPointCloudResponse create() => GetPointCloudResponse._();
   GetPointCloudResponse createEmptyInstance() => create();
@@ -315,23 +274,16 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+  factory GetPropertiesRequest() => create();
+  GetPropertiesRequest._() : super();
+  factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  GetPropertiesRequest._() : super();
-  factory GetPropertiesRequest({
-    $core.String? name,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -341,8 +293,10 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPropertiesRequest copyWith(void Function(GetPropertiesRequest) updates) => super.copyWith((message) => updates(message as GetPropertiesRequest)) as GetPropertiesRequest; // ignore: deprecated_member_use
+  GetPropertiesRequest copyWith(void Function(GetPropertiesRequest) updates) => super.copyWith((message) => updates(message as GetPropertiesRequest)) as GetPropertiesRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPropertiesRequest create() => GetPropertiesRequest._();
   GetPropertiesRequest createEmptyInstance() => create();
@@ -362,33 +316,18 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportsPcd')
-    ..aOM<IntrinsicParameters>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'intrinsicParameters', subBuilder: IntrinsicParameters.create)
-    ..aOM<DistortionParameters>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'distortionParameters', subBuilder: DistortionParameters.create)
+  factory GetPropertiesResponse() => create();
+  GetPropertiesResponse._() : super();
+  factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'supportsPcd')
+    ..aOM<IntrinsicParameters>(2, _omitFieldNames ? '' : 'intrinsicParameters', subBuilder: IntrinsicParameters.create)
+    ..aOM<DistortionParameters>(3, _omitFieldNames ? '' : 'distortionParameters', subBuilder: DistortionParameters.create)
     ..hasRequiredFields = false
   ;
 
-  GetPropertiesResponse._() : super();
-  factory GetPropertiesResponse({
-    $core.bool? supportsPcd,
-    IntrinsicParameters? intrinsicParameters,
-    DistortionParameters? distortionParameters,
-  }) {
-    final _result = create();
-    if (supportsPcd != null) {
-      _result.supportsPcd = supportsPcd;
-    }
-    if (intrinsicParameters != null) {
-      _result.intrinsicParameters = intrinsicParameters;
-    }
-    if (distortionParameters != null) {
-      _result.distortionParameters = distortionParameters;
-    }
-    return _result;
-  }
-  factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -398,8 +337,10 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetPropertiesResponse copyWith(void Function(GetPropertiesResponse) updates) => super.copyWith((message) => updates(message as GetPropertiesResponse)) as GetPropertiesResponse; // ignore: deprecated_member_use
+  GetPropertiesResponse copyWith(void Function(GetPropertiesResponse) updates) => super.copyWith((message) => updates(message as GetPropertiesResponse)) as GetPropertiesResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetPropertiesResponse create() => GetPropertiesResponse._();
   GetPropertiesResponse createEmptyInstance() => create();
@@ -441,23 +382,16 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
 }
 
 class Webcams extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Webcams', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..pc<Webcam>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'webcams', $pb.PbFieldType.PM, subBuilder: Webcam.create)
+  factory Webcams() => create();
+  Webcams._() : super();
+  factory Webcams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Webcams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Webcams', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..pc<Webcam>(1, _omitFieldNames ? '' : 'webcams', $pb.PbFieldType.PM, subBuilder: Webcam.create)
     ..hasRequiredFields = false
   ;
 
-  Webcams._() : super();
-  factory Webcams({
-    $core.Iterable<Webcam>? webcams,
-  }) {
-    final _result = create();
-    if (webcams != null) {
-      _result.webcams.addAll(webcams);
-    }
-    return _result;
-  }
-  factory Webcams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Webcams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -467,8 +401,10 @@ class Webcams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Webcams copyWith(void Function(Webcams) updates) => super.copyWith((message) => updates(message as Webcams)) as Webcams; // ignore: deprecated_member_use
+  Webcams copyWith(void Function(Webcams) updates) => super.copyWith((message) => updates(message as Webcams)) as Webcams;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Webcams create() => Webcams._();
   Webcams createEmptyInstance() => create();
@@ -482,43 +418,20 @@ class Webcams extends $pb.GeneratedMessage {
 }
 
 class Webcam extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Webcam', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status')
-    ..pc<Property>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'properties', $pb.PbFieldType.PM, subBuilder: Property.create)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+  factory Webcam() => create();
+  Webcam._() : super();
+  factory Webcam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Webcam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Webcam', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..pc<Property>(3, _omitFieldNames ? '' : 'properties', $pb.PbFieldType.PM, subBuilder: Property.create)
+    ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..aOS(5, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
-  Webcam._() : super();
-  factory Webcam({
-    $core.String? label,
-    $core.String? status,
-    $core.Iterable<Property>? properties,
-    $core.String? name,
-    $core.String? id,
-  }) {
-    final _result = create();
-    if (label != null) {
-      _result.label = label;
-    }
-    if (status != null) {
-      _result.status = status;
-    }
-    if (properties != null) {
-      _result.properties.addAll(properties);
-    }
-    if (name != null) {
-      _result.name = name;
-    }
-    if (id != null) {
-      _result.id = id;
-    }
-    return _result;
-  }
-  factory Webcam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Webcam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -528,8 +441,10 @@ class Webcam extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Webcam copyWith(void Function(Webcam) updates) => super.copyWith((message) => updates(message as Webcam)) as Webcam; // ignore: deprecated_member_use
+  Webcam copyWith(void Function(Webcam) updates) => super.copyWith((message) => updates(message as Webcam)) as Webcam;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Webcam create() => Webcam._();
   Webcam createEmptyInstance() => create();
@@ -579,38 +494,19 @@ class Webcam extends $pb.GeneratedMessage {
 }
 
 class Property extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Property', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'widthPx', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heightPx', $pb.PbFieldType.O3)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'frameFormat')
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'frameRate', $pb.PbFieldType.OF)
+  factory Property() => create();
+  Property._() : super();
+  factory Property.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Property.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Property', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'widthPx', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'heightPx', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'frameFormat')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'frameRate', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
-  Property._() : super();
-  factory Property({
-    $core.int? widthPx,
-    $core.int? heightPx,
-    $core.String? frameFormat,
-    $core.double? frameRate,
-  }) {
-    final _result = create();
-    if (widthPx != null) {
-      _result.widthPx = widthPx;
-    }
-    if (heightPx != null) {
-      _result.heightPx = heightPx;
-    }
-    if (frameFormat != null) {
-      _result.frameFormat = frameFormat;
-    }
-    if (frameRate != null) {
-      _result.frameRate = frameRate;
-    }
-    return _result;
-  }
-  factory Property.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Property.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -620,8 +516,10 @@ class Property extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Property copyWith(void Function(Property) updates) => super.copyWith((message) => updates(message as Property)) as Property; // ignore: deprecated_member_use
+  Property copyWith(void Function(Property) updates) => super.copyWith((message) => updates(message as Property)) as Property;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Property create() => Property._();
   Property createEmptyInstance() => create();
@@ -668,48 +566,21 @@ class Property extends $pb.GeneratedMessage {
 }
 
 class IntrinsicParameters extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'IntrinsicParameters', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'widthPx', $pb.PbFieldType.OU3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heightPx', $pb.PbFieldType.OU3)
-    ..a<$core.double>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'focalXPx', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'focalYPx', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'centerXPx', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'centerYPx', $pb.PbFieldType.OD)
+  factory IntrinsicParameters() => create();
+  IntrinsicParameters._() : super();
+  factory IntrinsicParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IntrinsicParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IntrinsicParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'widthPx', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'heightPx', $pb.PbFieldType.OU3)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'focalXPx', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'focalYPx', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'centerXPx', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'centerYPx', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
-  IntrinsicParameters._() : super();
-  factory IntrinsicParameters({
-    $core.int? widthPx,
-    $core.int? heightPx,
-    $core.double? focalXPx,
-    $core.double? focalYPx,
-    $core.double? centerXPx,
-    $core.double? centerYPx,
-  }) {
-    final _result = create();
-    if (widthPx != null) {
-      _result.widthPx = widthPx;
-    }
-    if (heightPx != null) {
-      _result.heightPx = heightPx;
-    }
-    if (focalXPx != null) {
-      _result.focalXPx = focalXPx;
-    }
-    if (focalYPx != null) {
-      _result.focalYPx = focalYPx;
-    }
-    if (centerXPx != null) {
-      _result.centerXPx = centerXPx;
-    }
-    if (centerYPx != null) {
-      _result.centerYPx = centerYPx;
-    }
-    return _result;
-  }
-  factory IntrinsicParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory IntrinsicParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -719,8 +590,10 @@ class IntrinsicParameters extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  IntrinsicParameters copyWith(void Function(IntrinsicParameters) updates) => super.copyWith((message) => updates(message as IntrinsicParameters)) as IntrinsicParameters; // ignore: deprecated_member_use
+  IntrinsicParameters copyWith(void Function(IntrinsicParameters) updates) => super.copyWith((message) => updates(message as IntrinsicParameters)) as IntrinsicParameters;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static IntrinsicParameters create() => IntrinsicParameters._();
   IntrinsicParameters createEmptyInstance() => create();
@@ -785,28 +658,17 @@ class IntrinsicParameters extends $pb.GeneratedMessage {
 }
 
 class DistortionParameters extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DistortionParameters', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'model')
-    ..p<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'parameters', $pb.PbFieldType.KD)
+  factory DistortionParameters() => create();
+  DistortionParameters._() : super();
+  factory DistortionParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DistortionParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DistortionParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'model')
+    ..p<$core.double>(2, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.KD)
     ..hasRequiredFields = false
   ;
 
-  DistortionParameters._() : super();
-  factory DistortionParameters({
-    $core.String? model,
-    $core.Iterable<$core.double>? parameters,
-  }) {
-    final _result = create();
-    if (model != null) {
-      _result.model = model;
-    }
-    if (parameters != null) {
-      _result.parameters.addAll(parameters);
-    }
-    return _result;
-  }
-  factory DistortionParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DistortionParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -816,8 +678,10 @@ class DistortionParameters extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DistortionParameters copyWith(void Function(DistortionParameters) updates) => super.copyWith((message) => updates(message as DistortionParameters)) as DistortionParameters; // ignore: deprecated_member_use
+  DistortionParameters copyWith(void Function(DistortionParameters) updates) => super.copyWith((message) => updates(message as DistortionParameters)) as DistortionParameters;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DistortionParameters create() => DistortionParameters._();
   DistortionParameters createEmptyInstance() => create();
@@ -839,3 +703,6 @@ class DistortionParameters extends $pb.GeneratedMessage {
   $core.List<$core.double> get parameters => $_getList(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -1,40 +1,33 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/api/expr/v1beta1/eval.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'value.pb.dart' as $4;
 import '../../../rpc/status.pb.dart' as $5;
+import 'value.pb.dart' as $4;
 
 class EvalState_Result extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EvalState.Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
-    ..aOM<IdRef>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expr', subBuilder: IdRef.create)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.O3)
+  factory EvalState_Result() => create();
+  EvalState_Result._() : super();
+  factory EvalState_Result.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EvalState_Result.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EvalState.Result', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
+    ..aOM<IdRef>(1, _omitFieldNames ? '' : 'expr', subBuilder: IdRef.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'value', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
-  EvalState_Result._() : super();
-  factory EvalState_Result({
-    IdRef? expr,
-    $core.int? value,
-  }) {
-    final _result = create();
-    if (expr != null) {
-      _result.expr = expr;
-    }
-    if (value != null) {
-      _result.value = value;
-    }
-    return _result;
-  }
-  factory EvalState_Result.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EvalState_Result.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -44,8 +37,10 @@ class EvalState_Result extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EvalState_Result copyWith(void Function(EvalState_Result) updates) => super.copyWith((message) => updates(message as EvalState_Result)) as EvalState_Result; // ignore: deprecated_member_use
+  EvalState_Result copyWith(void Function(EvalState_Result) updates) => super.copyWith((message) => updates(message as EvalState_Result)) as EvalState_Result;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EvalState_Result create() => EvalState_Result._();
   EvalState_Result createEmptyInstance() => create();
@@ -76,28 +71,17 @@ class EvalState_Result extends $pb.GeneratedMessage {
 }
 
 class EvalState extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EvalState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
-    ..pc<ExprValue>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'values', $pb.PbFieldType.PM, subBuilder: ExprValue.create)
-    ..pc<EvalState_Result>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'results', $pb.PbFieldType.PM, subBuilder: EvalState_Result.create)
+  factory EvalState() => create();
+  EvalState._() : super();
+  factory EvalState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EvalState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EvalState', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
+    ..pc<ExprValue>(1, _omitFieldNames ? '' : 'values', $pb.PbFieldType.PM, subBuilder: ExprValue.create)
+    ..pc<EvalState_Result>(3, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: EvalState_Result.create)
     ..hasRequiredFields = false
   ;
 
-  EvalState._() : super();
-  factory EvalState({
-    $core.Iterable<ExprValue>? values,
-    $core.Iterable<EvalState_Result>? results,
-  }) {
-    final _result = create();
-    if (values != null) {
-      _result.values.addAll(values);
-    }
-    if (results != null) {
-      _result.results.addAll(results);
-    }
-    return _result;
-  }
-  factory EvalState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EvalState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -107,8 +91,10 @@ class EvalState extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EvalState copyWith(void Function(EvalState) updates) => super.copyWith((message) => updates(message as EvalState)) as EvalState; // ignore: deprecated_member_use
+  EvalState copyWith(void Function(EvalState) updates) => super.copyWith((message) => updates(message as EvalState)) as EvalState;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EvalState create() => EvalState._();
   EvalState createEmptyInstance() => create();
@@ -132,40 +118,25 @@ enum ExprValue_Kind {
 }
 
 class ExprValue extends $pb.GeneratedMessage {
+  factory ExprValue() => create();
+  ExprValue._() : super();
+  factory ExprValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExprValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, ExprValue_Kind> _ExprValue_KindByTag = {
     1 : ExprValue_Kind.value,
     2 : ExprValue_Kind.error,
     3 : ExprValue_Kind.unknown,
     0 : ExprValue_Kind.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ExprValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExprValue', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
     ..oo(0, [1, 2, 3])
-    ..aOM<$4.Value>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', subBuilder: $4.Value.create)
-    ..aOM<ErrorSet>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', subBuilder: ErrorSet.create)
-    ..aOM<UnknownSet>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unknown', subBuilder: UnknownSet.create)
+    ..aOM<$4.Value>(1, _omitFieldNames ? '' : 'value', subBuilder: $4.Value.create)
+    ..aOM<ErrorSet>(2, _omitFieldNames ? '' : 'error', subBuilder: ErrorSet.create)
+    ..aOM<UnknownSet>(3, _omitFieldNames ? '' : 'unknown', subBuilder: UnknownSet.create)
     ..hasRequiredFields = false
   ;
 
-  ExprValue._() : super();
-  factory ExprValue({
-    $4.Value? value,
-    ErrorSet? error,
-    UnknownSet? unknown,
-  }) {
-    final _result = create();
-    if (value != null) {
-      _result.value = value;
-    }
-    if (error != null) {
-      _result.error = error;
-    }
-    if (unknown != null) {
-      _result.unknown = unknown;
-    }
-    return _result;
-  }
-  factory ExprValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ExprValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -175,8 +146,10 @@ class ExprValue extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ExprValue copyWith(void Function(ExprValue) updates) => super.copyWith((message) => updates(message as ExprValue)) as ExprValue; // ignore: deprecated_member_use
+  ExprValue copyWith(void Function(ExprValue) updates) => super.copyWith((message) => updates(message as ExprValue)) as ExprValue;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ExprValue create() => ExprValue._();
   ExprValue createEmptyInstance() => create();
@@ -223,23 +196,16 @@ class ExprValue extends $pb.GeneratedMessage {
 }
 
 class ErrorSet extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ErrorSet', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
-    ..pc<$5.Status>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: $5.Status.create)
+  factory ErrorSet() => create();
+  ErrorSet._() : super();
+  factory ErrorSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ErrorSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ErrorSet', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
+    ..pc<$5.Status>(1, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: $5.Status.create)
     ..hasRequiredFields = false
   ;
 
-  ErrorSet._() : super();
-  factory ErrorSet({
-    $core.Iterable<$5.Status>? errors,
-  }) {
-    final _result = create();
-    if (errors != null) {
-      _result.errors.addAll(errors);
-    }
-    return _result;
-  }
-  factory ErrorSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ErrorSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -249,8 +215,10 @@ class ErrorSet extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ErrorSet copyWith(void Function(ErrorSet) updates) => super.copyWith((message) => updates(message as ErrorSet)) as ErrorSet; // ignore: deprecated_member_use
+  ErrorSet copyWith(void Function(ErrorSet) updates) => super.copyWith((message) => updates(message as ErrorSet)) as ErrorSet;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ErrorSet create() => ErrorSet._();
   ErrorSet createEmptyInstance() => create();
@@ -264,23 +232,16 @@ class ErrorSet extends $pb.GeneratedMessage {
 }
 
 class UnknownSet extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnknownSet', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
-    ..pc<IdRef>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'exprs', $pb.PbFieldType.PM, subBuilder: IdRef.create)
+  factory UnknownSet() => create();
+  UnknownSet._() : super();
+  factory UnknownSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnknownSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnknownSet', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
+    ..pc<IdRef>(1, _omitFieldNames ? '' : 'exprs', $pb.PbFieldType.PM, subBuilder: IdRef.create)
     ..hasRequiredFields = false
   ;
 
-  UnknownSet._() : super();
-  factory UnknownSet({
-    $core.Iterable<IdRef>? exprs,
-  }) {
-    final _result = create();
-    if (exprs != null) {
-      _result.exprs.addAll(exprs);
-    }
-    return _result;
-  }
-  factory UnknownSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UnknownSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -290,8 +251,10 @@ class UnknownSet extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UnknownSet copyWith(void Function(UnknownSet) updates) => super.copyWith((message) => updates(message as UnknownSet)) as UnknownSet; // ignore: deprecated_member_use
+  UnknownSet copyWith(void Function(UnknownSet) updates) => super.copyWith((message) => updates(message as UnknownSet)) as UnknownSet;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UnknownSet create() => UnknownSet._();
   UnknownSet createEmptyInstance() => create();
@@ -305,23 +268,16 @@ class UnknownSet extends $pb.GeneratedMessage {
 }
 
 class IdRef extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'IdRef', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+  factory IdRef() => create();
+  IdRef._() : super();
+  factory IdRef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IdRef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdRef', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1beta1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
-  IdRef._() : super();
-  factory IdRef({
-    $core.int? id,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    return _result;
-  }
-  factory IdRef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory IdRef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -331,8 +287,10 @@ class IdRef extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  IdRef copyWith(void Function(IdRef) updates) => super.copyWith((message) => updates(message as IdRef)) as IdRef; // ignore: deprecated_member_use
+  IdRef copyWith(void Function(IdRef) updates) => super.copyWith((message) => updates(message as IdRef)) as IdRef;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static IdRef create() => IdRef._();
   IdRef createEmptyInstance() => create();
@@ -351,3 +309,6 @@ class IdRef extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

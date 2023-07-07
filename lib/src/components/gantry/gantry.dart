@@ -9,8 +9,11 @@ abstract class Gantry extends Resource {
   /// Get the position of the axes in millimeters
   Future<List<double>> position({Map<String, dynamic>? extra});
 
-  /// Move the gantry to a new position
-  Future<void> moveToPosition(List<double> positions, {Map<String, dynamic>? extra});
+  /// Move the gantry to a new position in millimeters at the requested speeds in millimeters/second
+  Future<void> moveToPosition(List<double> positions, List<double> speeds, {Map<String, dynamic>? extra});
+
+  /// Run the homing sequence and return true if completed successfully
+  Future<bool> home({Map<String, dynamic>? extra});
 
   /// Get the lengths of the axes of the gantry in millimeters
   Future<List<double>> lengths({Map<String, dynamic>? extra});

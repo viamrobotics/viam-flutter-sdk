@@ -1,46 +1,36 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/api/client.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../protobuf/duration.pb.dart' as $1;
-
 import 'client.pbenum.dart';
 import 'launch_stage.pbenum.dart' as $2;
 
 export 'client.pbenum.dart';
 
 class CommonLanguageSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CommonLanguageSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'referenceDocsUri')
-    ..pc<ClientLibraryDestination>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destinations', $pb.PbFieldType.KE, valueOf: ClientLibraryDestination.valueOf, enumValues: ClientLibraryDestination.values, defaultEnumValue: ClientLibraryDestination.CLIENT_LIBRARY_DESTINATION_UNSPECIFIED)
+  factory CommonLanguageSettings() => create();
+  CommonLanguageSettings._() : super();
+  factory CommonLanguageSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CommonLanguageSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonLanguageSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'referenceDocsUri')
+    ..pc<ClientLibraryDestination>(2, _omitFieldNames ? '' : 'destinations', $pb.PbFieldType.KE, valueOf: ClientLibraryDestination.valueOf, enumValues: ClientLibraryDestination.values, defaultEnumValue: ClientLibraryDestination.CLIENT_LIBRARY_DESTINATION_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
-  CommonLanguageSettings._() : super();
-  factory CommonLanguageSettings({
-  @$core.Deprecated('This field is deprecated.')
-    $core.String? referenceDocsUri,
-    $core.Iterable<ClientLibraryDestination>? destinations,
-  }) {
-    final _result = create();
-    if (referenceDocsUri != null) {
-      // ignore: deprecated_member_use_from_same_package
-      _result.referenceDocsUri = referenceDocsUri;
-    }
-    if (destinations != null) {
-      _result.destinations.addAll(destinations);
-    }
-    return _result;
-  }
-  factory CommonLanguageSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CommonLanguageSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -50,8 +40,10 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommonLanguageSettings copyWith(void Function(CommonLanguageSettings) updates) => super.copyWith((message) => updates(message as CommonLanguageSettings)) as CommonLanguageSettings; // ignore: deprecated_member_use
+  CommonLanguageSettings copyWith(void Function(CommonLanguageSettings) updates) => super.copyWith((message) => updates(message as CommonLanguageSettings)) as CommonLanguageSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CommonLanguageSettings create() => CommonLanguageSettings._();
   CommonLanguageSettings createEmptyInstance() => create();
@@ -78,73 +70,26 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
 }
 
 class ClientLibrarySettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ClientLibrarySettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..e<$2.LaunchStage>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'launchStage', $pb.PbFieldType.OE, defaultOrMaker: $2.LaunchStage.LAUNCH_STAGE_UNSPECIFIED, valueOf: $2.LaunchStage.valueOf, enumValues: $2.LaunchStage.values)
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'restNumericEnums')
-    ..aOM<JavaSettings>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'javaSettings', subBuilder: JavaSettings.create)
-    ..aOM<CppSettings>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cppSettings', subBuilder: CppSettings.create)
-    ..aOM<PhpSettings>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phpSettings', subBuilder: PhpSettings.create)
-    ..aOM<PythonSettings>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pythonSettings', subBuilder: PythonSettings.create)
-    ..aOM<NodeSettings>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nodeSettings', subBuilder: NodeSettings.create)
-    ..aOM<DotnetSettings>(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dotnetSettings', subBuilder: DotnetSettings.create)
-    ..aOM<RubySettings>(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rubySettings', subBuilder: RubySettings.create)
-    ..aOM<GoSettings>(28, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'goSettings', subBuilder: GoSettings.create)
+  factory ClientLibrarySettings() => create();
+  ClientLibrarySettings._() : super();
+  factory ClientLibrarySettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ClientLibrarySettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClientLibrarySettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'version')
+    ..e<$2.LaunchStage>(2, _omitFieldNames ? '' : 'launchStage', $pb.PbFieldType.OE, defaultOrMaker: $2.LaunchStage.LAUNCH_STAGE_UNSPECIFIED, valueOf: $2.LaunchStage.valueOf, enumValues: $2.LaunchStage.values)
+    ..aOB(3, _omitFieldNames ? '' : 'restNumericEnums')
+    ..aOM<JavaSettings>(21, _omitFieldNames ? '' : 'javaSettings', subBuilder: JavaSettings.create)
+    ..aOM<CppSettings>(22, _omitFieldNames ? '' : 'cppSettings', subBuilder: CppSettings.create)
+    ..aOM<PhpSettings>(23, _omitFieldNames ? '' : 'phpSettings', subBuilder: PhpSettings.create)
+    ..aOM<PythonSettings>(24, _omitFieldNames ? '' : 'pythonSettings', subBuilder: PythonSettings.create)
+    ..aOM<NodeSettings>(25, _omitFieldNames ? '' : 'nodeSettings', subBuilder: NodeSettings.create)
+    ..aOM<DotnetSettings>(26, _omitFieldNames ? '' : 'dotnetSettings', subBuilder: DotnetSettings.create)
+    ..aOM<RubySettings>(27, _omitFieldNames ? '' : 'rubySettings', subBuilder: RubySettings.create)
+    ..aOM<GoSettings>(28, _omitFieldNames ? '' : 'goSettings', subBuilder: GoSettings.create)
     ..hasRequiredFields = false
   ;
 
-  ClientLibrarySettings._() : super();
-  factory ClientLibrarySettings({
-    $core.String? version,
-    $2.LaunchStage? launchStage,
-    $core.bool? restNumericEnums,
-    JavaSettings? javaSettings,
-    CppSettings? cppSettings,
-    PhpSettings? phpSettings,
-    PythonSettings? pythonSettings,
-    NodeSettings? nodeSettings,
-    DotnetSettings? dotnetSettings,
-    RubySettings? rubySettings,
-    GoSettings? goSettings,
-  }) {
-    final _result = create();
-    if (version != null) {
-      _result.version = version;
-    }
-    if (launchStage != null) {
-      _result.launchStage = launchStage;
-    }
-    if (restNumericEnums != null) {
-      _result.restNumericEnums = restNumericEnums;
-    }
-    if (javaSettings != null) {
-      _result.javaSettings = javaSettings;
-    }
-    if (cppSettings != null) {
-      _result.cppSettings = cppSettings;
-    }
-    if (phpSettings != null) {
-      _result.phpSettings = phpSettings;
-    }
-    if (pythonSettings != null) {
-      _result.pythonSettings = pythonSettings;
-    }
-    if (nodeSettings != null) {
-      _result.nodeSettings = nodeSettings;
-    }
-    if (dotnetSettings != null) {
-      _result.dotnetSettings = dotnetSettings;
-    }
-    if (rubySettings != null) {
-      _result.rubySettings = rubySettings;
-    }
-    if (goSettings != null) {
-      _result.goSettings = goSettings;
-    }
-    return _result;
-  }
-  factory ClientLibrarySettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ClientLibrarySettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -154,8 +99,10 @@ class ClientLibrarySettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ClientLibrarySettings copyWith(void Function(ClientLibrarySettings) updates) => super.copyWith((message) => updates(message as ClientLibrarySettings)) as ClientLibrarySettings; // ignore: deprecated_member_use
+  ClientLibrarySettings copyWith(void Function(ClientLibrarySettings) updates) => super.copyWith((message) => updates(message as ClientLibrarySettings)) as ClientLibrarySettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ClientLibrarySettings create() => ClientLibrarySettings._();
   ClientLibrarySettings createEmptyInstance() => create();
@@ -281,68 +228,25 @@ class ClientLibrarySettings extends $pb.GeneratedMessage {
 }
 
 class Publishing extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Publishing', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..pc<MethodSettings>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'methodSettings', $pb.PbFieldType.PM, subBuilder: MethodSettings.create)
-    ..aOS(101, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newIssueUri')
-    ..aOS(102, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentationUri')
-    ..aOS(103, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'apiShortName')
-    ..aOS(104, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'githubLabel')
-    ..pPS(105, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codeownerGithubTeams')
-    ..aOS(106, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'docTagPrefix')
-    ..e<ClientLibraryOrganization>(107, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization', $pb.PbFieldType.OE, defaultOrMaker: ClientLibraryOrganization.CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED, valueOf: ClientLibraryOrganization.valueOf, enumValues: ClientLibraryOrganization.values)
-    ..pc<ClientLibrarySettings>(109, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'librarySettings', $pb.PbFieldType.PM, subBuilder: ClientLibrarySettings.create)
-    ..aOS(110, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protoReferenceDocumentationUri')
+  factory Publishing() => create();
+  Publishing._() : super();
+  factory Publishing.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Publishing.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Publishing', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..pc<MethodSettings>(2, _omitFieldNames ? '' : 'methodSettings', $pb.PbFieldType.PM, subBuilder: MethodSettings.create)
+    ..aOS(101, _omitFieldNames ? '' : 'newIssueUri')
+    ..aOS(102, _omitFieldNames ? '' : 'documentationUri')
+    ..aOS(103, _omitFieldNames ? '' : 'apiShortName')
+    ..aOS(104, _omitFieldNames ? '' : 'githubLabel')
+    ..pPS(105, _omitFieldNames ? '' : 'codeownerGithubTeams')
+    ..aOS(106, _omitFieldNames ? '' : 'docTagPrefix')
+    ..e<ClientLibraryOrganization>(107, _omitFieldNames ? '' : 'organization', $pb.PbFieldType.OE, defaultOrMaker: ClientLibraryOrganization.CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED, valueOf: ClientLibraryOrganization.valueOf, enumValues: ClientLibraryOrganization.values)
+    ..pc<ClientLibrarySettings>(109, _omitFieldNames ? '' : 'librarySettings', $pb.PbFieldType.PM, subBuilder: ClientLibrarySettings.create)
+    ..aOS(110, _omitFieldNames ? '' : 'protoReferenceDocumentationUri')
     ..hasRequiredFields = false
   ;
 
-  Publishing._() : super();
-  factory Publishing({
-    $core.Iterable<MethodSettings>? methodSettings,
-    $core.String? newIssueUri,
-    $core.String? documentationUri,
-    $core.String? apiShortName,
-    $core.String? githubLabel,
-    $core.Iterable<$core.String>? codeownerGithubTeams,
-    $core.String? docTagPrefix,
-    ClientLibraryOrganization? organization,
-    $core.Iterable<ClientLibrarySettings>? librarySettings,
-    $core.String? protoReferenceDocumentationUri,
-  }) {
-    final _result = create();
-    if (methodSettings != null) {
-      _result.methodSettings.addAll(methodSettings);
-    }
-    if (newIssueUri != null) {
-      _result.newIssueUri = newIssueUri;
-    }
-    if (documentationUri != null) {
-      _result.documentationUri = documentationUri;
-    }
-    if (apiShortName != null) {
-      _result.apiShortName = apiShortName;
-    }
-    if (githubLabel != null) {
-      _result.githubLabel = githubLabel;
-    }
-    if (codeownerGithubTeams != null) {
-      _result.codeownerGithubTeams.addAll(codeownerGithubTeams);
-    }
-    if (docTagPrefix != null) {
-      _result.docTagPrefix = docTagPrefix;
-    }
-    if (organization != null) {
-      _result.organization = organization;
-    }
-    if (librarySettings != null) {
-      _result.librarySettings.addAll(librarySettings);
-    }
-    if (protoReferenceDocumentationUri != null) {
-      _result.protoReferenceDocumentationUri = protoReferenceDocumentationUri;
-    }
-    return _result;
-  }
-  factory Publishing.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Publishing.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -352,8 +256,10 @@ class Publishing extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Publishing copyWith(void Function(Publishing) updates) => super.copyWith((message) => updates(message as Publishing)) as Publishing; // ignore: deprecated_member_use
+  Publishing copyWith(void Function(Publishing) updates) => super.copyWith((message) => updates(message as Publishing)) as Publishing;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Publishing create() => Publishing._();
   Publishing createEmptyInstance() => create();
@@ -436,33 +342,18 @@ class Publishing extends $pb.GeneratedMessage {
 }
 
 class JavaSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'JavaSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'libraryPackage')
-    ..m<$core.String, $core.String>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serviceClassNames', entryClassName: 'JavaSettings.ServiceClassNamesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
-    ..aOM<CommonLanguageSettings>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory JavaSettings() => create();
+  JavaSettings._() : super();
+  factory JavaSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JavaSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JavaSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'libraryPackage')
+    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'serviceClassNames', entryClassName: 'JavaSettings.ServiceClassNamesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
+    ..aOM<CommonLanguageSettings>(3, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  JavaSettings._() : super();
-  factory JavaSettings({
-    $core.String? libraryPackage,
-    $core.Map<$core.String, $core.String>? serviceClassNames,
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (libraryPackage != null) {
-      _result.libraryPackage = libraryPackage;
-    }
-    if (serviceClassNames != null) {
-      _result.serviceClassNames.addAll(serviceClassNames);
-    }
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory JavaSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory JavaSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -472,8 +363,10 @@ class JavaSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  JavaSettings copyWith(void Function(JavaSettings) updates) => super.copyWith((message) => updates(message as JavaSettings)) as JavaSettings; // ignore: deprecated_member_use
+  JavaSettings copyWith(void Function(JavaSettings) updates) => super.copyWith((message) => updates(message as JavaSettings)) as JavaSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static JavaSettings create() => JavaSettings._();
   JavaSettings createEmptyInstance() => create();
@@ -507,23 +400,16 @@ class JavaSettings extends $pb.GeneratedMessage {
 }
 
 class CppSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CppSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory CppSettings() => create();
+  CppSettings._() : super();
+  factory CppSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CppSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CppSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  CppSettings._() : super();
-  factory CppSettings({
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory CppSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CppSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -533,8 +419,10 @@ class CppSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CppSettings copyWith(void Function(CppSettings) updates) => super.copyWith((message) => updates(message as CppSettings)) as CppSettings; // ignore: deprecated_member_use
+  CppSettings copyWith(void Function(CppSettings) updates) => super.copyWith((message) => updates(message as CppSettings)) as CppSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CppSettings create() => CppSettings._();
   CppSettings createEmptyInstance() => create();
@@ -556,23 +444,16 @@ class CppSettings extends $pb.GeneratedMessage {
 }
 
 class PhpSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PhpSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory PhpSettings() => create();
+  PhpSettings._() : super();
+  factory PhpSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PhpSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PhpSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  PhpSettings._() : super();
-  factory PhpSettings({
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory PhpSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PhpSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -582,8 +463,10 @@ class PhpSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PhpSettings copyWith(void Function(PhpSettings) updates) => super.copyWith((message) => updates(message as PhpSettings)) as PhpSettings; // ignore: deprecated_member_use
+  PhpSettings copyWith(void Function(PhpSettings) updates) => super.copyWith((message) => updates(message as PhpSettings)) as PhpSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PhpSettings create() => PhpSettings._();
   PhpSettings createEmptyInstance() => create();
@@ -605,23 +488,16 @@ class PhpSettings extends $pb.GeneratedMessage {
 }
 
 class PythonSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PythonSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory PythonSettings() => create();
+  PythonSettings._() : super();
+  factory PythonSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PythonSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PythonSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  PythonSettings._() : super();
-  factory PythonSettings({
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory PythonSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PythonSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -631,8 +507,10 @@ class PythonSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PythonSettings copyWith(void Function(PythonSettings) updates) => super.copyWith((message) => updates(message as PythonSettings)) as PythonSettings; // ignore: deprecated_member_use
+  PythonSettings copyWith(void Function(PythonSettings) updates) => super.copyWith((message) => updates(message as PythonSettings)) as PythonSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PythonSettings create() => PythonSettings._();
   PythonSettings createEmptyInstance() => create();
@@ -654,23 +532,16 @@ class PythonSettings extends $pb.GeneratedMessage {
 }
 
 class NodeSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NodeSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory NodeSettings() => create();
+  NodeSettings._() : super();
+  factory NodeSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NodeSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NodeSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  NodeSettings._() : super();
-  factory NodeSettings({
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory NodeSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NodeSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -680,8 +551,10 @@ class NodeSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NodeSettings copyWith(void Function(NodeSettings) updates) => super.copyWith((message) => updates(message as NodeSettings)) as NodeSettings; // ignore: deprecated_member_use
+  NodeSettings copyWith(void Function(NodeSettings) updates) => super.copyWith((message) => updates(message as NodeSettings)) as NodeSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static NodeSettings create() => NodeSettings._();
   NodeSettings createEmptyInstance() => create();
@@ -703,48 +576,21 @@ class NodeSettings extends $pb.GeneratedMessage {
 }
 
 class DotnetSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DotnetSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
-    ..m<$core.String, $core.String>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'renamedServices', entryClassName: 'DotnetSettings.RenamedServicesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
-    ..m<$core.String, $core.String>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'renamedResources', entryClassName: 'DotnetSettings.RenamedResourcesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ignoredResources')
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'forcedNamespaceAliases')
-    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'handwrittenSignatures')
+  factory DotnetSettings() => create();
+  DotnetSettings._() : super();
+  factory DotnetSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DotnetSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DotnetSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'renamedServices', entryClassName: 'DotnetSettings.RenamedServicesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
+    ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'renamedResources', entryClassName: 'DotnetSettings.RenamedResourcesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
+    ..pPS(4, _omitFieldNames ? '' : 'ignoredResources')
+    ..pPS(5, _omitFieldNames ? '' : 'forcedNamespaceAliases')
+    ..pPS(6, _omitFieldNames ? '' : 'handwrittenSignatures')
     ..hasRequiredFields = false
   ;
 
-  DotnetSettings._() : super();
-  factory DotnetSettings({
-    CommonLanguageSettings? common,
-    $core.Map<$core.String, $core.String>? renamedServices,
-    $core.Map<$core.String, $core.String>? renamedResources,
-    $core.Iterable<$core.String>? ignoredResources,
-    $core.Iterable<$core.String>? forcedNamespaceAliases,
-    $core.Iterable<$core.String>? handwrittenSignatures,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    if (renamedServices != null) {
-      _result.renamedServices.addAll(renamedServices);
-    }
-    if (renamedResources != null) {
-      _result.renamedResources.addAll(renamedResources);
-    }
-    if (ignoredResources != null) {
-      _result.ignoredResources.addAll(ignoredResources);
-    }
-    if (forcedNamespaceAliases != null) {
-      _result.forcedNamespaceAliases.addAll(forcedNamespaceAliases);
-    }
-    if (handwrittenSignatures != null) {
-      _result.handwrittenSignatures.addAll(handwrittenSignatures);
-    }
-    return _result;
-  }
-  factory DotnetSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DotnetSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -754,8 +600,10 @@ class DotnetSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DotnetSettings copyWith(void Function(DotnetSettings) updates) => super.copyWith((message) => updates(message as DotnetSettings)) as DotnetSettings; // ignore: deprecated_member_use
+  DotnetSettings copyWith(void Function(DotnetSettings) updates) => super.copyWith((message) => updates(message as DotnetSettings)) as DotnetSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DotnetSettings create() => DotnetSettings._();
   DotnetSettings createEmptyInstance() => create();
@@ -792,23 +640,16 @@ class DotnetSettings extends $pb.GeneratedMessage {
 }
 
 class RubySettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RubySettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory RubySettings() => create();
+  RubySettings._() : super();
+  factory RubySettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RubySettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RubySettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  RubySettings._() : super();
-  factory RubySettings({
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory RubySettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RubySettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -818,8 +659,10 @@ class RubySettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RubySettings copyWith(void Function(RubySettings) updates) => super.copyWith((message) => updates(message as RubySettings)) as RubySettings; // ignore: deprecated_member_use
+  RubySettings copyWith(void Function(RubySettings) updates) => super.copyWith((message) => updates(message as RubySettings)) as RubySettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RubySettings create() => RubySettings._();
   RubySettings createEmptyInstance() => create();
@@ -841,23 +684,16 @@ class RubySettings extends $pb.GeneratedMessage {
 }
 
 class GoSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GoSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<CommonLanguageSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+  factory GoSettings() => create();
+  GoSettings._() : super();
+  factory GoSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GoSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GoSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
     ..hasRequiredFields = false
   ;
 
-  GoSettings._() : super();
-  factory GoSettings({
-    CommonLanguageSettings? common,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    return _result;
-  }
-  factory GoSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GoSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -867,8 +703,10 @@ class GoSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GoSettings copyWith(void Function(GoSettings) updates) => super.copyWith((message) => updates(message as GoSettings)) as GoSettings; // ignore: deprecated_member_use
+  GoSettings copyWith(void Function(GoSettings) updates) => super.copyWith((message) => updates(message as GoSettings)) as GoSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GoSettings create() => GoSettings._();
   GoSettings createEmptyInstance() => create();
@@ -890,38 +728,19 @@ class GoSettings extends $pb.GeneratedMessage {
 }
 
 class MethodSettings_LongRunning extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MethodSettings.LongRunning', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOM<$1.Duration>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'initialPollDelay', subBuilder: $1.Duration.create)
-    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pollDelayMultiplier', $pb.PbFieldType.OF)
-    ..aOM<$1.Duration>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxPollDelay', subBuilder: $1.Duration.create)
-    ..aOM<$1.Duration>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalPollTimeout', subBuilder: $1.Duration.create)
+  factory MethodSettings_LongRunning() => create();
+  MethodSettings_LongRunning._() : super();
+  factory MethodSettings_LongRunning.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MethodSettings_LongRunning.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MethodSettings.LongRunning', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOM<$1.Duration>(1, _omitFieldNames ? '' : 'initialPollDelay', subBuilder: $1.Duration.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'pollDelayMultiplier', $pb.PbFieldType.OF)
+    ..aOM<$1.Duration>(3, _omitFieldNames ? '' : 'maxPollDelay', subBuilder: $1.Duration.create)
+    ..aOM<$1.Duration>(4, _omitFieldNames ? '' : 'totalPollTimeout', subBuilder: $1.Duration.create)
     ..hasRequiredFields = false
   ;
 
-  MethodSettings_LongRunning._() : super();
-  factory MethodSettings_LongRunning({
-    $1.Duration? initialPollDelay,
-    $core.double? pollDelayMultiplier,
-    $1.Duration? maxPollDelay,
-    $1.Duration? totalPollTimeout,
-  }) {
-    final _result = create();
-    if (initialPollDelay != null) {
-      _result.initialPollDelay = initialPollDelay;
-    }
-    if (pollDelayMultiplier != null) {
-      _result.pollDelayMultiplier = pollDelayMultiplier;
-    }
-    if (maxPollDelay != null) {
-      _result.maxPollDelay = maxPollDelay;
-    }
-    if (totalPollTimeout != null) {
-      _result.totalPollTimeout = totalPollTimeout;
-    }
-    return _result;
-  }
-  factory MethodSettings_LongRunning.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MethodSettings_LongRunning.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -931,8 +750,10 @@ class MethodSettings_LongRunning extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MethodSettings_LongRunning copyWith(void Function(MethodSettings_LongRunning) updates) => super.copyWith((message) => updates(message as MethodSettings_LongRunning)) as MethodSettings_LongRunning; // ignore: deprecated_member_use
+  MethodSettings_LongRunning copyWith(void Function(MethodSettings_LongRunning) updates) => super.copyWith((message) => updates(message as MethodSettings_LongRunning)) as MethodSettings_LongRunning;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MethodSettings_LongRunning create() => MethodSettings_LongRunning._();
   MethodSettings_LongRunning createEmptyInstance() => create();
@@ -985,28 +806,17 @@ class MethodSettings_LongRunning extends $pb.GeneratedMessage {
 }
 
 class MethodSettings extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MethodSettings', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'selector')
-    ..aOM<MethodSettings_LongRunning>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'longRunning', subBuilder: MethodSettings_LongRunning.create)
+  factory MethodSettings() => create();
+  MethodSettings._() : super();
+  factory MethodSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MethodSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MethodSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'selector')
+    ..aOM<MethodSettings_LongRunning>(2, _omitFieldNames ? '' : 'longRunning', subBuilder: MethodSettings_LongRunning.create)
     ..hasRequiredFields = false
   ;
 
-  MethodSettings._() : super();
-  factory MethodSettings({
-    $core.String? selector,
-    MethodSettings_LongRunning? longRunning,
-  }) {
-    final _result = create();
-    if (selector != null) {
-      _result.selector = selector;
-    }
-    if (longRunning != null) {
-      _result.longRunning = longRunning;
-    }
-    return _result;
-  }
-  factory MethodSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MethodSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1016,8 +826,10 @@ class MethodSettings extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MethodSettings copyWith(void Function(MethodSettings) updates) => super.copyWith((message) => updates(message as MethodSettings)) as MethodSettings; // ignore: deprecated_member_use
+  MethodSettings copyWith(void Function(MethodSettings) updates) => super.copyWith((message) => updates(message as MethodSettings)) as MethodSettings;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static MethodSettings create() => MethodSettings._();
   MethodSettings createEmptyInstance() => create();
@@ -1048,9 +860,9 @@ class MethodSettings extends $pb.GeneratedMessage {
 }
 
 class Client {
-  static final methodSignature = $pb.Extension<$core.String>.repeated(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.MethodOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'methodSignature', 1051, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
-  static final defaultHost = $pb.Extension<$core.String>(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.ServiceOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'defaultHost', 1049, $pb.PbFieldType.OS);
-  static final oauthScopes = $pb.Extension<$core.String>(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.ServiceOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'oauthScopes', 1050, $pb.PbFieldType.OS);
+  static final methodSignature = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'google.protobuf.MethodOptions', _omitFieldNames ? '' : 'methodSignature', 1051, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
+  static final defaultHost = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.ServiceOptions', _omitFieldNames ? '' : 'defaultHost', 1049, $pb.PbFieldType.OS);
+  static final oauthScopes = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.ServiceOptions', _omitFieldNames ? '' : 'oauthScopes', 1050, $pb.PbFieldType.OS);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(methodSignature);
     registry.add(defaultHost);
@@ -1058,3 +870,6 @@ class Client {
   }
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

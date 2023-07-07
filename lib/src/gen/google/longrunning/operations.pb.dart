@@ -1,17 +1,21 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/longrunning/operations.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../protobuf/any.pb.dart' as $2;
-import '../rpc/status.pb.dart' as $3;
 import '../protobuf/duration.pb.dart' as $4;
+import '../rpc/status.pb.dart' as $3;
 
 enum Operation_Result {
   error, 
@@ -20,49 +24,26 @@ enum Operation_Result {
 }
 
 class Operation extends $pb.GeneratedMessage {
+  factory Operation() => create();
+  Operation._() : super();
+  factory Operation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Operation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, Operation_Result> _Operation_ResultByTag = {
     4 : Operation_Result.error,
     5 : Operation_Result.response,
     0 : Operation_Result.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Operation', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Operation', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
     ..oo(0, [4, 5])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$2.Any>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: $2.Any.create)
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'done')
-    ..aOM<$3.Status>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', subBuilder: $3.Status.create)
-    ..aOM<$2.Any>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'response', subBuilder: $2.Any.create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$2.Any>(2, _omitFieldNames ? '' : 'metadata', subBuilder: $2.Any.create)
+    ..aOB(3, _omitFieldNames ? '' : 'done')
+    ..aOM<$3.Status>(4, _omitFieldNames ? '' : 'error', subBuilder: $3.Status.create)
+    ..aOM<$2.Any>(5, _omitFieldNames ? '' : 'response', subBuilder: $2.Any.create)
     ..hasRequiredFields = false
   ;
 
-  Operation._() : super();
-  factory Operation({
-    $core.String? name,
-    $2.Any? metadata,
-    $core.bool? done,
-    $3.Status? error,
-    $2.Any? response,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (metadata != null) {
-      _result.metadata = metadata;
-    }
-    if (done != null) {
-      _result.done = done;
-    }
-    if (error != null) {
-      _result.error = error;
-    }
-    if (response != null) {
-      _result.response = response;
-    }
-    return _result;
-  }
-  factory Operation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Operation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -72,8 +53,10 @@ class Operation extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Operation copyWith(void Function(Operation) updates) => super.copyWith((message) => updates(message as Operation)) as Operation; // ignore: deprecated_member_use
+  Operation copyWith(void Function(Operation) updates) => super.copyWith((message) => updates(message as Operation)) as Operation;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Operation create() => Operation._();
   Operation createEmptyInstance() => create();
@@ -138,23 +121,16 @@ class Operation extends $pb.GeneratedMessage {
 }
 
 class GetOperationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetOperationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+  factory GetOperationRequest() => create();
+  GetOperationRequest._() : super();
+  factory GetOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOperationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  GetOperationRequest._() : super();
-  factory GetOperationRequest({
-    $core.String? name,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory GetOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -164,8 +140,10 @@ class GetOperationRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetOperationRequest copyWith(void Function(GetOperationRequest) updates) => super.copyWith((message) => updates(message as GetOperationRequest)) as GetOperationRequest; // ignore: deprecated_member_use
+  GetOperationRequest copyWith(void Function(GetOperationRequest) updates) => super.copyWith((message) => updates(message as GetOperationRequest)) as GetOperationRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetOperationRequest create() => GetOperationRequest._();
   GetOperationRequest createEmptyInstance() => create();
@@ -185,38 +163,19 @@ class GetOperationRequest extends $pb.GeneratedMessage {
 }
 
 class ListOperationsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListOperationsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageSize', $pb.PbFieldType.O3)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pageToken')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+  factory ListOperationsRequest() => create();
+  ListOperationsRequest._() : super();
+  factory ListOperationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListOperationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOperationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filter')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'pageToken')
+    ..aOS(4, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  ListOperationsRequest._() : super();
-  factory ListOperationsRequest({
-    $core.String? filter,
-    $core.int? pageSize,
-    $core.String? pageToken,
-    $core.String? name,
-  }) {
-    final _result = create();
-    if (filter != null) {
-      _result.filter = filter;
-    }
-    if (pageSize != null) {
-      _result.pageSize = pageSize;
-    }
-    if (pageToken != null) {
-      _result.pageToken = pageToken;
-    }
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory ListOperationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListOperationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -226,8 +185,10 @@ class ListOperationsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListOperationsRequest copyWith(void Function(ListOperationsRequest) updates) => super.copyWith((message) => updates(message as ListOperationsRequest)) as ListOperationsRequest; // ignore: deprecated_member_use
+  ListOperationsRequest copyWith(void Function(ListOperationsRequest) updates) => super.copyWith((message) => updates(message as ListOperationsRequest)) as ListOperationsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListOperationsRequest create() => ListOperationsRequest._();
   ListOperationsRequest createEmptyInstance() => create();
@@ -274,28 +235,17 @@ class ListOperationsRequest extends $pb.GeneratedMessage {
 }
 
 class ListOperationsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListOperationsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..pc<Operation>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'operations', $pb.PbFieldType.PM, subBuilder: Operation.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nextPageToken')
+  factory ListOperationsResponse() => create();
+  ListOperationsResponse._() : super();
+  factory ListOperationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListOperationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOperationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..pc<Operation>(1, _omitFieldNames ? '' : 'operations', $pb.PbFieldType.PM, subBuilder: Operation.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
 
-  ListOperationsResponse._() : super();
-  factory ListOperationsResponse({
-    $core.Iterable<Operation>? operations,
-    $core.String? nextPageToken,
-  }) {
-    final _result = create();
-    if (operations != null) {
-      _result.operations.addAll(operations);
-    }
-    if (nextPageToken != null) {
-      _result.nextPageToken = nextPageToken;
-    }
-    return _result;
-  }
-  factory ListOperationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListOperationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -305,8 +255,10 @@ class ListOperationsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListOperationsResponse copyWith(void Function(ListOperationsResponse) updates) => super.copyWith((message) => updates(message as ListOperationsResponse)) as ListOperationsResponse; // ignore: deprecated_member_use
+  ListOperationsResponse copyWith(void Function(ListOperationsResponse) updates) => super.copyWith((message) => updates(message as ListOperationsResponse)) as ListOperationsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListOperationsResponse create() => ListOperationsResponse._();
   ListOperationsResponse createEmptyInstance() => create();
@@ -329,23 +281,16 @@ class ListOperationsResponse extends $pb.GeneratedMessage {
 }
 
 class CancelOperationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CancelOperationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+  factory CancelOperationRequest() => create();
+  CancelOperationRequest._() : super();
+  factory CancelOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CancelOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelOperationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  CancelOperationRequest._() : super();
-  factory CancelOperationRequest({
-    $core.String? name,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory CancelOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CancelOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -355,8 +300,10 @@ class CancelOperationRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CancelOperationRequest copyWith(void Function(CancelOperationRequest) updates) => super.copyWith((message) => updates(message as CancelOperationRequest)) as CancelOperationRequest; // ignore: deprecated_member_use
+  CancelOperationRequest copyWith(void Function(CancelOperationRequest) updates) => super.copyWith((message) => updates(message as CancelOperationRequest)) as CancelOperationRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CancelOperationRequest create() => CancelOperationRequest._();
   CancelOperationRequest createEmptyInstance() => create();
@@ -376,23 +323,16 @@ class CancelOperationRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteOperationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteOperationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+  factory DeleteOperationRequest() => create();
+  DeleteOperationRequest._() : super();
+  factory DeleteOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteOperationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
-  DeleteOperationRequest._() : super();
-  factory DeleteOperationRequest({
-    $core.String? name,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    return _result;
-  }
-  factory DeleteOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -402,8 +342,10 @@ class DeleteOperationRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteOperationRequest copyWith(void Function(DeleteOperationRequest) updates) => super.copyWith((message) => updates(message as DeleteOperationRequest)) as DeleteOperationRequest; // ignore: deprecated_member_use
+  DeleteOperationRequest copyWith(void Function(DeleteOperationRequest) updates) => super.copyWith((message) => updates(message as DeleteOperationRequest)) as DeleteOperationRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteOperationRequest create() => DeleteOperationRequest._();
   DeleteOperationRequest createEmptyInstance() => create();
@@ -423,28 +365,17 @@ class DeleteOperationRequest extends $pb.GeneratedMessage {
 }
 
 class WaitOperationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WaitOperationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOM<$4.Duration>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeout', subBuilder: $4.Duration.create)
+  factory WaitOperationRequest() => create();
+  WaitOperationRequest._() : super();
+  factory WaitOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WaitOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WaitOperationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$4.Duration>(2, _omitFieldNames ? '' : 'timeout', subBuilder: $4.Duration.create)
     ..hasRequiredFields = false
   ;
 
-  WaitOperationRequest._() : super();
-  factory WaitOperationRequest({
-    $core.String? name,
-    $4.Duration? timeout,
-  }) {
-    final _result = create();
-    if (name != null) {
-      _result.name = name;
-    }
-    if (timeout != null) {
-      _result.timeout = timeout;
-    }
-    return _result;
-  }
-  factory WaitOperationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WaitOperationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -454,8 +385,10 @@ class WaitOperationRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  WaitOperationRequest copyWith(void Function(WaitOperationRequest) updates) => super.copyWith((message) => updates(message as WaitOperationRequest)) as WaitOperationRequest; // ignore: deprecated_member_use
+  WaitOperationRequest copyWith(void Function(WaitOperationRequest) updates) => super.copyWith((message) => updates(message as WaitOperationRequest)) as WaitOperationRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WaitOperationRequest create() => WaitOperationRequest._();
   WaitOperationRequest createEmptyInstance() => create();
@@ -486,28 +419,17 @@ class WaitOperationRequest extends $pb.GeneratedMessage {
 }
 
 class OperationInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.longrunning'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'responseType')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadataType')
+  factory OperationInfo() => create();
+  OperationInfo._() : super();
+  factory OperationInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OperationInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'responseType')
+    ..aOS(2, _omitFieldNames ? '' : 'metadataType')
     ..hasRequiredFields = false
   ;
 
-  OperationInfo._() : super();
-  factory OperationInfo({
-    $core.String? responseType,
-    $core.String? metadataType,
-  }) {
-    final _result = create();
-    if (responseType != null) {
-      _result.responseType = responseType;
-    }
-    if (metadataType != null) {
-      _result.metadataType = metadataType;
-    }
-    return _result;
-  }
-  factory OperationInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory OperationInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -517,8 +439,10 @@ class OperationInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationInfo copyWith(void Function(OperationInfo) updates) => super.copyWith((message) => updates(message as OperationInfo)) as OperationInfo; // ignore: deprecated_member_use
+  OperationInfo copyWith(void Function(OperationInfo) updates) => super.copyWith((message) => updates(message as OperationInfo)) as OperationInfo;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationInfo create() => OperationInfo._();
   OperationInfo createEmptyInstance() => create();
@@ -547,9 +471,12 @@ class OperationInfo extends $pb.GeneratedMessage {
 }
 
 class Operations {
-  static final operationInfo = $pb.Extension<OperationInfo>(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.MethodOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'operationInfo', 1049, $pb.PbFieldType.OM, defaultOrMaker: OperationInfo.getDefault, subBuilder: OperationInfo.create);
+  static final operationInfo = $pb.Extension<OperationInfo>(_omitMessageNames ? '' : 'google.protobuf.MethodOptions', _omitFieldNames ? '' : 'operationInfo', 1049, $pb.PbFieldType.OM, defaultOrMaker: OperationInfo.getDefault, subBuilder: OperationInfo.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(operationInfo);
   }
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

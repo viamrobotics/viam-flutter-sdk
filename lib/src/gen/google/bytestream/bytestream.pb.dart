@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/bytestream/bytestream.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -11,33 +15,18 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class ReadRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReadRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.bytestream'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceName')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readOffset')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readLimit')
+  factory ReadRequest() => create();
+  ReadRequest._() : super();
+  factory ReadRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.bytestream'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'resourceName')
+    ..aInt64(2, _omitFieldNames ? '' : 'readOffset')
+    ..aInt64(3, _omitFieldNames ? '' : 'readLimit')
     ..hasRequiredFields = false
   ;
 
-  ReadRequest._() : super();
-  factory ReadRequest({
-    $core.String? resourceName,
-    $fixnum.Int64? readOffset,
-    $fixnum.Int64? readLimit,
-  }) {
-    final _result = create();
-    if (resourceName != null) {
-      _result.resourceName = resourceName;
-    }
-    if (readOffset != null) {
-      _result.readOffset = readOffset;
-    }
-    if (readLimit != null) {
-      _result.readLimit = readLimit;
-    }
-    return _result;
-  }
-  factory ReadRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -47,8 +36,10 @@ class ReadRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ReadRequest copyWith(void Function(ReadRequest) updates) => super.copyWith((message) => updates(message as ReadRequest)) as ReadRequest; // ignore: deprecated_member_use
+  ReadRequest copyWith(void Function(ReadRequest) updates) => super.copyWith((message) => updates(message as ReadRequest)) as ReadRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ReadRequest create() => ReadRequest._();
   ReadRequest createEmptyInstance() => create();
@@ -86,23 +77,16 @@ class ReadRequest extends $pb.GeneratedMessage {
 }
 
 class ReadResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReadResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.bytestream'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
+  factory ReadResponse() => create();
+  ReadResponse._() : super();
+  factory ReadResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.bytestream'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(10, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
-  ReadResponse._() : super();
-  factory ReadResponse({
-    $core.List<$core.int>? data,
-  }) {
-    final _result = create();
-    if (data != null) {
-      _result.data = data;
-    }
-    return _result;
-  }
-  factory ReadResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -112,8 +96,10 @@ class ReadResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ReadResponse copyWith(void Function(ReadResponse) updates) => super.copyWith((message) => updates(message as ReadResponse)) as ReadResponse; // ignore: deprecated_member_use
+  ReadResponse copyWith(void Function(ReadResponse) updates) => super.copyWith((message) => updates(message as ReadResponse)) as ReadResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ReadResponse create() => ReadResponse._();
   ReadResponse createEmptyInstance() => create();
@@ -133,38 +119,19 @@ class ReadResponse extends $pb.GeneratedMessage {
 }
 
 class WriteRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WriteRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.bytestream'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceName')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'writeOffset')
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'finishWrite')
-    ..a<$core.List<$core.int>>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
+  factory WriteRequest() => create();
+  WriteRequest._() : super();
+  factory WriteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WriteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WriteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.bytestream'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'resourceName')
+    ..aInt64(2, _omitFieldNames ? '' : 'writeOffset')
+    ..aOB(3, _omitFieldNames ? '' : 'finishWrite')
+    ..a<$core.List<$core.int>>(10, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
-  WriteRequest._() : super();
-  factory WriteRequest({
-    $core.String? resourceName,
-    $fixnum.Int64? writeOffset,
-    $core.bool? finishWrite,
-    $core.List<$core.int>? data,
-  }) {
-    final _result = create();
-    if (resourceName != null) {
-      _result.resourceName = resourceName;
-    }
-    if (writeOffset != null) {
-      _result.writeOffset = writeOffset;
-    }
-    if (finishWrite != null) {
-      _result.finishWrite = finishWrite;
-    }
-    if (data != null) {
-      _result.data = data;
-    }
-    return _result;
-  }
-  factory WriteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WriteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -174,8 +141,10 @@ class WriteRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  WriteRequest copyWith(void Function(WriteRequest) updates) => super.copyWith((message) => updates(message as WriteRequest)) as WriteRequest; // ignore: deprecated_member_use
+  WriteRequest copyWith(void Function(WriteRequest) updates) => super.copyWith((message) => updates(message as WriteRequest)) as WriteRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WriteRequest create() => WriteRequest._();
   WriteRequest createEmptyInstance() => create();
@@ -222,23 +191,16 @@ class WriteRequest extends $pb.GeneratedMessage {
 }
 
 class WriteResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WriteResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.bytestream'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'committedSize')
+  factory WriteResponse() => create();
+  WriteResponse._() : super();
+  factory WriteResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WriteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WriteResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.bytestream'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'committedSize')
     ..hasRequiredFields = false
   ;
 
-  WriteResponse._() : super();
-  factory WriteResponse({
-    $fixnum.Int64? committedSize,
-  }) {
-    final _result = create();
-    if (committedSize != null) {
-      _result.committedSize = committedSize;
-    }
-    return _result;
-  }
-  factory WriteResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WriteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -248,8 +210,10 @@ class WriteResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  WriteResponse copyWith(void Function(WriteResponse) updates) => super.copyWith((message) => updates(message as WriteResponse)) as WriteResponse; // ignore: deprecated_member_use
+  WriteResponse copyWith(void Function(WriteResponse) updates) => super.copyWith((message) => updates(message as WriteResponse)) as WriteResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WriteResponse create() => WriteResponse._();
   WriteResponse createEmptyInstance() => create();
@@ -269,23 +233,16 @@ class WriteResponse extends $pb.GeneratedMessage {
 }
 
 class QueryWriteStatusRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryWriteStatusRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.bytestream'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resourceName')
+  factory QueryWriteStatusRequest() => create();
+  QueryWriteStatusRequest._() : super();
+  factory QueryWriteStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryWriteStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QueryWriteStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.bytestream'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'resourceName')
     ..hasRequiredFields = false
   ;
 
-  QueryWriteStatusRequest._() : super();
-  factory QueryWriteStatusRequest({
-    $core.String? resourceName,
-  }) {
-    final _result = create();
-    if (resourceName != null) {
-      _result.resourceName = resourceName;
-    }
-    return _result;
-  }
-  factory QueryWriteStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryWriteStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -295,8 +252,10 @@ class QueryWriteStatusRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryWriteStatusRequest copyWith(void Function(QueryWriteStatusRequest) updates) => super.copyWith((message) => updates(message as QueryWriteStatusRequest)) as QueryWriteStatusRequest; // ignore: deprecated_member_use
+  QueryWriteStatusRequest copyWith(void Function(QueryWriteStatusRequest) updates) => super.copyWith((message) => updates(message as QueryWriteStatusRequest)) as QueryWriteStatusRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static QueryWriteStatusRequest create() => QueryWriteStatusRequest._();
   QueryWriteStatusRequest createEmptyInstance() => create();
@@ -316,28 +275,17 @@ class QueryWriteStatusRequest extends $pb.GeneratedMessage {
 }
 
 class QueryWriteStatusResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryWriteStatusResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.bytestream'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'committedSize')
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'complete')
+  factory QueryWriteStatusResponse() => create();
+  QueryWriteStatusResponse._() : super();
+  factory QueryWriteStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryWriteStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QueryWriteStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.bytestream'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'committedSize')
+    ..aOB(2, _omitFieldNames ? '' : 'complete')
     ..hasRequiredFields = false
   ;
 
-  QueryWriteStatusResponse._() : super();
-  factory QueryWriteStatusResponse({
-    $fixnum.Int64? committedSize,
-    $core.bool? complete,
-  }) {
-    final _result = create();
-    if (committedSize != null) {
-      _result.committedSize = committedSize;
-    }
-    if (complete != null) {
-      _result.complete = complete;
-    }
-    return _result;
-  }
-  factory QueryWriteStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryWriteStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -347,8 +295,10 @@ class QueryWriteStatusResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryWriteStatusResponse copyWith(void Function(QueryWriteStatusResponse) updates) => super.copyWith((message) => updates(message as QueryWriteStatusResponse)) as QueryWriteStatusResponse; // ignore: deprecated_member_use
+  QueryWriteStatusResponse copyWith(void Function(QueryWriteStatusResponse) updates) => super.copyWith((message) => updates(message as QueryWriteStatusResponse)) as QueryWriteStatusResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static QueryWriteStatusResponse create() => QueryWriteStatusResponse._();
   QueryWriteStatusResponse createEmptyInstance() => create();
@@ -376,3 +326,6 @@ class QueryWriteStatusResponse extends $pb.GeneratedMessage {
   void clearComplete() => clearField(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

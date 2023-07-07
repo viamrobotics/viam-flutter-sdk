@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: component/inputcontroller/v1/input_controller.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -13,28 +17,17 @@ import '../../../google/protobuf/struct.pb.dart' as $2;
 import '../../../google/protobuf/timestamp.pb.dart' as $3;
 
 class GetControlsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetControlsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controller')
-    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+  factory GetControlsRequest() => create();
+  GetControlsRequest._() : super();
+  factory GetControlsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetControlsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetControlsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'controller')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
-  GetControlsRequest._() : super();
-  factory GetControlsRequest({
-    $core.String? controller,
-    $2.Struct? extra,
-  }) {
-    final _result = create();
-    if (controller != null) {
-      _result.controller = controller;
-    }
-    if (extra != null) {
-      _result.extra = extra;
-    }
-    return _result;
-  }
-  factory GetControlsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetControlsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -44,8 +37,10 @@ class GetControlsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetControlsRequest copyWith(void Function(GetControlsRequest) updates) => super.copyWith((message) => updates(message as GetControlsRequest)) as GetControlsRequest; // ignore: deprecated_member_use
+  GetControlsRequest copyWith(void Function(GetControlsRequest) updates) => super.copyWith((message) => updates(message as GetControlsRequest)) as GetControlsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetControlsRequest create() => GetControlsRequest._();
   GetControlsRequest createEmptyInstance() => create();
@@ -76,23 +71,16 @@ class GetControlsRequest extends $pb.GeneratedMessage {
 }
 
 class GetControlsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetControlsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controls')
+  factory GetControlsResponse() => create();
+  GetControlsResponse._() : super();
+  factory GetControlsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetControlsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetControlsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'controls')
     ..hasRequiredFields = false
   ;
 
-  GetControlsResponse._() : super();
-  factory GetControlsResponse({
-    $core.Iterable<$core.String>? controls,
-  }) {
-    final _result = create();
-    if (controls != null) {
-      _result.controls.addAll(controls);
-    }
-    return _result;
-  }
-  factory GetControlsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetControlsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -102,8 +90,10 @@ class GetControlsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetControlsResponse copyWith(void Function(GetControlsResponse) updates) => super.copyWith((message) => updates(message as GetControlsResponse)) as GetControlsResponse; // ignore: deprecated_member_use
+  GetControlsResponse copyWith(void Function(GetControlsResponse) updates) => super.copyWith((message) => updates(message as GetControlsResponse)) as GetControlsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetControlsResponse create() => GetControlsResponse._();
   GetControlsResponse createEmptyInstance() => create();
@@ -117,28 +107,17 @@ class GetControlsResponse extends $pb.GeneratedMessage {
 }
 
 class GetEventsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetEventsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controller')
-    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+  factory GetEventsRequest() => create();
+  GetEventsRequest._() : super();
+  factory GetEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'controller')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
-  GetEventsRequest._() : super();
-  factory GetEventsRequest({
-    $core.String? controller,
-    $2.Struct? extra,
-  }) {
-    final _result = create();
-    if (controller != null) {
-      _result.controller = controller;
-    }
-    if (extra != null) {
-      _result.extra = extra;
-    }
-    return _result;
-  }
-  factory GetEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -148,8 +127,10 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetEventsRequest copyWith(void Function(GetEventsRequest) updates) => super.copyWith((message) => updates(message as GetEventsRequest)) as GetEventsRequest; // ignore: deprecated_member_use
+  GetEventsRequest copyWith(void Function(GetEventsRequest) updates) => super.copyWith((message) => updates(message as GetEventsRequest)) as GetEventsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetEventsRequest create() => GetEventsRequest._();
   GetEventsRequest createEmptyInstance() => create();
@@ -180,23 +161,16 @@ class GetEventsRequest extends $pb.GeneratedMessage {
 }
 
 class GetEventsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetEventsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..pc<Event>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events', $pb.PbFieldType.PM, subBuilder: Event.create)
+  factory GetEventsResponse() => create();
+  GetEventsResponse._() : super();
+  factory GetEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..pc<Event>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: Event.create)
     ..hasRequiredFields = false
   ;
 
-  GetEventsResponse._() : super();
-  factory GetEventsResponse({
-    $core.Iterable<Event>? events,
-  }) {
-    final _result = create();
-    if (events != null) {
-      _result.events.addAll(events);
-    }
-    return _result;
-  }
-  factory GetEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -206,8 +180,10 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetEventsResponse copyWith(void Function(GetEventsResponse) updates) => super.copyWith((message) => updates(message as GetEventsResponse)) as GetEventsResponse; // ignore: deprecated_member_use
+  GetEventsResponse copyWith(void Function(GetEventsResponse) updates) => super.copyWith((message) => updates(message as GetEventsResponse)) as GetEventsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetEventsResponse create() => GetEventsResponse._();
   GetEventsResponse createEmptyInstance() => create();
@@ -221,33 +197,18 @@ class GetEventsResponse extends $pb.GeneratedMessage {
 }
 
 class TriggerEventRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TriggerEventRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controller')
-    ..aOM<Event>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'event', subBuilder: Event.create)
-    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+  factory TriggerEventRequest() => create();
+  TriggerEventRequest._() : super();
+  factory TriggerEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TriggerEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TriggerEventRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'controller')
+    ..aOM<Event>(2, _omitFieldNames ? '' : 'event', subBuilder: Event.create)
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
-  TriggerEventRequest._() : super();
-  factory TriggerEventRequest({
-    $core.String? controller,
-    Event? event,
-    $2.Struct? extra,
-  }) {
-    final _result = create();
-    if (controller != null) {
-      _result.controller = controller;
-    }
-    if (event != null) {
-      _result.event = event;
-    }
-    if (extra != null) {
-      _result.extra = extra;
-    }
-    return _result;
-  }
-  factory TriggerEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TriggerEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -257,8 +218,10 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TriggerEventRequest copyWith(void Function(TriggerEventRequest) updates) => super.copyWith((message) => updates(message as TriggerEventRequest)) as TriggerEventRequest; // ignore: deprecated_member_use
+  TriggerEventRequest copyWith(void Function(TriggerEventRequest) updates) => super.copyWith((message) => updates(message as TriggerEventRequest)) as TriggerEventRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TriggerEventRequest create() => TriggerEventRequest._();
   TriggerEventRequest createEmptyInstance() => create();
@@ -300,14 +263,15 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
 }
 
 class TriggerEventResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TriggerEventResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+  factory TriggerEventResponse() => create();
+  TriggerEventResponse._() : super();
+  factory TriggerEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TriggerEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TriggerEventResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  TriggerEventResponse._() : super();
-  factory TriggerEventResponse() => create();
-  factory TriggerEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TriggerEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -317,8 +281,10 @@ class TriggerEventResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TriggerEventResponse copyWith(void Function(TriggerEventResponse) updates) => super.copyWith((message) => updates(message as TriggerEventResponse)) as TriggerEventResponse; // ignore: deprecated_member_use
+  TriggerEventResponse copyWith(void Function(TriggerEventResponse) updates) => super.copyWith((message) => updates(message as TriggerEventResponse)) as TriggerEventResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TriggerEventResponse create() => TriggerEventResponse._();
   TriggerEventResponse createEmptyInstance() => create();
@@ -329,38 +295,19 @@ class TriggerEventResponse extends $pb.GeneratedMessage {
 }
 
 class Event extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Event', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOM<$3.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $3.Timestamp.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'event')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'control')
-    ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.OD)
+  factory Event() => create();
+  Event._() : super();
+  factory Event.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Event.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Event', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOM<$3.Timestamp>(1, _omitFieldNames ? '' : 'time', subBuilder: $3.Timestamp.create)
+    ..aOS(2, _omitFieldNames ? '' : 'event')
+    ..aOS(3, _omitFieldNames ? '' : 'control')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
-  Event._() : super();
-  factory Event({
-    $3.Timestamp? time,
-    $core.String? event,
-    $core.String? control,
-    $core.double? value,
-  }) {
-    final _result = create();
-    if (time != null) {
-      _result.time = time;
-    }
-    if (event != null) {
-      _result.event = event;
-    }
-    if (control != null) {
-      _result.control = control;
-    }
-    if (value != null) {
-      _result.value = value;
-    }
-    return _result;
-  }
-  factory Event.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Event.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -370,8 +317,10 @@ class Event extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Event copyWith(void Function(Event) updates) => super.copyWith((message) => updates(message as Event)) as Event; // ignore: deprecated_member_use
+  Event copyWith(void Function(Event) updates) => super.copyWith((message) => updates(message as Event)) as Event;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Event create() => Event._();
   Event createEmptyInstance() => create();
@@ -420,33 +369,18 @@ class Event extends $pb.GeneratedMessage {
 }
 
 class StreamEventsRequest_Events extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEventsRequest.Events', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'control')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events')
-    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cancelledEvents')
+  factory StreamEventsRequest_Events() => create();
+  StreamEventsRequest_Events._() : super();
+  factory StreamEventsRequest_Events.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEventsRequest_Events.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamEventsRequest.Events', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'control')
+    ..pPS(2, _omitFieldNames ? '' : 'events')
+    ..pPS(3, _omitFieldNames ? '' : 'cancelledEvents')
     ..hasRequiredFields = false
   ;
 
-  StreamEventsRequest_Events._() : super();
-  factory StreamEventsRequest_Events({
-    $core.String? control,
-    $core.Iterable<$core.String>? events,
-    $core.Iterable<$core.String>? cancelledEvents,
-  }) {
-    final _result = create();
-    if (control != null) {
-      _result.control = control;
-    }
-    if (events != null) {
-      _result.events.addAll(events);
-    }
-    if (cancelledEvents != null) {
-      _result.cancelledEvents.addAll(cancelledEvents);
-    }
-    return _result;
-  }
-  factory StreamEventsRequest_Events.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StreamEventsRequest_Events.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -456,8 +390,10 @@ class StreamEventsRequest_Events extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StreamEventsRequest_Events copyWith(void Function(StreamEventsRequest_Events) updates) => super.copyWith((message) => updates(message as StreamEventsRequest_Events)) as StreamEventsRequest_Events; // ignore: deprecated_member_use
+  StreamEventsRequest_Events copyWith(void Function(StreamEventsRequest_Events) updates) => super.copyWith((message) => updates(message as StreamEventsRequest_Events)) as StreamEventsRequest_Events;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static StreamEventsRequest_Events create() => StreamEventsRequest_Events._();
   StreamEventsRequest_Events createEmptyInstance() => create();
@@ -483,33 +419,18 @@ class StreamEventsRequest_Events extends $pb.GeneratedMessage {
 }
 
 class StreamEventsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEventsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'controller')
-    ..pc<StreamEventsRequest_Events>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events', $pb.PbFieldType.PM, subBuilder: StreamEventsRequest_Events.create)
-    ..aOM<$2.Struct>(99, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extra', subBuilder: $2.Struct.create)
+  factory StreamEventsRequest() => create();
+  StreamEventsRequest._() : super();
+  factory StreamEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'controller')
+    ..pc<StreamEventsRequest_Events>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: StreamEventsRequest_Events.create)
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
-  StreamEventsRequest._() : super();
-  factory StreamEventsRequest({
-    $core.String? controller,
-    $core.Iterable<StreamEventsRequest_Events>? events,
-    $2.Struct? extra,
-  }) {
-    final _result = create();
-    if (controller != null) {
-      _result.controller = controller;
-    }
-    if (events != null) {
-      _result.events.addAll(events);
-    }
-    if (extra != null) {
-      _result.extra = extra;
-    }
-    return _result;
-  }
-  factory StreamEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StreamEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -519,8 +440,10 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StreamEventsRequest copyWith(void Function(StreamEventsRequest) updates) => super.copyWith((message) => updates(message as StreamEventsRequest)) as StreamEventsRequest; // ignore: deprecated_member_use
+  StreamEventsRequest copyWith(void Function(StreamEventsRequest) updates) => super.copyWith((message) => updates(message as StreamEventsRequest)) as StreamEventsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static StreamEventsRequest create() => StreamEventsRequest._();
   StreamEventsRequest createEmptyInstance() => create();
@@ -554,23 +477,16 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
 }
 
 class StreamEventsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StreamEventsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOM<Event>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'event', subBuilder: Event.create)
+  factory StreamEventsResponse() => create();
+  StreamEventsResponse._() : super();
+  factory StreamEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamEventsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..aOM<Event>(1, _omitFieldNames ? '' : 'event', subBuilder: Event.create)
     ..hasRequiredFields = false
   ;
 
-  StreamEventsResponse._() : super();
-  factory StreamEventsResponse({
-    Event? event,
-  }) {
-    final _result = create();
-    if (event != null) {
-      _result.event = event;
-    }
-    return _result;
-  }
-  factory StreamEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StreamEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -580,8 +496,10 @@ class StreamEventsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StreamEventsResponse copyWith(void Function(StreamEventsResponse) updates) => super.copyWith((message) => updates(message as StreamEventsResponse)) as StreamEventsResponse; // ignore: deprecated_member_use
+  StreamEventsResponse copyWith(void Function(StreamEventsResponse) updates) => super.copyWith((message) => updates(message as StreamEventsResponse)) as StreamEventsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static StreamEventsResponse create() => StreamEventsResponse._();
   StreamEventsResponse createEmptyInstance() => create();
@@ -603,23 +521,16 @@ class StreamEventsResponse extends $pb.GeneratedMessage {
 }
 
 class Status extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Status', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..pc<Event>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events', $pb.PbFieldType.PM, subBuilder: Event.create)
+  factory Status() => create();
+  Status._() : super();
+  factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
+    ..pc<Event>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: Event.create)
     ..hasRequiredFields = false
   ;
 
-  Status._() : super();
-  factory Status({
-    $core.Iterable<Event>? events,
-  }) {
-    final _result = create();
-    if (events != null) {
-      _result.events.addAll(events);
-    }
-    return _result;
-  }
-  factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -629,8 +540,10 @@ class Status extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Status copyWith(void Function(Status) updates) => super.copyWith((message) => updates(message as Status)) as Status; // ignore: deprecated_member_use
+  Status copyWith(void Function(Status) updates) => super.copyWith((message) => updates(message as Status)) as Status;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Status create() => Status._();
   Status createEmptyInstance() => create();
@@ -643,3 +556,6 @@ class Status extends $pb.GeneratedMessage {
   $core.List<Event> get events => $_getList(0);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

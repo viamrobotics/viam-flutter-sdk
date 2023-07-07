@@ -39,10 +39,9 @@ extension ViamResourceNameMapper on ResourceName {
 }
 
 extension ResourceNameMapper on ViamResourceName {
-  ResourceName toDto() => ResourceName(
-        name: name,
-        namespace: namespace,
-        subtype: subtype,
-        type: type,
-      );
+  ResourceName toDto() => ResourceName()
+    ..name = name
+    ..namespace = namespace
+    ..subtype = subtype
+    ..type = type;
 }

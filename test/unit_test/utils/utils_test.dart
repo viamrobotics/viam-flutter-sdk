@@ -39,32 +39,32 @@ void main() {
 
     group('ValueUtils toPrimitive', () {
       test('null', () {
-        final nullValue = Value(nullValue: NullValue.NULL_VALUE);
+        final nullValue = Value()..nullValue = NullValue.NULL_VALUE;
         expect(nullValue.toPrimitive(), NullValue.NULL_VALUE);
       });
 
       test('num', () {
-        final numberValue = Value(numberValue: 0);
+        final numberValue = Value()..numberValue = 0;
         expect(numberValue.toPrimitive(), 0);
       });
 
       test('string', () {
-        final stringValue = Value(stringValue: 'string');
+        final stringValue = Value()..stringValue = 'string';
         expect(stringValue.toPrimitive(), 'string');
       });
 
       test('bool', () {
-        final boolValue = Value(boolValue: false);
+        final boolValue = Value()..boolValue = false;
         expect(boolValue.toPrimitive(), false);
       });
 
       test('struct', () {
-        final structValue = Value(structValue: Struct.getDefault());
+        final structValue = Value()..structValue = Struct.getDefault();
         expect(structValue.toPrimitive(), {});
       });
 
       test('list', () {
-        final listValue = Value(listValue: ListValue.getDefault());
+        final listValue = Value()..listValue = ListValue.getDefault();
         expect(listValue.toPrimitive(), []);
       });
 
@@ -75,7 +75,7 @@ void main() {
     });
 
     test('StructUtils toMap', () {
-      final struct = Struct(fields: {'foo': Value(stringValue: 'bar')});
+      final struct = Struct()..fields.addAll({'foo': Value()..stringValue = 'bar'});
       expect(struct.toMap(), {'foo': 'bar'});
     });
 

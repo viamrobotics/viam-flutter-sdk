@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/api/expr/v1alpha1/explain.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -13,28 +17,17 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'value.pb.dart' as $6;
 
 class Explain_ExprStep extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Explain.ExprStep', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valueIndex', $pb.PbFieldType.O3)
+  factory Explain_ExprStep() => create();
+  Explain_ExprStep._() : super();
+  factory Explain_ExprStep.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Explain_ExprStep.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Explain.ExprStep', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'valueIndex', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
-  Explain_ExprStep._() : super();
-  factory Explain_ExprStep({
-    $fixnum.Int64? id,
-    $core.int? valueIndex,
-  }) {
-    final _result = create();
-    if (id != null) {
-      _result.id = id;
-    }
-    if (valueIndex != null) {
-      _result.valueIndex = valueIndex;
-    }
-    return _result;
-  }
-  factory Explain_ExprStep.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Explain_ExprStep.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -44,8 +37,10 @@ class Explain_ExprStep extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Explain_ExprStep copyWith(void Function(Explain_ExprStep) updates) => super.copyWith((message) => updates(message as Explain_ExprStep)) as Explain_ExprStep; // ignore: deprecated_member_use
+  Explain_ExprStep copyWith(void Function(Explain_ExprStep) updates) => super.copyWith((message) => updates(message as Explain_ExprStep)) as Explain_ExprStep;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Explain_ExprStep create() => Explain_ExprStep._();
   Explain_ExprStep createEmptyInstance() => create();
@@ -74,28 +69,17 @@ class Explain_ExprStep extends $pb.GeneratedMessage {
 }
 
 class Explain extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Explain', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
-    ..pc<$6.Value>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'values', $pb.PbFieldType.PM, subBuilder: $6.Value.create)
-    ..pc<Explain_ExprStep>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'exprSteps', $pb.PbFieldType.PM, subBuilder: Explain_ExprStep.create)
+  factory Explain() => create();
+  Explain._() : super();
+  factory Explain.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Explain.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Explain', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..pc<$6.Value>(1, _omitFieldNames ? '' : 'values', $pb.PbFieldType.PM, subBuilder: $6.Value.create)
+    ..pc<Explain_ExprStep>(2, _omitFieldNames ? '' : 'exprSteps', $pb.PbFieldType.PM, subBuilder: Explain_ExprStep.create)
     ..hasRequiredFields = false
   ;
 
-  Explain._() : super();
-  factory Explain({
-    $core.Iterable<$6.Value>? values,
-    $core.Iterable<Explain_ExprStep>? exprSteps,
-  }) {
-    final _result = create();
-    if (values != null) {
-      _result.values.addAll(values);
-    }
-    if (exprSteps != null) {
-      _result.exprSteps.addAll(exprSteps);
-    }
-    return _result;
-  }
-  factory Explain.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Explain.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -105,8 +89,10 @@ class Explain extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Explain copyWith(void Function(Explain) updates) => super.copyWith((message) => updates(message as Explain)) as Explain; // ignore: deprecated_member_use
+  Explain copyWith(void Function(Explain) updates) => super.copyWith((message) => updates(message as Explain)) as Explain;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Explain create() => Explain._();
   Explain createEmptyInstance() => create();
@@ -122,3 +108,6 @@ class Explain extends $pb.GeneratedMessage {
   $core.List<Explain_ExprStep> get exprSteps => $_getList(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

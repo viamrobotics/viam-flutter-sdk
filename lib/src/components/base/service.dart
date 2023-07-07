@@ -59,19 +59,25 @@ class BaseService extends BaseServiceBase {
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
     final base = _fromManager(request.name);
     final result = await base.isMoving();
-    return IsMovingResponse(isMoving: result);
+    return IsMovingResponse()..isMoving = result;
   }
 
   @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final base = _fromManager(request.name);
     final result = await base.doCommand(request.command.toMap());
-    return DoCommandResponse(result: result.toStruct());
+    return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
     // TODO: implement getGeometries
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) {
+    // TODO: implement getProperties
     throw UnimplementedError();
   }
 }

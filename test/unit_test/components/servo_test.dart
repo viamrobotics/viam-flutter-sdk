@@ -135,33 +135,37 @@ void main() {
     group('Servo Service Tests', () {
       test('move should move the servo to new given position', () async {
         final client = ServoServiceClient(channel);
-        await client.move(MoveRequest(name: name, angleDeg: testPosition));
+        await client.move(MoveRequest()
+          ..name = name
+          ..angleDeg = testPosition);
         expect(servo.angle, testPosition);
       });
 
       test('getPosition should return the servos angle', () async {
         final client = ServoServiceClient(channel);
-        final response = await client.getPosition(GetPositionRequest(name: name));
+        final response = await client.getPosition(GetPositionRequest()..name = name);
         expect(response.positionDeg, servo.angle);
       });
 
       test('stop should stop the servo', () async {
         final client = ServoServiceClient(channel);
         servo.isStopped = false;
-        await client.stop(StopRequest(name: name));
+        await client.stop(StopRequest()..name = name);
         expect(servo.isStopped, true);
       });
 
       test('isMoving should return if the servo is moving', () async {
         final client = ServoServiceClient(channel);
-        final response = await client.isMoving(IsMovingRequest(name: name));
+        final response = await client.isMoving(IsMovingRequest()..name = name);
         expect(response.isMoving, !servo.isStopped);
       });
 
       test('doCommand', () async {
         final client = ServoServiceClient(channel);
         final Map<String, String> command = {'command': 'args'};
-        final request = DoCommandRequest(name: name, command: command.toStruct());
+        final request = DoCommandRequest()
+          ..name = name
+          ..command = command.toStruct();
         final response = await client.doCommand(request);
         expect(response.result.toMap(), {'command': command});
       });

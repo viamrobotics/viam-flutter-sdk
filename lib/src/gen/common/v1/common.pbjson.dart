@@ -1,329 +1,423 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: common/v1/common.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:core' as $core;
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+
 import 'dart:convert' as $convert;
+import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
+
 @$core.Deprecated('Use kinematicsFileFormatDescriptor instead')
-const KinematicsFileFormat$json = const {
+const KinematicsFileFormat$json = {
   '1': 'KinematicsFileFormat',
-  '2': const [
-    const {'1': 'KINEMATICS_FILE_FORMAT_UNSPECIFIED', '2': 0},
-    const {'1': 'KINEMATICS_FILE_FORMAT_SVA', '2': 1},
-    const {'1': 'KINEMATICS_FILE_FORMAT_URDF', '2': 2},
+  '2': [
+    {'1': 'KINEMATICS_FILE_FORMAT_UNSPECIFIED', '2': 0},
+    {'1': 'KINEMATICS_FILE_FORMAT_SVA', '2': 1},
+    {'1': 'KINEMATICS_FILE_FORMAT_URDF', '2': 2},
   ],
 };
 
 /// Descriptor for `KinematicsFileFormat`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List kinematicsFileFormatDescriptor = $convert.base64Decode('ChRLaW5lbWF0aWNzRmlsZUZvcm1hdBImCiJLSU5FTUFUSUNTX0ZJTEVfRk9STUFUX1VOU1BFQ0lGSUVEEAASHgoaS0lORU1BVElDU19GSUxFX0ZPUk1BVF9TVkEQARIfChtLSU5FTUFUSUNTX0ZJTEVfRk9STUFUX1VSREYQAg==');
+final $typed_data.Uint8List kinematicsFileFormatDescriptor = $convert.base64Decode(
+    'ChRLaW5lbWF0aWNzRmlsZUZvcm1hdBImCiJLSU5FTUFUSUNTX0ZJTEVfRk9STUFUX1VOU1BFQ0'
+    'lGSUVEEAASHgoaS0lORU1BVElDU19GSUxFX0ZPUk1BVF9TVkEQARIfChtLSU5FTUFUSUNTX0ZJ'
+    'TEVfRk9STUFUX1VSREYQAg==');
+
 @$core.Deprecated('Use resourceNameDescriptor instead')
-const ResourceName$json = const {
+const ResourceName$json = {
   '1': 'ResourceName',
-  '2': const [
-    const {'1': 'namespace', '3': 1, '4': 1, '5': 9, '10': 'namespace'},
-    const {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
-    const {'1': 'subtype', '3': 3, '4': 1, '5': 9, '10': 'subtype'},
-    const {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+  '2': [
+    {'1': 'namespace', '3': 1, '4': 1, '5': 9, '10': 'namespace'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'subtype', '3': 3, '4': 1, '5': 9, '10': 'subtype'},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
 /// Descriptor for `ResourceName`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode('CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIAEoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
+final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode(
+    'CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIA'
+    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
+
 @$core.Deprecated('Use boardStatusDescriptor instead')
-const BoardStatus$json = const {
+const BoardStatus$json = {
   '1': 'BoardStatus',
-  '2': const [
-    const {'1': 'analogs', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.BoardStatus.AnalogsEntry', '10': 'analogs'},
-    const {'1': 'digital_interrupts', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.BoardStatus.DigitalInterruptsEntry', '10': 'digitalInterrupts'},
+  '2': [
+    {'1': 'analogs', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.BoardStatus.AnalogsEntry', '10': 'analogs'},
+    {'1': 'digital_interrupts', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.BoardStatus.DigitalInterruptsEntry', '10': 'digitalInterrupts'},
   ],
-  '3': const [BoardStatus_AnalogsEntry$json, BoardStatus_DigitalInterruptsEntry$json],
+  '3': [BoardStatus_AnalogsEntry$json, BoardStatus_DigitalInterruptsEntry$json],
 };
 
 @$core.Deprecated('Use boardStatusDescriptor instead')
-const BoardStatus_AnalogsEntry$json = const {
+const BoardStatus_AnalogsEntry$json = {
   '1': 'AnalogsEntry',
-  '2': const [
-    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.AnalogStatus', '10': 'value'},
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.AnalogStatus', '10': 'value'},
   ],
-  '7': const {'7': true},
+  '7': {'7': true},
 };
 
 @$core.Deprecated('Use boardStatusDescriptor instead')
-const BoardStatus_DigitalInterruptsEntry$json = const {
+const BoardStatus_DigitalInterruptsEntry$json = {
   '1': 'DigitalInterruptsEntry',
-  '2': const [
-    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.DigitalInterruptStatus', '10': 'value'},
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.DigitalInterruptStatus', '10': 'value'},
   ],
-  '7': const {'7': true},
+  '7': {'7': true},
 };
 
 /// Descriptor for `BoardStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List boardStatusDescriptor = $convert.base64Decode('CgtCb2FyZFN0YXR1cxJCCgdhbmFsb2dzGAEgAygLMigudmlhbS5jb21tb24udjEuQm9hcmRTdGF0dXMuQW5hbG9nc0VudHJ5UgdhbmFsb2dzEmEKEmRpZ2l0YWxfaW50ZXJydXB0cxgCIAMoCzIyLnZpYW0uY29tbW9uLnYxLkJvYXJkU3RhdHVzLkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnlSEWRpZ2l0YWxJbnRlcnJ1cHRzGlgKDEFuYWxvZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIyCgV2YWx1ZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLkFuYWxvZ1N0YXR1c1IFdmFsdWU6AjgBGmwKFkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPAoFdmFsdWUYAiABKAsyJi52aWFtLmNvbW1vbi52MS5EaWdpdGFsSW50ZXJydXB0U3RhdHVzUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List boardStatusDescriptor = $convert.base64Decode(
+    'CgtCb2FyZFN0YXR1cxJCCgdhbmFsb2dzGAEgAygLMigudmlhbS5jb21tb24udjEuQm9hcmRTdG'
+    'F0dXMuQW5hbG9nc0VudHJ5UgdhbmFsb2dzEmEKEmRpZ2l0YWxfaW50ZXJydXB0cxgCIAMoCzIy'
+    'LnZpYW0uY29tbW9uLnYxLkJvYXJkU3RhdHVzLkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnlSEWRpZ2'
+    'l0YWxJbnRlcnJ1cHRzGlgKDEFuYWxvZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIyCgV2YWx1'
+    'ZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLkFuYWxvZ1N0YXR1c1IFdmFsdWU6AjgBGmwKFkRpZ2'
+    'l0YWxJbnRlcnJ1cHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPAoFdmFsdWUYAiABKAsyJi52'
+    'aWFtLmNvbW1vbi52MS5EaWdpdGFsSW50ZXJydXB0U3RhdHVzUgV2YWx1ZToCOAE=');
+
 @$core.Deprecated('Use analogStatusDescriptor instead')
-const AnalogStatus$json = const {
+const AnalogStatus$json = {
   '1': 'AnalogStatus',
-  '2': const [
-    const {'1': 'value', '3': 1, '4': 1, '5': 5, '10': 'value'},
+  '2': [
+    {'1': 'value', '3': 1, '4': 1, '5': 5, '10': 'value'},
   ],
 };
 
 /// Descriptor for `AnalogStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List analogStatusDescriptor = $convert.base64Decode('CgxBbmFsb2dTdGF0dXMSFAoFdmFsdWUYASABKAVSBXZhbHVl');
+final $typed_data.Uint8List analogStatusDescriptor = $convert.base64Decode(
+    'CgxBbmFsb2dTdGF0dXMSFAoFdmFsdWUYASABKAVSBXZhbHVl');
+
 @$core.Deprecated('Use digitalInterruptStatusDescriptor instead')
-const DigitalInterruptStatus$json = const {
+const DigitalInterruptStatus$json = {
   '1': 'DigitalInterruptStatus',
-  '2': const [
-    const {'1': 'value', '3': 1, '4': 1, '5': 3, '10': 'value'},
+  '2': [
+    {'1': 'value', '3': 1, '4': 1, '5': 3, '10': 'value'},
   ],
 };
 
 /// Descriptor for `DigitalInterruptStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List digitalInterruptStatusDescriptor = $convert.base64Decode('ChZEaWdpdGFsSW50ZXJydXB0U3RhdHVzEhQKBXZhbHVlGAEgASgDUgV2YWx1ZQ==');
+final $typed_data.Uint8List digitalInterruptStatusDescriptor = $convert.base64Decode(
+    'ChZEaWdpdGFsSW50ZXJydXB0U3RhdHVzEhQKBXZhbHVlGAEgASgDUgV2YWx1ZQ==');
+
 @$core.Deprecated('Use poseDescriptor instead')
-const Pose$json = const {
+const Pose$json = {
   '1': 'Pose',
-  '2': const [
-    const {'1': 'x', '3': 1, '4': 1, '5': 1, '10': 'x'},
-    const {'1': 'y', '3': 2, '4': 1, '5': 1, '10': 'y'},
-    const {'1': 'z', '3': 3, '4': 1, '5': 1, '10': 'z'},
-    const {'1': 'o_x', '3': 4, '4': 1, '5': 1, '10': 'oX'},
-    const {'1': 'o_y', '3': 5, '4': 1, '5': 1, '10': 'oY'},
-    const {'1': 'o_z', '3': 6, '4': 1, '5': 1, '10': 'oZ'},
-    const {'1': 'theta', '3': 7, '4': 1, '5': 1, '10': 'theta'},
+  '2': [
+    {'1': 'x', '3': 1, '4': 1, '5': 1, '10': 'x'},
+    {'1': 'y', '3': 2, '4': 1, '5': 1, '10': 'y'},
+    {'1': 'z', '3': 3, '4': 1, '5': 1, '10': 'z'},
+    {'1': 'o_x', '3': 4, '4': 1, '5': 1, '10': 'oX'},
+    {'1': 'o_y', '3': 5, '4': 1, '5': 1, '10': 'oY'},
+    {'1': 'o_z', '3': 6, '4': 1, '5': 1, '10': 'oZ'},
+    {'1': 'theta', '3': 7, '4': 1, '5': 1, '10': 'theta'},
   ],
 };
 
 /// Descriptor for `Pose`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List poseDescriptor = $convert.base64Decode('CgRQb3NlEgwKAXgYASABKAFSAXgSDAoBeRgCIAEoAVIBeRIMCgF6GAMgASgBUgF6Eg8KA29feBgEIAEoAVICb1gSDwoDb195GAUgASgBUgJvWRIPCgNvX3oYBiABKAFSAm9aEhQKBXRoZXRhGAcgASgBUgV0aGV0YQ==');
+final $typed_data.Uint8List poseDescriptor = $convert.base64Decode(
+    'CgRQb3NlEgwKAXgYASABKAFSAXgSDAoBeRgCIAEoAVIBeRIMCgF6GAMgASgBUgF6Eg8KA29feB'
+    'gEIAEoAVICb1gSDwoDb195GAUgASgBUgJvWRIPCgNvX3oYBiABKAFSAm9aEhQKBXRoZXRhGAcg'
+    'ASgBUgV0aGV0YQ==');
+
 @$core.Deprecated('Use orientationDescriptor instead')
-const Orientation$json = const {
+const Orientation$json = {
   '1': 'Orientation',
-  '2': const [
-    const {'1': 'o_x', '3': 1, '4': 1, '5': 1, '10': 'oX'},
-    const {'1': 'o_y', '3': 2, '4': 1, '5': 1, '10': 'oY'},
-    const {'1': 'o_z', '3': 3, '4': 1, '5': 1, '10': 'oZ'},
-    const {'1': 'theta', '3': 4, '4': 1, '5': 1, '10': 'theta'},
+  '2': [
+    {'1': 'o_x', '3': 1, '4': 1, '5': 1, '10': 'oX'},
+    {'1': 'o_y', '3': 2, '4': 1, '5': 1, '10': 'oY'},
+    {'1': 'o_z', '3': 3, '4': 1, '5': 1, '10': 'oZ'},
+    {'1': 'theta', '3': 4, '4': 1, '5': 1, '10': 'theta'},
   ],
 };
 
 /// Descriptor for `Orientation`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List orientationDescriptor = $convert.base64Decode('CgtPcmllbnRhdGlvbhIPCgNvX3gYASABKAFSAm9YEg8KA29feRgCIAEoAVICb1kSDwoDb196GAMgASgBUgJvWhIUCgV0aGV0YRgEIAEoAVIFdGhldGE=');
+final $typed_data.Uint8List orientationDescriptor = $convert.base64Decode(
+    'CgtPcmllbnRhdGlvbhIPCgNvX3gYASABKAFSAm9YEg8KA29feRgCIAEoAVICb1kSDwoDb196GA'
+    'MgASgBUgJvWhIUCgV0aGV0YRgEIAEoAVIFdGhldGE=');
+
 @$core.Deprecated('Use poseInFrameDescriptor instead')
-const PoseInFrame$json = const {
+const PoseInFrame$json = {
   '1': 'PoseInFrame',
-  '2': const [
-    const {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
-    const {'1': 'pose', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'pose'},
+  '2': [
+    {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
+    {'1': 'pose', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'pose'},
   ],
 };
 
 /// Descriptor for `PoseInFrame`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List poseInFrameDescriptor = $convert.base64Decode('CgtQb3NlSW5GcmFtZRInCg9yZWZlcmVuY2VfZnJhbWUYASABKAlSDnJlZmVyZW5jZUZyYW1lEigKBHBvc2UYAiABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgRwb3Nl');
+final $typed_data.Uint8List poseInFrameDescriptor = $convert.base64Decode(
+    'CgtQb3NlSW5GcmFtZRInCg9yZWZlcmVuY2VfZnJhbWUYASABKAlSDnJlZmVyZW5jZUZyYW1lEi'
+    'gKBHBvc2UYAiABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgRwb3Nl');
+
 @$core.Deprecated('Use vector3Descriptor instead')
-const Vector3$json = const {
+const Vector3$json = {
   '1': 'Vector3',
-  '2': const [
-    const {'1': 'x', '3': 1, '4': 1, '5': 1, '10': 'x'},
-    const {'1': 'y', '3': 2, '4': 1, '5': 1, '10': 'y'},
-    const {'1': 'z', '3': 3, '4': 1, '5': 1, '10': 'z'},
+  '2': [
+    {'1': 'x', '3': 1, '4': 1, '5': 1, '10': 'x'},
+    {'1': 'y', '3': 2, '4': 1, '5': 1, '10': 'y'},
+    {'1': 'z', '3': 3, '4': 1, '5': 1, '10': 'z'},
   ],
 };
 
 /// Descriptor for `Vector3`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List vector3Descriptor = $convert.base64Decode('CgdWZWN0b3IzEgwKAXgYASABKAFSAXgSDAoBeRgCIAEoAVIBeRIMCgF6GAMgASgBUgF6');
+final $typed_data.Uint8List vector3Descriptor = $convert.base64Decode(
+    'CgdWZWN0b3IzEgwKAXgYASABKAFSAXgSDAoBeRgCIAEoAVIBeRIMCgF6GAMgASgBUgF6');
+
 @$core.Deprecated('Use sphereDescriptor instead')
-const Sphere$json = const {
+const Sphere$json = {
   '1': 'Sphere',
-  '2': const [
-    const {'1': 'radius_mm', '3': 1, '4': 1, '5': 1, '10': 'radiusMm'},
+  '2': [
+    {'1': 'radius_mm', '3': 1, '4': 1, '5': 1, '10': 'radiusMm'},
   ],
 };
 
 /// Descriptor for `Sphere`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List sphereDescriptor = $convert.base64Decode('CgZTcGhlcmUSGwoJcmFkaXVzX21tGAEgASgBUghyYWRpdXNNbQ==');
+final $typed_data.Uint8List sphereDescriptor = $convert.base64Decode(
+    'CgZTcGhlcmUSGwoJcmFkaXVzX21tGAEgASgBUghyYWRpdXNNbQ==');
+
 @$core.Deprecated('Use capsuleDescriptor instead')
-const Capsule$json = const {
+const Capsule$json = {
   '1': 'Capsule',
-  '2': const [
-    const {'1': 'radius_mm', '3': 1, '4': 1, '5': 1, '10': 'radiusMm'},
-    const {'1': 'length_mm', '3': 2, '4': 1, '5': 1, '10': 'lengthMm'},
+  '2': [
+    {'1': 'radius_mm', '3': 1, '4': 1, '5': 1, '10': 'radiusMm'},
+    {'1': 'length_mm', '3': 2, '4': 1, '5': 1, '10': 'lengthMm'},
   ],
 };
 
 /// Descriptor for `Capsule`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List capsuleDescriptor = $convert.base64Decode('CgdDYXBzdWxlEhsKCXJhZGl1c19tbRgBIAEoAVIIcmFkaXVzTW0SGwoJbGVuZ3RoX21tGAIgASgBUghsZW5ndGhNbQ==');
+final $typed_data.Uint8List capsuleDescriptor = $convert.base64Decode(
+    'CgdDYXBzdWxlEhsKCXJhZGl1c19tbRgBIAEoAVIIcmFkaXVzTW0SGwoJbGVuZ3RoX21tGAIgAS'
+    'gBUghsZW5ndGhNbQ==');
+
 @$core.Deprecated('Use rectangularPrismDescriptor instead')
-const RectangularPrism$json = const {
+const RectangularPrism$json = {
   '1': 'RectangularPrism',
-  '2': const [
-    const {'1': 'dims_mm', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Vector3', '10': 'dimsMm'},
+  '2': [
+    {'1': 'dims_mm', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Vector3', '10': 'dimsMm'},
   ],
 };
 
 /// Descriptor for `RectangularPrism`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List rectangularPrismDescriptor = $convert.base64Decode('ChBSZWN0YW5ndWxhclByaXNtEjAKB2RpbXNfbW0YASABKAsyFy52aWFtLmNvbW1vbi52MS5WZWN0b3IzUgZkaW1zTW0=');
+final $typed_data.Uint8List rectangularPrismDescriptor = $convert.base64Decode(
+    'ChBSZWN0YW5ndWxhclByaXNtEjAKB2RpbXNfbW0YASABKAsyFy52aWFtLmNvbW1vbi52MS5WZW'
+    'N0b3IzUgZkaW1zTW0=');
+
 @$core.Deprecated('Use geometryDescriptor instead')
-const Geometry$json = const {
+const Geometry$json = {
   '1': 'Geometry',
-  '2': const [
-    const {'1': 'center', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'center'},
-    const {'1': 'sphere', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Sphere', '9': 0, '10': 'sphere'},
-    const {'1': 'box', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.RectangularPrism', '9': 0, '10': 'box'},
-    const {'1': 'capsule', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.Capsule', '9': 0, '10': 'capsule'},
-    const {'1': 'label', '3': 4, '4': 1, '5': 9, '10': 'label'},
+  '2': [
+    {'1': 'center', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'center'},
+    {'1': 'sphere', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Sphere', '9': 0, '10': 'sphere'},
+    {'1': 'box', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.RectangularPrism', '9': 0, '10': 'box'},
+    {'1': 'capsule', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.Capsule', '9': 0, '10': 'capsule'},
+    {'1': 'label', '3': 4, '4': 1, '5': 9, '10': 'label'},
   ],
-  '8': const [
-    const {'1': 'geometry_type'},
+  '8': [
+    {'1': 'geometry_type'},
   ],
 };
 
 /// Descriptor for `Geometry`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List geometryDescriptor = $convert.base64Decode('CghHZW9tZXRyeRIsCgZjZW50ZXIYASABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgZjZW50ZXISMAoGc3BoZXJlGAIgASgLMhYudmlhbS5jb21tb24udjEuU3BoZXJlSABSBnNwaGVyZRI0CgNib3gYAyABKAsyIC52aWFtLmNvbW1vbi52MS5SZWN0YW5ndWxhclByaXNtSABSA2JveBIzCgdjYXBzdWxlGAUgASgLMhcudmlhbS5jb21tb24udjEuQ2Fwc3VsZUgAUgdjYXBzdWxlEhQKBWxhYmVsGAQgASgJUgVsYWJlbEIPCg1nZW9tZXRyeV90eXBl');
+final $typed_data.Uint8List geometryDescriptor = $convert.base64Decode(
+    'CghHZW9tZXRyeRIsCgZjZW50ZXIYASABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgZjZW50ZX'
+    'ISMAoGc3BoZXJlGAIgASgLMhYudmlhbS5jb21tb24udjEuU3BoZXJlSABSBnNwaGVyZRI0CgNi'
+    'b3gYAyABKAsyIC52aWFtLmNvbW1vbi52MS5SZWN0YW5ndWxhclByaXNtSABSA2JveBIzCgdjYX'
+    'BzdWxlGAUgASgLMhcudmlhbS5jb21tb24udjEuQ2Fwc3VsZUgAUgdjYXBzdWxlEhQKBWxhYmVs'
+    'GAQgASgJUgVsYWJlbEIPCg1nZW9tZXRyeV90eXBl');
+
 @$core.Deprecated('Use geometriesInFrameDescriptor instead')
-const GeometriesInFrame$json = const {
+const GeometriesInFrame$json = {
   '1': 'GeometriesInFrame',
-  '2': const [
-    const {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
-    const {'1': 'geometries', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
+  '2': [
+    {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
+    {'1': 'geometries', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
   ],
 };
 
 /// Descriptor for `GeometriesInFrame`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List geometriesInFrameDescriptor = $convert.base64Decode('ChFHZW9tZXRyaWVzSW5GcmFtZRInCg9yZWZlcmVuY2VfZnJhbWUYASABKAlSDnJlZmVyZW5jZUZyYW1lEjgKCmdlb21ldHJpZXMYAiADKAsyGC52aWFtLmNvbW1vbi52MS5HZW9tZXRyeVIKZ2VvbWV0cmllcw==');
+final $typed_data.Uint8List geometriesInFrameDescriptor = $convert.base64Decode(
+    'ChFHZW9tZXRyaWVzSW5GcmFtZRInCg9yZWZlcmVuY2VfZnJhbWUYASABKAlSDnJlZmVyZW5jZU'
+    'ZyYW1lEjgKCmdlb21ldHJpZXMYAiADKAsyGC52aWFtLmNvbW1vbi52MS5HZW9tZXRyeVIKZ2Vv'
+    'bWV0cmllcw==');
+
 @$core.Deprecated('Use pointCloudObjectDescriptor instead')
-const PointCloudObject$json = const {
+const PointCloudObject$json = {
   '1': 'PointCloudObject',
-  '2': const [
-    const {'1': 'point_cloud', '3': 1, '4': 1, '5': 12, '10': 'pointCloud'},
-    const {'1': 'geometries', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.GeometriesInFrame', '10': 'geometries'},
+  '2': [
+    {'1': 'point_cloud', '3': 1, '4': 1, '5': 12, '10': 'pointCloud'},
+    {'1': 'geometries', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.GeometriesInFrame', '10': 'geometries'},
   ],
 };
 
 /// Descriptor for `PointCloudObject`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pointCloudObjectDescriptor = $convert.base64Decode('ChBQb2ludENsb3VkT2JqZWN0Eh8KC3BvaW50X2Nsb3VkGAEgASgMUgpwb2ludENsb3VkEkEKCmdlb21ldHJpZXMYAiABKAsyIS52aWFtLmNvbW1vbi52MS5HZW9tZXRyaWVzSW5GcmFtZVIKZ2VvbWV0cmllcw==');
+final $typed_data.Uint8List pointCloudObjectDescriptor = $convert.base64Decode(
+    'ChBQb2ludENsb3VkT2JqZWN0Eh8KC3BvaW50X2Nsb3VkGAEgASgMUgpwb2ludENsb3VkEkEKCm'
+    'dlb21ldHJpZXMYAiABKAsyIS52aWFtLmNvbW1vbi52MS5HZW9tZXRyaWVzSW5GcmFtZVIKZ2Vv'
+    'bWV0cmllcw==');
+
 @$core.Deprecated('Use geoPointDescriptor instead')
-const GeoPoint$json = const {
+const GeoPoint$json = {
   '1': 'GeoPoint',
-  '2': const [
-    const {'1': 'latitude', '3': 1, '4': 1, '5': 1, '10': 'latitude'},
-    const {'1': 'longitude', '3': 2, '4': 1, '5': 1, '10': 'longitude'},
+  '2': [
+    {'1': 'latitude', '3': 1, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 2, '4': 1, '5': 1, '10': 'longitude'},
   ],
 };
 
 /// Descriptor for `GeoPoint`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List geoPointDescriptor = $convert.base64Decode('CghHZW9Qb2ludBIaCghsYXRpdHVkZRgBIAEoAVIIbGF0aXR1ZGUSHAoJbG9uZ2l0dWRlGAIgASgBUglsb25naXR1ZGU=');
+final $typed_data.Uint8List geoPointDescriptor = $convert.base64Decode(
+    'CghHZW9Qb2ludBIaCghsYXRpdHVkZRgBIAEoAVIIbGF0aXR1ZGUSHAoJbG9uZ2l0dWRlGAIgAS'
+    'gBUglsb25naXR1ZGU=');
+
 @$core.Deprecated('Use geoObstacleDescriptor instead')
-const GeoObstacle$json = const {
+const GeoObstacle$json = {
   '1': 'GeoObstacle',
-  '2': const [
-    const {'1': 'location', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'location'},
-    const {'1': 'geometries', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
+  '2': [
+    {'1': 'location', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'location'},
+    {'1': 'geometries', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
   ],
 };
 
 /// Descriptor for `GeoObstacle`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List geoObstacleDescriptor = $convert.base64Decode('CgtHZW9PYnN0YWNsZRI0Cghsb2NhdGlvbhgBIAEoCzIYLnZpYW0uY29tbW9uLnYxLkdlb1BvaW50Ughsb2NhdGlvbhI4CgpnZW9tZXRyaWVzGAIgAygLMhgudmlhbS5jb21tb24udjEuR2VvbWV0cnlSCmdlb21ldHJpZXM=');
+final $typed_data.Uint8List geoObstacleDescriptor = $convert.base64Decode(
+    'CgtHZW9PYnN0YWNsZRI0Cghsb2NhdGlvbhgBIAEoCzIYLnZpYW0uY29tbW9uLnYxLkdlb1BvaW'
+    '50Ughsb2NhdGlvbhI4CgpnZW9tZXRyaWVzGAIgAygLMhgudmlhbS5jb21tb24udjEuR2VvbWV0'
+    'cnlSCmdlb21ldHJpZXM=');
+
 @$core.Deprecated('Use transformDescriptor instead')
-const Transform$json = const {
+const Transform$json = {
   '1': 'Transform',
-  '2': const [
-    const {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
-    const {'1': 'pose_in_observer_frame', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'poseInObserverFrame'},
-    const {'1': 'physical_object', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.Geometry', '9': 0, '10': 'physicalObject', '17': true},
+  '2': [
+    {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
+    {'1': 'pose_in_observer_frame', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'poseInObserverFrame'},
+    {'1': 'physical_object', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.Geometry', '9': 0, '10': 'physicalObject', '17': true},
   ],
-  '8': const [
-    const {'1': '_physical_object'},
+  '8': [
+    {'1': '_physical_object'},
   ],
 };
 
 /// Descriptor for `Transform`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List transformDescriptor = $convert.base64Decode('CglUcmFuc2Zvcm0SJwoPcmVmZXJlbmNlX2ZyYW1lGAEgASgJUg5yZWZlcmVuY2VGcmFtZRJQChZwb3NlX2luX29ic2VydmVyX2ZyYW1lGAIgASgLMhsudmlhbS5jb21tb24udjEuUG9zZUluRnJhbWVSE3Bvc2VJbk9ic2VydmVyRnJhbWUSRgoPcGh5c2ljYWxfb2JqZWN0GAMgASgLMhgudmlhbS5jb21tb24udjEuR2VvbWV0cnlIAFIOcGh5c2ljYWxPYmplY3SIAQFCEgoQX3BoeXNpY2FsX29iamVjdA==');
+final $typed_data.Uint8List transformDescriptor = $convert.base64Decode(
+    'CglUcmFuc2Zvcm0SJwoPcmVmZXJlbmNlX2ZyYW1lGAEgASgJUg5yZWZlcmVuY2VGcmFtZRJQCh'
+    'Zwb3NlX2luX29ic2VydmVyX2ZyYW1lGAIgASgLMhsudmlhbS5jb21tb24udjEuUG9zZUluRnJh'
+    'bWVSE3Bvc2VJbk9ic2VydmVyRnJhbWUSRgoPcGh5c2ljYWxfb2JqZWN0GAMgASgLMhgudmlhbS'
+    '5jb21tb24udjEuR2VvbWV0cnlIAFIOcGh5c2ljYWxPYmplY3SIAQFCEgoQX3BoeXNpY2FsX29i'
+    'amVjdA==');
+
 @$core.Deprecated('Use worldStateDescriptor instead')
-const WorldState$json = const {
+const WorldState$json = {
   '1': 'WorldState',
-  '2': const [
-    const {'1': 'obstacles', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.GeometriesInFrame', '10': 'obstacles'},
-    const {'1': 'transforms', '3': 3, '4': 3, '5': 11, '6': '.viam.common.v1.Transform', '10': 'transforms'},
+  '2': [
+    {'1': 'obstacles', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.GeometriesInFrame', '10': 'obstacles'},
+    {'1': 'transforms', '3': 3, '4': 3, '5': 11, '6': '.viam.common.v1.Transform', '10': 'transforms'},
   ],
 };
 
 /// Descriptor for `WorldState`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List worldStateDescriptor = $convert.base64Decode('CgpXb3JsZFN0YXRlEj8KCW9ic3RhY2xlcxgBIAMoCzIhLnZpYW0uY29tbW9uLnYxLkdlb21ldHJpZXNJbkZyYW1lUglvYnN0YWNsZXMSOQoKdHJhbnNmb3JtcxgDIAMoCzIZLnZpYW0uY29tbW9uLnYxLlRyYW5zZm9ybVIKdHJhbnNmb3Jtcw==');
+final $typed_data.Uint8List worldStateDescriptor = $convert.base64Decode(
+    'CgpXb3JsZFN0YXRlEj8KCW9ic3RhY2xlcxgBIAMoCzIhLnZpYW0uY29tbW9uLnYxLkdlb21ldH'
+    'JpZXNJbkZyYW1lUglvYnN0YWNsZXMSOQoKdHJhbnNmb3JtcxgDIAMoCzIZLnZpYW0uY29tbW9u'
+    'LnYxLlRyYW5zZm9ybVIKdHJhbnNmb3Jtcw==');
+
 @$core.Deprecated('Use actuatorStatusDescriptor instead')
-const ActuatorStatus$json = const {
+const ActuatorStatus$json = {
   '1': 'ActuatorStatus',
-  '2': const [
-    const {'1': 'is_moving', '3': 1, '4': 1, '5': 8, '10': 'isMoving'},
+  '2': [
+    {'1': 'is_moving', '3': 1, '4': 1, '5': 8, '10': 'isMoving'},
   ],
 };
 
 /// Descriptor for `ActuatorStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List actuatorStatusDescriptor = $convert.base64Decode('Cg5BY3R1YXRvclN0YXR1cxIbCglpc19tb3ZpbmcYASABKAhSCGlzTW92aW5n');
+final $typed_data.Uint8List actuatorStatusDescriptor = $convert.base64Decode(
+    'Cg5BY3R1YXRvclN0YXR1cxIbCglpc19tb3ZpbmcYASABKAhSCGlzTW92aW5n');
+
 @$core.Deprecated('Use doCommandRequestDescriptor instead')
-const DoCommandRequest$json = const {
+const DoCommandRequest$json = {
   '1': 'DoCommandRequest',
-  '2': const [
-    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'command', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'command'},
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'command', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'command'},
   ],
 };
 
 /// Descriptor for `DoCommandRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List doCommandRequestDescriptor = $convert.base64Decode('ChBEb0NvbW1hbmRSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSMQoHY29tbWFuZBgCIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSB2NvbW1hbmQ=');
+final $typed_data.Uint8List doCommandRequestDescriptor = $convert.base64Decode(
+    'ChBEb0NvbW1hbmRSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSMQoHY29tbWFuZBgCIAEoCz'
+    'IXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSB2NvbW1hbmQ=');
+
 @$core.Deprecated('Use doCommandResponseDescriptor instead')
-const DoCommandResponse$json = const {
+const DoCommandResponse$json = {
   '1': 'DoCommandResponse',
-  '2': const [
-    const {'1': 'result', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'result'},
+  '2': [
+    {'1': 'result', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'result'},
   ],
 };
 
 /// Descriptor for `DoCommandResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List doCommandResponseDescriptor = $convert.base64Decode('ChFEb0NvbW1hbmRSZXNwb25zZRIvCgZyZXN1bHQYASABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgZyZXN1bHQ=');
+final $typed_data.Uint8List doCommandResponseDescriptor = $convert.base64Decode(
+    'ChFEb0NvbW1hbmRSZXNwb25zZRIvCgZyZXN1bHQYASABKAsyFy5nb29nbGUucHJvdG9idWYuU3'
+    'RydWN0UgZyZXN1bHQ=');
+
 @$core.Deprecated('Use getKinematicsRequestDescriptor instead')
-const GetKinematicsRequest$json = const {
+const GetKinematicsRequest$json = {
   '1': 'GetKinematicsRequest',
-  '2': const [
-    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
 /// Descriptor for `GetKinematicsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getKinematicsRequestDescriptor = $convert.base64Decode('ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+final $typed_data.Uint8List getKinematicsRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
 @$core.Deprecated('Use getKinematicsResponseDescriptor instead')
-const GetKinematicsResponse$json = const {
+const GetKinematicsResponse$json = {
   '1': 'GetKinematicsResponse',
-  '2': const [
-    const {'1': 'format', '3': 1, '4': 1, '5': 14, '6': '.viam.common.v1.KinematicsFileFormat', '10': 'format'},
-    const {'1': 'kinematics_data', '3': 2, '4': 1, '5': 12, '10': 'kinematicsData'},
+  '2': [
+    {'1': 'format', '3': 1, '4': 1, '5': 14, '6': '.viam.common.v1.KinematicsFileFormat', '10': 'format'},
+    {'1': 'kinematics_data', '3': 2, '4': 1, '5': 12, '10': 'kinematicsData'},
   ],
 };
 
 /// Descriptor for `GetKinematicsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getKinematicsResponseDescriptor = $convert.base64Decode('ChVHZXRLaW5lbWF0aWNzUmVzcG9uc2USPAoGZm9ybWF0GAEgASgOMiQudmlhbS5jb21tb24udjEuS2luZW1hdGljc0ZpbGVGb3JtYXRSBmZvcm1hdBInCg9raW5lbWF0aWNzX2RhdGEYAiABKAxSDmtpbmVtYXRpY3NEYXRh');
+final $typed_data.Uint8List getKinematicsResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRLaW5lbWF0aWNzUmVzcG9uc2USPAoGZm9ybWF0GAEgASgOMiQudmlhbS5jb21tb24udj'
+    'EuS2luZW1hdGljc0ZpbGVGb3JtYXRSBmZvcm1hdBInCg9raW5lbWF0aWNzX2RhdGEYAiABKAxS'
+    'DmtpbmVtYXRpY3NEYXRh');
+
 @$core.Deprecated('Use getGeometriesRequestDescriptor instead')
-const GetGeometriesRequest$json = const {
+const GetGeometriesRequest$json = {
   '1': 'GetGeometriesRequest',
-  '2': const [
-    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
 /// Descriptor for `GetGeometriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getGeometriesRequestDescriptor = $convert.base64Decode('ChRHZXRHZW9tZXRyaWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+final $typed_data.Uint8List getGeometriesRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRHZW9tZXRyaWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
 @$core.Deprecated('Use getGeometriesResponseDescriptor instead')
-const GetGeometriesResponse$json = const {
+const GetGeometriesResponse$json = {
   '1': 'GetGeometriesResponse',
-  '2': const [
-    const {'1': 'geometries', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
+  '2': [
+    {'1': 'geometries', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'geometries'},
   ],
 };
 
 /// Descriptor for `GetGeometriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getGeometriesResponseDescriptor = $convert.base64Decode('ChVHZXRHZW9tZXRyaWVzUmVzcG9uc2USOAoKZ2VvbWV0cmllcxgBIAMoCzIYLnZpYW0uY29tbW9uLnYxLkdlb21ldHJ5UgpnZW9tZXRyaWVz');
+final $typed_data.Uint8List getGeometriesResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRHZW9tZXRyaWVzUmVzcG9uc2USOAoKZ2VvbWV0cmllcxgBIAMoCzIYLnZpYW0uY29tbW'
+    '9uLnYxLkdlb21ldHJ5UgpnZW9tZXRyaWVz');
+

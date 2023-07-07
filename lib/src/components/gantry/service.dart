@@ -24,34 +24,41 @@ class GantryService extends GantryServiceBase {
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final gantry = _fromManager(request.name);
     final response = await gantry.doCommand(request.command.toMap());
-    return DoCommandResponse(result: response.toStruct());
+    return DoCommandResponse()..result = response.toStruct();
   }
 
   @override
   Future<GetLengthsResponse> getLengths(ServiceCall call, GetLengthsRequest request) async {
     final gantry = _fromManager(request.name);
     final response = await gantry.lengths(extra: request.extra.toMap());
-    return GetLengthsResponse(lengthsMm: response);
+    return GetLengthsResponse()..lengthsMm.addAll(response);
+  }
+
+  @override
+  Future<HomeResponse> home(ServiceCall call, HomeRequest request) async {
+    final gantry = _fromManager(request.name);
+    final response = await gantry.home(extra: request.extra.toMap());
+    return HomeResponse()..homed = response;
   }
 
   @override
   Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     final gantry = _fromManager(request.name);
     final response = await gantry.position(extra: request.extra.toMap());
-    return GetPositionResponse(positionsMm: response);
+    return GetPositionResponse()..positionsMm.addAll(response);
   }
 
   @override
   Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
     final gantry = _fromManager(request.name);
     final response = await gantry.isMoving();
-    return IsMovingResponse(isMoving: response);
+    return IsMovingResponse()..isMoving = response;
   }
 
   @override
   Future<MoveToPositionResponse> moveToPosition(ServiceCall call, MoveToPositionRequest request) async {
     final gantry = _fromManager(request.name);
-    await gantry.moveToPosition(request.positionsMm, extra: request.extra.toMap());
+    await gantry.moveToPosition(request.positionsMm, request.speedsMmPerSec, extra: request.extra.toMap());
     return MoveToPositionResponse();
   }
 

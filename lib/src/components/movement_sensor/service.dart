@@ -24,69 +24,71 @@ class MovementSensorService extends MovementSensorServiceBase {
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final movementSensor = _fromManager(request.name);
     final result = await movementSensor.doCommand(request.command.toMap());
-    return DoCommandResponse(result: result.toStruct());
+    return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
   Future<GetAccuracyResponse> getAccuracy(ServiceCall call, GetAccuracyRequest request) async {
     final movementSensor = _fromManager(request.name);
     final accuracy = await movementSensor.accuracy(extra: request.extra.toMap());
-    return GetAccuracyResponse(accuracy: accuracy);
+    return GetAccuracyResponse()..accuracy.addAll(accuracy);
   }
 
   @override
   Future<GetAngularVelocityResponse> getAngularVelocity(ServiceCall call, GetAngularVelocityRequest request) async {
     final movementSensor = _fromManager(request.name);
     final angularVelocity = await movementSensor.angularVelocity(extra: request.extra.toMap());
-    return GetAngularVelocityResponse(angularVelocity: angularVelocity);
+    return GetAngularVelocityResponse()..angularVelocity = angularVelocity;
   }
 
   @override
   Future<GetCompassHeadingResponse> getCompassHeading(ServiceCall call, GetCompassHeadingRequest request) async {
     final movementSensor = _fromManager(request.name);
     final value = await movementSensor.compassHeading(extra: request.extra.toMap());
-    return GetCompassHeadingResponse(value: value);
+    return GetCompassHeadingResponse()..value = value;
   }
 
   @override
   Future<GetLinearAccelerationResponse> getLinearAcceleration(ServiceCall call, GetLinearAccelerationRequest request) async {
     final movementSensor = _fromManager(request.name);
     final linearAcceleration = await movementSensor.linearAcceleration(extra: request.extra.toMap());
-    return GetLinearAccelerationResponse(linearAcceleration: linearAcceleration);
+    return GetLinearAccelerationResponse()..linearAcceleration = linearAcceleration;
   }
 
   @override
   Future<GetLinearVelocityResponse> getLinearVelocity(ServiceCall call, GetLinearVelocityRequest request) async {
     final movementSensor = _fromManager(request.name);
     final linearVelocity = await movementSensor.linearVelocity(extra: request.extra.toMap());
-    return GetLinearVelocityResponse(linearVelocity: linearVelocity);
+    return GetLinearVelocityResponse()..linearVelocity = linearVelocity;
   }
 
   @override
   Future<GetOrientationResponse> getOrientation(ServiceCall call, GetOrientationRequest request) async {
     final movementSensor = _fromManager(request.name);
     final orientation = await movementSensor.orientation(extra: request.extra.toMap());
-    return GetOrientationResponse(orientation: orientation);
+    return GetOrientationResponse()..orientation = orientation;
   }
 
   @override
   Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     final movementSensor = _fromManager(request.name);
     final position = await movementSensor.position(extra: request.extra.toMap());
-    return GetPositionResponse(coordinate: position.coordinates, altitudeM: position.altitude);
+    return GetPositionResponse()
+      ..coordinate = position.coordinates
+      ..altitudeM = position.altitude;
   }
 
   @override
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
     final movementSensor = _fromManager(request.name);
     final properties = await movementSensor.properties(extra: request.extra.toMap());
-    return GetPropertiesResponse(
-        linearVelocitySupported: properties.linearVelocitySupported,
-        angularVelocitySupported: properties.angularVelocitySupported,
-        orientationSupported: properties.orientationSupported,
-        positionSupported: properties.positionSupported,
-        compassHeadingSupported: properties.compassHeadingSupported,
-        linearAccelerationSupported: properties.linearAccelerationSupported);
+    return GetPropertiesResponse()
+      ..linearVelocitySupported = properties.linearVelocitySupported
+      ..angularVelocitySupported = properties.angularVelocitySupported
+      ..orientationSupported = properties.orientationSupported
+      ..positionSupported = properties.positionSupported
+      ..compassHeadingSupported = properties.compassHeadingSupported
+      ..linearAccelerationSupported = properties.linearAccelerationSupported;
   }
 
   @override

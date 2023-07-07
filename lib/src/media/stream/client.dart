@@ -70,14 +70,14 @@ class StreamManager {
   }
 
   Future<void> _add(String name) async {
-    await _client.addStream(AddStreamRequest(name: name));
+    await _client.addStream(AddStreamRequest()..name = name);
   }
 
   Future<void> _remove(String name) async {
     final sanitizedName = _getValidSDPTrackName(name);
     if (_streams.containsKey(sanitizedName)) {
       _streams.remove(sanitizedName)!;
-      await _client.removeStream(RemoveStreamRequest(name: sanitizedName));
+      await _client.removeStream(RemoveStreamRequest()..name = sanitizedName);
     }
     if (_clients.containsKey(sanitizedName)) {
       _clients.remove(sanitizedName)!;

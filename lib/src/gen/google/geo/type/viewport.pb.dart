@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/geo/type/viewport.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -12,28 +16,17 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../type/latlng.pb.dart' as $0;
 
 class Viewport extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Viewport', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.geo.type'), createEmptyInstance: create)
-    ..aOM<$0.LatLng>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'low', subBuilder: $0.LatLng.create)
-    ..aOM<$0.LatLng>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'high', subBuilder: $0.LatLng.create)
+  factory Viewport() => create();
+  Viewport._() : super();
+  factory Viewport.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Viewport.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Viewport', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.geo.type'), createEmptyInstance: create)
+    ..aOM<$0.LatLng>(1, _omitFieldNames ? '' : 'low', subBuilder: $0.LatLng.create)
+    ..aOM<$0.LatLng>(2, _omitFieldNames ? '' : 'high', subBuilder: $0.LatLng.create)
     ..hasRequiredFields = false
   ;
 
-  Viewport._() : super();
-  factory Viewport({
-    $0.LatLng? low,
-    $0.LatLng? high,
-  }) {
-    final _result = create();
-    if (low != null) {
-      _result.low = low;
-    }
-    if (high != null) {
-      _result.high = high;
-    }
-    return _result;
-  }
-  factory Viewport.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Viewport.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -43,8 +36,10 @@ class Viewport extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Viewport copyWith(void Function(Viewport) updates) => super.copyWith((message) => updates(message as Viewport)) as Viewport; // ignore: deprecated_member_use
+  Viewport copyWith(void Function(Viewport) updates) => super.copyWith((message) => updates(message as Viewport)) as Viewport;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Viewport create() => Viewport._();
   Viewport createEmptyInstance() => create();
@@ -76,3 +71,6 @@ class Viewport extends $pb.GeneratedMessage {
   $0.LatLng ensureHigh() => $_ensure(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

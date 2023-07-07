@@ -1,82 +1,39 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/type/postal_address.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class PostalAddress extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PostalAddress', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.type'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'revision', $pb.PbFieldType.O3)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'regionCode')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'languageCode')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'postalCode')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sortingCode')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'administrativeArea')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locality')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sublocality')
-    ..pPS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'addressLines')
-    ..pPS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipients')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organization')
+  factory PostalAddress() => create();
+  PostalAddress._() : super();
+  factory PostalAddress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PostalAddress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostalAddress', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.type'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'revision', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'regionCode')
+    ..aOS(3, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(4, _omitFieldNames ? '' : 'postalCode')
+    ..aOS(5, _omitFieldNames ? '' : 'sortingCode')
+    ..aOS(6, _omitFieldNames ? '' : 'administrativeArea')
+    ..aOS(7, _omitFieldNames ? '' : 'locality')
+    ..aOS(8, _omitFieldNames ? '' : 'sublocality')
+    ..pPS(9, _omitFieldNames ? '' : 'addressLines')
+    ..pPS(10, _omitFieldNames ? '' : 'recipients')
+    ..aOS(11, _omitFieldNames ? '' : 'organization')
     ..hasRequiredFields = false
   ;
 
-  PostalAddress._() : super();
-  factory PostalAddress({
-    $core.int? revision,
-    $core.String? regionCode,
-    $core.String? languageCode,
-    $core.String? postalCode,
-    $core.String? sortingCode,
-    $core.String? administrativeArea,
-    $core.String? locality,
-    $core.String? sublocality,
-    $core.Iterable<$core.String>? addressLines,
-    $core.Iterable<$core.String>? recipients,
-    $core.String? organization,
-  }) {
-    final _result = create();
-    if (revision != null) {
-      _result.revision = revision;
-    }
-    if (regionCode != null) {
-      _result.regionCode = regionCode;
-    }
-    if (languageCode != null) {
-      _result.languageCode = languageCode;
-    }
-    if (postalCode != null) {
-      _result.postalCode = postalCode;
-    }
-    if (sortingCode != null) {
-      _result.sortingCode = sortingCode;
-    }
-    if (administrativeArea != null) {
-      _result.administrativeArea = administrativeArea;
-    }
-    if (locality != null) {
-      _result.locality = locality;
-    }
-    if (sublocality != null) {
-      _result.sublocality = sublocality;
-    }
-    if (addressLines != null) {
-      _result.addressLines.addAll(addressLines);
-    }
-    if (recipients != null) {
-      _result.recipients.addAll(recipients);
-    }
-    if (organization != null) {
-      _result.organization = organization;
-    }
-    return _result;
-  }
-  factory PostalAddress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PostalAddress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -86,8 +43,10 @@ class PostalAddress extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PostalAddress copyWith(void Function(PostalAddress) updates) => super.copyWith((message) => updates(message as PostalAddress)) as PostalAddress; // ignore: deprecated_member_use
+  PostalAddress copyWith(void Function(PostalAddress) updates) => super.copyWith((message) => updates(message as PostalAddress)) as PostalAddress;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static PostalAddress create() => PostalAddress._();
   PostalAddress createEmptyInstance() => create();
@@ -184,3 +143,6 @@ class PostalAddress extends $pb.GeneratedMessage {
   void clearOrganization() => clearField(11);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: google/api/httpbody.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -12,33 +16,18 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../protobuf/any.pb.dart' as $3;
 
 class HttpBody extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HttpBody', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentType')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..pc<$3.Any>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $3.Any.create)
+  factory HttpBody() => create();
+  HttpBody._() : super();
+  factory HttpBody.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HttpBody.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HttpBody', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentType')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..pc<$3.Any>(3, _omitFieldNames ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $3.Any.create)
     ..hasRequiredFields = false
   ;
 
-  HttpBody._() : super();
-  factory HttpBody({
-    $core.String? contentType,
-    $core.List<$core.int>? data,
-    $core.Iterable<$3.Any>? extensions,
-  }) {
-    final _result = create();
-    if (contentType != null) {
-      _result.contentType = contentType;
-    }
-    if (data != null) {
-      _result.data = data;
-    }
-    if (extensions != null) {
-      _result.extensions.addAll(extensions);
-    }
-    return _result;
-  }
-  factory HttpBody.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HttpBody.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -48,8 +37,10 @@ class HttpBody extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  HttpBody copyWith(void Function(HttpBody) updates) => super.copyWith((message) => updates(message as HttpBody)) as HttpBody; // ignore: deprecated_member_use
+  HttpBody copyWith(void Function(HttpBody) updates) => super.copyWith((message) => updates(message as HttpBody)) as HttpBody;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static HttpBody create() => HttpBody._();
   HttpBody createEmptyInstance() => create();
@@ -80,3 +71,6 @@ class HttpBody extends $pb.GeneratedMessage {
   $core.List<$3.Any> get extensions => $_getList(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

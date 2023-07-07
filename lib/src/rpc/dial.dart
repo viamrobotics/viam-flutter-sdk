@@ -192,12 +192,21 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
       }
 
       try {
-        final candidateProto = ICECandidate(
-          candidate: candidate.candidate,
-          sdpMid: candidate.sdpMid,
-          sdpmLineIndex: candidate.sdpMLineIndex,
-        );
-        await signalingClient.callUpdate(CallUpdateRequest(uuid: uuid, candidate: candidateProto));
+        final candidateProto = ICECandidate();
+        if (candidate.candidate != null) {
+          candidateProto.candidate = candidate.candidate!;
+        }
+        if (candidate.sdpMid != null) {
+          candidateProto.sdpMid = candidate.sdpMid!;
+        }
+        if (candidate.sdpMLineIndex != null) {
+          candidateProto.sdpmLineIndex = candidate.sdpMLineIndex!;
+        }
+        final callUpdateRequest = CallUpdateRequest()..candidate = candidateProto;
+        if (uuid != null) {
+          callUpdateRequest.uuid = uuid!;
+        }
+        await signalingClient.callUpdate(callUpdateRequest);
       } catch (error, st) {
         _logger.e('Update ICECandidate error', error, st);
       }
@@ -245,8 +254,9 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
   final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
   final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
   try {
-    callStream = signalingClient
-        .call(CallRequest(sdp: encodedSdp, disableTrickle: options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle));
+    callStream = signalingClient.call(CallRequest()
+      ..sdp = encodedSdp
+      ..disableTrickle = options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle);
   } catch (error, st) {
     _logger.e('Failed to get call stream', error, st);
     rethrow;
@@ -339,8 +349,16 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
   ClientChannelBase authChannel = ClientChannel(addr.host, port: addr.port, options: opts);
   final authClient = AuthServiceClient(authChannel);
-  final request = pb.AuthenticateRequest(
-      entity: authEntity, credentials: pb.Credentials(type: options.credentials?.type, payload: options.credentials?.payload));
+  final credentials = pb.Credentials();
+  if (options.credentials?.type != null) {
+    credentials.type = options.credentials!.type;
+  }
+  if (options.credentials?.payload != null) {
+    credentials.payload = options.credentials!.payload;
+  }
+  final request = pb.AuthenticateRequest()
+    ..entity = authEntity
+    ..credentials = credentials;
 
   try {
     final response = await authClient.authenticate(request);
@@ -356,7 +374,10 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
     _logger.d('Authenticating to external address: $addr, for entity: ${options.externalAuthToEntity}');
     authChannel = AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
-    final toRequest = pb.AuthenticateToRequest(entity: options.externalAuthToEntity);
+    final toRequest = pb.AuthenticateToRequest();
+    if (options.externalAuthToEntity != null) {
+      toRequest.entity = options.externalAuthToEntity!;
+    }
     try {
       final extResponse = await extAuthClient.authenticateTo(toRequest);
       accessToken = extResponse.accessToken;

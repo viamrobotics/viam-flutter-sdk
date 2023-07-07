@@ -8,32 +8,28 @@ import 'package:viam_sdk/viam_sdk.dart';
 void main() {
   group('When map from Location to ViamLocation', () {
     test('mapper returns correct values', () {
-      final sharedSecretDto = SharedSecret(
-        id: 'id',
-        secret: 'secret',
-        state: SharedSecret_State.STATE_UNSPECIFIED,
-        createdOn: Timestamp.create(),
-      );
+      final sharedSecretDto = SharedSecret()
+        ..id = 'id'
+        ..secret = 'secret'
+        ..state = SharedSecret_State.STATE_UNSPECIFIED
+        ..createdOn = Timestamp.create();
 
-      final locationAuthDto = LocationAuth(
-        locationId: 'locationId',
-        secrets: [sharedSecretDto],
-      );
+      final locationAuthDto = LocationAuth()
+        ..locationId = 'locationId'
+        ..secrets.add(sharedSecretDto);
 
-      final locationOrganizationDto = LocationOrganization(
-        organizationId: 'organizationId',
-        primary: false,
-      );
+      final locationOrganizationDto = LocationOrganization()
+        ..organizationId = 'organizationId'
+        ..primary = false;
 
-      final dto = Location(
-        auth: locationAuthDto,
-        createdOn: Timestamp.create(),
-        id: 'id',
-        name: 'name',
-        organizations: [locationOrganizationDto],
-        parentLocationId: 'parentLocationId',
-        robotCount: 0,
-      );
+      final dto = Location()
+        ..auth = locationAuthDto
+        ..createdOn = Timestamp.create()
+        ..id = 'id'
+        ..name = 'name'
+        ..organizations.add(locationOrganizationDto)
+        ..parentLocationId = 'parentLocationId'
+        ..robotCount = 0;
 
       final viamSharedSecret = ViamSharedSecret(
         ViamSharedSecretState.unspecified,
