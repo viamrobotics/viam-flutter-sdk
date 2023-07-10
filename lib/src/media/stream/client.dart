@@ -28,6 +28,25 @@ class StreamManager {
     _channel.rtcPeerConnection.onAddStream = (MediaStream stream) {
       _addStream(stream);
     };
+    _channel.rtcPeerConnection.onAddTrack = (stream, track) {
+      print('onAddTrack');
+      print(stream.id);
+      print(track.id);
+    };
+    _channel.rtcPeerConnection.onTrack = (event) {
+      print('onTrack');
+      print(event.streams);
+      print(event.track);
+    };
+    _channel.rtcPeerConnection.onRemoveTrack = (stream, track) {
+      print('onRemoveTrack');
+      print(stream.id);
+      print(track.id);
+    };
+    _channel.rtcPeerConnection.onRemoveStream = (MediaStream stream) {
+      print('onRemoveStream');
+      print(stream.id);
+    };
 
     _channel.rtcPeerConnection.onConnectionState = (state) {
       if (state == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
