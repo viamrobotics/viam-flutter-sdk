@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:logger/logger.dart';
 
 import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
@@ -332,7 +333,7 @@ String _encodeSDPJsonStringToBase64String(String sdp) {
   return base64.encode(bytes);
 }
 
-Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions options) async {
+Future<GrpcOrGrpcWebClientChannel> _authenticatedChannel(String address, DialOptions options) async {
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
@@ -340,14 +341,11 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
     return AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
   }
 
-  final opts = ChannelOptions(
-    credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
-    codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
-  );
   final addr = _hostAndPort(options.externalAuthAddress ?? address, options.insecure);
   final authEntity = options.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
-  ClientChannelBase authChannel = ClientChannel(addr.host, port: addr.port, options: opts);
+  GrpcOrGrpcWebClientChannel authChannel =
+      GrpcOrGrpcWebClientChannel.toSingleEndpoint(host: addr.host, port: addr.port, transportSecure: !options.insecure);
   final authClient = AuthServiceClient(authChannel);
   final credentials = pb.Credentials();
   if (options.credentials?.type != null) {
@@ -392,16 +390,15 @@ Future<ClientChannelBase> _authenticatedChannel(String address, DialOptions opti
   return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure);
 }
 
-class AuthenticatedChannel extends ClientChannel {
+class AuthenticatedChannel extends GrpcOrGrpcWebClientChannel {
   final String accessToken;
 
   AuthenticatedChannel(String host, int port, this.accessToken, bool insecure)
-      : super(host,
-            port: port,
-            options: ChannelOptions(
-              credentials: insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
-              codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
-            ));
+      : super.toSingleEndpoint(
+          host: host,
+          port: port,
+          transportSecure: !insecure,
+        );
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
