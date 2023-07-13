@@ -23,10 +23,10 @@ jobs:
 
       # Verify formatting in all dart files, except lib/gen/
       - name: Verify formatting
-        run: dart format --line-length=140 --set-exit-if-changed $(find . -name "*.dart" -not -path "./lib/src/gen/*")
+        run: make format
 
       - name: Analyze project source
-        run: dart analyze --no-fatal-warnings
+        run: make analyze
 
       - name: Run tests
-        run: flutter test
+        run: make test

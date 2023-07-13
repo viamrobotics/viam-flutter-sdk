@@ -1,7 +1,7 @@
 PATH_WITH_TOOLS="${PATH}:${HOME}/.pub-cache/bin"
 PROTOBUF=$(shell readlink -f $$(brew --prefix protobuf))/include
 
-.PHONY: buf setup
+.PHONY: buf setup format test analyze
 
 buf: buf.yaml buf.gen.yaml
 	rm -rf lib/src/gen
@@ -21,3 +21,12 @@ buf: buf.yaml buf.gen.yaml
 setup:
 	dart pub global activate protoc_plugin
 	dart pub global activate grpc
+
+format:
+	dart format --line-length=140 --set-exit-if-changed $$(find . -name "*.dart" -not -path "./lib/src/gen/*" -not -path "**.mocks.dart")
+
+test:
+	flutter test
+
+analyze:
+	dart analyze --no-fatal-warnings
