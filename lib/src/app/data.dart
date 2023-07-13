@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fixnum/fixnum.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
 
@@ -12,9 +13,7 @@ class DataClient {
 
   DataRequest _makeDataRequest(Filter? filter, int? limit, String? last, Order? sortOrder) {
     final dataRequest = DataRequest();
-    if (filter != null) {
-      dataRequest.filter = filter;
-    }
+    dataRequest.filter = filter ?? Filter();
     if (limit != null) {
       dataRequest.limit = Int64(limit);
     }
@@ -30,12 +29,20 @@ class DataClient {
   /// Filter and download tabular data
   /// If a [filter] is not provided, then all data will be returned.
   /// If a [limit] is provided, the data returned will contain at most that amount data. Otherwise, all data will be returned.
-  Future<TabularDataByFilterResponse> tabularDataByFilter(Filter? filter, {int? limit, Order? sortOrder}) async {
+  Future<TabularDataByFilterResponse> tabularDataByFilter({Filter? filter, int? limit, Order? sortOrder, countOnly = false}) async {
+    if (countOnly) {
+      final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
+      final request = TabularDataByFilterRequest()
+        ..dataRequest = dataRequest
+        ..countOnly = true;
+      return await _client.tabularDataByFilter(request);
+    }
+
     final finalResponse = TabularDataByFilterResponse();
     limit ??= 1 << 32; // if no limit, set to max 32bit unsigned int
 
     while (finalResponse.count < limit) {
-      final dataRequest = _makeDataRequest(filter, min(100, limit), finalResponse.last, sortOrder);
+      final dataRequest = _makeDataRequest(filter, min(50, limit), finalResponse.last, sortOrder);
       final request = TabularDataByFilterRequest()
         ..dataRequest = dataRequest
         ..countOnly = false;
@@ -58,12 +65,20 @@ class DataClient {
   /// Filter and download binary data
   /// If a [filter] is not provided, then all data will be returned.
   /// If a [limit] is provided, the data returned will contain at most that amount data. Otherwise, all data will be returned.
-  Future<BinaryDataByFilterResponse> binaryDataByFilter(Filter? filter, {int? limit, Order? sortOrder}) async {
+  Future<BinaryDataByFilterResponse> binaryDataByFilter({Filter? filter, int? limit, Order? sortOrder, countOnly = false}) async {
+    if (countOnly) {
+      final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
+      final request = BinaryDataByFilterRequest()
+        ..dataRequest = dataRequest
+        ..countOnly = true;
+      return await _client.binaryDataByFilter(request);
+    }
+
     final finalResponse = BinaryDataByFilterResponse();
     limit ??= 1 << 32; // if no limit, set to max 32bit unsigned int
 
     while (finalResponse.count < limit) {
-      final dataRequest = _makeDataRequest(filter, min(100, limit), finalResponse.last, sortOrder);
+      final dataRequest = _makeDataRequest(filter, min(50, limit), finalResponse.last, sortOrder);
       final request = BinaryDataByFilterRequest()
         ..dataRequest = dataRequest
         ..countOnly = false;
@@ -87,5 +102,18 @@ class DataClient {
     final request = BinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
     final response = await _client.binaryDataByIDs(request);
     return response.data;
+  }
+}
+
+extension FilterUtils on Filter {
+  Filter withDateTimeCaptureInterval(DateTime start, DateTime end) {
+    setDateTimeCaptureInterval(start, end);
+    return this;
+  }
+
+  void setDateTimeCaptureInterval(DateTime start, DateTime end) {
+    interval = CaptureInterval()
+      ..start = (Timestamp()..seconds = Int64((start.millisecondsSinceEpoch / 1000).floor()))
+      ..end = (Timestamp()..seconds = Int64((end.millisecondsSinceEpoch / 1000).floor()));
   }
 }

@@ -52,8 +52,12 @@ const PackageInfo$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
     {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
+    {'1': 'platform', '3': 7, '4': 1, '5': 9, '9': 0, '10': 'platform', '17': true},
     {'1': 'files', '3': 5, '4': 3, '5': 11, '6': '.viam.app.packages.v1.FileInfo', '10': 'files'},
     {'1': 'metadata', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'metadata'},
+  ],
+  '8': [
+    {'1': '_platform'},
   ],
 };
 
@@ -61,9 +65,10 @@ const PackageInfo$json = {
 final $typed_data.Uint8List packageInfoDescriptor = $convert.base64Decode(
     'CgtQYWNrYWdlSW5mbxInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2FuaXphdGlvbklkEh'
     'IKBG5hbWUYAiABKAlSBG5hbWUSGAoHdmVyc2lvbhgDIAEoCVIHdmVyc2lvbhI1CgR0eXBlGAQg'
-    'ASgOMiEudmlhbS5hcHAucGFja2FnZXMudjEuUGFja2FnZVR5cGVSBHR5cGUSNAoFZmlsZXMYBS'
-    'ADKAsyHi52aWFtLmFwcC5wYWNrYWdlcy52MS5GaWxlSW5mb1IFZmlsZXMSMwoIbWV0YWRhdGEY'
-    'BiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UghtZXRhZGF0YQ==');
+    'ASgOMiEudmlhbS5hcHAucGFja2FnZXMudjEuUGFja2FnZVR5cGVSBHR5cGUSHwoIcGxhdGZvcm'
+    '0YByABKAlIAFIIcGxhdGZvcm2IAQESNAoFZmlsZXMYBSADKAsyHi52aWFtLmFwcC5wYWNrYWdl'
+    'cy52MS5GaWxlSW5mb1IFZmlsZXMSMwoIbWV0YWRhdGEYBiABKAsyFy5nb29nbGUucHJvdG9idW'
+    'YuU3RydWN0UghtZXRhZGF0YUILCglfcGxhdGZvcm0=');
 
 @$core.Deprecated('Use createPackageRequestDescriptor instead')
 const CreatePackageRequest$json = {

@@ -1,5 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:mockito/annotations.dart';
+import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
@@ -15,6 +16,6 @@ import 'package:viam_sdk/src/gen/service/sensors/v1/sensors.pbgrpc.dart';
   MockSpec<StreamServiceClient>(),
   MockSpec<ClientChannelBase>(),
   MockSpec<AppServiceClient>(),
-  MockSpec<AppServiceBase>(),
+  MockSpec<DataServiceClient>(),
 ])
 void main() {}
