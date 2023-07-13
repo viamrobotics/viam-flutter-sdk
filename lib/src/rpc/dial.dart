@@ -184,7 +184,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
 
   // If trickleICE is enabled, set onIceCandidate handler
   if (!(options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle)) {
-    final offer = await peerConnection.createOffer();
+    final offer = await peerConnection.createOffer({});
 
     peerConnection.onIceCandidate = (RTCIceCandidate candidate) async {
       await didSetRemoteDesc.future;
@@ -230,11 +230,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
     await peerConnection.setRemoteDescription(sdp);
 
     if (sdp.type == 'offer') {
-      final mediaConstraints = <String, dynamic>{
-        'audio': true,
-        'video': true,
-      };
-      final answer = await peerConnection.createAnswer(mediaConstraints);
+      final answer = await peerConnection.createAnswer();
       await peerConnection.setLocalDescription(answer);
       final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
       final encodedBase64String = _encodeSDPJsonStringToBase64String(sdpJsonString);
@@ -244,14 +240,6 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
 
   // Call Signaling Service
   ResponseStream<CallResponse> callStream;
-  final offer = await peerConnection.createOffer({
-    'mandatory': {
-      'OfferToReceiveAudio': false,
-      'OfferToReceiveVideo': false,
-    }
-  });
-  await peerConnection.setLocalDescription(offer);
-
   final sdpJsonString = _convertSDPtoJsonString(await peerConnection.getLocalDescription());
   final encodedSdp = _encodeSDPJsonStringToBase64String(sdpJsonString);
   try {
