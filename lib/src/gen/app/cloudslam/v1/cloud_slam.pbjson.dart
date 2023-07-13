@@ -20,9 +20,10 @@ const StartMappingSessionRequest$json = {
     {'1': 'slam_config', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'slamConfig'},
     {'1': 'slam_version', '3': 2, '4': 1, '5': 9, '10': 'slamVersion'},
     {'1': 'map_name', '3': 3, '4': 1, '5': 9, '10': 'mapName'},
-    {'1': 'org_id', '3': 4, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'organization_id', '3': 4, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'location_id', '3': 5, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'robot_id', '3': 6, '4': 1, '5': 9, '10': 'robotId'},
+    {'1': 'viam_server_version', '3': 7, '4': 1, '5': 9, '10': 'viamServerVersion'},
   ],
 };
 
@@ -30,9 +31,10 @@ const StartMappingSessionRequest$json = {
 final $typed_data.Uint8List startMappingSessionRequestDescriptor = $convert.base64Decode(
     'ChpTdGFydE1hcHBpbmdTZXNzaW9uUmVxdWVzdBI4CgtzbGFtX2NvbmZpZxgBIAEoCzIXLmdvb2'
     'dsZS5wcm90b2J1Zi5TdHJ1Y3RSCnNsYW1Db25maWcSIQoMc2xhbV92ZXJzaW9uGAIgASgJUgtz'
-    'bGFtVmVyc2lvbhIZCghtYXBfbmFtZRgDIAEoCVIHbWFwTmFtZRIVCgZvcmdfaWQYBCABKAlSBW'
-    '9yZ0lkEh8KC2xvY2F0aW9uX2lkGAUgASgJUgpsb2NhdGlvbklkEhkKCHJvYm90X2lkGAYgASgJ'
-    'Ugdyb2JvdElk');
+    'bGFtVmVyc2lvbhIZCghtYXBfbmFtZRgDIAEoCVIHbWFwTmFtZRInCg9vcmdhbml6YXRpb25faW'
+    'QYBCABKAlSDm9yZ2FuaXphdGlvbklkEh8KC2xvY2F0aW9uX2lkGAUgASgJUgpsb2NhdGlvbklk'
+    'EhkKCHJvYm90X2lkGAYgASgJUgdyb2JvdElkEi4KE3ZpYW1fc2VydmVyX3ZlcnNpb24YByABKA'
+    'lSEXZpYW1TZXJ2ZXJWZXJzaW9u');
 
 @$core.Deprecated('Use startMappingSessionResponseDescriptor instead')
 const StartMappingSessionResponse$json = {
@@ -104,15 +106,15 @@ final $typed_data.Uint8List getMappingSessionPointCloudResponseDescriptor = $con
 const ListMappingSessionsRequest$json = {
   '1': 'ListMappingSessionsRequest',
   '2': [
-    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'location_id', '3': 2, '4': 1, '5': 9, '10': 'locationId'},
   ],
 };
 
 /// Descriptor for `ListMappingSessionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listMappingSessionsRequestDescriptor = $convert.base64Decode(
-    'ChpMaXN0TWFwcGluZ1Nlc3Npb25zUmVxdWVzdBIVCgZvcmdfaWQYASABKAlSBW9yZ0lkEh8KC2'
-    'xvY2F0aW9uX2lkGAIgASgJUgpsb2NhdGlvbklk');
+    'ChpMaXN0TWFwcGluZ1Nlc3Npb25zUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm'
+    '9yZ2FuaXphdGlvbklkEh8KC2xvY2F0aW9uX2lkGAIgASgJUgpsb2NhdGlvbklk');
 
 @$core.Deprecated('Use listMappingSessionsResponseDescriptor instead')
 const ListMappingSessionsResponse$json = {

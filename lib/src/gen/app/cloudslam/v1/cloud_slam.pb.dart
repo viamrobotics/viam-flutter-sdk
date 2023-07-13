@@ -27,9 +27,10 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     ..aOM<$1.Struct>(1, _omitFieldNames ? '' : 'slamConfig', subBuilder: $1.Struct.create)
     ..aOS(2, _omitFieldNames ? '' : 'slamVersion')
     ..aOS(3, _omitFieldNames ? '' : 'mapName')
-    ..aOS(4, _omitFieldNames ? '' : 'orgId')
+    ..aOS(4, _omitFieldNames ? '' : 'organizationId')
     ..aOS(5, _omitFieldNames ? '' : 'locationId')
     ..aOS(6, _omitFieldNames ? '' : 'robotId')
+    ..aOS(7, _omitFieldNames ? '' : 'viamServerVersion')
     ..hasRequiredFields = false
   ;
 
@@ -84,13 +85,13 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   void clearMapName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get orgId => $_getSZ(3);
+  $core.String get organizationId => $_getSZ(3);
   @$pb.TagNumber(4)
-  set orgId($core.String v) { $_setString(3, v); }
+  set organizationId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasOrgId() => $_has(3);
+  $core.bool hasOrganizationId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearOrgId() => clearField(4);
+  void clearOrganizationId() => clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get locationId => $_getSZ(4);
@@ -109,6 +110,15 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasRobotId() => $_has(5);
   @$pb.TagNumber(6)
   void clearRobotId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get viamServerVersion => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set viamServerVersion($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasViamServerVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearViamServerVersion() => clearField(7);
 }
 
 class StartMappingSessionResponse extends $pb.GeneratedMessage {
@@ -340,7 +350,7 @@ class ListMappingSessionsRequest extends $pb.GeneratedMessage {
   factory ListMappingSessionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMappingSessionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'locationId')
     ..hasRequiredFields = false
   ;
@@ -367,13 +377,13 @@ class ListMappingSessionsRequest extends $pb.GeneratedMessage {
   static ListMappingSessionsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get orgId => $_getSZ(0);
+  $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set orgId($core.String v) { $_setString(0, v); }
+  set organizationId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasOrgId() => $_has(0);
+  $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearOrgId() => clearField(1);
+  void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get locationId => $_getSZ(1);

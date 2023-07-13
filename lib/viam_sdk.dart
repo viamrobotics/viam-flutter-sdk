@@ -1,6 +1,9 @@
 /// Robots at your fingertips.
 library viam_sdk;
 
+/// App Clients
+export 'src/app/data.dart' hide DataClient;
+
 /// Components
 export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';

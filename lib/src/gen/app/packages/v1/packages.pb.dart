@@ -85,6 +85,7 @@ class PackageInfo extends $pb.GeneratedMessage {
     ..e<PackageType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: PackageType.valueOf, enumValues: PackageType.values)
     ..pc<FileInfo>(5, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: FileInfo.create)
     ..aOM<$1.Struct>(6, _omitFieldNames ? '' : 'metadata', subBuilder: $1.Struct.create)
+    ..aOS(7, _omitFieldNames ? '' : 'platform')
     ..hasRequiredFields = false
   ;
 
@@ -158,6 +159,15 @@ class PackageInfo extends $pb.GeneratedMessage {
   void clearMetadata() => clearField(6);
   @$pb.TagNumber(6)
   $1.Struct ensureMetadata() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get platform => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set platform($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPlatform() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPlatform() => clearField(7);
 }
 
 enum CreatePackageRequest_Package {

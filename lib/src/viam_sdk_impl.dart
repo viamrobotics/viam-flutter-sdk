@@ -2,6 +2,7 @@ import 'package:auth0_flutter/auth0_flutter.dart' as $auth0;
 import 'package:grpc/grpc_connection_interface.dart';
 
 import './app/app.dart';
+import './app/data.dart';
 import './di/di.dart';
 import './domain/app/service/app_api_data_source.dart';
 import './domain/camera/service/camera_api_service.dart';
@@ -14,6 +15,7 @@ import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
 import '../protos/app/app.dart';
+import '../protos/app/data.dart';
 
 class ViamImpl implements Viam {
   ViamAppService? appService;
@@ -24,16 +26,23 @@ class ViamImpl implements Viam {
   ViamSensorService? sensorService;
   DataService? _dataService;
   late AppClient _appClient;
+  late DataClient _dataClient;
 
   ViamImpl();
 
   ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase!));
+    _dataClient = DataClient(DataServiceClient(_clientChannelBase!));
   }
 
   @override
   AppClient get appClient {
     return _appClient;
+  }
+
+  @override
+  DataClient get dataClient {
+    return _dataClient;
   }
 
   @override

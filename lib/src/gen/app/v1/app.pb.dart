@@ -3702,7 +3702,6 @@ class Fragment extends $pb.GeneratedMessage {
     ..aOB(5, _omitFieldNames ? '' : 'public')
     ..aOM<$3.Timestamp>(6, _omitFieldNames ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'organizationName')
-    ..aOB(8, _omitFieldNames ? '' : 'readonly')
     ..a<$core.int>(9, _omitFieldNames ? '' : 'robotPartCount', $pb.PbFieldType.O3)
     ..a<$core.int>(10, _omitFieldNames ? '' : 'organizationCount', $pb.PbFieldType.O3)
     ..aOB(11, _omitFieldNames ? '' : 'onlyUsedByOwner')
@@ -3797,39 +3796,30 @@ class Fragment extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearOrganizationName() => clearField(7);
 
-  @$pb.TagNumber(8)
-  $core.bool get readonly => $_getBF(7);
-  @$pb.TagNumber(8)
-  set readonly($core.bool v) { $_setBool(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasReadonly() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearReadonly() => clearField(8);
-
   @$pb.TagNumber(9)
-  $core.int get robotPartCount => $_getIZ(8);
+  $core.int get robotPartCount => $_getIZ(7);
   @$pb.TagNumber(9)
-  set robotPartCount($core.int v) { $_setSignedInt32(8, v); }
+  set robotPartCount($core.int v) { $_setSignedInt32(7, v); }
   @$pb.TagNumber(9)
-  $core.bool hasRobotPartCount() => $_has(8);
+  $core.bool hasRobotPartCount() => $_has(7);
   @$pb.TagNumber(9)
   void clearRobotPartCount() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.int get organizationCount => $_getIZ(9);
+  $core.int get organizationCount => $_getIZ(8);
   @$pb.TagNumber(10)
-  set organizationCount($core.int v) { $_setSignedInt32(9, v); }
+  set organizationCount($core.int v) { $_setSignedInt32(8, v); }
   @$pb.TagNumber(10)
-  $core.bool hasOrganizationCount() => $_has(9);
+  $core.bool hasOrganizationCount() => $_has(8);
   @$pb.TagNumber(10)
   void clearOrganizationCount() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.bool get onlyUsedByOwner => $_getBF(10);
+  $core.bool get onlyUsedByOwner => $_getBF(9);
   @$pb.TagNumber(11)
-  set onlyUsedByOwner($core.bool v) { $_setBool(10, v); }
+  set onlyUsedByOwner($core.bool v) { $_setBool(9, v); }
   @$pb.TagNumber(11)
-  $core.bool hasOnlyUsedByOwner() => $_has(10);
+  $core.bool hasOnlyUsedByOwner() => $_has(9);
   @$pb.TagNumber(11)
   void clearOnlyUsedByOwner() => clearField(11);
 }
@@ -4017,6 +4007,7 @@ class CreateFragmentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFragmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$4.Struct>(2, _omitFieldNames ? '' : 'config', subBuilder: $4.Struct.create)
+    ..aOS(3, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -4060,6 +4051,15 @@ class CreateFragmentRequest extends $pb.GeneratedMessage {
   void clearConfig() => clearField(2);
   @$pb.TagNumber(2)
   $4.Struct ensureConfig() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get organizationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set organizationId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrganizationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrganizationId() => clearField(3);
 }
 
 class CreateFragmentResponse extends $pb.GeneratedMessage {
@@ -5559,7 +5559,7 @@ class CreateModuleRequest extends $pb.GeneratedMessage {
   factory CreateModuleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateModuleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
@@ -5586,13 +5586,13 @@ class CreateModuleRequest extends $pb.GeneratedMessage {
   static CreateModuleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get publicNamespace => $_getSZ(0);
+  $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set publicNamespace($core.String v) { $_setString(0, v); }
+  set organizationId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPublicNamespace() => $_has(0);
+  $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPublicNamespace() => clearField(1);
+  void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -5612,6 +5612,7 @@ class CreateModuleResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateModuleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(2, _omitFieldNames ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
@@ -5644,6 +5645,15 @@ class CreateModuleResponse extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(0);
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get url => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set url($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUrl() => clearField(2);
 }
 
 class UpdateModuleRequest extends $pb.GeneratedMessage {
@@ -5658,6 +5668,8 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'url')
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..pc<Model>(5, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
+    ..aOS(6, _omitFieldNames ? '' : 'entrypoint')
+    ..aOS(7, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -5720,6 +5732,24 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<Model> get models => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get entrypoint => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set entrypoint($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasEntrypoint() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEntrypoint() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get organizationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set organizationId($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasOrganizationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOrganizationId() => clearField(7);
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
@@ -5729,6 +5759,7 @@ class UpdateModuleResponse extends $pb.GeneratedMessage {
   factory UpdateModuleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateModuleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
@@ -5752,6 +5783,15 @@ class UpdateModuleResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateModuleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateModuleResponse>(create);
   static UpdateModuleResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
 }
 
 class Model extends $pb.GeneratedMessage {
@@ -5816,6 +5856,7 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOS(3, _omitFieldNames ? '' : 'platform')
+    ..aOS(4, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -5866,6 +5907,15 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(2);
   @$pb.TagNumber(3)
   void clearPlatform() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get organizationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set organizationId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOrganizationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrganizationId() => clearField(4);
 }
 
 enum UploadModuleFileRequest_ModuleFile {
@@ -5944,6 +5994,7 @@ class UploadModuleFileResponse extends $pb.GeneratedMessage {
   factory UploadModuleFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadModuleFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
@@ -5967,6 +6018,15 @@ class UploadModuleFileResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UploadModuleFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadModuleFileResponse>(create);
   static UploadModuleFileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
 }
 
 class GetModuleRequest extends $pb.GeneratedMessage {
@@ -5977,6 +6037,7 @@ class GetModuleRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetModuleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -6009,6 +6070,15 @@ class GetModuleRequest extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(0);
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get organizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizationId() => clearField(2);
 }
 
 class GetModuleResponse extends $pb.GeneratedMessage {
@@ -6071,6 +6141,8 @@ class Module extends $pb.GeneratedMessage {
     ..pc<Model>(7, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aInt64(8, _omitFieldNames ? '' : 'totalRobotUsage')
     ..aInt64(9, _omitFieldNames ? '' : 'totalOrganizationUsage')
+    ..aOS(10, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(11, _omitFieldNames ? '' : 'entrypoint')
     ..hasRequiredFields = false
   ;
 
@@ -6163,6 +6235,24 @@ class Module extends $pb.GeneratedMessage {
   $core.bool hasTotalOrganizationUsage() => $_has(8);
   @$pb.TagNumber(9)
   void clearTotalOrganizationUsage() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get organizationId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set organizationId($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasOrganizationId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOrganizationId() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get entrypoint => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set entrypoint($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasEntrypoint() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEntrypoint() => clearField(11);
 }
 
 class VersionHistory extends $pb.GeneratedMessage {
