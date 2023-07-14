@@ -15,8 +15,5 @@ Future<WebRtcClientChannel> _getWebRtcClient(
   final webRtcPeerConnection = WebRtcPeerConnection(webRtcDirectDataSource);
   await webRtcPeerConnection.createConnection();
 
-  return WebRtcClientChannel(
-    webRtcPeerConnection.peerConnection,
-    webRtcPeerConnection.dataChannel,
-  );
+  return WebRtcClientChannel(webRtcPeerConnection.peerConnection, webRtcPeerConnection.dataChannel, () => '');
 }

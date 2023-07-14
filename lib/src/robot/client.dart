@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
+import 'package:viam_sdk/src/robot/sessions_client.dart';
 
 import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import '../gen/common/v1/common.pb.dart';
@@ -26,6 +27,9 @@ class RobotClientOptions {
   /// The frequency (in seconds) at which to attempt to reconnect a disconnected robot. 0 (zero) signifies no reconnection attempts
   final attemptReconnectInterval = 1;
 
+  /// Whether sessions are enabled
+  final enableSessions = true;
+
   RobotClientOptions() : dialOptions = DialOptions();
 
   /// Convenience initializer for creating options with specified [DialOptions]
@@ -43,9 +47,10 @@ class RobotClientOptions {
 class RobotClient {
   bool _connected = true;
   late String _address;
-  late DialOptions _options;
+  late RobotClientOptions _options;
   late ClientChannelBase _channel;
   late RobotServiceClient _client;
+  late SessionsClient _sessionsClient;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
   late final StreamManager _streamManager;
@@ -56,8 +61,9 @@ class RobotClient {
   static Future<RobotClient> atAddress(String url, RobotClientOptions options) async {
     final client = RobotClient._();
     client._address = url;
-    client._options = options.dialOptions;
-    client._channel = await dial(url, options.dialOptions);
+    client._options = options;
+    client._channel = await dial(url, options.dialOptions, () => client._sessionsClient.metadata());
+    client._sessionsClient = SessionsClient(client._channel, options.enableSessions);
     client._client = RobotServiceClient(client._channel);
     client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
@@ -145,19 +151,22 @@ class RobotClient {
         .d('Attempting to reconnect to the robot at $_address every $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
 
     while (!_connected) {
+      _sessionsClient.reset();
       try {
-        final channel = await dial(_address, _options);
+        final channel = await dial(_address, _options.dialOptions, () => _sessionsClient.metadata());
         final client = RobotServiceClient(channel);
         await client.resourceNames(ResourceNamesRequest());
 
         _channel = channel;
         _streamManager.channel = _channel as WebRtcClientChannel;
         _client = client;
+        _sessionsClient = SessionsClient(_channel, _options.enableSessions);
         await refresh();
         _connected = true;
         _logger.d('Successfully reconnected robot');
       } catch (e) {
         await _channel.shutdown();
+        _sessionsClient.reset();
         _logger.d('Failed to reconnect, trying again in $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
         await Future.delayed(Duration(seconds: reconnectInterval));
       }

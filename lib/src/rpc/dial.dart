@@ -6,6 +6,7 @@ import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:logger/logger.dart';
+import 'package:viam_sdk/src/robot/sessions_client.dart';
 
 import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import '../gen/proto/rpc/v1/auth.pb.dart' as pb;
@@ -96,7 +97,7 @@ class DialWebRtcOptions {
 }
 
 /// Connect to a robot at the provided address with the given options
-Future<ClientChannelBase> dial(String address, DialOptions? options) async {
+Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
   _logger.i('Connecting to Robot at $address');
   final opts = options ?? DialOptions();
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
@@ -104,26 +105,26 @@ Future<ClientChannelBase> dial(String address, DialOptions? options) async {
     disableWebRtc = true;
   }
   if (disableWebRtc) {
-    return _dialDirectGrpc(address, opts);
+    return _dialDirectGrpc(address, opts, sessionCallback);
   }
-  return _dialWebRtc(address, opts);
+  return _dialWebRtc(address, opts, sessionCallback);
 }
 
-Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options) async {
+Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionCallback) async {
   _logger.d('Dialing direct GRPC to $address');
   if (options.credentials == null) {
     final host = _hostAndPort(address, options.insecure);
-    return ClientChannel(host.host,
+    return GrpcOrGrpcWebClientChannel.grpc(host.host,
         port: host.port,
         options: ChannelOptions(
           credentials: options.insecure ? const ChannelCredentials.insecure() : const ChannelCredentials.secure(),
           codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
         ));
   }
-  return _authenticatedChannel(address, options);
+  return _authenticatedChannel(address, options, sessionCallback);
 }
 
-Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async {
+Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, String Function() sessionCallback) async {
   _logger.d('Dialing WebRTC to $address');
   if (options.authEntity.isNullOrEmpty) {
     if (options.externalAuthAddress.isNullOrEmpty) {
@@ -137,7 +138,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
 
   final signalingServer = options.webRtcOptions?.signalingServerAddress ?? 'app.viam.com';
   _logger.d('Connecting to signaling server: $signalingServer');
-  final signalingChannel = await _dialDirectGrpc(signalingServer, options);
+  final signalingChannel = await _dialDirectGrpc(signalingServer, options, sessionCallback);
   _logger.d('Connected to signaling server: $signalingServer');
   final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {'rpc-host': address}));
   WebRTCConfig config;
@@ -306,9 +307,9 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options) async
     await didConnect.future;
   } catch (error, st) {
     _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error, st);
-    return _dialDirectGrpc(address, options);
+    return _dialDirectGrpc(address, options, sessionCallback);
   }
-  return WebRtcClientChannel(peerConnection, dataChannel);
+  return WebRtcClientChannel(peerConnection, dataChannel, sessionCallback);
 }
 
 String _convertSDPtoJsonString(RTCSessionDescription? sdp) {
@@ -321,19 +322,18 @@ String _encodeSDPJsonStringToBase64String(String sdp) {
   return base64.encode(bytes);
 }
 
-Future<GrpcOrGrpcWebClientChannel> _authenticatedChannel(String address, DialOptions options) async {
+Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions options, String Function() sessionsCallback) async {
   String accessToken = options.accessToken ?? '';
   if (accessToken.isNotEmpty && options.externalAuthAddress.isNullOrEmpty && options.externalAuthToEntity.isNullOrEmpty) {
     _logger.d('Received pre-authenticated access token');
     final addr = _hostAndPort(address, options.insecure);
-    return AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
+    return AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure, sessionsCallback);
   }
 
   final addr = _hostAndPort(options.externalAuthAddress ?? address, options.insecure);
   final authEntity = options.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
-  GrpcOrGrpcWebClientChannel authChannel =
-      GrpcOrGrpcWebClientChannel.toSingleEndpoint(host: addr.host, port: addr.port, transportSecure: !options.insecure);
+  var authChannel = GrpcOrGrpcWebClientChannel.toSingleEndpoint(host: addr.host, port: addr.port, transportSecure: !options.insecure);
   final authClient = AuthServiceClient(authChannel);
   final credentials = pb.Credentials();
   if (options.credentials?.type != null) {
@@ -358,7 +358,7 @@ Future<GrpcOrGrpcWebClientChannel> _authenticatedChannel(String address, DialOpt
   if (options.externalAuthAddress.isNotNullNorEmpty && options.externalAuthToEntity.isNotNullNorEmpty) {
     final addr = _hostAndPort(options.externalAuthAddress!, options.insecure);
     _logger.d('Authenticating to external address: $addr, for entity: ${options.externalAuthToEntity}');
-    authChannel = AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure);
+    authChannel = AuthenticatedChannel(addr.host, addr.port, accessToken, options.insecure, sessionsCallback);
     final extAuthClient = ExternalAuthServiceClient(authChannel);
     final toRequest = pb.AuthenticateToRequest();
     if (options.externalAuthToEntity != null) {
@@ -375,13 +375,14 @@ Future<GrpcOrGrpcWebClientChannel> _authenticatedChannel(String address, DialOpt
   }
 
   final actual = _hostAndPort(address, options.insecure);
-  return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure);
+  return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure, sessionsCallback);
 }
 
 class AuthenticatedChannel extends GrpcOrGrpcWebClientChannel {
   final String accessToken;
+  final String Function()? _sessionId;
 
-  AuthenticatedChannel(String host, int port, this.accessToken, bool insecure)
+  AuthenticatedChannel(String host, int port, this.accessToken, bool insecure, [this._sessionId])
       : super.toSingleEndpoint(
           host: host,
           port: port,
@@ -390,6 +391,10 @@ class AuthenticatedChannel extends GrpcOrGrpcWebClientChannel {
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
+    if (!SessionsClient.unallowedMethods.contains(method.path) && _sessionId != null) {
+      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!()}));
+    }
+
     options = options.mergedWith(CallOptions(metadata: {'Authorization': 'Bearer $accessToken'}));
     return super.createCall(method, requests, options);
   }
@@ -415,4 +420,19 @@ _HostAndPort _hostAndPort(String address, bool insecure) {
     host = host.split(':')[0];
   }
   return _HostAndPort(host, port);
+}
+
+class ClientChannelWithSessions extends GrpcOrGrpcWebClientChannel {
+  final String Function() _sessionId;
+
+  ClientChannelWithSessions.toSingleEndpoint(this._sessionId, {required super.host, required super.port, required super.transportSecure})
+      : super.toSingleEndpoint();
+
+  @override
+  ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
+    if (!SessionsClient.unallowedMethods.contains(method.path)) {
+      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId()}));
+    }
+    return super.createCall(method, requests, options);
+  }
 }
