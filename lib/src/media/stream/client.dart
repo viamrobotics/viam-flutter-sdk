@@ -24,9 +24,10 @@ class StreamManager {
 
   set channel(WebRtcClientChannel channel) {
     _channel = channel;
-
-    _channel.rtcPeerConnection.onAddStream = (MediaStream stream) {
-      _addStream(stream);
+    _channel.rtcPeerConnection.onTrack = (event) {
+      for (final stream in event.streams) {
+        _addStream(stream);
+      }
     };
 
     _channel.rtcPeerConnection.onConnectionState = (state) {
