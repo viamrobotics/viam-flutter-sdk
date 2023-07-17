@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 
-import '../../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import '../../gen/proto/stream/v1/stream.pbgrpc.dart';
+import '../../rpc/web_rtc/web_rtc_client.dart';
 
 class StreamManager {
   final Map<String, MediaStream> _streams = {};
