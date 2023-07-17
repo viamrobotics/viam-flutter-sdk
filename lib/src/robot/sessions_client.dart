@@ -12,7 +12,7 @@ final _logger = Logger();
 /// and supports stopping actuating components when it's not.
 class SessionsClient implements ResourceRPCClient {
   static const sessionMetadataKey = 'viam-sid';
-  static const unallowedMethods = [
+  static const unallowedMethods = {
     '/grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo',
     '/proto.rpc.webrtc.v1.SignalingService/Call',
     '/proto.rpc.webrtc.v1.SignalingService/CallUpdate',
@@ -22,7 +22,7 @@ class SessionsClient implements ResourceRPCClient {
     '/viam.robot.v1.RobotService/ResourceRPCSubtypes',
     '/viam.robot.v1.RobotService/StartSession',
     '/viam.robot.v1.RobotService/SendSessionHeartbeat',
-  ];
+  };
 
   @override
   ClientChannelBase channel;
