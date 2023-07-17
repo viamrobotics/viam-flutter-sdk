@@ -101,7 +101,7 @@ void main() {
 
       final start = DateTime(2020, 12, 31);
       final end = DateTime(2021, 12, 31);
-      filter.setDateTimeCaptureInterval(start, end);
+      filter.setDateTimeCaptureInterval(start: start, end: end);
       expect(filter.interval.start.seconds.toInt(), equals(start.millisecondsSinceEpoch / 1000));
       expect(filter.interval.end.seconds.toInt(), equals(end.millisecondsSinceEpoch / 1000));
     });
@@ -111,7 +111,7 @@ void main() {
 
       final start = DateTime(2020, 12, 31);
       final end = DateTime(2021, 12, 31);
-      filter = filter.withDateTimeCaptureInterval(start, end);
+      filter = filter.withDateTimeCaptureInterval(start: start, end: end);
       expect(filter.interval.start.seconds.toInt(), equals(start.millisecondsSinceEpoch / 1000));
       expect(filter.interval.end.seconds.toInt(), equals(end.millisecondsSinceEpoch / 1000));
     });
