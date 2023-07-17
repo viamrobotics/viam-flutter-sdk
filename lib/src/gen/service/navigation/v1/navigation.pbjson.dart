@@ -197,3 +197,30 @@ const RemoveWaypointResponse$json = {
 final $typed_data.Uint8List removeWaypointResponseDescriptor = $convert.base64Decode(
     'ChZSZW1vdmVXYXlwb2ludFJlc3BvbnNl');
 
+@$core.Deprecated('Use getObstaclesRequestDescriptor instead')
+const GetObstaclesRequest$json = {
+  '1': 'GetObstaclesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetObstaclesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getObstaclesRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRPYnN0YWNsZXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSLQoFZXh0cmEYYyABKA'
+    'syFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
+
+@$core.Deprecated('Use getObstaclesResponseDescriptor instead')
+const GetObstaclesResponse$json = {
+  '1': 'GetObstaclesResponse',
+  '2': [
+    {'1': 'obstacles', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.GeoObstacle', '10': 'obstacles'},
+  ],
+};
+
+/// Descriptor for `GetObstaclesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getObstaclesResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRPYnN0YWNsZXNSZXNwb25zZRI5CglvYnN0YWNsZXMYASADKAsyGy52aWFtLmNvbW1vbi'
+    '52MS5HZW9PYnN0YWNsZVIJb2JzdGFjbGVz');
+

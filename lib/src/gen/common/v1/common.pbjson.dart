@@ -342,6 +342,22 @@ const ActuatorStatus$json = {
 final $typed_data.Uint8List actuatorStatusDescriptor = $convert.base64Decode(
     'Cg5BY3R1YXRvclN0YXR1cxIbCglpc19tb3ZpbmcYASABKAhSCGlzTW92aW5n');
 
+@$core.Deprecated('Use responseMetadataDescriptor instead')
+const ResponseMetadata$json = {
+  '1': 'ResponseMetadata',
+  '2': [
+    {'1': 'captured_at', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'capturedAt', '17': true},
+  ],
+  '8': [
+    {'1': '_captured_at'},
+  ],
+};
+
+/// Descriptor for `ResponseMetadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List responseMetadataDescriptor = $convert.base64Decode(
+    'ChBSZXNwb25zZU1ldGFkYXRhEkAKC2NhcHR1cmVkX2F0GAEgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcEgAUgpjYXB0dXJlZEF0iAEBQg4KDF9jYXB0dXJlZF9hdA==');
+
 @$core.Deprecated('Use doCommandRequestDescriptor instead')
 const DoCommandRequest$json = {
   '1': 'DoCommandRequest',

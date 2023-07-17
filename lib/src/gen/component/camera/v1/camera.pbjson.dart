@@ -13,6 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use formatDescriptor instead')
+const Format$json = {
+  '1': 'Format',
+  '2': [
+    {'1': 'FORMAT_UNSPECIFIED', '2': 0},
+    {'1': 'FORMAT_RAW_RGBA', '2': 1},
+    {'1': 'FORMAT_RAW_DEPTH', '2': 2},
+    {'1': 'FORMAT_JPEG', '2': 3},
+    {'1': 'FORMAT_PNG', '2': 4},
+  ],
+};
+
+/// Descriptor for `Format`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List formatDescriptor = $convert.base64Decode(
+    'CgZGb3JtYXQSFgoSRk9STUFUX1VOU1BFQ0lGSUVEEAASEwoPRk9STUFUX1JBV19SR0JBEAESFA'
+    'oQRk9STUFUX1JBV19ERVBUSBACEg8KC0ZPUk1BVF9KUEVHEAMSDgoKRk9STUFUX1BORxAE');
+
 @$core.Deprecated('Use getImageRequestDescriptor instead')
 const GetImageRequest$json = {
   '1': 'GetImageRequest',
@@ -40,6 +57,49 @@ const GetImageResponse$json = {
 final $typed_data.Uint8List getImageResponseDescriptor = $convert.base64Decode(
     'ChBHZXRJbWFnZVJlc3BvbnNlEhsKCW1pbWVfdHlwZRgBIAEoCVIIbWltZVR5cGUSFAoFaW1hZ2'
     'UYAiABKAxSBWltYWdl');
+
+@$core.Deprecated('Use getImagesRequestDescriptor instead')
+const GetImagesRequest$json = {
+  '1': 'GetImagesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetImagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getImagesRequestDescriptor = $convert.base64Decode(
+    'ChBHZXRJbWFnZXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWU=');
+
+@$core.Deprecated('Use getImagesResponseDescriptor instead')
+const GetImagesResponse$json = {
+  '1': 'GetImagesResponse',
+  '2': [
+    {'1': 'images', '3': 1, '4': 3, '5': 11, '6': '.viam.component.camera.v1.Image', '10': 'images'},
+    {'1': 'response_metadata', '3': 84260, '4': 1, '5': 11, '6': '.viam.common.v1.ResponseMetadata', '10': 'responseMetadata'},
+  ],
+};
+
+/// Descriptor for `GetImagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getImagesResponseDescriptor = $convert.base64Decode(
+    'ChFHZXRJbWFnZXNSZXNwb25zZRI3CgZpbWFnZXMYASADKAsyHy52aWFtLmNvbXBvbmVudC5jYW'
+    '1lcmEudjEuSW1hZ2VSBmltYWdlcxJPChFyZXNwb25zZV9tZXRhZGF0YRikkgUgASgLMiAudmlh'
+    'bS5jb21tb24udjEuUmVzcG9uc2VNZXRhZGF0YVIQcmVzcG9uc2VNZXRhZGF0YQ==');
+
+@$core.Deprecated('Use imageDescriptor instead')
+const Image$json = {
+  '1': 'Image',
+  '2': [
+    {'1': 'source_name', '3': 1, '4': 1, '5': 9, '10': 'sourceName'},
+    {'1': 'format', '3': 2, '4': 1, '5': 14, '6': '.viam.component.camera.v1.Format', '10': 'format'},
+    {'1': 'image', '3': 3, '4': 1, '5': 12, '10': 'image'},
+  ],
+};
+
+/// Descriptor for `Image`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List imageDescriptor = $convert.base64Decode(
+    'CgVJbWFnZRIfCgtzb3VyY2VfbmFtZRgBIAEoCVIKc291cmNlTmFtZRI4CgZmb3JtYXQYAiABKA'
+    '4yIC52aWFtLmNvbXBvbmVudC5jYW1lcmEudjEuRm9ybWF0UgZmb3JtYXQSFAoFaW1hZ2UYAyAB'
+    'KAxSBWltYWdl');
 
 @$core.Deprecated('Use renderFrameRequestDescriptor instead')
 const RenderFrameRequest$json = {

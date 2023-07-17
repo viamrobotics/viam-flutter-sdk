@@ -14,7 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/struct.pb.dart' as $0;
+import '../../google/protobuf/struct.pb.dart' as $1;
+import '../../google/protobuf/timestamp.pb.dart' as $0;
 import 'common.pbenum.dart';
 
 export 'common.pbenum.dart';
@@ -1098,6 +1099,50 @@ class ActuatorStatus extends $pb.GeneratedMessage {
   void clearIsMoving() => clearField(1);
 }
 
+class ResponseMetadata extends $pb.GeneratedMessage {
+  factory ResponseMetadata() => create();
+  ResponseMetadata._() : super();
+  factory ResponseMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResponseMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOM<$0.Timestamp>(1, _omitFieldNames ? '' : 'capturedAt', subBuilder: $0.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResponseMetadata clone() => ResponseMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResponseMetadata copyWith(void Function(ResponseMetadata) updates) => super.copyWith((message) => updates(message as ResponseMetadata)) as ResponseMetadata;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResponseMetadata create() => ResponseMetadata._();
+  ResponseMetadata createEmptyInstance() => create();
+  static $pb.PbList<ResponseMetadata> createRepeated() => $pb.PbList<ResponseMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static ResponseMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResponseMetadata>(create);
+  static ResponseMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.Timestamp get capturedAt => $_getN(0);
+  @$pb.TagNumber(1)
+  set capturedAt($0.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCapturedAt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCapturedAt() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.Timestamp ensureCapturedAt() => $_ensure(0);
+}
+
 class DoCommandRequest extends $pb.GeneratedMessage {
   factory DoCommandRequest() => create();
   DoCommandRequest._() : super();
@@ -1106,7 +1151,7 @@ class DoCommandRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$0.Struct>(2, _omitFieldNames ? '' : 'command', subBuilder: $0.Struct.create)
+    ..aOM<$1.Struct>(2, _omitFieldNames ? '' : 'command', subBuilder: $1.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1141,15 +1186,15 @@ class DoCommandRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $0.Struct get command => $_getN(1);
+  $1.Struct get command => $_getN(1);
   @$pb.TagNumber(2)
-  set command($0.Struct v) { setField(2, v); }
+  set command($1.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCommand() => $_has(1);
   @$pb.TagNumber(2)
   void clearCommand() => clearField(2);
   @$pb.TagNumber(2)
-  $0.Struct ensureCommand() => $_ensure(1);
+  $1.Struct ensureCommand() => $_ensure(1);
 }
 
 class DoCommandResponse extends $pb.GeneratedMessage {
@@ -1159,7 +1204,7 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   factory DoCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..aOM<$0.Struct>(1, _omitFieldNames ? '' : 'result', subBuilder: $0.Struct.create)
+    ..aOM<$1.Struct>(1, _omitFieldNames ? '' : 'result', subBuilder: $1.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1185,15 +1230,15 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   static DoCommandResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.Struct get result => $_getN(0);
+  $1.Struct get result => $_getN(0);
   @$pb.TagNumber(1)
-  set result($0.Struct v) { setField(1, v); }
+  set result($1.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasResult() => $_has(0);
   @$pb.TagNumber(1)
   void clearResult() => clearField(1);
   @$pb.TagNumber(1)
-  $0.Struct ensureResult() => $_ensure(0);
+  $1.Struct ensureResult() => $_ensure(0);
 }
 
 class GetKinematicsRequest extends $pb.GeneratedMessage {

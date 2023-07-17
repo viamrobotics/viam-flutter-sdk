@@ -647,6 +647,96 @@ class RemoveWaypointResponse extends $pb.GeneratedMessage {
   static RemoveWaypointResponse? _defaultInstance;
 }
 
+class GetObstaclesRequest extends $pb.GeneratedMessage {
+  factory GetObstaclesRequest() => create();
+  GetObstaclesRequest._() : super();
+  factory GetObstaclesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetObstaclesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetObstaclesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetObstaclesRequest clone() => GetObstaclesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetObstaclesRequest copyWith(void Function(GetObstaclesRequest) updates) => super.copyWith((message) => updates(message as GetObstaclesRequest)) as GetObstaclesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetObstaclesRequest create() => GetObstaclesRequest._();
+  GetObstaclesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetObstaclesRequest> createRepeated() => $pb.PbList<GetObstaclesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetObstaclesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetObstaclesRequest>(create);
+  static GetObstaclesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetObstaclesResponse extends $pb.GeneratedMessage {
+  factory GetObstaclesResponse() => create();
+  GetObstaclesResponse._() : super();
+  factory GetObstaclesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetObstaclesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetObstaclesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
+    ..pc<$1.GeoObstacle>(1, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoObstacle.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetObstaclesResponse clone() => GetObstaclesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetObstaclesResponse copyWith(void Function(GetObstaclesResponse) updates) => super.copyWith((message) => updates(message as GetObstaclesResponse)) as GetObstaclesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetObstaclesResponse create() => GetObstaclesResponse._();
+  GetObstaclesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetObstaclesResponse> createRepeated() => $pb.PbList<GetObstaclesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetObstaclesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetObstaclesResponse>(create);
+  static GetObstaclesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$1.GeoObstacle> get obstacles => $_getList(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

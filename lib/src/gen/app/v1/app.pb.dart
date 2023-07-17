@@ -399,6 +399,7 @@ class Organization extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(5, _omitFieldNames ? '' : 'defaultRegion')
     ..hasRequiredFields = false
   ;
 
@@ -460,6 +461,15 @@ class Organization extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(3);
   @$pb.TagNumber(4)
   void clearPublicNamespace() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get defaultRegion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set defaultRegion($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDefaultRegion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDefaultRegion() => clearField(5);
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
@@ -802,6 +812,90 @@ class GetOrganizationResponse extends $pb.GeneratedMessage {
   Organization ensureOrganization() => $_ensure(0);
 }
 
+class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
+  factory GetOrganizationNamespaceAvailabilityRequest() => create();
+  GetOrganizationNamespaceAvailabilityRequest._() : super();
+  factory GetOrganizationNamespaceAvailabilityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOrganizationNamespaceAvailabilityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationNamespaceAvailabilityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'publicNamespace')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetOrganizationNamespaceAvailabilityRequest clone() => GetOrganizationNamespaceAvailabilityRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetOrganizationNamespaceAvailabilityRequest copyWith(void Function(GetOrganizationNamespaceAvailabilityRequest) updates) => super.copyWith((message) => updates(message as GetOrganizationNamespaceAvailabilityRequest)) as GetOrganizationNamespaceAvailabilityRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationNamespaceAvailabilityRequest create() => GetOrganizationNamespaceAvailabilityRequest._();
+  GetOrganizationNamespaceAvailabilityRequest createEmptyInstance() => create();
+  static $pb.PbList<GetOrganizationNamespaceAvailabilityRequest> createRepeated() => $pb.PbList<GetOrganizationNamespaceAvailabilityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationNamespaceAvailabilityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrganizationNamespaceAvailabilityRequest>(create);
+  static GetOrganizationNamespaceAvailabilityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get publicNamespace => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set publicNamespace($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPublicNamespace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPublicNamespace() => clearField(1);
+}
+
+class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage {
+  factory GetOrganizationNamespaceAvailabilityResponse() => create();
+  GetOrganizationNamespaceAvailabilityResponse._() : super();
+  factory GetOrganizationNamespaceAvailabilityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOrganizationNamespaceAvailabilityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationNamespaceAvailabilityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'available')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetOrganizationNamespaceAvailabilityResponse clone() => GetOrganizationNamespaceAvailabilityResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetOrganizationNamespaceAvailabilityResponse copyWith(void Function(GetOrganizationNamespaceAvailabilityResponse) updates) => super.copyWith((message) => updates(message as GetOrganizationNamespaceAvailabilityResponse)) as GetOrganizationNamespaceAvailabilityResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationNamespaceAvailabilityResponse create() => GetOrganizationNamespaceAvailabilityResponse._();
+  GetOrganizationNamespaceAvailabilityResponse createEmptyInstance() => create();
+  static $pb.PbList<GetOrganizationNamespaceAvailabilityResponse> createRepeated() => $pb.PbList<GetOrganizationNamespaceAvailabilityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationNamespaceAvailabilityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrganizationNamespaceAvailabilityResponse>(create);
+  static GetOrganizationNamespaceAvailabilityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get available => $_getBF(0);
+  @$pb.TagNumber(1)
+  set available($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAvailable() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAvailable() => clearField(1);
+}
+
 class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   factory UpdateOrganizationRequest() => create();
   UpdateOrganizationRequest._() : super();
@@ -812,6 +906,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(4, _omitFieldNames ? '' : 'region')
     ..hasRequiredFields = false
   ;
 
@@ -862,6 +957,15 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(2);
   @$pb.TagNumber(3)
   void clearPublicNamespace() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get region => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set region($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRegion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRegion() => clearField(4);
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
@@ -1161,6 +1265,110 @@ class CreateOrganizationInviteResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CreateOrganizationInviteResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateOrganizationInviteResponse>(create);
   static CreateOrganizationInviteResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OrganizationInvite get invite => $_getN(0);
+  @$pb.TagNumber(1)
+  set invite(OrganizationInvite v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInvite() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInvite() => clearField(1);
+  @$pb.TagNumber(1)
+  OrganizationInvite ensureInvite() => $_ensure(0);
+}
+
+class UpdateOrganizationInviteAuthorizationsRequest extends $pb.GeneratedMessage {
+  factory UpdateOrganizationInviteAuthorizationsRequest() => create();
+  UpdateOrganizationInviteAuthorizationsRequest._() : super();
+  factory UpdateOrganizationInviteAuthorizationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationInviteAuthorizationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationInviteAuthorizationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..pc<Authorization>(3, _omitFieldNames ? '' : 'addAuthorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
+    ..pc<Authorization>(4, _omitFieldNames ? '' : 'removeAuthorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationInviteAuthorizationsRequest clone() => UpdateOrganizationInviteAuthorizationsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationInviteAuthorizationsRequest copyWith(void Function(UpdateOrganizationInviteAuthorizationsRequest) updates) => super.copyWith((message) => updates(message as UpdateOrganizationInviteAuthorizationsRequest)) as UpdateOrganizationInviteAuthorizationsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationInviteAuthorizationsRequest create() => UpdateOrganizationInviteAuthorizationsRequest._();
+  UpdateOrganizationInviteAuthorizationsRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationInviteAuthorizationsRequest> createRepeated() => $pb.PbList<UpdateOrganizationInviteAuthorizationsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationInviteAuthorizationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationInviteAuthorizationsRequest>(create);
+  static UpdateOrganizationInviteAuthorizationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get email => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set email($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEmail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmail() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<Authorization> get addAuthorizations => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<Authorization> get removeAuthorizations => $_getList(3);
+}
+
+class UpdateOrganizationInviteAuthorizationsResponse extends $pb.GeneratedMessage {
+  factory UpdateOrganizationInviteAuthorizationsResponse() => create();
+  UpdateOrganizationInviteAuthorizationsResponse._() : super();
+  factory UpdateOrganizationInviteAuthorizationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationInviteAuthorizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationInviteAuthorizationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<OrganizationInvite>(1, _omitFieldNames ? '' : 'invite', subBuilder: OrganizationInvite.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationInviteAuthorizationsResponse clone() => UpdateOrganizationInviteAuthorizationsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationInviteAuthorizationsResponse copyWith(void Function(UpdateOrganizationInviteAuthorizationsResponse) updates) => super.copyWith((message) => updates(message as UpdateOrganizationInviteAuthorizationsResponse)) as UpdateOrganizationInviteAuthorizationsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationInviteAuthorizationsResponse create() => UpdateOrganizationInviteAuthorizationsResponse._();
+  UpdateOrganizationInviteAuthorizationsResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationInviteAuthorizationsResponse> createRepeated() => $pb.PbList<UpdateOrganizationInviteAuthorizationsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationInviteAuthorizationsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationInviteAuthorizationsResponse>(create);
+  static UpdateOrganizationInviteAuthorizationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   OrganizationInvite get invite => $_getN(0);
@@ -1550,6 +1758,48 @@ class LocationAuth extends $pb.GeneratedMessage {
   $core.List<SharedSecret> get secrets => $_getList(2);
 }
 
+class StorageConfig extends $pb.GeneratedMessage {
+  factory StorageConfig() => create();
+  StorageConfig._() : super();
+  factory StorageConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StorageConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StorageConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'region')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StorageConfig clone() => StorageConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StorageConfig copyWith(void Function(StorageConfig) updates) => super.copyWith((message) => updates(message as StorageConfig)) as StorageConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StorageConfig create() => StorageConfig._();
+  StorageConfig createEmptyInstance() => create();
+  static $pb.PbList<StorageConfig> createRepeated() => $pb.PbList<StorageConfig>();
+  @$core.pragma('dart2js:noInline')
+  static StorageConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StorageConfig>(create);
+  static StorageConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get region => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set region($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRegion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRegion() => clearField(1);
+}
+
 class Location extends $pb.GeneratedMessage {
   factory Location() => create();
   Location._() : super();
@@ -1564,6 +1814,7 @@ class Location extends $pb.GeneratedMessage {
     ..aOM<LocationAuth>(5, _omitFieldNames ? '' : 'auth', subBuilder: LocationAuth.create)
     ..pc<LocationOrganization>(6, _omitFieldNames ? '' : 'organizations', $pb.PbFieldType.PM, subBuilder: LocationOrganization.create)
     ..a<$core.int>(7, _omitFieldNames ? '' : 'robotCount', $pb.PbFieldType.O3)
+    ..aOM<StorageConfig>(8, _omitFieldNames ? '' : 'config', subBuilder: StorageConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -1648,6 +1899,17 @@ class Location extends $pb.GeneratedMessage {
   $core.bool hasRobotCount() => $_has(6);
   @$pb.TagNumber(7)
   void clearRobotCount() => clearField(7);
+
+  @$pb.TagNumber(8)
+  StorageConfig get config => $_getN(7);
+  @$pb.TagNumber(8)
+  set config(StorageConfig v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasConfig() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearConfig() => clearField(8);
+  @$pb.TagNumber(8)
+  StorageConfig ensureConfig() => $_ensure(7);
 }
 
 class SharedSecret extends $pb.GeneratedMessage {
@@ -1926,6 +2188,7 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'locationId')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'parentLocationId')
+    ..aOS(4, _omitFieldNames ? '' : 'region')
     ..hasRequiredFields = false
   ;
 
@@ -1976,6 +2239,15 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
   $core.bool hasParentLocationId() => $_has(2);
   @$pb.TagNumber(3)
   void clearParentLocationId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get region => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set region($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRegion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRegion() => clearField(4);
 }
 
 class UpdateLocationResponse extends $pb.GeneratedMessage {
@@ -4979,6 +5251,8 @@ class Authorization extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'authorizationId')
     ..aOS(3, _omitFieldNames ? '' : 'resourceType')
     ..aOS(4, _omitFieldNames ? '' : 'resourceId')
+    ..aOS(5, _omitFieldNames ? '' : 'identityId')
+    ..aOS(6, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -5038,6 +5312,24 @@ class Authorization extends $pb.GeneratedMessage {
   $core.bool hasResourceId() => $_has(3);
   @$pb.TagNumber(4)
   void clearResourceId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get identityId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set identityId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIdentityId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIdentityId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get organizationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set organizationId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOrganizationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOrganizationId() => clearField(6);
 }
 
 class AddRoleRequest extends $pb.GeneratedMessage {
@@ -5047,11 +5339,7 @@ class AddRoleRequest extends $pb.GeneratedMessage {
   factory AddRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddRoleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'identityId')
-    ..aOS(2, _omitFieldNames ? '' : 'roleId')
-    ..aOS(3, _omitFieldNames ? '' : 'resourceType')
-    ..aOS(4, _omitFieldNames ? '' : 'resourceId')
-    ..aOS(5, _omitFieldNames ? '' : 'organizationId')
+    ..aOM<Authorization>(1, _omitFieldNames ? '' : 'authorization', subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
 
@@ -5077,49 +5365,15 @@ class AddRoleRequest extends $pb.GeneratedMessage {
   static AddRoleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get identityId => $_getSZ(0);
+  Authorization get authorization => $_getN(0);
   @$pb.TagNumber(1)
-  set identityId($core.String v) { $_setString(0, v); }
+  set authorization(Authorization v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasIdentityId() => $_has(0);
+  $core.bool hasAuthorization() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIdentityId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get roleId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set roleId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRoleId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRoleId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get resourceType => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set resourceType($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasResourceType() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearResourceType() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get resourceId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set resourceId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasResourceId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearResourceId() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get organizationId => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set organizationId($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasOrganizationId() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearOrganizationId() => clearField(5);
+  void clearAuthorization() => clearField(1);
+  @$pb.TagNumber(1)
+  Authorization ensureAuthorization() => $_ensure(0);
 }
 
 class AddRoleResponse extends $pb.GeneratedMessage {
@@ -5129,7 +5383,6 @@ class AddRoleResponse extends $pb.GeneratedMessage {
   factory AddRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddRoleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<Authorization>(1, _omitFieldNames ? '' : 'authorization', subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
 
@@ -5153,17 +5406,6 @@ class AddRoleResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static AddRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddRoleResponse>(create);
   static AddRoleResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  Authorization get authorization => $_getN(0);
-  @$pb.TagNumber(1)
-  set authorization(Authorization v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAuthorization() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAuthorization() => clearField(1);
-  @$pb.TagNumber(1)
-  Authorization ensureAuthorization() => $_ensure(0);
 }
 
 class RemoveRoleRequest extends $pb.GeneratedMessage {
@@ -5173,11 +5415,7 @@ class RemoveRoleRequest extends $pb.GeneratedMessage {
   factory RemoveRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveRoleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'identityId')
-    ..aOS(2, _omitFieldNames ? '' : 'roleId')
-    ..aOS(3, _omitFieldNames ? '' : 'resourceType')
-    ..aOS(4, _omitFieldNames ? '' : 'resourceId')
-    ..aOS(5, _omitFieldNames ? '' : 'organizationId')
+    ..aOM<Authorization>(1, _omitFieldNames ? '' : 'authorization', subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
 
@@ -5203,49 +5441,15 @@ class RemoveRoleRequest extends $pb.GeneratedMessage {
   static RemoveRoleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get identityId => $_getSZ(0);
+  Authorization get authorization => $_getN(0);
   @$pb.TagNumber(1)
-  set identityId($core.String v) { $_setString(0, v); }
+  set authorization(Authorization v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasIdentityId() => $_has(0);
+  $core.bool hasAuthorization() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIdentityId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get roleId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set roleId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRoleId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRoleId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get resourceType => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set resourceType($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasResourceType() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearResourceType() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get resourceId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set resourceId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasResourceId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearResourceId() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get organizationId => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set organizationId($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasOrganizationId() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearOrganizationId() => clearField(5);
+  void clearAuthorization() => clearField(1);
+  @$pb.TagNumber(1)
+  Authorization ensureAuthorization() => $_ensure(0);
 }
 
 class RemoveRoleResponse extends $pb.GeneratedMessage {
@@ -5287,9 +5491,8 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
   factory ListAuthorizationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAuthorizationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'resourceType')
-    ..aOS(2, _omitFieldNames ? '' : 'resourceId')
-    ..aOS(3, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..pPS(2, _omitFieldNames ? '' : 'resourceIds')
     ..hasRequiredFields = false
   ;
 
@@ -5315,77 +5518,16 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
   static ListAuthorizationsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get resourceType => $_getSZ(0);
+  $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set resourceType($core.String v) { $_setString(0, v); }
+  set organizationId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasResourceType() => $_has(0);
+  $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearResourceType() => clearField(1);
+  void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get resourceId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set resourceId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasResourceId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearResourceId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get organizationId => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set organizationId($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasOrganizationId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearOrganizationId() => clearField(3);
-}
-
-class Authorizations extends $pb.GeneratedMessage {
-  factory Authorizations() => create();
-  Authorizations._() : super();
-  factory Authorizations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Authorizations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Authorizations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'identityId')
-    ..pc<Authorization>(2, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Authorizations clone() => Authorizations()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Authorizations copyWith(void Function(Authorizations) updates) => super.copyWith((message) => updates(message as Authorizations)) as Authorizations;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static Authorizations create() => Authorizations._();
-  Authorizations createEmptyInstance() => create();
-  static $pb.PbList<Authorizations> createRepeated() => $pb.PbList<Authorizations>();
-  @$core.pragma('dart2js:noInline')
-  static Authorizations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Authorizations>(create);
-  static Authorizations? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get identityId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set identityId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasIdentityId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearIdentityId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<Authorization> get authorizations => $_getList(1);
+  $core.List<$core.String> get resourceIds => $_getList(1);
 }
 
 class ListAuthorizationsResponse extends $pb.GeneratedMessage {
@@ -5395,7 +5537,7 @@ class ListAuthorizationsResponse extends $pb.GeneratedMessage {
   factory ListAuthorizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAuthorizationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<Authorizations>(1, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorizations.create)
+    ..pc<Authorization>(1, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
 
@@ -5421,7 +5563,7 @@ class ListAuthorizationsResponse extends $pb.GeneratedMessage {
   static ListAuthorizationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Authorizations> get authorizations => $_getList(0);
+  $core.List<Authorization> get authorizations => $_getList(0);
 }
 
 class CheckPermissionsRequest extends $pb.GeneratedMessage {

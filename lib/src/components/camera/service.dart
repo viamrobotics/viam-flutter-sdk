@@ -71,4 +71,10 @@ class CameraService extends CameraServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<GetImagesResponse> getImages(ServiceCall call, GetImagesRequest request) {
+    // TODO: implement getImages
+    throw UnimplementedError();
+  }
 }

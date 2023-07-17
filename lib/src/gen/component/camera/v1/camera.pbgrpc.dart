@@ -27,6 +27,10 @@ class CameraServiceClient extends $grpc.Client {
       '/viam.component.camera.v1.CameraService/GetImage',
       ($0.GetImageRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetImageResponse.fromBuffer(value));
+  static final _$getImages = $grpc.ClientMethod<$0.GetImagesRequest, $0.GetImagesResponse>(
+      '/viam.component.camera.v1.CameraService/GetImages',
+      ($0.GetImagesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetImagesResponse.fromBuffer(value));
   static final _$renderFrame = $grpc.ClientMethod<$0.RenderFrameRequest, $1.HttpBody>(
       '/viam.component.camera.v1.CameraService/RenderFrame',
       ($0.RenderFrameRequest value) => value.writeToBuffer(),
@@ -56,6 +60,10 @@ class CameraServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetImageResponse> getImage($0.GetImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getImage, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetImagesResponse> getImages($0.GetImagesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getImages, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.HttpBody> renderFrame($0.RenderFrameRequest request, {$grpc.CallOptions? options}) {
@@ -91,6 +99,13 @@ abstract class CameraServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetImageRequest.fromBuffer(value),
         ($0.GetImageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetImagesRequest, $0.GetImagesResponse>(
+        'GetImages',
+        getImages_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetImagesRequest.fromBuffer(value),
+        ($0.GetImagesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.RenderFrameRequest, $1.HttpBody>(
         'RenderFrame',
         renderFrame_Pre,
@@ -132,6 +147,10 @@ abstract class CameraServiceBase extends $grpc.Service {
     return getImage(call, await request);
   }
 
+  $async.Future<$0.GetImagesResponse> getImages_Pre($grpc.ServiceCall call, $async.Future<$0.GetImagesRequest> request) async {
+    return getImages(call, await request);
+  }
+
   $async.Future<$1.HttpBody> renderFrame_Pre($grpc.ServiceCall call, $async.Future<$0.RenderFrameRequest> request) async {
     return renderFrame(call, await request);
   }
@@ -153,6 +172,7 @@ abstract class CameraServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetImageResponse> getImage($grpc.ServiceCall call, $0.GetImageRequest request);
+  $async.Future<$0.GetImagesResponse> getImages($grpc.ServiceCall call, $0.GetImagesRequest request);
   $async.Future<$1.HttpBody> renderFrame($grpc.ServiceCall call, $0.RenderFrameRequest request);
   $async.Future<$0.GetPointCloudResponse> getPointCloud($grpc.ServiceCall call, $0.GetPointCloudRequest request);
   $async.Future<$0.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $0.GetPropertiesRequest request);
