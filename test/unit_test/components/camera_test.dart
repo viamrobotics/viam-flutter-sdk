@@ -24,7 +24,7 @@ class FakeCamera extends Camera {
   @override
   Future<ViamImage> image({MimeType? mimeType}) async {
     if (mimeType == null) {
-      throw GrpcError.invalidArgument('invalid mimetype');
+      throw const GrpcError.invalidArgument('invalid mimetype');
     }
     return ViamImage([0, 0, 0], mimeType);
   }

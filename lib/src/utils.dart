@@ -25,7 +25,7 @@ extension ValueUtils on Value {
     if (hasStructValue()) return structValue.fields.map((key, value) => MapEntry(key, value.toPrimitive()));
 
     _logger.e('Value does not contain valid type');
-    throw GrpcError.invalidArgument('value does not contain valid type');
+    throw const GrpcError.invalidArgument('value does not contain valid type');
   }
 }
 
@@ -46,7 +46,7 @@ extension ListValueUtils<T> on List<T> {
       if (e == null) return Value()..nullValue = NullValue.NULL_VALUE;
 
       _logger.e('Error converting the List to a Value');
-      throw GrpcError.invalidArgument('List contains unsupported type');
+      throw const GrpcError.invalidArgument('List contains unsupported type');
     });
 
     return Value()..listValue = (ListValue()..values.addAll(values));
@@ -72,7 +72,7 @@ extension MapStructUtils on Map<String, dynamic> {
         result[entry.key] = Value()..nullValue = NullValue.NULL_VALUE;
       } else {
         _logger.e('Error converting the Map to a Struct');
-        throw GrpcError.invalidArgument('Unsupported type');
+        throw const GrpcError.invalidArgument('Unsupported type');
       }
     }
     return Struct()..fields.addAll(result);
