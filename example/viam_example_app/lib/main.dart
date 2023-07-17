@@ -91,8 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _loading = true;
     });
     final robotFut = RobotClient.atAddress(
-      'camera-main.w0wkyownnp.viam.cloud',
-      RobotClientOptions.withLocationSecret('7b2a4uupcvb7itom2avftyozcwxiv1iah1mgld8t3ubl98yu'),
+      '<URL>',
+      RobotClientOptions.withLocationSecret('<SECRET>'),
     );
 
     robotFut.then((value) {
