@@ -119,5 +119,6 @@ extension FilterUtils on Filter {
     if (end != null) {
       interval.end = Timestamp()..seconds = Int64((end.millisecondsSinceEpoch / 1000).floor());
     }
+    this.interval = interval;
   }
 }
