@@ -10,9 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  auth0_flutter: ^1.1.0
-  collection: ^1.16.0
-  fimber_io: ^0.7.0
   flutter_webrtc: ^0.9.26
   grpc: ^3.1.0
   protobuf: ^3.0.0
