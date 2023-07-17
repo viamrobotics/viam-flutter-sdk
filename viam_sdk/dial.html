@@ -61,7 +61,9 @@
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.3/grpc_connection_interface/ClientChannelBase-class.html">ClientChannelBase</a></span>&gt;</span></span>
 <span class="name ">dial</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="dial-param-address"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">address</span>, </span></li>
-<li><span class="parameter" id="dial-param-options"><span class="type-annotation"><a href="../viam_sdk/DialOptions-class.html">DialOptions</a>?</span> <span class="parameter-name">options</span></span></li>
+<li><span class="parameter" id="dial-param-options"><span class="type-annotation"><a href="../viam_sdk/DialOptions-class.html">DialOptions</a>?</span> <span class="parameter-name">options</span>, </span></li>
+<li><span class="parameter" id="dial-param-sessionCallback"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">sessionCallback</span>(<ol class="parameter-list"></ol>
+)</span></li>
 </ol>)
 
         
@@ -76,7 +78,7 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dial(String address, DialOptions? options) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dial(String address, DialOptions? options, String Function() sessionCallback) async {
   _logger.i(&#39;Connecting to Robot at $address&#39;);
   final opts = options ?? DialOptions();
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
@@ -84,9 +86,9 @@
     disableWebRtc = true;
   }
   if (disableWebRtc) {
-    return _dialDirectGrpc(address, opts);
+    return _dialDirectGrpc(address, opts, sessionCallback);
   }
-  return _dialWebRtc(address, opts);
+  return _dialWebRtc(address, opts, sessionCallback);
 }</code></pre>
 </section>
 
@@ -122,6 +124,7 @@
         <li><a href="../viam_sdk/CameraClient-class.html">CameraClient</a></li>
         <li><a href="../viam_sdk/CameraProperties-class.html">CameraProperties</a></li>
         <li><a href="../viam_sdk/CameraStreamView-class.html">CameraStreamView</a></li>
+        <li><a href="../viam_sdk/ClientChannelWithSessions-class.html">ClientChannelWithSessions</a></li>
         <li><a href="../viam_sdk/Credentials-class.html">Credentials</a></li>
         <li><a href="../viam_sdk/DialOptions-class.html">DialOptions</a></li>
         <li><a href="../viam_sdk/DialWebRtcOptions-class.html">DialWebRtcOptions</a></li>
