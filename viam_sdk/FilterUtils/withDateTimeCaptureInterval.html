@@ -60,8 +60,8 @@
       
 
 <span class="returntype"><a href="../../viam_protos.app.data/Filter-class.html">Filter</a></span>
-<span class="name ">withDateTimeCaptureInterval</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="withDateTimeCaptureInterval-param-start"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">start</span>, </span></li>
-<li><span class="parameter" id="withDateTimeCaptureInterval-param-end"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">end</span></span></li>
+<span class="name ">withDateTimeCaptureInterval</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="withDateTimeCaptureInterval-param-start">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">start</span>, </span></li>
+<li><span class="parameter" id="withDateTimeCaptureInterval-param-end"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">end</span>}</span></li>
 </ol>)
 
       
@@ -73,8 +73,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Filter withDateTimeCaptureInterval(DateTime start, DateTime end) {
-  setDateTimeCaptureInterval(start, end);
+  <pre class="language-dart"><code class="language-dart">Filter withDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
+  setDateTimeCaptureInterval(start: start, end: end);
   return this;
 }</code></pre>
 </section>

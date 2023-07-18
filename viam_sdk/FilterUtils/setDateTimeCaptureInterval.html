@@ -60,8 +60,8 @@
       
 
 <span class="returntype">void</span>
-<span class="name ">setDateTimeCaptureInterval</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setDateTimeCaptureInterval-param-start"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">start</span>, </span></li>
-<li><span class="parameter" id="setDateTimeCaptureInterval-param-end"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">end</span></span></li>
+<span class="name ">setDateTimeCaptureInterval</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setDateTimeCaptureInterval-param-start">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">start</span>, </span></li>
+<li><span class="parameter" id="setDateTimeCaptureInterval-param-end"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">end</span>}</span></li>
 </ol>)
 
       
@@ -73,10 +73,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void setDateTimeCaptureInterval(DateTime start, DateTime end) {
-  interval = CaptureInterval()
-    ..start = (Timestamp()..seconds = Int64((start.millisecondsSinceEpoch &#47; 1000).floor()))
-    ..end = (Timestamp()..seconds = Int64((end.millisecondsSinceEpoch &#47; 1000).floor()));
+  <pre class="language-dart"><code class="language-dart">void setDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
+  final interval = CaptureInterval();
+  if (start != null) {
+    interval.start = Timestamp()..seconds = Int64((start.millisecondsSinceEpoch &#47; 1000).floor());
+  }
+  if (end != null) {
+    interval.end = Timestamp()..seconds = Int64((end.millisecondsSinceEpoch &#47; 1000).floor());
+  }
+  this.interval = interval;
 }</code></pre>
 </section>
 
