@@ -106,14 +106,19 @@ class DataClient {
 }
 
 extension FilterUtils on Filter {
-  Filter withDateTimeCaptureInterval(DateTime start, DateTime end) {
-    setDateTimeCaptureInterval(start, end);
+  Filter withDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
+    setDateTimeCaptureInterval(start: start, end: end);
     return this;
   }
 
-  void setDateTimeCaptureInterval(DateTime start, DateTime end) {
-    interval = CaptureInterval()
-      ..start = (Timestamp()..seconds = Int64((start.millisecondsSinceEpoch / 1000).floor()))
-      ..end = (Timestamp()..seconds = Int64((end.millisecondsSinceEpoch / 1000).floor()));
+  void setDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
+    final interval = CaptureInterval();
+    if (start != null) {
+      interval.start = Timestamp()..seconds = Int64((start.millisecondsSinceEpoch / 1000).floor());
+    }
+    if (end != null) {
+      interval.end = Timestamp()..seconds = Int64((end.millisecondsSinceEpoch / 1000).floor());
+    }
+    this.interval = interval;
   }
 }
