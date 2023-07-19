@@ -107,14 +107,6 @@
   
 </dd>
 
-        <dt id="Authorizations">
-  <span class="name "><a href="../viam_protos.app.app/Authorizations-class.html">Authorizations</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
         <dt id="AuthorizedPermissions">
   <span class="name "><a href="../viam_protos.app.app/AuthorizedPermissions-class.html">AuthorizedPermissions</a></span> 
 
@@ -445,6 +437,22 @@
 
         <dt id="GetModuleResponse">
   <span class="name "><a href="../viam_protos.app.app/GetModuleResponse-class.html">GetModuleResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="GetOrganizationNamespaceAvailabilityRequest">
+  <span class="name "><a href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityRequest-class.html">GetOrganizationNamespaceAvailabilityRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="GetOrganizationNamespaceAvailabilityResponse">
+  <span class="name "><a href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityResponse-class.html">GetOrganizationNamespaceAvailabilityResponse</a></span> 
 
 </dt>
 <dd>
@@ -971,6 +979,14 @@
   
 </dd>
 
+        <dt id="StorageConfig">
+  <span class="name "><a href="../viam_protos.app.app/StorageConfig-class.html">StorageConfig</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
         <dt id="TailRobotPartLogsRequest">
   <span class="name "><a href="../viam_protos.app.app/TailRobotPartLogsRequest-class.html">TailRobotPartLogsRequest</a></span> 
 
@@ -1045,6 +1061,22 @@
 
         <dt id="UpdateModuleResponse">
   <span class="name "><a href="../viam_protos.app.app/UpdateModuleResponse-class.html">UpdateModuleResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="UpdateOrganizationInviteAuthorizationsRequest">
+  <span class="name "><a href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsRequest-class.html">UpdateOrganizationInviteAuthorizationsRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="UpdateOrganizationInviteAuthorizationsResponse">
+  <span class="name "><a href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsResponse-class.html">UpdateOrganizationInviteAuthorizationsResponse</a></span> 
 
 </dt>
 <dd>
@@ -1159,13 +1191,13 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;AddRoleRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;identity_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;identityId&#39;}, {&#39;1&#39; : &#…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddRoleRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;authorization&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.Authorization&#39;, …</code></span>
     </div>
 </dd>
 
         <dt id="AddRoleResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/AddRoleResponse$json-constant.html">AddRoleResponse$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
 
 </dt>
@@ -1174,7 +1206,7 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;AddRoleResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;authorization&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.Authorization&#39;,…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AddRoleResponse&#39;}</code></span>
     </div>
 </dd>
 
@@ -1190,21 +1222,6 @@
 
     <div>
       <span class="signature"><code>{&#39;1&#39; : &#39;Authorization&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;authorization_type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;authorizationType&#39;}, {&#3…</code></span>
-    </div>
-</dd>
-
-        <dt id="Authorizations$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/Authorizations$json-constant.html">Authorizations$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Authorizations&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;identity_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;identityId&#39;}, {&#39;1&#39; : &#…</code></span>
     </div>
 </dd>
 
@@ -1838,6 +1855,36 @@
     </div>
 </dd>
 
+        <dt id="GetOrganizationNamespaceAvailabilityRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityRequest$json-constant.html">GetOrganizationNamespaceAvailabilityRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetOrganizationNamespaceAvailabilityRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;public_namespace&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;p…</code></span>
+    </div>
+</dd>
+
+        <dt id="GetOrganizationNamespaceAvailabilityResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityResponse$json-constant.html">GetOrganizationNamespaceAvailabilityResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetOrganizationNamespaceAvailabilityResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;available&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;availab…</code></span>
+    </div>
+</dd>
+
         <dt id="GetOrganizationRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/GetOrganizationRequest$json-constant.html">GetOrganizationRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -2089,7 +2136,7 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;ListAuthorizationsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;resource_type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;resourceType&#39;}, {&…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ListAuthorizationsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;organizationId&#39;}…</code></span>
     </div>
 </dd>
 
@@ -2644,7 +2691,7 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveRoleRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;identity_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;identityId&#39;}, {&#39;1&#39; :…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;RemoveRoleRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;authorization&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.app.v1.Authorization&#39…</code></span>
     </div>
 </dd>
 
@@ -2813,6 +2860,21 @@
     </div>
 </dd>
 
+        <dt id="StorageConfig$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/StorageConfig$json-constant.html">StorageConfig$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StorageConfig&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;region&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;region&#39;}]}</code></span>
+    </div>
+</dd>
+
         <dt id="TailRobotPartLogsRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/TailRobotPartLogsRequest$json-constant.html">TailRobotPartLogsRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -2960,6 +3022,36 @@
 
     <div>
       <span class="signature"><code>{&#39;1&#39; : &#39;UpdateModuleResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;url&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;url&#39;}]}</code></span>
+    </div>
+</dd>
+
+        <dt id="UpdateOrganizationInviteAuthorizationsRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsRequest$json-constant.html">UpdateOrganizationInviteAuthorizationsRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;UpdateOrganizationInviteAuthorizationsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;organization_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;…</code></span>
+    </div>
+</dd>
+
+        <dt id="UpdateOrganizationInviteAuthorizationsResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsResponse$json-constant.html">UpdateOrganizationInviteAuthorizationsResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;UpdateOrganizationInviteAuthorizationsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;invite&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.ap…</code></span>
     </div>
 </dd>
 
@@ -3164,17 +3256,6 @@
 </dt>
 <dd>
   Descriptor for <code>Authorization</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="authorizationsDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.app.app/authorizationsDescriptor.html">authorizationsDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
-
-</dt>
-<dd>
-  Descriptor for <code>Authorizations</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -3637,6 +3718,28 @@
 </dt>
 <dd>
   Descriptor for <code>GetModuleResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="getOrganizationNamespaceAvailabilityRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/getOrganizationNamespaceAvailabilityRequestDescriptor.html">getOrganizationNamespaceAvailabilityRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>GetOrganizationNamespaceAvailabilityRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="getOrganizationNamespaceAvailabilityResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/getOrganizationNamespaceAvailabilityResponseDescriptor.html">getOrganizationNamespaceAvailabilityResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>GetOrganizationNamespaceAvailabilityResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -4345,6 +4448,17 @@
 
 </dd>
 
+        <dt id="storageConfigDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/storageConfigDescriptor.html">storageConfigDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>StorageConfig</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
         <dt id="tailRobotPartLogsRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.app.app/tailRobotPartLogsRequestDescriptor.html">tailRobotPartLogsRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
@@ -4451,6 +4565,28 @@
 </dt>
 <dd>
   Descriptor for <code>UpdateModuleResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="updateOrganizationInviteAuthorizationsRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/updateOrganizationInviteAuthorizationsRequestDescriptor.html">updateOrganizationInviteAuthorizationsRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>UpdateOrganizationInviteAuthorizationsRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="updateOrganizationInviteAuthorizationsResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.app/updateOrganizationInviteAuthorizationsResponseDescriptor.html">updateOrganizationInviteAuthorizationsResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>UpdateOrganizationInviteAuthorizationsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -4667,7 +4803,6 @@
         <li><a href="../viam_protos.app.app/AppServiceBase-class.html">AppServiceBase</a></li>
         <li><a href="../viam_protos.app.app/AppServiceClient-class.html">AppServiceClient</a></li>
         <li><a href="../viam_protos.app.app/Authorization-class.html">Authorization</a></li>
-        <li><a href="../viam_protos.app.app/Authorizations-class.html">Authorizations</a></li>
         <li><a href="../viam_protos.app.app/AuthorizedPermissions-class.html">AuthorizedPermissions</a></li>
         <li><a href="../viam_protos.app.app/CheckPermissionsRequest-class.html">CheckPermissionsRequest</a></li>
         <li><a href="../viam_protos.app.app/CheckPermissionsResponse-class.html">CheckPermissionsResponse</a></li>
@@ -4710,6 +4845,8 @@
         <li><a href="../viam_protos.app.app/GetLocationResponse-class.html">GetLocationResponse</a></li>
         <li><a href="../viam_protos.app.app/GetModuleRequest-class.html">GetModuleRequest</a></li>
         <li><a href="../viam_protos.app.app/GetModuleResponse-class.html">GetModuleResponse</a></li>
+        <li><a href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityRequest-class.html">GetOrganizationNamespaceAvailabilityRequest</a></li>
+        <li><a href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityResponse-class.html">GetOrganizationNamespaceAvailabilityResponse</a></li>
         <li><a href="../viam_protos.app.app/GetOrganizationRequest-class.html">GetOrganizationRequest</a></li>
         <li><a href="../viam_protos.app.app/GetOrganizationResponse-class.html">GetOrganizationResponse</a></li>
         <li><a href="../viam_protos.app.app/GetRobotPartHistoryRequest-class.html">GetRobotPartHistoryRequest</a></li>
@@ -4775,6 +4912,7 @@
         <li><a href="../viam_protos.app.app/SharedSecret_State-class.html">SharedSecret_State</a></li>
         <li><a href="../viam_protos.app.app/ShareLocationRequest-class.html">ShareLocationRequest</a></li>
         <li><a href="../viam_protos.app.app/ShareLocationResponse-class.html">ShareLocationResponse</a></li>
+        <li><a href="../viam_protos.app.app/StorageConfig-class.html">StorageConfig</a></li>
         <li><a href="../viam_protos.app.app/TailRobotPartLogsRequest-class.html">TailRobotPartLogsRequest</a></li>
         <li><a href="../viam_protos.app.app/TailRobotPartLogsResponse-class.html">TailRobotPartLogsResponse</a></li>
         <li><a href="../viam_protos.app.app/UnshareLocationRequest-class.html">UnshareLocationRequest</a></li>
@@ -4785,6 +4923,8 @@
         <li><a href="../viam_protos.app.app/UpdateLocationResponse-class.html">UpdateLocationResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateModuleRequest-class.html">UpdateModuleRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateModuleResponse-class.html">UpdateModuleResponse</a></li>
+        <li><a href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsRequest-class.html">UpdateOrganizationInviteAuthorizationsRequest</a></li>
+        <li><a href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsResponse-class.html">UpdateOrganizationInviteAuthorizationsResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateOrganizationRequest-class.html">UpdateOrganizationRequest</a></li>
         <li><a href="../viam_protos.app.app/UpdateOrganizationResponse-class.html">UpdateOrganizationResponse</a></li>
         <li><a href="../viam_protos.app.app/UpdateRobotPartRequest-class.html">UpdateRobotPartRequest</a></li>
@@ -4803,7 +4943,6 @@
         <li><a class="deprecated" href="../viam_protos.app.app/AddRoleRequest$json-constant.html">AddRoleRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/AddRoleResponse$json-constant.html">AddRoleResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/Authorization$json-constant.html">Authorization$json</a></li>
-        <li><a class="deprecated" href="../viam_protos.app.app/Authorizations$json-constant.html">Authorizations$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/AuthorizedPermissions$json-constant.html">AuthorizedPermissions$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CheckPermissionsRequest$json-constant.html">CheckPermissionsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/CheckPermissionsResponse$json-constant.html">CheckPermissionsResponse$json</a></li>
@@ -4846,6 +4985,8 @@
         <li><a class="deprecated" href="../viam_protos.app.app/GetLocationResponse$json-constant.html">GetLocationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetModuleRequest$json-constant.html">GetModuleRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetModuleResponse$json-constant.html">GetModuleResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityRequest$json-constant.html">GetOrganizationNamespaceAvailabilityRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationNamespaceAvailabilityResponse$json-constant.html">GetOrganizationNamespaceAvailabilityResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationRequest$json-constant.html">GetOrganizationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetOrganizationResponse$json-constant.html">GetOrganizationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/GetRobotPartHistoryRequest$json-constant.html">GetRobotPartHistoryRequest$json</a></li>
@@ -4911,6 +5052,7 @@
         <li><a class="deprecated" href="../viam_protos.app.app/SharedSecret_State$json-constant.html">SharedSecret_State$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ShareLocationRequest$json-constant.html">ShareLocationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/ShareLocationResponse$json-constant.html">ShareLocationResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/StorageConfig$json-constant.html">StorageConfig$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/TailRobotPartLogsRequest$json-constant.html">TailRobotPartLogsRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/TailRobotPartLogsResponse$json-constant.html">TailRobotPartLogsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UnshareLocationRequest$json-constant.html">UnshareLocationRequest$json</a></li>
@@ -4921,6 +5063,8 @@
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateLocationResponse$json-constant.html">UpdateLocationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateModuleRequest$json-constant.html">UpdateModuleRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateModuleResponse$json-constant.html">UpdateModuleResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsRequest$json-constant.html">UpdateOrganizationInviteAuthorizationsRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationInviteAuthorizationsResponse$json-constant.html">UpdateOrganizationInviteAuthorizationsResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationRequest$json-constant.html">UpdateOrganizationRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateOrganizationResponse$json-constant.html">UpdateOrganizationResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.app/UpdateRobotPartRequest$json-constant.html">UpdateRobotPartRequest$json</a></li>
@@ -4937,7 +5081,6 @@
         <li><a href="../viam_protos.app.app/addRoleRequestDescriptor.html">addRoleRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/addRoleResponseDescriptor.html">addRoleResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/authorizationDescriptor.html">authorizationDescriptor</a></li>
-        <li><a href="../viam_protos.app.app/authorizationsDescriptor.html">authorizationsDescriptor</a></li>
         <li><a href="../viam_protos.app.app/authorizedPermissionsDescriptor.html">authorizedPermissionsDescriptor</a></li>
         <li><a href="../viam_protos.app.app/checkPermissionsRequestDescriptor.html">checkPermissionsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/checkPermissionsResponseDescriptor.html">checkPermissionsResponseDescriptor</a></li>
@@ -4980,6 +5123,8 @@
         <li><a href="../viam_protos.app.app/getLocationResponseDescriptor.html">getLocationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getModuleRequestDescriptor.html">getModuleRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getModuleResponseDescriptor.html">getModuleResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getOrganizationNamespaceAvailabilityRequestDescriptor.html">getOrganizationNamespaceAvailabilityRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/getOrganizationNamespaceAvailabilityResponseDescriptor.html">getOrganizationNamespaceAvailabilityResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getOrganizationRequestDescriptor.html">getOrganizationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getOrganizationResponseDescriptor.html">getOrganizationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/getRobotPartHistoryRequestDescriptor.html">getRobotPartHistoryRequestDescriptor</a></li>
@@ -5044,6 +5189,7 @@
         <li><a href="../viam_protos.app.app/sharedSecretDescriptor.html">sharedSecretDescriptor</a></li>
         <li><a href="../viam_protos.app.app/shareLocationRequestDescriptor.html">shareLocationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/shareLocationResponseDescriptor.html">shareLocationResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/storageConfigDescriptor.html">storageConfigDescriptor</a></li>
         <li><a href="../viam_protos.app.app/tailRobotPartLogsRequestDescriptor.html">tailRobotPartLogsRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/tailRobotPartLogsResponseDescriptor.html">tailRobotPartLogsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/unshareLocationRequestDescriptor.html">unshareLocationRequestDescriptor</a></li>
@@ -5054,6 +5200,8 @@
         <li><a href="../viam_protos.app.app/updateLocationResponseDescriptor.html">updateLocationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateModuleRequestDescriptor.html">updateModuleRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateModuleResponseDescriptor.html">updateModuleResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/updateOrganizationInviteAuthorizationsRequestDescriptor.html">updateOrganizationInviteAuthorizationsRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.app/updateOrganizationInviteAuthorizationsResponseDescriptor.html">updateOrganizationInviteAuthorizationsResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateOrganizationRequestDescriptor.html">updateOrganizationRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateOrganizationResponseDescriptor.html">updateOrganizationResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.app/updateRobotPartRequestDescriptor.html">updateRobotPartRequestDescriptor</a></li>
