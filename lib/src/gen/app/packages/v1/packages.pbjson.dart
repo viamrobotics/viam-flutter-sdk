@@ -151,7 +151,7 @@ const GetPackageRequest$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
     {'1': 'include_url', '3': 3, '4': 1, '5': 8, '9': 0, '10': 'includeUrl', '17': true},
-    {'1': 'type', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'type', '17': true},
+    {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '9': 1, '10': 'type', '17': true},
     {'1': 'platform', '3': 5, '4': 1, '5': 9, '9': 2, '10': 'platform', '17': true},
   ],
   '8': [
@@ -164,9 +164,10 @@ const GetPackageRequest$json = {
 /// Descriptor for `GetPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPackageRequestDescriptor = $convert.base64Decode(
     'ChFHZXRQYWNrYWdlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSGAoHdmVyc2lvbhgCIAEoCVIHdm'
-    'Vyc2lvbhIkCgtpbmNsdWRlX3VybBgDIAEoCEgAUgppbmNsdWRlVXJsiAEBEhcKBHR5cGUYBCAB'
-    'KAlIAVIEdHlwZYgBARIfCghwbGF0Zm9ybRgFIAEoCUgCUghwbGF0Zm9ybYgBAUIOCgxfaW5jbH'
-    'VkZV91cmxCBwoFX3R5cGVCCwoJX3BsYXRmb3Jt');
+    'Vyc2lvbhIkCgtpbmNsdWRlX3VybBgDIAEoCEgAUgppbmNsdWRlVXJsiAEBEjoKBHR5cGUYBCAB'
+    'KA4yIS52aWFtLmFwcC5wYWNrYWdlcy52MS5QYWNrYWdlVHlwZUgBUgR0eXBliAEBEh8KCHBsYX'
+    'Rmb3JtGAUgASgJSAJSCHBsYXRmb3JtiAEBQg4KDF9pbmNsdWRlX3VybEIHCgVfdHlwZUILCglf'
+    'cGxhdGZvcm0=');
 
 @$core.Deprecated('Use getPackageResponseDescriptor instead')
 const GetPackageResponse$json = {

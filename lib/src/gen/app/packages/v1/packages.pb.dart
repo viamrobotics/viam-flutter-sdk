@@ -471,7 +471,7 @@ class GetPackageRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOB(3, _omitFieldNames ? '' : 'includeUrl')
-    ..aOS(4, _omitFieldNames ? '' : 'type')
+    ..e<PackageType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: PackageType.valueOf, enumValues: PackageType.values)
     ..aOS(5, _omitFieldNames ? '' : 'platform')
     ..hasRequiredFields = false
   ;
@@ -525,9 +525,9 @@ class GetPackageRequest extends $pb.GeneratedMessage {
   void clearIncludeUrl() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get type => $_getSZ(3);
+  PackageType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set type($core.String v) { $_setString(3, v); }
+  set type(PackageType v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)

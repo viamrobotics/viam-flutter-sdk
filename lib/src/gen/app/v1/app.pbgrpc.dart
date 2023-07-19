@@ -41,6 +41,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/GetOrganization',
       ($0.GetOrganizationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetOrganizationResponse.fromBuffer(value));
+  static final _$getOrganizationNamespaceAvailability = $grpc.ClientMethod<$0.GetOrganizationNamespaceAvailabilityRequest, $0.GetOrganizationNamespaceAvailabilityResponse>(
+      '/viam.app.v1.AppService/GetOrganizationNamespaceAvailability',
+      ($0.GetOrganizationNamespaceAvailabilityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetOrganizationNamespaceAvailabilityResponse.fromBuffer(value));
   static final _$updateOrganization = $grpc.ClientMethod<$0.UpdateOrganizationRequest, $0.UpdateOrganizationResponse>(
       '/viam.app.v1.AppService/UpdateOrganization',
       ($0.UpdateOrganizationRequest value) => value.writeToBuffer(),
@@ -57,6 +61,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/CreateOrganizationInvite',
       ($0.CreateOrganizationInviteRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.CreateOrganizationInviteResponse.fromBuffer(value));
+  static final _$updateOrganizationInviteAuthorizations = $grpc.ClientMethod<$0.UpdateOrganizationInviteAuthorizationsRequest, $0.UpdateOrganizationInviteAuthorizationsResponse>(
+      '/viam.app.v1.AppService/UpdateOrganizationInviteAuthorizations',
+      ($0.UpdateOrganizationInviteAuthorizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.UpdateOrganizationInviteAuthorizationsResponse.fromBuffer(value));
   static final _$deleteOrganizationMember = $grpc.ClientMethod<$0.DeleteOrganizationMemberRequest, $0.DeleteOrganizationMemberResponse>(
       '/viam.app.v1.AppService/DeleteOrganizationMember',
       ($0.DeleteOrganizationMemberRequest value) => value.writeToBuffer(),
@@ -264,6 +272,10 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getOrganization, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($0.GetOrganizationNamespaceAvailabilityRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOrganizationNamespaceAvailability, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.UpdateOrganizationResponse> updateOrganization($0.UpdateOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganization, request, options: options);
   }
@@ -278,6 +290,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.CreateOrganizationInviteResponse> createOrganizationInvite($0.CreateOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createOrganizationInvite, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($0.UpdateOrganizationInviteAuthorizationsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateOrganizationInviteAuthorizations, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.DeleteOrganizationMemberResponse> deleteOrganizationMember($0.DeleteOrganizationMemberRequest request, {$grpc.CallOptions? options}) {
@@ -501,6 +517,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetOrganizationRequest.fromBuffer(value),
         ($0.GetOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetOrganizationNamespaceAvailabilityRequest, $0.GetOrganizationNamespaceAvailabilityResponse>(
+        'GetOrganizationNamespaceAvailability',
+        getOrganizationNamespaceAvailability_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetOrganizationNamespaceAvailabilityRequest.fromBuffer(value),
+        ($0.GetOrganizationNamespaceAvailabilityResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UpdateOrganizationRequest, $0.UpdateOrganizationResponse>(
         'UpdateOrganization',
         updateOrganization_Pre,
@@ -529,6 +552,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CreateOrganizationInviteRequest.fromBuffer(value),
         ($0.CreateOrganizationInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateOrganizationInviteAuthorizationsRequest, $0.UpdateOrganizationInviteAuthorizationsResponse>(
+        'UpdateOrganizationInviteAuthorizations',
+        updateOrganizationInviteAuthorizations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UpdateOrganizationInviteAuthorizationsRequest.fromBuffer(value),
+        ($0.UpdateOrganizationInviteAuthorizationsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DeleteOrganizationMemberRequest, $0.DeleteOrganizationMemberResponse>(
         'DeleteOrganizationMember',
         deleteOrganizationMember_Pre,
@@ -866,6 +896,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return getOrganization(call, await request);
   }
 
+  $async.Future<$0.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability_Pre($grpc.ServiceCall call, $async.Future<$0.GetOrganizationNamespaceAvailabilityRequest> request) async {
+    return getOrganizationNamespaceAvailability(call, await request);
+  }
+
   $async.Future<$0.UpdateOrganizationResponse> updateOrganization_Pre($grpc.ServiceCall call, $async.Future<$0.UpdateOrganizationRequest> request) async {
     return updateOrganization(call, await request);
   }
@@ -880,6 +914,10 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$0.CreateOrganizationInviteResponse> createOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$0.CreateOrganizationInviteRequest> request) async {
     return createOrganizationInvite(call, await request);
+  }
+
+  $async.Future<$0.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$0.UpdateOrganizationInviteAuthorizationsRequest> request) async {
+    return updateOrganizationInviteAuthorizations(call, await request);
   }
 
   $async.Future<$0.DeleteOrganizationMemberResponse> deleteOrganizationMember_Pre($grpc.ServiceCall call, $async.Future<$0.DeleteOrganizationMemberRequest> request) async {
@@ -1063,10 +1101,12 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$0.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $0.ListOrganizationsRequest request);
   $async.Future<$0.ListOrganizationsByUserResponse> listOrganizationsByUser($grpc.ServiceCall call, $0.ListOrganizationsByUserRequest request);
   $async.Future<$0.GetOrganizationResponse> getOrganization($grpc.ServiceCall call, $0.GetOrganizationRequest request);
+  $async.Future<$0.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $0.GetOrganizationNamespaceAvailabilityRequest request);
   $async.Future<$0.UpdateOrganizationResponse> updateOrganization($grpc.ServiceCall call, $0.UpdateOrganizationRequest request);
   $async.Future<$0.DeleteOrganizationResponse> deleteOrganization($grpc.ServiceCall call, $0.DeleteOrganizationRequest request);
   $async.Future<$0.ListOrganizationMembersResponse> listOrganizationMembers($grpc.ServiceCall call, $0.ListOrganizationMembersRequest request);
   $async.Future<$0.CreateOrganizationInviteResponse> createOrganizationInvite($grpc.ServiceCall call, $0.CreateOrganizationInviteRequest request);
+  $async.Future<$0.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($grpc.ServiceCall call, $0.UpdateOrganizationInviteAuthorizationsRequest request);
   $async.Future<$0.DeleteOrganizationMemberResponse> deleteOrganizationMember($grpc.ServiceCall call, $0.DeleteOrganizationMemberRequest request);
   $async.Future<$0.DeleteOrganizationInviteResponse> deleteOrganizationInvite($grpc.ServiceCall call, $0.DeleteOrganizationInviteRequest request);
   $async.Future<$0.ResendOrganizationInviteResponse> resendOrganizationInvite($grpc.ServiceCall call, $0.ResendOrganizationInviteRequest request);

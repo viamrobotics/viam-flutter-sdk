@@ -13,6 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../common/v1/common.pb.dart' as $2;
+import 'camera.pbenum.dart';
+
+export 'camera.pbenum.dart';
+
 class GetImageRequest extends $pb.GeneratedMessage {
   factory GetImageRequest() => create();
   GetImageRequest._() : super();
@@ -115,6 +120,158 @@ class GetImageResponse extends $pb.GeneratedMessage {
   $core.bool hasImage() => $_has(1);
   @$pb.TagNumber(2)
   void clearImage() => clearField(2);
+}
+
+class GetImagesRequest extends $pb.GeneratedMessage {
+  factory GetImagesRequest() => create();
+  GetImagesRequest._() : super();
+  factory GetImagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetImagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetImagesRequest clone() => GetImagesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetImagesRequest copyWith(void Function(GetImagesRequest) updates) => super.copyWith((message) => updates(message as GetImagesRequest)) as GetImagesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetImagesRequest create() => GetImagesRequest._();
+  GetImagesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetImagesRequest> createRepeated() => $pb.PbList<GetImagesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetImagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImagesRequest>(create);
+  static GetImagesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+class GetImagesResponse extends $pb.GeneratedMessage {
+  factory GetImagesResponse() => create();
+  GetImagesResponse._() : super();
+  factory GetImagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetImagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..pc<Image>(1, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: Image.create)
+    ..aOM<$2.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $2.ResponseMetadata.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetImagesResponse clone() => GetImagesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetImagesResponse copyWith(void Function(GetImagesResponse) updates) => super.copyWith((message) => updates(message as GetImagesResponse)) as GetImagesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetImagesResponse create() => GetImagesResponse._();
+  GetImagesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetImagesResponse> createRepeated() => $pb.PbList<GetImagesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetImagesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImagesResponse>(create);
+  static GetImagesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Image> get images => $_getList(0);
+
+  @$pb.TagNumber(84260)
+  $2.ResponseMetadata get responseMetadata => $_getN(1);
+  @$pb.TagNumber(84260)
+  set responseMetadata($2.ResponseMetadata v) { setField(84260, v); }
+  @$pb.TagNumber(84260)
+  $core.bool hasResponseMetadata() => $_has(1);
+  @$pb.TagNumber(84260)
+  void clearResponseMetadata() => clearField(84260);
+  @$pb.TagNumber(84260)
+  $2.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
+}
+
+class Image extends $pb.GeneratedMessage {
+  factory Image() => create();
+  Image._() : super();
+  factory Image.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Image.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Image', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceName')
+    ..e<Format>(2, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: Format.FORMAT_UNSPECIFIED, valueOf: Format.valueOf, enumValues: Format.values)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'image', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Image clone() => Image()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Image copyWith(void Function(Image) updates) => super.copyWith((message) => updates(message as Image)) as Image;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Image create() => Image._();
+  Image createEmptyInstance() => create();
+  static $pb.PbList<Image> createRepeated() => $pb.PbList<Image>();
+  @$core.pragma('dart2js:noInline')
+  static Image getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Image>(create);
+  static Image? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSourceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  Format get format => $_getN(1);
+  @$pb.TagNumber(2)
+  set format(Format v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFormat() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFormat() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get image => $_getN(2);
+  @$pb.TagNumber(3)
+  set image($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasImage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearImage() => clearField(3);
 }
 
 class RenderFrameRequest extends $pb.GeneratedMessage {

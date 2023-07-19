@@ -1,7 +1,7 @@
-class ViamConnectionLostError {
+class ConnectionLostError {
   final String? message;
 
-  const ViamConnectionLostError([this.message]);
+  const ConnectionLostError([this.message]);
 
   @override
   String toString() => message ?? 'ConnectionLostError';

@@ -8,11 +8,11 @@ import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:logger/logger.dart';
 import 'package:viam_sdk/src/robot/sessions_client.dart';
 
-import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import '../gen/proto/rpc/v1/auth.pb.dart' as pb;
 import '../gen/proto/rpc/v1/auth.pbgrpc.dart';
 import '../gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart';
 import '../utils.dart';
+import 'web_rtc/web_rtc_client.dart';
 
 final _logger = Logger();
 

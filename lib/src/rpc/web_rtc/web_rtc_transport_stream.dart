@@ -5,8 +5,8 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../../gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
-import '../../errors/model/viam_connection_lost_error.dart';
+import '../../errors.dart';
+import '../../gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
 import 'web_rtc_client.dart';
 
 const _grpcStatusKey = 'grpc-status';
@@ -63,7 +63,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
       if (connectionState == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
           connectionState == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
         onRequestFailure(
-          const ViamConnectionLostError('RTCPeerConnection lost'),
+          const ConnectionLostError('RTCPeerConnection lost'),
           StackTrace.current,
         );
         return;

@@ -4,7 +4,6 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 import 'package:viam_sdk/src/robot/sessions_client.dart';
 
-import '../domain/web_rtc/web_rtc_client/web_rtc_client.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart';
 import '../media/stream/client.dart';
@@ -12,7 +11,7 @@ import '../resource/base.dart';
 import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
-import '../viam_sdk.dart';
+import '../rpc/web_rtc/web_rtc_client.dart';
 
 Logger _logger = Logger();
 
@@ -68,15 +67,6 @@ class RobotClient {
     client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
     unawaited(client._checkConnection(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval));
-    return client;
-  }
-
-  @Deprecated('This function will be removed prior to beta launch')
-  static Future<RobotClient> withViam(Viam viam) async {
-    final client = RobotClient._();
-    client._channel = viam.channel;
-    client._client = RobotServiceClient(client._channel);
-    await client.refresh();
     return client;
   }
 

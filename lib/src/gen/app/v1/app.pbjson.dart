@@ -128,6 +128,7 @@ const Organization$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
     {'1': 'public_namespace', '3': 4, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'default_region', '3': 5, '4': 1, '5': 9, '10': 'defaultRegion'},
   ],
 };
 
@@ -135,7 +136,8 @@ const Organization$json = {
 final $typed_data.Uint8List organizationDescriptor = $convert.base64Decode(
     'CgxPcmdhbml6YXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSOQoKY3'
     'JlYXRlZF9vbhgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbhIp'
-    'ChBwdWJsaWNfbmFtZXNwYWNlGAQgASgJUg9wdWJsaWNOYW1lc3BhY2U=');
+    'ChBwdWJsaWNfbmFtZXNwYWNlGAQgASgJUg9wdWJsaWNOYW1lc3BhY2USJQoOZGVmYXVsdF9yZW'
+    'dpb24YBSABKAlSDWRlZmF1bHRSZWdpb24=');
 
 @$core.Deprecated('Use organizationMemberDescriptor instead')
 const OrganizationMember$json = {
@@ -235,24 +237,54 @@ final $typed_data.Uint8List getOrganizationResponseDescriptor = $convert.base64D
     'ChdHZXRPcmdhbml6YXRpb25SZXNwb25zZRI9Cgxvcmdhbml6YXRpb24YASABKAsyGS52aWFtLm'
     'FwcC52MS5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbg==');
 
+@$core.Deprecated('Use getOrganizationNamespaceAvailabilityRequestDescriptor instead')
+const GetOrganizationNamespaceAvailabilityRequest$json = {
+  '1': 'GetOrganizationNamespaceAvailabilityRequest',
+  '2': [
+    {'1': 'public_namespace', '3': 1, '4': 1, '5': 9, '10': 'publicNamespace'},
+  ],
+};
+
+/// Descriptor for `GetOrganizationNamespaceAvailabilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOrganizationNamespaceAvailabilityRequestDescriptor = $convert.base64Decode(
+    'CitHZXRPcmdhbml6YXRpb25OYW1lc3BhY2VBdmFpbGFiaWxpdHlSZXF1ZXN0EikKEHB1YmxpY1'
+    '9uYW1lc3BhY2UYASABKAlSD3B1YmxpY05hbWVzcGFjZQ==');
+
+@$core.Deprecated('Use getOrganizationNamespaceAvailabilityResponseDescriptor instead')
+const GetOrganizationNamespaceAvailabilityResponse$json = {
+  '1': 'GetOrganizationNamespaceAvailabilityResponse',
+  '2': [
+    {'1': 'available', '3': 1, '4': 1, '5': 8, '10': 'available'},
+  ],
+};
+
+/// Descriptor for `GetOrganizationNamespaceAvailabilityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOrganizationNamespaceAvailabilityResponseDescriptor = $convert.base64Decode(
+    'CixHZXRPcmdhbml6YXRpb25OYW1lc3BhY2VBdmFpbGFiaWxpdHlSZXNwb25zZRIcCglhdmFpbG'
+    'FibGUYASABKAhSCWF2YWlsYWJsZQ==');
+
 @$core.Deprecated('Use updateOrganizationRequestDescriptor instead')
 const UpdateOrganizationRequest$json = {
   '1': 'UpdateOrganizationRequest',
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'public_namespace', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'publicNamespace', '17': true},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    {'1': 'public_namespace', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'publicNamespace', '17': true},
+    {'1': 'region', '3': 4, '4': 1, '5': 9, '9': 2, '10': 'region', '17': true},
   ],
   '8': [
+    {'1': '_name'},
     {'1': '_public_namespace'},
+    {'1': '_region'},
   ],
 };
 
 /// Descriptor for `UpdateOrganizationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateOrganizationRequestDescriptor = $convert.base64Decode(
     'ChlVcGRhdGVPcmdhbml6YXRpb25SZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
-    'JnYW5pemF0aW9uSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIuChBwdWJsaWNfbmFtZXNwYWNlGAMg'
-    'ASgJSABSD3B1YmxpY05hbWVzcGFjZYgBAUITChFfcHVibGljX25hbWVzcGFjZQ==');
+    'JnYW5pemF0aW9uSWQSFwoEbmFtZRgCIAEoCUgAUgRuYW1liAEBEi4KEHB1YmxpY19uYW1lc3Bh'
+    'Y2UYAyABKAlIAVIPcHVibGljTmFtZXNwYWNliAEBEhsKBnJlZ2lvbhgEIAEoCUgCUgZyZWdpb2'
+    '6IAQFCBwoFX25hbWVCEwoRX3B1YmxpY19uYW1lc3BhY2VCCQoHX3JlZ2lvbg==');
 
 @$core.Deprecated('Use updateOrganizationResponseDescriptor instead')
 const UpdateOrganizationResponse$json = {
@@ -347,6 +379,38 @@ const CreateOrganizationInviteResponse$json = {
 final $typed_data.Uint8List createOrganizationInviteResponseDescriptor = $convert.base64Decode(
     'CiBDcmVhdGVPcmdhbml6YXRpb25JbnZpdGVSZXNwb25zZRI3CgZpbnZpdGUYASABKAsyHy52aW'
     'FtLmFwcC52MS5Pcmdhbml6YXRpb25JbnZpdGVSBmludml0ZQ==');
+
+@$core.Deprecated('Use updateOrganizationInviteAuthorizationsRequestDescriptor instead')
+const UpdateOrganizationInviteAuthorizationsRequest$json = {
+  '1': 'UpdateOrganizationInviteAuthorizationsRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'add_authorizations', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'addAuthorizations'},
+    {'1': 'remove_authorizations', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'removeAuthorizations'},
+  ],
+};
+
+/// Descriptor for `UpdateOrganizationInviteAuthorizationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOrganizationInviteAuthorizationsRequestDescriptor = $convert.base64Decode(
+    'Ci1VcGRhdGVPcmdhbml6YXRpb25JbnZpdGVBdXRob3JpemF0aW9uc1JlcXVlc3QSJwoPb3JnYW'
+    '5pemF0aW9uX2lkGAEgASgJUg5vcmdhbml6YXRpb25JZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwS'
+    'SQoSYWRkX2F1dGhvcml6YXRpb25zGAMgAygLMhoudmlhbS5hcHAudjEuQXV0aG9yaXphdGlvbl'
+    'IRYWRkQXV0aG9yaXphdGlvbnMSTwoVcmVtb3ZlX2F1dGhvcml6YXRpb25zGAQgAygLMhoudmlh'
+    'bS5hcHAudjEuQXV0aG9yaXphdGlvblIUcmVtb3ZlQXV0aG9yaXphdGlvbnM=');
+
+@$core.Deprecated('Use updateOrganizationInviteAuthorizationsResponseDescriptor instead')
+const UpdateOrganizationInviteAuthorizationsResponse$json = {
+  '1': 'UpdateOrganizationInviteAuthorizationsResponse',
+  '2': [
+    {'1': 'invite', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.OrganizationInvite', '10': 'invite'},
+  ],
+};
+
+/// Descriptor for `UpdateOrganizationInviteAuthorizationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOrganizationInviteAuthorizationsResponseDescriptor = $convert.base64Decode(
+    'Ci5VcGRhdGVPcmdhbml6YXRpb25JbnZpdGVBdXRob3JpemF0aW9uc1Jlc3BvbnNlEjcKBmludm'
+    'l0ZRgBIAEoCzIfLnZpYW0uYXBwLnYxLk9yZ2FuaXphdGlvbkludml0ZVIGaW52aXRl');
 
 @$core.Deprecated('Use deleteOrganizationInviteRequestDescriptor instead')
 const DeleteOrganizationInviteRequest$json = {
@@ -458,6 +522,18 @@ final $typed_data.Uint8List locationAuthDescriptor = $convert.base64Decode(
     'lkGAIgASgJUgpsb2NhdGlvbklkEjMKB3NlY3JldHMYAyADKAsyGS52aWFtLmFwcC52MS5TaGFy'
     'ZWRTZWNyZXRSB3NlY3JldHM=');
 
+@$core.Deprecated('Use storageConfigDescriptor instead')
+const StorageConfig$json = {
+  '1': 'StorageConfig',
+  '2': [
+    {'1': 'region', '3': 1, '4': 1, '5': 9, '10': 'region'},
+  ],
+};
+
+/// Descriptor for `StorageConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List storageConfigDescriptor = $convert.base64Decode(
+    'Cg1TdG9yYWdlQ29uZmlnEhYKBnJlZ2lvbhgBIAEoCVIGcmVnaW9u');
+
 @$core.Deprecated('Use locationDescriptor instead')
 const Location$json = {
   '1': 'Location',
@@ -469,6 +545,7 @@ const Location$json = {
     {'1': 'organizations', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.LocationOrganization', '10': 'organizations'},
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
     {'1': 'robot_count', '3': 7, '4': 1, '5': 5, '10': 'robotCount'},
+    {'1': 'config', '3': 8, '4': 1, '5': 11, '6': '.viam.app.v1.StorageConfig', '10': 'config'},
   ],
 };
 
@@ -479,7 +556,8 @@ final $typed_data.Uint8List locationDescriptor = $convert.base64Decode(
     'YW0uYXBwLnYxLkxvY2F0aW9uQXV0aFIEYXV0aBJHCg1vcmdhbml6YXRpb25zGAYgAygLMiEudm'
     'lhbS5hcHAudjEuTG9jYXRpb25Pcmdhbml6YXRpb25SDW9yZ2FuaXphdGlvbnMSOQoKY3JlYXRl'
     'ZF9vbhgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbhIfCgtyb2'
-    'JvdF9jb3VudBgHIAEoBVIKcm9ib3RDb3VudA==');
+    'JvdF9jb3VudBgHIAEoBVIKcm9ib3RDb3VudBIyCgZjb25maWcYCCABKAsyGi52aWFtLmFwcC52'
+    'MS5TdG9yYWdlQ29uZmlnUgZjb25maWc=');
 
 @$core.Deprecated('Use sharedSecretDescriptor instead')
 const SharedSecret$json = {
@@ -577,10 +655,12 @@ const UpdateLocationRequest$json = {
     {'1': 'location_id', '3': 1, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
     {'1': 'parent_location_id', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'parentLocationId', '17': true},
+    {'1': 'region', '3': 4, '4': 1, '5': 9, '9': 2, '10': 'region', '17': true},
   ],
   '8': [
     {'1': '_name'},
     {'1': '_parent_location_id'},
+    {'1': '_region'},
   ],
 };
 
@@ -588,7 +668,8 @@ const UpdateLocationRequest$json = {
 final $typed_data.Uint8List updateLocationRequestDescriptor = $convert.base64Decode(
     'ChVVcGRhdGVMb2NhdGlvblJlcXVlc3QSHwoLbG9jYXRpb25faWQYASABKAlSCmxvY2F0aW9uSW'
     'QSFwoEbmFtZRgCIAEoCUgAUgRuYW1liAEBEjEKEnBhcmVudF9sb2NhdGlvbl9pZBgDIAEoCUgB'
-    'UhBwYXJlbnRMb2NhdGlvbklkiAEBQgcKBV9uYW1lQhUKE19wYXJlbnRfbG9jYXRpb25faWQ=');
+    'UhBwYXJlbnRMb2NhdGlvbklkiAEBEhsKBnJlZ2lvbhgEIAEoCUgCUgZyZWdpb26IAQFCBwoFX2'
+    '5hbWVCFQoTX3BhcmVudF9sb2NhdGlvbl9pZEIJCgdfcmVnaW9u');
 
 @$core.Deprecated('Use updateLocationResponseDescriptor instead')
 const UpdateLocationResponse$json = {
@@ -1447,6 +1528,8 @@ const Authorization$json = {
     {'1': 'authorization_id', '3': 2, '4': 1, '5': 9, '10': 'authorizationId'},
     {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
     {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
+    {'1': 'identity_id', '3': 5, '4': 1, '5': 9, '10': 'identityId'},
+    {'1': 'organization_id', '3': 6, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
 
@@ -1455,58 +1538,43 @@ final $typed_data.Uint8List authorizationDescriptor = $convert.base64Decode(
     'Cg1BdXRob3JpemF0aW9uEi0KEmF1dGhvcml6YXRpb25fdHlwZRgBIAEoCVIRYXV0aG9yaXphdG'
     'lvblR5cGUSKQoQYXV0aG9yaXphdGlvbl9pZBgCIAEoCVIPYXV0aG9yaXphdGlvbklkEiMKDXJl'
     'c291cmNlX3R5cGUYAyABKAlSDHJlc291cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgEIAEoCVIKcm'
-    'Vzb3VyY2VJZA==');
+    'Vzb3VyY2VJZBIfCgtpZGVudGl0eV9pZBgFIAEoCVIKaWRlbnRpdHlJZBInCg9vcmdhbml6YXRp'
+    'b25faWQYBiABKAlSDm9yZ2FuaXphdGlvbklk');
 
 @$core.Deprecated('Use addRoleRequestDescriptor instead')
 const AddRoleRequest$json = {
   '1': 'AddRoleRequest',
   '2': [
-    {'1': 'identity_id', '3': 1, '4': 1, '5': 9, '10': 'identityId'},
-    {'1': 'role_id', '3': 2, '4': 1, '5': 9, '10': 'roleId'},
-    {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
-    {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
-    {'1': 'organization_id', '3': 5, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'authorization', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorization'},
   ],
 };
 
 /// Descriptor for `AddRoleRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addRoleRequestDescriptor = $convert.base64Decode(
-    'Cg5BZGRSb2xlUmVxdWVzdBIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBIXCgdyb2'
-    'xlX2lkGAIgASgJUgZyb2xlSWQSIwoNcmVzb3VyY2VfdHlwZRgDIAEoCVIMcmVzb3VyY2VUeXBl'
-    'Eh8KC3Jlc291cmNlX2lkGAQgASgJUgpyZXNvdXJjZUlkEicKD29yZ2FuaXphdGlvbl9pZBgFIA'
-    'EoCVIOb3JnYW5pemF0aW9uSWQ=');
+    'Cg5BZGRSb2xlUmVxdWVzdBJACg1hdXRob3JpemF0aW9uGAEgASgLMhoudmlhbS5hcHAudjEuQX'
+    'V0aG9yaXphdGlvblINYXV0aG9yaXphdGlvbg==');
 
 @$core.Deprecated('Use addRoleResponseDescriptor instead')
 const AddRoleResponse$json = {
   '1': 'AddRoleResponse',
-  '2': [
-    {'1': 'authorization', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorization'},
-  ],
 };
 
 /// Descriptor for `AddRoleResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addRoleResponseDescriptor = $convert.base64Decode(
-    'Cg9BZGRSb2xlUmVzcG9uc2USQAoNYXV0aG9yaXphdGlvbhgBIAEoCzIaLnZpYW0uYXBwLnYxLk'
-    'F1dGhvcml6YXRpb25SDWF1dGhvcml6YXRpb24=');
+    'Cg9BZGRSb2xlUmVzcG9uc2U=');
 
 @$core.Deprecated('Use removeRoleRequestDescriptor instead')
 const RemoveRoleRequest$json = {
   '1': 'RemoveRoleRequest',
   '2': [
-    {'1': 'identity_id', '3': 1, '4': 1, '5': 9, '10': 'identityId'},
-    {'1': 'role_id', '3': 2, '4': 1, '5': 9, '10': 'roleId'},
-    {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
-    {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
-    {'1': 'organization_id', '3': 5, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'authorization', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorization'},
   ],
 };
 
 /// Descriptor for `RemoveRoleRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeRoleRequestDescriptor = $convert.base64Decode(
-    'ChFSZW1vdmVSb2xlUmVxdWVzdBIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBIXCg'
-    'dyb2xlX2lkGAIgASgJUgZyb2xlSWQSIwoNcmVzb3VyY2VfdHlwZRgDIAEoCVIMcmVzb3VyY2VU'
-    'eXBlEh8KC3Jlc291cmNlX2lkGAQgASgJUgpyZXNvdXJjZUlkEicKD29yZ2FuaXphdGlvbl9pZB'
-    'gFIAEoCVIOb3JnYW5pemF0aW9uSWQ=');
+    'ChFSZW1vdmVSb2xlUmVxdWVzdBJACg1hdXRob3JpemF0aW9uGAEgASgLMhoudmlhbS5hcHAudj'
+    'EuQXV0aG9yaXphdGlvblINYXV0aG9yaXphdGlvbg==');
 
 @$core.Deprecated('Use removeRoleResponseDescriptor instead')
 const RemoveRoleResponse$json = {
@@ -1521,45 +1589,28 @@ final $typed_data.Uint8List removeRoleResponseDescriptor = $convert.base64Decode
 const ListAuthorizationsRequest$json = {
   '1': 'ListAuthorizationsRequest',
   '2': [
-    {'1': 'resource_type', '3': 1, '4': 1, '5': 9, '10': 'resourceType'},
-    {'1': 'resource_id', '3': 2, '4': 1, '5': 9, '10': 'resourceId'},
-    {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'resource_ids', '3': 2, '4': 3, '5': 9, '10': 'resourceIds'},
   ],
 };
 
 /// Descriptor for `ListAuthorizationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAuthorizationsRequestDescriptor = $convert.base64Decode(
-    'ChlMaXN0QXV0aG9yaXphdGlvbnNSZXF1ZXN0EiMKDXJlc291cmNlX3R5cGUYASABKAlSDHJlc2'
-    '91cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgCIAEoCVIKcmVzb3VyY2VJZBInCg9vcmdhbml6YXRp'
-    'b25faWQYAyABKAlSDm9yZ2FuaXphdGlvbklk');
-
-@$core.Deprecated('Use authorizationsDescriptor instead')
-const Authorizations$json = {
-  '1': 'Authorizations',
-  '2': [
-    {'1': 'identity_id', '3': 1, '4': 1, '5': 9, '10': 'identityId'},
-    {'1': 'authorizations', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
-  ],
-};
-
-/// Descriptor for `Authorizations`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authorizationsDescriptor = $convert.base64Decode(
-    'Cg5BdXRob3JpemF0aW9ucxIfCgtpZGVudGl0eV9pZBgBIAEoCVIKaWRlbnRpdHlJZBJCCg5hdX'
-    'Rob3JpemF0aW9ucxgCIAMoCzIaLnZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25SDmF1dGhvcml6'
-    'YXRpb25z');
+    'ChlMaXN0QXV0aG9yaXphdGlvbnNSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
+    'JnYW5pemF0aW9uSWQSIQoMcmVzb3VyY2VfaWRzGAIgAygJUgtyZXNvdXJjZUlkcw==');
 
 @$core.Deprecated('Use listAuthorizationsResponseDescriptor instead')
 const ListAuthorizationsResponse$json = {
   '1': 'ListAuthorizationsResponse',
   '2': [
-    {'1': 'authorizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Authorizations', '10': 'authorizations'},
+    {'1': 'authorizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
   ],
 };
 
 /// Descriptor for `ListAuthorizationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAuthorizationsResponseDescriptor = $convert.base64Decode(
-    'ChpMaXN0QXV0aG9yaXphdGlvbnNSZXNwb25zZRJDCg5hdXRob3JpemF0aW9ucxgBIAMoCzIbLn'
-    'ZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25zUg5hdXRob3JpemF0aW9ucw==');
+    'ChpMaXN0QXV0aG9yaXphdGlvbnNSZXNwb25zZRJCCg5hdXRob3JpemF0aW9ucxgBIAMoCzIaLn'
+    'ZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25SDmF1dGhvcml6YXRpb25z');
 
 @$core.Deprecated('Use checkPermissionsRequestDescriptor instead')
 const CheckPermissionsRequest$json = {
