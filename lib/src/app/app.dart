@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../gen/app/v1/app.pbgrpc.dart';
 
 class AppClient {
@@ -51,5 +53,14 @@ class AppClient {
     final getRobotPartRequest = GetRobotPartRequest()..id = partId;
     final response = await _client.getRobotPart(getRobotPartRequest);
     return response.part;
+  }
+
+  Stream<List<LogEntry>> tailLogs(RobotPart part, {bool errorsOnly = false}) {
+    final request = TailRobotPartLogsRequest()
+      ..id = part.id
+      ..errorsOnly = errorsOnly;
+    final response = _client.tailRobotPartLogs(request);
+    final stream = response.map((event) => event.logs);
+    return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
 }
