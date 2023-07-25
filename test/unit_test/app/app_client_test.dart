@@ -104,5 +104,18 @@ void main() {
       final response = await appClient.getRobotPart('robot part');
       expect(response, equals(expected));
     });
+
+    test('tailLogs', () async {
+      final expected = LogEntry()..message = 'My log entry';
+      final response = TailRobotPartLogsResponse()..logs.add(expected);
+      when(serviceClient.tailRobotPartLogs(any)).thenAnswer((_) => MockResponseStream.list([response]));
+      final stream = appClient.tailLogs(RobotPart());
+      expect(
+          stream,
+          emitsInOrder([
+            emits([expected]),
+            emitsDone
+          ]));
+    });
   });
 }
