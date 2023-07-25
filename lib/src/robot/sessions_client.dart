@@ -55,8 +55,8 @@ class SessionsClient implements ResourceRPCClient {
         // We send heartbeats slightly faster than the interval window to
         // ensure that we don't fall outside of it and expire the session.
         _heartbeatInterval = Duration(
-          seconds: response.heartbeatWindow.seconds.toInt() ~/ 5,
-          microseconds: response.heartbeatWindow.nanos ~/ 5,
+          seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
+          microseconds: response.heartbeatWindow.nanos ~/ 1.8,
         );
 
         _heartbeatTask();
