@@ -59,7 +59,7 @@
 <h2 id="instability-notice">(In)stability Notice</h2>
 <blockquote>
 <p><strong>Warning</strong>
-This is an alpha release of the Viam Flutter SDK. The only guarantee is that there <strong>WILL</strong> be breaking changes to the API. We will enumerate these changes in the release notes.</p>
+This is a beta release of the Viam Flutter SDK. No guarantees are made to the stability of the API. All changes will be enumerated in the release notes.</p>
 </blockquote>
 <h2 id="getting-started">Getting started</h2>
 <p>Make sure your project meets the minimum requirements:</p>
@@ -67,19 +67,8 @@ This is an alpha release of the Viam Flutter SDK. The only guarantee is that the
 <li>Minimum iOS target: 13.0</li>
 <li>Minimum Android SDK: 23</li>
 </ul>
-<p>As this SDK is still in alpha, it is not yet published to <a href="https://pub.dev">pub.dev</a>. While we have plans to publish there soon, for now you should install the SDK directly from <a href="https://github.com/viamrobotics/viam-flutter-sdk">GitHub</a>:</p>
-<pre class="language-yaml"><code class="language-yaml"># pubspec.yaml
-
-...
-
-dependencies:
-  ...
-  viam_sdk:
-    git: 
-      url: https://github.com/viamrobotics/viam-flutter-sdk.git
-      ref: main
-</code></pre>
-<p>Don't forget to run <code>flutter pub get</code> after updating your <code>pubspec.yaml</code></p>
+<h2 id="installation">Installation</h2>
+<p><code>flutter pub add viam_sdk</code></p>
 <h2 id="usage">Usage</h2>
 <p>You can use the Viam SDK to connect to an existing robot (to create a robot, view the <a href="https://docs.viam.com/">documentation</a> or <a href="https://docs.viam.com/try-viam/">try Viam</a>).</p>
 <pre class="language-dart"><code class="language-dart">import 'package:viam_sdk/viam_sdk.dart';
