@@ -1,4 +1,5 @@
 # Viam Flutter SDK
+
 Build and connect to robots with Flutter
 
 ![build status](https://img.shields.io/github/actions/workflow/status/viamrobotics/viam-flutter-sdk/test.yaml?branch=main)
@@ -7,32 +8,21 @@ Build and connect to robots with Flutter
 ## (In)stability Notice
 
 > **Warning**
-> This is an alpha release of the Viam Flutter SDK. The only guarantee is that there **WILL** be breaking changes to the API. We will enumerate these changes in the release notes.
+> This is a beta release of the Viam Flutter SDK. No guarantees are made to the stability of the API. All changes will be enumerated in the release notes.
 
 ## Getting started
+
 Make sure your project meets the minimum requirements:
-* Minimum iOS target: 13.0
-* Minimum Android SDK: 23
 
-As this SDK is still in alpha, it is not yet published to [pub.dev](https://pub.dev). While we have plans to publish there soon, for now you should install the SDK directly from [GitHub](https://github.com/viamrobotics/viam-flutter-sdk):
+- Minimum iOS target: 13.0
+- Minimum Android SDK: 23
 
-```yaml
-# pubspec.yaml
+## Installation
 
-...
-
-dependencies:
-  ...
-  viam_sdk:
-    git: 
-      url: https://github.com/viamrobotics/viam-flutter-sdk.git
-      ref: main
-```
-
-Don't forget to run `flutter pub get` after updating your `pubspec.yaml`
-
+`flutter pub add viam_sdk`
 
 ## Usage
+
 You can use the Viam SDK to connect to an existing robot (to create a robot, view the [documentation](https://docs.viam.com/) or [try Viam](https://docs.viam.com/try-viam/)).
 
 ```dart
@@ -52,9 +42,11 @@ print(await movementSensor.readings())
 ```
 
 ## Example app
+
 View the sample app in the [`/example`](https://github.com/viamrobotics/viam-flutter-sdk/blob/main/example/) directory to see a more in-depth example.
 
 ## License
+
 Copyright 2021-2023 Viam Inc.
 
 Apache 2.0 - See [LICENSE](https://github.com/viamrobotics/viam-python-sdk/blob/main/LICENSE) file
