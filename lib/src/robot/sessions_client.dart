@@ -65,6 +65,7 @@ class SessionsClient implements ResourceRPCClient {
       });
     } catch (e) {
       _logger.e('error starting session: $e');
+      reset();
     }
 
     return '';
@@ -74,22 +75,23 @@ class SessionsClient implements ResourceRPCClient {
     _logger.d('resetting session');
     _currentId = '';
     _supported = false;
+    metadata();
   }
 
   Future<void> _heartbeatTask() async {
     while (_supported) {
-      _heartbeatTick();
+      await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
     }
   }
 
-  void _heartbeatTick() {
+  Future<void> _heartbeatTick() async {
     if (!_supported) return;
 
     final request = SendSessionHeartbeatRequest()..id = _currentId;
 
     try {
-      client.sendSessionHeartbeat(request);
+      await client.sendSessionHeartbeat(request);
     } on GrpcError catch (e) {
       _logger.d('Session terminated: $e');
       reset();
