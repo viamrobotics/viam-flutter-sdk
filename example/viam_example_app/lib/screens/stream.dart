@@ -1,10 +1,8 @@
-import 'dart:async' as async;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:image/image.dart' as img;
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -22,12 +20,6 @@ class StreamScreen extends StatefulWidget {
 }
 
 class _StreamScreenState extends State<StreamScreen> {
-  // Stream
-  bool _ready = false;
-  bool _loading = false;
-  late RTCVideoRenderer _renderer;
-  late async.StreamSubscription<MediaStream> _streamSub;
-
   // Single frame
   ByteData? imageBytes;
   bool _imgLoaded = false;
@@ -73,35 +65,6 @@ class _StreamScreenState extends State<StreamScreen> {
     return uiImage;
   }
 
-  Future<void> _startStream() async {
-    if (_ready) {
-      return;
-    }
-    setState(() {
-      _loading = true;
-    });
-    _renderer = RTCVideoRenderer();
-    await _renderer.initialize();
-    final stream = widget.client.getStream();
-    _streamSub = stream.listen((event) {
-      _renderer.srcObject = event;
-      setState(() {
-        _ready = true;
-        _loading = false;
-      });
-    });
-    _streamSub.onError((error, trace) => print(error.toString()));
-    _streamSub.onDone(() => print('DONE'));
-  }
-
-  @override
-  void deactivate() {
-    super.deactivate();
-    _renderer.dispose();
-    widget.client.closeStream();
-    _streamSub.cancel();
-  }
-
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
@@ -118,17 +81,9 @@ class _StreamScreenState extends State<StreamScreen> {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 16),
-            // _ready ? RTCVideoView(_renderer) : PlatformCircularProgressIndicator(),
-            _ready
-                ? Container(
-                    constraints: const BoxConstraints(maxHeight: 430),
-                    child: RTCVideoView(_renderer),
-                  )
-                : const Text(''),
+            CameraStreamView(camera: widget.camera, streamClient: widget.client),
             const SizedBox(height: 16),
-            PlatformElevatedButton(onPressed: !_loading ? () => _startStream() : null, child: const Text('Start stream')),
-            const SizedBox(height: 16),
-            _imgLoaded ? Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3) : const Text(''),
+            if (_imgLoaded) Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3),
             const SizedBox(height: 16),
             PlatformElevatedButton(
               child: const Text('Get image'),

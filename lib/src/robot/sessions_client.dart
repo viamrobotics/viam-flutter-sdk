@@ -55,8 +55,8 @@ class SessionsClient implements ResourceRPCClient {
         // We send heartbeats slightly faster than the interval window to
         // ensure that we don't fall outside of it and expire the session.
         _heartbeatInterval = Duration(
-          seconds: response.heartbeatWindow.seconds.toInt() ~/ 5,
-          microseconds: response.heartbeatWindow.nanos ~/ 5,
+          seconds: response.heartbeatWindow.seconds.toInt() ~/ 1.8,
+          microseconds: response.heartbeatWindow.nanos ~/ 1.8,
         );
 
         _heartbeatTask();
@@ -65,6 +65,7 @@ class SessionsClient implements ResourceRPCClient {
       });
     } catch (e) {
       _logger.e('error starting session: $e');
+      reset();
     }
 
     return '';
@@ -74,22 +75,23 @@ class SessionsClient implements ResourceRPCClient {
     _logger.d('resetting session');
     _currentId = '';
     _supported = false;
+    metadata();
   }
 
   Future<void> _heartbeatTask() async {
     while (_supported) {
-      _heartbeatTick();
+      await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
     }
   }
 
-  void _heartbeatTick() {
+  Future<void> _heartbeatTick() async {
     if (!_supported) return;
 
     final request = SendSessionHeartbeatRequest()..id = _currentId;
 
     try {
-      client.sendSessionHeartbeat(request);
+      await client.sendSessionHeartbeat(request);
     } on GrpcError catch (e) {
       _logger.d('Session terminated: $e');
       reset();
