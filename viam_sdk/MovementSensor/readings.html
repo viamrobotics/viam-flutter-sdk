@@ -98,7 +98,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? e
     readings[&#39;altitude&#39;] = pos.altitude;
   } catch (exception) {
     &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-    print(&#39;Error: $exception&#39;);
+    Logger().e(exception);
   }
 
   try {
