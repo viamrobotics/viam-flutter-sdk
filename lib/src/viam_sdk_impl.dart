@@ -9,15 +9,13 @@ import '../protos/app/app.dart';
 import '../protos/app/data.dart';
 
 class ViamImpl implements Viam {
-  ClientChannelBase? _clientChannelBase;
+  final ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
   late DataClient _dataClient;
 
-  ViamImpl._();
-
   ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
-    _appClient = AppClient(AppServiceClient(_clientChannelBase!));
-    _dataClient = DataClient(DataServiceClient(_clientChannelBase!));
+    _appClient = AppClient(AppServiceClient(_clientChannelBase));
+    _dataClient = DataClient(DataServiceClient(_clientChannelBase));
   }
 
   @override

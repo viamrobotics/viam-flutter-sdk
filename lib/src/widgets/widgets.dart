@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_joystick/flutter_joystick.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:logger/logger.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 class CameraStreamView extends StatefulWidget {
@@ -42,8 +43,7 @@ class _CameraStreamViewState extends State<CameraStreamView> {
       setState(() {});
     });
 
-    _streamSub.onError((error, trace) => print(error.toString()));
-    _streamSub.onDone(() => print('DONE'));
+    _streamSub.onError((error, trace) => Logger().e(error));
   }
 
   @override

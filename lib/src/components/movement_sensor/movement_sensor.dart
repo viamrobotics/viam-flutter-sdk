@@ -1,3 +1,5 @@
+import 'package:logger/logger.dart';
+
 import '../../components/sensor/sensor.dart';
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/movementsensor/v1/movementsensor.pb.dart';
@@ -60,7 +62,7 @@ abstract class MovementSensor extends Sensor {
       readings['altitude'] = pos.altitude;
     } catch (exception) {
       // TODO: Check if the exception is of a specific type and ignore or rethrow
-      print('Error: $exception');
+      Logger().e(exception);
     }
 
     try {
