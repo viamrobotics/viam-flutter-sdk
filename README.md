@@ -8,7 +8,7 @@ Build and connect to robots with Flutter
 ## (In)stability Notice
 
 > **Warning**
-> This is an beta release of the Viam Flutter SDK. The only guarantee is that there **WILL** be breaking changes to the API. We will enumerate these changes in the release notes.
+> This is a beta release of the Viam Flutter SDK. No guarantees are made to the stability of the API. All changes will be enumerated in the release notes.
 
 ## Getting started
 
