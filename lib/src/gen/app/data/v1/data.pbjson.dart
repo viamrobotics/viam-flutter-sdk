@@ -299,22 +299,18 @@ const BinaryDataByIDsRequest$json = {
   '2': [
     {'1': 'include_binary', '3': 2, '4': 1, '5': 8, '10': 'includeBinary'},
     {'1': 'binary_ids', '3': 3, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
-    {
-      '1': 'file_ids',
-      '3': 1,
-      '4': 3,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'fileIds',
-    },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['file_ids'],
 };
 
 /// Descriptor for `BinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List binaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'ChZCaW5hcnlEYXRhQnlJRHNSZXF1ZXN0EiUKDmluY2x1ZGVfYmluYXJ5GAIgASgIUg1pbmNsdW'
     'RlQmluYXJ5EjkKCmJpbmFyeV9pZHMYAyADKAsyGi52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlE'
-    'UgliaW5hcnlJZHMSHQoIZmlsZV9pZHMYASADKAlCAhgBUgdmaWxlSWRz');
+    'UgliaW5hcnlJZHNKBAgBEAJSCGZpbGVfaWRz');
 
 @$core.Deprecated('Use binaryDataByIDsResponseDescriptor instead')
 const BinaryDataByIDsResponse$json = {
@@ -453,22 +449,17 @@ const DeleteBinaryDataByIDsRequest$json = {
   '1': 'DeleteBinaryDataByIDsRequest',
   '2': [
     {'1': 'binary_ids', '3': 2, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
-    {
-      '1': 'file_ids',
-      '3': 1,
-      '4': 3,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'fileIds',
-    },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['file_ids'],
 };
 
 /// Descriptor for `DeleteBinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteBinaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'ChxEZWxldGVCaW5hcnlEYXRhQnlJRHNSZXF1ZXN0EjkKCmJpbmFyeV9pZHMYAiADKAsyGi52aW'
-    'FtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSHQoIZmlsZV9pZHMYASADKAlCAhgB'
-    'UgdmaWxlSWRz');
+    'FtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHNKBAgBEAJSCGZpbGVfaWRz');
 
 @$core.Deprecated('Use deleteBinaryDataByIDsResponseDescriptor instead')
 const DeleteBinaryDataByIDsResponse$json = {
@@ -493,22 +484,18 @@ const AddTagsToBinaryDataByIDsRequest$json = {
   '2': [
     {'1': 'binary_ids', '3': 3, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
     {'1': 'tags', '3': 2, '4': 3, '5': 9, '10': 'tags'},
-    {
-      '1': 'file_ids',
-      '3': 1,
-      '4': 3,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'fileIds',
-    },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['file_ids'],
 };
 
 /// Descriptor for `AddTagsToBinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addTagsToBinaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'Ch9BZGRUYWdzVG9CaW5hcnlEYXRhQnlJRHNSZXF1ZXN0EjkKCmJpbmFyeV9pZHMYAyADKAsyGi'
     '52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSEgoEdGFncxgCIAMoCVIEdGFn'
-    'cxIdCghmaWxlX2lkcxgBIAMoCUICGAFSB2ZpbGVJZHM=');
+    'c0oECAEQAlIIZmlsZV9pZHM=');
 
 @$core.Deprecated('Use addTagsToBinaryDataByIDsResponseDescriptor instead')
 const AddTagsToBinaryDataByIDsResponse$json = {
@@ -548,22 +535,18 @@ const RemoveTagsFromBinaryDataByIDsRequest$json = {
   '2': [
     {'1': 'binary_ids', '3': 3, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
     {'1': 'tags', '3': 2, '4': 3, '5': 9, '10': 'tags'},
-    {
-      '1': 'file_ids',
-      '3': 1,
-      '4': 3,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'fileIds',
-    },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['file_ids'],
 };
 
 /// Descriptor for `RemoveTagsFromBinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeTagsFromBinaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'CiRSZW1vdmVUYWdzRnJvbUJpbmFyeURhdGFCeUlEc1JlcXVlc3QSOQoKYmluYXJ5X2lkcxgDIA'
     'MoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCWJpbmFyeUlkcxISCgR0YWdzGAIgAygJ'
-    'UgR0YWdzEh0KCGZpbGVfaWRzGAEgAygJQgIYAVIHZmlsZUlkcw==');
+    'UgR0YWdzSgQIARACUghmaWxlX2lkcw==');
 
 @$core.Deprecated('Use removeTagsFromBinaryDataByIDsResponseDescriptor instead')
 const RemoveTagsFromBinaryDataByIDsResponse$json = {
@@ -640,15 +623,11 @@ const AddBoundingBoxToImageByIDRequest$json = {
     {'1': 'y_min_normalized', '3': 4, '4': 1, '5': 1, '10': 'yMinNormalized'},
     {'1': 'x_max_normalized', '3': 5, '4': 1, '5': 1, '10': 'xMaxNormalized'},
     {'1': 'y_max_normalized', '3': 6, '4': 1, '5': 1, '10': 'yMaxNormalized'},
-    {
-      '1': 'file_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'fileId',
-    },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['file_id'],
 };
 
 /// Descriptor for `AddBoundingBoxToImageByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -658,7 +637,7 @@ final $typed_data.Uint8List addBoundingBoxToImageByIDRequestDescriptor = $conver
     'ZWwSKAoQeF9taW5fbm9ybWFsaXplZBgDIAEoAVIOeE1pbk5vcm1hbGl6ZWQSKAoQeV9taW5fbm'
     '9ybWFsaXplZBgEIAEoAVIOeU1pbk5vcm1hbGl6ZWQSKAoQeF9tYXhfbm9ybWFsaXplZBgFIAEo'
     'AVIOeE1heE5vcm1hbGl6ZWQSKAoQeV9tYXhfbm9ybWFsaXplZBgGIAEoAVIOeU1heE5vcm1hbG'
-    'l6ZWQSGwoHZmlsZV9pZBgBIAEoCUICGAFSBmZpbGVJZA==');
+    'l6ZWRKBAgBEAJSB2ZpbGVfaWQ=');
 
 @$core.Deprecated('Use addBoundingBoxToImageByIDResponseDescriptor instead')
 const AddBoundingBoxToImageByIDResponse$json = {
@@ -679,22 +658,18 @@ const RemoveBoundingBoxFromImageByIDRequest$json = {
   '2': [
     {'1': 'binary_id', '3': 3, '4': 1, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryId'},
     {'1': 'bbox_id', '3': 2, '4': 1, '5': 9, '10': 'bboxId'},
-    {
-      '1': 'file_id',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'fileId',
-    },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['file_id'],
 };
 
 /// Descriptor for `RemoveBoundingBoxFromImageByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeBoundingBoxFromImageByIDRequestDescriptor = $convert.base64Decode(
     'CiVSZW1vdmVCb3VuZGluZ0JveEZyb21JbWFnZUJ5SURSZXF1ZXN0EjcKCWJpbmFyeV9pZBgDIA'
     'EoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCGJpbmFyeUlkEhcKB2Jib3hfaWQYAiAB'
-    'KAlSBmJib3hJZBIbCgdmaWxlX2lkGAEgASgJQgIYAVIGZmlsZUlk');
+    'KAlSBmJib3hJZEoECAEQAlIHZmlsZV9pZA==');
 
 @$core.Deprecated('Use removeBoundingBoxFromImageByIDResponseDescriptor instead')
 const RemoveBoundingBoxFromImageByIDResponse$json = {

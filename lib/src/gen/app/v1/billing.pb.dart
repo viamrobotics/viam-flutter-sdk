@@ -1188,6 +1188,7 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
     ..e<PaymentMethodType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PaymentMethodType.PAYMENT_METHOD_TYPE_UNSPECIFIED, valueOf: PaymentMethodType.valueOf, enumValues: PaymentMethodType.values)
     ..aOS(2, _omitFieldNames ? '' : 'billingEmail')
     ..aOM<PaymentMethodCard>(3, _omitFieldNames ? '' : 'method', subBuilder: PaymentMethodCard.create)
+    ..aOS(4, _omitFieldNames ? '' : 'billingTier')
     ..hasRequiredFields = false
   ;
 
@@ -1240,6 +1241,15 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
   void clearMethod() => clearField(3);
   @$pb.TagNumber(3)
   PaymentMethodCard ensureMethod() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get billingTier => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set billingTier($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBillingTier() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBillingTier() => clearField(4);
 }
 
 class GetInvoicesSummaryRequest extends $pb.GeneratedMessage {
