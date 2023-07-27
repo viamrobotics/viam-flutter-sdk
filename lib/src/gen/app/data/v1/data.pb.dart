@@ -934,7 +934,6 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory BinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
     ..aOB(2, _omitFieldNames ? '' : 'includeBinary')
     ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
@@ -961,21 +960,17 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static BinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BinaryDataByIDsRequest>(create);
   static BinaryDataByIDsRequest? _defaultInstance;
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.List<$core.String> get fileIds => $_getList(0);
-
   @$pb.TagNumber(2)
-  $core.bool get includeBinary => $_getBF(1);
+  $core.bool get includeBinary => $_getBF(0);
   @$pb.TagNumber(2)
-  set includeBinary($core.bool v) { $_setBool(1, v); }
+  set includeBinary($core.bool v) { $_setBool(0, v); }
   @$pb.TagNumber(2)
-  $core.bool hasIncludeBinary() => $_has(1);
+  $core.bool hasIncludeBinary() => $_has(0);
   @$pb.TagNumber(2)
   void clearIncludeBinary() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<BinaryID> get binaryIds => $_getList(2);
+  $core.List<BinaryID> get binaryIds => $_getList(1);
 }
 
 class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
@@ -1451,7 +1446,6 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory DeleteBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
     ..pc<BinaryID>(2, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
   ;
@@ -1477,12 +1471,8 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static DeleteBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteBinaryDataByIDsRequest>(create);
   static DeleteBinaryDataByIDsRequest? _defaultInstance;
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.List<$core.String> get fileIds => $_getList(0);
-
   @$pb.TagNumber(2)
-  $core.List<BinaryID> get binaryIds => $_getList(1);
+  $core.List<BinaryID> get binaryIds => $_getList(0);
 }
 
 class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
@@ -1534,7 +1524,6 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory AddTagsToBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddTagsToBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
     ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
@@ -1561,15 +1550,11 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static AddTagsToBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddTagsToBinaryDataByIDsRequest>(create);
   static AddTagsToBinaryDataByIDsRequest? _defaultInstance;
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.List<$core.String> get fileIds => $_getList(0);
-
   @$pb.TagNumber(2)
-  $core.List<$core.String> get tags => $_getList(1);
+  $core.List<$core.String> get tags => $_getList(0);
 
   @$pb.TagNumber(3)
-  $core.List<BinaryID> get binaryIds => $_getList(2);
+  $core.List<BinaryID> get binaryIds => $_getList(1);
 }
 
 class AddTagsToBinaryDataByIDsResponse extends $pb.GeneratedMessage {
@@ -1691,7 +1676,6 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory RemoveTagsFromBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveTagsFromBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'fileIds')
     ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..hasRequiredFields = false
@@ -1718,15 +1702,11 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static RemoveTagsFromBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveTagsFromBinaryDataByIDsRequest>(create);
   static RemoveTagsFromBinaryDataByIDsRequest? _defaultInstance;
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.List<$core.String> get fileIds => $_getList(0);
-
   @$pb.TagNumber(2)
-  $core.List<$core.String> get tags => $_getList(1);
+  $core.List<$core.String> get tags => $_getList(0);
 
   @$pb.TagNumber(3)
-  $core.List<BinaryID> get binaryIds => $_getList(2);
+  $core.List<BinaryID> get binaryIds => $_getList(1);
 }
 
 class RemoveTagsFromBinaryDataByIDsResponse extends $pb.GeneratedMessage {
@@ -1948,7 +1928,6 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   factory AddBoundingBoxToImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddBoundingBoxToImageByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'fileId')
     ..aOS(2, _omitFieldNames ? '' : 'label')
     ..a<$core.double>(3, _omitFieldNames ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
@@ -1979,74 +1958,61 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   static AddBoundingBoxToImageByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddBoundingBoxToImageByIDRequest>(create);
   static AddBoundingBoxToImageByIDRequest? _defaultInstance;
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.String get fileId => $_getSZ(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  set fileId($core.String v) { $_setString(0, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.bool hasFileId() => $_has(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  void clearFileId() => clearField(1);
-
   @$pb.TagNumber(2)
-  $core.String get label => $_getSZ(1);
+  $core.String get label => $_getSZ(0);
   @$pb.TagNumber(2)
-  set label($core.String v) { $_setString(1, v); }
+  set label($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(2)
-  $core.bool hasLabel() => $_has(1);
+  $core.bool hasLabel() => $_has(0);
   @$pb.TagNumber(2)
   void clearLabel() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.double get xMinNormalized => $_getN(2);
+  $core.double get xMinNormalized => $_getN(1);
   @$pb.TagNumber(3)
-  set xMinNormalized($core.double v) { $_setDouble(2, v); }
+  set xMinNormalized($core.double v) { $_setDouble(1, v); }
   @$pb.TagNumber(3)
-  $core.bool hasXMinNormalized() => $_has(2);
+  $core.bool hasXMinNormalized() => $_has(1);
   @$pb.TagNumber(3)
   void clearXMinNormalized() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.double get yMinNormalized => $_getN(3);
+  $core.double get yMinNormalized => $_getN(2);
   @$pb.TagNumber(4)
-  set yMinNormalized($core.double v) { $_setDouble(3, v); }
+  set yMinNormalized($core.double v) { $_setDouble(2, v); }
   @$pb.TagNumber(4)
-  $core.bool hasYMinNormalized() => $_has(3);
+  $core.bool hasYMinNormalized() => $_has(2);
   @$pb.TagNumber(4)
   void clearYMinNormalized() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.double get xMaxNormalized => $_getN(4);
+  $core.double get xMaxNormalized => $_getN(3);
   @$pb.TagNumber(5)
-  set xMaxNormalized($core.double v) { $_setDouble(4, v); }
+  set xMaxNormalized($core.double v) { $_setDouble(3, v); }
   @$pb.TagNumber(5)
-  $core.bool hasXMaxNormalized() => $_has(4);
+  $core.bool hasXMaxNormalized() => $_has(3);
   @$pb.TagNumber(5)
   void clearXMaxNormalized() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.double get yMaxNormalized => $_getN(5);
+  $core.double get yMaxNormalized => $_getN(4);
   @$pb.TagNumber(6)
-  set yMaxNormalized($core.double v) { $_setDouble(5, v); }
+  set yMaxNormalized($core.double v) { $_setDouble(4, v); }
   @$pb.TagNumber(6)
-  $core.bool hasYMaxNormalized() => $_has(5);
+  $core.bool hasYMaxNormalized() => $_has(4);
   @$pb.TagNumber(6)
   void clearYMaxNormalized() => clearField(6);
 
   @$pb.TagNumber(7)
-  BinaryID get binaryId => $_getN(6);
+  BinaryID get binaryId => $_getN(5);
   @$pb.TagNumber(7)
   set binaryId(BinaryID v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasBinaryId() => $_has(6);
+  $core.bool hasBinaryId() => $_has(5);
   @$pb.TagNumber(7)
   void clearBinaryId() => clearField(7);
   @$pb.TagNumber(7)
-  BinaryID ensureBinaryId() => $_ensure(6);
+  BinaryID ensureBinaryId() => $_ensure(5);
 }
 
 class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
@@ -2098,7 +2064,6 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   factory RemoveBoundingBoxFromImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveBoundingBoxFromImageByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'fileId')
     ..aOS(2, _omitFieldNames ? '' : 'bboxId')
     ..aOM<BinaryID>(3, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
     ..hasRequiredFields = false
@@ -2125,38 +2090,25 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   static RemoveBoundingBoxFromImageByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBoundingBoxFromImageByIDRequest>(create);
   static RemoveBoundingBoxFromImageByIDRequest? _defaultInstance;
 
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.String get fileId => $_getSZ(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  set fileId($core.String v) { $_setString(0, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.bool hasFileId() => $_has(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  void clearFileId() => clearField(1);
-
   @$pb.TagNumber(2)
-  $core.String get bboxId => $_getSZ(1);
+  $core.String get bboxId => $_getSZ(0);
   @$pb.TagNumber(2)
-  set bboxId($core.String v) { $_setString(1, v); }
+  set bboxId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(2)
-  $core.bool hasBboxId() => $_has(1);
+  $core.bool hasBboxId() => $_has(0);
   @$pb.TagNumber(2)
   void clearBboxId() => clearField(2);
 
   @$pb.TagNumber(3)
-  BinaryID get binaryId => $_getN(2);
+  BinaryID get binaryId => $_getN(1);
   @$pb.TagNumber(3)
   set binaryId(BinaryID v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasBinaryId() => $_has(2);
+  $core.bool hasBinaryId() => $_has(1);
   @$pb.TagNumber(3)
   void clearBinaryId() => clearField(3);
   @$pb.TagNumber(3)
-  BinaryID ensureBinaryId() => $_ensure(2);
+  BinaryID ensureBinaryId() => $_ensure(1);
 }
 
 class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {

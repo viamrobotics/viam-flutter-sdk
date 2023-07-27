@@ -390,12 +390,14 @@ const GetKinematicsRequest$json = {
   '1': 'GetKinematicsRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetKinematicsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getKinematicsRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+    'ChRHZXRLaW5lbWF0aWNzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
+    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
 
 @$core.Deprecated('Use getKinematicsResponseDescriptor instead')
 const GetKinematicsResponse$json = {
@@ -417,12 +419,14 @@ const GetGeometriesRequest$json = {
   '1': 'GetGeometriesRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetGeometriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getGeometriesRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRHZW9tZXRyaWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+    'ChRHZXRHZW9tZXRyaWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
+    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
 
 @$core.Deprecated('Use getGeometriesResponseDescriptor instead')
 const GetGeometriesResponse$json = {

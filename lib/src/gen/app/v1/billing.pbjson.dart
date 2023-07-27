@@ -327,9 +327,11 @@ const GetOrgBillingInformationResponse$json = {
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.PaymentMethodType', '10': 'type'},
     {'1': 'billing_email', '3': 2, '4': 1, '5': 9, '10': 'billingEmail'},
     {'1': 'method', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.PaymentMethodCard', '9': 0, '10': 'method', '17': true},
+    {'1': 'billing_tier', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'billingTier', '17': true},
   ],
   '8': [
     {'1': '_method'},
+    {'1': '_billing_tier'},
   ],
 };
 
@@ -338,7 +340,8 @@ final $typed_data.Uint8List getOrgBillingInformationResponseDescriptor = $conver
     'CiBHZXRPcmdCaWxsaW5nSW5mb3JtYXRpb25SZXNwb25zZRIyCgR0eXBlGAEgASgOMh4udmlhbS'
     '5hcHAudjEuUGF5bWVudE1ldGhvZFR5cGVSBHR5cGUSIwoNYmlsbGluZ19lbWFpbBgCIAEoCVIM'
     'YmlsbGluZ0VtYWlsEjsKBm1ldGhvZBgDIAEoCzIeLnZpYW0uYXBwLnYxLlBheW1lbnRNZXRob2'
-    'RDYXJkSABSBm1ldGhvZIgBAUIJCgdfbWV0aG9k');
+    'RDYXJkSABSBm1ldGhvZIgBARImCgxiaWxsaW5nX3RpZXIYBCABKAlIAVILYmlsbGluZ1RpZXKI'
+    'AQFCCQoHX21ldGhvZEIPCg1fYmlsbGluZ190aWVy');
 
 @$core.Deprecated('Use getInvoicesSummaryRequestDescriptor instead')
 const GetInvoicesSummaryRequest$json = {
