@@ -27,6 +27,7 @@ buf: buf.yaml buf.gen.yaml
 setup:
 	dart pub global activate protoc_plugin
 	dart pub global activate grpc
+	dart pub global activate cider
 
 format:
 	dart format --line-length=140 --set-exit-if-changed $$(find . -name "*.dart" -not -path "./lib/src/gen/*" -not -path "**.mocks.dart")
