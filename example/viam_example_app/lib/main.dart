@@ -138,10 +138,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
-          base: Base.fromRobot(_robot, rname.name),
           resourceName: rname,
-          camera: Camera.fromRobot(_robot, _cameraName!.name),
-          streamClient: _getStream(_cameraName!));
+          base: Base.fromRobot(_robot, rname.name),
+          cameras:
+              _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
+          robot: _robot);
     }
     if (rname.subtype == Board.subtype.resourceSubtype) {
       return BoardScreen(board: Board.fromRobot(_robot, rname.name), resourceName: rname);

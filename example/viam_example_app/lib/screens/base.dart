@@ -6,11 +6,11 @@ import 'package:viam_sdk/widgets.dart';
 class BaseScreen extends StatelessWidget {
   final Base base;
   final ResourceName resourceName;
-  final Camera camera;
-  final StreamClient streamClient;
+  final Iterable<Camera> cameras;
+  final RobotClient robot;
 
   // TODO change BaseScreen to accept camera ResourceName.
-  const BaseScreen({Key? key, required this.base, required this.resourceName, required this.camera, required this.streamClient})
+  const BaseScreen({Key? key, required this.base, required this.resourceName, required this.cameras, required this.robot})
       : super(key: key);
 
   @override
@@ -21,12 +21,10 @@ class BaseScreen extends StatelessWidget {
       ),
       iosContentPadding: true,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ViamCameraStreamView(camera: camera, streamClient: streamClient),
-            ViamBaseJoystick(base: base),
-          ],
+        child: ViamBaseScreen(
+          base: base,
+          cameras: cameras,
+          robotClient: robot,
         ),
       ),
     );
