@@ -198,11 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ])
                       : _loading
                           ? PlatformCircularProgressIndicator()
-                          : PlatformElevatedButton(
-                              onPressed: () {
-                                _login();
-                              },
-                              child: const Text('Login')),
+                          : ViamButton(onPressed: _login, text: 'Login', role: ViamButtonRole.success, style: ViamButtonStyle.outline)
                 ],
               ),
             ),
