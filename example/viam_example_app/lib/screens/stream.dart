@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:image/image.dart' as img;
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets.dart';
 
 class StreamScreen extends StatefulWidget {
   final Camera camera;

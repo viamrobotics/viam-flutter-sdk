@@ -8,6 +8,7 @@ import 'package:viam_example_app/screens/sensor.dart';
 import 'package:viam_example_app/screens/servo.dart';
 import 'package:viam_example_app/screens/stream.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets.dart';
 
 void main() {
   runApp(const MyApp());
