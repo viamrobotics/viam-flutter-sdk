@@ -1,0 +1,87 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    if: github.repository_owner == 'viamrobotics' && startsWith(github.ref_name, 'rc-')
+    runs-on: [self-hosted, x64]
+    container:
+      image: ghcr.io/cirruslabs/flutter:3.10.6
+    outputs:
+      version: ${{ steps.which_version.outputs.version }}
+    steps:
+      - name: Check if organization member
+        id: is_organization_member
+        uses: jamessingleton/is-organization-member@1.0.1
+        with:
+          organization: viamrobotics
+          username: ${{ github.actor }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cancelling - not an organization member
+        uses: andymckay/cancel-action@0.2
+        if: steps.is_organization_member.outputs.result == 'false'
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        run: flutter pub get
+
+      - run: make setup
+
+      - name: Format + Lint + Test
+        run: make format lint test
+
+      - name: Bump Version
+        shell: bash
+        run: PATH=$PATH:$HOME/.pub-cache/bin cider bump release
+
+      - name: Which Version
+        id: which_version
+        shell: bash
+        run: PATH=$PATH:$HOME/.pub-cache/bin echo "version=$(cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
+
+      - name: Check if release exists
+        uses: cardinalby/git-get-release-action@1.2.4
+        id: release_exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          releaseName: v${{ steps.which_version.outputs.version }}
+          doNotFailIfNotFound: "true"
+
+      - name: Cancelling - release already exists
+        uses: andymckay/cancel-action@0.2
+        if: steps.release_exists.outputs.id != ''
+
+      - name: Add + Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          new_branch: rc-${{ steps.which_version.outputs.version }}
+          message: Bump version to ${{ steps.which_version.outputs.version }}
+
+      - name: Open PR
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          pr_title: ${{ steps.which_version.outputs.version }}
+          pr_body: This is an auto-generated PR to merge the rc branch back into main upon successful release.
+
+  release:
+    needs: [prepare]
+    if: github.repository_owner == 'viamrobotics' && startsWith(github.ref_name, 'rc-')
+    runs-on: [self-hosted, x64]
+    container:
+      image: ghcr.io/viamrobotics/canon:amd64
+
+    steps:
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ needs.prepare.outputs.version }}
+          draft: true
+          prerelease: false
+          target_commitish: rc-${{ needs.prepare.outputs.version }}

@@ -4,18 +4,18 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'lib/**'
-      - 'doc/**'
-      - 'README.md'
-      - 'dartdoc_options.yaml'
-    branches: [ main ]
+      - "lib/**"
+      - "doc/**"
+      - "README.md"
+      - "dartdoc_options.yaml"
+    branches: [main]
 
 jobs:
   generate-docs:
     if: github.repository_owner == 'viamrobotics'
     runs-on: [self-hosted, x64]
     container:
-      image: ghcr.io/cirruslabs/flutter:3.10.5
+      image: ghcr.io/cirruslabs/flutter:3.10.6
     steps:
       - name: Checkout Push/Workflow Dispatch
         uses: actions/checkout@v3
@@ -43,4 +43,3 @@ jobs:
         with:
           name: html-docs
           path: html-docs.zip
-

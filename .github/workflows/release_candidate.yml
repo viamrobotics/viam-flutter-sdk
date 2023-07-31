@@ -1,0 +1,122 @@
+name: Release Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The type of version bump. If the current version is already RC, then the bump type is ignored and only the RC is increased. If nobump is selected, there is no RC increase. Ex: Current Version (CV): 0.0.1, type: patch, result: 0.0.2-rc.1. CV: 0.0.2-rc.1, type: patch, result: 0.0.2-rc.2. See https://github.com/f3ath/cider#bumping-the-project-version"
+        type: choice
+        required: true
+        default: nobump
+        options:
+          - major
+          - minor
+          - patch
+          - nobump
+
+jobs:
+  prepare:
+    if: github.repository_owner == 'viamrobotics'
+    runs-on: [self-hosted, x64]
+    container:
+      image: ghcr.io/cirruslabs/flutter:3.10.6
+    outputs:
+      rc_version: ${{ steps.which_version.outputs.rc_version }}
+      version: ${{ steps.which_version.outputs.version }}
+    steps:
+      - name: Check if organization member
+        id: is_organization_member
+        uses: jamessingleton/is-organization-member@1.0.1
+        with:
+          organization: viamrobotics
+          username: ${{ github.actor }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cancelling - not an organization member
+        uses: andymckay/cancel-action@0.2
+        if: steps.is_organization_member.outputs.result == 'false'
+
+      - name: Install GH CLI
+        run: |
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+          && sudo apt update \
+          && sudo apt install gh -y
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        run: flutter pub get
+
+      - run: make setup
+
+      - name: Format + Lint + Test
+        run: make format lint test
+
+      - name: Current version
+        id: current_version
+        shell: bash
+        run: |
+          PATH=$PATH:$HOME/.pub-cache/bin echo "current_version=$(cider version)" >> $GITHUB_OUTPUT
+
+      - name: Bump Version
+        id: bump_version
+        if: inputs.version != 'nobump'
+        shell: bash
+        run: |
+          if ${{ contains(steps.current_version.outputs.current_version, 'rc') }} ; then
+            PATH=$PATH:$HOME/.pub-cache/bin cider bump pre
+          else
+            PATH=$PATH:$HOME/.pub-cache/bin cider bump ${{ inputs.version }} --pre=rc
+          fi
+
+      - name: Which Version
+        id: which_version
+        shell: bash
+        run: |
+          PATH=$PATH:$HOME/.pub-cache/bin echo "rc_version=$(cider version | sed 's/\"//g')" >> $GITHUB_OUTPUT
+          PATH=$PATH:$HOME/.pub-cache/bin echo "version=$(cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
+
+      - name: Check if release exists
+        uses: cardinalby/git-get-release-action@1.2.4
+        id: release_exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          releaseName: v${{ steps.which_version.outputs.rc_version }}
+          doNotFailIfNotFound: "true"
+
+      - name: Cancelling - release already exists
+        uses: andymckay/cancel-action@0.2
+        if: steps.release_exists.outputs.id != ''
+
+      - name: Add + Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          new_branch: rc-${{ steps.which_version.outputs.version }}
+          message: Bump version to ${{ steps.which_version.outputs.rc_version }}
+
+      - name: Open PR
+        run: |
+          gh pr create -t "rc-${{ steps.which_version.outputs.version }}" -b "This is an auto-generated PR to merge the RC branch back into main upon successful release" -B "main" -H "rc-${{ steps.which_version.outputs.version }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    needs: [prepare]
+    if: github.repository_owner == 'viamrobotics'
+    runs-on: [self-hosted, x64]
+    container:
+      image: ghcr.io/viamrobotics/canon:amd64
+
+    steps:
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ needs.prepare.outputs.rc_version }}
+          draft: true
+          prerelease: true
+          target_commitish: rc-${{ needs.prepare.outputs.version }}
