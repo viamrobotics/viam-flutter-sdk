@@ -44,4 +44,5 @@ export 'src/rpc/dial.dart' hide AuthenticatedChannel;
 export 'src/viam_sdk.dart';
 
 /// Widgets
-export 'src/widgets/widgets.dart';
+export 'src/widgets/camera_stream.dart';
+export 'src/widgets/joystick.dart';

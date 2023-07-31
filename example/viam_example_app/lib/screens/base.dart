@@ -23,8 +23,8 @@ class BaseScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CameraStreamView(camera: camera, streamClient: streamClient),
-            BaseJoystick(base: base),
+            ViamCameraStreamView(camera: camera, streamClient: streamClient),
+            ViamBaseJoystick(base: base),
           ],
         ),
       ),

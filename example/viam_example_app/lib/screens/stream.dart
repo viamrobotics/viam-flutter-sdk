@@ -81,7 +81,7 @@ class _StreamScreenState extends State<StreamScreen> {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 16),
-            CameraStreamView(camera: widget.camera, streamClient: widget.client),
+            ViamCameraStreamView(camera: widget.camera, streamClient: widget.client),
             const SizedBox(height: 16),
             if (_imgLoaded) Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3),
             const SizedBox(height: 16),
