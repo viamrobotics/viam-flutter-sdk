@@ -199,7 +199,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         ])
                       : _loading
                           ? PlatformCircularProgressIndicator()
-                          : ViamButton(onPressed: _login, text: 'Login', role: ViamButtonRole.inverse, style: ViamButtonStyle.filled)
+                          : Column(children: [
+                              ViamButton(
+                                onPressed: _login,
+                                text: 'Login',
+                                role: ViamButtonRole.inverse,
+                                style: ViamButtonFillStyle.filled,
+                                size: ViamButtonSizeClass.xl,
+                              )
+                            ])
                 ],
               ),
             ),
