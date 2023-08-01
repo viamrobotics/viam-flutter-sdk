@@ -1,5 +1,3 @@
-import 'package:logger/logger.dart';
-
 import '../../components/sensor/sensor.dart';
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/powersensor/v1/powersensor.pb.dart';
@@ -56,35 +54,20 @@ abstract class PowerSensor extends Sensor {
       readings['voltage'] = vol.volts;
       readings['is_ac'] = vol.isAc;
     } catch (exception) {
-      // skip adding to the readings map if the function is unimplemented.
-      if (exception.toString().toLowerCase().contains('unimplemented')) {
-      } else {
-        Logger().e(exception);
-        rethrow;
-      }
+      // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
     try {
       final cur = await current(extra: extra);
       readings['current'] = cur.amperes;
       readings['is_ac'] = cur.isAc;
     } catch (exception) {
-      // skip adding to the readings map if the function is unimplemented.
-      if (exception.toString().toLowerCase().contains('unimplemented')) {
-      } else {
-        Logger().e(exception);
-        rethrow;
-      }
+      // TODO: Check if the exception is of a specific type and ignore or rethrow;
     }
     try {
       final pow = await power(extra: extra);
       readings['power'] = pow;
     } catch (exception) {
-      // skip adding to the readings map if the function is unimplemented.
-      if (exception.toString().toLowerCase().contains('unimplemented')) {
-      } else {
-        Logger().e(exception);
-        rethrow;
-      }
+      // TODO: Check if the exception is of a specific type and ignore or rethrow
     }
     return readings;
   }
