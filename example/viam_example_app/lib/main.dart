@@ -138,7 +138,6 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
-          resourceName: rname,
           base: Base.fromRobot(_robot, rname.name),
           cameras:
               _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
