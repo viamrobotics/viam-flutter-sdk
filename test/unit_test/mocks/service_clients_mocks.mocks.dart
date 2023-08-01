@@ -3,20 +3,23 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i6;
+import 'dart:async' as _i8;
 
 import 'package:grpc/service_api.dart' as _i4;
 import 'package:grpc/src/client/call.dart' as _i3;
 import 'package:grpc/src/client/channel.dart' as _i5;
 import 'package:grpc/src/client/connection.dart' as _i2;
-import 'package:grpc/src/client/method.dart' as _i7;
+import 'package:grpc/src/client/method.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart' as _i13;
-import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart' as _i12;
-import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' as _i11;
-import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart' as _i10;
-import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i9;
-import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i8;
+import 'package:viam_sdk/src/components/power_sensor/client.dart' as _i16;
+import 'package:viam_sdk/src/components/power_sensor/power_sensor.dart' as _i7;
+import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart' as _i15;
+import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart' as _i14;
+import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' as _i13;
+import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart' as _i12;
+import 'package:viam_sdk/src/gen/component/powersensor/v1/powersensor.pbgrpc.dart' as _i6;
+import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i11;
+import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i10;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -29,8 +32,7 @@ import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i8;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeClientConnection_0 extends _i1.SmartFake
-    implements _i2.ClientConnection {
+class _FakeClientConnection_0 extends _i1.SmartFake implements _i2.ClientConnection {
   _FakeClientConnection_0(
     Object parent,
     Invocation parentInvocation,
@@ -40,8 +42,7 @@ class _FakeClientConnection_0 extends _i1.SmartFake
         );
 }
 
-class _FakeClientCall_1<Q1, R1> extends _i1.SmartFake
-    implements _i3.ClientCall<Q1, R1> {
+class _FakeClientCall_1<Q1, R1> extends _i1.SmartFake implements _i3.ClientCall<Q1, R1> {
   _FakeClientCall_1(
     Object parent,
     Invocation parentInvocation,
@@ -51,8 +52,7 @@ class _FakeClientCall_1<Q1, R1> extends _i1.SmartFake
         );
 }
 
-class _FakeResponseFuture_2<R> extends _i1.SmartFake
-    implements _i4.ResponseFuture<R> {
+class _FakeResponseFuture_2<R> extends _i1.SmartFake implements _i4.ResponseFuture<R> {
   _FakeResponseFuture_2(
     Object parent,
     Invocation parentInvocation,
@@ -62,9 +62,48 @@ class _FakeResponseFuture_2<R> extends _i1.SmartFake
         );
 }
 
-class _FakeResponseStream_3<R> extends _i1.SmartFake
-    implements _i4.ResponseStream<R> {
+class _FakeResponseStream_3<R> extends _i1.SmartFake implements _i4.ResponseStream<R> {
   _FakeResponseStream_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeClientChannelBase_4 extends _i1.SmartFake implements _i5.ClientChannelBase {
+  _FakeClientChannelBase_4(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakePowerSensorServiceClient_5 extends _i1.SmartFake implements _i6.PowerSensorServiceClient {
+  _FakePowerSensorServiceClient_5(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeVoltage_6 extends _i1.SmartFake implements _i7.Voltage {
+  _FakeVoltage_6(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeCurrent_7 extends _i1.SmartFake implements _i7.Current {
+  _FakeCurrent_7(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -78,30 +117,29 @@ class _FakeResponseStream_3<R> extends _i1.SmartFake
 /// See the documentation for Mockito's code generation for more information.
 class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
   @override
-  _i6.Stream<_i2.ConnectionState> get onConnectionStateChanged =>
-      (super.noSuchMethod(
+  _i8.Stream<_i2.ConnectionState> get onConnectionStateChanged => (super.noSuchMethod(
         Invocation.getter(#onConnectionStateChanged),
-        returnValue: _i6.Stream<_i2.ConnectionState>.empty(),
-        returnValueForMissingStub: _i6.Stream<_i2.ConnectionState>.empty(),
-      ) as _i6.Stream<_i2.ConnectionState>);
+        returnValue: _i8.Stream<_i2.ConnectionState>.empty(),
+        returnValueForMissingStub: _i8.Stream<_i2.ConnectionState>.empty(),
+      ) as _i8.Stream<_i2.ConnectionState>);
   @override
-  _i6.Future<void> shutdown() => (super.noSuchMethod(
+  _i8.Future<void> shutdown() => (super.noSuchMethod(
         Invocation.method(
           #shutdown,
           [],
         ),
-        returnValue: _i6.Future<void>.value(),
-        returnValueForMissingStub: _i6.Future<void>.value(),
-      ) as _i6.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
   @override
-  _i6.Future<void> terminate() => (super.noSuchMethod(
+  _i8.Future<void> terminate() => (super.noSuchMethod(
         Invocation.method(
           #terminate,
           [],
         ),
-        returnValue: _i6.Future<void>.value(),
-        returnValueForMissingStub: _i6.Future<void>.value(),
-      ) as _i6.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
   @override
   _i2.ClientConnection createConnection() => (super.noSuchMethod(
         Invocation.method(
@@ -124,32 +162,30 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
         ),
       ) as _i2.ClientConnection);
   @override
-  _i6.Future<_i2.ClientConnection> getConnection() => (super.noSuchMethod(
+  _i8.Future<_i2.ClientConnection> getConnection() => (super.noSuchMethod(
         Invocation.method(
           #getConnection,
           [],
         ),
-        returnValue:
-            _i6.Future<_i2.ClientConnection>.value(_FakeClientConnection_0(
+        returnValue: _i8.Future<_i2.ClientConnection>.value(_FakeClientConnection_0(
           this,
           Invocation.method(
             #getConnection,
             [],
           ),
         )),
-        returnValueForMissingStub:
-            _i6.Future<_i2.ClientConnection>.value(_FakeClientConnection_0(
+        returnValueForMissingStub: _i8.Future<_i2.ClientConnection>.value(_FakeClientConnection_0(
           this,
           Invocation.method(
             #getConnection,
             [],
           ),
         )),
-      ) as _i6.Future<_i2.ClientConnection>);
+      ) as _i8.Future<_i2.ClientConnection>);
   @override
   _i3.ClientCall<Q, R> createCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests,
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests,
     _i3.CallOptions? options,
   ) =>
       (super.noSuchMethod(
@@ -189,11 +225,10 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
 /// A class which mocks [RobotServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRobotServiceClient extends _i1.Mock
-    implements _i8.RobotServiceClient {
+class MockRobotServiceClient extends _i1.Mock implements _i10.RobotServiceClient {
   @override
-  _i4.ResponseFuture<_i9.GetOperationsResponse> getOperations(
-    _i9.GetOperationsRequest? request, {
+  _i4.ResponseFuture<_i11.GetOperationsResponse> getOperations(
+    _i11.GetOperationsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -202,7 +237,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.GetOperationsResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.GetOperationsResponse>(
           this,
           Invocation.method(
             #getOperations,
@@ -210,8 +245,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.GetOperationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.GetOperationsResponse>(
           this,
           Invocation.method(
             #getOperations,
@@ -219,10 +253,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.GetOperationsResponse>);
+      ) as _i4.ResponseFuture<_i11.GetOperationsResponse>);
   @override
-  _i4.ResponseFuture<_i9.GetSessionsResponse> getSessions(
-    _i9.GetSessionsRequest? request, {
+  _i4.ResponseFuture<_i11.GetSessionsResponse> getSessions(
+    _i11.GetSessionsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -231,7 +265,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.GetSessionsResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.GetSessionsResponse>(
           this,
           Invocation.method(
             #getSessions,
@@ -239,8 +273,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.GetSessionsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.GetSessionsResponse>(
           this,
           Invocation.method(
             #getSessions,
@@ -248,10 +281,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.GetSessionsResponse>);
+      ) as _i4.ResponseFuture<_i11.GetSessionsResponse>);
   @override
-  _i4.ResponseFuture<_i9.ResourceNamesResponse> resourceNames(
-    _i9.ResourceNamesRequest? request, {
+  _i4.ResponseFuture<_i11.ResourceNamesResponse> resourceNames(
+    _i11.ResourceNamesRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -260,7 +293,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.ResourceNamesResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.ResourceNamesResponse>(
           this,
           Invocation.method(
             #resourceNames,
@@ -268,8 +301,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.ResourceNamesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.ResourceNamesResponse>(
           this,
           Invocation.method(
             #resourceNames,
@@ -277,10 +309,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.ResourceNamesResponse>);
+      ) as _i4.ResponseFuture<_i11.ResourceNamesResponse>);
   @override
-  _i4.ResponseFuture<_i9.ResourceRPCSubtypesResponse> resourceRPCSubtypes(
-    _i9.ResourceRPCSubtypesRequest? request, {
+  _i4.ResponseFuture<_i11.ResourceRPCSubtypesResponse> resourceRPCSubtypes(
+    _i11.ResourceRPCSubtypesRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -289,7 +321,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.ResourceRPCSubtypesResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.ResourceRPCSubtypesResponse>(
           this,
           Invocation.method(
             #resourceRPCSubtypes,
@@ -297,8 +329,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.ResourceRPCSubtypesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.ResourceRPCSubtypesResponse>(
           this,
           Invocation.method(
             #resourceRPCSubtypes,
@@ -306,10 +337,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.ResourceRPCSubtypesResponse>);
+      ) as _i4.ResponseFuture<_i11.ResourceRPCSubtypesResponse>);
   @override
-  _i4.ResponseFuture<_i9.CancelOperationResponse> cancelOperation(
-    _i9.CancelOperationRequest? request, {
+  _i4.ResponseFuture<_i11.CancelOperationResponse> cancelOperation(
+    _i11.CancelOperationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -318,7 +349,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.CancelOperationResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.CancelOperationResponse>(
           this,
           Invocation.method(
             #cancelOperation,
@@ -326,8 +357,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.CancelOperationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.CancelOperationResponse>(
           this,
           Invocation.method(
             #cancelOperation,
@@ -335,10 +365,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.CancelOperationResponse>);
+      ) as _i4.ResponseFuture<_i11.CancelOperationResponse>);
   @override
-  _i4.ResponseFuture<_i9.BlockForOperationResponse> blockForOperation(
-    _i9.BlockForOperationRequest? request, {
+  _i4.ResponseFuture<_i11.BlockForOperationResponse> blockForOperation(
+    _i11.BlockForOperationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -347,7 +377,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.BlockForOperationResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.BlockForOperationResponse>(
           this,
           Invocation.method(
             #blockForOperation,
@@ -355,8 +385,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.BlockForOperationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.BlockForOperationResponse>(
           this,
           Invocation.method(
             #blockForOperation,
@@ -364,10 +393,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.BlockForOperationResponse>);
+      ) as _i4.ResponseFuture<_i11.BlockForOperationResponse>);
   @override
-  _i4.ResponseFuture<_i9.DiscoverComponentsResponse> discoverComponents(
-    _i9.DiscoverComponentsRequest? request, {
+  _i4.ResponseFuture<_i11.DiscoverComponentsResponse> discoverComponents(
+    _i11.DiscoverComponentsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -376,7 +405,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.DiscoverComponentsResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.DiscoverComponentsResponse>(
           this,
           Invocation.method(
             #discoverComponents,
@@ -384,8 +413,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.DiscoverComponentsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.DiscoverComponentsResponse>(
           this,
           Invocation.method(
             #discoverComponents,
@@ -393,10 +421,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.DiscoverComponentsResponse>);
+      ) as _i4.ResponseFuture<_i11.DiscoverComponentsResponse>);
   @override
-  _i4.ResponseFuture<_i9.FrameSystemConfigResponse> frameSystemConfig(
-    _i9.FrameSystemConfigRequest? request, {
+  _i4.ResponseFuture<_i11.FrameSystemConfigResponse> frameSystemConfig(
+    _i11.FrameSystemConfigRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -405,7 +433,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.FrameSystemConfigResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.FrameSystemConfigResponse>(
           this,
           Invocation.method(
             #frameSystemConfig,
@@ -413,8 +441,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.FrameSystemConfigResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.FrameSystemConfigResponse>(
           this,
           Invocation.method(
             #frameSystemConfig,
@@ -422,10 +449,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.FrameSystemConfigResponse>);
+      ) as _i4.ResponseFuture<_i11.FrameSystemConfigResponse>);
   @override
-  _i4.ResponseFuture<_i9.TransformPoseResponse> transformPose(
-    _i9.TransformPoseRequest? request, {
+  _i4.ResponseFuture<_i11.TransformPoseResponse> transformPose(
+    _i11.TransformPoseRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -434,7 +461,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.TransformPoseResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.TransformPoseResponse>(
           this,
           Invocation.method(
             #transformPose,
@@ -442,8 +469,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.TransformPoseResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.TransformPoseResponse>(
           this,
           Invocation.method(
             #transformPose,
@@ -451,10 +477,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.TransformPoseResponse>);
+      ) as _i4.ResponseFuture<_i11.TransformPoseResponse>);
   @override
-  _i4.ResponseFuture<_i9.TransformPCDResponse> transformPCD(
-    _i9.TransformPCDRequest? request, {
+  _i4.ResponseFuture<_i11.TransformPCDResponse> transformPCD(
+    _i11.TransformPCDRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -463,7 +489,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.TransformPCDResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.TransformPCDResponse>(
           this,
           Invocation.method(
             #transformPCD,
@@ -471,8 +497,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.TransformPCDResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.TransformPCDResponse>(
           this,
           Invocation.method(
             #transformPCD,
@@ -480,10 +505,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.TransformPCDResponse>);
+      ) as _i4.ResponseFuture<_i11.TransformPCDResponse>);
   @override
-  _i4.ResponseFuture<_i9.GetStatusResponse> getStatus(
-    _i9.GetStatusRequest? request, {
+  _i4.ResponseFuture<_i11.GetStatusResponse> getStatus(
+    _i11.GetStatusRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -492,7 +517,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.GetStatusResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.GetStatusResponse>(
           this,
           Invocation.method(
             #getStatus,
@@ -500,7 +525,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub: _FakeResponseFuture_2<_i9.GetStatusResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.GetStatusResponse>(
           this,
           Invocation.method(
             #getStatus,
@@ -508,10 +533,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.GetStatusResponse>);
+      ) as _i4.ResponseFuture<_i11.GetStatusResponse>);
   @override
-  _i4.ResponseStream<_i9.StreamStatusResponse> streamStatus(
-    _i9.StreamStatusRequest? request, {
+  _i4.ResponseStream<_i11.StreamStatusResponse> streamStatus(
+    _i11.StreamStatusRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -520,7 +545,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseStream_3<_i9.StreamStatusResponse>(
+        returnValue: _FakeResponseStream_3<_i11.StreamStatusResponse>(
           this,
           Invocation.method(
             #streamStatus,
@@ -528,8 +553,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseStream_3<_i9.StreamStatusResponse>(
+        returnValueForMissingStub: _FakeResponseStream_3<_i11.StreamStatusResponse>(
           this,
           Invocation.method(
             #streamStatus,
@@ -537,10 +561,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseStream<_i9.StreamStatusResponse>);
+      ) as _i4.ResponseStream<_i11.StreamStatusResponse>);
   @override
-  _i4.ResponseFuture<_i9.StopAllResponse> stopAll(
-    _i9.StopAllRequest? request, {
+  _i4.ResponseFuture<_i11.StopAllResponse> stopAll(
+    _i11.StopAllRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -549,7 +573,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.StopAllResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.StopAllResponse>(
           this,
           Invocation.method(
             #stopAll,
@@ -557,7 +581,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub: _FakeResponseFuture_2<_i9.StopAllResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.StopAllResponse>(
           this,
           Invocation.method(
             #stopAll,
@@ -565,10 +589,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.StopAllResponse>);
+      ) as _i4.ResponseFuture<_i11.StopAllResponse>);
   @override
-  _i4.ResponseFuture<_i9.StartSessionResponse> startSession(
-    _i9.StartSessionRequest? request, {
+  _i4.ResponseFuture<_i11.StartSessionResponse> startSession(
+    _i11.StartSessionRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -577,7 +601,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.StartSessionResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.StartSessionResponse>(
           this,
           Invocation.method(
             #startSession,
@@ -585,8 +609,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.StartSessionResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.StartSessionResponse>(
           this,
           Invocation.method(
             #startSession,
@@ -594,10 +617,10 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.StartSessionResponse>);
+      ) as _i4.ResponseFuture<_i11.StartSessionResponse>);
   @override
-  _i4.ResponseFuture<_i9.SendSessionHeartbeatResponse> sendSessionHeartbeat(
-    _i9.SendSessionHeartbeatRequest? request, {
+  _i4.ResponseFuture<_i11.SendSessionHeartbeatResponse> sendSessionHeartbeat(
+    _i11.SendSessionHeartbeatRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -606,7 +629,7 @@ class MockRobotServiceClient extends _i1.Mock
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i9.SendSessionHeartbeatResponse>(
+        returnValue: _FakeResponseFuture_2<_i11.SendSessionHeartbeatResponse>(
           this,
           Invocation.method(
             #sendSessionHeartbeat,
@@ -614,8 +637,7 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i9.SendSessionHeartbeatResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.SendSessionHeartbeatResponse>(
           this,
           Invocation.method(
             #sendSessionHeartbeat,
@@ -623,11 +645,11 @@ class MockRobotServiceClient extends _i1.Mock
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i9.SendSessionHeartbeatResponse>);
+      ) as _i4.ResponseFuture<_i11.SendSessionHeartbeatResponse>);
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -664,7 +686,7 @@ class MockRobotServiceClient extends _i1.Mock
       ) as _i3.ClientCall<Q, R>);
   @override
   _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
+    _i9.ClientMethod<Q, R>? method,
     Q? request, {
     _i3.CallOptions? options,
   }) =>
@@ -702,8 +724,8 @@ class MockRobotServiceClient extends _i1.Mock
       ) as _i4.ResponseFuture<R>);
   @override
   _i4.ResponseStream<R> $createStreamingCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -743,10 +765,10 @@ class MockRobotServiceClient extends _i1.Mock
 /// A class which mocks [AppServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
+class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
   @override
-  _i4.ResponseFuture<_i11.GetUserIDByEmailResponse> getUserIDByEmail(
-    _i11.GetUserIDByEmailRequest? request, {
+  _i4.ResponseFuture<_i13.GetUserIDByEmailResponse> getUserIDByEmail(
+    _i13.GetUserIDByEmailRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -755,7 +777,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetUserIDByEmailResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetUserIDByEmailResponse>(
           this,
           Invocation.method(
             #getUserIDByEmail,
@@ -763,8 +785,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetUserIDByEmailResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetUserIDByEmailResponse>(
           this,
           Invocation.method(
             #getUserIDByEmail,
@@ -772,10 +793,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetUserIDByEmailResponse>);
+      ) as _i4.ResponseFuture<_i13.GetUserIDByEmailResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateOrganizationResponse> createOrganization(
-    _i11.CreateOrganizationRequest? request, {
+  _i4.ResponseFuture<_i13.CreateOrganizationResponse> createOrganization(
+    _i13.CreateOrganizationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -784,7 +805,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CreateOrganizationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CreateOrganizationResponse>(
           this,
           Invocation.method(
             #createOrganization,
@@ -792,8 +813,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CreateOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateOrganizationResponse>(
           this,
           Invocation.method(
             #createOrganization,
@@ -801,10 +821,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CreateOrganizationResponse>);
+      ) as _i4.ResponseFuture<_i13.CreateOrganizationResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListOrganizationsResponse> listOrganizations(
-    _i11.ListOrganizationsRequest? request, {
+  _i4.ResponseFuture<_i13.ListOrganizationsResponse> listOrganizations(
+    _i13.ListOrganizationsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -813,7 +833,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ListOrganizationsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ListOrganizationsResponse>(
           this,
           Invocation.method(
             #listOrganizations,
@@ -821,8 +841,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ListOrganizationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListOrganizationsResponse>(
           this,
           Invocation.method(
             #listOrganizations,
@@ -830,41 +849,38 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ListOrganizationsResponse>);
+      ) as _i4.ResponseFuture<_i13.ListOrganizationsResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListOrganizationsByUserResponse>
-      listOrganizationsByUser(
-    _i11.ListOrganizationsByUserRequest? request, {
+  _i4.ResponseFuture<_i13.ListOrganizationsByUserResponse> listOrganizationsByUser(
+    _i13.ListOrganizationsByUserRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #listOrganizationsByUser,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i11.ListOrganizationsByUserResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationsByUser,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i11.ListOrganizationsByUserResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationsByUser,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i11.ListOrganizationsByUserResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #listOrganizationsByUser,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.ListOrganizationsByUserResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationsByUser,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListOrganizationsByUserResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationsByUser,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.ListOrganizationsByUserResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetOrganizationResponse> getOrganization(
-    _i11.GetOrganizationRequest? request, {
+  _i4.ResponseFuture<_i13.GetOrganizationResponse> getOrganization(
+    _i13.GetOrganizationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -873,7 +889,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetOrganizationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetOrganizationResponse>(
           this,
           Invocation.method(
             #getOrganization,
@@ -881,8 +897,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetOrganizationResponse>(
           this,
           Invocation.method(
             #getOrganization,
@@ -890,10 +905,38 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetOrganizationResponse>);
+      ) as _i4.ResponseFuture<_i13.GetOrganizationResponse>);
   @override
-  _i4.ResponseFuture<_i11.UpdateOrganizationResponse> updateOrganization(
-    _i11.UpdateOrganizationRequest? request, {
+  _i4.ResponseFuture<_i13.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability(
+    _i13.GetOrganizationNamespaceAvailabilityRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getOrganizationNamespaceAvailability,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.GetOrganizationNamespaceAvailabilityResponse>(
+          this,
+          Invocation.method(
+            #getOrganizationNamespaceAvailability,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetOrganizationNamespaceAvailabilityResponse>(
+          this,
+          Invocation.method(
+            #getOrganizationNamespaceAvailability,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.GetOrganizationNamespaceAvailabilityResponse>);
+  @override
+  _i4.ResponseFuture<_i13.UpdateOrganizationResponse> updateOrganization(
+    _i13.UpdateOrganizationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -902,7 +945,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UpdateOrganizationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UpdateOrganizationResponse>(
           this,
           Invocation.method(
             #updateOrganization,
@@ -910,8 +953,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UpdateOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateOrganizationResponse>(
           this,
           Invocation.method(
             #updateOrganization,
@@ -919,10 +961,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UpdateOrganizationResponse>);
+      ) as _i4.ResponseFuture<_i13.UpdateOrganizationResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteOrganizationResponse> deleteOrganization(
-    _i11.DeleteOrganizationRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteOrganizationResponse> deleteOrganization(
+    _i13.DeleteOrganizationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -931,7 +973,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteOrganizationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteOrganizationResponse>(
           this,
           Invocation.method(
             #deleteOrganization,
@@ -939,8 +981,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteOrganizationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteOrganizationResponse>(
           this,
           Invocation.method(
             #deleteOrganization,
@@ -948,165 +989,178 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteOrganizationResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteOrganizationResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListOrganizationMembersResponse>
-      listOrganizationMembers(
-    _i11.ListOrganizationMembersRequest? request, {
+  _i4.ResponseFuture<_i13.ListOrganizationMembersResponse> listOrganizationMembers(
+    _i13.ListOrganizationMembersRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #listOrganizationMembers,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i11.ListOrganizationMembersResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationMembers,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i11.ListOrganizationMembersResponse>(
-              this,
-              Invocation.method(
-                #listOrganizationMembers,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i11.ListOrganizationMembersResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #listOrganizationMembers,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.ListOrganizationMembersResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationMembers,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListOrganizationMembersResponse>(
+          this,
+          Invocation.method(
+            #listOrganizationMembers,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.ListOrganizationMembersResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateOrganizationInviteResponse>
-      createOrganizationInvite(
-    _i11.CreateOrganizationInviteRequest? request, {
+  _i4.ResponseFuture<_i13.CreateOrganizationInviteResponse> createOrganizationInvite(
+    _i13.CreateOrganizationInviteRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #createOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i11.CreateOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #createOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i11.CreateOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #createOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i11.CreateOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #createOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.CreateOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #createOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #createOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.CreateOrganizationInviteResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteOrganizationMemberResponse>
-      deleteOrganizationMember(
-    _i11.DeleteOrganizationMemberRequest? request, {
+  _i4.ResponseFuture<_i13.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations(
+    _i13.UpdateOrganizationInviteAuthorizationsRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteOrganizationMember,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i11.DeleteOrganizationMemberResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationMember,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i11.DeleteOrganizationMemberResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationMember,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i11.DeleteOrganizationMemberResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateOrganizationInviteAuthorizations,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.UpdateOrganizationInviteAuthorizationsResponse>(
+          this,
+          Invocation.method(
+            #updateOrganizationInviteAuthorizations,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateOrganizationInviteAuthorizationsResponse>(
+          this,
+          Invocation.method(
+            #updateOrganizationInviteAuthorizations,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.UpdateOrganizationInviteAuthorizationsResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteOrganizationInviteResponse>
-      deleteOrganizationInvite(
-    _i11.DeleteOrganizationInviteRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteOrganizationMemberResponse> deleteOrganizationMember(
+    _i13.DeleteOrganizationMemberRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i11.DeleteOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i11.DeleteOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #deleteOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i11.DeleteOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteOrganizationMember,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.DeleteOrganizationMemberResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationMember,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteOrganizationMemberResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationMember,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.DeleteOrganizationMemberResponse>);
   @override
-  _i4.ResponseFuture<_i11.ResendOrganizationInviteResponse>
-      resendOrganizationInvite(
-    _i11.ResendOrganizationInviteRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteOrganizationInviteResponse> deleteOrganizationInvite(
+    _i13.DeleteOrganizationInviteRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #resendOrganizationInvite,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i11.ResendOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #resendOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i11.ResendOrganizationInviteResponse>(
-              this,
-              Invocation.method(
-                #resendOrganizationInvite,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i11.ResendOrganizationInviteResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.DeleteOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #deleteOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.DeleteOrganizationInviteResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateLocationResponse> createLocation(
-    _i11.CreateLocationRequest? request, {
+  _i4.ResponseFuture<_i13.ResendOrganizationInviteResponse> resendOrganizationInvite(
+    _i13.ResendOrganizationInviteRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #resendOrganizationInvite,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.ResendOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #resendOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ResendOrganizationInviteResponse>(
+          this,
+          Invocation.method(
+            #resendOrganizationInvite,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.ResendOrganizationInviteResponse>);
+  @override
+  _i4.ResponseFuture<_i13.CreateLocationResponse> createLocation(
+    _i13.CreateLocationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1115,7 +1169,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CreateLocationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CreateLocationResponse>(
           this,
           Invocation.method(
             #createLocation,
@@ -1123,8 +1177,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CreateLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateLocationResponse>(
           this,
           Invocation.method(
             #createLocation,
@@ -1132,10 +1185,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CreateLocationResponse>);
+      ) as _i4.ResponseFuture<_i13.CreateLocationResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetLocationResponse> getLocation(
-    _i11.GetLocationRequest? request, {
+  _i4.ResponseFuture<_i13.GetLocationResponse> getLocation(
+    _i13.GetLocationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1144,7 +1197,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetLocationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetLocationResponse>(
           this,
           Invocation.method(
             #getLocation,
@@ -1152,8 +1205,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetLocationResponse>(
           this,
           Invocation.method(
             #getLocation,
@@ -1161,10 +1213,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetLocationResponse>);
+      ) as _i4.ResponseFuture<_i13.GetLocationResponse>);
   @override
-  _i4.ResponseFuture<_i11.UpdateLocationResponse> updateLocation(
-    _i11.UpdateLocationRequest? request, {
+  _i4.ResponseFuture<_i13.UpdateLocationResponse> updateLocation(
+    _i13.UpdateLocationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1173,7 +1225,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UpdateLocationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UpdateLocationResponse>(
           this,
           Invocation.method(
             #updateLocation,
@@ -1181,8 +1233,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UpdateLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateLocationResponse>(
           this,
           Invocation.method(
             #updateLocation,
@@ -1190,10 +1241,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UpdateLocationResponse>);
+      ) as _i4.ResponseFuture<_i13.UpdateLocationResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteLocationResponse> deleteLocation(
-    _i11.DeleteLocationRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteLocationResponse> deleteLocation(
+    _i13.DeleteLocationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1202,7 +1253,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteLocationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteLocationResponse>(
           this,
           Invocation.method(
             #deleteLocation,
@@ -1210,8 +1261,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteLocationResponse>(
           this,
           Invocation.method(
             #deleteLocation,
@@ -1219,10 +1269,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteLocationResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteLocationResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListLocationsResponse> listLocations(
-    _i11.ListLocationsRequest? request, {
+  _i4.ResponseFuture<_i13.ListLocationsResponse> listLocations(
+    _i13.ListLocationsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1231,7 +1281,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ListLocationsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ListLocationsResponse>(
           this,
           Invocation.method(
             #listLocations,
@@ -1239,8 +1289,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ListLocationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListLocationsResponse>(
           this,
           Invocation.method(
             #listLocations,
@@ -1248,10 +1297,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ListLocationsResponse>);
+      ) as _i4.ResponseFuture<_i13.ListLocationsResponse>);
   @override
-  _i4.ResponseFuture<_i11.ShareLocationResponse> shareLocation(
-    _i11.ShareLocationRequest? request, {
+  _i4.ResponseFuture<_i13.ShareLocationResponse> shareLocation(
+    _i13.ShareLocationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1260,7 +1309,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ShareLocationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ShareLocationResponse>(
           this,
           Invocation.method(
             #shareLocation,
@@ -1268,8 +1317,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ShareLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ShareLocationResponse>(
           this,
           Invocation.method(
             #shareLocation,
@@ -1277,10 +1325,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ShareLocationResponse>);
+      ) as _i4.ResponseFuture<_i13.ShareLocationResponse>);
   @override
-  _i4.ResponseFuture<_i11.UnshareLocationResponse> unshareLocation(
-    _i11.UnshareLocationRequest? request, {
+  _i4.ResponseFuture<_i13.UnshareLocationResponse> unshareLocation(
+    _i13.UnshareLocationRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1289,7 +1337,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UnshareLocationResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UnshareLocationResponse>(
           this,
           Invocation.method(
             #unshareLocation,
@@ -1297,8 +1345,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UnshareLocationResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UnshareLocationResponse>(
           this,
           Invocation.method(
             #unshareLocation,
@@ -1306,10 +1353,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UnshareLocationResponse>);
+      ) as _i4.ResponseFuture<_i13.UnshareLocationResponse>);
   @override
-  _i4.ResponseFuture<_i11.LocationAuthResponse> locationAuth(
-    _i11.LocationAuthRequest? request, {
+  _i4.ResponseFuture<_i13.LocationAuthResponse> locationAuth(
+    _i13.LocationAuthRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1318,7 +1365,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.LocationAuthResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.LocationAuthResponse>(
           this,
           Invocation.method(
             #locationAuth,
@@ -1326,8 +1373,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.LocationAuthResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.LocationAuthResponse>(
           this,
           Invocation.method(
             #locationAuth,
@@ -1335,10 +1381,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.LocationAuthResponse>);
+      ) as _i4.ResponseFuture<_i13.LocationAuthResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateLocationSecretResponse> createLocationSecret(
-    _i11.CreateLocationSecretRequest? request, {
+  _i4.ResponseFuture<_i13.CreateLocationSecretResponse> createLocationSecret(
+    _i13.CreateLocationSecretRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1347,7 +1393,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CreateLocationSecretResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CreateLocationSecretResponse>(
           this,
           Invocation.method(
             #createLocationSecret,
@@ -1355,8 +1401,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CreateLocationSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateLocationSecretResponse>(
           this,
           Invocation.method(
             #createLocationSecret,
@@ -1364,10 +1409,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CreateLocationSecretResponse>);
+      ) as _i4.ResponseFuture<_i13.CreateLocationSecretResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteLocationSecretResponse> deleteLocationSecret(
-    _i11.DeleteLocationSecretRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteLocationSecretResponse> deleteLocationSecret(
+    _i13.DeleteLocationSecretRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1376,7 +1421,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteLocationSecretResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteLocationSecretResponse>(
           this,
           Invocation.method(
             #deleteLocationSecret,
@@ -1384,8 +1429,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteLocationSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteLocationSecretResponse>(
           this,
           Invocation.method(
             #deleteLocationSecret,
@@ -1393,10 +1437,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteLocationSecretResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteLocationSecretResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetRobotResponse> getRobot(
-    _i11.GetRobotRequest? request, {
+  _i4.ResponseFuture<_i13.GetRobotResponse> getRobot(
+    _i13.GetRobotRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1405,7 +1449,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetRobotResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetRobotResponse>(
           this,
           Invocation.method(
             #getRobot,
@@ -1413,7 +1457,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub: _FakeResponseFuture_2<_i11.GetRobotResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetRobotResponse>(
           this,
           Invocation.method(
             #getRobot,
@@ -1421,10 +1465,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetRobotResponse>);
+      ) as _i4.ResponseFuture<_i13.GetRobotResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetRoverRentalRobotsResponse> getRoverRentalRobots(
-    _i11.GetRoverRentalRobotsRequest? request, {
+  _i4.ResponseFuture<_i13.GetRoverRentalRobotsResponse> getRoverRentalRobots(
+    _i13.GetRoverRentalRobotsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1433,7 +1477,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetRoverRentalRobotsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetRoverRentalRobotsResponse>(
           this,
           Invocation.method(
             #getRoverRentalRobots,
@@ -1441,8 +1485,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetRoverRentalRobotsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetRoverRentalRobotsResponse>(
           this,
           Invocation.method(
             #getRoverRentalRobots,
@@ -1450,10 +1493,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetRoverRentalRobotsResponse>);
+      ) as _i4.ResponseFuture<_i13.GetRoverRentalRobotsResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetRobotPartsResponse> getRobotParts(
-    _i11.GetRobotPartsRequest? request, {
+  _i4.ResponseFuture<_i13.GetRobotPartsResponse> getRobotParts(
+    _i13.GetRobotPartsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1462,7 +1505,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetRobotPartsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetRobotPartsResponse>(
           this,
           Invocation.method(
             #getRobotParts,
@@ -1470,8 +1513,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetRobotPartsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetRobotPartsResponse>(
           this,
           Invocation.method(
             #getRobotParts,
@@ -1479,10 +1521,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetRobotPartsResponse>);
+      ) as _i4.ResponseFuture<_i13.GetRobotPartsResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetRobotPartResponse> getRobotPart(
-    _i11.GetRobotPartRequest? request, {
+  _i4.ResponseFuture<_i13.GetRobotPartResponse> getRobotPart(
+    _i13.GetRobotPartRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1491,7 +1533,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetRobotPartResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetRobotPartResponse>(
           this,
           Invocation.method(
             #getRobotPart,
@@ -1499,8 +1541,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetRobotPartResponse>(
           this,
           Invocation.method(
             #getRobotPart,
@@ -1508,10 +1549,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetRobotPartResponse>);
+      ) as _i4.ResponseFuture<_i13.GetRobotPartResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetRobotPartLogsResponse> getRobotPartLogs(
-    _i11.GetRobotPartLogsRequest? request, {
+  _i4.ResponseFuture<_i13.GetRobotPartLogsResponse> getRobotPartLogs(
+    _i13.GetRobotPartLogsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1520,7 +1561,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetRobotPartLogsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetRobotPartLogsResponse>(
           this,
           Invocation.method(
             #getRobotPartLogs,
@@ -1528,8 +1569,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetRobotPartLogsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetRobotPartLogsResponse>(
           this,
           Invocation.method(
             #getRobotPartLogs,
@@ -1537,10 +1577,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetRobotPartLogsResponse>);
+      ) as _i4.ResponseFuture<_i13.GetRobotPartLogsResponse>);
   @override
-  _i4.ResponseStream<_i11.TailRobotPartLogsResponse> tailRobotPartLogs(
-    _i11.TailRobotPartLogsRequest? request, {
+  _i4.ResponseStream<_i13.TailRobotPartLogsResponse> tailRobotPartLogs(
+    _i13.TailRobotPartLogsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1549,7 +1589,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseStream_3<_i11.TailRobotPartLogsResponse>(
+        returnValue: _FakeResponseStream_3<_i13.TailRobotPartLogsResponse>(
           this,
           Invocation.method(
             #tailRobotPartLogs,
@@ -1557,8 +1597,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseStream_3<_i11.TailRobotPartLogsResponse>(
+        returnValueForMissingStub: _FakeResponseStream_3<_i13.TailRobotPartLogsResponse>(
           this,
           Invocation.method(
             #tailRobotPartLogs,
@@ -1566,10 +1605,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseStream<_i11.TailRobotPartLogsResponse>);
+      ) as _i4.ResponseStream<_i13.TailRobotPartLogsResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetRobotPartHistoryResponse> getRobotPartHistory(
-    _i11.GetRobotPartHistoryRequest? request, {
+  _i4.ResponseFuture<_i13.GetRobotPartHistoryResponse> getRobotPartHistory(
+    _i13.GetRobotPartHistoryRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1578,7 +1617,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetRobotPartHistoryResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetRobotPartHistoryResponse>(
           this,
           Invocation.method(
             #getRobotPartHistory,
@@ -1586,8 +1625,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetRobotPartHistoryResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetRobotPartHistoryResponse>(
           this,
           Invocation.method(
             #getRobotPartHistory,
@@ -1595,10 +1633,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetRobotPartHistoryResponse>);
+      ) as _i4.ResponseFuture<_i13.GetRobotPartHistoryResponse>);
   @override
-  _i4.ResponseFuture<_i11.UpdateRobotPartResponse> updateRobotPart(
-    _i11.UpdateRobotPartRequest? request, {
+  _i4.ResponseFuture<_i13.UpdateRobotPartResponse> updateRobotPart(
+    _i13.UpdateRobotPartRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1607,7 +1645,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UpdateRobotPartResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UpdateRobotPartResponse>(
           this,
           Invocation.method(
             #updateRobotPart,
@@ -1615,8 +1653,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UpdateRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateRobotPartResponse>(
           this,
           Invocation.method(
             #updateRobotPart,
@@ -1624,10 +1661,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UpdateRobotPartResponse>);
+      ) as _i4.ResponseFuture<_i13.UpdateRobotPartResponse>);
   @override
-  _i4.ResponseFuture<_i11.NewRobotPartResponse> newRobotPart(
-    _i11.NewRobotPartRequest? request, {
+  _i4.ResponseFuture<_i13.NewRobotPartResponse> newRobotPart(
+    _i13.NewRobotPartRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1636,7 +1673,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.NewRobotPartResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.NewRobotPartResponse>(
           this,
           Invocation.method(
             #newRobotPart,
@@ -1644,8 +1681,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.NewRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.NewRobotPartResponse>(
           this,
           Invocation.method(
             #newRobotPart,
@@ -1653,10 +1689,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.NewRobotPartResponse>);
+      ) as _i4.ResponseFuture<_i13.NewRobotPartResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteRobotPartResponse> deleteRobotPart(
-    _i11.DeleteRobotPartRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteRobotPartResponse> deleteRobotPart(
+    _i13.DeleteRobotPartRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1665,7 +1701,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteRobotPartResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteRobotPartResponse>(
           this,
           Invocation.method(
             #deleteRobotPart,
@@ -1673,8 +1709,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteRobotPartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteRobotPartResponse>(
           this,
           Invocation.method(
             #deleteRobotPart,
@@ -1682,10 +1717,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteRobotPartResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteRobotPartResponse>);
   @override
-  _i4.ResponseFuture<_i11.MarkPartAsMainResponse> markPartAsMain(
-    _i11.MarkPartAsMainRequest? request, {
+  _i4.ResponseFuture<_i13.MarkPartAsMainResponse> markPartAsMain(
+    _i13.MarkPartAsMainRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1694,7 +1729,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.MarkPartAsMainResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.MarkPartAsMainResponse>(
           this,
           Invocation.method(
             #markPartAsMain,
@@ -1702,8 +1737,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.MarkPartAsMainResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.MarkPartAsMainResponse>(
           this,
           Invocation.method(
             #markPartAsMain,
@@ -1711,10 +1745,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.MarkPartAsMainResponse>);
+      ) as _i4.ResponseFuture<_i13.MarkPartAsMainResponse>);
   @override
-  _i4.ResponseFuture<_i11.MarkPartForRestartResponse> markPartForRestart(
-    _i11.MarkPartForRestartRequest? request, {
+  _i4.ResponseFuture<_i13.MarkPartForRestartResponse> markPartForRestart(
+    _i13.MarkPartForRestartRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1723,7 +1757,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.MarkPartForRestartResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.MarkPartForRestartResponse>(
           this,
           Invocation.method(
             #markPartForRestart,
@@ -1731,8 +1765,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.MarkPartForRestartResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.MarkPartForRestartResponse>(
           this,
           Invocation.method(
             #markPartForRestart,
@@ -1740,10 +1773,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.MarkPartForRestartResponse>);
+      ) as _i4.ResponseFuture<_i13.MarkPartForRestartResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateRobotPartSecretResponse> createRobotPartSecret(
-    _i11.CreateRobotPartSecretRequest? request, {
+  _i4.ResponseFuture<_i13.CreateRobotPartSecretResponse> createRobotPartSecret(
+    _i13.CreateRobotPartSecretRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1752,7 +1785,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CreateRobotPartSecretResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CreateRobotPartSecretResponse>(
           this,
           Invocation.method(
             #createRobotPartSecret,
@@ -1760,8 +1793,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CreateRobotPartSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateRobotPartSecretResponse>(
           this,
           Invocation.method(
             #createRobotPartSecret,
@@ -1769,10 +1801,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CreateRobotPartSecretResponse>);
+      ) as _i4.ResponseFuture<_i13.CreateRobotPartSecretResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteRobotPartSecretResponse> deleteRobotPartSecret(
-    _i11.DeleteRobotPartSecretRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteRobotPartSecretResponse> deleteRobotPartSecret(
+    _i13.DeleteRobotPartSecretRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1781,7 +1813,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteRobotPartSecretResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteRobotPartSecretResponse>(
           this,
           Invocation.method(
             #deleteRobotPartSecret,
@@ -1789,8 +1821,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteRobotPartSecretResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteRobotPartSecretResponse>(
           this,
           Invocation.method(
             #deleteRobotPartSecret,
@@ -1798,10 +1829,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteRobotPartSecretResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteRobotPartSecretResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListRobotsResponse> listRobots(
-    _i11.ListRobotsRequest? request, {
+  _i4.ResponseFuture<_i13.ListRobotsResponse> listRobots(
+    _i13.ListRobotsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1810,7 +1841,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ListRobotsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ListRobotsResponse>(
           this,
           Invocation.method(
             #listRobots,
@@ -1818,8 +1849,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ListRobotsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListRobotsResponse>(
           this,
           Invocation.method(
             #listRobots,
@@ -1827,10 +1857,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ListRobotsResponse>);
+      ) as _i4.ResponseFuture<_i13.ListRobotsResponse>);
   @override
-  _i4.ResponseFuture<_i11.NewRobotResponse> newRobot(
-    _i11.NewRobotRequest? request, {
+  _i4.ResponseFuture<_i13.NewRobotResponse> newRobot(
+    _i13.NewRobotRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1839,7 +1869,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.NewRobotResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.NewRobotResponse>(
           this,
           Invocation.method(
             #newRobot,
@@ -1847,7 +1877,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub: _FakeResponseFuture_2<_i11.NewRobotResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.NewRobotResponse>(
           this,
           Invocation.method(
             #newRobot,
@@ -1855,10 +1885,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.NewRobotResponse>);
+      ) as _i4.ResponseFuture<_i13.NewRobotResponse>);
   @override
-  _i4.ResponseFuture<_i11.UpdateRobotResponse> updateRobot(
-    _i11.UpdateRobotRequest? request, {
+  _i4.ResponseFuture<_i13.UpdateRobotResponse> updateRobot(
+    _i13.UpdateRobotRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1867,7 +1897,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UpdateRobotResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UpdateRobotResponse>(
           this,
           Invocation.method(
             #updateRobot,
@@ -1875,8 +1905,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UpdateRobotResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateRobotResponse>(
           this,
           Invocation.method(
             #updateRobot,
@@ -1884,10 +1913,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UpdateRobotResponse>);
+      ) as _i4.ResponseFuture<_i13.UpdateRobotResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteRobotResponse> deleteRobot(
-    _i11.DeleteRobotRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteRobotResponse> deleteRobot(
+    _i13.DeleteRobotRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1896,7 +1925,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteRobotResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteRobotResponse>(
           this,
           Invocation.method(
             #deleteRobot,
@@ -1904,8 +1933,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteRobotResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteRobotResponse>(
           this,
           Invocation.method(
             #deleteRobot,
@@ -1913,10 +1941,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteRobotResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteRobotResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListFragmentsResponse> listFragments(
-    _i11.ListFragmentsRequest? request, {
+  _i4.ResponseFuture<_i13.ListFragmentsResponse> listFragments(
+    _i13.ListFragmentsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1925,7 +1953,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ListFragmentsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ListFragmentsResponse>(
           this,
           Invocation.method(
             #listFragments,
@@ -1933,8 +1961,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ListFragmentsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListFragmentsResponse>(
           this,
           Invocation.method(
             #listFragments,
@@ -1942,10 +1969,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ListFragmentsResponse>);
+      ) as _i4.ResponseFuture<_i13.ListFragmentsResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetFragmentResponse> getFragment(
-    _i11.GetFragmentRequest? request, {
+  _i4.ResponseFuture<_i13.GetFragmentResponse> getFragment(
+    _i13.GetFragmentRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1954,7 +1981,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetFragmentResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetFragmentResponse>(
           this,
           Invocation.method(
             #getFragment,
@@ -1962,8 +1989,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetFragmentResponse>(
           this,
           Invocation.method(
             #getFragment,
@@ -1971,10 +1997,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetFragmentResponse>);
+      ) as _i4.ResponseFuture<_i13.GetFragmentResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateFragmentResponse> createFragment(
-    _i11.CreateFragmentRequest? request, {
+  _i4.ResponseFuture<_i13.CreateFragmentResponse> createFragment(
+    _i13.CreateFragmentRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -1983,7 +2009,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CreateFragmentResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CreateFragmentResponse>(
           this,
           Invocation.method(
             #createFragment,
@@ -1991,8 +2017,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CreateFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateFragmentResponse>(
           this,
           Invocation.method(
             #createFragment,
@@ -2000,10 +2025,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CreateFragmentResponse>);
+      ) as _i4.ResponseFuture<_i13.CreateFragmentResponse>);
   @override
-  _i4.ResponseFuture<_i11.UpdateFragmentResponse> updateFragment(
-    _i11.UpdateFragmentRequest? request, {
+  _i4.ResponseFuture<_i13.UpdateFragmentResponse> updateFragment(
+    _i13.UpdateFragmentRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2012,7 +2037,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UpdateFragmentResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UpdateFragmentResponse>(
           this,
           Invocation.method(
             #updateFragment,
@@ -2020,8 +2045,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UpdateFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateFragmentResponse>(
           this,
           Invocation.method(
             #updateFragment,
@@ -2029,10 +2053,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UpdateFragmentResponse>);
+      ) as _i4.ResponseFuture<_i13.UpdateFragmentResponse>);
   @override
-  _i4.ResponseFuture<_i11.DeleteFragmentResponse> deleteFragment(
-    _i11.DeleteFragmentRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteFragmentResponse> deleteFragment(
+    _i13.DeleteFragmentRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2041,7 +2065,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.DeleteFragmentResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.DeleteFragmentResponse>(
           this,
           Invocation.method(
             #deleteFragment,
@@ -2049,8 +2073,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.DeleteFragmentResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.DeleteFragmentResponse>(
           this,
           Invocation.method(
             #deleteFragment,
@@ -2058,10 +2081,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.DeleteFragmentResponse>);
+      ) as _i4.ResponseFuture<_i13.DeleteFragmentResponse>);
   @override
-  _i4.ResponseFuture<_i11.AddRoleResponse> addRole(
-    _i11.AddRoleRequest? request, {
+  _i4.ResponseFuture<_i13.AddRoleResponse> addRole(
+    _i13.AddRoleRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2070,7 +2093,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.AddRoleResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.AddRoleResponse>(
           this,
           Invocation.method(
             #addRole,
@@ -2078,7 +2101,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub: _FakeResponseFuture_2<_i11.AddRoleResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.AddRoleResponse>(
           this,
           Invocation.method(
             #addRole,
@@ -2086,10 +2109,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.AddRoleResponse>);
+      ) as _i4.ResponseFuture<_i13.AddRoleResponse>);
   @override
-  _i4.ResponseFuture<_i11.RemoveRoleResponse> removeRole(
-    _i11.RemoveRoleRequest? request, {
+  _i4.ResponseFuture<_i13.RemoveRoleResponse> removeRole(
+    _i13.RemoveRoleRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2098,7 +2121,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.RemoveRoleResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.RemoveRoleResponse>(
           this,
           Invocation.method(
             #removeRole,
@@ -2106,8 +2129,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.RemoveRoleResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.RemoveRoleResponse>(
           this,
           Invocation.method(
             #removeRole,
@@ -2115,10 +2137,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.RemoveRoleResponse>);
+      ) as _i4.ResponseFuture<_i13.RemoveRoleResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListAuthorizationsResponse> listAuthorizations(
-    _i11.ListAuthorizationsRequest? request, {
+  _i4.ResponseFuture<_i13.ListAuthorizationsResponse> listAuthorizations(
+    _i13.ListAuthorizationsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2127,7 +2149,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ListAuthorizationsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ListAuthorizationsResponse>(
           this,
           Invocation.method(
             #listAuthorizations,
@@ -2135,8 +2157,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ListAuthorizationsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListAuthorizationsResponse>(
           this,
           Invocation.method(
             #listAuthorizations,
@@ -2144,10 +2165,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ListAuthorizationsResponse>);
+      ) as _i4.ResponseFuture<_i13.ListAuthorizationsResponse>);
   @override
-  _i4.ResponseFuture<_i11.CheckPermissionsResponse> checkPermissions(
-    _i11.CheckPermissionsRequest? request, {
+  _i4.ResponseFuture<_i13.CheckPermissionsResponse> checkPermissions(
+    _i13.CheckPermissionsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2156,7 +2177,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CheckPermissionsResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CheckPermissionsResponse>(
           this,
           Invocation.method(
             #checkPermissions,
@@ -2164,8 +2185,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CheckPermissionsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CheckPermissionsResponse>(
           this,
           Invocation.method(
             #checkPermissions,
@@ -2173,10 +2193,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CheckPermissionsResponse>);
+      ) as _i4.ResponseFuture<_i13.CheckPermissionsResponse>);
   @override
-  _i4.ResponseFuture<_i11.CreateModuleResponse> createModule(
-    _i11.CreateModuleRequest? request, {
+  _i4.ResponseFuture<_i13.CreateModuleResponse> createModule(
+    _i13.CreateModuleRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2185,7 +2205,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.CreateModuleResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.CreateModuleResponse>(
           this,
           Invocation.method(
             #createModule,
@@ -2193,8 +2213,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.CreateModuleResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.CreateModuleResponse>(
           this,
           Invocation.method(
             #createModule,
@@ -2202,10 +2221,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.CreateModuleResponse>);
+      ) as _i4.ResponseFuture<_i13.CreateModuleResponse>);
   @override
-  _i4.ResponseFuture<_i11.UpdateModuleResponse> updateModule(
-    _i11.UpdateModuleRequest? request, {
+  _i4.ResponseFuture<_i13.UpdateModuleResponse> updateModule(
+    _i13.UpdateModuleRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2214,7 +2233,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UpdateModuleResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UpdateModuleResponse>(
           this,
           Invocation.method(
             #updateModule,
@@ -2222,8 +2241,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UpdateModuleResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UpdateModuleResponse>(
           this,
           Invocation.method(
             #updateModule,
@@ -2231,10 +2249,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UpdateModuleResponse>);
+      ) as _i4.ResponseFuture<_i13.UpdateModuleResponse>);
   @override
-  _i4.ResponseFuture<_i11.UploadModuleFileResponse> uploadModuleFile(
-    _i6.Stream<_i11.UploadModuleFileRequest>? request, {
+  _i4.ResponseFuture<_i13.UploadModuleFileResponse> uploadModuleFile(
+    _i8.Stream<_i13.UploadModuleFileRequest>? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2243,7 +2261,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.UploadModuleFileResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.UploadModuleFileResponse>(
           this,
           Invocation.method(
             #uploadModuleFile,
@@ -2251,8 +2269,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.UploadModuleFileResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.UploadModuleFileResponse>(
           this,
           Invocation.method(
             #uploadModuleFile,
@@ -2260,10 +2277,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.UploadModuleFileResponse>);
+      ) as _i4.ResponseFuture<_i13.UploadModuleFileResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetModuleResponse> getModule(
-    _i11.GetModuleRequest? request, {
+  _i4.ResponseFuture<_i13.GetModuleResponse> getModule(
+    _i13.GetModuleRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2272,7 +2289,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.GetModuleResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.GetModuleResponse>(
           this,
           Invocation.method(
             #getModule,
@@ -2280,8 +2297,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.GetModuleResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.GetModuleResponse>(
           this,
           Invocation.method(
             #getModule,
@@ -2289,10 +2305,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.GetModuleResponse>);
+      ) as _i4.ResponseFuture<_i13.GetModuleResponse>);
   @override
-  _i4.ResponseFuture<_i11.ListModulesResponse> listModules(
-    _i11.ListModulesRequest? request, {
+  _i4.ResponseFuture<_i13.ListModulesResponse> listModules(
+    _i13.ListModulesRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2301,7 +2317,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i11.ListModulesResponse>(
+        returnValue: _FakeResponseFuture_2<_i13.ListModulesResponse>(
           this,
           Invocation.method(
             #listModules,
@@ -2309,8 +2325,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i11.ListModulesResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i13.ListModulesResponse>(
           this,
           Invocation.method(
             #listModules,
@@ -2318,11 +2333,11 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i11.ListModulesResponse>);
+      ) as _i4.ResponseFuture<_i13.ListModulesResponse>);
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2359,7 +2374,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
       ) as _i3.ClientCall<Q, R>);
   @override
   _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
+    _i9.ClientMethod<Q, R>? method,
     Q? request, {
     _i3.CallOptions? options,
   }) =>
@@ -2397,8 +2412,8 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
       ) as _i4.ResponseFuture<R>);
   @override
   _i4.ResponseStream<R> $createStreamingCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2438,10 +2453,10 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
 /// A class which mocks [DataServiceClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
+class MockDataServiceClient extends _i1.Mock implements _i14.DataServiceClient {
   @override
-  _i4.ResponseFuture<_i13.TabularDataByFilterResponse> tabularDataByFilter(
-    _i13.TabularDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.TabularDataByFilterResponse> tabularDataByFilter(
+    _i15.TabularDataByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2450,7 +2465,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i13.TabularDataByFilterResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.TabularDataByFilterResponse>(
           this,
           Invocation.method(
             #tabularDataByFilter,
@@ -2458,8 +2473,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.TabularDataByFilterResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.TabularDataByFilterResponse>(
           this,
           Invocation.method(
             #tabularDataByFilter,
@@ -2467,10 +2481,10 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.TabularDataByFilterResponse>);
+      ) as _i4.ResponseFuture<_i15.TabularDataByFilterResponse>);
   @override
-  _i4.ResponseFuture<_i13.BinaryDataByFilterResponse> binaryDataByFilter(
-    _i13.BinaryDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.BinaryDataByFilterResponse> binaryDataByFilter(
+    _i15.BinaryDataByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2479,7 +2493,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i13.BinaryDataByFilterResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.BinaryDataByFilterResponse>(
           this,
           Invocation.method(
             #binaryDataByFilter,
@@ -2487,8 +2501,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.BinaryDataByFilterResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.BinaryDataByFilterResponse>(
           this,
           Invocation.method(
             #binaryDataByFilter,
@@ -2496,10 +2509,10 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.BinaryDataByFilterResponse>);
+      ) as _i4.ResponseFuture<_i15.BinaryDataByFilterResponse>);
   @override
-  _i4.ResponseFuture<_i13.BinaryDataByIDsResponse> binaryDataByIDs(
-    _i13.BinaryDataByIDsRequest? request, {
+  _i4.ResponseFuture<_i15.BinaryDataByIDsResponse> binaryDataByIDs(
+    _i15.BinaryDataByIDsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2508,7 +2521,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i13.BinaryDataByIDsResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.BinaryDataByIDsResponse>(
           this,
           Invocation.method(
             #binaryDataByIDs,
@@ -2516,8 +2529,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.BinaryDataByIDsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.BinaryDataByIDsResponse>(
           this,
           Invocation.method(
             #binaryDataByIDs,
@@ -2525,72 +2537,66 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.BinaryDataByIDsResponse>);
+      ) as _i4.ResponseFuture<_i15.BinaryDataByIDsResponse>);
   @override
-  _i4.ResponseFuture<_i13.DeleteTabularDataByFilterResponse>
-      deleteTabularDataByFilter(
-    _i13.DeleteTabularDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.DeleteTabularDataByFilterResponse> deleteTabularDataByFilter(
+    _i15.DeleteTabularDataByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteTabularDataByFilter,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.DeleteTabularDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #deleteTabularDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.DeleteTabularDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #deleteTabularDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.DeleteTabularDataByFilterResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteTabularDataByFilter,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.DeleteTabularDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #deleteTabularDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.DeleteTabularDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #deleteTabularDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.DeleteTabularDataByFilterResponse>);
   @override
-  _i4.ResponseFuture<_i13.DeleteBinaryDataByFilterResponse>
-      deleteBinaryDataByFilter(
-    _i13.DeleteBinaryDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.DeleteBinaryDataByFilterResponse> deleteBinaryDataByFilter(
+    _i15.DeleteBinaryDataByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteBinaryDataByFilter,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.DeleteBinaryDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #deleteBinaryDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.DeleteBinaryDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #deleteBinaryDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.DeleteBinaryDataByFilterResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteBinaryDataByFilter,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.DeleteBinaryDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #deleteBinaryDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.DeleteBinaryDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #deleteBinaryDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.DeleteBinaryDataByFilterResponse>);
   @override
-  _i4.ResponseFuture<_i13.DeleteBinaryDataByIDsResponse> deleteBinaryDataByIDs(
-    _i13.DeleteBinaryDataByIDsRequest? request, {
+  _i4.ResponseFuture<_i15.DeleteBinaryDataByIDsResponse> deleteBinaryDataByIDs(
+    _i15.DeleteBinaryDataByIDsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2599,7 +2605,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i13.DeleteBinaryDataByIDsResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.DeleteBinaryDataByIDsResponse>(
           this,
           Invocation.method(
             #deleteBinaryDataByIDs,
@@ -2607,8 +2613,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.DeleteBinaryDataByIDsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.DeleteBinaryDataByIDsResponse>(
           this,
           Invocation.method(
             #deleteBinaryDataByIDs,
@@ -2616,73 +2621,66 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.DeleteBinaryDataByIDsResponse>);
+      ) as _i4.ResponseFuture<_i15.DeleteBinaryDataByIDsResponse>);
   @override
-  _i4.ResponseFuture<_i13.AddTagsToBinaryDataByIDsResponse>
-      addTagsToBinaryDataByIDs(
-    _i13.AddTagsToBinaryDataByIDsRequest? request, {
+  _i4.ResponseFuture<_i15.AddTagsToBinaryDataByIDsResponse> addTagsToBinaryDataByIDs(
+    _i15.AddTagsToBinaryDataByIDsRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #addTagsToBinaryDataByIDs,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.AddTagsToBinaryDataByIDsResponse>(
-              this,
-              Invocation.method(
-                #addTagsToBinaryDataByIDs,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.AddTagsToBinaryDataByIDsResponse>(
-              this,
-              Invocation.method(
-                #addTagsToBinaryDataByIDs,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.AddTagsToBinaryDataByIDsResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #addTagsToBinaryDataByIDs,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.AddTagsToBinaryDataByIDsResponse>(
+          this,
+          Invocation.method(
+            #addTagsToBinaryDataByIDs,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.AddTagsToBinaryDataByIDsResponse>(
+          this,
+          Invocation.method(
+            #addTagsToBinaryDataByIDs,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.AddTagsToBinaryDataByIDsResponse>);
   @override
-  _i4.ResponseFuture<_i13.AddTagsToBinaryDataByFilterResponse>
-      addTagsToBinaryDataByFilter(
-    _i13.AddTagsToBinaryDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.AddTagsToBinaryDataByFilterResponse> addTagsToBinaryDataByFilter(
+    _i15.AddTagsToBinaryDataByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #addTagsToBinaryDataByFilter,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.AddTagsToBinaryDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #addTagsToBinaryDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.AddTagsToBinaryDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #addTagsToBinaryDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.AddTagsToBinaryDataByFilterResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #addTagsToBinaryDataByFilter,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.AddTagsToBinaryDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #addTagsToBinaryDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.AddTagsToBinaryDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #addTagsToBinaryDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.AddTagsToBinaryDataByFilterResponse>);
   @override
-  _i4.ResponseFuture<
-      _i13.RemoveTagsFromBinaryDataByIDsResponse> removeTagsFromBinaryDataByIDs(
-    _i13.RemoveTagsFromBinaryDataByIDsRequest? request, {
+  _i4.ResponseFuture<_i15.RemoveTagsFromBinaryDataByIDsResponse> removeTagsFromBinaryDataByIDs(
+    _i15.RemoveTagsFromBinaryDataByIDsRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2691,8 +2689,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue:
-            _FakeResponseFuture_2<_i13.RemoveTagsFromBinaryDataByIDsResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.RemoveTagsFromBinaryDataByIDsResponse>(
           this,
           Invocation.method(
             #removeTagsFromBinaryDataByIDs,
@@ -2700,8 +2697,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.RemoveTagsFromBinaryDataByIDsResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.RemoveTagsFromBinaryDataByIDsResponse>(
           this,
           Invocation.method(
             #removeTagsFromBinaryDataByIDs,
@@ -2709,42 +2705,38 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.RemoveTagsFromBinaryDataByIDsResponse>);
+      ) as _i4.ResponseFuture<_i15.RemoveTagsFromBinaryDataByIDsResponse>);
   @override
-  _i4.ResponseFuture<_i13.RemoveTagsFromBinaryDataByFilterResponse>
-      removeTagsFromBinaryDataByFilter(
-    _i13.RemoveTagsFromBinaryDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.RemoveTagsFromBinaryDataByFilterResponse> removeTagsFromBinaryDataByFilter(
+    _i15.RemoveTagsFromBinaryDataByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #removeTagsFromBinaryDataByFilter,
-              [request],
-              {#options: options},
-            ),
-            returnValue: _FakeResponseFuture_2<
-                _i13.RemoveTagsFromBinaryDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #removeTagsFromBinaryDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub: _FakeResponseFuture_2<
-                _i13.RemoveTagsFromBinaryDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #removeTagsFromBinaryDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4
-              .ResponseFuture<_i13.RemoveTagsFromBinaryDataByFilterResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #removeTagsFromBinaryDataByFilter,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.RemoveTagsFromBinaryDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #removeTagsFromBinaryDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.RemoveTagsFromBinaryDataByFilterResponse>(
+          this,
+          Invocation.method(
+            #removeTagsFromBinaryDataByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.RemoveTagsFromBinaryDataByFilterResponse>);
   @override
-  _i4.ResponseFuture<_i13.TagsByFilterResponse> tagsByFilter(
-    _i13.TagsByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.TagsByFilterResponse> tagsByFilter(
+    _i15.TagsByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2753,7 +2745,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue: _FakeResponseFuture_2<_i13.TagsByFilterResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.TagsByFilterResponse>(
           this,
           Invocation.method(
             #tagsByFilter,
@@ -2761,8 +2753,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.TagsByFilterResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.TagsByFilterResponse>(
           this,
           Invocation.method(
             #tagsByFilter,
@@ -2770,43 +2761,38 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.TagsByFilterResponse>);
+      ) as _i4.ResponseFuture<_i15.TagsByFilterResponse>);
   @override
-  _i4.ResponseFuture<_i13.AddBoundingBoxToImageByIDResponse>
-      addBoundingBoxToImageByID(
-    _i13.AddBoundingBoxToImageByIDRequest? request, {
+  _i4.ResponseFuture<_i15.AddBoundingBoxToImageByIDResponse> addBoundingBoxToImageByID(
+    _i15.AddBoundingBoxToImageByIDRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #addBoundingBoxToImageByID,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.AddBoundingBoxToImageByIDResponse>(
-              this,
-              Invocation.method(
-                #addBoundingBoxToImageByID,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.AddBoundingBoxToImageByIDResponse>(
-              this,
-              Invocation.method(
-                #addBoundingBoxToImageByID,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.AddBoundingBoxToImageByIDResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #addBoundingBoxToImageByID,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.AddBoundingBoxToImageByIDResponse>(
+          this,
+          Invocation.method(
+            #addBoundingBoxToImageByID,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.AddBoundingBoxToImageByIDResponse>(
+          this,
+          Invocation.method(
+            #addBoundingBoxToImageByID,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.AddBoundingBoxToImageByIDResponse>);
   @override
-  _i4.ResponseFuture<
-      _i13
-      .RemoveBoundingBoxFromImageByIDResponse> removeBoundingBoxFromImageByID(
-    _i13.RemoveBoundingBoxFromImageByIDRequest? request, {
+  _i4.ResponseFuture<_i15.RemoveBoundingBoxFromImageByIDResponse> removeBoundingBoxFromImageByID(
+    _i15.RemoveBoundingBoxFromImageByIDRequest? request, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2815,8 +2801,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           [request],
           {#options: options},
         ),
-        returnValue:
-            _FakeResponseFuture_2<_i13.RemoveBoundingBoxFromImageByIDResponse>(
+        returnValue: _FakeResponseFuture_2<_i15.RemoveBoundingBoxFromImageByIDResponse>(
           this,
           Invocation.method(
             #removeBoundingBoxFromImageByID,
@@ -2824,8 +2809,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-        returnValueForMissingStub:
-            _FakeResponseFuture_2<_i13.RemoveBoundingBoxFromImageByIDResponse>(
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.RemoveBoundingBoxFromImageByIDResponse>(
           this,
           Invocation.method(
             #removeBoundingBoxFromImageByID,
@@ -2833,42 +2817,39 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             {#options: options},
           ),
         ),
-      ) as _i4.ResponseFuture<_i13.RemoveBoundingBoxFromImageByIDResponse>);
+      ) as _i4.ResponseFuture<_i15.RemoveBoundingBoxFromImageByIDResponse>);
   @override
-  _i4.ResponseFuture<_i13.BoundingBoxLabelsByFilterResponse>
-      boundingBoxLabelsByFilter(
-    _i13.BoundingBoxLabelsByFilterRequest? request, {
+  _i4.ResponseFuture<_i15.BoundingBoxLabelsByFilterResponse> boundingBoxLabelsByFilter(
+    _i15.BoundingBoxLabelsByFilterRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #boundingBoxLabelsByFilter,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.BoundingBoxLabelsByFilterResponse>(
-              this,
-              Invocation.method(
-                #boundingBoxLabelsByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.BoundingBoxLabelsByFilterResponse>(
-              this,
-              Invocation.method(
-                #boundingBoxLabelsByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.BoundingBoxLabelsByFilterResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #boundingBoxLabelsByFilter,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.BoundingBoxLabelsByFilterResponse>(
+          this,
+          Invocation.method(
+            #boundingBoxLabelsByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i15.BoundingBoxLabelsByFilterResponse>(
+          this,
+          Invocation.method(
+            #boundingBoxLabelsByFilter,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.BoundingBoxLabelsByFilterResponse>);
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2905,7 +2886,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
       ) as _i3.ClientCall<Q, R>);
   @override
   _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
+    _i9.ClientMethod<Q, R>? method,
     Q? request, {
     _i3.CallOptions? options,
   }) =>
@@ -2943,8 +2924,8 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
       ) as _i4.ResponseFuture<R>);
   @override
   _i4.ResponseStream<R> $createStreamingCall<Q, R>(
-    _i7.ClientMethod<Q, R>? method,
-    _i6.Stream<Q>? requests, {
+    _i9.ClientMethod<Q, R>? method,
+    _i8.Stream<Q>? requests, {
     _i3.CallOptions? options,
   }) =>
       (super.noSuchMethod(
@@ -2979,4 +2960,133 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [PowerSensorClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockPowerSensorClient extends _i1.Mock implements _i16.PowerSensorClient {
+  @override
+  String get name => (super.noSuchMethod(
+        Invocation.getter(#name),
+        returnValue: '',
+        returnValueForMissingStub: '',
+      ) as String);
+  @override
+  set name(String? _name) => super.noSuchMethod(
+        Invocation.setter(
+          #name,
+          _name,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  _i5.ClientChannelBase get channel => (super.noSuchMethod(
+        Invocation.getter(#channel),
+        returnValue: _FakeClientChannelBase_4(
+          this,
+          Invocation.getter(#channel),
+        ),
+        returnValueForMissingStub: _FakeClientChannelBase_4(
+          this,
+          Invocation.getter(#channel),
+        ),
+      ) as _i5.ClientChannelBase);
+  @override
+  set channel(_i5.ClientChannelBase? _channel) => super.noSuchMethod(
+        Invocation.setter(
+          #channel,
+          _channel,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  _i6.PowerSensorServiceClient get client => (super.noSuchMethod(
+        Invocation.getter(#client),
+        returnValue: _FakePowerSensorServiceClient_5(
+          this,
+          Invocation.getter(#client),
+        ),
+        returnValueForMissingStub: _FakePowerSensorServiceClient_5(
+          this,
+          Invocation.getter(#client),
+        ),
+      ) as _i6.PowerSensorServiceClient);
+  @override
+  _i8.Future<_i7.Voltage> voltage({Map<String, dynamic>? extra}) => (super.noSuchMethod(
+        Invocation.method(
+          #voltage,
+          [],
+          {#extra: extra},
+        ),
+        returnValue: _i8.Future<_i7.Voltage>.value(_FakeVoltage_6(
+          this,
+          Invocation.method(
+            #voltage,
+            [],
+            {#extra: extra},
+          ),
+        )),
+        returnValueForMissingStub: _i8.Future<_i7.Voltage>.value(_FakeVoltage_6(
+          this,
+          Invocation.method(
+            #voltage,
+            [],
+            {#extra: extra},
+          ),
+        )),
+      ) as _i8.Future<_i7.Voltage>);
+  @override
+  _i8.Future<_i7.Current> current({Map<String, dynamic>? extra}) => (super.noSuchMethod(
+        Invocation.method(
+          #current,
+          [],
+          {#extra: extra},
+        ),
+        returnValue: _i8.Future<_i7.Current>.value(_FakeCurrent_7(
+          this,
+          Invocation.method(
+            #current,
+            [],
+            {#extra: extra},
+          ),
+        )),
+        returnValueForMissingStub: _i8.Future<_i7.Current>.value(_FakeCurrent_7(
+          this,
+          Invocation.method(
+            #current,
+            [],
+            {#extra: extra},
+          ),
+        )),
+      ) as _i8.Future<_i7.Current>);
+  @override
+  _i8.Future<double> power({Map<String, dynamic>? extra}) => (super.noSuchMethod(
+        Invocation.method(
+          #power,
+          [],
+          {#extra: extra},
+        ),
+        returnValue: _i8.Future<double>.value(0.0),
+        returnValueForMissingStub: _i8.Future<double>.value(0.0),
+      ) as _i8.Future<double>);
+  @override
+  _i8.Future<Map<String, dynamic>> doCommand(Map<String, dynamic>? command) => (super.noSuchMethod(
+        Invocation.method(
+          #doCommand,
+          [command],
+        ),
+        returnValue: _i8.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
+        returnValueForMissingStub: _i8.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
+      ) as _i8.Future<Map<String, dynamic>>);
+  @override
+  _i8.Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) => (super.noSuchMethod(
+        Invocation.method(
+          #readings,
+          [],
+          {#extra: extra},
+        ),
+        returnValue: _i8.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
+        returnValueForMissingStub: _i8.Future<Map<String, dynamic>>.value(<String, dynamic>{}),
+      ) as _i8.Future<Map<String, dynamic>>);
 }
