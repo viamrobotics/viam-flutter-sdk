@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:image/image.dart' as img;
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets.dart';
 
 class StreamScreen extends StatefulWidget {
   final Camera camera;
@@ -81,7 +82,7 @@ class _StreamScreenState extends State<StreamScreen> {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 16),
-            CameraStreamView(camera: widget.camera, streamClient: widget.client),
+            ViamCameraStreamView(camera: widget.camera, streamClient: widget.client),
             const SizedBox(height: 16),
             if (_imgLoaded) Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3),
             const SizedBox(height: 16),

@@ -8,6 +8,7 @@ import 'package:viam_example_app/screens/sensor.dart';
 import 'package:viam_example_app/screens/servo.dart';
 import 'package:viam_example_app/screens/stream.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -137,10 +138,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(
-          base: Base.fromRobot(_robot, rname.name),
           resourceName: rname,
-          camera: Camera.fromRobot(_robot, _cameraName!.name),
-          streamClient: _getStream(_cameraName!));
+          base: Base.fromRobot(_robot, rname.name),
+          cameras:
+              _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
+          robot: _robot);
     }
     if (rname.subtype == Board.subtype.resourceSubtype) {
       return BoardScreen(board: Board.fromRobot(_robot, rname.name), resourceName: rname);
@@ -198,11 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ])
                       : _loading
                           ? PlatformCircularProgressIndicator()
-                          : PlatformElevatedButton(
-                              onPressed: () {
-                                _login();
-                              },
-                              child: const Text('Login')),
+                          : ViamButton(onPressed: _login, text: 'Login', role: ViamButtonRole.inverse, style: ViamButtonStyle.filled)
                 ],
               ),
             ),
