@@ -892,38 +892,6 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
         ),
       ) as _i4.ResponseFuture<_i11.GetOrganizationResponse>);
   @override
-  _i4.ResponseFuture<_i11.GetOrganizationNamespaceAvailabilityResponse>
-      getOrganizationNamespaceAvailability(
-    _i11.GetOrganizationNamespaceAvailabilityRequest? request, {
-    _i3.CallOptions? options,
-  }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #getOrganizationNamespaceAvailability,
-              [request],
-              {#options: options},
-            ),
-            returnValue: _FakeResponseFuture_2<
-                _i11.GetOrganizationNamespaceAvailabilityResponse>(
-              this,
-              Invocation.method(
-                #getOrganizationNamespaceAvailability,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub: _FakeResponseFuture_2<
-                _i11.GetOrganizationNamespaceAvailabilityResponse>(
-              this,
-              Invocation.method(
-                #getOrganizationNamespaceAvailability,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<
-              _i11.GetOrganizationNamespaceAvailabilityResponse>);
-  @override
   _i4.ResponseFuture<_i11.UpdateOrganizationResponse> updateOrganization(
     _i11.UpdateOrganizationRequest? request, {
     _i3.CallOptions? options,
@@ -1043,38 +1011,6 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.CreateOrganizationInviteResponse>);
-  @override
-  _i4.ResponseFuture<_i11.UpdateOrganizationInviteAuthorizationsResponse>
-      updateOrganizationInviteAuthorizations(
-    _i11.UpdateOrganizationInviteAuthorizationsRequest? request, {
-    _i3.CallOptions? options,
-  }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #updateOrganizationInviteAuthorizations,
-              [request],
-              {#options: options},
-            ),
-            returnValue: _FakeResponseFuture_2<
-                _i11.UpdateOrganizationInviteAuthorizationsResponse>(
-              this,
-              Invocation.method(
-                #updateOrganizationInviteAuthorizations,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub: _FakeResponseFuture_2<
-                _i11.UpdateOrganizationInviteAuthorizationsResponse>(
-              this,
-              Invocation.method(
-                #updateOrganizationInviteAuthorizations,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<
-              _i11.UpdateOrganizationInviteAuthorizationsResponse>);
   @override
   _i4.ResponseFuture<_i11.DeleteOrganizationMemberResponse>
       deleteOrganizationMember(
