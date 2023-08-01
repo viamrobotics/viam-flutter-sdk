@@ -3,7 +3,6 @@ import 'package:grpc/src/client/http2_channel.dart';
 import 'package:grpc/src/client/options.dart';
 import 'package:grpc/src/client/transport/http2_credentials.dart';
 import 'package:grpc/src/server/server.dart';
-import 'package:mockito/src/mock.dart';
 import 'package:viam_sdk/src/components/power_sensor/client.dart';
 import 'package:viam_sdk/src/components/power_sensor/power_sensor.dart';
 import 'package:viam_sdk/src/components/power_sensor/service.dart';
@@ -11,9 +10,6 @@ import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/component/powersensor/v1/powersensor.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
-
-import '../mocks/mock_response_future.dart';
-import '../mocks/service_clients_mocks.mocks.dart';
 
 class FakePowerSensor extends PowerSensor {
   bool isAc = false;
@@ -176,35 +172,17 @@ void main() {
         expect(result, powerSensor.watts);
       });
       test('readings', () async {
-        final client = MockPowerSensorClient();
-
-        final Map<String, dynamic> expectedReadings = {
-          'voltage': powerSensor.volts,
-          'is_ac': powerSensor.isAc,
-          'current': powerSensor.amperes,
-          'power': powerSensor.watts
-        };
-
-        when(client.readings()).thenAnswer((_) => MockResponseFuture.value(expectedReadings));
-
-        var result = await client.readings();
+        final client = PowerSensorClient(name, channel);
+        final result = await client.readings();
         final expectedKeys = [
           'voltage',
           'is_ac',
           'current',
           'power',
         ];
-        expect(result.keys, expectedKeys);
         final expectedValues = [powerSensor.volts, powerSensor.isAc, powerSensor.amperes, powerSensor.watts];
-        expect(result.values, expectedValues);
-
-        // Test that an unimplemented method does not get added to map
-        when(client.power()).thenThrow(Exception('unimplemented'));
-        expectedKeys.remove('power');
-        expectedReadings.remove('power');
-
-        result = await client.readings();
         expect(result.keys, expectedKeys);
+        expect(result.values, expectedValues);
       });
       test('doCommand', () async {
         final client = PowerSensorClient(name, channel);
