@@ -153,7 +153,7 @@ void main() {
         expect(powerSensor.extra, {'foo': 'bar'});
       });
     });
-    group('MovementSensor Client Tests', () {
+    group('PowerSensor Client Tests', () {
       test('voltage', () async {
         final client = PowerSensorClient(name, channel);
         final result = await client.voltage();
