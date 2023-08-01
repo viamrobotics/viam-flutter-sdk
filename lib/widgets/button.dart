@@ -42,6 +42,21 @@ enum ViamButtonRole {
     }
   }
 
+  MaterialColor get materialColor {
+    switch (this) {
+      case ViamButtonRole.primary:
+        return Colors.grey;
+      case ViamButtonRole.inverse:
+        return Colors.grey;
+      case ViamButtonRole.success:
+        return Colors.green;
+      case ViamButtonRole.danger:
+        return Colors.red;
+      case ViamButtonRole.warning:
+        return Colors.amber;
+    }
+  }
+
   ButtonStyle get style =>
       ButtonStyle(backgroundColor: MaterialStatePropertyAll(backgroundColor), foregroundColor: MaterialStatePropertyAll(foregroundColor));
 }
@@ -81,7 +96,7 @@ class ViamButton extends StatelessWidget {
     if (style == ViamButtonStyle.ghost) {
       var fgColor = role.backgroundColor;
       if (role == ViamButtonRole.primary || role == ViamButtonRole.inverse) {
-        fgColor = ViamButtonRole.inverse.foregroundColor;
+        fgColor = role.foregroundColor;
       }
       return mainStyle.copyWith(
         backgroundColor: const MaterialStatePropertyAll(Color.fromARGB(0, 0, 0, 0)),
@@ -126,6 +141,6 @@ class ViamButton extends StatelessWidget {
     }
     child = TextButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
 
-    return Theme(data: ThemeData(primarySwatch: Colors.grey), child: child);
+    return Theme(data: ThemeData(primarySwatch: role.materialColor), child: child);
   }
 }
