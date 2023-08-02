@@ -80,9 +80,11 @@ void main() {
 
       final playButton = find.widgetWithIcon(ViamButton, Icons.play_arrow);
       final pauseButton = find.widgetWithIcon(ViamButton, Icons.pause);
+      final refreshButton = find.widgetWithIcon(ViamButton, Icons.refresh);
 
       expect(playButton, findsNothing);
       expect(pauseButton, findsNothing);
+      expect(refreshButton, findsOneWidget);
     });
   });
 }
