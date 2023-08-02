@@ -211,26 +211,23 @@ class ViamButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget child;
-    if (icon != null) {
-      final prePadding = (variant == ViamButtonVariant.iconOnly) ? const Text(' ') : const SizedBox.shrink();
-      final iconWidget = Row(children: [prePadding, Icon(icon!)]);
-      final label = (variant == ViamButtonVariant.iconOnly)
-          ? const SizedBox.shrink()
-          : Text(
-              text,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            );
-      final first = (variant == ViamButtonVariant.iconTrailing) ? label : iconWidget;
-      final second = (variant == ViamButtonVariant.iconTrailing) ? iconWidget : label;
-      if (style == ViamButtonFillStyle.outline) {
-        child = OutlinedButton.icon(onPressed: onPressed, icon: first, label: second, style: _buttonStyle);
-      } else {
-        child = TextButton.icon(onPressed: onPressed, icon: first, label: second, style: _buttonStyle);
-      }
-    } else if (style == ViamButtonFillStyle.outline) {
-      child = OutlinedButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
+    final iconWidget = (icon != null) ? Icon(icon, size: size.fontSize * 1.25) : const SizedBox.shrink();
+    final labelWidget = (variant == ViamButtonVariant.iconOnly)
+        ? const SizedBox.shrink()
+        : Text(
+            text,
+            style: TextStyle(fontWeight: (icon != null) ? FontWeight.bold : FontWeight.normal),
+          );
+    final first = (variant == ViamButtonVariant.iconTrailing) ? labelWidget : iconWidget;
+    final second = (variant == ViamButtonVariant.iconTrailing) ? iconWidget : labelWidget;
+    final widget = Row(mainAxisAlignment: MainAxisAlignment.center, mainAxisSize: MainAxisSize.min, children: [first, second]);
+    if (style == ViamButtonFillStyle.outline) {
+      child = OutlinedButton(onPressed: onPressed, style: _buttonStyle, child: widget);
     } else {
-      child = TextButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
+      child = TextButton(onPressed: onPressed, style: _buttonStyle, child: widget);
+    }
+    if (variant == ViamButtonVariant.iconOnly) {
+      child = Tooltip(message: text, waitDuration: const Duration(seconds: 1), child: child);
     }
     return Theme(data: ThemeData(primarySwatch: role.materialColor), child: child);
   }
