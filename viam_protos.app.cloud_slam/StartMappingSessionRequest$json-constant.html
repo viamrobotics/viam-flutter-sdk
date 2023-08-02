@@ -84,6 +84,7 @@ const StartMappingSessionRequest$json = {
     {&#39;1&#39;: &#39;location_id&#39;, &#39;3&#39;: 5, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;10&#39;: &#39;locationId&#39;},
     {&#39;1&#39;: &#39;robot_id&#39;, &#39;3&#39;: 6, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;10&#39;: &#39;robotId&#39;},
     {&#39;1&#39;: &#39;viam_server_version&#39;, &#39;3&#39;: 7, &#39;4&#39;: 1, &#39;5&#39;: 9, &#39;10&#39;: &#39;viamServerVersion&#39;},
+    {&#39;1&#39;: &#39;is_online&#39;, &#39;3&#39;: 8, &#39;4&#39;: 1, &#39;5&#39;: 8, &#39;10&#39;: &#39;isOnline&#39;},
   ],
 };</code></pre>
 </section>
@@ -113,6 +114,8 @@ const StartMappingSessionRequest$json = {
         <li><a href="../viam_protos.app.cloud_slam/CloudSLAMServiceClient-class.html">CloudSLAMServiceClient</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotRequest-class.html">GetActiveMappingSessionsForRobotRequest</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotResponse-class.html">GetActiveMappingSessionsForRobotResponse</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDRequest-class.html">GetMappingSessionMetadataByIDRequest</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDResponse-class.html">GetMappingSessionMetadataByIDResponse</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudRequest-class.html">GetMappingSessionPointCloudRequest</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudResponse-class.html">GetMappingSessionPointCloudResponse</a></li>
         <li><a href="../viam_protos.app.cloud_slam/ListMappingSessionsRequest-class.html">ListMappingSessionsRequest</a></li>
@@ -122,12 +125,16 @@ const StartMappingSessionRequest$json = {
         <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionResponse-class.html">StartMappingSessionResponse</a></li>
         <li><a href="../viam_protos.app.cloud_slam/StopMappingSessionRequest-class.html">StopMappingSessionRequest</a></li>
         <li><a href="../viam_protos.app.cloud_slam/StopMappingSessionResponse-class.html">StopMappingSessionResponse</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDRequest-class.html">UpdateMappingSessionMetadataByIDRequest</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDResponse-class.html">UpdateMappingSessionMetadataByIDResponse</a></li>
 
 
 
       <li class="section-title"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html#constants">Constants</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotRequest$json-constant.html">GetActiveMappingSessionsForRobotRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotResponse$json-constant.html">GetActiveMappingSessionsForRobotResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDRequest$json-constant.html">GetMappingSessionMetadataByIDRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDResponse$json-constant.html">GetMappingSessionMetadataByIDResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudRequest$json-constant.html">GetMappingSessionPointCloudRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudResponse$json-constant.html">GetMappingSessionPointCloudResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/ListMappingSessionsRequest$json-constant.html">ListMappingSessionsRequest$json</a></li>
@@ -137,10 +144,14 @@ const StartMappingSessionRequest$json = {
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/StartMappingSessionResponse$json-constant.html">StartMappingSessionResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/StopMappingSessionRequest$json-constant.html">StopMappingSessionRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/StopMappingSessionResponse$json-constant.html">StopMappingSessionResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDRequest$json-constant.html">UpdateMappingSessionMetadataByIDRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDResponse$json-constant.html">UpdateMappingSessionMetadataByIDResponse$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html#properties">Properties</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getActiveMappingSessionsForRobotRequestDescriptor.html">getActiveMappingSessionsForRobotRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getActiveMappingSessionsForRobotResponseDescriptor.html">getActiveMappingSessionsForRobotResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/getMappingSessionMetadataByIDRequestDescriptor.html">getMappingSessionMetadataByIDRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/getMappingSessionMetadataByIDResponseDescriptor.html">getMappingSessionMetadataByIDResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getMappingSessionPointCloudRequestDescriptor.html">getMappingSessionPointCloudRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getMappingSessionPointCloudResponseDescriptor.html">getMappingSessionPointCloudResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/listMappingSessionsRequestDescriptor.html">listMappingSessionsRequestDescriptor</a></li>
@@ -150,6 +161,8 @@ const StartMappingSessionRequest$json = {
         <li><a href="../viam_protos.app.cloud_slam/startMappingSessionResponseDescriptor.html">startMappingSessionResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/stopMappingSessionRequestDescriptor.html">stopMappingSessionRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/stopMappingSessionResponseDescriptor.html">stopMappingSessionResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/updateMappingSessionMetadataByIDRequestDescriptor.html">updateMappingSessionMetadataByIDRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/updateMappingSessionMetadataByIDResponseDescriptor.html">updateMappingSessionMetadataByIDResponseDescriptor</a></li>
 
 
 

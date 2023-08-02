@@ -164,6 +164,17 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="isOnline" class="property">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/isOnline.html">isOnline</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
         <dt id="locationId" class="property">
   <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/locationId.html">locationId</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
@@ -334,6 +345,19 @@ to protobuf fields.
 <dd class="inherited">
   Clears the contents of a given field.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearIsOnline" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearIsOnline.html">clearIsOnline</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -622,6 +646,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasIsOnline" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasIsOnline.html">hasIsOnline</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -1072,6 +1109,8 @@ default value if it is not set.
         <li><a href="../viam_protos.app.cloud_slam/CloudSLAMServiceClient-class.html">CloudSLAMServiceClient</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotRequest-class.html">GetActiveMappingSessionsForRobotRequest</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotResponse-class.html">GetActiveMappingSessionsForRobotResponse</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDRequest-class.html">GetMappingSessionMetadataByIDRequest</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDResponse-class.html">GetMappingSessionMetadataByIDResponse</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudRequest-class.html">GetMappingSessionPointCloudRequest</a></li>
         <li><a href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudResponse-class.html">GetMappingSessionPointCloudResponse</a></li>
         <li><a href="../viam_protos.app.cloud_slam/ListMappingSessionsRequest-class.html">ListMappingSessionsRequest</a></li>
@@ -1081,12 +1120,16 @@ default value if it is not set.
         <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionResponse-class.html">StartMappingSessionResponse</a></li>
         <li><a href="../viam_protos.app.cloud_slam/StopMappingSessionRequest-class.html">StopMappingSessionRequest</a></li>
         <li><a href="../viam_protos.app.cloud_slam/StopMappingSessionResponse-class.html">StopMappingSessionResponse</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDRequest-class.html">UpdateMappingSessionMetadataByIDRequest</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDResponse-class.html">UpdateMappingSessionMetadataByIDResponse</a></li>
 
 
 
       <li class="section-title"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html#constants">Constants</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotRequest$json-constant.html">GetActiveMappingSessionsForRobotRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetActiveMappingSessionsForRobotResponse$json-constant.html">GetActiveMappingSessionsForRobotResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDRequest$json-constant.html">GetMappingSessionMetadataByIDRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionMetadataByIDResponse$json-constant.html">GetMappingSessionMetadataByIDResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudRequest$json-constant.html">GetMappingSessionPointCloudRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/GetMappingSessionPointCloudResponse$json-constant.html">GetMappingSessionPointCloudResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/ListMappingSessionsRequest$json-constant.html">ListMappingSessionsRequest$json</a></li>
@@ -1096,10 +1139,14 @@ default value if it is not set.
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/StartMappingSessionResponse$json-constant.html">StartMappingSessionResponse$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/StopMappingSessionRequest$json-constant.html">StopMappingSessionRequest$json</a></li>
         <li><a class="deprecated" href="../viam_protos.app.cloud_slam/StopMappingSessionResponse$json-constant.html">StopMappingSessionResponse$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDRequest$json-constant.html">UpdateMappingSessionMetadataByIDRequest$json</a></li>
+        <li><a class="deprecated" href="../viam_protos.app.cloud_slam/UpdateMappingSessionMetadataByIDResponse$json-constant.html">UpdateMappingSessionMetadataByIDResponse$json</a></li>
 
       <li class="section-title"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html#properties">Properties</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getActiveMappingSessionsForRobotRequestDescriptor.html">getActiveMappingSessionsForRobotRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getActiveMappingSessionsForRobotResponseDescriptor.html">getActiveMappingSessionsForRobotResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/getMappingSessionMetadataByIDRequestDescriptor.html">getMappingSessionMetadataByIDRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/getMappingSessionMetadataByIDResponseDescriptor.html">getMappingSessionMetadataByIDResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getMappingSessionPointCloudRequestDescriptor.html">getMappingSessionPointCloudRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/getMappingSessionPointCloudResponseDescriptor.html">getMappingSessionPointCloudResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/listMappingSessionsRequestDescriptor.html">listMappingSessionsRequestDescriptor</a></li>
@@ -1109,6 +1156,8 @@ default value if it is not set.
         <li><a href="../viam_protos.app.cloud_slam/startMappingSessionResponseDescriptor.html">startMappingSessionResponseDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/stopMappingSessionRequestDescriptor.html">stopMappingSessionRequestDescriptor</a></li>
         <li><a href="../viam_protos.app.cloud_slam/stopMappingSessionResponseDescriptor.html">stopMappingSessionResponseDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/updateMappingSessionMetadataByIDRequestDescriptor.html">updateMappingSessionMetadataByIDRequestDescriptor</a></li>
+        <li><a href="../viam_protos.app.cloud_slam/updateMappingSessionMetadataByIDResponseDescriptor.html">updateMappingSessionMetadataByIDResponseDescriptor</a></li>
 
 
 
@@ -1133,6 +1182,7 @@ default value if it is not set.
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/hashCode.html">hashCode</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/info_.html">info_</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/isFrozen.html">isFrozen</a></li>
+          <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/isOnline.html">isOnline</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/locationId.html">locationId</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/mapName.html">mapName</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/organizationId.html">organizationId</a></li>
@@ -1149,6 +1199,7 @@ default value if it is not set.
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/clear.html">clear</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/clearExtension.html">clearExtension</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/clearField.html">clearField</a></li>
+          <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearIsOnline.html">clearIsOnline</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearLocationId.html">clearLocationId</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearMapName.html">clearMapName</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearOrganizationId.html">clearOrganizationId</a></li>
@@ -1171,6 +1222,7 @@ default value if it is not set.
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/getTagNumber.html">getTagNumber</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/hasExtension.html">hasExtension</a></li>
           <li class="inherited"><a href="https://pub.dev/documentation/protobuf/3.0.0/protobuf/GeneratedMessage/hasField.html">hasField</a></li>
+          <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasIsOnline.html">hasIsOnline</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasLocationId.html">hasLocationId</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasMapName.html">hasMapName</a></li>
           <li><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasOrganizationId.html">hasOrganizationId</a></li>
