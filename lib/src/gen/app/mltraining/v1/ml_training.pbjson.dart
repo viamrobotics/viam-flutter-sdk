@@ -152,10 +152,13 @@ const TrainingJobMetadata$json = {
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdOn'},
     {'1': 'last_modified', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastModified'},
     {'1': 'synced_model_id', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'syncedModelId'},
-    {'1': 'user_email', '3': 6, '4': 1, '5': 9, '8': {}, '10': 'userEmail'},
     {'1': 'id', '3': 7, '4': 1, '5': 9, '8': {}, '10': 'id'},
     {'1': 'error_status', '3': 8, '4': 1, '5': 11, '6': '.google.rpc.Status', '8': {}, '10': 'errorStatus'},
   ],
+  '9': [
+    {'1': 6, '2': 7},
+  ],
+  '10': ['user_email'],
 };
 
 /// Descriptor for `TrainingJobMetadata`. Decode as a `google.protobuf.DescriptorProto`.
@@ -169,11 +172,10 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     'bwoNbGFzdF9tb2RpZmllZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCLpqEng'
     'MpYnNvbjoibGFzdF9tb2RpZmllZCIganNvbjoibGFzdF9tb2RpZmllZCJSDGxhc3RNb2RpZmll'
     'ZBJaCg9zeW5jZWRfbW9kZWxfaWQYBSABKAlCMpqEngMtYnNvbjoic3luY2VkX21vZGVsX2lkIi'
-    'Bqc29uOiJzeW5jZWRfbW9kZWxfaWQiUg1zeW5jZWRNb2RlbElkEkcKCnVzZXJfZW1haWwYBiAB'
-    'KAlCKJqEngMjYnNvbjoidXNlcl9lbWFpbCIganNvbjoidXNlcl9lbWFpbCJSCXVzZXJFbWFpbB'
-    'IzCgJpZBgHIAEoCUIjmoSeAx5ic29uOiJfaWQiIGpzb246ImlkLG9taXRlbXB0eSJSAmlkEmMK'
-    'DGVycm9yX3N0YXR1cxgIIAEoCzISLmdvb2dsZS5ycGMuU3RhdHVzQiyahJ4DJ2Jzb246ImVycm'
-    '9yX3N0YXR1cyIganNvbjoiZXJyb3Jfc3RhdHVzIlILZXJyb3JTdGF0dXM=');
+    'Bqc29uOiJzeW5jZWRfbW9kZWxfaWQiUg1zeW5jZWRNb2RlbElkEjMKAmlkGAcgASgJQiOahJ4D'
+    'HmJzb246Il9pZCIganNvbjoiaWQsb21pdGVtcHR5IlICaWQSYwoMZXJyb3Jfc3RhdHVzGAggAS'
+    'gLMhIuZ29vZ2xlLnJwYy5TdGF0dXNCLJqEngMnYnNvbjoiZXJyb3Jfc3RhdHVzIiBqc29uOiJl'
+    'cnJvcl9zdGF0dXMiUgtlcnJvclN0YXR1c0oECAYQB1IKdXNlcl9lbWFpbA==');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {

@@ -6,5 +6,5 @@ library viam_protos.component.pose_tracker;
 // DO NOT OVERWRITE
 export '../../../src/gen/component/posetracker/v1/pose_tracker.pb.dart';
 export '../../../src/gen/component/posetracker/v1/pose_tracker.pbenum.dart';
-export '../../../src/gen/component/posetracker/v1/pose_tracker.pbjson.dart';
 export '../../../src/gen/component/posetracker/v1/pose_tracker.pbgrpc.dart';
+export '../../../src/gen/component/posetracker/v1/pose_tracker.pbjson.dart';

@@ -6,5 +6,5 @@ library viam_protos.component.arm;
 // DO NOT OVERWRITE
 export '../../../src/gen/component/arm/v1/arm.pb.dart';
 export '../../../src/gen/component/arm/v1/arm.pbenum.dart';
-export '../../../src/gen/component/arm/v1/arm.pbjson.dart';
 export '../../../src/gen/component/arm/v1/arm.pbgrpc.dart';
+export '../../../src/gen/component/arm/v1/arm.pbjson.dart';

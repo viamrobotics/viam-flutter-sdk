@@ -223,6 +223,117 @@ class FileUploadResponse extends $pb.GeneratedMessage {
   void clearFileId() => clearField(1);
 }
 
+enum StreamingDataCaptureUploadRequest_UploadPacket {
+  metadata, 
+  data, 
+  notSet
+}
+
+class StreamingDataCaptureUploadRequest extends $pb.GeneratedMessage {
+  factory StreamingDataCaptureUploadRequest() => create();
+  StreamingDataCaptureUploadRequest._() : super();
+  factory StreamingDataCaptureUploadRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamingDataCaptureUploadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, StreamingDataCaptureUploadRequest_UploadPacket> _StreamingDataCaptureUploadRequest_UploadPacketByTag = {
+    1 : StreamingDataCaptureUploadRequest_UploadPacket.metadata,
+    2 : StreamingDataCaptureUploadRequest_UploadPacket.data,
+    0 : StreamingDataCaptureUploadRequest_UploadPacket.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamingDataCaptureUploadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<DataCaptureUploadMetadata>(1, _omitFieldNames ? '' : 'metadata', subBuilder: DataCaptureUploadMetadata.create)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamingDataCaptureUploadRequest clone() => StreamingDataCaptureUploadRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamingDataCaptureUploadRequest copyWith(void Function(StreamingDataCaptureUploadRequest) updates) => super.copyWith((message) => updates(message as StreamingDataCaptureUploadRequest)) as StreamingDataCaptureUploadRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamingDataCaptureUploadRequest create() => StreamingDataCaptureUploadRequest._();
+  StreamingDataCaptureUploadRequest createEmptyInstance() => create();
+  static $pb.PbList<StreamingDataCaptureUploadRequest> createRepeated() => $pb.PbList<StreamingDataCaptureUploadRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StreamingDataCaptureUploadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamingDataCaptureUploadRequest>(create);
+  static StreamingDataCaptureUploadRequest? _defaultInstance;
+
+  StreamingDataCaptureUploadRequest_UploadPacket whichUploadPacket() => _StreamingDataCaptureUploadRequest_UploadPacketByTag[$_whichOneof(0)]!;
+  void clearUploadPacket() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  DataCaptureUploadMetadata get metadata => $_getN(0);
+  @$pb.TagNumber(1)
+  set metadata(DataCaptureUploadMetadata v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMetadata() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetadata() => clearField(1);
+  @$pb.TagNumber(1)
+  DataCaptureUploadMetadata ensureMetadata() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+}
+
+class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
+  factory StreamingDataCaptureUploadResponse() => create();
+  StreamingDataCaptureUploadResponse._() : super();
+  factory StreamingDataCaptureUploadResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamingDataCaptureUploadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamingDataCaptureUploadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamingDataCaptureUploadResponse clone() => StreamingDataCaptureUploadResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamingDataCaptureUploadResponse copyWith(void Function(StreamingDataCaptureUploadResponse) updates) => super.copyWith((message) => updates(message as StreamingDataCaptureUploadResponse)) as StreamingDataCaptureUploadResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamingDataCaptureUploadResponse create() => StreamingDataCaptureUploadResponse._();
+  StreamingDataCaptureUploadResponse createEmptyInstance() => create();
+  static $pb.PbList<StreamingDataCaptureUploadResponse> createRepeated() => $pb.PbList<StreamingDataCaptureUploadResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StreamingDataCaptureUploadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamingDataCaptureUploadResponse>(create);
+  static StreamingDataCaptureUploadResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fileId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fileId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFileId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFileId() => clearField(1);
+}
+
 class SensorMetadata extends $pb.GeneratedMessage {
   factory SensorMetadata() => create();
   SensorMetadata._() : super();
@@ -656,6 +767,62 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $core.List<$core.String> get tags => $_getList(6);
+}
+
+class DataCaptureUploadMetadata extends $pb.GeneratedMessage {
+  factory DataCaptureUploadMetadata() => create();
+  DataCaptureUploadMetadata._() : super();
+  factory DataCaptureUploadMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DataCaptureUploadMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataCaptureUploadMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
+    ..aOM<UploadMetadata>(1, _omitFieldNames ? '' : 'uploadMetadata', subBuilder: UploadMetadata.create)
+    ..aOM<SensorMetadata>(2, _omitFieldNames ? '' : 'sensorMetadata', subBuilder: SensorMetadata.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DataCaptureUploadMetadata clone() => DataCaptureUploadMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DataCaptureUploadMetadata copyWith(void Function(DataCaptureUploadMetadata) updates) => super.copyWith((message) => updates(message as DataCaptureUploadMetadata)) as DataCaptureUploadMetadata;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DataCaptureUploadMetadata create() => DataCaptureUploadMetadata._();
+  DataCaptureUploadMetadata createEmptyInstance() => create();
+  static $pb.PbList<DataCaptureUploadMetadata> createRepeated() => $pb.PbList<DataCaptureUploadMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static DataCaptureUploadMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DataCaptureUploadMetadata>(create);
+  static DataCaptureUploadMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UploadMetadata get uploadMetadata => $_getN(0);
+  @$pb.TagNumber(1)
+  set uploadMetadata(UploadMetadata v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUploadMetadata() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUploadMetadata() => clearField(1);
+  @$pb.TagNumber(1)
+  UploadMetadata ensureUploadMetadata() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SensorMetadata get sensorMetadata => $_getN(1);
+  @$pb.TagNumber(2)
+  set sensorMetadata(SensorMetadata v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSensorMetadata() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSensorMetadata() => clearField(2);
+  @$pb.TagNumber(2)
+  SensorMetadata ensureSensorMetadata() => $_ensure(1);
 }
 
 
