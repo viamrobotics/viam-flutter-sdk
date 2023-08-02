@@ -128,7 +128,7 @@ enum ViamButtonVariant {
 class ViamButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Widget? icon;
+  final IconData? icon;
   final ViamButtonRole role;
   final ViamButtonFillStyle style;
   final ViamButtonVariant variant;
@@ -182,19 +182,26 @@ class ViamButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget child;
     if (icon != null) {
-      if (variant == ViamButtonVariant.iconOnly) {
-        child = IconButton(onPressed: onPressed, icon: icon!, style: _buttonStyle);
-      }
+      final prePadding = (variant == ViamButtonVariant.iconOnly) ? const Text(' ') : const SizedBox.shrink();
+      final iconWidget = Row(children: [prePadding, Icon(icon!)]);
+      final label = (variant == ViamButtonVariant.iconOnly)
+          ? const SizedBox.shrink()
+          : Text(
+              text,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            );
+      final first = (variant == ViamButtonVariant.iconTrailing) ? label : iconWidget;
+      final second = (variant == ViamButtonVariant.iconTrailing) ? iconWidget : label;
       if (style == ViamButtonFillStyle.outline) {
-        child = OutlinedButton.icon(onPressed: onPressed, icon: icon!, label: Text(text), style: _buttonStyle);
+        child = OutlinedButton.icon(onPressed: onPressed, icon: first, label: second, style: _buttonStyle);
+      } else {
+        child = TextButton.icon(onPressed: onPressed, icon: first, label: second, style: _buttonStyle);
       }
-      child = TextButton.icon(onPressed: onPressed, icon: icon!, label: Text(text), style: _buttonStyle);
-    }
-    if (style == ViamButtonFillStyle.outline) {
+    } else if (style == ViamButtonFillStyle.outline) {
       child = OutlinedButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
+    } else {
+      child = TextButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
     }
-    child = TextButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
-
     return Theme(data: ThemeData(primarySwatch: role.materialColor), child: child);
   }
 }

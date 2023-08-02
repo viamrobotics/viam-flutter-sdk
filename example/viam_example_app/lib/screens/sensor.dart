@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/widgets/resources/sensor.dart';
 
 class SensorScreen extends StatefulWidget {
   final Sensor sensor;
@@ -42,14 +43,7 @@ class _SensorScreenState extends State<SensorScreen> {
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
-            DataTable(
-                columns: const <DataColumn>[DataColumn(label: Text('Reading')), DataColumn(label: Text('Value'))],
-                rows: readings.keys.map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(readings[e].toString()))])).toList()),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
-            PlatformElevatedButton(
-              child: const Text('Get readings'),
-              onPressed: () => _getReadings(),
-            )
+            ViamSensorWidget(sensor: widget.sensor),
           ],
         ),
       ),
