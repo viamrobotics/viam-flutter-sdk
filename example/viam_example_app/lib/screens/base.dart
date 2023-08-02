@@ -8,7 +8,6 @@ class BaseScreen extends StatelessWidget {
   final Iterable<Camera> cameras;
   final RobotClient robot;
 
-  // TODO change BaseScreen to accept camera ResourceName.
   const BaseScreen({Key? key, required this.base, required this.cameras, required this.robot}) : super(key: key);
 
   @override
