@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets/resources/sensor.dart';
+import 'package:viam_sdk/widgets.dart';
 
 class SensorScreen extends StatelessWidget {
   final Sensor sensor;
