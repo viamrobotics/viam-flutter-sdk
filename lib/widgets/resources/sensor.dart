@@ -9,7 +9,6 @@ class ViamSensorWidget extends StatefulWidget {
   final Sensor sensor;
   final Duration? refreshInterval;
   final bool showLastRefreshed;
-  final bool showRefreshInput;
   final bool showRefreshControls;
 
   const ViamSensorWidget({
@@ -17,7 +16,6 @@ class ViamSensorWidget extends StatefulWidget {
     required this.sensor,
     this.refreshInterval = const Duration(milliseconds: 5000),
     this.showLastRefreshed = true,
-    this.showRefreshInput = true,
     this.showRefreshControls = true,
   }) : super(key: key);
 

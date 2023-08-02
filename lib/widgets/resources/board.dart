@@ -19,6 +19,19 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   bool high = false;
   BoardStatus status = const BoardStatus({}, {});
 
+  Future<void> _fetchStatus() async {
+    final response = await widget.board.status();
+    setState(() {
+      status = response;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchStatus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Theme(
