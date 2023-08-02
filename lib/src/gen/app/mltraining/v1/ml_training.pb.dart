@@ -336,7 +336,6 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
     ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'lastModified', subBuilder: $2.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'syncedModelId')
-    ..aOS(6, _omitFieldNames ? '' : 'userEmail')
     ..aOS(7, _omitFieldNames ? '' : 'id')
     ..aOM<$3.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $3.Status.create)
     ..hasRequiredFields = false
@@ -414,34 +413,25 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearSyncedModelId() => clearField(5);
 
-  @$pb.TagNumber(6)
-  $core.String get userEmail => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set userEmail($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasUserEmail() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearUserEmail() => clearField(6);
-
   @$pb.TagNumber(7)
-  $core.String get id => $_getSZ(6);
+  $core.String get id => $_getSZ(5);
   @$pb.TagNumber(7)
-  set id($core.String v) { $_setString(6, v); }
+  set id($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasId() => $_has(6);
+  $core.bool hasId() => $_has(5);
   @$pb.TagNumber(7)
   void clearId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $3.Status get errorStatus => $_getN(7);
+  $3.Status get errorStatus => $_getN(6);
   @$pb.TagNumber(8)
   set errorStatus($3.Status v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasErrorStatus() => $_has(7);
+  $core.bool hasErrorStatus() => $_has(6);
   @$pb.TagNumber(8)
   void clearErrorStatus() => clearField(8);
   @$pb.TagNumber(8)
-  $3.Status ensureErrorStatus() => $_ensure(7);
+  $3.Status ensureErrorStatus() => $_ensure(6);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {

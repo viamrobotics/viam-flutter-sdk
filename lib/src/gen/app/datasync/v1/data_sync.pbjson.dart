@@ -89,6 +89,37 @@ const FileUploadResponse$json = {
 final $typed_data.Uint8List fileUploadResponseDescriptor = $convert.base64Decode(
     'ChJGaWxlVXBsb2FkUmVzcG9uc2USFwoHZmlsZV9pZBgBIAEoCVIGZmlsZUlk');
 
+@$core.Deprecated('Use streamingDataCaptureUploadRequestDescriptor instead')
+const StreamingDataCaptureUploadRequest$json = {
+  '1': 'StreamingDataCaptureUploadRequest',
+  '2': [
+    {'1': 'metadata', '3': 1, '4': 1, '5': 11, '6': '.viam.app.datasync.v1.DataCaptureUploadMetadata', '9': 0, '10': 'metadata'},
+    {'1': 'data', '3': 2, '4': 1, '5': 12, '9': 0, '10': 'data'},
+  ],
+  '8': [
+    {'1': 'upload_packet'},
+  ],
+};
+
+/// Descriptor for `StreamingDataCaptureUploadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamingDataCaptureUploadRequestDescriptor = $convert.base64Decode(
+    'CiFTdHJlYW1pbmdEYXRhQ2FwdHVyZVVwbG9hZFJlcXVlc3QSTQoIbWV0YWRhdGEYASABKAsyLy'
+    '52aWFtLmFwcC5kYXRhc3luYy52MS5EYXRhQ2FwdHVyZVVwbG9hZE1ldGFkYXRhSABSCG1ldGFk'
+    'YXRhEhQKBGRhdGEYAiABKAxIAFIEZGF0YUIPCg11cGxvYWRfcGFja2V0');
+
+@$core.Deprecated('Use streamingDataCaptureUploadResponseDescriptor instead')
+const StreamingDataCaptureUploadResponse$json = {
+  '1': 'StreamingDataCaptureUploadResponse',
+  '2': [
+    {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+  ],
+};
+
+/// Descriptor for `StreamingDataCaptureUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamingDataCaptureUploadResponseDescriptor = $convert.base64Decode(
+    'CiJTdHJlYW1pbmdEYXRhQ2FwdHVyZVVwbG9hZFJlc3BvbnNlEhcKB2ZpbGVfaWQYASABKAlSBm'
+    'ZpbGVJZA==');
+
 @$core.Deprecated('Use sensorMetadataDescriptor instead')
 const SensorMetadata$json = {
   '1': 'SensorMetadata',
@@ -236,4 +267,20 @@ final $typed_data.Uint8List dataCaptureMetadataDescriptor = $convert.base64Decod
     'EhIKBHRhZ3MYCCADKAlSBHRhZ3MaWQoVTWV0aG9kUGFyYW1ldGVyc0VudHJ5EhAKA2tleRgBIA'
     'EoCVIDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIFdmFsdWU6AjgB'
     'SgQIAxAESgQICRAKUg9jb21wb25lbnRfbW9kZWxSCnNlc3Npb25faWQ=');
+
+@$core.Deprecated('Use dataCaptureUploadMetadataDescriptor instead')
+const DataCaptureUploadMetadata$json = {
+  '1': 'DataCaptureUploadMetadata',
+  '2': [
+    {'1': 'upload_metadata', '3': 1, '4': 1, '5': 11, '6': '.viam.app.datasync.v1.UploadMetadata', '10': 'uploadMetadata'},
+    {'1': 'sensor_metadata', '3': 2, '4': 1, '5': 11, '6': '.viam.app.datasync.v1.SensorMetadata', '10': 'sensorMetadata'},
+  ],
+};
+
+/// Descriptor for `DataCaptureUploadMetadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dataCaptureUploadMetadataDescriptor = $convert.base64Decode(
+    'ChlEYXRhQ2FwdHVyZVVwbG9hZE1ldGFkYXRhEk0KD3VwbG9hZF9tZXRhZGF0YRgBIAEoCzIkLn'
+    'ZpYW0uYXBwLmRhdGFzeW5jLnYxLlVwbG9hZE1ldGFkYXRhUg51cGxvYWRNZXRhZGF0YRJNCg9z'
+    'ZW5zb3JfbWV0YWRhdGEYAiABKAsyJC52aWFtLmFwcC5kYXRhc3luYy52MS5TZW5zb3JNZXRhZG'
+    'F0YVIOc2Vuc29yTWV0YWRhdGE=');
 

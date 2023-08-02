@@ -24,6 +24,7 @@ const StartMappingSessionRequest$json = {
     {'1': 'location_id', '3': 5, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'robot_id', '3': 6, '4': 1, '5': 9, '10': 'robotId'},
     {'1': 'viam_server_version', '3': 7, '4': 1, '5': 9, '10': 'viamServerVersion'},
+    {'1': 'is_online', '3': 8, '4': 1, '5': 8, '10': 'isOnline'},
   ],
 };
 
@@ -34,7 +35,7 @@ final $typed_data.Uint8List startMappingSessionRequestDescriptor = $convert.base
     'bGFtVmVyc2lvbhIZCghtYXBfbmFtZRgDIAEoCVIHbWFwTmFtZRInCg9vcmdhbml6YXRpb25faW'
     'QYBCABKAlSDm9yZ2FuaXphdGlvbklkEh8KC2xvY2F0aW9uX2lkGAUgASgJUgpsb2NhdGlvbklk'
     'EhkKCHJvYm90X2lkGAYgASgJUgdyb2JvdElkEi4KE3ZpYW1fc2VydmVyX3ZlcnNpb24YByABKA'
-    'lSEXZpYW1TZXJ2ZXJWZXJzaW9u');
+    'lSEXZpYW1TZXJ2ZXJWZXJzaW9uEhsKCWlzX29ubGluZRgIIAEoCFIIaXNPbmxpbmU=');
 
 @$core.Deprecated('Use startMappingSessionResponseDescriptor instead')
 const StartMappingSessionResponse$json = {
@@ -134,14 +135,13 @@ const StopMappingSessionRequest$json = {
   '1': 'StopMappingSessionRequest',
   '2': [
     {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
-    {'1': 'save_map', '3': 2, '4': 1, '5': 8, '10': 'saveMap'},
   ],
 };
 
 /// Descriptor for `StopMappingSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stopMappingSessionRequestDescriptor = $convert.base64Decode(
     'ChlTdG9wTWFwcGluZ1Nlc3Npb25SZXF1ZXN0Eh0KCnNlc3Npb25faWQYASABKAlSCXNlc3Npb2'
-    '5JZBIZCghzYXZlX21hcBgCIAEoCFIHc2F2ZU1hcA==');
+    '5JZA==');
 
 @$core.Deprecated('Use stopMappingSessionResponseDescriptor instead')
 const StopMappingSessionResponse$json = {
@@ -156,6 +156,56 @@ const StopMappingSessionResponse$json = {
 final $typed_data.Uint8List stopMappingSessionResponseDescriptor = $convert.base64Decode(
     'ChpTdG9wTWFwcGluZ1Nlc3Npb25SZXNwb25zZRIdCgpwYWNrYWdlX2lkGAEgASgJUglwYWNrYW'
     'dlSWQSGAoHdmVyc2lvbhgCIAEoCVIHdmVyc2lvbg==');
+
+@$core.Deprecated('Use getMappingSessionMetadataByIDRequestDescriptor instead')
+const GetMappingSessionMetadataByIDRequest$json = {
+  '1': 'GetMappingSessionMetadataByIDRequest',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
+  ],
+};
+
+/// Descriptor for `GetMappingSessionMetadataByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMappingSessionMetadataByIDRequestDescriptor = $convert.base64Decode(
+    'CiRHZXRNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlcXVlc3QSHQoKc2Vzc2lvbl9pZBgBIA'
+    'EoCVIJc2Vzc2lvbklk');
+
+@$core.Deprecated('Use getMappingSessionMetadataByIDResponseDescriptor instead')
+const GetMappingSessionMetadataByIDResponse$json = {
+  '1': 'GetMappingSessionMetadataByIDResponse',
+  '2': [
+    {'1': 'session_metadata', '3': 1, '4': 1, '5': 11, '6': '.viam.app.cloudslam.v1.MappingMetadata', '10': 'sessionMetadata'},
+  ],
+};
+
+/// Descriptor for `GetMappingSessionMetadataByIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMappingSessionMetadataByIDResponseDescriptor = $convert.base64Decode(
+    'CiVHZXRNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlc3BvbnNlElEKEHNlc3Npb25fbWV0YW'
+    'RhdGEYASABKAsyJi52aWFtLmFwcC5jbG91ZHNsYW0udjEuTWFwcGluZ01ldGFkYXRhUg9zZXNz'
+    'aW9uTWV0YWRhdGE=');
+
+@$core.Deprecated('Use updateMappingSessionMetadataByIDRequestDescriptor instead')
+const UpdateMappingSessionMetadataByIDRequest$json = {
+  '1': 'UpdateMappingSessionMetadataByIDRequest',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'end_status', '3': 2, '4': 1, '5': 9, '10': 'endStatus'},
+  ],
+};
+
+/// Descriptor for `UpdateMappingSessionMetadataByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMappingSessionMetadataByIDRequestDescriptor = $convert.base64Decode(
+    'CidVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlcXVlc3QSHQoKc2Vzc2lvbl9pZB'
+    'gBIAEoCVIJc2Vzc2lvbklkEh0KCmVuZF9zdGF0dXMYAiABKAlSCWVuZFN0YXR1cw==');
+
+@$core.Deprecated('Use updateMappingSessionMetadataByIDResponseDescriptor instead')
+const UpdateMappingSessionMetadataByIDResponse$json = {
+  '1': 'UpdateMappingSessionMetadataByIDResponse',
+};
+
+/// Descriptor for `UpdateMappingSessionMetadataByIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMappingSessionMetadataByIDResponseDescriptor = $convert.base64Decode(
+    'CihVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlc3BvbnNl');
 
 @$core.Deprecated('Use mappingMetadataDescriptor instead')
 const MappingMetadata$json = {

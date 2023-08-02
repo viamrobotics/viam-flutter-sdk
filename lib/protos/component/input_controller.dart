@@ -6,5 +6,5 @@ library viam_protos.component.input_controller;
 // DO NOT OVERWRITE
 export '../../../src/gen/component/inputcontroller/v1/input_controller.pb.dart';
 export '../../../src/gen/component/inputcontroller/v1/input_controller.pbenum.dart';
-export '../../../src/gen/component/inputcontroller/v1/input_controller.pbjson.dart';
 export '../../../src/gen/component/inputcontroller/v1/input_controller.pbgrpc.dart';
+export '../../../src/gen/component/inputcontroller/v1/input_controller.pbjson.dart';

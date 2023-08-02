@@ -31,6 +31,7 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'locationId')
     ..aOS(6, _omitFieldNames ? '' : 'robotId')
     ..aOS(7, _omitFieldNames ? '' : 'viamServerVersion')
+    ..aOB(8, _omitFieldNames ? '' : 'isOnline')
     ..hasRequiredFields = false
   ;
 
@@ -119,6 +120,15 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasViamServerVersion() => $_has(6);
   @$pb.TagNumber(7)
   void clearViamServerVersion() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isOnline => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isOnline($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasIsOnline() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsOnline() => clearField(8);
 }
 
 class StartMappingSessionResponse extends $pb.GeneratedMessage {
@@ -439,7 +449,6 @@ class StopMappingSessionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopMappingSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionId')
-    ..aOB(2, _omitFieldNames ? '' : 'saveMap')
     ..hasRequiredFields = false
   ;
 
@@ -472,15 +481,6 @@ class StopMappingSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasSessionId() => $_has(0);
   @$pb.TagNumber(1)
   void clearSessionId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.bool get saveMap => $_getBF(1);
-  @$pb.TagNumber(2)
-  set saveMap($core.bool v) { $_setBool(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSaveMap() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSaveMap() => clearField(2);
 }
 
 class StopMappingSessionResponse extends $pb.GeneratedMessage {
@@ -533,6 +533,176 @@ class StopMappingSessionResponse extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(1);
   @$pb.TagNumber(2)
   void clearVersion() => clearField(2);
+}
+
+class GetMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
+  factory GetMappingSessionMetadataByIDRequest() => create();
+  GetMappingSessionMetadataByIDRequest._() : super();
+  factory GetMappingSessionMetadataByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMappingSessionMetadataByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMappingSessionMetadataByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMappingSessionMetadataByIDRequest clone() => GetMappingSessionMetadataByIDRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMappingSessionMetadataByIDRequest copyWith(void Function(GetMappingSessionMetadataByIDRequest) updates) => super.copyWith((message) => updates(message as GetMappingSessionMetadataByIDRequest)) as GetMappingSessionMetadataByIDRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMappingSessionMetadataByIDRequest create() => GetMappingSessionMetadataByIDRequest._();
+  GetMappingSessionMetadataByIDRequest createEmptyInstance() => create();
+  static $pb.PbList<GetMappingSessionMetadataByIDRequest> createRepeated() => $pb.PbList<GetMappingSessionMetadataByIDRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetMappingSessionMetadataByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMappingSessionMetadataByIDRequest>(create);
+  static GetMappingSessionMetadataByIDRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => clearField(1);
+}
+
+class GetMappingSessionMetadataByIDResponse extends $pb.GeneratedMessage {
+  factory GetMappingSessionMetadataByIDResponse() => create();
+  GetMappingSessionMetadataByIDResponse._() : super();
+  factory GetMappingSessionMetadataByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMappingSessionMetadataByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMappingSessionMetadataByIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
+    ..aOM<MappingMetadata>(1, _omitFieldNames ? '' : 'sessionMetadata', subBuilder: MappingMetadata.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMappingSessionMetadataByIDResponse clone() => GetMappingSessionMetadataByIDResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMappingSessionMetadataByIDResponse copyWith(void Function(GetMappingSessionMetadataByIDResponse) updates) => super.copyWith((message) => updates(message as GetMappingSessionMetadataByIDResponse)) as GetMappingSessionMetadataByIDResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMappingSessionMetadataByIDResponse create() => GetMappingSessionMetadataByIDResponse._();
+  GetMappingSessionMetadataByIDResponse createEmptyInstance() => create();
+  static $pb.PbList<GetMappingSessionMetadataByIDResponse> createRepeated() => $pb.PbList<GetMappingSessionMetadataByIDResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetMappingSessionMetadataByIDResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMappingSessionMetadataByIDResponse>(create);
+  static GetMappingSessionMetadataByIDResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MappingMetadata get sessionMetadata => $_getN(0);
+  @$pb.TagNumber(1)
+  set sessionMetadata(MappingMetadata v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSessionMetadata() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionMetadata() => clearField(1);
+  @$pb.TagNumber(1)
+  MappingMetadata ensureSessionMetadata() => $_ensure(0);
+}
+
+class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
+  factory UpdateMappingSessionMetadataByIDRequest() => create();
+  UpdateMappingSessionMetadataByIDRequest._() : super();
+  factory UpdateMappingSessionMetadataByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMappingSessionMetadataByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMappingSessionMetadataByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aOS(2, _omitFieldNames ? '' : 'endStatus')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateMappingSessionMetadataByIDRequest clone() => UpdateMappingSessionMetadataByIDRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateMappingSessionMetadataByIDRequest copyWith(void Function(UpdateMappingSessionMetadataByIDRequest) updates) => super.copyWith((message) => updates(message as UpdateMappingSessionMetadataByIDRequest)) as UpdateMappingSessionMetadataByIDRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMappingSessionMetadataByIDRequest create() => UpdateMappingSessionMetadataByIDRequest._();
+  UpdateMappingSessionMetadataByIDRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateMappingSessionMetadataByIDRequest> createRepeated() => $pb.PbList<UpdateMappingSessionMetadataByIDRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMappingSessionMetadataByIDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMappingSessionMetadataByIDRequest>(create);
+  static UpdateMappingSessionMetadataByIDRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get endStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set endStatus($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEndStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEndStatus() => clearField(2);
+}
+
+class UpdateMappingSessionMetadataByIDResponse extends $pb.GeneratedMessage {
+  factory UpdateMappingSessionMetadataByIDResponse() => create();
+  UpdateMappingSessionMetadataByIDResponse._() : super();
+  factory UpdateMappingSessionMetadataByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMappingSessionMetadataByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMappingSessionMetadataByIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateMappingSessionMetadataByIDResponse clone() => UpdateMappingSessionMetadataByIDResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateMappingSessionMetadataByIDResponse copyWith(void Function(UpdateMappingSessionMetadataByIDResponse) updates) => super.copyWith((message) => updates(message as UpdateMappingSessionMetadataByIDResponse)) as UpdateMappingSessionMetadataByIDResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMappingSessionMetadataByIDResponse create() => UpdateMappingSessionMetadataByIDResponse._();
+  UpdateMappingSessionMetadataByIDResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateMappingSessionMetadataByIDResponse> createRepeated() => $pb.PbList<UpdateMappingSessionMetadataByIDResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMappingSessionMetadataByIDResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMappingSessionMetadataByIDResponse>(create);
+  static UpdateMappingSessionMetadataByIDResponse? _defaultInstance;
 }
 
 class MappingMetadata extends $pb.GeneratedMessage {
