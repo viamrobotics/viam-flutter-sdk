@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_example_app/screens/base.dart';
 import 'package:viam_example_app/screens/board.dart';
@@ -10,7 +11,8 @@ import 'package:viam_example_app/screens/stream.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
   runApp(const MyApp());
 }
 
@@ -92,8 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _loading = true;
     });
     final robotFut = RobotClient.atAddress(
-      '<URL>',
-      RobotClientOptions.withLocationSecret('<SECRET>'),
+      dotenv.env['ROBOT_LOCATION'] ?? '',
+      RobotClientOptions.withLocationSecret(dotenv.env['LOCATION_SECRET'] ?? ''),
     );
 
     robotFut.then((value) {
