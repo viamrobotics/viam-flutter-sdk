@@ -6,5 +6,5 @@ library viam_protos.component.motor;
 // DO NOT OVERWRITE
 export '../../../src/gen/component/motor/v1/motor.pb.dart';
 export '../../../src/gen/component/motor/v1/motor.pbenum.dart';
-export '../../../src/gen/component/motor/v1/motor.pbjson.dart';
 export '../../../src/gen/component/motor/v1/motor.pbgrpc.dart';
+export '../../../src/gen/component/motor/v1/motor.pbjson.dart';
