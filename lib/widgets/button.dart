@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+/// The role of the button.
 enum ViamButtonRole {
+  /// Standard button. Light gray background, dark gray foreground (inverse when in dark mode)
   primary,
+
+  /// Inverse of the primary button, Dark gray background, light gray foreground (inverse when in dark mode)
   inverse,
+
+  /// A button to indicate a successful operation, will result in a green color scheme
   success,
-  danger,
-  warning;
+
+  /// A button to indicate a warning state, will result in an amber color scheme
+  warning,
+
+  /// A button to indicate a dangerous operation, will result in an red color scheme
+  danger;
 
   Color get backgroundColor {
     final brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
@@ -61,10 +71,52 @@ enum ViamButtonRole {
       ButtonStyle(backgroundColor: MaterialStatePropertyAll(backgroundColor), foregroundColor: MaterialStatePropertyAll(foregroundColor));
 }
 
-enum ViamButtonStyle {
+enum ViamButtonFillStyle {
   filled,
   outline,
   ghost;
+}
+
+enum ViamButtonSizeClass {
+  xs,
+  small,
+  medium,
+  large,
+  xl;
+
+  double get fontSize {
+    switch (this) {
+      case xs:
+        return 10;
+      case small:
+        return 12;
+      case medium:
+        return 14;
+      case large:
+        return 18;
+      case xl:
+        return 24;
+    }
+  }
+
+  EdgeInsets get padding {
+    switch (this) {
+      case xs:
+        return const EdgeInsets.symmetric(vertical: 0, horizontal: 0);
+      case small:
+        return const EdgeInsets.symmetric(vertical: 16, horizontal: 20);
+      case medium:
+        return const EdgeInsets.symmetric(vertical: 18, horizontal: 32);
+      case large:
+        return const EdgeInsets.symmetric(vertical: 20, horizontal: 40);
+      case xl:
+        return const EdgeInsets.symmetric(vertical: 22, horizontal: 52);
+    }
+  }
+
+  ButtonStyle get style {
+    return ButtonStyle(textStyle: MaterialStatePropertyAll(TextStyle(fontSize: fontSize)), padding: MaterialStatePropertyAll(padding));
+  }
 }
 
 enum ViamButtonVariant {
@@ -76,10 +128,11 @@ enum ViamButtonVariant {
 class ViamButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Widget? icon;
+  final IconData? icon;
   final ViamButtonRole role;
-  final ViamButtonStyle style;
+  final ViamButtonFillStyle style;
   final ViamButtonVariant variant;
+  final ViamButtonSizeClass size;
 
   const ViamButton(
       {required this.onPressed,
@@ -87,13 +140,14 @@ class ViamButton extends StatelessWidget {
       super.key,
       this.icon,
       this.role = ViamButtonRole.primary,
-      this.style = ViamButtonStyle.filled,
+      this.style = ViamButtonFillStyle.filled,
+      this.size = ViamButtonSizeClass.medium,
       this.variant = ViamButtonVariant.iconLeading});
 
   ButtonStyle get _buttonStyle {
-    const mainStyle = ButtonStyle(splashFactory: NoSplash.splashFactory);
+    final mainStyle = const ButtonStyle(splashFactory: NoSplash.splashFactory).merge(size.style);
 
-    if (style == ViamButtonStyle.ghost) {
+    if (style == ViamButtonFillStyle.ghost) {
       var fgColor = role.backgroundColor;
       if (role == ViamButtonRole.primary || role == ViamButtonRole.inverse) {
         fgColor = role.foregroundColor;
@@ -103,7 +157,7 @@ class ViamButton extends StatelessWidget {
         foregroundColor: MaterialStatePropertyAll(fgColor),
       );
     }
-    if (style == ViamButtonStyle.outline) {
+    if (style == ViamButtonFillStyle.outline) {
       var alpha = 25;
       var fgColor = role.backgroundColor;
       var outlineColor = role.backgroundColor;
@@ -128,19 +182,26 @@ class ViamButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget child;
     if (icon != null) {
-      if (variant == ViamButtonVariant.iconOnly) {
-        child = IconButton(onPressed: onPressed, icon: icon!, style: _buttonStyle);
+      final prePadding = (variant == ViamButtonVariant.iconOnly) ? const Text(' ') : const SizedBox.shrink();
+      final iconWidget = Row(children: [prePadding, Icon(icon!)]);
+      final label = (variant == ViamButtonVariant.iconOnly)
+          ? const SizedBox.shrink()
+          : Text(
+              text,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            );
+      final first = (variant == ViamButtonVariant.iconTrailing) ? label : iconWidget;
+      final second = (variant == ViamButtonVariant.iconTrailing) ? iconWidget : label;
+      if (style == ViamButtonFillStyle.outline) {
+        child = OutlinedButton.icon(onPressed: onPressed, icon: first, label: second, style: _buttonStyle);
+      } else {
+        child = TextButton.icon(onPressed: onPressed, icon: first, label: second, style: _buttonStyle);
       }
-      if (style == ViamButtonStyle.outline) {
-        child = OutlinedButton.icon(onPressed: onPressed, icon: icon!, label: Text(text), style: _buttonStyle);
-      }
-      child = TextButton.icon(onPressed: onPressed, icon: icon!, label: Text(text), style: _buttonStyle);
-    }
-    if (style == ViamButtonStyle.outline) {
+    } else if (style == ViamButtonFillStyle.outline) {
       child = OutlinedButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
+    } else {
+      child = TextButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
     }
-    child = TextButton(onPressed: onPressed, style: _buttonStyle, child: Text(text));
-
     return Theme(data: ThemeData(primarySwatch: role.materialColor), child: child);
   }
 }

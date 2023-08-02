@@ -18,6 +18,7 @@ dependencies:
   fixnum: ^1.1.0
   flutter_joystick: ^0.0.3
   collection: ^1.17.1
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
