@@ -30,19 +30,13 @@ class PowerSensorService extends PowerSensorServiceBase {
   @override
   Future<GetVoltageResponse> getVoltage(ServiceCall call, GetVoltageRequest request) async {
     final powerSensor = _fromManager(request.name);
-    final voltage = await powerSensor.voltage(extra: request.extra.toMap());
-    return GetVoltageResponse()
-      ..volts = voltage.volts
-      ..isAc = voltage.isAc;
+    return powerSensor.voltage(extra: request.extra.toMap());
   }
 
   @override
   Future<GetCurrentResponse> getCurrent(ServiceCall call, GetCurrentRequest request) async {
     final powerSensor = _fromManager(request.name);
-    final current = await powerSensor.current(extra: request.extra.toMap());
-    return GetCurrentResponse()
-      ..amperes = current.amperes
-      ..isAc = current.isAc;
+    return powerSensor.current(extra: request.extra.toMap());
   }
 
   @override

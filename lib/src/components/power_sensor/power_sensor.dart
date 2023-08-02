@@ -4,27 +4,8 @@ import '../../gen/component/powersensor/v1/powersensor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-class Voltage {
-  double volts;
-  bool isAc;
-
-  Voltage(this.volts, this.isAc);
-
-  factory Voltage.fromProto(GetVoltageResponse pbResponse) {
-    return Voltage(pbResponse.volts, pbResponse.isAc);
-  }
-}
-
-class Current {
-  double amperes;
-  bool isAc;
-
-  Current(this.amperes, this.isAc);
-
-  factory Current.fromProto(GetCurrentResponse pbResponse) {
-    return Current(pbResponse.amperes, pbResponse.isAc);
-  }
-}
+typedef Voltage = GetVoltageResponse;
+typedef Current = GetCurrentResponse;
 
 /// PowerSensor reports information about voltage, current, and power.
 abstract class PowerSensor extends Sensor {

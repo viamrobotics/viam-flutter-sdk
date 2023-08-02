@@ -32,13 +32,17 @@ class FakePowerSensor extends PowerSensor {
   @override
   Future<Voltage> voltage({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Voltage(volts, isAc);
+    return Voltage()
+      ..volts = volts
+      ..isAc = isAc;
   }
 
   @override
   Future<Current> current({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Current(amperes, isAc);
+    return Current()
+      ..amperes = amperes
+      ..isAc = isAc;
   }
 
   @override

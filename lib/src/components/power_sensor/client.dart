@@ -25,8 +25,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = GetVoltageRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getVoltage(request);
-    return Voltage.fromProto(response);
+    return await client.getVoltage(request);
   }
 
   @override
@@ -34,8 +33,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = GetCurrentRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getCurrent(request);
-    return Current.fromProto(response);
+    return await client.getCurrent(request);
   }
 
   @override
