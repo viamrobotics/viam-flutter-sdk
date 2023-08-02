@@ -4,9 +4,18 @@ import 'package:viam_sdk/viam_sdk.dart';
 import '../camera_stream.dart';
 import '../joystick.dart';
 
+/// A widget to control a [Base].
+///
+/// This widget provides a joystick for moving a [Base],
+/// along with displaying any camera streams that might be available on the robot.
 class ViamBaseScreen extends StatefulWidget {
+  /// The [Base]
   final Base base;
+
+  /// Any [Camera]s that should be streamed
   final Iterable<Camera> cameras;
+
+  /// The current [RobotClient]
   final RobotClient robotClient;
 
   const ViamBaseScreen({

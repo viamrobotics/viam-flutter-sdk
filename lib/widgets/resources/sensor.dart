@@ -6,10 +6,22 @@ import 'package:viam_sdk/viam_sdk.dart';
 
 import '../button.dart';
 
+/// A widget to display data from a [Sensor].
+///
+/// Displays the data in a simple data table, with options for
+/// displaying the time the data were retrieved,
+/// automatic refreshing, and for controlling the refresh.
 class ViamSensorWidget extends StatefulWidget {
+  /// The [Sensor]
   final Sensor sensor;
+
+  /// How often to automatically refresh the data
   final Duration? refreshInterval;
+
+  /// Whether to display the time the data were retrieved
   final bool showLastRefreshed;
+
+  /// Whether to display controls for refreshing data
   final bool showRefreshControls;
 
   const ViamSensorWidget({
@@ -103,13 +115,14 @@ class _ViamSensorWidgetState extends State<ViamSensorWidget> {
               Column(children: [
                 const SizedBox(height: 8),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  ViamButton(
-                    onPressed: playPause,
-                    text: isPaused ? 'Play' : 'Pause',
-                    icon: isPaused ? Icons.play_arrow : Icons.pause,
-                    variant: ViamButtonVariant.iconOnly,
-                    style: ViamButtonFillStyle.ghost,
-                  ),
+                  if (widget.refreshInterval != null)
+                    ViamButton(
+                      onPressed: playPause,
+                      text: isPaused ? 'Play' : 'Pause',
+                      icon: isPaused ? Icons.play_arrow : Icons.pause,
+                      variant: ViamButtonVariant.iconOnly,
+                      style: ViamButtonFillStyle.ghost,
+                    ),
                   const SizedBox(width: 8),
                   ViamButton(
                     onPressed: refresh,

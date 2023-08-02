@@ -3,7 +3,12 @@ import 'package:viam_sdk/viam_sdk.dart';
 
 import '../button.dart';
 
+/// A widget to control a [Board].
+///
+/// Displays the status of any [DigitalInterrupts] or [AnalogReaders] in a data table.
+/// Provides the ability to set specific GPIO pins to high/low states.
 class ViamBoardWidget extends StatefulWidget {
+  /// The [Board]
   final Board board;
 
   const ViamBoardWidget({
