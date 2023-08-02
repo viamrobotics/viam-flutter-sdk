@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
+
+import '../camera_stream.dart';
+import '../joystick.dart';
 
 class ViamBaseScreen extends StatefulWidget {
   final Base base;
