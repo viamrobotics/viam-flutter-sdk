@@ -18,6 +18,7 @@ enum ViamButtonRole {
   /// A button to indicate a dangerous operation, will result in an red color scheme
   danger;
 
+  /// The background color of the button, based on role. Takes dark mode into consideration.
   Color get backgroundColor {
     final brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
@@ -35,6 +36,7 @@ enum ViamButtonRole {
     }
   }
 
+  /// The foreground color of the button, based on role. Takes dark mode into consideration.
   Color get foregroundColor {
     final brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
@@ -52,6 +54,7 @@ enum ViamButtonRole {
     }
   }
 
+  /// The material color of the button, based on role.
   MaterialColor get materialColor {
     switch (this) {
       case ViamButtonRole.primary:
@@ -66,17 +69,21 @@ enum ViamButtonRole {
         return Colors.amber;
     }
   }
-
-  ButtonStyle get style =>
-      ButtonStyle(backgroundColor: MaterialStatePropertyAll(backgroundColor), foregroundColor: MaterialStatePropertyAll(foregroundColor));
 }
 
+/// The fill style of the button.
 enum ViamButtonFillStyle {
+  /// The button should be filled entirely
   filled,
+
+  /// The button be outlined
   outline,
+
+  /// The button's background should be transparent
   ghost;
 }
 
+/// The size class of the button.
 enum ViamButtonSizeClass {
   xs,
   small,
@@ -84,6 +91,7 @@ enum ViamButtonSizeClass {
   large,
   xl;
 
+  /// The font size of the button, based on size class
   double get fontSize {
     switch (this) {
       case xs:
@@ -99,6 +107,7 @@ enum ViamButtonSizeClass {
     }
   }
 
+  /// The padding of the button, based on size class
   EdgeInsets get padding {
     switch (this) {
       case xs:
@@ -114,24 +123,45 @@ enum ViamButtonSizeClass {
     }
   }
 
+  /// The style of the button, based on size class
   ButtonStyle get style {
     return ButtonStyle(textStyle: MaterialStatePropertyAll(TextStyle(fontSize: fontSize)), padding: MaterialStatePropertyAll(padding));
   }
 }
 
+/// The variant of the button
 enum ViamButtonVariant {
+  /// The button should only show the icon
   iconOnly,
+
+  /// The icon should be ahead of the text
   iconLeading,
+
+  /// The icon should be after the text
   iconTrailing;
 }
 
+/// A button that has Viam specific styling
 class ViamButton extends StatelessWidget {
+  /// The text of the button
   final String text;
+
+  /// The action that should be performed when the button is pressed
   final VoidCallback onPressed;
+
+  /// The icon to display
   final IconData? icon;
+
+  /// The role of the button
   final ViamButtonRole role;
+
+  /// The fill style of the button
   final ViamButtonFillStyle style;
+
+  /// The button variant
   final ViamButtonVariant variant;
+
+  /// The size class of the button
   final ViamButtonSizeClass size;
 
   const ViamButton(
@@ -153,7 +183,7 @@ class ViamButton extends StatelessWidget {
         fgColor = role.foregroundColor;
       }
       return mainStyle.copyWith(
-        backgroundColor: const MaterialStatePropertyAll(Color.fromARGB(0, 0, 0, 0)),
+        backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
         foregroundColor: MaterialStatePropertyAll(fgColor),
       );
     }
