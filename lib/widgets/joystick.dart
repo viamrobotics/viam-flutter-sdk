@@ -2,12 +2,14 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_joystick/flutter_joystick.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+/// A [Joystick] to control a specific [Base]
 class ViamBaseJoystick extends StatefulWidget {
   const ViamBaseJoystick({
     super.key,
     required this.base,
   });
 
+  /// The [Base]
   final Base base;
 
   @override
@@ -25,7 +27,7 @@ class _ViamBaseJoystickState extends State<ViamBaseJoystick> {
         Text('Y: ${y.round()}% Z: ${z.round()}%'),
         const SizedBox(height: 16),
         Joystick(
-          listener: (callSetPower),
+          listener: callSetPower,
         )
       ],
     );
