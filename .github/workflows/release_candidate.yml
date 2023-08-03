@@ -17,6 +17,7 @@ on:
 jobs:
   prepare:
     if: github.repository_owner == 'viamrobotics'
+    environment: release
     runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/cirruslabs/flutter:3.10.6
@@ -24,18 +25,6 @@ jobs:
       rc_version: ${{ steps.which_version.outputs.rc_version }}
       version: ${{ steps.which_version.outputs.version }}
     steps:
-      - name: Check if organization member
-        id: is_organization_member
-        uses: jamessingleton/is-organization-member@1.0.1
-        with:
-          organization: viamrobotics
-          username: ${{ github.actor }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Cancelling - not an organization member
-        uses: andymckay/cancel-action@0.2
-        if: steps.is_organization_member.outputs.result == 'false'
-
       - name: Install GH CLI
         run: |
           type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -87,11 +76,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           releaseName: v${{ steps.which_version.outputs.rc_version }}
-          doNotFailIfNotFound: "true"
+          # doNotFailIfNotFound: "true"
 
-      - name: Cancelling - release already exists
-        uses: andymckay/cancel-action@0.2
-        if: steps.release_exists.outputs.id != ''
+      # - name: Cancelling - release already exists
+      #   uses: andymckay/cancel-action@0.2
+      #   if: steps.release_exists.outputs.id != ''
 
       - name: Add + Commit
         uses: EndBug/add-and-commit@v9
@@ -108,6 +97,7 @@ jobs:
   release:
     needs: [prepare]
     if: github.repository_owner == 'viamrobotics'
+    environment: release
     runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/viamrobotics/canon:amd64
