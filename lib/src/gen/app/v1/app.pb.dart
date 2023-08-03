@@ -6285,6 +6285,7 @@ class Module extends $pb.GeneratedMessage {
     ..aInt64(9, _omitFieldNames ? '' : 'totalOrganizationUsage')
     ..aOS(10, _omitFieldNames ? '' : 'organizationId')
     ..aOS(11, _omitFieldNames ? '' : 'entrypoint')
+    ..aOS(12, _omitFieldNames ? '' : 'publicNamespace')
     ..hasRequiredFields = false
   ;
 
@@ -6395,6 +6396,15 @@ class Module extends $pb.GeneratedMessage {
   $core.bool hasEntrypoint() => $_has(10);
   @$pb.TagNumber(11)
   void clearEntrypoint() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get publicNamespace => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set publicNamespace($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasPublicNamespace() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPublicNamespace() => clearField(12);
 }
 
 class VersionHistory extends $pb.GeneratedMessage {

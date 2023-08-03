@@ -1820,29 +1820,31 @@ const Module$json = {
   '1': 'Module',
   '2': [
     {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
-    {'1': 'organization_id', '3': 10, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'visibility', '3': 3, '4': 1, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibility'},
     {'1': 'versions', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.VersionHistory', '10': 'versions'},
     {'1': 'url', '3': 5, '4': 1, '5': 9, '10': 'url'},
     {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
     {'1': 'models', '3': 7, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
-    {'1': 'entrypoint', '3': 11, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'total_robot_usage', '3': 8, '4': 1, '5': 3, '10': 'totalRobotUsage'},
     {'1': 'total_organization_usage', '3': 9, '4': 1, '5': 3, '10': 'totalOrganizationUsage'},
+    {'1': 'organization_id', '3': 10, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'entrypoint', '3': 11, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'public_namespace', '3': 12, '4': 1, '5': 9, '10': 'publicNamespace'},
   ],
 };
 
 /// Descriptor for `Module`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moduleDescriptor = $convert.base64Decode(
-    'CgZNb2R1bGUSGwoJbW9kdWxlX2lkGAEgASgJUghtb2R1bGVJZBInCg9vcmdhbml6YXRpb25faW'
-    'QYCiABKAlSDm9yZ2FuaXphdGlvbklkEhIKBG5hbWUYAiABKAlSBG5hbWUSNwoKdmlzaWJpbGl0'
-    'eRgDIAEoDjIXLnZpYW0uYXBwLnYxLlZpc2liaWxpdHlSCnZpc2liaWxpdHkSNwoIdmVyc2lvbn'
-    'MYBCADKAsyGy52aWFtLmFwcC52MS5WZXJzaW9uSGlzdG9yeVIIdmVyc2lvbnMSEAoDdXJsGAUg'
-    'ASgJUgN1cmwSIAoLZGVzY3JpcHRpb24YBiABKAlSC2Rlc2NyaXB0aW9uEioKBm1vZGVscxgHIA'
-    'MoCzISLnZpYW0uYXBwLnYxLk1vZGVsUgZtb2RlbHMSHgoKZW50cnlwb2ludBgLIAEoCVIKZW50'
-    'cnlwb2ludBIqChF0b3RhbF9yb2JvdF91c2FnZRgIIAEoA1IPdG90YWxSb2JvdFVzYWdlEjgKGH'
-    'RvdGFsX29yZ2FuaXphdGlvbl91c2FnZRgJIAEoA1IWdG90YWxPcmdhbml6YXRpb25Vc2FnZQ==');
+    'CgZNb2R1bGUSGwoJbW9kdWxlX2lkGAEgASgJUghtb2R1bGVJZBISCgRuYW1lGAIgASgJUgRuYW'
+    '1lEjcKCnZpc2liaWxpdHkYAyABKA4yFy52aWFtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmls'
+    'aXR5EjcKCHZlcnNpb25zGAQgAygLMhsudmlhbS5hcHAudjEuVmVyc2lvbkhpc3RvcnlSCHZlcn'
+    'Npb25zEhAKA3VybBgFIAEoCVIDdXJsEiAKC2Rlc2NyaXB0aW9uGAYgASgJUgtkZXNjcmlwdGlv'
+    'bhIqCgZtb2RlbHMYByADKAsyEi52aWFtLmFwcC52MS5Nb2RlbFIGbW9kZWxzEioKEXRvdGFsX3'
+    'JvYm90X3VzYWdlGAggASgDUg90b3RhbFJvYm90VXNhZ2USOAoYdG90YWxfb3JnYW5pemF0aW9u'
+    'X3VzYWdlGAkgASgDUhZ0b3RhbE9yZ2FuaXphdGlvblVzYWdlEicKD29yZ2FuaXphdGlvbl9pZB'
+    'gKIAEoCVIOb3JnYW5pemF0aW9uSWQSHgoKZW50cnlwb2ludBgLIAEoCVIKZW50cnlwb2ludBIp'
+    'ChBwdWJsaWNfbmFtZXNwYWNlGAwgASgJUg9wdWJsaWNOYW1lc3BhY2U=');
 
 @$core.Deprecated('Use versionHistoryDescriptor instead')
 const VersionHistory$json = {
