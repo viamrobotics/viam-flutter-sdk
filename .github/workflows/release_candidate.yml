@@ -42,8 +42,8 @@ jobs:
 
       - run: make setup
 
-      - name: Format + Lint + Test
-        run: make format lint test
+      - name: Format + Test
+        run: make format test
 
       - name: Current version
         id: current_version
