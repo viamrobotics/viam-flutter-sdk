@@ -99,7 +99,6 @@ jobs:
   release:
     needs: [prepare]
     if: github.repository_owner == 'viamrobotics'
-    environment: release
     runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/viamrobotics/canon:amd64
