@@ -49,7 +49,7 @@ jobs:
         id: current_version
         shell: bash
         run: |
-          PATH=$PATH:$HOME/.pub-cache/bin echo "current_version=$(cider version)" >> $GITHUB_OUTPUT
+          echo "current_version=$($HOME/.pub-cache/bin/cider version)" >> $GITHUB_OUTPUT
 
       - name: Bump Version
         id: bump_version
@@ -57,17 +57,17 @@ jobs:
         shell: bash
         run: |
           if ${{ contains(steps.current_version.outputs.current_version, 'rc') }} ; then
-            PATH=$PATH:$HOME/.pub-cache/bin cider bump pre
+            $HOME/.pub-cache/bin/cider bump pre
           else
-            PATH=$PATH:$HOME/.pub-cache/bin cider bump ${{ inputs.version }} --pre=rc
+            $HOME/.pub-cache/bin/cider bump ${{ inputs.version }} --pre=rc
           fi
 
       - name: Which Version
         id: which_version
         shell: bash
         run: |
-          PATH=$PATH:$HOME/.pub-cache/bin echo "rc_version=$(cider version | sed 's/\"//g')" >> $GITHUB_OUTPUT
-          PATH=$PATH:$HOME/.pub-cache/bin echo "version=$(cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
+          echo "rc_version=$($HOME/.pub-cache/bin/cider version | sed 's/\"//g')" >> $GITHUB_OUTPUT
+          echo "version=$($HOME/.pub-cache/bin/cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
 
       - name: Check if release exists
         uses: cardinalby/git-get-release-action@1.2.4
@@ -76,11 +76,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           releaseName: v${{ steps.which_version.outputs.rc_version }}
-          # doNotFailIfNotFound: "true"
+          doNotFailIfNotFound: "true"
 
-      # - name: Cancelling - release already exists
-      #   uses: andymckay/cancel-action@0.2
-      #   if: steps.release_exists.outputs.id != ''
+      - name: Cancelling - release already exists
+        uses: andymckay/cancel-action@0.2
+        if: steps.release_exists.outputs.id != ''
 
       - name: Add + Commit
         uses: EndBug/add-and-commit@v9
