@@ -36,8 +36,8 @@ jobs:
 
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          set-safe-directory: "*"
+
+      - run: git config --global --add safe.directory /__w/viam-flutter-sdk/viam-flutter-sdk
 
       - name: Setup Flutter
         run: flutter pub get
