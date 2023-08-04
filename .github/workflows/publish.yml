@@ -7,4 +7,7 @@ on:
 
 jobs:
   publish:
+    runs-on: [self-hosted, x64]
+    permissions:
+      id-token: "write"
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1

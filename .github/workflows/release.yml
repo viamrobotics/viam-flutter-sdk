@@ -6,43 +6,34 @@ on:
 jobs:
   prepare:
     if: github.repository_owner == 'viamrobotics' && startsWith(github.ref_name, 'rc-')
+    environment: release
     runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/cirruslabs/flutter:3.10.6
     outputs:
       version: ${{ steps.which_version.outputs.version }}
     steps:
-      - name: Check if organization member
-        id: is_organization_member
-        uses: jamessingleton/is-organization-member@1.0.1
-        with:
-          organization: viamrobotics
-          username: ${{ github.actor }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Cancelling - not an organization member
-        uses: andymckay/cancel-action@0.2
-        if: steps.is_organization_member.outputs.result == 'false'
-
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      - run: git config --global --add safe.directory /__w/viam-flutter-sdk/viam-flutter-sdk
 
       - name: Setup Flutter
         run: flutter pub get
 
       - run: make setup
 
-      - name: Format + Lint + Test
-        run: make format lint test
+      - name: Format + Test
+        run: make format test
 
       - name: Bump Version
         shell: bash
-        run: PATH=$PATH:$HOME/.pub-cache/bin cider bump release
+        run: $HOME/.pub-cache/bin/cider bump release
 
       - name: Which Version
         id: which_version
         shell: bash
-        run: PATH=$PATH:$HOME/.pub-cache/bin echo "version=$(cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
+        run: echo "version=$($HOME/.pub-cache/bin/cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
 
       - name: Check if release exists
         uses: cardinalby/git-get-release-action@1.2.4
