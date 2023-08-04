@@ -129,6 +129,10 @@ const Organization$json = {
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
     {'1': 'public_namespace', '3': 4, '4': 1, '5': 9, '10': 'publicNamespace'},
     {'1': 'default_region', '3': 5, '4': 1, '5': 9, '10': 'defaultRegion'},
+    {'1': 'cid', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'cid', '17': true},
+  ],
+  '8': [
+    {'1': '_cid'},
   ],
 };
 
@@ -137,7 +141,7 @@ final $typed_data.Uint8List organizationDescriptor = $convert.base64Decode(
     'CgxPcmdhbml6YXRpb24SDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSOQoKY3'
     'JlYXRlZF9vbhgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbhIp'
     'ChBwdWJsaWNfbmFtZXNwYWNlGAQgASgJUg9wdWJsaWNOYW1lc3BhY2USJQoOZGVmYXVsdF9yZW'
-    'dpb24YBSABKAlSDWRlZmF1bHRSZWdpb24=');
+    'dpb24YBSABKAlSDWRlZmF1bHRSZWdpb24SFQoDY2lkGAYgASgJSABSA2NpZIgBAUIGCgRfY2lk');
 
 @$core.Deprecated('Use organizationMemberDescriptor instead')
 const OrganizationMember$json = {
@@ -271,11 +275,13 @@ const UpdateOrganizationRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
     {'1': 'public_namespace', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'publicNamespace', '17': true},
     {'1': 'region', '3': 4, '4': 1, '5': 9, '9': 2, '10': 'region', '17': true},
+    {'1': 'cid', '3': 5, '4': 1, '5': 9, '9': 3, '10': 'cid', '17': true},
   ],
   '8': [
     {'1': '_name'},
     {'1': '_public_namespace'},
     {'1': '_region'},
+    {'1': '_cid'},
   ],
 };
 
@@ -284,7 +290,8 @@ final $typed_data.Uint8List updateOrganizationRequestDescriptor = $convert.base6
     'ChlVcGRhdGVPcmdhbml6YXRpb25SZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
     'JnYW5pemF0aW9uSWQSFwoEbmFtZRgCIAEoCUgAUgRuYW1liAEBEi4KEHB1YmxpY19uYW1lc3Bh'
     'Y2UYAyABKAlIAVIPcHVibGljTmFtZXNwYWNliAEBEhsKBnJlZ2lvbhgEIAEoCUgCUgZyZWdpb2'
-    '6IAQFCBwoFX25hbWVCEwoRX3B1YmxpY19uYW1lc3BhY2VCCQoHX3JlZ2lvbg==');
+    '6IAQESFQoDY2lkGAUgASgJSANSA2NpZIgBAUIHCgVfbmFtZUITChFfcHVibGljX25hbWVzcGFj'
+    'ZUIJCgdfcmVnaW9uQgYKBF9jaWQ=');
 
 @$core.Deprecated('Use updateOrganizationResponseDescriptor instead')
 const UpdateOrganizationResponse$json = {
