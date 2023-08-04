@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -38,6 +40,18 @@ class _ViamBaseScreenState extends State<ViamBaseScreen> {
     super.initState();
   }
 
+  /// Needed to "bump" the CameraStream widget to use the new camera
+  Future<void> _setCamera(Camera? camera) async {
+    setState(() {
+      this.camera = null;
+    });
+    Timer(const Duration(milliseconds: 50), () {
+      setState(() {
+        this.camera = camera;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -46,26 +60,31 @@ class _ViamBaseScreenState extends State<ViamBaseScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.cameras.isNotEmpty)
-              Center(
-                child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  const Text('Video feed from: '),
-                  if (widget.cameras.length > 1)
-                    DropdownButton<Camera>(
-                      value: camera,
-                      icon: const Icon(Icons.keyboard_arrow_down),
-                      items: widget.cameras
-                          .map((e) => DropdownMenuItem(
-                                value: e,
-                                child: Text(e.name),
-                              ))
-                          .toList(),
-                      onChanged: (value) => camera = value,
-                    )
-                  else
-                    Text(camera!.name)
-                ]),
-              ),
-            if (camera != null) ViamCameraStreamView(camera: camera!, streamClient: widget.robotClient.getStream(camera!.name)),
+              Column(children: [
+                Center(
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    const Text('Video feed from: '),
+                    if (widget.cameras.length > 1)
+                      DropdownButton<Camera>(
+                        value: camera,
+                        icon: const Icon(Icons.keyboard_arrow_down),
+                        items: widget.cameras
+                            .map((e) => DropdownMenuItem(
+                                  value: e,
+                                  child: Text(e.name),
+                                ))
+                            .toList(),
+                        onChanged: (value) => _setCamera(value),
+                      )
+                    else
+                      Text(camera!.name)
+                  ]),
+                ),
+                if (camera != null)
+                  ViamCameraStreamView(camera: camera!, streamClient: widget.robotClient.getStream(camera!.name))
+                else
+                  const SizedBox(height: 300),
+              ]),
             ViamBaseJoystick(base: widget.base)
           ],
         ),
