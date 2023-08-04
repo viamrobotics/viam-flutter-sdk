@@ -400,6 +400,7 @@ class Organization extends $pb.GeneratedMessage {
     ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(5, _omitFieldNames ? '' : 'defaultRegion')
+    ..aOS(6, _omitFieldNames ? '' : 'cid')
     ..hasRequiredFields = false
   ;
 
@@ -470,6 +471,15 @@ class Organization extends $pb.GeneratedMessage {
   $core.bool hasDefaultRegion() => $_has(4);
   @$pb.TagNumber(5)
   void clearDefaultRegion() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get cid => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set cid($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCid() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCid() => clearField(6);
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
@@ -907,6 +917,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(4, _omitFieldNames ? '' : 'region')
+    ..aOS(5, _omitFieldNames ? '' : 'cid')
     ..hasRequiredFields = false
   ;
 
@@ -966,6 +977,15 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   $core.bool hasRegion() => $_has(3);
   @$pb.TagNumber(4)
   void clearRegion() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get cid => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set cid($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCid() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCid() => clearField(5);
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
