@@ -2,6 +2,17 @@ name: Release
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: "The type of version bump."
+        type: choice
+        required: true
+        default: nobump
+        options:
+          - major
+          - minor
+          - patch
+          - nobump
 
 jobs:
   prepare:
@@ -27,13 +38,14 @@ jobs:
         run: make format test
 
       - name: Bump Version
+        if: inputs.version != 'nobump'
         shell: bash
-        run: $HOME/.pub-cache/bin/cider bump release
+        run: $HOME/.pub-cache/bin/cider bump ${{ inputs.version }}
 
       - name: Which Version
         id: which_version
         shell: bash
-        run: echo "version=$($HOME/.pub-cache/bin/cider version | sed -e 's/\"//g' -e 's/-rc.*//g')" >> $GITHUB_OUTPUT
+        run: echo "version=$($HOME/.pub-cache/bin/cider version" >> $GITHUB_OUTPUT
 
       - name: Check if release exists
         uses: cardinalby/git-get-release-action@1.2.4
@@ -51,7 +63,7 @@ jobs:
       - name: Add + Commit
         uses: EndBug/add-and-commit@v9
         with:
-          new_branch: rc-${{ steps.which_version.outputs.version }}
+          new_branch: v${{ steps.which_version.outputs.version }}
           message: Bump version to ${{ steps.which_version.outputs.version }}
 
       - name: Open PR
