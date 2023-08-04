@@ -95,4 +95,4 @@ jobs:
           tag_name: v${{ needs.prepare.outputs.version }}
           draft: true
           prerelease: false
-          target_commitish: rc-${{ needs.prepare.outputs.version }}
+          target_commitish: release/v${{ needs.prepare.outputs.version }}
