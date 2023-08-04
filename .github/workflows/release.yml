@@ -75,7 +75,7 @@ jobs:
 
   release:
     needs: [prepare]
-    if: github.repository_owner == 'viamrobotics' && startsWith(github.ref_name, 'rc-')
+    if: github.repository_owner == 'viamrobotics'
     runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/viamrobotics/canon:amd64
