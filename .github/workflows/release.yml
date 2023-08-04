@@ -45,7 +45,7 @@ jobs:
       - name: Which Version
         id: which_version
         shell: bash
-        run: echo "version=$($HOME/.pub-cache/bin/cider version" >> $GITHUB_OUTPUT
+        run: echo "version=$($HOME/.pub-cache/bin/cider version)" >> $GITHUB_OUTPUT
 
       - name: Check if release exists
         uses: cardinalby/git-get-release-action@1.2.4
@@ -75,7 +75,7 @@ jobs:
 
   release:
     needs: [prepare]
-    if: github.repository_owner == 'viamrobotics' && startsWith(github.ref_name, 'rc-')
+    if: github.repository_owner == 'viamrobotics'
     runs-on: [self-hosted, x64]
     container:
       image: ghcr.io/viamrobotics/canon:amd64
