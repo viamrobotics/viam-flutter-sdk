@@ -24,6 +24,15 @@ jobs:
     outputs:
       version: ${{ steps.which_version.outputs.version }}
     steps:
+      - name: Install GH CLI
+        run: |
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+          && sudo apt update \
+          && sudo apt install gh -y
+
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -63,15 +72,14 @@ jobs:
       - name: Add + Commit
         uses: EndBug/add-and-commit@v9
         with:
-          new_branch: v${{ steps.which_version.outputs.version }}
+          new_branch: release/v${{ steps.which_version.outputs.version }}
           message: Bump version to ${{ steps.which_version.outputs.version }}
 
       - name: Open PR
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "main"
-          pr_title: ${{ steps.which_version.outputs.version }}
-          pr_body: This is an auto-generated PR to merge the rc branch back into main upon successful release.
+        run: |
+          gh pr create -t "rc-${{ steps.which_version.outputs.version }}" -b "This is an auto-generated PR to merge the release branch back into main upon successful release" -B "main" -H "release/v${{ steps.which_version.outputs.version }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release:
     needs: [prepare]
