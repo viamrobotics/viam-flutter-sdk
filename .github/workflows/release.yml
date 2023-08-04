@@ -69,6 +69,15 @@ jobs:
         uses: andymckay/cancel-action@0.2
         if: steps.release_exists.outputs.id != ''
 
+      - name: "Generate release changelog"
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sinceTag: v0.0.1
+          futureRelease: v${{ steps.which_version.outputs.version }}
+          unreleased: true
+          repo: viamrobotics/viam-flutter-sdk
+
       - name: Add + Commit
         uses: EndBug/add-and-commit@v9
         with:
