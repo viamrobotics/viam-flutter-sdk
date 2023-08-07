@@ -53,6 +53,7 @@ class RobotClient {
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
   late final StreamManager _streamManager;
+  Timer? _checkConnectionTask;
 
   RobotClient._();
 
@@ -66,7 +67,7 @@ class RobotClient {
     client._client = RobotServiceClient(client._channel);
     client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
-    unawaited(client._checkConnection(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval));
+    client._startCheckConnectionTask(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval);
     return client;
   }
 
@@ -108,32 +109,35 @@ class RobotClient {
     }
   }
 
-  Future<void> _checkConnection({required int interval, required int reconnectInterval}) async {
+  void _startCheckConnectionTask({required int interval, required int reconnectInterval}) {
     if (interval <= 0) interval = reconnectInterval;
     if (interval <= 0 && reconnectInterval <= 0) return;
 
-    while (true) {
-      await Future.delayed(Duration(seconds: interval));
+    _checkConnectionTask = Timer.periodic(Duration(seconds: interval), (timer) {
+      _checkConnection(reconnectInterval: reconnectInterval);
+    });
+  }
 
-      // Failure to grab resources could be for spurious, non-networking reasons. Try three times just to be safe.
-      for (int i = 0; i < 3; i++) {
-        try {
-          await _client.resourceNames(ResourceNamesRequest(), options: CallOptions(timeout: const Duration(seconds: 1)));
-          _connected = true;
-        } catch (e) {
-          _connected = false;
-          await Future.delayed(const Duration(milliseconds: 100));
-        }
+  Future<void> _checkConnection({required int reconnectInterval}) async {
+    // Failure to grab resources could be for spurious, non-networking reasons. Try three times just to be safe.
+    for (int i = 0; i < 3; i++) {
+      try {
+        await _client.resourceNames(ResourceNamesRequest(), options: CallOptions(timeout: const Duration(seconds: 1)));
+        _connected = true;
+        break;
+      } catch (e) {
+        _connected = false;
+        await Future.delayed(const Duration(milliseconds: 100));
       }
-
-      if (_connected) continue;
-
-      _logger.d('Lost connection to robot');
-
-      if (reconnectInterval <= 0) continue;
-
-      await _reconnect(reconnectInterval);
     }
+
+    if (_connected) return;
+
+    _logger.d('Lost connection to robot');
+
+    if (reconnectInterval <= 0) return;
+
+    await _reconnect(reconnectInterval);
   }
 
   Future<void> _reconnect(int reconnectInterval) async {
@@ -170,7 +174,9 @@ class RobotClient {
 
   /// Close the connection to the Robot. This should be done to release resources on the robot.
   Future<void> close() async {
+    _logger.d('Closing RobotClient connection');
     try {
+      _checkConnectionTask?.cancel();
       _sessionsClient.reset();
       await _channel.shutdown();
     } catch (e) {
