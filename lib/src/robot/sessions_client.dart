@@ -78,6 +78,16 @@ class SessionsClient implements ResourceRPCClient {
     metadata();
   }
 
+  void stop() {
+    _logger.d('Stopping SessionClient');
+    _currentId = '';
+    _supported = false;
+  }
+
+  void start() {
+    reset();
+  }
+
   Future<void> _heartbeatTask() async {
     while (_supported) {
       await _heartbeatTick();
