@@ -54,6 +54,7 @@ class RobotClient {
   ResourceManager _manager = ResourceManager();
   late final StreamManager _streamManager;
   Timer? _checkConnectionTask;
+  Timer? _reconnectionTask;
 
   RobotClient._();
 
@@ -67,7 +68,7 @@ class RobotClient {
     client._client = RobotServiceClient(client._channel);
     client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
-    client._startCheckConnectionTask(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval);
+    client._startCheckConnectionTask();
     return client;
   }
 
@@ -109,16 +110,18 @@ class RobotClient {
     }
   }
 
-  void _startCheckConnectionTask({required int interval, required int reconnectInterval}) {
+  void _startCheckConnectionTask() {
+    int interval = _options.checkConnectionInterval;
+    final reconnectInterval = _options.attemptReconnectInterval;
     if (interval <= 0) interval = reconnectInterval;
     if (interval <= 0 && reconnectInterval <= 0) return;
 
-    _checkConnectionTask = Timer.periodic(Duration(seconds: interval), (timer) {
-      _checkConnection(reconnectInterval: reconnectInterval);
+    _checkConnectionTask = Timer(Duration(seconds: interval), () async {
+      await _checkConnection(interval: interval, reconnectInterval: reconnectInterval);
     });
   }
 
-  Future<void> _checkConnection({required int reconnectInterval}) async {
+  Future<void> _checkConnection({required int interval, required int reconnectInterval}) async {
     // Failure to grab resources could be for spurious, non-networking reasons. Try three times just to be safe.
     for (int i = 0; i < 3; i++) {
       try {
@@ -131,39 +134,42 @@ class RobotClient {
       }
     }
 
-    if (_connected) return;
+    if (_connected) {
+      _startCheckConnectionTask();
+      return;
+    }
 
-    _logger.d('Lost connection to robot');
+    _logger.i('Lost connection to robot');
 
     if (reconnectInterval <= 0) return;
 
-    await _reconnect(reconnectInterval);
+    _reconnectionTask = Timer.periodic(Duration(seconds: reconnectInterval), (timer) async {
+      await _reconnect();
+    });
   }
 
-  Future<void> _reconnect(int reconnectInterval) async {
-    _logger
-        .d('Attempting to reconnect to the robot at $_address every $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
+  Future<void> _reconnect() async {
+    _logger.d('Attempting to reconnect to the robot at $_address');
 
-    while (!_connected) {
+    _sessionsClient.stop();
+    try {
+      final channel = await dial(_address, _options.dialOptions, () => _sessionsClient.metadata());
+      final client = RobotServiceClient(channel);
+      await client.resourceNames(ResourceNamesRequest());
+
+      _channel = channel;
+      _streamManager.channel = _channel as WebRtcClientChannel;
+      _client = client;
+      _sessionsClient = SessionsClient(_channel, _options.enableSessions);
+      await refresh();
+      _connected = true;
+      _logger.i('Successfully reconnected to robot');
+      _reconnectionTask?.cancel();
+      _startCheckConnectionTask();
+    } catch (e) {
+      await _channel.shutdown();
       _sessionsClient.reset();
-      try {
-        final channel = await dial(_address, _options.dialOptions, () => _sessionsClient.metadata());
-        final client = RobotServiceClient(channel);
-        await client.resourceNames(ResourceNamesRequest());
-
-        _channel = channel;
-        _streamManager.channel = _channel as WebRtcClientChannel;
-        _client = client;
-        _sessionsClient = SessionsClient(_channel, _options.enableSessions);
-        await refresh();
-        _connected = true;
-        _logger.d('Successfully reconnected robot');
-      } catch (e) {
-        await _channel.shutdown();
-        _sessionsClient.reset();
-        _logger.d('Failed to reconnect, trying again in $reconnectInterval ${(reconnectInterval > 1) ? 'seconds' : 'second'}');
-        await Future.delayed(Duration(seconds: reconnectInterval));
-      }
+      _logger.i('Failed to reconnect');
     }
   }
 
@@ -177,7 +183,8 @@ class RobotClient {
     _logger.d('Closing RobotClient connection');
     try {
       _checkConnectionTask?.cancel();
-      _sessionsClient.reset();
+      _reconnectionTask?.cancel();
+      _sessionsClient.stop();
       await _channel.shutdown();
     } catch (e) {
       _logger.w('Did not cleanly close RobotClient connection', e);
