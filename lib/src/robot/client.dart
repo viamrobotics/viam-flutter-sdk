@@ -170,8 +170,12 @@ class RobotClient {
 
   /// Close the connection to the Robot. This should be done to release resources on the robot.
   Future<void> close() async {
-    await _channel.shutdown();
-    _sessionsClient.reset();
+    try {
+      _sessionsClient.reset();
+      await _channel.shutdown();
+    } catch (e) {
+      _logger.w('Did not cleanly close RobotClient connection', e);
+    }
   }
 
   /// Get a connected resource by its [ResourceName]
