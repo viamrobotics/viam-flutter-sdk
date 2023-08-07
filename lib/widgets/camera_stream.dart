@@ -45,8 +45,7 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
       _renderer.srcObject = event;
       setState(() {});
     });
-
-    _streamSub.onError((error, trace) => Logger().e(error));
+    _streamSub.onError((error, trace) => Logger().e('Encountered a stream error for camera ${widget.camera.name}', error, trace));
   }
 
   @override

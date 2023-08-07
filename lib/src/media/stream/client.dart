@@ -1,15 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:logger/logger.dart';
 
 import '../../gen/proto/stream/v1/stream.pbgrpc.dart';
 import '../../rpc/web_rtc/web_rtc_client.dart';
+
+Logger _logger = Logger();
 
 class StreamManager {
   final Map<String, MediaStream> _streams = {};
   final Map<String, StreamClient> _clients = {};
   WebRtcClientChannel _channel;
-  final StreamServiceClient _client;
   // ignore: cancel_subscriptions
   StreamSubscription? _errorHandler;
 
@@ -17,20 +19,27 @@ class StreamManager {
     p0?.cancel();
   });
 
-  StreamManager(this._channel) : _client = StreamServiceClient(_channel) {
+  StreamManager(this._channel) {
     _finalizer.attach(this, _errorHandler);
     channel = _channel;
   }
 
+  StreamServiceClient get _client {
+    return StreamServiceClient(_channel);
+  }
+
   set channel(WebRtcClientChannel channel) {
+    _errorHandler?.cancel();
     _channel = channel;
     _channel.rtcPeerConnection.onTrack = (event) {
+      _errorHandler?.cancel(); // Cancel the error handler -- clearly we're connected if we're receiving this event
       for (final stream in event.streams) {
         _addStream(stream);
       }
     };
 
     _channel.rtcPeerConnection.onConnectionState = (state) {
+      _errorHandler?.cancel();
       if (state == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
           state == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
         _errorHandler = Stream.periodic(const Duration(seconds: 1)).listen((_) {
@@ -39,6 +48,11 @@ class StreamManager {
           }
         });
       }
+
+      // Readd pre-existing streams (in the event of reconnection)
+      _streams.keys.forEach((element) {
+        _add(element);
+      });
     };
   }
 
@@ -71,17 +85,30 @@ class StreamManager {
   }
 
   Future<void> _add(String name) async {
-    await _client.addStream(AddStreamRequest()..name = name);
+    final sanitizedName = _getValidSDPTrackName(name);
+    await _client.addStream(AddStreamRequest()..name = sanitizedName);
+    _logger.d('Added stream named $name');
   }
 
   Future<void> _remove(String name) async {
+    await _removeStream(name);
+    _removeClient(name);
+  }
+
+  Future<void> _removeStream(String name) async {
     final sanitizedName = _getValidSDPTrackName(name);
     if (_streams.containsKey(sanitizedName)) {
       _streams.remove(sanitizedName)!;
       await _client.removeStream(RemoveStreamRequest()..name = sanitizedName);
+      _logger.d('Removed MediaStream named $name');
     }
+  }
+
+  void _removeClient(String name) {
+    final sanitizedName = _getValidSDPTrackName(name);
     if (_clients.containsKey(sanitizedName)) {
       _clients.remove(sanitizedName)!;
+      _logger.d('Removed StreamClient named $name');
     }
   }
 }

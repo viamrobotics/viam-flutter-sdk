@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 import 'package:viam_sdk/src/robot/sessions_client.dart';
@@ -28,6 +29,9 @@ class RobotClientOptions {
 
   /// Whether sessions are enabled
   final enableSessions = true;
+
+  /// The log level desired
+  final Level logLevel = Level.debug;
 
   RobotClientOptions() : dialOptions = DialOptions();
 
@@ -60,6 +64,7 @@ class RobotClient {
 
   /// Connect to a robot at the specified address with the provided options.
   static Future<RobotClient> atAddress(String url, RobotClientOptions options) async {
+    Logger.level = options.logLevel;
     final client = RobotClient._();
     client._address = url;
     client._options = options;
@@ -75,7 +80,10 @@ class RobotClient {
   /// Refresh the resources of this robot
   Future<void> refresh() async {
     final ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
-    if (response.resources == resourceNames) {
+    if (setEquals(response.resources.toSet(), resourceNames.toSet())) {
+      resourceNames.forEach((element) {
+        _resetResourceChannel(element);
+      });
       return;
     }
     final manager = ResourceManager();
@@ -105,6 +113,8 @@ class RobotClient {
     if (_manager.resources.containsKey(resourceName)) {
       final resource = _manager.getResource<ResourceRPCClient>(resourceName);
       if (_channel != resource.channel) {
+        _logger.d(
+            'Resetting channel for resource named ${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}');
         resource.channel = _channel;
       }
     }
