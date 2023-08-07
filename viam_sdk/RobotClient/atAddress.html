@@ -85,7 +85,7 @@
   client._client = RobotServiceClient(client._channel);
   client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
   await client.refresh();
-  unawaited(client._checkConnection(interval: options.checkConnectionInterval, reconnectInterval: options.attemptReconnectInterval));
+  client._startCheckConnectionTask();
   return client;
 }</code></pre>
 </section>
@@ -122,6 +122,7 @@
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
         <li class="section-title"><a href="../../viam_sdk/RobotClient-class.html#instance-methods">Methods</a></li>
+          <li><a href="../../viam_sdk/RobotClient/close.html">close</a></li>
           <li><a href="../../viam_sdk/RobotClient/getResource.html">getResource</a></li>
           <li><a href="../../viam_sdk/RobotClient/getStream.html">getStream</a></li>
           <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
@@ -148,7 +149,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.2
+      0.0.3
   </span>
 
   
