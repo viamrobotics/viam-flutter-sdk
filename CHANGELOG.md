@@ -1,16 +1,22 @@
 # Changelog
 
-## [v0.0.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.3) (2023-08-04)
+## [v0.0.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.4) (2023-08-07)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.2...v0.0.3)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.3...v0.0.4)
 
 **Merged pull requests:**
 
+- Close robot connections [\#94](https://github.com/viamrobotics/viam-flutter-sdk/pull/94) ([njooma](https://github.com/njooma))
+- v0.0.3 [\#93](https://github.com/viamrobotics/viam-flutter-sdk/pull/93) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Update views for use in prod [\#92](https://github.com/viamrobotics/viam-flutter-sdk/pull/92) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#91](https://github.com/viamrobotics/viam-flutter-sdk/pull/91) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Hotfix/release process [\#90](https://github.com/viamrobotics/viam-flutter-sdk/pull/90) ([njooma](https://github.com/njooma))
 - v0.0.2 [\#89](https://github.com/viamrobotics/viam-flutter-sdk/pull/89) ([github-actions[bot]](https://github.com/apps/github-actions))
 - 0.0.2 [\#88](https://github.com/viamrobotics/viam-flutter-sdk/pull/88) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.3) (2023-08-04)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.2...v0.0.3)
 
 ## [v0.0.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.2) (2023-08-04)
 
