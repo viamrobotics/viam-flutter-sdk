@@ -20,13 +20,29 @@ import '../components/servo/client.dart';
 import '../components/servo/servo.dart';
 import '../resource/base.dart';
 
+/// An object representing a resource to be registered.
+///
+/// This object is generic over [Resource], and it includes various required functionality for the resource (e.g. creating an RPC client)
+/// If creating a custom [Resource], you must register the resource using [ResourceRegistration].
 class ResourceRegistration<T extends Resource> {
+  /// The [Subtype] of the resource
   Subtype subtype;
+
+  /// A method to create a [ResourceRPCClient]
   Resource Function(String name, ClientChannelBase channel) rpcClientCreator;
 
   ResourceRegistration(this.subtype, this.rpcClientCreator);
 }
 
+/// The global registry of robot resources.
+///
+/// **NB** The [Registry] should almost never be used directly.
+///
+/// The [Registry] keeps track of the various [Subtype] that are available on robots using this SDK. All Viam-provided resources are
+/// pre-registered (e.g. [Arm], [Motor], [MovementSensor]).
+///
+/// If you create a new resource [Subtype] that is not an extension of any existing resources, you must register the resource using
+/// [registerSubtype]
 class Registry {
   static final Registry instance = Registry._();
   Registry._() {
@@ -42,8 +58,10 @@ class Registry {
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
   }
 
+  /// The [Subtype] available in the SDK
   final Map<Subtype, ResourceRegistration> subtypes = {};
 
+  /// Register a new resource with the SDK
   void registerSubtype(ResourceRegistration registration) {
     if (subtypes.containsKey(registration.subtype)) {
       throw Exception('Duplicate registration of subtype in registry');
@@ -51,6 +69,7 @@ class Registry {
     subtypes[registration.subtype] = registration;
   }
 
+  /// Retrieve a [Subtype]'s registration information
   ResourceRegistration lookupSubtype(Subtype subtype) {
     if (!subtypes.containsKey(subtype)) {
       throw Exception('Subtype not registered in registry');
