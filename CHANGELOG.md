@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.0.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.5) (2023-08-08)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.4...v0.0.5)
+
+**Merged pull requests:**
+
+- Documentation [\#98](https://github.com/viamrobotics/viam-flutter-sdk/pull/98) ([njooma](https://github.com/njooma))
+- Reconnect camera streams [\#96](https://github.com/viamrobotics/viam-flutter-sdk/pull/96) ([njooma](https://github.com/njooma))
+- v0.0.4 [\#95](https://github.com/viamrobotics/viam-flutter-sdk/pull/95) ([github-actions[bot]](https://github.com/apps/github-actions))
+
 ## [v0.0.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.4) (2023-08-07)
 
 [Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.3...v0.0.4)
