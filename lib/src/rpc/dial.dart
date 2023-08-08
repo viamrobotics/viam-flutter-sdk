@@ -378,6 +378,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
   return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure, sessionsCallback);
 }
 
+/// A channel that attaches an access token to gRPC metadata for every call
 class AuthenticatedChannel extends GrpcOrGrpcWebClientChannel {
   final String accessToken;
   final String Function()? _sessionId;
@@ -422,6 +423,7 @@ _HostAndPort _hostAndPort(String address, bool insecure) {
   return _HostAndPort(host, port);
 }
 
+/// A channel that adds session data (if required) to gRPC metadata for every call
 class ClientChannelWithSessions extends GrpcOrGrpcWebClientChannel {
   final String Function() _sessionId;
 
