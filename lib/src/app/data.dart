@@ -6,6 +6,8 @@ import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import '../gen/app/data/v1/data.pbgrpc.dart';
 
 /// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
+///
+/// All calls must be authenticated.
 class DataClient {
   final DataServiceClient _client;
 
@@ -106,11 +108,13 @@ class DataClient {
 }
 
 extension FilterUtils on Filter {
+  /// Return a [Filter] with a [CaptureInterval] created by the provided start and end [DateTime] objects
   Filter withDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
     setDateTimeCaptureInterval(start: start, end: end);
     return this;
   }
 
+  /// Update the current [Filter] with a [CaptureInterval] created by the provided start and end [DateTime] objects
   void setDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
     final interval = CaptureInterval();
     if (start != null) {
