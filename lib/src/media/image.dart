@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 
+/// Mime types supported by Viam
 class MimeType {
   final String _type;
   final String _name;
@@ -24,16 +25,27 @@ class MimeType {
 
   const MimeType._(this._type, this._name);
 
+  /// Viam's custom RGBA encoding (image/vnd.viam.rgba)
   static MimeType get viamRgba => const MimeType._('viamRgba', 'image/vnd.viam.rgba');
+
+  /// JPEG encoding (image/jpeg)
   static MimeType get jpeg => const MimeType._('jpeg', 'image/jpeg');
+
+  /// PNG encoding (image/png)
   static MimeType get png => const MimeType._('png', 'image/png');
+
+  /// PointCloud Data encoding (pointcloud/pcd)
   static MimeType get pcd => const MimeType._('pcd', 'pointcloud/pcd');
 
-  /// An unsupported MimeType takes in the String representation of the mimetype that is not supported.
+  /// An unsupported MimeType.
+  /// Takes in the String representation of the mimetype that is not supported.
   const MimeType.unsupported(this._name) : _type = 'unsupported';
 
+  /// Create a [MimeType] from its string representation.
+  /// Returns [MimeType.unsupported] if the provided string is not supported
   static MimeType fromString(String mimeType) => _map[mimeType] ?? MimeType.unsupported(mimeType);
 
+  /// Whether the provided String representation of a [MimeType] is supported
   static bool isSupported(String mimeType) {
     return _map.containsKey(mimeType);
   }
@@ -46,6 +58,7 @@ class MimeType {
   @override
   int get hashCode => Object.hash(_type, _name);
 
+  /// Decode the bytes into an [img.Image] using the appropriate decoder
   img.Image? decode(List<int> bytes) {
     img.Decoder? decoder;
     switch (_type) {
@@ -72,6 +85,7 @@ class MimeType {
   }
 }
 
+/// A custom image type that contains the [MimeTYpe], raw image data, and lazily loads and caches an [img.Image].
 class ViamImage {
   /// The mimetype of the image
   final MimeType mimeType;

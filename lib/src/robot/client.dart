@@ -197,7 +197,7 @@ class RobotClient {
       _sessionsClient.stop();
       await _channel.shutdown();
     } catch (e) {
-      _logger.w('Did not cleanly close RobotClient connection', e);
+      _logger.w('Did not cleanly close RobotClient connection', error: e);
     }
   }
 

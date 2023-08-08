@@ -39,6 +39,7 @@ class SessionsClient implements ResourceRPCClient {
     metadata();
   }
 
+  /// Retrieve metadata associated with the session (e.g. whether sessions are supported, the current ID of the session)
   String metadata() {
     if (!_enabled) return '';
 
@@ -64,26 +65,29 @@ class SessionsClient implements ResourceRPCClient {
         return _currentId;
       });
     } catch (e) {
-      _logger.e('error starting session: $e');
+      _logger.e('Error starting session: $e');
       reset();
     }
 
     return '';
   }
 
+  /// Reset the current session and re-obtain metadata
   void reset() {
-    _logger.d('resetting session');
+    _logger.d('Resetting current session with ID: $_currentId');
     _currentId = '';
     _supported = false;
     metadata();
   }
 
+  /// Stop the session client and heartbeat tasks
   void stop() {
     _logger.d('Stopping SessionClient');
     _currentId = '';
     _supported = false;
   }
 
+  /// Start the session client
   void start() {
     reset();
   }

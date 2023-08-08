@@ -145,7 +145,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
   try {
     config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
   } catch (error, st) {
-    _logger.d('Failed to get optional WebRTC config', error, st);
+    _logger.d('Failed to get optional WebRTC config', error: error, stackTrace: st);
     config = WebRTCConfig();
   }
   final iceServers = config.additionalIceServers
@@ -210,7 +210,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
         }
         await signalingClient.callUpdate(callUpdateRequest);
       } catch (error, st) {
-        _logger.e('Update ICECandidate error', error, st);
+        _logger.e('Update ICECandidate error', error: error, stackTrace: st);
       }
     };
 
@@ -248,7 +248,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
       ..sdp = encodedSdp
       ..disableTrickle = options.webRtcOptions?.disableTrickleIce ?? config.disableTrickle);
   } catch (error, st) {
-    _logger.e('Failed to get call stream', error, st);
+    _logger.e('Failed to get call stream', error: error, stackTrace: st);
     rethrow;
   }
 
@@ -269,7 +269,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
         await peerConnection.setRemoteDescription(remoteSdp);
         didSetRemoteDesc.complete();
       } catch (error, st) {
-        _logger.e('Set remote SDP error', error, st);
+        _logger.e('Set remote SDP error', error: error, stackTrace: st);
         rethrow;
       }
     } else if (response.hasUpdate()) {
@@ -290,7 +290,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
       try {
         await peerConnection.addCandidate(iceCandidate);
       } catch (error, st) {
-        _logger.e('Add candidate error', error, st);
+        _logger.e('Add candidate error', error: error, stackTrace: st);
       }
     }
   }, onError: (error) {
@@ -306,7 +306,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
   try {
     await didConnect.future;
   } catch (error, st) {
-    _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error, st);
+    _logger.i('Could not connect via WebRTC, attempting direct gRPC connection', error: error, stackTrace: st);
     return _dialDirectGrpc(address, options, sessionCallback);
   }
   return WebRtcClientChannel(peerConnection, dataChannel, sessionCallback);
@@ -351,7 +351,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
     accessToken = response.accessToken;
     _logger.d('Authenticated to address: $addr');
   } catch (error, st) {
-    _logger.e('Could not authenticate to address: $addr', error, st);
+    _logger.e('Could not authenticate to address: $addr', error: error, stackTrace: st);
     rethrow;
   }
 
@@ -369,7 +369,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
       accessToken = extResponse.accessToken;
       _logger.d('Authenticated to external address: ${options.externalAuthAddress}');
     } catch (error, st) {
-      _logger.e('Could not authenticate to external address ${options.externalAuthAddress}', error, st);
+      _logger.e('Could not authenticate to external address ${options.externalAuthAddress}', error: error, stackTrace: st);
       rethrow;
     }
   }
@@ -378,6 +378,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
   return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure, sessionsCallback);
 }
 
+/// A channel that attaches an access token to gRPC metadata for every call
 class AuthenticatedChannel extends GrpcOrGrpcWebClientChannel {
   final String accessToken;
   final String Function()? _sessionId;
@@ -422,6 +423,7 @@ _HostAndPort _hostAndPort(String address, bool insecure) {
   return _HostAndPort(host, port);
 }
 
+/// A channel that adds session data (if required) to gRPC metadata for every call
 class ClientChannelWithSessions extends GrpcOrGrpcWebClientChannel {
   final String Function() _sessionId;
 

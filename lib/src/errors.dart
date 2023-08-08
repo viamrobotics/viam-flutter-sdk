@@ -1,3 +1,4 @@
+/// Error thrown with connection is lost
 class ConnectionLostError {
   final String? message;
 
