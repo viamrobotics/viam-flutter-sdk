@@ -76,7 +76,10 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; refresh() async {
   final ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
-  if (response.resources == resourceNames) {
+  if (setEquals(response.resources.toSet(), resourceNames.toSet())) {
+    resourceNames.forEach((element) {
+      _resetResourceChannel(element);
+    });
     return;
   }
   final manager = ResourceManager();
@@ -162,7 +165,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.3
+      0.0.4
   </span>
 
   
