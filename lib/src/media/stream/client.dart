@@ -56,6 +56,7 @@ class StreamManager {
     };
   }
 
+  /// Add a stream to internal state
   void _addStream(MediaStream stream) {
     _streams[stream.id] = stream;
     if (_clients.containsKey(stream.id)) {
@@ -84,6 +85,7 @@ class StreamManager {
     return client;
   }
 
+  /// Request that a stream get added to the WebRTC channel
   Future<void> _add(String name) async {
     final sanitizedName = _getValidSDPTrackName(name);
     await _client.addStream(AddStreamRequest()..name = sanitizedName);
@@ -113,6 +115,9 @@ class StreamManager {
   }
 }
 
+/// A client to manage a camera's WebRTC stream.
+///
+/// Use the [getStream] method to obtain a stream of [MediaStream] that can be used to display WebRTC video.
 class StreamClient {
   final String name;
   final Future<void> Function(String name) _close;
@@ -131,6 +136,7 @@ class StreamClient {
     });
   }
 
+  /// Return a stream of [MediaStream], which can be used to display WebRTC video.
   Stream<MediaStream> getStream() {
     if (_stream != null) {
       Future.delayed(const Duration(milliseconds: 100), () {
@@ -140,6 +146,7 @@ class StreamClient {
     return _streamController.stream;
   }
 
+  /// Close the stream connection and release resources.
   Future<void> closeStream() async {
     await _streamController.close();
     await _internalStreamController.close();
