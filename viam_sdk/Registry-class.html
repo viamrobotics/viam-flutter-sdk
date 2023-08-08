@@ -57,6 +57,14 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>The global registry of robot resources.</p>
+<p><strong>NB</strong> The <a href="../viam_sdk/Registry-class.html">Registry</a> should almost never be used directly.</p>
+<p>The <a href="../viam_sdk/Registry-class.html">Registry</a> keeps track of the various <a href="../viam_sdk/Subtype-class.html">Subtype</a> that are available on robots using this SDK. All Viam-provided resources are
+pre-registered (e.g. <a href="../viam_sdk/Arm-class.html">Arm</a>, <a href="../viam_sdk/Motor-class.html">Motor</a>, <a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a>).</p>
+<p>If you create a new resource <a href="../viam_sdk/Subtype-class.html">Subtype</a> that is not an extension of any existing resources, you must register the resource using
+<a href="../viam_sdk/Registry/registerSubtype.html">registerSubtype</a></p>
+</section>
 
 
 
@@ -94,7 +102,7 @@
 
 </dt>
 <dd>
-  
+  The <code>Subtype</code> available in the SDK
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -116,7 +124,7 @@
 
 </dt>
 <dd>
-  
+  Retrieve a <a href="../viam_sdk/Subtype-class.html">Subtype</a>'s registration information
   
 
 </dd>
@@ -142,7 +150,7 @@
 
 </dt>
 <dd>
-  
+  Register a new resource with the SDK
   
 
 </dd>
