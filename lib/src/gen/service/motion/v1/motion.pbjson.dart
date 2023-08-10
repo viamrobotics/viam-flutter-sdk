@@ -85,6 +85,39 @@ const MoveOnMapResponse$json = {
 final $typed_data.Uint8List moveOnMapResponseDescriptor = $convert.base64Decode(
     'ChFNb3ZlT25NYXBSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
 
+@$core.Deprecated('Use motionConfigurationDescriptor instead')
+const MotionConfiguration$json = {
+  '1': 'MotionConfiguration',
+  '2': [
+    {'1': 'vision_services', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'visionServices'},
+    {'1': 'position_polling_frequency_hz', '3': 2, '4': 1, '5': 1, '9': 0, '10': 'positionPollingFrequencyHz', '17': true},
+    {'1': 'obstacle_polling_frequency_hz', '3': 3, '4': 1, '5': 1, '9': 1, '10': 'obstaclePollingFrequencyHz', '17': true},
+    {'1': 'plan_deviation_m', '3': 4, '4': 1, '5': 1, '9': 2, '10': 'planDeviationM', '17': true},
+    {'1': 'linear_m_per_sec', '3': 5, '4': 1, '5': 1, '9': 3, '10': 'linearMPerSec', '17': true},
+    {'1': 'angular_degs_per_sec', '3': 6, '4': 1, '5': 1, '9': 4, '10': 'angularDegsPerSec', '17': true},
+  ],
+  '8': [
+    {'1': '_position_polling_frequency_hz'},
+    {'1': '_obstacle_polling_frequency_hz'},
+    {'1': '_plan_deviation_m'},
+    {'1': '_linear_m_per_sec'},
+    {'1': '_angular_degs_per_sec'},
+  ],
+};
+
+/// Descriptor for `MotionConfiguration`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List motionConfigurationDescriptor = $convert.base64Decode(
+    'ChNNb3Rpb25Db25maWd1cmF0aW9uEkUKD3Zpc2lvbl9zZXJ2aWNlcxgBIAMoCzIcLnZpYW0uY2'
+    '9tbW9uLnYxLlJlc291cmNlTmFtZVIOdmlzaW9uU2VydmljZXMSRgodcG9zaXRpb25fcG9sbGlu'
+    'Z19mcmVxdWVuY3lfaHoYAiABKAFIAFIacG9zaXRpb25Qb2xsaW5nRnJlcXVlbmN5SHqIAQESRg'
+    'odb2JzdGFjbGVfcG9sbGluZ19mcmVxdWVuY3lfaHoYAyABKAFIAVIab2JzdGFjbGVQb2xsaW5n'
+    'RnJlcXVlbmN5SHqIAQESLQoQcGxhbl9kZXZpYXRpb25fbRgEIAEoAUgCUg5wbGFuRGV2aWF0aW'
+    '9uTYgBARIsChBsaW5lYXJfbV9wZXJfc2VjGAUgASgBSANSDWxpbmVhck1QZXJTZWOIAQESNAoU'
+    'YW5ndWxhcl9kZWdzX3Blcl9zZWMYBiABKAFIBFIRYW5ndWxhckRlZ3NQZXJTZWOIAQFCIAoeX3'
+    'Bvc2l0aW9uX3BvbGxpbmdfZnJlcXVlbmN5X2h6QiAKHl9vYnN0YWNsZV9wb2xsaW5nX2ZyZXF1'
+    'ZW5jeV9oekITChFfcGxhbl9kZXZpYXRpb25fbUITChFfbGluZWFyX21fcGVyX3NlY0IXChVfYW'
+    '5ndWxhcl9kZWdzX3Blcl9zZWM=');
+
 @$core.Deprecated('Use moveOnGlobeRequestDescriptor instead')
 const MoveOnGlobeRequest$json = {
   '1': 'MoveOnGlobeRequest',
@@ -95,14 +128,12 @@ const MoveOnGlobeRequest$json = {
     {'1': 'component_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
     {'1': 'movement_sensor_name', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'movementSensorName'},
     {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.GeoObstacle', '10': 'obstacles'},
-    {'1': 'linear_meters_per_sec', '3': 7, '4': 1, '5': 2, '9': 1, '10': 'linearMetersPerSec', '17': true},
-    {'1': 'angular_deg_per_sec', '3': 8, '4': 1, '5': 2, '9': 2, '10': 'angularDegPerSec', '17': true},
+    {'1': 'motion_configuration', '3': 7, '4': 1, '5': 11, '6': '.viam.service.motion.v1.MotionConfiguration', '9': 1, '10': 'motionConfiguration', '17': true},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': [
     {'1': '_heading'},
-    {'1': '_linear_meters_per_sec'},
-    {'1': '_angular_deg_per_sec'},
+    {'1': '_motion_configuration'},
   ],
 };
 
@@ -114,11 +145,10 @@ final $typed_data.Uint8List moveOnGlobeRequestDescriptor = $convert.base64Decode
     '1vbi52MS5SZXNvdXJjZU5hbWVSDWNvbXBvbmVudE5hbWUSTgoUbW92ZW1lbnRfc2Vuc29yX25h'
     'bWUYBSABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVSEm1vdmVtZW50U2Vuc29yTm'
     'FtZRI5CglvYnN0YWNsZXMYBiADKAsyGy52aWFtLmNvbW1vbi52MS5HZW9PYnN0YWNsZVIJb2Jz'
-    'dGFjbGVzEjYKFWxpbmVhcl9tZXRlcnNfcGVyX3NlYxgHIAEoAkgBUhJsaW5lYXJNZXRlcnNQZX'
-    'JTZWOIAQESMgoTYW5ndWxhcl9kZWdfcGVyX3NlYxgIIAEoAkgCUhBhbmd1bGFyRGVnUGVyU2Vj'
-    'iAEBEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmFCCgoIX2'
-    'hlYWRpbmdCGAoWX2xpbmVhcl9tZXRlcnNfcGVyX3NlY0IWChRfYW5ndWxhcl9kZWdfcGVyX3Nl'
-    'Yw==');
+    'dGFjbGVzEmMKFG1vdGlvbl9jb25maWd1cmF0aW9uGAcgASgLMisudmlhbS5zZXJ2aWNlLm1vdG'
+    'lvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSAFSE21vdGlvbkNvbmZpZ3VyYXRpb26IAQESLQoF'
+    'ZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYUIKCghfaGVhZGluZ0'
+    'IXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
 
 @$core.Deprecated('Use moveOnGlobeResponseDescriptor instead')
 const MoveOnGlobeResponse$json = {
@@ -131,43 +161,6 @@ const MoveOnGlobeResponse$json = {
 /// Descriptor for `MoveOnGlobeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moveOnGlobeResponseDescriptor = $convert.base64Decode(
     'ChNNb3ZlT25HbG9iZVJlc3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3M=');
-
-@$core.Deprecated('Use moveSingleComponentRequestDescriptor instead')
-const MoveSingleComponentRequest$json = {
-  '1': 'MoveSingleComponentRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'destination'},
-    {'1': 'component_name', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
-    {'1': 'world_state', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.WorldState', '9': 0, '10': 'worldState', '17': true},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
-  ],
-  '8': [
-    {'1': '_world_state'},
-  ],
-};
-
-/// Descriptor for `MoveSingleComponentRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List moveSingleComponentRequestDescriptor = $convert.base64Decode(
-    'ChpNb3ZlU2luZ2xlQ29tcG9uZW50UmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEj0KC2Rlc3'
-    'RpbmF0aW9uGAIgASgLMhsudmlhbS5jb21tb24udjEuUG9zZUluRnJhbWVSC2Rlc3RpbmF0aW9u'
-    'EkMKDmNvbXBvbmVudF9uYW1lGAMgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lUg'
-    '1jb21wb25lbnROYW1lEkAKC3dvcmxkX3N0YXRlGAQgASgLMhoudmlhbS5jb21tb24udjEuV29y'
-    'bGRTdGF0ZUgAUgp3b3JsZFN0YXRliAEBEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYn'
-    'VmLlN0cnVjdFIFZXh0cmFCDgoMX3dvcmxkX3N0YXRl');
-
-@$core.Deprecated('Use moveSingleComponentResponseDescriptor instead')
-const MoveSingleComponentResponse$json = {
-  '1': 'MoveSingleComponentResponse',
-  '2': [
-    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
-  ],
-};
-
-/// Descriptor for `MoveSingleComponentResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List moveSingleComponentResponseDescriptor = $convert.base64Decode(
-    'ChtNb3ZlU2luZ2xlQ29tcG9uZW50UmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3VjY2Vzcw'
-    '==');
 
 @$core.Deprecated('Use getPoseRequestDescriptor instead')
 const GetPoseRequest$json = {

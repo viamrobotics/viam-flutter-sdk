@@ -113,13 +113,15 @@ const GetLocationResponse$json = {
   '1': 'GetLocationResponse',
   '2': [
     {'1': 'location', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'location'},
+    {'1': 'compass_heading', '3': 2, '4': 1, '5': 1, '10': 'compassHeading'},
   ],
 };
 
 /// Descriptor for `GetLocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getLocationResponseDescriptor = $convert.base64Decode(
     'ChNHZXRMb2NhdGlvblJlc3BvbnNlEjQKCGxvY2F0aW9uGAEgASgLMhgudmlhbS5jb21tb24udj'
-    'EuR2VvUG9pbnRSCGxvY2F0aW9u');
+    'EuR2VvUG9pbnRSCGxvY2F0aW9uEicKD2NvbXBhc3NfaGVhZGluZxgCIAEoAVIOY29tcGFzc0hl'
+    'YWRpbmc=');
 
 @$core.Deprecated('Use getWaypointsRequestDescriptor instead')
 const GetWaypointsRequest$json = {

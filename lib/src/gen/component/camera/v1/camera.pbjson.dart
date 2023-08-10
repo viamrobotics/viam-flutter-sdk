@@ -36,13 +36,15 @@ const GetImageRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetImageRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getImageRequestDescriptor = $convert.base64Decode(
     'Cg9HZXRJbWFnZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIbCgltaW1lX3R5cGUYAiABKA'
-    'lSCG1pbWVUeXBl');
+    'lSCG1pbWVUeXBlEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0'
+    'cmE=');
 
 @$core.Deprecated('Use getImageResponseDescriptor instead')
 const GetImageResponse$json = {
@@ -107,13 +109,15 @@ const RenderFrameRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `RenderFrameRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List renderFrameRequestDescriptor = $convert.base64Decode(
     'ChJSZW5kZXJGcmFtZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIbCgltaW1lX3R5cGUYAi'
-    'ABKAlSCG1pbWVUeXBl');
+    'ABKAlSCG1pbWVUeXBlEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIF'
+    'ZXh0cmE=');
 
 @$core.Deprecated('Use getPointCloudRequestDescriptor instead')
 const GetPointCloudRequest$json = {
@@ -121,13 +125,15 @@ const GetPointCloudRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetPointCloudRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPointCloudRequestDescriptor = $convert.base64Decode(
     'ChRHZXRQb2ludENsb3VkUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEhsKCW1pbWVfdHlwZR'
-    'gCIAEoCVIIbWltZVR5cGU=');
+    'gCIAEoCVIIbWltZVR5cGUSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0'
+    'UgVleHRyYQ==');
 
 @$core.Deprecated('Use getPointCloudResponseDescriptor instead')
 const GetPointCloudResponse$json = {

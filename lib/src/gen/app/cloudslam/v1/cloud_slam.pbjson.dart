@@ -190,13 +190,16 @@ const UpdateMappingSessionMetadataByIDRequest$json = {
   '2': [
     {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
     {'1': 'end_status', '3': 2, '4': 1, '5': 9, '10': 'endStatus'},
+    {'1': 'time_cloud_run_job_ended', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCloudRunJobEnded'},
   ],
 };
 
 /// Descriptor for `UpdateMappingSessionMetadataByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateMappingSessionMetadataByIDRequestDescriptor = $convert.base64Decode(
     'CidVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlcXVlc3QSHQoKc2Vzc2lvbl9pZB'
-    'gBIAEoCVIJc2Vzc2lvbklkEh0KCmVuZF9zdGF0dXMYAiABKAlSCWVuZFN0YXR1cw==');
+    'gBIAEoCVIJc2Vzc2lvbklkEh0KCmVuZF9zdGF0dXMYAiABKAlSCWVuZFN0YXR1cxJSChh0aW1l'
+    'X2Nsb3VkX3J1bl9qb2JfZW5kZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUh'
+    'R0aW1lQ2xvdWRSdW5Kb2JFbmRlZA==');
 
 @$core.Deprecated('Use updateMappingSessionMetadataByIDResponseDescriptor instead')
 const UpdateMappingSessionMetadataByIDResponse$json = {

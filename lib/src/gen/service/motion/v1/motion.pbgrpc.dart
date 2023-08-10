@@ -34,10 +34,6 @@ class MotionServiceClient extends $grpc.Client {
       '/viam.service.motion.v1.MotionService/MoveOnGlobe',
       ($0.MoveOnGlobeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.MoveOnGlobeResponse.fromBuffer(value));
-  static final _$moveSingleComponent = $grpc.ClientMethod<$0.MoveSingleComponentRequest, $0.MoveSingleComponentResponse>(
-      '/viam.service.motion.v1.MotionService/MoveSingleComponent',
-      ($0.MoveSingleComponentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.MoveSingleComponentResponse.fromBuffer(value));
   static final _$getPose = $grpc.ClientMethod<$0.GetPoseRequest, $0.GetPoseResponse>(
       '/viam.service.motion.v1.MotionService/GetPose',
       ($0.GetPoseRequest value) => value.writeToBuffer(),
@@ -63,10 +59,6 @@ class MotionServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.MoveOnGlobeResponse> moveOnGlobe($0.MoveOnGlobeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveOnGlobe, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.MoveSingleComponentResponse> moveSingleComponent($0.MoveSingleComponentRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$moveSingleComponent, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetPoseResponse> getPose($0.GetPoseRequest request, {$grpc.CallOptions? options}) {
@@ -104,13 +96,6 @@ abstract class MotionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MoveOnGlobeRequest.fromBuffer(value),
         ($0.MoveOnGlobeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.MoveSingleComponentRequest, $0.MoveSingleComponentResponse>(
-        'MoveSingleComponent',
-        moveSingleComponent_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.MoveSingleComponentRequest.fromBuffer(value),
-        ($0.MoveSingleComponentResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetPoseRequest, $0.GetPoseResponse>(
         'GetPose',
         getPose_Pre,
@@ -139,10 +124,6 @@ abstract class MotionServiceBase extends $grpc.Service {
     return moveOnGlobe(call, await request);
   }
 
-  $async.Future<$0.MoveSingleComponentResponse> moveSingleComponent_Pre($grpc.ServiceCall call, $async.Future<$0.MoveSingleComponentRequest> request) async {
-    return moveSingleComponent(call, await request);
-  }
-
   $async.Future<$0.GetPoseResponse> getPose_Pre($grpc.ServiceCall call, $async.Future<$0.GetPoseRequest> request) async {
     return getPose(call, await request);
   }
@@ -154,7 +135,6 @@ abstract class MotionServiceBase extends $grpc.Service {
   $async.Future<$0.MoveResponse> move($grpc.ServiceCall call, $0.MoveRequest request);
   $async.Future<$0.MoveOnMapResponse> moveOnMap($grpc.ServiceCall call, $0.MoveOnMapRequest request);
   $async.Future<$0.MoveOnGlobeResponse> moveOnGlobe($grpc.ServiceCall call, $0.MoveOnGlobeRequest request);
-  $async.Future<$0.MoveSingleComponentResponse> moveSingleComponent($grpc.ServiceCall call, $0.MoveSingleComponentRequest request);
   $async.Future<$0.GetPoseResponse> getPose($grpc.ServiceCall call, $0.GetPoseRequest request);
   $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
 }

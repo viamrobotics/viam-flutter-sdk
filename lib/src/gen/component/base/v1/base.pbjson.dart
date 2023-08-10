@@ -186,11 +186,14 @@ const GetPropertiesResponse$json = {
   '2': [
     {'1': 'width_meters', '3': 1, '4': 1, '5': 1, '10': 'widthMeters'},
     {'1': 'turning_radius_meters', '3': 2, '4': 1, '5': 1, '10': 'turningRadiusMeters'},
+    {'1': 'wheel_circumference_meters', '3': 3, '4': 1, '5': 1, '10': 'wheelCircumferenceMeters'},
   ],
 };
 
 /// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
     'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USIQoMd2lkdGhfbWV0ZXJzGAEgASgBUgt3aWR0aE1ldG'
-    'VycxIyChV0dXJuaW5nX3JhZGl1c19tZXRlcnMYAiABKAFSE3R1cm5pbmdSYWRpdXNNZXRlcnM=');
+    'VycxIyChV0dXJuaW5nX3JhZGl1c19tZXRlcnMYAiABKAFSE3R1cm5pbmdSYWRpdXNNZXRlcnMS'
+    'PAoad2hlZWxfY2lyY3VtZmVyZW5jZV9tZXRlcnMYAyABKAFSGHdoZWVsQ2lyY3VtZmVyZW5jZU'
+    '1ldGVycw==');
 
