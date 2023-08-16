@@ -80,6 +80,12 @@ class FakeBase extends Base {
   }
 
   @override
+  Future<BaseProperties> properties({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return Base(1.0, 1.0, 1.0);
+  }
+
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     return {'command': command};
   }

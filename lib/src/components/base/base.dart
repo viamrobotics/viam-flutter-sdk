@@ -2,6 +2,18 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+class BaseProperties {
+  float64 turningRadiusMeters;
+	float64 widthMeters;
+	float64 WheelCircumferenceMeters;
+
+  BaseProperties(this.turningRadiusMeters, this.widthMeters, this.WheelCircumferenceMeters);
+
+  factory BaseProperties.fromProto(GetPropertiesResponse pbResponse) {
+    return BaseProperties(pbResponse.turningRadiusMeters, pbResponse.widthMeters, pbResponse.WheelCircumferenceMeters);
+  }
+}
+
 /// Base represents a physical base of a robot.
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'base');
@@ -41,6 +53,10 @@ abstract class Base extends Resource {
   static ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
+
+  /// Report a dictionary mapping optional properties to
+  /// whether it is supported by this base.
+  Future<BaseProperties> properties({Map<String, dynamic>? extra});
 
   /// Get the [Base] named [name] from the provided robot.
   static Base fromRobot(RobotClient robot, String name) {

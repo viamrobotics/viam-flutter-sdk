@@ -77,7 +77,11 @@ class BaseService extends BaseServiceBase {
 
   @override
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) {
-    // TODO: implement getProperties
-    throw UnimplementedError();
+    final base = _fromManager(request.name);
+    final properties = await base.properties(extra: request.extra.toMap());
+    return GetPropertiesResponse()
+      ..turningRadiusMeters = properties.turningRadiusMeters
+      ..widthMeters = properties.widthMeters
+      ..WheelCircumferenceMeters = properties.WheelCircumferenceMeters;
   }
 }
