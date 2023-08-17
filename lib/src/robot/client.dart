@@ -178,10 +178,11 @@ class RobotClient {
       } catch (e) {
         await _channel.shutdown();
         _sessionsClient.reset();
-        _logger.i('Failed to reconnect, retrying in $reconnectInterval second${reconnectInterval != 1 ? "s" : ""}');
         if (!_shouldAttemptReconnection) {
+          _logger.i('Failed to reconnect. No more attempts to reconnect will be made.');
           break;
         }
+        _logger.i('Failed to reconnect, retrying in $reconnectInterval second${reconnectInterval != 1 ? "s" : ""}');
         await Future.delayed(Duration(seconds: reconnectInterval));
       }
     }
