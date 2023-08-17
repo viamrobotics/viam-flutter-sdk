@@ -78,7 +78,7 @@
   _logger.d(&#39;Closing RobotClient connection&#39;);
   try {
     _checkConnectionTask?.cancel();
-    _reconnectionTask?.cancel();
+    _shouldAttemptReconnection = false;
     _sessionsClient.stop();
     await _channel.shutdown();
   } catch (e) {
@@ -146,7 +146,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.4
+      0.0.5
   </span>
 
   
