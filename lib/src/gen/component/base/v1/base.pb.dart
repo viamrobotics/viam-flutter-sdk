@@ -682,6 +682,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.base.v1'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'widthMeters', $pb.PbFieldType.OD)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'turningRadiusMeters', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'wheelCircumferenceMeters', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -723,6 +724,15 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   $core.bool hasTurningRadiusMeters() => $_has(1);
   @$pb.TagNumber(2)
   void clearTurningRadiusMeters() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get wheelCircumferenceMeters => $_getN(2);
+  @$pb.TagNumber(3)
+  set wheelCircumferenceMeters($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWheelCircumferenceMeters() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWheelCircumferenceMeters() => clearField(3);
 }
 
 

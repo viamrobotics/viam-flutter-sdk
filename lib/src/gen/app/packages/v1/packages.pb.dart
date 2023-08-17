@@ -300,6 +300,7 @@ class DeletePackageRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeletePackageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.packages.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..e<PackageType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: PackageType.valueOf, enumValues: PackageType.values)
     ..hasRequiredFields = false
   ;
 
@@ -341,6 +342,15 @@ class DeletePackageRequest extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(1);
   @$pb.TagNumber(2)
   void clearVersion() => clearField(2);
+
+  @$pb.TagNumber(3)
+  PackageType get type => $_getN(2);
+  @$pb.TagNumber(3)
+  set type(PackageType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
 }
 
 class DeletePackageResponse extends $pb.GeneratedMessage {

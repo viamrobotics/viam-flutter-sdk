@@ -327,6 +327,7 @@ class GetLocationResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOM<$1.GeoPoint>(1, _omitFieldNames ? '' : 'location', subBuilder: $1.GeoPoint.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'compassHeading', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -361,6 +362,15 @@ class GetLocationResponse extends $pb.GeneratedMessage {
   void clearLocation() => clearField(1);
   @$pb.TagNumber(1)
   $1.GeoPoint ensureLocation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.double get compassHeading => $_getN(1);
+  @$pb.TagNumber(2)
+  set compassHeading($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCompassHeading() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCompassHeading() => clearField(2);
 }
 
 class GetWaypointsRequest extends $pb.GeneratedMessage {

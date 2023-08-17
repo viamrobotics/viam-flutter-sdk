@@ -108,13 +108,15 @@ const DeletePackageRequest$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'type', '3': 3, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
   ],
 };
 
 /// Descriptor for `DeletePackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deletePackageRequestDescriptor = $convert.base64Decode(
     'ChREZWxldGVQYWNrYWdlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSGAoHdmVyc2lvbhgCIAEoCV'
-    'IHdmVyc2lvbg==');
+    'IHdmVyc2lvbhI1CgR0eXBlGAMgASgOMiEudmlhbS5hcHAucGFja2FnZXMudjEuUGFja2FnZVR5'
+    'cGVSBHR5cGU=');
 
 @$core.Deprecated('Use deletePackageResponseDescriptor instead')
 const DeletePackageResponse$json = {
