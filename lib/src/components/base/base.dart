@@ -4,8 +4,8 @@ import '../../robot/client.dart';
 
 class BaseProperties {
   float64 turningRadiusMeters;
-	float64 widthMeters;
-	float64 WheelCircumferenceMeters;
+  float64 widthMeters;
+  float64 WheelCircumferenceMeters;
 
   BaseProperties(this.turningRadiusMeters, this.widthMeters, this.WheelCircumferenceMeters);
 
