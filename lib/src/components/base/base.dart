@@ -1,16 +1,17 @@
 import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/base/v1/base.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 class BaseProperties {
-  float64 turningRadiusMeters;
-  float64 widthMeters;
-  float64 WheelCircumferenceMeters;
+  double turningRadiusMeters;
+  double widthMeters;
+  double wheelCircumferenceMeters;
 
-  BaseProperties(this.turningRadiusMeters, this.widthMeters, this.WheelCircumferenceMeters);
+  BaseProperties(this.turningRadiusMeters, this.widthMeters, this.wheelCircumferenceMeters);
 
   factory BaseProperties.fromProto(GetPropertiesResponse pbResponse) {
-    return BaseProperties(pbResponse.turningRadiusMeters, pbResponse.widthMeters, pbResponse.WheelCircumferenceMeters);
+    return BaseProperties(pbResponse.turningRadiusMeters, pbResponse.widthMeters, pbResponse.wheelCircumferenceMeters);
   }
 }
 
