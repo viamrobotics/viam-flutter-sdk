@@ -3,17 +3,7 @@ import '../../gen/component/base/v1/base.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-class BaseProperties {
-  double turningRadiusMeters;
-  double widthMeters;
-  double wheelCircumferenceMeters;
-
-  BaseProperties(this.turningRadiusMeters, this.widthMeters, this.wheelCircumferenceMeters);
-
-  factory BaseProperties.fromProto(GetPropertiesResponse pbResponse) {
-    return BaseProperties(pbResponse.turningRadiusMeters, pbResponse.widthMeters, pbResponse.wheelCircumferenceMeters);
-  }
-}
+typedef BaseProperties = GetPropertiesResponse;
 
 /// Base represents a physical base of a robot.
 abstract class Base extends Resource {
