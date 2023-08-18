@@ -43,8 +43,7 @@ class CameraClient extends Camera implements ResourceRPCClient {
   @override
   Future<CameraProperties> properties() async {
     final request = GetPropertiesRequest()..name = name;
-    final response = await client.getProperties(request);
-    return CameraProperties(response.supportsPcd, response.intrinsicParameters, response.distortionParameters);
+    return await client.getProperties(request);
   }
 
   @override

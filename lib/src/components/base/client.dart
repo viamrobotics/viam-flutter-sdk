@@ -81,8 +81,7 @@ class BaseClient extends Base implements ResourceRPCClient {
     final request = GetPropertiesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final result = await client.getProperties(request);
-    return BaseProperties.fromProto(result);
+    return await client.getProperties(request);
   }
 
   @override

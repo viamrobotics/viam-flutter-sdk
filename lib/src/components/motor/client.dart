@@ -72,8 +72,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
     final request = GetPropertiesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final result = await client.getProperties(request);
-    return MotorProperties.fromProto(result);
+    return await client.getProperties(request);
   }
 
   @override

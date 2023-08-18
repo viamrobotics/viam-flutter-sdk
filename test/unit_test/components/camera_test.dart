@@ -36,7 +36,7 @@ class FakeCamera extends Camera {
 
   @override
   Future<CameraProperties> properties() async {
-    return CameraProperties(true, IntrinsicParameters()..widthPx = 10, DistortionParameters()..model = 'test');
+    return CameraProperties;
   }
 }
 
