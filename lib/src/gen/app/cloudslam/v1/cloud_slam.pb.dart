@@ -630,6 +630,7 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMappingSessionMetadataByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionId')
     ..aOS(2, _omitFieldNames ? '' : 'endStatus')
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'timeCloudRunJobEnded', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -671,6 +672,17 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
   $core.bool hasEndStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearEndStatus() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $3.Timestamp get timeCloudRunJobEnded => $_getN(2);
+  @$pb.TagNumber(3)
+  set timeCloudRunJobEnded($3.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTimeCloudRunJobEnded() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTimeCloudRunJobEnded() => clearField(3);
+  @$pb.TagNumber(3)
+  $3.Timestamp ensureTimeCloudRunJobEnded() => $_ensure(2);
 }
 
 class UpdateMappingSessionMetadataByIDResponse extends $pb.GeneratedMessage {
