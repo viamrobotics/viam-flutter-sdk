@@ -1,6 +1,9 @@
 import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/base/v1/base.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
+
+typedef BaseProperties = GetPropertiesResponse;
 
 /// Base represents a physical base of a robot.
 abstract class Base extends Resource {
@@ -41,6 +44,10 @@ abstract class Base extends Resource {
   static ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
+
+  /// Report a dictionary mapping optional properties to
+  /// whether it is supported by this base.
+  Future<BaseProperties> properties({Map<String, dynamic>? extra});
 
   /// Get the [Base] named [name] from the provided robot.
   static Base fromRobot(RobotClient robot, String name) {

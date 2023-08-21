@@ -77,6 +77,14 @@ class BaseClient extends Base implements ResourceRPCClient {
   }
 
   @override
+  Future<BaseProperties> properties({Map<String, dynamic>? extra}) async {
+    final request = GetPropertiesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    return await client.getProperties(request);
+  }
+
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     final request = DoCommandRequest()
       ..name = name

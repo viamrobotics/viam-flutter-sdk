@@ -5,18 +5,7 @@ import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// The camera's supported features and settings
-class CameraProperties {
-  /// Whether this camera supports PointClouds (has a valid implementation of [Camera.pointCloud])
-  final bool supportsPcd;
-
-  /// The properties of the camera
-  final IntrinsicParameters intrinsicParameters;
-
-  /// The distortion parameters of the camera
-  final DistortionParameters distortionParameters;
-
-  const CameraProperties(this.supportsPcd, this.intrinsicParameters, this.distortionParameters);
-}
+typedef CameraProperties = GetPropertiesResponse;
 
 /// Camera represents any physical hardware that can capture frames.
 abstract class Camera extends Resource {

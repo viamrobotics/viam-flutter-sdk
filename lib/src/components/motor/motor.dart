@@ -3,15 +3,7 @@ import '../../gen/component/motor/v1/motor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-class MotorProperties {
-  bool positionReporting;
-
-  MotorProperties(this.positionReporting);
-
-  factory MotorProperties.fromProto(GetPropertiesResponse pbResponse) {
-    return MotorProperties(pbResponse.positionReporting);
-  }
-}
+typedef MotorProperties = GetPropertiesResponse;
 
 class PowerState {
   bool isOn;

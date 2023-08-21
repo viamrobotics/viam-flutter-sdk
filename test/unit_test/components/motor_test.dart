@@ -63,7 +63,7 @@ class FakeMotor extends Motor {
   @override
   Future<MotorProperties> properties({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return MotorProperties(true);
+    return MotorProperties()..positionReporting = true;
   }
 
   @override
