@@ -19,6 +19,7 @@ class PackageType extends $pb.ProtobufEnum {
   static const PackageType PACKAGE_TYPE_ML_MODEL = PackageType._(2, _omitEnumNames ? '' : 'PACKAGE_TYPE_ML_MODEL');
   static const PackageType PACKAGE_TYPE_MODULE = PackageType._(3, _omitEnumNames ? '' : 'PACKAGE_TYPE_MODULE');
   static const PackageType PACKAGE_TYPE_SLAM_MAP = PackageType._(4, _omitEnumNames ? '' : 'PACKAGE_TYPE_SLAM_MAP');
+  static const PackageType PACKAGE_TYPE_BOARD_DEFS = PackageType._(5, _omitEnumNames ? '' : 'PACKAGE_TYPE_BOARD_DEFS');
 
   static const $core.List<PackageType> values = <PackageType> [
     PACKAGE_TYPE_UNSPECIFIED,
@@ -26,6 +27,7 @@ class PackageType extends $pb.ProtobufEnum {
     PACKAGE_TYPE_ML_MODEL,
     PACKAGE_TYPE_MODULE,
     PACKAGE_TYPE_SLAM_MAP,
+    PACKAGE_TYPE_BOARD_DEFS,
   ];
 
   static final $core.Map<$core.int, PackageType> _byValue = $pb.ProtobufEnum.initByValue(values);

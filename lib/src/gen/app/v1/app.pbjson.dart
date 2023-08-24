@@ -150,6 +150,10 @@ const OrganizationMember$json = {
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'emails', '3': 2, '4': 3, '5': 9, '10': 'emails'},
     {'1': 'date_added', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dateAdded'},
+    {'1': 'last_login', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastLogin', '17': true},
+  ],
+  '8': [
+    {'1': '_last_login'},
   ],
 };
 
@@ -157,7 +161,8 @@ const OrganizationMember$json = {
 final $typed_data.Uint8List organizationMemberDescriptor = $convert.base64Decode(
     'ChJPcmdhbml6YXRpb25NZW1iZXISFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEhYKBmVtYWlscx'
     'gCIAMoCVIGZW1haWxzEjkKCmRhdGVfYWRkZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
-    'ZXN0YW1wUglkYXRlQWRkZWQ=');
+    'ZXN0YW1wUglkYXRlQWRkZWQSPgoKbGFzdF9sb2dpbhgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBIAFIJbGFzdExvZ2luiAEBQg0KC19sYXN0X2xvZ2lu');
 
 @$core.Deprecated('Use listOrganizationsResponseDescriptor instead')
 const ListOrganizationsResponse$json = {
@@ -1591,6 +1596,30 @@ const RemoveRoleResponse$json = {
 /// Descriptor for `RemoveRoleResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeRoleResponseDescriptor = $convert.base64Decode(
     'ChJSZW1vdmVSb2xlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use changeRoleRequestDescriptor instead')
+const ChangeRoleRequest$json = {
+  '1': 'ChangeRoleRequest',
+  '2': [
+    {'1': 'old_authorization', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'oldAuthorization'},
+    {'1': 'new_authorization', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'newAuthorization'},
+  ],
+};
+
+/// Descriptor for `ChangeRoleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List changeRoleRequestDescriptor = $convert.base64Decode(
+    'ChFDaGFuZ2VSb2xlUmVxdWVzdBJHChFvbGRfYXV0aG9yaXphdGlvbhgBIAEoCzIaLnZpYW0uYX'
+    'BwLnYxLkF1dGhvcml6YXRpb25SEG9sZEF1dGhvcml6YXRpb24SRwoRbmV3X2F1dGhvcml6YXRp'
+    'b24YAiABKAsyGi52aWFtLmFwcC52MS5BdXRob3JpemF0aW9uUhBuZXdBdXRob3JpemF0aW9u');
+
+@$core.Deprecated('Use changeRoleResponseDescriptor instead')
+const ChangeRoleResponse$json = {
+  '1': 'ChangeRoleResponse',
+};
+
+/// Descriptor for `ChangeRoleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List changeRoleResponseDescriptor = $convert.base64Decode(
+    'ChJDaGFuZ2VSb2xlUmVzcG9uc2U=');
 
 @$core.Deprecated('Use listAuthorizationsRequestDescriptor instead')
 const ListAuthorizationsRequest$json = {
