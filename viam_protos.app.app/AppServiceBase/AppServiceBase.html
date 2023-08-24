@@ -411,6 +411,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveRoleRequest.fromBuffer(value),
       ($0.RemoveRoleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ChangeRoleRequest, $0.ChangeRoleResponse&gt;(
+      &#39;ChangeRole&#39;,
+      changeRole_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ChangeRoleRequest.fromBuffer(value),
+      ($0.ChangeRoleResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$0.ListAuthorizationsRequest, $0.ListAuthorizationsResponse&gt;(
       &#39;ListAuthorizations&#39;,
       listAuthorizations_Pre,
@@ -501,6 +508,8 @@
           <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.3/service_api/Service/$onMetadata.html">$onMetadata</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/addRole.html">addRole</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/addRole_Pre.html">addRole_Pre</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/changeRole.html">changeRole</a></li>
+          <li><a href="../../viam_protos.app.app/AppServiceBase/changeRole_Pre.html">changeRole_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/checkPermissions.html">checkPermissions</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/checkPermissions_Pre.html">checkPermissions_Pre</a></li>
           <li><a href="../../viam_protos.app.app/AppServiceBase/createFragment.html">createFragment</a></li>
