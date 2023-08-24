@@ -52,43 +52,56 @@ class _ViamBaseScreenState extends State<ViamBaseScreen> {
     });
   }
 
+  Widget _buildCamera() {
+    if (widget.cameras.isNotEmpty) {
+      return Column(children: [
+        Center(
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            const Text('Video feed from: '),
+            if (widget.cameras.length > 1)
+              DropdownButton<Camera>(
+                value: camera,
+                icon: const Icon(Icons.keyboard_arrow_down),
+                items: widget.cameras
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(e.name),
+                        ))
+                    .toList(),
+                onChanged: (value) => _setCamera(value),
+              )
+            else
+              Text(camera!.name)
+          ]),
+        ),
+        if (camera != null)
+          ViamCameraStreamView(camera: camera!, streamClient: widget.robotClient.getStream(camera!.name))
+        else
+          const SizedBox(height: 300),
+      ]);
+    }
+    return const SizedBox.shrink();
+  }
+
+  Widget _spacer() {
+    if (widget.cameras.isNotEmpty) {
+      return const Spacer();
+    }
+    return const SizedBox.shrink();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (widget.cameras.isNotEmpty)
-              Column(children: [
-                Center(
-                  child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    const Text('Video feed from: '),
-                    if (widget.cameras.length > 1)
-                      DropdownButton<Camera>(
-                        value: camera,
-                        icon: const Icon(Icons.keyboard_arrow_down),
-                        items: widget.cameras
-                            .map((e) => DropdownMenuItem(
-                                  value: e,
-                                  child: Text(e.name),
-                                ))
-                            .toList(),
-                        onChanged: (value) => _setCamera(value),
-                      )
-                    else
-                      Text(camera!.name)
-                  ]),
-                ),
-                if (camera != null)
-                  ViamCameraStreamView(camera: camera!, streamClient: widget.robotClient.getStream(camera!.name))
-                else
-                  const SizedBox(height: 300),
-              ]),
-            ViamBaseJoystick(base: widget.base)
-          ],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _buildCamera(),
+        _spacer(),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 48),
+          child: ViamBaseJoystick(base: widget.base),
         ),
-      ),
+      ],
     );
   }
 }
