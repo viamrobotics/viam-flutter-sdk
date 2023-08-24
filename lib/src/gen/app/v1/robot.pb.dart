@@ -595,6 +595,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     ..pPS(5, _omitFieldNames ? '' : 'dependsOn')
     ..aOS(6, _omitFieldNames ? '' : 'model')
     ..aOS(9, _omitFieldNames ? '' : 'api')
+    ..pc<ResourceLevelServiceConfig>(10, _omitFieldNames ? '' : 'serviceConfigs', $pb.PbFieldType.PM, subBuilder: ResourceLevelServiceConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -677,6 +678,9 @@ class ServiceConfig extends $pb.GeneratedMessage {
   $core.bool hasApi() => $_has(6);
   @$pb.TagNumber(9)
   void clearApi() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<ResourceLevelServiceConfig> get serviceConfigs => $_getList(7);
 }
 
 class NetworkConfig extends $pb.GeneratedMessage {

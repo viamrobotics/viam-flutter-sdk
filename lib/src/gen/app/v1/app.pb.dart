@@ -492,6 +492,7 @@ class OrganizationMember extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..pPS(2, _omitFieldNames ? '' : 'emails')
     ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'dateAdded', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(4, _omitFieldNames ? '' : 'lastLogin', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -538,6 +539,17 @@ class OrganizationMember extends $pb.GeneratedMessage {
   void clearDateAdded() => clearField(3);
   @$pb.TagNumber(3)
   $3.Timestamp ensureDateAdded() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $3.Timestamp get lastLogin => $_getN(3);
+  @$pb.TagNumber(4)
+  set lastLogin($3.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLastLogin() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLastLogin() => clearField(4);
+  @$pb.TagNumber(4)
+  $3.Timestamp ensureLastLogin() => $_ensure(3);
 }
 
 class ListOrganizationsResponse extends $pb.GeneratedMessage {
@@ -5502,6 +5514,94 @@ class RemoveRoleResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static RemoveRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveRoleResponse>(create);
   static RemoveRoleResponse? _defaultInstance;
+}
+
+class ChangeRoleRequest extends $pb.GeneratedMessage {
+  factory ChangeRoleRequest() => create();
+  ChangeRoleRequest._() : super();
+  factory ChangeRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChangeRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChangeRoleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<Authorization>(1, _omitFieldNames ? '' : 'oldAuthorization', subBuilder: Authorization.create)
+    ..aOM<Authorization>(2, _omitFieldNames ? '' : 'newAuthorization', subBuilder: Authorization.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChangeRoleRequest clone() => ChangeRoleRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChangeRoleRequest copyWith(void Function(ChangeRoleRequest) updates) => super.copyWith((message) => updates(message as ChangeRoleRequest)) as ChangeRoleRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChangeRoleRequest create() => ChangeRoleRequest._();
+  ChangeRoleRequest createEmptyInstance() => create();
+  static $pb.PbList<ChangeRoleRequest> createRepeated() => $pb.PbList<ChangeRoleRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ChangeRoleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChangeRoleRequest>(create);
+  static ChangeRoleRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Authorization get oldAuthorization => $_getN(0);
+  @$pb.TagNumber(1)
+  set oldAuthorization(Authorization v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOldAuthorization() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOldAuthorization() => clearField(1);
+  @$pb.TagNumber(1)
+  Authorization ensureOldAuthorization() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  Authorization get newAuthorization => $_getN(1);
+  @$pb.TagNumber(2)
+  set newAuthorization(Authorization v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNewAuthorization() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewAuthorization() => clearField(2);
+  @$pb.TagNumber(2)
+  Authorization ensureNewAuthorization() => $_ensure(1);
+}
+
+class ChangeRoleResponse extends $pb.GeneratedMessage {
+  factory ChangeRoleResponse() => create();
+  ChangeRoleResponse._() : super();
+  factory ChangeRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChangeRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChangeRoleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChangeRoleResponse clone() => ChangeRoleResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChangeRoleResponse copyWith(void Function(ChangeRoleResponse) updates) => super.copyWith((message) => updates(message as ChangeRoleResponse)) as ChangeRoleResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChangeRoleResponse create() => ChangeRoleResponse._();
+  ChangeRoleResponse createEmptyInstance() => create();
+  static $pb.PbList<ChangeRoleResponse> createRepeated() => $pb.PbList<ChangeRoleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ChangeRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChangeRoleResponse>(create);
+  static ChangeRoleResponse? _defaultInstance;
 }
 
 class ListAuthorizationsRequest extends $pb.GeneratedMessage {

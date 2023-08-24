@@ -25,7 +25,7 @@ buf: buf.yaml buf.gen.yaml
 	dart run tool/export_protos.dart
 
 setup:
-	dart pub global activate protoc_plugin
+	dart pub global activate protoc_plugin 21.0.2
 	dart pub global activate grpc
 	dart pub global activate cider
 

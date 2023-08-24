@@ -22,6 +22,7 @@ class FieldBehavior extends $pb.ProtobufEnum {
   static const FieldBehavior IMMUTABLE = FieldBehavior._(5, _omitEnumNames ? '' : 'IMMUTABLE');
   static const FieldBehavior UNORDERED_LIST = FieldBehavior._(6, _omitEnumNames ? '' : 'UNORDERED_LIST');
   static const FieldBehavior NON_EMPTY_DEFAULT = FieldBehavior._(7, _omitEnumNames ? '' : 'NON_EMPTY_DEFAULT');
+  static const FieldBehavior IDENTIFIER = FieldBehavior._(8, _omitEnumNames ? '' : 'IDENTIFIER');
 
   static const $core.List<FieldBehavior> values = <FieldBehavior> [
     FIELD_BEHAVIOR_UNSPECIFIED,
@@ -32,6 +33,7 @@ class FieldBehavior extends $pb.ProtobufEnum {
     IMMUTABLE,
     UNORDERED_LIST,
     NON_EMPTY_DEFAULT,
+    IDENTIFIER,
   ];
 
   static final $core.Map<$core.int, FieldBehavior> _byValue = $pb.ProtobufEnum.initByValue(values);

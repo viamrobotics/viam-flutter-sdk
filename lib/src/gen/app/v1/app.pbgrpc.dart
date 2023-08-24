@@ -217,6 +217,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/RemoveRole',
       ($0.RemoveRoleRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.RemoveRoleResponse.fromBuffer(value));
+  static final _$changeRole = $grpc.ClientMethod<$0.ChangeRoleRequest, $0.ChangeRoleResponse>(
+      '/viam.app.v1.AppService/ChangeRole',
+      ($0.ChangeRoleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.ChangeRoleResponse.fromBuffer(value));
   static final _$listAuthorizations = $grpc.ClientMethod<$0.ListAuthorizationsRequest, $0.ListAuthorizationsResponse>(
       '/viam.app.v1.AppService/ListAuthorizations',
       ($0.ListAuthorizationsRequest value) => value.writeToBuffer(),
@@ -446,6 +450,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.RemoveRoleResponse> removeRole($0.RemoveRoleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeRole, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ChangeRoleResponse> changeRole($0.ChangeRoleRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$changeRole, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ListAuthorizationsResponse> listAuthorizations($0.ListAuthorizationsRequest request, {$grpc.CallOptions? options}) {
@@ -825,6 +833,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RemoveRoleRequest.fromBuffer(value),
         ($0.RemoveRoleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ChangeRoleRequest, $0.ChangeRoleResponse>(
+        'ChangeRole',
+        changeRole_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ChangeRoleRequest.fromBuffer(value),
+        ($0.ChangeRoleResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListAuthorizationsRequest, $0.ListAuthorizationsResponse>(
         'ListAuthorizations',
         listAuthorizations_Pre,
@@ -1072,6 +1087,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return removeRole(call, await request);
   }
 
+  $async.Future<$0.ChangeRoleResponse> changeRole_Pre($grpc.ServiceCall call, $async.Future<$0.ChangeRoleRequest> request) async {
+    return changeRole(call, await request);
+  }
+
   $async.Future<$0.ListAuthorizationsResponse> listAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$0.ListAuthorizationsRequest> request) async {
     return listAuthorizations(call, await request);
   }
@@ -1145,6 +1164,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$0.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $0.DeleteFragmentRequest request);
   $async.Future<$0.AddRoleResponse> addRole($grpc.ServiceCall call, $0.AddRoleRequest request);
   $async.Future<$0.RemoveRoleResponse> removeRole($grpc.ServiceCall call, $0.RemoveRoleRequest request);
+  $async.Future<$0.ChangeRoleResponse> changeRole($grpc.ServiceCall call, $0.ChangeRoleRequest request);
   $async.Future<$0.ListAuthorizationsResponse> listAuthorizations($grpc.ServiceCall call, $0.ListAuthorizationsRequest request);
   $async.Future<$0.CheckPermissionsResponse> checkPermissions($grpc.ServiceCall call, $0.CheckPermissionsRequest request);
   $async.Future<$0.CreateModuleResponse> createModule($grpc.ServiceCall call, $0.CreateModuleRequest request);
