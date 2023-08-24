@@ -22,7 +22,7 @@ class ViamCameraStreamView extends StatefulWidget {
 class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
   late RTCVideoRenderer _renderer;
   late StreamSubscription<MediaStream> _streamSub;
-  bool _displayingError = false;
+  Exception? _error;
 
   @override
   void initState() {
@@ -43,10 +43,7 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
     await _renderer.initialize();
     final stream = widget.streamClient.getStream();
     _streamSub = stream.listen((event) {
-      if (_displayingError) {
-        _displayingError = false;
-        Navigator.pop(context);
-      }
+      _error = null;
       _renderer.srcObject = event;
       setState(() {});
     });
@@ -56,37 +53,30 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
         error: error,
         stackTrace: trace,
       );
-      if (_displayingError) {
-        return null;
-      }
-      _displayingError = true;
-      return showDialog<void>(
-          barrierDismissible: false,
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-                title: Text('Error connecting to camera: ${widget.camera.name}'),
-                content: Text(
-                  'Error: $error',
-                ),
-                actions: <Widget>[
-                  TextButton(
-                    child: const Text('Go Back'),
-                    onPressed: () {
-                      int count = 0;
-                      Navigator.popUntil(context, (route) => count++ >= 2);
-                    },
-                  ),
-                ]);
-          });
+      setState(() {
+        _error = error;
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints(maxHeight: 300),
-      child: RTCVideoView(_renderer),
-    );
+    return (_error != null)
+        ? Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+              Text(
+                'Encountered a stream error for camera: ${widget.camera.name}',
+                style: Theme.of(context).textTheme.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(_error.toString(), textAlign: TextAlign.center),
+            ]),
+          )
+        : Container(
+            constraints: const BoxConstraints(maxHeight: 300),
+            child: RTCVideoView(_renderer),
+          );
   }
 }
