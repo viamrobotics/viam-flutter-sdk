@@ -6537,7 +6537,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'version')
     ..pc<Uploads>(2, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: Uploads.create)
     ..pc<Model>(3, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
-    ..aOS(4, _omitFieldNames ? '' : 'entrpoint')
+    ..aOS(4, _omitFieldNames ? '' : 'entrypoint')
     ..hasRequiredFields = false
   ;
 
@@ -6578,13 +6578,13 @@ class VersionHistory extends $pb.GeneratedMessage {
   $core.List<Model> get models => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get entrpoint => $_getSZ(3);
+  $core.String get entrypoint => $_getSZ(3);
   @$pb.TagNumber(4)
-  set entrpoint($core.String v) { $_setString(3, v); }
+  set entrypoint($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasEntrpoint() => $_has(3);
+  $core.bool hasEntrypoint() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEntrpoint() => clearField(4);
+  void clearEntrypoint() => clearField(4);
 }
 
 class Uploads extends $pb.GeneratedMessage {
