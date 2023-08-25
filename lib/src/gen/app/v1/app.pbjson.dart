@@ -1888,13 +1888,16 @@ const VersionHistory$json = {
   '2': [
     {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
     {'1': 'files', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Uploads', '10': 'files'},
+    {'1': 'models', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
+    {'1': 'entrpoint', '3': 4, '4': 1, '5': 9, '10': 'entrpoint'},
   ],
 };
 
 /// Descriptor for `VersionHistory`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List versionHistoryDescriptor = $convert.base64Decode(
     'Cg5WZXJzaW9uSGlzdG9yeRIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEioKBWZpbGVzGAIgAy'
-    'gLMhQudmlhbS5hcHAudjEuVXBsb2Fkc1IFZmlsZXM=');
+    'gLMhQudmlhbS5hcHAudjEuVXBsb2Fkc1IFZmlsZXMSKgoGbW9kZWxzGAMgAygLMhIudmlhbS5h'
+    'cHAudjEuTW9kZWxSBm1vZGVscxIcCgllbnRycG9pbnQYBCABKAlSCWVudHJwb2ludA==');
 
 @$core.Deprecated('Use uploadsDescriptor instead')
 const Uploads$json = {
