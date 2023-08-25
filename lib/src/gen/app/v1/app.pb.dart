@@ -6536,6 +6536,8 @@ class VersionHistory extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VersionHistory', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'version')
     ..pc<Uploads>(2, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: Uploads.create)
+    ..pc<Model>(3, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
+    ..aOS(4, _omitFieldNames ? '' : 'entrpoint')
     ..hasRequiredFields = false
   ;
 
@@ -6571,6 +6573,18 @@ class VersionHistory extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<Uploads> get files => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<Model> get models => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get entrpoint => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entrpoint($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEntrpoint() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntrpoint() => clearField(4);
 }
 
 class Uploads extends $pb.GeneratedMessage {
