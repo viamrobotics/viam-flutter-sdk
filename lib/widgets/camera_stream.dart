@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:logger/logger.dart';
 import 'package:viam_sdk/viam_sdk.dart';
@@ -22,6 +22,7 @@ class ViamCameraStreamView extends StatefulWidget {
 class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
   late RTCVideoRenderer _renderer;
   late StreamSubscription<MediaStream> _streamSub;
+  Exception? _error;
 
   @override
   void initState() {
@@ -42,21 +43,40 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
     await _renderer.initialize();
     final stream = widget.streamClient.getStream();
     _streamSub = stream.listen((event) {
+      _error = null;
       _renderer.srcObject = event;
       setState(() {});
     });
-    _streamSub.onError((error, trace) => Logger().e(
-          'Encountered a stream error for camera ${widget.camera.name}',
-          error: error,
-          stackTrace: trace,
-        ));
+    _streamSub.onError((error, trace) {
+      Logger().e(
+        'Encountered a stream error for camera ${widget.camera.name}',
+        error: error,
+        stackTrace: trace,
+      );
+      setState(() {
+        _error = error;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints(maxHeight: 300),
-      child: RTCVideoView(_renderer),
-    );
+    return (_error != null)
+        ? Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+              Text(
+                'Encountered a stream error for camera: ${widget.camera.name}',
+                style: Theme.of(context).textTheme.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(_error.toString(), textAlign: TextAlign.center),
+            ]),
+          )
+        : Container(
+            constraints: const BoxConstraints(maxHeight: 300),
+            child: RTCVideoView(_renderer),
+          );
   }
 }
