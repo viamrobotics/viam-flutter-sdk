@@ -1353,6 +1353,100 @@ class DeleteTabularDataByFilterResponse extends $pb.GeneratedMessage {
   void clearDeletedCount() => clearField(1);
 }
 
+class DeleteTabularDataRequest extends $pb.GeneratedMessage {
+  factory DeleteTabularDataRequest() => create();
+  DeleteTabularDataRequest._() : super();
+  factory DeleteTabularDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTabularDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTabularDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'deleteOlderThanDays', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTabularDataRequest clone() => DeleteTabularDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTabularDataRequest copyWith(void Function(DeleteTabularDataRequest) updates) => super.copyWith((message) => updates(message as DeleteTabularDataRequest)) as DeleteTabularDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTabularDataRequest create() => DeleteTabularDataRequest._();
+  DeleteTabularDataRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteTabularDataRequest> createRepeated() => $pb.PbList<DeleteTabularDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTabularDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTabularDataRequest>(create);
+  static DeleteTabularDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get deleteOlderThanDays => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set deleteOlderThanDays($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDeleteOlderThanDays() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeleteOlderThanDays() => clearField(2);
+}
+
+class DeleteTabularDataResponse extends $pb.GeneratedMessage {
+  factory DeleteTabularDataResponse() => create();
+  DeleteTabularDataResponse._() : super();
+  factory DeleteTabularDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTabularDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTabularDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'deletedCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTabularDataResponse clone() => DeleteTabularDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTabularDataResponse copyWith(void Function(DeleteTabularDataResponse) updates) => super.copyWith((message) => updates(message as DeleteTabularDataResponse)) as DeleteTabularDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTabularDataResponse create() => DeleteTabularDataResponse._();
+  DeleteTabularDataResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteTabularDataResponse> createRepeated() => $pb.PbList<DeleteTabularDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTabularDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTabularDataResponse>(create);
+  static DeleteTabularDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get deletedCount => $_getI64(0);
+  @$pb.TagNumber(1)
+  set deletedCount($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDeletedCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeletedCount() => clearField(1);
+}
+
 class DeleteBinaryDataByFilterRequest extends $pb.GeneratedMessage {
   factory DeleteBinaryDataByFilterRequest() => create();
   DeleteBinaryDataByFilterRequest._() : super();

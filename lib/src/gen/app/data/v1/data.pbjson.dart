@@ -414,6 +414,34 @@ final $typed_data.Uint8List deleteTabularDataByFilterResponseDescriptor = $conve
     'CiFEZWxldGVUYWJ1bGFyRGF0YUJ5RmlsdGVyUmVzcG9uc2USIwoNZGVsZXRlZF9jb3VudBgBIA'
     'EoBFIMZGVsZXRlZENvdW50SgQIAhADUgZyZXN1bHQ=');
 
+@$core.Deprecated('Use deleteTabularDataRequestDescriptor instead')
+const DeleteTabularDataRequest$json = {
+  '1': 'DeleteTabularDataRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'delete_older_than_days', '3': 2, '4': 1, '5': 13, '10': 'deleteOlderThanDays'},
+  ],
+};
+
+/// Descriptor for `DeleteTabularDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTabularDataRequestDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVUYWJ1bGFyRGF0YVJlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcm'
+    'dhbml6YXRpb25JZBIzChZkZWxldGVfb2xkZXJfdGhhbl9kYXlzGAIgASgNUhNkZWxldGVPbGRl'
+    'clRoYW5EYXlz');
+
+@$core.Deprecated('Use deleteTabularDataResponseDescriptor instead')
+const DeleteTabularDataResponse$json = {
+  '1': 'DeleteTabularDataResponse',
+  '2': [
+    {'1': 'deleted_count', '3': 1, '4': 1, '5': 4, '10': 'deletedCount'},
+  ],
+};
+
+/// Descriptor for `DeleteTabularDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTabularDataResponseDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVUYWJ1bGFyRGF0YVJlc3BvbnNlEiMKDWRlbGV0ZWRfY291bnQYASABKARSDGRlbG'
+    'V0ZWRDb3VudA==');
+
 @$core.Deprecated('Use deleteBinaryDataByFilterRequestDescriptor instead')
 const DeleteBinaryDataByFilterRequest$json = {
   '1': 'DeleteBinaryDataByFilterRequest',
