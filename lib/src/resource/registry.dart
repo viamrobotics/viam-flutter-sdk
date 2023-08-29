@@ -10,6 +10,8 @@ import '../components/camera/camera.dart';
 import '../components/camera/client.dart';
 import '../components/gantry/client.dart';
 import '../components/gantry/gantry.dart';
+import '../components/gripper/client.dart';
+import '../components/gripper/gripper.dart';
 import '../components/motor/client.dart';
 import '../components/motor/motor.dart';
 import '../components/movement_sensor/client.dart';
@@ -52,6 +54,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
     registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
     registerSubtype(ResourceRegistration(Gantry.subtype, (name, channel) => GantryClient(name, channel)));
+    registerSubtype(ResourceRegistration(Gripper.subtype, (name, channel) => GripperClient(name, channel)));
     registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
     registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));

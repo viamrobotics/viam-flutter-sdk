@@ -18,10 +18,10 @@ abstract class Gantry extends Resource {
   /// Get the lengths of the axes of the gantry in millimeters
   Future<List<double>> lengths({Map<String, dynamic>? extra});
 
-  /// Stop all motion of the gantry. It is assumed the gantry stops immediately
+  /// Stop all motion of the [Gantry]. It is assumed the [Gantry] stops immediately
   Future<void> stop({Map<String, dynamic>? extra});
 
-  /// If the gantry is currently moving
+  /// If the [Gantry] is currently moving
   Future<bool> isMoving();
 
   /// Get the [ResourceName] for this [Gantry] with the given [name]
