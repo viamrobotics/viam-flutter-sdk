@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -38,18 +36,6 @@ class _ViamBaseScreenState extends State<ViamBaseScreen> {
   void initState() {
     camera = widget.cameras.firstOrNull;
     super.initState();
-  }
-
-  /// Needed to "bump" the CameraStream widget to use the new camera
-  Future<void> _setCamera(Camera? camera) async {
-    setState(() {
-      this.camera = null;
-    });
-    Timer(const Duration(milliseconds: 50), () {
-      setState(() {
-        this.camera = camera;
-      });
-    });
   }
 
   Widget _buildCamera() {
