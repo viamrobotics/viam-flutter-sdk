@@ -8,6 +8,14 @@ In this directory (the main project directory) create a `.env` file with the fol
 
 ```
 ROBOT_LOCATION=<ROBOT_LOCATION_URI>
+API_KEY_ID=<API KEY ID>
+API_KEY=<API KEY>
+```
+
+or using location secrets (deprecated, please prefer using API keys!):
+
+``
+ROBOT_LOCATION=<ROBOT_LOCATION_URI>
 LOCATION_SECRET=<ROBOT_LOCATION_SECRET>
 ```
 

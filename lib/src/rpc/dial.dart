@@ -48,7 +48,7 @@ class DialOptions {
 
 /// The credentials used for connecting to the robot
 class Credentials {
-  /// The type of credential, e.g. 'robot-location-secret'
+  /// The type of credential, e.g. 'robot-location-secret', 'api-key'
   final String type;
 
   /// The payload of the credential
@@ -58,6 +58,9 @@ class Credentials {
 
   /// Convenience initializer for creating credentials of type 'robot-location-secret' with the provided payload.
   const Credentials.locationSecret(this.payload) : type = 'robot-location-secret';
+
+  /// Convenience initializer for creating credentials of type 'api-key' with the provided key as payload.
+  const Credentials.apiKey(this.payload) : type = 'api-key';
 }
 
 /// Options specific for connecting over WebRTC
