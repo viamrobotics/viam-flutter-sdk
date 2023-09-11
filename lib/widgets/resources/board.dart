@@ -49,14 +49,18 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
     _fetchStatus();
   }
 
-  Future<void> _setGpio(String command) async {
-    setState(() {
-      pinValue = '';
-    });
+  void _dismissKeyboard() {
     final currentFocus = FocusScope.of(context);
     if (!currentFocus.hasPrimaryFocus) {
       currentFocus.unfocus();
     }
+  }
+
+  Future<void> _setGpio(String command) async {
+    _dismissKeyboard();
+    setState(() {
+      pinValue = '';
+    });
     _setFormKey.currentState!.validate();
     switch (command) {
       case 'PinState':
@@ -73,10 +77,7 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   }
 
   Future<void> _getGpio(String command) async {
-    final currentFocus = FocusScope.of(context);
-    if (!currentFocus.hasPrimaryFocus) {
-      currentFocus.unfocus();
-    }
+    _dismissKeyboard();
     if (_getFormKey.currentState!.validate()) {
       switch (command) {
         case 'PinState':
@@ -103,39 +104,84 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
     return Theme(
       data: ThemeData(primarySwatch: Colors.grey),
       child: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              if (status.analogs.isNotEmpty)
-                Column(children: [
-                  const Text('Analogs'),
-                  DataTable(
-                      columns: const <DataColumn>[DataColumn(label: Text('Analog')), DataColumn(label: Text('Value'))],
-                      rows: status.analogs.keys
-                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(status.analogs[e].toString()))]))
-                          .toList()),
-                  const SizedBox(height: 16),
-                ]),
-              if (status.digitalInterrupts.isNotEmpty)
-                Column(children: [
-                  const Text('Digital Interrupts'),
-                  DataTable(
-                      columns: const <DataColumn>[DataColumn(label: Text('Digital Interrupt')), DataColumn(label: Text('Value'))],
-                      rows: status.digitalInterrupts.keys
-                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(status.digitalInterrupts[e].toString()))]))
-                          .toList()),
-                  const SizedBox(height: 16),
-                ]),
-              const Text('GPIO', style: TextStyle(fontSize: 24)),
-              Container(
+        child: GestureDetector(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                if (status.analogs.isNotEmpty)
+                  Column(children: [
+                    const Text('Analogs'),
+                    DataTable(
+                        columns: const <DataColumn>[DataColumn(label: Text('Analog')), DataColumn(label: Text('Value'))],
+                        rows: status.analogs.keys
+                            .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(status.analogs[e].toString()))]))
+                            .toList()),
+                    const SizedBox(height: 16),
+                  ]),
+                if (status.digitalInterrupts.isNotEmpty)
+                  Column(children: [
+                    const Text('Digital Interrupts'),
+                    DataTable(
+                        columns: const <DataColumn>[DataColumn(label: Text('Digital Interrupt')), DataColumn(label: Text('Value'))],
+                        rows: status.digitalInterrupts.keys
+                            .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(status.digitalInterrupts[e].toString()))]))
+                            .toList()),
+                    const SizedBox(height: 16),
+                  ]),
+                const Text('GPIO', style: TextStyle(fontSize: 24)),
+                Container(
+                    padding: const EdgeInsets.all(8),
+                    child: Form(
+                        key: _getFormKey,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Get', style: TextStyle(fontWeight: FontWeight.bold)),
+                            TextFormField(
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter a GPIO Pin';
+                                }
+                                return null;
+                              },
+                              keyboardType: TextInputType.number,
+                              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                              onChanged: (value) => setState(() {
+                                getPin = value;
+                              }),
+                              decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
+                            ),
+                            if (pinValue != '') Padding(padding: const EdgeInsets.only(top: 8), child: Text(pinValue)),
+                            Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: OverflowBar(spacing: 4, overflowSpacing: 4, children: [
+                                  ViamButton(
+                                    onPressed: () => _getGpio('PinState'),
+                                    text: 'Get Pin State',
+                                    size: ViamButtonSizeClass.small,
+                                  ),
+                                  ViamButton(
+                                    onPressed: () => _getGpio('PWMDutyCycle'),
+                                    text: 'Get PWM Duty Cycle',
+                                    size: ViamButtonSizeClass.small,
+                                  ),
+                                  ViamButton(
+                                    onPressed: () => _getGpio('PWMFrequency'),
+                                    text: 'Get PWM Frequency',
+                                    size: ViamButtonSizeClass.small,
+                                  ),
+                                ])),
+                          ],
+                        ))),
+                Container(
                   padding: const EdgeInsets.all(8),
-                  child: Form(
-                      key: _getFormKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Get', style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextFormField(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('Set', style: TextStyle(fontWeight: FontWeight.bold)),
+                      Form(
+                          key: _setFormKey,
+                          child: TextFormField(
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter a GPIO Pin';
@@ -145,186 +191,144 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
                             keyboardType: TextInputType.number,
                             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                             onChanged: (value) => setState(() {
-                              getPin = value;
+                              setPin = value;
                             }),
                             decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
-                          ),
-                          if (pinValue != '') Padding(padding: const EdgeInsets.only(top: 8), child: Text(pinValue)),
+                          )),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          SizedBox(
+                              width: 125,
+                              child: DropdownButton(
+                                onChanged: (value) => setState(() {
+                                  high = value!;
+                                }),
+                                isExpanded: true,
+                                value: high,
+                                items: const [
+                                  DropdownMenuItem(
+                                    value: true,
+                                    child: Text('High'),
+                                  ),
+                                  DropdownMenuItem(
+                                    value: false,
+                                    child: Text('Low'),
+                                  )
+                                ],
+                              )),
                           Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: OverflowBar(spacing: 4, overflowSpacing: 4, children: [
-                                ViamButton(
-                                  onPressed: () => _getGpio('PinState'),
-                                  text: 'Get Pin State',
-                                  size: ViamButtonSizeClass.small,
-                                ),
-                                ViamButton(
-                                  onPressed: () => _getGpio('PWMDutyCycle'),
-                                  text: 'Get PWM Duty Cycle',
-                                  size: ViamButtonSizeClass.small,
-                                ),
-                                ViamButton(
-                                  onPressed: () => _getGpio('PWMFrequency'),
-                                  text: 'Get PWM Frequency',
-                                  size: ViamButtonSizeClass.small,
-                                ),
-                              ])),
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              child: ViamButton(
+                                onPressed: () => _setGpio('PinState'),
+                                text: 'Set Pin State',
+                                role: ViamButtonRole.inverse,
+                                size: ViamButtonSizeClass.small,
+                              )),
                         ],
-                      ))),
-              Container(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Set', style: TextStyle(fontWeight: FontWeight.bold)),
-                    Form(
-                        key: _setFormKey,
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a GPIO Pin';
-                            }
-                            return null;
-                          },
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                          onChanged: (value) => setState(() {
-                            setPin = value;
-                          }),
-                          decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: 'Pin'),
-                        )),
-                    const SizedBox(height: 8),
-                    Row(
-                      children: [
-                        SizedBox(
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          SizedBox(
                             width: 125,
-                            child: DropdownButton(
-                              onChanged: (value) => setState(() {
-                                high = value!;
-                              }),
-                              isExpanded: true,
-                              value: high,
-                              items: const [
-                                DropdownMenuItem(
-                                  value: true,
-                                  child: Text('High'),
+                            child: Form(
+                              key: _pwmDCFormKey,
+                              child: TextFormField(
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter a value';
+                                  }
+                                  try {
+                                    double.parse(value);
+                                  } catch (e) {
+                                    return 'Please enter a\nvalid percentage';
+                                  }
+                                  return null;
+                                },
+                                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                                onChanged: (value) => setState(() {
+                                  try {
+                                    pwmDutyCycle = double.parse(value) / 100.0;
+                                  } catch (_) {
+                                    // Do nothing because validator will catch this issue before submission
+                                  }
+                                }),
+                                style: const TextStyle(fontSize: 12),
+                                decoration: const InputDecoration(
+                                  isDense: true,
+                                  border: UnderlineInputBorder(),
+                                  labelText: 'PWM Duty Cycle',
+                                  suffixText: '%',
                                 ),
-                                DropdownMenuItem(
-                                  value: false,
-                                  child: Text('Low'),
-                                )
-                              ],
-                            )),
-                        Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ViamButton(
-                              onPressed: () => _setGpio('PinState'),
-                              text: 'Set Pin State',
-                              role: ViamButtonRole.inverse,
-                              size: ViamButtonSizeClass.small,
-                            )),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 125,
-                          child: Form(
-                            key: _pwmDCFormKey,
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter a value';
-                                }
-                                try {
-                                  double.parse(value);
-                                } catch (e) {
-                                  return 'Please enter a\nvalid percentage';
-                                }
-                                return null;
-                              },
-                              keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                              onChanged: (value) => setState(() {
-                                try {
-                                  pwmDutyCycle = double.parse(value) / 100.0;
-                                } catch (_) {
-                                  // Do nothing because validator will catch this issue before submission
-                                }
-                              }),
-                              style: const TextStyle(fontSize: 12),
-                              decoration: const InputDecoration(
-                                isDense: true,
-                                border: UnderlineInputBorder(),
-                                labelText: 'PWM Duty Cycle',
-                                suffixText: '%',
                               ),
                             ),
                           ),
-                        ),
-                        Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ViamButton(
-                              onPressed: () => _setGpio('PWMDutyCycle'),
-                              text: 'Set PWM Duty Cycle',
-                              role: ViamButtonRole.inverse,
-                              size: ViamButtonSizeClass.small,
-                            )),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 125,
-                          child: Form(
-                            key: _pwmFreqFormKey,
-                            child: TextFormField(
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter a value';
-                                }
-                                try {
-                                  int.parse(value);
-                                } catch (e) {
-                                  return 'Please enter a\nvalid frequency';
-                                }
-                                return null;
-                              },
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                              onChanged: (value) => setState(() {
-                                try {
-                                  pwmFrequency = int.parse(value);
-                                } catch (_) {
-                                  // Do nothing because validator will catch this issue before submission
-                                }
-                              }),
-                              style: const TextStyle(fontSize: 12),
-                              decoration: const InputDecoration(
-                                isDense: true,
-                                border: UnderlineInputBorder(),
-                                labelText: 'PWM Frequency',
-                                suffixText: 'Hz',
+                          Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              child: ViamButton(
+                                onPressed: () => _setGpio('PWMDutyCycle'),
+                                text: 'Set PWM Duty Cycle',
+                                role: ViamButtonRole.inverse,
+                                size: ViamButtonSizeClass.small,
+                              )),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 125,
+                            child: Form(
+                              key: _pwmFreqFormKey,
+                              child: TextFormField(
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter a value';
+                                  }
+                                  try {
+                                    int.parse(value);
+                                  } catch (e) {
+                                    return 'Please enter a\nvalid frequency';
+                                  }
+                                  return null;
+                                },
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                                onChanged: (value) => setState(() {
+                                  try {
+                                    pwmFrequency = int.parse(value);
+                                  } catch (_) {
+                                    // Do nothing because validator will catch this issue before submission
+                                  }
+                                }),
+                                style: const TextStyle(fontSize: 12),
+                                decoration: const InputDecoration(
+                                  isDense: true,
+                                  border: UnderlineInputBorder(),
+                                  labelText: 'PWM Frequency',
+                                  suffixText: 'Hz',
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ViamButton(
-                              onPressed: () => _setGpio('PWMFrequency'),
-                              text: 'Set PWM Frequency',
-                              role: ViamButtonRole.inverse,
-                              size: ViamButtonSizeClass.small,
-                            )),
-                      ],
-                    ),
-                  ],
+                          Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              child: ViamButton(
+                                onPressed: () => _setGpio('PWMFrequency'),
+                                text: 'Set PWM Frequency',
+                                role: ViamButtonRole.inverse,
+                                size: ViamButtonSizeClass.small,
+                              )),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
+          onTap: () => _dismissKeyboard(),
         ),
       ),
     );
