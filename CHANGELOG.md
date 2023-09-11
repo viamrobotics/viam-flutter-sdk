@@ -1,14 +1,28 @@
 # Changelog
 
-## [v0.0.6](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.6) (2023-08-17)
+## [v0.0.7](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.7) (2023-09-11)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.5...v0.0.6)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.6...v0.0.7)
 
 **Merged pull requests:**
 
+- \[RSDK-4325\] Board widget [\#113](https://github.com/viamrobotics/viam-flutter-sdk/pull/113) ([njooma](https://github.com/njooma))
+- \[RSDK-4323\] Gripper [\#112](https://github.com/viamrobotics/viam-flutter-sdk/pull/112) ([njooma](https://github.com/njooma))
+- \[RSDK-4323\] Gripper [\#109](https://github.com/viamrobotics/viam-flutter-sdk/pull/109) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#108](https://github.com/viamrobotics/viam-flutter-sdk/pull/108) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[APP-2377\] Show camera errors [\#107](https://github.com/viamrobotics/viam-flutter-sdk/pull/107) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#106](https://github.com/viamrobotics/viam-flutter-sdk/pull/106) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#105](https://github.com/viamrobotics/viam-flutter-sdk/pull/105) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update protos and fix protoc [\#104](https://github.com/viamrobotics/viam-flutter-sdk/pull/104) ([njooma](https://github.com/njooma))
+- v0.0.6 [\#103](https://github.com/viamrobotics/viam-flutter-sdk/pull/103) ([github-actions[bot]](https://github.com/apps/github-actions))
 - New motor widget [\#102](https://github.com/viamrobotics/viam-flutter-sdk/pull/102) ([njooma](https://github.com/njooma))
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
+- RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.6](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.6) (2023-08-17)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.5...v0.0.6)
 
 ## [v0.0.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.5) (2023-08-08)
 
