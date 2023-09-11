@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_example_app/screens/base.dart';
 import 'package:viam_example_app/screens/board.dart';
+import 'package:viam_example_app/screens/gripper.dart';
 import 'package:viam_example_app/screens/motor.dart';
 import 'package:viam_example_app/screens/sensor.dart';
 import 'package:viam_example_app/screens/servo.dart';
@@ -127,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Base.subtype.resourceSubtype,
       Board.subtype.resourceSubtype,
       Camera.subtype.resourceSubtype,
+      Gripper.subtype.resourceSubtype,
       Motor.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
@@ -150,6 +152,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Camera.subtype.resourceSubtype) {
       return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
+    }
+    if (rname.subtype == Gripper.subtype.resourceSubtype) {
+      return GripperScreen(
+          gripper: Gripper.fromRobot(_robot, rname.name),
+          cameras:
+              _robot.resourceNames.where((e) => e.subtype == Camera.subtype.resourceSubtype).map((e) => Camera.fromRobot(_robot, e.name)),
+          robot: _robot);
     }
     if (rname.subtype == Motor.subtype.resourceSubtype) {
       return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
