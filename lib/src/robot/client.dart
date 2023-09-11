@@ -39,7 +39,7 @@ class RobotClientOptions {
   RobotClientOptions.withDialOptions(this.dialOptions);
 
   // Convenience initializer for creating options with an API key ID/API key pair
-  RobotClientOptions.withAPIKey(String apiKeyID, String apiKey)
+  RobotClientOptions.withApiKey(String apiKeyID, String apiKey)
       : dialOptions = DialOptions()
           ..credentials = Credentials.apiKey(apiKey)
           ..authEntity = apiKeyID;

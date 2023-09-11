@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (dotenv.env['API_KEY_ID'] != null && dotenv.env['API_KEY'] != null) {
       robotFut = RobotClient.atAddress(
         dotenv.env['ROBOT_LOCATION'] ?? '', // or whatever default value you want
-        RobotClientOptions.withAPIKey(
+        RobotClientOptions.withApiKey(
           dotenv.env['API_KEY_ID'] ?? '',
           dotenv.env['API_KEY'] ?? '',
         ),
