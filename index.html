@@ -74,8 +74,8 @@ This is a beta release of the Viam Flutter SDK. No guarantees are made to the st
 <pre class="language-dart"><code class="language-dart">import 'package:viam_sdk/viam_sdk.dart';
 
 // Connect to an existing robot
-// *NOTE* Get the &lt;LOCATION&gt; and &lt;SECRET&gt; from app.viam.com
-final options = RobotClientOptions.withLocationSecret('&lt;SECRET&gt;');
+// *NOTE* Get '&lt;API KEY ID&gt;' and '&lt;API KEY&gt;' from app.viam.com
+final options = RobotClientOptions.withAPIKey('&lt;API KEY ID&gt;', '&lt;API KEY&gt;');
 final robot = await RobotClient.atAddress('&lt;LOCATION&gt;', options);
 
 // Print the available resources
@@ -544,7 +544,7 @@ print(await movementSensor.readings())
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.6
+      0.0.7
   </span>
 
   
