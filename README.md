@@ -29,8 +29,8 @@ You can use the Viam SDK to connect to an existing robot (to create a robot, vie
 import 'package:viam_sdk/viam_sdk.dart';
 
 // Connect to an existing robot
-// *NOTE* Get the <LOCATION> and <SECRET> from app.viam.com
-final options = RobotClientOptions.withLocationSecret('<SECRET>');
+// *NOTE* Get '<API KEY ID>' and '<API KEY>' from app.viam.com
+final options = RobotClientOptions.withAPIKey('<API KEY ID>', '<API KEY>');
 final robot = await RobotClient.atAddress('<LOCATION>', options);
 
 // Print the available resources

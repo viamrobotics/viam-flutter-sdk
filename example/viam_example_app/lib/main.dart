@@ -94,10 +94,25 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _loading = true;
     });
-    final robotFut = RobotClient.atAddress(
-      dotenv.env['ROBOT_LOCATION'] ?? '',
-      RobotClientOptions.withLocationSecret(dotenv.env['LOCATION_SECRET'] ?? ''),
-    );
+
+    Future<RobotClient> robotFut;
+
+    if (dotenv.env['ROBOT_LOCATION'] != null && dotenv.env['LOCATION_SECRET'] != null) {
+      robotFut = RobotClient.atAddress(
+        dotenv.env['ROBOT_LOCATION'] ?? '',
+        RobotClientOptions.withLocationSecret(dotenv.env['LOCATION_SECRET'] ?? ''),
+      );
+    } else if (dotenv.env['API_KEY_ID'] != null && dotenv.env['API_KEY'] != null) {
+      robotFut = RobotClient.atAddress(
+        dotenv.env['ROBOT_LOCATION'] ?? '', // or whatever default value you want
+        RobotClientOptions.withApiKey(
+          dotenv.env['API_KEY_ID'] ?? '',
+          dotenv.env['API_KEY'] ?? '',
+        ),
+      );
+    } else {
+      throw Exception('None of the required variables are defined in .env. Please see README.md for more information.');
+    }
 
     robotFut.then((value) {
       _robot = value;

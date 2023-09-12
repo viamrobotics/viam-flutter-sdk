@@ -38,6 +38,12 @@ class RobotClientOptions {
   /// Convenience initializer for creating options with specified [DialOptions]
   RobotClientOptions.withDialOptions(this.dialOptions);
 
+  // Convenience initializer for creating options with an API key ID/API key pair
+  RobotClientOptions.withApiKey(String apiKeyID, String apiKey)
+      : dialOptions = DialOptions()
+          ..credentials = Credentials.apiKey(apiKey)
+          ..authEntity = apiKeyID;
+
   /// Convenience initializer for creating options with a robot location secret
   RobotClientOptions.withLocationSecret(String locationSecret)
       : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
