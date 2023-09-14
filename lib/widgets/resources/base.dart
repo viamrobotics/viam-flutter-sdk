@@ -61,7 +61,9 @@ class _ViamBaseScreenState extends State<ViamBaseScreen> {
         _spacer(),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 0, 48),
-          child: ViamBaseJoystick(base: widget.base),
+          child: Center(
+            child: ViamBaseJoystick(base: widget.base),
+          ),
         ),
       ],
     );
