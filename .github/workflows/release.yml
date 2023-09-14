@@ -20,7 +20,7 @@ jobs:
     environment: release
     runs-on: [self-hosted, x64]
     container:
-      image: ghcr.io/cirruslabs/flutter:3.10.6
+      image: ghcr.io/cirruslabs/flutter:latest
     outputs:
       version: ${{ steps.which_version.outputs.version }}
     steps:

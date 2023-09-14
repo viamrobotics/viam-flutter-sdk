@@ -10,7 +10,7 @@ jobs:
     if: github.repository_owner == 'viamrobotics'
     runs-on: [self-hosted, x64]
     container:
-      image: ghcr.io/cirruslabs/flutter:3.10.6
+      image: ghcr.io/cirruslabs/flutter:latest
 
     name: "Publish to pub.dev"
     permissions:
