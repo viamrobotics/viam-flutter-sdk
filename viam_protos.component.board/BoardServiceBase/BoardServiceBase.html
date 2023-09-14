@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="viam_protos.component.board&#47;BoardServiceBase-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-constructor">BoardServiceBase</span> constructor 
 </h1></div>
@@ -67,165 +71,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">BoardServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.StatusRequest, $0.StatusResponse&gt;(
-      &#39;Status&#39;,
-      status_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.StatusRequest.fromBuffer(value),
-      ($0.StatusResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.SetGPIORequest, $0.SetGPIOResponse&gt;(
-      &#39;SetGPIO&#39;,
-      setGPIO_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetGPIORequest.fromBuffer(value),
-      ($0.SetGPIOResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetGPIORequest, $0.GetGPIOResponse&gt;(
-      &#39;GetGPIO&#39;,
-      getGPIO_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetGPIORequest.fromBuffer(value),
-      ($0.GetGPIOResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.PWMRequest, $0.PWMResponse&gt;(
-      &#39;PWM&#39;,
-      pWM_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.PWMRequest.fromBuffer(value),
-      ($0.PWMResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.SetPWMRequest, $0.SetPWMResponse&gt;(
-      &#39;SetPWM&#39;,
-      setPWM_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetPWMRequest.fromBuffer(value),
-      ($0.SetPWMResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.PWMFrequencyRequest, $0.PWMFrequencyResponse&gt;(
-      &#39;PWMFrequency&#39;,
-      pWMFrequency_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.PWMFrequencyRequest.fromBuffer(value),
-      ($0.PWMFrequencyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.SetPWMFrequencyRequest, $0.SetPWMFrequencyResponse&gt;(
-      &#39;SetPWMFrequency&#39;,
-      setPWMFrequency_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetPWMFrequencyRequest.fromBuffer(value),
-      ($0.SetPWMFrequencyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
-      &#39;DoCommand&#39;,
-      doCommand_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
-      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.ReadAnalogReaderRequest, $0.ReadAnalogReaderResponse&gt;(
-      &#39;ReadAnalogReader&#39;,
-      readAnalogReader_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.ReadAnalogReaderRequest.fromBuffer(value),
-      ($0.ReadAnalogReaderResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetDigitalInterruptValueRequest, $0.GetDigitalInterruptValueResponse&gt;(
-      &#39;GetDigitalInterruptValue&#39;,
-      getDigitalInterruptValue_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetDigitalInterruptValueRequest.fromBuffer(value),
-      ($0.GetDigitalInterruptValueResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.SetPowerModeRequest, $0.SetPowerModeResponse&gt;(
-      &#39;SetPowerMode&#39;,
-      setPowerMode_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetPowerModeRequest.fromBuffer(value),
-      ($0.SetPowerModeResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.GetGeometriesRequest, $1.GetGeometriesResponse&gt;(
-      &#39;GetGeometries&#39;,
-      getGeometries_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetGeometriesRequest.fromBuffer(value),
-      ($1.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">BoardServiceBase</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">viam_sdk</a></li>
-  <li><a href="../../viam_protos.component.board/viam_protos.component.board-library.html">viam_protos.component.board</a></li>
-  <li><a href="../../viam_protos.component.board/BoardServiceBase-class.html">BoardServiceBase</a></li>
-  <li class="self-crumb">BoardServiceBase constructor</li>
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_protos.component.board/viam_protos.component.board-library.html">viam_protos.component.board</a></li>
+    <li><a href="../../viam_protos.component.board/BoardServiceBase-class.html">BoardServiceBase</a></li>
+    <li class="self-crumb">BoardServiceBase constructor</li>
 </ol>
 
 
     <h5>BoardServiceBase class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../viam_protos.component.board/BoardServiceBase-class.html#constructors">Constructors</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/BoardServiceBase.html">BoardServiceBase</a></li>
-
-
-        <li class="section-title">
-          <a href="../../viam_protos.component.board/BoardServiceBase-class.html#instance-properties">Properties</a>
-        </li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/$name.html">$name</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title"><a href="../../viam_protos.component.board/BoardServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$onMetadata.html">$onMetadata</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/doCommand.html">doCommand</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/doCommand_Pre.html">doCommand_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/getDigitalInterruptValue.html">getDigitalInterruptValue</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/getDigitalInterruptValue_Pre.html">getDigitalInterruptValue_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/getGeometries.html">getGeometries</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/getGeometries_Pre.html">getGeometries_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/getGPIO.html">getGPIO</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/getGPIO_Pre.html">getGPIO_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/pWM.html">pWM</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/pWM_Pre.html">pWM_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/pWMFrequency.html">pWMFrequency</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/pWMFrequency_Pre.html">pWMFrequency_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/readAnalogReader.html">readAnalogReader</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/readAnalogReader_Pre.html">readAnalogReader_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setGPIO.html">setGPIO</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setGPIO_Pre.html">setGPIO_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setPowerMode.html">setPowerMode</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setPowerMode_Pre.html">setPowerMode_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setPWM.html">setPWM</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setPWM_Pre.html">setPWM_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setPWMFrequency.html">setPWMFrequency</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/setPWMFrequency_Pre.html">setPWMFrequency_Pre</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/status.html">status</a></li>
-          <li><a href="../../viam_protos.component.board/BoardServiceBase/status_Pre.html">status_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../viam_protos.component.board/BoardServiceBase-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

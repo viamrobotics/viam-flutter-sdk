@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="viam_protos.component.servo&#47;ServoServiceBase-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-constructor">ServoServiceBase</span> constructor 
 </h1></div>
@@ -67,111 +71,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ServoServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.MoveRequest, $0.MoveResponse&gt;(
-      &#39;Move&#39;,
-      move_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.MoveRequest.fromBuffer(value),
-      ($0.MoveResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetPositionRequest, $0.GetPositionResponse&gt;(
-      &#39;GetPosition&#39;,
-      getPosition_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPositionRequest.fromBuffer(value),
-      ($0.GetPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.StopRequest, $0.StopResponse&gt;(
-      &#39;Stop&#39;,
-      stop_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.StopRequest.fromBuffer(value),
-      ($0.StopResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.IsMovingRequest, $0.IsMovingResponse&gt;(
-      &#39;IsMoving&#39;,
-      isMoving_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.IsMovingRequest.fromBuffer(value),
-      ($0.IsMovingResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
-      &#39;DoCommand&#39;,
-      doCommand_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
-      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$1.GetGeometriesRequest, $1.GetGeometriesResponse&gt;(
-      &#39;GetGeometries&#39;,
-      getGeometries_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetGeometriesRequest.fromBuffer(value),
-      ($1.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">ServoServiceBase</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">viam_sdk</a></li>
-  <li><a href="../../viam_protos.component.servo/viam_protos.component.servo-library.html">viam_protos.component.servo</a></li>
-  <li><a href="../../viam_protos.component.servo/ServoServiceBase-class.html">ServoServiceBase</a></li>
-  <li class="self-crumb">ServoServiceBase constructor</li>
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_protos.component.servo/viam_protos.component.servo-library.html">viam_protos.component.servo</a></li>
+    <li><a href="../../viam_protos.component.servo/ServoServiceBase-class.html">ServoServiceBase</a></li>
+    <li class="self-crumb">ServoServiceBase constructor</li>
 </ol>
 
 
     <h5>ServoServiceBase class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../viam_protos.component.servo/ServoServiceBase-class.html#constructors">Constructors</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/ServoServiceBase.html">ServoServiceBase</a></li>
-
-
-        <li class="section-title">
-          <a href="../../viam_protos.component.servo/ServoServiceBase-class.html#instance-properties">Properties</a>
-        </li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/$name.html">$name</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title"><a href="../../viam_protos.component.servo/ServoServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$onMetadata.html">$onMetadata</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/doCommand.html">doCommand</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/doCommand_Pre.html">doCommand_Pre</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/getGeometries.html">getGeometries</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/getGeometries_Pre.html">getGeometries_Pre</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/getPosition.html">getPosition</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/getPosition_Pre.html">getPosition_Pre</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/isMoving.html">isMoving</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/isMoving_Pre.html">isMoving_Pre</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/move.html">move</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/move_Pre.html">move_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/stop.html">stop</a></li>
-          <li><a href="../../viam_protos.component.servo/ServoServiceBase/stop_Pre.html">stop_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../viam_protos.component.servo/ServoServiceBase-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

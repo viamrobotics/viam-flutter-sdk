@@ -49,8 +49,12 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
-    
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar=""
+      data-below-sidebar="widgets_button&#47;widgets_button-library-sidebar.html">
+      
       <div>
 <h1><span class="kind-library">button</span> library 
  
@@ -123,15 +127,16 @@
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">viam_sdk</a></li>
-  <li class="self-crumb">button library</li>
+    <li><a href="../index.html">viam_sdk</a></li>
+    <li class="self-crumb">button library</li>
 </ol>
 
 
@@ -194,24 +199,6 @@
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>button library</h5>
-    <ol>
-      <li class="section-title"><a href="../widgets_button/widgets_button-library.html#classes">Classes</a></li>
-        <li><a href="../widgets_button/ViamButton-class.html">ViamButton</a></li>
-
-
-
-
-
-
-      <li class="section-title"><a href="../widgets_button/widgets_button-library.html#enums">Enums</a></li>
-        <li><a href="../widgets_button/ViamButtonFillStyle.html">ViamButtonFillStyle</a></li>
-        <li><a href="../widgets_button/ViamButtonRole.html">ViamButtonRole</a></li>
-        <li><a href="../widgets_button/ViamButtonSizeClass.html">ViamButtonSizeClass</a></li>
-        <li><a href="../widgets_button/ViamButtonVariant.html">ViamButtonVariant</a></li>
-
-
-</ol>
-
   </div><!--/sidebar-offcanvas-right-->
 
 </main>

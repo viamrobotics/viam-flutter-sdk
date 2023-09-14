@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="viam_protos.component.camera&#47;CameraServiceBase-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-constructor">CameraServiceBase</span> constructor 
 </h1></div>
@@ -67,120 +71,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">CameraServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.GetImageRequest, $0.GetImageResponse&gt;(
-      &#39;GetImage&#39;,
-      getImage_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetImageRequest.fromBuffer(value),
-      ($0.GetImageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetImagesRequest, $0.GetImagesResponse&gt;(
-      &#39;GetImages&#39;,
-      getImages_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetImagesRequest.fromBuffer(value),
-      ($0.GetImagesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.RenderFrameRequest, $1.HttpBody&gt;(
-      &#39;RenderFrame&#39;,
-      renderFrame_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.RenderFrameRequest.fromBuffer(value),
-      ($1.HttpBody value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetPointCloudRequest, $0.GetPointCloudResponse&gt;(
-      &#39;GetPointCloud&#39;,
-      getPointCloud_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPointCloudRequest.fromBuffer(value),
-      ($0.GetPointCloudResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetPropertiesRequest, $0.GetPropertiesResponse&gt;(
-      &#39;GetProperties&#39;,
-      getProperties_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPropertiesRequest.fromBuffer(value),
-      ($0.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$2.DoCommandRequest, $2.DoCommandResponse&gt;(
-      &#39;DoCommand&#39;,
-      doCommand_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $2.DoCommandRequest.fromBuffer(value),
-      ($2.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$2.GetGeometriesRequest, $2.GetGeometriesResponse&gt;(
-      &#39;GetGeometries&#39;,
-      getGeometries_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetGeometriesRequest.fromBuffer(value),
-      ($2.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">CameraServiceBase</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">viam_sdk</a></li>
-  <li><a href="../../viam_protos.component.camera/viam_protos.component.camera-library.html">viam_protos.component.camera</a></li>
-  <li><a href="../../viam_protos.component.camera/CameraServiceBase-class.html">CameraServiceBase</a></li>
-  <li class="self-crumb">CameraServiceBase constructor</li>
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_protos.component.camera/viam_protos.component.camera-library.html">viam_protos.component.camera</a></li>
+    <li><a href="../../viam_protos.component.camera/CameraServiceBase-class.html">CameraServiceBase</a></li>
+    <li class="self-crumb">CameraServiceBase constructor</li>
 </ol>
 
 
     <h5>CameraServiceBase class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../viam_protos.component.camera/CameraServiceBase-class.html#constructors">Constructors</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/CameraServiceBase.html">CameraServiceBase</a></li>
-
-
-        <li class="section-title">
-          <a href="../../viam_protos.component.camera/CameraServiceBase-class.html#instance-properties">Properties</a>
-        </li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/$name.html">$name</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title"><a href="../../viam_protos.component.camera/CameraServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$onMetadata.html">$onMetadata</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/doCommand.html">doCommand</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/doCommand_Pre.html">doCommand_Pre</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getGeometries.html">getGeometries</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getGeometries_Pre.html">getGeometries_Pre</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getImage.html">getImage</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getImage_Pre.html">getImage_Pre</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getImages.html">getImages</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getImages_Pre.html">getImages_Pre</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getPointCloud.html">getPointCloud</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getPointCloud_Pre.html">getPointCloud_Pre</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getProperties.html">getProperties</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/getProperties_Pre.html">getProperties_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/renderFrame.html">renderFrame</a></li>
-          <li><a href="../../viam_protos.component.camera/CameraServiceBase/renderFrame_Pre.html">renderFrame_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../viam_protos.component.camera/CameraServiceBase-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

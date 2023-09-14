@@ -51,7 +51,11 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="viam_protos.app.packages&#47;PackageServiceBase-class-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-constructor">PackageServiceBase</span> constructor 
 </h1></div>
@@ -67,92 +71,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">PackageServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.CreatePackageRequest, $0.CreatePackageResponse&gt;(
-      &#39;CreatePackage&#39;,
-      createPackage,
-      true,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.CreatePackageRequest.fromBuffer(value),
-      ($0.CreatePackageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.DeletePackageRequest, $0.DeletePackageResponse&gt;(
-      &#39;DeletePackage&#39;,
-      deletePackage_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeletePackageRequest.fromBuffer(value),
-      ($0.DeletePackageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetPackageRequest, $0.GetPackageResponse&gt;(
-      &#39;GetPackage&#39;,
-      getPackage_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPackageRequest.fromBuffer(value),
-      ($0.GetPackageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.ListPackagesRequest, $0.ListPackagesResponse&gt;(
-      &#39;ListPackages&#39;,
-      listPackages_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListPackagesRequest.fromBuffer(value),
-      ($0.ListPackagesResponse value) =&gt; value.writeToBuffer()));
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">PackageServiceBase</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">viam_sdk</a></li>
-  <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
-  <li><a href="../../viam_protos.app.packages/PackageServiceBase-class.html">PackageServiceBase</a></li>
-  <li class="self-crumb">PackageServiceBase constructor</li>
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
+    <li><a href="../../viam_protos.app.packages/PackageServiceBase-class.html">PackageServiceBase</a></li>
+    <li class="self-crumb">PackageServiceBase constructor</li>
 </ol>
 
 
     <h5>PackageServiceBase class</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../viam_protos.app.packages/PackageServiceBase-class.html#constructors">Constructors</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/PackageServiceBase.html">PackageServiceBase</a></li>
-
-
-        <li class="section-title">
-          <a href="../../viam_protos.app.packages/PackageServiceBase-class.html#instance-properties">Properties</a>
-        </li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/$name.html">$name</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title"><a href="../../viam_protos.app.packages/PackageServiceBase-class.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$addMethod.html">$addMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$lookupMethod.html">$lookupMethod</a></li>
-          <li class="inherited"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Service/$onMetadata.html">$onMetadata</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/createPackage.html">createPackage</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/deletePackage.html">deletePackage</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/deletePackage_Pre.html">deletePackage_Pre</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/getPackage.html">getPackage</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/getPackage_Pre.html">getPackage_Pre</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/listPackages.html">listPackages</a></li>
-          <li><a href="../../viam_protos.app.packages/PackageServiceBase/listPackages_Pre.html">listPackages_Pre</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../viam_protos.app.packages/PackageServiceBase-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
