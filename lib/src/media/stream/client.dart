@@ -44,7 +44,9 @@ class StreamManager {
           state == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
         _errorHandler = Stream.periodic(const Duration(seconds: 1)).listen((_) {
           for (final client in _clients.values) {
-            client._streamController.addError(Exception('PeerConnection error'));
+            if (!client._streamController.isClosed) {
+              client._streamController.addError(Exception('PeerConnection error'));
+            }
           }
         });
       }

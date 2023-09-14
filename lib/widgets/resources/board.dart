@@ -58,9 +58,6 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
 
   Future<void> _setGpio(String command) async {
     _dismissKeyboard();
-    setState(() {
-      pinValue = '';
-    });
     _setFormKey.currentState!.validate();
     switch (command) {
       case 'PinState':
