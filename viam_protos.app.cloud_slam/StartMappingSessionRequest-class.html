@@ -123,6 +123,17 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="captureInterval" class="property">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/captureInterval.html">captureInterval</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.cloud_slam/CaptureInterval-class.html">CaptureInterval</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
         <dt id="eventPlugin" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/eventPlugin.html">eventPlugin</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/EventPlugin-class.html">EventPlugin</a>?</span> 
@@ -132,6 +143,17 @@
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="existingMapVersion" class="property">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/existingMapVersion.html">existingMapVersion</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
 
@@ -165,17 +187,6 @@ to protobuf fields.
 <dd class="inherited">
   Returns <code>true</code> if this message is marked read-only. Otherwise <code>false</code>.
   <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="isOnline" class="property">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/isOnline.html">isOnline</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
 
@@ -234,8 +245,19 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="slamConfig" class="property">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/slamConfig.html">slamConfig</a></span>
+        <dt id="sensors" class="property">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/sensors.html">sensors</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.cloud_slam/SensorInfo-class.html">SensorInfo</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read-only</span></div>
+
+</dd>
+
+        <dt id="slamAlgorithmParams" class="property">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/slamAlgorithmParams.html">slamAlgorithmParams</a></span>
   <span class="signature">&#8596; Struct</span> 
 
 </dt>
@@ -326,6 +348,32 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearCaptureInterval" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearCaptureInterval.html">clearCaptureInterval</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearExistingMapVersion" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearExistingMapVersion.html">clearExistingMapVersion</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/clearExtension.html">clearExtension</a></span><span class="signature">(<wbr><span class="parameter" id="clearExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -349,19 +397,6 @@ to protobuf fields.
 <dd class="inherited">
   Clears the contents of a given field.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="clearIsOnline" class="callable">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearIsOnline.html">clearIsOnline</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; void</span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
 
 </dd>
 
@@ -417,8 +452,8 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="clearSlamConfig" class="callable">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearSlamConfig.html">clearSlamConfig</a></span><span class="signature">(<wbr>)
+        <dt id="clearSlamAlgorithmParams" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/clearSlamAlgorithmParams.html">clearSlamAlgorithmParams</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -522,8 +557,21 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="ensureSlamConfig" class="callable">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/ensureSlamConfig.html">ensureSlamConfig</a></span><span class="signature">(<wbr>)
+        <dt id="ensureCaptureInterval" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/ensureCaptureInterval.html">ensureCaptureInterval</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.cloud_slam/CaptureInterval-class.html">CaptureInterval</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="ensureSlamAlgorithmParams" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/ensureSlamAlgorithmParams.html">ensureSlamAlgorithmParams</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; Struct</span>
   </span>
   
@@ -627,6 +675,32 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasCaptureInterval" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasCaptureInterval.html">hasCaptureInterval</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasExistingMapVersion" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasExistingMapVersion.html">hasExistingMapVersion</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hasExtension.html">hasExtension</a></span><span class="signature">(<wbr><span class="parameter" id="hasExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -650,19 +724,6 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="hasIsOnline" class="callable">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasIsOnline.html">hasIsOnline</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
 
 </dd>
 
@@ -731,8 +792,8 @@ default value if it is not set.
 
 </dd>
 
-        <dt id="hasSlamConfig" class="callable">
-  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasSlamConfig.html">hasSlamConfig</a></span><span class="signature">(<wbr>)
+        <dt id="hasSlamAlgorithmParams" class="callable">
+  <span class="name"><a href="../viam_protos.app.cloud_slam/StartMappingSessionRequest/hasSlamAlgorithmParams.html">hasSlamAlgorithmParams</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
