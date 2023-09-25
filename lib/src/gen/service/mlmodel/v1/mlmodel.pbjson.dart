@@ -33,33 +33,40 @@ const InferRequest$json = {
   '1': 'InferRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'input_data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'inputData'},
     {'1': 'input_tensors', '3': 3, '4': 1, '5': 11, '6': '.viam.service.mlmodel.v1.FlatTensors', '10': 'inputTensors'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+  '10': ['input_data'],
 };
 
 /// Descriptor for `InferRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List inferRequestDescriptor = $convert.base64Decode(
-    'CgxJbmZlclJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRI2CgppbnB1dF9kYXRhGAIgASgLMh'
-    'cuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIJaW5wdXREYXRhEkkKDWlucHV0X3RlbnNvcnMYAyAB'
-    'KAsyJC52aWFtLnNlcnZpY2UubWxtb2RlbC52MS5GbGF0VGVuc29yc1IMaW5wdXRUZW5zb3JzEi'
-    '0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+    'CgxJbmZlclJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRJJCg1pbnB1dF90ZW5zb3JzGAMgAS'
+    'gLMiQudmlhbS5zZXJ2aWNlLm1sbW9kZWwudjEuRmxhdFRlbnNvcnNSDGlucHV0VGVuc29ycxIt'
+    'CgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJhSgQIAhADUgppbn'
+    'B1dF9kYXRh');
 
 @$core.Deprecated('Use inferResponseDescriptor instead')
 const InferResponse$json = {
   '1': 'InferResponse',
   '2': [
-    {'1': 'output_data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'outputData'},
     {'1': 'output_tensors', '3': 3, '4': 1, '5': 11, '6': '.viam.service.mlmodel.v1.FlatTensors', '10': 'outputTensors'},
   ],
+  '9': [
+    {'1': 1, '2': 2},
+    {'1': 2, '2': 3},
+  ],
+  '10': ['name', 'output_data'],
 };
 
 /// Descriptor for `InferResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List inferResponseDescriptor = $convert.base64Decode(
-    'Cg1JbmZlclJlc3BvbnNlEjgKC291dHB1dF9kYXRhGAIgASgLMhcuZ29vZ2xlLnByb3RvYnVmLl'
-    'N0cnVjdFIKb3V0cHV0RGF0YRJLCg5vdXRwdXRfdGVuc29ycxgDIAEoCzIkLnZpYW0uc2Vydmlj'
-    'ZS5tbG1vZGVsLnYxLkZsYXRUZW5zb3JzUg1vdXRwdXRUZW5zb3Jz');
+    'Cg1JbmZlclJlc3BvbnNlEksKDm91dHB1dF90ZW5zb3JzGAMgASgLMiQudmlhbS5zZXJ2aWNlLm'
+    '1sbW9kZWwudjEuRmxhdFRlbnNvcnNSDW91dHB1dFRlbnNvcnNKBAgBEAJKBAgCEANSBG5hbWVS'
+    'C291dHB1dF9kYXRh');
 
 @$core.Deprecated('Use metadataRequestDescriptor instead')
 const MetadataRequest$json = {

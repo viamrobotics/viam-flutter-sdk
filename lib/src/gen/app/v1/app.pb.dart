@@ -598,7 +598,7 @@ class OrganizationInvite extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
-    ..aInt64(4, _omitFieldNames ? '' : 'robotCount')
+    ..pc<Authorization>(4, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
     ..hasRequiredFields = false
   ;
 
@@ -653,13 +653,7 @@ class OrganizationInvite extends $pb.GeneratedMessage {
   $3.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get robotCount => $_getI64(3);
-  @$pb.TagNumber(4)
-  set robotCount($fixnum.Int64 v) { $_setInt64(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasRobotCount() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearRobotCount() => clearField(4);
+  $core.List<Authorization> get authorizations => $_getList(3);
 }
 
 class CreateOrganizationRequest extends $pb.GeneratedMessage {
@@ -3960,6 +3954,158 @@ class DeleteRobotPartRequest extends $pb.GeneratedMessage {
   void clearPartId() => clearField(1);
 }
 
+class GetRobotAPIKeysRequest extends $pb.GeneratedMessage {
+  factory GetRobotAPIKeysRequest() => create();
+  GetRobotAPIKeysRequest._() : super();
+  factory GetRobotAPIKeysRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotAPIKeysRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotAPIKeysRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'robotId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotAPIKeysRequest clone() => GetRobotAPIKeysRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotAPIKeysRequest copyWith(void Function(GetRobotAPIKeysRequest) updates) => super.copyWith((message) => updates(message as GetRobotAPIKeysRequest)) as GetRobotAPIKeysRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotAPIKeysRequest create() => GetRobotAPIKeysRequest._();
+  GetRobotAPIKeysRequest createEmptyInstance() => create();
+  static $pb.PbList<GetRobotAPIKeysRequest> createRepeated() => $pb.PbList<GetRobotAPIKeysRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotAPIKeysRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotAPIKeysRequest>(create);
+  static GetRobotAPIKeysRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get robotId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set robotId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRobotId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRobotId() => clearField(1);
+}
+
+class APIKey extends $pb.GeneratedMessage {
+  factory APIKey() => create();
+  APIKey._() : super();
+  factory APIKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory APIKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'APIKey', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'key')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOM<$3.Timestamp>(4, _omitFieldNames ? '' : 'createdOn', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  APIKey clone() => APIKey()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  APIKey copyWith(void Function(APIKey) updates) => super.copyWith((message) => updates(message as APIKey)) as APIKey;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static APIKey create() => APIKey._();
+  APIKey createEmptyInstance() => create();
+  static $pb.PbList<APIKey> createRepeated() => $pb.PbList<APIKey>();
+  @$core.pragma('dart2js:noInline')
+  static APIKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<APIKey>(create);
+  static APIKey? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get key => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set key($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKey() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $3.Timestamp get createdOn => $_getN(3);
+  @$pb.TagNumber(4)
+  set createdOn($3.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedOn() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedOn() => clearField(4);
+  @$pb.TagNumber(4)
+  $3.Timestamp ensureCreatedOn() => $_ensure(3);
+}
+
+class GetRobotAPIKeysResponse extends $pb.GeneratedMessage {
+  factory GetRobotAPIKeysResponse() => create();
+  GetRobotAPIKeysResponse._() : super();
+  factory GetRobotAPIKeysResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotAPIKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotAPIKeysResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<APIKey>(1, _omitFieldNames ? '' : 'apiKeys', $pb.PbFieldType.PM, subBuilder: APIKey.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotAPIKeysResponse clone() => GetRobotAPIKeysResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotAPIKeysResponse copyWith(void Function(GetRobotAPIKeysResponse) updates) => super.copyWith((message) => updates(message as GetRobotAPIKeysResponse)) as GetRobotAPIKeysResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotAPIKeysResponse create() => GetRobotAPIKeysResponse._();
+  GetRobotAPIKeysResponse createEmptyInstance() => create();
+  static $pb.PbList<GetRobotAPIKeysResponse> createRepeated() => $pb.PbList<GetRobotAPIKeysResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotAPIKeysResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotAPIKeysResponse>(create);
+  static GetRobotAPIKeysResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<APIKey> get apiKeys => $_getList(0);
+}
+
 class DeleteRobotPartResponse extends $pb.GeneratedMessage {
   factory DeleteRobotPartResponse() => create();
   DeleteRobotPartResponse._() : super();
@@ -5285,6 +5431,7 @@ class Authorization extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'resourceId')
     ..aOS(5, _omitFieldNames ? '' : 'identityId')
     ..aOS(6, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(7, _omitFieldNames ? '' : 'identityType')
     ..hasRequiredFields = false
   ;
 
@@ -5362,6 +5509,15 @@ class Authorization extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(5);
   @$pb.TagNumber(6)
   void clearOrganizationId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get identityType => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set identityType($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIdentityType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIdentityType() => clearField(7);
 }
 
 class AddRoleRequest extends $pb.GeneratedMessage {
@@ -5931,7 +6087,6 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..pc<Model>(5, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aOS(6, _omitFieldNames ? '' : 'entrypoint')
-    ..aOS(7, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -6003,15 +6158,6 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   $core.bool hasEntrypoint() => $_has(5);
   @$pb.TagNumber(6)
   void clearEntrypoint() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get organizationId => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set organizationId($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasOrganizationId() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearOrganizationId() => clearField(7);
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
@@ -6118,7 +6264,6 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOS(3, _omitFieldNames ? '' : 'platform')
-    ..aOS(4, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -6169,15 +6314,6 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(2);
   @$pb.TagNumber(3)
   void clearPlatform() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get organizationId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set organizationId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasOrganizationId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearOrganizationId() => clearField(4);
 }
 
 enum UploadModuleFileRequest_ModuleFile {
@@ -6299,7 +6435,6 @@ class GetModuleRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetModuleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
-    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -6332,15 +6467,6 @@ class GetModuleRequest extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(0);
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get organizationId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set organizationId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasOrganizationId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearOrganizationId() => clearField(2);
 }
 
 class GetModuleResponse extends $pb.GeneratedMessage {
@@ -6931,6 +7057,480 @@ class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<OrgDetails> get orgs => $_getList(0);
+}
+
+class CreateKeyRequest extends $pb.GeneratedMessage {
+  factory CreateKeyRequest() => create();
+  CreateKeyRequest._() : super();
+  factory CreateKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateKeyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<Authorization>(1, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateKeyRequest clone() => CreateKeyRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateKeyRequest copyWith(void Function(CreateKeyRequest) updates) => super.copyWith((message) => updates(message as CreateKeyRequest)) as CreateKeyRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateKeyRequest create() => CreateKeyRequest._();
+  CreateKeyRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateKeyRequest> createRepeated() => $pb.PbList<CreateKeyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateKeyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateKeyRequest>(create);
+  static CreateKeyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Authorization> get authorizations => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+}
+
+class CreateKeyResponse extends $pb.GeneratedMessage {
+  factory CreateKeyResponse() => create();
+  CreateKeyResponse._() : super();
+  factory CreateKeyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateKeyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateKeyResponse clone() => CreateKeyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateKeyResponse copyWith(void Function(CreateKeyResponse) updates) => super.copyWith((message) => updates(message as CreateKeyResponse)) as CreateKeyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateKeyResponse create() => CreateKeyResponse._();
+  CreateKeyResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateKeyResponse> createRepeated() => $pb.PbList<CreateKeyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateKeyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateKeyResponse>(create);
+  static CreateKeyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get id => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set id($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearId() => clearField(2);
+}
+
+class DeleteKeyRequest extends $pb.GeneratedMessage {
+  factory DeleteKeyRequest() => create();
+  DeleteKeyRequest._() : super();
+  factory DeleteKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteKeyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteKeyRequest clone() => DeleteKeyRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteKeyRequest copyWith(void Function(DeleteKeyRequest) updates) => super.copyWith((message) => updates(message as DeleteKeyRequest)) as DeleteKeyRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteKeyRequest create() => DeleteKeyRequest._();
+  DeleteKeyRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteKeyRequest> createRepeated() => $pb.PbList<DeleteKeyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteKeyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteKeyRequest>(create);
+  static DeleteKeyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteKeyResponse extends $pb.GeneratedMessage {
+  factory DeleteKeyResponse() => create();
+  DeleteKeyResponse._() : super();
+  factory DeleteKeyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteKeyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteKeyResponse clone() => DeleteKeyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteKeyResponse copyWith(void Function(DeleteKeyResponse) updates) => super.copyWith((message) => updates(message as DeleteKeyResponse)) as DeleteKeyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteKeyResponse create() => DeleteKeyResponse._();
+  DeleteKeyResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteKeyResponse> createRepeated() => $pb.PbList<DeleteKeyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteKeyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteKeyResponse>(create);
+  static DeleteKeyResponse? _defaultInstance;
+}
+
+class AuthorizationDetails extends $pb.GeneratedMessage {
+  factory AuthorizationDetails() => create();
+  AuthorizationDetails._() : super();
+  factory AuthorizationDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AuthorizationDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthorizationDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authorizationType')
+    ..aOS(2, _omitFieldNames ? '' : 'authorizationId')
+    ..aOS(3, _omitFieldNames ? '' : 'resourceType')
+    ..aOS(4, _omitFieldNames ? '' : 'resourceId')
+    ..aOS(5, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AuthorizationDetails clone() => AuthorizationDetails()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AuthorizationDetails copyWith(void Function(AuthorizationDetails) updates) => super.copyWith((message) => updates(message as AuthorizationDetails)) as AuthorizationDetails;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AuthorizationDetails create() => AuthorizationDetails._();
+  AuthorizationDetails createEmptyInstance() => create();
+  static $pb.PbList<AuthorizationDetails> createRepeated() => $pb.PbList<AuthorizationDetails>();
+  @$core.pragma('dart2js:noInline')
+  static AuthorizationDetails getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthorizationDetails>(create);
+  static AuthorizationDetails? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get authorizationType => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authorizationType($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuthorizationType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthorizationType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get authorizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set authorizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAuthorizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthorizationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resourceType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resourceType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasResourceType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResourceType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get resourceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set resourceId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasResourceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResourceId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get orgId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set orgId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOrgId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOrgId() => clearField(5);
+}
+
+class APIKeyWithAuthorizations extends $pb.GeneratedMessage {
+  factory APIKeyWithAuthorizations() => create();
+  APIKeyWithAuthorizations._() : super();
+  factory APIKeyWithAuthorizations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory APIKeyWithAuthorizations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'APIKeyWithAuthorizations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<APIKey>(1, _omitFieldNames ? '' : 'apiKey', subBuilder: APIKey.create)
+    ..pc<AuthorizationDetails>(2, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: AuthorizationDetails.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  APIKeyWithAuthorizations clone() => APIKeyWithAuthorizations()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  APIKeyWithAuthorizations copyWith(void Function(APIKeyWithAuthorizations) updates) => super.copyWith((message) => updates(message as APIKeyWithAuthorizations)) as APIKeyWithAuthorizations;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static APIKeyWithAuthorizations create() => APIKeyWithAuthorizations._();
+  APIKeyWithAuthorizations createEmptyInstance() => create();
+  static $pb.PbList<APIKeyWithAuthorizations> createRepeated() => $pb.PbList<APIKeyWithAuthorizations>();
+  @$core.pragma('dart2js:noInline')
+  static APIKeyWithAuthorizations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<APIKeyWithAuthorizations>(create);
+  static APIKeyWithAuthorizations? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  APIKey get apiKey => $_getN(0);
+  @$pb.TagNumber(1)
+  set apiKey(APIKey v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApiKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApiKey() => clearField(1);
+  @$pb.TagNumber(1)
+  APIKey ensureApiKey() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<AuthorizationDetails> get authorizations => $_getList(1);
+}
+
+class ListKeysRequest extends $pb.GeneratedMessage {
+  factory ListKeysRequest() => create();
+  ListKeysRequest._() : super();
+  factory ListKeysRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListKeysRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListKeysRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListKeysRequest clone() => ListKeysRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListKeysRequest copyWith(void Function(ListKeysRequest) updates) => super.copyWith((message) => updates(message as ListKeysRequest)) as ListKeysRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListKeysRequest create() => ListKeysRequest._();
+  ListKeysRequest createEmptyInstance() => create();
+  static $pb.PbList<ListKeysRequest> createRepeated() => $pb.PbList<ListKeysRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListKeysRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListKeysRequest>(create);
+  static ListKeysRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
+class ListKeysResponse extends $pb.GeneratedMessage {
+  factory ListKeysResponse() => create();
+  ListKeysResponse._() : super();
+  factory ListKeysResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListKeysResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<APIKeyWithAuthorizations>(1, _omitFieldNames ? '' : 'apiKeys', $pb.PbFieldType.PM, subBuilder: APIKeyWithAuthorizations.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListKeysResponse clone() => ListKeysResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListKeysResponse copyWith(void Function(ListKeysResponse) updates) => super.copyWith((message) => updates(message as ListKeysResponse)) as ListKeysResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListKeysResponse create() => ListKeysResponse._();
+  ListKeysResponse createEmptyInstance() => create();
+  static $pb.PbList<ListKeysResponse> createRepeated() => $pb.PbList<ListKeysResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListKeysResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListKeysResponse>(create);
+  static ListKeysResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<APIKeyWithAuthorizations> get apiKeys => $_getList(0);
+}
+
+class RotateKeyRequest extends $pb.GeneratedMessage {
+  factory RotateKeyRequest() => create();
+  RotateKeyRequest._() : super();
+  factory RotateKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RotateKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RotateKeyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RotateKeyRequest clone() => RotateKeyRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RotateKeyRequest copyWith(void Function(RotateKeyRequest) updates) => super.copyWith((message) => updates(message as RotateKeyRequest)) as RotateKeyRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RotateKeyRequest create() => RotateKeyRequest._();
+  RotateKeyRequest createEmptyInstance() => create();
+  static $pb.PbList<RotateKeyRequest> createRepeated() => $pb.PbList<RotateKeyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RotateKeyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RotateKeyRequest>(create);
+  static RotateKeyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class RotateKeyResponse extends $pb.GeneratedMessage {
+  factory RotateKeyResponse() => create();
+  RotateKeyResponse._() : super();
+  factory RotateKeyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RotateKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RotateKeyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'key')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RotateKeyResponse clone() => RotateKeyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RotateKeyResponse copyWith(void Function(RotateKeyResponse) updates) => super.copyWith((message) => updates(message as RotateKeyResponse)) as RotateKeyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RotateKeyResponse create() => RotateKeyResponse._();
+  RotateKeyResponse createEmptyInstance() => create();
+  static $pb.PbList<RotateKeyResponse> createRepeated() => $pb.PbList<RotateKeyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RotateKeyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RotateKeyResponse>(create);
+  static RotateKeyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get key => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set key($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKey() => clearField(2);
 }
 
 

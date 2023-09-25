@@ -157,6 +157,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteRobotPart',
       ($0.DeleteRobotPartRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.DeleteRobotPartResponse.fromBuffer(value));
+  static final _$getRobotAPIKeys = $grpc.ClientMethod<$0.GetRobotAPIKeysRequest, $0.GetRobotAPIKeysResponse>(
+      '/viam.app.v1.AppService/GetRobotAPIKeys',
+      ($0.GetRobotAPIKeysRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetRobotAPIKeysResponse.fromBuffer(value));
   static final _$markPartAsMain = $grpc.ClientMethod<$0.MarkPartAsMainRequest, $0.MarkPartAsMainResponse>(
       '/viam.app.v1.AppService/MarkPartAsMain',
       ($0.MarkPartAsMainRequest value) => value.writeToBuffer(),
@@ -249,6 +253,22 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListModules',
       ($0.ListModulesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ListModulesResponse.fromBuffer(value));
+  static final _$createKey = $grpc.ClientMethod<$0.CreateKeyRequest, $0.CreateKeyResponse>(
+      '/viam.app.v1.AppService/CreateKey',
+      ($0.CreateKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.CreateKeyResponse.fromBuffer(value));
+  static final _$deleteKey = $grpc.ClientMethod<$0.DeleteKeyRequest, $0.DeleteKeyResponse>(
+      '/viam.app.v1.AppService/DeleteKey',
+      ($0.DeleteKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.DeleteKeyResponse.fromBuffer(value));
+  static final _$listKeys = $grpc.ClientMethod<$0.ListKeysRequest, $0.ListKeysResponse>(
+      '/viam.app.v1.AppService/ListKeys',
+      ($0.ListKeysRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.ListKeysResponse.fromBuffer(value));
+  static final _$rotateKey = $grpc.ClientMethod<$0.RotateKeyRequest, $0.RotateKeyResponse>(
+      '/viam.app.v1.AppService/RotateKey',
+      ($0.RotateKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.RotateKeyResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -392,6 +412,10 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteRobotPart, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetRobotAPIKeysResponse> getRobotAPIKeys($0.GetRobotAPIKeysRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getRobotAPIKeys, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.MarkPartAsMainResponse> markPartAsMain($0.MarkPartAsMainRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$markPartAsMain, request, options: options);
   }
@@ -482,6 +506,22 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.ListModulesResponse> listModules($0.ListModulesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listModules, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateKeyResponse> createKey($0.CreateKeyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createKey, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteKeyResponse> deleteKey($0.DeleteKeyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteKey, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListKeysResponse> listKeys($0.ListKeysRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listKeys, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RotateKeyResponse> rotateKey($0.RotateKeyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$rotateKey, request, options: options);
   }
 }
 
@@ -728,6 +768,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteRobotPartRequest.fromBuffer(value),
         ($0.DeleteRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetRobotAPIKeysRequest, $0.GetRobotAPIKeysResponse>(
+        'GetRobotAPIKeys',
+        getRobotAPIKeys_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetRobotAPIKeysRequest.fromBuffer(value),
+        ($0.GetRobotAPIKeysResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.MarkPartAsMainRequest, $0.MarkPartAsMainResponse>(
         'MarkPartAsMain',
         markPartAsMain_Pre,
@@ -889,6 +936,34 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListModulesRequest.fromBuffer(value),
         ($0.ListModulesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateKeyRequest, $0.CreateKeyResponse>(
+        'CreateKey',
+        createKey_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateKeyRequest.fromBuffer(value),
+        ($0.CreateKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteKeyRequest, $0.DeleteKeyResponse>(
+        'DeleteKey',
+        deleteKey_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DeleteKeyRequest.fromBuffer(value),
+        ($0.DeleteKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListKeysRequest, $0.ListKeysResponse>(
+        'ListKeys',
+        listKeys_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListKeysRequest.fromBuffer(value),
+        ($0.ListKeysResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RotateKeyRequest, $0.RotateKeyResponse>(
+        'RotateKey',
+        rotateKey_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RotateKeyRequest.fromBuffer(value),
+        ($0.RotateKeyResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$0.GetUserIDByEmailRequest> request) async {
@@ -1027,6 +1102,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteRobotPart(call, await request);
   }
 
+  $async.Future<$0.GetRobotAPIKeysResponse> getRobotAPIKeys_Pre($grpc.ServiceCall call, $async.Future<$0.GetRobotAPIKeysRequest> request) async {
+    return getRobotAPIKeys(call, await request);
+  }
+
   $async.Future<$0.MarkPartAsMainResponse> markPartAsMain_Pre($grpc.ServiceCall call, $async.Future<$0.MarkPartAsMainRequest> request) async {
     return markPartAsMain(call, await request);
   }
@@ -1115,6 +1194,22 @@ abstract class AppServiceBase extends $grpc.Service {
     return listModules(call, await request);
   }
 
+  $async.Future<$0.CreateKeyResponse> createKey_Pre($grpc.ServiceCall call, $async.Future<$0.CreateKeyRequest> request) async {
+    return createKey(call, await request);
+  }
+
+  $async.Future<$0.DeleteKeyResponse> deleteKey_Pre($grpc.ServiceCall call, $async.Future<$0.DeleteKeyRequest> request) async {
+    return deleteKey(call, await request);
+  }
+
+  $async.Future<$0.ListKeysResponse> listKeys_Pre($grpc.ServiceCall call, $async.Future<$0.ListKeysRequest> request) async {
+    return listKeys(call, await request);
+  }
+
+  $async.Future<$0.RotateKeyResponse> rotateKey_Pre($grpc.ServiceCall call, $async.Future<$0.RotateKeyRequest> request) async {
+    return rotateKey(call, await request);
+  }
+
   $async.Future<$0.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $0.GetUserIDByEmailRequest request);
   $async.Future<$0.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $0.CreateOrganizationRequest request);
   $async.Future<$0.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $0.ListOrganizationsRequest request);
@@ -1149,6 +1244,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$0.UpdateRobotPartResponse> updateRobotPart($grpc.ServiceCall call, $0.UpdateRobotPartRequest request);
   $async.Future<$0.NewRobotPartResponse> newRobotPart($grpc.ServiceCall call, $0.NewRobotPartRequest request);
   $async.Future<$0.DeleteRobotPartResponse> deleteRobotPart($grpc.ServiceCall call, $0.DeleteRobotPartRequest request);
+  $async.Future<$0.GetRobotAPIKeysResponse> getRobotAPIKeys($grpc.ServiceCall call, $0.GetRobotAPIKeysRequest request);
   $async.Future<$0.MarkPartAsMainResponse> markPartAsMain($grpc.ServiceCall call, $0.MarkPartAsMainRequest request);
   $async.Future<$0.MarkPartForRestartResponse> markPartForRestart($grpc.ServiceCall call, $0.MarkPartForRestartRequest request);
   $async.Future<$0.CreateRobotPartSecretResponse> createRobotPartSecret($grpc.ServiceCall call, $0.CreateRobotPartSecretRequest request);
@@ -1172,4 +1268,8 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$0.UploadModuleFileResponse> uploadModuleFile($grpc.ServiceCall call, $async.Stream<$0.UploadModuleFileRequest> request);
   $async.Future<$0.GetModuleResponse> getModule($grpc.ServiceCall call, $0.GetModuleRequest request);
   $async.Future<$0.ListModulesResponse> listModules($grpc.ServiceCall call, $0.ListModulesRequest request);
+  $async.Future<$0.CreateKeyResponse> createKey($grpc.ServiceCall call, $0.CreateKeyRequest request);
+  $async.Future<$0.DeleteKeyResponse> deleteKey($grpc.ServiceCall call, $0.DeleteKeyRequest request);
+  $async.Future<$0.ListKeysResponse> listKeys($grpc.ServiceCall call, $0.ListKeysRequest request);
+  $async.Future<$0.RotateKeyResponse> rotateKey($grpc.ServiceCall call, $0.RotateKeyRequest request);
 }

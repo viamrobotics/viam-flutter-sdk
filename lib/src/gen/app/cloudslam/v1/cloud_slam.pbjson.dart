@@ -17,25 +17,62 @@ import 'dart:typed_data' as $typed_data;
 const StartMappingSessionRequest$json = {
   '1': 'StartMappingSessionRequest',
   '2': [
-    {'1': 'slam_config', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'slamConfig'},
-    {'1': 'slam_version', '3': 2, '4': 1, '5': 9, '10': 'slamVersion'},
+    {'1': 'slam_version', '3': 1, '4': 1, '5': 9, '10': 'slamVersion'},
+    {'1': 'viam_server_version', '3': 2, '4': 1, '5': 9, '10': 'viamServerVersion'},
     {'1': 'map_name', '3': 3, '4': 1, '5': 9, '10': 'mapName'},
     {'1': 'organization_id', '3': 4, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'location_id', '3': 5, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'robot_id', '3': 6, '4': 1, '5': 9, '10': 'robotId'},
-    {'1': 'viam_server_version', '3': 7, '4': 1, '5': 9, '10': 'viamServerVersion'},
-    {'1': 'is_online', '3': 8, '4': 1, '5': 8, '10': 'isOnline'},
+    {'1': 'capture_interval', '3': 7, '4': 1, '5': 11, '6': '.viam.app.cloudslam.v1.CaptureInterval', '10': 'captureInterval'},
+    {'1': 'sensors', '3': 8, '4': 3, '5': 11, '6': '.viam.app.cloudslam.v1.SensorInfo', '10': 'sensors'},
+    {'1': 'slam_algorithm_params', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'slamAlgorithmParams'},
+    {'1': 'existing_map_version', '3': 11, '4': 1, '5': 9, '10': 'existingMapVersion'},
   ],
 };
 
 /// Descriptor for `StartMappingSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List startMappingSessionRequestDescriptor = $convert.base64Decode(
-    'ChpTdGFydE1hcHBpbmdTZXNzaW9uUmVxdWVzdBI4CgtzbGFtX2NvbmZpZxgBIAEoCzIXLmdvb2'
-    'dsZS5wcm90b2J1Zi5TdHJ1Y3RSCnNsYW1Db25maWcSIQoMc2xhbV92ZXJzaW9uGAIgASgJUgtz'
-    'bGFtVmVyc2lvbhIZCghtYXBfbmFtZRgDIAEoCVIHbWFwTmFtZRInCg9vcmdhbml6YXRpb25faW'
-    'QYBCABKAlSDm9yZ2FuaXphdGlvbklkEh8KC2xvY2F0aW9uX2lkGAUgASgJUgpsb2NhdGlvbklk'
-    'EhkKCHJvYm90X2lkGAYgASgJUgdyb2JvdElkEi4KE3ZpYW1fc2VydmVyX3ZlcnNpb24YByABKA'
-    'lSEXZpYW1TZXJ2ZXJWZXJzaW9uEhsKCWlzX29ubGluZRgIIAEoCFIIaXNPbmxpbmU=');
+    'ChpTdGFydE1hcHBpbmdTZXNzaW9uUmVxdWVzdBIhCgxzbGFtX3ZlcnNpb24YASABKAlSC3NsYW'
+    '1WZXJzaW9uEi4KE3ZpYW1fc2VydmVyX3ZlcnNpb24YAiABKAlSEXZpYW1TZXJ2ZXJWZXJzaW9u'
+    'EhkKCG1hcF9uYW1lGAMgASgJUgdtYXBOYW1lEicKD29yZ2FuaXphdGlvbl9pZBgEIAEoCVIOb3'
+    'JnYW5pemF0aW9uSWQSHwoLbG9jYXRpb25faWQYBSABKAlSCmxvY2F0aW9uSWQSGQoIcm9ib3Rf'
+    'aWQYBiABKAlSB3JvYm90SWQSUQoQY2FwdHVyZV9pbnRlcnZhbBgHIAEoCzImLnZpYW0uYXBwLm'
+    'Nsb3Vkc2xhbS52MS5DYXB0dXJlSW50ZXJ2YWxSD2NhcHR1cmVJbnRlcnZhbBI7CgdzZW5zb3Jz'
+    'GAggAygLMiEudmlhbS5hcHAuY2xvdWRzbGFtLnYxLlNlbnNvckluZm9SB3NlbnNvcnMSSwoVc2'
+    'xhbV9hbGdvcml0aG1fcGFyYW1zGAogASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFITc2xh'
+    'bUFsZ29yaXRobVBhcmFtcxIwChRleGlzdGluZ19tYXBfdmVyc2lvbhgLIAEoCVISZXhpc3Rpbm'
+    'dNYXBWZXJzaW9u');
+
+@$core.Deprecated('Use sensorInfoDescriptor instead')
+const SensorInfo$json = {
+  '1': 'SensorInfo',
+  '2': [
+    {'1': 'source_component_name', '3': 1, '4': 1, '5': 9, '10': 'sourceComponentName'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'data_frequency_hz', '3': 3, '4': 1, '5': 9, '10': 'dataFrequencyHz'},
+  ],
+};
+
+/// Descriptor for `SensorInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sensorInfoDescriptor = $convert.base64Decode(
+    'CgpTZW5zb3JJbmZvEjIKFXNvdXJjZV9jb21wb25lbnRfbmFtZRgBIAEoCVITc291cmNlQ29tcG'
+    '9uZW50TmFtZRISCgR0eXBlGAIgASgJUgR0eXBlEioKEWRhdGFfZnJlcXVlbmN5X2h6GAMgASgJ'
+    'Ug9kYXRhRnJlcXVlbmN5SHo=');
+
+@$core.Deprecated('Use captureIntervalDescriptor instead')
+const CaptureInterval$json = {
+  '1': 'CaptureInterval',
+  '2': [
+    {'1': 'start_time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
+    {'1': 'end_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endTime'},
+  ],
+};
+
+/// Descriptor for `CaptureInterval`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List captureIntervalDescriptor = $convert.base64Decode(
+    'Cg9DYXB0dXJlSW50ZXJ2YWwSOQoKc3RhcnRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBSCXN0YXJ0VGltZRI1CghlbmRfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1'
+    'Zi5UaW1lc3RhbXBSB2VuZFRpbWU=');
 
 @$core.Deprecated('Use startMappingSessionResponseDescriptor instead')
 const StartMappingSessionResponse$json = {
@@ -191,6 +228,7 @@ const UpdateMappingSessionMetadataByIDRequest$json = {
     {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
     {'1': 'end_status', '3': 2, '4': 1, '5': 9, '10': 'endStatus'},
     {'1': 'time_cloud_run_job_ended', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCloudRunJobEnded'},
+    {'1': 'error_msg', '3': 4, '4': 1, '5': 9, '10': 'errorMsg'},
   ],
 };
 
@@ -199,7 +237,7 @@ final $typed_data.Uint8List updateMappingSessionMetadataByIDRequestDescriptor = 
     'CidVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlcXVlc3QSHQoKc2Vzc2lvbl9pZB'
     'gBIAEoCVIJc2Vzc2lvbklkEh0KCmVuZF9zdGF0dXMYAiABKAlSCWVuZFN0YXR1cxJSChh0aW1l'
     'X2Nsb3VkX3J1bl9qb2JfZW5kZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUh'
-    'R0aW1lQ2xvdWRSdW5Kb2JFbmRlZA==');
+    'R0aW1lQ2xvdWRSdW5Kb2JFbmRlZBIbCgllcnJvcl9tc2cYBCABKAlSCGVycm9yTXNn');
 
 @$core.Deprecated('Use updateMappingSessionMetadataByIDResponseDescriptor instead')
 const UpdateMappingSessionMetadataByIDResponse$json = {
@@ -227,6 +265,7 @@ const MappingMetadata$json = {
     {'1': 'map_name', '3': 11, '4': 1, '5': 9, '10': 'mapName'},
     {'1': 'slam_version', '3': 12, '4': 1, '5': 9, '10': 'slamVersion'},
     {'1': 'config', '3': 13, '4': 1, '5': 9, '10': 'config'},
+    {'1': 'error_msg', '3': 14, '4': 1, '5': 9, '10': 'errorMsg'},
   ],
 };
 
@@ -243,5 +282,5 @@ final $typed_data.Uint8List mappingMetadataDescriptor = $convert.base64Decode(
     'UgllbmRTdGF0dXMSJwoQY2xvdWRfcnVuX2pvYl9pZBgJIAEoCVINY2xvdWRSdW5Kb2JJZBIuCh'
     'N2aWFtX3NlcnZlcl92ZXJzaW9uGAogASgJUhF2aWFtU2VydmVyVmVyc2lvbhIZCghtYXBfbmFt'
     'ZRgLIAEoCVIHbWFwTmFtZRIhCgxzbGFtX3ZlcnNpb24YDCABKAlSC3NsYW1WZXJzaW9uEhYKBm'
-    'NvbmZpZxgNIAEoCVIGY29uZmln');
+    'NvbmZpZxgNIAEoCVIGY29uZmlnEhsKCWVycm9yX21zZxgOIAEoCVIIZXJyb3JNc2c=');
 
