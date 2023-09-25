@@ -111,7 +111,7 @@ enum ViamButtonSizeClass {
   EdgeInsets get padding {
     switch (this) {
       case xs:
-        return const EdgeInsets.symmetric(vertical: 0, horizontal: 0);
+        return const EdgeInsets.symmetric(vertical: 4, horizontal: 8);
       case small:
         return const EdgeInsets.symmetric(vertical: 16, horizontal: 20);
       case medium:
@@ -147,7 +147,7 @@ class ViamButton extends StatelessWidget {
   final String text;
 
   /// The action that should be performed when the button is pressed
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   /// The icon to display
   final IconData? icon;
@@ -183,8 +183,18 @@ class ViamButton extends StatelessWidget {
         fgColor = role.foregroundColor;
       }
       return mainStyle.copyWith(
-        backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-        foregroundColor: MaterialStatePropertyAll(fgColor),
+        backgroundColor: MaterialStateColor.resolveWith((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return Colors.grey;
+          }
+          return Colors.transparent;
+        }),
+        foregroundColor: MaterialStateColor.resolveWith((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return fgColor.withOpacity(0.5);
+          }
+          return fgColor;
+        }),
       );
     }
     if (style == ViamButtonFillStyle.outline) {
@@ -197,14 +207,33 @@ class ViamButton extends StatelessWidget {
         outlineColor = role.foregroundColor;
       }
       return mainStyle.copyWith(
-        backgroundColor: MaterialStatePropertyAll(role.backgroundColor.withAlpha(alpha)),
-        foregroundColor: MaterialStatePropertyAll(fgColor),
-        side: MaterialStatePropertyAll(BorderSide(color: outlineColor)),
-      );
+          backgroundColor: MaterialStatePropertyAll(role.backgroundColor.withAlpha(alpha)),
+          foregroundColor: MaterialStateColor.resolveWith((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return fgColor.withOpacity(0.5);
+            }
+            return fgColor;
+          }),
+          side: MaterialStateBorderSide.resolveWith((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return BorderSide(color: outlineColor.withOpacity(0.25));
+            }
+            return BorderSide(color: outlineColor);
+          }));
     }
     return mainStyle.copyWith(
-      backgroundColor: MaterialStatePropertyAll(role.backgroundColor),
-      foregroundColor: MaterialStatePropertyAll(role.foregroundColor),
+      backgroundColor: MaterialStateColor.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) {
+          return role.backgroundColor.withOpacity(0.5);
+        }
+        return role.backgroundColor;
+      }),
+      foregroundColor: MaterialStateColor.resolveWith((states) {
+        if (states.contains(MaterialState.disabled)) {
+          return role.foregroundColor.withOpacity(0.5);
+        }
+        return role.foregroundColor;
+      }),
     );
   }
 
