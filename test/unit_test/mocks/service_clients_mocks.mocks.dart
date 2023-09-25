@@ -892,6 +892,38 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
         ),
       ) as _i4.ResponseFuture<_i11.GetOrganizationResponse>);
   @override
+  _i4.ResponseFuture<_i11.GetOrganizationNamespaceAvailabilityResponse>
+      getOrganizationNamespaceAvailability(
+    _i11.GetOrganizationNamespaceAvailabilityRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #getOrganizationNamespaceAvailability,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+                _i11.GetOrganizationNamespaceAvailabilityResponse>(
+              this,
+              Invocation.method(
+                #getOrganizationNamespaceAvailability,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+                _i11.GetOrganizationNamespaceAvailabilityResponse>(
+              this,
+              Invocation.method(
+                #getOrganizationNamespaceAvailability,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<
+              _i11.GetOrganizationNamespaceAvailabilityResponse>);
+  @override
   _i4.ResponseFuture<_i11.UpdateOrganizationResponse> updateOrganization(
     _i11.UpdateOrganizationRequest? request, {
     _i3.CallOptions? options,
@@ -1011,6 +1043,38 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.CreateOrganizationInviteResponse>);
+  @override
+  _i4.ResponseFuture<_i11.UpdateOrganizationInviteAuthorizationsResponse>
+      updateOrganizationInviteAuthorizations(
+    _i11.UpdateOrganizationInviteAuthorizationsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #updateOrganizationInviteAuthorizations,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+                _i11.UpdateOrganizationInviteAuthorizationsResponse>(
+              this,
+              Invocation.method(
+                #updateOrganizationInviteAuthorizations,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+                _i11.UpdateOrganizationInviteAuthorizationsResponse>(
+              this,
+              Invocation.method(
+                #updateOrganizationInviteAuthorizations,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<
+              _i11.UpdateOrganizationInviteAuthorizationsResponse>);
   @override
   _i4.ResponseFuture<_i11.DeleteOrganizationMemberResponse>
       deleteOrganizationMember(
@@ -1684,6 +1748,35 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
         ),
       ) as _i4.ResponseFuture<_i11.DeleteRobotPartResponse>);
   @override
+  _i4.ResponseFuture<_i11.GetRobotAPIKeysResponse> getRobotAPIKeys(
+    _i11.GetRobotAPIKeysRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getRobotAPIKeys,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i11.GetRobotAPIKeysResponse>(
+          this,
+          Invocation.method(
+            #getRobotAPIKeys,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i11.GetRobotAPIKeysResponse>(
+          this,
+          Invocation.method(
+            #getRobotAPIKeys,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i11.GetRobotAPIKeysResponse>);
+  @override
   _i4.ResponseFuture<_i11.MarkPartAsMainResponse> markPartAsMain(
     _i11.MarkPartAsMainRequest? request, {
     _i3.CallOptions? options,
@@ -2117,6 +2210,35 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
         ),
       ) as _i4.ResponseFuture<_i11.RemoveRoleResponse>);
   @override
+  _i4.ResponseFuture<_i11.ChangeRoleResponse> changeRole(
+    _i11.ChangeRoleRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #changeRole,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i11.ChangeRoleResponse>(
+          this,
+          Invocation.method(
+            #changeRole,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i11.ChangeRoleResponse>(
+          this,
+          Invocation.method(
+            #changeRole,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i11.ChangeRoleResponse>);
+  @override
   _i4.ResponseFuture<_i11.ListAuthorizationsResponse> listAuthorizations(
     _i11.ListAuthorizationsRequest? request, {
     _i3.CallOptions? options,
@@ -2319,6 +2441,121 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListModulesResponse>);
+  @override
+  _i4.ResponseFuture<_i11.CreateKeyResponse> createKey(
+    _i11.CreateKeyRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #createKey,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i11.CreateKeyResponse>(
+          this,
+          Invocation.method(
+            #createKey,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i11.CreateKeyResponse>(
+          this,
+          Invocation.method(
+            #createKey,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i11.CreateKeyResponse>);
+  @override
+  _i4.ResponseFuture<_i11.DeleteKeyResponse> deleteKey(
+    _i11.DeleteKeyRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteKey,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i11.DeleteKeyResponse>(
+          this,
+          Invocation.method(
+            #deleteKey,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i11.DeleteKeyResponse>(
+          this,
+          Invocation.method(
+            #deleteKey,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i11.DeleteKeyResponse>);
+  @override
+  _i4.ResponseFuture<_i11.ListKeysResponse> listKeys(
+    _i11.ListKeysRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listKeys,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i11.ListKeysResponse>(
+          this,
+          Invocation.method(
+            #listKeys,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<_i11.ListKeysResponse>(
+          this,
+          Invocation.method(
+            #listKeys,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i11.ListKeysResponse>);
+  @override
+  _i4.ResponseFuture<_i11.RotateKeyResponse> rotateKey(
+    _i11.RotateKeyRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #rotateKey,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i11.RotateKeyResponse>(
+          this,
+          Invocation.method(
+            #rotateKey,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i11.RotateKeyResponse>(
+          this,
+          Invocation.method(
+            #rotateKey,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i11.RotateKeyResponse>);
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -2527,36 +2764,34 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
         ),
       ) as _i4.ResponseFuture<_i13.BinaryDataByIDsResponse>);
   @override
-  _i4.ResponseFuture<_i13.DeleteTabularDataByFilterResponse>
-      deleteTabularDataByFilter(
-    _i13.DeleteTabularDataByFilterRequest? request, {
+  _i4.ResponseFuture<_i13.DeleteTabularDataResponse> deleteTabularData(
+    _i13.DeleteTabularDataRequest? request, {
     _i3.CallOptions? options,
   }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #deleteTabularDataByFilter,
-              [request],
-              {#options: options},
-            ),
-            returnValue:
-                _FakeResponseFuture_2<_i13.DeleteTabularDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #deleteTabularDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i13.DeleteTabularDataByFilterResponse>(
-              this,
-              Invocation.method(
-                #deleteTabularDataByFilter,
-                [request],
-                {#options: options},
-              ),
-            ),
-          ) as _i4.ResponseFuture<_i13.DeleteTabularDataByFilterResponse>);
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteTabularData,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.DeleteTabularDataResponse>(
+          this,
+          Invocation.method(
+            #deleteTabularData,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.DeleteTabularDataResponse>(
+          this,
+          Invocation.method(
+            #deleteTabularData,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.DeleteTabularDataResponse>);
   @override
   _i4.ResponseFuture<_i13.DeleteBinaryDataByFilterResponse>
       deleteBinaryDataByFilter(
@@ -2865,6 +3100,127 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.BoundingBoxLabelsByFilterResponse>);
+  @override
+  _i4.ResponseFuture<_i13.GetDatabaseConnectionResponse> getDatabaseConnection(
+    _i13.GetDatabaseConnectionRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getDatabaseConnection,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.GetDatabaseConnectionResponse>(
+          this,
+          Invocation.method(
+            #getDatabaseConnection,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.GetDatabaseConnectionResponse>(
+          this,
+          Invocation.method(
+            #getDatabaseConnection,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.GetDatabaseConnectionResponse>);
+  @override
+  _i4.ResponseFuture<_i13.ConfigureDatabaseUserResponse> configureDatabaseUser(
+    _i13.ConfigureDatabaseUserRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #configureDatabaseUser,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.ConfigureDatabaseUserResponse>(
+          this,
+          Invocation.method(
+            #configureDatabaseUser,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.ConfigureDatabaseUserResponse>(
+          this,
+          Invocation.method(
+            #configureDatabaseUser,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.ConfigureDatabaseUserResponse>);
+  @override
+  _i4.ResponseFuture<_i13.AddBinaryDataToDatasetByIDsResponse>
+      addBinaryDataToDatasetByIDs(
+    _i13.AddBinaryDataToDatasetByIDsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #addBinaryDataToDatasetByIDs,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.AddBinaryDataToDatasetByIDsResponse>(
+              this,
+              Invocation.method(
+                #addBinaryDataToDatasetByIDs,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.AddBinaryDataToDatasetByIDsResponse>(
+              this,
+              Invocation.method(
+                #addBinaryDataToDatasetByIDs,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<_i13.AddBinaryDataToDatasetByIDsResponse>);
+  @override
+  _i4.ResponseFuture<_i13.RemoveBinaryDataFromDatasetByIDsResponse>
+      removeBinaryDataFromDatasetByIDs(
+    _i13.RemoveBinaryDataFromDatasetByIDsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #removeBinaryDataFromDatasetByIDs,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+                _i13.RemoveBinaryDataFromDatasetByIDsResponse>(
+              this,
+              Invocation.method(
+                #removeBinaryDataFromDatasetByIDs,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+                _i13.RemoveBinaryDataFromDatasetByIDsResponse>(
+              this,
+              Invocation.method(
+                #removeBinaryDataFromDatasetByIDs,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4
+              .ResponseFuture<_i13.RemoveBinaryDataFromDatasetByIDsResponse>);
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
