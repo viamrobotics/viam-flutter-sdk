@@ -14,7 +14,7 @@ API_KEY=<API KEY>
 
 or using location secrets (deprecated, please prefer using API keys!):
 
-``
+```
 ROBOT_LOCATION=<ROBOT_LOCATION_URI>
 LOCATION_SECRET=<ROBOT_LOCATION_SECRET>
 ```
