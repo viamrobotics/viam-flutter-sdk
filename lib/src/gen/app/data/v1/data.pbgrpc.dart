@@ -33,10 +33,6 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/BinaryDataByIDs',
       ($0.BinaryDataByIDsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.BinaryDataByIDsResponse.fromBuffer(value));
-  static final _$deleteTabularDataByFilter = $grpc.ClientMethod<$0.DeleteTabularDataByFilterRequest, $0.DeleteTabularDataByFilterResponse>(
-      '/viam.app.data.v1.DataService/DeleteTabularDataByFilter',
-      ($0.DeleteTabularDataByFilterRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.DeleteTabularDataByFilterResponse.fromBuffer(value));
   static final _$deleteTabularData = $grpc.ClientMethod<$0.DeleteTabularDataRequest, $0.DeleteTabularDataResponse>(
       '/viam.app.data.v1.DataService/DeleteTabularData',
       ($0.DeleteTabularDataRequest value) => value.writeToBuffer(),
@@ -81,6 +77,22 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/BoundingBoxLabelsByFilter',
       ($0.BoundingBoxLabelsByFilterRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.BoundingBoxLabelsByFilterResponse.fromBuffer(value));
+  static final _$getDatabaseConnection = $grpc.ClientMethod<$0.GetDatabaseConnectionRequest, $0.GetDatabaseConnectionResponse>(
+      '/viam.app.data.v1.DataService/GetDatabaseConnection',
+      ($0.GetDatabaseConnectionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetDatabaseConnectionResponse.fromBuffer(value));
+  static final _$configureDatabaseUser = $grpc.ClientMethod<$0.ConfigureDatabaseUserRequest, $0.ConfigureDatabaseUserResponse>(
+      '/viam.app.data.v1.DataService/ConfigureDatabaseUser',
+      ($0.ConfigureDatabaseUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.ConfigureDatabaseUserResponse.fromBuffer(value));
+  static final _$addBinaryDataToDatasetByIDs = $grpc.ClientMethod<$0.AddBinaryDataToDatasetByIDsRequest, $0.AddBinaryDataToDatasetByIDsResponse>(
+      '/viam.app.data.v1.DataService/AddBinaryDataToDatasetByIDs',
+      ($0.AddBinaryDataToDatasetByIDsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.AddBinaryDataToDatasetByIDsResponse.fromBuffer(value));
+  static final _$removeBinaryDataFromDatasetByIDs = $grpc.ClientMethod<$0.RemoveBinaryDataFromDatasetByIDsRequest, $0.RemoveBinaryDataFromDatasetByIDsResponse>(
+      '/viam.app.data.v1.DataService/RemoveBinaryDataFromDatasetByIDs',
+      ($0.RemoveBinaryDataFromDatasetByIDsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.RemoveBinaryDataFromDatasetByIDsResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -98,10 +110,6 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.BinaryDataByIDsResponse> binaryDataByIDs($0.BinaryDataByIDsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$binaryDataByIDs, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.DeleteTabularDataByFilterResponse> deleteTabularDataByFilter($0.DeleteTabularDataByFilterRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$deleteTabularDataByFilter, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.DeleteTabularDataResponse> deleteTabularData($0.DeleteTabularDataRequest request, {$grpc.CallOptions? options}) {
@@ -147,6 +155,22 @@ class DataServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.BoundingBoxLabelsByFilterResponse> boundingBoxLabelsByFilter($0.BoundingBoxLabelsByFilterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$boundingBoxLabelsByFilter, request, options: options);
   }
+
+  $grpc.ResponseFuture<$0.GetDatabaseConnectionResponse> getDatabaseConnection($0.GetDatabaseConnectionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getDatabaseConnection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfigureDatabaseUserResponse> configureDatabaseUser($0.ConfigureDatabaseUserRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$configureDatabaseUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs($0.AddBinaryDataToDatasetByIDsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addBinaryDataToDatasetByIDs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($0.RemoveBinaryDataFromDatasetByIDsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeBinaryDataFromDatasetByIDs, request, options: options);
+  }
 }
 
 @$pb.GrpcServiceName('viam.app.data.v1.DataService')
@@ -175,13 +199,6 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.BinaryDataByIDsRequest.fromBuffer(value),
         ($0.BinaryDataByIDsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.DeleteTabularDataByFilterRequest, $0.DeleteTabularDataByFilterResponse>(
-        'DeleteTabularDataByFilter',
-        deleteTabularDataByFilter_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.DeleteTabularDataByFilterRequest.fromBuffer(value),
-        ($0.DeleteTabularDataByFilterResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DeleteTabularDataRequest, $0.DeleteTabularDataResponse>(
         'DeleteTabularData',
         deleteTabularData_Pre,
@@ -259,6 +276,34 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.BoundingBoxLabelsByFilterRequest.fromBuffer(value),
         ($0.BoundingBoxLabelsByFilterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDatabaseConnectionRequest, $0.GetDatabaseConnectionResponse>(
+        'GetDatabaseConnection',
+        getDatabaseConnection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetDatabaseConnectionRequest.fromBuffer(value),
+        ($0.GetDatabaseConnectionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfigureDatabaseUserRequest, $0.ConfigureDatabaseUserResponse>(
+        'ConfigureDatabaseUser',
+        configureDatabaseUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ConfigureDatabaseUserRequest.fromBuffer(value),
+        ($0.ConfigureDatabaseUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddBinaryDataToDatasetByIDsRequest, $0.AddBinaryDataToDatasetByIDsResponse>(
+        'AddBinaryDataToDatasetByIDs',
+        addBinaryDataToDatasetByIDs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AddBinaryDataToDatasetByIDsRequest.fromBuffer(value),
+        ($0.AddBinaryDataToDatasetByIDsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveBinaryDataFromDatasetByIDsRequest, $0.RemoveBinaryDataFromDatasetByIDsResponse>(
+        'RemoveBinaryDataFromDatasetByIDs',
+        removeBinaryDataFromDatasetByIDs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
+        ($0.RemoveBinaryDataFromDatasetByIDsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.TabularDataByFilterResponse> tabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$0.TabularDataByFilterRequest> request) async {
@@ -271,10 +316,6 @@ abstract class DataServiceBase extends $grpc.Service {
 
   $async.Future<$0.BinaryDataByIDsResponse> binaryDataByIDs_Pre($grpc.ServiceCall call, $async.Future<$0.BinaryDataByIDsRequest> request) async {
     return binaryDataByIDs(call, await request);
-  }
-
-  $async.Future<$0.DeleteTabularDataByFilterResponse> deleteTabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$0.DeleteTabularDataByFilterRequest> request) async {
-    return deleteTabularDataByFilter(call, await request);
   }
 
   $async.Future<$0.DeleteTabularDataResponse> deleteTabularData_Pre($grpc.ServiceCall call, $async.Future<$0.DeleteTabularDataRequest> request) async {
@@ -321,10 +362,25 @@ abstract class DataServiceBase extends $grpc.Service {
     return boundingBoxLabelsByFilter(call, await request);
   }
 
+  $async.Future<$0.GetDatabaseConnectionResponse> getDatabaseConnection_Pre($grpc.ServiceCall call, $async.Future<$0.GetDatabaseConnectionRequest> request) async {
+    return getDatabaseConnection(call, await request);
+  }
+
+  $async.Future<$0.ConfigureDatabaseUserResponse> configureDatabaseUser_Pre($grpc.ServiceCall call, $async.Future<$0.ConfigureDatabaseUserRequest> request) async {
+    return configureDatabaseUser(call, await request);
+  }
+
+  $async.Future<$0.AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs_Pre($grpc.ServiceCall call, $async.Future<$0.AddBinaryDataToDatasetByIDsRequest> request) async {
+    return addBinaryDataToDatasetByIDs(call, await request);
+  }
+
+  $async.Future<$0.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs_Pre($grpc.ServiceCall call, $async.Future<$0.RemoveBinaryDataFromDatasetByIDsRequest> request) async {
+    return removeBinaryDataFromDatasetByIDs(call, await request);
+  }
+
   $async.Future<$0.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $0.TabularDataByFilterRequest request);
   $async.Future<$0.BinaryDataByFilterResponse> binaryDataByFilter($grpc.ServiceCall call, $0.BinaryDataByFilterRequest request);
   $async.Future<$0.BinaryDataByIDsResponse> binaryDataByIDs($grpc.ServiceCall call, $0.BinaryDataByIDsRequest request);
-  $async.Future<$0.DeleteTabularDataByFilterResponse> deleteTabularDataByFilter($grpc.ServiceCall call, $0.DeleteTabularDataByFilterRequest request);
   $async.Future<$0.DeleteTabularDataResponse> deleteTabularData($grpc.ServiceCall call, $0.DeleteTabularDataRequest request);
   $async.Future<$0.DeleteBinaryDataByFilterResponse> deleteBinaryDataByFilter($grpc.ServiceCall call, $0.DeleteBinaryDataByFilterRequest request);
   $async.Future<$0.DeleteBinaryDataByIDsResponse> deleteBinaryDataByIDs($grpc.ServiceCall call, $0.DeleteBinaryDataByIDsRequest request);
@@ -336,4 +392,8 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$0.AddBoundingBoxToImageByIDResponse> addBoundingBoxToImageByID($grpc.ServiceCall call, $0.AddBoundingBoxToImageByIDRequest request);
   $async.Future<$0.RemoveBoundingBoxFromImageByIDResponse> removeBoundingBoxFromImageByID($grpc.ServiceCall call, $0.RemoveBoundingBoxFromImageByIDRequest request);
   $async.Future<$0.BoundingBoxLabelsByFilterResponse> boundingBoxLabelsByFilter($grpc.ServiceCall call, $0.BoundingBoxLabelsByFilterRequest request);
+  $async.Future<$0.GetDatabaseConnectionResponse> getDatabaseConnection($grpc.ServiceCall call, $0.GetDatabaseConnectionRequest request);
+  $async.Future<$0.ConfigureDatabaseUserResponse> configureDatabaseUser($grpc.ServiceCall call, $0.ConfigureDatabaseUserRequest request);
+  $async.Future<$0.AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs($grpc.ServiceCall call, $0.AddBinaryDataToDatasetByIDsRequest request);
+  $async.Future<$0.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($grpc.ServiceCall call, $0.RemoveBinaryDataFromDatasetByIDsRequest request);
 }

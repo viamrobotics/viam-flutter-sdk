@@ -184,7 +184,7 @@ const OrganizationInvite$json = {
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
-    {'1': 'robot_count', '3': 4, '4': 1, '5': 3, '10': 'robotCount'},
+    {'1': 'authorizations', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
   ],
 };
 
@@ -192,8 +192,8 @@ const OrganizationInvite$json = {
 final $typed_data.Uint8List organizationInviteDescriptor = $convert.base64Decode(
     'ChJPcmdhbml6YXRpb25JbnZpdGUSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcmdhbml6YX'
     'Rpb25JZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSOQoKY3JlYXRlZF9vbhgDIAEoCzIaLmdvb2ds'
-    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbhIfCgtyb2JvdF9jb3VudBgEIAEoA1IKcm'
-    '9ib3RDb3VudA==');
+    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRPbhJCCg5hdXRob3JpemF0aW9ucxgEIAMoCz'
+    'IaLnZpYW0uYXBwLnYxLkF1dGhvcml6YXRpb25SDmF1dGhvcml6YXRpb25z');
 
 @$core.Deprecated('Use createOrganizationRequestDescriptor instead')
 const CreateOrganizationRequest$json = {
@@ -1165,6 +1165,48 @@ const DeleteRobotPartRequest$json = {
 final $typed_data.Uint8List deleteRobotPartRequestDescriptor = $convert.base64Decode(
     'ChZEZWxldGVSb2JvdFBhcnRSZXF1ZXN0EhcKB3BhcnRfaWQYASABKAlSBnBhcnRJZA==');
 
+@$core.Deprecated('Use getRobotAPIKeysRequestDescriptor instead')
+const GetRobotAPIKeysRequest$json = {
+  '1': 'GetRobotAPIKeysRequest',
+  '2': [
+    {'1': 'robot_id', '3': 1, '4': 1, '5': 9, '10': 'robotId'},
+  ],
+};
+
+/// Descriptor for `GetRobotAPIKeysRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRobotAPIKeysRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRSb2JvdEFQSUtleXNSZXF1ZXN0EhkKCHJvYm90X2lkGAEgASgJUgdyb2JvdElk');
+
+@$core.Deprecated('Use aPIKeyDescriptor instead')
+const APIKey$json = {
+  '1': 'APIKey',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'key', '3': 2, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'created_on', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+  ],
+};
+
+/// Descriptor for `APIKey`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List aPIKeyDescriptor = $convert.base64Decode(
+    'CgZBUElLZXkSDgoCaWQYASABKAlSAmlkEhAKA2tleRgCIAEoCVIDa2V5EhIKBG5hbWUYAyABKA'
+    'lSBG5hbWUSOQoKY3JlYXRlZF9vbhgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'CWNyZWF0ZWRPbg==');
+
+@$core.Deprecated('Use getRobotAPIKeysResponseDescriptor instead')
+const GetRobotAPIKeysResponse$json = {
+  '1': 'GetRobotAPIKeysResponse',
+  '2': [
+    {'1': 'api_keys', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.APIKey', '10': 'apiKeys'},
+  ],
+};
+
+/// Descriptor for `GetRobotAPIKeysResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRobotAPIKeysResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRSb2JvdEFQSUtleXNSZXNwb25zZRIuCghhcGlfa2V5cxgBIAMoCzITLnZpYW0uYXBwLn'
+    'YxLkFQSUtleVIHYXBpS2V5cw==');
+
 @$core.Deprecated('Use deleteRobotPartResponseDescriptor instead')
 const DeleteRobotPartResponse$json = {
   '1': 'DeleteRobotPartResponse',
@@ -1542,6 +1584,7 @@ const Authorization$json = {
     {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
     {'1': 'identity_id', '3': 5, '4': 1, '5': 9, '10': 'identityId'},
     {'1': 'organization_id', '3': 6, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'identity_type', '3': 7, '4': 1, '5': 9, '10': 'identityType'},
   ],
 };
 
@@ -1551,7 +1594,8 @@ final $typed_data.Uint8List authorizationDescriptor = $convert.base64Decode(
     'lvblR5cGUSKQoQYXV0aG9yaXphdGlvbl9pZBgCIAEoCVIPYXV0aG9yaXphdGlvbklkEiMKDXJl'
     'c291cmNlX3R5cGUYAyABKAlSDHJlc291cmNlVHlwZRIfCgtyZXNvdXJjZV9pZBgEIAEoCVIKcm'
     'Vzb3VyY2VJZBIfCgtpZGVudGl0eV9pZBgFIAEoCVIKaWRlbnRpdHlJZBInCg9vcmdhbml6YXRp'
-    'b25faWQYBiABKAlSDm9yZ2FuaXphdGlvbklk');
+    'b25faWQYBiABKAlSDm9yZ2FuaXphdGlvbklkEiMKDWlkZW50aXR5X3R5cGUYByABKAlSDGlkZW'
+    '50aXR5VHlwZQ==');
 
 @$core.Deprecated('Use addRoleRequestDescriptor instead')
 const AddRoleRequest$json = {
@@ -1724,26 +1768,21 @@ const UpdateModuleRequest$json = {
   '1': 'UpdateModuleRequest',
   '2': [
     {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
-    {'1': 'organization_id', '3': 7, '4': 1, '5': 9, '9': 0, '10': 'organizationId', '17': true},
     {'1': 'visibility', '3': 2, '4': 1, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibility'},
     {'1': 'url', '3': 3, '4': 1, '5': 9, '10': 'url'},
     {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
     {'1': 'models', '3': 5, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 6, '4': 1, '5': 9, '10': 'entrypoint'},
   ],
-  '8': [
-    {'1': '_organization_id'},
-  ],
 };
 
 /// Descriptor for `UpdateModuleRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateModuleRequestDescriptor = $convert.base64Decode(
-    'ChNVcGRhdGVNb2R1bGVSZXF1ZXN0EhsKCW1vZHVsZV9pZBgBIAEoCVIIbW9kdWxlSWQSLAoPb3'
-    'JnYW5pemF0aW9uX2lkGAcgASgJSABSDm9yZ2FuaXphdGlvbklkiAEBEjcKCnZpc2liaWxpdHkY'
-    'AiABKA4yFy52aWFtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5EhAKA3VybBgDIAEoCV'
-    'IDdXJsEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIqCgZtb2RlbHMYBSADKAsy'
-    'Ei52aWFtLmFwcC52MS5Nb2RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYBiABKAlSCmVudHJ5cG'
-    '9pbnRCEgoQX29yZ2FuaXphdGlvbl9pZA==');
+    'ChNVcGRhdGVNb2R1bGVSZXF1ZXN0EhsKCW1vZHVsZV9pZBgBIAEoCVIIbW9kdWxlSWQSNwoKdm'
+    'lzaWJpbGl0eRgCIAEoDjIXLnZpYW0uYXBwLnYxLlZpc2liaWxpdHlSCnZpc2liaWxpdHkSEAoD'
+    'dXJsGAMgASgJUgN1cmwSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEioKBm1vZG'
+    'VscxgFIAMoCzISLnZpYW0uYXBwLnYxLk1vZGVsUgZtb2RlbHMSHgoKZW50cnlwb2ludBgGIAEo'
+    'CVIKZW50cnlwb2ludA==');
 
 @$core.Deprecated('Use updateModuleResponseDescriptor instead')
 const UpdateModuleResponse$json = {
@@ -1775,20 +1814,15 @@ const ModuleFileInfo$json = {
   '1': 'ModuleFileInfo',
   '2': [
     {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
-    {'1': 'organization_id', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'organizationId', '17': true},
     {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
     {'1': 'platform', '3': 3, '4': 1, '5': 9, '10': 'platform'},
-  ],
-  '8': [
-    {'1': '_organization_id'},
   ],
 };
 
 /// Descriptor for `ModuleFileInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moduleFileInfoDescriptor = $convert.base64Decode(
-    'Cg5Nb2R1bGVGaWxlSW5mbxIbCgltb2R1bGVfaWQYASABKAlSCG1vZHVsZUlkEiwKD29yZ2FuaX'
-    'phdGlvbl9pZBgEIAEoCUgAUg5vcmdhbml6YXRpb25JZIgBARIYCgd2ZXJzaW9uGAIgASgJUgd2'
-    'ZXJzaW9uEhoKCHBsYXRmb3JtGAMgASgJUghwbGF0Zm9ybUISChBfb3JnYW5pemF0aW9uX2lk');
+    'Cg5Nb2R1bGVGaWxlSW5mbxIbCgltb2R1bGVfaWQYASABKAlSCG1vZHVsZUlkEhgKB3ZlcnNpb2'
+    '4YAiABKAlSB3ZlcnNpb24SGgoIcGxhdGZvcm0YAyABKAlSCHBsYXRmb3Jt');
 
 @$core.Deprecated('Use uploadModuleFileRequestDescriptor instead')
 const UploadModuleFileRequest$json = {
@@ -1825,18 +1859,12 @@ const GetModuleRequest$json = {
   '1': 'GetModuleRequest',
   '2': [
     {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
-    {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'organizationId', '17': true},
-  ],
-  '8': [
-    {'1': '_organization_id'},
   ],
 };
 
 /// Descriptor for `GetModuleRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getModuleRequestDescriptor = $convert.base64Decode(
-    'ChBHZXRNb2R1bGVSZXF1ZXN0EhsKCW1vZHVsZV9pZBgBIAEoCVIIbW9kdWxlSWQSLAoPb3JnYW'
-    '5pemF0aW9uX2lkGAIgASgJSABSDm9yZ2FuaXphdGlvbklkiAEBQhIKEF9vcmdhbml6YXRpb25f'
-    'aWQ=');
+    'ChBHZXRNb2R1bGVSZXF1ZXN0EhsKCW1vZHVsZV9pZBgBIAEoCVIIbW9kdWxlSWQ=');
 
 @$core.Deprecated('Use getModuleResponseDescriptor instead')
 const GetModuleResponse$json = {
@@ -2005,4 +2033,136 @@ const ListOrganizationsByUserResponse$json = {
 final $typed_data.Uint8List listOrganizationsByUserResponseDescriptor = $convert.base64Decode(
     'Ch9MaXN0T3JnYW5pemF0aW9uc0J5VXNlclJlc3BvbnNlEisKBG9yZ3MYASADKAsyFy52aWFtLm'
     'FwcC52MS5PcmdEZXRhaWxzUgRvcmdz');
+
+@$core.Deprecated('Use createKeyRequestDescriptor instead')
+const CreateKeyRequest$json = {
+  '1': 'CreateKeyRequest',
+  '2': [
+    {'1': 'authorizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `CreateKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createKeyRequestDescriptor = $convert.base64Decode(
+    'ChBDcmVhdGVLZXlSZXF1ZXN0EkIKDmF1dGhvcml6YXRpb25zGAEgAygLMhoudmlhbS5hcHAudj'
+    'EuQXV0aG9yaXphdGlvblIOYXV0aG9yaXphdGlvbnMSEgoEbmFtZRgCIAEoCVIEbmFtZQ==');
+
+@$core.Deprecated('Use createKeyResponseDescriptor instead')
+const CreateKeyResponse$json = {
+  '1': 'CreateKeyResponse',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'id', '3': 2, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createKeyResponseDescriptor = $convert.base64Decode(
+    'ChFDcmVhdGVLZXlSZXNwb25zZRIQCgNrZXkYASABKAlSA2tleRIOCgJpZBgCIAEoCVICaWQ=');
+
+@$core.Deprecated('Use deleteKeyRequestDescriptor instead')
+const DeleteKeyRequest$json = {
+  '1': 'DeleteKeyRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteKeyRequestDescriptor = $convert.base64Decode(
+    'ChBEZWxldGVLZXlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use deleteKeyResponseDescriptor instead')
+const DeleteKeyResponse$json = {
+  '1': 'DeleteKeyResponse',
+};
+
+/// Descriptor for `DeleteKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteKeyResponseDescriptor = $convert.base64Decode(
+    'ChFEZWxldGVLZXlSZXNwb25zZQ==');
+
+@$core.Deprecated('Use authorizationDetailsDescriptor instead')
+const AuthorizationDetails$json = {
+  '1': 'AuthorizationDetails',
+  '2': [
+    {'1': 'authorization_type', '3': 1, '4': 1, '5': 9, '10': 'authorizationType'},
+    {'1': 'authorization_id', '3': 2, '4': 1, '5': 9, '10': 'authorizationId'},
+    {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
+    {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
+    {'1': 'org_id', '3': 5, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `AuthorizationDetails`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authorizationDetailsDescriptor = $convert.base64Decode(
+    'ChRBdXRob3JpemF0aW9uRGV0YWlscxItChJhdXRob3JpemF0aW9uX3R5cGUYASABKAlSEWF1dG'
+    'hvcml6YXRpb25UeXBlEikKEGF1dGhvcml6YXRpb25faWQYAiABKAlSD2F1dGhvcml6YXRpb25J'
+    'ZBIjCg1yZXNvdXJjZV90eXBlGAMgASgJUgxyZXNvdXJjZVR5cGUSHwoLcmVzb3VyY2VfaWQYBC'
+    'ABKAlSCnJlc291cmNlSWQSFQoGb3JnX2lkGAUgASgJUgVvcmdJZA==');
+
+@$core.Deprecated('Use aPIKeyWithAuthorizationsDescriptor instead')
+const APIKeyWithAuthorizations$json = {
+  '1': 'APIKeyWithAuthorizations',
+  '2': [
+    {'1': 'api_key', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.APIKey', '10': 'apiKey'},
+    {'1': 'authorizations', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.AuthorizationDetails', '10': 'authorizations'},
+  ],
+};
+
+/// Descriptor for `APIKeyWithAuthorizations`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List aPIKeyWithAuthorizationsDescriptor = $convert.base64Decode(
+    'ChhBUElLZXlXaXRoQXV0aG9yaXphdGlvbnMSLAoHYXBpX2tleRgBIAEoCzITLnZpYW0uYXBwLn'
+    'YxLkFQSUtleVIGYXBpS2V5EkkKDmF1dGhvcml6YXRpb25zGAIgAygLMiEudmlhbS5hcHAudjEu'
+    'QXV0aG9yaXphdGlvbkRldGFpbHNSDmF1dGhvcml6YXRpb25z');
+
+@$core.Deprecated('Use listKeysRequestDescriptor instead')
+const ListKeysRequest$json = {
+  '1': 'ListKeysRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `ListKeysRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listKeysRequestDescriptor = $convert.base64Decode(
+    'Cg9MaXN0S2V5c1JlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA==');
+
+@$core.Deprecated('Use listKeysResponseDescriptor instead')
+const ListKeysResponse$json = {
+  '1': 'ListKeysResponse',
+  '2': [
+    {'1': 'api_keys', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.APIKeyWithAuthorizations', '10': 'apiKeys'},
+  ],
+};
+
+/// Descriptor for `ListKeysResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listKeysResponseDescriptor = $convert.base64Decode(
+    'ChBMaXN0S2V5c1Jlc3BvbnNlEkAKCGFwaV9rZXlzGAEgAygLMiUudmlhbS5hcHAudjEuQVBJS2'
+    'V5V2l0aEF1dGhvcml6YXRpb25zUgdhcGlLZXlz');
+
+@$core.Deprecated('Use rotateKeyRequestDescriptor instead')
+const RotateKeyRequest$json = {
+  '1': 'RotateKeyRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RotateKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rotateKeyRequestDescriptor = $convert.base64Decode(
+    'ChBSb3RhdGVLZXlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use rotateKeyResponseDescriptor instead')
+const RotateKeyResponse$json = {
+  '1': 'RotateKeyResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'key', '3': 2, '4': 1, '5': 9, '10': 'key'},
+  ],
+};
+
+/// Descriptor for `RotateKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rotateKeyResponseDescriptor = $convert.base64Decode(
+    'ChFSb3RhdGVLZXlSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEAoDa2V5GAIgASgJUgNrZXk=');
 

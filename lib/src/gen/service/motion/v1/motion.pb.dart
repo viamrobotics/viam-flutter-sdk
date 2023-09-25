@@ -15,6 +15,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
+import '../../../google/protobuf/timestamp.pb.dart' as $3;
+import 'motion.pbenum.dart';
+
+export 'motion.pbenum.dart';
 
 class MoveRequest extends $pb.GeneratedMessage {
   factory MoveRequest() => create();
@@ -536,6 +540,164 @@ class MoveOnGlobeResponse extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 }
 
+class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
+  factory MoveOnGlobeNewRequest() => create();
+  MoveOnGlobeNewRequest._() : super();
+  factory MoveOnGlobeNewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOnGlobeNewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeNewRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$1.GeoPoint>(2, _omitFieldNames ? '' : 'destination', subBuilder: $1.GeoPoint.create)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'heading', $pb.PbFieldType.OD)
+    ..aOM<$1.ResourceName>(4, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
+    ..aOM<$1.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorName', subBuilder: $1.ResourceName.create)
+    ..pc<$1.GeoObstacle>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoObstacle.create)
+    ..aOM<MotionConfiguration>(7, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeNewRequest clone() => MoveOnGlobeNewRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeNewRequest copyWith(void Function(MoveOnGlobeNewRequest) updates) => super.copyWith((message) => updates(message as MoveOnGlobeNewRequest)) as MoveOnGlobeNewRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeNewRequest create() => MoveOnGlobeNewRequest._();
+  MoveOnGlobeNewRequest createEmptyInstance() => create();
+  static $pb.PbList<MoveOnGlobeNewRequest> createRepeated() => $pb.PbList<MoveOnGlobeNewRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeNewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeNewRequest>(create);
+  static MoveOnGlobeNewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.GeoPoint get destination => $_getN(1);
+  @$pb.TagNumber(2)
+  set destination($1.GeoPoint v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDestination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDestination() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.GeoPoint ensureDestination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.double get heading => $_getN(2);
+  @$pb.TagNumber(3)
+  set heading($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHeading() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHeading() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.ResourceName get componentName => $_getN(3);
+  @$pb.TagNumber(4)
+  set componentName($1.ResourceName v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasComponentName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComponentName() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.ResourceName ensureComponentName() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.ResourceName get movementSensorName => $_getN(4);
+  @$pb.TagNumber(5)
+  set movementSensorName($1.ResourceName v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMovementSensorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMovementSensorName() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.ResourceName ensureMovementSensorName() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.List<$1.GeoObstacle> get obstacles => $_getList(5);
+
+  @$pb.TagNumber(7)
+  MotionConfiguration get motionConfiguration => $_getN(6);
+  @$pb.TagNumber(7)
+  set motionConfiguration(MotionConfiguration v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasMotionConfiguration() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMotionConfiguration() => clearField(7);
+  @$pb.TagNumber(7)
+  MotionConfiguration ensureMotionConfiguration() => $_ensure(6);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(7);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(7);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(7);
+}
+
+class MoveOnGlobeNewResponse extends $pb.GeneratedMessage {
+  factory MoveOnGlobeNewResponse() => create();
+  MoveOnGlobeNewResponse._() : super();
+  factory MoveOnGlobeNewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOnGlobeNewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeNewResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'executionId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeNewResponse clone() => MoveOnGlobeNewResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOnGlobeNewResponse copyWith(void Function(MoveOnGlobeNewResponse) updates) => super.copyWith((message) => updates(message as MoveOnGlobeNewResponse)) as MoveOnGlobeNewResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeNewResponse create() => MoveOnGlobeNewResponse._();
+  MoveOnGlobeNewResponse createEmptyInstance() => create();
+  static $pb.PbList<MoveOnGlobeNewResponse> createRepeated() => $pb.PbList<MoveOnGlobeNewResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOnGlobeNewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeNewResponse>(create);
+  static MoveOnGlobeNewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get executionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set executionId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasExecutionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExecutionId() => clearField(1);
+}
+
 class GetPoseRequest extends $pb.GeneratedMessage {
   factory GetPoseRequest() => create();
   GetPoseRequest._() : super();
@@ -658,6 +820,338 @@ class GetPoseResponse extends $pb.GeneratedMessage {
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
   $1.PoseInFrame ensurePose() => $_ensure(0);
+}
+
+class StopPlanRequest extends $pb.GeneratedMessage {
+  factory StopPlanRequest() => create();
+  StopPlanRequest._() : super();
+  factory StopPlanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StopPlanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'rootComponent', subBuilder: $1.ResourceName.create)
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StopPlanRequest clone() => StopPlanRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StopPlanRequest copyWith(void Function(StopPlanRequest) updates) => super.copyWith((message) => updates(message as StopPlanRequest)) as StopPlanRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StopPlanRequest create() => StopPlanRequest._();
+  StopPlanRequest createEmptyInstance() => create();
+  static $pb.PbList<StopPlanRequest> createRepeated() => $pb.PbList<StopPlanRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StopPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopPlanRequest>(create);
+  static StopPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.ResourceName get rootComponent => $_getN(1);
+  @$pb.TagNumber(2)
+  set rootComponent($1.ResourceName v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRootComponent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRootComponent() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ResourceName ensureRootComponent() => $_ensure(1);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(2);
+}
+
+class StopPlanResponse extends $pb.GeneratedMessage {
+  factory StopPlanResponse() => create();
+  StopPlanResponse._() : super();
+  factory StopPlanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StopPlanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopPlanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StopPlanResponse clone() => StopPlanResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StopPlanResponse copyWith(void Function(StopPlanResponse) updates) => super.copyWith((message) => updates(message as StopPlanResponse)) as StopPlanResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StopPlanResponse create() => StopPlanResponse._();
+  StopPlanResponse createEmptyInstance() => create();
+  static $pb.PbList<StopPlanResponse> createRepeated() => $pb.PbList<StopPlanResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StopPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopPlanResponse>(create);
+  static StopPlanResponse? _defaultInstance;
+}
+
+class ListPlanStatusesRequest extends $pb.GeneratedMessage {
+  factory ListPlanStatusesRequest() => create();
+  ListPlanStatusesRequest._() : super();
+  factory ListPlanStatusesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPlanStatusesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlanStatusesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOB(2, _omitFieldNames ? '' : 'onlyActivePlans')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPlanStatusesRequest clone() => ListPlanStatusesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPlanStatusesRequest copyWith(void Function(ListPlanStatusesRequest) updates) => super.copyWith((message) => updates(message as ListPlanStatusesRequest)) as ListPlanStatusesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlanStatusesRequest create() => ListPlanStatusesRequest._();
+  ListPlanStatusesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPlanStatusesRequest> createRepeated() => $pb.PbList<ListPlanStatusesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlanStatusesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlanStatusesRequest>(create);
+  static ListPlanStatusesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get onlyActivePlans => $_getBF(1);
+  @$pb.TagNumber(2)
+  set onlyActivePlans($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOnlyActivePlans() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOnlyActivePlans() => clearField(2);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(2);
+}
+
+class ListPlanStatusesResponse extends $pb.GeneratedMessage {
+  factory ListPlanStatusesResponse() => create();
+  ListPlanStatusesResponse._() : super();
+  factory ListPlanStatusesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPlanStatusesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlanStatusesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..pc<PlanStatus>(1, _omitFieldNames ? '' : 'statuses', $pb.PbFieldType.PM, subBuilder: PlanStatus.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPlanStatusesResponse clone() => ListPlanStatusesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPlanStatusesResponse copyWith(void Function(ListPlanStatusesResponse) updates) => super.copyWith((message) => updates(message as ListPlanStatusesResponse)) as ListPlanStatusesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPlanStatusesResponse create() => ListPlanStatusesResponse._();
+  ListPlanStatusesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPlanStatusesResponse> createRepeated() => $pb.PbList<ListPlanStatusesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPlanStatusesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlanStatusesResponse>(create);
+  static ListPlanStatusesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<PlanStatus> get statuses => $_getList(0);
+}
+
+class GetPlanRequest extends $pb.GeneratedMessage {
+  factory GetPlanRequest() => create();
+  GetPlanRequest._() : super();
+  factory GetPlanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPlanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
+    ..aOB(3, _omitFieldNames ? '' : 'lastPlanOnly')
+    ..aOS(4, _omitFieldNames ? '' : 'executionId')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPlanRequest clone() => GetPlanRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPlanRequest copyWith(void Function(GetPlanRequest) updates) => super.copyWith((message) => updates(message as GetPlanRequest)) as GetPlanRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPlanRequest create() => GetPlanRequest._();
+  GetPlanRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPlanRequest> createRepeated() => $pb.PbList<GetPlanRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPlanRequest>(create);
+  static GetPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.ResourceName get componentName => $_getN(1);
+  @$pb.TagNumber(2)
+  set componentName($1.ResourceName v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasComponentName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearComponentName() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ResourceName ensureComponentName() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get lastPlanOnly => $_getBF(2);
+  @$pb.TagNumber(3)
+  set lastPlanOnly($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLastPlanOnly() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastPlanOnly() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get executionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set executionId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasExecutionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExecutionId() => clearField(4);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(4);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(4);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(4);
+}
+
+class GetPlanResponse extends $pb.GeneratedMessage {
+  factory GetPlanResponse() => create();
+  GetPlanResponse._() : super();
+  factory GetPlanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPlanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPlanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOM<PlanWithStatus>(1, _omitFieldNames ? '' : 'currentPlanWithStatus', subBuilder: PlanWithStatus.create)
+    ..pc<PlanWithStatus>(2, _omitFieldNames ? '' : 'replanHistory', $pb.PbFieldType.PM, subBuilder: PlanWithStatus.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPlanResponse clone() => GetPlanResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPlanResponse copyWith(void Function(GetPlanResponse) updates) => super.copyWith((message) => updates(message as GetPlanResponse)) as GetPlanResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPlanResponse create() => GetPlanResponse._();
+  GetPlanResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPlanResponse> createRepeated() => $pb.PbList<GetPlanResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPlanResponse>(create);
+  static GetPlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PlanWithStatus get currentPlanWithStatus => $_getN(0);
+  @$pb.TagNumber(1)
+  set currentPlanWithStatus(PlanWithStatus v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCurrentPlanWithStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCurrentPlanWithStatus() => clearField(1);
+  @$pb.TagNumber(1)
+  PlanWithStatus ensureCurrentPlanWithStatus() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<PlanWithStatus> get replanHistory => $_getList(1);
 }
 
 class Constraints extends $pb.GeneratedMessage {
@@ -884,6 +1378,310 @@ class CollisionSpecification extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<CollisionSpecification_AllowedFrameCollisions> get allows => $_getList(0);
+}
+
+class PlanWithStatus extends $pb.GeneratedMessage {
+  factory PlanWithStatus() => create();
+  PlanWithStatus._() : super();
+  factory PlanWithStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PlanWithStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanWithStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOM<Plan>(1, _omitFieldNames ? '' : 'plan', subBuilder: Plan.create)
+    ..aOM<PlanStatus>(2, _omitFieldNames ? '' : 'status', subBuilder: PlanStatus.create)
+    ..pc<PlanStatus>(3, _omitFieldNames ? '' : 'statusHistory', $pb.PbFieldType.PM, subBuilder: PlanStatus.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PlanWithStatus clone() => PlanWithStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PlanWithStatus copyWith(void Function(PlanWithStatus) updates) => super.copyWith((message) => updates(message as PlanWithStatus)) as PlanWithStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlanWithStatus create() => PlanWithStatus._();
+  PlanWithStatus createEmptyInstance() => create();
+  static $pb.PbList<PlanWithStatus> createRepeated() => $pb.PbList<PlanWithStatus>();
+  @$core.pragma('dart2js:noInline')
+  static PlanWithStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanWithStatus>(create);
+  static PlanWithStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Plan get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(Plan v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => clearField(1);
+  @$pb.TagNumber(1)
+  Plan ensurePlan() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  PlanStatus get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(PlanStatus v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+  @$pb.TagNumber(2)
+  PlanStatus ensureStatus() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<PlanStatus> get statusHistory => $_getList(2);
+}
+
+class PlanStatus extends $pb.GeneratedMessage {
+  factory PlanStatus() => create();
+  PlanStatus._() : super();
+  factory PlanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PlanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'planId')
+    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
+    ..aOS(3, _omitFieldNames ? '' : 'executionId')
+    ..e<PlanState>(4, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PlanState.PLAN_STATE_UNSPECIFIED, valueOf: PlanState.valueOf, enumValues: PlanState.values)
+    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $3.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PlanStatus clone() => PlanStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PlanStatus copyWith(void Function(PlanStatus) updates) => super.copyWith((message) => updates(message as PlanStatus)) as PlanStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlanStatus create() => PlanStatus._();
+  PlanStatus createEmptyInstance() => create();
+  static $pb.PbList<PlanStatus> createRepeated() => $pb.PbList<PlanStatus>();
+  @$core.pragma('dart2js:noInline')
+  static PlanStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStatus>(create);
+  static PlanStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get planId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set planId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPlanId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlanId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.ResourceName get componentName => $_getN(1);
+  @$pb.TagNumber(2)
+  set componentName($1.ResourceName v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasComponentName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearComponentName() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ResourceName ensureComponentName() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get executionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set executionId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExecutionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExecutionId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  PlanState get state => $_getN(3);
+  @$pb.TagNumber(4)
+  set state(PlanState v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearState() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $3.Timestamp get timestamp => $_getN(4);
+  @$pb.TagNumber(5)
+  set timestamp($3.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTimestamp() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTimestamp() => clearField(5);
+  @$pb.TagNumber(5)
+  $3.Timestamp ensureTimestamp() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => clearField(6);
+}
+
+class Plan extends $pb.GeneratedMessage {
+  factory Plan() => create();
+  Plan._() : super();
+  factory Plan.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Plan.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Plan', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
+    ..aOS(3, _omitFieldNames ? '' : 'executionId')
+    ..pc<PlanStep>(4, _omitFieldNames ? '' : 'steps', $pb.PbFieldType.PM, subBuilder: PlanStep.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Plan clone() => Plan()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Plan copyWith(void Function(Plan) updates) => super.copyWith((message) => updates(message as Plan)) as Plan;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Plan create() => Plan._();
+  Plan createEmptyInstance() => create();
+  static $pb.PbList<Plan> createRepeated() => $pb.PbList<Plan>();
+  @$core.pragma('dart2js:noInline')
+  static Plan getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Plan>(create);
+  static Plan? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.ResourceName get componentName => $_getN(1);
+  @$pb.TagNumber(2)
+  set componentName($1.ResourceName v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasComponentName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearComponentName() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ResourceName ensureComponentName() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get executionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set executionId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExecutionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExecutionId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<PlanStep> get steps => $_getList(3);
+}
+
+class PlanStep extends $pb.GeneratedMessage {
+  factory PlanStep() => create();
+  PlanStep._() : super();
+  factory PlanStep.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PlanStep.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStep', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..m<$core.String, ComponentState>(1, _omitFieldNames ? '' : 'step', entryClassName: 'PlanStep.StepEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: ComponentState.create, valueDefaultOrMaker: ComponentState.getDefault, packageName: const $pb.PackageName('viam.service.motion.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PlanStep clone() => PlanStep()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PlanStep copyWith(void Function(PlanStep) updates) => super.copyWith((message) => updates(message as PlanStep)) as PlanStep;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlanStep create() => PlanStep._();
+  PlanStep createEmptyInstance() => create();
+  static $pb.PbList<PlanStep> createRepeated() => $pb.PbList<PlanStep>();
+  @$core.pragma('dart2js:noInline')
+  static PlanStep getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStep>(create);
+  static PlanStep? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, ComponentState> get step => $_getMap(0);
+}
+
+class ComponentState extends $pb.GeneratedMessage {
+  factory ComponentState() => create();
+  ComponentState._() : super();
+  factory ComponentState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ComponentState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComponentState', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOM<$1.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $1.Pose.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ComponentState clone() => ComponentState()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ComponentState copyWith(void Function(ComponentState) updates) => super.copyWith((message) => updates(message as ComponentState)) as ComponentState;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ComponentState create() => ComponentState._();
+  ComponentState createEmptyInstance() => create();
+  static $pb.PbList<ComponentState> createRepeated() => $pb.PbList<ComponentState>();
+  @$core.pragma('dart2js:noInline')
+  static ComponentState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComponentState>(create);
+  static ComponentState? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.Pose get pose => $_getN(0);
+  @$pb.TagNumber(1)
+  set pose($1.Pose v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPose() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.Pose ensurePose() => $_ensure(0);
 }
 
 

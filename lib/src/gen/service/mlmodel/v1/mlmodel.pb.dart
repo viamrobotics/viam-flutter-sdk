@@ -27,7 +27,6 @@ class InferRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InferRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.mlmodel.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$1.Struct>(2, _omitFieldNames ? '' : 'inputData', subBuilder: $1.Struct.create)
     ..aOM<FlatTensors>(3, _omitFieldNames ? '' : 'inputTensors', subBuilder: FlatTensors.create)
     ..aOM<$1.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $1.Struct.create)
     ..hasRequiredFields = false
@@ -63,38 +62,27 @@ class InferRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
-  @$pb.TagNumber(2)
-  $1.Struct get inputData => $_getN(1);
-  @$pb.TagNumber(2)
-  set inputData($1.Struct v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasInputData() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearInputData() => clearField(2);
-  @$pb.TagNumber(2)
-  $1.Struct ensureInputData() => $_ensure(1);
-
   @$pb.TagNumber(3)
-  FlatTensors get inputTensors => $_getN(2);
+  FlatTensors get inputTensors => $_getN(1);
   @$pb.TagNumber(3)
   set inputTensors(FlatTensors v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasInputTensors() => $_has(2);
+  $core.bool hasInputTensors() => $_has(1);
   @$pb.TagNumber(3)
   void clearInputTensors() => clearField(3);
   @$pb.TagNumber(3)
-  FlatTensors ensureInputTensors() => $_ensure(2);
+  FlatTensors ensureInputTensors() => $_ensure(1);
 
   @$pb.TagNumber(99)
-  $1.Struct get extra => $_getN(3);
+  $1.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
   set extra($1.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(3);
+  $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $1.Struct ensureExtra() => $_ensure(3);
+  $1.Struct ensureExtra() => $_ensure(2);
 }
 
 class InferResponse extends $pb.GeneratedMessage {
@@ -104,7 +92,6 @@ class InferResponse extends $pb.GeneratedMessage {
   factory InferResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InferResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.mlmodel.v1'), createEmptyInstance: create)
-    ..aOM<$1.Struct>(2, _omitFieldNames ? '' : 'outputData', subBuilder: $1.Struct.create)
     ..aOM<FlatTensors>(3, _omitFieldNames ? '' : 'outputTensors', subBuilder: FlatTensors.create)
     ..hasRequiredFields = false
   ;
@@ -130,27 +117,16 @@ class InferResponse extends $pb.GeneratedMessage {
   static InferResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InferResponse>(create);
   static InferResponse? _defaultInstance;
 
-  @$pb.TagNumber(2)
-  $1.Struct get outputData => $_getN(0);
-  @$pb.TagNumber(2)
-  set outputData($1.Struct v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasOutputData() => $_has(0);
-  @$pb.TagNumber(2)
-  void clearOutputData() => clearField(2);
-  @$pb.TagNumber(2)
-  $1.Struct ensureOutputData() => $_ensure(0);
-
   @$pb.TagNumber(3)
-  FlatTensors get outputTensors => $_getN(1);
+  FlatTensors get outputTensors => $_getN(0);
   @$pb.TagNumber(3)
   set outputTensors(FlatTensors v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasOutputTensors() => $_has(1);
+  $core.bool hasOutputTensors() => $_has(0);
   @$pb.TagNumber(3)
   void clearOutputTensors() => clearField(3);
   @$pb.TagNumber(3)
-  FlatTensors ensureOutputTensors() => $_ensure(1);
+  FlatTensors ensureOutputTensors() => $_ensure(0);
 }
 
 class MetadataRequest extends $pb.GeneratedMessage {
