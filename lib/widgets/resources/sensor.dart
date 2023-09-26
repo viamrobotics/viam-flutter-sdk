@@ -80,7 +80,7 @@ class _ViamSensorWidgetState extends State<ViamSensorWidget> {
     }
   }
 
-  String formattedDated(DateTime date) {
+  String formattedDate(DateTime date) {
     return DateFormat('yyyy-MM-dd HH:ss:SS').format(date);
   }
 
@@ -108,7 +108,7 @@ class _ViamSensorWidgetState extends State<ViamSensorWidget> {
           if (widget.showLastRefreshed && lastRefreshed != null)
             Column(children: [
               const SizedBox(height: 8),
-              Text('Updated at: ${formattedDated(lastRefreshed!)}'),
+              Text('Updated at: ${formattedDate(lastRefreshed!)}'),
             ]),
           if (widget.showRefreshControls)
             Column(children: [
