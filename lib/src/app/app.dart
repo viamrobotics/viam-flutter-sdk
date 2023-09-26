@@ -2,6 +2,8 @@ import 'dart:async';
 
 import '../gen/app/v1/app.pbgrpc.dart';
 
+typedef RobotPartLogPage = GetRobotPartLogsResponse;
+
 /// gRPC client for connecting to Viam's App Service
 ///
 /// All calls must be authenticated.
@@ -64,6 +66,15 @@ class AppClient {
     final getRobotPartRequest = GetRobotPartRequest()..id = partId;
     final response = await _client.getRobotPart(getRobotPartRequest);
     return response.part;
+  }
+
+  /// Get a page of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
+  Future<RobotPartLogPage> getLogs(RobotPart part, {bool errorsOnly = false, String pageToken = ''}) async {
+    final request = GetRobotPartLogsRequest()
+      ..id = part.id
+      ..errorsOnly = errorsOnly
+      ..pageToken = pageToken;
+    return await _client.getRobotPartLogs(request);
   }
 
   /// Get a stream of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
