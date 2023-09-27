@@ -81,7 +81,7 @@ class _ViamSensorWidgetState extends State<ViamSensorWidget> {
   }
 
   String formattedDate(DateTime date) {
-    return DateFormat('yyyy-MM-dd HH:ss:SS').format(date);
+    return DateFormat('yyyy-MM-dd HH:mm:ss:SS').format(date);
   }
 
   @override
