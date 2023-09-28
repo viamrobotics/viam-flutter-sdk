@@ -8,7 +8,7 @@ import '../multi_camera_stream.dart';
 ///
 /// This widget provides a joystick for moving a [Base],
 /// along with displaying any camera streams that might be available on the robot.
-class ViamBaseScreen extends StatefulWidget {
+class ViamBaseWidget extends StatefulWidget {
   /// The [Base]
   final Base base;
 
@@ -18,7 +18,7 @@ class ViamBaseScreen extends StatefulWidget {
   /// The current [RobotClient]
   final RobotClient robotClient;
 
-  const ViamBaseScreen({
+  const ViamBaseWidget({
     Key? key,
     required this.base,
     required this.cameras,
@@ -26,10 +26,10 @@ class ViamBaseScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ViamBaseScreen> createState() => _ViamBaseScreenState();
+  State<ViamBaseWidget> createState() => _ViamBaseWidgetState();
 }
 
-class _ViamBaseScreenState extends State<ViamBaseScreen> {
+class _ViamBaseWidgetState extends State<ViamBaseWidget> {
   Camera? camera;
 
   @override
@@ -45,22 +45,15 @@ class _ViamBaseScreenState extends State<ViamBaseScreen> {
     return const SizedBox.shrink();
   }
 
-  Widget _spacer() {
-    if (widget.cameras.isNotEmpty) {
-      return const Spacer();
-    }
-    return const SizedBox.shrink();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildCamera(),
-        _spacer(),
         Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 48),
+          padding: const EdgeInsets.only(bottom: 48),
           child: Center(
             child: ViamBaseJoystick(base: widget.base),
           ),

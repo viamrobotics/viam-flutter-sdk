@@ -18,7 +18,7 @@ class BaseScreen extends StatelessWidget {
       ),
       iosContentPadding: true,
       body: Center(
-        child: ViamBaseScreen(
+        child: ViamBaseWidget(
           base: base,
           cameras: cameras,
           robotClient: robot,

@@ -18,7 +18,7 @@ class GripperScreen extends StatelessWidget {
       ),
       iosContentPadding: true,
       body: Center(
-        child: ViamGripperScreen(
+        child: ViamGripperWidget(
           gripper: gripper,
           cameras: cameras,
           robotClient: robot,

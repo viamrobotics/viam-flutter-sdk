@@ -10,7 +10,7 @@ import '../multi_camera_stream.dart';
 ///
 /// This widget provides open and grab functionality for a [Gripper],
 /// along with displaying any camera streams that might be available on the robot.
-class ViamGripperScreen extends StatefulWidget {
+class ViamGripperWidget extends StatefulWidget {
   /// The [Gripper]
   final Gripper gripper;
 
@@ -20,7 +20,7 @@ class ViamGripperScreen extends StatefulWidget {
   /// The current [RobotClient]
   final RobotClient robotClient;
 
-  const ViamGripperScreen({
+  const ViamGripperWidget({
     Key? key,
     required this.gripper,
     required this.cameras,
@@ -28,10 +28,10 @@ class ViamGripperScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ViamGripperScreen> createState() => _ViamGripperScreenState();
+  State<ViamGripperWidget> createState() => _ViamGripperWidgetState();
 }
 
-class _ViamGripperScreenState extends State<ViamGripperScreen> {
+class _ViamGripperWidgetState extends State<ViamGripperWidget> {
   Camera? camera;
   bool _isOpen = false;
 

@@ -21,15 +21,7 @@ class ViamMotorWidget extends StatefulWidget {
 class _ViamMotorWidgetState extends State<ViamMotorWidget> {
   double power = 0;
   bool autoStop = true;
-
-  void showError(Object error) {
-    showDialog(
-        context: context,
-        builder: ((context) => AlertDialog(
-              title: const Text('Error'),
-              content: Text('Caught error: $error'),
-            )));
-  }
+  Error? error;
 
   Future<void> setPower(double power) async {
     try {
@@ -38,7 +30,7 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
         this.power = power;
       });
     } catch (e) {
-      showError(e);
+      error = e as Error;
     }
   }
 
@@ -56,7 +48,7 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
         }
       }
     } catch (e) {
-      showError(e);
+      error = e as Error;
     }
   }
 
@@ -122,6 +114,7 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
               onChangeEnd: _handleSliderRelease,
             ),
           ),
+          if (error != null) Text('Error: $error', style: const TextStyle(color: Colors.red)),
         ],
       ),
     );

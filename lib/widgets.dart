@@ -7,3 +7,4 @@ export 'widgets/resources/board.dart';
 export 'widgets/resources/gripper.dart';
 export 'widgets/resources/motor.dart';
 export 'widgets/resources/sensor.dart';
+export 'widgets/resources/servo.dart';
