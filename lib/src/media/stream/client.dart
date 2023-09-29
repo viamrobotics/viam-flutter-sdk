@@ -119,7 +119,7 @@ class StreamManager {
 
   Future<void> closeAll() async {
     final futures = <Future>[];
-    final keys = _streams.keys.toList();
+    final keys = _streams.keys.toSet()..addAll(_clients.keys);
     for (var name in keys) {
       futures.add(_remove(name));
     }
