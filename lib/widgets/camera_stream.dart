@@ -69,11 +69,6 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
     });
   }
 
-  double get _renderHeight {
-    final screenWidth = MediaQuery.of(context).size.width;
-    return _height * (screenWidth / _width);
-  }
-
   @override
   Widget build(BuildContext context) {
     return (_error != null)
