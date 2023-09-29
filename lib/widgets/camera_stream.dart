@@ -89,10 +89,12 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
               Text(_error.toString(), textAlign: TextAlign.center),
             ]),
           )
-        : Container(
-            decoration: const BoxDecoration(color: Colors.black),
-            constraints: BoxConstraints(maxHeight: _renderHeight),
-            child: RTCVideoView(_renderer),
-          );
+        : LayoutBuilder(builder: ((context, constraints) {
+            return Container(
+              decoration: const BoxDecoration(color: Colors.black),
+              constraints: BoxConstraints(maxHeight: _height * constraints.maxWidth / _width),
+              child: RTCVideoView(_renderer),
+            );
+          }));
   }
 }
