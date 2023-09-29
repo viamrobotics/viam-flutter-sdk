@@ -23,6 +23,8 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
   late RTCVideoRenderer _renderer;
   late StreamSubscription<MediaStream> _streamSub;
   Exception? _error;
+  int _width = 160;
+  int _height = 90;
 
   @override
   void initState() {
@@ -44,7 +46,15 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
     final stream = widget.streamClient.getStream();
     _streamSub = stream.listen((event) {
       _error = null;
-      _renderer.srcObject = event;
+      _renderer.setSrcObject(stream: event);
+      _renderer.onResize = () {
+        setState(() {
+          if (_renderer.videoWidth > 0 && _renderer.videoHeight > 0) {
+            _width = _renderer.videoWidth;
+            _height = _renderer.videoHeight;
+          }
+        });
+      };
       setState(() {});
     });
     _streamSub.onError((error, trace) {
@@ -57,6 +67,11 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
         _error = error;
       });
     });
+  }
+
+  double get _renderHeight {
+    final screenWidth = MediaQuery.of(context).size.width;
+    return _height * (screenWidth / _width);
   }
 
   @override
@@ -75,7 +90,8 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
             ]),
           )
         : Container(
-            constraints: const BoxConstraints(maxHeight: 300),
+            decoration: const BoxDecoration(color: Colors.black),
+            constraints: BoxConstraints(maxHeight: _renderHeight),
             child: RTCVideoView(_renderer),
           );
   }
