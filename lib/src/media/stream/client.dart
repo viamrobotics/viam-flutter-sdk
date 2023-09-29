@@ -75,7 +75,7 @@ class StreamManager {
     if (_clients.containsKey(sanitizedName)) {
       return _clients[sanitizedName]!;
     }
-    final client = StreamClient(name, _remove);
+    final client = StreamClient(name, _add, _removeStream);
     _clients[sanitizedName] = client;
 
     if (_streams.containsKey(sanitizedName)) {
@@ -111,9 +111,19 @@ class StreamManager {
   void _removeClient(String name) {
     final sanitizedName = _getValidSDPTrackName(name);
     if (_clients.containsKey(sanitizedName)) {
-      _clients.remove(sanitizedName)!;
+      final client = _clients.remove(sanitizedName)!;
+      client._shutdown();
       _logger.d('Removed StreamClient named $name');
     }
+  }
+
+  Future<void> closeAll() async {
+    final futures = <Future>[];
+    final keys = _streams.keys.toList();
+    for (var name in keys) {
+      futures.add(_remove(name));
+    }
+    await Future.wait(futures);
   }
 }
 
@@ -122,36 +132,49 @@ class StreamManager {
 /// Use the [getStream] method to obtain a stream of [MediaStream] that can be used to display WebRTC video.
 class StreamClient {
   final String name;
+  final Future<void> Function(String name) _open;
   final Future<void> Function(String name) _close;
   MediaStream? _stream;
+  late StreamSubscription<MediaStream> _internalListener;
 
   // ignore: close_sinks
   final StreamController<MediaStream> _internalStreamController = StreamController<MediaStream>.broadcast();
 
   // ignore: close_sinks
-  final StreamController<MediaStream> _streamController = StreamController<MediaStream>.broadcast();
+  final StreamController<MediaStream?> _streamController = StreamController<MediaStream?>.broadcast();
 
-  StreamClient(this.name, this._close) {
-    _internalStreamController.stream.listen((event) {
+  StreamClient(this.name, this._open, this._close) {
+    _internalListener = _internalStreamController.stream.listen((event) {
       _stream = event;
       _streamController.add(event);
     });
   }
 
   /// Return a stream of [MediaStream], which can be used to display WebRTC video.
-  Stream<MediaStream> getStream() {
+  Stream<MediaStream?> getStream() {
+    _internalListener.resume();
     if (_stream != null) {
       Future.delayed(const Duration(milliseconds: 100), () {
         _streamController.add(_stream!);
       });
+    } else {
+      _open(name);
     }
     return _streamController.stream;
   }
 
-  /// Close the stream connection and release resources.
-  Future<void> closeStream() async {
+  Future<void> _shutdown() async {
     await _streamController.close();
     await _internalStreamController.close();
-    await _close(name);
+  }
+
+  /// Close the stream connection and release resources.
+  Future<void> closeStream() async {
+    if (!_streamController.hasListener) {
+      _internalListener.pause();
+      await _close(name);
+      _stream = null;
+      _streamController.add(null);
+    }
   }
 }

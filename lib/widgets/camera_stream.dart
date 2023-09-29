@@ -21,7 +21,7 @@ class ViamCameraStreamView extends StatefulWidget {
 
 class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
   late RTCVideoRenderer _renderer;
-  late StreamSubscription<MediaStream> _streamSub;
+  late StreamSubscription<MediaStream?> _streamSub;
   Exception? _error;
   int _width = 160;
   int _height = 90;
