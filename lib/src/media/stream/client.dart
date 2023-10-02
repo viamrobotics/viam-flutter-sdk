@@ -152,14 +152,16 @@ class StreamClient {
 
   /// Return a stream of [MediaStream], which can be used to display WebRTC video.
   Stream<MediaStream?> getStream() {
-    _internalListener.resume();
-    if (_stream != null) {
-      Future.delayed(const Duration(milliseconds: 100), () {
-        _streamController.add(_stream!);
-      });
-    } else {
-      _open(name);
+    if (_internalListener.isPaused) {
+      _internalListener.resume();
     }
+    Future.microtask(() {
+      if (_stream != null) {
+        _streamController.add(_stream!);
+      } else {
+        _open(name);
+      }
+    });
     return _streamController.stream;
   }
 

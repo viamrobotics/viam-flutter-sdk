@@ -28,16 +28,16 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
 
   @override
   void initState() {
-    _startStream();
     super.initState();
+    _startStream();
   }
 
   @override
-  void deactivate() {
+  void dispose() {
     _renderer.dispose();
     _streamSub.cancel();
     widget.streamClient.closeStream();
-    super.deactivate();
+    super.dispose();
   }
 
   Future<void> _startStream() async {
