@@ -279,6 +279,14 @@
   
 </dd>
 
+        <dt id="PlanStatusWithID">
+  <span class="name "><a href="../viam_protos.service.motion/PlanStatusWithID-class.html">PlanStatusWithID</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
         <dt id="PlanStep">
   <span class="name "><a href="../viam_protos.service.motion/PlanStep-class.html">PlanStep</a></span> 
 
@@ -481,7 +489,7 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;ListPlanStatusesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;statuses&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.motion.v1.Plan…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;ListPlanStatusesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;plan_statuses_with_ids&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.…</code></span>
     </div>
 </dd>
 
@@ -676,7 +684,22 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;PlanStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;plan_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;planId&#39;}, {&#39;1&#39; : &#39;component…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PlanStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;state&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.service.motion.v1.PlanState&#39;, &#39;…</code></span>
+    </div>
+</dd>
+
+        <dt id="PlanStatusWithID$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/PlanStatusWithID$json-constant.html">PlanStatusWithID$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;PlanStatusWithID&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;plan_id&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;planId&#39;}, {&#39;1&#39; : &#39;com…</code></span>
     </div>
 </dd>
 
@@ -736,7 +759,7 @@
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;StopPlanRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;root_comp…</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;StopPlanRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;component…</code></span>
     </div>
 </dd>
 
@@ -1015,6 +1038,17 @@
 
 </dd>
 
+        <dt id="planStatusWithIDDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.motion/planStatusWithIDDescriptor.html">planStatusWithIDDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>PlanStatusWithID</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
         <dt id="planStepDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.motion/planStepDescriptor.html">planStepDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
@@ -1106,6 +1140,7 @@
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.dataset/viam_protos.app.dataset-library.html">viam_protos.app.dataset</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.end_user/viam_protos.app.end_user-library.html">viam_protos.app.end_user</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
