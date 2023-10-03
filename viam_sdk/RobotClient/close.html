@@ -83,7 +83,12 @@
   try {
     _checkConnectionTask?.cancel();
     _shouldAttemptReconnection = false;
-    await _streamManager.closeAll();
+    try {
+      await _streamManager.closeAll();
+    } catch (_) {
+      &#47;&#47; Do nothing -- we don&#39;t care if this fails,
+      &#47;&#47; the server should clean up disconnected streams automatically.
+    }
     _sessionsClient.stop();
     await _channel.shutdown();
   } catch (e) {
