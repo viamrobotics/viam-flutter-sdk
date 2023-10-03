@@ -264,15 +264,15 @@ const StopPlanRequest$json = {
   '1': 'StopPlanRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'root_component', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'rootComponent'},
+    {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `StopPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stopPlanRequestDescriptor = $convert.base64Decode(
-    'Cg9TdG9wUGxhblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRJDCg5yb290X2NvbXBvbmVudB'
-    'gCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINcm9vdENvbXBvbmVudBItCgVl'
+    'Cg9TdG9wUGxhblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRJDCg5jb21wb25lbnRfbmFtZR'
+    'gCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZRItCgVl'
     'eHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
 
 @$core.Deprecated('Use stopPlanResponseDescriptor instead')
@@ -304,14 +304,15 @@ final $typed_data.Uint8List listPlanStatusesRequestDescriptor = $convert.base64D
 const ListPlanStatusesResponse$json = {
   '1': 'ListPlanStatusesResponse',
   '2': [
-    {'1': 'statuses', '3': 1, '4': 3, '5': 11, '6': '.viam.service.motion.v1.PlanStatus', '10': 'statuses'},
+    {'1': 'plan_statuses_with_ids', '3': 1, '4': 3, '5': 11, '6': '.viam.service.motion.v1.PlanStatusWithID', '10': 'planStatusesWithIds'},
   ],
 };
 
 /// Descriptor for `ListPlanStatusesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listPlanStatusesResponseDescriptor = $convert.base64Decode(
-    'ChhMaXN0UGxhblN0YXR1c2VzUmVzcG9uc2USPgoIc3RhdHVzZXMYASADKAsyIi52aWFtLnNlcn'
-    'ZpY2UubW90aW9uLnYxLlBsYW5TdGF0dXNSCHN0YXR1c2Vz');
+    'ChhMaXN0UGxhblN0YXR1c2VzUmVzcG9uc2USXQoWcGxhbl9zdGF0dXNlc193aXRoX2lkcxgBIA'
+    'MoCzIoLnZpYW0uc2VydmljZS5tb3Rpb24udjEuUGxhblN0YXR1c1dpdGhJRFITcGxhblN0YXR1'
+    'c2VzV2l0aElkcw==');
 
 @$core.Deprecated('Use getPlanRequestDescriptor instead')
 const GetPlanRequest$json = {
@@ -450,16 +451,31 @@ final $typed_data.Uint8List planWithStatusDescriptor = $convert.base64Decode(
     'blN0YXR1c1IGc3RhdHVzEkkKDnN0YXR1c19oaXN0b3J5GAMgAygLMiIudmlhbS5zZXJ2aWNlLm'
     '1vdGlvbi52MS5QbGFuU3RhdHVzUg1zdGF0dXNIaXN0b3J5');
 
-@$core.Deprecated('Use planStatusDescriptor instead')
-const PlanStatus$json = {
-  '1': 'PlanStatus',
+@$core.Deprecated('Use planStatusWithIDDescriptor instead')
+const PlanStatusWithID$json = {
+  '1': 'PlanStatusWithID',
   '2': [
     {'1': 'plan_id', '3': 1, '4': 1, '5': 9, '10': 'planId'},
     {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
     {'1': 'execution_id', '3': 3, '4': 1, '5': 9, '10': 'executionId'},
-    {'1': 'state', '3': 4, '4': 1, '5': 14, '6': '.viam.service.motion.v1.PlanState', '10': 'state'},
-    {'1': 'timestamp', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timestamp'},
-    {'1': 'reason', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'reason', '17': true},
+    {'1': 'status', '3': 4, '4': 1, '5': 11, '6': '.viam.service.motion.v1.PlanStatus', '10': 'status'},
+  ],
+};
+
+/// Descriptor for `PlanStatusWithID`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List planStatusWithIDDescriptor = $convert.base64Decode(
+    'ChBQbGFuU3RhdHVzV2l0aElEEhcKB3BsYW5faWQYASABKAlSBnBsYW5JZBJDCg5jb21wb25lbn'
+    'RfbmFtZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFt'
+    'ZRIhCgxleGVjdXRpb25faWQYAyABKAlSC2V4ZWN1dGlvbklkEjoKBnN0YXR1cxgEIAEoCzIiLn'
+    'ZpYW0uc2VydmljZS5tb3Rpb24udjEuUGxhblN0YXR1c1IGc3RhdHVz');
+
+@$core.Deprecated('Use planStatusDescriptor instead')
+const PlanStatus$json = {
+  '1': 'PlanStatus',
+  '2': [
+    {'1': 'state', '3': 1, '4': 1, '5': 14, '6': '.viam.service.motion.v1.PlanState', '10': 'state'},
+    {'1': 'timestamp', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timestamp'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'reason', '17': true},
   ],
   '8': [
     {'1': '_reason'},
@@ -468,12 +484,10 @@ const PlanStatus$json = {
 
 /// Descriptor for `PlanStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List planStatusDescriptor = $convert.base64Decode(
-    'CgpQbGFuU3RhdHVzEhcKB3BsYW5faWQYASABKAlSBnBsYW5JZBJDCg5jb21wb25lbnRfbmFtZR'
-    'gCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZRIhCgxl'
-    'eGVjdXRpb25faWQYAyABKAlSC2V4ZWN1dGlvbklkEjcKBXN0YXRlGAQgASgOMiEudmlhbS5zZX'
-    'J2aWNlLm1vdGlvbi52MS5QbGFuU3RhdGVSBXN0YXRlEjgKCXRpbWVzdGFtcBgFIAEoCzIaLmdv'
-    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXRpbWVzdGFtcBIbCgZyZWFzb24YBiABKAlIAFIGcm'
-    'Vhc29uiAEBQgkKB19yZWFzb24=');
+    'CgpQbGFuU3RhdHVzEjcKBXN0YXRlGAEgASgOMiEudmlhbS5zZXJ2aWNlLm1vdGlvbi52MS5QbG'
+    'FuU3RhdGVSBXN0YXRlEjgKCXRpbWVzdGFtcBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l'
+    'c3RhbXBSCXRpbWVzdGFtcBIbCgZyZWFzb24YAyABKAlIAFIGcmVhc29uiAEBQgkKB19yZWFzb2'
+    '4=');
 
 @$core.Deprecated('Use planDescriptor instead')
 const Plan$json = {

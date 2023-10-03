@@ -269,6 +269,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/RotateKey',
       ($0.RotateKeyRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.RotateKeyResponse.fromBuffer(value));
+  static final _$createKeyFromExistingKeyAuthorizations = $grpc.ClientMethod<$0.CreateKeyFromExistingKeyAuthorizationsRequest, $0.CreateKeyFromExistingKeyAuthorizationsResponse>(
+      '/viam.app.v1.AppService/CreateKeyFromExistingKeyAuthorizations',
+      ($0.CreateKeyFromExistingKeyAuthorizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.CreateKeyFromExistingKeyAuthorizationsResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -522,6 +526,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.RotateKeyResponse> rotateKey($0.RotateKeyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$rotateKey, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($0.CreateKeyFromExistingKeyAuthorizationsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createKeyFromExistingKeyAuthorizations, request, options: options);
   }
 }
 
@@ -964,6 +972,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RotateKeyRequest.fromBuffer(value),
         ($0.RotateKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateKeyFromExistingKeyAuthorizationsRequest, $0.CreateKeyFromExistingKeyAuthorizationsResponse>(
+        'CreateKeyFromExistingKeyAuthorizations',
+        createKeyFromExistingKeyAuthorizations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateKeyFromExistingKeyAuthorizationsRequest.fromBuffer(value),
+        ($0.CreateKeyFromExistingKeyAuthorizationsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$0.GetUserIDByEmailRequest> request) async {
@@ -1210,6 +1225,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return rotateKey(call, await request);
   }
 
+  $async.Future<$0.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$0.CreateKeyFromExistingKeyAuthorizationsRequest> request) async {
+    return createKeyFromExistingKeyAuthorizations(call, await request);
+  }
+
   $async.Future<$0.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $0.GetUserIDByEmailRequest request);
   $async.Future<$0.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $0.CreateOrganizationRequest request);
   $async.Future<$0.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $0.ListOrganizationsRequest request);
@@ -1272,4 +1291,5 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$0.DeleteKeyResponse> deleteKey($grpc.ServiceCall call, $0.DeleteKeyRequest request);
   $async.Future<$0.ListKeysResponse> listKeys($grpc.ServiceCall call, $0.ListKeysRequest request);
   $async.Future<$0.RotateKeyResponse> rotateKey($grpc.ServiceCall call, $0.RotateKeyRequest request);
+  $async.Future<$0.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $0.CreateKeyFromExistingKeyAuthorizationsRequest request);
 }

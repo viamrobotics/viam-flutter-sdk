@@ -830,7 +830,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'rootComponent', subBuilder: $1.ResourceName.create)
+    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
     ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -866,15 +866,15 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $1.ResourceName get rootComponent => $_getN(1);
+  $1.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
-  set rootComponent($1.ResourceName v) { setField(2, v); }
+  set componentName($1.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasRootComponent() => $_has(1);
+  $core.bool hasComponentName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRootComponent() => clearField(2);
+  void clearComponentName() => clearField(2);
   @$pb.TagNumber(2)
-  $1.ResourceName ensureRootComponent() => $_ensure(1);
+  $1.ResourceName ensureComponentName() => $_ensure(1);
 
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
@@ -991,7 +991,7 @@ class ListPlanStatusesResponse extends $pb.GeneratedMessage {
   factory ListPlanStatusesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlanStatusesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..pc<PlanStatus>(1, _omitFieldNames ? '' : 'statuses', $pb.PbFieldType.PM, subBuilder: PlanStatus.create)
+    ..pc<PlanStatusWithID>(1, _omitFieldNames ? '' : 'planStatusesWithIds', $pb.PbFieldType.PM, subBuilder: PlanStatusWithID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1017,7 +1017,7 @@ class ListPlanStatusesResponse extends $pb.GeneratedMessage {
   static ListPlanStatusesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<PlanStatus> get statuses => $_getList(0);
+  $core.List<PlanStatusWithID> get planStatusesWithIds => $_getList(0);
 }
 
 class GetPlanRequest extends $pb.GeneratedMessage {
@@ -1440,19 +1440,17 @@ class PlanWithStatus extends $pb.GeneratedMessage {
   $core.List<PlanStatus> get statusHistory => $_getList(2);
 }
 
-class PlanStatus extends $pb.GeneratedMessage {
-  factory PlanStatus() => create();
-  PlanStatus._() : super();
-  factory PlanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PlanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class PlanStatusWithID extends $pb.GeneratedMessage {
+  factory PlanStatusWithID() => create();
+  PlanStatusWithID._() : super();
+  factory PlanStatusWithID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PlanStatusWithID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatusWithID', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'planId')
     ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'executionId')
-    ..e<PlanState>(4, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PlanState.PLAN_STATE_UNSPECIFIED, valueOf: PlanState.valueOf, enumValues: PlanState.values)
-    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $3.Timestamp.create)
-    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aOM<PlanStatus>(4, _omitFieldNames ? '' : 'status', subBuilder: PlanStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -1460,22 +1458,22 @@ class PlanStatus extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PlanStatus clone() => PlanStatus()..mergeFromMessage(this);
+  PlanStatusWithID clone() => PlanStatusWithID()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PlanStatus copyWith(void Function(PlanStatus) updates) => super.copyWith((message) => updates(message as PlanStatus)) as PlanStatus;
+  PlanStatusWithID copyWith(void Function(PlanStatusWithID) updates) => super.copyWith((message) => updates(message as PlanStatusWithID)) as PlanStatusWithID;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PlanStatus create() => PlanStatus._();
-  PlanStatus createEmptyInstance() => create();
-  static $pb.PbList<PlanStatus> createRepeated() => $pb.PbList<PlanStatus>();
+  static PlanStatusWithID create() => PlanStatusWithID._();
+  PlanStatusWithID createEmptyInstance() => create();
+  static $pb.PbList<PlanStatusWithID> createRepeated() => $pb.PbList<PlanStatusWithID>();
   @$core.pragma('dart2js:noInline')
-  static PlanStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStatus>(create);
-  static PlanStatus? _defaultInstance;
+  static PlanStatusWithID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStatusWithID>(create);
+  static PlanStatusWithID? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get planId => $_getSZ(0);
@@ -1507,33 +1505,79 @@ class PlanStatus extends $pb.GeneratedMessage {
   void clearExecutionId() => clearField(3);
 
   @$pb.TagNumber(4)
-  PlanState get state => $_getN(3);
+  PlanStatus get status => $_getN(3);
   @$pb.TagNumber(4)
-  set state(PlanState v) { setField(4, v); }
+  set status(PlanStatus v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasState() => $_has(3);
+  $core.bool hasStatus() => $_has(3);
   @$pb.TagNumber(4)
-  void clearState() => clearField(4);
+  void clearStatus() => clearField(4);
+  @$pb.TagNumber(4)
+  PlanStatus ensureStatus() => $_ensure(3);
+}
 
-  @$pb.TagNumber(5)
-  $3.Timestamp get timestamp => $_getN(4);
-  @$pb.TagNumber(5)
-  set timestamp($3.Timestamp v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasTimestamp() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearTimestamp() => clearField(5);
-  @$pb.TagNumber(5)
-  $3.Timestamp ensureTimestamp() => $_ensure(4);
+class PlanStatus extends $pb.GeneratedMessage {
+  factory PlanStatus() => create();
+  PlanStatus._() : super();
+  factory PlanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PlanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  @$pb.TagNumber(6)
-  $core.String get reason => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set reason($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasReason() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearReason() => clearField(6);
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..e<PlanState>(1, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PlanState.PLAN_STATE_UNSPECIFIED, valueOf: PlanState.valueOf, enumValues: PlanState.values)
+    ..aOM<$3.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $3.Timestamp.create)
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PlanStatus clone() => PlanStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PlanStatus copyWith(void Function(PlanStatus) updates) => super.copyWith((message) => updates(message as PlanStatus)) as PlanStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlanStatus create() => PlanStatus._();
+  PlanStatus createEmptyInstance() => create();
+  static $pb.PbList<PlanStatus> createRepeated() => $pb.PbList<PlanStatus>();
+  @$core.pragma('dart2js:noInline')
+  static PlanStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStatus>(create);
+  static PlanStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PlanState get state => $_getN(0);
+  @$pb.TagNumber(1)
+  set state(PlanState v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasState() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearState() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $3.Timestamp get timestamp => $_getN(1);
+  @$pb.TagNumber(2)
+  set timestamp($3.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTimestamp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimestamp() => clearField(2);
+  @$pb.TagNumber(2)
+  $3.Timestamp ensureTimestamp() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => clearField(3);
 }
 
 class Plan extends $pb.GeneratedMessage {

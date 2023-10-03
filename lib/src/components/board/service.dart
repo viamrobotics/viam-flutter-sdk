@@ -103,4 +103,10 @@ class BoardService extends BoardServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<WriteAnalogResponse> writeAnalog(ServiceCall call, WriteAnalogRequest request) {
+    // TODO: implement writeAnalog
+    throw UnimplementedError();
+  }
 }
