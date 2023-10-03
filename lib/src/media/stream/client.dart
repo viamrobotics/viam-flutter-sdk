@@ -176,7 +176,7 @@ class StreamClient {
       _internalListener.pause();
       await _close(name);
       _stream = null;
-      _streamController.add(null);
+      if (!_streamController.isClosed) _streamController.add(null);
     }
   }
 }
