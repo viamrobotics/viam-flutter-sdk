@@ -79,9 +79,12 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; closeStream() async {
-  await _streamController.close();
-  await _internalStreamController.close();
-  await _close(name);
+  if (!_streamController.hasListener) {
+    _internalListener.pause();
+    await _close(name);
+    _stream = null;
+    _streamController.add(null);
+  }
 }</code></pre>
 </section>
 

@@ -63,7 +63,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/webrtc_interface/1.1.2/webrtc_interface/MediaStream-class.html">MediaStream</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/webrtc_interface/1.1.2/webrtc_interface/MediaStream-class.html">MediaStream</a>?</span>&gt;</span></span>
 <span class="name ">getStream</span>(<wbr>)
 
       
@@ -78,12 +78,17 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Stream&lt;MediaStream&gt; getStream() {
-  if (_stream != null) {
-    Future.delayed(const Duration(milliseconds: 100), () {
-      _streamController.add(_stream!);
-    });
+  <pre class="language-dart"><code class="language-dart">Stream&lt;MediaStream?&gt; getStream() {
+  if (_internalListener.isPaused) {
+    _internalListener.resume();
   }
+  Future.microtask(() {
+    if (_stream != null) {
+      _streamController.add(_stream!);
+    } else {
+      _open(name);
+    }
+  });
   return _streamController.stream;
 }</code></pre>
 </section>
