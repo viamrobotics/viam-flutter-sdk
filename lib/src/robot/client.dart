@@ -205,7 +205,12 @@ class RobotClient {
     try {
       _checkConnectionTask?.cancel();
       _shouldAttemptReconnection = false;
-      await _streamManager.closeAll();
+      try {
+        await _streamManager.closeAll();
+      } catch (_) {
+        // Do nothing -- we don't care if this fails,
+        // the server should clean up disconnected streams automatically.
+      }
       _sessionsClient.stop();
       await _channel.shutdown();
     } catch (e) {
