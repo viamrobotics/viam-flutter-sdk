@@ -243,6 +243,32 @@ const ReadAnalogReaderResponse$json = {
 final $typed_data.Uint8List readAnalogReaderResponseDescriptor = $convert.base64Decode(
     'ChhSZWFkQW5hbG9nUmVhZGVyUmVzcG9uc2USFAoFdmFsdWUYASABKAVSBXZhbHVl');
 
+@$core.Deprecated('Use writeAnalogRequestDescriptor instead')
+const WriteAnalogRequest$json = {
+  '1': 'WriteAnalogRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'pin', '3': 2, '4': 1, '5': 9, '10': 'pin'},
+    {'1': 'value', '3': 3, '4': 1, '5': 5, '10': 'value'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `WriteAnalogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List writeAnalogRequestDescriptor = $convert.base64Decode(
+    'ChJXcml0ZUFuYWxvZ1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgNwaW4YAiABKAlSA3'
+    'BpbhIUCgV2YWx1ZRgDIAEoBVIFdmFsdWUSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9i'
+    'dWYuU3RydWN0UgVleHRyYQ==');
+
+@$core.Deprecated('Use writeAnalogResponseDescriptor instead')
+const WriteAnalogResponse$json = {
+  '1': 'WriteAnalogResponse',
+};
+
+/// Descriptor for `WriteAnalogResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List writeAnalogResponseDescriptor = $convert.base64Decode(
+    'ChNXcml0ZUFuYWxvZ1Jlc3BvbnNl');
+
 @$core.Deprecated('Use getDigitalInterruptValueRequestDescriptor instead')
 const GetDigitalInterruptValueRequest$json = {
   '1': 'GetDigitalInterruptValueRequest',

@@ -58,6 +58,10 @@ class BoardServiceClient extends $grpc.Client {
       '/viam.component.board.v1.BoardService/ReadAnalogReader',
       ($0.ReadAnalogReaderRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ReadAnalogReaderResponse.fromBuffer(value));
+  static final _$writeAnalog = $grpc.ClientMethod<$0.WriteAnalogRequest, $0.WriteAnalogResponse>(
+      '/viam.component.board.v1.BoardService/WriteAnalog',
+      ($0.WriteAnalogRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.WriteAnalogResponse.fromBuffer(value));
   static final _$getDigitalInterruptValue = $grpc.ClientMethod<$0.GetDigitalInterruptValueRequest, $0.GetDigitalInterruptValueResponse>(
       '/viam.component.board.v1.BoardService/GetDigitalInterruptValue',
       ($0.GetDigitalInterruptValueRequest value) => value.writeToBuffer(),
@@ -111,6 +115,10 @@ class BoardServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.ReadAnalogReaderResponse> readAnalogReader($0.ReadAnalogReaderRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$readAnalogReader, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.WriteAnalogResponse> writeAnalog($0.WriteAnalogRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$writeAnalog, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetDigitalInterruptValueResponse> getDigitalInterruptValue($0.GetDigitalInterruptValueRequest request, {$grpc.CallOptions? options}) {
@@ -194,6 +202,13 @@ abstract class BoardServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ReadAnalogReaderRequest.fromBuffer(value),
         ($0.ReadAnalogReaderResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.WriteAnalogRequest, $0.WriteAnalogResponse>(
+        'WriteAnalog',
+        writeAnalog_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.WriteAnalogRequest.fromBuffer(value),
+        ($0.WriteAnalogResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetDigitalInterruptValueRequest, $0.GetDigitalInterruptValueResponse>(
         'GetDigitalInterruptValue',
         getDigitalInterruptValue_Pre,
@@ -253,6 +268,10 @@ abstract class BoardServiceBase extends $grpc.Service {
     return readAnalogReader(call, await request);
   }
 
+  $async.Future<$0.WriteAnalogResponse> writeAnalog_Pre($grpc.ServiceCall call, $async.Future<$0.WriteAnalogRequest> request) async {
+    return writeAnalog(call, await request);
+  }
+
   $async.Future<$0.GetDigitalInterruptValueResponse> getDigitalInterruptValue_Pre($grpc.ServiceCall call, $async.Future<$0.GetDigitalInterruptValueRequest> request) async {
     return getDigitalInterruptValue(call, await request);
   }
@@ -274,6 +293,7 @@ abstract class BoardServiceBase extends $grpc.Service {
   $async.Future<$0.SetPWMFrequencyResponse> setPWMFrequency($grpc.ServiceCall call, $0.SetPWMFrequencyRequest request);
   $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
   $async.Future<$0.ReadAnalogReaderResponse> readAnalogReader($grpc.ServiceCall call, $0.ReadAnalogReaderRequest request);
+  $async.Future<$0.WriteAnalogResponse> writeAnalog($grpc.ServiceCall call, $0.WriteAnalogRequest request);
   $async.Future<$0.GetDigitalInterruptValueResponse> getDigitalInterruptValue($grpc.ServiceCall call, $0.GetDigitalInterruptValueRequest request);
   $async.Future<$0.SetPowerModeResponse> setPowerMode($grpc.ServiceCall call, $0.SetPowerModeRequest request);
   $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);

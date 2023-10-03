@@ -861,6 +861,112 @@ class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+class WriteAnalogRequest extends $pb.GeneratedMessage {
+  factory WriteAnalogRequest() => create();
+  WriteAnalogRequest._() : super();
+  factory WriteAnalogRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WriteAnalogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WriteAnalogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'pin')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'value', $pb.PbFieldType.O3)
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WriteAnalogRequest clone() => WriteAnalogRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WriteAnalogRequest copyWith(void Function(WriteAnalogRequest) updates) => super.copyWith((message) => updates(message as WriteAnalogRequest)) as WriteAnalogRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WriteAnalogRequest create() => WriteAnalogRequest._();
+  WriteAnalogRequest createEmptyInstance() => create();
+  static $pb.PbList<WriteAnalogRequest> createRepeated() => $pb.PbList<WriteAnalogRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WriteAnalogRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WriteAnalogRequest>(create);
+  static WriteAnalogRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pin => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pin($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPin() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPin() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get value => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set value($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasValue() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValue() => clearField(3);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(3);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(3);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(3);
+}
+
+class WriteAnalogResponse extends $pb.GeneratedMessage {
+  factory WriteAnalogResponse() => create();
+  WriteAnalogResponse._() : super();
+  factory WriteAnalogResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WriteAnalogResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WriteAnalogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WriteAnalogResponse clone() => WriteAnalogResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WriteAnalogResponse copyWith(void Function(WriteAnalogResponse) updates) => super.copyWith((message) => updates(message as WriteAnalogResponse)) as WriteAnalogResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WriteAnalogResponse create() => WriteAnalogResponse._();
+  WriteAnalogResponse createEmptyInstance() => create();
+  static $pb.PbList<WriteAnalogResponse> createRepeated() => $pb.PbList<WriteAnalogResponse>();
+  @$core.pragma('dart2js:noInline')
+  static WriteAnalogResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WriteAnalogResponse>(create);
+  static WriteAnalogResponse? _defaultInstance;
+}
+
 class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
   factory GetDigitalInterruptValueRequest() => create();
   GetDigitalInterruptValueRequest._() : super();

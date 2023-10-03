@@ -2166,3 +2166,30 @@ const RotateKeyResponse$json = {
 final $typed_data.Uint8List rotateKeyResponseDescriptor = $convert.base64Decode(
     'ChFSb3RhdGVLZXlSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEAoDa2V5GAIgASgJUgNrZXk=');
 
+@$core.Deprecated('Use createKeyFromExistingKeyAuthorizationsRequestDescriptor instead')
+const CreateKeyFromExistingKeyAuthorizationsRequest$json = {
+  '1': 'CreateKeyFromExistingKeyAuthorizationsRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateKeyFromExistingKeyAuthorizationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createKeyFromExistingKeyAuthorizationsRequestDescriptor = $convert.base64Decode(
+    'Ci1DcmVhdGVLZXlGcm9tRXhpc3RpbmdLZXlBdXRob3JpemF0aW9uc1JlcXVlc3QSDgoCaWQYAS'
+    'ABKAlSAmlk');
+
+@$core.Deprecated('Use createKeyFromExistingKeyAuthorizationsResponseDescriptor instead')
+const CreateKeyFromExistingKeyAuthorizationsResponse$json = {
+  '1': 'CreateKeyFromExistingKeyAuthorizationsResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'key', '3': 2, '4': 1, '5': 9, '10': 'key'},
+  ],
+};
+
+/// Descriptor for `CreateKeyFromExistingKeyAuthorizationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createKeyFromExistingKeyAuthorizationsResponseDescriptor = $convert.base64Decode(
+    'Ci5DcmVhdGVLZXlGcm9tRXhpc3RpbmdLZXlBdXRob3JpemF0aW9uc1Jlc3BvbnNlEg4KAmlkGA'
+    'EgASgJUgJpZBIQCgNrZXkYAiABKAlSA2tleQ==');
+

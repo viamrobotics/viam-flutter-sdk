@@ -20,13 +20,14 @@ const Mode$json = {
     {'1': 'MODE_UNSPECIFIED', '2': 0},
     {'1': 'MODE_MANUAL', '2': 1},
     {'1': 'MODE_WAYPOINT', '2': 2},
+    {'1': 'MODE_EXPLORE', '2': 3},
   ],
 };
 
 /// Descriptor for `Mode`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List modeDescriptor = $convert.base64Decode(
     'CgRNb2RlEhQKEE1PREVfVU5TUEVDSUZJRUQQABIPCgtNT0RFX01BTlVBTBABEhEKDU1PREVfV0'
-    'FZUE9JTlQQAg==');
+    'FZUE9JTlQQAhIQCgxNT0RFX0VYUExPUkUQAw==');
 
 @$core.Deprecated('Use getModeRequestDescriptor instead')
 const GetModeRequest$json = {
