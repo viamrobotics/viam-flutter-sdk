@@ -21,23 +21,23 @@ class ViamCameraStreamView extends StatefulWidget {
 
 class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
   late RTCVideoRenderer _renderer;
-  late StreamSubscription<MediaStream> _streamSub;
+  late StreamSubscription<MediaStream?> _streamSub;
   Exception? _error;
   int _width = 160;
   int _height = 90;
 
   @override
   void initState() {
-    _startStream();
     super.initState();
+    _startStream();
   }
 
   @override
-  void deactivate() {
-    super.deactivate();
+  void dispose() {
     _renderer.dispose();
-    widget.streamClient.closeStream();
     _streamSub.cancel();
+    widget.streamClient.closeStream();
+    super.dispose();
   }
 
   Future<void> _startStream() async {
