@@ -42,10 +42,10 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
       });
       await Future.delayed(const Duration(milliseconds: 10));
       if (await widget.motor.isMoving()) {
-        if (power == 0) {
-          await widget.motor.stop();
-          setState(() {});
-        }
+        await widget.motor.stop();
+        setState(() {
+          power = 0;
+        });
       }
     } catch (e) {
       error = e as Error;
@@ -53,9 +53,6 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
   }
 
   void _handleSliderRelease(double power) {
-    setState(() {
-      this.power = power;
-    });
     if (autoStop) {
       stop();
     }
