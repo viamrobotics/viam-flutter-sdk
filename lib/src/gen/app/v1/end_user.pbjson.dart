@@ -16,15 +16,11 @@ import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use isLegalAcceptedRequestDescriptor instead')
 const IsLegalAcceptedRequest$json = {
   '1': 'IsLegalAcceptedRequest',
-  '9': [
-    {'1': 1, '2': 2},
-  ],
-  '10': ['user_id'],
 };
 
 /// Descriptor for `IsLegalAcceptedRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List isLegalAcceptedRequestDescriptor = $convert.base64Decode(
-    'ChZJc0xlZ2FsQWNjZXB0ZWRSZXF1ZXN0SgQIARACUgd1c2VyX2lk');
+    'ChZJc0xlZ2FsQWNjZXB0ZWRSZXF1ZXN0');
 
 @$core.Deprecated('Use isLegalAcceptedResponseDescriptor instead')
 const IsLegalAcceptedResponse$json = {
@@ -42,15 +38,11 @@ final $typed_data.Uint8List isLegalAcceptedResponseDescriptor = $convert.base64D
 @$core.Deprecated('Use acceptLegalRequestDescriptor instead')
 const AcceptLegalRequest$json = {
   '1': 'AcceptLegalRequest',
-  '9': [
-    {'1': 1, '2': 2},
-  ],
-  '10': ['user_id'],
 };
 
 /// Descriptor for `AcceptLegalRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List acceptLegalRequestDescriptor = $convert.base64Decode(
-    'ChJBY2NlcHRMZWdhbFJlcXVlc3RKBAgBEAJSB3VzZXJfaWQ=');
+    'ChJBY2NlcHRMZWdhbFJlcXVlc3Q=');
 
 @$core.Deprecated('Use acceptLegalResponseDescriptor instead')
 const AcceptLegalResponse$json = {
