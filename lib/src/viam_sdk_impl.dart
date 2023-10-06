@@ -9,7 +9,7 @@ import '../protos/app/app.dart';
 import '../protos/app/data.dart';
 
 class ViamImpl implements Viam {
-  late ClientChannelBase _clientChannelBase;
+  final ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
   late DataClient _dataClient;
 
