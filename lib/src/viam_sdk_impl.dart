@@ -9,13 +9,29 @@ import '../protos/app/app.dart';
 import '../protos/app/data.dart';
 
 class ViamImpl implements Viam {
-  final ClientChannelBase _clientChannelBase;
+  late ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
   late DataClient _dataClient;
+
+  ViamImpl._withChannel(this._clientChannelBase) {
+    _appClient = AppClient(AppServiceClient(_clientChannelBase));
+    _dataClient = DataClient(DataServiceClient(_clientChannelBase));
+  }
 
   ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _dataClient = DataClient(DataServiceClient(_clientChannelBase));
+  }
+
+  static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey) async {
+    final channel = await dial(
+        'app.viam.com',
+        DialOptions()
+          ..authEntity = apiKeyId
+          ..credentials = Credentials.apiKey(apiKey)
+          ..webRtcOptions = (DialWebRtcOptions()..disable = true),
+        () => '');
+    return ViamImpl._withChannel(channel);
   }
 
   @override

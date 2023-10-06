@@ -11,6 +11,10 @@ abstract class Viam {
     return ViamImpl.withAccessToken(accessToken);
   }
 
+  static Future<Viam> withApiKey(String apiKeyId, String apiKey) async {
+    return ViamImpl.withApiKey(apiKeyId, apiKey);
+  }
+
   /// A client to communicate with Viam's app service
   AppClient get appClient;
 
