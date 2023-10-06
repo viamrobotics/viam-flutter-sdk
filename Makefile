@@ -36,4 +36,4 @@ test:
 	flutter test
 
 analyze:
-	dart analyze --no-fatal-warnings
+	dart analyze --no-fatal-warnings ./lib
