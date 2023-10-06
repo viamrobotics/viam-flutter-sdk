@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viam_example_app/robot_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -56,7 +57,7 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void _navigateToRobot(Robot robot) {
-    // Eventually navigate to robot
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => RobotScreen(widget._viam, robot)));
   }
 
   @override
@@ -71,8 +72,19 @@ class _LocationScreenState extends State<LocationScreen> {
           ? const CircularProgressIndicator.adaptive()
           : // Build a list from the [locations] state.
           ListView.builder(
+              // This list builder is a little bit more complicated,
+              // because we have to show both [Location]s and [Robot]s.
+              // Here, we are using both the Location list provided to us
+              // on widget creation, and also the Robot list we obtained
+              // via the API call, and indexing into them.
               itemCount: widget.locations.length + robots.length,
               itemBuilder: (_, index) {
+                // Because the index could be referring to either the
+                // Location list or the Robot list, we first need to check
+                // to see if the index is in range.
+                // If it is in range of the Location list, we know use that.
+                // Otherwise, we will index into the Robot list
+                // (see else statement below).
                 if (index < widget.locations.length) {
                   final location = widget.locations[index];
                   return ListTile(
@@ -81,6 +93,8 @@ class _LocationScreenState extends State<LocationScreen> {
                     trailing: const Icon(Icons.chevron_right),
                   );
                 } else {
+                  // The index is for the robot list.
+                  // Here, we calculate the new index.
                   final robotIndex = index - widget.locations.length;
                   final robot = robots[robotIndex];
                   return ListTile(

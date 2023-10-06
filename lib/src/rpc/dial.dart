@@ -101,7 +101,7 @@ class DialWebRtcOptions {
 
 /// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
-  _logger.i('Connecting to Robot at $address');
+  _logger.i('Connecting to address $address');
   final opts = options ?? DialOptions();
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
   if (address.contains('.local.') || address.contains('localhost')) {
