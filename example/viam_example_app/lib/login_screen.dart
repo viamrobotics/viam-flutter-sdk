@@ -4,8 +4,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:viam_example_app/home_screen.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

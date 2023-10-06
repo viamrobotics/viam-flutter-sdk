@@ -5,10 +5,11 @@
 /// and send commands to them.
 
 import 'package:flutter/material.dart';
-import 'package:viam_example_app/resources/camera_screen.dart';
-import 'package:viam_example_app/resources/motor_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import 'resources/camera_screen.dart';
+import 'resources/motor_screen.dart';
 
 class RobotScreen extends StatefulWidget {
   final Viam _viam;
@@ -40,6 +41,15 @@ class _RobotScreenState extends State<RobotScreen> {
     super.initState();
     // Call our own _initState method to initialize our state.
     _initState();
+  }
+
+  @override
+  void dispose() {
+    // You should always close the [RobotClient] to free up resources.
+    // Calling [RobotClient.close] will clean up any tasks and
+    // resources created by Viam.
+    client.close();
+    super.dispose();
   }
 
   /// This method will get called when the widget initializes its state.

@@ -3,9 +3,10 @@
 /// The [Viam] instance will allow us to get more details about this [Organization].
 
 import 'package:flutter/material.dart';
-import 'package:viam_example_app/location_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import 'location_screen.dart';
 
 class OrganizationScreen extends StatefulWidget {
   /// An authenticated Viam instance.

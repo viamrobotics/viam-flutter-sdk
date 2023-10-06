@@ -1,6 +1,8 @@
 # Viam Example Flutter App
 
-This example app uses Viam's Flutter SDK to connect to and control a robot. It was created using VSCode's Flutter plugin and shows the basic use cases for how the Viam Flutter SDK can be used to connect to, view, and control your robot.
+This example app uses Viam's Flutter SDK to connect to and control a robot. It was created using VSCode's Flutter plugin and shows the basic use cases for how the Viam Flutter SDK can be used to connect manage your fleet of Smart Machines.
+
+The app is well documented and will walk you through how to use your API Keys to connect to Viam, manage your fleet of Smart Machines, and even control a particular Smart Machine using built-in widgets and custom widgets.
 
 ## Setup
 

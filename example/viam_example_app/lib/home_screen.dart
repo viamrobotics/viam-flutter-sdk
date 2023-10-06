@@ -7,9 +7,10 @@
 /// to view more details.
 
 import 'package:flutter/material.dart';
-import 'package:viam_example_app/organization_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import 'organization_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   /// An authenticated Viam instance.

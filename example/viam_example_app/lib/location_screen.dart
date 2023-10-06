@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:viam_example_app/robot_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import 'robot_screen.dart';
 
 class LocationScreen extends StatefulWidget {
   /// The authenticated Viam instance.
