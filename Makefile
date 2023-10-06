@@ -30,7 +30,7 @@ setup:
 	dart pub global activate cider
 
 format:
-	dart format --line-length=140 --set-exit-if-changed $$(find . -name "*.dart" -not -path "./lib/src/gen/*" -not -path "**.mocks.dart" -not -path "./.dart_tool/*")
+	dart format --line-length=140 --set-exit-if-changed $$(find . -name "*.dart" -not -path "./lib/src/gen/*" -not -path "**.mocks.dart" -not -path "**/.dart_tool/*")
 
 test:
 	flutter test
