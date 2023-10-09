@@ -747,6 +747,142 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
   $core.List<$1.GeoObstacle> get obstacles => $_getList(0);
 }
 
+class Path extends $pb.GeneratedMessage {
+  factory Path() => create();
+  Path._() : super();
+  factory Path.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Path.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Path', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'destinationWaypointId')
+    ..pc<$1.GeoPoint>(2, _omitFieldNames ? '' : 'geopoints', $pb.PbFieldType.PM, subBuilder: $1.GeoPoint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Path clone() => Path()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Path copyWith(void Function(Path) updates) => super.copyWith((message) => updates(message as Path)) as Path;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Path create() => Path._();
+  Path createEmptyInstance() => create();
+  static $pb.PbList<Path> createRepeated() => $pb.PbList<Path>();
+  @$core.pragma('dart2js:noInline')
+  static Path getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Path>(create);
+  static Path? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get destinationWaypointId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set destinationWaypointId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDestinationWaypointId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDestinationWaypointId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$1.GeoPoint> get geopoints => $_getList(1);
+}
+
+class GetPathsRequest extends $pb.GeneratedMessage {
+  factory GetPathsRequest() => create();
+  GetPathsRequest._() : super();
+  factory GetPathsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPathsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPathsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPathsRequest clone() => GetPathsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPathsRequest copyWith(void Function(GetPathsRequest) updates) => super.copyWith((message) => updates(message as GetPathsRequest)) as GetPathsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPathsRequest create() => GetPathsRequest._();
+  GetPathsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPathsRequest> createRepeated() => $pb.PbList<GetPathsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPathsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPathsRequest>(create);
+  static GetPathsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetPathsResponse extends $pb.GeneratedMessage {
+  factory GetPathsResponse() => create();
+  GetPathsResponse._() : super();
+  factory GetPathsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPathsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPathsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
+    ..pc<Path>(1, _omitFieldNames ? '' : 'paths', $pb.PbFieldType.PM, subBuilder: Path.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPathsResponse clone() => GetPathsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPathsResponse copyWith(void Function(GetPathsResponse) updates) => super.copyWith((message) => updates(message as GetPathsResponse)) as GetPathsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPathsResponse create() => GetPathsResponse._();
+  GetPathsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPathsResponse> createRepeated() => $pb.PbList<GetPathsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPathsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPathsResponse>(create);
+  static GetPathsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Path> get paths => $_getList(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

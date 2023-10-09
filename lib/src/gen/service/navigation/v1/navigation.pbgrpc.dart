@@ -50,6 +50,10 @@ class NavigationServiceClient extends $grpc.Client {
       '/viam.service.navigation.v1.NavigationService/GetObstacles',
       ($0.GetObstaclesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetObstaclesResponse.fromBuffer(value));
+  static final _$getPaths = $grpc.ClientMethod<$0.GetPathsRequest, $0.GetPathsResponse>(
+      '/viam.service.navigation.v1.NavigationService/GetPaths',
+      ($0.GetPathsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetPathsResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
       '/viam.service.navigation.v1.NavigationService/DoCommand',
       ($1.DoCommandRequest value) => value.writeToBuffer(),
@@ -87,6 +91,10 @@ class NavigationServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetObstaclesResponse> getObstacles($0.GetObstaclesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getObstacles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetPathsResponse> getPaths($0.GetPathsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getPaths, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
@@ -148,6 +156,13 @@ abstract class NavigationServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetObstaclesRequest.fromBuffer(value),
         ($0.GetObstaclesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPathsRequest, $0.GetPathsResponse>(
+        'GetPaths',
+        getPaths_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetPathsRequest.fromBuffer(value),
+        ($0.GetPathsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -185,6 +200,10 @@ abstract class NavigationServiceBase extends $grpc.Service {
     return getObstacles(call, await request);
   }
 
+  $async.Future<$0.GetPathsResponse> getPaths_Pre($grpc.ServiceCall call, $async.Future<$0.GetPathsRequest> request) async {
+    return getPaths(call, await request);
+  }
+
   $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
@@ -196,5 +215,6 @@ abstract class NavigationServiceBase extends $grpc.Service {
   $async.Future<$0.AddWaypointResponse> addWaypoint($grpc.ServiceCall call, $0.AddWaypointRequest request);
   $async.Future<$0.RemoveWaypointResponse> removeWaypoint($grpc.ServiceCall call, $0.RemoveWaypointRequest request);
   $async.Future<$0.GetObstaclesResponse> getObstacles($grpc.ServiceCall call, $0.GetObstaclesRequest request);
+  $async.Future<$0.GetPathsResponse> getPaths($grpc.ServiceCall call, $0.GetPathsRequest request);
   $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
 }
