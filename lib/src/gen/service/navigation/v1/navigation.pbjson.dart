@@ -227,3 +227,45 @@ final $typed_data.Uint8List getObstaclesResponseDescriptor = $convert.base64Deco
     'ChRHZXRPYnN0YWNsZXNSZXNwb25zZRI5CglvYnN0YWNsZXMYASADKAsyGy52aWFtLmNvbW1vbi'
     '52MS5HZW9PYnN0YWNsZVIJb2JzdGFjbGVz');
 
+@$core.Deprecated('Use pathDescriptor instead')
+const Path$json = {
+  '1': 'Path',
+  '2': [
+    {'1': 'destination_waypoint_id', '3': 1, '4': 1, '5': 9, '10': 'destinationWaypointId'},
+    {'1': 'geopoints', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'geopoints'},
+  ],
+};
+
+/// Descriptor for `Path`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pathDescriptor = $convert.base64Decode(
+    'CgRQYXRoEjYKF2Rlc3RpbmF0aW9uX3dheXBvaW50X2lkGAEgASgJUhVkZXN0aW5hdGlvbldheX'
+    'BvaW50SWQSNgoJZ2VvcG9pbnRzGAIgAygLMhgudmlhbS5jb21tb24udjEuR2VvUG9pbnRSCWdl'
+    'b3BvaW50cw==');
+
+@$core.Deprecated('Use getPathsRequestDescriptor instead')
+const GetPathsRequest$json = {
+  '1': 'GetPathsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetPathsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPathsRequestDescriptor = $convert.base64Decode(
+    'Cg9HZXRQYXRoc1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRItCgVleHRyYRhjIAEoCzIXLm'
+    'dvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+
+@$core.Deprecated('Use getPathsResponseDescriptor instead')
+const GetPathsResponse$json = {
+  '1': 'GetPathsResponse',
+  '2': [
+    {'1': 'paths', '3': 1, '4': 3, '5': 11, '6': '.viam.service.navigation.v1.Path', '10': 'paths'},
+  ],
+};
+
+/// Descriptor for `GetPathsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPathsResponseDescriptor = $convert.base64Decode(
+    'ChBHZXRQYXRoc1Jlc3BvbnNlEjYKBXBhdGhzGAEgAygLMiAudmlhbS5zZXJ2aWNlLm5hdmlnYX'
+    'Rpb24udjEuUGF0aFIFcGF0aHM=');
+

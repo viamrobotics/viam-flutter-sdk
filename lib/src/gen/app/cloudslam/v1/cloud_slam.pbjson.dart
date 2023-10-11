@@ -13,6 +13,22 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use endStatusDescriptor instead')
+const EndStatus$json = {
+  '1': 'EndStatus',
+  '2': [
+    {'1': 'END_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'END_STATUS_SUCCESS', '2': 1},
+    {'1': 'END_STATUS_TIMEOUT', '2': 2},
+    {'1': 'END_STATUS_FAIL', '2': 3},
+  ],
+};
+
+/// Descriptor for `EndStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List endStatusDescriptor = $convert.base64Decode(
+    'CglFbmRTdGF0dXMSGgoWRU5EX1NUQVRVU19VTlNQRUNJRklFRBAAEhYKEkVORF9TVEFUVVNfU1'
+    'VDQ0VTUxABEhYKEkVORF9TVEFUVVNfVElNRU9VVBACEhMKD0VORF9TVEFUVVNfRkFJTBAD');
+
 @$core.Deprecated('Use startMappingSessionRequestDescriptor instead')
 const StartMappingSessionRequest$json = {
   '1': 'StartMappingSessionRequest',
@@ -226,7 +242,7 @@ const UpdateMappingSessionMetadataByIDRequest$json = {
   '1': 'UpdateMappingSessionMetadataByIDRequest',
   '2': [
     {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
-    {'1': 'end_status', '3': 2, '4': 1, '5': 9, '10': 'endStatus'},
+    {'1': 'end_status', '3': 2, '4': 1, '5': 14, '6': '.viam.app.cloudslam.v1.EndStatus', '10': 'endStatus'},
     {'1': 'time_cloud_run_job_ended', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCloudRunJobEnded'},
     {'1': 'error_msg', '3': 4, '4': 1, '5': 9, '10': 'errorMsg'},
   ],
@@ -235,9 +251,10 @@ const UpdateMappingSessionMetadataByIDRequest$json = {
 /// Descriptor for `UpdateMappingSessionMetadataByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateMappingSessionMetadataByIDRequestDescriptor = $convert.base64Decode(
     'CidVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlcXVlc3QSHQoKc2Vzc2lvbl9pZB'
-    'gBIAEoCVIJc2Vzc2lvbklkEh0KCmVuZF9zdGF0dXMYAiABKAlSCWVuZFN0YXR1cxJSChh0aW1l'
-    'X2Nsb3VkX3J1bl9qb2JfZW5kZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUh'
-    'R0aW1lQ2xvdWRSdW5Kb2JFbmRlZBIbCgllcnJvcl9tc2cYBCABKAlSCGVycm9yTXNn');
+    'gBIAEoCVIJc2Vzc2lvbklkEj8KCmVuZF9zdGF0dXMYAiABKA4yIC52aWFtLmFwcC5jbG91ZHNs'
+    'YW0udjEuRW5kU3RhdHVzUgllbmRTdGF0dXMSUgoYdGltZV9jbG91ZF9ydW5fam9iX2VuZGVkGA'
+    'MgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIUdGltZUNsb3VkUnVuSm9iRW5kZWQS'
+    'GwoJZXJyb3JfbXNnGAQgASgJUghlcnJvck1zZw==');
 
 @$core.Deprecated('Use updateMappingSessionMetadataByIDResponseDescriptor instead')
 const UpdateMappingSessionMetadataByIDResponse$json = {
@@ -259,7 +276,7 @@ const MappingMetadata$json = {
     {'1': 'time_cloud_run_job_started', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCloudRunJobStarted'},
     {'1': 'time_end_submitted', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeEndSubmitted'},
     {'1': 'time_cloud_run_job_ended', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCloudRunJobEnded'},
-    {'1': 'end_status', '3': 8, '4': 1, '5': 9, '10': 'endStatus'},
+    {'1': 'end_status', '3': 8, '4': 1, '5': 14, '6': '.viam.app.cloudslam.v1.EndStatus', '10': 'endStatus'},
     {'1': 'cloud_run_job_id', '3': 9, '4': 1, '5': 9, '10': 'cloudRunJobId'},
     {'1': 'viam_server_version', '3': 10, '4': 1, '5': 9, '10': 'viamServerVersion'},
     {'1': 'map_name', '3': 11, '4': 1, '5': 9, '10': 'mapName'},
@@ -278,9 +295,10 @@ final $typed_data.Uint8List mappingMetadataDescriptor = $convert.base64Decode(
     'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSFnRpbWVDbG91ZFJ1bkpvYlN0YXJ0ZWQSSAoSdGltZV9lbm'
     'Rfc3VibWl0dGVkGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIQdGltZUVuZFN1'
     'Ym1pdHRlZBJSChh0aW1lX2Nsb3VkX3J1bl9qb2JfZW5kZWQYByABKAsyGi5nb29nbGUucHJvdG'
-    '9idWYuVGltZXN0YW1wUhR0aW1lQ2xvdWRSdW5Kb2JFbmRlZBIdCgplbmRfc3RhdHVzGAggASgJ'
-    'UgllbmRTdGF0dXMSJwoQY2xvdWRfcnVuX2pvYl9pZBgJIAEoCVINY2xvdWRSdW5Kb2JJZBIuCh'
-    'N2aWFtX3NlcnZlcl92ZXJzaW9uGAogASgJUhF2aWFtU2VydmVyVmVyc2lvbhIZCghtYXBfbmFt'
-    'ZRgLIAEoCVIHbWFwTmFtZRIhCgxzbGFtX3ZlcnNpb24YDCABKAlSC3NsYW1WZXJzaW9uEhYKBm'
-    'NvbmZpZxgNIAEoCVIGY29uZmlnEhsKCWVycm9yX21zZxgOIAEoCVIIZXJyb3JNc2c=');
+    '9idWYuVGltZXN0YW1wUhR0aW1lQ2xvdWRSdW5Kb2JFbmRlZBI/CgplbmRfc3RhdHVzGAggASgO'
+    'MiAudmlhbS5hcHAuY2xvdWRzbGFtLnYxLkVuZFN0YXR1c1IJZW5kU3RhdHVzEicKEGNsb3VkX3'
+    'J1bl9qb2JfaWQYCSABKAlSDWNsb3VkUnVuSm9iSWQSLgoTdmlhbV9zZXJ2ZXJfdmVyc2lvbhgK'
+    'IAEoCVIRdmlhbVNlcnZlclZlcnNpb24SGQoIbWFwX25hbWUYCyABKAlSB21hcE5hbWUSIQoMc2'
+    'xhbV92ZXJzaW9uGAwgASgJUgtzbGFtVmVyc2lvbhIWCgZjb25maWcYDSABKAlSBmNvbmZpZxIb'
+    'CgllcnJvcl9tc2cYDiABKAlSCGVycm9yTXNn');
 

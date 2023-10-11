@@ -16,6 +16,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../common/v1/common.pb.dart' as $3;
 import '../../../google/protobuf/struct.pb.dart' as $1;
 import '../../../google/protobuf/timestamp.pb.dart' as $2;
+import 'cloud_slam.pbenum.dart';
+
+export 'cloud_slam.pbenum.dart';
 
 class StartMappingSessionRequest extends $pb.GeneratedMessage {
   factory StartMappingSessionRequest() => create();
@@ -763,7 +766,7 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMappingSessionMetadataByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionId')
-    ..aOS(2, _omitFieldNames ? '' : 'endStatus')
+    ..e<EndStatus>(2, _omitFieldNames ? '' : 'endStatus', $pb.PbFieldType.OE, defaultOrMaker: EndStatus.END_STATUS_UNSPECIFIED, valueOf: EndStatus.valueOf, enumValues: EndStatus.values)
     ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timeCloudRunJobEnded', subBuilder: $2.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'errorMsg')
     ..hasRequiredFields = false
@@ -800,9 +803,9 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
   void clearSessionId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get endStatus => $_getSZ(1);
+  EndStatus get endStatus => $_getN(1);
   @$pb.TagNumber(2)
-  set endStatus($core.String v) { $_setString(1, v); }
+  set endStatus(EndStatus v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndStatus() => $_has(1);
   @$pb.TagNumber(2)
@@ -875,7 +878,7 @@ class MappingMetadata extends $pb.GeneratedMessage {
     ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'timeCloudRunJobStarted', subBuilder: $2.Timestamp.create)
     ..aOM<$2.Timestamp>(6, _omitFieldNames ? '' : 'timeEndSubmitted', subBuilder: $2.Timestamp.create)
     ..aOM<$2.Timestamp>(7, _omitFieldNames ? '' : 'timeCloudRunJobEnded', subBuilder: $2.Timestamp.create)
-    ..aOS(8, _omitFieldNames ? '' : 'endStatus')
+    ..e<EndStatus>(8, _omitFieldNames ? '' : 'endStatus', $pb.PbFieldType.OE, defaultOrMaker: EndStatus.END_STATUS_UNSPECIFIED, valueOf: EndStatus.valueOf, enumValues: EndStatus.values)
     ..aOS(9, _omitFieldNames ? '' : 'cloudRunJobId')
     ..aOS(10, _omitFieldNames ? '' : 'viamServerVersion')
     ..aOS(11, _omitFieldNames ? '' : 'mapName')
@@ -978,9 +981,9 @@ class MappingMetadata extends $pb.GeneratedMessage {
   $2.Timestamp ensureTimeCloudRunJobEnded() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.String get endStatus => $_getSZ(7);
+  EndStatus get endStatus => $_getN(7);
   @$pb.TagNumber(8)
-  set endStatus($core.String v) { $_setString(7, v); }
+  set endStatus(EndStatus v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasEndStatus() => $_has(7);
   @$pb.TagNumber(8)
