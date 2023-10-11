@@ -132,4 +132,14 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..extra = extra?.toStruct() ?? Struct();
     await client.setPowerMode(request);
   }
+
+  @override
+  Future<void> writeAnalog(String pin, int value, {Map<String, dynamic>? extra}) async {
+    final request = WriteAnalogRequest()
+      ..name = name
+      ..pin = pin
+      ..value = value
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.writeAnalog(request);
+  }
 }

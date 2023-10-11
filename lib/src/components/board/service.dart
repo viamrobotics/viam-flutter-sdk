@@ -105,8 +105,9 @@ class BoardService extends BoardServiceBase {
   }
 
   @override
-  Future<WriteAnalogResponse> writeAnalog(ServiceCall call, WriteAnalogRequest request) {
-    // TODO: implement writeAnalog
-    throw UnimplementedError();
+  Future<WriteAnalogResponse> writeAnalog(ServiceCall call, WriteAnalogRequest request) async {
+    final board = _fromManager(request.name);
+    await board.writeAnalog(request.pin, request.value, extra: request.extra.toMap());
+    return WriteAnalogResponse();
   }
 }

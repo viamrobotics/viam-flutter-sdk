@@ -13,6 +13,7 @@ class FakeBoard extends Board {
   final Map<String, bool> gpioMap = {'pin': false};
   final Map<String, double> pwmMap = {'pin': 0.0};
   final Map<String, int> frequencyMap = {'pin': 0};
+  final Map<String, int> analogMap = {'pin': 0};
   final BoardStatus boardStatus = const BoardStatus({'1': 0}, {'1': 0});
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
   Map<String, dynamic>? extra;
@@ -87,6 +88,12 @@ class FakeBoard extends Board {
     this.extra = extra;
     return boardStatus;
   }
+
+  @override
+  Future<void> writeAnalog(String pin, int value, {Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    analogMap[pin] = value;
+  }
 }
 
 void main() {
@@ -145,6 +152,11 @@ void main() {
       expect(await board.pwmFrequency('pin'), 0);
       await board.setPwmFrequency('pin', 1);
       expect(await board.pwmFrequency('pin'), 1);
+    });
+
+    test('writeAnalog', () async {
+      await board.writeAnalog('pin', 4);
+      expect(board.analogMap['pin'], 4);
     });
 
     test('status', () async {
@@ -280,6 +292,16 @@ void main() {
         expect(await board.pwmFrequency('pin'), 1);
       });
 
+      test('writeAnalog', () async {
+        final client = BoardServiceClient(channel);
+        expect(board.analogMap['pin'], 0);
+        await client.writeAnalog(WriteAnalogRequest()
+          ..name = name
+          ..pin = 'pin'
+          ..value = 1);
+        expect(board.analogMap['pin'], 4);
+      });
+
       test('status', () async {
         final client = BoardServiceClient(channel);
         const expected = {'1': 0};
@@ -368,6 +390,13 @@ void main() {
         expect(await client.pwmFrequency('pin'), 0);
         await client.setPwmFrequency('pin', 1);
         expect(await client.pwmFrequency('pin'), 1);
+      });
+
+      test('writeAnalog', () async {
+        final client = BoardClient(name, channel);
+        expect(board.analogMap['pin'], 0);
+        await client.writeAnalog('pin', 4);
+        expect(board.analogMap['pin'], 4);
       });
 
       test('status', () async {
