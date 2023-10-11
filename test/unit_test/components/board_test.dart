@@ -298,7 +298,7 @@ void main() {
         await client.writeAnalog(WriteAnalogRequest()
           ..name = name
           ..pin = 'pin'
-          ..value = 1);
+          ..value = 4);
         expect(board.analogMap['pin'], 4);
       });
 
