@@ -21,6 +21,15 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
   MovementSensorClient(this.name, this.channel);
 
   @override
+  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
+    final request = GetReadingsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getReadings(request);
+    return response.readings.map((key, value) => MapEntry(key, value.toPrimitive()));
+  }
+
+  @override
   Future<Position> position({Map<String, dynamic>? extra}) async {
     final request = GetPositionRequest()
       ..name = name

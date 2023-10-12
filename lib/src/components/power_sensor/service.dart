@@ -21,6 +21,13 @@ class PowerSensorService extends PowerSensorServiceBase {
   }
 
   @override
+  Future<GetReadingsResponse> getReadings(ServiceCall call, GetReadingsRequest request) async {
+    final sensor = _fromManager(request.name);
+    final result = await sensor.readings(extra: request.extra.toMap());
+    return GetReadingsResponse()..readings.addAll(result.toStruct().fields);
+  }
+
+  @override
   Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final powerSensor = _fromManager(request.name);
     final result = await powerSensor.doCommand(request.command.toMap());
