@@ -397,13 +397,16 @@ const Status$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'name'},
     {'1': 'status', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'status'},
+    {'1': 'last_reconfigured', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastReconfigured'},
   ],
 };
 
 /// Descriptor for `Status`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List statusDescriptor = $convert.base64Decode(
     'CgZTdGF0dXMSMAoEbmFtZRgBIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVIEbm'
-    'FtZRIvCgZzdGF0dXMYAiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgZzdGF0dXM=');
+    'FtZRIvCgZzdGF0dXMYAiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgZzdGF0dXMSRwoR'
+    'bGFzdF9yZWNvbmZpZ3VyZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhBsYX'
+    'N0UmVjb25maWd1cmVk');
 
 @$core.Deprecated('Use getStatusRequestDescriptor instead')
 const GetStatusRequest$json = {

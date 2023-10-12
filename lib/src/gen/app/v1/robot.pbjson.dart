@@ -170,7 +170,19 @@ const ProcessConfig$json = {
     {'1': 'log', '3': 6, '4': 1, '5': 8, '10': 'log'},
     {'1': 'stop_signal', '3': 7, '4': 1, '5': 5, '10': 'stopSignal'},
     {'1': 'stop_timeout', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'stopTimeout'},
+    {'1': 'env', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.ProcessConfig.EnvEntry', '10': 'env'},
   ],
+  '3': [ProcessConfig_EnvEntry$json],
+};
+
+@$core.Deprecated('Use processConfigDescriptor instead')
+const ProcessConfig_EnvEntry$json = {
+  '1': 'EnvEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `ProcessConfig`. Decode as a `google.protobuf.DescriptorProto`.
@@ -179,7 +191,9 @@ final $typed_data.Uint8List processConfigDescriptor = $convert.base64Decode(
     'FyZ3MYAyADKAlSBGFyZ3MSEAoDY3dkGAQgASgJUgNjd2QSGQoIb25lX3Nob3QYBSABKAhSB29u'
     'ZVNob3QSEAoDbG9nGAYgASgIUgNsb2cSHwoLc3RvcF9zaWduYWwYByABKAVSCnN0b3BTaWduYW'
     'wSPAoMc3RvcF90aW1lb3V0GAggASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgtzdG9w'
-    'VGltZW91dA==');
+    'VGltZW91dBI1CgNlbnYYCSADKAsyIy52aWFtLmFwcC52MS5Qcm9jZXNzQ29uZmlnLkVudkVudH'
+    'J5UgNlbnYaNgoIRW52RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZh'
+    'bHVlOgI4AQ==');
 
 @$core.Deprecated('Use serviceConfigDescriptor instead')
 const ServiceConfig$json = {
@@ -624,13 +638,30 @@ const ModuleConfig$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'path', '3': 2, '4': 1, '5': 9, '10': 'path'},
     {'1': 'log_level', '3': 3, '4': 1, '5': 9, '10': 'logLevel'},
+    {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'module_id', '3': 5, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'env', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleConfig.EnvEntry', '10': 'env'},
   ],
+  '3': [ModuleConfig_EnvEntry$json],
+};
+
+@$core.Deprecated('Use moduleConfigDescriptor instead')
+const ModuleConfig_EnvEntry$json = {
+  '1': 'EnvEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `ModuleConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moduleConfigDescriptor = $convert.base64Decode(
     'CgxNb2R1bGVDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRwYXRoGAIgASgJUgRwYXRoEh'
-    'sKCWxvZ19sZXZlbBgDIAEoCVIIbG9nTGV2ZWw=');
+    'sKCWxvZ19sZXZlbBgDIAEoCVIIbG9nTGV2ZWwSEgoEdHlwZRgEIAEoCVIEdHlwZRIbCgltb2R1'
+    'bGVfaWQYBSABKAlSCG1vZHVsZUlkEjQKA2VudhgGIAMoCzIiLnZpYW0uYXBwLnYxLk1vZHVsZU'
+    'NvbmZpZy5FbnZFbnRyeVIDZW52GjYKCEVudkVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZh'
+    'bHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use packageConfigDescriptor instead')
 const PackageConfig$json = {
