@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/sensor/service.dart';
 import 'package:viam_sdk/src/gen/component/sensor/v1/sensor.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
