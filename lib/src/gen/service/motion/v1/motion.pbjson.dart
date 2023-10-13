@@ -103,11 +103,26 @@ const MoveOnMapResponse$json = {
 final $typed_data.Uint8List moveOnMapResponseDescriptor = $convert.base64Decode(
     'ChFNb3ZlT25NYXBSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
 
+@$core.Deprecated('Use obstacleDetectorDescriptor instead')
+const ObstacleDetector$json = {
+  '1': 'ObstacleDetector',
+  '2': [
+    {'1': 'vision_service', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'visionService'},
+    {'1': 'camera', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'camera'},
+  ],
+};
+
+/// Descriptor for `ObstacleDetector`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List obstacleDetectorDescriptor = $convert.base64Decode(
+    'ChBPYnN0YWNsZURldGVjdG9yEkMKDnZpc2lvbl9zZXJ2aWNlGAEgASgLMhwudmlhbS5jb21tb2'
+    '4udjEuUmVzb3VyY2VOYW1lUg12aXNpb25TZXJ2aWNlEjQKBmNhbWVyYRgCIAEoCzIcLnZpYW0u'
+    'Y29tbW9uLnYxLlJlc291cmNlTmFtZVIGY2FtZXJh');
+
 @$core.Deprecated('Use motionConfigurationDescriptor instead')
 const MotionConfiguration$json = {
   '1': 'MotionConfiguration',
   '2': [
-    {'1': 'vision_services', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'visionServices'},
+    {'1': 'obstacle_detectors', '3': 1, '4': 3, '5': 11, '6': '.viam.service.motion.v1.ObstacleDetector', '10': 'obstacleDetectors'},
     {'1': 'position_polling_frequency_hz', '3': 2, '4': 1, '5': 1, '9': 0, '10': 'positionPollingFrequencyHz', '17': true},
     {'1': 'obstacle_polling_frequency_hz', '3': 3, '4': 1, '5': 1, '9': 1, '10': 'obstaclePollingFrequencyHz', '17': true},
     {'1': 'plan_deviation_m', '3': 4, '4': 1, '5': 1, '9': 2, '10': 'planDeviationM', '17': true},
@@ -125,16 +140,16 @@ const MotionConfiguration$json = {
 
 /// Descriptor for `MotionConfiguration`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List motionConfigurationDescriptor = $convert.base64Decode(
-    'ChNNb3Rpb25Db25maWd1cmF0aW9uEkUKD3Zpc2lvbl9zZXJ2aWNlcxgBIAMoCzIcLnZpYW0uY2'
-    '9tbW9uLnYxLlJlc291cmNlTmFtZVIOdmlzaW9uU2VydmljZXMSRgodcG9zaXRpb25fcG9sbGlu'
-    'Z19mcmVxdWVuY3lfaHoYAiABKAFIAFIacG9zaXRpb25Qb2xsaW5nRnJlcXVlbmN5SHqIAQESRg'
-    'odb2JzdGFjbGVfcG9sbGluZ19mcmVxdWVuY3lfaHoYAyABKAFIAVIab2JzdGFjbGVQb2xsaW5n'
-    'RnJlcXVlbmN5SHqIAQESLQoQcGxhbl9kZXZpYXRpb25fbRgEIAEoAUgCUg5wbGFuRGV2aWF0aW'
-    '9uTYgBARIsChBsaW5lYXJfbV9wZXJfc2VjGAUgASgBSANSDWxpbmVhck1QZXJTZWOIAQESNAoU'
-    'YW5ndWxhcl9kZWdzX3Blcl9zZWMYBiABKAFIBFIRYW5ndWxhckRlZ3NQZXJTZWOIAQFCIAoeX3'
-    'Bvc2l0aW9uX3BvbGxpbmdfZnJlcXVlbmN5X2h6QiAKHl9vYnN0YWNsZV9wb2xsaW5nX2ZyZXF1'
-    'ZW5jeV9oekITChFfcGxhbl9kZXZpYXRpb25fbUITChFfbGluZWFyX21fcGVyX3NlY0IXChVfYW'
-    '5ndWxhcl9kZWdzX3Blcl9zZWM=');
+    'ChNNb3Rpb25Db25maWd1cmF0aW9uElcKEm9ic3RhY2xlX2RldGVjdG9ycxgBIAMoCzIoLnZpYW'
+    '0uc2VydmljZS5tb3Rpb24udjEuT2JzdGFjbGVEZXRlY3RvclIRb2JzdGFjbGVEZXRlY3RvcnMS'
+    'RgodcG9zaXRpb25fcG9sbGluZ19mcmVxdWVuY3lfaHoYAiABKAFIAFIacG9zaXRpb25Qb2xsaW'
+    '5nRnJlcXVlbmN5SHqIAQESRgodb2JzdGFjbGVfcG9sbGluZ19mcmVxdWVuY3lfaHoYAyABKAFI'
+    'AVIab2JzdGFjbGVQb2xsaW5nRnJlcXVlbmN5SHqIAQESLQoQcGxhbl9kZXZpYXRpb25fbRgEIA'
+    'EoAUgCUg5wbGFuRGV2aWF0aW9uTYgBARIsChBsaW5lYXJfbV9wZXJfc2VjGAUgASgBSANSDWxp'
+    'bmVhck1QZXJTZWOIAQESNAoUYW5ndWxhcl9kZWdzX3Blcl9zZWMYBiABKAFIBFIRYW5ndWxhck'
+    'RlZ3NQZXJTZWOIAQFCIAoeX3Bvc2l0aW9uX3BvbGxpbmdfZnJlcXVlbmN5X2h6QiAKHl9vYnN0'
+    'YWNsZV9wb2xsaW5nX2ZyZXF1ZW5jeV9oekITChFfcGxhbl9kZXZpYXRpb25fbUITChFfbGluZW'
+    'FyX21fcGVyX3NlY0IXChVfYW5ndWxhcl9kZWdzX3Blcl9zZWM=');
 
 @$core.Deprecated('Use moveOnGlobeRequestDescriptor instead')
 const MoveOnGlobeRequest$json = {

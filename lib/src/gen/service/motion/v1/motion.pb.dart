@@ -296,6 +296,62 @@ class MoveOnMapResponse extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 }
 
+class ObstacleDetector extends $pb.GeneratedMessage {
+  factory ObstacleDetector() => create();
+  ObstacleDetector._() : super();
+  factory ObstacleDetector.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ObstacleDetector.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ObstacleDetector', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
+    ..aOM<$1.ResourceName>(1, _omitFieldNames ? '' : 'visionService', subBuilder: $1.ResourceName.create)
+    ..aOM<$1.ResourceName>(2, _omitFieldNames ? '' : 'camera', subBuilder: $1.ResourceName.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ObstacleDetector clone() => ObstacleDetector()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ObstacleDetector copyWith(void Function(ObstacleDetector) updates) => super.copyWith((message) => updates(message as ObstacleDetector)) as ObstacleDetector;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ObstacleDetector create() => ObstacleDetector._();
+  ObstacleDetector createEmptyInstance() => create();
+  static $pb.PbList<ObstacleDetector> createRepeated() => $pb.PbList<ObstacleDetector>();
+  @$core.pragma('dart2js:noInline')
+  static ObstacleDetector getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ObstacleDetector>(create);
+  static ObstacleDetector? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.ResourceName get visionService => $_getN(0);
+  @$pb.TagNumber(1)
+  set visionService($1.ResourceName v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasVisionService() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVisionService() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.ResourceName ensureVisionService() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $1.ResourceName get camera => $_getN(1);
+  @$pb.TagNumber(2)
+  set camera($1.ResourceName v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCamera() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCamera() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ResourceName ensureCamera() => $_ensure(1);
+}
+
 class MotionConfiguration extends $pb.GeneratedMessage {
   factory MotionConfiguration() => create();
   MotionConfiguration._() : super();
@@ -303,7 +359,7 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   factory MotionConfiguration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MotionConfiguration', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..pc<$1.ResourceName>(1, _omitFieldNames ? '' : 'visionServices', $pb.PbFieldType.PM, subBuilder: $1.ResourceName.create)
+    ..pc<ObstacleDetector>(1, _omitFieldNames ? '' : 'obstacleDetectors', $pb.PbFieldType.PM, subBuilder: ObstacleDetector.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'positionPollingFrequencyHz', $pb.PbFieldType.OD)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'obstaclePollingFrequencyHz', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'planDeviationM', $pb.PbFieldType.OD)
@@ -334,7 +390,7 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   static MotionConfiguration? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$1.ResourceName> get visionServices => $_getList(0);
+  $core.List<ObstacleDetector> get obstacleDetectors => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.double get positionPollingFrequencyHz => $_getN(1);

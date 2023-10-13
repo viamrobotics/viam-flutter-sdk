@@ -1220,6 +1220,7 @@ class Status extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOM<$1.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $1.ResourceName.create)
     ..aOM<$2.Struct>(2, _omitFieldNames ? '' : 'status', subBuilder: $2.Struct.create)
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'lastReconfigured', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1265,6 +1266,17 @@ class Status extends $pb.GeneratedMessage {
   void clearStatus() => clearField(2);
   @$pb.TagNumber(2)
   $2.Struct ensureStatus() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $3.Timestamp get lastReconfigured => $_getN(2);
+  @$pb.TagNumber(3)
+  set lastReconfigured($3.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLastReconfigured() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastReconfigured() => clearField(3);
+  @$pb.TagNumber(3)
+  $3.Timestamp ensureLastReconfigured() => $_ensure(2);
 }
 
 class GetStatusRequest extends $pb.GeneratedMessage {

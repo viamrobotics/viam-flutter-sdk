@@ -488,6 +488,7 @@ class ProcessConfig extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'log')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'stopSignal', $pb.PbFieldType.O3)
     ..aOM<$6.Duration>(8, _omitFieldNames ? '' : 'stopTimeout', subBuilder: $6.Duration.create)
+    ..m<$core.String, $core.String>(9, _omitFieldNames ? '' : 'env', entryClassName: 'ProcessConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -579,6 +580,9 @@ class ProcessConfig extends $pb.GeneratedMessage {
   void clearStopTimeout() => clearField(8);
   @$pb.TagNumber(8)
   $6.Duration ensureStopTimeout() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.Map<$core.String, $core.String> get env => $_getMap(8);
 }
 
 class ServiceConfig extends $pb.GeneratedMessage {
@@ -2376,6 +2380,9 @@ class ModuleConfig extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'path')
     ..aOS(3, _omitFieldNames ? '' : 'logLevel')
+    ..aOS(4, _omitFieldNames ? '' : 'type')
+    ..aOS(5, _omitFieldNames ? '' : 'moduleId')
+    ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'env', entryClassName: 'ModuleConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -2426,6 +2433,27 @@ class ModuleConfig extends $pb.GeneratedMessage {
   $core.bool hasLogLevel() => $_has(2);
   @$pb.TagNumber(3)
   void clearLogLevel() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get type => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set type($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get moduleId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set moduleId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasModuleId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearModuleId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.Map<$core.String, $core.String> get env => $_getMap(5);
 }
 
 class PackageConfig extends $pb.GeneratedMessage {
