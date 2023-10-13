@@ -83,7 +83,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dial(String address, DialOptions? options, String Function() sessionCallback) async {
-  _logger.i(&#39;Connecting to Robot at $address&#39;);
+  _logger.i(&#39;Connecting to address $address&#39;);
   final opts = options ?? DialOptions();
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
   if (address.contains(&#39;.local.&#39;) || address.contains(&#39;localhost&#39;)) {
