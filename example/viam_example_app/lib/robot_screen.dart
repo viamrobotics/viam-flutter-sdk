@@ -71,18 +71,24 @@ class _RobotScreenState extends State<RobotScreen> {
     return client.resourceNames..sort((a, b) => a.name.compareTo(b.name));
   }
 
-  /// For this example, we have control screens for only two resource subtypes:
-  /// [Camera] and [Motor]. Because we can only navigate to resources of these subtypes,
+  /// For this example, we have control screens for only these specific resource subtypes:
+  /// - [Camera]
+  /// - [Motor]
+  /// Because we can only navigate to resources of these subtypes,
   /// we added this convenience method to see if the resource name provided is of
   /// one of the available subtypes.
   bool _isNavigable(ResourceName rn) {
-    final availableResourceSubtypes = [Camera.subtype.resourceSubtype, Motor.subtype.resourceSubtype];
+    final availableResourceSubtypes = [
+      Camera.subtype.resourceSubtype,
+      Motor.subtype.resourceSubtype,
+    ];
     return availableResourceSubtypes.contains(rn.subtype);
   }
 
   /// The function that will navigate to an individual resource screen.
-  /// In this example app, we are only allowing navigation to
-  /// two possible resource types: Camera and Motor.
+  /// In this example app, we are only allowing navigation to specific resource types:
+  /// - [Camera]
+  /// - [Motor]
   /// These examples will give you an idea of how to use Viam's included
   /// widgets, or how to build your own and call resource functions.
   void _navigateToResource(ResourceName rn) {

@@ -99,41 +99,39 @@ class _ViamSensorWidgetState extends State<ViamSensorWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          DataTable(
-              columns: const <DataColumn>[DataColumn(label: Text('Reading')), DataColumn(label: Text('Value'))],
-              rows: readings.keys.map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(readings[e].toString()))])).toList()),
-          if (widget.showLastRefreshed && lastRefreshed != null)
-            Column(children: [
-              const SizedBox(height: 8),
-              Text('Updated at: ${formattedDate(lastRefreshed!)}'),
-            ]),
-          if (widget.showRefreshControls)
-            Column(children: [
-              const SizedBox(height: 8),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                if (widget.refreshInterval != null)
-                  ViamButton(
-                    onPressed: playPause,
-                    text: isPaused ? 'Play' : 'Pause',
-                    icon: isPaused ? Icons.play_arrow : Icons.pause,
-                    variant: ViamButtonVariant.iconOnly,
-                    style: ViamButtonFillStyle.ghost,
-                  ),
-                const SizedBox(width: 8),
+    return Column(
+      children: [
+        DataTable(
+            columns: const <DataColumn>[DataColumn(label: Text('Reading')), DataColumn(label: Text('Value'))],
+            rows: readings.keys.map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(readings[e].toString()))])).toList()),
+        if (widget.showLastRefreshed && lastRefreshed != null)
+          Column(children: [
+            const SizedBox(height: 8),
+            Text('Updated at: ${formattedDate(lastRefreshed!)}'),
+          ]),
+        if (widget.showRefreshControls)
+          Column(children: [
+            const SizedBox(height: 8),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              if (widget.refreshInterval != null)
                 ViamButton(
-                  onPressed: refresh,
-                  text: 'Refresh',
-                  icon: Icons.refresh,
+                  onPressed: playPause,
+                  text: isPaused ? 'Play' : 'Pause',
+                  icon: isPaused ? Icons.play_arrow : Icons.pause,
                   variant: ViamButtonVariant.iconOnly,
                   style: ViamButtonFillStyle.ghost,
                 ),
-              ]),
+              const SizedBox(width: 8),
+              ViamButton(
+                onPressed: refresh,
+                text: 'Refresh',
+                icon: Icons.refresh,
+                variant: ViamButtonVariant.iconOnly,
+                style: ViamButtonFillStyle.ghost,
+              ),
             ]),
-        ],
-      ),
+          ]),
+      ],
     );
   }
 }
