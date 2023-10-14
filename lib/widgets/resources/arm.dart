@@ -1,6 +1,5 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:viam_sdk/protos/component/arm.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
 
@@ -20,7 +19,7 @@ class ViamArmWidget extends StatefulWidget {
 
 class _ViamArmWidgetState extends State<ViamArmWidget> {
   Pose endPosition = Pose();
-  JointPositions jointPositions = JointPositions();
+  List<double> jointPositions = [];
 
   Future<void> _positions() async {
     final ep = await widget.arm.endPosition();
@@ -60,7 +59,7 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
 
   Future<void> updateJointPosition(int joint, double increment) async {
     final jp = jointPositions;
-    jp.values[joint] += increment;
+    jp[joint] += increment;
     await widget.arm.moveToJointPositions(jp);
     await _positions();
   }
@@ -244,7 +243,7 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
         Table(
           columnWidths: const {0: IntrinsicColumnWidth()},
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-          children: jointPositions.values
+          children: jointPositions
               .mapIndexed((index, element) => TableRow(children: [
                     TableCell(
                         child: Padding(
