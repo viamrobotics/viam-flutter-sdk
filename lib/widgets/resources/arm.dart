@@ -17,7 +17,34 @@ class ViamArmWidget extends StatefulWidget {
   State<ViamArmWidget> createState() => _ViamArmWidgetState();
 }
 
-enum _PoseField { x, y, z, theta, oX, oY, oZ }
+enum _PoseField {
+  x,
+  y,
+  z,
+  theta,
+  oX,
+  oY,
+  oZ;
+
+  String get title {
+    switch (this) {
+      case x:
+        return 'X';
+      case y:
+        return 'Y';
+      case z:
+        return 'Z';
+      case theta:
+        return 'Theta';
+      case oX:
+        return 'OX';
+      case oY:
+        return 'OY';
+      case oZ:
+        return 'OZ';
+    }
+  }
+}
 
 class _ViamArmWidgetState extends State<ViamArmWidget> {
   Pose endPosition = Pose();
@@ -88,10 +115,7 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
     }
 
     return TableRow(children: [
-      TableCell(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: Text('${field.name[0].toUpperCase()}${field.name.substring(1).toLowerCase()}', textAlign: TextAlign.end))),
+      TableCell(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 2), child: Text(field.title, textAlign: TextAlign.end))),
       TableCell(
           child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 2),
