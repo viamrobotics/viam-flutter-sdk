@@ -17,11 +17,13 @@ class ViamArmWidget extends StatefulWidget {
   State<ViamArmWidget> createState() => _ViamArmWidgetState();
 }
 
+enum _PoseField { x, y, z, theta, oX, oY, oZ }
+
 class _ViamArmWidgetState extends State<ViamArmWidget> {
   Pose endPosition = Pose();
   List<double> jointPositions = [];
 
-  Future<void> _positions() async {
+  Future<void> _getPositions() async {
     final ep = await widget.arm.endPosition();
     final jp = await widget.arm.jointPositions();
     setState(() {
@@ -33,35 +35,83 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
   @override
   void initState() {
     super.initState();
-    _positions();
+    _getPositions();
   }
 
-  Future<void> updateEndPosition(String field, double increment) async {
+  Future<void> updateEndPosition(_PoseField field, double increment) async {
     final ep = endPosition;
-    if (field == 'x') {
-      ep.x += increment;
-    } else if (field == 'y') {
-      ep.y += increment;
-    } else if (field == 'z') {
-      ep.z += increment;
-    } else if (field == 'theta') {
-      ep.theta += increment;
-    } else if (field == 'ox') {
-      ep.oX += increment;
-    } else if (field == 'oy') {
-      ep.oY += increment;
-    } else if (field == 'oz') {
-      ep.oZ += increment;
+    switch (field) {
+      case _PoseField.x:
+        ep.x += increment;
+      case _PoseField.y:
+        ep.y += increment;
+      case _PoseField.z:
+        ep.z += increment;
+      case _PoseField.theta:
+        ep.theta += increment;
+      case _PoseField.oX:
+        ep.oX += increment;
+      case _PoseField.oY:
+        ep.oY += increment;
+      case _PoseField.oZ:
+        ep.oZ += increment;
     }
+
     await widget.arm.moveToPosition(ep);
-    await _positions();
+    await _getPositions();
   }
 
   Future<void> updateJointPosition(int joint, double increment) async {
     final jp = jointPositions;
     jp[joint] += increment;
     await widget.arm.moveToJointPositions(jp);
-    await _positions();
+    await _getPositions();
+  }
+
+  TableRow _getEndPositionRow(_PoseField field) {
+    double value;
+    switch (field) {
+      case _PoseField.x:
+        value = endPosition.x;
+      case _PoseField.y:
+        value = endPosition.y;
+      case _PoseField.z:
+        value = endPosition.z;
+      case _PoseField.theta:
+        value = endPosition.theta;
+      case _PoseField.oX:
+        value = endPosition.oX;
+      case _PoseField.oY:
+        value = endPosition.oY;
+      case _PoseField.oZ:
+        value = endPosition.oZ;
+    }
+
+    return TableRow(children: [
+      TableCell(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              child: Text('${field.name[0].toUpperCase()}${field.name.substring(1).toLowerCase()}', textAlign: TextAlign.end))),
+      TableCell(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              child: ViamButton(onPressed: () => updateEndPosition(field, -10), text: '--', size: ViamButtonSizeClass.small))),
+      TableCell(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              child: ViamButton(onPressed: () => updateEndPosition(field, -1), text: '-', size: ViamButtonSizeClass.small))),
+      TableCell(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2), child: Text(value.toStringAsFixed(2), textAlign: TextAlign.center))),
+      TableCell(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              child: ViamButton(onPressed: () => updateEndPosition(field, 1), text: '+', size: ViamButtonSizeClass.small))),
+      TableCell(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
+              child: ViamButton(onPressed: () => updateEndPosition(field, 10), text: '++', size: ViamButtonSizeClass.small))),
+    ]);
   }
 
   @override
@@ -72,172 +122,10 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
       children: [
         const Text('End Positions (mm)', style: TextStyle(fontWeight: FontWeight.bold)),
         Table(
-            columnWidths: const {0: IntrinsicColumnWidth()},
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            children: [
-              TableRow(children: [
-                const TableCell(child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('X', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('x', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('x', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.x.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('x', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('x', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-              TableRow(children: [
-                const TableCell(child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('Y', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('y', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('y', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.y.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('y', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('y', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-              TableRow(children: [
-                const TableCell(child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('Z', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('z', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('z', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.z.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('z', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('z', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-              TableRow(children: [
-                const TableCell(
-                    child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('Theta', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('theta', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('theta', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.theta.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('theta', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('theta', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-              TableRow(children: [
-                const TableCell(child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('OX', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('ox', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('ox', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.oX.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('ox', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('ox', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-              TableRow(children: [
-                const TableCell(child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('OY', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('oy', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('oy', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.oY.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('oy', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('oy', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-              TableRow(children: [
-                const TableCell(child: Padding(padding: EdgeInsets.symmetric(horizontal: 2), child: Text('OZ', textAlign: TextAlign.end))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('oz', -10), text: '--', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('oz', -1), text: '-', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: Text(endPosition.oZ.toStringAsFixed(2), textAlign: TextAlign.center))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
-                        child: ViamButton(onPressed: () => updateEndPosition('oz', 1), text: '+', size: ViamButtonSizeClass.small))),
-                TableCell(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                        child: ViamButton(onPressed: () => updateEndPosition('oz', 10), text: '++', size: ViamButtonSizeClass.small))),
-              ]),
-            ]),
+          columnWidths: const {0: IntrinsicColumnWidth()},
+          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+          children: _PoseField.values.map((e) => _getEndPositionRow(e)).toList(),
+        ),
         const SizedBox(height: 16),
         const Text('Joints (degrees)', style: TextStyle(fontWeight: FontWeight.bold)),
         Table(
