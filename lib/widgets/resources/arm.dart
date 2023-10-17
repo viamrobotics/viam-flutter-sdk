@@ -115,26 +115,12 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
     }
 
     return TableRow(children: [
-      TableCell(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 2), child: Text(field.title, textAlign: TextAlign.end))),
-      TableCell(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: ViamButton(onPressed: () => updateEndPosition(field, -10), text: '--', size: ViamButtonSizeClass.small))),
-      TableCell(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: ViamButton(onPressed: () => updateEndPosition(field, -1), text: '-', size: ViamButtonSizeClass.small))),
-      TableCell(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2), child: Text(value.toStringAsFixed(2), textAlign: TextAlign.center))),
-      TableCell(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: ViamButton(onPressed: () => updateEndPosition(field, 1), text: '+', size: ViamButtonSizeClass.small))),
-      TableCell(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-              child: ViamButton(onPressed: () => updateEndPosition(field, 10), text: '++', size: ViamButtonSizeClass.small))),
+      _ArmTableCell(Text(field.title, textAlign: TextAlign.end)),
+      _ArmTableCell(ViamButton(onPressed: () => updateEndPosition(field, -10), text: '--', size: ViamButtonSizeClass.small)),
+      _ArmTableCell(ViamButton(onPressed: () => updateEndPosition(field, -1), text: '-', size: ViamButtonSizeClass.small)),
+      _ArmTableCell(Text(value.toStringAsFixed(2), textAlign: TextAlign.center)),
+      _ArmTableCell(ViamButton(onPressed: () => updateEndPosition(field, 1), text: '+', size: ViamButtonSizeClass.small)),
+      _ArmTableCell(ViamButton(onPressed: () => updateEndPosition(field, 10), text: '++', size: ViamButtonSizeClass.small)),
     ]);
   }
 
@@ -157,36 +143,28 @@ class _ViamArmWidgetState extends State<ViamArmWidget> {
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           children: jointPositions
               .mapIndexed((index, element) => TableRow(children: [
-                    TableCell(
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2), child: Text('Joint $index', textAlign: TextAlign.end))),
-                    TableCell(
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child:
-                                ViamButton(onPressed: () => updateJointPosition(index, -10), text: '--', size: ViamButtonSizeClass.small))),
-                    TableCell(
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child:
-                                ViamButton(onPressed: () => updateJointPosition(index, -1), text: '-', size: ViamButtonSizeClass.small))),
-                    TableCell(
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child: Text(element.toStringAsFixed(2), textAlign: TextAlign.center))),
-                    TableCell(
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child: ViamButton(onPressed: () => updateJointPosition(index, 1), text: '+', size: ViamButtonSizeClass.small))),
-                    TableCell(
-                        child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
-                            child:
-                                ViamButton(onPressed: () => updateJointPosition(index, 10), text: '++', size: ViamButtonSizeClass.small))),
+                    _ArmTableCell(Text('Joint $index', textAlign: TextAlign.end)),
+                    _ArmTableCell(
+                        ViamButton(onPressed: () => updateJointPosition(index, -10), text: '--', size: ViamButtonSizeClass.small)),
+                    _ArmTableCell(ViamButton(onPressed: () => updateJointPosition(index, -1), text: '-', size: ViamButtonSizeClass.small)),
+                    _ArmTableCell(Text(element.toStringAsFixed(2), textAlign: TextAlign.center)),
+                    _ArmTableCell(ViamButton(onPressed: () => updateJointPosition(index, 1), text: '+', size: ViamButtonSizeClass.small)),
+                    _ArmTableCell(ViamButton(onPressed: () => updateJointPosition(index, 10), text: '++', size: ViamButtonSizeClass.small)),
                   ]))
               .toList(),
         )
       ],
     );
+  }
+}
+
+class _ArmTableCell extends StatelessWidget {
+  final Widget child;
+
+  const _ArmTableCell(this.child);
+
+  @override
+  Widget build(BuildContext context) {
+    return TableCell(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1), child: child));
   }
 }
