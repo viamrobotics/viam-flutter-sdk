@@ -52,13 +52,13 @@ class ArmService extends ArmServiceBase {
   Future<GetJointPositionsResponse> getJointPositions(ServiceCall call, GetJointPositionsRequest request) async {
     final arm = _armFromManager(request.name);
     final jointPositions = await arm.jointPositions(extra: request.extra.toMap());
-    return GetJointPositionsResponse()..positions = jointPositions;
+    return GetJointPositionsResponse()..positions = (JointPositions()..values.addAll(jointPositions));
   }
 
   @override
   Future<MoveToJointPositionsResponse> moveToJointPositions(ServiceCall call, MoveToJointPositionsRequest request) async {
     final arm = _armFromManager(request.name);
-    await arm.moveToJointPositions(request.positions, extra: request.extra.toMap());
+    await arm.moveToJointPositions(request.positions.values, extra: request.extra.toMap());
     return MoveToJointPositionsResponse();
   }
 

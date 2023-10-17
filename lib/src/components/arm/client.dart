@@ -39,10 +39,10 @@ class ArmClient extends Arm implements ResourceRPCClient {
   }
 
   @override
-  Future<void> moveToJointPositions(JointPositions positions, {Map<String, dynamic>? extra}) async {
+  Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra}) async {
     final request = MoveToJointPositionsRequest()
       ..name = name
-      ..positions = positions
+      ..positions = (JointPositions()..values.addAll(positions))
       ..extra = extra?.toStruct() ?? Struct();
     await client.moveToJointPositions(request);
   }
@@ -57,12 +57,12 @@ class ArmClient extends Arm implements ResourceRPCClient {
   }
 
   @override
-  Future<JointPositions> jointPositions({Map<String, dynamic>? extra}) async {
+  Future<List<double>> jointPositions({Map<String, dynamic>? extra}) async {
     final request = GetJointPositionsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getJointPositions(request);
-    return response.positions;
+    return response.positions.values;
   }
 
   @override

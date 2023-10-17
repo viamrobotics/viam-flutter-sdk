@@ -34,8 +34,8 @@ class _ViamBaseWidgetState extends State<ViamBaseWidget> {
 
   @override
   void initState() {
-    camera = widget.cameras.firstOrNull;
     super.initState();
+    camera = widget.cameras.firstOrNull;
   }
 
   Widget _buildCamera() {

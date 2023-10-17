@@ -85,6 +85,7 @@ enum ViamButtonFillStyle {
 
 /// The size class of the button.
 enum ViamButtonSizeClass {
+  xxs,
   xs,
   small,
   medium,
@@ -94,6 +95,8 @@ enum ViamButtonSizeClass {
   /// The font size of the button, based on size class
   double get fontSize {
     switch (this) {
+      case xxs:
+        return 10;
       case xs:
         return 10;
       case small:
@@ -110,6 +113,8 @@ enum ViamButtonSizeClass {
   /// The padding of the button, based on size class
   EdgeInsets get padding {
     switch (this) {
+      case xxs:
+        return const EdgeInsets.all(0);
       case xs:
         return const EdgeInsets.symmetric(vertical: 4, horizontal: 8);
       case small:
@@ -125,7 +130,12 @@ enum ViamButtonSizeClass {
 
   /// The style of the button, based on size class
   ButtonStyle get style {
-    return ButtonStyle(textStyle: MaterialStatePropertyAll(TextStyle(fontSize: fontSize)), padding: MaterialStatePropertyAll(padding));
+    return ButtonStyle(
+      textStyle: MaterialStatePropertyAll(TextStyle(fontSize: fontSize)),
+      padding: MaterialStatePropertyAll(padding),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      minimumSize: const MaterialStatePropertyAll(Size.zero),
+    );
   }
 }
 

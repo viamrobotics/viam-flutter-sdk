@@ -1,5 +1,4 @@
 import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/arm/v1/arm.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -13,11 +12,11 @@ abstract class Arm extends Resource {
   /// Move the end of the arm to the [Pose] specified.
   Future<void> moveToPosition(Pose pose, {Map<String, dynamic>? extra});
 
-  /// Move each joint on the arm to the corresponding position specified in [JointPositions]
-  Future<void> moveToJointPositions(JointPositions positions, {Map<String, dynamic>? extra});
+  /// Move each joint on the arm to the corresponding position specified in [positions]
+  Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra});
 
-  /// Get the [JointPositions] representing the current position of the arm
-  Future<JointPositions> jointPositions({Map<String, dynamic>? extra});
+  /// Get the [List] representing the current position of the arm
+  Future<List<double>> jointPositions({Map<String, dynamic>? extra});
 
   /// Stops all motion of the arm. It is assumed that the arm stops immediately.
   Future<void> stop({Map<String, dynamic>? extra});
