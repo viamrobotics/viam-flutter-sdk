@@ -441,3 +441,43 @@ final $typed_data.Uint8List getGeometriesResponseDescriptor = $convert.base64Dec
     'ChVHZXRHZW9tZXRyaWVzUmVzcG9uc2USOAoKZ2VvbWV0cmllcxgBIAMoCzIYLnZpYW0uY29tbW'
     '9uLnYxLkdlb21ldHJ5UgpnZW9tZXRyaWVz');
 
+@$core.Deprecated('Use getReadingsRequestDescriptor instead')
+const GetReadingsRequest$json = {
+  '1': 'GetReadingsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetReadingsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getReadingsRequestDescriptor = $convert.base64Decode(
+    'ChJHZXRSZWFkaW5nc1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRItCgVleHRyYRhjIAEoCz'
+    'IXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+
+@$core.Deprecated('Use getReadingsResponseDescriptor instead')
+const GetReadingsResponse$json = {
+  '1': 'GetReadingsResponse',
+  '2': [
+    {'1': 'readings', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.GetReadingsResponse.ReadingsEntry', '10': 'readings'},
+  ],
+  '3': [GetReadingsResponse_ReadingsEntry$json],
+};
+
+@$core.Deprecated('Use getReadingsResponseDescriptor instead')
+const GetReadingsResponse_ReadingsEntry$json = {
+  '1': 'ReadingsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Value', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `GetReadingsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getReadingsResponseDescriptor = $convert.base64Decode(
+    'ChNHZXRSZWFkaW5nc1Jlc3BvbnNlEk0KCHJlYWRpbmdzGAEgAygLMjEudmlhbS5jb21tb24udj'
+    'EuR2V0UmVhZGluZ3NSZXNwb25zZS5SZWFkaW5nc0VudHJ5UghyZWFkaW5ncxpTCg1SZWFkaW5n'
+    'c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYn'
+    'VmLlZhbHVlUgV2YWx1ZToCOAE=');
+

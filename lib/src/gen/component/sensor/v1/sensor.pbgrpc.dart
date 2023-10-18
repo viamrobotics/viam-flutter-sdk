@@ -15,8 +15,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $1;
-import 'sensor.pb.dart' as $0;
+import '../../../common/v1/common.pb.dart' as $0;
 
 export 'sensor.pb.dart';
 
@@ -26,14 +25,14 @@ class SensorServiceClient extends $grpc.Client {
       '/viam.component.sensor.v1.SensorService/GetReadings',
       ($0.GetReadingsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetReadingsResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+  static final _$doCommand = $grpc.ClientMethod<$0.DoCommandRequest, $0.DoCommandResponse>(
       '/viam.component.sensor.v1.SensorService/DoCommand',
-      ($1.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+      ($0.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$0.GetGeometriesRequest, $0.GetGeometriesResponse>(
       '/viam.component.sensor.v1.SensorService/GetGeometries',
-      ($1.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetGeometriesResponse.fromBuffer(value));
+      ($0.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetGeometriesResponse.fromBuffer(value));
 
   SensorServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,11 +44,11 @@ class SensorServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getReadings, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.DoCommandResponse> doCommand($0.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetGeometriesResponse> getGeometries($1.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.GetGeometriesResponse> getGeometries($0.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -66,35 +65,35 @@ abstract class SensorServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetReadingsRequest.fromBuffer(value),
         ($0.GetReadingsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+    $addMethod($grpc.ServiceMethod<$0.DoCommandRequest, $0.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.DoCommandRequest.fromBuffer(value),
-        ($1.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $0.DoCommandRequest.fromBuffer(value),
+        ($0.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetGeometriesRequest, $0.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetGeometriesRequest.fromBuffer(value),
-        ($1.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.GetGeometriesRequest.fromBuffer(value),
+        ($0.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$0.GetReadingsRequest> request) async {
     return getReadings(call, await request);
   }
 
-  $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
+  $async.Future<$0.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$0.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$1.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$1.GetGeometriesRequest> request) async {
+  $async.Future<$0.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$0.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
   $async.Future<$0.GetReadingsResponse> getReadings($grpc.ServiceCall call, $0.GetReadingsRequest request);
-  $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
-  $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
+  $async.Future<$0.DoCommandResponse> doCommand($grpc.ServiceCall call, $0.DoCommandRequest request);
+  $async.Future<$0.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $0.GetGeometriesRequest request);
 }

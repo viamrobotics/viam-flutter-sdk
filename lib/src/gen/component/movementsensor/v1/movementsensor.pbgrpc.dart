@@ -62,6 +62,10 @@ class MovementSensorServiceClient extends $grpc.Client {
       '/viam.component.movementsensor.v1.MovementSensorService/GetGeometries',
       ($1.GetGeometriesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.GetGeometriesResponse.fromBuffer(value));
+  static final _$getReadings = $grpc.ClientMethod<$1.GetReadingsRequest, $1.GetReadingsResponse>(
+      '/viam.component.movementsensor.v1.MovementSensorService/GetReadings',
+      ($1.GetReadingsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetReadingsResponse.fromBuffer(value));
 
   MovementSensorServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -107,6 +111,10 @@ class MovementSensorServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.GetGeometriesResponse> getGeometries($1.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetReadingsResponse> getReadings($1.GetReadingsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getReadings, request, options: options);
   }
 }
 
@@ -185,6 +193,13 @@ abstract class MovementSensorServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GetGeometriesRequest.fromBuffer(value),
         ($1.GetGeometriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetReadingsRequest, $1.GetReadingsResponse>(
+        'GetReadings',
+        getReadings_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetReadingsRequest.fromBuffer(value),
+        ($1.GetReadingsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetLinearVelocityResponse> getLinearVelocity_Pre($grpc.ServiceCall call, $async.Future<$0.GetLinearVelocityRequest> request) async {
@@ -227,6 +242,10 @@ abstract class MovementSensorServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
+  $async.Future<$1.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$1.GetReadingsRequest> request) async {
+    return getReadings(call, await request);
+  }
+
   $async.Future<$0.GetLinearVelocityResponse> getLinearVelocity($grpc.ServiceCall call, $0.GetLinearVelocityRequest request);
   $async.Future<$0.GetAngularVelocityResponse> getAngularVelocity($grpc.ServiceCall call, $0.GetAngularVelocityRequest request);
   $async.Future<$0.GetCompassHeadingResponse> getCompassHeading($grpc.ServiceCall call, $0.GetCompassHeadingRequest request);
@@ -237,4 +256,5 @@ abstract class MovementSensorServiceBase extends $grpc.Service {
   $async.Future<$0.GetLinearAccelerationResponse> getLinearAcceleration($grpc.ServiceCall call, $0.GetLinearAccelerationRequest request);
   $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
   $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
+  $async.Future<$1.GetReadingsResponse> getReadings($grpc.ServiceCall call, $1.GetReadingsRequest request);
 }

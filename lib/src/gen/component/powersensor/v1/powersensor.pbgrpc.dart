@@ -34,6 +34,10 @@ class PowerSensorServiceClient extends $grpc.Client {
       '/viam.component.powersensor.v1.PowerSensorService/GetPower',
       ($0.GetPowerRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetPowerResponse.fromBuffer(value));
+  static final _$getReadings = $grpc.ClientMethod<$1.GetReadingsRequest, $1.GetReadingsResponse>(
+      '/viam.component.powersensor.v1.PowerSensorService/GetReadings',
+      ($1.GetReadingsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetReadingsResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
       '/viam.component.powersensor.v1.PowerSensorService/DoCommand',
       ($1.DoCommandRequest value) => value.writeToBuffer(),
@@ -55,6 +59,10 @@ class PowerSensorServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetPowerResponse> getPower($0.GetPowerRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPower, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetReadingsResponse> getReadings($1.GetReadingsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getReadings, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
@@ -88,6 +96,13 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetPowerRequest.fromBuffer(value),
         ($0.GetPowerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetReadingsRequest, $1.GetReadingsResponse>(
+        'GetReadings',
+        getReadings_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetReadingsRequest.fromBuffer(value),
+        ($1.GetReadingsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -109,6 +124,10 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
     return getPower(call, await request);
   }
 
+  $async.Future<$1.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$1.GetReadingsRequest> request) async {
+    return getReadings(call, await request);
+  }
+
   $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
@@ -116,5 +135,6 @@ abstract class PowerSensorServiceBase extends $grpc.Service {
   $async.Future<$0.GetVoltageResponse> getVoltage($grpc.ServiceCall call, $0.GetVoltageRequest request);
   $async.Future<$0.GetCurrentResponse> getCurrent($grpc.ServiceCall call, $0.GetCurrentRequest request);
   $async.Future<$0.GetPowerResponse> getPower($grpc.ServiceCall call, $0.GetPowerRequest request);
+  $async.Future<$1.GetReadingsResponse> getReadings($grpc.ServiceCall call, $1.GetReadingsRequest request);
   $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
 }
