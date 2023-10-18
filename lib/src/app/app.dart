@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import '../gen/app/v1/app.pbgrpc.dart';
+import 'permissions.dart';
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;
 
@@ -85,5 +86,26 @@ class AppClient {
     final response = _client.tailRobotPartLogs(request);
     final stream = response.map((event) => event.logs);
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
+  }
+
+  /// List the [Authorization]s available for the currently authenticated user
+  Future<List<Authorization>> listAuthorizations(String organizationId, {List<String> resourceIds = const []}) async {
+    final request = ListAuthorizationsRequest()
+      ..organizationId = organizationId
+      ..resourceIds.addAll(resourceIds);
+    final response = await _client.listAuthorizations(request);
+    return response.authorizations;
+  }
+
+  Future<List<Permission>> checkPermissions(ResourceType resourceType, String resourceId, List<Permission> permissions) async {
+    final request = CheckPermissionsRequest()
+      ..permissions.add((AuthorizedPermissions()
+        ..resourceType = resourceType.name
+        ..resourceId = resourceId
+        ..permissions.addAll(permissions.map((e) => e.value))));
+    final response = await _client.checkPermissions(request);
+    return response.authorizedPermissions.first.permissions
+        .map((e) => Permission.values.firstWhere((element) => element.value == e))
+        .toList();
   }
 }
