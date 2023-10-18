@@ -9,11 +9,13 @@ import '../mocks/service_clients_mocks.mocks.dart';
 
 void main() {
   late MockDataServiceClient serviceClient;
+  late MockDataSyncServiceClient syncServiceClient;
   late DataClient dataClient;
 
   setUp(() async {
     serviceClient = MockDataServiceClient();
-    dataClient = DataClient(serviceClient);
+    syncServiceClient = MockDataSyncServiceClient();
+    dataClient = DataClient(serviceClient, syncServiceClient);
   });
 
   group('Data RPC Client Tests', () {

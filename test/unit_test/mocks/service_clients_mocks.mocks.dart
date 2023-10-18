@@ -13,6 +13,8 @@ import 'package:grpc/src/client/method.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart' as _i13;
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart' as _i12;
+import 'package:viam_sdk/src/gen/app/datasync/v1/data_sync.pb.dart' as _i15;
+import 'package:viam_sdk/src/gen/app/datasync/v1/data_sync.pbgrpc.dart' as _i14;
 import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' as _i11;
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart' as _i10;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i9;
@@ -84,6 +86,7 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
         returnValue: _i6.Stream<_i2.ConnectionState>.empty(),
         returnValueForMissingStub: _i6.Stream<_i2.ConnectionState>.empty(),
       ) as _i6.Stream<_i2.ConnectionState>);
+
   @override
   _i6.Future<void> shutdown() => (super.noSuchMethod(
         Invocation.method(
@@ -93,6 +96,7 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
         returnValue: _i6.Future<void>.value(),
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
+
   @override
   _i6.Future<void> terminate() => (super.noSuchMethod(
         Invocation.method(
@@ -102,6 +106,7 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
         returnValue: _i6.Future<void>.value(),
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
+
   @override
   _i2.ClientConnection createConnection() => (super.noSuchMethod(
         Invocation.method(
@@ -123,6 +128,7 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
           ),
         ),
       ) as _i2.ClientConnection);
+
   @override
   _i6.Future<_i2.ClientConnection> getConnection() => (super.noSuchMethod(
         Invocation.method(
@@ -146,6 +152,7 @@ class MockClientChannelBase extends _i1.Mock implements _i5.ClientChannelBase {
           ),
         )),
       ) as _i6.Future<_i2.ClientConnection>);
+
   @override
   _i3.ClientCall<Q, R> createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -220,6 +227,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.GetOperationsResponse>);
+
   @override
   _i4.ResponseFuture<_i9.GetSessionsResponse> getSessions(
     _i9.GetSessionsRequest? request, {
@@ -249,6 +257,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.GetSessionsResponse>);
+
   @override
   _i4.ResponseFuture<_i9.ResourceNamesResponse> resourceNames(
     _i9.ResourceNamesRequest? request, {
@@ -278,6 +287,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.ResourceNamesResponse>);
+
   @override
   _i4.ResponseFuture<_i9.ResourceRPCSubtypesResponse> resourceRPCSubtypes(
     _i9.ResourceRPCSubtypesRequest? request, {
@@ -307,6 +317,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.ResourceRPCSubtypesResponse>);
+
   @override
   _i4.ResponseFuture<_i9.CancelOperationResponse> cancelOperation(
     _i9.CancelOperationRequest? request, {
@@ -336,6 +347,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.CancelOperationResponse>);
+
   @override
   _i4.ResponseFuture<_i9.BlockForOperationResponse> blockForOperation(
     _i9.BlockForOperationRequest? request, {
@@ -365,6 +377,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.BlockForOperationResponse>);
+
   @override
   _i4.ResponseFuture<_i9.DiscoverComponentsResponse> discoverComponents(
     _i9.DiscoverComponentsRequest? request, {
@@ -394,6 +407,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.DiscoverComponentsResponse>);
+
   @override
   _i4.ResponseFuture<_i9.FrameSystemConfigResponse> frameSystemConfig(
     _i9.FrameSystemConfigRequest? request, {
@@ -423,6 +437,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.FrameSystemConfigResponse>);
+
   @override
   _i4.ResponseFuture<_i9.TransformPoseResponse> transformPose(
     _i9.TransformPoseRequest? request, {
@@ -452,6 +467,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.TransformPoseResponse>);
+
   @override
   _i4.ResponseFuture<_i9.TransformPCDResponse> transformPCD(
     _i9.TransformPCDRequest? request, {
@@ -481,6 +497,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.TransformPCDResponse>);
+
   @override
   _i4.ResponseFuture<_i9.GetStatusResponse> getStatus(
     _i9.GetStatusRequest? request, {
@@ -509,6 +526,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.GetStatusResponse>);
+
   @override
   _i4.ResponseStream<_i9.StreamStatusResponse> streamStatus(
     _i9.StreamStatusRequest? request, {
@@ -538,6 +556,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseStream<_i9.StreamStatusResponse>);
+
   @override
   _i4.ResponseFuture<_i9.StopAllResponse> stopAll(
     _i9.StopAllRequest? request, {
@@ -566,6 +585,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.StopAllResponse>);
+
   @override
   _i4.ResponseFuture<_i9.StartSessionResponse> startSession(
     _i9.StartSessionRequest? request, {
@@ -595,6 +615,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.StartSessionResponse>);
+
   @override
   _i4.ResponseFuture<_i9.SendSessionHeartbeatResponse> sendSessionHeartbeat(
     _i9.SendSessionHeartbeatRequest? request, {
@@ -624,6 +645,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.SendSessionHeartbeatResponse>);
+
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -662,6 +684,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i3.ClientCall<Q, R>);
+
   @override
   _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -700,6 +723,7 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<R>);
+
   @override
   _i4.ResponseStream<R> $createStreamingCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -773,6 +797,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetUserIDByEmailResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateOrganizationResponse> createOrganization(
     _i11.CreateOrganizationRequest? request, {
@@ -802,6 +827,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateOrganizationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListOrganizationsResponse> listOrganizations(
     _i11.ListOrganizationsRequest? request, {
@@ -831,6 +857,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListOrganizationsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListOrganizationsByUserResponse>
       listOrganizationsByUser(
@@ -862,6 +889,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.ListOrganizationsByUserResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetOrganizationResponse> getOrganization(
     _i11.GetOrganizationRequest? request, {
@@ -891,6 +919,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetOrganizationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetOrganizationNamespaceAvailabilityResponse>
       getOrganizationNamespaceAvailability(
@@ -923,6 +952,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             ),
           ) as _i4.ResponseFuture<
               _i11.GetOrganizationNamespaceAvailabilityResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateOrganizationResponse> updateOrganization(
     _i11.UpdateOrganizationRequest? request, {
@@ -952,6 +982,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UpdateOrganizationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteOrganizationResponse> deleteOrganization(
     _i11.DeleteOrganizationRequest? request, {
@@ -981,6 +1012,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteOrganizationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListOrganizationMembersResponse>
       listOrganizationMembers(
@@ -1012,6 +1044,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.ListOrganizationMembersResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateOrganizationInviteResponse>
       createOrganizationInvite(
@@ -1043,6 +1076,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.CreateOrganizationInviteResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateOrganizationInviteAuthorizationsResponse>
       updateOrganizationInviteAuthorizations(
@@ -1075,6 +1109,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
             ),
           ) as _i4.ResponseFuture<
               _i11.UpdateOrganizationInviteAuthorizationsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteOrganizationMemberResponse>
       deleteOrganizationMember(
@@ -1106,6 +1141,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.DeleteOrganizationMemberResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteOrganizationInviteResponse>
       deleteOrganizationInvite(
@@ -1137,6 +1173,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.DeleteOrganizationInviteResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ResendOrganizationInviteResponse>
       resendOrganizationInvite(
@@ -1168,6 +1205,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i11.ResendOrganizationInviteResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateLocationResponse> createLocation(
     _i11.CreateLocationRequest? request, {
@@ -1197,6 +1235,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateLocationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetLocationResponse> getLocation(
     _i11.GetLocationRequest? request, {
@@ -1226,6 +1265,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetLocationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateLocationResponse> updateLocation(
     _i11.UpdateLocationRequest? request, {
@@ -1255,6 +1295,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UpdateLocationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteLocationResponse> deleteLocation(
     _i11.DeleteLocationRequest? request, {
@@ -1284,6 +1325,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteLocationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListLocationsResponse> listLocations(
     _i11.ListLocationsRequest? request, {
@@ -1313,6 +1355,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListLocationsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ShareLocationResponse> shareLocation(
     _i11.ShareLocationRequest? request, {
@@ -1342,6 +1385,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ShareLocationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UnshareLocationResponse> unshareLocation(
     _i11.UnshareLocationRequest? request, {
@@ -1371,6 +1415,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UnshareLocationResponse>);
+
   @override
   _i4.ResponseFuture<_i11.LocationAuthResponse> locationAuth(
     _i11.LocationAuthRequest? request, {
@@ -1400,6 +1445,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.LocationAuthResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateLocationSecretResponse> createLocationSecret(
     _i11.CreateLocationSecretRequest? request, {
@@ -1429,6 +1475,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateLocationSecretResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteLocationSecretResponse> deleteLocationSecret(
     _i11.DeleteLocationSecretRequest? request, {
@@ -1458,6 +1505,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteLocationSecretResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRobotResponse> getRobot(
     _i11.GetRobotRequest? request, {
@@ -1486,6 +1534,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRobotResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRoverRentalRobotsResponse> getRoverRentalRobots(
     _i11.GetRoverRentalRobotsRequest? request, {
@@ -1515,6 +1564,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRoverRentalRobotsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRobotPartsResponse> getRobotParts(
     _i11.GetRobotPartsRequest? request, {
@@ -1544,6 +1594,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRobotPartsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRobotPartResponse> getRobotPart(
     _i11.GetRobotPartRequest? request, {
@@ -1573,6 +1624,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRobotPartResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRobotPartLogsResponse> getRobotPartLogs(
     _i11.GetRobotPartLogsRequest? request, {
@@ -1602,6 +1654,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRobotPartLogsResponse>);
+
   @override
   _i4.ResponseStream<_i11.TailRobotPartLogsResponse> tailRobotPartLogs(
     _i11.TailRobotPartLogsRequest? request, {
@@ -1631,6 +1684,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseStream<_i11.TailRobotPartLogsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRobotPartHistoryResponse> getRobotPartHistory(
     _i11.GetRobotPartHistoryRequest? request, {
@@ -1660,6 +1714,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRobotPartHistoryResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateRobotPartResponse> updateRobotPart(
     _i11.UpdateRobotPartRequest? request, {
@@ -1689,6 +1744,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UpdateRobotPartResponse>);
+
   @override
   _i4.ResponseFuture<_i11.NewRobotPartResponse> newRobotPart(
     _i11.NewRobotPartRequest? request, {
@@ -1718,6 +1774,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.NewRobotPartResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteRobotPartResponse> deleteRobotPart(
     _i11.DeleteRobotPartRequest? request, {
@@ -1747,6 +1804,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteRobotPartResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetRobotAPIKeysResponse> getRobotAPIKeys(
     _i11.GetRobotAPIKeysRequest? request, {
@@ -1776,6 +1834,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetRobotAPIKeysResponse>);
+
   @override
   _i4.ResponseFuture<_i11.MarkPartAsMainResponse> markPartAsMain(
     _i11.MarkPartAsMainRequest? request, {
@@ -1805,6 +1864,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.MarkPartAsMainResponse>);
+
   @override
   _i4.ResponseFuture<_i11.MarkPartForRestartResponse> markPartForRestart(
     _i11.MarkPartForRestartRequest? request, {
@@ -1834,6 +1894,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.MarkPartForRestartResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateRobotPartSecretResponse> createRobotPartSecret(
     _i11.CreateRobotPartSecretRequest? request, {
@@ -1863,6 +1924,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateRobotPartSecretResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteRobotPartSecretResponse> deleteRobotPartSecret(
     _i11.DeleteRobotPartSecretRequest? request, {
@@ -1892,6 +1954,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteRobotPartSecretResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListRobotsResponse> listRobots(
     _i11.ListRobotsRequest? request, {
@@ -1921,6 +1984,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListRobotsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.NewRobotResponse> newRobot(
     _i11.NewRobotRequest? request, {
@@ -1949,6 +2013,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.NewRobotResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateRobotResponse> updateRobot(
     _i11.UpdateRobotRequest? request, {
@@ -1978,6 +2043,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UpdateRobotResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteRobotResponse> deleteRobot(
     _i11.DeleteRobotRequest? request, {
@@ -2007,6 +2073,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteRobotResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListFragmentsResponse> listFragments(
     _i11.ListFragmentsRequest? request, {
@@ -2036,6 +2103,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListFragmentsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetFragmentResponse> getFragment(
     _i11.GetFragmentRequest? request, {
@@ -2065,6 +2133,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetFragmentResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateFragmentResponse> createFragment(
     _i11.CreateFragmentRequest? request, {
@@ -2094,6 +2163,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateFragmentResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateFragmentResponse> updateFragment(
     _i11.UpdateFragmentRequest? request, {
@@ -2123,6 +2193,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UpdateFragmentResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteFragmentResponse> deleteFragment(
     _i11.DeleteFragmentRequest? request, {
@@ -2152,6 +2223,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteFragmentResponse>);
+
   @override
   _i4.ResponseFuture<_i11.AddRoleResponse> addRole(
     _i11.AddRoleRequest? request, {
@@ -2180,6 +2252,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.AddRoleResponse>);
+
   @override
   _i4.ResponseFuture<_i11.RemoveRoleResponse> removeRole(
     _i11.RemoveRoleRequest? request, {
@@ -2209,6 +2282,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.RemoveRoleResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ChangeRoleResponse> changeRole(
     _i11.ChangeRoleRequest? request, {
@@ -2238,6 +2312,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ChangeRoleResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListAuthorizationsResponse> listAuthorizations(
     _i11.ListAuthorizationsRequest? request, {
@@ -2267,6 +2342,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListAuthorizationsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CheckPermissionsResponse> checkPermissions(
     _i11.CheckPermissionsRequest? request, {
@@ -2296,6 +2372,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CheckPermissionsResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateModuleResponse> createModule(
     _i11.CreateModuleRequest? request, {
@@ -2325,6 +2402,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateModuleResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UpdateModuleResponse> updateModule(
     _i11.UpdateModuleRequest? request, {
@@ -2354,6 +2432,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UpdateModuleResponse>);
+
   @override
   _i4.ResponseFuture<_i11.UploadModuleFileResponse> uploadModuleFile(
     _i6.Stream<_i11.UploadModuleFileRequest>? request, {
@@ -2383,6 +2462,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.UploadModuleFileResponse>);
+
   @override
   _i4.ResponseFuture<_i11.GetModuleResponse> getModule(
     _i11.GetModuleRequest? request, {
@@ -2412,6 +2492,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.GetModuleResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListModulesResponse> listModules(
     _i11.ListModulesRequest? request, {
@@ -2441,6 +2522,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListModulesResponse>);
+
   @override
   _i4.ResponseFuture<_i11.CreateKeyResponse> createKey(
     _i11.CreateKeyRequest? request, {
@@ -2470,6 +2552,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.CreateKeyResponse>);
+
   @override
   _i4.ResponseFuture<_i11.DeleteKeyResponse> deleteKey(
     _i11.DeleteKeyRequest? request, {
@@ -2499,6 +2582,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.DeleteKeyResponse>);
+
   @override
   _i4.ResponseFuture<_i11.ListKeysResponse> listKeys(
     _i11.ListKeysRequest? request, {
@@ -2527,6 +2611,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.ListKeysResponse>);
+
   @override
   _i4.ResponseFuture<_i11.RotateKeyResponse> rotateKey(
     _i11.RotateKeyRequest? request, {
@@ -2556,6 +2641,40 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i11.RotateKeyResponse>);
+
+  @override
+  _i4.ResponseFuture<_i11.CreateKeyFromExistingKeyAuthorizationsResponse>
+      createKeyFromExistingKeyAuthorizations(
+    _i11.CreateKeyFromExistingKeyAuthorizationsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #createKeyFromExistingKeyAuthorizations,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+                _i11.CreateKeyFromExistingKeyAuthorizationsResponse>(
+              this,
+              Invocation.method(
+                #createKeyFromExistingKeyAuthorizations,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+                _i11.CreateKeyFromExistingKeyAuthorizationsResponse>(
+              this,
+              Invocation.method(
+                #createKeyFromExistingKeyAuthorizations,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<
+              _i11.CreateKeyFromExistingKeyAuthorizationsResponse>);
+
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -2594,6 +2713,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i3.ClientCall<Q, R>);
+
   @override
   _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -2632,6 +2752,7 @@ class MockAppServiceClient extends _i1.Mock implements _i10.AppServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<R>);
+
   @override
   _i4.ResponseStream<R> $createStreamingCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -2705,6 +2826,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.TabularDataByFilterResponse>);
+
   @override
   _i4.ResponseFuture<_i13.BinaryDataByFilterResponse> binaryDataByFilter(
     _i13.BinaryDataByFilterRequest? request, {
@@ -2734,6 +2856,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.BinaryDataByFilterResponse>);
+
   @override
   _i4.ResponseFuture<_i13.BinaryDataByIDsResponse> binaryDataByIDs(
     _i13.BinaryDataByIDsRequest? request, {
@@ -2763,6 +2886,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.BinaryDataByIDsResponse>);
+
   @override
   _i4.ResponseFuture<_i13.DeleteTabularDataResponse> deleteTabularData(
     _i13.DeleteTabularDataRequest? request, {
@@ -2792,6 +2916,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.DeleteTabularDataResponse>);
+
   @override
   _i4.ResponseFuture<_i13.DeleteBinaryDataByFilterResponse>
       deleteBinaryDataByFilter(
@@ -2823,6 +2948,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.DeleteBinaryDataByFilterResponse>);
+
   @override
   _i4.ResponseFuture<_i13.DeleteBinaryDataByIDsResponse> deleteBinaryDataByIDs(
     _i13.DeleteBinaryDataByIDsRequest? request, {
@@ -2852,6 +2978,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.DeleteBinaryDataByIDsResponse>);
+
   @override
   _i4.ResponseFuture<_i13.AddTagsToBinaryDataByIDsResponse>
       addTagsToBinaryDataByIDs(
@@ -2883,6 +3010,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.AddTagsToBinaryDataByIDsResponse>);
+
   @override
   _i4.ResponseFuture<_i13.AddTagsToBinaryDataByFilterResponse>
       addTagsToBinaryDataByFilter(
@@ -2914,6 +3042,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.AddTagsToBinaryDataByFilterResponse>);
+
   @override
   _i4.ResponseFuture<
       _i13.RemoveTagsFromBinaryDataByIDsResponse> removeTagsFromBinaryDataByIDs(
@@ -2945,6 +3074,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.RemoveTagsFromBinaryDataByIDsResponse>);
+
   @override
   _i4.ResponseFuture<_i13.RemoveTagsFromBinaryDataByFilterResponse>
       removeTagsFromBinaryDataByFilter(
@@ -2977,6 +3107,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             ),
           ) as _i4
               .ResponseFuture<_i13.RemoveTagsFromBinaryDataByFilterResponse>);
+
   @override
   _i4.ResponseFuture<_i13.TagsByFilterResponse> tagsByFilter(
     _i13.TagsByFilterRequest? request, {
@@ -3006,6 +3137,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.TagsByFilterResponse>);
+
   @override
   _i4.ResponseFuture<_i13.AddBoundingBoxToImageByIDResponse>
       addBoundingBoxToImageByID(
@@ -3037,6 +3169,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.AddBoundingBoxToImageByIDResponse>);
+
   @override
   _i4.ResponseFuture<
       _i13
@@ -3069,6 +3202,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.RemoveBoundingBoxFromImageByIDResponse>);
+
   @override
   _i4.ResponseFuture<_i13.BoundingBoxLabelsByFilterResponse>
       boundingBoxLabelsByFilter(
@@ -3100,6 +3234,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.BoundingBoxLabelsByFilterResponse>);
+
   @override
   _i4.ResponseFuture<_i13.GetDatabaseConnectionResponse> getDatabaseConnection(
     _i13.GetDatabaseConnectionRequest? request, {
@@ -3129,6 +3264,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.GetDatabaseConnectionResponse>);
+
   @override
   _i4.ResponseFuture<_i13.ConfigureDatabaseUserResponse> configureDatabaseUser(
     _i13.ConfigureDatabaseUserRequest? request, {
@@ -3158,6 +3294,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<_i13.ConfigureDatabaseUserResponse>);
+
   @override
   _i4.ResponseFuture<_i13.AddBinaryDataToDatasetByIDsResponse>
       addBinaryDataToDatasetByIDs(
@@ -3189,6 +3326,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
               ),
             ),
           ) as _i4.ResponseFuture<_i13.AddBinaryDataToDatasetByIDsResponse>);
+
   @override
   _i4.ResponseFuture<_i13.RemoveBinaryDataFromDatasetByIDsResponse>
       removeBinaryDataFromDatasetByIDs(
@@ -3221,6 +3359,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
             ),
           ) as _i4
               .ResponseFuture<_i13.RemoveBinaryDataFromDatasetByIDsResponse>);
+
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -3259,6 +3398,7 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i3.ClientCall<Q, R>);
+
   @override
   _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
@@ -3297,6 +3437,222 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
           ),
         ),
       ) as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createStreamingCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [DataSyncServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDataSyncServiceClient extends _i1.Mock
+    implements _i14.DataSyncServiceClient {
+  @override
+  _i4.ResponseFuture<_i15.DataCaptureUploadResponse> dataCaptureUpload(
+    _i15.DataCaptureUploadRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #dataCaptureUpload,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.DataCaptureUploadResponse>(
+          this,
+          Invocation.method(
+            #dataCaptureUpload,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.DataCaptureUploadResponse>(
+          this,
+          Invocation.method(
+            #dataCaptureUpload,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.DataCaptureUploadResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.FileUploadResponse> fileUpload(
+    _i6.Stream<_i15.FileUploadRequest>? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #fileUpload,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i15.FileUploadResponse>(
+          this,
+          Invocation.method(
+            #fileUpload,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i15.FileUploadResponse>(
+          this,
+          Invocation.method(
+            #fileUpload,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i15.FileUploadResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.StreamingDataCaptureUploadResponse>
+      streamingDataCaptureUpload(
+    _i6.Stream<_i15.StreamingDataCaptureUploadRequest>? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #streamingDataCaptureUpload,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i15.StreamingDataCaptureUploadResponse>(
+              this,
+              Invocation.method(
+                #streamingDataCaptureUpload,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i15.StreamingDataCaptureUploadResponse>(
+              this,
+              Invocation.method(
+                #streamingDataCaptureUpload,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<_i15.StreamingDataCaptureUploadResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createUnaryCall,
+          [
+            method,
+            request,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<R>);
+
   @override
   _i4.ResponseStream<R> $createStreamingCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,

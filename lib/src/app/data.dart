@@ -4,14 +4,16 @@ import 'package:fixnum/fixnum.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
+import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
 
 /// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
 ///
 /// All calls must be authenticated.
 class DataClient {
-  final DataServiceClient _client;
+  final DataServiceClient _dataClient;
+  final DataSyncServiceClient _dataSyncClient;
 
-  DataClient(this._client);
+  DataClient(this._dataClient, this._dataSyncClient);
 
   DataRequest _makeDataRequest(Filter? filter, int? limit, String? last, Order? sortOrder) {
     final dataRequest = DataRequest();
@@ -37,7 +39,7 @@ class DataClient {
       final request = TabularDataByFilterRequest()
         ..dataRequest = dataRequest
         ..countOnly = true;
-      return await _client.tabularDataByFilter(request);
+      return await _dataClient.tabularDataByFilter(request);
     }
 
     final finalResponse = TabularDataByFilterResponse();
@@ -49,7 +51,7 @@ class DataClient {
         ..dataRequest = dataRequest
         ..countOnly = false;
 
-      final response = await _client.tabularDataByFilter(request);
+      final response = await _dataClient.tabularDataByFilter(request);
 
       if (response.count == 0) {
         break;
@@ -73,7 +75,7 @@ class DataClient {
       final request = BinaryDataByFilterRequest()
         ..dataRequest = dataRequest
         ..countOnly = true;
-      return await _client.binaryDataByFilter(request);
+      return await _dataClient.binaryDataByFilter(request);
     }
 
     final finalResponse = BinaryDataByFilterResponse();
@@ -85,7 +87,7 @@ class DataClient {
         ..dataRequest = dataRequest
         ..countOnly = false;
 
-      final response = await _client.binaryDataByFilter(request);
+      final response = await _dataClient.binaryDataByFilter(request);
 
       if (response.count == 0) {
         break;
@@ -102,7 +104,7 @@ class DataClient {
   /// Retrieve binary data by IDs
   Future<List<BinaryData>> binaryDataByIds(List<BinaryID> binaryIds) async {
     final request = BinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
-    final response = await _client.binaryDataByIDs(request);
+    final response = await _dataClient.binaryDataByIDs(request);
     return response.data;
   }
 }
@@ -125,4 +127,8 @@ extension FilterUtils on Filter {
     }
     this.interval = interval;
   }
+
+  Future<void> uploadBinaryData(
+    List<int> binaryData,
+  ) async {}
 }
