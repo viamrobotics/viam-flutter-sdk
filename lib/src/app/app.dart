@@ -104,6 +104,7 @@ class AppClient {
         ..resourceId = resourceId
         ..permissions.addAll(permissions.map((e) => e.value))));
     final response = await _client.checkPermissions(request);
+    if (response.authorizedPermissions.isEmpty) return [];
     return response.authorizedPermissions.first.permissions
         .map((e) => Permission.values.firstWhere((element) => element.value == e))
         .toList();
