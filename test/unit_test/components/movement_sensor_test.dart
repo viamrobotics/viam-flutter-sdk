@@ -9,13 +9,14 @@ import 'package:viam_sdk/viam_sdk.dart';
 class FakeMovementSensor extends MovementSensor {
   Map<String, dynamic>? extra;
   Map<String, dynamic> sensorReadings = {
-    'position': GeoPoint()..latitude = 0, 0,
+    'position': GeoPoint()..latitude = 0,
+    0,
     'altitude': 0.0,
     'linear_velocity': 0.0,
     'angular_velocity': 0.0,
     'linear_acceleration': 0.0,
     'compass': 0.0,
-    'orientation':0.0
+    'orientation': 0.0
   };
 
   @override
