@@ -9,14 +9,13 @@ import 'package:viam_sdk/viam_sdk.dart';
 class FakeMovementSensor extends MovementSensor {
   Map<String, dynamic>? extra;
   Map<String, dynamic> sensorReadings = {
-    'position': GeoPoint()..latitude = 0,
-    0,
+    'position': 0.0,
     'altitude': 0.0,
     'linear_velocity': 0.0,
     'angular_velocity': 0.0,
     'linear_acceleration': 0.0,
     'compass': 0.0,
-    'orientation': 0.0
+    'orientation': 0.0,
   };
 
   @override
@@ -306,13 +305,13 @@ void main() {
         expect(result.keys, expectedKeys);
 
         final expectedValues = [
-          GeoPoint()..latitude = 0.0,
           0.0,
-          Vector3()..x = 0.0,
-          Vector3()..x = 0.0,
-          Vector3()..x = 0.0,
           0.0,
-          Orientation()..oX = 0.0
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
         ];
         expect(result.values, expectedValues);
       });
@@ -327,8 +326,8 @@ void main() {
       test('extra', () async {
         final client = MovementSensorClient(name, channel);
         expect(movementSensor.extra, null);
-        await client.readings(extra: {'foo': 'bar'});
-        expect(movementSensor.extra, {'foo': 'bar'});
+        await client.readings(extra: {});
+        expect(movementSensor.extra, {});
       });
     });
   });

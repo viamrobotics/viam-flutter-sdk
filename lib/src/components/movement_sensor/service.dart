@@ -22,8 +22,8 @@ class MovementSensorService extends MovementSensorServiceBase {
 
   @override
   Future<GetReadingsResponse> getReadings(ServiceCall call, GetReadingsRequest request) async {
-    final sensor = _fromManager(request.name);
-    final result = await sensor.readings(extra: request.extra.toMap());
+    final movementSensor = _fromManager(request.name);
+    final result = await movementSensor.readings(extra: request.extra.toMap());
     return GetReadingsResponse()..readings.addAll(result.toStruct().fields);
   }
 
