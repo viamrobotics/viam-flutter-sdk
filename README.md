@@ -45,6 +45,10 @@ print(await movementSensor.readings())
 
 View the sample app in the [`/example`](https://github.com/viamrobotics/viam-flutter-sdk/blob/main/example/) directory to see a more in-depth example.
 
+## GitHub
+
+You can view the code for the Viam Flutter SDK on [GitHub](https://github.com/viamrobotics/viam-flutter-sdk).
+
 ## License
 
 Copyright 2021-2023 Viam Inc.
