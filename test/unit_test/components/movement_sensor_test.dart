@@ -304,15 +304,7 @@ void main() {
         ];
         expect(result.keys, expectedKeys);
 
-        final expectedValues = [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ];
+        final expectedValues = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
         expect(result.values, expectedValues);
       });
 
