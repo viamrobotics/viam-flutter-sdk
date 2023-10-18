@@ -83,6 +83,8 @@ class MimeType {
     }
     return decoder.decode(Uint8List.fromList(bytes));
   }
+
+  String get fileExtension => '.$_type';
 }
 
 /// A custom image type that contains the [MimeTYpe], raw image data, and lazily loads and caches an [img.Image].

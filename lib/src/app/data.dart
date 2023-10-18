@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fixnum/fixnum.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
+import 'package:viam_sdk/viam_sdk.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
@@ -107,6 +108,26 @@ class DataClient {
     final response = await _dataClient.binaryDataByIDs(request);
     return response.data;
   }
+
+  /// Upload an image to Viam's Data Manager
+  ///
+  /// If no name is provided, the current timestamp will be used as the filename.
+  Future<String> uploadImage(ViamImage image, String partId, {String? name, Iterable<String> tags = const []}) async {
+    final metadata = UploadMetadata()
+      ..partId = partId
+      ..type = DataType.DATA_TYPE_FILE
+      ..fileName = name ?? DateTime.now().toIso8601String()
+      ..fileExtension = image.mimeType.fileExtension
+      ..tags.addAll(tags);
+
+    final requestStream = Stream.fromIterable([
+      FileUploadRequest()..metadata = metadata,
+      FileUploadRequest()..fileContents = (FileData()..data = image.raw),
+    ]);
+
+    final response = await _dataSyncClient.fileUpload(requestStream);
+    return response.fileId;
+  }
 }
 
 extension FilterUtils on Filter {
@@ -127,8 +148,4 @@ extension FilterUtils on Filter {
     }
     this.interval = interval;
   }
-
-  Future<void> uploadBinaryData(
-    List<int> binaryData,
-  ) async {}
 }
