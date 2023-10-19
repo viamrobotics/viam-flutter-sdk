@@ -74,7 +74,6 @@
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
         <li><a href="../viam_sdk/Resource-class.html">Resource</a></li>
-        <li><a href="../viam_sdk/Sensor-class.html">Sensor</a></li>
         <li><a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a></li>
       <li>MovementSensorClient</li>
     </ul>
@@ -309,25 +308,17 @@
 
 </dd>
 
-        <dt id="readings" class="callable inherited">
-  <span class="name"><a href="../viam_sdk/MovementSensor/readings.html">readings</a></span><span class="signature">(<wbr><span class="parameter" id="readings-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span>)
+        <dt id="readings" class="callable">
+  <span class="name"><a href="../viam_sdk/MovementSensorClient/readings.html">readings</a></span><span class="signature">(<wbr><span class="parameter" id="readings-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
   </span>
   
 
 </dt>
-<dd class="inherited">
-  Obtain the measurements/data specific to this <a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a>.
+<dd>
+  Obtain the measurements/data specific to this <a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a>
 If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.
-The returns dictionary contains the following readings and values:
-  position: <a href="../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a>,
-  altitude: <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>,
-  linear_velocity: <a href="../viam_protos.common.common/Vector3-class.html">Vector3</a>,
-  angular_velocity: <a href="../viam_protos.common.common/Vector3-class.html">Vector3</a>,
-  linear_acceleration: <a href="../viam_protos.common.common/Vector3-class.html">Vector3</a>,
-  compass: <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>,
-  orientation: <a href="../viam_protos.common.common/Orientation-class.html">Orientation</a>,
-  <div class="features"><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 

@@ -31,7 +31,7 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/MovementSensor-class.html">MovementSensor</a></li>
-    <li class="self-crumb">readings method</li>
+    <li class="self-crumb">readings abstract method</li>
   </ol>
   <div class="self-name">readings</div>
   <form class="search navbar-right" role="search">
@@ -57,91 +57,30 @@
       data-above-sidebar="viam_sdk&#47;MovementSensor-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">readings</span> method 
+<h1><span class="kind-method">readings</span> abstract method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
-    </ol>
-  </div>
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
 <span class="name ">readings</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="readings-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span></li>
 </ol>)
 
-      <div class="features"><span class="feature">override</span></div>
+      
 
     </section>
     
 <section class="desc markdown">
-  <p>Obtain the measurements/data specific to this <a href="../../viam_sdk/MovementSensor-class.html">MovementSensor</a>.
-If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.
-The returns dictionary contains the following readings and values:
-  position: <a href="../../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a>,
-  altitude: <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>,
-  linear_velocity: <a href="../../viam_protos.common.common/Vector3-class.html">Vector3</a>,
-  angular_velocity: <a href="../../viam_protos.common.common/Vector3-class.html">Vector3</a>,
-  linear_acceleration: <a href="../../viam_protos.common.common/Vector3-class.html">Vector3</a>,
-  compass: <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>,
-  orientation: <a href="../../viam_protos.common.common/Orientation-class.html">Orientation</a>,</p>
+  <p>Obtain the measurements/data specific to this <a href="../../viam_sdk/MovementSensor-class.html">MovementSensor</a>
+If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@override
-Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? extra}) async {
-  final Map&lt;String, dynamic&gt; readings = {};
-  try {
-    final Position pos = await position(extra: extra);
-    readings[&#39;position&#39;] = pos.coordinates;
-    readings[&#39;altitude&#39;] = pos.altitude;
-  } catch (exception) {
-    &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-    Logger().e(exception);
-  }
-
-  try {
-    final lv = await linearVelocity(extra: extra);
-    readings[&#39;linear_velocity&#39;] = lv;
-  } catch (exception) {
-    &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-  }
-
-  try {
-    final av = await angularVelocity(extra: extra);
-    readings[&#39;angular_velocity&#39;] = av;
-  } catch (exception) {
-    &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-  }
-
-  try {
-    final la = await linearAcceleration(extra: extra);
-    readings[&#39;linear_acceleration&#39;] = la;
-  } catch (exception) {
-    &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-  }
-
-  try {
-    final comp = await compassHeading(extra: extra);
-    readings[&#39;compass&#39;] = comp;
-  } catch (exception) {
-    &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-  }
-
-  try {
-    final orient = await orientation(extra: extra);
-    readings[&#39;orientation&#39;] = orient;
-  } catch (exception) {
-    &#47;&#47; TODO: Check if the exception is of a specific type and ignore or rethrow
-  }
-
-  return readings;
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? extra});</code></pre>
 </section>
 
 
@@ -159,7 +98,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? e
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/MovementSensor-class.html">MovementSensor</a></li>
-    <li class="self-crumb">readings method</li>
+    <li class="self-crumb">readings abstract method</li>
 </ol>
 
 
