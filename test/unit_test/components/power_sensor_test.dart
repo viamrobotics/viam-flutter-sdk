@@ -16,7 +16,7 @@ class FakePowerSensor extends PowerSensor {
   double volts = 0;
   double amperes = 0;
   double watts = 0;
-  Map<String, dynamic> sensorReadings = {'test': 'test'};
+  Map<String, dynamic> sensorReadings = {'voltage': 0.0, 'is_ac': false, 'current': 0.0, 'power': 0.0};
   Map<String, dynamic>? extra;
 
   @override

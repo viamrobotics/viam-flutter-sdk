@@ -16,8 +16,12 @@ class Position {
 typedef Properties = GetPropertiesResponse;
 
 /// MovementSensor reports information about the robot's direction, position and speed.
-abstract class MovementSensor extends Sensor {
+abstract class MovementSensor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'movement_sensor');
+
+  /// Obtain the measurements/data specific to this [MovementSensor]
+  /// If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.
+  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
   /// Get the current [GeoPoint] (latitude, longitude) and altitude (mm)
   Future<Position> position({Map<String, dynamic>? extra});
@@ -42,66 +46,6 @@ abstract class MovementSensor extends Sensor {
 
   /// Get the accuracy of the various sensors
   Future<Map<String, double>> accuracy({Map<String, dynamic>? extra});
-
-  /// Obtain the measurements/data specific to this [MovementSensor].
-  /// If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.
-  /// The returns dictionary contains the following readings and values:
-  ///   position: [GeoPoint],
-  ///   altitude: [double],
-  ///   linear_velocity: [Vector3],
-  ///   angular_velocity: [Vector3],
-  ///   linear_acceleration: [Vector3],
-  ///   compass: [double],
-  ///   orientation: [Orientation],
-  @override
-  Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
-    final Map<String, dynamic> readings = {};
-    try {
-      final Position pos = await position(extra: extra);
-      readings['position'] = pos.coordinates;
-      readings['altitude'] = pos.altitude;
-    } catch (exception) {
-      // TODO: Check if the exception is of a specific type and ignore or rethrow
-      Logger().e(exception);
-    }
-
-    try {
-      final lv = await linearVelocity(extra: extra);
-      readings['linear_velocity'] = lv;
-    } catch (exception) {
-      // TODO: Check if the exception is of a specific type and ignore or rethrow
-    }
-
-    try {
-      final av = await angularVelocity(extra: extra);
-      readings['angular_velocity'] = av;
-    } catch (exception) {
-      // TODO: Check if the exception is of a specific type and ignore or rethrow
-    }
-
-    try {
-      final la = await linearAcceleration(extra: extra);
-      readings['linear_acceleration'] = la;
-    } catch (exception) {
-      // TODO: Check if the exception is of a specific type and ignore or rethrow
-    }
-
-    try {
-      final comp = await compassHeading(extra: extra);
-      readings['compass'] = comp;
-    } catch (exception) {
-      // TODO: Check if the exception is of a specific type and ignore or rethrow
-    }
-
-    try {
-      final orient = await orientation(extra: extra);
-      readings['orientation'] = orient;
-    } catch (exception) {
-      // TODO: Check if the exception is of a specific type and ignore or rethrow
-    }
-
-    return readings;
-  }
 
   /// Get the [ResourceName] for this [MovementSensor] with the given [name]
   static ResourceName getResourceName(String name) {
