@@ -114,6 +114,10 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
 
   try {
     mdnsUri = await searchMdns(address);
+    // Let downstream calls know when mdns was used. This is helpful to inform
+    // when determining if we want to use the external auth credentials for the signaling
+    // in cases where the external signaling is the same as the external auth. For mdns
+    // this isn't the case.
     final dialOptsCopy = opts
       ..usingMdns = true
       ..authEntity = address;
