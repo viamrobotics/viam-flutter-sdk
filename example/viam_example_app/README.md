@@ -1,8 +1,10 @@
 # Viam Example Flutter App
 
-This example app uses Viam's Flutter SDK to connect to and control a robot. It was created using VSCode's Flutter plugin and shows the basic use cases for how the Viam Flutter SDK can be used to connect manage your fleet of Smart Machines.
+This example app uses Viam's Flutter SDK to connect to and control a robot. It was created using VSCode's Flutter plugin and shows the basic use cases for how the Viam Flutter SDK can be used to connect manage your fleet of robots.
 
-The app is well documented and will walk you through how to use your API Keys to connect to Viam, manage your fleet of Smart Machines, and even control a particular Smart Machine using built-in widgets and custom widgets.
+The app is well documented and will walk you through how to use your API Keys to connect to Viam, manage your fleet of robots, and even control a particular robot using the [SDK's builtin widgets](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/lib/widgets) and custom widgets.
+
+Screenshots of the final product can be found [below](#screenshots).
 
 ## Setup
 
@@ -65,3 +67,26 @@ To run the app, you should run the `lib/main.dart` file:
 ```sh
 flutter run lib/main.dart
 ```
+
+## Screenshots
+
+- [**Login Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/login_screen.dart): This is the screen you will see if you don't provide API Key values in the `.env` file.
+  ![Login Screen](screenshots/login_screen.png)
+
+- [**Home Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/home_screen.dart): This is the screen that lists all the organizations your API Key has access to.
+  ![Home Screen](screenshots/home_screen.png)
+
+- [**Organization Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/organization_screen.dart): A specific organization's screen. Displays the top-level locations of the organization.
+  ![Organization Screen](screenshots/organization_screen.png)
+
+- [**Location Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/location_screen.dart): Shows the sub-locations and robots available within this location.
+  ![Location Screen](screenshots/location_screen.png)
+
+- [**Robot Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/robot_screen.dart): Displays the resources available on a robot.
+  ![Robot Screen](screenshots/robot_screen.png)
+
+- [**Camera Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/resources/camera_screen.dart): One way to show a live camera feed, using the SDK's builtin [`ViamCameraStreamView`](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/lib/widgets/camera_stream.dart)).
+  ![Camera Screen](screenshots/camera_screen.png)
+
+- [**Motor Screen**](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_example_app/lib/resources/motor_screen.dart): An example for controlling a motor using both the SDK's builtin [`ViamMotorWidget`](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/lib/widgets/resources/motor.dart), as well as two custom widgets.
+  ![Motor Screen](screenshots/motor_screen.png)
