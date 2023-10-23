@@ -47,8 +47,11 @@ class DialOptions {
   /// [externalAuthAddress], [externalAuthToEntity]
   String? accessToken;
 
-  /// Whether the connection was made usuing MDNS
-  bool usingMdns = false;
+  /// Wether an mDNS connection will be attempted
+  bool attemptMdns = true;
+
+  /// Whether the connection was made using mDNS
+  bool _usingMdns = false;
 }
 
 /// The credentials used for connecting to the robot
@@ -104,26 +107,25 @@ class DialWebRtcOptions {
   String? signalingAccessToken;
 }
 
-String allowedAddress = '';
-
 /// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
   _logger.i('Connecting to address $address');
   final opts = options ?? DialOptions();
-  String? mdnsUri;
 
-  try {
-    mdnsUri = await searchMdns(address);
-    // Let downstream calls know when mdns was used. This is helpful to inform
-    // when determining if we want to use the external auth credentials for the signaling
-    // in cases where the external signaling is the same as the external auth. For mdns
-    // this isn't the case.
-    final dialOptsCopy = opts
-      ..usingMdns = true
-      ..authEntity = address;
-    return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
-  } catch (e) {
-    _logger.w('error dialing with mDNS; falling back to other methods', error: e);
+  if (opts.attemptMdns) {
+    try {
+      final mdnsUri = await searchMdns(address);
+      // Let downstream calls know when mdns was used. This is helpful to inform
+      // when determining if we want to use the external auth credentials for the signaling
+      // in cases where the external signaling is the same as the external auth. For mdns
+      // this isn't the case.
+      final dialOptsCopy = opts
+        .._usingMdns = true
+        ..authEntity = address;
+      return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+    } catch (e) {
+      _logger.d('Error dialing with mDNS; falling back to other methods', error: e);
+    }
   }
 
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
@@ -175,7 +177,6 @@ Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, S
 }
 
 Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, String Function() sessionCallback) async {
-  allowedAddress = address;
   _logger.d('Dialing WebRTC to $address');
   if (options.authEntity.isNullOrEmpty) {
     if (options.externalAuthAddress.isNullOrEmpty) {
@@ -187,12 +188,12 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
     }
   }
 
-  final signalingServer = options.webRtcOptions?.signalingServerAddress ?? ((options.usingMdns) ? address : 'app.viam.com');
+  final signalingServer = options.webRtcOptions?.signalingServerAddress ?? ((options._usingMdns) ? address : 'app.viam.com');
   _logger.d('Connecting to signaling server: $signalingServer');
   final signalingChannel = await _dialDirectGrpc(signalingServer, options, sessionCallback);
   _logger.d('Connected to signaling server: $signalingServer');
   final signalingClient = SignalingServiceClient(signalingChannel,
-      options: CallOptions(metadata: {'rpc-host': ((options.usingMdns) ? options.authEntity : address)!}));
+      options: CallOptions(metadata: {'rpc-host': ((options._usingMdns) ? options.authEntity : address)!}));
   WebRTCConfig config;
   try {
     config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
