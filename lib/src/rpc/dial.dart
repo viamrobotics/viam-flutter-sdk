@@ -113,14 +113,13 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
   String? mdnsUri;
 
   try {
-    print(address);
     mdnsUri = await searchMdns(address);
     final dialOptsCopy = opts
       ..usingMdns = true
       ..authEntity = address;
     return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
   } catch (e) {
-    print(e);
+    _logger.w('error dialing with mDNS; falling back to other methods', error: e);
   }
 
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
