@@ -136,7 +136,6 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
 Future<String> searchMdns(String address) async {
   // We need to replace all periods with dashes, because this is how viam instances are broadcast locally.
   final targetName = address.replaceAll(RegExp(r'\.'), '-');
-  print(targetName);
 
   const type = '_rpc._tcp';
   final discovery = BonsoirDiscovery(type: type);
@@ -145,21 +144,14 @@ Future<String> searchMdns(String address) async {
 
   await for (final event in discovery.eventStream!.timeout(const Duration(seconds: 10))) {
     if (event.type == BonsoirDiscoveryEventType.discoveryServiceResolved) {
-      print('Service found : ${event.service.toString()}');
-
-      final service = event.service as ResolvedBonsoirService;
+      final service = event.service! as ResolvedBonsoirService;
 
       if (service.name == targetName && service.ip != null) {
-        print('WE FOUND A MATCH');
-        print('${service.ip}:${service.port}');
         return ('${service.ip}:${service.port}');
       }
-    } else if (event.type == BonsoirDiscoveryEventType.discoveryServiceLost) {
-      print('Service lost : ${event.service}');
     }
   }
 
-// Then if you want to stop the discovery :
   await discovery.stop();
 
   throw Exception('Address not on local network');
