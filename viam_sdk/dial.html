@@ -85,6 +85,23 @@
   <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dial(String address, DialOptions? options, String Function() sessionCallback) async {
   _logger.i(&#39;Connecting to address $address&#39;);
   final opts = options ?? DialOptions();
+
+  if (opts.attemptMdns) {
+    try {
+      final mdnsUri = await searchMdns(address);
+      &#47;&#47; Let downstream calls know when mdns was used. This is helpful to inform
+      &#47;&#47; when determining if we want to use the external auth credentials for the signaling
+      &#47;&#47; in cases where the external signaling is the same as the external auth. For mdns
+      &#47;&#47; this isn&#39;t the case.
+      final dialOptsCopy = opts
+        .._usingMdns = true
+        ..authEntity = address;
+      return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+    } catch (e) {
+      _logger.d(&#39;Error dialing with mDNS; falling back to other methods&#39;, error: e);
+    }
+  }
+
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
   if (address.contains(&#39;.local.&#39;) || address.contains(&#39;localhost&#39;)) {
     disableWebRtc = true;
