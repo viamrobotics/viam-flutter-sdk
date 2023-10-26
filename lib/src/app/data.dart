@@ -1,6 +1,9 @@
+import 'dart:io';
 import 'dart:math';
 
+import 'package:async/async.dart';
 import 'package:fixnum/fixnum.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -109,21 +112,64 @@ class DataClient {
     return response.data;
   }
 
+  Stream<FileUploadRequest> _getFileDataStream(String path) {
+    final file = File(path);
+    final reader = ChunkedStreamReader(file.openRead());
+    final stream = reader.readStream(file.lengthSync());
+    return stream.map((event) {
+      return FileUploadRequest()..fileContents = (FileData()..data = event);
+    }).asBroadcastStream(onCancel: (subscription) {
+      reader.cancel();
+    });
+  }
+
   /// Upload an image to Viam's Data Manager
   ///
   /// If no name is provided, the current timestamp will be used as the filename.
   Future<String> uploadImage(ViamImage image, String partId, {String? name, Iterable<String> tags = const []}) async {
+    final filename = name ?? DateTime.now().toIso8601String();
+    final tmp = await getTemporaryDirectory();
+    final file = File('${tmp.path}/$filename');
+
+    try {
+      await file.writeAsBytes(image.raw, flush: true);
+
+      final metadata = UploadMetadata()
+        ..partId = partId
+        ..type = DataType.DATA_TYPE_FILE
+        ..fileName = filename
+        ..fileExtension = '.${image.mimeType.type}'
+        ..tags.addAll(tags);
+
+      final metadataStream = Stream.value(FileUploadRequest()..metadata = metadata);
+      final fileDataStream = _getFileDataStream(file.path);
+      final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
+
+      final response = await _dataSyncClient.fileUpload(requestStream);
+      return response.fileId;
+    } finally {
+      await file.delete();
+    }
+  }
+
+  /// Upload a file from its path to Viam's Data Manager
+  ///
+  /// The file name can be modified by providing the [fileName] parameter.
+  Future<String> uploadFile(String path, String partId, {String? fileName, Iterable<String> tags = const []}) async {
+    final file = path.split(Platform.pathSeparator).last;
+    final fName = (file.split('.')..removeLast()).join('.');
+    final ext = file.split('.').last;
     final metadata = UploadMetadata()
       ..partId = partId
       ..type = DataType.DATA_TYPE_FILE
-      ..fileName = name ?? DateTime.now().toIso8601String()
-      ..fileExtension = image.mimeType.fileExtension
+      ..fileName = fileName ?? fName
+      ..fileExtension = '.$ext'
       ..tags.addAll(tags);
 
-    final requestStream = Stream.fromIterable([
-      FileUploadRequest()..metadata = metadata,
-      FileUploadRequest()..fileContents = (FileData()..data = image.raw),
-    ]);
+    final metadataStream = Stream.value(FileUploadRequest()..metadata = metadata);
+
+    final fileDataStream = _getFileDataStream(path);
+    final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
 
     final response = await _dataSyncClient.fileUpload(requestStream);
     return response.fileId;

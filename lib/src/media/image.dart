@@ -23,6 +23,10 @@ class MimeType {
   /// If the MimeType is not supported, then this [name] is the string of the unsupported MimeType.
   String get name => _name;
 
+  /// The underlying type, e.g. 'jpeg', 'png', 'pcd'.
+  /// If the MimeType is not supported, then this [type] is the string 'unsupported'.
+  String get type => _type;
+
   const MimeType._(this._type, this._name);
 
   /// Viam's custom RGBA encoding (image/vnd.viam.rgba)
@@ -83,8 +87,6 @@ class MimeType {
     }
     return decoder.decode(Uint8List.fromList(bytes));
   }
-
-  String get fileExtension => '.$_type';
 }
 
 /// A custom image type that contains the [MimeTYpe], raw image data, and lazily loads and caches an [img.Image].
