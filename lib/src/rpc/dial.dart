@@ -1,17 +1,19 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:bonsoir/bonsoir.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:logger/logger.dart';
-import 'package:viam_sdk/src/robot/sessions_client.dart';
 
 import '../gen/proto/rpc/v1/auth.pb.dart' as pb;
 import '../gen/proto/rpc/v1/auth.pbgrpc.dart';
 import '../gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart';
+import '../robot/sessions_client.dart';
 import '../utils.dart';
+import 'grpc/grpc_or_grpcweb_channel.dart';
 import 'web_rtc/web_rtc_client.dart';
 
 final _logger = Logger();
@@ -44,6 +46,12 @@ class DialOptions {
   /// If enabled, other auth options have no affect. Eg. [authEntity], [credentials],
   /// [externalAuthAddress], [externalAuthToEntity]
   String? accessToken;
+
+  /// Wether an mDNS connection will be attempted
+  bool attemptMdns = true;
+
+  /// Whether the connection was made using mDNS
+  bool _usingMdns = false;
 }
 
 /// The credentials used for connecting to the robot
@@ -103,6 +111,23 @@ class DialWebRtcOptions {
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
   _logger.i('Connecting to address $address');
   final opts = options ?? DialOptions();
+
+  if (opts.attemptMdns) {
+    try {
+      final mdnsUri = await searchMdns(address);
+      // Let downstream calls know when mdns was used. This is helpful to inform
+      // when determining if we want to use the external auth credentials for the signaling
+      // in cases where the external signaling is the same as the external auth. For mdns
+      // this isn't the case.
+      final dialOptsCopy = opts
+        .._usingMdns = true
+        ..authEntity = address;
+      return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+    } catch (e) {
+      _logger.d('Error dialing with mDNS; falling back to other methods', error: e);
+    }
+  }
+
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
   if (address.contains('.local.') || address.contains('localhost')) {
     disableWebRtc = true;
@@ -111,6 +136,30 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
     return _dialDirectGrpc(address, opts, sessionCallback);
   }
   return _dialWebRtc(address, opts, sessionCallback);
+}
+
+Future<String> searchMdns(String address) async {
+  // We need to replace all periods with dashes, because this is how viam instances are broadcast locally.
+  final targetName = address.replaceAll(RegExp(r'\.'), '-');
+
+  const type = '_rpc._tcp';
+  final discovery = BonsoirDiscovery(type: type);
+  await discovery.ready;
+  await discovery.start();
+
+  await for (final event in discovery.eventStream!.timeout(const Duration(seconds: 10))) {
+    if (event.type == BonsoirDiscoveryEventType.discoveryServiceResolved) {
+      final service = event.service! as ResolvedBonsoirService;
+
+      if (service.name == targetName && service.ip != null) {
+        return ('${service.ip}:${service.port}');
+      }
+    }
+  }
+
+  await discovery.stop();
+
+  throw Exception('Address not on local network');
 }
 
 Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionCallback) async {
@@ -139,11 +188,12 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
     }
   }
 
-  final signalingServer = options.webRtcOptions?.signalingServerAddress ?? 'app.viam.com';
+  final signalingServer = options.webRtcOptions?.signalingServerAddress ?? ((options._usingMdns) ? address : 'app.viam.com');
   _logger.d('Connecting to signaling server: $signalingServer');
   final signalingChannel = await _dialDirectGrpc(signalingServer, options, sessionCallback);
   _logger.d('Connected to signaling server: $signalingServer');
-  final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {'rpc-host': address}));
+  final signalingClient = SignalingServiceClient(signalingChannel,
+      options: CallOptions(metadata: {'rpc-host': ((options._usingMdns) ? options.authEntity : address)!}));
   WebRTCConfig config;
   try {
     config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
@@ -336,7 +386,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
   final addr = _hostAndPort(options.externalAuthAddress ?? address, options.insecure);
   final authEntity = options.authEntity ?? address.replaceAll(RegExp(r'^(.*:\/\/)/'), '');
   _logger.d('Authenticating to address: $addr, for entity: $authEntity');
-  var authChannel = GrpcOrGrpcWebClientChannel.toSingleEndpoint(host: addr.host, port: addr.port, transportSecure: !options.insecure);
+  var authChannel = ViamGrpcOrGrpcWebChannel(host: addr.host, port: addr.port, transportSecure: !options.insecure);
   final authClient = AuthServiceClient(authChannel);
   final credentials = pb.Credentials();
   if (options.credentials?.type != null) {
@@ -382,12 +432,12 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
 }
 
 /// A channel that attaches an access token to gRPC metadata for every call
-class AuthenticatedChannel extends GrpcOrGrpcWebClientChannel {
+class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   final String accessToken;
   final String Function()? _sessionId;
 
   AuthenticatedChannel(String host, int port, this.accessToken, bool insecure, [this._sessionId])
-      : super.toSingleEndpoint(
+      : super(
           host: host,
           port: port,
           transportSecure: !insecure,
