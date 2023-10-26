@@ -3,6 +3,7 @@ library viam_sdk;
 
 /// App Clients
 export 'src/app/data.dart' hide DataClient;
+export 'src/app/permissions.dart';
 
 /// Components
 export 'src/components/arm/arm.dart';
