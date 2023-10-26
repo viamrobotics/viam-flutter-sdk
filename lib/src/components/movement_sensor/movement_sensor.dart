@@ -1,6 +1,3 @@
-import 'package:logger/logger.dart';
-
-import '../../components/sensor/sensor.dart';
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/movementsensor/v1/movementsensor.pb.dart';
 import '../../resource/base.dart';
