@@ -13,9 +13,9 @@ class ViamBoardWidget extends StatefulWidget {
   final Board board;
 
   const ViamBoardWidget({
-    Key? key,
+    super.key,
     required this.board,
-  }) : super(key: key);
+  });
 
   @override
   State<ViamBoardWidget> createState() => _ViamBoardWidgetState();

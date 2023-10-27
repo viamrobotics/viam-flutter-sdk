@@ -21,11 +21,11 @@ class ViamGripperWidget extends StatefulWidget {
   final RobotClient robotClient;
 
   const ViamGripperWidget({
-    Key? key,
+    super.key,
     required this.gripper,
     required this.cameras,
     required this.robotClient,
-  }) : super(key: key);
+  });
 
   @override
   State<ViamGripperWidget> createState() => _ViamGripperWidgetState();
