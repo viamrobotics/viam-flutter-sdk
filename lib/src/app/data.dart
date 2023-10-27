@@ -4,11 +4,11 @@ import 'dart:math';
 import 'package:async/async.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
+import '../gen/google/protobuf/timestamp.pb.dart';
+import '../media/image.dart';
 
 /// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
 ///
