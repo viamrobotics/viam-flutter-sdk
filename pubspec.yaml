@@ -19,8 +19,9 @@ dependencies:
   flutter_joystick: ^0.0.3
   collection: ^1.17.1
   intl: ^0.18.1
-  bonsoir: ^2.2.0+1 # do not upgrade beyond 2.2.0+1 until this issue is resolved: https://github.com/Skyost/Bonsoir/issues/57
-
+  # do not upgrade beyond 2.2.0+1 until this issue is resolved: https://github.com/Skyost/Bonsoir/issues/57
+  bonsoir: ^2.2.0+1 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
