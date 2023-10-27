@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:async/async.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
@@ -115,17 +116,28 @@ class DataClient {
   /// Upload an image to Viam's Data Manager
   ///
   /// If no name is provided, the current timestamp will be used as the filename.
-  Future<String> uploadImage(ViamImage image, String partId, {String? name, Iterable<String> tags = const []}) async {
+  Future<String> uploadImage(ViamImage image, String partId,
+      {String? fileName,
+      String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      Iterable<String> tags = const []}) async {
     final metadata = UploadMetadata()
       ..partId = partId
       ..type = DataType.DATA_TYPE_FILE
-      ..fileName = name ?? DateTime.now().toIso8601String()
+      ..fileName = fileName ?? DateTime.now().toIso8601String()
       ..fileExtension = '.${image.mimeType.type}'
       ..tags.addAll(tags);
-
+    if (componentType != null) metadata.componentType = componentType;
+    if (componentName != null) metadata.componentName = componentName;
+    if (methodName != null) metadata.methodName = methodName;
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     final metadataRequest = FileUploadRequest()..metadata = metadata;
+
     // Make requests that are at most 2MB large (max gRPC request size is 4MB)
     final dataRequests = image.raw.slices(2 * 1024 * 1024).map((e) => FileUploadRequest()..fileContents = (FileData()..data = e));
+
     final requestStream = Stream.fromIterable([metadataRequest, ...dataRequests]);
     final response = await _dataSyncClient.fileUpload(requestStream);
     return response.fileId;
@@ -134,7 +146,13 @@ class DataClient {
   /// Upload a file from its path to Viam's Data Manager
   ///
   /// The file name can be overridden by providing the [fileName] parameter.
-  Future<String> uploadFile(String path, String partId, {String? fileName, Iterable<String> tags = const []}) async {
+  Future<String> uploadFile(String path, String partId,
+      {String? fileName,
+      String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      Iterable<String> tags = const []}) async {
     final fileNameAndExt = path.split(Platform.pathSeparator).last;
     String fName, ext;
     if (fileNameAndExt.contains('.')) {
@@ -150,6 +168,10 @@ class DataClient {
       ..fileName = fileName ?? fName
       ..fileExtension = ext
       ..tags.addAll(tags);
+    if (componentType != null) metadata.componentType = componentType;
+    if (componentName != null) metadata.componentName = componentName;
+    if (methodName != null) metadata.methodName = methodName;
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     final metadataStream = Stream.value(FileUploadRequest()..metadata = metadata);
 
     final file = File(path);
