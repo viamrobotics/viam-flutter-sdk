@@ -124,7 +124,7 @@ void main() {
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'fileName'
           ..fileExtension = '.jpeg';
-        await dataClient.uploadImage(image, 'partId', name: 'fileName');
+        await dataClient.uploadImage(image, 'partId', fileName: 'fileName');
         expect(syncServiceClient.metadata, expected);
 
         await dataClient.uploadImage(image, 'partId');
