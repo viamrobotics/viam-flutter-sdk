@@ -2,6 +2,7 @@ export 'widgets/button.dart';
 export 'widgets/camera_stream.dart';
 export 'widgets/joystick.dart';
 export 'widgets/multi_camera_stream.dart';
+export 'widgets/refreshable_data_table.dart';
 export 'widgets/resources/base.dart';
 export 'widgets/resources/board.dart';
 export 'widgets/resources/gripper.dart';

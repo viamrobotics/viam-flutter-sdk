@@ -10,7 +10,7 @@ class ViamMotorWidget extends StatefulWidget {
   /// The [Motor]
   final Motor motor;
 
-  const ViamMotorWidget({Key? key, required this.motor}) : super(key: key);
+  const ViamMotorWidget({super.key, required this.motor});
 
   @override
   State<ViamMotorWidget> createState() {

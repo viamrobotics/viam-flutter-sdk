@@ -6,9 +6,9 @@ import '../test_utils.dart';
 import '../unit_test/components/sensor_test.dart';
 
 void main() {
-  group('ViamSensorWidget', () {
+  group('ViamRefreshableDataTableTest', () {
     testWidgets('displays data', (tester) async {
-      final widget = TestableWidget(child: ViamSensorWidget(sensor: FakeSensor('sensor')));
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings));
       await tester.pumpWidget(widget);
 
       final dataTable = find.byType(DataTable);
@@ -17,7 +17,7 @@ void main() {
     });
 
     testWidgets('shows last refresh time', (tester) async {
-      final widget = TestableWidget(child: ViamSensorWidget(sensor: FakeSensor('sensor'), showLastRefreshed: true));
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings, showLastRefreshed: true));
       await tester.pumpWidget(widget);
 
       final refreshButton = find.widgetWithIcon(ViamButton, Icons.refresh);
@@ -30,7 +30,7 @@ void main() {
     });
 
     testWidgets('hides last refresh time', (tester) async {
-      final widget = TestableWidget(child: ViamSensorWidget(sensor: FakeSensor('sensor'), showLastRefreshed: false));
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings, showLastRefreshed: false));
       await tester.pumpWidget(widget);
 
       final refreshButton = find.widgetWithIcon(ViamButton, Icons.refresh);
@@ -43,7 +43,7 @@ void main() {
     });
 
     testWidgets('shows refresh controls', (tester) async {
-      final widget = TestableWidget(child: ViamSensorWidget(sensor: FakeSensor('sensor'), showRefreshControls: true));
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings, showRefreshControls: true));
       await tester.pumpWidget(widget);
 
       final playButton = find.widgetWithIcon(ViamButton, Icons.play_arrow);
@@ -62,7 +62,7 @@ void main() {
     });
 
     testWidgets('hides refresh controls', (tester) async {
-      final widget = TestableWidget(child: ViamSensorWidget(sensor: FakeSensor('sensor'), showRefreshControls: false));
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings, showRefreshControls: false));
       await tester.pumpWidget(widget);
 
       final playButton = find.widgetWithIcon(ViamButton, Icons.play_arrow);
@@ -75,7 +75,7 @@ void main() {
     });
 
     testWidgets('hides play/pause when refresh interval is null', (tester) async {
-      final widget = TestableWidget(child: ViamSensorWidget(sensor: FakeSensor('sensor'), refreshInterval: null));
+      final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings, refreshInterval: null));
       await tester.pumpWidget(widget);
 
       final playButton = find.widgetWithIcon(ViamButton, Icons.play_arrow);

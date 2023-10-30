@@ -19,11 +19,11 @@ class ViamBaseWidget extends StatefulWidget {
   final RobotClient robotClient;
 
   const ViamBaseWidget({
-    Key? key,
+    super.key,
     required this.base,
     required this.cameras,
     required this.robotClient,
-  }) : super(key: key);
+  });
 
   @override
   State<ViamBaseWidget> createState() => _ViamBaseWidgetState();
