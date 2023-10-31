@@ -76,7 +76,7 @@
 
 </dt>
 <dd>
-  
+  CaptureInterval specifies the start and end times of the data capture.
 </dd>
 
         <dt id="DataCaptureMetadata">
@@ -84,7 +84,7 @@
 
 </dt>
 <dd>
-  
+  DataCaptureMetadata contains the metadata for data captured by collectors.
 </dd>
 
         <dt id="DataCaptureUploadMetadata">
@@ -92,7 +92,7 @@
 
 </dt>
 <dd>
-  
+  DataCaptureUploadMetadata contains the metadata for streaming binary (image + file) data.
 </dd>
 
         <dt id="DataCaptureUploadRequest">
@@ -100,7 +100,7 @@
 
 </dt>
 <dd>
-  
+  DataCaptureUploadRequest requests to upload the contents and metadata for tabular data.
 </dd>
 
         <dt id="DataCaptureUploadResponse">
@@ -108,7 +108,7 @@
 
 </dt>
 <dd>
-  
+  DataCaptureUploadResponse returns the file id of the uploaded contents and metadata for tabular data.
 </dd>
 
         <dt id="DataSyncServiceBase">
@@ -132,7 +132,7 @@
 
 </dt>
 <dd>
-  
+  DataType specifies the type of data uploaded.
 </dd>
 
         <dt id="FileData">
@@ -140,7 +140,7 @@
 
 </dt>
 <dd>
-  
+  FileData contains the contents of binary (image + file) data.
 </dd>
 
         <dt id="FileUploadRequest">
@@ -148,7 +148,8 @@
 
 </dt>
 <dd>
-  
+  FileUploadRequest requests to upload the contents and metadata for binary (image + file) data.
+The first packet must be the UploadMetadata associated with the binary data.
 </dd>
 
         <dt id="FileUploadResponse">
@@ -156,7 +157,7 @@
 
 </dt>
 <dd>
-  
+  FileUploadResponse returns the file id of the uploaded contents and metadata for binary (image + file) data.
 </dd>
 
         <dt id="SensorData">
@@ -164,7 +165,7 @@
 
 </dt>
 <dd>
-  
+  SensorData contains the contents and metadata for tabular data.
 </dd>
 
         <dt id="SensorMetadata">
@@ -172,7 +173,7 @@
 
 </dt>
 <dd>
-  
+  SensorMetadata contains the time the sensor data was requested and was received.
 </dd>
 
         <dt id="StreamingDataCaptureUploadRequest">
@@ -180,7 +181,8 @@
 
 </dt>
 <dd>
-  
+  StreamingDataCaptureUploadRequest requests to upload the contents and metadata for streaming binary (image + file) data.
+The first packet must be the DataCaptureUploadMetadata associated with the data.
 </dd>
 
         <dt id="StreamingDataCaptureUploadResponse">
@@ -188,7 +190,7 @@
 
 </dt>
 <dd>
-  
+  StreamingDataCaptureUploadResponse returns the file id of the uploaded contents and metadata for streaming binary (image + file) data.
 </dd>
 
         <dt id="UploadMetadata">
@@ -196,7 +198,7 @@
 
 </dt>
 <dd>
-  
+  UploadMetadata contains the metadata for binary (image + file) data.
 </dd>
 
       </dl>

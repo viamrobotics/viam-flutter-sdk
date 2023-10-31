@@ -61,6 +61,17 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>OrientationVector containing ox, oy, oz, theta represents an orientation vector
+Structured similarly to an angle axis, an orientation vector works differently. Rather than representing an orientation
+with an arbitrary axis and a rotation around it from an origin, an orientation vector represents orientation
+such that the ox/oy/oz components represent the point on the cartesian unit sphere at which your end effector is pointing
+from the origin, and that unit vector forms an axis around which theta rotates. This means that incrementing/decrementing
+theta will perform an in-line rotation of the end effector.
+Theta is defined as rotation between two planes: the plane defined by the origin, the point (0,0,1), and the rx,ry,rz
+point, and the plane defined by the origin, the rx,ry,rz point, and the new local Z axis. So if theta is kept at
+zero as the north/south pole is circled, the Roll will correct itself to remain in-line.</p>
+</section>
 
 
     <section>
@@ -96,7 +107,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="Orientation_OrientationVectorRadians" class="callable">
-          <span class="name"><a href="../viam_protos.app.robot/Orientation_OrientationVectorRadians/Orientation_OrientationVectorRadians.html">Orientation_OrientationVectorRadians</a></span><span class="signature">()</span>
+          <span class="name"><a href="../viam_protos.app.robot/Orientation_OrientationVectorRadians/Orientation_OrientationVectorRadians.html">Orientation_OrientationVectorRadians</a></span><span class="signature">(<span class="parameter" id="-param-theta">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">theta</span>, </span><span class="parameter" id="-param-x"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">x</span>, </span><span class="parameter" id="-param-y"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">y</span>, </span><span class="parameter" id="-param-z"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">z</span>}</span>)</span>
         </dt>
         <dd>
           

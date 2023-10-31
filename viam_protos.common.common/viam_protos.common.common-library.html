@@ -76,7 +76,7 @@
 
 </dt>
 <dd>
-  
+  ActuatorStatus is a generic status for resources that only need to return actuator status.
 </dd>
 
         <dt id="AnalogStatus">
@@ -124,7 +124,7 @@
 
 </dt>
 <dd>
-  
+  DoCommandRequest represents a generic DoCommand input
 </dd>
 
         <dt id="DoCommandResponse">
@@ -132,7 +132,7 @@
 
 </dt>
 <dd>
-  
+  DoCommandResponse represents a generic DoCommand output
 </dd>
 
         <dt id="GeometriesInFrame">
@@ -140,7 +140,8 @@
 
 </dt>
 <dd>
-  
+  GeometriesinFrame contains the dimensions of a given geometry, pose of its center point, and the reference frame by which it was
+observed.
 </dd>
 
         <dt id="Geometry">
@@ -148,7 +149,7 @@
 
 </dt>
 <dd>
-  
+  Geometry contains the dimensions of a given geometry and the pose of its center. The geometry is one of either a sphere or a box.
 </dd>
 
         <dt id="GeoObstacle">
@@ -156,7 +157,8 @@
 
 </dt>
 <dd>
-  
+  GeoObstacle contains information about the geometric structure of an obstacle and the location of the obstacle,
+captured in latitude and longitude.
 </dd>
 
         <dt id="GeoPoint">
@@ -236,7 +238,8 @@
 
 </dt>
 <dd>
-  
+  PointCloudObject contains an image in bytes with point cloud data of all of the objects captured by a given observer as well as a
+repeated list of geometries which respresents the center point and geometry of each of the objects within the point cloud
 </dd>
 
         <dt id="Pose">
@@ -244,7 +247,14 @@
 
 </dt>
 <dd>
-  
+  Pose is a combination of location and orientation.
+Location is expressed as distance which is represented by x , y, z coordinates. Orientation is expressed as an orientation vector which
+is represented by o_x, o_y, o_z and theta. The o_x, o_y, o_z coordinates represent the point on the cartesian unit sphere that the end of
+the arm is pointing to (with the origin as reference). That unit vector forms an axis around which theta rotates. This means that
+incrementing / decrementing theta will perform an inline rotation of the end effector.
+Theta is defined as rotation between two planes: the first being defined by the origin, the point (0,0,1), and the rx, ry, rz point, and the
+second being defined by the origin, the rx, ry, rz point and the local Z axis. Therefore, if theta is kept at zero as the north/south pole
+is circled, the Roll will correct itself to remain in-line.
 </dd>
 
         <dt id="PoseInFrame">
@@ -252,7 +262,7 @@
 
 </dt>
 <dd>
-  
+  PoseInFrame contains a pose and the and the reference frame in which it was observed
 </dd>
 
         <dt id="RectangularPrism">
@@ -260,7 +270,8 @@
 
 </dt>
 <dd>
-  
+  RectangularPrism contains a Vector3 field corresponding to the X, Y, Z dimensions of the prism in mms
+These dimensions are with respect to the referenceframe in which the RectangularPrism is defined
 </dd>
 
         <dt id="ResourceName">
@@ -292,7 +303,9 @@
 
 </dt>
 <dd>
-  
+  Transform contains a pose and two reference frames. The first reference frame is the starting reference frame, and the second reference
+frame is the observer reference frame. The second reference frame has a pose which represents the pose of an object in the first
+reference frame as observed within the second reference frame.
 </dd>
 
         <dt id="Vector3">
@@ -308,7 +321,9 @@
 
 </dt>
 <dd>
-  
+  WorldState contains information about the physical environment around a given robot. All of the fields within this message are optional,
+they can include information about the physical dimensions of an obstacle, the freespace of a robot, and any desired transforms between a
+given reference frame and a new target reference frame.
 </dd>
 
       </dl>

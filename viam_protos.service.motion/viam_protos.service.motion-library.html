@@ -76,7 +76,7 @@
 
 </dt>
 <dd>
-  
+  CollisionSpecification is used to selectively apply obstacle avoidance to specific parts of the robot
 </dd>
 
         <dt id="CollisionSpecification_AllowedFrameCollisions">
@@ -92,7 +92,7 @@
 
 </dt>
 <dd>
-  
+  A pose
 </dd>
 
         <dt id="Constraints">
@@ -100,7 +100,7 @@
 
 </dt>
 <dd>
-  
+  Constraints specifies all enumerated constraints to be passed to Viam's motion planning, along with any optional parameters
 </dd>
 
         <dt id="GetPlanRequest">
@@ -140,7 +140,8 @@
 
 </dt>
 <dd>
-  
+  LinearConstraint specifies that the component being moved should move linearly relative to its goal.
+It does not constrain the motion of components other than the <code>component_name</code> specified in motion.Move
 </dd>
 
         <dt id="ListPlanStatusesRequest">
@@ -156,7 +157,7 @@
 
 </dt>
 <dd>
-  
+  Status of all executed / executing plan statuses with associated IDs within the 24 hour TTL
 </dd>
 
         <dt id="MotionConfiguration">
@@ -236,7 +237,7 @@
 
 </dt>
 <dd>
-  
+  Moves any component on the robot to a specified destination which can be from the reference frame of any other component on the robot.
 </dd>
 
         <dt id="MoveResponse">
@@ -252,7 +253,7 @@
 
 </dt>
 <dd>
-  
+  Pairs a vision service with a camera, informing the service about which camera it may use
 </dd>
 
         <dt id="OrientationConstraint">
@@ -260,7 +261,8 @@
 
 </dt>
 <dd>
-  
+  OrientationConstraint specifies that the component being moved will not deviate its orientation beyond some threshold relative
+to the goal. It does not constrain the motion of components other than the <code>component_name</code> specified in motion.Move
 </dd>
 
         <dt id="Plan">
@@ -268,7 +270,7 @@
 
 </dt>
 <dd>
-  
+  A plan describes a motion plan
 </dd>
 
         <dt id="PlanState">
@@ -276,7 +278,11 @@
 
 </dt>
 <dd>
-  
+  The states that a plan can be in.
+InProgress if the plan is executing.
+Stopped if the plan was stopped.
+Suceeded if the robot reached its destination successfully.
+Failed if the robot did not reach its destination.
 </dd>
 
         <dt id="PlanStatus">
@@ -284,7 +290,8 @@
 
 </dt>
 <dd>
-  
+  Plan status describes the state of a given plan at a
+point in time
 </dd>
 
         <dt id="PlanStatusWithID">
@@ -292,7 +299,9 @@
 
 </dt>
 <dd>
-  
+  PlanStatusWithID describes the state of a given plan at a
+point in time plus the plan_id, component_name and execution_id
+the status is associated with
 </dd>
 
         <dt id="PlanStep">
@@ -308,7 +317,8 @@
 
 </dt>
 <dd>
-  
+  Describes a plan, its current status &amp; all status changes
+that have occured previously on that plan
 </dd>
 
         <dt id="StopPlanRequest">

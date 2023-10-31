@@ -61,6 +61,10 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>Plan status describes the state of a given plan at a
+point in time</p>
+</section>
 
 
     <section>
@@ -96,7 +100,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="PlanStatus" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/PlanStatus/PlanStatus.html">PlanStatus</a></span><span class="signature">()</span>
+          <span class="name"><a href="../viam_protos.service.motion/PlanStatus/PlanStatus.html">PlanStatus</a></span><span class="signature">(<span class="parameter" id="-param-state">{<span class="type-annotation"><a href="../viam_protos.service.motion/PlanState-class.html">PlanState</a>?</span> <span class="parameter-name">state</span>, </span><span class="parameter" id="-param-timestamp"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">timestamp</span>, </span><span class="parameter" id="-param-reason"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">reason</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -174,7 +178,10 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The reason for the state change. If motion plan failed
+this will return the error message.
+If motion needed to re-plan, this will return
+the re-plan reason.
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -196,7 +203,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The state of the plan execution
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -207,7 +214,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The time the executing plan transtioned to the state
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>

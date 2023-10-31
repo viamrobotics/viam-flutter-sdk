@@ -79,6 +79,14 @@
   
 </dd>
 
+        <dt id="AppValidationStatus">
+  <span class="name "><a href="../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
         <dt id="AuthConfig">
   <span class="name "><a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></span> 
 
@@ -156,7 +164,8 @@
 
 </dt>
 <dd>
-  
+  ExternalAuthConfig describes how a viam managed robot can accept
+credentials signed by the cloud app.
 </dd>
 
         <dt id="Frame">
@@ -180,7 +189,7 @@
 
 </dt>
 <dd>
-  
+  Valid location secret that can be used for authentication to the robot.
 </dd>
 
         <dt id="LogRequest">
@@ -204,7 +213,7 @@
 
 </dt>
 <dd>
-  
+  ModuleConfig is the configuration for a module.
 </dd>
 
         <dt id="NeedsRestartRequest">
@@ -244,7 +253,13 @@
 
 </dt>
 <dd>
-  
+  See here for a thorough explanation: <a href="https://en.wikipedia.org/wiki/Axis%25E2%2580%2593angle_representation">https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation</a>
+Basic explanation: Imagine a 3d cartesian grid centered at 0,0,0, and a sphere of radius 1 centered at
+that same point. An orientation can be expressed by first specifying an axis, i.e. a line from the origin
+to a point on that sphere, represented by (rx, ry, rz), and a rotation around that axis, theta.
+These four numbers can be used as-is (R4), or they can be converted to R3, where theta is multiplied by each of
+the unit sphere components to give a vector whose length is theta and whose direction is the original axis.
+AxisAngles represents an R4 axis angle.
 </dd>
 
         <dt id="Orientation_EulerAngles">
@@ -252,7 +267,8 @@
 
 </dt>
 <dd>
-  
+  EulerAngles are three angles (in radians) used to represent the rotation of an object in 3D Euclidean space
+The Tait–Bryan angle formalism is used, with rotations around three distinct axes in the z-y′-x″ sequence.
 </dd>
 
         <dt id="Orientation_NoOrientation">
@@ -268,7 +284,8 @@
 
 </dt>
 <dd>
-  
+  OrientationVectorDegrees is the orientation vector between two objects, but expressed in degrees rather than radians.
+Because protobuf Pose is in degrees, this is necessary.
 </dd>
 
         <dt id="Orientation_OrientationVectorRadians">
@@ -276,7 +293,15 @@
 
 </dt>
 <dd>
-  
+  OrientationVector containing ox, oy, oz, theta represents an orientation vector
+Structured similarly to an angle axis, an orientation vector works differently. Rather than representing an orientation
+with an arbitrary axis and a rotation around it from an origin, an orientation vector represents orientation
+such that the ox/oy/oz components represent the point on the cartesian unit sphere at which your end effector is pointing
+from the origin, and that unit vector forms an axis around which theta rotates. This means that incrementing/decrementing
+theta will perform an in-line rotation of the end effector.
+Theta is defined as rotation between two planes: the plane defined by the origin, the point (0,0,1), and the rx,ry,rz
+point, and the plane defined by the origin, the rx,ry,rz point, and the new local Z axis. So if theta is kept at
+zero as the north/south pole is circled, the Roll will correct itself to remain in-line.
 </dd>
 
         <dt id="Orientation_Quaternion">
@@ -284,7 +309,7 @@
 
 </dt>
 <dd>
-  
+  Quaternion is a float64 precision quaternion.
 </dd>
 
         <dt id="PackageConfig">
@@ -292,7 +317,7 @@
 
 </dt>
 <dd>
-  
+  PackageConfig is the configration for deployed Packages.
 </dd>
 
         <dt id="ProcessConfig">
@@ -300,7 +325,7 @@
 
 </dt>
 <dd>
-  
+  A ProcessConfig describes how to manage a system process.
 </dd>
 
         <dt id="RemoteAuth">
@@ -308,7 +333,9 @@
 
 </dt>
 <dd>
-  
+  RemoteAuth specifies how to authenticate against a remote. If no credentials are
+specified, authentication does not happen. If an entity is specified, the
+authentication request will specify it.
 </dd>
 
         <dt id="RemoteAuth_Credentials">
@@ -316,7 +343,8 @@
 
 </dt>
 <dd>
-  
+  Credentials packages up both a type of credential along with its payload which
+is formatted specific to the type.
 </dd>
 
         <dt id="RemoteConfig">
@@ -324,7 +352,10 @@
 
 </dt>
 <dd>
-  
+  A RemoteConfig describes a remote robot that should be integrated.
+The Frame field defines how the "world" node of the remote robot should be reconciled with the "world" node of the
+the current robot. All components of the remote robot who have Parent as "world" will be attached to the parent defined
+in Frame, and with the given offset as well.
 </dd>
 
         <dt id="ResourceLevelServiceConfig">
@@ -332,7 +363,7 @@
 
 </dt>
 <dd>
-  
+  A ResourceLevelServiceConfig describes component or remote configuration for a service.
 </dd>
 
         <dt id="RobotConfig">
@@ -404,6 +435,21 @@
 
     <div>
       <span class="signature"><code>{&#39;1&#39; : &#39;AgentInfo&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;host&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;host&#39;}, {&#39;1&#39; : &#39;os&#39;, &#39;3…</code></span>
+    </div>
+</dd>
+
+        <dt id="AppValidationStatus$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.robot/AppValidationStatus$json-constant.html">AppValidationStatus$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;AppValidationStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;error&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;error&#39;}]}</code></span>
     </div>
 </dd>
 
@@ -991,6 +1037,17 @@
 </dt>
 <dd>
   Descriptor for <code>AgentInfo</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="appValidationStatusDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/appValidationStatusDescriptor.html">appValidationStatusDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>AppValidationStatus</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

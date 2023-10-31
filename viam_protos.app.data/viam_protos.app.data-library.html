@@ -76,7 +76,7 @@
 
 </dt>
 <dd>
-  
+  AddBinaryDataToDatasetByIDsRequest adds the binary data with the given binary IDs to a dataset with dataset_id.
 </dd>
 
         <dt id="AddBinaryDataToDatasetByIDsResponse">
@@ -92,7 +92,8 @@
 
 </dt>
 <dd>
-  
+  AddBoundingBoxToImageByIDRequest specifies the binary ID to which a bounding box
+with the associated label and position in normalized coordinates will be added.
 </dd>
 
         <dt id="AddBoundingBoxToImageByIDResponse">
@@ -100,7 +101,7 @@
 
 </dt>
 <dd>
-  
+  AddBoundingBoxToImageByIDResponse returns the bounding box ID of the successfully added bounding box.
 </dd>
 
         <dt id="AddTagsToBinaryDataByFilterRequest">
@@ -108,7 +109,7 @@
 
 </dt>
 <dd>
-  
+  AddTagsToBinaryDataByFilterRequest requests adding all specified tags to each of the files when a filter is provided.
 </dd>
 
         <dt id="AddTagsToBinaryDataByFilterResponse">
@@ -124,7 +125,7 @@
 
 </dt>
 <dd>
-  
+  AddTagsToBinaryDataByIDsRequest requests adding all specified tags to each of the files when binary ids are provided.
 </dd>
 
         <dt id="AddTagsToBinaryDataByIDsResponse">
@@ -140,7 +141,7 @@
 
 </dt>
 <dd>
-  
+  Annotations are data annotations used for machine learning.
 </dd>
 
         <dt id="BinaryData">
@@ -148,7 +149,7 @@
 
 </dt>
 <dd>
-  
+  BinaryData contains data and metadata associated with binary data.
 </dd>
 
         <dt id="BinaryDataByFilterRequest">
@@ -156,7 +157,7 @@
 
 </dt>
 <dd>
-  
+  BinaryDataByFilterRequest requests the data and metadata of binary (image + file) data when a filter is provided.
 </dd>
 
         <dt id="BinaryDataByFilterResponse">
@@ -164,7 +165,7 @@
 
 </dt>
 <dd>
-  
+  BinaryDataByFilterResponse provides the data and metadata of binary (image + file) data when a filter is provided.
 </dd>
 
         <dt id="BinaryDataByIDsRequest">
@@ -172,7 +173,7 @@
 
 </dt>
 <dd>
-  
+  BinaryDataByFilterRequest requests the data and metadata of binary (image + file) data by binary ids.
 </dd>
 
         <dt id="BinaryDataByIDsResponse">
@@ -180,7 +181,7 @@
 
 </dt>
 <dd>
-  
+  BinaryDataByIDsResponse provides the data and metadata of binary (image + file) data when a filter is provided.
 </dd>
 
         <dt id="BinaryID">
@@ -188,7 +189,7 @@
 
 </dt>
 <dd>
-  
+  BinaryID is the unique identifier for a file that one can request to be retrieved or modified.
 </dd>
 
         <dt id="BinaryMetadata">
@@ -196,7 +197,7 @@
 
 </dt>
 <dd>
-  
+  BinaryMetadata is the metadata associated with binary data.
 </dd>
 
         <dt id="BoundingBox">
@@ -204,7 +205,8 @@
 
 </dt>
 <dd>
-  
+  BoundingBox represents a labeled bounding box on an image.
+x and y values are normalized ratios between 0 and 1.
 </dd>
 
         <dt id="BoundingBoxLabelsByFilterRequest">
@@ -212,7 +214,7 @@
 
 </dt>
 <dd>
-  
+  BoundingBoxLabelsByFilterRequest requests all the labels of the bounding boxes from files from a given filter.
 </dd>
 
         <dt id="BoundingBoxLabelsByFilterResponse">
@@ -220,7 +222,7 @@
 
 </dt>
 <dd>
-  
+  BoundingBoxLabelsByFilterRequest returns all the labels of the bounding boxes from files from a given filter.
 </dd>
 
         <dt id="CaptureInterval">
@@ -228,7 +230,7 @@
 
 </dt>
 <dd>
-  
+  CaptureInterval describes the start and end time of the capture in this file.
 </dd>
 
         <dt id="CaptureMetadata">
@@ -236,7 +238,7 @@
 
 </dt>
 <dd>
-  
+  CaptureMetadata contains information on the settings used for the data capture.
 </dd>
 
         <dt id="ConfigureDatabaseUserRequest">
@@ -244,7 +246,9 @@
 
 </dt>
 <dd>
-  
+  ConfigureDatabaseUserRequest accepts a Viam organization ID and a password for the database user
+being configured. Viam uses gRPC over TLS, so the entire request will be encrypted while in
+flight, including the password.
 </dd>
 
         <dt id="ConfigureDatabaseUserResponse">
@@ -260,7 +264,12 @@
 
 </dt>
 <dd>
-  
+  DataRequest encapsulates the filter for the data, a limit on the maximum results returned,
+a last string associated with the last returned document, and the sorting order by time.
+last is returned in the responses TabularDataByFilterResponse and BinaryDataByFilterResponse
+from the API calls TabularDataByFilter and BinaryDataByFilter, respectively.
+We can then use the last string from the previous API calls in the subsequent request
+to get the next set of ordered documents.
 </dd>
 
         <dt id="DataServiceBase">
@@ -284,7 +293,7 @@
 
 </dt>
 <dd>
-  
+  DeleteBinaryDataByFilterRequest deletes the data and metadata of binary data when a filter is provided.
 </dd>
 
         <dt id="DeleteBinaryDataByFilterResponse">
@@ -292,7 +301,7 @@
 
 </dt>
 <dd>
-  
+  DeleteBinaryDataByFilterResponse returns the number of binary files deleted when a filter is provided.
 </dd>
 
         <dt id="DeleteBinaryDataByIDsRequest">
@@ -300,7 +309,7 @@
 
 </dt>
 <dd>
-  
+  DeleteBinaryDataByIDsRequest deletes the data and metadata of binary data when binary ids are provided.
 </dd>
 
         <dt id="DeleteBinaryDataByIDsResponse">
@@ -308,7 +317,7 @@
 
 </dt>
 <dd>
-  
+  DeleteBinaryDataByIDsResponse returns the number of binary files deleted when binary ids are provided.
 </dd>
 
         <dt id="DeleteTabularDataRequest">
@@ -316,7 +325,9 @@
 
 </dt>
 <dd>
-  
+  DeleteTabularDataRequest deletes the data from the organization that is older than <code>delete_older_than_days</code>.
+For example if <code>delete_older_than_days</code> is 10, this deletes any data that was captured up to 10 days ago.
+If it is 0, all existing data is deleted.
 </dd>
 
         <dt id="DeleteTabularDataResponse">
@@ -324,7 +335,7 @@
 
 </dt>
 <dd>
-  
+  DeleteBinaryDataResponse returns the number of tabular datapoints deleted.
 </dd>
 
         <dt id="Filter">
@@ -332,7 +343,11 @@
 
 </dt>
 <dd>
-  
+  Filter defines the fields over which we can filter data using a logic AND.
+For example, if component_type and robot_id are specified, only data from that <code>robot_id</code> of
+type <code>component_type</code> is returned. However, we logical OR over the specified tags and bounding
+box labels, such that if component_type, robot_id, tagA, tagB are specified,
+we return data from that <code>robot_id</code> of type <code>component_type</code> with <code>tagA</code> or <code>tagB</code>.
 </dd>
 
         <dt id="GetDatabaseConnectionRequest">
@@ -340,7 +355,7 @@
 
 </dt>
 <dd>
-  
+  GetDatabaseConnectionRequest requests the database connection hostname.
 </dd>
 
         <dt id="GetDatabaseConnectionResponse">
@@ -348,7 +363,7 @@
 
 </dt>
 <dd>
-  
+  GetDatabaseConnectionResponse returns the database connection hostname endpoint.
 </dd>
 
         <dt id="Order">
@@ -356,7 +371,7 @@
 
 </dt>
 <dd>
-  
+  Order specifies the order in which data is returned.
 </dd>
 
         <dt id="RemoveBinaryDataFromDatasetByIDsRequest">
@@ -364,7 +379,7 @@
 
 </dt>
 <dd>
-  
+  RemoveBinaryDataFromDatasetByIDsRequest removes the specified binary IDs from a dataset with dataset_id.
 </dd>
 
         <dt id="RemoveBinaryDataFromDatasetByIDsResponse">
@@ -380,7 +395,7 @@
 
 </dt>
 <dd>
-  
+  RemoveBoundingBoxFromImageByIDRequest removes the bounding box with specified bbox ID for the file represented by the binary id.
 </dd>
 
         <dt id="RemoveBoundingBoxFromImageByIDResponse">
@@ -396,7 +411,7 @@
 
 </dt>
 <dd>
-  
+  RemoveTagsFromBinaryDataByFilterRequest requests removing the given tags value from each file when a filter is provided.
 </dd>
 
         <dt id="RemoveTagsFromBinaryDataByFilterResponse">
@@ -404,7 +419,7 @@
 
 </dt>
 <dd>
-  
+  RemoveTagsFromBinaryDataByFilterResponse returns the number of binary files which had tags removed.
 </dd>
 
         <dt id="RemoveTagsFromBinaryDataByIDsRequest">
@@ -412,7 +427,7 @@
 
 </dt>
 <dd>
-  
+  RemoveTagsFromBinaryDataByIDsRequest requests removing the given tags value from each file when binary ids are provided.
 </dd>
 
         <dt id="RemoveTagsFromBinaryDataByIDsResponse">
@@ -420,7 +435,7 @@
 
 </dt>
 <dd>
-  
+  RemoveTagsFromBinaryDataByIDsResponse returns the number of binary files which had tags removed
 </dd>
 
         <dt id="TabularData">
@@ -428,7 +443,7 @@
 
 </dt>
 <dd>
-  
+  TabularData contains data and metadata associated with tabular data.
 </dd>
 
         <dt id="TabularDataByFilterRequest">
@@ -436,7 +451,7 @@
 
 </dt>
 <dd>
-  
+  TabularDataByFilterRequest requests tabular data based on filter values.
 </dd>
 
         <dt id="TabularDataByFilterResponse">
@@ -444,7 +459,7 @@
 
 </dt>
 <dd>
-  
+  TabularDataByFilterResponse provides the data and metadata of tabular data.
 </dd>
 
         <dt id="TagsByFilterRequest">
@@ -452,7 +467,7 @@
 
 </dt>
 <dd>
-  
+  TagsByFilterRequest requests the unique tags from data based on given filter.
 </dd>
 
         <dt id="TagsByFilterResponse">
@@ -460,7 +475,7 @@
 
 </dt>
 <dd>
-  
+  TagsByFilterResponse returns the unique tags from data based on given filter.
 </dd>
 
         <dt id="TagsFilter">
@@ -468,7 +483,7 @@
 
 </dt>
 <dd>
-  
+  TagsFilter defines the type of filtering and, if applicable, over which tags to perform a logical OR.
 </dd>
 
         <dt id="TagsFilterType">
@@ -476,7 +491,7 @@
 
 </dt>
 <dd>
-  
+  TagsFilterType specifies how data can be filtered based on tags.
 </dd>
 
       </dl>

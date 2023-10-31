@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="Module" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/Module/Module.html">Module</a></span><span class="signature">()</span>
+          <span class="name"><a href="../viam_protos.app.app/Module/Module.html">Module</a></span><span class="signature">(<span class="parameter" id="-param-moduleId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleId</span>, </span><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../viam_protos.app.app/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>, </span><span class="parameter" id="-param-versions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/VersionHistory-class.html">VersionHistory</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>, </span><span class="parameter" id="-param-url"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">url</span>, </span><span class="parameter" id="-param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span><span class="parameter" id="-param-models"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/Model-class.html">Model</a></span>&gt;</span>?</span> <span class="parameter-name">models</span>, </span><span class="parameter" id="-param-totalRobotUsage"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.0/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">totalRobotUsage</span>, </span><span class="parameter" id="-param-totalOrganizationUsage"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.0/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">totalOrganizationUsage</span>, </span><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span><span class="parameter" id="-param-publicNamespace"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">publicNamespace</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -129,7 +129,7 @@
 
 </dt>
 <dd>
-  
+  A short description of the module that explains its purpose
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -140,7 +140,7 @@
 
 </dt>
 <dd>
-  
+  The executable to run to start the module program
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -196,7 +196,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  A list of models that are available in the module
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -207,7 +207,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -218,7 +218,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The name of the module
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -229,7 +229,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The id of the organization that owns the module
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -240,7 +240,8 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The public namespace of the organization that owns the module
+This is empty if no public namespace is set
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -262,7 +263,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The total number of organizations using this module
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -273,7 +274,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The total number of robots using this module
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -295,7 +296,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The url to reference for documentation, code, etc.
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
@@ -306,7 +307,8 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The versions of the module that are available
+When this is returned from the backend, the versions are sorted in ascending order by the semver version
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
@@ -317,7 +319,7 @@ to protobuf fields.
 
 </dt>
 <dd>
-  
+  The visibility of the module
   <div class="features"><span class="feature">read / write</span></div>
 
 </dd>
