@@ -1,4 +1,5 @@
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/protos/app/data_sync.dart';
 
 import './app/app.dart';
 import './app/data.dart';
@@ -15,12 +16,12 @@ class ViamImpl implements Viam {
 
   ViamImpl._withChannel(this._clientChannelBase) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
-    _dataClient = DataClient(DataServiceClient(_clientChannelBase));
+    _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
   }
 
   ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
-    _dataClient = DataClient(DataServiceClient(_clientChannelBase));
+    _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
   }
 
   static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey) async {
