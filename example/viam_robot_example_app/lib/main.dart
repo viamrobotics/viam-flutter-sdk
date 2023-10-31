@@ -5,14 +5,7 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
 
-import 'screens/base.dart';
-import 'screens/board.dart';
-import 'screens/gripper.dart';
-import 'screens/motor.dart';
-import 'screens/movement_sensor.dart';
-import 'screens/sensor.dart';
-import 'screens/servo.dart';
-import 'screens/stream.dart';
+import 'screens/screens.dart';
 
 void main() async {
   await dotenv.load();
@@ -148,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Gripper.subtype.resourceSubtype,
       Motor.subtype.resourceSubtype,
       MovementSensor.subtype.resourceSubtype,
+      PowerSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
       Servo.subtype.resourceSubtype,
     ].contains(rname.subtype);
@@ -179,6 +173,9 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Motor.subtype.resourceSubtype) {
       return MotorScreen(motor: Motor.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == PowerSensor.subtype.resourceSubtype) {
+      return PowerSensorScreen(powerSensor: PowerSensor.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Servo.subtype.resourceSubtype) {
       return ServoScreen(servo: Servo.fromRobot(_robot, rname.name), resourceName: rname);
