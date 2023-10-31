@@ -33,6 +33,7 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'modelVersion')
     ..e<ModelType>(5, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: ModelType.valueOf, enumValues: ModelType.values)
     ..pPS(6, _omitFieldNames ? '' : 'tags')
+    ..aOS(7, _omitFieldNames ? '' : 'datasetId')
     ..hasRequiredFields = false
   ;
 
@@ -106,6 +107,15 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<$core.String> get tags => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get datasetId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set datasetId($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDatasetId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDatasetId() => clearField(7);
 }
 
 class SubmitTrainingJobResponse extends $pb.GeneratedMessage {
@@ -506,6 +516,80 @@ class CancelTrainingJobResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CancelTrainingJobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelTrainingJobResponse>(create);
   static CancelTrainingJobResponse? _defaultInstance;
+}
+
+class DeleteCompletedTrainingJobRequest extends $pb.GeneratedMessage {
+  factory DeleteCompletedTrainingJobRequest() => create();
+  DeleteCompletedTrainingJobRequest._() : super();
+  factory DeleteCompletedTrainingJobRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteCompletedTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCompletedTrainingJobRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobRequest clone() => DeleteCompletedTrainingJobRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobRequest copyWith(void Function(DeleteCompletedTrainingJobRequest) updates) => super.copyWith((message) => updates(message as DeleteCompletedTrainingJobRequest)) as DeleteCompletedTrainingJobRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobRequest create() => DeleteCompletedTrainingJobRequest._();
+  DeleteCompletedTrainingJobRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteCompletedTrainingJobRequest> createRepeated() => $pb.PbList<DeleteCompletedTrainingJobRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCompletedTrainingJobRequest>(create);
+  static DeleteCompletedTrainingJobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteCompletedTrainingJobResponse extends $pb.GeneratedMessage {
+  factory DeleteCompletedTrainingJobResponse() => create();
+  DeleteCompletedTrainingJobResponse._() : super();
+  factory DeleteCompletedTrainingJobResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteCompletedTrainingJobResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCompletedTrainingJobResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobResponse clone() => DeleteCompletedTrainingJobResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobResponse copyWith(void Function(DeleteCompletedTrainingJobResponse) updates) => super.copyWith((message) => updates(message as DeleteCompletedTrainingJobResponse)) as DeleteCompletedTrainingJobResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobResponse create() => DeleteCompletedTrainingJobResponse._();
+  DeleteCompletedTrainingJobResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteCompletedTrainingJobResponse> createRepeated() => $pb.PbList<DeleteCompletedTrainingJobResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCompletedTrainingJobResponse>(create);
+  static DeleteCompletedTrainingJobResponse? _defaultInstance;
 }
 
 

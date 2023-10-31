@@ -185,6 +185,48 @@ class LocationSecret extends $pb.GeneratedMessage {
   void clearSecret() => clearField(2);
 }
 
+class AppValidationStatus extends $pb.GeneratedMessage {
+  factory AppValidationStatus() => create();
+  AppValidationStatus._() : super();
+  factory AppValidationStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppValidationStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppValidationStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppValidationStatus clone() => AppValidationStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppValidationStatus copyWith(void Function(AppValidationStatus) updates) => super.copyWith((message) => updates(message as AppValidationStatus)) as AppValidationStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppValidationStatus create() => AppValidationStatus._();
+  AppValidationStatus createEmptyInstance() => create();
+  static $pb.PbList<AppValidationStatus> createRepeated() => $pb.PbList<AppValidationStatus>();
+  @$core.pragma('dart2js:noInline')
+  static AppValidationStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppValidationStatus>(create);
+  static AppValidationStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get error => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set error($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasError() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearError() => clearField(1);
+}
+
 class CloudConfig extends $pb.GeneratedMessage {
   factory CloudConfig() => create();
   CloudConfig._() : super();
@@ -2383,6 +2425,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'type')
     ..aOS(5, _omitFieldNames ? '' : 'moduleId')
     ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'env', entryClassName: 'ModuleConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<AppValidationStatus>(7, _omitFieldNames ? '' : 'status', subBuilder: AppValidationStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -2454,6 +2497,17 @@ class ModuleConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.Map<$core.String, $core.String> get env => $_getMap(5);
+
+  @$pb.TagNumber(7)
+  AppValidationStatus get status => $_getN(6);
+  @$pb.TagNumber(7)
+  set status(AppValidationStatus v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => clearField(7);
+  @$pb.TagNumber(7)
+  AppValidationStatus ensureStatus() => $_ensure(6);
 }
 
 class PackageConfig extends $pb.GeneratedMessage {
@@ -2467,6 +2521,7 @@ class PackageConfig extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'package')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..aOS(4, _omitFieldNames ? '' : 'type')
+    ..aOM<AppValidationStatus>(7, _omitFieldNames ? '' : 'status', subBuilder: AppValidationStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -2526,6 +2581,17 @@ class PackageConfig extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
   void clearType() => clearField(4);
+
+  @$pb.TagNumber(7)
+  AppValidationStatus get status => $_getN(4);
+  @$pb.TagNumber(7)
+  set status(AppValidationStatus v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(7)
+  void clearStatus() => clearField(7);
+  @$pb.TagNumber(7)
+  AppValidationStatus ensureStatus() => $_ensure(4);
 }
 
 

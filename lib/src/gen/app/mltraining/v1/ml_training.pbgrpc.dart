@@ -37,6 +37,10 @@ class MLTrainingServiceClient extends $grpc.Client {
       '/viam.app.mltraining.v1.MLTrainingService/CancelTrainingJob',
       ($1.CancelTrainingJobRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.CancelTrainingJobResponse.fromBuffer(value));
+  static final _$deleteCompletedTrainingJob = $grpc.ClientMethod<$1.DeleteCompletedTrainingJobRequest, $1.DeleteCompletedTrainingJobResponse>(
+      '/viam.app.mltraining.v1.MLTrainingService/DeleteCompletedTrainingJob',
+      ($1.DeleteCompletedTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.DeleteCompletedTrainingJobResponse.fromBuffer(value));
 
   MLTrainingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class MLTrainingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.CancelTrainingJobResponse> cancelTrainingJob($1.CancelTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$cancelTrainingJob, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($1.DeleteCompletedTrainingJobRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteCompletedTrainingJob, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.CancelTrainingJobRequest.fromBuffer(value),
         ($1.CancelTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.DeleteCompletedTrainingJobRequest, $1.DeleteCompletedTrainingJobResponse>(
+        'DeleteCompletedTrainingJob',
+        deleteCompletedTrainingJob_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.DeleteCompletedTrainingJobRequest.fromBuffer(value),
+        ($1.DeleteCompletedTrainingJobResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.SubmitTrainingJobResponse> submitTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$1.SubmitTrainingJobRequest> request) async {
@@ -112,8 +127,13 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
     return cancelTrainingJob(call, await request);
   }
 
+  $async.Future<$1.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$1.DeleteCompletedTrainingJobRequest> request) async {
+    return deleteCompletedTrainingJob(call, await request);
+  }
+
   $async.Future<$1.SubmitTrainingJobResponse> submitTrainingJob($grpc.ServiceCall call, $1.SubmitTrainingJobRequest request);
   $async.Future<$1.GetTrainingJobResponse> getTrainingJob($grpc.ServiceCall call, $1.GetTrainingJobRequest request);
   $async.Future<$1.ListTrainingJobsResponse> listTrainingJobs($grpc.ServiceCall call, $1.ListTrainingJobsRequest request);
   $async.Future<$1.CancelTrainingJobResponse> cancelTrainingJob($grpc.ServiceCall call, $1.CancelTrainingJobRequest request);
+  $async.Future<$1.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($grpc.ServiceCall call, $1.DeleteCompletedTrainingJobRequest request);
 }
