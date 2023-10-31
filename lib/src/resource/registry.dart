@@ -16,6 +16,8 @@ import '../components/motor/client.dart';
 import '../components/motor/motor.dart';
 import '../components/movement_sensor/client.dart';
 import '../components/movement_sensor/movement_sensor.dart';
+import '../components/power_sensor/client.dart';
+import '../components/power_sensor/power_sensor.dart';
 import '../components/sensor/client.dart';
 import '../components/sensor/sensor.dart';
 import '../components/servo/client.dart';
@@ -57,6 +59,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Gripper.subtype, (name, channel) => GripperClient(name, channel)));
     registerSubtype(ResourceRegistration(Motor.subtype, (name, channel) => MotorClient(name, channel)));
     registerSubtype(ResourceRegistration(MovementSensor.subtype, (name, channel) => MovementSensorClient(name, channel)));
+    registerSubtype(ResourceRegistration(PowerSensor.subtype, (name, channel) => PowerSensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
   }
