@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,23 @@ import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetPosesRequest extends $pb.GeneratedMessage {
-  factory GetPosesRequest() => create();
+  factory GetPosesRequest({
+    $core.String? name,
+    $core.Iterable<$core.String>? bodyNames,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (bodyNames != null) {
+      $result.bodyNames.addAll(bodyNames);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPosesRequest._() : super();
   factory GetPosesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPosesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -50,6 +66,7 @@ class GetPosesRequest extends $pb.GeneratedMessage {
   static GetPosesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPosesRequest>(create);
   static GetPosesRequest? _defaultInstance;
 
+  /// Name of the pose tracker
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -59,9 +76,13 @@ class GetPosesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Names of the bodies whose poses are being requested. In the event
+  /// this parameter is not supplied or is an empty list, all available
+  /// poses are returned
   @$pb.TagNumber(2)
   $core.List<$core.String> get bodyNames => $_getList(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -75,7 +96,15 @@ class GetPosesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPosesResponse extends $pb.GeneratedMessage {
-  factory GetPosesResponse() => create();
+  factory GetPosesResponse({
+    $core.Map<$core.String, $1.PoseInFrame>? bodyPoses,
+  }) {
+    final $result = create();
+    if (bodyPoses != null) {
+      $result.bodyPoses.addAll(bodyPoses);
+    }
+    return $result;
+  }
   GetPosesResponse._() : super();
   factory GetPosesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPosesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -106,6 +135,7 @@ class GetPosesResponse extends $pb.GeneratedMessage {
   static GetPosesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPosesResponse>(create);
   static GetPosesResponse? _defaultInstance;
 
+  /// Mapping of each body name to the pose representing the center of the body.
   @$pb.TagNumber(1)
   $core.Map<$core.String, $1.PoseInFrame> get bodyPoses => $_getMap(0);
 }

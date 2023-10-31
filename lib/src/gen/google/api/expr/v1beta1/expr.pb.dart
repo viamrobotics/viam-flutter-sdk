@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,8 +17,25 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../protobuf/struct.pbenum.dart' as $1;
 import 'source.pb.dart' as $0;
 
+/// An expression together with source information as returned by the parser.
 class ParsedExpr extends $pb.GeneratedMessage {
-  factory ParsedExpr() => create();
+  factory ParsedExpr({
+    Expr? expr,
+    $0.SourceInfo? sourceInfo,
+    $core.String? syntaxVersion,
+  }) {
+    final $result = create();
+    if (expr != null) {
+      $result.expr = expr;
+    }
+    if (sourceInfo != null) {
+      $result.sourceInfo = sourceInfo;
+    }
+    if (syntaxVersion != null) {
+      $result.syntaxVersion = syntaxVersion;
+    }
+    return $result;
+  }
   ParsedExpr._() : super();
   factory ParsedExpr.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ParsedExpr.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -51,6 +68,7 @@ class ParsedExpr extends $pb.GeneratedMessage {
   static ParsedExpr getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParsedExpr>(create);
   static ParsedExpr? _defaultInstance;
 
+  /// The parsed expression.
   @$pb.TagNumber(2)
   Expr get expr => $_getN(0);
   @$pb.TagNumber(2)
@@ -62,6 +80,7 @@ class ParsedExpr extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Expr ensureExpr() => $_ensure(0);
 
+  /// The source info derived from input that generated the parsed `expr`.
   @$pb.TagNumber(3)
   $0.SourceInfo get sourceInfo => $_getN(1);
   @$pb.TagNumber(3)
@@ -73,6 +92,7 @@ class ParsedExpr extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $0.SourceInfo ensureSourceInfo() => $_ensure(1);
 
+  /// The syntax version of the source, e.g. `cel1`.
   @$pb.TagNumber(4)
   $core.String get syntaxVersion => $_getSZ(2);
   @$pb.TagNumber(4)
@@ -83,8 +103,17 @@ class ParsedExpr extends $pb.GeneratedMessage {
   void clearSyntaxVersion() => clearField(4);
 }
 
+/// An identifier expression. e.g. `request`.
 class Expr_Ident extends $pb.GeneratedMessage {
-  factory Expr_Ident() => create();
+  factory Expr_Ident({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   Expr_Ident._() : super();
   factory Expr_Ident.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_Ident.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -115,6 +144,10 @@ class Expr_Ident extends $pb.GeneratedMessage {
   static Expr_Ident getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_Ident>(create);
   static Expr_Ident? _defaultInstance;
 
+  ///  Required. Holds a single, unqualified identifier, possibly preceded by a
+  ///  '.'.
+  ///
+  ///  Qualified names are represented by the [Expr.Select][google.api.expr.v1beta1.Expr.Select] expression.
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -125,8 +158,25 @@ class Expr_Ident extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 }
 
+/// A field selection expression. e.g. `request.auth`.
 class Expr_Select extends $pb.GeneratedMessage {
-  factory Expr_Select() => create();
+  factory Expr_Select({
+    Expr? operand,
+    $core.String? field_2,
+    $core.bool? testOnly,
+  }) {
+    final $result = create();
+    if (operand != null) {
+      $result.operand = operand;
+    }
+    if (field_2 != null) {
+      $result.field_2 = field_2;
+    }
+    if (testOnly != null) {
+      $result.testOnly = testOnly;
+    }
+    return $result;
+  }
   Expr_Select._() : super();
   factory Expr_Select.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_Select.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -159,6 +209,10 @@ class Expr_Select extends $pb.GeneratedMessage {
   static Expr_Select getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_Select>(create);
   static Expr_Select? _defaultInstance;
 
+  ///  Required. The target of the selection expression.
+  ///
+  ///  For example, in the select expression `request.auth`, the `request`
+  ///  portion of the expression is the `operand`.
   @$pb.TagNumber(1)
   Expr get operand => $_getN(0);
   @$pb.TagNumber(1)
@@ -170,6 +224,10 @@ class Expr_Select extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Expr ensureOperand() => $_ensure(0);
 
+  ///  Required. The name of the field to select.
+  ///
+  ///  For example, in the select expression `request.auth`, the `auth` portion
+  ///  of the expression would be the `field`.
   @$pb.TagNumber(2)
   $core.String get field_2 => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -179,6 +237,9 @@ class Expr_Select extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearField_2() => clearField(2);
 
+  ///  Whether the select is to be interpreted as a field presence test.
+  ///
+  ///  This results from the macro `has(request.auth)`.
   @$pb.TagNumber(3)
   $core.bool get testOnly => $_getBF(2);
   @$pb.TagNumber(3)
@@ -189,8 +250,27 @@ class Expr_Select extends $pb.GeneratedMessage {
   void clearTestOnly() => clearField(3);
 }
 
+///  A call expression, including calls to predefined functions and operators.
+///
+///  For example, `value == 10`, `size(map_value)`.
 class Expr_Call extends $pb.GeneratedMessage {
-  factory Expr_Call() => create();
+  factory Expr_Call({
+    Expr? target,
+    $core.String? function,
+    $core.Iterable<Expr>? args,
+  }) {
+    final $result = create();
+    if (target != null) {
+      $result.target = target;
+    }
+    if (function != null) {
+      $result.function = function;
+    }
+    if (args != null) {
+      $result.args.addAll(args);
+    }
+    return $result;
+  }
   Expr_Call._() : super();
   factory Expr_Call.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_Call.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -223,6 +303,8 @@ class Expr_Call extends $pb.GeneratedMessage {
   static Expr_Call getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_Call>(create);
   static Expr_Call? _defaultInstance;
 
+  /// The target of an method call-style expression. For example, `x` in
+  /// `x.f()`.
   @$pb.TagNumber(1)
   Expr get target => $_getN(0);
   @$pb.TagNumber(1)
@@ -234,6 +316,7 @@ class Expr_Call extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Expr ensureTarget() => $_ensure(0);
 
+  /// Required. The name of the function or method being called.
   @$pb.TagNumber(2)
   $core.String get function => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -243,12 +326,25 @@ class Expr_Call extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFunction() => clearField(2);
 
+  /// The arguments.
   @$pb.TagNumber(3)
   $core.List<Expr> get args => $_getList(2);
 }
 
+///  A list creation expression.
+///
+///  Lists may either be homogenous, e.g. `[1, 2, 3]`, or heterogenous, e.g.
+///  `dyn([1, 'hello', 2.0])`
 class Expr_CreateList extends $pb.GeneratedMessage {
-  factory Expr_CreateList() => create();
+  factory Expr_CreateList({
+    $core.Iterable<Expr>? elements,
+  }) {
+    final $result = create();
+    if (elements != null) {
+      $result.elements.addAll(elements);
+    }
+    return $result;
+  }
   Expr_CreateList._() : super();
   factory Expr_CreateList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_CreateList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -279,6 +375,7 @@ class Expr_CreateList extends $pb.GeneratedMessage {
   static Expr_CreateList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_CreateList>(create);
   static Expr_CreateList? _defaultInstance;
 
+  /// The elements part of the list.
   @$pb.TagNumber(1)
   $core.List<Expr> get elements => $_getList(0);
 }
@@ -289,8 +386,29 @@ enum Expr_CreateStruct_Entry_KeyKind {
   notSet
 }
 
+/// Represents an entry.
 class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
-  factory Expr_CreateStruct_Entry() => create();
+  factory Expr_CreateStruct_Entry({
+    $core.int? id,
+    $core.String? fieldKey,
+    Expr? mapKey,
+    Expr? value,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (fieldKey != null) {
+      $result.fieldKey = fieldKey;
+    }
+    if (mapKey != null) {
+      $result.mapKey = mapKey;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   Expr_CreateStruct_Entry._() : super();
   factory Expr_CreateStruct_Entry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_CreateStruct_Entry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -333,6 +451,9 @@ class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
   Expr_CreateStruct_Entry_KeyKind whichKeyKind() => _Expr_CreateStruct_Entry_KeyKindByTag[$_whichOneof(0)]!;
   void clearKeyKind() => clearField($_whichOneof(0));
 
+  /// Required. An id assigned to this node by the parser which is unique
+  /// in a given expression tree. This is used to associate type
+  /// information and other attributes to the node.
   @$pb.TagNumber(1)
   $core.int get id => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -342,6 +463,7 @@ class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// The field key for a message creator statement.
   @$pb.TagNumber(2)
   $core.String get fieldKey => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -351,6 +473,7 @@ class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFieldKey() => clearField(2);
 
+  /// The key expression for a map creation statement.
   @$pb.TagNumber(3)
   Expr get mapKey => $_getN(2);
   @$pb.TagNumber(3)
@@ -362,6 +485,7 @@ class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Expr ensureMapKey() => $_ensure(2);
 
+  /// Required. The value assigned to the key.
   @$pb.TagNumber(4)
   Expr get value => $_getN(3);
   @$pb.TagNumber(4)
@@ -374,8 +498,25 @@ class Expr_CreateStruct_Entry extends $pb.GeneratedMessage {
   Expr ensureValue() => $_ensure(3);
 }
 
+///  A map or message creation expression.
+///
+///  Maps are constructed as `{'key_name': 'value'}`. Message construction is
+///  similar, but prefixed with a type name and composed of field ids:
+///  `types.MyType{field_id: 'value'}`.
 class Expr_CreateStruct extends $pb.GeneratedMessage {
-  factory Expr_CreateStruct() => create();
+  factory Expr_CreateStruct({
+    $core.String? type,
+    $core.Iterable<Expr_CreateStruct_Entry>? entries,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (entries != null) {
+      $result.entries.addAll(entries);
+    }
+    return $result;
+  }
   Expr_CreateStruct._() : super();
   factory Expr_CreateStruct.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_CreateStruct.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -407,6 +548,8 @@ class Expr_CreateStruct extends $pb.GeneratedMessage {
   static Expr_CreateStruct getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_CreateStruct>(create);
   static Expr_CreateStruct? _defaultInstance;
 
+  /// The type name of the message to be created, empty when creating map
+  /// literals.
   @$pb.TagNumber(1)
   $core.String get type => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -416,12 +559,71 @@ class Expr_CreateStruct extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearType() => clearField(1);
 
+  /// The entries in the creation expression.
   @$pb.TagNumber(2)
   $core.List<Expr_CreateStruct_Entry> get entries => $_getList(1);
 }
 
+///  A comprehension expression applied to a list or map.
+///
+///  Comprehensions are not part of the core syntax, but enabled with macros.
+///  A macro matches a specific call signature within a parsed AST and replaces
+///  the call with an alternate AST block. Macro expansion happens at parse
+///  time.
+///
+///  The following macros are supported within CEL:
+///
+///  Aggregate type macros may be applied to all elements in a list or all keys
+///  in a map:
+///
+///  *  `all`, `exists`, `exists_one` -  test a predicate expression against
+///     the inputs and return `true` if the predicate is satisfied for all,
+///     any, or only one value `list.all(x, x < 10)`.
+///  *  `filter` - test a predicate expression against the inputs and return
+///     the subset of elements which satisfy the predicate:
+///     `payments.filter(p, p > 1000)`.
+///  *  `map` - apply an expression to all elements in the input and return the
+///     output aggregate type: `[1, 2, 3].map(i, i * i)`.
+///
+///  The `has(m.x)` macro tests whether the property `x` is present in struct
+///  `m`. The semantics of this macro depend on the type of `m`. For proto2
+///  messages `has(m.x)` is defined as 'defined, but not set`. For proto3, the
+///  macro tests whether the property is set to its default. For map and struct
+///  types, the macro tests whether the property `x` is defined on `m`.
 class Expr_Comprehension extends $pb.GeneratedMessage {
-  factory Expr_Comprehension() => create();
+  factory Expr_Comprehension({
+    $core.String? iterVar,
+    Expr? iterRange,
+    $core.String? accuVar,
+    Expr? accuInit,
+    Expr? loopCondition,
+    Expr? loopStep,
+    Expr? result,
+  }) {
+    final $result = create();
+    if (iterVar != null) {
+      $result.iterVar = iterVar;
+    }
+    if (iterRange != null) {
+      $result.iterRange = iterRange;
+    }
+    if (accuVar != null) {
+      $result.accuVar = accuVar;
+    }
+    if (accuInit != null) {
+      $result.accuInit = accuInit;
+    }
+    if (loopCondition != null) {
+      $result.loopCondition = loopCondition;
+    }
+    if (loopStep != null) {
+      $result.loopStep = loopStep;
+    }
+    if (result != null) {
+      $result.result = result;
+    }
+    return $result;
+  }
   Expr_Comprehension._() : super();
   factory Expr_Comprehension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr_Comprehension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -458,6 +660,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   static Expr_Comprehension getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_Comprehension>(create);
   static Expr_Comprehension? _defaultInstance;
 
+  /// The name of the iteration variable.
   @$pb.TagNumber(1)
   $core.String get iterVar => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -467,6 +670,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIterVar() => clearField(1);
 
+  /// The range over which var iterates.
   @$pb.TagNumber(2)
   Expr get iterRange => $_getN(1);
   @$pb.TagNumber(2)
@@ -478,6 +682,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Expr ensureIterRange() => $_ensure(1);
 
+  /// The name of the variable used for accumulation of the result.
   @$pb.TagNumber(3)
   $core.String get accuVar => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -487,6 +692,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAccuVar() => clearField(3);
 
+  /// The initial value of the accumulator.
   @$pb.TagNumber(4)
   Expr get accuInit => $_getN(3);
   @$pb.TagNumber(4)
@@ -498,6 +704,10 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   Expr ensureAccuInit() => $_ensure(3);
 
+  ///  An expression which can contain iter_var and accu_var.
+  ///
+  ///  Returns false when the result has been computed and may be used as
+  ///  a hint to short-circuit the remainder of the comprehension.
   @$pb.TagNumber(5)
   Expr get loopCondition => $_getN(4);
   @$pb.TagNumber(5)
@@ -509,6 +719,9 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   Expr ensureLoopCondition() => $_ensure(4);
 
+  ///  An expression which can contain iter_var and accu_var.
+  ///
+  ///  Computes the next value of accu_var.
   @$pb.TagNumber(6)
   Expr get loopStep => $_getN(5);
   @$pb.TagNumber(6)
@@ -520,6 +733,9 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   Expr ensureLoopStep() => $_ensure(5);
 
+  ///  An expression which can contain accu_var.
+  ///
+  ///  Computes the result.
   @$pb.TagNumber(7)
   Expr get result => $_getN(6);
   @$pb.TagNumber(7)
@@ -543,8 +759,59 @@ enum Expr_ExprKind {
   notSet
 }
 
+///  An abstract representation of a common expression.
+///
+///  Expressions are abstractly represented as a collection of identifiers,
+///  select statements, function calls, literals, and comprehensions. All
+///  operators with the exception of the '.' operator are modelled as function
+///  calls. This makes it easy to represent new operators into the existing AST.
+///
+///  All references within expressions must resolve to a [Decl][google.api.expr.v1beta1.Decl] provided at
+///  type-check for an expression to be valid. A reference may either be a bare
+///  identifier `name` or a qualified identifier `google.api.name`. References
+///  may either refer to a value or a function declaration.
+///
+///  For example, the expression `google.api.name.startsWith('expr')` references
+///  the declaration `google.api.name` within a [Expr.Select][google.api.expr.v1beta1.Expr.Select] expression, and
+///  the function declaration `startsWith`.
 class Expr extends $pb.GeneratedMessage {
-  factory Expr() => create();
+  factory Expr({
+    $core.int? id,
+    Literal? literalExpr,
+    Expr_Ident? identExpr,
+    Expr_Select? selectExpr,
+    Expr_Call? callExpr,
+    Expr_CreateList? listExpr,
+    Expr_CreateStruct? structExpr,
+    Expr_Comprehension? comprehensionExpr,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (literalExpr != null) {
+      $result.literalExpr = literalExpr;
+    }
+    if (identExpr != null) {
+      $result.identExpr = identExpr;
+    }
+    if (selectExpr != null) {
+      $result.selectExpr = selectExpr;
+    }
+    if (callExpr != null) {
+      $result.callExpr = callExpr;
+    }
+    if (listExpr != null) {
+      $result.listExpr = listExpr;
+    }
+    if (structExpr != null) {
+      $result.structExpr = structExpr;
+    }
+    if (comprehensionExpr != null) {
+      $result.comprehensionExpr = comprehensionExpr;
+    }
+    return $result;
+  }
   Expr._() : super();
   factory Expr.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Expr.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -596,6 +863,9 @@ class Expr extends $pb.GeneratedMessage {
   Expr_ExprKind whichExprKind() => _Expr_ExprKindByTag[$_whichOneof(0)]!;
   void clearExprKind() => clearField($_whichOneof(0));
 
+  /// Required. An id assigned to this node by the parser which is unique in a
+  /// given expression tree. This is used to associate type information and other
+  /// attributes to a node in the parse tree.
   @$pb.TagNumber(2)
   $core.int get id => $_getIZ(0);
   @$pb.TagNumber(2)
@@ -605,6 +875,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// A literal expression.
   @$pb.TagNumber(3)
   Literal get literalExpr => $_getN(1);
   @$pb.TagNumber(3)
@@ -616,6 +887,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Literal ensureLiteralExpr() => $_ensure(1);
 
+  /// An identifier expression.
   @$pb.TagNumber(4)
   Expr_Ident get identExpr => $_getN(2);
   @$pb.TagNumber(4)
@@ -627,6 +899,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   Expr_Ident ensureIdentExpr() => $_ensure(2);
 
+  /// A field selection expression, e.g. `request.auth`.
   @$pb.TagNumber(5)
   Expr_Select get selectExpr => $_getN(3);
   @$pb.TagNumber(5)
@@ -638,6 +911,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   Expr_Select ensureSelectExpr() => $_ensure(3);
 
+  /// A call expression, including calls to predefined functions and operators.
   @$pb.TagNumber(6)
   Expr_Call get callExpr => $_getN(4);
   @$pb.TagNumber(6)
@@ -649,6 +923,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   Expr_Call ensureCallExpr() => $_ensure(4);
 
+  /// A list creation expression.
   @$pb.TagNumber(7)
   Expr_CreateList get listExpr => $_getN(5);
   @$pb.TagNumber(7)
@@ -660,6 +935,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   Expr_CreateList ensureListExpr() => $_ensure(5);
 
+  /// A map or object creation expression.
   @$pb.TagNumber(8)
   Expr_CreateStruct get structExpr => $_getN(6);
   @$pb.TagNumber(8)
@@ -671,6 +947,7 @@ class Expr extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   Expr_CreateStruct ensureStructExpr() => $_ensure(6);
 
+  /// A comprehension expression.
   @$pb.TagNumber(9)
   Expr_Comprehension get comprehensionExpr => $_getN(7);
   @$pb.TagNumber(9)
@@ -694,8 +971,51 @@ enum Literal_ConstantKind {
   notSet
 }
 
+///  Represents a primitive literal.
+///
+///  This is similar to the primitives supported in the well-known type
+///  `google.protobuf.Value`, but richer so it can represent CEL's full range of
+///  primitives.
+///
+///  Lists and structs are not included as constants as these aggregate types may
+///  contain [Expr][google.api.expr.v1beta1.Expr] elements which require evaluation and are thus not constant.
+///
+///  Examples of literals include: `"hello"`, `b'bytes'`, `1u`, `4.2`, `-2`,
+///  `true`, `null`.
 class Literal extends $pb.GeneratedMessage {
-  factory Literal() => create();
+  factory Literal({
+    $1.NullValue? nullValue,
+    $core.bool? boolValue,
+    $fixnum.Int64? int64Value,
+    $fixnum.Int64? uint64Value,
+    $core.double? doubleValue,
+    $core.String? stringValue,
+    $core.List<$core.int>? bytesValue,
+  }) {
+    final $result = create();
+    if (nullValue != null) {
+      $result.nullValue = nullValue;
+    }
+    if (boolValue != null) {
+      $result.boolValue = boolValue;
+    }
+    if (int64Value != null) {
+      $result.int64Value = int64Value;
+    }
+    if (uint64Value != null) {
+      $result.uint64Value = uint64Value;
+    }
+    if (doubleValue != null) {
+      $result.doubleValue = doubleValue;
+    }
+    if (stringValue != null) {
+      $result.stringValue = stringValue;
+    }
+    if (bytesValue != null) {
+      $result.bytesValue = bytesValue;
+    }
+    return $result;
+  }
   Literal._() : super();
   factory Literal.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Literal.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -746,6 +1066,7 @@ class Literal extends $pb.GeneratedMessage {
   Literal_ConstantKind whichConstantKind() => _Literal_ConstantKindByTag[$_whichOneof(0)]!;
   void clearConstantKind() => clearField($_whichOneof(0));
 
+  /// null value.
   @$pb.TagNumber(1)
   $1.NullValue get nullValue => $_getN(0);
   @$pb.TagNumber(1)
@@ -755,6 +1076,7 @@ class Literal extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearNullValue() => clearField(1);
 
+  /// boolean value.
   @$pb.TagNumber(2)
   $core.bool get boolValue => $_getBF(1);
   @$pb.TagNumber(2)
@@ -764,6 +1086,7 @@ class Literal extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBoolValue() => clearField(2);
 
+  /// int64 value.
   @$pb.TagNumber(3)
   $fixnum.Int64 get int64Value => $_getI64(2);
   @$pb.TagNumber(3)
@@ -773,6 +1096,7 @@ class Literal extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearInt64Value() => clearField(3);
 
+  /// uint64 value.
   @$pb.TagNumber(4)
   $fixnum.Int64 get uint64Value => $_getI64(3);
   @$pb.TagNumber(4)
@@ -782,6 +1106,7 @@ class Literal extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearUint64Value() => clearField(4);
 
+  /// double value.
   @$pb.TagNumber(5)
   $core.double get doubleValue => $_getN(4);
   @$pb.TagNumber(5)
@@ -791,6 +1116,7 @@ class Literal extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearDoubleValue() => clearField(5);
 
+  /// string value.
   @$pb.TagNumber(6)
   $core.String get stringValue => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -800,6 +1126,7 @@ class Literal extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearStringValue() => clearField(6);
 
+  /// bytes value.
   @$pb.TagNumber(7)
   $core.List<$core.int> get bytesValue => $_getN(6);
   @$pb.TagNumber(7)

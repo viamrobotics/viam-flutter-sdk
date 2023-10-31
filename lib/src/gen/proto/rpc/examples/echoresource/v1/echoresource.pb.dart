@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,19 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class EchoResourceRequest extends $pb.GeneratedMessage {
-  factory EchoResourceRequest() => create();
+  factory EchoResourceRequest({
+    $core.String? name,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   EchoResourceRequest._() : super();
   factory EchoResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EchoResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -66,7 +78,15 @@ class EchoResourceRequest extends $pb.GeneratedMessage {
 }
 
 class EchoResourceResponse extends $pb.GeneratedMessage {
-  factory EchoResourceResponse() => create();
+  factory EchoResourceResponse({
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   EchoResourceResponse._() : super();
   factory EchoResourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EchoResourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -108,7 +128,19 @@ class EchoResourceResponse extends $pb.GeneratedMessage {
 }
 
 class EchoResourceMultipleRequest extends $pb.GeneratedMessage {
-  factory EchoResourceMultipleRequest() => create();
+  factory EchoResourceMultipleRequest({
+    $core.String? name,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   EchoResourceMultipleRequest._() : super();
   factory EchoResourceMultipleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EchoResourceMultipleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -160,7 +192,15 @@ class EchoResourceMultipleRequest extends $pb.GeneratedMessage {
 }
 
 class EchoResourceMultipleResponse extends $pb.GeneratedMessage {
-  factory EchoResourceMultipleResponse() => create();
+  factory EchoResourceMultipleResponse({
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   EchoResourceMultipleResponse._() : super();
   factory EchoResourceMultipleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EchoResourceMultipleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -202,7 +242,19 @@ class EchoResourceMultipleResponse extends $pb.GeneratedMessage {
 }
 
 class EchoResourceBiDiRequest extends $pb.GeneratedMessage {
-  factory EchoResourceBiDiRequest() => create();
+  factory EchoResourceBiDiRequest({
+    $core.String? name,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   EchoResourceBiDiRequest._() : super();
   factory EchoResourceBiDiRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EchoResourceBiDiRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -254,7 +306,15 @@ class EchoResourceBiDiRequest extends $pb.GeneratedMessage {
 }
 
 class EchoResourceBiDiResponse extends $pb.GeneratedMessage {
-  factory EchoResourceBiDiResponse() => create();
+  factory EchoResourceBiDiResponse({
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   EchoResourceBiDiResponse._() : super();
   factory EchoResourceBiDiResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EchoResourceBiDiResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

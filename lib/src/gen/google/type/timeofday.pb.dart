@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,8 +13,32 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Represents a time of day. The date and time zone are either not significant
+/// or are specified elsewhere. An API may choose to allow leap seconds. Related
+/// types are [google.type.Date][google.type.Date] and
+/// `google.protobuf.Timestamp`.
 class TimeOfDay extends $pb.GeneratedMessage {
-  factory TimeOfDay() => create();
+  factory TimeOfDay({
+    $core.int? hours,
+    $core.int? minutes,
+    $core.int? seconds,
+    $core.int? nanos,
+  }) {
+    final $result = create();
+    if (hours != null) {
+      $result.hours = hours;
+    }
+    if (minutes != null) {
+      $result.minutes = minutes;
+    }
+    if (seconds != null) {
+      $result.seconds = seconds;
+    }
+    if (nanos != null) {
+      $result.nanos = nanos;
+    }
+    return $result;
+  }
   TimeOfDay._() : super();
   factory TimeOfDay.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeOfDay.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -48,6 +72,8 @@ class TimeOfDay extends $pb.GeneratedMessage {
   static TimeOfDay getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeOfDay>(create);
   static TimeOfDay? _defaultInstance;
 
+  /// Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
+  /// to allow the value "24:00:00" for scenarios like business closing time.
   @$pb.TagNumber(1)
   $core.int get hours => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -57,6 +83,7 @@ class TimeOfDay extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearHours() => clearField(1);
 
+  /// Minutes of hour of day. Must be from 0 to 59.
   @$pb.TagNumber(2)
   $core.int get minutes => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -66,6 +93,8 @@ class TimeOfDay extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMinutes() => clearField(2);
 
+  /// Seconds of minutes of the time. Must normally be from 0 to 59. An API may
+  /// allow the value 60 if it allows leap-seconds.
   @$pb.TagNumber(3)
   $core.int get seconds => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -75,6 +104,7 @@ class TimeOfDay extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSeconds() => clearField(3);
 
+  /// Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
   @$pb.TagNumber(4)
   $core.int get nanos => $_getIZ(3);
   @$pb.TagNumber(4)

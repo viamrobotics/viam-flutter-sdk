@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,7 +16,19 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetPositionRequest extends $pb.GeneratedMessage {
-  factory GetPositionRequest() => create();
+  factory GetPositionRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPositionRequest._() : super();
   factory GetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -57,6 +69,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -70,7 +83,15 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
-  factory GetPositionResponse() => create();
+  factory GetPositionResponse({
+    $core.Iterable<$core.double>? positionsMm,
+  }) {
+    final $result = create();
+    if (positionsMm != null) {
+      $result.positionsMm.addAll(positionsMm);
+    }
+    return $result;
+  }
   GetPositionResponse._() : super();
   factory GetPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -106,7 +127,27 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class MoveToPositionRequest extends $pb.GeneratedMessage {
-  factory MoveToPositionRequest() => create();
+  factory MoveToPositionRequest({
+    $core.String? name,
+    $core.Iterable<$core.double>? positionsMm,
+    $core.Iterable<$core.double>? speedsMmPerSec,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (positionsMm != null) {
+      $result.positionsMm.addAll(positionsMm);
+    }
+    if (speedsMmPerSec != null) {
+      $result.speedsMmPerSec.addAll(speedsMmPerSec);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveToPositionRequest._() : super();
   factory MoveToPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveToPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -149,12 +190,15 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Number of millimeters to move the gantry by respective to each axis.
   @$pb.TagNumber(2)
   $core.List<$core.double> get positionsMm => $_getList(1);
 
+  /// Speeds to move each gantry axis must match length and order of positions_mm.
   @$pb.TagNumber(3)
   $core.List<$core.double> get speedsMmPerSec => $_getList(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -200,7 +244,19 @@ class MoveToPositionResponse extends $pb.GeneratedMessage {
 }
 
 class HomeRequest extends $pb.GeneratedMessage {
-  factory HomeRequest() => create();
+  factory HomeRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   HomeRequest._() : super();
   factory HomeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HomeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -241,6 +297,7 @@ class HomeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -254,7 +311,15 @@ class HomeRequest extends $pb.GeneratedMessage {
 }
 
 class HomeResponse extends $pb.GeneratedMessage {
-  factory HomeResponse() => create();
+  factory HomeResponse({
+    $core.bool? homed,
+  }) {
+    final $result = create();
+    if (homed != null) {
+      $result.homed = homed;
+    }
+    return $result;
+  }
   HomeResponse._() : super();
   factory HomeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HomeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -285,6 +350,7 @@ class HomeResponse extends $pb.GeneratedMessage {
   static HomeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HomeResponse>(create);
   static HomeResponse? _defaultInstance;
 
+  /// A bool describing whether the gantry has completed homing
   @$pb.TagNumber(1)
   $core.bool get homed => $_getBF(0);
   @$pb.TagNumber(1)
@@ -296,7 +362,19 @@ class HomeResponse extends $pb.GeneratedMessage {
 }
 
 class GetLengthsRequest extends $pb.GeneratedMessage {
-  factory GetLengthsRequest() => create();
+  factory GetLengthsRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetLengthsRequest._() : super();
   factory GetLengthsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLengthsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -337,6 +415,7 @@ class GetLengthsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -350,7 +429,15 @@ class GetLengthsRequest extends $pb.GeneratedMessage {
 }
 
 class GetLengthsResponse extends $pb.GeneratedMessage {
-  factory GetLengthsResponse() => create();
+  factory GetLengthsResponse({
+    $core.Iterable<$core.double>? lengthsMm,
+  }) {
+    final $result = create();
+    if (lengthsMm != null) {
+      $result.lengthsMm.addAll(lengthsMm);
+    }
+    return $result;
+  }
   GetLengthsResponse._() : super();
   factory GetLengthsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLengthsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -386,7 +473,19 @@ class GetLengthsResponse extends $pb.GeneratedMessage {
 }
 
 class StopRequest extends $pb.GeneratedMessage {
-  factory StopRequest() => create();
+  factory StopRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StopRequest._() : super();
   factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -418,6 +517,7 @@ class StopRequest extends $pb.GeneratedMessage {
   static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
   static StopRequest? _defaultInstance;
 
+  /// Name of a gantry
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -427,6 +527,7 @@ class StopRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -472,7 +573,23 @@ class StopResponse extends $pb.GeneratedMessage {
 }
 
 class Status extends $pb.GeneratedMessage {
-  factory Status() => create();
+  factory Status({
+    $core.Iterable<$core.double>? positionsMm,
+    $core.Iterable<$core.double>? lengthsMm,
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (positionsMm != null) {
+      $result.positionsMm.addAll(positionsMm);
+    }
+    if (lengthsMm != null) {
+      $result.lengthsMm.addAll(lengthsMm);
+    }
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   Status._() : super();
   factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -522,7 +639,15 @@ class Status extends $pb.GeneratedMessage {
 }
 
 class IsMovingRequest extends $pb.GeneratedMessage {
-  factory IsMovingRequest() => create();
+  factory IsMovingRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   IsMovingRequest._() : super();
   factory IsMovingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -564,7 +689,15 @@ class IsMovingRequest extends $pb.GeneratedMessage {
 }
 
 class IsMovingResponse extends $pb.GeneratedMessage {
-  factory IsMovingResponse() => create();
+  factory IsMovingResponse({
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   IsMovingResponse._() : super();
   factory IsMovingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

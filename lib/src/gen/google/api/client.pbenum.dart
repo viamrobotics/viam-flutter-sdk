@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// The organization for which the client libraries are being published.
+/// Affects the url where generated docs are published, etc.
 class ClientLibraryOrganization extends $pb.ProtobufEnum {
   static const ClientLibraryOrganization CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED = ClientLibraryOrganization._(0, _omitEnumNames ? '' : 'CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED');
   static const ClientLibraryOrganization CLOUD = ClientLibraryOrganization._(1, _omitEnumNames ? '' : 'CLOUD');
@@ -40,6 +42,7 @@ class ClientLibraryOrganization extends $pb.ProtobufEnum {
   const ClientLibraryOrganization._($core.int v, $core.String n) : super(v, n);
 }
 
+/// To where should client libraries be published?
 class ClientLibraryDestination extends $pb.ProtobufEnum {
   static const ClientLibraryDestination CLIENT_LIBRARY_DESTINATION_UNSPECIFIED = ClientLibraryDestination._(0, _omitEnumNames ? '' : 'CLIENT_LIBRARY_DESTINATION_UNSPECIFIED');
   static const ClientLibraryDestination GITHUB = ClientLibraryDestination._(10, _omitEnumNames ? '' : 'GITHUB');

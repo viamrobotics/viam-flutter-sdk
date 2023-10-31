@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,8 +17,22 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../../google/protobuf/duration.pb.dart' as $1;
 import '../../../../google/rpc/status.pb.dart' as $2;
 
+/// A PacketMessage is used to packetize large messages (> 64KiB) to be able to safely
+/// transmit over WebRTC data channels.
 class PacketMessage extends $pb.GeneratedMessage {
-  factory PacketMessage() => create();
+  factory PacketMessage({
+    $core.List<$core.int>? data,
+    $core.bool? eom,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    if (eom != null) {
+      $result.eom = eom;
+    }
+    return $result;
+  }
   PacketMessage._() : super();
   factory PacketMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PacketMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -69,8 +83,18 @@ class PacketMessage extends $pb.GeneratedMessage {
   void clearEom() => clearField(2);
 }
 
+/// A Stream represents an instance of a gRPC stream between
+/// a client and a server.
 class Stream extends $pb.GeneratedMessage {
-  factory Stream() => create();
+  factory Stream({
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   Stream._() : super();
   factory Stream.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Stream.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -118,8 +142,32 @@ enum Request_Type {
   notSet
 }
 
+/// A Request is a frame coming from a client. It is always
+/// associated with a stream where the client assigns the stream
+/// identifier. Servers will drop frames where the stream identifier
+/// has no association (if a non-header frames are sent).
 class Request extends $pb.GeneratedMessage {
-  factory Request() => create();
+  factory Request({
+    Stream? stream,
+    RequestHeaders? headers,
+    RequestMessage? message,
+    $core.bool? rstStream,
+  }) {
+    final $result = create();
+    if (stream != null) {
+      $result.stream = stream;
+    }
+    if (headers != null) {
+      $result.headers = headers;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (rstStream != null) {
+      $result.rstStream = rstStream;
+    }
+    return $result;
+  }
   Request._() : super();
   factory Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -206,8 +254,25 @@ class Request extends $pb.GeneratedMessage {
   void clearRstStream() => clearField(4);
 }
 
+/// RequestHeaders describe the unary or streaming call to make.
 class RequestHeaders extends $pb.GeneratedMessage {
-  factory RequestHeaders() => create();
+  factory RequestHeaders({
+    $core.String? method,
+    Metadata? metadata,
+    $1.Duration? timeout,
+  }) {
+    final $result = create();
+    if (method != null) {
+      $result.method = method;
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (timeout != null) {
+      $result.timeout = timeout;
+    }
+    return $result;
+  }
   RequestHeaders._() : super();
   factory RequestHeaders.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RequestHeaders.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -272,8 +337,26 @@ class RequestHeaders extends $pb.GeneratedMessage {
   $1.Duration ensureTimeout() => $_ensure(2);
 }
 
+/// A RequestMessage contains individual gRPC messages and a potential
+/// end-of-stream (EOS) marker.
 class RequestMessage extends $pb.GeneratedMessage {
-  factory RequestMessage() => create();
+  factory RequestMessage({
+    $core.bool? hasMessage,
+    PacketMessage? packetMessage,
+    $core.bool? eos,
+  }) {
+    final $result = create();
+    if (hasMessage != null) {
+      $result.hasMessage = hasMessage;
+    }
+    if (packetMessage != null) {
+      $result.packetMessage = packetMessage;
+    }
+    if (eos != null) {
+      $result.eos = eos;
+    }
+    return $result;
+  }
   RequestMessage._() : super();
   factory RequestMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RequestMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -343,8 +426,32 @@ enum Response_Type {
   notSet
 }
 
+/// A Response is a frame coming from a server. It is always
+/// associated with a stream where the client assigns the stream
+/// identifier. Clients will drop frames where the stream identifier
+/// has no association.
 class Response extends $pb.GeneratedMessage {
-  factory Response() => create();
+  factory Response({
+    Stream? stream,
+    ResponseHeaders? headers,
+    ResponseMessage? message,
+    ResponseTrailers? trailers,
+  }) {
+    final $result = create();
+    if (stream != null) {
+      $result.stream = stream;
+    }
+    if (headers != null) {
+      $result.headers = headers;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (trailers != null) {
+      $result.trailers = trailers;
+    }
+    return $result;
+  }
   Response._() : super();
   factory Response.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Response.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -433,8 +540,18 @@ class Response extends $pb.GeneratedMessage {
   ResponseTrailers ensureTrailers() => $_ensure(3);
 }
 
+/// ResponseHeaders contain custom metadata that are sent to the client
+/// before any message or trailers (unless only trailers are sent).
 class ResponseHeaders extends $pb.GeneratedMessage {
-  factory ResponseHeaders() => create();
+  factory ResponseHeaders({
+    Metadata? metadata,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
   ResponseHeaders._() : super();
   factory ResponseHeaders.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResponseHeaders.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -477,8 +594,17 @@ class ResponseHeaders extends $pb.GeneratedMessage {
   Metadata ensureMetadata() => $_ensure(0);
 }
 
+/// ResponseMessage contains the data of a response to a call.
 class ResponseMessage extends $pb.GeneratedMessage {
-  factory ResponseMessage() => create();
+  factory ResponseMessage({
+    PacketMessage? packetMessage,
+  }) {
+    final $result = create();
+    if (packetMessage != null) {
+      $result.packetMessage = packetMessage;
+    }
+    return $result;
+  }
   ResponseMessage._() : super();
   factory ResponseMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResponseMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -521,8 +647,21 @@ class ResponseMessage extends $pb.GeneratedMessage {
   PacketMessage ensurePacketMessage() => $_ensure(0);
 }
 
+/// ResponseTrailers contain the status of a response and any custom metadata.
 class ResponseTrailers extends $pb.GeneratedMessage {
-  factory ResponseTrailers() => create();
+  factory ResponseTrailers({
+    $2.Status? status,
+    Metadata? metadata,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
   ResponseTrailers._() : super();
   factory ResponseTrailers.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResponseTrailers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -577,8 +716,17 @@ class ResponseTrailers extends $pb.GeneratedMessage {
   Metadata ensureMetadata() => $_ensure(1);
 }
 
+/// Strings are a series of values.
 class Strings extends $pb.GeneratedMessage {
-  factory Strings() => create();
+  factory Strings({
+    $core.Iterable<$core.String>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   Strings._() : super();
   factory Strings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Strings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -613,8 +761,18 @@ class Strings extends $pb.GeneratedMessage {
   $core.List<$core.String> get values => $_getList(0);
 }
 
+/// Metadata is for custom key values provided by a client or server
+/// during a stream.
 class Metadata extends $pb.GeneratedMessage {
-  factory Metadata() => create();
+  factory Metadata({
+    $core.Map<$core.String, Strings>? md,
+  }) {
+    final $result = create();
+    if (md != null) {
+      $result.md.addAll(md);
+    }
+    return $result;
+  }
   Metadata._() : super();
   factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,8 +20,21 @@ import 'data_sync.pbenum.dart';
 
 export 'data_sync.pbenum.dart';
 
+/// DataCaptureUploadRequest requests to upload the contents and metadata for tabular data.
 class DataCaptureUploadRequest extends $pb.GeneratedMessage {
-  factory DataCaptureUploadRequest() => create();
+  factory DataCaptureUploadRequest({
+    UploadMetadata? metadata,
+    $core.Iterable<SensorData>? sensorContents,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (sensorContents != null) {
+      $result.sensorContents.addAll(sensorContents);
+    }
+    return $result;
+  }
   DataCaptureUploadRequest._() : super();
   factory DataCaptureUploadRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataCaptureUploadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -68,8 +81,17 @@ class DataCaptureUploadRequest extends $pb.GeneratedMessage {
   $core.List<SensorData> get sensorContents => $_getList(1);
 }
 
+/// DataCaptureUploadResponse returns the file id of the uploaded contents and metadata for tabular data.
 class DataCaptureUploadResponse extends $pb.GeneratedMessage {
-  factory DataCaptureUploadResponse() => create();
+  factory DataCaptureUploadResponse({
+    $core.String? fileId,
+  }) {
+    final $result = create();
+    if (fileId != null) {
+      $result.fileId = fileId;
+    }
+    return $result;
+  }
   DataCaptureUploadResponse._() : super();
   factory DataCaptureUploadResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataCaptureUploadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -116,8 +138,22 @@ enum FileUploadRequest_UploadPacket {
   notSet
 }
 
+/// FileUploadRequest requests to upload the contents and metadata for binary (image + file) data.
+/// The first packet must be the UploadMetadata associated with the binary data.
 class FileUploadRequest extends $pb.GeneratedMessage {
-  factory FileUploadRequest() => create();
+  factory FileUploadRequest({
+    UploadMetadata? metadata,
+    FileData? fileContents,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (fileContents != null) {
+      $result.fileContents = fileContents;
+    }
+    return $result;
+  }
   FileUploadRequest._() : super();
   factory FileUploadRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileUploadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -181,8 +217,17 @@ class FileUploadRequest extends $pb.GeneratedMessage {
   FileData ensureFileContents() => $_ensure(1);
 }
 
+/// FileUploadResponse returns the file id of the uploaded contents and metadata for binary (image + file) data.
 class FileUploadResponse extends $pb.GeneratedMessage {
-  factory FileUploadResponse() => create();
+  factory FileUploadResponse({
+    $core.String? fileId,
+  }) {
+    final $result = create();
+    if (fileId != null) {
+      $result.fileId = fileId;
+    }
+    return $result;
+  }
   FileUploadResponse._() : super();
   factory FileUploadResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileUploadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -229,8 +274,22 @@ enum StreamingDataCaptureUploadRequest_UploadPacket {
   notSet
 }
 
+/// StreamingDataCaptureUploadRequest requests to upload the contents and metadata for streaming binary (image + file) data.
+/// The first packet must be the DataCaptureUploadMetadata associated with the data.
 class StreamingDataCaptureUploadRequest extends $pb.GeneratedMessage {
-  factory StreamingDataCaptureUploadRequest() => create();
+  factory StreamingDataCaptureUploadRequest({
+    DataCaptureUploadMetadata? metadata,
+    $core.List<$core.int>? data,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   StreamingDataCaptureUploadRequest._() : super();
   factory StreamingDataCaptureUploadRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamingDataCaptureUploadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -292,8 +351,17 @@ class StreamingDataCaptureUploadRequest extends $pb.GeneratedMessage {
   void clearData() => clearField(2);
 }
 
+/// StreamingDataCaptureUploadResponse returns the file id of the uploaded contents and metadata for streaming binary (image + file) data.
 class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
-  factory StreamingDataCaptureUploadResponse() => create();
+  factory StreamingDataCaptureUploadResponse({
+    $core.String? fileId,
+  }) {
+    final $result = create();
+    if (fileId != null) {
+      $result.fileId = fileId;
+    }
+    return $result;
+  }
   StreamingDataCaptureUploadResponse._() : super();
   factory StreamingDataCaptureUploadResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamingDataCaptureUploadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -334,8 +402,21 @@ class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
   void clearFileId() => clearField(1);
 }
 
+/// SensorMetadata contains the time the sensor data was requested and was received.
 class SensorMetadata extends $pb.GeneratedMessage {
-  factory SensorMetadata() => create();
+  factory SensorMetadata({
+    $1.Timestamp? timeRequested,
+    $1.Timestamp? timeReceived,
+  }) {
+    final $result = create();
+    if (timeRequested != null) {
+      $result.timeRequested = timeRequested;
+    }
+    if (timeReceived != null) {
+      $result.timeReceived = timeReceived;
+    }
+    return $result;
+  }
   SensorMetadata._() : super();
   factory SensorMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SensorMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -396,8 +477,25 @@ enum SensorData_Data {
   notSet
 }
 
+/// SensorData contains the contents and metadata for tabular data.
 class SensorData extends $pb.GeneratedMessage {
-  factory SensorData() => create();
+  factory SensorData({
+    SensorMetadata? metadata,
+    $2.Struct? struct,
+    $core.List<$core.int>? binary,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (struct != null) {
+      $result.struct = struct;
+    }
+    if (binary != null) {
+      $result.binary = binary;
+    }
+    return $result;
+  }
   SensorData._() : super();
   factory SensorData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SensorData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -471,8 +569,17 @@ class SensorData extends $pb.GeneratedMessage {
   void clearBinary() => clearField(3);
 }
 
+/// FileData contains the contents of binary (image + file) data.
 class FileData extends $pb.GeneratedMessage {
-  factory FileData() => create();
+  factory FileData({
+    $core.List<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   FileData._() : super();
   factory FileData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -513,8 +620,49 @@ class FileData extends $pb.GeneratedMessage {
   void clearData() => clearField(1);
 }
 
+/// UploadMetadata contains the metadata for binary (image + file) data.
 class UploadMetadata extends $pb.GeneratedMessage {
-  factory UploadMetadata() => create();
+  factory UploadMetadata({
+    $core.String? partId,
+    $core.String? componentType,
+    $core.String? componentName,
+    $core.String? methodName,
+    DataType? type,
+    $core.String? fileName,
+    $core.Map<$core.String, $3.Any>? methodParameters,
+    $core.String? fileExtension,
+    $core.Iterable<$core.String>? tags,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (componentType != null) {
+      $result.componentType = componentType;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (fileName != null) {
+      $result.fileName = fileName;
+    }
+    if (methodParameters != null) {
+      $result.methodParameters.addAll(methodParameters);
+    }
+    if (fileExtension != null) {
+      $result.fileExtension = fileExtension;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    return $result;
+  }
   UploadMetadata._() : super();
   factory UploadMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -623,8 +771,21 @@ class UploadMetadata extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(8);
 }
 
+/// CaptureInterval specifies the start and end times of the data capture.
 class CaptureInterval extends $pb.GeneratedMessage {
-  factory CaptureInterval() => create();
+  factory CaptureInterval({
+    $1.Timestamp? start,
+    $1.Timestamp? end,
+  }) {
+    final $result = create();
+    if (start != null) {
+      $result.start = start;
+    }
+    if (end != null) {
+      $result.end = end;
+    }
+    return $result;
+  }
   CaptureInterval._() : super();
   factory CaptureInterval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -679,8 +840,41 @@ class CaptureInterval extends $pb.GeneratedMessage {
   $1.Timestamp ensureEnd() => $_ensure(1);
 }
 
+/// DataCaptureMetadata contains the metadata for data captured by collectors.
 class DataCaptureMetadata extends $pb.GeneratedMessage {
-  factory DataCaptureMetadata() => create();
+  factory DataCaptureMetadata({
+    $core.String? componentType,
+    $core.String? componentName,
+    $core.String? methodName,
+    DataType? type,
+    $core.Map<$core.String, $3.Any>? methodParameters,
+    $core.String? fileExtension,
+    $core.Iterable<$core.String>? tags,
+  }) {
+    final $result = create();
+    if (componentType != null) {
+      $result.componentType = componentType;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (methodParameters != null) {
+      $result.methodParameters.addAll(methodParameters);
+    }
+    if (fileExtension != null) {
+      $result.fileExtension = fileExtension;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    return $result;
+  }
   DataCaptureMetadata._() : super();
   factory DataCaptureMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataCaptureMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -769,8 +963,21 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(6);
 }
 
+/// DataCaptureUploadMetadata contains the metadata for streaming binary (image + file) data.
 class DataCaptureUploadMetadata extends $pb.GeneratedMessage {
-  factory DataCaptureUploadMetadata() => create();
+  factory DataCaptureUploadMetadata({
+    UploadMetadata? uploadMetadata,
+    SensorMetadata? sensorMetadata,
+  }) {
+    final $result = create();
+    if (uploadMetadata != null) {
+      $result.uploadMetadata = uploadMetadata;
+    }
+    if (sensorMetadata != null) {
+      $result.sensorMetadata = sensorMetadata;
+    }
+    return $result;
+  }
   DataCaptureUploadMetadata._() : super();
   factory DataCaptureUploadMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataCaptureUploadMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

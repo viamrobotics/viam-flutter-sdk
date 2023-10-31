@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -22,7 +22,55 @@ import 'robot.pbenum.dart';
 export 'robot.pbenum.dart';
 
 class RobotConfig extends $pb.GeneratedMessage {
-  factory RobotConfig() => create();
+  factory RobotConfig({
+    CloudConfig? cloud,
+    $core.Iterable<RemoteConfig>? remotes,
+    $core.Iterable<ComponentConfig>? components,
+    $core.Iterable<ProcessConfig>? processes,
+    $core.Iterable<ServiceConfig>? services,
+    NetworkConfig? network,
+    AuthConfig? auth,
+    $core.bool? debug,
+    $core.Iterable<ModuleConfig>? modules,
+    $core.bool? disablePartialStart,
+    $core.Iterable<PackageConfig>? packages,
+  }) {
+    final $result = create();
+    if (cloud != null) {
+      $result.cloud = cloud;
+    }
+    if (remotes != null) {
+      $result.remotes.addAll(remotes);
+    }
+    if (components != null) {
+      $result.components.addAll(components);
+    }
+    if (processes != null) {
+      $result.processes.addAll(processes);
+    }
+    if (services != null) {
+      $result.services.addAll(services);
+    }
+    if (network != null) {
+      $result.network = network;
+    }
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    if (debug != null) {
+      $result.debug = debug;
+    }
+    if (modules != null) {
+      $result.modules.addAll(modules);
+    }
+    if (disablePartialStart != null) {
+      $result.disablePartialStart = disablePartialStart;
+    }
+    if (packages != null) {
+      $result.packages.addAll(packages);
+    }
+    return $result;
+  }
   RobotConfig._() : super();
   factory RobotConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -108,6 +156,7 @@ class RobotConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   AuthConfig ensureAuth() => $_ensure(6);
 
+  /// Turns on debug mode for robot, adding an echo server and more logging and tracing. Only works after restart
   @$pb.TagNumber(8)
   $core.bool get debug => $_getBF(7);
   @$pb.TagNumber(8)
@@ -133,8 +182,21 @@ class RobotConfig extends $pb.GeneratedMessage {
   $core.List<PackageConfig> get packages => $_getList(10);
 }
 
+/// Valid location secret that can be used for authentication to the robot.
 class LocationSecret extends $pb.GeneratedMessage {
-  factory LocationSecret() => create();
+  factory LocationSecret({
+    $core.String? id,
+    $core.String? secret,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (secret != null) {
+      $result.secret = secret;
+    }
+    return $result;
+  }
   LocationSecret._() : super();
   factory LocationSecret.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LocationSecret.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -175,6 +237,7 @@ class LocationSecret extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// secret payload
   @$pb.TagNumber(2)
   $core.String get secret => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -186,7 +249,15 @@ class LocationSecret extends $pb.GeneratedMessage {
 }
 
 class AppValidationStatus extends $pb.GeneratedMessage {
-  factory AppValidationStatus() => create();
+  factory AppValidationStatus({
+    $core.String? error,
+  }) {
+    final $result = create();
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
   AppValidationStatus._() : super();
   factory AppValidationStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AppValidationStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -228,7 +299,49 @@ class AppValidationStatus extends $pb.GeneratedMessage {
 }
 
 class CloudConfig extends $pb.GeneratedMessage {
-  factory CloudConfig() => create();
+  factory CloudConfig({
+    $core.String? id,
+    $core.String? fqdn,
+    $core.String? localFqdn,
+    $core.String? managedBy,
+    $core.String? signalingAddress,
+    $core.bool? signalingInsecure,
+  @$core.Deprecated('This field is deprecated.')
+    $core.String? locationSecret,
+    $core.String? secret,
+    $core.Iterable<LocationSecret>? locationSecrets,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (fqdn != null) {
+      $result.fqdn = fqdn;
+    }
+    if (localFqdn != null) {
+      $result.localFqdn = localFqdn;
+    }
+    if (managedBy != null) {
+      $result.managedBy = managedBy;
+    }
+    if (signalingAddress != null) {
+      $result.signalingAddress = signalingAddress;
+    }
+    if (signalingInsecure != null) {
+      $result.signalingInsecure = signalingInsecure;
+    }
+    if (locationSecret != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.locationSecret = locationSecret;
+    }
+    if (secret != null) {
+      $result.secret = secret;
+    }
+    if (locationSecrets != null) {
+      $result.locationSecrets.addAll(locationSecrets);
+    }
+    return $result;
+  }
   CloudConfig._() : super();
   factory CloudConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CloudConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -267,6 +380,7 @@ class CloudConfig extends $pb.GeneratedMessage {
   static CloudConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CloudConfig>(create);
   static CloudConfig? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -321,6 +435,7 @@ class CloudConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearSignalingInsecure() => clearField(6);
 
+  /// Deprecated use location_secrets
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.String get locationSecret => $_getSZ(6);
@@ -334,6 +449,7 @@ class CloudConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearLocationSecret() => clearField(7);
 
+  /// Robot part secret
   @$pb.TagNumber(8)
   $core.String get secret => $_getSZ(7);
   @$pb.TagNumber(8)
@@ -343,12 +459,53 @@ class CloudConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearSecret() => clearField(8);
 
+  /// All valid location secrets.
   @$pb.TagNumber(9)
   $core.List<LocationSecret> get locationSecrets => $_getList(8);
 }
 
 class ComponentConfig extends $pb.GeneratedMessage {
-  factory ComponentConfig() => create();
+  factory ComponentConfig({
+    $core.String? name,
+    $core.String? namespace,
+    $core.String? type,
+    $core.String? model,
+    Frame? frame,
+    $core.Iterable<$core.String>? dependsOn,
+    $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
+    $5.Struct? attributes,
+    $core.String? api,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (namespace != null) {
+      $result.namespace = namespace;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (model != null) {
+      $result.model = model;
+    }
+    if (frame != null) {
+      $result.frame = frame;
+    }
+    if (dependsOn != null) {
+      $result.dependsOn.addAll(dependsOn);
+    }
+    if (serviceConfigs != null) {
+      $result.serviceConfigs.addAll(serviceConfigs);
+    }
+    if (attributes != null) {
+      $result.attributes = attributes;
+    }
+    if (api != null) {
+      $result.api = api;
+    }
+    return $result;
+  }
   ComponentConfig._() : super();
   factory ComponentConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComponentConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -461,8 +618,21 @@ class ComponentConfig extends $pb.GeneratedMessage {
   void clearApi() => clearField(9);
 }
 
+/// A ResourceLevelServiceConfig describes component or remote configuration for a service.
 class ResourceLevelServiceConfig extends $pb.GeneratedMessage {
-  factory ResourceLevelServiceConfig() => create();
+  factory ResourceLevelServiceConfig({
+    $core.String? type,
+    $5.Struct? attributes,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (attributes != null) {
+      $result.attributes = attributes;
+    }
+    return $result;
+  }
   ResourceLevelServiceConfig._() : super();
   factory ResourceLevelServiceConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResourceLevelServiceConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -503,6 +673,7 @@ class ResourceLevelServiceConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearType() => clearField(1);
 
+  /// TODO(adam): Should this be move to a structured type as defined in the typescript frontend.
   @$pb.TagNumber(2)
   $5.Struct get attributes => $_getN(1);
   @$pb.TagNumber(2)
@@ -515,8 +686,49 @@ class ResourceLevelServiceConfig extends $pb.GeneratedMessage {
   $5.Struct ensureAttributes() => $_ensure(1);
 }
 
+/// A ProcessConfig describes how to manage a system process.
 class ProcessConfig extends $pb.GeneratedMessage {
-  factory ProcessConfig() => create();
+  factory ProcessConfig({
+    $core.String? id,
+    $core.String? name,
+    $core.Iterable<$core.String>? args,
+    $core.String? cwd,
+    $core.bool? oneShot,
+    $core.bool? log,
+    $core.int? stopSignal,
+    $6.Duration? stopTimeout,
+    $core.Map<$core.String, $core.String>? env,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (args != null) {
+      $result.args.addAll(args);
+    }
+    if (cwd != null) {
+      $result.cwd = cwd;
+    }
+    if (oneShot != null) {
+      $result.oneShot = oneShot;
+    }
+    if (log != null) {
+      $result.log = log;
+    }
+    if (stopSignal != null) {
+      $result.stopSignal = stopSignal;
+    }
+    if (stopTimeout != null) {
+      $result.stopTimeout = stopTimeout;
+    }
+    if (env != null) {
+      $result.env.addAll(env);
+    }
+    return $result;
+  }
   ProcessConfig._() : super();
   factory ProcessConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ProcessConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -623,12 +835,49 @@ class ProcessConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $6.Duration ensureStopTimeout() => $_ensure(7);
 
+  /// additional environment variables passed to the process
   @$pb.TagNumber(9)
   $core.Map<$core.String, $core.String> get env => $_getMap(8);
 }
 
 class ServiceConfig extends $pb.GeneratedMessage {
-  factory ServiceConfig() => create();
+  factory ServiceConfig({
+    $core.String? name,
+    $core.String? namespace,
+    $core.String? type,
+    $5.Struct? attributes,
+    $core.Iterable<$core.String>? dependsOn,
+    $core.String? model,
+    $core.String? api,
+    $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (namespace != null) {
+      $result.namespace = namespace;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (attributes != null) {
+      $result.attributes = attributes;
+    }
+    if (dependsOn != null) {
+      $result.dependsOn.addAll(dependsOn);
+    }
+    if (model != null) {
+      $result.model = model;
+    }
+    if (api != null) {
+      $result.api = api;
+    }
+    if (serviceConfigs != null) {
+      $result.serviceConfigs.addAll(serviceConfigs);
+    }
+    return $result;
+  }
   ServiceConfig._() : super();
   factory ServiceConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -730,7 +979,31 @@ class ServiceConfig extends $pb.GeneratedMessage {
 }
 
 class NetworkConfig extends $pb.GeneratedMessage {
-  factory NetworkConfig() => create();
+  factory NetworkConfig({
+    $core.String? fqdn,
+    $core.String? bindAddress,
+    $core.String? tlsCertFile,
+    $core.String? tlsKeyFile,
+    SessionsConfig? sessions,
+  }) {
+    final $result = create();
+    if (fqdn != null) {
+      $result.fqdn = fqdn;
+    }
+    if (bindAddress != null) {
+      $result.bindAddress = bindAddress;
+    }
+    if (tlsCertFile != null) {
+      $result.tlsCertFile = tlsCertFile;
+    }
+    if (tlsKeyFile != null) {
+      $result.tlsKeyFile = tlsKeyFile;
+    }
+    if (sessions != null) {
+      $result.sessions = sessions;
+    }
+    return $result;
+  }
   NetworkConfig._() : super();
   factory NetworkConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -814,7 +1087,15 @@ class NetworkConfig extends $pb.GeneratedMessage {
 }
 
 class SessionsConfig extends $pb.GeneratedMessage {
-  factory SessionsConfig() => create();
+  factory SessionsConfig({
+    $6.Duration? heartbeatWindow,
+  }) {
+    final $result = create();
+    if (heartbeatWindow != null) {
+      $result.heartbeatWindow = heartbeatWindow;
+    }
+    return $result;
+  }
   SessionsConfig._() : super();
   factory SessionsConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SessionsConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -858,7 +1139,23 @@ class SessionsConfig extends $pb.GeneratedMessage {
 }
 
 class AuthConfig extends $pb.GeneratedMessage {
-  factory AuthConfig() => create();
+  factory AuthConfig({
+    $core.Iterable<AuthHandlerConfig>? handlers,
+    $core.Iterable<$core.String>? tlsAuthEntities,
+    ExternalAuthConfig? externalAuthConfig,
+  }) {
+    final $result = create();
+    if (handlers != null) {
+      $result.handlers.addAll(handlers);
+    }
+    if (tlsAuthEntities != null) {
+      $result.tlsAuthEntities.addAll(tlsAuthEntities);
+    }
+    if (externalAuthConfig != null) {
+      $result.externalAuthConfig = externalAuthConfig;
+    }
+    return $result;
+  }
   AuthConfig._() : super();
   factory AuthConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -910,7 +1207,15 @@ class AuthConfig extends $pb.GeneratedMessage {
 }
 
 class JWKSFile extends $pb.GeneratedMessage {
-  factory JWKSFile() => create();
+  factory JWKSFile({
+    $5.Struct? json,
+  }) {
+    final $result = create();
+    if (json != null) {
+      $result.json = json;
+    }
+    return $result;
+  }
   JWKSFile._() : super();
   factory JWKSFile.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory JWKSFile.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -941,6 +1246,8 @@ class JWKSFile extends $pb.GeneratedMessage {
   static JWKSFile getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JWKSFile>(create);
   static JWKSFile? _defaultInstance;
 
+  /// JSON Web Keys (JWKS) file as arbitary json.
+  /// See https://www.rfc-editor.org/rfc/rfc7517
   @$pb.TagNumber(1)
   $5.Struct get json => $_getN(0);
   @$pb.TagNumber(1)
@@ -953,8 +1260,18 @@ class JWKSFile extends $pb.GeneratedMessage {
   $5.Struct ensureJson() => $_ensure(0);
 }
 
+/// ExternalAuthConfig describes how a viam managed robot can accept
+/// credentials signed by the cloud app.
 class ExternalAuthConfig extends $pb.GeneratedMessage {
-  factory ExternalAuthConfig() => create();
+  factory ExternalAuthConfig({
+    JWKSFile? jwks,
+  }) {
+    final $result = create();
+    if (jwks != null) {
+      $result.jwks = jwks;
+    }
+    return $result;
+  }
   ExternalAuthConfig._() : super();
   factory ExternalAuthConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ExternalAuthConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -998,7 +1315,19 @@ class ExternalAuthConfig extends $pb.GeneratedMessage {
 }
 
 class AuthHandlerConfig extends $pb.GeneratedMessage {
-  factory AuthHandlerConfig() => create();
+  factory AuthHandlerConfig({
+    CredentialsType? type,
+    $5.Struct? config,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
+    return $result;
+  }
   AuthHandlerConfig._() : super();
   factory AuthHandlerConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthHandlerConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1052,7 +1381,27 @@ class AuthHandlerConfig extends $pb.GeneratedMessage {
 }
 
 class Frame extends $pb.GeneratedMessage {
-  factory Frame() => create();
+  factory Frame({
+    $core.String? parent,
+    Translation? translation,
+    Orientation? orientation,
+    $7.Geometry? geometry,
+  }) {
+    final $result = create();
+    if (parent != null) {
+      $result.parent = parent;
+    }
+    if (translation != null) {
+      $result.translation = translation;
+    }
+    if (orientation != null) {
+      $result.orientation = orientation;
+    }
+    if (geometry != null) {
+      $result.geometry = geometry;
+    }
+    return $result;
+  }
   Frame._() : super();
   factory Frame.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Frame.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1130,7 +1479,23 @@ class Frame extends $pb.GeneratedMessage {
 }
 
 class Translation extends $pb.GeneratedMessage {
-  factory Translation() => create();
+  factory Translation({
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Translation._() : super();
   factory Translation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Translation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1223,8 +1588,37 @@ class Orientation_NoOrientation extends $pb.GeneratedMessage {
   static Orientation_NoOrientation? _defaultInstance;
 }
 
+/// OrientationVector containing ox, oy, oz, theta represents an orientation vector
+/// Structured similarly to an angle axis, an orientation vector works differently. Rather than representing an orientation
+/// with an arbitrary axis and a rotation around it from an origin, an orientation vector represents orientation
+/// such that the ox/oy/oz components represent the point on the cartesian unit sphere at which your end effector is pointing
+/// from the origin, and that unit vector forms an axis around which theta rotates. This means that incrementing/decrementing
+/// theta will perform an in-line rotation of the end effector.
+/// Theta is defined as rotation between two planes: the plane defined by the origin, the point (0,0,1), and the rx,ry,rz
+/// point, and the plane defined by the origin, the rx,ry,rz point, and the new local Z axis. So if theta is kept at
+/// zero as the north/south pole is circled, the Roll will correct itself to remain in-line.
 class Orientation_OrientationVectorRadians extends $pb.GeneratedMessage {
-  factory Orientation_OrientationVectorRadians() => create();
+  factory Orientation_OrientationVectorRadians({
+    $core.double? theta,
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Orientation_OrientationVectorRadians._() : super();
   factory Orientation_OrientationVectorRadians.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation_OrientationVectorRadians.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1295,8 +1689,30 @@ class Orientation_OrientationVectorRadians extends $pb.GeneratedMessage {
   void clearZ() => clearField(4);
 }
 
+/// OrientationVectorDegrees is the orientation vector between two objects, but expressed in degrees rather than radians.
+/// Because protobuf Pose is in degrees, this is necessary.
 class Orientation_OrientationVectorDegrees extends $pb.GeneratedMessage {
-  factory Orientation_OrientationVectorDegrees() => create();
+  factory Orientation_OrientationVectorDegrees({
+    $core.double? theta,
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Orientation_OrientationVectorDegrees._() : super();
   factory Orientation_OrientationVectorDegrees.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation_OrientationVectorDegrees.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1367,8 +1783,26 @@ class Orientation_OrientationVectorDegrees extends $pb.GeneratedMessage {
   void clearZ() => clearField(4);
 }
 
+/// EulerAngles are three angles (in radians) used to represent the rotation of an object in 3D Euclidean space
+/// The Tait–Bryan angle formalism is used, with rotations around three distinct axes in the z-y′-x″ sequence.
 class Orientation_EulerAngles extends $pb.GeneratedMessage {
-  factory Orientation_EulerAngles() => create();
+  factory Orientation_EulerAngles({
+    $core.double? roll,
+    $core.double? pitch,
+    $core.double? yaw,
+  }) {
+    final $result = create();
+    if (roll != null) {
+      $result.roll = roll;
+    }
+    if (pitch != null) {
+      $result.pitch = pitch;
+    }
+    if (yaw != null) {
+      $result.yaw = yaw;
+    }
+    return $result;
+  }
   Orientation_EulerAngles._() : super();
   factory Orientation_EulerAngles.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation_EulerAngles.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1429,8 +1863,35 @@ class Orientation_EulerAngles extends $pb.GeneratedMessage {
   void clearYaw() => clearField(3);
 }
 
+/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation
+/// Basic explanation: Imagine a 3d cartesian grid centered at 0,0,0, and a sphere of radius 1 centered at
+/// that same point. An orientation can be expressed by first specifying an axis, i.e. a line from the origin
+/// to a point on that sphere, represented by (rx, ry, rz), and a rotation around that axis, theta.
+/// These four numbers can be used as-is (R4), or they can be converted to R3, where theta is multiplied by each of
+/// the unit sphere components to give a vector whose length is theta and whose direction is the original axis.
+/// AxisAngles represents an R4 axis angle.
 class Orientation_AxisAngles extends $pb.GeneratedMessage {
-  factory Orientation_AxisAngles() => create();
+  factory Orientation_AxisAngles({
+    $core.double? theta,
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Orientation_AxisAngles._() : super();
   factory Orientation_AxisAngles.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation_AxisAngles.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1501,8 +1962,29 @@ class Orientation_AxisAngles extends $pb.GeneratedMessage {
   void clearZ() => clearField(4);
 }
 
+/// Quaternion is a float64 precision quaternion.
 class Orientation_Quaternion extends $pb.GeneratedMessage {
-  factory Orientation_Quaternion() => create();
+  factory Orientation_Quaternion({
+    $core.double? w,
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (w != null) {
+      $result.w = w;
+    }
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Orientation_Quaternion._() : super();
   factory Orientation_Quaternion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation_Quaternion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1584,7 +2066,35 @@ enum Orientation_Type {
 }
 
 class Orientation extends $pb.GeneratedMessage {
-  factory Orientation() => create();
+  factory Orientation({
+    Orientation_NoOrientation? noOrientation,
+    Orientation_OrientationVectorRadians? vectorRadians,
+    Orientation_OrientationVectorDegrees? vectorDegrees,
+    Orientation_EulerAngles? eulerAngles,
+    Orientation_AxisAngles? axisAngles,
+    Orientation_Quaternion? quaternion,
+  }) {
+    final $result = create();
+    if (noOrientation != null) {
+      $result.noOrientation = noOrientation;
+    }
+    if (vectorRadians != null) {
+      $result.vectorRadians = vectorRadians;
+    }
+    if (vectorDegrees != null) {
+      $result.vectorDegrees = vectorDegrees;
+    }
+    if (eulerAngles != null) {
+      $result.eulerAngles = eulerAngles;
+    }
+    if (axisAngles != null) {
+      $result.axisAngles = axisAngles;
+    }
+    if (quaternion != null) {
+      $result.quaternion = quaternion;
+    }
+    return $result;
+  }
   Orientation._() : super();
   factory Orientation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1700,8 +2210,56 @@ class Orientation extends $pb.GeneratedMessage {
   Orientation_Quaternion ensureQuaternion() => $_ensure(5);
 }
 
+/// A RemoteConfig describes a remote robot that should be integrated.
+/// The Frame field defines how the "world" node of the remote robot should be reconciled with the "world" node of the
+/// the current robot. All components of the remote robot who have Parent as "world" will be attached to the parent defined
+/// in Frame, and with the given offset as well.
 class RemoteConfig extends $pb.GeneratedMessage {
-  factory RemoteConfig() => create();
+  factory RemoteConfig({
+    $core.String? name,
+    $core.String? address,
+    Frame? frame,
+    RemoteAuth? auth,
+    $core.String? managedBy,
+    $core.bool? insecure,
+    $6.Duration? connectionCheckInterval,
+    $6.Duration? reconnectInterval,
+    $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
+    $core.String? secret,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (address != null) {
+      $result.address = address;
+    }
+    if (frame != null) {
+      $result.frame = frame;
+    }
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    if (managedBy != null) {
+      $result.managedBy = managedBy;
+    }
+    if (insecure != null) {
+      $result.insecure = insecure;
+    }
+    if (connectionCheckInterval != null) {
+      $result.connectionCheckInterval = connectionCheckInterval;
+    }
+    if (reconnectInterval != null) {
+      $result.reconnectInterval = reconnectInterval;
+    }
+    if (serviceConfigs != null) {
+      $result.serviceConfigs.addAll(serviceConfigs);
+    }
+    if (secret != null) {
+      $result.secret = secret;
+    }
+    return $result;
+  }
   RemoteConfig._() : super();
   factory RemoteConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoteConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1824,6 +2382,7 @@ class RemoteConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.List<ResourceLevelServiceConfig> get serviceConfigs => $_getList(8);
 
+  /// Secret is a helper for a robot location secret.
   @$pb.TagNumber(10)
   $core.String get secret => $_getSZ(9);
   @$pb.TagNumber(10)
@@ -1834,8 +2393,22 @@ class RemoteConfig extends $pb.GeneratedMessage {
   void clearSecret() => clearField(10);
 }
 
+/// Credentials packages up both a type of credential along with its payload which
+/// is formatted specific to the type.
 class RemoteAuth_Credentials extends $pb.GeneratedMessage {
-  factory RemoteAuth_Credentials() => create();
+  factory RemoteAuth_Credentials({
+    CredentialsType? type,
+    $core.String? payload,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
   RemoteAuth_Credentials._() : super();
   factory RemoteAuth_Credentials.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoteAuth_Credentials.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1886,8 +2459,23 @@ class RemoteAuth_Credentials extends $pb.GeneratedMessage {
   void clearPayload() => clearField(2);
 }
 
+/// RemoteAuth specifies how to authenticate against a remote. If no credentials are
+/// specified, authentication does not happen. If an entity is specified, the
+/// authentication request will specify it.
 class RemoteAuth extends $pb.GeneratedMessage {
-  factory RemoteAuth() => create();
+  factory RemoteAuth({
+    RemoteAuth_Credentials? credentials,
+    $core.String? entity,
+  }) {
+    final $result = create();
+    if (credentials != null) {
+      $result.credentials = credentials;
+    }
+    if (entity != null) {
+      $result.entity = entity;
+    }
+    return $result;
+  }
   RemoteAuth._() : super();
   factory RemoteAuth.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoteAuth.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1941,7 +2529,35 @@ class RemoteAuth extends $pb.GeneratedMessage {
 }
 
 class AgentInfo extends $pb.GeneratedMessage {
-  factory AgentInfo() => create();
+  factory AgentInfo({
+    $core.String? host,
+    $core.String? os,
+    $core.Iterable<$core.String>? ips,
+    $core.String? version,
+    $core.String? gitRevision,
+    $core.String? platform,
+  }) {
+    final $result = create();
+    if (host != null) {
+      $result.host = host;
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    if (ips != null) {
+      $result.ips.addAll(ips);
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (gitRevision != null) {
+      $result.gitRevision = gitRevision;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    return $result;
+  }
   AgentInfo._() : super();
   factory AgentInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AgentInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1995,9 +2611,11 @@ class AgentInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearOs() => clearField(2);
 
+  /// list of all ipv4 ips.
   @$pb.TagNumber(3)
   $core.List<$core.String> get ips => $_getList(2);
 
+  /// RDK version
   @$pb.TagNumber(4)
   $core.String get version => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -2016,6 +2634,7 @@ class AgentInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearGitRevision() => clearField(5);
 
+  /// The platform the RDK is running on. For example linux/amd64
   @$pb.TagNumber(6)
   $core.String get platform => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -2027,7 +2646,19 @@ class AgentInfo extends $pb.GeneratedMessage {
 }
 
 class ConfigRequest extends $pb.GeneratedMessage {
-  factory ConfigRequest() => create();
+  factory ConfigRequest({
+    $core.String? id,
+    AgentInfo? agentInfo,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (agentInfo != null) {
+      $result.agentInfo = agentInfo;
+    }
+    return $result;
+  }
   ConfigRequest._() : super();
   factory ConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2059,6 +2690,7 @@ class ConfigRequest extends $pb.GeneratedMessage {
   static ConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigRequest>(create);
   static ConfigRequest? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2068,6 +2700,7 @@ class ConfigRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// Details about the RDK (os, version) are updated during this request.
   @$pb.TagNumber(2)
   AgentInfo get agentInfo => $_getN(1);
   @$pb.TagNumber(2)
@@ -2081,7 +2714,15 @@ class ConfigRequest extends $pb.GeneratedMessage {
 }
 
 class ConfigResponse extends $pb.GeneratedMessage {
-  factory ConfigResponse() => create();
+  factory ConfigResponse({
+    RobotConfig? config,
+  }) {
+    final $result = create();
+    if (config != null) {
+      $result.config = config;
+    }
+    return $result;
+  }
   ConfigResponse._() : super();
   factory ConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2125,7 +2766,15 @@ class ConfigResponse extends $pb.GeneratedMessage {
 }
 
 class CertificateRequest extends $pb.GeneratedMessage {
-  factory CertificateRequest() => create();
+  factory CertificateRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   CertificateRequest._() : super();
   factory CertificateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CertificateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2156,6 +2805,7 @@ class CertificateRequest extends $pb.GeneratedMessage {
   static CertificateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CertificateRequest>(create);
   static CertificateRequest? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2167,7 +2817,23 @@ class CertificateRequest extends $pb.GeneratedMessage {
 }
 
 class CertificateResponse extends $pb.GeneratedMessage {
-  factory CertificateResponse() => create();
+  factory CertificateResponse({
+    $core.String? id,
+    $core.String? tlsCertificate,
+    $core.String? tlsPrivateKey,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (tlsCertificate != null) {
+      $result.tlsCertificate = tlsCertificate;
+    }
+    if (tlsPrivateKey != null) {
+      $result.tlsPrivateKey = tlsPrivateKey;
+    }
+    return $result;
+  }
   CertificateResponse._() : super();
   factory CertificateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CertificateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2200,6 +2866,7 @@ class CertificateResponse extends $pb.GeneratedMessage {
   static CertificateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CertificateResponse>(create);
   static CertificateResponse? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2229,7 +2896,19 @@ class CertificateResponse extends $pb.GeneratedMessage {
 }
 
 class LogRequest extends $pb.GeneratedMessage {
-  factory LogRequest() => create();
+  factory LogRequest({
+    $core.String? id,
+    $core.Iterable<$0.LogEntry>? logs,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (logs != null) {
+      $result.logs.addAll(logs);
+    }
+    return $result;
+  }
   LogRequest._() : super();
   factory LogRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2261,6 +2940,7 @@ class LogRequest extends $pb.GeneratedMessage {
   static LogRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogRequest>(create);
   static LogRequest? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2307,7 +2987,15 @@ class LogResponse extends $pb.GeneratedMessage {
 }
 
 class NeedsRestartRequest extends $pb.GeneratedMessage {
-  factory NeedsRestartRequest() => create();
+  factory NeedsRestartRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   NeedsRestartRequest._() : super();
   factory NeedsRestartRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NeedsRestartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2338,6 +3026,7 @@ class NeedsRestartRequest extends $pb.GeneratedMessage {
   static NeedsRestartRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NeedsRestartRequest>(create);
   static NeedsRestartRequest? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2349,7 +3038,23 @@ class NeedsRestartRequest extends $pb.GeneratedMessage {
 }
 
 class NeedsRestartResponse extends $pb.GeneratedMessage {
-  factory NeedsRestartResponse() => create();
+  factory NeedsRestartResponse({
+    $core.String? id,
+    $core.bool? mustRestart,
+    $6.Duration? restartCheckInterval,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (mustRestart != null) {
+      $result.mustRestart = mustRestart;
+    }
+    if (restartCheckInterval != null) {
+      $result.restartCheckInterval = restartCheckInterval;
+    }
+    return $result;
+  }
   NeedsRestartResponse._() : super();
   factory NeedsRestartResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NeedsRestartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2382,6 +3087,7 @@ class NeedsRestartResponse extends $pb.GeneratedMessage {
   static NeedsRestartResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NeedsRestartResponse>(create);
   static NeedsRestartResponse? _defaultInstance;
 
+  /// Robot part id.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2412,8 +3118,41 @@ class NeedsRestartResponse extends $pb.GeneratedMessage {
   $6.Duration ensureRestartCheckInterval() => $_ensure(2);
 }
 
+/// ModuleConfig is the configuration for a module.
 class ModuleConfig extends $pb.GeneratedMessage {
-  factory ModuleConfig() => create();
+  factory ModuleConfig({
+    $core.String? name,
+    $core.String? path,
+    $core.String? logLevel,
+    $core.String? type,
+    $core.String? moduleId,
+    $core.Map<$core.String, $core.String>? env,
+    AppValidationStatus? status,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (path != null) {
+      $result.path = path;
+    }
+    if (logLevel != null) {
+      $result.logLevel = logLevel;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (env != null) {
+      $result.env.addAll(env);
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   ModuleConfig._() : super();
   factory ModuleConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModuleConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2459,6 +3198,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// path to the executable
   @$pb.TagNumber(2)
   $core.String get path => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2468,6 +3208,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPath() => clearField(2);
 
+  /// log level for module
   @$pb.TagNumber(3)
   $core.String get logLevel => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -2477,6 +3218,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearLogLevel() => clearField(3);
 
+  /// type of the module ("local" or "registry")
   @$pb.TagNumber(4)
   $core.String get type => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -2486,6 +3228,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearType() => clearField(4);
 
+  /// the id of the module if it is a registry module
   @$pb.TagNumber(5)
   $core.String get moduleId => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -2495,9 +3238,11 @@ class ModuleConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearModuleId() => clearField(5);
 
+  /// additional environment variables passed to the module process
   @$pb.TagNumber(6)
   $core.Map<$core.String, $core.String> get env => $_getMap(5);
 
+  /// info about the validity of the module
   @$pb.TagNumber(7)
   AppValidationStatus get status => $_getN(6);
   @$pb.TagNumber(7)
@@ -2510,8 +3255,33 @@ class ModuleConfig extends $pb.GeneratedMessage {
   AppValidationStatus ensureStatus() => $_ensure(6);
 }
 
+/// PackageConfig is the configration for deployed Packages.
 class PackageConfig extends $pb.GeneratedMessage {
-  factory PackageConfig() => create();
+  factory PackageConfig({
+    $core.String? name,
+    $core.String? package,
+    $core.String? version,
+    $core.String? type,
+    AppValidationStatus? status,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (package != null) {
+      $result.package = package;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   PackageConfig._() : super();
   factory PackageConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PackageConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2546,6 +3316,7 @@ class PackageConfig extends $pb.GeneratedMessage {
   static PackageConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PackageConfig>(create);
   static PackageConfig? _defaultInstance;
 
+  /// Name is the local name of the package on the RDK. Must be unique across Packages. Must not be empty.
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2555,6 +3326,7 @@ class PackageConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Package is the unique package name hosted by Viam. Must not be empty.
   @$pb.TagNumber(2)
   $core.String get package => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2564,6 +3336,7 @@ class PackageConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPackage() => clearField(2);
 
+  /// version of the package ID hosted by Viam. If not specified "latest" is assumed.
   @$pb.TagNumber(3)
   $core.String get version => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -2573,6 +3346,7 @@ class PackageConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearVersion() => clearField(3);
 
+  /// type of the package
   @$pb.TagNumber(4)
   $core.String get type => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -2582,6 +3356,7 @@ class PackageConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearType() => clearField(4);
 
+  /// info about the validity of the package
   @$pb.TagNumber(7)
   AppValidationStatus get status => $_getN(4);
   @$pb.TagNumber(7)

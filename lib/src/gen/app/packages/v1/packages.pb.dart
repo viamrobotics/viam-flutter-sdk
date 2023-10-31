@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,19 @@ import 'packages.pbenum.dart';
 export 'packages.pbenum.dart';
 
 class FileInfo extends $pb.GeneratedMessage {
-  factory FileInfo() => create();
+  factory FileInfo({
+    $core.String? name,
+    $fixnum.Int64? size,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
   FileInfo._() : super();
   factory FileInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -73,7 +85,39 @@ class FileInfo extends $pb.GeneratedMessage {
 }
 
 class PackageInfo extends $pb.GeneratedMessage {
-  factory PackageInfo() => create();
+  factory PackageInfo({
+    $core.String? organizationId,
+    $core.String? name,
+    $core.String? version,
+    PackageType? type,
+    $core.Iterable<FileInfo>? files,
+    $1.Struct? metadata,
+    $core.String? platform,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (files != null) {
+      $result.files.addAll(files);
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    return $result;
+  }
   PackageInfo._() : super();
   factory PackageInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PackageInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -177,7 +221,19 @@ enum CreatePackageRequest_Package {
 }
 
 class CreatePackageRequest extends $pb.GeneratedMessage {
-  factory CreatePackageRequest() => create();
+  factory CreatePackageRequest({
+    PackageInfo? info,
+    $core.List<$core.int>? contents,
+  }) {
+    final $result = create();
+    if (info != null) {
+      $result.info = info;
+    }
+    if (contents != null) {
+      $result.contents = contents;
+    }
+    return $result;
+  }
   CreatePackageRequest._() : super();
   factory CreatePackageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreatePackageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -229,6 +285,7 @@ class CreatePackageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   PackageInfo ensureInfo() => $_ensure(0);
 
+  /// .tar.gz file
   @$pb.TagNumber(2)
   $core.List<$core.int> get contents => $_getN(1);
   @$pb.TagNumber(2)
@@ -239,8 +296,22 @@ class CreatePackageRequest extends $pb.GeneratedMessage {
   void clearContents() => clearField(2);
 }
 
+/// Returns the package ID and version which are populated in GetPackageRequest and DeletePackageRequest to
+/// retrieve or delete this package.
 class CreatePackageResponse extends $pb.GeneratedMessage {
-  factory CreatePackageResponse() => create();
+  factory CreatePackageResponse({
+    $core.String? id,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
   CreatePackageResponse._() : super();
   factory CreatePackageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreatePackageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -292,7 +363,23 @@ class CreatePackageResponse extends $pb.GeneratedMessage {
 }
 
 class DeletePackageRequest extends $pb.GeneratedMessage {
-  factory DeletePackageRequest() => create();
+  factory DeletePackageRequest({
+    $core.String? id,
+    $core.String? version,
+    PackageType? type,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
   DeletePackageRequest._() : super();
   factory DeletePackageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeletePackageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -386,7 +473,31 @@ class DeletePackageResponse extends $pb.GeneratedMessage {
 }
 
 class Package extends $pb.GeneratedMessage {
-  factory Package() => create();
+  factory Package({
+    PackageInfo? info,
+    $core.String? url,
+    $2.Timestamp? createdOn,
+    $core.String? checksum,
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (info != null) {
+      $result.info = info;
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (checksum != null) {
+      $result.checksum = checksum;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   Package._() : super();
   factory Package.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Package.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -472,7 +583,31 @@ class Package extends $pb.GeneratedMessage {
 }
 
 class GetPackageRequest extends $pb.GeneratedMessage {
-  factory GetPackageRequest() => create();
+  factory GetPackageRequest({
+    $core.String? id,
+    $core.String? version,
+    $core.bool? includeUrl,
+    PackageType? type,
+    $core.String? platform,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (includeUrl != null) {
+      $result.includeUrl = includeUrl;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    return $result;
+  }
   GetPackageRequest._() : super();
   factory GetPackageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPackageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -554,7 +689,15 @@ class GetPackageRequest extends $pb.GeneratedMessage {
 }
 
 class GetPackageResponse extends $pb.GeneratedMessage {
-  factory GetPackageResponse() => create();
+  factory GetPackageResponse({
+    Package? package,
+  }) {
+    final $result = create();
+    if (package != null) {
+      $result.package = package;
+    }
+    return $result;
+  }
   GetPackageResponse._() : super();
   factory GetPackageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPackageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -598,7 +741,31 @@ class GetPackageResponse extends $pb.GeneratedMessage {
 }
 
 class ListPackagesRequest extends $pb.GeneratedMessage {
-  factory ListPackagesRequest() => create();
+  factory ListPackagesRequest({
+    $core.String? organizationId,
+    $core.String? name,
+    $core.String? version,
+    PackageType? type,
+    $core.bool? includeUrl,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (includeUrl != null) {
+      $result.includeUrl = includeUrl;
+    }
+    return $result;
+  }
   ListPackagesRequest._() : super();
   factory ListPackagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPackagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -680,7 +847,15 @@ class ListPackagesRequest extends $pb.GeneratedMessage {
 }
 
 class ListPackagesResponse extends $pb.GeneratedMessage {
-  factory ListPackagesResponse() => create();
+  factory ListPackagesResponse({
+    $core.Iterable<Package>? packages,
+  }) {
+    final $result = create();
+    if (packages != null) {
+      $result.packages.addAll(packages);
+    }
+    return $result;
+  }
   ListPackagesResponse._() : super();
   factory ListPackagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPackagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

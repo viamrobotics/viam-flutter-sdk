@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,8 +21,33 @@ enum Decl_Kind {
   notSet
 }
 
+/// A declaration.
 class Decl extends $pb.GeneratedMessage {
-  factory Decl() => create();
+  factory Decl({
+    $core.int? id,
+    $core.String? name,
+    $core.String? doc,
+    IdentDecl? ident,
+    FunctionDecl? function,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (doc != null) {
+      $result.doc = doc;
+    }
+    if (ident != null) {
+      $result.ident = ident;
+    }
+    if (function != null) {
+      $result.function = function;
+    }
+    return $result;
+  }
   Decl._() : super();
   factory Decl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Decl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -66,6 +91,7 @@ class Decl extends $pb.GeneratedMessage {
   Decl_Kind whichKind() => _Decl_KindByTag[$_whichOneof(0)]!;
   void clearKind() => clearField($_whichOneof(0));
 
+  /// The id of the declaration.
   @$pb.TagNumber(1)
   $core.int get id => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -75,6 +101,7 @@ class Decl extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// The name of the declaration.
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -84,6 +111,7 @@ class Decl extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// The documentation string for the declaration.
   @$pb.TagNumber(3)
   $core.String get doc => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -93,6 +121,7 @@ class Decl extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDoc() => clearField(3);
 
+  /// An identifier declaration.
   @$pb.TagNumber(4)
   IdentDecl get ident => $_getN(3);
   @$pb.TagNumber(4)
@@ -104,6 +133,7 @@ class Decl extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   IdentDecl ensureIdent() => $_ensure(3);
 
+  /// A function declaration.
   @$pb.TagNumber(5)
   FunctionDecl get function => $_getN(4);
   @$pb.TagNumber(5)
@@ -116,8 +146,28 @@ class Decl extends $pb.GeneratedMessage {
   FunctionDecl ensureFunction() => $_ensure(4);
 }
 
+///  The declared type of a variable.
+///
+///  Extends runtime type values with extra information used for type checking
+///  and dispatching.
 class DeclType extends $pb.GeneratedMessage {
-  factory DeclType() => create();
+  factory DeclType({
+    $core.int? id,
+    $core.String? type,
+    $core.Iterable<DeclType>? typeParams,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (typeParams != null) {
+      $result.typeParams.addAll(typeParams);
+    }
+    return $result;
+  }
   DeclType._() : super();
   factory DeclType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeclType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -150,6 +200,7 @@ class DeclType extends $pb.GeneratedMessage {
   static DeclType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeclType>(create);
   static DeclType? _defaultInstance;
 
+  /// The expression id of the declared type, if applicable.
   @$pb.TagNumber(1)
   $core.int get id => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -159,6 +210,7 @@ class DeclType extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// The type name, e.g. 'int', 'my.type.Type' or 'T'
   @$pb.TagNumber(2)
   $core.String get type => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -168,12 +220,27 @@ class DeclType extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearType() => clearField(2);
 
+  /// An ordered list of type parameters, e.g. `<string, int>`.
+  /// Only applies to a subset of types, e.g. `map`, `list`.
   @$pb.TagNumber(4)
   $core.List<DeclType> get typeParams => $_getList(2);
 }
 
+/// An identifier declaration.
 class IdentDecl extends $pb.GeneratedMessage {
-  factory IdentDecl() => create();
+  factory IdentDecl({
+    DeclType? type,
+    $2.Expr? value,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   IdentDecl._() : super();
   factory IdentDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IdentDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -205,6 +272,7 @@ class IdentDecl extends $pb.GeneratedMessage {
   static IdentDecl getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IdentDecl>(create);
   static IdentDecl? _defaultInstance;
 
+  /// Optional type of the identifier.
   @$pb.TagNumber(3)
   DeclType get type => $_getN(0);
   @$pb.TagNumber(3)
@@ -216,6 +284,7 @@ class IdentDecl extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   DeclType ensureType() => $_ensure(0);
 
+  /// Optional value of the identifier.
   @$pb.TagNumber(4)
   $2.Expr get value => $_getN(1);
   @$pb.TagNumber(4)
@@ -228,8 +297,25 @@ class IdentDecl extends $pb.GeneratedMessage {
   $2.Expr ensureValue() => $_ensure(1);
 }
 
+/// A function declaration.
 class FunctionDecl extends $pb.GeneratedMessage {
-  factory FunctionDecl() => create();
+  factory FunctionDecl({
+    $core.Iterable<IdentDecl>? args,
+    DeclType? returnType,
+    $core.bool? receiverFunction,
+  }) {
+    final $result = create();
+    if (args != null) {
+      $result.args.addAll(args);
+    }
+    if (returnType != null) {
+      $result.returnType = returnType;
+    }
+    if (receiverFunction != null) {
+      $result.receiverFunction = receiverFunction;
+    }
+    return $result;
+  }
   FunctionDecl._() : super();
   factory FunctionDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FunctionDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -262,9 +348,11 @@ class FunctionDecl extends $pb.GeneratedMessage {
   static FunctionDecl getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FunctionDecl>(create);
   static FunctionDecl? _defaultInstance;
 
+  /// The function arguments.
   @$pb.TagNumber(1)
   $core.List<IdentDecl> get args => $_getList(0);
 
+  /// Optional declared return type.
   @$pb.TagNumber(2)
   DeclType get returnType => $_getN(1);
   @$pb.TagNumber(2)
@@ -276,6 +364,7 @@ class FunctionDecl extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   DeclType ensureReturnType() => $_ensure(1);
 
+  /// If the first argument of the function is the receiver.
   @$pb.TagNumber(3)
   $core.bool get receiverFunction => $_getBF(2);
   @$pb.TagNumber(3)

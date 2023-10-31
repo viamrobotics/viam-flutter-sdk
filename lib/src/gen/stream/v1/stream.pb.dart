@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// ListStreamsRequest requests all streams registered.
 class ListStreamsRequest extends $pb.GeneratedMessage {
   factory ListStreamsRequest() => create();
   ListStreamsRequest._() : super();
@@ -45,8 +46,17 @@ class ListStreamsRequest extends $pb.GeneratedMessage {
   static ListStreamsRequest? _defaultInstance;
 }
 
+/// A ListStreamsResponse details streams registered.
 class ListStreamsResponse extends $pb.GeneratedMessage {
-  factory ListStreamsResponse() => create();
+  factory ListStreamsResponse({
+    $core.Iterable<$core.String>? names,
+  }) {
+    final $result = create();
+    if (names != null) {
+      $result.names.addAll(names);
+    }
+    return $result;
+  }
   ListStreamsResponse._() : super();
   factory ListStreamsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStreamsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -81,8 +91,17 @@ class ListStreamsResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get names => $_getList(0);
 }
 
+/// A AddStreamRequest requests the given stream be added to the connection.
 class AddStreamRequest extends $pb.GeneratedMessage {
-  factory AddStreamRequest() => create();
+  factory AddStreamRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   AddStreamRequest._() : super();
   factory AddStreamRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddStreamRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -123,6 +142,7 @@ class AddStreamRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 }
 
+/// AddStreamResponse is returned after a successful AddStreamRequest.
 class AddStreamResponse extends $pb.GeneratedMessage {
   factory AddStreamResponse() => create();
   AddStreamResponse._() : super();
@@ -155,8 +175,17 @@ class AddStreamResponse extends $pb.GeneratedMessage {
   static AddStreamResponse? _defaultInstance;
 }
 
+/// A RemoveStreamRequest requests the given stream be removed from the connection.
 class RemoveStreamRequest extends $pb.GeneratedMessage {
-  factory RemoveStreamRequest() => create();
+  factory RemoveStreamRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   RemoveStreamRequest._() : super();
   factory RemoveStreamRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveStreamRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -197,6 +226,7 @@ class RemoveStreamRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 }
 
+/// RemoveStreamResponse is returned after a successful RemoveStreamRequest.
 class RemoveStreamResponse extends $pb.GeneratedMessage {
   factory RemoveStreamResponse() => create();
   RemoveStreamResponse._() : super();

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,19 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Credentials extends $pb.GeneratedMessage {
-  factory Credentials() => create();
+  factory Credentials({
+    $core.String? type,
+    $core.String? payload,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
   Credentials._() : super();
   factory Credentials.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Credentials.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -46,6 +58,7 @@ class Credentials extends $pb.GeneratedMessage {
   static Credentials getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Credentials>(create);
   static Credentials? _defaultInstance;
 
+  /// type is the type of credentials being used.
   @$pb.TagNumber(1)
   $core.String get type => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -55,6 +68,7 @@ class Credentials extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearType() => clearField(1);
 
+  /// payload is an opaque string used that are of the given type above.
   @$pb.TagNumber(2)
   $core.String get payload => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -65,8 +79,21 @@ class Credentials extends $pb.GeneratedMessage {
   void clearPayload() => clearField(2);
 }
 
+/// An AuthenticateRequest contains the credentials used to authenticate.
 class AuthenticateRequest extends $pb.GeneratedMessage {
-  factory AuthenticateRequest() => create();
+  factory AuthenticateRequest({
+    $core.String? entity,
+    Credentials? credentials,
+  }) {
+    final $result = create();
+    if (entity != null) {
+      $result.entity = entity;
+    }
+    if (credentials != null) {
+      $result.credentials = credentials;
+    }
+    return $result;
+  }
   AuthenticateRequest._() : super();
   factory AuthenticateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthenticateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -119,8 +146,17 @@ class AuthenticateRequest extends $pb.GeneratedMessage {
   Credentials ensureCredentials() => $_ensure(1);
 }
 
+/// An AuthenticateResponse is returned after successful authentication.
 class AuthenticateResponse extends $pb.GeneratedMessage {
-  factory AuthenticateResponse() => create();
+  factory AuthenticateResponse({
+    $core.String? accessToken,
+  }) {
+    final $result = create();
+    if (accessToken != null) {
+      $result.accessToken = accessToken;
+    }
+    return $result;
+  }
   AuthenticateResponse._() : super();
   factory AuthenticateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthenticateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -151,6 +187,8 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   static AuthenticateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthenticateResponse>(create);
   static AuthenticateResponse? _defaultInstance;
 
+  /// access_token is a JWT where only the expiration should be deemed
+  /// important.
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -161,8 +199,17 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   void clearAccessToken() => clearField(1);
 }
 
+/// An AuthenticateToRequest contains the entity to authenticate to.
 class AuthenticateToRequest extends $pb.GeneratedMessage {
-  factory AuthenticateToRequest() => create();
+  factory AuthenticateToRequest({
+    $core.String? entity,
+  }) {
+    final $result = create();
+    if (entity != null) {
+      $result.entity = entity;
+    }
+    return $result;
+  }
   AuthenticateToRequest._() : super();
   factory AuthenticateToRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthenticateToRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -203,8 +250,17 @@ class AuthenticateToRequest extends $pb.GeneratedMessage {
   void clearEntity() => clearField(1);
 }
 
+/// An AuthenticateResponse is returned after successful authentication.
 class AuthenticateToResponse extends $pb.GeneratedMessage {
-  factory AuthenticateToResponse() => create();
+  factory AuthenticateToResponse({
+    $core.String? accessToken,
+  }) {
+    final $result = create();
+    if (accessToken != null) {
+      $result.accessToken = accessToken;
+    }
+    return $result;
+  }
   AuthenticateToResponse._() : super();
   factory AuthenticateToResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthenticateToResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -235,6 +291,8 @@ class AuthenticateToResponse extends $pb.GeneratedMessage {
   static AuthenticateToResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthenticateToResponse>(create);
   static AuthenticateToResponse? _defaultInstance;
 
+  /// access_token is a JWT where only the expiration should be deemed
+  /// important.
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
   @$pb.TagNumber(1)

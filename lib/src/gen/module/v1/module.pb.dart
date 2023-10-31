@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,19 @@ import '../../app/v1/robot.pb.dart' as $1;
 import '../../robot/v1/robot.pb.dart' as $2;
 
 class AddResourceRequest extends $pb.GeneratedMessage {
-  factory AddResourceRequest() => create();
+  factory AddResourceRequest({
+    $1.ComponentConfig? config,
+    $core.Iterable<$core.String>? dependencies,
+  }) {
+    final $result = create();
+    if (config != null) {
+      $result.config = config;
+    }
+    if (dependencies != null) {
+      $result.dependencies.addAll(dependencies);
+    }
+    return $result;
+  }
   AddResourceRequest._() : super();
   factory AddResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -97,7 +109,19 @@ class AddResourceResponse extends $pb.GeneratedMessage {
 }
 
 class ReconfigureResourceRequest extends $pb.GeneratedMessage {
-  factory ReconfigureResourceRequest() => create();
+  factory ReconfigureResourceRequest({
+    $1.ComponentConfig? config,
+    $core.Iterable<$core.String>? dependencies,
+  }) {
+    final $result = create();
+    if (config != null) {
+      $result.config = config;
+    }
+    if (dependencies != null) {
+      $result.dependencies.addAll(dependencies);
+    }
+    return $result;
+  }
   ReconfigureResourceRequest._() : super();
   factory ReconfigureResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReconfigureResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -177,7 +201,15 @@ class ReconfigureResourceResponse extends $pb.GeneratedMessage {
 }
 
 class RemoveResourceRequest extends $pb.GeneratedMessage {
-  factory RemoveResourceRequest() => create();
+  factory RemoveResourceRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   RemoveResourceRequest._() : super();
   factory RemoveResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -251,7 +283,19 @@ class RemoveResourceResponse extends $pb.GeneratedMessage {
 }
 
 class HandlerDefinition extends $pb.GeneratedMessage {
-  factory HandlerDefinition() => create();
+  factory HandlerDefinition({
+    $2.ResourceRPCSubtype? subtype,
+    $core.Iterable<$core.String>? models,
+  }) {
+    final $result = create();
+    if (subtype != null) {
+      $result.subtype = subtype;
+    }
+    if (models != null) {
+      $result.models.addAll(models);
+    }
+    return $result;
+  }
   HandlerDefinition._() : super();
   factory HandlerDefinition.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HandlerDefinition.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -299,7 +343,15 @@ class HandlerDefinition extends $pb.GeneratedMessage {
 }
 
 class HandlerMap extends $pb.GeneratedMessage {
-  factory HandlerMap() => create();
+  factory HandlerMap({
+    $core.Iterable<HandlerDefinition>? handlers,
+  }) {
+    final $result = create();
+    if (handlers != null) {
+      $result.handlers.addAll(handlers);
+    }
+    return $result;
+  }
   HandlerMap._() : super();
   factory HandlerMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HandlerMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -335,7 +387,15 @@ class HandlerMap extends $pb.GeneratedMessage {
 }
 
 class ReadyRequest extends $pb.GeneratedMessage {
-  factory ReadyRequest() => create();
+  factory ReadyRequest({
+    $core.String? parentAddress,
+  }) {
+    final $result = create();
+    if (parentAddress != null) {
+      $result.parentAddress = parentAddress;
+    }
+    return $result;
+  }
   ReadyRequest._() : super();
   factory ReadyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReadyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -377,7 +437,19 @@ class ReadyRequest extends $pb.GeneratedMessage {
 }
 
 class ReadyResponse extends $pb.GeneratedMessage {
-  factory ReadyResponse() => create();
+  factory ReadyResponse({
+    $core.bool? ready,
+    HandlerMap? handlermap,
+  }) {
+    final $result = create();
+    if (ready != null) {
+      $result.ready = ready;
+    }
+    if (handlermap != null) {
+      $result.handlermap = handlermap;
+    }
+    return $result;
+  }
   ReadyResponse._() : super();
   factory ReadyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReadyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -431,7 +503,15 @@ class ReadyResponse extends $pb.GeneratedMessage {
 }
 
 class ValidateConfigRequest extends $pb.GeneratedMessage {
-  factory ValidateConfigRequest() => create();
+  factory ValidateConfigRequest({
+    $1.ComponentConfig? config,
+  }) {
+    final $result = create();
+    if (config != null) {
+      $result.config = config;
+    }
+    return $result;
+  }
   ValidateConfigRequest._() : super();
   factory ValidateConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidateConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -475,7 +555,15 @@ class ValidateConfigRequest extends $pb.GeneratedMessage {
 }
 
 class ValidateConfigResponse extends $pb.GeneratedMessage {
-  factory ValidateConfigResponse() => create();
+  factory ValidateConfigResponse({
+    $core.Iterable<$core.String>? dependencies,
+  }) {
+    final $result = create();
+    if (dependencies != null) {
+      $result.dependencies.addAll(dependencies);
+    }
+    return $result;
+  }
   ValidateConfigResponse._() : super();
   factory ValidateConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidateConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

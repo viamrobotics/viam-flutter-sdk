@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -33,8 +33,64 @@ enum Value_Kind {
   notSet
 }
 
+///  Represents a CEL value.
+///
+///  This is similar to `google.protobuf.Value`, but can represent CEL's full
+///  range of values.
 class Value extends $pb.GeneratedMessage {
-  factory Value() => create();
+  factory Value({
+    $1.NullValue? nullValue,
+    $core.bool? boolValue,
+    $fixnum.Int64? int64Value,
+    $fixnum.Int64? uint64Value,
+    $core.double? doubleValue,
+    $core.String? stringValue,
+    $core.List<$core.int>? bytesValue,
+    EnumValue? enumValue,
+    $3.Any? objectValue,
+    MapValue? mapValue,
+    ListValue? listValue,
+    $core.String? typeValue,
+  }) {
+    final $result = create();
+    if (nullValue != null) {
+      $result.nullValue = nullValue;
+    }
+    if (boolValue != null) {
+      $result.boolValue = boolValue;
+    }
+    if (int64Value != null) {
+      $result.int64Value = int64Value;
+    }
+    if (uint64Value != null) {
+      $result.uint64Value = uint64Value;
+    }
+    if (doubleValue != null) {
+      $result.doubleValue = doubleValue;
+    }
+    if (stringValue != null) {
+      $result.stringValue = stringValue;
+    }
+    if (bytesValue != null) {
+      $result.bytesValue = bytesValue;
+    }
+    if (enumValue != null) {
+      $result.enumValue = enumValue;
+    }
+    if (objectValue != null) {
+      $result.objectValue = objectValue;
+    }
+    if (mapValue != null) {
+      $result.mapValue = mapValue;
+    }
+    if (listValue != null) {
+      $result.listValue = listValue;
+    }
+    if (typeValue != null) {
+      $result.typeValue = typeValue;
+    }
+    return $result;
+  }
   Value._() : super();
   factory Value.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Value.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -95,6 +151,7 @@ class Value extends $pb.GeneratedMessage {
   Value_Kind whichKind() => _Value_KindByTag[$_whichOneof(0)]!;
   void clearKind() => clearField($_whichOneof(0));
 
+  /// Null value.
   @$pb.TagNumber(1)
   $1.NullValue get nullValue => $_getN(0);
   @$pb.TagNumber(1)
@@ -104,6 +161,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearNullValue() => clearField(1);
 
+  /// Boolean value.
   @$pb.TagNumber(2)
   $core.bool get boolValue => $_getBF(1);
   @$pb.TagNumber(2)
@@ -113,6 +171,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBoolValue() => clearField(2);
 
+  /// Signed integer value.
   @$pb.TagNumber(3)
   $fixnum.Int64 get int64Value => $_getI64(2);
   @$pb.TagNumber(3)
@@ -122,6 +181,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearInt64Value() => clearField(3);
 
+  /// Unsigned integer value.
   @$pb.TagNumber(4)
   $fixnum.Int64 get uint64Value => $_getI64(3);
   @$pb.TagNumber(4)
@@ -131,6 +191,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearUint64Value() => clearField(4);
 
+  /// Floating point value.
   @$pb.TagNumber(5)
   $core.double get doubleValue => $_getN(4);
   @$pb.TagNumber(5)
@@ -140,6 +201,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearDoubleValue() => clearField(5);
 
+  /// UTF-8 string value.
   @$pb.TagNumber(6)
   $core.String get stringValue => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -149,6 +211,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearStringValue() => clearField(6);
 
+  /// Byte string value.
   @$pb.TagNumber(7)
   $core.List<$core.int> get bytesValue => $_getN(6);
   @$pb.TagNumber(7)
@@ -158,6 +221,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearBytesValue() => clearField(7);
 
+  /// An enum value.
   @$pb.TagNumber(9)
   EnumValue get enumValue => $_getN(7);
   @$pb.TagNumber(9)
@@ -169,6 +233,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   EnumValue ensureEnumValue() => $_ensure(7);
 
+  /// The proto message backing an object value.
   @$pb.TagNumber(10)
   $3.Any get objectValue => $_getN(8);
   @$pb.TagNumber(10)
@@ -180,6 +245,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $3.Any ensureObjectValue() => $_ensure(8);
 
+  /// Map value.
   @$pb.TagNumber(11)
   MapValue get mapValue => $_getN(9);
   @$pb.TagNumber(11)
@@ -191,6 +257,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   MapValue ensureMapValue() => $_ensure(9);
 
+  /// List value.
   @$pb.TagNumber(12)
   ListValue get listValue => $_getN(10);
   @$pb.TagNumber(12)
@@ -202,6 +269,7 @@ class Value extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   ListValue ensureListValue() => $_ensure(10);
 
+  /// A Type value represented by the fully qualified name of the type.
   @$pb.TagNumber(15)
   $core.String get typeValue => $_getSZ(11);
   @$pb.TagNumber(15)
@@ -212,8 +280,21 @@ class Value extends $pb.GeneratedMessage {
   void clearTypeValue() => clearField(15);
 }
 
+/// An enum value.
 class EnumValue extends $pb.GeneratedMessage {
-  factory EnumValue() => create();
+  factory EnumValue({
+    $core.String? type,
+    $core.int? value,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   EnumValue._() : super();
   factory EnumValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EnumValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -245,6 +326,7 @@ class EnumValue extends $pb.GeneratedMessage {
   static EnumValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnumValue>(create);
   static EnumValue? _defaultInstance;
 
+  /// The fully qualified name of the enum type.
   @$pb.TagNumber(1)
   $core.String get type => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -254,6 +336,7 @@ class EnumValue extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearType() => clearField(1);
 
+  /// The value of the enum.
   @$pb.TagNumber(2)
   $core.int get value => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -264,8 +347,20 @@ class EnumValue extends $pb.GeneratedMessage {
   void clearValue() => clearField(2);
 }
 
+///  A list.
+///
+///  Wrapped in a message so 'not set' and empty can be differentiated, which is
+///  required for use in a 'oneof'.
 class ListValue extends $pb.GeneratedMessage {
-  factory ListValue() => create();
+  factory ListValue({
+    $core.Iterable<Value>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   ListValue._() : super();
   factory ListValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -296,12 +391,26 @@ class ListValue extends $pb.GeneratedMessage {
   static ListValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListValue>(create);
   static ListValue? _defaultInstance;
 
+  /// The ordered values in the list.
   @$pb.TagNumber(1)
   $core.List<Value> get values => $_getList(0);
 }
 
+/// An entry in the map.
 class MapValue_Entry extends $pb.GeneratedMessage {
-  factory MapValue_Entry() => create();
+  factory MapValue_Entry({
+    Value? key,
+    Value? value,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   MapValue_Entry._() : super();
   factory MapValue_Entry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MapValue_Entry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -333,6 +442,10 @@ class MapValue_Entry extends $pb.GeneratedMessage {
   static MapValue_Entry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MapValue_Entry>(create);
   static MapValue_Entry? _defaultInstance;
 
+  ///  The key.
+  ///
+  ///  Must be unique with in the map.
+  ///  Currently only boolean, int, uint, and string values can be keys.
   @$pb.TagNumber(1)
   Value get key => $_getN(0);
   @$pb.TagNumber(1)
@@ -344,6 +457,7 @@ class MapValue_Entry extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Value ensureKey() => $_ensure(0);
 
+  /// The value.
   @$pb.TagNumber(2)
   Value get value => $_getN(1);
   @$pb.TagNumber(2)
@@ -356,8 +470,20 @@ class MapValue_Entry extends $pb.GeneratedMessage {
   Value ensureValue() => $_ensure(1);
 }
 
+///  A map.
+///
+///  Wrapped in a message so 'not set' and empty can be differentiated, which is
+///  required for use in a 'oneof'.
 class MapValue extends $pb.GeneratedMessage {
-  factory MapValue() => create();
+  factory MapValue({
+    $core.Iterable<MapValue_Entry>? entries,
+  }) {
+    final $result = create();
+    if (entries != null) {
+      $result.entries.addAll(entries);
+    }
+    return $result;
+  }
   MapValue._() : super();
   factory MapValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MapValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -388,6 +514,10 @@ class MapValue extends $pb.GeneratedMessage {
   static MapValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MapValue>(create);
   static MapValue? _defaultInstance;
 
+  ///  The set of map entries.
+  ///
+  ///  CEL has fewer restrictions on keys, so a protobuf map represenation
+  ///  cannot be used.
   @$pb.TagNumber(1)
   $core.List<MapValue_Entry> get entries => $_getList(0);
 }

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,23 @@ import 'camera.pbenum.dart';
 export 'camera.pbenum.dart';
 
 class GetImageRequest extends $pb.GeneratedMessage {
-  factory GetImageRequest() => create();
+  factory GetImageRequest({
+    $core.String? name,
+    $core.String? mimeType,
+    $3.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetImageRequest._() : super();
   factory GetImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -53,6 +69,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
   static GetImageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImageRequest>(create);
   static GetImageRequest? _defaultInstance;
 
+  /// Name of a camera
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -62,6 +79,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Requested MIME type of response
   @$pb.TagNumber(2)
   $core.String get mimeType => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -71,6 +89,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMimeType() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $3.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -84,7 +103,19 @@ class GetImageRequest extends $pb.GeneratedMessage {
 }
 
 class GetImageResponse extends $pb.GeneratedMessage {
-  factory GetImageResponse() => create();
+  factory GetImageResponse({
+    $core.String? mimeType,
+    $core.List<$core.int>? image,
+  }) {
+    final $result = create();
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (image != null) {
+      $result.image = image;
+    }
+    return $result;
+  }
   GetImageResponse._() : super();
   factory GetImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -116,6 +147,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
   static GetImageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImageResponse>(create);
   static GetImageResponse? _defaultInstance;
 
+  /// Actual MIME type of response
   @$pb.TagNumber(1)
   $core.String get mimeType => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -125,6 +157,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMimeType() => clearField(1);
 
+  /// Frame in bytes
   @$pb.TagNumber(2)
   $core.List<$core.int> get image => $_getN(1);
   @$pb.TagNumber(2)
@@ -136,7 +169,15 @@ class GetImageResponse extends $pb.GeneratedMessage {
 }
 
 class GetImagesRequest extends $pb.GeneratedMessage {
-  factory GetImagesRequest() => create();
+  factory GetImagesRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GetImagesRequest._() : super();
   factory GetImagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetImagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -167,6 +208,7 @@ class GetImagesRequest extends $pb.GeneratedMessage {
   static GetImagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImagesRequest>(create);
   static GetImagesRequest? _defaultInstance;
 
+  /// Name of a camera
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -178,7 +220,19 @@ class GetImagesRequest extends $pb.GeneratedMessage {
 }
 
 class GetImagesResponse extends $pb.GeneratedMessage {
-  factory GetImagesResponse() => create();
+  factory GetImagesResponse({
+    $core.Iterable<Image>? images,
+    $2.ResponseMetadata? responseMetadata,
+  }) {
+    final $result = create();
+    if (images != null) {
+      $result.images.addAll(images);
+    }
+    if (responseMetadata != null) {
+      $result.responseMetadata = responseMetadata;
+    }
+    return $result;
+  }
   GetImagesResponse._() : super();
   factory GetImagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetImagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -210,9 +264,11 @@ class GetImagesResponse extends $pb.GeneratedMessage {
   static GetImagesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetImagesResponse>(create);
   static GetImagesResponse? _defaultInstance;
 
+  /// list of images returned from the camera system
   @$pb.TagNumber(1)
   $core.List<Image> get images => $_getList(0);
 
+  /// contains timestamp data
   @$pb.TagNumber(84260)
   $2.ResponseMetadata get responseMetadata => $_getN(1);
   @$pb.TagNumber(84260)
@@ -226,7 +282,23 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 }
 
 class Image extends $pb.GeneratedMessage {
-  factory Image() => create();
+  factory Image({
+    $core.String? sourceName,
+    Format? format,
+    $core.List<$core.int>? image,
+  }) {
+    final $result = create();
+    if (sourceName != null) {
+      $result.sourceName = sourceName;
+    }
+    if (format != null) {
+      $result.format = format;
+    }
+    if (image != null) {
+      $result.image = image;
+    }
+    return $result;
+  }
   Image._() : super();
   factory Image.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Image.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -259,6 +331,7 @@ class Image extends $pb.GeneratedMessage {
   static Image getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Image>(create);
   static Image? _defaultInstance;
 
+  /// the name of the sensor where the image came from
   @$pb.TagNumber(1)
   $core.String get sourceName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -268,6 +341,7 @@ class Image extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSourceName() => clearField(1);
 
+  /// format of the response image bytes
   @$pb.TagNumber(2)
   Format get format => $_getN(1);
   @$pb.TagNumber(2)
@@ -277,6 +351,7 @@ class Image extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFormat() => clearField(2);
 
+  /// image in bytes
   @$pb.TagNumber(3)
   $core.List<$core.int> get image => $_getN(2);
   @$pb.TagNumber(3)
@@ -288,7 +363,23 @@ class Image extends $pb.GeneratedMessage {
 }
 
 class RenderFrameRequest extends $pb.GeneratedMessage {
-  factory RenderFrameRequest() => create();
+  factory RenderFrameRequest({
+    $core.String? name,
+    $core.String? mimeType,
+    $3.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   RenderFrameRequest._() : super();
   factory RenderFrameRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RenderFrameRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -321,6 +412,7 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
   static RenderFrameRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenderFrameRequest>(create);
   static RenderFrameRequest? _defaultInstance;
 
+  /// Name of a camera
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -330,6 +422,7 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Requested MIME type of response
   @$pb.TagNumber(2)
   $core.String get mimeType => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -339,6 +432,7 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMimeType() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $3.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -352,7 +446,23 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
 }
 
 class GetPointCloudRequest extends $pb.GeneratedMessage {
-  factory GetPointCloudRequest() => create();
+  factory GetPointCloudRequest({
+    $core.String? name,
+    $core.String? mimeType,
+    $3.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPointCloudRequest._() : super();
   factory GetPointCloudRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPointCloudRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -385,6 +495,7 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   static GetPointCloudRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPointCloudRequest>(create);
   static GetPointCloudRequest? _defaultInstance;
 
+  /// Name of a camera
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -394,6 +505,7 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Requested MIME type of response
   @$pb.TagNumber(2)
   $core.String get mimeType => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -403,6 +515,7 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMimeType() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $3.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -416,7 +529,19 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
 }
 
 class GetPointCloudResponse extends $pb.GeneratedMessage {
-  factory GetPointCloudResponse() => create();
+  factory GetPointCloudResponse({
+    $core.String? mimeType,
+    $core.List<$core.int>? pointCloud,
+  }) {
+    final $result = create();
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (pointCloud != null) {
+      $result.pointCloud = pointCloud;
+    }
+    return $result;
+  }
   GetPointCloudResponse._() : super();
   factory GetPointCloudResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPointCloudResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -448,6 +573,7 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
   static GetPointCloudResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPointCloudResponse>(create);
   static GetPointCloudResponse? _defaultInstance;
 
+  /// Actual MIME type of response
   @$pb.TagNumber(1)
   $core.String get mimeType => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -457,6 +583,7 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMimeType() => clearField(1);
 
+  /// Frame in bytes
   @$pb.TagNumber(2)
   $core.List<$core.int> get pointCloud => $_getN(1);
   @$pb.TagNumber(2)
@@ -468,7 +595,15 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
-  factory GetPropertiesRequest() => create();
+  factory GetPropertiesRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GetPropertiesRequest._() : super();
   factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -499,6 +634,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
   static GetPropertiesRequest? _defaultInstance;
 
+  /// Name of a camera
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -510,7 +646,23 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
-  factory GetPropertiesResponse() => create();
+  factory GetPropertiesResponse({
+    $core.bool? supportsPcd,
+    IntrinsicParameters? intrinsicParameters,
+    DistortionParameters? distortionParameters,
+  }) {
+    final $result = create();
+    if (supportsPcd != null) {
+      $result.supportsPcd = supportsPcd;
+    }
+    if (intrinsicParameters != null) {
+      $result.intrinsicParameters = intrinsicParameters;
+    }
+    if (distortionParameters != null) {
+      $result.distortionParameters = distortionParameters;
+    }
+    return $result;
+  }
   GetPropertiesResponse._() : super();
   factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -543,6 +695,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   static GetPropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesResponse>(create);
   static GetPropertiesResponse? _defaultInstance;
 
+  /// A boolean property determining whether the camera supports the return of pointcloud data
   @$pb.TagNumber(1)
   $core.bool get supportsPcd => $_getBF(0);
   @$pb.TagNumber(1)
@@ -552,6 +705,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSupportsPcd() => clearField(1);
 
+  /// Parameters for doing a perspective of a 3D scene to a 2D plane
+  /// If camera does not provide intrinsic parameters, leave the field empty
+  /// Initializing the parameters with 0-values is considered an error
   @$pb.TagNumber(2)
   IntrinsicParameters get intrinsicParameters => $_getN(1);
   @$pb.TagNumber(2)
@@ -563,6 +719,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   IntrinsicParameters ensureIntrinsicParameters() => $_ensure(1);
 
+  /// Parameters for modeling lens distortion in cameras
+  /// If camera does not provide distortion parameters, leave the field empty
+  /// Initializing the parameters with 0-values is considered an error
   @$pb.TagNumber(3)
   DistortionParameters get distortionParameters => $_getN(2);
   @$pb.TagNumber(3)
@@ -576,7 +735,15 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
 }
 
 class Webcams extends $pb.GeneratedMessage {
-  factory Webcams() => create();
+  factory Webcams({
+    $core.Iterable<Webcam>? webcams,
+  }) {
+    final $result = create();
+    if (webcams != null) {
+      $result.webcams.addAll(webcams);
+    }
+    return $result;
+  }
   Webcams._() : super();
   factory Webcams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Webcams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -612,7 +779,31 @@ class Webcams extends $pb.GeneratedMessage {
 }
 
 class Webcam extends $pb.GeneratedMessage {
-  factory Webcam() => create();
+  factory Webcam({
+    $core.String? label,
+    $core.String? status,
+    $core.Iterable<Property>? properties,
+    $core.String? name,
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (properties != null) {
+      $result.properties.addAll(properties);
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   Webcam._() : super();
   factory Webcam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Webcam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -647,6 +838,7 @@ class Webcam extends $pb.GeneratedMessage {
   static Webcam getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Webcam>(create);
   static Webcam? _defaultInstance;
 
+  /// Camera driver label (for internal use only)
   @$pb.TagNumber(1)
   $core.String get label => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -656,6 +848,7 @@ class Webcam extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearLabel() => clearField(1);
 
+  /// Camera driver status
   @$pb.TagNumber(2)
   $core.String get status => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -665,9 +858,11 @@ class Webcam extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
 
+  /// Camera properties
   @$pb.TagNumber(3)
   $core.List<Property> get properties => $_getList(2);
 
+  /// Camera human-readable driver name
   @$pb.TagNumber(4)
   $core.String get name => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -677,6 +872,7 @@ class Webcam extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
 
+  /// Camera unique identifier
   @$pb.TagNumber(5)
   $core.String get id => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -688,7 +884,27 @@ class Webcam extends $pb.GeneratedMessage {
 }
 
 class Property extends $pb.GeneratedMessage {
-  factory Property() => create();
+  factory Property({
+    $core.int? widthPx,
+    $core.int? heightPx,
+    $core.String? frameFormat,
+    $core.double? frameRate,
+  }) {
+    final $result = create();
+    if (widthPx != null) {
+      $result.widthPx = widthPx;
+    }
+    if (heightPx != null) {
+      $result.heightPx = heightPx;
+    }
+    if (frameFormat != null) {
+      $result.frameFormat = frameFormat;
+    }
+    if (frameRate != null) {
+      $result.frameRate = frameRate;
+    }
+    return $result;
+  }
   Property._() : super();
   factory Property.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Property.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -722,6 +938,7 @@ class Property extends $pb.GeneratedMessage {
   static Property getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Property>(create);
   static Property? _defaultInstance;
 
+  /// Video resolution width in px
   @$pb.TagNumber(1)
   $core.int get widthPx => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -731,6 +948,7 @@ class Property extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearWidthPx() => clearField(1);
 
+  /// Video resolution height in px
   @$pb.TagNumber(2)
   $core.int get heightPx => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -740,6 +958,7 @@ class Property extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearHeightPx() => clearField(2);
 
+  /// Video frame format
   @$pb.TagNumber(3)
   $core.String get frameFormat => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -749,6 +968,7 @@ class Property extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFrameFormat() => clearField(3);
 
+  /// Video frame rate in fps
   @$pb.TagNumber(4)
   $core.double get frameRate => $_getN(3);
   @$pb.TagNumber(4)
@@ -760,7 +980,35 @@ class Property extends $pb.GeneratedMessage {
 }
 
 class IntrinsicParameters extends $pb.GeneratedMessage {
-  factory IntrinsicParameters() => create();
+  factory IntrinsicParameters({
+    $core.int? widthPx,
+    $core.int? heightPx,
+    $core.double? focalXPx,
+    $core.double? focalYPx,
+    $core.double? centerXPx,
+    $core.double? centerYPx,
+  }) {
+    final $result = create();
+    if (widthPx != null) {
+      $result.widthPx = widthPx;
+    }
+    if (heightPx != null) {
+      $result.heightPx = heightPx;
+    }
+    if (focalXPx != null) {
+      $result.focalXPx = focalXPx;
+    }
+    if (focalYPx != null) {
+      $result.focalYPx = focalYPx;
+    }
+    if (centerXPx != null) {
+      $result.centerXPx = centerXPx;
+    }
+    if (centerYPx != null) {
+      $result.centerYPx = centerYPx;
+    }
+    return $result;
+  }
   IntrinsicParameters._() : super();
   factory IntrinsicParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IntrinsicParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -852,7 +1100,19 @@ class IntrinsicParameters extends $pb.GeneratedMessage {
 }
 
 class DistortionParameters extends $pb.GeneratedMessage {
-  factory DistortionParameters() => create();
+  factory DistortionParameters({
+    $core.String? model,
+    $core.Iterable<$core.double>? parameters,
+  }) {
+    final $result = create();
+    if (model != null) {
+      $result.model = model;
+    }
+    if (parameters != null) {
+      $result.parameters.addAll(parameters);
+    }
+    return $result;
+  }
   DistortionParameters._() : super();
   factory DistortionParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DistortionParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

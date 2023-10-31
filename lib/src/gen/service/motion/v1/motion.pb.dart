@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,8 +20,37 @@ import 'motion.pbenum.dart';
 
 export 'motion.pbenum.dart';
 
+/// Moves any component on the robot to a specified destination which can be from the reference frame of any other component on the robot.
 class MoveRequest extends $pb.GeneratedMessage {
-  factory MoveRequest() => create();
+  factory MoveRequest({
+    $core.String? name,
+    $1.PoseInFrame? destination,
+    $1.ResourceName? componentName,
+    $1.WorldState? worldState,
+    Constraints? constraints,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (destination != null) {
+      $result.destination = destination;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (worldState != null) {
+      $result.worldState = worldState;
+    }
+    if (constraints != null) {
+      $result.constraints = constraints;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveRequest._() : super();
   factory MoveRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -57,6 +86,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   static MoveRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveRequest>(create);
   static MoveRequest? _defaultInstance;
 
+  /// Name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -66,6 +96,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Destination to move to, which can a pose in the reference frame of any frame in the robot's frame system
   @$pb.TagNumber(2)
   $1.PoseInFrame get destination => $_getN(1);
   @$pb.TagNumber(2)
@@ -77,6 +108,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.PoseInFrame ensureDestination() => $_ensure(1);
 
+  /// Component on the robot to move to the specified destination
   @$pb.TagNumber(3)
   $1.ResourceName get componentName => $_getN(2);
   @$pb.TagNumber(3)
@@ -88,6 +120,8 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $1.ResourceName ensureComponentName() => $_ensure(2);
 
+  /// Avoid obstacles by specifying their geometries in the world state
+  /// Augment the frame system of the robot by specifying additional transforms to add to it for the duration of the Move
   @$pb.TagNumber(4)
   $1.WorldState get worldState => $_getN(3);
   @$pb.TagNumber(4)
@@ -99,6 +133,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $1.WorldState ensureWorldState() => $_ensure(3);
 
+  /// Constrain the way the robot will move
   @$pb.TagNumber(5)
   Constraints get constraints => $_getN(4);
   @$pb.TagNumber(5)
@@ -110,6 +145,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   Constraints ensureConstraints() => $_ensure(4);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
@@ -123,7 +159,15 @@ class MoveRequest extends $pb.GeneratedMessage {
 }
 
 class MoveResponse extends $pb.GeneratedMessage {
-  factory MoveResponse() => create();
+  factory MoveResponse({
+    $core.bool? success,
+  }) {
+    final $result = create();
+    if (success != null) {
+      $result.success = success;
+    }
+    return $result;
+  }
   MoveResponse._() : super();
   factory MoveResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -165,7 +209,31 @@ class MoveResponse extends $pb.GeneratedMessage {
 }
 
 class MoveOnMapRequest extends $pb.GeneratedMessage {
-  factory MoveOnMapRequest() => create();
+  factory MoveOnMapRequest({
+    $core.String? name,
+    $1.Pose? destination,
+    $1.ResourceName? componentName,
+    $1.ResourceName? slamServiceName,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (destination != null) {
+      $result.destination = destination;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (slamServiceName != null) {
+      $result.slamServiceName = slamServiceName;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveOnMapRequest._() : super();
   factory MoveOnMapRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveOnMapRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -200,6 +268,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   static MoveOnMapRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnMapRequest>(create);
   static MoveOnMapRequest? _defaultInstance;
 
+  /// Name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -209,6 +278,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Specify a destination to, which can be any pose with respect to the SLAM map's origin
   @$pb.TagNumber(2)
   $1.Pose get destination => $_getN(1);
   @$pb.TagNumber(2)
@@ -220,6 +290,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Pose ensureDestination() => $_ensure(1);
 
+  /// Component on the robot to move to the specified destination
   @$pb.TagNumber(3)
   $1.ResourceName get componentName => $_getN(2);
   @$pb.TagNumber(3)
@@ -231,6 +302,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $1.ResourceName ensureComponentName() => $_ensure(2);
 
+  /// Name of the slam service from which the SLAM map is requested
   @$pb.TagNumber(4)
   $1.ResourceName get slamServiceName => $_getN(3);
   @$pb.TagNumber(4)
@@ -242,6 +314,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $1.ResourceName ensureSlamServiceName() => $_ensure(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
@@ -255,7 +328,15 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 }
 
 class MoveOnMapResponse extends $pb.GeneratedMessage {
-  factory MoveOnMapResponse() => create();
+  factory MoveOnMapResponse({
+    $core.bool? success,
+  }) {
+    final $result = create();
+    if (success != null) {
+      $result.success = success;
+    }
+    return $result;
+  }
   MoveOnMapResponse._() : super();
   factory MoveOnMapResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveOnMapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -296,8 +377,21 @@ class MoveOnMapResponse extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 }
 
+/// Pairs a vision service with a camera, informing the service about which camera it may use
 class ObstacleDetector extends $pb.GeneratedMessage {
-  factory ObstacleDetector() => create();
+  factory ObstacleDetector({
+    $1.ResourceName? visionService,
+    $1.ResourceName? camera,
+  }) {
+    final $result = create();
+    if (visionService != null) {
+      $result.visionService = visionService;
+    }
+    if (camera != null) {
+      $result.camera = camera;
+    }
+    return $result;
+  }
   ObstacleDetector._() : super();
   factory ObstacleDetector.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ObstacleDetector.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -353,7 +447,35 @@ class ObstacleDetector extends $pb.GeneratedMessage {
 }
 
 class MotionConfiguration extends $pb.GeneratedMessage {
-  factory MotionConfiguration() => create();
+  factory MotionConfiguration({
+    $core.Iterable<ObstacleDetector>? obstacleDetectors,
+    $core.double? positionPollingFrequencyHz,
+    $core.double? obstaclePollingFrequencyHz,
+    $core.double? planDeviationM,
+    $core.double? linearMPerSec,
+    $core.double? angularDegsPerSec,
+  }) {
+    final $result = create();
+    if (obstacleDetectors != null) {
+      $result.obstacleDetectors.addAll(obstacleDetectors);
+    }
+    if (positionPollingFrequencyHz != null) {
+      $result.positionPollingFrequencyHz = positionPollingFrequencyHz;
+    }
+    if (obstaclePollingFrequencyHz != null) {
+      $result.obstaclePollingFrequencyHz = obstaclePollingFrequencyHz;
+    }
+    if (planDeviationM != null) {
+      $result.planDeviationM = planDeviationM;
+    }
+    if (linearMPerSec != null) {
+      $result.linearMPerSec = linearMPerSec;
+    }
+    if (angularDegsPerSec != null) {
+      $result.angularDegsPerSec = angularDegsPerSec;
+    }
+    return $result;
+  }
   MotionConfiguration._() : super();
   factory MotionConfiguration.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MotionConfiguration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -389,9 +511,11 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   static MotionConfiguration getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MotionConfiguration>(create);
   static MotionConfiguration? _defaultInstance;
 
+  /// The ObstacleDetectors that will be used for transient obstacle avoidance
   @$pb.TagNumber(1)
   $core.List<ObstacleDetector> get obstacleDetectors => $_getList(0);
 
+  /// Sets the frequency to poll for the position of the robot
   @$pb.TagNumber(2)
   $core.double get positionPollingFrequencyHz => $_getN(1);
   @$pb.TagNumber(2)
@@ -401,6 +525,7 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPositionPollingFrequencyHz() => clearField(2);
 
+  /// Sets the frequency to poll the vision service(s) for new obstacles
   @$pb.TagNumber(3)
   $core.double get obstaclePollingFrequencyHz => $_getN(2);
   @$pb.TagNumber(3)
@@ -410,6 +535,7 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearObstaclePollingFrequencyHz() => clearField(3);
 
+  /// Sets the distance in meters that a robot is allowed to deviate from the motion plan
   @$pb.TagNumber(4)
   $core.double get planDeviationM => $_getN(3);
   @$pb.TagNumber(4)
@@ -419,6 +545,7 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearPlanDeviationM() => clearField(4);
 
+  /// Optional linear velocity to target when moving
   @$pb.TagNumber(5)
   $core.double get linearMPerSec => $_getN(4);
   @$pb.TagNumber(5)
@@ -428,6 +555,7 @@ class MotionConfiguration extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearLinearMPerSec() => clearField(5);
 
+  /// Optional angular velocity to target when turning
   @$pb.TagNumber(6)
   $core.double get angularDegsPerSec => $_getN(5);
   @$pb.TagNumber(6)
@@ -439,7 +567,43 @@ class MotionConfiguration extends $pb.GeneratedMessage {
 }
 
 class MoveOnGlobeRequest extends $pb.GeneratedMessage {
-  factory MoveOnGlobeRequest() => create();
+  factory MoveOnGlobeRequest({
+    $core.String? name,
+    $1.GeoPoint? destination,
+    $core.double? heading,
+    $1.ResourceName? componentName,
+    $1.ResourceName? movementSensorName,
+    $core.Iterable<$1.GeoObstacle>? obstacles,
+    MotionConfiguration? motionConfiguration,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (destination != null) {
+      $result.destination = destination;
+    }
+    if (heading != null) {
+      $result.heading = heading;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (movementSensorName != null) {
+      $result.movementSensorName = movementSensorName;
+    }
+    if (obstacles != null) {
+      $result.obstacles.addAll(obstacles);
+    }
+    if (motionConfiguration != null) {
+      $result.motionConfiguration = motionConfiguration;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveOnGlobeRequest._() : super();
   factory MoveOnGlobeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveOnGlobeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -477,6 +641,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   static MoveOnGlobeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeRequest>(create);
   static MoveOnGlobeRequest? _defaultInstance;
 
+  /// Name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -486,6 +651,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Destination, encoded as a GeoPoint
   @$pb.TagNumber(2)
   $1.GeoPoint get destination => $_getN(1);
   @$pb.TagNumber(2)
@@ -497,6 +663,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.GeoPoint ensureDestination() => $_ensure(1);
 
+  /// Optional compass heading to achieve at the destination, in degrees [0-360)
   @$pb.TagNumber(3)
   $core.double get heading => $_getN(2);
   @$pb.TagNumber(3)
@@ -506,6 +673,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearHeading() => clearField(3);
 
+  /// Component on the robot to move to the specified destination
   @$pb.TagNumber(4)
   $1.ResourceName get componentName => $_getN(3);
   @$pb.TagNumber(4)
@@ -517,6 +685,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $1.ResourceName ensureComponentName() => $_ensure(3);
 
+  /// Name of the movement sensor which will be used to check robot location
   @$pb.TagNumber(5)
   $1.ResourceName get movementSensorName => $_getN(4);
   @$pb.TagNumber(5)
@@ -528,9 +697,11 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $1.ResourceName ensureMovementSensorName() => $_ensure(4);
 
+  /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
   $core.List<$1.GeoObstacle> get obstacles => $_getList(5);
 
+  /// Optional set of motion configuration options
   @$pb.TagNumber(7)
   MotionConfiguration get motionConfiguration => $_getN(6);
   @$pb.TagNumber(7)
@@ -542,6 +713,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   MotionConfiguration ensureMotionConfiguration() => $_ensure(6);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(7);
   @$pb.TagNumber(99)
@@ -555,7 +727,15 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 }
 
 class MoveOnGlobeResponse extends $pb.GeneratedMessage {
-  factory MoveOnGlobeResponse() => create();
+  factory MoveOnGlobeResponse({
+    $core.bool? success,
+  }) {
+    final $result = create();
+    if (success != null) {
+      $result.success = success;
+    }
+    return $result;
+  }
   MoveOnGlobeResponse._() : super();
   factory MoveOnGlobeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveOnGlobeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -597,7 +777,43 @@ class MoveOnGlobeResponse extends $pb.GeneratedMessage {
 }
 
 class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
-  factory MoveOnGlobeNewRequest() => create();
+  factory MoveOnGlobeNewRequest({
+    $core.String? name,
+    $1.GeoPoint? destination,
+    $core.double? heading,
+    $1.ResourceName? componentName,
+    $1.ResourceName? movementSensorName,
+    $core.Iterable<$1.GeoObstacle>? obstacles,
+    MotionConfiguration? motionConfiguration,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (destination != null) {
+      $result.destination = destination;
+    }
+    if (heading != null) {
+      $result.heading = heading;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (movementSensorName != null) {
+      $result.movementSensorName = movementSensorName;
+    }
+    if (obstacles != null) {
+      $result.obstacles.addAll(obstacles);
+    }
+    if (motionConfiguration != null) {
+      $result.motionConfiguration = motionConfiguration;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveOnGlobeNewRequest._() : super();
   factory MoveOnGlobeNewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveOnGlobeNewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -635,6 +851,7 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   static MoveOnGlobeNewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeNewRequest>(create);
   static MoveOnGlobeNewRequest? _defaultInstance;
 
+  /// Name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -644,6 +861,7 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Destination, encoded as a GeoPoint
   @$pb.TagNumber(2)
   $1.GeoPoint get destination => $_getN(1);
   @$pb.TagNumber(2)
@@ -655,6 +873,7 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.GeoPoint ensureDestination() => $_ensure(1);
 
+  /// Optional compass heading to achieve at the destination, in degrees [0-360)
   @$pb.TagNumber(3)
   $core.double get heading => $_getN(2);
   @$pb.TagNumber(3)
@@ -664,6 +883,7 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearHeading() => clearField(3);
 
+  /// Component on the robot to move to the specified destination
   @$pb.TagNumber(4)
   $1.ResourceName get componentName => $_getN(3);
   @$pb.TagNumber(4)
@@ -675,6 +895,7 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $1.ResourceName ensureComponentName() => $_ensure(3);
 
+  /// Name of the movement sensor which will be used to check robot location
   @$pb.TagNumber(5)
   $1.ResourceName get movementSensorName => $_getN(4);
   @$pb.TagNumber(5)
@@ -686,9 +907,11 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $1.ResourceName ensureMovementSensorName() => $_ensure(4);
 
+  /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
   $core.List<$1.GeoObstacle> get obstacles => $_getList(5);
 
+  /// Optional set of motion configuration options
   @$pb.TagNumber(7)
   MotionConfiguration get motionConfiguration => $_getN(6);
   @$pb.TagNumber(7)
@@ -700,6 +923,7 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   MotionConfiguration ensureMotionConfiguration() => $_ensure(6);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(7);
   @$pb.TagNumber(99)
@@ -713,7 +937,15 @@ class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
 }
 
 class MoveOnGlobeNewResponse extends $pb.GeneratedMessage {
-  factory MoveOnGlobeNewResponse() => create();
+  factory MoveOnGlobeNewResponse({
+    $core.String? executionId,
+  }) {
+    final $result = create();
+    if (executionId != null) {
+      $result.executionId = executionId;
+    }
+    return $result;
+  }
   MoveOnGlobeNewResponse._() : super();
   factory MoveOnGlobeNewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveOnGlobeNewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -744,6 +976,9 @@ class MoveOnGlobeNewResponse extends $pb.GeneratedMessage {
   static MoveOnGlobeNewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeNewResponse>(create);
   static MoveOnGlobeNewResponse? _defaultInstance;
 
+  /// The unique ID which identifies the execution.
+  /// Multiple plans will share the same execution_id if they were
+  /// generated due to replanning.
   @$pb.TagNumber(1)
   $core.String get executionId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -755,7 +990,31 @@ class MoveOnGlobeNewResponse extends $pb.GeneratedMessage {
 }
 
 class GetPoseRequest extends $pb.GeneratedMessage {
-  factory GetPoseRequest() => create();
+  factory GetPoseRequest({
+    $core.String? name,
+    $1.ResourceName? componentName,
+    $core.String? destinationFrame,
+    $core.Iterable<$1.Transform>? supplementalTransforms,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (destinationFrame != null) {
+      $result.destinationFrame = destinationFrame;
+    }
+    if (supplementalTransforms != null) {
+      $result.supplementalTransforms.addAll(supplementalTransforms);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPoseRequest._() : super();
   factory GetPoseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPoseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -799,6 +1058,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// the component whose pose is being requested
   @$pb.TagNumber(2)
   $1.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
@@ -810,6 +1070,9 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.ResourceName ensureComponentName() => $_ensure(1);
 
+  /// the reference frame in which the component's pose
+  /// should be provided, if unset this defaults
+  /// to the "world" reference frame
   @$pb.TagNumber(3)
   $core.String get destinationFrame => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -819,9 +1082,12 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDestinationFrame() => clearField(3);
 
+  /// pose information on any additional reference frames that are needed
+  /// to compute the component's pose
   @$pb.TagNumber(4)
   $core.List<$1.Transform> get supplementalTransforms => $_getList(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
@@ -835,7 +1101,15 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 }
 
 class GetPoseResponse extends $pb.GeneratedMessage {
-  factory GetPoseResponse() => create();
+  factory GetPoseResponse({
+    $1.PoseInFrame? pose,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
   GetPoseResponse._() : super();
   factory GetPoseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPoseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -879,7 +1153,23 @@ class GetPoseResponse extends $pb.GeneratedMessage {
 }
 
 class StopPlanRequest extends $pb.GeneratedMessage {
-  factory StopPlanRequest() => create();
+  factory StopPlanRequest({
+    $core.String? name,
+    $1.ResourceName? componentName,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StopPlanRequest._() : super();
   factory StopPlanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopPlanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -912,6 +1202,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   static StopPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopPlanRequest>(create);
   static StopPlanRequest? _defaultInstance;
 
+  /// The name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -921,6 +1212,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// The component of the currently executing plan to stop
   @$pb.TagNumber(2)
   $1.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
@@ -932,6 +1224,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.ResourceName ensureComponentName() => $_ensure(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -977,7 +1270,23 @@ class StopPlanResponse extends $pb.GeneratedMessage {
 }
 
 class ListPlanStatusesRequest extends $pb.GeneratedMessage {
-  factory ListPlanStatusesRequest() => create();
+  factory ListPlanStatusesRequest({
+    $core.String? name,
+    $core.bool? onlyActivePlans,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (onlyActivePlans != null) {
+      $result.onlyActivePlans = onlyActivePlans;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   ListPlanStatusesRequest._() : super();
   factory ListPlanStatusesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPlanStatusesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1010,6 +1319,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   static ListPlanStatusesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlanStatusesRequest>(create);
   static ListPlanStatusesRequest? _defaultInstance;
 
+  /// The name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1019,6 +1329,8 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// If supplied, the response will filter the
+  /// plan results for the supplied state
   @$pb.TagNumber(2)
   $core.bool get onlyActivePlans => $_getBF(1);
   @$pb.TagNumber(2)
@@ -1028,6 +1340,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearOnlyActivePlans() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -1040,8 +1353,17 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   $2.Struct ensureExtra() => $_ensure(2);
 }
 
+/// Status of all executed / executing plan statuses with associated IDs within the 24 hour TTL
 class ListPlanStatusesResponse extends $pb.GeneratedMessage {
-  factory ListPlanStatusesResponse() => create();
+  factory ListPlanStatusesResponse({
+    $core.Iterable<PlanStatusWithID>? planStatusesWithIds,
+  }) {
+    final $result = create();
+    if (planStatusesWithIds != null) {
+      $result.planStatusesWithIds.addAll(planStatusesWithIds);
+    }
+    return $result;
+  }
   ListPlanStatusesResponse._() : super();
   factory ListPlanStatusesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPlanStatusesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1072,12 +1394,38 @@ class ListPlanStatusesResponse extends $pb.GeneratedMessage {
   static ListPlanStatusesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPlanStatusesResponse>(create);
   static ListPlanStatusesResponse? _defaultInstance;
 
+  /// List of last known statuses with the associated IDs of all plans within the TTL
+  /// ordered by timestamp in ascending order
   @$pb.TagNumber(1)
   $core.List<PlanStatusWithID> get planStatusesWithIds => $_getList(0);
 }
 
 class GetPlanRequest extends $pb.GeneratedMessage {
-  factory GetPlanRequest() => create();
+  factory GetPlanRequest({
+    $core.String? name,
+    $1.ResourceName? componentName,
+    $core.bool? lastPlanOnly,
+    $core.String? executionId,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (lastPlanOnly != null) {
+      $result.lastPlanOnly = lastPlanOnly;
+    }
+    if (executionId != null) {
+      $result.executionId = executionId;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPlanRequest._() : super();
   factory GetPlanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPlanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1112,6 +1460,7 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   static GetPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPlanRequest>(create);
   static GetPlanRequest? _defaultInstance;
 
+  /// The name of the motion service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1121,6 +1470,8 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// The name of the component which the MoveOnGlobeRequest
+  /// asked to be moved.
   @$pb.TagNumber(2)
   $1.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
@@ -1132,6 +1483,8 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.ResourceName ensureComponentName() => $_ensure(1);
 
+  /// If supplied, the response will only return
+  /// the the last plan for the component / execution
   @$pb.TagNumber(3)
   $core.bool get lastPlanOnly => $_getBF(2);
   @$pb.TagNumber(3)
@@ -1141,6 +1494,7 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearLastPlanOnly() => clearField(3);
 
+  /// If you want to know about the plans of a previous execution
   @$pb.TagNumber(4)
   $core.String get executionId => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -1150,6 +1504,7 @@ class GetPlanRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearExecutionId() => clearField(4);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
@@ -1163,7 +1518,19 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 }
 
 class GetPlanResponse extends $pb.GeneratedMessage {
-  factory GetPlanResponse() => create();
+  factory GetPlanResponse({
+    PlanWithStatus? currentPlanWithStatus,
+    $core.Iterable<PlanWithStatus>? replanHistory,
+  }) {
+    final $result = create();
+    if (currentPlanWithStatus != null) {
+      $result.currentPlanWithStatus = currentPlanWithStatus;
+    }
+    if (replanHistory != null) {
+      $result.replanHistory.addAll(replanHistory);
+    }
+    return $result;
+  }
   GetPlanResponse._() : super();
   factory GetPlanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPlanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1195,6 +1562,7 @@ class GetPlanResponse extends $pb.GeneratedMessage {
   static GetPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPlanResponse>(create);
   static GetPlanResponse? _defaultInstance;
 
+  /// The current plan and status that matches the request query
   @$pb.TagNumber(1)
   PlanWithStatus get currentPlanWithStatus => $_getN(0);
   @$pb.TagNumber(1)
@@ -1206,12 +1574,33 @@ class GetPlanResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   PlanWithStatus ensureCurrentPlanWithStatus() => $_ensure(0);
 
+  /// Returns the history of all previous plans that were
+  /// generated in ascending order.
+  /// This field will be empty if the motion service
+  /// did not need to re-plan.
   @$pb.TagNumber(2)
   $core.List<PlanWithStatus> get replanHistory => $_getList(1);
 }
 
+/// Constraints specifies all enumerated constraints to be passed to Viam's motion planning, along with any optional parameters
 class Constraints extends $pb.GeneratedMessage {
-  factory Constraints() => create();
+  factory Constraints({
+    $core.Iterable<LinearConstraint>? linearConstraint,
+    $core.Iterable<OrientationConstraint>? orientationConstraint,
+    $core.Iterable<CollisionSpecification>? collisionSpecification,
+  }) {
+    final $result = create();
+    if (linearConstraint != null) {
+      $result.linearConstraint.addAll(linearConstraint);
+    }
+    if (orientationConstraint != null) {
+      $result.orientationConstraint.addAll(orientationConstraint);
+    }
+    if (collisionSpecification != null) {
+      $result.collisionSpecification.addAll(collisionSpecification);
+    }
+    return $result;
+  }
   Constraints._() : super();
   factory Constraints.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Constraints.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1244,6 +1633,7 @@ class Constraints extends $pb.GeneratedMessage {
   static Constraints getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Constraints>(create);
   static Constraints? _defaultInstance;
 
+  /// Typed message for a specific constraint
   @$pb.TagNumber(1)
   $core.List<LinearConstraint> get linearConstraint => $_getList(0);
 
@@ -1254,8 +1644,22 @@ class Constraints extends $pb.GeneratedMessage {
   $core.List<CollisionSpecification> get collisionSpecification => $_getList(2);
 }
 
+/// LinearConstraint specifies that the component being moved should move linearly relative to its goal.
+/// It does not constrain the motion of components other than the `component_name` specified in motion.Move
 class LinearConstraint extends $pb.GeneratedMessage {
-  factory LinearConstraint() => create();
+  factory LinearConstraint({
+    $core.double? lineToleranceMm,
+    $core.double? orientationToleranceDegs,
+  }) {
+    final $result = create();
+    if (lineToleranceMm != null) {
+      $result.lineToleranceMm = lineToleranceMm;
+    }
+    if (orientationToleranceDegs != null) {
+      $result.orientationToleranceDegs = orientationToleranceDegs;
+    }
+    return $result;
+  }
   LinearConstraint._() : super();
   factory LinearConstraint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LinearConstraint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1296,6 +1700,7 @@ class LinearConstraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearLineToleranceMm() => clearField(1);
 
+  /// Max allowable orientation deviation, in degrees, while on the shortest path between start / goal states
   @$pb.TagNumber(2)
   $core.double get orientationToleranceDegs => $_getN(1);
   @$pb.TagNumber(2)
@@ -1306,8 +1711,18 @@ class LinearConstraint extends $pb.GeneratedMessage {
   void clearOrientationToleranceDegs() => clearField(2);
 }
 
+/// OrientationConstraint specifies that the component being moved will not deviate its orientation beyond some threshold relative
+/// to the goal. It does not constrain the motion of components other than the `component_name` specified in motion.Move
 class OrientationConstraint extends $pb.GeneratedMessage {
-  factory OrientationConstraint() => create();
+  factory OrientationConstraint({
+    $core.double? orientationToleranceDegs,
+  }) {
+    final $result = create();
+    if (orientationToleranceDegs != null) {
+      $result.orientationToleranceDegs = orientationToleranceDegs;
+    }
+    return $result;
+  }
   OrientationConstraint._() : super();
   factory OrientationConstraint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrientationConstraint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1338,6 +1753,7 @@ class OrientationConstraint extends $pb.GeneratedMessage {
   static OrientationConstraint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrientationConstraint>(create);
   static OrientationConstraint? _defaultInstance;
 
+  /// Max allowable orientation deviation, in degrees, while on the shortest path between start / goal states
   @$pb.TagNumber(1)
   $core.double get orientationToleranceDegs => $_getN(0);
   @$pb.TagNumber(1)
@@ -1349,7 +1765,19 @@ class OrientationConstraint extends $pb.GeneratedMessage {
 }
 
 class CollisionSpecification_AllowedFrameCollisions extends $pb.GeneratedMessage {
-  factory CollisionSpecification_AllowedFrameCollisions() => create();
+  factory CollisionSpecification_AllowedFrameCollisions({
+    $core.String? frame1,
+    $core.String? frame2,
+  }) {
+    final $result = create();
+    if (frame1 != null) {
+      $result.frame1 = frame1;
+    }
+    if (frame2 != null) {
+      $result.frame2 = frame2;
+    }
+    return $result;
+  }
   CollisionSpecification_AllowedFrameCollisions._() : super();
   factory CollisionSpecification_AllowedFrameCollisions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CollisionSpecification_AllowedFrameCollisions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1400,8 +1828,17 @@ class CollisionSpecification_AllowedFrameCollisions extends $pb.GeneratedMessage
   void clearFrame2() => clearField(2);
 }
 
+/// CollisionSpecification is used to selectively apply obstacle avoidance to specific parts of the robot
 class CollisionSpecification extends $pb.GeneratedMessage {
-  factory CollisionSpecification() => create();
+  factory CollisionSpecification({
+    $core.Iterable<CollisionSpecification_AllowedFrameCollisions>? allows,
+  }) {
+    final $result = create();
+    if (allows != null) {
+      $result.allows.addAll(allows);
+    }
+    return $result;
+  }
   CollisionSpecification._() : super();
   factory CollisionSpecification.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CollisionSpecification.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1432,12 +1869,31 @@ class CollisionSpecification extends $pb.GeneratedMessage {
   static CollisionSpecification getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CollisionSpecification>(create);
   static CollisionSpecification? _defaultInstance;
 
+  /// Pairs of frame which should be allowed to collide with one another
   @$pb.TagNumber(1)
   $core.List<CollisionSpecification_AllowedFrameCollisions> get allows => $_getList(0);
 }
 
+/// Describes a plan, its current status & all status changes
+/// that have occured previously on that plan
 class PlanWithStatus extends $pb.GeneratedMessage {
-  factory PlanWithStatus() => create();
+  factory PlanWithStatus({
+    Plan? plan,
+    PlanStatus? status,
+    $core.Iterable<PlanStatus>? statusHistory,
+  }) {
+    final $result = create();
+    if (plan != null) {
+      $result.plan = plan;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (statusHistory != null) {
+      $result.statusHistory.addAll(statusHistory);
+    }
+    return $result;
+  }
   PlanWithStatus._() : super();
   factory PlanWithStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlanWithStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1470,6 +1926,7 @@ class PlanWithStatus extends $pb.GeneratedMessage {
   static PlanWithStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanWithStatus>(create);
   static PlanWithStatus? _defaultInstance;
 
+  /// The plan
   @$pb.TagNumber(1)
   Plan get plan => $_getN(0);
   @$pb.TagNumber(1)
@@ -1481,6 +1938,7 @@ class PlanWithStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Plan ensurePlan() => $_ensure(0);
 
+  /// The current status of the plan
   @$pb.TagNumber(2)
   PlanStatus get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -1492,12 +1950,36 @@ class PlanWithStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   PlanStatus ensureStatus() => $_ensure(1);
 
+  /// The prior status changes that have happened during plan execution
   @$pb.TagNumber(3)
   $core.List<PlanStatus> get statusHistory => $_getList(2);
 }
 
+/// PlanStatusWithID describes the state of a given plan at a
+/// point in time plus the plan_id, component_name and execution_id
+/// the status is associated with
 class PlanStatusWithID extends $pb.GeneratedMessage {
-  factory PlanStatusWithID() => create();
+  factory PlanStatusWithID({
+    $core.String? planId,
+    $1.ResourceName? componentName,
+    $core.String? executionId,
+    PlanStatus? status,
+  }) {
+    final $result = create();
+    if (planId != null) {
+      $result.planId = planId;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (executionId != null) {
+      $result.executionId = executionId;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   PlanStatusWithID._() : super();
   factory PlanStatusWithID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlanStatusWithID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1531,6 +2013,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   static PlanStatusWithID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStatusWithID>(create);
   static PlanStatusWithID? _defaultInstance;
 
+  /// The unique ID of the plan
   @$pb.TagNumber(1)
   $core.String get planId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1540,6 +2023,10 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPlanId() => clearField(1);
 
+  /// The component to be moved.
+  /// Used for tracking & stopping.
+  /// NOTE: A plan may move more components than just the
+  /// component_name.
   @$pb.TagNumber(2)
   $1.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
@@ -1551,6 +2038,9 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.ResourceName ensureComponentName() => $_ensure(1);
 
+  /// The unique ID which identifies the plan execution.
+  /// Multiple plans will share the same execution_id if they were
+  /// generated due to replanning.
   @$pb.TagNumber(3)
   $core.String get executionId => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1572,8 +2062,26 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   PlanStatus ensureStatus() => $_ensure(3);
 }
 
+/// Plan status describes the state of a given plan at a
+/// point in time
 class PlanStatus extends $pb.GeneratedMessage {
-  factory PlanStatus() => create();
+  factory PlanStatus({
+    PlanState? state,
+    $3.Timestamp? timestamp,
+    $core.String? reason,
+  }) {
+    final $result = create();
+    if (state != null) {
+      $result.state = state;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (reason != null) {
+      $result.reason = reason;
+    }
+    return $result;
+  }
   PlanStatus._() : super();
   factory PlanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1606,6 +2114,7 @@ class PlanStatus extends $pb.GeneratedMessage {
   static PlanStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStatus>(create);
   static PlanStatus? _defaultInstance;
 
+  /// The state of the plan execution
   @$pb.TagNumber(1)
   PlanState get state => $_getN(0);
   @$pb.TagNumber(1)
@@ -1615,6 +2124,7 @@ class PlanStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearState() => clearField(1);
 
+  /// The time the executing plan transtioned to the state
   @$pb.TagNumber(2)
   $3.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
@@ -1626,6 +2136,10 @@ class PlanStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $3.Timestamp ensureTimestamp() => $_ensure(1);
 
+  /// The reason for the state change. If motion plan failed
+  /// this will return the error message.
+  /// If motion needed to re-plan, this will return
+  /// the re-plan reason.
   @$pb.TagNumber(3)
   $core.String get reason => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1636,8 +2150,29 @@ class PlanStatus extends $pb.GeneratedMessage {
   void clearReason() => clearField(3);
 }
 
+/// A plan describes a motion plan
 class Plan extends $pb.GeneratedMessage {
-  factory Plan() => create();
+  factory Plan({
+    $core.String? id,
+    $1.ResourceName? componentName,
+    $core.String? executionId,
+    $core.Iterable<PlanStep>? steps,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (executionId != null) {
+      $result.executionId = executionId;
+    }
+    if (steps != null) {
+      $result.steps.addAll(steps);
+    }
+    return $result;
+  }
   Plan._() : super();
   factory Plan.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Plan.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1671,6 +2206,7 @@ class Plan extends $pb.GeneratedMessage {
   static Plan getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Plan>(create);
   static Plan? _defaultInstance;
 
+  /// The plan's unique ID
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1680,6 +2216,10 @@ class Plan extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// The component requested to be moved.
+  /// Used for tracking & stopping.
+  /// NOTE: A plan may move more components than just the
+  /// root component.
   @$pb.TagNumber(2)
   $1.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
@@ -1691,6 +2231,9 @@ class Plan extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.ResourceName ensureComponentName() => $_ensure(1);
 
+  /// The unique ID which identifies the execution.
+  /// Multiple plans will share the same execution_id if they were
+  /// generated due to replanning
   @$pb.TagNumber(3)
   $core.String get executionId => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1700,12 +2243,21 @@ class Plan extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearExecutionId() => clearField(3);
 
+  /// The steps of a plan is an ordered list of plan steps
   @$pb.TagNumber(4)
   $core.List<PlanStep> get steps => $_getList(3);
 }
 
 class PlanStep extends $pb.GeneratedMessage {
-  factory PlanStep() => create();
+  factory PlanStep({
+    $core.Map<$core.String, ComponentState>? step,
+  }) {
+    final $result = create();
+    if (step != null) {
+      $result.step.addAll(step);
+    }
+    return $result;
+  }
   PlanStep._() : super();
   factory PlanStep.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlanStep.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1736,12 +2288,25 @@ class PlanStep extends $pb.GeneratedMessage {
   static PlanStep getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanStep>(create);
   static PlanStep? _defaultInstance;
 
+  /// A step is the component state each
+  /// component resource should reach while executing
+  /// that step of the plan.
+  /// Keys are the fully qualified component name.
   @$pb.TagNumber(1)
   $core.Map<$core.String, ComponentState> get step => $_getMap(0);
 }
 
+/// A pose
 class ComponentState extends $pb.GeneratedMessage {
-  factory ComponentState() => create();
+  factory ComponentState({
+    $1.Pose? pose,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
   ComponentState._() : super();
   factory ComponentState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComponentState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

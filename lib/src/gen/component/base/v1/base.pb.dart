@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,27 @@ import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class MoveStraightRequest extends $pb.GeneratedMessage {
-  factory MoveStraightRequest() => create();
+  factory MoveStraightRequest({
+    $core.String? name,
+    $fixnum.Int64? distanceMm,
+    $core.double? mmPerSec,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (distanceMm != null) {
+      $result.distanceMm = distanceMm;
+    }
+    if (mmPerSec != null) {
+      $result.mmPerSec = mmPerSec;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveStraightRequest._() : super();
   factory MoveStraightRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveStraightRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -52,6 +72,7 @@ class MoveStraightRequest extends $pb.GeneratedMessage {
   static MoveStraightRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveStraightRequest>(create);
   static MoveStraightRequest? _defaultInstance;
 
+  /// Name of a base
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -61,6 +82,7 @@ class MoveStraightRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Desired travel distance in millimeters
   @$pb.TagNumber(2)
   $fixnum.Int64 get distanceMm => $_getI64(1);
   @$pb.TagNumber(2)
@@ -70,6 +92,7 @@ class MoveStraightRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDistanceMm() => clearField(2);
 
+  /// Desired travel velocity in millimeters/second
   @$pb.TagNumber(3)
   $core.double get mmPerSec => $_getN(2);
   @$pb.TagNumber(3)
@@ -79,6 +102,7 @@ class MoveStraightRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearMmPerSec() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -124,7 +148,27 @@ class MoveStraightResponse extends $pb.GeneratedMessage {
 }
 
 class SpinRequest extends $pb.GeneratedMessage {
-  factory SpinRequest() => create();
+  factory SpinRequest({
+    $core.String? name,
+    $core.double? angleDeg,
+    $core.double? degsPerSec,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (angleDeg != null) {
+      $result.angleDeg = angleDeg;
+    }
+    if (degsPerSec != null) {
+      $result.degsPerSec = degsPerSec;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SpinRequest._() : super();
   factory SpinRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SpinRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -158,6 +202,7 @@ class SpinRequest extends $pb.GeneratedMessage {
   static SpinRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SpinRequest>(create);
   static SpinRequest? _defaultInstance;
 
+  /// Name of a base
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -167,6 +212,7 @@ class SpinRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Desired angle
   @$pb.TagNumber(2)
   $core.double get angleDeg => $_getN(1);
   @$pb.TagNumber(2)
@@ -176,6 +222,7 @@ class SpinRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAngleDeg() => clearField(2);
 
+  /// Desired angular velocity
   @$pb.TagNumber(3)
   $core.double get degsPerSec => $_getN(2);
   @$pb.TagNumber(3)
@@ -185,6 +232,7 @@ class SpinRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDegsPerSec() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -230,7 +278,19 @@ class SpinResponse extends $pb.GeneratedMessage {
 }
 
 class StopRequest extends $pb.GeneratedMessage {
-  factory StopRequest() => create();
+  factory StopRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StopRequest._() : super();
   factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -262,6 +322,7 @@ class StopRequest extends $pb.GeneratedMessage {
   static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
   static StopRequest? _defaultInstance;
 
+  /// Name of a base
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -271,6 +332,7 @@ class StopRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -316,7 +378,27 @@ class StopResponse extends $pb.GeneratedMessage {
 }
 
 class SetPowerRequest extends $pb.GeneratedMessage {
-  factory SetPowerRequest() => create();
+  factory SetPowerRequest({
+    $core.String? name,
+    $1.Vector3? linear,
+    $1.Vector3? angular,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (linear != null) {
+      $result.linear = linear;
+    }
+    if (angular != null) {
+      $result.angular = angular;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetPowerRequest._() : super();
   factory SetPowerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPowerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -350,6 +432,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   static SetPowerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPowerRequest>(create);
   static SetPowerRequest? _defaultInstance;
 
+  /// Name of a base
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -359,6 +442,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Desired linear power percentage as -1 -> 1
   @$pb.TagNumber(2)
   $1.Vector3 get linear => $_getN(1);
   @$pb.TagNumber(2)
@@ -370,6 +454,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Vector3 ensureLinear() => $_ensure(1);
 
+  /// Desired angular power percentage % as -1 -> 1
   @$pb.TagNumber(3)
   $1.Vector3 get angular => $_getN(2);
   @$pb.TagNumber(3)
@@ -381,6 +466,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $1.Vector3 ensureAngular() => $_ensure(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -426,7 +512,27 @@ class SetPowerResponse extends $pb.GeneratedMessage {
 }
 
 class SetVelocityRequest extends $pb.GeneratedMessage {
-  factory SetVelocityRequest() => create();
+  factory SetVelocityRequest({
+    $core.String? name,
+    $1.Vector3? linear,
+    $1.Vector3? angular,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (linear != null) {
+      $result.linear = linear;
+    }
+    if (angular != null) {
+      $result.angular = angular;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetVelocityRequest._() : super();
   factory SetVelocityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetVelocityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -460,6 +566,7 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
   static SetVelocityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetVelocityRequest>(create);
   static SetVelocityRequest? _defaultInstance;
 
+  /// Name of a base
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -469,6 +576,7 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Desired linear velocity in mm per second
   @$pb.TagNumber(2)
   $1.Vector3 get linear => $_getN(1);
   @$pb.TagNumber(2)
@@ -480,6 +588,7 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Vector3 ensureLinear() => $_ensure(1);
 
+  /// Desired angular velocity in degrees per second
   @$pb.TagNumber(3)
   $1.Vector3 get angular => $_getN(2);
   @$pb.TagNumber(3)
@@ -491,6 +600,7 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $1.Vector3 ensureAngular() => $_ensure(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -536,7 +646,15 @@ class SetVelocityResponse extends $pb.GeneratedMessage {
 }
 
 class IsMovingRequest extends $pb.GeneratedMessage {
-  factory IsMovingRequest() => create();
+  factory IsMovingRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   IsMovingRequest._() : super();
   factory IsMovingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -578,7 +696,15 @@ class IsMovingRequest extends $pb.GeneratedMessage {
 }
 
 class IsMovingResponse extends $pb.GeneratedMessage {
-  factory IsMovingResponse() => create();
+  factory IsMovingResponse({
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   IsMovingResponse._() : super();
   factory IsMovingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -620,7 +746,19 @@ class IsMovingResponse extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
-  factory GetPropertiesRequest() => create();
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPropertiesRequest._() : super();
   factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -652,6 +790,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
   static GetPropertiesRequest? _defaultInstance;
 
+  /// Name of the base
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -674,7 +813,23 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
-  factory GetPropertiesResponse() => create();
+  factory GetPropertiesResponse({
+    $core.double? widthMeters,
+    $core.double? turningRadiusMeters,
+    $core.double? wheelCircumferenceMeters,
+  }) {
+    final $result = create();
+    if (widthMeters != null) {
+      $result.widthMeters = widthMeters;
+    }
+    if (turningRadiusMeters != null) {
+      $result.turningRadiusMeters = turningRadiusMeters;
+    }
+    if (wheelCircumferenceMeters != null) {
+      $result.wheelCircumferenceMeters = wheelCircumferenceMeters;
+    }
+    return $result;
+  }
   GetPropertiesResponse._() : super();
   factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

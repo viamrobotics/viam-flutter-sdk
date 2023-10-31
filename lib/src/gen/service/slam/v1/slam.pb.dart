@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,15 @@ import '../../../google/protobuf/struct.pb.dart' as $2;
 import '../../../google/protobuf/timestamp.pb.dart' as $3;
 
 class GetPositionRequest extends $pb.GeneratedMessage {
-  factory GetPositionRequest() => create();
+  factory GetPositionRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GetPositionRequest._() : super();
   factory GetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +57,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   static GetPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionRequest>(create);
   static GetPositionRequest? _defaultInstance;
 
+  /// Name of slam service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -60,7 +69,23 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
-  factory GetPositionResponse() => create();
+  factory GetPositionResponse({
+    $1.Pose? pose,
+    $core.String? componentReference,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    if (componentReference != null) {
+      $result.componentReference = componentReference;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPositionResponse._() : super();
   factory GetPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -93,6 +118,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   static GetPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionResponse>(create);
   static GetPositionResponse? _defaultInstance;
 
+  /// Current position of the specified component in the SLAM Map
   @$pb.TagNumber(1)
   $1.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
@@ -104,6 +130,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.Pose ensurePose() => $_ensure(0);
 
+  /// This is usually the name of the camera that is in the SLAM config
   @$pb.TagNumber(2)
   $core.String get componentReference => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -113,6 +140,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearComponentReference() => clearField(2);
 
+  /// Additional information in the response
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -126,7 +154,15 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class GetPointCloudMapRequest extends $pb.GeneratedMessage {
-  factory GetPointCloudMapRequest() => create();
+  factory GetPointCloudMapRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GetPointCloudMapRequest._() : super();
   factory GetPointCloudMapRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPointCloudMapRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -157,6 +193,7 @@ class GetPointCloudMapRequest extends $pb.GeneratedMessage {
   static GetPointCloudMapRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPointCloudMapRequest>(create);
   static GetPointCloudMapRequest? _defaultInstance;
 
+  /// Name of slam service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -168,7 +205,15 @@ class GetPointCloudMapRequest extends $pb.GeneratedMessage {
 }
 
 class GetPointCloudMapResponse extends $pb.GeneratedMessage {
-  factory GetPointCloudMapResponse() => create();
+  factory GetPointCloudMapResponse({
+    $core.List<$core.int>? pointCloudPcdChunk,
+  }) {
+    final $result = create();
+    if (pointCloudPcdChunk != null) {
+      $result.pointCloudPcdChunk = pointCloudPcdChunk;
+    }
+    return $result;
+  }
   GetPointCloudMapResponse._() : super();
   factory GetPointCloudMapResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPointCloudMapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -199,6 +244,24 @@ class GetPointCloudMapResponse extends $pb.GeneratedMessage {
   static GetPointCloudMapResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPointCloudMapResponse>(create);
   static GetPointCloudMapResponse? _defaultInstance;
 
+  ///  One chunk of the PointCloud.
+  ///  For a given GetPointCloudMap request, concatenating all
+  ///  GetPointCloudMapResponse.point_cloud_pcd_chunk values in the
+  ///  order received result in the complete pointcloud in standard PCD
+  ///  format where XY is the ground plane and positive Z is up, following
+  ///  the Right Hand Rule.
+  ///
+  ///  Read more about the pointcloud format here:
+  ///  https://pointclouds.org/documentation/tutorials/pcd_file_format.html
+  ///
+  ///  Viam expects pointcloud data with fields "x y z" or "x y z rgb", and for
+  ///  this to be specified in the pointcloud header in the FIELDS entry. If color
+  ///  data is included in the pointcloud, Viam's services assume that the color
+  ///  value encodes a confidence score for that data point. Viam expects the
+  ///  confidence score to be encoded in the blue parameter of the RGB value, on a
+  ///  scale from 1-100.
+  ///
+  ///  Pointclouds are little endian encoded.
   @$pb.TagNumber(1)
   $core.List<$core.int> get pointCloudPcdChunk => $_getN(0);
   @$pb.TagNumber(1)
@@ -210,7 +273,15 @@ class GetPointCloudMapResponse extends $pb.GeneratedMessage {
 }
 
 class GetInternalStateRequest extends $pb.GeneratedMessage {
-  factory GetInternalStateRequest() => create();
+  factory GetInternalStateRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GetInternalStateRequest._() : super();
   factory GetInternalStateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInternalStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -241,6 +312,7 @@ class GetInternalStateRequest extends $pb.GeneratedMessage {
   static GetInternalStateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetInternalStateRequest>(create);
   static GetInternalStateRequest? _defaultInstance;
 
+  /// Name of slam service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -252,7 +324,15 @@ class GetInternalStateRequest extends $pb.GeneratedMessage {
 }
 
 class GetInternalStateResponse extends $pb.GeneratedMessage {
-  factory GetInternalStateResponse() => create();
+  factory GetInternalStateResponse({
+    $core.List<$core.int>? internalStateChunk,
+  }) {
+    final $result = create();
+    if (internalStateChunk != null) {
+      $result.internalStateChunk = internalStateChunk;
+    }
+    return $result;
+  }
   GetInternalStateResponse._() : super();
   factory GetInternalStateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInternalStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -283,6 +363,8 @@ class GetInternalStateResponse extends $pb.GeneratedMessage {
   static GetInternalStateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetInternalStateResponse>(create);
   static GetInternalStateResponse? _defaultInstance;
 
+  /// Chunk of the internal state of the SLAM algorithm required to continue
+  /// mapping/localization
   @$pb.TagNumber(1)
   $core.List<$core.int> get internalStateChunk => $_getN(0);
   @$pb.TagNumber(1)
@@ -294,7 +376,15 @@ class GetInternalStateResponse extends $pb.GeneratedMessage {
 }
 
 class GetLatestMapInfoRequest extends $pb.GeneratedMessage {
-  factory GetLatestMapInfoRequest() => create();
+  factory GetLatestMapInfoRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   GetLatestMapInfoRequest._() : super();
   factory GetLatestMapInfoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLatestMapInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -325,6 +415,7 @@ class GetLatestMapInfoRequest extends $pb.GeneratedMessage {
   static GetLatestMapInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestMapInfoRequest>(create);
   static GetLatestMapInfoRequest? _defaultInstance;
 
+  /// Name of the SLAM algo
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -336,7 +427,15 @@ class GetLatestMapInfoRequest extends $pb.GeneratedMessage {
 }
 
 class GetLatestMapInfoResponse extends $pb.GeneratedMessage {
-  factory GetLatestMapInfoResponse() => create();
+  factory GetLatestMapInfoResponse({
+    $3.Timestamp? lastMapUpdate,
+  }) {
+    final $result = create();
+    if (lastMapUpdate != null) {
+      $result.lastMapUpdate = lastMapUpdate;
+    }
+    return $result;
+  }
   GetLatestMapInfoResponse._() : super();
   factory GetLatestMapInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLatestMapInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

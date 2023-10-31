@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,19 @@ import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetSensorsRequest extends $pb.GeneratedMessage {
-  factory GetSensorsRequest() => create();
+  factory GetSensorsRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetSensorsRequest._() : super();
   factory GetSensorsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetSensorsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -58,6 +70,7 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -71,7 +84,15 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
 }
 
 class GetSensorsResponse extends $pb.GeneratedMessage {
-  factory GetSensorsResponse() => create();
+  factory GetSensorsResponse({
+    $core.Iterable<$1.ResourceName>? sensorNames,
+  }) {
+    final $result = create();
+    if (sensorNames != null) {
+      $result.sensorNames.addAll(sensorNames);
+    }
+    return $result;
+  }
   GetSensorsResponse._() : super();
   factory GetSensorsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetSensorsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -107,7 +128,23 @@ class GetSensorsResponse extends $pb.GeneratedMessage {
 }
 
 class GetReadingsRequest extends $pb.GeneratedMessage {
-  factory GetReadingsRequest() => create();
+  factory GetReadingsRequest({
+    $core.String? name,
+    $core.Iterable<$1.ResourceName>? sensorNames,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (sensorNames != null) {
+      $result.sensorNames.addAll(sensorNames);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetReadingsRequest._() : super();
   factory GetReadingsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetReadingsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -152,6 +189,7 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$1.ResourceName> get sensorNames => $_getList(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -165,7 +203,19 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 }
 
 class Readings extends $pb.GeneratedMessage {
-  factory Readings() => create();
+  factory Readings({
+    $1.ResourceName? name,
+    $core.Map<$core.String, $2.Value>? readings,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (readings != null) {
+      $result.readings.addAll(readings);
+    }
+    return $result;
+  }
   Readings._() : super();
   factory Readings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Readings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -213,7 +263,15 @@ class Readings extends $pb.GeneratedMessage {
 }
 
 class GetReadingsResponse extends $pb.GeneratedMessage {
-  factory GetReadingsResponse() => create();
+  factory GetReadingsResponse({
+    $core.Iterable<Readings>? readings,
+  }) {
+    final $result = create();
+    if (readings != null) {
+      $result.readings.addAll(readings);
+    }
+    return $result;
+  }
   GetReadingsResponse._() : super();
   factory GetReadingsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetReadingsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

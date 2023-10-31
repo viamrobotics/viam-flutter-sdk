@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -46,7 +46,15 @@ class IsLegalAcceptedRequest extends $pb.GeneratedMessage {
 }
 
 class IsLegalAcceptedResponse extends $pb.GeneratedMessage {
-  factory IsLegalAcceptedResponse() => create();
+  factory IsLegalAcceptedResponse({
+    $core.bool? acceptedLegal,
+  }) {
+    final $result = create();
+    if (acceptedLegal != null) {
+      $result.acceptedLegal = acceptedLegal;
+    }
+    return $result;
+  }
   IsLegalAcceptedResponse._() : super();
   factory IsLegalAcceptedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsLegalAcceptedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -77,6 +85,7 @@ class IsLegalAcceptedResponse extends $pb.GeneratedMessage {
   static IsLegalAcceptedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsLegalAcceptedResponse>(create);
   static IsLegalAcceptedResponse? _defaultInstance;
 
+  /// If false, the user should not be able to use the application.
   @$pb.TagNumber(1)
   $core.bool get acceptedLegal => $_getBF(0);
   @$pb.TagNumber(1)
