@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,19 @@ import 'navigation.pbenum.dart';
 export 'navigation.pbenum.dart';
 
 class GetModeRequest extends $pb.GeneratedMessage {
-  factory GetModeRequest() => create();
+  factory GetModeRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetModeRequest._() : super();
   factory GetModeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetModeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -61,6 +73,7 @@ class GetModeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -74,7 +87,15 @@ class GetModeRequest extends $pb.GeneratedMessage {
 }
 
 class GetModeResponse extends $pb.GeneratedMessage {
-  factory GetModeResponse() => create();
+  factory GetModeResponse({
+    Mode? mode,
+  }) {
+    final $result = create();
+    if (mode != null) {
+      $result.mode = mode;
+    }
+    return $result;
+  }
   GetModeResponse._() : super();
   factory GetModeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetModeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -116,7 +137,23 @@ class GetModeResponse extends $pb.GeneratedMessage {
 }
 
 class SetModeRequest extends $pb.GeneratedMessage {
-  factory SetModeRequest() => create();
+  factory SetModeRequest({
+    $core.String? name,
+    Mode? mode,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mode != null) {
+      $result.mode = mode;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetModeRequest._() : super();
   factory SetModeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetModeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -167,6 +204,7 @@ class SetModeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMode() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -212,7 +250,19 @@ class SetModeResponse extends $pb.GeneratedMessage {
 }
 
 class Waypoint extends $pb.GeneratedMessage {
-  factory Waypoint() => create();
+  factory Waypoint({
+    $core.String? id,
+    $1.GeoPoint? location,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   Waypoint._() : super();
   factory Waypoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Waypoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -266,7 +316,19 @@ class Waypoint extends $pb.GeneratedMessage {
 }
 
 class GetLocationRequest extends $pb.GeneratedMessage {
-  factory GetLocationRequest() => create();
+  factory GetLocationRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetLocationRequest._() : super();
   factory GetLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -307,6 +369,7 @@ class GetLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -320,7 +383,19 @@ class GetLocationRequest extends $pb.GeneratedMessage {
 }
 
 class GetLocationResponse extends $pb.GeneratedMessage {
-  factory GetLocationResponse() => create();
+  factory GetLocationResponse({
+    $1.GeoPoint? location,
+    $core.double? compassHeading,
+  }) {
+    final $result = create();
+    if (location != null) {
+      $result.location = location;
+    }
+    if (compassHeading != null) {
+      $result.compassHeading = compassHeading;
+    }
+    return $result;
+  }
   GetLocationResponse._() : super();
   factory GetLocationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLocationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -363,6 +438,8 @@ class GetLocationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.GeoPoint ensureLocation() => $_ensure(0);
 
+  /// A number from [0-360) where 0 is north
+  /// 90 is east, 180 is south, 270 is west
   @$pb.TagNumber(2)
   $core.double get compassHeading => $_getN(1);
   @$pb.TagNumber(2)
@@ -374,7 +451,19 @@ class GetLocationResponse extends $pb.GeneratedMessage {
 }
 
 class GetWaypointsRequest extends $pb.GeneratedMessage {
-  factory GetWaypointsRequest() => create();
+  factory GetWaypointsRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetWaypointsRequest._() : super();
   factory GetWaypointsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetWaypointsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -415,6 +504,7 @@ class GetWaypointsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -428,7 +518,15 @@ class GetWaypointsRequest extends $pb.GeneratedMessage {
 }
 
 class GetWaypointsResponse extends $pb.GeneratedMessage {
-  factory GetWaypointsResponse() => create();
+  factory GetWaypointsResponse({
+    $core.Iterable<Waypoint>? waypoints,
+  }) {
+    final $result = create();
+    if (waypoints != null) {
+      $result.waypoints.addAll(waypoints);
+    }
+    return $result;
+  }
   GetWaypointsResponse._() : super();
   factory GetWaypointsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetWaypointsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -464,7 +562,23 @@ class GetWaypointsResponse extends $pb.GeneratedMessage {
 }
 
 class AddWaypointRequest extends $pb.GeneratedMessage {
-  factory AddWaypointRequest() => create();
+  factory AddWaypointRequest({
+    $core.String? name,
+    $1.GeoPoint? location,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (location != null) {
+      $result.location = location;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   AddWaypointRequest._() : super();
   factory AddWaypointRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddWaypointRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -517,6 +631,7 @@ class AddWaypointRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.GeoPoint ensureLocation() => $_ensure(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -562,7 +677,23 @@ class AddWaypointResponse extends $pb.GeneratedMessage {
 }
 
 class RemoveWaypointRequest extends $pb.GeneratedMessage {
-  factory RemoveWaypointRequest() => create();
+  factory RemoveWaypointRequest({
+    $core.String? name,
+    $core.String? id,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   RemoveWaypointRequest._() : super();
   factory RemoveWaypointRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveWaypointRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -613,6 +744,7 @@ class RemoveWaypointRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -657,8 +789,24 @@ class RemoveWaypointResponse extends $pb.GeneratedMessage {
   static RemoveWaypointResponse? _defaultInstance;
 }
 
+/// GetObstacles will return the geopoint location and geometry of all
+/// known obstacles on the navigation map. Obstacles that are detected
+/// through the vision service will only be returned if this endpoint is called
+/// when the robot is sensing the obstacle
 class GetObstaclesRequest extends $pb.GeneratedMessage {
-  factory GetObstaclesRequest() => create();
+  factory GetObstaclesRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetObstaclesRequest._() : super();
   factory GetObstaclesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetObstaclesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -699,6 +847,7 @@ class GetObstaclesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -712,7 +861,15 @@ class GetObstaclesRequest extends $pb.GeneratedMessage {
 }
 
 class GetObstaclesResponse extends $pb.GeneratedMessage {
-  factory GetObstaclesResponse() => create();
+  factory GetObstaclesResponse({
+    $core.Iterable<$1.GeoObstacle>? obstacles,
+  }) {
+    final $result = create();
+    if (obstacles != null) {
+      $result.obstacles.addAll(obstacles);
+    }
+    return $result;
+  }
   GetObstaclesResponse._() : super();
   factory GetObstaclesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetObstaclesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -743,12 +900,27 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
   static GetObstaclesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetObstaclesResponse>(create);
   static GetObstaclesResponse? _defaultInstance;
 
+  /// List of all known geometries
   @$pb.TagNumber(1)
   $core.List<$1.GeoObstacle> get obstacles => $_getList(0);
 }
 
+/// A user provided destination and the set of geopoints that
+/// the robot is expected to take to get there
 class Path extends $pb.GeneratedMessage {
-  factory Path() => create();
+  factory Path({
+    $core.String? destinationWaypointId,
+    $core.Iterable<$1.GeoPoint>? geopoints,
+  }) {
+    final $result = create();
+    if (destinationWaypointId != null) {
+      $result.destinationWaypointId = destinationWaypointId;
+    }
+    if (geopoints != null) {
+      $result.geopoints.addAll(geopoints);
+    }
+    return $result;
+  }
   Path._() : super();
   factory Path.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Path.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -780,6 +952,7 @@ class Path extends $pb.GeneratedMessage {
   static Path getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Path>(create);
   static Path? _defaultInstance;
 
+  /// The id of the user specified waypoint
   @$pb.TagNumber(1)
   $core.String get destinationWaypointId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -789,12 +962,27 @@ class Path extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDestinationWaypointId() => clearField(1);
 
+  /// List of geopoints that the motion planner output to reach the destination
+  /// The first geopoint is the starting position of the robot for that path
   @$pb.TagNumber(2)
   $core.List<$1.GeoPoint> get geopoints => $_getList(1);
 }
 
+/// Returns all the paths known to the navigation service
 class GetPathsRequest extends $pb.GeneratedMessage {
-  factory GetPathsRequest() => create();
+  factory GetPathsRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPathsRequest._() : super();
   factory GetPathsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPathsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -826,6 +1014,7 @@ class GetPathsRequest extends $pb.GeneratedMessage {
   static GetPathsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPathsRequest>(create);
   static GetPathsRequest? _defaultInstance;
 
+  /// Name of the navigation service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -848,7 +1037,15 @@ class GetPathsRequest extends $pb.GeneratedMessage {
 }
 
 class GetPathsResponse extends $pb.GeneratedMessage {
-  factory GetPathsResponse() => create();
+  factory GetPathsResponse({
+    $core.Iterable<Path>? paths,
+  }) {
+    final $result = create();
+    if (paths != null) {
+      $result.paths.addAll(paths);
+    }
+    return $result;
+  }
   GetPathsResponse._() : super();
   factory GetPathsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPathsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

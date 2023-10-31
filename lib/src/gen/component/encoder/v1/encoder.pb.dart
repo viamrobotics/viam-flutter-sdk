@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,23 @@ import 'encoder.pbenum.dart';
 export 'encoder.pbenum.dart';
 
 class GetPositionRequest extends $pb.GeneratedMessage {
-  factory GetPositionRequest() => create();
+  factory GetPositionRequest({
+    $core.String? name,
+    PositionType? positionType,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (positionType != null) {
+      $result.positionType = positionType;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPositionRequest._() : super();
   factory GetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -52,6 +68,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   static GetPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionRequest>(create);
   static GetPositionRequest? _defaultInstance;
 
+  /// Name of encoder
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -61,6 +78,11 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// If supplied, the response will return the specified
+  /// position type. If the driver does not implement
+  /// the requested type, this call will return an error.
+  /// If position type is not specified, the response
+  /// will return a default according to the driver.
   @$pb.TagNumber(2)
   PositionType get positionType => $_getN(1);
   @$pb.TagNumber(2)
@@ -70,6 +92,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPositionType() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -83,7 +106,19 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
-  factory GetPositionResponse() => create();
+  factory GetPositionResponse({
+    $core.double? value,
+    PositionType? positionType,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    if (positionType != null) {
+      $result.positionType = positionType;
+    }
+    return $result;
+  }
   GetPositionResponse._() : super();
   factory GetPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -135,7 +170,19 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class ResetPositionRequest extends $pb.GeneratedMessage {
-  factory ResetPositionRequest() => create();
+  factory ResetPositionRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   ResetPositionRequest._() : super();
   factory ResetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -167,6 +214,7 @@ class ResetPositionRequest extends $pb.GeneratedMessage {
   static ResetPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetPositionRequest>(create);
   static ResetPositionRequest? _defaultInstance;
 
+  /// Name of an encoder
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -176,6 +224,7 @@ class ResetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -221,7 +270,19 @@ class ResetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
-  factory GetPropertiesRequest() => create();
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPropertiesRequest._() : super();
   factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -253,6 +314,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
   static GetPropertiesRequest? _defaultInstance;
 
+  /// Name of the encoder
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -262,6 +324,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -275,7 +338,19 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
-  factory GetPropertiesResponse() => create();
+  factory GetPropertiesResponse({
+    $core.bool? ticksCountSupported,
+    $core.bool? angleDegreesSupported,
+  }) {
+    final $result = create();
+    if (ticksCountSupported != null) {
+      $result.ticksCountSupported = ticksCountSupported;
+    }
+    if (angleDegreesSupported != null) {
+      $result.angleDegreesSupported = angleDegreesSupported;
+    }
+    return $result;
+  }
   GetPropertiesResponse._() : super();
   factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

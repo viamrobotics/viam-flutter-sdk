@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,8 +15,67 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../protobuf/any.pb.dart' as $3;
 
+///  Message that represents an arbitrary HTTP body. It should only be used for
+///  payload formats that can't be represented as JSON, such as raw binary or
+///  an HTML page.
+///
+///
+///  This message can be used both in streaming and non-streaming API methods in
+///  the request as well as the response.
+///
+///  It can be used as a top-level request field, which is convenient if one
+///  wants to extract parameters from either the URL or HTTP template into the
+///  request fields and also want access to the raw HTTP body.
+///
+///  Example:
+///
+///      message GetResourceRequest {
+///        // A unique request id.
+///        string request_id = 1;
+///
+///        // The raw HTTP body is bound to this field.
+///        google.api.HttpBody http_body = 2;
+///
+///      }
+///
+///      service ResourceService {
+///        rpc GetResource(GetResourceRequest)
+///          returns (google.api.HttpBody);
+///        rpc UpdateResource(google.api.HttpBody)
+///          returns (google.protobuf.Empty);
+///
+///      }
+///
+///  Example with streaming methods:
+///
+///      service CaldavService {
+///        rpc GetCalendar(stream google.api.HttpBody)
+///          returns (stream google.api.HttpBody);
+///        rpc UpdateCalendar(stream google.api.HttpBody)
+///          returns (stream google.api.HttpBody);
+///
+///      }
+///
+///  Use of this type only changes how the request and response bodies are
+///  handled, all other features will continue to work unchanged.
 class HttpBody extends $pb.GeneratedMessage {
-  factory HttpBody() => create();
+  factory HttpBody({
+    $core.String? contentType,
+    $core.List<$core.int>? data,
+    $core.Iterable<$3.Any>? extensions,
+  }) {
+    final $result = create();
+    if (contentType != null) {
+      $result.contentType = contentType;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    if (extensions != null) {
+      $result.extensions.addAll(extensions);
+    }
+    return $result;
+  }
   HttpBody._() : super();
   factory HttpBody.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HttpBody.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +108,7 @@ class HttpBody extends $pb.GeneratedMessage {
   static HttpBody getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HttpBody>(create);
   static HttpBody? _defaultInstance;
 
+  /// The HTTP Content-Type header value specifying the content type of the body.
   @$pb.TagNumber(1)
   $core.String get contentType => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -58,6 +118,7 @@ class HttpBody extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearContentType() => clearField(1);
 
+  /// The HTTP request/response body as raw binary.
   @$pb.TagNumber(2)
   $core.List<$core.int> get data => $_getN(1);
   @$pb.TagNumber(2)
@@ -67,6 +128,8 @@ class HttpBody extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
 
+  /// Application specific response metadata. Must be set in the first response
+  /// for streaming APIs.
   @$pb.TagNumber(3)
   $core.List<$3.Any> get extensions => $_getList(2);
 }

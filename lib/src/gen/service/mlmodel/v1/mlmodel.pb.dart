@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,23 @@ import 'mlmodel.pbenum.dart';
 export 'mlmodel.pbenum.dart';
 
 class InferRequest extends $pb.GeneratedMessage {
-  factory InferRequest() => create();
+  factory InferRequest({
+    $core.String? name,
+    FlatTensors? inputTensors,
+    $1.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (inputTensors != null) {
+      $result.inputTensors = inputTensors;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   InferRequest._() : super();
   factory InferRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InferRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -53,6 +69,7 @@ class InferRequest extends $pb.GeneratedMessage {
   static InferRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InferRequest>(create);
   static InferRequest? _defaultInstance;
 
+  /// name of the model service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -62,6 +79,7 @@ class InferRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// the input data is provided as set of named flat tensors
   @$pb.TagNumber(3)
   FlatTensors get inputTensors => $_getN(1);
   @$pb.TagNumber(3)
@@ -73,6 +91,7 @@ class InferRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   FlatTensors ensureInputTensors() => $_ensure(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $1.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -86,7 +105,15 @@ class InferRequest extends $pb.GeneratedMessage {
 }
 
 class InferResponse extends $pb.GeneratedMessage {
-  factory InferResponse() => create();
+  factory InferResponse({
+    FlatTensors? outputTensors,
+  }) {
+    final $result = create();
+    if (outputTensors != null) {
+      $result.outputTensors = outputTensors;
+    }
+    return $result;
+  }
   InferResponse._() : super();
   factory InferResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InferResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -117,6 +144,7 @@ class InferResponse extends $pb.GeneratedMessage {
   static InferResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InferResponse>(create);
   static InferResponse? _defaultInstance;
 
+  /// the output data is provided as a set of named flat tensors
   @$pb.TagNumber(3)
   FlatTensors get outputTensors => $_getN(0);
   @$pb.TagNumber(3)
@@ -130,7 +158,19 @@ class InferResponse extends $pb.GeneratedMessage {
 }
 
 class MetadataRequest extends $pb.GeneratedMessage {
-  factory MetadataRequest() => create();
+  factory MetadataRequest({
+    $core.String? name,
+    $1.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MetadataRequest._() : super();
   factory MetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -162,6 +202,7 @@ class MetadataRequest extends $pb.GeneratedMessage {
   static MetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MetadataRequest>(create);
   static MetadataRequest? _defaultInstance;
 
+  /// name of the model service
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -171,6 +212,7 @@ class MetadataRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $1.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -184,7 +226,15 @@ class MetadataRequest extends $pb.GeneratedMessage {
 }
 
 class MetadataResponse extends $pb.GeneratedMessage {
-  factory MetadataResponse() => create();
+  factory MetadataResponse({
+    Metadata? metadata,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
   MetadataResponse._() : super();
   factory MetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -215,6 +265,7 @@ class MetadataResponse extends $pb.GeneratedMessage {
   static MetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MetadataResponse>(create);
   static MetadataResponse? _defaultInstance;
 
+  /// this is the metadata associated with the ML model
   @$pb.TagNumber(1)
   Metadata get metadata => $_getN(0);
   @$pb.TagNumber(1)
@@ -228,7 +279,31 @@ class MetadataResponse extends $pb.GeneratedMessage {
 }
 
 class Metadata extends $pb.GeneratedMessage {
-  factory Metadata() => create();
+  factory Metadata({
+    $core.String? name,
+    $core.String? type,
+    $core.String? description,
+    $core.Iterable<TensorInfo>? inputInfo,
+    $core.Iterable<TensorInfo>? outputInfo,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (inputInfo != null) {
+      $result.inputInfo.addAll(inputInfo);
+    }
+    if (outputInfo != null) {
+      $result.outputInfo.addAll(outputInfo);
+    }
+    return $result;
+  }
   Metadata._() : super();
   factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -263,6 +338,7 @@ class Metadata extends $pb.GeneratedMessage {
   static Metadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Metadata>(create);
   static Metadata? _defaultInstance;
 
+  /// name of the model
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -272,6 +348,7 @@ class Metadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// type of model e.g. object_detector, text_classifier
   @$pb.TagNumber(2)
   $core.String get type => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -281,6 +358,7 @@ class Metadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearType() => clearField(2);
 
+  /// description of the model
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -290,15 +368,45 @@ class Metadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDescription() => clearField(3);
 
+  /// the necessary input arrays/tensors for an inference, order matters
   @$pb.TagNumber(4)
   $core.List<TensorInfo> get inputInfo => $_getList(3);
 
+  /// the output arrays/tensors of the model, order matters
   @$pb.TagNumber(5)
   $core.List<TensorInfo> get outputInfo => $_getList(4);
 }
 
 class TensorInfo extends $pb.GeneratedMessage {
-  factory TensorInfo() => create();
+  factory TensorInfo({
+    $core.String? name,
+    $core.String? description,
+    $core.String? dataType,
+    $core.Iterable<$core.int>? shape,
+    $core.Iterable<File>? associatedFiles,
+    $1.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (dataType != null) {
+      $result.dataType = dataType;
+    }
+    if (shape != null) {
+      $result.shape.addAll(shape);
+    }
+    if (associatedFiles != null) {
+      $result.associatedFiles.addAll(associatedFiles);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   TensorInfo._() : super();
   factory TensorInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TensorInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -334,6 +442,7 @@ class TensorInfo extends $pb.GeneratedMessage {
   static TensorInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TensorInfo>(create);
   static TensorInfo? _defaultInstance;
 
+  /// name of the data in the array/tensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -343,6 +452,7 @@ class TensorInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// description of the data in the array/tensor
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -352,6 +462,7 @@ class TensorInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDescription() => clearField(2);
 
+  /// data type of the array/tensor, e.g. float32, float64, uint8
   @$pb.TagNumber(3)
   $core.String get dataType => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -361,12 +472,15 @@ class TensorInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDataType() => clearField(3);
 
+  /// shape of the array/tensor (-1 for unknown)
   @$pb.TagNumber(4)
   $core.List<$core.int> get shape => $_getList(3);
 
+  /// files associated with the array/tensor, like for category labels
   @$pb.TagNumber(5)
   $core.List<File> get associatedFiles => $_getList(4);
 
+  /// anything else you want to say
   @$pb.TagNumber(99)
   $1.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
@@ -380,7 +494,23 @@ class TensorInfo extends $pb.GeneratedMessage {
 }
 
 class File extends $pb.GeneratedMessage {
-  factory File() => create();
+  factory File({
+    $core.String? name,
+    $core.String? description,
+    LabelType? labelType,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (labelType != null) {
+      $result.labelType = labelType;
+    }
+    return $result;
+  }
   File._() : super();
   factory File.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory File.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -413,6 +543,7 @@ class File extends $pb.GeneratedMessage {
   static File getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<File>(create);
   static File? _defaultInstance;
 
+  /// name of the file, with file extension
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -422,6 +553,7 @@ class File extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// description of what the file contains
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -431,6 +563,7 @@ class File extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDescription() => clearField(2);
 
+  /// How to associate the arrays/tensors to the labels in the file
   @$pb.TagNumber(3)
   LabelType get labelType => $_getN(2);
   @$pb.TagNumber(3)
@@ -442,7 +575,15 @@ class File extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataInt8 extends $pb.GeneratedMessage {
-  factory FlatTensorDataInt8() => create();
+  factory FlatTensorDataInt8({
+    $core.List<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   FlatTensorDataInt8._() : super();
   factory FlatTensorDataInt8.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataInt8.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -484,7 +625,15 @@ class FlatTensorDataInt8 extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataUInt8 extends $pb.GeneratedMessage {
-  factory FlatTensorDataUInt8() => create();
+  factory FlatTensorDataUInt8({
+    $core.List<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   FlatTensorDataUInt8._() : super();
   factory FlatTensorDataUInt8.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataUInt8.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -526,7 +675,15 @@ class FlatTensorDataUInt8 extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataInt16 extends $pb.GeneratedMessage {
-  factory FlatTensorDataInt16() => create();
+  factory FlatTensorDataInt16({
+    $core.Iterable<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataInt16._() : super();
   factory FlatTensorDataInt16.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataInt16.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -557,12 +714,22 @@ class FlatTensorDataInt16 extends $pb.GeneratedMessage {
   static FlatTensorDataInt16 getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FlatTensorDataInt16>(create);
   static FlatTensorDataInt16? _defaultInstance;
 
+  /// packs two 16-bit numbers per entry - explicitly little-endian
+  /// so big-endian producers/consumers must compensate
   @$pb.TagNumber(1)
   $core.List<$core.int> get data => $_getList(0);
 }
 
 class FlatTensorDataUInt16 extends $pb.GeneratedMessage {
-  factory FlatTensorDataUInt16() => create();
+  factory FlatTensorDataUInt16({
+    $core.Iterable<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataUInt16._() : super();
   factory FlatTensorDataUInt16.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataUInt16.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -593,12 +760,22 @@ class FlatTensorDataUInt16 extends $pb.GeneratedMessage {
   static FlatTensorDataUInt16 getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FlatTensorDataUInt16>(create);
   static FlatTensorDataUInt16? _defaultInstance;
 
+  /// packs two 16-bit numbers per entry - explicitly little-endian
+  /// so big-endian producers/consumers must compensate
   @$pb.TagNumber(1)
   $core.List<$core.int> get data => $_getList(0);
 }
 
 class FlatTensorDataInt32 extends $pb.GeneratedMessage {
-  factory FlatTensorDataInt32() => create();
+  factory FlatTensorDataInt32({
+    $core.Iterable<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataInt32._() : super();
   factory FlatTensorDataInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -634,7 +811,15 @@ class FlatTensorDataInt32 extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataUInt32 extends $pb.GeneratedMessage {
-  factory FlatTensorDataUInt32() => create();
+  factory FlatTensorDataUInt32({
+    $core.Iterable<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataUInt32._() : super();
   factory FlatTensorDataUInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataUInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -670,7 +855,15 @@ class FlatTensorDataUInt32 extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataInt64 extends $pb.GeneratedMessage {
-  factory FlatTensorDataInt64() => create();
+  factory FlatTensorDataInt64({
+    $core.Iterable<$fixnum.Int64>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataInt64._() : super();
   factory FlatTensorDataInt64.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataInt64.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -706,7 +899,15 @@ class FlatTensorDataInt64 extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataUInt64 extends $pb.GeneratedMessage {
-  factory FlatTensorDataUInt64() => create();
+  factory FlatTensorDataUInt64({
+    $core.Iterable<$fixnum.Int64>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataUInt64._() : super();
   factory FlatTensorDataUInt64.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataUInt64.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -742,7 +943,15 @@ class FlatTensorDataUInt64 extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataFloat extends $pb.GeneratedMessage {
-  factory FlatTensorDataFloat() => create();
+  factory FlatTensorDataFloat({
+    $core.Iterable<$core.double>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataFloat._() : super();
   factory FlatTensorDataFloat.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataFloat.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -778,7 +987,15 @@ class FlatTensorDataFloat extends $pb.GeneratedMessage {
 }
 
 class FlatTensorDataDouble extends $pb.GeneratedMessage {
-  factory FlatTensorDataDouble() => create();
+  factory FlatTensorDataDouble({
+    $core.Iterable<$core.double>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   FlatTensorDataDouble._() : super();
   factory FlatTensorDataDouble.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensorDataDouble.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -828,7 +1045,55 @@ enum FlatTensor_Tensor {
 }
 
 class FlatTensor extends $pb.GeneratedMessage {
-  factory FlatTensor() => create();
+  factory FlatTensor({
+    $core.Iterable<$fixnum.Int64>? shape,
+    FlatTensorDataInt8? int8Tensor,
+    FlatTensorDataUInt8? uint8Tensor,
+    FlatTensorDataInt16? int16Tensor,
+    FlatTensorDataUInt16? uint16Tensor,
+    FlatTensorDataInt32? int32Tensor,
+    FlatTensorDataUInt32? uint32Tensor,
+    FlatTensorDataInt64? int64Tensor,
+    FlatTensorDataUInt64? uint64Tensor,
+    FlatTensorDataFloat? floatTensor,
+    FlatTensorDataDouble? doubleTensor,
+  }) {
+    final $result = create();
+    if (shape != null) {
+      $result.shape.addAll(shape);
+    }
+    if (int8Tensor != null) {
+      $result.int8Tensor = int8Tensor;
+    }
+    if (uint8Tensor != null) {
+      $result.uint8Tensor = uint8Tensor;
+    }
+    if (int16Tensor != null) {
+      $result.int16Tensor = int16Tensor;
+    }
+    if (uint16Tensor != null) {
+      $result.uint16Tensor = uint16Tensor;
+    }
+    if (int32Tensor != null) {
+      $result.int32Tensor = int32Tensor;
+    }
+    if (uint32Tensor != null) {
+      $result.uint32Tensor = uint32Tensor;
+    }
+    if (int64Tensor != null) {
+      $result.int64Tensor = int64Tensor;
+    }
+    if (uint64Tensor != null) {
+      $result.uint64Tensor = uint64Tensor;
+    }
+    if (floatTensor != null) {
+      $result.floatTensor = floatTensor;
+    }
+    if (doubleTensor != null) {
+      $result.doubleTensor = doubleTensor;
+    }
+    return $result;
+  }
   FlatTensor._() : super();
   factory FlatTensor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -886,6 +1151,7 @@ class FlatTensor extends $pb.GeneratedMessage {
   FlatTensor_Tensor whichTensor() => _FlatTensor_TensorByTag[$_whichOneof(0)]!;
   void clearTensor() => clearField($_whichOneof(0));
 
+  /// the shape of the provided tensor as a list of integer extents
   @$pb.TagNumber(1)
   $core.List<$fixnum.Int64> get shape => $_getList(0);
 
@@ -1001,7 +1267,15 @@ class FlatTensor extends $pb.GeneratedMessage {
 }
 
 class FlatTensors extends $pb.GeneratedMessage {
-  factory FlatTensors() => create();
+  factory FlatTensors({
+    $core.Map<$core.String, FlatTensor>? tensors,
+  }) {
+    final $result = create();
+    if (tensors != null) {
+      $result.tensors.addAll(tensors);
+    }
+    return $result;
+  }
   FlatTensors._() : super();
   factory FlatTensors.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FlatTensors.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1032,6 +1306,7 @@ class FlatTensors extends $pb.GeneratedMessage {
   static FlatTensors getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FlatTensors>(create);
   static FlatTensors? _defaultInstance;
 
+  /// A name-indexed collection of flat tensor objects
   @$pb.TagNumber(1)
   $core.Map<$core.String, FlatTensor> get tensors => $_getMap(0);
 }

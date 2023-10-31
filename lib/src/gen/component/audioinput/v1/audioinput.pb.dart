@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -20,7 +20,19 @@ import 'audioinput.pbenum.dart';
 export 'audioinput.pbenum.dart';
 
 class RecordRequest extends $pb.GeneratedMessage {
-  factory RecordRequest() => create();
+  factory RecordRequest({
+    $core.String? name,
+    $3.Duration? duration,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (duration != null) {
+      $result.duration = duration;
+    }
+    return $result;
+  }
   RecordRequest._() : super();
   factory RecordRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RecordRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -52,6 +64,7 @@ class RecordRequest extends $pb.GeneratedMessage {
   static RecordRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordRequest>(create);
   static RecordRequest? _defaultInstance;
 
+  /// Name of an audio input
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -74,7 +87,23 @@ class RecordRequest extends $pb.GeneratedMessage {
 }
 
 class AudioChunkInfo extends $pb.GeneratedMessage {
-  factory AudioChunkInfo() => create();
+  factory AudioChunkInfo({
+    SampleFormat? sampleFormat,
+    $core.int? channels,
+    $fixnum.Int64? samplingRate,
+  }) {
+    final $result = create();
+    if (sampleFormat != null) {
+      $result.sampleFormat = sampleFormat;
+    }
+    if (channels != null) {
+      $result.channels = channels;
+    }
+    if (samplingRate != null) {
+      $result.samplingRate = samplingRate;
+    }
+    return $result;
+  }
   AudioChunkInfo._() : super();
   factory AudioChunkInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AudioChunkInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -107,6 +136,7 @@ class AudioChunkInfo extends $pb.GeneratedMessage {
   static AudioChunkInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AudioChunkInfo>(create);
   static AudioChunkInfo? _defaultInstance;
 
+  /// Actual sample encoding format of the response
   @$pb.TagNumber(1)
   SampleFormat get sampleFormat => $_getN(0);
   @$pb.TagNumber(1)
@@ -136,7 +166,19 @@ class AudioChunkInfo extends $pb.GeneratedMessage {
 }
 
 class AudioChunk extends $pb.GeneratedMessage {
-  factory AudioChunk() => create();
+  factory AudioChunk({
+    $core.List<$core.int>? data,
+    $core.int? length,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    if (length != null) {
+      $result.length = length;
+    }
+    return $result;
+  }
   AudioChunk._() : super();
   factory AudioChunk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AudioChunk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -168,6 +210,9 @@ class AudioChunk extends $pb.GeneratedMessage {
   static AudioChunk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AudioChunk>(create);
   static AudioChunk? _defaultInstance;
 
+  /// Data is PCM data that is organized according to the sample format
+  /// along with its possible interleaving. Data in each format is
+  /// Little Endian.
   @$pb.TagNumber(1)
   $core.List<$core.int> get data => $_getN(0);
   @$pb.TagNumber(1)
@@ -177,6 +222,7 @@ class AudioChunk extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
 
+  /// Length is the number of samples
   @$pb.TagNumber(2)
   $core.int get length => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -188,7 +234,19 @@ class AudioChunk extends $pb.GeneratedMessage {
 }
 
 class ChunksRequest extends $pb.GeneratedMessage {
-  factory ChunksRequest() => create();
+  factory ChunksRequest({
+    $core.String? name,
+    SampleFormat? sampleFormat,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (sampleFormat != null) {
+      $result.sampleFormat = sampleFormat;
+    }
+    return $result;
+  }
   ChunksRequest._() : super();
   factory ChunksRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChunksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -220,6 +278,7 @@ class ChunksRequest extends $pb.GeneratedMessage {
   static ChunksRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChunksRequest>(create);
   static ChunksRequest? _defaultInstance;
 
+  /// Name of an audio input
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -229,6 +288,7 @@ class ChunksRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Requested sample encoding format of the response
   @$pb.TagNumber(2)
   SampleFormat get sampleFormat => $_getN(1);
   @$pb.TagNumber(2)
@@ -246,7 +306,19 @@ enum ChunksResponse_Type {
 }
 
 class ChunksResponse extends $pb.GeneratedMessage {
-  factory ChunksResponse() => create();
+  factory ChunksResponse({
+    AudioChunkInfo? info,
+    AudioChunk? chunk,
+  }) {
+    final $result = create();
+    if (info != null) {
+      $result.info = info;
+    }
+    if (chunk != null) {
+      $result.chunk = chunk;
+    }
+    return $result;
+  }
   ChunksResponse._() : super();
   factory ChunksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChunksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -311,7 +383,15 @@ class ChunksResponse extends $pb.GeneratedMessage {
 }
 
 class PropertiesRequest extends $pb.GeneratedMessage {
-  factory PropertiesRequest() => create();
+  factory PropertiesRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   PropertiesRequest._() : super();
   factory PropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -342,6 +422,7 @@ class PropertiesRequest extends $pb.GeneratedMessage {
   static PropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PropertiesRequest>(create);
   static PropertiesRequest? _defaultInstance;
 
+  /// Name of an audio input
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -353,7 +434,39 @@ class PropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class PropertiesResponse extends $pb.GeneratedMessage {
-  factory PropertiesResponse() => create();
+  factory PropertiesResponse({
+    $core.int? channelCount,
+    $3.Duration? latency,
+    $core.int? sampleRate,
+    $core.int? sampleSize,
+    $core.bool? isBigEndian,
+    $core.bool? isFloat,
+    $core.bool? isInterleaved,
+  }) {
+    final $result = create();
+    if (channelCount != null) {
+      $result.channelCount = channelCount;
+    }
+    if (latency != null) {
+      $result.latency = latency;
+    }
+    if (sampleRate != null) {
+      $result.sampleRate = sampleRate;
+    }
+    if (sampleSize != null) {
+      $result.sampleSize = sampleSize;
+    }
+    if (isBigEndian != null) {
+      $result.isBigEndian = isBigEndian;
+    }
+    if (isFloat != null) {
+      $result.isFloat = isFloat;
+    }
+    if (isInterleaved != null) {
+      $result.isInterleaved = isInterleaved;
+    }
+    return $result;
+  }
   PropertiesResponse._() : super();
   factory PropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

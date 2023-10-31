@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,8 +21,33 @@ import 'syntax.pb.dart' as $3;
 
 export 'checked.pbenum.dart';
 
+/// A CEL expression which has been successfully type checked.
 class CheckedExpr extends $pb.GeneratedMessage {
-  factory CheckedExpr() => create();
+  factory CheckedExpr({
+    $core.Map<$fixnum.Int64, Reference>? referenceMap,
+    $core.Map<$fixnum.Int64, Type>? typeMap,
+    $3.Expr? expr,
+    $3.SourceInfo? sourceInfo,
+    $core.String? exprVersion,
+  }) {
+    final $result = create();
+    if (referenceMap != null) {
+      $result.referenceMap.addAll(referenceMap);
+    }
+    if (typeMap != null) {
+      $result.typeMap.addAll(typeMap);
+    }
+    if (expr != null) {
+      $result.expr = expr;
+    }
+    if (sourceInfo != null) {
+      $result.sourceInfo = sourceInfo;
+    }
+    if (exprVersion != null) {
+      $result.exprVersion = exprVersion;
+    }
+    return $result;
+  }
   CheckedExpr._() : super();
   factory CheckedExpr.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CheckedExpr.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -57,12 +82,34 @@ class CheckedExpr extends $pb.GeneratedMessage {
   static CheckedExpr getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CheckedExpr>(create);
   static CheckedExpr? _defaultInstance;
 
+  ///  A map from expression ids to resolved references.
+  ///
+  ///  The following entries are in this table:
+  ///
+  ///  - An Ident or Select expression is represented here if it resolves to a
+  ///    declaration. For instance, if `a.b.c` is represented by
+  ///    `select(select(id(a), b), c)`, and `a.b` resolves to a declaration,
+  ///    while `c` is a field selection, then the reference is attached to the
+  ///    nested select expression (but not to the id or or the outer select).
+  ///    In turn, if `a` resolves to a declaration and `b.c` are field selections,
+  ///    the reference is attached to the ident expression.
+  ///  - Every Call expression has an entry here, identifying the function being
+  ///    called.
+  ///  - Every CreateStruct expression for a message has an entry, identifying
+  ///    the message.
   @$pb.TagNumber(2)
   $core.Map<$fixnum.Int64, Reference> get referenceMap => $_getMap(0);
 
+  ///  A map from expression ids to types.
+  ///
+  ///  Every expression node which has a type different than DYN has a mapping
+  ///  here. If an expression has type DYN, it is omitted from this map to save
+  ///  space.
   @$pb.TagNumber(3)
   $core.Map<$fixnum.Int64, Type> get typeMap => $_getMap(1);
 
+  /// The checked expression. Semantically equivalent to the parsed `expr`, but
+  /// may have structural differences.
   @$pb.TagNumber(4)
   $3.Expr get expr => $_getN(2);
   @$pb.TagNumber(4)
@@ -74,6 +121,8 @@ class CheckedExpr extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $3.Expr ensureExpr() => $_ensure(2);
 
+  /// The source info derived from input that generated the parsed `expr` and
+  /// any optimizations made during the type-checking pass.
   @$pb.TagNumber(5)
   $3.SourceInfo get sourceInfo => $_getN(3);
   @$pb.TagNumber(5)
@@ -85,6 +134,13 @@ class CheckedExpr extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $3.SourceInfo ensureSourceInfo() => $_ensure(3);
 
+  ///  The expr version indicates the major / minor version number of the `expr`
+  ///  representation.
+  ///
+  ///  The most common reason for a version change will be to indicate to the CEL
+  ///  runtimes that transformations have been performed on the expr during static
+  ///  analysis. In some cases, this will save the runtime the work of applying
+  ///  the same or similar transformations prior to evaluation.
   @$pb.TagNumber(6)
   $core.String get exprVersion => $_getSZ(4);
   @$pb.TagNumber(6)
@@ -95,8 +151,17 @@ class CheckedExpr extends $pb.GeneratedMessage {
   void clearExprVersion() => clearField(6);
 }
 
+/// List type with typed elements, e.g. `list<example.proto.MyMessage>`.
 class Type_ListType extends $pb.GeneratedMessage {
-  factory Type_ListType() => create();
+  factory Type_ListType({
+    Type? elemType,
+  }) {
+    final $result = create();
+    if (elemType != null) {
+      $result.elemType = elemType;
+    }
+    return $result;
+  }
   Type_ListType._() : super();
   factory Type_ListType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Type_ListType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -127,6 +192,7 @@ class Type_ListType extends $pb.GeneratedMessage {
   static Type_ListType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Type_ListType>(create);
   static Type_ListType? _defaultInstance;
 
+  /// The element type.
   @$pb.TagNumber(1)
   Type get elemType => $_getN(0);
   @$pb.TagNumber(1)
@@ -139,8 +205,21 @@ class Type_ListType extends $pb.GeneratedMessage {
   Type ensureElemType() => $_ensure(0);
 }
 
+/// Map type with parameterized key and value types, e.g. `map<string, int>`.
 class Type_MapType extends $pb.GeneratedMessage {
-  factory Type_MapType() => create();
+  factory Type_MapType({
+    Type? keyType,
+    Type? valueType,
+  }) {
+    final $result = create();
+    if (keyType != null) {
+      $result.keyType = keyType;
+    }
+    if (valueType != null) {
+      $result.valueType = valueType;
+    }
+    return $result;
+  }
   Type_MapType._() : super();
   factory Type_MapType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Type_MapType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -172,6 +251,7 @@ class Type_MapType extends $pb.GeneratedMessage {
   static Type_MapType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Type_MapType>(create);
   static Type_MapType? _defaultInstance;
 
+  /// The type of the key.
   @$pb.TagNumber(1)
   Type get keyType => $_getN(0);
   @$pb.TagNumber(1)
@@ -183,6 +263,7 @@ class Type_MapType extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Type ensureKeyType() => $_ensure(0);
 
+  /// The type of the value.
   @$pb.TagNumber(2)
   Type get valueType => $_getN(1);
   @$pb.TagNumber(2)
@@ -195,8 +276,21 @@ class Type_MapType extends $pb.GeneratedMessage {
   Type ensureValueType() => $_ensure(1);
 }
 
+/// Function type with result and arg types.
 class Type_FunctionType extends $pb.GeneratedMessage {
-  factory Type_FunctionType() => create();
+  factory Type_FunctionType({
+    Type? resultType,
+    $core.Iterable<Type>? argTypes,
+  }) {
+    final $result = create();
+    if (resultType != null) {
+      $result.resultType = resultType;
+    }
+    if (argTypes != null) {
+      $result.argTypes.addAll(argTypes);
+    }
+    return $result;
+  }
   Type_FunctionType._() : super();
   factory Type_FunctionType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Type_FunctionType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -228,6 +322,7 @@ class Type_FunctionType extends $pb.GeneratedMessage {
   static Type_FunctionType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Type_FunctionType>(create);
   static Type_FunctionType? _defaultInstance;
 
+  /// Result type of the function.
   @$pb.TagNumber(1)
   Type get resultType => $_getN(0);
   @$pb.TagNumber(1)
@@ -239,12 +334,26 @@ class Type_FunctionType extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Type ensureResultType() => $_ensure(0);
 
+  /// Argument types of the function.
   @$pb.TagNumber(2)
   $core.List<Type> get argTypes => $_getList(1);
 }
 
+/// Application defined abstract type.
 class Type_AbstractType extends $pb.GeneratedMessage {
-  factory Type_AbstractType() => create();
+  factory Type_AbstractType({
+    $core.String? name,
+    $core.Iterable<Type>? parameterTypes,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (parameterTypes != null) {
+      $result.parameterTypes.addAll(parameterTypes);
+    }
+    return $result;
+  }
   Type_AbstractType._() : super();
   factory Type_AbstractType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Type_AbstractType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -276,6 +385,7 @@ class Type_AbstractType extends $pb.GeneratedMessage {
   static Type_AbstractType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Type_AbstractType>(create);
   static Type_AbstractType? _defaultInstance;
 
+  /// The fully qualified name of this abstract type.
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -285,6 +395,7 @@ class Type_AbstractType extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Parameter types for this abstract type.
   @$pb.TagNumber(2)
   $core.List<Type> get parameterTypes => $_getList(1);
 }
@@ -306,8 +417,65 @@ enum Type_TypeKind {
   notSet
 }
 
+/// Represents a CEL type.
 class Type extends $pb.GeneratedMessage {
-  factory Type() => create();
+  factory Type({
+    $4.Empty? dyn,
+    $2.NullValue? null_2,
+    Type_PrimitiveType? primitive,
+    Type_PrimitiveType? wrapper,
+    Type_WellKnownType? wellKnown,
+    Type_ListType? listType,
+    Type_MapType? mapType,
+    Type_FunctionType? function,
+    $core.String? messageType,
+    $core.String? typeParam,
+    Type? type,
+    $4.Empty? error,
+    Type_AbstractType? abstractType,
+  }) {
+    final $result = create();
+    if (dyn != null) {
+      $result.dyn = dyn;
+    }
+    if (null_2 != null) {
+      $result.null_2 = null_2;
+    }
+    if (primitive != null) {
+      $result.primitive = primitive;
+    }
+    if (wrapper != null) {
+      $result.wrapper = wrapper;
+    }
+    if (wellKnown != null) {
+      $result.wellKnown = wellKnown;
+    }
+    if (listType != null) {
+      $result.listType = listType;
+    }
+    if (mapType != null) {
+      $result.mapType = mapType;
+    }
+    if (function != null) {
+      $result.function = function;
+    }
+    if (messageType != null) {
+      $result.messageType = messageType;
+    }
+    if (typeParam != null) {
+      $result.typeParam = typeParam;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    if (abstractType != null) {
+      $result.abstractType = abstractType;
+    }
+    return $result;
+  }
   Type._() : super();
   factory Type.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Type.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -370,6 +538,7 @@ class Type extends $pb.GeneratedMessage {
   Type_TypeKind whichTypeKind() => _Type_TypeKindByTag[$_whichOneof(0)]!;
   void clearTypeKind() => clearField($_whichOneof(0));
 
+  /// Dynamic type.
   @$pb.TagNumber(1)
   $4.Empty get dyn => $_getN(0);
   @$pb.TagNumber(1)
@@ -381,6 +550,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.Empty ensureDyn() => $_ensure(0);
 
+  /// Null value.
   @$pb.TagNumber(2)
   $2.NullValue get null_2 => $_getN(1);
   @$pb.TagNumber(2)
@@ -390,6 +560,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearNull_2() => clearField(2);
 
+  /// Primitive types: `true`, `1u`, `-2.0`, `'string'`, `b'bytes'`.
   @$pb.TagNumber(3)
   Type_PrimitiveType get primitive => $_getN(2);
   @$pb.TagNumber(3)
@@ -399,6 +570,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPrimitive() => clearField(3);
 
+  /// Wrapper of a primitive type, e.g. `google.protobuf.Int64Value`.
   @$pb.TagNumber(4)
   Type_PrimitiveType get wrapper => $_getN(3);
   @$pb.TagNumber(4)
@@ -408,6 +580,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearWrapper() => clearField(4);
 
+  /// Well-known protobuf type such as `google.protobuf.Timestamp`.
   @$pb.TagNumber(5)
   Type_WellKnownType get wellKnown => $_getN(4);
   @$pb.TagNumber(5)
@@ -417,6 +590,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearWellKnown() => clearField(5);
 
+  /// Parameterized list with elements of `list_type`, e.g. `list<timestamp>`.
   @$pb.TagNumber(6)
   Type_ListType get listType => $_getN(5);
   @$pb.TagNumber(6)
@@ -428,6 +602,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   Type_ListType ensureListType() => $_ensure(5);
 
+  /// Parameterized map with typed keys and values.
   @$pb.TagNumber(7)
   Type_MapType get mapType => $_getN(6);
   @$pb.TagNumber(7)
@@ -439,6 +614,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   Type_MapType ensureMapType() => $_ensure(6);
 
+  /// Function type.
   @$pb.TagNumber(8)
   Type_FunctionType get function => $_getN(7);
   @$pb.TagNumber(8)
@@ -450,6 +626,10 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   Type_FunctionType ensureFunction() => $_ensure(7);
 
+  ///  Protocol buffer message type.
+  ///
+  ///  The `message_type` string specifies the qualified message type name. For
+  ///  example, `google.plus.Profile`.
   @$pb.TagNumber(9)
   $core.String get messageType => $_getSZ(8);
   @$pb.TagNumber(9)
@@ -459,6 +639,11 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearMessageType() => clearField(9);
 
+  ///  Type param type.
+  ///
+  ///  The `type_param` string specifies the type parameter name, e.g. `list<E>`
+  ///  would be a `list_type` whose element type was a `type_param` type
+  ///  named `E`.
   @$pb.TagNumber(10)
   $core.String get typeParam => $_getSZ(9);
   @$pb.TagNumber(10)
@@ -468,6 +653,10 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearTypeParam() => clearField(10);
 
+  ///  Type type.
+  ///
+  ///  The `type` value specifies the target type. e.g. int is type with a
+  ///  target type of `Primitive.INT`.
   @$pb.TagNumber(11)
   Type get type => $_getN(10);
   @$pb.TagNumber(11)
@@ -479,6 +668,11 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   Type ensureType() => $_ensure(10);
 
+  ///  Error type.
+  ///
+  ///  During type-checking if an expression is an error, its type is propagated
+  ///  as the `ERROR` type. This permits the type-checker to discover other
+  ///  errors present in the expression.
   @$pb.TagNumber(12)
   $4.Empty get error => $_getN(11);
   @$pb.TagNumber(12)
@@ -490,6 +684,7 @@ class Type extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $4.Empty ensureError() => $_ensure(11);
 
+  /// Abstract, application defined type.
   @$pb.TagNumber(14)
   Type_AbstractType get abstractType => $_getN(12);
   @$pb.TagNumber(14)
@@ -502,8 +697,30 @@ class Type extends $pb.GeneratedMessage {
   Type_AbstractType ensureAbstractType() => $_ensure(12);
 }
 
+///  Identifier declaration which specifies its type and optional `Expr` value.
+///
+///  An identifier without a value is a declaration that must be provided at
+///  evaluation time. An identifier with a value should resolve to a constant,
+///  but may be used in conjunction with other identifiers bound at evaluation
+///  time.
 class Decl_IdentDecl extends $pb.GeneratedMessage {
-  factory Decl_IdentDecl() => create();
+  factory Decl_IdentDecl({
+    Type? type,
+    $3.Constant? value,
+    $core.String? doc,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (doc != null) {
+      $result.doc = doc;
+    }
+    return $result;
+  }
   Decl_IdentDecl._() : super();
   factory Decl_IdentDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Decl_IdentDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -536,6 +753,7 @@ class Decl_IdentDecl extends $pb.GeneratedMessage {
   static Decl_IdentDecl getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Decl_IdentDecl>(create);
   static Decl_IdentDecl? _defaultInstance;
 
+  /// Required. The type of the identifier.
   @$pb.TagNumber(1)
   Type get type => $_getN(0);
   @$pb.TagNumber(1)
@@ -547,6 +765,8 @@ class Decl_IdentDecl extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Type ensureType() => $_ensure(0);
 
+  /// The constant value of the identifier. If not specified, the identifier
+  /// must be supplied at evaluation time.
   @$pb.TagNumber(2)
   $3.Constant get value => $_getN(1);
   @$pb.TagNumber(2)
@@ -558,6 +778,7 @@ class Decl_IdentDecl extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $3.Constant ensureValue() => $_ensure(1);
 
+  /// Documentation string for the identifier.
   @$pb.TagNumber(3)
   $core.String get doc => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -568,8 +789,46 @@ class Decl_IdentDecl extends $pb.GeneratedMessage {
   void clearDoc() => clearField(3);
 }
 
+///  An overload indicates a function's parameter types and return type, and
+///  may optionally include a function body described in terms of
+///  [Expr][google.api.expr.v1alpha1.Expr] values.
+///
+///  Functions overloads are declared in either a function or method
+///  call-style. For methods, the `params[0]` is the expected type of the
+///  target receiver.
+///
+///  Overloads must have non-overlapping argument types after erasure of all
+///  parameterized type variables (similar as type erasure in Java).
 class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
-  factory Decl_FunctionDecl_Overload() => create();
+  factory Decl_FunctionDecl_Overload({
+    $core.String? overloadId,
+    $core.Iterable<Type>? params,
+    $core.Iterable<$core.String>? typeParams,
+    Type? resultType,
+    $core.bool? isInstanceFunction,
+    $core.String? doc,
+  }) {
+    final $result = create();
+    if (overloadId != null) {
+      $result.overloadId = overloadId;
+    }
+    if (params != null) {
+      $result.params.addAll(params);
+    }
+    if (typeParams != null) {
+      $result.typeParams.addAll(typeParams);
+    }
+    if (resultType != null) {
+      $result.resultType = resultType;
+    }
+    if (isInstanceFunction != null) {
+      $result.isInstanceFunction = isInstanceFunction;
+    }
+    if (doc != null) {
+      $result.doc = doc;
+    }
+    return $result;
+  }
   Decl_FunctionDecl_Overload._() : super();
   factory Decl_FunctionDecl_Overload.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Decl_FunctionDecl_Overload.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -605,6 +864,12 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   static Decl_FunctionDecl_Overload getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Decl_FunctionDecl_Overload>(create);
   static Decl_FunctionDecl_Overload? _defaultInstance;
 
+  ///  Required. Globally unique overload name of the function which reflects
+  ///  the function name and argument types.
+  ///
+  ///  This will be used by a [Reference][google.api.expr.v1alpha1.Reference]
+  ///  to indicate the `overload_id` that was resolved for the function
+  ///  `name`.
   @$pb.TagNumber(1)
   $core.String get overloadId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -614,12 +879,29 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOverloadId() => clearField(1);
 
+  ///  List of function parameter [Type][google.api.expr.v1alpha1.Type]
+  ///  values.
+  ///
+  ///  Param types are disjoint after generic type parameters have been
+  ///  replaced with the type `DYN`. Since the `DYN` type is compatible with
+  ///  any other type, this means that if `A` is a type parameter, the
+  ///  function types `int<A>` and `int<int>` are not disjoint. Likewise,
+  ///  `map<string, string>` is not disjoint from `map<K, V>`.
+  ///
+  ///  When the `result_type` of a function is a generic type param, the
+  ///  type param name also appears as the `type` of on at least one params.
   @$pb.TagNumber(2)
   $core.List<Type> get params => $_getList(1);
 
+  ///  The type param names associated with the function declaration.
+  ///
+  ///  For example, `function ex<K,V>(K key, map<K, V> map) : V` would yield
+  ///  the type params of `K, V`.
   @$pb.TagNumber(3)
   $core.List<$core.String> get typeParams => $_getList(2);
 
+  /// Required. The result type of the function. For example, the operator
+  /// `string.isEmpty()` would have `result_type` of `kind: BOOL`.
   @$pb.TagNumber(4)
   Type get resultType => $_getN(3);
   @$pb.TagNumber(4)
@@ -631,6 +913,11 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   Type ensureResultType() => $_ensure(3);
 
+  ///  Whether the function is to be used in a method call-style `x.f(...)`
+  ///  or a function call-style `f(x, ...)`.
+  ///
+  ///  For methods, the first parameter declaration, `params[0]` is the
+  ///  expected type of the target receiver.
   @$pb.TagNumber(5)
   $core.bool get isInstanceFunction => $_getBF(4);
   @$pb.TagNumber(5)
@@ -640,6 +927,7 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearIsInstanceFunction() => clearField(5);
 
+  /// Documentation string for the overload.
   @$pb.TagNumber(6)
   $core.String get doc => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -650,8 +938,21 @@ class Decl_FunctionDecl_Overload extends $pb.GeneratedMessage {
   void clearDoc() => clearField(6);
 }
 
+///  Function declaration specifies one or more overloads which indicate the
+///  function's parameter types and return type.
+///
+///  Functions have no observable side-effects (there may be side-effects like
+///  logging which are not observable from CEL).
 class Decl_FunctionDecl extends $pb.GeneratedMessage {
-  factory Decl_FunctionDecl() => create();
+  factory Decl_FunctionDecl({
+    $core.Iterable<Decl_FunctionDecl_Overload>? overloads,
+  }) {
+    final $result = create();
+    if (overloads != null) {
+      $result.overloads.addAll(overloads);
+    }
+    return $result;
+  }
   Decl_FunctionDecl._() : super();
   factory Decl_FunctionDecl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Decl_FunctionDecl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -682,6 +983,7 @@ class Decl_FunctionDecl extends $pb.GeneratedMessage {
   static Decl_FunctionDecl getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Decl_FunctionDecl>(create);
   static Decl_FunctionDecl? _defaultInstance;
 
+  /// Required. List of function overloads, must contain at least one overload.
   @$pb.TagNumber(1)
   $core.List<Decl_FunctionDecl_Overload> get overloads => $_getList(0);
 }
@@ -692,8 +994,28 @@ enum Decl_DeclKind {
   notSet
 }
 
+///  Represents a declaration of a named value or function.
+///
+///  A declaration is part of the contract between the expression, the agent
+///  evaluating that expression, and the caller requesting evaluation.
 class Decl extends $pb.GeneratedMessage {
-  factory Decl() => create();
+  factory Decl({
+    $core.String? name,
+    Decl_IdentDecl? ident,
+    Decl_FunctionDecl? function,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (ident != null) {
+      $result.ident = ident;
+    }
+    if (function != null) {
+      $result.function = function;
+    }
+    return $result;
+  }
   Decl._() : super();
   factory Decl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Decl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -735,6 +1057,16 @@ class Decl extends $pb.GeneratedMessage {
   Decl_DeclKind whichDeclKind() => _Decl_DeclKindByTag[$_whichOneof(0)]!;
   void clearDeclKind() => clearField($_whichOneof(0));
 
+  ///  The fully qualified name of the declaration.
+  ///
+  ///  Declarations are organized in containers and this represents the full path
+  ///  to the declaration in its container, as in `google.api.expr.Decl`.
+  ///
+  ///  Declarations used as
+  ///  [FunctionDecl.Overload][google.api.expr.v1alpha1.Decl.FunctionDecl.Overload]
+  ///  parameters may or may not have a name depending on whether the overload is
+  ///  function declaration or a function definition containing a result
+  ///  [Expr][google.api.expr.v1alpha1.Expr].
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -744,6 +1076,7 @@ class Decl extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Identifier declaration.
   @$pb.TagNumber(2)
   Decl_IdentDecl get ident => $_getN(1);
   @$pb.TagNumber(2)
@@ -755,6 +1088,7 @@ class Decl extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Decl_IdentDecl ensureIdent() => $_ensure(1);
 
+  /// Function declaration.
   @$pb.TagNumber(3)
   Decl_FunctionDecl get function => $_getN(2);
   @$pb.TagNumber(3)
@@ -767,8 +1101,25 @@ class Decl extends $pb.GeneratedMessage {
   Decl_FunctionDecl ensureFunction() => $_ensure(2);
 }
 
+/// Describes a resolved reference to a declaration.
 class Reference extends $pb.GeneratedMessage {
-  factory Reference() => create();
+  factory Reference({
+    $core.String? name,
+    $core.Iterable<$core.String>? overloadId,
+    $3.Constant? value,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (overloadId != null) {
+      $result.overloadId.addAll(overloadId);
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   Reference._() : super();
   factory Reference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Reference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -801,6 +1152,7 @@ class Reference extends $pb.GeneratedMessage {
   static Reference getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Reference>(create);
   static Reference? _defaultInstance;
 
+  /// The fully qualified name of the declaration.
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -810,9 +1162,20 @@ class Reference extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  ///  For references to functions, this is a list of `Overload.overload_id`
+  ///  values which match according to typing rules.
+  ///
+  ///  If the list has more than one element, overload resolution among the
+  ///  presented candidates must happen at runtime because of dynamic types. The
+  ///  type checker attempts to narrow down this list as much as possible.
+  ///
+  ///  Empty if this is not a reference to a
+  ///  [Decl.FunctionDecl][google.api.expr.v1alpha1.Decl.FunctionDecl].
   @$pb.TagNumber(3)
   $core.List<$core.String> get overloadId => $_getList(1);
 
+  /// For references to constants, this may contain the value of the
+  /// constant if known at compile time.
   @$pb.TagNumber(4)
   $3.Constant get value => $_getN(2);
   @$pb.TagNumber(4)

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,19 @@ import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetLinearVelocityRequest extends $pb.GeneratedMessage {
-  factory GetLinearVelocityRequest() => create();
+  factory GetLinearVelocityRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetLinearVelocityRequest._() : super();
   factory GetLinearVelocityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLinearVelocityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +61,7 @@ class GetLinearVelocityRequest extends $pb.GeneratedMessage {
   static GetLinearVelocityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLinearVelocityRequest>(create);
   static GetLinearVelocityRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -58,6 +71,7 @@ class GetLinearVelocityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -71,7 +85,15 @@ class GetLinearVelocityRequest extends $pb.GeneratedMessage {
 }
 
 class GetLinearVelocityResponse extends $pb.GeneratedMessage {
-  factory GetLinearVelocityResponse() => create();
+  factory GetLinearVelocityResponse({
+    $1.Vector3? linearVelocity,
+  }) {
+    final $result = create();
+    if (linearVelocity != null) {
+      $result.linearVelocity = linearVelocity;
+    }
+    return $result;
+  }
   GetLinearVelocityResponse._() : super();
   factory GetLinearVelocityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLinearVelocityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -102,6 +124,7 @@ class GetLinearVelocityResponse extends $pb.GeneratedMessage {
   static GetLinearVelocityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLinearVelocityResponse>(create);
   static GetLinearVelocityResponse? _defaultInstance;
 
+  /// Linear velocity in m/s across x/y/z axes
   @$pb.TagNumber(1)
   $1.Vector3 get linearVelocity => $_getN(0);
   @$pb.TagNumber(1)
@@ -115,7 +138,19 @@ class GetLinearVelocityResponse extends $pb.GeneratedMessage {
 }
 
 class GetAngularVelocityRequest extends $pb.GeneratedMessage {
-  factory GetAngularVelocityRequest() => create();
+  factory GetAngularVelocityRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetAngularVelocityRequest._() : super();
   factory GetAngularVelocityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetAngularVelocityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -147,6 +182,7 @@ class GetAngularVelocityRequest extends $pb.GeneratedMessage {
   static GetAngularVelocityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAngularVelocityRequest>(create);
   static GetAngularVelocityRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -156,6 +192,7 @@ class GetAngularVelocityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -169,7 +206,15 @@ class GetAngularVelocityRequest extends $pb.GeneratedMessage {
 }
 
 class GetAngularVelocityResponse extends $pb.GeneratedMessage {
-  factory GetAngularVelocityResponse() => create();
+  factory GetAngularVelocityResponse({
+    $1.Vector3? angularVelocity,
+  }) {
+    final $result = create();
+    if (angularVelocity != null) {
+      $result.angularVelocity = angularVelocity;
+    }
+    return $result;
+  }
   GetAngularVelocityResponse._() : super();
   factory GetAngularVelocityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetAngularVelocityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -200,6 +245,7 @@ class GetAngularVelocityResponse extends $pb.GeneratedMessage {
   static GetAngularVelocityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAngularVelocityResponse>(create);
   static GetAngularVelocityResponse? _defaultInstance;
 
+  /// Angular velocity in degrees/s across x/y/z axes
   @$pb.TagNumber(1)
   $1.Vector3 get angularVelocity => $_getN(0);
   @$pb.TagNumber(1)
@@ -213,7 +259,19 @@ class GetAngularVelocityResponse extends $pb.GeneratedMessage {
 }
 
 class GetCompassHeadingRequest extends $pb.GeneratedMessage {
-  factory GetCompassHeadingRequest() => create();
+  factory GetCompassHeadingRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetCompassHeadingRequest._() : super();
   factory GetCompassHeadingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCompassHeadingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -245,6 +303,7 @@ class GetCompassHeadingRequest extends $pb.GeneratedMessage {
   static GetCompassHeadingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompassHeadingRequest>(create);
   static GetCompassHeadingRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -254,6 +313,7 @@ class GetCompassHeadingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -267,7 +327,15 @@ class GetCompassHeadingRequest extends $pb.GeneratedMessage {
 }
 
 class GetCompassHeadingResponse extends $pb.GeneratedMessage {
-  factory GetCompassHeadingResponse() => create();
+  factory GetCompassHeadingResponse({
+    $core.double? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   GetCompassHeadingResponse._() : super();
   factory GetCompassHeadingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCompassHeadingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -298,6 +366,8 @@ class GetCompassHeadingResponse extends $pb.GeneratedMessage {
   static GetCompassHeadingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompassHeadingResponse>(create);
   static GetCompassHeadingResponse? _defaultInstance;
 
+  /// A number from 0-359 in degrees where
+  /// 0 is North, 90 is East, 180 is South, and 270 is   West
   @$pb.TagNumber(1)
   $core.double get value => $_getN(0);
   @$pb.TagNumber(1)
@@ -309,7 +379,19 @@ class GetCompassHeadingResponse extends $pb.GeneratedMessage {
 }
 
 class GetOrientationRequest extends $pb.GeneratedMessage {
-  factory GetOrientationRequest() => create();
+  factory GetOrientationRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetOrientationRequest._() : super();
   factory GetOrientationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrientationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -341,6 +423,7 @@ class GetOrientationRequest extends $pb.GeneratedMessage {
   static GetOrientationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrientationRequest>(create);
   static GetOrientationRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -350,6 +433,7 @@ class GetOrientationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -363,7 +447,15 @@ class GetOrientationRequest extends $pb.GeneratedMessage {
 }
 
 class GetOrientationResponse extends $pb.GeneratedMessage {
-  factory GetOrientationResponse() => create();
+  factory GetOrientationResponse({
+    $1.Orientation? orientation,
+  }) {
+    final $result = create();
+    if (orientation != null) {
+      $result.orientation = orientation;
+    }
+    return $result;
+  }
   GetOrientationResponse._() : super();
   factory GetOrientationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrientationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -394,6 +486,8 @@ class GetOrientationResponse extends $pb.GeneratedMessage {
   static GetOrientationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrientationResponse>(create);
   static GetOrientationResponse? _defaultInstance;
 
+  /// Orientation is returned as an orientation message with
+  /// OX OY OZ as unit-normalized components of the axis of the vector, and Theta in degrees
   @$pb.TagNumber(1)
   $1.Orientation get orientation => $_getN(0);
   @$pb.TagNumber(1)
@@ -407,7 +501,19 @@ class GetOrientationResponse extends $pb.GeneratedMessage {
 }
 
 class GetPositionRequest extends $pb.GeneratedMessage {
-  factory GetPositionRequest() => create();
+  factory GetPositionRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPositionRequest._() : super();
   factory GetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -439,6 +545,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   static GetPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionRequest>(create);
   static GetPositionRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -448,6 +555,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -461,7 +569,19 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
-  factory GetPositionResponse() => create();
+  factory GetPositionResponse({
+    $1.GeoPoint? coordinate,
+    $core.double? altitudeM,
+  }) {
+    final $result = create();
+    if (coordinate != null) {
+      $result.coordinate = coordinate;
+    }
+    if (altitudeM != null) {
+      $result.altitudeM = altitudeM;
+    }
+    return $result;
+  }
   GetPositionResponse._() : super();
   factory GetPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -493,6 +613,8 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   static GetPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionResponse>(create);
   static GetPositionResponse? _defaultInstance;
 
+  /// Position is returned in a coordinate of latitute and longitude
+  /// and an altidue in meters
   @$pb.TagNumber(1)
   $1.GeoPoint get coordinate => $_getN(0);
   @$pb.TagNumber(1)
@@ -515,7 +637,19 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
-  factory GetPropertiesRequest() => create();
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPropertiesRequest._() : super();
   factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -547,6 +681,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
   static GetPropertiesRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -556,6 +691,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -569,7 +705,35 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
-  factory GetPropertiesResponse() => create();
+  factory GetPropertiesResponse({
+    $core.bool? linearVelocitySupported,
+    $core.bool? angularVelocitySupported,
+    $core.bool? orientationSupported,
+    $core.bool? positionSupported,
+    $core.bool? compassHeadingSupported,
+    $core.bool? linearAccelerationSupported,
+  }) {
+    final $result = create();
+    if (linearVelocitySupported != null) {
+      $result.linearVelocitySupported = linearVelocitySupported;
+    }
+    if (angularVelocitySupported != null) {
+      $result.angularVelocitySupported = angularVelocitySupported;
+    }
+    if (orientationSupported != null) {
+      $result.orientationSupported = orientationSupported;
+    }
+    if (positionSupported != null) {
+      $result.positionSupported = positionSupported;
+    }
+    if (compassHeadingSupported != null) {
+      $result.compassHeadingSupported = compassHeadingSupported;
+    }
+    if (linearAccelerationSupported != null) {
+      $result.linearAccelerationSupported = linearAccelerationSupported;
+    }
+    return $result;
+  }
   GetPropertiesResponse._() : super();
   factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -661,7 +825,19 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
 }
 
 class GetAccuracyRequest extends $pb.GeneratedMessage {
-  factory GetAccuracyRequest() => create();
+  factory GetAccuracyRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetAccuracyRequest._() : super();
   factory GetAccuracyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetAccuracyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -693,6 +869,7 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
   static GetAccuracyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAccuracyRequest>(create);
   static GetAccuracyRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -702,6 +879,7 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -715,7 +893,15 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
 }
 
 class GetAccuracyResponse extends $pb.GeneratedMessage {
-  factory GetAccuracyResponse() => create();
+  factory GetAccuracyResponse({
+    $core.Map<$core.String, $core.double>? accuracy,
+  }) {
+    final $result = create();
+    if (accuracy != null) {
+      $result.accuracy.addAll(accuracy);
+    }
+    return $result;
+  }
   GetAccuracyResponse._() : super();
   factory GetAccuracyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetAccuracyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -751,7 +937,19 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
 }
 
 class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
-  factory GetLinearAccelerationRequest() => create();
+  factory GetLinearAccelerationRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetLinearAccelerationRequest._() : super();
   factory GetLinearAccelerationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLinearAccelerationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -783,6 +981,7 @@ class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
   static GetLinearAccelerationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLinearAccelerationRequest>(create);
   static GetLinearAccelerationRequest? _defaultInstance;
 
+  /// Name of a movement sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -792,6 +991,7 @@ class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -805,7 +1005,15 @@ class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
 }
 
 class GetLinearAccelerationResponse extends $pb.GeneratedMessage {
-  factory GetLinearAccelerationResponse() => create();
+  factory GetLinearAccelerationResponse({
+    $1.Vector3? linearAcceleration,
+  }) {
+    final $result = create();
+    if (linearAcceleration != null) {
+      $result.linearAcceleration = linearAcceleration;
+    }
+    return $result;
+  }
   GetLinearAccelerationResponse._() : super();
   factory GetLinearAccelerationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLinearAccelerationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -836,6 +1044,7 @@ class GetLinearAccelerationResponse extends $pb.GeneratedMessage {
   static GetLinearAccelerationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLinearAccelerationResponse>(create);
   static GetLinearAccelerationResponse? _defaultInstance;
 
+  /// Linear acceleration in m/s across x/y/z axes
   @$pb.TagNumber(1)
   $1.Vector3 get linearAcceleration => $_getN(0);
   @$pb.TagNumber(1)

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// CEL primitive types.
 class Type_PrimitiveType extends $pb.ProtobufEnum {
   static const Type_PrimitiveType PRIMITIVE_TYPE_UNSPECIFIED = Type_PrimitiveType._(0, _omitEnumNames ? '' : 'PRIMITIVE_TYPE_UNSPECIFIED');
   static const Type_PrimitiveType BOOL = Type_PrimitiveType._(1, _omitEnumNames ? '' : 'BOOL');
@@ -38,6 +39,7 @@ class Type_PrimitiveType extends $pb.ProtobufEnum {
   const Type_PrimitiveType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Well-known protobuf types treated with first-class support in CEL.
 class Type_WellKnownType extends $pb.ProtobufEnum {
   static const Type_WellKnownType WELL_KNOWN_TYPE_UNSPECIFIED = Type_WellKnownType._(0, _omitEnumNames ? '' : 'WELL_KNOWN_TYPE_UNSPECIFIED');
   static const Type_WellKnownType ANY = Type_WellKnownType._(1, _omitEnumNames ? '' : 'ANY');

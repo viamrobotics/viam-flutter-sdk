@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,8 +16,30 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../../google/protobuf/timestamp.pb.dart' as $3;
 import '../../../../google/rpc/status.pb.dart' as $2;
 
+/// ICECandidate represents an ICE candidate.
+/// From https://github.com/pion/webrtc/blob/5f6baf73255598a7b4a7c9400bb0381acc9aa3dc/icecandidateinit.go
 class ICECandidate extends $pb.GeneratedMessage {
-  factory ICECandidate() => create();
+  factory ICECandidate({
+    $core.String? candidate,
+    $core.String? sdpMid,
+    $core.int? sdpmLineIndex,
+    $core.String? usernameFragment,
+  }) {
+    final $result = create();
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    if (sdpMid != null) {
+      $result.sdpMid = sdpMid;
+    }
+    if (sdpmLineIndex != null) {
+      $result.sdpmLineIndex = sdpmLineIndex;
+    }
+    if (usernameFragment != null) {
+      $result.usernameFragment = usernameFragment;
+    }
+    return $result;
+  }
   ICECandidate._() : super();
   factory ICECandidate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ICECandidate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -88,8 +110,21 @@ class ICECandidate extends $pb.GeneratedMessage {
   void clearUsernameFragment() => clearField(4);
 }
 
+/// CallRequest is the SDP offer that the controlling side is making.
 class CallRequest extends $pb.GeneratedMessage {
-  factory CallRequest() => create();
+  factory CallRequest({
+    $core.String? sdp,
+    $core.bool? disableTrickle,
+  }) {
+    final $result = create();
+    if (sdp != null) {
+      $result.sdp = sdp;
+    }
+    if (disableTrickle != null) {
+      $result.disableTrickle = disableTrickle;
+    }
+    return $result;
+  }
   CallRequest._() : super();
   factory CallRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CallRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -130,6 +165,9 @@ class CallRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSdp() => clearField(1);
 
+  /// when disable_trickle is true, the init stage will be the only stage
+  /// to be received in the response and the caller can expect the SDP
+  /// to contain all ICE candidates.
   @$pb.TagNumber(2)
   $core.bool get disableTrickle => $_getBF(1);
   @$pb.TagNumber(2)
@@ -140,8 +178,18 @@ class CallRequest extends $pb.GeneratedMessage {
   void clearDisableTrickle() => clearField(2);
 }
 
+/// CallResponseInitStage is the first and a one time stage that represents
+/// the initial response to starting a call.
 class CallResponseInitStage extends $pb.GeneratedMessage {
-  factory CallResponseInitStage() => create();
+  factory CallResponseInitStage({
+    $core.String? sdp,
+  }) {
+    final $result = create();
+    if (sdp != null) {
+      $result.sdp = sdp;
+    }
+    return $result;
+  }
   CallResponseInitStage._() : super();
   factory CallResponseInitStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CallResponseInitStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -182,8 +230,18 @@ class CallResponseInitStage extends $pb.GeneratedMessage {
   void clearSdp() => clearField(1);
 }
 
+/// CallResponseUpdateStage is multiply used to trickle in ICE candidates from
+/// the controlled (answering) side.
 class CallResponseUpdateStage extends $pb.GeneratedMessage {
-  factory CallResponseUpdateStage() => create();
+  factory CallResponseUpdateStage({
+    ICECandidate? candidate,
+  }) {
+    final $result = create();
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    return $result;
+  }
   CallResponseUpdateStage._() : super();
   factory CallResponseUpdateStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CallResponseUpdateStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -232,8 +290,25 @@ enum CallResponse_Stage {
   notSet
 }
 
+/// CallResponse is the SDP answer that the controlled side responds with.
 class CallResponse extends $pb.GeneratedMessage {
-  factory CallResponse() => create();
+  factory CallResponse({
+    $core.String? uuid,
+    CallResponseInitStage? init,
+    CallResponseUpdateStage? update,
+  }) {
+    final $result = create();
+    if (uuid != null) {
+      $result.uuid = uuid;
+    }
+    if (init != null) {
+      $result.init = init;
+    }
+    if (update != null) {
+      $result.update = update;
+    }
+    return $result;
+  }
   CallResponse._() : super();
   factory CallResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CallResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -314,8 +389,29 @@ enum CallUpdateRequest_Update {
   notSet
 }
 
+/// CallUpdateRequest updates the call with additional info to the controlled side.
 class CallUpdateRequest extends $pb.GeneratedMessage {
-  factory CallUpdateRequest() => create();
+  factory CallUpdateRequest({
+    $core.String? uuid,
+    ICECandidate? candidate,
+    $core.bool? done,
+    $2.Status? error,
+  }) {
+    final $result = create();
+    if (uuid != null) {
+      $result.uuid = uuid;
+    }
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    if (done != null) {
+      $result.done = done;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
   CallUpdateRequest._() : super();
   factory CallUpdateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CallUpdateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -400,6 +496,7 @@ class CallUpdateRequest extends $pb.GeneratedMessage {
   $2.Status ensureError() => $_ensure(3);
 }
 
+/// CallUpdateResponse contains nothing in response to a call update.
 class CallUpdateResponse extends $pb.GeneratedMessage {
   factory CallUpdateResponse() => create();
   CallUpdateResponse._() : super();
@@ -432,8 +529,25 @@ class CallUpdateResponse extends $pb.GeneratedMessage {
   static CallUpdateResponse? _defaultInstance;
 }
 
+/// ICEServer describes an ICE server.
 class ICEServer extends $pb.GeneratedMessage {
-  factory ICEServer() => create();
+  factory ICEServer({
+    $core.Iterable<$core.String>? urls,
+    $core.String? username,
+    $core.String? credential,
+  }) {
+    final $result = create();
+    if (urls != null) {
+      $result.urls.addAll(urls);
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    if (credential != null) {
+      $result.credential = credential;
+    }
+    return $result;
+  }
   ICEServer._() : super();
   factory ICEServer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ICEServer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -488,8 +602,21 @@ class ICEServer extends $pb.GeneratedMessage {
   void clearCredential() => clearField(3);
 }
 
+/// WebRTCConfig represents parts of a WebRTC config.
 class WebRTCConfig extends $pb.GeneratedMessage {
-  factory WebRTCConfig() => create();
+  factory WebRTCConfig({
+    $core.Iterable<ICEServer>? additionalIceServers,
+    $core.bool? disableTrickle,
+  }) {
+    final $result = create();
+    if (additionalIceServers != null) {
+      $result.additionalIceServers.addAll(additionalIceServers);
+    }
+    if (disableTrickle != null) {
+      $result.disableTrickle = disableTrickle;
+    }
+    return $result;
+  }
   WebRTCConfig._() : super();
   factory WebRTCConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WebRTCConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -524,6 +651,8 @@ class WebRTCConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.List<ICEServer> get additionalIceServers => $_getList(0);
 
+  /// disable_trickle indicates if Trickle ICE should be used. Currently, both
+  /// sides must both respect this setting.
   @$pb.TagNumber(2)
   $core.bool get disableTrickle => $_getBF(1);
   @$pb.TagNumber(2)
@@ -534,8 +663,26 @@ class WebRTCConfig extends $pb.GeneratedMessage {
   void clearDisableTrickle() => clearField(2);
 }
 
+/// AnswerRequestInitStage is the first and a one time stage that represents the
+/// callers initial SDP request to the controlled (answerer) side.
 class AnswerRequestInitStage extends $pb.GeneratedMessage {
-  factory AnswerRequestInitStage() => create();
+  factory AnswerRequestInitStage({
+    $core.String? sdp,
+    WebRTCConfig? optionalConfig,
+    $3.Timestamp? deadline,
+  }) {
+    final $result = create();
+    if (sdp != null) {
+      $result.sdp = sdp;
+    }
+    if (optionalConfig != null) {
+      $result.optionalConfig = optionalConfig;
+    }
+    if (deadline != null) {
+      $result.deadline = deadline;
+    }
+    return $result;
+  }
   AnswerRequestInitStage._() : super();
   factory AnswerRequestInitStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerRequestInitStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -600,8 +747,18 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
   $3.Timestamp ensureDeadline() => $_ensure(2);
 }
 
+/// AnswerRequestUpdateStage is multiply used to trickle in ICE candidates to
+/// the controlled (answerer) side.
 class AnswerRequestUpdateStage extends $pb.GeneratedMessage {
-  factory AnswerRequestUpdateStage() => create();
+  factory AnswerRequestUpdateStage({
+    ICECandidate? candidate,
+  }) {
+    final $result = create();
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    return $result;
+  }
   AnswerRequestUpdateStage._() : super();
   factory AnswerRequestUpdateStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerRequestUpdateStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -644,6 +801,7 @@ class AnswerRequestUpdateStage extends $pb.GeneratedMessage {
   ICECandidate ensureCandidate() => $_ensure(0);
 }
 
+/// AnswerRequestDoneStage indicates the controller is done responding with candidates.
 class AnswerRequestDoneStage extends $pb.GeneratedMessage {
   factory AnswerRequestDoneStage() => create();
   AnswerRequestDoneStage._() : super();
@@ -676,8 +834,17 @@ class AnswerRequestDoneStage extends $pb.GeneratedMessage {
   static AnswerRequestDoneStage? _defaultInstance;
 }
 
+/// AnswerRequestErrorStage indicates the exchange has failed with an error.
 class AnswerRequestErrorStage extends $pb.GeneratedMessage {
-  factory AnswerRequestErrorStage() => create();
+  factory AnswerRequestErrorStage({
+    $2.Status? status,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   AnswerRequestErrorStage._() : super();
   factory AnswerRequestErrorStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerRequestErrorStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -728,8 +895,34 @@ enum AnswerRequest_Stage {
   notSet
 }
 
+/// AnswerRequest is the SDP offer that the controlling side is making via the answering
+/// stream.
 class AnswerRequest extends $pb.GeneratedMessage {
-  factory AnswerRequest() => create();
+  factory AnswerRequest({
+    $core.String? uuid,
+    AnswerRequestInitStage? init,
+    AnswerRequestUpdateStage? update,
+    AnswerRequestDoneStage? done,
+    AnswerRequestErrorStage? error,
+  }) {
+    final $result = create();
+    if (uuid != null) {
+      $result.uuid = uuid;
+    }
+    if (init != null) {
+      $result.init = init;
+    }
+    if (update != null) {
+      $result.update = update;
+    }
+    if (done != null) {
+      $result.done = done;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
   AnswerRequest._() : super();
   factory AnswerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -806,6 +999,7 @@ class AnswerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   AnswerRequestUpdateStage ensureUpdate() => $_ensure(2);
 
+  /// done is sent when the requester is done sending information
   @$pb.TagNumber(4)
   AnswerRequestDoneStage get done => $_getN(3);
   @$pb.TagNumber(4)
@@ -817,6 +1011,7 @@ class AnswerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   AnswerRequestDoneStage ensureDone() => $_ensure(3);
 
+  /// error is sent any time before done
   @$pb.TagNumber(5)
   AnswerRequestErrorStage get error => $_getN(4);
   @$pb.TagNumber(5)
@@ -829,8 +1024,18 @@ class AnswerRequest extends $pb.GeneratedMessage {
   AnswerRequestErrorStage ensureError() => $_ensure(4);
 }
 
+/// AnswerResponseInitStage is the first and a one time stage that represents the
+/// answerers initial SDP response to the controlling side.
 class AnswerResponseInitStage extends $pb.GeneratedMessage {
-  factory AnswerResponseInitStage() => create();
+  factory AnswerResponseInitStage({
+    $core.String? sdp,
+  }) {
+    final $result = create();
+    if (sdp != null) {
+      $result.sdp = sdp;
+    }
+    return $result;
+  }
   AnswerResponseInitStage._() : super();
   factory AnswerResponseInitStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerResponseInitStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -871,8 +1076,18 @@ class AnswerResponseInitStage extends $pb.GeneratedMessage {
   void clearSdp() => clearField(1);
 }
 
+/// AnswerResponseUpdateStage is multiply used to trickle in ICE candidates to
+/// the controlling side.
 class AnswerResponseUpdateStage extends $pb.GeneratedMessage {
-  factory AnswerResponseUpdateStage() => create();
+  factory AnswerResponseUpdateStage({
+    ICECandidate? candidate,
+  }) {
+    final $result = create();
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    return $result;
+  }
   AnswerResponseUpdateStage._() : super();
   factory AnswerResponseUpdateStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerResponseUpdateStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -915,6 +1130,7 @@ class AnswerResponseUpdateStage extends $pb.GeneratedMessage {
   ICECandidate ensureCandidate() => $_ensure(0);
 }
 
+/// AnswerResponseDoneStage indicates the answerer is done responding with candidates.
 class AnswerResponseDoneStage extends $pb.GeneratedMessage {
   factory AnswerResponseDoneStage() => create();
   AnswerResponseDoneStage._() : super();
@@ -947,8 +1163,17 @@ class AnswerResponseDoneStage extends $pb.GeneratedMessage {
   static AnswerResponseDoneStage? _defaultInstance;
 }
 
+/// AnswerResponseErrorStage indicates the exchange has failed with an error.
 class AnswerResponseErrorStage extends $pb.GeneratedMessage {
-  factory AnswerResponseErrorStage() => create();
+  factory AnswerResponseErrorStage({
+    $2.Status? status,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   AnswerResponseErrorStage._() : super();
   factory AnswerResponseErrorStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerResponseErrorStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -999,8 +1224,33 @@ enum AnswerResponse_Stage {
   notSet
 }
 
+/// AnswerResponse is the SDP answer that an answerer responds with.
 class AnswerResponse extends $pb.GeneratedMessage {
-  factory AnswerResponse() => create();
+  factory AnswerResponse({
+    $core.String? uuid,
+    AnswerResponseInitStage? init,
+    AnswerResponseUpdateStage? update,
+    AnswerResponseDoneStage? done,
+    AnswerResponseErrorStage? error,
+  }) {
+    final $result = create();
+    if (uuid != null) {
+      $result.uuid = uuid;
+    }
+    if (init != null) {
+      $result.init = init;
+    }
+    if (update != null) {
+      $result.update = update;
+    }
+    if (done != null) {
+      $result.done = done;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
   AnswerResponse._() : super();
   factory AnswerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnswerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1077,6 +1327,7 @@ class AnswerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   AnswerResponseUpdateStage ensureUpdate() => $_ensure(2);
 
+  /// done is sent when the answerer is done sending information
   @$pb.TagNumber(4)
   AnswerResponseDoneStage get done => $_getN(3);
   @$pb.TagNumber(4)
@@ -1088,6 +1339,7 @@ class AnswerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   AnswerResponseDoneStage ensureDone() => $_ensure(3);
 
+  /// error is sent any time before done
   @$pb.TagNumber(5)
   AnswerResponseErrorStage get error => $_getN(4);
   @$pb.TagNumber(5)
@@ -1100,6 +1352,8 @@ class AnswerResponse extends $pb.GeneratedMessage {
   AnswerResponseErrorStage ensureError() => $_ensure(4);
 }
 
+/// OptionalWebRTCConfigRequest is the request for getting an optional WebRTC config
+/// to use for the peer connection.
 class OptionalWebRTCConfigRequest extends $pb.GeneratedMessage {
   factory OptionalWebRTCConfigRequest() => create();
   OptionalWebRTCConfigRequest._() : super();
@@ -1132,8 +1386,18 @@ class OptionalWebRTCConfigRequest extends $pb.GeneratedMessage {
   static OptionalWebRTCConfigRequest? _defaultInstance;
 }
 
+/// OptionalWebRTCConfigResponse contains the optional WebRTC config
+/// to use for the peer connection.
 class OptionalWebRTCConfigResponse extends $pb.GeneratedMessage {
-  factory OptionalWebRTCConfigResponse() => create();
+  factory OptionalWebRTCConfigResponse({
+    WebRTCConfig? config,
+  }) {
+    final $result = create();
+    if (config != null) {
+      $result.config = config;
+    }
+    return $result;
+  }
   OptionalWebRTCConfigResponse._() : super();
   factory OptionalWebRTCConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OptionalWebRTCConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

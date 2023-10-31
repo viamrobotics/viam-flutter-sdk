@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,51 @@ import 'cloud_slam.pbenum.dart';
 export 'cloud_slam.pbenum.dart';
 
 class StartMappingSessionRequest extends $pb.GeneratedMessage {
-  factory StartMappingSessionRequest() => create();
+  factory StartMappingSessionRequest({
+    $core.String? slamVersion,
+    $core.String? viamServerVersion,
+    $core.String? mapName,
+    $core.String? organizationId,
+    $core.String? locationId,
+    $core.String? robotId,
+    CaptureInterval? captureInterval,
+    $core.Iterable<SensorInfo>? sensors,
+    $1.Struct? slamAlgorithmParams,
+    $core.String? existingMapVersion,
+  }) {
+    final $result = create();
+    if (slamVersion != null) {
+      $result.slamVersion = slamVersion;
+    }
+    if (viamServerVersion != null) {
+      $result.viamServerVersion = viamServerVersion;
+    }
+    if (mapName != null) {
+      $result.mapName = mapName;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (captureInterval != null) {
+      $result.captureInterval = captureInterval;
+    }
+    if (sensors != null) {
+      $result.sensors.addAll(sensors);
+    }
+    if (slamAlgorithmParams != null) {
+      $result.slamAlgorithmParams = slamAlgorithmParams;
+    }
+    if (existingMapVersion != null) {
+      $result.existingMapVersion = existingMapVersion;
+    }
+    return $result;
+  }
   StartMappingSessionRequest._() : super();
   factory StartMappingSessionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StartMappingSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -61,6 +105,7 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   static StartMappingSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartMappingSessionRequest>(create);
   static StartMappingSessionRequest? _defaultInstance;
 
+  /// Version to use for slam, defaults stable
   @$pb.TagNumber(1)
   $core.String get slamVersion => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -70,6 +115,7 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSlamVersion() => clearField(1);
 
+  /// Version to use for viam, defaults stable
   @$pb.TagNumber(2)
   $core.String get viamServerVersion => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -151,7 +197,23 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
 }
 
 class SensorInfo extends $pb.GeneratedMessage {
-  factory SensorInfo() => create();
+  factory SensorInfo({
+    $core.String? sourceComponentName,
+    $core.String? type,
+    $core.String? dataFrequencyHz,
+  }) {
+    final $result = create();
+    if (sourceComponentName != null) {
+      $result.sourceComponentName = sourceComponentName;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (dataFrequencyHz != null) {
+      $result.dataFrequencyHz = dataFrequencyHz;
+    }
+    return $result;
+  }
   SensorInfo._() : super();
   factory SensorInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SensorInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -193,6 +255,7 @@ class SensorInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSourceComponentName() => clearField(1);
 
+  /// type is the RDK component type
   @$pb.TagNumber(2)
   $core.String get type => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -213,7 +276,19 @@ class SensorInfo extends $pb.GeneratedMessage {
 }
 
 class CaptureInterval extends $pb.GeneratedMessage {
-  factory CaptureInterval() => create();
+  factory CaptureInterval({
+    $2.Timestamp? startTime,
+    $2.Timestamp? endTime,
+  }) {
+    final $result = create();
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    return $result;
+  }
   CaptureInterval._() : super();
   factory CaptureInterval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -256,6 +331,7 @@ class CaptureInterval extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $2.Timestamp ensureStartTime() => $_ensure(0);
 
+  /// if no end_time specified cloud slam will be run using live sensors
   @$pb.TagNumber(2)
   $2.Timestamp get endTime => $_getN(1);
   @$pb.TagNumber(2)
@@ -269,7 +345,15 @@ class CaptureInterval extends $pb.GeneratedMessage {
 }
 
 class StartMappingSessionResponse extends $pb.GeneratedMessage {
-  factory StartMappingSessionResponse() => create();
+  factory StartMappingSessionResponse({
+    $core.String? sessionId,
+  }) {
+    final $result = create();
+    if (sessionId != null) {
+      $result.sessionId = sessionId;
+    }
+    return $result;
+  }
   StartMappingSessionResponse._() : super();
   factory StartMappingSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StartMappingSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -311,7 +395,15 @@ class StartMappingSessionResponse extends $pb.GeneratedMessage {
 }
 
 class GetActiveMappingSessionsForRobotRequest extends $pb.GeneratedMessage {
-  factory GetActiveMappingSessionsForRobotRequest() => create();
+  factory GetActiveMappingSessionsForRobotRequest({
+    $core.String? robotId,
+  }) {
+    final $result = create();
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    return $result;
+  }
   GetActiveMappingSessionsForRobotRequest._() : super();
   factory GetActiveMappingSessionsForRobotRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetActiveMappingSessionsForRobotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -342,6 +434,7 @@ class GetActiveMappingSessionsForRobotRequest extends $pb.GeneratedMessage {
   static GetActiveMappingSessionsForRobotRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetActiveMappingSessionsForRobotRequest>(create);
   static GetActiveMappingSessionsForRobotRequest? _defaultInstance;
 
+  /// assumes only one active mapping session on a robot
   @$pb.TagNumber(1)
   $core.String get robotId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -353,7 +446,15 @@ class GetActiveMappingSessionsForRobotRequest extends $pb.GeneratedMessage {
 }
 
 class GetActiveMappingSessionsForRobotResponse extends $pb.GeneratedMessage {
-  factory GetActiveMappingSessionsForRobotResponse() => create();
+  factory GetActiveMappingSessionsForRobotResponse({
+    $core.String? sessionId,
+  }) {
+    final $result = create();
+    if (sessionId != null) {
+      $result.sessionId = sessionId;
+    }
+    return $result;
+  }
   GetActiveMappingSessionsForRobotResponse._() : super();
   factory GetActiveMappingSessionsForRobotResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetActiveMappingSessionsForRobotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -395,7 +496,15 @@ class GetActiveMappingSessionsForRobotResponse extends $pb.GeneratedMessage {
 }
 
 class GetMappingSessionPointCloudRequest extends $pb.GeneratedMessage {
-  factory GetMappingSessionPointCloudRequest() => create();
+  factory GetMappingSessionPointCloudRequest({
+    $core.String? sessionId,
+  }) {
+    final $result = create();
+    if (sessionId != null) {
+      $result.sessionId = sessionId;
+    }
+    return $result;
+  }
   GetMappingSessionPointCloudRequest._() : super();
   factory GetMappingSessionPointCloudRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMappingSessionPointCloudRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -437,7 +546,19 @@ class GetMappingSessionPointCloudRequest extends $pb.GeneratedMessage {
 }
 
 class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
-  factory GetMappingSessionPointCloudResponse() => create();
+  factory GetMappingSessionPointCloudResponse({
+    $core.String? mapUrl,
+    $3.Pose? pose,
+  }) {
+    final $result = create();
+    if (mapUrl != null) {
+      $result.mapUrl = mapUrl;
+    }
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
   GetMappingSessionPointCloudResponse._() : super();
   factory GetMappingSessionPointCloudResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMappingSessionPointCloudResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -469,6 +590,7 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
   static GetMappingSessionPointCloudResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMappingSessionPointCloudResponse>(create);
   static GetMappingSessionPointCloudResponse? _defaultInstance;
 
+  /// url to the pointcloud map
   @$pb.TagNumber(1)
   $core.String get mapUrl => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -478,6 +600,7 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMapUrl() => clearField(1);
 
+  /// Current position within the SLAM Map
   @$pb.TagNumber(2)
   $3.Pose get pose => $_getN(1);
   @$pb.TagNumber(2)
@@ -491,7 +614,19 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
 }
 
 class ListMappingSessionsRequest extends $pb.GeneratedMessage {
-  factory ListMappingSessionsRequest() => create();
+  factory ListMappingSessionsRequest({
+    $core.String? organizationId,
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   ListMappingSessionsRequest._() : super();
   factory ListMappingSessionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListMappingSessionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -543,7 +678,15 @@ class ListMappingSessionsRequest extends $pb.GeneratedMessage {
 }
 
 class ListMappingSessionsResponse extends $pb.GeneratedMessage {
-  factory ListMappingSessionsResponse() => create();
+  factory ListMappingSessionsResponse({
+    $core.Iterable<MappingMetadata>? session,
+  }) {
+    final $result = create();
+    if (session != null) {
+      $result.session.addAll(session);
+    }
+    return $result;
+  }
   ListMappingSessionsResponse._() : super();
   factory ListMappingSessionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListMappingSessionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -579,7 +722,15 @@ class ListMappingSessionsResponse extends $pb.GeneratedMessage {
 }
 
 class StopMappingSessionRequest extends $pb.GeneratedMessage {
-  factory StopMappingSessionRequest() => create();
+  factory StopMappingSessionRequest({
+    $core.String? sessionId,
+  }) {
+    final $result = create();
+    if (sessionId != null) {
+      $result.sessionId = sessionId;
+    }
+    return $result;
+  }
   StopMappingSessionRequest._() : super();
   factory StopMappingSessionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopMappingSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -621,7 +772,19 @@ class StopMappingSessionRequest extends $pb.GeneratedMessage {
 }
 
 class StopMappingSessionResponse extends $pb.GeneratedMessage {
-  factory StopMappingSessionResponse() => create();
+  factory StopMappingSessionResponse({
+    $core.String? packageId,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (packageId != null) {
+      $result.packageId = packageId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
   StopMappingSessionResponse._() : super();
   factory StopMappingSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopMappingSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -673,7 +836,15 @@ class StopMappingSessionResponse extends $pb.GeneratedMessage {
 }
 
 class GetMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
-  factory GetMappingSessionMetadataByIDRequest() => create();
+  factory GetMappingSessionMetadataByIDRequest({
+    $core.String? sessionId,
+  }) {
+    final $result = create();
+    if (sessionId != null) {
+      $result.sessionId = sessionId;
+    }
+    return $result;
+  }
   GetMappingSessionMetadataByIDRequest._() : super();
   factory GetMappingSessionMetadataByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMappingSessionMetadataByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -715,7 +886,15 @@ class GetMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
 }
 
 class GetMappingSessionMetadataByIDResponse extends $pb.GeneratedMessage {
-  factory GetMappingSessionMetadataByIDResponse() => create();
+  factory GetMappingSessionMetadataByIDResponse({
+    MappingMetadata? sessionMetadata,
+  }) {
+    final $result = create();
+    if (sessionMetadata != null) {
+      $result.sessionMetadata = sessionMetadata;
+    }
+    return $result;
+  }
   GetMappingSessionMetadataByIDResponse._() : super();
   factory GetMappingSessionMetadataByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMappingSessionMetadataByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -759,7 +938,27 @@ class GetMappingSessionMetadataByIDResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
-  factory UpdateMappingSessionMetadataByIDRequest() => create();
+  factory UpdateMappingSessionMetadataByIDRequest({
+    $core.String? sessionId,
+    EndStatus? endStatus,
+    $2.Timestamp? timeCloudRunJobEnded,
+    $core.String? errorMsg,
+  }) {
+    final $result = create();
+    if (sessionId != null) {
+      $result.sessionId = sessionId;
+    }
+    if (endStatus != null) {
+      $result.endStatus = endStatus;
+    }
+    if (timeCloudRunJobEnded != null) {
+      $result.timeCloudRunJobEnded = timeCloudRunJobEnded;
+    }
+    if (errorMsg != null) {
+      $result.errorMsg = errorMsg;
+    }
+    return $result;
+  }
   UpdateMappingSessionMetadataByIDRequest._() : super();
   factory UpdateMappingSessionMetadataByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateMappingSessionMetadataByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -802,6 +1001,7 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSessionId() => clearField(1);
 
+  /// enums that represent “success”, “failed”, etc
   @$pb.TagNumber(2)
   EndStatus get endStatus => $_getN(1);
   @$pb.TagNumber(2)
@@ -811,6 +1011,7 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearEndStatus() => clearField(2);
 
+  /// set at the time of job closeout and used as the package version
   @$pb.TagNumber(3)
   $2.Timestamp get timeCloudRunJobEnded => $_getN(2);
   @$pb.TagNumber(3)
@@ -822,6 +1023,7 @@ class UpdateMappingSessionMetadataByIDRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $2.Timestamp ensureTimeCloudRunJobEnded() => $_ensure(2);
 
+  /// additional details on the end status if needed, such as errors
   @$pb.TagNumber(4)
   $core.String get errorMsg => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -865,7 +1067,67 @@ class UpdateMappingSessionMetadataByIDResponse extends $pb.GeneratedMessage {
 }
 
 class MappingMetadata extends $pb.GeneratedMessage {
-  factory MappingMetadata() => create();
+  factory MappingMetadata({
+    $core.String? orgId,
+    $core.String? locationId,
+    $core.String? robotId,
+    $2.Timestamp? timeStartSubmitted,
+    $2.Timestamp? timeCloudRunJobStarted,
+    $2.Timestamp? timeEndSubmitted,
+    $2.Timestamp? timeCloudRunJobEnded,
+    EndStatus? endStatus,
+    $core.String? cloudRunJobId,
+    $core.String? viamServerVersion,
+    $core.String? mapName,
+    $core.String? slamVersion,
+    $core.String? config,
+    $core.String? errorMsg,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (timeStartSubmitted != null) {
+      $result.timeStartSubmitted = timeStartSubmitted;
+    }
+    if (timeCloudRunJobStarted != null) {
+      $result.timeCloudRunJobStarted = timeCloudRunJobStarted;
+    }
+    if (timeEndSubmitted != null) {
+      $result.timeEndSubmitted = timeEndSubmitted;
+    }
+    if (timeCloudRunJobEnded != null) {
+      $result.timeCloudRunJobEnded = timeCloudRunJobEnded;
+    }
+    if (endStatus != null) {
+      $result.endStatus = endStatus;
+    }
+    if (cloudRunJobId != null) {
+      $result.cloudRunJobId = cloudRunJobId;
+    }
+    if (viamServerVersion != null) {
+      $result.viamServerVersion = viamServerVersion;
+    }
+    if (mapName != null) {
+      $result.mapName = mapName;
+    }
+    if (slamVersion != null) {
+      $result.slamVersion = slamVersion;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
+    if (errorMsg != null) {
+      $result.errorMsg = errorMsg;
+    }
+    return $result;
+  }
   MappingMetadata._() : super();
   factory MappingMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MappingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

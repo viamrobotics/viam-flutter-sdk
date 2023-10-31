@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,27 @@ import 'common.pbenum.dart';
 export 'common.pbenum.dart';
 
 class ResourceName extends $pb.GeneratedMessage {
-  factory ResourceName() => create();
+  factory ResourceName({
+    $core.String? namespace,
+    $core.String? type,
+    $core.String? subtype,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (namespace != null) {
+      $result.namespace = namespace;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (subtype != null) {
+      $result.subtype = subtype;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   ResourceName._() : super();
   factory ResourceName.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResourceName.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -93,7 +113,19 @@ class ResourceName extends $pb.GeneratedMessage {
 }
 
 class BoardStatus extends $pb.GeneratedMessage {
-  factory BoardStatus() => create();
+  factory BoardStatus({
+    $core.Map<$core.String, AnalogStatus>? analogs,
+    $core.Map<$core.String, DigitalInterruptStatus>? digitalInterrupts,
+  }) {
+    final $result = create();
+    if (analogs != null) {
+      $result.analogs.addAll(analogs);
+    }
+    if (digitalInterrupts != null) {
+      $result.digitalInterrupts.addAll(digitalInterrupts);
+    }
+    return $result;
+  }
   BoardStatus._() : super();
   factory BoardStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoardStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -133,7 +165,15 @@ class BoardStatus extends $pb.GeneratedMessage {
 }
 
 class AnalogStatus extends $pb.GeneratedMessage {
-  factory AnalogStatus() => create();
+  factory AnalogStatus({
+    $core.int? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   AnalogStatus._() : super();
   factory AnalogStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AnalogStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -164,6 +204,7 @@ class AnalogStatus extends $pb.GeneratedMessage {
   static AnalogStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnalogStatus>(create);
   static AnalogStatus? _defaultInstance;
 
+  /// Current value of the analog reader of a robot's board
   @$pb.TagNumber(1)
   $core.int get value => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -175,7 +216,15 @@ class AnalogStatus extends $pb.GeneratedMessage {
 }
 
 class DigitalInterruptStatus extends $pb.GeneratedMessage {
-  factory DigitalInterruptStatus() => create();
+  factory DigitalInterruptStatus({
+    $fixnum.Int64? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   DigitalInterruptStatus._() : super();
   factory DigitalInterruptStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DigitalInterruptStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -206,6 +255,7 @@ class DigitalInterruptStatus extends $pb.GeneratedMessage {
   static DigitalInterruptStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalInterruptStatus>(create);
   static DigitalInterruptStatus? _defaultInstance;
 
+  /// Current value of the digital interrupt of a robot's board
   @$pb.TagNumber(1)
   $fixnum.Int64 get value => $_getI64(0);
   @$pb.TagNumber(1)
@@ -216,8 +266,48 @@ class DigitalInterruptStatus extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+///  Pose is a combination of location and orientation.
+/// Location is expressed as distance which is represented by x , y, z coordinates. Orientation is expressed as an orientation vector which
+/// is represented by o_x, o_y, o_z and theta. The o_x, o_y, o_z coordinates represent the point on the cartesian unit sphere that the end of
+/// the arm is pointing to (with the origin as reference). That unit vector forms an axis around which theta rotates. This means that
+/// incrementing / decrementing theta will perform an inline rotation of the end effector.
+/// Theta is defined as rotation between two planes: the first being defined by the origin, the point (0,0,1), and the rx, ry, rz point, and the
+/// second being defined by the origin, the rx, ry, rz point and the local Z axis. Therefore, if theta is kept at zero as the north/south pole
+/// is circled, the Roll will correct itself to remain in-line.
 class Pose extends $pb.GeneratedMessage {
-  factory Pose() => create();
+  factory Pose({
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+    $core.double? oX,
+    $core.double? oY,
+    $core.double? oZ,
+    $core.double? theta,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    if (oX != null) {
+      $result.oX = oX;
+    }
+    if (oY != null) {
+      $result.oY = oY;
+    }
+    if (oZ != null) {
+      $result.oZ = oZ;
+    }
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    return $result;
+  }
   Pose._() : super();
   factory Pose.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Pose.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -254,6 +344,7 @@ class Pose extends $pb.GeneratedMessage {
   static Pose getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Pose>(create);
   static Pose? _defaultInstance;
 
+  /// millimeters from the origin
   @$pb.TagNumber(1)
   $core.double get x => $_getN(0);
   @$pb.TagNumber(1)
@@ -263,6 +354,7 @@ class Pose extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearX() => clearField(1);
 
+  /// millimeters from the origin
   @$pb.TagNumber(2)
   $core.double get y => $_getN(1);
   @$pb.TagNumber(2)
@@ -272,6 +364,7 @@ class Pose extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearY() => clearField(2);
 
+  /// millimeters from the origin
   @$pb.TagNumber(3)
   $core.double get z => $_getN(2);
   @$pb.TagNumber(3)
@@ -281,6 +374,7 @@ class Pose extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearZ() => clearField(3);
 
+  /// z component of a vector defining axis of rotation
   @$pb.TagNumber(4)
   $core.double get oX => $_getN(3);
   @$pb.TagNumber(4)
@@ -290,6 +384,7 @@ class Pose extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearOX() => clearField(4);
 
+  /// x component of a vector defining axis of rotation
   @$pb.TagNumber(5)
   $core.double get oY => $_getN(4);
   @$pb.TagNumber(5)
@@ -299,6 +394,7 @@ class Pose extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearOY() => clearField(5);
 
+  /// y component of a vector defining axis of rotation
   @$pb.TagNumber(6)
   $core.double get oZ => $_getN(5);
   @$pb.TagNumber(6)
@@ -308,6 +404,7 @@ class Pose extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearOZ() => clearField(6);
 
+  /// degrees
   @$pb.TagNumber(7)
   $core.double get theta => $_getN(6);
   @$pb.TagNumber(7)
@@ -319,7 +416,27 @@ class Pose extends $pb.GeneratedMessage {
 }
 
 class Orientation extends $pb.GeneratedMessage {
-  factory Orientation() => create();
+  factory Orientation({
+    $core.double? oX,
+    $core.double? oY,
+    $core.double? oZ,
+    $core.double? theta,
+  }) {
+    final $result = create();
+    if (oX != null) {
+      $result.oX = oX;
+    }
+    if (oY != null) {
+      $result.oY = oY;
+    }
+    if (oZ != null) {
+      $result.oZ = oZ;
+    }
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    return $result;
+  }
   Orientation._() : super();
   factory Orientation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Orientation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -353,6 +470,7 @@ class Orientation extends $pb.GeneratedMessage {
   static Orientation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Orientation>(create);
   static Orientation? _defaultInstance;
 
+  /// x component of a vector defining axis of rotation
   @$pb.TagNumber(1)
   $core.double get oX => $_getN(0);
   @$pb.TagNumber(1)
@@ -362,6 +480,7 @@ class Orientation extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOX() => clearField(1);
 
+  /// y component of a vector defining axis of rotation
   @$pb.TagNumber(2)
   $core.double get oY => $_getN(1);
   @$pb.TagNumber(2)
@@ -371,6 +490,7 @@ class Orientation extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearOY() => clearField(2);
 
+  /// z component of a vector defining axis of rotation
   @$pb.TagNumber(3)
   $core.double get oZ => $_getN(2);
   @$pb.TagNumber(3)
@@ -380,6 +500,7 @@ class Orientation extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearOZ() => clearField(3);
 
+  /// degrees
   @$pb.TagNumber(4)
   $core.double get theta => $_getN(3);
   @$pb.TagNumber(4)
@@ -390,8 +511,21 @@ class Orientation extends $pb.GeneratedMessage {
   void clearTheta() => clearField(4);
 }
 
+/// PoseInFrame contains a pose and the and the reference frame in which it was observed
 class PoseInFrame extends $pb.GeneratedMessage {
-  factory PoseInFrame() => create();
+  factory PoseInFrame({
+    $core.String? referenceFrame,
+    Pose? pose,
+  }) {
+    final $result = create();
+    if (referenceFrame != null) {
+      $result.referenceFrame = referenceFrame;
+    }
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
   PoseInFrame._() : super();
   factory PoseInFrame.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PoseInFrame.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -445,7 +579,23 @@ class PoseInFrame extends $pb.GeneratedMessage {
 }
 
 class Vector3 extends $pb.GeneratedMessage {
-  factory Vector3() => create();
+  factory Vector3({
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Vector3._() : super();
   factory Vector3.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vector3.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -507,7 +657,15 @@ class Vector3 extends $pb.GeneratedMessage {
 }
 
 class Sphere extends $pb.GeneratedMessage {
-  factory Sphere() => create();
+  factory Sphere({
+    $core.double? radiusMm,
+  }) {
+    final $result = create();
+    if (radiusMm != null) {
+      $result.radiusMm = radiusMm;
+    }
+    return $result;
+  }
   Sphere._() : super();
   factory Sphere.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Sphere.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -549,7 +707,19 @@ class Sphere extends $pb.GeneratedMessage {
 }
 
 class Capsule extends $pb.GeneratedMessage {
-  factory Capsule() => create();
+  factory Capsule({
+    $core.double? radiusMm,
+    $core.double? lengthMm,
+  }) {
+    final $result = create();
+    if (radiusMm != null) {
+      $result.radiusMm = radiusMm;
+    }
+    if (lengthMm != null) {
+      $result.lengthMm = lengthMm;
+    }
+    return $result;
+  }
   Capsule._() : super();
   factory Capsule.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Capsule.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -600,8 +770,18 @@ class Capsule extends $pb.GeneratedMessage {
   void clearLengthMm() => clearField(2);
 }
 
+/// RectangularPrism contains a Vector3 field corresponding to the X, Y, Z dimensions of the prism in mms
+/// These dimensions are with respect to the referenceframe in which the RectangularPrism is defined
 class RectangularPrism extends $pb.GeneratedMessage {
-  factory RectangularPrism() => create();
+  factory RectangularPrism({
+    Vector3? dimsMm,
+  }) {
+    final $result = create();
+    if (dimsMm != null) {
+      $result.dimsMm = dimsMm;
+    }
+    return $result;
+  }
   RectangularPrism._() : super();
   factory RectangularPrism.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RectangularPrism.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -651,8 +831,33 @@ enum Geometry_GeometryType {
   notSet
 }
 
+/// Geometry contains the dimensions of a given geometry and the pose of its center. The geometry is one of either a sphere or a box.
 class Geometry extends $pb.GeneratedMessage {
-  factory Geometry() => create();
+  factory Geometry({
+    Pose? center,
+    Sphere? sphere,
+    RectangularPrism? box,
+    $core.String? label,
+    Capsule? capsule,
+  }) {
+    final $result = create();
+    if (center != null) {
+      $result.center = center;
+    }
+    if (sphere != null) {
+      $result.sphere = sphere;
+    }
+    if (box != null) {
+      $result.box = box;
+    }
+    if (label != null) {
+      $result.label = label;
+    }
+    if (capsule != null) {
+      $result.capsule = capsule;
+    }
+    return $result;
+  }
   Geometry._() : super();
   factory Geometry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Geometry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -697,6 +902,7 @@ class Geometry extends $pb.GeneratedMessage {
   Geometry_GeometryType whichGeometryType() => _Geometry_GeometryTypeByTag[$_whichOneof(0)]!;
   void clearGeometryType() => clearField($_whichOneof(0));
 
+  /// Pose of a geometries center point
   @$pb.TagNumber(1)
   Pose get center => $_getN(0);
   @$pb.TagNumber(1)
@@ -730,6 +936,7 @@ class Geometry extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   RectangularPrism ensureBox() => $_ensure(2);
 
+  /// Label of the geometry. If none supplied, will be an empty string.
   @$pb.TagNumber(4)
   $core.String get label => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -751,8 +958,22 @@ class Geometry extends $pb.GeneratedMessage {
   Capsule ensureCapsule() => $_ensure(4);
 }
 
+/// GeometriesinFrame contains the dimensions of a given geometry, pose of its center point, and the reference frame by which it was
+/// observed.
 class GeometriesInFrame extends $pb.GeneratedMessage {
-  factory GeometriesInFrame() => create();
+  factory GeometriesInFrame({
+    $core.String? referenceFrame,
+    $core.Iterable<Geometry>? geometries,
+  }) {
+    final $result = create();
+    if (referenceFrame != null) {
+      $result.referenceFrame = referenceFrame;
+    }
+    if (geometries != null) {
+      $result.geometries.addAll(geometries);
+    }
+    return $result;
+  }
   GeometriesInFrame._() : super();
   factory GeometriesInFrame.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GeometriesInFrame.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -784,6 +1005,7 @@ class GeometriesInFrame extends $pb.GeneratedMessage {
   static GeometriesInFrame getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeometriesInFrame>(create);
   static GeometriesInFrame? _defaultInstance;
 
+  /// Reference frame of the observer of the geometry
   @$pb.TagNumber(1)
   $core.String get referenceFrame => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -793,12 +1015,27 @@ class GeometriesInFrame extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearReferenceFrame() => clearField(1);
 
+  /// Dimensional type
   @$pb.TagNumber(2)
   $core.List<Geometry> get geometries => $_getList(1);
 }
 
+/// PointCloudObject contains an image in bytes with point cloud data of all of the objects captured by a given observer as well as a
+/// repeated list of geometries which respresents the center point and geometry of each of the objects within the point cloud
 class PointCloudObject extends $pb.GeneratedMessage {
-  factory PointCloudObject() => create();
+  factory PointCloudObject({
+    $core.List<$core.int>? pointCloud,
+    GeometriesInFrame? geometries,
+  }) {
+    final $result = create();
+    if (pointCloud != null) {
+      $result.pointCloud = pointCloud;
+    }
+    if (geometries != null) {
+      $result.geometries = geometries;
+    }
+    return $result;
+  }
   PointCloudObject._() : super();
   factory PointCloudObject.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PointCloudObject.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -830,6 +1067,7 @@ class PointCloudObject extends $pb.GeneratedMessage {
   static PointCloudObject getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PointCloudObject>(create);
   static PointCloudObject? _defaultInstance;
 
+  /// image frame expressed in bytes
   @$pb.TagNumber(1)
   $core.List<$core.int> get pointCloud => $_getN(0);
   @$pb.TagNumber(1)
@@ -839,6 +1077,7 @@ class PointCloudObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPointCloud() => clearField(1);
 
+  /// volume of a given geometry
   @$pb.TagNumber(2)
   GeometriesInFrame get geometries => $_getN(1);
   @$pb.TagNumber(2)
@@ -852,7 +1091,19 @@ class PointCloudObject extends $pb.GeneratedMessage {
 }
 
 class GeoPoint extends $pb.GeneratedMessage {
-  factory GeoPoint() => create();
+  factory GeoPoint({
+    $core.double? latitude,
+    $core.double? longitude,
+  }) {
+    final $result = create();
+    if (latitude != null) {
+      $result.latitude = latitude;
+    }
+    if (longitude != null) {
+      $result.longitude = longitude;
+    }
+    return $result;
+  }
   GeoPoint._() : super();
   factory GeoPoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GeoPoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -903,8 +1154,22 @@ class GeoPoint extends $pb.GeneratedMessage {
   void clearLongitude() => clearField(2);
 }
 
+/// GeoObstacle contains information about the geometric structure of an obstacle and the location of the obstacle,
+/// captured in latitude and longitude.
 class GeoObstacle extends $pb.GeneratedMessage {
-  factory GeoObstacle() => create();
+  factory GeoObstacle({
+    GeoPoint? location,
+    $core.Iterable<Geometry>? geometries,
+  }) {
+    final $result = create();
+    if (location != null) {
+      $result.location = location;
+    }
+    if (geometries != null) {
+      $result.geometries.addAll(geometries);
+    }
+    return $result;
+  }
   GeoObstacle._() : super();
   factory GeoObstacle.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GeoObstacle.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -936,6 +1201,7 @@ class GeoObstacle extends $pb.GeneratedMessage {
   static GeoObstacle getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeoObstacle>(create);
   static GeoObstacle? _defaultInstance;
 
+  /// Location of the obstacle
   @$pb.TagNumber(1)
   GeoPoint get location => $_getN(0);
   @$pb.TagNumber(1)
@@ -947,12 +1213,32 @@ class GeoObstacle extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   GeoPoint ensureLocation() => $_ensure(0);
 
+  /// Geometries that describe the obstacle, where embedded Pose data is with respect to the specified location
   @$pb.TagNumber(2)
   $core.List<Geometry> get geometries => $_getList(1);
 }
 
+/// Transform contains a pose and two reference frames. The first reference frame is the starting reference frame, and the second reference
+/// frame is the observer reference frame. The second reference frame has a pose which represents the pose of an object in the first
+/// reference frame as observed within the second reference frame.
 class Transform extends $pb.GeneratedMessage {
-  factory Transform() => create();
+  factory Transform({
+    $core.String? referenceFrame,
+    PoseInFrame? poseInObserverFrame,
+    Geometry? physicalObject,
+  }) {
+    final $result = create();
+    if (referenceFrame != null) {
+      $result.referenceFrame = referenceFrame;
+    }
+    if (poseInObserverFrame != null) {
+      $result.poseInObserverFrame = poseInObserverFrame;
+    }
+    if (physicalObject != null) {
+      $result.physicalObject = physicalObject;
+    }
+    return $result;
+  }
   Transform._() : super();
   factory Transform.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Transform.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -985,6 +1271,7 @@ class Transform extends $pb.GeneratedMessage {
   static Transform getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Transform>(create);
   static Transform? _defaultInstance;
 
+  /// the name of a given reference frame
   @$pb.TagNumber(1)
   $core.String get referenceFrame => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -994,6 +1281,7 @@ class Transform extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearReferenceFrame() => clearField(1);
 
+  /// the pose of the above reference frame with respect to a different observer reference frame
   @$pb.TagNumber(2)
   PoseInFrame get poseInObserverFrame => $_getN(1);
   @$pb.TagNumber(2)
@@ -1017,8 +1305,23 @@ class Transform extends $pb.GeneratedMessage {
   Geometry ensurePhysicalObject() => $_ensure(2);
 }
 
+/// WorldState contains information about the physical environment around a given robot. All of the fields within this message are optional,
+/// they can include information about the physical dimensions of an obstacle, the freespace of a robot, and any desired transforms between a
+/// given reference frame and a new target reference frame.
 class WorldState extends $pb.GeneratedMessage {
-  factory WorldState() => create();
+  factory WorldState({
+    $core.Iterable<GeometriesInFrame>? obstacles,
+    $core.Iterable<Transform>? transforms,
+  }) {
+    final $result = create();
+    if (obstacles != null) {
+      $result.obstacles.addAll(obstacles);
+    }
+    if (transforms != null) {
+      $result.transforms.addAll(transforms);
+    }
+    return $result;
+  }
   WorldState._() : super();
   factory WorldState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorldState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1050,15 +1353,26 @@ class WorldState extends $pb.GeneratedMessage {
   static WorldState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorldState>(create);
   static WorldState? _defaultInstance;
 
+  /// a list of obstacles expressed as a geometry and the reference frame in which it was observed; this field is optional
   @$pb.TagNumber(1)
   $core.List<GeometriesInFrame> get obstacles => $_getList(0);
 
+  /// a list of Transforms, optionally with geometries. Used as supplemental transforms to transform a pose from one reference frame to another, or to attach moving geometries to the frame system. This field is optional
   @$pb.TagNumber(3)
   $core.List<Transform> get transforms => $_getList(1);
 }
 
+/// ActuatorStatus is a generic status for resources that only need to return actuator status.
 class ActuatorStatus extends $pb.GeneratedMessage {
-  factory ActuatorStatus() => create();
+  factory ActuatorStatus({
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   ActuatorStatus._() : super();
   factory ActuatorStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActuatorStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1100,7 +1414,15 @@ class ActuatorStatus extends $pb.GeneratedMessage {
 }
 
 class ResponseMetadata extends $pb.GeneratedMessage {
-  factory ResponseMetadata() => create();
+  factory ResponseMetadata({
+    $0.Timestamp? capturedAt,
+  }) {
+    final $result = create();
+    if (capturedAt != null) {
+      $result.capturedAt = capturedAt;
+    }
+    return $result;
+  }
   ResponseMetadata._() : super();
   factory ResponseMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResponseMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1131,6 +1453,10 @@ class ResponseMetadata extends $pb.GeneratedMessage {
   static ResponseMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResponseMetadata>(create);
   static ResponseMetadata? _defaultInstance;
 
+  /// captured_at is the time at which the resource as close as physically possible, captured
+  /// the data in the response.
+  /// Note: If correlating between other resources, be sure that the means
+  /// of measuring the capture are similar enough such that comparison can be made between them.
   @$pb.TagNumber(1)
   $0.Timestamp get capturedAt => $_getN(0);
   @$pb.TagNumber(1)
@@ -1143,8 +1469,21 @@ class ResponseMetadata extends $pb.GeneratedMessage {
   $0.Timestamp ensureCapturedAt() => $_ensure(0);
 }
 
+/// DoCommandRequest represents a generic DoCommand input
 class DoCommandRequest extends $pb.GeneratedMessage {
-  factory DoCommandRequest() => create();
+  factory DoCommandRequest({
+    $core.String? name,
+    $1.Struct? command,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (command != null) {
+      $result.command = command;
+    }
+    return $result;
+  }
   DoCommandRequest._() : super();
   factory DoCommandRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DoCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1197,8 +1536,17 @@ class DoCommandRequest extends $pb.GeneratedMessage {
   $1.Struct ensureCommand() => $_ensure(1);
 }
 
+/// DoCommandResponse represents a generic DoCommand output
 class DoCommandResponse extends $pb.GeneratedMessage {
-  factory DoCommandResponse() => create();
+  factory DoCommandResponse({
+    $1.Struct? result,
+  }) {
+    final $result = create();
+    if (result != null) {
+      $result.result = result;
+    }
+    return $result;
+  }
   DoCommandResponse._() : super();
   factory DoCommandResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DoCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1242,7 +1590,19 @@ class DoCommandResponse extends $pb.GeneratedMessage {
 }
 
 class GetKinematicsRequest extends $pb.GeneratedMessage {
-  factory GetKinematicsRequest() => create();
+  factory GetKinematicsRequest({
+    $core.String? name,
+    $1.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetKinematicsRequest._() : super();
   factory GetKinematicsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetKinematicsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1274,6 +1634,7 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
   static GetKinematicsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetKinematicsRequest>(create);
   static GetKinematicsRequest? _defaultInstance;
 
+  /// The component name
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1283,6 +1644,7 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $1.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -1296,7 +1658,19 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
 }
 
 class GetKinematicsResponse extends $pb.GeneratedMessage {
-  factory GetKinematicsResponse() => create();
+  factory GetKinematicsResponse({
+    KinematicsFileFormat? format,
+    $core.List<$core.int>? kinematicsData,
+  }) {
+    final $result = create();
+    if (format != null) {
+      $result.format = format;
+    }
+    if (kinematicsData != null) {
+      $result.kinematicsData = kinematicsData;
+    }
+    return $result;
+  }
   GetKinematicsResponse._() : super();
   factory GetKinematicsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetKinematicsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1328,6 +1702,8 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
   static GetKinematicsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetKinematicsResponse>(create);
   static GetKinematicsResponse? _defaultInstance;
 
+  /// The kinematics of the component, in either URDF format or in Viam’s kinematic parameter format (spatial vector algebra)
+  /// https://docs.viam.com/internals/kinematic-chain-config/#kinematic-parameters
   @$pb.TagNumber(1)
   KinematicsFileFormat get format => $_getN(0);
   @$pb.TagNumber(1)
@@ -1337,6 +1713,7 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFormat() => clearField(1);
 
+  /// The byte contents of the file
   @$pb.TagNumber(2)
   $core.List<$core.int> get kinematicsData => $_getN(1);
   @$pb.TagNumber(2)
@@ -1348,7 +1725,19 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
 }
 
 class GetGeometriesRequest extends $pb.GeneratedMessage {
-  factory GetGeometriesRequest() => create();
+  factory GetGeometriesRequest({
+    $core.String? name,
+    $1.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetGeometriesRequest._() : super();
   factory GetGeometriesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGeometriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1380,6 +1769,7 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
   static GetGeometriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGeometriesRequest>(create);
   static GetGeometriesRequest? _defaultInstance;
 
+  /// The component name
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1389,6 +1779,7 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $1.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -1402,7 +1793,15 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
 }
 
 class GetGeometriesResponse extends $pb.GeneratedMessage {
-  factory GetGeometriesResponse() => create();
+  factory GetGeometriesResponse({
+    $core.Iterable<Geometry>? geometries,
+  }) {
+    final $result = create();
+    if (geometries != null) {
+      $result.geometries.addAll(geometries);
+    }
+    return $result;
+  }
   GetGeometriesResponse._() : super();
   factory GetGeometriesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGeometriesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1433,12 +1832,25 @@ class GetGeometriesResponse extends $pb.GeneratedMessage {
   static GetGeometriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetGeometriesResponse>(create);
   static GetGeometriesResponse? _defaultInstance;
 
+  /// All geometries associated with the component, in their current configuration, in the frame of that component.
   @$pb.TagNumber(1)
   $core.List<Geometry> get geometries => $_getList(0);
 }
 
 class GetReadingsRequest extends $pb.GeneratedMessage {
-  factory GetReadingsRequest() => create();
+  factory GetReadingsRequest({
+    $core.String? name,
+    $1.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetReadingsRequest._() : super();
   factory GetReadingsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetReadingsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1470,6 +1882,7 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
   static GetReadingsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadingsRequest>(create);
   static GetReadingsRequest? _defaultInstance;
 
+  /// Name of a sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1479,6 +1892,7 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $1.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -1492,7 +1906,15 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 }
 
 class GetReadingsResponse extends $pb.GeneratedMessage {
-  factory GetReadingsResponse() => create();
+  factory GetReadingsResponse({
+    $core.Map<$core.String, $1.Value>? readings,
+  }) {
+    final $result = create();
+    if (readings != null) {
+      $result.readings.addAll(readings);
+    }
+    return $result;
+  }
   GetReadingsResponse._() : super();
   factory GetReadingsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetReadingsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

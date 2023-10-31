@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,8 +21,34 @@ import 'data.pbenum.dart';
 
 export 'data.pbenum.dart';
 
+/// DataRequest encapsulates the filter for the data, a limit on the maximum results returned,
+/// a last string associated with the last returned document, and the sorting order by time.
+/// last is returned in the responses TabularDataByFilterResponse and BinaryDataByFilterResponse
+/// from the API calls TabularDataByFilter and BinaryDataByFilter, respectively.
+/// We can then use the last string from the previous API calls in the subsequent request
+/// to get the next set of ordered documents.
 class DataRequest extends $pb.GeneratedMessage {
-  factory DataRequest() => create();
+  factory DataRequest({
+    Filter? filter,
+    $fixnum.Int64? limit,
+    $core.String? last,
+    Order? sortOrder,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    if (limit != null) {
+      $result.limit = limit;
+    }
+    if (last != null) {
+      $result.last = last;
+    }
+    if (sortOrder != null) {
+      $result.sortOrder = sortOrder;
+    }
+    return $result;
+  }
   DataRequest._() : super();
   factory DataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -95,8 +121,73 @@ class DataRequest extends $pb.GeneratedMessage {
   void clearSortOrder() => clearField(4);
 }
 
+/// Filter defines the fields over which we can filter data using a logic AND.
+/// For example, if component_type and robot_id are specified, only data from that `robot_id` of
+/// type `component_type` is returned. However, we logical OR over the specified tags and bounding
+/// box labels, such that if component_type, robot_id, tagA, tagB are specified,
+/// we return data from that `robot_id` of type `component_type` with `tagA` or `tagB`.
 class Filter extends $pb.GeneratedMessage {
-  factory Filter() => create();
+  factory Filter({
+    $core.String? componentName,
+    $core.String? componentType,
+    $core.String? method,
+    $core.String? robotName,
+    $core.String? robotId,
+    $core.String? partName,
+    $core.String? partId,
+    $core.Iterable<$core.String>? locationIds,
+    $core.Iterable<$core.String>? organizationIds,
+    $core.Iterable<$core.String>? mimeType,
+    CaptureInterval? interval,
+    TagsFilter? tagsFilter,
+    $core.Iterable<$core.String>? bboxLabels,
+    $core.String? datasetId,
+  }) {
+    final $result = create();
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (componentType != null) {
+      $result.componentType = componentType;
+    }
+    if (method != null) {
+      $result.method = method;
+    }
+    if (robotName != null) {
+      $result.robotName = robotName;
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (partName != null) {
+      $result.partName = partName;
+    }
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (locationIds != null) {
+      $result.locationIds.addAll(locationIds);
+    }
+    if (organizationIds != null) {
+      $result.organizationIds.addAll(organizationIds);
+    }
+    if (mimeType != null) {
+      $result.mimeType.addAll(mimeType);
+    }
+    if (interval != null) {
+      $result.interval = interval;
+    }
+    if (tagsFilter != null) {
+      $result.tagsFilter = tagsFilter;
+    }
+    if (bboxLabels != null) {
+      $result.bboxLabels.addAll(bboxLabels);
+    }
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    return $result;
+  }
   Filter._() : super();
   factory Filter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Filter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -234,6 +325,7 @@ class Filter extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   TagsFilter ensureTagsFilter() => $_ensure(11);
 
+  /// bbox_labels are used to match documents with the specified bounding box labels (using logical OR).
   @$pb.TagNumber(15)
   $core.List<$core.String> get bboxLabels => $_getList(12);
 
@@ -247,8 +339,21 @@ class Filter extends $pb.GeneratedMessage {
   void clearDatasetId() => clearField(16);
 }
 
+/// TagsFilter defines the type of filtering and, if applicable, over which tags to perform a logical OR.
 class TagsFilter extends $pb.GeneratedMessage {
-  factory TagsFilter() => create();
+  factory TagsFilter({
+    TagsFilterType? type,
+    $core.Iterable<$core.String>? tags,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    return $result;
+  }
   TagsFilter._() : super();
   factory TagsFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TagsFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -289,12 +394,66 @@ class TagsFilter extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearType() => clearField(1);
 
+  /// Tags are used to match documents if `type` is UNSPECIFIED or MATCH_BY_OR.
   @$pb.TagNumber(2)
   $core.List<$core.String> get tags => $_getList(1);
 }
 
+/// CaptureMetadata contains information on the settings used for the data capture.
 class CaptureMetadata extends $pb.GeneratedMessage {
-  factory CaptureMetadata() => create();
+  factory CaptureMetadata({
+    $core.String? organizationId,
+    $core.String? locationId,
+    $core.String? robotName,
+    $core.String? robotId,
+    $core.String? partName,
+    $core.String? partId,
+    $core.String? componentType,
+    $core.String? componentName,
+    $core.String? methodName,
+    $core.Map<$core.String, $1.Any>? methodParameters,
+    $core.Iterable<$core.String>? tags,
+    $core.String? mimeType,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (robotName != null) {
+      $result.robotName = robotName;
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (partName != null) {
+      $result.partName = partName;
+    }
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (componentType != null) {
+      $result.componentType = componentType;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    if (methodParameters != null) {
+      $result.methodParameters.addAll(methodParameters);
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    return $result;
+  }
   CaptureMetadata._() : super();
   factory CaptureMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CaptureMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -433,8 +592,21 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   void clearMimeType() => clearField(13);
 }
 
+/// CaptureInterval describes the start and end time of the capture in this file.
 class CaptureInterval extends $pb.GeneratedMessage {
-  factory CaptureInterval() => create();
+  factory CaptureInterval({
+    $2.Timestamp? start,
+    $2.Timestamp? end,
+  }) {
+    final $result = create();
+    if (start != null) {
+      $result.start = start;
+    }
+    if (end != null) {
+      $result.end = end;
+    }
+    return $result;
+  }
   CaptureInterval._() : super();
   factory CaptureInterval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -489,8 +661,25 @@ class CaptureInterval extends $pb.GeneratedMessage {
   $2.Timestamp ensureEnd() => $_ensure(1);
 }
 
+/// TabularDataByFilterRequest requests tabular data based on filter values.
 class TabularDataByFilterRequest extends $pb.GeneratedMessage {
-  factory TabularDataByFilterRequest() => create();
+  factory TabularDataByFilterRequest({
+    DataRequest? dataRequest,
+    $core.bool? countOnly,
+    $core.bool? includeInternalData,
+  }) {
+    final $result = create();
+    if (dataRequest != null) {
+      $result.dataRequest = dataRequest;
+    }
+    if (countOnly != null) {
+      $result.countOnly = countOnly;
+    }
+    if (includeInternalData != null) {
+      $result.includeInternalData = includeInternalData;
+    }
+    return $result;
+  }
   TabularDataByFilterRequest._() : super();
   factory TabularDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TabularDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -553,8 +742,33 @@ class TabularDataByFilterRequest extends $pb.GeneratedMessage {
   void clearIncludeInternalData() => clearField(3);
 }
 
+/// TabularDataByFilterResponse provides the data and metadata of tabular data.
 class TabularDataByFilterResponse extends $pb.GeneratedMessage {
-  factory TabularDataByFilterResponse() => create();
+  factory TabularDataByFilterResponse({
+    $core.Iterable<CaptureMetadata>? metadata,
+    $core.Iterable<TabularData>? data,
+    $fixnum.Int64? count,
+    $core.String? last,
+    $fixnum.Int64? totalSizeBytes,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata.addAll(metadata);
+    }
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    if (last != null) {
+      $result.last = last;
+    }
+    if (totalSizeBytes != null) {
+      $result.totalSizeBytes = totalSizeBytes;
+    }
+    return $result;
+  }
   TabularDataByFilterResponse._() : super();
   factory TabularDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TabularDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -623,8 +837,29 @@ class TabularDataByFilterResponse extends $pb.GeneratedMessage {
   void clearTotalSizeBytes() => clearField(5);
 }
 
+/// TabularData contains data and metadata associated with tabular data.
 class TabularData extends $pb.GeneratedMessage {
-  factory TabularData() => create();
+  factory TabularData({
+    $3.Struct? data,
+    $core.int? metadataIndex,
+    $2.Timestamp? timeRequested,
+    $2.Timestamp? timeReceived,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    if (metadataIndex != null) {
+      $result.metadataIndex = metadataIndex;
+    }
+    if (timeRequested != null) {
+      $result.timeRequested = timeRequested;
+    }
+    if (timeReceived != null) {
+      $result.timeReceived = timeReceived;
+    }
+    return $result;
+  }
   TabularData._() : super();
   factory TabularData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TabularData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -701,8 +936,21 @@ class TabularData extends $pb.GeneratedMessage {
   $2.Timestamp ensureTimeReceived() => $_ensure(3);
 }
 
+/// BinaryData contains data and metadata associated with binary data.
 class BinaryData extends $pb.GeneratedMessage {
-  factory BinaryData() => create();
+  factory BinaryData({
+    $core.List<$core.int>? binary,
+    BinaryMetadata? metadata,
+  }) {
+    final $result = create();
+    if (binary != null) {
+      $result.binary = binary;
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
   BinaryData._() : super();
   factory BinaryData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -755,8 +1003,29 @@ class BinaryData extends $pb.GeneratedMessage {
   BinaryMetadata ensureMetadata() => $_ensure(1);
 }
 
+/// BinaryDataByFilterRequest requests the data and metadata of binary (image + file) data when a filter is provided.
 class BinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  factory BinaryDataByFilterRequest() => create();
+  factory BinaryDataByFilterRequest({
+    DataRequest? dataRequest,
+    $core.bool? includeBinary,
+    $core.bool? countOnly,
+    $core.bool? includeInternalData,
+  }) {
+    final $result = create();
+    if (dataRequest != null) {
+      $result.dataRequest = dataRequest;
+    }
+    if (includeBinary != null) {
+      $result.includeBinary = includeBinary;
+    }
+    if (countOnly != null) {
+      $result.countOnly = countOnly;
+    }
+    if (includeInternalData != null) {
+      $result.includeInternalData = includeInternalData;
+    }
+    return $result;
+  }
   BinaryDataByFilterRequest._() : super();
   factory BinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -829,8 +1098,29 @@ class BinaryDataByFilterRequest extends $pb.GeneratedMessage {
   void clearIncludeInternalData() => clearField(4);
 }
 
+/// BinaryDataByFilterResponse provides the data and metadata of binary (image + file) data when a filter is provided.
 class BinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  factory BinaryDataByFilterResponse() => create();
+  factory BinaryDataByFilterResponse({
+    $core.Iterable<BinaryData>? data,
+    $fixnum.Int64? count,
+    $core.String? last,
+    $fixnum.Int64? totalSizeBytes,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    if (last != null) {
+      $result.last = last;
+    }
+    if (totalSizeBytes != null) {
+      $result.totalSizeBytes = totalSizeBytes;
+    }
+    return $result;
+  }
   BinaryDataByFilterResponse._() : super();
   factory BinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -895,8 +1185,25 @@ class BinaryDataByFilterResponse extends $pb.GeneratedMessage {
   void clearTotalSizeBytes() => clearField(4);
 }
 
+/// BinaryID is the unique identifier for a file that one can request to be retrieved or modified.
 class BinaryID extends $pb.GeneratedMessage {
-  factory BinaryID() => create();
+  factory BinaryID({
+    $core.String? fileId,
+    $core.String? organizationId,
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (fileId != null) {
+      $result.fileId = fileId;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   BinaryID._() : super();
   factory BinaryID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -957,8 +1264,21 @@ class BinaryID extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(3);
 }
 
+/// BinaryDataByFilterRequest requests the data and metadata of binary (image + file) data by binary ids.
 class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
-  factory BinaryDataByIDsRequest() => create();
+  factory BinaryDataByIDsRequest({
+    $core.bool? includeBinary,
+    $core.Iterable<BinaryID>? binaryIds,
+  }) {
+    final $result = create();
+    if (includeBinary != null) {
+      $result.includeBinary = includeBinary;
+    }
+    if (binaryIds != null) {
+      $result.binaryIds.addAll(binaryIds);
+    }
+    return $result;
+  }
   BinaryDataByIDsRequest._() : super();
   factory BinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1003,8 +1323,21 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   $core.List<BinaryID> get binaryIds => $_getList(1);
 }
 
+/// BinaryDataByIDsResponse provides the data and metadata of binary (image + file) data when a filter is provided.
 class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
-  factory BinaryDataByIDsResponse() => create();
+  factory BinaryDataByIDsResponse({
+    $core.Iterable<BinaryData>? data,
+    $fixnum.Int64? count,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    return $result;
+  }
   BinaryDataByIDsResponse._() : super();
   factory BinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1049,8 +1382,38 @@ class BinaryDataByIDsResponse extends $pb.GeneratedMessage {
   void clearCount() => clearField(2);
 }
 
+/// BoundingBox represents a labeled bounding box on an image.
+/// x and y values are normalized ratios between 0 and 1.
 class BoundingBox extends $pb.GeneratedMessage {
-  factory BoundingBox() => create();
+  factory BoundingBox({
+    $core.String? id,
+    $core.String? label,
+    $core.double? xMinNormalized,
+    $core.double? yMinNormalized,
+    $core.double? xMaxNormalized,
+    $core.double? yMaxNormalized,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (label != null) {
+      $result.label = label;
+    }
+    if (xMinNormalized != null) {
+      $result.xMinNormalized = xMinNormalized;
+    }
+    if (yMinNormalized != null) {
+      $result.yMinNormalized = yMinNormalized;
+    }
+    if (xMaxNormalized != null) {
+      $result.xMaxNormalized = xMaxNormalized;
+    }
+    if (yMaxNormalized != null) {
+      $result.yMaxNormalized = yMaxNormalized;
+    }
+    return $result;
+  }
   BoundingBox._() : super();
   factory BoundingBox.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoundingBox.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1141,8 +1504,17 @@ class BoundingBox extends $pb.GeneratedMessage {
   void clearYMaxNormalized() => clearField(6);
 }
 
+/// Annotations are data annotations used for machine learning.
 class Annotations extends $pb.GeneratedMessage {
-  factory Annotations() => create();
+  factory Annotations({
+    $core.Iterable<BoundingBox>? bboxes,
+  }) {
+    final $result = create();
+    if (bboxes != null) {
+      $result.bboxes.addAll(bboxes);
+    }
+    return $result;
+  }
   Annotations._() : super();
   factory Annotations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Annotations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1177,8 +1549,49 @@ class Annotations extends $pb.GeneratedMessage {
   $core.List<BoundingBox> get bboxes => $_getList(0);
 }
 
+/// BinaryMetadata is the metadata associated with binary data.
 class BinaryMetadata extends $pb.GeneratedMessage {
-  factory BinaryMetadata() => create();
+  factory BinaryMetadata({
+    $core.String? id,
+    CaptureMetadata? captureMetadata,
+    $2.Timestamp? timeRequested,
+    $2.Timestamp? timeReceived,
+    $core.String? fileName,
+    $core.String? fileExt,
+    $core.String? uri,
+    Annotations? annotations,
+    $core.Iterable<$core.String>? datasetIds,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (captureMetadata != null) {
+      $result.captureMetadata = captureMetadata;
+    }
+    if (timeRequested != null) {
+      $result.timeRequested = timeRequested;
+    }
+    if (timeReceived != null) {
+      $result.timeReceived = timeReceived;
+    }
+    if (fileName != null) {
+      $result.fileName = fileName;
+    }
+    if (fileExt != null) {
+      $result.fileExt = fileExt;
+    }
+    if (uri != null) {
+      $result.uri = uri;
+    }
+    if (annotations != null) {
+      $result.annotations = annotations;
+    }
+    if (datasetIds != null) {
+      $result.datasetIds.addAll(datasetIds);
+    }
+    return $result;
+  }
   BinaryMetadata._() : super();
   factory BinaryMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BinaryMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1301,8 +1714,23 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   $core.List<$core.String> get datasetIds => $_getList(8);
 }
 
+/// DeleteTabularDataRequest deletes the data from the organization that is older than `delete_older_than_days`.
+/// For example if `delete_older_than_days` is 10, this deletes any data that was captured up to 10 days ago.
+/// If it is 0, all existing data is deleted.
 class DeleteTabularDataRequest extends $pb.GeneratedMessage {
-  factory DeleteTabularDataRequest() => create();
+  factory DeleteTabularDataRequest({
+    $core.String? organizationId,
+    $core.int? deleteOlderThanDays,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (deleteOlderThanDays != null) {
+      $result.deleteOlderThanDays = deleteOlderThanDays;
+    }
+    return $result;
+  }
   DeleteTabularDataRequest._() : super();
   factory DeleteTabularDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteTabularDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1353,8 +1781,17 @@ class DeleteTabularDataRequest extends $pb.GeneratedMessage {
   void clearDeleteOlderThanDays() => clearField(2);
 }
 
+/// DeleteBinaryDataResponse returns the number of tabular datapoints deleted.
 class DeleteTabularDataResponse extends $pb.GeneratedMessage {
-  factory DeleteTabularDataResponse() => create();
+  factory DeleteTabularDataResponse({
+    $fixnum.Int64? deletedCount,
+  }) {
+    final $result = create();
+    if (deletedCount != null) {
+      $result.deletedCount = deletedCount;
+    }
+    return $result;
+  }
   DeleteTabularDataResponse._() : super();
   factory DeleteTabularDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteTabularDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1395,8 +1832,21 @@ class DeleteTabularDataResponse extends $pb.GeneratedMessage {
   void clearDeletedCount() => clearField(1);
 }
 
+/// DeleteBinaryDataByFilterRequest deletes the data and metadata of binary data when a filter is provided.
 class DeleteBinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  factory DeleteBinaryDataByFilterRequest() => create();
+  factory DeleteBinaryDataByFilterRequest({
+    Filter? filter,
+    $core.bool? includeInternalData,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    if (includeInternalData != null) {
+      $result.includeInternalData = includeInternalData;
+    }
+    return $result;
+  }
   DeleteBinaryDataByFilterRequest._() : super();
   factory DeleteBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1449,8 +1899,17 @@ class DeleteBinaryDataByFilterRequest extends $pb.GeneratedMessage {
   void clearIncludeInternalData() => clearField(2);
 }
 
+/// DeleteBinaryDataByFilterResponse returns the number of binary files deleted when a filter is provided.
 class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  factory DeleteBinaryDataByFilterResponse() => create();
+  factory DeleteBinaryDataByFilterResponse({
+    $fixnum.Int64? deletedCount,
+  }) {
+    final $result = create();
+    if (deletedCount != null) {
+      $result.deletedCount = deletedCount;
+    }
+    return $result;
+  }
   DeleteBinaryDataByFilterResponse._() : super();
   factory DeleteBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1491,8 +1950,17 @@ class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   void clearDeletedCount() => clearField(1);
 }
 
+/// DeleteBinaryDataByIDsRequest deletes the data and metadata of binary data when binary ids are provided.
 class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
-  factory DeleteBinaryDataByIDsRequest() => create();
+  factory DeleteBinaryDataByIDsRequest({
+    $core.Iterable<BinaryID>? binaryIds,
+  }) {
+    final $result = create();
+    if (binaryIds != null) {
+      $result.binaryIds.addAll(binaryIds);
+    }
+    return $result;
+  }
   DeleteBinaryDataByIDsRequest._() : super();
   factory DeleteBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1527,8 +1995,17 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   $core.List<BinaryID> get binaryIds => $_getList(0);
 }
 
+/// DeleteBinaryDataByIDsResponse returns the number of binary files deleted when binary ids are provided.
 class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
-  factory DeleteBinaryDataByIDsResponse() => create();
+  factory DeleteBinaryDataByIDsResponse({
+    $fixnum.Int64? deletedCount,
+  }) {
+    final $result = create();
+    if (deletedCount != null) {
+      $result.deletedCount = deletedCount;
+    }
+    return $result;
+  }
   DeleteBinaryDataByIDsResponse._() : super();
   factory DeleteBinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteBinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1569,8 +2046,21 @@ class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
   void clearDeletedCount() => clearField(1);
 }
 
+/// AddTagsToBinaryDataByIDsRequest requests adding all specified tags to each of the files when binary ids are provided.
 class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
-  factory AddTagsToBinaryDataByIDsRequest() => create();
+  factory AddTagsToBinaryDataByIDsRequest({
+    $core.Iterable<$core.String>? tags,
+    $core.Iterable<BinaryID>? binaryIds,
+  }) {
+    final $result = create();
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (binaryIds != null) {
+      $result.binaryIds.addAll(binaryIds);
+    }
+    return $result;
+  }
   AddTagsToBinaryDataByIDsRequest._() : super();
   factory AddTagsToBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddTagsToBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1641,8 +2131,21 @@ class AddTagsToBinaryDataByIDsResponse extends $pb.GeneratedMessage {
   static AddTagsToBinaryDataByIDsResponse? _defaultInstance;
 }
 
+/// AddTagsToBinaryDataByFilterRequest requests adding all specified tags to each of the files when a filter is provided.
 class AddTagsToBinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  factory AddTagsToBinaryDataByFilterRequest() => create();
+  factory AddTagsToBinaryDataByFilterRequest({
+    Filter? filter,
+    $core.Iterable<$core.String>? tags,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    return $result;
+  }
   AddTagsToBinaryDataByFilterRequest._() : super();
   factory AddTagsToBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddTagsToBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1721,8 +2224,21 @@ class AddTagsToBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   static AddTagsToBinaryDataByFilterResponse? _defaultInstance;
 }
 
+/// RemoveTagsFromBinaryDataByIDsRequest requests removing the given tags value from each file when binary ids are provided.
 class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
-  factory RemoveTagsFromBinaryDataByIDsRequest() => create();
+  factory RemoveTagsFromBinaryDataByIDsRequest({
+    $core.Iterable<$core.String>? tags,
+    $core.Iterable<BinaryID>? binaryIds,
+  }) {
+    final $result = create();
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (binaryIds != null) {
+      $result.binaryIds.addAll(binaryIds);
+    }
+    return $result;
+  }
   RemoveTagsFromBinaryDataByIDsRequest._() : super();
   factory RemoveTagsFromBinaryDataByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveTagsFromBinaryDataByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1761,8 +2277,17 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   $core.List<BinaryID> get binaryIds => $_getList(1);
 }
 
+/// RemoveTagsFromBinaryDataByIDsResponse returns the number of binary files which had tags removed
 class RemoveTagsFromBinaryDataByIDsResponse extends $pb.GeneratedMessage {
-  factory RemoveTagsFromBinaryDataByIDsResponse() => create();
+  factory RemoveTagsFromBinaryDataByIDsResponse({
+    $fixnum.Int64? deletedCount,
+  }) {
+    final $result = create();
+    if (deletedCount != null) {
+      $result.deletedCount = deletedCount;
+    }
+    return $result;
+  }
   RemoveTagsFromBinaryDataByIDsResponse._() : super();
   factory RemoveTagsFromBinaryDataByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveTagsFromBinaryDataByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1803,8 +2328,21 @@ class RemoveTagsFromBinaryDataByIDsResponse extends $pb.GeneratedMessage {
   void clearDeletedCount() => clearField(1);
 }
 
+/// RemoveTagsFromBinaryDataByFilterRequest requests removing the given tags value from each file when a filter is provided.
 class RemoveTagsFromBinaryDataByFilterRequest extends $pb.GeneratedMessage {
-  factory RemoveTagsFromBinaryDataByFilterRequest() => create();
+  factory RemoveTagsFromBinaryDataByFilterRequest({
+    Filter? filter,
+    $core.Iterable<$core.String>? tags,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    return $result;
+  }
   RemoveTagsFromBinaryDataByFilterRequest._() : super();
   factory RemoveTagsFromBinaryDataByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveTagsFromBinaryDataByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1851,8 +2389,17 @@ class RemoveTagsFromBinaryDataByFilterRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(1);
 }
 
+/// RemoveTagsFromBinaryDataByFilterResponse returns the number of binary files which had tags removed.
 class RemoveTagsFromBinaryDataByFilterResponse extends $pb.GeneratedMessage {
-  factory RemoveTagsFromBinaryDataByFilterResponse() => create();
+  factory RemoveTagsFromBinaryDataByFilterResponse({
+    $fixnum.Int64? deletedCount,
+  }) {
+    final $result = create();
+    if (deletedCount != null) {
+      $result.deletedCount = deletedCount;
+    }
+    return $result;
+  }
   RemoveTagsFromBinaryDataByFilterResponse._() : super();
   factory RemoveTagsFromBinaryDataByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveTagsFromBinaryDataByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1893,8 +2440,17 @@ class RemoveTagsFromBinaryDataByFilterResponse extends $pb.GeneratedMessage {
   void clearDeletedCount() => clearField(1);
 }
 
+/// TagsByFilterRequest requests the unique tags from data based on given filter.
 class TagsByFilterRequest extends $pb.GeneratedMessage {
-  factory TagsByFilterRequest() => create();
+  factory TagsByFilterRequest({
+    Filter? filter,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    return $result;
+  }
   TagsByFilterRequest._() : super();
   factory TagsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TagsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1937,8 +2493,17 @@ class TagsByFilterRequest extends $pb.GeneratedMessage {
   Filter ensureFilter() => $_ensure(0);
 }
 
+/// TagsByFilterResponse returns the unique tags from data based on given filter.
 class TagsByFilterResponse extends $pb.GeneratedMessage {
-  factory TagsByFilterResponse() => create();
+  factory TagsByFilterResponse({
+    $core.Iterable<$core.String>? tags,
+  }) {
+    final $result = create();
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    return $result;
+  }
   TagsByFilterResponse._() : super();
   factory TagsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TagsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1973,8 +2538,38 @@ class TagsByFilterResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(0);
 }
 
+/// AddBoundingBoxToImageByIDRequest specifies the binary ID to which a bounding box
+/// with the associated label and position in normalized coordinates will be added.
 class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
-  factory AddBoundingBoxToImageByIDRequest() => create();
+  factory AddBoundingBoxToImageByIDRequest({
+    $core.String? label,
+    $core.double? xMinNormalized,
+    $core.double? yMinNormalized,
+    $core.double? xMaxNormalized,
+    $core.double? yMaxNormalized,
+    BinaryID? binaryId,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (xMinNormalized != null) {
+      $result.xMinNormalized = xMinNormalized;
+    }
+    if (yMinNormalized != null) {
+      $result.yMinNormalized = yMinNormalized;
+    }
+    if (xMaxNormalized != null) {
+      $result.xMaxNormalized = xMaxNormalized;
+    }
+    if (yMaxNormalized != null) {
+      $result.yMaxNormalized = yMaxNormalized;
+    }
+    if (binaryId != null) {
+      $result.binaryId = binaryId;
+    }
+    return $result;
+  }
   AddBoundingBoxToImageByIDRequest._() : super();
   factory AddBoundingBoxToImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddBoundingBoxToImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2067,8 +2662,17 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   BinaryID ensureBinaryId() => $_ensure(5);
 }
 
+/// AddBoundingBoxToImageByIDResponse returns the bounding box ID of the successfully added bounding box.
 class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
-  factory AddBoundingBoxToImageByIDResponse() => create();
+  factory AddBoundingBoxToImageByIDResponse({
+    $core.String? bboxId,
+  }) {
+    final $result = create();
+    if (bboxId != null) {
+      $result.bboxId = bboxId;
+    }
+    return $result;
+  }
   AddBoundingBoxToImageByIDResponse._() : super();
   factory AddBoundingBoxToImageByIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddBoundingBoxToImageByIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2109,8 +2713,21 @@ class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
   void clearBboxId() => clearField(1);
 }
 
+/// RemoveBoundingBoxFromImageByIDRequest removes the bounding box with specified bbox ID for the file represented by the binary id.
 class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
-  factory RemoveBoundingBoxFromImageByIDRequest() => create();
+  factory RemoveBoundingBoxFromImageByIDRequest({
+    $core.String? bboxId,
+    BinaryID? binaryId,
+  }) {
+    final $result = create();
+    if (bboxId != null) {
+      $result.bboxId = bboxId;
+    }
+    if (binaryId != null) {
+      $result.binaryId = binaryId;
+    }
+    return $result;
+  }
   RemoveBoundingBoxFromImageByIDRequest._() : super();
   factory RemoveBoundingBoxFromImageByIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveBoundingBoxFromImageByIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2195,8 +2812,17 @@ class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
   static RemoveBoundingBoxFromImageByIDResponse? _defaultInstance;
 }
 
+/// BoundingBoxLabelsByFilterRequest requests all the labels of the bounding boxes from files from a given filter.
 class BoundingBoxLabelsByFilterRequest extends $pb.GeneratedMessage {
-  factory BoundingBoxLabelsByFilterRequest() => create();
+  factory BoundingBoxLabelsByFilterRequest({
+    Filter? filter,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    return $result;
+  }
   BoundingBoxLabelsByFilterRequest._() : super();
   factory BoundingBoxLabelsByFilterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoundingBoxLabelsByFilterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2239,8 +2865,17 @@ class BoundingBoxLabelsByFilterRequest extends $pb.GeneratedMessage {
   Filter ensureFilter() => $_ensure(0);
 }
 
+/// BoundingBoxLabelsByFilterRequest returns all the labels of the bounding boxes from files from a given filter.
 class BoundingBoxLabelsByFilterResponse extends $pb.GeneratedMessage {
-  factory BoundingBoxLabelsByFilterResponse() => create();
+  factory BoundingBoxLabelsByFilterResponse({
+    $core.Iterable<$core.String>? labels,
+  }) {
+    final $result = create();
+    if (labels != null) {
+      $result.labels.addAll(labels);
+    }
+    return $result;
+  }
   BoundingBoxLabelsByFilterResponse._() : super();
   factory BoundingBoxLabelsByFilterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoundingBoxLabelsByFilterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2275,8 +2910,23 @@ class BoundingBoxLabelsByFilterResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get labels => $_getList(0);
 }
 
+/// ConfigureDatabaseUserRequest accepts a Viam organization ID and a password for the database user
+/// being configured. Viam uses gRPC over TLS, so the entire request will be encrypted while in
+/// flight, including the password.
 class ConfigureDatabaseUserRequest extends $pb.GeneratedMessage {
-  factory ConfigureDatabaseUserRequest() => create();
+  factory ConfigureDatabaseUserRequest({
+    $core.String? organizationId,
+    $core.String? password,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    return $result;
+  }
   ConfigureDatabaseUserRequest._() : super();
   factory ConfigureDatabaseUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ConfigureDatabaseUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2359,8 +3009,17 @@ class ConfigureDatabaseUserResponse extends $pb.GeneratedMessage {
   static ConfigureDatabaseUserResponse? _defaultInstance;
 }
 
+/// GetDatabaseConnectionRequest requests the database connection hostname.
 class GetDatabaseConnectionRequest extends $pb.GeneratedMessage {
-  factory GetDatabaseConnectionRequest() => create();
+  factory GetDatabaseConnectionRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   GetDatabaseConnectionRequest._() : super();
   factory GetDatabaseConnectionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDatabaseConnectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2401,8 +3060,17 @@ class GetDatabaseConnectionRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(1);
 }
 
+/// GetDatabaseConnectionResponse returns the database connection hostname endpoint.
 class GetDatabaseConnectionResponse extends $pb.GeneratedMessage {
-  factory GetDatabaseConnectionResponse() => create();
+  factory GetDatabaseConnectionResponse({
+    $core.String? hostname,
+  }) {
+    final $result = create();
+    if (hostname != null) {
+      $result.hostname = hostname;
+    }
+    return $result;
+  }
   GetDatabaseConnectionResponse._() : super();
   factory GetDatabaseConnectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDatabaseConnectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2443,8 +3111,21 @@ class GetDatabaseConnectionResponse extends $pb.GeneratedMessage {
   void clearHostname() => clearField(1);
 }
 
+/// AddBinaryDataToDatasetByIDsRequest adds the binary data with the given binary IDs to a dataset with dataset_id.
 class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
-  factory AddBinaryDataToDatasetByIDsRequest() => create();
+  factory AddBinaryDataToDatasetByIDsRequest({
+    $core.Iterable<BinaryID>? binaryIds,
+    $core.String? datasetId,
+  }) {
+    final $result = create();
+    if (binaryIds != null) {
+      $result.binaryIds.addAll(binaryIds);
+    }
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    return $result;
+  }
   AddBinaryDataToDatasetByIDsRequest._() : super();
   factory AddBinaryDataToDatasetByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddBinaryDataToDatasetByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2521,8 +3202,21 @@ class AddBinaryDataToDatasetByIDsResponse extends $pb.GeneratedMessage {
   static AddBinaryDataToDatasetByIDsResponse? _defaultInstance;
 }
 
+/// RemoveBinaryDataFromDatasetByIDsRequest removes the specified binary IDs from a dataset with dataset_id.
 class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
-  factory RemoveBinaryDataFromDatasetByIDsRequest() => create();
+  factory RemoveBinaryDataFromDatasetByIDsRequest({
+    $core.Iterable<BinaryID>? binaryIds,
+    $core.String? datasetId,
+  }) {
+    final $result = create();
+    if (binaryIds != null) {
+      $result.binaryIds.addAll(binaryIds);
+    }
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    return $result;
+  }
   RemoveBinaryDataFromDatasetByIDsRequest._() : super();
   factory RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveBinaryDataFromDatasetByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

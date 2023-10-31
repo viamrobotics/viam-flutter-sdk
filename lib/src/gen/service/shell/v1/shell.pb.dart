@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,7 +16,23 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class ShellRequest extends $pb.GeneratedMessage {
-  factory ShellRequest() => create();
+  factory ShellRequest({
+    $core.String? name,
+    $core.String? dataIn,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (dataIn != null) {
+      $result.dataIn = dataIn;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   ShellRequest._() : super();
   factory ShellRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ShellRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -67,6 +83,7 @@ class ShellRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDataIn() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -80,7 +97,23 @@ class ShellRequest extends $pb.GeneratedMessage {
 }
 
 class ShellResponse extends $pb.GeneratedMessage {
-  factory ShellResponse() => create();
+  factory ShellResponse({
+    $core.String? dataOut,
+    $core.String? dataErr,
+    $core.bool? eof,
+  }) {
+    final $result = create();
+    if (dataOut != null) {
+      $result.dataOut = dataOut;
+    }
+    if (dataErr != null) {
+      $result.dataErr = dataErr;
+    }
+    if (eof != null) {
+      $result.eof = eof;
+    }
+    return $result;
+  }
   ShellResponse._() : super();
   factory ShellResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ShellResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

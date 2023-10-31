@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// The states that a plan can be in.
+/// InProgress if the plan is executing.
+/// Stopped if the plan was stopped.
+/// Suceeded if the robot reached its destination successfully.
+/// Failed if the robot did not reach its destination.
 class PlanState extends $pb.ProtobufEnum {
   static const PlanState PLAN_STATE_UNSPECIFIED = PlanState._(0, _omitEnumNames ? '' : 'PLAN_STATE_UNSPECIFIED');
   static const PlanState PLAN_STATE_IN_PROGRESS = PlanState._(1, _omitEnumNames ? '' : 'PLAN_STATE_IN_PROGRESS');

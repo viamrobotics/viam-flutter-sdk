@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+///  The canonical error codes for gRPC APIs.
+///
+///
+///  Sometimes multiple error codes may apply.  Services should return
+///  the most specific error code that applies.  For example, prefer
+///  `OUT_OF_RANGE` over `FAILED_PRECONDITION` if both codes apply.
+///  Similarly prefer `NOT_FOUND` or `ALREADY_EXISTS` over `FAILED_PRECONDITION`.
 class Code extends $pb.ProtobufEnum {
   static const Code OK = Code._(0, _omitEnumNames ? '' : 'OK');
   static const Code CANCELLED = Code._(1, _omitEnumNames ? '' : 'CANCELLED');

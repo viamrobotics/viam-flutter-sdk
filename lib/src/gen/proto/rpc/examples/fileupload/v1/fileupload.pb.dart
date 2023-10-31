@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,19 @@ enum UploadFileRequest_Data {
 }
 
 class UploadFileRequest extends $pb.GeneratedMessage {
-  factory UploadFileRequest() => create();
+  factory UploadFileRequest({
+    $core.String? name,
+    $core.List<$core.int>? chunkData,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (chunkData != null) {
+      $result.chunkData = chunkData;
+    }
+    return $result;
+  }
   UploadFileRequest._() : super();
   factory UploadFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -82,7 +94,19 @@ class UploadFileRequest extends $pb.GeneratedMessage {
 }
 
 class UploadFileResponse extends $pb.GeneratedMessage {
-  factory UploadFileResponse() => create();
+  factory UploadFileResponse({
+    $core.String? name,
+    $fixnum.Int64? size,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
   UploadFileResponse._() : super();
   factory UploadFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

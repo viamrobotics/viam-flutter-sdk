@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,8 +18,57 @@ import 'billing.pbenum.dart';
 
 export 'billing.pbenum.dart';
 
+/// TODO(APP-1865) should be deprecated/removed in favor of GetCurrentMonthUsage
 class CurrentMonthUsageSummary extends $pb.GeneratedMessage {
-  factory CurrentMonthUsageSummary() => create();
+  factory CurrentMonthUsageSummary({
+    $core.double? cloudStorageUsage,
+    $core.double? cloudStorageUsageCost,
+    $core.double? dataUploadUsageCost,
+    $core.double? dataUploadUsageQuantity,
+    $core.double? dataEgresUsageCost,
+    $core.double? dataEgresUsageQuantity,
+    $core.double? standardComputeUsageCost,
+    $core.double? standardComputeUsageQuantity,
+    $core.double? totalUsageQuantity,
+    $core.double? totalUsageWithDiscount,
+    $core.double? totalUsageWithoutDiscount,
+  }) {
+    final $result = create();
+    if (cloudStorageUsage != null) {
+      $result.cloudStorageUsage = cloudStorageUsage;
+    }
+    if (cloudStorageUsageCost != null) {
+      $result.cloudStorageUsageCost = cloudStorageUsageCost;
+    }
+    if (dataUploadUsageCost != null) {
+      $result.dataUploadUsageCost = dataUploadUsageCost;
+    }
+    if (dataUploadUsageQuantity != null) {
+      $result.dataUploadUsageQuantity = dataUploadUsageQuantity;
+    }
+    if (dataEgresUsageCost != null) {
+      $result.dataEgresUsageCost = dataEgresUsageCost;
+    }
+    if (dataEgresUsageQuantity != null) {
+      $result.dataEgresUsageQuantity = dataEgresUsageQuantity;
+    }
+    if (standardComputeUsageCost != null) {
+      $result.standardComputeUsageCost = standardComputeUsageCost;
+    }
+    if (standardComputeUsageQuantity != null) {
+      $result.standardComputeUsageQuantity = standardComputeUsageQuantity;
+    }
+    if (totalUsageQuantity != null) {
+      $result.totalUsageQuantity = totalUsageQuantity;
+    }
+    if (totalUsageWithDiscount != null) {
+      $result.totalUsageWithDiscount = totalUsageWithDiscount;
+    }
+    if (totalUsageWithoutDiscount != null) {
+      $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
+    }
+    return $result;
+  }
   CurrentMonthUsageSummary._() : super();
   factory CurrentMonthUsageSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CurrentMonthUsageSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -161,7 +210,35 @@ class CurrentMonthUsageSummary extends $pb.GeneratedMessage {
 }
 
 class InvoiceSummary extends $pb.GeneratedMessage {
-  factory InvoiceSummary() => create();
+  factory InvoiceSummary({
+    $core.String? id,
+    $4.Timestamp? invoiceDate,
+    $core.double? invoiceAmount,
+    $core.String? status,
+    $4.Timestamp? dueDate,
+    $4.Timestamp? paidDate,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (invoiceDate != null) {
+      $result.invoiceDate = invoiceDate;
+    }
+    if (invoiceAmount != null) {
+      $result.invoiceAmount = invoiceAmount;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (dueDate != null) {
+      $result.dueDate = dueDate;
+    }
+    if (paidDate != null) {
+      $result.paidDate = paidDate;
+    }
+    return $result;
+  }
   InvoiceSummary._() : super();
   factory InvoiceSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InvoiceSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -259,7 +336,39 @@ class InvoiceSummary extends $pb.GeneratedMessage {
 }
 
 class BillableResourceEvent extends $pb.GeneratedMessage {
-  factory BillableResourceEvent() => create();
+  factory BillableResourceEvent({
+    $core.String? id,
+    $core.String? type,
+    $core.double? usageQuantity,
+    $core.String? usageQuantityUnit,
+    $core.String? usageCost,
+    $4.Timestamp? occurredAt,
+    $core.String? userName,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (usageQuantity != null) {
+      $result.usageQuantity = usageQuantity;
+    }
+    if (usageQuantityUnit != null) {
+      $result.usageQuantityUnit = usageQuantityUnit;
+    }
+    if (usageCost != null) {
+      $result.usageCost = usageCost;
+    }
+    if (occurredAt != null) {
+      $result.occurredAt = occurredAt;
+    }
+    if (userName != null) {
+      $result.userName = userName;
+    }
+    return $result;
+  }
   BillableResourceEvent._() : super();
   factory BillableResourceEvent.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BillableResourceEvent.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -363,7 +472,39 @@ class BillableResourceEvent extends $pb.GeneratedMessage {
 }
 
 class Invoice extends $pb.GeneratedMessage {
-  factory Invoice() => create();
+  factory Invoice({
+    $core.String? id,
+    $4.Timestamp? invoiceDate,
+    $core.double? invoiceAmount,
+    $core.String? status,
+    $4.Timestamp? dueDate,
+    $core.Iterable<BillableResourceEvent>? items,
+    $core.String? emailedTo,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (invoiceDate != null) {
+      $result.invoiceDate = invoiceDate;
+    }
+    if (invoiceAmount != null) {
+      $result.invoiceAmount = invoiceAmount;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (dueDate != null) {
+      $result.dueDate = dueDate;
+    }
+    if (items != null) {
+      $result.items.addAll(items);
+    }
+    if (emailedTo != null) {
+      $result.emailedTo = emailedTo;
+    }
+    return $result;
+  }
   Invoice._() : super();
   factory Invoice.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Invoice.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -463,7 +604,19 @@ class Invoice extends $pb.GeneratedMessage {
 }
 
 class PaymentMethodCard extends $pb.GeneratedMessage {
-  factory PaymentMethodCard() => create();
+  factory PaymentMethodCard({
+    $core.String? brand,
+    $core.String? lastFourDigits,
+  }) {
+    final $result = create();
+    if (brand != null) {
+      $result.brand = brand;
+    }
+    if (lastFourDigits != null) {
+      $result.lastFourDigits = lastFourDigits;
+    }
+    return $result;
+  }
   PaymentMethodCard._() : super();
   factory PaymentMethodCard.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PaymentMethodCard.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -514,8 +667,17 @@ class PaymentMethodCard extends $pb.GeneratedMessage {
   void clearLastFourDigits() => clearField(2);
 }
 
+/// TODO(APP-1865) should be deprecated/removed in favor of GetCurrentMonthUsage
 class GetCurrentMonthUsageSummaryRequest extends $pb.GeneratedMessage {
-  factory GetCurrentMonthUsageSummaryRequest() => create();
+  factory GetCurrentMonthUsageSummaryRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetCurrentMonthUsageSummaryRequest._() : super();
   factory GetCurrentMonthUsageSummaryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCurrentMonthUsageSummaryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -556,8 +718,57 @@ class GetCurrentMonthUsageSummaryRequest extends $pb.GeneratedMessage {
   void clearOrgId() => clearField(1);
 }
 
+/// TODO(APP-1865) should be deprecated/removed in favor of GetCurrentMonthUsage
 class GetCurrentMonthUsageSummaryResponse extends $pb.GeneratedMessage {
-  factory GetCurrentMonthUsageSummaryResponse() => create();
+  factory GetCurrentMonthUsageSummaryResponse({
+    $core.double? cloudStorageUsage,
+    $core.double? cloudStorageUsageCost,
+    $core.double? dataUploadUsageCost,
+    $core.double? dataUploadUsageQuantity,
+    $core.double? dataEgresUsageCost,
+    $core.double? dataEgresUsageQuantity,
+    $core.double? standardComputeUsageCost,
+    $core.double? standardComputeUsageQuantity,
+    $core.double? totalUsageQuantity,
+    $core.double? totalUsageWithDiscount,
+    $core.double? totalUsageWithoutDiscount,
+  }) {
+    final $result = create();
+    if (cloudStorageUsage != null) {
+      $result.cloudStorageUsage = cloudStorageUsage;
+    }
+    if (cloudStorageUsageCost != null) {
+      $result.cloudStorageUsageCost = cloudStorageUsageCost;
+    }
+    if (dataUploadUsageCost != null) {
+      $result.dataUploadUsageCost = dataUploadUsageCost;
+    }
+    if (dataUploadUsageQuantity != null) {
+      $result.dataUploadUsageQuantity = dataUploadUsageQuantity;
+    }
+    if (dataEgresUsageCost != null) {
+      $result.dataEgresUsageCost = dataEgresUsageCost;
+    }
+    if (dataEgresUsageQuantity != null) {
+      $result.dataEgresUsageQuantity = dataEgresUsageQuantity;
+    }
+    if (standardComputeUsageCost != null) {
+      $result.standardComputeUsageCost = standardComputeUsageCost;
+    }
+    if (standardComputeUsageQuantity != null) {
+      $result.standardComputeUsageQuantity = standardComputeUsageQuantity;
+    }
+    if (totalUsageQuantity != null) {
+      $result.totalUsageQuantity = totalUsageQuantity;
+    }
+    if (totalUsageWithDiscount != null) {
+      $result.totalUsageWithDiscount = totalUsageWithDiscount;
+    }
+    if (totalUsageWithoutDiscount != null) {
+      $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
+    }
+    return $result;
+  }
   GetCurrentMonthUsageSummaryResponse._() : super();
   factory GetCurrentMonthUsageSummaryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCurrentMonthUsageSummaryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -699,7 +910,15 @@ class GetCurrentMonthUsageSummaryResponse extends $pb.GeneratedMessage {
 }
 
 class GetCurrentMonthUsageRequest extends $pb.GeneratedMessage {
-  factory GetCurrentMonthUsageRequest() => create();
+  factory GetCurrentMonthUsageRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetCurrentMonthUsageRequest._() : super();
   factory GetCurrentMonthUsageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCurrentMonthUsageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -741,7 +960,51 @@ class GetCurrentMonthUsageRequest extends $pb.GeneratedMessage {
 }
 
 class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
-  factory GetCurrentMonthUsageResponse() => create();
+  factory GetCurrentMonthUsageResponse({
+    $4.Timestamp? startDate,
+    $4.Timestamp? endDate,
+    $core.double? cloudStorageUsageCost,
+    $core.double? dataUploadUsageCost,
+    $core.double? dataEgresUsageCost,
+    $core.double? remoteControlUsageCost,
+    $core.double? standardComputeUsageCost,
+    $core.double? discountAmount,
+    $core.double? totalUsageWithDiscount,
+    $core.double? totalUsageWithoutDiscount,
+  }) {
+    final $result = create();
+    if (startDate != null) {
+      $result.startDate = startDate;
+    }
+    if (endDate != null) {
+      $result.endDate = endDate;
+    }
+    if (cloudStorageUsageCost != null) {
+      $result.cloudStorageUsageCost = cloudStorageUsageCost;
+    }
+    if (dataUploadUsageCost != null) {
+      $result.dataUploadUsageCost = dataUploadUsageCost;
+    }
+    if (dataEgresUsageCost != null) {
+      $result.dataEgresUsageCost = dataEgresUsageCost;
+    }
+    if (remoteControlUsageCost != null) {
+      $result.remoteControlUsageCost = remoteControlUsageCost;
+    }
+    if (standardComputeUsageCost != null) {
+      $result.standardComputeUsageCost = standardComputeUsageCost;
+    }
+    if (discountAmount != null) {
+      $result.discountAmount = discountAmount;
+    }
+    if (totalUsageWithDiscount != null) {
+      $result.totalUsageWithDiscount = totalUsageWithDiscount;
+    }
+    if (totalUsageWithoutDiscount != null) {
+      $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
+    }
+    return $result;
+  }
   GetCurrentMonthUsageResponse._() : super();
   factory GetCurrentMonthUsageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCurrentMonthUsageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -876,8 +1139,17 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   void clearTotalUsageWithoutDiscount() => clearField(10);
 }
 
+/// TODO(APP-1865) may want to remove
 class GetUnpaidBalanceRequest extends $pb.GeneratedMessage {
-  factory GetUnpaidBalanceRequest() => create();
+  factory GetUnpaidBalanceRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetUnpaidBalanceRequest._() : super();
   factory GetUnpaidBalanceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUnpaidBalanceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -918,8 +1190,21 @@ class GetUnpaidBalanceRequest extends $pb.GeneratedMessage {
   void clearOrgId() => clearField(1);
 }
 
+/// TODO(APP-1865) may want to remove
 class GetUnpaidBalanceResponse extends $pb.GeneratedMessage {
-  factory GetUnpaidBalanceResponse() => create();
+  factory GetUnpaidBalanceResponse({
+    $core.double? unpaidBalance,
+    $4.Timestamp? unpaidBalanceDueDate,
+  }) {
+    final $result = create();
+    if (unpaidBalance != null) {
+      $result.unpaidBalance = unpaidBalance;
+    }
+    if (unpaidBalanceDueDate != null) {
+      $result.unpaidBalanceDueDate = unpaidBalanceDueDate;
+    }
+    return $result;
+  }
   GetUnpaidBalanceResponse._() : super();
   factory GetUnpaidBalanceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUnpaidBalanceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -972,8 +1257,17 @@ class GetUnpaidBalanceResponse extends $pb.GeneratedMessage {
   $4.Timestamp ensureUnpaidBalanceDueDate() => $_ensure(1);
 }
 
+/// TODO(APP-1865) may want to remove
 class GetInvoiceHistoryRequest extends $pb.GeneratedMessage {
-  factory GetInvoiceHistoryRequest() => create();
+  factory GetInvoiceHistoryRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetInvoiceHistoryRequest._() : super();
   factory GetInvoiceHistoryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInvoiceHistoryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1014,8 +1308,17 @@ class GetInvoiceHistoryRequest extends $pb.GeneratedMessage {
   void clearOrgId() => clearField(1);
 }
 
+/// TODO(APP-1865) may want to remove
 class GetInvoiceHistoryResponse extends $pb.GeneratedMessage {
-  factory GetInvoiceHistoryResponse() => create();
+  factory GetInvoiceHistoryResponse({
+    $core.Iterable<InvoiceSummary>? invoices,
+  }) {
+    final $result = create();
+    if (invoices != null) {
+      $result.invoices.addAll(invoices);
+    }
+    return $result;
+  }
   GetInvoiceHistoryResponse._() : super();
   factory GetInvoiceHistoryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInvoiceHistoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1050,8 +1353,17 @@ class GetInvoiceHistoryResponse extends $pb.GeneratedMessage {
   $core.List<InvoiceSummary> get invoices => $_getList(0);
 }
 
+/// TODO(APP-1865) may want to remove
 class GetItemizedInvoiceRequest extends $pb.GeneratedMessage {
-  factory GetItemizedInvoiceRequest() => create();
+  factory GetItemizedInvoiceRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   GetItemizedInvoiceRequest._() : super();
   factory GetItemizedInvoiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetItemizedInvoiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1092,8 +1404,17 @@ class GetItemizedInvoiceRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+/// TODO(APP-1865) may want to remove
 class GetItemizedInvoiceResponse extends $pb.GeneratedMessage {
-  factory GetItemizedInvoiceResponse() => create();
+  factory GetItemizedInvoiceResponse({
+    Invoice? invoice,
+  }) {
+    final $result = create();
+    if (invoice != null) {
+      $result.invoice = invoice;
+    }
+    return $result;
+  }
   GetItemizedInvoiceResponse._() : super();
   factory GetItemizedInvoiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetItemizedInvoiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1137,7 +1458,15 @@ class GetItemizedInvoiceResponse extends $pb.GeneratedMessage {
 }
 
 class GetOrgBillingInformationRequest extends $pb.GeneratedMessage {
-  factory GetOrgBillingInformationRequest() => create();
+  factory GetOrgBillingInformationRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetOrgBillingInformationRequest._() : super();
   factory GetOrgBillingInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrgBillingInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1179,7 +1508,27 @@ class GetOrgBillingInformationRequest extends $pb.GeneratedMessage {
 }
 
 class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
-  factory GetOrgBillingInformationResponse() => create();
+  factory GetOrgBillingInformationResponse({
+    PaymentMethodType? type,
+    $core.String? billingEmail,
+    PaymentMethodCard? method,
+    $core.String? billingTier,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (billingEmail != null) {
+      $result.billingEmail = billingEmail;
+    }
+    if (method != null) {
+      $result.method = method;
+    }
+    if (billingTier != null) {
+      $result.billingTier = billingTier;
+    }
+    return $result;
+  }
   GetOrgBillingInformationResponse._() : super();
   factory GetOrgBillingInformationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrgBillingInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1231,6 +1580,7 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBillingEmail() => clearField(2);
 
+  /// defined if type is PAYMENT_METHOD_TYPE_CARD
   @$pb.TagNumber(3)
   PaymentMethodCard get method => $_getN(2);
   @$pb.TagNumber(3)
@@ -1242,6 +1592,7 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   PaymentMethodCard ensureMethod() => $_ensure(2);
 
+  /// Only return billing_tier for billing dashboard admin users
   @$pb.TagNumber(4)
   $core.String get billingTier => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -1253,7 +1604,15 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
 }
 
 class GetInvoicesSummaryRequest extends $pb.GeneratedMessage {
-  factory GetInvoicesSummaryRequest() => create();
+  factory GetInvoicesSummaryRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetInvoicesSummaryRequest._() : super();
   factory GetInvoicesSummaryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInvoicesSummaryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1295,7 +1654,19 @@ class GetInvoicesSummaryRequest extends $pb.GeneratedMessage {
 }
 
 class GetInvoicesSummaryResponse extends $pb.GeneratedMessage {
-  factory GetInvoicesSummaryResponse() => create();
+  factory GetInvoicesSummaryResponse({
+    $core.double? outstandingBalance,
+    $core.Iterable<InvoiceSummary>? invoices,
+  }) {
+    final $result = create();
+    if (outstandingBalance != null) {
+      $result.outstandingBalance = outstandingBalance;
+    }
+    if (invoices != null) {
+      $result.invoices.addAll(invoices);
+    }
+    return $result;
+  }
   GetInvoicesSummaryResponse._() : super();
   factory GetInvoicesSummaryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInvoicesSummaryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1327,6 +1698,7 @@ class GetInvoicesSummaryResponse extends $pb.GeneratedMessage {
   static GetInvoicesSummaryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetInvoicesSummaryResponse>(create);
   static GetInvoicesSummaryResponse? _defaultInstance;
 
+  /// all unpaid balances at the end of the last billing cycle
   @$pb.TagNumber(1)
   $core.double get outstandingBalance => $_getN(0);
   @$pb.TagNumber(1)
@@ -1336,12 +1708,22 @@ class GetInvoicesSummaryResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOutstandingBalance() => clearField(1);
 
+  /// all previous invoices
   @$pb.TagNumber(2)
   $core.List<InvoiceSummary> get invoices => $_getList(1);
 }
 
+/// TODO(APP-1865) should be deprecated/removed
 class GetBillingSummaryRequest extends $pb.GeneratedMessage {
-  factory GetBillingSummaryRequest() => create();
+  factory GetBillingSummaryRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetBillingSummaryRequest._() : super();
   factory GetBillingSummaryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBillingSummaryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1382,8 +1764,45 @@ class GetBillingSummaryRequest extends $pb.GeneratedMessage {
   void clearOrgId() => clearField(1);
 }
 
+/// TODO(APP-1865) should be deprecated/removed
 class GetBillingSummaryResponse extends $pb.GeneratedMessage {
-  factory GetBillingSummaryResponse() => create();
+  factory GetBillingSummaryResponse({
+    CurrentMonthUsageSummary? usageSummary,
+    $core.Iterable<InvoiceSummary>? invoices,
+    $core.double? statementBalance,
+    $core.double? currentBalance,
+    $core.double? currentMonthBalance,
+    $4.Timestamp? currentMonthDueDate,
+    $core.String? invoiceEmail,
+    PaymentMethodCard? paymentMethod,
+  }) {
+    final $result = create();
+    if (usageSummary != null) {
+      $result.usageSummary = usageSummary;
+    }
+    if (invoices != null) {
+      $result.invoices.addAll(invoices);
+    }
+    if (statementBalance != null) {
+      $result.statementBalance = statementBalance;
+    }
+    if (currentBalance != null) {
+      $result.currentBalance = currentBalance;
+    }
+    if (currentMonthBalance != null) {
+      $result.currentMonthBalance = currentMonthBalance;
+    }
+    if (currentMonthDueDate != null) {
+      $result.currentMonthDueDate = currentMonthDueDate;
+    }
+    if (invoiceEmail != null) {
+      $result.invoiceEmail = invoiceEmail;
+    }
+    if (paymentMethod != null) {
+      $result.paymentMethod = paymentMethod;
+    }
+    return $result;
+  }
   GetBillingSummaryResponse._() : super();
   factory GetBillingSummaryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBillingSummaryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1495,7 +1914,19 @@ class GetBillingSummaryResponse extends $pb.GeneratedMessage {
 }
 
 class GetInvoicePdfRequest extends $pb.GeneratedMessage {
-  factory GetInvoicePdfRequest() => create();
+  factory GetInvoicePdfRequest({
+    $core.String? id,
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetInvoicePdfRequest._() : super();
   factory GetInvoicePdfRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInvoicePdfRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1547,7 +1978,15 @@ class GetInvoicePdfRequest extends $pb.GeneratedMessage {
 }
 
 class GetInvoicePdfResponse extends $pb.GeneratedMessage {
-  factory GetInvoicePdfResponse() => create();
+  factory GetInvoicePdfResponse({
+    $core.List<$core.int>? chunk,
+  }) {
+    final $result = create();
+    if (chunk != null) {
+      $result.chunk = chunk;
+    }
+    return $result;
+  }
   GetInvoicePdfResponse._() : super();
   factory GetInvoicePdfResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetInvoicePdfResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
