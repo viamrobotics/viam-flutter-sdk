@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,7 +16,23 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class SetPowerRequest extends $pb.GeneratedMessage {
-  factory SetPowerRequest() => create();
+  factory SetPowerRequest({
+    $core.String? name,
+    $core.double? powerPct,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (powerPct != null) {
+      $result.powerPct = powerPct;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetPowerRequest._() : super();
   factory SetPowerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPowerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +65,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   static SetPowerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPowerRequest>(create);
   static SetPowerRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -58,6 +75,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Percentage of motor's power, between -1 and 1
   @$pb.TagNumber(2)
   $core.double get powerPct => $_getN(1);
   @$pb.TagNumber(2)
@@ -67,6 +85,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPowerPct() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -112,7 +131,27 @@ class SetPowerResponse extends $pb.GeneratedMessage {
 }
 
 class GoForRequest extends $pb.GeneratedMessage {
-  factory GoForRequest() => create();
+  factory GoForRequest({
+    $core.String? name,
+    $core.double? rpm,
+    $core.double? revolutions,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (rpm != null) {
+      $result.rpm = rpm;
+    }
+    if (revolutions != null) {
+      $result.revolutions = revolutions;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GoForRequest._() : super();
   factory GoForRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GoForRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -146,6 +185,7 @@ class GoForRequest extends $pb.GeneratedMessage {
   static GoForRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GoForRequest>(create);
   static GoForRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -155,6 +195,7 @@ class GoForRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Speed of motor travel in rotations per minute
   @$pb.TagNumber(2)
   $core.double get rpm => $_getN(1);
   @$pb.TagNumber(2)
@@ -164,6 +205,7 @@ class GoForRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearRpm() => clearField(2);
 
+  /// Number of revolutions relative to motor's start position
   @$pb.TagNumber(3)
   $core.double get revolutions => $_getN(2);
   @$pb.TagNumber(3)
@@ -173,6 +215,7 @@ class GoForRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearRevolutions() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -218,7 +261,27 @@ class GoForResponse extends $pb.GeneratedMessage {
 }
 
 class GoToRequest extends $pb.GeneratedMessage {
-  factory GoToRequest() => create();
+  factory GoToRequest({
+    $core.String? name,
+    $core.double? rpm,
+    $core.double? positionRevolutions,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (rpm != null) {
+      $result.rpm = rpm;
+    }
+    if (positionRevolutions != null) {
+      $result.positionRevolutions = positionRevolutions;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GoToRequest._() : super();
   factory GoToRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GoToRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -252,6 +315,7 @@ class GoToRequest extends $pb.GeneratedMessage {
   static GoToRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GoToRequest>(create);
   static GoToRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -261,6 +325,7 @@ class GoToRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Speed of motor travel in rotations per minute
   @$pb.TagNumber(2)
   $core.double get rpm => $_getN(1);
   @$pb.TagNumber(2)
@@ -270,6 +335,7 @@ class GoToRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearRpm() => clearField(2);
 
+  /// Number of revolutions relative to motor's home home/zero
   @$pb.TagNumber(3)
   $core.double get positionRevolutions => $_getN(2);
   @$pb.TagNumber(3)
@@ -279,6 +345,7 @@ class GoToRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPositionRevolutions() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -324,7 +391,23 @@ class GoToResponse extends $pb.GeneratedMessage {
 }
 
 class ResetZeroPositionRequest extends $pb.GeneratedMessage {
-  factory ResetZeroPositionRequest() => create();
+  factory ResetZeroPositionRequest({
+    $core.String? name,
+    $core.double? offset,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (offset != null) {
+      $result.offset = offset;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   ResetZeroPositionRequest._() : super();
   factory ResetZeroPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResetZeroPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -357,6 +440,7 @@ class ResetZeroPositionRequest extends $pb.GeneratedMessage {
   static ResetZeroPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetZeroPositionRequest>(create);
   static ResetZeroPositionRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -366,6 +450,7 @@ class ResetZeroPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Motor position
   @$pb.TagNumber(2)
   $core.double get offset => $_getN(1);
   @$pb.TagNumber(2)
@@ -375,6 +460,7 @@ class ResetZeroPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearOffset() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -420,7 +506,19 @@ class ResetZeroPositionResponse extends $pb.GeneratedMessage {
 }
 
 class GetPositionRequest extends $pb.GeneratedMessage {
-  factory GetPositionRequest() => create();
+  factory GetPositionRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPositionRequest._() : super();
   factory GetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -452,6 +550,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   static GetPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionRequest>(create);
   static GetPositionRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -461,6 +560,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -474,7 +574,15 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
-  factory GetPositionResponse() => create();
+  factory GetPositionResponse({
+    $core.double? position,
+  }) {
+    final $result = create();
+    if (position != null) {
+      $result.position = position;
+    }
+    return $result;
+  }
   GetPositionResponse._() : super();
   factory GetPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -505,6 +613,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   static GetPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionResponse>(create);
   static GetPositionResponse? _defaultInstance;
 
+  /// Current position of the motor relative to its home
   @$pb.TagNumber(1)
   $core.double get position => $_getN(0);
   @$pb.TagNumber(1)
@@ -516,7 +625,19 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class StopRequest extends $pb.GeneratedMessage {
-  factory StopRequest() => create();
+  factory StopRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StopRequest._() : super();
   factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -548,6 +669,7 @@ class StopRequest extends $pb.GeneratedMessage {
   static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
   static StopRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -557,6 +679,7 @@ class StopRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -602,7 +725,19 @@ class StopResponse extends $pb.GeneratedMessage {
 }
 
 class IsPoweredRequest extends $pb.GeneratedMessage {
-  factory IsPoweredRequest() => create();
+  factory IsPoweredRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   IsPoweredRequest._() : super();
   factory IsPoweredRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsPoweredRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -634,6 +769,7 @@ class IsPoweredRequest extends $pb.GeneratedMessage {
   static IsPoweredRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsPoweredRequest>(create);
   static IsPoweredRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -643,6 +779,7 @@ class IsPoweredRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -656,7 +793,19 @@ class IsPoweredRequest extends $pb.GeneratedMessage {
 }
 
 class IsPoweredResponse extends $pb.GeneratedMessage {
-  factory IsPoweredResponse() => create();
+  factory IsPoweredResponse({
+    $core.bool? isOn,
+    $core.double? powerPct,
+  }) {
+    final $result = create();
+    if (isOn != null) {
+      $result.isOn = isOn;
+    }
+    if (powerPct != null) {
+      $result.powerPct = powerPct;
+    }
+    return $result;
+  }
   IsPoweredResponse._() : super();
   factory IsPoweredResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsPoweredResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -688,6 +837,7 @@ class IsPoweredResponse extends $pb.GeneratedMessage {
   static IsPoweredResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsPoweredResponse>(create);
   static IsPoweredResponse? _defaultInstance;
 
+  /// Returns true if the motor is on
   @$pb.TagNumber(1)
   $core.bool get isOn => $_getBF(0);
   @$pb.TagNumber(1)
@@ -697,6 +847,9 @@ class IsPoweredResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIsOn() => clearField(1);
 
+  /// Returns power percent (from 0 to 1, or from -1 to 1 for motors that support negative power),
+  /// based on the last command sent to motor. If the last command was a stop command, this value
+  /// will be 0.
   @$pb.TagNumber(2)
   $core.double get powerPct => $_getN(1);
   @$pb.TagNumber(2)
@@ -708,7 +861,19 @@ class IsPoweredResponse extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
-  factory GetPropertiesRequest() => create();
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPropertiesRequest._() : super();
   factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -740,6 +905,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
   static GetPropertiesRequest? _defaultInstance;
 
+  /// Name of a motor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -749,6 +915,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -762,7 +929,15 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
-  factory GetPropertiesResponse() => create();
+  factory GetPropertiesResponse({
+    $core.bool? positionReporting,
+  }) {
+    final $result = create();
+    if (positionReporting != null) {
+      $result.positionReporting = positionReporting;
+    }
+    return $result;
+  }
   GetPropertiesResponse._() : super();
   factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -793,6 +968,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   static GetPropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesResponse>(create);
   static GetPropertiesResponse? _defaultInstance;
 
+  /// Returns true if the motor supports reporting its position
   @$pb.TagNumber(1)
   $core.bool get positionReporting => $_getBF(0);
   @$pb.TagNumber(1)
@@ -804,7 +980,23 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
 }
 
 class Status extends $pb.GeneratedMessage {
-  factory Status() => create();
+  factory Status({
+    $core.bool? isPowered,
+    $core.double? position,
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isPowered != null) {
+      $result.isPowered = isPowered;
+    }
+    if (position != null) {
+      $result.position = position;
+    }
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   Status._() : super();
   factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -837,6 +1029,7 @@ class Status extends $pb.GeneratedMessage {
   static Status getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Status>(create);
   static Status? _defaultInstance;
 
+  /// Returns true if the motor is powered
   @$pb.TagNumber(1)
   $core.bool get isPowered => $_getBF(0);
   @$pb.TagNumber(1)
@@ -846,6 +1039,7 @@ class Status extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIsPowered() => clearField(1);
 
+  /// Returns current position of the motor relative to its home
   @$pb.TagNumber(3)
   $core.double get position => $_getN(1);
   @$pb.TagNumber(3)
@@ -855,6 +1049,7 @@ class Status extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPosition() => clearField(3);
 
+  /// Returns true if the motor is moving
   @$pb.TagNumber(4)
   $core.bool get isMoving => $_getBF(2);
   @$pb.TagNumber(4)
@@ -866,7 +1061,15 @@ class Status extends $pb.GeneratedMessage {
 }
 
 class IsMovingRequest extends $pb.GeneratedMessage {
-  factory IsMovingRequest() => create();
+  factory IsMovingRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   IsMovingRequest._() : super();
   factory IsMovingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -908,7 +1111,15 @@ class IsMovingRequest extends $pb.GeneratedMessage {
 }
 
 class IsMovingResponse extends $pb.GeneratedMessage {
-  factory IsMovingResponse() => create();
+  factory IsMovingResponse({
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   IsMovingResponse._() : super();
   factory IsMovingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

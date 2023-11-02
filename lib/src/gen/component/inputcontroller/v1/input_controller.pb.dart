@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,19 @@ import '../../../google/protobuf/struct.pb.dart' as $2;
 import '../../../google/protobuf/timestamp.pb.dart' as $3;
 
 class GetControlsRequest extends $pb.GeneratedMessage {
-  factory GetControlsRequest() => create();
+  factory GetControlsRequest({
+    $core.String? controller,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (controller != null) {
+      $result.controller = controller;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetControlsRequest._() : super();
   factory GetControlsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetControlsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +61,7 @@ class GetControlsRequest extends $pb.GeneratedMessage {
   static GetControlsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetControlsRequest>(create);
   static GetControlsRequest? _defaultInstance;
 
+  /// Name of an input controller
   @$pb.TagNumber(1)
   $core.String get controller => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -58,6 +71,7 @@ class GetControlsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearController() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -71,7 +85,15 @@ class GetControlsRequest extends $pb.GeneratedMessage {
 }
 
 class GetControlsResponse extends $pb.GeneratedMessage {
-  factory GetControlsResponse() => create();
+  factory GetControlsResponse({
+    $core.Iterable<$core.String>? controls,
+  }) {
+    final $result = create();
+    if (controls != null) {
+      $result.controls.addAll(controls);
+    }
+    return $result;
+  }
   GetControlsResponse._() : super();
   factory GetControlsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetControlsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -102,12 +124,26 @@ class GetControlsResponse extends $pb.GeneratedMessage {
   static GetControlsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetControlsResponse>(create);
   static GetControlsResponse? _defaultInstance;
 
+  /// Returns a list of all the controls (buttons and axes) that are
+  /// available to a given Input Controller
   @$pb.TagNumber(1)
   $core.List<$core.String> get controls => $_getList(0);
 }
 
 class GetEventsRequest extends $pb.GeneratedMessage {
-  factory GetEventsRequest() => create();
+  factory GetEventsRequest({
+    $core.String? controller,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (controller != null) {
+      $result.controller = controller;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetEventsRequest._() : super();
   factory GetEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -139,6 +175,7 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   static GetEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEventsRequest>(create);
   static GetEventsRequest? _defaultInstance;
 
+  /// Name of an input controller
   @$pb.TagNumber(1)
   $core.String get controller => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -148,6 +185,7 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearController() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -161,7 +199,15 @@ class GetEventsRequest extends $pb.GeneratedMessage {
 }
 
 class GetEventsResponse extends $pb.GeneratedMessage {
-  factory GetEventsResponse() => create();
+  factory GetEventsResponse({
+    $core.Iterable<Event>? events,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    return $result;
+  }
   GetEventsResponse._() : super();
   factory GetEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -192,12 +238,30 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   static GetEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEventsResponse>(create);
   static GetEventsResponse? _defaultInstance;
 
+  /// Returns a list of the most recent event for each control on a given InputController. Effectively provides the current "state" of all
+  /// buttons/axes on a given input controller
   @$pb.TagNumber(1)
   $core.List<Event> get events => $_getList(0);
 }
 
 class TriggerEventRequest extends $pb.GeneratedMessage {
-  factory TriggerEventRequest() => create();
+  factory TriggerEventRequest({
+    $core.String? controller,
+    Event? event,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (controller != null) {
+      $result.controller = controller;
+    }
+    if (event != null) {
+      $result.event = event;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   TriggerEventRequest._() : super();
   factory TriggerEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TriggerEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -230,6 +294,7 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
   static TriggerEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TriggerEventRequest>(create);
   static TriggerEventRequest? _defaultInstance;
 
+  /// Name of an input controller
   @$pb.TagNumber(1)
   $core.String get controller => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -239,6 +304,7 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearController() => clearField(1);
 
+  /// Digitally assert a given event
   @$pb.TagNumber(2)
   Event get event => $_getN(1);
   @$pb.TagNumber(2)
@@ -250,6 +316,7 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Event ensureEvent() => $_ensure(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -295,7 +362,27 @@ class TriggerEventResponse extends $pb.GeneratedMessage {
 }
 
 class Event extends $pb.GeneratedMessage {
-  factory Event() => create();
+  factory Event({
+    $3.Timestamp? time,
+    $core.String? event,
+    $core.String? control,
+    $core.double? value,
+  }) {
+    final $result = create();
+    if (time != null) {
+      $result.time = time;
+    }
+    if (event != null) {
+      $result.event = event;
+    }
+    if (control != null) {
+      $result.control = control;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   Event._() : super();
   factory Event.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Event.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -329,6 +416,7 @@ class Event extends $pb.GeneratedMessage {
   static Event getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Event>(create);
   static Event? _defaultInstance;
 
+  /// Timestamp of event
   @$pb.TagNumber(1)
   $3.Timestamp get time => $_getN(0);
   @$pb.TagNumber(1)
@@ -340,6 +428,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $3.Timestamp ensureTime() => $_ensure(0);
 
+  /// An event type (eg: ButtonPress, ButtonRelease)
   @$pb.TagNumber(2)
   $core.String get event => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -349,6 +438,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearEvent() => clearField(2);
 
+  /// A control, can be a button (eg: ButtonSouth) or an axis (eg: AbsoluteX)
   @$pb.TagNumber(3)
   $core.String get control => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -358,6 +448,7 @@ class Event extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearControl() => clearField(3);
 
+  /// 0 or 1 for buttons, -1.0 to +1.0 for axes
   @$pb.TagNumber(4)
   $core.double get value => $_getN(3);
   @$pb.TagNumber(4)
@@ -369,7 +460,23 @@ class Event extends $pb.GeneratedMessage {
 }
 
 class StreamEventsRequest_Events extends $pb.GeneratedMessage {
-  factory StreamEventsRequest_Events() => create();
+  factory StreamEventsRequest_Events({
+    $core.String? control,
+    $core.Iterable<$core.String>? events,
+    $core.Iterable<$core.String>? cancelledEvents,
+  }) {
+    final $result = create();
+    if (control != null) {
+      $result.control = control;
+    }
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    if (cancelledEvents != null) {
+      $result.cancelledEvents.addAll(cancelledEvents);
+    }
+    return $result;
+  }
   StreamEventsRequest_Events._() : super();
   factory StreamEventsRequest_Events.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamEventsRequest_Events.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -402,6 +509,7 @@ class StreamEventsRequest_Events extends $pb.GeneratedMessage {
   static StreamEventsRequest_Events getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEventsRequest_Events>(create);
   static StreamEventsRequest_Events? _defaultInstance;
 
+  /// Name of a control (button or axis)
   @$pb.TagNumber(1)
   $core.String get control => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -411,15 +519,34 @@ class StreamEventsRequest_Events extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearControl() => clearField(1);
 
+  /// Specify which event types to recieve events for
   @$pb.TagNumber(2)
   $core.List<$core.String> get events => $_getList(1);
 
+  /// Specify which event types to stop recieving events for
+  /// This can be an empty list
   @$pb.TagNumber(3)
   $core.List<$core.String> get cancelledEvents => $_getList(2);
 }
 
 class StreamEventsRequest extends $pb.GeneratedMessage {
-  factory StreamEventsRequest() => create();
+  factory StreamEventsRequest({
+    $core.String? controller,
+    $core.Iterable<StreamEventsRequest_Events>? events,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (controller != null) {
+      $result.controller = controller;
+    }
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StreamEventsRequest._() : super();
   factory StreamEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -452,6 +579,7 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
   static StreamEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEventsRequest>(create);
   static StreamEventsRequest? _defaultInstance;
 
+  /// Name of an input controller
   @$pb.TagNumber(1)
   $core.String get controller => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -461,9 +589,11 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearController() => clearField(1);
 
+  /// A list of Events
   @$pb.TagNumber(2)
   $core.List<StreamEventsRequest_Events> get events => $_getList(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -477,7 +607,15 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
 }
 
 class StreamEventsResponse extends $pb.GeneratedMessage {
-  factory StreamEventsResponse() => create();
+  factory StreamEventsResponse({
+    Event? event,
+  }) {
+    final $result = create();
+    if (event != null) {
+      $result.event = event;
+    }
+    return $result;
+  }
   StreamEventsResponse._() : super();
   factory StreamEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -508,6 +646,7 @@ class StreamEventsResponse extends $pb.GeneratedMessage {
   static StreamEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamEventsResponse>(create);
   static StreamEventsResponse? _defaultInstance;
 
+  /// Event for a controller
   @$pb.TagNumber(1)
   Event get event => $_getN(0);
   @$pb.TagNumber(1)
@@ -521,7 +660,15 @@ class StreamEventsResponse extends $pb.GeneratedMessage {
 }
 
 class Status extends $pb.GeneratedMessage {
-  factory Status() => create();
+  factory Status({
+    $core.Iterable<Event>? events,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    return $result;
+  }
   Status._() : super();
   factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

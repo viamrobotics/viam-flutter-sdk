@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -57,6 +57,7 @@ const SubmitTrainingJobRequest$json = {
   '1': 'SubmitTrainingJobRequest',
   '2': [
     {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.viam.app.data.v1.Filter', '8': {}, '10': 'filter'},
+    {'1': 'dataset_id', '3': 7, '4': 1, '5': 9, '8': {}, '10': 'datasetId'},
     {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'organizationId'},
     {'1': 'model_name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
     {'1': 'model_version', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
@@ -69,14 +70,15 @@ const SubmitTrainingJobRequest$json = {
 final $typed_data.Uint8List submitTrainingJobRequestDescriptor = $convert.base64Decode(
     'ChhTdWJtaXRUcmFpbmluZ0pvYlJlcXVlc3QSUgoGZmlsdGVyGAEgASgLMhgudmlhbS5hcHAuZG'
     'F0YS52MS5GaWx0ZXJCIJqEngMbYnNvbjoiZmlsdGVyIiBqc29uOiJmaWx0ZXIiUgZmaWx0ZXIS'
-    'WwoPb3JnYW5pemF0aW9uX2lkGAIgASgJQjKahJ4DLWJzb246Im9yZ2FuaXphdGlvbl9pZCIgan'
-    'Nvbjoib3JnYW5pemF0aW9uX2lkIlIOb3JnYW5pemF0aW9uSWQSRwoKbW9kZWxfbmFtZRgDIAEo'
-    'CUIomoSeAyNic29uOiJtb2RlbF9uYW1lIiBqc29uOiJtb2RlbF9uYW1lIlIJbW9kZWxOYW1lEl'
-    'MKDW1vZGVsX3ZlcnNpb24YBCABKAlCLpqEngMpYnNvbjoibW9kZWxfdmVyc2lvbiIganNvbjoi'
-    'bW9kZWxfdmVyc2lvbiJSDG1vZGVsVmVyc2lvbhJqCgptb2RlbF90eXBlGAUgASgOMiEudmlhbS'
-    '5hcHAubWx0cmFpbmluZy52MS5Nb2RlbFR5cGVCKJqEngMjYnNvbjoibW9kZWxfdHlwZSIganNv'
-    'bjoibW9kZWxfdHlwZSJSCW1vZGVsVHlwZRIwCgR0YWdzGAYgAygJQhyahJ4DF2Jzb246InRhZ3'
-    'MiIGpzb246InRhZ3MiUgR0YWdz');
+    'RwoKZGF0YXNldF9pZBgHIAEoCUIomoSeAyNic29uOiJkYXRhc2V0X2lkIiBqc29uOiJkYXRhc2'
+    'V0X2lkIlIJZGF0YXNldElkElsKD29yZ2FuaXphdGlvbl9pZBgCIAEoCUIymoSeAy1ic29uOiJv'
+    'cmdhbml6YXRpb25faWQiIGpzb246Im9yZ2FuaXphdGlvbl9pZCJSDm9yZ2FuaXphdGlvbklkEk'
+    'cKCm1vZGVsX25hbWUYAyABKAlCKJqEngMjYnNvbjoibW9kZWxfbmFtZSIganNvbjoibW9kZWxf'
+    'bmFtZSJSCW1vZGVsTmFtZRJTCg1tb2RlbF92ZXJzaW9uGAQgASgJQi6ahJ4DKWJzb246Im1vZG'
+    'VsX3ZlcnNpb24iIGpzb246Im1vZGVsX3ZlcnNpb24iUgxtb2RlbFZlcnNpb24SagoKbW9kZWxf'
+    'dHlwZRgFIAEoDjIhLnZpYW0uYXBwLm1sdHJhaW5pbmcudjEuTW9kZWxUeXBlQiiahJ4DI2Jzb2'
+    '46Im1vZGVsX3R5cGUiIGpzb246Im1vZGVsX3R5cGUiUgltb2RlbFR5cGUSMAoEdGFncxgGIAMo'
+    'CUIcmoSeAxdic29uOiJ0YWdzIiBqc29uOiJ0YWdzIlIEdGFncw==');
 
 @$core.Deprecated('Use submitTrainingJobResponseDescriptor instead')
 const SubmitTrainingJobResponse$json = {
@@ -197,4 +199,25 @@ const CancelTrainingJobResponse$json = {
 /// Descriptor for `CancelTrainingJobResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List cancelTrainingJobResponseDescriptor = $convert.base64Decode(
     'ChlDYW5jZWxUcmFpbmluZ0pvYlJlc3BvbnNl');
+
+@$core.Deprecated('Use deleteCompletedTrainingJobRequestDescriptor instead')
+const DeleteCompletedTrainingJobRequest$json = {
+  '1': 'DeleteCompletedTrainingJobRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteCompletedTrainingJobRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteCompletedTrainingJobRequestDescriptor = $convert.base64Decode(
+    'CiFEZWxldGVDb21wbGV0ZWRUcmFpbmluZ0pvYlJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use deleteCompletedTrainingJobResponseDescriptor instead')
+const DeleteCompletedTrainingJobResponse$json = {
+  '1': 'DeleteCompletedTrainingJobResponse',
+};
+
+/// Descriptor for `DeleteCompletedTrainingJobResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteCompletedTrainingJobResponseDescriptor = $convert.base64Decode(
+    'CiJEZWxldGVDb21wbGV0ZWRUcmFpbmluZ0pvYlJlc3BvbnNl');
 

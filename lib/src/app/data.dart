@@ -1,17 +1,24 @@
+import 'dart:io';
 import 'dart:math';
 
+import 'package:async/async.dart';
+import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
+import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
+import '../gen/google/protobuf/timestamp.pb.dart';
+import '../media/image.dart';
 
 /// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
 ///
 /// All calls must be authenticated.
 class DataClient {
-  final DataServiceClient _client;
+  final DataServiceClient _dataClient;
+  final DataSyncServiceClient _dataSyncClient;
 
-  DataClient(this._client);
+  DataClient(this._dataClient, this._dataSyncClient);
 
   DataRequest _makeDataRequest(Filter? filter, int? limit, String? last, Order? sortOrder) {
     final dataRequest = DataRequest();
@@ -37,7 +44,7 @@ class DataClient {
       final request = TabularDataByFilterRequest()
         ..dataRequest = dataRequest
         ..countOnly = true;
-      return await _client.tabularDataByFilter(request);
+      return await _dataClient.tabularDataByFilter(request);
     }
 
     final finalResponse = TabularDataByFilterResponse();
@@ -49,7 +56,7 @@ class DataClient {
         ..dataRequest = dataRequest
         ..countOnly = false;
 
-      final response = await _client.tabularDataByFilter(request);
+      final response = await _dataClient.tabularDataByFilter(request);
 
       if (response.count == 0) {
         break;
@@ -73,7 +80,7 @@ class DataClient {
       final request = BinaryDataByFilterRequest()
         ..dataRequest = dataRequest
         ..countOnly = true;
-      return await _client.binaryDataByFilter(request);
+      return await _dataClient.binaryDataByFilter(request);
     }
 
     final finalResponse = BinaryDataByFilterResponse();
@@ -85,7 +92,7 @@ class DataClient {
         ..dataRequest = dataRequest
         ..countOnly = false;
 
-      final response = await _client.binaryDataByFilter(request);
+      final response = await _dataClient.binaryDataByFilter(request);
 
       if (response.count == 0) {
         break;
@@ -102,8 +109,82 @@ class DataClient {
   /// Retrieve binary data by IDs
   Future<List<BinaryData>> binaryDataByIds(List<BinaryID> binaryIds) async {
     final request = BinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
-    final response = await _client.binaryDataByIDs(request);
+    final response = await _dataClient.binaryDataByIDs(request);
     return response.data;
+  }
+
+  /// Upload an image to Viam's Data Manager
+  ///
+  /// If no name is provided, the current timestamp will be used as the filename.
+  Future<String> uploadImage(ViamImage image, String partId,
+      {String? fileName,
+      String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      Iterable<String> tags = const []}) async {
+    final metadata = UploadMetadata()
+      ..partId = partId
+      ..type = DataType.DATA_TYPE_FILE
+      ..fileName = fileName ?? DateTime.now().toIso8601String()
+      ..fileExtension = '.${image.mimeType.type}'
+      ..tags.addAll(tags);
+    if (componentType != null) metadata.componentType = componentType;
+    if (componentName != null) metadata.componentName = componentName;
+    if (methodName != null) metadata.methodName = methodName;
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+    final metadataRequest = FileUploadRequest()..metadata = metadata;
+
+    // Make requests that are at most 2MB large (max gRPC request size is 4MB)
+    final dataRequests = image.raw.slices(2 * 1024 * 1024).map((e) => FileUploadRequest()..fileContents = (FileData()..data = e));
+
+    final requestStream = Stream.fromIterable([metadataRequest, ...dataRequests]);
+    final response = await _dataSyncClient.fileUpload(requestStream);
+    return response.fileId;
+  }
+
+  /// Upload a file from its path to Viam's Data Manager
+  ///
+  /// The file name can be overridden by providing the [fileName] parameter.
+  Future<String> uploadFile(String path, String partId,
+      {String? fileName,
+      String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      Iterable<String> tags = const []}) async {
+    final fileNameAndExt = path.split(Platform.pathSeparator).last;
+    String fName, ext;
+    if (fileNameAndExt.contains('.')) {
+      fName = (fileNameAndExt.split('.')..removeLast()).join('.');
+      ext = '.${fileNameAndExt.split('.').last}';
+    } else {
+      fName = fileNameAndExt;
+      ext = '';
+    }
+    final metadata = UploadMetadata()
+      ..partId = partId
+      ..type = DataType.DATA_TYPE_FILE
+      ..fileName = fileName ?? fName
+      ..fileExtension = ext
+      ..tags.addAll(tags);
+    if (componentType != null) metadata.componentType = componentType;
+    if (componentName != null) metadata.componentName = componentName;
+    if (methodName != null) metadata.methodName = methodName;
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+    final metadataStream = Stream.value(FileUploadRequest()..metadata = metadata);
+
+    final file = File(path);
+    final reader = ChunkedStreamReader(file.openRead());
+    try {
+      final fileDataStream =
+          reader.readStream(file.lengthSync()).map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
+      final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
+      final response = await _dataSyncClient.fileUpload(requestStream);
+      return response.fileId;
+    } finally {
+      await reader.cancel();
+    }
   }
 }
 

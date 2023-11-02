@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -84,6 +84,18 @@ const LocationSecret$json = {
 final $typed_data.Uint8List locationSecretDescriptor = $convert.base64Decode(
     'Cg5Mb2NhdGlvblNlY3JldBIOCgJpZBgBIAEoCVICaWQSFgoGc2VjcmV0GAIgASgJUgZzZWNyZX'
     'Q=');
+
+@$core.Deprecated('Use appValidationStatusDescriptor instead')
+const AppValidationStatus$json = {
+  '1': 'AppValidationStatus',
+  '2': [
+    {'1': 'error', '3': 1, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `AppValidationStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appValidationStatusDescriptor = $convert.base64Decode(
+    'ChNBcHBWYWxpZGF0aW9uU3RhdHVzEhQKBWVycm9yGAEgASgJUgVlcnJvcg==');
 
 @$core.Deprecated('Use cloudConfigDescriptor instead')
 const CloudConfig$json = {
@@ -641,6 +653,7 @@ const ModuleConfig$json = {
     {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
     {'1': 'module_id', '3': 5, '4': 1, '5': 9, '10': 'moduleId'},
     {'1': 'env', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleConfig.EnvEntry', '10': 'env'},
+    {'1': 'status', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'status'},
   ],
   '3': [ModuleConfig_EnvEntry$json],
 };
@@ -660,8 +673,9 @@ final $typed_data.Uint8List moduleConfigDescriptor = $convert.base64Decode(
     'CgxNb2R1bGVDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRwYXRoGAIgASgJUgRwYXRoEh'
     'sKCWxvZ19sZXZlbBgDIAEoCVIIbG9nTGV2ZWwSEgoEdHlwZRgEIAEoCVIEdHlwZRIbCgltb2R1'
     'bGVfaWQYBSABKAlSCG1vZHVsZUlkEjQKA2VudhgGIAMoCzIiLnZpYW0uYXBwLnYxLk1vZHVsZU'
-    'NvbmZpZy5FbnZFbnRyeVIDZW52GjYKCEVudkVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZh'
-    'bHVlGAIgASgJUgV2YWx1ZToCOAE=');
+    'NvbmZpZy5FbnZFbnRyeVIDZW52EjgKBnN0YXR1cxgHIAEoCzIgLnZpYW0uYXBwLnYxLkFwcFZh'
+    'bGlkYXRpb25TdGF0dXNSBnN0YXR1cxo2CghFbnZFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCg'
+    'V2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
 
 @$core.Deprecated('Use packageConfigDescriptor instead')
 const PackageConfig$json = {
@@ -671,11 +685,13 @@ const PackageConfig$json = {
     {'1': 'package', '3': 2, '4': 1, '5': 9, '10': 'package'},
     {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
     {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'status', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'status'},
   ],
 };
 
 /// Descriptor for `PackageConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List packageConfigDescriptor = $convert.base64Decode(
     'Cg1QYWNrYWdlQ29uZmlnEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHcGFja2FnZRgCIAEoCVIHcG'
-    'Fja2FnZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEhIKBHR5cGUYBCABKAlSBHR5cGU=');
+    'Fja2FnZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEhIKBHR5cGUYBCABKAlSBHR5cGUSOAoG'
+    'c3RhdHVzGAcgASgLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IGc3RhdHVz');
 

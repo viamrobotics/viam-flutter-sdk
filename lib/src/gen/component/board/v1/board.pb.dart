@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -22,7 +22,19 @@ import 'board.pbenum.dart';
 export 'board.pbenum.dart';
 
 class StatusRequest extends $pb.GeneratedMessage {
-  factory StatusRequest() => create();
+  factory StatusRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StatusRequest._() : super();
   factory StatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -63,6 +75,7 @@ class StatusRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -76,7 +89,15 @@ class StatusRequest extends $pb.GeneratedMessage {
 }
 
 class StatusResponse extends $pb.GeneratedMessage {
-  factory StatusResponse() => create();
+  factory StatusResponse({
+    $1.BoardStatus? status,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   StatusResponse._() : super();
   factory StatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -120,7 +141,27 @@ class StatusResponse extends $pb.GeneratedMessage {
 }
 
 class SetGPIORequest extends $pb.GeneratedMessage {
-  factory SetGPIORequest() => create();
+  factory SetGPIORequest({
+    $core.String? name,
+    $core.String? pin,
+    $core.bool? high,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (high != null) {
+      $result.high = high;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetGPIORequest._() : super();
   factory SetGPIORequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetGPIORequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -181,6 +222,7 @@ class SetGPIORequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearHigh() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -226,7 +268,23 @@ class SetGPIOResponse extends $pb.GeneratedMessage {
 }
 
 class GetGPIORequest extends $pb.GeneratedMessage {
-  factory GetGPIORequest() => create();
+  factory GetGPIORequest({
+    $core.String? name,
+    $core.String? pin,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetGPIORequest._() : super();
   factory GetGPIORequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGPIORequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -277,6 +335,7 @@ class GetGPIORequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPin() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -290,7 +349,15 @@ class GetGPIORequest extends $pb.GeneratedMessage {
 }
 
 class GetGPIOResponse extends $pb.GeneratedMessage {
-  factory GetGPIOResponse() => create();
+  factory GetGPIOResponse({
+    $core.bool? high,
+  }) {
+    final $result = create();
+    if (high != null) {
+      $result.high = high;
+    }
+    return $result;
+  }
   GetGPIOResponse._() : super();
   factory GetGPIOResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetGPIOResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -332,7 +399,23 @@ class GetGPIOResponse extends $pb.GeneratedMessage {
 }
 
 class PWMRequest extends $pb.GeneratedMessage {
-  factory PWMRequest() => create();
+  factory PWMRequest({
+    $core.String? name,
+    $core.String? pin,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   PWMRequest._() : super();
   factory PWMRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PWMRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -383,6 +466,7 @@ class PWMRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPin() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -396,7 +480,15 @@ class PWMRequest extends $pb.GeneratedMessage {
 }
 
 class PWMResponse extends $pb.GeneratedMessage {
-  factory PWMResponse() => create();
+  factory PWMResponse({
+    $core.double? dutyCyclePct,
+  }) {
+    final $result = create();
+    if (dutyCyclePct != null) {
+      $result.dutyCyclePct = dutyCyclePct;
+    }
+    return $result;
+  }
   PWMResponse._() : super();
   factory PWMResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PWMResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -438,7 +530,27 @@ class PWMResponse extends $pb.GeneratedMessage {
 }
 
 class SetPWMRequest extends $pb.GeneratedMessage {
-  factory SetPWMRequest() => create();
+  factory SetPWMRequest({
+    $core.String? name,
+    $core.String? pin,
+    $core.double? dutyCyclePct,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (dutyCyclePct != null) {
+      $result.dutyCyclePct = dutyCyclePct;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetPWMRequest._() : super();
   factory SetPWMRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPWMRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -499,6 +611,7 @@ class SetPWMRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDutyCyclePct() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -544,7 +657,23 @@ class SetPWMResponse extends $pb.GeneratedMessage {
 }
 
 class PWMFrequencyRequest extends $pb.GeneratedMessage {
-  factory PWMFrequencyRequest() => create();
+  factory PWMFrequencyRequest({
+    $core.String? name,
+    $core.String? pin,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   PWMFrequencyRequest._() : super();
   factory PWMFrequencyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PWMFrequencyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -595,6 +724,7 @@ class PWMFrequencyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPin() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -608,7 +738,15 @@ class PWMFrequencyRequest extends $pb.GeneratedMessage {
 }
 
 class PWMFrequencyResponse extends $pb.GeneratedMessage {
-  factory PWMFrequencyResponse() => create();
+  factory PWMFrequencyResponse({
+    $fixnum.Int64? frequencyHz,
+  }) {
+    final $result = create();
+    if (frequencyHz != null) {
+      $result.frequencyHz = frequencyHz;
+    }
+    return $result;
+  }
   PWMFrequencyResponse._() : super();
   factory PWMFrequencyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PWMFrequencyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -650,7 +788,27 @@ class PWMFrequencyResponse extends $pb.GeneratedMessage {
 }
 
 class SetPWMFrequencyRequest extends $pb.GeneratedMessage {
-  factory SetPWMFrequencyRequest() => create();
+  factory SetPWMFrequencyRequest({
+    $core.String? name,
+    $core.String? pin,
+    $fixnum.Int64? frequencyHz,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (frequencyHz != null) {
+      $result.frequencyHz = frequencyHz;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetPWMFrequencyRequest._() : super();
   factory SetPWMFrequencyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPWMFrequencyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -711,6 +869,7 @@ class SetPWMFrequencyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFrequencyHz() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -756,7 +915,23 @@ class SetPWMFrequencyResponse extends $pb.GeneratedMessage {
 }
 
 class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
-  factory ReadAnalogReaderRequest() => create();
+  factory ReadAnalogReaderRequest({
+    $core.String? boardName,
+    $core.String? analogReaderName,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (boardName != null) {
+      $result.boardName = boardName;
+    }
+    if (analogReaderName != null) {
+      $result.analogReaderName = analogReaderName;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   ReadAnalogReaderRequest._() : super();
   factory ReadAnalogReaderRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReadAnalogReaderRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -807,6 +982,7 @@ class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAnalogReaderName() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -820,7 +996,15 @@ class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
 }
 
 class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
-  factory ReadAnalogReaderResponse() => create();
+  factory ReadAnalogReaderResponse({
+    $core.int? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   ReadAnalogReaderResponse._() : super();
   factory ReadAnalogReaderResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReadAnalogReaderResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -862,7 +1046,27 @@ class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
 }
 
 class WriteAnalogRequest extends $pb.GeneratedMessage {
-  factory WriteAnalogRequest() => create();
+  factory WriteAnalogRequest({
+    $core.String? name,
+    $core.String? pin,
+    $core.int? value,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pin != null) {
+      $result.pin = pin;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   WriteAnalogRequest._() : super();
   factory WriteAnalogRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WriteAnalogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -923,6 +1127,7 @@ class WriteAnalogRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearValue() => clearField(3);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
@@ -968,7 +1173,23 @@ class WriteAnalogResponse extends $pb.GeneratedMessage {
 }
 
 class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
-  factory GetDigitalInterruptValueRequest() => create();
+  factory GetDigitalInterruptValueRequest({
+    $core.String? boardName,
+    $core.String? digitalInterruptName,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (boardName != null) {
+      $result.boardName = boardName;
+    }
+    if (digitalInterruptName != null) {
+      $result.digitalInterruptName = digitalInterruptName;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetDigitalInterruptValueRequest._() : super();
   factory GetDigitalInterruptValueRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDigitalInterruptValueRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1019,6 +1240,7 @@ class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDigitalInterruptName() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -1032,7 +1254,15 @@ class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
 }
 
 class GetDigitalInterruptValueResponse extends $pb.GeneratedMessage {
-  factory GetDigitalInterruptValueResponse() => create();
+  factory GetDigitalInterruptValueResponse({
+    $fixnum.Int64? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   GetDigitalInterruptValueResponse._() : super();
   factory GetDigitalInterruptValueResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDigitalInterruptValueResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1074,7 +1304,27 @@ class GetDigitalInterruptValueResponse extends $pb.GeneratedMessage {
 }
 
 class SetPowerModeRequest extends $pb.GeneratedMessage {
-  factory SetPowerModeRequest() => create();
+  factory SetPowerModeRequest({
+    $core.String? name,
+    PowerMode? powerMode,
+    $3.Duration? duration,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (powerMode != null) {
+      $result.powerMode = powerMode;
+    }
+    if (duration != null) {
+      $result.duration = duration;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   SetPowerModeRequest._() : super();
   factory SetPowerModeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPowerModeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1108,6 +1358,7 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
   static SetPowerModeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPowerModeRequest>(create);
   static SetPowerModeRequest? _defaultInstance;
 
+  /// name of board
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1117,6 +1368,7 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Requested power mode
   @$pb.TagNumber(2)
   PowerMode get powerMode => $_getN(1);
   @$pb.TagNumber(2)
@@ -1126,6 +1378,7 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPowerMode() => clearField(2);
 
+  /// Requested duration to stay in `power_mode`
   @$pb.TagNumber(3)
   $3.Duration get duration => $_getN(2);
   @$pb.TagNumber(3)
@@ -1137,6 +1390,7 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $3.Duration ensureDuration() => $_ensure(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)

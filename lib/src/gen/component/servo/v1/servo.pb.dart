@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,7 +16,23 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class MoveRequest extends $pb.GeneratedMessage {
-  factory MoveRequest() => create();
+  factory MoveRequest({
+    $core.String? name,
+    $core.int? angleDeg,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (angleDeg != null) {
+      $result.angleDeg = angleDeg;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveRequest._() : super();
   factory MoveRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +65,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   static MoveRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveRequest>(create);
   static MoveRequest? _defaultInstance;
 
+  /// the name of the servo, as registered
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -58,6 +75,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// the degrees by which to rotate the servo. Accepted values are between 0 and 180
   @$pb.TagNumber(2)
   $core.int get angleDeg => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -67,6 +85,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAngleDeg() => clearField(2);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -112,7 +131,19 @@ class MoveResponse extends $pb.GeneratedMessage {
 }
 
 class GetPositionRequest extends $pb.GeneratedMessage {
-  factory GetPositionRequest() => create();
+  factory GetPositionRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPositionRequest._() : super();
   factory GetPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -144,6 +175,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   static GetPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionRequest>(create);
   static GetPositionRequest? _defaultInstance;
 
+  /// the name of the servo, as registered
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -153,6 +185,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -166,7 +199,15 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
-  factory GetPositionResponse() => create();
+  factory GetPositionResponse({
+    $core.int? positionDeg,
+  }) {
+    final $result = create();
+    if (positionDeg != null) {
+      $result.positionDeg = positionDeg;
+    }
+    return $result;
+  }
   GetPositionResponse._() : super();
   factory GetPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -197,6 +238,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   static GetPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionResponse>(create);
   static GetPositionResponse? _defaultInstance;
 
+  /// the degrees from neutral by which the servo is currently rotated. Values are between 0 and 180
   @$pb.TagNumber(1)
   $core.int get positionDeg => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -208,7 +250,19 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 }
 
 class StopRequest extends $pb.GeneratedMessage {
-  factory StopRequest() => create();
+  factory StopRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StopRequest._() : super();
   factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -240,6 +294,7 @@ class StopRequest extends $pb.GeneratedMessage {
   static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
   static StopRequest? _defaultInstance;
 
+  /// Name of a servo
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -249,6 +304,7 @@ class StopRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -294,7 +350,19 @@ class StopResponse extends $pb.GeneratedMessage {
 }
 
 class Status extends $pb.GeneratedMessage {
-  factory Status() => create();
+  factory Status({
+    $core.int? positionDeg,
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (positionDeg != null) {
+      $result.positionDeg = positionDeg;
+    }
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   Status._() : super();
   factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -346,7 +414,15 @@ class Status extends $pb.GeneratedMessage {
 }
 
 class IsMovingRequest extends $pb.GeneratedMessage {
-  factory IsMovingRequest() => create();
+  factory IsMovingRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   IsMovingRequest._() : super();
   factory IsMovingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -388,7 +464,15 @@ class IsMovingRequest extends $pb.GeneratedMessage {
 }
 
 class IsMovingResponse extends $pb.GeneratedMessage {
-  factory IsMovingResponse() => create();
+  factory IsMovingResponse({
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   IsMovingResponse._() : super();
   factory IsMovingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

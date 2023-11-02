@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,39 @@ import 'ml_training.pbenum.dart';
 export 'ml_training.pbenum.dart';
 
 class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
-  factory SubmitTrainingJobRequest() => create();
+  factory SubmitTrainingJobRequest({
+    $0.Filter? filter,
+    $core.String? organizationId,
+    $core.String? modelName,
+    $core.String? modelVersion,
+    ModelType? modelType,
+    $core.Iterable<$core.String>? tags,
+    $core.String? datasetId,
+  }) {
+    final $result = create();
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (modelVersion != null) {
+      $result.modelVersion = modelVersion;
+    }
+    if (modelType != null) {
+      $result.modelType = modelType;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    return $result;
+  }
   SubmitTrainingJobRequest._() : super();
   factory SubmitTrainingJobRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SubmitTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -33,6 +65,7 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'modelVersion')
     ..e<ModelType>(5, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: ModelType.valueOf, enumValues: ModelType.values)
     ..pPS(6, _omitFieldNames ? '' : 'tags')
+    ..aOS(7, _omitFieldNames ? '' : 'datasetId')
     ..hasRequiredFields = false
   ;
 
@@ -106,10 +139,27 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<$core.String> get tags => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get datasetId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set datasetId($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDatasetId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDatasetId() => clearField(7);
 }
 
 class SubmitTrainingJobResponse extends $pb.GeneratedMessage {
-  factory SubmitTrainingJobResponse() => create();
+  factory SubmitTrainingJobResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   SubmitTrainingJobResponse._() : super();
   factory SubmitTrainingJobResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SubmitTrainingJobResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -151,7 +201,15 @@ class SubmitTrainingJobResponse extends $pb.GeneratedMessage {
 }
 
 class GetTrainingJobRequest extends $pb.GeneratedMessage {
-  factory GetTrainingJobRequest() => create();
+  factory GetTrainingJobRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   GetTrainingJobRequest._() : super();
   factory GetTrainingJobRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -193,7 +251,15 @@ class GetTrainingJobRequest extends $pb.GeneratedMessage {
 }
 
 class GetTrainingJobResponse extends $pb.GeneratedMessage {
-  factory GetTrainingJobResponse() => create();
+  factory GetTrainingJobResponse({
+    TrainingJobMetadata? metadata,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    return $result;
+  }
   GetTrainingJobResponse._() : super();
   factory GetTrainingJobResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetTrainingJobResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -237,7 +303,19 @@ class GetTrainingJobResponse extends $pb.GeneratedMessage {
 }
 
 class ListTrainingJobsRequest extends $pb.GeneratedMessage {
-  factory ListTrainingJobsRequest() => create();
+  factory ListTrainingJobsRequest({
+    $core.String? organizationId,
+    TrainingStatus? status,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   ListTrainingJobsRequest._() : super();
   factory ListTrainingJobsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListTrainingJobsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -289,7 +367,15 @@ class ListTrainingJobsRequest extends $pb.GeneratedMessage {
 }
 
 class ListTrainingJobsResponse extends $pb.GeneratedMessage {
-  factory ListTrainingJobsResponse() => create();
+  factory ListTrainingJobsResponse({
+    $core.Iterable<TrainingJobMetadata>? jobs,
+  }) {
+    final $result = create();
+    if (jobs != null) {
+      $result.jobs.addAll(jobs);
+    }
+    return $result;
+  }
   ListTrainingJobsResponse._() : super();
   factory ListTrainingJobsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListTrainingJobsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -325,7 +411,39 @@ class ListTrainingJobsResponse extends $pb.GeneratedMessage {
 }
 
 class TrainingJobMetadata extends $pb.GeneratedMessage {
-  factory TrainingJobMetadata() => create();
+  factory TrainingJobMetadata({
+    SubmitTrainingJobRequest? request,
+    TrainingStatus? status,
+    $2.Timestamp? createdOn,
+    $2.Timestamp? lastModified,
+    $core.String? syncedModelId,
+    $core.String? id,
+    $3.Status? errorStatus,
+  }) {
+    final $result = create();
+    if (request != null) {
+      $result.request = request;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (lastModified != null) {
+      $result.lastModified = lastModified;
+    }
+    if (syncedModelId != null) {
+      $result.syncedModelId = syncedModelId;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (errorStatus != null) {
+      $result.errorStatus = errorStatus;
+    }
+    return $result;
+  }
   TrainingJobMetadata._() : super();
   factory TrainingJobMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TrainingJobMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -435,7 +553,15 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {
-  factory CancelTrainingJobRequest() => create();
+  factory CancelTrainingJobRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   CancelTrainingJobRequest._() : super();
   factory CancelTrainingJobRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CancelTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -506,6 +632,88 @@ class CancelTrainingJobResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CancelTrainingJobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelTrainingJobResponse>(create);
   static CancelTrainingJobResponse? _defaultInstance;
+}
+
+class DeleteCompletedTrainingJobRequest extends $pb.GeneratedMessage {
+  factory DeleteCompletedTrainingJobRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  DeleteCompletedTrainingJobRequest._() : super();
+  factory DeleteCompletedTrainingJobRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteCompletedTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCompletedTrainingJobRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobRequest clone() => DeleteCompletedTrainingJobRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobRequest copyWith(void Function(DeleteCompletedTrainingJobRequest) updates) => super.copyWith((message) => updates(message as DeleteCompletedTrainingJobRequest)) as DeleteCompletedTrainingJobRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobRequest create() => DeleteCompletedTrainingJobRequest._();
+  DeleteCompletedTrainingJobRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteCompletedTrainingJobRequest> createRepeated() => $pb.PbList<DeleteCompletedTrainingJobRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCompletedTrainingJobRequest>(create);
+  static DeleteCompletedTrainingJobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteCompletedTrainingJobResponse extends $pb.GeneratedMessage {
+  factory DeleteCompletedTrainingJobResponse() => create();
+  DeleteCompletedTrainingJobResponse._() : super();
+  factory DeleteCompletedTrainingJobResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteCompletedTrainingJobResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteCompletedTrainingJobResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobResponse clone() => DeleteCompletedTrainingJobResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteCompletedTrainingJobResponse copyWith(void Function(DeleteCompletedTrainingJobResponse) updates) => super.copyWith((message) => updates(message as DeleteCompletedTrainingJobResponse)) as DeleteCompletedTrainingJobResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobResponse create() => DeleteCompletedTrainingJobResponse._();
+  DeleteCompletedTrainingJobResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteCompletedTrainingJobResponse> createRepeated() => $pb.PbList<DeleteCompletedTrainingJobResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteCompletedTrainingJobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteCompletedTrainingJobResponse>(create);
+  static DeleteCompletedTrainingJobResponse? _defaultInstance;
 }
 
 

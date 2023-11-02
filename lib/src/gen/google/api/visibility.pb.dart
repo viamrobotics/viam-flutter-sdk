@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,8 +13,39 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+///  `Visibility` restricts service consumer's access to service elements,
+///  such as whether an application can call a visibility-restricted method.
+///  The restriction is expressed by applying visibility labels on service
+///  elements. The visibility labels are elsewhere linked to service consumers.
+///
+///  A service can define multiple visibility labels, but a service consumer
+///  should be granted at most one visibility label. Multiple visibility
+///  labels for a single service consumer are not supported.
+///
+///  If an element and all its parents have no visibility label, its visibility
+///  is unconditionally granted.
+///
+///  Example:
+///
+///      visibility:
+///        rules:
+///        - selector: google.calendar.Calendar.EnhancedSearch
+///          restriction: PREVIEW
+///        - selector: google.calendar.Calendar.Delegate
+///          restriction: INTERNAL
+///
+///  Here, all methods are publicly visible except for the restricted methods
+///  EnhancedSearch and Delegate.
 class Visibility extends $pb.GeneratedMessage {
-  factory Visibility() => create();
+  factory Visibility({
+    $core.Iterable<VisibilityRule>? rules,
+  }) {
+    final $result = create();
+    if (rules != null) {
+      $result.rules.addAll(rules);
+    }
+    return $result;
+  }
   Visibility._() : super();
   factory Visibility.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Visibility.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -45,12 +76,29 @@ class Visibility extends $pb.GeneratedMessage {
   static Visibility getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Visibility>(create);
   static Visibility? _defaultInstance;
 
+  ///  A list of visibility rules that apply to individual API elements.
+  ///
+  ///  **NOTE:** All service configuration rules follow "last one wins" order.
   @$pb.TagNumber(1)
   $core.List<VisibilityRule> get rules => $_getList(0);
 }
 
+/// A visibility rule provides visibility configuration for an individual API
+/// element.
 class VisibilityRule extends $pb.GeneratedMessage {
-  factory VisibilityRule() => create();
+  factory VisibilityRule({
+    $core.String? selector,
+    $core.String? restriction,
+  }) {
+    final $result = create();
+    if (selector != null) {
+      $result.selector = selector;
+    }
+    if (restriction != null) {
+      $result.restriction = restriction;
+    }
+    return $result;
+  }
   VisibilityRule._() : super();
   factory VisibilityRule.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VisibilityRule.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -82,6 +130,10 @@ class VisibilityRule extends $pb.GeneratedMessage {
   static VisibilityRule getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VisibilityRule>(create);
   static VisibilityRule? _defaultInstance;
 
+  ///  Selects methods, messages, fields, enums, etc. to which this rule applies.
+  ///
+  ///  Refer to [selector][google.api.DocumentationRule.selector] for syntax
+  ///  details.
   @$pb.TagNumber(1)
   $core.String get selector => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -91,6 +143,21 @@ class VisibilityRule extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSelector() => clearField(1);
 
+  ///  A comma-separated list of visibility labels that apply to the `selector`.
+  ///  Any of the listed labels can be used to grant the visibility.
+  ///
+  ///  If a rule has multiple labels, removing one of the labels but not all of
+  ///  them can break clients.
+  ///
+  ///  Example:
+  ///
+  ///      visibility:
+  ///        rules:
+  ///        - selector: google.calendar.Calendar.EnhancedSearch
+  ///          restriction: INTERNAL, PREVIEW
+  ///
+  ///  Removing INTERNAL from this restriction will break clients that rely on
+  ///  this method and only had access to it through INTERNAL.
   @$pb.TagNumber(2)
   $core.String get restriction => $_getSZ(1);
   @$pb.TagNumber(2)

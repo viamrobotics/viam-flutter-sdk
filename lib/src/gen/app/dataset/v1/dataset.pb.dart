@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,8 +15,29 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
 
+/// Dataset stores the metadata of a dataset.
 class Dataset extends $pb.GeneratedMessage {
-  factory Dataset() => create();
+  factory Dataset({
+    $core.String? id,
+    $core.String? name,
+    $core.String? organizationId,
+    $1.Timestamp? timeCreated,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (timeCreated != null) {
+      $result.timeCreated = timeCreated;
+    }
+    return $result;
+  }
   Dataset._() : super();
   factory Dataset.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Dataset.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -89,8 +110,21 @@ class Dataset extends $pb.GeneratedMessage {
   $1.Timestamp ensureTimeCreated() => $_ensure(3);
 }
 
+/// CreateDatasetRequest defines the name and organization ID of a dataset.
 class CreateDatasetRequest extends $pb.GeneratedMessage {
-  factory CreateDatasetRequest() => create();
+  factory CreateDatasetRequest({
+    $core.String? name,
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   CreateDatasetRequest._() : super();
   factory CreateDatasetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateDatasetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -141,8 +175,17 @@ class CreateDatasetRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(2);
 }
 
+/// CreateDatasetResponse returns the dataset ID of the created dataset.
 class CreateDatasetResponse extends $pb.GeneratedMessage {
-  factory CreateDatasetResponse() => create();
+  factory CreateDatasetResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   CreateDatasetResponse._() : super();
   factory CreateDatasetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateDatasetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -183,8 +226,17 @@ class CreateDatasetResponse extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+/// DeleteDatasetRequest deletes the dataset specified by the dataset ID.
 class DeleteDatasetRequest extends $pb.GeneratedMessage {
-  factory DeleteDatasetRequest() => create();
+  factory DeleteDatasetRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   DeleteDatasetRequest._() : super();
   factory DeleteDatasetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteDatasetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -257,8 +309,21 @@ class DeleteDatasetResponse extends $pb.GeneratedMessage {
   static DeleteDatasetResponse? _defaultInstance;
 }
 
+/// RenameDatasetRequest applies the new name to the dataset specified by the dataset ID.
 class RenameDatasetRequest extends $pb.GeneratedMessage {
-  factory RenameDatasetRequest() => create();
+  factory RenameDatasetRequest({
+    $core.String? id,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   RenameDatasetRequest._() : super();
   factory RenameDatasetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RenameDatasetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -341,8 +406,17 @@ class RenameDatasetResponse extends $pb.GeneratedMessage {
   static RenameDatasetResponse? _defaultInstance;
 }
 
+/// ListDatasetsByOrganizationIDRequest requests all of the datasets for an organization.
 class ListDatasetsByOrganizationIDRequest extends $pb.GeneratedMessage {
-  factory ListDatasetsByOrganizationIDRequest() => create();
+  factory ListDatasetsByOrganizationIDRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ListDatasetsByOrganizationIDRequest._() : super();
   factory ListDatasetsByOrganizationIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListDatasetsByOrganizationIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -383,8 +457,17 @@ class ListDatasetsByOrganizationIDRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(1);
 }
 
+/// ListDatasetsByOrganizationIDResponse returns all the dataset metadata for the organization.
 class ListDatasetsByOrganizationIDResponse extends $pb.GeneratedMessage {
-  factory ListDatasetsByOrganizationIDResponse() => create();
+  factory ListDatasetsByOrganizationIDResponse({
+    $core.Iterable<Dataset>? datasets,
+  }) {
+    final $result = create();
+    if (datasets != null) {
+      $result.datasets.addAll(datasets);
+    }
+    return $result;
+  }
   ListDatasetsByOrganizationIDResponse._() : super();
   factory ListDatasetsByOrganizationIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListDatasetsByOrganizationIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -419,8 +502,17 @@ class ListDatasetsByOrganizationIDResponse extends $pb.GeneratedMessage {
   $core.List<Dataset> get datasets => $_getList(0);
 }
 
+/// ListDatasetsByIDsRequest requests all of the datasets by their dataset IDs.
 class ListDatasetsByIDsRequest extends $pb.GeneratedMessage {
-  factory ListDatasetsByIDsRequest() => create();
+  factory ListDatasetsByIDsRequest({
+    $core.Iterable<$core.String>? ids,
+  }) {
+    final $result = create();
+    if (ids != null) {
+      $result.ids.addAll(ids);
+    }
+    return $result;
+  }
   ListDatasetsByIDsRequest._() : super();
   factory ListDatasetsByIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListDatasetsByIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -455,8 +547,17 @@ class ListDatasetsByIDsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get ids => $_getList(0);
 }
 
+/// ListDatasetsByIDsResponse returns all the dataset metadata for the associated dataset IDs.
 class ListDatasetsByIDsResponse extends $pb.GeneratedMessage {
-  factory ListDatasetsByIDsResponse() => create();
+  factory ListDatasetsByIDsResponse({
+    $core.Iterable<Dataset>? datasets,
+  }) {
+    final $result = create();
+    if (datasets != null) {
+      $result.datasets.addAll(datasets);
+    }
+    return $result;
+  }
   ListDatasetsByIDsResponse._() : super();
   factory ListDatasetsByIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListDatasetsByIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,8 +15,26 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../protobuf/timestamp.pb.dart' as $2;
 
+///  Represents a time interval, encoded as a Timestamp start (inclusive) and a
+///  Timestamp end (exclusive).
+///
+///  The start must be less than or equal to the end.
+///  When the start equals the end, the interval is empty (matches no time).
+///  When both start and end are unspecified, the interval matches any time.
 class Interval extends $pb.GeneratedMessage {
-  factory Interval() => create();
+  factory Interval({
+    $2.Timestamp? startTime,
+    $2.Timestamp? endTime,
+  }) {
+    final $result = create();
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    return $result;
+  }
   Interval._() : super();
   factory Interval.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Interval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -48,6 +66,10 @@ class Interval extends $pb.GeneratedMessage {
   static Interval getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Interval>(create);
   static Interval? _defaultInstance;
 
+  ///  Optional. Inclusive start of the interval.
+  ///
+  ///  If specified, a Timestamp matching this interval will have to be the same
+  ///  or after the start.
   @$pb.TagNumber(1)
   $2.Timestamp get startTime => $_getN(0);
   @$pb.TagNumber(1)
@@ -59,6 +81,10 @@ class Interval extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $2.Timestamp ensureStartTime() => $_ensure(0);
 
+  ///  Optional. Exclusive end of the interval.
+  ///
+  ///  If specified, a Timestamp matching this interval will have to be before the
+  ///  end.
   @$pb.TagNumber(2)
   $2.Timestamp get endTime => $_getN(1);
   @$pb.TagNumber(2)

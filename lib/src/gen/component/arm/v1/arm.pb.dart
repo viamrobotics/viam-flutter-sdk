@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,19 @@ import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetEndPositionRequest extends $pb.GeneratedMessage {
-  factory GetEndPositionRequest() => create();
+  factory GetEndPositionRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetEndPositionRequest._() : super();
   factory GetEndPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEndPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -49,6 +61,7 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
   static GetEndPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEndPositionRequest>(create);
   static GetEndPositionRequest? _defaultInstance;
 
+  /// Name of an arm
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -58,6 +71,7 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -71,7 +85,15 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
 }
 
 class GetEndPositionResponse extends $pb.GeneratedMessage {
-  factory GetEndPositionResponse() => create();
+  factory GetEndPositionResponse({
+    $1.Pose? pose,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
   GetEndPositionResponse._() : super();
   factory GetEndPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetEndPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -102,6 +124,8 @@ class GetEndPositionResponse extends $pb.GeneratedMessage {
   static GetEndPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEndPositionResponse>(create);
   static GetEndPositionResponse? _defaultInstance;
 
+  /// Returns 6d pose of the end effector relative to the base, represented by X,Y,Z coordinates which express
+  /// millimeters and theta, ox, oy, oz coordinates which express an orientation vector
   @$pb.TagNumber(1)
   $1.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
@@ -115,7 +139,15 @@ class GetEndPositionResponse extends $pb.GeneratedMessage {
 }
 
 class JointPositions extends $pb.GeneratedMessage {
-  factory JointPositions() => create();
+  factory JointPositions({
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   JointPositions._() : super();
   factory JointPositions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory JointPositions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -146,12 +178,27 @@ class JointPositions extends $pb.GeneratedMessage {
   static JointPositions getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointPositions>(create);
   static JointPositions? _defaultInstance;
 
+  /// A list of joint positions. Rotations values are in degrees, translational values in mm.
+  /// The numbers are ordered spatially from the base toward the end effector
+  /// This is used in GetJointPositionsResponse and MoveToJointPositionsRequest
   @$pb.TagNumber(1)
   $core.List<$core.double> get values => $_getList(0);
 }
 
 class GetJointPositionsRequest extends $pb.GeneratedMessage {
-  factory GetJointPositionsRequest() => create();
+  factory GetJointPositionsRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetJointPositionsRequest._() : super();
   factory GetJointPositionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetJointPositionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -183,6 +230,7 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
   static GetJointPositionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetJointPositionsRequest>(create);
   static GetJointPositionsRequest? _defaultInstance;
 
+  /// Name of an arm
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -192,6 +240,7 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -205,7 +254,15 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
 }
 
 class GetJointPositionsResponse extends $pb.GeneratedMessage {
-  factory GetJointPositionsResponse() => create();
+  factory GetJointPositionsResponse({
+    JointPositions? positions,
+  }) {
+    final $result = create();
+    if (positions != null) {
+      $result.positions = positions;
+    }
+    return $result;
+  }
   GetJointPositionsResponse._() : super();
   factory GetJointPositionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetJointPositionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -236,6 +293,7 @@ class GetJointPositionsResponse extends $pb.GeneratedMessage {
   static GetJointPositionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetJointPositionsResponse>(create);
   static GetJointPositionsResponse? _defaultInstance;
 
+  /// a list JointPositions
   @$pb.TagNumber(1)
   JointPositions get positions => $_getN(0);
   @$pb.TagNumber(1)
@@ -248,8 +306,27 @@ class GetJointPositionsResponse extends $pb.GeneratedMessage {
   JointPositions ensurePositions() => $_ensure(0);
 }
 
+/// Moves an arm to the specified pose that is within the reference frame of the arm.
+/// Move request in Motion API has the same behavior except that it performs obstacle avoidance when a world_state
+/// message is specified.
 class MoveToPositionRequest extends $pb.GeneratedMessage {
-  factory MoveToPositionRequest() => create();
+  factory MoveToPositionRequest({
+    $core.String? name,
+    $1.Pose? to,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (to != null) {
+      $result.to = to;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveToPositionRequest._() : super();
   factory MoveToPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveToPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -282,6 +359,7 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   static MoveToPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveToPositionRequest>(create);
   static MoveToPositionRequest? _defaultInstance;
 
+  /// Name of an arm
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -291,6 +369,7 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// The destination to move the arm to; this is from the reference frame of the arm.
   @$pb.TagNumber(2)
   $1.Pose get to => $_getN(1);
   @$pb.TagNumber(2)
@@ -302,6 +381,7 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Pose ensureTo() => $_ensure(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -347,7 +427,23 @@ class MoveToPositionResponse extends $pb.GeneratedMessage {
 }
 
 class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
-  factory MoveToJointPositionsRequest() => create();
+  factory MoveToJointPositionsRequest({
+    $core.String? name,
+    JointPositions? positions,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (positions != null) {
+      $result.positions = positions;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   MoveToJointPositionsRequest._() : super();
   factory MoveToJointPositionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoveToJointPositionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -380,6 +476,7 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   static MoveToJointPositionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveToJointPositionsRequest>(create);
   static MoveToJointPositionsRequest? _defaultInstance;
 
+  /// Name of an arm
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -389,6 +486,8 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// A list of joint positions
+  /// There should be 1 entry in the list per joint DOF, ordered spatially from the base toward the end effector
   @$pb.TagNumber(2)
   JointPositions get positions => $_getN(1);
   @$pb.TagNumber(2)
@@ -400,6 +499,7 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   JointPositions ensurePositions() => $_ensure(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
@@ -445,7 +545,19 @@ class MoveToJointPositionsResponse extends $pb.GeneratedMessage {
 }
 
 class StopRequest extends $pb.GeneratedMessage {
-  factory StopRequest() => create();
+  factory StopRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   StopRequest._() : super();
   factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -477,6 +589,7 @@ class StopRequest extends $pb.GeneratedMessage {
   static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
   static StopRequest? _defaultInstance;
 
+  /// Name of an arm
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -486,6 +599,7 @@ class StopRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -531,7 +645,23 @@ class StopResponse extends $pb.GeneratedMessage {
 }
 
 class Status extends $pb.GeneratedMessage {
-  factory Status() => create();
+  factory Status({
+    $1.Pose? endPosition,
+    JointPositions? jointPositions,
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (endPosition != null) {
+      $result.endPosition = endPosition;
+    }
+    if (jointPositions != null) {
+      $result.jointPositions = jointPositions;
+    }
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   Status._() : super();
   factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -597,7 +727,15 @@ class Status extends $pb.GeneratedMessage {
 }
 
 class IsMovingRequest extends $pb.GeneratedMessage {
-  factory IsMovingRequest() => create();
+  factory IsMovingRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   IsMovingRequest._() : super();
   factory IsMovingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -639,7 +777,15 @@ class IsMovingRequest extends $pb.GeneratedMessage {
 }
 
 class IsMovingResponse extends $pb.GeneratedMessage {
-  factory IsMovingResponse() => create();
+  factory IsMovingResponse({
+    $core.bool? isMoving,
+  }) {
+    final $result = create();
+    if (isMoving != null) {
+      $result.isMoving = isMoving;
+    }
+    return $result;
+  }
   IsMovingResponse._() : super();
   factory IsMovingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory IsMovingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

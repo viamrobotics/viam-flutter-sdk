@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,8 +21,72 @@ enum DateTime_TimeOffset {
   notSet
 }
 
+///  Represents civil time (or occasionally physical time).
+///
+///  This type can represent a civil time in one of a few possible ways:
+///
+///   * When utc_offset is set and time_zone is unset: a civil time on a calendar
+///     day with a particular offset from UTC.
+///   * When time_zone is set and utc_offset is unset: a civil time on a calendar
+///     day in a particular time zone.
+///   * When neither time_zone nor utc_offset is set: a civil time on a calendar
+///     day in local time.
+///
+///  The date is relative to the Proleptic Gregorian Calendar.
+///
+///  If year is 0, the DateTime is considered not to have a specific year. month
+///  and day must have valid, non-zero values.
+///
+///  This type may also be used to represent a physical time if all the date and
+///  time fields are set and either case of the `time_offset` oneof is set.
+///  Consider using `Timestamp` message for physical time instead. If your use
+///  case also would like to store the user's timezone, that can be done in
+///  another field.
+///
+///  This type is more flexible than some applications may want. Make sure to
+///  document and validate your application's limitations.
 class DateTime extends $pb.GeneratedMessage {
-  factory DateTime() => create();
+  factory DateTime({
+    $core.int? year,
+    $core.int? month,
+    $core.int? day,
+    $core.int? hours,
+    $core.int? minutes,
+    $core.int? seconds,
+    $core.int? nanos,
+    $1.Duration? utcOffset,
+    TimeZone? timeZone,
+  }) {
+    final $result = create();
+    if (year != null) {
+      $result.year = year;
+    }
+    if (month != null) {
+      $result.month = month;
+    }
+    if (day != null) {
+      $result.day = day;
+    }
+    if (hours != null) {
+      $result.hours = hours;
+    }
+    if (minutes != null) {
+      $result.minutes = minutes;
+    }
+    if (seconds != null) {
+      $result.seconds = seconds;
+    }
+    if (nanos != null) {
+      $result.nanos = nanos;
+    }
+    if (utcOffset != null) {
+      $result.utcOffset = utcOffset;
+    }
+    if (timeZone != null) {
+      $result.timeZone = timeZone;
+    }
+    return $result;
+  }
   DateTime._() : super();
   factory DateTime.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DateTime.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -70,6 +134,8 @@ class DateTime extends $pb.GeneratedMessage {
   DateTime_TimeOffset whichTimeOffset() => _DateTime_TimeOffsetByTag[$_whichOneof(0)]!;
   void clearTimeOffset() => clearField($_whichOneof(0));
 
+  /// Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a
+  /// datetime without a year.
   @$pb.TagNumber(1)
   $core.int get year => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -79,6 +145,7 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearYear() => clearField(1);
 
+  /// Required. Month of year. Must be from 1 to 12.
   @$pb.TagNumber(2)
   $core.int get month => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -88,6 +155,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMonth() => clearField(2);
 
+  /// Required. Day of month. Must be from 1 to 31 and valid for the year and
+  /// month.
   @$pb.TagNumber(3)
   $core.int get day => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -97,6 +166,9 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDay() => clearField(3);
 
+  /// Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
+  /// may choose to allow the value "24:00:00" for scenarios like business
+  /// closing time.
   @$pb.TagNumber(4)
   $core.int get hours => $_getIZ(3);
   @$pb.TagNumber(4)
@@ -106,6 +178,7 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearHours() => clearField(4);
 
+  /// Required. Minutes of hour of day. Must be from 0 to 59.
   @$pb.TagNumber(5)
   $core.int get minutes => $_getIZ(4);
   @$pb.TagNumber(5)
@@ -115,6 +188,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearMinutes() => clearField(5);
 
+  /// Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
+  /// API may allow the value 60 if it allows leap-seconds.
   @$pb.TagNumber(6)
   $core.int get seconds => $_getIZ(5);
   @$pb.TagNumber(6)
@@ -124,6 +199,8 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearSeconds() => clearField(6);
 
+  /// Required. Fractions of seconds in nanoseconds. Must be from 0 to
+  /// 999,999,999.
   @$pb.TagNumber(7)
   $core.int get nanos => $_getIZ(6);
   @$pb.TagNumber(7)
@@ -133,6 +210,9 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearNanos() => clearField(7);
 
+  /// UTC offset. Must be whole seconds, between -18 hours and +18 hours.
+  /// For example, a UTC offset of -4:00 would be represented as
+  /// { seconds: -14400 }.
   @$pb.TagNumber(8)
   $1.Duration get utcOffset => $_getN(7);
   @$pb.TagNumber(8)
@@ -144,6 +224,7 @@ class DateTime extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $1.Duration ensureUtcOffset() => $_ensure(7);
 
+  /// Time zone.
   @$pb.TagNumber(9)
   TimeZone get timeZone => $_getN(8);
   @$pb.TagNumber(9)
@@ -156,8 +237,22 @@ class DateTime extends $pb.GeneratedMessage {
   TimeZone ensureTimeZone() => $_ensure(8);
 }
 
+/// Represents a time zone from the
+/// [IANA Time Zone Database](https://www.iana.org/time-zones).
 class TimeZone extends $pb.GeneratedMessage {
-  factory TimeZone() => create();
+  factory TimeZone({
+    $core.String? id,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
   TimeZone._() : super();
   factory TimeZone.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeZone.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -189,6 +284,7 @@ class TimeZone extends $pb.GeneratedMessage {
   static TimeZone getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeZone>(create);
   static TimeZone? _defaultInstance;
 
+  /// IANA Time Zone Database time zone, e.g. "America/New_York".
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -198,6 +294,7 @@ class TimeZone extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// Optional. IANA Time Zone Database version number, e.g. "2019a".
   @$pb.TagNumber(2)
   $core.String get version => $_getSZ(1);
   @$pb.TagNumber(2)

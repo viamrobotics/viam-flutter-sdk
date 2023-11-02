@@ -5,7 +5,7 @@ import 'package:viam_sdk/widgets.dart';
 class ViamServoWidget extends StatefulWidget {
   final Servo servo;
 
-  const ViamServoWidget({Key? key, required this.servo}) : super(key: key);
+  const ViamServoWidget({super.key, required this.servo});
 
   @override
   State<ViamServoWidget> createState() {

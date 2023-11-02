@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -21,7 +21,31 @@ import 'app.pbenum.dart';
 export 'app.pbenum.dart';
 
 class Robot extends $pb.GeneratedMessage {
-  factory Robot() => create();
+  factory Robot({
+    $core.String? id,
+    $core.String? name,
+    $core.String? location,
+    $4.Timestamp? lastAccess,
+    $4.Timestamp? createdOn,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (location != null) {
+      $result.location = location;
+    }
+    if (lastAccess != null) {
+      $result.lastAccess = lastAccess;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    return $result;
+  }
   Robot._() : super();
   factory Robot.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Robot.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -107,7 +131,67 @@ class Robot extends $pb.GeneratedMessage {
 }
 
 class RobotPart extends $pb.GeneratedMessage {
-  factory RobotPart() => create();
+  factory RobotPart({
+    $core.String? id,
+    $core.String? name,
+    $core.String? secret,
+    $core.String? robot,
+    $5.Struct? robotConfig,
+    $4.Timestamp? lastAccess,
+    $5.Struct? userSuppliedInfo,
+    $core.bool? mainPart,
+    $core.String? fqdn,
+    $core.String? dnsName,
+    $core.String? localFqdn,
+    $core.String? locationId,
+    $4.Timestamp? createdOn,
+    $core.Iterable<SharedSecret>? secrets,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (secret != null) {
+      $result.secret = secret;
+    }
+    if (robot != null) {
+      $result.robot = robot;
+    }
+    if (robotConfig != null) {
+      $result.robotConfig = robotConfig;
+    }
+    if (lastAccess != null) {
+      $result.lastAccess = lastAccess;
+    }
+    if (userSuppliedInfo != null) {
+      $result.userSuppliedInfo = userSuppliedInfo;
+    }
+    if (mainPart != null) {
+      $result.mainPart = mainPart;
+    }
+    if (fqdn != null) {
+      $result.fqdn = fqdn;
+    }
+    if (dnsName != null) {
+      $result.dnsName = dnsName;
+    }
+    if (localFqdn != null) {
+      $result.localFqdn = localFqdn;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (secrets != null) {
+      $result.secrets.addAll(secrets);
+    }
+    return $result;
+  }
   RobotPart._() : super();
   factory RobotPart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotPart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -238,6 +322,7 @@ class RobotPart extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearFqdn() => clearField(9);
 
+  /// dns_name part name used for fqdn and local fqdn. Anytime the Name is updated this should be sanitized and updated as well.
   @$pb.TagNumber(10)
   $core.String get dnsName => $_getSZ(9);
   @$pb.TagNumber(10)
@@ -256,6 +341,8 @@ class RobotPart extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearLocalFqdn() => clearField(11);
 
+  /// Store the location_id to allow for unique indexes across parts and locations. This filed MUST be updated each time the robots location
+  /// changes.
   @$pb.TagNumber(12)
   $core.String get locationId => $_getSZ(11);
   @$pb.TagNumber(12)
@@ -276,12 +363,33 @@ class RobotPart extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $4.Timestamp ensureCreatedOn() => $_ensure(12);
 
+  /// List of secrets allowed for authentication.
   @$pb.TagNumber(14)
   $core.List<SharedSecret> get secrets => $_getList(13);
 }
 
 class RobotPartHistoryEntry extends $pb.GeneratedMessage {
-  factory RobotPartHistoryEntry() => create();
+  factory RobotPartHistoryEntry({
+    $core.String? part,
+    $core.String? robot,
+    $4.Timestamp? when,
+    RobotPart? old,
+  }) {
+    final $result = create();
+    if (part != null) {
+      $result.part = part;
+    }
+    if (robot != null) {
+      $result.robot = robot;
+    }
+    if (when != null) {
+      $result.when = when;
+    }
+    if (old != null) {
+      $result.old = old;
+    }
+    return $result;
+  }
   RobotPartHistoryEntry._() : super();
   factory RobotPartHistoryEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotPartHistoryEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -389,7 +497,35 @@ class ListOrganizationsRequest extends $pb.GeneratedMessage {
 }
 
 class Organization extends $pb.GeneratedMessage {
-  factory Organization() => create();
+  factory Organization({
+    $core.String? id,
+    $core.String? name,
+    $4.Timestamp? createdOn,
+    $core.String? publicNamespace,
+    $core.String? defaultRegion,
+    $core.String? cid,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    if (defaultRegion != null) {
+      $result.defaultRegion = defaultRegion;
+    }
+    if (cid != null) {
+      $result.cid = cid;
+    }
+    return $result;
+  }
   Organization._() : super();
   factory Organization.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Organization.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -463,6 +599,8 @@ class Organization extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearPublicNamespace() => clearField(4);
 
+  /// GCS region of the organization. Locations created under this org will have their GCS region set to this by default and packages
+  /// associated with this org will be stored in this region.
   @$pb.TagNumber(5)
   $core.String get defaultRegion => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -483,7 +621,27 @@ class Organization extends $pb.GeneratedMessage {
 }
 
 class OrganizationMember extends $pb.GeneratedMessage {
-  factory OrganizationMember() => create();
+  factory OrganizationMember({
+    $core.String? userId,
+    $core.Iterable<$core.String>? emails,
+    $4.Timestamp? dateAdded,
+    $4.Timestamp? lastLogin,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (emails != null) {
+      $result.emails.addAll(emails);
+    }
+    if (dateAdded != null) {
+      $result.dateAdded = dateAdded;
+    }
+    if (lastLogin != null) {
+      $result.lastLogin = lastLogin;
+    }
+    return $result;
+  }
   OrganizationMember._() : super();
   factory OrganizationMember.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationMember.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -553,7 +711,15 @@ class OrganizationMember extends $pb.GeneratedMessage {
 }
 
 class ListOrganizationsResponse extends $pb.GeneratedMessage {
-  factory ListOrganizationsResponse() => create();
+  factory ListOrganizationsResponse({
+    $core.Iterable<Organization>? organizations,
+  }) {
+    final $result = create();
+    if (organizations != null) {
+      $result.organizations.addAll(organizations);
+    }
+    return $result;
+  }
   ListOrganizationsResponse._() : super();
   factory ListOrganizationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListOrganizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -589,7 +755,27 @@ class ListOrganizationsResponse extends $pb.GeneratedMessage {
 }
 
 class OrganizationInvite extends $pb.GeneratedMessage {
-  factory OrganizationInvite() => create();
+  factory OrganizationInvite({
+    $core.String? organizationId,
+    $core.String? email,
+    $4.Timestamp? createdOn,
+    $core.Iterable<Authorization>? authorizations,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (authorizations != null) {
+      $result.authorizations.addAll(authorizations);
+    }
+    return $result;
+  }
   OrganizationInvite._() : super();
   factory OrganizationInvite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrganizationInvite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -657,7 +843,15 @@ class OrganizationInvite extends $pb.GeneratedMessage {
 }
 
 class CreateOrganizationRequest extends $pb.GeneratedMessage {
-  factory CreateOrganizationRequest() => create();
+  factory CreateOrganizationRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   CreateOrganizationRequest._() : super();
   factory CreateOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -699,7 +893,15 @@ class CreateOrganizationRequest extends $pb.GeneratedMessage {
 }
 
 class CreateOrganizationResponse extends $pb.GeneratedMessage {
-  factory CreateOrganizationResponse() => create();
+  factory CreateOrganizationResponse({
+    Organization? organization,
+  }) {
+    final $result = create();
+    if (organization != null) {
+      $result.organization = organization;
+    }
+    return $result;
+  }
   CreateOrganizationResponse._() : super();
   factory CreateOrganizationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateOrganizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -743,7 +945,15 @@ class CreateOrganizationResponse extends $pb.GeneratedMessage {
 }
 
 class GetOrganizationRequest extends $pb.GeneratedMessage {
-  factory GetOrganizationRequest() => create();
+  factory GetOrganizationRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   GetOrganizationRequest._() : super();
   factory GetOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -785,7 +995,15 @@ class GetOrganizationRequest extends $pb.GeneratedMessage {
 }
 
 class GetOrganizationResponse extends $pb.GeneratedMessage {
-  factory GetOrganizationResponse() => create();
+  factory GetOrganizationResponse({
+    Organization? organization,
+  }) {
+    final $result = create();
+    if (organization != null) {
+      $result.organization = organization;
+    }
+    return $result;
+  }
   GetOrganizationResponse._() : super();
   factory GetOrganizationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrganizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -829,7 +1047,15 @@ class GetOrganizationResponse extends $pb.GeneratedMessage {
 }
 
 class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
-  factory GetOrganizationNamespaceAvailabilityRequest() => create();
+  factory GetOrganizationNamespaceAvailabilityRequest({
+    $core.String? publicNamespace,
+  }) {
+    final $result = create();
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    return $result;
+  }
   GetOrganizationNamespaceAvailabilityRequest._() : super();
   factory GetOrganizationNamespaceAvailabilityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrganizationNamespaceAvailabilityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -871,7 +1097,15 @@ class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
 }
 
 class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage {
-  factory GetOrganizationNamespaceAvailabilityResponse() => create();
+  factory GetOrganizationNamespaceAvailabilityResponse({
+    $core.bool? available,
+  }) {
+    final $result = create();
+    if (available != null) {
+      $result.available = available;
+    }
+    return $result;
+  }
   GetOrganizationNamespaceAvailabilityResponse._() : super();
   factory GetOrganizationNamespaceAvailabilityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetOrganizationNamespaceAvailabilityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -913,7 +1147,31 @@ class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage 
 }
 
 class UpdateOrganizationRequest extends $pb.GeneratedMessage {
-  factory UpdateOrganizationRequest() => create();
+  factory UpdateOrganizationRequest({
+    $core.String? organizationId,
+    $core.String? name,
+    $core.String? publicNamespace,
+    $core.String? region,
+    $core.String? cid,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    if (region != null) {
+      $result.region = region;
+    }
+    if (cid != null) {
+      $result.cid = cid;
+    }
+    return $result;
+  }
   UpdateOrganizationRequest._() : super();
   factory UpdateOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -975,6 +1233,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPublicNamespace() => clearField(3);
 
+  /// The new GCS region to associate the org with.
   @$pb.TagNumber(4)
   $core.String get region => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -995,7 +1254,15 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
-  factory UpdateOrganizationResponse() => create();
+  factory UpdateOrganizationResponse({
+    Organization? organization,
+  }) {
+    final $result = create();
+    if (organization != null) {
+      $result.organization = organization;
+    }
+    return $result;
+  }
   UpdateOrganizationResponse._() : super();
   factory UpdateOrganizationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateOrganizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1039,7 +1306,15 @@ class UpdateOrganizationResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteOrganizationRequest extends $pb.GeneratedMessage {
-  factory DeleteOrganizationRequest() => create();
+  factory DeleteOrganizationRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   DeleteOrganizationRequest._() : super();
   factory DeleteOrganizationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteOrganizationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1113,7 +1388,15 @@ class DeleteOrganizationResponse extends $pb.GeneratedMessage {
 }
 
 class ListOrganizationMembersRequest extends $pb.GeneratedMessage {
-  factory ListOrganizationMembersRequest() => create();
+  factory ListOrganizationMembersRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ListOrganizationMembersRequest._() : super();
   factory ListOrganizationMembersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListOrganizationMembersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1155,7 +1438,23 @@ class ListOrganizationMembersRequest extends $pb.GeneratedMessage {
 }
 
 class ListOrganizationMembersResponse extends $pb.GeneratedMessage {
-  factory ListOrganizationMembersResponse() => create();
+  factory ListOrganizationMembersResponse({
+    $core.String? organizationId,
+    $core.Iterable<OrganizationMember>? members,
+    $core.Iterable<OrganizationInvite>? invites,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (members != null) {
+      $result.members.addAll(members);
+    }
+    if (invites != null) {
+      $result.invites.addAll(invites);
+    }
+    return $result;
+  }
   ListOrganizationMembersResponse._() : super();
   factory ListOrganizationMembersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListOrganizationMembersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1205,7 +1504,23 @@ class ListOrganizationMembersResponse extends $pb.GeneratedMessage {
 }
 
 class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
-  factory CreateOrganizationInviteRequest() => create();
+  factory CreateOrganizationInviteRequest({
+    $core.String? organizationId,
+    $core.String? email,
+    $core.Iterable<Authorization>? authorizations,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (authorizations != null) {
+      $result.authorizations.addAll(authorizations);
+    }
+    return $result;
+  }
   CreateOrganizationInviteRequest._() : super();
   factory CreateOrganizationInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateOrganizationInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1261,7 +1576,15 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
 }
 
 class CreateOrganizationInviteResponse extends $pb.GeneratedMessage {
-  factory CreateOrganizationInviteResponse() => create();
+  factory CreateOrganizationInviteResponse({
+    OrganizationInvite? invite,
+  }) {
+    final $result = create();
+    if (invite != null) {
+      $result.invite = invite;
+    }
+    return $result;
+  }
   CreateOrganizationInviteResponse._() : super();
   factory CreateOrganizationInviteResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateOrganizationInviteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1305,7 +1628,27 @@ class CreateOrganizationInviteResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateOrganizationInviteAuthorizationsRequest extends $pb.GeneratedMessage {
-  factory UpdateOrganizationInviteAuthorizationsRequest() => create();
+  factory UpdateOrganizationInviteAuthorizationsRequest({
+    $core.String? organizationId,
+    $core.String? email,
+    $core.Iterable<Authorization>? addAuthorizations,
+    $core.Iterable<Authorization>? removeAuthorizations,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (addAuthorizations != null) {
+      $result.addAuthorizations.addAll(addAuthorizations);
+    }
+    if (removeAuthorizations != null) {
+      $result.removeAuthorizations.addAll(removeAuthorizations);
+    }
+    return $result;
+  }
   UpdateOrganizationInviteAuthorizationsRequest._() : super();
   factory UpdateOrganizationInviteAuthorizationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateOrganizationInviteAuthorizationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1365,7 +1708,15 @@ class UpdateOrganizationInviteAuthorizationsRequest extends $pb.GeneratedMessage
 }
 
 class UpdateOrganizationInviteAuthorizationsResponse extends $pb.GeneratedMessage {
-  factory UpdateOrganizationInviteAuthorizationsResponse() => create();
+  factory UpdateOrganizationInviteAuthorizationsResponse({
+    OrganizationInvite? invite,
+  }) {
+    final $result = create();
+    if (invite != null) {
+      $result.invite = invite;
+    }
+    return $result;
+  }
   UpdateOrganizationInviteAuthorizationsResponse._() : super();
   factory UpdateOrganizationInviteAuthorizationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateOrganizationInviteAuthorizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1409,7 +1760,19 @@ class UpdateOrganizationInviteAuthorizationsResponse extends $pb.GeneratedMessag
 }
 
 class DeleteOrganizationInviteRequest extends $pb.GeneratedMessage {
-  factory DeleteOrganizationInviteRequest() => create();
+  factory DeleteOrganizationInviteRequest({
+    $core.String? organizationId,
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
   DeleteOrganizationInviteRequest._() : super();
   factory DeleteOrganizationInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteOrganizationInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1493,7 +1856,19 @@ class DeleteOrganizationInviteResponse extends $pb.GeneratedMessage {
 }
 
 class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
-  factory ResendOrganizationInviteRequest() => create();
+  factory ResendOrganizationInviteRequest({
+    $core.String? organizationId,
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
   ResendOrganizationInviteRequest._() : super();
   factory ResendOrganizationInviteRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResendOrganizationInviteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1545,7 +1920,15 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
 }
 
 class ResendOrganizationInviteResponse extends $pb.GeneratedMessage {
-  factory ResendOrganizationInviteResponse() => create();
+  factory ResendOrganizationInviteResponse({
+    OrganizationInvite? invite,
+  }) {
+    final $result = create();
+    if (invite != null) {
+      $result.invite = invite;
+    }
+    return $result;
+  }
   ResendOrganizationInviteResponse._() : super();
   factory ResendOrganizationInviteResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResendOrganizationInviteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1589,7 +1972,19 @@ class ResendOrganizationInviteResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteOrganizationMemberRequest extends $pb.GeneratedMessage {
-  factory DeleteOrganizationMemberRequest() => create();
+  factory DeleteOrganizationMemberRequest({
+    $core.String? organizationId,
+    $core.String? userId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    return $result;
+  }
   DeleteOrganizationMemberRequest._() : super();
   factory DeleteOrganizationMemberRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteOrganizationMemberRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1673,7 +2068,19 @@ class DeleteOrganizationMemberResponse extends $pb.GeneratedMessage {
 }
 
 class LocationOrganization extends $pb.GeneratedMessage {
-  factory LocationOrganization() => create();
+  factory LocationOrganization({
+    $core.String? organizationId,
+    $core.bool? primary,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (primary != null) {
+      $result.primary = primary;
+    }
+    return $result;
+  }
   LocationOrganization._() : super();
   factory LocationOrganization.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LocationOrganization.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1705,6 +2112,7 @@ class LocationOrganization extends $pb.GeneratedMessage {
   static LocationOrganization getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LocationOrganization>(create);
   static LocationOrganization? _defaultInstance;
 
+  /// Organization ID the location is shared with.
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1714,6 +2122,7 @@ class LocationOrganization extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
 
+  /// Whether the organization is the primary owner or not.
   @$pb.TagNumber(2)
   $core.bool get primary => $_getBF(1);
   @$pb.TagNumber(2)
@@ -1725,7 +2134,25 @@ class LocationOrganization extends $pb.GeneratedMessage {
 }
 
 class LocationAuth extends $pb.GeneratedMessage {
-  factory LocationAuth() => create();
+  factory LocationAuth({
+  @$core.Deprecated('This field is deprecated.')
+    $core.String? secret,
+    $core.String? locationId,
+    $core.Iterable<SharedSecret>? secrets,
+  }) {
+    final $result = create();
+    if (secret != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.secret = secret;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (secrets != null) {
+      $result.secrets.addAll(secrets);
+    }
+    return $result;
+  }
   LocationAuth._() : super();
   factory LocationAuth.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LocationAuth.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1758,6 +2185,7 @@ class LocationAuth extends $pb.GeneratedMessage {
   static LocationAuth getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LocationAuth>(create);
   static LocationAuth? _defaultInstance;
 
+  /// Deprecated: use secrets field.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get secret => $_getSZ(0);
@@ -1771,6 +2199,7 @@ class LocationAuth extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSecret() => clearField(1);
 
+  /// Location ID containing this LocationAuth.
   @$pb.TagNumber(2)
   $core.String get locationId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1780,12 +2209,21 @@ class LocationAuth extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearLocationId() => clearField(2);
 
+  /// List of secrets used to authenticate to the Location.
   @$pb.TagNumber(3)
   $core.List<SharedSecret> get secrets => $_getList(2);
 }
 
 class StorageConfig extends $pb.GeneratedMessage {
-  factory StorageConfig() => create();
+  factory StorageConfig({
+    $core.String? region,
+  }) {
+    final $result = create();
+    if (region != null) {
+      $result.region = region;
+    }
+    return $result;
+  }
   StorageConfig._() : super();
   factory StorageConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StorageConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1816,6 +2254,7 @@ class StorageConfig extends $pb.GeneratedMessage {
   static StorageConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StorageConfig>(create);
   static StorageConfig? _defaultInstance;
 
+  /// GCS region that data is stored in.
   @$pb.TagNumber(1)
   $core.String get region => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1827,7 +2266,43 @@ class StorageConfig extends $pb.GeneratedMessage {
 }
 
 class Location extends $pb.GeneratedMessage {
-  factory Location() => create();
+  factory Location({
+    $core.String? id,
+    $core.String? name,
+    $4.Timestamp? createdOn,
+    $core.String? parentLocationId,
+    LocationAuth? auth,
+    $core.Iterable<LocationOrganization>? organizations,
+    $core.int? robotCount,
+    StorageConfig? config,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (parentLocationId != null) {
+      $result.parentLocationId = parentLocationId;
+    }
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    if (organizations != null) {
+      $result.organizations.addAll(organizations);
+    }
+    if (robotCount != null) {
+      $result.robotCount = robotCount;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
+    return $result;
+  }
   Location._() : super();
   factory Location.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Location.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1865,6 +2340,7 @@ class Location extends $pb.GeneratedMessage {
   static Location getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Location>(create);
   static Location? _defaultInstance;
 
+  /// Location ID.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1874,6 +2350,7 @@ class Location extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// Location name.
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1883,6 +2360,7 @@ class Location extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// Location creation timestamp.
   @$pb.TagNumber(3)
   $4.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
@@ -1894,6 +2372,7 @@ class Location extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $4.Timestamp ensureCreatedOn() => $_ensure(2);
 
+  /// Location ID of the parent location.
   @$pb.TagNumber(4)
   $core.String get parentLocationId => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -1903,6 +2382,7 @@ class Location extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearParentLocationId() => clearField(4);
 
+  /// Location authentication secrets.
   @$pb.TagNumber(5)
   LocationAuth get auth => $_getN(4);
   @$pb.TagNumber(5)
@@ -1914,6 +2394,7 @@ class Location extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   LocationAuth ensureAuth() => $_ensure(4);
 
+  /// Organizations that the location is shared with.
   @$pb.TagNumber(6)
   $core.List<LocationOrganization> get organizations => $_getList(5);
 
@@ -1926,6 +2407,7 @@ class Location extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearRobotCount() => clearField(7);
 
+  /// Config for how data in this location is stored.
   @$pb.TagNumber(8)
   StorageConfig get config => $_getN(7);
   @$pb.TagNumber(8)
@@ -1938,8 +2420,29 @@ class Location extends $pb.GeneratedMessage {
   StorageConfig ensureConfig() => $_ensure(7);
 }
 
+/// SharedSecret is a secret used for LocationAuth and RobotParts.
 class SharedSecret extends $pb.GeneratedMessage {
-  factory SharedSecret() => create();
+  factory SharedSecret({
+    $core.String? id,
+    $core.String? secret,
+    $4.Timestamp? createdOn,
+    SharedSecret_State? state,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (secret != null) {
+      $result.secret = secret;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    return $result;
+  }
   SharedSecret._() : super();
   factory SharedSecret.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SharedSecret.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1982,6 +2485,7 @@ class SharedSecret extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// The payload of the secret. Used during authentication to the rpc framework.
   @$pb.TagNumber(2)
   $core.String get secret => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1991,6 +2495,7 @@ class SharedSecret extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSecret() => clearField(2);
 
+  /// Date/time the secret was first created.
   @$pb.TagNumber(3)
   $4.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
@@ -2002,6 +2507,8 @@ class SharedSecret extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $4.Timestamp ensureCreatedOn() => $_ensure(2);
 
+  /// State of the shared secret. In most cases it should be enabled. We may support
+  /// disabling a specific secret while keeping it in the database.
   @$pb.TagNumber(4)
   SharedSecret_State get state => $_getN(3);
   @$pb.TagNumber(4)
@@ -2013,7 +2520,23 @@ class SharedSecret extends $pb.GeneratedMessage {
 }
 
 class CreateLocationRequest extends $pb.GeneratedMessage {
-  factory CreateLocationRequest() => create();
+  factory CreateLocationRequest({
+    $core.String? organizationId,
+    $core.String? name,
+    $core.String? parentLocationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (parentLocationId != null) {
+      $result.parentLocationId = parentLocationId;
+    }
+    return $result;
+  }
   CreateLocationRequest._() : super();
   factory CreateLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2046,6 +2569,7 @@ class CreateLocationRequest extends $pb.GeneratedMessage {
   static CreateLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLocationRequest>(create);
   static CreateLocationRequest? _defaultInstance;
 
+  /// Organization ID to create the location under.
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2055,6 +2579,7 @@ class CreateLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
 
+  /// Name of the location.
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2064,6 +2589,7 @@ class CreateLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// The new parent location to move the location under.
   @$pb.TagNumber(3)
   $core.String get parentLocationId => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -2075,7 +2601,15 @@ class CreateLocationRequest extends $pb.GeneratedMessage {
 }
 
 class CreateLocationResponse extends $pb.GeneratedMessage {
-  factory CreateLocationResponse() => create();
+  factory CreateLocationResponse({
+    Location? location,
+  }) {
+    final $result = create();
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   CreateLocationResponse._() : super();
   factory CreateLocationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateLocationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2106,6 +2640,7 @@ class CreateLocationResponse extends $pb.GeneratedMessage {
   static CreateLocationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLocationResponse>(create);
   static CreateLocationResponse? _defaultInstance;
 
+  /// Location object is returned.
   @$pb.TagNumber(1)
   Location get location => $_getN(0);
   @$pb.TagNumber(1)
@@ -2119,7 +2654,15 @@ class CreateLocationResponse extends $pb.GeneratedMessage {
 }
 
 class GetLocationRequest extends $pb.GeneratedMessage {
-  factory GetLocationRequest() => create();
+  factory GetLocationRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   GetLocationRequest._() : super();
   factory GetLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2150,6 +2693,7 @@ class GetLocationRequest extends $pb.GeneratedMessage {
   static GetLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLocationRequest>(create);
   static GetLocationRequest? _defaultInstance;
 
+  /// Location ID of location to get.
   @$pb.TagNumber(1)
   $core.String get locationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2161,7 +2705,15 @@ class GetLocationRequest extends $pb.GeneratedMessage {
 }
 
 class GetLocationResponse extends $pb.GeneratedMessage {
-  factory GetLocationResponse() => create();
+  factory GetLocationResponse({
+    Location? location,
+  }) {
+    final $result = create();
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   GetLocationResponse._() : super();
   factory GetLocationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLocationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2192,6 +2744,7 @@ class GetLocationResponse extends $pb.GeneratedMessage {
   static GetLocationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLocationResponse>(create);
   static GetLocationResponse? _defaultInstance;
 
+  /// Location object is returned.
   @$pb.TagNumber(1)
   Location get location => $_getN(0);
   @$pb.TagNumber(1)
@@ -2205,7 +2758,27 @@ class GetLocationResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateLocationRequest extends $pb.GeneratedMessage {
-  factory UpdateLocationRequest() => create();
+  factory UpdateLocationRequest({
+    $core.String? locationId,
+    $core.String? name,
+    $core.String? parentLocationId,
+    $core.String? region,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (parentLocationId != null) {
+      $result.parentLocationId = parentLocationId;
+    }
+    if (region != null) {
+      $result.region = region;
+    }
+    return $result;
+  }
   UpdateLocationRequest._() : super();
   factory UpdateLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2239,6 +2812,7 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
   static UpdateLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLocationRequest>(create);
   static UpdateLocationRequest? _defaultInstance;
 
+  /// Location ID of location to update.
   @$pb.TagNumber(1)
   $core.String get locationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2248,6 +2822,7 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearLocationId() => clearField(1);
 
+  /// The new name to be updated on location.
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2257,6 +2832,7 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// The new parent location to move the location under.
   @$pb.TagNumber(3)
   $core.String get parentLocationId => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -2266,6 +2842,7 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearParentLocationId() => clearField(3);
 
+  /// The new GCS region to associate the location with.
   @$pb.TagNumber(4)
   $core.String get region => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -2277,7 +2854,15 @@ class UpdateLocationRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateLocationResponse extends $pb.GeneratedMessage {
-  factory UpdateLocationResponse() => create();
+  factory UpdateLocationResponse({
+    Location? location,
+  }) {
+    final $result = create();
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   UpdateLocationResponse._() : super();
   factory UpdateLocationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateLocationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2308,6 +2893,7 @@ class UpdateLocationResponse extends $pb.GeneratedMessage {
   static UpdateLocationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLocationResponse>(create);
   static UpdateLocationResponse? _defaultInstance;
 
+  /// Location object is returned.
   @$pb.TagNumber(1)
   Location get location => $_getN(0);
   @$pb.TagNumber(1)
@@ -2321,7 +2907,15 @@ class UpdateLocationResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteLocationRequest extends $pb.GeneratedMessage {
-  factory DeleteLocationRequest() => create();
+  factory DeleteLocationRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   DeleteLocationRequest._() : super();
   factory DeleteLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2352,6 +2946,7 @@ class DeleteLocationRequest extends $pb.GeneratedMessage {
   static DeleteLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteLocationRequest>(create);
   static DeleteLocationRequest? _defaultInstance;
 
+  /// Location ID of location to delete.
   @$pb.TagNumber(1)
   $core.String get locationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2395,7 +2990,15 @@ class DeleteLocationResponse extends $pb.GeneratedMessage {
 }
 
 class ListLocationsRequest extends $pb.GeneratedMessage {
-  factory ListLocationsRequest() => create();
+  factory ListLocationsRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ListLocationsRequest._() : super();
   factory ListLocationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListLocationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2426,6 +3029,7 @@ class ListLocationsRequest extends $pb.GeneratedMessage {
   static ListLocationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLocationsRequest>(create);
   static ListLocationsRequest? _defaultInstance;
 
+  /// Organization ID under which to list all locations.
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2437,7 +3041,19 @@ class ListLocationsRequest extends $pb.GeneratedMessage {
 }
 
 class ShareLocationRequest extends $pb.GeneratedMessage {
-  factory ShareLocationRequest() => create();
+  factory ShareLocationRequest({
+    $core.String? locationId,
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ShareLocationRequest._() : super();
   factory ShareLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ShareLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2469,6 +3085,7 @@ class ShareLocationRequest extends $pb.GeneratedMessage {
   static ShareLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ShareLocationRequest>(create);
   static ShareLocationRequest? _defaultInstance;
 
+  /// Location ID to be shared.
   @$pb.TagNumber(1)
   $core.String get locationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2478,6 +3095,7 @@ class ShareLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearLocationId() => clearField(1);
 
+  /// Organization ID to share the location with.
   @$pb.TagNumber(2)
   $core.String get organizationId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2521,7 +3139,19 @@ class ShareLocationResponse extends $pb.GeneratedMessage {
 }
 
 class UnshareLocationRequest extends $pb.GeneratedMessage {
-  factory UnshareLocationRequest() => create();
+  factory UnshareLocationRequest({
+    $core.String? locationId,
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   UnshareLocationRequest._() : super();
   factory UnshareLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnshareLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2553,6 +3183,7 @@ class UnshareLocationRequest extends $pb.GeneratedMessage {
   static UnshareLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnshareLocationRequest>(create);
   static UnshareLocationRequest? _defaultInstance;
 
+  /// Location ID to be unshared.
   @$pb.TagNumber(1)
   $core.String get locationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2562,6 +3193,7 @@ class UnshareLocationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearLocationId() => clearField(1);
 
+  /// Organization ID to unshare the location with.
   @$pb.TagNumber(2)
   $core.String get organizationId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -2605,7 +3237,15 @@ class UnshareLocationResponse extends $pb.GeneratedMessage {
 }
 
 class ListLocationsResponse extends $pb.GeneratedMessage {
-  factory ListLocationsResponse() => create();
+  factory ListLocationsResponse({
+    $core.Iterable<Location>? locations,
+  }) {
+    final $result = create();
+    if (locations != null) {
+      $result.locations.addAll(locations);
+    }
+    return $result;
+  }
   ListLocationsResponse._() : super();
   factory ListLocationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListLocationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2641,7 +3281,15 @@ class ListLocationsResponse extends $pb.GeneratedMessage {
 }
 
 class CreateLocationSecretRequest extends $pb.GeneratedMessage {
-  factory CreateLocationSecretRequest() => create();
+  factory CreateLocationSecretRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   CreateLocationSecretRequest._() : super();
   factory CreateLocationSecretRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateLocationSecretRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2672,6 +3320,7 @@ class CreateLocationSecretRequest extends $pb.GeneratedMessage {
   static CreateLocationSecretRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLocationSecretRequest>(create);
   static CreateLocationSecretRequest? _defaultInstance;
 
+  /// Location ID to create the secret in.
   @$pb.TagNumber(1)
   $core.String get locationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2683,7 +3332,15 @@ class CreateLocationSecretRequest extends $pb.GeneratedMessage {
 }
 
 class CreateLocationSecretResponse extends $pb.GeneratedMessage {
-  factory CreateLocationSecretResponse() => create();
+  factory CreateLocationSecretResponse({
+    LocationAuth? auth,
+  }) {
+    final $result = create();
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
   CreateLocationSecretResponse._() : super();
   factory CreateLocationSecretResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateLocationSecretResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2714,6 +3371,7 @@ class CreateLocationSecretResponse extends $pb.GeneratedMessage {
   static CreateLocationSecretResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLocationSecretResponse>(create);
   static CreateLocationSecretResponse? _defaultInstance;
 
+  /// Location's auth after updates.
   @$pb.TagNumber(1)
   LocationAuth get auth => $_getN(0);
   @$pb.TagNumber(1)
@@ -2727,7 +3385,19 @@ class CreateLocationSecretResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteLocationSecretRequest extends $pb.GeneratedMessage {
-  factory DeleteLocationSecretRequest() => create();
+  factory DeleteLocationSecretRequest({
+    $core.String? locationId,
+    $core.String? secretId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (secretId != null) {
+      $result.secretId = secretId;
+    }
+    return $result;
+  }
   DeleteLocationSecretRequest._() : super();
   factory DeleteLocationSecretRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteLocationSecretRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2811,7 +3481,15 @@ class DeleteLocationSecretResponse extends $pb.GeneratedMessage {
 }
 
 class LocationAuthRequest extends $pb.GeneratedMessage {
-  factory LocationAuthRequest() => create();
+  factory LocationAuthRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   LocationAuthRequest._() : super();
   factory LocationAuthRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LocationAuthRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2853,7 +3531,15 @@ class LocationAuthRequest extends $pb.GeneratedMessage {
 }
 
 class LocationAuthResponse extends $pb.GeneratedMessage {
-  factory LocationAuthResponse() => create();
+  factory LocationAuthResponse({
+    LocationAuth? auth,
+  }) {
+    final $result = create();
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
   LocationAuthResponse._() : super();
   factory LocationAuthResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LocationAuthResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2897,7 +3583,15 @@ class LocationAuthResponse extends $pb.GeneratedMessage {
 }
 
 class GetRobotRequest extends $pb.GeneratedMessage {
-  factory GetRobotRequest() => create();
+  factory GetRobotRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   GetRobotRequest._() : super();
   factory GetRobotRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2939,7 +3633,15 @@ class GetRobotRequest extends $pb.GeneratedMessage {
 }
 
 class GetRoverRentalRobotsRequest extends $pb.GeneratedMessage {
-  factory GetRoverRentalRobotsRequest() => create();
+  factory GetRoverRentalRobotsRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   GetRoverRentalRobotsRequest._() : super();
   factory GetRoverRentalRobotsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRoverRentalRobotsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2981,7 +3683,27 @@ class GetRoverRentalRobotsRequest extends $pb.GeneratedMessage {
 }
 
 class RoverRentalRobot extends $pb.GeneratedMessage {
-  factory RoverRentalRobot() => create();
+  factory RoverRentalRobot({
+    $core.String? robotId,
+    $core.String? locationId,
+    $core.String? robotName,
+    $core.String? robotMainPartId,
+  }) {
+    final $result = create();
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (robotName != null) {
+      $result.robotName = robotName;
+    }
+    if (robotMainPartId != null) {
+      $result.robotMainPartId = robotMainPartId;
+    }
+    return $result;
+  }
   RoverRentalRobot._() : super();
   factory RoverRentalRobot.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RoverRentalRobot.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3053,7 +3775,15 @@ class RoverRentalRobot extends $pb.GeneratedMessage {
 }
 
 class GetRoverRentalRobotsResponse extends $pb.GeneratedMessage {
-  factory GetRoverRentalRobotsResponse() => create();
+  factory GetRoverRentalRobotsResponse({
+    $core.Iterable<RoverRentalRobot>? robots,
+  }) {
+    final $result = create();
+    if (robots != null) {
+      $result.robots.addAll(robots);
+    }
+    return $result;
+  }
   GetRoverRentalRobotsResponse._() : super();
   factory GetRoverRentalRobotsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRoverRentalRobotsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3089,7 +3819,15 @@ class GetRoverRentalRobotsResponse extends $pb.GeneratedMessage {
 }
 
 class GetRobotResponse extends $pb.GeneratedMessage {
-  factory GetRobotResponse() => create();
+  factory GetRobotResponse({
+    Robot? robot,
+  }) {
+    final $result = create();
+    if (robot != null) {
+      $result.robot = robot;
+    }
+    return $result;
+  }
   GetRobotResponse._() : super();
   factory GetRobotResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3133,7 +3871,15 @@ class GetRobotResponse extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartsRequest extends $pb.GeneratedMessage {
-  factory GetRobotPartsRequest() => create();
+  factory GetRobotPartsRequest({
+    $core.String? robotId,
+  }) {
+    final $result = create();
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    return $result;
+  }
   GetRobotPartsRequest._() : super();
   factory GetRobotPartsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3175,7 +3921,15 @@ class GetRobotPartsRequest extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartsResponse extends $pb.GeneratedMessage {
-  factory GetRobotPartsResponse() => create();
+  factory GetRobotPartsResponse({
+    $core.Iterable<RobotPart>? parts,
+  }) {
+    final $result = create();
+    if (parts != null) {
+      $result.parts.addAll(parts);
+    }
+    return $result;
+  }
   GetRobotPartsResponse._() : super();
   factory GetRobotPartsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3211,7 +3965,15 @@ class GetRobotPartsResponse extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartRequest extends $pb.GeneratedMessage {
-  factory GetRobotPartRequest() => create();
+  factory GetRobotPartRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   GetRobotPartRequest._() : super();
   factory GetRobotPartRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3253,7 +4015,19 @@ class GetRobotPartRequest extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartResponse extends $pb.GeneratedMessage {
-  factory GetRobotPartResponse() => create();
+  factory GetRobotPartResponse({
+    RobotPart? part,
+    $core.String? configJson,
+  }) {
+    final $result = create();
+    if (part != null) {
+      $result.part = part;
+    }
+    if (configJson != null) {
+      $result.configJson = configJson;
+    }
+    return $result;
+  }
   GetRobotPartResponse._() : super();
   factory GetRobotPartResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3307,7 +4081,27 @@ class GetRobotPartResponse extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
-  factory GetRobotPartLogsRequest() => create();
+  factory GetRobotPartLogsRequest({
+    $core.String? id,
+    $core.bool? errorsOnly,
+    $core.String? filter,
+    $core.String? pageToken,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (errorsOnly != null) {
+      $result.errorsOnly = errorsOnly;
+    }
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    return $result;
+  }
   GetRobotPartLogsRequest._() : super();
   factory GetRobotPartLogsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartLogsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3379,7 +4173,43 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
 }
 
 class LogEntry extends $pb.GeneratedMessage {
-  factory LogEntry() => create();
+  factory LogEntry({
+    $core.String? host,
+    $core.String? level,
+    $4.Timestamp? time,
+    $core.String? loggerName,
+    $core.String? message,
+    $5.Struct? caller,
+    $core.String? stack,
+    $core.Iterable<$5.Struct>? fields,
+  }) {
+    final $result = create();
+    if (host != null) {
+      $result.host = host;
+    }
+    if (level != null) {
+      $result.level = level;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (loggerName != null) {
+      $result.loggerName = loggerName;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (caller != null) {
+      $result.caller = caller;
+    }
+    if (stack != null) {
+      $result.stack = stack;
+    }
+    if (fields != null) {
+      $result.fields.addAll(fields);
+    }
+    return $result;
+  }
   LogEntry._() : super();
   factory LogEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LogEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3489,7 +4319,19 @@ class LogEntry extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
-  factory GetRobotPartLogsResponse() => create();
+  factory GetRobotPartLogsResponse({
+    $core.Iterable<LogEntry>? logs,
+    $core.String? nextPageToken,
+  }) {
+    final $result = create();
+    if (logs != null) {
+      $result.logs.addAll(logs);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
+    }
+    return $result;
+  }
   GetRobotPartLogsResponse._() : super();
   factory GetRobotPartLogsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3535,7 +4377,23 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
 }
 
 class TailRobotPartLogsRequest extends $pb.GeneratedMessage {
-  factory TailRobotPartLogsRequest() => create();
+  factory TailRobotPartLogsRequest({
+    $core.String? id,
+    $core.bool? errorsOnly,
+    $core.String? filter,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (errorsOnly != null) {
+      $result.errorsOnly = errorsOnly;
+    }
+    if (filter != null) {
+      $result.filter = filter;
+    }
+    return $result;
+  }
   TailRobotPartLogsRequest._() : super();
   factory TailRobotPartLogsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TailRobotPartLogsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3597,7 +4455,15 @@ class TailRobotPartLogsRequest extends $pb.GeneratedMessage {
 }
 
 class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
-  factory TailRobotPartLogsResponse() => create();
+  factory TailRobotPartLogsResponse({
+    $core.Iterable<LogEntry>? logs,
+  }) {
+    final $result = create();
+    if (logs != null) {
+      $result.logs.addAll(logs);
+    }
+    return $result;
+  }
   TailRobotPartLogsResponse._() : super();
   factory TailRobotPartLogsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TailRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3633,7 +4499,15 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
-  factory GetRobotPartHistoryRequest() => create();
+  factory GetRobotPartHistoryRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   GetRobotPartHistoryRequest._() : super();
   factory GetRobotPartHistoryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartHistoryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3675,7 +4549,15 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
 }
 
 class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
-  factory GetRobotPartHistoryResponse() => create();
+  factory GetRobotPartHistoryResponse({
+    $core.Iterable<RobotPartHistoryEntry>? history,
+  }) {
+    final $result = create();
+    if (history != null) {
+      $result.history.addAll(history);
+    }
+    return $result;
+  }
   GetRobotPartHistoryResponse._() : super();
   factory GetRobotPartHistoryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotPartHistoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3711,7 +4593,23 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateRobotPartRequest extends $pb.GeneratedMessage {
-  factory UpdateRobotPartRequest() => create();
+  factory UpdateRobotPartRequest({
+    $core.String? id,
+    $core.String? name,
+    $5.Struct? robotConfig,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (robotConfig != null) {
+      $result.robotConfig = robotConfig;
+    }
+    return $result;
+  }
   UpdateRobotPartRequest._() : super();
   factory UpdateRobotPartRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateRobotPartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3775,7 +4673,15 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateRobotPartResponse extends $pb.GeneratedMessage {
-  factory UpdateRobotPartResponse() => create();
+  factory UpdateRobotPartResponse({
+    RobotPart? part,
+  }) {
+    final $result = create();
+    if (part != null) {
+      $result.part = part;
+    }
+    return $result;
+  }
   UpdateRobotPartResponse._() : super();
   factory UpdateRobotPartResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateRobotPartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3819,7 +4725,19 @@ class UpdateRobotPartResponse extends $pb.GeneratedMessage {
 }
 
 class NewRobotPartRequest extends $pb.GeneratedMessage {
-  factory NewRobotPartRequest() => create();
+  factory NewRobotPartRequest({
+    $core.String? robotId,
+    $core.String? partName,
+  }) {
+    final $result = create();
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (partName != null) {
+      $result.partName = partName;
+    }
+    return $result;
+  }
   NewRobotPartRequest._() : super();
   factory NewRobotPartRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewRobotPartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3871,7 +4789,15 @@ class NewRobotPartRequest extends $pb.GeneratedMessage {
 }
 
 class NewRobotPartResponse extends $pb.GeneratedMessage {
-  factory NewRobotPartResponse() => create();
+  factory NewRobotPartResponse({
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
   NewRobotPartResponse._() : super();
   factory NewRobotPartResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewRobotPartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3913,7 +4839,15 @@ class NewRobotPartResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteRobotPartRequest extends $pb.GeneratedMessage {
-  factory DeleteRobotPartRequest() => create();
+  factory DeleteRobotPartRequest({
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
   DeleteRobotPartRequest._() : super();
   factory DeleteRobotPartRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteRobotPartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3955,7 +4889,15 @@ class DeleteRobotPartRequest extends $pb.GeneratedMessage {
 }
 
 class GetRobotAPIKeysRequest extends $pb.GeneratedMessage {
-  factory GetRobotAPIKeysRequest() => create();
+  factory GetRobotAPIKeysRequest({
+    $core.String? robotId,
+  }) {
+    final $result = create();
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    return $result;
+  }
   GetRobotAPIKeysRequest._() : super();
   factory GetRobotAPIKeysRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotAPIKeysRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3997,7 +4939,27 @@ class GetRobotAPIKeysRequest extends $pb.GeneratedMessage {
 }
 
 class APIKey extends $pb.GeneratedMessage {
-  factory APIKey() => create();
+  factory APIKey({
+    $core.String? id,
+    $core.String? key,
+    $core.String? name,
+    $4.Timestamp? createdOn,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (key != null) {
+      $result.key = key;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    return $result;
+  }
   APIKey._() : super();
   factory APIKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory APIKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4071,7 +5033,15 @@ class APIKey extends $pb.GeneratedMessage {
 }
 
 class GetRobotAPIKeysResponse extends $pb.GeneratedMessage {
-  factory GetRobotAPIKeysResponse() => create();
+  factory GetRobotAPIKeysResponse({
+    $core.Iterable<APIKey>? apiKeys,
+  }) {
+    final $result = create();
+    if (apiKeys != null) {
+      $result.apiKeys.addAll(apiKeys);
+    }
+    return $result;
+  }
   GetRobotAPIKeysResponse._() : super();
   factory GetRobotAPIKeysResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetRobotAPIKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4139,7 +5109,51 @@ class DeleteRobotPartResponse extends $pb.GeneratedMessage {
 }
 
 class Fragment extends $pb.GeneratedMessage {
-  factory Fragment() => create();
+  factory Fragment({
+    $core.String? id,
+    $core.String? name,
+    $5.Struct? fragment,
+    $core.String? organizationOwner,
+    $core.bool? public,
+    $4.Timestamp? createdOn,
+    $core.String? organizationName,
+    $core.int? robotPartCount,
+    $core.int? organizationCount,
+    $core.bool? onlyUsedByOwner,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (fragment != null) {
+      $result.fragment = fragment;
+    }
+    if (organizationOwner != null) {
+      $result.organizationOwner = organizationOwner;
+    }
+    if (public != null) {
+      $result.public = public;
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (organizationName != null) {
+      $result.organizationName = organizationName;
+    }
+    if (robotPartCount != null) {
+      $result.robotPartCount = robotPartCount;
+    }
+    if (organizationCount != null) {
+      $result.organizationCount = organizationCount;
+    }
+    if (onlyUsedByOwner != null) {
+      $result.onlyUsedByOwner = onlyUsedByOwner;
+    }
+    return $result;
+  }
   Fragment._() : super();
   factory Fragment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Fragment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4246,6 +5260,7 @@ class Fragment extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearOrganizationName() => clearField(7);
 
+  /// number of robot parts using this fragment
   @$pb.TagNumber(9)
   $core.int get robotPartCount => $_getIZ(7);
   @$pb.TagNumber(9)
@@ -4255,6 +5270,7 @@ class Fragment extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearRobotPartCount() => clearField(9);
 
+  /// number of organizations using this fragment
   @$pb.TagNumber(10)
   $core.int get organizationCount => $_getIZ(8);
   @$pb.TagNumber(10)
@@ -4264,6 +5280,7 @@ class Fragment extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearOrganizationCount() => clearField(10);
 
+  /// whether the organization(s) using this fragment is the same as the fragment org
   @$pb.TagNumber(11)
   $core.bool get onlyUsedByOwner => $_getBF(9);
   @$pb.TagNumber(11)
@@ -4275,7 +5292,19 @@ class Fragment extends $pb.GeneratedMessage {
 }
 
 class ListFragmentsRequest extends $pb.GeneratedMessage {
-  factory ListFragmentsRequest() => create();
+  factory ListFragmentsRequest({
+    $core.String? organizationId,
+    $core.bool? showPublic,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (showPublic != null) {
+      $result.showPublic = showPublic;
+    }
+    return $result;
+  }
   ListFragmentsRequest._() : super();
   factory ListFragmentsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFragmentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4327,7 +5356,15 @@ class ListFragmentsRequest extends $pb.GeneratedMessage {
 }
 
 class ListFragmentsResponse extends $pb.GeneratedMessage {
-  factory ListFragmentsResponse() => create();
+  factory ListFragmentsResponse({
+    $core.Iterable<Fragment>? fragments,
+  }) {
+    final $result = create();
+    if (fragments != null) {
+      $result.fragments.addAll(fragments);
+    }
+    return $result;
+  }
   ListFragmentsResponse._() : super();
   factory ListFragmentsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFragmentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4363,7 +5400,15 @@ class ListFragmentsResponse extends $pb.GeneratedMessage {
 }
 
 class GetFragmentRequest extends $pb.GeneratedMessage {
-  factory GetFragmentRequest() => create();
+  factory GetFragmentRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   GetFragmentRequest._() : super();
   factory GetFragmentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetFragmentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4405,7 +5450,15 @@ class GetFragmentRequest extends $pb.GeneratedMessage {
 }
 
 class GetFragmentResponse extends $pb.GeneratedMessage {
-  factory GetFragmentResponse() => create();
+  factory GetFragmentResponse({
+    Fragment? fragment,
+  }) {
+    final $result = create();
+    if (fragment != null) {
+      $result.fragment = fragment;
+    }
+    return $result;
+  }
   GetFragmentResponse._() : super();
   factory GetFragmentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetFragmentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4449,7 +5502,23 @@ class GetFragmentResponse extends $pb.GeneratedMessage {
 }
 
 class CreateFragmentRequest extends $pb.GeneratedMessage {
-  factory CreateFragmentRequest() => create();
+  factory CreateFragmentRequest({
+    $core.String? name,
+    $5.Struct? config,
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   CreateFragmentRequest._() : super();
   factory CreateFragmentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateFragmentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4513,7 +5582,15 @@ class CreateFragmentRequest extends $pb.GeneratedMessage {
 }
 
 class CreateFragmentResponse extends $pb.GeneratedMessage {
-  factory CreateFragmentResponse() => create();
+  factory CreateFragmentResponse({
+    Fragment? fragment,
+  }) {
+    final $result = create();
+    if (fragment != null) {
+      $result.fragment = fragment;
+    }
+    return $result;
+  }
   CreateFragmentResponse._() : super();
   factory CreateFragmentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateFragmentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4557,7 +5634,27 @@ class CreateFragmentResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateFragmentRequest extends $pb.GeneratedMessage {
-  factory UpdateFragmentRequest() => create();
+  factory UpdateFragmentRequest({
+    $core.String? id,
+    $core.String? name,
+    $5.Struct? config,
+    $core.bool? public,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
+    if (public != null) {
+      $result.public = public;
+    }
+    return $result;
+  }
   UpdateFragmentRequest._() : super();
   factory UpdateFragmentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateFragmentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4631,7 +5728,15 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateFragmentResponse extends $pb.GeneratedMessage {
-  factory UpdateFragmentResponse() => create();
+  factory UpdateFragmentResponse({
+    Fragment? fragment,
+  }) {
+    final $result = create();
+    if (fragment != null) {
+      $result.fragment = fragment;
+    }
+    return $result;
+  }
   UpdateFragmentResponse._() : super();
   factory UpdateFragmentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateFragmentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4675,7 +5780,15 @@ class UpdateFragmentResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteFragmentRequest extends $pb.GeneratedMessage {
-  factory DeleteFragmentRequest() => create();
+  factory DeleteFragmentRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   DeleteFragmentRequest._() : super();
   factory DeleteFragmentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteFragmentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4749,7 +5862,15 @@ class DeleteFragmentResponse extends $pb.GeneratedMessage {
 }
 
 class ListRobotsRequest extends $pb.GeneratedMessage {
-  factory ListRobotsRequest() => create();
+  factory ListRobotsRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
   ListRobotsRequest._() : super();
   factory ListRobotsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListRobotsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4791,7 +5912,15 @@ class ListRobotsRequest extends $pb.GeneratedMessage {
 }
 
 class ListRobotsResponse extends $pb.GeneratedMessage {
-  factory ListRobotsResponse() => create();
+  factory ListRobotsResponse({
+    $core.Iterable<Robot>? robots,
+  }) {
+    final $result = create();
+    if (robots != null) {
+      $result.robots.addAll(robots);
+    }
+    return $result;
+  }
   ListRobotsResponse._() : super();
   factory ListRobotsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListRobotsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4827,7 +5956,19 @@ class ListRobotsResponse extends $pb.GeneratedMessage {
 }
 
 class NewRobotRequest extends $pb.GeneratedMessage {
-  factory NewRobotRequest() => create();
+  factory NewRobotRequest({
+    $core.String? name,
+    $core.String? location,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   NewRobotRequest._() : super();
   factory NewRobotRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewRobotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4879,7 +6020,15 @@ class NewRobotRequest extends $pb.GeneratedMessage {
 }
 
 class NewRobotResponse extends $pb.GeneratedMessage {
-  factory NewRobotResponse() => create();
+  factory NewRobotResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   NewRobotResponse._() : super();
   factory NewRobotResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewRobotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4921,7 +6070,23 @@ class NewRobotResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateRobotRequest extends $pb.GeneratedMessage {
-  factory UpdateRobotRequest() => create();
+  factory UpdateRobotRequest({
+    $core.String? id,
+    $core.String? name,
+    $core.String? location,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (location != null) {
+      $result.location = location;
+    }
+    return $result;
+  }
   UpdateRobotRequest._() : super();
   factory UpdateRobotRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateRobotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4983,7 +6148,15 @@ class UpdateRobotRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateRobotResponse extends $pb.GeneratedMessage {
-  factory UpdateRobotResponse() => create();
+  factory UpdateRobotResponse({
+    Robot? robot,
+  }) {
+    final $result = create();
+    if (robot != null) {
+      $result.robot = robot;
+    }
+    return $result;
+  }
   UpdateRobotResponse._() : super();
   factory UpdateRobotResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateRobotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5027,7 +6200,15 @@ class UpdateRobotResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteRobotRequest extends $pb.GeneratedMessage {
-  factory DeleteRobotRequest() => create();
+  factory DeleteRobotRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   DeleteRobotRequest._() : super();
   factory DeleteRobotRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteRobotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5101,7 +6282,15 @@ class DeleteRobotResponse extends $pb.GeneratedMessage {
 }
 
 class MarkPartAsMainRequest extends $pb.GeneratedMessage {
-  factory MarkPartAsMainRequest() => create();
+  factory MarkPartAsMainRequest({
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
   MarkPartAsMainRequest._() : super();
   factory MarkPartAsMainRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MarkPartAsMainRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5175,7 +6364,15 @@ class MarkPartAsMainResponse extends $pb.GeneratedMessage {
 }
 
 class MarkPartForRestartRequest extends $pb.GeneratedMessage {
-  factory MarkPartForRestartRequest() => create();
+  factory MarkPartForRestartRequest({
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
   MarkPartForRestartRequest._() : super();
   factory MarkPartForRestartRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MarkPartForRestartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5249,7 +6446,15 @@ class MarkPartForRestartResponse extends $pb.GeneratedMessage {
 }
 
 class CreateRobotPartSecretRequest extends $pb.GeneratedMessage {
-  factory CreateRobotPartSecretRequest() => create();
+  factory CreateRobotPartSecretRequest({
+    $core.String? partId,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    return $result;
+  }
   CreateRobotPartSecretRequest._() : super();
   factory CreateRobotPartSecretRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateRobotPartSecretRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5280,6 +6485,7 @@ class CreateRobotPartSecretRequest extends $pb.GeneratedMessage {
   static CreateRobotPartSecretRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRobotPartSecretRequest>(create);
   static CreateRobotPartSecretRequest? _defaultInstance;
 
+  /// Robot Part ID to create the secret in.
   @$pb.TagNumber(1)
   $core.String get partId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -5291,7 +6497,15 @@ class CreateRobotPartSecretRequest extends $pb.GeneratedMessage {
 }
 
 class CreateRobotPartSecretResponse extends $pb.GeneratedMessage {
-  factory CreateRobotPartSecretResponse() => create();
+  factory CreateRobotPartSecretResponse({
+    RobotPart? part,
+  }) {
+    final $result = create();
+    if (part != null) {
+      $result.part = part;
+    }
+    return $result;
+  }
   CreateRobotPartSecretResponse._() : super();
   factory CreateRobotPartSecretResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateRobotPartSecretResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5322,6 +6536,7 @@ class CreateRobotPartSecretResponse extends $pb.GeneratedMessage {
   static CreateRobotPartSecretResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRobotPartSecretResponse>(create);
   static CreateRobotPartSecretResponse? _defaultInstance;
 
+  /// Location's auth after updates.
   @$pb.TagNumber(1)
   RobotPart get part => $_getN(0);
   @$pb.TagNumber(1)
@@ -5335,7 +6550,19 @@ class CreateRobotPartSecretResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteRobotPartSecretRequest extends $pb.GeneratedMessage {
-  factory DeleteRobotPartSecretRequest() => create();
+  factory DeleteRobotPartSecretRequest({
+    $core.String? partId,
+    $core.String? secretId,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (secretId != null) {
+      $result.secretId = secretId;
+    }
+    return $result;
+  }
   DeleteRobotPartSecretRequest._() : super();
   factory DeleteRobotPartSecretRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteRobotPartSecretRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5419,7 +6646,39 @@ class DeleteRobotPartSecretResponse extends $pb.GeneratedMessage {
 }
 
 class Authorization extends $pb.GeneratedMessage {
-  factory Authorization() => create();
+  factory Authorization({
+    $core.String? authorizationType,
+    $core.String? authorizationId,
+    $core.String? resourceType,
+    $core.String? resourceId,
+    $core.String? identityId,
+    $core.String? organizationId,
+    $core.String? identityType,
+  }) {
+    final $result = create();
+    if (authorizationType != null) {
+      $result.authorizationType = authorizationType;
+    }
+    if (authorizationId != null) {
+      $result.authorizationId = authorizationId;
+    }
+    if (resourceType != null) {
+      $result.resourceType = resourceType;
+    }
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    if (identityId != null) {
+      $result.identityId = identityId;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (identityType != null) {
+      $result.identityType = identityType;
+    }
+    return $result;
+  }
   Authorization._() : super();
   factory Authorization.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Authorization.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5521,7 +6780,15 @@ class Authorization extends $pb.GeneratedMessage {
 }
 
 class AddRoleRequest extends $pb.GeneratedMessage {
-  factory AddRoleRequest() => create();
+  factory AddRoleRequest({
+    Authorization? authorization,
+  }) {
+    final $result = create();
+    if (authorization != null) {
+      $result.authorization = authorization;
+    }
+    return $result;
+  }
   AddRoleRequest._() : super();
   factory AddRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5597,7 +6864,15 @@ class AddRoleResponse extends $pb.GeneratedMessage {
 }
 
 class RemoveRoleRequest extends $pb.GeneratedMessage {
-  factory RemoveRoleRequest() => create();
+  factory RemoveRoleRequest({
+    Authorization? authorization,
+  }) {
+    final $result = create();
+    if (authorization != null) {
+      $result.authorization = authorization;
+    }
+    return $result;
+  }
   RemoveRoleRequest._() : super();
   factory RemoveRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5673,7 +6948,19 @@ class RemoveRoleResponse extends $pb.GeneratedMessage {
 }
 
 class ChangeRoleRequest extends $pb.GeneratedMessage {
-  factory ChangeRoleRequest() => create();
+  factory ChangeRoleRequest({
+    Authorization? oldAuthorization,
+    Authorization? newAuthorization,
+  }) {
+    final $result = create();
+    if (oldAuthorization != null) {
+      $result.oldAuthorization = oldAuthorization;
+    }
+    if (newAuthorization != null) {
+      $result.newAuthorization = newAuthorization;
+    }
+    return $result;
+  }
   ChangeRoleRequest._() : super();
   factory ChangeRoleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ChangeRoleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5761,7 +7048,19 @@ class ChangeRoleResponse extends $pb.GeneratedMessage {
 }
 
 class ListAuthorizationsRequest extends $pb.GeneratedMessage {
-  factory ListAuthorizationsRequest() => create();
+  factory ListAuthorizationsRequest({
+    $core.String? organizationId,
+    $core.Iterable<$core.String>? resourceIds,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (resourceIds != null) {
+      $result.resourceIds.addAll(resourceIds);
+    }
+    return $result;
+  }
   ListAuthorizationsRequest._() : super();
   factory ListAuthorizationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListAuthorizationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5807,7 +7106,15 @@ class ListAuthorizationsRequest extends $pb.GeneratedMessage {
 }
 
 class ListAuthorizationsResponse extends $pb.GeneratedMessage {
-  factory ListAuthorizationsResponse() => create();
+  factory ListAuthorizationsResponse({
+    $core.Iterable<Authorization>? authorizations,
+  }) {
+    final $result = create();
+    if (authorizations != null) {
+      $result.authorizations.addAll(authorizations);
+    }
+    return $result;
+  }
   ListAuthorizationsResponse._() : super();
   factory ListAuthorizationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListAuthorizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5843,7 +7150,15 @@ class ListAuthorizationsResponse extends $pb.GeneratedMessage {
 }
 
 class CheckPermissionsRequest extends $pb.GeneratedMessage {
-  factory CheckPermissionsRequest() => create();
+  factory CheckPermissionsRequest({
+    $core.Iterable<AuthorizedPermissions>? permissions,
+  }) {
+    final $result = create();
+    if (permissions != null) {
+      $result.permissions.addAll(permissions);
+    }
+    return $result;
+  }
   CheckPermissionsRequest._() : super();
   factory CheckPermissionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CheckPermissionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5879,7 +7194,23 @@ class CheckPermissionsRequest extends $pb.GeneratedMessage {
 }
 
 class AuthorizedPermissions extends $pb.GeneratedMessage {
-  factory AuthorizedPermissions() => create();
+  factory AuthorizedPermissions({
+    $core.String? resourceType,
+    $core.String? resourceId,
+    $core.Iterable<$core.String>? permissions,
+  }) {
+    final $result = create();
+    if (resourceType != null) {
+      $result.resourceType = resourceType;
+    }
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    if (permissions != null) {
+      $result.permissions.addAll(permissions);
+    }
+    return $result;
+  }
   AuthorizedPermissions._() : super();
   factory AuthorizedPermissions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthorizedPermissions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5935,7 +7266,15 @@ class AuthorizedPermissions extends $pb.GeneratedMessage {
 }
 
 class CheckPermissionsResponse extends $pb.GeneratedMessage {
-  factory CheckPermissionsResponse() => create();
+  factory CheckPermissionsResponse({
+    $core.Iterable<AuthorizedPermissions>? authorizedPermissions,
+  }) {
+    final $result = create();
+    if (authorizedPermissions != null) {
+      $result.authorizedPermissions.addAll(authorizedPermissions);
+    }
+    return $result;
+  }
   CheckPermissionsResponse._() : super();
   factory CheckPermissionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CheckPermissionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5970,8 +7309,21 @@ class CheckPermissionsResponse extends $pb.GeneratedMessage {
   $core.List<AuthorizedPermissions> get authorizedPermissions => $_getList(0);
 }
 
+/// Modules
 class CreateModuleRequest extends $pb.GeneratedMessage {
-  factory CreateModuleRequest() => create();
+  factory CreateModuleRequest({
+    $core.String? organizationId,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   CreateModuleRequest._() : super();
   factory CreateModuleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateModuleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6003,6 +7355,7 @@ class CreateModuleRequest extends $pb.GeneratedMessage {
   static CreateModuleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateModuleRequest>(create);
   static CreateModuleRequest? _defaultInstance;
 
+  /// The organization to create the module under
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6012,6 +7365,7 @@ class CreateModuleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
 
+  /// The name of the module, which must be unique within your org
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -6023,7 +7377,19 @@ class CreateModuleRequest extends $pb.GeneratedMessage {
 }
 
 class CreateModuleResponse extends $pb.GeneratedMessage {
-  factory CreateModuleResponse() => create();
+  factory CreateModuleResponse({
+    $core.String? moduleId,
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
   CreateModuleResponse._() : super();
   factory CreateModuleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateModuleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6055,6 +7421,7 @@ class CreateModuleResponse extends $pb.GeneratedMessage {
   static CreateModuleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateModuleResponse>(create);
   static CreateModuleResponse? _defaultInstance;
 
+  /// The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
   @$pb.TagNumber(1)
   $core.String get moduleId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6064,6 +7431,7 @@ class CreateModuleResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
 
+  /// The detail page of the module
   @$pb.TagNumber(2)
   $core.String get url => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -6075,7 +7443,35 @@ class CreateModuleResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateModuleRequest extends $pb.GeneratedMessage {
-  factory UpdateModuleRequest() => create();
+  factory UpdateModuleRequest({
+    $core.String? moduleId,
+    Visibility? visibility,
+    $core.String? url,
+    $core.String? description,
+    $core.Iterable<Model>? models,
+    $core.String? entrypoint,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (visibility != null) {
+      $result.visibility = visibility;
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (models != null) {
+      $result.models.addAll(models);
+    }
+    if (entrypoint != null) {
+      $result.entrypoint = entrypoint;
+    }
+    return $result;
+  }
   UpdateModuleRequest._() : super();
   factory UpdateModuleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateModuleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6111,6 +7507,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   static UpdateModuleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateModuleRequest>(create);
   static UpdateModuleRequest? _defaultInstance;
 
+  /// The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
   @$pb.TagNumber(1)
   $core.String get moduleId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6120,6 +7517,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
 
+  /// The visibility that should be set for the module
   @$pb.TagNumber(2)
   Visibility get visibility => $_getN(1);
   @$pb.TagNumber(2)
@@ -6129,6 +7527,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearVisibility() => clearField(2);
 
+  /// The url to reference for documentation, code, etc.
   @$pb.TagNumber(3)
   $core.String get url => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -6138,6 +7537,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearUrl() => clearField(3);
 
+  /// A short description of the module that explains its purpose
   @$pb.TagNumber(4)
   $core.String get description => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -6147,9 +7547,11 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearDescription() => clearField(4);
 
+  /// A list of models that are available in the module
   @$pb.TagNumber(5)
   $core.List<Model> get models => $_getList(4);
 
+  /// The executable to run to start the module program
   @$pb.TagNumber(6)
   $core.String get entrypoint => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -6161,7 +7563,15 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
-  factory UpdateModuleResponse() => create();
+  factory UpdateModuleResponse({
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
   UpdateModuleResponse._() : super();
   factory UpdateModuleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateModuleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6192,6 +7602,7 @@ class UpdateModuleResponse extends $pb.GeneratedMessage {
   static UpdateModuleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateModuleResponse>(create);
   static UpdateModuleResponse? _defaultInstance;
 
+  /// The detail page of the module
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6203,7 +7614,19 @@ class UpdateModuleResponse extends $pb.GeneratedMessage {
 }
 
 class Model extends $pb.GeneratedMessage {
-  factory Model() => create();
+  factory Model({
+    $core.String? api,
+    $core.String? model,
+  }) {
+    final $result = create();
+    if (api != null) {
+      $result.api = api;
+    }
+    if (model != null) {
+      $result.model = model;
+    }
+    return $result;
+  }
   Model._() : super();
   factory Model.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Model.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6235,6 +7658,7 @@ class Model extends $pb.GeneratedMessage {
   static Model getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Model>(create);
   static Model? _defaultInstance;
 
+  /// The colon-delimited-triplet of the api implemented by the model
   @$pb.TagNumber(1)
   $core.String get api => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6244,6 +7668,7 @@ class Model extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearApi() => clearField(1);
 
+  /// The colon-delimited-triplet of the model
   @$pb.TagNumber(2)
   $core.String get model => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -6255,7 +7680,23 @@ class Model extends $pb.GeneratedMessage {
 }
 
 class ModuleFileInfo extends $pb.GeneratedMessage {
-  factory ModuleFileInfo() => create();
+  factory ModuleFileInfo({
+    $core.String? moduleId,
+    $core.String? version,
+    $core.String? platform,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    return $result;
+  }
   ModuleFileInfo._() : super();
   factory ModuleFileInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModuleFileInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6288,6 +7729,7 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
   static ModuleFileInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModuleFileInfo>(create);
   static ModuleFileInfo? _defaultInstance;
 
+  /// The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
   @$pb.TagNumber(1)
   $core.String get moduleId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6297,6 +7739,7 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
 
+  /// The semver string that represents the new major/minor/patch version of the module
   @$pb.TagNumber(2)
   $core.String get version => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -6306,6 +7749,7 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearVersion() => clearField(2);
 
+  /// The platform that the file is built to run on
   @$pb.TagNumber(3)
   $core.String get platform => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -6323,7 +7767,19 @@ enum UploadModuleFileRequest_ModuleFile {
 }
 
 class UploadModuleFileRequest extends $pb.GeneratedMessage {
-  factory UploadModuleFileRequest() => create();
+  factory UploadModuleFileRequest({
+    ModuleFileInfo? moduleFileInfo,
+    $core.List<$core.int>? file,
+  }) {
+    final $result = create();
+    if (moduleFileInfo != null) {
+      $result.moduleFileInfo = moduleFileInfo;
+    }
+    if (file != null) {
+      $result.file = file;
+    }
+    return $result;
+  }
   UploadModuleFileRequest._() : super();
   factory UploadModuleFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadModuleFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6364,6 +7820,7 @@ class UploadModuleFileRequest extends $pb.GeneratedMessage {
   UploadModuleFileRequest_ModuleFile whichModuleFile() => _UploadModuleFileRequest_ModuleFileByTag[$_whichOneof(0)]!;
   void clearModuleFile() => clearField($_whichOneof(0));
 
+  /// The information about the module file being uploaded
   @$pb.TagNumber(1)
   ModuleFileInfo get moduleFileInfo => $_getN(0);
   @$pb.TagNumber(1)
@@ -6375,6 +7832,7 @@ class UploadModuleFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   ModuleFileInfo ensureModuleFileInfo() => $_ensure(0);
 
+  /// The file contents to be uploaded
   @$pb.TagNumber(2)
   $core.List<$core.int> get file => $_getN(1);
   @$pb.TagNumber(2)
@@ -6386,7 +7844,15 @@ class UploadModuleFileRequest extends $pb.GeneratedMessage {
 }
 
 class UploadModuleFileResponse extends $pb.GeneratedMessage {
-  factory UploadModuleFileResponse() => create();
+  factory UploadModuleFileResponse({
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
   UploadModuleFileResponse._() : super();
   factory UploadModuleFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UploadModuleFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6417,6 +7883,7 @@ class UploadModuleFileResponse extends $pb.GeneratedMessage {
   static UploadModuleFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadModuleFileResponse>(create);
   static UploadModuleFileResponse? _defaultInstance;
 
+  /// The detail page of the module
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6428,7 +7895,15 @@ class UploadModuleFileResponse extends $pb.GeneratedMessage {
 }
 
 class GetModuleRequest extends $pb.GeneratedMessage {
-  factory GetModuleRequest() => create();
+  factory GetModuleRequest({
+    $core.String? moduleId,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    return $result;
+  }
   GetModuleRequest._() : super();
   factory GetModuleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetModuleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6459,6 +7934,7 @@ class GetModuleRequest extends $pb.GeneratedMessage {
   static GetModuleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetModuleRequest>(create);
   static GetModuleRequest? _defaultInstance;
 
+  /// The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
   @$pb.TagNumber(1)
   $core.String get moduleId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6470,7 +7946,15 @@ class GetModuleRequest extends $pb.GeneratedMessage {
 }
 
 class GetModuleResponse extends $pb.GeneratedMessage {
-  factory GetModuleResponse() => create();
+  factory GetModuleResponse({
+    Module? module,
+  }) {
+    final $result = create();
+    if (module != null) {
+      $result.module = module;
+    }
+    return $result;
+  }
   GetModuleResponse._() : super();
   factory GetModuleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetModuleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6501,6 +7985,7 @@ class GetModuleResponse extends $pb.GeneratedMessage {
   static GetModuleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetModuleResponse>(create);
   static GetModuleResponse? _defaultInstance;
 
+  /// The module object
   @$pb.TagNumber(1)
   Module get module => $_getN(0);
   @$pb.TagNumber(1)
@@ -6514,7 +7999,59 @@ class GetModuleResponse extends $pb.GeneratedMessage {
 }
 
 class Module extends $pb.GeneratedMessage {
-  factory Module() => create();
+  factory Module({
+    $core.String? moduleId,
+    $core.String? name,
+    Visibility? visibility,
+    $core.Iterable<VersionHistory>? versions,
+    $core.String? url,
+    $core.String? description,
+    $core.Iterable<Model>? models,
+    $fixnum.Int64? totalRobotUsage,
+    $fixnum.Int64? totalOrganizationUsage,
+    $core.String? organizationId,
+    $core.String? entrypoint,
+    $core.String? publicNamespace,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (visibility != null) {
+      $result.visibility = visibility;
+    }
+    if (versions != null) {
+      $result.versions.addAll(versions);
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (models != null) {
+      $result.models.addAll(models);
+    }
+    if (totalRobotUsage != null) {
+      $result.totalRobotUsage = totalRobotUsage;
+    }
+    if (totalOrganizationUsage != null) {
+      $result.totalOrganizationUsage = totalOrganizationUsage;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (entrypoint != null) {
+      $result.entrypoint = entrypoint;
+    }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    return $result;
+  }
   Module._() : super();
   factory Module.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Module.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6556,6 +8093,7 @@ class Module extends $pb.GeneratedMessage {
   static Module getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Module>(create);
   static Module? _defaultInstance;
 
+  /// The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
   @$pb.TagNumber(1)
   $core.String get moduleId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6565,6 +8103,7 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
 
+  /// The name of the module
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -6574,6 +8113,7 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// The visibility of the module
   @$pb.TagNumber(3)
   Visibility get visibility => $_getN(2);
   @$pb.TagNumber(3)
@@ -6583,9 +8123,12 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearVisibility() => clearField(3);
 
+  /// The versions of the module that are available
+  /// When this is returned from the backend, the versions are sorted in ascending order by the semver version
   @$pb.TagNumber(4)
   $core.List<VersionHistory> get versions => $_getList(3);
 
+  /// The url to reference for documentation, code, etc.
   @$pb.TagNumber(5)
   $core.String get url => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -6595,6 +8138,7 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearUrl() => clearField(5);
 
+  /// A short description of the module that explains its purpose
   @$pb.TagNumber(6)
   $core.String get description => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -6604,9 +8148,11 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearDescription() => clearField(6);
 
+  /// A list of models that are available in the module
   @$pb.TagNumber(7)
   $core.List<Model> get models => $_getList(6);
 
+  /// The total number of robots using this module
   @$pb.TagNumber(8)
   $fixnum.Int64 get totalRobotUsage => $_getI64(7);
   @$pb.TagNumber(8)
@@ -6616,6 +8162,7 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearTotalRobotUsage() => clearField(8);
 
+  /// The total number of organizations using this module
   @$pb.TagNumber(9)
   $fixnum.Int64 get totalOrganizationUsage => $_getI64(8);
   @$pb.TagNumber(9)
@@ -6625,6 +8172,7 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearTotalOrganizationUsage() => clearField(9);
 
+  /// The id of the organization that owns the module
   @$pb.TagNumber(10)
   $core.String get organizationId => $_getSZ(9);
   @$pb.TagNumber(10)
@@ -6634,6 +8182,7 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearOrganizationId() => clearField(10);
 
+  /// The executable to run to start the module program
   @$pb.TagNumber(11)
   $core.String get entrypoint => $_getSZ(10);
   @$pb.TagNumber(11)
@@ -6643,6 +8192,8 @@ class Module extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearEntrypoint() => clearField(11);
 
+  /// The public namespace of the organization that owns the module
+  /// This is empty if no public namespace is set
   @$pb.TagNumber(12)
   $core.String get publicNamespace => $_getSZ(11);
   @$pb.TagNumber(12)
@@ -6654,7 +8205,27 @@ class Module extends $pb.GeneratedMessage {
 }
 
 class VersionHistory extends $pb.GeneratedMessage {
-  factory VersionHistory() => create();
+  factory VersionHistory({
+    $core.String? version,
+    $core.Iterable<Uploads>? files,
+    $core.Iterable<Model>? models,
+    $core.String? entrypoint,
+  }) {
+    final $result = create();
+    if (version != null) {
+      $result.version = version;
+    }
+    if (files != null) {
+      $result.files.addAll(files);
+    }
+    if (models != null) {
+      $result.models.addAll(models);
+    }
+    if (entrypoint != null) {
+      $result.entrypoint = entrypoint;
+    }
+    return $result;
+  }
   VersionHistory._() : super();
   factory VersionHistory.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VersionHistory.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6688,6 +8259,7 @@ class VersionHistory extends $pb.GeneratedMessage {
   static VersionHistory getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VersionHistory>(create);
   static VersionHistory? _defaultInstance;
 
+  /// The semver string that represents the major/minor/patch version of the module
   @$pb.TagNumber(1)
   $core.String get version => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6697,12 +8269,15 @@ class VersionHistory extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearVersion() => clearField(1);
 
+  /// The uploads that are available for this module version
   @$pb.TagNumber(2)
   $core.List<Uploads> get files => $_getList(1);
 
+  /// The models that this verion of the module provides
   @$pb.TagNumber(3)
   $core.List<Model> get models => $_getList(2);
 
+  /// The entrypoint for this version of the module
   @$pb.TagNumber(4)
   $core.String get entrypoint => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -6714,7 +8289,19 @@ class VersionHistory extends $pb.GeneratedMessage {
 }
 
 class Uploads extends $pb.GeneratedMessage {
-  factory Uploads() => create();
+  factory Uploads({
+    $core.String? platform,
+    $4.Timestamp? uploadedAt,
+  }) {
+    final $result = create();
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (uploadedAt != null) {
+      $result.uploadedAt = uploadedAt;
+    }
+    return $result;
+  }
   Uploads._() : super();
   factory Uploads.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Uploads.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6746,6 +8333,7 @@ class Uploads extends $pb.GeneratedMessage {
   static Uploads getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Uploads>(create);
   static Uploads? _defaultInstance;
 
+  /// The OS and architecture the module is built to run on
   @$pb.TagNumber(1)
   $core.String get platform => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6755,6 +8343,7 @@ class Uploads extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPlatform() => clearField(1);
 
+  /// The time when the file was uploaded
   @$pb.TagNumber(2)
   $4.Timestamp get uploadedAt => $_getN(1);
   @$pb.TagNumber(2)
@@ -6768,7 +8357,15 @@ class Uploads extends $pb.GeneratedMessage {
 }
 
 class ListModulesRequest extends $pb.GeneratedMessage {
-  factory ListModulesRequest() => create();
+  factory ListModulesRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
   ListModulesRequest._() : super();
   factory ListModulesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListModulesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6799,6 +8396,7 @@ class ListModulesRequest extends $pb.GeneratedMessage {
   static ListModulesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListModulesRequest>(create);
   static ListModulesRequest? _defaultInstance;
 
+  /// The id of the organization to return private modules for.
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -6810,7 +8408,15 @@ class ListModulesRequest extends $pb.GeneratedMessage {
 }
 
 class ListModulesResponse extends $pb.GeneratedMessage {
-  factory ListModulesResponse() => create();
+  factory ListModulesResponse({
+    $core.Iterable<Module>? modules,
+  }) {
+    final $result = create();
+    if (modules != null) {
+      $result.modules.addAll(modules);
+    }
+    return $result;
+  }
   ListModulesResponse._() : super();
   factory ListModulesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListModulesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6841,12 +8447,21 @@ class ListModulesResponse extends $pb.GeneratedMessage {
   static ListModulesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListModulesResponse>(create);
   static ListModulesResponse? _defaultInstance;
 
+  /// A listed of modules. When authenticated, this API will return modules that are private for this org. Public modules are always returned.
   @$pb.TagNumber(1)
   $core.List<Module> get modules => $_getList(0);
 }
 
 class GetUserIDByEmailRequest extends $pb.GeneratedMessage {
-  factory GetUserIDByEmailRequest() => create();
+  factory GetUserIDByEmailRequest({
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
   GetUserIDByEmailRequest._() : super();
   factory GetUserIDByEmailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserIDByEmailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6888,7 +8503,15 @@ class GetUserIDByEmailRequest extends $pb.GeneratedMessage {
 }
 
 class GetUserIDByEmailResponse extends $pb.GeneratedMessage {
-  factory GetUserIDByEmailResponse() => create();
+  factory GetUserIDByEmailResponse({
+    $core.String? userId,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    return $result;
+  }
   GetUserIDByEmailResponse._() : super();
   factory GetUserIDByEmailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUserIDByEmailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6930,7 +8553,15 @@ class GetUserIDByEmailResponse extends $pb.GeneratedMessage {
 }
 
 class ListOrganizationsByUserRequest extends $pb.GeneratedMessage {
-  factory ListOrganizationsByUserRequest() => create();
+  factory ListOrganizationsByUserRequest({
+    $core.String? userId,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    return $result;
+  }
   ListOrganizationsByUserRequest._() : super();
   factory ListOrganizationsByUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListOrganizationsByUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6972,7 +8603,19 @@ class ListOrganizationsByUserRequest extends $pb.GeneratedMessage {
 }
 
 class OrgDetails extends $pb.GeneratedMessage {
-  factory OrgDetails() => create();
+  factory OrgDetails({
+    $core.String? orgId,
+    $core.String? orgName,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (orgName != null) {
+      $result.orgName = orgName;
+    }
+    return $result;
+  }
   OrgDetails._() : super();
   factory OrgDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OrgDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7024,7 +8667,15 @@ class OrgDetails extends $pb.GeneratedMessage {
 }
 
 class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {
-  factory ListOrganizationsByUserResponse() => create();
+  factory ListOrganizationsByUserResponse({
+    $core.Iterable<OrgDetails>? orgs,
+  }) {
+    final $result = create();
+    if (orgs != null) {
+      $result.orgs.addAll(orgs);
+    }
+    return $result;
+  }
   ListOrganizationsByUserResponse._() : super();
   factory ListOrganizationsByUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListOrganizationsByUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7060,7 +8711,19 @@ class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {
 }
 
 class CreateKeyRequest extends $pb.GeneratedMessage {
-  factory CreateKeyRequest() => create();
+  factory CreateKeyRequest({
+    $core.Iterable<Authorization>? authorizations,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (authorizations != null) {
+      $result.authorizations.addAll(authorizations);
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   CreateKeyRequest._() : super();
   factory CreateKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7106,7 +8769,19 @@ class CreateKeyRequest extends $pb.GeneratedMessage {
 }
 
 class CreateKeyResponse extends $pb.GeneratedMessage {
-  factory CreateKeyResponse() => create();
+  factory CreateKeyResponse({
+    $core.String? key,
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   CreateKeyResponse._() : super();
   factory CreateKeyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7158,7 +8833,15 @@ class CreateKeyResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteKeyRequest extends $pb.GeneratedMessage {
-  factory DeleteKeyRequest() => create();
+  factory DeleteKeyRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   DeleteKeyRequest._() : super();
   factory DeleteKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7232,7 +8915,31 @@ class DeleteKeyResponse extends $pb.GeneratedMessage {
 }
 
 class AuthorizationDetails extends $pb.GeneratedMessage {
-  factory AuthorizationDetails() => create();
+  factory AuthorizationDetails({
+    $core.String? authorizationType,
+    $core.String? authorizationId,
+    $core.String? resourceType,
+    $core.String? resourceId,
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (authorizationType != null) {
+      $result.authorizationType = authorizationType;
+    }
+    if (authorizationId != null) {
+      $result.authorizationId = authorizationId;
+    }
+    if (resourceType != null) {
+      $result.resourceType = resourceType;
+    }
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   AuthorizationDetails._() : super();
   factory AuthorizationDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthorizationDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7314,7 +9021,19 @@ class AuthorizationDetails extends $pb.GeneratedMessage {
 }
 
 class APIKeyWithAuthorizations extends $pb.GeneratedMessage {
-  factory APIKeyWithAuthorizations() => create();
+  factory APIKeyWithAuthorizations({
+    APIKey? apiKey,
+    $core.Iterable<AuthorizationDetails>? authorizations,
+  }) {
+    final $result = create();
+    if (apiKey != null) {
+      $result.apiKey = apiKey;
+    }
+    if (authorizations != null) {
+      $result.authorizations.addAll(authorizations);
+    }
+    return $result;
+  }
   APIKeyWithAuthorizations._() : super();
   factory APIKeyWithAuthorizations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory APIKeyWithAuthorizations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7362,7 +9081,15 @@ class APIKeyWithAuthorizations extends $pb.GeneratedMessage {
 }
 
 class ListKeysRequest extends $pb.GeneratedMessage {
-  factory ListKeysRequest() => create();
+  factory ListKeysRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
   ListKeysRequest._() : super();
   factory ListKeysRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListKeysRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7404,7 +9131,15 @@ class ListKeysRequest extends $pb.GeneratedMessage {
 }
 
 class ListKeysResponse extends $pb.GeneratedMessage {
-  factory ListKeysResponse() => create();
+  factory ListKeysResponse({
+    $core.Iterable<APIKeyWithAuthorizations>? apiKeys,
+  }) {
+    final $result = create();
+    if (apiKeys != null) {
+      $result.apiKeys.addAll(apiKeys);
+    }
+    return $result;
+  }
   ListKeysResponse._() : super();
   factory ListKeysResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7440,7 +9175,15 @@ class ListKeysResponse extends $pb.GeneratedMessage {
 }
 
 class RotateKeyRequest extends $pb.GeneratedMessage {
-  factory RotateKeyRequest() => create();
+  factory RotateKeyRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   RotateKeyRequest._() : super();
   factory RotateKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RotateKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7482,7 +9225,19 @@ class RotateKeyRequest extends $pb.GeneratedMessage {
 }
 
 class RotateKeyResponse extends $pb.GeneratedMessage {
-  factory RotateKeyResponse() => create();
+  factory RotateKeyResponse({
+    $core.String? id,
+    $core.String? key,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (key != null) {
+      $result.key = key;
+    }
+    return $result;
+  }
   RotateKeyResponse._() : super();
   factory RotateKeyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RotateKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7534,7 +9289,15 @@ class RotateKeyResponse extends $pb.GeneratedMessage {
 }
 
 class CreateKeyFromExistingKeyAuthorizationsRequest extends $pb.GeneratedMessage {
-  factory CreateKeyFromExistingKeyAuthorizationsRequest() => create();
+  factory CreateKeyFromExistingKeyAuthorizationsRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   CreateKeyFromExistingKeyAuthorizationsRequest._() : super();
   factory CreateKeyFromExistingKeyAuthorizationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateKeyFromExistingKeyAuthorizationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7576,7 +9339,19 @@ class CreateKeyFromExistingKeyAuthorizationsRequest extends $pb.GeneratedMessage
 }
 
 class CreateKeyFromExistingKeyAuthorizationsResponse extends $pb.GeneratedMessage {
-  factory CreateKeyFromExistingKeyAuthorizationsResponse() => create();
+  factory CreateKeyFromExistingKeyAuthorizationsResponse({
+    $core.String? id,
+    $core.String? key,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (key != null) {
+      $result.key = key;
+    }
+    return $result;
+  }
   CreateKeyFromExistingKeyAuthorizationsResponse._() : super();
   factory CreateKeyFromExistingKeyAuthorizationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateKeyFromExistingKeyAuthorizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

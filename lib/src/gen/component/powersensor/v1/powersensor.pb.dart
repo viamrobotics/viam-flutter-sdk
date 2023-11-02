@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,7 +16,19 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
 class GetVoltageRequest extends $pb.GeneratedMessage {
-  factory GetVoltageRequest() => create();
+  factory GetVoltageRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetVoltageRequest._() : super();
   factory GetVoltageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetVoltageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -48,6 +60,7 @@ class GetVoltageRequest extends $pb.GeneratedMessage {
   static GetVoltageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetVoltageRequest>(create);
   static GetVoltageRequest? _defaultInstance;
 
+  /// Name of a power sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -57,6 +70,7 @@ class GetVoltageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -70,7 +84,19 @@ class GetVoltageRequest extends $pb.GeneratedMessage {
 }
 
 class GetVoltageResponse extends $pb.GeneratedMessage {
-  factory GetVoltageResponse() => create();
+  factory GetVoltageResponse({
+    $core.double? volts,
+    $core.bool? isAc,
+  }) {
+    final $result = create();
+    if (volts != null) {
+      $result.volts = volts;
+    }
+    if (isAc != null) {
+      $result.isAc = isAc;
+    }
+    return $result;
+  }
   GetVoltageResponse._() : super();
   factory GetVoltageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetVoltageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -102,6 +128,7 @@ class GetVoltageResponse extends $pb.GeneratedMessage {
   static GetVoltageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetVoltageResponse>(create);
   static GetVoltageResponse? _defaultInstance;
 
+  /// Voltage in volts
   @$pb.TagNumber(1)
   $core.double get volts => $_getN(0);
   @$pb.TagNumber(1)
@@ -111,6 +138,7 @@ class GetVoltageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearVolts() => clearField(1);
 
+  /// Bool describing whether the voltage is DC or AC
   @$pb.TagNumber(2)
   $core.bool get isAc => $_getBF(1);
   @$pb.TagNumber(2)
@@ -122,7 +150,19 @@ class GetVoltageResponse extends $pb.GeneratedMessage {
 }
 
 class GetCurrentRequest extends $pb.GeneratedMessage {
-  factory GetCurrentRequest() => create();
+  factory GetCurrentRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetCurrentRequest._() : super();
   factory GetCurrentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCurrentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -154,6 +194,7 @@ class GetCurrentRequest extends $pb.GeneratedMessage {
   static GetCurrentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentRequest>(create);
   static GetCurrentRequest? _defaultInstance;
 
+  /// Name of a power sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -163,6 +204,7 @@ class GetCurrentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -176,7 +218,19 @@ class GetCurrentRequest extends $pb.GeneratedMessage {
 }
 
 class GetCurrentResponse extends $pb.GeneratedMessage {
-  factory GetCurrentResponse() => create();
+  factory GetCurrentResponse({
+    $core.double? amperes,
+    $core.bool? isAc,
+  }) {
+    final $result = create();
+    if (amperes != null) {
+      $result.amperes = amperes;
+    }
+    if (isAc != null) {
+      $result.isAc = isAc;
+    }
+    return $result;
+  }
   GetCurrentResponse._() : super();
   factory GetCurrentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetCurrentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -208,6 +262,7 @@ class GetCurrentResponse extends $pb.GeneratedMessage {
   static GetCurrentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCurrentResponse>(create);
   static GetCurrentResponse? _defaultInstance;
 
+  /// Current in amperes
   @$pb.TagNumber(1)
   $core.double get amperes => $_getN(0);
   @$pb.TagNumber(1)
@@ -217,6 +272,7 @@ class GetCurrentResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAmperes() => clearField(1);
 
+  /// Bool descibing whether the current is DC or AC
   @$pb.TagNumber(2)
   $core.bool get isAc => $_getBF(1);
   @$pb.TagNumber(2)
@@ -228,7 +284,19 @@ class GetCurrentResponse extends $pb.GeneratedMessage {
 }
 
 class GetPowerRequest extends $pb.GeneratedMessage {
-  factory GetPowerRequest() => create();
+  factory GetPowerRequest({
+    $core.String? name,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
   GetPowerRequest._() : super();
   factory GetPowerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPowerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -260,6 +328,7 @@ class GetPowerRequest extends $pb.GeneratedMessage {
   static GetPowerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPowerRequest>(create);
   static GetPowerRequest? _defaultInstance;
 
+  /// Name of a power sensor
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -269,6 +338,7 @@ class GetPowerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -282,7 +352,15 @@ class GetPowerRequest extends $pb.GeneratedMessage {
 }
 
 class GetPowerResponse extends $pb.GeneratedMessage {
-  factory GetPowerResponse() => create();
+  factory GetPowerResponse({
+    $core.double? watts,
+  }) {
+    final $result = create();
+    if (watts != null) {
+      $result.watts = watts;
+    }
+    return $result;
+  }
   GetPowerResponse._() : super();
   factory GetPowerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPowerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -313,6 +391,7 @@ class GetPowerResponse extends $pb.GeneratedMessage {
   static GetPowerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPowerResponse>(create);
   static GetPowerResponse? _defaultInstance;
 
+  /// Power in watts
   @$pb.TagNumber(1)
   $core.double get watts => $_getN(0);
   @$pb.TagNumber(1)
