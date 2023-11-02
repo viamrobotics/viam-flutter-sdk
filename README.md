@@ -16,6 +16,7 @@ Make sure your project meets the minimum requirements:
 
 - Minimum iOS target: 13.0
 - Minimum Android SDK: 23
+- Kotlin version: 1.8.20
 
 ## Installation
 
