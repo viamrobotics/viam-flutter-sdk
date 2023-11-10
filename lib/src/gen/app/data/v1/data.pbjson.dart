@@ -234,6 +234,60 @@ final $typed_data.Uint8List tabularDataDescriptor = $convert.base64Decode(
     'oNdGltZV9yZWNlaXZlZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHRpbWVS'
     'ZWNlaXZlZA==');
 
+@$core.Deprecated('Use tabularDataBySQLRequestDescriptor instead')
+const TabularDataBySQLRequest$json = {
+  '1': 'TabularDataBySQLRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'sql_query', '3': 2, '4': 1, '5': 9, '10': 'sqlQuery'},
+  ],
+};
+
+/// Descriptor for `TabularDataBySQLRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tabularDataBySQLRequestDescriptor = $convert.base64Decode(
+    'ChdUYWJ1bGFyRGF0YUJ5U1FMUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
+    'FuaXphdGlvbklkEhsKCXNxbF9xdWVyeRgCIAEoCVIIc3FsUXVlcnk=');
+
+@$core.Deprecated('Use tabularDataBySQLResponseDescriptor instead')
+const TabularDataBySQLResponse$json = {
+  '1': 'TabularDataBySQLResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
+  ],
+};
+
+/// Descriptor for `TabularDataBySQLResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tabularDataBySQLResponseDescriptor = $convert.base64Decode(
+    'ChhUYWJ1bGFyRGF0YUJ5U1FMUmVzcG9uc2USKwoEZGF0YRgBIAMoCzIXLmdvb2dsZS5wcm90b2'
+    'J1Zi5TdHJ1Y3RSBGRhdGE=');
+
+@$core.Deprecated('Use tabularDataByMQLRequestDescriptor instead')
+const TabularDataByMQLRequest$json = {
+  '1': 'TabularDataByMQLRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'mql_query', '3': 2, '4': 1, '5': 9, '10': 'mqlQuery'},
+  ],
+};
+
+/// Descriptor for `TabularDataByMQLRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tabularDataByMQLRequestDescriptor = $convert.base64Decode(
+    'ChdUYWJ1bGFyRGF0YUJ5TVFMUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
+    'FuaXphdGlvbklkEhsKCW1xbF9xdWVyeRgCIAEoCVIIbXFsUXVlcnk=');
+
+@$core.Deprecated('Use tabularDataByMQLResponseDescriptor instead')
+const TabularDataByMQLResponse$json = {
+  '1': 'TabularDataByMQLResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
+  ],
+};
+
+/// Descriptor for `TabularDataByMQLResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tabularDataByMQLResponseDescriptor = $convert.base64Decode(
+    'ChhUYWJ1bGFyRGF0YUJ5TVFMUmVzcG9uc2USKwoEZGF0YRgBIAMoCzIXLmdvb2dsZS5wcm90b2'
+    'J1Zi5TdHJ1Y3RSBGRhdGE=');
+
 @$core.Deprecated('Use binaryDataDescriptor instead')
 const BinaryData$json = {
   '1': 'BinaryData',

@@ -685,7 +685,7 @@ const PackageConfig$json = {
     {'1': 'package', '3': 2, '4': 1, '5': 9, '10': 'package'},
     {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
     {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'status', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'status'},
+    {'1': 'status', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'status'},
   ],
 };
 
@@ -693,5 +693,5 @@ const PackageConfig$json = {
 final $typed_data.Uint8List packageConfigDescriptor = $convert.base64Decode(
     'Cg1QYWNrYWdlQ29uZmlnEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHcGFja2FnZRgCIAEoCVIHcG'
     'Fja2FnZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEhIKBHR5cGUYBCABKAlSBHR5cGUSOAoG'
-    'c3RhdHVzGAcgASgLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IGc3RhdHVz');
+    'c3RhdHVzGAUgASgLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IGc3RhdHVz');
 

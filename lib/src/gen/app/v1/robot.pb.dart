@@ -3291,7 +3291,7 @@ class PackageConfig extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'package')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..aOS(4, _omitFieldNames ? '' : 'type')
-    ..aOM<AppValidationStatus>(7, _omitFieldNames ? '' : 'status', subBuilder: AppValidationStatus.create)
+    ..aOM<AppValidationStatus>(5, _omitFieldNames ? '' : 'status', subBuilder: AppValidationStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -3357,15 +3357,15 @@ class PackageConfig extends $pb.GeneratedMessage {
   void clearType() => clearField(4);
 
   /// info about the validity of the package
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(5)
   AppValidationStatus get status => $_getN(4);
-  @$pb.TagNumber(7)
-  set status(AppValidationStatus v) { setField(7, v); }
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(5)
+  set status(AppValidationStatus v) { setField(5, v); }
+  @$pb.TagNumber(5)
   $core.bool hasStatus() => $_has(4);
-  @$pb.TagNumber(7)
-  void clearStatus() => clearField(7);
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(5)
+  void clearStatus() => clearField(5);
+  @$pb.TagNumber(5)
   AppValidationStatus ensureStatus() => $_ensure(4);
 }
 
