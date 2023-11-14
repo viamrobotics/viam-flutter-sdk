@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="TrainingJobMetadata" class="callable">
-          <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/TrainingJobMetadata.html">TrainingJobMetadata</a></span><span class="signature">(<span class="parameter" id="-param-request">{<span class="type-annotation"><a href="../viam_protos.app.ml_training/SubmitTrainingJobRequest-class.html">SubmitTrainingJobRequest</a>?</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../viam_protos.app.ml_training/TrainingStatus-class.html">TrainingStatus</a>?</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span><span class="parameter" id="-param-lastModified"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastModified</span>, </span><span class="parameter" id="-param-syncedModelId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">syncedModelId</span>, </span><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-errorStatus"><span class="type-annotation">Status?</span> <span class="parameter-name">errorStatus</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/TrainingJobMetadata.html">TrainingJobMetadata</a></span><span class="signature">(<span class="parameter" id="-param-request">{<span class="type-annotation"><a href="../viam_protos.app.ml_training/SubmitTrainingJobRequest-class.html">SubmitTrainingJobRequest</a>?</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../viam_protos.app.ml_training/TrainingStatus-class.html">TrainingStatus</a>?</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span><span class="parameter" id="-param-lastModified"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastModified</span>, </span><span class="parameter" id="-param-syncedModelId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">syncedModelId</span>, </span><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-errorStatus"><span class="type-annotation">Status?</span> <span class="parameter-name">errorStatus</span>, </span><span class="parameter" id="-param-trainingStarted"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">trainingStarted</span>, </span><span class="parameter" id="-param-trainingEnded"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">trainingEnded</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -248,6 +248,28 @@ to protobuf fields.
         <dt id="syncedModelId" class="property">
   <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/syncedModelId.html">syncedModelId</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="trainingEnded" class="property">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/trainingEnded.html">trainingEnded</a></span>
+  <span class="signature">&#8596; Timestamp</span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">read / write</span></div>
+
+</dd>
+
+        <dt id="trainingStarted" class="property">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/trainingStarted.html">trainingStarted</a></span>
+  <span class="signature">&#8596; Timestamp</span> 
 
 </dt>
 <dd>
@@ -432,6 +454,32 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearTrainingEnded" class="callable">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/clearTrainingEnded.html">clearTrainingEnded</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearTrainingStarted" class="callable">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/clearTrainingStarted.html">clearTrainingStarted</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clone" class="callable">
   <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.ml_training/TrainingJobMetadata/clone.html">clone</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.ml_training/TrainingJobMetadata-class.html">TrainingJobMetadata</a></span>
@@ -540,6 +588,32 @@ to protobuf fields.
         <dt id="ensureRequest" class="callable">
   <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/ensureRequest.html">ensureRequest</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.ml_training/SubmitTrainingJobRequest-class.html">SubmitTrainingJobRequest</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="ensureTrainingEnded" class="callable">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/ensureTrainingEnded.html">ensureTrainingEnded</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Timestamp</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="ensureTrainingStarted" class="callable">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/ensureTrainingStarted.html">ensureTrainingStarted</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Timestamp</span>
   </span>
   
 
@@ -761,6 +835,32 @@ default value if it is not set.
 
         <dt id="hasSyncedModelId" class="callable">
   <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/hasSyncedModelId.html">hasSyncedModelId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasTrainingEnded" class="callable">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/hasTrainingEnded.html">hasTrainingEnded</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasTrainingStarted" class="callable">
+  <span class="name"><a href="../viam_protos.app.ml_training/TrainingJobMetadata/hasTrainingStarted.html">hasTrainingStarted</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
