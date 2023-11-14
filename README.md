@@ -22,6 +22,19 @@ Make sure your project meets the minimum requirements:
 
 `flutter pub add viam_sdk`
 
+### Update Info.plist
+
+If you are building for Apple platforms, you may have to update your app's `Info.plist`. `NSLocalNetworkUsageDescription` is needed to establish stable WebRTC connections, and `NSBonjourServices` is required to connect to local devices via mDNS.
+
+```plist
+<key>NSLocalNetworkUsageDescription</key>
+<string>Viam requires access to your devices local network to connect to your devices.</string>
+<key>NSBonjourServices</key>
+<array>
+    <string>_rpc._tcp</string>
+</array>
+```
+
 ## Usage
 
 You can use the Viam SDK to connect to an existing robot (to create a robot, view the [documentation](https://docs.viam.com/) or [try Viam](https://docs.viam.com/try-viam/)).

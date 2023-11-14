@@ -8,6 +8,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:logger/logger.dart';
 
+import '../exceptions.dart';
 import '../gen/proto/rpc/v1/auth.pb.dart' as pb;
 import '../gen/proto/rpc/v1/auth.pbgrpc.dart';
 import '../gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart';
@@ -123,6 +124,8 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
         .._usingMdns = true
         ..authEntity = address;
       return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+    } on NotLocalAddressException catch (e) {
+      _logger.d(e.toString());
     } catch (e) {
       _logger.d('Error dialing with mDNS; falling back to other methods', error: e);
     }
@@ -158,8 +161,7 @@ Future<String> searchMdns(String address) async {
   }
 
   await discovery.stop();
-
-  throw Exception('Address not on local network');
+  throw NotLocalAddressException(address);
 }
 
 Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionCallback) async {

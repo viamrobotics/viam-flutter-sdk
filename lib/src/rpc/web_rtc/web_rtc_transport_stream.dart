@@ -5,7 +5,7 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../errors.dart';
+import '../../exceptions.dart';
 import '../../gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
 import 'web_rtc_client.dart';
 
@@ -63,7 +63,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
       if (connectionState == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
           connectionState == RTCPeerConnectionState.RTCPeerConnectionStateDisconnected) {
         onRequestFailure(
-          const ConnectionLostError('RTCPeerConnection lost'),
+          const ConnectionLostException('RTCPeerConnection lost'),
           StackTrace.current,
         );
         return;
