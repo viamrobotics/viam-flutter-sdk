@@ -70,6 +70,15 @@ This is a beta release of the Viam Flutter SDK. No guarantees are made to the st
 </ul>
 <h2 id="installation">Installation</h2>
 <p><code>flutter pub add viam_sdk</code></p>
+<h3 id="update-infoplist">Update Info.plist</h3>
+<p>If you are building for Apple platforms, you may have to update your app's <code>Info.plist</code>. <code>NSLocalNetworkUsageDescription</code> is needed to establish stable WebRTC connections, and <code>NSBonjourServices</code> is required to connect to local devices via mDNS.</p>
+<pre class="language-plist"><code class="language-plist">&lt;key&gt;NSLocalNetworkUsageDescription&lt;/key&gt;
+&lt;string&gt;Viam requires access to your devices local network to connect to your devices.&lt;/string&gt;
+&lt;key&gt;NSBonjourServices&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;_rpc._tcp&lt;/string&gt;
+&lt;/array&gt;
+</code></pre>
 <h2 id="usage">Usage</h2>
 <p>You can use the Viam SDK to connect to an existing robot (to create a robot, view the <a href="https://docs.viam.com/">documentation</a> or <a href="https://docs.viam.com/try-viam/">try Viam</a>).</p>
 <pre class="language-dart"><code class="language-dart">import 'package:viam_sdk/viam_sdk.dart';

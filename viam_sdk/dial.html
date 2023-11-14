@@ -97,6 +97,8 @@
         .._usingMdns = true
         ..authEntity = address;
       return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+    } on NotLocalAddressException catch (e) {
+      _logger.d(e.toString());
     } catch (e) {
       _logger.d(&#39;Error dialing with mDNS; falling back to other methods&#39;, error: e);
     }

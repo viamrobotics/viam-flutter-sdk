@@ -96,8 +96,7 @@
   }
 
   await discovery.stop();
-
-  throw Exception(&#39;Address not on local network&#39;);
+  throw NotLocalAddressException(address);
 }</code></pre>
 </section>
 
