@@ -936,6 +936,231 @@ class TabularData extends $pb.GeneratedMessage {
   $2.Timestamp ensureTimeReceived() => $_ensure(3);
 }
 
+/// TabularDataBySQLRequest requests tabular data using a SQL query.
+class TabularDataBySQLRequest extends $pb.GeneratedMessage {
+  factory TabularDataBySQLRequest({
+    $core.String? organizationId,
+    $core.String? sqlQuery,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (sqlQuery != null) {
+      $result.sqlQuery = sqlQuery;
+    }
+    return $result;
+  }
+  TabularDataBySQLRequest._() : super();
+  factory TabularDataBySQLRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataBySQLRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataBySQLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'sqlQuery')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TabularDataBySQLRequest clone() => TabularDataBySQLRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TabularDataBySQLRequest copyWith(void Function(TabularDataBySQLRequest) updates) => super.copyWith((message) => updates(message as TabularDataBySQLRequest)) as TabularDataBySQLRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TabularDataBySQLRequest create() => TabularDataBySQLRequest._();
+  TabularDataBySQLRequest createEmptyInstance() => create();
+  static $pb.PbList<TabularDataBySQLRequest> createRepeated() => $pb.PbList<TabularDataBySQLRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TabularDataBySQLRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataBySQLRequest>(create);
+  static TabularDataBySQLRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  /// sql_query accepts any valid SQL SELECT statement. Tabular data is held in a database
+  /// called "sensorData" and a table called readings, so queries should select from "readings"
+  /// or "sensorData.readings".
+  @$pb.TagNumber(2)
+  $core.String get sqlQuery => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sqlQuery($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSqlQuery() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSqlQuery() => clearField(2);
+}
+
+/// TabularDataBySQLResponse provides unified tabular data and metadata, queried with SQL.
+class TabularDataBySQLResponse extends $pb.GeneratedMessage {
+  factory TabularDataBySQLResponse({
+    $core.Iterable<$3.Struct>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  TabularDataBySQLResponse._() : super();
+  factory TabularDataBySQLResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataBySQLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataBySQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<$3.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $3.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TabularDataBySQLResponse clone() => TabularDataBySQLResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TabularDataBySQLResponse copyWith(void Function(TabularDataBySQLResponse) updates) => super.copyWith((message) => updates(message as TabularDataBySQLResponse)) as TabularDataBySQLResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TabularDataBySQLResponse create() => TabularDataBySQLResponse._();
+  TabularDataBySQLResponse createEmptyInstance() => create();
+  static $pb.PbList<TabularDataBySQLResponse> createRepeated() => $pb.PbList<TabularDataBySQLResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TabularDataBySQLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataBySQLResponse>(create);
+  static TabularDataBySQLResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$3.Struct> get data => $_getList(0);
+}
+
+/// TabularDataByMQLRequest requests tabular data using an MQL query.
+class TabularDataByMQLRequest extends $pb.GeneratedMessage {
+  factory TabularDataByMQLRequest({
+    $core.String? organizationId,
+    $core.String? mqlQuery,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (mqlQuery != null) {
+      $result.mqlQuery = mqlQuery;
+    }
+    return $result;
+  }
+  TabularDataByMQLRequest._() : super();
+  factory TabularDataByMQLRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataByMQLRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'mqlQuery')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TabularDataByMQLRequest clone() => TabularDataByMQLRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TabularDataByMQLRequest copyWith(void Function(TabularDataByMQLRequest) updates) => super.copyWith((message) => updates(message as TabularDataByMQLRequest)) as TabularDataByMQLRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TabularDataByMQLRequest create() => TabularDataByMQLRequest._();
+  TabularDataByMQLRequest createEmptyInstance() => create();
+  static $pb.PbList<TabularDataByMQLRequest> createRepeated() => $pb.PbList<TabularDataByMQLRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TabularDataByMQLRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataByMQLRequest>(create);
+  static TabularDataByMQLRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  /// mql_query accepts a MongoDB aggregation pipeline, to be run on the "sensorData.readings"
+  /// namespace, which holds the Viam organization's tabular data.
+  @$pb.TagNumber(2)
+  $core.String get mqlQuery => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mqlQuery($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMqlQuery() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMqlQuery() => clearField(2);
+}
+
+/// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
+class TabularDataByMQLResponse extends $pb.GeneratedMessage {
+  factory TabularDataByMQLResponse({
+    $core.Iterable<$3.Struct>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  TabularDataByMQLResponse._() : super();
+  factory TabularDataByMQLResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataByMQLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<$3.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $3.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TabularDataByMQLResponse clone() => TabularDataByMQLResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TabularDataByMQLResponse copyWith(void Function(TabularDataByMQLResponse) updates) => super.copyWith((message) => updates(message as TabularDataByMQLResponse)) as TabularDataByMQLResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TabularDataByMQLResponse create() => TabularDataByMQLResponse._();
+  TabularDataByMQLResponse createEmptyInstance() => create();
+  static $pb.PbList<TabularDataByMQLResponse> createRepeated() => $pb.PbList<TabularDataByMQLResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TabularDataByMQLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataByMQLResponse>(create);
+  static TabularDataByMQLResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$3.Struct> get data => $_getList(0);
+}
+
 /// BinaryData contains data and metadata associated with binary data.
 class BinaryData extends $pb.GeneratedMessage {
   factory BinaryData({

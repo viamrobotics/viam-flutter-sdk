@@ -25,6 +25,14 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/TabularDataByFilter',
       ($0.TabularDataByFilterRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.TabularDataByFilterResponse.fromBuffer(value));
+  static final _$tabularDataBySQL = $grpc.ClientMethod<$0.TabularDataBySQLRequest, $0.TabularDataBySQLResponse>(
+      '/viam.app.data.v1.DataService/TabularDataBySQL',
+      ($0.TabularDataBySQLRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.TabularDataBySQLResponse.fromBuffer(value));
+  static final _$tabularDataByMQL = $grpc.ClientMethod<$0.TabularDataByMQLRequest, $0.TabularDataByMQLResponse>(
+      '/viam.app.data.v1.DataService/TabularDataByMQL',
+      ($0.TabularDataByMQLRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.TabularDataByMQLResponse.fromBuffer(value));
   static final _$binaryDataByFilter = $grpc.ClientMethod<$0.BinaryDataByFilterRequest, $0.BinaryDataByFilterResponse>(
       '/viam.app.data.v1.DataService/BinaryDataByFilter',
       ($0.BinaryDataByFilterRequest value) => value.writeToBuffer(),
@@ -102,6 +110,14 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.TabularDataByFilterResponse> tabularDataByFilter($0.TabularDataByFilterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$tabularDataByFilter, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.TabularDataBySQLResponse> tabularDataBySQL($0.TabularDataBySQLRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$tabularDataBySQL, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.TabularDataByMQLResponse> tabularDataByMQL($0.TabularDataByMQLRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$tabularDataByMQL, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.BinaryDataByFilterResponse> binaryDataByFilter($0.BinaryDataByFilterRequest request, {$grpc.CallOptions? options}) {
@@ -185,6 +201,20 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.TabularDataByFilterRequest.fromBuffer(value),
         ($0.TabularDataByFilterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.TabularDataBySQLRequest, $0.TabularDataBySQLResponse>(
+        'TabularDataBySQL',
+        tabularDataBySQL_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.TabularDataBySQLRequest.fromBuffer(value),
+        ($0.TabularDataBySQLResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.TabularDataByMQLRequest, $0.TabularDataByMQLResponse>(
+        'TabularDataByMQL',
+        tabularDataByMQL_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.TabularDataByMQLRequest.fromBuffer(value),
+        ($0.TabularDataByMQLResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.BinaryDataByFilterRequest, $0.BinaryDataByFilterResponse>(
         'BinaryDataByFilter',
         binaryDataByFilter_Pre,
@@ -310,6 +340,14 @@ abstract class DataServiceBase extends $grpc.Service {
     return tabularDataByFilter(call, await request);
   }
 
+  $async.Future<$0.TabularDataBySQLResponse> tabularDataBySQL_Pre($grpc.ServiceCall call, $async.Future<$0.TabularDataBySQLRequest> request) async {
+    return tabularDataBySQL(call, await request);
+  }
+
+  $async.Future<$0.TabularDataByMQLResponse> tabularDataByMQL_Pre($grpc.ServiceCall call, $async.Future<$0.TabularDataByMQLRequest> request) async {
+    return tabularDataByMQL(call, await request);
+  }
+
   $async.Future<$0.BinaryDataByFilterResponse> binaryDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$0.BinaryDataByFilterRequest> request) async {
     return binaryDataByFilter(call, await request);
   }
@@ -379,6 +417,8 @@ abstract class DataServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $0.TabularDataByFilterRequest request);
+  $async.Future<$0.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $0.TabularDataBySQLRequest request);
+  $async.Future<$0.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $0.TabularDataByMQLRequest request);
   $async.Future<$0.BinaryDataByFilterResponse> binaryDataByFilter($grpc.ServiceCall call, $0.BinaryDataByFilterRequest request);
   $async.Future<$0.BinaryDataByIDsResponse> binaryDataByIDs($grpc.ServiceCall call, $0.BinaryDataByIDsRequest request);
   $async.Future<$0.DeleteTabularDataResponse> deleteTabularData($grpc.ServiceCall call, $0.DeleteTabularDataRequest request);

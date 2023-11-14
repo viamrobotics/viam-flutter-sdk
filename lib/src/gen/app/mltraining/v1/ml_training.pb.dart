@@ -419,6 +419,8 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $core.String? syncedModelId,
     $core.String? id,
     $3.Status? errorStatus,
+    $2.Timestamp? trainingStarted,
+    $2.Timestamp? trainingEnded,
   }) {
     final $result = create();
     if (request != null) {
@@ -442,6 +444,12 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (errorStatus != null) {
       $result.errorStatus = errorStatus;
     }
+    if (trainingStarted != null) {
+      $result.trainingStarted = trainingStarted;
+    }
+    if (trainingEnded != null) {
+      $result.trainingEnded = trainingEnded;
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -456,6 +464,8 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'syncedModelId')
     ..aOS(7, _omitFieldNames ? '' : 'id')
     ..aOM<$3.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $3.Status.create)
+    ..aOM<$2.Timestamp>(9, _omitFieldNames ? '' : 'trainingStarted', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'trainingEnded', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -550,6 +560,28 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   void clearErrorStatus() => clearField(8);
   @$pb.TagNumber(8)
   $3.Status ensureErrorStatus() => $_ensure(6);
+
+  @$pb.TagNumber(9)
+  $2.Timestamp get trainingStarted => $_getN(7);
+  @$pb.TagNumber(9)
+  set trainingStarted($2.Timestamp v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTrainingStarted() => $_has(7);
+  @$pb.TagNumber(9)
+  void clearTrainingStarted() => clearField(9);
+  @$pb.TagNumber(9)
+  $2.Timestamp ensureTrainingStarted() => $_ensure(7);
+
+  @$pb.TagNumber(10)
+  $2.Timestamp get trainingEnded => $_getN(8);
+  @$pb.TagNumber(10)
+  set trainingEnded($2.Timestamp v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasTrainingEnded() => $_has(8);
+  @$pb.TagNumber(10)
+  void clearTrainingEnded() => clearField(10);
+  @$pb.TagNumber(10)
+  $2.Timestamp ensureTrainingEnded() => $_ensure(8);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {

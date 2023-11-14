@@ -156,6 +156,8 @@ const TrainingJobMetadata$json = {
     {'1': 'synced_model_id', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'syncedModelId'},
     {'1': 'id', '3': 7, '4': 1, '5': 9, '8': {}, '10': 'id'},
     {'1': 'error_status', '3': 8, '4': 1, '5': 11, '6': '.google.rpc.Status', '8': {}, '10': 'errorStatus'},
+    {'1': 'training_started', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'trainingStarted'},
+    {'1': 'training_ended', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'trainingEnded'},
   ],
   '9': [
     {'1': 6, '2': 7},
@@ -177,7 +179,12 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     'Bqc29uOiJzeW5jZWRfbW9kZWxfaWQiUg1zeW5jZWRNb2RlbElkEjMKAmlkGAcgASgJQiOahJ4D'
     'HmJzb246Il9pZCIganNvbjoiaWQsb21pdGVtcHR5IlICaWQSYwoMZXJyb3Jfc3RhdHVzGAggAS'
     'gLMhIuZ29vZ2xlLnJwYy5TdGF0dXNCLJqEngMnYnNvbjoiZXJyb3Jfc3RhdHVzIiBqc29uOiJl'
-    'cnJvcl9zdGF0dXMiUgtlcnJvclN0YXR1c0oECAYQB1IKdXNlcl9lbWFpbA==');
+    'cnJvcl9zdGF0dXMiUgtlcnJvclN0YXR1cxJ7ChB0cmFpbmluZ19zdGFydGVkGAkgASgLMhouZ2'
+    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEI0moSeAy9ic29uOiJ0cmFpbmluZ19zdGFydGVkIiBq'
+    'c29uOiJ0cmFpbmluZ19zdGFydGVkIlIPdHJhaW5pbmdTdGFydGVkEnMKDnRyYWluaW5nX2VuZG'
+    'VkGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIwmoSeAytic29uOiJ0cmFpbmlu'
+    'Z19lbmRlZCIganNvbjoidHJhaW5pbmdfZW5kZWQiUg10cmFpbmluZ0VuZGVkSgQIBhAHUgp1c2'
+    'VyX2VtYWls');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {
