@@ -2826,6 +2826,66 @@ class MockDataServiceClient extends _i1.Mock implements _i12.DataServiceClient {
       ) as _i4.ResponseFuture<_i13.TabularDataByFilterResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.TabularDataBySQLResponse> tabularDataBySQL(
+    _i13.TabularDataBySQLRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #tabularDataBySQL,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.TabularDataBySQLResponse>(
+          this,
+          Invocation.method(
+            #tabularDataBySQL,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.TabularDataBySQLResponse>(
+          this,
+          Invocation.method(
+            #tabularDataBySQL,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.TabularDataBySQLResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.TabularDataByMQLResponse> tabularDataByMQL(
+    _i13.TabularDataByMQLRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #tabularDataByMQL,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i13.TabularDataByMQLResponse>(
+          this,
+          Invocation.method(
+            #tabularDataByMQL,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i13.TabularDataByMQLResponse>(
+          this,
+          Invocation.method(
+            #tabularDataByMQL,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i13.TabularDataByMQLResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.BinaryDataByFilterResponse> binaryDataByFilter(
     _i13.BinaryDataByFilterRequest? request, {
     _i3.CallOptions? options,

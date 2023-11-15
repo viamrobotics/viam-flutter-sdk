@@ -7,12 +7,12 @@ import './viam_sdk_impl.dart';
 /// An object to interact with the Viam app
 abstract class Viam {
   /// Create an authenticated Viam instance with the provided [accessToken]
-  static Viam withAccessToken(String accessToken) {
-    return ViamImpl.withAccessToken(accessToken);
+  static Viam withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443}) {
+    return ViamImpl.withAccessToken(accessToken, serviceHost: serviceHost, servicePort: servicePort);
   }
 
-  static Future<Viam> withApiKey(String apiKeyId, String apiKey) async {
-    return ViamImpl.withApiKey(apiKeyId, apiKey);
+  static Future<Viam> withApiKey(String apiKeyId, String apiKey, {String serviceHost = 'app.viam.com'}) async {
+    return ViamImpl.withApiKey(apiKeyId, apiKey, serviceHost: serviceHost);
   }
 
   /// A client to communicate with Viam's app service

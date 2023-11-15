@@ -19,17 +19,19 @@ class ViamImpl implements Viam {
     _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
   }
 
-  ViamImpl.withAccessToken(String accessToken) : _clientChannelBase = AuthenticatedChannel('app.viam.com', 443, accessToken, false) {
+  ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
+      : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
   }
 
-  static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey) async {
+  static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey, {String serviceHost = 'app.viam.com'}) async {
     final channel = await dial(
-        'app.viam.com',
+        serviceHost,
         DialOptions()
           ..authEntity = apiKeyId
           ..credentials = Credentials.apiKey(apiKey)
+          ..attemptMdns = false
           ..webRtcOptions = (DialWebRtcOptions()..disable = true),
         () => '');
     return ViamImpl._withChannel(channel);
