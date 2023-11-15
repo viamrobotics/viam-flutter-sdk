@@ -7,6 +7,7 @@ import 'package:viam_sdk/protos/app/data.dart';
 import 'package:viam_sdk/protos/app/data_sync.dart' hide CaptureInterval;
 import 'package:viam_sdk/src/app/data.dart';
 import 'package:viam_sdk/src/media/image.dart';
+import 'package:viam_sdk/src/utils.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -111,7 +112,41 @@ void main() {
         when(serviceClient.binaryDataByIDs(any)).thenAnswer((_) => MockResponseFuture.value(BinaryDataByIDsResponse()..data.addAll(data)));
 
         final response = await dataClient.binaryDataByIds(ids);
-        expect(response, data);
+        expect(response, equals(data));
+      });
+
+      test('tabularDataBySql', () async {
+        final List<Map<String, dynamic>> data = [
+          {
+            'key1': 1,
+            'key2': '2',
+            'key3': [1, 2, 3],
+            'key4': {'key4sub1': 1}
+          },
+        ];
+
+        when(serviceClient.tabularDataBySQL(any))
+            .thenAnswer((_) => MockResponseFuture.value(TabularDataBySQLResponse()..data.addAll(data.map((e) => e.toStruct()))));
+
+        final response = await dataClient.tabularDataBySql('some_org_id', 'some_query');
+        expect(response, equals(data));
+      });
+
+      test('tabularDataByMql', () async {
+        final List<Map<String, dynamic>> data = [
+          {
+            'key1': 1,
+            'key2': '2',
+            'key3': [1, 2, 3],
+            'key4': {'key4sub1': 1}
+          },
+        ];
+
+        when(serviceClient.tabularDataByMQL(any))
+            .thenAnswer((_) => MockResponseFuture.value(TabularDataByMQLResponse()..data.addAll(data.map((e) => e.toStruct()))));
+
+        final response = await dataClient.tabularDataByMql('some_org_id', 'some_query');
+        expect(response, equals(data));
       });
     });
 
@@ -141,7 +176,7 @@ void main() {
         expect(syncServiceClient.metadata, expected);
 
         await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName');
-        expect(syncServiceClient.metadata?.fileName, 'otherName');
+        expect(syncServiceClient.metadata?.fileName, equals('otherName'));
       });
     });
   });

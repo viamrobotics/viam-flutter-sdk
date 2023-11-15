@@ -5,6 +5,7 @@ import 'package:async/async.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
+import 'package:viam_sdk/src/utils.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
@@ -111,6 +112,24 @@ class DataClient {
     final request = BinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
     final response = await _dataClient.binaryDataByIDs(request);
     return response.data;
+  }
+
+  /// Obtain unified tabular data and metadata, queried with SQL.
+  Future<List<Map<String, dynamic>>> tabularDataBySql(String organizationId, String query) async {
+    final request = TabularDataBySQLRequest()
+      ..organizationId = organizationId
+      ..sqlQuery = query;
+    final response = await _dataClient.tabularDataBySQL(request);
+    return response.data.map((e) => e.toMap()).toList();
+  }
+
+  /// Obtain unified tabular data and metadata, queried with MQL.
+  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, String query) async {
+    final request = TabularDataByMQLRequest()
+      ..organizationId = organizationId
+      ..mqlQuery = query;
+    final response = await _dataClient.tabularDataByMQL(request);
+    return response.data.map((e) => e.toMap()).toList();
   }
 
   /// Upload an image to Viam's Data Manager

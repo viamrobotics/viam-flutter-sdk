@@ -19,7 +19,7 @@ extension ValueUtils on Value {
   dynamic toPrimitive() {
     if (hasBoolValue()) return boolValue;
     if (hasListValue()) return listValue.values.map((e) => e.toPrimitive());
-    if (hasNullValue()) return nullValue;
+    if (hasNullValue()) return null;
     if (hasNumberValue()) return numberValue;
     if (hasStringValue()) return stringValue;
     if (hasStructValue()) return structValue.fields.map((key, value) => MapEntry(key, value.toPrimitive()));

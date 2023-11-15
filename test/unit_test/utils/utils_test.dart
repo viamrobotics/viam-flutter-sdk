@@ -40,7 +40,7 @@ void main() {
     group('ValueUtils toPrimitive', () {
       test('null', () {
         final nullValue = Value()..nullValue = NullValue.NULL_VALUE;
-        expect(nullValue.toPrimitive(), NullValue.NULL_VALUE);
+        expect(nullValue.toPrimitive(), null);
       });
 
       test('num', () {
