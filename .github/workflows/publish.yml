@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+      - uses: dart-lang/setup-dart@v1
       - name: Install dependencies
         run: flutter pub get
       - name: Publish
-        run: flutter pub publish --force
+        run: dart pub publish --force
