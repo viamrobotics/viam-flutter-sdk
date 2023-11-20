@@ -130,7 +130,7 @@
 </dt>
 <dd>
   A short description of the module that explains its purpose
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -141,7 +141,7 @@
 </dt>
 <dd>
   The executable to run to start the module program
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -153,7 +153,7 @@
 <dd class="inherited">
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -164,7 +164,7 @@ to protobuf fields.
 </dt>
 <dd class="inherited">
   Calculates a hash code based on the contents of the protobuf.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -175,7 +175,7 @@ to protobuf fields.
 </dt>
 <dd>
   
-  <div class="features"><span class="feature">read-only</span><span class="feature">override</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
 
 </dd>
 
@@ -186,7 +186,7 @@ to protobuf fields.
 </dt>
 <dd class="inherited">
   Returns <code>true</code> if this message is marked read-only. Otherwise <code>false</code>.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -197,7 +197,7 @@ to protobuf fields.
 </dt>
 <dd>
   A list of models that are available in the module
-  <div class="features"><span class="feature">read-only</span></div>
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
@@ -208,7 +208,7 @@ to protobuf fields.
 </dt>
 <dd>
   The id of the module (formatted as prefix:name where prefix is the module owner's orgid or namespace)
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -219,7 +219,7 @@ to protobuf fields.
 </dt>
 <dd>
   The name of the module
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -230,7 +230,7 @@ to protobuf fields.
 </dt>
 <dd>
   The id of the organization that owns the module
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -242,7 +242,7 @@ to protobuf fields.
 <dd>
   The public namespace of the organization that owns the module
 This is empty if no public namespace is set
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -253,7 +253,7 @@ This is empty if no public namespace is set
 </dt>
 <dd class="inherited">
   A representation of the runtime type of the object.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -264,7 +264,7 @@ This is empty if no public namespace is set
 </dt>
 <dd>
   The total number of organizations using this module
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -275,7 +275,7 @@ This is empty if no public namespace is set
 </dt>
 <dd>
   The total number of robots using this module
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -286,7 +286,7 @@ This is empty if no public namespace is set
 </dt>
 <dd class="inherited">
   
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -297,7 +297,7 @@ This is empty if no public namespace is set
 </dt>
 <dd>
   The url to reference for documentation, code, etc.
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -309,7 +309,7 @@ This is empty if no public namespace is set
 <dd>
   The versions of the module that are available
 When this is returned from the backend, the versions are sorted in ascending order by the semver version
-  <div class="features"><span class="feature">read-only</span></div>
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
@@ -320,7 +320,7 @@ When this is returned from the backend, the versions are sorted in ascending ord
 </dt>
 <dd>
   The visibility of the module
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -1204,7 +1204,7 @@ default value if it is not set.
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.7
+      0.0.8
   </span>
 
   

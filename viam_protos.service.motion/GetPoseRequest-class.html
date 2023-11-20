@@ -130,7 +130,7 @@
 </dt>
 <dd>
   the component whose pose is being requested
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -143,7 +143,7 @@
   the reference frame in which the component's pose
 should be provided, if unset this defaults
 to the "world" reference frame
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -155,7 +155,7 @@ to the "world" reference frame
 <dd class="inherited">
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -166,7 +166,7 @@ to protobuf fields.
 </dt>
 <dd>
   Additional arguments to the method
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -177,7 +177,7 @@ to protobuf fields.
 </dt>
 <dd class="inherited">
   Calculates a hash code based on the contents of the protobuf.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -188,7 +188,7 @@ to protobuf fields.
 </dt>
 <dd>
   
-  <div class="features"><span class="feature">read-only</span><span class="feature">override</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
 
 </dd>
 
@@ -199,7 +199,7 @@ to protobuf fields.
 </dt>
 <dd class="inherited">
   Returns <code>true</code> if this message is marked read-only. Otherwise <code>false</code>.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -210,7 +210,7 @@ to protobuf fields.
 </dt>
 <dd>
   
-  <div class="features"><span class="feature">read / write</span></div>
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -221,7 +221,7 @@ to protobuf fields.
 </dt>
 <dd class="inherited">
   A representation of the runtime type of the object.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -233,7 +233,7 @@ to protobuf fields.
 <dd>
   pose information on any additional reference frames that are needed
 to compute the component's pose
-  <div class="features"><span class="feature">read-only</span></div>
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
@@ -244,7 +244,7 @@ to compute the component's pose
 </dt>
 <dd class="inherited">
   
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -998,7 +998,7 @@ default value if it is not set.
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.7
+      0.0.8
   </span>
 
   
