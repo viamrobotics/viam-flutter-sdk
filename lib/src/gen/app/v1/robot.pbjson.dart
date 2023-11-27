@@ -143,6 +143,7 @@ const ComponentConfig$json = {
     {'1': 'service_configs', '3': 7, '4': 3, '5': 11, '6': '.viam.app.v1.ResourceLevelServiceConfig', '8': {}, '10': 'serviceConfigs'},
     {'1': 'attributes', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'attributes'},
     {'1': 'api', '3': 9, '4': 1, '5': 9, '10': 'api'},
+    {'1': 'log_configuration', '3': 10, '4': 1, '5': 11, '6': '.viam.app.v1.LogConfiguration', '10': 'logConfiguration'},
   ],
 };
 
@@ -154,7 +155,8 @@ final $typed_data.Uint8List componentConfigDescriptor = $convert.base64Decode(
     'YgAygJUglkZXBlbmRzT24SbAoPc2VydmljZV9jb25maWdzGAcgAygLMicudmlhbS5hcHAudjEu'
     'UmVzb3VyY2VMZXZlbFNlcnZpY2VDb25maWdCGpqEngMVanNvbjoic2VydmljZV9jb25maWciUg'
     '5zZXJ2aWNlQ29uZmlncxI3CgphdHRyaWJ1dGVzGAggASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0'
-    'cnVjdFIKYXR0cmlidXRlcxIQCgNhcGkYCSABKAlSA2FwaQ==');
+    'cnVjdFIKYXR0cmlidXRlcxIQCgNhcGkYCSABKAlSA2FwaRJKChFsb2dfY29uZmlndXJhdGlvbh'
+    'gKIAEoCzIdLnZpYW0uYXBwLnYxLkxvZ0NvbmZpZ3VyYXRpb25SEGxvZ0NvbmZpZ3VyYXRpb24=');
 
 @$core.Deprecated('Use resourceLevelServiceConfigDescriptor instead')
 const ResourceLevelServiceConfig$json = {
@@ -342,6 +344,18 @@ final $typed_data.Uint8List frameDescriptor = $convert.base64Decode(
     'ZpYW0uYXBwLnYxLlRyYW5zbGF0aW9uUgt0cmFuc2xhdGlvbhI6CgtvcmllbnRhdGlvbhgDIAEo'
     'CzIYLnZpYW0uYXBwLnYxLk9yaWVudGF0aW9uUgtvcmllbnRhdGlvbhI0CghnZW9tZXRyeRgEIA'
     'EoCzIYLnZpYW0uY29tbW9uLnYxLkdlb21ldHJ5UghnZW9tZXRyeQ==');
+
+@$core.Deprecated('Use logConfigurationDescriptor instead')
+const LogConfiguration$json = {
+  '1': 'LogConfiguration',
+  '2': [
+    {'1': 'level', '3': 1, '4': 1, '5': 9, '10': 'level'},
+  ],
+};
+
+/// Descriptor for `LogConfiguration`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logConfigurationDescriptor = $convert.base64Decode(
+    'ChBMb2dDb25maWd1cmF0aW9uEhQKBWxldmVsGAEgASgJUgVsZXZlbA==');
 
 @$core.Deprecated('Use translationDescriptor instead')
 const Translation$json = {
