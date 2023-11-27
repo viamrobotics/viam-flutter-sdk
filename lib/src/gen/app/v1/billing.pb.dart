@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $4;
+import '../../google/protobuf/timestamp.pb.dart' as $5;
 import 'billing.pbenum.dart';
 
 export 'billing.pbenum.dart';
@@ -212,11 +212,11 @@ class CurrentMonthUsageSummary extends $pb.GeneratedMessage {
 class InvoiceSummary extends $pb.GeneratedMessage {
   factory InvoiceSummary({
     $core.String? id,
-    $4.Timestamp? invoiceDate,
+    $5.Timestamp? invoiceDate,
     $core.double? invoiceAmount,
     $core.String? status,
-    $4.Timestamp? dueDate,
-    $4.Timestamp? paidDate,
+    $5.Timestamp? dueDate,
+    $5.Timestamp? paidDate,
   }) {
     final $result = create();
     if (id != null) {
@@ -245,11 +245,11 @@ class InvoiceSummary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InvoiceSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$4.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $5.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'invoiceAmount', $pb.PbFieldType.OD)
     ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOM<$4.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $4.Timestamp.create)
-    ..aOM<$4.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $5.Timestamp.create)
+    ..aOM<$5.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $5.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -284,15 +284,15 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.Timestamp get invoiceDate => $_getN(1);
+  $5.Timestamp get invoiceDate => $_getN(1);
   @$pb.TagNumber(2)
-  set invoiceDate($4.Timestamp v) { setField(2, v); }
+  set invoiceDate($5.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasInvoiceDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearInvoiceDate() => clearField(2);
   @$pb.TagNumber(2)
-  $4.Timestamp ensureInvoiceDate() => $_ensure(1);
+  $5.Timestamp ensureInvoiceDate() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.double get invoiceAmount => $_getN(2);
@@ -313,26 +313,26 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.Timestamp get dueDate => $_getN(4);
+  $5.Timestamp get dueDate => $_getN(4);
   @$pb.TagNumber(5)
-  set dueDate($4.Timestamp v) { setField(5, v); }
+  set dueDate($5.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDueDate() => $_has(4);
   @$pb.TagNumber(5)
   void clearDueDate() => clearField(5);
   @$pb.TagNumber(5)
-  $4.Timestamp ensureDueDate() => $_ensure(4);
+  $5.Timestamp ensureDueDate() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $4.Timestamp get paidDate => $_getN(5);
+  $5.Timestamp get paidDate => $_getN(5);
   @$pb.TagNumber(6)
-  set paidDate($4.Timestamp v) { setField(6, v); }
+  set paidDate($5.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPaidDate() => $_has(5);
   @$pb.TagNumber(6)
   void clearPaidDate() => clearField(6);
   @$pb.TagNumber(6)
-  $4.Timestamp ensurePaidDate() => $_ensure(5);
+  $5.Timestamp ensurePaidDate() => $_ensure(5);
 }
 
 class BillableResourceEvent extends $pb.GeneratedMessage {
@@ -342,7 +342,7 @@ class BillableResourceEvent extends $pb.GeneratedMessage {
     $core.double? usageQuantity,
     $core.String? usageQuantityUnit,
     $core.String? usageCost,
-    $4.Timestamp? occurredAt,
+    $5.Timestamp? occurredAt,
     $core.String? userName,
   }) {
     final $result = create();
@@ -379,7 +379,7 @@ class BillableResourceEvent extends $pb.GeneratedMessage {
     ..a<$core.double>(3, _omitFieldNames ? '' : 'usageQuantity', $pb.PbFieldType.OD)
     ..aOS(4, _omitFieldNames ? '' : 'usageQuantityUnit')
     ..aOS(5, _omitFieldNames ? '' : 'usageCost')
-    ..aOM<$4.Timestamp>(6, _omitFieldNames ? '' : 'occurredAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(6, _omitFieldNames ? '' : 'occurredAt', subBuilder: $5.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'userName')
     ..hasRequiredFields = false
   ;
@@ -451,15 +451,15 @@ class BillableResourceEvent extends $pb.GeneratedMessage {
   void clearUsageCost() => clearField(5);
 
   @$pb.TagNumber(6)
-  $4.Timestamp get occurredAt => $_getN(5);
+  $5.Timestamp get occurredAt => $_getN(5);
   @$pb.TagNumber(6)
-  set occurredAt($4.Timestamp v) { setField(6, v); }
+  set occurredAt($5.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasOccurredAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearOccurredAt() => clearField(6);
   @$pb.TagNumber(6)
-  $4.Timestamp ensureOccurredAt() => $_ensure(5);
+  $5.Timestamp ensureOccurredAt() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get userName => $_getSZ(6);
@@ -474,10 +474,10 @@ class BillableResourceEvent extends $pb.GeneratedMessage {
 class Invoice extends $pb.GeneratedMessage {
   factory Invoice({
     $core.String? id,
-    $4.Timestamp? invoiceDate,
+    $5.Timestamp? invoiceDate,
     $core.double? invoiceAmount,
     $core.String? status,
-    $4.Timestamp? dueDate,
+    $5.Timestamp? dueDate,
     $core.Iterable<BillableResourceEvent>? items,
     $core.String? emailedTo,
   }) {
@@ -511,10 +511,10 @@ class Invoice extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Invoice', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$4.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $5.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'invoiceAmount', $pb.PbFieldType.OD)
     ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOM<$4.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $5.Timestamp.create)
     ..pc<BillableResourceEvent>(6, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: BillableResourceEvent.create)
     ..aOS(7, _omitFieldNames ? '' : 'emailedTo')
     ..hasRequiredFields = false
@@ -551,15 +551,15 @@ class Invoice extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.Timestamp get invoiceDate => $_getN(1);
+  $5.Timestamp get invoiceDate => $_getN(1);
   @$pb.TagNumber(2)
-  set invoiceDate($4.Timestamp v) { setField(2, v); }
+  set invoiceDate($5.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasInvoiceDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearInvoiceDate() => clearField(2);
   @$pb.TagNumber(2)
-  $4.Timestamp ensureInvoiceDate() => $_ensure(1);
+  $5.Timestamp ensureInvoiceDate() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.double get invoiceAmount => $_getN(2);
@@ -580,15 +580,15 @@ class Invoice extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.Timestamp get dueDate => $_getN(4);
+  $5.Timestamp get dueDate => $_getN(4);
   @$pb.TagNumber(5)
-  set dueDate($4.Timestamp v) { setField(5, v); }
+  set dueDate($5.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDueDate() => $_has(4);
   @$pb.TagNumber(5)
   void clearDueDate() => clearField(5);
   @$pb.TagNumber(5)
-  $4.Timestamp ensureDueDate() => $_ensure(4);
+  $5.Timestamp ensureDueDate() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.List<BillableResourceEvent> get items => $_getList(5);
@@ -961,8 +961,8 @@ class GetCurrentMonthUsageRequest extends $pb.GeneratedMessage {
 
 class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse({
-    $4.Timestamp? startDate,
-    $4.Timestamp? endDate,
+    $5.Timestamp? startDate,
+    $5.Timestamp? endDate,
     $core.double? cloudStorageUsageCost,
     $core.double? dataUploadUsageCost,
     $core.double? dataEgresUsageCost,
@@ -1010,8 +1010,8 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentMonthUsageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$4.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $4.Timestamp.create)
-    ..aOM<$4.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $5.Timestamp.create)
+    ..aOM<$5.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $5.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'cloudStorageUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'dataUploadUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'dataEgresUsageCost', $pb.PbFieldType.OD)
@@ -1045,26 +1045,26 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   static GetCurrentMonthUsageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.Timestamp get startDate => $_getN(0);
+  $5.Timestamp get startDate => $_getN(0);
   @$pb.TagNumber(1)
-  set startDate($4.Timestamp v) { setField(1, v); }
+  set startDate($5.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartDate() => $_has(0);
   @$pb.TagNumber(1)
   void clearStartDate() => clearField(1);
   @$pb.TagNumber(1)
-  $4.Timestamp ensureStartDate() => $_ensure(0);
+  $5.Timestamp ensureStartDate() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $4.Timestamp get endDate => $_getN(1);
+  $5.Timestamp get endDate => $_getN(1);
   @$pb.TagNumber(2)
-  set endDate($4.Timestamp v) { setField(2, v); }
+  set endDate($5.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearEndDate() => clearField(2);
   @$pb.TagNumber(2)
-  $4.Timestamp ensureEndDate() => $_ensure(1);
+  $5.Timestamp ensureEndDate() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.double get cloudStorageUsageCost => $_getN(2);
@@ -1194,7 +1194,7 @@ class GetUnpaidBalanceRequest extends $pb.GeneratedMessage {
 class GetUnpaidBalanceResponse extends $pb.GeneratedMessage {
   factory GetUnpaidBalanceResponse({
     $core.double? unpaidBalance,
-    $4.Timestamp? unpaidBalanceDueDate,
+    $5.Timestamp? unpaidBalanceDueDate,
   }) {
     final $result = create();
     if (unpaidBalance != null) {
@@ -1211,7 +1211,7 @@ class GetUnpaidBalanceResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUnpaidBalanceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'unpaidBalance', $pb.PbFieldType.OD)
-    ..aOM<$4.Timestamp>(2, _omitFieldNames ? '' : 'unpaidBalanceDueDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(2, _omitFieldNames ? '' : 'unpaidBalanceDueDate', subBuilder: $5.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1246,15 +1246,15 @@ class GetUnpaidBalanceResponse extends $pb.GeneratedMessage {
   void clearUnpaidBalance() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.Timestamp get unpaidBalanceDueDate => $_getN(1);
+  $5.Timestamp get unpaidBalanceDueDate => $_getN(1);
   @$pb.TagNumber(2)
-  set unpaidBalanceDueDate($4.Timestamp v) { setField(2, v); }
+  set unpaidBalanceDueDate($5.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUnpaidBalanceDueDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearUnpaidBalanceDueDate() => clearField(2);
   @$pb.TagNumber(2)
-  $4.Timestamp ensureUnpaidBalanceDueDate() => $_ensure(1);
+  $5.Timestamp ensureUnpaidBalanceDueDate() => $_ensure(1);
 }
 
 /// TODO(APP-1865) may want to remove
@@ -1772,7 +1772,7 @@ class GetBillingSummaryResponse extends $pb.GeneratedMessage {
     $core.double? statementBalance,
     $core.double? currentBalance,
     $core.double? currentMonthBalance,
-    $4.Timestamp? currentMonthDueDate,
+    $5.Timestamp? currentMonthDueDate,
     $core.String? invoiceEmail,
     PaymentMethodCard? paymentMethod,
   }) {
@@ -1813,7 +1813,7 @@ class GetBillingSummaryResponse extends $pb.GeneratedMessage {
     ..a<$core.double>(3, _omitFieldNames ? '' : 'statementBalance', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'currentBalance', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'currentMonthBalance', $pb.PbFieldType.OD)
-    ..aOM<$4.Timestamp>(7, _omitFieldNames ? '' : 'currentMonthDueDate', subBuilder: $4.Timestamp.create)
+    ..aOM<$5.Timestamp>(7, _omitFieldNames ? '' : 'currentMonthDueDate', subBuilder: $5.Timestamp.create)
     ..aOS(8, _omitFieldNames ? '' : 'invoiceEmail')
     ..aOM<PaymentMethodCard>(9, _omitFieldNames ? '' : 'paymentMethod', subBuilder: PaymentMethodCard.create)
     ..hasRequiredFields = false
@@ -1882,15 +1882,15 @@ class GetBillingSummaryResponse extends $pb.GeneratedMessage {
   void clearCurrentMonthBalance() => clearField(5);
 
   @$pb.TagNumber(7)
-  $4.Timestamp get currentMonthDueDate => $_getN(5);
+  $5.Timestamp get currentMonthDueDate => $_getN(5);
   @$pb.TagNumber(7)
-  set currentMonthDueDate($4.Timestamp v) { setField(7, v); }
+  set currentMonthDueDate($5.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCurrentMonthDueDate() => $_has(5);
   @$pb.TagNumber(7)
   void clearCurrentMonthDueDate() => clearField(7);
   @$pb.TagNumber(7)
-  $4.Timestamp ensureCurrentMonthDueDate() => $_ensure(5);
+  $5.Timestamp ensureCurrentMonthDueDate() => $_ensure(5);
 
   @$pb.TagNumber(8)
   $core.String get invoiceEmail => $_getSZ(6);

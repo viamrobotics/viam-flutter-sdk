@@ -1735,6 +1735,58 @@ final $typed_data.Uint8List checkPermissionsResponseDescriptor = $convert.base64
     'MoCzIiLnZpYW0uYXBwLnYxLkF1dGhvcml6ZWRQZXJtaXNzaW9uc1IVYXV0aG9yaXplZFBlcm1p'
     'c3Npb25z');
 
+@$core.Deprecated('Use createRegistryItemRequestDescriptor instead')
+const CreateRegistryItemRequest$json = {
+  '1': 'CreateRegistryItemRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 3, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
+  ],
+};
+
+/// Descriptor for `CreateRegistryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRegistryItemRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVSZWdpc3RyeUl0ZW1SZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
+    'JnYW5pemF0aW9uSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRI1CgR0eXBlGAMgASgOMiEudmlhbS5h'
+    'cHAucGFja2FnZXMudjEuUGFja2FnZVR5cGVSBHR5cGU=');
+
+@$core.Deprecated('Use createRegistryItemResponseDescriptor instead')
+const CreateRegistryItemResponse$json = {
+  '1': 'CreateRegistryItemResponse',
+};
+
+/// Descriptor for `CreateRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRegistryItemResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVSZWdpc3RyeUl0ZW1SZXNwb25zZQ==');
+
+@$core.Deprecated('Use updateRegistryItemRequestDescriptor instead')
+const UpdateRegistryItemRequest$json = {
+  '1': 'UpdateRegistryItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'visibility', '3': 4, '4': 1, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibility'},
+  ],
+};
+
+/// Descriptor for `UpdateRegistryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateRegistryItemRequestDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVSZWdpc3RyeUl0ZW1SZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBI1Cg'
+    'R0eXBlGAIgASgOMiEudmlhbS5hcHAucGFja2FnZXMudjEuUGFja2FnZVR5cGVSBHR5cGUSIAoL'
+    'ZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjcKCnZpc2liaWxpdHkYBCABKA4yFy52aW'
+    'FtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5');
+
+@$core.Deprecated('Use updateRegistryItemResponseDescriptor instead')
+const UpdateRegistryItemResponse$json = {
+  '1': 'UpdateRegistryItemResponse',
+};
+
+/// Descriptor for `UpdateRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateRegistryItemResponseDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVSZWdpc3RyeUl0ZW1SZXNwb25zZQ==');
+
 @$core.Deprecated('Use createModuleRequestDescriptor instead')
 const CreateModuleRequest$json = {
   '1': 'CreateModuleRequest',
