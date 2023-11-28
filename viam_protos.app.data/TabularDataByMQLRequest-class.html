@@ -99,7 +99,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="TabularDataByMQLRequest" class="callable">
-          <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/TabularDataByMQLRequest.html">TabularDataByMQLRequest</a></span><span class="signature">(<span class="parameter" id="-param-organizationId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-mqlQuery"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">mqlQuery</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/TabularDataByMQLRequest.html">TabularDataByMQLRequest</a></span><span class="signature">(<span class="parameter" id="-param-organizationId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-mqlQuery"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">mqlQuery</span>, </span><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -171,14 +171,26 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="mqlBinary" class="property">
+  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/mqlBinary.html">mqlBinary</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  mql_binary accepts a MongoDB aggregation pipeline as a list of BSON documents, where each
+document is one stage in the pipeline. The pipeline is run on the "sensorData.readings"
+namespace, which holds the Viam organization's tabular data.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
         <dt id="mqlQuery" class="property">
   <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/mqlQuery.html">mqlQuery</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
 
 </dt>
 <dd>
-  mql_query accepts a MongoDB aggregation pipeline, to be run on the "sensorData.readings"
-namespace, which holds the Viam organization's tabular data.
+  mql_query is deprecated.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
