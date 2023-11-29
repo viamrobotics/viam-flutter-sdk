@@ -25,10 +25,10 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
 
   Future<void> setPower(double power) async {
     try {
-      await widget.motor.setPower(power);
       setState(() {
         this.power = power;
       });
+      await widget.motor.setPower(power);
     } catch (e) {
       error = e as Error;
     }
