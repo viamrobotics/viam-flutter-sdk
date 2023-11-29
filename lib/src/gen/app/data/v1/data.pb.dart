@@ -3295,14 +3295,24 @@ class GetDatabaseConnectionRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(1);
 }
 
-/// GetDatabaseConnectionResponse returns the database connection hostname endpoint.
+/// GetDatabaseConnectionResponse returns the database connection hostname endpoint. It also returns
+/// a URI that can be used to connect to the database instance through MongoDB clients, as well as
+/// information on whether the Viam organization has a database user configured.
 class GetDatabaseConnectionResponse extends $pb.GeneratedMessage {
   factory GetDatabaseConnectionResponse({
     $core.String? hostname,
+    $core.String? mongodbUri,
+    $core.bool? hasDatabaseUser,
   }) {
     final $result = create();
     if (hostname != null) {
       $result.hostname = hostname;
+    }
+    if (mongodbUri != null) {
+      $result.mongodbUri = mongodbUri;
+    }
+    if (hasDatabaseUser != null) {
+      $result.hasDatabaseUser = hasDatabaseUser;
     }
     return $result;
   }
@@ -3312,6 +3322,8 @@ class GetDatabaseConnectionResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDatabaseConnectionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'hostname')
+    ..aOS(2, _omitFieldNames ? '' : 'mongodbUri')
+    ..aOB(3, _omitFieldNames ? '' : 'hasDatabaseUser')
     ..hasRequiredFields = false
   ;
 
@@ -3344,6 +3356,24 @@ class GetDatabaseConnectionResponse extends $pb.GeneratedMessage {
   $core.bool hasHostname() => $_has(0);
   @$pb.TagNumber(1)
   void clearHostname() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mongodbUri => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mongodbUri($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMongodbUri() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMongodbUri() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get hasDatabaseUser => $_getBF(2);
+  @$pb.TagNumber(3)
+  set hasDatabaseUser($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHasDatabaseUser() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHasDatabaseUser() => clearField(3);
 }
 
 /// AddBinaryDataToDatasetByIDsRequest adds the binary data with the given binary IDs to a dataset with dataset_id.
