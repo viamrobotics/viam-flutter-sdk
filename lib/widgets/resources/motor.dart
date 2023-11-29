@@ -36,7 +36,7 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
 
   Future<void> stop() async {
     try {
-      await widget.motor.stop();
+      await widget.motor.setPower(0);
       setState(() {
         power = 0;
       });
