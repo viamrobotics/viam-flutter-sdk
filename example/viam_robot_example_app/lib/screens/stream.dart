@@ -12,7 +12,7 @@ class StreamScreen extends StatefulWidget {
   final StreamClient client;
   final ResourceName resourceName;
 
-  const StreamScreen({Key? key, required this.camera, required this.client, required this.resourceName}) : super(key: key);
+  const StreamScreen({super.key, required this.camera, required this.client, required this.resourceName});
 
   @override
   State<StreamScreen> createState() {

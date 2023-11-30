@@ -7,7 +7,7 @@ class ServoScreen extends StatefulWidget {
   final Servo servo;
   final ResourceName resourceName;
 
-  const ServoScreen({Key? key, required this.servo, required this.resourceName}) : super(key: key);
+  const ServoScreen({super.key, required this.servo, required this.resourceName});
 
   @override
   State<ServoScreen> createState() {

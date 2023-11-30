@@ -7,7 +7,7 @@ class SensorScreen extends StatelessWidget {
   final Sensor sensor;
   final ResourceName resourceName;
 
-  const SensorScreen({Key? key, required this.sensor, required this.resourceName}) : super(key: key);
+  const SensorScreen({super.key, required this.sensor, required this.resourceName});
 
   @override
   Widget build(BuildContext context) {

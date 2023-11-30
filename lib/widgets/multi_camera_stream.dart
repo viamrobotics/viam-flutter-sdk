@@ -16,10 +16,10 @@ class ViamMultiCameraStream extends StatefulWidget {
   final RobotClient robotClient;
 
   const ViamMultiCameraStream({
-    Key? key,
+    super.key,
     required this.cameras,
     required this.robotClient,
-  }) : super(key: key);
+  });
 
   @override
   State<ViamMultiCameraStream> createState() => _ViamMultiCameraStreamState();
