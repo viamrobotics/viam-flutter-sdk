@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:async/async.dart';
 import 'package:collection/collection.dart';
@@ -124,10 +125,10 @@ class DataClient {
   }
 
   /// Obtain unified tabular data and metadata, queried with MQL.
-  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, String query) async {
+  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, List<Uint8List> query) async {
     final request = TabularDataByMQLRequest()
       ..organizationId = organizationId
-      ..mqlQuery = query;
+      ..mqlBinary.addAll(query);
     final response = await _dataClient.tabularDataByMQL(request);
     return response.data.map((e) => e.toMap()).toList();
   }
