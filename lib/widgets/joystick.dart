@@ -38,7 +38,7 @@ class _ViamBaseJoystickState extends State<ViamBaseJoystick> {
   }
 
   void callSetPower(StickDragDetails details) {
-    touchActive = (details.x != 0 && details.y != 0);
+    touchActive = (details.x != 0 || details.y != 0);
     widget.base.setPower(
       Vector3()..y = details.y * -1,
       Vector3()..z = details.x * -1,
