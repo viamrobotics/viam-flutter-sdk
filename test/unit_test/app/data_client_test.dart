@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/src/client/call.dart';
@@ -145,7 +147,7 @@ void main() {
         when(serviceClient.tabularDataByMQL(any))
             .thenAnswer((_) => MockResponseFuture.value(TabularDataByMQLResponse()..data.addAll(data.map((e) => e.toStruct()))));
 
-        final response = await dataClient.tabularDataByMql('some_org_id', 'some_query');
+        final response = await dataClient.tabularDataByMql('some_org_id', [Uint8List.fromList('some_query'.codeUnits)]);
         expect(response, equals(data));
       });
     });
