@@ -49,7 +49,6 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
           power = 0;
         });
 
-        await widget.motor.setPower(0);
         await widget.motor.stop();
       }
     } catch (e) {
