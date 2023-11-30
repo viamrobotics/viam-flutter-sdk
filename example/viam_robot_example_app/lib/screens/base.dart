@@ -8,7 +8,7 @@ class BaseScreen extends StatelessWidget {
   final Iterable<Camera> cameras;
   final RobotClient robot;
 
-  const BaseScreen({Key? key, required this.base, required this.cameras, required this.robot}) : super(key: key);
+  const BaseScreen({super.key, required this.base, required this.cameras, required this.robot});
 
   @override
   Widget build(BuildContext context) {

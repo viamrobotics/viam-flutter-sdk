@@ -7,7 +7,7 @@ class MotorScreen extends StatelessWidget {
   final Motor motor;
   final ResourceName resourceName;
 
-  const MotorScreen({Key? key, required this.motor, required this.resourceName}) : super(key: key);
+  const MotorScreen({super.key, required this.motor, required this.resourceName});
 
   @override
   Widget build(BuildContext context) {

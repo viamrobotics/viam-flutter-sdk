@@ -7,7 +7,7 @@ class BoardScreen extends StatelessWidget {
   final Board board;
   final ResourceName resourceName;
 
-  const BoardScreen({Key? key, required this.board, required this.resourceName}) : super(key: key);
+  const BoardScreen({super.key, required this.board, required this.resourceName});
 
   @override
   Widget build(Object context) {

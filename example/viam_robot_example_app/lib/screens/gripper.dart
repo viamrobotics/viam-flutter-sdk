@@ -8,7 +8,7 @@ class GripperScreen extends StatelessWidget {
   final Iterable<Camera> cameras;
   final RobotClient robot;
 
-  const GripperScreen({Key? key, required this.gripper, required this.cameras, required this.robot}) : super(key: key);
+  const GripperScreen({super.key, required this.gripper, required this.cameras, required this.robot});
 
   @override
   Widget build(BuildContext context) {

@@ -810,13 +810,16 @@ const GetDatabaseConnectionResponse$json = {
   '1': 'GetDatabaseConnectionResponse',
   '2': [
     {'1': 'hostname', '3': 1, '4': 1, '5': 9, '10': 'hostname'},
+    {'1': 'mongodb_uri', '3': 2, '4': 1, '5': 9, '10': 'mongodbUri'},
+    {'1': 'has_database_user', '3': 3, '4': 1, '5': 8, '10': 'hasDatabaseUser'},
   ],
 };
 
 /// Descriptor for `GetDatabaseConnectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getDatabaseConnectionResponseDescriptor = $convert.base64Decode(
     'Ch1HZXREYXRhYmFzZUNvbm5lY3Rpb25SZXNwb25zZRIaCghob3N0bmFtZRgBIAEoCVIIaG9zdG'
-    '5hbWU=');
+    '5hbWUSHwoLbW9uZ29kYl91cmkYAiABKAlSCm1vbmdvZGJVcmkSKgoRaGFzX2RhdGFiYXNlX3Vz'
+    'ZXIYAyABKAhSD2hhc0RhdGFiYXNlVXNlcg==');
 
 @$core.Deprecated('Use addBinaryDataToDatasetByIDsRequestDescriptor instead')
 const AddBinaryDataToDatasetByIDsRequest$json = {
