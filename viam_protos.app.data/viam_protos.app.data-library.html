@@ -363,7 +363,9 @@ we return data from that <code>robot_id</code> of type <code>component_type</cod
 
 </dt>
 <dd>
-  GetDatabaseConnectionResponse returns the database connection hostname endpoint.
+  GetDatabaseConnectionResponse returns the database connection hostname endpoint. It also returns
+a URI that can be used to connect to the database instance through MongoDB clients, as well as
+information on whether the Viam organization has a database user configured.
 </dd>
 
         <dt id="Order">
@@ -1041,7 +1043,7 @@ we return data from that <code>robot_id</code> of type <code>component_type</cod
   
 
     <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetDatabaseConnectionResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;hostname&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;hostname&#39;}]}</code></span>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetDatabaseConnectionResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;hostname&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;hostname&#39;}, {&#39;1…</code></span>
     </div>
 </dd>
 
@@ -1981,6 +1983,7 @@ we return data from that <code>robot_id</code> of type <code>component_type</cod
         <li class="section-subitem"><a href="../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.build/viam_protos.app.build-library.html">viam_protos.app.build</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
         <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
