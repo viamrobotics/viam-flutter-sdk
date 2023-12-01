@@ -25,10 +25,10 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
 
   Future<void> setPower(double power) async {
     try {
-      await widget.motor.setPower(power);
       setState(() {
         this.power = power;
       });
+      await widget.motor.setPower(power);
     } catch (e) {
       error = e as Error;
     }
@@ -36,18 +36,20 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
 
   Future<void> stop() async {
     try {
-      await widget.motor.stop();
       setState(() {
         power = 0;
       });
+      await widget.motor.stop();
+
       // Sometimes the motor does not honor the first Stop call
       // So we wait a small amount of time and try again.
       await Future.delayed(const Duration(milliseconds: 10));
       if (await widget.motor.isMoving()) {
-        await widget.motor.stop();
         setState(() {
           power = 0;
         });
+
+        await widget.motor.stop();
       }
     } catch (e) {
       error = e as Error;
