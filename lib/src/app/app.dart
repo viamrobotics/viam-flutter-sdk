@@ -109,4 +109,34 @@ class AppClient {
         .map((e) => Permission.values.firstWhere((element) => element.value == e))
         .toList();
   }
+
+  Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
+    final request = ListOrganizationMembersRequest()..organizationId = org.id;
+    final response = await _client.listOrganizationMembers(request);
+    return response;
+  }
+
+  Future<CreateOrganizationInviteResponse> createOrganizationInvite(Organization org, String email) async {
+    final request = CreateOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.createOrganizationInvite(request);
+    return response;
+  }
+
+  Future<DeleteOrganizationInviteResponse> deleteOrganizationInvite(Organization org, String email) async {
+    final request = DeleteOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.deleteOrganizationInvite(request);
+    return response;
+  }
+
+  Future<DeleteOrganizationMemberResponse> deleteOrganizationMember(Organization org, String userId) async {
+    final request = DeleteOrganizationMemberRequest()
+      ..organizationId = org.id
+      ..userId = userId;
+    final response = await _client.deleteOrganizationMember(request);
+    return response;
+  }
 }
