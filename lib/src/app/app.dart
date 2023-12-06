@@ -116,12 +116,12 @@ class AppClient {
     return response;
   }
 
-  Future<CreateOrganizationInviteResponse> createOrganizationInvite(Organization org, String email) async {
+  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email) async {
     final request = CreateOrganizationInviteRequest()
       ..organizationId = org.id
       ..email = email;
     final response = await _client.createOrganizationInvite(request);
-    return response;
+    return response.invite;
   }
 
   Future<DeleteOrganizationInviteResponse> deleteOrganizationInvite(Organization org, String email) async {
