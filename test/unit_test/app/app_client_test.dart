@@ -124,6 +124,17 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('resendOrganizationInvite', () async {
+      final expected = OrganizationInvite()
+        ..organizationId = 'organizationId'
+        ..email = 'email'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.resendOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
+      final response = await appClient.resendOrganizationInvite(Organization(), 'email');
+      expect(response, equals(expected));
+    });
+
     test('deleteOrganizationInvite', () async {
       final expected = DeleteOrganizationInviteResponse();
       when(serviceClient.deleteOrganizationInvite(any)).thenAnswer((_) => MockResponseFuture.value(expected));

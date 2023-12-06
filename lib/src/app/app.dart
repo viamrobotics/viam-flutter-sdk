@@ -124,6 +124,14 @@ class AppClient {
     return response.invite;
   }
 
+  Future<OrganizationInvite> resendOrganizationInvite(Organization org, String email) async {
+    final request = ResendOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.resendOrganizationInvite(request);
+    return response.invite;
+  }
+
   Future<DeleteOrganizationInviteResponse> deleteOrganizationInvite(Organization org, String email) async {
     final request = DeleteOrganizationInviteRequest()
       ..organizationId = org.id
