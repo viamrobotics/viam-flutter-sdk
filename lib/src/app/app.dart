@@ -132,19 +132,17 @@ class AppClient {
     return response.invite;
   }
 
-  Future<DeleteOrganizationInviteResponse> deleteOrganizationInvite(Organization org, String email) async {
+  Future<void> deleteOrganizationInvite(Organization org, String email) async {
     final request = DeleteOrganizationInviteRequest()
       ..organizationId = org.id
       ..email = email;
-    final response = await _client.deleteOrganizationInvite(request);
-    return response;
+    await _client.deleteOrganizationInvite(request);
   }
 
-  Future<DeleteOrganizationMemberResponse> deleteOrganizationMember(Organization org, String userId) async {
+  Future<void> deleteOrganizationMember(Organization org, String userId) async {
     final request = DeleteOrganizationMemberRequest()
       ..organizationId = org.id
       ..userId = userId;
-    final response = await _client.deleteOrganizationMember(request);
-    return response;
+    await _client.deleteOrganizationMember(request);
   }
 }

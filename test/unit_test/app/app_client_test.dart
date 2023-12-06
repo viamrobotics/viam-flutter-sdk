@@ -138,15 +138,15 @@ void main() {
     test('deleteOrganizationInvite', () async {
       final expected = DeleteOrganizationInviteResponse();
       when(serviceClient.deleteOrganizationInvite(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final response = await appClient.deleteOrganizationInvite(Organization(), 'email');
-      expect(response, equals(expected));
+      await appClient.deleteOrganizationInvite(Organization(), 'email');
+      verify(serviceClient.deleteOrganizationInvite(any)).called(1);
     });
 
     test('deleteOrganizationMember', () async {
       final expected = DeleteOrganizationMemberResponse();
       when(serviceClient.deleteOrganizationMember(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final response = await appClient.deleteOrganizationMember(Organization(), 'user id');
-      expect(response, equals(expected));
+      await appClient.deleteOrganizationMember(Organization(), 'user id');
+      verify(serviceClient.deleteOrganizationMember(any)).called(1);
     });
 
     test('tailLogs', () async {
