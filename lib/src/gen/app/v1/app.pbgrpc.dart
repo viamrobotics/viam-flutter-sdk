@@ -33,6 +33,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListOrganizations',
       ($1.ListOrganizationsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.ListOrganizationsResponse.fromBuffer(value));
+  static final _$getOrganizationsWithAccessToLocation = $grpc.ClientMethod<$1.GetOrganizationsWithAccessToLocationRequest, $1.GetOrganizationsWithAccessToLocationResponse>(
+      '/viam.app.v1.AppService/GetOrganizationsWithAccessToLocation',
+      ($1.GetOrganizationsWithAccessToLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetOrganizationsWithAccessToLocationResponse.fromBuffer(value));
   static final _$listOrganizationsByUser = $grpc.ClientMethod<$1.ListOrganizationsByUserRequest, $1.ListOrganizationsByUserResponse>(
       '/viam.app.v1.AppService/ListOrganizationsByUser',
       ($1.ListOrganizationsByUserRequest value) => value.writeToBuffer(),
@@ -241,6 +245,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/UpdateRegistryItem',
       ($1.UpdateRegistryItemRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.UpdateRegistryItemResponse.fromBuffer(value));
+  static final _$listRegistryItems = $grpc.ClientMethod<$1.ListRegistryItemsRequest, $1.ListRegistryItemsResponse>(
+      '/viam.app.v1.AppService/ListRegistryItems',
+      ($1.ListRegistryItemsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ListRegistryItemsResponse.fromBuffer(value));
   static final _$createModule = $grpc.ClientMethod<$1.CreateModuleRequest, $1.CreateModuleResponse>(
       '/viam.app.v1.AppService/CreateModule',
       ($1.CreateModuleRequest value) => value.writeToBuffer(),
@@ -298,6 +306,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.ListOrganizationsResponse> listOrganizations($1.ListOrganizationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOrganizations, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($1.GetOrganizationsWithAccessToLocationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOrganizationsWithAccessToLocation, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.ListOrganizationsByUserResponse> listOrganizationsByUser($1.ListOrganizationsByUserRequest request, {$grpc.CallOptions? options}) {
@@ -508,6 +520,10 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateRegistryItem, request, options: options);
   }
 
+  $grpc.ResponseFuture<$1.ListRegistryItemsResponse> listRegistryItems($1.ListRegistryItemsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listRegistryItems, request, options: options);
+  }
+
   $grpc.ResponseFuture<$1.CreateModuleResponse> createModule($1.CreateModuleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createModule, request, options: options);
   }
@@ -575,6 +591,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.ListOrganizationsRequest.fromBuffer(value),
         ($1.ListOrganizationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetOrganizationsWithAccessToLocationRequest, $1.GetOrganizationsWithAccessToLocationResponse>(
+        'GetOrganizationsWithAccessToLocation',
+        getOrganizationsWithAccessToLocation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetOrganizationsWithAccessToLocationRequest.fromBuffer(value),
+        ($1.GetOrganizationsWithAccessToLocationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.ListOrganizationsByUserRequest, $1.ListOrganizationsByUserResponse>(
         'ListOrganizationsByUser',
         listOrganizationsByUser_Pre,
@@ -939,6 +962,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.UpdateRegistryItemRequest.fromBuffer(value),
         ($1.UpdateRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ListRegistryItemsRequest, $1.ListRegistryItemsResponse>(
+        'ListRegistryItems',
+        listRegistryItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.ListRegistryItemsRequest.fromBuffer(value),
+        ($1.ListRegistryItemsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateModuleRequest, $1.CreateModuleResponse>(
         'CreateModule',
         createModule_Pre,
@@ -1021,6 +1051,10 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$1.ListOrganizationsResponse> listOrganizations_Pre($grpc.ServiceCall call, $async.Future<$1.ListOrganizationsRequest> request) async {
     return listOrganizations(call, await request);
+  }
+
+  $async.Future<$1.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation_Pre($grpc.ServiceCall call, $async.Future<$1.GetOrganizationsWithAccessToLocationRequest> request) async {
+    return getOrganizationsWithAccessToLocation(call, await request);
   }
 
   $async.Future<$1.ListOrganizationsByUserResponse> listOrganizationsByUser_Pre($grpc.ServiceCall call, $async.Future<$1.ListOrganizationsByUserRequest> request) async {
@@ -1231,6 +1265,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return updateRegistryItem(call, await request);
   }
 
+  $async.Future<$1.ListRegistryItemsResponse> listRegistryItems_Pre($grpc.ServiceCall call, $async.Future<$1.ListRegistryItemsRequest> request) async {
+    return listRegistryItems(call, await request);
+  }
+
   $async.Future<$1.CreateModuleResponse> createModule_Pre($grpc.ServiceCall call, $async.Future<$1.CreateModuleRequest> request) async {
     return createModule(call, await request);
   }
@@ -1270,6 +1308,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$1.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $1.GetUserIDByEmailRequest request);
   $async.Future<$1.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $1.CreateOrganizationRequest request);
   $async.Future<$1.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $1.ListOrganizationsRequest request);
+  $async.Future<$1.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($grpc.ServiceCall call, $1.GetOrganizationsWithAccessToLocationRequest request);
   $async.Future<$1.ListOrganizationsByUserResponse> listOrganizationsByUser($grpc.ServiceCall call, $1.ListOrganizationsByUserRequest request);
   $async.Future<$1.GetOrganizationResponse> getOrganization($grpc.ServiceCall call, $1.GetOrganizationRequest request);
   $async.Future<$1.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $1.GetOrganizationNamespaceAvailabilityRequest request);
@@ -1322,6 +1361,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$1.CheckPermissionsResponse> checkPermissions($grpc.ServiceCall call, $1.CheckPermissionsRequest request);
   $async.Future<$1.CreateRegistryItemResponse> createRegistryItem($grpc.ServiceCall call, $1.CreateRegistryItemRequest request);
   $async.Future<$1.UpdateRegistryItemResponse> updateRegistryItem($grpc.ServiceCall call, $1.UpdateRegistryItemRequest request);
+  $async.Future<$1.ListRegistryItemsResponse> listRegistryItems($grpc.ServiceCall call, $1.ListRegistryItemsRequest request);
   $async.Future<$1.CreateModuleResponse> createModule($grpc.ServiceCall call, $1.CreateModuleRequest request);
   $async.Future<$1.UpdateModuleResponse> updateModule($grpc.ServiceCall call, $1.UpdateModuleRequest request);
   $async.Future<$1.UploadModuleFileResponse> uploadModuleFile($grpc.ServiceCall call, $async.Stream<$1.UploadModuleFileRequest> request);

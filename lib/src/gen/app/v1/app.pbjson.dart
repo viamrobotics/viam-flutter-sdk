@@ -13,6 +13,22 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use registryItemStatusDescriptor instead')
+const RegistryItemStatus$json = {
+  '1': 'RegistryItemStatus',
+  '2': [
+    {'1': 'REGISTRY_ITEM_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'REGISTRY_ITEM_STATUS_PUBLISHED', '2': 1},
+    {'1': 'REGISTRY_ITEM_STATUS_IN_DEVELOPMENT', '2': 2},
+  ],
+};
+
+/// Descriptor for `RegistryItemStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List registryItemStatusDescriptor = $convert.base64Decode(
+    'ChJSZWdpc3RyeUl0ZW1TdGF0dXMSJAogUkVHSVNUUllfSVRFTV9TVEFUVVNfVU5TUEVDSUZJRU'
+    'QQABIiCh5SRUdJU1RSWV9JVEVNX1NUQVRVU19QVUJMSVNIRUQQARInCiNSRUdJU1RSWV9JVEVN'
+    'X1NUQVRVU19JTl9ERVZFTE9QTUVOVBAC');
+
 @$core.Deprecated('Use visibilityDescriptor instead')
 const Visibility$json = {
   '1': 'Visibility',
@@ -717,6 +733,32 @@ const DeleteLocationResponse$json = {
 /// Descriptor for `DeleteLocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteLocationResponseDescriptor = $convert.base64Decode(
     'ChZEZWxldGVMb2NhdGlvblJlc3BvbnNl');
+
+@$core.Deprecated('Use getOrganizationsWithAccessToLocationRequestDescriptor instead')
+const GetOrganizationsWithAccessToLocationRequest$json = {
+  '1': 'GetOrganizationsWithAccessToLocationRequest',
+  '2': [
+    {'1': 'location_id', '3': 1, '4': 1, '5': 9, '10': 'locationId'},
+  ],
+};
+
+/// Descriptor for `GetOrganizationsWithAccessToLocationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOrganizationsWithAccessToLocationRequestDescriptor = $convert.base64Decode(
+    'CitHZXRPcmdhbml6YXRpb25zV2l0aEFjY2Vzc1RvTG9jYXRpb25SZXF1ZXN0Eh8KC2xvY2F0aW'
+    '9uX2lkGAEgASgJUgpsb2NhdGlvbklk');
+
+@$core.Deprecated('Use getOrganizationsWithAccessToLocationResponseDescriptor instead')
+const GetOrganizationsWithAccessToLocationResponse$json = {
+  '1': 'GetOrganizationsWithAccessToLocationResponse',
+  '2': [
+    {'1': 'organizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Organization', '10': 'organizations'},
+  ],
+};
+
+/// Descriptor for `GetOrganizationsWithAccessToLocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOrganizationsWithAccessToLocationResponseDescriptor = $convert.base64Decode(
+    'CixHZXRPcmdhbml6YXRpb25zV2l0aEFjY2Vzc1RvTG9jYXRpb25SZXNwb25zZRI/Cg1vcmdhbm'
+    'l6YXRpb25zGAEgAygLMhkudmlhbS5hcHAudjEuT3JnYW5pemF0aW9uUg1vcmdhbml6YXRpb25z');
 
 @$core.Deprecated('Use listLocationsRequestDescriptor instead')
 const ListLocationsRequest$json = {
@@ -1735,6 +1777,87 @@ final $typed_data.Uint8List checkPermissionsResponseDescriptor = $convert.base64
     'MoCzIiLnZpYW0uYXBwLnYxLkF1dGhvcml6ZWRQZXJtaXNzaW9uc1IVYXV0aG9yaXplZFBlcm1p'
     'c3Npb25z');
 
+@$core.Deprecated('Use moduleVersionDescriptor instead')
+const ModuleVersion$json = {
+  '1': 'ModuleVersion',
+  '2': [
+    {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'files', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Uploads', '10': 'files'},
+    {'1': 'models', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
+    {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
+  ],
+};
+
+/// Descriptor for `ModuleVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleVersionDescriptor = $convert.base64Decode(
+    'Cg1Nb2R1bGVWZXJzaW9uEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SKgoFZmlsZXMYAiADKA'
+    'syFC52aWFtLmFwcC52MS5VcGxvYWRzUgVmaWxlcxIqCgZtb2RlbHMYAyADKAsyEi52aWFtLmFw'
+    'cC52MS5Nb2RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYBCABKAlSCmVudHJ5cG9pbnQ=');
+
+@$core.Deprecated('Use moduleMetadataDescriptor instead')
+const ModuleMetadata$json = {
+  '1': 'ModuleMetadata',
+  '2': [
+    {'1': 'models', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
+    {'1': 'versions', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleVersion', '10': 'versions'},
+    {'1': 'entrypoint', '3': 3, '4': 1, '5': 9, '10': 'entrypoint'},
+  ],
+};
+
+/// Descriptor for `ModuleMetadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleMetadataDescriptor = $convert.base64Decode(
+    'Cg5Nb2R1bGVNZXRhZGF0YRIqCgZtb2RlbHMYASADKAsyEi52aWFtLmFwcC52MS5Nb2RlbFIGbW'
+    '9kZWxzEjYKCHZlcnNpb25zGAIgAygLMhoudmlhbS5hcHAudjEuTW9kdWxlVmVyc2lvblIIdmVy'
+    'c2lvbnMSHgoKZW50cnlwb2ludBgDIAEoCVIKZW50cnlwb2ludA==');
+
+@$core.Deprecated('Use mLModelMetadataDescriptor instead')
+const MLModelMetadata$json = {
+  '1': 'MLModelMetadata',
+  '2': [
+    {'1': 'versions', '3': 1, '4': 3, '5': 9, '10': 'versions'},
+  ],
+};
+
+/// Descriptor for `MLModelMetadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mLModelMetadataDescriptor = $convert.base64Decode(
+    'Cg9NTE1vZGVsTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25z');
+
+@$core.Deprecated('Use registryItemDescriptor instead')
+const RegistryItem$json = {
+  '1': 'RegistryItem',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'public_namespace', '3': 3, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
+    {'1': 'visibility', '3': 6, '4': 1, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibility'},
+    {'1': 'url', '3': 7, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'description', '3': 8, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'total_robot_usage', '3': 9, '4': 1, '5': 3, '10': 'totalRobotUsage'},
+    {'1': 'total_organization_usage', '3': 10, '4': 1, '5': 3, '10': 'totalOrganizationUsage'},
+    {'1': 'module_metadata', '3': 11, '4': 1, '5': 11, '6': '.viam.app.v1.ModuleMetadata', '9': 0, '10': 'moduleMetadata'},
+    {'1': 'ml_model_metadata', '3': 12, '4': 1, '5': 11, '6': '.viam.app.v1.MLModelMetadata', '9': 0, '10': 'mlModelMetadata'},
+  ],
+  '8': [
+    {'1': 'metadata'},
+  ],
+};
+
+/// Descriptor for `RegistryItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registryItemDescriptor = $convert.base64Decode(
+    'CgxSZWdpc3RyeUl0ZW0SFwoHaXRlbV9pZBgBIAEoCVIGaXRlbUlkEicKD29yZ2FuaXphdGlvbl'
+    '9pZBgCIAEoCVIOb3JnYW5pemF0aW9uSWQSKQoQcHVibGljX25hbWVzcGFjZRgDIAEoCVIPcHVi'
+    'bGljTmFtZXNwYWNlEhIKBG5hbWUYBCABKAlSBG5hbWUSNQoEdHlwZRgFIAEoDjIhLnZpYW0uYX'
+    'BwLnBhY2thZ2VzLnYxLlBhY2thZ2VUeXBlUgR0eXBlEjcKCnZpc2liaWxpdHkYBiABKA4yFy52'
+    'aWFtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5EhAKA3VybBgHIAEoCVIDdXJsEiAKC2'
+    'Rlc2NyaXB0aW9uGAggASgJUgtkZXNjcmlwdGlvbhIqChF0b3RhbF9yb2JvdF91c2FnZRgJIAEo'
+    'A1IPdG90YWxSb2JvdFVzYWdlEjgKGHRvdGFsX29yZ2FuaXphdGlvbl91c2FnZRgKIAEoA1IWdG'
+    '90YWxPcmdhbml6YXRpb25Vc2FnZRJGCg9tb2R1bGVfbWV0YWRhdGEYCyABKAsyGy52aWFtLmFw'
+    'cC52MS5Nb2R1bGVNZXRhZGF0YUgAUg5tb2R1bGVNZXRhZGF0YRJKChFtbF9tb2RlbF9tZXRhZG'
+    'F0YRgMIAEoCzIcLnZpYW0uYXBwLnYxLk1MTW9kZWxNZXRhZGF0YUgAUg9tbE1vZGVsTWV0YWRh'
+    'dGFCCgoIbWV0YWRhdGE=');
+
 @$core.Deprecated('Use createRegistryItemRequestDescriptor instead')
 const CreateRegistryItemRequest$json = {
   '1': 'CreateRegistryItemRequest',
@@ -1786,6 +1909,49 @@ const UpdateRegistryItemResponse$json = {
 /// Descriptor for `UpdateRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateRegistryItemResponseDescriptor = $convert.base64Decode(
     'ChpVcGRhdGVSZWdpc3RyeUl0ZW1SZXNwb25zZQ==');
+
+@$core.Deprecated('Use listRegistryItemsRequestDescriptor instead')
+const ListRegistryItemsRequest$json = {
+  '1': 'ListRegistryItemsRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'organizationId', '17': true},
+    {'1': 'types', '3': 2, '4': 3, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'types'},
+    {'1': 'visibilities', '3': 3, '4': 3, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibilities'},
+    {'1': 'platforms', '3': 4, '4': 3, '5': 9, '10': 'platforms'},
+    {'1': 'statuses', '3': 5, '4': 3, '5': 14, '6': '.viam.app.v1.RegistryItemStatus', '10': 'statuses'},
+    {'1': 'search_term', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'searchTerm', '17': true},
+    {'1': 'page_token', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'pageToken', '17': true},
+  ],
+  '8': [
+    {'1': '_organization_id'},
+    {'1': '_search_term'},
+    {'1': '_page_token'},
+  ],
+};
+
+/// Descriptor for `ListRegistryItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRegistryItemsRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0UmVnaXN0cnlJdGVtc1JlcXVlc3QSLAoPb3JnYW5pemF0aW9uX2lkGAEgASgJSABSDm'
+    '9yZ2FuaXphdGlvbklkiAEBEjcKBXR5cGVzGAIgAygOMiEudmlhbS5hcHAucGFja2FnZXMudjEu'
+    'UGFja2FnZVR5cGVSBXR5cGVzEjsKDHZpc2liaWxpdGllcxgDIAMoDjIXLnZpYW0uYXBwLnYxLl'
+    'Zpc2liaWxpdHlSDHZpc2liaWxpdGllcxIcCglwbGF0Zm9ybXMYBCADKAlSCXBsYXRmb3JtcxI7'
+    'CghzdGF0dXNlcxgFIAMoDjIfLnZpYW0uYXBwLnYxLlJlZ2lzdHJ5SXRlbVN0YXR1c1IIc3RhdH'
+    'VzZXMSJAoLc2VhcmNoX3Rlcm0YBiABKAlIAVIKc2VhcmNoVGVybYgBARIiCgpwYWdlX3Rva2Vu'
+    'GAcgASgJSAJSCXBhZ2VUb2tlbogBAUISChBfb3JnYW5pemF0aW9uX2lkQg4KDF9zZWFyY2hfdG'
+    'VybUINCgtfcGFnZV90b2tlbg==');
+
+@$core.Deprecated('Use listRegistryItemsResponseDescriptor instead')
+const ListRegistryItemsResponse$json = {
+  '1': 'ListRegistryItemsResponse',
+  '2': [
+    {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.RegistryItem', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `ListRegistryItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRegistryItemsResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0UmVnaXN0cnlJdGVtc1Jlc3BvbnNlEi8KBWl0ZW1zGAEgAygLMhkudmlhbS5hcHAudj'
+    'EuUmVnaXN0cnlJdGVtUgVpdGVtcw==');
 
 @$core.Deprecated('Use createModuleRequestDescriptor instead')
 const CreateModuleRequest$json = {

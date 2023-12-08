@@ -70,6 +70,46 @@ const MoveResponse$json = {
 final $typed_data.Uint8List moveResponseDescriptor = $convert.base64Decode(
     'CgxNb3ZlUmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3VjY2Vzcw==');
 
+@$core.Deprecated('Use moveOnMapNewRequestDescriptor instead')
+const MoveOnMapNewRequest$json = {
+  '1': 'MoveOnMapNewRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'destination'},
+    {'1': 'component_name', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {'1': 'slam_service_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'slamServiceName'},
+    {'1': 'motion_configuration', '3': 5, '4': 1, '5': 11, '6': '.viam.service.motion.v1.MotionConfiguration', '9': 0, '10': 'motionConfiguration', '17': true},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+  '8': [
+    {'1': '_motion_configuration'},
+  ],
+};
+
+/// Descriptor for `MoveOnMapNewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOnMapNewRequestDescriptor = $convert.base64Decode(
+    'ChNNb3ZlT25NYXBOZXdSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSNgoLZGVzdGluYXRpb2'
+    '4YAiABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgtkZXN0aW5hdGlvbhJDCg5jb21wb25lbnRf'
+    'bmFtZRgDIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZR'
+    'JIChFzbGFtX3NlcnZpY2VfbmFtZRgEIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFt'
+    'ZVIPc2xhbVNlcnZpY2VOYW1lEmMKFG1vdGlvbl9jb25maWd1cmF0aW9uGAUgASgLMisudmlhbS'
+    '5zZXJ2aWNlLm1vdGlvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSABSE21vdGlvbkNvbmZpZ3Vy'
+    'YXRpb26IAQESLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYU'
+    'IXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
+
+@$core.Deprecated('Use moveOnMapNewResponseDescriptor instead')
+const MoveOnMapNewResponse$json = {
+  '1': 'MoveOnMapNewResponse',
+  '2': [
+    {'1': 'execution_id', '3': 1, '4': 1, '5': 9, '10': 'executionId'},
+  ],
+};
+
+/// Descriptor for `MoveOnMapNewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOnMapNewResponseDescriptor = $convert.base64Decode(
+    'ChRNb3ZlT25NYXBOZXdSZXNwb25zZRIhCgxleGVjdXRpb25faWQYASABKAlSC2V4ZWN1dGlvbk'
+    'lk');
+
 @$core.Deprecated('Use moveOnMapRequestDescriptor instead')
 const MoveOnMapRequest$json = {
   '1': 'MoveOnMapRequest',
