@@ -1145,6 +1145,7 @@ class MethodSettings extends $pb.GeneratedMessage {
   factory MethodSettings({
     $core.String? selector,
     MethodSettings_LongRunning? longRunning,
+    $core.Iterable<$core.String>? autoPopulatedFields,
   }) {
     final $result = create();
     if (selector != null) {
@@ -1152,6 +1153,9 @@ class MethodSettings extends $pb.GeneratedMessage {
     }
     if (longRunning != null) {
       $result.longRunning = longRunning;
+    }
+    if (autoPopulatedFields != null) {
+      $result.autoPopulatedFields.addAll(autoPopulatedFields);
     }
     return $result;
   }
@@ -1162,6 +1166,7 @@ class MethodSettings extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MethodSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'selector')
     ..aOM<MethodSettings_LongRunning>(2, _omitFieldNames ? '' : 'longRunning', subBuilder: MethodSettings_LongRunning.create)
+    ..pPS(3, _omitFieldNames ? '' : 'autoPopulatedFields')
     ..hasRequiredFields = false
   ;
 
@@ -1224,6 +1229,20 @@ class MethodSettings extends $pb.GeneratedMessage {
   void clearLongRunning() => clearField(2);
   @$pb.TagNumber(2)
   MethodSettings_LongRunning ensureLongRunning() => $_ensure(1);
+
+  ///  List of top-level fields of the request message, that should be
+  ///  automatically populated by the client libraries based on their
+  ///  (google.api.field_info).format. Currently supported format: UUID4.
+  ///
+  ///  Example of a YAML configuration:
+  ///
+  ///   publishing:
+  ///     method_settings:
+  ///       - selector: google.example.v1.ExampleService.CreateExample
+  ///         auto_populated_fields:
+  ///         - request_id
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get autoPopulatedFields => $_getList(2);
 }
 
 class Client {

@@ -296,6 +296,7 @@ const MethodSettings$json = {
   '2': [
     {'1': 'selector', '3': 1, '4': 1, '5': 9, '10': 'selector'},
     {'1': 'long_running', '3': 2, '4': 1, '5': 11, '6': '.google.api.MethodSettings.LongRunning', '10': 'longRunning'},
+    {'1': 'auto_populated_fields', '3': 3, '4': 3, '5': 9, '10': 'autoPopulatedFields'},
   ],
   '3': [MethodSettings_LongRunning$json],
 };
@@ -315,10 +316,11 @@ const MethodSettings_LongRunning$json = {
 final $typed_data.Uint8List methodSettingsDescriptor = $convert.base64Decode(
     'Cg5NZXRob2RTZXR0aW5ncxIaCghzZWxlY3RvchgBIAEoCVIIc2VsZWN0b3ISSQoMbG9uZ19ydW'
     '5uaW5nGAIgASgLMiYuZ29vZ2xlLmFwaS5NZXRob2RTZXR0aW5ncy5Mb25nUnVubmluZ1ILbG9u'
-    'Z1J1bm5pbmcalAIKC0xvbmdSdW5uaW5nEkcKEmluaXRpYWxfcG9sbF9kZWxheRgBIAEoCzIZLm'
-    'dvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIQaW5pdGlhbFBvbGxEZWxheRIyChVwb2xsX2RlbGF5'
-    'X211bHRpcGxpZXIYAiABKAJSE3BvbGxEZWxheU11bHRpcGxpZXISPwoObWF4X3BvbGxfZGVsYX'
-    'kYAyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SDG1heFBvbGxEZWxheRJHChJ0b3Rh'
-    'bF9wb2xsX3RpbWVvdXQYBCABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SEHRvdGFsUG'
-    '9sbFRpbWVvdXQ=');
+    'Z1J1bm5pbmcSMgoVYXV0b19wb3B1bGF0ZWRfZmllbGRzGAMgAygJUhNhdXRvUG9wdWxhdGVkRm'
+    'llbGRzGpQCCgtMb25nUnVubmluZxJHChJpbml0aWFsX3BvbGxfZGVsYXkYASABKAsyGS5nb29n'
+    'bGUucHJvdG9idWYuRHVyYXRpb25SEGluaXRpYWxQb2xsRGVsYXkSMgoVcG9sbF9kZWxheV9tdW'
+    'x0aXBsaWVyGAIgASgCUhNwb2xsRGVsYXlNdWx0aXBsaWVyEj8KDm1heF9wb2xsX2RlbGF5GAMg'
+    'ASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgxtYXhQb2xsRGVsYXkSRwoSdG90YWxfcG'
+    '9sbF90aW1lb3V0GAQgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUhB0b3RhbFBvbGxU'
+    'aW1lb3V0');
 

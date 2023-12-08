@@ -13,6 +13,23 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class RegistryItemStatus extends $pb.ProtobufEnum {
+  static const RegistryItemStatus REGISTRY_ITEM_STATUS_UNSPECIFIED = RegistryItemStatus._(0, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_UNSPECIFIED');
+  static const RegistryItemStatus REGISTRY_ITEM_STATUS_PUBLISHED = RegistryItemStatus._(1, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_PUBLISHED');
+  static const RegistryItemStatus REGISTRY_ITEM_STATUS_IN_DEVELOPMENT = RegistryItemStatus._(2, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_IN_DEVELOPMENT');
+
+  static const $core.List<RegistryItemStatus> values = <RegistryItemStatus> [
+    REGISTRY_ITEM_STATUS_UNSPECIFIED,
+    REGISTRY_ITEM_STATUS_PUBLISHED,
+    REGISTRY_ITEM_STATUS_IN_DEVELOPMENT,
+  ];
+
+  static final $core.Map<$core.int, RegistryItemStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static RegistryItemStatus? valueOf($core.int value) => _byValue[value];
+
+  const RegistryItemStatus._($core.int v, $core.String n) : super(v, n);
+}
+
 class Visibility extends $pb.ProtobufEnum {
   static const Visibility VISIBILITY_UNSPECIFIED = Visibility._(0, _omitEnumNames ? '' : 'VISIBILITY_UNSPECIFIED');
   static const Visibility VISIBILITY_PRIVATE = Visibility._(1, _omitEnumNames ? '' : 'VISIBILITY_PRIVATE');

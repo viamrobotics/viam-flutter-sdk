@@ -13,16 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
-import '../../../google/rpc/status.pb.dart' as $3;
-import '../../data/v1/data.pb.dart' as $0;
+import '../../../google/protobuf/timestamp.pb.dart' as $1;
+import '../../../google/rpc/status.pb.dart' as $2;
 import 'ml_training.pbenum.dart';
 
 export 'ml_training.pbenum.dart';
 
 class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
   factory SubmitTrainingJobRequest({
-    $0.Filter? filter,
     $core.String? organizationId,
     $core.String? modelName,
     $core.String? modelVersion,
@@ -31,9 +29,6 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
     $core.String? datasetId,
   }) {
     final $result = create();
-    if (filter != null) {
-      $result.filter = filter;
-    }
     if (organizationId != null) {
       $result.organizationId = organizationId;
     }
@@ -59,7 +54,6 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
   factory SubmitTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitTrainingJobRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
-    ..aOM<$0.Filter>(1, _omitFieldNames ? '' : 'filter', subBuilder: $0.Filter.create)
     ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..aOS(3, _omitFieldNames ? '' : 'modelName')
     ..aOS(4, _omitFieldNames ? '' : 'modelVersion')
@@ -90,62 +84,51 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
   static SubmitTrainingJobRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitTrainingJobRequest>(create);
   static SubmitTrainingJobRequest? _defaultInstance;
 
-  @$pb.TagNumber(1)
-  $0.Filter get filter => $_getN(0);
-  @$pb.TagNumber(1)
-  set filter($0.Filter v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasFilter() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearFilter() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.Filter ensureFilter() => $_ensure(0);
-
   @$pb.TagNumber(2)
-  $core.String get organizationId => $_getSZ(1);
+  $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(2)
-  set organizationId($core.String v) { $_setString(1, v); }
+  set organizationId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(2)
-  $core.bool hasOrganizationId() => $_has(1);
+  $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(2)
   void clearOrganizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get modelName => $_getSZ(2);
+  $core.String get modelName => $_getSZ(1);
   @$pb.TagNumber(3)
-  set modelName($core.String v) { $_setString(2, v); }
+  set modelName($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(3)
-  $core.bool hasModelName() => $_has(2);
+  $core.bool hasModelName() => $_has(1);
   @$pb.TagNumber(3)
   void clearModelName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get modelVersion => $_getSZ(3);
+  $core.String get modelVersion => $_getSZ(2);
   @$pb.TagNumber(4)
-  set modelVersion($core.String v) { $_setString(3, v); }
+  set modelVersion($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(4)
-  $core.bool hasModelVersion() => $_has(3);
+  $core.bool hasModelVersion() => $_has(2);
   @$pb.TagNumber(4)
   void clearModelVersion() => clearField(4);
 
   @$pb.TagNumber(5)
-  ModelType get modelType => $_getN(4);
+  ModelType get modelType => $_getN(3);
   @$pb.TagNumber(5)
   set modelType(ModelType v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasModelType() => $_has(4);
+  $core.bool hasModelType() => $_has(3);
   @$pb.TagNumber(5)
   void clearModelType() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get tags => $_getList(5);
+  $core.List<$core.String> get tags => $_getList(4);
 
   @$pb.TagNumber(7)
-  $core.String get datasetId => $_getSZ(6);
+  $core.String get datasetId => $_getSZ(5);
   @$pb.TagNumber(7)
-  set datasetId($core.String v) { $_setString(6, v); }
+  set datasetId($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasDatasetId() => $_has(6);
+  $core.bool hasDatasetId() => $_has(5);
   @$pb.TagNumber(7)
   void clearDatasetId() => clearField(7);
 }
@@ -414,13 +397,13 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   factory TrainingJobMetadata({
     SubmitTrainingJobRequest? request,
     TrainingStatus? status,
-    $2.Timestamp? createdOn,
-    $2.Timestamp? lastModified,
+    $1.Timestamp? createdOn,
+    $1.Timestamp? lastModified,
     $core.String? syncedModelId,
     $core.String? id,
-    $3.Status? errorStatus,
-    $2.Timestamp? trainingStarted,
-    $2.Timestamp? trainingEnded,
+    $2.Status? errorStatus,
+    $1.Timestamp? trainingStarted,
+    $1.Timestamp? trainingEnded,
   }) {
     final $result = create();
     if (request != null) {
@@ -459,13 +442,13 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TrainingJobMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
     ..aOM<SubmitTrainingJobRequest>(1, _omitFieldNames ? '' : 'request', subBuilder: SubmitTrainingJobRequest.create)
     ..e<TrainingStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TrainingStatus.TRAINING_STATUS_UNSPECIFIED, valueOf: TrainingStatus.valueOf, enumValues: TrainingStatus.values)
-    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'lastModified', subBuilder: $2.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'lastModified', subBuilder: $1.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'syncedModelId')
     ..aOS(7, _omitFieldNames ? '' : 'id')
-    ..aOM<$3.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $3.Status.create)
-    ..aOM<$2.Timestamp>(9, _omitFieldNames ? '' : 'trainingStarted', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'trainingEnded', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $2.Status.create)
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'trainingStarted', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'trainingEnded', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -511,26 +494,26 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   void clearStatus() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdOn => $_getN(2);
+  $1.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($2.Timestamp v) { setField(3, v); }
+  set createdOn($1.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedOn() => $_ensure(2);
+  $1.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $2.Timestamp get lastModified => $_getN(3);
+  $1.Timestamp get lastModified => $_getN(3);
   @$pb.TagNumber(4)
-  set lastModified($2.Timestamp v) { setField(4, v); }
+  set lastModified($1.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastModified() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastModified() => clearField(4);
   @$pb.TagNumber(4)
-  $2.Timestamp ensureLastModified() => $_ensure(3);
+  $1.Timestamp ensureLastModified() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get syncedModelId => $_getSZ(4);
@@ -551,37 +534,37 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   void clearId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $3.Status get errorStatus => $_getN(6);
+  $2.Status get errorStatus => $_getN(6);
   @$pb.TagNumber(8)
-  set errorStatus($3.Status v) { setField(8, v); }
+  set errorStatus($2.Status v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasErrorStatus() => $_has(6);
   @$pb.TagNumber(8)
   void clearErrorStatus() => clearField(8);
   @$pb.TagNumber(8)
-  $3.Status ensureErrorStatus() => $_ensure(6);
+  $2.Status ensureErrorStatus() => $_ensure(6);
 
   @$pb.TagNumber(9)
-  $2.Timestamp get trainingStarted => $_getN(7);
+  $1.Timestamp get trainingStarted => $_getN(7);
   @$pb.TagNumber(9)
-  set trainingStarted($2.Timestamp v) { setField(9, v); }
+  set trainingStarted($1.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasTrainingStarted() => $_has(7);
   @$pb.TagNumber(9)
   void clearTrainingStarted() => clearField(9);
   @$pb.TagNumber(9)
-  $2.Timestamp ensureTrainingStarted() => $_ensure(7);
+  $1.Timestamp ensureTrainingStarted() => $_ensure(7);
 
   @$pb.TagNumber(10)
-  $2.Timestamp get trainingEnded => $_getN(8);
+  $1.Timestamp get trainingEnded => $_getN(8);
   @$pb.TagNumber(10)
-  set trainingEnded($2.Timestamp v) { setField(10, v); }
+  set trainingEnded($1.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasTrainingEnded() => $_has(8);
   @$pb.TagNumber(10)
   void clearTrainingEnded() => clearField(10);
   @$pb.TagNumber(10)
-  $2.Timestamp ensureTrainingEnded() => $_ensure(8);
+  $1.Timestamp ensureTrainingEnded() => $_ensure(8);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {
