@@ -120,7 +120,7 @@ void main() {
         ..createdOn = Timestamp.create();
       when(serviceClient.createOrganizationInvite(any))
           .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
-      final response = await appClient.createOrganizationInvite(Organization(), 'email');
+      final response = await appClient.createOrganizationInvite(Organization(), 'email', []);
       expect(response, equals(expected));
     });
 

@@ -116,8 +116,13 @@ class AppClient {
     return response;
   }
 
-  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email) async {
-    final request = CreateOrganizationInviteRequest()
+  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations) async {
+    final List<Authorization> protoAuthorizations = [];
+    for (final authorization in authorizations) {
+      protoAuthorizations.add(authorization.toProto);
+    }
+
+    final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
       ..organizationId = org.id
       ..email = email;
     final response = await _client.createOrganizationInvite(request);
