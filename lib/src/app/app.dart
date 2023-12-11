@@ -110,12 +110,14 @@ class AppClient {
         .toList();
   }
 
+  /// List the members and pending invites for an [Organization].
   Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
     final request = ListOrganizationMembersRequest()..organizationId = org.id;
     final response = await _client.listOrganizationMembers(request);
     return response;
   }
 
+  /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
   Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations) async {
     final List<Authorization> protoAuthorizations = [];
     for (final authorization in authorizations) {
