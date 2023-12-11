@@ -55,22 +55,22 @@ enum Permission {
 class ViamAuthorization {
   String authorizationType;
 
-  /// the authorization itself, either [AuthorizationId.organizationOwner] or [AuthorizationId.organizationOperator]
+  /// The authorization itself, either [AuthorizationId.organizationOwner] or [AuthorizationId.organizationOperator]
   AuthorizationId authorizationId;
 
-  /// the resource type that the authorization is granted on.
+  /// The resource type that the authorization is granted on.
   ResourceType resourceType;
 
-  /// the id of the resource the authorization is granted on: should be an [Organization] id, [Location] id, or [Robot] id
+  /// The id of the resource the authorization is granted on: should be an [Organization] id, [Location] id, or [Robot] id
   String resourceId;
 
-  /// the id of the identity the authorization is granted to: should be a user id or api key id. Should be empty when granting access to a new user.
+  /// The id of the identity the authorization is granted to: should be a user id or api key id. Should be empty when granting access to a new user.
   String identityId;
 
-  /// the id of the [Organization] that the resource belongs to
+  /// The id of the [Organization] that the resource belongs to
   String organizationId;
 
-  /// the type of identity that the authorization is granted to.
+  /// The type of identity that the authorization is granted to.
   IdentityType identityType;
 
   ViamAuthorization({
