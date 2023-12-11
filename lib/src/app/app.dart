@@ -109,4 +109,47 @@ class AppClient {
         .map((e) => Permission.values.firstWhere((element) => element.value == e))
         .toList();
   }
+
+  /// List the members and pending invites for an [Organization].
+  Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
+    final request = ListOrganizationMembersRequest()..organizationId = org.id;
+    final response = await _client.listOrganizationMembers(request);
+    return response;
+  }
+
+  /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
+  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations) async {
+    final List<Authorization> protoAuthorizations = [];
+    for (final authorization in authorizations) {
+      protoAuthorizations.add(authorization.toProto);
+    }
+
+    final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.createOrganizationInvite(request);
+    return response.invite;
+  }
+
+  Future<OrganizationInvite> resendOrganizationInvite(Organization org, String email) async {
+    final request = ResendOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.resendOrganizationInvite(request);
+    return response.invite;
+  }
+
+  Future<void> deleteOrganizationInvite(Organization org, String email) async {
+    final request = DeleteOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    await _client.deleteOrganizationInvite(request);
+  }
+
+  Future<void> deleteOrganizationMember(Organization org, String userId) async {
+    final request = DeleteOrganizationMemberRequest()
+      ..organizationId = org.id
+      ..userId = userId;
+    await _client.deleteOrganizationMember(request);
+  }
 }

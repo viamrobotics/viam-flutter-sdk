@@ -105,6 +105,50 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('listOrganizationMembers', () async {
+      final expected = [OrganizationMember()..userId = 'userId'];
+      when(serviceClient.listOrganizationMembers(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationMembersResponse(members: expected)));
+      final response = await appClient.listOrganizationMembers(Organization());
+      expect(response.members, equals(expected));
+    });
+
+    test('createOrganizationInvite', () async {
+      final expected = OrganizationInvite()
+        ..organizationId = 'organizationId'
+        ..email = 'email'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.createOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
+      final response = await appClient.createOrganizationInvite(Organization(), 'email', []);
+      expect(response, equals(expected));
+    });
+
+    test('resendOrganizationInvite', () async {
+      final expected = OrganizationInvite()
+        ..organizationId = 'organizationId'
+        ..email = 'email'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.resendOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
+      final response = await appClient.resendOrganizationInvite(Organization(), 'email');
+      expect(response, equals(expected));
+    });
+
+    test('deleteOrganizationInvite', () async {
+      final expected = DeleteOrganizationInviteResponse();
+      when(serviceClient.deleteOrganizationInvite(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteOrganizationInvite(Organization(), 'email');
+      verify(serviceClient.deleteOrganizationInvite(any)).called(1);
+    });
+
+    test('deleteOrganizationMember', () async {
+      final expected = DeleteOrganizationMemberResponse();
+      when(serviceClient.deleteOrganizationMember(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteOrganizationMember(Organization(), 'user id');
+      verify(serviceClient.deleteOrganizationMember(any)).called(1);
+    });
+
     test('tailLogs', () async {
       final expected = LogEntry()..message = 'My log entry';
       final response = TailRobotPartLogsResponse()..logs.add(expected);
