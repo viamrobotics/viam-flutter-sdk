@@ -1,11 +1,22 @@
 # Changelog
 
-## [v0.0.8](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.8) (2023-11-15)
+## [v0.0.9](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.9) (2023-12-12)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.7...v0.0.8)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.8...v0.0.9)
 
 **Merged pull requests:**
 
+- APP-3213 - add wrappers for org members/invites [\#157](https://github.com/viamrobotics/viam-flutter-sdk/pull/157) ([clintpurser](https://github.com/clintpurser))
+- Automated Protos Update [\#156](https://github.com/viamrobotics/viam-flutter-sdk/pull/156) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Fix gitignore to include new build proto [\#155](https://github.com/viamrobotics/viam-flutter-sdk/pull/155) ([njooma](https://github.com/njooma))
+- \[RSDK-5873\] Update TabularDataByMQL to accept list of BSON docs [\#154](https://github.com/viamrobotics/viam-flutter-sdk/pull/154) ([ale7714](https://github.com/ale7714))
+- APP-3318 - Fix sticky motor slider [\#153](https://github.com/viamrobotics/viam-flutter-sdk/pull/153) ([clintpurser](https://github.com/clintpurser))
+- base auto stop bug fix [\#152](https://github.com/viamrobotics/viam-flutter-sdk/pull/152) ([clintpurser](https://github.com/clintpurser))
+- Automated Protos Update [\#151](https://github.com/viamrobotics/viam-flutter-sdk/pull/151) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#150](https://github.com/viamrobotics/viam-flutter-sdk/pull/150) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#149](https://github.com/viamrobotics/viam-flutter-sdk/pull/149) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#148](https://github.com/viamrobotics/viam-flutter-sdk/pull/148) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.8 [\#147](https://github.com/viamrobotics/viam-flutter-sdk/pull/147) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add SQL and MQL tabular data query [\#145](https://github.com/viamrobotics/viam-flutter-sdk/pull/145) ([njooma](https://github.com/njooma))
 - Add new exception type for mdns [\#144](https://github.com/viamrobotics/viam-flutter-sdk/pull/144) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#143](https://github.com/viamrobotics/viam-flutter-sdk/pull/143) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -52,6 +63,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.8](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.8) (2023-11-15)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.7...v0.0.8)
 
 ## [v0.0.7](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.7) (2023-09-11)
 
