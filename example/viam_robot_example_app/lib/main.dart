@@ -8,8 +8,8 @@ import 'package:viam_sdk/widgets.dart';
 import 'screens/screens.dart';
 
 void main() async {
-  // Load the `.env` file TODO replace `filename` with your .env filename
-  await dotenv.load(fileName: 'YOUR_ENV_FILE.env');
+  // Load the `.env` file
+  await dotenv.load();
   runApp(const MyApp());
 }
 

@@ -36,8 +36,8 @@ class _LoginScreenState extends State<LoginScreen> {
   /// This method will get called when the widget initializes its state.
   /// It exists outside the overridden [initState] function since it's async.
   Future<void> _initState() async {
-    // Load the `.env` file TODO replace `filename` with your .env filename
-    await dotenv.load(fileName: 'YOUR_ENV_FILE.env');
+    // Load the `.env` file
+    await dotenv.load();
 
     setState(() {
       // Set the _apiKeyId and _apiKey to the fields stored in the `.env` file.
