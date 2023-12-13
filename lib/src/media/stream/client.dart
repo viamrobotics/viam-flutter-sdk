@@ -90,8 +90,12 @@ class StreamManager {
   /// Request that a stream get added to the WebRTC channel
   Future<void> _add(String name) async {
     final sanitizedName = _getValidSDPTrackName(name);
-    await _client.addStream(AddStreamRequest()..name = sanitizedName);
-    _logger.d('Added stream named $name');
+    try {
+      await _client.addStream(AddStreamRequest()..name = sanitizedName);
+      _logger.d('Added stream named $name');
+    } catch (e) {
+      _logger.d('Stream: $name already active');
+    }
   }
 
   Future<void> _remove(String name) async {

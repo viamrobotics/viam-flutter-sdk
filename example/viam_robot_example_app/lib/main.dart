@@ -8,6 +8,7 @@ import 'package:viam_sdk/widgets.dart';
 import 'screens/screens.dart';
 
 void main() async {
+  // Load the `.env` file
   await dotenv.load();
   runApp(const MyApp());
 }

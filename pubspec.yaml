@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_webrtc: ^0.9.26
+  flutter_webrtc: ^0.9.47
   grpc: ^3.2.3
   protobuf: ^3.0.0
   image: ^4.0.16
@@ -18,10 +18,9 @@ dependencies:
   fixnum: ^1.1.0
   flutter_joystick: ^0.0.3
   collection: ^1.17.1
-  intl: ^0.18.1
-  # do not upgrade beyond 2.2.0+1 until this issue is resolved: https://github.com/Skyost/Bonsoir/issues/57
-  bonsoir: ^2.2.0+1 
+  intl: ^0.19.0
   async: ^2.11.0
+  bonsoir: ^5.1.1
 
 dev_dependencies:
   flutter_test:
