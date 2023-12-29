@@ -115,7 +115,7 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
 
   if (opts.attemptMdns) {
     try {
-      final mdnsUri = await searchMdns(address);
+      final mdnsUri = await _searchMdns(address);
       // Let downstream calls know when mdns was used. This is helpful to inform
       // when determining if we want to use the external auth credentials for the signaling
       // in cases where the external signaling is the same as the external auth. For mdns
@@ -123,7 +123,7 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
       final dialOptsCopy = opts
         .._usingMdns = true
         ..authEntity = address;
-      return _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+      return await _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
     } on NotLocalAddressException catch (e) {
       _logger.d(e.toString());
     } catch (e) {
@@ -141,7 +141,7 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
   return _dialWebRtc(address, opts, sessionCallback);
 }
 
-Future<String> searchMdns(String address) async {
+Future<String> _searchMdns(String address) async {
   // We need to replace all periods with dashes, because this is how viam instances are broadcast locally.
   final targetName = address.replaceAll(RegExp(r'\.'), '-');
 
