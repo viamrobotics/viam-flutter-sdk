@@ -54,9 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _loading = true;
     });
 
+    // Be sure to create a .env file with these fields
     _robot = await RobotClient.atAddress(
       dotenv.env['ROBOT_LOCATION']!,
-      // RobotClientOptions.withLocationSecret('jnugort7sz3tw8k2514p4r828u8e5kianjx7yyh7kyvkbkig'),
       RobotClientOptions.withApiKey(
         dotenv.env['API_KEY_ID']!,
         dotenv.env['API_KEY']!,
