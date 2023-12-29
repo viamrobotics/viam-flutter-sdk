@@ -2,7 +2,6 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:image/image.dart' as img;
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
@@ -68,16 +67,15 @@ class _StreamScreenState extends State<StreamScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(widget.resourceName.name.toUpperCase()),
       ),
-      iosContentPadding: true,
       body: Center(
         child: Column(
           children: [
             const SizedBox(height: 16),
-            PlatformText(
+            Text(
               '${widget.resourceName.namespace}:${widget.resourceName.type}:${widget.resourceName.subtype}/${widget.resourceName.name}',
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),
@@ -86,7 +84,7 @@ class _StreamScreenState extends State<StreamScreen> {
             const SizedBox(height: 16),
             if (_imgLoaded) Image.memory(Uint8List.view(imageBytes!.buffer), scale: 3),
             const SizedBox(height: 16),
-            PlatformElevatedButton(
+            ElevatedButton(
               child: const Text('Get image'),
               onPressed: () => _getImage(),
             )
