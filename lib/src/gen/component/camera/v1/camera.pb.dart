@@ -650,6 +650,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     $core.bool? supportsPcd,
     IntrinsicParameters? intrinsicParameters,
     DistortionParameters? distortionParameters,
+    $core.Iterable<$core.String>? mimeTypes,
   }) {
     final $result = create();
     if (supportsPcd != null) {
@@ -661,6 +662,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     if (distortionParameters != null) {
       $result.distortionParameters = distortionParameters;
     }
+    if (mimeTypes != null) {
+      $result.mimeTypes.addAll(mimeTypes);
+    }
     return $result;
   }
   GetPropertiesResponse._() : super();
@@ -671,6 +675,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     ..aOB(1, _omitFieldNames ? '' : 'supportsPcd')
     ..aOM<IntrinsicParameters>(2, _omitFieldNames ? '' : 'intrinsicParameters', subBuilder: IntrinsicParameters.create)
     ..aOM<DistortionParameters>(3, _omitFieldNames ? '' : 'distortionParameters', subBuilder: DistortionParameters.create)
+    ..pPS(4, _omitFieldNames ? '' : 'mimeTypes')
     ..hasRequiredFields = false
   ;
 
@@ -732,6 +737,10 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   void clearDistortionParameters() => clearField(3);
   @$pb.TagNumber(3)
   DistortionParameters ensureDistortionParameters() => $_ensure(2);
+
+  /// Supported MIME types by the camera
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get mimeTypes => $_getList(3);
 }
 
 class Webcams extends $pb.GeneratedMessage {

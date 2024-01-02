@@ -13,6 +13,24 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// MapType represents the various types of map the navigation service can ingest.
+class MapType extends $pb.ProtobufEnum {
+  static const MapType MAP_TYPE_UNSPECIFIED = MapType._(0, _omitEnumNames ? '' : 'MAP_TYPE_UNSPECIFIED');
+  static const MapType MAP_TYPE_NONE = MapType._(1, _omitEnumNames ? '' : 'MAP_TYPE_NONE');
+  static const MapType MAP_TYPE_GPS = MapType._(2, _omitEnumNames ? '' : 'MAP_TYPE_GPS');
+
+  static const $core.List<MapType> values = <MapType> [
+    MAP_TYPE_UNSPECIFIED,
+    MAP_TYPE_NONE,
+    MAP_TYPE_GPS,
+  ];
+
+  static final $core.Map<$core.int, MapType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static MapType? valueOf($core.int value) => _byValue[value];
+
+  const MapType._($core.int v, $core.String n) : super(v, n);
+}
+
 class Mode extends $pb.ProtobufEnum {
   static const Mode MODE_UNSPECIFIED = Mode._(0, _omitEnumNames ? '' : 'MODE_UNSPECIFIED');
   static const Mode MODE_MANUAL = Mode._(1, _omitEnumNames ? '' : 'MODE_MANUAL');

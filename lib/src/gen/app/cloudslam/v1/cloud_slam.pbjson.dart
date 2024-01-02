@@ -237,34 +237,6 @@ final $typed_data.Uint8List getMappingSessionMetadataByIDResponseDescriptor = $c
     'RhdGEYASABKAsyJi52aWFtLmFwcC5jbG91ZHNsYW0udjEuTWFwcGluZ01ldGFkYXRhUg9zZXNz'
     'aW9uTWV0YWRhdGE=');
 
-@$core.Deprecated('Use updateMappingSessionMetadataByIDRequestDescriptor instead')
-const UpdateMappingSessionMetadataByIDRequest$json = {
-  '1': 'UpdateMappingSessionMetadataByIDRequest',
-  '2': [
-    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
-    {'1': 'end_status', '3': 2, '4': 1, '5': 14, '6': '.viam.app.cloudslam.v1.EndStatus', '10': 'endStatus'},
-    {'1': 'time_cloud_run_job_ended', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCloudRunJobEnded'},
-    {'1': 'error_msg', '3': 4, '4': 1, '5': 9, '10': 'errorMsg'},
-  ],
-};
-
-/// Descriptor for `UpdateMappingSessionMetadataByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateMappingSessionMetadataByIDRequestDescriptor = $convert.base64Decode(
-    'CidVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlcXVlc3QSHQoKc2Vzc2lvbl9pZB'
-    'gBIAEoCVIJc2Vzc2lvbklkEj8KCmVuZF9zdGF0dXMYAiABKA4yIC52aWFtLmFwcC5jbG91ZHNs'
-    'YW0udjEuRW5kU3RhdHVzUgllbmRTdGF0dXMSUgoYdGltZV9jbG91ZF9ydW5fam9iX2VuZGVkGA'
-    'MgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIUdGltZUNsb3VkUnVuSm9iRW5kZWQS'
-    'GwoJZXJyb3JfbXNnGAQgASgJUghlcnJvck1zZw==');
-
-@$core.Deprecated('Use updateMappingSessionMetadataByIDResponseDescriptor instead')
-const UpdateMappingSessionMetadataByIDResponse$json = {
-  '1': 'UpdateMappingSessionMetadataByIDResponse',
-};
-
-/// Descriptor for `UpdateMappingSessionMetadataByIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateMappingSessionMetadataByIDResponseDescriptor = $convert.base64Decode(
-    'CihVcGRhdGVNYXBwaW5nU2Vzc2lvbk1ldGFkYXRhQnlJRFJlc3BvbnNl');
-
 @$core.Deprecated('Use mappingMetadataDescriptor instead')
 const MappingMetadata$json = {
   '1': 'MappingMetadata',
