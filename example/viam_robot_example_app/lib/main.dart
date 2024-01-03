@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(_robot.resourceNames.where((element) => element.type == resourceTypeComponent).join('\n')),
                         ])
                       : _loading
-                          ? const CircularProgressIndicator()
+                          ? const CircularProgressIndicator.adaptive()
                           : Column(children: [
                               ViamButton(
                                 onPressed: _login,
