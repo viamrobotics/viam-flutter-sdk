@@ -38,7 +38,12 @@ class MovementSensorService extends MovementSensorServiceBase {
   Future<GetAccuracyResponse> getAccuracy(ServiceCall call, GetAccuracyRequest request) async {
     final movementSensor = _fromManager(request.name);
     final accuracy = await movementSensor.accuracy(extra: request.extra.toMap());
-    return GetAccuracyResponse()..accuracy.addAll(accuracy);
+    return GetAccuracyResponse()
+      ..accuracyM = accuracy.accuracyMap
+      ..hDOP = accuracy.hdop
+      ..vDOP = accuracy.vdop
+      ..nmeaFIX = accuracy.nmeaFix
+      ..compassError = accuracy.compassDegreeError;
   }
 
   @override

@@ -28,12 +28,11 @@ class FakeMovementSensor extends MovementSensor {
     return {'command': command};
   }
 
-  @override
-  Future<Map<String, double>> accuracy({Map<String, dynamic>? extra}) async {
-    this.extra = extra;
-    return {'accuracy': 0};
-  }
-
+@override
+Future<Accuracy> accuracy({Map<String, dynamic>? extra}) async {
+  this.extra = extra;
+  return Accuracy({}, 0.0, 0.0, 0, 0.0);
+}
   @override
   Future<Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
     this.extra = extra;
@@ -93,8 +92,14 @@ void main() {
     });
 
     test('accuracy', () async {
+      final expectedAccuracy = Accuracy({}, 0.0, 0.0, 0, 0.0);
       final result = await movementSensor.accuracy();
-      expect(result, {'accuracy': 0});
+
+      expect(result.accuracyMap, expectedAccuracy.accuracyMap);
+      expect(result.hdop, expectedAccuracy.hdop);
+      expect(result.vdop, expectedAccuracy.vdop);
+      expect(result.nmeaFix, expectedAccuracy.nmeaFix);
+      expect(result.compassDegreeError, expectedAccuracy.compassDegreeError);
     });
 
     test('angularVelocity', () async {
@@ -176,7 +181,12 @@ void main() {
       test('accuracy', () async {
         final client = MovementSensorServiceClient(channel);
         final result = await client.getAccuracy(GetAccuracyRequest()..name = name);
-        expect(result.accuracy, {'accuracy': 0});
+
+        expect(result.accuracyMap, {});
+        expect(result.hdop, 0.0);
+        expect(result.vdop, 0.0);
+        expect(result.nmeaFix, 0);
+        expect(result.compassDegreeError, 0.0);
       });
 
       test('angularVelocity', () async {
