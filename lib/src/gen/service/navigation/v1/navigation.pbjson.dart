@@ -13,6 +13,21 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use mapTypeDescriptor instead')
+const MapType$json = {
+  '1': 'MapType',
+  '2': [
+    {'1': 'MAP_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'MAP_TYPE_NONE', '2': 1},
+    {'1': 'MAP_TYPE_GPS', '2': 2},
+  ],
+};
+
+/// Descriptor for `MapType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List mapTypeDescriptor = $convert.base64Decode(
+    'CgdNYXBUeXBlEhgKFE1BUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNTUFQX1RZUEVfTk9ORRABEh'
+    'AKDE1BUF9UWVBFX0dQUxAC');
+
 @$core.Deprecated('Use modeDescriptor instead')
 const Mode$json = {
   '1': 'Mode',
@@ -268,4 +283,29 @@ const GetPathsResponse$json = {
 final $typed_data.Uint8List getPathsResponseDescriptor = $convert.base64Decode(
     'ChBHZXRQYXRoc1Jlc3BvbnNlEjYKBXBhdGhzGAEgAygLMiAudmlhbS5zZXJ2aWNlLm5hdmlnYX'
     'Rpb24udjEuUGF0aFIFcGF0aHM=');
+
+@$core.Deprecated('Use getPropertiesRequestDescriptor instead')
+const GetPropertiesRequest$json = {
+  '1': 'GetPropertiesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRQcm9wZXJ0aWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
+@$core.Deprecated('Use getPropertiesResponseDescriptor instead')
+const GetPropertiesResponse$json = {
+  '1': 'GetPropertiesResponse',
+  '2': [
+    {'1': 'map_type', '3': 1, '4': 1, '5': 14, '6': '.viam.service.navigation.v1.MapType', '10': 'mapType'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USPgoIbWFwX3R5cGUYASABKA4yIy52aWFtLnNlcnZpY2'
+    'UubmF2aWdhdGlvbi52MS5NYXBUeXBlUgdtYXBUeXBl');
 

@@ -237,6 +237,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/CheckPermissions',
       ($1.CheckPermissionsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.CheckPermissionsResponse.fromBuffer(value));
+  static final _$getRegistryItem = $grpc.ClientMethod<$1.GetRegistryItemRequest, $1.GetRegistryItemResponse>(
+      '/viam.app.v1.AppService/GetRegistryItem',
+      ($1.GetRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetRegistryItemResponse.fromBuffer(value));
   static final _$createRegistryItem = $grpc.ClientMethod<$1.CreateRegistryItemRequest, $1.CreateRegistryItemResponse>(
       '/viam.app.v1.AppService/CreateRegistryItem',
       ($1.CreateRegistryItemRequest value) => value.writeToBuffer(),
@@ -249,6 +253,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListRegistryItems',
       ($1.ListRegistryItemsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.ListRegistryItemsResponse.fromBuffer(value));
+  static final _$deleteRegistryItem = $grpc.ClientMethod<$1.DeleteRegistryItemRequest, $1.DeleteRegistryItemResponse>(
+      '/viam.app.v1.AppService/DeleteRegistryItem',
+      ($1.DeleteRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.DeleteRegistryItemResponse.fromBuffer(value));
   static final _$createModule = $grpc.ClientMethod<$1.CreateModuleRequest, $1.CreateModuleResponse>(
       '/viam.app.v1.AppService/CreateModule',
       ($1.CreateModuleRequest value) => value.writeToBuffer(),
@@ -512,6 +520,10 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$checkPermissions, request, options: options);
   }
 
+  $grpc.ResponseFuture<$1.GetRegistryItemResponse> getRegistryItem($1.GetRegistryItemRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getRegistryItem, request, options: options);
+  }
+
   $grpc.ResponseFuture<$1.CreateRegistryItemResponse> createRegistryItem($1.CreateRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createRegistryItem, request, options: options);
   }
@@ -522,6 +534,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.ListRegistryItemsResponse> listRegistryItems($1.ListRegistryItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listRegistryItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.DeleteRegistryItemResponse> deleteRegistryItem($1.DeleteRegistryItemRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteRegistryItem, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.CreateModuleResponse> createModule($1.CreateModuleRequest request, {$grpc.CallOptions? options}) {
@@ -948,6 +964,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.CheckPermissionsRequest.fromBuffer(value),
         ($1.CheckPermissionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetRegistryItemRequest, $1.GetRegistryItemResponse>(
+        'GetRegistryItem',
+        getRegistryItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetRegistryItemRequest.fromBuffer(value),
+        ($1.GetRegistryItemResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateRegistryItemRequest, $1.CreateRegistryItemResponse>(
         'CreateRegistryItem',
         createRegistryItem_Pre,
@@ -969,6 +992,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.ListRegistryItemsRequest.fromBuffer(value),
         ($1.ListRegistryItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.DeleteRegistryItemRequest, $1.DeleteRegistryItemResponse>(
+        'DeleteRegistryItem',
+        deleteRegistryItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.DeleteRegistryItemRequest.fromBuffer(value),
+        ($1.DeleteRegistryItemResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateModuleRequest, $1.CreateModuleResponse>(
         'CreateModule',
         createModule_Pre,
@@ -1257,6 +1287,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return checkPermissions(call, await request);
   }
 
+  $async.Future<$1.GetRegistryItemResponse> getRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$1.GetRegistryItemRequest> request) async {
+    return getRegistryItem(call, await request);
+  }
+
   $async.Future<$1.CreateRegistryItemResponse> createRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$1.CreateRegistryItemRequest> request) async {
     return createRegistryItem(call, await request);
   }
@@ -1267,6 +1301,10 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$1.ListRegistryItemsResponse> listRegistryItems_Pre($grpc.ServiceCall call, $async.Future<$1.ListRegistryItemsRequest> request) async {
     return listRegistryItems(call, await request);
+  }
+
+  $async.Future<$1.DeleteRegistryItemResponse> deleteRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$1.DeleteRegistryItemRequest> request) async {
+    return deleteRegistryItem(call, await request);
   }
 
   $async.Future<$1.CreateModuleResponse> createModule_Pre($grpc.ServiceCall call, $async.Future<$1.CreateModuleRequest> request) async {
@@ -1359,9 +1397,11 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$1.ChangeRoleResponse> changeRole($grpc.ServiceCall call, $1.ChangeRoleRequest request);
   $async.Future<$1.ListAuthorizationsResponse> listAuthorizations($grpc.ServiceCall call, $1.ListAuthorizationsRequest request);
   $async.Future<$1.CheckPermissionsResponse> checkPermissions($grpc.ServiceCall call, $1.CheckPermissionsRequest request);
+  $async.Future<$1.GetRegistryItemResponse> getRegistryItem($grpc.ServiceCall call, $1.GetRegistryItemRequest request);
   $async.Future<$1.CreateRegistryItemResponse> createRegistryItem($grpc.ServiceCall call, $1.CreateRegistryItemRequest request);
   $async.Future<$1.UpdateRegistryItemResponse> updateRegistryItem($grpc.ServiceCall call, $1.UpdateRegistryItemRequest request);
   $async.Future<$1.ListRegistryItemsResponse> listRegistryItems($grpc.ServiceCall call, $1.ListRegistryItemsRequest request);
+  $async.Future<$1.DeleteRegistryItemResponse> deleteRegistryItem($grpc.ServiceCall call, $1.DeleteRegistryItemRequest request);
   $async.Future<$1.CreateModuleResponse> createModule($grpc.ServiceCall call, $1.CreateModuleRequest request);
   $async.Future<$1.UpdateModuleResponse> updateModule($grpc.ServiceCall call, $1.UpdateModuleRequest request);
   $async.Future<$1.UploadModuleFileResponse> uploadModuleFile($grpc.ServiceCall call, $async.Stream<$1.UploadModuleFileRequest> request);

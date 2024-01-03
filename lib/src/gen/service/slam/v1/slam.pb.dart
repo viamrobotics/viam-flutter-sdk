@@ -16,6 +16,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 import '../../../google/protobuf/timestamp.pb.dart' as $3;
+import 'slam.pbenum.dart';
+
+export 'slam.pbenum.dart';
 
 class GetPositionRequest extends $pb.GeneratedMessage {
   factory GetPositionRequest({
@@ -476,6 +479,122 @@ class GetLatestMapInfoResponse extends $pb.GeneratedMessage {
   void clearLastMapUpdate() => clearField(1);
   @$pb.TagNumber(1)
   $3.Timestamp ensureLastMapUpdate() => $_ensure(0);
+}
+
+class GetPropertiesRequest extends $pb.GeneratedMessage {
+  factory GetPropertiesRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  GetPropertiesRequest._() : super();
+  factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest clone() => GetPropertiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest copyWith(void Function(GetPropertiesRequest) updates) => super.copyWith((message) => updates(message as GetPropertiesRequest)) as GetPropertiesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest create() => GetPropertiesRequest._();
+  GetPropertiesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesRequest> createRepeated() => $pb.PbList<GetPropertiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
+  static GetPropertiesRequest? _defaultInstance;
+
+  /// Name of the slam service
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+/// Returns properties information for the named slam service
+class GetPropertiesResponse extends $pb.GeneratedMessage {
+  factory GetPropertiesResponse({
+    $core.bool? cloudSlam,
+    MappingMode? mappingMode,
+  }) {
+    final $result = create();
+    if (cloudSlam != null) {
+      $result.cloudSlam = cloudSlam;
+    }
+    if (mappingMode != null) {
+      $result.mappingMode = mappingMode;
+    }
+    return $result;
+  }
+  GetPropertiesResponse._() : super();
+  factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'cloudSlam')
+    ..e<MappingMode>(2, _omitFieldNames ? '' : 'mappingMode', $pb.PbFieldType.OE, defaultOrMaker: MappingMode.MAPPING_MODE_UNSPECIFIED, valueOf: MappingMode.valueOf, enumValues: MappingMode.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse clone() => GetPropertiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse copyWith(void Function(GetPropertiesResponse) updates) => super.copyWith((message) => updates(message as GetPropertiesResponse)) as GetPropertiesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse create() => GetPropertiesResponse._();
+  GetPropertiesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesResponse> createRepeated() => $pb.PbList<GetPropertiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesResponse>(create);
+  static GetPropertiesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get cloudSlam => $_getBF(0);
+  @$pb.TagNumber(1)
+  set cloudSlam($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCloudSlam() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCloudSlam() => clearField(1);
+
+  @$pb.TagNumber(2)
+  MappingMode get mappingMode => $_getN(1);
+  @$pb.TagNumber(2)
+  set mappingMode(MappingMode v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMappingMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMappingMode() => clearField(2);
 }
 
 

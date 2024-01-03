@@ -13,6 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use mappingModeDescriptor instead')
+const MappingMode$json = {
+  '1': 'MappingMode',
+  '2': [
+    {'1': 'MAPPING_MODE_UNSPECIFIED', '2': 0},
+    {'1': 'MAPPING_MODE_CREATE_NEW_MAP', '2': 1},
+    {'1': 'MAPPING_MODE_LOCALIZE_ONLY', '2': 2},
+    {'1': 'MAPPING_MODE_UPDATE_EXISTING_MAP', '2': 3},
+  ],
+};
+
+/// Descriptor for `MappingMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List mappingModeDescriptor = $convert.base64Decode(
+    'CgtNYXBwaW5nTW9kZRIcChhNQVBQSU5HX01PREVfVU5TUEVDSUZJRUQQABIfChtNQVBQSU5HX0'
+    '1PREVfQ1JFQVRFX05FV19NQVAQARIeChpNQVBQSU5HX01PREVfTE9DQUxJWkVfT05MWRACEiQK'
+    'IE1BUFBJTkdfTU9ERV9VUERBVEVfRVhJU1RJTkdfTUFQEAM=');
+
 @$core.Deprecated('Use getPositionRequestDescriptor instead')
 const GetPositionRequest$json = {
   '1': 'GetPositionRequest',
@@ -115,4 +132,31 @@ const GetLatestMapInfoResponse$json = {
 final $typed_data.Uint8List getLatestMapInfoResponseDescriptor = $convert.base64Decode(
     'ChhHZXRMYXRlc3RNYXBJbmZvUmVzcG9uc2USQgoPbGFzdF9tYXBfdXBkYXRlGAEgASgLMhouZ2'
     '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFINbGFzdE1hcFVwZGF0ZQ==');
+
+@$core.Deprecated('Use getPropertiesRequestDescriptor instead')
+const GetPropertiesRequest$json = {
+  '1': 'GetPropertiesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRQcm9wZXJ0aWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
+@$core.Deprecated('Use getPropertiesResponseDescriptor instead')
+const GetPropertiesResponse$json = {
+  '1': 'GetPropertiesResponse',
+  '2': [
+    {'1': 'cloud_slam', '3': 1, '4': 1, '5': 8, '10': 'cloudSlam'},
+    {'1': 'mapping_mode', '3': 2, '4': 1, '5': 14, '6': '.viam.service.slam.v1.MappingMode', '10': 'mappingMode'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USHQoKY2xvdWRfc2xhbRgBIAEoCFIJY2xvdWRTbGFtEk'
+    'QKDG1hcHBpbmdfbW9kZRgCIAEoDjIhLnZpYW0uc2VydmljZS5zbGFtLnYxLk1hcHBpbmdNb2Rl'
+    'UgttYXBwaW5nTW9kZQ==');
 

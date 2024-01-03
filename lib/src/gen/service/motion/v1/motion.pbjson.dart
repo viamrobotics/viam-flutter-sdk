@@ -227,58 +227,14 @@ final $typed_data.Uint8List moveOnGlobeRequestDescriptor = $convert.base64Decode
 const MoveOnGlobeResponse$json = {
   '1': 'MoveOnGlobeResponse',
   '2': [
-    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+    {'1': 'execution_id', '3': 1, '4': 1, '5': 9, '10': 'executionId'},
   ],
 };
 
 /// Descriptor for `MoveOnGlobeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moveOnGlobeResponseDescriptor = $convert.base64Decode(
-    'ChNNb3ZlT25HbG9iZVJlc3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3M=');
-
-@$core.Deprecated('Use moveOnGlobeNewRequestDescriptor instead')
-const MoveOnGlobeNewRequest$json = {
-  '1': 'MoveOnGlobeNewRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'destination'},
-    {'1': 'heading', '3': 3, '4': 1, '5': 1, '9': 0, '10': 'heading', '17': true},
-    {'1': 'component_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
-    {'1': 'movement_sensor_name', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'movementSensorName'},
-    {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.GeoObstacle', '10': 'obstacles'},
-    {'1': 'motion_configuration', '3': 7, '4': 1, '5': 11, '6': '.viam.service.motion.v1.MotionConfiguration', '9': 1, '10': 'motionConfiguration', '17': true},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
-  ],
-  '8': [
-    {'1': '_heading'},
-    {'1': '_motion_configuration'},
-  ],
-};
-
-/// Descriptor for `MoveOnGlobeNewRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List moveOnGlobeNewRequestDescriptor = $convert.base64Decode(
-    'ChVNb3ZlT25HbG9iZU5ld1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRI6CgtkZXN0aW5hdG'
-    'lvbhgCIAEoCzIYLnZpYW0uY29tbW9uLnYxLkdlb1BvaW50UgtkZXN0aW5hdGlvbhIdCgdoZWFk'
-    'aW5nGAMgASgBSABSB2hlYWRpbmeIAQESQwoOY29tcG9uZW50X25hbWUYBCABKAsyHC52aWFtLm'
-    'NvbW1vbi52MS5SZXNvdXJjZU5hbWVSDWNvbXBvbmVudE5hbWUSTgoUbW92ZW1lbnRfc2Vuc29y'
-    'X25hbWUYBSABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVSEm1vdmVtZW50U2Vuc2'
-    '9yTmFtZRI5CglvYnN0YWNsZXMYBiADKAsyGy52aWFtLmNvbW1vbi52MS5HZW9PYnN0YWNsZVIJ'
-    'b2JzdGFjbGVzEmMKFG1vdGlvbl9jb25maWd1cmF0aW9uGAcgASgLMisudmlhbS5zZXJ2aWNlLm'
-    '1vdGlvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSAFSE21vdGlvbkNvbmZpZ3VyYXRpb26IAQES'
-    'LQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYUIKCghfaGVhZG'
-    'luZ0IXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
-
-@$core.Deprecated('Use moveOnGlobeNewResponseDescriptor instead')
-const MoveOnGlobeNewResponse$json = {
-  '1': 'MoveOnGlobeNewResponse',
-  '2': [
-    {'1': 'execution_id', '3': 1, '4': 1, '5': 9, '10': 'executionId'},
-  ],
-};
-
-/// Descriptor for `MoveOnGlobeNewResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List moveOnGlobeNewResponseDescriptor = $convert.base64Decode(
-    'ChZNb3ZlT25HbG9iZU5ld1Jlc3BvbnNlEiEKDGV4ZWN1dGlvbl9pZBgBIAEoCVILZXhlY3V0aW'
-    '9uSWQ=');
+    'ChNNb3ZlT25HbG9iZVJlc3BvbnNlEiEKDGV4ZWN1dGlvbl9pZBgBIAEoCVILZXhlY3V0aW9uSW'
+    'Q=');
 
 @$core.Deprecated('Use getPoseRequestDescriptor instead')
 const GetPoseRequest$json = {

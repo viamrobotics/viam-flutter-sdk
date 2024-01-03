@@ -917,11 +917,11 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
 class MoveOnGlobeResponse extends $pb.GeneratedMessage {
   factory MoveOnGlobeResponse({
-    $core.bool? success,
+    $core.String? executionId,
   }) {
     final $result = create();
-    if (success != null) {
-      $result.success = success;
+    if (executionId != null) {
+      $result.executionId = executionId;
     }
     return $result;
   }
@@ -930,7 +930,7 @@ class MoveOnGlobeResponse extends $pb.GeneratedMessage {
   factory MoveOnGlobeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..aOS(1, _omitFieldNames ? '' : 'executionId')
     ..hasRequiredFields = false
   ;
 
@@ -954,216 +954,6 @@ class MoveOnGlobeResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static MoveOnGlobeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeResponse>(create);
   static MoveOnGlobeResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get success => $_getBF(0);
-  @$pb.TagNumber(1)
-  set success($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasSuccess() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearSuccess() => clearField(1);
-}
-
-class MoveOnGlobeNewRequest extends $pb.GeneratedMessage {
-  factory MoveOnGlobeNewRequest({
-    $core.String? name,
-    $1.GeoPoint? destination,
-    $core.double? heading,
-    $1.ResourceName? componentName,
-    $1.ResourceName? movementSensorName,
-    $core.Iterable<$1.GeoObstacle>? obstacles,
-    MotionConfiguration? motionConfiguration,
-    $2.Struct? extra,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (destination != null) {
-      $result.destination = destination;
-    }
-    if (heading != null) {
-      $result.heading = heading;
-    }
-    if (componentName != null) {
-      $result.componentName = componentName;
-    }
-    if (movementSensorName != null) {
-      $result.movementSensorName = movementSensorName;
-    }
-    if (obstacles != null) {
-      $result.obstacles.addAll(obstacles);
-    }
-    if (motionConfiguration != null) {
-      $result.motionConfiguration = motionConfiguration;
-    }
-    if (extra != null) {
-      $result.extra = extra;
-    }
-    return $result;
-  }
-  MoveOnGlobeNewRequest._() : super();
-  factory MoveOnGlobeNewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MoveOnGlobeNewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeNewRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$1.GeoPoint>(2, _omitFieldNames ? '' : 'destination', subBuilder: $1.GeoPoint.create)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'heading', $pb.PbFieldType.OD)
-    ..aOM<$1.ResourceName>(4, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
-    ..aOM<$1.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorName', subBuilder: $1.ResourceName.create)
-    ..pc<$1.GeoObstacle>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoObstacle.create)
-    ..aOM<MotionConfiguration>(7, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
-    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  MoveOnGlobeNewRequest clone() => MoveOnGlobeNewRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  MoveOnGlobeNewRequest copyWith(void Function(MoveOnGlobeNewRequest) updates) => super.copyWith((message) => updates(message as MoveOnGlobeNewRequest)) as MoveOnGlobeNewRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static MoveOnGlobeNewRequest create() => MoveOnGlobeNewRequest._();
-  MoveOnGlobeNewRequest createEmptyInstance() => create();
-  static $pb.PbList<MoveOnGlobeNewRequest> createRepeated() => $pb.PbList<MoveOnGlobeNewRequest>();
-  @$core.pragma('dart2js:noInline')
-  static MoveOnGlobeNewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeNewRequest>(create);
-  static MoveOnGlobeNewRequest? _defaultInstance;
-
-  /// Name of the motion service
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  /// Destination, encoded as a GeoPoint
-  @$pb.TagNumber(2)
-  $1.GeoPoint get destination => $_getN(1);
-  @$pb.TagNumber(2)
-  set destination($1.GeoPoint v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasDestination() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearDestination() => clearField(2);
-  @$pb.TagNumber(2)
-  $1.GeoPoint ensureDestination() => $_ensure(1);
-
-  /// Optional compass heading to achieve at the destination, in degrees [0-360)
-  @$pb.TagNumber(3)
-  $core.double get heading => $_getN(2);
-  @$pb.TagNumber(3)
-  set heading($core.double v) { $_setDouble(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasHeading() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearHeading() => clearField(3);
-
-  /// Component on the robot to move to the specified destination
-  @$pb.TagNumber(4)
-  $1.ResourceName get componentName => $_getN(3);
-  @$pb.TagNumber(4)
-  set componentName($1.ResourceName v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasComponentName() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearComponentName() => clearField(4);
-  @$pb.TagNumber(4)
-  $1.ResourceName ensureComponentName() => $_ensure(3);
-
-  /// Name of the movement sensor which will be used to check robot location
-  @$pb.TagNumber(5)
-  $1.ResourceName get movementSensorName => $_getN(4);
-  @$pb.TagNumber(5)
-  set movementSensorName($1.ResourceName v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasMovementSensorName() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearMovementSensorName() => clearField(5);
-  @$pb.TagNumber(5)
-  $1.ResourceName ensureMovementSensorName() => $_ensure(4);
-
-  /// Obstacles to be considered for motion planning
-  @$pb.TagNumber(6)
-  $core.List<$1.GeoObstacle> get obstacles => $_getList(5);
-
-  /// Optional set of motion configuration options
-  @$pb.TagNumber(7)
-  MotionConfiguration get motionConfiguration => $_getN(6);
-  @$pb.TagNumber(7)
-  set motionConfiguration(MotionConfiguration v) { setField(7, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasMotionConfiguration() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearMotionConfiguration() => clearField(7);
-  @$pb.TagNumber(7)
-  MotionConfiguration ensureMotionConfiguration() => $_ensure(6);
-
-  /// Additional arguments to the method
-  @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(7);
-  @$pb.TagNumber(99)
-  set extra($2.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(7);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(7);
-}
-
-class MoveOnGlobeNewResponse extends $pb.GeneratedMessage {
-  factory MoveOnGlobeNewResponse({
-    $core.String? executionId,
-  }) {
-    final $result = create();
-    if (executionId != null) {
-      $result.executionId = executionId;
-    }
-    return $result;
-  }
-  MoveOnGlobeNewResponse._() : super();
-  factory MoveOnGlobeNewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MoveOnGlobeNewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeNewResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'executionId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  MoveOnGlobeNewResponse clone() => MoveOnGlobeNewResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  MoveOnGlobeNewResponse copyWith(void Function(MoveOnGlobeNewResponse) updates) => super.copyWith((message) => updates(message as MoveOnGlobeNewResponse)) as MoveOnGlobeNewResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static MoveOnGlobeNewResponse create() => MoveOnGlobeNewResponse._();
-  MoveOnGlobeNewResponse createEmptyInstance() => create();
-  static $pb.PbList<MoveOnGlobeNewResponse> createRepeated() => $pb.PbList<MoveOnGlobeNewResponse>();
-  @$core.pragma('dart2js:noInline')
-  static MoveOnGlobeNewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnGlobeNewResponse>(create);
-  static MoveOnGlobeNewResponse? _defaultInstance;
 
   /// The unique ID which identifies the execution.
   /// Multiple plans will share the same execution_id if they were

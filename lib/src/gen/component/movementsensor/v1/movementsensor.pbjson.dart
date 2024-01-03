@@ -13,6 +13,30 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use nmeaGGAFixDescriptor instead')
+const NmeaGGAFix$json = {
+  '1': 'NmeaGGAFix',
+  '2': [
+    {'1': 'NMEA_GGA_FIX_INVALID_UNSPECIFIED', '2': 0},
+    {'1': 'NMEA_GGA_FIX_GNSS', '2': 1},
+    {'1': 'NMEA_GGA_FIX_DGPS', '2': 2},
+    {'1': 'NMEA_GGA_FIX_PPS', '2': 3},
+    {'1': 'NMEA_GGA_FIX_RTK_FIXED', '2': 4},
+    {'1': 'NMEA_GGA_FIX_RTK_FLOAT', '2': 5},
+    {'1': 'NMEA_GGA_FIX_DEAD_RECKONING', '2': 6},
+    {'1': 'NMEA_GGA_FIX_MANUAL', '2': 7},
+    {'1': 'NMEA_GGA_FIX_SIMULATION', '2': 8},
+  ],
+};
+
+/// Descriptor for `NmeaGGAFix`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List nmeaGGAFixDescriptor = $convert.base64Decode(
+    'CgpObWVhR0dBRml4EiQKIE5NRUFfR0dBX0ZJWF9JTlZBTElEX1VOU1BFQ0lGSUVEEAASFQoRTk'
+    '1FQV9HR0FfRklYX0dOU1MQARIVChFOTUVBX0dHQV9GSVhfREdQUxACEhQKEE5NRUFfR0dBX0ZJ'
+    'WF9QUFMQAxIaChZOTUVBX0dHQV9GSVhfUlRLX0ZJWEVEEAQSGgoWTk1FQV9HR0FfRklYX1JUS1'
+    '9GTE9BVBAFEh8KG05NRUFfR0dBX0ZJWF9ERUFEX1JFQ0tPTklORxAGEhcKE05NRUFfR0dBX0ZJ'
+    'WF9NQU5VQUwQBxIbChdOTUVBX0dHQV9GSVhfU0lNVUxBVElPThAI');
+
 @$core.Deprecated('Use getLinearVelocityRequestDescriptor instead')
 const GetLinearVelocityRequest$json = {
   '1': 'GetLinearVelocityRequest',
@@ -204,8 +228,18 @@ const GetAccuracyResponse$json = {
   '1': 'GetAccuracyResponse',
   '2': [
     {'1': 'accuracy', '3': 1, '4': 3, '5': 11, '6': '.viam.component.movementsensor.v1.GetAccuracyResponse.AccuracyEntry', '10': 'accuracy'},
+    {'1': 'position_hdop', '3': 2, '4': 1, '5': 2, '9': 0, '10': 'positionHdop', '17': true},
+    {'1': 'position_vdop', '3': 3, '4': 1, '5': 2, '9': 1, '10': 'positionVdop', '17': true},
+    {'1': 'position_nmea_gga_fix', '3': 4, '4': 1, '5': 14, '6': '.viam.component.movementsensor.v1.NmeaGGAFix', '9': 2, '10': 'positionNmeaGgaFix', '17': true},
+    {'1': 'compass_degrees_error', '3': 5, '4': 1, '5': 2, '9': 3, '10': 'compassDegreesError', '17': true},
   ],
   '3': [GetAccuracyResponse_AccuracyEntry$json],
+  '8': [
+    {'1': '_position_hdop'},
+    {'1': '_position_vdop'},
+    {'1': '_position_nmea_gga_fix'},
+    {'1': '_compass_degrees_error'},
+  ],
 };
 
 @$core.Deprecated('Use getAccuracyResponseDescriptor instead')
@@ -222,8 +256,14 @@ const GetAccuracyResponse_AccuracyEntry$json = {
 final $typed_data.Uint8List getAccuracyResponseDescriptor = $convert.base64Decode(
     'ChNHZXRBY2N1cmFjeVJlc3BvbnNlEl8KCGFjY3VyYWN5GAEgAygLMkMudmlhbS5jb21wb25lbn'
     'QubW92ZW1lbnRzZW5zb3IudjEuR2V0QWNjdXJhY3lSZXNwb25zZS5BY2N1cmFjeUVudHJ5Ughh'
-    'Y2N1cmFjeRo7Cg1BY2N1cmFjeUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgAS'
-    'gCUgV2YWx1ZToCOAE=');
+    'Y2N1cmFjeRIoCg1wb3NpdGlvbl9oZG9wGAIgASgCSABSDHBvc2l0aW9uSGRvcIgBARIoCg1wb3'
+    'NpdGlvbl92ZG9wGAMgASgCSAFSDHBvc2l0aW9uVmRvcIgBARJkChVwb3NpdGlvbl9ubWVhX2dn'
+    'YV9maXgYBCABKA4yLC52aWFtLmNvbXBvbmVudC5tb3ZlbWVudHNlbnNvci52MS5ObWVhR0dBRm'
+    'l4SAJSEnBvc2l0aW9uTm1lYUdnYUZpeIgBARI3ChVjb21wYXNzX2RlZ3JlZXNfZXJyb3IYBSAB'
+    'KAJIA1ITY29tcGFzc0RlZ3JlZXNFcnJvcogBARo7Cg1BY2N1cmFjeUVudHJ5EhAKA2tleRgBIA'
+    'EoCVIDa2V5EhQKBXZhbHVlGAIgASgCUgV2YWx1ZToCOAFCEAoOX3Bvc2l0aW9uX2hkb3BCEAoO'
+    'X3Bvc2l0aW9uX3Zkb3BCGAoWX3Bvc2l0aW9uX25tZWFfZ2dhX2ZpeEIYChZfY29tcGFzc19kZW'
+    'dyZWVzX2Vycm9y');
 
 @$core.Deprecated('Use getLinearAccelerationRequestDescriptor instead')
 const GetLinearAccelerationRequest$json = {
