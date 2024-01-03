@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets/resources/board.dart';
 
@@ -11,16 +10,15 @@ class BoardScreen extends StatelessWidget {
 
   @override
   Widget build(Object context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(resourceName.name.toUpperCase()),
       ),
-      iosContentPadding: true,
       body: Center(
         child: Column(
           children: [
             const SizedBox(height: 16),
-            PlatformText(
+            Text(
               '${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}',
               style: const TextStyle(fontWeight: FontWeight.w300),
             ),

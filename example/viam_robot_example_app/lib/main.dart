@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
 
@@ -10,6 +8,7 @@ import 'screens/screens.dart';
 void main() async {
   // Load the `.env` file
   await dotenv.load();
+
   runApp(const MyApp());
 }
 
@@ -18,46 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final materialTheme = ThemeData(
-      cupertinoOverrideTheme: const CupertinoThemeData(
-        primaryColor: Color(0xff127EFB),
-      ),
-      primarySwatch: Colors.green,
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: ButtonStyle(
-          padding: MaterialStateProperty.all(const EdgeInsets.all(16.0)),
-          foregroundColor: MaterialStateProperty.all(const Color(0xFF3DDC84)),
-        ),
-      ),
-    );
-
-    return Theme(
-      data: materialTheme,
-      child: PlatformProvider(
-        settings: PlatformSettingsData(
-          iosUsesMaterialWidgets: true,
-          iosUseZeroPaddingForAppbarPlatformIcon: true,
-        ),
-        builder: (context) => PlatformApp(
-          localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-            DefaultMaterialLocalizations.delegate,
-            DefaultWidgetsLocalizations.delegate,
-            DefaultCupertinoLocalizations.delegate,
-          ],
-          title: 'Viam Example',
-          home: const MyHomePage(
-            title: 'Viam Example',
-          ),
-          material: (_, __) => MaterialAppData(
-            theme: materialTheme,
-          ),
-          cupertino: (_, __) => CupertinoAppData(
-            theme: const CupertinoThemeData(
-              brightness: Brightness.light,
-              primaryColor: Color(0xff127EFB),
-            ),
-          ),
-        ),
+    return const MaterialApp(
+      title: 'Viam Example',
+      home: MyHomePage(
+        title: 'Viam Example',
       ),
     );
   }
@@ -79,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<ResourceName> _resourceNames = [];
   late RobotClient _robot;
 
-  void _login() {
+  Future<void> _login() async {
     if (_loading) {
       return;
     }
@@ -91,42 +54,29 @@ class _MyHomePageState extends State<MyHomePage> {
       _loading = true;
     });
 
-    Future<RobotClient> robotFut;
+    // Be sure to create a .env file with these fields
+    _robot = await RobotClient.atAddress(
+      dotenv.env['ROBOT_LOCATION']!,
+      RobotClientOptions.withApiKey(
+        dotenv.env['API_KEY_ID']!,
+        dotenv.env['API_KEY']!,
+      ),
+    );
 
-    if (dotenv.env['ROBOT_LOCATION'] != null && dotenv.env['LOCATION_SECRET'] != null) {
-      robotFut = RobotClient.atAddress(
-        dotenv.env['ROBOT_LOCATION'] ?? '',
-        RobotClientOptions.withLocationSecret(dotenv.env['LOCATION_SECRET'] ?? ''),
-      );
-    } else if (dotenv.env['API_KEY_ID'] != null && dotenv.env['API_KEY'] != null) {
-      robotFut = RobotClient.atAddress(
-        dotenv.env['ROBOT_LOCATION'] ?? '', // or whatever default value you want
-        RobotClientOptions.withApiKey(
-          dotenv.env['API_KEY_ID'] ?? '',
-          dotenv.env['API_KEY'] ?? '',
-        ),
-      );
-    } else {
-      throw Exception('None of the required variables are defined in .env. Please see README.md for more information.');
+    final services = _robot.resourceNames.where((element) => element.type == resourceTypeService);
+    final components = _robot.resourceNames.where((element) => element.type == resourceTypeComponent);
+
+    for (ResourceName component in components) {
+      if (component.subtype == Camera.subtype.resourceSubtype) {
+        _cameraName = component;
+      }
     }
 
-    robotFut.then((value) {
-      _robot = value;
-      final services = _robot.resourceNames.where((element) => element.type == resourceTypeService);
-      final components = _robot.resourceNames.where((element) => element.type == resourceTypeComponent);
-
-      for (ResourceName component in components) {
-        if (component.subtype == Camera.subtype.resourceSubtype) {
-          _cameraName = component;
-        }
-      }
-
-      setState(() {
-        _loggedIn = true;
-        _loading = false;
-        _resourceNames.addAll(services);
-        _resourceNames.addAll(components);
-      });
+    setState(() {
+      _loggedIn = true;
+      _loading = false;
+      _resourceNames.addAll(services);
+      _resourceNames.addAll(components);
     });
   }
 
@@ -189,23 +139,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(widget.title),
       ),
-      iosContentPadding: true,
       body: _loggedIn
           ? ListView.builder(
               itemCount: _resourceNames.length,
               itemBuilder: (context, index) {
                 final resourceName = _resourceNames[index];
                 return Column(children: [
-                  PlatformListTile(
+                  ListTile(
                     title: Text(resourceName.name),
                     subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}/${resourceName.name}'),
-                    trailing: _isNavigable(resourceName) ? Icon(context.platformIcons.rightChevron) : null,
+                    trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
                     onTap: () => _isNavigable(resourceName)
-                        ? Navigator.push(context, platformPageRoute(context: context, builder: (context) => _getScreen(resourceName)!))
+                        ? Navigator.push(context, MaterialPageRoute(builder: (context) => _getScreen(resourceName)!))
                         : null,
                   ),
                   const Divider(height: 0, indent: 0, endIndent: 0)
@@ -223,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(_robot.resourceNames.where((element) => element.type == resourceTypeComponent).join('\n')),
                         ])
                       : _loading
-                          ? PlatformCircularProgressIndicator()
+                          ? const CircularProgressIndicator.adaptive()
                           : Column(children: [
                               ViamButton(
                                 onPressed: _login,

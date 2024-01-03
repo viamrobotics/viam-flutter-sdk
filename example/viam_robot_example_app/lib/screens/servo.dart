@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
 import 'package:viam_sdk/viam_sdk.dart';
 
 class ServoScreen extends StatefulWidget {
@@ -46,18 +46,17 @@ class _ServoScreenState extends State<ServoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text(widget.resourceName.name.toUpperCase()),
       ),
-      iosContentPadding: true,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               const Padding(padding: EdgeInsets.symmetric(vertical: 8, horizontal: 0)),
-              PlatformText(
+              Text(
                 '${widget.resourceName.namespace}:${widget.resourceName.type}:${widget.resourceName.subtype}/${widget.resourceName.name}',
                 style: const TextStyle(fontWeight: FontWeight.w300),
               ),

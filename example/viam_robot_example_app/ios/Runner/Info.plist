@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Viam requires access to your devices local network to connect to your devices.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_rpc._tcp</string>
+	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
