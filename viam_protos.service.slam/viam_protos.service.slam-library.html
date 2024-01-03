@@ -135,6 +135,32 @@
   
 </dd>
 
+        <dt id="GetPropertiesRequest">
+  <span class="name "><a href="../viam_protos.service.slam/GetPropertiesRequest-class.html">GetPropertiesRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="GetPropertiesResponse">
+  <span class="name "><a href="../viam_protos.service.slam/GetPropertiesResponse-class.html">GetPropertiesResponse</a></span> 
+
+</dt>
+<dd>
+  Returns properties information for the named slam service
+</dd>
+
+        <dt id="MappingMode">
+  <span class="name "><a href="../viam_protos.service.slam/MappingMode-class.html">MappingMode</a></span> 
+
+</dt>
+<dd>
+  MappingMode represnts the various form of mapping and localizing SLAM can perform.
+These include, creating a new map, localizing on an existiing map and updating an
+exisiting map.
+</dd>
+
         <dt id="SLAMServiceBase">
   <span class="name "><a href="../viam_protos.service.slam/SLAMServiceBase-class.html">SLAMServiceBase</a></span> 
 
@@ -280,6 +306,51 @@
     </div>
 </dd>
 
+        <dt id="GetPropertiesRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.slam/GetPropertiesRequest$json-constant.html">GetPropertiesRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPropertiesRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
+    </div>
+</dd>
+
+        <dt id="GetPropertiesResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.slam/GetPropertiesResponse$json-constant.html">GetPropertiesResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPropertiesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;cloud_slam&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;cloudSlam&#39;}, {&#39;1&#39;…</code></span>
+    </div>
+</dd>
+
+        <dt id="MappingMode$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.slam/MappingMode$json-constant.html">MappingMode$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MappingMode&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;MAPPING_MODE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;MAPPING_MODE_CREATE_NEW_MAP&#39;, &#39;2&#39; : 1}, {&#39;…</code></span>
+    </div>
+</dd>
+
       </dl>
     </section>
 
@@ -371,6 +442,39 @@
 </dt>
 <dd>
   Descriptor for <code>GetPositionResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="getPropertiesRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.slam/getPropertiesRequestDescriptor.html">getPropertiesRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>GetPropertiesRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="getPropertiesResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.slam/getPropertiesResponseDescriptor.html">getPropertiesResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>GetPropertiesResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="mappingModeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.slam/mappingModeDescriptor.html">mappingModeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>MappingMode</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -471,7 +575,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.8
+      0.0.9
   </span>
 
   

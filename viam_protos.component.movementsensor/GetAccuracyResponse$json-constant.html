@@ -82,8 +82,18 @@ const GetAccuracyResponse$json = {
   &#39;1&#39;: &#39;GetAccuracyResponse&#39;,
   &#39;2&#39;: [
     {&#39;1&#39;: &#39;accuracy&#39;, &#39;3&#39;: 1, &#39;4&#39;: 3, &#39;5&#39;: 11, &#39;6&#39;: &#39;.viam.component.movementsensor.v1.GetAccuracyResponse.AccuracyEntry&#39;, &#39;10&#39;: &#39;accuracy&#39;},
+    {&#39;1&#39;: &#39;position_hdop&#39;, &#39;3&#39;: 2, &#39;4&#39;: 1, &#39;5&#39;: 2, &#39;9&#39;: 0, &#39;10&#39;: &#39;positionHdop&#39;, &#39;17&#39;: true},
+    {&#39;1&#39;: &#39;position_vdop&#39;, &#39;3&#39;: 3, &#39;4&#39;: 1, &#39;5&#39;: 2, &#39;9&#39;: 1, &#39;10&#39;: &#39;positionVdop&#39;, &#39;17&#39;: true},
+    {&#39;1&#39;: &#39;position_nmea_gga_fix&#39;, &#39;3&#39;: 4, &#39;4&#39;: 1, &#39;5&#39;: 14, &#39;6&#39;: &#39;.viam.component.movementsensor.v1.NmeaGGAFix&#39;, &#39;9&#39;: 2, &#39;10&#39;: &#39;positionNmeaGgaFix&#39;, &#39;17&#39;: true},
+    {&#39;1&#39;: &#39;compass_degrees_error&#39;, &#39;3&#39;: 5, &#39;4&#39;: 1, &#39;5&#39;: 2, &#39;9&#39;: 3, &#39;10&#39;: &#39;compassDegreesError&#39;, &#39;17&#39;: true},
   ],
   &#39;3&#39;: [GetAccuracyResponse_AccuracyEntry$json],
+  &#39;8&#39;: [
+    {&#39;1&#39;: &#39;_position_hdop&#39;},
+    {&#39;1&#39;: &#39;_position_vdop&#39;},
+    {&#39;1&#39;: &#39;_position_nmea_gga_fix&#39;},
+    {&#39;1&#39;: &#39;_compass_degrees_error&#39;},
+  ],
 };</code></pre>
 </section>
 
@@ -118,7 +128,7 @@ const GetAccuracyResponse$json = {
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.8
+      0.0.9
   </span>
 
   

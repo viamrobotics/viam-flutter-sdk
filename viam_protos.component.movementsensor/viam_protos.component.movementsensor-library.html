@@ -215,6 +215,20 @@
   
 </dd>
 
+        <dt id="NmeaGGAFix">
+  <span class="name "><a href="../viam_protos.component.movementsensor/NmeaGGAFix-class.html">NmeaGGAFix</a></span> 
+
+</dt>
+<dd>
+  NmeaGGAFix includes fix quality of a GPS which is obtained from the GGA message.
+More information on GGA messages here
+https://receiverhelp.trimble.com/alloy-gnss/en-us/NMEA-0183messages_GGA.html
+Generally a fix of 1 or 2 lends to large position errors, ideally we want a
+fix of 4-5. Other fixes are unsuitable for outdoor navigation.
+The meaning of each fix value is documented here
+https://docs.novatel.com/OEM7/Content/Logs/GPGGA.htm#GPSQualityIndicators
+</dd>
+
       </dl>
     </section>
 
@@ -479,6 +493,21 @@
     </div>
 </dd>
 
+        <dt id="NmeaGGAFix$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.movementsensor/NmeaGGAFix$json-constant.html">NmeaGGAFix$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;NmeaGGAFix&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;NMEA_GGA_FIX_INVALID_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;NMEA_GGA_FIX_GNSS&#39;, &#39;2&#39; : 1}, {&#39;1&#…</code></span>
+    </div>
+</dd>
+
       </dl>
     </section>
 
@@ -662,6 +691,17 @@
 
 </dd>
 
+        <dt id="nmeaGGAFixDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.component.movementsensor/nmeaGGAFixDescriptor.html">nmeaGGAFixDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>NmeaGGAFix</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
       </dl>
     </section>
 
@@ -758,7 +798,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.8
+      0.0.9
   </span>
 
   

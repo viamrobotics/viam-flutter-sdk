@@ -154,6 +154,22 @@ when the robot is sensing the obstacle
   
 </dd>
 
+        <dt id="GetPropertiesRequest">
+  <span class="name "><a href="../viam_protos.service.navigation/GetPropertiesRequest-class.html">GetPropertiesRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="GetPropertiesResponse">
+  <span class="name "><a href="../viam_protos.service.navigation/GetPropertiesResponse-class.html">GetPropertiesResponse</a></span> 
+
+</dt>
+<dd>
+  Returns properties information for the named navigation service
+</dd>
+
         <dt id="GetWaypointsRequest">
   <span class="name "><a href="../viam_protos.service.navigation/GetWaypointsRequest-class.html">GetWaypointsRequest</a></span> 
 
@@ -168,6 +184,14 @@ when the robot is sensing the obstacle
 </dt>
 <dd>
   
+</dd>
+
+        <dt id="MapType">
+  <span class="name "><a href="../viam_protos.service.navigation/MapType-class.html">MapType</a></span> 
+
+</dt>
+<dd>
+  MapType represents the various types of map the navigation service can ingest.
 </dd>
 
         <dt id="Mode">
@@ -402,6 +426,36 @@ the robot is expected to take to get there
     </div>
 </dd>
 
+        <dt id="GetPropertiesRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.navigation/GetPropertiesRequest$json-constant.html">GetPropertiesRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPropertiesRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}]}</code></span>
+    </div>
+</dd>
+
+        <dt id="GetPropertiesResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.navigation/GetPropertiesResponse$json-constant.html">GetPropertiesResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;GetPropertiesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;map_type&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.service.navigation.v1.Map…</code></span>
+    </div>
+</dd>
+
         <dt id="GetWaypointsRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.navigation/GetWaypointsRequest$json-constant.html">GetWaypointsRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -429,6 +483,21 @@ the robot is expected to take to get there
 
     <div>
       <span class="signature"><code>{&#39;1&#39; : &#39;GetWaypointsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;waypoints&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.service.navigation.v1.Way…</code></span>
+    </div>
+</dd>
+
+        <dt id="MapType$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.navigation/MapType$json-constant.html">MapType$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+    <div>
+      <span class="signature"><code>{&#39;1&#39; : &#39;MapType&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;MAP_TYPE_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;MAP_TYPE_NONE&#39;, &#39;2&#39; : 1}, {&#39;1&#39; : &#39;MAP_TYPE…</code></span>
     </div>
 </dd>
 
@@ -654,6 +723,28 @@ the robot is expected to take to get there
 
 </dd>
 
+        <dt id="getPropertiesRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.navigation/getPropertiesRequestDescriptor.html">getPropertiesRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>GetPropertiesRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="getPropertiesResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.navigation/getPropertiesResponseDescriptor.html">getPropertiesResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>GetPropertiesResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
         <dt id="getWaypointsRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.navigation/getWaypointsRequestDescriptor.html">getWaypointsRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
@@ -672,6 +763,17 @@ the robot is expected to take to get there
 </dt>
 <dd>
   Descriptor for <code>GetWaypointsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="mapTypeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.navigation/mapTypeDescriptor.html">mapTypeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>MapType</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -849,7 +951,7 @@ the robot is expected to take to get there
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.8
+      0.0.9
   </span>
 
   

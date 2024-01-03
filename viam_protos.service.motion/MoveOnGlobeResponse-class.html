@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="MoveOnGlobeResponse" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/MoveOnGlobeResponse.html">MoveOnGlobeResponse</a></span><span class="signature">(<span class="parameter" id="-param-success">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">success</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/MoveOnGlobeResponse.html">MoveOnGlobeResponse</a></span><span class="signature">(<span class="parameter" id="-param-executionId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">executionId</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -132,6 +132,19 @@
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="executionId" class="property">
+  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/executionId.html">executionId</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  The unique ID which identifies the execution.
+Multiple plans will share the same execution_id if they were
+generated due to replanning.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -176,17 +189,6 @@ to protobuf fields.
 <dd class="inherited">
   A representation of the runtime type of the object.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="success" class="property">
-  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/success.html">success</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -249,6 +251,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearExecutionId" class="callable">
+  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/clearExecutionId.html">clearExecutionId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/clearExtension.html">clearExtension</a></span><span class="signature">(<wbr><span class="parameter" id="clearExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -272,19 +287,6 @@ to protobuf fields.
 <dd class="inherited">
   Clears the contents of a given field.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="clearSuccess" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/clearSuccess.html">clearSuccess</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; void</span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
 
 </dd>
 
@@ -446,6 +448,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasExecutionId" class="callable">
+  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/hasExecutionId.html">hasExecutionId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hasExtension.html">hasExtension</a></span><span class="signature">(<wbr><span class="parameter" id="hasExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -482,19 +497,6 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="hasSuccess" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeResponse/hasSuccess.html">hasSuccess</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
 
 </dd>
 
@@ -847,7 +849,7 @@ default value if it is not set.
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.8
+      0.0.9
   </span>
 
   

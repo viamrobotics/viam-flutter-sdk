@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="GetAccuracyResponse" class="callable">
-          <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/GetAccuracyResponse.html">GetAccuracyResponse</a></span><span class="signature">(<span class="parameter" id="-param-accuracy">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">accuracy</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/GetAccuracyResponse.html">GetAccuracyResponse</a></span><span class="signature">(<span class="parameter" id="-param-accuracy">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span>?</span> <span class="parameter-name">accuracy</span>, </span><span class="parameter" id="-param-positionHdop"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">positionHdop</span>, </span><span class="parameter" id="-param-positionVdop"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">positionVdop</span>, </span><span class="parameter" id="-param-positionNmeaGgaFix"><span class="type-annotation"><a href="../viam_protos.component.movementsensor/NmeaGGAFix-class.html">NmeaGGAFix</a>?</span> <span class="parameter-name">positionNmeaGgaFix</span>, </span><span class="parameter" id="-param-compassDegreesError"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">compassDegreesError</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -131,6 +131,17 @@
 <dd>
   
   <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="compassDegreesError" class="property">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/compassDegreesError.html">compassDegreesError</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -176,6 +187,39 @@ to protobuf fields.
 <dd class="inherited">
   Returns <code>true</code> if this message is marked read-only. Otherwise <code>false</code>.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="positionHdop" class="property">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/positionHdop.html">positionHdop</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="positionNmeaGgaFix" class="property">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/positionNmeaGgaFix.html">positionNmeaGgaFix</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.component.movementsensor/NmeaGGAFix-class.html">NmeaGGAFix</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="positionVdop" class="property">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/positionVdop.html">positionVdop</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> 
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -249,6 +293,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearCompassDegreesError" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/clearCompassDegreesError.html">clearCompassDegreesError</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/clearExtension.html">clearExtension</a></span><span class="signature">(<wbr><span class="parameter" id="clearExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -272,6 +329,45 @@ to protobuf fields.
 <dd class="inherited">
   Clears the contents of a given field.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearPositionHdop" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/clearPositionHdop.html">clearPositionHdop</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearPositionNmeaGgaFix" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/clearPositionNmeaGgaFix.html">clearPositionNmeaGgaFix</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearPositionVdop" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/clearPositionVdop.html">clearPositionVdop</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -433,6 +529,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasCompassDegreesError" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/hasCompassDegreesError.html">hasCompassDegreesError</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hasExtension.html">hasExtension</a></span><span class="signature">(<wbr><span class="parameter" id="hasExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -456,6 +565,45 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasPositionHdop" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/hasPositionHdop.html">hasPositionHdop</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasPositionNmeaGgaFix" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/hasPositionNmeaGgaFix.html">hasPositionNmeaGgaFix</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasPositionVdop" class="callable">
+  <span class="name"><a href="../viam_protos.component.movementsensor/GetAccuracyResponse/hasPositionVdop.html">hasPositionVdop</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -821,7 +969,7 @@ default value if it is not set.
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.8
+      0.0.9
   </span>
 
   
