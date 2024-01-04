@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/camera/v1/camera.pb.dart';
 import '../../media/image.dart';
@@ -19,6 +21,14 @@ abstract class Camera extends Resource {
 
   /// Get the camera's intrinsic parameters and the camera's distortion parameters.
   Future<CameraProperties> properties();
+
+  /// Get the next image from the camera.
+  ///
+  /// This can then be wrapped in an Image widget such as:
+  /// ```dart
+  /// Image.memory(myImageData);
+  /// ```
+  Future<Uint8List> imageData({MimeType? mimeType});
 
   /// Get the [ResourceName] for this [Camera] with the given [name]
   static ResourceName getResourceName(String name) {
