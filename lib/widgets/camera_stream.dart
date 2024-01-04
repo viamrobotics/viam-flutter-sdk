@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
@@ -91,5 +92,107 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
               child: RTCVideoView(_renderer),
             );
           }));
+  }
+}
+
+/// a widget for rendering images from a [Camera] at a set [frequency]
+class ViamCameraStreamVariableRefresh extends StatefulWidget {
+  const ViamCameraStreamVariableRefresh({super.key, required this.camera, required this.frequency});
+
+  /// the Viam [Camera] from which to capture images from
+  final Camera camera;
+
+  /// frequency in seconds for the image to be refreshed
+  final int frequency;
+
+  @override
+  State<ViamCameraStreamVariableRefresh> createState() => _ViamCameraStreamVariableRefreshState();
+}
+
+class _ViamCameraStreamVariableRefreshState extends State<ViamCameraStreamVariableRefresh> {
+  late Uint8List _imageData = Uint8List(0);
+  late Uint8List _oldImageData = Uint8List(0);
+  bool _loading = true;
+  bool _error = false;
+
+  @override
+  void initState() {
+    _refreshLoop();
+    super.initState();
+  }
+
+  Future<void> _refreshLoop() async {
+    while (mounted) {
+      try {
+        setState(() {
+          _oldImageData = _imageData;
+        });
+
+        _imageData = await widget.camera.imageData();
+        if (!mounted) break;
+        setState(() {
+          _loading = false;
+          _error = false;
+        });
+      } catch (e) {
+        setState(() {
+          _error = true;
+        });
+      }
+
+      await Future.delayed(Duration(seconds: widget.frequency));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: _loading
+          ? Stack(
+              children: [
+                const Align(child: CircularProgressIndicator.adaptive()),
+                if (_error) const Icon(Icons.error, color: Colors.red),
+              ],
+            )
+          : Stack(
+              children: [
+                // stack two Images like this to avoid a flicker when one image is updating
+                if (_oldImageData.isNotEmpty) Image.memory(_oldImageData),
+                Image.memory(_imageData),
+                if (_error) const Icon(Icons.error, color: Colors.red),
+              ],
+            ),
+    );
+  }
+}
+
+/// a widget that fetches and shows a single image from a [Camera].
+class ViamCameraImage extends StatefulWidget {
+  final Camera camera;
+
+  const ViamCameraImage({super.key, required this.camera});
+
+  @override
+  State<ViamCameraImage> createState() => _ViamCameraImageState();
+}
+
+class _ViamCameraImageState extends State<ViamCameraImage> {
+  late Uint8List _imageData = Uint8List(0);
+
+  @override
+  void initState() {
+    _fetchImage();
+    super.initState();
+  }
+
+  Future<void> _fetchImage() async {
+    setState(() async {
+      _imageData = await widget.camera.imageData();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return (_imageData.isEmpty) ? Container() : Image.memory(_imageData);
   }
 }
