@@ -10,6 +10,11 @@ import 'package:viam_sdk/viam_sdk.dart';
 
 import '../../test_utils.dart';
 
+// originally we were testing with the [0,0,0] but that started breaking the converters
+// inside the imageData() method and throwing exceptions from the Image package.
+// So in order to test imageData() we have to use bytes for a valid image,
+// This list of ints is from a valid 1x1 pixel jpeg which then I ran a script to convert
+// into bytes and then saved here.
 const validJpeg = [
   255, 216, 255, 224, 0, 16, 74, 70, 73, 70, 0, 1, 2, 1, 0, 72, 0,
   72, 0, 0, 255, 219, 0, 67, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
