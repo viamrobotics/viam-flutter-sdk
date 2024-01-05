@@ -2,6 +2,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
+import '../../gen/google/protobuf/struct.pb.dart';
 import '../../media/image.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
@@ -21,20 +22,22 @@ class CameraClient extends Camera implements ResourceRPCClient {
   CameraClient(this.name, this.channel);
 
   @override
-  Future<ViamImage> image({MimeType? mimeType}) async {
+  Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra}) async {
     final request = GetImageRequest()
       ..name = name
-      ..mimeType = mimeType?.name ?? '';
+      ..mimeType = mimeType?.name ?? ''
+      ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getImage(request);
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.image, actualMimeType);
   }
 
   @override
-  Future<ViamImage> pointCloud() async {
+  Future<ViamImage> pointCloud({Map<String, dynamic>? extra}) async {
     final request = GetPointCloudRequest()
       ..name = name
-      ..mimeType = MimeType.pcd.name;
+      ..mimeType = MimeType.pcd.name
+      ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getPointCloud(request);
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.pointCloud, actualMimeType);
