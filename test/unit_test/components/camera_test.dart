@@ -22,7 +22,7 @@ class FakeCamera extends Camera {
   }
 
   @override
-  Future<ViamImage> image({MimeType? mimeType}) async {
+  Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra}) async {
     if (mimeType == null) {
       throw const GrpcError.invalidArgument('invalid mimetype');
     }
@@ -30,7 +30,7 @@ class FakeCamera extends Camera {
   }
 
   @override
-  Future<ViamImage> pointCloud() async {
+  Future<ViamImage> pointCloud({Map<String, dynamic>? extra}) async {
     return ViamImage([0, 0, 0], MimeType.pcd);
   }
 
