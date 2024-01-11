@@ -19,7 +19,7 @@ class MotorScreen extends StatelessWidget {
       body: Column(children: [
         // The first widget in our column will be the one provided
         // by the Viam SDK.
-        ViamMotorWidget(motor: motor),
+        // ViamMotorWidget(motor: motor),
         const SizedBox(height: 16), // Padding between widgets
 
         // Here we have 2 buttons that control the [Motor]:

@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "viam_example_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "viam_example_app (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "viam_example_app (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter-tizen: Attach",
+            "request": "attach",
+            "type": "dart",
+            "deviceId": "flutter-tester",
+            "cwd": "${workspaceFolder}",
+            "vmServiceUri": "http://127.0.0.1:59410/NQ2XZv9vbe0=/"
+        }
+    ]
+}
