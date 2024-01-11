@@ -46,7 +46,7 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
     final stream = widget.streamClient.getStream();
     _streamSub = stream.listen((event) {
       _error = null;
-      _renderer.setSrcObject(stream: event);
+      _renderer.srcObject = event;
       _renderer.onResize = () {
         setState(() {
           if (_renderer.videoWidth > 0 && _renderer.videoHeight > 0) {
