@@ -12,10 +12,10 @@ abstract class Camera extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'camera');
 
   /// Get the next image from the camera.
-  Future<ViamImage> image({MimeType? mimeType});
+  Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra});
 
   /// Get the next point cloud from the camera.
-  Future<ViamImage> pointCloud();
+  Future<ViamImage> pointCloud({Map<String, dynamic>? extra});
 
   /// Get the camera's intrinsic parameters and the camera's distortion parameters.
   Future<CameraProperties> properties();

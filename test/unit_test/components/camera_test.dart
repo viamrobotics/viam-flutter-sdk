@@ -22,15 +22,19 @@ class FakeCamera extends Camera {
   }
 
   @override
-  Future<ViamImage> image({MimeType? mimeType}) async {
+  Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra}) async {
     if (mimeType == null) {
       throw const GrpcError.invalidArgument('invalid mimetype');
     }
+    if (extra != null && extra['forcePng'] == true) {
+      mimeType = MimeType.png;
+    }
+
     return ViamImage([0, 0, 0], mimeType);
   }
 
   @override
-  Future<ViamImage> pointCloud() async {
+  Future<ViamImage> pointCloud({Map<String, dynamic>? extra}) async {
     return ViamImage([0, 0, 0], MimeType.pcd);
   }
 
@@ -60,6 +64,10 @@ void main() {
       final actualPng = await camera.image(mimeType: MimeType.png);
       expect(actualPng.mimeType, MimeType.png);
       expect(actualPng.raw, [0, 0, 0]);
+
+      final actualPngForce = await camera.image(mimeType: MimeType.jpeg, extra: {'forcePng': true});
+      expect(actualPngForce.mimeType, MimeType.png);
+      expect(actualPngForce.raw, [0, 0, 0]);
     });
 
     test('pointCloud', () async {
@@ -122,6 +130,15 @@ void main() {
         final actualPng = await client.getImage(pngRequest);
         expect(actualPng.mimeType, 'png');
         expect(actualPng.image, [0, 0, 0]);
+
+        final forcePngRequest = GetImageRequest()
+          ..name = name
+          ..mimeType = 'jpeg'
+          ..extra = {'forcePng': true}.toStruct();
+
+        final actualPngForce = await client.getImage(forcePngRequest);
+        expect(actualPngForce.mimeType, 'image/png');
+        expect(actualPngForce.image, [0, 0, 0]);
       });
 
       test('pointCloud', () async {
@@ -157,6 +174,10 @@ void main() {
         final actualPng = await client.image(mimeType: MimeType.png);
         expect(actualPng.mimeType, MimeType.png);
         expect(actualPng.raw, [0, 0, 0]);
+
+        final actualPngForce = await client.image(mimeType: MimeType.jpeg, extra: {'forcePng': true});
+        expect(actualPngForce.mimeType, MimeType.png);
+        expect(actualPngForce.raw, [0, 0, 0]);
       });
 
       test('pointCloud', () async {
