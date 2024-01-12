@@ -15,9 +15,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
-import 'movementsensor.pbenum.dart';
-
-export 'movementsensor.pbenum.dart';
 
 class GetLinearVelocityRequest extends $pb.GeneratedMessage {
   factory GetLinearVelocityRequest({
@@ -900,7 +897,7 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
     $core.Map<$core.String, $core.double>? accuracy,
     $core.double? positionHdop,
     $core.double? positionVdop,
-    NmeaGGAFix? positionNmeaGgaFix,
+    $core.int? positionNmeaGgaFix,
     $core.double? compassDegreesError,
   }) {
     final $result = create();
@@ -929,7 +926,7 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
     ..m<$core.String, $core.double>(1, _omitFieldNames ? '' : 'accuracy', entryClassName: 'GetAccuracyResponse.AccuracyEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OF, packageName: const $pb.PackageName('viam.component.movementsensor.v1'))
     ..a<$core.double>(2, _omitFieldNames ? '' : 'positionHdop', $pb.PbFieldType.OF)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'positionVdop', $pb.PbFieldType.OF)
-    ..e<NmeaGGAFix>(4, _omitFieldNames ? '' : 'positionNmeaGgaFix', $pb.PbFieldType.OE, defaultOrMaker: NmeaGGAFix.NMEA_GGA_FIX_INVALID_UNSPECIFIED, valueOf: NmeaGGAFix.valueOf, enumValues: NmeaGGAFix.values)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'positionNmeaGgaFix', $pb.PbFieldType.O3)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'compassDegreesError', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
@@ -977,9 +974,9 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
   void clearPositionVdop() => clearField(3);
 
   @$pb.TagNumber(4)
-  NmeaGGAFix get positionNmeaGgaFix => $_getN(3);
+  $core.int get positionNmeaGgaFix => $_getIZ(3);
   @$pb.TagNumber(4)
-  set positionNmeaGgaFix(NmeaGGAFix v) { setField(4, v); }
+  set positionNmeaGgaFix($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasPositionNmeaGgaFix() => $_has(3);
   @$pb.TagNumber(4)

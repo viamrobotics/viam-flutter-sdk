@@ -7691,6 +7691,10 @@ class RegistryItem extends $pb.GeneratedMessage {
     $fixnum.Int64? totalOrganizationUsage,
     ModuleMetadata? moduleMetadata,
     MLModelMetadata? mlModelMetadata,
+    $fixnum.Int64? totalExternalRobotUsage,
+    $fixnum.Int64? totalExternalOrganizationUsage,
+    $5.Timestamp? createdAt,
+    $5.Timestamp? updatedAt,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -7729,6 +7733,18 @@ class RegistryItem extends $pb.GeneratedMessage {
     if (mlModelMetadata != null) {
       $result.mlModelMetadata = mlModelMetadata;
     }
+    if (totalExternalRobotUsage != null) {
+      $result.totalExternalRobotUsage = totalExternalRobotUsage;
+    }
+    if (totalExternalOrganizationUsage != null) {
+      $result.totalExternalOrganizationUsage = totalExternalOrganizationUsage;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
     return $result;
   }
   RegistryItem._() : super();
@@ -7754,6 +7770,10 @@ class RegistryItem extends $pb.GeneratedMessage {
     ..aInt64(10, _omitFieldNames ? '' : 'totalOrganizationUsage')
     ..aOM<ModuleMetadata>(11, _omitFieldNames ? '' : 'moduleMetadata', subBuilder: ModuleMetadata.create)
     ..aOM<MLModelMetadata>(12, _omitFieldNames ? '' : 'mlModelMetadata', subBuilder: MLModelMetadata.create)
+    ..aInt64(13, _omitFieldNames ? '' : 'totalExternalRobotUsage')
+    ..aInt64(14, _omitFieldNames ? '' : 'totalExternalOrganizationUsage')
+    ..aOM<$5.Timestamp>(15, _omitFieldNames ? '' : 'createdAt', subBuilder: $5.Timestamp.create)
+    ..aOM<$5.Timestamp>(16, _omitFieldNames ? '' : 'updatedAt', subBuilder: $5.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -7905,6 +7925,50 @@ class RegistryItem extends $pb.GeneratedMessage {
   void clearMlModelMetadata() => clearField(12);
   @$pb.TagNumber(12)
   MLModelMetadata ensureMlModelMetadata() => $_ensure(11);
+
+  /// The total number of robots using this item outside of the owning org
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get totalExternalRobotUsage => $_getI64(12);
+  @$pb.TagNumber(13)
+  set totalExternalRobotUsage($fixnum.Int64 v) { $_setInt64(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasTotalExternalRobotUsage() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTotalExternalRobotUsage() => clearField(13);
+
+  /// The total number of organizations using this item outside of the owning org
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get totalExternalOrganizationUsage => $_getI64(13);
+  @$pb.TagNumber(14)
+  set totalExternalOrganizationUsage($fixnum.Int64 v) { $_setInt64(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasTotalExternalOrganizationUsage() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTotalExternalOrganizationUsage() => clearField(14);
+
+  /// When the item was created
+  @$pb.TagNumber(15)
+  $5.Timestamp get createdAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set createdAt($5.Timestamp v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasCreatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCreatedAt() => clearField(15);
+  @$pb.TagNumber(15)
+  $5.Timestamp ensureCreatedAt() => $_ensure(14);
+
+  /// When the item was last updated, either through an update or upload.
+  @$pb.TagNumber(16)
+  $5.Timestamp get updatedAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set updatedAt($5.Timestamp v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasUpdatedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearUpdatedAt() => clearField(16);
+  @$pb.TagNumber(16)
+  $5.Timestamp ensureUpdatedAt() => $_ensure(15);
 }
 
 class GetRegistryItemRequest extends $pb.GeneratedMessage {
