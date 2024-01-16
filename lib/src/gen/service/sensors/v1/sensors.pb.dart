@@ -16,16 +16,21 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 
+/// The sensors service messages are deprecated
 class GetSensorsRequest extends $pb.GeneratedMessage {
   factory GetSensorsRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? name,
+  @$core.Deprecated('This field is deprecated.')
     $2.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.name = name;
     }
     if (extra != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.extra = extra;
     }
     return $result;
@@ -61,34 +66,45 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
   static GetSensorsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSensorsRequest>(create);
   static GetSensorsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set name($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
   /// Additional arguments to the method
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $2.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetSensorsResponse extends $pb.GeneratedMessage {
   factory GetSensorsResponse({
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$1.ResourceName>? sensorNames,
   }) {
     final $result = create();
     if (sensorNames != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.sensorNames.addAll(sensorNames);
     }
     return $result;
@@ -123,24 +139,31 @@ class GetSensorsResponse extends $pb.GeneratedMessage {
   static GetSensorsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSensorsResponse>(create);
   static GetSensorsResponse? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<$1.ResourceName> get sensorNames => $_getList(0);
 }
 
 class GetReadingsRequest extends $pb.GeneratedMessage {
   factory GetReadingsRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? name,
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$1.ResourceName>? sensorNames,
+  @$core.Deprecated('This field is deprecated.')
     $2.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.name = name;
     }
     if (sensorNames != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.sensorNames.addAll(sensorNames);
     }
     if (extra != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.extra = extra;
     }
     return $result;
@@ -177,41 +200,55 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
   static GetReadingsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadingsRequest>(create);
   static GetReadingsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set name($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.List<$1.ResourceName> get sensorNames => $_getList(1);
 
   /// Additional arguments to the method
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $2.Struct get extra => $_getN(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $2.Struct ensureExtra() => $_ensure(2);
 }
 
 class Readings extends $pb.GeneratedMessage {
   factory Readings({
+  @$core.Deprecated('This field is deprecated.')
     $1.ResourceName? name,
+  @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, $2.Value>? readings,
   }) {
     final $result = create();
     if (name != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.name = name;
     }
     if (readings != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.readings.addAll(readings);
     }
     return $result;
@@ -247,27 +284,35 @@ class Readings extends $pb.GeneratedMessage {
   static Readings getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Readings>(create);
   static Readings? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $1.ResourceName get name => $_getN(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set name($1.ResourceName v) { setField(1, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $1.ResourceName ensureName() => $_ensure(0);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.Map<$core.String, $2.Value> get readings => $_getMap(1);
 }
 
 class GetReadingsResponse extends $pb.GeneratedMessage {
   factory GetReadingsResponse({
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<Readings>? readings,
   }) {
     final $result = create();
     if (readings != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.readings.addAll(readings);
     }
     return $result;
@@ -302,6 +347,7 @@ class GetReadingsResponse extends $pb.GeneratedMessage {
   static GetReadingsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadingsResponse>(create);
   static GetReadingsResponse? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<Readings> get readings => $_getList(0);
 }
