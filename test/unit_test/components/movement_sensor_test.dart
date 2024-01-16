@@ -183,11 +183,11 @@ void main() {
         final client = MovementSensorServiceClient(channel);
         final result = await client.getAccuracy(GetAccuracyRequest()..name = name);
 
-        expect(result.accuracyMap, {});
-        expect(result.hdop, 0.0);
-        expect(result.vdop, 0.0);
-        expect(result.nmeaFix, 0);
-        expect(result.compassDegreeError, 0.0);
+        expect(result.accuracy, {});
+        expect(result.positionHdop, 0.0);
+        expect(result.positionVdop, 0.0);
+        expect(result.positionNmeaGgaFix, 0);
+        expect(result.compassDegreesError, 0.0);
       });
 
       test('angularVelocity', () async {

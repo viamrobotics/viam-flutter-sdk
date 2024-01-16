@@ -97,7 +97,13 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getAccuracy(request);
-    return response.accuracy;
+    return Accuracy(
+      response.accuracy,
+      response.positionHdop,
+      response.positionVdop,
+      response.positionNmeaGgaFix,
+      response.compassDegreesError,
+    );
   }
 
   @override
