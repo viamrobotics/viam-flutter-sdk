@@ -27,39 +27,6 @@ final $typed_data.Uint8List paymentMethodTypeDescriptor = $convert.base64Decode(
     'ChFQYXltZW50TWV0aG9kVHlwZRIjCh9QQVlNRU5UX01FVEhPRF9UWVBFX1VOU1BFQ0lGSUVEEA'
     'ASHAoYUEFZTUVOVF9NRVRIT0RfVFlQRV9DQVJEEAE=');
 
-@$core.Deprecated('Use currentMonthUsageSummaryDescriptor instead')
-const CurrentMonthUsageSummary$json = {
-  '1': 'CurrentMonthUsageSummary',
-  '2': [
-    {'1': 'cloud_storage_usage', '3': 1, '4': 1, '5': 1, '10': 'cloudStorageUsage'},
-    {'1': 'cloud_storage_usage_cost', '3': 2, '4': 1, '5': 1, '10': 'cloudStorageUsageCost'},
-    {'1': 'data_upload_usage_cost', '3': 3, '4': 1, '5': 1, '10': 'dataUploadUsageCost'},
-    {'1': 'data_upload_usage_quantity', '3': 4, '4': 1, '5': 1, '10': 'dataUploadUsageQuantity'},
-    {'1': 'data_egres_usage_cost', '3': 5, '4': 1, '5': 1, '10': 'dataEgresUsageCost'},
-    {'1': 'data_egres_usage_quantity', '3': 6, '4': 1, '5': 1, '10': 'dataEgresUsageQuantity'},
-    {'1': 'standard_compute_usage_cost', '3': 7, '4': 1, '5': 1, '10': 'standardComputeUsageCost'},
-    {'1': 'standard_compute_usage_quantity', '3': 8, '4': 1, '5': 1, '10': 'standardComputeUsageQuantity'},
-    {'1': 'total_usage_quantity', '3': 9, '4': 1, '5': 1, '10': 'totalUsageQuantity'},
-    {'1': 'total_usage_with_discount', '3': 10, '4': 1, '5': 1, '10': 'totalUsageWithDiscount'},
-    {'1': 'total_usage_without_discount', '3': 11, '4': 1, '5': 1, '10': 'totalUsageWithoutDiscount'},
-  ],
-};
-
-/// Descriptor for `CurrentMonthUsageSummary`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List currentMonthUsageSummaryDescriptor = $convert.base64Decode(
-    'ChhDdXJyZW50TW9udGhVc2FnZVN1bW1hcnkSLgoTY2xvdWRfc3RvcmFnZV91c2FnZRgBIAEoAV'
-    'IRY2xvdWRTdG9yYWdlVXNhZ2USNwoYY2xvdWRfc3RvcmFnZV91c2FnZV9jb3N0GAIgASgBUhVj'
-    'bG91ZFN0b3JhZ2VVc2FnZUNvc3QSMwoWZGF0YV91cGxvYWRfdXNhZ2VfY29zdBgDIAEoAVITZG'
-    'F0YVVwbG9hZFVzYWdlQ29zdBI7ChpkYXRhX3VwbG9hZF91c2FnZV9xdWFudGl0eRgEIAEoAVIX'
-    'ZGF0YVVwbG9hZFVzYWdlUXVhbnRpdHkSMQoVZGF0YV9lZ3Jlc191c2FnZV9jb3N0GAUgASgBUh'
-    'JkYXRhRWdyZXNVc2FnZUNvc3QSOQoZZGF0YV9lZ3Jlc191c2FnZV9xdWFudGl0eRgGIAEoAVIW'
-    'ZGF0YUVncmVzVXNhZ2VRdWFudGl0eRI9ChtzdGFuZGFyZF9jb21wdXRlX3VzYWdlX2Nvc3QYBy'
-    'ABKAFSGHN0YW5kYXJkQ29tcHV0ZVVzYWdlQ29zdBJFCh9zdGFuZGFyZF9jb21wdXRlX3VzYWdl'
-    'X3F1YW50aXR5GAggASgBUhxzdGFuZGFyZENvbXB1dGVVc2FnZVF1YW50aXR5EjAKFHRvdGFsX3'
-    'VzYWdlX3F1YW50aXR5GAkgASgBUhJ0b3RhbFVzYWdlUXVhbnRpdHkSOQoZdG90YWxfdXNhZ2Vf'
-    'd2l0aF9kaXNjb3VudBgKIAEoAVIWdG90YWxVc2FnZVdpdGhEaXNjb3VudBI/Chx0b3RhbF91c2'
-    'FnZV93aXRob3V0X2Rpc2NvdW50GAsgASgBUhl0b3RhbFVzYWdlV2l0aG91dERpc2NvdW50');
-
 @$core.Deprecated('Use invoiceSummaryDescriptor instead')
 const InvoiceSummary$json = {
   '1': 'InvoiceSummary',
@@ -140,53 +107,6 @@ final $typed_data.Uint8List paymentMethodCardDescriptor = $convert.base64Decode(
     'ChFQYXltZW50TWV0aG9kQ2FyZBIUCgVicmFuZBgBIAEoCVIFYnJhbmQSKAoQbGFzdF9mb3VyX2'
     'RpZ2l0cxgCIAEoCVIObGFzdEZvdXJEaWdpdHM=');
 
-@$core.Deprecated('Use getCurrentMonthUsageSummaryRequestDescriptor instead')
-const GetCurrentMonthUsageSummaryRequest$json = {
-  '1': 'GetCurrentMonthUsageSummaryRequest',
-  '2': [
-    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
-  ],
-};
-
-/// Descriptor for `GetCurrentMonthUsageSummaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getCurrentMonthUsageSummaryRequestDescriptor = $convert.base64Decode(
-    'CiJHZXRDdXJyZW50TW9udGhVc2FnZVN1bW1hcnlSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3'
-    'JnSWQ=');
-
-@$core.Deprecated('Use getCurrentMonthUsageSummaryResponseDescriptor instead')
-const GetCurrentMonthUsageSummaryResponse$json = {
-  '1': 'GetCurrentMonthUsageSummaryResponse',
-  '2': [
-    {'1': 'cloud_storage_usage', '3': 1, '4': 1, '5': 1, '10': 'cloudStorageUsage'},
-    {'1': 'cloud_storage_usage_cost', '3': 2, '4': 1, '5': 1, '10': 'cloudStorageUsageCost'},
-    {'1': 'data_upload_usage_cost', '3': 3, '4': 1, '5': 1, '10': 'dataUploadUsageCost'},
-    {'1': 'data_upload_usage_quantity', '3': 4, '4': 1, '5': 1, '10': 'dataUploadUsageQuantity'},
-    {'1': 'data_egres_usage_cost', '3': 5, '4': 1, '5': 1, '10': 'dataEgresUsageCost'},
-    {'1': 'data_egres_usage_quantity', '3': 6, '4': 1, '5': 1, '10': 'dataEgresUsageQuantity'},
-    {'1': 'standard_compute_usage_cost', '3': 7, '4': 1, '5': 1, '10': 'standardComputeUsageCost'},
-    {'1': 'standard_compute_usage_quantity', '3': 8, '4': 1, '5': 1, '10': 'standardComputeUsageQuantity'},
-    {'1': 'total_usage_quantity', '3': 9, '4': 1, '5': 1, '10': 'totalUsageQuantity'},
-    {'1': 'total_usage_with_discount', '3': 10, '4': 1, '5': 1, '10': 'totalUsageWithDiscount'},
-    {'1': 'total_usage_without_discount', '3': 11, '4': 1, '5': 1, '10': 'totalUsageWithoutDiscount'},
-  ],
-};
-
-/// Descriptor for `GetCurrentMonthUsageSummaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getCurrentMonthUsageSummaryResponseDescriptor = $convert.base64Decode(
-    'CiNHZXRDdXJyZW50TW9udGhVc2FnZVN1bW1hcnlSZXNwb25zZRIuChNjbG91ZF9zdG9yYWdlX3'
-    'VzYWdlGAEgASgBUhFjbG91ZFN0b3JhZ2VVc2FnZRI3ChhjbG91ZF9zdG9yYWdlX3VzYWdlX2Nv'
-    'c3QYAiABKAFSFWNsb3VkU3RvcmFnZVVzYWdlQ29zdBIzChZkYXRhX3VwbG9hZF91c2FnZV9jb3'
-    'N0GAMgASgBUhNkYXRhVXBsb2FkVXNhZ2VDb3N0EjsKGmRhdGFfdXBsb2FkX3VzYWdlX3F1YW50'
-    'aXR5GAQgASgBUhdkYXRhVXBsb2FkVXNhZ2VRdWFudGl0eRIxChVkYXRhX2VncmVzX3VzYWdlX2'
-    'Nvc3QYBSABKAFSEmRhdGFFZ3Jlc1VzYWdlQ29zdBI5ChlkYXRhX2VncmVzX3VzYWdlX3F1YW50'
-    'aXR5GAYgASgBUhZkYXRhRWdyZXNVc2FnZVF1YW50aXR5Ej0KG3N0YW5kYXJkX2NvbXB1dGVfdX'
-    'NhZ2VfY29zdBgHIAEoAVIYc3RhbmRhcmRDb21wdXRlVXNhZ2VDb3N0EkUKH3N0YW5kYXJkX2Nv'
-    'bXB1dGVfdXNhZ2VfcXVhbnRpdHkYCCABKAFSHHN0YW5kYXJkQ29tcHV0ZVVzYWdlUXVhbnRpdH'
-    'kSMAoUdG90YWxfdXNhZ2VfcXVhbnRpdHkYCSABKAFSEnRvdGFsVXNhZ2VRdWFudGl0eRI5Chl0'
-    'b3RhbF91c2FnZV93aXRoX2Rpc2NvdW50GAogASgBUhZ0b3RhbFVzYWdlV2l0aERpc2NvdW50Ej'
-    '8KHHRvdGFsX3VzYWdlX3dpdGhvdXRfZGlzY291bnQYCyABKAFSGXRvdGFsVXNhZ2VXaXRob3V0'
-    'RGlzY291bnQ=');
-
 @$core.Deprecated('Use getCurrentMonthUsageRequestDescriptor instead')
 const GetCurrentMonthUsageRequest$json = {
   '1': 'GetCurrentMonthUsageRequest',
@@ -229,83 +149,6 @@ final $typed_data.Uint8List getCurrentMonthUsageResponseDescriptor = $convert.ba
     'bnQYCCABKAFSDmRpc2NvdW50QW1vdW50EjkKGXRvdGFsX3VzYWdlX3dpdGhfZGlzY291bnQYCS'
     'ABKAFSFnRvdGFsVXNhZ2VXaXRoRGlzY291bnQSPwocdG90YWxfdXNhZ2Vfd2l0aG91dF9kaXNj'
     'b3VudBgKIAEoAVIZdG90YWxVc2FnZVdpdGhvdXREaXNjb3VudA==');
-
-@$core.Deprecated('Use getUnpaidBalanceRequestDescriptor instead')
-const GetUnpaidBalanceRequest$json = {
-  '1': 'GetUnpaidBalanceRequest',
-  '2': [
-    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
-  ],
-};
-
-/// Descriptor for `GetUnpaidBalanceRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getUnpaidBalanceRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRVbnBhaWRCYWxhbmNlUmVxdWVzdBIVCgZvcmdfaWQYASABKAlSBW9yZ0lk');
-
-@$core.Deprecated('Use getUnpaidBalanceResponseDescriptor instead')
-const GetUnpaidBalanceResponse$json = {
-  '1': 'GetUnpaidBalanceResponse',
-  '2': [
-    {'1': 'unpaid_balance', '3': 1, '4': 1, '5': 1, '10': 'unpaidBalance'},
-    {'1': 'unpaid_balance_due_date', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'unpaidBalanceDueDate'},
-  ],
-};
-
-/// Descriptor for `GetUnpaidBalanceResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getUnpaidBalanceResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRVbnBhaWRCYWxhbmNlUmVzcG9uc2USJQoOdW5wYWlkX2JhbGFuY2UYASABKAFSDXVucG'
-    'FpZEJhbGFuY2USUQoXdW5wYWlkX2JhbGFuY2VfZHVlX2RhdGUYAiABKAsyGi5nb29nbGUucHJv'
-    'dG9idWYuVGltZXN0YW1wUhR1bnBhaWRCYWxhbmNlRHVlRGF0ZQ==');
-
-@$core.Deprecated('Use getInvoiceHistoryRequestDescriptor instead')
-const GetInvoiceHistoryRequest$json = {
-  '1': 'GetInvoiceHistoryRequest',
-  '2': [
-    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
-  ],
-};
-
-/// Descriptor for `GetInvoiceHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInvoiceHistoryRequestDescriptor = $convert.base64Decode(
-    'ChhHZXRJbnZvaWNlSGlzdG9yeVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA==');
-
-@$core.Deprecated('Use getInvoiceHistoryResponseDescriptor instead')
-const GetInvoiceHistoryResponse$json = {
-  '1': 'GetInvoiceHistoryResponse',
-  '2': [
-    {'1': 'invoices', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.InvoiceSummary', '10': 'invoices'},
-  ],
-};
-
-/// Descriptor for `GetInvoiceHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInvoiceHistoryResponseDescriptor = $convert.base64Decode(
-    'ChlHZXRJbnZvaWNlSGlzdG9yeVJlc3BvbnNlEjcKCGludm9pY2VzGAEgAygLMhsudmlhbS5hcH'
-    'AudjEuSW52b2ljZVN1bW1hcnlSCGludm9pY2Vz');
-
-@$core.Deprecated('Use getItemizedInvoiceRequestDescriptor instead')
-const GetItemizedInvoiceRequest$json = {
-  '1': 'GetItemizedInvoiceRequest',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-  ],
-};
-
-/// Descriptor for `GetItemizedInvoiceRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getItemizedInvoiceRequestDescriptor = $convert.base64Decode(
-    'ChlHZXRJdGVtaXplZEludm9pY2VSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
-
-@$core.Deprecated('Use getItemizedInvoiceResponseDescriptor instead')
-const GetItemizedInvoiceResponse$json = {
-  '1': 'GetItemizedInvoiceResponse',
-  '2': [
-    {'1': 'invoice', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Invoice', '10': 'invoice'},
-  ],
-};
-
-/// Descriptor for `GetItemizedInvoiceResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getItemizedInvoiceResponseDescriptor = $convert.base64Decode(
-    'ChpHZXRJdGVtaXplZEludm9pY2VSZXNwb25zZRIuCgdpbnZvaWNlGAEgASgLMhQudmlhbS5hcH'
-    'AudjEuSW52b2ljZVIHaW52b2ljZQ==');
 
 @$core.Deprecated('Use getOrgBillingInformationRequestDescriptor instead')
 const GetOrgBillingInformationRequest$json = {
@@ -369,45 +212,6 @@ final $typed_data.Uint8List getInvoicesSummaryResponseDescriptor = $convert.base
     'ChpHZXRJbnZvaWNlc1N1bW1hcnlSZXNwb25zZRIvChNvdXRzdGFuZGluZ19iYWxhbmNlGAEgAS'
     'gBUhJvdXRzdGFuZGluZ0JhbGFuY2USNwoIaW52b2ljZXMYAiADKAsyGy52aWFtLmFwcC52MS5J'
     'bnZvaWNlU3VtbWFyeVIIaW52b2ljZXM=');
-
-@$core.Deprecated('Use getBillingSummaryRequestDescriptor instead')
-const GetBillingSummaryRequest$json = {
-  '1': 'GetBillingSummaryRequest',
-  '2': [
-    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
-  ],
-};
-
-/// Descriptor for `GetBillingSummaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getBillingSummaryRequestDescriptor = $convert.base64Decode(
-    'ChhHZXRCaWxsaW5nU3VtbWFyeVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA==');
-
-@$core.Deprecated('Use getBillingSummaryResponseDescriptor instead')
-const GetBillingSummaryResponse$json = {
-  '1': 'GetBillingSummaryResponse',
-  '2': [
-    {'1': 'usage_summary', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.CurrentMonthUsageSummary', '10': 'usageSummary'},
-    {'1': 'invoices', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.InvoiceSummary', '10': 'invoices'},
-    {'1': 'statement_balance', '3': 3, '4': 1, '5': 1, '10': 'statementBalance'},
-    {'1': 'current_balance', '3': 4, '4': 1, '5': 1, '10': 'currentBalance'},
-    {'1': 'current_month_balance', '3': 5, '4': 1, '5': 1, '10': 'currentMonthBalance'},
-    {'1': 'current_month_due_date', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'currentMonthDueDate'},
-    {'1': 'invoice_email', '3': 8, '4': 1, '5': 9, '10': 'invoiceEmail'},
-    {'1': 'payment_method', '3': 9, '4': 1, '5': 11, '6': '.viam.app.v1.PaymentMethodCard', '10': 'paymentMethod'},
-  ],
-};
-
-/// Descriptor for `GetBillingSummaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getBillingSummaryResponseDescriptor = $convert.base64Decode(
-    'ChlHZXRCaWxsaW5nU3VtbWFyeVJlc3BvbnNlEkoKDXVzYWdlX3N1bW1hcnkYASABKAsyJS52aW'
-    'FtLmFwcC52MS5DdXJyZW50TW9udGhVc2FnZVN1bW1hcnlSDHVzYWdlU3VtbWFyeRI3CghpbnZv'
-    'aWNlcxgCIAMoCzIbLnZpYW0uYXBwLnYxLkludm9pY2VTdW1tYXJ5UghpbnZvaWNlcxIrChFzdG'
-    'F0ZW1lbnRfYmFsYW5jZRgDIAEoAVIQc3RhdGVtZW50QmFsYW5jZRInCg9jdXJyZW50X2JhbGFu'
-    'Y2UYBCABKAFSDmN1cnJlbnRCYWxhbmNlEjIKFWN1cnJlbnRfbW9udGhfYmFsYW5jZRgFIAEoAV'
-    'ITY3VycmVudE1vbnRoQmFsYW5jZRJPChZjdXJyZW50X21vbnRoX2R1ZV9kYXRlGAcgASgLMhou'
-    'Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFITY3VycmVudE1vbnRoRHVlRGF0ZRIjCg1pbnZvaW'
-    'NlX2VtYWlsGAggASgJUgxpbnZvaWNlRW1haWwSRQoOcGF5bWVudF9tZXRob2QYCSABKAsyHi52'
-    'aWFtLmFwcC52MS5QYXltZW50TWV0aG9kQ2FyZFINcGF5bWVudE1ldGhvZA==');
 
 @$core.Deprecated('Use getInvoicePdfRequestDescriptor instead')
 const GetInvoicePdfRequest$json = {

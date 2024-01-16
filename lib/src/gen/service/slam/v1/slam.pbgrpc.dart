@@ -38,6 +38,10 @@ class SLAMServiceClient extends $grpc.Client {
       '/viam.service.slam.v1.SLAMService/GetLatestMapInfo',
       ($0.GetLatestMapInfoRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetLatestMapInfoResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$0.GetPropertiesRequest, $0.GetPropertiesResponse>(
+      '/viam.service.slam.v1.SLAMService/GetProperties',
+      ($0.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetPropertiesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
       '/viam.service.slam.v1.SLAMService/DoCommand',
       ($1.DoCommandRequest value) => value.writeToBuffer(),
@@ -63,6 +67,10 @@ class SLAMServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetLatestMapInfoResponse> getLatestMapInfo($0.GetLatestMapInfoRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLatestMapInfo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetPropertiesResponse> getProperties($0.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getProperties, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
@@ -103,6 +111,13 @@ abstract class SLAMServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetLatestMapInfoRequest.fromBuffer(value),
         ($0.GetLatestMapInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPropertiesRequest, $0.GetPropertiesResponse>(
+        'GetProperties',
+        getProperties_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetPropertiesRequest.fromBuffer(value),
+        ($0.GetPropertiesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -128,6 +143,10 @@ abstract class SLAMServiceBase extends $grpc.Service {
     return getLatestMapInfo(call, await request);
   }
 
+  $async.Future<$0.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$0.GetPropertiesRequest> request) async {
+    return getProperties(call, await request);
+  }
+
   $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
@@ -136,5 +155,6 @@ abstract class SLAMServiceBase extends $grpc.Service {
   $async.Stream<$0.GetPointCloudMapResponse> getPointCloudMap($grpc.ServiceCall call, $0.GetPointCloudMapRequest request);
   $async.Stream<$0.GetInternalStateResponse> getInternalState($grpc.ServiceCall call, $0.GetInternalStateRequest request);
   $async.Future<$0.GetLatestMapInfoResponse> getLatestMapInfo($grpc.ServiceCall call, $0.GetLatestMapInfoRequest request);
+  $async.Future<$0.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $0.GetPropertiesRequest request);
   $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
 }

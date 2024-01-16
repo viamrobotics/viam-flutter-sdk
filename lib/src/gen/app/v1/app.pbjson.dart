@@ -513,6 +513,20 @@ const DeleteOrganizationMemberResponse$json = {
 final $typed_data.Uint8List deleteOrganizationMemberResponseDescriptor = $convert.base64Decode(
     'CiBEZWxldGVPcmdhbml6YXRpb25NZW1iZXJSZXNwb25zZQ==');
 
+@$core.Deprecated('Use organizationIdentityDescriptor instead')
+const OrganizationIdentity$json = {
+  '1': 'OrganizationIdentity',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `OrganizationIdentity`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationIdentityDescriptor = $convert.base64Decode(
+    'ChRPcmdhbml6YXRpb25JZGVudGl0eRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbm'
+    'FtZQ==');
+
 @$core.Deprecated('Use locationOrganizationDescriptor instead')
 const LocationOrganization$json = {
   '1': 'LocationOrganization',
@@ -751,14 +765,15 @@ final $typed_data.Uint8List getOrganizationsWithAccessToLocationRequestDescripto
 const GetOrganizationsWithAccessToLocationResponse$json = {
   '1': 'GetOrganizationsWithAccessToLocationResponse',
   '2': [
-    {'1': 'organizations', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Organization', '10': 'organizations'},
+    {'1': 'organization_identities', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.OrganizationIdentity', '10': 'organizationIdentities'},
   ],
 };
 
 /// Descriptor for `GetOrganizationsWithAccessToLocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getOrganizationsWithAccessToLocationResponseDescriptor = $convert.base64Decode(
-    'CixHZXRPcmdhbml6YXRpb25zV2l0aEFjY2Vzc1RvTG9jYXRpb25SZXNwb25zZRI/Cg1vcmdhbm'
-    'l6YXRpb25zGAEgAygLMhkudmlhbS5hcHAudjEuT3JnYW5pemF0aW9uUg1vcmdhbml6YXRpb25z');
+    'CixHZXRPcmdhbml6YXRpb25zV2l0aEFjY2Vzc1RvTG9jYXRpb25SZXNwb25zZRJaChdvcmdhbm'
+    'l6YXRpb25faWRlbnRpdGllcxgBIAMoCzIhLnZpYW0uYXBwLnYxLk9yZ2FuaXphdGlvbklkZW50'
+    'aXR5UhZvcmdhbml6YXRpb25JZGVudGl0aWVz');
 
 @$core.Deprecated('Use listLocationsRequestDescriptor instead')
 const ListLocationsRequest$json = {
@@ -1835,9 +1850,13 @@ const RegistryItem$json = {
     {'1': 'url', '3': 7, '4': 1, '5': 9, '10': 'url'},
     {'1': 'description', '3': 8, '4': 1, '5': 9, '10': 'description'},
     {'1': 'total_robot_usage', '3': 9, '4': 1, '5': 3, '10': 'totalRobotUsage'},
+    {'1': 'total_external_robot_usage', '3': 13, '4': 1, '5': 3, '10': 'totalExternalRobotUsage'},
     {'1': 'total_organization_usage', '3': 10, '4': 1, '5': 3, '10': 'totalOrganizationUsage'},
+    {'1': 'total_external_organization_usage', '3': 14, '4': 1, '5': 3, '10': 'totalExternalOrganizationUsage'},
     {'1': 'module_metadata', '3': 11, '4': 1, '5': 11, '6': '.viam.app.v1.ModuleMetadata', '9': 0, '10': 'moduleMetadata'},
     {'1': 'ml_model_metadata', '3': 12, '4': 1, '5': 11, '6': '.viam.app.v1.MLModelMetadata', '9': 0, '10': 'mlModelMetadata'},
+    {'1': 'created_at', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 16, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
   '8': [
     {'1': 'metadata'},
@@ -1852,11 +1871,40 @@ final $typed_data.Uint8List registryItemDescriptor = $convert.base64Decode(
     'BwLnBhY2thZ2VzLnYxLlBhY2thZ2VUeXBlUgR0eXBlEjcKCnZpc2liaWxpdHkYBiABKA4yFy52'
     'aWFtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5EhAKA3VybBgHIAEoCVIDdXJsEiAKC2'
     'Rlc2NyaXB0aW9uGAggASgJUgtkZXNjcmlwdGlvbhIqChF0b3RhbF9yb2JvdF91c2FnZRgJIAEo'
-    'A1IPdG90YWxSb2JvdFVzYWdlEjgKGHRvdGFsX29yZ2FuaXphdGlvbl91c2FnZRgKIAEoA1IWdG'
-    '90YWxPcmdhbml6YXRpb25Vc2FnZRJGCg9tb2R1bGVfbWV0YWRhdGEYCyABKAsyGy52aWFtLmFw'
-    'cC52MS5Nb2R1bGVNZXRhZGF0YUgAUg5tb2R1bGVNZXRhZGF0YRJKChFtbF9tb2RlbF9tZXRhZG'
-    'F0YRgMIAEoCzIcLnZpYW0uYXBwLnYxLk1MTW9kZWxNZXRhZGF0YUgAUg9tbE1vZGVsTWV0YWRh'
-    'dGFCCgoIbWV0YWRhdGE=');
+    'A1IPdG90YWxSb2JvdFVzYWdlEjsKGnRvdGFsX2V4dGVybmFsX3JvYm90X3VzYWdlGA0gASgDUh'
+    'd0b3RhbEV4dGVybmFsUm9ib3RVc2FnZRI4Chh0b3RhbF9vcmdhbml6YXRpb25fdXNhZ2UYCiAB'
+    'KANSFnRvdGFsT3JnYW5pemF0aW9uVXNhZ2USSQohdG90YWxfZXh0ZXJuYWxfb3JnYW5pemF0aW'
+    '9uX3VzYWdlGA4gASgDUh50b3RhbEV4dGVybmFsT3JnYW5pemF0aW9uVXNhZ2USRgoPbW9kdWxl'
+    'X21ldGFkYXRhGAsgASgLMhsudmlhbS5hcHAudjEuTW9kdWxlTWV0YWRhdGFIAFIObW9kdWxlTW'
+    'V0YWRhdGESSgoRbWxfbW9kZWxfbWV0YWRhdGEYDCABKAsyHC52aWFtLmFwcC52MS5NTE1vZGVs'
+    'TWV0YWRhdGFIAFIPbWxNb2RlbE1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYDyABKAsyGi5nb29nbG'
+    'UucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgQIAEoCzIaLmdv'
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdEIKCghtZXRhZGF0YQ==');
+
+@$core.Deprecated('Use getRegistryItemRequestDescriptor instead')
+const GetRegistryItemRequest$json = {
+  '1': 'GetRegistryItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+  ],
+};
+
+/// Descriptor for `GetRegistryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRegistryItemRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRSZWdpc3RyeUl0ZW1SZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZA==');
+
+@$core.Deprecated('Use getRegistryItemResponseDescriptor instead')
+const GetRegistryItemResponse$json = {
+  '1': 'GetRegistryItemResponse',
+  '2': [
+    {'1': 'item', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.RegistryItem', '10': 'item'},
+  ],
+};
+
+/// Descriptor for `GetRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRegistryItemResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRSZWdpc3RyeUl0ZW1SZXNwb25zZRItCgRpdGVtGAEgASgLMhkudmlhbS5hcHAudjEuUm'
+    'VnaXN0cnlJdGVtUgRpdGVt');
 
 @$core.Deprecated('Use createRegistryItemRequestDescriptor instead')
 const CreateRegistryItemRequest$json = {
@@ -1952,6 +2000,27 @@ const ListRegistryItemsResponse$json = {
 final $typed_data.Uint8List listRegistryItemsResponseDescriptor = $convert.base64Decode(
     'ChlMaXN0UmVnaXN0cnlJdGVtc1Jlc3BvbnNlEi8KBWl0ZW1zGAEgAygLMhkudmlhbS5hcHAudj'
     'EuUmVnaXN0cnlJdGVtUgVpdGVtcw==');
+
+@$core.Deprecated('Use deleteRegistryItemRequestDescriptor instead')
+const DeleteRegistryItemRequest$json = {
+  '1': 'DeleteRegistryItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+  ],
+};
+
+/// Descriptor for `DeleteRegistryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteRegistryItemRequestDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVSZWdpc3RyeUl0ZW1SZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZA==');
+
+@$core.Deprecated('Use deleteRegistryItemResponseDescriptor instead')
+const DeleteRegistryItemResponse$json = {
+  '1': 'DeleteRegistryItemResponse',
+};
+
+/// Descriptor for `DeleteRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteRegistryItemResponseDescriptor = $convert.base64Decode(
+    'ChpEZWxldGVSZWdpc3RyeUl0ZW1SZXNwb25zZQ==');
 
 @$core.Deprecated('Use createModuleRequestDescriptor instead')
 const CreateModuleRequest$json = {

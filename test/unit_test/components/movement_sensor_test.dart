@@ -28,11 +28,12 @@ class FakeMovementSensor extends MovementSensor {
     return {'command': command};
   }
 
-@override
-Future<Accuracy> accuracy({Map<String, dynamic>? extra}) async {
-  this.extra = extra;
-  return Accuracy({}, 0.0, 0.0, 0, 0.0);
-}
+  @override
+  Future<Accuracy> accuracy({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return Accuracy({}, 0.0, 0.0, 0, 0.0);
+  }
+
   @override
   Future<Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
     this.extra = extra;

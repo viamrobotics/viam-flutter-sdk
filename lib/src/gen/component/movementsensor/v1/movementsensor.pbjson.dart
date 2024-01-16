@@ -204,8 +204,18 @@ const GetAccuracyResponse$json = {
   '1': 'GetAccuracyResponse',
   '2': [
     {'1': 'accuracy', '3': 1, '4': 3, '5': 11, '6': '.viam.component.movementsensor.v1.GetAccuracyResponse.AccuracyEntry', '10': 'accuracy'},
+    {'1': 'position_hdop', '3': 2, '4': 1, '5': 2, '9': 0, '10': 'positionHdop', '17': true},
+    {'1': 'position_vdop', '3': 3, '4': 1, '5': 2, '9': 1, '10': 'positionVdop', '17': true},
+    {'1': 'position_nmea_gga_fix', '3': 4, '4': 1, '5': 5, '9': 2, '10': 'positionNmeaGgaFix', '17': true},
+    {'1': 'compass_degrees_error', '3': 5, '4': 1, '5': 2, '9': 3, '10': 'compassDegreesError', '17': true},
   ],
   '3': [GetAccuracyResponse_AccuracyEntry$json],
+  '8': [
+    {'1': '_position_hdop'},
+    {'1': '_position_vdop'},
+    {'1': '_position_nmea_gga_fix'},
+    {'1': '_compass_degrees_error'},
+  ],
 };
 
 @$core.Deprecated('Use getAccuracyResponseDescriptor instead')
@@ -222,8 +232,13 @@ const GetAccuracyResponse_AccuracyEntry$json = {
 final $typed_data.Uint8List getAccuracyResponseDescriptor = $convert.base64Decode(
     'ChNHZXRBY2N1cmFjeVJlc3BvbnNlEl8KCGFjY3VyYWN5GAEgAygLMkMudmlhbS5jb21wb25lbn'
     'QubW92ZW1lbnRzZW5zb3IudjEuR2V0QWNjdXJhY3lSZXNwb25zZS5BY2N1cmFjeUVudHJ5Ughh'
-    'Y2N1cmFjeRo7Cg1BY2N1cmFjeUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgAS'
-    'gCUgV2YWx1ZToCOAE=');
+    'Y2N1cmFjeRIoCg1wb3NpdGlvbl9oZG9wGAIgASgCSABSDHBvc2l0aW9uSGRvcIgBARIoCg1wb3'
+    'NpdGlvbl92ZG9wGAMgASgCSAFSDHBvc2l0aW9uVmRvcIgBARI2ChVwb3NpdGlvbl9ubWVhX2dn'
+    'YV9maXgYBCABKAVIAlIScG9zaXRpb25ObWVhR2dhRml4iAEBEjcKFWNvbXBhc3NfZGVncmVlc1'
+    '9lcnJvchgFIAEoAkgDUhNjb21wYXNzRGVncmVlc0Vycm9yiAEBGjsKDUFjY3VyYWN5RW50cnkS'
+    'EAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAJSBXZhbHVlOgI4AUIQCg5fcG9zaXRpb2'
+    '5faGRvcEIQCg5fcG9zaXRpb25fdmRvcEIYChZfcG9zaXRpb25fbm1lYV9nZ2FfZml4QhgKFl9j'
+    'b21wYXNzX2RlZ3JlZXNfZXJyb3I=');
 
 @$core.Deprecated('Use getLinearAccelerationRequestDescriptor instead')
 const GetLinearAccelerationRequest$json = {

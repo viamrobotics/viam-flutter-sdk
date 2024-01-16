@@ -895,10 +895,26 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
 class GetAccuracyResponse extends $pb.GeneratedMessage {
   factory GetAccuracyResponse({
     $core.Map<$core.String, $core.double>? accuracy,
+    $core.double? positionHdop,
+    $core.double? positionVdop,
+    $core.int? positionNmeaGgaFix,
+    $core.double? compassDegreesError,
   }) {
     final $result = create();
     if (accuracy != null) {
       $result.accuracy.addAll(accuracy);
+    }
+    if (positionHdop != null) {
+      $result.positionHdop = positionHdop;
+    }
+    if (positionVdop != null) {
+      $result.positionVdop = positionVdop;
+    }
+    if (positionNmeaGgaFix != null) {
+      $result.positionNmeaGgaFix = positionNmeaGgaFix;
+    }
+    if (compassDegreesError != null) {
+      $result.compassDegreesError = compassDegreesError;
     }
     return $result;
   }
@@ -908,6 +924,10 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAccuracyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..m<$core.String, $core.double>(1, _omitFieldNames ? '' : 'accuracy', entryClassName: 'GetAccuracyResponse.AccuracyEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OF, packageName: const $pb.PackageName('viam.component.movementsensor.v1'))
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'positionHdop', $pb.PbFieldType.OF)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'positionVdop', $pb.PbFieldType.OF)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'positionNmeaGgaFix', $pb.PbFieldType.O3)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'compassDegreesError', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
@@ -934,6 +954,42 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.Map<$core.String, $core.double> get accuracy => $_getMap(0);
+
+  @$pb.TagNumber(2)
+  $core.double get positionHdop => $_getN(1);
+  @$pb.TagNumber(2)
+  set positionHdop($core.double v) { $_setFloat(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPositionHdop() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPositionHdop() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get positionVdop => $_getN(2);
+  @$pb.TagNumber(3)
+  set positionVdop($core.double v) { $_setFloat(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPositionVdop() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPositionVdop() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get positionNmeaGgaFix => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set positionNmeaGgaFix($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPositionNmeaGgaFix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPositionNmeaGgaFix() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get compassDegreesError => $_getN(4);
+  @$pb.TagNumber(5)
+  set compassDegreesError($core.double v) { $_setFloat(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCompassDegreesError() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCompassDegreesError() => clearField(5);
 }
 
 class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
