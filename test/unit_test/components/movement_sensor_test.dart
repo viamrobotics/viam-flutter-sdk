@@ -31,7 +31,7 @@ class FakeMovementSensor extends MovementSensor {
   @override
   Future<Accuracy> accuracy({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Accuracy({}, 0.0, 0.0, 0, 0.0);
+    return Accuracy({'foo': 0.0, 'bar': 0.0}, 0.0, 0.0, 0, 0.0);
   }
 
   @override
@@ -93,7 +93,7 @@ void main() {
     });
 
     test('accuracy', () async {
-      final expectedAccuracy = Accuracy({}, 0.0, 0.0, 0, 0.0);
+      final expectedAccuracy = Accuracy({'foo': 0.0, 'bar': 0.0}, 0.0, 0.0, 0, 0.0);
       final result = await movementSensor.accuracy();
 
       expect(result.accuracyMap, expectedAccuracy.accuracyMap);
