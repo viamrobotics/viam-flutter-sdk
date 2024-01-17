@@ -10,6 +10,16 @@ class Position {
   Position(this.coordinates, this.altitude);
 }
 
+class Accuracy {
+  Map<String, double> accuracyMap;
+  double hdop;
+  double vdop;
+  int nmeaFix;
+  double compassDegreeError;
+
+  Accuracy(this.accuracyMap, this.hdop, this.vdop, this.nmeaFix, this.compassDegreeError);
+}
+
 typedef Properties = GetPropertiesResponse;
 
 /// MovementSensor reports information about the robot's direction, position and speed.
@@ -42,7 +52,7 @@ abstract class MovementSensor extends Resource {
   Future<Properties> properties({Map<String, dynamic>? extra});
 
   /// Get the accuracy of the various sensors
-  Future<Map<String, double>> accuracy({Map<String, dynamic>? extra});
+  Future<Accuracy> accuracy({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [MovementSensor] with the given [name]
   static ResourceName getResourceName(String name) {
