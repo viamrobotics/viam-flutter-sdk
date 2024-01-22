@@ -31,7 +31,9 @@ class FakeMovementSensor extends MovementSensor {
   @override
   Future<Accuracy> accuracy({Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return Accuracy({}, 0.0, 0.0, 0, 0.0);
+    return Accuracy()
+      ..positionHdop = 0.0
+      ..positionVdop = 0.0;
   }
 
   @override
@@ -93,13 +95,8 @@ void main() {
     });
 
     test('accuracy', () async {
-      final expectedAccuracy = Accuracy({}, 0.0, 0.0, 0, 0.0);
       final result = await movementSensor.accuracy();
-
-      expect(result.hdop, expectedAccuracy.hdop);
-      expect(result.vdop, expectedAccuracy.vdop);
-      expect(result.nmeaFix, expectedAccuracy.nmeaFix);
-      expect(result.compassDegreeError, expectedAccuracy.compassDegreeError);
+      expect(result.positionHdop, 0.0);
     });
 
     test('angularVelocity', () async {
@@ -255,7 +252,7 @@ void main() {
       test('accuracy', () async {
         final client = MovementSensorClient(name, channel);
         final result = await client.accuracy();
-        expect(result.hdop, 0.0);
+        expect(result.positionVdop, 0.0);
       });
 
       test('angularVelocity', () async {

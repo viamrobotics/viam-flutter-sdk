@@ -10,17 +10,8 @@ class Position {
   Position(this.coordinates, this.altitude);
 }
 
-class Accuracy {
-  Map<String, double> accuracyMap;
-  double hdop;
-  double vdop;
-  int nmeaFix;
-  double compassDegreeError;
-
-  Accuracy(this.accuracyMap, this.hdop, this.vdop, this.nmeaFix, this.compassDegreeError);
-}
-
 typedef Properties = GetPropertiesResponse;
+typedef Accuracy = GetAccuracyResponse;
 
 /// MovementSensor reports information about the robot's direction, position and speed.
 abstract class MovementSensor extends Resource {
