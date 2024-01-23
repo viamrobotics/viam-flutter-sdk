@@ -1,11 +1,21 @@
 # Changelog
 
-## [v0.0.9](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.9) (2023-12-12)
+## [v0.0.10](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.10) (2024-01-23)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.8...v0.0.9)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.9...v0.0.10)
 
 **Merged pull requests:**
 
+- RSDK-6122: getAccuracy [\#170](https://github.com/viamrobotics/viam-flutter-sdk/pull/170) ([susmitaSanyal](https://github.com/susmitaSanyal))
+- Automated Protos Update [\#169](https://github.com/viamrobotics/viam-flutter-sdk/pull/169) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-5424 - fix video stream on flutter web [\#168](https://github.com/viamrobotics/viam-flutter-sdk/pull/168) ([clintpurser](https://github.com/clintpurser))
+- RSDK-4602 - add extra params to camera [\#167](https://github.com/viamrobotics/viam-flutter-sdk/pull/167) ([mcvella](https://github.com/mcvella))
+- RSDK-6239 - add generic component support [\#166](https://github.com/viamrobotics/viam-flutter-sdk/pull/166) ([mcvella](https://github.com/mcvella))
+- Automated Protos Update [\#164](https://github.com/viamrobotics/viam-flutter-sdk/pull/164) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Refactor robot example [\#162](https://github.com/viamrobotics/viam-flutter-sdk/pull/162) ([clintpurser](https://github.com/clintpurser))
+- improve webrtc connection times & misc improvements [\#160](https://github.com/viamrobotics/viam-flutter-sdk/pull/160) ([clintpurser](https://github.com/clintpurser))
+- v0.0.9 [\#159](https://github.com/viamrobotics/viam-flutter-sdk/pull/159) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#158](https://github.com/viamrobotics/viam-flutter-sdk/pull/158) ([github-actions[bot]](https://github.com/apps/github-actions))
 - APP-3213 - add wrappers for org members/invites [\#157](https://github.com/viamrobotics/viam-flutter-sdk/pull/157) ([clintpurser](https://github.com/clintpurser))
 - Automated Protos Update [\#156](https://github.com/viamrobotics/viam-flutter-sdk/pull/156) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Fix gitignore to include new build proto [\#155](https://github.com/viamrobotics/viam-flutter-sdk/pull/155) ([njooma](https://github.com/njooma))
@@ -63,6 +73,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.9](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.9) (2023-12-12)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.8...v0.0.9)
 
 ## [v0.0.8](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.8) (2023-11-15)
 
