@@ -11,6 +11,7 @@ class Position {
 }
 
 typedef Properties = GetPropertiesResponse;
+typedef Accuracy = GetAccuracyResponse;
 
 /// MovementSensor reports information about the robot's direction, position and speed.
 abstract class MovementSensor extends Resource {
@@ -42,7 +43,7 @@ abstract class MovementSensor extends Resource {
   Future<Properties> properties({Map<String, dynamic>? extra});
 
   /// Get the accuracy of the various sensors
-  Future<Map<String, double>> accuracy({Map<String, dynamic>? extra});
+  Future<Accuracy> accuracy({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [MovementSensor] with the given [name]
   static ResourceName getResourceName(String name) {
