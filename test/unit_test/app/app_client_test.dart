@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/src/app/app.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 
 import '../mocks/mock_response_future.dart';
@@ -102,6 +103,15 @@ void main() {
         ..name = 'name';
       when(serviceClient.getRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(GetRobotPartResponse()..part = expected));
       final response = await appClient.getRobotPart('robot part');
+      expect(response, equals(expected));
+    });
+
+    test('updateRobotPart', () async {
+      final expected = RobotPart()
+        ..id = 'id'
+        ..name = 'name2';
+      when(serviceClient.updateRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartResponse()..part = expected));
+      final response = await appClient.updateRobotPart('robot part', 'name2', {'attributes': {}} as Struct);
       expect(response, equals(expected));
     });
 
