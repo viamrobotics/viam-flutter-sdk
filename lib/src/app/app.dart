@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
+
 import '../gen/app/v1/app.pbgrpc.dart';
 import 'permissions.dart';
 
@@ -66,6 +68,16 @@ class AppClient {
   Future<RobotPart> getRobotPart(String partId) async {
     final getRobotPartRequest = GetRobotPartRequest()..id = partId;
     final response = await _client.getRobotPart(getRobotPartRequest);
+    return response.part;
+  }
+
+  /// Update a specific [RobotPart] by ID
+  Future<RobotPart> updateRobotPart(String partId, String name, Struct robotConfig) async {
+    final updateRobotPartRequest = UpdateRobotPartRequest()
+      ..id = partId
+      ..name = name
+      ..robotConfig = robotConfig;
+    final response = await _client.updateRobotPart(updateRobotPartRequest);
     return response.part;
   }
 

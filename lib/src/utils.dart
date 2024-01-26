@@ -18,7 +18,7 @@ extension NullableStringUtils on String? {
 extension ValueUtils on Value {
   dynamic toPrimitive() {
     if (hasBoolValue()) return boolValue;
-    if (hasListValue()) return listValue.values.map((e) => e.toPrimitive());
+    if (hasListValue()) return listValue.values.map((e) => e.toPrimitive()).toList();
     if (hasNullValue()) return null;
     if (hasNumberValue()) return numberValue;
     if (hasStringValue()) return stringValue;
