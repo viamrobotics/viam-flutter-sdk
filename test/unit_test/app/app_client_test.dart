@@ -111,7 +111,8 @@ void main() {
         ..id = 'id'
         ..name = 'name2';
       when(serviceClient.updateRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartResponse()..part = expected));
-      final response = await appClient.updateRobotPart('robot part', 'name2', {'attributes': {}} as Struct);
+      final rc = Struct();
+      final response = await appClient.updateRobotPart('robot part', 'name2', rc);
       expect(response, equals(expected));
     });
 
