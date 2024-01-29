@@ -160,6 +160,13 @@ void main() {
       verify(serviceClient.deleteOrganizationMember(any)).called(1);
     });
 
+    test('newMachine', () async {
+      final expected = NewRobotResponse();
+      when(serviceClient.newRobot(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.newMachine('test', 'fake-id');
+      verify(serviceClient.newRobot(any)).called(1);
+    });
+
     test('tailLogs', () async {
       final expected = LogEntry()..message = 'My log entry';
       final response = TailRobotPartLogsResponse()..logs.add(expected);

@@ -164,4 +164,13 @@ class AppClient {
       ..userId = userId;
     await _client.deleteOrganizationMember(request);
   }
+
+  /// Create a new smart machine with the included [name] in the passed in [locationId]
+  Future<String> newMachine(String name, String locationId) async {
+    final request = NewRobotRequest()
+      ..name = name
+      ..location = locationId;
+    final response = await _client.newRobot(request);
+    return response.id;
+  }
 }
