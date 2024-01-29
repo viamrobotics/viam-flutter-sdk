@@ -120,6 +120,7 @@ const AppSubsystemConfig$json = {
     {'1': 'pin_version', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'pinVersion'},
     {'1': 'pin_url', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'pinUrl'},
     {'1': 'disable_subsystem', '3': 4, '4': 1, '5': 8, '8': {}, '10': 'disableSubsystem'},
+    {'1': 'attributes', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '8': {}, '10': 'attributes'},
   ],
 };
 
@@ -131,7 +132,9 @@ final $typed_data.Uint8List appSubsystemConfigDescriptor = $convert.base64Decode
     'Bpbl92ZXJzaW9uIlIKcGluVmVyc2lvbhI7CgdwaW5fdXJsGAMgASgJQiKahJ4DHWJzb246InBp'
     'bl91cmwiIGpzb246InBpbl91cmwiUgZwaW5VcmwSYwoRZGlzYWJsZV9zdWJzeXN0ZW0YBCABKA'
     'hCNpqEngMxYnNvbjoiZGlzYWJsZV9zdWJzeXN0ZW0iIGpzb246ImRpc2FibGVfc3Vic3lzdGVt'
-    'IlIQZGlzYWJsZVN1YnN5c3RlbQ==');
+    'IlIQZGlzYWJsZVN1YnN5c3RlbRJhCgphdHRyaWJ1dGVzGAUgASgLMhcuZ29vZ2xlLnByb3RvYn'
+    'VmLlN0cnVjdEIomoSeAyNic29uOiJhdHRyaWJ1dGVzIiBqc29uOiJhdHRyaWJ1dGVzIlIKYXR0'
+    'cmlidXRlcw==');
 
 @$core.Deprecated('Use deviceAgentConfigRequestDescriptor instead')
 const DeviceAgentConfigRequest$json = {
@@ -199,6 +202,7 @@ const DeviceSubsystemConfig$json = {
     {'1': 'update_info', '3': 1, '4': 1, '5': 11, '6': '.viam.app.agent.v1.SubsystemUpdateInfo', '10': 'updateInfo'},
     {'1': 'disable', '3': 2, '4': 1, '5': 8, '10': 'disable'},
     {'1': 'force_restart', '3': 3, '4': 1, '5': 8, '10': 'forceRestart'},
+    {'1': 'attributes', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'attributes'},
   ],
 };
 
@@ -206,7 +210,8 @@ const DeviceSubsystemConfig$json = {
 final $typed_data.Uint8List deviceSubsystemConfigDescriptor = $convert.base64Decode(
     'ChVEZXZpY2VTdWJzeXN0ZW1Db25maWcSRwoLdXBkYXRlX2luZm8YASABKAsyJi52aWFtLmFwcC'
     '5hZ2VudC52MS5TdWJzeXN0ZW1VcGRhdGVJbmZvUgp1cGRhdGVJbmZvEhgKB2Rpc2FibGUYAiAB'
-    'KAhSB2Rpc2FibGUSIwoNZm9yY2VfcmVzdGFydBgDIAEoCFIMZm9yY2VSZXN0YXJ0');
+    'KAhSB2Rpc2FibGUSIwoNZm9yY2VfcmVzdGFydBgDIAEoCFIMZm9yY2VSZXN0YXJ0EjcKCmF0dH'
+    'JpYnV0ZXMYBCABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgphdHRyaWJ1dGVz');
 
 @$core.Deprecated('Use hostInfoDescriptor instead')
 const HostInfo$json = {

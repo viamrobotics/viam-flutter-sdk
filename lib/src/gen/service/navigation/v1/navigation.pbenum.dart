@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-/// MapType represents the various types of map the navigation service can ingest.
+/// MapType represents the various types of maps the navigation service can ingest.
 class MapType extends $pb.ProtobufEnum {
   static const MapType MAP_TYPE_UNSPECIFIED = MapType._(0, _omitEnumNames ? '' : 'MAP_TYPE_UNSPECIFIED');
   static const MapType MAP_TYPE_NONE = MapType._(1, _omitEnumNames ? '' : 'MAP_TYPE_NONE');

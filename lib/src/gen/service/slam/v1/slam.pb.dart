@@ -15,7 +15,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/struct.pb.dart' as $2;
-import '../../../google/protobuf/timestamp.pb.dart' as $3;
 import 'slam.pbenum.dart';
 
 export 'slam.pbenum.dart';
@@ -376,109 +375,6 @@ class GetInternalStateResponse extends $pb.GeneratedMessage {
   $core.bool hasInternalStateChunk() => $_has(0);
   @$pb.TagNumber(1)
   void clearInternalStateChunk() => clearField(1);
-}
-
-class GetLatestMapInfoRequest extends $pb.GeneratedMessage {
-  factory GetLatestMapInfoRequest({
-    $core.String? name,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    return $result;
-  }
-  GetLatestMapInfoRequest._() : super();
-  factory GetLatestMapInfoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetLatestMapInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestMapInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetLatestMapInfoRequest clone() => GetLatestMapInfoRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetLatestMapInfoRequest copyWith(void Function(GetLatestMapInfoRequest) updates) => super.copyWith((message) => updates(message as GetLatestMapInfoRequest)) as GetLatestMapInfoRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetLatestMapInfoRequest create() => GetLatestMapInfoRequest._();
-  GetLatestMapInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<GetLatestMapInfoRequest> createRepeated() => $pb.PbList<GetLatestMapInfoRequest>();
-  @$core.pragma('dart2js:noInline')
-  static GetLatestMapInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestMapInfoRequest>(create);
-  static GetLatestMapInfoRequest? _defaultInstance;
-
-  /// Name of the SLAM algo
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-}
-
-class GetLatestMapInfoResponse extends $pb.GeneratedMessage {
-  factory GetLatestMapInfoResponse({
-    $3.Timestamp? lastMapUpdate,
-  }) {
-    final $result = create();
-    if (lastMapUpdate != null) {
-      $result.lastMapUpdate = lastMapUpdate;
-    }
-    return $result;
-  }
-  GetLatestMapInfoResponse._() : super();
-  factory GetLatestMapInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetLatestMapInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestMapInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
-    ..aOM<$3.Timestamp>(1, _omitFieldNames ? '' : 'lastMapUpdate', subBuilder: $3.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetLatestMapInfoResponse clone() => GetLatestMapInfoResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetLatestMapInfoResponse copyWith(void Function(GetLatestMapInfoResponse) updates) => super.copyWith((message) => updates(message as GetLatestMapInfoResponse)) as GetLatestMapInfoResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetLatestMapInfoResponse create() => GetLatestMapInfoResponse._();
-  GetLatestMapInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<GetLatestMapInfoResponse> createRepeated() => $pb.PbList<GetLatestMapInfoResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetLatestMapInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestMapInfoResponse>(create);
-  static GetLatestMapInfoResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $3.Timestamp get lastMapUpdate => $_getN(0);
-  @$pb.TagNumber(1)
-  set lastMapUpdate($3.Timestamp v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasLastMapUpdate() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearLastMapUpdate() => clearField(1);
-  @$pb.TagNumber(1)
-  $3.Timestamp ensureLastMapUpdate() => $_ensure(0);
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
