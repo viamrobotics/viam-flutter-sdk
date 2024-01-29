@@ -108,31 +108,6 @@ final $typed_data.Uint8List getInternalStateResponseDescriptor = $convert.base64
     'ChhHZXRJbnRlcm5hbFN0YXRlUmVzcG9uc2USMAoUaW50ZXJuYWxfc3RhdGVfY2h1bmsYASABKA'
     'xSEmludGVybmFsU3RhdGVDaHVuaw==');
 
-@$core.Deprecated('Use getLatestMapInfoRequestDescriptor instead')
-const GetLatestMapInfoRequest$json = {
-  '1': 'GetLatestMapInfoRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-  ],
-};
-
-/// Descriptor for `GetLatestMapInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getLatestMapInfoRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRMYXRlc3RNYXBJbmZvUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
-
-@$core.Deprecated('Use getLatestMapInfoResponseDescriptor instead')
-const GetLatestMapInfoResponse$json = {
-  '1': 'GetLatestMapInfoResponse',
-  '2': [
-    {'1': 'last_map_update', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastMapUpdate'},
-  ],
-};
-
-/// Descriptor for `GetLatestMapInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getLatestMapInfoResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRMYXRlc3RNYXBJbmZvUmVzcG9uc2USQgoPbGFzdF9tYXBfdXBkYXRlGAEgASgLMhouZ2'
-    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFINbGFzdE1hcFVwZGF0ZQ==');
-
 @$core.Deprecated('Use getPropertiesRequestDescriptor instead')
 const GetPropertiesRequest$json = {
   '1': 'GetPropertiesRequest',

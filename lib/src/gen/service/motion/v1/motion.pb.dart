@@ -403,6 +403,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     $1.Pose? destination,
     $1.ResourceName? componentName,
     $1.ResourceName? slamServiceName,
+    MotionConfiguration? motionConfiguration,
     $2.Struct? extra,
   }) {
     final $result = create();
@@ -418,6 +419,9 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     if (slamServiceName != null) {
       $result.slamServiceName = slamServiceName;
     }
+    if (motionConfiguration != null) {
+      $result.motionConfiguration = motionConfiguration;
+    }
     if (extra != null) {
       $result.extra = extra;
     }
@@ -432,6 +436,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     ..aOM<$1.Pose>(2, _omitFieldNames ? '' : 'destination', subBuilder: $1.Pose.create)
     ..aOM<$1.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
     ..aOM<$1.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceName', subBuilder: $1.ResourceName.create)
+    ..aOM<MotionConfiguration>(5, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
     ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -503,26 +508,38 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $1.ResourceName ensureSlamServiceName() => $_ensure(3);
 
+  /// Optional set of motion configuration options
+  @$pb.TagNumber(5)
+  MotionConfiguration get motionConfiguration => $_getN(4);
+  @$pb.TagNumber(5)
+  set motionConfiguration(MotionConfiguration v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMotionConfiguration() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMotionConfiguration() => clearField(5);
+  @$pb.TagNumber(5)
+  MotionConfiguration ensureMotionConfiguration() => $_ensure(4);
+
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(4);
+  $2.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(4);
+  $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(4);
+  $2.Struct ensureExtra() => $_ensure(5);
 }
 
 class MoveOnMapResponse extends $pb.GeneratedMessage {
   factory MoveOnMapResponse({
-    $core.bool? success,
+    $core.String? executionId,
   }) {
     final $result = create();
-    if (success != null) {
-      $result.success = success;
+    if (executionId != null) {
+      $result.executionId = executionId;
     }
     return $result;
   }
@@ -531,7 +548,7 @@ class MoveOnMapResponse extends $pb.GeneratedMessage {
   factory MoveOnMapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnMapResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..aOS(1, _omitFieldNames ? '' : 'executionId')
     ..hasRequiredFields = false
   ;
 
@@ -556,14 +573,17 @@ class MoveOnMapResponse extends $pb.GeneratedMessage {
   static MoveOnMapResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnMapResponse>(create);
   static MoveOnMapResponse? _defaultInstance;
 
+  /// The unique ID which identifies the execution.
+  /// Multiple plans will share the same execution_id if they were
+  /// generated due to replanning.
   @$pb.TagNumber(1)
-  $core.bool get success => $_getBF(0);
+  $core.String get executionId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set success($core.bool v) { $_setBool(0, v); }
+  set executionId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasSuccess() => $_has(0);
+  $core.bool hasExecutionId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSuccess() => clearField(1);
+  void clearExecutionId() => clearField(1);
 }
 
 /// Pairs a vision service with a camera, informing the service about which camera it may use
