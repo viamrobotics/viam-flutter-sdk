@@ -167,6 +167,13 @@ void main() {
       verify(serviceClient.newRobot(any)).called(1);
     });
 
+    test('getFragment', () async {
+      final expected = GetFragmentResponse();
+      when(serviceClient.getFragment(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.getFragment('fake-id');
+      verify(serviceClient.getFragment(any)).called(1);
+    });
+
     test('tailLogs', () async {
       final expected = LogEntry()..message = 'My log entry';
       final response = TailRobotPartLogsResponse()..logs.add(expected);
