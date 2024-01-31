@@ -173,4 +173,11 @@ class AppClient {
     final response = await _client.newRobot(request);
     return response.id;
   }
+
+  /// Get a specific [Fragment] by id.
+  Future<Fragment> getFragment(String id) async {
+    final request = GetFragmentRequest()..id = id;
+    final response = await _client.getFragment(request);
+    return response.fragment;
+  }
 }
