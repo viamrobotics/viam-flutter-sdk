@@ -2,6 +2,8 @@ import 'dart:async';
 
 import '../gen/provisioning/v1/provisioning.pbgrpc.dart';
 
+enum NetworkType { wifi, wired }
+
 /// gRPC client for connecting to Viam's Provisioning Service
 ///
 /// All calls must be authenticated.
@@ -19,11 +21,10 @@ class ProvisioningClient {
 
   /// Set the network credentials of the Smart machine, so it can connect to the internet.
   ///
-  /// [type] is either 'wired' or 'wifi'
   /// [ssid] is the networks ssid
   /// [psk] is the networks passkey
-  Future<void> setNetworkCredentials({String type = 'wifi', required String ssid, required String psk}) async {
-    final request = SetNetworkCredentialsRequest(type: type, ssid: ssid, psk: psk);
+  Future<void> setNetworkCredentials({NetworkType type = NetworkType.wifi, required String ssid, required String psk}) async {
+    final request = SetNetworkCredentialsRequest(type: type.name, ssid: ssid, psk: psk);
     await _client.setNetworkCredentials(request);
   }
 
