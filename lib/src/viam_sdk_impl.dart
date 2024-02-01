@@ -1,22 +1,26 @@
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:viam_sdk/protos/app/data_sync.dart';
 
+import '../protos/app/app.dart';
+import '../protos/app/data.dart';
 import './app/app.dart';
 import './app/data.dart';
+import './app/provisioning.dart';
+import './gen/provisioning/v1/provisioning.pbgrpc.dart';
 import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
-import '../protos/app/app.dart';
-import '../protos/app/data.dart';
 
 class ViamImpl implements Viam {
   final ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
   late DataClient _dataClient;
+  late ProvisioningClient _provisioningClient;
 
   ViamImpl._withChannel(this._clientChannelBase) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
+    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(_clientChannelBase));
   }
 
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
@@ -45,6 +49,11 @@ class ViamImpl implements Viam {
   @override
   DataClient get dataClient {
     return _dataClient;
+  }
+
+  @override
+  ProvisioningClient get provisioningClient {
+    return _provisioningClient;
   }
 
   @override

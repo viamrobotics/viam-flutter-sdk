@@ -1,5 +1,6 @@
 import './app/app.dart';
 import './app/data.dart';
+import './app/provisioning.dart';
 import './gen/app/v1/app.pbgrpc.dart';
 import './robot/client.dart';
 import './viam_sdk_impl.dart';
@@ -20,6 +21,9 @@ abstract class Viam {
 
   /// A client to communicate with Viam's data and data sync services
   DataClient get dataClient;
+
+  /// A client to communicate with Viam's data and data sync services
+  ProvisioningClient get provisioningClient;
 
   /// Get a [RobotClient] connected to the provided [Robot]
   Future<RobotClient> getRobotClient(Robot robot);
