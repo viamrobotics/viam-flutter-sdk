@@ -35,6 +35,7 @@ export 'src/components/servo/servo.dart';
 /// Necessary Protos
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
+export 'src/gen/provisioning/v1/provisioning.pb.dart';
 
 /// Media & Streams
 export 'src/media/image.dart';

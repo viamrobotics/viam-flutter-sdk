@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:viam_sdk/protos/provisioning/provisioning.dart';
 import 'package:viam_sdk/src/app/provisioning.dart';
-import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';

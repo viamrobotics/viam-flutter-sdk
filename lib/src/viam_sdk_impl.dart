@@ -3,10 +3,10 @@ import 'package:viam_sdk/protos/app/data_sync.dart';
 
 import '../protos/app/app.dart';
 import '../protos/app/data.dart';
+import '../protos/provisioning/provisioning.dart';
 import './app/app.dart';
 import './app/data.dart';
 import './app/provisioning.dart';
-import './gen/provisioning/v1/provisioning.pbgrpc.dart';
 import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';

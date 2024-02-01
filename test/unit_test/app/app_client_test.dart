@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/src/app/app.dart';
-import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 
