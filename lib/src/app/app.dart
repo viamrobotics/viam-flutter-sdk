@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 
 import '../gen/app/v1/app.pbgrpc.dart';
+import '../gen/common/v1/common.pb.dart';
 import 'permissions.dart';
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;
@@ -82,10 +83,10 @@ class AppClient {
   }
 
   /// Get a page of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
-  Future<RobotPartLogPage> getLogs(RobotPart part, {bool errorsOnly = false, String pageToken = ''}) async {
+  Future<RobotPartLogPage> getLogs(RobotPart part, {String? filter, String pageToken = ''}) async {
     final request = GetRobotPartLogsRequest()
       ..id = part.id
-      ..errorsOnly = errorsOnly
+      ..filter = filter ?? ''
       ..pageToken = pageToken;
     return await _client.getRobotPartLogs(request);
   }
