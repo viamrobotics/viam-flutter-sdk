@@ -1044,9 +1044,17 @@ const GetRobotPartLogsRequest$json = {
   '1': 'GetRobotPartLogsRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'errors_only', '3': 2, '4': 1, '5': 8, '10': 'errorsOnly'},
+    {
+      '1': 'errors_only',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '8': {'3': true},
+      '10': 'errorsOnly',
+    },
     {'1': 'filter', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'filter', '17': true},
     {'1': 'page_token', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'pageToken', '17': true},
+    {'1': 'levels', '3': 5, '4': 3, '5': 9, '10': 'levels'},
   ],
   '8': [
     {'1': '_filter'},
@@ -1056,47 +1064,25 @@ const GetRobotPartLogsRequest$json = {
 
 /// Descriptor for `GetRobotPartLogsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotPartLogsRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRSb2JvdFBhcnRMb2dzUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSHwoLZXJyb3JzX29ubH'
-    'kYAiABKAhSCmVycm9yc09ubHkSGwoGZmlsdGVyGAMgASgJSABSBmZpbHRlcogBARIiCgpwYWdl'
-    'X3Rva2VuGAQgASgJSAFSCXBhZ2VUb2tlbogBAUIJCgdfZmlsdGVyQg0KC19wYWdlX3Rva2Vu');
-
-@$core.Deprecated('Use logEntryDescriptor instead')
-const LogEntry$json = {
-  '1': 'LogEntry',
-  '2': [
-    {'1': 'host', '3': 1, '4': 1, '5': 9, '10': 'host'},
-    {'1': 'level', '3': 2, '4': 1, '5': 9, '10': 'level'},
-    {'1': 'time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'time'},
-    {'1': 'logger_name', '3': 4, '4': 1, '5': 9, '10': 'loggerName'},
-    {'1': 'message', '3': 5, '4': 1, '5': 9, '10': 'message'},
-    {'1': 'caller', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'caller'},
-    {'1': 'stack', '3': 7, '4': 1, '5': 9, '10': 'stack'},
-    {'1': 'fields', '3': 8, '4': 3, '5': 11, '6': '.google.protobuf.Struct', '10': 'fields'},
-  ],
-};
-
-/// Descriptor for `LogEntry`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List logEntryDescriptor = $convert.base64Decode(
-    'CghMb2dFbnRyeRISCgRob3N0GAEgASgJUgRob3N0EhQKBWxldmVsGAIgASgJUgVsZXZlbBIuCg'
-    'R0aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIEdGltZRIfCgtsb2dnZXJf'
-    'bmFtZRgEIAEoCVIKbG9nZ2VyTmFtZRIYCgdtZXNzYWdlGAUgASgJUgdtZXNzYWdlEi8KBmNhbG'
-    'xlchgGIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBmNhbGxlchIUCgVzdGFjaxgHIAEo'
-    'CVIFc3RhY2sSLwoGZmllbGRzGAggAygLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIGZmllbG'
-    'Rz');
+    'ChdHZXRSb2JvdFBhcnRMb2dzUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSIwoLZXJyb3JzX29ubH'
+    'kYAiABKAhCAhgBUgplcnJvcnNPbmx5EhsKBmZpbHRlchgDIAEoCUgAUgZmaWx0ZXKIAQESIgoK'
+    'cGFnZV90b2tlbhgEIAEoCUgBUglwYWdlVG9rZW6IAQESFgoGbGV2ZWxzGAUgAygJUgZsZXZlbH'
+    'NCCQoHX2ZpbHRlckINCgtfcGFnZV90b2tlbg==');
 
 @$core.Deprecated('Use getRobotPartLogsResponseDescriptor instead')
 const GetRobotPartLogsResponse$json = {
   '1': 'GetRobotPartLogsResponse',
   '2': [
-    {'1': 'logs', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.LogEntry', '10': 'logs'},
+    {'1': 'logs', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.LogEntry', '10': 'logs'},
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
   ],
 };
 
 /// Descriptor for `GetRobotPartLogsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotPartLogsResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRSb2JvdFBhcnRMb2dzUmVzcG9uc2USKQoEbG9ncxgBIAMoCzIVLnZpYW0uYXBwLnYxLk'
-    'xvZ0VudHJ5UgRsb2dzEiYKD25leHRfcGFnZV90b2tlbhgCIAEoCVINbmV4dFBhZ2VUb2tlbg==');
+    'ChhHZXRSb2JvdFBhcnRMb2dzUmVzcG9uc2USLAoEbG9ncxgBIAMoCzIYLnZpYW0uY29tbW9uLn'
+    'YxLkxvZ0VudHJ5UgRsb2dzEiYKD25leHRfcGFnZV90b2tlbhgCIAEoCVINbmV4dFBhZ2VUb2tl'
+    'bg==');
 
 @$core.Deprecated('Use tailRobotPartLogsRequestDescriptor instead')
 const TailRobotPartLogsRequest$json = {
@@ -1121,14 +1107,14 @@ final $typed_data.Uint8List tailRobotPartLogsRequestDescriptor = $convert.base64
 const TailRobotPartLogsResponse$json = {
   '1': 'TailRobotPartLogsResponse',
   '2': [
-    {'1': 'logs', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.LogEntry', '10': 'logs'},
+    {'1': 'logs', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.LogEntry', '10': 'logs'},
   ],
 };
 
 /// Descriptor for `TailRobotPartLogsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tailRobotPartLogsResponseDescriptor = $convert.base64Decode(
-    'ChlUYWlsUm9ib3RQYXJ0TG9nc1Jlc3BvbnNlEikKBGxvZ3MYASADKAsyFS52aWFtLmFwcC52MS'
-    '5Mb2dFbnRyeVIEbG9ncw==');
+    'ChlUYWlsUm9ib3RQYXJ0TG9nc1Jlc3BvbnNlEiwKBGxvZ3MYASADKAsyGC52aWFtLmNvbW1vbi'
+    '52MS5Mb2dFbnRyeVIEbG9ncw==');
 
 @$core.Deprecated('Use getRobotPartHistoryRequestDescriptor instead')
 const GetRobotPartHistoryRequest$json = {
@@ -1255,14 +1241,14 @@ final $typed_data.Uint8List aPIKeyDescriptor = $convert.base64Decode(
 const GetRobotAPIKeysResponse$json = {
   '1': 'GetRobotAPIKeysResponse',
   '2': [
-    {'1': 'api_keys', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.APIKey', '10': 'apiKeys'},
+    {'1': 'api_keys', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.APIKeyWithAuthorizations', '10': 'apiKeys'},
   ],
 };
 
 /// Descriptor for `GetRobotAPIKeysResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotAPIKeysResponseDescriptor = $convert.base64Decode(
-    'ChdHZXRSb2JvdEFQSUtleXNSZXNwb25zZRIuCghhcGlfa2V5cxgBIAMoCzITLnZpYW0uYXBwLn'
-    'YxLkFQSUtleVIHYXBpS2V5cw==');
+    'ChdHZXRSb2JvdEFQSUtleXNSZXNwb25zZRJACghhcGlfa2V5cxgBIAMoCzIlLnZpYW0uYXBwLn'
+    'YxLkFQSUtleVdpdGhBdXRob3JpemF0aW9uc1IHYXBpS2V5cw==');
 
 @$core.Deprecated('Use deleteRobotPartResponseDescriptor instead')
 const DeleteRobotPartResponse$json = {

@@ -481,3 +481,27 @@ final $typed_data.Uint8List getReadingsResponseDescriptor = $convert.base64Decod
     'c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuZ29vZ2xlLnByb3RvYn'
     'VmLlZhbHVlUgV2YWx1ZToCOAE=');
 
+@$core.Deprecated('Use logEntryDescriptor instead')
+const LogEntry$json = {
+  '1': 'LogEntry',
+  '2': [
+    {'1': 'host', '3': 1, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'level', '3': 2, '4': 1, '5': 9, '10': 'level'},
+    {'1': 'time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'time'},
+    {'1': 'logger_name', '3': 4, '4': 1, '5': 9, '10': 'loggerName'},
+    {'1': 'message', '3': 5, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'caller', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'caller'},
+    {'1': 'stack', '3': 7, '4': 1, '5': 9, '10': 'stack'},
+    {'1': 'fields', '3': 8, '4': 3, '5': 11, '6': '.google.protobuf.Struct', '10': 'fields'},
+  ],
+};
+
+/// Descriptor for `LogEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logEntryDescriptor = $convert.base64Decode(
+    'CghMb2dFbnRyeRISCgRob3N0GAEgASgJUgRob3N0EhQKBWxldmVsGAIgASgJUgVsZXZlbBIuCg'
+    'R0aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIEdGltZRIfCgtsb2dnZXJf'
+    'bmFtZRgEIAEoCVIKbG9nZ2VyTmFtZRIYCgdtZXNzYWdlGAUgASgJUgdtZXNzYWdlEi8KBmNhbG'
+    'xlchgGIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBmNhbGxlchIUCgVzdGFjaxgHIAEo'
+    'CVIFc3RhY2sSLwoGZmllbGRzGAggAygLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIGZmllbG'
+    'Rz');
+

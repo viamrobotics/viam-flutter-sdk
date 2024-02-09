@@ -215,8 +215,41 @@ const SourceInfo$json = {
     {'1': 'line_offsets', '3': 3, '4': 3, '5': 5, '10': 'lineOffsets'},
     {'1': 'positions', '3': 4, '4': 3, '5': 11, '6': '.google.api.expr.v1alpha1.SourceInfo.PositionsEntry', '10': 'positions'},
     {'1': 'macro_calls', '3': 5, '4': 3, '5': 11, '6': '.google.api.expr.v1alpha1.SourceInfo.MacroCallsEntry', '10': 'macroCalls'},
+    {'1': 'extensions', '3': 6, '4': 3, '5': 11, '6': '.google.api.expr.v1alpha1.SourceInfo.Extension', '10': 'extensions'},
   ],
-  '3': [SourceInfo_PositionsEntry$json, SourceInfo_MacroCallsEntry$json],
+  '3': [SourceInfo_Extension$json, SourceInfo_PositionsEntry$json, SourceInfo_MacroCallsEntry$json],
+};
+
+@$core.Deprecated('Use sourceInfoDescriptor instead')
+const SourceInfo_Extension$json = {
+  '1': 'Extension',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'affected_components', '3': 2, '4': 3, '5': 14, '6': '.google.api.expr.v1alpha1.SourceInfo.Extension.Component', '10': 'affectedComponents'},
+    {'1': 'version', '3': 3, '4': 1, '5': 11, '6': '.google.api.expr.v1alpha1.SourceInfo.Extension.Version', '10': 'version'},
+  ],
+  '3': [SourceInfo_Extension_Version$json],
+  '4': [SourceInfo_Extension_Component$json],
+};
+
+@$core.Deprecated('Use sourceInfoDescriptor instead')
+const SourceInfo_Extension_Version$json = {
+  '1': 'Version',
+  '2': [
+    {'1': 'major', '3': 1, '4': 1, '5': 3, '10': 'major'},
+    {'1': 'minor', '3': 2, '4': 1, '5': 3, '10': 'minor'},
+  ],
+};
+
+@$core.Deprecated('Use sourceInfoDescriptor instead')
+const SourceInfo_Extension_Component$json = {
+  '1': 'Component',
+  '2': [
+    {'1': 'COMPONENT_UNSPECIFIED', '2': 0},
+    {'1': 'COMPONENT_PARSER', '2': 1},
+    {'1': 'COMPONENT_TYPE_CHECKER', '2': 2},
+    {'1': 'COMPONENT_RUNTIME', '2': 3},
+  ],
 };
 
 @$core.Deprecated('Use sourceInfoDescriptor instead')
@@ -246,9 +279,18 @@ final $typed_data.Uint8List sourceInfoDescriptor = $convert.base64Decode(
     'ZXRzElEKCXBvc2l0aW9ucxgEIAMoCzIzLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5Tb3VyY2'
     'VJbmZvLlBvc2l0aW9uc0VudHJ5Uglwb3NpdGlvbnMSVQoLbWFjcm9fY2FsbHMYBSADKAsyNC5n'
     'b29nbGUuYXBpLmV4cHIudjFhbHBoYTEuU291cmNlSW5mby5NYWNyb0NhbGxzRW50cnlSCm1hY3'
-    'JvQ2FsbHMaPAoOUG9zaXRpb25zRW50cnkSEAoDa2V5GAEgASgDUgNrZXkSFAoFdmFsdWUYAiAB'
-    'KAVSBXZhbHVlOgI4ARpdCg9NYWNyb0NhbGxzRW50cnkSEAoDa2V5GAEgASgDUgNrZXkSNAoFdm'
-    'FsdWUYAiABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwclIFdmFsdWU6AjgB');
+    'JvQ2FsbHMSTgoKZXh0ZW5zaW9ucxgGIAMoCzIuLmdvb2dsZS5hcGkuZXhwci52MWFscGhhMS5T'
+    'b3VyY2VJbmZvLkV4dGVuc2lvblIKZXh0ZW5zaW9ucxqAAwoJRXh0ZW5zaW9uEg4KAmlkGAEgAS'
+    'gJUgJpZBJpChNhZmZlY3RlZF9jb21wb25lbnRzGAIgAygOMjguZ29vZ2xlLmFwaS5leHByLnYx'
+    'YWxwaGExLlNvdXJjZUluZm8uRXh0ZW5zaW9uLkNvbXBvbmVudFISYWZmZWN0ZWRDb21wb25lbn'
+    'RzElAKB3ZlcnNpb24YAyABKAsyNi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuU291cmNlSW5m'
+    'by5FeHRlbnNpb24uVmVyc2lvblIHdmVyc2lvbho1CgdWZXJzaW9uEhQKBW1ham9yGAEgASgDUg'
+    'VtYWpvchIUCgVtaW5vchgCIAEoA1IFbWlub3IibwoJQ29tcG9uZW50EhkKFUNPTVBPTkVOVF9V'
+    'TlNQRUNJRklFRBAAEhQKEENPTVBPTkVOVF9QQVJTRVIQARIaChZDT01QT05FTlRfVFlQRV9DSE'
+    'VDS0VSEAISFQoRQ09NUE9ORU5UX1JVTlRJTUUQAxo8Cg5Qb3NpdGlvbnNFbnRyeRIQCgNrZXkY'
+    'ASABKANSA2tleRIUCgV2YWx1ZRgCIAEoBVIFdmFsdWU6AjgBGl0KD01hY3JvQ2FsbHNFbnRyeR'
+    'IQCgNrZXkYASABKANSA2tleRI0CgV2YWx1ZRgCIAEoCzIeLmdvb2dsZS5hcGkuZXhwci52MWFs'
+    'cGhhMS5FeHByUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use sourcePositionDescriptor instead')
 const SourcePosition$json = {

@@ -266,16 +266,19 @@ const TabularDataByMQLRequest$json = {
   '1': 'TabularDataByMQLRequest',
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
-    {'1': 'mql_query', '3': 2, '4': 1, '5': 9, '10': 'mqlQuery'},
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
   ],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+  '10': ['mql_query'],
 };
 
 /// Descriptor for `TabularDataByMQLRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tabularDataByMQLRequestDescriptor = $convert.base64Decode(
     'ChdUYWJ1bGFyRGF0YUJ5TVFMUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
-    'FuaXphdGlvbklkEhsKCW1xbF9xdWVyeRgCIAEoCVIIbXFsUXVlcnkSHQoKbXFsX2JpbmFyeRgD'
-    'IAMoDFIJbXFsQmluYXJ5');
+    'FuaXphdGlvbklkEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeUoECAIQA1IJbXFsX3F1'
+    'ZXJ5');
 
 @$core.Deprecated('Use tabularDataByMQLResponseDescriptor instead')
 const TabularDataByMQLResponse$json = {

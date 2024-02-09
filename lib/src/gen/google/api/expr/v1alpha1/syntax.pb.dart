@@ -17,6 +17,9 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../protobuf/duration.pb.dart' as $0;
 import '../../../protobuf/struct.pbenum.dart' as $2;
 import '../../../protobuf/timestamp.pb.dart' as $1;
+import 'syntax.pbenum.dart';
+
+export 'syntax.pbenum.dart';
 
 /// An expression together with source information as returned by the parser.
 class ParsedExpr extends $pb.GeneratedMessage {
@@ -133,7 +136,8 @@ class Expr_Ident extends $pb.GeneratedMessage {
   ///  Required. Holds a single, unqualified identifier, possibly preceded by a
   ///  '.'.
   ///
-  ///  Qualified names are represented by the [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression.
+  ///  Qualified names are represented by the
+  ///  [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression.
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -785,14 +789,16 @@ enum Expr_ExprKind {
 ///  operators with the exception of the '.' operator are modelled as function
 ///  calls. This makes it easy to represent new operators into the existing AST.
 ///
-///  All references within expressions must resolve to a [Decl][google.api.expr.v1alpha1.Decl] provided at
-///  type-check for an expression to be valid. A reference may either be a bare
-///  identifier `name` or a qualified identifier `google.api.name`. References
-///  may either refer to a value or a function declaration.
+///  All references within expressions must resolve to a
+///  [Decl][google.api.expr.v1alpha1.Decl] provided at type-check for an
+///  expression to be valid. A reference may either be a bare identifier `name` or
+///  a qualified identifier `google.api.name`. References may either refer to a
+///  value or a function declaration.
 ///
 ///  For example, the expression `google.api.name.startsWith('expr')` references
-///  the declaration `google.api.name` within a [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression, and
-///  the function declaration `startsWith`.
+///  the declaration `google.api.name` within a
+///  [Expr.Select][google.api.expr.v1alpha1.Expr.Select] expression, and the
+///  function declaration `startsWith`.
 class Expr extends $pb.GeneratedMessage {
   factory Expr({
     $fixnum.Int64? id,
@@ -1001,7 +1007,8 @@ enum Constant_ConstantKind {
 ///  primitives.
 ///
 ///  Lists and structs are not included as constants as these aggregate types may
-///  contain [Expr][google.api.expr.v1alpha1.Expr] elements which require evaluation and are thus not constant.
+///  contain [Expr][google.api.expr.v1alpha1.Expr] elements which require
+///  evaluation and are thus not constant.
 ///
 ///  Examples of literals include: `"hello"`, `b'bytes'`, `1u`, `4.2`, `-2`,
 ///  `true`, `null`.
@@ -1214,6 +1221,157 @@ class Constant extends $pb.GeneratedMessage {
   $1.Timestamp ensureTimestampValue() => $_ensure(8);
 }
 
+/// Version
+class SourceInfo_Extension_Version extends $pb.GeneratedMessage {
+  factory SourceInfo_Extension_Version({
+    $fixnum.Int64? major,
+    $fixnum.Int64? minor,
+  }) {
+    final $result = create();
+    if (major != null) {
+      $result.major = major;
+    }
+    if (minor != null) {
+      $result.minor = minor;
+    }
+    return $result;
+  }
+  SourceInfo_Extension_Version._() : super();
+  factory SourceInfo_Extension_Version.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SourceInfo_Extension_Version.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SourceInfo.Extension.Version', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'major')
+    ..aInt64(2, _omitFieldNames ? '' : 'minor')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SourceInfo_Extension_Version clone() => SourceInfo_Extension_Version()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SourceInfo_Extension_Version copyWith(void Function(SourceInfo_Extension_Version) updates) => super.copyWith((message) => updates(message as SourceInfo_Extension_Version)) as SourceInfo_Extension_Version;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SourceInfo_Extension_Version create() => SourceInfo_Extension_Version._();
+  SourceInfo_Extension_Version createEmptyInstance() => create();
+  static $pb.PbList<SourceInfo_Extension_Version> createRepeated() => $pb.PbList<SourceInfo_Extension_Version>();
+  @$core.pragma('dart2js:noInline')
+  static SourceInfo_Extension_Version getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SourceInfo_Extension_Version>(create);
+  static SourceInfo_Extension_Version? _defaultInstance;
+
+  /// Major version changes indicate different required support level from
+  /// the required components.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get major => $_getI64(0);
+  @$pb.TagNumber(1)
+  set major($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMajor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMajor() => clearField(1);
+
+  /// Minor version changes must not change the observed behavior from
+  /// existing implementations, but may be provided informationally.
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get minor => $_getI64(1);
+  @$pb.TagNumber(2)
+  set minor($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMinor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinor() => clearField(2);
+}
+
+/// An extension that was requested for the source expression.
+class SourceInfo_Extension extends $pb.GeneratedMessage {
+  factory SourceInfo_Extension({
+    $core.String? id,
+    $core.Iterable<SourceInfo_Extension_Component>? affectedComponents,
+    SourceInfo_Extension_Version? version,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (affectedComponents != null) {
+      $result.affectedComponents.addAll(affectedComponents);
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
+  SourceInfo_Extension._() : super();
+  factory SourceInfo_Extension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SourceInfo_Extension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SourceInfo.Extension', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api.expr.v1alpha1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pc<SourceInfo_Extension_Component>(2, _omitFieldNames ? '' : 'affectedComponents', $pb.PbFieldType.KE, valueOf: SourceInfo_Extension_Component.valueOf, enumValues: SourceInfo_Extension_Component.values, defaultEnumValue: SourceInfo_Extension_Component.COMPONENT_UNSPECIFIED)
+    ..aOM<SourceInfo_Extension_Version>(3, _omitFieldNames ? '' : 'version', subBuilder: SourceInfo_Extension_Version.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SourceInfo_Extension clone() => SourceInfo_Extension()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SourceInfo_Extension copyWith(void Function(SourceInfo_Extension) updates) => super.copyWith((message) => updates(message as SourceInfo_Extension)) as SourceInfo_Extension;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SourceInfo_Extension create() => SourceInfo_Extension._();
+  SourceInfo_Extension createEmptyInstance() => create();
+  static $pb.PbList<SourceInfo_Extension> createRepeated() => $pb.PbList<SourceInfo_Extension>();
+  @$core.pragma('dart2js:noInline')
+  static SourceInfo_Extension getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SourceInfo_Extension>(create);
+  static SourceInfo_Extension? _defaultInstance;
+
+  /// Identifier for the extension. Example: constant_folding
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  ///  If set, the listed components must understand the extension for the
+  ///  expression to evaluate correctly.
+  ///
+  ///  This field has set semantics, repeated values should be deduplicated.
+  @$pb.TagNumber(2)
+  $core.List<SourceInfo_Extension_Component> get affectedComponents => $_getList(1);
+
+  /// Version info. May be skipped if it isn't meaningful for the extension.
+  /// (for example constant_folding might always be v0.0).
+  @$pb.TagNumber(3)
+  SourceInfo_Extension_Version get version => $_getN(2);
+  @$pb.TagNumber(3)
+  set version(SourceInfo_Extension_Version v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVersion() => clearField(3);
+  @$pb.TagNumber(3)
+  SourceInfo_Extension_Version ensureVersion() => $_ensure(2);
+}
+
 /// Source information collected at parse time.
 class SourceInfo extends $pb.GeneratedMessage {
   factory SourceInfo({
@@ -1222,6 +1380,7 @@ class SourceInfo extends $pb.GeneratedMessage {
     $core.Iterable<$core.int>? lineOffsets,
     $core.Map<$fixnum.Int64, $core.int>? positions,
     $core.Map<$fixnum.Int64, Expr>? macroCalls,
+    $core.Iterable<SourceInfo_Extension>? extensions,
   }) {
     final $result = create();
     if (syntaxVersion != null) {
@@ -1239,6 +1398,9 @@ class SourceInfo extends $pb.GeneratedMessage {
     if (macroCalls != null) {
       $result.macroCalls.addAll(macroCalls);
     }
+    if (extensions != null) {
+      $result.extensions.addAll(extensions);
+    }
     return $result;
   }
   SourceInfo._() : super();
@@ -1251,6 +1413,7 @@ class SourceInfo extends $pb.GeneratedMessage {
     ..p<$core.int>(3, _omitFieldNames ? '' : 'lineOffsets', $pb.PbFieldType.K3)
     ..m<$fixnum.Int64, $core.int>(4, _omitFieldNames ? '' : 'positions', entryClassName: 'SourceInfo.PositionsEntry', keyFieldType: $pb.PbFieldType.O6, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('google.api.expr.v1alpha1'))
     ..m<$fixnum.Int64, Expr>(5, _omitFieldNames ? '' : 'macroCalls', entryClassName: 'SourceInfo.MacroCallsEntry', keyFieldType: $pb.PbFieldType.O6, valueFieldType: $pb.PbFieldType.OM, valueCreator: Expr.create, valueDefaultOrMaker: Expr.getDefault, packageName: const $pb.PackageName('google.api.expr.v1alpha1'))
+    ..pc<SourceInfo_Extension>(6, _omitFieldNames ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: SourceInfo_Extension.create)
     ..hasRequiredFields = false
   ;
 
@@ -1323,6 +1486,16 @@ class SourceInfo extends $pb.GeneratedMessage {
   ///  value is the call `Expr` that was replaced.
   @$pb.TagNumber(5)
   $core.Map<$fixnum.Int64, Expr> get macroCalls => $_getMap(4);
+
+  ///  A list of tags for extensions that were used while parsing or type checking
+  ///  the source expression. For example, optimizations that require special
+  ///  runtime support may be specified.
+  ///
+  ///  These are used to check feature support between components in separate
+  ///  implementations. This can be used to either skip redundant work or
+  ///  report an error if the extension is unsupported.
+  @$pb.TagNumber(6)
+  $core.List<SourceInfo_Extension> get extensions => $_getList(5);
 }
 
 /// A specific position in source.

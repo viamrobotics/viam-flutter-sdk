@@ -546,3 +546,25 @@ const SendSessionHeartbeatResponse$json = {
 final $typed_data.Uint8List sendSessionHeartbeatResponseDescriptor = $convert.base64Decode(
     'ChxTZW5kU2Vzc2lvbkhlYXJ0YmVhdFJlc3BvbnNl');
 
+@$core.Deprecated('Use logRequestDescriptor instead')
+const LogRequest$json = {
+  '1': 'LogRequest',
+  '2': [
+    {'1': 'logs', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.LogEntry', '10': 'logs'},
+  ],
+};
+
+/// Descriptor for `LogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logRequestDescriptor = $convert.base64Decode(
+    'CgpMb2dSZXF1ZXN0EiwKBGxvZ3MYASADKAsyGC52aWFtLmNvbW1vbi52MS5Mb2dFbnRyeVIEbG'
+    '9ncw==');
+
+@$core.Deprecated('Use logResponseDescriptor instead')
+const LogResponse$json = {
+  '1': 'LogResponse',
+};
+
+/// Descriptor for `LogResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logResponseDescriptor = $convert.base64Decode(
+    'CgtMb2dSZXNwb25zZQ==');
+

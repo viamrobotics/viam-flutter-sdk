@@ -1949,6 +1949,152 @@ class GetReadingsResponse extends $pb.GeneratedMessage {
   $core.Map<$core.String, $1.Value> get readings => $_getMap(0);
 }
 
+class LogEntry extends $pb.GeneratedMessage {
+  factory LogEntry({
+    $core.String? host,
+    $core.String? level,
+    $0.Timestamp? time,
+    $core.String? loggerName,
+    $core.String? message,
+    $1.Struct? caller,
+    $core.String? stack,
+    $core.Iterable<$1.Struct>? fields,
+  }) {
+    final $result = create();
+    if (host != null) {
+      $result.host = host;
+    }
+    if (level != null) {
+      $result.level = level;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (loggerName != null) {
+      $result.loggerName = loggerName;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (caller != null) {
+      $result.caller = caller;
+    }
+    if (stack != null) {
+      $result.stack = stack;
+    }
+    if (fields != null) {
+      $result.fields.addAll(fields);
+    }
+    return $result;
+  }
+  LogEntry._() : super();
+  factory LogEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LogEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'host')
+    ..aOS(2, _omitFieldNames ? '' : 'level')
+    ..aOM<$0.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $0.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'loggerName')
+    ..aOS(5, _omitFieldNames ? '' : 'message')
+    ..aOM<$1.Struct>(6, _omitFieldNames ? '' : 'caller', subBuilder: $1.Struct.create)
+    ..aOS(7, _omitFieldNames ? '' : 'stack')
+    ..pc<$1.Struct>(8, _omitFieldNames ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $1.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LogEntry clone() => LogEntry()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LogEntry copyWith(void Function(LogEntry) updates) => super.copyWith((message) => updates(message as LogEntry)) as LogEntry;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogEntry create() => LogEntry._();
+  LogEntry createEmptyInstance() => create();
+  static $pb.PbList<LogEntry> createRepeated() => $pb.PbList<LogEntry>();
+  @$core.pragma('dart2js:noInline')
+  static LogEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogEntry>(create);
+  static LogEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get host => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set host($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHost() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHost() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get level => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set level($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLevel() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $0.Timestamp get time => $_getN(2);
+  @$pb.TagNumber(3)
+  set time($0.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTime() => clearField(3);
+  @$pb.TagNumber(3)
+  $0.Timestamp ensureTime() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get loggerName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set loggerName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLoggerName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLoggerName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get message => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set message($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMessage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMessage() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Struct get caller => $_getN(5);
+  @$pb.TagNumber(6)
+  set caller($1.Struct v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCaller() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCaller() => clearField(6);
+  @$pb.TagNumber(6)
+  $1.Struct ensureCaller() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get stack => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set stack($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasStack() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStack() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$1.Struct> get fields => $_getList(7);
+}
+
 class Common {
   static final safetyHeartbeatMonitored = $pb.Extension<$core.bool>(_omitMessageNames ? '' : 'google.protobuf.MethodOptions', _omitFieldNames ? '' : 'safetyHeartbeatMonitored', 84260, $pb.PbFieldType.OB);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
