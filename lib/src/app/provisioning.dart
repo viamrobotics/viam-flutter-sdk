@@ -12,23 +12,23 @@ class ProvisioningClient {
 
   ProvisioningClient(this._client);
 
-  /// Get the status of the SmartMachine
+  /// Get the status of the Smart Machine
   Future<GetSmartMachineStatusResponse> getSmartMachineStatus() async {
     final request = GetSmartMachineStatusRequest();
     final response = await _client.getSmartMachineStatus(request);
     return response;
   }
 
-  /// Set the network credentials of the Smart machine, so it can connect to the internet.
+  /// Set the network credentials of the smart machine, so it can connect to the internet.
   ///
   /// [ssid] is the networks ssid
   /// [psk] is the networks passkey
-  Future<void> setNetworkCredentials({NetworkType type = NetworkType.wifi, required String ssid, required String psk}) async {
+  Future<void> setNetworkCredentials({NetworkType type = NetworkType.wifi, String? ssid, String? psk}) async {
     final request = SetNetworkCredentialsRequest(type: type.name, ssid: ssid, psk: psk);
     await _client.setNetworkCredentials(request);
   }
 
-  /// Set the Viam credentials of the Smart machine, so it can connect to the Viam.
+  /// Set the Viam credentials of the smart machine, so it can connect to the Cloud.
   ///
   /// [id] is the RobotPart id
   /// [secret] is the RobotPart secret
