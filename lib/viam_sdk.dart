@@ -4,6 +4,7 @@ library viam_sdk;
 /// App Clients
 export 'src/app/data.dart' hide DataClient;
 export 'src/app/permissions.dart';
+export 'src/app/provisioning.dart';
 
 /// Components
 export 'src/components/arm/arm.dart';
@@ -34,6 +35,7 @@ export 'src/components/servo/servo.dart';
 /// Necessary Protos
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
+export 'src/gen/provisioning/v1/provisioning.pb.dart';
 
 /// Media & Streams
 export 'src/media/image.dart';

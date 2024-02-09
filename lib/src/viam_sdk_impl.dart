@@ -1,28 +1,41 @@
+import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:viam_sdk/protos/app/data_sync.dart';
 
+import '../protos/app/app.dart';
+import '../protos/app/data.dart';
+import '../protos/provisioning/provisioning.dart';
 import './app/app.dart';
 import './app/data.dart';
+import './app/provisioning.dart';
 import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
-import '../protos/app/app.dart';
-import '../protos/app/data.dart';
 
 class ViamImpl implements Viam {
   final ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
   late DataClient _dataClient;
+  late ProvisioningClient _provisioningClient;
 
   ViamImpl._withChannel(this._clientChannelBase) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
+    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(ClientChannel('provisioning.viam', port: 4772)));
   }
 
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
       : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
     _dataClient = DataClient(DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase));
+
+    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(
+      ClientChannel(
+        'viam.setup',
+        port: 4772,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      ),
+    ));
   }
 
   static Future<ViamImpl> withApiKey(String apiKeyId, String apiKey, {String serviceHost = 'app.viam.com'}) async {
@@ -45,6 +58,11 @@ class ViamImpl implements Viam {
   @override
   DataClient get dataClient {
     return _dataClient;
+  }
+
+  @override
+  ProvisioningClient get provisioningClient {
+    return _provisioningClient;
   }
 
   @override
