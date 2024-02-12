@@ -1053,15 +1053,11 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
 class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   factory TabularDataByMQLRequest({
     $core.String? organizationId,
-    $core.String? mqlQuery,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
   }) {
     final $result = create();
     if (organizationId != null) {
       $result.organizationId = organizationId;
-    }
-    if (mqlQuery != null) {
-      $result.mqlQuery = mqlQuery;
     }
     if (mqlBinary != null) {
       $result.mqlBinary.addAll(mqlBinary);
@@ -1074,7 +1070,6 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
-    ..aOS(2, _omitFieldNames ? '' : 'mqlQuery')
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..hasRequiredFields = false
   ;
@@ -1109,21 +1104,11 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
 
-  /// mql_query is deprecated.
-  @$pb.TagNumber(2)
-  $core.String get mqlQuery => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set mqlQuery($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasMqlQuery() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMqlQuery() => clearField(2);
-
   /// mql_binary accepts a MongoDB aggregation pipeline as a list of BSON documents, where each
   /// document is one stage in the pipeline. The pipeline is run on the "sensorData.readings"
   /// namespace, which holds the Viam organization's tabular data.
   @$pb.TagNumber(3)
-  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(2);
+  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(1);
 }
 
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.

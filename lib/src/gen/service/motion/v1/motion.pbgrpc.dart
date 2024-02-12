@@ -30,10 +30,6 @@ class MotionServiceClient extends $grpc.Client {
       '/viam.service.motion.v1.MotionService/MoveOnMap',
       ($0.MoveOnMapRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.MoveOnMapResponse.fromBuffer(value));
-  static final _$moveOnMapNew = $grpc.ClientMethod<$0.MoveOnMapNewRequest, $0.MoveOnMapNewResponse>(
-      '/viam.service.motion.v1.MotionService/MoveOnMapNew',
-      ($0.MoveOnMapNewRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.MoveOnMapNewResponse.fromBuffer(value));
   static final _$moveOnGlobe = $grpc.ClientMethod<$0.MoveOnGlobeRequest, $0.MoveOnGlobeResponse>(
       '/viam.service.motion.v1.MotionService/MoveOnGlobe',
       ($0.MoveOnGlobeRequest value) => value.writeToBuffer(),
@@ -71,10 +67,6 @@ class MotionServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.MoveOnMapResponse> moveOnMap($0.MoveOnMapRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveOnMap, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.MoveOnMapNewResponse> moveOnMapNew($0.MoveOnMapNewRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$moveOnMapNew, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.MoveOnGlobeResponse> moveOnGlobe($0.MoveOnGlobeRequest request, {$grpc.CallOptions? options}) {
@@ -121,13 +113,6 @@ abstract class MotionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.MoveOnMapRequest.fromBuffer(value),
         ($0.MoveOnMapResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.MoveOnMapNewRequest, $0.MoveOnMapNewResponse>(
-        'MoveOnMapNew',
-        moveOnMapNew_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.MoveOnMapNewRequest.fromBuffer(value),
-        ($0.MoveOnMapNewResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.MoveOnGlobeRequest, $0.MoveOnGlobeResponse>(
         'MoveOnGlobe',
         moveOnGlobe_Pre,
@@ -180,10 +165,6 @@ abstract class MotionServiceBase extends $grpc.Service {
     return moveOnMap(call, await request);
   }
 
-  $async.Future<$0.MoveOnMapNewResponse> moveOnMapNew_Pre($grpc.ServiceCall call, $async.Future<$0.MoveOnMapNewRequest> request) async {
-    return moveOnMapNew(call, await request);
-  }
-
   $async.Future<$0.MoveOnGlobeResponse> moveOnGlobe_Pre($grpc.ServiceCall call, $async.Future<$0.MoveOnGlobeRequest> request) async {
     return moveOnGlobe(call, await request);
   }
@@ -210,7 +191,6 @@ abstract class MotionServiceBase extends $grpc.Service {
 
   $async.Future<$0.MoveResponse> move($grpc.ServiceCall call, $0.MoveRequest request);
   $async.Future<$0.MoveOnMapResponse> moveOnMap($grpc.ServiceCall call, $0.MoveOnMapRequest request);
-  $async.Future<$0.MoveOnMapNewResponse> moveOnMapNew($grpc.ServiceCall call, $0.MoveOnMapNewRequest request);
   $async.Future<$0.MoveOnGlobeResponse> moveOnGlobe($grpc.ServiceCall call, $0.MoveOnGlobeRequest request);
   $async.Future<$0.GetPoseResponse> getPose($grpc.ServiceCall call, $0.GetPoseRequest request);
   $async.Future<$0.StopPlanResponse> stopPlan($grpc.ServiceCall call, $0.StopPlanRequest request);

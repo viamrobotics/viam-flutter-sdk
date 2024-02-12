@@ -611,14 +611,14 @@ const LogRequest$json = {
   '1': 'LogRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'logs', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.LogEntry', '10': 'logs'},
+    {'1': 'logs', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.LogEntry', '10': 'logs'},
   ],
 };
 
 /// Descriptor for `LogRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List logRequestDescriptor = $convert.base64Decode(
-    'CgpMb2dSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIpCgRsb2dzGAIgAygLMhUudmlhbS5hcHAudj'
-    'EuTG9nRW50cnlSBGxvZ3M=');
+    'CgpMb2dSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIsCgRsb2dzGAIgAygLMhgudmlhbS5jb21tb2'
+    '4udjEuTG9nRW50cnlSBGxvZ3M=');
 
 @$core.Deprecated('Use logResponseDescriptor instead')
 const LogResponse$json = {

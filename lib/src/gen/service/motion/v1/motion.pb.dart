@@ -208,195 +208,6 @@ class MoveResponse extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 }
 
-class MoveOnMapNewRequest extends $pb.GeneratedMessage {
-  factory MoveOnMapNewRequest({
-    $core.String? name,
-    $1.Pose? destination,
-    $1.ResourceName? componentName,
-    $1.ResourceName? slamServiceName,
-    MotionConfiguration? motionConfiguration,
-    $2.Struct? extra,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (destination != null) {
-      $result.destination = destination;
-    }
-    if (componentName != null) {
-      $result.componentName = componentName;
-    }
-    if (slamServiceName != null) {
-      $result.slamServiceName = slamServiceName;
-    }
-    if (motionConfiguration != null) {
-      $result.motionConfiguration = motionConfiguration;
-    }
-    if (extra != null) {
-      $result.extra = extra;
-    }
-    return $result;
-  }
-  MoveOnMapNewRequest._() : super();
-  factory MoveOnMapNewRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MoveOnMapNewRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnMapNewRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$1.Pose>(2, _omitFieldNames ? '' : 'destination', subBuilder: $1.Pose.create)
-    ..aOM<$1.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
-    ..aOM<$1.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceName', subBuilder: $1.ResourceName.create)
-    ..aOM<MotionConfiguration>(5, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
-    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  MoveOnMapNewRequest clone() => MoveOnMapNewRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  MoveOnMapNewRequest copyWith(void Function(MoveOnMapNewRequest) updates) => super.copyWith((message) => updates(message as MoveOnMapNewRequest)) as MoveOnMapNewRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static MoveOnMapNewRequest create() => MoveOnMapNewRequest._();
-  MoveOnMapNewRequest createEmptyInstance() => create();
-  static $pb.PbList<MoveOnMapNewRequest> createRepeated() => $pb.PbList<MoveOnMapNewRequest>();
-  @$core.pragma('dart2js:noInline')
-  static MoveOnMapNewRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnMapNewRequest>(create);
-  static MoveOnMapNewRequest? _defaultInstance;
-
-  /// Name of the motion service
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  /// Specify a destination to, which can be any pose with respect to the SLAM map's origin
-  @$pb.TagNumber(2)
-  $1.Pose get destination => $_getN(1);
-  @$pb.TagNumber(2)
-  set destination($1.Pose v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasDestination() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearDestination() => clearField(2);
-  @$pb.TagNumber(2)
-  $1.Pose ensureDestination() => $_ensure(1);
-
-  /// Component on the robot to move to the specified destination
-  @$pb.TagNumber(3)
-  $1.ResourceName get componentName => $_getN(2);
-  @$pb.TagNumber(3)
-  set componentName($1.ResourceName v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasComponentName() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearComponentName() => clearField(3);
-  @$pb.TagNumber(3)
-  $1.ResourceName ensureComponentName() => $_ensure(2);
-
-  /// Name of the slam service from which the SLAM map is requested
-  @$pb.TagNumber(4)
-  $1.ResourceName get slamServiceName => $_getN(3);
-  @$pb.TagNumber(4)
-  set slamServiceName($1.ResourceName v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasSlamServiceName() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSlamServiceName() => clearField(4);
-  @$pb.TagNumber(4)
-  $1.ResourceName ensureSlamServiceName() => $_ensure(3);
-
-  /// Optional set of motion configuration options
-  @$pb.TagNumber(5)
-  MotionConfiguration get motionConfiguration => $_getN(4);
-  @$pb.TagNumber(5)
-  set motionConfiguration(MotionConfiguration v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasMotionConfiguration() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearMotionConfiguration() => clearField(5);
-  @$pb.TagNumber(5)
-  MotionConfiguration ensureMotionConfiguration() => $_ensure(4);
-
-  /// Additional arguments to the method
-  @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(5);
-  @$pb.TagNumber(99)
-  set extra($2.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(5);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(5);
-}
-
-class MoveOnMapNewResponse extends $pb.GeneratedMessage {
-  factory MoveOnMapNewResponse({
-    $core.String? executionId,
-  }) {
-    final $result = create();
-    if (executionId != null) {
-      $result.executionId = executionId;
-    }
-    return $result;
-  }
-  MoveOnMapNewResponse._() : super();
-  factory MoveOnMapNewResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory MoveOnMapNewResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnMapNewResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'executionId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  MoveOnMapNewResponse clone() => MoveOnMapNewResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  MoveOnMapNewResponse copyWith(void Function(MoveOnMapNewResponse) updates) => super.copyWith((message) => updates(message as MoveOnMapNewResponse)) as MoveOnMapNewResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static MoveOnMapNewResponse create() => MoveOnMapNewResponse._();
-  MoveOnMapNewResponse createEmptyInstance() => create();
-  static $pb.PbList<MoveOnMapNewResponse> createRepeated() => $pb.PbList<MoveOnMapNewResponse>();
-  @$core.pragma('dart2js:noInline')
-  static MoveOnMapNewResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOnMapNewResponse>(create);
-  static MoveOnMapNewResponse? _defaultInstance;
-
-  /// The unique ID which identifies the execution.
-  /// Multiple plans will share the same execution_id if they were
-  /// generated due to replanning.
-  @$pb.TagNumber(1)
-  $core.String get executionId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set executionId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasExecutionId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearExecutionId() => clearField(1);
-}
-
 class MoveOnMapRequest extends $pb.GeneratedMessage {
   factory MoveOnMapRequest({
     $core.String? name,
@@ -404,6 +215,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     $1.ResourceName? componentName,
     $1.ResourceName? slamServiceName,
     MotionConfiguration? motionConfiguration,
+    $core.Iterable<$1.Geometry>? obstacles,
     $2.Struct? extra,
   }) {
     final $result = create();
@@ -421,6 +233,9 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     }
     if (motionConfiguration != null) {
       $result.motionConfiguration = motionConfiguration;
+    }
+    if (obstacles != null) {
+      $result.obstacles.addAll(obstacles);
     }
     if (extra != null) {
       $result.extra = extra;
@@ -437,6 +252,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     ..aOM<$1.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
     ..aOM<$1.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceName', subBuilder: $1.ResourceName.create)
     ..aOM<MotionConfiguration>(5, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
+    ..pc<$1.Geometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.Geometry.create)
     ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -520,17 +336,21 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   MotionConfiguration ensureMotionConfiguration() => $_ensure(4);
 
+  /// Obstacles to be considered for motion planning
+  @$pb.TagNumber(6)
+  $core.List<$1.Geometry> get obstacles => $_getList(5);
+
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(5);
+  $2.Struct get extra => $_getN(6);
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(5);
+  $core.bool hasExtra() => $_has(6);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(5);
+  $2.Struct ensureExtra() => $_ensure(6);
 }
 
 class MoveOnMapResponse extends $pb.GeneratedMessage {

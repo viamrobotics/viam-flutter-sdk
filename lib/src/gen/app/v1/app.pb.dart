@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../common/v1/common.pb.dart' as $7;
 import '../../google/protobuf/struct.pb.dart' as $6;
 import '../../google/protobuf/timestamp.pb.dart' as $5;
 import '../packages/v1/packages.pbenum.dart' as $0;
@@ -4246,15 +4247,18 @@ class GetRobotPartResponse extends $pb.GeneratedMessage {
 class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   factory GetRobotPartLogsRequest({
     $core.String? id,
+  @$core.Deprecated('This field is deprecated.')
     $core.bool? errorsOnly,
     $core.String? filter,
     $core.String? pageToken,
+    $core.Iterable<$core.String>? levels,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
     if (errorsOnly != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.errorsOnly = errorsOnly;
     }
     if (filter != null) {
@@ -4262,6 +4266,9 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     }
     if (pageToken != null) {
       $result.pageToken = pageToken;
+    }
+    if (levels != null) {
+      $result.levels.addAll(levels);
     }
     return $result;
   }
@@ -4274,6 +4281,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     ..aOB(2, _omitFieldNames ? '' : 'errorsOnly')
     ..aOS(3, _omitFieldNames ? '' : 'filter')
     ..aOS(4, _omitFieldNames ? '' : 'pageToken')
+    ..pPS(5, _omitFieldNames ? '' : 'levels')
     ..hasRequiredFields = false
   ;
 
@@ -4307,12 +4315,17 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// TODO(https://viam.atlassian.net/browse/APP-3877): Remove this field
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool get errorsOnly => $_getBF(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   set errorsOnly($core.bool v) { $_setBool(1, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasErrorsOnly() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   void clearErrorsOnly() => clearField(2);
 
@@ -4333,157 +4346,15 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   $core.bool hasPageToken() => $_has(3);
   @$pb.TagNumber(4)
   void clearPageToken() => clearField(4);
-}
 
-class LogEntry extends $pb.GeneratedMessage {
-  factory LogEntry({
-    $core.String? host,
-    $core.String? level,
-    $5.Timestamp? time,
-    $core.String? loggerName,
-    $core.String? message,
-    $6.Struct? caller,
-    $core.String? stack,
-    $core.Iterable<$6.Struct>? fields,
-  }) {
-    final $result = create();
-    if (host != null) {
-      $result.host = host;
-    }
-    if (level != null) {
-      $result.level = level;
-    }
-    if (time != null) {
-      $result.time = time;
-    }
-    if (loggerName != null) {
-      $result.loggerName = loggerName;
-    }
-    if (message != null) {
-      $result.message = message;
-    }
-    if (caller != null) {
-      $result.caller = caller;
-    }
-    if (stack != null) {
-      $result.stack = stack;
-    }
-    if (fields != null) {
-      $result.fields.addAll(fields);
-    }
-    return $result;
-  }
-  LogEntry._() : super();
-  factory LogEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LogEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'host')
-    ..aOS(2, _omitFieldNames ? '' : 'level')
-    ..aOM<$5.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $5.Timestamp.create)
-    ..aOS(4, _omitFieldNames ? '' : 'loggerName')
-    ..aOS(5, _omitFieldNames ? '' : 'message')
-    ..aOM<$6.Struct>(6, _omitFieldNames ? '' : 'caller', subBuilder: $6.Struct.create)
-    ..aOS(7, _omitFieldNames ? '' : 'stack')
-    ..pc<$6.Struct>(8, _omitFieldNames ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $6.Struct.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  LogEntry clone() => LogEntry()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  LogEntry copyWith(void Function(LogEntry) updates) => super.copyWith((message) => updates(message as LogEntry)) as LogEntry;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static LogEntry create() => LogEntry._();
-  LogEntry createEmptyInstance() => create();
-  static $pb.PbList<LogEntry> createRepeated() => $pb.PbList<LogEntry>();
-  @$core.pragma('dart2js:noInline')
-  static LogEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogEntry>(create);
-  static LogEntry? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get host => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set host($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasHost() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearHost() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get level => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set level($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasLevel() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLevel() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $5.Timestamp get time => $_getN(2);
-  @$pb.TagNumber(3)
-  set time($5.Timestamp v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasTime() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearTime() => clearField(3);
-  @$pb.TagNumber(3)
-  $5.Timestamp ensureTime() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  $core.String get loggerName => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set loggerName($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasLoggerName() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearLoggerName() => clearField(4);
-
+  /// logs of all levels are returned when the levels field is empty
   @$pb.TagNumber(5)
-  $core.String get message => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set message($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasMessage() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearMessage() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $6.Struct get caller => $_getN(5);
-  @$pb.TagNumber(6)
-  set caller($6.Struct v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasCaller() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearCaller() => clearField(6);
-  @$pb.TagNumber(6)
-  $6.Struct ensureCaller() => $_ensure(5);
-
-  @$pb.TagNumber(7)
-  $core.String get stack => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set stack($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasStack() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearStack() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.List<$6.Struct> get fields => $_getList(7);
+  $core.List<$core.String> get levels => $_getList(4);
 }
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory GetRobotPartLogsResponse({
-    $core.Iterable<LogEntry>? logs,
+    $core.Iterable<$7.LogEntry>? logs,
     $core.String? nextPageToken,
   }) {
     final $result = create();
@@ -4500,7 +4371,7 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory GetRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: LogEntry.create)
+    ..pc<$7.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $7.LogEntry.create)
     ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
@@ -4527,7 +4398,7 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   static GetRobotPartLogsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<LogEntry> get logs => $_getList(0);
+  $core.List<$7.LogEntry> get logs => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get nextPageToken => $_getSZ(1);
@@ -4619,7 +4490,7 @@ class TailRobotPartLogsRequest extends $pb.GeneratedMessage {
 
 class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory TailRobotPartLogsResponse({
-    $core.Iterable<LogEntry>? logs,
+    $core.Iterable<$7.LogEntry>? logs,
   }) {
     final $result = create();
     if (logs != null) {
@@ -4632,7 +4503,7 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory TailRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TailRobotPartLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: LogEntry.create)
+    ..pc<$7.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $7.LogEntry.create)
     ..hasRequiredFields = false
   ;
 
@@ -4658,7 +4529,7 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   static TailRobotPartLogsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<LogEntry> get logs => $_getList(0);
+  $core.List<$7.LogEntry> get logs => $_getList(0);
 }
 
 class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
@@ -5197,7 +5068,7 @@ class APIKey extends $pb.GeneratedMessage {
 
 class GetRobotAPIKeysResponse extends $pb.GeneratedMessage {
   factory GetRobotAPIKeysResponse({
-    $core.Iterable<APIKey>? apiKeys,
+    $core.Iterable<APIKeyWithAuthorizations>? apiKeys,
   }) {
     final $result = create();
     if (apiKeys != null) {
@@ -5210,7 +5081,7 @@ class GetRobotAPIKeysResponse extends $pb.GeneratedMessage {
   factory GetRobotAPIKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotAPIKeysResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<APIKey>(1, _omitFieldNames ? '' : 'apiKeys', $pb.PbFieldType.PM, subBuilder: APIKey.create)
+    ..pc<APIKeyWithAuthorizations>(1, _omitFieldNames ? '' : 'apiKeys', $pb.PbFieldType.PM, subBuilder: APIKeyWithAuthorizations.create)
     ..hasRequiredFields = false
   ;
 
@@ -5236,7 +5107,7 @@ class GetRobotAPIKeysResponse extends $pb.GeneratedMessage {
   static GetRobotAPIKeysResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<APIKey> get apiKeys => $_getList(0);
+  $core.List<APIKeyWithAuthorizations> get apiKeys => $_getList(0);
 }
 
 class DeleteRobotPartResponse extends $pb.GeneratedMessage {

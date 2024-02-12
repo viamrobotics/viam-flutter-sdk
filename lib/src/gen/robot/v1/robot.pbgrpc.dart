@@ -81,6 +81,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/SendSessionHeartbeat',
       ($0.SendSessionHeartbeatRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.SendSessionHeartbeatResponse.fromBuffer(value));
+  static final _$log = $grpc.ClientMethod<$0.LogRequest, $0.LogResponse>(
+      '/viam.robot.v1.RobotService/Log',
+      ($0.LogRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.LogResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -146,6 +150,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.SendSessionHeartbeatResponse> sendSessionHeartbeat($0.SendSessionHeartbeatRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sendSessionHeartbeat, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LogResponse> log($0.LogRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$log, request, options: options);
   }
 }
 
@@ -259,6 +267,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SendSessionHeartbeatRequest.fromBuffer(value),
         ($0.SendSessionHeartbeatResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LogRequest, $0.LogResponse>(
+        'Log',
+        log_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.LogRequest.fromBuffer(value),
+        ($0.LogResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$0.GetOperationsRequest> request) async {
@@ -321,6 +336,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return sendSessionHeartbeat(call, await request);
   }
 
+  $async.Future<$0.LogResponse> log_Pre($grpc.ServiceCall call, $async.Future<$0.LogRequest> request) async {
+    return log(call, await request);
+  }
+
   $async.Future<$0.GetOperationsResponse> getOperations($grpc.ServiceCall call, $0.GetOperationsRequest request);
   $async.Future<$0.GetSessionsResponse> getSessions($grpc.ServiceCall call, $0.GetSessionsRequest request);
   $async.Future<$0.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $0.ResourceNamesRequest request);
@@ -336,4 +355,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$0.StopAllResponse> stopAll($grpc.ServiceCall call, $0.StopAllRequest request);
   $async.Future<$0.StartSessionResponse> startSession($grpc.ServiceCall call, $0.StartSessionRequest request);
   $async.Future<$0.SendSessionHeartbeatResponse> sendSessionHeartbeat($grpc.ServiceCall call, $0.SendSessionHeartbeatRequest request);
+  $async.Future<$0.LogResponse> log($grpc.ServiceCall call, $0.LogRequest request);
 }
