@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="MoveOnMapRequest" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/MoveOnMapRequest/MoveOnMapRequest.html">MoveOnMapRequest</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_protos.common.common/Pose-class.html">Pose</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-slamServiceName"><span class="type-annotation"><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">slamServiceName</span>, </span><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.service.motion/MoveOnMapRequest/MoveOnMapRequest.html">MoveOnMapRequest</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_protos.common.common/Pose-class.html">Pose</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-slamServiceName"><span class="type-annotation"><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">slamServiceName</span>, </span><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/Geometry-class.html">Geometry</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -220,6 +220,17 @@ to protobuf fields.
 <dd>
   Name of the motion service
   <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="obstacles" class="property">
+  <span class="name"><a href="../viam_protos.service.motion/MoveOnMapRequest/obstacles.html">obstacles</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/Geometry-class.html">Geometry</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Obstacles to be considered for motion planning
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
