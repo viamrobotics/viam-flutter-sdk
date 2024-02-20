@@ -117,6 +117,8 @@ const CloudConfig$json = {
     },
     {'1': 'secret', '3': 8, '4': 1, '5': 9, '10': 'secret'},
     {'1': 'location_secrets', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.LocationSecret', '10': 'locationSecrets'},
+    {'1': 'primary_org_id', '3': 10, '4': 1, '5': 9, '10': 'primaryOrgId'},
+    {'1': 'location_id', '3': 11, '4': 1, '5': 9, '10': 'locationId'},
   ],
 };
 
@@ -128,7 +130,8 @@ final $typed_data.Uint8List cloudConfigDescriptor = $convert.base64Decode(
     'luZ19pbnNlY3VyZRgGIAEoCFIRc2lnbmFsaW5nSW5zZWN1cmUSKwoPbG9jYXRpb25fc2VjcmV0'
     'GAcgASgJQgIYAVIObG9jYXRpb25TZWNyZXQSFgoGc2VjcmV0GAggASgJUgZzZWNyZXQSRgoQbG'
     '9jYXRpb25fc2VjcmV0cxgJIAMoCzIbLnZpYW0uYXBwLnYxLkxvY2F0aW9uU2VjcmV0Ug9sb2Nh'
-    'dGlvblNlY3JldHM=');
+    'dGlvblNlY3JldHMSJAoOcHJpbWFyeV9vcmdfaWQYCiABKAlSDHByaW1hcnlPcmdJZBIfCgtsb2'
+    'NhdGlvbl9pZBgLIAEoCVIKbG9jYXRpb25JZA==');
 
 @$core.Deprecated('Use componentConfigDescriptor instead')
 const ComponentConfig$json = {
