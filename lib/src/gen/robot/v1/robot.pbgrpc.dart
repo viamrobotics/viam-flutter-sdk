@@ -85,6 +85,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/Log',
       ($0.LogRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.LogResponse.fromBuffer(value));
+  static final _$getCloudMetadata = $grpc.ClientMethod<$0.GetCloudMetadataRequest, $0.GetCloudMetadataResponse>(
+      '/viam.robot.v1.RobotService/GetCloudMetadata',
+      ($0.GetCloudMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetCloudMetadataResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -154,6 +158,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.LogResponse> log($0.LogRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$log, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetCloudMetadataResponse> getCloudMetadata($0.GetCloudMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getCloudMetadata, request, options: options);
   }
 }
 
@@ -274,6 +282,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.LogRequest.fromBuffer(value),
         ($0.LogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCloudMetadataRequest, $0.GetCloudMetadataResponse>(
+        'GetCloudMetadata',
+        getCloudMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetCloudMetadataRequest.fromBuffer(value),
+        ($0.GetCloudMetadataResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$0.GetOperationsRequest> request) async {
@@ -340,6 +355,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return log(call, await request);
   }
 
+  $async.Future<$0.GetCloudMetadataResponse> getCloudMetadata_Pre($grpc.ServiceCall call, $async.Future<$0.GetCloudMetadataRequest> request) async {
+    return getCloudMetadata(call, await request);
+  }
+
   $async.Future<$0.GetOperationsResponse> getOperations($grpc.ServiceCall call, $0.GetOperationsRequest request);
   $async.Future<$0.GetSessionsResponse> getSessions($grpc.ServiceCall call, $0.GetSessionsRequest request);
   $async.Future<$0.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $0.ResourceNamesRequest request);
@@ -356,4 +375,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$0.StartSessionResponse> startSession($grpc.ServiceCall call, $0.StartSessionRequest request);
   $async.Future<$0.SendSessionHeartbeatResponse> sendSessionHeartbeat($grpc.ServiceCall call, $0.SendSessionHeartbeatRequest request);
   $async.Future<$0.LogResponse> log($grpc.ServiceCall call, $0.LogRequest request);
+  $async.Future<$0.GetCloudMetadataResponse> getCloudMetadata($grpc.ServiceCall call, $0.GetCloudMetadataRequest request);
 }

@@ -2149,6 +2149,116 @@ class LogResponse extends $pb.GeneratedMessage {
   static LogResponse? _defaultInstance;
 }
 
+class GetCloudMetadataRequest extends $pb.GeneratedMessage {
+  factory GetCloudMetadataRequest() => create();
+  GetCloudMetadataRequest._() : super();
+  factory GetCloudMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCloudMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCloudMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCloudMetadataRequest clone() => GetCloudMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCloudMetadataRequest copyWith(void Function(GetCloudMetadataRequest) updates) => super.copyWith((message) => updates(message as GetCloudMetadataRequest)) as GetCloudMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCloudMetadataRequest create() => GetCloudMetadataRequest._();
+  GetCloudMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCloudMetadataRequest> createRepeated() => $pb.PbList<GetCloudMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCloudMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCloudMetadataRequest>(create);
+  static GetCloudMetadataRequest? _defaultInstance;
+}
+
+class GetCloudMetadataResponse extends $pb.GeneratedMessage {
+  factory GetCloudMetadataResponse({
+    $core.String? robotPartId,
+    $core.String? primaryOrgId,
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (robotPartId != null) {
+      $result.robotPartId = robotPartId;
+    }
+    if (primaryOrgId != null) {
+      $result.primaryOrgId = primaryOrgId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
+  GetCloudMetadataResponse._() : super();
+  factory GetCloudMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCloudMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCloudMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'robotPartId')
+    ..aOS(2, _omitFieldNames ? '' : 'primaryOrgId')
+    ..aOS(3, _omitFieldNames ? '' : 'locationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCloudMetadataResponse clone() => GetCloudMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCloudMetadataResponse copyWith(void Function(GetCloudMetadataResponse) updates) => super.copyWith((message) => updates(message as GetCloudMetadataResponse)) as GetCloudMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCloudMetadataResponse create() => GetCloudMetadataResponse._();
+  GetCloudMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCloudMetadataResponse> createRepeated() => $pb.PbList<GetCloudMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCloudMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCloudMetadataResponse>(create);
+  static GetCloudMetadataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get robotPartId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set robotPartId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRobotPartId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRobotPartId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get primaryOrgId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set primaryOrgId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPrimaryOrgId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPrimaryOrgId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get locationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set locationId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLocationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLocationId() => clearField(3);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

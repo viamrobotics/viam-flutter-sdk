@@ -568,3 +568,28 @@ const LogResponse$json = {
 final $typed_data.Uint8List logResponseDescriptor = $convert.base64Decode(
     'CgtMb2dSZXNwb25zZQ==');
 
+@$core.Deprecated('Use getCloudMetadataRequestDescriptor instead')
+const GetCloudMetadataRequest$json = {
+  '1': 'GetCloudMetadataRequest',
+};
+
+/// Descriptor for `GetCloudMetadataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCloudMetadataRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRDbG91ZE1ldGFkYXRhUmVxdWVzdA==');
+
+@$core.Deprecated('Use getCloudMetadataResponseDescriptor instead')
+const GetCloudMetadataResponse$json = {
+  '1': 'GetCloudMetadataResponse',
+  '2': [
+    {'1': 'robot_part_id', '3': 1, '4': 1, '5': 9, '10': 'robotPartId'},
+    {'1': 'primary_org_id', '3': 2, '4': 1, '5': 9, '10': 'primaryOrgId'},
+    {'1': 'location_id', '3': 3, '4': 1, '5': 9, '10': 'locationId'},
+  ],
+};
+
+/// Descriptor for `GetCloudMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCloudMetadataResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USIgoNcm9ib3RfcGFydF9pZBgBIAEoCVILcm9ib3'
+    'RQYXJ0SWQSJAoOcHJpbWFyeV9vcmdfaWQYAiABKAlSDHByaW1hcnlPcmdJZBIfCgtsb2NhdGlv'
+    'bl9pZBgDIAEoCVIKbG9jYXRpb25JZA==');
+
