@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">protos&#47;app&#47;billing.dart</a></li>
     <li><a href="../../viam_protos.app.billing/GetOrgBillingInformationRequest-class.html">GetOrgBillingInformationRequest</a></li>
     <li class="self-crumb">GetOrgBillingInformationRequest factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetOrgBillingInformationRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetOrgBillingInformationRequest({
+  $core.String? orgId,
+}) {
+  final $result = create();
+  if (orgId != null) {
+    $result.orgId = orgId;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

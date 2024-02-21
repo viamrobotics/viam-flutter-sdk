@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">protos&#47;app&#47;billing.dart</a></li>
     <li><a href="../../viam_protos.app.billing/BillingServiceBase-class.html">BillingServiceBase</a></li>
     <li class="self-crumb">BillingServiceBase constructor</li>
   </ol>
@@ -71,7 +71,36 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">BillingServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">BillingServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$2.GetCurrentMonthUsageRequest, $2.GetCurrentMonthUsageResponse&gt;(
+      &#39;GetCurrentMonthUsage&#39;,
+      getCurrentMonthUsage_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetCurrentMonthUsageRequest.fromBuffer(value),
+      ($2.GetCurrentMonthUsageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.GetOrgBillingInformationRequest, $2.GetOrgBillingInformationResponse&gt;(
+      &#39;GetOrgBillingInformation&#39;,
+      getOrgBillingInformation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetOrgBillingInformationRequest.fromBuffer(value),
+      ($2.GetOrgBillingInformationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.GetInvoicesSummaryRequest, $2.GetInvoicesSummaryResponse&gt;(
+      &#39;GetInvoicesSummary&#39;,
+      getInvoicesSummary_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetInvoicesSummaryRequest.fromBuffer(value),
+      ($2.GetInvoicesSummaryResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.GetInvoicePdfRequest, $2.GetInvoicePdfResponse&gt;(
+      &#39;GetInvoicePdf&#39;,
+      getInvoicePdf_Pre,
+      false,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetInvoicePdfRequest.fromBuffer(value),
+      ($2.GetInvoicePdfResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

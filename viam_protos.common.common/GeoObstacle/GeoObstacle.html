@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">protos&#47;common&#47;common.dart</a></li>
     <li><a href="../../viam_protos.common.common/GeoObstacle-class.html">GeoObstacle</a></li>
     <li class="self-crumb">GeoObstacle factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GeoObstacle</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-location">{<span class="type-annotation"><a href="../../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">location</span>, </span></li>
+      <span class="name ">GeoObstacle</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-location">{<span class="type-annotation"><a href="../../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">location</span>, </span></li>
 <li><span class="parameter" id="-param-geometries"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/Geometry-class.html">Geometry</a></span>&gt;</span>?</span> <span class="parameter-name">geometries</span>}</span></li>
 </ol>)
     </section>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GeoObstacle</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GeoObstacle({
+  GeoPoint? location,
+  $core.Iterable&lt;Geometry&gt;? geometries,
+}) {
+  final $result = create();
+  if (location != null) {
+    $result.location = location;
+  }
+  if (geometries != null) {
+    $result.geometries.addAll(geometries);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

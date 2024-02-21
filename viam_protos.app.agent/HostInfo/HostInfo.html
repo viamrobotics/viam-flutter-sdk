@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
     <li><a href="../../viam_protos.app.agent/HostInfo-class.html">HostInfo</a></li>
     <li class="self-crumb">HostInfo factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory HostInfo</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory HostInfo({
+  $core.String? platform,
+  $core.String? distro,
+  $core.Iterable&lt;$core.String&gt;? tags,
+}) {
+  final $result = create();
+  if (platform != null) {
+    $result.platform = platform;
+  }
+  if (distro != null) {
+    $result.distro = distro;
+  }
+  if (tags != null) {
+    $result.tags.addAll(tags);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

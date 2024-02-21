@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
+    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">protos&#47;app&#47;packages.dart</a></li>
     <li><a href="../../viam_protos.app.packages/Package-class.html">Package</a></li>
     <li class="self-crumb">Package factory constructor</li>
   </ol>
@@ -76,7 +76,31 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Package</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Package({
+  PackageInfo? info,
+  $core.String? url,
+  $2.Timestamp? createdOn,
+  $core.String? checksum,
+  $core.String? id,
+}) {
+  final $result = create();
+  if (info != null) {
+    $result.info = info;
+  }
+  if (url != null) {
+    $result.url = url;
+  }
+  if (createdOn != null) {
+    $result.createdOn = createdOn;
+  }
+  if (checksum != null) {
+    $result.checksum = checksum;
+  }
+  if (id != null) {
+    $result.id = id;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/ListPlanStatusesRequest-class.html">ListPlanStatusesRequest</a></li>
     <li class="self-crumb">ListPlanStatusesRequest factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListPlanStatusesRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListPlanStatusesRequest({
+  $core.String? name,
+  $core.bool? onlyActivePlans,
+  $2.Struct? extra,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (onlyActivePlans != null) {
+    $result.onlyActivePlans = onlyActivePlans;
+  }
+  if (extra != null) {
+    $result.extra = extra;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

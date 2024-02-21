@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
+    <li><a href="../../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">protos&#47;app&#47;ml_training.dart</a></li>
     <li><a href="../../viam_protos.app.ml_training/TrainingJobMetadata-class.html">TrainingJobMetadata</a></li>
     <li class="self-crumb">TrainingJobMetadata factory constructor</li>
   </ol>
@@ -80,7 +80,47 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory TrainingJobMetadata</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory TrainingJobMetadata({
+  SubmitTrainingJobRequest? request,
+  TrainingStatus? status,
+  $1.Timestamp? createdOn,
+  $1.Timestamp? lastModified,
+  $core.String? syncedModelId,
+  $core.String? id,
+  $2.Status? errorStatus,
+  $1.Timestamp? trainingStarted,
+  $1.Timestamp? trainingEnded,
+}) {
+  final $result = create();
+  if (request != null) {
+    $result.request = request;
+  }
+  if (status != null) {
+    $result.status = status;
+  }
+  if (createdOn != null) {
+    $result.createdOn = createdOn;
+  }
+  if (lastModified != null) {
+    $result.lastModified = lastModified;
+  }
+  if (syncedModelId != null) {
+    $result.syncedModelId = syncedModelId;
+  }
+  if (id != null) {
+    $result.id = id;
+  }
+  if (errorStatus != null) {
+    $result.errorStatus = errorStatus;
+  }
+  if (trainingStarted != null) {
+    $result.trainingStarted = trainingStarted;
+  }
+  if (trainingEnded != null) {
+    $result.trainingEnded = trainingEnded;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

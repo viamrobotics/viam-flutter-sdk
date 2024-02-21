@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.arm/viam_protos.component.arm-library.html">viam_protos.component.arm</a></li>
+    <li><a href="../../viam_protos.component.arm/viam_protos.component.arm-library.html">protos&#47;component&#47;arm.dart</a></li>
     <li><a href="../../viam_protos.component.arm/ArmServiceBase-class.html">ArmServiceBase</a></li>
     <li class="self-crumb">ArmServiceBase constructor</li>
   </ol>
@@ -71,7 +71,71 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ArmServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">ArmServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.GetEndPositionRequest, $0.GetEndPositionResponse&gt;(
+      &#39;GetEndPosition&#39;,
+      getEndPosition_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetEndPositionRequest.fromBuffer(value),
+      ($0.GetEndPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.MoveToPositionRequest, $0.MoveToPositionResponse&gt;(
+      &#39;MoveToPosition&#39;,
+      moveToPosition_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.MoveToPositionRequest.fromBuffer(value),
+      ($0.MoveToPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetJointPositionsRequest, $0.GetJointPositionsResponse&gt;(
+      &#39;GetJointPositions&#39;,
+      getJointPositions_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetJointPositionsRequest.fromBuffer(value),
+      ($0.GetJointPositionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.MoveToJointPositionsRequest, $0.MoveToJointPositionsResponse&gt;(
+      &#39;MoveToJointPositions&#39;,
+      moveToJointPositions_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.MoveToJointPositionsRequest.fromBuffer(value),
+      ($0.MoveToJointPositionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.StopRequest, $0.StopResponse&gt;(
+      &#39;Stop&#39;,
+      stop_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StopRequest.fromBuffer(value),
+      ($0.StopResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.IsMovingRequest, $0.IsMovingResponse&gt;(
+      &#39;IsMoving&#39;,
+      isMoving_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.IsMovingRequest.fromBuffer(value),
+      ($0.IsMovingResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
+      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.GetKinematicsRequest, $1.GetKinematicsResponse&gt;(
+      &#39;GetKinematics&#39;,
+      getKinematics_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetKinematicsRequest.fromBuffer(value),
+      ($1.GetKinematicsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.GetGeometriesRequest, $1.GetGeometriesResponse&gt;(
+      &#39;GetGeometries&#39;,
+      getGeometries_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetGeometriesRequest.fromBuffer(value),
+      ($1.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

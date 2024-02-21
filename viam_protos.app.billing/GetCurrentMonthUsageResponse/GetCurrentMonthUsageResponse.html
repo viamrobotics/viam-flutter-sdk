@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">protos&#47;app&#47;billing.dart</a></li>
     <li><a href="../../viam_protos.app.billing/GetCurrentMonthUsageResponse-class.html">GetCurrentMonthUsageResponse</a></li>
     <li class="self-crumb">GetCurrentMonthUsageResponse factory constructor</li>
   </ol>
@@ -81,7 +81,51 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetCurrentMonthUsageResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetCurrentMonthUsageResponse({
+  $5.Timestamp? startDate,
+  $5.Timestamp? endDate,
+  $core.double? cloudStorageUsageCost,
+  $core.double? dataUploadUsageCost,
+  $core.double? dataEgresUsageCost,
+  $core.double? remoteControlUsageCost,
+  $core.double? standardComputeUsageCost,
+  $core.double? discountAmount,
+  $core.double? totalUsageWithDiscount,
+  $core.double? totalUsageWithoutDiscount,
+}) {
+  final $result = create();
+  if (startDate != null) {
+    $result.startDate = startDate;
+  }
+  if (endDate != null) {
+    $result.endDate = endDate;
+  }
+  if (cloudStorageUsageCost != null) {
+    $result.cloudStorageUsageCost = cloudStorageUsageCost;
+  }
+  if (dataUploadUsageCost != null) {
+    $result.dataUploadUsageCost = dataUploadUsageCost;
+  }
+  if (dataEgresUsageCost != null) {
+    $result.dataEgresUsageCost = dataEgresUsageCost;
+  }
+  if (remoteControlUsageCost != null) {
+    $result.remoteControlUsageCost = remoteControlUsageCost;
+  }
+  if (standardComputeUsageCost != null) {
+    $result.standardComputeUsageCost = standardComputeUsageCost;
+  }
+  if (discountAmount != null) {
+    $result.discountAmount = discountAmount;
+  }
+  if (totalUsageWithDiscount != null) {
+    $result.totalUsageWithDiscount = totalUsageWithDiscount;
+  }
+  if (totalUsageWithoutDiscount != null) {
+    $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

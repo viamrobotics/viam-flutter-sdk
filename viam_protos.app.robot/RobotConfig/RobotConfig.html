@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/RobotConfig-class.html">RobotConfig</a></li>
     <li class="self-crumb">RobotConfig factory constructor</li>
   </ol>
@@ -82,7 +82,55 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory RobotConfig</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory RobotConfig({
+  CloudConfig? cloud,
+  $core.Iterable&lt;RemoteConfig&gt;? remotes,
+  $core.Iterable&lt;ComponentConfig&gt;? components,
+  $core.Iterable&lt;ProcessConfig&gt;? processes,
+  $core.Iterable&lt;ServiceConfig&gt;? services,
+  NetworkConfig? network,
+  AuthConfig? auth,
+  $core.bool? debug,
+  $core.Iterable&lt;ModuleConfig&gt;? modules,
+  $core.bool? disablePartialStart,
+  $core.Iterable&lt;PackageConfig&gt;? packages,
+}) {
+  final $result = create();
+  if (cloud != null) {
+    $result.cloud = cloud;
+  }
+  if (remotes != null) {
+    $result.remotes.addAll(remotes);
+  }
+  if (components != null) {
+    $result.components.addAll(components);
+  }
+  if (processes != null) {
+    $result.processes.addAll(processes);
+  }
+  if (services != null) {
+    $result.services.addAll(services);
+  }
+  if (network != null) {
+    $result.network = network;
+  }
+  if (auth != null) {
+    $result.auth = auth;
+  }
+  if (debug != null) {
+    $result.debug = debug;
+  }
+  if (modules != null) {
+    $result.modules.addAll(modules);
+  }
+  if (disablePartialStart != null) {
+    $result.disablePartialStart = disablePartialStart;
+  }
+  if (packages != null) {
+    $result.packages.addAll(packages);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

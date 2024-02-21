@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">viam_protos.robot.robot</a></li>
+    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">protos&#47;robot&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.robot.robot/FrameSystemConfigRequest-class.html">FrameSystemConfigRequest</a></li>
     <li class="self-crumb">FrameSystemConfigRequest factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory FrameSystemConfigRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory FrameSystemConfigRequest({
+  $core.Iterable&lt;$1.Transform&gt;? supplementalTransforms,
+}) {
+  final $result = create();
+  if (supplementalTransforms != null) {
+    $result.supplementalTransforms.addAll(supplementalTransforms);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

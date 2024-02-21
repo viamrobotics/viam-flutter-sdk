@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">protos&#47;common&#47;common.dart</a></li>
     <li><a href="../../viam_protos.common.common/Geometry-class.html">Geometry</a></li>
     <li class="self-crumb">Geometry factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">Geometry</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-center">{<span class="type-annotation"><a href="../../viam_protos.common.common/Pose-class.html">Pose</a>?</span> <span class="parameter-name">center</span>, </span></li>
+      <span class="name ">Geometry</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-center">{<span class="type-annotation"><a href="../../viam_sdk/Pose-class.html">Pose</a>?</span> <span class="parameter-name">center</span>, </span></li>
 <li><span class="parameter" id="-param-sphere"><span class="type-annotation"><a href="../../viam_protos.common.common/Sphere-class.html">Sphere</a>?</span> <span class="parameter-name">sphere</span>, </span></li>
 <li><span class="parameter" id="-param-box"><span class="type-annotation"><a href="../../viam_protos.common.common/RectangularPrism-class.html">RectangularPrism</a>?</span> <span class="parameter-name">box</span>, </span></li>
 <li><span class="parameter" id="-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">label</span>, </span></li>
@@ -76,7 +76,31 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Geometry</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Geometry({
+  Pose? center,
+  Sphere? sphere,
+  RectangularPrism? box,
+  $core.String? label,
+  Capsule? capsule,
+}) {
+  final $result = create();
+  if (center != null) {
+    $result.center = center;
+  }
+  if (sphere != null) {
+    $result.sphere = sphere;
+  }
+  if (box != null) {
+    $result.box = box;
+  }
+  if (label != null) {
+    $result.label = label;
+  }
+  if (capsule != null) {
+    $result.capsule = capsule;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

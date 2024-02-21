@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li class="self-crumb">viam_protos.common.common library</li>
+    <li class="self-crumb">protos/common/common.dart</li>
   </ol>
   <div class="self-name">viam_protos.common.common</div>
   <form class="search navbar-right" role="search">
@@ -56,10 +56,16 @@
       data-below-sidebar="viam_protos.common.common&#47;viam_protos.common.common-library-sidebar.html">
       
       <div>
-<h1><span class="kind-library">viam_protos.common.common</span> library 
+        
+
+        <h1>
+          <span class="kind-library">protos/common/common</span>
+          library 
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
-</h1></div>
+
+        </h1>
+      </div>
 
     
 <section class="desc markdown">
@@ -120,7 +126,7 @@
 </dd>
 
         <dt id="DoCommandRequest">
-  <span class="name "><a href="../viam_protos.common.common/DoCommandRequest-class.html">DoCommandRequest</a></span> 
+  <span class="name "><a href="../viam_sdk/DoCommandRequest-class.html">DoCommandRequest</a></span> 
 
 </dt>
 <dd>
@@ -128,7 +134,7 @@
 </dd>
 
         <dt id="DoCommandResponse">
-  <span class="name "><a href="../viam_protos.common.common/DoCommandResponse-class.html">DoCommandResponse</a></span> 
+  <span class="name "><a href="../viam_sdk/DoCommandResponse-class.html">DoCommandResponse</a></span> 
 
 </dt>
 <dd>
@@ -162,7 +168,7 @@ captured in latitude and longitude.
 </dd>
 
         <dt id="GeoPoint">
-  <span class="name "><a href="../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a></span> 
+  <span class="name "><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a></span> 
 
 </dt>
 <dd>
@@ -234,7 +240,7 @@ captured in latitude and longitude.
 </dd>
 
         <dt id="Orientation">
-  <span class="name "><a href="../viam_protos.common.common/Orientation-class.html">Orientation</a></span> 
+  <span class="name "><a href="../viam_sdk/Orientation-class.html">Orientation</a></span> 
 
 </dt>
 <dd>
@@ -251,7 +257,7 @@ repeated list of geometries which respresents the center point and geometry of e
 </dd>
 
         <dt id="Pose">
-  <span class="name "><a href="../viam_protos.common.common/Pose-class.html">Pose</a></span> 
+  <span class="name "><a href="../viam_sdk/Pose-class.html">Pose</a></span> 
 
 </dt>
 <dd>
@@ -266,7 +272,7 @@ is circled, the Roll will correct itself to remain in-line.
 </dd>
 
         <dt id="PoseInFrame">
-  <span class="name "><a href="../viam_protos.common.common/PoseInFrame-class.html">PoseInFrame</a></span> 
+  <span class="name "><a href="../viam_sdk/PoseInFrame-class.html">PoseInFrame</a></span> 
 
 </dt>
 <dd>
@@ -283,7 +289,7 @@ These dimensions are with respect to the referenceframe in which the Rectangular
 </dd>
 
         <dt id="ResourceName">
-  <span class="name "><a href="../viam_protos.common.common/ResourceName-class.html">ResourceName</a></span> 
+  <span class="name "><a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span> 
 
 </dt>
 <dd>
@@ -317,7 +323,7 @@ reference frame as observed within the second reference frame.
 </dd>
 
         <dt id="Vector3">
-  <span class="name "><a href="../viam_protos.common.common/Vector3-class.html">Vector3</a></span> 
+  <span class="name "><a href="../viam_sdk/Vector3-class.html">Vector3</a></span> 
 
 </dt>
 <dd>
@@ -339,6 +345,7 @@ given reference frame and a new target reference frame.
 
 
 
+
     <section class="summary offset-anchor" id="constants">
       <h2>Constants</h2>
 
@@ -353,9 +360,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;ActuatorStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;is_moving&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 8, &#39;10&#39; : &#39;isMoving&#39;}]}</code></span>
-    </div>
 </dd>
 
         <dt id="AnalogStatus$json" class="constant">
@@ -368,9 +372,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;AnalogStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 5, &#39;10&#39; : &#39;value&#39;}]}</code></span>
-    </div>
 </dd>
 
         <dt id="BoardStatus$json" class="constant">
@@ -383,9 +384,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;BoardStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;analogs&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.BoardStatus.AnalogsEntry&#…</code></span>
-    </div>
 </dd>
 
         <dt id="BoardStatus_AnalogsEntry$json" class="constant">
@@ -398,9 +396,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;AnalogsEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;value&#39;, &#…</code></span>
-    </div>
 </dd>
 
         <dt id="BoardStatus_DigitalInterruptsEntry$json" class="constant">
@@ -413,9 +408,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;DigitalInterruptsEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;valu…</code></span>
-    </div>
 </dd>
 
         <dt id="Capsule$json" class="constant">
@@ -428,9 +420,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Capsule&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;radius_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;radiusMm&#39;}, {&#39;1&#39; : &#39;length_m…</code></span>
-    </div>
 </dd>
 
         <dt id="DigitalInterruptStatus$json" class="constant">
@@ -443,9 +432,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;DigitalInterruptStatus&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;value&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 3, &#39;10&#39; : &#39;value&#39;}]}</code></span>
-    </div>
 </dd>
 
         <dt id="DoCommandRequest$json" class="constant">
@@ -458,9 +444,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;DoCommandRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;command&…</code></span>
-    </div>
 </dd>
 
         <dt id="DoCommandResponse$json" class="constant">
@@ -473,9 +456,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;DoCommandResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;result&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Struct&#39;, &#39;10…</code></span>
-    </div>
 </dd>
 
         <dt id="GeometriesInFrame$json" class="constant">
@@ -488,9 +468,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GeometriesInFrame&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39;}, {&#39;…</code></span>
-    </div>
 </dd>
 
         <dt id="Geometry$json" class="constant">
@@ -503,9 +480,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Geometry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;center&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Pose&#39;, &#39;10&#39; : &#39…</code></span>
-    </div>
 </dd>
 
         <dt id="GeoObstacle$json" class="constant">
@@ -518,9 +492,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GeoObstacle&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;location&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GeoPoint&#39;, &#39;10&#3…</code></span>
-    </div>
 </dd>
 
         <dt id="GeoPoint$json" class="constant">
@@ -533,9 +504,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GeoPoint&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;latitude&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;latitude&#39;}, {&#39;1&#39; : &#39;longitud…</code></span>
-    </div>
 </dd>
 
         <dt id="GetGeometriesRequest$json" class="constant">
@@ -548,9 +516,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetGeometriesRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;extr…</code></span>
-    </div>
 </dd>
 
         <dt id="GetGeometriesResponse$json" class="constant">
@@ -563,9 +528,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetGeometriesResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;geometries&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Geometry&#39;…</code></span>
-    </div>
 </dd>
 
         <dt id="GetKinematicsRequest$json" class="constant">
@@ -578,9 +540,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetKinematicsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;extr…</code></span>
-    </div>
 </dd>
 
         <dt id="GetKinematicsResponse$json" class="constant">
@@ -593,9 +552,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetKinematicsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;format&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 14, &#39;6&#39; : &#39;.viam.common.v1.KinematicsFileFor…</code></span>
-    </div>
 </dd>
 
         <dt id="GetReadingsRequest$json" class="constant">
@@ -608,9 +564,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetReadingsRequest&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;name&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;name&#39;}, {&#39;1&#39; : &#39;extra&…</code></span>
-    </div>
 </dd>
 
         <dt id="GetReadingsResponse$json" class="constant">
@@ -623,9 +576,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;GetReadingsResponse&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;readings&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GetReadingsRespon…</code></span>
-    </div>
 </dd>
 
         <dt id="GetReadingsResponse_ReadingsEntry$json" class="constant">
@@ -638,9 +588,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;ReadingsEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;key&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;key&#39;}, {&#39;1&#39; : &#39;value&#39;, &…</code></span>
-    </div>
 </dd>
 
         <dt id="KinematicsFileFormat$json" class="constant">
@@ -653,9 +600,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;KinematicsFileFormat&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;KINEMATICS_FILE_FORMAT_UNSPECIFIED&#39;, &#39;2&#39; : 0}, {&#39;1&#39; : &#39;KINEMATICS_FILE_FORMAT_SVA&#39;, &#39;2…</code></span>
-    </div>
 </dd>
 
         <dt id="LogEntry$json" class="constant">
@@ -668,9 +612,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;LogEntry&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;host&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;host&#39;}, {&#39;1&#39; : &#39;level&#39;, &#39…</code></span>
-    </div>
 </dd>
 
         <dt id="Orientation$json" class="constant">
@@ -683,9 +624,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Orientation&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;o_x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;oX&#39;}, {&#39;1&#39; : &#39;o_y&#39;, &#39;3…</code></span>
-    </div>
 </dd>
 
         <dt id="PointCloudObject$json" class="constant">
@@ -698,9 +636,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;PointCloudObject&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;point_cloud&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 12, &#39;10&#39; : &#39;pointCloud&#39;}, {&#39;1&#39; :…</code></span>
-    </div>
 </dd>
 
         <dt id="Pose$json" class="constant">
@@ -713,9 +648,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Pose&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;x&#39;}, {&#39;1&#39; : &#39;y&#39;, &#39;3&#39; : 2, &…</code></span>
-    </div>
 </dd>
 
         <dt id="PoseInFrame$json" class="constant">
@@ -728,9 +660,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;PoseInFrame&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39;}, {&#39;1&#39;…</code></span>
-    </div>
 </dd>
 
         <dt id="RectangularPrism$json" class="constant">
@@ -743,9 +672,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;RectangularPrism&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;dims_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.Vector3&#39;, &#39;10…</code></span>
-    </div>
 </dd>
 
         <dt id="ResourceName$json" class="constant">
@@ -758,9 +684,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;ResourceName&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;namespace&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;namespace&#39;}, {&#39;1&#39; : &#39;ty…</code></span>
-    </div>
 </dd>
 
         <dt id="ResponseMetadata$json" class="constant">
@@ -773,9 +696,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;ResponseMetadata&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;captured_at&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 11, &#39;6&#39; : &#39;.google.protobuf.Timestamp&#39;, …</code></span>
-    </div>
 </dd>
 
         <dt id="Sphere$json" class="constant">
@@ -788,9 +708,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Sphere&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;radius_mm&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;radiusMm&#39;}]}</code></span>
-    </div>
 </dd>
 
         <dt id="Transform$json" class="constant">
@@ -803,9 +720,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Transform&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;reference_frame&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 9, &#39;10&#39; : &#39;referenceFrame&#39;}, {&#39;1&#39; :…</code></span>
-    </div>
 </dd>
 
         <dt id="Vector3$json" class="constant">
@@ -818,9 +732,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;Vector3&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;x&#39;, &#39;3&#39; : 1, &#39;4&#39; : 1, &#39;5&#39; : 1, &#39;10&#39; : &#39;x&#39;}, {&#39;1&#39; : &#39;y&#39;, &#39;3&#39; : 2…</code></span>
-    </div>
 </dd>
 
         <dt id="WorldState$json" class="constant">
@@ -833,9 +744,6 @@ given reference frame and a new target reference frame.
   
   
 
-    <div>
-      <span class="signature"><code>{&#39;1&#39; : &#39;WorldState&#39;, &#39;2&#39; : [{&#39;1&#39; : &#39;obstacles&#39;, &#39;3&#39; : 1, &#39;4&#39; : 3, &#39;5&#39; : 11, &#39;6&#39; : &#39;.viam.common.v1.GeometriesInFrame&#39;, &…</code></span>
-    </div>
 </dd>
 
       </dl>
@@ -1208,7 +1116,7 @@ given reference frame and a new target reference frame.
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li class="self-crumb">viam_protos.common.common library</li>
+    <li class="self-crumb">protos/common/common.dart</li>
 </ol>
 
 
@@ -1217,63 +1125,63 @@ given reference frame and a new target reference frame.
       <li class="section-title">Topics</li>
         <li><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></li>
       <li class="section-title">Libraries</li>
-      <li><a href="../widgets_resources_arm/widgets_resources_arm-library.html">arm</a></li>
-      <li><a href="../widgets_resources_base/widgets_resources_base-library.html">base</a></li>
-      <li><a href="../widgets_resources_board/widgets_resources_board-library.html">board</a></li>
-      <li><a href="../widgets_button/widgets_button-library.html">button</a></li>
-      <li><a href="../widgets_camera_stream/widgets_camera_stream-library.html">camera_stream</a></li>
-      <li><a href="../widgets_resources_gripper/widgets_resources_gripper-library.html">gripper</a></li>
-      <li><a href="../widgets_joystick/widgets_joystick-library.html">joystick</a></li>
-      <li><a href="../widgets_resources_motor/widgets_resources_motor-library.html">motor</a></li>
-      <li><a href="../widgets_multi_camera_stream/widgets_multi_camera_stream-library.html">multi_camera_stream</a></li>
-      <li><a href="../widgets_refreshable_data_table/widgets_refreshable_data_table-library.html">refreshable_data_table</a></li>
-      <li><a href="../widgets_resources_sensor/widgets_resources_sensor-library.html">sensor</a></li>
-      <li><a href="../widgets_resources_servo/widgets_resources_servo-library.html">servo</a></li>
+      <li><a href="../widgets_resources_arm/widgets_resources_arm-library.html">widgets/resources/arm</a></li>
+      <li><a href="../widgets_resources_base/widgets_resources_base-library.html">widgets/resources/base</a></li>
+      <li><a href="../widgets_resources_board/widgets_resources_board-library.html">widgets/resources/board</a></li>
+      <li><a href="../widgets_button/widgets_button-library.html">widgets/button</a></li>
+      <li><a href="../widgets_camera_stream/widgets_camera_stream-library.html">widgets/camera_stream</a></li>
+      <li><a href="../widgets_resources_gripper/widgets_resources_gripper-library.html">widgets/resources/gripper</a></li>
+      <li><a href="../widgets_joystick/widgets_joystick-library.html">widgets/joystick</a></li>
+      <li><a href="../widgets_resources_motor/widgets_resources_motor-library.html">widgets/resources/motor</a></li>
+      <li><a href="../widgets_multi_camera_stream/widgets_multi_camera_stream-library.html">widgets/multi_camera_stream</a></li>
+      <li><a href="../widgets_refreshable_data_table/widgets_refreshable_data_table-library.html">widgets/refreshable_data_table</a></li>
+      <li><a href="../widgets_resources_sensor/widgets_resources_sensor-library.html">widgets/resources/sensor</a></li>
+      <li><a href="../widgets_resources_servo/widgets_resources_servo-library.html">widgets/resources/servo</a></li>
       <li><a href="../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
       <li><a href="../widgets/widgets-library.html">widgets</a></li>
       <li class="section-subtitle">Protobuf Definitions</li>
-        <li class="section-subitem"><a href="../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.build/viam_protos.app.build-library.html">viam_protos.app.build</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.dataset/viam_protos.app.dataset-library.html">viam_protos.app.dataset</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.end_user/viam_protos.app.end_user-library.html">viam_protos.app.end_user</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
-        <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.arm/viam_protos.component.arm-library.html">viam_protos.component.arm</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">viam_protos.component.audioinput</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.base/viam_protos.component.base-library.html">viam_protos.component.base</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.board/viam_protos.component.board-library.html">viam_protos.component.board</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.camera/viam_protos.component.camera-library.html">viam_protos.component.camera</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.encoder/viam_protos.component.encoder-library.html">viam_protos.component.encoder</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.gantry/viam_protos.component.gantry-library.html">viam_protos.component.gantry</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.generic/viam_protos.component.generic-library.html">viam_protos.component.generic</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.gripper/viam_protos.component.gripper-library.html">viam_protos.component.gripper</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.input_controller/viam_protos.component.input_controller-library.html">viam_protos.component.input_controller</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.motor/viam_protos.component.motor-library.html">viam_protos.component.motor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">viam_protos.component.movementsensor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker/viam_protos.component.pose_tracker-library.html">viam_protos.component.pose_tracker</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.powersensor/viam_protos.component.powersensor-library.html">viam_protos.component.powersensor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.sensor/viam_protos.component.sensor-library.html">viam_protos.component.sensor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.servo/viam_protos.component.servo-library.html">viam_protos.component.servo</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.testecho/viam_protos.component.testecho-library.html">viam_protos.component.testecho</a></li>
-        <li class="section-subitem"><a href="../viam_protos.module.module/viam_protos.module.module-library.html">viam_protos.module.module</a></li>
-        <li class="section-subitem"><a href="../viam_protos.provisioning.provisioning/viam_protos.provisioning.provisioning-library.html">viam_protos.provisioning.provisioning</a></li>
-        <li class="section-subitem"><a href="../viam_protos.robot.robot/viam_protos.robot.robot-library.html">viam_protos.robot.robot</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.data_manager/viam_protos.service.data_manager-library.html">viam_protos.service.data_manager</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.generic/viam_protos.service.generic-library.html">viam_protos.service.generic</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">viam_protos.service.mlmodel</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.navigation/viam_protos.service.navigation-library.html">viam_protos.service.navigation</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.sensors/viam_protos.service.sensors-library.html">viam_protos.service.sensors</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.shell/viam_protos.service.shell-library.html">viam_protos.service.shell</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html">viam_protos.service.slam</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.vision/viam_protos.service.vision-library.html">viam_protos.service.vision</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.agent/viam_protos.app.agent-library.html">protos/app/agent</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.app/viam_protos.app.app-library.html">protos/app/app</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.billing/viam_protos.app.billing-library.html">protos/app/billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.build/viam_protos.app.build-library.html">protos/app/build</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">protos/app/cloud_slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data/viam_protos.app.data-library.html">protos/app/data</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">protos/app/data_sync</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.dataset/viam_protos.app.dataset-library.html">protos/app/dataset</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.end_user/viam_protos.app.end_user-library.html">protos/app/end_user</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">protos/app/ml_training</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.packages/viam_protos.app.packages-library.html">protos/app/packages</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">protos/app/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.common.common/viam_protos.common.common-library.html">protos/common/common</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.arm/viam_protos.component.arm-library.html">protos/component/arm</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">protos/component/audioinput</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.base/viam_protos.component.base-library.html">protos/component/base</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.board/viam_protos.component.board-library.html">protos/component/board</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.camera/viam_protos.component.camera-library.html">protos/component/camera</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.encoder/viam_protos.component.encoder-library.html">protos/component/encoder</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gantry/viam_protos.component.gantry-library.html">protos/component/gantry</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.generic/viam_protos.component.generic-library.html">protos/component/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gripper/viam_protos.component.gripper-library.html">protos/component/gripper</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.input_controller/viam_protos.component.input_controller-library.html">protos/component/input_controller</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.motor/viam_protos.component.motor-library.html">protos/component/motor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">protos/component/movementsensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker/viam_protos.component.pose_tracker-library.html">protos/component/pose_tracker</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.powersensor/viam_protos.component.powersensor-library.html">protos/component/powersensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.sensor/viam_protos.component.sensor-library.html">protos/component/sensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.servo/viam_protos.component.servo-library.html">protos/component/servo</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.testecho/viam_protos.component.testecho-library.html">protos/component/testecho</a></li>
+        <li class="section-subitem"><a href="../viam_protos.module.module/viam_protos.module.module-library.html">protos/module/module</a></li>
+        <li class="section-subitem"><a href="../viam_protos.provisioning.provisioning/viam_protos.provisioning.provisioning-library.html">protos/provisioning/provisioning</a></li>
+        <li class="section-subitem"><a href="../viam_protos.robot.robot/viam_protos.robot.robot-library.html">protos/robot/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.data_manager/viam_protos.service.data_manager-library.html">protos/service/data_manager</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.generic/viam_protos.service.generic-library.html">protos/service/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">protos/service/mlmodel</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.motion/viam_protos.service.motion-library.html">protos/service/motion</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.navigation/viam_protos.service.navigation-library.html">protos/service/navigation</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.sensors/viam_protos.service.sensors-library.html">protos/service/sensors</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.shell/viam_protos.service.shell-library.html">protos/service/shell</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.slam/viam_protos.service.slam-library.html">protos/service/slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.vision/viam_protos.service.vision-library.html">protos/service/vision</a></li>
 </ol>
 
   </div>

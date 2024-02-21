@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.motor/viam_protos.component.motor-library.html">viam_protos.component.motor</a></li>
+    <li><a href="../../viam_protos.component.motor/viam_protos.component.motor-library.html">protos&#47;component&#47;motor.dart</a></li>
     <li><a href="../../viam_protos.component.motor/GoForRequest-class.html">GoForRequest</a></li>
     <li class="self-crumb">GoForRequest factory constructor</li>
   </ol>
@@ -75,7 +75,27 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GoForRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GoForRequest({
+  $core.String? name,
+  $core.double? rpm,
+  $core.double? revolutions,
+  $2.Struct? extra,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (rpm != null) {
+    $result.rpm = rpm;
+  }
+  if (revolutions != null) {
+    $result.revolutions = revolutions;
+  }
+  if (extra != null) {
+    $result.extra = extra;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

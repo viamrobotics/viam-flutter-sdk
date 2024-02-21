@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
     <li><a href="../../viam_protos.app.data/Filter-class.html">Filter</a></li>
     <li class="self-crumb">Filter factory constructor</li>
   </ol>
@@ -85,7 +85,67 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Filter</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Filter({
+  $core.String? componentName,
+  $core.String? componentType,
+  $core.String? method,
+  $core.String? robotName,
+  $core.String? robotId,
+  $core.String? partName,
+  $core.String? partId,
+  $core.Iterable&lt;$core.String&gt;? locationIds,
+  $core.Iterable&lt;$core.String&gt;? organizationIds,
+  $core.Iterable&lt;$core.String&gt;? mimeType,
+  CaptureInterval? interval,
+  TagsFilter? tagsFilter,
+  $core.Iterable&lt;$core.String&gt;? bboxLabels,
+  $core.String? datasetId,
+}) {
+  final $result = create();
+  if (componentName != null) {
+    $result.componentName = componentName;
+  }
+  if (componentType != null) {
+    $result.componentType = componentType;
+  }
+  if (method != null) {
+    $result.method = method;
+  }
+  if (robotName != null) {
+    $result.robotName = robotName;
+  }
+  if (robotId != null) {
+    $result.robotId = robotId;
+  }
+  if (partName != null) {
+    $result.partName = partName;
+  }
+  if (partId != null) {
+    $result.partId = partId;
+  }
+  if (locationIds != null) {
+    $result.locationIds.addAll(locationIds);
+  }
+  if (organizationIds != null) {
+    $result.organizationIds.addAll(organizationIds);
+  }
+  if (mimeType != null) {
+    $result.mimeType.addAll(mimeType);
+  }
+  if (interval != null) {
+    $result.interval = interval;
+  }
+  if (tagsFilter != null) {
+    $result.tagsFilter = tagsFilter;
+  }
+  if (bboxLabels != null) {
+    $result.bboxLabels.addAll(bboxLabels);
+  }
+  if (datasetId != null) {
+    $result.datasetId = datasetId;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

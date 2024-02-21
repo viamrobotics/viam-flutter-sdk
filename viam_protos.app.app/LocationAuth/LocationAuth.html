@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/LocationAuth-class.html">LocationAuth</a></li>
     <li class="self-crumb">LocationAuth factory constructor</li>
   </ol>
@@ -74,7 +74,25 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory LocationAuth</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory LocationAuth({
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
+  $core.String? secret,
+  $core.String? locationId,
+  $core.Iterable&lt;SharedSecret&gt;? secrets,
+}) {
+  final $result = create();
+  if (secret != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
+    $result.secret = secret;
+  }
+  if (locationId != null) {
+    $result.locationId = locationId;
+  }
+  if (secrets != null) {
+    $result.secrets.addAll(secrets);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

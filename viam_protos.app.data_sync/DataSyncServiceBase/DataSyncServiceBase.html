@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
+    <li><a href="../../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">protos&#47;app&#47;data_sync.dart</a></li>
     <li><a href="../../viam_protos.app.data_sync/DataSyncServiceBase-class.html">DataSyncServiceBase</a></li>
     <li class="self-crumb">DataSyncServiceBase constructor</li>
   </ol>
@@ -71,7 +71,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">DataSyncServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">DataSyncServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.DataCaptureUploadRequest, $0.DataCaptureUploadResponse&gt;(
+      &#39;DataCaptureUpload&#39;,
+      dataCaptureUpload_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.DataCaptureUploadRequest.fromBuffer(value),
+      ($0.DataCaptureUploadResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.FileUploadRequest, $0.FileUploadResponse&gt;(
+      &#39;FileUpload&#39;,
+      fileUpload,
+      true,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.FileUploadRequest.fromBuffer(value),
+      ($0.FileUploadResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.StreamingDataCaptureUploadRequest, $0.StreamingDataCaptureUploadResponse&gt;(
+      &#39;StreamingDataCaptureUpload&#39;,
+      streamingDataCaptureUpload,
+      true,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StreamingDataCaptureUploadRequest.fromBuffer(value),
+      ($0.StreamingDataCaptureUploadResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

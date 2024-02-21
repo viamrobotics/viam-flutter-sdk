@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/StreamClient-class.html">StreamClient</a></li>
     <li class="self-crumb">StreamClient constructor</li>
   </ol>
@@ -78,7 +78,12 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">StreamClient</code></pre>
+  <pre class="language-dart"><code class="language-dart">StreamClient(this.name, this._open, this._close) {
+  _internalListener = _internalStreamController.stream.listen((event) {
+    _stream = event;
+    _streamController.add(event);
+  });
+}</code></pre>
 </section>
 
 

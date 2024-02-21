@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a></li>
     <li class="self-crumb">AuthConfig factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory AuthConfig</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory AuthConfig({
+  $core.Iterable&lt;AuthHandlerConfig&gt;? handlers,
+  $core.Iterable&lt;$core.String&gt;? tlsAuthEntities,
+  ExternalAuthConfig? externalAuthConfig,
+}) {
+  final $result = create();
+  if (handlers != null) {
+    $result.handlers.addAll(handlers);
+  }
+  if (tlsAuthEntities != null) {
+    $result.tlsAuthEntities.addAll(tlsAuthEntities);
+  }
+  if (externalAuthConfig != null) {
+    $result.externalAuthConfig = externalAuthConfig;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

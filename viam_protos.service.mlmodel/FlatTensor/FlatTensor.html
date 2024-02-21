@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">viam_protos.service.mlmodel</a></li>
+    <li><a href="../../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">protos&#47;service&#47;mlmodel.dart</a></li>
     <li><a href="../../viam_protos.service.mlmodel/FlatTensor-class.html">FlatTensor</a></li>
     <li class="self-crumb">FlatTensor factory constructor</li>
   </ol>
@@ -82,7 +82,55 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory FlatTensor</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory FlatTensor({
+  $core.Iterable&lt;$fixnum.Int64&gt;? shape,
+  FlatTensorDataInt8? int8Tensor,
+  FlatTensorDataUInt8? uint8Tensor,
+  FlatTensorDataInt16? int16Tensor,
+  FlatTensorDataUInt16? uint16Tensor,
+  FlatTensorDataInt32? int32Tensor,
+  FlatTensorDataUInt32? uint32Tensor,
+  FlatTensorDataInt64? int64Tensor,
+  FlatTensorDataUInt64? uint64Tensor,
+  FlatTensorDataFloat? floatTensor,
+  FlatTensorDataDouble? doubleTensor,
+}) {
+  final $result = create();
+  if (shape != null) {
+    $result.shape.addAll(shape);
+  }
+  if (int8Tensor != null) {
+    $result.int8Tensor = int8Tensor;
+  }
+  if (uint8Tensor != null) {
+    $result.uint8Tensor = uint8Tensor;
+  }
+  if (int16Tensor != null) {
+    $result.int16Tensor = int16Tensor;
+  }
+  if (uint16Tensor != null) {
+    $result.uint16Tensor = uint16Tensor;
+  }
+  if (int32Tensor != null) {
+    $result.int32Tensor = int32Tensor;
+  }
+  if (uint32Tensor != null) {
+    $result.uint32Tensor = uint32Tensor;
+  }
+  if (int64Tensor != null) {
+    $result.int64Tensor = int64Tensor;
+  }
+  if (uint64Tensor != null) {
+    $result.uint64Tensor = uint64Tensor;
+  }
+  if (floatTensor != null) {
+    $result.floatTensor = floatTensor;
+  }
+  if (doubleTensor != null) {
+    $result.doubleTensor = doubleTensor;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

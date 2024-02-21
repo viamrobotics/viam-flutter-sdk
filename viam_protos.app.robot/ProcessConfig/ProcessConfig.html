@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/ProcessConfig-class.html">ProcessConfig</a></li>
     <li class="self-crumb">ProcessConfig factory constructor</li>
   </ol>
@@ -80,7 +80,47 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ProcessConfig</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ProcessConfig({
+  $core.String? id,
+  $core.String? name,
+  $core.Iterable&lt;$core.String&gt;? args,
+  $core.String? cwd,
+  $core.bool? oneShot,
+  $core.bool? log,
+  $core.int? stopSignal,
+  $8.Duration? stopTimeout,
+  $core.Map&lt;$core.String, $core.String&gt;? env,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  if (args != null) {
+    $result.args.addAll(args);
+  }
+  if (cwd != null) {
+    $result.cwd = cwd;
+  }
+  if (oneShot != null) {
+    $result.oneShot = oneShot;
+  }
+  if (log != null) {
+    $result.log = log;
+  }
+  if (stopSignal != null) {
+    $result.stopSignal = stopSignal;
+  }
+  if (stopTimeout != null) {
+    $result.stopTimeout = stopTimeout;
+  }
+  if (env != null) {
+    $result.env.addAll(env);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

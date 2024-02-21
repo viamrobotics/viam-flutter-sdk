@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">viam_protos.component.movementsensor</a></li>
+    <li><a href="../../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">protos&#47;component&#47;movementsensor.dart</a></li>
     <li><a href="../../viam_protos.component.movementsensor/GetPositionResponse-class.html">GetPositionResponse</a></li>
     <li class="self-crumb">GetPositionResponse factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetPositionResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-coordinate">{<span class="type-annotation"><a href="../../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">coordinate</span>, </span></li>
+      <span class="name ">GetPositionResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-coordinate">{<span class="type-annotation"><a href="../../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">coordinate</span>, </span></li>
 <li><span class="parameter" id="-param-altitudeM"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">altitudeM</span>}</span></li>
 </ol>)
     </section>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetPositionResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetPositionResponse({
+  $1.GeoPoint? coordinate,
+  $core.double? altitudeM,
+}) {
+  final $result = create();
+  if (coordinate != null) {
+    $result.coordinate = coordinate;
+  }
+  if (altitudeM != null) {
+    $result.altitudeM = altitudeM;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

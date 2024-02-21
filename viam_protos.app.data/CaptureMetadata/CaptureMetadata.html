@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
     <li><a href="../../viam_protos.app.data/CaptureMetadata-class.html">CaptureMetadata</a></li>
     <li class="self-crumb">CaptureMetadata factory constructor</li>
   </ol>
@@ -83,7 +83,59 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory CaptureMetadata</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory CaptureMetadata({
+  $core.String? organizationId,
+  $core.String? locationId,
+  $core.String? robotName,
+  $core.String? robotId,
+  $core.String? partName,
+  $core.String? partId,
+  $core.String? componentType,
+  $core.String? componentName,
+  $core.String? methodName,
+  $core.Map&lt;$core.String, $1.Any&gt;? methodParameters,
+  $core.Iterable&lt;$core.String&gt;? tags,
+  $core.String? mimeType,
+}) {
+  final $result = create();
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (locationId != null) {
+    $result.locationId = locationId;
+  }
+  if (robotName != null) {
+    $result.robotName = robotName;
+  }
+  if (robotId != null) {
+    $result.robotId = robotId;
+  }
+  if (partName != null) {
+    $result.partName = partName;
+  }
+  if (partId != null) {
+    $result.partId = partId;
+  }
+  if (componentType != null) {
+    $result.componentType = componentType;
+  }
+  if (componentName != null) {
+    $result.componentName = componentName;
+  }
+  if (methodName != null) {
+    $result.methodName = methodName;
+  }
+  if (methodParameters != null) {
+    $result.methodParameters.addAll(methodParameters);
+  }
+  if (tags != null) {
+    $result.tags.addAll(tags);
+  }
+  if (mimeType != null) {
+    $result.mimeType = mimeType;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

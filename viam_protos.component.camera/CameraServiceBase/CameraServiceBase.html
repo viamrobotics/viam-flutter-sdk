@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.camera/viam_protos.component.camera-library.html">viam_protos.component.camera</a></li>
+    <li><a href="../../viam_protos.component.camera/viam_protos.component.camera-library.html">protos&#47;component&#47;camera.dart</a></li>
     <li><a href="../../viam_protos.component.camera/CameraServiceBase-class.html">CameraServiceBase</a></li>
     <li class="self-crumb">CameraServiceBase constructor</li>
   </ol>
@@ -71,7 +71,57 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">CameraServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">CameraServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.GetImageRequest, $0.GetImageResponse&gt;(
+      &#39;GetImage&#39;,
+      getImage_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetImageRequest.fromBuffer(value),
+      ($0.GetImageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetImagesRequest, $0.GetImagesResponse&gt;(
+      &#39;GetImages&#39;,
+      getImages_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetImagesRequest.fromBuffer(value),
+      ($0.GetImagesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.RenderFrameRequest, $1.HttpBody&gt;(
+      &#39;RenderFrame&#39;,
+      renderFrame_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.RenderFrameRequest.fromBuffer(value),
+      ($1.HttpBody value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPointCloudRequest, $0.GetPointCloudResponse&gt;(
+      &#39;GetPointCloud&#39;,
+      getPointCloud_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPointCloudRequest.fromBuffer(value),
+      ($0.GetPointCloudResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPropertiesRequest, $0.GetPropertiesResponse&gt;(
+      &#39;GetProperties&#39;,
+      getProperties_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPropertiesRequest.fromBuffer(value),
+      ($0.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.DoCommandRequest, $2.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.DoCommandRequest.fromBuffer(value),
+      ($2.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.GetGeometriesRequest, $2.GetGeometriesResponse&gt;(
+      &#39;GetGeometries&#39;,
+      getGeometries_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetGeometriesRequest.fromBuffer(value),
+      ($2.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

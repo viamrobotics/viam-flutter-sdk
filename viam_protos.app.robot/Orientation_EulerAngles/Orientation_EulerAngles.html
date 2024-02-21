@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/Orientation_EulerAngles-class.html">Orientation_EulerAngles</a></li>
     <li class="self-crumb">Orientation_EulerAngles factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Orientation_EulerAngles</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Orientation_EulerAngles({
+  $core.double? roll,
+  $core.double? pitch,
+  $core.double? yaw,
+}) {
+  final $result = create();
+  if (roll != null) {
+    $result.roll = roll;
+  }
+  if (pitch != null) {
+    $result.pitch = pitch;
+  }
+  if (yaw != null) {
+    $result.yaw = yaw;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

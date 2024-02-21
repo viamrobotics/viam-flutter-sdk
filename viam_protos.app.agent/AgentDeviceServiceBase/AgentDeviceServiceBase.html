@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
     <li><a href="../../viam_protos.app.agent/AgentDeviceServiceBase-class.html">AgentDeviceServiceBase</a></li>
     <li class="self-crumb">AgentDeviceServiceBase constructor</li>
   </ol>
@@ -71,7 +71,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">AgentDeviceServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">AgentDeviceServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.DeviceAgentConfigRequest, $0.DeviceAgentConfigResponse&gt;(
+      &#39;DeviceAgentConfig&#39;,
+      deviceAgentConfig_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeviceAgentConfigRequest.fromBuffer(value),
+      ($0.DeviceAgentConfigResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

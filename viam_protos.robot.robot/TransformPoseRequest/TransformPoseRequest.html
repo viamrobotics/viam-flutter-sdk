@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">viam_protos.robot.robot</a></li>
+    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">protos&#47;robot&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.robot.robot/TransformPoseRequest-class.html">TransformPoseRequest</a></li>
     <li class="self-crumb">TransformPoseRequest factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">TransformPoseRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-source">{<span class="type-annotation"><a href="../../viam_protos.common.common/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">source</span>, </span></li>
+      <span class="name ">TransformPoseRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-source">{<span class="type-annotation"><a href="../../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">source</span>, </span></li>
 <li><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">destination</span>, </span></li>
 <li><span class="parameter" id="-param-supplementalTransforms"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/Transform-class.html">Transform</a></span>&gt;</span>?</span> <span class="parameter-name">supplementalTransforms</span>}</span></li>
 </ol>)
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory TransformPoseRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory TransformPoseRequest({
+  $1.PoseInFrame? source,
+  $core.String? destination,
+  $core.Iterable&lt;$1.Transform&gt;? supplementalTransforms,
+}) {
+  final $result = create();
+  if (source != null) {
+    $result.source = source;
+  }
+  if (destination != null) {
+    $result.destination = destination;
+  }
+  if (supplementalTransforms != null) {
+    $result.supplementalTransforms.addAll(supplementalTransforms);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

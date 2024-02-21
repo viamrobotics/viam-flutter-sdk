@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
+    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">protos&#47;app&#47;cloud_slam.dart</a></li>
     <li><a href="../../viam_protos.app.cloud_slam/GetMappingSessionPointCloudResponse-class.html">GetMappingSessionPointCloudResponse</a></li>
     <li class="self-crumb">GetMappingSessionPointCloudResponse factory constructor</li>
   </ol>
@@ -63,7 +63,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">GetMappingSessionPointCloudResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-mapUrl">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">mapUrl</span>, </span></li>
-<li><span class="parameter" id="-param-pose"><span class="type-annotation"><a href="../../viam_protos.common.common/Pose-class.html">Pose</a>?</span> <span class="parameter-name">pose</span>}</span></li>
+<li><span class="parameter" id="-param-pose"><span class="type-annotation"><a href="../../viam_sdk/Pose-class.html">Pose</a>?</span> <span class="parameter-name">pose</span>}</span></li>
 </ol>)
     </section>
 
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetMappingSessionPointCloudResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetMappingSessionPointCloudResponse({
+  $core.String? mapUrl,
+  $3.Pose? pose,
+}) {
+  final $result = create();
+  if (mapUrl != null) {
+    $result.mapUrl = mapUrl;
+  }
+  if (pose != null) {
+    $result.pose = pose;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
+    <li><a href="../../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">protos&#47;app&#47;ml_training.dart</a></li>
     <li><a href="../../viam_protos.app.ml_training/MLTrainingServiceBase-class.html">MLTrainingServiceBase</a></li>
     <li class="self-crumb">MLTrainingServiceBase constructor</li>
   </ol>
@@ -71,7 +71,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">MLTrainingServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">MLTrainingServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.SubmitTrainingJobRequest, $0.SubmitTrainingJobResponse&gt;(
+      &#39;SubmitTrainingJob&#39;,
+      submitTrainingJob_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SubmitTrainingJobRequest.fromBuffer(value),
+      ($0.SubmitTrainingJobResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetTrainingJobRequest, $0.GetTrainingJobResponse&gt;(
+      &#39;GetTrainingJob&#39;,
+      getTrainingJob_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetTrainingJobRequest.fromBuffer(value),
+      ($0.GetTrainingJobResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListTrainingJobsRequest, $0.ListTrainingJobsResponse&gt;(
+      &#39;ListTrainingJobs&#39;,
+      listTrainingJobs_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListTrainingJobsRequest.fromBuffer(value),
+      ($0.ListTrainingJobsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.CancelTrainingJobRequest, $0.CancelTrainingJobResponse&gt;(
+      &#39;CancelTrainingJob&#39;,
+      cancelTrainingJob_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.CancelTrainingJobRequest.fromBuffer(value),
+      ($0.CancelTrainingJobResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.DeleteCompletedTrainingJobRequest, $0.DeleteCompletedTrainingJobResponse&gt;(
+      &#39;DeleteCompletedTrainingJob&#39;,
+      deleteCompletedTrainingJob_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeleteCompletedTrainingJobRequest.fromBuffer(value),
+      ($0.DeleteCompletedTrainingJobResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/ListRegistryItemsRequest-class.html">ListRegistryItemsRequest</a></li>
     <li class="self-crumb">ListRegistryItemsRequest factory constructor</li>
   </ol>
@@ -78,7 +78,39 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListRegistryItemsRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListRegistryItemsRequest({
+  $core.String? organizationId,
+  $core.Iterable&lt;$0.PackageType&gt;? types,
+  $core.Iterable&lt;Visibility&gt;? visibilities,
+  $core.Iterable&lt;$core.String&gt;? platforms,
+  $core.Iterable&lt;RegistryItemStatus&gt;? statuses,
+  $core.String? searchTerm,
+  $core.String? pageToken,
+}) {
+  final $result = create();
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (types != null) {
+    $result.types.addAll(types);
+  }
+  if (visibilities != null) {
+    $result.visibilities.addAll(visibilities);
+  }
+  if (platforms != null) {
+    $result.platforms.addAll(platforms);
+  }
+  if (statuses != null) {
+    $result.statuses.addAll(statuses);
+  }
+  if (searchTerm != null) {
+    $result.searchTerm = searchTerm;
+  }
+  if (pageToken != null) {
+    $result.pageToken = pageToken;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

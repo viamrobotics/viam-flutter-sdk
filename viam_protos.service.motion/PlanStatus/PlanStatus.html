@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/PlanStatus-class.html">PlanStatus</a></li>
     <li class="self-crumb">PlanStatus factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory PlanStatus</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory PlanStatus({
+  PlanState? state,
+  $3.Timestamp? timestamp,
+  $core.String? reason,
+}) {
+  final $result = create();
+  if (state != null) {
+    $result.state = state;
+  }
+  if (timestamp != null) {
+    $result.timestamp = timestamp;
+  }
+  if (reason != null) {
+    $result.reason = reason;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

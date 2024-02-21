@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.vision/viam_protos.service.vision-library.html">viam_protos.service.vision</a></li>
+    <li><a href="../../viam_protos.service.vision/viam_protos.service.vision-library.html">protos&#47;service&#47;vision.dart</a></li>
     <li><a href="../../viam_protos.service.vision/GetDetectionsRequest-class.html">GetDetectionsRequest</a></li>
     <li class="self-crumb">GetDetectionsRequest factory constructor</li>
   </ol>
@@ -77,7 +77,35 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetDetectionsRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetDetectionsRequest({
+  $core.String? name,
+  $core.List&lt;$core.int&gt;? image,
+  $fixnum.Int64? width,
+  $fixnum.Int64? height,
+  $core.String? mimeType,
+  $2.Struct? extra,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (image != null) {
+    $result.image = image;
+  }
+  if (width != null) {
+    $result.width = width;
+  }
+  if (height != null) {
+    $result.height = height;
+  }
+  if (mimeType != null) {
+    $result.mimeType = mimeType;
+  }
+  if (extra != null) {
+    $result.extra = extra;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

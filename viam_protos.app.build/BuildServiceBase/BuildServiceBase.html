@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.build/viam_protos.app.build-library.html">viam_protos.app.build</a></li>
+    <li><a href="../../viam_protos.app.build/viam_protos.app.build-library.html">protos&#47;app&#47;build.dart</a></li>
     <li><a href="../../viam_protos.app.build/BuildServiceBase-class.html">BuildServiceBase</a></li>
     <li class="self-crumb">BuildServiceBase constructor</li>
   </ol>
@@ -71,7 +71,29 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">BuildServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">BuildServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.StartBuildRequest, $0.StartBuildResponse&gt;(
+      &#39;StartBuild&#39;,
+      startBuild_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StartBuildRequest.fromBuffer(value),
+      ($0.StartBuildResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetLogsRequest, $0.GetLogsResponse&gt;(
+      &#39;GetLogs&#39;,
+      getLogs_Pre,
+      false,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetLogsRequest.fromBuffer(value),
+      ($0.GetLogsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListJobsRequest, $0.ListJobsResponse&gt;(
+      &#39;ListJobs&#39;,
+      listJobs_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListJobsRequest.fromBuffer(value),
+      ($0.ListJobsResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
     <li><a href="../../viam_protos.app.data/GetDatabaseConnectionResponse-class.html">GetDatabaseConnectionResponse</a></li>
     <li class="self-crumb">GetDatabaseConnectionResponse factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetDatabaseConnectionResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetDatabaseConnectionResponse({
+  $core.String? hostname,
+  $core.String? mongodbUri,
+  $core.bool? hasDatabaseUser,
+}) {
+  final $result = create();
+  if (hostname != null) {
+    $result.hostname = hostname;
+  }
+  if (mongodbUri != null) {
+    $result.mongodbUri = mongodbUri;
+  }
+  if (hasDatabaseUser != null) {
+    $result.hasDatabaseUser = hasDatabaseUser;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

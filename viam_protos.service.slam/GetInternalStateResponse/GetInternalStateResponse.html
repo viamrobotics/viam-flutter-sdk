@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.slam/viam_protos.service.slam-library.html">viam_protos.service.slam</a></li>
+    <li><a href="../../viam_protos.service.slam/viam_protos.service.slam-library.html">protos&#47;service&#47;slam.dart</a></li>
     <li><a href="../../viam_protos.service.slam/GetInternalStateResponse-class.html">GetInternalStateResponse</a></li>
     <li class="self-crumb">GetInternalStateResponse factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetInternalStateResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetInternalStateResponse({
+  $core.List&lt;$core.int&gt;? internalStateChunk,
+}) {
+  final $result = create();
+  if (internalStateChunk != null) {
+    $result.internalStateChunk = internalStateChunk;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

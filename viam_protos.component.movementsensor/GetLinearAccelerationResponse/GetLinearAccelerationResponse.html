@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">viam_protos.component.movementsensor</a></li>
+    <li><a href="../../viam_protos.component.movementsensor/viam_protos.component.movementsensor-library.html">protos&#47;component&#47;movementsensor.dart</a></li>
     <li><a href="../../viam_protos.component.movementsensor/GetLinearAccelerationResponse-class.html">GetLinearAccelerationResponse</a></li>
     <li class="self-crumb">GetLinearAccelerationResponse factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetLinearAccelerationResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-linearAcceleration">{<span class="type-annotation"><a href="../../viam_protos.common.common/Vector3-class.html">Vector3</a>?</span> <span class="parameter-name">linearAcceleration</span>}</span></li>
+      <span class="name ">GetLinearAccelerationResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-linearAcceleration">{<span class="type-annotation"><a href="../../viam_sdk/Vector3-class.html">Vector3</a>?</span> <span class="parameter-name">linearAcceleration</span>}</span></li>
 </ol>)
     </section>
 
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetLinearAccelerationResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetLinearAccelerationResponse({
+  $1.Vector3? linearAcceleration,
+}) {
+  final $result = create();
+  if (linearAcceleration != null) {
+    $result.linearAcceleration = linearAcceleration;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

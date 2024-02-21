@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/AgentInfo-class.html">AgentInfo</a></li>
     <li class="self-crumb">AgentInfo factory constructor</li>
   </ol>
@@ -77,7 +77,35 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory AgentInfo</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory AgentInfo({
+  $core.String? host,
+  $core.String? os,
+  $core.Iterable&lt;$core.String&gt;? ips,
+  $core.String? version,
+  $core.String? gitRevision,
+  $core.String? platform,
+}) {
+  final $result = create();
+  if (host != null) {
+    $result.host = host;
+  }
+  if (os != null) {
+    $result.os = os;
+  }
+  if (ips != null) {
+    $result.ips.addAll(ips);
+  }
+  if (version != null) {
+    $result.version = version;
+  }
+  if (gitRevision != null) {
+    $result.gitRevision = gitRevision;
+  }
+  if (platform != null) {
+    $result.platform = platform;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

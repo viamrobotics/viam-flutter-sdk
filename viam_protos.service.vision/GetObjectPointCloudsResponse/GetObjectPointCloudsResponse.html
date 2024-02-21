@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.vision/viam_protos.service.vision-library.html">viam_protos.service.vision</a></li>
+    <li><a href="../../viam_protos.service.vision/viam_protos.service.vision-library.html">protos&#47;service&#47;vision.dart</a></li>
     <li><a href="../../viam_protos.service.vision/GetObjectPointCloudsResponse-class.html">GetObjectPointCloudsResponse</a></li>
     <li class="self-crumb">GetObjectPointCloudsResponse factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetObjectPointCloudsResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetObjectPointCloudsResponse({
+  $core.String? mimeType,
+  $core.Iterable&lt;$1.PointCloudObject&gt;? objects,
+}) {
+  final $result = create();
+  if (mimeType != null) {
+    $result.mimeType = mimeType;
+  }
+  if (objects != null) {
+    $result.objects.addAll(objects);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

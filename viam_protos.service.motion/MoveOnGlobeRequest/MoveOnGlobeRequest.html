@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/MoveOnGlobeRequest-class.html">MoveOnGlobeRequest</a></li>
     <li class="self-crumb">MoveOnGlobeRequest factory constructor</li>
   </ol>
@@ -63,10 +63,10 @@
     <section class="multi-line-signature">
       
       <span class="name ">MoveOnGlobeRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
-<li><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">destination</span>, </span></li>
+<li><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">destination</span>, </span></li>
 <li><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span></li>
-<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../../viam_protos.common.common/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
-<li><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="../../viam_protos.common.common/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorName</span>, </span></li>
+<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
+<li><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorName</span>, </span></li>
 <li><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/GeoObstacle-class.html">GeoObstacle</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span></li>
 <li><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span></li>
 <li><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>}</span></li>
@@ -79,7 +79,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory MoveOnGlobeRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory MoveOnGlobeRequest({
+  $core.String? name,
+  $1.GeoPoint? destination,
+  $core.double? heading,
+  $1.ResourceName? componentName,
+  $1.ResourceName? movementSensorName,
+  $core.Iterable&lt;$1.GeoObstacle&gt;? obstacles,
+  MotionConfiguration? motionConfiguration,
+  $2.Struct? extra,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (destination != null) {
+    $result.destination = destination;
+  }
+  if (heading != null) {
+    $result.heading = heading;
+  }
+  if (componentName != null) {
+    $result.componentName = componentName;
+  }
+  if (movementSensorName != null) {
+    $result.movementSensorName = movementSensorName;
+  }
+  if (obstacles != null) {
+    $result.obstacles.addAll(obstacles);
+  }
+  if (motionConfiguration != null) {
+    $result.motionConfiguration = motionConfiguration;
+  }
+  if (extra != null) {
+    $result.extra = extra;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

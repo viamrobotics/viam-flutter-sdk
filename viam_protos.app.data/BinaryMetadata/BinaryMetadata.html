@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
     <li><a href="../../viam_protos.app.data/BinaryMetadata-class.html">BinaryMetadata</a></li>
     <li class="self-crumb">BinaryMetadata factory constructor</li>
   </ol>
@@ -80,7 +80,47 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory BinaryMetadata</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory BinaryMetadata({
+  $core.String? id,
+  CaptureMetadata? captureMetadata,
+  $2.Timestamp? timeRequested,
+  $2.Timestamp? timeReceived,
+  $core.String? fileName,
+  $core.String? fileExt,
+  $core.String? uri,
+  Annotations? annotations,
+  $core.Iterable&lt;$core.String&gt;? datasetIds,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (captureMetadata != null) {
+    $result.captureMetadata = captureMetadata;
+  }
+  if (timeRequested != null) {
+    $result.timeRequested = timeRequested;
+  }
+  if (timeReceived != null) {
+    $result.timeReceived = timeReceived;
+  }
+  if (fileName != null) {
+    $result.fileName = fileName;
+  }
+  if (fileExt != null) {
+    $result.fileExt = fileExt;
+  }
+  if (uri != null) {
+    $result.uri = uri;
+  }
+  if (annotations != null) {
+    $result.annotations = annotations;
+  }
+  if (datasetIds != null) {
+    $result.datasetIds.addAll(datasetIds);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

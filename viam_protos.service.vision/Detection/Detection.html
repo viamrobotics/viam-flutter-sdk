@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.vision/viam_protos.service.vision-library.html">viam_protos.service.vision</a></li>
+    <li><a href="../../viam_protos.service.vision/viam_protos.service.vision-library.html">protos&#47;service&#47;vision.dart</a></li>
     <li><a href="../../viam_protos.service.vision/Detection-class.html">Detection</a></li>
     <li class="self-crumb">Detection factory constructor</li>
   </ol>
@@ -77,7 +77,35 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Detection</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Detection({
+  $fixnum.Int64? xMin,
+  $fixnum.Int64? yMin,
+  $fixnum.Int64? xMax,
+  $fixnum.Int64? yMax,
+  $core.double? confidence,
+  $core.String? className,
+}) {
+  final $result = create();
+  if (xMin != null) {
+    $result.xMin = xMin;
+  }
+  if (yMin != null) {
+    $result.yMin = yMin;
+  }
+  if (xMax != null) {
+    $result.xMax = xMax;
+  }
+  if (yMax != null) {
+    $result.yMax = yMax;
+  }
+  if (confidence != null) {
+    $result.confidence = confidence;
+  }
+  if (className != null) {
+    $result.className = className;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

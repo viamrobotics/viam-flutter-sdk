@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">viam_protos.service.mlmodel</a></li>
+    <li><a href="../../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">protos&#47;service&#47;mlmodel.dart</a></li>
     <li><a href="../../viam_protos.service.mlmodel/FlatTensorDataUInt64-class.html">FlatTensorDataUInt64</a></li>
     <li class="self-crumb">FlatTensorDataUInt64 factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory FlatTensorDataUInt64</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory FlatTensorDataUInt64({
+  $core.Iterable&lt;$fixnum.Int64&gt;? data,
+}) {
+  final $result = create();
+  if (data != null) {
+    $result.data.addAll(data);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
+    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">protos&#47;app&#47;cloud_slam.dart</a></li>
     <li><a href="../../viam_protos.app.cloud_slam/StopMappingSessionResponse-class.html">StopMappingSessionResponse</a></li>
     <li class="self-crumb">StopMappingSessionResponse factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory StopMappingSessionResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory StopMappingSessionResponse({
+  $core.String? packageId,
+  $core.String? version,
+}) {
+  final $result = create();
+  if (packageId != null) {
+    $result.packageId = packageId;
+  }
+  if (version != null) {
+    $result.version = version;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/UpdateModuleRequest-class.html">UpdateModuleRequest</a></li>
     <li class="self-crumb">UpdateModuleRequest factory constructor</li>
   </ol>
@@ -77,7 +77,35 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory UpdateModuleRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory UpdateModuleRequest({
+  $core.String? moduleId,
+  Visibility? visibility,
+  $core.String? url,
+  $core.String? description,
+  $core.Iterable&lt;Model&gt;? models,
+  $core.String? entrypoint,
+}) {
+  final $result = create();
+  if (moduleId != null) {
+    $result.moduleId = moduleId;
+  }
+  if (visibility != null) {
+    $result.visibility = visibility;
+  }
+  if (url != null) {
+    $result.url = url;
+  }
+  if (description != null) {
+    $result.description = description;
+  }
+  if (models != null) {
+    $result.models.addAll(models);
+  }
+  if (entrypoint != null) {
+    $result.entrypoint = entrypoint;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/RemoteConfig-class.html">RemoteConfig</a></li>
     <li class="self-crumb">RemoteConfig factory constructor</li>
   </ol>
@@ -81,7 +81,51 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory RemoteConfig</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory RemoteConfig({
+  $core.String? name,
+  $core.String? address,
+  Frame? frame,
+  RemoteAuth? auth,
+  $core.String? managedBy,
+  $core.bool? insecure,
+  $8.Duration? connectionCheckInterval,
+  $8.Duration? reconnectInterval,
+  $core.Iterable&lt;ResourceLevelServiceConfig&gt;? serviceConfigs,
+  $core.String? secret,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (address != null) {
+    $result.address = address;
+  }
+  if (frame != null) {
+    $result.frame = frame;
+  }
+  if (auth != null) {
+    $result.auth = auth;
+  }
+  if (managedBy != null) {
+    $result.managedBy = managedBy;
+  }
+  if (insecure != null) {
+    $result.insecure = insecure;
+  }
+  if (connectionCheckInterval != null) {
+    $result.connectionCheckInterval = connectionCheckInterval;
+  }
+  if (reconnectInterval != null) {
+    $result.reconnectInterval = reconnectInterval;
+  }
+  if (serviceConfigs != null) {
+    $result.serviceConfigs.addAll(serviceConfigs);
+  }
+  if (secret != null) {
+    $result.secret = secret;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

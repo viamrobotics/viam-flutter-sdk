@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">viam_protos.component.audioinput</a></li>
+    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">protos&#47;component&#47;audioinput.dart</a></li>
     <li><a href="../../viam_protos.component.audioinput/AudioInputServiceBase-class.html">AudioInputServiceBase</a></li>
     <li class="self-crumb">AudioInputServiceBase constructor</li>
   </ol>
@@ -71,7 +71,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">AudioInputServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">AudioInputServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.ChunksRequest, $0.ChunksResponse&gt;(
+      &#39;Chunks&#39;,
+      chunks_Pre,
+      false,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ChunksRequest.fromBuffer(value),
+      ($0.ChunksResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.PropertiesRequest, $0.PropertiesResponse&gt;(
+      &#39;Properties&#39;,
+      properties_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.PropertiesRequest.fromBuffer(value),
+      ($0.PropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.RecordRequest, $1.HttpBody&gt;(
+      &#39;Record&#39;,
+      record_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.RecordRequest.fromBuffer(value),
+      ($1.HttpBody value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.DoCommandRequest, $2.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.DoCommandRequest.fromBuffer(value),
+      ($2.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.GetGeometriesRequest, $2.GetGeometriesResponse&gt;(
+      &#39;GetGeometries&#39;,
+      getGeometries_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetGeometriesRequest.fromBuffer(value),
+      ($2.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

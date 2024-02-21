@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
+    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">protos&#47;app&#47;cloud_slam.dart</a></li>
     <li><a href="../../viam_protos.app.cloud_slam/StartMappingSessionRequest-class.html">StartMappingSessionRequest</a></li>
     <li class="self-crumb">StartMappingSessionRequest factory constructor</li>
   </ol>
@@ -81,7 +81,51 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory StartMappingSessionRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory StartMappingSessionRequest({
+  $core.String? slamVersion,
+  $core.String? viamServerVersion,
+  $core.String? mapName,
+  $core.String? organizationId,
+  $core.String? locationId,
+  $core.String? robotId,
+  CaptureInterval? captureInterval,
+  $core.Iterable&lt;SensorInfo&gt;? sensors,
+  $1.Struct? slamAlgorithmParams,
+  $core.String? existingMapVersion,
+}) {
+  final $result = create();
+  if (slamVersion != null) {
+    $result.slamVersion = slamVersion;
+  }
+  if (viamServerVersion != null) {
+    $result.viamServerVersion = viamServerVersion;
+  }
+  if (mapName != null) {
+    $result.mapName = mapName;
+  }
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (locationId != null) {
+    $result.locationId = locationId;
+  }
+  if (robotId != null) {
+    $result.robotId = robotId;
+  }
+  if (captureInterval != null) {
+    $result.captureInterval = captureInterval;
+  }
+  if (sensors != null) {
+    $result.sensors.addAll(sensors);
+  }
+  if (slamAlgorithmParams != null) {
+    $result.slamAlgorithmParams = slamAlgorithmParams;
+  }
+  if (existingMapVersion != null) {
+    $result.existingMapVersion = existingMapVersion;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

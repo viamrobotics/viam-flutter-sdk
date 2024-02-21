@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/Module-class.html">Module</a></li>
     <li class="self-crumb">Module factory constructor</li>
   </ol>
@@ -83,7 +83,59 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Module</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Module({
+  $core.String? moduleId,
+  $core.String? name,
+  Visibility? visibility,
+  $core.Iterable&lt;VersionHistory&gt;? versions,
+  $core.String? url,
+  $core.String? description,
+  $core.Iterable&lt;Model&gt;? models,
+  $fixnum.Int64? totalRobotUsage,
+  $fixnum.Int64? totalOrganizationUsage,
+  $core.String? organizationId,
+  $core.String? entrypoint,
+  $core.String? publicNamespace,
+}) {
+  final $result = create();
+  if (moduleId != null) {
+    $result.moduleId = moduleId;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  if (visibility != null) {
+    $result.visibility = visibility;
+  }
+  if (versions != null) {
+    $result.versions.addAll(versions);
+  }
+  if (url != null) {
+    $result.url = url;
+  }
+  if (description != null) {
+    $result.description = description;
+  }
+  if (models != null) {
+    $result.models.addAll(models);
+  }
+  if (totalRobotUsage != null) {
+    $result.totalRobotUsage = totalRobotUsage;
+  }
+  if (totalOrganizationUsage != null) {
+    $result.totalOrganizationUsage = totalOrganizationUsage;
+  }
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (entrypoint != null) {
+    $result.entrypoint = entrypoint;
+  }
+  if (publicNamespace != null) {
+    $result.publicNamespace = publicNamespace;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

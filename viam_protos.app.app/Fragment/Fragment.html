@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/Fragment-class.html">Fragment</a></li>
     <li class="self-crumb">Fragment factory constructor</li>
   </ol>
@@ -81,7 +81,51 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Fragment</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Fragment({
+  $core.String? id,
+  $core.String? name,
+  $6.Struct? fragment,
+  $core.String? organizationOwner,
+  $core.bool? public,
+  $5.Timestamp? createdOn,
+  $core.String? organizationName,
+  $core.int? robotPartCount,
+  $core.int? organizationCount,
+  $core.bool? onlyUsedByOwner,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  if (fragment != null) {
+    $result.fragment = fragment;
+  }
+  if (organizationOwner != null) {
+    $result.organizationOwner = organizationOwner;
+  }
+  if (public != null) {
+    $result.public = public;
+  }
+  if (createdOn != null) {
+    $result.createdOn = createdOn;
+  }
+  if (organizationName != null) {
+    $result.organizationName = organizationName;
+  }
+  if (robotPartCount != null) {
+    $result.robotPartCount = robotPartCount;
+  }
+  if (organizationCount != null) {
+    $result.organizationCount = organizationCount;
+  }
+  if (onlyUsedByOwner != null) {
+    $result.onlyUsedByOwner = onlyUsedByOwner;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

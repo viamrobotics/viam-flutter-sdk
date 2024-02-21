@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">protos&#47;app&#47;billing.dart</a></li>
     <li><a href="../../viam_protos.app.billing/Invoice-class.html">Invoice</a></li>
     <li class="self-crumb">Invoice factory constructor</li>
   </ol>
@@ -78,7 +78,39 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Invoice</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Invoice({
+  $core.String? id,
+  $5.Timestamp? invoiceDate,
+  $core.double? invoiceAmount,
+  $core.String? status,
+  $5.Timestamp? dueDate,
+  $core.Iterable&lt;BillableResourceEvent&gt;? items,
+  $core.String? emailedTo,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (invoiceDate != null) {
+    $result.invoiceDate = invoiceDate;
+  }
+  if (invoiceAmount != null) {
+    $result.invoiceAmount = invoiceAmount;
+  }
+  if (status != null) {
+    $result.status = status;
+  }
+  if (dueDate != null) {
+    $result.dueDate = dueDate;
+  }
+  if (items != null) {
+    $result.items.addAll(items);
+  }
+  if (emailedTo != null) {
+    $result.emailedTo = emailedTo;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

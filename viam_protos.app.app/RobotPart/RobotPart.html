@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/RobotPart-class.html">RobotPart</a></li>
     <li class="self-crumb">RobotPart factory constructor</li>
   </ol>
@@ -85,7 +85,67 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory RobotPart</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory RobotPart({
+  $core.String? id,
+  $core.String? name,
+  $core.String? secret,
+  $core.String? robot,
+  $6.Struct? robotConfig,
+  $5.Timestamp? lastAccess,
+  $6.Struct? userSuppliedInfo,
+  $core.bool? mainPart,
+  $core.String? fqdn,
+  $core.String? dnsName,
+  $core.String? localFqdn,
+  $core.String? locationId,
+  $5.Timestamp? createdOn,
+  $core.Iterable&lt;SharedSecret&gt;? secrets,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  if (secret != null) {
+    $result.secret = secret;
+  }
+  if (robot != null) {
+    $result.robot = robot;
+  }
+  if (robotConfig != null) {
+    $result.robotConfig = robotConfig;
+  }
+  if (lastAccess != null) {
+    $result.lastAccess = lastAccess;
+  }
+  if (userSuppliedInfo != null) {
+    $result.userSuppliedInfo = userSuppliedInfo;
+  }
+  if (mainPart != null) {
+    $result.mainPart = mainPart;
+  }
+  if (fqdn != null) {
+    $result.fqdn = fqdn;
+  }
+  if (dnsName != null) {
+    $result.dnsName = dnsName;
+  }
+  if (localFqdn != null) {
+    $result.localFqdn = localFqdn;
+  }
+  if (locationId != null) {
+    $result.locationId = locationId;
+  }
+  if (createdOn != null) {
+    $result.createdOn = createdOn;
+  }
+  if (secrets != null) {
+    $result.secrets.addAll(secrets);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">viam_protos.component.audioinput</a></li>
+    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">protos&#47;component&#47;audioinput.dart</a></li>
     <li><a href="../../viam_protos.component.audioinput/PropertiesResponse-class.html">PropertiesResponse</a></li>
     <li class="self-crumb">PropertiesResponse factory constructor</li>
   </ol>
@@ -78,7 +78,39 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory PropertiesResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory PropertiesResponse({
+  $core.int? channelCount,
+  $3.Duration? latency,
+  $core.int? sampleRate,
+  $core.int? sampleSize,
+  $core.bool? isBigEndian,
+  $core.bool? isFloat,
+  $core.bool? isInterleaved,
+}) {
+  final $result = create();
+  if (channelCount != null) {
+    $result.channelCount = channelCount;
+  }
+  if (latency != null) {
+    $result.latency = latency;
+  }
+  if (sampleRate != null) {
+    $result.sampleRate = sampleRate;
+  }
+  if (sampleSize != null) {
+    $result.sampleSize = sampleSize;
+  }
+  if (isBigEndian != null) {
+    $result.isBigEndian = isBigEndian;
+  }
+  if (isFloat != null) {
+    $result.isFloat = isFloat;
+  }
+  if (isInterleaved != null) {
+    $result.isInterleaved = isInterleaved;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">viam_protos.app.billing</a></li>
+    <li><a href="../../viam_protos.app.billing/viam_protos.app.billing-library.html">protos&#47;app&#47;billing.dart</a></li>
     <li><a href="../../viam_protos.app.billing/BillableResourceEvent-class.html">BillableResourceEvent</a></li>
     <li class="self-crumb">BillableResourceEvent factory constructor</li>
   </ol>
@@ -78,7 +78,39 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory BillableResourceEvent</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory BillableResourceEvent({
+  $core.String? id,
+  $core.String? type,
+  $core.double? usageQuantity,
+  $core.String? usageQuantityUnit,
+  $core.String? usageCost,
+  $5.Timestamp? occurredAt,
+  $core.String? userName,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (type != null) {
+    $result.type = type;
+  }
+  if (usageQuantity != null) {
+    $result.usageQuantity = usageQuantity;
+  }
+  if (usageQuantityUnit != null) {
+    $result.usageQuantityUnit = usageQuantityUnit;
+  }
+  if (usageCost != null) {
+    $result.usageCost = usageCost;
+  }
+  if (occurredAt != null) {
+    $result.occurredAt = occurredAt;
+  }
+  if (userName != null) {
+    $result.userName = userName;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

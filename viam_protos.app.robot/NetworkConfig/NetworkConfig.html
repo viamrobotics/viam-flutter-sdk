@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/NetworkConfig-class.html">NetworkConfig</a></li>
     <li class="self-crumb">NetworkConfig factory constructor</li>
   </ol>
@@ -76,7 +76,31 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory NetworkConfig</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory NetworkConfig({
+  $core.String? fqdn,
+  $core.String? bindAddress,
+  $core.String? tlsCertFile,
+  $core.String? tlsKeyFile,
+  SessionsConfig? sessions,
+}) {
+  final $result = create();
+  if (fqdn != null) {
+    $result.fqdn = fqdn;
+  }
+  if (bindAddress != null) {
+    $result.bindAddress = bindAddress;
+  }
+  if (tlsCertFile != null) {
+    $result.tlsCertFile = tlsCertFile;
+  }
+  if (tlsKeyFile != null) {
+    $result.tlsKeyFile = tlsKeyFile;
+  }
+  if (sessions != null) {
+    $result.sessions = sessions;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

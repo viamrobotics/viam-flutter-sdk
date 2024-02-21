@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">viam_protos.component.audioinput</a></li>
+    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">protos&#47;component&#47;audioinput.dart</a></li>
     <li><a href="../../viam_protos.component.audioinput/AudioChunkInfo-class.html">AudioChunkInfo</a></li>
     <li class="self-crumb">AudioChunkInfo factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory AudioChunkInfo</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory AudioChunkInfo({
+  SampleFormat? sampleFormat,
+  $core.int? channels,
+  $fixnum.Int64? samplingRate,
+}) {
+  final $result = create();
+  if (sampleFormat != null) {
+    $result.sampleFormat = sampleFormat;
+  }
+  if (channels != null) {
+    $result.channels = channels;
+  }
+  if (samplingRate != null) {
+    $result.samplingRate = samplingRate;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

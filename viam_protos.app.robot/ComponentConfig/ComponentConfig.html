@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/ComponentConfig-class.html">ComponentConfig</a></li>
     <li class="self-crumb">ComponentConfig factory constructor</li>
   </ol>
@@ -81,7 +81,51 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ComponentConfig</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ComponentConfig({
+  $core.String? name,
+  $core.String? namespace,
+  $core.String? type,
+  $core.String? model,
+  Frame? frame,
+  $core.Iterable&lt;$core.String&gt;? dependsOn,
+  $core.Iterable&lt;ResourceLevelServiceConfig&gt;? serviceConfigs,
+  $6.Struct? attributes,
+  $core.String? api,
+  LogConfiguration? logConfiguration,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (namespace != null) {
+    $result.namespace = namespace;
+  }
+  if (type != null) {
+    $result.type = type;
+  }
+  if (model != null) {
+    $result.model = model;
+  }
+  if (frame != null) {
+    $result.frame = frame;
+  }
+  if (dependsOn != null) {
+    $result.dependsOn.addAll(dependsOn);
+  }
+  if (serviceConfigs != null) {
+    $result.serviceConfigs.addAll(serviceConfigs);
+  }
+  if (attributes != null) {
+    $result.attributes = attributes;
+  }
+  if (api != null) {
+    $result.api = api;
+  }
+  if (logConfiguration != null) {
+    $result.logConfiguration = logConfiguration;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

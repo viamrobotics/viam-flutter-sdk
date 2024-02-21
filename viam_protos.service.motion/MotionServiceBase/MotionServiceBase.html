@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/MotionServiceBase-class.html">MotionServiceBase</a></li>
     <li class="self-crumb">MotionServiceBase constructor</li>
   </ol>
@@ -71,7 +71,64 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">MotionServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">MotionServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.MoveRequest, $0.MoveResponse&gt;(
+      &#39;Move&#39;,
+      move_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.MoveRequest.fromBuffer(value),
+      ($0.MoveResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.MoveOnMapRequest, $0.MoveOnMapResponse&gt;(
+      &#39;MoveOnMap&#39;,
+      moveOnMap_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.MoveOnMapRequest.fromBuffer(value),
+      ($0.MoveOnMapResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.MoveOnGlobeRequest, $0.MoveOnGlobeResponse&gt;(
+      &#39;MoveOnGlobe&#39;,
+      moveOnGlobe_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.MoveOnGlobeRequest.fromBuffer(value),
+      ($0.MoveOnGlobeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPoseRequest, $0.GetPoseResponse&gt;(
+      &#39;GetPose&#39;,
+      getPose_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPoseRequest.fromBuffer(value),
+      ($0.GetPoseResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.StopPlanRequest, $0.StopPlanResponse&gt;(
+      &#39;StopPlan&#39;,
+      stopPlan_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StopPlanRequest.fromBuffer(value),
+      ($0.StopPlanResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListPlanStatusesRequest, $0.ListPlanStatusesResponse&gt;(
+      &#39;ListPlanStatuses&#39;,
+      listPlanStatuses_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListPlanStatusesRequest.fromBuffer(value),
+      ($0.ListPlanStatusesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPlanRequest, $0.GetPlanResponse&gt;(
+      &#39;GetPlan&#39;,
+      getPlan_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPlanRequest.fromBuffer(value),
+      ($0.GetPlanResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
+      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

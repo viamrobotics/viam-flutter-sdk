@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.navigation/viam_protos.service.navigation-library.html">viam_protos.service.navigation</a></li>
+    <li><a href="../../viam_protos.service.navigation/viam_protos.service.navigation-library.html">protos&#47;service&#47;navigation.dart</a></li>
     <li><a href="../../viam_protos.service.navigation/NavigationServiceBase-class.html">NavigationServiceBase</a></li>
     <li class="self-crumb">NavigationServiceBase constructor</li>
   </ol>
@@ -71,7 +71,78 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">NavigationServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">NavigationServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.GetModeRequest, $0.GetModeResponse&gt;(
+      &#39;GetMode&#39;,
+      getMode_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetModeRequest.fromBuffer(value),
+      ($0.GetModeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetModeRequest, $0.SetModeResponse&gt;(
+      &#39;SetMode&#39;,
+      setMode_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetModeRequest.fromBuffer(value),
+      ($0.SetModeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetLocationRequest, $0.GetLocationResponse&gt;(
+      &#39;GetLocation&#39;,
+      getLocation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetLocationRequest.fromBuffer(value),
+      ($0.GetLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetWaypointsRequest, $0.GetWaypointsResponse&gt;(
+      &#39;GetWaypoints&#39;,
+      getWaypoints_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetWaypointsRequest.fromBuffer(value),
+      ($0.GetWaypointsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.AddWaypointRequest, $0.AddWaypointResponse&gt;(
+      &#39;AddWaypoint&#39;,
+      addWaypoint_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.AddWaypointRequest.fromBuffer(value),
+      ($0.AddWaypointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.RemoveWaypointRequest, $0.RemoveWaypointResponse&gt;(
+      &#39;RemoveWaypoint&#39;,
+      removeWaypoint_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveWaypointRequest.fromBuffer(value),
+      ($0.RemoveWaypointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetObstaclesRequest, $0.GetObstaclesResponse&gt;(
+      &#39;GetObstacles&#39;,
+      getObstacles_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetObstaclesRequest.fromBuffer(value),
+      ($0.GetObstaclesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPathsRequest, $0.GetPathsResponse&gt;(
+      &#39;GetPaths&#39;,
+      getPaths_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPathsRequest.fromBuffer(value),
+      ($0.GetPathsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPropertiesRequest, $0.GetPropertiesResponse&gt;(
+      &#39;GetProperties&#39;,
+      getProperties_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPropertiesRequest.fromBuffer(value),
+      ($0.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
+      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

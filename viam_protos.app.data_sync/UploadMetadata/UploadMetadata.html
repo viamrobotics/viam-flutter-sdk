@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
+    <li><a href="../../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">protos&#47;app&#47;data_sync.dart</a></li>
     <li><a href="../../viam_protos.app.data_sync/UploadMetadata-class.html">UploadMetadata</a></li>
     <li class="self-crumb">UploadMetadata factory constructor</li>
   </ol>
@@ -80,7 +80,47 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory UploadMetadata</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory UploadMetadata({
+  $core.String? partId,
+  $core.String? componentType,
+  $core.String? componentName,
+  $core.String? methodName,
+  DataType? type,
+  $core.String? fileName,
+  $core.Map&lt;$core.String, $3.Any&gt;? methodParameters,
+  $core.String? fileExtension,
+  $core.Iterable&lt;$core.String&gt;? tags,
+}) {
+  final $result = create();
+  if (partId != null) {
+    $result.partId = partId;
+  }
+  if (componentType != null) {
+    $result.componentType = componentType;
+  }
+  if (componentName != null) {
+    $result.componentName = componentName;
+  }
+  if (methodName != null) {
+    $result.methodName = methodName;
+  }
+  if (type != null) {
+    $result.type = type;
+  }
+  if (fileName != null) {
+    $result.fileName = fileName;
+  }
+  if (methodParameters != null) {
+    $result.methodParameters.addAll(methodParameters);
+  }
+  if (fileExtension != null) {
+    $result.fileExtension = fileExtension;
+  }
+  if (tags != null) {
+    $result.tags.addAll(tags);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/OrganizationIdentity-class.html">OrganizationIdentity</a></li>
     <li class="self-crumb">OrganizationIdentity factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory OrganizationIdentity</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory OrganizationIdentity({
+  $core.String? id,
+  $core.String? name,
+}) {
+  final $result = create();
+  if (id != null) {
+    $result.id = id;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

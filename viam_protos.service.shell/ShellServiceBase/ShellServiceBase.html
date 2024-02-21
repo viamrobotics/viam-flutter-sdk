@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.shell/viam_protos.service.shell-library.html">viam_protos.service.shell</a></li>
+    <li><a href="../../viam_protos.service.shell/viam_protos.service.shell-library.html">protos&#47;service&#47;shell.dart</a></li>
     <li><a href="../../viam_protos.service.shell/ShellServiceBase-class.html">ShellServiceBase</a></li>
     <li class="self-crumb">ShellServiceBase constructor</li>
   </ol>
@@ -71,7 +71,22 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ShellServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">ShellServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.ShellRequest, $0.ShellResponse&gt;(
+      &#39;Shell&#39;,
+      shell,
+      true,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ShellRequest.fromBuffer(value),
+      ($0.ShellResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
+      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

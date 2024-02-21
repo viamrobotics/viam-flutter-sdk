@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.board/viam_protos.component.board-library.html">viam_protos.component.board</a></li>
+    <li><a href="../../viam_protos.component.board/viam_protos.component.board-library.html">protos&#47;component&#47;board.dart</a></li>
     <li><a href="../../viam_protos.component.board/BoardServiceBase-class.html">BoardServiceBase</a></li>
     <li class="self-crumb">BoardServiceBase constructor</li>
   </ol>
@@ -71,7 +71,99 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">BoardServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">BoardServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.StatusRequest, $0.StatusResponse&gt;(
+      &#39;Status&#39;,
+      status_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StatusRequest.fromBuffer(value),
+      ($0.StatusResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetGPIORequest, $0.SetGPIOResponse&gt;(
+      &#39;SetGPIO&#39;,
+      setGPIO_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetGPIORequest.fromBuffer(value),
+      ($0.SetGPIOResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetGPIORequest, $0.GetGPIOResponse&gt;(
+      &#39;GetGPIO&#39;,
+      getGPIO_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetGPIORequest.fromBuffer(value),
+      ($0.GetGPIOResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.PWMRequest, $0.PWMResponse&gt;(
+      &#39;PWM&#39;,
+      pWM_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.PWMRequest.fromBuffer(value),
+      ($0.PWMResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetPWMRequest, $0.SetPWMResponse&gt;(
+      &#39;SetPWM&#39;,
+      setPWM_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetPWMRequest.fromBuffer(value),
+      ($0.SetPWMResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.PWMFrequencyRequest, $0.PWMFrequencyResponse&gt;(
+      &#39;PWMFrequency&#39;,
+      pWMFrequency_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.PWMFrequencyRequest.fromBuffer(value),
+      ($0.PWMFrequencyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetPWMFrequencyRequest, $0.SetPWMFrequencyResponse&gt;(
+      &#39;SetPWMFrequency&#39;,
+      setPWMFrequency_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetPWMFrequencyRequest.fromBuffer(value),
+      ($0.SetPWMFrequencyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
+      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ReadAnalogReaderRequest, $0.ReadAnalogReaderResponse&gt;(
+      &#39;ReadAnalogReader&#39;,
+      readAnalogReader_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ReadAnalogReaderRequest.fromBuffer(value),
+      ($0.ReadAnalogReaderResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.WriteAnalogRequest, $0.WriteAnalogResponse&gt;(
+      &#39;WriteAnalog&#39;,
+      writeAnalog_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.WriteAnalogRequest.fromBuffer(value),
+      ($0.WriteAnalogResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetDigitalInterruptValueRequest, $0.GetDigitalInterruptValueResponse&gt;(
+      &#39;GetDigitalInterruptValue&#39;,
+      getDigitalInterruptValue_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetDigitalInterruptValueRequest.fromBuffer(value),
+      ($0.GetDigitalInterruptValueResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetPowerModeRequest, $0.SetPowerModeResponse&gt;(
+      &#39;SetPowerMode&#39;,
+      setPowerMode_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetPowerModeRequest.fromBuffer(value),
+      ($0.SetPowerModeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.GetGeometriesRequest, $1.GetGeometriesResponse&gt;(
+      &#39;GetGeometries&#39;,
+      getGeometries_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetGeometriesRequest.fromBuffer(value),
+      ($1.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

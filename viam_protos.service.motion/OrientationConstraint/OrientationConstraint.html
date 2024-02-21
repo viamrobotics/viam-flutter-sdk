@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/OrientationConstraint-class.html">OrientationConstraint</a></li>
     <li class="self-crumb">OrientationConstraint factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory OrientationConstraint</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory OrientationConstraint({
+  $core.double? orientationToleranceDegs,
+}) {
+  final $result = create();
+  if (orientationToleranceDegs != null) {
+    $result.orientationToleranceDegs = orientationToleranceDegs;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

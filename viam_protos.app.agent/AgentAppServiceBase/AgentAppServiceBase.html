@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
     <li><a href="../../viam_protos.app.agent/AgentAppServiceBase-class.html">AgentAppServiceBase</a></li>
     <li class="self-crumb">AgentAppServiceBase constructor</li>
   </ol>
@@ -71,7 +71,22 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">AgentAppServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">AgentAppServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.GetAgentConfigRequest, $0.GetAgentConfigResponse&gt;(
+      &#39;GetAgentConfig&#39;,
+      getAgentConfig_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetAgentConfigRequest.fromBuffer(value),
+      ($0.GetAgentConfigResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.UpdateAgentConfigRequest, $0.UpdateAgentConfigResponse&gt;(
+      &#39;UpdateAgentConfig&#39;,
+      updateAgentConfig_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.UpdateAgentConfigRequest.fromBuffer(value),
+      ($0.UpdateAgentConfigResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

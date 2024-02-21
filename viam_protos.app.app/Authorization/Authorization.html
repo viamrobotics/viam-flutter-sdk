@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/Authorization-class.html">Authorization</a></li>
     <li class="self-crumb">Authorization factory constructor</li>
   </ol>
@@ -78,7 +78,39 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Authorization</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Authorization({
+  $core.String? authorizationType,
+  $core.String? authorizationId,
+  $core.String? resourceType,
+  $core.String? resourceId,
+  $core.String? identityId,
+  $core.String? organizationId,
+  $core.String? identityType,
+}) {
+  final $result = create();
+  if (authorizationType != null) {
+    $result.authorizationType = authorizationType;
+  }
+  if (authorizationId != null) {
+    $result.authorizationId = authorizationId;
+  }
+  if (resourceType != null) {
+    $result.resourceType = resourceType;
+  }
+  if (resourceId != null) {
+    $result.resourceId = resourceId;
+  }
+  if (identityId != null) {
+    $result.identityId = identityId;
+  }
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (identityType != null) {
+    $result.identityType = identityType;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

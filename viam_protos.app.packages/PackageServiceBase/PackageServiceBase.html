@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
+    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">protos&#47;app&#47;packages.dart</a></li>
     <li><a href="../../viam_protos.app.packages/PackageServiceBase-class.html">PackageServiceBase</a></li>
     <li class="self-crumb">PackageServiceBase constructor</li>
   </ol>
@@ -71,7 +71,36 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">PackageServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">PackageServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.CreatePackageRequest, $0.CreatePackageResponse&gt;(
+      &#39;CreatePackage&#39;,
+      createPackage,
+      true,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.CreatePackageRequest.fromBuffer(value),
+      ($0.CreatePackageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.DeletePackageRequest, $0.DeletePackageResponse&gt;(
+      &#39;DeletePackage&#39;,
+      deletePackage_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeletePackageRequest.fromBuffer(value),
+      ($0.DeletePackageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPackageRequest, $0.GetPackageResponse&gt;(
+      &#39;GetPackage&#39;,
+      getPackage_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPackageRequest.fromBuffer(value),
+      ($0.GetPackageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListPackagesRequest, $0.ListPackagesResponse&gt;(
+      &#39;ListPackages&#39;,
+      listPackages_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListPackagesRequest.fromBuffer(value),
+      ($0.ListPackagesResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

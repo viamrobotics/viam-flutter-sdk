@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/RegistryItem-class.html">RegistryItem</a></li>
     <li class="self-crumb">RegistryItem factory constructor</li>
   </ol>
@@ -87,7 +87,75 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory RegistryItem</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory RegistryItem({
+  $core.String? itemId,
+  $core.String? organizationId,
+  $core.String? publicNamespace,
+  $core.String? name,
+  $0.PackageType? type,
+  Visibility? visibility,
+  $core.String? url,
+  $core.String? description,
+  $fixnum.Int64? totalRobotUsage,
+  $fixnum.Int64? totalOrganizationUsage,
+  ModuleMetadata? moduleMetadata,
+  MLModelMetadata? mlModelMetadata,
+  $fixnum.Int64? totalExternalRobotUsage,
+  $fixnum.Int64? totalExternalOrganizationUsage,
+  $5.Timestamp? createdAt,
+  $5.Timestamp? updatedAt,
+}) {
+  final $result = create();
+  if (itemId != null) {
+    $result.itemId = itemId;
+  }
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (publicNamespace != null) {
+    $result.publicNamespace = publicNamespace;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  if (type != null) {
+    $result.type = type;
+  }
+  if (visibility != null) {
+    $result.visibility = visibility;
+  }
+  if (url != null) {
+    $result.url = url;
+  }
+  if (description != null) {
+    $result.description = description;
+  }
+  if (totalRobotUsage != null) {
+    $result.totalRobotUsage = totalRobotUsage;
+  }
+  if (totalOrganizationUsage != null) {
+    $result.totalOrganizationUsage = totalOrganizationUsage;
+  }
+  if (moduleMetadata != null) {
+    $result.moduleMetadata = moduleMetadata;
+  }
+  if (mlModelMetadata != null) {
+    $result.mlModelMetadata = mlModelMetadata;
+  }
+  if (totalExternalRobotUsage != null) {
+    $result.totalExternalRobotUsage = totalExternalRobotUsage;
+  }
+  if (totalExternalOrganizationUsage != null) {
+    $result.totalExternalOrganizationUsage = totalExternalOrganizationUsage;
+  }
+  if (createdAt != null) {
+    $result.createdAt = createdAt;
+  }
+  if (updatedAt != null) {
+    $result.updatedAt = updatedAt;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

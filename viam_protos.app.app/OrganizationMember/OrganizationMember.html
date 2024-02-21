@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/OrganizationMember-class.html">OrganizationMember</a></li>
     <li class="self-crumb">OrganizationMember factory constructor</li>
   </ol>
@@ -75,7 +75,27 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory OrganizationMember</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory OrganizationMember({
+  $core.String? userId,
+  $core.Iterable&lt;$core.String&gt;? emails,
+  $5.Timestamp? dateAdded,
+  $5.Timestamp? lastLogin,
+}) {
+  final $result = create();
+  if (userId != null) {
+    $result.userId = userId;
+  }
+  if (emails != null) {
+    $result.emails.addAll(emails);
+  }
+  if (dateAdded != null) {
+    $result.dateAdded = dateAdded;
+  }
+  if (lastLogin != null) {
+    $result.lastLogin = lastLogin;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">viam_protos.component.audioinput</a></li>
+    <li><a href="../../viam_protos.component.audioinput/viam_protos.component.audioinput-library.html">protos&#47;component&#47;audioinput.dart</a></li>
     <li><a href="../../viam_protos.component.audioinput/RecordRequest-class.html">RecordRequest</a></li>
     <li class="self-crumb">RecordRequest factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory RecordRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory RecordRequest({
+  $core.String? name,
+  $3.Duration? duration,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (duration != null) {
+    $result.duration = duration;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

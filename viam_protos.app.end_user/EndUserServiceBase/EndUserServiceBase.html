@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.end_user/viam_protos.app.end_user-library.html">viam_protos.app.end_user</a></li>
+    <li><a href="../../viam_protos.app.end_user/viam_protos.app.end_user-library.html">protos&#47;app&#47;end_user.dart</a></li>
     <li><a href="../../viam_protos.app.end_user/EndUserServiceBase-class.html">EndUserServiceBase</a></li>
     <li class="self-crumb">EndUserServiceBase constructor</li>
   </ol>
@@ -71,7 +71,22 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">EndUserServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">EndUserServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$3.IsLegalAcceptedRequest, $3.IsLegalAcceptedResponse&gt;(
+      &#39;IsLegalAccepted&#39;,
+      isLegalAccepted_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.IsLegalAcceptedRequest.fromBuffer(value),
+      ($3.IsLegalAcceptedResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.AcceptLegalRequest, $3.AcceptLegalResponse&gt;(
+      &#39;AcceptLegal&#39;,
+      acceptLegal_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.AcceptLegalRequest.fromBuffer(value),
+      ($3.AcceptLegalResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

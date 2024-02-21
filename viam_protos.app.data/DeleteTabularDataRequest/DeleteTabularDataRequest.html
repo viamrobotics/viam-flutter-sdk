@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
     <li><a href="../../viam_protos.app.data/DeleteTabularDataRequest-class.html">DeleteTabularDataRequest</a></li>
     <li class="self-crumb">DeleteTabularDataRequest factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory DeleteTabularDataRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory DeleteTabularDataRequest({
+  $core.String? organizationId,
+  $core.int? deleteOlderThanDays,
+}) {
+  final $result = create();
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (deleteOlderThanDays != null) {
+    $result.deleteOlderThanDays = deleteOlderThanDays;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

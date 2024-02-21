@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.build/viam_protos.app.build-library.html">viam_protos.app.build</a></li>
+    <li><a href="../../viam_protos.app.build/viam_protos.app.build-library.html">protos&#47;app&#47;build.dart</a></li>
     <li><a href="../../viam_protos.app.build/ListJobsRequest-class.html">ListJobsRequest</a></li>
     <li class="self-crumb">ListJobsRequest factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListJobsRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListJobsRequest({
+  $core.String? moduleId,
+  $core.int? maxJobsLength,
+  $core.String? buildId,
+}) {
+  final $result = create();
+  if (moduleId != null) {
+    $result.moduleId = moduleId;
+  }
+  if (maxJobsLength != null) {
+    $result.maxJobsLength = maxJobsLength;
+  }
+  if (buildId != null) {
+    $result.buildId = buildId;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

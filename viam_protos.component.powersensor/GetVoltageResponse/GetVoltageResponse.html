@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.powersensor/viam_protos.component.powersensor-library.html">viam_protos.component.powersensor</a></li>
+    <li><a href="../../viam_protos.component.powersensor/viam_protos.component.powersensor-library.html">protos&#47;component&#47;powersensor.dart</a></li>
     <li><a href="../../viam_protos.component.powersensor/GetVoltageResponse-class.html">GetVoltageResponse</a></li>
     <li class="self-crumb">GetVoltageResponse factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetVoltageResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetVoltageResponse({
+  $core.double? volts,
+  $core.bool? isAc,
+}) {
+  final $result = create();
+  if (volts != null) {
+    $result.volts = volts;
+  }
+  if (isAc != null) {
+    $result.isAc = isAc;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.navigation/viam_protos.service.navigation-library.html">viam_protos.service.navigation</a></li>
+    <li><a href="../../viam_protos.service.navigation/viam_protos.service.navigation-library.html">protos&#47;service&#47;navigation.dart</a></li>
     <li><a href="../../viam_protos.service.navigation/GetObstaclesRequest-class.html">GetObstaclesRequest</a></li>
     <li class="self-crumb">GetObstaclesRequest factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetObstaclesRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetObstaclesRequest({
+  $core.String? name,
+  $2.Struct? extra,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (extra != null) {
+    $result.extra = extra;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

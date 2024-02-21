@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">viam_protos.service.mlmodel</a></li>
+    <li><a href="../../viam_protos.service.mlmodel/viam_protos.service.mlmodel-library.html">protos&#47;service&#47;mlmodel.dart</a></li>
     <li><a href="../../viam_protos.service.mlmodel/Metadata-class.html">Metadata</a></li>
     <li class="self-crumb">Metadata factory constructor</li>
   </ol>
@@ -76,7 +76,31 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Metadata</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Metadata({
+  $core.String? name,
+  $core.String? type,
+  $core.String? description,
+  $core.Iterable&lt;TensorInfo&gt;? inputInfo,
+  $core.Iterable&lt;TensorInfo&gt;? outputInfo,
+}) {
+  final $result = create();
+  if (name != null) {
+    $result.name = name;
+  }
+  if (type != null) {
+    $result.type = type;
+  }
+  if (description != null) {
+    $result.description = description;
+  }
+  if (inputInfo != null) {
+    $result.inputInfo.addAll(inputInfo);
+  }
+  if (outputInfo != null) {
+    $result.outputInfo.addAll(outputInfo);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

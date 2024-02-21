@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/ViamAuthorization-class.html">ViamAuthorization</a></li>
     <li class="self-crumb">ViamAuthorization constructor</li>
   </ol>
@@ -78,7 +78,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ViamAuthorization</code></pre>
+  <pre class="language-dart"><code class="language-dart">ViamAuthorization({
+  this.authorizationType = &#39;role&#39;,
+  required this.authorizationId,
+  required this.resourceType,
+  required this.resourceId,
+  this.identityId = &#39;&#39;,
+  required this.organizationId,
+  required this.identityType,
+});</code></pre>
 </section>
 
 

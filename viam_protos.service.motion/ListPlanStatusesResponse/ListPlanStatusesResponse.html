@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/ListPlanStatusesResponse-class.html">ListPlanStatusesResponse</a></li>
     <li class="self-crumb">ListPlanStatusesResponse factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListPlanStatusesResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListPlanStatusesResponse({
+  $core.Iterable&lt;PlanStatusWithID&gt;? planStatusesWithIds,
+}) {
+  final $result = create();
+  if (planStatusesWithIds != null) {
+    $result.planStatusesWithIds.addAll(planStatusesWithIds);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

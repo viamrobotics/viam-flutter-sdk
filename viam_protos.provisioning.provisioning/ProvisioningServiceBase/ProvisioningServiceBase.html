@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.provisioning.provisioning/viam_protos.provisioning.provisioning-library.html">viam_protos.provisioning.provisioning</a></li>
+    <li><a href="../../viam_protos.provisioning.provisioning/viam_protos.provisioning.provisioning-library.html">protos&#47;provisioning&#47;provisioning.dart</a></li>
     <li><a href="../../viam_protos.provisioning.provisioning/ProvisioningServiceBase-class.html">ProvisioningServiceBase</a></li>
     <li class="self-crumb">ProvisioningServiceBase constructor</li>
   </ol>
@@ -71,7 +71,36 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ProvisioningServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">ProvisioningServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.GetSmartMachineStatusRequest, $0.GetSmartMachineStatusResponse&gt;(
+      &#39;GetSmartMachineStatus&#39;,
+      getSmartMachineStatus_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetSmartMachineStatusRequest.fromBuffer(value),
+      ($0.GetSmartMachineStatusResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetNetworkCredentialsRequest, $0.SetNetworkCredentialsResponse&gt;(
+      &#39;SetNetworkCredentials&#39;,
+      setNetworkCredentials_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetNetworkCredentialsRequest.fromBuffer(value),
+      ($0.SetNetworkCredentialsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetSmartMachineCredentialsRequest, $0.SetSmartMachineCredentialsResponse&gt;(
+      &#39;SetSmartMachineCredentials&#39;,
+      setSmartMachineCredentials_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetSmartMachineCredentialsRequest.fromBuffer(value),
+      ($0.SetSmartMachineCredentialsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetNetworkListRequest, $0.GetNetworkListResponse&gt;(
+      &#39;GetNetworkList&#39;,
+      getNetworkList_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetNetworkListRequest.fromBuffer(value),
+      ($0.GetNetworkListResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

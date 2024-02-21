@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
+    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">protos&#47;app&#47;cloud_slam.dart</a></li>
     <li><a href="../../viam_protos.app.cloud_slam/MappingMetadata-class.html">MappingMetadata</a></li>
     <li class="self-crumb">MappingMetadata factory constructor</li>
   </ol>
@@ -85,7 +85,67 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory MappingMetadata</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory MappingMetadata({
+  $core.String? orgId,
+  $core.String? locationId,
+  $core.String? robotId,
+  $2.Timestamp? timeStartSubmitted,
+  $2.Timestamp? timeCloudRunJobStarted,
+  $2.Timestamp? timeEndSubmitted,
+  $2.Timestamp? timeCloudRunJobEnded,
+  EndStatus? endStatus,
+  $core.String? cloudRunJobId,
+  $core.String? viamServerVersion,
+  $core.String? mapName,
+  $core.String? slamVersion,
+  $core.String? config,
+  $core.String? errorMsg,
+}) {
+  final $result = create();
+  if (orgId != null) {
+    $result.orgId = orgId;
+  }
+  if (locationId != null) {
+    $result.locationId = locationId;
+  }
+  if (robotId != null) {
+    $result.robotId = robotId;
+  }
+  if (timeStartSubmitted != null) {
+    $result.timeStartSubmitted = timeStartSubmitted;
+  }
+  if (timeCloudRunJobStarted != null) {
+    $result.timeCloudRunJobStarted = timeCloudRunJobStarted;
+  }
+  if (timeEndSubmitted != null) {
+    $result.timeEndSubmitted = timeEndSubmitted;
+  }
+  if (timeCloudRunJobEnded != null) {
+    $result.timeCloudRunJobEnded = timeCloudRunJobEnded;
+  }
+  if (endStatus != null) {
+    $result.endStatus = endStatus;
+  }
+  if (cloudRunJobId != null) {
+    $result.cloudRunJobId = cloudRunJobId;
+  }
+  if (viamServerVersion != null) {
+    $result.viamServerVersion = viamServerVersion;
+  }
+  if (mapName != null) {
+    $result.mapName = mapName;
+  }
+  if (slamVersion != null) {
+    $result.slamVersion = slamVersion;
+  }
+  if (config != null) {
+    $result.config = config;
+  }
+  if (errorMsg != null) {
+    $result.errorMsg = errorMsg;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

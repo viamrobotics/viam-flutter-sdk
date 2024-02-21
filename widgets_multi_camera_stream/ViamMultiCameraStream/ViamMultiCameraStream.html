@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../widgets_multi_camera_stream/widgets_multi_camera_stream-library.html">multi_camera_stream</a></li>
+    <li><a href="../../widgets_multi_camera_stream/widgets_multi_camera_stream-library.html">widgets&#47;multi_camera_stream.dart</a></li>
     <li><a href="../../widgets_multi_camera_stream/ViamMultiCameraStream-class.html">ViamMultiCameraStream</a></li>
     <li class="self-crumb">ViamMultiCameraStream const constructor</li>
   </ol>
@@ -74,7 +74,11 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const ViamMultiCameraStream</code></pre>
+  <pre class="language-dart"><code class="language-dart">const ViamMultiCameraStream({
+  super.key,
+  required this.cameras,
+  required this.robotClient,
+});</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.powersensor/viam_protos.component.powersensor-library.html">viam_protos.component.powersensor</a></li>
+    <li><a href="../../viam_protos.component.powersensor/viam_protos.component.powersensor-library.html">protos&#47;component&#47;powersensor.dart</a></li>
     <li><a href="../../viam_protos.component.powersensor/PowerSensorServiceBase-class.html">PowerSensorServiceBase</a></li>
     <li class="self-crumb">PowerSensorServiceBase constructor</li>
   </ol>
@@ -71,7 +71,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">PowerSensorServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">PowerSensorServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.GetVoltageRequest, $0.GetVoltageResponse&gt;(
+      &#39;GetVoltage&#39;,
+      getVoltage_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetVoltageRequest.fromBuffer(value),
+      ($0.GetVoltageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetCurrentRequest, $0.GetCurrentResponse&gt;(
+      &#39;GetCurrent&#39;,
+      getCurrent_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetCurrentRequest.fromBuffer(value),
+      ($0.GetCurrentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetPowerRequest, $0.GetPowerResponse&gt;(
+      &#39;GetPower&#39;,
+      getPower_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetPowerRequest.fromBuffer(value),
+      ($0.GetPowerResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.GetReadingsRequest, $1.GetReadingsResponse&gt;(
+      &#39;GetReadings&#39;,
+      getReadings_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetReadingsRequest.fromBuffer(value),
+      ($1.GetReadingsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
+      &#39;DoCommand&#39;,
+      doCommand_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.DoCommandRequest.fromBuffer(value),
+      ($1.DoCommandResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

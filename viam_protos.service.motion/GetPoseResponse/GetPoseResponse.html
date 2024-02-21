@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">viam_protos.service.motion</a></li>
+    <li><a href="../../viam_protos.service.motion/viam_protos.service.motion-library.html">protos&#47;service&#47;motion.dart</a></li>
     <li><a href="../../viam_protos.service.motion/GetPoseResponse-class.html">GetPoseResponse</a></li>
     <li class="self-crumb">GetPoseResponse factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetPoseResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-pose">{<span class="type-annotation"><a href="../../viam_protos.common.common/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">pose</span>}</span></li>
+      <span class="name ">GetPoseResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-pose">{<span class="type-annotation"><a href="../../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">pose</span>}</span></li>
 </ol>)
     </section>
 
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetPoseResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetPoseResponse({
+  $1.PoseInFrame? pose,
+}) {
+  final $result = create();
+  if (pose != null) {
+    $result.pose = pose;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

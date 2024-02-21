@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.dataset/viam_protos.app.dataset-library.html">viam_protos.app.dataset</a></li>
+    <li><a href="../../viam_protos.app.dataset/viam_protos.app.dataset-library.html">protos&#47;app&#47;dataset.dart</a></li>
     <li><a href="../../viam_protos.app.dataset/DatasetServiceBase-class.html">DatasetServiceBase</a></li>
     <li class="self-crumb">DatasetServiceBase constructor</li>
   </ol>
@@ -71,7 +71,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">DatasetServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">DatasetServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.CreateDatasetRequest, $0.CreateDatasetResponse&gt;(
+      &#39;CreateDataset&#39;,
+      createDataset_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.CreateDatasetRequest.fromBuffer(value),
+      ($0.CreateDatasetResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.DeleteDatasetRequest, $0.DeleteDatasetResponse&gt;(
+      &#39;DeleteDataset&#39;,
+      deleteDataset_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeleteDatasetRequest.fromBuffer(value),
+      ($0.DeleteDatasetResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.RenameDatasetRequest, $0.RenameDatasetResponse&gt;(
+      &#39;RenameDataset&#39;,
+      renameDataset_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.RenameDatasetRequest.fromBuffer(value),
+      ($0.RenameDatasetResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListDatasetsByOrganizationIDRequest, $0.ListDatasetsByOrganizationIDResponse&gt;(
+      &#39;ListDatasetsByOrganizationID&#39;,
+      listDatasetsByOrganizationID_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListDatasetsByOrganizationIDRequest.fromBuffer(value),
+      ($0.ListDatasetsByOrganizationIDResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListDatasetsByIDsRequest, $0.ListDatasetsByIDsResponse&gt;(
+      &#39;ListDatasetsByIDs&#39;,
+      listDatasetsByIDs_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListDatasetsByIDsRequest.fromBuffer(value),
+      ($0.ListDatasetsByIDsResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

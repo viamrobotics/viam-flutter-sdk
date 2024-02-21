@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.camera/viam_protos.component.camera-library.html">viam_protos.component.camera</a></li>
+    <li><a href="../../viam_protos.component.camera/viam_protos.component.camera-library.html">protos&#47;component&#47;camera.dart</a></li>
     <li><a href="../../viam_protos.component.camera/IntrinsicParameters-class.html">IntrinsicParameters</a></li>
     <li class="self-crumb">IntrinsicParameters factory constructor</li>
   </ol>
@@ -77,7 +77,35 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory IntrinsicParameters</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory IntrinsicParameters({
+  $core.int? widthPx,
+  $core.int? heightPx,
+  $core.double? focalXPx,
+  $core.double? focalYPx,
+  $core.double? centerXPx,
+  $core.double? centerYPx,
+}) {
+  final $result = create();
+  if (widthPx != null) {
+    $result.widthPx = widthPx;
+  }
+  if (heightPx != null) {
+    $result.heightPx = heightPx;
+  }
+  if (focalXPx != null) {
+    $result.focalXPx = focalXPx;
+  }
+  if (focalYPx != null) {
+    $result.focalYPx = focalYPx;
+  }
+  if (centerXPx != null) {
+    $result.centerXPx = centerXPx;
+  }
+  if (centerYPx != null) {
+    $result.centerYPx = centerYPx;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

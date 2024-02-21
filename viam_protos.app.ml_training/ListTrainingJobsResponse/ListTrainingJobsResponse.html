@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">viam_protos.app.ml_training</a></li>
+    <li><a href="../../viam_protos.app.ml_training/viam_protos.app.ml_training-library.html">protos&#47;app&#47;ml_training.dart</a></li>
     <li><a href="../../viam_protos.app.ml_training/ListTrainingJobsResponse-class.html">ListTrainingJobsResponse</a></li>
     <li class="self-crumb">ListTrainingJobsResponse factory constructor</li>
   </ol>
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListTrainingJobsResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListTrainingJobsResponse({
+  $core.Iterable&lt;TrainingJobMetadata&gt;? jobs,
+}) {
+  final $result = create();
+  if (jobs != null) {
+    $result.jobs.addAll(jobs);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

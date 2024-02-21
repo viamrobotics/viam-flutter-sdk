@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">viam_protos.app.packages</a></li>
+    <li><a href="../../viam_protos.app.packages/viam_protos.app.packages-library.html">protos&#47;app&#47;packages.dart</a></li>
     <li><a href="../../viam_protos.app.packages/ListPackagesRequest-class.html">ListPackagesRequest</a></li>
     <li class="self-crumb">ListPackagesRequest factory constructor</li>
   </ol>
@@ -76,7 +76,31 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListPackagesRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListPackagesRequest({
+  $core.String? organizationId,
+  $core.String? name,
+  $core.String? version,
+  PackageType? type,
+  $core.bool? includeUrl,
+}) {
+  final $result = create();
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (name != null) {
+    $result.name = name;
+  }
+  if (version != null) {
+    $result.version = version;
+  }
+  if (type != null) {
+    $result.type = type;
+  }
+  if (includeUrl != null) {
+    $result.includeUrl = includeUrl;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

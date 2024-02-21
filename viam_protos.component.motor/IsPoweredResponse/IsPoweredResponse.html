@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.motor/viam_protos.component.motor-library.html">viam_protos.component.motor</a></li>
+    <li><a href="../../viam_protos.component.motor/viam_protos.component.motor-library.html">protos&#47;component&#47;motor.dart</a></li>
     <li><a href="../../viam_protos.component.motor/IsPoweredResponse-class.html">IsPoweredResponse</a></li>
     <li class="self-crumb">IsPoweredResponse factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory IsPoweredResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory IsPoweredResponse({
+  $core.bool? isOn,
+  $core.double? powerPct,
+}) {
+  final $result = create();
+  if (isOn != null) {
+    $result.isOn = isOn;
+  }
+  if (powerPct != null) {
+    $result.powerPct = powerPct;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

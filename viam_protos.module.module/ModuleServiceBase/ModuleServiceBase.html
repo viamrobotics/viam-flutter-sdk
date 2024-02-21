@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.module.module/viam_protos.module.module-library.html">viam_protos.module.module</a></li>
+    <li><a href="../../viam_protos.module.module/viam_protos.module.module-library.html">protos&#47;module&#47;module.dart</a></li>
     <li><a href="../../viam_protos.module.module/ModuleServiceBase-class.html">ModuleServiceBase</a></li>
     <li class="self-crumb">ModuleServiceBase constructor</li>
   </ol>
@@ -71,7 +71,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">ModuleServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">ModuleServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$2.AddResourceRequest, $2.AddResourceResponse&gt;(
+      &#39;AddResource&#39;,
+      addResource_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.AddResourceRequest.fromBuffer(value),
+      ($2.AddResourceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.ReconfigureResourceRequest, $2.ReconfigureResourceResponse&gt;(
+      &#39;ReconfigureResource&#39;,
+      reconfigureResource_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.ReconfigureResourceRequest.fromBuffer(value),
+      ($2.ReconfigureResourceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.RemoveResourceRequest, $2.RemoveResourceResponse&gt;(
+      &#39;RemoveResource&#39;,
+      removeResource_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.RemoveResourceRequest.fromBuffer(value),
+      ($2.RemoveResourceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.ReadyRequest, $2.ReadyResponse&gt;(
+      &#39;Ready&#39;,
+      ready_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.ReadyRequest.fromBuffer(value),
+      ($2.ReadyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.ValidateConfigRequest, $2.ValidateConfigResponse&gt;(
+      &#39;ValidateConfig&#39;,
+      validateConfig_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.ValidateConfigRequest.fromBuffer(value),
+      ($2.ValidateConfigResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

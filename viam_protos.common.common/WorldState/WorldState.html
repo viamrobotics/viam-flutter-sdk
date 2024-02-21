@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">protos&#47;common&#47;common.dart</a></li>
     <li><a href="../../viam_protos.common.common/WorldState-class.html">WorldState</a></li>
     <li class="self-crumb">WorldState factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory WorldState</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory WorldState({
+  $core.Iterable&lt;GeometriesInFrame&gt;? obstacles,
+  $core.Iterable&lt;Transform&gt;? transforms,
+}) {
+  final $result = create();
+  if (obstacles != null) {
+    $result.obstacles.addAll(obstacles);
+  }
+  if (transforms != null) {
+    $result.transforms.addAll(transforms);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

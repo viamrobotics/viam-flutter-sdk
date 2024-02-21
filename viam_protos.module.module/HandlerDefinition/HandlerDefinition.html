@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.module.module/viam_protos.module.module-library.html">viam_protos.module.module</a></li>
+    <li><a href="../../viam_protos.module.module/viam_protos.module.module-library.html">protos&#47;module&#47;module.dart</a></li>
     <li><a href="../../viam_protos.module.module/HandlerDefinition-class.html">HandlerDefinition</a></li>
     <li class="self-crumb">HandlerDefinition factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory HandlerDefinition</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory HandlerDefinition({
+  $1.ResourceRPCSubtype? subtype,
+  $core.Iterable&lt;$core.String&gt;? models,
+}) {
+  final $result = create();
+  if (subtype != null) {
+    $result.subtype = subtype;
+  }
+  if (models != null) {
+    $result.models.addAll(models);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

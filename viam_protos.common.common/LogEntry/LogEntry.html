@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">protos&#47;common&#47;common.dart</a></li>
     <li><a href="../../viam_protos.common.common/LogEntry-class.html">LogEntry</a></li>
     <li class="self-crumb">LogEntry factory constructor</li>
   </ol>
@@ -79,7 +79,43 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory LogEntry</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory LogEntry({
+  $core.String? host,
+  $core.String? level,
+  $0.Timestamp? time,
+  $core.String? loggerName,
+  $core.String? message,
+  $1.Struct? caller,
+  $core.String? stack,
+  $core.Iterable&lt;$1.Struct&gt;? fields,
+}) {
+  final $result = create();
+  if (host != null) {
+    $result.host = host;
+  }
+  if (level != null) {
+    $result.level = level;
+  }
+  if (time != null) {
+    $result.time = time;
+  }
+  if (loggerName != null) {
+    $result.loggerName = loggerName;
+  }
+  if (message != null) {
+    $result.message = message;
+  }
+  if (caller != null) {
+    $result.caller = caller;
+  }
+  if (stack != null) {
+    $result.stack = stack;
+  }
+  if (fields != null) {
+    $result.fields.addAll(fields);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

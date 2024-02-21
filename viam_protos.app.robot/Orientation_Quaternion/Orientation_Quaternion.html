@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
+    <li><a href="../../viam_protos.app.robot/viam_protos.app.robot-library.html">protos&#47;app&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.app.robot/Orientation_Quaternion-class.html">Orientation_Quaternion</a></li>
     <li class="self-crumb">Orientation_Quaternion factory constructor</li>
   </ol>
@@ -75,7 +75,27 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Orientation_Quaternion</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Orientation_Quaternion({
+  $core.double? w,
+  $core.double? x,
+  $core.double? y,
+  $core.double? z,
+}) {
+  final $result = create();
+  if (w != null) {
+    $result.w = w;
+  }
+  if (x != null) {
+    $result.x = x;
+  }
+  if (y != null) {
+    $result.y = y;
+  }
+  if (z != null) {
+    $result.z = z;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

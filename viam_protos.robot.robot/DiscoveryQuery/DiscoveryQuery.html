@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">viam_protos.robot.robot</a></li>
+    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">protos&#47;robot&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.robot.robot/DiscoveryQuery-class.html">DiscoveryQuery</a></li>
     <li class="self-crumb">DiscoveryQuery factory constructor</li>
   </ol>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory DiscoveryQuery</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory DiscoveryQuery({
+  $core.String? subtype,
+  $core.String? model,
+}) {
+  final $result = create();
+  if (subtype != null) {
+    $result.subtype = subtype;
+  }
+  if (model != null) {
+    $result.model = model;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">protos&#47;common&#47;common.dart</a></li>
     <li><a href="../../viam_protos.common.common/Transform-class.html">Transform</a></li>
     <li class="self-crumb">Transform factory constructor</li>
   </ol>
@@ -63,7 +63,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">Transform</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-referenceFrame">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">referenceFrame</span>, </span></li>
-<li><span class="parameter" id="-param-poseInObserverFrame"><span class="type-annotation"><a href="../../viam_protos.common.common/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">poseInObserverFrame</span>, </span></li>
+<li><span class="parameter" id="-param-poseInObserverFrame"><span class="type-annotation"><a href="../../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">poseInObserverFrame</span>, </span></li>
 <li><span class="parameter" id="-param-physicalObject"><span class="type-annotation"><a href="../../viam_protos.common.common/Geometry-class.html">Geometry</a>?</span> <span class="parameter-name">physicalObject</span>}</span></li>
 </ol>)
     </section>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Transform</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory Transform({
+  $core.String? referenceFrame,
+  PoseInFrame? poseInObserverFrame,
+  Geometry? physicalObject,
+}) {
+  final $result = create();
+  if (referenceFrame != null) {
+    $result.referenceFrame = referenceFrame;
+  }
+  if (poseInObserverFrame != null) {
+    $result.poseInObserverFrame = poseInObserverFrame;
+  }
+  if (physicalObject != null) {
+    $result.physicalObject = physicalObject;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

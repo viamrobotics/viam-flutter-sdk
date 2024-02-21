@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li><a href="../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
     <li class="self-crumb">DataServiceClient class</li>
   </ol>
   <div class="self-name">DataServiceClient</div>
@@ -70,7 +70,7 @@
   <dd>
     <ul class="gt-separated dark clazz-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Client-class.html">Client</a></li>
+        <li><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/Client-class.html">Client</a></li>
       <li>DataServiceClient</li>
     </ul>
   </dd>
@@ -98,7 +98,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="DataServiceClient" class="callable">
-          <span class="name"><a href="../viam_protos.app.data/DataServiceClient/DataServiceClient.html">DataServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.app.data/DataServiceClient/DataServiceClient.html">DataServiceClient</a></span><span class="signature">(<span class="parameter" id="-param-channel"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ClientChannel-class.html">ClientChannel</a></span> <span class="parameter-name">channel</span>, </span><span class="parameter" id="-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="-param-interceptors"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ClientInterceptor-class.html">ClientInterceptor</a></span>&gt;</span>?</span> <span class="parameter-name">interceptors</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -142,8 +142,8 @@
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="$createCall" class="callable inherited">
-  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.4/service_api/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc_connection_interface/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name deprecated"><a class="deprecated" href="https://pub.dev/documentation/grpc/3.2.4/grpc/Client/$createCall.html">$createCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ClientCall-class.html">ClientCall</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -155,8 +155,8 @@
 </dd>
 
         <dt id="$createStreamingCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/Client/$createStreamingCall.html">$createStreamingCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createStreamingCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createStreamingCall-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="$createStreamingCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseStream-class.html">ResponseStream</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -168,8 +168,8 @@
 </dd>
 
         <dt id="$createUnaryCall" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  <span class="name"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/Client/$createUnaryCall.html">$createUnaryCall</a></span><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="$createUnaryCall-param-method"><span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ClientMethod-class.html">ClientMethod</a><span class="signature">&lt;<wbr><span class="type-parameter">Q</span>, <span class="type-parameter">R</span>&gt;</span></span> <span class="parameter-name">method</span>, </span><span class="parameter" id="$createUnaryCall-param-request"><span class="type-annotation">Q</span> <span class="parameter-name">request</span>, </span><span class="parameter" id="$createUnaryCall-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
   </span>
   
 
@@ -181,8 +181,8 @@
 </dd>
 
         <dt id="addBinaryDataToDatasetByIDs" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addBinaryDataToDatasetByIDs.html">addBinaryDataToDatasetByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="addBinaryDataToDatasetByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddBinaryDataToDatasetByIDsRequest-class.html">AddBinaryDataToDatasetByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addBinaryDataToDatasetByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddBinaryDataToDatasetByIDsResponse-class.html">AddBinaryDataToDatasetByIDsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addBinaryDataToDatasetByIDs.html">addBinaryDataToDatasetByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="addBinaryDataToDatasetByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddBinaryDataToDatasetByIDsRequest-class.html">AddBinaryDataToDatasetByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addBinaryDataToDatasetByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddBinaryDataToDatasetByIDsResponse-class.html">AddBinaryDataToDatasetByIDsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -194,8 +194,8 @@
 </dd>
 
         <dt id="addBoundingBoxToImageByID" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addBoundingBoxToImageByID.html">addBoundingBoxToImageByID</a></span><span class="signature">(<wbr><span class="parameter" id="addBoundingBoxToImageByID-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddBoundingBoxToImageByIDRequest-class.html">AddBoundingBoxToImageByIDRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addBoundingBoxToImageByID-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddBoundingBoxToImageByIDResponse-class.html">AddBoundingBoxToImageByIDResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addBoundingBoxToImageByID.html">addBoundingBoxToImageByID</a></span><span class="signature">(<wbr><span class="parameter" id="addBoundingBoxToImageByID-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddBoundingBoxToImageByIDRequest-class.html">AddBoundingBoxToImageByIDRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addBoundingBoxToImageByID-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddBoundingBoxToImageByIDResponse-class.html">AddBoundingBoxToImageByIDResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -207,8 +207,8 @@
 </dd>
 
         <dt id="addTagsToBinaryDataByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addTagsToBinaryDataByFilter.html">addTagsToBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="addTagsToBinaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterRequest-class.html">AddTagsToBinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addTagsToBinaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterResponse-class.html">AddTagsToBinaryDataByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addTagsToBinaryDataByFilter.html">addTagsToBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="addTagsToBinaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterRequest-class.html">AddTagsToBinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addTagsToBinaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddTagsToBinaryDataByFilterResponse-class.html">AddTagsToBinaryDataByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -220,8 +220,8 @@
 </dd>
 
         <dt id="addTagsToBinaryDataByIDs" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addTagsToBinaryDataByIDs.html">addTagsToBinaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="addTagsToBinaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsRequest-class.html">AddTagsToBinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addTagsToBinaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsResponse-class.html">AddTagsToBinaryDataByIDsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/addTagsToBinaryDataByIDs.html">addTagsToBinaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="addTagsToBinaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsRequest-class.html">AddTagsToBinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="addTagsToBinaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/AddTagsToBinaryDataByIDsResponse-class.html">AddTagsToBinaryDataByIDsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -233,8 +233,8 @@
 </dd>
 
         <dt id="binaryDataByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/binaryDataByFilter.html">binaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="binaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/BinaryDataByFilterRequest-class.html">BinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="binaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/BinaryDataByFilterResponse-class.html">BinaryDataByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/binaryDataByFilter.html">binaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="binaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/BinaryDataByFilterRequest-class.html">BinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="binaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/BinaryDataByFilterResponse-class.html">BinaryDataByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -246,8 +246,8 @@
 </dd>
 
         <dt id="binaryDataByIDs" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/binaryDataByIDs.html">binaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="binaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/BinaryDataByIDsRequest-class.html">BinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="binaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/BinaryDataByIDsResponse-class.html">BinaryDataByIDsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/binaryDataByIDs.html">binaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="binaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/BinaryDataByIDsRequest-class.html">BinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="binaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/BinaryDataByIDsResponse-class.html">BinaryDataByIDsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -259,8 +259,8 @@
 </dd>
 
         <dt id="boundingBoxLabelsByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/boundingBoxLabelsByFilter.html">boundingBoxLabelsByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="boundingBoxLabelsByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/BoundingBoxLabelsByFilterRequest-class.html">BoundingBoxLabelsByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="boundingBoxLabelsByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/BoundingBoxLabelsByFilterResponse-class.html">BoundingBoxLabelsByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/boundingBoxLabelsByFilter.html">boundingBoxLabelsByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="boundingBoxLabelsByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/BoundingBoxLabelsByFilterRequest-class.html">BoundingBoxLabelsByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="boundingBoxLabelsByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/BoundingBoxLabelsByFilterResponse-class.html">BoundingBoxLabelsByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -272,8 +272,8 @@
 </dd>
 
         <dt id="configureDatabaseUser" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/configureDatabaseUser.html">configureDatabaseUser</a></span><span class="signature">(<wbr><span class="parameter" id="configureDatabaseUser-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/ConfigureDatabaseUserRequest-class.html">ConfigureDatabaseUserRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="configureDatabaseUser-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/ConfigureDatabaseUserResponse-class.html">ConfigureDatabaseUserResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/configureDatabaseUser.html">configureDatabaseUser</a></span><span class="signature">(<wbr><span class="parameter" id="configureDatabaseUser-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/ConfigureDatabaseUserRequest-class.html">ConfigureDatabaseUserRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="configureDatabaseUser-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/ConfigureDatabaseUserResponse-class.html">ConfigureDatabaseUserResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -285,8 +285,8 @@
 </dd>
 
         <dt id="deleteBinaryDataByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/deleteBinaryDataByFilter.html">deleteBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="deleteBinaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteBinaryDataByFilterRequest-class.html">DeleteBinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteBinaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/DeleteBinaryDataByFilterResponse-class.html">DeleteBinaryDataByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/deleteBinaryDataByFilter.html">deleteBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="deleteBinaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteBinaryDataByFilterRequest-class.html">DeleteBinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteBinaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/DeleteBinaryDataByFilterResponse-class.html">DeleteBinaryDataByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -298,8 +298,8 @@
 </dd>
 
         <dt id="deleteBinaryDataByIDs" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/deleteBinaryDataByIDs.html">deleteBinaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="deleteBinaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteBinaryDataByIDsRequest-class.html">DeleteBinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteBinaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/DeleteBinaryDataByIDsResponse-class.html">DeleteBinaryDataByIDsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/deleteBinaryDataByIDs.html">deleteBinaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="deleteBinaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteBinaryDataByIDsRequest-class.html">DeleteBinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteBinaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/DeleteBinaryDataByIDsResponse-class.html">DeleteBinaryDataByIDsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -311,8 +311,8 @@
 </dd>
 
         <dt id="deleteTabularData" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/deleteTabularData.html">deleteTabularData</a></span><span class="signature">(<wbr><span class="parameter" id="deleteTabularData-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteTabularDataRequest-class.html">DeleteTabularDataRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteTabularData-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/DeleteTabularDataResponse-class.html">DeleteTabularDataResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/deleteTabularData.html">deleteTabularData</a></span><span class="signature">(<wbr><span class="parameter" id="deleteTabularData-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/DeleteTabularDataRequest-class.html">DeleteTabularDataRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="deleteTabularData-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/DeleteTabularDataResponse-class.html">DeleteTabularDataResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -324,8 +324,8 @@
 </dd>
 
         <dt id="getDatabaseConnection" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/getDatabaseConnection.html">getDatabaseConnection</a></span><span class="signature">(<wbr><span class="parameter" id="getDatabaseConnection-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/GetDatabaseConnectionRequest-class.html">GetDatabaseConnectionRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getDatabaseConnection-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/GetDatabaseConnectionResponse-class.html">GetDatabaseConnectionResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/getDatabaseConnection.html">getDatabaseConnection</a></span><span class="signature">(<wbr><span class="parameter" id="getDatabaseConnection-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/GetDatabaseConnectionRequest-class.html">GetDatabaseConnectionRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="getDatabaseConnection-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/GetDatabaseConnectionResponse-class.html">GetDatabaseConnectionResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -350,8 +350,8 @@
 </dd>
 
         <dt id="removeBinaryDataFromDatasetByIDs" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeBinaryDataFromDatasetByIDs.html">removeBinaryDataFromDatasetByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="removeBinaryDataFromDatasetByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveBinaryDataFromDatasetByIDsRequest-class.html">RemoveBinaryDataFromDatasetByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeBinaryDataFromDatasetByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveBinaryDataFromDatasetByIDsResponse-class.html">RemoveBinaryDataFromDatasetByIDsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeBinaryDataFromDatasetByIDs.html">removeBinaryDataFromDatasetByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="removeBinaryDataFromDatasetByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveBinaryDataFromDatasetByIDsRequest-class.html">RemoveBinaryDataFromDatasetByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeBinaryDataFromDatasetByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveBinaryDataFromDatasetByIDsResponse-class.html">RemoveBinaryDataFromDatasetByIDsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -363,8 +363,8 @@
 </dd>
 
         <dt id="removeBoundingBoxFromImageByID" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeBoundingBoxFromImageByID.html">removeBoundingBoxFromImageByID</a></span><span class="signature">(<wbr><span class="parameter" id="removeBoundingBoxFromImageByID-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDRequest-class.html">RemoveBoundingBoxFromImageByIDRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeBoundingBoxFromImageByID-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDResponse-class.html">RemoveBoundingBoxFromImageByIDResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeBoundingBoxFromImageByID.html">removeBoundingBoxFromImageByID</a></span><span class="signature">(<wbr><span class="parameter" id="removeBoundingBoxFromImageByID-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDRequest-class.html">RemoveBoundingBoxFromImageByIDRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeBoundingBoxFromImageByID-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveBoundingBoxFromImageByIDResponse-class.html">RemoveBoundingBoxFromImageByIDResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -376,8 +376,8 @@
 </dd>
 
         <dt id="removeTagsFromBinaryDataByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeTagsFromBinaryDataByFilter.html">removeTagsFromBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="removeTagsFromBinaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterRequest-class.html">RemoveTagsFromBinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeTagsFromBinaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterResponse-class.html">RemoveTagsFromBinaryDataByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeTagsFromBinaryDataByFilter.html">removeTagsFromBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="removeTagsFromBinaryDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterRequest-class.html">RemoveTagsFromBinaryDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeTagsFromBinaryDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByFilterResponse-class.html">RemoveTagsFromBinaryDataByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -389,8 +389,8 @@
 </dd>
 
         <dt id="removeTagsFromBinaryDataByIDs" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeTagsFromBinaryDataByIDs.html">removeTagsFromBinaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="removeTagsFromBinaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsRequest-class.html">RemoveTagsFromBinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeTagsFromBinaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsResponse-class.html">RemoveTagsFromBinaryDataByIDsResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/removeTagsFromBinaryDataByIDs.html">removeTagsFromBinaryDataByIDs</a></span><span class="signature">(<wbr><span class="parameter" id="removeTagsFromBinaryDataByIDs-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsRequest-class.html">RemoveTagsFromBinaryDataByIDsRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="removeTagsFromBinaryDataByIDs-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/RemoveTagsFromBinaryDataByIDsResponse-class.html">RemoveTagsFromBinaryDataByIDsResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -402,8 +402,8 @@
 </dd>
 
         <dt id="tabularDataByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tabularDataByFilter.html">tabularDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataByFilterRequest-class.html">TabularDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tabularDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TabularDataByFilterResponse-class.html">TabularDataByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tabularDataByFilter.html">tabularDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataByFilterRequest-class.html">TabularDataByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tabularDataByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TabularDataByFilterResponse-class.html">TabularDataByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -415,8 +415,8 @@
 </dd>
 
         <dt id="tabularDataByMQL" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tabularDataByMQL.html">tabularDataByMQL</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataByMQL-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataByMQLRequest-class.html">TabularDataByMQLRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tabularDataByMQL-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TabularDataByMQLResponse-class.html">TabularDataByMQLResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tabularDataByMQL.html">tabularDataByMQL</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataByMQL-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataByMQLRequest-class.html">TabularDataByMQLRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tabularDataByMQL-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TabularDataByMQLResponse-class.html">TabularDataByMQLResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -428,8 +428,8 @@
 </dd>
 
         <dt id="tabularDataBySQL" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tabularDataBySQL.html">tabularDataBySQL</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataBySQL-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataBySQLRequest-class.html">TabularDataBySQLRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tabularDataBySQL-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TabularDataBySQLResponse-class.html">TabularDataBySQLResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tabularDataBySQL.html">tabularDataBySQL</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataBySQL-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataBySQLRequest-class.html">TabularDataBySQLRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tabularDataBySQL-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TabularDataBySQLResponse-class.html">TabularDataBySQLResponse</a></span>&gt;</span></span>
   </span>
   
 
@@ -441,8 +441,8 @@
 </dd>
 
         <dt id="tagsByFilter" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tagsByFilter.html">tagsByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="tagsByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TagsByFilterRequest-class.html">TagsByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tagsByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/service_api/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/service_api/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TagsByFilterResponse-class.html">TagsByFilterResponse</a></span>&gt;</span></span>
+  <span class="name"><a href="../viam_protos.app.data/DataServiceClient/tagsByFilter.html">tagsByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="tagsByFilter-param-request"><span class="type-annotation"><a href="../viam_protos.app.data/TagsByFilterRequest-class.html">TagsByFilterRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="tagsByFilter-param-options">{<span class="type-annotation"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc/CallOptions-class.html">CallOptions</a>?</span> <span class="parameter-name">options</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/ResponseFuture-class.html">ResponseFuture</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/TagsByFilterResponse-class.html">TagsByFilterResponse</a></span>&gt;</span></span>
   </span>
   
 

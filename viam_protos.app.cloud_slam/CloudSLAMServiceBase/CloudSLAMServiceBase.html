@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">viam_protos.app.cloud_slam</a></li>
+    <li><a href="../../viam_protos.app.cloud_slam/viam_protos.app.cloud_slam-library.html">protos&#47;app&#47;cloud_slam.dart</a></li>
     <li><a href="../../viam_protos.app.cloud_slam/CloudSLAMServiceBase-class.html">CloudSLAMServiceBase</a></li>
     <li class="self-crumb">CloudSLAMServiceBase constructor</li>
   </ol>
@@ -71,7 +71,50 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">CloudSLAMServiceBase</code></pre>
+  <pre class="language-dart"><code class="language-dart">CloudSLAMServiceBase() {
+  $addMethod($grpc.ServiceMethod&lt;$0.StartMappingSessionRequest, $0.StartMappingSessionResponse&gt;(
+      &#39;StartMappingSession&#39;,
+      startMappingSession_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StartMappingSessionRequest.fromBuffer(value),
+      ($0.StartMappingSessionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetActiveMappingSessionsForRobotRequest, $0.GetActiveMappingSessionsForRobotResponse&gt;(
+      &#39;GetActiveMappingSessionsForRobot&#39;,
+      getActiveMappingSessionsForRobot_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetActiveMappingSessionsForRobotRequest.fromBuffer(value),
+      ($0.GetActiveMappingSessionsForRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetMappingSessionPointCloudRequest, $0.GetMappingSessionPointCloudResponse&gt;(
+      &#39;GetMappingSessionPointCloud&#39;,
+      getMappingSessionPointCloud_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetMappingSessionPointCloudRequest.fromBuffer(value),
+      ($0.GetMappingSessionPointCloudResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ListMappingSessionsRequest, $0.ListMappingSessionsResponse&gt;(
+      &#39;ListMappingSessions&#39;,
+      listMappingSessions_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListMappingSessionsRequest.fromBuffer(value),
+      ($0.ListMappingSessionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.StopMappingSessionRequest, $0.StopMappingSessionResponse&gt;(
+      &#39;StopMappingSession&#39;,
+      stopMappingSession_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StopMappingSessionRequest.fromBuffer(value),
+      ($0.StopMappingSessionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetMappingSessionMetadataByIDRequest, $0.GetMappingSessionMetadataByIDResponse&gt;(
+      &#39;GetMappingSessionMetadataByID&#39;,
+      getMappingSessionMetadataByID_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetMappingSessionMetadataByIDRequest.fromBuffer(value),
+      ($0.GetMappingSessionMetadataByIDResponse value) =&gt; value.writeToBuffer()));
+}</code></pre>
 </section>
 
 

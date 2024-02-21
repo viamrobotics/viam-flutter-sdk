@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/ListOrganizationMembersResponse-class.html">ListOrganizationMembersResponse</a></li>
     <li class="self-crumb">ListOrganizationMembersResponse factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory ListOrganizationMembersResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory ListOrganizationMembersResponse({
+  $core.String? organizationId,
+  $core.Iterable&lt;OrganizationMember&gt;? members,
+  $core.Iterable&lt;OrganizationInvite&gt;? invites,
+}) {
+  final $result = create();
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (members != null) {
+    $result.members.addAll(members);
+  }
+  if (invites != null) {
+    $result.invites.addAll(invites);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

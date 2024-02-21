@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.service.navigation/viam_protos.service.navigation-library.html">viam_protos.service.navigation</a></li>
+    <li><a href="../../viam_protos.service.navigation/viam_protos.service.navigation-library.html">protos&#47;service&#47;navigation.dart</a></li>
     <li><a href="../../viam_protos.service.navigation/GetLocationResponse-class.html">GetLocationResponse</a></li>
     <li class="self-crumb">GetLocationResponse factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetLocationResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-location">{<span class="type-annotation"><a href="../../viam_protos.common.common/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">location</span>, </span></li>
+      <span class="name ">GetLocationResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-location">{<span class="type-annotation"><a href="../../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">location</span>, </span></li>
 <li><span class="parameter" id="-param-compassHeading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">compassHeading</span>}</span></li>
 </ol>)
     </section>
@@ -73,7 +73,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetLocationResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetLocationResponse({
+  $1.GeoPoint? location,
+  $core.double? compassHeading,
+}) {
+  final $result = create();
+  if (location != null) {
+    $result.location = location;
+  }
+  if (compassHeading != null) {
+    $result.compassHeading = compassHeading;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

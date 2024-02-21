@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">viam_protos.common.common</a></li>
+    <li><a href="../../viam_protos.common.common/viam_protos.common.common-library.html">protos&#47;common&#47;common.dart</a></li>
     <li><a href="../../viam_protos.common.common/RectangularPrism-class.html">RectangularPrism</a></li>
     <li class="self-crumb">RectangularPrism factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">RectangularPrism</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-dimsMm">{<span class="type-annotation"><a href="../../viam_protos.common.common/Vector3-class.html">Vector3</a>?</span> <span class="parameter-name">dimsMm</span>}</span></li>
+      <span class="name ">RectangularPrism</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-dimsMm">{<span class="type-annotation"><a href="../../viam_sdk/Vector3-class.html">Vector3</a>?</span> <span class="parameter-name">dimsMm</span>}</span></li>
 </ol>)
     </section>
 
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory RectangularPrism</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory RectangularPrism({
+  Vector3? dimsMm,
+}) {
+  final $result = create();
+  if (dimsMm != null) {
+    $result.dimsMm = dimsMm;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

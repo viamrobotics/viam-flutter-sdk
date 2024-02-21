@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">viam_protos.robot.robot</a></li>
+    <li><a href="../../viam_protos.robot.robot/viam_protos.robot.robot-library.html">protos&#47;robot&#47;robot.dart</a></li>
     <li><a href="../../viam_protos.robot.robot/GetStatusRequest-class.html">GetStatusRequest</a></li>
     <li class="self-crumb">GetStatusRequest factory constructor</li>
   </ol>
@@ -62,7 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetStatusRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-resourceNames">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/ResourceName-class.html">ResourceName</a></span>&gt;</span>?</span> <span class="parameter-name">resourceNames</span>}</span></li>
+      <span class="name ">GetStatusRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-resourceNames">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a></span>&gt;</span>?</span> <span class="parameter-name">resourceNames</span>}</span></li>
 </ol>)
     </section>
 
@@ -72,7 +72,15 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetStatusRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetStatusRequest({
+  $core.Iterable&lt;$1.ResourceName&gt;? resourceNames,
+}) {
+  final $result = create();
+  if (resourceNames != null) {
+    $result.resourceNames.addAll(resourceNames);
+  }
+  return $result;
+}</code></pre>
 </section>
 
 

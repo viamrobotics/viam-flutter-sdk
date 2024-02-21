@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.component.base/viam_protos.component.base-library.html">viam_protos.component.base</a></li>
+    <li><a href="../../viam_protos.component.base/viam_protos.component.base-library.html">protos&#47;component&#47;base.dart</a></li>
     <li><a href="../../viam_protos.component.base/GetPropertiesResponse-class.html">GetPropertiesResponse</a></li>
     <li class="self-crumb">GetPropertiesResponse factory constructor</li>
   </ol>
@@ -74,7 +74,23 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetPropertiesResponse</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetPropertiesResponse({
+  $core.double? widthMeters,
+  $core.double? turningRadiusMeters,
+  $core.double? wheelCircumferenceMeters,
+}) {
+  final $result = create();
+  if (widthMeters != null) {
+    $result.widthMeters = widthMeters;
+  }
+  if (turningRadiusMeters != null) {
+    $result.turningRadiusMeters = turningRadiusMeters;
+  }
+  if (wheelCircumferenceMeters != null) {
+    $result.wheelCircumferenceMeters = wheelCircumferenceMeters;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 
