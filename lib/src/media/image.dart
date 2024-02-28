@@ -89,7 +89,7 @@ class MimeType {
   }
 }
 
-/// A custom image type that contains the [MimeTYpe], raw image data, and lazily loads and caches an [img.Image].
+/// A custom image type that contains the [MimeType], raw image data, and lazily loads and caches an [img.Image].
 class ViamImage {
   /// The mimetype of the image
   final MimeType mimeType;

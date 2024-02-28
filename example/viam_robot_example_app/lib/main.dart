@@ -55,12 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     // Be sure to create a .env file with these fields
+    final opts = RobotClientOptions.withApiKey(
+      dotenv.env['API_KEY_ID']!,
+      dotenv.env['API_KEY']!,
+    );
+    opts.dialOptions.attemptMdns = false;
     _robot = await RobotClient.atAddress(
       dotenv.env['ROBOT_LOCATION']!,
-      RobotClientOptions.withApiKey(
-        dotenv.env['API_KEY_ID']!,
-        dotenv.env['API_KEY']!,
-      ),
+      opts,
     );
 
     final services = _robot.resourceNames.where((element) => element.type == resourceTypeService);
