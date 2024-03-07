@@ -49,15 +49,6 @@ class WebRtcTransportStream extends GrpcTransportStream {
 
   void _listenToOutgoingMessages() {
     _outgoingMessages.stream.listen((List<int> data) {
-      final payloadRequest = grpc.Request()
-        ..stream = headersRequest.stream
-        ..message = (grpc.RequestMessage()
-          ..hasMessage = true
-          ..eos = true
-          ..packetMessage = (grpc.PacketMessage()
-            ..data = data
-            ..eom = true));
-
       final connectionState = webRtcClientChannel.rtcPeerConnection.connectionState;
 
       if (connectionState == RTCPeerConnectionState.RTCPeerConnectionStateFailed ||
@@ -73,7 +64,33 @@ class WebRtcTransportStream extends GrpcTransportStream {
         headersSent = true;
         webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(headersRequest.writeToBuffer()));
       }
-      webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(payloadRequest.writeToBuffer()));
+      const maxMessageLength = 32 * 1024;
+      final chunks = data.slices(maxMessageLength).toList();
+      Iterable<grpc.Request> requests;
+      if (chunks.isEmpty) {
+        requests = [
+          grpc.Request()
+            ..stream = headersRequest.stream
+            ..message = (grpc.RequestMessage()
+              ..hasMessage = true
+              ..eos = false
+              ..packetMessage = (grpc.PacketMessage()
+                ..data = data
+                ..eom = true))
+        ];
+      } else {
+        requests = chunks.mapIndexed((index, chunk) => grpc.Request()
+          ..stream = headersRequest.stream
+          ..message = (grpc.RequestMessage()
+            ..hasMessage = true
+            ..eos = false
+            ..packetMessage = (grpc.PacketMessage()
+              ..data = chunk
+              ..eom = index == chunks.length - 1)));
+      }
+      requests.forEach((payloadRequest) {
+        webRtcClientChannel.dataChannel.send(RTCDataChannelMessage.fromBinary(payloadRequest.writeToBuffer()));
+      });
     });
   }
 
