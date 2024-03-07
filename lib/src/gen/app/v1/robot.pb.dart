@@ -33,6 +33,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.Iterable<ModuleConfig>? modules,
     $core.bool? disablePartialStart,
     $core.Iterable<PackageConfig>? packages,
+    $core.Iterable<AppValidationStatus>? overwriteFragmentStatus,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -68,6 +69,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (packages != null) {
       $result.packages.addAll(packages);
     }
+    if (overwriteFragmentStatus != null) {
+      $result.overwriteFragmentStatus.addAll(overwriteFragmentStatus);
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -86,6 +90,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..pc<ModuleConfig>(9, _omitFieldNames ? '' : 'modules', $pb.PbFieldType.PM, subBuilder: ModuleConfig.create)
     ..aOB(10, _omitFieldNames ? '' : 'disablePartialStart')
     ..pc<PackageConfig>(11, _omitFieldNames ? '' : 'packages', $pb.PbFieldType.PM, subBuilder: PackageConfig.create)
+    ..pc<AppValidationStatus>(12, _omitFieldNames ? '' : 'overwriteFragmentStatus', $pb.PbFieldType.PM, subBuilder: AppValidationStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -179,6 +184,9 @@ class RobotConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<PackageConfig> get packages => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.List<AppValidationStatus> get overwriteFragmentStatus => $_getList(11);
 }
 
 /// Valid location secret that can be used for authentication to the robot.

@@ -47,6 +47,7 @@ const RobotConfig$json = {
     {'1': 'modules', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleConfig', '10': 'modules'},
     {'1': 'disable_partial_start', '3': 10, '4': 1, '5': 8, '9': 3, '10': 'disablePartialStart', '17': true},
     {'1': 'packages', '3': 11, '4': 3, '5': 11, '6': '.viam.app.v1.PackageConfig', '10': 'packages'},
+    {'1': 'overwrite_fragment_status', '3': 12, '4': 3, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'overwriteFragmentStatus'},
   ],
   '8': [
     {'1': '_network'},
@@ -68,8 +69,10 @@ final $typed_data.Uint8List robotConfigDescriptor = $convert.base64Decode(
     'gBUgRhdXRoiAEBEhkKBWRlYnVnGAggASgISAJSBWRlYnVniAEBEjMKB21vZHVsZXMYCSADKAsy'
     'GS52aWFtLmFwcC52MS5Nb2R1bGVDb25maWdSB21vZHVsZXMSNwoVZGlzYWJsZV9wYXJ0aWFsX3'
     'N0YXJ0GAogASgISANSE2Rpc2FibGVQYXJ0aWFsU3RhcnSIAQESNgoIcGFja2FnZXMYCyADKAsy'
-    'Gi52aWFtLmFwcC52MS5QYWNrYWdlQ29uZmlnUghwYWNrYWdlc0IKCghfbmV0d29ya0IHCgVfYX'
-    'V0aEIICgZfZGVidWdCGAoWX2Rpc2FibGVfcGFydGlhbF9zdGFydA==');
+    'Gi52aWFtLmFwcC52MS5QYWNrYWdlQ29uZmlnUghwYWNrYWdlcxJcChlvdmVyd3JpdGVfZnJhZ2'
+    '1lbnRfc3RhdHVzGAwgAygLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IXb3Zl'
+    'cndyaXRlRnJhZ21lbnRTdGF0dXNCCgoIX25ldHdvcmtCBwoFX2F1dGhCCAoGX2RlYnVnQhgKFl'
+    '9kaXNhYmxlX3BhcnRpYWxfc3RhcnQ=');
 
 @$core.Deprecated('Use locationSecretDescriptor instead')
 const LocationSecret$json = {
