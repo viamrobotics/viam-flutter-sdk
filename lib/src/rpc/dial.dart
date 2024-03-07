@@ -120,10 +120,10 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
       // when determining if we want to use the external auth credentials for the signaling
       // in cases where the external signaling is the same as the external auth. For mdns
       // this isn't the case.
-      final dialOptsCopy = opts
-        .._usingMdns = true
-        ..authEntity = address;
-      return await _dialWebRtc(mdnsUri, dialOptsCopy, sessionCallback);
+      final dialOptsCopy = opts.._usingMdns = true;
+      dialOptsCopy.webRtcOptions ??= DialWebRtcOptions();
+      dialOptsCopy.webRtcOptions?.signalingServerAddress = mdnsUri;
+      return await _dialWebRtc(address, dialOptsCopy, sessionCallback);
     } on NotLocalAddressException catch (e) {
       _logger.d(e.toString());
     } catch (e) {
@@ -204,8 +204,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
   _logger.d('Connecting to signaling server: $signalingServer');
   final signalingChannel = await _dialDirectGrpc(signalingServer, options, sessionCallback);
   _logger.d('Connected to signaling server: $signalingServer');
-  final signalingClient = SignalingServiceClient(signalingChannel,
-      options: CallOptions(metadata: {'rpc-host': ((options._usingMdns) ? options.authEntity : address)!}));
+  final signalingClient = SignalingServiceClient(signalingChannel, options: CallOptions(metadata: {'rpc-host': address}));
   WebRTCConfig config;
   try {
     config = (await signalingClient.optionalWebRTCConfig(OptionalWebRTCConfigRequest())).config;
