@@ -1,11 +1,23 @@
 # Changelog
 
-## [v0.0.10](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.10) (2024-01-23)
+## [v0.0.11](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.11) (2024-03-08)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.9...v0.0.10)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.10...v0.0.11)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#183](https://github.com/viamrobotics/viam-flutter-sdk/pull/183) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[RSDK-6863\] webrtc message size [\#182](https://github.com/viamrobotics/viam-flutter-sdk/pull/182) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#181](https://github.com/viamrobotics/viam-flutter-sdk/pull/181) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-6392 - Upgrade Bonsoir [\#180](https://github.com/viamrobotics/viam-flutter-sdk/pull/180) ([clintpurser](https://github.com/clintpurser))
+- APP-3811 - Provisioning wrappers [\#179](https://github.com/viamrobotics/viam-flutter-sdk/pull/179) ([clintpurser](https://github.com/clintpurser))
+- RSDK-5953 - add getFragment wrapper [\#178](https://github.com/viamrobotics/viam-flutter-sdk/pull/178) ([clintpurser](https://github.com/clintpurser))
+- Automated Protos Update [\#177](https://github.com/viamrobotics/viam-flutter-sdk/pull/177) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-5953 - add newMachine wrapper [\#176](https://github.com/viamrobotics/viam-flutter-sdk/pull/176) ([clintpurser](https://github.com/clintpurser))
+- misc android changes [\#175](https://github.com/viamrobotics/viam-flutter-sdk/pull/175) ([clintpurser](https://github.com/clintpurser))
+- RSDK-6463: Add updateRobotPart [\#174](https://github.com/viamrobotics/viam-flutter-sdk/pull/174) ([mcvella](https://github.com/mcvella))
+- v0.0.10 [\#173](https://github.com/viamrobotics/viam-flutter-sdk/pull/173) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#172](https://github.com/viamrobotics/viam-flutter-sdk/pull/172) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-6122: getAccuracy [\#170](https://github.com/viamrobotics/viam-flutter-sdk/pull/170) ([susmitaSanyal](https://github.com/susmitaSanyal))
 - Automated Protos Update [\#169](https://github.com/viamrobotics/viam-flutter-sdk/pull/169) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-5424 - fix video stream on flutter web [\#168](https://github.com/viamrobotics/viam-flutter-sdk/pull/168) ([clintpurser](https://github.com/clintpurser))
@@ -73,6 +85,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.10](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.10) (2024-01-23)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.9...v0.0.10)
 
 ## [v0.0.9](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.9) (2023-12-12)
 
