@@ -65,6 +65,12 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
     _createTimer();
   }
 
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
   void _dismissKeyboard() {
     final currentFocus = FocusScope.of(context);
     if (!currentFocus.hasPrimaryFocus) {
