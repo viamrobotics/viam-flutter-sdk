@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:viam_sdk/viam_sdk.dart';
@@ -34,6 +36,9 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   final _pwmFreqFormKey = GlobalKey<FormState>();
   int pwmFrequency = 0;
 
+  Duration refreshInterval = const Duration(seconds: 1);
+  Timer? timer;
+
   BoardStatus status = const BoardStatus({}, {});
 
   Future<void> _fetchStatus() async {
@@ -43,10 +48,21 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
     });
   }
 
+  void refresh() {
+    _fetchStatus();
+  }
+
+  void _createTimer() {
+    timer = Timer.periodic(refreshInterval, (_) {
+      refresh();
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     _fetchStatus();
+    _createTimer();
   }
 
   void _dismissKeyboard() {
