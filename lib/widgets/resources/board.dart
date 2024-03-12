@@ -13,10 +13,12 @@ import '../button.dart';
 class ViamBoardWidget extends StatefulWidget {
   /// The [Board]
   final Board board;
+  final Duration refreshInterval;
 
   const ViamBoardWidget({
     super.key,
     required this.board,
+    this.refreshInterval = const Duration(seconds: 1),
   });
 
   @override
@@ -36,7 +38,6 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   final _pwmFreqFormKey = GlobalKey<FormState>();
   int pwmFrequency = 0;
 
-  Duration refreshInterval = const Duration(seconds: 1);
   Timer? timer;
 
   BoardStatus status = const BoardStatus({}, {});
@@ -53,7 +54,7 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   }
 
   void _createTimer() {
-    timer = Timer.periodic(refreshInterval, (_) {
+    timer = Timer.periodic(widget.refreshInterval, (_) {
       refresh();
     });
   }
