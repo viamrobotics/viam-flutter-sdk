@@ -298,6 +298,37 @@ final $typed_data.Uint8List getDigitalInterruptValueResponseDescriptor = $conver
     'CiBHZXREaWdpdGFsSW50ZXJydXB0VmFsdWVSZXNwb25zZRIUCgV2YWx1ZRgBIAEoA1IFdmFsdW'
     'U=');
 
+@$core.Deprecated('Use streamTicksRequestDescriptor instead')
+const StreamTicksRequest$json = {
+  '1': 'StreamTicksRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'pin_names', '3': 2, '4': 3, '5': 9, '10': 'pinNames'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `StreamTicksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamTicksRequestDescriptor = $convert.base64Decode(
+    'ChJTdHJlYW1UaWNrc1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIbCglwaW5fbmFtZXMYAi'
+    'ADKAlSCHBpbk5hbWVzEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIF'
+    'ZXh0cmE=');
+
+@$core.Deprecated('Use streamTicksResponseDescriptor instead')
+const StreamTicksResponse$json = {
+  '1': 'StreamTicksResponse',
+  '2': [
+    {'1': 'pin_name', '3': 1, '4': 1, '5': 9, '10': 'pinName'},
+    {'1': 'time', '3': 2, '4': 1, '5': 4, '10': 'time'},
+    {'1': 'high', '3': 3, '4': 1, '5': 8, '10': 'high'},
+  ],
+};
+
+/// Descriptor for `StreamTicksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamTicksResponseDescriptor = $convert.base64Decode(
+    'ChNTdHJlYW1UaWNrc1Jlc3BvbnNlEhkKCHBpbl9uYW1lGAEgASgJUgdwaW5OYW1lEhIKBHRpbW'
+    'UYAiABKARSBHRpbWUSEgoEaGlnaBgDIAEoCFIEaGlnaA==');
+
 @$core.Deprecated('Use setPowerModeRequestDescriptor instead')
 const SetPowerModeRequest$json = {
   '1': 'SetPowerModeRequest',

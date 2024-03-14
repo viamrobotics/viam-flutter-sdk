@@ -66,6 +66,10 @@ class BoardServiceClient extends $grpc.Client {
       '/viam.component.board.v1.BoardService/GetDigitalInterruptValue',
       ($0.GetDigitalInterruptValueRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetDigitalInterruptValueResponse.fromBuffer(value));
+  static final _$streamTicks = $grpc.ClientMethod<$0.StreamTicksRequest, $0.StreamTicksResponse>(
+      '/viam.component.board.v1.BoardService/StreamTicks',
+      ($0.StreamTicksRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.StreamTicksResponse.fromBuffer(value));
   static final _$setPowerMode = $grpc.ClientMethod<$0.SetPowerModeRequest, $0.SetPowerModeResponse>(
       '/viam.component.board.v1.BoardService/SetPowerMode',
       ($0.SetPowerModeRequest value) => value.writeToBuffer(),
@@ -123,6 +127,10 @@ class BoardServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetDigitalInterruptValueResponse> getDigitalInterruptValue($0.GetDigitalInterruptValueRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDigitalInterruptValue, request, options: options);
+  }
+
+  $grpc.ResponseStream<$0.StreamTicksResponse> streamTicks($0.StreamTicksRequest request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$streamTicks, $async.Stream.fromIterable([request]), options: options);
   }
 
   $grpc.ResponseFuture<$0.SetPowerModeResponse> setPowerMode($0.SetPowerModeRequest request, {$grpc.CallOptions? options}) {
@@ -216,6 +224,13 @@ abstract class BoardServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetDigitalInterruptValueRequest.fromBuffer(value),
         ($0.GetDigitalInterruptValueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StreamTicksRequest, $0.StreamTicksResponse>(
+        'StreamTicks',
+        streamTicks_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $0.StreamTicksRequest.fromBuffer(value),
+        ($0.StreamTicksResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SetPowerModeRequest, $0.SetPowerModeResponse>(
         'SetPowerMode',
         setPowerMode_Pre,
@@ -276,6 +291,10 @@ abstract class BoardServiceBase extends $grpc.Service {
     return getDigitalInterruptValue(call, await request);
   }
 
+  $async.Stream<$0.StreamTicksResponse> streamTicks_Pre($grpc.ServiceCall call, $async.Future<$0.StreamTicksRequest> request) async* {
+    yield* streamTicks(call, await request);
+  }
+
   $async.Future<$0.SetPowerModeResponse> setPowerMode_Pre($grpc.ServiceCall call, $async.Future<$0.SetPowerModeRequest> request) async {
     return setPowerMode(call, await request);
   }
@@ -295,6 +314,7 @@ abstract class BoardServiceBase extends $grpc.Service {
   $async.Future<$0.ReadAnalogReaderResponse> readAnalogReader($grpc.ServiceCall call, $0.ReadAnalogReaderRequest request);
   $async.Future<$0.WriteAnalogResponse> writeAnalog($grpc.ServiceCall call, $0.WriteAnalogRequest request);
   $async.Future<$0.GetDigitalInterruptValueResponse> getDigitalInterruptValue($grpc.ServiceCall call, $0.GetDigitalInterruptValueRequest request);
+  $async.Stream<$0.StreamTicksResponse> streamTicks($grpc.ServiceCall call, $0.StreamTicksRequest request);
   $async.Future<$0.SetPowerModeResponse> setPowerMode($grpc.ServiceCall call, $0.SetPowerModeRequest request);
   $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
 }

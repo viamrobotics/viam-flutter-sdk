@@ -323,6 +323,7 @@ class Publishing extends $pb.GeneratedMessage {
     ClientLibraryOrganization? organization,
     $core.Iterable<ClientLibrarySettings>? librarySettings,
     $core.String? protoReferenceDocumentationUri,
+    $core.String? restReferenceDocumentationUri,
   }) {
     final $result = create();
     if (methodSettings != null) {
@@ -355,6 +356,9 @@ class Publishing extends $pb.GeneratedMessage {
     if (protoReferenceDocumentationUri != null) {
       $result.protoReferenceDocumentationUri = protoReferenceDocumentationUri;
     }
+    if (restReferenceDocumentationUri != null) {
+      $result.restReferenceDocumentationUri = restReferenceDocumentationUri;
+    }
     return $result;
   }
   Publishing._() : super();
@@ -372,6 +376,7 @@ class Publishing extends $pb.GeneratedMessage {
     ..e<ClientLibraryOrganization>(107, _omitFieldNames ? '' : 'organization', $pb.PbFieldType.OE, defaultOrMaker: ClientLibraryOrganization.CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED, valueOf: ClientLibraryOrganization.valueOf, enumValues: ClientLibraryOrganization.values)
     ..pc<ClientLibrarySettings>(109, _omitFieldNames ? '' : 'librarySettings', $pb.PbFieldType.PM, subBuilder: ClientLibrarySettings.create)
     ..aOS(110, _omitFieldNames ? '' : 'protoReferenceDocumentationUri')
+    ..aOS(111, _omitFieldNames ? '' : 'restReferenceDocumentationUri')
     ..hasRequiredFields = false
   ;
 
@@ -487,6 +492,17 @@ class Publishing extends $pb.GeneratedMessage {
   $core.bool hasProtoReferenceDocumentationUri() => $_has(9);
   @$pb.TagNumber(110)
   void clearProtoReferenceDocumentationUri() => clearField(110);
+
+  /// Optional link to REST reference documentation.  Example:
+  /// https://cloud.google.com/pubsub/lite/docs/reference/rest
+  @$pb.TagNumber(111)
+  $core.String get restReferenceDocumentationUri => $_getSZ(10);
+  @$pb.TagNumber(111)
+  set restReferenceDocumentationUri($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(111)
+  $core.bool hasRestReferenceDocumentationUri() => $_has(10);
+  @$pb.TagNumber(111)
+  void clearRestReferenceDocumentationUri() => clearField(111);
 }
 
 /// Settings for Java client libraries.
@@ -1249,10 +1265,12 @@ class Client {
   static final methodSignature = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'google.protobuf.MethodOptions', _omitFieldNames ? '' : 'methodSignature', 1051, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final defaultHost = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.ServiceOptions', _omitFieldNames ? '' : 'defaultHost', 1049, $pb.PbFieldType.OS);
   static final oauthScopes = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.ServiceOptions', _omitFieldNames ? '' : 'oauthScopes', 1050, $pb.PbFieldType.OS);
+  static final apiVersion = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.ServiceOptions', _omitFieldNames ? '' : 'apiVersion', 525000001, $pb.PbFieldType.OS);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(methodSignature);
     registry.add(defaultHost);
     registry.add(oauthScopes);
+    registry.add(apiVersion);
   }
 }
 

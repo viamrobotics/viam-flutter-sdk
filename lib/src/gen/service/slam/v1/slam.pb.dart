@@ -158,10 +158,14 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 class GetPointCloudMapRequest extends $pb.GeneratedMessage {
   factory GetPointCloudMapRequest({
     $core.String? name,
+    $core.bool? returnEditedMap,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
+    }
+    if (returnEditedMap != null) {
+      $result.returnEditedMap = returnEditedMap;
     }
     return $result;
   }
@@ -171,6 +175,7 @@ class GetPointCloudMapRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudMapRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOB(2, _omitFieldNames ? '' : 'returnEditedMap')
     ..hasRequiredFields = false
   ;
 
@@ -204,6 +209,18 @@ class GetPointCloudMapRequest extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
+
+  /// For SLAM services that implement handling an edited map, this boolean
+  /// should indicate whether to return that edited map. If the SLAM service
+  /// does not handle edited maps, the unedited map will be returned instead.
+  @$pb.TagNumber(2)
+  $core.bool get returnEditedMap => $_getBF(1);
+  @$pb.TagNumber(2)
+  set returnEditedMap($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasReturnEditedMap() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReturnEditedMap() => clearField(2);
 }
 
 class GetPointCloudMapResponse extends $pb.GeneratedMessage {
@@ -433,6 +450,8 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   factory GetPropertiesResponse({
     $core.bool? cloudSlam,
     MappingMode? mappingMode,
+    $core.String? internalStateFileType,
+    $core.Iterable<SensorInfo>? sensorInfo,
   }) {
     final $result = create();
     if (cloudSlam != null) {
@@ -440,6 +459,12 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     }
     if (mappingMode != null) {
       $result.mappingMode = mappingMode;
+    }
+    if (internalStateFileType != null) {
+      $result.internalStateFileType = internalStateFileType;
+    }
+    if (sensorInfo != null) {
+      $result.sensorInfo.addAll(sensorInfo);
     }
     return $result;
   }
@@ -450,6 +475,8 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'cloudSlam')
     ..e<MappingMode>(2, _omitFieldNames ? '' : 'mappingMode', $pb.PbFieldType.OE, defaultOrMaker: MappingMode.MAPPING_MODE_UNSPECIFIED, valueOf: MappingMode.valueOf, enumValues: MappingMode.values)
+    ..aOS(3, _omitFieldNames ? '' : 'internalStateFileType')
+    ..pc<SensorInfo>(4, _omitFieldNames ? '' : 'sensorInfo', $pb.PbFieldType.PM, subBuilder: SensorInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -491,6 +518,82 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   $core.bool hasMappingMode() => $_has(1);
   @$pb.TagNumber(2)
   void clearMappingMode() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get internalStateFileType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set internalStateFileType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasInternalStateFileType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInternalStateFileType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<SensorInfo> get sensorInfo => $_getList(3);
+}
+
+class SensorInfo extends $pb.GeneratedMessage {
+  factory SensorInfo({
+    $core.String? name,
+    SensorType? type,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
+  SensorInfo._() : super();
+  factory SensorInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SensorInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SensorInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..e<SensorType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: SensorType.SENSOR_TYPE_UNSPECIFIED, valueOf: SensorType.valueOf, enumValues: SensorType.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SensorInfo clone() => SensorInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SensorInfo copyWith(void Function(SensorInfo) updates) => super.copyWith((message) => updates(message as SensorInfo)) as SensorInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SensorInfo create() => SensorInfo._();
+  SensorInfo createEmptyInstance() => create();
+  static $pb.PbList<SensorInfo> createRepeated() => $pb.PbList<SensorInfo>();
+  @$core.pragma('dart2js:noInline')
+  static SensorInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SensorInfo>(create);
+  static SensorInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  SensorType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(SensorType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
 }
 
 
