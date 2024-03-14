@@ -13,6 +13,9 @@ import '../button.dart';
 class ViamBoardWidget extends StatefulWidget {
   /// The [Board]
   final Board board;
+
+  /// The refresh interval
+  /// This field determines how frequently the user wants to auto refresh the board's status readings.
   final Duration refreshInterval;
 
   const ViamBoardWidget({
