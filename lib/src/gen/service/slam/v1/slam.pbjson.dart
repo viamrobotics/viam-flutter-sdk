@@ -30,6 +30,21 @@ final $typed_data.Uint8List mappingModeDescriptor = $convert.base64Decode(
     '1PREVfQ1JFQVRFX05FV19NQVAQARIeChpNQVBQSU5HX01PREVfTE9DQUxJWkVfT05MWRACEiQK'
     'IE1BUFBJTkdfTU9ERV9VUERBVEVfRVhJU1RJTkdfTUFQEAM=');
 
+@$core.Deprecated('Use sensorTypeDescriptor instead')
+const SensorType$json = {
+  '1': 'SensorType',
+  '2': [
+    {'1': 'SENSOR_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'SENSOR_TYPE_CAMERA', '2': 1},
+    {'1': 'SENSOR_TYPE_MOVEMENT_SENSOR', '2': 2},
+  ],
+};
+
+/// Descriptor for `SensorType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List sensorTypeDescriptor = $convert.base64Decode(
+    'CgpTZW5zb3JUeXBlEhsKF1NFTlNPUl9UWVBFX1VOU1BFQ0lGSUVEEAASFgoSU0VOU09SX1RZUE'
+    'VfQ0FNRVJBEAESHwobU0VOU09SX1RZUEVfTU9WRU1FTlRfU0VOU09SEAI=');
+
 @$core.Deprecated('Use getPositionRequestDescriptor instead')
 const GetPositionRequest$json = {
   '1': 'GetPositionRequest',
@@ -63,12 +78,18 @@ const GetPointCloudMapRequest$json = {
   '1': 'GetPointCloudMapRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'return_edited_map', '3': 2, '4': 1, '5': 8, '9': 0, '10': 'returnEditedMap', '17': true},
+  ],
+  '8': [
+    {'1': '_return_edited_map'},
   ],
 };
 
 /// Descriptor for `GetPointCloudMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPointCloudMapRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRQb2ludENsb3VkTWFwUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+    'ChdHZXRQb2ludENsb3VkTWFwUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi8KEXJldHVybl'
+    '9lZGl0ZWRfbWFwGAIgASgISABSD3JldHVybkVkaXRlZE1hcIgBAUIUChJfcmV0dXJuX2VkaXRl'
+    'ZF9tYXA=');
 
 @$core.Deprecated('Use getPointCloudMapResponseDescriptor instead')
 const GetPointCloudMapResponse$json = {
@@ -126,6 +147,11 @@ const GetPropertiesResponse$json = {
   '2': [
     {'1': 'cloud_slam', '3': 1, '4': 1, '5': 8, '10': 'cloudSlam'},
     {'1': 'mapping_mode', '3': 2, '4': 1, '5': 14, '6': '.viam.service.slam.v1.MappingMode', '10': 'mappingMode'},
+    {'1': 'internal_state_file_type', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'internalStateFileType', '17': true},
+    {'1': 'sensor_info', '3': 4, '4': 3, '5': 11, '6': '.viam.service.slam.v1.SensorInfo', '10': 'sensorInfo'},
+  ],
+  '8': [
+    {'1': '_internal_state_file_type'},
   ],
 };
 
@@ -133,5 +159,22 @@ const GetPropertiesResponse$json = {
 final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
     'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USHQoKY2xvdWRfc2xhbRgBIAEoCFIJY2xvdWRTbGFtEk'
     'QKDG1hcHBpbmdfbW9kZRgCIAEoDjIhLnZpYW0uc2VydmljZS5zbGFtLnYxLk1hcHBpbmdNb2Rl'
-    'UgttYXBwaW5nTW9kZQ==');
+    'UgttYXBwaW5nTW9kZRI8ChhpbnRlcm5hbF9zdGF0ZV9maWxlX3R5cGUYAyABKAlIAFIVaW50ZX'
+    'JuYWxTdGF0ZUZpbGVUeXBliAEBEkEKC3NlbnNvcl9pbmZvGAQgAygLMiAudmlhbS5zZXJ2aWNl'
+    'LnNsYW0udjEuU2Vuc29ySW5mb1IKc2Vuc29ySW5mb0IbChlfaW50ZXJuYWxfc3RhdGVfZmlsZV'
+    '90eXBl');
+
+@$core.Deprecated('Use sensorInfoDescriptor instead')
+const SensorInfo$json = {
+  '1': 'SensorInfo',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.viam.service.slam.v1.SensorType', '10': 'type'},
+  ],
+};
+
+/// Descriptor for `SensorInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sensorInfoDescriptor = $convert.base64Decode(
+    'CgpTZW5zb3JJbmZvEhIKBG5hbWUYASABKAlSBG5hbWUSNAoEdHlwZRgCIAEoDjIgLnZpYW0uc2'
+    'VydmljZS5zbGFtLnYxLlNlbnNvclR5cGVSBHR5cGU=');
 

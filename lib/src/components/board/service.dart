@@ -110,4 +110,10 @@ class BoardService extends BoardServiceBase {
     await board.writeAnalog(request.pin, request.value, extra: request.extra.toMap());
     return WriteAnalogResponse();
   }
+
+  @override
+  Stream<StreamTicksResponse> streamTicks(ServiceCall call, StreamTicksRequest request) {
+    // TODO: implement streamTicks
+    throw UnimplementedError();
+  }
 }

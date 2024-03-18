@@ -118,6 +118,7 @@ const Publishing$json = {
     {'1': 'organization', '3': 107, '4': 1, '5': 14, '6': '.google.api.ClientLibraryOrganization', '10': 'organization'},
     {'1': 'library_settings', '3': 109, '4': 3, '5': 11, '6': '.google.api.ClientLibrarySettings', '10': 'librarySettings'},
     {'1': 'proto_reference_documentation_uri', '3': 110, '4': 1, '5': 9, '10': 'protoReferenceDocumentationUri'},
+    {'1': 'rest_reference_documentation_uri', '3': 111, '4': 1, '5': 9, '10': 'restReferenceDocumentationUri'},
   ],
 };
 
@@ -132,7 +133,9 @@ final $typed_data.Uint8List publishingDescriptor = $convert.base64Decode(
     'Z2FuaXphdGlvbhhrIAEoDjIlLmdvb2dsZS5hcGkuQ2xpZW50TGlicmFyeU9yZ2FuaXphdGlvbl'
     'IMb3JnYW5pemF0aW9uEkwKEGxpYnJhcnlfc2V0dGluZ3MYbSADKAsyIS5nb29nbGUuYXBpLkNs'
     'aWVudExpYnJhcnlTZXR0aW5nc1IPbGlicmFyeVNldHRpbmdzEkkKIXByb3RvX3JlZmVyZW5jZV'
-    '9kb2N1bWVudGF0aW9uX3VyaRhuIAEoCVIecHJvdG9SZWZlcmVuY2VEb2N1bWVudGF0aW9uVXJp');
+    '9kb2N1bWVudGF0aW9uX3VyaRhuIAEoCVIecHJvdG9SZWZlcmVuY2VEb2N1bWVudGF0aW9uVXJp'
+    'EkcKIHJlc3RfcmVmZXJlbmNlX2RvY3VtZW50YXRpb25fdXJpGG8gASgJUh1yZXN0UmVmZXJlbm'
+    'NlRG9jdW1lbnRhdGlvblVyaQ==');
 
 @$core.Deprecated('Use javaSettingsDescriptor instead')
 const JavaSettings$json = {

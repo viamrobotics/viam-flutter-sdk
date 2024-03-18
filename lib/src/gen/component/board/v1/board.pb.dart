@@ -1303,6 +1303,164 @@ class GetDigitalInterruptValueResponse extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+class StreamTicksRequest extends $pb.GeneratedMessage {
+  factory StreamTicksRequest({
+    $core.String? name,
+    $core.Iterable<$core.String>? pinNames,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pinNames != null) {
+      $result.pinNames.addAll(pinNames);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  StreamTicksRequest._() : super();
+  factory StreamTicksRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamTicksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamTicksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pPS(2, _omitFieldNames ? '' : 'pinNames')
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamTicksRequest clone() => StreamTicksRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamTicksRequest copyWith(void Function(StreamTicksRequest) updates) => super.copyWith((message) => updates(message as StreamTicksRequest)) as StreamTicksRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamTicksRequest create() => StreamTicksRequest._();
+  StreamTicksRequest createEmptyInstance() => create();
+  static $pb.PbList<StreamTicksRequest> createRepeated() => $pb.PbList<StreamTicksRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StreamTicksRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamTicksRequest>(create);
+  static StreamTicksRequest? _defaultInstance;
+
+  /// Board name
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Name of digital interrupts to recieve ticks from
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get pinNames => $_getList(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(2);
+}
+
+class StreamTicksResponse extends $pb.GeneratedMessage {
+  factory StreamTicksResponse({
+    $core.String? pinName,
+    $fixnum.Int64? time,
+    $core.bool? high,
+  }) {
+    final $result = create();
+    if (pinName != null) {
+      $result.pinName = pinName;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (high != null) {
+      $result.high = high;
+    }
+    return $result;
+  }
+  StreamTicksResponse._() : super();
+  factory StreamTicksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StreamTicksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamTicksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pinName')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'time', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOB(3, _omitFieldNames ? '' : 'high')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StreamTicksResponse clone() => StreamTicksResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StreamTicksResponse copyWith(void Function(StreamTicksResponse) updates) => super.copyWith((message) => updates(message as StreamTicksResponse)) as StreamTicksResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamTicksResponse create() => StreamTicksResponse._();
+  StreamTicksResponse createEmptyInstance() => create();
+  static $pb.PbList<StreamTicksResponse> createRepeated() => $pb.PbList<StreamTicksResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StreamTicksResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamTicksResponse>(create);
+  static StreamTicksResponse? _defaultInstance;
+
+  /// name of interrupt
+  @$pb.TagNumber(1)
+  $core.String get pinName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pinName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPinName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPinName() => clearField(1);
+
+  /// Time in nanoseconds of a tick
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get time => $_getI64(1);
+  @$pb.TagNumber(2)
+  set time($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTime() => clearField(2);
+
+  /// Value high or low of the tick
+  @$pb.TagNumber(3)
+  $core.bool get high => $_getBF(2);
+  @$pb.TagNumber(3)
+  set high($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHigh() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHigh() => clearField(3);
+}
+
 class SetPowerModeRequest extends $pb.GeneratedMessage {
   factory SetPowerModeRequest({
     $core.String? name,

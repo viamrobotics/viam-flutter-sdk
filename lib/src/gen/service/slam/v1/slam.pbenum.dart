@@ -35,5 +35,22 @@ class MappingMode extends $pb.ProtobufEnum {
   const MappingMode._($core.int v, $core.String n) : super(v, n);
 }
 
+class SensorType extends $pb.ProtobufEnum {
+  static const SensorType SENSOR_TYPE_UNSPECIFIED = SensorType._(0, _omitEnumNames ? '' : 'SENSOR_TYPE_UNSPECIFIED');
+  static const SensorType SENSOR_TYPE_CAMERA = SensorType._(1, _omitEnumNames ? '' : 'SENSOR_TYPE_CAMERA');
+  static const SensorType SENSOR_TYPE_MOVEMENT_SENSOR = SensorType._(2, _omitEnumNames ? '' : 'SENSOR_TYPE_MOVEMENT_SENSOR');
+
+  static const $core.List<SensorType> values = <SensorType> [
+    SENSOR_TYPE_UNSPECIFIED,
+    SENSOR_TYPE_CAMERA,
+    SENSOR_TYPE_MOVEMENT_SENSOR,
+  ];
+
+  static final $core.Map<$core.int, SensorType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SensorType? valueOf($core.int value) => _byValue[value];
+
+  const SensorType._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
