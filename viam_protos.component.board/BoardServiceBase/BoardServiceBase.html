@@ -149,6 +149,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.GetDigitalInterruptValueRequest.fromBuffer(value),
       ($0.GetDigitalInterruptValueResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.StreamTicksRequest, $0.StreamTicksResponse&gt;(
+      &#39;StreamTicks&#39;,
+      streamTicks_Pre,
+      false,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.StreamTicksRequest.fromBuffer(value),
+      ($0.StreamTicksResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$0.SetPowerModeRequest, $0.SetPowerModeResponse&gt;(
       &#39;SetPowerMode&#39;,
       setPowerMode_Pre,

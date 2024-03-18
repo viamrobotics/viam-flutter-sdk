@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="GetPointCloudMapRequest" class="callable">
-          <span class="name"><a href="../viam_protos.service.slam/GetPointCloudMapRequest/GetPointCloudMapRequest.html">GetPointCloudMapRequest</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.service.slam/GetPointCloudMapRequest/GetPointCloudMapRequest.html">GetPointCloudMapRequest</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-returnEditedMap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">returnEditedMap</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -175,6 +175,19 @@ to protobuf fields.
 </dt>
 <dd>
   Name of slam service
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="returnEditedMap" class="property">
+  <span class="name"><a href="../viam_protos.service.slam/GetPointCloudMapRequest/returnEditedMap.html">returnEditedMap</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  For SLAM services that implement handling an edited map, this boolean
+should indicate whether to return that edited map. If the SLAM service
+does not handle edited maps, the unedited map will be returned instead.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -277,6 +290,19 @@ to protobuf fields.
 
         <dt id="clearName" class="callable">
   <span class="name"><a href="../viam_protos.service.slam/GetPointCloudMapRequest/clearName.html">clearName</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearReturnEditedMap" class="callable">
+  <span class="name"><a href="../viam_protos.service.slam/GetPointCloudMapRequest/clearReturnEditedMap.html">clearReturnEditedMap</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -495,6 +521,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasReturnEditedMap" class="callable">
+  <span class="name"><a href="../viam_protos.service.slam/GetPointCloudMapRequest/hasReturnEditedMap.html">hasReturnEditedMap</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
