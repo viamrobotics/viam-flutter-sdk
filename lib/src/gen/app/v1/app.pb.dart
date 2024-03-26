@@ -1510,6 +1510,7 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
     $core.String? organizationId,
     $core.String? email,
     $core.Iterable<Authorization>? authorizations,
+    $core.bool? sendEmailInvite,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1521,6 +1522,9 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
     if (authorizations != null) {
       $result.authorizations.addAll(authorizations);
     }
+    if (sendEmailInvite != null) {
+      $result.sendEmailInvite = sendEmailInvite;
+    }
     return $result;
   }
   CreateOrganizationInviteRequest._() : super();
@@ -1531,6 +1535,7 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..pc<Authorization>(3, _omitFieldNames ? '' : 'authorizations', $pb.PbFieldType.PM, subBuilder: Authorization.create)
+    ..aOB(4, _omitFieldNames ? '' : 'sendEmailInvite')
     ..hasRequiredFields = false
   ;
 
@@ -1575,6 +1580,17 @@ class CreateOrganizationInviteRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<Authorization> get authorizations => $_getList(2);
+
+  /// Set to true (the default) to send an email to the recipient of an invite. The user must accept the email to be added to the associated authorizations.
+  /// When set to false, the user automatically receives the associated authorization on the next login of the user with the associated email address.
+  @$pb.TagNumber(4)
+  $core.bool get sendEmailInvite => $_getBF(3);
+  @$pb.TagNumber(4)
+  set sendEmailInvite($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSendEmailInvite() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSendEmailInvite() => clearField(4);
 }
 
 class CreateOrganizationInviteResponse extends $pb.GeneratedMessage {

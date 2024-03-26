@@ -113,12 +113,14 @@ const ReadyRequest$json = {
   '1': 'ReadyRequest',
   '2': [
     {'1': 'parent_address', '3': 1, '4': 1, '5': 9, '10': 'parentAddress'},
+    {'1': 'webrtc_offer', '3': 2, '4': 1, '5': 9, '10': 'webrtcOffer'},
   ],
 };
 
 /// Descriptor for `ReadyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List readyRequestDescriptor = $convert.base64Decode(
-    'CgxSZWFkeVJlcXVlc3QSJQoOcGFyZW50X2FkZHJlc3MYASABKAlSDXBhcmVudEFkZHJlc3M=');
+    'CgxSZWFkeVJlcXVlc3QSJQoOcGFyZW50X2FkZHJlc3MYASABKAlSDXBhcmVudEFkZHJlc3MSIQ'
+    'oMd2VicnRjX29mZmVyGAIgASgJUgt3ZWJydGNPZmZlcg==');
 
 @$core.Deprecated('Use readyResponseDescriptor instead')
 const ReadyResponse$json = {
@@ -126,13 +128,15 @@ const ReadyResponse$json = {
   '2': [
     {'1': 'ready', '3': 1, '4': 1, '5': 8, '10': 'ready'},
     {'1': 'handlermap', '3': 2, '4': 1, '5': 11, '6': '.viam.module.v1.HandlerMap', '10': 'handlermap'},
+    {'1': 'webrtc_answer', '3': 3, '4': 1, '5': 9, '10': 'webrtcAnswer'},
   ],
 };
 
 /// Descriptor for `ReadyResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List readyResponseDescriptor = $convert.base64Decode(
     'Cg1SZWFkeVJlc3BvbnNlEhQKBXJlYWR5GAEgASgIUgVyZWFkeRI6CgpoYW5kbGVybWFwGAIgAS'
-    'gLMhoudmlhbS5tb2R1bGUudjEuSGFuZGxlck1hcFIKaGFuZGxlcm1hcA==');
+    'gLMhoudmlhbS5tb2R1bGUudjEuSGFuZGxlck1hcFIKaGFuZGxlcm1hcBIjCg13ZWJydGNfYW5z'
+    'd2VyGAMgASgJUgx3ZWJydGNBbnN3ZXI=');
 
 @$core.Deprecated('Use validateConfigRequestDescriptor instead')
 const ValidateConfigRequest$json = {
