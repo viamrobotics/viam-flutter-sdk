@@ -41,8 +41,9 @@ const StartMappingSessionRequest$json = {
     {'1': 'robot_id', '3': 6, '4': 1, '5': 9, '10': 'robotId'},
     {'1': 'capture_interval', '3': 7, '4': 1, '5': 11, '6': '.viam.app.cloudslam.v1.CaptureInterval', '10': 'captureInterval'},
     {'1': 'sensors', '3': 8, '4': 3, '5': 11, '6': '.viam.app.cloudslam.v1.SensorInfo', '10': 'sensors'},
-    {'1': 'slam_algorithm_params', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'slamAlgorithmParams'},
+    {'1': 'slam_config', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'slamConfig'},
     {'1': 'existing_map_version', '3': 11, '4': 1, '5': 9, '10': 'existingMapVersion'},
+    {'1': 'module', '3': 12, '4': 1, '5': 11, '6': '.viam.app.cloudslam.v1.Module', '10': 'module'},
   ],
 };
 
@@ -54,10 +55,25 @@ final $typed_data.Uint8List startMappingSessionRequestDescriptor = $convert.base
     'JnYW5pemF0aW9uSWQSHwoLbG9jYXRpb25faWQYBSABKAlSCmxvY2F0aW9uSWQSGQoIcm9ib3Rf'
     'aWQYBiABKAlSB3JvYm90SWQSUQoQY2FwdHVyZV9pbnRlcnZhbBgHIAEoCzImLnZpYW0uYXBwLm'
     'Nsb3Vkc2xhbS52MS5DYXB0dXJlSW50ZXJ2YWxSD2NhcHR1cmVJbnRlcnZhbBI7CgdzZW5zb3Jz'
-    'GAggAygLMiEudmlhbS5hcHAuY2xvdWRzbGFtLnYxLlNlbnNvckluZm9SB3NlbnNvcnMSSwoVc2'
-    'xhbV9hbGdvcml0aG1fcGFyYW1zGAogASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFITc2xh'
-    'bUFsZ29yaXRobVBhcmFtcxIwChRleGlzdGluZ19tYXBfdmVyc2lvbhgLIAEoCVISZXhpc3Rpbm'
-    'dNYXBWZXJzaW9u');
+    'GAggAygLMiEudmlhbS5hcHAuY2xvdWRzbGFtLnYxLlNlbnNvckluZm9SB3NlbnNvcnMSOAoLc2'
+    'xhbV9jb25maWcYCiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgpzbGFtQ29uZmlnEjAK'
+    'FGV4aXN0aW5nX21hcF92ZXJzaW9uGAsgASgJUhJleGlzdGluZ01hcFZlcnNpb24SNQoGbW9kdW'
+    'xlGAwgASgLMh0udmlhbS5hcHAuY2xvdWRzbGFtLnYxLk1vZHVsZVIGbW9kdWxl');
+
+@$core.Deprecated('Use moduleDescriptor instead')
+const Module$json = {
+  '1': 'Module',
+  '2': [
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'module_id', '3': 3, '4': 1, '5': 9, '10': 'moduleId'},
+    {'1': 'version', '3': 4, '4': 1, '5': 9, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `Module`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleDescriptor = $convert.base64Decode(
+    'CgZNb2R1bGUSEgoEbmFtZRgCIAEoCVIEbmFtZRIbCgltb2R1bGVfaWQYAyABKAlSCG1vZHVsZU'
+    'lkEhgKB3ZlcnNpb24YBCABKAlSB3ZlcnNpb24=');
 
 @$core.Deprecated('Use sensorInfoDescriptor instead')
 const SensorInfo$json = {

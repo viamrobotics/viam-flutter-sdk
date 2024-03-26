@@ -30,8 +30,9 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     $core.String? robotId,
     CaptureInterval? captureInterval,
     $core.Iterable<SensorInfo>? sensors,
-    $1.Struct? slamAlgorithmParams,
+    $1.Struct? slamConfig,
     $core.String? existingMapVersion,
+    Module? module,
   }) {
     final $result = create();
     if (slamVersion != null) {
@@ -58,11 +59,14 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     if (sensors != null) {
       $result.sensors.addAll(sensors);
     }
-    if (slamAlgorithmParams != null) {
-      $result.slamAlgorithmParams = slamAlgorithmParams;
+    if (slamConfig != null) {
+      $result.slamConfig = slamConfig;
     }
     if (existingMapVersion != null) {
       $result.existingMapVersion = existingMapVersion;
+    }
+    if (module != null) {
+      $result.module = module;
     }
     return $result;
   }
@@ -79,8 +83,9 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'robotId')
     ..aOM<CaptureInterval>(7, _omitFieldNames ? '' : 'captureInterval', subBuilder: CaptureInterval.create)
     ..pc<SensorInfo>(8, _omitFieldNames ? '' : 'sensors', $pb.PbFieldType.PM, subBuilder: SensorInfo.create)
-    ..aOM<$1.Struct>(10, _omitFieldNames ? '' : 'slamAlgorithmParams', subBuilder: $1.Struct.create)
+    ..aOM<$1.Struct>(10, _omitFieldNames ? '' : 'slamConfig', subBuilder: $1.Struct.create)
     ..aOS(11, _omitFieldNames ? '' : 'existingMapVersion')
+    ..aOM<Module>(12, _omitFieldNames ? '' : 'module', subBuilder: Module.create)
     ..hasRequiredFields = false
   ;
 
@@ -176,15 +181,15 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   $core.List<SensorInfo> get sensors => $_getList(7);
 
   @$pb.TagNumber(10)
-  $1.Struct get slamAlgorithmParams => $_getN(8);
+  $1.Struct get slamConfig => $_getN(8);
   @$pb.TagNumber(10)
-  set slamAlgorithmParams($1.Struct v) { setField(10, v); }
+  set slamConfig($1.Struct v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasSlamAlgorithmParams() => $_has(8);
+  $core.bool hasSlamConfig() => $_has(8);
   @$pb.TagNumber(10)
-  void clearSlamAlgorithmParams() => clearField(10);
+  void clearSlamConfig() => clearField(10);
   @$pb.TagNumber(10)
-  $1.Struct ensureSlamAlgorithmParams() => $_ensure(8);
+  $1.Struct ensureSlamConfig() => $_ensure(8);
 
   @$pb.TagNumber(11)
   $core.String get existingMapVersion => $_getSZ(9);
@@ -194,6 +199,95 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasExistingMapVersion() => $_has(9);
   @$pb.TagNumber(11)
   void clearExistingMapVersion() => clearField(11);
+
+  @$pb.TagNumber(12)
+  Module get module => $_getN(10);
+  @$pb.TagNumber(12)
+  set module(Module v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasModule() => $_has(10);
+  @$pb.TagNumber(12)
+  void clearModule() => clearField(12);
+  @$pb.TagNumber(12)
+  Module ensureModule() => $_ensure(10);
+}
+
+class Module extends $pb.GeneratedMessage {
+  factory Module({
+    $core.String? name,
+    $core.String? moduleId,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
+  Module._() : super();
+  factory Module.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Module.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Module', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(4, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Module clone() => Module()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Module copyWith(void Function(Module) updates) => super.copyWith((message) => updates(message as Module)) as Module;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Module create() => Module._();
+  Module createEmptyInstance() => create();
+  static $pb.PbList<Module> createRepeated() => $pb.PbList<Module>();
+  @$core.pragma('dart2js:noInline')
+  static Module getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Module>(create);
+  static Module? _defaultInstance;
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get moduleId => $_getSZ(1);
+  @$pb.TagNumber(3)
+  set moduleId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasModuleId() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearModuleId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get version => $_getSZ(2);
+  @$pb.TagNumber(4)
+  set version($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasVersion() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearVersion() => clearField(4);
 }
 
 class SensorInfo extends $pb.GeneratedMessage {
