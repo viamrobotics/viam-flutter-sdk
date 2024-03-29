@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:fixnum/fixnum.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
@@ -24,6 +26,15 @@ class BoardStatus {
     digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = common.DigitalInterruptStatus()..value = Int64(value));
     return pbBoardStatus;
   }
+}
+
+/// Tick of a digital interrupt
+class Tick {
+  String pinName;
+  bool high;
+  Int64 time;
+
+  Tick({required this.pinName, required this.high, required this.time});
 }
 
 /// Board represents a physical general purpose compute board that contains various
@@ -57,6 +68,9 @@ abstract class Board extends Resource {
 
   /// Return the current value of the interrupt which is based on the type of Interrupt.
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
+
+  // Stream digital interrupts ticks.
+  Future<void> streamTicks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra});
 
   /// Set the board to the indicated power mode.
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});

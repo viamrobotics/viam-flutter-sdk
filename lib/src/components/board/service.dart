@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 
@@ -112,8 +114,18 @@ class BoardService extends BoardServiceBase {
   }
 
   @override
-  Stream<StreamTicksResponse> streamTicks(ServiceCall call, StreamTicksRequest request) {
-    // TODO: implement streamTicks
-    throw UnimplementedError();
+  Stream<StreamTicksResponse> streamTicks(ServiceCall call, StreamTicksRequest request) async* {
+    final board = _fromManager(request.name);
+
+    final ticks = Queue<Tick>();
+    await board.streamTicks(request.pinNames, ticks, extra: request.extra.toMap());
+
+    while (true) {
+      if (ticks.isNotEmpty) {
+        final tick = ticks.first;
+        ticks.removeFirst();
+        yield StreamTicksResponse(pinName: tick.pinName, high: tick.high, time: tick.time);
+      }
+    }
   }
 }

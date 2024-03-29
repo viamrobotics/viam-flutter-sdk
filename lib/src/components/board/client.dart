@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
@@ -119,6 +121,9 @@ class BoardClient extends Board implements ResourceRPCClient {
     final response = await client.getDigitalInterruptValue(request);
     return response.value.toInt();
   }
+
+  @override
+  Future<void> streamTicks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {}
 
   @override
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra}) async {

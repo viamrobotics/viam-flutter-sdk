@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
@@ -16,6 +18,7 @@ class FakeBoard extends Board {
   final Map<String, int> analogMap = {'pin': 0};
   final BoardStatus boardStatus = const BoardStatus({'1': 0}, {'1': 0});
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
+  final Map<String, Queue<Tick>> tickCallbackMap = {};
   Map<String, dynamic>? extra;
 
   @override
@@ -94,6 +97,18 @@ class FakeBoard extends Board {
     this.extra = extra;
     analogMap[pin] = value;
   }
+
+  @override
+  Future<void> streamTicks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {
+    for (final i in interrupts) {
+      tickCallbackMap[i] = tickQueue;
+    }
+  }
+
+  Future<void> tick(String interrupt, Tick tick) async {
+    var queue = tickCallbackMap[interrupt];
+    queue?.add(tick);
+  }
 }
 
 void main() {
@@ -113,6 +128,13 @@ void main() {
     test('digitalInterruptValue', () async {
       const expected = 0;
       expect(await board.digitalInterruptValue('1'), expected);
+    });
+
+    test('streamTicks', () async {
+      final tickQueue = Queue<Tick>();
+      final interrupts = ['1'];
+      await board.streamTicks(interrupts, tickQueue);
+      expect(board.tickCallbackMap['1'], tickQueue);
     });
 
     test('gpio', () async {
@@ -221,6 +243,22 @@ void main() {
           ..boardName = name
           ..digitalInterruptName = '1');
         expect(response.value.toInt(), expected);
+      });
+
+      test('streamTicks', () async {
+        final client = BoardServiceClient(channel);
+
+        final stream = await client.streamTicks(StreamTicksRequest()
+          ..name = name
+          ..pinNames.add('1'));
+
+        await tick('1', Tick(pinName: '1', high: true, time: Int64(1000)));
+
+        await for (final tick in stream) {
+          expect(tick.pinName, '1');
+          expect(tick.high, true);
+          expect(tick.time, Int64(1000));
+        }
       });
 
       test('gpio', () async {
