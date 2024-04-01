@@ -2186,6 +2186,8 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
     $core.String? robotPartId,
     $core.String? primaryOrgId,
     $core.String? locationId,
+    $core.String? machineId,
+    $core.String? machinePartId,
   }) {
     final $result = create();
     if (robotPartId != null) {
@@ -2197,6 +2199,12 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
     if (locationId != null) {
       $result.locationId = locationId;
     }
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    if (machinePartId != null) {
+      $result.machinePartId = machinePartId;
+    }
     return $result;
   }
   GetCloudMetadataResponse._() : super();
@@ -2207,6 +2215,8 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'robotPartId')
     ..aOS(2, _omitFieldNames ? '' : 'primaryOrgId')
     ..aOS(3, _omitFieldNames ? '' : 'locationId')
+    ..aOS(4, _omitFieldNames ? '' : 'machineId')
+    ..aOS(5, _omitFieldNames ? '' : 'machinePartId')
     ..hasRequiredFields = false
   ;
 
@@ -2257,6 +2267,24 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   $core.bool hasLocationId() => $_has(2);
   @$pb.TagNumber(3)
   void clearLocationId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get machineId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set machineId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMachineId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMachineId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get machinePartId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set machinePartId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMachinePartId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMachinePartId() => clearField(5);
 }
 
 

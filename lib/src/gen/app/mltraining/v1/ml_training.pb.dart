@@ -404,6 +404,12 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $2.Status? errorStatus,
     $1.Timestamp? trainingStarted,
     $1.Timestamp? trainingEnded,
+    $core.String? datasetId,
+    $core.String? organizationId,
+    $core.String? modelName,
+    $core.String? modelVersion,
+    ModelType? modelType,
+    $core.Iterable<$core.String>? tags,
   }) {
     final $result = create();
     if (request != null) {
@@ -433,6 +439,24 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (trainingEnded != null) {
       $result.trainingEnded = trainingEnded;
     }
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (modelVersion != null) {
+      $result.modelVersion = modelVersion;
+    }
+    if (modelType != null) {
+      $result.modelType = modelType;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -449,6 +473,12 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOM<$2.Status>(8, _omitFieldNames ? '' : 'errorStatus', subBuilder: $2.Status.create)
     ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'trainingStarted', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'trainingEnded', subBuilder: $1.Timestamp.create)
+    ..aOS(11, _omitFieldNames ? '' : 'datasetId')
+    ..aOS(12, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(13, _omitFieldNames ? '' : 'modelName')
+    ..aOS(14, _omitFieldNames ? '' : 'modelVersion')
+    ..e<ModelType>(15, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: ModelType.valueOf, enumValues: ModelType.values)
+    ..pPS(16, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
@@ -565,6 +595,54 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   void clearTrainingEnded() => clearField(10);
   @$pb.TagNumber(10)
   $1.Timestamp ensureTrainingEnded() => $_ensure(8);
+
+  @$pb.TagNumber(11)
+  $core.String get datasetId => $_getSZ(9);
+  @$pb.TagNumber(11)
+  set datasetId($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasDatasetId() => $_has(9);
+  @$pb.TagNumber(11)
+  void clearDatasetId() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get organizationId => $_getSZ(10);
+  @$pb.TagNumber(12)
+  set organizationId($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasOrganizationId() => $_has(10);
+  @$pb.TagNumber(12)
+  void clearOrganizationId() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get modelName => $_getSZ(11);
+  @$pb.TagNumber(13)
+  set modelName($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasModelName() => $_has(11);
+  @$pb.TagNumber(13)
+  void clearModelName() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get modelVersion => $_getSZ(12);
+  @$pb.TagNumber(14)
+  set modelVersion($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasModelVersion() => $_has(12);
+  @$pb.TagNumber(14)
+  void clearModelVersion() => clearField(14);
+
+  @$pb.TagNumber(15)
+  ModelType get modelType => $_getN(13);
+  @$pb.TagNumber(15)
+  set modelType(ModelType v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasModelType() => $_has(13);
+  @$pb.TagNumber(15)
+  void clearModelType() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.List<$core.String> get tags => $_getList(14);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {

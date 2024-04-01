@@ -319,6 +319,7 @@ class CloudConfig extends $pb.GeneratedMessage {
     $core.Iterable<LocationSecret>? locationSecrets,
     $core.String? primaryOrgId,
     $core.String? locationId,
+    $core.String? machineId,
   }) {
     final $result = create();
     if (id != null) {
@@ -355,6 +356,9 @@ class CloudConfig extends $pb.GeneratedMessage {
     if (locationId != null) {
       $result.locationId = locationId;
     }
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
     return $result;
   }
   CloudConfig._() : super();
@@ -373,6 +377,7 @@ class CloudConfig extends $pb.GeneratedMessage {
     ..pc<LocationSecret>(9, _omitFieldNames ? '' : 'locationSecrets', $pb.PbFieldType.PM, subBuilder: LocationSecret.create)
     ..aOS(10, _omitFieldNames ? '' : 'primaryOrgId')
     ..aOS(11, _omitFieldNames ? '' : 'locationId')
+    ..aOS(12, _omitFieldNames ? '' : 'machineId')
     ..hasRequiredFields = false
   ;
 
@@ -497,6 +502,15 @@ class CloudConfig extends $pb.GeneratedMessage {
   $core.bool hasLocationId() => $_has(10);
   @$pb.TagNumber(11)
   void clearLocationId() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get machineId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set machineId($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasMachineId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMachineId() => clearField(12);
 }
 
 class ComponentConfig extends $pb.GeneratedMessage {

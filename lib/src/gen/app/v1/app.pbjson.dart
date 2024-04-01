@@ -386,6 +386,10 @@ const CreateOrganizationInviteRequest$json = {
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'authorizations', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Authorization', '10': 'authorizations'},
+    {'1': 'send_email_invite', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'sendEmailInvite', '17': true},
+  ],
+  '8': [
+    {'1': '_send_email_invite'},
   ],
 };
 
@@ -393,7 +397,9 @@ const CreateOrganizationInviteRequest$json = {
 final $typed_data.Uint8List createOrganizationInviteRequestDescriptor = $convert.base64Decode(
     'Ch9DcmVhdGVPcmdhbml6YXRpb25JbnZpdGVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIA'
     'EoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWlsEkIKDmF1dGhvcml6YXRp'
-    'b25zGAMgAygLMhoudmlhbS5hcHAudjEuQXV0aG9yaXphdGlvblIOYXV0aG9yaXphdGlvbnM=');
+    'b25zGAMgAygLMhoudmlhbS5hcHAudjEuQXV0aG9yaXphdGlvblIOYXV0aG9yaXphdGlvbnMSLw'
+    'oRc2VuZF9lbWFpbF9pbnZpdGUYBCABKAhIAFIPc2VuZEVtYWlsSW52aXRliAEBQhQKEl9zZW5k'
+    'X2VtYWlsX2ludml0ZQ==');
 
 @$core.Deprecated('Use createOrganizationInviteResponseDescriptor instead')
 const CreateOrganizationInviteResponse$json = {

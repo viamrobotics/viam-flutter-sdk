@@ -26,6 +26,7 @@ class ResourceName extends $pb.GeneratedMessage {
     $core.String? type,
     $core.String? subtype,
     $core.String? name,
+    $core.String? machinePartId,
   }) {
     final $result = create();
     if (namespace != null) {
@@ -40,6 +41,9 @@ class ResourceName extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
+    if (machinePartId != null) {
+      $result.machinePartId = machinePartId;
+    }
     return $result;
   }
   ResourceName._() : super();
@@ -51,6 +55,7 @@ class ResourceName extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aOS(3, _omitFieldNames ? '' : 'subtype')
     ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..aOS(5, _omitFieldNames ? '' : 'machinePartId')
     ..hasRequiredFields = false
   ;
 
@@ -110,6 +115,15 @@ class ResourceName extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get machinePartId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set machinePartId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMachinePartId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMachinePartId() => clearField(5);
 }
 
 class BoardStatus extends $pb.GeneratedMessage {
