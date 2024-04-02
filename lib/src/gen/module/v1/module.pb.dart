@@ -389,10 +389,14 @@ class HandlerMap extends $pb.GeneratedMessage {
 class ReadyRequest extends $pb.GeneratedMessage {
   factory ReadyRequest({
     $core.String? parentAddress,
+    $core.String? webrtcOffer,
   }) {
     final $result = create();
     if (parentAddress != null) {
       $result.parentAddress = parentAddress;
+    }
+    if (webrtcOffer != null) {
+      $result.webrtcOffer = webrtcOffer;
     }
     return $result;
   }
@@ -402,6 +406,7 @@ class ReadyRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'parentAddress')
+    ..aOS(2, _omitFieldNames ? '' : 'webrtcOffer')
     ..hasRequiredFields = false
   ;
 
@@ -434,12 +439,22 @@ class ReadyRequest extends $pb.GeneratedMessage {
   $core.bool hasParentAddress() => $_has(0);
   @$pb.TagNumber(1)
   void clearParentAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get webrtcOffer => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set webrtcOffer($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWebrtcOffer() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWebrtcOffer() => clearField(2);
 }
 
 class ReadyResponse extends $pb.GeneratedMessage {
   factory ReadyResponse({
     $core.bool? ready,
     HandlerMap? handlermap,
+    $core.String? webrtcAnswer,
   }) {
     final $result = create();
     if (ready != null) {
@@ -447,6 +462,9 @@ class ReadyResponse extends $pb.GeneratedMessage {
     }
     if (handlermap != null) {
       $result.handlermap = handlermap;
+    }
+    if (webrtcAnswer != null) {
+      $result.webrtcAnswer = webrtcAnswer;
     }
     return $result;
   }
@@ -457,6 +475,7 @@ class ReadyResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'ready')
     ..aOM<HandlerMap>(2, _omitFieldNames ? '' : 'handlermap', subBuilder: HandlerMap.create)
+    ..aOS(3, _omitFieldNames ? '' : 'webrtcAnswer')
     ..hasRequiredFields = false
   ;
 
@@ -500,6 +519,15 @@ class ReadyResponse extends $pb.GeneratedMessage {
   void clearHandlermap() => clearField(2);
   @$pb.TagNumber(2)
   HandlerMap ensureHandlermap() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get webrtcAnswer => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set webrtcAnswer($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWebrtcAnswer() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWebrtcAnswer() => clearField(3);
 }
 
 class ValidateConfigRequest extends $pb.GeneratedMessage {

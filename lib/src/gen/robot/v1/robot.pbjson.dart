@@ -584,6 +584,8 @@ const GetCloudMetadataResponse$json = {
     {'1': 'robot_part_id', '3': 1, '4': 1, '5': 9, '10': 'robotPartId'},
     {'1': 'primary_org_id', '3': 2, '4': 1, '5': 9, '10': 'primaryOrgId'},
     {'1': 'location_id', '3': 3, '4': 1, '5': 9, '10': 'locationId'},
+    {'1': 'machine_id', '3': 4, '4': 1, '5': 9, '10': 'machineId'},
+    {'1': 'machine_part_id', '3': 5, '4': 1, '5': 9, '10': 'machinePartId'},
   ],
 };
 
@@ -591,5 +593,6 @@ const GetCloudMetadataResponse$json = {
 final $typed_data.Uint8List getCloudMetadataResponseDescriptor = $convert.base64Decode(
     'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USIgoNcm9ib3RfcGFydF9pZBgBIAEoCVILcm9ib3'
     'RQYXJ0SWQSJAoOcHJpbWFyeV9vcmdfaWQYAiABKAlSDHByaW1hcnlPcmdJZBIfCgtsb2NhdGlv'
-    'bl9pZBgDIAEoCVIKbG9jYXRpb25JZA==');
+    'bl9pZBgDIAEoCVIKbG9jYXRpb25JZBIdCgptYWNoaW5lX2lkGAQgASgJUgltYWNoaW5lSWQSJg'
+    'oPbWFjaGluZV9wYXJ0X2lkGAUgASgJUg1tYWNoaW5lUGFydElk');
 

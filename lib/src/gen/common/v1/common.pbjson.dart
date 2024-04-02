@@ -37,13 +37,19 @@ const ResourceName$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
     {'1': 'subtype', '3': 3, '4': 1, '5': 9, '10': 'subtype'},
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'machine_part_id', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'machinePartId', '17': true},
+  ],
+  '8': [
+    {'1': '_machine_part_id'},
   ],
 };
 
 /// Descriptor for `ResourceName`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode(
     'CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIA'
-    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
+    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWUS'
+    'KwoPbWFjaGluZV9wYXJ0X2lkGAUgASgJSABSDW1hY2hpbmVQYXJ0SWSIAQFCEgoQX21hY2hpbm'
+    'VfcGFydF9pZA==');
 
 @$core.Deprecated('Use boardStatusDescriptor instead')
 const BoardStatus$json = {

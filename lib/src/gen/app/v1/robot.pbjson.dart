@@ -122,6 +122,7 @@ const CloudConfig$json = {
     {'1': 'location_secrets', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.LocationSecret', '10': 'locationSecrets'},
     {'1': 'primary_org_id', '3': 10, '4': 1, '5': 9, '10': 'primaryOrgId'},
     {'1': 'location_id', '3': 11, '4': 1, '5': 9, '10': 'locationId'},
+    {'1': 'machine_id', '3': 12, '4': 1, '5': 9, '10': 'machineId'},
   ],
 };
 
@@ -134,7 +135,8 @@ final $typed_data.Uint8List cloudConfigDescriptor = $convert.base64Decode(
     'GAcgASgJQgIYAVIObG9jYXRpb25TZWNyZXQSFgoGc2VjcmV0GAggASgJUgZzZWNyZXQSRgoQbG'
     '9jYXRpb25fc2VjcmV0cxgJIAMoCzIbLnZpYW0uYXBwLnYxLkxvY2F0aW9uU2VjcmV0Ug9sb2Nh'
     'dGlvblNlY3JldHMSJAoOcHJpbWFyeV9vcmdfaWQYCiABKAlSDHByaW1hcnlPcmdJZBIfCgtsb2'
-    'NhdGlvbl9pZBgLIAEoCVIKbG9jYXRpb25JZA==');
+    'NhdGlvbl9pZBgLIAEoCVIKbG9jYXRpb25JZBIdCgptYWNoaW5lX2lkGAwgASgJUgltYWNoaW5l'
+    'SWQ=');
 
 @$core.Deprecated('Use componentConfigDescriptor instead')
 const ComponentConfig$json = {
