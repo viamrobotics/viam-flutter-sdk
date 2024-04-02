@@ -62,7 +62,8 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">ReadyRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-parentAddress">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">parentAddress</span>}</span></li>
+      <span class="name ">ReadyRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-parentAddress">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">parentAddress</span>, </span></li>
+<li><span class="parameter" id="-param-webrtcOffer"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">webrtcOffer</span>}</span></li>
 </ol>)
     </section>
 
@@ -74,10 +75,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory ReadyRequest({
   $core.String? parentAddress,
+  $core.String? webrtcOffer,
 }) {
   final $result = create();
   if (parentAddress != null) {
     $result.parentAddress = parentAddress;
+  }
+  if (webrtcOffer != null) {
+    $result.webrtcOffer = webrtcOffer;
   }
   return $result;
 }</code></pre>

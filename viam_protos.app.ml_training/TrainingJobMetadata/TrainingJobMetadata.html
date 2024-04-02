@@ -70,7 +70,13 @@
 <li><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
 <li><span class="parameter" id="-param-errorStatus"><span class="type-annotation">Status?</span> <span class="parameter-name">errorStatus</span>, </span></li>
 <li><span class="parameter" id="-param-trainingStarted"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">trainingStarted</span>, </span></li>
-<li><span class="parameter" id="-param-trainingEnded"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">trainingEnded</span>}</span></li>
+<li><span class="parameter" id="-param-trainingEnded"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">trainingEnded</span>, </span></li>
+<li><span class="parameter" id="-param-datasetId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">datasetId</span>, </span></li>
+<li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
+<li><span class="parameter" id="-param-modelName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">modelName</span>, </span></li>
+<li><span class="parameter" id="-param-modelVersion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">modelVersion</span>, </span></li>
+<li><span class="parameter" id="-param-modelType"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
+<li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>}</span></li>
 </ol>)
     </section>
 
@@ -90,6 +96,12 @@
   $2.Status? errorStatus,
   $1.Timestamp? trainingStarted,
   $1.Timestamp? trainingEnded,
+  $core.String? datasetId,
+  $core.String? organizationId,
+  $core.String? modelName,
+  $core.String? modelVersion,
+  ModelType? modelType,
+  $core.Iterable&lt;$core.String&gt;? tags,
 }) {
   final $result = create();
   if (request != null) {
@@ -118,6 +130,24 @@
   }
   if (trainingEnded != null) {
     $result.trainingEnded = trainingEnded;
+  }
+  if (datasetId != null) {
+    $result.datasetId = datasetId;
+  }
+  if (organizationId != null) {
+    $result.organizationId = organizationId;
+  }
+  if (modelName != null) {
+    $result.modelName = modelName;
+  }
+  if (modelVersion != null) {
+    $result.modelVersion = modelVersion;
+  }
+  if (modelType != null) {
+    $result.modelType = modelType;
+  }
+  if (tags != null) {
+    $result.tags.addAll(tags);
   }
   return $result;
 }</code></pre>

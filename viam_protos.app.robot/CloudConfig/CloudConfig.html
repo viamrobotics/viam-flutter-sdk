@@ -72,7 +72,8 @@
 <li><span class="parameter" id="-param-secret"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">secret</span>, </span></li>
 <li><span class="parameter" id="-param-locationSecrets"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/LocationSecret-class.html">LocationSecret</a></span>&gt;</span>?</span> <span class="parameter-name">locationSecrets</span>, </span></li>
 <li><span class="parameter" id="-param-primaryOrgId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">primaryOrgId</span>, </span></li>
-<li><span class="parameter" id="-param-locationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">locationId</span>}</span></li>
+<li><span class="parameter" id="-param-locationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">locationId</span>, </span></li>
+<li><span class="parameter" id="-param-machineId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">machineId</span>}</span></li>
 </ol>)
     </section>
 
@@ -95,6 +96,7 @@
   $core.Iterable&lt;LocationSecret&gt;? locationSecrets,
   $core.String? primaryOrgId,
   $core.String? locationId,
+  $core.String? machineId,
 }) {
   final $result = create();
   if (id != null) {
@@ -130,6 +132,9 @@
   }
   if (locationId != null) {
     $result.locationId = locationId;
+  }
+  if (machineId != null) {
+    $result.machineId = machineId;
   }
   return $result;
 }</code></pre>

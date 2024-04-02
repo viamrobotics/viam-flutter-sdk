@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="CreateOrganizationInviteRequest" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest/CreateOrganizationInviteRequest.html">CreateOrganizationInviteRequest</a></span><span class="signature">(<span class="parameter" id="-param-organizationId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">email</span>, </span><span class="parameter" id="-param-authorizations"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/Authorization-class.html">Authorization</a></span>&gt;</span>?</span> <span class="parameter-name">authorizations</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest/CreateOrganizationInviteRequest.html">CreateOrganizationInviteRequest</a></span><span class="signature">(<span class="parameter" id="-param-organizationId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-email"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">email</span>, </span><span class="parameter" id="-param-authorizations"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.app/Authorization-class.html">Authorization</a></span>&gt;</span>?</span> <span class="parameter-name">authorizations</span>, </span><span class="parameter" id="-param-sendEmailInvite"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">sendEmailInvite</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -212,6 +212,18 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="sendEmailInvite" class="property">
+  <span class="name"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest/sendEmailInvite.html">sendEmailInvite</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  Set to true (the default) to send an email to the recipient of an invite. The user must accept the email to be added to the associated authorizations.
+When set to false, the user automatically receives the associated authorization on the next login of the user with the associated email address.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="unknownFields" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/unknownFields.html">unknownFields</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/UnknownFieldSet-class.html">UnknownFieldSet</a></span> 
@@ -312,6 +324,19 @@ to protobuf fields.
 
         <dt id="clearOrganizationId" class="callable">
   <span class="name"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest/clearOrganizationId.html">clearOrganizationId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearSendEmailInvite" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest/clearSendEmailInvite.html">clearSendEmailInvite</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -543,6 +568,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasSendEmailInvite" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/CreateOrganizationInviteRequest/hasSendEmailInvite.html">hasSendEmailInvite</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
