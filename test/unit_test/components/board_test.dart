@@ -99,7 +99,13 @@ class FakeBoard extends Board {
   }
 
   @override
-  Future<void> streamTicks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {
+  // Stream digital interrupts ticks.
+  Future<ResponseStream<StreamTicksResponse>> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {
     for (final i in interrupts) {
       tickCallbackMap[i] = tickQueue;
     }
@@ -130,10 +136,10 @@ void main() {
       expect(await board.digitalInterruptValue('1'), expected);
     });
 
-    test('streamTicks', () async {
+    test('addCallbacks', () async {
       final tickQueue = Queue<Tick>();
       final interrupts = ['1'];
-      await board.streamTicks(interrupts, tickQueue);
+      await board.addCallbacks(interrupts, tickQueue);
       expect(board.tickCallbackMap['1'], tickQueue);
     });
 
@@ -248,17 +254,24 @@ void main() {
       test('streamTicks', () async {
         final client = BoardServiceClient(channel);
 
-        final stream = await client.streamTicks(StreamTicksRequest()
+        final request = StreamTicksRequest()
           ..name = name
-          ..pinNames.add('1'));
+          ..pinNames.add('1');
 
-        await tick('1', Tick(pinName: '1', high: true, time: Int64(1000)));
+        final stream = client.streamTicks(request);
 
-        await for (final tick in stream) {
-          expect(tick.pinName, '1');
-          expect(tick.high, true);
-          expect(tick.time, Int64(1000));
+        // Give time for server to start streaming.
+        await Future.delayed(const Duration(milliseconds: 100));
+
+        final tick1 = Tick(pinName: '1', high: true, time: Int64(1000));
+        await board.tick('1', tick1);
+        await for (var resp in stream) {
+          expect(resp.pinName, '1');
+          expect(resp.high, true);
+          expect(resp.time, Int64(1000));
+          break;
         }
+        await stream.cancel();
       });
 
       test('gpio', () async {
@@ -382,6 +395,24 @@ void main() {
         final client = BoardClient(name, channel);
         const expected = 0;
         expect(await client.digitalInterruptValue('1'), Int64(expected));
+      });
+      test('streamTicks', () async {
+        final client = BoardClient(name, channel);
+
+        final stream = await client.streamTicks(['1']);
+
+        // Give time for server to start streaming.
+        await Future.delayed(const Duration(milliseconds: 100));
+
+        final testTick = Tick(pinName: '1', high: true, time: Int64(1000));
+        await board.tick('1', testTick);
+
+        stream.listen((resp) {
+          expect(resp.pinName, testTick.pinName);
+          expect(resp.high, testTick.high);
+          expect(resp.time, testTick.time);
+          stream.cancel();
+        }).onError((error) {});
       });
 
       test('gpio', () async {

@@ -118,14 +118,19 @@ class BoardService extends BoardServiceBase {
     final board = _fromManager(request.name);
 
     final ticks = Queue<Tick>();
-    await board.streamTicks(request.pinNames, ticks, extra: request.extra.toMap());
+    await board.addCallbacks(request.pinNames, ticks);
 
-    while (true) {
-      if (ticks.isNotEmpty) {
-        final tick = ticks.first;
-        ticks.removeFirst();
-        yield StreamTicksResponse(pinName: tick.pinName, high: tick.high, time: tick.time);
+    try {
+      while (true) {
+        await Future.delayed(const Duration(microseconds: 1));
+        if (ticks.isNotEmpty) {
+          final tick = ticks.first;
+          ticks.removeFirst();
+          yield StreamTicksResponse(pinName: tick.pinName, high: tick.high, time: tick.time);
+        }
       }
+    } catch (error) {
+      rethrow;
     }
   }
 }

@@ -1,9 +1,10 @@
 import 'dart:collection';
 
 import 'package:fixnum/fixnum.dart';
+import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
-import '../../gen/component/board/v1/board.pbenum.dart';
+import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -70,7 +71,10 @@ abstract class Board extends Resource {
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
 
   // Stream digital interrupts ticks.
-  Future<void> streamTicks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra});
+  Future<ResponseStream<StreamTicksResponse>> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra});
+
+  // addCallbacks adds a listener for the digital interrupts.
+  Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra});
 
   /// Set the board to the indicated power mode.
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});
