@@ -126,6 +126,7 @@ class BoardClient extends Board implements ResourceRPCClient {
 
   @override
   Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {
+    // addCallbacks not implemented on client side since it is a helper for StreamTicks.
     throw UnimplementedError();
   }
 
