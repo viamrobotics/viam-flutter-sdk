@@ -129,6 +129,7 @@ class BoardClient extends Board implements ResourceRPCClient {
     throw UnimplementedError();
   }
 
+  @override
   Future<ResponseStream<StreamTicksResponse>> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) async {
     final stream = client.streamTicks(StreamTicksRequest()
       ..name = name
