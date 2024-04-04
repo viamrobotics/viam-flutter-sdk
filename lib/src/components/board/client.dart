@@ -133,7 +133,8 @@ class BoardClient extends Board implements ResourceRPCClient {
   Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
     final response = client.streamTicks(StreamTicksRequest()
       ..name = name
-      ..pinNames.addAll(interrupts));
+      ..pinNames.addAll(interrupts)
+      ..extra = extra?.toStruct() ?? Struct());
 
     final stream = response.map((resp) => Tick(pinName: resp.pinName, high: resp.high, time: resp.time));
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
