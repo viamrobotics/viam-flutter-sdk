@@ -100,7 +100,7 @@ class FakeBoard extends Board {
 
   @override
   // Stream digital interrupts ticks.
-  Future<ResponseStream<StreamTicksResponse>> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) async {
+  Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
     throw UnimplementedError();
   }
 
@@ -111,8 +111,8 @@ class FakeBoard extends Board {
     }
   }
 
-  Future<void> tick(String interrupt, Tick tick) async {
-    var queue = tickCallbackMap[interrupt];
+  Future<void> tick(Tick tick) async {
+    final queue = tickCallbackMap[tick.pinName];
     queue?.add(tick);
   }
 }
@@ -264,7 +264,7 @@ void main() {
         await Future.delayed(const Duration(milliseconds: 100));
 
         final tick1 = Tick(pinName: '1', high: true, time: Int64(1000));
-        await board.tick('1', tick1);
+        await board.tick(tick1);
         await for (var resp in stream) {
           expect(resp.pinName, '1');
           expect(resp.high, true);
@@ -399,20 +399,22 @@ void main() {
       test('streamTicks', () async {
         final client = BoardClient(name, channel);
 
-        final stream = await client.streamTicks(['1']);
+        final stream = client.streamTicks(['1']);
 
         // Give time for server to start streaming.
         await Future.delayed(const Duration(milliseconds: 100));
 
         final testTick = Tick(pinName: '1', high: true, time: Int64(1000));
-        await board.tick('1', testTick);
+        await board.tick(testTick);
 
-        stream.listen((resp) {
-          expect(resp.pinName, testTick.pinName);
-          expect(resp.high, testTick.high);
-          expect(resp.time, testTick.time);
-          stream.cancel();
-        }).onError((error) {});
+        final sub = stream.listen(null);
+
+        sub.onData((tick) async {
+          expect(tick.pinName, testTick.pinName);
+          expect(tick.high, testTick.high);
+          expect(tick.time, testTick.time);
+          await sub.cancel();
+        });
       });
 
       test('gpio', () async {

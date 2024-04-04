@@ -1,7 +1,6 @@
 import 'dart:collection';
 
 import 'package:fixnum/fixnum.dart';
-import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbgrpc.dart';
@@ -71,7 +70,7 @@ abstract class Board extends Resource {
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
 
   // Stream digital interrupts ticks.
-  Future<ResponseStream<StreamTicksResponse>> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra});
+  Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra});
 
   // addCallbacks adds a listener for the digital interrupts.
   Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra});

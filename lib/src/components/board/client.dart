@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:fixnum/fixnum.dart';
-import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common;
@@ -131,12 +130,13 @@ class BoardClient extends Board implements ResourceRPCClient {
   }
 
   @override
-  Future<ResponseStream<StreamTicksResponse>> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) async {
-    final stream = client.streamTicks(StreamTicksRequest()
+  Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
+    final response = client.streamTicks(StreamTicksRequest()
       ..name = name
       ..pinNames.addAll(interrupts));
 
-    return stream;
+    final stream = response.map((resp) => Tick(pinName: resp.pinName, high: resp.high, time: resp.time));
+    return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
 
   @override
