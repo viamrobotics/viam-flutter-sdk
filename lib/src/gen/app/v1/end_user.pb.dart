@@ -160,6 +160,350 @@ class AcceptLegalResponse extends $pb.GeneratedMessage {
   static AcceptLegalResponse? _defaultInstance;
 }
 
+class RegisterAuthApplicationRequest extends $pb.GeneratedMessage {
+  factory RegisterAuthApplicationRequest({
+    $core.String? applicationName,
+    $core.String? orgId,
+    $core.Iterable<$core.String>? originUris,
+    $core.Iterable<$core.String>? redirectUris,
+    $core.String? logoutUri,
+  }) {
+    final $result = create();
+    if (applicationName != null) {
+      $result.applicationName = applicationName;
+    }
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (originUris != null) {
+      $result.originUris.addAll(originUris);
+    }
+    if (redirectUris != null) {
+      $result.redirectUris.addAll(redirectUris);
+    }
+    if (logoutUri != null) {
+      $result.logoutUri = logoutUri;
+    }
+    return $result;
+  }
+  RegisterAuthApplicationRequest._() : super();
+  factory RegisterAuthApplicationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterAuthApplicationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterAuthApplicationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'applicationName')
+    ..aOS(2, _omitFieldNames ? '' : 'orgId')
+    ..pPS(3, _omitFieldNames ? '' : 'originUris')
+    ..pPS(4, _omitFieldNames ? '' : 'redirectUris')
+    ..aOS(5, _omitFieldNames ? '' : 'logoutUri')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterAuthApplicationRequest clone() => RegisterAuthApplicationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterAuthApplicationRequest copyWith(void Function(RegisterAuthApplicationRequest) updates) => super.copyWith((message) => updates(message as RegisterAuthApplicationRequest)) as RegisterAuthApplicationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterAuthApplicationRequest create() => RegisterAuthApplicationRequest._();
+  RegisterAuthApplicationRequest createEmptyInstance() => create();
+  static $pb.PbList<RegisterAuthApplicationRequest> createRepeated() => $pb.PbList<RegisterAuthApplicationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterAuthApplicationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterAuthApplicationRequest>(create);
+  static RegisterAuthApplicationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get applicationName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set applicationName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApplicationName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApplicationName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get orgId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set orgId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrgId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrgId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get originUris => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get redirectUris => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get logoutUri => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set logoutUri($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLogoutUri() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLogoutUri() => clearField(5);
+}
+
+class RegisterAuthApplicationResponse extends $pb.GeneratedMessage {
+  factory RegisterAuthApplicationResponse({
+    $core.String? applicationId,
+    $core.String? applicationName,
+    $core.String? secret,
+  }) {
+    final $result = create();
+    if (applicationId != null) {
+      $result.applicationId = applicationId;
+    }
+    if (applicationName != null) {
+      $result.applicationName = applicationName;
+    }
+    if (secret != null) {
+      $result.secret = secret;
+    }
+    return $result;
+  }
+  RegisterAuthApplicationResponse._() : super();
+  factory RegisterAuthApplicationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterAuthApplicationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterAuthApplicationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'applicationId')
+    ..aOS(2, _omitFieldNames ? '' : 'applicationName')
+    ..aOS(3, _omitFieldNames ? '' : 'secret')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterAuthApplicationResponse clone() => RegisterAuthApplicationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterAuthApplicationResponse copyWith(void Function(RegisterAuthApplicationResponse) updates) => super.copyWith((message) => updates(message as RegisterAuthApplicationResponse)) as RegisterAuthApplicationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterAuthApplicationResponse create() => RegisterAuthApplicationResponse._();
+  RegisterAuthApplicationResponse createEmptyInstance() => create();
+  static $pb.PbList<RegisterAuthApplicationResponse> createRepeated() => $pb.PbList<RegisterAuthApplicationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterAuthApplicationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterAuthApplicationResponse>(create);
+  static RegisterAuthApplicationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get applicationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set applicationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApplicationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApplicationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get applicationName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set applicationName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApplicationName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApplicationName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get secret => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set secret($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSecret() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSecret() => clearField(3);
+}
+
+class UpdateAuthApplicationRequest extends $pb.GeneratedMessage {
+  factory UpdateAuthApplicationRequest({
+    $core.String? orgId,
+    $core.String? applicationId,
+    $core.String? applicationName,
+    $core.Iterable<$core.String>? originUris,
+    $core.Iterable<$core.String>? redirectUris,
+    $core.String? logoutUri,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (applicationId != null) {
+      $result.applicationId = applicationId;
+    }
+    if (applicationName != null) {
+      $result.applicationName = applicationName;
+    }
+    if (originUris != null) {
+      $result.originUris.addAll(originUris);
+    }
+    if (redirectUris != null) {
+      $result.redirectUris.addAll(redirectUris);
+    }
+    if (logoutUri != null) {
+      $result.logoutUri = logoutUri;
+    }
+    return $result;
+  }
+  UpdateAuthApplicationRequest._() : super();
+  factory UpdateAuthApplicationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateAuthApplicationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateAuthApplicationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'applicationId')
+    ..aOS(3, _omitFieldNames ? '' : 'applicationName')
+    ..pPS(4, _omitFieldNames ? '' : 'originUris')
+    ..pPS(5, _omitFieldNames ? '' : 'redirectUris')
+    ..aOS(6, _omitFieldNames ? '' : 'logoutUri')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateAuthApplicationRequest clone() => UpdateAuthApplicationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateAuthApplicationRequest copyWith(void Function(UpdateAuthApplicationRequest) updates) => super.copyWith((message) => updates(message as UpdateAuthApplicationRequest)) as UpdateAuthApplicationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateAuthApplicationRequest create() => UpdateAuthApplicationRequest._();
+  UpdateAuthApplicationRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateAuthApplicationRequest> createRepeated() => $pb.PbList<UpdateAuthApplicationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateAuthApplicationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateAuthApplicationRequest>(create);
+  static UpdateAuthApplicationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get applicationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set applicationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApplicationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApplicationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get applicationName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set applicationName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasApplicationName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearApplicationName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get originUris => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get redirectUris => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get logoutUri => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set logoutUri($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLogoutUri() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLogoutUri() => clearField(6);
+}
+
+class UpdateAuthApplicationResponse extends $pb.GeneratedMessage {
+  factory UpdateAuthApplicationResponse({
+    $core.String? applicationId,
+    $core.String? applicationName,
+  }) {
+    final $result = create();
+    if (applicationId != null) {
+      $result.applicationId = applicationId;
+    }
+    if (applicationName != null) {
+      $result.applicationName = applicationName;
+    }
+    return $result;
+  }
+  UpdateAuthApplicationResponse._() : super();
+  factory UpdateAuthApplicationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateAuthApplicationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateAuthApplicationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'applicationId')
+    ..aOS(2, _omitFieldNames ? '' : 'applicationName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateAuthApplicationResponse clone() => UpdateAuthApplicationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateAuthApplicationResponse copyWith(void Function(UpdateAuthApplicationResponse) updates) => super.copyWith((message) => updates(message as UpdateAuthApplicationResponse)) as UpdateAuthApplicationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateAuthApplicationResponse create() => UpdateAuthApplicationResponse._();
+  UpdateAuthApplicationResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateAuthApplicationResponse> createRepeated() => $pb.PbList<UpdateAuthApplicationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateAuthApplicationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateAuthApplicationResponse>(create);
+  static UpdateAuthApplicationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get applicationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set applicationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApplicationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApplicationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get applicationName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set applicationName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApplicationName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApplicationName() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

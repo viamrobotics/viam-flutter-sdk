@@ -29,6 +29,14 @@ class EndUserServiceClient extends $grpc.Client {
       '/viam.app.v1.EndUserService/AcceptLegal',
       ($3.AcceptLegalRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.AcceptLegalResponse.fromBuffer(value));
+  static final _$registerAuthApplication = $grpc.ClientMethod<$3.RegisterAuthApplicationRequest, $3.RegisterAuthApplicationResponse>(
+      '/viam.app.v1.EndUserService/RegisterAuthApplication',
+      ($3.RegisterAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.RegisterAuthApplicationResponse.fromBuffer(value));
+  static final _$updateAuthApplication = $grpc.ClientMethod<$3.UpdateAuthApplicationRequest, $3.UpdateAuthApplicationResponse>(
+      '/viam.app.v1.EndUserService/UpdateAuthApplication',
+      ($3.UpdateAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.UpdateAuthApplicationResponse.fromBuffer(value));
 
   EndUserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -42,6 +50,14 @@ class EndUserServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.AcceptLegalResponse> acceptLegal($3.AcceptLegalRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acceptLegal, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.RegisterAuthApplicationResponse> registerAuthApplication($3.RegisterAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$registerAuthApplication, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.UpdateAuthApplicationResponse> updateAuthApplication($3.UpdateAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateAuthApplication, request, options: options);
   }
 }
 
@@ -64,6 +80,20 @@ abstract class EndUserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.AcceptLegalRequest.fromBuffer(value),
         ($3.AcceptLegalResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.RegisterAuthApplicationRequest, $3.RegisterAuthApplicationResponse>(
+        'RegisterAuthApplication',
+        registerAuthApplication_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.RegisterAuthApplicationRequest.fromBuffer(value),
+        ($3.RegisterAuthApplicationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.UpdateAuthApplicationRequest, $3.UpdateAuthApplicationResponse>(
+        'UpdateAuthApplication',
+        updateAuthApplication_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.UpdateAuthApplicationRequest.fromBuffer(value),
+        ($3.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.IsLegalAcceptedResponse> isLegalAccepted_Pre($grpc.ServiceCall call, $async.Future<$3.IsLegalAcceptedRequest> request) async {
@@ -74,6 +104,16 @@ abstract class EndUserServiceBase extends $grpc.Service {
     return acceptLegal(call, await request);
   }
 
+  $async.Future<$3.RegisterAuthApplicationResponse> registerAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$3.RegisterAuthApplicationRequest> request) async {
+    return registerAuthApplication(call, await request);
+  }
+
+  $async.Future<$3.UpdateAuthApplicationResponse> updateAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$3.UpdateAuthApplicationRequest> request) async {
+    return updateAuthApplication(call, await request);
+  }
+
   $async.Future<$3.IsLegalAcceptedResponse> isLegalAccepted($grpc.ServiceCall call, $3.IsLegalAcceptedRequest request);
   $async.Future<$3.AcceptLegalResponse> acceptLegal($grpc.ServiceCall call, $3.AcceptLegalRequest request);
+  $async.Future<$3.RegisterAuthApplicationResponse> registerAuthApplication($grpc.ServiceCall call, $3.RegisterAuthApplicationRequest request);
+  $async.Future<$3.UpdateAuthApplicationResponse> updateAuthApplication($grpc.ServiceCall call, $3.UpdateAuthApplicationRequest request);
 }
