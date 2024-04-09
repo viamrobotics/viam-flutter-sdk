@@ -142,15 +142,15 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
   if (address.contains('.local.') || address.contains('localhost')) {
     disableWebRtc = true;
   }
-  final chan;
+  final Future<ClientChannelBase> chan;
   if (disableWebRtc) {
-    chan = _dialDirectGrpc(address, opts, sessionCallback).timeout(opts.timeout);
+    chan = _dialDirectGrpc(address, opts, sessionCallback);
   } else {
-    chan = _dialWebRtc(address, opts, sessionCallback).timeout(opts.timeout);
+    chan = _dialWebRtc(address, opts, sessionCallback);
   }
   dialSW.stop();
   _logger.d('STATS: dial function took ${dialSW.elapsed}');
-  return chan;
+  return chan.timeout(opts.timeout);
 }
 
 Future<String> _searchMdns(String address) async {
