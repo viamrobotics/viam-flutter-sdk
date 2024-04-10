@@ -277,6 +277,34 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
       _logger.d('STATS: WebRTC dialing took ${webrtcDialSW.elapsed}');
       _logger.d('STATS: $updateCalls call updates to the signaling server were made');
       _logger.d('STATS: spent $callUpdateDuration making call updates to the signaling server');
+
+      // Attempt to find chosen local and remote ICE candidate's addresses,
+      // ports, and candidate types: 'host', 'srflx' or 'relay'. 'host' is a
+      // candidate within the network; 'srflx' is a candidate returned by a
+      // STUN server; 'relay' is a candidate returned by a TURN server.
+      final stats = await peerConnection.getStats();
+      for (var stat in stats) {
+        // NOTE(benjirewis): some magic-string-usage here; there are not great
+        // constants in the WebRTC library for these fields.
+        if (stat.type == 'candidate-pair' && stat.values['nominated']) {
+          final String lcid = stat.values['localCandidateId'];
+          final String rcid = stat.values['remoteCandidateId'];
+          for (var innerStat in stats) {
+            if (innerStat.id == lcid) {
+              final type = innerStat.values['candidateType'];
+              final addr = innerStat.values['address'];
+              final port = innerStat.values['port'];
+              _logger.d('STATS: chose $type local candidate with IP $addr:$port');
+            }
+            if (innerStat.id == rcid) {
+              final type = innerStat.values['candidateType'];
+              final addr = innerStat.values['address'];
+              final port = innerStat.values['port'];
+              _logger.d('STATS: chose $type remote candidate with IP $addr:$port');
+            }
+          }
+        }
+      }
     }
   };
 
