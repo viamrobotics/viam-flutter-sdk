@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:collection';
+
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
@@ -118,6 +121,23 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getDigitalInterruptValue(request);
     return response.value.toInt();
+  }
+
+  @override
+  Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {
+    // addCallbacks not implemented on client side since it is a helper for StreamTicks.
+    throw UnimplementedError();
+  }
+
+  @override
+  Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
+    final response = client.streamTicks(StreamTicksRequest()
+      ..name = name
+      ..pinNames.addAll(interrupts)
+      ..extra = extra?.toStruct() ?? Struct());
+
+    final stream = response.map((resp) => Tick(pinName: resp.pinName, high: resp.high, time: resp.time));
+    return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
 
   @override

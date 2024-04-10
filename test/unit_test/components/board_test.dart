@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
@@ -16,6 +18,7 @@ class FakeBoard extends Board {
   final Map<String, int> analogMap = {'pin': 0};
   final BoardStatus boardStatus = const BoardStatus({'1': 0}, {'1': 0});
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
+  final Map<String, Queue<Tick>> tickCallbackMap = {};
   Map<String, dynamic>? extra;
 
   @override
@@ -94,6 +97,24 @@ class FakeBoard extends Board {
     this.extra = extra;
     analogMap[pin] = value;
   }
+
+  @override
+  // Stream digital interrupts ticks.
+  Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra}) async {
+    for (final i in interrupts) {
+      tickCallbackMap[i] = tickQueue;
+    }
+  }
+
+  Future<void> tick(Tick tick) async {
+    final queue = tickCallbackMap[tick.pinName];
+    queue?.add(tick);
+  }
 }
 
 void main() {
@@ -113,6 +134,13 @@ void main() {
     test('digitalInterruptValue', () async {
       const expected = 0;
       expect(await board.digitalInterruptValue('1'), expected);
+    });
+
+    test('addCallbacks', () async {
+      final tickQueue = Queue<Tick>();
+      final interrupts = ['1'];
+      await board.addCallbacks(interrupts, tickQueue);
+      expect(board.tickCallbackMap['1'], tickQueue);
     });
 
     test('gpio', () async {
@@ -221,6 +249,29 @@ void main() {
           ..boardName = name
           ..digitalInterruptName = '1');
         expect(response.value.toInt(), expected);
+      });
+
+      test('streamTicks', () async {
+        final client = BoardServiceClient(channel);
+
+        final request = StreamTicksRequest()
+          ..name = name
+          ..pinNames.add('1');
+
+        final stream = client.streamTicks(request);
+
+        // Give time for server to start streaming.
+        await Future.delayed(const Duration(milliseconds: 100));
+
+        final tick1 = Tick(pinName: '1', high: true, time: Int64(1000));
+        await board.tick(tick1);
+        await for (var resp in stream) {
+          expect(resp.pinName, '1');
+          expect(resp.high, true);
+          expect(resp.time, Int64(1000));
+          break;
+        }
+        await stream.cancel();
       });
 
       test('gpio', () async {
@@ -344,6 +395,26 @@ void main() {
         final client = BoardClient(name, channel);
         const expected = 0;
         expect(await client.digitalInterruptValue('1'), Int64(expected));
+      });
+      test('streamTicks', () async {
+        final client = BoardClient(name, channel);
+
+        final stream = client.streamTicks(['1']);
+
+        // Give time for server to start streaming.
+        await Future.delayed(const Duration(milliseconds: 100));
+
+        final testTick = Tick(pinName: '1', high: true, time: Int64(1000));
+        await board.tick(testTick);
+
+        final sub = stream.listen(null);
+
+        sub.onData((tick) async {
+          expect(tick.pinName, testTick.pinName);
+          expect(tick.high, testTick.high);
+          expect(tick.time, testTick.time);
+          await sub.cancel();
+        });
       });
 
       test('gpio', () async {
