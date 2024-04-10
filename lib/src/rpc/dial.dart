@@ -306,10 +306,12 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
           callUpdateRequest.uuid = uuid!;
         }
         final Stopwatch stopwatch = Stopwatch()..start();
+        final currUpdateCall = updateCalls++;
+        _logger.d('STATS: making call update $currUpdateCall to the signaling server');
         await signalingClient.callUpdate(callUpdateRequest);
         stopwatch.stop();
+        _logger.d('STATS: call update $currUpdateCall took ${stopwatch.elapsed}');
         callUpdateDuration += stopwatch.elapsed;
-        updateCalls++;
       } catch (error, st) {
         _logger.e('Update ICECandidate error', error: error, stackTrace: st);
       }
