@@ -32,6 +32,27 @@ class ModelType extends $pb.ProtobufEnum {
   const ModelType._($core.int v, $core.String n) : super(v, n);
 }
 
+class ModelFramework extends $pb.ProtobufEnum {
+  static const ModelFramework MODEL_FRAMEWORK_UNSPECIFIED = ModelFramework._(0, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_UNSPECIFIED');
+  static const ModelFramework MODEL_FRAMEWORK_TFLITE = ModelFramework._(1, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_TFLITE');
+  static const ModelFramework MODEL_FRAMEWORK_TENSORFLOW = ModelFramework._(2, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_TENSORFLOW');
+  static const ModelFramework MODEL_FRAMEWORK_PYTORCH = ModelFramework._(3, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_PYTORCH');
+  static const ModelFramework MODEL_FRAMEWORK_ONNX = ModelFramework._(4, _omitEnumNames ? '' : 'MODEL_FRAMEWORK_ONNX');
+
+  static const $core.List<ModelFramework> values = <ModelFramework> [
+    MODEL_FRAMEWORK_UNSPECIFIED,
+    MODEL_FRAMEWORK_TFLITE,
+    MODEL_FRAMEWORK_TENSORFLOW,
+    MODEL_FRAMEWORK_PYTORCH,
+    MODEL_FRAMEWORK_ONNX,
+  ];
+
+  static final $core.Map<$core.int, ModelFramework> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ModelFramework? valueOf($core.int value) => _byValue[value];
+
+  const ModelFramework._($core.int v, $core.String n) : super(v, n);
+}
+
 class TrainingStatus extends $pb.ProtobufEnum {
   static const TrainingStatus TRAINING_STATUS_UNSPECIFIED = TrainingStatus._(0, _omitEnumNames ? '' : 'TRAINING_STATUS_UNSPECIFIED');
   static const TrainingStatus TRAINING_STATUS_PENDING = TrainingStatus._(1, _omitEnumNames ? '' : 'TRAINING_STATUS_PENDING');

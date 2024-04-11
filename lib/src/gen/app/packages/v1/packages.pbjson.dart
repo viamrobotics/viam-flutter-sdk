@@ -22,6 +22,7 @@ const PackageType$json = {
     {'1': 'PACKAGE_TYPE_ML_MODEL', '2': 2},
     {'1': 'PACKAGE_TYPE_MODULE', '2': 3},
     {'1': 'PACKAGE_TYPE_SLAM_MAP', '2': 4},
+    {'1': 'PACKAGE_TYPE_ML_TRAINING', '2': 5},
   ],
 };
 
@@ -29,7 +30,8 @@ const PackageType$json = {
 final $typed_data.Uint8List packageTypeDescriptor = $convert.base64Decode(
     'CgtQYWNrYWdlVHlwZRIcChhQQUNLQUdFX1RZUEVfVU5TUEVDSUZJRUQQABIYChRQQUNLQUdFX1'
     'RZUEVfQVJDSElWRRABEhkKFVBBQ0tBR0VfVFlQRV9NTF9NT0RFTBACEhcKE1BBQ0tBR0VfVFlQ'
-    'RV9NT0RVTEUQAxIZChVQQUNLQUdFX1RZUEVfU0xBTV9NQVAQBA==');
+    'RV9NT0RVTEUQAxIZChVQQUNLQUdFX1RZUEVfU0xBTV9NQVAQBBIcChhQQUNLQUdFX1RZUEVfTU'
+    'xfVFJBSU5JTkcQBQ==');
 
 @$core.Deprecated('Use fileInfoDescriptor instead')
 const FileInfo$json = {

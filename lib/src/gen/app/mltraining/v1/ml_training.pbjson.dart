@@ -30,6 +30,24 @@ final $typed_data.Uint8List modelTypeDescriptor = $convert.base64Decode(
     'lOR0xFX0xBQkVMX0NMQVNTSUZJQ0FUSU9OEAESKQolTU9ERUxfVFlQRV9NVUxUSV9MQUJFTF9D'
     'TEFTU0lGSUNBVElPThACEh8KG01PREVMX1RZUEVfT0JKRUNUX0RFVEVDVElPThAD');
 
+@$core.Deprecated('Use modelFrameworkDescriptor instead')
+const ModelFramework$json = {
+  '1': 'ModelFramework',
+  '2': [
+    {'1': 'MODEL_FRAMEWORK_UNSPECIFIED', '2': 0},
+    {'1': 'MODEL_FRAMEWORK_TFLITE', '2': 1},
+    {'1': 'MODEL_FRAMEWORK_TENSORFLOW', '2': 2},
+    {'1': 'MODEL_FRAMEWORK_PYTORCH', '2': 3},
+    {'1': 'MODEL_FRAMEWORK_ONNX', '2': 4},
+  ],
+};
+
+/// Descriptor for `ModelFramework`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List modelFrameworkDescriptor = $convert.base64Decode(
+    'Cg5Nb2RlbEZyYW1ld29yaxIfChtNT0RFTF9GUkFNRVdPUktfVU5TUEVDSUZJRUQQABIaChZNT0'
+    'RFTF9GUkFNRVdPUktfVEZMSVRFEAESHgoaTU9ERUxfRlJBTUVXT1JLX1RFTlNPUkZMT1cQAhIb'
+    'ChdNT0RFTF9GUkFNRVdPUktfUFlUT1JDSBADEhgKFE1PREVMX0ZSQU1FV09SS19PTk5YEAQ=');
+
 @$core.Deprecated('Use trainingStatusDescriptor instead')
 const TrainingStatus$json = {
   '1': 'TrainingStatus',
