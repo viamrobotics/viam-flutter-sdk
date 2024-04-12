@@ -17,7 +17,7 @@ import '../utils.dart';
 import 'grpc/grpc_or_grpcweb_channel.dart';
 import 'web_rtc/web_rtc_client.dart';
 
-final _logger = Logger();
+final _logger = Logger(printer: PrettyPrinter(printTime: true));
 
 /// Describes the behavior for connecting to a robot
 class DialOptions {
@@ -265,46 +265,23 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
   final didConnect = Completer();
   final didSetRemoteDesc = Completer();
 
-  // updateCalls keeps track of how many times we've sent an update the
-  // signaling server. callUpdateDuration keeps track of the total amount of
-  // time we've spent sending caller updates to the signaling server. Report
-  // these values after the ICE connection state becomes 'completed'.
-  int updateCalls = 0;
-  Duration callUpdateDuration = Duration();
-  peerConnection.onIceConnectionState = (RTCIceConnectionState state) async {
-    if (state == RTCIceConnectionState.RTCIceConnectionStateCompleted) {
-      webrtcDialSW.stop();
-      _logger.d('STATS: WebRTC dialing took ${webrtcDialSW.elapsed}');
-      _logger.d('STATS: $updateCalls call updates to the signaling server were made');
-      _logger.d('STATS: spent $callUpdateDuration making call updates to the signaling server');
+  int updateCalls = 0; // how many times we've sent an update to the sig. server
+  int updateCallsFinished = 0; // how many update calls have finished
+  Duration totalCallUpdateDuration = Duration();
+  Duration maxCallUpdateDuration = Duration();
+  bool iceConnectionCompleted = false;
 
-      // Attempt to find chosen local and remote ICE candidate's addresses,
-      // ports, and candidate types: 'host', 'srflx' or 'relay'. 'host' is a
-      // candidate within the network; 'srflx' is a candidate returned by a
-      // STUN server; 'relay' is a candidate returned by a TURN server.
-      final stats = await peerConnection.getStats();
-      for (var stat in stats) {
-        // NOTE(benjirewis): some magic-string-usage here; there are not great
-        // constants in the WebRTC library for these fields.
-        if (stat.type == 'candidate-pair' && stat.values['nominated']) {
-          final String lcid = stat.values['localCandidateId'];
-          final String rcid = stat.values['remoteCandidateId'];
-          for (var innerStat in stats) {
-            if (innerStat.id == lcid) {
-              final type = innerStat.values['candidateType'];
-              final addr = innerStat.values['address'];
-              final port = innerStat.values['port'];
-              _logger.d('STATS: chose $type local candidate with IP $addr:$port');
-            }
-            if (innerStat.id == rcid) {
-              final type = innerStat.values['candidateType'];
-              final addr = innerStat.values['address'];
-              final port = innerStat.values['port'];
-              _logger.d('STATS: chose $type remote candidate with IP $addr:$port');
-            }
-          }
-        }
-      }
+  peerConnection.onIceConnectionState = (RTCIceConnectionState state) async {
+    // 'connected' ICE connection state represents when a candidate pair has
+    // been nominated, and a connection has been established. ICE candidate
+    // gathering may still be happening, but the connection should be usable.
+    if (state == RTCIceConnectionState.RTCIceConnectionStateConnected) {
+      _logger.d('STATS: WebRTC connection made in ${webrtcDialSW.elapsed}');
+    }
+    // 'completed' ICE connection state represents when the ICE agent has
+    // finished gathering all candidates.
+    if (state == RTCIceConnectionState.RTCIceConnectionStateCompleted) {
+      iceConnectionCompleted = true;
     }
   };
 
@@ -339,7 +316,54 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
         await signalingClient.callUpdate(callUpdateRequest);
         stopwatch.stop();
         _logger.d('STATS: call update $currUpdateCall took ${stopwatch.elapsed}');
-        callUpdateDuration += stopwatch.elapsed;
+        final callUpdateDuration = stopwatch.elapsed;
+        if (callUpdateDuration.compareTo(maxCallUpdateDuration) > 0) {
+          maxCallUpdateDuration = callUpdateDuration;
+        }
+        totalCallUpdateDuration += callUpdateDuration;
+        updateCallsFinished++;
+
+        // If ICE connection state has reached 'completed' and we have finished
+        // all tracked updateCalls, report stats.
+        if (iceConnectionCompleted && updateCalls == updateCallsFinished) {
+          webrtcDialSW.stop();
+          _logger.d('STATS: all ICE candidates gathered in ${webrtcDialSW.elapsed}');
+          _logger.d('STATS: $updateCalls call updates to the signaling server were made');
+          // Floor average call update duration to closest millisecond.
+          final averageCallUpdateDuration = Duration(milliseconds: (totalCallUpdateDuration.inMilliseconds ~/ updateCalls));
+          _logger.d('STATS: average call update took $averageCallUpdateDuration');
+          _logger.d('STATS: max call update took $maxCallUpdateDuration');
+
+          // Attempt to find chosen local and remote ICE candidate's addresses,
+          // ports, and candidate types: 'host', 'srflx' or 'relay'. 'host' is a
+          // candidate within the network; 'srflx' is a candidate returned by a
+          // STUN server; 'relay' is a candidate returned by a TURN server. Note
+          // that multiple candidate pairs can be nominated if there was an
+          // "upgrade" in the connection.
+          final stats = await peerConnection.getStats();
+          for (var stat in stats) {
+            // NOTE(benjirewis): some magic-string-usage here; there are not great
+            // constants in the WebRTC library for these fields.
+            if (stat.type == 'candidate-pair' && stat.values['nominated']) {
+              final String lcid = stat.values['localCandidateId'];
+              final String rcid = stat.values['remoteCandidateId'];
+              for (var innerStat in stats) {
+                if (innerStat.id == lcid) {
+                  final type = innerStat.values['candidateType'];
+                  final addr = innerStat.values['address'];
+                  final port = innerStat.values['port'];
+                  _logger.d('STATS: chose $type local candidate with IP $addr:$port');
+                }
+                if (innerStat.id == rcid) {
+                  final type = innerStat.values['candidateType'];
+                  final addr = innerStat.values['address'];
+                  final port = innerStat.values['port'];
+                  _logger.d('STATS: chose $type remote candidate with IP $addr:$port');
+                }
+              }
+            }
+          }
+        }
       } catch (error, st) {
         _logger.e('Update ICECandidate error', error: error, stackTrace: st);
       }
