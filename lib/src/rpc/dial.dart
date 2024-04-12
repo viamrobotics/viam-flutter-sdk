@@ -200,8 +200,8 @@ Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, S
   return _authenticatedChannel(address, options, sessionCallback);
 }
 
-Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnection, int updateCalls,
-  Duration totalCallUpdateDuration, maxCallUpdateDuration) async {
+Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnection, int updateCalls, Duration totalCallUpdateDuration,
+    maxCallUpdateDuration) async {
   webrtcDialSW.stop();
   _logger.d('STATS: all ICE candidates gathered in ${webrtcDialSW.elapsed}');
   _logger.d('STATS: $updateCalls call updates to the signaling server were made');
@@ -326,8 +326,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
       // If all update calls have finished, report stats now. Otherwise, rely
       // on `onIceCandidate` callback below to report them.
       if (updateCalls == updateCallsFinished) {
-        await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls,
-          totalCallUpdateDuration, maxCallUpdateDuration);
+        await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls, totalCallUpdateDuration, maxCallUpdateDuration);
       }
     }
   };
@@ -373,8 +372,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
         // If ICE connection state has reached 'completed' and we have finished
         // all tracked updateCalls, report stats.
         if (iceConnectionCompleted && updateCalls == updateCallsFinished) {
-          await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls,
-            totalCallUpdateDuration, maxCallUpdateDuration);
+          await _logConnectionStats(webrtcDialSW, peerConnection, updateCalls, totalCallUpdateDuration, maxCallUpdateDuration);
         }
       } catch (error, st) {
         _logger.e('Update ICECandidate error', error: error, stackTrace: st);
