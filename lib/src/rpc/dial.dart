@@ -221,6 +221,11 @@ Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnect
     // NOTE(benjirewis): some magic-string-usage here; there are not great
     // constants in the WebRTC library for these fields.
     if (stat.type == 'candidate-pair' && stat.values['nominated']) {
+      // Use 'lastPacketSentTimestamp' on candidate pair to estimate when the
+      // pair was nominated.
+      final double lpst = stat.values['lastPacketSentTimestamp'];
+      final DateTime nominatedTime = DateTime.fromMillisecondsSinceEpoch(lpst.toInt());
+
       final String lcid = stat.values['localCandidateId'];
       final String rcid = stat.values['remoteCandidateId'];
       for (var innerStat in stats) {
@@ -228,13 +233,13 @@ Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnect
           final type = innerStat.values['candidateType'];
           final addr = innerStat.values['address'];
           final port = innerStat.values['port'];
-          _logger.d('STATS: chose $type local candidate with IP $addr:$port');
+          _logger.d('STATS: chose $type local candidate with IP $addr:$port @ $nominatedTime');
         }
         if (innerStat.id == rcid) {
           final type = innerStat.values['candidateType'];
           final addr = innerStat.values['address'];
           final port = innerStat.values['port'];
-          _logger.d('STATS: chose $type remote candidate with IP $addr:$port');
+          _logger.d('STATS: chose $type remote candidate with IP $addr:$port @ $nominatedTime');
         }
       }
     }
