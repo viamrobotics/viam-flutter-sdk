@@ -77,7 +77,8 @@
 <li><span class="parameter" id="-param-totalExternalRobotUsage"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.0/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">totalExternalRobotUsage</span>, </span></li>
 <li><span class="parameter" id="-param-totalExternalOrganizationUsage"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.0/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">totalExternalOrganizationUsage</span>, </span></li>
 <li><span class="parameter" id="-param-createdAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdAt</span>, </span></li>
-<li><span class="parameter" id="-param-updatedAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">updatedAt</span>}</span></li>
+<li><span class="parameter" id="-param-updatedAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">updatedAt</span>, </span></li>
+<li><span class="parameter" id="-param-mlTrainingMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/MLTrainingMetadata-class.html">MLTrainingMetadata</a>?</span> <span class="parameter-name">mlTrainingMetadata</span>}</span></li>
 </ol>)
     </section>
 
@@ -92,7 +93,7 @@
   $core.String? organizationId,
   $core.String? publicNamespace,
   $core.String? name,
-  $0.PackageType? type,
+  $1.PackageType? type,
   Visibility? visibility,
   $core.String? url,
   $core.String? description,
@@ -102,8 +103,9 @@
   MLModelMetadata? mlModelMetadata,
   $fixnum.Int64? totalExternalRobotUsage,
   $fixnum.Int64? totalExternalOrganizationUsage,
-  $5.Timestamp? createdAt,
-  $5.Timestamp? updatedAt,
+  $6.Timestamp? createdAt,
+  $6.Timestamp? updatedAt,
+  MLTrainingMetadata? mlTrainingMetadata,
 }) {
   final $result = create();
   if (itemId != null) {
@@ -153,6 +155,9 @@
   }
   if (updatedAt != null) {
     $result.updatedAt = updatedAt;
+  }
+  if (mlTrainingMetadata != null) {
+    $result.mlTrainingMetadata = mlTrainingMetadata;
   }
   return $result;
 }</code></pre>
