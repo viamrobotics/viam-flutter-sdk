@@ -83,10 +83,12 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;ClientChannelBase&gt; dial(String address, DialOptions? options, String Function() sessionCallback) async {
+  final dialSW = Stopwatch()..start();
   _logger.i(&#39;Connecting to address $address&#39;);
   final opts = options ?? DialOptions();
 
   if (opts.attemptMdns) {
+    final mdnsSW = Stopwatch()..start();
     try {
       final mdnsUri = await _searchMdns(address);
       &#47;&#47; Let downstream calls know when mdns was used. This is helpful to inform
@@ -102,16 +104,23 @@
     } catch (e) {
       _logger.d(&#39;Error dialing with mDNS; falling back to other methods&#39;, error: e);
     }
+    mdnsSW.stop();
+    _logger.d(&#39;STATS: mDNS discovery took ${mdnsSW.elapsed}&#39;);
   }
 
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
   if (address.contains(&#39;.local.&#39;) || address.contains(&#39;localhost&#39;)) {
     disableWebRtc = true;
   }
+  final Future&lt;ClientChannelBase&gt; chan;
   if (disableWebRtc) {
-    return _dialDirectGrpc(address, opts, sessionCallback);
+    chan = _dialDirectGrpc(address, opts, sessionCallback);
+  } else {
+    chan = _dialWebRtc(address, opts, sessionCallback);
   }
-  return _dialWebRtc(address, opts, sessionCallback);
+  dialSW.stop();
+  _logger.d(&#39;STATS: dial function took ${dialSW.elapsed}&#39;);
+  return chan.timeout(opts.timeout);
 }</code></pre>
 </section>
 
