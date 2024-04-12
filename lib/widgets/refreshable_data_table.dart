@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import 'button.dart';
 
@@ -80,7 +79,7 @@ class _ViamRefreshableDataTableState extends State<ViamRefreshableDataTable> {
   }
 
   String formattedDate(DateTime date) {
-    return DateFormat('yyyy-MM-dd HH:mm:ss:SS').format(date);
+    return '${date.year}-${date.month}-${date.day} ${date.hour}:${date.minute}:${date.second}:${date.millisecond}';
   }
 
   @override
