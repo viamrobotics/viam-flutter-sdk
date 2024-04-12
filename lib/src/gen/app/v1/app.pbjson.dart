@@ -1829,6 +1829,24 @@ const MLModelMetadata$json = {
 final $typed_data.Uint8List mLModelMetadataDescriptor = $convert.base64Decode(
     'Cg9NTE1vZGVsTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25z');
 
+@$core.Deprecated('Use mLTrainingMetadataDescriptor instead')
+const MLTrainingMetadata$json = {
+  '1': 'MLTrainingMetadata',
+  '2': [
+    {'1': 'versions', '3': 1, '4': 3, '5': 9, '10': 'versions'},
+    {'1': 'model_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
+    {'1': 'model_framework', '3': 3, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
+    {'1': 'draft', '3': 4, '4': 1, '5': 8, '10': 'draft'},
+  ],
+};
+
+/// Descriptor for `MLTrainingMetadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mLTrainingMetadataDescriptor = $convert.base64Decode(
+    'ChJNTFRyYWluaW5nTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25zEkAKCm1vZG'
+    'VsX3R5cGUYAiABKA4yIS52aWFtLmFwcC5tbHRyYWluaW5nLnYxLk1vZGVsVHlwZVIJbW9kZWxU'
+    'eXBlEk8KD21vZGVsX2ZyYW1ld29yaxgDIAEoDjImLnZpYW0uYXBwLm1sdHJhaW5pbmcudjEuTW'
+    '9kZWxGcmFtZXdvcmtSDm1vZGVsRnJhbWV3b3JrEhQKBWRyYWZ0GAQgASgIUgVkcmFmdA==');
+
 @$core.Deprecated('Use registryItemDescriptor instead')
 const RegistryItem$json = {
   '1': 'RegistryItem',
@@ -1847,6 +1865,7 @@ const RegistryItem$json = {
     {'1': 'total_external_organization_usage', '3': 14, '4': 1, '5': 3, '10': 'totalExternalOrganizationUsage'},
     {'1': 'module_metadata', '3': 11, '4': 1, '5': 11, '6': '.viam.app.v1.ModuleMetadata', '9': 0, '10': 'moduleMetadata'},
     {'1': 'ml_model_metadata', '3': 12, '4': 1, '5': 11, '6': '.viam.app.v1.MLModelMetadata', '9': 0, '10': 'mlModelMetadata'},
+    {'1': 'ml_training_metadata', '3': 18, '4': 1, '5': 11, '6': '.viam.app.v1.MLTrainingMetadata', '9': 0, '10': 'mlTrainingMetadata'},
     {'1': 'created_at', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'updated_at', '3': 16, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
@@ -1869,9 +1888,11 @@ final $typed_data.Uint8List registryItemDescriptor = $convert.base64Decode(
     '9uX3VzYWdlGA4gASgDUh50b3RhbEV4dGVybmFsT3JnYW5pemF0aW9uVXNhZ2USRgoPbW9kdWxl'
     'X21ldGFkYXRhGAsgASgLMhsudmlhbS5hcHAudjEuTW9kdWxlTWV0YWRhdGFIAFIObW9kdWxlTW'
     'V0YWRhdGESSgoRbWxfbW9kZWxfbWV0YWRhdGEYDCABKAsyHC52aWFtLmFwcC52MS5NTE1vZGVs'
-    'TWV0YWRhdGFIAFIPbWxNb2RlbE1ldGFkYXRhEjkKCmNyZWF0ZWRfYXQYDyABKAsyGi5nb29nbG'
-    'UucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgQIAEoCzIaLmdv'
-    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdEIKCghtZXRhZGF0YQ==');
+    'TWV0YWRhdGFIAFIPbWxNb2RlbE1ldGFkYXRhElMKFG1sX3RyYWluaW5nX21ldGFkYXRhGBIgAS'
+    'gLMh8udmlhbS5hcHAudjEuTUxUcmFpbmluZ01ldGFkYXRhSABSEm1sVHJhaW5pbmdNZXRhZGF0'
+    'YRI5CgpjcmVhdGVkX2F0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYX'
+    'RlZEF0EjkKCnVwZGF0ZWRfYXQYECABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1'
+    'cGRhdGVkQXRCCgoIbWV0YWRhdGE=');
 
 @$core.Deprecated('Use getRegistryItemRequestDescriptor instead')
 const GetRegistryItemRequest$json = {
