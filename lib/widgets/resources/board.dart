@@ -43,19 +43,6 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
 
   Timer? timer;
 
-  BoardStatus status = const BoardStatus({}, {});
-
-  Future<void> _fetchStatus() async {
-    final response = await widget.board.status();
-    setState(() {
-      status = response;
-    });
-  }
-
-  void refresh() {
-    _fetchStatus();
-  }
-
   void _createTimer() {
     timer = Timer.periodic(widget.refreshInterval, (_) {
       refresh();
@@ -65,7 +52,6 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   @override
   void initState() {
     super.initState();
-    _fetchStatus();
     _createTimer();
   }
 
@@ -129,23 +115,23 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              if (status.analogs.isNotEmpty)
+              if (widget.analogs.isNotEmpty)
                 Column(children: [
                   const Text('Analogs'),
                   DataTable(
                       columns: const <DataColumn>[DataColumn(label: Text('Analog')), DataColumn(label: Text('Value'))],
-                      rows: status.analogs.keys
-                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(status.analogs[e].toString()))]))
+                      rows: widget.analogs.keys
+                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(widget.analogs[e].toString()))]))
                           .toList()),
                   const SizedBox(height: 16),
                 ]),
-              if (status.digitalInterrupts.isNotEmpty)
+              if (widget.digitalInterrupts.isNotEmpty)
                 Column(children: [
                   const Text('Digital Interrupts'),
                   DataTable(
                       columns: const <DataColumn>[DataColumn(label: Text('Digital Interrupt')), DataColumn(label: Text('Value'))],
-                      rows: status.digitalInterrupts.keys
-                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(status.digitalInterrupts[e].toString()))]))
+                      rows: widget.digitalInterrupts.keys
+                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(widget.digitalInterrupts[e].toString()))]))
                           .toList()),
                   const SizedBox(height: 16),
                 ]),

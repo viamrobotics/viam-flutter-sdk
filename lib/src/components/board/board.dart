@@ -7,27 +7,6 @@ import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// The values of the [Board]'s analog readers and digital interrupts
-class BoardStatus {
-  final Map<String, int> analogs;
-  final Map<String, int> digitalInterrupts;
-
-  const BoardStatus(this.analogs, this.digitalInterrupts);
-
-  factory BoardStatus.fromProto(common.BoardStatus pbBoardStatus) {
-    final Map<String, int> analogs = pbBoardStatus.analogs.map((key, value) => MapEntry(key, value.value));
-    final Map<String, int> digitalInterrupts = pbBoardStatus.digitalInterrupts.map((key, value) => MapEntry(key, value.value.toInt()));
-    return BoardStatus(analogs, digitalInterrupts);
-  }
-
-  common.BoardStatus get proto {
-    final pbBoardStatus = common.BoardStatus();
-    analogs.forEach((key, value) => pbBoardStatus.analogs[key] = common.AnalogStatus()..value = value);
-    digitalInterrupts.forEach((key, value) => pbBoardStatus.digitalInterrupts[key] = common.DigitalInterruptStatus()..value = Int64(value));
-    return pbBoardStatus;
-  }
-}
-
 /// Tick of a digital interrupt
 class Tick {
   String pinName;
@@ -41,9 +20,6 @@ class Tick {
 /// components such as analog readers, and digital interrupts.
 abstract class Board extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'board');
-
-  /// Get the status of the Board.
-  Future<BoardStatus> status({Map<String, dynamic>? extra});
 
   /// Set the high/low state of the given pin of a board.
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra});

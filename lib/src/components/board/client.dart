@@ -35,15 +35,6 @@ class BoardClient extends Board implements ResourceRPCClient {
   }
 
   @override
-  Future<BoardStatus> status({Map<String, dynamic>? extra}) async {
-    final request = StatusRequest()
-      ..name = name
-      ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.status(request);
-    return BoardStatus.fromProto(response.status);
-  }
-
-  @override
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra}) async {
     final request = SetGPIORequest()
       ..name = name
