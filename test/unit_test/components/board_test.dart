@@ -16,7 +16,7 @@ class FakeBoard extends Board {
   final Map<String, double> pwmMap = {'pin': 0.0};
   final Map<String, int> frequencyMap = {'pin': 0};
   final Map<String, int> analogMap = {'pin': 0};
-  final Map<string, int> digitalInterruptMap = {'pin': 0}
+  final Map<string, int> digitalInterruptMap = {'pin': 0};
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
   final Map<String, Queue<Tick>> tickCallbackMap = {};
   Map<String, dynamic>? extra;
