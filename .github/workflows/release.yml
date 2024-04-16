@@ -18,7 +18,7 @@ jobs:
   prepare:
     if: github.repository_owner == 'viamrobotics'
     environment: release
-    runs-on: [self-hosted, x64]
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/cirruslabs/flutter:latest
     outputs:
@@ -34,7 +34,7 @@ jobs:
           && sudo apt install gh -y
 
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - run: git config --global --add safe.directory /__w/viam-flutter-sdk/viam-flutter-sdk
 
@@ -93,7 +93,7 @@ jobs:
   release:
     needs: [prepare]
     if: github.repository_owner == 'viamrobotics'
-    runs-on: [self-hosted, x64]
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/viamrobotics/canon:amd64
 
