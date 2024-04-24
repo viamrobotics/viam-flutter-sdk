@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_webrtc: ^0.9.47
+  flutter_webrtc: ^0.10.3
   grpc: ^3.2.3
   protobuf: ^3.0.0
   image: ^4.0.16
