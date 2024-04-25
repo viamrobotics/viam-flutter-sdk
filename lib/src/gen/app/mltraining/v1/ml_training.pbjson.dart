@@ -112,6 +112,42 @@ const SubmitTrainingJobResponse$json = {
 final $typed_data.Uint8List submitTrainingJobResponseDescriptor = $convert.base64Decode(
     'ChlTdWJtaXRUcmFpbmluZ0pvYlJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZA==');
 
+@$core.Deprecated('Use submitCustomTrainingJobRequestDescriptor instead')
+const SubmitCustomTrainingJobRequest$json = {
+  '1': 'SubmitCustomTrainingJobRequest',
+  '2': [
+    {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'datasetId'},
+    {'1': 'registry_item_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'registryItemId'},
+    {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'organizationId'},
+    {'1': 'model_name', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
+    {'1': 'model_version', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
+  ],
+};
+
+/// Descriptor for `SubmitCustomTrainingJobRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCustomTrainingJobRequestDescriptor = $convert.base64Decode(
+    'Ch5TdWJtaXRDdXN0b21UcmFpbmluZ0pvYlJlcXVlc3QSRwoKZGF0YXNldF9pZBgBIAEoCUIomo'
+    'SeAyNic29uOiJkYXRhc2V0X2lkIiBqc29uOiJkYXRhc2V0X2lkIlIJZGF0YXNldElkEl4KEHJl'
+    'Z2lzdHJ5X2l0ZW1faWQYAiABKAlCNJqEngMvYnNvbjoicmVnaXN0cnlfaXRlbV9pZCIganNvbj'
+    'oicmVnaXN0cnlfaXRlbV9pZCJSDnJlZ2lzdHJ5SXRlbUlkElsKD29yZ2FuaXphdGlvbl9pZBgD'
+    'IAEoCUIymoSeAy1ic29uOiJvcmdhbml6YXRpb25faWQiIGpzb246Im9yZ2FuaXphdGlvbl9pZC'
+    'JSDm9yZ2FuaXphdGlvbklkEkcKCm1vZGVsX25hbWUYBCABKAlCKJqEngMjYnNvbjoibW9kZWxf'
+    'bmFtZSIganNvbjoibW9kZWxfbmFtZSJSCW1vZGVsTmFtZRJTCg1tb2RlbF92ZXJzaW9uGAUgAS'
+    'gJQi6ahJ4DKWJzb246Im1vZGVsX3ZlcnNpb24iIGpzb246Im1vZGVsX3ZlcnNpb24iUgxtb2Rl'
+    'bFZlcnNpb24=');
+
+@$core.Deprecated('Use submitCustomTrainingJobResponseDescriptor instead')
+const SubmitCustomTrainingJobResponse$json = {
+  '1': 'SubmitCustomTrainingJobResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `SubmitCustomTrainingJobResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCustomTrainingJobResponseDescriptor = $convert.base64Decode(
+    'Ch9TdWJtaXRDdXN0b21UcmFpbmluZ0pvYlJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZA==');
+
 @$core.Deprecated('Use getTrainingJobRequestDescriptor instead')
 const GetTrainingJobRequest$json = {
   '1': 'GetTrainingJobRequest',
@@ -176,6 +212,9 @@ const TrainingJobMetadata$json = {
     {'1': 'model_name', '3': 13, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
     {'1': 'model_version', '3': 14, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
     {'1': 'model_type', '3': 15, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '8': {}, '10': 'modelType'},
+    {'1': 'model_framework', '3': 17, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '8': {}, '10': 'modelFramework'},
+    {'1': 'is_custom_job', '3': 18, '4': 1, '5': 8, '8': {}, '10': 'isCustomJob'},
+    {'1': 'registry_item_id', '3': 19, '4': 1, '5': 9, '8': {}, '10': 'registryItemId'},
     {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.TrainingStatus', '8': {}, '10': 'status'},
     {'1': 'error_status', '3': 8, '4': 1, '5': 11, '6': '.google.rpc.Status', '8': {}, '10': 'errorStatus'},
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdOn'},
@@ -204,21 +243,27 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     'IAEoCUIumoSeAylic29uOiJtb2RlbF92ZXJzaW9uIiBqc29uOiJtb2RlbF92ZXJzaW9uIlIMbW'
     '9kZWxWZXJzaW9uEmoKCm1vZGVsX3R5cGUYDyABKA4yIS52aWFtLmFwcC5tbHRyYWluaW5nLnYx'
     'Lk1vZGVsVHlwZUIomoSeAyNic29uOiJtb2RlbF90eXBlIiBqc29uOiJtb2RlbF90eXBlIlIJbW'
-    '9kZWxUeXBlEmAKBnN0YXR1cxgCIAEoDjImLnZpYW0uYXBwLm1sdHJhaW5pbmcudjEuVHJhaW5p'
-    'bmdTdGF0dXNCIJqEngMbYnNvbjoic3RhdHVzIiBqc29uOiJzdGF0dXMiUgZzdGF0dXMSYwoMZX'
-    'Jyb3Jfc3RhdHVzGAggASgLMhIuZ29vZ2xlLnJwYy5TdGF0dXNCLJqEngMnYnNvbjoiZXJyb3Jf'
-    'c3RhdHVzIiBqc29uOiJlcnJvcl9zdGF0dXMiUgtlcnJvclN0YXR1cxJjCgpjcmVhdGVkX29uGA'
-    'MgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIomoSeAyNic29uOiJjcmVhdGVkX29u'
-    'IiBqc29uOiJjcmVhdGVkX29uIlIJY3JlYXRlZE9uEm8KDWxhc3RfbW9kaWZpZWQYBCABKAsyGi'
-    '5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQi6ahJ4DKWJzb246Imxhc3RfbW9kaWZpZWQiIGpz'
-    'b246Imxhc3RfbW9kaWZpZWQiUgxsYXN0TW9kaWZpZWQSewoQdHJhaW5pbmdfc3RhcnRlZBgJIA'
-    'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCNJqEngMvYnNvbjoidHJhaW5pbmdfc3Rh'
-    'cnRlZCIganNvbjoidHJhaW5pbmdfc3RhcnRlZCJSD3RyYWluaW5nU3RhcnRlZBJzCg50cmFpbm'
-    'luZ19lbmRlZBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCMJqEngMrYnNvbjoi'
-    'dHJhaW5pbmdfZW5kZWQiIGpzb246InRyYWluaW5nX2VuZGVkIlINdHJhaW5pbmdFbmRlZBJaCg'
-    '9zeW5jZWRfbW9kZWxfaWQYBSABKAlCMpqEngMtYnNvbjoic3luY2VkX21vZGVsX2lkIiBqc29u'
-    'OiJzeW5jZWRfbW9kZWxfaWQiUg1zeW5jZWRNb2RlbElkEjAKBHRhZ3MYECADKAlCHJqEngMXYn'
-    'NvbjoidGFncyIganNvbjoidGFncyJSBHRhZ3NKBAgGEAdSCnVzZXJfZW1haWw=');
+    '9kZWxUeXBlEoMBCg9tb2RlbF9mcmFtZXdvcmsYESABKA4yJi52aWFtLmFwcC5tbHRyYWluaW5n'
+    'LnYxLk1vZGVsRnJhbWV3b3JrQjKahJ4DLWJzb246Im1vZGVsX2ZyYW1ld29yayIganNvbjoibW'
+    '9kZWxfZnJhbWV3b3JrIlIObW9kZWxGcmFtZXdvcmsSUgoNaXNfY3VzdG9tX2pvYhgSIAEoCEIu'
+    'moSeAylic29uOiJpc19jdXN0b21fam9iIiBqc29uOiJpc19jdXN0b21fam9iIlILaXNDdXN0b2'
+    '1Kb2ISXgoQcmVnaXN0cnlfaXRlbV9pZBgTIAEoCUI0moSeAy9ic29uOiJyZWdpc3RyeV9pdGVt'
+    'X2lkIiBqc29uOiJyZWdpc3RyeV9pdGVtX2lkIlIOcmVnaXN0cnlJdGVtSWQSYAoGc3RhdHVzGA'
+    'IgASgOMiYudmlhbS5hcHAubWx0cmFpbmluZy52MS5UcmFpbmluZ1N0YXR1c0IgmoSeAxtic29u'
+    'OiJzdGF0dXMiIGpzb246InN0YXR1cyJSBnN0YXR1cxJjCgxlcnJvcl9zdGF0dXMYCCABKAsyEi'
+    '5nb29nbGUucnBjLlN0YXR1c0IsmoSeAydic29uOiJlcnJvcl9zdGF0dXMiIGpzb246ImVycm9y'
+    'X3N0YXR1cyJSC2Vycm9yU3RhdHVzEmMKCmNyZWF0ZWRfb24YAyABKAsyGi5nb29nbGUucHJvdG'
+    '9idWYuVGltZXN0YW1wQiiahJ4DI2Jzb246ImNyZWF0ZWRfb24iIGpzb246ImNyZWF0ZWRfb24i'
+    'UgljcmVhdGVkT24SbwoNbGFzdF9tb2RpZmllZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
+    '1lc3RhbXBCLpqEngMpYnNvbjoibGFzdF9tb2RpZmllZCIganNvbjoibGFzdF9tb2RpZmllZCJS'
+    'DGxhc3RNb2RpZmllZBJ7ChB0cmFpbmluZ19zdGFydGVkGAkgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcEI0moSeAy9ic29uOiJ0cmFpbmluZ19zdGFydGVkIiBqc29uOiJ0cmFpbmlu'
+    'Z19zdGFydGVkIlIPdHJhaW5pbmdTdGFydGVkEnMKDnRyYWluaW5nX2VuZGVkGAogASgLMhouZ2'
+    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIwmoSeAytic29uOiJ0cmFpbmluZ19lbmRlZCIganNv'
+    'bjoidHJhaW5pbmdfZW5kZWQiUg10cmFpbmluZ0VuZGVkEloKD3N5bmNlZF9tb2RlbF9pZBgFIA'
+    'EoCUIymoSeAy1ic29uOiJzeW5jZWRfbW9kZWxfaWQiIGpzb246InN5bmNlZF9tb2RlbF9pZCJS'
+    'DXN5bmNlZE1vZGVsSWQSMAoEdGFncxgQIAMoCUIcmoSeAxdic29uOiJ0YWdzIiBqc29uOiJ0YW'
+    'dzIlIEdGFnc0oECAYQB1IKdXNlcl9lbWFpbA==');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {

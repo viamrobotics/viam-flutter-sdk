@@ -581,7 +581,14 @@ final $typed_data.Uint8List getCloudMetadataRequestDescriptor = $convert.base64D
 const GetCloudMetadataResponse$json = {
   '1': 'GetCloudMetadataResponse',
   '2': [
-    {'1': 'robot_part_id', '3': 1, '4': 1, '5': 9, '10': 'robotPartId'},
+    {
+      '1': 'robot_part_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {'3': true},
+      '10': 'robotPartId',
+    },
     {'1': 'primary_org_id', '3': 2, '4': 1, '5': 9, '10': 'primaryOrgId'},
     {'1': 'location_id', '3': 3, '4': 1, '5': 9, '10': 'locationId'},
     {'1': 'machine_id', '3': 4, '4': 1, '5': 9, '10': 'machineId'},
@@ -591,8 +598,34 @@ const GetCloudMetadataResponse$json = {
 
 /// Descriptor for `GetCloudMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getCloudMetadataResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USIgoNcm9ib3RfcGFydF9pZBgBIAEoCVILcm9ib3'
-    'RQYXJ0SWQSJAoOcHJpbWFyeV9vcmdfaWQYAiABKAlSDHByaW1hcnlPcmdJZBIfCgtsb2NhdGlv'
-    'bl9pZBgDIAEoCVIKbG9jYXRpb25JZBIdCgptYWNoaW5lX2lkGAQgASgJUgltYWNoaW5lSWQSJg'
-    'oPbWFjaGluZV9wYXJ0X2lkGAUgASgJUg1tYWNoaW5lUGFydElk');
+    'ChhHZXRDbG91ZE1ldGFkYXRhUmVzcG9uc2USJgoNcm9ib3RfcGFydF9pZBgBIAEoCUICGAFSC3'
+    'JvYm90UGFydElkEiQKDnByaW1hcnlfb3JnX2lkGAIgASgJUgxwcmltYXJ5T3JnSWQSHwoLbG9j'
+    'YXRpb25faWQYAyABKAlSCmxvY2F0aW9uSWQSHQoKbWFjaGluZV9pZBgEIAEoCVIJbWFjaGluZU'
+    'lkEiYKD21hY2hpbmVfcGFydF9pZBgFIAEoCVINbWFjaGluZVBhcnRJZA==');
+
+@$core.Deprecated('Use restartModuleRequestDescriptor instead')
+const RestartModuleRequest$json = {
+  '1': 'RestartModuleRequest',
+  '2': [
+    {'1': 'module_id', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'moduleId'},
+    {'1': 'module_name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'moduleName'},
+  ],
+  '8': [
+    {'1': 'id_or_name'},
+  ],
+};
+
+/// Descriptor for `RestartModuleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List restartModuleRequestDescriptor = $convert.base64Decode(
+    'ChRSZXN0YXJ0TW9kdWxlUmVxdWVzdBIdCgltb2R1bGVfaWQYASABKAlIAFIIbW9kdWxlSWQSIQ'
+    'oLbW9kdWxlX25hbWUYAiABKAlIAFIKbW9kdWxlTmFtZUIMCgppZF9vcl9uYW1l');
+
+@$core.Deprecated('Use restartModuleResponseDescriptor instead')
+const RestartModuleResponse$json = {
+  '1': 'RestartModuleResponse',
+};
+
+/// Descriptor for `RestartModuleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List restartModuleResponseDescriptor = $convert.base64Decode(
+    'ChVSZXN0YXJ0TW9kdWxlUmVzcG9uc2U=');
 

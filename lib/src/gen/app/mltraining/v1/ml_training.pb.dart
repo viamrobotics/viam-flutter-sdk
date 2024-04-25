@@ -183,6 +183,162 @@ class SubmitTrainingJobResponse extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
+class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
+  factory SubmitCustomTrainingJobRequest({
+    $core.String? datasetId,
+    $core.String? registryItemId,
+    $core.String? organizationId,
+    $core.String? modelName,
+    $core.String? modelVersion,
+  }) {
+    final $result = create();
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    if (registryItemId != null) {
+      $result.registryItemId = registryItemId;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (modelVersion != null) {
+      $result.modelVersion = modelVersion;
+    }
+    return $result;
+  }
+  SubmitCustomTrainingJobRequest._() : super();
+  factory SubmitCustomTrainingJobRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SubmitCustomTrainingJobRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitCustomTrainingJobRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'datasetId')
+    ..aOS(2, _omitFieldNames ? '' : 'registryItemId')
+    ..aOS(3, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(4, _omitFieldNames ? '' : 'modelName')
+    ..aOS(5, _omitFieldNames ? '' : 'modelVersion')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SubmitCustomTrainingJobRequest clone() => SubmitCustomTrainingJobRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SubmitCustomTrainingJobRequest copyWith(void Function(SubmitCustomTrainingJobRequest) updates) => super.copyWith((message) => updates(message as SubmitCustomTrainingJobRequest)) as SubmitCustomTrainingJobRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitCustomTrainingJobRequest create() => SubmitCustomTrainingJobRequest._();
+  SubmitCustomTrainingJobRequest createEmptyInstance() => create();
+  static $pb.PbList<SubmitCustomTrainingJobRequest> createRepeated() => $pb.PbList<SubmitCustomTrainingJobRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitCustomTrainingJobRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitCustomTrainingJobRequest>(create);
+  static SubmitCustomTrainingJobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get datasetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set datasetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDatasetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDatasetId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get registryItemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set registryItemId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRegistryItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegistryItemId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get organizationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set organizationId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrganizationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrganizationId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get modelName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set modelName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasModelName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearModelName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get modelVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set modelVersion($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasModelVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearModelVersion() => clearField(5);
+}
+
+class SubmitCustomTrainingJobResponse extends $pb.GeneratedMessage {
+  factory SubmitCustomTrainingJobResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  SubmitCustomTrainingJobResponse._() : super();
+  factory SubmitCustomTrainingJobResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SubmitCustomTrainingJobResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitCustomTrainingJobResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SubmitCustomTrainingJobResponse clone() => SubmitCustomTrainingJobResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SubmitCustomTrainingJobResponse copyWith(void Function(SubmitCustomTrainingJobResponse) updates) => super.copyWith((message) => updates(message as SubmitCustomTrainingJobResponse)) as SubmitCustomTrainingJobResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitCustomTrainingJobResponse create() => SubmitCustomTrainingJobResponse._();
+  SubmitCustomTrainingJobResponse createEmptyInstance() => create();
+  static $pb.PbList<SubmitCustomTrainingJobResponse> createRepeated() => $pb.PbList<SubmitCustomTrainingJobResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SubmitCustomTrainingJobResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitCustomTrainingJobResponse>(create);
+  static SubmitCustomTrainingJobResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
 class GetTrainingJobRequest extends $pb.GeneratedMessage {
   factory GetTrainingJobRequest({
     $core.String? id,
@@ -410,6 +566,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $core.String? modelVersion,
     ModelType? modelType,
     $core.Iterable<$core.String>? tags,
+    ModelFramework? modelFramework,
+    $core.bool? isCustomJob,
+    $core.String? registryItemId,
   }) {
     final $result = create();
     if (request != null) {
@@ -457,6 +616,15 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (tags != null) {
       $result.tags.addAll(tags);
     }
+    if (modelFramework != null) {
+      $result.modelFramework = modelFramework;
+    }
+    if (isCustomJob != null) {
+      $result.isCustomJob = isCustomJob;
+    }
+    if (registryItemId != null) {
+      $result.registryItemId = registryItemId;
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -479,6 +647,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOS(14, _omitFieldNames ? '' : 'modelVersion')
     ..e<ModelType>(15, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: ModelType.valueOf, enumValues: ModelType.values)
     ..pPS(16, _omitFieldNames ? '' : 'tags')
+    ..e<ModelFramework>(17, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: ModelFramework.valueOf, enumValues: ModelFramework.values)
+    ..aOB(18, _omitFieldNames ? '' : 'isCustomJob')
+    ..aOS(19, _omitFieldNames ? '' : 'registryItemId')
     ..hasRequiredFields = false
   ;
 
@@ -643,6 +814,33 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(16)
   $core.List<$core.String> get tags => $_getList(14);
+
+  @$pb.TagNumber(17)
+  ModelFramework get modelFramework => $_getN(15);
+  @$pb.TagNumber(17)
+  set modelFramework(ModelFramework v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasModelFramework() => $_has(15);
+  @$pb.TagNumber(17)
+  void clearModelFramework() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.bool get isCustomJob => $_getBF(16);
+  @$pb.TagNumber(18)
+  set isCustomJob($core.bool v) { $_setBool(16, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasIsCustomJob() => $_has(16);
+  @$pb.TagNumber(18)
+  void clearIsCustomJob() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get registryItemId => $_getSZ(17);
+  @$pb.TagNumber(19)
+  set registryItemId($core.String v) { $_setString(17, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasRegistryItemId() => $_has(17);
+  @$pb.TagNumber(19)
+  void clearRegistryItemId() => clearField(19);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {

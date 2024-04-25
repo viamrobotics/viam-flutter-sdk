@@ -538,6 +538,9 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
     $core.double? discountAmount,
     $core.double? totalUsageWithDiscount,
     $core.double? totalUsageWithoutDiscount,
+    $core.double? perMachineUsageCost,
+    $core.double? binaryDataCloudStorageUsageCost,
+    $core.double? otherCloudStorageUsageCost,
   }) {
     final $result = create();
     if (startDate != null) {
@@ -570,6 +573,15 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
     if (totalUsageWithoutDiscount != null) {
       $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
     }
+    if (perMachineUsageCost != null) {
+      $result.perMachineUsageCost = perMachineUsageCost;
+    }
+    if (binaryDataCloudStorageUsageCost != null) {
+      $result.binaryDataCloudStorageUsageCost = binaryDataCloudStorageUsageCost;
+    }
+    if (otherCloudStorageUsageCost != null) {
+      $result.otherCloudStorageUsageCost = otherCloudStorageUsageCost;
+    }
     return $result;
   }
   GetCurrentMonthUsageResponse._() : super();
@@ -587,6 +599,9 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
     ..a<$core.double>(8, _omitFieldNames ? '' : 'discountAmount', $pb.PbFieldType.OD)
     ..a<$core.double>(9, _omitFieldNames ? '' : 'totalUsageWithDiscount', $pb.PbFieldType.OD)
     ..a<$core.double>(10, _omitFieldNames ? '' : 'totalUsageWithoutDiscount', $pb.PbFieldType.OD)
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'perMachineUsageCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'binaryDataCloudStorageUsageCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(13, _omitFieldNames ? '' : 'otherCloudStorageUsageCost', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -704,6 +719,33 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   $core.bool hasTotalUsageWithoutDiscount() => $_has(9);
   @$pb.TagNumber(10)
   void clearTotalUsageWithoutDiscount() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get perMachineUsageCost => $_getN(10);
+  @$pb.TagNumber(11)
+  set perMachineUsageCost($core.double v) { $_setDouble(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasPerMachineUsageCost() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPerMachineUsageCost() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get binaryDataCloudStorageUsageCost => $_getN(11);
+  @$pb.TagNumber(12)
+  set binaryDataCloudStorageUsageCost($core.double v) { $_setDouble(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasBinaryDataCloudStorageUsageCost() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearBinaryDataCloudStorageUsageCost() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.double get otherCloudStorageUsageCost => $_getN(12);
+  @$pb.TagNumber(13)
+  set otherCloudStorageUsageCost($core.double v) { $_setDouble(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasOtherCloudStorageUsageCost() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearOtherCloudStorageUsageCost() => clearField(13);
 }
 
 class GetOrgBillingInformationRequest extends $pb.GeneratedMessage {

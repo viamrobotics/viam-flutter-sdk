@@ -133,6 +133,9 @@ const GetCurrentMonthUsageResponse$json = {
     {'1': 'discount_amount', '3': 8, '4': 1, '5': 1, '10': 'discountAmount'},
     {'1': 'total_usage_with_discount', '3': 9, '4': 1, '5': 1, '10': 'totalUsageWithDiscount'},
     {'1': 'total_usage_without_discount', '3': 10, '4': 1, '5': 1, '10': 'totalUsageWithoutDiscount'},
+    {'1': 'per_machine_usage_cost', '3': 11, '4': 1, '5': 1, '10': 'perMachineUsageCost'},
+    {'1': 'binary_data_cloud_storage_usage_cost', '3': 12, '4': 1, '5': 1, '10': 'binaryDataCloudStorageUsageCost'},
+    {'1': 'other_cloud_storage_usage_cost', '3': 13, '4': 1, '5': 1, '10': 'otherCloudStorageUsageCost'},
   ],
 };
 
@@ -148,7 +151,11 @@ final $typed_data.Uint8List getCurrentMonthUsageResponseDescriptor = $convert.ba
     'dlX2Nvc3QYByABKAFSGHN0YW5kYXJkQ29tcHV0ZVVzYWdlQ29zdBInCg9kaXNjb3VudF9hbW91'
     'bnQYCCABKAFSDmRpc2NvdW50QW1vdW50EjkKGXRvdGFsX3VzYWdlX3dpdGhfZGlzY291bnQYCS'
     'ABKAFSFnRvdGFsVXNhZ2VXaXRoRGlzY291bnQSPwocdG90YWxfdXNhZ2Vfd2l0aG91dF9kaXNj'
-    'b3VudBgKIAEoAVIZdG90YWxVc2FnZVdpdGhvdXREaXNjb3VudA==');
+    'b3VudBgKIAEoAVIZdG90YWxVc2FnZVdpdGhvdXREaXNjb3VudBIzChZwZXJfbWFjaGluZV91c2'
+    'FnZV9jb3N0GAsgASgBUhNwZXJNYWNoaW5lVXNhZ2VDb3N0Ek0KJGJpbmFyeV9kYXRhX2Nsb3Vk'
+    'X3N0b3JhZ2VfdXNhZ2VfY29zdBgMIAEoAVIfYmluYXJ5RGF0YUNsb3VkU3RvcmFnZVVzYWdlQ2'
+    '9zdBJCCh5vdGhlcl9jbG91ZF9zdG9yYWdlX3VzYWdlX2Nvc3QYDSABKAFSGm90aGVyQ2xvdWRT'
+    'dG9yYWdlVXNhZ2VDb3N0');
 
 @$core.Deprecated('Use getOrgBillingInformationRequestDescriptor instead')
 const GetOrgBillingInformationRequest$json = {

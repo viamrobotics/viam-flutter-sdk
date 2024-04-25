@@ -28,32 +28,45 @@ final $typed_data.Uint8List powerModeDescriptor = $convert.base64Decode(
     'CglQb3dlck1vZGUSGgoWUE9XRVJfTU9ERV9VTlNQRUNJRklFRBAAEhUKEVBPV0VSX01PREVfTk'
     '9STUFMEAESGwoXUE9XRVJfTU9ERV9PRkZMSU5FX0RFRVAQAg==');
 
-@$core.Deprecated('Use statusRequestDescriptor instead')
-const StatusRequest$json = {
-  '1': 'StatusRequest',
+@$core.Deprecated('Use statusDescriptor instead')
+const Status$json = {
+  '1': 'Status',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+    {'1': 'analogs', '3': 1, '4': 3, '5': 11, '6': '.viam.component.board.v1.Status.AnalogsEntry', '10': 'analogs'},
+    {'1': 'digital_interrupts', '3': 2, '4': 3, '5': 11, '6': '.viam.component.board.v1.Status.DigitalInterruptsEntry', '10': 'digitalInterrupts'},
   ],
+  '3': [Status_AnalogsEntry$json, Status_DigitalInterruptsEntry$json],
 };
 
-/// Descriptor for `StatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List statusRequestDescriptor = $convert.base64Decode(
-    'Cg1TdGF0dXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSLQoFZXh0cmEYYyABKAsyFy5nb2'
-    '9nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
-
-@$core.Deprecated('Use statusResponseDescriptor instead')
-const StatusResponse$json = {
-  '1': 'StatusResponse',
+@$core.Deprecated('Use statusDescriptor instead')
+const Status_AnalogsEntry$json = {
+  '1': 'AnalogsEntry',
   '2': [
-    {'1': 'status', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.BoardStatus', '10': 'status'},
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.AnalogStatus', '10': 'value'},
   ],
+  '7': {'7': true},
 };
 
-/// Descriptor for `StatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List statusResponseDescriptor = $convert.base64Decode(
-    'Cg5TdGF0dXNSZXNwb25zZRIzCgZzdGF0dXMYASABKAsyGy52aWFtLmNvbW1vbi52MS5Cb2FyZF'
-    'N0YXR1c1IGc3RhdHVz');
+@$core.Deprecated('Use statusDescriptor instead')
+const Status_DigitalInterruptsEntry$json = {
+  '1': 'DigitalInterruptsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.DigitalInterruptStatus', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `Status`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List statusDescriptor = $convert.base64Decode(
+    'CgZTdGF0dXMSRgoHYW5hbG9ncxgBIAMoCzIsLnZpYW0uY29tcG9uZW50LmJvYXJkLnYxLlN0YX'
+    'R1cy5BbmFsb2dzRW50cnlSB2FuYWxvZ3MSZQoSZGlnaXRhbF9pbnRlcnJ1cHRzGAIgAygLMjYu'
+    'dmlhbS5jb21wb25lbnQuYm9hcmQudjEuU3RhdHVzLkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnlSEW'
+    'RpZ2l0YWxJbnRlcnJ1cHRzGlgKDEFuYWxvZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIyCgV2'
+    'YWx1ZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLkFuYWxvZ1N0YXR1c1IFdmFsdWU6AjgBGmwKFk'
+    'RpZ2l0YWxJbnRlcnJ1cHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPAoFdmFsdWUYAiABKAsy'
+    'Ji52aWFtLmNvbW1vbi52MS5EaWdpdGFsSW50ZXJydXB0U3RhdHVzUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use setGPIORequestDescriptor instead')
 const SetGPIORequest$json = {
