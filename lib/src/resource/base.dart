@@ -55,6 +55,7 @@ class Subtype {
 abstract class Resource {
   abstract String name;
 
+  /// Send/Receive arbitrary commands to the [Resource]
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) {
     throw UnimplementedError();
   }

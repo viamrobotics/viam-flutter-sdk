@@ -49,5 +49,8 @@ export 'src/robot/client.dart';
 /// RPC
 export 'src/rpc/dial.dart';
 
+/// Services
+export 'src/services/vision.dart';
+
 /// Misc
 export 'src/viam_sdk.dart';

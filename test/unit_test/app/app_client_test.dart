@@ -13,7 +13,7 @@ void main() {
   late MockAppServiceClient serviceClient;
   late AppClient appClient;
 
-  setUp(() async {
+  setUp(() {
     serviceClient = MockAppServiceClient();
     appClient = AppClient(serviceClient);
   });
