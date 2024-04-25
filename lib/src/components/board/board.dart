@@ -1,20 +1,12 @@
 import 'dart:collection';
 
-import 'package:fixnum/fixnum.dart';
-
 import '../../gen/common/v1/common.pb.dart' as common;
 import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// Tick of a digital interrupt
-class Tick {
-  String pinName;
-  bool high;
-  Int64 time;
-
-  Tick({required this.pinName, required this.high, required this.time});
-}
+typedef Tick = StreamTicksResponse;
 
 /// Board represents a physical general purpose compute board that contains various
 /// components such as analog readers, and digital interrupts.

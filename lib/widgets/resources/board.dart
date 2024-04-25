@@ -41,26 +41,6 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
   final _pwmFreqFormKey = GlobalKey<FormState>();
   int pwmFrequency = 0;
 
-  Timer? timer;
-
-  void _createTimer() {
-    timer = Timer.periodic(widget.refreshInterval, (_) {
-      refresh();
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _createTimer();
-  }
-
-  @override
-  void dispose() {
-    timer?.cancel();
-    super.dispose();
-  }
-
   void _dismissKeyboard() {
     final currentFocus = FocusScope.of(context);
     if (!currentFocus.hasPrimaryFocus) {
@@ -115,26 +95,6 @@ class _ViamBoardWidgetState extends State<ViamBoardWidget> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              if (widget.analogs.isNotEmpty)
-                Column(children: [
-                  const Text('Analogs'),
-                  DataTable(
-                      columns: const <DataColumn>[DataColumn(label: Text('Analog')), DataColumn(label: Text('Value'))],
-                      rows: widget.analogs.keys
-                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(widget.analogs[e].toString()))]))
-                          .toList()),
-                  const SizedBox(height: 16),
-                ]),
-              if (widget.digitalInterrupts.isNotEmpty)
-                Column(children: [
-                  const Text('Digital Interrupts'),
-                  DataTable(
-                      columns: const <DataColumn>[DataColumn(label: Text('Digital Interrupt')), DataColumn(label: Text('Value'))],
-                      rows: widget.digitalInterrupts.keys
-                          .map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(widget.digitalInterrupts[e].toString()))]))
-                          .toList()),
-                  const SizedBox(height: 16),
-                ]),
               const Text('GPIO', style: TextStyle(fontSize: 24)),
               Container(
                   padding: const EdgeInsets.all(8),
