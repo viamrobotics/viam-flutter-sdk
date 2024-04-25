@@ -34,13 +34,13 @@ class FakeBoard extends Board {
   @override
   Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return analogMap[analogs[analogReaderName] ?? -1];
+    return analogMap[analogReaderName];
   }
 
   @override
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return digitalInterruptMap[digitalInterrupts[digitalInterruptName] ?? -1];
+    return digitalInterruptMap[digitalInterruptName];
   }
 
   @override
