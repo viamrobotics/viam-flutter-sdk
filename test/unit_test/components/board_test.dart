@@ -16,7 +16,6 @@ class FakeBoard extends Board {
   final Map<String, double> pwmMap = {'pin': 0.0};
   final Map<String, int> frequencyMap = {'pin': 0};
   final Map<String, int> analogMap = {'pin': 0};
-  final Map<string, int> digitalInterruptMap = {'pin': 0};
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
   final Map<String, Queue<Tick>> tickCallbackMap = {};
   Map<String, dynamic>? extra;
@@ -34,13 +33,13 @@ class FakeBoard extends Board {
   @override
   Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return analogMap[analogReaderName];
+    return 0;
   }
 
   @override
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return digitalInterruptMap[digitalInterruptName];
+    return 0;
   }
 
   @override
