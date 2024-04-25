@@ -46,7 +46,7 @@ class VisionClient implements ResourceRPCClient {
     return response.classifications;
   }
 
-  /// Get a list of [Classification]s from the camera named [cameraName].
+  /// Get a list of [Classification]s from the provided [image].
   /// The maximum number of [Classification]s returned is [count].
   Future<List<Classification>> classifications(ViamImage image, int count, {Map<String, dynamic>? extra}) async {
     final request = GetClassificationsRequest(
