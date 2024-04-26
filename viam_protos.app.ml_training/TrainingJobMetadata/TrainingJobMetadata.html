@@ -76,7 +76,10 @@
 <li><span class="parameter" id="-param-modelName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">modelName</span>, </span></li>
 <li><span class="parameter" id="-param-modelVersion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">modelVersion</span>, </span></li>
 <li><span class="parameter" id="-param-modelType"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
-<li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>}</span></li>
+<li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>, </span></li>
+<li><span class="parameter" id="-param-modelFramework"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelFramework-class.html">ModelFramework</a>?</span> <span class="parameter-name">modelFramework</span>, </span></li>
+<li><span class="parameter" id="-param-isCustomJob"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isCustomJob</span>, </span></li>
+<li><span class="parameter" id="-param-registryItemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">registryItemId</span>}</span></li>
 </ol>)
     </section>
 
@@ -102,6 +105,9 @@
   $core.String? modelVersion,
   ModelType? modelType,
   $core.Iterable&lt;$core.String&gt;? tags,
+  ModelFramework? modelFramework,
+  $core.bool? isCustomJob,
+  $core.String? registryItemId,
 }) {
   final $result = create();
   if (request != null) {
@@ -148,6 +154,15 @@
   }
   if (tags != null) {
     $result.tags.addAll(tags);
+  }
+  if (modelFramework != null) {
+    $result.modelFramework = modelFramework;
+  }
+  if (isCustomJob != null) {
+    $result.isCustomJob = isCustomJob;
+  }
+  if (registryItemId != null) {
+    $result.registryItemId = registryItemId;
   }
   return $result;
 }</code></pre>

@@ -71,7 +71,10 @@
 <li><span class="parameter" id="-param-standardComputeUsageCost"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">standardComputeUsageCost</span>, </span></li>
 <li><span class="parameter" id="-param-discountAmount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">discountAmount</span>, </span></li>
 <li><span class="parameter" id="-param-totalUsageWithDiscount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">totalUsageWithDiscount</span>, </span></li>
-<li><span class="parameter" id="-param-totalUsageWithoutDiscount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">totalUsageWithoutDiscount</span>}</span></li>
+<li><span class="parameter" id="-param-totalUsageWithoutDiscount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">totalUsageWithoutDiscount</span>, </span></li>
+<li><span class="parameter" id="-param-perMachineUsageCost"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">perMachineUsageCost</span>, </span></li>
+<li><span class="parameter" id="-param-binaryDataCloudStorageUsageCost"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">binaryDataCloudStorageUsageCost</span>, </span></li>
+<li><span class="parameter" id="-param-otherCloudStorageUsageCost"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">otherCloudStorageUsageCost</span>}</span></li>
 </ol>)
     </section>
 
@@ -92,6 +95,9 @@
   $core.double? discountAmount,
   $core.double? totalUsageWithDiscount,
   $core.double? totalUsageWithoutDiscount,
+  $core.double? perMachineUsageCost,
+  $core.double? binaryDataCloudStorageUsageCost,
+  $core.double? otherCloudStorageUsageCost,
 }) {
   final $result = create();
   if (startDate != null) {
@@ -123,6 +129,15 @@
   }
   if (totalUsageWithoutDiscount != null) {
     $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
+  }
+  if (perMachineUsageCost != null) {
+    $result.perMachineUsageCost = perMachineUsageCost;
+  }
+  if (binaryDataCloudStorageUsageCost != null) {
+    $result.binaryDataCloudStorageUsageCost = binaryDataCloudStorageUsageCost;
+  }
+  if (otherCloudStorageUsageCost != null) {
+    $result.otherCloudStorageUsageCost = otherCloudStorageUsageCost;
   }
   return $result;
 }</code></pre>

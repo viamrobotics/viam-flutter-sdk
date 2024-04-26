@@ -79,6 +79,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.SubmitTrainingJobRequest.fromBuffer(value),
       ($0.SubmitTrainingJobResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SubmitCustomTrainingJobRequest, $0.SubmitCustomTrainingJobResponse&gt;(
+      &#39;SubmitCustomTrainingJob&#39;,
+      submitCustomTrainingJob_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SubmitCustomTrainingJobRequest.fromBuffer(value),
+      ($0.SubmitCustomTrainingJobResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$0.GetTrainingJobRequest, $0.GetTrainingJobResponse&gt;(
       &#39;GetTrainingJob&#39;,
       getTrainingJob_Pre,

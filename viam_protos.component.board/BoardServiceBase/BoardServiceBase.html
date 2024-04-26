@@ -72,13 +72,6 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">BoardServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.StatusRequest, $0.StatusResponse&gt;(
-      &#39;Status&#39;,
-      status_Pre,
-      false,
-      false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.StatusRequest.fromBuffer(value),
-      ($0.StatusResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$0.SetGPIORequest, $0.SetGPIOResponse&gt;(
       &#39;SetGPIO&#39;,
       setGPIO_Pre,

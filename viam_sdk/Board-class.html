@@ -156,7 +156,7 @@ components such as analog readers, and digital interrupts.</p>
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="addCallbacks" class="callable">
-  <span class="name"><a href="../viam_sdk/Board/addCallbacks.html">addCallbacks</a></span><span class="signature">(<wbr><span class="parameter" id="addCallbacks-param-interrupts"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">interrupts</span>, </span><span class="parameter" id="addCallbacks-param-tickQueue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-collection/Queue-class.html">Queue</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/Tick-class.html">Tick</a></span>&gt;</span></span> <span class="parameter-name">tickQueue</span>, </span><span class="parameter" id="addCallbacks-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span>)
+  <span class="name"><a href="../viam_sdk/Board/addCallbacks.html">addCallbacks</a></span><span class="signature">(<wbr><span class="parameter" id="addCallbacks-param-interrupts"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">interrupts</span>, </span><span class="parameter" id="addCallbacks-param-tickQueue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-collection/Queue-class.html">Queue</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/Tick.html">Tick</a></span>&gt;</span></span> <span class="parameter-name">tickQueue</span>, </span><span class="parameter" id="addCallbacks-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
@@ -311,22 +311,9 @@ components such as analog readers, and digital interrupts.</p>
 
 </dd>
 
-        <dt id="status" class="callable">
-  <span class="name"><a href="../viam_sdk/Board/status.html">status</a></span><span class="signature">(<wbr><span class="parameter" id="status-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/BoardStatus-class.html">BoardStatus</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Get the status of the Board.
-  
-
-</dd>
-
         <dt id="streamTicks" class="callable">
   <span class="name"><a href="../viam_sdk/Board/streamTicks.html">streamTicks</a></span><span class="signature">(<wbr><span class="parameter" id="streamTicks-param-interrupts"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">interrupts</span>, </span><span class="parameter" id="streamTicks-param-extra">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/Tick-class.html">Tick</a></span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_sdk/Tick.html">Tick</a></span>&gt;</span></span>
   </span>
   
 
