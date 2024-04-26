@@ -2183,6 +2183,7 @@ class GetCloudMetadataRequest extends $pb.GeneratedMessage {
 
 class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   factory GetCloudMetadataResponse({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? robotPartId,
     $core.String? primaryOrgId,
     $core.String? locationId,
@@ -2191,6 +2192,7 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   }) {
     final $result = create();
     if (robotPartId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.robotPartId = robotPartId;
     }
     if (primaryOrgId != null) {
@@ -2241,12 +2243,17 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   static GetCloudMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCloudMetadataResponse>(create);
   static GetCloudMetadataResponse? _defaultInstance;
 
+  /// Deprecated: use machine_part_id field.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get robotPartId => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set robotPartId($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasRobotPartId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearRobotPartId() => clearField(1);
 
@@ -2285,6 +2292,118 @@ class GetCloudMetadataResponse extends $pb.GeneratedMessage {
   $core.bool hasMachinePartId() => $_has(4);
   @$pb.TagNumber(5)
   void clearMachinePartId() => clearField(5);
+}
+
+enum RestartModuleRequest_IdOrName {
+  moduleId, 
+  moduleName, 
+  notSet
+}
+
+class RestartModuleRequest extends $pb.GeneratedMessage {
+  factory RestartModuleRequest({
+    $core.String? moduleId,
+    $core.String? moduleName,
+  }) {
+    final $result = create();
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (moduleName != null) {
+      $result.moduleName = moduleName;
+    }
+    return $result;
+  }
+  RestartModuleRequest._() : super();
+  factory RestartModuleRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RestartModuleRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, RestartModuleRequest_IdOrName> _RestartModuleRequest_IdOrNameByTag = {
+    1 : RestartModuleRequest_IdOrName.moduleId,
+    2 : RestartModuleRequest_IdOrName.moduleName,
+    0 : RestartModuleRequest_IdOrName.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RestartModuleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..aOS(2, _omitFieldNames ? '' : 'moduleName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RestartModuleRequest clone() => RestartModuleRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RestartModuleRequest copyWith(void Function(RestartModuleRequest) updates) => super.copyWith((message) => updates(message as RestartModuleRequest)) as RestartModuleRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RestartModuleRequest create() => RestartModuleRequest._();
+  RestartModuleRequest createEmptyInstance() => create();
+  static $pb.PbList<RestartModuleRequest> createRepeated() => $pb.PbList<RestartModuleRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RestartModuleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RestartModuleRequest>(create);
+  static RestartModuleRequest? _defaultInstance;
+
+  RestartModuleRequest_IdOrName whichIdOrName() => _RestartModuleRequest_IdOrNameByTag[$_whichOneof(0)]!;
+  void clearIdOrName() => clearField($_whichOneof(0));
+
+  /// ID is for registry modules, name for local modules
+  @$pb.TagNumber(1)
+  $core.String get moduleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set moduleId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasModuleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModuleId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get moduleName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set moduleName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasModuleName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearModuleName() => clearField(2);
+}
+
+class RestartModuleResponse extends $pb.GeneratedMessage {
+  factory RestartModuleResponse() => create();
+  RestartModuleResponse._() : super();
+  factory RestartModuleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RestartModuleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RestartModuleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RestartModuleResponse clone() => RestartModuleResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RestartModuleResponse copyWith(void Function(RestartModuleResponse) updates) => super.copyWith((message) => updates(message as RestartModuleResponse)) as RestartModuleResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RestartModuleResponse create() => RestartModuleResponse._();
+  RestartModuleResponse createEmptyInstance() => create();
+  static $pb.PbList<RestartModuleResponse> createRepeated() => $pb.PbList<RestartModuleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RestartModuleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RestartModuleResponse>(create);
+  static RestartModuleResponse? _defaultInstance;
 }
 
 

@@ -89,6 +89,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/GetCloudMetadata',
       ($0.GetCloudMetadataRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetCloudMetadataResponse.fromBuffer(value));
+  static final _$restartModule = $grpc.ClientMethod<$0.RestartModuleRequest, $0.RestartModuleResponse>(
+      '/viam.robot.v1.RobotService/RestartModule',
+      ($0.RestartModuleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.RestartModuleResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -162,6 +166,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetCloudMetadataResponse> getCloudMetadata($0.GetCloudMetadataRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getCloudMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RestartModuleResponse> restartModule($0.RestartModuleRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$restartModule, request, options: options);
   }
 }
 
@@ -289,6 +297,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetCloudMetadataRequest.fromBuffer(value),
         ($0.GetCloudMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RestartModuleRequest, $0.RestartModuleResponse>(
+        'RestartModule',
+        restartModule_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RestartModuleRequest.fromBuffer(value),
+        ($0.RestartModuleResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$0.GetOperationsRequest> request) async {
@@ -359,6 +374,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return getCloudMetadata(call, await request);
   }
 
+  $async.Future<$0.RestartModuleResponse> restartModule_Pre($grpc.ServiceCall call, $async.Future<$0.RestartModuleRequest> request) async {
+    return restartModule(call, await request);
+  }
+
   $async.Future<$0.GetOperationsResponse> getOperations($grpc.ServiceCall call, $0.GetOperationsRequest request);
   $async.Future<$0.GetSessionsResponse> getSessions($grpc.ServiceCall call, $0.GetSessionsRequest request);
   $async.Future<$0.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $0.ResourceNamesRequest request);
@@ -376,4 +395,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$0.SendSessionHeartbeatResponse> sendSessionHeartbeat($grpc.ServiceCall call, $0.SendSessionHeartbeatRequest request);
   $async.Future<$0.LogResponse> log($grpc.ServiceCall call, $0.LogRequest request);
   $async.Future<$0.GetCloudMetadataResponse> getCloudMetadata($grpc.ServiceCall call, $0.GetCloudMetadataRequest request);
+  $async.Future<$0.RestartModuleResponse> restartModule($grpc.ServiceCall call, $0.RestartModuleRequest request);
 }

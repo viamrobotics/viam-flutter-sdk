@@ -16,7 +16,6 @@ class FakeBoard extends Board {
   final Map<String, double> pwmMap = {'pin': 0.0};
   final Map<String, int> frequencyMap = {'pin': 0};
   final Map<String, int> analogMap = {'pin': 0};
-  final BoardStatus boardStatus = const BoardStatus({'1': 0}, {'1': 0});
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
   final Map<String, Queue<Tick>> tickCallbackMap = {};
   Map<String, dynamic>? extra;
@@ -34,13 +33,13 @@ class FakeBoard extends Board {
   @override
   Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return boardStatus.analogs[analogReaderName] ?? -1;
+    return 0;
   }
 
   @override
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return boardStatus.digitalInterrupts[digitalInterruptName] ?? -1;
+    return 0;
   }
 
   @override
@@ -84,12 +83,6 @@ class FakeBoard extends Board {
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
     frequencyMap[pin] = frequencyHz;
-  }
-
-  @override
-  Future<BoardStatus> status({Map<String, dynamic>? extra}) async {
-    this.extra = extra;
-    return boardStatus;
   }
 
   @override
@@ -185,13 +178,6 @@ void main() {
     test('writeAnalog', () async {
       await board.writeAnalog('pin', 4);
       expect(board.analogMap['pin'], 4);
-    });
-
-    test('status', () async {
-      const expected = {'1': 0};
-      final actual = await board.status();
-      expect(actual.analogs, expected);
-      expect(actual.digitalInterrupts, expected);
     });
 
     test('doCommand', () async {
@@ -353,16 +339,6 @@ void main() {
         expect(board.analogMap['pin'], 4);
       });
 
-      test('status', () async {
-        final client = BoardServiceClient(channel);
-        const expected = {'1': 0};
-        final response = await client.status((StatusRequest()..name = name));
-        final actual = BoardStatus.fromProto(response.status);
-
-        expect(actual.analogs, expected);
-        expect(actual.digitalInterrupts, expected);
-      });
-
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
 
@@ -468,14 +444,6 @@ void main() {
         expect(board.analogMap['pin'], 0);
         await client.writeAnalog('pin', 4);
         expect(board.analogMap['pin'], 4);
-      });
-
-      test('status', () async {
-        final client = BoardClient(name, channel);
-        const expected = {'1': 0};
-        final actual = await client.status();
-        expect(actual.analogs, expected);
-        expect(actual.digitalInterrupts, expected);
       });
 
       test('doCommand', () async {

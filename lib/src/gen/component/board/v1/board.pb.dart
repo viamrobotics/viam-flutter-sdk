@@ -21,27 +21,27 @@ import 'board.pbenum.dart';
 
 export 'board.pbenum.dart';
 
-class StatusRequest extends $pb.GeneratedMessage {
-  factory StatusRequest({
-    $core.String? name,
-    $2.Struct? extra,
+class Status extends $pb.GeneratedMessage {
+  factory Status({
+    $core.Map<$core.String, $1.AnalogStatus>? analogs,
+    $core.Map<$core.String, $1.DigitalInterruptStatus>? digitalInterrupts,
   }) {
     final $result = create();
-    if (name != null) {
-      $result.name = name;
+    if (analogs != null) {
+      $result.analogs.addAll(analogs);
     }
-    if (extra != null) {
-      $result.extra = extra;
+    if (digitalInterrupts != null) {
+      $result.digitalInterrupts.addAll(digitalInterrupts);
     }
     return $result;
   }
-  StatusRequest._() : super();
-  factory StatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Status._() : super();
+  factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
+    ..m<$core.String, $1.AnalogStatus>(1, _omitFieldNames ? '' : 'analogs', entryClassName: 'Status.AnalogsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.AnalogStatus.create, valueDefaultOrMaker: $1.AnalogStatus.getDefault, packageName: const $pb.PackageName('viam.component.board.v1'))
+    ..m<$core.String, $1.DigitalInterruptStatus>(2, _omitFieldNames ? '' : 'digitalInterrupts', entryClassName: 'Status.DigitalInterruptsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.DigitalInterruptStatus.create, valueDefaultOrMaker: $1.DigitalInterruptStatus.getDefault, packageName: const $pb.PackageName('viam.component.board.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -49,95 +49,28 @@ class StatusRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  StatusRequest clone() => StatusRequest()..mergeFromMessage(this);
+  Status clone() => Status()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StatusRequest copyWith(void Function(StatusRequest) updates) => super.copyWith((message) => updates(message as StatusRequest)) as StatusRequest;
+  Status copyWith(void Function(Status) updates) => super.copyWith((message) => updates(message as Status)) as Status;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static StatusRequest create() => StatusRequest._();
-  StatusRequest createEmptyInstance() => create();
-  static $pb.PbList<StatusRequest> createRepeated() => $pb.PbList<StatusRequest>();
+  static Status create() => Status._();
+  Status createEmptyInstance() => create();
+  static $pb.PbList<Status> createRepeated() => $pb.PbList<Status>();
   @$core.pragma('dart2js:noInline')
-  static StatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StatusRequest>(create);
-  static StatusRequest? _defaultInstance;
+  static Status getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Status>(create);
+  static Status? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  $core.Map<$core.String, $1.AnalogStatus> get analogs => $_getMap(0);
 
-  /// Additional arguments to the method
-  @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(1);
-  @$pb.TagNumber(99)
-  set extra($2.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(1);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(1);
-}
-
-class StatusResponse extends $pb.GeneratedMessage {
-  factory StatusResponse({
-    $1.BoardStatus? status,
-  }) {
-    final $result = create();
-    if (status != null) {
-      $result.status = status;
-    }
-    return $result;
-  }
-  StatusResponse._() : super();
-  factory StatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
-    ..aOM<$1.BoardStatus>(1, _omitFieldNames ? '' : 'status', subBuilder: $1.BoardStatus.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  StatusResponse clone() => StatusResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  StatusResponse copyWith(void Function(StatusResponse) updates) => super.copyWith((message) => updates(message as StatusResponse)) as StatusResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static StatusResponse create() => StatusResponse._();
-  StatusResponse createEmptyInstance() => create();
-  static $pb.PbList<StatusResponse> createRepeated() => $pb.PbList<StatusResponse>();
-  @$core.pragma('dart2js:noInline')
-  static StatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StatusResponse>(create);
-  static StatusResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $1.BoardStatus get status => $_getN(0);
-  @$pb.TagNumber(1)
-  set status($1.BoardStatus v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasStatus() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
-  @$pb.TagNumber(1)
-  $1.BoardStatus ensureStatus() => $_ensure(0);
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $1.DigitalInterruptStatus> get digitalInterrupts => $_getMap(1);
 }
 
 class SetGPIORequest extends $pb.GeneratedMessage {

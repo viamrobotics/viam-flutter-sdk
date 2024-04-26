@@ -37,59 +37,13 @@ const ResourceName$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
     {'1': 'subtype', '3': 3, '4': 1, '5': 9, '10': 'subtype'},
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'machine_part_id', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'machinePartId', '17': true},
-  ],
-  '8': [
-    {'1': '_machine_part_id'},
   ],
 };
 
 /// Descriptor for `ResourceName`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode(
     'CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIA'
-    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWUS'
-    'KwoPbWFjaGluZV9wYXJ0X2lkGAUgASgJSABSDW1hY2hpbmVQYXJ0SWSIAQFCEgoQX21hY2hpbm'
-    'VfcGFydF9pZA==');
-
-@$core.Deprecated('Use boardStatusDescriptor instead')
-const BoardStatus$json = {
-  '1': 'BoardStatus',
-  '2': [
-    {'1': 'analogs', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.BoardStatus.AnalogsEntry', '10': 'analogs'},
-    {'1': 'digital_interrupts', '3': 2, '4': 3, '5': 11, '6': '.viam.common.v1.BoardStatus.DigitalInterruptsEntry', '10': 'digitalInterrupts'},
-  ],
-  '3': [BoardStatus_AnalogsEntry$json, BoardStatus_DigitalInterruptsEntry$json],
-};
-
-@$core.Deprecated('Use boardStatusDescriptor instead')
-const BoardStatus_AnalogsEntry$json = {
-  '1': 'AnalogsEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.AnalogStatus', '10': 'value'},
-  ],
-  '7': {'7': true},
-};
-
-@$core.Deprecated('Use boardStatusDescriptor instead')
-const BoardStatus_DigitalInterruptsEntry$json = {
-  '1': 'DigitalInterruptsEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.DigitalInterruptStatus', '10': 'value'},
-  ],
-  '7': {'7': true},
-};
-
-/// Descriptor for `BoardStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List boardStatusDescriptor = $convert.base64Decode(
-    'CgtCb2FyZFN0YXR1cxJCCgdhbmFsb2dzGAEgAygLMigudmlhbS5jb21tb24udjEuQm9hcmRTdG'
-    'F0dXMuQW5hbG9nc0VudHJ5UgdhbmFsb2dzEmEKEmRpZ2l0YWxfaW50ZXJydXB0cxgCIAMoCzIy'
-    'LnZpYW0uY29tbW9uLnYxLkJvYXJkU3RhdHVzLkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnlSEWRpZ2'
-    'l0YWxJbnRlcnJ1cHRzGlgKDEFuYWxvZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIyCgV2YWx1'
-    'ZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLkFuYWxvZ1N0YXR1c1IFdmFsdWU6AjgBGmwKFkRpZ2'
-    'l0YWxJbnRlcnJ1cHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPAoFdmFsdWUYAiABKAsyJi52'
-    'aWFtLmNvbW1vbi52MS5EaWdpdGFsSW50ZXJydXB0U3RhdHVzUgV2YWx1ZToCOAE=');
+    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
 
 @$core.Deprecated('Use analogStatusDescriptor instead')
 const AnalogStatus$json = {

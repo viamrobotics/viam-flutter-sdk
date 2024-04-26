@@ -25,6 +25,10 @@ class MLTrainingServiceClient extends $grpc.Client {
       '/viam.app.mltraining.v1.MLTrainingService/SubmitTrainingJob',
       ($0.SubmitTrainingJobRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.SubmitTrainingJobResponse.fromBuffer(value));
+  static final _$submitCustomTrainingJob = $grpc.ClientMethod<$0.SubmitCustomTrainingJobRequest, $0.SubmitCustomTrainingJobResponse>(
+      '/viam.app.mltraining.v1.MLTrainingService/SubmitCustomTrainingJob',
+      ($0.SubmitCustomTrainingJobRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.SubmitCustomTrainingJobResponse.fromBuffer(value));
   static final _$getTrainingJob = $grpc.ClientMethod<$0.GetTrainingJobRequest, $0.GetTrainingJobResponse>(
       '/viam.app.mltraining.v1.MLTrainingService/GetTrainingJob',
       ($0.GetTrainingJobRequest value) => value.writeToBuffer(),
@@ -50,6 +54,10 @@ class MLTrainingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.SubmitTrainingJobResponse> submitTrainingJob($0.SubmitTrainingJobRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$submitTrainingJob, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($0.SubmitCustomTrainingJobRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$submitCustomTrainingJob, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetTrainingJobResponse> getTrainingJob($0.GetTrainingJobRequest request, {$grpc.CallOptions? options}) {
@@ -81,6 +89,13 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SubmitTrainingJobRequest.fromBuffer(value),
         ($0.SubmitTrainingJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitCustomTrainingJobRequest, $0.SubmitCustomTrainingJobResponse>(
+        'SubmitCustomTrainingJob',
+        submitCustomTrainingJob_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SubmitCustomTrainingJobRequest.fromBuffer(value),
+        ($0.SubmitCustomTrainingJobResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetTrainingJobRequest, $0.GetTrainingJobResponse>(
         'GetTrainingJob',
         getTrainingJob_Pre,
@@ -115,6 +130,10 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
     return submitTrainingJob(call, await request);
   }
 
+  $async.Future<$0.SubmitCustomTrainingJobResponse> submitCustomTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$0.SubmitCustomTrainingJobRequest> request) async {
+    return submitCustomTrainingJob(call, await request);
+  }
+
   $async.Future<$0.GetTrainingJobResponse> getTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$0.GetTrainingJobRequest> request) async {
     return getTrainingJob(call, await request);
   }
@@ -132,6 +151,7 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.SubmitTrainingJobResponse> submitTrainingJob($grpc.ServiceCall call, $0.SubmitTrainingJobRequest request);
+  $async.Future<$0.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($grpc.ServiceCall call, $0.SubmitCustomTrainingJobRequest request);
   $async.Future<$0.GetTrainingJobResponse> getTrainingJob($grpc.ServiceCall call, $0.GetTrainingJobRequest request);
   $async.Future<$0.ListTrainingJobsResponse> listTrainingJobs($grpc.ServiceCall call, $0.ListTrainingJobsRequest request);
   $async.Future<$0.CancelTrainingJobResponse> cancelTrainingJob($grpc.ServiceCall call, $0.CancelTrainingJobRequest request);

@@ -26,7 +26,6 @@ class ResourceName extends $pb.GeneratedMessage {
     $core.String? type,
     $core.String? subtype,
     $core.String? name,
-    $core.String? machinePartId,
   }) {
     final $result = create();
     if (namespace != null) {
@@ -41,9 +40,6 @@ class ResourceName extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (machinePartId != null) {
-      $result.machinePartId = machinePartId;
-    }
     return $result;
   }
   ResourceName._() : super();
@@ -55,7 +51,6 @@ class ResourceName extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aOS(3, _omitFieldNames ? '' : 'subtype')
     ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..aOS(5, _omitFieldNames ? '' : 'machinePartId')
     ..hasRequiredFields = false
   ;
 
@@ -115,67 +110,6 @@ class ResourceName extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get machinePartId => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set machinePartId($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasMachinePartId() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearMachinePartId() => clearField(5);
-}
-
-class BoardStatus extends $pb.GeneratedMessage {
-  factory BoardStatus({
-    $core.Map<$core.String, AnalogStatus>? analogs,
-    $core.Map<$core.String, DigitalInterruptStatus>? digitalInterrupts,
-  }) {
-    final $result = create();
-    if (analogs != null) {
-      $result.analogs.addAll(analogs);
-    }
-    if (digitalInterrupts != null) {
-      $result.digitalInterrupts.addAll(digitalInterrupts);
-    }
-    return $result;
-  }
-  BoardStatus._() : super();
-  factory BoardStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BoardStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoardStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..m<$core.String, AnalogStatus>(1, _omitFieldNames ? '' : 'analogs', entryClassName: 'BoardStatus.AnalogsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: AnalogStatus.create, valueDefaultOrMaker: AnalogStatus.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
-    ..m<$core.String, DigitalInterruptStatus>(2, _omitFieldNames ? '' : 'digitalInterrupts', entryClassName: 'BoardStatus.DigitalInterruptsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: DigitalInterruptStatus.create, valueDefaultOrMaker: DigitalInterruptStatus.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  BoardStatus clone() => BoardStatus()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  BoardStatus copyWith(void Function(BoardStatus) updates) => super.copyWith((message) => updates(message as BoardStatus)) as BoardStatus;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static BoardStatus create() => BoardStatus._();
-  BoardStatus createEmptyInstance() => create();
-  static $pb.PbList<BoardStatus> createRepeated() => $pb.PbList<BoardStatus>();
-  @$core.pragma('dart2js:noInline')
-  static BoardStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoardStatus>(create);
-  static BoardStatus? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.Map<$core.String, AnalogStatus> get analogs => $_getMap(0);
-
-  @$pb.TagNumber(2)
-  $core.Map<$core.String, DigitalInterruptStatus> get digitalInterrupts => $_getMap(1);
 }
 
 class AnalogStatus extends $pb.GeneratedMessage {

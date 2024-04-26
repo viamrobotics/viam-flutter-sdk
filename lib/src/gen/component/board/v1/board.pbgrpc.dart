@@ -22,10 +22,6 @@ export 'board.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.board.v1.BoardService')
 class BoardServiceClient extends $grpc.Client {
-  static final _$status = $grpc.ClientMethod<$0.StatusRequest, $0.StatusResponse>(
-      '/viam.component.board.v1.BoardService/Status',
-      ($0.StatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.StatusResponse.fromBuffer(value));
   static final _$setGPIO = $grpc.ClientMethod<$0.SetGPIORequest, $0.SetGPIOResponse>(
       '/viam.component.board.v1.BoardService/SetGPIO',
       ($0.SetGPIORequest value) => value.writeToBuffer(),
@@ -85,10 +81,6 @@ class BoardServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.StatusResponse> status($0.StatusRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$status, request, options: options);
-  }
-
   $grpc.ResponseFuture<$0.SetGPIOResponse> setGPIO($0.SetGPIORequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setGPIO, request, options: options);
   }
@@ -147,13 +139,6 @@ abstract class BoardServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.board.v1.BoardService';
 
   BoardServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.StatusRequest, $0.StatusResponse>(
-        'Status',
-        status_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.StatusRequest.fromBuffer(value),
-        ($0.StatusResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SetGPIORequest, $0.SetGPIOResponse>(
         'SetGPIO',
         setGPIO_Pre,
@@ -247,10 +232,6 @@ abstract class BoardServiceBase extends $grpc.Service {
         ($1.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.StatusResponse> status_Pre($grpc.ServiceCall call, $async.Future<$0.StatusRequest> request) async {
-    return status(call, await request);
-  }
-
   $async.Future<$0.SetGPIOResponse> setGPIO_Pre($grpc.ServiceCall call, $async.Future<$0.SetGPIORequest> request) async {
     return setGPIO(call, await request);
   }
@@ -303,7 +284,6 @@ abstract class BoardServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$0.StatusResponse> status($grpc.ServiceCall call, $0.StatusRequest request);
   $async.Future<$0.SetGPIOResponse> setGPIO($grpc.ServiceCall call, $0.SetGPIORequest request);
   $async.Future<$0.GetGPIOResponse> getGPIO($grpc.ServiceCall call, $0.GetGPIORequest request);
   $async.Future<$0.PWMResponse> pWM($grpc.ServiceCall call, $0.PWMRequest request);
