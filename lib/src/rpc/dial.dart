@@ -346,6 +346,8 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
         return;
       }
 
+      _logger.d('STATS: candidate ${candidate.candidate} gathered');
+
       try {
         final candidateProto = ICECandidate();
         if (candidate.candidate != null) {
@@ -458,6 +460,7 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
         response.update.candidate.sdpmLineIndex,
       );
       try {
+        _logger.d('STATS: adding remote ICE candidate of ${iceCandidate.candidate}');
         await peerConnection.addCandidate(iceCandidate);
       } catch (error, st) {
         _logger.e('Add candidate error', error: error, stackTrace: st);
