@@ -1,11 +1,28 @@
 # Changelog
 
-## [v0.0.11](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.11) (2024-03-08)
+## [v0.0.12](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.12) (2024-04-30)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.10...v0.0.11)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.11...v0.0.12)
+
+**Closed issues:**
+
+- Flutter sdk does not respect  datachannel limit of 64Kb  [\#161](https://github.com/viamrobotics/viam-flutter-sdk/issues/161)
 
 **Merged pull requests:**
 
+- RSDK-7376 Add more logs to dial [\#197](https://github.com/viamrobotics/viam-flutter-sdk/pull/197) ([benjirewis](https://github.com/benjirewis))
+- \[RSDK-7392\] vision service client [\#196](https://github.com/viamrobotics/viam-flutter-sdk/pull/196) ([njooma](https://github.com/njooma))
+- Remove self-hosted runners [\#194](https://github.com/viamrobotics/viam-flutter-sdk/pull/194) ([njooma](https://github.com/njooma))
+- RSDK-7309: Update Status for Board in Flutter SDK [\#193](https://github.com/viamrobotics/viam-flutter-sdk/pull/193) ([martha-johnston](https://github.com/martha-johnston))
+- remove intl dependency [\#192](https://github.com/viamrobotics/viam-flutter-sdk/pull/192) ([clintpurser](https://github.com/clintpurser))
+- Automated Protos Update [\#191](https://github.com/viamrobotics/viam-flutter-sdk/pull/191) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#190](https://github.com/viamrobotics/viam-flutter-sdk/pull/190) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-7045 Implement StreamTicks  [\#189](https://github.com/viamrobotics/viam-flutter-sdk/pull/189) ([oliviamiller](https://github.com/oliviamiller))
+- RSDK-6515 Add dial timeout and stats [\#188](https://github.com/viamrobotics/viam-flutter-sdk/pull/188) ([benjirewis](https://github.com/benjirewis))
+- Automated Protos Update [\#187](https://github.com/viamrobotics/viam-flutter-sdk/pull/187) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#186](https://github.com/viamrobotics/viam-flutter-sdk/pull/186) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-6116: Mobile app should auto refresh board's analog readings [\#185](https://github.com/viamrobotics/viam-flutter-sdk/pull/185) ([Oabraham1](https://github.com/Oabraham1))
+- v0.0.11 [\#184](https://github.com/viamrobotics/viam-flutter-sdk/pull/184) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#183](https://github.com/viamrobotics/viam-flutter-sdk/pull/183) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[RSDK-6863\] webrtc message size [\#182](https://github.com/viamrobotics/viam-flutter-sdk/pull/182) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#181](https://github.com/viamrobotics/viam-flutter-sdk/pull/181) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -85,6 +102,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.11](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.11) (2024-03-08)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.10...v0.0.11)
 
 ## [v0.0.10](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.10) (2024-01-23)
 
