@@ -14,7 +14,6 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $1;
 import '../../../google/protobuf/duration.pb.dart' as $3;
 import '../../../google/protobuf/struct.pb.dart' as $2;
 import 'board.pbenum.dart';
@@ -23,8 +22,8 @@ export 'board.pbenum.dart';
 
 class Status extends $pb.GeneratedMessage {
   factory Status({
-    $core.Map<$core.String, $1.AnalogStatus>? analogs,
-    $core.Map<$core.String, $1.DigitalInterruptStatus>? digitalInterrupts,
+    $core.Map<$core.String, $core.int>? analogs,
+    $core.Map<$core.String, $fixnum.Int64>? digitalInterrupts,
   }) {
     final $result = create();
     if (analogs != null) {
@@ -40,8 +39,8 @@ class Status extends $pb.GeneratedMessage {
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
-    ..m<$core.String, $1.AnalogStatus>(1, _omitFieldNames ? '' : 'analogs', entryClassName: 'Status.AnalogsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.AnalogStatus.create, valueDefaultOrMaker: $1.AnalogStatus.getDefault, packageName: const $pb.PackageName('viam.component.board.v1'))
-    ..m<$core.String, $1.DigitalInterruptStatus>(2, _omitFieldNames ? '' : 'digitalInterrupts', entryClassName: 'Status.DigitalInterruptsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.DigitalInterruptStatus.create, valueDefaultOrMaker: $1.DigitalInterruptStatus.getDefault, packageName: const $pb.PackageName('viam.component.board.v1'))
+    ..m<$core.String, $core.int>(1, _omitFieldNames ? '' : 'analogs', entryClassName: 'Status.AnalogsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('viam.component.board.v1'))
+    ..m<$core.String, $fixnum.Int64>(2, _omitFieldNames ? '' : 'digitalInterrupts', entryClassName: 'Status.DigitalInterruptsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O6, packageName: const $pb.PackageName('viam.component.board.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -67,10 +66,10 @@ class Status extends $pb.GeneratedMessage {
   static Status? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $1.AnalogStatus> get analogs => $_getMap(0);
+  $core.Map<$core.String, $core.int> get analogs => $_getMap(0);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $1.DigitalInterruptStatus> get digitalInterrupts => $_getMap(1);
+  $core.Map<$core.String, $fixnum.Int64> get digitalInterrupts => $_getMap(1);
 }
 
 class SetGPIORequest extends $pb.GeneratedMessage {
@@ -931,10 +930,22 @@ class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
 class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
   factory ReadAnalogReaderResponse({
     $core.int? value,
+    $core.double? minRange,
+    $core.double? maxRange,
+    $core.double? stepSize,
   }) {
     final $result = create();
     if (value != null) {
       $result.value = value;
+    }
+    if (minRange != null) {
+      $result.minRange = minRange;
+    }
+    if (maxRange != null) {
+      $result.maxRange = maxRange;
+    }
+    if (stepSize != null) {
+      $result.stepSize = stepSize;
     }
     return $result;
   }
@@ -944,6 +955,9 @@ class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadAnalogReaderResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'value', $pb.PbFieldType.O3)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'minRange', $pb.PbFieldType.OF)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'maxRange', $pb.PbFieldType.OF)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'stepSize', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
@@ -976,6 +990,33 @@ class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
   $core.bool hasValue() => $_has(0);
   @$pb.TagNumber(1)
   void clearValue() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get minRange => $_getN(1);
+  @$pb.TagNumber(2)
+  set minRange($core.double v) { $_setFloat(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMinRange() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinRange() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get maxRange => $_getN(2);
+  @$pb.TagNumber(3)
+  set maxRange($core.double v) { $_setFloat(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMaxRange() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxRange() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get stepSize => $_getN(3);
+  @$pb.TagNumber(4)
+  set stepSize($core.double v) { $_setFloat(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStepSize() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStepSize() => clearField(4);
 }
 
 class WriteAnalogRequest extends $pb.GeneratedMessage {

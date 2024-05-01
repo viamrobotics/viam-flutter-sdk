@@ -19,64 +19,6 @@ import 'agent.pb.dart' as $0;
 
 export 'agent.pb.dart';
 
-@$pb.GrpcServiceName('viam.app.agent.v1.AgentAppService')
-class AgentAppServiceClient extends $grpc.Client {
-  static final _$getAgentConfig = $grpc.ClientMethod<$0.GetAgentConfigRequest, $0.GetAgentConfigResponse>(
-      '/viam.app.agent.v1.AgentAppService/GetAgentConfig',
-      ($0.GetAgentConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetAgentConfigResponse.fromBuffer(value));
-  static final _$updateAgentConfig = $grpc.ClientMethod<$0.UpdateAgentConfigRequest, $0.UpdateAgentConfigResponse>(
-      '/viam.app.agent.v1.AgentAppService/UpdateAgentConfig',
-      ($0.UpdateAgentConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.UpdateAgentConfigResponse.fromBuffer(value));
-
-  AgentAppServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.GetAgentConfigResponse> getAgentConfig($0.GetAgentConfigRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAgentConfig, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.UpdateAgentConfigResponse> updateAgentConfig($0.UpdateAgentConfigRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateAgentConfig, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('viam.app.agent.v1.AgentAppService')
-abstract class AgentAppServiceBase extends $grpc.Service {
-  $core.String get $name => 'viam.app.agent.v1.AgentAppService';
-
-  AgentAppServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.GetAgentConfigRequest, $0.GetAgentConfigResponse>(
-        'GetAgentConfig',
-        getAgentConfig_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetAgentConfigRequest.fromBuffer(value),
-        ($0.GetAgentConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.UpdateAgentConfigRequest, $0.UpdateAgentConfigResponse>(
-        'UpdateAgentConfig',
-        updateAgentConfig_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.UpdateAgentConfigRequest.fromBuffer(value),
-        ($0.UpdateAgentConfigResponse value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.GetAgentConfigResponse> getAgentConfig_Pre($grpc.ServiceCall call, $async.Future<$0.GetAgentConfigRequest> request) async {
-    return getAgentConfig(call, await request);
-  }
-
-  $async.Future<$0.UpdateAgentConfigResponse> updateAgentConfig_Pre($grpc.ServiceCall call, $async.Future<$0.UpdateAgentConfigRequest> request) async {
-    return updateAgentConfig(call, await request);
-  }
-
-  $async.Future<$0.GetAgentConfigResponse> getAgentConfig($grpc.ServiceCall call, $0.GetAgentConfigRequest request);
-  $async.Future<$0.UpdateAgentConfigResponse> updateAgentConfig($grpc.ServiceCall call, $0.UpdateAgentConfigRequest request);
-}
 @$pb.GrpcServiceName('viam.app.agent.v1.AgentDeviceService')
 class AgentDeviceServiceClient extends $grpc.Client {
   static final _$deviceAgentConfig = $grpc.ClientMethod<$0.DeviceAgentConfigRequest, $0.DeviceAgentConfigResponse>(

@@ -45,30 +45,6 @@ final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode(
     'CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIA'
     'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
 
-@$core.Deprecated('Use analogStatusDescriptor instead')
-const AnalogStatus$json = {
-  '1': 'AnalogStatus',
-  '2': [
-    {'1': 'value', '3': 1, '4': 1, '5': 5, '10': 'value'},
-  ],
-};
-
-/// Descriptor for `AnalogStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List analogStatusDescriptor = $convert.base64Decode(
-    'CgxBbmFsb2dTdGF0dXMSFAoFdmFsdWUYASABKAVSBXZhbHVl');
-
-@$core.Deprecated('Use digitalInterruptStatusDescriptor instead')
-const DigitalInterruptStatus$json = {
-  '1': 'DigitalInterruptStatus',
-  '2': [
-    {'1': 'value', '3': 1, '4': 1, '5': 3, '10': 'value'},
-  ],
-};
-
-/// Descriptor for `DigitalInterruptStatus`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List digitalInterruptStatusDescriptor = $convert.base64Decode(
-    'ChZEaWdpdGFsSW50ZXJydXB0U3RhdHVzEhQKBXZhbHVlGAEgASgDUgV2YWx1ZQ==');
-
 @$core.Deprecated('Use poseDescriptor instead')
 const Pose$json = {
   '1': 'Pose',
