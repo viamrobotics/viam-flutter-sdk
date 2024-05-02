@@ -43,7 +43,7 @@ const Status_AnalogsEntry$json = {
   '1': 'AnalogsEntry',
   '2': [
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.AnalogStatus', '10': 'value'},
+    {'1': 'value', '3': 2, '4': 1, '5': 5, '10': 'value'},
   ],
   '7': {'7': true},
 };
@@ -53,7 +53,7 @@ const Status_DigitalInterruptsEntry$json = {
   '1': 'DigitalInterruptsEntry',
   '2': [
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.DigitalInterruptStatus', '10': 'value'},
+    {'1': 'value', '3': 2, '4': 1, '5': 3, '10': 'value'},
   ],
   '7': {'7': true},
 };
@@ -63,10 +63,9 @@ final $typed_data.Uint8List statusDescriptor = $convert.base64Decode(
     'CgZTdGF0dXMSRgoHYW5hbG9ncxgBIAMoCzIsLnZpYW0uY29tcG9uZW50LmJvYXJkLnYxLlN0YX'
     'R1cy5BbmFsb2dzRW50cnlSB2FuYWxvZ3MSZQoSZGlnaXRhbF9pbnRlcnJ1cHRzGAIgAygLMjYu'
     'dmlhbS5jb21wb25lbnQuYm9hcmQudjEuU3RhdHVzLkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnlSEW'
-    'RpZ2l0YWxJbnRlcnJ1cHRzGlgKDEFuYWxvZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIyCgV2'
-    'YWx1ZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLkFuYWxvZ1N0YXR1c1IFdmFsdWU6AjgBGmwKFk'
-    'RpZ2l0YWxJbnRlcnJ1cHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPAoFdmFsdWUYAiABKAsy'
-    'Ji52aWFtLmNvbW1vbi52MS5EaWdpdGFsSW50ZXJydXB0U3RhdHVzUgV2YWx1ZToCOAE=');
+    'RpZ2l0YWxJbnRlcnJ1cHRzGjoKDEFuYWxvZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2'
+    'YWx1ZRgCIAEoBVIFdmFsdWU6AjgBGkQKFkRpZ2l0YWxJbnRlcnJ1cHRzRW50cnkSEAoDa2V5GA'
+    'EgASgJUgNrZXkSFAoFdmFsdWUYAiABKANSBXZhbHVlOgI4AQ==');
 
 @$core.Deprecated('Use setGPIORequestDescriptor instead')
 const SetGPIORequest$json = {
@@ -249,12 +248,17 @@ const ReadAnalogReaderResponse$json = {
   '1': 'ReadAnalogReaderResponse',
   '2': [
     {'1': 'value', '3': 1, '4': 1, '5': 5, '10': 'value'},
+    {'1': 'min_range', '3': 2, '4': 1, '5': 2, '10': 'minRange'},
+    {'1': 'max_range', '3': 3, '4': 1, '5': 2, '10': 'maxRange'},
+    {'1': 'step_size', '3': 4, '4': 1, '5': 2, '10': 'stepSize'},
   ],
 };
 
 /// Descriptor for `ReadAnalogReaderResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List readAnalogReaderResponseDescriptor = $convert.base64Decode(
-    'ChhSZWFkQW5hbG9nUmVhZGVyUmVzcG9uc2USFAoFdmFsdWUYASABKAVSBXZhbHVl');
+    'ChhSZWFkQW5hbG9nUmVhZGVyUmVzcG9uc2USFAoFdmFsdWUYASABKAVSBXZhbHVlEhsKCW1pbl'
+    '9yYW5nZRgCIAEoAlIIbWluUmFuZ2USGwoJbWF4X3JhbmdlGAMgASgCUghtYXhSYW5nZRIbCglz'
+    'dGVwX3NpemUYBCABKAJSCHN0ZXBTaXpl');
 
 @$core.Deprecated('Use writeAnalogRequestDescriptor instead')
 const WriteAnalogRequest$json = {

@@ -11,7 +11,6 @@
 
 import 'dart:core' as $core;
 
-import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/struct.pb.dart' as $1;
@@ -110,108 +109,6 @@ class ResourceName extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
-}
-
-class AnalogStatus extends $pb.GeneratedMessage {
-  factory AnalogStatus({
-    $core.int? value,
-  }) {
-    final $result = create();
-    if (value != null) {
-      $result.value = value;
-    }
-    return $result;
-  }
-  AnalogStatus._() : super();
-  factory AnalogStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AnalogStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnalogStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'value', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AnalogStatus clone() => AnalogStatus()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AnalogStatus copyWith(void Function(AnalogStatus) updates) => super.copyWith((message) => updates(message as AnalogStatus)) as AnalogStatus;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AnalogStatus create() => AnalogStatus._();
-  AnalogStatus createEmptyInstance() => create();
-  static $pb.PbList<AnalogStatus> createRepeated() => $pb.PbList<AnalogStatus>();
-  @$core.pragma('dart2js:noInline')
-  static AnalogStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnalogStatus>(create);
-  static AnalogStatus? _defaultInstance;
-
-  /// Current value of the analog reader of a robot's board
-  @$pb.TagNumber(1)
-  $core.int get value => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set value($core.int v) { $_setSignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasValue() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearValue() => clearField(1);
-}
-
-class DigitalInterruptStatus extends $pb.GeneratedMessage {
-  factory DigitalInterruptStatus({
-    $fixnum.Int64? value,
-  }) {
-    final $result = create();
-    if (value != null) {
-      $result.value = value;
-    }
-    return $result;
-  }
-  DigitalInterruptStatus._() : super();
-  factory DigitalInterruptStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DigitalInterruptStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalInterruptStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'value')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DigitalInterruptStatus clone() => DigitalInterruptStatus()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DigitalInterruptStatus copyWith(void Function(DigitalInterruptStatus) updates) => super.copyWith((message) => updates(message as DigitalInterruptStatus)) as DigitalInterruptStatus;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static DigitalInterruptStatus create() => DigitalInterruptStatus._();
-  DigitalInterruptStatus createEmptyInstance() => create();
-  static $pb.PbList<DigitalInterruptStatus> createRepeated() => $pb.PbList<DigitalInterruptStatus>();
-  @$core.pragma('dart2js:noInline')
-  static DigitalInterruptStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalInterruptStatus>(create);
-  static DigitalInterruptStatus? _defaultInstance;
-
-  /// Current value of the digital interrupt of a robot's board
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get value => $_getI64(0);
-  @$pb.TagNumber(1)
-  set value($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasValue() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearValue() => clearField(1);
 }
 
 ///  Pose is a combination of location and orientation.

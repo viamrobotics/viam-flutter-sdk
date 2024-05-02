@@ -13,384 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $2;
-import '../../../google/protobuf/struct.pb.dart' as $1;
+import '../../../google/protobuf/duration.pb.dart' as $1;
+import '../../../google/protobuf/struct.pb.dart' as $2;
 import 'agent.pbenum.dart';
 
 export 'agent.pbenum.dart';
-
-/// App side
-class GetAgentConfigRequest extends $pb.GeneratedMessage {
-  factory GetAgentConfigRequest({
-    $core.String? id,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
-  }
-  GetAgentConfigRequest._() : super();
-  factory GetAgentConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetAgentConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAgentConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetAgentConfigRequest clone() => GetAgentConfigRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetAgentConfigRequest copyWith(void Function(GetAgentConfigRequest) updates) => super.copyWith((message) => updates(message as GetAgentConfigRequest)) as GetAgentConfigRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetAgentConfigRequest create() => GetAgentConfigRequest._();
-  GetAgentConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAgentConfigRequest> createRepeated() => $pb.PbList<GetAgentConfigRequest>();
-  @$core.pragma('dart2js:noInline')
-  static GetAgentConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAgentConfigRequest>(create);
-  static GetAgentConfigRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-}
-
-class GetAgentConfigResponse extends $pb.GeneratedMessage {
-  factory GetAgentConfigResponse({
-    AppAgentConfig? agentConfig,
-  }) {
-    final $result = create();
-    if (agentConfig != null) {
-      $result.agentConfig = agentConfig;
-    }
-    return $result;
-  }
-  GetAgentConfigResponse._() : super();
-  factory GetAgentConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetAgentConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAgentConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..aOM<AppAgentConfig>(1, _omitFieldNames ? '' : 'agentConfig', subBuilder: AppAgentConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetAgentConfigResponse clone() => GetAgentConfigResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetAgentConfigResponse copyWith(void Function(GetAgentConfigResponse) updates) => super.copyWith((message) => updates(message as GetAgentConfigResponse)) as GetAgentConfigResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetAgentConfigResponse create() => GetAgentConfigResponse._();
-  GetAgentConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAgentConfigResponse> createRepeated() => $pb.PbList<GetAgentConfigResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetAgentConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAgentConfigResponse>(create);
-  static GetAgentConfigResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  AppAgentConfig get agentConfig => $_getN(0);
-  @$pb.TagNumber(1)
-  set agentConfig(AppAgentConfig v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAgentConfig() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAgentConfig() => clearField(1);
-  @$pb.TagNumber(1)
-  AppAgentConfig ensureAgentConfig() => $_ensure(0);
-}
-
-class UpdateAgentConfigRequest extends $pb.GeneratedMessage {
-  factory UpdateAgentConfigRequest({
-    $core.String? id,
-    AppAgentConfig? agentConfig,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (agentConfig != null) {
-      $result.agentConfig = agentConfig;
-    }
-    return $result;
-  }
-  UpdateAgentConfigRequest._() : super();
-  factory UpdateAgentConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateAgentConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateAgentConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<AppAgentConfig>(2, _omitFieldNames ? '' : 'agentConfig', subBuilder: AppAgentConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpdateAgentConfigRequest clone() => UpdateAgentConfigRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpdateAgentConfigRequest copyWith(void Function(UpdateAgentConfigRequest) updates) => super.copyWith((message) => updates(message as UpdateAgentConfigRequest)) as UpdateAgentConfigRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static UpdateAgentConfigRequest create() => UpdateAgentConfigRequest._();
-  UpdateAgentConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateAgentConfigRequest> createRepeated() => $pb.PbList<UpdateAgentConfigRequest>();
-  @$core.pragma('dart2js:noInline')
-  static UpdateAgentConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateAgentConfigRequest>(create);
-  static UpdateAgentConfigRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  AppAgentConfig get agentConfig => $_getN(1);
-  @$pb.TagNumber(2)
-  set agentConfig(AppAgentConfig v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasAgentConfig() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearAgentConfig() => clearField(2);
-  @$pb.TagNumber(2)
-  AppAgentConfig ensureAgentConfig() => $_ensure(1);
-}
-
-class UpdateAgentConfigResponse extends $pb.GeneratedMessage {
-  factory UpdateAgentConfigResponse({
-    AppAgentConfig? agentConfig,
-  }) {
-    final $result = create();
-    if (agentConfig != null) {
-      $result.agentConfig = agentConfig;
-    }
-    return $result;
-  }
-  UpdateAgentConfigResponse._() : super();
-  factory UpdateAgentConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateAgentConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateAgentConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..aOM<AppAgentConfig>(1, _omitFieldNames ? '' : 'agentConfig', subBuilder: AppAgentConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpdateAgentConfigResponse clone() => UpdateAgentConfigResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpdateAgentConfigResponse copyWith(void Function(UpdateAgentConfigResponse) updates) => super.copyWith((message) => updates(message as UpdateAgentConfigResponse)) as UpdateAgentConfigResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static UpdateAgentConfigResponse create() => UpdateAgentConfigResponse._();
-  UpdateAgentConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateAgentConfigResponse> createRepeated() => $pb.PbList<UpdateAgentConfigResponse>();
-  @$core.pragma('dart2js:noInline')
-  static UpdateAgentConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateAgentConfigResponse>(create);
-  static UpdateAgentConfigResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  AppAgentConfig get agentConfig => $_getN(0);
-  @$pb.TagNumber(1)
-  set agentConfig(AppAgentConfig v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAgentConfig() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAgentConfig() => clearField(1);
-  @$pb.TagNumber(1)
-  AppAgentConfig ensureAgentConfig() => $_ensure(0);
-}
-
-class AppAgentConfig extends $pb.GeneratedMessage {
-  factory AppAgentConfig({
-    $core.Map<$core.String, AppSubsystemConfig>? subsystemConfigs,
-  }) {
-    final $result = create();
-    if (subsystemConfigs != null) {
-      $result.subsystemConfigs.addAll(subsystemConfigs);
-    }
-    return $result;
-  }
-  AppAgentConfig._() : super();
-  factory AppAgentConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppAgentConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppAgentConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..m<$core.String, AppSubsystemConfig>(1, _omitFieldNames ? '' : 'subsystemConfigs', entryClassName: 'AppAgentConfig.SubsystemConfigsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: AppSubsystemConfig.create, valueDefaultOrMaker: AppSubsystemConfig.getDefault, packageName: const $pb.PackageName('viam.app.agent.v1'))
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AppAgentConfig clone() => AppAgentConfig()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AppAgentConfig copyWith(void Function(AppAgentConfig) updates) => super.copyWith((message) => updates(message as AppAgentConfig)) as AppAgentConfig;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AppAgentConfig create() => AppAgentConfig._();
-  AppAgentConfig createEmptyInstance() => create();
-  static $pb.PbList<AppAgentConfig> createRepeated() => $pb.PbList<AppAgentConfig>();
-  @$core.pragma('dart2js:noInline')
-  static AppAgentConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppAgentConfig>(create);
-  static AppAgentConfig? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.Map<$core.String, AppSubsystemConfig> get subsystemConfigs => $_getMap(0);
-}
-
-class AppSubsystemConfig extends $pb.GeneratedMessage {
-  factory AppSubsystemConfig({
-    $core.String? releaseChannel,
-    $core.String? pinVersion,
-    $core.String? pinUrl,
-    $core.bool? disableSubsystem,
-    $1.Struct? attributes,
-  }) {
-    final $result = create();
-    if (releaseChannel != null) {
-      $result.releaseChannel = releaseChannel;
-    }
-    if (pinVersion != null) {
-      $result.pinVersion = pinVersion;
-    }
-    if (pinUrl != null) {
-      $result.pinUrl = pinUrl;
-    }
-    if (disableSubsystem != null) {
-      $result.disableSubsystem = disableSubsystem;
-    }
-    if (attributes != null) {
-      $result.attributes = attributes;
-    }
-    return $result;
-  }
-  AppSubsystemConfig._() : super();
-  factory AppSubsystemConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppSubsystemConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppSubsystemConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'releaseChannel')
-    ..aOS(2, _omitFieldNames ? '' : 'pinVersion')
-    ..aOS(3, _omitFieldNames ? '' : 'pinUrl')
-    ..aOB(4, _omitFieldNames ? '' : 'disableSubsystem')
-    ..aOM<$1.Struct>(5, _omitFieldNames ? '' : 'attributes', subBuilder: $1.Struct.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AppSubsystemConfig clone() => AppSubsystemConfig()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AppSubsystemConfig copyWith(void Function(AppSubsystemConfig) updates) => super.copyWith((message) => updates(message as AppSubsystemConfig)) as AppSubsystemConfig;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AppSubsystemConfig create() => AppSubsystemConfig._();
-  AppSubsystemConfig createEmptyInstance() => create();
-  static $pb.PbList<AppSubsystemConfig> createRepeated() => $pb.PbList<AppSubsystemConfig>();
-  @$core.pragma('dart2js:noInline')
-  static AppSubsystemConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppSubsystemConfig>(create);
-  static AppSubsystemConfig? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get releaseChannel => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set releaseChannel($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasReleaseChannel() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearReleaseChannel() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get pinVersion => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set pinVersion($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasPinVersion() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPinVersion() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get pinUrl => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set pinUrl($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasPinUrl() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPinUrl() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.bool get disableSubsystem => $_getBF(3);
-  @$pb.TagNumber(4)
-  set disableSubsystem($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasDisableSubsystem() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDisableSubsystem() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $1.Struct get attributes => $_getN(4);
-  @$pb.TagNumber(5)
-  set attributes($1.Struct v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasAttributes() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearAttributes() => clearField(5);
-  @$pb.TagNumber(5)
-  $1.Struct ensureAttributes() => $_ensure(4);
-}
 
 /// Device side
 class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
@@ -473,7 +100,7 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
 class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
   factory DeviceAgentConfigResponse({
     $core.Map<$core.String, DeviceSubsystemConfig>? subsystemConfigs,
-    $2.Duration? checkInterval,
+    $1.Duration? checkInterval,
   }) {
     final $result = create();
     if (subsystemConfigs != null) {
@@ -490,7 +117,7 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceAgentConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
     ..m<$core.String, DeviceSubsystemConfig>(1, _omitFieldNames ? '' : 'subsystemConfigs', entryClassName: 'DeviceAgentConfigResponse.SubsystemConfigsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: DeviceSubsystemConfig.create, valueDefaultOrMaker: DeviceSubsystemConfig.getDefault, packageName: const $pb.PackageName('viam.app.agent.v1'))
-    ..aOM<$2.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $2.Duration.create)
+    ..aOM<$1.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $1.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -522,15 +149,15 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   /// how often this request should be repeated
   @$pb.TagNumber(2)
-  $2.Duration get checkInterval => $_getN(1);
+  $1.Duration get checkInterval => $_getN(1);
   @$pb.TagNumber(2)
-  set checkInterval($2.Duration v) { setField(2, v); }
+  set checkInterval($1.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCheckInterval() => $_has(1);
   @$pb.TagNumber(2)
   void clearCheckInterval() => clearField(2);
   @$pb.TagNumber(2)
-  $2.Duration ensureCheckInterval() => $_ensure(1);
+  $1.Duration ensureCheckInterval() => $_ensure(1);
 }
 
 class DeviceSubsystemConfig extends $pb.GeneratedMessage {
@@ -538,7 +165,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
     SubsystemUpdateInfo? updateInfo,
     $core.bool? disable,
     $core.bool? forceRestart,
-    $1.Struct? attributes,
+    $2.Struct? attributes,
   }) {
     final $result = create();
     if (updateInfo != null) {
@@ -563,7 +190,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
     ..aOM<SubsystemUpdateInfo>(1, _omitFieldNames ? '' : 'updateInfo', subBuilder: SubsystemUpdateInfo.create)
     ..aOB(2, _omitFieldNames ? '' : 'disable')
     ..aOB(3, _omitFieldNames ? '' : 'forceRestart')
-    ..aOM<$1.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $1.Struct.create)
+    ..aOM<$2.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -622,15 +249,15 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
 
   /// arbitrary config sections
   @$pb.TagNumber(4)
-  $1.Struct get attributes => $_getN(3);
+  $2.Struct get attributes => $_getN(3);
   @$pb.TagNumber(4)
-  set attributes($1.Struct v) { setField(4, v); }
+  set attributes($2.Struct v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAttributes() => $_has(3);
   @$pb.TagNumber(4)
   void clearAttributes() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Struct ensureAttributes() => $_ensure(3);
+  $2.Struct ensureAttributes() => $_ensure(3);
 }
 
 class HostInfo extends $pb.GeneratedMessage {
