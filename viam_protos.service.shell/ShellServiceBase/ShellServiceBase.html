@@ -79,6 +79,20 @@
       true,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.ShellRequest.fromBuffer(value),
       ($0.ShellResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.CopyFilesToMachineRequest, $0.CopyFilesToMachineResponse&gt;(
+      &#39;CopyFilesToMachine&#39;,
+      copyFilesToMachine,
+      true,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.CopyFilesToMachineRequest.fromBuffer(value),
+      ($0.CopyFilesToMachineResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.CopyFilesFromMachineRequest, $0.CopyFilesFromMachineResponse&gt;(
+      &#39;CopyFilesFromMachine&#39;,
+      copyFilesFromMachine,
+      true,
+      true,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.CopyFilesFromMachineRequest.fromBuffer(value),
+      ($0.CopyFilesFromMachineResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$1.DoCommandRequest, $1.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
@@ -120,7 +134,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.11
+      0.0.12
   </span>
 
   

@@ -62,7 +62,10 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">ReadAnalogReaderResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-value">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">value</span>}</span></li>
+      <span class="name ">ReadAnalogReaderResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-value">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">value</span>, </span></li>
+<li><span class="parameter" id="-param-minRange"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">minRange</span>, </span></li>
+<li><span class="parameter" id="-param-maxRange"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">maxRange</span>, </span></li>
+<li><span class="parameter" id="-param-stepSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">stepSize</span>}</span></li>
 </ol>)
     </section>
 
@@ -74,10 +77,22 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory ReadAnalogReaderResponse({
   $core.int? value,
+  $core.double? minRange,
+  $core.double? maxRange,
+  $core.double? stepSize,
 }) {
   final $result = create();
   if (value != null) {
     $result.value = value;
+  }
+  if (minRange != null) {
+    $result.minRange = minRange;
+  }
+  if (maxRange != null) {
+    $result.maxRange = maxRange;
+  }
+  if (stepSize != null) {
+    $result.stepSize = stepSize;
   }
   return $result;
 }</code></pre>
@@ -114,7 +129,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.11
+      0.0.12
   </span>
 
   

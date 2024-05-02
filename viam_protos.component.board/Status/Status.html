@@ -62,8 +62,8 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">Status</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-analogs">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../viam_protos.common.common/AnalogStatus-class.html">AnalogStatus</a></span>&gt;</span>?</span> <span class="parameter-name">analogs</span>, </span></li>
-<li><span class="parameter" id="-param-digitalInterrupts"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../viam_protos.common.common/DigitalInterruptStatus-class.html">DigitalInterruptStatus</a></span>&gt;</span>?</span> <span class="parameter-name">digitalInterrupts</span>}</span></li>
+      <span class="name ">Status</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-analogs">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">analogs</span>, </span></li>
+<li><span class="parameter" id="-param-digitalInterrupts"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://pub.dev/documentation/fixnum/1.1.0/fixnum/Int64-class.html">Int64</a></span>&gt;</span>?</span> <span class="parameter-name">digitalInterrupts</span>}</span></li>
 </ol>)
     </section>
 
@@ -74,8 +74,8 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory Status({
-  $core.Map&lt;$core.String, $1.AnalogStatus&gt;? analogs,
-  $core.Map&lt;$core.String, $1.DigitalInterruptStatus&gt;? digitalInterrupts,
+  $core.Map&lt;$core.String, $core.int&gt;? analogs,
+  $core.Map&lt;$core.String, $fixnum.Int64&gt;? digitalInterrupts,
 }) {
   final $result = create();
   if (analogs != null) {
@@ -119,7 +119,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.11
+      0.0.12
   </span>
 
   

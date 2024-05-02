@@ -77,6 +77,90 @@
       <h2>Classes</h2>
 
       <dl>
+        <dt id="CopyFilesFromMachineRequest">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequest-class.html">CopyFilesFromMachineRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesFromMachineRequestMetadata">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequestMetadata-class.html">CopyFilesFromMachineRequestMetadata</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesFromMachineResponse">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponse-class.html">CopyFilesFromMachineResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesFromMachineResponseMetadata">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponseMetadata-class.html">CopyFilesFromMachineResponseMetadata</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesSourceType">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesSourceType-class.html">CopyFilesSourceType</a></span> 
+
+</dt>
+<dd>
+  CopyFilesSourceType indicates what will be copied. It's important
+to disambiguate the single directory case from the multiple files
+case in order to indicate that the user's intent is to copy a directory
+into a single location which may result in a new top-level directory versus
+the cause of multiples files that always go into the existing target destination.
+</dd>
+
+        <dt id="CopyFilesToMachineRequest">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequest-class.html">CopyFilesToMachineRequest</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesToMachineRequestMetadata">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequestMetadata-class.html">CopyFilesToMachineRequestMetadata</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesToMachineResponse">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineResponse-class.html">CopyFilesToMachineResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="FileData">
+  <span class="name "><a href="../viam_protos.service.shell/FileData-class.html">FileData</a></span> 
+
+</dt>
+<dd>
+  FileData contains partial (sometimes complete) information about a File.
+When transmitting FileData with CopyFilesToMachine and CopyFilesFromMachine,
+it MUST initially contain its name, size, and is_dir. Depending on whether
+preservation is in use, the mod_time and mode fields may be initially set
+as well. On all transmissions, data and eof must be set. Because files are
+sent one-by-one, it is currently permitted to exclude the initially set fields.
+If this ever changes, a new scheme should be used for identifying files (like a number)
+in order to reduce data transmission while allowing out-of-order transfers.
+eof must be true and its own message once no more data is to be sent for this file.
+</dd>
+
         <dt id="ShellRequest">
   <span class="name "><a href="../viam_protos.service.shell/ShellRequest-class.html">ShellRequest</a></span> 
 
@@ -119,6 +203,114 @@
       <h2>Constants</h2>
 
       <dl class="properties">
+        <dt id="CopyFilesFromMachineRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineRequest$json-constant.html">CopyFilesFromMachineRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesFromMachineRequestMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineRequestMetadata$json-constant.html">CopyFilesFromMachineRequestMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesFromMachineResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineResponse$json-constant.html">CopyFilesFromMachineResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesFromMachineResponseMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineResponseMetadata$json-constant.html">CopyFilesFromMachineResponseMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesSourceType$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesSourceType$json-constant.html">CopyFilesSourceType$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesToMachineRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesToMachineRequest$json-constant.html">CopyFilesToMachineRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesToMachineRequestMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesToMachineRequestMetadata$json-constant.html">CopyFilesToMachineRequestMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="CopyFilesToMachineResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesToMachineResponse$json-constant.html">CopyFilesToMachineResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="FileData$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/FileData$json-constant.html">FileData$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="ShellRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/ShellRequest$json-constant.html">ShellRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -150,6 +342,105 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="copyFilesFromMachineRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineRequestDescriptor.html">copyFilesFromMachineRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesFromMachineRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesFromMachineRequestMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineRequestMetadataDescriptor.html">copyFilesFromMachineRequestMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesFromMachineRequestMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesFromMachineResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineResponseDescriptor.html">copyFilesFromMachineResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesFromMachineResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesFromMachineResponseMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineResponseMetadataDescriptor.html">copyFilesFromMachineResponseMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesFromMachineResponseMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesSourceTypeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesSourceTypeDescriptor.html">copyFilesSourceTypeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesSourceType</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesToMachineRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesToMachineRequestDescriptor.html">copyFilesToMachineRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesToMachineRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesToMachineRequestMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesToMachineRequestMetadataDescriptor.html">copyFilesToMachineRequestMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesToMachineRequestMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="copyFilesToMachineResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/copyFilesToMachineResponseDescriptor.html">copyFilesToMachineResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>CopyFilesToMachineResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="fileDataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.shell/fileDataDescriptor.html">fileDataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+
+</dt>
+<dd>
+  Descriptor for <code>FileData</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
         <dt id="shellRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/shellRequestDescriptor.html">shellRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
@@ -176,6 +467,36 @@
     </section>
 
 
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+
+      <dl>
+        <dt id="CopyFilesFromMachineRequest_Request">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequest_Request.html">CopyFilesFromMachineRequest_Request</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesFromMachineResponse_Response">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponse_Response.html">CopyFilesFromMachineResponse_Response</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+        <dt id="CopyFilesToMachineRequest_Request">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequest_Request.html">CopyFilesToMachineRequest_Request</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
 
 
 
@@ -270,7 +591,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.11
+      0.0.12
   </span>
 
   
