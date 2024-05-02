@@ -12,7 +12,7 @@ import 'arm.dart';
 /// Used to communicate with an existing [Arm] implementation over gRPC.
 class ArmClient extends Arm implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

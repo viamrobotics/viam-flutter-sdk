@@ -10,7 +10,7 @@ import 'movement_sensor.dart';
 /// gRPC client for the [MovementSensor] component.
 class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

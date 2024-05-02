@@ -53,7 +53,7 @@ class Subtype {
 
 /// Abstract class that defines the base functionality for all [Resource] types
 abstract class Resource {
-  abstract String name;
+  abstract final String name;
 
   /// Send/Receive arbitrary commands to the [Resource]
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) {

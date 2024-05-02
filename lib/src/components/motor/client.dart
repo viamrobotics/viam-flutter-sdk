@@ -10,7 +10,7 @@ import 'motor.dart';
 /// gRPC client for the [Motor] component.
 class MotorClient extends Motor implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

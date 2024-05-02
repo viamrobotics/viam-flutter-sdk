@@ -10,7 +10,7 @@ import 'power_sensor.dart';
 /// gRPC client for the [PowerSensor] component.
 class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

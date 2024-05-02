@@ -5,9 +5,13 @@ import '../../protos/common/common.dart';
 import '../../protos/service/vision.dart';
 import '../media/image.dart';
 import '../resource/base.dart';
+import '../robot/client.dart';
 import '../utils.dart';
 
-class VisionClient implements ResourceRPCClient {
+class VisionClient extends Resource implements ResourceRPCClient {
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'vision');
+
+  @override
   final String name;
 
   @override
@@ -68,12 +72,22 @@ class VisionClient implements ResourceRPCClient {
     return response.objects;
   }
 
-  /// Send/Receive arbitrary commands to the Resource
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request);
     return response.result.toMap();
+  }
+
+  /// Get the [ResourceName] for this [VisionClient] with the given [name]
+  static ResourceName getResourceName(String name) {
+    return VisionClient.subtype.getResourceName(name);
+  }
+
+  /// Get the [VisionClient] named [name] from the provided robot.
+  static VisionClient fromRobot(RobotClient robot, String name) {
+    return robot.getResource(VisionClient.getResourceName(name));
   }
 }

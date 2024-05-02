@@ -10,7 +10,7 @@ import 'sensor.dart';
 /// gRPC client for the [Sensor] component.
 class SensorClient extends Sensor implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;
