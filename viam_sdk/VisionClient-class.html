@@ -66,6 +66,14 @@
     <section>
       <dl class="dl-horizontal">
         
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
+        <li><a href="../viam_sdk/Resource-class.html">Resource</a></li>
+      <li>VisionClient</li>
+    </ul>
+  </dd>
 
         
   <dt>Implemented types</dt>
@@ -228,8 +236,8 @@ The maximum number of <a href="../viam_protos.service.vision/Classification-clas
 
 </dt>
 <dd>
-  Send/Receive arbitrary commands to the Resource
-  
+  Send/Receive arbitrary commands to the <a href="../viam_sdk/Resource-class.html">Resource</a>
+  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 
@@ -297,8 +305,57 @@ The maximum number of <a href="../viam_protos.service.vision/Classification-clas
   </section>
     
     
+  <section class="summary offset-anchor" id="static-methods">
+    <h2>Static Methods</h2>
+    <dl class="callables">
+        <dt id="fromRobot" class="callable">
+  <span class="name"><a href="../viam_sdk/VisionClient/fromRobot.html">fromRobot</a></span><span class="signature">(<wbr><span class="parameter" id="fromRobot-param-robot"><span class="type-annotation"><a href="../viam_sdk/RobotClient-class.html">RobotClient</a></span> <span class="parameter-name">robot</span>, </span><span class="parameter" id="fromRobot-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../viam_sdk/VisionClient-class.html">VisionClient</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get the <a href="../viam_sdk/VisionClient-class.html">VisionClient</a> named <code>name</code> from the provided robot.
+  
+
+</dd>
+
+        <dt id="getResourceName" class="callable">
+  <span class="name"><a href="../viam_sdk/VisionClient/getResourceName.html">getResourceName</a></span><span class="signature">(<wbr><span class="parameter" id="getResourceName-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get the <a href="../viam_sdk/ResourceName-class.html">ResourceName</a> for this <a href="../viam_sdk/VisionClient-class.html">VisionClient</a> with the given <code>name</code>
+  
+
+</dd>
+
+    </dl>
+  </section>
     
 
+  <section class="summary offset-anchor" id="constants">
+    <h2>Constants</h2>
+
+    <dl class="properties">
+        <dt id="subtype" class="constant">
+    <span class="name "><a href="../viam_sdk/VisionClient/subtype-constant.html">subtype</a></span>
+  <span class="signature">&#8594; const <a href="../viam_sdk/Subtype-class.html">Subtype</a></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+    </dl>
+  </section>
 
   </div> <!-- /.main-content -->
 

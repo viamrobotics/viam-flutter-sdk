@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the name property from the Resource class, for the Dart programming language.">
-  <title>name property - Resource class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the getResourceName method from the VisionClient class, for the Dart programming language.">
+  <title>getResourceName method - VisionClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk.dart</a></li>
-    <li><a href="../../viam_sdk/Resource-class.html">Resource</a></li>
-    <li class="self-crumb">name abstract property</li>
+    <li><a href="../../viam_sdk/VisionClient-class.html">VisionClient</a></li>
+    <li class="self-crumb">getResourceName static method</li>
   </ol>
-  <div class="self-name">name</div>
+  <div class="self-name">getResourceName</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,25 +54,34 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="viam_sdk&#47;Resource-class-sidebar.html"
+      data-above-sidebar="viam_sdk&#47;VisionClient-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-property">name</span> property 
+<h1><span class="kind-method">getResourceName</span> static method 
 </h1></div>
 
-        <section class="multi-line-signature">
-          
-          <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>
-          <span class="name ">name</span>
-          <div class="features"><span class="feature">final</span></div>
+    <section class="multi-line-signature">
+      
 
-        </section>
-        
+<span class="returntype"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+<span class="name ">getResourceName</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="getResourceName-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span></li>
+</ol>)
 
-        
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Get the <a href="../../viam_sdk/ResourceName-class.html">ResourceName</a> for this <a href="../../viam_sdk/VisionClient-class.html">VisionClient</a> with the given <code>name</code></p>
+</section>
+
+
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">abstract final String name;</code></pre>
+  <pre class="language-dart"><code class="language-dart">static ResourceName getResourceName(String name) {
+  return VisionClient.subtype.getResourceName(name);
+}</code></pre>
 </section>
 
 
@@ -89,12 +98,12 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/viam_sdk-library.html">viam_sdk</a></li>
-    <li><a href="../../viam_sdk/Resource-class.html">Resource</a></li>
-    <li class="self-crumb">name abstract property</li>
+    <li><a href="../../viam_sdk/VisionClient-class.html">VisionClient</a></li>
+    <li class="self-crumb">getResourceName static method</li>
 </ol>
 
 
-    <h5>Resource class</h5>
+    <h5>VisionClient class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
 
