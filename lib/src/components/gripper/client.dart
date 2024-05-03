@@ -10,10 +10,10 @@ import 'gripper.dart';
 /// gRPC client for the [Gripper] component.
 class GripperClient extends Gripper implements ResourceRPCClient {
   @override
-  ClientChannelBase channel;
+  final String name;
 
   @override
-  String name;
+  ClientChannelBase channel;
 
   @override
   GripperServiceClient get client => GripperServiceClient(channel);

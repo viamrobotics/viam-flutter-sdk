@@ -10,7 +10,7 @@ import 'servo.dart';
 /// gRPC client for the [Servo] component.
 class ServoClient extends Servo implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

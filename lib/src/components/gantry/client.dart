@@ -10,7 +10,7 @@ import 'gantry.dart';
 /// gRPC client for the [Gantry] component.
 class GantryClient extends Gantry implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

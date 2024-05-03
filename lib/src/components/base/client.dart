@@ -11,7 +11,7 @@ import 'base.dart';
 /// gRPC client for the [Base] component.
 class BaseClient extends Base implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

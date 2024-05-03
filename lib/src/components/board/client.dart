@@ -15,7 +15,7 @@ import 'board.dart';
 /// gRPC client for the [Board] component.
 class BoardClient extends Board implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;

@@ -11,7 +11,7 @@ import 'camera.dart';
 /// gRPC client for the [Camera] component
 class CameraClient extends Camera implements ResourceRPCClient {
   @override
-  String name;
+  final String name;
 
   @override
   ClientChannelBase channel;
