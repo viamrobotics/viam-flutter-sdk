@@ -16,23 +16,24 @@ class AppClient {
 
   AppClient(this._client);
 
-  // createOrganization
-  // getOrganizationsWithAccessToLocation
-  // listOrganizationsByUser
-  // getOrganizationNamespaceAvailability
-  // updateOrganization
-  // deleteOrganization
-  // updateOrganizationInviteAuthorizations
   // createLocation
+  // getLocation - DONE
   // updateLocation
   // deleteLocation
+  // listLocations - DONE
   // shareLocation
   // unshareLocation
   // locationAuth
   // createLocationSecret
   // deleteLocationSecret
+  // getRobot - DONE
   // getRoverRentalRobots
+  // getRobotParts - DONE
+  // getRobotPart - DONE
+  // getRobotPartLogs - DONE
+  // tailRobotPartLogs - DONE
   // getRobotPartHistory
+  // updateRobotPart - DONE
   // newRobotPart
   // deleteRobotPart
   // getRobotAPIKeys
@@ -40,15 +41,20 @@ class AppClient {
   // markPartForRestart
   // createRobotPartSecret
   // deleteRobotPartSecret
+  // listRobots - DONE
+  // newRobot - DONE
   // updateRobot
   // deleteRobot
   // listFragments
+  // getFragment - DONE
   // createFragment
   // updateFragment
   // deleteFragment
   // addRole
   // removeRole
   // changeRole
+  // listAuthorizations - DONE
+  // checkPermissions - DONE
   // getRegistryItem
   // createRegistryItem
   // updateRegistryItem
@@ -65,6 +71,20 @@ class AppClient {
   // rotateKey
   // createKeyFromExistingKeyAuthorizations
 
+  // Get the id of the user with the email provided
+  Future<String> getUserIDByEmail(String email) async {
+    final request = GetUserIDByEmailRequest()..email = email;
+    final GetUserIDByEmailResponse response = await _client.getUserIDByEmail(request);
+    return response.userId;
+  }
+
+  // Create a new [Organization]
+  Future<Organization> createOrganization(String name) async {
+    final request = CreateOrganizationRequest()..name = name;
+    final CreateOrganizationResponse response = await _client.createOrganization(request);
+    return response.organization;
+  }
+
   /// List all the [Organization] the currently authenticated user has access to
   Future<List<Organization>> listOrganizations() async {
     final listOrganizationsRequest = ListOrganizationsRequest();
@@ -72,11 +92,117 @@ class AppClient {
     return response.organizations;
   }
 
+  // Get all [OrganizationIdentity]s that have access to a [Location].
+  Future<List<OrganizationIdentity>> getOrganizationsWithAccessToLocation(String locationId) async {
+    final request = GetOrganizationsWithAccessToLocationRequest();
+    final GetOrganizationsWithAccessToLocationResponse response = await _client.getOrganizationsWithAccessToLocation(request);
+    return response.organizationIdentities;
+  }
+
+  // List the [Organization]s a user belongs to
+  Future<OrgDetails> listOrganizationsByUser(String userId) async {
+    final request = ListOrganizationsByUserRequest()..userId = userId;
+    final ListOrganizationsByUserResponse response = await _client.listOrganizationsByUser(request);
+    return response.orgs;
+  }
+
   /// Get a specific [Organization] by ID
   Future<Organization> getOrganization(String organizationId) async {
     final getOrganizationRequest = GetOrganizationRequest()..organizationId = organizationId;
     final GetOrganizationResponse response = await _client.getOrganization(getOrganizationRequest);
     return response.organization;
+  }
+
+  // Checks for namespace availablity throughout all [Organization]s.
+  Future<bool> getOrganizationNamespaceAvailability(String publicNamespace) async {
+    final request = GetOrganizationNamespaceAvailabilityRequest()..publicNamespace = publicNamespace;
+    final GetOrganizationNamespaceAvailabilityResponse response = await _client.getOrganizationNamespaceAvailability(request);
+    return response.available;
+  }
+
+  // Update an [Organization]
+  Future<Organization> updateOrganization(String organizationId, String name, String publicNamespace, String region, String cid) async {
+    final request = UpdateOrganizationRequest()
+      ..organizationId = organizationId
+      ..name = name
+      ..publicNamespace = publicNamespace
+      ..region = region
+      ..cid = cid
+    final UpdateOrganizationResponse response = await _client.updateOrganization(request);
+    return response.organization;
+  }
+
+  // Delete an [Organization]
+  Future<void> deleteOrganization(String organizationId) async {
+    final request = DeleteOrganizationRequest()..organizationId = organizationId;
+    await _client.deleteOrganization(request);
+  }
+
+  /// List the members and pending invites for an [Organization].
+  Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
+    final request = ListOrganizationMembersRequest()..organizationId = org.id;
+    final response = await _client.listOrganizationMembers(request);
+    return response;
+  }
+
+  /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
+  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations) async {
+    final List<Authorization> protoAuthorizations = [];
+    for (final authorization in authorizations) {
+      protoAuthorizations.add(authorization.toProto);
+    }
+
+    final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.createOrganizationInvite(request);
+    return response.invite;
+  }
+
+  // Update the [ViamAuthorization]s attached to an [Organization] invite
+  Future<OrganizationInvite> updateOrganizationInviteAuthorizations(String organizationId, Stirng email, List<ViamAuthorization> addAuthorizations, List<ViamAuthorization> removeAuthorizations) async {
+    final List<Authorization> protoAddAuthorizations = [];
+    for (final authorization in addAuthorizations) {
+      protoAddAuthorizations.add(authorization.toProto);
+    }
+
+    final List<Authorization> protoRemoveAuthorizations = [];
+    for (final authorization in removeAuthorizations) {
+      protoRemoveAuthorizations.add(authorization.toProto);
+    }
+
+    final request = UpdateOrganizationInviteAuthorizationsRequest()
+      ..organizationId = organizationId,
+      ..email = email,
+      ..addAuthorizations = protoAddAuthorizations,
+      ..removeAuthorizations = protoRemoveAuthorizations;
+    final response = await _client.updateOrganizationInviteAuthorizations(request);
+    return response.invite;
+  }
+
+  // Delete a member from an [Organization]
+  Future<void> deleteOrganizationMember(Organization org, String userId) async {
+    final request = DeleteOrganizationMemberRequest()
+      ..organizationId = org.id
+      ..userId = userId;
+    await _client.deleteOrganizationMember(request);
+  }
+
+  // Delete an invite to an [Organization]
+  Future<void> deleteOrganizationInvite(Organization org, String email) async {
+    final request = DeleteOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    await _client.deleteOrganizationInvite(request);
+  }
+
+  // Resend an invite to an [Organization]
+  Future<OrganizationInvite> resendOrganizationInvite(Organization org, String email) async {
+    final request = ResendOrganizationInviteRequest()
+      ..organizationId = org.id
+      ..email = email;
+    final response = await _client.resendOrganizationInvite(request);
+    return response.invite;
   }
 
   /// List the [Location] of a specific [Organization] that the currently authenticated user has access to
@@ -170,49 +296,6 @@ class AppClient {
     return response.authorizedPermissions.first.permissions
         .map((e) => Permission.values.firstWhere((element) => element.value == e))
         .toList();
-  }
-
-  /// List the members and pending invites for an [Organization].
-  Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
-    final request = ListOrganizationMembersRequest()..organizationId = org.id;
-    final response = await _client.listOrganizationMembers(request);
-    return response;
-  }
-
-  /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
-  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations) async {
-    final List<Authorization> protoAuthorizations = [];
-    for (final authorization in authorizations) {
-      protoAuthorizations.add(authorization.toProto);
-    }
-
-    final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
-      ..organizationId = org.id
-      ..email = email;
-    final response = await _client.createOrganizationInvite(request);
-    return response.invite;
-  }
-
-  Future<OrganizationInvite> resendOrganizationInvite(Organization org, String email) async {
-    final request = ResendOrganizationInviteRequest()
-      ..organizationId = org.id
-      ..email = email;
-    final response = await _client.resendOrganizationInvite(request);
-    return response.invite;
-  }
-
-  Future<void> deleteOrganizationInvite(Organization org, String email) async {
-    final request = DeleteOrganizationInviteRequest()
-      ..organizationId = org.id
-      ..email = email;
-    await _client.deleteOrganizationInvite(request);
-  }
-
-  Future<void> deleteOrganizationMember(Organization org, String userId) async {
-    final request = DeleteOrganizationMemberRequest()
-      ..organizationId = org.id
-      ..userId = userId;
-    await _client.deleteOrganizationMember(request);
   }
 
   /// Create a new smart machine with the included [name] in the passed in [locationId]
