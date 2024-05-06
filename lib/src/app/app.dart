@@ -16,6 +16,55 @@ class AppClient {
 
   AppClient(this._client);
 
+  // createOrganization
+  // getOrganizationsWithAccessToLocation
+  // listOrganizationsByUser
+  // getOrganizationNamespaceAvailability
+  // updateOrganization
+  // deleteOrganization
+  // updateOrganizationInviteAuthorizations
+  // createLocation
+  // updateLocation
+  // deleteLocation
+  // shareLocation
+  // unshareLocation
+  // locationAuth
+  // createLocationSecret
+  // deleteLocationSecret
+  // getRoverRentalRobots
+  // getRobotPartHistory
+  // newRobotPart
+  // deleteRobotPart
+  // getRobotAPIKeys
+  // markPartAsMain
+  // markPartForRestart
+  // createRobotPartSecret
+  // deleteRobotPartSecret
+  // updateRobot
+  // deleteRobot
+  // listFragments
+  // createFragment
+  // updateFragment
+  // deleteFragment
+  // addRole
+  // removeRole
+  // changeRole
+  // getRegistryItem
+  // createRegistryItem
+  // updateRegistryItem
+  // listRegistryItems
+  // deleteRegistryItem
+  // createModule
+  // updateModule
+  // uploadModuleFile
+  // getModule
+  // listModules
+  // createKey
+  // deleteKey
+  // listKeys
+  // rotateKey
+  // createKeyFromExistingKeyAuthorizations
+
   /// List all the [Organization] the currently authenticated user has access to
   Future<List<Organization>> listOrganizations() async {
     final listOrganizationsRequest = ListOrganizationsRequest();
