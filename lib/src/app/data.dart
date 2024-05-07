@@ -6,7 +6,6 @@ import 'package:async/async.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
 import 'package:viam_sdk/protos/app/data.dart';
-import 'package:viam_sdk/protos/service/mlmodel.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
 import 'package:viam_sdk/src/utils.dart';
 
