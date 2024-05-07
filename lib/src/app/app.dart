@@ -16,11 +16,6 @@ class AppClient {
 
   AppClient(this._client);
 
-  // listFragments
-  // getFragment - DONE
-  // createFragment
-  // updateFragment
-  // deleteFragment
   // addRole
   // removeRole
   // changeRole
@@ -401,6 +396,48 @@ class AppClient {
     final DeleteRobotResponse response = await _client.deleteRobot(request);
   }
 
+  /// Get a list of [Fragment]s in an [Organization]
+  Future<List<Fragment>> listFragments(String organizationId, bool showPublic) async {
+    final request = ListFragmentsRequest()
+      ..organizationId = organizationId
+      ..showPublic = showPublic;
+    final ListFragmentsResponse response = await _client.listFragments(request);
+    return response.fragments
+  }
+
+  /// Get a specific [Fragment] by ID.
+  Future<Fragment> getFragment(String id) async {
+    final request = GetFragmentRequest()..id = id;
+    final response = await _client.getFragment(request);
+    return response.fragment;
+  }
+
+  /// Create a [Fragment]
+  Future<Fragment> createFragment(String name, Struct config, String organizationId) async {
+    final request = CreateFragmentRequest()
+      ..name = name
+      ..config = config,
+      ..organizationId = organizationId;
+    final CreateFragmentResponse response = await _client.createFragment(request);
+    return response.fragment;
+  }
+
+  /// Update a [Fragment]
+  Future<Fragment> updateFragment(String id, String name, Struct config, bool public) async {
+    final request = UpdateFragmentRequest()
+      ..id = id
+      ..name = name
+      ..config = config
+      ..public = public;
+    final UpdateFragmentResponse response = await _client.updateFragment(request);
+    return response.fragment
+  }
+
+  /// Delete a [Fragment]
+  Future<void> deleteFragment(String id) async {
+    final request = DeleteFragmentRequest()..id = id;
+    await _client.deleteFragment(request);
+  }
   /// List the [Authorization]s available for the currently authenticated user
   Future<List<Authorization>> listAuthorizations(String organizationId, {List<String> resourceIds = const []}) async {
     final request = ListAuthorizationsRequest()
@@ -421,12 +458,5 @@ class AppClient {
     return response.authorizedPermissions.first.permissions
         .map((e) => Permission.values.firstWhere((element) => element.value == e))
         .toList();
-  }
-
-  /// Get a specific [Fragment] by id.
-  Future<Fragment> getFragment(String id) async {
-    final request = GetFragmentRequest()..id = id;
-    final response = await _client.getFragment(request);
-    return response.fragment;
   }
 }
