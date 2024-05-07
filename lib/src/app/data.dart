@@ -215,13 +215,7 @@ class DataClient {
   ///
   /// Returns the bounding box ID.
   Future<String> addBoundingBoxToImageById(
-    String label,
-    BinaryID binaryId,
-    double xMinNormalized,
-    double yMinNormalized,
-    double xMaxNormalized,
-    double yMaxNormalized
-  ) async {
+      String label, BinaryID binaryId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
     final request = AddBoundingBoxToImageByIDRequest()
       ..label = label
       ..binaryId = binaryId
@@ -244,8 +238,7 @@ class DataClient {
   /// Returns a list of tags based on a filter.
   /// If no [filter] is provided, all tags will be returned.
   Future<List<String>> tagsByFilter(Filter? filter) async {
-    final request = TagsByFilterRequest()
-      ..filter = filter ?? Filter();
+    final request = TagsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.tagsByFilter(request);
     return response.tags;
   }
@@ -253,8 +246,7 @@ class DataClient {
   /// Returns a list of bounding box labels based on a filter.
   /// If no [filter] is provided, all labels will be returned.
   Future<List<String>> boundingBoxLabelsByFilter(Filter? filter) async {
-    final request = BoundingBoxLabelsByFilterRequest()
-      ..filter = filter ?? Filter();
+    final request = BoundingBoxLabelsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.boundingBoxLabelsByFilter(request);
     return response.labels;
   }
