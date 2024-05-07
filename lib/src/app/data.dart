@@ -1,3 +1,5 @@
+import 'dart:ffi';
+import 'dart:html';
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
@@ -5,6 +7,8 @@ import 'dart:typed_data';
 import 'package:async/async.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
+import 'package:viam_sdk/protos/app/data.dart';
+import 'package:viam_sdk/protos/service/mlmodel.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
 import 'package:viam_sdk/src/utils.dart';
 
@@ -12,6 +16,8 @@ import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
+
+typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
 /// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
 ///
@@ -131,6 +137,156 @@ class DataClient {
       ..mqlBinary.addAll(query);
     final response = await _dataClient.tabularDataByMQL(request);
     return response.data.map((e) => e.toMap()).toList();
+  }
+
+  /// Delete tabular data older than a provided number of days from an organization.
+  ///
+  /// Returns the number of pieces of data that were deleted.
+  Future<int> deleteTabularData(String organizationId, int daysOld) async {
+    final request = DeleteTabularDataRequest()
+      ..organizationId = organizationId
+      ..deleteOlderThanDays = daysOld;
+    final response = await _dataClient.deleteTabularData(request);
+    return response.deletedCount.toInt();
+  }
+
+  /// Delete binary data based on an optionally provided filter.
+  /// If a [filter] is not provided, all data will be deleted.
+  ///
+  /// Returns the number of pieces of data that were deleted.
+  Future<int> deleteBinaryDataByFilter(Filter? filter, {bool includeInternalData = false}) async {
+    final request = DeleteBinaryDataByFilterRequest()
+      ..includeInternalData = includeInternalData
+      ..filter = filter ?? Filter();
+    final response = await _dataClient.deleteBinaryDataByFilter(request);
+    return response.deletedCount.toInt();
+  }
+
+  /// Delete binary data based on data ID.
+  ///
+  /// Returns the number of pieces of data that were deleted.
+  Future<int> deleteBinaryDataByIds(List<BinaryID> binaryIds) async {
+    final request = DeleteBinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
+    final response = await _dataClient.deleteBinaryDataByIDs(request);
+    return response.deletedCount.toInt();
+  }
+
+  /// Adds tags to binary data based on IDs.
+  Future<void> addTagsToBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
+    final request = AddTagsToBinaryDataByIDsRequest()
+      ..tags.addAll(tags)
+      ..binaryIds.addAll(binaryIds);
+    await _dataClient.addTagsToBinaryDataByIDs(request);
+  }
+
+  /// Adds tags to binary data based on a filter.
+  /// If no [filter] is provided, all binary data will be tagged.
+  Future<void> addTagsToBinaryDataByFilter(List<String> tags, Filter? filter) async {
+    final request = AddTagsToBinaryDataByFilterRequest()
+      ..tags.addAll(tags)
+      ..filter = filter ?? Filter();
+    await _dataClient.addTagsToBinaryDataByFilter(request);
+  }
+
+  /// Remove tags from binary data based on filter.
+  /// If a [filter] is not provided, the tags will be removed from all data.
+  ///
+  /// Returns the number of tags deleted.
+  Future<int> removeTagsFromBinaryDataByFilter(List<String> tags, Filter? filter) async {
+    final request = RemoveTagsFromBinaryDataByFilterRequest()
+      ..tags.addAll(tags)
+      ..filter = filter ?? Filter();
+    final response = await _dataClient.removeTagsFromBinaryDataByFilter(request);
+    return response.deletedCount.toInt();
+  }
+
+  /// Remove tags from binary data based on IDs.
+  ///
+  /// Returns the number of tags deleted.
+  Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
+    final request = RemoveTagsFromBinaryDataByIDsRequest()
+      ..tags.addAll(tags)
+      ..binaryIds.addAll(binaryIds);
+    final response = await _dataClient.removeTagsFromBinaryDataByIDs(request);
+    return response.deletedCount.toInt();
+  }
+
+  /// Add a bounding box to an image by ID, with x and y coordinates normalized from 0 to 1.
+  ///
+  /// Returns the bounding box ID.
+  Future<String> addBoundingBoxToImageById(
+    String label,
+    BinaryID binaryId,
+    double xMinNormalized,
+    double yMinNormalized,
+    double xMaxNormalized,
+    double yMaxNormalized
+  ) async {
+    final request = AddBoundingBoxToImageByIDRequest()
+      ..label = label
+      ..binaryId = binaryId
+      ..xMinNormalized = xMinNormalized
+      ..yMinNormalized = yMinNormalized
+      ..xMaxNormalized = xMaxNormalized
+      ..yMaxNormalized = yMaxNormalized;
+    final response = await _dataClient.addBoundingBoxToImageByID(request);
+    return response.bboxId;
+  }
+
+  /// Removes a bounding box from an image based on bbox ID and image ID.
+  Future<void> removeBoundingBoxFromImageById(String bboxId, BinaryID binaryId) async {
+    final request = RemoveBoundingBoxFromImageByIDRequest()
+      ..bboxId = bboxId
+      ..binaryId = binaryId;
+    await _dataClient.removeBoundingBoxFromImageByID(request);
+  }
+
+  /// Returns a list of tags based on a filter.
+  /// If no [filter] is provided, all tags will be returned.
+  Future<List<String>> tagsByFilter(Filter? filter) async {
+    final request = TagsByFilterRequest()
+      ..filter = filter ?? Filter();
+    final response = await _dataClient.tagsByFilter(request);
+    return response.tags;
+  }
+
+  /// Returns a list of bounding box labels based on a filter.
+  /// If no [filter] is provided, all labels will be returned.
+  Future<List<String>> boundingBoxLabelsByFilter(Filter? filter) async {
+    final request = BoundingBoxLabelsByFilterRequest()
+      ..filter = filter ?? Filter();
+    final response = await _dataClient.boundingBoxLabelsByFilter(request);
+    return response.labels;
+  }
+
+  /// Returns a database connection to access a MongoDB Atlas Data Federation instance.
+  Future<DatabaseConnection> getDatabaseConnection(String organizationId) async {
+    final request = GetDatabaseConnectionRequest()..organizationId = organizationId;
+    return await _dataClient.getDatabaseConnection(request);
+  }
+
+  /// Configures a database user for Viam's MongoDB Atlas Data Federation instance.
+  Future<void> configureDatabaseUser(String organizationId, String password) async {
+    final request = ConfigureDatabaseUserRequest()
+      ..password = password
+      ..organizationId = organizationId;
+    await _dataClient.configureDatabaseUser(request);
+  }
+
+  /// Adds binary data to a dataset based on IDs.
+  Future<void> addBinaryDataToDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
+    final request = AddBinaryDataToDatasetByIDsRequest()
+      ..binaryIds.addAll(binaryIds)
+      ..datasetId = datasetId;
+    await _dataClient.addBinaryDataToDatasetByIDs(request);
+  }
+
+  /// Removes binary data from a dataset based on IDs.
+  Future<void> removeBinaryDataFromDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
+    final request = RemoveBinaryDataFromDatasetByIDsRequest()
+      ..binaryIds.addAll(binaryIds)
+      ..datasetId = datasetId;
+    await _dataClient.removeBinaryDataFromDatasetByIDs(request);
   }
 
   /// Upload an image to Viam's Data Manager

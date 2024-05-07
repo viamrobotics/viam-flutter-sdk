@@ -8,11 +8,71 @@ import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/data.dart';
 import 'package:viam_sdk/protos/app/data_sync.dart' hide CaptureInterval;
 import 'package:viam_sdk/src/app/data.dart';
+import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart';
+import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/app/data/v1/data.pbjson.dart';
 import 'package:viam_sdk/src/media/image.dart';
 import 'package:viam_sdk/src/utils.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
+
+class FakeDataServiceClient extends MockDataServiceClient {
+  bool tagsAddedByIds = false;
+  bool tagsAddedByFilter = false;
+  bool removeBboxIdCalled = false;
+  bool configureDatabaseUserCalled = false;
+  bool addBinaryDataToDatasetByIdsCalled = false;
+  bool removeBinaryDataFromDatasetByIdsCalled = false;
+
+  @override
+  ResponseFuture<AddTagsToBinaryDataByFilterResponse> addTagsToBinaryDataByFilter(AddTagsToBinaryDataByFilterRequest? request, {CallOptions? options}) {
+    tagsAddedByFilter = true;
+	return MockResponseFuture.future(Future.microtask(() async {
+	  return AddTagsToBinaryDataByFilterResponse();
+	}));
+  }
+
+  @override
+  ResponseFuture<AddTagsToBinaryDataByIDsResponse> addTagsToBinaryDataByIDs(AddTagsToBinaryDataByIDsRequest? request, {CallOptions? options}) {
+    tagsAddedByIds = true;
+	return MockResponseFuture.future(Future.microtask(() async {
+	  return AddTagsToBinaryDataByIDsResponse();
+	}));
+  }
+
+  @override
+  ResponseFuture<RemoveBoundingBoxFromImageByIDResponse> removeBoundingBoxFromImageByID(RemoveBoundingBoxFromImageByIDRequest? request, {CallOptions? options}) {
+    removeBboxIdCalled = true;
+	return MockResponseFuture.future(Future.microtask(() async {
+	  return RemoveBoundingBoxFromImageByIDResponse();
+	}));
+  }
+
+  @override
+  ResponseFuture<ConfigureDatabaseUserResponse> configureDatabaseUser(ConfigureDatabaseUserRequest? request, {CallOptions? options}) {
+    configureDatabaseUserCalled = true;
+	return MockResponseFuture.future(Future.microtask(() async {
+	  return ConfigureDatabaseUserResponse();
+	}));
+  }
+
+  @override
+  ResponseFuture<AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs(AddBinaryDataToDatasetByIDsRequest? request, {CallOptions? options}) {
+    addBinaryDataToDatasetByIdsCalled = true;
+	return MockResponseFuture.future(Future.microtask(() async {
+	  return AddBinaryDataToDatasetByIDsResponse();
+	}));
+  }
+
+  @override
+  ResponseFuture<RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs(RemoveBinaryDataFromDatasetByIDsRequest? request, {CallOptions? options}) {
+    removeBinaryDataFromDatasetByIdsCalled = true;
+	return MockResponseFuture.future(Future.microtask(() async {
+	  return RemoveBinaryDataFromDatasetByIDsResponse();
+	}));
+  }
+}
 
 class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
   UploadMetadata? metadata;
@@ -28,12 +88,12 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
 }
 
 void main() {
-  late MockDataServiceClient serviceClient;
+  late FakeDataServiceClient serviceClient;
   late FakeDataSyncServiceClient syncServiceClient;
   late DataClient dataClient;
 
   setUp(() {
-    serviceClient = MockDataServiceClient();
+    serviceClient = FakeDataServiceClient();
     syncServiceClient = FakeDataSyncServiceClient();
     dataClient = DataClient(serviceClient, syncServiceClient);
   });
@@ -150,7 +210,136 @@ void main() {
         final response = await dataClient.tabularDataByMql('some_org_id', [Uint8List.fromList('some_query'.codeUnits)]);
         expect(response, equals(data));
       });
-    });
+
+	  test('deleteTabularData', () async {
+	    when(serviceClient.deleteTabularData(any))
+		    .thenAnswer((_) => MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(12)));
+
+		final response = await dataClient.deleteTabularData('some_org_id', 5);
+		expect(response, equals(12));
+	  });
+
+	  test('deleteBinaryDataByFilter', () async {
+	    when(serviceClient.deleteBinaryDataByFilter(any))
+		    .thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByFilterResponse()..deletedCount = Int64(12)));
+
+		final response = await dataClient.deleteBinaryDataByFilter(Filter(), includeInternalData: true);
+		expect(response, equals(12));
+	  });
+
+	  test('deleteBinaryDataByIds', () async {
+	    when(serviceClient.deleteBinaryDataByIDs(any))
+		    .thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByIDsResponse()..deletedCount = Int64(12)));
+
+		final response = await dataClient.deleteBinaryDataByIds([BinaryID(fileId: 'file', organizationId: 'orgId', locationId: 'locId')]);
+		expect(response, equals(12));
+	  });
+
+	  test('addTagsToBinaryDataByIds', () async {
+	    when(serviceClient.addTagsToBinaryDataByIDs(any))
+		    .thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByIDsResponse()));
+
+		expect(serviceClient.tagsAddedByIds, false);
+		await dataClient.addTagsToBinaryDataByIds(['tags'], [BinaryID(fileId: 'file', organizationId: 'orgId', locationId: 'locId')]);
+		expect(serviceClient.tagsAddedByIds, true);
+	  });
+
+	  test('addTagsToBinaryDataByFilter', () async {
+	    when(serviceClient.addTagsToBinaryDataByFilter(any))
+		    .thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
+
+		expect(serviceClient.tagsAddedByFilter, false);
+		await dataClient.addTagsToBinaryDataByFilter(['tags'], Filter());
+		expect(serviceClient.tagsAddedByFilter, true);
+	  });
+
+	  test('removeTagsFromBinaryDataByFilter', () async {
+	    when(serviceClient.removeTagsFromBinaryDataByFilter(any))
+			.thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByFilterResponse(deletedCount: Int64(15))));
+
+		final response = await dataClient.removeTagsFromBinaryDataByFilter(['tags'], Filter());
+		expect(response, equals(15));
+	  });
+
+	  test('removeTagsFromBinaryDataByIds', () async {
+	    when(serviceClient.removeTagsFromBinaryDataByIDs(any))
+			.thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByIDsResponse(deletedCount: Int64(18))));
+
+		final response = await dataClient.removeTagsFromBinaryDataByIds(['tags'], [BinaryID(organizationId: 'orgId', locationId: 'locId', fileId: 'fileId')]);
+		expect(response, equals(18));
+	  });
+
+	  test('addBoundingBoxToImageById', () async {
+	    when(serviceClient.addBoundingBoxToImageByID(any))
+			.thenAnswer((_) => MockResponseFuture.value(AddBoundingBoxToImageByIDResponse(bboxId: 'bboxId')));
+
+		final response = await dataClient.addBoundingBoxToImageById('label', BinaryID(organizationId: 'orgId', locationId: 'locId', fileId: 'fileId'), 0.1, 0.2, 0.3, 0.4);
+		expect(response, equals('bboxId'));
+	  });
+
+	  test('removeBoundingBoxFromImageById', () async {
+	    when(serviceClient.removeBoundingBoxFromImageByID(any))
+			.thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
+
+		expect(serviceClient.removeBboxIdCalled, equals(false));
+		await dataClient.removeBoundingBoxFromImageById('bboxId', BinaryID(organizationId: 'orgId', locationId: 'locId', fileId: 'fileId'));
+		expect(serviceClient.removeBboxIdCalled, equals(true));
+	  });
+
+	  test('tagsByFilter', () async {
+	    when(serviceClient.tagsByFilter(any))
+			.thenAnswer((_) => MockResponseFuture.value(TagsByFilterResponse(tags: ['tags'])));
+
+		final response = await dataClient.tagsByFilter(Filter());
+		expect(response, equals(['tags']));
+	  });
+
+	  test('boundingBoxLabelsByFilter', () async {
+	    when(serviceClient.boundingBoxLabelsByFilter(any))
+			.thenAnswer((_) => MockResponseFuture.value(BoundingBoxLabelsByFilterResponse(labels: ['label'])));
+
+		final response = await dataClient.boundingBoxLabelsByFilter(Filter());
+		expect(response, equals(['label']));
+	  });
+
+	  test('getDatabaseConnection', () async {
+	    when(serviceClient.getDatabaseConnection(any))
+			.thenAnswer((_) => MockResponseFuture.value(GetDatabaseConnectionResponse(hostname: 'hostname', mongodbUri: 'mongo', hasDatabaseUser: true)));
+
+		final response = await dataClient.getDatabaseConnection('orgId');
+		expect(response.hostname, equals('hostname'));
+		expect(response.mongodbUri, equals('mongo'));
+		expect(response.hasDatabaseUser, equals(true));
+	  });
+
+	  test('configureDatabaseUser', () async {
+	    when(serviceClient.configureDatabaseUser(any))
+			.thenAnswer((_) => MockResponseFuture.value(ConfigureDatabaseUserResponse()));
+
+		expect(serviceClient.configureDatabaseUserCalled, equals(false));
+		await dataClient.configureDatabaseUser('orgId', 'password');
+		expect(serviceClient.configureDatabaseUserCalled, equals(true));
+	  });
+
+	  test('addBinaryDataToDatasetByIds', () async {
+	    when(serviceClient.addBinaryDataToDatasetByIDs(any))
+			.thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
+
+		expect(serviceClient.addBinaryDataToDatasetByIdsCalled, equals(false));
+		await dataClient.addBinaryDataToDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
+		expect(serviceClient.addBinaryDataToDatasetByIdsCalled, equals(true));
+	  });
+
+	  test('removeBinaryDataFromDatasetByIds', () async {
+	    when(serviceClient.removeBinaryDataFromDatasetByIDs(any))
+			.thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
+
+		expect(serviceClient.removeBinaryDataFromDatasetByIdsCalled, equals(false));
+		await dataClient.removeBinaryDataFromDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
+		expect(serviceClient.removeBinaryDataFromDatasetByIdsCalled, equals(true));
+	  });
+
+	});
 
     group('DataSync Tests', () {
       test('uploadImage', () async {
