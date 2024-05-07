@@ -242,17 +242,12 @@ void main() {
       });
 
       test('addTagsToBinaryDataByIds', () async {
-        when(serviceClient.addTagsToBinaryDataByIDs(any)).thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByIDsResponse()));
-
         expect(serviceClient.tagsAddedByIds, false);
         await dataClient.addTagsToBinaryDataByIds(['tags'], [BinaryID(fileId: 'file', organizationId: 'orgId', locationId: 'locId')]);
         expect(serviceClient.tagsAddedByIds, true);
       });
 
       test('addTagsToBinaryDataByFilter', () async {
-        when(serviceClient.addTagsToBinaryDataByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
-
         expect(serviceClient.tagsAddedByFilter, false);
         await dataClient.addTagsToBinaryDataByFilter(['tags'], Filter());
         expect(serviceClient.tagsAddedByFilter, true);
@@ -285,9 +280,6 @@ void main() {
       });
 
       test('removeBoundingBoxFromImageById', () async {
-        when(serviceClient.removeBoundingBoxFromImageByID(any))
-            .thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
-
         expect(serviceClient.removeBboxIdCalled, equals(false));
         await dataClient.removeBoundingBoxFromImageById('bboxId', BinaryID(organizationId: 'orgId', locationId: 'locId', fileId: 'fileId'));
         expect(serviceClient.removeBboxIdCalled, equals(true));
@@ -319,26 +311,18 @@ void main() {
       });
 
       test('configureDatabaseUser', () async {
-        when(serviceClient.configureDatabaseUser(any)).thenAnswer((_) => MockResponseFuture.value(ConfigureDatabaseUserResponse()));
-
         expect(serviceClient.configureDatabaseUserCalled, equals(false));
         await dataClient.configureDatabaseUser('orgId', 'password');
         expect(serviceClient.configureDatabaseUserCalled, equals(true));
       });
 
       test('addBinaryDataToDatasetByIds', () async {
-        when(serviceClient.addBinaryDataToDatasetByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
-
         expect(serviceClient.addBinaryDataToDatasetByIdsCalled, equals(false));
         await dataClient.addBinaryDataToDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
         expect(serviceClient.addBinaryDataToDatasetByIdsCalled, equals(true));
       });
 
       test('removeBinaryDataFromDatasetByIds', () async {
-        when(serviceClient.removeBinaryDataFromDatasetByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
-
         expect(serviceClient.removeBinaryDataFromDatasetByIdsCalled, equals(false));
         await dataClient
             .removeBinaryDataFromDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
