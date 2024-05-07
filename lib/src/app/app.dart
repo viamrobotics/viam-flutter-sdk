@@ -16,27 +16,6 @@ class AppClient {
 
   AppClient(this._client);
 
-  // addRole
-  // removeRole
-  // changeRole
-  // listAuthorizations - DONE
-  // checkPermissions - DONE
-  // getRegistryItem
-  // createRegistryItem
-  // updateRegistryItem
-  // listRegistryItems
-  // deleteRegistryItem
-  // createModule
-  // updateModule
-  // uploadModuleFile
-  // getModule
-  // listModules
-  // createKey
-  // deleteKey
-  // listKeys
-  // rotateKey
-  // createKeyFromExistingKeyAuthorizations
-
   /// Get the id of the user with the email provided
   Future<String> getUserIDByEmail(String email) async {
     final request = GetUserIDByEmailRequest()..email = email;
@@ -438,6 +417,27 @@ class AppClient {
     final request = DeleteFragmentRequest()..id = id;
     await _client.deleteFragment(request);
   }
+
+  /// Creates an [Authorization]
+  Future<void> addRole(ViamAuthorization authorization) async {
+    final request = AddRoleRequest()..authorization = authorization.toProto;
+    await _client.addRole(request);
+  } 
+
+  /// Deletes an [Authorization]
+  Future<void> removeRole(ViamAuthorization authorization) async {
+    final request = RemoveRoleRequest()..authorization = authorization.toProto;
+    await _client.removeRole(request);
+  }
+
+  /// Changes an [Authorization] to a new [Authorization]
+  Future<void> changeRole(ViamAuthorization oldAuthorization, ViamAuthorization newAuthorization) async {
+    final request = ChangeRoleRequest()
+      ..oldAuthorization = oldAuthorization.toProto
+      ..newAuthorization = newAuthorization.toProto
+    await _client.changeRole(request);
+  }
+
   /// List the [Authorization]s available for the currently authenticated user
   Future<List<Authorization>> listAuthorizations(String organizationId, {List<String> resourceIds = const []}) async {
     final request = ListAuthorizationsRequest()
