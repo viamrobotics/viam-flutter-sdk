@@ -141,7 +141,7 @@ class AppClient {
   /// List the members and pending invites for an [Organization].
   Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
     final request = ListOrganizationMembersRequest()..organizationId = org.id;
-    final response = await _client.listOrganizationMembers(request);
+    final ListOrganizationMembersResponse response = await _client.listOrganizationMembers(request);
     return response;
   }
 
@@ -155,7 +155,7 @@ class AppClient {
     final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
       ..organizationId = org.id
       ..email = email;
-    final response = await _client.createOrganizationInvite(request);
+    final CreateOrganizationInviteResponse response = await _client.createOrganizationInvite(request);
     return response.invite;
   }
 
@@ -176,7 +176,7 @@ class AppClient {
       ..email = email,
       ..addAuthorizations = protoAddAuthorizations,
       ..removeAuthorizations = protoRemoveAuthorizations;
-    final response = await _client.updateOrganizationInviteAuthorizations(request);
+    final UpdateOrganizationInviteAuthorizationsResponse response = await _client.updateOrganizationInviteAuthorizations(request);
     return response.invite;
   }
 
@@ -201,7 +201,7 @@ class AppClient {
     final request = ResendOrganizationInviteRequest()
       ..organizationId = org.id
       ..email = email;
-    final response = await _client.resendOrganizationInvite(request);
+    final ResendOrganizationInviteResponse response = await _client.resendOrganizationInvite(request);
     return response.invite;
   }
 
