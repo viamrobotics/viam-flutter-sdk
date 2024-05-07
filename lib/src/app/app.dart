@@ -61,14 +61,14 @@ class AppClient {
   // rotateKey
   // createKeyFromExistingKeyAuthorizations
 
-  // Get the id of the user with the email provided
+  /// Get the id of the user with the email provided
   Future<String> getUserIDByEmail(String email) async {
     final request = GetUserIDByEmailRequest()..email = email;
     final GetUserIDByEmailResponse response = await _client.getUserIDByEmail(request);
     return response.userId;
   }
 
-  // Create a new [Organization]
+  /// Create a new [Organization]
   Future<Organization> createOrganization(String name) async {
     final request = CreateOrganizationRequest()..name = name;
     final CreateOrganizationResponse response = await _client.createOrganization(request);
@@ -82,14 +82,14 @@ class AppClient {
     return response.organizations;
   }
 
-  // Get all [OrganizationIdentity]s that have access to a [Location].
+  /// Get all [OrganizationIdentity]s that have access to a [Location].
   Future<List<OrganizationIdentity>> getOrganizationsWithAccessToLocation(String locationId) async {
     final request = GetOrganizationsWithAccessToLocationRequest();
     final GetOrganizationsWithAccessToLocationResponse response = await _client.getOrganizationsWithAccessToLocation(request);
     return response.organizationIdentities;
   }
 
-  // List the [Organization]s a user belongs to
+  /// List the [Organization]s a user belongs to
   Future<OrgDetails> listOrganizationsByUser(String userId) async {
     final request = ListOrganizationsByUserRequest()..userId = userId;
     final ListOrganizationsByUserResponse response = await _client.listOrganizationsByUser(request);
@@ -103,14 +103,14 @@ class AppClient {
     return response.organization;
   }
 
-  // Checks for namespace availablity throughout all [Organization]s.
+  /// Checks for namespace availablity throughout all [Organization]s.
   Future<bool> getOrganizationNamespaceAvailability(String publicNamespace) async {
     final request = GetOrganizationNamespaceAvailabilityRequest()..publicNamespace = publicNamespace;
     final GetOrganizationNamespaceAvailabilityResponse response = await _client.getOrganizationNamespaceAvailability(request);
     return response.available;
   }
 
-  // Update an [Organization]
+  /// Update an [Organization]
   Future<Organization> updateOrganization(String organizationId, String name, String publicNamespace, String region, String cid) async {
     final request = UpdateOrganizationRequest()
       ..organizationId = organizationId
@@ -122,7 +122,7 @@ class AppClient {
     return response.organization;
   }
 
-  // Delete an [Organization]
+  /// Delete an [Organization]
   Future<void> deleteOrganization(String organizationId) async {
     final request = DeleteOrganizationRequest()..organizationId = organizationId;
     await _client.deleteOrganization(request);
@@ -149,7 +149,7 @@ class AppClient {
     return response.invite;
   }
 
-  // Update the [ViamAuthorization]s attached to an [Organization] invite
+  /// Update the [ViamAuthorization]s attached to an [Organization] invite
   Future<OrganizationInvite> updateOrganizationInviteAuthorizations(String organizationId, Stirng email, List<ViamAuthorization> addAuthorizations, List<ViamAuthorization> removeAuthorizations) async {
     final List<Authorization> protoAddAuthorizations = [];
     for (final authorization in addAuthorizations) {
@@ -170,7 +170,7 @@ class AppClient {
     return response.invite;
   }
 
-  // Delete a member from an [Organization]
+  /// Delete a member from an [Organization]
   Future<void> deleteOrganizationMember(Organization org, String userId) async {
     final request = DeleteOrganizationMemberRequest()
       ..organizationId = org.id
@@ -178,7 +178,7 @@ class AppClient {
     await _client.deleteOrganizationMember(request);
   }
 
-  // Delete an invite to an [Organization]
+  /// Delete an invite to an [Organization]
   Future<void> deleteOrganizationInvite(Organization org, String email) async {
     final request = DeleteOrganizationInviteRequest()
       ..organizationId = org.id
@@ -186,7 +186,7 @@ class AppClient {
     await _client.deleteOrganizationInvite(request);
   }
 
-  // Resend an invite to an [Organization]
+  /// Resend an invite to an [Organization]
   Future<OrganizationInvite> resendOrganizationInvite(Organization org, String email) async {
     final request = ResendOrganizationInviteRequest()
       ..organizationId = org.id
@@ -195,7 +195,7 @@ class AppClient {
     return response.invite;
   }
 
-  // Create a [Location]
+  /// Create a [Location]
   Future<Location> createLocation(String organizationId, String name, String parentLocationId) async {
     final request = CreateLocationRequest()
       ..organizationId = organizationId
@@ -212,7 +212,7 @@ class AppClient {
     return response.location;
   }
 
-  // Update a [Location]
+  /// Update a [Location]
   Future<Location> updateLocation(String locationId, String name, String parentLocationId, String region) async {
     final request = UpdateLocationRequest()
       ..locationId = locationId
@@ -223,7 +223,7 @@ class AppClient {
     return response.location;
   }
 
-  // Delete a [Location]
+  /// Delete a [Location]
   Future<void> deleteLocation(String locationId) {
     final request = DeleteLocationRequest()..locationId = locationId;
     await _client.deleteLocation(request);
@@ -236,7 +236,7 @@ class AppClient {
     return response.locations;
   }
 
-  // Share a location with an organization
+  /// Share a location with an organization
   Future<void> shareLocation(String locationId, String organizationId) async {
     final request = ShareLocationRequest()
       ..locationId = locationId
@@ -244,7 +244,7 @@ class AppClient {
     await _client.shareLocation(request);
   }
 
-  // Stop sharing a location with an organization
+  /// Stop sharing a location with an organization
   Future<void> unshareLocation(String locationId, String organizationId) async {
     final request = UnshareLocationRequest()
       ..locationId = locationId
@@ -252,21 +252,21 @@ class AppClient {
     await _client.unshareLocation(request);
   }
 
-  // Get a location's authorization secrets
+  /// Get a location's authorization secrets
   Future<LocationAuth> locationAuth(String locationId) async {
     final request = LocationAuthRequest()..locationId = locationId;
     final LocationAuthResponse response = await _client.locationAuth(request);
     return response.auth;
   }
 
-  // Create a new generated Secret in the Location.
+  /// Create a new generated Secret in the Location.
   Future<LocationAuth> createLocationSecret(String locationId) async {
     final request = CreateLocationSecretRequest()..locationId - locationId;
     final CreateLocationSecretResponse response = await _client.createLocationSecret(request);
     return response.auth;
   }
 
-  // Delete a Secret from the Location.
+  /// Delete a Secret from the Location.
   Future<void> deleteLocationSecret(Stirng locationId, String secretId) async {
     final request = DeleteLocationSecretRequest()
       ..locationId = locationId
