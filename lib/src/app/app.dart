@@ -16,16 +16,6 @@ class AppClient {
 
   AppClient(this._client);
 
-  // createLocation
-  // getLocation - DONE
-  // updateLocation
-  // deleteLocation
-  // listLocations - DONE
-  // shareLocation
-  // unshareLocation
-  // locationAuth
-  // createLocationSecret
-  // deleteLocationSecret
   // getRobot - DONE
   // getRoverRentalRobots
   // getRobotParts - DONE
@@ -205,11 +195,14 @@ class AppClient {
     return response.invite;
   }
 
-  /// List the [Location] of a specific [Organization] that the currently authenticated user has access to
-  Future<List<Location>> listLocations(Organization organization) async {
-    final listLocationsRequest = ListLocationsRequest()..organizationId = organization.id;
-    final ListLocationsResponse response = await _client.listLocations(listLocationsRequest);
-    return response.locations;
+  // Create a [Location]
+  Future<Location> createLocation(String organizationId, String name, String parentLocationId) async {
+    final request = CreateLocationRequest()
+      ..organizationId = organizationId
+      ..name = name
+      ..parentLocationId = parentLocationId;
+    final CreateLocationResponse response = await _client.createLocation(request);
+    return response.location;
   }
 
   /// Get a specific [Location] by ID
@@ -217,6 +210,68 @@ class AppClient {
     final getLocationRequest = GetLocationRequest()..locationId = locationId;
     final GetLocationResponse response = await _client.getLocation(getLocationRequest);
     return response.location;
+  }
+
+  // Update a [Location]
+  Future<Location> updateLocation(String locationId, String name, String parentLocationId, String region) async {
+    final request = UpdateLocationRequest()
+      ..locationId = locationId
+      ..name = name
+      ..parentLocationId = parentLocationId
+      ..region = region
+    final UpdateLocationResponse response = await _client.updateLocation(request);
+    return response.location;
+  }
+
+  // Delete a [Location]
+  Future<void> deleteLocation(String locationId) {
+    final request = DeleteLocationRequest()..locationId = locationId;
+    await _client.deleteLocation(request);
+  }
+
+  /// List the [Location]s of a specific [Organization] that the currently authenticated user has access to
+  Future<List<Location>> listLocations(Organization organization) async {
+    final listLocationsRequest = ListLocationsRequest()..organizationId = organization.id;
+    final ListLocationsResponse response = await _client.listLocations(listLocationsRequest);
+    return response.locations;
+  }
+
+  // Share a location with an organization
+  Future<void> shareLocation(String locationId, String organizationId) async {
+    final request = ShareLocationRequest()
+      ..locationId = locationId
+      ..organizationId = organizationId;
+    await _client.shareLocation(request);
+  }
+
+  // Stop sharing a location with an organization
+  Future<void> unshareLocation(String locationId, String organizationId) async {
+    final request = UnshareLocationRequest()
+      ..locationId = locationId
+      ..organizationId = organizationId;
+    await _client.unshareLocation(request);
+  }
+
+  // Get a location's authorization secrets
+  Future<LocationAuth> locationAuth(String locationId) async {
+    final request = LocationAuthRequest()..locationId = locationId;
+    final LocationAuthResponse response = await _client.locationAuth(request);
+    return response.auth;
+  }
+
+  // Create a new generated Secret in the Location.
+  Future<LocationAuth> createLocationSecret(String locationId) async {
+    final request = CreateLocationSecretRequest()..locationId - locationId;
+    final CreateLocationSecretResponse response = await _client.createLocationSecret(request);
+    return response.auth;
+  }
+
+  // Delete a Secret from the Location.
+  Future<void> deleteLocationSecret(Stirng locationId, String secretId) async {
+    final request = DeleteLocationSecretRequest()
+      ..locationId = locationId
+      ..secretId = secretId;
+    await _client.deleteLocationSecret(request);
   }
 
   /// List the [Robot] of a specific [Location] that the currently authenticated user has access to
