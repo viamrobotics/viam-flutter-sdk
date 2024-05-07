@@ -236,7 +236,7 @@ class AppClient {
     return response.locations;
   }
 
-  /// Share a location with an organization
+  /// Share a [Location] with an [Organization]
   Future<void> shareLocation(String locationId, String organizationId) async {
     final request = ShareLocationRequest()
       ..locationId = locationId
@@ -244,7 +244,7 @@ class AppClient {
     await _client.shareLocation(request);
   }
 
-  /// Stop sharing a location with an organization
+  /// Stop sharing a [Location] with an [Organization]
   Future<void> unshareLocation(String locationId, String organizationId) async {
     final request = UnshareLocationRequest()
       ..locationId = locationId
@@ -252,21 +252,21 @@ class AppClient {
     await _client.unshareLocation(request);
   }
 
-  /// Get a location's authorization secrets
+  /// Get a [LocationAuth] with a [Location]'s authorization secrets 
   Future<LocationAuth> locationAuth(String locationId) async {
     final request = LocationAuthRequest()..locationId = locationId;
     final LocationAuthResponse response = await _client.locationAuth(request);
     return response.auth;
   }
 
-  /// Create a new generated Secret in the Location.
+  /// Create a new generated [LocationAuth] in the [Location].
   Future<LocationAuth> createLocationSecret(String locationId) async {
     final request = CreateLocationSecretRequest()..locationId - locationId;
     final CreateLocationSecretResponse response = await _client.createLocationSecret(request);
     return response.auth;
   }
 
-  /// Delete a Secret from the Location.
+  /// Delete a Secret from the [Location].
   Future<void> deleteLocationSecret(Stirng locationId, String secretId) async {
     final request = DeleteLocationSecretRequest()
       ..locationId = locationId
