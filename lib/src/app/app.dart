@@ -66,13 +66,13 @@ class AppClient {
   }
 
   /// Update an [Organization]
-  Future<Organization> updateOrganization(String organizationId, String name, String publicNamespace, String region, String cid) async {
+  Future<Organization> updateOrganization(String organizationId, {String? name, String? publicNamespace, String? region, String? cid}) async {
     final request = UpdateOrganizationRequest()
       ..organizationId = organizationId
-      ..name = name
-      ..publicNamespace = publicNamespace
-      ..region = region
-      ..cid = cid
+      ..name = name ?? ''
+      ..publicNamespace = publicNamespace ?? ''
+      ..region = region ?? ''
+      ..cid = cid ?? '';
     final UpdateOrganizationResponse response = await _client.updateOrganization(request);
     return response.organization;
   }
@@ -91,7 +91,7 @@ class AppClient {
   }
 
   /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
-  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations) async {
+  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations, {bool sendEmailInvite = true}) async {
     final List<Authorization> protoAuthorizations = [];
     for (final authorization in authorizations) {
       protoAuthorizations.add(authorization.toProto);
@@ -100,6 +100,7 @@ class AppClient {
     final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
       ..organizationId = org.id
       ..email = email;
+      ..sendEmailInvite = sendEmailInvite;
     final CreateOrganizationInviteResponse response = await _client.createOrganizationInvite(request);
     return response.invite;
   }
@@ -151,11 +152,11 @@ class AppClient {
   }
 
   /// Create a [Location]
-  Future<Location> createLocation(String organizationId, String name, String parentLocationId) async {
+  Future<Location> createLocation(String organizationId, String name, {String? parentLocationId}) async {
     final request = CreateLocationRequest()
       ..organizationId = organizationId
       ..name = name
-      ..parentLocationId = parentLocationId;
+      ..parentLocationId = parentLocationId ?? '';
     final CreateLocationResponse response = await _client.createLocation(request);
     return response.location;
   }
@@ -168,12 +169,12 @@ class AppClient {
   }
 
   /// Update a [Location]
-  Future<Location> updateLocation(String locationId, String name, String parentLocationId, String region) async {
+  Future<Location> updateLocation(String locationId, {String? name, String? parentLocationId, String? region}) async {
     final request = UpdateLocationRequest()
       ..locationId = locationId
-      ..name = name
-      ..parentLocationId = parentLocationId
-      ..region = region
+      ..name = name ?? ''
+      ..parentLocationId = parentLocationId ?? ''
+      ..region = region ?? '';
     final UpdateLocationResponse response = await _client.updateLocation(request);
     return response.location;
   }
@@ -267,10 +268,11 @@ class AppClient {
   }
 
   /// Get a stream of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
-  Stream<List<LogEntry>> tailLogs(RobotPart part, {bool errorsOnly = false}) {
+  Stream<List<LogEntry>> tailLogs(RobotPart part, {bool errorsOnly = false, String? filter}) {
     final request = TailRobotPartLogsRequest()
       ..id = part.id
-      ..errorsOnly = errorsOnly;
+      ..errorsOnly = errorsOnly
+      ..filter = filter ?? '';
     final response = _client.tailRobotPartLogs(request);
     final stream = response.map((event) => event.logs);
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
@@ -402,12 +404,12 @@ class AppClient {
   }
 
   /// Update a [Fragment]
-  Future<Fragment> updateFragment(String id, String name, Struct config, bool public) async {
+  Future<Fragment> updateFragment(String id, String name, Struct config, {bool? public}) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
       ..config = config
-      ..public = public;
+      ..public = public ?? null;
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment
   }
@@ -488,15 +490,15 @@ class AppClient {
   }
 
   /// List [RegistryItem]s in an [Organization]
-  Future<List<RegistryItem>> listRegistryItems(String organizationId, List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses, String searchTerm, String pageToken) async {
+  Future<List<RegistryItem>> listRegistryItems(List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses, {String? organizationId, String? searchTerm, String? pageToken}) async {
     final request = ListRegistryItemsRequest()
-      ..organizationId = organizationId
+      ..organizationId = organizationId ?? ''
       ..types = types
       ..visibilities = visibilities
       ..platforms = platforms
       ..statuses = statuses
-      ..searchTerm = searchTerm
-      ..pageToken = pageToken;
+      ..searchTerm = searchTerm ?? ''
+      ..pageToken = pageToken ?? '';
     final ListRegistryItemsResponse response = await _client.listRegistryItems(request);
     return response.items
   }
@@ -537,9 +539,9 @@ class AppClient {
     return response.module;
   }
 
-  /// List all the [Module]s in an [Organization]
-  Future<List<Module>> listModules(String organizationId) async {
-    final request = ListModulesRequest()..organizationId = organizationId;
+  /// List all the [Module]s. Return private modules for an [Organization] if its ID is provided.
+  Future<List<Module>> listModules(String? organizationId) async {
+    final request = ListModulesRequest()..organizationId = organizationId ?? '';
     final ListModulesResponse response = await _client.listModules(request);
     return response.modules;
   }
