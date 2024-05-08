@@ -185,7 +185,8 @@ void main() {
       });
 
       test('addTagsToBinaryDataByFilter', () async {
-        when(serviceClient.addTagsToBinaryDataByFilter(any)).thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
+        when(serviceClient.addTagsToBinaryDataByFilter(any))
+            .thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
         await dataClient.addTagsToBinaryDataByFilter(['tags'], Filter());
         verify(serviceClient.addTagsToBinaryDataByFilter(any)).called(1);
       });
@@ -217,7 +218,8 @@ void main() {
       });
 
       test('removeBoundingBoxFromImageById', () async {
-        when(serviceClient.removeBoundingBoxFromImageByID(any)).thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
+        when(serviceClient.removeBoundingBoxFromImageByID(any))
+            .thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
         await dataClient.removeBoundingBoxFromImageById('bboxId', BinaryID(organizationId: 'orgId', locationId: 'locId', fileId: 'fileId'));
         verify(serviceClient.removeBoundingBoxFromImageByID(any)).called(1);
       });
@@ -254,13 +256,15 @@ void main() {
       });
 
       test('addBinaryDataToDatasetByIds', () async {
-        when(serviceClient.addBinaryDataToDatasetByIDs(any)).thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
+        when(serviceClient.addBinaryDataToDatasetByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
         await dataClient.addBinaryDataToDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
         verify(serviceClient.addBinaryDataToDatasetByIDs(any)).called(1);
       });
 
       test('removeBinaryDataFromDatasetByIds', () async {
-        when(serviceClient.removeBinaryDataFromDatasetByIDs(any)).thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
+        when(serviceClient.removeBinaryDataFromDatasetByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
         await dataClient
             .removeBinaryDataFromDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
         verify(serviceClient.removeBinaryDataFromDatasetByIDs(any)).called(1);
