@@ -447,6 +447,7 @@ class AppClient {
     return response.authorizations;
   }
 
+  /// Validates a [Permission] for the current user
   Future<List<Permission>> checkPermissions(ResourceType resourceType, String resourceId, List<Permission> permissions) async {
     final request = CheckPermissionsRequest()
       ..permissions.add((AuthorizedPermissions()
@@ -458,5 +459,126 @@ class AppClient {
     return response.authorizedPermissions.first.permissions
         .map((e) => Permission.values.firstWhere((element) => element.value == e))
         .toList();
+  }
+
+  /// Get a [RegistryItem] by ID
+  Future<RegistryItem> getRegistryItem(String itemId) await {
+    final request = GetRegistryItemRequest()..itemId = itemId;
+    final GetRegistryItemResponse response = await _client.getRegistryItem(request);
+    return response.item;
+  }
+
+  /// Create a [RegistryItem] in an [Organization]
+  Future<void> createRegistryItem(String organizationId, String name, PackageType type) await {
+    final request = createRegistryItem()
+      ..organizationId = organizationId
+      ..name = name
+      ..type = type;
+    await _client.createRegistryItem(request);
+  }
+  
+  /// Update a [Registry Item]
+  Future<void> updateRegistryItem(String itemId, PackageType type, String description, Visibility visibility) async {
+    final request = UpdateRegistryItemRequest()
+      ..itemId = itemId
+      ..type = type
+      ..description = description
+      ..visibility = visibility;
+    await _client.updateRegistryItem(request);
+  }
+
+  /// List [RegistryItem]s in an [Organization]
+  Future<List<RegistryItem>> listRegistryItems(String organizationId, List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses, String searchTerm, String pageToken) async {
+    final request = ListRegistryItemsRequest()
+      ..organizationId = organizationId
+      ..types = types
+      ..visibilities = visibilities
+      ..platforms = platforms
+      ..statuses = statuses
+      ..searchTerm = searchTerm
+      ..pageToken = pageToken;
+    final ListRegistryItemsResponse response = await _client.listRegistryItems(request);
+    return response.items
+  }
+  
+  /// Delete a [RegistryItem]
+  Future<void> deleteRegistryItem(String itemId) async {
+    final request = DeleteRegistryItemRequest()..itemId = itemId;
+    await _client.deleteRegistryItem(request);
+  }
+
+  /// Create a [Module]
+  Future<CreateModuleResponse> createModule(String organizationId, String name) async {
+    final request = CreateModuleRequest()
+      ..organizationId = organizationId
+      ..name = name;
+    return await _client.createModule(request);
+  }
+
+  /// Update a [Module]
+  Future<String> updateModule(String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
+    final request = UpdateModuleRequest()
+      ..moduleId = moduleId
+      ..visibility = visibility
+      ..url = url
+      ..description = description
+      ..models = models
+      ..entrypoint = entrypoint;
+    final UpdateModuleResponse response = await _client.updateModule(request);
+    return response.url;
+  }
+
+  /// uploadModuleFile
+  
+  /// Get a [Module] by ID
+  Future<Module> getModule(String moduleId) async {
+    final request = GetModuleRequest()..moduleId = moduleId;
+    final GetModuleResponse response = await _client.getModule(request);
+    return response.module;
+  }
+
+  /// List all the [Module]s in an [Organization]
+  Future<List<Module>> listModules(String organizationId) async {
+    final request = ListModulesRequest()..organizationId = organizationId;
+    final ListModulesResponse response = await _client.listModules(request);
+    return response.modules;
+  }
+
+  /// Create an [APIKey]
+  Future<CreateKeyResponse> createKey(List<ViamAuthorization> authorizations, String name) async {
+    final List<Authorization> protoAuthorizations = [];
+    for (final authorization in authorizations) {
+      protoAuthorizations.add(authorization.toProto);
+    }
+    
+    final request = CreateKeyRequest()
+      ..authorizations = protoAuthorizations
+      ..name = name
+    return await _client.createKey(request);
+  }
+
+  /// Delete an [APIKey]
+  Future<void> deleteKey(String id) {
+    final request = DeleteKeyRequest()..id = id;
+    await _client.deleteKey(request);
+  }
+
+  /// List the [APIKeyWithAuthorizations]s in an [Organization]
+  Future<List<APIKeyWithAuthorizations>> listKeys(String orgId) async {
+    final request = ListKeysRequest()..orgId = orgId;
+    final ListKeysResponse response = await _client.listKeys(request);
+    return response.apiKeys;
+  }
+
+  /// Rotate an [APIKey]
+  Future<RotateKeyResponse> rotateKey(String id) async {
+    final request = RotateKeyRequest()..id = id;
+    return await _client.rotateKey(request);
+  }
+
+  /// Create an [APIKey] with existing authorizations
+  Future<CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations(String id) async {
+    final request = CreateKeyFromExistingKeyAuthorizationsRequest()..id = id;
+    return await _client.createKeyFromExistingKeyAuthorizations(request);
   }
 }
