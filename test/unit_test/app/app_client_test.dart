@@ -19,6 +19,23 @@ void main() {
   });
 
   group('App RPC Client Tests', () {
+    test('getUserIDByEmail', () async {
+      when(serviceClient.getUserIDByEmail(any)).thenAnswer((_) => MockResponseFuture.value(GetUserIDByEmailResponse()..userId = 'userId'));
+      final response = await appClient.getUserIDByEmail('email');
+      expect(response, equals('userId'));
+    });
+
+    test('createOrganization', () async {
+      final expected = Organization()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.createOrganization(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationResponse()..organization = expected));
+      final response = await appClient.createOrganization('name');
+      expect(response, equals(expected));
+    });
+
     test('listOrganizations', () async {
       final expected = [
         Organization()
@@ -32,6 +49,30 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('getOrganizationsWithAccessToLocation', () async {
+      final expected = [
+        OrganizationIdentity()
+          ..id = 'id'
+          ..name = 'name'
+      ];
+      when(serviceClient.getOrganizationsWithAccessToLocation(any)).thenAnswer(
+          (_) => MockResponseFuture.value(GetOrganizationsWithAccessToLocationResponse()..organizationIdentities.addAll(expected)));
+      final response = await appClient.getOrganizationsWithAccessToLocation('locationId');
+      expect(response, equals(expected));
+    });
+
+    test('listOrganizationsByUser', () async {
+      final expected = [
+        OrgDetails()
+          ..orgId = 'id'
+          ..orgName = 'name'
+      ];
+      when(serviceClient.listOrganizationsByUser(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationsByUserResponse()..orgs.addAll(expected)));
+      final response = await appClient.listOrganizationsByUser('userId');
+      expect(response, equals(expected));
+    });
+
     test('getOrganization', () async {
       final expected = Organization()
         ..id = 'id'
@@ -40,6 +81,85 @@ void main() {
       when(serviceClient.getOrganization(any))
           .thenAnswer((_) => MockResponseFuture.value(GetOrganizationResponse()..organization = expected));
       final response = await appClient.getOrganization('id');
+      expect(response, equals(expected));
+    });
+
+    test('getOrganizationNamespaceAvailability', () async {
+      when(serviceClient.getOrganizationNamespaceAvailability(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetOrganizationNamespaceAvailabilityResponse()..available = true));
+      final response = await appClient.getOrganizationNamespaceAvailability('publicNamespace');
+      expect(response, equals(true));
+    });
+
+    test('updateOrganization', () async {
+      final expected = Organization()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.updateOrganization(any))
+          .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
+      final response = await appClient.updateOrganization('organizationId');
+      expect(response, equals(expected));
+    });
+
+    test('deleteOrganization', () async {
+      when(serviceClient.deleteOrganization(any)).thenAnswer((_) => MockResponseFuture.value(DeleteOrganizationResponse()));
+      await appClient.deleteOrganization('organizationId');
+      verify(serviceClient.deleteOrganization(any)).called(1);
+    });
+
+    test('listOrganizationMembers', () async {
+      final expected = [OrganizationMember()..userId = 'userId'];
+      when(serviceClient.listOrganizationMembers(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationMembersResponse(members: expected)));
+      final response = await appClient.listOrganizationMembers(Organization());
+      expect(response.members, equals(expected));
+    });
+
+    test('createOrganizationInvite', () async {
+      final expected = OrganizationInvite()
+        ..organizationId = 'organizationId'
+        ..email = 'email'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.createOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
+      final response = await appClient.createOrganizationInvite(Organization(), 'email', []);
+      expect(response, equals(expected));
+    });
+
+    test('updateOrganizationInviteAuthorizations', () async {
+      final expected = OrganizationInvite()
+        ..organizationId = 'organizationId'
+        ..email = 'email'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.updateOrganizationInviteAuthorizations(any))
+          .thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationInviteAuthorizationsResponse()..invite = expected));
+      final response = await appClient.updateOrganizationInviteAuthorizations('organizationId', 'email', [], []);
+      expect(response, equals(expected));
+    });
+
+    test('deleteOrganizationMember', () async {
+      final expected = DeleteOrganizationMemberResponse();
+      when(serviceClient.deleteOrganizationMember(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteOrganizationMember(Organization(), 'user id');
+      verify(serviceClient.deleteOrganizationMember(any)).called(1);
+    });
+
+    test('deleteOrganizationInvite', () async {
+      final expected = DeleteOrganizationInviteResponse();
+      when(serviceClient.deleteOrganizationInvite(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteOrganizationInvite(Organization(), 'email');
+      verify(serviceClient.deleteOrganizationInvite(any)).called(1);
+    });
+
+    test('resendOrganizationInvite', () async {
+      final expected = OrganizationInvite()
+        ..organizationId = 'organizationId'
+        ..email = 'email'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.resendOrganizationInvite(any))
+          .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
+      final response = await appClient.resendOrganizationInvite(Organization(), 'email');
       expect(response, equals(expected));
     });
 
@@ -114,50 +234,6 @@ void main() {
       final rc = Struct();
       final response = await appClient.updateRobotPart('robot part', 'name2', rc);
       expect(response, equals(expected));
-    });
-
-    test('listOrganizationMembers', () async {
-      final expected = [OrganizationMember()..userId = 'userId'];
-      when(serviceClient.listOrganizationMembers(any))
-          .thenAnswer((_) => MockResponseFuture.value(ListOrganizationMembersResponse(members: expected)));
-      final response = await appClient.listOrganizationMembers(Organization());
-      expect(response.members, equals(expected));
-    });
-
-    test('createOrganizationInvite', () async {
-      final expected = OrganizationInvite()
-        ..organizationId = 'organizationId'
-        ..email = 'email'
-        ..createdOn = Timestamp.create();
-      when(serviceClient.createOrganizationInvite(any))
-          .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
-      final response = await appClient.createOrganizationInvite(Organization(), 'email', []);
-      expect(response, equals(expected));
-    });
-
-    test('resendOrganizationInvite', () async {
-      final expected = OrganizationInvite()
-        ..organizationId = 'organizationId'
-        ..email = 'email'
-        ..createdOn = Timestamp.create();
-      when(serviceClient.resendOrganizationInvite(any))
-          .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
-      final response = await appClient.resendOrganizationInvite(Organization(), 'email');
-      expect(response, equals(expected));
-    });
-
-    test('deleteOrganizationInvite', () async {
-      final expected = DeleteOrganizationInviteResponse();
-      when(serviceClient.deleteOrganizationInvite(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await appClient.deleteOrganizationInvite(Organization(), 'email');
-      verify(serviceClient.deleteOrganizationInvite(any)).called(1);
-    });
-
-    test('deleteOrganizationMember', () async {
-      final expected = DeleteOrganizationMemberResponse();
-      when(serviceClient.deleteOrganizationMember(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await appClient.deleteOrganizationMember(Organization(), 'user id');
-      verify(serviceClient.deleteOrganizationMember(any)).called(1);
     });
 
     test('newMachine', () async {

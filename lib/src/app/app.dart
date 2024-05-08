@@ -412,9 +412,7 @@ class AppClient {
       ..id = id
       ..name = name
       ..config = config;
-    if (public != null) {
-      request.public = public;
-    }
+    if (public != null) request.public = public;
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
   }
