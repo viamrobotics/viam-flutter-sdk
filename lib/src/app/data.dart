@@ -139,10 +139,10 @@ class DataClient {
   /// Delete tabular data older than a provided number of days from an organization.
   ///
   /// Returns the number of pieces of data that were deleted.
-  Future<int> deleteTabularData(String organizationId, int daysOld) async {
+  Future<int> deleteTabularData(String organizationId, int olderThanDays) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
-      ..deleteOlderThanDays = daysOld;
+      ..deleteOlderThanDays = olderThanDays;
     final response = await _dataClient.deleteTabularData(request);
     return response.deletedCount.toInt();
   }
