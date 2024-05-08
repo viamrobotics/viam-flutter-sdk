@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:viam_sdk/protos/app/packages.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 
 import '../gen/app/v1/app.pbgrpc.dart';
@@ -45,7 +46,7 @@ class AppClient {
   }
 
   /// List the [Organization]s a user belongs to
-  Future<OrgDetails> listOrganizationsByUser(String userId) async {
+  Future<List<OrgDetails>> listOrganizationsByUser(String userId) async {
     final request = ListOrganizationsByUserRequest()..userId = userId;
     final ListOrganizationsByUserResponse response = await _client.listOrganizationsByUser(request);
     return response.orgs;
@@ -66,7 +67,8 @@ class AppClient {
   }
 
   /// Update an [Organization]
-  Future<Organization> updateOrganization(String organizationId, {String? name, String? publicNamespace, String? region, String? cid}) async {
+  Future<Organization> updateOrganization(String organizationId,
+      {String? name, String? publicNamespace, String? region, String? cid}) async {
     final request = UpdateOrganizationRequest()
       ..organizationId = organizationId
       ..name = name ?? ''
@@ -91,7 +93,8 @@ class AppClient {
   }
 
   /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
-  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations, {bool sendEmailInvite = true}) async {
+  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations,
+      {bool sendEmailInvite = true}) async {
     final List<Authorization> protoAuthorizations = [];
     for (final authorization in authorizations) {
       protoAuthorizations.add(authorization.toProto);
@@ -99,14 +102,15 @@ class AppClient {
 
     final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
       ..organizationId = org.id
-      ..email = email;
+      ..email = email
       ..sendEmailInvite = sendEmailInvite;
     final CreateOrganizationInviteResponse response = await _client.createOrganizationInvite(request);
     return response.invite;
   }
 
   /// Update the [ViamAuthorization]s attached to an [Organization] invite
-  Future<OrganizationInvite> updateOrganizationInviteAuthorizations(String organizationId, Stirng email, List<ViamAuthorization> addAuthorizations, List<ViamAuthorization> removeAuthorizations) async {
+  Future<OrganizationInvite> updateOrganizationInviteAuthorizations(
+      String organizationId, String email, List<ViamAuthorization> addAuthorizations, List<ViamAuthorization> removeAuthorizations) async {
     final List<Authorization> protoAddAuthorizations = [];
     for (final authorization in addAuthorizations) {
       protoAddAuthorizations.add(authorization.toProto);
@@ -117,11 +121,10 @@ class AppClient {
       protoRemoveAuthorizations.add(authorization.toProto);
     }
 
-    final request = UpdateOrganizationInviteAuthorizationsRequest()
-      ..organizationId = organizationId,
-      ..email = email,
-      ..addAuthorizations = protoAddAuthorizations,
-      ..removeAuthorizations = protoRemoveAuthorizations;
+    final request = UpdateOrganizationInviteAuthorizationsRequest(
+        addAuthorizations: protoAddAuthorizations, removeAuthorizations: protoRemoveAuthorizations)
+      ..organizationId = organizationId
+      ..email = email;
     final UpdateOrganizationInviteAuthorizationsResponse response = await _client.updateOrganizationInviteAuthorizations(request);
     return response.invite;
   }
@@ -180,7 +183,7 @@ class AppClient {
   }
 
   /// Delete a [Location]
-  Future<void> deleteLocation(String locationId) {
+  Future<void> deleteLocation(String locationId) async {
     final request = DeleteLocationRequest()..locationId = locationId;
     await _client.deleteLocation(request);
   }
@@ -208,7 +211,7 @@ class AppClient {
     await _client.unshareLocation(request);
   }
 
-  /// Get a [LocationAuth] with a [Location]'s authorization secrets 
+  /// Get a [LocationAuth] with a [Location]'s authorization secrets
   Future<LocationAuth> locationAuth(String locationId) async {
     final request = LocationAuthRequest()..locationId = locationId;
     final LocationAuthResponse response = await _client.locationAuth(request);
@@ -217,13 +220,13 @@ class AppClient {
 
   /// Create a new generated [LocationAuth] in the [Location].
   Future<LocationAuth> createLocationSecret(String locationId) async {
-    final request = CreateLocationSecretRequest()..locationId - locationId;
+    final request = CreateLocationSecretRequest()..locationId = locationId;
     final CreateLocationSecretResponse response = await _client.createLocationSecret(request);
     return response.auth;
   }
 
   /// Delete a Secret from the [Location].
-  Future<void> deleteLocationSecret(Stirng locationId, String secretId) async {
+  Future<void> deleteLocationSecret(String locationId, String secretId) async {
     final request = DeleteLocationSecretRequest()
       ..locationId = locationId
       ..secretId = secretId;
@@ -238,8 +241,8 @@ class AppClient {
   }
 
   /// Get [RoverRentalRobot]s in an [Organization]
-  Future<RoverRentalRobot> getRoverRentalRobots(String orgId) async {
-    final GetRoverRentalRobotsRequest()..orgId = orgId;
+  Future<List<RoverRentalRobot>> getRoverRentalRobots(String orgId) async {
+    final request = GetRoverRentalRobotsRequest()..orgId = orgId;
     final GetRoverRentalRobotsResponse response = await _client.getRoverRentalRobots(request);
     return response.robots;
   }
@@ -279,7 +282,7 @@ class AppClient {
   }
 
   /// Get a specific [RobotPart] history by ID
-  Future<List<HistoryEntry>> getRobotPartHistory(String id) async {
+  Future<List<RobotPartHistoryEntry>> getRobotPartHistory(String id) async {
     final request = GetRobotPartHistoryRequest()..id = id;
     final GetRobotPartHistoryResponse response = await _client.getRobotPartHistory(request);
     return response.history;
@@ -316,7 +319,7 @@ class AppClient {
     final GetRobotAPIKeysResponse response = await _client.getRobotAPIKeys(request);
     return response.apiKeys;
   }
-  
+
   /// Marks the given [RobotPart] as the main part, and all the others as not
   Future<void> markPartAsMain(String partId) async {
     final request = MarkPartAsMainRequest()..partId = partId;
@@ -326,13 +329,13 @@ class AppClient {
   /// Marks [RobotPart] for restart. Once the [RobotPart] checks-in with the app the flag is reset on the [RobotPart]. Calling this multiple times before a [RobotPart] checks-in has no affect.
   /// Note: This API may be removed in the near future.
   Future<void> markPartForRestart(String partId) async {
-    final request = markPartForRestart()..partId = partId;
+    final request = MarkPartForRestartRequest()..partId = partId;
     await _client.markPartForRestart(request);
   }
 
   /// Create a new generated Secret in the [RobotPart]. Succeeds if there are no more than 2 active secrets after creation.
-  Future<RobotPart> createRobotPartSecret(String partId) aync {
-    final request = createRobotPartSecret()..partId = partId;
+  Future<RobotPart> createRobotPartSecret(String partId) async {
+    final request = CreateRobotPartSecretRequest()..partId = partId;
     final CreateRobotPartSecretResponse response = await _client.createRobotPartSecret(request);
     return response.part;
   }
@@ -374,7 +377,7 @@ class AppClient {
   /// Delete a [Robot]
   Future<void> deleteRobot(String id) async {
     final request = DeleteRobotRequest()..id = id;
-    final DeleteRobotResponse response = await _client.deleteRobot(request);
+    await _client.deleteRobot(request);
   }
 
   /// Get a list of [Fragment]s in an [Organization]
@@ -383,7 +386,7 @@ class AppClient {
       ..organizationId = organizationId
       ..showPublic = showPublic;
     final ListFragmentsResponse response = await _client.listFragments(request);
-    return response.fragments
+    return response.fragments;
   }
 
   /// Get a specific [Fragment] by ID.
@@ -397,7 +400,7 @@ class AppClient {
   Future<Fragment> createFragment(String name, Struct config, String organizationId) async {
     final request = CreateFragmentRequest()
       ..name = name
-      ..config = config,
+      ..config = config
       ..organizationId = organizationId;
     final CreateFragmentResponse response = await _client.createFragment(request);
     return response.fragment;
@@ -408,10 +411,12 @@ class AppClient {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
-      ..config = config
-      ..public = public ?? null;
+      ..config = config;
+    if (public != null) {
+      request.public = public;
+    }
     final UpdateFragmentResponse response = await _client.updateFragment(request);
-    return response.fragment
+    return response.fragment;
   }
 
   /// Delete a [Fragment]
@@ -424,7 +429,7 @@ class AppClient {
   Future<void> addRole(ViamAuthorization authorization) async {
     final request = AddRoleRequest()..authorization = authorization.toProto;
     await _client.addRole(request);
-  } 
+  }
 
   /// Deletes an [Authorization]
   Future<void> removeRole(ViamAuthorization authorization) async {
@@ -436,7 +441,7 @@ class AppClient {
   Future<void> changeRole(ViamAuthorization oldAuthorization, ViamAuthorization newAuthorization) async {
     final request = ChangeRoleRequest()
       ..oldAuthorization = oldAuthorization.toProto
-      ..newAuthorization = newAuthorization.toProto
+      ..newAuthorization = newAuthorization.toProto;
     await _client.changeRole(request);
   }
 
@@ -464,21 +469,21 @@ class AppClient {
   }
 
   /// Get a [RegistryItem] by ID
-  Future<RegistryItem> getRegistryItem(String itemId) await {
+  Future<RegistryItem> getRegistryItem(String itemId) async {
     final request = GetRegistryItemRequest()..itemId = itemId;
     final GetRegistryItemResponse response = await _client.getRegistryItem(request);
     return response.item;
   }
 
   /// Create a [RegistryItem] in an [Organization]
-  Future<void> createRegistryItem(String organizationId, String name, PackageType type) await {
-    final request = createRegistryItem()
+  Future<void> createRegistryItem(String organizationId, String name, PackageType type) async {
+    final request = CreateRegistryItemRequest()
       ..organizationId = organizationId
       ..name = name
       ..type = type;
     await _client.createRegistryItem(request);
   }
-  
+
   /// Update a [Registry Item]
   Future<void> updateRegistryItem(String itemId, PackageType type, String description, Visibility visibility) async {
     final request = UpdateRegistryItemRequest()
@@ -490,19 +495,17 @@ class AppClient {
   }
 
   /// List [RegistryItem]s in an [Organization]
-  Future<List<RegistryItem>> listRegistryItems(List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses, {String? organizationId, String? searchTerm, String? pageToken}) async {
-    final request = ListRegistryItemsRequest()
+  Future<List<RegistryItem>> listRegistryItems(
+      List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses,
+      {String? organizationId, String? searchTerm, String? pageToken}) async {
+    final request = ListRegistryItemsRequest(types: types, visibilities: visibilities, platforms: platforms, statuses: statuses)
       ..organizationId = organizationId ?? ''
-      ..types = types
-      ..visibilities = visibilities
-      ..platforms = platforms
-      ..statuses = statuses
       ..searchTerm = searchTerm ?? ''
       ..pageToken = pageToken ?? '';
     final ListRegistryItemsResponse response = await _client.listRegistryItems(request);
-    return response.items
+    return response.items;
   }
-  
+
   /// Delete a [RegistryItem]
   Future<void> deleteRegistryItem(String itemId) async {
     final request = DeleteRegistryItemRequest()..itemId = itemId;
@@ -518,20 +521,20 @@ class AppClient {
   }
 
   /// Update a [Module]
-  Future<String> updateModule(String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
-    final request = UpdateModuleRequest()
+  Future<String> updateModule(
+      String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
+    final request = UpdateModuleRequest(models: models)
       ..moduleId = moduleId
       ..visibility = visibility
       ..url = url
       ..description = description
-      ..models = models
       ..entrypoint = entrypoint;
     final UpdateModuleResponse response = await _client.updateModule(request);
     return response.url;
   }
 
   /// uploadModuleFile
-  
+
   /// Get a [Module] by ID
   Future<Module> getModule(String moduleId) async {
     final request = GetModuleRequest()..moduleId = moduleId;
@@ -552,15 +555,13 @@ class AppClient {
     for (final authorization in authorizations) {
       protoAuthorizations.add(authorization.toProto);
     }
-    
-    final request = CreateKeyRequest()
-      ..authorizations = protoAuthorizations
-      ..name = name
+
+    final request = CreateKeyRequest(authorizations: protoAuthorizations)..name = name;
     return await _client.createKey(request);
   }
 
   /// Delete an [APIKey]
-  Future<void> deleteKey(String id) {
+  Future<void> deleteKey(String id) async {
     final request = DeleteKeyRequest()..id = id;
     await _client.deleteKey(request);
   }
