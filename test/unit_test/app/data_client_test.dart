@@ -31,7 +31,8 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
   }
 
   @override
-  ResponseFuture<StreamingDataCaptureUploadResponse> streamingDataCaptureUpload(Stream<StreamingDataCaptureUploadRequest> request, {CallOptions? options}) {
+  ResponseFuture<StreamingDataCaptureUploadResponse> streamingDataCaptureUpload(Stream<StreamingDataCaptureUploadRequest> request,
+      {CallOptions? options}) {
     final metadataRequest = request.first.then((value) => dataCaptureMetadata = value.metadata.uploadMetadata);
     return MockResponseFuture.future(Future.microtask(() async {
       await metadataRequest;
@@ -318,13 +319,15 @@ void main() {
       });
 
       test('binaryDataCaptureUpload', () async {
-        final response = await dataClient.binaryDataCaptureUpload([1], 'partId', 'fileExt', componentType: 'type', componentName: 'name', methodName: 'name');
+        final response = await dataClient
+            .binaryDataCaptureUpload([1], 'partId', 'fileExt', componentType: 'type', componentName: 'name', methodName: 'name');
         expect(response, equals('fileId'));
       });
 
       test('tabularDataCaptureUpload', () async {
         final map = {'foo': 'bar', 'baz': false};
-        final response = await dataClient.tabularDataCaptureUpload([map], 'partId', componentType: 'type', componentName: 'name', methodName: 'name');
+        final response =
+            await dataClient.tabularDataCaptureUpload([map], 'partId', componentType: 'type', componentName: 'name', methodName: 'name');
         expect(response, equals('fileId'));
       });
 
@@ -336,7 +339,7 @@ void main() {
           ..methodName = ''
           ..componentType = ''
           ..componentName = '';
-        await dataClient.streamingDataCaptureUpload([1,2,3], 'partId', '.txt');
+        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt');
         expect(syncServiceClient.dataCaptureMetadata, expected);
 
         await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', componentName: 'myCoolArm');

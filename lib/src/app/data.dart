@@ -375,8 +375,7 @@ class DataClient {
     if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
       metadata.fileExtension = '';
-    }
-    else if (fileExtension[0] == '.') {
+    } else if (fileExtension[0] == '.') {
       metadata.fileExtension = fileExtension;
     } else {
       metadata.fileExtension = '.$fileExtension';
@@ -449,8 +448,7 @@ class DataClient {
     if (methodParameters != null) uploadMetadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
       uploadMetadata.fileExtension = '';
-    }
-    else if (fileExtension[0] == '.') {
+    } else if (fileExtension[0] == '.') {
       uploadMetadata.fileExtension = fileExtension;
     } else {
       uploadMetadata.fileExtension = '.$fileExtension';
