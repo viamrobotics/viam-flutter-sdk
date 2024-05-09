@@ -36,5 +36,18 @@ void main() {
       final response = await billingClient.getInvoicesSummary('orgId');
       expect(response, equals(expected));
     });
+
+    test('getInvoicePdf', () async {
+      const expected = 1;
+      final response = GetInvoicePdfResponse()..chunk.add(expected);
+      when(serviceClient.getInvoicePdf(any)).thenAnswer((_) => MockResponseStream.list([response]));
+      final stream = billingClient.getInvoicePdf('id', 'orgId');
+      expect(
+          stream,
+          emitsInOrder([
+            emits([expected]),
+            emitsDone
+          ]));
+    });
   });
 }

@@ -34,7 +34,7 @@ class BillingClient {
       ..id = id
       ..orgId = orgId;
     final response = _client.getInvoicePdf(request);
-    final stream = response.map((resp) => resp.chunk);
+    final stream = response.map((event) => event.chunk);
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
 }
