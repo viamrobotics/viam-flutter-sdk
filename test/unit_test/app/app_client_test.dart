@@ -596,17 +596,19 @@ void main() {
       expect(response, equals(expected));
     });
 
-    // test('checkPermissions', () async {
-    //   final expected = [
-    //     AuthorizedPermissions(permissions: ['controlRobot'])
-    //       ..resourceType = 'robot'
-    //       ..resourceId = 'resourceId'
-    //   ];
-    //   when(serviceClient.checkPermissions(any))
-    //       .thenAnswer((_) => MockResponseFuture.value(CheckPermissionsResponse()..authorizedPermissions.addAll(expected)));
-    //   final response = await appClient.checkPermissions(ResourceType.robot, 'resourceId', [Permission.controlRobot]);
-    //   expect(response, equals(response));
-    // });
+    test('checkPermissions', () async {
+      final expected = [Permission.controlRobot];
+      final authorizedPermissions = [
+        AuthorizedPermissions()
+          ..resourceType = 'robot'
+          ..resourceId = 'resourceId'
+          ..permissions.addAll(['control_robot'])
+      ];
+      when(serviceClient.checkPermissions(any))
+          .thenAnswer((_) => MockResponseFuture.value(CheckPermissionsResponse()..authorizedPermissions.addAll(authorizedPermissions)));
+      final response = await appClient.checkPermissions(ResourceType.robot, 'resourceId', [Permission.controlRobot]);
+      expect(response, equals(expected));
+    });
 
     test('getRegistryItem', () async {
       final expected = RegistryItem()
