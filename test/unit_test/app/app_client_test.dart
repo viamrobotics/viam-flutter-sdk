@@ -163,6 +163,43 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('createLocation', () async {
+      final expected = Location()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.createLocation(any)).thenAnswer((_) => MockResponseFuture.value(CreateLocationResponse()..location = expected));
+      final response = await appClient.createLocation('organizationId', 'name');
+      expect(response, equals(expected));
+    });
+
+    test('getLocation', () async {
+      final expected = Location()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.getLocation(any)).thenAnswer((_) => MockResponseFuture.value(GetLocationResponse()..location = expected));
+      final response = await appClient.getLocation('id');
+      expect(response, equals(expected));
+    });
+
+    test('updateLocation', () async {
+      final expected = Location()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      when(serviceClient.updateLocation(any)).thenAnswer((_) => MockResponseFuture.value(UpdateLocationResponse()..location = expected));
+      final response = await appClient.updateLocation('locationId');
+      expect(response, equals(expected));
+    });
+
+    test('deleteLocation', () async {
+      final expected = DeleteLocationResponse();
+      when(serviceClient.deleteLocation(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteLocation('locationId');
+      verify(serviceClient.deleteLocation(any)).called(1);
+    });
+
     test('listLocations', () async {
       final expected = [
         Location()
@@ -176,14 +213,54 @@ void main() {
       expect(response, equals(expected));
     });
 
-    test('getLocation', () async {
-      final expected = Location()
+    test('shareLocation', () async {
+      final expected = ShareLocationResponse();
+      when(serviceClient.shareLocation(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.shareLocation('locationId', 'organizationId');
+      verify(serviceClient.shareLocation(any)).called(1);
+    });
+
+    test('unshareLocation', () async {
+      final expected = UnshareLocationResponse();
+      when(serviceClient.unshareLocation(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.unshareLocation('locationId', 'organizationId');
+      verify(serviceClient.unshareLocation(any)).called(1);
+    });
+
+    test('locationAuth', () async {
+      final secret = SharedSecret()
         ..id = 'id'
-        ..name = 'name'
-        ..createdOn = Timestamp.create();
-      when(serviceClient.getLocation(any)).thenAnswer((_) => MockResponseFuture.value(GetLocationResponse()..location = expected));
-      final response = await appClient.getLocation('id');
+        ..secret = 'secret'
+        ..createdOn = Timestamp.create()
+        ..state = SharedSecret_State.STATE_UNSPECIFIED;
+      final expected = LocationAuth(secrets: [secret])
+        ..secret = 'secret'
+        ..locationId = 'locationId';
+      when(serviceClient.locationAuth(any)).thenAnswer((_) => MockResponseFuture.value(LocationAuthResponse()..auth = expected));
+      final response = await appClient.locationAuth('locationId');
       expect(response, equals(expected));
+    });
+
+    test('createLocationSecret', () async {
+      final secret = SharedSecret()
+        ..id = 'id'
+        ..secret = 'secret'
+        ..createdOn = Timestamp.create()
+        ..state = SharedSecret_State.STATE_UNSPECIFIED;
+      final expected = LocationAuth(secrets: [secret])
+        ..secret = 'secret'
+        ..locationId = 'locationId';
+      when(serviceClient.createLocationSecret(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateLocationSecretResponse()..auth = expected));
+      final response = await appClient.createLocationSecret('locationId');
+      expect(response, equals(expected));
+    });
+
+    test('deleteLocationSecret', () async {
+      final expected = DeleteLocationSecretResponse();
+      when(serviceClient.deleteLocationSecret(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteLocationSecret('locationId', 'secretId');
+      verify(serviceClient.deleteLocationSecret(any)).called(1);
     });
 
     test('listRobots', () async {
