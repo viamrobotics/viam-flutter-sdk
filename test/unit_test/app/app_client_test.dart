@@ -4,6 +4,7 @@ import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/protos/app/packages.dart';
 import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/app/app.dart';
+import 'package:viam_sdk/src/gen/app/v1/app.pb.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
@@ -526,6 +527,8 @@ void main() {
     });
 
     test('addRole', () async {
+      final expected = AddRoleResponse();
+      when(serviceClient.addRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final authorization = ViamAuthorization(
           authorizationId: AuthorizationId.robotOwner,
           resourceType: ResourceType.robot,
@@ -534,8 +537,6 @@ void main() {
           identityType: IdentityType.user)
         ..authorizationType = 'authorizationType'
         ..identityId = 'identityId';
-      final expected = AddRoleResponse();
-      when(serviceClient.addRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.addRole(authorization);
       verify(serviceClient.addRole(any)).called(1);
     });
@@ -556,6 +557,8 @@ void main() {
     });
 
     test('changeRole', () async {
+      final expected = ChangeRoleResponse();
+      when(serviceClient.changeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final oldAuthorization = ViamAuthorization(
           authorizationId: AuthorizationId.robotOwner,
           resourceType: ResourceType.robot,
@@ -572,8 +575,6 @@ void main() {
           identityType: IdentityType.user)
         ..authorizationType = 'authorizationType2'
         ..identityId = 'identityId2';
-      final expected = ChangeRoleResponse();
-      when(serviceClient.changeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       await appClient.changeRole(oldAuthorization, newAuthorization);
       verify(serviceClient.changeRole(any)).called(1);
     });
@@ -685,6 +686,62 @@ void main() {
       ];
       when(serviceClient.listModules(any)).thenAnswer((_) => MockResponseFuture.value(ListModulesResponse()..modules.addAll(expected)));
       final response = await appClient.listModules('moduleId');
+      expect(response, equals(expected));
+    });
+
+    test('createKey', () async {
+      final expected = CreateKeyResponse()
+        ..key = 'key'
+        ..id = 'id';
+      when(serviceClient.createKey(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final authorizations = [
+        ViamAuthorization(
+            authorizationId: AuthorizationId.robotOwner,
+            resourceType: ResourceType.robot,
+            resourceId: 'resourceId',
+            organizationId: 'organizationId',
+            identityType: IdentityType.user)
+          ..authorizationType = 'authorizationType'
+          ..identityId = 'identityId'
+      ];
+      final response = await appClient.createKey(authorizations, 'name');
+      expect(response, equals(expected));
+    });
+
+    test('deleteKey', () async {
+      final expected = DeleteKeyResponse();
+      when(serviceClient.deleteKey(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteKey('id');
+      verify(serviceClient.deleteKey(any)).called(1);
+    });
+
+    test('listKeys', () async {
+      final apiKey = APIKey()
+        ..id = 'id'
+        ..key = 'key'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      final expected = [APIKeyWithAuthorizations(authorizations: [])..apiKey = apiKey];
+      when(serviceClient.listKeys(any)).thenAnswer((_) => MockResponseFuture.value(ListKeysResponse(apiKeys: expected)));
+      final response = await appClient.listKeys('orgId');
+      expect(response, equals(expected));
+    });
+
+    test('rotateKey', () async {
+      final expected = RotateKeyResponse()
+        ..id = 'id'
+        ..key = 'key';
+      when(serviceClient.rotateKey(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.rotateKey('id');
+      expect(response, equals(expected));
+    });
+
+    test('createKeyFromExistingKeyAuthorizations', () async {
+      final expected = CreateKeyFromExistingKeyAuthorizationsResponse()
+        ..id = 'id'
+        ..key = 'key';
+      when(serviceClient.createKeyFromExistingKeyAuthorizations(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.createKeyFromExistingKeyAuthorizations('id');
       expect(response, equals(expected));
     });
   });
