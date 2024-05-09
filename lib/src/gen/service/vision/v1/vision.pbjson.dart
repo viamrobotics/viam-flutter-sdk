@@ -212,3 +212,79 @@ final $typed_data.Uint8List getObjectPointCloudsResponseDescriptor = $convert.ba
     'R5cGUSOgoHb2JqZWN0cxgCIAMoCzIgLnZpYW0uY29tbW9uLnYxLlBvaW50Q2xvdWRPYmplY3RS'
     'B29iamVjdHM=');
 
+@$core.Deprecated('Use getPropertiesRequestDescriptor instead')
+const GetPropertiesRequest$json = {
+  '1': 'GetPropertiesRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRQcm9wZXJ0aWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
+    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
+
+@$core.Deprecated('Use captureAllFromCameraRequestDescriptor instead')
+const CaptureAllFromCameraRequest$json = {
+  '1': 'CaptureAllFromCameraRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'camera_name', '3': 2, '4': 1, '5': 9, '10': 'cameraName'},
+    {'1': 'return_image', '3': 3, '4': 1, '5': 8, '10': 'returnImage'},
+    {'1': 'return_classifications', '3': 4, '4': 1, '5': 8, '10': 'returnClassifications'},
+    {'1': 'return_detections', '3': 5, '4': 1, '5': 8, '10': 'returnDetections'},
+    {'1': 'return_object_point_clouds', '3': 6, '4': 1, '5': 8, '10': 'returnObjectPointClouds'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `CaptureAllFromCameraRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List captureAllFromCameraRequestDescriptor = $convert.base64Decode(
+    'ChtDYXB0dXJlQWxsRnJvbUNhbWVyYVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIfCgtjYW'
+    '1lcmFfbmFtZRgCIAEoCVIKY2FtZXJhTmFtZRIhCgxyZXR1cm5faW1hZ2UYAyABKAhSC3JldHVy'
+    'bkltYWdlEjUKFnJldHVybl9jbGFzc2lmaWNhdGlvbnMYBCABKAhSFXJldHVybkNsYXNzaWZpY2'
+    'F0aW9ucxIrChFyZXR1cm5fZGV0ZWN0aW9ucxgFIAEoCFIQcmV0dXJuRGV0ZWN0aW9ucxI7Chpy'
+    'ZXR1cm5fb2JqZWN0X3BvaW50X2Nsb3VkcxgGIAEoCFIXcmV0dXJuT2JqZWN0UG9pbnRDbG91ZH'
+    'MSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
+
+@$core.Deprecated('Use captureAllFromCameraResponseDescriptor instead')
+const CaptureAllFromCameraResponse$json = {
+  '1': 'CaptureAllFromCameraResponse',
+  '2': [
+    {'1': 'image', '3': 1, '4': 1, '5': 11, '6': '.viam.component.camera.v1.Image', '10': 'image'},
+    {'1': 'detections', '3': 2, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Detection', '10': 'detections'},
+    {'1': 'classifications', '3': 3, '4': 3, '5': 11, '6': '.viam.service.vision.v1.Classification', '10': 'classifications'},
+    {'1': 'objects', '3': 4, '4': 3, '5': 11, '6': '.viam.common.v1.PointCloudObject', '10': 'objects'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `CaptureAllFromCameraResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List captureAllFromCameraResponseDescriptor = $convert.base64Decode(
+    'ChxDYXB0dXJlQWxsRnJvbUNhbWVyYVJlc3BvbnNlEjUKBWltYWdlGAEgASgLMh8udmlhbS5jb2'
+    '1wb25lbnQuY2FtZXJhLnYxLkltYWdlUgVpbWFnZRJBCgpkZXRlY3Rpb25zGAIgAygLMiEudmlh'
+    'bS5zZXJ2aWNlLnZpc2lvbi52MS5EZXRlY3Rpb25SCmRldGVjdGlvbnMSUAoPY2xhc3NpZmljYX'
+    'Rpb25zGAMgAygLMiYudmlhbS5zZXJ2aWNlLnZpc2lvbi52MS5DbGFzc2lmaWNhdGlvblIPY2xh'
+    'c3NpZmljYXRpb25zEjoKB29iamVjdHMYBCADKAsyIC52aWFtLmNvbW1vbi52MS5Qb2ludENsb3'
+    'VkT2JqZWN0UgdvYmplY3RzEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVj'
+    'dFIFZXh0cmE=');
+
+@$core.Deprecated('Use getPropertiesResponseDescriptor instead')
+const GetPropertiesResponse$json = {
+  '1': 'GetPropertiesResponse',
+  '2': [
+    {'1': 'classifications_supported', '3': 1, '4': 1, '5': 8, '10': 'classificationsSupported'},
+    {'1': 'detections_supported', '3': 2, '4': 1, '5': 8, '10': 'detectionsSupported'},
+    {'1': 'object_point_clouds_supported', '3': 3, '4': 1, '5': 8, '10': 'objectPointCloudsSupported'},
+  ],
+};
+
+/// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USOwoZY2xhc3NpZmljYXRpb25zX3N1cHBvcnRlZBgBIA'
+    'EoCFIYY2xhc3NpZmljYXRpb25zU3VwcG9ydGVkEjEKFGRldGVjdGlvbnNfc3VwcG9ydGVkGAIg'
+    'ASgIUhNkZXRlY3Rpb25zU3VwcG9ydGVkEkEKHW9iamVjdF9wb2ludF9jbG91ZHNfc3VwcG9ydG'
+    'VkGAMgASgIUhpvYmplY3RQb2ludENsb3Vkc1N1cHBvcnRlZA==');
+
