@@ -6,6 +6,7 @@ import 'package:viam_sdk/src/app/app.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
+import 'package:viam_sdk/viam_sdk.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -522,5 +523,87 @@ void main() {
       await appClient.deleteFragment('id');
       verify(serviceClient.deleteFragment(any)).called(1);
     });
+
+    test('addRole', () async {
+      final authorization = ViamAuthorization(
+          authorizationId: AuthorizationId.robotOwner,
+          resourceType: ResourceType.robot,
+          resourceId: 'resourceId',
+          organizationId: 'organizationId',
+          identityType: IdentityType.user)
+        ..authorizationType = 'authorizationType'
+        ..identityId = 'identityId';
+      final expected = AddRoleResponse();
+      when(serviceClient.addRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.addRole(authorization);
+      verify(serviceClient.addRole(any)).called(1);
+    });
+
+    test('removeRole', () async {
+      final authorization = ViamAuthorization(
+          authorizationId: AuthorizationId.robotOwner,
+          resourceType: ResourceType.robot,
+          resourceId: 'resourceId',
+          organizationId: 'organizationId',
+          identityType: IdentityType.user)
+        ..authorizationType = 'authorizationType'
+        ..identityId = 'identityId';
+      final expected = RemoveRoleResponse();
+      when(serviceClient.removeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.removeRole(authorization);
+      verify(serviceClient.removeRole(any)).called(1);
+    });
+
+    test('changeRole', () async {
+      final oldAuthorization = ViamAuthorization(
+          authorizationId: AuthorizationId.robotOwner,
+          resourceType: ResourceType.robot,
+          resourceId: 'resourceId',
+          organizationId: 'organizationId',
+          identityType: IdentityType.user)
+        ..authorizationType = 'authorizationType'
+        ..identityId = 'identityId';
+      final newAuthorization = ViamAuthorization(
+          authorizationId: AuthorizationId.robotOwner,
+          resourceType: ResourceType.robot,
+          resourceId: 'resourceId2',
+          organizationId: 'organizationId2',
+          identityType: IdentityType.user)
+        ..authorizationType = 'authorizationType2'
+        ..identityId = 'identityId2';
+      final expected = ChangeRoleResponse();
+      when(serviceClient.changeRole(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.changeRole(oldAuthorization, newAuthorization);
+      verify(serviceClient.changeRole(any)).called(1);
+    });
+
+    test('listAuthorizations', () async {
+      final expected = [
+        Authorization()
+          ..authorizationType = 'authorizationType'
+          ..authorizationId = 'robotOwner'
+          ..resourceType = 'robot'
+          ..resourceId = 'resourceId'
+          ..identityId = 'identityId'
+          ..organizationId = 'organizationId'
+          ..identityType = 'user'
+      ];
+      when(serviceClient.listAuthorizations(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListAuthorizationsResponse()..authorizations.addAll(expected)));
+      final response = await appClient.listAuthorizations('organizationId');
+      expect(response, equals(expected));
+    });
+
+    // test('checkPermissions', () async {
+    //   final expected = [
+    //     AuthorizedPermissions(permissions: ['controlRobot'])
+    //       ..resourceType = 'robot'
+    //       ..resourceId = 'resourceId'
+    //   ];
+    //   when(serviceClient.checkPermissions(any))
+    //       .thenAnswer((_) => MockResponseFuture.value(CheckPermissionsResponse()..authorizedPermissions.addAll(expected)));
+    //   final response = await appClient.checkPermissions(ResourceType.robot, 'resourceId', [Permission.controlRobot]);
+    //   expect(response, equals(response));
+    // });
   });
 }
