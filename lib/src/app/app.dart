@@ -531,7 +531,14 @@ class AppClient {
     return response.url;
   }
 
-  /// uploadModuleFile
+  /// Upload a [Module] file
+  Future<String> uploadModuleFile(ModuleFileInfo moduleFileInfo, List<int> file) async {
+    final request = UploadModuleFileRequest()
+      ..moduleFileInfo = moduleFileInfo
+      ..file = file;
+    final response = await _client.uploadModuleFile(Stream.value(request));
+    return response.url;
+  }
 
   /// Get a [Module] by ID
   Future<Module> getModule(String moduleId) async {

@@ -669,6 +669,13 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('uploadModuleFile', () async {
+      const expected = 'url';
+      when(serviceClient.uploadModuleFile(any)).thenAnswer((_) => MockResponseFuture.value(UploadModuleFileResponse()..url = expected));
+      final response = await appClient.uploadModuleFile(ModuleFileInfo(), [1, 2]);
+      expect(response, equals(expected));
+    });
+
     test('getModule', () async {
       final expected = Module()
         ..moduleId = 'moduleId'
