@@ -352,6 +352,9 @@ class DataClient {
     }
   }
 
+  /// Upload binary sensor data to Viam's Data Manager
+  ///
+  /// Returns the data's file ID.
   Future<String> binaryDataCaptureUpload(List<int> binaryData, String partId, String fileExtension,
       {String? componentType,
       String? componentName,
@@ -391,6 +394,9 @@ class DataClient {
     return response.fileId;
   }
 
+  /// Upload tabular sensor data to Viam's Data Manager
+  ///
+  /// Returns the data's file ID.
   Future<String> tabularDataCaptureUpload(List<Map<String, dynamic>> tabularData, String partId,
       {String? componentType,
       String? componentName,
@@ -431,6 +437,9 @@ class DataClient {
     return response.fileId;
   }
 
+  /// Uploads the metadata and contents of streaming binary data
+  ///
+  /// Returns the data's file ID.
   Future<String> streamingDataCaptureUpload(List<int> bytes, String partId, String fileExtension,
       {String? componentType,
       String? componentName,
