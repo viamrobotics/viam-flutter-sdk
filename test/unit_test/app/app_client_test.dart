@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/app.dart';
+import 'package:viam_sdk/protos/app/packages.dart';
 import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/app/app.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
@@ -605,5 +606,86 @@ void main() {
     //   final response = await appClient.checkPermissions(ResourceType.robot, 'resourceId', [Permission.controlRobot]);
     //   expect(response, equals(response));
     // });
+
+    test('getRegistryItem', () async {
+      final expected = RegistryItem()
+        ..organizationId = 'organizationId'
+        ..name = 'name'
+        ..type = PackageType.PACKAGE_TYPE_UNSPECIFIED;
+      when(serviceClient.getRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(GetRegistryItemResponse()..item = expected));
+      final response = await appClient.getRegistryItem('itemId');
+      expect(response, equals(expected));
+    });
+    test('createRegistryItem', () async {
+      final expected = CreateRegistryItemResponse();
+      when(serviceClient.createRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.createRegistryItem('organizationId', 'name', PackageType.PACKAGE_TYPE_UNSPECIFIED);
+      verify(serviceClient.createRegistryItem(any)).called(1);
+    });
+
+    test('updateRegistryItem', () async {
+      final expected = UpdateRegistryItemResponse();
+      when(serviceClient.updateRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.updateRegistryItem('itemId', PackageType.PACKAGE_TYPE_UNSPECIFIED, 'description', Visibility.VISIBILITY_UNSPECIFIED);
+      verify(serviceClient.updateRegistryItem(any)).called(1);
+    });
+
+    test('listRegistryItems', () async {
+      final expected = [
+        RegistryItem()
+          ..organizationId = 'organizationId'
+          ..name = 'name'
+          ..type = PackageType.PACKAGE_TYPE_UNSPECIFIED
+      ];
+      when(serviceClient.listRegistryItems(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListRegistryItemsResponse()..items.addAll(expected)));
+      final response = await appClient.listRegistryItems([PackageType.PACKAGE_TYPE_UNSPECIFIED], [Visibility.VISIBILITY_UNSPECIFIED],
+          ['platforms'], [RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED]);
+      expect(response, equals(expected));
+    });
+
+    test('deleteRegistryItem', () async {
+      final expected = DeleteRegistryItemResponse();
+      when(serviceClient.deleteRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteRegistryItem('itemId');
+      verify(serviceClient.deleteRegistryItem(any)).called(1);
+    });
+
+    test('createModule', () async {
+      final expected = CreateModuleResponse()
+        ..moduleId = 'moduleId'
+        ..url = 'url';
+      when(serviceClient.createModule(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.createModule('organizationId', 'name');
+      expect(response, equals(expected));
+    });
+
+    test('updateModule', () async {
+      const expected = 'url';
+      when(serviceClient.updateModule(any)).thenAnswer((_) => MockResponseFuture.value(UpdateModuleResponse()..url = expected));
+      final response =
+          await appClient.updateModule('moduleId', Visibility.VISIBILITY_UNSPECIFIED, 'url', 'description', [Model()], 'entrypoint');
+      expect(response, equals(expected));
+    });
+
+    test('getModule', () async {
+      final expected = Module()
+        ..moduleId = 'moduleId'
+        ..name = 'name';
+      when(serviceClient.getModule(any)).thenAnswer((_) => MockResponseFuture.value(GetModuleResponse()..module = expected));
+      final response = await appClient.getModule('moduleId');
+      expect(response, equals(expected));
+    });
+
+    test('listModules', () async {
+      final expected = [
+        Module()
+          ..moduleId = 'moduleId'
+          ..name = 'name'
+      ];
+      when(serviceClient.listModules(any)).thenAnswer((_) => MockResponseFuture.value(ListModulesResponse()..modules.addAll(expected)));
+      final response = await appClient.listModules('moduleId');
+      expect(response, equals(expected));
+    });
   });
 }
