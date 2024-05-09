@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/app/app.dart';
+import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 
@@ -263,23 +264,26 @@ void main() {
       verify(serviceClient.deleteLocationSecret(any)).called(1);
     });
 
-    test('listRobots', () async {
-      final expected = [
-        Robot()
-          ..id = 'id'
-          ..name = 'name'
-      ];
-      when(serviceClient.listRobots(any)).thenAnswer((_) => MockResponseFuture.value(ListRobotsResponse()..robots.addAll(expected)));
-      final response = await appClient.listRobots(Location());
-      expect(response, equals(expected));
-    });
-
     test('getRobot', () async {
       final expected = Robot()
         ..id = 'id'
         ..name = 'name';
       when(serviceClient.getRobot(any)).thenAnswer((_) => MockResponseFuture.value(GetRobotResponse()..robot = expected));
       final response = await appClient.getRobot('robot');
+      expect(response, equals(expected));
+    });
+
+    test('getRoverRentalRobots', () async {
+      final expected = [
+        RoverRentalRobot()
+          ..robotId = 'robotId'
+          ..locationId = 'locationId'
+          ..robotName = 'robotName'
+          ..robotMainPartId = 'robotMainPartId'
+      ];
+      when(serviceClient.getRoverRentalRobots(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetRoverRentalRobotsResponse()..robots.addAll(expected)));
+      final response = await appClient.getRoverRentalRobots('orgId');
       expect(response, equals(expected));
     });
 
@@ -303,28 +307,14 @@ void main() {
       expect(response, equals(expected));
     });
 
-    test('updateRobotPart', () async {
-      final expected = RobotPart()
-        ..id = 'id'
-        ..name = 'name2';
-      when(serviceClient.updateRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartResponse()..part = expected));
-      final rc = Struct();
-      final response = await appClient.updateRobotPart('robot part', 'name2', rc);
+    test('getLogs', () async {
+      final log = LogEntry()..message = 'My log entry';
+      final expected = RobotPartLogPage()
+        ..logs.add(log)
+        ..nextPageToken = 'nextPageToken';
+      when(serviceClient.getRobotPartLogs(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.getLogs(RobotPart());
       expect(response, equals(expected));
-    });
-
-    test('newMachine', () async {
-      final expected = NewRobotResponse();
-      when(serviceClient.newRobot(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await appClient.newMachine('test', 'fake-id');
-      verify(serviceClient.newRobot(any)).called(1);
-    });
-
-    test('getFragment', () async {
-      final expected = GetFragmentResponse();
-      when(serviceClient.getFragment(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await appClient.getFragment('fake-id');
-      verify(serviceClient.getFragment(any)).called(1);
     });
 
     test('tailLogs', () async {
@@ -338,6 +328,199 @@ void main() {
             emits([expected]),
             emitsDone
           ]));
+    });
+
+    test('getRobotPartHistory', () async {
+      final expected = [
+        RobotPartHistoryEntry()
+          ..part = 'part'
+          ..robot = 'robot'
+          ..when = Timestamp.create()
+          ..old = RobotPart()
+      ];
+      when(serviceClient.getRobotPartHistory(any))
+          .thenAnswer((_) => MockResponseFuture.value(GetRobotPartHistoryResponse(history: expected)));
+      final response = await appClient.getRobotPartHistory('id');
+      expect(response, equals(expected));
+    });
+
+    test('updateRobotPart', () async {
+      final expected = RobotPart()
+        ..id = 'id'
+        ..name = 'name2';
+      when(serviceClient.updateRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartResponse()..part = expected));
+      final rc = Struct();
+      final response = await appClient.updateRobotPart('robot part', 'name2', rc);
+      expect(response, equals(expected));
+    });
+
+    test('newRobotPart', () async {
+      const expected = 'partId';
+      when(serviceClient.newRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(NewRobotPartResponse()..partId = expected));
+      final response = await appClient.newRobotPart('robotId', 'partName');
+      expect(response, equals(expected));
+    });
+
+    test('deleteRobotPart', () async {
+      final expected = DeleteRobotPartResponse();
+      when(serviceClient.deleteRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteRobotPart('partId');
+      verify(serviceClient.deleteRobotPart(any)).called(1);
+    });
+
+    test('getRobotAPIKeys', () async {
+      final apiKey = APIKey()
+        ..id = 'id'
+        ..key = 'key'
+        ..name = 'name'
+        ..createdOn = Timestamp.create();
+      final expected = [APIKeyWithAuthorizations(authorizations: [])..apiKey = apiKey];
+      when(serviceClient.getRobotAPIKeys(any)).thenAnswer((_) => MockResponseFuture.value(GetRobotAPIKeysResponse(apiKeys: expected)));
+      final response = await appClient.getRobotAPIKeys('robotId');
+      expect(response, equals(expected));
+    });
+
+    test('markPartAsMain', () async {
+      final expected = MarkPartAsMainResponse();
+      when(serviceClient.markPartAsMain(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.markPartAsMain('partId');
+      verify(serviceClient.markPartAsMain(any)).called(1);
+    });
+
+    test('markPartForRestart', () async {
+      final expected = MarkPartForRestartResponse();
+      when(serviceClient.markPartForRestart(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.markPartForRestart('partId');
+      verify(serviceClient.markPartForRestart(any)).called(1);
+    });
+
+    test('createRobotPartSecret', () async {
+      final expected = RobotPart()
+        ..id = 'id'
+        ..name = 'name';
+      when(serviceClient.createRobotPartSecret(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateRobotPartSecretResponse()..part = expected));
+      final response = await appClient.createRobotPartSecret('partId');
+      expect(response, equals(expected));
+    });
+
+    test('deleteRobotPartSecret', () async {
+      final expected = DeleteRobotPartSecretResponse();
+      when(serviceClient.deleteRobotPartSecret(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteRobotPartSecret('partId', 'secretId');
+      verify(serviceClient.deleteRobotPartSecret(any)).called(1);
+    });
+
+    test('listRobots', () async {
+      final expected = [
+        Robot()
+          ..id = 'id'
+          ..name = 'name'
+      ];
+      when(serviceClient.listRobots(any)).thenAnswer((_) => MockResponseFuture.value(ListRobotsResponse()..robots.addAll(expected)));
+      final response = await appClient.listRobots(Location());
+      expect(response, equals(expected));
+    });
+
+    test('newMachine', () async {
+      final expected = NewRobotResponse();
+      when(serviceClient.newRobot(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.newMachine('test', 'fake-id');
+      verify(serviceClient.newRobot(any)).called(1);
+    });
+
+    test('updateRobot', () async {
+      final expected = Robot()
+        ..id = 'id'
+        ..name = 'name2';
+      when(serviceClient.updateRobot(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotResponse()..robot = expected));
+      final response = await appClient.updateRobot('id', 'name2', 'location');
+      expect(response, equals(expected));
+    });
+
+    test('deleteRobot', () async {
+      final expected = DeleteRobotResponse();
+      when(serviceClient.deleteRobot(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteRobot('id');
+      verify(serviceClient.deleteRobot(any)).called(1);
+    });
+
+    test('listFragments', () async {
+      final expected = [
+        Fragment()
+          ..id = 'id'
+          ..name = 'name'
+          ..fragment = Struct()
+          ..organizationOwner = 'organizationOwner'
+          ..public = true
+          ..createdOn = Timestamp.create()
+          ..organizationName = 'organizationName'
+          ..robotPartCount = 3
+          ..organizationCount = 2
+          ..onlyUsedByOwner = false
+      ];
+      when(serviceClient.listFragments(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListFragmentsResponse()..fragments.addAll(expected)));
+      final response = await appClient.listFragments('organizationId', true);
+      expect(response, equals(expected));
+    });
+
+    test('getFragment', () async {
+      final expected = Fragment()
+        ..id = 'id'
+        ..name = 'name'
+        ..fragment = Struct()
+        ..organizationOwner = 'organizationOwner'
+        ..public = true
+        ..createdOn = Timestamp.create()
+        ..organizationName = 'organizationName'
+        ..robotPartCount = 3
+        ..organizationCount = 2
+        ..onlyUsedByOwner = false;
+      when(serviceClient.getFragment(any)).thenAnswer((_) => MockResponseFuture.value(GetFragmentResponse()..fragment = expected));
+      final response = await appClient.getFragment('id');
+      expect(response, equals(expected));
+    });
+
+    test('createFragment', () async {
+      final expected = Fragment()
+        ..id = 'id'
+        ..name = 'name'
+        ..fragment = Struct()
+        ..organizationOwner = 'organizationOwner'
+        ..public = true
+        ..createdOn = Timestamp.create()
+        ..organizationName = 'organizationName'
+        ..robotPartCount = 3
+        ..organizationCount = 2
+        ..onlyUsedByOwner = false;
+      when(serviceClient.createFragment(any)).thenAnswer((_) => MockResponseFuture.value(CreateFragmentResponse()..fragment = expected));
+      final response = await appClient.createFragment('name', Struct(), 'organizationId');
+      expect(response, equals(expected));
+    });
+
+    test('updateFragment', () async {
+      final expected = Fragment()
+        ..id = 'id'
+        ..name = 'name'
+        ..fragment = Struct()
+        ..organizationOwner = 'organizationOwner'
+        ..public = true
+        ..createdOn = Timestamp.create()
+        ..organizationName = 'organizationName'
+        ..robotPartCount = 3
+        ..organizationCount = 2
+        ..onlyUsedByOwner = false;
+      when(serviceClient.updateFragment(any)).thenAnswer((_) => MockResponseFuture.value(UpdateFragmentResponse()..fragment = expected));
+      final response = await appClient.updateFragment('id', 'name', Struct(), public: false);
+      expect(response, equals(expected));
+    });
+
+    test('deleteFragment', () async {
+      final expected = DeleteFragmentResponse();
+      when(serviceClient.deleteFragment(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await appClient.deleteFragment('id');
+      verify(serviceClient.deleteFragment(any)).called(1);
     });
   });
 }
