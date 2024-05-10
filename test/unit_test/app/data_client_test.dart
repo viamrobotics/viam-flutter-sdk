@@ -19,6 +19,7 @@ import '../mocks/service_clients_mocks.mocks.dart';
 
 class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
   UploadMetadata? metadata;
+  UploadMetadata? dataCaptureMetadata;
 
   @override
   ResponseFuture<FileUploadResponse> fileUpload(Stream<FileUploadRequest> request, {CallOptions? options}) {
@@ -26,6 +27,23 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
     return MockResponseFuture.future(Future.microtask(() async {
       await metadataRequest;
       return FileUploadResponse()..fileId = metadata?.fileName ?? 'some file id';
+    }));
+  }
+
+  @override
+  ResponseFuture<StreamingDataCaptureUploadResponse> streamingDataCaptureUpload(Stream<StreamingDataCaptureUploadRequest> request,
+      {CallOptions? options}) {
+    final metadataRequest = request.first.then((value) => dataCaptureMetadata = value.metadata.uploadMetadata);
+    return MockResponseFuture.future(Future.microtask(() async {
+      await metadataRequest;
+      return StreamingDataCaptureUploadResponse()..fileId = metadata?.componentName ?? 'fileId';
+    }));
+  }
+
+  @override
+  ResponseFuture<DataCaptureUploadResponse> dataCaptureUpload(DataCaptureUploadRequest request, {CallOptions? options}) {
+    return MockResponseFuture.future(Future.microtask(() async {
+      return DataCaptureUploadResponse()..fileId = 'fileId';
     }));
   }
 }
@@ -298,6 +316,34 @@ void main() {
 
         await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName');
         expect(syncServiceClient.metadata?.fileName, equals('otherName'));
+      });
+
+      test('binaryDataCaptureUpload', () async {
+        final response = await dataClient
+            .binaryDataCaptureUpload([1], 'partId', 'fileExt', componentType: 'type', componentName: 'name', methodName: 'name');
+        expect(response, equals('fileId'));
+      });
+
+      test('tabularDataCaptureUpload', () async {
+        final map = {'foo': 'bar', 'baz': false};
+        final response =
+            await dataClient.tabularDataCaptureUpload([map], 'partId', componentType: 'type', componentName: 'name', methodName: 'name');
+        expect(response, equals('fileId'));
+      });
+
+      test('streamingDataCaptureUpload', () async {
+        final expected = UploadMetadata()
+          ..partId = 'partId'
+          ..type = DataType.DATA_TYPE_BINARY_SENSOR
+          ..fileExtension = '.txt'
+          ..methodName = ''
+          ..componentType = ''
+          ..componentName = '';
+        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt');
+        expect(syncServiceClient.dataCaptureMetadata, expected);
+
+        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', componentName: 'myCoolArm');
+        expect(syncServiceClient.dataCaptureMetadata?.componentName, equals('myCoolArm'));
       });
     });
   });
