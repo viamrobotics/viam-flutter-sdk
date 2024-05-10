@@ -116,7 +116,7 @@ void main() {
       final expected = [OrganizationMember()..userId = 'userId'];
       when(serviceClient.listOrganizationMembers(any))
           .thenAnswer((_) => MockResponseFuture.value(ListOrganizationMembersResponse(members: expected)));
-      final response = await appClient.listOrganizationMembers(Organization());
+      final response = await appClient.listOrganizationMembers('organizationId');
       expect(response.members, equals(expected));
     });
 
@@ -127,7 +127,7 @@ void main() {
         ..createdOn = Timestamp.create();
       when(serviceClient.createOrganizationInvite(any))
           .thenAnswer((_) => MockResponseFuture.value(CreateOrganizationInviteResponse()..invite = expected));
-      final response = await appClient.createOrganizationInvite(Organization(), 'email', []);
+      final response = await appClient.createOrganizationInvite('organizationId', 'email', []);
       expect(response, equals(expected));
     });
 
@@ -316,7 +316,7 @@ void main() {
         ..logs.add(log)
         ..nextPageToken = 'nextPageToken';
       when(serviceClient.getRobotPartLogs(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final response = await appClient.getLogs(RobotPart());
+      final response = await appClient.getLogs('robotPart');
       expect(response, equals(expected));
     });
 
@@ -324,7 +324,7 @@ void main() {
       final expected = LogEntry()..message = 'My log entry';
       final response = TailRobotPartLogsResponse()..logs.add(expected);
       when(serviceClient.tailRobotPartLogs(any)).thenAnswer((_) => MockResponseStream.list([response]));
-      final stream = appClient.tailLogs(RobotPart());
+      final stream = appClient.tailLogs('robotPart');
       expect(
           stream,
           emitsInOrder([
@@ -352,7 +352,7 @@ void main() {
         ..id = 'id'
         ..name = 'name2';
       when(serviceClient.updateRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartResponse()..part = expected));
-      final rc = Struct();
+      final rc = {'robot': 'config'};
       final response = await appClient.updateRobotPart('robot part', 'name2', rc);
       expect(response, equals(expected));
     });
@@ -498,7 +498,7 @@ void main() {
         ..organizationCount = 2
         ..onlyUsedByOwner = false;
       when(serviceClient.createFragment(any)).thenAnswer((_) => MockResponseFuture.value(CreateFragmentResponse()..fragment = expected));
-      final response = await appClient.createFragment('name', Struct(), 'organizationId');
+      final response = await appClient.createFragment('name', {'config': 1}, 'organizationId');
       expect(response, equals(expected));
     });
 
@@ -515,7 +515,7 @@ void main() {
         ..organizationCount = 2
         ..onlyUsedByOwner = false;
       when(serviceClient.updateFragment(any)).thenAnswer((_) => MockResponseFuture.value(UpdateFragmentResponse()..fragment = expected));
-      final response = await appClient.updateFragment('id', 'name', Struct(), public: false);
+      final response = await appClient.updateFragment('id', 'name', {'config': 2}, public: false);
       expect(response, equals(expected));
     });
 
@@ -619,6 +619,7 @@ void main() {
       final response = await appClient.getRegistryItem('itemId');
       expect(response, equals(expected));
     });
+
     test('createRegistryItem', () async {
       final expected = CreateRegistryItemResponse();
       when(serviceClient.createRegistryItem(any)).thenAnswer((_) => MockResponseFuture.value(expected));

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:viam_sdk/protos/app/packages.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
+import 'package:viam_sdk/src/utils.dart';
 
 import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
@@ -40,7 +40,7 @@ class AppClient {
 
   /// Get all [OrganizationIdentity]s that have access to a [Location].
   Future<List<OrganizationIdentity>> getOrganizationsWithAccessToLocation(String locationId) async {
-    final request = GetOrganizationsWithAccessToLocationRequest();
+    final request = GetOrganizationsWithAccessToLocationRequest()..locationId = locationId;
     final GetOrganizationsWithAccessToLocationResponse response = await _client.getOrganizationsWithAccessToLocation(request);
     return response.organizationIdentities;
   }
@@ -69,12 +69,11 @@ class AppClient {
   /// Update an [Organization]
   Future<Organization> updateOrganization(String organizationId,
       {String? name, String? publicNamespace, String? region, String? cid}) async {
-    final request = UpdateOrganizationRequest()
-      ..organizationId = organizationId
-      ..name = name ?? ''
-      ..publicNamespace = publicNamespace ?? ''
-      ..region = region ?? ''
-      ..cid = cid ?? '';
+    final request = UpdateOrganizationRequest()..organizationId = organizationId;
+    if (name != null) request.name = name;
+    if (publicNamespace != null) request.publicNamespace = publicNamespace;
+    if (region != null) request.region = region;
+    if (cid != null) request.cid = cid;
     final UpdateOrganizationResponse response = await _client.updateOrganization(request);
     return response.organization;
   }
@@ -86,14 +85,14 @@ class AppClient {
   }
 
   /// List the members and pending invites for an [Organization].
-  Future<ListOrganizationMembersResponse> listOrganizationMembers(Organization org) async {
-    final request = ListOrganizationMembersRequest()..organizationId = org.id;
+  Future<ListOrganizationMembersResponse> listOrganizationMembers(String organizationId) async {
+    final request = ListOrganizationMembersRequest()..organizationId = organizationId;
     final ListOrganizationMembersResponse response = await _client.listOrganizationMembers(request);
     return response;
   }
 
   /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
-  Future<OrganizationInvite> createOrganizationInvite(Organization org, String email, List<ViamAuthorization> authorizations,
+  Future<OrganizationInvite> createOrganizationInvite(String organizationId, String email, List<ViamAuthorization> authorizations,
       {bool sendEmailInvite = true}) async {
     final List<Authorization> protoAuthorizations = [];
     for (final authorization in authorizations) {
@@ -101,7 +100,7 @@ class AppClient {
     }
 
     final request = CreateOrganizationInviteRequest(authorizations: protoAuthorizations)
-      ..organizationId = org.id
+      ..organizationId = organizationId
       ..email = email
       ..sendEmailInvite = sendEmailInvite;
     final CreateOrganizationInviteResponse response = await _client.createOrganizationInvite(request);
@@ -173,11 +172,10 @@ class AppClient {
 
   /// Update a [Location]
   Future<Location> updateLocation(String locationId, {String? name, String? parentLocationId, String? region}) async {
-    final request = UpdateLocationRequest()
-      ..locationId = locationId
-      ..name = name ?? ''
-      ..parentLocationId = parentLocationId ?? ''
-      ..region = region ?? '';
+    final request = UpdateLocationRequest()..locationId = locationId;
+    if (name != null) request.name = name;
+    if (parentLocationId != null) request.parentLocationId = parentLocationId;
+    if (region != null) request.region = region;
     final UpdateLocationResponse response = await _client.updateLocation(request);
     return response.location;
   }
@@ -262,18 +260,18 @@ class AppClient {
   }
 
   /// Get a page of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
-  Future<RobotPartLogPage> getLogs(RobotPart part, {String? filter, String pageToken = ''}) async {
+  Future<RobotPartLogPage> getLogs(String partId, {String? filter, String? pageToken}) async {
     final request = GetRobotPartLogsRequest()
-      ..id = part.id
-      ..filter = filter ?? ''
-      ..pageToken = pageToken;
+      ..id = partId
+      ..filter = filter ?? '';
+    if (pageToken != null) request.pageToken = pageToken;
     return await _client.getRobotPartLogs(request);
   }
 
   /// Get a stream of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
-  Stream<List<LogEntry>> tailLogs(RobotPart part, {bool errorsOnly = false, String? filter}) {
+  Stream<List<LogEntry>> tailLogs(String partId, {bool errorsOnly = false, String? filter}) {
     final request = TailRobotPartLogsRequest()
-      ..id = part.id
+      ..id = partId
       ..errorsOnly = errorsOnly
       ..filter = filter ?? '';
     final response = _client.tailRobotPartLogs(request);
@@ -289,11 +287,11 @@ class AppClient {
   }
 
   /// Update a specific [RobotPart] by ID
-  Future<RobotPart> updateRobotPart(String partId, String name, Struct robotConfig) async {
+  Future<RobotPart> updateRobotPart(String partId, String name, Map<String, dynamic> robotConfig) async {
     final updateRobotPartRequest = UpdateRobotPartRequest()
       ..id = partId
       ..name = name
-      ..robotConfig = robotConfig;
+      ..robotConfig = robotConfig.toStruct();
     final response = await _client.updateRobotPart(updateRobotPartRequest);
     return response.part;
   }
@@ -397,21 +395,21 @@ class AppClient {
   }
 
   /// Create a [Fragment]
-  Future<Fragment> createFragment(String name, Struct config, String organizationId) async {
+  Future<Fragment> createFragment(String name, Map<String, dynamic> config, String organizationId) async {
     final request = CreateFragmentRequest()
       ..name = name
-      ..config = config
+      ..config = config.toStruct()
       ..organizationId = organizationId;
     final CreateFragmentResponse response = await _client.createFragment(request);
     return response.fragment;
   }
 
   /// Update a [Fragment]
-  Future<Fragment> updateFragment(String id, String name, Struct config, {bool? public}) async {
+  Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config, {bool? public}) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
-      ..config = config;
+      ..config = config.toStruct();
     if (public != null) request.public = public;
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
