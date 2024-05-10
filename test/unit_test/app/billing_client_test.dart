@@ -39,7 +39,7 @@ void main() {
 
     test('getInvoicePdf', () async {
       const expected = 1;
-      final response = GetInvoicePdfResponse()..chunk.add(expected);
+      final response = GetInvoicePdfResponse()..chunk = [expected];
       when(serviceClient.getInvoicePdf(any)).thenAnswer((_) => MockResponseStream.list([response]));
       final stream = billingClient.getInvoicePdf('id', 'orgId');
       expect(
