@@ -25,7 +25,7 @@ void main() {
   group('App RPC Client Tests', () {
     test('getUserIDByEmail', () async {
       when(serviceClient.getUserIDByEmail(any)).thenAnswer((_) => MockResponseFuture.value(GetUserIDByEmailResponse()..userId = 'userId'));
-      final response = await appClient.getUserIDByEmail('email');
+      final response = await appClient.getUserIdByEmail('email');
       expect(response, equals('userId'));
     });
 
@@ -379,7 +379,7 @@ void main() {
         ..createdOn = Timestamp.create();
       final expected = [APIKeyWithAuthorizations(authorizations: [])..apiKey = apiKey];
       when(serviceClient.getRobotAPIKeys(any)).thenAnswer((_) => MockResponseFuture.value(GetRobotAPIKeysResponse(apiKeys: expected)));
-      final response = await appClient.getRobotAPIKeys('robotId');
+      final response = await appClient.getRobotApiKeys('robotId');
       expect(response, equals(expected));
     });
 

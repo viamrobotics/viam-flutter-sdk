@@ -18,7 +18,7 @@ class AppClient {
   AppClient(this._client);
 
   /// Get the id of the user with the email provided
-  Future<String> getUserIDByEmail(String email) async {
+  Future<String> getUserIdByEmail(String email) async {
     final request = GetUserIDByEmailRequest()..email = email;
     final GetUserIDByEmailResponse response = await _client.getUserIDByEmail(request);
     return response.userId;
@@ -314,7 +314,7 @@ class AppClient {
   }
 
   /// Gets the [APIKey]'s for a [Robot]
-  Future<List<APIKeyWithAuthorizations>> getRobotAPIKeys(String robotId) async {
+  Future<List<APIKeyWithAuthorizations>> getRobotApiKeys(String robotId) async {
     final request = GetRobotAPIKeysRequest()..robotId = robotId;
     final GetRobotAPIKeysResponse response = await _client.getRobotAPIKeys(request);
     return response.apiKeys;
