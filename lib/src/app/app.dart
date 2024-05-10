@@ -129,25 +129,25 @@ class AppClient {
   }
 
   /// Delete a member from an [Organization]
-  Future<void> deleteOrganizationMember(Organization org, String userId) async {
+  Future<void> deleteOrganizationMember(String organizationId, String userId) async {
     final request = DeleteOrganizationMemberRequest()
-      ..organizationId = org.id
+      ..organizationId = organizationId
       ..userId = userId;
     await _client.deleteOrganizationMember(request);
   }
 
   /// Delete an invite to an [Organization]
-  Future<void> deleteOrganizationInvite(Organization org, String email) async {
+  Future<void> deleteOrganizationInvite(String organizationId, String email) async {
     final request = DeleteOrganizationInviteRequest()
-      ..organizationId = org.id
+      ..organizationId = organizationId
       ..email = email;
     await _client.deleteOrganizationInvite(request);
   }
 
   /// Resend an invite to an [Organization]
-  Future<OrganizationInvite> resendOrganizationInvite(Organization org, String email) async {
+  Future<OrganizationInvite> resendOrganizationInvite(String organizationId, String email) async {
     final request = ResendOrganizationInviteRequest()
-      ..organizationId = org.id
+      ..organizationId = organizationId
       ..email = email;
     final ResendOrganizationInviteResponse response = await _client.resendOrganizationInvite(request);
     return response.invite;
@@ -187,8 +187,8 @@ class AppClient {
   }
 
   /// List the [Location]s of a specific [Organization] that the currently authenticated user has access to
-  Future<List<Location>> listLocations(Organization organization) async {
-    final listLocationsRequest = ListLocationsRequest()..organizationId = organization.id;
+  Future<List<Location>> listLocations(String organizationId) async {
+    final listLocationsRequest = ListLocationsRequest()..organizationId = organizationId;
     final ListLocationsResponse response = await _client.listLocations(listLocationsRequest);
     return response.locations;
   }
@@ -246,8 +246,8 @@ class AppClient {
   }
 
   /// List the [RobotPart] of a specific [Robot] that the currently authenticated user has access to
-  Future<List<RobotPart>> listRobotParts(Robot robot) async {
-    final getRobotPartsRequest = GetRobotPartsRequest()..robotId = robot.id;
+  Future<List<RobotPart>> listRobotParts(String robotId) async {
+    final getRobotPartsRequest = GetRobotPartsRequest()..robotId = robotId;
     final response = await _client.getRobotParts(getRobotPartsRequest);
     return response.parts;
   }
@@ -347,8 +347,8 @@ class AppClient {
   }
 
   /// List the [Robot] of a specific [Location] that the currently authenticated user has access to
-  Future<List<Robot>> listRobots(Location location) async {
-    final listRobotsRequest = ListRobotsRequest()..locationId = location.id;
+  Future<List<Robot>> listRobots(String locationId) async {
+    final listRobotsRequest = ListRobotsRequest()..locationId = locationId;
     final ListRobotsResponse response = await _client.listRobots(listRobotsRequest);
     return response.robots;
   }

@@ -145,14 +145,14 @@ void main() {
     test('deleteOrganizationMember', () async {
       final expected = DeleteOrganizationMemberResponse();
       when(serviceClient.deleteOrganizationMember(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await appClient.deleteOrganizationMember(Organization(), 'user id');
+      await appClient.deleteOrganizationMember('organizationId', 'user id');
       verify(serviceClient.deleteOrganizationMember(any)).called(1);
     });
 
     test('deleteOrganizationInvite', () async {
       final expected = DeleteOrganizationInviteResponse();
       when(serviceClient.deleteOrganizationInvite(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      await appClient.deleteOrganizationInvite(Organization(), 'email');
+      await appClient.deleteOrganizationInvite('organizationId', 'email');
       verify(serviceClient.deleteOrganizationInvite(any)).called(1);
     });
 
@@ -163,7 +163,7 @@ void main() {
         ..createdOn = Timestamp.create();
       when(serviceClient.resendOrganizationInvite(any))
           .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
-      final response = await appClient.resendOrganizationInvite(Organization(), 'email');
+      final response = await appClient.resendOrganizationInvite('organizationId', 'email');
       expect(response, equals(expected));
     });
 
@@ -213,7 +213,7 @@ void main() {
       ];
       when(serviceClient.listLocations(any))
           .thenAnswer((_) => MockResponseFuture.value(ListLocationsResponse()..locations.addAll(expected)));
-      final response = await appClient.listLocations(Organization());
+      final response = await appClient.listLocations('organizationId');
       expect(response, equals(expected));
     });
 
@@ -297,7 +297,7 @@ void main() {
           ..name = 'name'
       ];
       when(serviceClient.getRobotParts(any)).thenAnswer((_) => MockResponseFuture.value(GetRobotPartsResponse()..parts.addAll(expected)));
-      final response = await appClient.listRobotParts(Robot());
+      final response = await appClient.listRobotParts('robotId');
       expect(response, equals(expected));
     });
 
@@ -421,7 +421,7 @@ void main() {
           ..name = 'name'
       ];
       when(serviceClient.listRobots(any)).thenAnswer((_) => MockResponseFuture.value(ListRobotsResponse()..robots.addAll(expected)));
-      final response = await appClient.listRobots(Location());
+      final response = await appClient.listRobots('locationId');
       expect(response, equals(expected));
     });
 
