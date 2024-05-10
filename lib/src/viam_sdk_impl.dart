@@ -69,7 +69,7 @@ class ViamImpl implements Viam {
   Future<RobotClient> getRobotClient(Robot robot) async {
     final location = await appClient.getLocation(robot.location);
     final secret = location.auth.secrets.firstWhere((element) => element.state == SharedSecret_State.STATE_ENABLED);
-    final parts = await appClient.listRobotParts(robot);
+    final parts = await appClient.listRobotParts(robot.id);
     final part = parts.firstWhere((element) => element.mainPart);
     return RobotClient.atAddress(part.fqdn, RobotClientOptions.withLocationSecret(secret.secret));
   }
