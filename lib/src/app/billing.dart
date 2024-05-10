@@ -22,14 +22,14 @@ class BillingClient {
     return await _client.getOrgBillingInformation(request);
   }
 
-  // Total outstanding balance and previous invoices
+  /// Total outstanding balance and previous invoices
   Future<GetInvoicesSummaryResponse> getInvoicesSummary(String orgId) async {
     final request = GetInvoicesSummaryRequest()..orgId = orgId;
     return await _client.getInvoicesSummary(request);
   }
 
-  // Download a PDF invoice
-  Stream<List<int>> getInvoicePdf(String id, String orgId) {
+  /// Download a PDF invoice
+  Stream<List<int>> getInvoicePdf(String orgId, String id) {
     final request = GetInvoicePdfRequest()
       ..id = id
       ..orgId = orgId;
