@@ -1,12 +1,12 @@
 import 'package:viam_sdk/protos/app/ml_training.dart';
 
-/// gRPC client for the [MlTrainingClient]. Used for working with ML training jobs.
+/// gRPC client used for working with ML training jobs.
 ///
 /// All calls must be authenticated.
-class MlTrainingClient {
+class MLTrainingClient {
   final MLTrainingServiceClient _mlTrainingClient;
 
-  MlTrainingClient(this._mlTrainingClient);
+  MLTrainingClient(this._mlTrainingClient);
 
   /// Submits a training job request.
   ///
@@ -27,7 +27,8 @@ class MlTrainingClient {
   /// Submits a custom training job request.
   ///
   /// Returns the new job's ID.
-  Future<String> submitCustomTrainingJob(String orgId, String datasetId, String modelName, String modelVersion, registryItemId) async {
+  Future<String> submitCustomTrainingJob(
+      String orgId, String datasetId, String modelName, String modelVersion, String registryItemId) async {
     final request = SubmitCustomTrainingJobRequest()
       ..organizationId = orgId
       ..datasetId = datasetId

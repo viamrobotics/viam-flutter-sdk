@@ -16,7 +16,7 @@ import '../media/image.dart';
 
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
-/// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
+/// gRPC client used for retrieving, uploading, and modifying stored data from app.viam.com.
 ///
 /// All calls must be authenticated.
 class DataClient {

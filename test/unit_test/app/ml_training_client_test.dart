@@ -8,11 +8,11 @@ import '../mocks/service_clients_mocks.mocks.dart';
 
 void main() {
   late MockMLTrainingServiceClient serviceClient;
-  late MlTrainingClient mlTrainingClient;
+  late MLTrainingClient mlTrainingClient;
 
   setUp(() {
     serviceClient = MockMLTrainingServiceClient();
-    mlTrainingClient = MlTrainingClient(serviceClient);
+    mlTrainingClient = MLTrainingClient(serviceClient);
   });
 
   group('ML Training RPC Client tests', () {
