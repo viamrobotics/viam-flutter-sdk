@@ -13,8 +13,13 @@ import 'package:grpc/src/client/method.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart' as _i13;
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart' as _i12;
+import 'package:viam_sdk/src/gen/app/mltraining/v1/ml_training.pb.dart' as _i22;
+import 'package:viam_sdk/src/gen/app/mltraining/v1/ml_training.pbgrpc.dart'
+    as _i21;
 import 'package:viam_sdk/src/gen/app/v1/app.pb.dart' as _i11;
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart' as _i10;
+import 'package:viam_sdk/src/gen/app/v1/billing.pb.dart' as _i20;
+import 'package:viam_sdk/src/gen/app/v1/billing.pbgrpc.dart' as _i19;
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' as _i18;
 import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pb.dart' as _i15;
 import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart'
@@ -710,6 +715,36 @@ class MockRobotServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i9.GetCloudMetadataResponse>);
+
+  @override
+  _i4.ResponseFuture<_i9.RestartModuleResponse> restartModule(
+    _i9.RestartModuleRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #restartModule,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i9.RestartModuleResponse>(
+          this,
+          Invocation.method(
+            #restartModule,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i9.RestartModuleResponse>(
+          this,
+          Invocation.method(
+            #restartModule,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i9.RestartModuleResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
@@ -4191,6 +4226,66 @@ class MockVisionServiceClient extends _i1.Mock
       ) as _i4.ResponseFuture<_i17.GetObjectPointCloudsResponse>);
 
   @override
+  _i4.ResponseFuture<_i17.GetPropertiesResponse> getProperties(
+    _i17.GetPropertiesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getProperties,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i17.GetPropertiesResponse>(
+          this,
+          Invocation.method(
+            #getProperties,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i17.GetPropertiesResponse>(
+          this,
+          Invocation.method(
+            #getProperties,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i17.GetPropertiesResponse>);
+
+  @override
+  _i4.ResponseFuture<_i17.CaptureAllFromCameraResponse> captureAllFromCamera(
+    _i17.CaptureAllFromCameraRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #captureAllFromCamera,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i17.CaptureAllFromCameraResponse>(
+          this,
+          Invocation.method(
+            #captureAllFromCamera,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i17.CaptureAllFromCameraResponse>(
+          this,
+          Invocation.method(
+            #captureAllFromCamera,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i17.CaptureAllFromCameraResponse>);
+
+  @override
   _i4.ResponseFuture<_i18.DoCommandResponse> doCommand(
     _i18.DoCommandRequest? request, {
     _i3.CallOptions? options,
@@ -4219,6 +4314,558 @@ class MockVisionServiceClient extends _i1.Mock
           ),
         ),
       ) as _i4.ResponseFuture<_i18.DoCommandResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createUnaryCall,
+          [
+            method,
+            request,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createStreamingCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [BillingServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockBillingServiceClient extends _i1.Mock
+    implements _i19.BillingServiceClient {
+  @override
+  _i4.ResponseFuture<_i20.GetCurrentMonthUsageResponse> getCurrentMonthUsage(
+    _i20.GetCurrentMonthUsageRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentMonthUsage,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetCurrentMonthUsageResponse>(
+          this,
+          Invocation.method(
+            #getCurrentMonthUsage,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetCurrentMonthUsageResponse>(
+          this,
+          Invocation.method(
+            #getCurrentMonthUsage,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetCurrentMonthUsageResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.GetOrgBillingInformationResponse>
+      getOrgBillingInformation(
+    _i20.GetOrgBillingInformationRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #getOrgBillingInformation,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i20.GetOrgBillingInformationResponse>(
+              this,
+              Invocation.method(
+                #getOrgBillingInformation,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i20.GetOrgBillingInformationResponse>(
+              this,
+              Invocation.method(
+                #getOrgBillingInformation,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<_i20.GetOrgBillingInformationResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.GetInvoicesSummaryResponse> getInvoicesSummary(
+    _i20.GetInvoicesSummaryRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getInvoicesSummary,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i20.GetInvoicesSummaryResponse>(
+          this,
+          Invocation.method(
+            #getInvoicesSummary,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i20.GetInvoicesSummaryResponse>(
+          this,
+          Invocation.method(
+            #getInvoicesSummary,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i20.GetInvoicesSummaryResponse>);
+
+  @override
+  _i4.ResponseStream<_i20.GetInvoicePdfResponse> getInvoicePdf(
+    _i20.GetInvoicePdfRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getInvoicePdf,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<_i20.GetInvoicePdfResponse>(
+          this,
+          Invocation.method(
+            #getInvoicePdf,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseStream_3<_i20.GetInvoicePdfResponse>(
+          this,
+          Invocation.method(
+            #getInvoicePdf,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<_i20.GetInvoicePdfResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createUnaryCall,
+          [
+            method,
+            request,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createStreamingCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [MLTrainingServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMLTrainingServiceClient extends _i1.Mock
+    implements _i21.MLTrainingServiceClient {
+  @override
+  _i4.ResponseFuture<_i22.SubmitTrainingJobResponse> submitTrainingJob(
+    _i22.SubmitTrainingJobRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #submitTrainingJob,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i22.SubmitTrainingJobResponse>(
+          this,
+          Invocation.method(
+            #submitTrainingJob,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i22.SubmitTrainingJobResponse>(
+          this,
+          Invocation.method(
+            #submitTrainingJob,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i22.SubmitTrainingJobResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.SubmitCustomTrainingJobResponse>
+      submitCustomTrainingJob(
+    _i22.SubmitCustomTrainingJobRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #submitCustomTrainingJob,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i22.SubmitCustomTrainingJobResponse>(
+              this,
+              Invocation.method(
+                #submitCustomTrainingJob,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i22.SubmitCustomTrainingJobResponse>(
+              this,
+              Invocation.method(
+                #submitCustomTrainingJob,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<_i22.SubmitCustomTrainingJobResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.GetTrainingJobResponse> getTrainingJob(
+    _i22.GetTrainingJobRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getTrainingJob,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i22.GetTrainingJobResponse>(
+          this,
+          Invocation.method(
+            #getTrainingJob,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i22.GetTrainingJobResponse>(
+          this,
+          Invocation.method(
+            #getTrainingJob,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i22.GetTrainingJobResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.ListTrainingJobsResponse> listTrainingJobs(
+    _i22.ListTrainingJobsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listTrainingJobs,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i22.ListTrainingJobsResponse>(
+          this,
+          Invocation.method(
+            #listTrainingJobs,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i22.ListTrainingJobsResponse>(
+          this,
+          Invocation.method(
+            #listTrainingJobs,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i22.ListTrainingJobsResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.CancelTrainingJobResponse> cancelTrainingJob(
+    _i22.CancelTrainingJobRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #cancelTrainingJob,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i22.CancelTrainingJobResponse>(
+          this,
+          Invocation.method(
+            #cancelTrainingJob,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i22.CancelTrainingJobResponse>(
+          this,
+          Invocation.method(
+            #cancelTrainingJob,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i22.CancelTrainingJobResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.DeleteCompletedTrainingJobResponse>
+      deleteCompletedTrainingJob(
+    _i22.DeleteCompletedTrainingJobRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #deleteCompletedTrainingJob,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i22.DeleteCompletedTrainingJobResponse>(
+              this,
+              Invocation.method(
+                #deleteCompletedTrainingJob,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i22.DeleteCompletedTrainingJobResponse>(
+              this,
+              Invocation.method(
+                #deleteCompletedTrainingJob,
+                [request],
+                {#options: options},
+              ),
+            ),
+          ) as _i4.ResponseFuture<_i22.DeleteCompletedTrainingJobResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(

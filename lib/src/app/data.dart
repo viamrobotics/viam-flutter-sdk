@@ -16,7 +16,7 @@ import '../media/image.dart';
 
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
-/// gRPC client for the [DataClient]. Used for retrieving stored data from app.viam.com.
+/// gRPC client used for retrieving, uploading, and modifying stored data from app.viam.com.
 ///
 /// All calls must be authenticated.
 class DataClient {
@@ -350,6 +350,134 @@ class DataClient {
     } finally {
       await reader.cancel();
     }
+  }
+
+  /// Upload binary sensor data to Viam's Data Manager
+  ///
+  /// Returns the data's file ID.
+  Future<String> binaryDataCaptureUpload(List<int> binaryData, String partId, String fileExtension,
+      {String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      (DateTime, DateTime)? dataRequestTimes,
+      Iterable<String> tags = const []}) async {
+    final sensorMetadata = SensorMetadata();
+    if (dataRequestTimes != null) {
+      sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes.$1);
+      sensorMetadata.timeReceived = Timestamp.fromDateTime(dataRequestTimes.$2);
+    }
+
+    final metadata = UploadMetadata()
+      ..partId = partId
+      ..componentType = componentType ?? ''
+      ..componentName = componentName ?? ''
+      ..methodName = methodName ?? ''
+      ..type = DataType.DATA_TYPE_BINARY_SENSOR
+      ..tags.addAll(tags);
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+    if (fileExtension.isEmpty) {
+      metadata.fileExtension = '';
+    } else if (fileExtension[0] == '.') {
+      metadata.fileExtension = fileExtension;
+    } else {
+      metadata.fileExtension = '.$fileExtension';
+    }
+
+    final sensorContents = SensorData()
+      ..binary = binaryData
+      ..metadata = sensorMetadata;
+    final request = DataCaptureUploadRequest()
+      ..metadata = metadata
+      ..sensorContents.add(sensorContents);
+    final response = await _dataSyncClient.dataCaptureUpload(request);
+    return response.fileId;
+  }
+
+  /// Upload tabular sensor data to Viam's Data Manager
+  ///
+  /// Returns the data's file ID.
+  Future<String> tabularDataCaptureUpload(List<Map<String, dynamic>> tabularData, String partId,
+      {String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      List<(DateTime, DateTime)>? dataRequestTimes,
+      Iterable<String> tags = const []}) async {
+    if (dataRequestTimes != null && dataRequestTimes.length != tabularData.length) {
+      throw Exception('dataRequestTimes and tabularData lengths must be equal');
+    }
+    final sensorContents = <SensorData>[];
+    for (final (idx, data) in tabularData.indexed) {
+      final s = data.toStruct();
+      final sensorMetadata = SensorMetadata();
+      if (dataRequestTimes != null) {
+        sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes[idx].$1);
+        sensorMetadata.timeReceived = Timestamp.fromDateTime(dataRequestTimes[idx].$2);
+      }
+      final sensorData = SensorData()
+        ..struct = s
+        ..metadata = sensorMetadata;
+      sensorContents.add(sensorData);
+    }
+
+    final metadata = UploadMetadata()
+      ..partId = partId
+      ..componentType = componentType ?? ''
+      ..componentName = componentName ?? ''
+      ..methodName = methodName ?? ''
+      ..type = DataType.DATA_TYPE_TABULAR_SENSOR
+      ..tags.addAll(tags);
+    if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
+
+    final request = DataCaptureUploadRequest()
+      ..metadata = metadata
+      ..sensorContents.addAll(sensorContents);
+    final response = await _dataSyncClient.dataCaptureUpload(request);
+    return response.fileId;
+  }
+
+  /// Uploads the metadata and contents of streaming binary data
+  ///
+  /// Returns the data's file ID.
+  Future<String> streamingDataCaptureUpload(List<int> bytes, String partId, String fileExtension,
+      {String? componentType,
+      String? componentName,
+      String? methodName,
+      Map<String, Any>? methodParameters,
+      (DateTime, DateTime)? dataRequestTimes,
+      Iterable<String> tags = const []}) async {
+    final uploadMetadata = UploadMetadata()
+      ..partId = partId
+      ..componentType = componentType ?? ''
+      ..componentName = componentName ?? ''
+      ..methodName = methodName ?? ''
+      ..type = DataType.DATA_TYPE_BINARY_SENSOR
+      ..tags.addAll(tags);
+    if (methodParameters != null) uploadMetadata.methodParameters.addAll(methodParameters);
+    if (fileExtension.isEmpty) {
+      uploadMetadata.fileExtension = '';
+    } else if (fileExtension[0] == '.') {
+      uploadMetadata.fileExtension = fileExtension;
+    } else {
+      uploadMetadata.fileExtension = '.$fileExtension';
+    }
+
+    final sensorMetadata = SensorMetadata();
+    if (dataRequestTimes != null) {
+      sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes.$1);
+      sensorMetadata.timeReceived = Timestamp.fromDateTime(dataRequestTimes.$2);
+    }
+
+    final metadata = DataCaptureUploadMetadata()
+      ..sensorMetadata = sensorMetadata
+      ..uploadMetadata = uploadMetadata;
+
+    final metadataStream = Stream.value(StreamingDataCaptureUploadRequest()..metadata = metadata);
+    final bytesStream = Stream.value(StreamingDataCaptureUploadRequest()..data = bytes);
+    final requestStream = StreamGroup.merge([metadataStream, bytesStream]);
+    final response = await _dataSyncClient.streamingDataCaptureUpload(requestStream);
+    return response.fileId;
   }
 }
 
