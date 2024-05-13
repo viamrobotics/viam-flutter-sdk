@@ -73,7 +73,8 @@
 <li><span class="parameter" id="-param-modules"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/ModuleConfig-class.html">ModuleConfig</a></span>&gt;</span>?</span> <span class="parameter-name">modules</span>, </span></li>
 <li><span class="parameter" id="-param-disablePartialStart"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disablePartialStart</span>, </span></li>
 <li><span class="parameter" id="-param-packages"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/PackageConfig-class.html">PackageConfig</a></span>&gt;</span>?</span> <span class="parameter-name">packages</span>, </span></li>
-<li><span class="parameter" id="-param-overwriteFragmentStatus"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a></span>&gt;</span>?</span> <span class="parameter-name">overwriteFragmentStatus</span>}</span></li>
+<li><span class="parameter" id="-param-overwriteFragmentStatus"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a></span>&gt;</span>?</span> <span class="parameter-name">overwriteFragmentStatus</span>, </span></li>
+<li><span class="parameter" id="-param-enableWebProfile"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">enableWebProfile</span>}</span></li>
 </ol>)
     </section>
 
@@ -96,6 +97,7 @@
   $core.bool? disablePartialStart,
   $core.Iterable&lt;PackageConfig&gt;? packages,
   $core.Iterable&lt;AppValidationStatus&gt;? overwriteFragmentStatus,
+  $core.bool? enableWebProfile,
 }) {
   final $result = create();
   if (cloud != null) {
@@ -133,6 +135,9 @@
   }
   if (overwriteFragmentStatus != null) {
     $result.overwriteFragmentStatus.addAll(overwriteFragmentStatus);
+  }
+  if (enableWebProfile != null) {
+    $result.enableWebProfile = enableWebProfile;
   }
   return $result;
 }</code></pre>
