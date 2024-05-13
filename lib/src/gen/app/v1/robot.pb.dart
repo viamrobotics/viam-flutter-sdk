@@ -34,6 +34,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.bool? disablePartialStart,
     $core.Iterable<PackageConfig>? packages,
     $core.Iterable<AppValidationStatus>? overwriteFragmentStatus,
+    $core.bool? enableWebProfile,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -72,6 +73,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (overwriteFragmentStatus != null) {
       $result.overwriteFragmentStatus.addAll(overwriteFragmentStatus);
     }
+    if (enableWebProfile != null) {
+      $result.enableWebProfile = enableWebProfile;
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -91,6 +95,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..aOB(10, _omitFieldNames ? '' : 'disablePartialStart')
     ..pc<PackageConfig>(11, _omitFieldNames ? '' : 'packages', $pb.PbFieldType.PM, subBuilder: PackageConfig.create)
     ..pc<AppValidationStatus>(12, _omitFieldNames ? '' : 'overwriteFragmentStatus', $pb.PbFieldType.PM, subBuilder: AppValidationStatus.create)
+    ..aOB(13, _omitFieldNames ? '' : 'enableWebProfile')
     ..hasRequiredFields = false
   ;
 
@@ -187,6 +192,16 @@ class RobotConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(12)
   $core.List<AppValidationStatus> get overwriteFragmentStatus => $_getList(11);
+
+  /// Turns on pprof http server on localhost. By default false.
+  @$pb.TagNumber(13)
+  $core.bool get enableWebProfile => $_getBF(12);
+  @$pb.TagNumber(13)
+  set enableWebProfile($core.bool v) { $_setBool(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasEnableWebProfile() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearEnableWebProfile() => clearField(13);
 }
 
 /// Valid location secret that can be used for authentication to the robot.

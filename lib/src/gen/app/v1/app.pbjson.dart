@@ -1982,6 +1982,7 @@ const ListRegistryItemsRequest$json = {
     {'1': 'statuses', '3': 5, '4': 3, '5': 14, '6': '.viam.app.v1.RegistryItemStatus', '10': 'statuses'},
     {'1': 'search_term', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'searchTerm', '17': true},
     {'1': 'page_token', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'pageToken', '17': true},
+    {'1': 'public_namespaces', '3': 8, '4': 3, '5': 9, '10': 'publicNamespaces'},
   ],
   '8': [
     {'1': '_organization_id'},
@@ -1998,8 +1999,9 @@ final $typed_data.Uint8List listRegistryItemsRequestDescriptor = $convert.base64
     'Zpc2liaWxpdHlSDHZpc2liaWxpdGllcxIcCglwbGF0Zm9ybXMYBCADKAlSCXBsYXRmb3JtcxI7'
     'CghzdGF0dXNlcxgFIAMoDjIfLnZpYW0uYXBwLnYxLlJlZ2lzdHJ5SXRlbVN0YXR1c1IIc3RhdH'
     'VzZXMSJAoLc2VhcmNoX3Rlcm0YBiABKAlIAVIKc2VhcmNoVGVybYgBARIiCgpwYWdlX3Rva2Vu'
-    'GAcgASgJSAJSCXBhZ2VUb2tlbogBAUISChBfb3JnYW5pemF0aW9uX2lkQg4KDF9zZWFyY2hfdG'
-    'VybUINCgtfcGFnZV90b2tlbg==');
+    'GAcgASgJSAJSCXBhZ2VUb2tlbogBARIrChFwdWJsaWNfbmFtZXNwYWNlcxgIIAMoCVIQcHVibG'
+    'ljTmFtZXNwYWNlc0ISChBfb3JnYW5pemF0aW9uX2lkQg4KDF9zZWFyY2hfdGVybUINCgtfcGFn'
+    'ZV90b2tlbg==');
 
 @$core.Deprecated('Use listRegistryItemsResponseDescriptor instead')
 const ListRegistryItemsResponse$json = {

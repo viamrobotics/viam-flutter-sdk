@@ -8312,6 +8312,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<RegistryItemStatus>? statuses,
     $core.String? searchTerm,
     $core.String? pageToken,
+    $core.Iterable<$core.String>? publicNamespaces,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -8335,6 +8336,9 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     if (pageToken != null) {
       $result.pageToken = pageToken;
     }
+    if (publicNamespaces != null) {
+      $result.publicNamespaces.addAll(publicNamespaces);
+    }
     return $result;
   }
   ListRegistryItemsRequest._() : super();
@@ -8349,6 +8353,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     ..pc<RegistryItemStatus>(5, _omitFieldNames ? '' : 'statuses', $pb.PbFieldType.KE, valueOf: RegistryItemStatus.valueOf, enumValues: RegistryItemStatus.values, defaultEnumValue: RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED)
     ..aOS(6, _omitFieldNames ? '' : 'searchTerm')
     ..aOS(7, _omitFieldNames ? '' : 'pageToken')
+    ..pPS(8, _omitFieldNames ? '' : 'publicNamespaces')
     ..hasRequiredFields = false
   ;
 
@@ -8412,6 +8417,10 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
   $core.bool hasPageToken() => $_has(6);
   @$pb.TagNumber(7)
   void clearPageToken() => clearField(7);
+
+  /// One or more public namespaces to return results for.
+  @$pb.TagNumber(8)
+  $core.List<$core.String> get publicNamespaces => $_getList(7);
 }
 
 class ListRegistryItemsResponse extends $pb.GeneratedMessage {
