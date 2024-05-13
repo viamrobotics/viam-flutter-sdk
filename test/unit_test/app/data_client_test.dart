@@ -7,10 +7,12 @@ import 'package:grpc/src/client/common.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/data.dart';
 import 'package:viam_sdk/protos/app/data_sync.dart' hide CaptureInterval;
+import 'package:viam_sdk/protos/app/dataset.dart';
 import 'package:viam_sdk/src/app/data.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
-import 'package:viam_sdk/src/gen/app/data/v1/data.pbjson.dart';
+import 'package:viam_sdk/src/gen/app/dataset/v1/dataset.pbjson.dart';
+import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/src/media/image.dart';
 import 'package:viam_sdk/src/utils.dart';
 
@@ -51,12 +53,14 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
 void main() {
   late MockDataServiceClient serviceClient;
   late FakeDataSyncServiceClient syncServiceClient;
+  late MockDatasetServiceClient datasetServiceClient;
   late DataClient dataClient;
 
   setUp(() {
     serviceClient = MockDataServiceClient();
     syncServiceClient = FakeDataSyncServiceClient();
-    dataClient = DataClient(serviceClient, syncServiceClient);
+    datasetServiceClient = MockDatasetServiceClient();
+    dataClient = DataClient(serviceClient, syncServiceClient, datasetServiceClient);
   });
 
   group('RPC Client Tests', () {
@@ -346,7 +350,65 @@ void main() {
         expect(syncServiceClient.dataCaptureMetadata?.componentName, equals('myCoolArm'));
       });
     });
+
+    group('Dataset Tests', () {
+      test('createDataset', () async {
+        const expected = 'new-dataset-id';
+
+        when(datasetServiceClient.createDataset(any)).thenAnswer((_) => MockResponseFuture.value(CreateDatasetResponse()..id = expected));
+
+        final response = await dataClient.createDataset('orgId', 'name');
+        expect(response, equals(expected));
+      });
+
+      test('deleteDataset', () async {
+        when(datasetServiceClient.deleteDataset(any)).thenAnswer((_) => MockResponseFuture.value(DeleteDatasetResponse()));
+
+        await dataClient.deleteDataset('id');
+        verify(datasetServiceClient.deleteDataset(any)).called(1);
+      });
+
+      test('renameDataset', () async {
+        when(datasetServiceClient.renameDataset(any)).thenAnswer((_) => MockResponseFuture.value(RenameDatasetResponse()));
+
+        await dataClient.renameDataset('id', 'name');
+        verify(datasetServiceClient.renameDataset(any)).called(1);
+      });
+
+      test('listDatasetsByOrganizationID', () async {
+        final expected = [
+          Dataset()
+            ..id = 'id'
+            ..name = 'name'
+            ..organizationId = 'orgId'
+            ..timeCreated = Timestamp()
+        ];
+
+        when(datasetServiceClient.listDatasetsByOrganizationID(any))
+            .thenAnswer((_) => MockResponseFuture.value(ListDatasetsByOrganizationIDResponse()..datasets.addAll(expected)));
+
+        final response = await dataClient.listDatasetsByOrganizationID('orgId');
+        expect(response, equals(expected));
+      });
+
+      test('listDatasetsByIDs', () async {
+        final expected = [
+          Dataset()
+            ..id = 'id'
+            ..name = 'name'
+            ..organizationId = 'orgId'
+            ..timeCreated = Timestamp()
+        ];
+
+        when(datasetServiceClient.listDatasetsByIDs(any))
+            .thenAnswer((_) => MockResponseFuture.value(ListDatasetsByIDsResponse()..datasets.addAll(expected)));
+
+        final response = await dataClient.listDatasetsByIDs(['dataset-id']);
+        expect(response, equals(expected));
+      });
+    });
   });
+
   group('Filter Utils Tests', () {
     test('setDateTimeCaptureInterval', () {
       final filter = Filter();
