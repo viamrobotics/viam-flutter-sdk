@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -36,26 +36,26 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
+  <div class="toggle" id="theme-button" title="Toggle brightness">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
       <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
+        dark_mode
       </span>
       <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
+        light_mode
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="widgets_button&#47;widgets_button-library-sidebar.html"
-      data-below-sidebar="widgets_button&#47;ViamButton-class-sidebar.html">
-      <div>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="widgets_button&#47;widgets_button-library-sidebar.html"
+    data-below-sidebar="widgets_button&#47;ViamButton-class-sidebar.html">
+    <div>
 <h1><span class="kind-class">ViamButton</span> class 
  
 </h1></div>
@@ -105,14 +105,16 @@
         </dd>
     </dl>
   </section>
-
-    <section class="summary offset-anchor" id="instance-properties">
-      <h2>Properties</h2>
-
-      <dl class="properties">
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/hashCode.html">hashCode</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
+  
 
 </dt>
 <dd class="inherited">
@@ -123,7 +125,8 @@
 
         <dt id="icon" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/icon.html">icon</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/IconData-class.html">IconData</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/IconData-class.html">IconData</a>?</span>
+  
 
 </dt>
 <dd>
@@ -134,7 +137,8 @@
 
         <dt id="key" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/widgets/Widget/key.html">key</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span>
+  
 
 </dt>
 <dd class="inherited">
@@ -145,7 +149,8 @@
 
         <dt id="onPressed" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/onPressed.html">onPressed</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-ui/VoidCallback.html">VoidCallback</a>?</span>
+  
 
 </dt>
 <dd>
@@ -156,7 +161,8 @@
 
         <dt id="role" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/role.html">role</a></span>
-  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonRole.html">ViamButtonRole</a></span> 
+  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonRole.html">ViamButtonRole</a></span>
+  
 
 </dt>
 <dd>
@@ -167,7 +173,8 @@
 
         <dt id="runtimeType" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span>
+  
 
 </dt>
 <dd class="inherited">
@@ -178,7 +185,8 @@
 
         <dt id="size" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/size.html">size</a></span>
-  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonSizeClass.html">ViamButtonSizeClass</a></span> 
+  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonSizeClass.html">ViamButtonSizeClass</a></span>
+  
 
 </dt>
 <dd>
@@ -189,7 +197,8 @@
 
         <dt id="style" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/style.html">style</a></span>
-  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonFillStyle.html">ViamButtonFillStyle</a></span> 
+  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonFillStyle.html">ViamButtonFillStyle</a></span>
+  
 
 </dt>
 <dd>
@@ -200,7 +209,8 @@
 
         <dt id="text" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/text.html">text</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
 
 </dt>
 <dd>
@@ -211,7 +221,8 @@
 
         <dt id="variant" class="property">
   <span class="name"><a href="../widgets_button/ViamButton/variant.html">variant</a></span>
-  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonVariant.html">ViamButtonVariant</a></span> 
+  <span class="signature">&#8594; <a href="../widgets_button/ViamButtonVariant.html">ViamButtonVariant</a></span>
+  
 
 </dt>
 <dd>
@@ -220,9 +231,8 @@
 
 </dd>
 
-      </dl>
-    </section>
-
+    </dl>
+  </section>
     
   <section
       class="summary offset-anchor"

@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -35,37 +35,37 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
+  <div class="toggle" id="theme-button" title="Toggle brightness">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
       <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
+        dark_mode
       </span>
       <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
+        light_mode
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar=""
-      data-below-sidebar="viam_protos.service.shell&#47;viam_protos.service.shell-library-sidebar.html">
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="viam_protos.service.shell&#47;viam_protos.service.shell-library-sidebar.html">
+  
+    <div>
       
-      <div>
-        
 
-        <h1>
-          <span class="kind-library">protos/service/shell</span>
-          library 
+      <h1>
+        <span class="kind-library">protos/service/shell</span>
+        library 
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 
-        </h1>
-      </div>
+      </h1>
+    </div>
 
     
 <section class="desc markdown">
@@ -77,7 +77,7 @@
       <h2>Classes</h2>
 
       <dl>
-        <dt id="CopyFilesFromMachineRequest">
+          <dt id="CopyFilesFromMachineRequest">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequest-class.html">CopyFilesFromMachineRequest</a></span> 
 
 </dt>
@@ -85,7 +85,7 @@
   
 </dd>
 
-        <dt id="CopyFilesFromMachineRequestMetadata">
+          <dt id="CopyFilesFromMachineRequestMetadata">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequestMetadata-class.html">CopyFilesFromMachineRequestMetadata</a></span> 
 
 </dt>
@@ -93,7 +93,7 @@
   
 </dd>
 
-        <dt id="CopyFilesFromMachineResponse">
+          <dt id="CopyFilesFromMachineResponse">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponse-class.html">CopyFilesFromMachineResponse</a></span> 
 
 </dt>
@@ -101,7 +101,7 @@
   
 </dd>
 
-        <dt id="CopyFilesFromMachineResponseMetadata">
+          <dt id="CopyFilesFromMachineResponseMetadata">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponseMetadata-class.html">CopyFilesFromMachineResponseMetadata</a></span> 
 
 </dt>
@@ -109,7 +109,7 @@
   
 </dd>
 
-        <dt id="CopyFilesSourceType">
+          <dt id="CopyFilesSourceType">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesSourceType-class.html">CopyFilesSourceType</a></span> 
 
 </dt>
@@ -121,7 +121,7 @@ into a single location which may result in a new top-level directory versus
 the cause of multiples files that always go into the existing target destination.
 </dd>
 
-        <dt id="CopyFilesToMachineRequest">
+          <dt id="CopyFilesToMachineRequest">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequest-class.html">CopyFilesToMachineRequest</a></span> 
 
 </dt>
@@ -129,7 +129,7 @@ the cause of multiples files that always go into the existing target destination
   
 </dd>
 
-        <dt id="CopyFilesToMachineRequestMetadata">
+          <dt id="CopyFilesToMachineRequestMetadata">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequestMetadata-class.html">CopyFilesToMachineRequestMetadata</a></span> 
 
 </dt>
@@ -137,7 +137,7 @@ the cause of multiples files that always go into the existing target destination
   
 </dd>
 
-        <dt id="CopyFilesToMachineResponse">
+          <dt id="CopyFilesToMachineResponse">
   <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineResponse-class.html">CopyFilesToMachineResponse</a></span> 
 
 </dt>
@@ -145,7 +145,7 @@ the cause of multiples files that always go into the existing target destination
   
 </dd>
 
-        <dt id="FileData">
+          <dt id="FileData">
   <span class="name "><a href="../viam_protos.service.shell/FileData-class.html">FileData</a></span> 
 
 </dt>
@@ -161,7 +161,7 @@ in order to reduce data transmission while allowing out-of-order transfers.
 eof must be true and its own message once no more data is to be sent for this file.
 </dd>
 
-        <dt id="ShellRequest">
+          <dt id="ShellRequest">
   <span class="name "><a href="../viam_protos.service.shell/ShellRequest-class.html">ShellRequest</a></span> 
 
 </dt>
@@ -169,7 +169,7 @@ eof must be true and its own message once no more data is to be sent for this fi
   
 </dd>
 
-        <dt id="ShellResponse">
+          <dt id="ShellResponse">
   <span class="name "><a href="../viam_protos.service.shell/ShellResponse-class.html">ShellResponse</a></span> 
 
 </dt>
@@ -177,7 +177,7 @@ eof must be true and its own message once no more data is to be sent for this fi
   
 </dd>
 
-        <dt id="ShellServiceBase">
+          <dt id="ShellServiceBase">
   <span class="name "><a href="../viam_protos.service.shell/ShellServiceBase-class.html">ShellServiceBase</a></span> 
 
 </dt>
@@ -185,8 +185,39 @@ eof must be true and its own message once no more data is to be sent for this fi
   
 </dd>
 
-        <dt id="ShellServiceClient">
+          <dt id="ShellServiceClient">
   <span class="name "><a href="../viam_protos.service.shell/ShellServiceClient-class.html">ShellServiceClient</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+
+      <dl>
+          <dt id="CopyFilesFromMachineRequest_Request">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequest_Request.html">CopyFilesFromMachineRequest_Request</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="CopyFilesFromMachineResponse_Response">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponse_Response.html">CopyFilesFromMachineResponse_Response</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="CopyFilesToMachineRequest_Request">
+  <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequest_Request.html">CopyFilesToMachineRequest_Request</a></span> 
 
 </dt>
 <dd>
@@ -203,7 +234,7 @@ eof must be true and its own message once no more data is to be sent for this fi
       <h2>Constants</h2>
 
       <dl class="properties">
-        <dt id="CopyFilesFromMachineRequest$json" class="constant">
+          <dt id="CopyFilesFromMachineRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineRequest$json-constant.html">CopyFilesFromMachineRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -215,7 +246,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesFromMachineRequestMetadata$json" class="constant">
+          <dt id="CopyFilesFromMachineRequestMetadata$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineRequestMetadata$json-constant.html">CopyFilesFromMachineRequestMetadata$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -227,7 +258,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesFromMachineResponse$json" class="constant">
+          <dt id="CopyFilesFromMachineResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineResponse$json-constant.html">CopyFilesFromMachineResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -239,7 +270,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesFromMachineResponseMetadata$json" class="constant">
+          <dt id="CopyFilesFromMachineResponseMetadata$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesFromMachineResponseMetadata$json-constant.html">CopyFilesFromMachineResponseMetadata$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -251,7 +282,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesSourceType$json" class="constant">
+          <dt id="CopyFilesSourceType$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesSourceType$json-constant.html">CopyFilesSourceType$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -263,7 +294,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesToMachineRequest$json" class="constant">
+          <dt id="CopyFilesToMachineRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesToMachineRequest$json-constant.html">CopyFilesToMachineRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -275,7 +306,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesToMachineRequestMetadata$json" class="constant">
+          <dt id="CopyFilesToMachineRequestMetadata$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesToMachineRequestMetadata$json-constant.html">CopyFilesToMachineRequestMetadata$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -287,7 +318,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="CopyFilesToMachineResponse$json" class="constant">
+          <dt id="CopyFilesToMachineResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/CopyFilesToMachineResponse$json-constant.html">CopyFilesToMachineResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -299,7 +330,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="FileData$json" class="constant">
+          <dt id="FileData$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/FileData$json-constant.html">FileData$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -311,7 +342,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="ShellRequest$json" class="constant">
+          <dt id="ShellRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/ShellRequest$json-constant.html">ShellRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -323,7 +354,7 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="ShellResponse$json" class="constant">
+          <dt id="ShellResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.shell/ShellResponse$json-constant.html">ShellResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -342,9 +373,10 @@ eof must be true and its own message once no more data is to be sent for this fi
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="copyFilesFromMachineRequestDescriptor" class="property">
+          <dt id="copyFilesFromMachineRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineRequestDescriptor.html">copyFilesFromMachineRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -353,9 +385,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesFromMachineRequestMetadataDescriptor" class="property">
+          <dt id="copyFilesFromMachineRequestMetadataDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineRequestMetadataDescriptor.html">copyFilesFromMachineRequestMetadataDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -364,9 +397,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesFromMachineResponseDescriptor" class="property">
+          <dt id="copyFilesFromMachineResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineResponseDescriptor.html">copyFilesFromMachineResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -375,9 +409,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesFromMachineResponseMetadataDescriptor" class="property">
+          <dt id="copyFilesFromMachineResponseMetadataDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesFromMachineResponseMetadataDescriptor.html">copyFilesFromMachineResponseMetadataDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -386,9 +421,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesSourceTypeDescriptor" class="property">
+          <dt id="copyFilesSourceTypeDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesSourceTypeDescriptor.html">copyFilesSourceTypeDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -397,9 +433,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesToMachineRequestDescriptor" class="property">
+          <dt id="copyFilesToMachineRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesToMachineRequestDescriptor.html">copyFilesToMachineRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -408,9 +445,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesToMachineRequestMetadataDescriptor" class="property">
+          <dt id="copyFilesToMachineRequestMetadataDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesToMachineRequestMetadataDescriptor.html">copyFilesToMachineRequestMetadataDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -419,9 +457,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="copyFilesToMachineResponseDescriptor" class="property">
+          <dt id="copyFilesToMachineResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/copyFilesToMachineResponseDescriptor.html">copyFilesToMachineResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -430,9 +469,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="fileDataDescriptor" class="property">
+          <dt id="fileDataDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/fileDataDescriptor.html">fileDataDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -441,9 +481,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="shellRequestDescriptor" class="property">
+          <dt id="shellRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/shellRequestDescriptor.html">shellRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -452,9 +493,10 @@ eof must be true and its own message once no more data is to be sent for this fi
 
 </dd>
 
-        <dt id="shellResponseDescriptor" class="property">
+          <dt id="shellResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.shell/shellResponseDescriptor.html">shellResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -466,37 +508,6 @@ eof must be true and its own message once no more data is to be sent for this fi
       </dl>
     </section>
 
-
-    <section class="summary offset-anchor" id="enums">
-      <h2>Enums</h2>
-
-      <dl>
-        <dt id="CopyFilesFromMachineRequest_Request">
-  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineRequest_Request.html">CopyFilesFromMachineRequest_Request</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="CopyFilesFromMachineResponse_Response">
-  <span class="name "><a href="../viam_protos.service.shell/CopyFilesFromMachineResponse_Response.html">CopyFilesFromMachineResponse_Response</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="CopyFilesToMachineRequest_Request">
-  <span class="name "><a href="../viam_protos.service.shell/CopyFilesToMachineRequest_Request.html">CopyFilesToMachineRequest_Request</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-      </dl>
-    </section>
 
 
 

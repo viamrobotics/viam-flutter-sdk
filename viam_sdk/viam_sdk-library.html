@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -35,36 +35,36 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
+  <div class="toggle" id="theme-button" title="Toggle brightness">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
       <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
+        dark_mode
       </span>
       <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
+        light_mode
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar=""
-      data-below-sidebar="viam_sdk&#47;viam_sdk-library-sidebar.html">
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="viam_sdk&#47;viam_sdk-library-sidebar.html">
+  
+    <div>
       
-      <div>
-        
 
-        <h1>
-          <span class="kind-library">viam_sdk</span>
-          library 
+      <h1>
+        <span class="kind-library">viam_sdk</span>
+        library 
  
 
-        </h1>
-      </div>
+      </h1>
+    </div>
 
     
 <section class="desc markdown">
@@ -76,7 +76,7 @@
       <h2>Classes</h2>
 
       <dl>
-        <dt id="Arm">
+          <dt id="Arm">
   <span class="name "><a href="../viam_sdk/Arm-class.html">Arm</a></span> 
 
 </dt>
@@ -84,7 +84,7 @@
   Arm represents a physical robot arm that exists in three-dimensional space.
 </dd>
 
-        <dt id="ArmClient">
+          <dt id="ArmClient">
   <span class="name "><a href="../viam_sdk/ArmClient-class.html">ArmClient</a></span> 
 
 </dt>
@@ -92,7 +92,7 @@
   gRPC client for an <a href="../viam_sdk/Arm-class.html">Arm</a> component.
 </dd>
 
-        <dt id="AuthenticatedChannel">
+          <dt id="AuthenticatedChannel">
   <span class="name "><a href="../viam_sdk/AuthenticatedChannel-class.html">AuthenticatedChannel</a></span> 
 
 </dt>
@@ -100,7 +100,7 @@
   A channel that attaches an access token to gRPC metadata for every call
 </dd>
 
-        <dt id="Base">
+          <dt id="Base">
   <span class="name "><a href="../viam_sdk/Base-class.html">Base</a></span> 
 
 </dt>
@@ -108,7 +108,7 @@
   Base represents a physical base of a robot.
 </dd>
 
-        <dt id="BaseClient">
+          <dt id="BaseClient">
   <span class="name "><a href="../viam_sdk/BaseClient-class.html">BaseClient</a></span> 
 
 </dt>
@@ -116,7 +116,7 @@
   gRPC client for the <a href="../viam_sdk/Base-class.html">Base</a> component.
 </dd>
 
-        <dt id="Board">
+          <dt id="Board">
   <span class="name "><a href="../viam_sdk/Board-class.html">Board</a></span> 
 
 </dt>
@@ -125,7 +125,7 @@
 components such as analog readers, and digital interrupts.
 </dd>
 
-        <dt id="BoardClient">
+          <dt id="BoardClient">
   <span class="name "><a href="../viam_sdk/BoardClient-class.html">BoardClient</a></span> 
 
 </dt>
@@ -133,7 +133,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/Board-class.html">Board</a> component.
 </dd>
 
-        <dt id="Camera">
+          <dt id="Camera">
   <span class="name "><a href="../viam_sdk/Camera-class.html">Camera</a></span> 
 
 </dt>
@@ -141,7 +141,7 @@ components such as analog readers, and digital interrupts.
   Camera represents any physical hardware that can capture frames.
 </dd>
 
-        <dt id="CameraClient">
+          <dt id="CameraClient">
   <span class="name "><a href="../viam_sdk/CameraClient-class.html">CameraClient</a></span> 
 
 </dt>
@@ -149,7 +149,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/Camera-class.html">Camera</a> component
 </dd>
 
-        <dt id="ClientChannelWithSessions">
+          <dt id="ClientChannelWithSessions">
   <span class="name "><a href="../viam_sdk/ClientChannelWithSessions-class.html">ClientChannelWithSessions</a></span> 
 
 </dt>
@@ -157,7 +157,7 @@ components such as analog readers, and digital interrupts.
   A channel that adds session data (if required) to gRPC metadata for every call
 </dd>
 
-        <dt id="CloudConfig">
+          <dt id="CloudConfig">
   <span class="name "><a href="../viam_sdk/CloudConfig-class.html">CloudConfig</a></span> 
 
 </dt>
@@ -165,7 +165,7 @@ components such as analog readers, and digital interrupts.
   minimal CloudConfig to create /etc/viam.json
 </dd>
 
-        <dt id="Credentials">
+          <dt id="Credentials">
   <span class="name "><a href="../viam_sdk/Credentials-class.html">Credentials</a></span> 
 
 </dt>
@@ -173,7 +173,7 @@ components such as analog readers, and digital interrupts.
   The credentials used for connecting to the robot
 </dd>
 
-        <dt id="DialOptions">
+          <dt id="DialOptions">
   <span class="name "><a href="../viam_sdk/DialOptions-class.html">DialOptions</a></span> 
 
 </dt>
@@ -181,7 +181,7 @@ components such as analog readers, and digital interrupts.
   Describes the behavior for connecting to a robot
 </dd>
 
-        <dt id="DialWebRtcOptions">
+          <dt id="DialWebRtcOptions">
   <span class="name "><a href="../viam_sdk/DialWebRtcOptions-class.html">DialWebRtcOptions</a></span> 
 
 </dt>
@@ -189,7 +189,7 @@ components such as analog readers, and digital interrupts.
   Options specific for connecting over WebRTC
 </dd>
 
-        <dt id="DoCommandRequest">
+          <dt id="DoCommandRequest">
   <span class="name "><a href="../viam_sdk/DoCommandRequest-class.html">DoCommandRequest</a></span> 
 
 </dt>
@@ -197,7 +197,7 @@ components such as analog readers, and digital interrupts.
   DoCommandRequest represents a generic DoCommand input
 </dd>
 
-        <dt id="DoCommandResponse">
+          <dt id="DoCommandResponse">
   <span class="name "><a href="../viam_sdk/DoCommandResponse-class.html">DoCommandResponse</a></span> 
 
 </dt>
@@ -205,7 +205,7 @@ components such as analog readers, and digital interrupts.
   DoCommandResponse represents a generic DoCommand output
 </dd>
 
-        <dt id="Gantry">
+          <dt id="Gantry">
   <span class="name "><a href="../viam_sdk/Gantry-class.html">Gantry</a></span> 
 
 </dt>
@@ -213,7 +213,7 @@ components such as analog readers, and digital interrupts.
   Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
 </dd>
 
-        <dt id="GantryClient">
+          <dt id="GantryClient">
   <span class="name "><a href="../viam_sdk/GantryClient-class.html">GantryClient</a></span> 
 
 </dt>
@@ -221,7 +221,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/Gantry-class.html">Gantry</a> component.
 </dd>
 
-        <dt id="Generic">
+          <dt id="Generic">
   <span class="name "><a href="../viam_sdk/Generic-class.html">Generic</a></span> 
 
 </dt>
@@ -229,7 +229,7 @@ components such as analog readers, and digital interrupts.
   Generic represents a generic component that executes doCommand.
 </dd>
 
-        <dt id="GenericClient">
+          <dt id="GenericClient">
   <span class="name "><a href="../viam_sdk/GenericClient-class.html">GenericClient</a></span> 
 
 </dt>
@@ -237,7 +237,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/Generic-class.html">Generic</a> component.
 </dd>
 
-        <dt id="GeoPoint">
+          <dt id="GeoPoint">
   <span class="name "><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a></span> 
 
 </dt>
@@ -245,7 +245,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="GetNetworkListRequest">
+          <dt id="GetNetworkListRequest">
   <span class="name "><a href="../viam_sdk/GetNetworkListRequest-class.html">GetNetworkListRequest</a></span> 
 
 </dt>
@@ -253,7 +253,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="GetNetworkListResponse">
+          <dt id="GetNetworkListResponse">
   <span class="name "><a href="../viam_sdk/GetNetworkListResponse-class.html">GetNetworkListResponse</a></span> 
 
 </dt>
@@ -261,7 +261,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="GetSmartMachineStatusRequest">
+          <dt id="GetSmartMachineStatusRequest">
   <span class="name "><a href="../viam_sdk/GetSmartMachineStatusRequest-class.html">GetSmartMachineStatusRequest</a></span> 
 
 </dt>
@@ -269,7 +269,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="GetSmartMachineStatusResponse">
+          <dt id="GetSmartMachineStatusResponse">
   <span class="name "><a href="../viam_sdk/GetSmartMachineStatusResponse-class.html">GetSmartMachineStatusResponse</a></span> 
 
 </dt>
@@ -277,7 +277,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="Gripper">
+          <dt id="Gripper">
   <span class="name "><a href="../viam_sdk/Gripper-class.html">Gripper</a></span> 
 
 </dt>
@@ -285,7 +285,7 @@ components such as analog readers, and digital interrupts.
   Gripper represents a physical Gripper which can open and close.
 </dd>
 
-        <dt id="GripperClient">
+          <dt id="GripperClient">
   <span class="name "><a href="../viam_sdk/GripperClient-class.html">GripperClient</a></span> 
 
 </dt>
@@ -293,7 +293,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/Gripper-class.html">Gripper</a> component.
 </dd>
 
-        <dt id="MimeType">
+          <dt id="MimeType">
   <span class="name "><a href="../viam_sdk/MimeType-class.html">MimeType</a></span> 
 
 </dt>
@@ -301,7 +301,7 @@ components such as analog readers, and digital interrupts.
   Mime types supported by Viam
 </dd>
 
-        <dt id="Motor">
+          <dt id="Motor">
   <span class="name "><a href="../viam_sdk/Motor-class.html">Motor</a></span> 
 
 </dt>
@@ -309,7 +309,7 @@ components such as analog readers, and digital interrupts.
   Motor represents a physical motor.
 </dd>
 
-        <dt id="MotorClient">
+          <dt id="MotorClient">
   <span class="name "><a href="../viam_sdk/MotorClient-class.html">MotorClient</a></span> 
 
 </dt>
@@ -317,7 +317,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/Motor-class.html">Motor</a> component.
 </dd>
 
-        <dt id="MovementSensor">
+          <dt id="MovementSensor">
   <span class="name "><a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a></span> 
 
 </dt>
@@ -325,7 +325,7 @@ components such as analog readers, and digital interrupts.
   MovementSensor reports information about the robot's direction, position and speed.
 </dd>
 
-        <dt id="MovementSensorClient">
+          <dt id="MovementSensorClient">
   <span class="name "><a href="../viam_sdk/MovementSensorClient-class.html">MovementSensorClient</a></span> 
 
 </dt>
@@ -333,7 +333,7 @@ components such as analog readers, and digital interrupts.
   gRPC client for the <a href="../viam_sdk/MovementSensor-class.html">MovementSensor</a> component.
 </dd>
 
-        <dt id="NetworkInfo">
+          <dt id="NetworkInfo">
   <span class="name "><a href="../viam_sdk/NetworkInfo-class.html">NetworkInfo</a></span> 
 
 </dt>
@@ -341,7 +341,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="Orientation">
+          <dt id="Orientation">
   <span class="name "><a href="../viam_sdk/Orientation-class.html">Orientation</a></span> 
 
 </dt>
@@ -349,7 +349,7 @@ components such as analog readers, and digital interrupts.
   
 </dd>
 
-        <dt id="Pose">
+          <dt id="Pose">
   <span class="name "><a href="../viam_sdk/Pose-class.html">Pose</a></span> 
 
 </dt>
@@ -364,7 +364,7 @@ second being defined by the origin, the rx, ry, rz point and the local Z axis. T
 is circled, the Roll will correct itself to remain in-line.
 </dd>
 
-        <dt id="PoseInFrame">
+          <dt id="PoseInFrame">
   <span class="name "><a href="../viam_sdk/PoseInFrame-class.html">PoseInFrame</a></span> 
 
 </dt>
@@ -372,7 +372,7 @@ is circled, the Roll will correct itself to remain in-line.
   PoseInFrame contains a pose and the and the reference frame in which it was observed
 </dd>
 
-        <dt id="Position">
+          <dt id="Position">
   <span class="name "><a href="../viam_sdk/Position-class.html">Position</a></span> 
 
 </dt>
@@ -380,7 +380,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="PowerSensor">
+          <dt id="PowerSensor">
   <span class="name "><a href="../viam_sdk/PowerSensor-class.html">PowerSensor</a></span> 
 
 </dt>
@@ -388,7 +388,7 @@ is circled, the Roll will correct itself to remain in-line.
   PowerSensor reports information about voltage, current, and power.
 </dd>
 
-        <dt id="PowerSensorClient">
+          <dt id="PowerSensorClient">
   <span class="name "><a href="../viam_sdk/PowerSensorClient-class.html">PowerSensorClient</a></span> 
 
 </dt>
@@ -396,7 +396,7 @@ is circled, the Roll will correct itself to remain in-line.
   gRPC client for the <a href="../viam_sdk/PowerSensor-class.html">PowerSensor</a> component.
 </dd>
 
-        <dt id="PowerState">
+          <dt id="PowerState">
   <span class="name "><a href="../viam_sdk/PowerState-class.html">PowerState</a></span> 
 
 </dt>
@@ -404,7 +404,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="ProvisioningClient">
+          <dt id="ProvisioningClient">
   <span class="name "><a href="../viam_sdk/ProvisioningClient-class.html">ProvisioningClient</a></span> 
 
 </dt>
@@ -412,7 +412,7 @@ is circled, the Roll will correct itself to remain in-line.
   gRPC client for connecting to Viam's Provisioning Service
 </dd>
 
-        <dt id="ProvisioningInfo">
+          <dt id="ProvisioningInfo">
   <span class="name "><a href="../viam_sdk/ProvisioningInfo-class.html">ProvisioningInfo</a></span> 
 
 </dt>
@@ -420,7 +420,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="Registry">
+          <dt id="Registry">
   <span class="name "><a href="../viam_sdk/Registry-class.html">Registry</a></span> 
 
 </dt>
@@ -428,7 +428,7 @@ is circled, the Roll will correct itself to remain in-line.
   The global registry of robot resources.
 </dd>
 
-        <dt id="Resource">
+          <dt id="Resource">
   <span class="name "><a href="../viam_sdk/Resource-class.html">Resource</a></span> 
 
 </dt>
@@ -436,7 +436,7 @@ is circled, the Roll will correct itself to remain in-line.
   Abstract class that defines the base functionality for all <a href="../viam_sdk/Resource-class.html">Resource</a> types
 </dd>
 
-        <dt id="ResourceName">
+          <dt id="ResourceName">
   <span class="name "><a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span> 
 
 </dt>
@@ -444,7 +444,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="ResourceRegistration">
+          <dt id="ResourceRegistration">
   <span class="name "><a href="../viam_sdk/ResourceRegistration-class.html">ResourceRegistration</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="../viam_sdk/Resource-class.html">Resource</a></span>&gt;</span></span> 
 
 </dt>
@@ -452,7 +452,7 @@ is circled, the Roll will correct itself to remain in-line.
   An object representing a resource to be registered.
 </dd>
 
-        <dt id="ResourceRPCClient">
+          <dt id="ResourceRPCClient">
   <span class="name "><a href="../viam_sdk/ResourceRPCClient-class.html">ResourceRPCClient</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="https://pub.dev/documentation/grpc/3.2.4/grpc/Client-class.html">Client</a></span>&gt;</span></span> 
 
 </dt>
@@ -460,7 +460,7 @@ is circled, the Roll will correct itself to remain in-line.
   Abstract class that defines the base functionality for all RPC clients for resources
 </dd>
 
-        <dt id="RobotClient">
+          <dt id="RobotClient">
   <span class="name "><a href="../viam_sdk/RobotClient-class.html">RobotClient</a></span> 
 
 </dt>
@@ -468,7 +468,7 @@ is circled, the Roll will correct itself to remain in-line.
   gRPC client for a Robot. This class should be used for all interactions with a robot.
 </dd>
 
-        <dt id="RobotClientOptions">
+          <dt id="RobotClientOptions">
   <span class="name "><a href="../viam_sdk/RobotClientOptions-class.html">RobotClientOptions</a></span> 
 
 </dt>
@@ -476,7 +476,7 @@ is circled, the Roll will correct itself to remain in-line.
   The options that define the behavior of the <a href="../viam_sdk/RobotClient-class.html">RobotClient</a>.
 </dd>
 
-        <dt id="Sensor">
+          <dt id="Sensor">
   <span class="name "><a href="../viam_sdk/Sensor-class.html">Sensor</a></span> 
 
 </dt>
@@ -484,7 +484,7 @@ is circled, the Roll will correct itself to remain in-line.
   Sensor represents a physical sensing device that can provide measurement readings.
 </dd>
 
-        <dt id="SensorClient">
+          <dt id="SensorClient">
   <span class="name "><a href="../viam_sdk/SensorClient-class.html">SensorClient</a></span> 
 
 </dt>
@@ -492,7 +492,7 @@ is circled, the Roll will correct itself to remain in-line.
   gRPC client for the <a href="../viam_sdk/Sensor-class.html">Sensor</a> component.
 </dd>
 
-        <dt id="Servo">
+          <dt id="Servo">
   <span class="name "><a href="../viam_sdk/Servo-class.html">Servo</a></span> 
 
 </dt>
@@ -500,7 +500,7 @@ is circled, the Roll will correct itself to remain in-line.
   Servo represents a physical servo.
 </dd>
 
-        <dt id="ServoClient">
+          <dt id="ServoClient">
   <span class="name "><a href="../viam_sdk/ServoClient-class.html">ServoClient</a></span> 
 
 </dt>
@@ -508,7 +508,7 @@ is circled, the Roll will correct itself to remain in-line.
   gRPC client for the <a href="../viam_sdk/Servo-class.html">Servo</a> component.
 </dd>
 
-        <dt id="SetNetworkCredentialsRequest">
+          <dt id="SetNetworkCredentialsRequest">
   <span class="name "><a href="../viam_sdk/SetNetworkCredentialsRequest-class.html">SetNetworkCredentialsRequest</a></span> 
 
 </dt>
@@ -516,7 +516,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="SetNetworkCredentialsResponse">
+          <dt id="SetNetworkCredentialsResponse">
   <span class="name "><a href="../viam_sdk/SetNetworkCredentialsResponse-class.html">SetNetworkCredentialsResponse</a></span> 
 
 </dt>
@@ -524,7 +524,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="SetSmartMachineCredentialsRequest">
+          <dt id="SetSmartMachineCredentialsRequest">
   <span class="name "><a href="../viam_sdk/SetSmartMachineCredentialsRequest-class.html">SetSmartMachineCredentialsRequest</a></span> 
 
 </dt>
@@ -532,7 +532,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="SetSmartMachineCredentialsResponse">
+          <dt id="SetSmartMachineCredentialsResponse">
   <span class="name "><a href="../viam_sdk/SetSmartMachineCredentialsResponse-class.html">SetSmartMachineCredentialsResponse</a></span> 
 
 </dt>
@@ -540,7 +540,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="StreamClient">
+          <dt id="StreamClient">
   <span class="name "><a href="../viam_sdk/StreamClient-class.html">StreamClient</a></span> 
 
 </dt>
@@ -548,7 +548,7 @@ is circled, the Roll will correct itself to remain in-line.
   A client to manage a camera's WebRTC stream.
 </dd>
 
-        <dt id="Subtype">
+          <dt id="Subtype">
   <span class="name "><a href="../viam_sdk/Subtype-class.html">Subtype</a></span> 
 
 </dt>
@@ -556,7 +556,7 @@ is circled, the Roll will correct itself to remain in-line.
   <a href="../viam_sdk/Subtype-class.html">Subtype</a> defines a triplet of strings that correspond to a resource's specific API definition.
 </dd>
 
-        <dt id="Vector3">
+          <dt id="Vector3">
   <span class="name "><a href="../viam_sdk/Vector3-class.html">Vector3</a></span> 
 
 </dt>
@@ -564,7 +564,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="Viam">
+          <dt id="Viam">
   <span class="name "><a href="../viam_sdk/Viam-class.html">Viam</a></span> 
 
 </dt>
@@ -572,7 +572,7 @@ is circled, the Roll will correct itself to remain in-line.
   An object to interact with the Viam app
 </dd>
 
-        <dt id="ViamAuthorization">
+          <dt id="ViamAuthorization">
   <span class="name "><a href="../viam_sdk/ViamAuthorization-class.html">ViamAuthorization</a></span> 
 
 </dt>
@@ -580,7 +580,7 @@ is circled, the Roll will correct itself to remain in-line.
   
 </dd>
 
-        <dt id="ViamImage">
+          <dt id="ViamImage">
   <span class="name "><a href="../viam_sdk/ViamImage-class.html">ViamImage</a></span> 
 
 </dt>
@@ -588,7 +588,7 @@ is circled, the Roll will correct itself to remain in-line.
   A custom image type that contains the <code>MimeTYpe</code>, raw image data, and lazily loads and caches an <a href="https://pub.dev/documentation/image/4.1.7/image/Image-class.html">img.Image</a>.
 </dd>
 
-        <dt id="VisionClient">
+          <dt id="VisionClient">
   <span class="name "><a href="../viam_sdk/VisionClient-class.html">VisionClient</a></span> 
 
 </dt>
@@ -599,29 +599,78 @@ is circled, the Roll will correct itself to remain in-line.
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+
+      <dl>
+          <dt id="AuthorizationId">
+  <span class="name "><a href="../viam_sdk/AuthorizationId.html">AuthorizationId</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="IdentityType">
+  <span class="name "><a href="../viam_sdk/IdentityType.html">IdentityType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NetworkType">
+  <span class="name "><a href="../viam_sdk/NetworkType.html">NetworkType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Permission">
+  <span class="name "><a href="../viam_sdk/Permission.html">Permission</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ResourceType">
+  <span class="name "><a href="../viam_sdk/ResourceType.html">ResourceType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+
 
     <section class="summary offset-anchor" id="extensions">
       <h2>Extensions</h2>
 
       <dl>
-        <dt id="FilterUtils">
-    <span class="name "><a href="../viam_sdk/FilterUtils.html">FilterUtils</a></span> 
+          <dt id="FilterUtils">
+  <span class="name "><a href="../viam_sdk/FilterUtils.html">FilterUtils</a></span>
+  on <a href="../viam_protos.app.data/Filter-class.html">Filter</a>
+  
 
 </dt>
 <dd>
-    
+  
 </dd>
 
 
       </dl>
     </section>
 
-
     <section class="summary offset-anchor" id="constants">
       <h2>Constants</h2>
 
       <dl class="properties">
-        <dt id="resourceNamespaceRDK" class="constant">
+          <dt id="resourceNamespaceRDK" class="constant">
     <span class="name "><a href="../viam_sdk/resourceNamespaceRDK-constant.html">resourceNamespaceRDK</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
@@ -633,7 +682,7 @@ is circled, the Roll will correct itself to remain in-line.
 
 </dd>
 
-        <dt id="resourceTypeComponent" class="constant">
+          <dt id="resourceTypeComponent" class="constant">
     <span class="name "><a href="../viam_sdk/resourceTypeComponent-constant.html">resourceTypeComponent</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
@@ -645,7 +694,7 @@ is circled, the Roll will correct itself to remain in-line.
 
 </dd>
 
-        <dt id="resourceTypeService" class="constant">
+          <dt id="resourceTypeService" class="constant">
     <span class="name "><a href="../viam_sdk/resourceTypeService-constant.html">resourceTypeService</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
@@ -665,7 +714,7 @@ is circled, the Roll will correct itself to remain in-line.
       <h2>Functions</h2>
 
       <dl class="callables">
-        <dt id="dial" class="callable">
+          <dt id="dial" class="callable">
   <span class="name"><a href="../viam_sdk/dial.html">dial</a></span><span class="signature">(<wbr><span class="parameter" id="dial-param-address"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">address</span>, </span><span class="parameter" id="dial-param-options"><span class="type-annotation"><a href="../viam_sdk/DialOptions-class.html">DialOptions</a>?</span> <span class="parameter-name">options</span>, </span><span class="parameter" id="dial-param-sessionCallback"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">sessionCallback</span>()</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/grpc/3.2.4/grpc_connection_interface/ClientChannelBase-class.html">ClientChannelBase</a></span>&gt;</span></span>
   </span>
@@ -676,53 +725,6 @@ is circled, the Roll will correct itself to remain in-line.
   Connect to a robot at the provided address with the given options
   
 
-</dd>
-
-      </dl>
-    </section>
-
-    <section class="summary offset-anchor" id="enums">
-      <h2>Enums</h2>
-
-      <dl>
-        <dt id="AuthorizationId">
-  <span class="name "><a href="../viam_sdk/AuthorizationId.html">AuthorizationId</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="IdentityType">
-  <span class="name "><a href="../viam_sdk/IdentityType.html">IdentityType</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="NetworkType">
-  <span class="name "><a href="../viam_sdk/NetworkType.html">NetworkType</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="Permission">
-  <span class="name "><a href="../viam_sdk/Permission.html">Permission</a></span> 
-
-</dt>
-<dd>
-  
-</dd>
-
-        <dt id="ResourceType">
-  <span class="name "><a href="../viam_sdk/ResourceType.html">ResourceType</a></span> 
-
-</dt>
-<dd>
-  
 </dd>
 
       </dl>

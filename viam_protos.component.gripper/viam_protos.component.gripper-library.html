@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -35,37 +35,37 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
+  <div class="toggle" id="theme-button" title="Toggle brightness">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
       <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
+        dark_mode
       </span>
       <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
+        light_mode
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar=""
-      data-below-sidebar="viam_protos.component.gripper&#47;viam_protos.component.gripper-library-sidebar.html">
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="viam_protos.component.gripper&#47;viam_protos.component.gripper-library-sidebar.html">
+  
+    <div>
       
-      <div>
-        
 
-        <h1>
-          <span class="kind-library">protos/component/gripper</span>
-          library 
+      <h1>
+        <span class="kind-library">protos/component/gripper</span>
+        library 
  
     <span class="category protobuf-definitions cp-0 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
 
-        </h1>
-      </div>
+      </h1>
+    </div>
 
     
 <section class="desc markdown">
@@ -77,7 +77,7 @@
       <h2>Classes</h2>
 
       <dl>
-        <dt id="GrabRequest">
+          <dt id="GrabRequest">
   <span class="name "><a href="../viam_protos.component.gripper/GrabRequest-class.html">GrabRequest</a></span> 
 
 </dt>
@@ -85,7 +85,7 @@
   
 </dd>
 
-        <dt id="GrabResponse">
+          <dt id="GrabResponse">
   <span class="name "><a href="../viam_protos.component.gripper/GrabResponse-class.html">GrabResponse</a></span> 
 
 </dt>
@@ -93,7 +93,7 @@
   
 </dd>
 
-        <dt id="GripperServiceBase">
+          <dt id="GripperServiceBase">
   <span class="name "><a href="../viam_protos.component.gripper/GripperServiceBase-class.html">GripperServiceBase</a></span> 
 
 </dt>
@@ -101,7 +101,7 @@
   
 </dd>
 
-        <dt id="GripperServiceClient">
+          <dt id="GripperServiceClient">
   <span class="name "><a href="../viam_protos.component.gripper/GripperServiceClient-class.html">GripperServiceClient</a></span> 
 
 </dt>
@@ -109,7 +109,7 @@
   
 </dd>
 
-        <dt id="IsMovingRequest">
+          <dt id="IsMovingRequest">
   <span class="name "><a href="../viam_protos.component.gripper/IsMovingRequest-class.html">IsMovingRequest</a></span> 
 
 </dt>
@@ -117,7 +117,7 @@
   
 </dd>
 
-        <dt id="IsMovingResponse">
+          <dt id="IsMovingResponse">
   <span class="name "><a href="../viam_protos.component.gripper/IsMovingResponse-class.html">IsMovingResponse</a></span> 
 
 </dt>
@@ -125,7 +125,7 @@
   
 </dd>
 
-        <dt id="OpenRequest">
+          <dt id="OpenRequest">
   <span class="name "><a href="../viam_protos.component.gripper/OpenRequest-class.html">OpenRequest</a></span> 
 
 </dt>
@@ -133,7 +133,7 @@
   
 </dd>
 
-        <dt id="OpenResponse">
+          <dt id="OpenResponse">
   <span class="name "><a href="../viam_protos.component.gripper/OpenResponse-class.html">OpenResponse</a></span> 
 
 </dt>
@@ -141,7 +141,7 @@
   
 </dd>
 
-        <dt id="StopRequest">
+          <dt id="StopRequest">
   <span class="name "><a href="../viam_protos.component.gripper/StopRequest-class.html">StopRequest</a></span> 
 
 </dt>
@@ -149,7 +149,7 @@
   
 </dd>
 
-        <dt id="StopResponse">
+          <dt id="StopResponse">
   <span class="name "><a href="../viam_protos.component.gripper/StopResponse-class.html">StopResponse</a></span> 
 
 </dt>
@@ -163,11 +163,12 @@
 
 
 
+
     <section class="summary offset-anchor" id="constants">
       <h2>Constants</h2>
 
       <dl class="properties">
-        <dt id="GrabRequest$json" class="constant">
+          <dt id="GrabRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/GrabRequest$json-constant.html">GrabRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -179,7 +180,7 @@
 
 </dd>
 
-        <dt id="GrabResponse$json" class="constant">
+          <dt id="GrabResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/GrabResponse$json-constant.html">GrabResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -191,7 +192,7 @@
 
 </dd>
 
-        <dt id="IsMovingRequest$json" class="constant">
+          <dt id="IsMovingRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/IsMovingRequest$json-constant.html">IsMovingRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -203,7 +204,7 @@
 
 </dd>
 
-        <dt id="IsMovingResponse$json" class="constant">
+          <dt id="IsMovingResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/IsMovingResponse$json-constant.html">IsMovingResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -215,7 +216,7 @@
 
 </dd>
 
-        <dt id="OpenRequest$json" class="constant">
+          <dt id="OpenRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/OpenRequest$json-constant.html">OpenRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -227,7 +228,7 @@
 
 </dd>
 
-        <dt id="OpenResponse$json" class="constant">
+          <dt id="OpenResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/OpenResponse$json-constant.html">OpenResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
@@ -239,7 +240,7 @@
 
 </dd>
 
-        <dt id="StopRequest$json" class="constant">
+          <dt id="StopRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/StopRequest$json-constant.html">StopRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
@@ -251,7 +252,7 @@
 
 </dd>
 
-        <dt id="StopResponse$json" class="constant">
+          <dt id="StopResponse$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.component.gripper/StopResponse$json-constant.html">StopResponse$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
@@ -270,9 +271,10 @@
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="grabRequestDescriptor" class="property">
+          <dt id="grabRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/grabRequestDescriptor.html">grabRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -281,9 +283,10 @@
 
 </dd>
 
-        <dt id="grabResponseDescriptor" class="property">
+          <dt id="grabResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/grabResponseDescriptor.html">grabResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -292,9 +295,10 @@
 
 </dd>
 
-        <dt id="isMovingRequestDescriptor" class="property">
+          <dt id="isMovingRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/isMovingRequestDescriptor.html">isMovingRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -303,9 +307,10 @@
 
 </dd>
 
-        <dt id="isMovingResponseDescriptor" class="property">
+          <dt id="isMovingResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/isMovingResponseDescriptor.html">isMovingResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -314,9 +319,10 @@
 
 </dd>
 
-        <dt id="openRequestDescriptor" class="property">
+          <dt id="openRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/openRequestDescriptor.html">openRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -325,9 +331,10 @@
 
 </dd>
 
-        <dt id="openResponseDescriptor" class="property">
+          <dt id="openResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/openResponseDescriptor.html">openResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -336,9 +343,10 @@
 
 </dd>
 
-        <dt id="stopRequestDescriptor" class="property">
+          <dt id="stopRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/stopRequestDescriptor.html">stopRequestDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -347,9 +355,10 @@
 
 </dd>
 
-        <dt id="stopResponseDescriptor" class="property">
+          <dt id="stopResponseDescriptor" class="property">
   <span class="name"><a href="../viam_protos.component.gripper/stopResponseDescriptor.html">stopResponseDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span> 
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
 
 </dt>
 <dd>
@@ -360,7 +369,6 @@
 
       </dl>
     </section>
-
 
 
 

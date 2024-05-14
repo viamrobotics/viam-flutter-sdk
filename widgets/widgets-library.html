@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -35,36 +35,36 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
+  <div class="toggle" id="theme-button" title="Toggle brightness">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
       <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
+        dark_mode
       </span>
       <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
+        light_mode
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar=""
-      data-below-sidebar="widgets&#47;widgets-library-sidebar.html">
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="widgets&#47;widgets-library-sidebar.html">
+  
+    <div>
       
-      <div>
-        
 
-        <h1>
-          <span class="kind-library">widgets</span>
-          library 
+      <h1>
+        <span class="kind-library">widgets</span>
+        library 
  
 
-        </h1>
-      </div>
+      </h1>
+    </div>
 
     
 
@@ -73,7 +73,7 @@
       <h2>Classes</h2>
 
       <dl>
-        <dt id="ViamBaseJoystick">
+          <dt id="ViamBaseJoystick">
   <span class="name "><a href="../widgets_joystick/ViamBaseJoystick-class.html">ViamBaseJoystick</a></span> 
 
 </dt>
@@ -81,7 +81,7 @@
   A <a href="https://pub.dev/documentation/flutter_joystick/0.0.4/flutter_joystick/Joystick-class.html">Joystick</a> to control a specific <a href="../viam_sdk/Base-class.html">Base</a>
 </dd>
 
-        <dt id="ViamBaseWidget">
+          <dt id="ViamBaseWidget">
   <span class="name "><a href="../widgets_resources_base/ViamBaseWidget-class.html">ViamBaseWidget</a></span> 
 
 </dt>
@@ -89,7 +89,7 @@
   A widget to control a <a href="../viam_sdk/Base-class.html">Base</a>.
 </dd>
 
-        <dt id="ViamBoardWidget">
+          <dt id="ViamBoardWidget">
   <span class="name "><a href="../widgets_resources_board/ViamBoardWidget-class.html">ViamBoardWidget</a></span> 
 
 </dt>
@@ -97,7 +97,7 @@
   A widget to control a <a href="../viam_sdk/Board-class.html">Board</a>.
 </dd>
 
-        <dt id="ViamButton">
+          <dt id="ViamButton">
   <span class="name "><a href="../widgets_button/ViamButton-class.html">ViamButton</a></span> 
 
 </dt>
@@ -105,7 +105,7 @@
   A button that has Viam specific styling
 </dd>
 
-        <dt id="ViamCameraStreamView">
+          <dt id="ViamCameraStreamView">
   <span class="name "><a href="../widgets_camera_stream/ViamCameraStreamView-class.html">ViamCameraStreamView</a></span> 
 
 </dt>
@@ -113,7 +113,7 @@
   A widget to display a WebRTC stream from a <a href="../viam_sdk/Camera-class.html">Camera</a>.
 </dd>
 
-        <dt id="ViamGripperWidget">
+          <dt id="ViamGripperWidget">
   <span class="name "><a href="../widgets_resources_gripper/ViamGripperWidget-class.html">ViamGripperWidget</a></span> 
 
 </dt>
@@ -121,7 +121,7 @@
   A widget to control a <a href="../viam_sdk/Gripper-class.html">Gripper</a>.
 </dd>
 
-        <dt id="ViamMotorWidget">
+          <dt id="ViamMotorWidget">
   <span class="name "><a href="../widgets_resources_motor/ViamMotorWidget-class.html">ViamMotorWidget</a></span> 
 
 </dt>
@@ -129,7 +129,7 @@
   A widget to control a <a href="../viam_sdk/Motor-class.html">Motor</a>.
 </dd>
 
-        <dt id="ViamMultiCameraStream">
+          <dt id="ViamMultiCameraStream">
   <span class="name "><a href="../widgets_multi_camera_stream/ViamMultiCameraStream-class.html">ViamMultiCameraStream</a></span> 
 
 </dt>
@@ -137,7 +137,7 @@
   A widget to display a WebRTC stream from a <a href="../viam_sdk/Camera-class.html">Camera</a>, and a dropdown to select which camera to view.
 </dd>
 
-        <dt id="ViamRefreshableDataTable">
+          <dt id="ViamRefreshableDataTable">
   <span class="name "><a href="../widgets_refreshable_data_table/ViamRefreshableDataTable-class.html">ViamRefreshableDataTable</a></span> 
 
 </dt>
@@ -145,7 +145,7 @@
   A widget to display data from a <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a>
 </dd>
 
-        <dt id="ViamSensorWidget">
+          <dt id="ViamSensorWidget">
   <span class="name "><a href="../widgets_resources_sensor/ViamSensorWidget-class.html">ViamSensorWidget</a></span> 
 
 </dt>
@@ -153,7 +153,7 @@
   A widget to display data from a <a href="../viam_sdk/Sensor-class.html">Sensor</a>.
 </dd>
 
-        <dt id="ViamServoWidget">
+          <dt id="ViamServoWidget">
   <span class="name "><a href="../widgets_resources_servo/ViamServoWidget-class.html">ViamServoWidget</a></span> 
 
 </dt>
@@ -164,17 +164,11 @@
       </dl>
     </section>
 
-
-
-
-
-
-
     <section class="summary offset-anchor" id="enums">
       <h2>Enums</h2>
 
       <dl>
-        <dt id="ViamButtonFillStyle">
+          <dt id="ViamButtonFillStyle">
   <span class="name "><a href="../widgets_button/ViamButtonFillStyle.html">ViamButtonFillStyle</a></span> 
 
 </dt>
@@ -182,7 +176,7 @@
   The fill style of the button.
 </dd>
 
-        <dt id="ViamButtonRole">
+          <dt id="ViamButtonRole">
   <span class="name "><a href="../widgets_button/ViamButtonRole.html">ViamButtonRole</a></span> 
 
 </dt>
@@ -190,7 +184,7 @@
   The role of the button.
 </dd>
 
-        <dt id="ViamButtonSizeClass">
+          <dt id="ViamButtonSizeClass">
   <span class="name "><a href="../widgets_button/ViamButtonSizeClass.html">ViamButtonSizeClass</a></span> 
 
 </dt>
@@ -198,7 +192,7 @@
   The size class of the button.
 </dd>
 
-        <dt id="ViamButtonVariant">
+          <dt id="ViamButtonVariant">
   <span class="name "><a href="../widgets_button/ViamButtonVariant.html">ViamButtonVariant</a></span> 
 
 </dt>
@@ -208,6 +202,12 @@
 
       </dl>
     </section>
+
+
+
+
+
+
 
 
 
