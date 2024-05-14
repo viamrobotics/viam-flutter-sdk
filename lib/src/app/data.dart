@@ -11,6 +11,7 @@ import 'package:viam_sdk/src/utils.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
+import '../gen/app/dataset/v1/dataset.pbgrpc.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
 
@@ -22,8 +23,9 @@ typedef DatabaseConnection = GetDatabaseConnectionResponse;
 class DataClient {
   final DataServiceClient _dataClient;
   final DataSyncServiceClient _dataSyncClient;
+  final DatasetServiceClient _datasetClient;
 
-  DataClient(this._dataClient, this._dataSyncClient);
+  DataClient(this._dataClient, this._dataSyncClient, this._datasetClient);
 
   DataRequest _makeDataRequest(Filter? filter, int? limit, String? last, Order? sortOrder) {
     final dataRequest = DataRequest();
@@ -478,6 +480,43 @@ class DataClient {
     final requestStream = StreamGroup.merge([metadataStream, bytesStream]);
     final response = await _dataSyncClient.streamingDataCaptureUpload(requestStream);
     return response.fileId;
+  }
+
+  /// Creates a new dataset, returning the new dataset's ID.
+  Future<String> createDataset(String orgId, String name) async {
+    final request = CreateDatasetRequest()
+      ..organizationId = orgId
+      ..name = name;
+    final response = await _datasetClient.createDataset(request);
+    return response.id;
+  }
+
+  /// Deletes a dataset.
+  Future<void> deleteDataset(String id) async {
+    final request = DeleteDatasetRequest()..id = id;
+    await _datasetClient.deleteDataset(request);
+  }
+
+  /// Renames a dataset by ID.
+  Future<void> renameDataset(String id, String name) async {
+    final request = RenameDatasetRequest()
+      ..id = id
+      ..name = name;
+    await _datasetClient.renameDataset(request);
+  }
+
+  /// Returns a list of datasets within a given organization.
+  Future<List<Dataset>> listDatasetsByOrganizationID(String orgId) async {
+    final request = ListDatasetsByOrganizationIDRequest()..organizationId = orgId;
+    final response = await _datasetClient.listDatasetsByOrganizationID(request);
+    return response.datasets;
+  }
+
+  /// Looks up and returns a list of datasets by their IDs.
+  Future<List<Dataset>> listDatasetsByIDs(List<String> ids) async {
+    final request = ListDatasetsByIDsRequest()..ids.addAll(ids);
+    final response = await _datasetClient.listDatasetsByIDs(request);
+    return response.datasets;
   }
 }
 
