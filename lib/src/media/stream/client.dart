@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:logger/logger.dart';
 
-import '../../gen/proto/stream/v1/stream.pbgrpc.dart';
+import '../../gen/stream/v1/stream.pbgrpc.dart';
 import '../../rpc/web_rtc/web_rtc_client.dart';
 
 Logger _logger = Logger();

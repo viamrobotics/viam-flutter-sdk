@@ -12,7 +12,6 @@ buf: buf.yaml buf.gen.yaml
 	rm -rf lib/src/gen
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/viamrobotics/goutils
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/viamrobotics/api
-	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/erdaniels/gostream
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/googleapis/googleapis
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/any.proto
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/duration.proto
