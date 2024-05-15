@@ -11,7 +11,6 @@ import 'package:viam_sdk/protos/app/dataset.dart';
 import 'package:viam_sdk/src/app/data.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
-import 'package:viam_sdk/src/gen/app/dataset/v1/dataset.pbjson.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/src/media/image.dart';
 import 'package:viam_sdk/src/utils.dart';
@@ -77,7 +76,7 @@ void main() {
           ..count = Int64(limit)
           ..last = last));
 
-        final response = await dataClient.tabularDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder);
+        final response = await dataClient.tabularDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder, last: last);
         expect(response.count, equals(Int64(limit)));
         expect(response.last, equals(last));
       });
@@ -91,7 +90,7 @@ void main() {
         final response = await dataClient.tabularDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
         expect(response.last, isEmpty);
-        expect(response.data, isEmpty);
+        expect(response.tabularData, isEmpty);
       });
 
       test('binaryDataByFilter', () async {
@@ -106,7 +105,7 @@ void main() {
           ..count = Int64(limit)
           ..last = last));
 
-        final response = await dataClient.binaryDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder);
+        final response = await dataClient.binaryDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder, last: last);
         expect(response.count, equals(Int64(limit)));
         expect(response.last, equals(last));
       });
@@ -120,7 +119,7 @@ void main() {
         final response = await dataClient.binaryDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
         expect(response.last, isEmpty);
-        expect(response.data, isEmpty);
+        expect(response.binaryData, isEmpty);
       });
 
       test('binaryDataByIds', () async {
