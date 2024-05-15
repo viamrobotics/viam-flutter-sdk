@@ -14,6 +14,7 @@ import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
 
+typedef CloudMetadata = GetCloudMetadataResponse;
 Logger _logger = Logger();
 
 /// The options that define the behavior of the [RobotClient].
@@ -226,5 +227,9 @@ class RobotClient {
   /// Get a WebRTC stream client with the given name
   StreamClient getStream(String name) {
     return _streamManager.getStreamClient(name);
+  }
+
+  Future<CloudMetadata> getCloudMetadata() async {
+    return await _client.getCloudMetadata(GetCloudMetadataRequest());
   }
 }

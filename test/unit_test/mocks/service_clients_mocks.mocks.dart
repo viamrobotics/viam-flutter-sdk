@@ -13,6 +13,8 @@ import 'package:grpc/src/client/method.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart' as _i13;
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart' as _i12;
+import 'package:viam_sdk/src/gen/app/dataset/v1/dataset.pb.dart' as _i24;
+import 'package:viam_sdk/src/gen/app/dataset/v1/dataset.pbgrpc.dart' as _i23;
 import 'package:viam_sdk/src/gen/app/mltraining/v1/ml_training.pb.dart' as _i22;
 import 'package:viam_sdk/src/gen/app/mltraining/v1/ml_training.pbgrpc.dart'
     as _i21;
@@ -4866,6 +4868,281 @@ class MockMLTrainingServiceClient extends _i1.Mock
               ),
             ),
           ) as _i4.ResponseFuture<_i22.DeleteCompletedTrainingJobResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+          this,
+          Invocation.method(
+            #$createCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createUnaryCall,
+          [
+            method,
+            request,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseFuture_2<R>(
+          this,
+          Invocation.method(
+            #$createUnaryCall,
+            [
+              method,
+              request,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #$createStreamingCall,
+          [
+            method,
+            requests,
+          ],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub: _FakeResponseStream_3<R>(
+          this,
+          Invocation.method(
+            #$createStreamingCall,
+            [
+              method,
+              requests,
+            ],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [DatasetServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDatasetServiceClient extends _i1.Mock
+    implements _i23.DatasetServiceClient {
+  @override
+  _i4.ResponseFuture<_i24.CreateDatasetResponse> createDataset(
+    _i24.CreateDatasetRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #createDataset,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i24.CreateDatasetResponse>(
+          this,
+          Invocation.method(
+            #createDataset,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i24.CreateDatasetResponse>(
+          this,
+          Invocation.method(
+            #createDataset,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i24.CreateDatasetResponse>);
+
+  @override
+  _i4.ResponseFuture<_i24.DeleteDatasetResponse> deleteDataset(
+    _i24.DeleteDatasetRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteDataset,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i24.DeleteDatasetResponse>(
+          this,
+          Invocation.method(
+            #deleteDataset,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i24.DeleteDatasetResponse>(
+          this,
+          Invocation.method(
+            #deleteDataset,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i24.DeleteDatasetResponse>);
+
+  @override
+  _i4.ResponseFuture<_i24.RenameDatasetResponse> renameDataset(
+    _i24.RenameDatasetRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #renameDataset,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i24.RenameDatasetResponse>(
+          this,
+          Invocation.method(
+            #renameDataset,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i24.RenameDatasetResponse>(
+          this,
+          Invocation.method(
+            #renameDataset,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i24.RenameDatasetResponse>);
+
+  @override
+  _i4.ResponseFuture<
+      _i24.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID(
+    _i24.ListDatasetsByOrganizationIDRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listDatasetsByOrganizationID,
+          [request],
+          {#options: options},
+        ),
+        returnValue:
+            _FakeResponseFuture_2<_i24.ListDatasetsByOrganizationIDResponse>(
+          this,
+          Invocation.method(
+            #listDatasetsByOrganizationID,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i24.ListDatasetsByOrganizationIDResponse>(
+          this,
+          Invocation.method(
+            #listDatasetsByOrganizationID,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i24.ListDatasetsByOrganizationIDResponse>);
+
+  @override
+  _i4.ResponseFuture<_i24.ListDatasetsByIDsResponse> listDatasetsByIDs(
+    _i24.ListDatasetsByIDsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #listDatasetsByIDs,
+          [request],
+          {#options: options},
+        ),
+        returnValue: _FakeResponseFuture_2<_i24.ListDatasetsByIDsResponse>(
+          this,
+          Invocation.method(
+            #listDatasetsByIDs,
+            [request],
+            {#options: options},
+          ),
+        ),
+        returnValueForMissingStub:
+            _FakeResponseFuture_2<_i24.ListDatasetsByIDsResponse>(
+          this,
+          Invocation.method(
+            #listDatasetsByIDs,
+            [request],
+            {#options: options},
+          ),
+        ),
+      ) as _i4.ResponseFuture<_i24.ListDatasetsByIDsResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
