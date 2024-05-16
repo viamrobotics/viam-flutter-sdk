@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:async/async.dart';
@@ -10,8 +9,8 @@ import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
 import 'package:viam_sdk/src/utils.dart';
 
 import '../gen/app/data/v1/data.pbgrpc.dart';
-import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
 import '../gen/app/dataset/v1/dataset.pbgrpc.dart';
+import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
 
@@ -42,75 +41,26 @@ class DataClient {
     return dataRequest;
   }
 
-  /// Filter and download tabular data
-  /// If a [filter] is not provided, then all data will be returned.
-  /// If a [limit] is provided, the data returned will contain at most that amount data. Otherwise, all data will be returned.
-  Future<TabularDataByFilterResponse> tabularDataByFilter({Filter? filter, int? limit, Order? sortOrder, countOnly = false}) async {
-    if (countOnly) {
-      final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
-      final request = TabularDataByFilterRequest()
-        ..dataRequest = dataRequest
-        ..countOnly = true;
-      return await _dataClient.tabularDataByFilter(request);
-    }
-
-    final finalResponse = TabularDataByFilterResponse();
-    limit ??= 1 << 32; // if no limit, set to max 32bit unsigned int
-
-    while (finalResponse.count < limit) {
-      final dataRequest = _makeDataRequest(filter, min(50, limit), finalResponse.last, sortOrder);
-      final request = TabularDataByFilterRequest()
-        ..dataRequest = dataRequest
-        ..countOnly = false;
-
-      final response = await _dataClient.tabularDataByFilter(request);
-
-      if (response.count == 0) {
-        break;
-      }
-
-      finalResponse.metadata.addAll(response.metadata);
-      finalResponse.data.addAll(response.data);
-      finalResponse.count += response.count;
-      finalResponse.last = response.last;
-    }
-
-    return finalResponse;
+  /// Filter and download tabular data. The data will be paginated into pages of `limit` items, and the last ID will be included in
+  /// the returned response.
+  Future<TabularDataByFilterResponse> tabularDataByFilter(
+      {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
+    final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
+    final request = TabularDataByFilterRequest()
+      ..dataRequest = dataRequest
+      ..countOnly = countOnly;
+    return await _dataClient.tabularDataByFilter(request);
   }
 
-  /// Filter and download binary data
-  /// If a [filter] is not provided, then all data will be returned.
-  /// If a [limit] is provided, the data returned will contain at most that amount data. Otherwise, all data will be returned.
-  Future<BinaryDataByFilterResponse> binaryDataByFilter({Filter? filter, int? limit, Order? sortOrder, countOnly = false}) async {
-    if (countOnly) {
-      final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
-      final request = BinaryDataByFilterRequest()
-        ..dataRequest = dataRequest
-        ..countOnly = true;
-      return await _dataClient.binaryDataByFilter(request);
-    }
-
-    final finalResponse = BinaryDataByFilterResponse();
-    limit ??= 1 << 32; // if no limit, set to max 32bit unsigned int
-
-    while (finalResponse.count < limit) {
-      final dataRequest = _makeDataRequest(filter, min(50, limit), finalResponse.last, sortOrder);
-      final request = BinaryDataByFilterRequest()
-        ..dataRequest = dataRequest
-        ..countOnly = false;
-
-      final response = await _dataClient.binaryDataByFilter(request);
-
-      if (response.count == 0) {
-        break;
-      }
-
-      finalResponse.data.addAll(response.data);
-      finalResponse.count += response.count;
-      finalResponse.last = response.last;
-    }
-
-    return finalResponse;
+  /// Filter and download binary data. The data will be paginated into pages of `limit` items, and the last ID will be included in the
+  /// returned response.
+  Future<BinaryDataByFilterResponse> binaryDataByFilter(
+      {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
+    final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
+    final request = BinaryDataByFilterRequest()
+      ..dataRequest = dataRequest
+      ..countOnly = false;
+    return await _dataClient.binaryDataByFilter(request);
   }
 
   /// Retrieve binary data by IDs
