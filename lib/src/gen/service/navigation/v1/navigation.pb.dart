@@ -862,7 +862,7 @@ class GetObstaclesRequest extends $pb.GeneratedMessage {
 
 class GetObstaclesResponse extends $pb.GeneratedMessage {
   factory GetObstaclesResponse({
-    $core.Iterable<$1.GeoObstacle>? obstacles,
+    $core.Iterable<$1.GeoGeometry>? obstacles,
   }) {
     final $result = create();
     if (obstacles != null) {
@@ -875,7 +875,7 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
   factory GetObstaclesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetObstaclesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
-    ..pc<$1.GeoObstacle>(1, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoObstacle.create)
+    ..pc<$1.GeoGeometry>(1, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoGeometry.create)
     ..hasRequiredFields = false
   ;
 
@@ -902,7 +902,7 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
 
   /// List of all known geometries
   @$pb.TagNumber(1)
-  $core.List<$1.GeoObstacle> get obstacles => $_getList(0);
+  $core.List<$1.GeoGeometry> get obstacles => $_getList(0);
 }
 
 /// A user provided destination and the set of geopoints that

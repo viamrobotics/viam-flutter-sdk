@@ -24,6 +24,7 @@ class FileInfo extends $pb.GeneratedMessage {
   factory FileInfo({
     $core.String? name,
     $fixnum.Int64? size,
+    $core.bool? isDirectory,
   }) {
     final $result = create();
     if (name != null) {
@@ -31,6 +32,9 @@ class FileInfo extends $pb.GeneratedMessage {
     }
     if (size != null) {
       $result.size = size;
+    }
+    if (isDirectory != null) {
+      $result.isDirectory = isDirectory;
     }
     return $result;
   }
@@ -41,6 +45,7 @@ class FileInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FileInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.packages.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'size', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOB(3, _omitFieldNames ? '' : 'isDirectory')
     ..hasRequiredFields = false
   ;
 
@@ -82,6 +87,15 @@ class FileInfo extends $pb.GeneratedMessage {
   $core.bool hasSize() => $_has(1);
   @$pb.TagNumber(2)
   void clearSize() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isDirectory => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isDirectory($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIsDirectory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsDirectory() => clearField(3);
 }
 
 class PackageInfo extends $pb.GeneratedMessage {

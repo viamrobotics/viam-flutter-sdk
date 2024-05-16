@@ -602,8 +602,9 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
     $core.double? heading,
     $1.ResourceName? componentName,
     $1.ResourceName? movementSensorName,
-    $core.Iterable<$1.GeoObstacle>? obstacles,
+    $core.Iterable<$1.GeoGeometry>? obstacles,
     MotionConfiguration? motionConfiguration,
+    $core.Iterable<$1.GeoGeometry>? boundingRegions,
     $2.Struct? extra,
   }) {
     final $result = create();
@@ -628,6 +629,9 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
     if (motionConfiguration != null) {
       $result.motionConfiguration = motionConfiguration;
     }
+    if (boundingRegions != null) {
+      $result.boundingRegions.addAll(boundingRegions);
+    }
     if (extra != null) {
       $result.extra = extra;
     }
@@ -643,8 +647,9 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(3, _omitFieldNames ? '' : 'heading', $pb.PbFieldType.OD)
     ..aOM<$1.ResourceName>(4, _omitFieldNames ? '' : 'componentName', subBuilder: $1.ResourceName.create)
     ..aOM<$1.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorName', subBuilder: $1.ResourceName.create)
-    ..pc<$1.GeoObstacle>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoObstacle.create)
+    ..pc<$1.GeoGeometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $1.GeoGeometry.create)
     ..aOM<MotionConfiguration>(7, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
+    ..pc<$1.GeoGeometry>(8, _omitFieldNames ? '' : 'boundingRegions', $pb.PbFieldType.PM, subBuilder: $1.GeoGeometry.create)
     ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -728,7 +733,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
-  $core.List<$1.GeoObstacle> get obstacles => $_getList(5);
+  $core.List<$1.GeoGeometry> get obstacles => $_getList(5);
 
   /// Optional set of motion configuration options
   @$pb.TagNumber(7)
@@ -742,17 +747,21 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   MotionConfiguration ensureMotionConfiguration() => $_ensure(6);
 
+  /// Set of obstacles which the robot must remain within while navigating
+  @$pb.TagNumber(8)
+  $core.List<$1.GeoGeometry> get boundingRegions => $_getList(7);
+
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(7);
+  $2.Struct get extra => $_getN(8);
   @$pb.TagNumber(99)
   set extra($2.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(7);
+  $core.bool hasExtra() => $_has(8);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(7);
+  $2.Struct ensureExtra() => $_ensure(8);
 }
 
 class MoveOnGlobeResponse extends $pb.GeneratedMessage {
