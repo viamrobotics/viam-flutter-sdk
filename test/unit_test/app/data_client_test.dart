@@ -90,7 +90,7 @@ void main() {
         final response = await dataClient.tabularDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
         expect(response.last, isEmpty);
-        expect(response.tabularData, isEmpty);
+        expect(response.data, isEmpty);
       });
 
       test('binaryDataByFilter', () async {
@@ -119,7 +119,7 @@ void main() {
         final response = await dataClient.binaryDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
         expect(response.last, isEmpty);
-        expect(response.binaryData, isEmpty);
+        expect(response.data, isEmpty);
       });
 
       test('binaryDataByIds', () async {

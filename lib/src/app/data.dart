@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:async/async.dart';
@@ -16,17 +15,6 @@ import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
 
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
-
-/// A data response from the `tabularDataByFilter` and `binaryDataByFilter` methods that includes the data, the count, and the last returned
-/// ID.
-class DataResponse {
-  final List<TabularData>? tabularData;
-  final List<BinaryData>? binaryData;
-  final Int64 count;
-  final String last;
-
-  DataResponse(this.tabularData, this.binaryData, this.count, this.last);
-}
 
 /// gRPC client used for retrieving, uploading, and modifying stored data from app.viam.com.
 ///
@@ -53,48 +41,26 @@ class DataClient {
     return dataRequest;
   }
 
-  /// Filter and download tabular data. The data will be paginated into pages of `limit` items, and the pagination ID will be included in
+  /// Filter and download tabular data. The data will be paginated into pages of `limit` items, and the last ID will be included in
   /// the returned response.
-  Future<DataResponse> tabularDataByFilter({Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
-    if (countOnly) {
-      final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
-      final request = TabularDataByFilterRequest()
-        ..dataRequest = dataRequest
-        ..countOnly = true;
-      final response = await _dataClient.tabularDataByFilter(request);
-      return DataResponse(response.data, null, response.count, response.last);
-    }
-
-    limit ??= 1 << 32; // if no limit, set to max 32bit unsigned int
-
+  Future<TabularDataByFilterResponse> tabularDataByFilter(
+      {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
     final request = TabularDataByFilterRequest()
       ..dataRequest = dataRequest
-      ..countOnly = false;
-    final response = await _dataClient.tabularDataByFilter(request);
-    return DataResponse(response.data, null, response.count, response.last);
+      ..countOnly = countOnly;
+    return await _dataClient.tabularDataByFilter(request);
   }
 
-  /// Filter and download binary data. The data will be paginated into pages of `limit` items, and the pagination ID will be included in the
+  /// Filter and download binary data. The data will be paginated into pages of `limit` items, and the last ID will be included in the
   /// returned response.
-  Future<DataResponse> binaryDataByFilter({Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
-    if (countOnly) {
-      final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
-      final request = BinaryDataByFilterRequest()
-        ..dataRequest = dataRequest
-        ..countOnly = true;
-      final response = await _dataClient.binaryDataByFilter(request);
-      return DataResponse(null, response.data, response.count, response.last);
-    }
-
-    limit ??= 1 << 32; // if no limit, set to max 32bit unsigned int
-
-    final dataRequest = _makeDataRequest(filter, min(50, limit), last, sortOrder);
+  Future<BinaryDataByFilterResponse> binaryDataByFilter(
+      {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
+    final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
     final request = BinaryDataByFilterRequest()
       ..dataRequest = dataRequest
       ..countOnly = false;
-    final response = await _dataClient.binaryDataByFilter(request);
-    return DataResponse(null, response.data, response.count, response.last);
+    return await _dataClient.binaryDataByFilter(request);
   }
 
   /// Retrieve binary data by IDs
