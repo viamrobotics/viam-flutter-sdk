@@ -7,6 +7,7 @@ import '../../robot/client.dart';
 
 /// Tick of a digital interrupt
 typedef Tick = StreamTicksResponse;
+typedef AnalogValue = ReadAnalogReaderResponse;
 
 /// Board represents a physical general purpose compute board that contains various
 /// components such as analog readers, and digital interrupts.
@@ -32,7 +33,7 @@ abstract class Board extends Resource {
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});
 
   /// Read the current value of an analog reader of a board.
-  Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra});
+  Future<AnalogValue> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra});
 
   /// Return the current value of the interrupt which is based on the type of Interrupt.
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
