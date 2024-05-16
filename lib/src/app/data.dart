@@ -17,6 +17,8 @@ import '../media/image.dart';
 
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
+/// A data response from the `tabularDataByFilter` and `binaryDataByFilter` methods that includes the data, the count, and the last returned
+/// ID.
 class DataResponse {
   final List<TabularData>? tabularData;
   final List<BinaryData>? binaryData;
@@ -52,7 +54,7 @@ class DataClient {
   }
 
   /// Filter and download tabular data. The data will be paginated into pages of `limit` items, and the pagination ID will be included in
-  /// the returned tuple.
+  /// the returned response.
   Future<DataResponse> tabularDataByFilter({Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
     if (countOnly) {
       final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
@@ -74,7 +76,7 @@ class DataClient {
   }
 
   /// Filter and download binary data. The data will be paginated into pages of `limit` items, and the pagination ID will be included in the
-  /// returned tuple.
+  /// returned response.
   Future<DataResponse> binaryDataByFilter({Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
     if (countOnly) {
       final dataRequest = _makeDataRequest(filter, null, null, sortOrder);
