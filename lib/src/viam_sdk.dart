@@ -1,4 +1,5 @@
 import './app/app.dart';
+import './app/billing.dart';
 import './app/data.dart';
 import './app/provisioning.dart';
 import './gen/app/v1/app.pbgrpc.dart';
@@ -18,6 +19,9 @@ abstract class Viam {
 
   /// A client to communicate with Viam's app service
   AppClient get appClient;
+
+  /// A client to communicate with Viam's billing services
+  BillingClient get billingClient;
 
   /// A client to communicate with Viam's data and data sync services
   DataClient get dataClient;

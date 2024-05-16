@@ -4,9 +4,11 @@ import 'package:viam_sdk/protos/app/data_sync.dart';
 import 'package:viam_sdk/protos/app/dataset.dart';
 
 import '../protos/app/app.dart';
+import '../protos/app/billing.dart';
 import '../protos/app/data.dart';
 import '../protos/provisioning/provisioning.dart';
 import './app/app.dart';
+import './app/billing.dart';
 import './app/data.dart';
 import './app/provisioning.dart';
 import './robot/client.dart';
@@ -16,11 +18,13 @@ import './viam_sdk.dart';
 class ViamImpl implements Viam {
   final ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
+  late BillingClient _billingClient;
   late DataClient _dataClient;
   late ProvisioningClient _provisioningClient;
 
   ViamImpl._withChannel(this._clientChannelBase) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
+    _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
         DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
     _provisioningClient = ProvisioningClient(ProvisioningServiceClient(ClientChannel('provisioning.viam', port: 4772)));
@@ -29,6 +33,7 @@ class ViamImpl implements Viam {
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
       : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
+    _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
         DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
 
@@ -59,6 +64,11 @@ class ViamImpl implements Viam {
   }
 
   @override
+  BillingClient get billingClient {
+    return _billingClient;
+  }
+
+  @override
   DataClient get dataClient {
     return _dataClient;
   }
@@ -72,7 +82,7 @@ class ViamImpl implements Viam {
   Future<RobotClient> getRobotClient(Robot robot) async {
     final location = await appClient.getLocation(robot.location);
     final secret = location.auth.secrets.firstWhere((element) => element.state == SharedSecret_State.STATE_ENABLED);
-    final parts = await appClient.listRobotParts(robot);
+    final parts = await appClient.listRobotParts(robot.id);
     final part = parts.firstWhere((element) => element.mainPart);
     return RobotClient.atAddress(part.fqdn, RobotClientOptions.withLocationSecret(secret.secret));
   }
