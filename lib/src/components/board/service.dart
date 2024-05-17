@@ -61,8 +61,8 @@ class BoardService extends BoardServiceBase {
   @override
   Future<ReadAnalogReaderResponse> readAnalogReader(ServiceCall call, ReadAnalogReaderRequest request) async {
     final board = _fromManager(request.boardName);
-    final value = await board.analogReaderValue(request.analogReaderName, extra: request.extra.toMap());
-    return ReadAnalogReaderResponse()..value = value;
+    final result = await board.analogReaderValue(request.analogReaderName, extra: request.extra.toMap());
+    return result;
   }
 
   @override

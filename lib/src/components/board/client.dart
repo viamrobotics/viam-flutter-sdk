@@ -95,13 +95,13 @@ class BoardClient extends Board implements ResourceRPCClient {
   }
 
   @override
-  Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
+  Future<AnalogValue> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
     final request = ReadAnalogReaderRequest()
       ..boardName = name
       ..analogReaderName = analogReaderName
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.readAnalogReader(request);
-    return response.value;
+    return response;
   }
 
   @override

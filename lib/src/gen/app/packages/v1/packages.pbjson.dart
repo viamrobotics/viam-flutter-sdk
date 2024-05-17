@@ -39,12 +39,17 @@ const FileInfo$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'size', '3': 2, '4': 1, '5': 4, '10': 'size'},
+    {'1': 'is_directory', '3': 3, '4': 1, '5': 8, '9': 0, '10': 'isDirectory', '17': true},
+  ],
+  '8': [
+    {'1': '_is_directory'},
   ],
 };
 
 /// Descriptor for `FileInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fileInfoDescriptor = $convert.base64Decode(
-    'CghGaWxlSW5mbxISCgRuYW1lGAEgASgJUgRuYW1lEhIKBHNpemUYAiABKARSBHNpemU=');
+    'CghGaWxlSW5mbxISCgRuYW1lGAEgASgJUgRuYW1lEhIKBHNpemUYAiABKARSBHNpemUSJgoMaX'
+    'NfZGlyZWN0b3J5GAMgASgISABSC2lzRGlyZWN0b3J5iAEBQg8KDV9pc19kaXJlY3Rvcnk=');
 
 @$core.Deprecated('Use packageInfoDescriptor instead')
 const PackageInfo$json = {

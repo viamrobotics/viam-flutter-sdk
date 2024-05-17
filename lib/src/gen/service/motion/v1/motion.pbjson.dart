@@ -168,8 +168,9 @@ const MoveOnGlobeRequest$json = {
     {'1': 'heading', '3': 3, '4': 1, '5': 1, '9': 0, '10': 'heading', '17': true},
     {'1': 'component_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
     {'1': 'movement_sensor_name', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'movementSensorName'},
-    {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.GeoObstacle', '10': 'obstacles'},
+    {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.GeoGeometry', '10': 'obstacles'},
     {'1': 'motion_configuration', '3': 7, '4': 1, '5': 11, '6': '.viam.service.motion.v1.MotionConfiguration', '9': 1, '10': 'motionConfiguration', '17': true},
+    {'1': 'bounding_regions', '3': 8, '4': 3, '5': 11, '6': '.viam.common.v1.GeoGeometry', '10': 'boundingRegions'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': [
@@ -185,11 +186,12 @@ final $typed_data.Uint8List moveOnGlobeRequestDescriptor = $convert.base64Decode
     'GAMgASgBSABSB2hlYWRpbmeIAQESQwoOY29tcG9uZW50X25hbWUYBCABKAsyHC52aWFtLmNvbW'
     '1vbi52MS5SZXNvdXJjZU5hbWVSDWNvbXBvbmVudE5hbWUSTgoUbW92ZW1lbnRfc2Vuc29yX25h'
     'bWUYBSABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVSEm1vdmVtZW50U2Vuc29yTm'
-    'FtZRI5CglvYnN0YWNsZXMYBiADKAsyGy52aWFtLmNvbW1vbi52MS5HZW9PYnN0YWNsZVIJb2Jz'
+    'FtZRI5CglvYnN0YWNsZXMYBiADKAsyGy52aWFtLmNvbW1vbi52MS5HZW9HZW9tZXRyeVIJb2Jz'
     'dGFjbGVzEmMKFG1vdGlvbl9jb25maWd1cmF0aW9uGAcgASgLMisudmlhbS5zZXJ2aWNlLm1vdG'
-    'lvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSAFSE21vdGlvbkNvbmZpZ3VyYXRpb26IAQESLQoF'
-    'ZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYUIKCghfaGVhZGluZ0'
-    'IXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
+    'lvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSAFSE21vdGlvbkNvbmZpZ3VyYXRpb26IAQESRgoQ'
+    'Ym91bmRpbmdfcmVnaW9ucxgIIAMoCzIbLnZpYW0uY29tbW9uLnYxLkdlb0dlb21ldHJ5Ug9ib3'
+    'VuZGluZ1JlZ2lvbnMSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVl'
+    'eHRyYUIKCghfaGVhZGluZ0IXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
 
 @$core.Deprecated('Use moveOnGlobeResponseDescriptor instead')
 const MoveOnGlobeResponse$json = {

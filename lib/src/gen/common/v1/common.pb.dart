@@ -999,10 +999,9 @@ class GeoPoint extends $pb.GeneratedMessage {
   void clearLongitude() => clearField(2);
 }
 
-/// GeoObstacle contains information about the geometric structure of an obstacle and the location of the obstacle,
-/// captured in latitude and longitude.
-class GeoObstacle extends $pb.GeneratedMessage {
-  factory GeoObstacle({
+/// GeoGeometry contains information describing Geometry(s) that is located at a GeoPoint
+class GeoGeometry extends $pb.GeneratedMessage {
+  factory GeoGeometry({
     GeoPoint? location,
     $core.Iterable<Geometry>? geometries,
   }) {
@@ -1015,11 +1014,11 @@ class GeoObstacle extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GeoObstacle._() : super();
-  factory GeoObstacle.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GeoObstacle.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GeoGeometry._() : super();
+  factory GeoGeometry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GeoGeometry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GeoObstacle', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GeoGeometry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOM<GeoPoint>(1, _omitFieldNames ? '' : 'location', subBuilder: GeoPoint.create)
     ..pc<Geometry>(2, _omitFieldNames ? '' : 'geometries', $pb.PbFieldType.PM, subBuilder: Geometry.create)
     ..hasRequiredFields = false
@@ -1029,24 +1028,24 @@ class GeoObstacle extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GeoObstacle clone() => GeoObstacle()..mergeFromMessage(this);
+  GeoGeometry clone() => GeoGeometry()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GeoObstacle copyWith(void Function(GeoObstacle) updates) => super.copyWith((message) => updates(message as GeoObstacle)) as GeoObstacle;
+  GeoGeometry copyWith(void Function(GeoGeometry) updates) => super.copyWith((message) => updates(message as GeoGeometry)) as GeoGeometry;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GeoObstacle create() => GeoObstacle._();
-  GeoObstacle createEmptyInstance() => create();
-  static $pb.PbList<GeoObstacle> createRepeated() => $pb.PbList<GeoObstacle>();
+  static GeoGeometry create() => GeoGeometry._();
+  GeoGeometry createEmptyInstance() => create();
+  static $pb.PbList<GeoGeometry> createRepeated() => $pb.PbList<GeoGeometry>();
   @$core.pragma('dart2js:noInline')
-  static GeoObstacle getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeoObstacle>(create);
-  static GeoObstacle? _defaultInstance;
+  static GeoGeometry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GeoGeometry>(create);
+  static GeoGeometry? _defaultInstance;
 
-  /// Location of the obstacle
+  /// Location of the geometry
   @$pb.TagNumber(1)
   GeoPoint get location => $_getN(0);
   @$pb.TagNumber(1)
@@ -1058,7 +1057,7 @@ class GeoObstacle extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   GeoPoint ensureLocation() => $_ensure(0);
 
-  /// Geometries that describe the obstacle, where embedded Pose data is with respect to the specified location
+  /// Geometries associated with the location, where embedded Pose data is with respect to the specified location
   @$pb.TagNumber(2)
   $core.List<Geometry> get geometries => $_getList(1);
 }
@@ -1202,7 +1201,8 @@ class WorldState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.List<GeometriesInFrame> get obstacles => $_getList(0);
 
-  /// a list of Transforms, optionally with geometries. Used as supplemental transforms to transform a pose from one reference frame to another, or to attach moving geometries to the frame system. This field is optional
+  /// a list of Transforms, optionally with geometries. Used as supplemental transforms to transform a pose from one reference frame to
+  /// another, or to attach moving geometries to the frame system. This field is optional
   @$pb.TagNumber(3)
   $core.List<Transform> get transforms => $_getList(1);
 }
