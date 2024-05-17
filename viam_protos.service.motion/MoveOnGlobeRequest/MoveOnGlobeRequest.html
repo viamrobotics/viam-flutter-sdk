@@ -67,8 +67,9 @@
 <li><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span></li>
 <li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
 <li><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorName</span>, </span></li>
-<li><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/GeoObstacle-class.html">GeoObstacle</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span></li>
+<li><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span></li>
 <li><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span></li>
+<li><span class="parameter" id="-param-boundingRegions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">boundingRegions</span>, </span></li>
 <li><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>}</span></li>
 </ol>)
     </section>
@@ -85,8 +86,9 @@
   $core.double? heading,
   $1.ResourceName? componentName,
   $1.ResourceName? movementSensorName,
-  $core.Iterable&lt;$1.GeoObstacle&gt;? obstacles,
+  $core.Iterable&lt;$1.GeoGeometry&gt;? obstacles,
   MotionConfiguration? motionConfiguration,
+  $core.Iterable&lt;$1.GeoGeometry&gt;? boundingRegions,
   $2.Struct? extra,
 }) {
   final $result = create();
@@ -110,6 +112,9 @@
   }
   if (motionConfiguration != null) {
     $result.motionConfiguration = motionConfiguration;
+  }
+  if (boundingRegions != null) {
+    $result.boundingRegions.addAll(boundingRegions);
   }
   if (extra != null) {
     $result.extra = extra;

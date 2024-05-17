@@ -117,6 +117,14 @@
   DoCommandResponse represents a generic DoCommand output
 </dd>
 
+          <dt id="GeoGeometry">
+  <span class="name "><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span> 
+
+</dt>
+<dd>
+  GeoGeometry contains information describing Geometry(s) that is located at a GeoPoint
+</dd>
+
           <dt id="GeometriesInFrame">
   <span class="name "><a href="../viam_protos.common.common/GeometriesInFrame-class.html">GeometriesInFrame</a></span> 
 
@@ -132,15 +140,6 @@ observed.
 </dt>
 <dd>
   Geometry contains the dimensions of a given geometry and the pose of its center. The geometry is one of either a sphere or a box.
-</dd>
-
-          <dt id="GeoObstacle">
-  <span class="name "><a href="../viam_protos.common.common/GeoObstacle-class.html">GeoObstacle</a></span> 
-
-</dt>
-<dd>
-  GeoObstacle contains information about the geometric structure of an obstacle and the location of the obstacle,
-captured in latitude and longitude.
 </dd>
 
           <dt id="GeoPoint">
@@ -389,6 +388,18 @@ given reference frame and a new target reference frame.
 
 </dd>
 
+          <dt id="GeoGeometry$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GeoGeometry$json-constant.html">GeoGeometry$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="GeometriesInFrame$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GeometriesInFrame$json-constant.html">GeometriesInFrame$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -403,18 +414,6 @@ given reference frame and a new target reference frame.
 
           <dt id="Geometry$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/Geometry$json-constant.html">Geometry$json</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  
-  
-
-</dd>
-
-          <dt id="GeoObstacle$json" class="constant">
-    <span class="name deprecated"><a class="deprecated" href="../viam_protos.common.common/GeoObstacle$json-constant.html">GeoObstacle$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
   
 
@@ -732,6 +731,18 @@ given reference frame and a new target reference frame.
 
 </dd>
 
+          <dt id="geoGeometryDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.common.common/geoGeometryDescriptor.html">geoGeometryDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>GeoGeometry</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="geometriesInFrameDescriptor" class="property">
   <span class="name"><a href="../viam_protos.common.common/geometriesInFrameDescriptor.html">geometriesInFrameDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -752,18 +763,6 @@ given reference frame and a new target reference frame.
 </dt>
 <dd>
   Descriptor for <code>Geometry</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-          <dt id="geoObstacleDescriptor" class="property">
-  <span class="name"><a href="../viam_protos.common.common/geoObstacleDescriptor.html">geoObstacleDescriptor</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
-  
-
-</dt>
-<dd>
-  Descriptor for <code>GeoObstacle</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

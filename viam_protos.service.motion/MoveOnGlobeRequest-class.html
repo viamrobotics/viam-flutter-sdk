@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="MoveOnGlobeRequest" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/MoveOnGlobeRequest.html">MoveOnGlobeRequest</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorName</span>, </span><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoObstacle-class.html">GeoObstacle</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>}</span>)</span>
+          <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/MoveOnGlobeRequest.html">MoveOnGlobeRequest</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorName</span>, </span><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span><span class="parameter" id="-param-boundingRegions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">boundingRegions</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -124,6 +124,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="boundingRegions" class="property">
+  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/boundingRegions.html">boundingRegions</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Set of obstacles which the robot must remain within while navigating
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
         <dt id="componentName" class="property">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/componentName.html">componentName</a></span>
   <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
@@ -259,7 +271,7 @@ to protobuf fields.
 
         <dt id="obstacles" class="property">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/obstacles.html">obstacles</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoObstacle-class.html">GeoObstacle</a></span>&gt;</span></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span></span>
   
 
 </dt>
