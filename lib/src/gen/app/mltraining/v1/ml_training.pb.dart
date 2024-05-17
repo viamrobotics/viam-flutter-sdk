@@ -190,6 +190,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     $core.String? organizationId,
     $core.String? modelName,
     $core.String? modelVersion,
+    $core.String? registryItemVersion,
   }) {
     final $result = create();
     if (datasetId != null) {
@@ -207,6 +208,9 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     if (modelVersion != null) {
       $result.modelVersion = modelVersion;
     }
+    if (registryItemVersion != null) {
+      $result.registryItemVersion = registryItemVersion;
+    }
     return $result;
   }
   SubmitCustomTrainingJobRequest._() : super();
@@ -219,6 +223,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'organizationId')
     ..aOS(4, _omitFieldNames ? '' : 'modelName')
     ..aOS(5, _omitFieldNames ? '' : 'modelVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'registryItemVersion')
     ..hasRequiredFields = false
   ;
 
@@ -287,6 +292,15 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
   $core.bool hasModelVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearModelVersion() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get registryItemVersion => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set registryItemVersion($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRegistryItemVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRegistryItemVersion() => clearField(6);
 }
 
 class SubmitCustomTrainingJobResponse extends $pb.GeneratedMessage {
@@ -569,6 +583,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ModelFramework? modelFramework,
     $core.bool? isCustomJob,
     $core.String? registryItemId,
+    $core.String? registryItemVersion,
   }) {
     final $result = create();
     if (request != null) {
@@ -625,6 +640,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (registryItemId != null) {
       $result.registryItemId = registryItemId;
     }
+    if (registryItemVersion != null) {
+      $result.registryItemVersion = registryItemVersion;
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -650,6 +668,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..e<ModelFramework>(17, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: ModelFramework.valueOf, enumValues: ModelFramework.values)
     ..aOB(18, _omitFieldNames ? '' : 'isCustomJob')
     ..aOS(19, _omitFieldNames ? '' : 'registryItemId')
+    ..aOS(20, _omitFieldNames ? '' : 'registryItemVersion')
     ..hasRequiredFields = false
   ;
 
@@ -841,6 +860,15 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   $core.bool hasRegistryItemId() => $_has(17);
   @$pb.TagNumber(19)
   void clearRegistryItemId() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get registryItemVersion => $_getSZ(18);
+  @$pb.TagNumber(20)
+  set registryItemVersion($core.String v) { $_setString(18, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasRegistryItemVersion() => $_has(18);
+  @$pb.TagNumber(20)
+  void clearRegistryItemVersion() => clearField(20);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {

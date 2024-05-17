@@ -118,6 +118,7 @@ const SubmitCustomTrainingJobRequest$json = {
   '2': [
     {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'datasetId'},
     {'1': 'registry_item_id', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'registryItemId'},
+    {'1': 'registry_item_version', '3': 6, '4': 1, '5': 9, '8': {}, '10': 'registryItemVersion'},
     {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'organizationId'},
     {'1': 'model_name', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
     {'1': 'model_version', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
@@ -129,12 +130,14 @@ final $typed_data.Uint8List submitCustomTrainingJobRequestDescriptor = $convert.
     'Ch5TdWJtaXRDdXN0b21UcmFpbmluZ0pvYlJlcXVlc3QSRwoKZGF0YXNldF9pZBgBIAEoCUIomo'
     'SeAyNic29uOiJkYXRhc2V0X2lkIiBqc29uOiJkYXRhc2V0X2lkIlIJZGF0YXNldElkEl4KEHJl'
     'Z2lzdHJ5X2l0ZW1faWQYAiABKAlCNJqEngMvYnNvbjoicmVnaXN0cnlfaXRlbV9pZCIganNvbj'
-    'oicmVnaXN0cnlfaXRlbV9pZCJSDnJlZ2lzdHJ5SXRlbUlkElsKD29yZ2FuaXphdGlvbl9pZBgD'
-    'IAEoCUIymoSeAy1ic29uOiJvcmdhbml6YXRpb25faWQiIGpzb246Im9yZ2FuaXphdGlvbl9pZC'
-    'JSDm9yZ2FuaXphdGlvbklkEkcKCm1vZGVsX25hbWUYBCABKAlCKJqEngMjYnNvbjoibW9kZWxf'
-    'bmFtZSIganNvbjoibW9kZWxfbmFtZSJSCW1vZGVsTmFtZRJTCg1tb2RlbF92ZXJzaW9uGAUgAS'
-    'gJQi6ahJ4DKWJzb246Im1vZGVsX3ZlcnNpb24iIGpzb246Im1vZGVsX3ZlcnNpb24iUgxtb2Rl'
-    'bFZlcnNpb24=');
+    'oicmVnaXN0cnlfaXRlbV9pZCJSDnJlZ2lzdHJ5SXRlbUlkEnIKFXJlZ2lzdHJ5X2l0ZW1fdmVy'
+    'c2lvbhgGIAEoCUI+moSeAzlic29uOiJyZWdpc3RyeV9pdGVtX3ZlcnNpb24iIGpzb246InJlZ2'
+    'lzdHJ5X2l0ZW1fdmVyc2lvbiJSE3JlZ2lzdHJ5SXRlbVZlcnNpb24SWwoPb3JnYW5pemF0aW9u'
+    'X2lkGAMgASgJQjKahJ4DLWJzb246Im9yZ2FuaXphdGlvbl9pZCIganNvbjoib3JnYW5pemF0aW'
+    '9uX2lkIlIOb3JnYW5pemF0aW9uSWQSRwoKbW9kZWxfbmFtZRgEIAEoCUIomoSeAyNic29uOiJt'
+    'b2RlbF9uYW1lIiBqc29uOiJtb2RlbF9uYW1lIlIJbW9kZWxOYW1lElMKDW1vZGVsX3ZlcnNpb2'
+    '4YBSABKAlCLpqEngMpYnNvbjoibW9kZWxfdmVyc2lvbiIganNvbjoibW9kZWxfdmVyc2lvbiJS'
+    'DG1vZGVsVmVyc2lvbg==');
 
 @$core.Deprecated('Use submitCustomTrainingJobResponseDescriptor instead')
 const SubmitCustomTrainingJobResponse$json = {
@@ -215,6 +218,7 @@ const TrainingJobMetadata$json = {
     {'1': 'model_framework', '3': 17, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '8': {}, '10': 'modelFramework'},
     {'1': 'is_custom_job', '3': 18, '4': 1, '5': 8, '8': {}, '10': 'isCustomJob'},
     {'1': 'registry_item_id', '3': 19, '4': 1, '5': 9, '8': {}, '10': 'registryItemId'},
+    {'1': 'registry_item_version', '3': 20, '4': 1, '5': 9, '8': {}, '10': 'registryItemVersion'},
     {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.TrainingStatus', '8': {}, '10': 'status'},
     {'1': 'error_status', '3': 8, '4': 1, '5': 11, '6': '.google.rpc.Status', '8': {}, '10': 'errorStatus'},
     {'1': 'created_on', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdOn'},
@@ -248,22 +252,24 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     '9kZWxfZnJhbWV3b3JrIlIObW9kZWxGcmFtZXdvcmsSUgoNaXNfY3VzdG9tX2pvYhgSIAEoCEIu'
     'moSeAylic29uOiJpc19jdXN0b21fam9iIiBqc29uOiJpc19jdXN0b21fam9iIlILaXNDdXN0b2'
     '1Kb2ISXgoQcmVnaXN0cnlfaXRlbV9pZBgTIAEoCUI0moSeAy9ic29uOiJyZWdpc3RyeV9pdGVt'
-    'X2lkIiBqc29uOiJyZWdpc3RyeV9pdGVtX2lkIlIOcmVnaXN0cnlJdGVtSWQSYAoGc3RhdHVzGA'
-    'IgASgOMiYudmlhbS5hcHAubWx0cmFpbmluZy52MS5UcmFpbmluZ1N0YXR1c0IgmoSeAxtic29u'
-    'OiJzdGF0dXMiIGpzb246InN0YXR1cyJSBnN0YXR1cxJjCgxlcnJvcl9zdGF0dXMYCCABKAsyEi'
-    '5nb29nbGUucnBjLlN0YXR1c0IsmoSeAydic29uOiJlcnJvcl9zdGF0dXMiIGpzb246ImVycm9y'
-    'X3N0YXR1cyJSC2Vycm9yU3RhdHVzEmMKCmNyZWF0ZWRfb24YAyABKAsyGi5nb29nbGUucHJvdG'
-    '9idWYuVGltZXN0YW1wQiiahJ4DI2Jzb246ImNyZWF0ZWRfb24iIGpzb246ImNyZWF0ZWRfb24i'
-    'UgljcmVhdGVkT24SbwoNbGFzdF9tb2RpZmllZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
-    '1lc3RhbXBCLpqEngMpYnNvbjoibGFzdF9tb2RpZmllZCIganNvbjoibGFzdF9tb2RpZmllZCJS'
-    'DGxhc3RNb2RpZmllZBJ7ChB0cmFpbmluZ19zdGFydGVkGAkgASgLMhouZ29vZ2xlLnByb3RvYn'
-    'VmLlRpbWVzdGFtcEI0moSeAy9ic29uOiJ0cmFpbmluZ19zdGFydGVkIiBqc29uOiJ0cmFpbmlu'
-    'Z19zdGFydGVkIlIPdHJhaW5pbmdTdGFydGVkEnMKDnRyYWluaW5nX2VuZGVkGAogASgLMhouZ2'
-    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIwmoSeAytic29uOiJ0cmFpbmluZ19lbmRlZCIganNv'
-    'bjoidHJhaW5pbmdfZW5kZWQiUg10cmFpbmluZ0VuZGVkEloKD3N5bmNlZF9tb2RlbF9pZBgFIA'
-    'EoCUIymoSeAy1ic29uOiJzeW5jZWRfbW9kZWxfaWQiIGpzb246InN5bmNlZF9tb2RlbF9pZCJS'
-    'DXN5bmNlZE1vZGVsSWQSMAoEdGFncxgQIAMoCUIcmoSeAxdic29uOiJ0YWdzIiBqc29uOiJ0YW'
-    'dzIlIEdGFnc0oECAYQB1IKdXNlcl9lbWFpbA==');
+    'X2lkIiBqc29uOiJyZWdpc3RyeV9pdGVtX2lkIlIOcmVnaXN0cnlJdGVtSWQScgoVcmVnaXN0cn'
+    'lfaXRlbV92ZXJzaW9uGBQgASgJQj6ahJ4DOWJzb246InJlZ2lzdHJ5X2l0ZW1fdmVyc2lvbiIg'
+    'anNvbjoicmVnaXN0cnlfaXRlbV92ZXJzaW9uIlITcmVnaXN0cnlJdGVtVmVyc2lvbhJgCgZzdG'
+    'F0dXMYAiABKA4yJi52aWFtLmFwcC5tbHRyYWluaW5nLnYxLlRyYWluaW5nU3RhdHVzQiCahJ4D'
+    'G2Jzb246InN0YXR1cyIganNvbjoic3RhdHVzIlIGc3RhdHVzEmMKDGVycm9yX3N0YXR1cxgIIA'
+    'EoCzISLmdvb2dsZS5ycGMuU3RhdHVzQiyahJ4DJ2Jzb246ImVycm9yX3N0YXR1cyIganNvbjoi'
+    'ZXJyb3Jfc3RhdHVzIlILZXJyb3JTdGF0dXMSYwoKY3JlYXRlZF9vbhgDIAEoCzIaLmdvb2dsZS'
+    '5wcm90b2J1Zi5UaW1lc3RhbXBCKJqEngMjYnNvbjoiY3JlYXRlZF9vbiIganNvbjoiY3JlYXRl'
+    'ZF9vbiJSCWNyZWF0ZWRPbhJvCg1sYXN0X21vZGlmaWVkGAQgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcEIumoSeAylic29uOiJsYXN0X21vZGlmaWVkIiBqc29uOiJsYXN0X21vZGlm'
+    'aWVkIlIMbGFzdE1vZGlmaWVkEnsKEHRyYWluaW5nX3N0YXJ0ZWQYCSABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuVGltZXN0YW1wQjSahJ4DL2Jzb246InRyYWluaW5nX3N0YXJ0ZWQiIGpzb246InRy'
+    'YWluaW5nX3N0YXJ0ZWQiUg90cmFpbmluZ1N0YXJ0ZWQScwoOdHJhaW5pbmdfZW5kZWQYCiABKA'
+    'syGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQjCahJ4DK2Jzb246InRyYWluaW5nX2VuZGVk'
+    'IiBqc29uOiJ0cmFpbmluZ19lbmRlZCJSDXRyYWluaW5nRW5kZWQSWgoPc3luY2VkX21vZGVsX2'
+    'lkGAUgASgJQjKahJ4DLWJzb246InN5bmNlZF9tb2RlbF9pZCIganNvbjoic3luY2VkX21vZGVs'
+    'X2lkIlINc3luY2VkTW9kZWxJZBIwCgR0YWdzGBAgAygJQhyahJ4DF2Jzb246InRhZ3MiIGpzb2'
+    '46InRhZ3MiUgR0YWdzSgQIBhAHUgp1c2VyX2VtYWls');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {
