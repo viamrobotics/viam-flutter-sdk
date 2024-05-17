@@ -79,7 +79,8 @@
 <li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>, </span></li>
 <li><span class="parameter" id="-param-modelFramework"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelFramework-class.html">ModelFramework</a>?</span> <span class="parameter-name">modelFramework</span>, </span></li>
 <li><span class="parameter" id="-param-isCustomJob"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isCustomJob</span>, </span></li>
-<li><span class="parameter" id="-param-registryItemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">registryItemId</span>}</span></li>
+<li><span class="parameter" id="-param-registryItemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">registryItemId</span>, </span></li>
+<li><span class="parameter" id="-param-registryItemVersion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">registryItemVersion</span>}</span></li>
 </ol>)
     </section>
 
@@ -108,6 +109,7 @@
   ModelFramework? modelFramework,
   $core.bool? isCustomJob,
   $core.String? registryItemId,
+  $core.String? registryItemVersion,
 }) {
   final $result = create();
   if (request != null) {
@@ -163,6 +165,9 @@
   }
   if (registryItemId != null) {
     $result.registryItemId = registryItemId;
+  }
+  if (registryItemVersion != null) {
+    $result.registryItemVersion = registryItemVersion;
   }
   return $result;
 }</code></pre>
