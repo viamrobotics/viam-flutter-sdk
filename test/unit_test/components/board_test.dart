@@ -11,11 +11,18 @@ import 'package:viam_sdk/viam_sdk.dart';
 
 import '../../test_utils.dart';
 
+AnalogValue expectedAnalog = AnalogValue()
+  ..value = 0
+  ..minRange = 0
+  ..maxRange = 5
+  ..stepSize = 1;
+
 class FakeBoard extends Board {
   final Map<String, bool> gpioMap = {'pin': false};
   final Map<String, double> pwmMap = {'pin': 0.0};
   final Map<String, int> frequencyMap = {'pin': 0};
   final Map<String, int> analogMap = {'pin': 0};
+  AnalogValue analogResponse = expectedAnalog;
   PowerMode powerMode = PowerMode.POWER_MODE_NORMAL;
   final Map<String, Queue<Tick>> tickCallbackMap = {};
   Map<String, dynamic>? extra;
@@ -31,9 +38,9 @@ class FakeBoard extends Board {
   }
 
   @override
-  Future<int> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
+  Future<AnalogValue> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra}) async {
     this.extra = extra;
-    return 0;
+    return analogResponse;
   }
 
   @override
@@ -120,8 +127,7 @@ void main() {
     });
 
     test('analogReaderValue', () async {
-      const expected = 0;
-      expect(await board.analogReaderValue('1'), expected);
+      expect(await board.analogReaderValue('1'), expectedAnalog);
     });
 
     test('digitalInterruptValue', () async {
@@ -219,12 +225,10 @@ void main() {
     group('Board Service Tests', () {
       test('analogReaderValue', () async {
         final client = BoardServiceClient(channel);
-        const expected = 0;
-
         final response = await client.readAnalogReader(ReadAnalogReaderRequest()
           ..boardName = name
           ..analogReaderName = '1');
-        expect(response.value, expected);
+        expect(response, expectedAnalog);
       });
 
       test('digitalInterruptValue', () async {
@@ -363,8 +367,7 @@ void main() {
     group('Board Client Tests', () {
       test('analogReaderValue', () async {
         final client = BoardClient(name, channel);
-        const expected = 0;
-        expect(await client.analogReaderValue('1'), expected);
+        expect(await client.analogReaderValue('1'), expectedAnalog);
       });
 
       test('digitalInterruptValue', () async {
