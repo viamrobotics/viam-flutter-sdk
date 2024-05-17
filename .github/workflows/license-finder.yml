@@ -1,0 +1,34 @@
+name: License Finder
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  license_finder:
+    if: github.repository_owner == 'viamrobotics'
+    name: Audit 3rd-Party Licenses
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/cirruslabs/flutter
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: flutter pub get
+        env:
+          PUB_CACHE: .pub-cache # install to this directory
+
+      # License finder doesn't look in the correct directory, so we have to rename
+      # See https://github.com/pivotal/LicenseFinder/issues/1001
+      - run: mv .pub-cache/hosted/pub.dev .pub-cache/hosted/pub.dartlang.org
+
+      - run: gem install license_finder
+
+      - name: Run license finder
+        run: license_finder
+        env:
+          PUB_CACHE: .pub-cache

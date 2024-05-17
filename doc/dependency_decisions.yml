@@ -1,0 +1,85 @@
+---
+- - :permit
+  - Apache 2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - BSD-3-Clause
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - BSD
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - Simplified BSD
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - ISC License (ISCL)
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - Historical Permission Notice and Disclaimer (HPND)
+  - :who:
+    :why:
+    :versions: []
+    :when: 2022-09-16 15:36:22.534210576 Z
+- - :permit
+  - Public Domain
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-03-27 22:20:13.686526678 Z
+- - :permit
+  - Mozilla Public License 2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2024-05-16 20:44:37.656722000 Z
+- - :approve
+  - flutter
+  - :who: njooma
+    :why: License is BSD 3-Clause 'New' or 'Revised' License
+    :versions: []
+    :when: 2024-05-16 20:46:15.794903000 Z
+- - :approve
+  - flutter_test
+  - :who: njooma
+    :why: License is BSD 3-Clause 'New' or 'Revised' License
+    :versions: []
+    :when: 2024-05-16 20:47:09.926152000 Z
+- - :approve
+  - platform_detect
+  - :who: njooma
+    :why: License is Apache License, Version 2.0
+    :versions: []
+    :when: 2024-05-16 20:48:06.152380000 Z
+- - :approve
+  - sky_engine
+  - :who: njooma
+    :why: License is BSD 3-Clause 'New' or 'Revised' License
+    :versions: []
+    :when: 2024-05-16 20:49:31.176154000 Z
+- - :approve
+  - viam_sdk
+  - :who: njooma
+    :why: License is Apache License, Version 2.0
+    :versions: []
+    :when: 2024-05-16 20:49:48.048674000 Z
