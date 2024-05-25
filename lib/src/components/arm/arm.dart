@@ -36,26 +36,23 @@ abstract class Arm extends Resource {
   /// ```
   Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra});
 
-  /// Get the [List] representing the current position of the arm
+  /// Get the [List] of current joint angles of each arm joint
   ///
   /// ```
-  /// // Get the current angles of all joints of the arm
   /// List<double> currentJointPositions = await myArm.moveToJointPosition();
   /// ```
   Future<List<double>> jointPositions({Map<String, dynamic>? extra});
 
-  /// Stops all motion of the arm. It is assumed that the arm stops immediately.
+  /// Stop all motion of the arm. It is assumed that the arm stops immediately.
   ///
   /// ```
-  /// // Stop the arm's motion
   /// await myArm.stop();
   /// ```
   Future<void> stop({Map<String, dynamic>? extra});
 
-  /// Get if the arm is currently moving
+  /// Whether the arm is currently moving
   ///
   /// ```
-  /// // Check whether the arm is currently moving
   /// bool isArmMoving = await myArm.isMoving();
   /// ```
   Future<bool> isMoving();

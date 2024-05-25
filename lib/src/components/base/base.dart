@@ -67,9 +67,13 @@ abstract class Base extends Resource {
   Future<void> setVelocity(Vector3 linear, Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Stop the base.
+  ///
+  /// ```
+  /// await myBase.stop();
+  /// ```
   Future<void> stop({Map<String, dynamic>? extra});
 
-  /// Get if the base is currently moving
+  /// Whether the base is currently moving
   ///
   /// ```
   /// bool baseIsMoving = await myBase.isMoving();
