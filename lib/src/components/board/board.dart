@@ -42,7 +42,7 @@ abstract class Board extends Resource {
   ///
   /// ```
   /// // Set the PWM duty cycle of pin 13
-  /// await myBoard.setPwm('13');
+  /// await myBoard.setPwm('13', 0.6);
   /// ```
   Future<void> setPwm(String pin, double dutyCyclePct, {Map<String, dynamic>? extra});
 
