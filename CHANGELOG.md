@@ -1,17 +1,24 @@
 # Changelog
 
-## [v0.0.14](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.14) (2024-05-14)
+## [v0.0.15](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.15) (2024-05-28)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.13...v0.0.14)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.14...v0.0.15)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#216](https://github.com/viamrobotics/viam-flutter-sdk/pull/216) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Add license auditing [\#214](https://github.com/viamrobotics/viam-flutter-sdk/pull/214) ([njooma](https://github.com/njooma))
+- RSDK-7445: paginate data by filter methods [\#213](https://github.com/viamrobotics/viam-flutter-sdk/pull/213) ([purplenicole730](https://github.com/purplenicole730))
+- Automated Protos Update [\#212](https://github.com/viamrobotics/viam-flutter-sdk/pull/212) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.14 [\#211](https://github.com/viamrobotics/viam-flutter-sdk/pull/211) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-4264 - Move to api gostream dependency [\#210](https://github.com/viamrobotics/viam-flutter-sdk/pull/210) ([stuqdog](https://github.com/stuqdog))
 - RSDK-6665 - add getCloudMetadata client method [\#209](https://github.com/viamrobotics/viam-flutter-sdk/pull/209) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7405 - dataset wrappers [\#208](https://github.com/viamrobotics/viam-flutter-sdk/pull/208) ([stuqdog](https://github.com/stuqdog))
 - Automated Protos Update [\#207](https://github.com/viamrobotics/viam-flutter-sdk/pull/207) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-7220 - Ml training wrappers [\#206](https://github.com/viamrobotics/viam-flutter-sdk/pull/206) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7219: add billing wrappers [\#205](https://github.com/viamrobotics/viam-flutter-sdk/pull/205) ([purplenicole730](https://github.com/purplenicole730))
 - Automated Protos Update [\#204](https://github.com/viamrobotics/viam-flutter-sdk/pull/204) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-7216: add app wrappers [\#203](https://github.com/viamrobotics/viam-flutter-sdk/pull/203) ([purplenicole730](https://github.com/purplenicole730))
 - RSDK-7218 - Data sync wrappers [\#202](https://github.com/viamrobotics/viam-flutter-sdk/pull/202) ([stuqdog](https://github.com/stuqdog))
 - RSDK-7217 - Data wrappers [\#201](https://github.com/viamrobotics/viam-flutter-sdk/pull/201) ([stuqdog](https://github.com/stuqdog))
 - v0.0.13 [\#200](https://github.com/viamrobotics/viam-flutter-sdk/pull/200) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -110,6 +117,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.14](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.14) (2024-05-14)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.13...v0.0.14)
 
 ## [v0.0.13](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.13) (2024-05-03)
 
