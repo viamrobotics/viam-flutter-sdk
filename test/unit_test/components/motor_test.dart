@@ -43,6 +43,13 @@ class FakeMotor extends Motor {
   }
 
   @override
+  Future<void> setRPM(double rpm, {Map<String, dynamic>? extra}) async {
+    powered = true;
+    isStopped = false;
+    this.extra = extra;
+  }
+
+  @override
   Future<bool> isMoving({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return !isStopped;
@@ -119,6 +126,14 @@ void main() {
       await motor.goTo(0, 2);
       expect(await motor.position(), 2);
       expect(await motor.isMoving(), false);
+    });
+
+    test('setRPM', () async {
+      expect(await motor.position(), 0);
+      expect(await motor.isMoving(), false);
+
+      await motor.setRPM(2);
+      expect(await motor.isMoving(), true);
     });
 
     test('resetZeroPosition', () async {
@@ -247,6 +262,18 @@ void main() {
         expect(await motor.isMoving(), false);
       });
 
+      test('setRPM', () async {
+        final client = MotorServiceClient(channel);
+        final request = SetRPMRequest()
+          ..name = name
+          ..rpm = 3;
+
+        expect(await motor.isMoving(), false);
+
+        await client.setRPM(request);
+        expect(await motor.isMoving(), true);
+      });
+
       test('resetZeroPosition', () async {
         final client = MotorServiceClient(channel);
         final request = ResetZeroPositionRequest()
@@ -366,6 +393,14 @@ void main() {
         await client.goTo(1, 2);
         expect(await client.position(), 2);
         expect(await client.isMoving(), false);
+      });
+
+      test('setRPM', () async {
+        final client = MotorClient(name, channel);
+        expect(await client.isMoving(), false);
+
+        await client.setRPM(2);
+        expect(await client.isMoving(), true);
       });
 
       test('resetZeroPosition', () async {
