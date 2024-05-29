@@ -39,6 +39,7 @@ abstract class Base extends Resource {
   /// When both [linear] and [angular] are zero-vectors, the base will stop.
   /// When [linear] and [angular] are both non-zero-vectors, the base will move in an arc,
   /// with a tighter radius if [angular] power is greater than [linear] power.
+  /// The positive y axis points forwards and the positive z axis points up.
   ///
   /// ```
   /// // Move the base straight forward at 75% power:
