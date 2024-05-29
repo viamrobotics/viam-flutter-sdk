@@ -17,7 +17,11 @@ import '../utils.dart';
 import 'grpc/grpc_or_grpcweb_channel.dart';
 import 'web_rtc/web_rtc_client.dart';
 
-final _logger = Logger(printer: PrettyPrinter(printTime: true));
+Logger newDialLogger(LogOutput? output) {
+  return Logger(output: output, printer: PrettyPrinter(printTime: true));
+}
+
+var _logger = newDialLogger(null);
 
 /// Describes the behavior for connecting to a robot
 class DialOptions {
@@ -56,6 +60,9 @@ class DialOptions {
 
   /// Timeout is the timeout for dial.
   Duration timeout = Duration(seconds: 10);
+
+  /// If specified, a custom log output for dial logs.
+  LogOutput? logOutput;
 }
 
 /// The credentials used for connecting to the robot
@@ -113,9 +120,11 @@ class DialWebRtcOptions {
 
 /// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
+  final opts = options ?? DialOptions();
+  _logger = newDialLogger(opts.logOutput);
+
   final dialSW = Stopwatch()..start();
   _logger.i('Connecting to address $address');
-  final opts = options ?? DialOptions();
 
   if (opts.attemptMdns) {
     final mdnsSW = Stopwatch()..start();
