@@ -390,6 +390,121 @@ class GoToResponse extends $pb.GeneratedMessage {
   static GoToResponse? _defaultInstance;
 }
 
+class SetRPMRequest extends $pb.GeneratedMessage {
+  factory SetRPMRequest({
+    $core.String? name,
+    $core.double? rpm,
+    $2.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (rpm != null) {
+      $result.rpm = rpm;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  SetRPMRequest._() : super();
+  factory SetRPMRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetRPMRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetRPMRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.motor.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'rpm', $pb.PbFieldType.OD)
+    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetRPMRequest clone() => SetRPMRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetRPMRequest copyWith(void Function(SetRPMRequest) updates) => super.copyWith((message) => updates(message as SetRPMRequest)) as SetRPMRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetRPMRequest create() => SetRPMRequest._();
+  SetRPMRequest createEmptyInstance() => create();
+  static $pb.PbList<SetRPMRequest> createRepeated() => $pb.PbList<SetRPMRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetRPMRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetRPMRequest>(create);
+  static SetRPMRequest? _defaultInstance;
+
+  /// Name of a motor
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Speed of motor travel in rotations per minute
+  @$pb.TagNumber(2)
+  $core.double get rpm => $_getN(1);
+  @$pb.TagNumber(2)
+  set rpm($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRpm() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRpm() => clearField(2);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $2.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($2.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $2.Struct ensureExtra() => $_ensure(2);
+}
+
+class SetRPMResponse extends $pb.GeneratedMessage {
+  factory SetRPMResponse() => create();
+  SetRPMResponse._() : super();
+  factory SetRPMResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetRPMResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetRPMResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.motor.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetRPMResponse clone() => SetRPMResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetRPMResponse copyWith(void Function(SetRPMResponse) updates) => super.copyWith((message) => updates(message as SetRPMResponse)) as SetRPMResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetRPMResponse create() => SetRPMResponse._();
+  SetRPMResponse createEmptyInstance() => create();
+  static $pb.PbList<SetRPMResponse> createRepeated() => $pb.PbList<SetRPMResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetRPMResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetRPMResponse>(create);
+  static SetRPMResponse? _defaultInstance;
+}
+
 class ResetZeroPositionRequest extends $pb.GeneratedMessage {
   factory ResetZeroPositionRequest({
     $core.String? name,

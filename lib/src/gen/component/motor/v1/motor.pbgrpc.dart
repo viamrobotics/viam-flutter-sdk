@@ -34,6 +34,10 @@ class MotorServiceClient extends $grpc.Client {
       '/viam.component.motor.v1.MotorService/GoTo',
       ($0.GoToRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GoToResponse.fromBuffer(value));
+  static final _$setRPM = $grpc.ClientMethod<$0.SetRPMRequest, $0.SetRPMResponse>(
+      '/viam.component.motor.v1.MotorService/SetRPM',
+      ($0.SetRPMRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.SetRPMResponse.fromBuffer(value));
   static final _$resetZeroPosition = $grpc.ClientMethod<$0.ResetZeroPositionRequest, $0.ResetZeroPositionResponse>(
       '/viam.component.motor.v1.MotorService/ResetZeroPosition',
       ($0.ResetZeroPositionRequest value) => value.writeToBuffer(),
@@ -83,6 +87,10 @@ class MotorServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GoToResponse> goTo($0.GoToRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$goTo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetRPMResponse> setRPM($0.SetRPMRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setRPM, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ResetZeroPositionResponse> resetZeroPosition($0.ResetZeroPositionRequest request, {$grpc.CallOptions? options}) {
@@ -144,6 +152,13 @@ abstract class MotorServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GoToRequest.fromBuffer(value),
         ($0.GoToResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetRPMRequest, $0.SetRPMResponse>(
+        'SetRPM',
+        setRPM_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SetRPMRequest.fromBuffer(value),
+        ($0.SetRPMResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ResetZeroPositionRequest, $0.ResetZeroPositionResponse>(
         'ResetZeroPosition',
         resetZeroPosition_Pre,
@@ -214,6 +229,10 @@ abstract class MotorServiceBase extends $grpc.Service {
     return goTo(call, await request);
   }
 
+  $async.Future<$0.SetRPMResponse> setRPM_Pre($grpc.ServiceCall call, $async.Future<$0.SetRPMRequest> request) async {
+    return setRPM(call, await request);
+  }
+
   $async.Future<$0.ResetZeroPositionResponse> resetZeroPosition_Pre($grpc.ServiceCall call, $async.Future<$0.ResetZeroPositionRequest> request) async {
     return resetZeroPosition(call, await request);
   }
@@ -249,6 +268,7 @@ abstract class MotorServiceBase extends $grpc.Service {
   $async.Future<$0.SetPowerResponse> setPower($grpc.ServiceCall call, $0.SetPowerRequest request);
   $async.Future<$0.GoForResponse> goFor($grpc.ServiceCall call, $0.GoForRequest request);
   $async.Future<$0.GoToResponse> goTo($grpc.ServiceCall call, $0.GoToRequest request);
+  $async.Future<$0.SetRPMResponse> setRPM($grpc.ServiceCall call, $0.SetRPMRequest request);
   $async.Future<$0.ResetZeroPositionResponse> resetZeroPosition($grpc.ServiceCall call, $0.ResetZeroPositionRequest request);
   $async.Future<$0.GetPositionResponse> getPosition($grpc.ServiceCall call, $0.GetPositionRequest request);
   $async.Future<$0.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $0.GetPropertiesRequest request);

@@ -37,6 +37,10 @@ class EndUserServiceClient extends $grpc.Client {
       '/viam.app.v1.EndUserService/UpdateAuthApplication',
       ($4.UpdateAuthApplicationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.UpdateAuthApplicationResponse.fromBuffer(value));
+  static final _$getAuthApplication = $grpc.ClientMethod<$4.GetAuthApplicationRequest, $4.GetAuthApplicationResponse>(
+      '/viam.app.v1.EndUserService/GetAuthApplication',
+      ($4.GetAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetAuthApplicationResponse.fromBuffer(value));
 
   EndUserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class EndUserServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.UpdateAuthApplicationResponse> updateAuthApplication($4.UpdateAuthApplicationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateAuthApplication, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetAuthApplicationResponse> getAuthApplication($4.GetAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAuthApplication, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class EndUserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.UpdateAuthApplicationRequest.fromBuffer(value),
         ($4.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetAuthApplicationRequest, $4.GetAuthApplicationResponse>(
+        'GetAuthApplication',
+        getAuthApplication_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetAuthApplicationRequest.fromBuffer(value),
+        ($4.GetAuthApplicationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.IsLegalAcceptedResponse> isLegalAccepted_Pre($grpc.ServiceCall call, $async.Future<$4.IsLegalAcceptedRequest> request) async {
@@ -112,8 +127,13 @@ abstract class EndUserServiceBase extends $grpc.Service {
     return updateAuthApplication(call, await request);
   }
 
+  $async.Future<$4.GetAuthApplicationResponse> getAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$4.GetAuthApplicationRequest> request) async {
+    return getAuthApplication(call, await request);
+  }
+
   $async.Future<$4.IsLegalAcceptedResponse> isLegalAccepted($grpc.ServiceCall call, $4.IsLegalAcceptedRequest request);
   $async.Future<$4.AcceptLegalResponse> acceptLegal($grpc.ServiceCall call, $4.AcceptLegalRequest request);
   $async.Future<$4.RegisterAuthApplicationResponse> registerAuthApplication($grpc.ServiceCall call, $4.RegisterAuthApplicationRequest request);
   $async.Future<$4.UpdateAuthApplicationResponse> updateAuthApplication($grpc.ServiceCall call, $4.UpdateAuthApplicationRequest request);
+  $async.Future<$4.GetAuthApplicationResponse> getAuthApplication($grpc.ServiceCall call, $4.GetAuthApplicationRequest request);
 }

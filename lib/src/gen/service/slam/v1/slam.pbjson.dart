@@ -62,16 +62,13 @@ const GetPositionResponse$json = {
   '1': 'GetPositionResponse',
   '2': [
     {'1': 'pose', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'pose'},
-    {'1': 'component_reference', '3': 2, '4': 1, '5': 9, '10': 'componentReference'},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetPositionResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPositionResponseDescriptor = $convert.base64Decode(
     'ChNHZXRQb3NpdGlvblJlc3BvbnNlEigKBHBvc2UYASABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3'
-    'NlUgRwb3NlEi8KE2NvbXBvbmVudF9yZWZlcmVuY2UYAiABKAlSEmNvbXBvbmVudFJlZmVyZW5j'
-    'ZRItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+    'NlUgRwb3Nl');
 
 @$core.Deprecated('Use getPointCloudMapRequestDescriptor instead')
 const GetPointCloudMapRequest$json = {
