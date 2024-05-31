@@ -62,10 +62,10 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">MLTrainingMetadata</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-versions">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>, </span></li>
-<li><span class="parameter" id="-param-modelType"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
+      <span class="name ">MLTrainingMetadata</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-modelType">{<span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
 <li><span class="parameter" id="-param-modelFramework"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelFramework-class.html">ModelFramework</a>?</span> <span class="parameter-name">modelFramework</span>, </span></li>
-<li><span class="parameter" id="-param-draft"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">draft</span>}</span></li>
+<li><span class="parameter" id="-param-draft"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">draft</span>, </span></li>
+<li><span class="parameter" id="-param-versions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/MLTrainingVersion-class.html">MLTrainingVersion</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>}</span></li>
 </ol>)
     </section>
 
@@ -76,15 +76,12 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory MLTrainingMetadata({
-  $core.Iterable&lt;$core.String&gt;? versions,
   $0.ModelType? modelType,
   $0.ModelFramework? modelFramework,
   $core.bool? draft,
+  $core.Iterable&lt;MLTrainingVersion&gt;? versions,
 }) {
   final $result = create();
-  if (versions != null) {
-    $result.versions.addAll(versions);
-  }
   if (modelType != null) {
     $result.modelType = modelType;
   }
@@ -93,6 +90,9 @@
   }
   if (draft != null) {
     $result.draft = draft;
+  }
+  if (versions != null) {
+    $result.versions.addAll(versions);
   }
   return $result;
 }</code></pre>
@@ -129,7 +129,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.14
+      0.0.15
   </span>
 
   

@@ -541,6 +541,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $2.ListKeysRequest.fromBuffer(value),
       ($2.ListKeysResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.RenameKeyRequest, $2.RenameKeyResponse&gt;(
+      &#39;RenameKey&#39;,
+      renameKey_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.RenameKeyRequest.fromBuffer(value),
+      ($2.RenameKeyResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$2.RotateKeyRequest, $2.RotateKeyResponse&gt;(
       &#39;RotateKey&#39;,
       rotateKey_Pre,
@@ -589,7 +596,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.14
+      0.0.15
   </span>
 
   

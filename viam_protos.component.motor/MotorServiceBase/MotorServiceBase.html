@@ -93,6 +93,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.GoToRequest.fromBuffer(value),
       ($0.GoToResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.SetRPMRequest, $0.SetRPMResponse&gt;(
+      &#39;SetRPM&#39;,
+      setRPM_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.SetRPMRequest.fromBuffer(value),
+      ($0.SetRPMResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$0.ResetZeroPositionRequest, $0.ResetZeroPositionResponse&gt;(
       &#39;ResetZeroPosition&#39;,
       resetZeroPosition_Pre,
@@ -183,7 +190,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.14
+      0.0.15
   </span>
 
   

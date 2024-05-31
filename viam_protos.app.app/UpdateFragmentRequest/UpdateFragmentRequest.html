@@ -65,7 +65,8 @@
       <span class="name ">UpdateFragmentRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-id">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
 <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
 <li><span class="parameter" id="-param-config"><span class="type-annotation">Struct?</span> <span class="parameter-name">config</span>, </span></li>
-<li><span class="parameter" id="-param-public"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">public</span>}</span></li>
+<li><span class="parameter" id="-param-public"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">public</span>, </span></li>
+<li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentVisibility-class.html">FragmentVisibility</a>?</span> <span class="parameter-name">visibility</span>}</span></li>
 </ol>)
     </section>
 
@@ -80,6 +81,7 @@
   $core.String? name,
   $7.Struct? config,
   $core.bool? public,
+  FragmentVisibility? visibility,
 }) {
   final $result = create();
   if (id != null) {
@@ -93,6 +95,9 @@
   }
   if (public != null) {
     $result.public = public;
+  }
+  if (visibility != null) {
+    $result.visibility = visibility;
   }
   return $result;
 }</code></pre>
@@ -129,7 +134,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.14
+      0.0.15
   </span>
 
   
