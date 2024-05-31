@@ -70,6 +70,13 @@ class MotorService extends MotorServiceBase {
   }
 
   @override
+  Future<SetRPMResponse> setRPM(ServiceCall call, SetRPMRequest request) async {
+    final motor = _fromManager(request.name);
+    await motor.setRPM(request.rpm, extra: request.extra.toMap());
+    return SetRPMResponse();
+  }
+
+  @override
   Future<IsPoweredResponse> isPowered(ServiceCall call, IsPoweredRequest request) async {
     final motor = _fromManager(request.name);
     final powerState = await motor.powerState(extra: request.extra.toMap());
