@@ -78,7 +78,7 @@ const RegisterAuthApplicationResponse$json = {
   '2': [
     {'1': 'application_id', '3': 1, '4': 1, '5': 9, '10': 'applicationId'},
     {'1': 'application_name', '3': 2, '4': 1, '5': 9, '10': 'applicationName'},
-    {'1': 'secret', '3': 3, '4': 1, '5': 9, '10': 'secret'},
+    {'1': 'client_secret', '3': 3, '4': 1, '5': 9, '10': 'clientSecret'},
   ],
 };
 
@@ -86,7 +86,7 @@ const RegisterAuthApplicationResponse$json = {
 final $typed_data.Uint8List registerAuthApplicationResponseDescriptor = $convert.base64Decode(
     'Ch9SZWdpc3RlckF1dGhBcHBsaWNhdGlvblJlc3BvbnNlEiUKDmFwcGxpY2F0aW9uX2lkGAEgAS'
     'gJUg1hcHBsaWNhdGlvbklkEikKEGFwcGxpY2F0aW9uX25hbWUYAiABKAlSD2FwcGxpY2F0aW9u'
-    'TmFtZRIWCgZzZWNyZXQYAyABKAlSBnNlY3JldA==');
+    'TmFtZRIjCg1jbGllbnRfc2VjcmV0GAMgASgJUgxjbGllbnRTZWNyZXQ=');
 
 @$core.Deprecated('Use updateAuthApplicationRequestDescriptor instead')
 const UpdateAuthApplicationRequest$json = {
@@ -123,4 +123,39 @@ final $typed_data.Uint8List updateAuthApplicationResponseDescriptor = $convert.b
     'Ch1VcGRhdGVBdXRoQXBwbGljYXRpb25SZXNwb25zZRIlCg5hcHBsaWNhdGlvbl9pZBgBIAEoCV'
     'INYXBwbGljYXRpb25JZBIpChBhcHBsaWNhdGlvbl9uYW1lGAIgASgJUg9hcHBsaWNhdGlvbk5h'
     'bWU=');
+
+@$core.Deprecated('Use getAuthApplicationRequestDescriptor instead')
+const GetAuthApplicationRequest$json = {
+  '1': 'GetAuthApplicationRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'application_id', '3': 2, '4': 1, '5': 9, '10': 'applicationId'},
+  ],
+};
+
+/// Descriptor for `GetAuthApplicationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAuthApplicationRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRBdXRoQXBwbGljYXRpb25SZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQSJQoOYX'
+    'BwbGljYXRpb25faWQYAiABKAlSDWFwcGxpY2F0aW9uSWQ=');
+
+@$core.Deprecated('Use getAuthApplicationResponseDescriptor instead')
+const GetAuthApplicationResponse$json = {
+  '1': 'GetAuthApplicationResponse',
+  '2': [
+    {'1': 'application_id', '3': 1, '4': 1, '5': 9, '10': 'applicationId'},
+    {'1': 'application_name', '3': 2, '4': 1, '5': 9, '10': 'applicationName'},
+    {'1': 'client_secret', '3': 3, '4': 1, '5': 9, '10': 'clientSecret'},
+    {'1': 'origin_uris', '3': 4, '4': 3, '5': 9, '10': 'originUris'},
+    {'1': 'redirect_uris', '3': 5, '4': 3, '5': 9, '10': 'redirectUris'},
+    {'1': 'logout_uri', '3': 6, '4': 1, '5': 9, '10': 'logoutUri'},
+  ],
+};
+
+/// Descriptor for `GetAuthApplicationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAuthApplicationResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRBdXRoQXBwbGljYXRpb25SZXNwb25zZRIlCg5hcHBsaWNhdGlvbl9pZBgBIAEoCVINYX'
+    'BwbGljYXRpb25JZBIpChBhcHBsaWNhdGlvbl9uYW1lGAIgASgJUg9hcHBsaWNhdGlvbk5hbWUS'
+    'IwoNY2xpZW50X3NlY3JldBgDIAEoCVIMY2xpZW50U2VjcmV0Eh8KC29yaWdpbl91cmlzGAQgAy'
+    'gJUgpvcmlnaW5VcmlzEiMKDXJlZGlyZWN0X3VyaXMYBSADKAlSDHJlZGlyZWN0VXJpcxIdCgps'
+    'b2dvdXRfdXJpGAYgASgJUglsb2dvdXRVcmk=');
 

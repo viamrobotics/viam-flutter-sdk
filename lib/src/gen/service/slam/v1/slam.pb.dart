@@ -14,7 +14,6 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $1;
-import '../../../google/protobuf/struct.pb.dart' as $2;
 import 'slam.pbenum.dart';
 
 export 'slam.pbenum.dart';
@@ -73,18 +72,10 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse({
     $1.Pose? pose,
-    $core.String? componentReference,
-    $2.Struct? extra,
   }) {
     final $result = create();
     if (pose != null) {
       $result.pose = pose;
-    }
-    if (componentReference != null) {
-      $result.componentReference = componentReference;
-    }
-    if (extra != null) {
-      $result.extra = extra;
     }
     return $result;
   }
@@ -94,8 +85,6 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
     ..aOM<$1.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $1.Pose.create)
-    ..aOS(2, _omitFieldNames ? '' : 'componentReference')
-    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -131,28 +120,6 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
   $1.Pose ensurePose() => $_ensure(0);
-
-  /// This is usually the name of the camera that is in the SLAM config
-  @$pb.TagNumber(2)
-  $core.String get componentReference => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set componentReference($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasComponentReference() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearComponentReference() => clearField(2);
-
-  /// Additional information in the response
-  @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(2);
-  @$pb.TagNumber(99)
-  set extra($2.Struct v) { setField(99, v); }
-  @$pb.TagNumber(99)
-  $core.bool hasExtra() => $_has(2);
-  @$pb.TagNumber(99)
-  void clearExtra() => clearField(99);
-  @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetPointCloudMapRequest extends $pb.GeneratedMessage {

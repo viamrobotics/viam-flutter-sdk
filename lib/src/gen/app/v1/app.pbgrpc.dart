@@ -289,6 +289,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListKeys',
       ($2.ListKeysRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.ListKeysResponse.fromBuffer(value));
+  static final _$renameKey = $grpc.ClientMethod<$2.RenameKeyRequest, $2.RenameKeyResponse>(
+      '/viam.app.v1.AppService/RenameKey',
+      ($2.RenameKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.RenameKeyResponse.fromBuffer(value));
   static final _$rotateKey = $grpc.ClientMethod<$2.RotateKeyRequest, $2.RotateKeyResponse>(
       '/viam.app.v1.AppService/RotateKey',
       ($2.RotateKeyRequest value) => value.writeToBuffer(),
@@ -570,6 +574,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.ListKeysResponse> listKeys($2.ListKeysRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listKeys, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.RenameKeyResponse> renameKey($2.RenameKeyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$renameKey, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.RotateKeyResponse> rotateKey($2.RotateKeyRequest request, {$grpc.CallOptions? options}) {
@@ -1055,6 +1063,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.ListKeysRequest.fromBuffer(value),
         ($2.ListKeysResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.RenameKeyRequest, $2.RenameKeyResponse>(
+        'RenameKey',
+        renameKey_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.RenameKeyRequest.fromBuffer(value),
+        ($2.RenameKeyResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.RotateKeyRequest, $2.RotateKeyResponse>(
         'RotateKey',
         rotateKey_Pre,
@@ -1335,6 +1350,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return listKeys(call, await request);
   }
 
+  $async.Future<$2.RenameKeyResponse> renameKey_Pre($grpc.ServiceCall call, $async.Future<$2.RenameKeyRequest> request) async {
+    return renameKey(call, await request);
+  }
+
   $async.Future<$2.RotateKeyResponse> rotateKey_Pre($grpc.ServiceCall call, $async.Future<$2.RotateKeyRequest> request) async {
     return rotateKey(call, await request);
   }
@@ -1410,6 +1429,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$2.CreateKeyResponse> createKey($grpc.ServiceCall call, $2.CreateKeyRequest request);
   $async.Future<$2.DeleteKeyResponse> deleteKey($grpc.ServiceCall call, $2.DeleteKeyRequest request);
   $async.Future<$2.ListKeysResponse> listKeys($grpc.ServiceCall call, $2.ListKeysRequest request);
+  $async.Future<$2.RenameKeyResponse> renameKey($grpc.ServiceCall call, $2.RenameKeyRequest request);
   $async.Future<$2.RotateKeyResponse> rotateKey($grpc.ServiceCall call, $2.RotateKeyRequest request);
   $async.Future<$2.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $2.CreateKeyFromExistingKeyAuthorizationsRequest request);
 }

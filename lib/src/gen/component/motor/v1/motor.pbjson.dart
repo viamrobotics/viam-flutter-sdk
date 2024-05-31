@@ -90,6 +90,30 @@ const GoToResponse$json = {
 final $typed_data.Uint8List goToResponseDescriptor = $convert.base64Decode(
     'CgxHb1RvUmVzcG9uc2U=');
 
+@$core.Deprecated('Use setRPMRequestDescriptor instead')
+const SetRPMRequest$json = {
+  '1': 'SetRPMRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'rpm', '3': 2, '4': 1, '5': 1, '10': 'rpm'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `SetRPMRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setRPMRequestDescriptor = $convert.base64Decode(
+    'Cg1TZXRSUE1SZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEAoDcnBtGAIgASgBUgNycG0SLQ'
+    'oFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
+
+@$core.Deprecated('Use setRPMResponseDescriptor instead')
+const SetRPMResponse$json = {
+  '1': 'SetRPMResponse',
+};
+
+/// Descriptor for `SetRPMResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setRPMResponseDescriptor = $convert.base64Decode(
+    'Cg5TZXRSUE1SZXNwb25zZQ==');
+
 @$core.Deprecated('Use resetZeroPositionRequestDescriptor instead')
 const ResetZeroPositionRequest$json = {
   '1': 'ResetZeroPositionRequest',

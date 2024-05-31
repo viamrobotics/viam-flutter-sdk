@@ -13,6 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use fragmentVisibilityDescriptor instead')
+const FragmentVisibility$json = {
+  '1': 'FragmentVisibility',
+  '2': [
+    {'1': 'FRAGMENT_VISIBILITY_UNSPECIFIED', '2': 0},
+    {'1': 'FRAGMENT_VISIBILITY_PRIVATE', '2': 1},
+    {'1': 'FRAGMENT_VISIBILITY_PUBLIC', '2': 2},
+    {'1': 'FRAGMENT_VISIBILITY_PUBLIC_UNLISTED', '2': 3},
+  ],
+};
+
+/// Descriptor for `FragmentVisibility`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List fragmentVisibilityDescriptor = $convert.base64Decode(
+    'ChJGcmFnbWVudFZpc2liaWxpdHkSIwofRlJBR01FTlRfVklTSUJJTElUWV9VTlNQRUNJRklFRB'
+    'AAEh8KG0ZSQUdNRU5UX1ZJU0lCSUxJVFlfUFJJVkFURRABEh4KGkZSQUdNRU5UX1ZJU0lCSUxJ'
+    'VFlfUFVCTElDEAISJwojRlJBR01FTlRfVklTSUJJTElUWV9QVUJMSUNfVU5MSVNURUQQAw==');
+
 @$core.Deprecated('Use registryItemStatusDescriptor instead')
 const RegistryItemStatus$json = {
   '1': 'RegistryItemStatus',
@@ -1279,6 +1296,7 @@ const Fragment$json = {
     {'1': 'robot_part_count', '3': 9, '4': 1, '5': 5, '10': 'robotPartCount'},
     {'1': 'organization_count', '3': 10, '4': 1, '5': 5, '10': 'organizationCount'},
     {'1': 'only_used_by_owner', '3': 11, '4': 1, '5': 8, '10': 'onlyUsedByOwner'},
+    {'1': 'visibility', '3': 12, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '10': 'visibility'},
   ],
 };
 
@@ -1295,7 +1313,8 @@ final $typed_data.Uint8List fragmentDescriptor = $convert.base64Decode(
     'YW5pemF0aW9uX25hbWUYByABKAlSEG9yZ2FuaXphdGlvbk5hbWUSKAoQcm9ib3RfcGFydF9jb3'
     'VudBgJIAEoBVIOcm9ib3RQYXJ0Q291bnQSLQoSb3JnYW5pemF0aW9uX2NvdW50GAogASgFUhFv'
     'cmdhbml6YXRpb25Db3VudBIrChJvbmx5X3VzZWRfYnlfb3duZXIYCyABKAhSD29ubHlVc2VkQn'
-    'lPd25lcg==');
+    'lPd25lchI/Cgp2aXNpYmlsaXR5GAwgASgOMh8udmlhbS5hcHAudjEuRnJhZ21lbnRWaXNpYmls'
+    'aXR5Ugp2aXNpYmlsaXR5');
 
 @$core.Deprecated('Use listFragmentsRequestDescriptor instead')
 const ListFragmentsRequest$json = {
@@ -1303,13 +1322,16 @@ const ListFragmentsRequest$json = {
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'show_public', '3': 2, '4': 1, '5': 8, '10': 'showPublic'},
+    {'1': 'fragment_visibility', '3': 3, '4': 3, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '10': 'fragmentVisibility'},
   ],
 };
 
 /// Descriptor for `ListFragmentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listFragmentsRequestDescriptor = $convert.base64Decode(
     'ChRMaXN0RnJhZ21lbnRzUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2FuaX'
-    'phdGlvbklkEh8KC3Nob3dfcHVibGljGAIgASgIUgpzaG93UHVibGlj');
+    'phdGlvbklkEh8KC3Nob3dfcHVibGljGAIgASgIUgpzaG93UHVibGljElAKE2ZyYWdtZW50X3Zp'
+    'c2liaWxpdHkYAyADKA4yHy52aWFtLmFwcC52MS5GcmFnbWVudFZpc2liaWxpdHlSEmZyYWdtZW'
+    '50VmlzaWJpbGl0eQ==');
 
 @$core.Deprecated('Use listFragmentsResponseDescriptor instead')
 const ListFragmentsResponse$json = {
@@ -1386,9 +1408,11 @@ const UpdateFragmentRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'config', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'config'},
     {'1': 'public', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'public', '17': true},
+    {'1': 'visibility', '3': 5, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '9': 1, '10': 'visibility', '17': true},
   ],
   '8': [
     {'1': '_public'},
+    {'1': '_visibility'},
   ],
 };
 
@@ -1396,7 +1420,9 @@ const UpdateFragmentRequest$json = {
 final $typed_data.Uint8List updateFragmentRequestDescriptor = $convert.base64Decode(
     'ChVVcGRhdGVGcmFnbWVudFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG'
     '5hbWUSLwoGY29uZmlnGAMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIGY29uZmlnEhsK'
-    'BnB1YmxpYxgEIAEoCEgAUgZwdWJsaWOIAQFCCQoHX3B1YmxpYw==');
+    'BnB1YmxpYxgEIAEoCEgAUgZwdWJsaWOIAQESRAoKdmlzaWJpbGl0eRgFIAEoDjIfLnZpYW0uYX'
+    'BwLnYxLkZyYWdtZW50VmlzaWJpbGl0eUgBUgp2aXNpYmlsaXR5iAEBQgkKB19wdWJsaWNCDQoL'
+    'X3Zpc2liaWxpdHk=');
 
 @$core.Deprecated('Use updateFragmentResponseDescriptor instead')
 const UpdateFragmentResponse$json = {
@@ -1829,23 +1855,41 @@ const MLModelMetadata$json = {
 final $typed_data.Uint8List mLModelMetadataDescriptor = $convert.base64Decode(
     'Cg9NTE1vZGVsTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25z');
 
+@$core.Deprecated('Use mLTrainingVersionDescriptor instead')
+const MLTrainingVersion$json = {
+  '1': 'MLTrainingVersion',
+  '2': [
+    {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'created_on', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+  ],
+};
+
+/// Descriptor for `MLTrainingVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mLTrainingVersionDescriptor = $convert.base64Decode(
+    'ChFNTFRyYWluaW5nVmVyc2lvbhIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEjkKCmNyZWF0ZW'
+    'Rfb24YAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkT24=');
+
 @$core.Deprecated('Use mLTrainingMetadataDescriptor instead')
 const MLTrainingMetadata$json = {
   '1': 'MLTrainingMetadata',
   '2': [
-    {'1': 'versions', '3': 1, '4': 3, '5': 9, '10': 'versions'},
+    {'1': 'versions', '3': 5, '4': 3, '5': 11, '6': '.viam.app.v1.MLTrainingVersion', '10': 'versions'},
     {'1': 'model_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
     {'1': 'model_framework', '3': 3, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
     {'1': 'draft', '3': 4, '4': 1, '5': 8, '10': 'draft'},
+  ],
+  '9': [
+    {'1': 1, '2': 2},
   ],
 };
 
 /// Descriptor for `MLTrainingMetadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List mLTrainingMetadataDescriptor = $convert.base64Decode(
-    'ChJNTFRyYWluaW5nTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25zEkAKCm1vZG'
-    'VsX3R5cGUYAiABKA4yIS52aWFtLmFwcC5tbHRyYWluaW5nLnYxLk1vZGVsVHlwZVIJbW9kZWxU'
-    'eXBlEk8KD21vZGVsX2ZyYW1ld29yaxgDIAEoDjImLnZpYW0uYXBwLm1sdHJhaW5pbmcudjEuTW'
-    '9kZWxGcmFtZXdvcmtSDm1vZGVsRnJhbWV3b3JrEhQKBWRyYWZ0GAQgASgIUgVkcmFmdA==');
+    'ChJNTFRyYWluaW5nTWV0YWRhdGESOgoIdmVyc2lvbnMYBSADKAsyHi52aWFtLmFwcC52MS5NTF'
+    'RyYWluaW5nVmVyc2lvblIIdmVyc2lvbnMSQAoKbW9kZWxfdHlwZRgCIAEoDjIhLnZpYW0uYXBw'
+    'Lm1sdHJhaW5pbmcudjEuTW9kZWxUeXBlUgltb2RlbFR5cGUSTwoPbW9kZWxfZnJhbWV3b3JrGA'
+    'MgASgOMiYudmlhbS5hcHAubWx0cmFpbmluZy52MS5Nb2RlbEZyYW1ld29ya1IObW9kZWxGcmFt'
+    'ZXdvcmsSFAoFZHJhZnQYBCABKAhSBWRyYWZ0SgQIARAC');
 
 @$core.Deprecated('Use registryItemDescriptor instead')
 const RegistryItem$json = {
@@ -2383,6 +2427,33 @@ const DeleteKeyResponse$json = {
 /// Descriptor for `DeleteKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteKeyResponseDescriptor = $convert.base64Decode(
     'ChFEZWxldGVLZXlSZXNwb25zZQ==');
+
+@$core.Deprecated('Use renameKeyRequestDescriptor instead')
+const RenameKeyRequest$json = {
+  '1': 'RenameKeyRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `RenameKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameKeyRequestDescriptor = $convert.base64Decode(
+    'ChBSZW5hbWVLZXlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l');
+
+@$core.Deprecated('Use renameKeyResponseDescriptor instead')
+const RenameKeyResponse$json = {
+  '1': 'RenameKeyResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `RenameKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameKeyResponseDescriptor = $convert.base64Decode(
+    'ChFSZW5hbWVLZXlSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZQ'
+    '==');
 
 @$core.Deprecated('Use authorizationDetailsDescriptor instead')
 const AuthorizationDetails$json = {

@@ -13,6 +13,25 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class FragmentVisibility extends $pb.ProtobufEnum {
+  static const FragmentVisibility FRAGMENT_VISIBILITY_UNSPECIFIED = FragmentVisibility._(0, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_UNSPECIFIED');
+  static const FragmentVisibility FRAGMENT_VISIBILITY_PRIVATE = FragmentVisibility._(1, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_PRIVATE');
+  static const FragmentVisibility FRAGMENT_VISIBILITY_PUBLIC = FragmentVisibility._(2, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_PUBLIC');
+  static const FragmentVisibility FRAGMENT_VISIBILITY_PUBLIC_UNLISTED = FragmentVisibility._(3, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_PUBLIC_UNLISTED');
+
+  static const $core.List<FragmentVisibility> values = <FragmentVisibility> [
+    FRAGMENT_VISIBILITY_UNSPECIFIED,
+    FRAGMENT_VISIBILITY_PRIVATE,
+    FRAGMENT_VISIBILITY_PUBLIC,
+    FRAGMENT_VISIBILITY_PUBLIC_UNLISTED,
+  ];
+
+  static final $core.Map<$core.int, FragmentVisibility> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FragmentVisibility? valueOf($core.int value) => _byValue[value];
+
+  const FragmentVisibility._($core.int v, $core.String n) : super(v, n);
+}
+
 class RegistryItemStatus extends $pb.ProtobufEnum {
   static const RegistryItemStatus REGISTRY_ITEM_STATUS_UNSPECIFIED = RegistryItemStatus._(0, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_UNSPECIFIED');
   static const RegistryItemStatus REGISTRY_ITEM_STATUS_PUBLISHED = RegistryItemStatus._(1, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_PUBLISHED');

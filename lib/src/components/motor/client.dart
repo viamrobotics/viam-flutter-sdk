@@ -50,6 +50,15 @@ class MotorClient extends Motor implements ResourceRPCClient {
   }
 
   @override
+  Future<void> setRPM(double rpm, {Map<String, dynamic>? extra}) async {
+    final request = SetRPMRequest()
+      ..name = name
+      ..rpm = rpm
+      ..extra = extra?.toStruct() ?? Struct();
+    await client.setRPM(request);
+  }
+
+  @override
   Future<void> resetZeroPosition(double offset, {Map<String, dynamic>? extra}) async {
     final request = ResetZeroPositionRequest()
       ..name = name

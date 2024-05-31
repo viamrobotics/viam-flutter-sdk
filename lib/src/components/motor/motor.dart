@@ -35,6 +35,10 @@ abstract class Motor extends Resource {
   /// the [Motor] towards the specified position.
   Future<void> goTo(double rpm, double positionRevolutions, {Map<String, dynamic>? extra});
 
+  /// Spin the [Motor] indefinitely at the specified speed, in revolutions per minute.
+  /// If [rpm] is positive, the motor will spin forwards, and if [rpm] is negative, the motor will spin backwards.
+  Future<void> setRPM(double rpm, {Map<String, dynamic>? extra});
+
   /// Set the current position (modified by [offset]) to be the new zero (home) position.
   Future<void> resetZeroPosition(double offset, {Map<String, dynamic>? extra});
 
