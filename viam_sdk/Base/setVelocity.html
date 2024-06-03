@@ -74,7 +74,13 @@
     </section>
     
 <section class="desc markdown">
-  <p>Set the linear and angular velocities of the base, expressed as mm/sec vectors.</p>
+  <p>Set the linear and angular velocities of the base, expressed as
+mm/sec and degrees/sec vectors.</p>
+<pre class="language-dart"><code>// Set the linear velocity to 50mm/s forward, and the angular velocity
+to 15 deg/s counterclockwise
+//
+await myBase.setVelocity(Vector3(0, 50, 0), Vector3(0, 0, 15));
+</code></pre>
 </section>
 
 

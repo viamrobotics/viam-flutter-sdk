@@ -73,6 +73,13 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>addCallbacks adds a listener for the digital interrupts.</p>
+<pre class="language-dart"><code>var interrupts = ['8', '11'];
+final tickQueue = Queue&lt;Tick&gt;();
+await myBoard.addCallbacks(interrupts, tickQueue);
+</code></pre>
+</section>
 
 
     

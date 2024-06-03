@@ -78,6 +78,9 @@
 at the given <code>velocity</code>, expressed in millimeters per second.</p>
 <p>When <code>distance</code> or <code>velocity</code> is 0, the <a href="../../viam_sdk/Base-class.html">Base</a> will stop.
 This method blocks until completed or canceled.</p>
+<pre class="language-dart"><code>// Move the base 40mm forward at 90 mm/s
+await myBase.moveStraight(40, 90);
+</code></pre>
 </section>
 
 

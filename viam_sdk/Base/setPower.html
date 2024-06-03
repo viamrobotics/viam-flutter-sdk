@@ -79,7 +79,20 @@
 When <code>angular</code> is a zero-vector, the base will move in a straight line.
 When both <code>linear</code> and <code>angular</code> are zero-vectors, the base will stop.
 When <code>linear</code> and <code>angular</code> are both non-zero-vectors, the base will move in an arc,
-with a tighter radius if <code>angular</code> power is greater than <code>linear</code> power.</p>
+with a tighter radius if <code>angular</code> power is greater than <code>linear</code> power.
+The positive y axis points forwards and the positive z axis points up.</p>
+<pre class="language-dart"><code>// Move the base straight forward at 75% power:
+await myBase.setPower(Vector3(0, 0.75, 0), Vector3());
+
+// Move the base straight backward at 100% power:
+await myBase.setPower(Vector3(0, -1, 0), Vector3());
+
+// Turn the base to the left at 50% power:
+await myBase.setPower(Vector3(), Vector3(0, 0, 0.5));
+
+// Turn the base to the right at 60% power:
+await myBase.setPower(Vector3(), Vector3(0, 0, -0.6));
+</code></pre>
 </section>
 
 

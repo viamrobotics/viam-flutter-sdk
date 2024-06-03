@@ -72,6 +72,13 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Stream digital interrupts ticks.</p>
+<pre class="language-dart"><code>// Stream ticks from digital interrupts on pins 8 and 11
+var interrupts = ['8', '11'];
+Stream&lt;Tick&gt; tickStream = await myBoard.streamTicks(interrupts);
+</code></pre>
+</section>
 
 
     

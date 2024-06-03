@@ -74,6 +74,12 @@
     
 <section class="desc markdown">
   <p>Move the end of the arm to the <a href="../../viam_sdk/Pose-class.html">Pose</a> specified.</p>
+<pre class="language-dart"><code>// Create a pose for the arm to move to
+final targetPose = Pose.fromBuffer([12, 0, 400, 0, 0, 1, 90]);
+
+// Move the arm to the pose
+await myArm.moveToPosition(targetPose);
+</code></pre>
 </section>
 
 
