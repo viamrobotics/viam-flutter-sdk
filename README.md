@@ -26,6 +26,12 @@ Make sure your project meets the minimum requirements:
 
 `flutter pub add viam_sdk`
 
+## Upgrading
+
+`flutter pub upgrade viam_sdk`
+
+Note that breaking changes may occur in patch version changes, so we recommend locking your project to a specific version by adding a specific version number (for example `viam_sdk: 0.0.12`) to your `pubspec.yaml` file.
+
 ### Update Info.plist
 
 If you are building for Apple platforms, you may have to update your app's `Info.plist`. `NSLocalNetworkUsageDescription` is needed to establish stable WebRTC connections, and `NSBonjourServices` is required to connect to local devices via mDNS.
