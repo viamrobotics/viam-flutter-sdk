@@ -10,7 +10,7 @@ abstract class Arm extends Resource {
   ///
   /// ```
   /// // Get the pose of an arm named "myArm"
-  /// const currentPose = await myArm.endPosition();
+  /// final currentPose = await myArm.endPosition();
   /// ```
   Future<Pose> endPosition({Map<String, dynamic>? extra});
 
@@ -18,7 +18,7 @@ abstract class Arm extends Resource {
   ///
   /// ```
   /// // Create a pose for the arm to move to
-  /// final Pose targetPose = Pose(12, 0, 400, 0, 0, 1);
+  /// final targetPose = Pose.fromBuffer([12, 0, 400, 0, 0, 1, 90]);
   ///
   /// // Move the arm to the pose
   /// await myArm.moveToPosition(targetPose);
@@ -32,7 +32,7 @@ abstract class Arm extends Resource {
   /// List<double> targetPositions = [180, 90, 15.75, 30, 90, 0];
   ///
   /// // Move the arm joints to those angles
-  /// await myArm.moveToJointPosition(targetPositions);
+  /// await myArm.moveToJointPositions(targetPositions);
   /// ```
   Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra});
 
