@@ -24,7 +24,7 @@ jobs:
 
       # License finder doesn't look in the correct directory, so we have to rename
       # See https://github.com/pivotal/LicenseFinder/issues/1001
-      - run: mv .pub-cache/hosted/pub.dev .pub-cache/hosted/pub.dartlang.org
+      - run: cp -r .pub-cache/hosted/pub.dev .pub-cache/hosted/pub.dartlang.org
 
       - run: gem install license_finder
 
