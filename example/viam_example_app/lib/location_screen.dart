@@ -40,7 +40,7 @@ class _LocationScreenState extends State<LocationScreen> {
   Future<void> _initState() async {
     // Using the authenticated [Viam] the received as a parameter,
     // we can obtain a list of robots within this location.
-    final robots = await widget._viam.appClient.listRobots(widget.location);
+    final robots = await widget._viam.appClient.listRobots(widget.location.id);
     setState(() {
       // Once we have the list of robots, we can set the state.
       this.robots = robots;
