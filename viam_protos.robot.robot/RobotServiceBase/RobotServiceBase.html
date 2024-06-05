@@ -198,6 +198,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.RestartModuleRequest.fromBuffer(value),
       ($0.RestartModuleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.ShutdownRequest, $0.ShutdownResponse&gt;(
+      &#39;Shutdown&#39;,
+      shutdown_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.ShutdownRequest.fromBuffer(value),
+      ($0.ShutdownResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
