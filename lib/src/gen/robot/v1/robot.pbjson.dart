@@ -629,3 +629,21 @@ const RestartModuleResponse$json = {
 final $typed_data.Uint8List restartModuleResponseDescriptor = $convert.base64Decode(
     'ChVSZXN0YXJ0TW9kdWxlUmVzcG9uc2U=');
 
+@$core.Deprecated('Use shutdownRequestDescriptor instead')
+const ShutdownRequest$json = {
+  '1': 'ShutdownRequest',
+};
+
+/// Descriptor for `ShutdownRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List shutdownRequestDescriptor = $convert.base64Decode(
+    'Cg9TaHV0ZG93blJlcXVlc3Q=');
+
+@$core.Deprecated('Use shutdownResponseDescriptor instead')
+const ShutdownResponse$json = {
+  '1': 'ShutdownResponse',
+};
+
+/// Descriptor for `ShutdownResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List shutdownResponseDescriptor = $convert.base64Decode(
+    'ChBTaHV0ZG93blJlc3BvbnNl');
+
