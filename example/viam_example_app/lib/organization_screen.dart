@@ -44,7 +44,7 @@ class _OrganizationScreenState extends State<OrganizationScreen> {
   Future<void> _initState() async {
     // Using the authenticated [Viam] the received as a parameter,
     // we can obtain a list of locations within this organization.
-    final locations = await widget._viam.appClient.listLocations(widget.organization);
+    final locations = await widget._viam.appClient.listLocations(widget.organization.id);
     setState(() {
       // Once we have the list of locations, we can set the state.
       this.locations = locations;
