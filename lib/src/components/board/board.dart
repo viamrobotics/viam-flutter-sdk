@@ -50,7 +50,7 @@ abstract class Board extends Resource {
   ///
   /// ```
   /// // Get the PWM frequency of pin 11
-  /// var frequency = await myBoard.get('11');
+  /// var frequency = await myBoard.pwmFrequency('11');
   /// ```
   Future<int> pwmFrequency(String pin, {Map<String, dynamic>? extra});
 
