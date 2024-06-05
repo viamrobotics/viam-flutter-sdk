@@ -87,9 +87,10 @@ abstract class Board extends Resource {
   /// ```
   Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra});
 
-  /// addCallbacks adds a listener for the digital interrupts.
+  /// Add a listener for the digital interrupts.
   ///
   /// ```
+  /// // Add a listener for digital interrupts on pins 8 and 11
   /// var interrupts = ['8', '11'];
   /// final tickQueue = Queue<Tick>();
   /// await myBoard.addCallbacks(interrupts, tickQueue);
@@ -100,7 +101,10 @@ abstract class Board extends Resource {
   ///
   /// ```
   /// // Set the power mode of the board to offline deep for 60 seconds
-  /// await myBoard.setPowerMode(POWER_MODE_OFFLINE_DEEP, 60, 0);
+  /// // Requires adding 'package:viam_sdk/protos/component/board.dart'
+  /// // to your imports
+  /// const powerMode = PowerMode.POWER_MODE_OFFLINE_DEEP;
+  /// await myBoard.setPowerMode(powerMode, 60, 0);
   /// ```
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});
 
