@@ -101,8 +101,7 @@ abstract class Board extends Resource {
   ///
   /// ```
   /// // Set the power mode of the board to offline deep for 60 seconds
-  /// // Requires adding 'package:viam_sdk/protos/component/board.dart'
-  /// // to your imports
+  /// // Requires importing 'package:viam_sdk/protos/component/board.dart'
   /// const powerMode = PowerMode.POWER_MODE_OFFLINE_DEEP;
   /// await myBoard.setPowerMode(powerMode, 60, 0);
   /// ```
