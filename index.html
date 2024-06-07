@@ -52,9 +52,12 @@
       
 <section class="desc markdown">
   <h1 id="viam-flutter-sdk">Viam Flutter SDK</h1>
-<p>Build and connect to robots with Flutter</p>
 <p><img src="https://img.shields.io/github/actions/workflow/status/viamrobotics/viam-flutter-sdk/test.yaml?branch=main" alt="build status">
 <a href="https://github.com/viamrobotics/viam-flutter-sdk/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache_2.0-blue" alt="license"></a></p>
+<p>Viam is a software platform for robots and smart machines.
+The Viam Flutter SDK allows you to build custom mobile applications to interact with your machines, from controlling individual hardware components to monitoring many machines.</p>
+<p><strong>Website:</strong> <a href="https://www.viam.com">viam.com</a>
+<strong>Documentation:</strong> <a href="https://docs.viam.com">docs.viam.com</a></p>
 <h2 id="instability-notice">(In)stability Notice</h2>
 <blockquote>
 <p><strong>Warning</strong>
@@ -69,6 +72,10 @@ This is a beta release of the Viam Flutter SDK. No guarantees are made to the st
 </ul>
 <h2 id="installation">Installation</h2>
 <p><code>flutter pub add viam_sdk</code></p>
+<h2 id="upgrading">Upgrading</h2>
+<p><code>flutter pub upgrade viam_sdk</code></p>
+<p>Note that breaking changes may occur in patch version changes because the Viam Flutter SDK is still in beta.
+We recommend locking your project to a specific version by adding a specific version number (for example <code>viam_sdk: 0.0.12</code>) to your <code>pubspec.yaml</code> file.</p>
 <h3 id="update-infoplist">Update Info.plist</h3>
 <p>If you are building for Apple platforms, you may have to update your app's <code>Info.plist</code>. <code>NSLocalNetworkUsageDescription</code> is needed to establish stable WebRTC connections, and <code>NSBonjourServices</code> is required to connect to local devices via mDNS.</p>
 <pre class="language-plist"><code class="language-plist">&lt;key&gt;NSLocalNetworkUsageDescription&lt;/key&gt;
@@ -79,11 +86,12 @@ This is a beta release of the Viam Flutter SDK. No guarantees are made to the st
 &lt;/array&gt;
 </code></pre>
 <h2 id="usage">Usage</h2>
-<p>You can use the Viam SDK to connect to an existing robot (to create a robot, view the <a href="https://docs.viam.com/">documentation</a> or <a href="https://docs.viam.com/try-viam/">try Viam</a>).</p>
+<p>You can use the Viam SDK to connect to an existing machine (to create a machine, see <a href="https://docs.viam.com/use-cases/configure/">Build a simple smart machine</a> or if you don't have your own hardware, <a href="https://docs.viam.com/try-viam/">Try Viam</a>).</p>
 <pre class="language-dart"><code class="language-dart">import 'package:viam_sdk/viam_sdk.dart';
 
-// Connect to an existing robot
-// *NOTE* Get '&lt;API KEY ID&gt;' and '&lt;API KEY&gt;' from app.viam.com
+// Connect to an existing machine (robot)
+// *NOTE* Get '&lt;API KEY ID&gt;' and '&lt;API KEY&gt;' from
+// your machine's "CONNECT" tab on app.viam.com
 final options = RobotClientOptions.withAPIKey('&lt;API KEY ID&gt;', '&lt;API KEY&gt;');
 final robot = await RobotClient.atAddress('&lt;LOCATION&gt;', options);
 
@@ -94,12 +102,13 @@ print(robot.resourceNames);
 final movementSensor = MovementSensor.fromRobot(robot, 'my_sensor');
 print(await movementSensor.readings())
 </code></pre>
-<h2 id="example-app">Example app</h2>
-<p>View the sample app in the <a href="https://github.com/viamrobotics/viam-flutter-sdk/blob/main/example/"><code>/example</code></a> directory to see a more in-depth example.</p>
+<h2 id="example-apps">Example apps</h2>
+<p>View sample apps in the <a href="https://github.com/viamrobotics/viam-flutter-sdk/blob/main/example/"><code>/example</code></a> directory.
+<a href="https://docs.viam.com/tutorials/control/flutter-app/">This tutorial</a> walks through a version of one of these examples.</p>
 <h2 id="github">GitHub</h2>
 <p>You can view the code for the Viam Flutter SDK on <a href="https://github.com/viamrobotics/viam-flutter-sdk">GitHub</a>.</p>
 <h2 id="license">License</h2>
-<p>Copyright 2021-2023 Viam Inc.</p>
+<p>Copyright 2021-2024 Viam Inc.</p>
 <p>Apache 2.0 - See <a href="https://github.com/viamrobotics/viam-python-sdk/blob/main/LICENSE">LICENSE</a> file</p>
 </section>
 
