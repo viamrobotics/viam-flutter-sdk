@@ -485,6 +485,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $2.DeleteRegistryItemRequest.fromBuffer(value),
       ($2.DeleteRegistryItemResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.TransferRegistryItemRequest, $2.TransferRegistryItemResponse&gt;(
+      &#39;TransferRegistryItem&#39;,
+      transferRegistryItem_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.TransferRegistryItemRequest.fromBuffer(value),
+      ($2.TransferRegistryItemResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$2.CreateModuleRequest, $2.CreateModuleResponse&gt;(
       &#39;CreateModule&#39;,
       createModule_Pre,
