@@ -2081,6 +2081,29 @@ const DeleteRegistryItemResponse$json = {
 final $typed_data.Uint8List deleteRegistryItemResponseDescriptor = $convert.base64Decode(
     'ChpEZWxldGVSZWdpc3RyeUl0ZW1SZXNwb25zZQ==');
 
+@$core.Deprecated('Use transferRegistryItemRequestDescriptor instead')
+const TransferRegistryItemRequest$json = {
+  '1': 'TransferRegistryItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'new_public_namespace', '3': 2, '4': 1, '5': 9, '10': 'newPublicNamespace'},
+  ],
+};
+
+/// Descriptor for `TransferRegistryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List transferRegistryItemRequestDescriptor = $convert.base64Decode(
+    'ChtUcmFuc2ZlclJlZ2lzdHJ5SXRlbVJlcXVlc3QSFwoHaXRlbV9pZBgBIAEoCVIGaXRlbUlkEj'
+    'AKFG5ld19wdWJsaWNfbmFtZXNwYWNlGAIgASgJUhJuZXdQdWJsaWNOYW1lc3BhY2U=');
+
+@$core.Deprecated('Use transferRegistryItemResponseDescriptor instead')
+const TransferRegistryItemResponse$json = {
+  '1': 'TransferRegistryItemResponse',
+};
+
+/// Descriptor for `TransferRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List transferRegistryItemResponseDescriptor = $convert.base64Decode(
+    'ChxUcmFuc2ZlclJlZ2lzdHJ5SXRlbVJlc3BvbnNl');
+
 @$core.Deprecated('Use createModuleRequestDescriptor instead')
 const CreateModuleRequest$json = {
   '1': 'CreateModuleRequest',
