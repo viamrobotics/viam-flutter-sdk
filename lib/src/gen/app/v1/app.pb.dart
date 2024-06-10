@@ -8653,6 +8653,102 @@ class DeleteRegistryItemResponse extends $pb.GeneratedMessage {
   static DeleteRegistryItemResponse? _defaultInstance;
 }
 
+class TransferRegistryItemRequest extends $pb.GeneratedMessage {
+  factory TransferRegistryItemRequest({
+    $core.String? itemId,
+    $core.String? newPublicNamespace,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (newPublicNamespace != null) {
+      $result.newPublicNamespace = newPublicNamespace;
+    }
+    return $result;
+  }
+  TransferRegistryItemRequest._() : super();
+  factory TransferRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TransferRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransferRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'newPublicNamespace')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TransferRegistryItemRequest clone() => TransferRegistryItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TransferRegistryItemRequest copyWith(void Function(TransferRegistryItemRequest) updates) => super.copyWith((message) => updates(message as TransferRegistryItemRequest)) as TransferRegistryItemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TransferRegistryItemRequest create() => TransferRegistryItemRequest._();
+  TransferRegistryItemRequest createEmptyInstance() => create();
+  static $pb.PbList<TransferRegistryItemRequest> createRepeated() => $pb.PbList<TransferRegistryItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TransferRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransferRegistryItemRequest>(create);
+  static TransferRegistryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get newPublicNamespace => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set newPublicNamespace($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNewPublicNamespace() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewPublicNamespace() => clearField(2);
+}
+
+class TransferRegistryItemResponse extends $pb.GeneratedMessage {
+  factory TransferRegistryItemResponse() => create();
+  TransferRegistryItemResponse._() : super();
+  factory TransferRegistryItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TransferRegistryItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransferRegistryItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TransferRegistryItemResponse clone() => TransferRegistryItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TransferRegistryItemResponse copyWith(void Function(TransferRegistryItemResponse) updates) => super.copyWith((message) => updates(message as TransferRegistryItemResponse)) as TransferRegistryItemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TransferRegistryItemResponse create() => TransferRegistryItemResponse._();
+  TransferRegistryItemResponse createEmptyInstance() => create();
+  static $pb.PbList<TransferRegistryItemResponse> createRepeated() => $pb.PbList<TransferRegistryItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TransferRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransferRegistryItemResponse>(create);
+  static TransferRegistryItemResponse? _defaultInstance;
+}
+
 /// Modules
 class CreateModuleRequest extends $pb.GeneratedMessage {
   factory CreateModuleRequest({
