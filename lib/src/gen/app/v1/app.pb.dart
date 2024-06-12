@@ -7554,10 +7554,18 @@ class ModuleMetadata extends $pb.GeneratedMessage {
 class MLModelMetadata extends $pb.GeneratedMessage {
   factory MLModelMetadata({
     $core.Iterable<$core.String>? versions,
+    $0.ModelType? modelType,
+    $0.ModelFramework? modelFramework,
   }) {
     final $result = create();
     if (versions != null) {
       $result.versions.addAll(versions);
+    }
+    if (modelType != null) {
+      $result.modelType = modelType;
+    }
+    if (modelFramework != null) {
+      $result.modelFramework = modelFramework;
     }
     return $result;
   }
@@ -7567,6 +7575,8 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'versions')
+    ..e<$0.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $0.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $0.ModelType.valueOf, enumValues: $0.ModelType.values)
+    ..e<$0.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $0.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $0.ModelFramework.valueOf, enumValues: $0.ModelFramework.values)
     ..hasRequiredFields = false
   ;
 
@@ -7594,6 +7604,24 @@ class MLModelMetadata extends $pb.GeneratedMessage {
   /// A list of package versions for a ML model
   @$pb.TagNumber(1)
   $core.List<$core.String> get versions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $0.ModelType get modelType => $_getN(1);
+  @$pb.TagNumber(2)
+  set modelType($0.ModelType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasModelType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearModelType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $0.ModelFramework get modelFramework => $_getN(2);
+  @$pb.TagNumber(3)
+  set modelFramework($0.ModelFramework v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasModelFramework() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearModelFramework() => clearField(3);
 }
 
 class MLTrainingVersion extends $pb.GeneratedMessage {

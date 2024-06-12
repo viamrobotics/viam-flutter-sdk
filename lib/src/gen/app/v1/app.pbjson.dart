@@ -1848,12 +1848,17 @@ const MLModelMetadata$json = {
   '1': 'MLModelMetadata',
   '2': [
     {'1': 'versions', '3': 1, '4': 3, '5': 9, '10': 'versions'},
+    {'1': 'model_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '10': 'modelType'},
+    {'1': 'model_framework', '3': 3, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '10': 'modelFramework'},
   ],
 };
 
 /// Descriptor for `MLModelMetadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List mLModelMetadataDescriptor = $convert.base64Decode(
-    'Cg9NTE1vZGVsTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25z');
+    'Cg9NTE1vZGVsTWV0YWRhdGESGgoIdmVyc2lvbnMYASADKAlSCHZlcnNpb25zEkAKCm1vZGVsX3'
+    'R5cGUYAiABKA4yIS52aWFtLmFwcC5tbHRyYWluaW5nLnYxLk1vZGVsVHlwZVIJbW9kZWxUeXBl'
+    'Ek8KD21vZGVsX2ZyYW1ld29yaxgDIAEoDjImLnZpYW0uYXBwLm1sdHJhaW5pbmcudjEuTW9kZW'
+    'xGcmFtZXdvcmtSDm1vZGVsRnJhbWV3b3Jr');
 
 @$core.Deprecated('Use mLTrainingVersionDescriptor instead')
 const MLTrainingVersion$json = {
