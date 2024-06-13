@@ -23,13 +23,24 @@ class VisionClient extends Resource implements ResourceRPCClient {
   VisionClient(this.name, this.channel);
 
   /// Get a list of [Detection]s from the camera named [cameraName].
+  ///
+  /// ```
+  /// // Example:
+  /// var detections = await myVisionService.detectionsFromCamera('myWebcam');
+  /// ```
   Future<List<Detection>> detectionsFromCamera(String cameraName, {Map<String, dynamic>? extra}) async {
     final request = GetDetectionsFromCameraRequest(name: name, cameraName: cameraName, extra: extra?.toStruct());
     final response = await client.getDetectionsFromCamera(request);
     return response.detections;
   }
 
-  /// Get a list of [Detection]s from the provided [image].
+  /// Get a list of [Detection]s from the provided [ViamImage].
+  ///
+  /// ```
+  /// // Example:
+  /// var latestImage = await myWebcam.image();
+  /// var detections = await myVisionService.detections(latestImage);
+  /// ```
   Future<List<Detection>> detections(ViamImage image, {Map<String, dynamic>? extra}) async {
     final request = GetDetectionsRequest(
         name: name,
@@ -44,6 +55,11 @@ class VisionClient extends Resource implements ResourceRPCClient {
 
   /// Get a list of [Classification]s from the camera named [cameraName].
   /// The maximum number of [Classification]s returned is [count].
+  ///
+  /// ```
+  /// // Example:
+  /// var classifications = await myVisionService.classificationsFromCamera('myWebcam', 2);
+  /// ```
   Future<List<Classification>> classificationsFromCamera(String cameraName, int count, {Map<String, dynamic>? extra}) async {
     final request = GetClassificationsFromCameraRequest(name: name, cameraName: cameraName, n: count, extra: extra?.toStruct());
     final response = await client.getClassificationsFromCamera(request);
@@ -52,6 +68,11 @@ class VisionClient extends Resource implements ResourceRPCClient {
 
   /// Get a list of [Classification]s from the provided [image].
   /// The maximum number of [Classification]s returned is [count].
+  ///
+  /// // Example:
+  /// var latestImage = await myWebcam.image();
+  /// var classifications = await myVisionService.classifications(latestImage, 2);
+  /// ```
   Future<List<Classification>> classifications(ViamImage image, int count, {Map<String, dynamic>? extra}) async {
     final request = GetClassificationsRequest(
         name: name,
@@ -66,6 +87,11 @@ class VisionClient extends Resource implements ResourceRPCClient {
   }
 
   /// Get a list of [PointCloudObject]s from the camera named [cameraName].
+  ///
+  /// ```
+  /// Example:
+  /// var ptCloud = await myVisionService.objectPointClouds('myCamera');
+  /// ```
   Future<List<PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
     final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
     final response = await client.getObjectPointClouds(request);
