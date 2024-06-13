@@ -89,7 +89,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
   /// Get a list of [PointCloudObject]s from the camera named [cameraName].
   ///
   /// ```
-  /// Example:
+  /// // Example:
   /// var ptCloud = await myVisionService.objectPointClouds('myCamera');
   /// ```
   Future<List<PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
