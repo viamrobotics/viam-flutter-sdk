@@ -18,31 +18,72 @@ abstract class MovementSensor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'movement_sensor');
 
   /// Obtain the measurements/data specific to this [MovementSensor]
-  /// If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.
+  /// If a sensor is not configured to have a measurement or fails to read a piece of data,
+  /// it will not appear in the readings dictionary.
+  ///
+  /// ```
+  /// var readings = await myMovementSensor.readings();
+  /// ```
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
-  /// Get the current [GeoPoint] (latitude, longitude) and altitude (mm)
+  /// Get the current [GeoPoint] (latitude, longitude) and altitude (mm).
+  ///
+  /// ```
+  /// var position = await myMovementSensor.position();
+  /// ```
   Future<Position> position({Map<String, dynamic>? extra});
 
-  /// Get the current linear velocity as a [Vector3] with x, y, and z axes represented in mm/sec
+  /// Get the current linear velocity as a [Vector3] with x, y, and z axes represented in mm/sec.
+  ///
+  /// ```
+  /// var linVel = await myMovementSensor.linearVelocity();
+  /// ```
   Future<Vector3> linearVelocity({Map<String, dynamic>? extra});
 
-  /// Get the current angular velocity as a [Vector3] with x, y, and z axes represented in radians/sec
+  /// Get the current angular velocity as a [Vector3] with
+  /// x, y, and z axes represented in radians per second.
+  ///
+  /// ```
+  /// var angVel = await myMovementSensor.angularVelocity();
+  /// ```
   Future<Vector3> angularVelocity({Map<String, dynamic>? extra});
 
-  /// Get the current linear acceleration as a [Vector3] with x, y, and z axes represented in mm/sec^2
+  /// Get the current linear acceleration as a [Vector3] with
+  /// x, y, and z axes represented in mm/sec^2.
+  ///
+  /// ```
+  /// var linAccel = await myMovementSensor.linearAcceleration();
+  /// ```
   Future<Vector3> linearAcceleration({Map<String, dynamic>? extra});
 
-  /// Get the current compass heading in degrees
+  /// Get the current compass heading in degrees.
+  ///
+  /// ```
+  /// var compassHeading = await myMovementSensor.compassHeading();
+  /// ```
   Future<double> compassHeading({Map<String, dynamic>? extra});
 
-  /// Get the current orientation as an [Orientation]
+  /// Get the current orientation as an [Orientation].
+  ///
+  /// ```
+  /// var orientation = await myMovementSensor.orientation();
+  /// ```
   Future<Orientation> orientation({Map<String, dynamic>? extra});
 
-  /// Get the supported properties of this sensor
+  /// Get the supported properties of this sensor.
+  ///
+  /// ```
+  /// var props = await myMovementSensor.properties();
+  /// ```
   Future<Properties> properties({Map<String, dynamic>? extra});
 
-  /// Get the accuracy of the various sensors
+  /// Get the reliability metrics of the movement sensor,
+  /// including various parameters to assess the sensor’s
+  /// accuracy and precision in different dimensions.
+  ///
+  /// ```
+  /// var accuracy = await myMovementSensor.accuracy();
+  /// ```
   Future<Accuracy> accuracy({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [MovementSensor] with the given [name]
