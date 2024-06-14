@@ -78,6 +78,10 @@
     
 <section class="desc markdown">
   <p>Send/Receive arbitrary commands to the <a href="../../viam_sdk/Resource-class.html">Resource</a></p>
+<pre class="language-dart"><code>// Example using doCommand with an arm component
+const command = {'cmd': 'test', 'data1': 500};
+var result = myArm.doCommand(command);
+</code></pre>
 </section>
 
 
