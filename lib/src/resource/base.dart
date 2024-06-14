@@ -26,12 +26,22 @@ class Subtype {
   const Subtype(this.namespace, this.resourceType, this.resourceSubtype);
 
   /// Create a new [Subtype] from a [ResourceName]
+  ///
+  /// ```
+  /// // Example, creating a Sensor from a resource named "mySensor":
+  /// var mySensor = Sensor.fromResourceName('mySensor');
+  /// ```
   Subtype.fromResourceName(ResourceName name)
       : namespace = name.namespace,
         resourceType = name.type,
         resourceSubtype = name.subtype;
 
   /// Get a [ResourceName] from this [Subtype] and a provided [name]
+  ///
+  /// ```
+  /// // Example, getting the ResourceName of a sensor named "my_sensor":
+  /// var resourceName = Sensor.getResourceName('my_sensor');
+  /// ```
   ResourceName getResourceName(String name) {
     return ResourceName()
       ..namespace = namespace
@@ -56,6 +66,12 @@ abstract class Resource {
   abstract final String name;
 
   /// Send/Receive arbitrary commands to the [Resource]
+  ///
+  /// ```
+  /// // Example using doCommand with an arm component
+  /// const command = {'cmd': 'test', 'data1': 500};
+  /// var result = myArm.doCommand(command);
+  /// ```
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) {
     throw UnimplementedError();
   }
