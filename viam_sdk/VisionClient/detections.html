@@ -73,7 +73,11 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get a list of <a href="../../viam_protos.service.vision/Detection-class.html">Detection</a>s from the provided <code>image</code>.</p>
+  <p>Get a list of <a href="../../viam_protos.service.vision/Detection-class.html">Detection</a>s from the provided <a href="../../viam_sdk/ViamImage-class.html">ViamImage</a>.</p>
+<pre class="language-dart"><code>// Example:
+var latestImage = await myWebcam.image();
+var detections = await myVisionService.detections(latestImage);
+</code></pre>
 </section>
 
 
