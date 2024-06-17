@@ -19,7 +19,7 @@ abstract class PowerSensor extends Resource {
   /// ```
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
-  /// Get the voltage (in volts) and whether the power is
+  /// Get the voltage in volts, and whether the power is
   /// AC (true) or DC (false).
   ///
   /// ```
@@ -29,7 +29,7 @@ abstract class PowerSensor extends Resource {
   /// ```
   Future<Voltage> voltage({Map<String, dynamic>? extra});
 
-  /// Get the current (in amperes) and whether the current
+  /// Get the current in amperes, and whether the current
   /// is AC (true) or DC (false).
   ///
   /// ```
