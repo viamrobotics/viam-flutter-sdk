@@ -6,8 +6,6 @@ import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import '../gen/app/v1/robot.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
 
-const flutterSdkLoggerName = 'flutter-sdk';
-
 /// gRPC client for connecting to app's RobotService.
 ///
 /// All calls must be authenticated.
@@ -17,7 +15,7 @@ class AppRobotClient {
   AppRobotClient(this._client);
 
   /// Log the OutputEvent to app with the given partId.
-  Future<void> log(String partId, OutputEvent event) async {
+  Future<void> log(String partId, host, loggerName, OutputEvent event) async {
     late String level;
     switch (event.level) {
       case Level.debug:
@@ -37,8 +35,7 @@ class AppRobotClient {
     // Join lines with '\n' and suffix with '\n'.
     final String message = '${event.lines.join('\n')}\n';
 
-    final LogEntry entry =
-        LogEntry(host: '$partId-$flutterSdkLoggerName', level: level, time: protoTs, loggerName: flutterSdkLoggerName, message: message);
+    final LogEntry entry = LogEntry(host: host, level: level, time: protoTs, loggerName: loggerName, message: message);
     final request = LogRequest(id: partId, logs: [entry]);
     await _client.log(request);
   }
