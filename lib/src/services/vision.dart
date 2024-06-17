@@ -69,6 +69,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
   /// Get a list of [Classification]s from the provided [image].
   /// The maximum number of [Classification]s returned is [count].
   ///
+  /// ```
   /// // Example:
   /// var latestImage = await myWebcam.image();
   /// var classifications = await myVisionService.classifications(latestImage, 2);
