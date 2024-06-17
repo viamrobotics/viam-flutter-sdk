@@ -72,8 +72,11 @@
     </section>
     
 <section class="desc markdown">
-  <p>Obtain the measurements/data specific to this <a href="../../viam_sdk/Sensor-class.html">Sensor</a>
-If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.</p>
+  <p>Get the measurements or readings from this <a href="../../viam_sdk/PowerSensor-class.html">PowerSensor</a>.
+If a sensor is not configured correctly or fails to read a
+piece of data, it will not appear in the readings dictionary.</p>
+<pre class="language-dart"><code>var readings = await myPowerSensor.readings();
+</code></pre>
 </section>
 
 

@@ -191,7 +191,8 @@
 
 </dt>
 <dd>
-  Get the current (amperes) and boolean isAC
+  Get the current in amperes, and whether the current
+is AC (true) or DC (false).
   <div class="features"><span class="feature">override</span></div>
 
 </dd>
@@ -243,8 +244,9 @@
 
 </dt>
 <dd>
-  Obtain the measurements/data specific to this <a href="../viam_sdk/Sensor-class.html">Sensor</a>
-If a sensor is not configured to have a measurement or fails to read a piece of data, it will not appear in the readings dictionary.
+  Get the measurements or readings from this <a href="../viam_sdk/PowerSensor-class.html">PowerSensor</a>.
+If a sensor is not configured correctly or fails to read a
+piece of data, it will not appear in the readings dictionary.
   <div class="features"><span class="feature">override</span></div>
 
 </dd>
@@ -270,7 +272,8 @@ If a sensor is not configured to have a measurement or fails to read a piece of 
 
 </dt>
 <dd>
-  Get the voltage (volts) and boolean isAC
+  Get the voltage in volts, and whether the power is
+AC (true) or DC (false).
   <div class="features"><span class="feature">override</span></div>
 
 </dd>
