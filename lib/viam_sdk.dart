@@ -5,6 +5,7 @@ library viam_sdk;
 export 'src/app/data.dart' hide DataClient;
 export 'src/app/permissions.dart';
 export 'src/app/provisioning.dart';
+export 'src/app/robot.dart';
 
 /// Components
 export 'src/components/arm/arm.dart';

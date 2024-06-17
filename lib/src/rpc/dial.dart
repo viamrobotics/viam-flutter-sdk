@@ -18,7 +18,9 @@ import 'grpc/grpc_or_grpcweb_channel.dart';
 import 'web_rtc/web_rtc_client.dart';
 
 Logger newDialLogger(LogOutput? output) {
-  return Logger(output: output, printer: PrettyPrinter(printTime: true));
+  // Use a SimplePrinter, as flutter dial logs from the RC app are sent to app.viam.com,
+  // and pretty-printed logs are overly formatted.
+  return Logger(output: output, printer: SimplePrinter(colors: false));
 }
 
 var _logger = newDialLogger(null);

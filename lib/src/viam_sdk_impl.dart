@@ -6,11 +6,13 @@ import 'package:viam_sdk/protos/app/dataset.dart';
 import '../protos/app/app.dart';
 import '../protos/app/billing.dart';
 import '../protos/app/data.dart';
+import '../protos/app/robot.dart';
 import '../protos/provisioning/provisioning.dart';
 import './app/app.dart';
 import './app/billing.dart';
 import './app/data.dart';
 import './app/provisioning.dart';
+import './app/robot.dart';
 import './robot/client.dart';
 import './rpc/dial.dart';
 import './viam_sdk.dart';
@@ -18,12 +20,14 @@ import './viam_sdk.dart';
 class ViamImpl implements Viam {
   final ClientChannelBase _clientChannelBase;
   late AppClient _appClient;
+  late AppRobotClient _appRobotClient;
   late BillingClient _billingClient;
   late DataClient _dataClient;
   late ProvisioningClient _provisioningClient;
 
   ViamImpl._withChannel(this._clientChannelBase) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
+    _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
         DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
@@ -33,6 +37,7 @@ class ViamImpl implements Viam {
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
       : _clientChannelBase = AuthenticatedChannel(serviceHost, servicePort, accessToken, servicePort == 443 ? false : true) {
     _appClient = AppClient(AppServiceClient(_clientChannelBase));
+    _appRobotClient = AppRobotClient(RobotServiceClient(_clientChannelBase));
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
         DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
@@ -61,6 +66,11 @@ class ViamImpl implements Viam {
   @override
   AppClient get appClient {
     return _appClient;
+  }
+
+  @override
+  AppRobotClient get appRobotClient {
+    return _appRobotClient;
   }
 
   @override
