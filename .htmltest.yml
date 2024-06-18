@@ -1,4 +1,4 @@
-DirectoryPath: "dist"
+DirectoryPath: "doc/api"
 EnforceHTTPS: true
 IgnoreEmptyHref: true
 IgnoreInternalEmptyHash: true
