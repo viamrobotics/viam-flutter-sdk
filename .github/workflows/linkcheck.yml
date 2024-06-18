@@ -30,7 +30,7 @@ jobs:
         continue-on-error: false
         uses: wjdp/htmltest-action@master
         with:
-          config: .htmltest-local.yml
+          config: .htmltest.yml
       - name: Archive htmltest results
         uses: actions/upload-artifact@v3
         # Note: Set ACTIONS_RUNTIME_TOKEN env variable to test with nektos/act
