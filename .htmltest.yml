@@ -1,0 +1,14 @@
+DirectoryPath: "doc/api"
+EnforceHTTPS: true
+IgnoreEmptyHref: true
+IgnoreInternalEmptyHash: true
+IgnoreDirectoryMissingTrailingSlash: false
+IgnoreURLs:
+  - "app.viam.com"
+  - "fonts.gstatic.com"
+IgnoreDirs:
+  - "lib"
+CacheExpires: "6h"
+# IgnoreDirs: - if we need to ever ignore files
+CheckInternal: false
+CheckDoctype: false
