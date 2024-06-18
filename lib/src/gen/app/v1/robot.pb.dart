@@ -1993,7 +1993,7 @@ class Orientation_EulerAngles extends $pb.GeneratedMessage {
   void clearYaw() => clearField(3);
 }
 
-/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation
+/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis-angle_representation
 /// Basic explanation: Imagine a 3d cartesian grid centered at 0,0,0, and a sphere of radius 1 centered at
 /// that same point. An orientation can be expressed by first specifying an axis, i.e. a line from the origin
 /// to a point on that sphere, represented by (rx, ry, rz), and a rotation around that axis, theta.
