@@ -5,6 +5,7 @@ IgnoreInternalEmptyHash: true
 IgnoreDirectoryMissingTrailingSlash: false
 IgnoreURLs:
   - "app.viam.com"
+  - "fonts.gstatic.com"
 IgnoreDirs:
   - "lib"
 CacheExpires: "6h"
