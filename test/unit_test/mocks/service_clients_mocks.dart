@@ -5,6 +5,7 @@ import 'package:viam_sdk/protos/app/ml_training.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/app/v1/app.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/app/v1/billing.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/app/v1/robot.pbgrpc.dart' as app_robot;
 import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
@@ -12,6 +13,7 @@ import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
 @GenerateNiceMocks([
   MockSpec<ClientChannelBase>(),
   MockSpec<RobotServiceClient>(),
+  MockSpec<app_robot.RobotServiceClient>(as: Symbol('MockAppRobotServiceClient')),
   MockSpec<AppServiceClient>(),
   MockSpec<DataServiceClient>(),
   MockSpec<ProvisioningServiceClient>(),
