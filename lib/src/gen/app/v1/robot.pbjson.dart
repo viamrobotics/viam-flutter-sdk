@@ -231,6 +231,7 @@ const ServiceConfig$json = {
     {'1': 'model', '3': 6, '4': 1, '5': 9, '10': 'model'},
     {'1': 'api', '3': 9, '4': 1, '5': 9, '10': 'api'},
     {'1': 'service_configs', '3': 10, '4': 3, '5': 11, '6': '.viam.app.v1.ResourceLevelServiceConfig', '8': {}, '10': 'serviceConfigs'},
+    {'1': 'log_configuration', '3': 11, '4': 1, '5': 11, '6': '.viam.app.v1.LogConfiguration', '10': 'logConfiguration'},
   ],
 };
 
@@ -241,7 +242,9 @@ final $typed_data.Uint8List serviceConfigDescriptor = $convert.base64Decode(
     'Z2xlLnByb3RvYnVmLlN0cnVjdFIKYXR0cmlidXRlcxIdCgpkZXBlbmRzX29uGAUgAygJUglkZX'
     'BlbmRzT24SFAoFbW9kZWwYBiABKAlSBW1vZGVsEhAKA2FwaRgJIAEoCVIDYXBpEmwKD3NlcnZp'
     'Y2VfY29uZmlncxgKIAMoCzInLnZpYW0uYXBwLnYxLlJlc291cmNlTGV2ZWxTZXJ2aWNlQ29uZm'
-    'lnQhqahJ4DFWpzb246InNlcnZpY2VfY29uZmlnIlIOc2VydmljZUNvbmZpZ3M=');
+    'lnQhqahJ4DFWpzb246InNlcnZpY2VfY29uZmlnIlIOc2VydmljZUNvbmZpZ3MSSgoRbG9nX2Nv'
+    'bmZpZ3VyYXRpb24YCyABKAsyHS52aWFtLmFwcC52MS5Mb2dDb25maWd1cmF0aW9uUhBsb2dDb2'
+    '5maWd1cmF0aW9u');
 
 @$core.Deprecated('Use networkConfigDescriptor instead')
 const NetworkConfig$json = {

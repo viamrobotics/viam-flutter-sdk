@@ -930,6 +930,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     $core.String? model,
     $core.String? api,
     $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
+    LogConfiguration? logConfiguration,
   }) {
     final $result = create();
     if (name != null) {
@@ -956,6 +957,9 @@ class ServiceConfig extends $pb.GeneratedMessage {
     if (serviceConfigs != null) {
       $result.serviceConfigs.addAll(serviceConfigs);
     }
+    if (logConfiguration != null) {
+      $result.logConfiguration = logConfiguration;
+    }
     return $result;
   }
   ServiceConfig._() : super();
@@ -971,6 +975,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'model')
     ..aOS(9, _omitFieldNames ? '' : 'api')
     ..pc<ResourceLevelServiceConfig>(10, _omitFieldNames ? '' : 'serviceConfigs', $pb.PbFieldType.PM, subBuilder: ResourceLevelServiceConfig.create)
+    ..aOM<LogConfiguration>(11, _omitFieldNames ? '' : 'logConfiguration', subBuilder: LogConfiguration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1056,6 +1061,17 @@ class ServiceConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(10)
   $core.List<ResourceLevelServiceConfig> get serviceConfigs => $_getList(7);
+
+  @$pb.TagNumber(11)
+  LogConfiguration get logConfiguration => $_getN(8);
+  @$pb.TagNumber(11)
+  set logConfiguration(LogConfiguration v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasLogConfiguration() => $_has(8);
+  @$pb.TagNumber(11)
+  void clearLogConfiguration() => clearField(11);
+  @$pb.TagNumber(11)
+  LogConfiguration ensureLogConfiguration() => $_ensure(8);
 }
 
 class NetworkConfig extends $pb.GeneratedMessage {
@@ -1993,7 +2009,7 @@ class Orientation_EulerAngles extends $pb.GeneratedMessage {
   void clearYaw() => clearField(3);
 }
 
-/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis-angle_representation
+/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation
 /// Basic explanation: Imagine a 3d cartesian grid centered at 0,0,0, and a sphere of radius 1 centered at
 /// that same point. An orientation can be expressed by first specifying an axis, i.e. a line from the origin
 /// to a point on that sphere, represented by (rx, ry, rz), and a rotation around that axis, theta.
