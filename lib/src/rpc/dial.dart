@@ -17,13 +17,13 @@ import '../utils.dart';
 import 'grpc/grpc_or_grpcweb_channel.dart';
 import 'web_rtc/web_rtc_client.dart';
 
-Logger newDialLogger(LogOutput? output) {
+Logger _newDialLogger(LogOutput? output) {
   // Use a SimplePrinter, as flutter dial logs from the RC app are sent to app.viam.com,
   // and pretty-printed logs are overly formatted.
   return Logger(output: output, printer: SimplePrinter(colors: false));
 }
 
-var _logger = newDialLogger(null);
+var _logger = _newDialLogger(null);
 
 /// Describes the behavior for connecting to a robot
 class DialOptions {
@@ -123,7 +123,7 @@ class DialWebRtcOptions {
 /// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
   final opts = options ?? DialOptions();
-  _logger = newDialLogger(opts.logOutput);
+  _logger = _newDialLogger(opts.logOutput);
 
   final dialSW = Stopwatch()..start();
   _logger.i('Connecting to address $address');
