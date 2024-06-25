@@ -75,7 +75,7 @@ class MoveRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
-  /// the degrees by which to rotate the servo. Accepted values are between 0 and 180
+  /// the degrees by which to rotate the servo.
   @$pb.TagNumber(2)
   $core.int get angleDeg => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -238,7 +238,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   static GetPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPositionResponse>(create);
   static GetPositionResponse? _defaultInstance;
 
-  /// the degrees from neutral by which the servo is currently rotated. Values are between 0 and 180
+  /// the degrees from neutral by which the servo is currently rotated.
   @$pb.TagNumber(1)
   $core.int get positionDeg => $_getIZ(0);
   @$pb.TagNumber(1)
