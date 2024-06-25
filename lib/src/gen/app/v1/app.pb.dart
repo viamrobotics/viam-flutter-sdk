@@ -377,6 +377,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
     $core.String? robot,
     $6.Timestamp? when,
     RobotPart? old,
+    AuthenticatorInfo? editedBy,
   }) {
     final $result = create();
     if (part != null) {
@@ -391,6 +392,9 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
     if (old != null) {
       $result.old = old;
     }
+    if (editedBy != null) {
+      $result.editedBy = editedBy;
+    }
     return $result;
   }
   RobotPartHistoryEntry._() : super();
@@ -402,6 +406,7 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'robot')
     ..aOM<$6.Timestamp>(3, _omitFieldNames ? '' : 'when', subBuilder: $6.Timestamp.create)
     ..aOM<RobotPart>(4, _omitFieldNames ? '' : 'old', subBuilder: RobotPart.create)
+    ..aOM<AuthenticatorInfo>(5, _omitFieldNames ? '' : 'editedBy', subBuilder: AuthenticatorInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -465,6 +470,95 @@ class RobotPartHistoryEntry extends $pb.GeneratedMessage {
   void clearOld() => clearField(4);
   @$pb.TagNumber(4)
   RobotPart ensureOld() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  AuthenticatorInfo get editedBy => $_getN(4);
+  @$pb.TagNumber(5)
+  set editedBy(AuthenticatorInfo v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEditedBy() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEditedBy() => clearField(5);
+  @$pb.TagNumber(5)
+  AuthenticatorInfo ensureEditedBy() => $_ensure(4);
+}
+
+class AuthenticatorInfo extends $pb.GeneratedMessage {
+  factory AuthenticatorInfo({
+    AuthenticationType? type,
+    $core.String? value,
+    $core.bool? isDeactivated,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (isDeactivated != null) {
+      $result.isDeactivated = isDeactivated;
+    }
+    return $result;
+  }
+  AuthenticatorInfo._() : super();
+  factory AuthenticatorInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AuthenticatorInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthenticatorInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<AuthenticationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED, valueOf: AuthenticationType.valueOf, enumValues: AuthenticationType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..aOB(3, _omitFieldNames ? '' : 'isDeactivated')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AuthenticatorInfo clone() => AuthenticatorInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AuthenticatorInfo copyWith(void Function(AuthenticatorInfo) updates) => super.copyWith((message) => updates(message as AuthenticatorInfo)) as AuthenticatorInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AuthenticatorInfo create() => AuthenticatorInfo._();
+  AuthenticatorInfo createEmptyInstance() => create();
+  static $pb.PbList<AuthenticatorInfo> createRepeated() => $pb.PbList<AuthenticatorInfo>();
+  @$core.pragma('dart2js:noInline')
+  static AuthenticatorInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthenticatorInfo>(create);
+  static AuthenticatorInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthenticationType get type => $_getN(0);
+  @$pb.TagNumber(1)
+  set type(AuthenticationType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isDeactivated => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isDeactivated($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIsDeactivated() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsDeactivated() => clearField(3);
 }
 
 class ListOrganizationsRequest extends $pb.GeneratedMessage {

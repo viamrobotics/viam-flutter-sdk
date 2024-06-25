@@ -13,6 +13,25 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use authenticationTypeDescriptor instead')
+const AuthenticationType$json = {
+  '1': 'AuthenticationType',
+  '2': [
+    {'1': 'AUTHENTICATION_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'AUTHENTICATION_TYPE_WEB_OAUTH', '2': 1},
+    {'1': 'AUTHENTICATION_TYPE_API_KEY', '2': 2},
+    {'1': 'AUTHENTICATION_TYPE_ROBOT_PART_SECRET', '2': 3},
+    {'1': 'AUTHENTICATION_TYPE_LOCATION_SECRET', '2': 4},
+  ],
+};
+
+/// Descriptor for `AuthenticationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List authenticationTypeDescriptor = $convert.base64Decode(
+    'ChJBdXRoZW50aWNhdGlvblR5cGUSIwofQVVUSEVOVElDQVRJT05fVFlQRV9VTlNQRUNJRklFRB'
+    'AAEiEKHUFVVEhFTlRJQ0FUSU9OX1RZUEVfV0VCX09BVVRIEAESHwobQVVUSEVOVElDQVRJT05f'
+    'VFlQRV9BUElfS0VZEAISKQolQVVUSEVOVElDQVRJT05fVFlQRV9ST0JPVF9QQVJUX1NFQ1JFVB'
+    'ADEicKI0FVVEhFTlRJQ0FUSU9OX1RZUEVfTE9DQVRJT05fU0VDUkVUEAQ=');
+
 @$core.Deprecated('Use fragmentVisibilityDescriptor instead')
 const FragmentVisibility$json = {
   '1': 'FragmentVisibility',
@@ -133,6 +152,7 @@ const RobotPartHistoryEntry$json = {
     {'1': 'robot', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'robot'},
     {'1': 'when', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'when'},
     {'1': 'old', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.RobotPart', '8': {}, '10': 'old'},
+    {'1': 'edited_by', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.AuthenticatorInfo', '8': {}, '10': 'editedBy'},
   ],
 };
 
@@ -142,7 +162,25 @@ final $typed_data.Uint8List robotPartHistoryEntryDescriptor = $convert.base64Dec
     'Bqc29uOiJwYXJ0IlIEcGFydBI0CgVyb2JvdBgCIAEoCUIemoSeAxlic29uOiJyb2JvdCIganNv'
     'bjoicm9ib3QiUgVyb2JvdBJMCgR3aGVuGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
     'FtcEIcmoSeAxdic29uOiJ3aGVuIiBqc29uOiJ3aGVuIlIEd2hlbhJECgNvbGQYBCABKAsyFi52'
-    'aWFtLmFwcC52MS5Sb2JvdFBhcnRCGpqEngMVYnNvbjoib2xkIiBqc29uOiJvbGQiUgNvbGQ=');
+    'aWFtLmFwcC52MS5Sb2JvdFBhcnRCGpqEngMVYnNvbjoib2xkIiBqc29uOiJvbGQiUgNvbGQSYw'
+    'oJZWRpdGVkX2J5GAUgASgLMh4udmlhbS5hcHAudjEuQXV0aGVudGljYXRvckluZm9CJpqEngMh'
+    'YnNvbjoiZWRpdGVkX2J5IiBqc29uOiJlZGl0ZWRfYnkiUghlZGl0ZWRCeQ==');
+
+@$core.Deprecated('Use authenticatorInfoDescriptor instead')
+const AuthenticatorInfo$json = {
+  '1': 'AuthenticatorInfo',
+  '2': [
+    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.AuthenticationType', '10': 'type'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'is_deactivated', '3': 3, '4': 1, '5': 8, '10': 'isDeactivated'},
+  ],
+};
+
+/// Descriptor for `AuthenticatorInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authenticatorInfoDescriptor = $convert.base64Decode(
+    'ChFBdXRoZW50aWNhdG9ySW5mbxIzCgR0eXBlGAEgASgOMh8udmlhbS5hcHAudjEuQXV0aGVudG'
+    'ljYXRpb25UeXBlUgR0eXBlEhQKBXZhbHVlGAIgASgJUgV2YWx1ZRIlCg5pc19kZWFjdGl2YXRl'
+    'ZBgDIAEoCFINaXNEZWFjdGl2YXRlZA==');
 
 @$core.Deprecated('Use listOrganizationsRequestDescriptor instead')
 const ListOrganizationsRequest$json = {
