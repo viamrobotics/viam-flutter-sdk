@@ -1,11 +1,30 @@
 # Changelog
 
-## [v0.0.15](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.15) (2024-05-28)
+## [v0.0.16](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.16) (2024-06-25)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.14...v0.0.15)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.15...v0.0.16)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#237](https://github.com/viamrobotics/viam-flutter-sdk/pull/237) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#236](https://github.com/viamrobotics/viam-flutter-sdk/pull/236) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Create linkcheck.yml [\#234](https://github.com/viamrobotics/viam-flutter-sdk/pull/234) ([npentrel](https://github.com/npentrel))
+- RSDK-7769, RSDK-7770 Add AppRobotClient and LogOutput dial option [\#233](https://github.com/viamrobotics/viam-flutter-sdk/pull/233) ([benjirewis](https://github.com/benjirewis))
+- DOCS-2036: Add vision service example snippets [\#232](https://github.com/viamrobotics/viam-flutter-sdk/pull/232) ([JessamyT](https://github.com/JessamyT))
+- DOCS-2400: Add snippets for resource base methods [\#231](https://github.com/viamrobotics/viam-flutter-sdk/pull/231) ([JessamyT](https://github.com/JessamyT))
+- DOCS-2035: Add example snippets to movement sensor, power sensor, sensor [\#230](https://github.com/viamrobotics/viam-flutter-sdk/pull/230) ([JessamyT](https://github.com/JessamyT))
+- Automated Protos Update [\#229](https://github.com/viamrobotics/viam-flutter-sdk/pull/229) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#228](https://github.com/viamrobotics/viam-flutter-sdk/pull/228) ([github-actions[bot]](https://github.com/apps/github-actions))
+- DOCS-2033: Add gripper example snippets [\#227](https://github.com/viamrobotics/viam-flutter-sdk/pull/227) ([JessamyT](https://github.com/JessamyT))
+- DOCS-2032: Add camera and gantry example snippets [\#226](https://github.com/viamrobotics/viam-flutter-sdk/pull/226) ([JessamyT](https://github.com/JessamyT))
+- Fix 3rd Party License Auditor [\#225](https://github.com/viamrobotics/viam-flutter-sdk/pull/225) ([njooma](https://github.com/njooma))
+- `viam_example_app` has syntax's errors [\#224](https://github.com/viamrobotics/viam-flutter-sdk/pull/224) ([g0rdan](https://github.com/g0rdan))
+- Fix pwmFrequency and setPowerMode examples [\#223](https://github.com/viamrobotics/viam-flutter-sdk/pull/223) ([JessamyT](https://github.com/JessamyT))
+- DOCS-2382: Update readme [\#222](https://github.com/viamrobotics/viam-flutter-sdk/pull/222) ([JessamyT](https://github.com/JessamyT))
+- Automated Protos Update [\#221](https://github.com/viamrobotics/viam-flutter-sdk/pull/221) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.15 [\#219](https://github.com/viamrobotics/viam-flutter-sdk/pull/219) ([github-actions[bot]](https://github.com/apps/github-actions))
+- DOCS-2031: Add arm, base, board example snippets [\#218](https://github.com/viamrobotics/viam-flutter-sdk/pull/218) ([JessamyT](https://github.com/JessamyT))
+- Automated Protos Update [\#217](https://github.com/viamrobotics/viam-flutter-sdk/pull/217) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#216](https://github.com/viamrobotics/viam-flutter-sdk/pull/216) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add license auditing [\#214](https://github.com/viamrobotics/viam-flutter-sdk/pull/214) ([njooma](https://github.com/njooma))
 - RSDK-7445: paginate data by filter methods [\#213](https://github.com/viamrobotics/viam-flutter-sdk/pull/213) ([purplenicole730](https://github.com/purplenicole730))
@@ -117,6 +136,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.15](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.15) (2024-05-28)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.14...v0.0.15)
 
 ## [v0.0.14](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.14) (2024-05-14)
 
