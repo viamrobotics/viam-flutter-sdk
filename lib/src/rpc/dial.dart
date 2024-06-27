@@ -234,7 +234,7 @@ Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnect
     if (stat.type == 'candidate-pair' && stat.values['nominated']) {
       // Use 'lastPacketSentTimestamp' on candidate pair to estimate when the
       // pair was nominated.
-      final double lpst = stat.values['lastPacketSentTimestamp'] as double;
+      final double lpst = stat.values['lastPacketSentTimestamp'] ?? 0;
       final DateTime nominatedTime = DateTime.fromMillisecondsSinceEpoch(lpst.toInt());
 
       final lcid = stat.values['localCandidateId'];
