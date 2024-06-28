@@ -35,7 +35,7 @@ abstract class PowerSensor extends Resource {
   /// ```
   /// var currentObject = await myPowerSensor.current();
   /// double amps = currentObject.amperes;
-  ///  bool isItAC = currentObject.isAc;
+  /// bool isItAC = currentObject.isAc;
   /// ```
   Future<Current> current({Map<String, dynamic>? extra});
 
