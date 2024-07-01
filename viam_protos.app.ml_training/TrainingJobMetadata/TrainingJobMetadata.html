@@ -62,8 +62,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">TrainingJobMetadata</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-request">{<span class="type-annotation"><a href="../../viam_protos.app.ml_training/SubmitTrainingJobRequest-class.html">SubmitTrainingJobRequest</a>?</span> <span class="parameter-name">request</span>, </span></li>
-<li><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/TrainingStatus-class.html">TrainingStatus</a>?</span> <span class="parameter-name">status</span>, </span></li>
+      <span class="name ">TrainingJobMetadata</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-status">{<span class="type-annotation"><a href="../../viam_protos.app.ml_training/TrainingStatus-class.html">TrainingStatus</a>?</span> <span class="parameter-name">status</span>, </span></li>
 <li><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span></li>
 <li><span class="parameter" id="-param-lastModified"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastModified</span>, </span></li>
 <li><span class="parameter" id="-param-syncedModelId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">syncedModelId</span>, </span></li>
@@ -91,7 +90,6 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory TrainingJobMetadata({
-  SubmitTrainingJobRequest? request,
   TrainingStatus? status,
   $1.Timestamp? createdOn,
   $1.Timestamp? lastModified,
@@ -112,9 +110,6 @@
   $core.String? registryItemVersion,
 }) {
   final $result = create();
-  if (request != null) {
-    $result.request = request;
-  }
   if (status != null) {
     $result.status = status;
   }
@@ -204,7 +199,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.15
+      0.0.16
   </span>
 
   

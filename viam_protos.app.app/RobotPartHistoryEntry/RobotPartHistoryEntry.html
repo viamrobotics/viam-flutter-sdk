@@ -65,7 +65,8 @@
       <span class="name ">RobotPartHistoryEntry</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-part">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">part</span>, </span></li>
 <li><span class="parameter" id="-param-robot"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robot</span>, </span></li>
 <li><span class="parameter" id="-param-when"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">when</span>, </span></li>
-<li><span class="parameter" id="-param-old"><span class="type-annotation"><a href="../../viam_protos.app.app/RobotPart-class.html">RobotPart</a>?</span> <span class="parameter-name">old</span>}</span></li>
+<li><span class="parameter" id="-param-old"><span class="type-annotation"><a href="../../viam_protos.app.app/RobotPart-class.html">RobotPart</a>?</span> <span class="parameter-name">old</span>, </span></li>
+<li><span class="parameter" id="-param-editedBy"><span class="type-annotation"><a href="../../viam_protos.app.app/AuthenticatorInfo-class.html">AuthenticatorInfo</a>?</span> <span class="parameter-name">editedBy</span>}</span></li>
 </ol>)
     </section>
 
@@ -80,6 +81,7 @@
   $core.String? robot,
   $6.Timestamp? when,
   RobotPart? old,
+  AuthenticatorInfo? editedBy,
 }) {
   final $result = create();
   if (part != null) {
@@ -93,6 +95,9 @@
   }
   if (old != null) {
     $result.old = old;
+  }
+  if (editedBy != null) {
+    $result.editedBy = editedBy;
   }
   return $result;
 }</code></pre>
@@ -129,7 +134,7 @@
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.15
+      0.0.16
   </span>
 
   
