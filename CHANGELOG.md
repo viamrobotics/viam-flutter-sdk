@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.0.16](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.16) (2024-06-25)
+## [v0.0.17](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.17) (2024-07-01)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.15...v0.0.16)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.16...v0.0.17)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#242](https://github.com/viamrobotics/viam-flutter-sdk/pull/242) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.16 [\#238](https://github.com/viamrobotics/viam-flutter-sdk/pull/238) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#237](https://github.com/viamrobotics/viam-flutter-sdk/pull/237) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#236](https://github.com/viamrobotics/viam-flutter-sdk/pull/236) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Create linkcheck.yml [\#234](https://github.com/viamrobotics/viam-flutter-sdk/pull/234) ([npentrel](https://github.com/npentrel))
@@ -136,6 +138,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.16](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.16) (2024-06-25)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.15...v0.0.16)
 
 ## [v0.0.15](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.15) (2024-05-28)
 
