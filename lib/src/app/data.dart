@@ -19,6 +19,8 @@ typedef DatabaseConnection = GetDatabaseConnectionResponse;
 /// gRPC client used for retrieving, uploading, and modifying stored data from app.viam.com.
 ///
 /// All calls must be authenticated.
+///
+/// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
 class DataClient {
   final DataServiceClient _dataClient;
   final DataSyncServiceClient _dataSyncClient;
@@ -43,6 +45,8 @@ class DataClient {
 
   /// Filter and download tabular data. The data will be paginated into pages of `limit` items, and the last ID will be included in
   /// the returned response.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<TabularDataByFilterResponse> tabularDataByFilter(
       {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
@@ -54,6 +58,8 @@ class DataClient {
 
   /// Filter and download binary data. The data will be paginated into pages of `limit` items, and the last ID will be included in the
   /// returned response.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<BinaryDataByFilterResponse> binaryDataByFilter(
       {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
@@ -64,6 +70,8 @@ class DataClient {
   }
 
   /// Retrieve binary data by IDs
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<BinaryData>> binaryDataByIds(List<BinaryID> binaryIds) async {
     final request = BinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
     final response = await _dataClient.binaryDataByIDs(request);
@@ -71,6 +79,8 @@ class DataClient {
   }
 
   /// Obtain unified tabular data and metadata, queried with SQL.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataBySql(String organizationId, String query) async {
     final request = TabularDataBySQLRequest()
       ..organizationId = organizationId
@@ -80,6 +90,8 @@ class DataClient {
   }
 
   /// Obtain unified tabular data and metadata, queried with MQL.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, List<Uint8List> query) async {
     final request = TabularDataByMQLRequest()
       ..organizationId = organizationId
@@ -91,6 +103,8 @@ class DataClient {
   /// Delete tabular data older than a provided number of days from an organization.
   ///
   /// Returns the number of pieces of data that were deleted.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<int> deleteTabularData(String organizationId, int olderThanDays) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
@@ -103,6 +117,8 @@ class DataClient {
   /// If a [filter] is not provided, all data will be deleted.
   ///
   /// Returns the number of pieces of data that were deleted.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<int> deleteBinaryDataByFilter(Filter? filter, {bool includeInternalData = false}) async {
     final request = DeleteBinaryDataByFilterRequest()
       ..includeInternalData = includeInternalData
@@ -114,6 +130,8 @@ class DataClient {
   /// Delete binary data based on data ID.
   ///
   /// Returns the number of pieces of data that were deleted.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<int> deleteBinaryDataByIds(List<BinaryID> binaryIds) async {
     final request = DeleteBinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
     final response = await _dataClient.deleteBinaryDataByIDs(request);
@@ -121,6 +139,8 @@ class DataClient {
   }
 
   /// Adds tags to binary data based on IDs.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> addTagsToBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
     final request = AddTagsToBinaryDataByIDsRequest()
       ..tags.addAll(tags)
@@ -130,6 +150,8 @@ class DataClient {
 
   /// Adds tags to binary data based on a filter.
   /// If no [filter] is provided, all binary data will be tagged.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> addTagsToBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = AddTagsToBinaryDataByFilterRequest()
       ..tags.addAll(tags)
@@ -141,6 +163,8 @@ class DataClient {
   /// If a [filter] is not provided, the tags will be removed from all data.
   ///
   /// Returns the number of tags deleted.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<int> removeTagsFromBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = RemoveTagsFromBinaryDataByFilterRequest()
       ..tags.addAll(tags)
@@ -152,6 +176,8 @@ class DataClient {
   /// Remove tags from binary data based on IDs.
   ///
   /// Returns the number of tags deleted.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
     final request = RemoveTagsFromBinaryDataByIDsRequest()
       ..tags.addAll(tags)
@@ -163,6 +189,8 @@ class DataClient {
   /// Add a bounding box to an image by ID, with x and y coordinates normalized from 0 to 1.
   ///
   /// Returns the bounding box ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> addBoundingBoxToImageById(
       String label, BinaryID binaryId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
     final request = AddBoundingBoxToImageByIDRequest()
@@ -177,6 +205,8 @@ class DataClient {
   }
 
   /// Removes a bounding box from an image based on bbox ID and image ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> removeBoundingBoxFromImageById(String bboxId, BinaryID binaryId) async {
     final request = RemoveBoundingBoxFromImageByIDRequest()
       ..bboxId = bboxId
@@ -186,6 +216,8 @@ class DataClient {
 
   /// Returns a list of tags based on a filter.
   /// If no [filter] is provided, all tags will be returned.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<String>> tagsByFilter(Filter? filter) async {
     final request = TagsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.tagsByFilter(request);
@@ -194,6 +226,8 @@ class DataClient {
 
   /// Returns a list of bounding box labels based on a filter.
   /// If no [filter] is provided, all labels will be returned.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<String>> boundingBoxLabelsByFilter(Filter? filter) async {
     final request = BoundingBoxLabelsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.boundingBoxLabelsByFilter(request);
@@ -201,12 +235,16 @@ class DataClient {
   }
 
   /// Returns a database connection to access a MongoDB Atlas Data Federation instance.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<DatabaseConnection> getDatabaseConnection(String organizationId) async {
     final request = GetDatabaseConnectionRequest()..organizationId = organizationId;
     return await _dataClient.getDatabaseConnection(request);
   }
 
   /// Configures a database user for Viam's MongoDB Atlas Data Federation instance.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> configureDatabaseUser(String organizationId, String password) async {
     final request = ConfigureDatabaseUserRequest()
       ..password = password
@@ -215,6 +253,8 @@ class DataClient {
   }
 
   /// Adds binary data to a dataset based on IDs.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> addBinaryDataToDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
     final request = AddBinaryDataToDatasetByIDsRequest()
       ..binaryIds.addAll(binaryIds)
@@ -223,6 +263,8 @@ class DataClient {
   }
 
   /// Removes binary data from a dataset based on IDs.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> removeBinaryDataFromDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
     final request = RemoveBinaryDataFromDatasetByIDsRequest()
       ..binaryIds.addAll(binaryIds)
@@ -233,6 +275,8 @@ class DataClient {
   /// Upload an image to Viam's Data Manager
   ///
   /// If no name is provided, the current timestamp will be used as the filename.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> uploadImage(ViamImage image, String partId,
       {String? fileName,
       String? componentType,
@@ -263,6 +307,8 @@ class DataClient {
   /// Upload a file from its path to Viam's Data Manager
   ///
   /// The file name can be overridden by providing the [fileName] parameter.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> uploadFile(String path, String partId,
       {String? fileName,
       String? componentType,
@@ -307,6 +353,8 @@ class DataClient {
   /// Upload binary sensor data to Viam's Data Manager
   ///
   /// Returns the data's file ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> binaryDataCaptureUpload(List<int> binaryData, String partId, String fileExtension,
       {String? componentType,
       String? componentName,
@@ -349,6 +397,8 @@ class DataClient {
   /// Upload tabular sensor data to Viam's Data Manager
   ///
   /// Returns the data's file ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> tabularDataCaptureUpload(List<Map<String, dynamic>> tabularData, String partId,
       {String? componentType,
       String? componentName,
@@ -392,6 +442,8 @@ class DataClient {
   /// Uploads the metadata and contents of streaming binary data
   ///
   /// Returns the data's file ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> streamingDataCaptureUpload(List<int> bytes, String partId, String fileExtension,
       {String? componentType,
       String? componentName,
@@ -433,6 +485,8 @@ class DataClient {
   }
 
   /// Creates a new dataset, returning the new dataset's ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<String> createDataset(String orgId, String name) async {
     final request = CreateDatasetRequest()
       ..organizationId = orgId
@@ -442,12 +496,16 @@ class DataClient {
   }
 
   /// Deletes a dataset.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> deleteDataset(String id) async {
     final request = DeleteDatasetRequest()..id = id;
     await _datasetClient.deleteDataset(request);
   }
 
   /// Renames a dataset by ID.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<void> renameDataset(String id, String name) async {
     final request = RenameDatasetRequest()
       ..id = id
@@ -456,6 +514,8 @@ class DataClient {
   }
 
   /// Returns a list of datasets within a given organization.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<Dataset>> listDatasetsByOrganizationID(String orgId) async {
     final request = ListDatasetsByOrganizationIDRequest()..organizationId = orgId;
     final response = await _datasetClient.listDatasetsByOrganizationID(request);
@@ -463,6 +523,8 @@ class DataClient {
   }
 
   /// Looks up and returns a list of datasets by their IDs.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<Dataset>> listDatasetsByIDs(List<String> ids) async {
     final request = ListDatasetsByIDsRequest()..ids.addAll(ids);
     final response = await _datasetClient.listDatasetsByIDs(request);

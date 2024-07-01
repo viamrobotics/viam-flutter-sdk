@@ -7,6 +7,8 @@ typedef Voltage = GetVoltageResponse;
 typedef Current = GetCurrentResponse;
 
 /// PowerSensor reports information about voltage, current, and power.
+///
+/// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
 abstract class PowerSensor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'power_sensor');
 
@@ -17,6 +19,8 @@ abstract class PowerSensor extends Resource {
   /// ```
   /// var readings = await myPowerSensor.readings();
   /// ```
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
   /// Get the voltage in volts, and whether the power is
@@ -27,6 +31,8 @@ abstract class PowerSensor extends Resource {
   /// double voltageInVolts = voltageObject['volts'];
   /// bool isItAC = voltageObject['isAc'];
   /// ```
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
   Future<Voltage> voltage({Map<String, dynamic>? extra});
 
   /// Get the current in amperes, and whether the current
@@ -37,6 +43,8 @@ abstract class PowerSensor extends Resource {
   /// double amps = voltageObject['amperes'];
   /// bool isItAC = voltageObject['isAc'];
   /// ```
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
   Future<Current> current({Map<String, dynamic>? extra});
 
   /// Get the power (watts)
@@ -44,14 +52,20 @@ abstract class PowerSensor extends Resource {
   /// ```
   /// var power = await myPowerSensor.power();
   /// ```
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
   Future<double> power({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [PowerSensor] with the given [name].
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
   static ResourceName getResourceName(String name) {
     return PowerSensor.subtype.getResourceName(name);
   }
 
   /// Get the [PowerSensor] named [name] from the provided robot.
+  ///
+  /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
   static PowerSensor fromRobot(RobotClient robot, String name) {
     return robot.getResource(PowerSensor.getResourceName(name));
   }

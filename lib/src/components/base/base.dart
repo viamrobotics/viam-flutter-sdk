@@ -6,6 +6,8 @@ import '../../robot/client.dart';
 typedef BaseProperties = GetPropertiesResponse;
 
 /// Base represents a physical base of a robot.
+///
+/// For more information, see [Base component](https://docs.viam.com/components/base/).
 abstract class Base extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'base');
 
@@ -19,6 +21,8 @@ abstract class Base extends Resource {
   /// // Move the base 40mm forward at 90 mm/s
   /// await myBase.moveStraight(40, 90);
   /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<void> moveStraight(int distance, double velocity, {Map<String, dynamic>? extra});
 
   /// Spin the [Base] in place [angle] degrees, at the given angular [velocity], expressed in degrees per second.
@@ -30,6 +34,8 @@ abstract class Base extends Resource {
   /// // Spin the base 10 degrees at 15 deg/s
   /// await myBase.spin(10, 15);
   /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<void> spin(double angle, double velocity, {Map<String, dynamic>? extra});
 
   /// Set the linear and angular velocity of the [Base].
@@ -54,6 +60,8 @@ abstract class Base extends Resource {
   /// // Turn the base to the right at 60% power:
   /// await myBase.setPower(Vector3(), Vector3(0, 0, -0.6));
   /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<void> setPower(Vector3 linear, Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Set the linear and angular velocities of the base, expressed as
@@ -65,6 +73,8 @@ abstract class Base extends Resource {
   /// //
   /// await myBase.setVelocity(Vector3(0, 50, 0), Vector3(0, 0, 15));
   /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<void> setVelocity(Vector3 linear, Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Stop the base.
@@ -72,6 +82,8 @@ abstract class Base extends Resource {
   /// ```
   /// await myBase.stop();
   /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Whether the base is currently moving
@@ -79,18 +91,26 @@ abstract class Base extends Resource {
   /// ```
   /// bool baseIsMoving = await myBase.isMoving();
   /// ```
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<bool> isMoving();
 
   /// Get the [ResourceName] for this [Base] with the given [name]
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   static ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
 
   /// Report a dictionary mapping optional properties to
   /// whether it is supported by this base.
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   Future<BaseProperties> properties({Map<String, dynamic>? extra});
 
   /// Get the [Base] named [name] from the provided robot.
+  ///
+  /// For more information, see [Base component](https://docs.viam.com/components/base/).
   static Base fromRobot(RobotClient robot, String name) {
     return robot.getResource(Base.getResourceName(name));
   }
