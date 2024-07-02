@@ -70,6 +70,23 @@ class RobotClient {
   RobotClient._();
 
   /// Connect to a robot at the specified address with the provided options.
+  ///
+  /// ```
+  /// // Example usage; see your machine's CONNECT tab for your machine's address and API key.
+  ///
+  /// Future<void> connectToViam() async {
+  ///   const host = '<YOUR ROBOT ADDRESS>.viam.cloud';
+  ///   // Replace "<API-KEY-ID>" (including brackets) with your machine's API key ID
+  ///   const apiKeyID = '<API-KEY-ID>';
+  ///   // Replace "<API-KEY>" (including brackets) with your machine's API key
+  ///   const apiKey = '<API-KEY>';
+  ///
+  ///   final machine = await RobotClient.atAddress(
+  ///     host,
+  ///     RobotClientOptions.withApiKey(apiKeyID, apiKey),
+  ///   );
+  /// }
+  /// ```
   static Future<RobotClient> atAddress(String url, RobotClientOptions options) async {
     Logger.level = options.logLevel;
     final client = RobotClient._();
@@ -85,6 +102,10 @@ class RobotClient {
   }
 
   /// Refresh the resources of this robot
+  ///
+  /// ```
+  /// await machine.refresh();
+  /// ```
   Future<void> refresh() async {
     final ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
     if (setEquals(response.resources.toSet(), resourceNames.toSet())) {
@@ -201,6 +222,10 @@ class RobotClient {
   }
 
   /// Close the connection to the Robot. This should be done to release resources on the robot.
+  ///
+  /// ```
+  /// await machine.close();
+  /// ```
   Future<void> close() async {
     _logger.d('Closing RobotClient connection');
     try {
@@ -219,16 +244,21 @@ class RobotClient {
     }
   }
 
-  /// Get a connected resource by its [ResourceName]
+  /// Get a connected resource by its [ResourceName].
   T getResource<T>(ResourceName name) {
     return _manager.getResource<T>(name);
   }
 
-  /// Get a WebRTC stream client with the given name
+  /// Get a WebRTC stream client with the given name.
   StreamClient getStream(String name) {
     return _streamManager.getStreamClient(name);
   }
 
+  /// Get app-related information about the machine.
+  ///
+  /// ```
+  /// var metadata = await machine.getCloudMetadata();
+  /// ```
   Future<CloudMetadata> getCloudMetadata() async {
     return await _client.getCloudMetadata(GetCloudMetadataRequest());
   }
