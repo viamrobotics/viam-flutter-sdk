@@ -5451,6 +5451,104 @@ class Fragment extends $pb.GeneratedMessage {
   void clearVisibility() => clearField(12);
 }
 
+class FragmentHistoryEntry extends $pb.GeneratedMessage {
+  factory FragmentHistoryEntry({
+    $core.String? fragment,
+    $6.Timestamp? editedOn,
+    Fragment? old,
+    AuthenticatorInfo? editedBy,
+  }) {
+    final $result = create();
+    if (fragment != null) {
+      $result.fragment = fragment;
+    }
+    if (editedOn != null) {
+      $result.editedOn = editedOn;
+    }
+    if (old != null) {
+      $result.old = old;
+    }
+    if (editedBy != null) {
+      $result.editedBy = editedBy;
+    }
+    return $result;
+  }
+  FragmentHistoryEntry._() : super();
+  factory FragmentHistoryEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentHistoryEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentHistoryEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fragment')
+    ..aOM<$6.Timestamp>(2, _omitFieldNames ? '' : 'editedOn', subBuilder: $6.Timestamp.create)
+    ..aOM<Fragment>(3, _omitFieldNames ? '' : 'old', subBuilder: Fragment.create)
+    ..aOM<AuthenticatorInfo>(4, _omitFieldNames ? '' : 'editedBy', subBuilder: AuthenticatorInfo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentHistoryEntry clone() => FragmentHistoryEntry()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentHistoryEntry copyWith(void Function(FragmentHistoryEntry) updates) => super.copyWith((message) => updates(message as FragmentHistoryEntry)) as FragmentHistoryEntry;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentHistoryEntry create() => FragmentHistoryEntry._();
+  FragmentHistoryEntry createEmptyInstance() => create();
+  static $pb.PbList<FragmentHistoryEntry> createRepeated() => $pb.PbList<FragmentHistoryEntry>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentHistoryEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentHistoryEntry>(create);
+  static FragmentHistoryEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fragment => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fragment($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFragment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFragment() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $6.Timestamp get editedOn => $_getN(1);
+  @$pb.TagNumber(2)
+  set editedOn($6.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEditedOn() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditedOn() => clearField(2);
+  @$pb.TagNumber(2)
+  $6.Timestamp ensureEditedOn() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  Fragment get old => $_getN(2);
+  @$pb.TagNumber(3)
+  set old(Fragment v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOld() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOld() => clearField(3);
+  @$pb.TagNumber(3)
+  Fragment ensureOld() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  AuthenticatorInfo get editedBy => $_getN(3);
+  @$pb.TagNumber(4)
+  set editedBy(AuthenticatorInfo v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEditedBy() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditedBy() => clearField(4);
+  @$pb.TagNumber(4)
+  AuthenticatorInfo ensureEditedBy() => $_ensure(3);
+}
+
 class ListFragmentsRequest extends $pb.GeneratedMessage {
   factory ListFragmentsRequest({
     $core.String? organizationId,
@@ -6041,6 +6139,142 @@ class DeleteFragmentResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteFragmentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteFragmentResponse>(create);
   static DeleteFragmentResponse? _defaultInstance;
+}
+
+class GetFragmentHistoryRequest extends $pb.GeneratedMessage {
+  factory GetFragmentHistoryRequest({
+    $core.String? id,
+    $core.String? pageToken,
+    $fixnum.Int64? pageLimit,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageLimit != null) {
+      $result.pageLimit = pageLimit;
+    }
+    return $result;
+  }
+  GetFragmentHistoryRequest._() : super();
+  factory GetFragmentHistoryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFragmentHistoryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFragmentHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..aInt64(3, _omitFieldNames ? '' : 'pageLimit')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFragmentHistoryRequest clone() => GetFragmentHistoryRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFragmentHistoryRequest copyWith(void Function(GetFragmentHistoryRequest) updates) => super.copyWith((message) => updates(message as GetFragmentHistoryRequest)) as GetFragmentHistoryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFragmentHistoryRequest create() => GetFragmentHistoryRequest._();
+  GetFragmentHistoryRequest createEmptyInstance() => create();
+  static $pb.PbList<GetFragmentHistoryRequest> createRepeated() => $pb.PbList<GetFragmentHistoryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetFragmentHistoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFragmentHistoryRequest>(create);
+  static GetFragmentHistoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get pageLimit => $_getI64(2);
+  @$pb.TagNumber(3)
+  set pageLimit($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageLimit() => clearField(3);
+}
+
+class GetFragmentHistoryResponse extends $pb.GeneratedMessage {
+  factory GetFragmentHistoryResponse({
+    $core.Iterable<FragmentHistoryEntry>? history,
+    $core.String? nextPageToken,
+  }) {
+    final $result = create();
+    if (history != null) {
+      $result.history.addAll(history);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
+    }
+    return $result;
+  }
+  GetFragmentHistoryResponse._() : super();
+  factory GetFragmentHistoryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFragmentHistoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFragmentHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<FragmentHistoryEntry>(1, _omitFieldNames ? '' : 'history', $pb.PbFieldType.PM, subBuilder: FragmentHistoryEntry.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFragmentHistoryResponse clone() => GetFragmentHistoryResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFragmentHistoryResponse copyWith(void Function(GetFragmentHistoryResponse) updates) => super.copyWith((message) => updates(message as GetFragmentHistoryResponse)) as GetFragmentHistoryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFragmentHistoryResponse create() => GetFragmentHistoryResponse._();
+  GetFragmentHistoryResponse createEmptyInstance() => create();
+  static $pb.PbList<GetFragmentHistoryResponse> createRepeated() => $pb.PbList<GetFragmentHistoryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetFragmentHistoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFragmentHistoryResponse>(create);
+  static GetFragmentHistoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<FragmentHistoryEntry> get history => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
 }
 
 class ListRobotsRequest extends $pb.GeneratedMessage {
