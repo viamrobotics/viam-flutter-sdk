@@ -49,6 +49,7 @@ const RobotConfig$json = {
     {'1': 'packages', '3': 11, '4': 3, '5': 11, '6': '.viam.app.v1.PackageConfig', '10': 'packages'},
     {'1': 'overwrite_fragment_status', '3': 12, '4': 3, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'overwriteFragmentStatus'},
     {'1': 'enable_web_profile', '3': 13, '4': 1, '5': 8, '10': 'enableWebProfile'},
+    {'1': 'log', '3': 14, '4': 3, '5': 11, '6': '.viam.app.v1.LogPatternConfig', '10': 'log'},
   ],
   '8': [
     {'1': '_network'},
@@ -73,8 +74,23 @@ final $typed_data.Uint8List robotConfigDescriptor = $convert.base64Decode(
     'Gi52aWFtLmFwcC52MS5QYWNrYWdlQ29uZmlnUghwYWNrYWdlcxJcChlvdmVyd3JpdGVfZnJhZ2'
     '1lbnRfc3RhdHVzGAwgAygLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IXb3Zl'
     'cndyaXRlRnJhZ21lbnRTdGF0dXMSLAoSZW5hYmxlX3dlYl9wcm9maWxlGA0gASgIUhBlbmFibG'
-    'VXZWJQcm9maWxlQgoKCF9uZXR3b3JrQgcKBV9hdXRoQggKBl9kZWJ1Z0IYChZfZGlzYWJsZV9w'
-    'YXJ0aWFsX3N0YXJ0');
+    'VXZWJQcm9maWxlEi8KA2xvZxgOIAMoCzIdLnZpYW0uYXBwLnYxLkxvZ1BhdHRlcm5Db25maWdS'
+    'A2xvZ0IKCghfbmV0d29ya0IHCgVfYXV0aEIICgZfZGVidWdCGAoWX2Rpc2FibGVfcGFydGlhbF'
+    '9zdGFydA==');
+
+@$core.Deprecated('Use logPatternConfigDescriptor instead')
+const LogPatternConfig$json = {
+  '1': 'LogPatternConfig',
+  '2': [
+    {'1': 'pattern', '3': 1, '4': 1, '5': 9, '10': 'pattern'},
+    {'1': 'level', '3': 2, '4': 1, '5': 9, '10': 'level'},
+  ],
+};
+
+/// Descriptor for `LogPatternConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logPatternConfigDescriptor = $convert.base64Decode(
+    'ChBMb2dQYXR0ZXJuQ29uZmlnEhgKB3BhdHRlcm4YASABKAlSB3BhdHRlcm4SFAoFbGV2ZWwYAi'
+    'ABKAlSBWxldmVs');
 
 @$core.Deprecated('Use locationSecretDescriptor instead')
 const LocationSecret$json = {

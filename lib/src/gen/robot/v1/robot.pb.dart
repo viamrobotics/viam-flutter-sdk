@@ -2470,6 +2470,167 @@ class ShutdownResponse extends $pb.GeneratedMessage {
   static ShutdownResponse? _defaultInstance;
 }
 
+class GetMachineStatusRequest extends $pb.GeneratedMessage {
+  factory GetMachineStatusRequest() => create();
+  GetMachineStatusRequest._() : super();
+  factory GetMachineStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMachineStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMachineStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMachineStatusRequest clone() => GetMachineStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMachineStatusRequest copyWith(void Function(GetMachineStatusRequest) updates) => super.copyWith((message) => updates(message as GetMachineStatusRequest)) as GetMachineStatusRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMachineStatusRequest create() => GetMachineStatusRequest._();
+  GetMachineStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<GetMachineStatusRequest> createRepeated() => $pb.PbList<GetMachineStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetMachineStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMachineStatusRequest>(create);
+  static GetMachineStatusRequest? _defaultInstance;
+}
+
+class GetMachineStatusResponse extends $pb.GeneratedMessage {
+  factory GetMachineStatusResponse({
+    $core.Iterable<ResourceStatus>? resources,
+  }) {
+    final $result = create();
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    return $result;
+  }
+  GetMachineStatusResponse._() : super();
+  factory GetMachineStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMachineStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMachineStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..pc<ResourceStatus>(1, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: ResourceStatus.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMachineStatusResponse clone() => GetMachineStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMachineStatusResponse copyWith(void Function(GetMachineStatusResponse) updates) => super.copyWith((message) => updates(message as GetMachineStatusResponse)) as GetMachineStatusResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMachineStatusResponse create() => GetMachineStatusResponse._();
+  GetMachineStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<GetMachineStatusResponse> createRepeated() => $pb.PbList<GetMachineStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetMachineStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMachineStatusResponse>(create);
+  static GetMachineStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<ResourceStatus> get resources => $_getList(0);
+}
+
+class ResourceStatus extends $pb.GeneratedMessage {
+  factory ResourceStatus({
+    $1.ResourceName? name,
+    ResourceStatus_State? state,
+    $3.Timestamp? lastUpdated,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    if (lastUpdated != null) {
+      $result.lastUpdated = lastUpdated;
+    }
+    return $result;
+  }
+  ResourceStatus._() : super();
+  factory ResourceStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResourceStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOM<$1.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $1.ResourceName.create)
+    ..e<ResourceStatus_State>(2, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: ResourceStatus_State.STATE_UNSPECIFIED, valueOf: ResourceStatus_State.valueOf, enumValues: ResourceStatus_State.values)
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResourceStatus clone() => ResourceStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResourceStatus copyWith(void Function(ResourceStatus) updates) => super.copyWith((message) => updates(message as ResourceStatus)) as ResourceStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResourceStatus create() => ResourceStatus._();
+  ResourceStatus createEmptyInstance() => create();
+  static $pb.PbList<ResourceStatus> createRepeated() => $pb.PbList<ResourceStatus>();
+  @$core.pragma('dart2js:noInline')
+  static ResourceStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResourceStatus>(create);
+  static ResourceStatus? _defaultInstance;
+
+  /// resource name.
+  @$pb.TagNumber(1)
+  $1.ResourceName get name => $_getN(0);
+  @$pb.TagNumber(1)
+  set name($1.ResourceName v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.ResourceName ensureName() => $_ensure(0);
+
+  /// current state.
+  @$pb.TagNumber(2)
+  ResourceStatus_State get state => $_getN(1);
+  @$pb.TagNumber(2)
+  set state(ResourceStatus_State v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => clearField(2);
+
+  /// state transition timestamp.
+  @$pb.TagNumber(3)
+  $3.Timestamp get lastUpdated => $_getN(2);
+  @$pb.TagNumber(3)
+  set lastUpdated($3.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLastUpdated() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastUpdated() => clearField(3);
+  @$pb.TagNumber(3)
+  $3.Timestamp ensureLastUpdated() => $_ensure(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
