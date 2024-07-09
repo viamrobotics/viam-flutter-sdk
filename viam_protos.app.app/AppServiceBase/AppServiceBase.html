@@ -415,6 +415,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $2.DeleteFragmentRequest.fromBuffer(value),
       ($2.DeleteFragmentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.GetFragmentHistoryRequest, $2.GetFragmentHistoryResponse&gt;(
+      &#39;GetFragmentHistory&#39;,
+      getFragmentHistory_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.GetFragmentHistoryRequest.fromBuffer(value),
+      ($2.GetFragmentHistoryResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$2.AddRoleRequest, $2.AddRoleResponse&gt;(
       &#39;AddRole&#39;,
       addRole_Pre,

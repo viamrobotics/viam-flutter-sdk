@@ -205,6 +205,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $0.ShutdownRequest.fromBuffer(value),
       ($0.ShutdownResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$0.GetMachineStatusRequest, $0.GetMachineStatusResponse&gt;(
+      &#39;GetMachineStatus&#39;,
+      getMachineStatus_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetMachineStatusRequest.fromBuffer(value),
+      ($0.GetMachineStatusResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
