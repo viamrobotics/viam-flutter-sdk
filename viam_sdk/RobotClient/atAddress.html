@@ -74,6 +74,21 @@
     
 <section class="desc markdown">
   <p>Connect to a robot at the specified address with the provided options.</p>
+<pre class="language-dart"><code>// Example usage; see your machine's CONNECT tab for your machine's address and API key.
+
+Future&lt;void&gt; connectToViam() async {
+  const host = '&lt;YOUR ROBOT ADDRESS&gt;.viam.cloud';
+  // Replace "&lt;API-KEY-ID&gt;" (including brackets) with your machine's API key ID
+  const apiKeyID = '&lt;API-KEY-ID&gt;';
+  // Replace "&lt;API-KEY&gt;" (including brackets) with your machine's API key
+  const apiKey = '&lt;API-KEY&gt;';
+
+  final machine = await RobotClient.atAddress(
+    host,
+    RobotClientOptions.withApiKey(apiKeyID, apiKey),
+  );
+}
+</code></pre>
 </section>
 
 
