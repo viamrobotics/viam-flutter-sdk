@@ -10,15 +10,31 @@ abstract class Servo extends Resource {
   Future<void> move(int angle, {Map<String, dynamic>? extra});
 
   /// Get the current angle (degrees) of the [Servo].
+  ///
+  /// ```
+  /// var angle = await myServo.position();
+  /// ```
   Future<int> position({Map<String, dynamic>? extra});
 
   /// Stop the [Servo]. It is assumed that the servo stops immediately.
+  ///
+  /// ```
+  /// await myServo.stop();
+  /// ```
   Future<void> stop({Map<String, dynamic>? extra});
 
-  /// Get if the [Servo] is currently moving.
+  /// Whether the [Servo] is currently moving.
+  /// ```
+  /// var isItMoving = await myServo.isMoving();
+  /// ```
   Future<bool> isMoving();
 
-  /// Get the [ResourceName] for this [Servo] with the given [name]
+  /// Get the [ResourceName] for this [Servo] with the given [name].
+  ///
+  /// ```
+  /// // Example:
+  /// var name = Servo.getResourceName('myServo');
+  /// ```
   static ResourceName getResourceName(String name) {
     return Servo.subtype.getResourceName(name);
   }
