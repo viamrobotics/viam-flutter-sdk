@@ -79,9 +79,9 @@
 <section class="desc markdown">
   <p>Get the current in amperes, and whether the current
 is AC (true) or DC (false).</p>
-<pre class="language-dart"><code>var currentObject = await myPowerSensor.readings();
-double amps = voltageObject['amperes'];
-bool isItAC = voltageObject['isAc'];
+<pre class="language-dart"><code>var currentObject = await myPowerSensor.current();
+double amps = currentObject.amperes;
+bool isItAC = currentObject.isAc;
 </code></pre>
 </section>
 

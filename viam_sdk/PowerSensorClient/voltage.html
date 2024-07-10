@@ -79,9 +79,9 @@
 <section class="desc markdown">
   <p>Get the voltage in volts, and whether the power is
 AC (true) or DC (false).</p>
-<pre class="language-dart"><code>var voltageObject = await myPowerSensor.readings();
-double voltageInVolts = voltageObject['volts'];
-bool isItAC = voltageObject['isAc'];
+<pre class="language-dart"><code>var voltageObject = await myPowerSensor.voltage();
+double voltageInVolts = voltageObject.volts;
+bool isItAC = voltageObject.isAc;
 </code></pre>
 </section>
 

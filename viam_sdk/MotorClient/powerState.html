@@ -77,7 +77,16 @@
     </section>
     
 <section class="desc markdown">
-  <p>Returns whether or not the motor is currently running.</p>
+  <p>Returns whether or not the motor is currently powered, and the portion
+of max power (between 0 and 1; 0 indicates that power is off). Stepper
+motors report <code>true</code> if they are being powered while holding a position,
+as well as when they are turning themselves.</p>
+<pre class="language-dart"><code>// Check whether the motor is currently powered and
+// check the percentage of max power to the motor.
+var powerState = await myMotor.powerState();
+var powered = powerState.isOn;
+var pct = powerState.powerPct;
+</code></pre>
 </section>
 
 

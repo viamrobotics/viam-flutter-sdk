@@ -276,7 +276,10 @@ This method will raise an exception if position reporting is not supported by th
 
 </dt>
 <dd>
-  Returns whether or not the motor is currently running.
+  Returns whether or not the motor is currently powered, and the portion
+of max power (between 0 and 1; 0 indicates that power is off). Stepper
+motors report <code>true</code> if they are being powered while holding a position,
+as well as when they are turning themselves.
   <div class="features"><span class="feature">override</span></div>
 
 </dd>
@@ -289,7 +292,7 @@ This method will raise an exception if position reporting is not supported by th
 
 </dt>
 <dd>
-  Report a dictionary mapping optional properties to
+  Report a dictionary mapping each optional property to
 whether it is supported by this motor.
   <div class="features"><span class="feature">override</span></div>
 

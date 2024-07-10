@@ -77,6 +77,9 @@
   <p>Spin the <a href="../../viam_sdk/Motor-class.html">Motor</a> the specified number of <code>revolutions</code> at specified <code>rpm</code>.
 When <code>rpm</code> or <code>revolutions</code> is a negative value, the rotation will be in the backward direction.
 Note: if both <code>rpm</code> and <code>revolutions</code> are negative, the motor will spin in the forward direction.</p>
+<pre class="language-dart"><code>// Turn the motor 7.2 revolutions forward at 60 RPM.
+await myMotor.goFor(60, 7.2);
+</code></pre>
 </section>
 
 
