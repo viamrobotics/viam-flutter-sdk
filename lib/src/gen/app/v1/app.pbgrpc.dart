@@ -217,6 +217,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteFragment',
       ($2.DeleteFragmentRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.DeleteFragmentResponse.fromBuffer(value));
+  static final _$getFragmentHistory = $grpc.ClientMethod<$2.GetFragmentHistoryRequest, $2.GetFragmentHistoryResponse>(
+      '/viam.app.v1.AppService/GetFragmentHistory',
+      ($2.GetFragmentHistoryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetFragmentHistoryResponse.fromBuffer(value));
   static final _$addRole = $grpc.ClientMethod<$2.AddRoleRequest, $2.AddRoleResponse>(
       '/viam.app.v1.AppService/AddRole',
       ($2.AddRoleRequest value) => value.writeToBuffer(),
@@ -506,6 +510,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.DeleteFragmentResponse> deleteFragment($2.DeleteFragmentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteFragment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.GetFragmentHistoryResponse> getFragmentHistory($2.GetFragmentHistoryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getFragmentHistory, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.AddRoleResponse> addRole($2.AddRoleRequest request, {$grpc.CallOptions? options}) {
@@ -945,6 +953,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.DeleteFragmentRequest.fromBuffer(value),
         ($2.DeleteFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetFragmentHistoryRequest, $2.GetFragmentHistoryResponse>(
+        'GetFragmentHistory',
+        getFragmentHistory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.GetFragmentHistoryRequest.fromBuffer(value),
+        ($2.GetFragmentHistoryResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.AddRoleRequest, $2.AddRoleResponse>(
         'AddRole',
         addRole_Pre,
@@ -1297,6 +1312,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteFragment(call, await request);
   }
 
+  $async.Future<$2.GetFragmentHistoryResponse> getFragmentHistory_Pre($grpc.ServiceCall call, $async.Future<$2.GetFragmentHistoryRequest> request) async {
+    return getFragmentHistory(call, await request);
+  }
+
   $async.Future<$2.AddRoleResponse> addRole_Pre($grpc.ServiceCall call, $async.Future<$2.AddRoleRequest> request) async {
     return addRole(call, await request);
   }
@@ -1430,6 +1449,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$2.CreateFragmentResponse> createFragment($grpc.ServiceCall call, $2.CreateFragmentRequest request);
   $async.Future<$2.UpdateFragmentResponse> updateFragment($grpc.ServiceCall call, $2.UpdateFragmentRequest request);
   $async.Future<$2.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $2.DeleteFragmentRequest request);
+  $async.Future<$2.GetFragmentHistoryResponse> getFragmentHistory($grpc.ServiceCall call, $2.GetFragmentHistoryRequest request);
   $async.Future<$2.AddRoleResponse> addRole($grpc.ServiceCall call, $2.AddRoleRequest request);
   $async.Future<$2.RemoveRoleResponse> removeRole($grpc.ServiceCall call, $2.RemoveRoleRequest request);
   $async.Future<$2.ChangeRoleResponse> changeRole($grpc.ServiceCall call, $2.ChangeRoleRequest request);

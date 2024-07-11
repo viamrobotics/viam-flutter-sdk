@@ -13,6 +13,27 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class AuthenticationType extends $pb.ProtobufEnum {
+  static const AuthenticationType AUTHENTICATION_TYPE_UNSPECIFIED = AuthenticationType._(0, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_UNSPECIFIED');
+  static const AuthenticationType AUTHENTICATION_TYPE_WEB_OAUTH = AuthenticationType._(1, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_WEB_OAUTH');
+  static const AuthenticationType AUTHENTICATION_TYPE_API_KEY = AuthenticationType._(2, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_API_KEY');
+  static const AuthenticationType AUTHENTICATION_TYPE_ROBOT_PART_SECRET = AuthenticationType._(3, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_ROBOT_PART_SECRET');
+  static const AuthenticationType AUTHENTICATION_TYPE_LOCATION_SECRET = AuthenticationType._(4, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_LOCATION_SECRET');
+
+  static const $core.List<AuthenticationType> values = <AuthenticationType> [
+    AUTHENTICATION_TYPE_UNSPECIFIED,
+    AUTHENTICATION_TYPE_WEB_OAUTH,
+    AUTHENTICATION_TYPE_API_KEY,
+    AUTHENTICATION_TYPE_ROBOT_PART_SECRET,
+    AUTHENTICATION_TYPE_LOCATION_SECRET,
+  ];
+
+  static final $core.Map<$core.int, AuthenticationType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AuthenticationType? valueOf($core.int value) => _byValue[value];
+
+  const AuthenticationType._($core.int v, $core.String n) : super(v, n);
+}
+
 class FragmentVisibility extends $pb.ProtobufEnum {
   static const FragmentVisibility FRAGMENT_VISIBILITY_UNSPECIFIED = FragmentVisibility._(0, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_UNSPECIFIED');
   static const FragmentVisibility FRAGMENT_VISIBILITY_PRIVATE = FragmentVisibility._(1, _omitEnumNames ? '' : 'FRAGMENT_VISIBILITY_PRIVATE');

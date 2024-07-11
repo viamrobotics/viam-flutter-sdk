@@ -26,6 +26,11 @@ abstract class Motor extends Resource {
   /// When [powerPct] is negative, the rotation will be in the backward direction.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Set the power to  40% forwards.
+  /// await myMotor.setPower(0.4);
+  /// ```
   Future<void> setPower(double powerPct, {Map<String, dynamic>? extra});
 
   /// Spin the [Motor] the specified number of [revolutions] at specified [rpm].
@@ -33,6 +38,11 @@ abstract class Motor extends Resource {
   /// Note: if both [rpm] and [revolutions] are negative, the motor will spin in the forward direction.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Turn the motor 7.2 revolutions forward at 60 RPM.
+  /// await myMotor.goFor(60, 7.2);
+  /// ```
   Future<void> goFor(double rpm, double revolutions, {Map<String, dynamic>? extra});
 
   /// Spin the [Motor] to the specified position (provided in revolutions from home/zero),
@@ -41,17 +51,32 @@ abstract class Motor extends Resource {
   /// the [Motor] towards the specified position.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Turn the motor to 8.3 revolutions from home at 75 RPM.
+  /// await myMotor.goTo(75, 8.3);
+  /// ```
   Future<void> goTo(double rpm, double positionRevolutions, {Map<String, dynamic>? extra});
 
   /// Spin the [Motor] indefinitely at the specified speed, in revolutions per minute.
   /// If [rpm] is positive, the motor will spin forwards, and if [rpm] is negative, the motor will spin backwards.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Set the motor to turn backwards at 120.5 RPM.
+  /// await myMotor.setRPM(-120.5);
+  /// ```
   Future<void> setRPM(double rpm, {Map<String, dynamic>? extra});
 
   /// Set the current position (modified by [offset]) to be the new zero (home) position.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Set the current position as the new home position with no offset.
+  /// await myMotor.resetZeroPosition(0.0);
+  /// ```
   Future<void> resetZeroPosition(double offset, {Map<String, dynamic>? extra});
 
   /// Report the position of the motor based on its encoder.
@@ -59,33 +84,70 @@ abstract class Motor extends Resource {
   /// This method will raise an exception if position reporting is not supported by the motor.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Get the current position of an encoded motor.
+  /// var position = await myMotor.position();
+  /// ```
   Future<double> position({Map<String, dynamic>? extra});
 
-  /// Report a dictionary mapping optional properties to
+  /// Report a dictionary mapping each optional property to
   /// whether it is supported by this motor.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Return whether the motor supports certain optional features
+  /// var properties = await myMotor.properties();
+  /// ```
   Future<MotorProperties> properties({Map<String, dynamic>? extra});
 
   /// Stop the motor immediately, without any gradual step down.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
   Future<void> stop({Map<String, dynamic>? extra});
+  ///
+  /// ```
+  /// // Stop the motor.
+  /// await myMotor.stop();
+  /// ```
+  Future<void> stop({Map<String, dynamic>? extra});
 
-  /// Returns whether or not the motor is currently running.
+  /// Returns whether or not the motor is currently powered, and the portion
+  /// of max power (between 0 and 1; 0 indicates that power is off). Stepper
+  /// motors report `true` if they are being powered while holding a position,
+  /// as well as when they are turning themselves.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
-
+  ///
+  /// ```
+  /// // Check whether the motor is currently powered and
+  /// // check the percentage of max power to the motor.
+  /// var powerState = await myMotor.powerState();
+  /// var powered = powerState.isOn;
+  /// var pct = powerState.powerPct;
+  /// ```
   Future<PowerState> powerState({Map<String, dynamic>? extra});
 
   /// Get if the [Motor] is currently moving.
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// // Check whether the motor is moving.
+  /// var moving = await myMotor.isMoving();
+  /// ```
   Future<bool> isMoving({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Motor] with the given [name]
   ///
   /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
+  ///
+  /// ```
+  /// var name = Motor.getResourceName('myMotor');
+  /// ```
+  ///
+  Future<bool> isMoving({Map<String, dynamic>? extra});
   static ResourceName getResourceName(String name) {
     return Motor.subtype.getResourceName(name);
   }

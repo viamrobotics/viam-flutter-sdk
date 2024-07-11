@@ -8,7 +8,7 @@ import '../../robot/client.dart';
 abstract class Gripper extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'gripper');
 
-  /// Open the [Gripper]
+  /// Open the [Gripper].
   ///
   /// ```
   /// await myGripper.open();
@@ -26,7 +26,7 @@ abstract class Gripper extends Resource {
   /// For more information, see [Gripper component](https://docs.viam.com/components/gripper/).
   Future<void> grab({Map<String, dynamic>? extra});
 
-  /// Stop all motion of the [Gripper]. It is assumed the [Gripper] stops immediately
+  /// Stop all motion of the [Gripper]. It is assumed the [Gripper] stops immediately.
   ///
   /// ```
   /// await myGripper.stop();
@@ -35,7 +35,7 @@ abstract class Gripper extends Resource {
   /// For more information, see [Gripper component](https://docs.viam.com/components/gripper/).
   Future<void> stop({Map<String, dynamic>? extra});
 
-  /// If the [Gripper] is currently moving
+  /// Whether the [Gripper] is currently moving.
   ///
   /// ```
   /// var isItMoving = await myGripper.isMoving();

@@ -35,6 +35,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.Iterable<PackageConfig>? packages,
     $core.Iterable<AppValidationStatus>? overwriteFragmentStatus,
     $core.bool? enableWebProfile,
+    $core.Iterable<LogPatternConfig>? log,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -76,6 +77,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (enableWebProfile != null) {
       $result.enableWebProfile = enableWebProfile;
     }
+    if (log != null) {
+      $result.log.addAll(log);
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -96,6 +100,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..pc<PackageConfig>(11, _omitFieldNames ? '' : 'packages', $pb.PbFieldType.PM, subBuilder: PackageConfig.create)
     ..pc<AppValidationStatus>(12, _omitFieldNames ? '' : 'overwriteFragmentStatus', $pb.PbFieldType.PM, subBuilder: AppValidationStatus.create)
     ..aOB(13, _omitFieldNames ? '' : 'enableWebProfile')
+    ..pc<LogPatternConfig>(14, _omitFieldNames ? '' : 'log', $pb.PbFieldType.PM, subBuilder: LogPatternConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -202,6 +207,75 @@ class RobotConfig extends $pb.GeneratedMessage {
   $core.bool hasEnableWebProfile() => $_has(12);
   @$pb.TagNumber(13)
   void clearEnableWebProfile() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.List<LogPatternConfig> get log => $_getList(13);
+}
+
+/// LogPatternConfig allows you to specify a 2-tuple consisting
+/// of a logger name and its corresponding log level.
+class LogPatternConfig extends $pb.GeneratedMessage {
+  factory LogPatternConfig({
+    $core.String? pattern,
+    $core.String? level,
+  }) {
+    final $result = create();
+    if (pattern != null) {
+      $result.pattern = pattern;
+    }
+    if (level != null) {
+      $result.level = level;
+    }
+    return $result;
+  }
+  LogPatternConfig._() : super();
+  factory LogPatternConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LogPatternConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogPatternConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pattern')
+    ..aOS(2, _omitFieldNames ? '' : 'level')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LogPatternConfig clone() => LogPatternConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LogPatternConfig copyWith(void Function(LogPatternConfig) updates) => super.copyWith((message) => updates(message as LogPatternConfig)) as LogPatternConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogPatternConfig create() => LogPatternConfig._();
+  LogPatternConfig createEmptyInstance() => create();
+  static $pb.PbList<LogPatternConfig> createRepeated() => $pb.PbList<LogPatternConfig>();
+  @$core.pragma('dart2js:noInline')
+  static LogPatternConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogPatternConfig>(create);
+  static LogPatternConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pattern => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pattern($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPattern() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPattern() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get level => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set level($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLevel() => clearField(2);
 }
 
 /// Valid location secret that can be used for authentication to the robot.
@@ -930,6 +1004,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     $core.String? model,
     $core.String? api,
     $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
+    LogConfiguration? logConfiguration,
   }) {
     final $result = create();
     if (name != null) {
@@ -956,6 +1031,9 @@ class ServiceConfig extends $pb.GeneratedMessage {
     if (serviceConfigs != null) {
       $result.serviceConfigs.addAll(serviceConfigs);
     }
+    if (logConfiguration != null) {
+      $result.logConfiguration = logConfiguration;
+    }
     return $result;
   }
   ServiceConfig._() : super();
@@ -971,6 +1049,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'model')
     ..aOS(9, _omitFieldNames ? '' : 'api')
     ..pc<ResourceLevelServiceConfig>(10, _omitFieldNames ? '' : 'serviceConfigs', $pb.PbFieldType.PM, subBuilder: ResourceLevelServiceConfig.create)
+    ..aOM<LogConfiguration>(11, _omitFieldNames ? '' : 'logConfiguration', subBuilder: LogConfiguration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1056,6 +1135,17 @@ class ServiceConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(10)
   $core.List<ResourceLevelServiceConfig> get serviceConfigs => $_getList(7);
+
+  @$pb.TagNumber(11)
+  LogConfiguration get logConfiguration => $_getN(8);
+  @$pb.TagNumber(11)
+  set logConfiguration(LogConfiguration v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasLogConfiguration() => $_has(8);
+  @$pb.TagNumber(11)
+  void clearLogConfiguration() => clearField(11);
+  @$pb.TagNumber(11)
+  LogConfiguration ensureLogConfiguration() => $_ensure(8);
 }
 
 class NetworkConfig extends $pb.GeneratedMessage {
@@ -1993,7 +2083,7 @@ class Orientation_EulerAngles extends $pb.GeneratedMessage {
   void clearYaw() => clearField(3);
 }
 
-/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis-angle_representation
+/// See here for a thorough explanation: https://en.wikipedia.org/wiki/Axis%E2%80%93angle_representation
 /// Basic explanation: Imagine a 3d cartesian grid centered at 0,0,0, and a sphere of radius 1 centered at
 /// that same point. An orientation can be expressed by first specifying an axis, i.e. a line from the origin
 /// to a point on that sphere, represented by (rx, ry, rz), and a rotation around that axis, theta.

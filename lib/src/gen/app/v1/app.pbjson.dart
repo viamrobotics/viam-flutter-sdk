@@ -13,6 +13,25 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use authenticationTypeDescriptor instead')
+const AuthenticationType$json = {
+  '1': 'AuthenticationType',
+  '2': [
+    {'1': 'AUTHENTICATION_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'AUTHENTICATION_TYPE_WEB_OAUTH', '2': 1},
+    {'1': 'AUTHENTICATION_TYPE_API_KEY', '2': 2},
+    {'1': 'AUTHENTICATION_TYPE_ROBOT_PART_SECRET', '2': 3},
+    {'1': 'AUTHENTICATION_TYPE_LOCATION_SECRET', '2': 4},
+  ],
+};
+
+/// Descriptor for `AuthenticationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List authenticationTypeDescriptor = $convert.base64Decode(
+    'ChJBdXRoZW50aWNhdGlvblR5cGUSIwofQVVUSEVOVElDQVRJT05fVFlQRV9VTlNQRUNJRklFRB'
+    'AAEiEKHUFVVEhFTlRJQ0FUSU9OX1RZUEVfV0VCX09BVVRIEAESHwobQVVUSEVOVElDQVRJT05f'
+    'VFlQRV9BUElfS0VZEAISKQolQVVUSEVOVElDQVRJT05fVFlQRV9ST0JPVF9QQVJUX1NFQ1JFVB'
+    'ADEicKI0FVVEhFTlRJQ0FUSU9OX1RZUEVfTE9DQVRJT05fU0VDUkVUEAQ=');
+
 @$core.Deprecated('Use fragmentVisibilityDescriptor instead')
 const FragmentVisibility$json = {
   '1': 'FragmentVisibility',
@@ -133,6 +152,7 @@ const RobotPartHistoryEntry$json = {
     {'1': 'robot', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'robot'},
     {'1': 'when', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'when'},
     {'1': 'old', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.RobotPart', '8': {}, '10': 'old'},
+    {'1': 'edited_by', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.AuthenticatorInfo', '8': {}, '10': 'editedBy'},
   ],
 };
 
@@ -142,7 +162,25 @@ final $typed_data.Uint8List robotPartHistoryEntryDescriptor = $convert.base64Dec
     'Bqc29uOiJwYXJ0IlIEcGFydBI0CgVyb2JvdBgCIAEoCUIemoSeAxlic29uOiJyb2JvdCIganNv'
     'bjoicm9ib3QiUgVyb2JvdBJMCgR3aGVuGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
     'FtcEIcmoSeAxdic29uOiJ3aGVuIiBqc29uOiJ3aGVuIlIEd2hlbhJECgNvbGQYBCABKAsyFi52'
-    'aWFtLmFwcC52MS5Sb2JvdFBhcnRCGpqEngMVYnNvbjoib2xkIiBqc29uOiJvbGQiUgNvbGQ=');
+    'aWFtLmFwcC52MS5Sb2JvdFBhcnRCGpqEngMVYnNvbjoib2xkIiBqc29uOiJvbGQiUgNvbGQSYw'
+    'oJZWRpdGVkX2J5GAUgASgLMh4udmlhbS5hcHAudjEuQXV0aGVudGljYXRvckluZm9CJpqEngMh'
+    'YnNvbjoiZWRpdGVkX2J5IiBqc29uOiJlZGl0ZWRfYnkiUghlZGl0ZWRCeQ==');
+
+@$core.Deprecated('Use authenticatorInfoDescriptor instead')
+const AuthenticatorInfo$json = {
+  '1': 'AuthenticatorInfo',
+  '2': [
+    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.AuthenticationType', '10': 'type'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'is_deactivated', '3': 3, '4': 1, '5': 8, '10': 'isDeactivated'},
+  ],
+};
+
+/// Descriptor for `AuthenticatorInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authenticatorInfoDescriptor = $convert.base64Decode(
+    'ChFBdXRoZW50aWNhdG9ySW5mbxIzCgR0eXBlGAEgASgOMh8udmlhbS5hcHAudjEuQXV0aGVudG'
+    'ljYXRpb25UeXBlUgR0eXBlEhQKBXZhbHVlGAIgASgJUgV2YWx1ZRIlCg5pc19kZWFjdGl2YXRl'
+    'ZBgDIAEoCFINaXNEZWFjdGl2YXRlZA==');
 
 @$core.Deprecated('Use listOrganizationsRequestDescriptor instead')
 const ListOrganizationsRequest$json = {
@@ -1316,6 +1354,27 @@ final $typed_data.Uint8List fragmentDescriptor = $convert.base64Decode(
     'lPd25lchI/Cgp2aXNpYmlsaXR5GAwgASgOMh8udmlhbS5hcHAudjEuRnJhZ21lbnRWaXNpYmls'
     'aXR5Ugp2aXNpYmlsaXR5');
 
+@$core.Deprecated('Use fragmentHistoryEntryDescriptor instead')
+const FragmentHistoryEntry$json = {
+  '1': 'FragmentHistoryEntry',
+  '2': [
+    {'1': 'fragment', '3': 1, '4': 1, '5': 9, '8': {}, '10': 'fragment'},
+    {'1': 'edited_on', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'editedOn'},
+    {'1': 'old', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.Fragment', '8': {}, '10': 'old'},
+    {'1': 'edited_by', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.AuthenticatorInfo', '8': {}, '10': 'editedBy'},
+  ],
+};
+
+/// Descriptor for `FragmentHistoryEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentHistoryEntryDescriptor = $convert.base64Decode(
+    'ChRGcmFnbWVudEhpc3RvcnlFbnRyeRJACghmcmFnbWVudBgBIAEoCUIkmoSeAx9ic29uOiJmcm'
+    'FnbWVudCIganNvbjoiZnJhZ21lbnQiUghmcmFnbWVudBJfCgllZGl0ZWRfb24YAiABKAsyGi5n'
+    'b29nbGUucHJvdG9idWYuVGltZXN0YW1wQiaahJ4DIWJzb246ImVkaXRlZF9vbiIganNvbjoiZW'
+    'RpdGVkX29uIlIIZWRpdGVkT24SQwoDb2xkGAMgASgLMhUudmlhbS5hcHAudjEuRnJhZ21lbnRC'
+    'GpqEngMVYnNvbjoib2xkIiBqc29uOiJvbGQiUgNvbGQSYwoJZWRpdGVkX2J5GAQgASgLMh4udm'
+    'lhbS5hcHAudjEuQXV0aGVudGljYXRvckluZm9CJpqEngMhYnNvbjoiZWRpdGVkX2J5IiBqc29u'
+    'OiJlZGl0ZWRfYnkiUghlZGl0ZWRCeQ==');
+
 @$core.Deprecated('Use listFragmentsRequestDescriptor instead')
 const ListFragmentsRequest$json = {
   '1': 'ListFragmentsRequest',
@@ -1457,6 +1516,41 @@ const DeleteFragmentResponse$json = {
 /// Descriptor for `DeleteFragmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteFragmentResponseDescriptor = $convert.base64Decode(
     'ChZEZWxldGVGcmFnbWVudFJlc3BvbnNl');
+
+@$core.Deprecated('Use getFragmentHistoryRequestDescriptor instead')
+const GetFragmentHistoryRequest$json = {
+  '1': 'GetFragmentHistoryRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'page_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'pageToken', '17': true},
+    {'1': 'page_limit', '3': 3, '4': 1, '5': 3, '9': 1, '10': 'pageLimit', '17': true},
+  ],
+  '8': [
+    {'1': '_page_token'},
+    {'1': '_page_limit'},
+  ],
+};
+
+/// Descriptor for `GetFragmentHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFragmentHistoryRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRGcmFnbWVudEhpc3RvcnlSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIiCgpwYWdlX3Rva2'
+    'VuGAIgASgJSABSCXBhZ2VUb2tlbogBARIiCgpwYWdlX2xpbWl0GAMgASgDSAFSCXBhZ2VMaW1p'
+    'dIgBAUINCgtfcGFnZV90b2tlbkINCgtfcGFnZV9saW1pdA==');
+
+@$core.Deprecated('Use getFragmentHistoryResponseDescriptor instead')
+const GetFragmentHistoryResponse$json = {
+  '1': 'GetFragmentHistoryResponse',
+  '2': [
+    {'1': 'history', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentHistoryEntry', '10': 'history'},
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
+  ],
+};
+
+/// Descriptor for `GetFragmentHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFragmentHistoryResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRGcmFnbWVudEhpc3RvcnlSZXNwb25zZRI7CgdoaXN0b3J5GAEgAygLMiEudmlhbS5hcH'
+    'AudjEuRnJhZ21lbnRIaXN0b3J5RW50cnlSB2hpc3RvcnkSJgoPbmV4dF9wYWdlX3Rva2VuGAIg'
+    'ASgJUg1uZXh0UGFnZVRva2Vu');
 
 @$core.Deprecated('Use listRobotsRequestDescriptor instead')
 const ListRobotsRequest$json = {

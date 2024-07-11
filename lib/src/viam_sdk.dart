@@ -2,6 +2,7 @@ import './app/app.dart';
 import './app/billing.dart';
 import './app/data.dart';
 import './app/provisioning.dart';
+import './app/robot.dart';
 import './gen/app/v1/app.pbgrpc.dart';
 import './robot/client.dart';
 import './viam_sdk_impl.dart';
@@ -19,6 +20,9 @@ abstract class Viam {
 
   /// A client to communicate with Viam's app service
   AppClient get appClient;
+
+  /// A client to communicate with Viam's robot service
+  AppRobotClient get appRobotClient;
 
   /// A client to communicate with Viam's billing services
   BillingClient get billingClient;

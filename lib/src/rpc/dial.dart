@@ -17,7 +17,13 @@ import '../utils.dart';
 import 'grpc/grpc_or_grpcweb_channel.dart';
 import 'web_rtc/web_rtc_client.dart';
 
-final _logger = Logger(printer: PrettyPrinter(printTime: true));
+Logger _newDialLogger(LogOutput? output) {
+  // Use a SimplePrinter, as flutter dial logs from the RC app are sent to app.viam.com,
+  // and pretty-printed logs are overly formatted.
+  return Logger(output: output, printer: SimplePrinter(colors: false));
+}
+
+var _logger = _newDialLogger(null);
 
 /// Describes the behavior for connecting to a robot
 class DialOptions {
@@ -56,6 +62,9 @@ class DialOptions {
 
   /// Timeout is the timeout for dial.
   Duration timeout = Duration(seconds: 10);
+
+  /// If specified, a custom log output for dial logs.
+  LogOutput? logOutput;
 }
 
 /// The credentials used for connecting to the robot
@@ -113,9 +122,11 @@ class DialWebRtcOptions {
 
 /// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
+  final opts = options ?? DialOptions();
+  _logger = _newDialLogger(opts.logOutput);
+
   final dialSW = Stopwatch()..start();
   _logger.i('Connecting to address $address');
-  final opts = options ?? DialOptions();
 
   if (opts.attemptMdns) {
     final mdnsSW = Stopwatch()..start();
@@ -223,11 +234,11 @@ Future _logConnectionStats(Stopwatch webrtcDialSW, RTCPeerConnection peerConnect
     if (stat.type == 'candidate-pair' && stat.values['nominated']) {
       // Use 'lastPacketSentTimestamp' on candidate pair to estimate when the
       // pair was nominated.
-      final double lpst = stat.values['lastPacketSentTimestamp'];
+      final double lpst = stat.values['lastPacketSentTimestamp'] ?? 0;
       final DateTime nominatedTime = DateTime.fromMillisecondsSinceEpoch(lpst.toInt());
 
-      final String lcid = stat.values['localCandidateId'];
-      final String rcid = stat.values['remoteCandidateId'];
+      final lcid = stat.values['localCandidateId'];
+      final rcid = stat.values['remoteCandidateId'];
       for (var innerStat in stats) {
         if (innerStat.id == lcid) {
           final type = innerStat.values['candidateType'];

@@ -27,9 +27,9 @@ abstract class PowerSensor extends Resource {
   /// AC (true) or DC (false).
   ///
   /// ```
-  /// var voltageObject = await myPowerSensor.readings();
-  /// double voltageInVolts = voltageObject['volts'];
-  /// bool isItAC = voltageObject['isAc'];
+  /// var voltageObject = await myPowerSensor.voltage();
+  /// double voltageInVolts = voltageObject.volts;
+  /// bool isItAC = voltageObject.isAc;
   /// ```
   ///
   /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).
@@ -39,9 +39,9 @@ abstract class PowerSensor extends Resource {
   /// is AC (true) or DC (false).
   ///
   /// ```
-  /// var currentObject = await myPowerSensor.readings();
-  /// double amps = voltageObject['amperes'];
-  /// bool isItAC = voltageObject['isAc'];
+  /// var currentObject = await myPowerSensor.current();
+  /// double amps = currentObject.amperes;
+  /// bool isItAC = currentObject.isAc;
   /// ```
   ///
   /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).

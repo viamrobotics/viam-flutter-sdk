@@ -16,11 +16,16 @@ abstract class Servo extends Resource {
   /// Get the current angle (degrees) of the [Servo].
   ///
   /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  ///
+  /// ```
+  /// var angle = await myServo.position();
+  /// ```
   Future<int> position({Map<String, dynamic>? extra});
 
   /// Stop the [Servo]. It is assumed that the servo stops immediately.
   ///
   /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  ///
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Get if the [Servo] is currently moving.
@@ -31,6 +36,29 @@ abstract class Servo extends Resource {
   /// Get the [ResourceName] for this [Servo] with the given [name]
   ///
   /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  ///
+  /// ```
+  /// await myServo.stop();
+  /// ```
+  Future<void> stop({Map<String, dynamic>? extra});
+
+  /// Whether the [Servo] is currently moving.
+  ///
+  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  ///
+  /// ```
+  /// var isItMoving = await myServo.isMoving();
+  /// ```
+  Future<bool> isMoving();
+
+  /// Get the [ResourceName] for this [Servo] with the given [name].
+  ///
+  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  ///
+  /// ```
+  /// // Example:
+  /// var name = Servo.getResourceName('myServo');
+  /// ```
   static ResourceName getResourceName(String name) {
     return Servo.subtype.getResourceName(name);
   }
@@ -38,6 +66,7 @@ abstract class Servo extends Resource {
   /// Get the [Servo] named [name] from the provided robot.
   ///
   /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  ///
   static Servo fromRobot(RobotClient robot, String name) {
     return robot.getResource(Servo.getResourceName(name));
   }

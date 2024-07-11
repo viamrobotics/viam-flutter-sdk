@@ -30,5 +30,26 @@ class PeerConnectionType extends $pb.ProtobufEnum {
   const PeerConnectionType._($core.int v, $core.String n) : super(v, n);
 }
 
+class ResourceStatus_State extends $pb.ProtobufEnum {
+  static const ResourceStatus_State STATE_UNSPECIFIED = ResourceStatus_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
+  static const ResourceStatus_State STATE_UNCONFIGURED = ResourceStatus_State._(1, _omitEnumNames ? '' : 'STATE_UNCONFIGURED');
+  static const ResourceStatus_State STATE_CONFIGURING = ResourceStatus_State._(2, _omitEnumNames ? '' : 'STATE_CONFIGURING');
+  static const ResourceStatus_State STATE_READY = ResourceStatus_State._(3, _omitEnumNames ? '' : 'STATE_READY');
+  static const ResourceStatus_State STATE_REMOVING = ResourceStatus_State._(4, _omitEnumNames ? '' : 'STATE_REMOVING');
+
+  static const $core.List<ResourceStatus_State> values = <ResourceStatus_State> [
+    STATE_UNSPECIFIED,
+    STATE_UNCONFIGURED,
+    STATE_CONFIGURING,
+    STATE_READY,
+    STATE_REMOVING,
+  ];
+
+  static final $core.Map<$core.int, ResourceStatus_State> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ResourceStatus_State? valueOf($core.int value) => _byValue[value];
+
+  const ResourceStatus_State._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
