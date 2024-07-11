@@ -31,6 +31,7 @@ class AppClient {
   /// Create a new [Organization]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  Future<Organization> createOrganization(String name) async {
+  Future<Organization> createOrganization(String name) async {
     final request = CreateOrganizationRequest()..name = name;
     final CreateOrganizationResponse response = await _client.createOrganization(request);
     return response.organization;
@@ -74,7 +75,8 @@ class AppClient {
 
   /// Checks for namespace availablity throughout all [Organization]s.
   ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  Future<bool> getOrganizationNamespaceAvailability(String publicNamespace) async {
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<bool> getOrganizationNamespaceAvailability(String publicNamespace) async {
     final request = GetOrganizationNamespaceAvailabilityRequest()..publicNamespace = publicNamespace;
     final GetOrganizationNamespaceAvailabilityResponse response = await _client.getOrganizationNamespaceAvailability(request);
     return response.available;

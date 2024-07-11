@@ -20,7 +20,6 @@ abstract class Camera extends Resource {
   /// ```
   ///
   /// For more information, see [Camera component](https://docs.viam.com/components/camera/).
-
   Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra});
 
   /// Get the next point cloud from the camera.
@@ -28,8 +27,6 @@ abstract class Camera extends Resource {
   /// ```
   /// var nextPointCloud = await myCamera.pointCloud();
   /// ```
-  ///
-  /// For more information, see [Camera component](https://docs.viam.com/components/camera/).
   ///
   /// For more information, see [Camera component](https://docs.viam.com/components/camera/).
   Future<ViamImage> pointCloud({Map<String, dynamic>? extra});

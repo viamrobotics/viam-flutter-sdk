@@ -11,7 +11,6 @@ abstract class Arm extends Resource {
   /// Get the current [Pose] of the end of the arm.
   ///
   /// ```
-  /// // Get the pose of an arm named "myArm2"
   /// final currentPose = await myArm.endPosition();
   /// ```
   ///
