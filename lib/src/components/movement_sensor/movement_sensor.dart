@@ -14,6 +14,8 @@ typedef Properties = GetPropertiesResponse;
 typedef Accuracy = GetAccuracyResponse;
 
 /// MovementSensor reports information about the robot's direction, position and speed.
+///
+/// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
 abstract class MovementSensor extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'movement_sensor');
 
@@ -24,6 +26,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var readings = await myMovementSensor.readings();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra});
 
   /// Get the current [GeoPoint] (latitude, longitude) and altitude (mm).
@@ -31,6 +35,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var position = await myMovementSensor.position();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Position> position({Map<String, dynamic>? extra});
 
   /// Get the current linear velocity as a [Vector3] with x, y, and z axes represented in mm/sec.
@@ -38,6 +44,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var linVel = await myMovementSensor.linearVelocity();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Vector3> linearVelocity({Map<String, dynamic>? extra});
 
   /// Get the current angular velocity as a [Vector3] with
@@ -46,6 +54,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var angVel = await myMovementSensor.angularVelocity();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Vector3> angularVelocity({Map<String, dynamic>? extra});
 
   /// Get the current linear acceleration as a [Vector3] with
@@ -54,6 +64,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var linAccel = await myMovementSensor.linearAcceleration();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Vector3> linearAcceleration({Map<String, dynamic>? extra});
 
   /// Get the current compass heading in degrees.
@@ -61,6 +73,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var compassHeading = await myMovementSensor.compassHeading();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<double> compassHeading({Map<String, dynamic>? extra});
 
   /// Get the current orientation as an [Orientation].
@@ -68,6 +82,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var orientation = await myMovementSensor.orientation();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Orientation> orientation({Map<String, dynamic>? extra});
 
   /// Get the supported properties of this sensor.
@@ -75,6 +91,8 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var props = await myMovementSensor.properties();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Properties> properties({Map<String, dynamic>? extra});
 
   /// Get the reliability metrics of the movement sensor,
@@ -84,14 +102,20 @@ abstract class MovementSensor extends Resource {
   /// ```
   /// var accuracy = await myMovementSensor.accuracy();
   /// ```
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   Future<Accuracy> accuracy({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [MovementSensor] with the given [name]
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   static ResourceName getResourceName(String name) {
     return MovementSensor.subtype.getResourceName(name);
   }
 
   /// Get the [MovementSensor] named [name] from the provided robot.
+  ///
+  /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
   static MovementSensor fromRobot(RobotClient robot, String name) {
     return robot.getResource(MovementSensor.getResourceName(name));
   }

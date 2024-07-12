@@ -12,12 +12,16 @@ typedef RobotPartLogPage = GetRobotPartLogsResponse;
 /// gRPC client for connecting to Viam's App Service
 ///
 /// All calls must be authenticated.
+///
+/// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
 class AppClient {
   final AppServiceClient _client;
 
   AppClient(this._client);
 
   /// Get the id of the user with the email provided
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> getUserIdByEmail(String email) async {
     final request = GetUserIDByEmailRequest()..email = email;
     final GetUserIDByEmailResponse response = await _client.getUserIDByEmail(request);
@@ -25,6 +29,8 @@ class AppClient {
   }
 
   /// Create a new [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  Future<Organization> createOrganization(String name) async {
   Future<Organization> createOrganization(String name) async {
     final request = CreateOrganizationRequest()..name = name;
     final CreateOrganizationResponse response = await _client.createOrganization(request);
@@ -32,6 +38,8 @@ class AppClient {
   }
 
   /// List all the [Organization] the currently authenticated user has access to
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Organization>> listOrganizations() async {
     final listOrganizationsRequest = ListOrganizationsRequest();
     final ListOrganizationsResponse response = await _client.listOrganizations(listOrganizationsRequest);
@@ -39,6 +47,8 @@ class AppClient {
   }
 
   /// Get all [OrganizationIdentity]s that have access to a [Location].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<OrganizationIdentity>> getOrganizationsWithAccessToLocation(String locationId) async {
     final request = GetOrganizationsWithAccessToLocationRequest()..locationId = locationId;
     final GetOrganizationsWithAccessToLocationResponse response = await _client.getOrganizationsWithAccessToLocation(request);
@@ -46,6 +56,8 @@ class AppClient {
   }
 
   /// List the [Organization]s a user belongs to
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<OrgDetails>> listOrganizationsByUser(String userId) async {
     final request = ListOrganizationsByUserRequest()..userId = userId;
     final ListOrganizationsByUserResponse response = await _client.listOrganizationsByUser(request);
@@ -53,6 +65,8 @@ class AppClient {
   }
 
   /// Get a specific [Organization] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Organization> getOrganization(String organizationId) async {
     final getOrganizationRequest = GetOrganizationRequest()..organizationId = organizationId;
     final GetOrganizationResponse response = await _client.getOrganization(getOrganizationRequest);
@@ -60,6 +74,8 @@ class AppClient {
   }
 
   /// Checks for namespace availablity throughout all [Organization]s.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<bool> getOrganizationNamespaceAvailability(String publicNamespace) async {
     final request = GetOrganizationNamespaceAvailabilityRequest()..publicNamespace = publicNamespace;
     final GetOrganizationNamespaceAvailabilityResponse response = await _client.getOrganizationNamespaceAvailability(request);
@@ -67,6 +83,8 @@ class AppClient {
   }
 
   /// Update an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Organization> updateOrganization(String organizationId,
       {String? name, String? publicNamespace, String? region, String? cid}) async {
     final request = UpdateOrganizationRequest()..organizationId = organizationId;
@@ -79,12 +97,16 @@ class AppClient {
   }
 
   /// Delete an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteOrganization(String organizationId) async {
     final request = DeleteOrganizationRequest()..organizationId = organizationId;
     await _client.deleteOrganization(request);
   }
 
   /// List the members and pending invites for an [Organization].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<ListOrganizationMembersResponse> listOrganizationMembers(String organizationId) async {
     final request = ListOrganizationMembersRequest()..organizationId = organizationId;
     final ListOrganizationMembersResponse response = await _client.listOrganizationMembers(request);
@@ -92,6 +114,8 @@ class AppClient {
   }
 
   /// Send an invitation to to join an [Organization] to the specified email. Grant the level of permission defined in the [ViamAuthorization] object attached.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<OrganizationInvite> createOrganizationInvite(String organizationId, String email, List<ViamAuthorization> authorizations,
       {bool sendEmailInvite = true}) async {
     final List<Authorization> protoAuthorizations = [];
@@ -108,6 +132,8 @@ class AppClient {
   }
 
   /// Update the [ViamAuthorization]s attached to an [Organization] invite
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<OrganizationInvite> updateOrganizationInviteAuthorizations(
       String organizationId, String email, List<ViamAuthorization> addAuthorizations, List<ViamAuthorization> removeAuthorizations) async {
     final List<Authorization> protoAddAuthorizations = [];
@@ -129,6 +155,8 @@ class AppClient {
   }
 
   /// Delete a member from an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteOrganizationMember(String organizationId, String userId) async {
     final request = DeleteOrganizationMemberRequest()
       ..organizationId = organizationId
@@ -137,6 +165,8 @@ class AppClient {
   }
 
   /// Delete an invite to an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteOrganizationInvite(String organizationId, String email) async {
     final request = DeleteOrganizationInviteRequest()
       ..organizationId = organizationId
@@ -145,6 +175,8 @@ class AppClient {
   }
 
   /// Resend an invite to an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<OrganizationInvite> resendOrganizationInvite(String organizationId, String email) async {
     final request = ResendOrganizationInviteRequest()
       ..organizationId = organizationId
@@ -154,6 +186,8 @@ class AppClient {
   }
 
   /// Create a [Location]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Location> createLocation(String organizationId, String name, {String? parentLocationId}) async {
     final request = CreateLocationRequest()
       ..organizationId = organizationId
@@ -164,6 +198,8 @@ class AppClient {
   }
 
   /// Get a specific [Location] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Location> getLocation(String locationId) async {
     final getLocationRequest = GetLocationRequest()..locationId = locationId;
     final GetLocationResponse response = await _client.getLocation(getLocationRequest);
@@ -171,6 +207,8 @@ class AppClient {
   }
 
   /// Update a [Location]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Location> updateLocation(String locationId, {String? name, String? parentLocationId, String? region}) async {
     final request = UpdateLocationRequest()..locationId = locationId;
     if (name != null) request.name = name;
@@ -181,12 +219,16 @@ class AppClient {
   }
 
   /// Delete a [Location]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteLocation(String locationId) async {
     final request = DeleteLocationRequest()..locationId = locationId;
     await _client.deleteLocation(request);
   }
 
   /// List the [Location]s of a specific [Organization] that the currently authenticated user has access to
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Location>> listLocations(String organizationId) async {
     final listLocationsRequest = ListLocationsRequest()..organizationId = organizationId;
     final ListLocationsResponse response = await _client.listLocations(listLocationsRequest);
@@ -194,6 +236,8 @@ class AppClient {
   }
 
   /// Share a [Location] with an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> shareLocation(String locationId, String organizationId) async {
     final request = ShareLocationRequest()
       ..locationId = locationId
@@ -202,6 +246,8 @@ class AppClient {
   }
 
   /// Stop sharing a [Location] with an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> unshareLocation(String locationId, String organizationId) async {
     final request = UnshareLocationRequest()
       ..locationId = locationId
@@ -210,6 +256,8 @@ class AppClient {
   }
 
   /// Get a [LocationAuth] with a [Location]'s authorization secrets
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<LocationAuth> locationAuth(String locationId) async {
     final request = LocationAuthRequest()..locationId = locationId;
     final LocationAuthResponse response = await _client.locationAuth(request);
@@ -217,6 +265,8 @@ class AppClient {
   }
 
   /// Create a new generated [LocationAuth] in the [Location].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<LocationAuth> createLocationSecret(String locationId) async {
     final request = CreateLocationSecretRequest()..locationId = locationId;
     final CreateLocationSecretResponse response = await _client.createLocationSecret(request);
@@ -224,6 +274,8 @@ class AppClient {
   }
 
   /// Delete a Secret from the [Location].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteLocationSecret(String locationId, String secretId) async {
     final request = DeleteLocationSecretRequest()
       ..locationId = locationId
@@ -232,6 +284,8 @@ class AppClient {
   }
 
   /// Get a specific [Robot] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Robot> getRobot(String robotId) async {
     final getRobotRequest = GetRobotRequest()..id = robotId;
     final GetRobotResponse response = await _client.getRobot(getRobotRequest);
@@ -239,6 +293,8 @@ class AppClient {
   }
 
   /// Get [RoverRentalRobot]s in an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RoverRentalRobot>> getRoverRentalRobots(String orgId) async {
     final request = GetRoverRentalRobotsRequest()..orgId = orgId;
     final GetRoverRentalRobotsResponse response = await _client.getRoverRentalRobots(request);
@@ -246,6 +302,8 @@ class AppClient {
   }
 
   /// List the [RobotPart] of a specific [Robot] that the currently authenticated user has access to
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RobotPart>> listRobotParts(String robotId) async {
     final getRobotPartsRequest = GetRobotPartsRequest()..robotId = robotId;
     final response = await _client.getRobotParts(getRobotPartsRequest);
@@ -253,6 +311,8 @@ class AppClient {
   }
 
   /// Get a specific [RobotPart] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RobotPart> getRobotPart(String partId) async {
     final getRobotPartRequest = GetRobotPartRequest()..id = partId;
     final response = await _client.getRobotPart(getRobotPartRequest);
@@ -260,6 +320,8 @@ class AppClient {
   }
 
   /// Get a page of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RobotPartLogPage> getLogs(String partId, {String? filter, String? pageToken}) async {
     final request = GetRobotPartLogsRequest()
       ..id = partId
@@ -269,6 +331,8 @@ class AppClient {
   }
 
   /// Get a stream of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Stream<List<LogEntry>> tailLogs(String partId, {bool errorsOnly = false, String? filter}) {
     final request = TailRobotPartLogsRequest()
       ..id = partId
@@ -280,6 +344,8 @@ class AppClient {
   }
 
   /// Get a specific [RobotPart] history by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RobotPartHistoryEntry>> getRobotPartHistory(String id) async {
     final request = GetRobotPartHistoryRequest()..id = id;
     final GetRobotPartHistoryResponse response = await _client.getRobotPartHistory(request);
@@ -287,6 +353,8 @@ class AppClient {
   }
 
   /// Update a specific [RobotPart] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RobotPart> updateRobotPart(String partId, String name, Map<String, dynamic> robotConfig) async {
     final updateRobotPartRequest = UpdateRobotPartRequest()
       ..id = partId
@@ -297,6 +365,8 @@ class AppClient {
   }
 
   /// Create a new [RobotPart]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> newRobotPart(String robotId, String partName) async {
     final request = NewRobotPartRequest()
       ..robotId = robotId
@@ -306,12 +376,16 @@ class AppClient {
   }
 
   /// Delete a [RobotPart]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteRobotPart(String partId) async {
     final request = DeleteRobotPartRequest()..partId = partId;
     await _client.deleteRobotPart(request);
   }
 
   /// Gets the [APIKey]'s for a [Robot]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<APIKeyWithAuthorizations>> getRobotApiKeys(String robotId) async {
     final request = GetRobotAPIKeysRequest()..robotId = robotId;
     final GetRobotAPIKeysResponse response = await _client.getRobotAPIKeys(request);
@@ -319,6 +393,8 @@ class AppClient {
   }
 
   /// Marks the given [RobotPart] as the main part, and all the others as not
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> markPartAsMain(String partId) async {
     final request = MarkPartAsMainRequest()..partId = partId;
     await _client.markPartAsMain(request);
@@ -326,12 +402,16 @@ class AppClient {
 
   /// Marks [RobotPart] for restart. Once the [RobotPart] checks-in with the app the flag is reset on the [RobotPart]. Calling this multiple times before a [RobotPart] checks-in has no affect.
   /// Note: This API may be removed in the near future.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> markPartForRestart(String partId) async {
     final request = MarkPartForRestartRequest()..partId = partId;
     await _client.markPartForRestart(request);
   }
 
   /// Create a new generated Secret in the [RobotPart]. Succeeds if there are no more than 2 active secrets after creation.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RobotPart> createRobotPartSecret(String partId) async {
     final request = CreateRobotPartSecretRequest()..partId = partId;
     final CreateRobotPartSecretResponse response = await _client.createRobotPartSecret(request);
@@ -339,6 +419,8 @@ class AppClient {
   }
 
   /// Delete a Secret from the [RobotPart].
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteRobotPartSecret(String partId, String secretId) async {
     final request = DeleteRobotPartSecretRequest()
       ..partId = partId
@@ -347,6 +429,8 @@ class AppClient {
   }
 
   /// List the [Robot] of a specific [Location] that the currently authenticated user has access to
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Robot>> listRobots(String locationId) async {
     final listRobotsRequest = ListRobotsRequest()..locationId = locationId;
     final ListRobotsResponse response = await _client.listRobots(listRobotsRequest);
@@ -354,6 +438,8 @@ class AppClient {
   }
 
   /// Create a new smart machine with the included [name] in the passed in [locationId]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> newMachine(String name, String locationId) async {
     final request = NewRobotRequest()
       ..name = name
@@ -363,6 +449,8 @@ class AppClient {
   }
 
   /// Update a [Robot]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Robot> updateRobot(String id, String name, String location) async {
     final request = UpdateRobotRequest()
       ..id = id
@@ -373,12 +461,16 @@ class AppClient {
   }
 
   /// Delete a [Robot]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteRobot(String id) async {
     final request = DeleteRobotRequest()..id = id;
     await _client.deleteRobot(request);
   }
 
   /// Get a list of [Fragment]s in an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Fragment>> listFragments(String organizationId, bool showPublic) async {
     final request = ListFragmentsRequest()
       ..organizationId = organizationId
@@ -388,6 +480,8 @@ class AppClient {
   }
 
   /// Get a specific [Fragment] by ID.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Fragment> getFragment(String id) async {
     final request = GetFragmentRequest()..id = id;
     final response = await _client.getFragment(request);
@@ -395,6 +489,8 @@ class AppClient {
   }
 
   /// Create a [Fragment]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Fragment> createFragment(String name, Map<String, dynamic> config, String organizationId) async {
     final request = CreateFragmentRequest()
       ..name = name
@@ -405,6 +501,8 @@ class AppClient {
   }
 
   /// Update a [Fragment]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config, {bool? public}) async {
     final request = UpdateFragmentRequest()
       ..id = id
@@ -416,24 +514,32 @@ class AppClient {
   }
 
   /// Delete a [Fragment]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteFragment(String id) async {
     final request = DeleteFragmentRequest()..id = id;
     await _client.deleteFragment(request);
   }
 
   /// Creates an [Authorization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> addRole(ViamAuthorization authorization) async {
     final request = AddRoleRequest()..authorization = authorization.toProto;
     await _client.addRole(request);
   }
 
   /// Deletes an [Authorization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> removeRole(ViamAuthorization authorization) async {
     final request = RemoveRoleRequest()..authorization = authorization.toProto;
     await _client.removeRole(request);
   }
 
   /// Changes an [Authorization] to a new [Authorization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> changeRole(ViamAuthorization oldAuthorization, ViamAuthorization newAuthorization) async {
     final request = ChangeRoleRequest()
       ..oldAuthorization = oldAuthorization.toProto
@@ -442,6 +548,8 @@ class AppClient {
   }
 
   /// List the [Authorization]s available for the currently authenticated user
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Authorization>> listAuthorizations(String organizationId, {List<String> resourceIds = const []}) async {
     final request = ListAuthorizationsRequest()
       ..organizationId = organizationId
@@ -451,6 +559,8 @@ class AppClient {
   }
 
   /// Validates a [Permission] for the current user
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Permission>> checkPermissions(ResourceType resourceType, String resourceId, List<Permission> permissions) async {
     final request = CheckPermissionsRequest()
       ..permissions.add((AuthorizedPermissions()
@@ -465,6 +575,8 @@ class AppClient {
   }
 
   /// Get a [RegistryItem] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RegistryItem> getRegistryItem(String itemId) async {
     final request = GetRegistryItemRequest()..itemId = itemId;
     final GetRegistryItemResponse response = await _client.getRegistryItem(request);
@@ -472,6 +584,8 @@ class AppClient {
   }
 
   /// Create a [RegistryItem] in an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> createRegistryItem(String organizationId, String name, PackageType type) async {
     final request = CreateRegistryItemRequest()
       ..organizationId = organizationId
@@ -481,6 +595,8 @@ class AppClient {
   }
 
   /// Update a [Registry Item]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> updateRegistryItem(String itemId, PackageType type, String description, Visibility visibility) async {
     final request = UpdateRegistryItemRequest()
       ..itemId = itemId
@@ -491,6 +607,8 @@ class AppClient {
   }
 
   /// List [RegistryItem]s in an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<RegistryItem>> listRegistryItems(
       List<PackageType> types, List<Visibility> visibilities, List<String> platforms, List<RegistryItemStatus> statuses,
       {String? organizationId, String? searchTerm, String? pageToken}) async {
@@ -503,12 +621,16 @@ class AppClient {
   }
 
   /// Delete a [RegistryItem]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteRegistryItem(String itemId) async {
     final request = DeleteRegistryItemRequest()..itemId = itemId;
     await _client.deleteRegistryItem(request);
   }
 
   /// Create a [Module]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<CreateModuleResponse> createModule(String organizationId, String name) async {
     final request = CreateModuleRequest()
       ..organizationId = organizationId
@@ -517,6 +639,8 @@ class AppClient {
   }
 
   /// Update a [Module]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> updateModule(
       String moduleId, Visibility visibility, String url, String description, List<Model> models, String entrypoint) async {
     final request = UpdateModuleRequest(models: models)
@@ -530,6 +654,8 @@ class AppClient {
   }
 
   /// Upload a [Module] file
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<String> uploadModuleFile(ModuleFileInfo moduleFileInfo, List<int> file) async {
     final request = UploadModuleFileRequest()
       ..moduleFileInfo = moduleFileInfo
@@ -539,6 +665,8 @@ class AppClient {
   }
 
   /// Get a [Module] by ID
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Module> getModule(String moduleId) async {
     final request = GetModuleRequest()..moduleId = moduleId;
     final GetModuleResponse response = await _client.getModule(request);
@@ -546,6 +674,8 @@ class AppClient {
   }
 
   /// List all the [Module]s. Return private modules for an [Organization] if its ID is provided.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Module>> listModules(String? organizationId) async {
     final request = ListModulesRequest()..organizationId = organizationId ?? '';
     final ListModulesResponse response = await _client.listModules(request);
@@ -553,6 +683,8 @@ class AppClient {
   }
 
   /// Create an [APIKey]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<CreateKeyResponse> createKey(List<ViamAuthorization> authorizations, String name) async {
     final List<Authorization> protoAuthorizations = [];
     for (final authorization in authorizations) {
@@ -564,12 +696,16 @@ class AppClient {
   }
 
   /// Delete an [APIKey]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<void> deleteKey(String id) async {
     final request = DeleteKeyRequest()..id = id;
     await _client.deleteKey(request);
   }
 
   /// List the [APIKeyWithAuthorizations]s in an [Organization]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<APIKeyWithAuthorizations>> listKeys(String orgId) async {
     final request = ListKeysRequest()..orgId = orgId;
     final ListKeysResponse response = await _client.listKeys(request);
@@ -577,12 +713,16 @@ class AppClient {
   }
 
   /// Rotate an [APIKey]
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RotateKeyResponse> rotateKey(String id) async {
     final request = RotateKeyRequest()..id = id;
     return await _client.rotateKey(request);
   }
 
   /// Create an [APIKey] with existing authorizations
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations(String id) async {
     final request = CreateKeyFromExistingKeyAuthorizationsRequest()..id = id;
     return await _client.createKeyFromExistingKeyAuthorizations(request);
