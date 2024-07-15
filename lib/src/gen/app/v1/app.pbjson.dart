@@ -1564,6 +1564,34 @@ const ListRobotsRequest$json = {
 final $typed_data.Uint8List listRobotsRequestDescriptor = $convert.base64Decode(
     'ChFMaXN0Um9ib3RzUmVxdWVzdBIfCgtsb2NhdGlvbl9pZBgBIAEoCVIKbG9jYXRpb25JZA==');
 
+@$core.Deprecated('Use listMachineFragmentsRequestDescriptor instead')
+const ListMachineFragmentsRequest$json = {
+  '1': 'ListMachineFragmentsRequest',
+  '2': [
+    {'1': 'machine_id', '3': 1, '4': 1, '5': 9, '10': 'machineId'},
+    {'1': 'additional_fragment_ids', '3': 2, '4': 3, '5': 9, '10': 'additionalFragmentIds'},
+  ],
+};
+
+/// Descriptor for `ListMachineFragmentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMachineFragmentsRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TWFjaGluZUZyYWdtZW50c1JlcXVlc3QSHQoKbWFjaGluZV9pZBgBIAEoCVIJbWFjaG'
+    'luZUlkEjYKF2FkZGl0aW9uYWxfZnJhZ21lbnRfaWRzGAIgAygJUhVhZGRpdGlvbmFsRnJhZ21l'
+    'bnRJZHM=');
+
+@$core.Deprecated('Use listMachineFragmentsResponseDescriptor instead')
+const ListMachineFragmentsResponse$json = {
+  '1': 'ListMachineFragmentsResponse',
+  '2': [
+    {'1': 'fragments', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Fragment', '10': 'fragments'},
+  ],
+};
+
+/// Descriptor for `ListMachineFragmentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMachineFragmentsResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TWFjaGluZUZyYWdtZW50c1Jlc3BvbnNlEjMKCWZyYWdtZW50cxgBIAMoCzIVLnZpYW'
+    '0uYXBwLnYxLkZyYWdtZW50UglmcmFnbWVudHM=');
+
 @$core.Deprecated('Use listRobotsResponseDescriptor instead')
 const ListRobotsResponse$json = {
   '1': 'ListRobotsResponse',

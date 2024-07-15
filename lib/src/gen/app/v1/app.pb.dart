@@ -6327,6 +6327,112 @@ class ListRobotsRequest extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(1);
 }
 
+class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
+  factory ListMachineFragmentsRequest({
+    $core.String? machineId,
+    $core.Iterable<$core.String>? additionalFragmentIds,
+  }) {
+    final $result = create();
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    if (additionalFragmentIds != null) {
+      $result.additionalFragmentIds.addAll(additionalFragmentIds);
+    }
+    return $result;
+  }
+  ListMachineFragmentsRequest._() : super();
+  factory ListMachineFragmentsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMachineFragmentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineFragmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'machineId')
+    ..pPS(2, _omitFieldNames ? '' : 'additionalFragmentIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMachineFragmentsRequest clone() => ListMachineFragmentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMachineFragmentsRequest copyWith(void Function(ListMachineFragmentsRequest) updates) => super.copyWith((message) => updates(message as ListMachineFragmentsRequest)) as ListMachineFragmentsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMachineFragmentsRequest create() => ListMachineFragmentsRequest._();
+  ListMachineFragmentsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMachineFragmentsRequest> createRepeated() => $pb.PbList<ListMachineFragmentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMachineFragmentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMachineFragmentsRequest>(create);
+  static ListMachineFragmentsRequest? _defaultInstance;
+
+  /// the machine_id used to filter fragments defined in a machine's parts.
+  /// Also returns any fragments nested within the fragments defined in parts.
+  @$pb.TagNumber(1)
+  $core.String get machineId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set machineId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachineId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachineId() => clearField(1);
+
+  /// additional fragment_ids to append to the response. useful when needing to view fragments that will be
+  /// provisionally added to the machine alongside existing fragments.
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get additionalFragmentIds => $_getList(1);
+}
+
+class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
+  factory ListMachineFragmentsResponse({
+    $core.Iterable<Fragment>? fragments,
+  }) {
+    final $result = create();
+    if (fragments != null) {
+      $result.fragments.addAll(fragments);
+    }
+    return $result;
+  }
+  ListMachineFragmentsResponse._() : super();
+  factory ListMachineFragmentsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMachineFragmentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineFragmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<Fragment>(1, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: Fragment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMachineFragmentsResponse clone() => ListMachineFragmentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMachineFragmentsResponse copyWith(void Function(ListMachineFragmentsResponse) updates) => super.copyWith((message) => updates(message as ListMachineFragmentsResponse)) as ListMachineFragmentsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMachineFragmentsResponse create() => ListMachineFragmentsResponse._();
+  ListMachineFragmentsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMachineFragmentsResponse> createRepeated() => $pb.PbList<ListMachineFragmentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMachineFragmentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMachineFragmentsResponse>(create);
+  static ListMachineFragmentsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Fragment> get fragments => $_getList(0);
+}
+
 class ListRobotsResponse extends $pb.GeneratedMessage {
   factory ListRobotsResponse({
     $core.Iterable<Robot>? robots,
