@@ -3,15 +3,18 @@ import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// Arm represents a physical robot arm that exists in three-dimensional space.
+///
+/// For more information, see [Arm component](https://docs.viam.com/components/arm/).
 abstract class Arm extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'arm');
 
   /// Get the current [Pose] of the end of the arm.
   ///
   /// ```
-  /// // Get the pose of an arm named "myArm"
   /// final currentPose = await myArm.endPosition();
   /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   Future<Pose> endPosition({Map<String, dynamic>? extra});
 
   /// Move the end of the arm to the [Pose] specified.
@@ -23,6 +26,8 @@ abstract class Arm extends Resource {
   /// // Move the arm to the pose
   /// await myArm.moveToPosition(targetPose);
   /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   Future<void> moveToPosition(Pose pose, {Map<String, dynamic>? extra});
 
   /// Move each joint on the arm to the corresponding position specified in [positions].
@@ -34,6 +39,8 @@ abstract class Arm extends Resource {
   /// // Move the arm joints to those angles
   /// await myArm.moveToJointPositions(targetPositions);
   /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   Future<void> moveToJointPositions(List<double> positions, {Map<String, dynamic>? extra});
 
   /// Get the [List] of current joint angles of each arm joint
@@ -41,6 +48,8 @@ abstract class Arm extends Resource {
   /// ```
   /// List<double> currentJointPositions = await myArm.moveToJointPosition();
   /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   Future<List<double>> jointPositions({Map<String, dynamic>? extra});
 
   /// Stop all motion of the arm. It is assumed that the arm stops immediately.
@@ -48,6 +57,8 @@ abstract class Arm extends Resource {
   /// ```
   /// await myArm.stop();
   /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Whether the arm is currently moving
@@ -55,14 +66,20 @@ abstract class Arm extends Resource {
   /// ```
   /// bool isArmMoving = await myArm.isMoving();
   /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   Future<bool> isMoving();
 
   /// Get the [ResourceName] for this [Arm] with the given [name].
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   static ResourceName getResourceName(String name) {
     return Arm.subtype.getResourceName(name);
   }
 
   /// Get the [Arm] named [name] from the provided robot.
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/components/arm/).
   static Arm fromRobot(RobotClient robot, String name) {
     return robot.getResource(Arm.getResourceName(name));
   }

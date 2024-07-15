@@ -647,3 +647,57 @@ const ShutdownResponse$json = {
 final $typed_data.Uint8List shutdownResponseDescriptor = $convert.base64Decode(
     'ChBTaHV0ZG93blJlc3BvbnNl');
 
+@$core.Deprecated('Use getMachineStatusRequestDescriptor instead')
+const GetMachineStatusRequest$json = {
+  '1': 'GetMachineStatusRequest',
+};
+
+/// Descriptor for `GetMachineStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMachineStatusRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRNYWNoaW5lU3RhdHVzUmVxdWVzdA==');
+
+@$core.Deprecated('Use getMachineStatusResponseDescriptor instead')
+const GetMachineStatusResponse$json = {
+  '1': 'GetMachineStatusResponse',
+  '2': [
+    {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.ResourceStatus', '10': 'resources'},
+  ],
+};
+
+/// Descriptor for `GetMachineStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMachineStatusResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRNYWNoaW5lU3RhdHVzUmVzcG9uc2USOwoJcmVzb3VyY2VzGAEgAygLMh0udmlhbS5yb2'
+    'JvdC52MS5SZXNvdXJjZVN0YXR1c1IJcmVzb3VyY2Vz');
+
+@$core.Deprecated('Use resourceStatusDescriptor instead')
+const ResourceStatus$json = {
+  '1': 'ResourceStatus',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'name'},
+    {'1': 'state', '3': 2, '4': 1, '5': 14, '6': '.viam.robot.v1.ResourceStatus.State', '10': 'state'},
+    {'1': 'last_updated', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
+  ],
+  '4': [ResourceStatus_State$json],
+};
+
+@$core.Deprecated('Use resourceStatusDescriptor instead')
+const ResourceStatus_State$json = {
+  '1': 'State',
+  '2': [
+    {'1': 'STATE_UNSPECIFIED', '2': 0},
+    {'1': 'STATE_UNCONFIGURED', '2': 1},
+    {'1': 'STATE_CONFIGURING', '2': 2},
+    {'1': 'STATE_READY', '2': 3},
+    {'1': 'STATE_REMOVING', '2': 4},
+  ],
+};
+
+/// Descriptor for `ResourceStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
+    'Cg5SZXNvdXJjZVN0YXR1cxIwCgRuYW1lGAEgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2'
+    'VOYW1lUgRuYW1lEjkKBXN0YXRlGAIgASgOMiMudmlhbS5yb2JvdC52MS5SZXNvdXJjZVN0YXR1'
+    'cy5TdGF0ZVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQicgoFU3RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIW'
+    'ChJTVEFURV9VTkNPTkZJR1VSRUQQARIVChFTVEFURV9DT05GSUdVUklORxACEg8KC1NUQVRFX1'
+    'JFQURZEAMSEgoOU1RBVEVfUkVNT1ZJTkcQBA==');
+
