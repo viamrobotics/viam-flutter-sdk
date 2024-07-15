@@ -469,8 +469,9 @@ class AppClient {
   }
 
   /// Get a list of [Fragment]s in an [Organization]
+  ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<List<Fragment>> listFragments(String organizationId, {bool showPublic, List<FragmentVisibility>? fragmentVisibility}) async {
+  Future<List<Fragment>> listFragments(String organizationId, bool showPublic, {List<FragmentVisibility>? fragmentVisibility}) async {
     final request = ListFragmentsRequest(fragmentVisibility: fragmentVisibility)
       ..organizationId = organizationId
       ..showPublic = showPublic;
@@ -500,6 +501,7 @@ class AppClient {
   }
 
   /// Update a [Fragment]
+  ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config,
       {bool? public, FragmentVisibility? visibility}) async {
