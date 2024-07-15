@@ -379,11 +379,11 @@ class AppClient {
   }
 
   /// Get a list of [Fragment]s in an [Organization]
-  Future<List<Fragment>> listFragments(String organizationId, {bool? showPublic, List<FragmentVisibility>? fragmentVisibilities}) async {
-    final request = ListFragmentsRequest()
+  Future<List<Fragment>> listFragments(String organizationId, {bool? showPublic, List<FragmentVisibility>? fragmentVisibility}) async {
+    final request = ListFragmentsRequest(fragmentVisibility=fragmentVisibility)
       ..organizationId = organizationId
       ..showPublic = showPublic;
-      ..fragmentVisibilities = fragmentVisibilities;
+      ..fragmentVisibility = fragmentVisibility;
     final ListFragmentsResponse response = await _client.listFragments(request);
     return response.fragments;
   }
