@@ -379,10 +379,11 @@ class AppClient {
   }
 
   /// Get a list of [Fragment]s in an [Organization]
-  Future<List<Fragment>> listFragments(String organizationId, bool showPublic) async {
+  Future<List<Fragment>> listFragments(String organizationId, {bool ? showPublic}, {FragmentVisibility ? visibility}) async {
     final request = ListFragmentsRequest()
       ..organizationId = organizationId
       ..showPublic = showPublic;
+      ...visibility = visibility;
     final ListFragmentsResponse response = await _client.listFragments(request);
     return response.fragments;
   }
@@ -405,12 +406,13 @@ class AppClient {
   }
 
   /// Update a [Fragment]
-  Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config, {bool? public}) async {
+  Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config, {bool? public}, {FragmentVisibility? visibility}) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
       ..config = config.toStruct();
     if (public != null) request.public = public;
+    if (visibility != null) request.visibility = visibility;
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
   }
