@@ -472,9 +472,10 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<Fragment>> listFragments(String organizationId, bool showPublic, {List<FragmentVisibility>? fragmentVisibility}) async {
-    final request = ListFragmentsRequest(fragmentVisibility: fragmentVisibility)
+    final request = ListFragmentsRequest()
       ..organizationId = organizationId
-      ..showPublic = showPublic;
+      ..showPublic = showPublic
+      ..fragmentVisibility = fragmentVisibility;
     final ListFragmentsResponse response = await _client.listFragments(request);
     return response.fragments;
   }
