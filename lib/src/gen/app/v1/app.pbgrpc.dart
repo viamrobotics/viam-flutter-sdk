@@ -217,6 +217,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteFragment',
       ($2.DeleteFragmentRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.DeleteFragmentResponse.fromBuffer(value));
+  static final _$listMachineFragments = $grpc.ClientMethod<$2.ListMachineFragmentsRequest, $2.ListMachineFragmentsResponse>(
+      '/viam.app.v1.AppService/ListMachineFragments',
+      ($2.ListMachineFragmentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.ListMachineFragmentsResponse.fromBuffer(value));
   static final _$getFragmentHistory = $grpc.ClientMethod<$2.GetFragmentHistoryRequest, $2.GetFragmentHistoryResponse>(
       '/viam.app.v1.AppService/GetFragmentHistory',
       ($2.GetFragmentHistoryRequest value) => value.writeToBuffer(),
@@ -510,6 +514,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.DeleteFragmentResponse> deleteFragment($2.DeleteFragmentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteFragment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.ListMachineFragmentsResponse> listMachineFragments($2.ListMachineFragmentsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listMachineFragments, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.GetFragmentHistoryResponse> getFragmentHistory($2.GetFragmentHistoryRequest request, {$grpc.CallOptions? options}) {
@@ -953,6 +961,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.DeleteFragmentRequest.fromBuffer(value),
         ($2.DeleteFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.ListMachineFragmentsRequest, $2.ListMachineFragmentsResponse>(
+        'ListMachineFragments',
+        listMachineFragments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.ListMachineFragmentsRequest.fromBuffer(value),
+        ($2.ListMachineFragmentsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.GetFragmentHistoryRequest, $2.GetFragmentHistoryResponse>(
         'GetFragmentHistory',
         getFragmentHistory_Pre,
@@ -1312,6 +1327,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteFragment(call, await request);
   }
 
+  $async.Future<$2.ListMachineFragmentsResponse> listMachineFragments_Pre($grpc.ServiceCall call, $async.Future<$2.ListMachineFragmentsRequest> request) async {
+    return listMachineFragments(call, await request);
+  }
+
   $async.Future<$2.GetFragmentHistoryResponse> getFragmentHistory_Pre($grpc.ServiceCall call, $async.Future<$2.GetFragmentHistoryRequest> request) async {
     return getFragmentHistory(call, await request);
   }
@@ -1449,6 +1468,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$2.CreateFragmentResponse> createFragment($grpc.ServiceCall call, $2.CreateFragmentRequest request);
   $async.Future<$2.UpdateFragmentResponse> updateFragment($grpc.ServiceCall call, $2.UpdateFragmentRequest request);
   $async.Future<$2.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $2.DeleteFragmentRequest request);
+  $async.Future<$2.ListMachineFragmentsResponse> listMachineFragments($grpc.ServiceCall call, $2.ListMachineFragmentsRequest request);
   $async.Future<$2.GetFragmentHistoryResponse> getFragmentHistory($grpc.ServiceCall call, $2.GetFragmentHistoryRequest request);
   $async.Future<$2.AddRoleResponse> addRole($grpc.ServiceCall call, $2.AddRoleRequest request);
   $async.Future<$2.RemoveRoleResponse> removeRole($grpc.ServiceCall call, $2.RemoveRoleRequest request);

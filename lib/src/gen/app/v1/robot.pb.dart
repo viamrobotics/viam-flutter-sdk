@@ -36,6 +36,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.Iterable<AppValidationStatus>? overwriteFragmentStatus,
     $core.bool? enableWebProfile,
     $core.Iterable<LogPatternConfig>? log,
+    $core.String? revision,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -80,6 +81,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (log != null) {
       $result.log.addAll(log);
     }
+    if (revision != null) {
+      $result.revision = revision;
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -101,6 +105,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..pc<AppValidationStatus>(12, _omitFieldNames ? '' : 'overwriteFragmentStatus', $pb.PbFieldType.PM, subBuilder: AppValidationStatus.create)
     ..aOB(13, _omitFieldNames ? '' : 'enableWebProfile')
     ..pc<LogPatternConfig>(14, _omitFieldNames ? '' : 'log', $pb.PbFieldType.PM, subBuilder: LogPatternConfig.create)
+    ..aOS(15, _omitFieldNames ? '' : 'revision')
     ..hasRequiredFields = false
   ;
 
@@ -210,6 +215,16 @@ class RobotConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(14)
   $core.List<LogPatternConfig> get log => $_getList(13);
+
+  /// Attributes a particular revision to the config.
+  @$pb.TagNumber(15)
+  $core.String get revision => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set revision($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasRevision() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearRevision() => clearField(15);
 }
 
 /// LogPatternConfig allows you to specify a 2-tuple consisting
