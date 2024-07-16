@@ -415,6 +415,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $2.DeleteFragmentRequest.fromBuffer(value),
       ($2.DeleteFragmentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$2.ListMachineFragmentsRequest, $2.ListMachineFragmentsResponse&gt;(
+      &#39;ListMachineFragments&#39;,
+      listMachineFragments_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $2.ListMachineFragmentsRequest.fromBuffer(value),
+      ($2.ListMachineFragmentsResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$2.GetFragmentHistoryRequest, $2.GetFragmentHistoryResponse&gt;(
       &#39;GetFragmentHistory&#39;,
       getFragmentHistory_Pre,
