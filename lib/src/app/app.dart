@@ -475,7 +475,7 @@ class AppClient {
     final request = ListFragmentsRequest()
       ..organizationId = organizationId
       ..showPublic = showPublic
-      ..fragmentVisibility = fragmentVisibility;
+      ..fragmentVisibility.addAll(fragmentVisibility ?? []);
     final ListFragmentsResponse response = await _client.listFragments(request);
     return response.fragments;
   }
