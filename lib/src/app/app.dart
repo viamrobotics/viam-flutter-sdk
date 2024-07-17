@@ -471,10 +471,11 @@ class AppClient {
   /// Get a list of [Fragment]s in an [Organization]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<List<Fragment>> listFragments(String organizationId, bool showPublic) async {
+  Future<List<Fragment>> listFragments(String organizationId, bool showPublic, {List<FragmentVisibility>? fragmentVisibility}) async {
     final request = ListFragmentsRequest()
       ..organizationId = organizationId
-      ..showPublic = showPublic;
+      ..showPublic = showPublic
+      ..fragmentVisibility.addAll(fragmentVisibility ?? []);
     final ListFragmentsResponse response = await _client.listFragments(request);
     return response.fragments;
   }
@@ -503,12 +504,14 @@ class AppClient {
   /// Update a [Fragment]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config, {bool? public}) async {
+  Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config,
+      {bool? public, FragmentVisibility? visibility}) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
       ..config = config.toStruct();
     if (public != null) request.public = public;
+    if (visibility != null) request.visibility = visibility;
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
   }
