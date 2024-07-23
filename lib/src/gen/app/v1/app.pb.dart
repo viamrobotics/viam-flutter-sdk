@@ -8750,6 +8750,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     $1.PackageType? type,
     $core.String? description,
     Visibility? visibility,
+    $core.String? url,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -8764,6 +8765,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     if (visibility != null) {
       $result.visibility = visibility;
     }
+    if (url != null) {
+      $result.url = url;
+    }
     return $result;
   }
   UpdateRegistryItemRequest._() : super();
@@ -8775,6 +8779,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     ..e<$1.PackageType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $1.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $1.PackageType.valueOf, enumValues: $1.PackageType.values)
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..e<Visibility>(4, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
+    ..aOS(5, _omitFieldNames ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
@@ -8834,6 +8839,15 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   $core.bool hasVisibility() => $_has(3);
   @$pb.TagNumber(4)
   void clearVisibility() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get url => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set url($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUrl() => clearField(5);
 }
 
 class UpdateRegistryItemResponse extends $pb.GeneratedMessage {

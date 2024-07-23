@@ -21,10 +21,14 @@ export 'field_info.pbenum.dart';
 class FieldInfo extends $pb.GeneratedMessage {
   factory FieldInfo({
     FieldInfo_Format? format,
+    $core.Iterable<TypeReference>? referencedTypes,
   }) {
     final $result = create();
     if (format != null) {
       $result.format = format;
+    }
+    if (referencedTypes != null) {
+      $result.referencedTypes.addAll(referencedTypes);
     }
     return $result;
   }
@@ -34,6 +38,7 @@ class FieldInfo extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FieldInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..e<FieldInfo_Format>(1, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: FieldInfo_Format.FORMAT_UNSPECIFIED, valueOf: FieldInfo_Format.valueOf, enumValues: FieldInfo_Format.values)
+    ..pc<TypeReference>(2, _omitFieldNames ? '' : 'referencedTypes', $pb.PbFieldType.PM, subBuilder: TypeReference.create)
     ..hasRequiredFields = false
   ;
 
@@ -69,6 +74,73 @@ class FieldInfo extends $pb.GeneratedMessage {
   $core.bool hasFormat() => $_has(0);
   @$pb.TagNumber(1)
   void clearFormat() => clearField(1);
+
+  ///  The type(s) that the annotated, generic field may represent.
+  ///
+  ///  Currently, this must only be used on fields of type `google.protobuf.Any`.
+  ///  Supporting other generic types may be considered in the future.
+  @$pb.TagNumber(2)
+  $core.List<TypeReference> get referencedTypes => $_getList(1);
+}
+
+/// A reference to a message type, for use in [FieldInfo][google.api.FieldInfo].
+class TypeReference extends $pb.GeneratedMessage {
+  factory TypeReference({
+    $core.String? typeName,
+  }) {
+    final $result = create();
+    if (typeName != null) {
+      $result.typeName = typeName;
+    }
+    return $result;
+  }
+  TypeReference._() : super();
+  factory TypeReference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TypeReference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TypeReference', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'typeName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TypeReference clone() => TypeReference()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TypeReference copyWith(void Function(TypeReference) updates) => super.copyWith((message) => updates(message as TypeReference)) as TypeReference;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TypeReference create() => TypeReference._();
+  TypeReference createEmptyInstance() => create();
+  static $pb.PbList<TypeReference> createRepeated() => $pb.PbList<TypeReference>();
+  @$core.pragma('dart2js:noInline')
+  static TypeReference getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TypeReference>(create);
+  static TypeReference? _defaultInstance;
+
+  ///  The name of the type that the annotated, generic field may represent.
+  ///  If the type is in the same protobuf package, the value can be the simple
+  ///  message name e.g., `"MyMessage"`. Otherwise, the value must be the
+  ///  fully-qualified message name e.g., `"google.library.v1.Book"`.
+  ///
+  ///  If the type(s) are unknown to the service (e.g. the field accepts generic
+  ///  user input), use the wildcard `"*"` to denote this behavior.
+  ///
+  ///  See [AIP-202](https://google.aip.dev/202#type-references) for more details.
+  @$pb.TagNumber(1)
+  $core.String get typeName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set typeName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTypeName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTypeName() => clearField(1);
 }
 
 class Field_info {

@@ -18,6 +18,7 @@ const FieldInfo$json = {
   '1': 'FieldInfo',
   '2': [
     {'1': 'format', '3': 1, '4': 1, '5': 14, '6': '.google.api.FieldInfo.Format', '10': 'format'},
+    {'1': 'referenced_types', '3': 2, '4': 3, '5': 11, '6': '.google.api.TypeReference', '10': 'referencedTypes'},
   ],
   '4': [FieldInfo_Format$json],
 };
@@ -37,6 +38,19 @@ const FieldInfo_Format$json = {
 /// Descriptor for `FieldInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fieldInfoDescriptor = $convert.base64Decode(
     'CglGaWVsZEluZm8SNAoGZm9ybWF0GAEgASgOMhwuZ29vZ2xlLmFwaS5GaWVsZEluZm8uRm9ybW'
-    'F0UgZmb3JtYXQiUQoGRm9ybWF0EhYKEkZPUk1BVF9VTlNQRUNJRklFRBAAEgkKBVVVSUQ0EAES'
-    'CAoESVBWNBACEggKBElQVjYQAxIQCgxJUFY0X09SX0lQVjYQBA==');
+    'F0UgZmb3JtYXQSRAoQcmVmZXJlbmNlZF90eXBlcxgCIAMoCzIZLmdvb2dsZS5hcGkuVHlwZVJl'
+    'ZmVyZW5jZVIPcmVmZXJlbmNlZFR5cGVzIlEKBkZvcm1hdBIWChJGT1JNQVRfVU5TUEVDSUZJRU'
+    'QQABIJCgVVVUlENBABEggKBElQVjQQAhIICgRJUFY2EAMSEAoMSVBWNF9PUl9JUFY2EAQ=');
+
+@$core.Deprecated('Use typeReferenceDescriptor instead')
+const TypeReference$json = {
+  '1': 'TypeReference',
+  '2': [
+    {'1': 'type_name', '3': 1, '4': 1, '5': 9, '10': 'typeName'},
+  ],
+};
+
+/// Descriptor for `TypeReference`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List typeReferenceDescriptor = $convert.base64Decode(
+    'Cg1UeXBlUmVmZXJlbmNlEhsKCXR5cGVfbmFtZRgBIAEoCVIIdHlwZU5hbWU=');
 

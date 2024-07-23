@@ -2123,6 +2123,10 @@ const UpdateRegistryItemRequest$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.packages.v1.PackageType', '10': 'type'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'visibility', '3': 4, '4': 1, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibility'},
+    {'1': 'url', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'url', '17': true},
+  ],
+  '8': [
+    {'1': '_url'},
   ],
 };
 
@@ -2131,7 +2135,8 @@ final $typed_data.Uint8List updateRegistryItemRequestDescriptor = $convert.base6
     'ChlVcGRhdGVSZWdpc3RyeUl0ZW1SZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBI1Cg'
     'R0eXBlGAIgASgOMiEudmlhbS5hcHAucGFja2FnZXMudjEuUGFja2FnZVR5cGVSBHR5cGUSIAoL'
     'ZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjcKCnZpc2liaWxpdHkYBCABKA4yFy52aW'
-    'FtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5');
+    'FtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5EhUKA3VybBgFIAEoCUgAUgN1cmyIAQFC'
+    'BgoEX3VybA==');
 
 @$core.Deprecated('Use updateRegistryItemResponseDescriptor instead')
 const UpdateRegistryItemResponse$json = {
