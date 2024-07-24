@@ -65,7 +65,8 @@
       <span class="name ">UpdateRegistryItemRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-itemId">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">itemId</span>, </span></li>
 <li><span class="parameter" id="-param-type"><span class="type-annotation"><a href="../../viam_protos.app.packages/PackageType-class.html">PackageType</a>?</span> <span class="parameter-name">type</span>, </span></li>
 <li><span class="parameter" id="-param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span></li>
-<li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>}</span></li>
+<li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
+<li><span class="parameter" id="-param-url"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">url</span>}</span></li>
 </ol>)
     </section>
 
@@ -80,6 +81,7 @@
   $1.PackageType? type,
   $core.String? description,
   Visibility? visibility,
+  $core.String? url,
 }) {
   final $result = create();
   if (itemId != null) {
@@ -93,6 +95,9 @@
   }
   if (visibility != null) {
     $result.visibility = visibility;
+  }
+  if (url != null) {
+    $result.url = url;
   }
   return $result;
 }</code></pre>

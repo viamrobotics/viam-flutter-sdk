@@ -64,7 +64,8 @@
       
       <span class="name ">ResourceStatus</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-name">{<span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">name</span>, </span></li>
 <li><span class="parameter" id="-param-state"><span class="type-annotation"><a href="../../viam_protos.robot.robot/ResourceStatus_State-class.html">ResourceStatus_State</a>?</span> <span class="parameter-name">state</span>, </span></li>
-<li><span class="parameter" id="-param-lastUpdated"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastUpdated</span>}</span></li>
+<li><span class="parameter" id="-param-lastUpdated"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastUpdated</span>, </span></li>
+<li><span class="parameter" id="-param-revision"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">revision</span>}</span></li>
 </ol>)
     </section>
 
@@ -78,6 +79,7 @@
   $1.ResourceName? name,
   ResourceStatus_State? state,
   $3.Timestamp? lastUpdated,
+  $core.String? revision,
 }) {
   final $result = create();
   if (name != null) {
@@ -88,6 +90,9 @@
   }
   if (lastUpdated != null) {
     $result.lastUpdated = lastUpdated;
+  }
+  if (revision != null) {
+    $result.revision = revision;
   }
   return $result;
 }</code></pre>
