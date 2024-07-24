@@ -1019,6 +1019,208 @@ class DeleteCompletedTrainingJobResponse extends $pb.GeneratedMessage {
   static DeleteCompletedTrainingJobResponse? _defaultInstance;
 }
 
+class TrainingJobLogEntry extends $pb.GeneratedMessage {
+  factory TrainingJobLogEntry({
+    $core.String? level,
+    $1.Timestamp? time,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (level != null) {
+      $result.level = level;
+    }
+    if (time != null) {
+      $result.time = time;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
+  TrainingJobLogEntry._() : super();
+  factory TrainingJobLogEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TrainingJobLogEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TrainingJobLogEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'level')
+    ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'time', subBuilder: $1.Timestamp.create)
+    ..aOS(3, _omitFieldNames ? '' : 'message')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TrainingJobLogEntry clone() => TrainingJobLogEntry()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TrainingJobLogEntry copyWith(void Function(TrainingJobLogEntry) updates) => super.copyWith((message) => updates(message as TrainingJobLogEntry)) as TrainingJobLogEntry;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TrainingJobLogEntry create() => TrainingJobLogEntry._();
+  TrainingJobLogEntry createEmptyInstance() => create();
+  static $pb.PbList<TrainingJobLogEntry> createRepeated() => $pb.PbList<TrainingJobLogEntry>();
+  @$core.pragma('dart2js:noInline')
+  static TrainingJobLogEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TrainingJobLogEntry>(create);
+  static TrainingJobLogEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get level => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set level($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLevel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLevel() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.Timestamp get time => $_getN(1);
+  @$pb.TagNumber(2)
+  set time($1.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTime() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Timestamp ensureTime() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get message => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set message($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessage() => clearField(3);
+}
+
+class GetTrainingJobLogsRequest extends $pb.GeneratedMessage {
+  factory GetTrainingJobLogsRequest({
+    $core.String? id,
+    $core.String? pageToken,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    return $result;
+  }
+  GetTrainingJobLogsRequest._() : super();
+  factory GetTrainingJobLogsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTrainingJobLogsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTrainingJobLogsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTrainingJobLogsRequest clone() => GetTrainingJobLogsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTrainingJobLogsRequest copyWith(void Function(GetTrainingJobLogsRequest) updates) => super.copyWith((message) => updates(message as GetTrainingJobLogsRequest)) as GetTrainingJobLogsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTrainingJobLogsRequest create() => GetTrainingJobLogsRequest._();
+  GetTrainingJobLogsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTrainingJobLogsRequest> createRepeated() => $pb.PbList<GetTrainingJobLogsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTrainingJobLogsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTrainingJobLogsRequest>(create);
+  static GetTrainingJobLogsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+}
+
+class GetTrainingJobLogsResponse extends $pb.GeneratedMessage {
+  factory GetTrainingJobLogsResponse({
+    $core.Iterable<TrainingJobLogEntry>? logs,
+    $core.String? nextPageToken,
+  }) {
+    final $result = create();
+    if (logs != null) {
+      $result.logs.addAll(logs);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
+    }
+    return $result;
+  }
+  GetTrainingJobLogsResponse._() : super();
+  factory GetTrainingJobLogsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTrainingJobLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTrainingJobLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..pc<TrainingJobLogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: TrainingJobLogEntry.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTrainingJobLogsResponse clone() => GetTrainingJobLogsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTrainingJobLogsResponse copyWith(void Function(GetTrainingJobLogsResponse) updates) => super.copyWith((message) => updates(message as GetTrainingJobLogsResponse)) as GetTrainingJobLogsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTrainingJobLogsResponse create() => GetTrainingJobLogsResponse._();
+  GetTrainingJobLogsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTrainingJobLogsResponse> createRepeated() => $pb.PbList<GetTrainingJobLogsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTrainingJobLogsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTrainingJobLogsResponse>(create);
+  static GetTrainingJobLogsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<TrainingJobLogEntry> get logs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

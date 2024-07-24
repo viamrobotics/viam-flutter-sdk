@@ -661,13 +661,15 @@ const GetMachineStatusResponse$json = {
   '1': 'GetMachineStatusResponse',
   '2': [
     {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.ResourceStatus', '10': 'resources'},
+    {'1': 'config', '3': 2, '4': 1, '5': 11, '6': '.viam.robot.v1.ConfigStatus', '10': 'config'},
   ],
 };
 
 /// Descriptor for `GetMachineStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getMachineStatusResponseDescriptor = $convert.base64Decode(
     'ChhHZXRNYWNoaW5lU3RhdHVzUmVzcG9uc2USOwoJcmVzb3VyY2VzGAEgAygLMh0udmlhbS5yb2'
-    'JvdC52MS5SZXNvdXJjZVN0YXR1c1IJcmVzb3VyY2Vz');
+    'JvdC52MS5SZXNvdXJjZVN0YXR1c1IJcmVzb3VyY2VzEjMKBmNvbmZpZxgCIAEoCzIbLnZpYW0u'
+    'cm9ib3QudjEuQ29uZmlnU3RhdHVzUgZjb25maWc=');
 
 @$core.Deprecated('Use resourceStatusDescriptor instead')
 const ResourceStatus$json = {
@@ -676,6 +678,7 @@ const ResourceStatus$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'name'},
     {'1': 'state', '3': 2, '4': 1, '5': 14, '6': '.viam.robot.v1.ResourceStatus.State', '10': 'state'},
     {'1': 'last_updated', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
+    {'1': 'revision', '3': 4, '4': 1, '5': 9, '10': 'revision'},
   ],
   '4': [ResourceStatus_State$json],
 };
@@ -697,7 +700,21 @@ final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
     'Cg5SZXNvdXJjZVN0YXR1cxIwCgRuYW1lGAEgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2'
     'VOYW1lUgRuYW1lEjkKBXN0YXRlGAIgASgOMiMudmlhbS5yb2JvdC52MS5SZXNvdXJjZVN0YXR1'
     'cy5TdGF0ZVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
-    'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQicgoFU3RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIW'
-    'ChJTVEFURV9VTkNPTkZJR1VSRUQQARIVChFTVEFURV9DT05GSUdVUklORxACEg8KC1NUQVRFX1'
-    'JFQURZEAMSEgoOU1RBVEVfUkVNT1ZJTkcQBA==');
+    'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQSGgoIcmV2aXNpb24YBCABKAlSCHJldmlzaW9uInIKBVN0'
+    'YXRlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfVU5DT05GSUdVUkVEEAESFQoRU1'
+    'RBVEVfQ09ORklHVVJJTkcQAhIPCgtTVEFURV9SRUFEWRADEhIKDlNUQVRFX1JFTU9WSU5HEAQ=');
+
+@$core.Deprecated('Use configStatusDescriptor instead')
+const ConfigStatus$json = {
+  '1': 'ConfigStatus',
+  '2': [
+    {'1': 'revision', '3': 1, '4': 1, '5': 9, '10': 'revision'},
+    {'1': 'last_updated', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
+  ],
+};
+
+/// Descriptor for `ConfigStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List configStatusDescriptor = $convert.base64Decode(
+    'CgxDb25maWdTdGF0dXMSGgoIcmV2aXNpb24YASABKAlSCHJldmlzaW9uEj0KDGxhc3RfdXBkYX'
+    'RlZBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2xhc3RVcGRhdGVk');
 

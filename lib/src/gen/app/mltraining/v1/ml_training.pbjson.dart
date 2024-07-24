@@ -311,3 +311,51 @@ const DeleteCompletedTrainingJobResponse$json = {
 final $typed_data.Uint8List deleteCompletedTrainingJobResponseDescriptor = $convert.base64Decode(
     'CiJEZWxldGVDb21wbGV0ZWRUcmFpbmluZ0pvYlJlc3BvbnNl');
 
+@$core.Deprecated('Use trainingJobLogEntryDescriptor instead')
+const TrainingJobLogEntry$json = {
+  '1': 'TrainingJobLogEntry',
+  '2': [
+    {'1': 'level', '3': 1, '4': 1, '5': 9, '10': 'level'},
+    {'1': 'time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'time'},
+    {'1': 'message', '3': 3, '4': 1, '5': 9, '10': 'message'},
+  ],
+};
+
+/// Descriptor for `TrainingJobLogEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List trainingJobLogEntryDescriptor = $convert.base64Decode(
+    'ChNUcmFpbmluZ0pvYkxvZ0VudHJ5EhQKBWxldmVsGAEgASgJUgVsZXZlbBIuCgR0aW1lGAIgAS'
+    'gLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIEdGltZRIYCgdtZXNzYWdlGAMgASgJUgdt'
+    'ZXNzYWdl');
+
+@$core.Deprecated('Use getTrainingJobLogsRequestDescriptor instead')
+const GetTrainingJobLogsRequest$json = {
+  '1': 'GetTrainingJobLogsRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'page_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'pageToken', '17': true},
+  ],
+  '8': [
+    {'1': '_page_token'},
+  ],
+};
+
+/// Descriptor for `GetTrainingJobLogsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTrainingJobLogsRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRUcmFpbmluZ0pvYkxvZ3NSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIiCgpwYWdlX3Rva2'
+    'VuGAIgASgJSABSCXBhZ2VUb2tlbogBAUINCgtfcGFnZV90b2tlbg==');
+
+@$core.Deprecated('Use getTrainingJobLogsResponseDescriptor instead')
+const GetTrainingJobLogsResponse$json = {
+  '1': 'GetTrainingJobLogsResponse',
+  '2': [
+    {'1': 'logs', '3': 1, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.TrainingJobLogEntry', '10': 'logs'},
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
+  ],
+};
+
+/// Descriptor for `GetTrainingJobLogsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTrainingJobLogsResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRUcmFpbmluZ0pvYkxvZ3NSZXNwb25zZRI/CgRsb2dzGAEgAygLMisudmlhbS5hcHAubW'
+    'x0cmFpbmluZy52MS5UcmFpbmluZ0pvYkxvZ0VudHJ5UgRsb2dzEiYKD25leHRfcGFnZV90b2tl'
+    'bhgCIAEoCVINbmV4dFBhZ2VUb2tlbg==');
+

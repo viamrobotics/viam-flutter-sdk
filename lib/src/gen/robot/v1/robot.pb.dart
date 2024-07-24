@@ -2505,10 +2505,14 @@ class GetMachineStatusRequest extends $pb.GeneratedMessage {
 class GetMachineStatusResponse extends $pb.GeneratedMessage {
   factory GetMachineStatusResponse({
     $core.Iterable<ResourceStatus>? resources,
+    ConfigStatus? config,
   }) {
     final $result = create();
     if (resources != null) {
       $result.resources.addAll(resources);
+    }
+    if (config != null) {
+      $result.config = config;
     }
     return $result;
   }
@@ -2518,6 +2522,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMachineStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..pc<ResourceStatus>(1, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: ResourceStatus.create)
+    ..aOM<ConfigStatus>(2, _omitFieldNames ? '' : 'config', subBuilder: ConfigStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -2544,6 +2549,17 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<ResourceStatus> get resources => $_getList(0);
+
+  @$pb.TagNumber(2)
+  ConfigStatus get config => $_getN(1);
+  @$pb.TagNumber(2)
+  set config(ConfigStatus v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasConfig() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConfig() => clearField(2);
+  @$pb.TagNumber(2)
+  ConfigStatus ensureConfig() => $_ensure(1);
 }
 
 class ResourceStatus extends $pb.GeneratedMessage {
@@ -2551,6 +2567,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
     $1.ResourceName? name,
     ResourceStatus_State? state,
     $3.Timestamp? lastUpdated,
+    $core.String? revision,
   }) {
     final $result = create();
     if (name != null) {
@@ -2562,6 +2579,9 @@ class ResourceStatus extends $pb.GeneratedMessage {
     if (lastUpdated != null) {
       $result.lastUpdated = lastUpdated;
     }
+    if (revision != null) {
+      $result.revision = revision;
+    }
     return $result;
   }
   ResourceStatus._() : super();
@@ -2572,6 +2592,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
     ..aOM<$1.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $1.ResourceName.create)
     ..e<ResourceStatus_State>(2, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: ResourceStatus_State.STATE_UNSPECIFIED, valueOf: ResourceStatus_State.valueOf, enumValues: ResourceStatus_State.values)
     ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $3.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'revision')
     ..hasRequiredFields = false
   ;
 
@@ -2629,6 +2650,84 @@ class ResourceStatus extends $pb.GeneratedMessage {
   void clearLastUpdated() => clearField(3);
   @$pb.TagNumber(3)
   $3.Timestamp ensureLastUpdated() => $_ensure(2);
+
+  /// revision of the last config that successfully updated this resource.
+  @$pb.TagNumber(4)
+  $core.String get revision => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revision($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevision() => clearField(4);
+}
+
+class ConfigStatus extends $pb.GeneratedMessage {
+  factory ConfigStatus({
+    $core.String? revision,
+    $3.Timestamp? lastUpdated,
+  }) {
+    final $result = create();
+    if (revision != null) {
+      $result.revision = revision;
+    }
+    if (lastUpdated != null) {
+      $result.lastUpdated = lastUpdated;
+    }
+    return $result;
+  }
+  ConfigStatus._() : super();
+  factory ConfigStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ConfigStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConfigStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'revision')
+    ..aOM<$3.Timestamp>(2, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ConfigStatus clone() => ConfigStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ConfigStatus copyWith(void Function(ConfigStatus) updates) => super.copyWith((message) => updates(message as ConfigStatus)) as ConfigStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfigStatus create() => ConfigStatus._();
+  ConfigStatus createEmptyInstance() => create();
+  static $pb.PbList<ConfigStatus> createRepeated() => $pb.PbList<ConfigStatus>();
+  @$core.pragma('dart2js:noInline')
+  static ConfigStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigStatus>(create);
+  static ConfigStatus? _defaultInstance;
+
+  /// revision of the last config that the machine successfully ingested.
+  @$pb.TagNumber(1)
+  $core.String get revision => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set revision($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRevision() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRevision() => clearField(1);
+
+  /// config ingestion timestamp.
+  @$pb.TagNumber(2)
+  $3.Timestamp get lastUpdated => $_getN(1);
+  @$pb.TagNumber(2)
+  set lastUpdated($3.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLastUpdated() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLastUpdated() => clearField(2);
+  @$pb.TagNumber(2)
+  $3.Timestamp ensureLastUpdated() => $_ensure(1);
 }
 
 
