@@ -114,6 +114,7 @@ const Expr_Comprehension$json = {
   '1': 'Comprehension',
   '2': [
     {'1': 'iter_var', '3': 1, '4': 1, '5': 9, '10': 'iterVar'},
+    {'1': 'iter_var2', '3': 8, '4': 1, '5': 9, '10': 'iterVar2'},
     {'1': 'iter_range', '3': 2, '4': 1, '5': 11, '6': '.google.api.expr.v1alpha1.Expr', '10': 'iterRange'},
     {'1': 'accu_var', '3': 3, '4': 1, '5': 9, '10': 'accuVar'},
     {'1': 'accu_init', '3': 4, '4': 1, '5': 11, '6': '.google.api.expr.v1alpha1.Expr', '10': 'accuInit'},
@@ -148,14 +149,15 @@ final $typed_data.Uint8List exprDescriptor = $convert.base64Decode(
     'IAEoA1ICaWQSHQoJZmllbGRfa2V5GAIgASgJSABSCGZpZWxkS2V5EjkKB21hcF9rZXkYAyABKA'
     'syHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwckgAUgZtYXBLZXkSNAoFdmFsdWUYBCAB'
     'KAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwclIFdmFsdWUSJQoOb3B0aW9uYWxfZW'
-    '50cnkYBSABKAhSDW9wdGlvbmFsRW50cnlCCgoIa2V5X2tpbmQa/QIKDUNvbXByZWhlbnNpb24S'
-    'GQoIaXRlcl92YXIYASABKAlSB2l0ZXJWYXISPQoKaXRlcl9yYW5nZRgCIAEoCzIeLmdvb2dsZS'
-    '5hcGkuZXhwci52MWFscGhhMS5FeHByUglpdGVyUmFuZ2USGQoIYWNjdV92YXIYAyABKAlSB2Fj'
-    'Y3VWYXISOwoJYWNjdV9pbml0GAQgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cH'
-    'JSCGFjY3VJbml0EkUKDmxvb3BfY29uZGl0aW9uGAUgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYx'
-    'YWxwaGExLkV4cHJSDWxvb3BDb25kaXRpb24SOwoJbG9vcF9zdGVwGAYgASgLMh4uZ29vZ2xlLm'
-    'FwaS5leHByLnYxYWxwaGExLkV4cHJSCGxvb3BTdGVwEjYKBnJlc3VsdBgHIAEoCzIeLmdvb2ds'
-    'ZS5hcGkuZXhwci52MWFscGhhMS5FeHByUgZyZXN1bHRCCwoJZXhwcl9raW5k');
+    '50cnkYBSABKAhSDW9wdGlvbmFsRW50cnlCCgoIa2V5X2tpbmQamgMKDUNvbXByZWhlbnNpb24S'
+    'GQoIaXRlcl92YXIYASABKAlSB2l0ZXJWYXISGwoJaXRlcl92YXIyGAggASgJUghpdGVyVmFyMh'
+    'I9CgppdGVyX3JhbmdlGAIgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSCWl0'
+    'ZXJSYW5nZRIZCghhY2N1X3ZhchgDIAEoCVIHYWNjdVZhchI7CglhY2N1X2luaXQYBCABKAsyHi'
+    '5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwclIIYWNjdUluaXQSRQoObG9vcF9jb25kaXRp'
+    'b24YBSABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwclINbG9vcENvbmRpdGlvbh'
+    'I7Cglsb29wX3N0ZXAYBiABKAsyHi5nb29nbGUuYXBpLmV4cHIudjFhbHBoYTEuRXhwclIIbG9v'
+    'cFN0ZXASNgoGcmVzdWx0GAcgASgLMh4uZ29vZ2xlLmFwaS5leHByLnYxYWxwaGExLkV4cHJSBn'
+    'Jlc3VsdEILCglleHByX2tpbmQ=');
 
 @$core.Deprecated('Use constantDescriptor instead')
 const Constant$json = {

@@ -1182,25 +1182,35 @@ const GetRobotPartHistoryRequest$json = {
   '1': 'GetRobotPartHistoryRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'page_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'pageToken', '17': true},
+    {'1': 'page_limit', '3': 3, '4': 1, '5': 3, '9': 1, '10': 'pageLimit', '17': true},
+  ],
+  '8': [
+    {'1': '_page_token'},
+    {'1': '_page_limit'},
   ],
 };
 
 /// Descriptor for `GetRobotPartHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotPartHistoryRequestDescriptor = $convert.base64Decode(
-    'ChpHZXRSb2JvdFBhcnRIaXN0b3J5UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+    'ChpHZXRSb2JvdFBhcnRIaXN0b3J5UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSIgoKcGFnZV90b2'
+    'tlbhgCIAEoCUgAUglwYWdlVG9rZW6IAQESIgoKcGFnZV9saW1pdBgDIAEoA0gBUglwYWdlTGlt'
+    'aXSIAQFCDQoLX3BhZ2VfdG9rZW5CDQoLX3BhZ2VfbGltaXQ=');
 
 @$core.Deprecated('Use getRobotPartHistoryResponseDescriptor instead')
 const GetRobotPartHistoryResponse$json = {
   '1': 'GetRobotPartHistoryResponse',
   '2': [
     {'1': 'history', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.RobotPartHistoryEntry', '10': 'history'},
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
   ],
 };
 
 /// Descriptor for `GetRobotPartHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotPartHistoryResponseDescriptor = $convert.base64Decode(
     'ChtHZXRSb2JvdFBhcnRIaXN0b3J5UmVzcG9uc2USPAoHaGlzdG9yeRgBIAMoCzIiLnZpYW0uYX'
-    'BwLnYxLlJvYm90UGFydEhpc3RvcnlFbnRyeVIHaGlzdG9yeQ==');
+    'BwLnYxLlJvYm90UGFydEhpc3RvcnlFbnRyeVIHaGlzdG9yeRImCg9uZXh0X3BhZ2VfdG9rZW4Y'
+    'AiABKAlSDW5leHRQYWdlVG9rZW4=');
 
 @$core.Deprecated('Use updateRobotPartRequestDescriptor instead')
 const UpdateRobotPartRequest$json = {
