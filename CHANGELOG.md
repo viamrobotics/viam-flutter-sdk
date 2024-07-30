@@ -1,15 +1,25 @@
 # Changelog
 
-## [v0.0.17](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.17) (2024-07-01)
+## [v0.0.18](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.18) (2024-07-30)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.16...v0.0.17)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.17...v0.0.18)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#248](https://github.com/viamrobotics/viam-flutter-sdk/pull/248) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#247](https://github.com/viamrobotics/viam-flutter-sdk/pull/247) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#246](https://github.com/viamrobotics/viam-flutter-sdk/pull/246) ([github-actions[bot]](https://github.com/apps/github-actions))
+- UpdateFragment/ ListFragments - add visibility parameter [\#245](https://github.com/viamrobotics/viam-flutter-sdk/pull/245) ([piokasar](https://github.com/piokasar))
+- Automated Protos Update [\#244](https://github.com/viamrobotics/viam-flutter-sdk/pull/244) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.17 [\#243](https://github.com/viamrobotics/viam-flutter-sdk/pull/243) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#242](https://github.com/viamrobotics/viam-flutter-sdk/pull/242) ([github-actions[bot]](https://github.com/apps/github-actions))
+- DOCS-2592: Add RobotClient example snippets [\#241](https://github.com/viamrobotics/viam-flutter-sdk/pull/241) ([JessamyT](https://github.com/JessamyT))
+- DOCS-2591: Add motor and servo example snippets [\#240](https://github.com/viamrobotics/viam-flutter-sdk/pull/240) ([JessamyT](https://github.com/JessamyT))
+- Fix dynamic logic for ICE stats [\#239](https://github.com/viamrobotics/viam-flutter-sdk/pull/239) ([benjirewis](https://github.com/benjirewis))
 - v0.0.16 [\#238](https://github.com/viamrobotics/viam-flutter-sdk/pull/238) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#237](https://github.com/viamrobotics/viam-flutter-sdk/pull/237) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#236](https://github.com/viamrobotics/viam-flutter-sdk/pull/236) ([github-actions[bot]](https://github.com/apps/github-actions))
+- DOCS-2544: Add backlinks to docs [\#235](https://github.com/viamrobotics/viam-flutter-sdk/pull/235) ([npentrel](https://github.com/npentrel))
 - Create linkcheck.yml [\#234](https://github.com/viamrobotics/viam-flutter-sdk/pull/234) ([npentrel](https://github.com/npentrel))
 - RSDK-7769, RSDK-7770 Add AppRobotClient and LogOutput dial option [\#233](https://github.com/viamrobotics/viam-flutter-sdk/pull/233) ([benjirewis](https://github.com/benjirewis))
 - DOCS-2036: Add vision service example snippets [\#232](https://github.com/viamrobotics/viam-flutter-sdk/pull/232) ([JessamyT](https://github.com/JessamyT))
@@ -138,6 +148,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.17](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.17) (2024-07-01)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.16...v0.0.17)
 
 ## [v0.0.16](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.16) (2024-06-25)
 
