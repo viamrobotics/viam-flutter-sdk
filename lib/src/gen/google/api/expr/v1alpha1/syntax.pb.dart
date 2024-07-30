@@ -613,6 +613,36 @@ class Expr_CreateStruct extends $pb.GeneratedMessage {
 ///  messages `has(m.x)` is defined as 'defined, but not set`. For proto3, the
 ///  macro tests whether the property is set to its default. For map and struct
 ///  types, the macro tests whether the property `x` is defined on `m`.
+///
+///  Comprehensions for the standard environment macros evaluation can be best
+///  visualized as the following pseudocode:
+///
+///  ```
+///  let `accu_var` = `accu_init`
+///  for (let `iter_var` in `iter_range`) {
+///    if (!`loop_condition`) {
+///      break
+///    }
+///    `accu_var` = `loop_step`
+///  }
+///  return `result`
+///  ```
+///
+///  Comprehensions for the optional V2 macros which support map-to-map
+///  translation differ slightly from the standard environment macros in that
+///  they expose both the key or index in addition to the value for each list
+///  or map entry:
+///
+///  ```
+///  let `accu_var` = `accu_init`
+///  for (let `iter_var`, `iter_var2` in `iter_range`) {
+///    if (!`loop_condition`) {
+///      break
+///    }
+///    `accu_var` = `loop_step`
+///  }
+///  return `result`
+///  ```
 class Expr_Comprehension extends $pb.GeneratedMessage {
   factory Expr_Comprehension({
     $core.String? iterVar,
@@ -622,6 +652,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
     Expr? loopCondition,
     Expr? loopStep,
     Expr? result,
+    $core.String? iterVar2,
   }) {
     final $result = create();
     if (iterVar != null) {
@@ -645,6 +676,9 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
     if (result != null) {
       $result.result = result;
     }
+    if (iterVar2 != null) {
+      $result.iterVar2 = iterVar2;
+    }
     return $result;
   }
   Expr_Comprehension._() : super();
@@ -659,6 +693,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
     ..aOM<Expr>(5, _omitFieldNames ? '' : 'loopCondition', subBuilder: Expr.create)
     ..aOM<Expr>(6, _omitFieldNames ? '' : 'loopStep', subBuilder: Expr.create)
     ..aOM<Expr>(7, _omitFieldNames ? '' : 'result', subBuilder: Expr.create)
+    ..aOS(8, _omitFieldNames ? '' : 'iterVar2')
     ..hasRequiredFields = false
   ;
 
@@ -683,7 +718,9 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   static Expr_Comprehension getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Expr_Comprehension>(create);
   static Expr_Comprehension? _defaultInstance;
 
-  /// The name of the iteration variable.
+  /// The name of the first iteration variable.
+  /// When the iter_range is a list, this variable is the list element.
+  /// When the iter_range is a map, this variable is the map entry key.
   @$pb.TagNumber(1)
   $core.String get iterVar => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -693,7 +730,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIterVar() => clearField(1);
 
-  /// The range over which var iterates.
+  /// The range over which the comprehension iterates.
   @$pb.TagNumber(2)
   Expr get iterRange => $_getN(1);
   @$pb.TagNumber(2)
@@ -727,7 +764,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   Expr ensureAccuInit() => $_ensure(3);
 
-  ///  An expression which can contain iter_var and accu_var.
+  ///  An expression which can contain iter_var, iter_var2, and accu_var.
   ///
   ///  Returns false when the result has been computed and may be used as
   ///  a hint to short-circuit the remainder of the comprehension.
@@ -742,7 +779,7 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   Expr ensureLoopCondition() => $_ensure(4);
 
-  ///  An expression which can contain iter_var and accu_var.
+  ///  An expression which can contain iter_var, iter_var2, and accu_var.
   ///
   ///  Computes the next value of accu_var.
   @$pb.TagNumber(6)
@@ -769,6 +806,19 @@ class Expr_Comprehension extends $pb.GeneratedMessage {
   void clearResult() => clearField(7);
   @$pb.TagNumber(7)
   Expr ensureResult() => $_ensure(6);
+
+  /// The name of the second iteration variable, empty if not set.
+  /// When the iter_range is a list, this variable is the integer index.
+  /// When the iter_range is a map, this variable is the map entry value.
+  /// This field is only set for comprehension v2 macros.
+  @$pb.TagNumber(8)
+  $core.String get iterVar2 => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set iterVar2($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasIterVar2() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIterVar2() => clearField(8);
 }
 
 enum Expr_ExprKind {

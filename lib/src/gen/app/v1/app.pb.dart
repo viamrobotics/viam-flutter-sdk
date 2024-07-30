@@ -4646,10 +4646,18 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
 class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
   factory GetRobotPartHistoryRequest({
     $core.String? id,
+    $core.String? pageToken,
+    $fixnum.Int64? pageLimit,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
+    }
+    if (pageToken != null) {
+      $result.pageToken = pageToken;
+    }
+    if (pageLimit != null) {
+      $result.pageLimit = pageLimit;
     }
     return $result;
   }
@@ -4659,6 +4667,8 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'pageToken')
+    ..aInt64(3, _omitFieldNames ? '' : 'pageLimit')
     ..hasRequiredFields = false
   ;
 
@@ -4691,15 +4701,37 @@ class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get pageLimit => $_getI64(2);
+  @$pb.TagNumber(3)
+  set pageLimit($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPageLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageLimit() => clearField(3);
 }
 
 class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
   factory GetRobotPartHistoryResponse({
     $core.Iterable<RobotPartHistoryEntry>? history,
+    $core.String? nextPageToken,
   }) {
     final $result = create();
     if (history != null) {
       $result.history.addAll(history);
+    }
+    if (nextPageToken != null) {
+      $result.nextPageToken = nextPageToken;
     }
     return $result;
   }
@@ -4709,6 +4741,7 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<RobotPartHistoryEntry>(1, _omitFieldNames ? '' : 'history', $pb.PbFieldType.PM, subBuilder: RobotPartHistoryEntry.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
 
@@ -4735,6 +4768,15 @@ class GetRobotPartHistoryResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<RobotPartHistoryEntry> get history => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => clearField(2);
 }
 
 class UpdateRobotPartRequest extends $pb.GeneratedMessage {
