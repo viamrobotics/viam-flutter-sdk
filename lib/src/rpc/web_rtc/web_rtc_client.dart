@@ -1,6 +1,7 @@
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/src/utils.dart';
 
 import '../../robot/sessions_client.dart';
 import 'web_rtc_client_connection.dart';
@@ -31,6 +32,7 @@ class WebRtcClientChannel extends ClientChannelBase {
     if (!SessionsClient.unallowedMethods.contains(method.path)) {
       options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId()}));
     }
+    options = options.mergedWith(CallOptions(metadata: {'viam_client': getVersionMetadata()}));
     return super.createCall(method, requests, options);
   }
 }

@@ -586,6 +586,7 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
     }
 
     options = options.mergedWith(CallOptions(metadata: {'Authorization': 'Bearer $accessToken'}));
+    options = options.mergedWith(CallOptions(metadata: {'viam_client': getVersionMetadata()}));
     return super.createCall(method, requests, options);
   }
 }
