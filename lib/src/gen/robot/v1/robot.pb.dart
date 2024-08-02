@@ -2568,6 +2568,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
     ResourceStatus_State? state,
     $3.Timestamp? lastUpdated,
     $core.String? revision,
+    $core.String? error,
   }) {
     final $result = create();
     if (name != null) {
@@ -2582,6 +2583,9 @@ class ResourceStatus extends $pb.GeneratedMessage {
     if (revision != null) {
       $result.revision = revision;
     }
+    if (error != null) {
+      $result.error = error;
+    }
     return $result;
   }
   ResourceStatus._() : super();
@@ -2593,6 +2597,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
     ..e<ResourceStatus_State>(2, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: ResourceStatus_State.STATE_UNSPECIFIED, valueOf: ResourceStatus_State.valueOf, enumValues: ResourceStatus_State.values)
     ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $3.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'revision')
+    ..aOS(5, _omitFieldNames ? '' : 'error')
     ..hasRequiredFields = false
   ;
 
@@ -2660,6 +2665,16 @@ class ResourceStatus extends $pb.GeneratedMessage {
   $core.bool hasRevision() => $_has(3);
   @$pb.TagNumber(4)
   void clearRevision() => clearField(4);
+
+  /// error details for a resource that is in an unhealthy state.
+  @$pb.TagNumber(5)
+  $core.String get error => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set error($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasError() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearError() => clearField(5);
 }
 
 class ConfigStatus extends $pb.GeneratedMessage {
@@ -2728,6 +2743,118 @@ class ConfigStatus extends $pb.GeneratedMessage {
   void clearLastUpdated() => clearField(2);
   @$pb.TagNumber(2)
   $3.Timestamp ensureLastUpdated() => $_ensure(1);
+}
+
+class GetVersionRequest extends $pb.GeneratedMessage {
+  factory GetVersionRequest() => create();
+  GetVersionRequest._() : super();
+  factory GetVersionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetVersionRequest clone() => GetVersionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetVersionRequest copyWith(void Function(GetVersionRequest) updates) => super.copyWith((message) => updates(message as GetVersionRequest)) as GetVersionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVersionRequest create() => GetVersionRequest._();
+  GetVersionRequest createEmptyInstance() => create();
+  static $pb.PbList<GetVersionRequest> createRepeated() => $pb.PbList<GetVersionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetVersionRequest>(create);
+  static GetVersionRequest? _defaultInstance;
+}
+
+class GetVersionResponse extends $pb.GeneratedMessage {
+  factory GetVersionResponse({
+    $core.String? platform,
+    $core.String? version,
+    $core.String? apiVersion,
+  }) {
+    final $result = create();
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (apiVersion != null) {
+      $result.apiVersion = apiVersion;
+    }
+    return $result;
+  }
+  GetVersionResponse._() : super();
+  factory GetVersionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'platform')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'apiVersion')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetVersionResponse clone() => GetVersionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetVersionResponse copyWith(void Function(GetVersionResponse) updates) => super.copyWith((message) => updates(message as GetVersionResponse)) as GetVersionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVersionResponse create() => GetVersionResponse._();
+  GetVersionResponse createEmptyInstance() => create();
+  static $pb.PbList<GetVersionResponse> createRepeated() => $pb.PbList<GetVersionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetVersionResponse>(create);
+  static GetVersionResponse? _defaultInstance;
+
+  /// platform type of viam-server (ie. `rdk` or `micro-rdk`).
+  @$pb.TagNumber(1)
+  $core.String get platform => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set platform($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPlatform() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlatform() => clearField(1);
+
+  /// version of viam-server. If built without a version, it will be dev-<git hash>.
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get apiVersion => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set apiVersion($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasApiVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearApiVersion() => clearField(3);
 }
 
 
