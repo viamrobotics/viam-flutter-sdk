@@ -1,4 +1,3 @@
-import 'package:format/format.dart';
 import 'package:grpc/grpc.dart';
 import 'package:logger/logger.dart';
 
@@ -87,5 +86,5 @@ extension MapStructUtils on Map<String, dynamic> {
 String getVersionMetadata() {
   const String sdkVersion = 'v0.0.18';
   const String apiTag = 'v0.1.328';
-  return format('flutter;{};{}', sdkVersion, apiTag);
+  return 'flutter;$sdkVersion;$apiTag';
 }
