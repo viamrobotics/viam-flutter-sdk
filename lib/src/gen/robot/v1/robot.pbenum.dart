@@ -36,6 +36,7 @@ class ResourceStatus_State extends $pb.ProtobufEnum {
   static const ResourceStatus_State STATE_CONFIGURING = ResourceStatus_State._(2, _omitEnumNames ? '' : 'STATE_CONFIGURING');
   static const ResourceStatus_State STATE_READY = ResourceStatus_State._(3, _omitEnumNames ? '' : 'STATE_READY');
   static const ResourceStatus_State STATE_REMOVING = ResourceStatus_State._(4, _omitEnumNames ? '' : 'STATE_REMOVING');
+  static const ResourceStatus_State STATE_UNHEALTHY = ResourceStatus_State._(5, _omitEnumNames ? '' : 'STATE_UNHEALTHY');
 
   static const $core.List<ResourceStatus_State> values = <ResourceStatus_State> [
     STATE_UNSPECIFIED,
@@ -43,6 +44,7 @@ class ResourceStatus_State extends $pb.ProtobufEnum {
     STATE_CONFIGURING,
     STATE_READY,
     STATE_REMOVING,
+    STATE_UNHEALTHY,
   ];
 
   static final $core.Map<$core.int, ResourceStatus_State> _byValue = $pb.ProtobufEnum.initByValue(values);
