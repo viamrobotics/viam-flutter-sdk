@@ -10,7 +10,7 @@ endif
 
 buf: buf.yaml buf.gen.yaml
 	rm -rf lib/src/gen
-	$(eval API_VERSION := $(shell grep 'apiTag' lib/src/utils.dart | awk -F '"' '{print $$2}'))
+	$(eval API_VERSION := $(shell grep 'const String apiTag' lib/src/utils.dart | awk -F "'" '{print $$2}'))
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/viamrobotics/goutils
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/viamrobotics/api:${API_VERSION}
 	PATH=$(PATH_WITH_TOOLS) buf generate buf.build/googleapis/googleapis
