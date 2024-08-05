@@ -82,3 +82,9 @@ extension MapStructUtils on Map<String, dynamic> {
     return Value()..structValue = toStruct();
   }
 }
+
+String getVersionMetadata() {
+  const String sdkVersion = 'v0.0.18';
+  const String apiTag = 'v0.1.328';
+  return 'flutter;$sdkVersion;$apiTag';
+}

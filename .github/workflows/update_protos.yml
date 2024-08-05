@@ -26,6 +26,9 @@ jobs:
 
       - run: make setup
 
+      - name: Update Proto Tag
+        run: sed -i -e "s/apiTag = 'v[0-9]*\.[0-9]*\.[0-9]*'/apiTag = '${{ github.event.client_payload.tag }}'" > lib/src/utils.dart
+
       - name: Generate buf
         run: make buf
         env:
