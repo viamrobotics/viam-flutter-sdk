@@ -93,6 +93,7 @@ ClientCall&lt;Q, R&gt; createCall&lt;Q, R&gt;(ClientMethod&lt;Q, R&gt; method, S
   }
 
   options = options.mergedWith(CallOptions(metadata: {&#39;Authorization&#39;: &#39;Bearer $accessToken&#39;}));
+  options = options.mergedWith(CallOptions(metadata: {&#39;viam_client&#39;: getVersionMetadata()}));
   return super.createCall(method, requests, options);
 }</code></pre>
 </section>
@@ -128,7 +129,7 @@ ClientCall&lt;Q, R&gt; createCall&lt;Q, R&gt;(ClientMethod&lt;Q, R&gt; method, S
 <footer>
   <span class="no-break">
     viam_sdk
-      0.0.17
+      0.0.18
   </span>
 
   
