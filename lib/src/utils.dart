@@ -84,7 +84,7 @@ extension MapStructUtils on Map<String, dynamic> {
 }
 
 String getVersionMetadata() {
-  const String sdkVersion = 'v0.0.18';
+  const String sdkVersion = 'v0.0.19';
   const String apiTag = 'v0.1.328';
   return 'flutter;$sdkVersion;$apiTag';
 }

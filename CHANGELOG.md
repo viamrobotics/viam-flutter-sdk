@@ -1,11 +1,16 @@
 # Changelog
 
-## [v0.0.18](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.18) (2024-07-30)
+## [v0.0.19](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.19) (2024-08-12)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.17...v0.0.18)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.18...v0.0.19)
 
 **Merged pull requests:**
 
+- fix sed2 [\#253](https://github.com/viamrobotics/viam-flutter-sdk/pull/253) ([stuqdog](https://github.com/stuqdog))
+- fix sed [\#252](https://github.com/viamrobotics/viam-flutter-sdk/pull/252) ([stuqdog](https://github.com/stuqdog))
+- RSDK-8304 - send version metadata [\#251](https://github.com/viamrobotics/viam-flutter-sdk/pull/251) ([stuqdog](https://github.com/stuqdog))
+- Automated Protos Update [\#250](https://github.com/viamrobotics/viam-flutter-sdk/pull/250) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.18 [\#249](https://github.com/viamrobotics/viam-flutter-sdk/pull/249) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#248](https://github.com/viamrobotics/viam-flutter-sdk/pull/248) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#247](https://github.com/viamrobotics/viam-flutter-sdk/pull/247) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#246](https://github.com/viamrobotics/viam-flutter-sdk/pull/246) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -148,6 +153,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.18](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.18) (2024-07-30)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.17...v0.0.18)
 
 ## [v0.0.17](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.17) (2024-07-01)
 
