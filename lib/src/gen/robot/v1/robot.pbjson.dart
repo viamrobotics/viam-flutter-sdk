@@ -679,6 +679,7 @@ const ResourceStatus$json = {
     {'1': 'state', '3': 2, '4': 1, '5': 14, '6': '.viam.robot.v1.ResourceStatus.State', '10': 'state'},
     {'1': 'last_updated', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
     {'1': 'revision', '3': 4, '4': 1, '5': 9, '10': 'revision'},
+    {'1': 'error', '3': 5, '4': 1, '5': 9, '10': 'error'},
   ],
   '4': [ResourceStatus_State$json],
 };
@@ -692,6 +693,7 @@ const ResourceStatus_State$json = {
     {'1': 'STATE_CONFIGURING', '2': 2},
     {'1': 'STATE_READY', '2': 3},
     {'1': 'STATE_REMOVING', '2': 4},
+    {'1': 'STATE_UNHEALTHY', '2': 5},
   ],
 };
 
@@ -700,9 +702,10 @@ final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
     'Cg5SZXNvdXJjZVN0YXR1cxIwCgRuYW1lGAEgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2'
     'VOYW1lUgRuYW1lEjkKBXN0YXRlGAIgASgOMiMudmlhbS5yb2JvdC52MS5SZXNvdXJjZVN0YXR1'
     'cy5TdGF0ZVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
-    'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQSGgoIcmV2aXNpb24YBCABKAlSCHJldmlzaW9uInIKBVN0'
-    'YXRlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfVU5DT05GSUdVUkVEEAESFQoRU1'
-    'RBVEVfQ09ORklHVVJJTkcQAhIPCgtTVEFURV9SRUFEWRADEhIKDlNUQVRFX1JFTU9WSU5HEAQ=');
+    'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQSGgoIcmV2aXNpb24YBCABKAlSCHJldmlzaW9uEhQKBWVy'
+    'cm9yGAUgASgJUgVlcnJvciKHAQoFU3RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIWChJTVE'
+    'FURV9VTkNPTkZJR1VSRUQQARIVChFTVEFURV9DT05GSUdVUklORxACEg8KC1NUQVRFX1JFQURZ'
+    'EAMSEgoOU1RBVEVfUkVNT1ZJTkcQBBITCg9TVEFURV9VTkhFQUxUSFkQBQ==');
 
 @$core.Deprecated('Use configStatusDescriptor instead')
 const ConfigStatus$json = {
@@ -717,4 +720,28 @@ const ConfigStatus$json = {
 final $typed_data.Uint8List configStatusDescriptor = $convert.base64Decode(
     'CgxDb25maWdTdGF0dXMSGgoIcmV2aXNpb24YASABKAlSCHJldmlzaW9uEj0KDGxhc3RfdXBkYX'
     'RlZBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2xhc3RVcGRhdGVk');
+
+@$core.Deprecated('Use getVersionRequestDescriptor instead')
+const GetVersionRequest$json = {
+  '1': 'GetVersionRequest',
+};
+
+/// Descriptor for `GetVersionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVersionRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRWZXJzaW9uUmVxdWVzdA==');
+
+@$core.Deprecated('Use getVersionResponseDescriptor instead')
+const GetVersionResponse$json = {
+  '1': 'GetVersionResponse',
+  '2': [
+    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'api_version', '3': 3, '4': 1, '5': 9, '10': 'apiVersion'},
+  ],
+};
+
+/// Descriptor for `GetVersionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVersionResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRWZXJzaW9uUmVzcG9uc2USGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEhgKB3Zlcn'
+    'Npb24YAiABKAlSB3ZlcnNpb24SHwoLYXBpX3ZlcnNpb24YAyABKAlSCmFwaVZlcnNpb24=');
 

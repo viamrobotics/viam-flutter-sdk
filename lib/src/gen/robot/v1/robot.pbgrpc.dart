@@ -101,6 +101,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/GetMachineStatus',
       ($0.GetMachineStatusRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetMachineStatusResponse.fromBuffer(value));
+  static final _$getVersion = $grpc.ClientMethod<$0.GetVersionRequest, $0.GetVersionResponse>(
+      '/viam.robot.v1.RobotService/GetVersion',
+      ($0.GetVersionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetVersionResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -186,6 +190,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetMachineStatusResponse> getMachineStatus($0.GetMachineStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMachineStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetVersionResponse> getVersion($0.GetVersionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getVersion, request, options: options);
   }
 }
 
@@ -334,6 +342,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetMachineStatusRequest.fromBuffer(value),
         ($0.GetMachineStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVersionRequest, $0.GetVersionResponse>(
+        'GetVersion',
+        getVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetVersionRequest.fromBuffer(value),
+        ($0.GetVersionResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$0.GetOperationsRequest> request) async {
@@ -416,6 +431,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return getMachineStatus(call, await request);
   }
 
+  $async.Future<$0.GetVersionResponse> getVersion_Pre($grpc.ServiceCall call, $async.Future<$0.GetVersionRequest> request) async {
+    return getVersion(call, await request);
+  }
+
   $async.Future<$0.GetOperationsResponse> getOperations($grpc.ServiceCall call, $0.GetOperationsRequest request);
   $async.Future<$0.GetSessionsResponse> getSessions($grpc.ServiceCall call, $0.GetSessionsRequest request);
   $async.Future<$0.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $0.ResourceNamesRequest request);
@@ -436,4 +455,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$0.RestartModuleResponse> restartModule($grpc.ServiceCall call, $0.RestartModuleRequest request);
   $async.Future<$0.ShutdownResponse> shutdown($grpc.ServiceCall call, $0.ShutdownRequest request);
   $async.Future<$0.GetMachineStatusResponse> getMachineStatus($grpc.ServiceCall call, $0.GetMachineStatusRequest request);
+  $async.Future<$0.GetVersionResponse> getVersion($grpc.ServiceCall call, $0.GetVersionRequest request);
 }
