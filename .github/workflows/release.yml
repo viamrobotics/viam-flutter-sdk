@@ -70,7 +70,7 @@ jobs:
         if: steps.release_exists.outputs.id != ''
 
       - name: Bump Version Metadata
-        run: sed -i -e "s/sdkVersion = 'v[0-9]*\.[0-9]*\.[0-9]*'/sdkVersion = 'v${{ steps.which_version.outputs.version }}'/" > lib/src/utils.dart
+        run: sed -i -e "s/sdkVersion = 'v[0-9]*\.[0-9]*\.[0-9]*'/sdkVersion = 'v${{ steps.which_version.outputs.version }}'/" lib/src/utils.dart
 
       - name: "Generate release changelog"
         uses: heinrichreimer/github-changelog-generator-action@v2.3
