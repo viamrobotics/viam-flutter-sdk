@@ -42,9 +42,7 @@ class WebRtcClientConnection extends ClientConnection {
   }) {
     final stream = grpc.Stream()..id = Int64(id++);
     final grpMetadata = grpc.Metadata()..md.addAll(metadata.map((key, value) => MapEntry(key, grpc.Strings()..values.addAll([value]))));
-    final grpc_duration.Duration? grpcTimeout = timeout != null
-        ? durationToProto(timeout)
-        : null;
+    final grpc_duration.Duration? grpcTimeout = timeout != null ? durationToProto(timeout) : null;
     final headers = grpc.RequestHeaders()
       ..method = path
       ..metadata = grpMetadata;
