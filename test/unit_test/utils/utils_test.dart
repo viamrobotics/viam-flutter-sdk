@@ -74,6 +74,27 @@ void main() {
       });
     });
 
+    test('durationToProto', () {
+      // check that a standard one second duration converts to proto successfully
+      const oneSecond = Duration(seconds: 1);
+      final oneSecondProto = durationToProto(oneSecond);
+      expect(oneSecondProto.seconds.toInt(), 1);
+      expect(oneSecondProto.nanos, 0);
+
+      // check that a > 2sec duration converts to proto successfully without causing an int
+      // overflow in nanos
+      const fiveSeconds = Duration(seconds: 5);
+      final fiveSecondProto = durationToProto(fiveSeconds);
+      expect(fiveSecondProto.seconds.toInt(), 5);
+      expect(fiveSecondProto.nanos, 0);
+
+      // check that a mixed "seconds and microseconds" Duration successfully converts to proto.
+      const mixed = Duration(seconds: 3, microseconds: 1234);
+      final mixedProto = durationToProto(mixed);
+      expect(mixedProto.seconds.toInt(), 3);
+      expect(mixedProto.nanos, 1234000);
+    });
+
     test('StructUtils toMap', () {
       final struct = Struct()..fields.addAll({'foo': Value()..stringValue = 'bar'});
       expect(struct.toMap(), {'foo': 'bar'});
