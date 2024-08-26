@@ -5,6 +5,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
+import '../../utils.dart';
 import '../../gen/google/protobuf/duration.pb.dart' as grpc_duration;
 import '../../gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
 import 'web_rtc_client.dart';
@@ -41,12 +42,7 @@ class WebRtcClientConnection extends ClientConnection {
   }) {
     final stream = grpc.Stream()..id = Int64(id++);
     final grpMetadata = grpc.Metadata()..md.addAll(metadata.map((key, value) => MapEntry(key, grpc.Strings()..values.addAll([value]))));
-    final grpc_duration.Duration? grpcTimeout = timeout != null
-        ? (grpc_duration.Duration()
-          ..seconds = Int64(timeout.inSeconds)
-          ..nanos = timeout.inMicroseconds * 1000)
-        : null;
-    // final headers = grpc.RequestHeaders(method: path, metadata: grpMetadata, timeout: grpcTimeout);
+    final grpc_duration.Duration? grpcTimeout = timeout != null ? durationToProto(timeout) : null;
     final headers = grpc.RequestHeaders()
       ..method = path
       ..metadata = grpMetadata;

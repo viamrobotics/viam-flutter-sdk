@@ -1,7 +1,9 @@
+import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:logger/logger.dart';
 
 import 'gen/google/protobuf/struct.pb.dart';
+import 'gen/google/protobuf/duration.pb.dart' as grpc_duration;
 
 final _logger = Logger();
 
@@ -81,6 +83,13 @@ extension MapStructUtils on Map<String, dynamic> {
   Value toValue() {
     return Value()..structValue = toStruct();
   }
+}
+
+grpc_duration.Duration durationToProto(Duration duration) {
+  final micros = duration.inMicroseconds % Duration.microsecondsPerSecond;
+  return grpc_duration.Duration()
+    ..seconds = Int64(duration.inSeconds)
+    ..nanos = micros * 1000;
 }
 
 String getVersionMetadata() {
