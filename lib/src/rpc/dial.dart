@@ -612,19 +612,3 @@ _HostAndPort _hostAndPort(String address, bool insecure) {
   }
   return _HostAndPort(host, port);
 }
-
-/// A channel that adds session data (if required) to gRPC metadata for every call
-class ClientChannelWithSessions extends GrpcOrGrpcWebClientChannel {
-  final String Function() _sessionId;
-
-  ClientChannelWithSessions.toSingleEndpoint(this._sessionId, {required super.host, required super.port, required super.transportSecure})
-      : super.toSingleEndpoint();
-
-  @override
-  ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
-    if (!SessionsClient.unallowedMethods.contains(method.path)) {
-      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId()}));
-    }
-    return super.createCall(method, requests, options);
-  }
-}

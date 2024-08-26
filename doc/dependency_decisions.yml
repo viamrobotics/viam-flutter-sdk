@@ -83,3 +83,9 @@
     :why: License is Apache License, Version 2.0
     :versions: []
     :when: 2024-05-16 20:49:48.048674000 Z
+- - :approve
+  - _macros
+  - :who: njooma
+    :why: License is BSD 3-Clause
+    :versions: []
+    :when: 2024-08-26 20:13:45.308837000 Z

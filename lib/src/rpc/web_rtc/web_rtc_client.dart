@@ -35,4 +35,11 @@ class WebRtcClientChannel extends ClientChannelBase {
     options = options.mergedWith(CallOptions(metadata: {'viam_client': getVersionMetadata()}));
     return super.createCall(method, requests, options);
   }
+
+  @override
+  Future<void> shutdown() async {
+    await rtcPeerConnection.close();
+    await dataChannel.close();
+    return super.shutdown();
+  }
 }
