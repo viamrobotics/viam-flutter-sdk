@@ -1,11 +1,14 @@
 # Changelog
 
-## [v0.0.19](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.19) (2024-08-12)
+## [v0.0.20](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.20) (2024-08-26)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.18...v0.0.19)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.19...v0.0.20)
 
 **Merged pull requests:**
 
+- Add shutdown function [\#256](https://github.com/viamrobotics/viam-flutter-sdk/pull/256) ([njooma](https://github.com/njooma))
+- RSDK-8607 - fix timeout generation bug [\#255](https://github.com/viamrobotics/viam-flutter-sdk/pull/255) ([stuqdog](https://github.com/stuqdog))
+- v0.0.19 [\#254](https://github.com/viamrobotics/viam-flutter-sdk/pull/254) ([github-actions[bot]](https://github.com/apps/github-actions))
 - fix sed2 [\#253](https://github.com/viamrobotics/viam-flutter-sdk/pull/253) ([stuqdog](https://github.com/stuqdog))
 - fix sed [\#252](https://github.com/viamrobotics/viam-flutter-sdk/pull/252) ([stuqdog](https://github.com/stuqdog))
 - RSDK-8304 - send version metadata [\#251](https://github.com/viamrobotics/viam-flutter-sdk/pull/251) ([stuqdog](https://github.com/stuqdog))
@@ -153,6 +156,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.19](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.19) (2024-08-12)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.18...v0.0.19)
 
 ## [v0.0.18](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.18) (2024-07-30)
 
