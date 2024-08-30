@@ -96,7 +96,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="Fragment" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/Fragment/Fragment.html">Fragment</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-fragment"><span class="type-annotation">Struct?</span> <span class="parameter-name">fragment</span>, </span><span class="parameter" id="-param-organizationOwner"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationOwner</span>, </span><span class="parameter" id="-param-public"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">public</span>, </span><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span><span class="parameter" id="-param-organizationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationName</span>, </span><span class="parameter" id="-param-robotPartCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">robotPartCount</span>, </span><span class="parameter" id="-param-organizationCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">organizationCount</span>, </span><span class="parameter" id="-param-onlyUsedByOwner"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">onlyUsedByOwner</span>, </span><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../viam_protos.app.app/FragmentVisibility-class.html">FragmentVisibility</a>?</span> <span class="parameter-name">visibility</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.app/Fragment/Fragment.html">Fragment</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-fragment"><span class="type-annotation">Struct?</span> <span class="parameter-name">fragment</span>, </span><span class="parameter" id="-param-organizationOwner"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationOwner</span>, </span><span class="parameter" id="-param-public"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">public</span>, </span><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span><span class="parameter" id="-param-organizationName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationName</span>, </span><span class="parameter" id="-param-robotPartCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">robotPartCount</span>, </span><span class="parameter" id="-param-organizationCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">organizationCount</span>, </span><span class="parameter" id="-param-onlyUsedByOwner"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">onlyUsedByOwner</span>, </span><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../viam_protos.app.app/FragmentVisibility-class.html">FragmentVisibility</a>?</span> <span class="parameter-name">visibility</span>, </span><span class="parameter" id="-param-lastUpdated"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastUpdated</span></span>})</span>
         </dt>
         <dd>
           
@@ -206,6 +206,18 @@ to protobuf fields.
 <dd class="inherited">
   Returns <code>true</code> if this message is marked read-only. Otherwise <code>false</code>.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="lastUpdated" class="property">
+  <span class="name"><a href="../viam_protos.app.app/Fragment/lastUpdated.html">lastUpdated</a></span>
+  <span class="signature">&#8596; Timestamp</span>
+  
+
+</dt>
+<dd>
+  latest timestamp when fragment was updated
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -441,6 +453,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearLastUpdated" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/Fragment/clearLastUpdated.html">clearLastUpdated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearName" class="callable">
   <span class="name"><a href="../viam_protos.app.app/Fragment/clearName.html">clearName</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -637,6 +662,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="ensureLastUpdated" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/Fragment/ensureLastUpdated.html">ensureLastUpdated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Timestamp</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="extensionsAreInitialized" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/extensionsAreInitialized.html">extensionsAreInitialized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -783,6 +821,19 @@ default value if it is not set.
 
         <dt id="hasId" class="callable">
   <span class="name"><a href="../viam_protos.app.app/Fragment/hasId.html">hasId</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasLastUpdated" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/Fragment/hasLastUpdated.html">hasLastUpdated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   

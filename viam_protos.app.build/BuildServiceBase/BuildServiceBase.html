@@ -72,27 +72,76 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">BuildServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.StartBuildRequest, $0.StartBuildResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$1.StartBuildRequest, $1.StartBuildResponse&gt;(
       &#39;StartBuild&#39;,
       startBuild_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.StartBuildRequest.fromBuffer(value),
-      ($0.StartBuildResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetLogsRequest, $0.GetLogsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.StartBuildRequest.fromBuffer(value),
+      ($1.StartBuildResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.GetLogsRequest, $1.GetLogsResponse&gt;(
       &#39;GetLogs&#39;,
       getLogs_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetLogsRequest.fromBuffer(value),
-      ($0.GetLogsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.ListJobsRequest, $0.ListJobsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.GetLogsRequest.fromBuffer(value),
+      ($1.GetLogsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.ListJobsRequest, $1.ListJobsResponse&gt;(
       &#39;ListJobs&#39;,
       listJobs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.ListJobsRequest.fromBuffer(value),
-      ($0.ListJobsResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.ListJobsRequest.fromBuffer(value),
+      ($1.ListJobsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.LinkRepoRequest, $1.LinkRepoResponse&gt;(
+      &#39;LinkRepo&#39;,
+      linkRepo_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.LinkRepoRequest.fromBuffer(value),
+      ($1.LinkRepoResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.UnlinkRepoRequest, $1.UnlinkRepoResponse&gt;(
+      &#39;UnlinkRepo&#39;,
+      unlinkRepo_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.UnlinkRepoRequest.fromBuffer(value),
+      ($1.UnlinkRepoResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.ListRepoLinksRequest, $1.ListRepoLinksResponse&gt;(
+      &#39;ListRepoLinks&#39;,
+      listRepoLinks_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.ListRepoLinksRequest.fromBuffer(value),
+      ($1.ListRepoLinksResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.ListAppLinksRequest, $1.ListAppLinksResponse&gt;(
+      &#39;ListAppLinks&#39;,
+      listAppLinks_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.ListAppLinksRequest.fromBuffer(value),
+      ($1.ListAppLinksResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.RemoveAppLinkRequest, $1.RemoveAppLinkResponse&gt;(
+      &#39;RemoveAppLink&#39;,
+      removeAppLink_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.RemoveAppLinkRequest.fromBuffer(value),
+      ($1.RemoveAppLinkResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.LinkOrgRequest, $1.LinkOrgResponse&gt;(
+      &#39;LinkOrg&#39;,
+      linkOrg_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.LinkOrgRequest.fromBuffer(value),
+      ($1.LinkOrgResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$1.UnlinkOrgRequest, $1.UnlinkOrgResponse&gt;(
+      &#39;UnlinkOrg&#39;,
+      unlinkOrg_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $1.UnlinkOrgRequest.fromBuffer(value),
+      ($1.UnlinkOrgResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

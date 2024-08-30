@@ -65,6 +65,7 @@
       <span class="name ">CreateFragmentRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
 <li><span class="parameter" id="-param-config"><span class="type-annotation">Struct?</span> <span class="parameter-name">config</span>, </span></li>
 <li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
+<li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentVisibility-class.html">FragmentVisibility</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
 </ol>})
     </section>
 
@@ -76,8 +77,9 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory CreateFragmentRequest({
   $core.String? name,
-  $7.Struct? config,
+  $42.Struct? config,
   $core.String? organizationId,
+  FragmentVisibility? visibility,
 }) {
   final $result = create();
   if (name != null) {
@@ -88,6 +90,9 @@
   }
   if (organizationId != null) {
     $result.organizationId = organizationId;
+  }
+  if (visibility != null) {
+    $result.visibility = visibility;
   }
   return $result;
 }</code></pre>

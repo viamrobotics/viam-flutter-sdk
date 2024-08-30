@@ -72,34 +72,34 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">TestEchoServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.EchoRequest, $0.EchoResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$28.EchoRequest, $28.EchoResponse&gt;(
       &#39;Echo&#39;,
       echo_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.EchoRequest.fromBuffer(value),
-      ($0.EchoResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.EchoMultipleRequest, $0.EchoMultipleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.EchoRequest.fromBuffer(value),
+      ($28.EchoResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$28.EchoMultipleRequest, $28.EchoMultipleResponse&gt;(
       &#39;EchoMultiple&#39;,
       echoMultiple_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.EchoMultipleRequest.fromBuffer(value),
-      ($0.EchoMultipleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.EchoBiDiRequest, $0.EchoBiDiResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.EchoMultipleRequest.fromBuffer(value),
+      ($28.EchoMultipleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$28.EchoBiDiRequest, $28.EchoBiDiResponse&gt;(
       &#39;EchoBiDi&#39;,
       echoBiDi,
       true,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.EchoBiDiRequest.fromBuffer(value),
-      ($0.EchoBiDiResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.StopRequest, $0.StopResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.EchoBiDiRequest.fromBuffer(value),
+      ($28.EchoBiDiResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$28.StopRequest, $28.StopResponse&gt;(
       &#39;Stop&#39;,
       stop_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.StopRequest.fromBuffer(value),
-      ($0.StopResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.StopRequest.fromBuffer(value),
+      ($28.StopResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

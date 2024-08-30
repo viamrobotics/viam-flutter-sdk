@@ -67,6 +67,10 @@
 <li><span class="parameter" id="-param-filter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">filter</span>, </span></li>
 <li><span class="parameter" id="-param-pageToken"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">pageToken</span>, </span></li>
 <li><span class="parameter" id="-param-levels"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">levels</span>, </span></li>
+<li><span class="parameter" id="-param-start"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">start</span>, </span></li>
+<li><span class="parameter" id="-param-end"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">end</span>, </span></li>
+<li><span class="parameter" id="-param-limit"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.0/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">limit</span>, </span></li>
+<li><span class="parameter" id="-param-source"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">source</span>, </span></li>
 </ol>})
     </section>
 
@@ -83,6 +87,10 @@
   $core.String? filter,
   $core.String? pageToken,
   $core.Iterable&lt;$core.String&gt;? levels,
+  $43.Timestamp? start,
+  $43.Timestamp? end,
+  $fixnum.Int64? limit,
+  $core.String? source,
 }) {
   final $result = create();
   if (id != null) {
@@ -100,6 +108,18 @@
   }
   if (levels != null) {
     $result.levels.addAll(levels);
+  }
+  if (start != null) {
+    $result.start = start;
+  }
+  if (end != null) {
+    $result.end = end;
+  }
+  if (limit != null) {
+    $result.limit = limit;
+  }
+  if (source != null) {
+    $result.source = source;
   }
   return $result;
 }</code></pre>

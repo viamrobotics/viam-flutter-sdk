@@ -72,146 +72,153 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">DataServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.TabularDataByFilterRequest, $0.TabularDataByFilterResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$3.TabularDataByFilterRequest, $3.TabularDataByFilterResponse&gt;(
       &#39;TabularDataByFilter&#39;,
       tabularDataByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.TabularDataByFilterRequest.fromBuffer(value),
-      ($0.TabularDataByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.TabularDataBySQLRequest, $0.TabularDataBySQLResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.TabularDataByFilterRequest.fromBuffer(value),
+      ($3.TabularDataByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.TabularDataBySQLRequest, $3.TabularDataBySQLResponse&gt;(
       &#39;TabularDataBySQL&#39;,
       tabularDataBySQL_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.TabularDataBySQLRequest.fromBuffer(value),
-      ($0.TabularDataBySQLResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.TabularDataByMQLRequest, $0.TabularDataByMQLResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.TabularDataBySQLRequest.fromBuffer(value),
+      ($3.TabularDataBySQLResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.TabularDataByMQLRequest, $3.TabularDataByMQLResponse&gt;(
       &#39;TabularDataByMQL&#39;,
       tabularDataByMQL_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.TabularDataByMQLRequest.fromBuffer(value),
-      ($0.TabularDataByMQLResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.BinaryDataByFilterRequest, $0.BinaryDataByFilterResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.TabularDataByMQLRequest.fromBuffer(value),
+      ($3.TabularDataByMQLResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.BinaryDataByFilterRequest, $3.BinaryDataByFilterResponse&gt;(
       &#39;BinaryDataByFilter&#39;,
       binaryDataByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.BinaryDataByFilterRequest.fromBuffer(value),
-      ($0.BinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.BinaryDataByIDsRequest, $0.BinaryDataByIDsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.BinaryDataByFilterRequest.fromBuffer(value),
+      ($3.BinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.BinaryDataByIDsRequest, $3.BinaryDataByIDsResponse&gt;(
       &#39;BinaryDataByIDs&#39;,
       binaryDataByIDs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.BinaryDataByIDsRequest.fromBuffer(value),
-      ($0.BinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.DeleteTabularDataRequest, $0.DeleteTabularDataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.BinaryDataByIDsRequest.fromBuffer(value),
+      ($3.BinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.DeleteTabularDataRequest, $3.DeleteTabularDataResponse&gt;(
       &#39;DeleteTabularData&#39;,
       deleteTabularData_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeleteTabularDataRequest.fromBuffer(value),
-      ($0.DeleteTabularDataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.DeleteBinaryDataByFilterRequest, $0.DeleteBinaryDataByFilterResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.DeleteTabularDataRequest.fromBuffer(value),
+      ($3.DeleteTabularDataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.DeleteBinaryDataByFilterRequest, $3.DeleteBinaryDataByFilterResponse&gt;(
       &#39;DeleteBinaryDataByFilter&#39;,
       deleteBinaryDataByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeleteBinaryDataByFilterRequest.fromBuffer(value),
-      ($0.DeleteBinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.DeleteBinaryDataByIDsRequest, $0.DeleteBinaryDataByIDsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.DeleteBinaryDataByFilterRequest.fromBuffer(value),
+      ($3.DeleteBinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.DeleteBinaryDataByIDsRequest, $3.DeleteBinaryDataByIDsResponse&gt;(
       &#39;DeleteBinaryDataByIDs&#39;,
       deleteBinaryDataByIDs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.DeleteBinaryDataByIDsRequest.fromBuffer(value),
-      ($0.DeleteBinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.AddTagsToBinaryDataByIDsRequest, $0.AddTagsToBinaryDataByIDsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.DeleteBinaryDataByIDsRequest.fromBuffer(value),
+      ($3.DeleteBinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.AddTagsToBinaryDataByIDsRequest, $3.AddTagsToBinaryDataByIDsResponse&gt;(
       &#39;AddTagsToBinaryDataByIDs&#39;,
       addTagsToBinaryDataByIDs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.AddTagsToBinaryDataByIDsRequest.fromBuffer(value),
-      ($0.AddTagsToBinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.AddTagsToBinaryDataByFilterRequest, $0.AddTagsToBinaryDataByFilterResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.AddTagsToBinaryDataByIDsRequest.fromBuffer(value),
+      ($3.AddTagsToBinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.AddTagsToBinaryDataByFilterRequest, $3.AddTagsToBinaryDataByFilterResponse&gt;(
       &#39;AddTagsToBinaryDataByFilter&#39;,
       addTagsToBinaryDataByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.AddTagsToBinaryDataByFilterRequest.fromBuffer(value),
-      ($0.AddTagsToBinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.RemoveTagsFromBinaryDataByIDsRequest, $0.RemoveTagsFromBinaryDataByIDsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.AddTagsToBinaryDataByFilterRequest.fromBuffer(value),
+      ($3.AddTagsToBinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.RemoveTagsFromBinaryDataByIDsRequest, $3.RemoveTagsFromBinaryDataByIDsResponse&gt;(
       &#39;RemoveTagsFromBinaryDataByIDs&#39;,
       removeTagsFromBinaryDataByIDs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveTagsFromBinaryDataByIDsRequest.fromBuffer(value),
-      ($0.RemoveTagsFromBinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.RemoveTagsFromBinaryDataByFilterRequest, $0.RemoveTagsFromBinaryDataByFilterResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.RemoveTagsFromBinaryDataByIDsRequest.fromBuffer(value),
+      ($3.RemoveTagsFromBinaryDataByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.RemoveTagsFromBinaryDataByFilterRequest, $3.RemoveTagsFromBinaryDataByFilterResponse&gt;(
       &#39;RemoveTagsFromBinaryDataByFilter&#39;,
       removeTagsFromBinaryDataByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveTagsFromBinaryDataByFilterRequest.fromBuffer(value),
-      ($0.RemoveTagsFromBinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.TagsByFilterRequest, $0.TagsByFilterResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.RemoveTagsFromBinaryDataByFilterRequest.fromBuffer(value),
+      ($3.RemoveTagsFromBinaryDataByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.TagsByFilterRequest, $3.TagsByFilterResponse&gt;(
       &#39;TagsByFilter&#39;,
       tagsByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.TagsByFilterRequest.fromBuffer(value),
-      ($0.TagsByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.AddBoundingBoxToImageByIDRequest, $0.AddBoundingBoxToImageByIDResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.TagsByFilterRequest.fromBuffer(value),
+      ($3.TagsByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.AddBoundingBoxToImageByIDRequest, $3.AddBoundingBoxToImageByIDResponse&gt;(
       &#39;AddBoundingBoxToImageByID&#39;,
       addBoundingBoxToImageByID_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.AddBoundingBoxToImageByIDRequest.fromBuffer(value),
-      ($0.AddBoundingBoxToImageByIDResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.RemoveBoundingBoxFromImageByIDRequest, $0.RemoveBoundingBoxFromImageByIDResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.AddBoundingBoxToImageByIDRequest.fromBuffer(value),
+      ($3.AddBoundingBoxToImageByIDResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.RemoveBoundingBoxFromImageByIDRequest, $3.RemoveBoundingBoxFromImageByIDResponse&gt;(
       &#39;RemoveBoundingBoxFromImageByID&#39;,
       removeBoundingBoxFromImageByID_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveBoundingBoxFromImageByIDRequest.fromBuffer(value),
-      ($0.RemoveBoundingBoxFromImageByIDResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.BoundingBoxLabelsByFilterRequest, $0.BoundingBoxLabelsByFilterResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.RemoveBoundingBoxFromImageByIDRequest.fromBuffer(value),
+      ($3.RemoveBoundingBoxFromImageByIDResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.BoundingBoxLabelsByFilterRequest, $3.BoundingBoxLabelsByFilterResponse&gt;(
       &#39;BoundingBoxLabelsByFilter&#39;,
       boundingBoxLabelsByFilter_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.BoundingBoxLabelsByFilterRequest.fromBuffer(value),
-      ($0.BoundingBoxLabelsByFilterResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.GetDatabaseConnectionRequest, $0.GetDatabaseConnectionResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.BoundingBoxLabelsByFilterRequest.fromBuffer(value),
+      ($3.BoundingBoxLabelsByFilterResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.UpdateBoundingBoxRequest, $3.UpdateBoundingBoxResponse&gt;(
+      &#39;UpdateBoundingBox&#39;,
+      updateBoundingBox_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.UpdateBoundingBoxRequest.fromBuffer(value),
+      ($3.UpdateBoundingBoxResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.GetDatabaseConnectionRequest, $3.GetDatabaseConnectionResponse&gt;(
       &#39;GetDatabaseConnection&#39;,
       getDatabaseConnection_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.GetDatabaseConnectionRequest.fromBuffer(value),
-      ($0.GetDatabaseConnectionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.ConfigureDatabaseUserRequest, $0.ConfigureDatabaseUserResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.GetDatabaseConnectionRequest.fromBuffer(value),
+      ($3.GetDatabaseConnectionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.ConfigureDatabaseUserRequest, $3.ConfigureDatabaseUserResponse&gt;(
       &#39;ConfigureDatabaseUser&#39;,
       configureDatabaseUser_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.ConfigureDatabaseUserRequest.fromBuffer(value),
-      ($0.ConfigureDatabaseUserResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.AddBinaryDataToDatasetByIDsRequest, $0.AddBinaryDataToDatasetByIDsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.ConfigureDatabaseUserRequest.fromBuffer(value),
+      ($3.ConfigureDatabaseUserResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.AddBinaryDataToDatasetByIDsRequest, $3.AddBinaryDataToDatasetByIDsResponse&gt;(
       &#39;AddBinaryDataToDatasetByIDs&#39;,
       addBinaryDataToDatasetByIDs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.AddBinaryDataToDatasetByIDsRequest.fromBuffer(value),
-      ($0.AddBinaryDataToDatasetByIDsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.RemoveBinaryDataFromDatasetByIDsRequest, $0.RemoveBinaryDataFromDatasetByIDsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.AddBinaryDataToDatasetByIDsRequest.fromBuffer(value),
+      ($3.AddBinaryDataToDatasetByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.RemoveBinaryDataFromDatasetByIDsRequest, $3.RemoveBinaryDataFromDatasetByIDsResponse&gt;(
       &#39;RemoveBinaryDataFromDatasetByIDs&#39;,
       removeBinaryDataFromDatasetByIDs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
-      ($0.RemoveBinaryDataFromDatasetByIDsResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
+      ($3.RemoveBinaryDataFromDatasetByIDsResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

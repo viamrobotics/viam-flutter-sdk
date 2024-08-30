@@ -76,6 +76,7 @@
 <li><span class="parameter" id="-param-locationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">locationId</span>, </span></li>
 <li><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span></li>
 <li><span class="parameter" id="-param-secrets"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/SharedSecret-class.html">SharedSecret</a></span>&gt;</span>?</span> <span class="parameter-name">secrets</span>, </span></li>
+<li><span class="parameter" id="-param-lastUpdated"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastUpdated</span>, </span></li>
 </ol>})
     </section>
 
@@ -90,16 +91,17 @@
   $core.String? name,
   $core.String? secret,
   $core.String? robot,
-  $7.Struct? robotConfig,
-  $6.Timestamp? lastAccess,
-  $7.Struct? userSuppliedInfo,
+  $42.Struct? robotConfig,
+  $43.Timestamp? lastAccess,
+  $42.Struct? userSuppliedInfo,
   $core.bool? mainPart,
   $core.String? fqdn,
   $core.String? dnsName,
   $core.String? localFqdn,
   $core.String? locationId,
-  $6.Timestamp? createdOn,
+  $43.Timestamp? createdOn,
   $core.Iterable&lt;SharedSecret&gt;? secrets,
+  $43.Timestamp? lastUpdated,
 }) {
   final $result = create();
   if (id != null) {
@@ -143,6 +145,9 @@
   }
   if (secrets != null) {
     $result.secrets.addAll(secrets);
+  }
+  if (lastUpdated != null) {
+    $result.lastUpdated = lastUpdated;
   }
   return $result;
 }</code></pre>

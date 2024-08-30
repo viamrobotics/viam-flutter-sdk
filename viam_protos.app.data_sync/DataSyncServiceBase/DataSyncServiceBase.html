@@ -72,27 +72,27 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">DataSyncServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$0.DataCaptureUploadRequest, $0.DataCaptureUploadResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$5.DataCaptureUploadRequest, $5.DataCaptureUploadResponse&gt;(
       &#39;DataCaptureUpload&#39;,
       dataCaptureUpload_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.DataCaptureUploadRequest.fromBuffer(value),
-      ($0.DataCaptureUploadResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.FileUploadRequest, $0.FileUploadResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $5.DataCaptureUploadRequest.fromBuffer(value),
+      ($5.DataCaptureUploadResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$5.FileUploadRequest, $5.FileUploadResponse&gt;(
       &#39;FileUpload&#39;,
       fileUpload,
       true,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.FileUploadRequest.fromBuffer(value),
-      ($0.FileUploadResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$0.StreamingDataCaptureUploadRequest, $0.StreamingDataCaptureUploadResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $5.FileUploadRequest.fromBuffer(value),
+      ($5.FileUploadResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$5.StreamingDataCaptureUploadRequest, $5.StreamingDataCaptureUploadResponse&gt;(
       &#39;StreamingDataCaptureUpload&#39;,
       streamingDataCaptureUpload,
       true,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $0.StreamingDataCaptureUploadRequest.fromBuffer(value),
-      ($0.StreamingDataCaptureUploadResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $5.StreamingDataCaptureUploadRequest.fromBuffer(value),
+      ($5.StreamingDataCaptureUploadResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
