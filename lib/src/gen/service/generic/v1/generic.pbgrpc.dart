@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $0;
+import '../../../common/v1/common.pb.dart' as $13;
 
 export 'generic.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.generic.v1.GenericService')
 class GenericServiceClient extends $grpc.Client {
-  static final _$doCommand = $grpc.ClientMethod<$0.DoCommandRequest, $0.DoCommandResponse>(
+  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
       '/viam.service.generic.v1.GenericService/DoCommand',
-      ($0.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.DoCommandResponse.fromBuffer(value));
+      ($13.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
 
   GenericServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class GenericServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.DoCommandResponse> doCommand($0.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 }
@@ -42,18 +42,18 @@ abstract class GenericServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.generic.v1.GenericService';
 
   GenericServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.DoCommandRequest, $0.DoCommandResponse>(
+    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.DoCommandRequest.fromBuffer(value),
-        ($0.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
+        ($13.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$0.DoCommandRequest> request) async {
+  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$0.DoCommandResponse> doCommand($grpc.ServiceCall call, $0.DoCommandRequest request);
+  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
 }

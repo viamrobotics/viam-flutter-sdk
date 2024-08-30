@@ -15,37 +15,37 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $1;
-import 'gripper.pb.dart' as $0;
+import '../../../common/v1/common.pb.dart' as $13;
+import 'gripper.pb.dart' as $21;
 
 export 'gripper.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.gripper.v1.GripperService')
 class GripperServiceClient extends $grpc.Client {
-  static final _$open = $grpc.ClientMethod<$0.OpenRequest, $0.OpenResponse>(
+  static final _$open = $grpc.ClientMethod<$21.OpenRequest, $21.OpenResponse>(
       '/viam.component.gripper.v1.GripperService/Open',
-      ($0.OpenRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.OpenResponse.fromBuffer(value));
-  static final _$grab = $grpc.ClientMethod<$0.GrabRequest, $0.GrabResponse>(
+      ($21.OpenRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.OpenResponse.fromBuffer(value));
+  static final _$grab = $grpc.ClientMethod<$21.GrabRequest, $21.GrabResponse>(
       '/viam.component.gripper.v1.GripperService/Grab',
-      ($0.GrabRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GrabResponse.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$0.StopRequest, $0.StopResponse>(
+      ($21.GrabRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.GrabResponse.fromBuffer(value));
+  static final _$stop = $grpc.ClientMethod<$21.StopRequest, $21.StopResponse>(
       '/viam.component.gripper.v1.GripperService/Stop',
-      ($0.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.StopResponse.fromBuffer(value));
-  static final _$isMoving = $grpc.ClientMethod<$0.IsMovingRequest, $0.IsMovingResponse>(
+      ($21.StopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.StopResponse.fromBuffer(value));
+  static final _$isMoving = $grpc.ClientMethod<$21.IsMovingRequest, $21.IsMovingResponse>(
       '/viam.component.gripper.v1.GripperService/IsMoving',
-      ($0.IsMovingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.IsMovingResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+      ($21.IsMovingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.IsMovingResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
       '/viam.component.gripper.v1.GripperService/DoCommand',
-      ($1.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+      ($13.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
       '/viam.component.gripper.v1.GripperService/GetGeometries',
-      ($1.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetGeometriesResponse.fromBuffer(value));
+      ($13.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetGeometriesResponse.fromBuffer(value));
 
   GripperServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -53,27 +53,27 @@ class GripperServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.OpenResponse> open($0.OpenRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.OpenResponse> open($21.OpenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$open, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GrabResponse> grab($0.GrabRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.GrabResponse> grab($21.GrabRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$grab, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.StopResponse> stop($0.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.StopResponse> stop($21.StopRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.IsMovingResponse> isMoving($0.IsMovingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.IsMovingResponse> isMoving($21.IsMovingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isMoving, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetGeometriesResponse> getGeometries($1.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetGeometriesResponse> getGeometries($13.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -83,78 +83,78 @@ abstract class GripperServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.gripper.v1.GripperService';
 
   GripperServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.OpenRequest, $0.OpenResponse>(
+    $addMethod($grpc.ServiceMethod<$21.OpenRequest, $21.OpenResponse>(
         'Open',
         open_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.OpenRequest.fromBuffer(value),
-        ($0.OpenResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GrabRequest, $0.GrabResponse>(
+        ($core.List<$core.int> value) => $21.OpenRequest.fromBuffer(value),
+        ($21.OpenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$21.GrabRequest, $21.GrabResponse>(
         'Grab',
         grab_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GrabRequest.fromBuffer(value),
-        ($0.GrabResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StopRequest, $0.StopResponse>(
+        ($core.List<$core.int> value) => $21.GrabRequest.fromBuffer(value),
+        ($21.GrabResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$21.StopRequest, $21.StopResponse>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.StopRequest.fromBuffer(value),
-        ($0.StopResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.IsMovingRequest, $0.IsMovingResponse>(
+        ($core.List<$core.int> value) => $21.StopRequest.fromBuffer(value),
+        ($21.StopResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$21.IsMovingRequest, $21.IsMovingResponse>(
         'IsMoving',
         isMoving_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.IsMovingRequest.fromBuffer(value),
-        ($0.IsMovingResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+        ($core.List<$core.int> value) => $21.IsMovingRequest.fromBuffer(value),
+        ($21.IsMovingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.DoCommandRequest.fromBuffer(value),
-        ($1.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
+        ($13.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetGeometriesRequest.fromBuffer(value),
-        ($1.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $13.GetGeometriesRequest.fromBuffer(value),
+        ($13.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.OpenResponse> open_Pre($grpc.ServiceCall call, $async.Future<$0.OpenRequest> request) async {
+  $async.Future<$21.OpenResponse> open_Pre($grpc.ServiceCall call, $async.Future<$21.OpenRequest> request) async {
     return open(call, await request);
   }
 
-  $async.Future<$0.GrabResponse> grab_Pre($grpc.ServiceCall call, $async.Future<$0.GrabRequest> request) async {
+  $async.Future<$21.GrabResponse> grab_Pre($grpc.ServiceCall call, $async.Future<$21.GrabRequest> request) async {
     return grab(call, await request);
   }
 
-  $async.Future<$0.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$0.StopRequest> request) async {
+  $async.Future<$21.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$21.StopRequest> request) async {
     return stop(call, await request);
   }
 
-  $async.Future<$0.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$0.IsMovingRequest> request) async {
+  $async.Future<$21.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$21.IsMovingRequest> request) async {
     return isMoving(call, await request);
   }
 
-  $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
+  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$1.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$1.GetGeometriesRequest> request) async {
+  $async.Future<$13.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$13.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$0.OpenResponse> open($grpc.ServiceCall call, $0.OpenRequest request);
-  $async.Future<$0.GrabResponse> grab($grpc.ServiceCall call, $0.GrabRequest request);
-  $async.Future<$0.StopResponse> stop($grpc.ServiceCall call, $0.StopRequest request);
-  $async.Future<$0.IsMovingResponse> isMoving($grpc.ServiceCall call, $0.IsMovingRequest request);
-  $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
-  $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
+  $async.Future<$21.OpenResponse> open($grpc.ServiceCall call, $21.OpenRequest request);
+  $async.Future<$21.GrabResponse> grab($grpc.ServiceCall call, $21.GrabRequest request);
+  $async.Future<$21.StopResponse> stop($grpc.ServiceCall call, $21.StopRequest request);
+  $async.Future<$21.IsMovingResponse> isMoving($grpc.ServiceCall call, $21.IsMovingRequest request);
+  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
+  $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
 }

@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
+import '../../../google/protobuf/timestamp.pb.dart' as $43;
 import 'build.pbenum.dart';
 
 export 'build.pbenum.dart';
@@ -312,8 +312,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $1.Timestamp? startTime,
-    $1.Timestamp? endTime,
+    $43.Timestamp? startTime,
+    $43.Timestamp? endTime,
   }) {
     final $result = create();
     if (buildId != null) {
@@ -345,8 +345,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$43.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $43.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -408,26 +408,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $1.Timestamp get startTime => $_getN(4);
+  $43.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($1.Timestamp v) { setField(5, v); }
+  set startTime($43.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $1.Timestamp ensureStartTime() => $_ensure(4);
+  $43.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $1.Timestamp get endTime => $_getN(5);
+  $43.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($1.Timestamp v) { setField(6, v); }
+  set endTime($43.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $1.Timestamp ensureEndTime() => $_ensure(5);
+  $43.Timestamp ensureEndTime() => $_ensure(5);
 }
 
 class ListJobsRequest extends $pb.GeneratedMessage {
@@ -556,6 +556,837 @@ class ListJobsResponse extends $pb.GeneratedMessage {
   /// jobs is ordered by (build start time, alphabetical platform).
   @$pb.TagNumber(1)
   $core.List<JobInfo> get jobs => $_getList(0);
+}
+
+class RepoLink extends $pb.GeneratedMessage {
+  factory RepoLink({
+    $core.String? oauthAppLinkId,
+    $core.String? orgId,
+    $core.String? namespace,
+    $core.String? moduleName,
+    $core.String? repo,
+    $core.String? viamUser,
+  }) {
+    final $result = create();
+    if (oauthAppLinkId != null) {
+      $result.oauthAppLinkId = oauthAppLinkId;
+    }
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (namespace != null) {
+      $result.namespace = namespace;
+    }
+    if (moduleName != null) {
+      $result.moduleName = moduleName;
+    }
+    if (repo != null) {
+      $result.repo = repo;
+    }
+    if (viamUser != null) {
+      $result.viamUser = viamUser;
+    }
+    return $result;
+  }
+  RepoLink._() : super();
+  factory RepoLink.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RepoLink.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RepoLink', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'oauthAppLinkId')
+    ..aOS(2, _omitFieldNames ? '' : 'orgId')
+    ..aOS(3, _omitFieldNames ? '' : 'namespace')
+    ..aOS(4, _omitFieldNames ? '' : 'moduleName')
+    ..aOS(5, _omitFieldNames ? '' : 'repo')
+    ..aOS(6, _omitFieldNames ? '' : 'viamUser')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RepoLink clone() => RepoLink()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RepoLink copyWith(void Function(RepoLink) updates) => super.copyWith((message) => updates(message as RepoLink)) as RepoLink;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RepoLink create() => RepoLink._();
+  RepoLink createEmptyInstance() => create();
+  static $pb.PbList<RepoLink> createRepeated() => $pb.PbList<RepoLink>();
+  @$core.pragma('dart2js:noInline')
+  static RepoLink getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RepoLink>(create);
+  static RepoLink? _defaultInstance;
+
+  /// viam internal ID which maps to an external oauth app
+  @$pb.TagNumber(1)
+  $core.String get oauthAppLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set oauthAppLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOauthAppLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOauthAppLinkId() => clearField(1);
+
+  /// OrgID of the module
+  @$pb.TagNumber(2)
+  $core.String get orgId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set orgId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrgId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrgId() => clearField(2);
+
+  /// Public namespace of the module. This is for user display in ListRepoLinksResponse.
+  /// It is ignored in LinkRepoRequest.
+  @$pb.TagNumber(3)
+  $core.String get namespace => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set namespace($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNamespace() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNamespace() => clearField(3);
+
+  /// name of the module (just the name, not the dotted org:name form)
+  @$pb.TagNumber(4)
+  $core.String get moduleName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set moduleName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasModuleName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearModuleName() => clearField(4);
+
+  /// git repo in owner/repository form
+  @$pb.TagNumber(5)
+  $core.String get repo => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set repo($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRepo() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRepo() => clearField(5);
+
+  /// email of the viam user who created this
+  @$pb.TagNumber(6)
+  $core.String get viamUser => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set viamUser($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasViamUser() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearViamUser() => clearField(6);
+}
+
+class LinkRepoRequest extends $pb.GeneratedMessage {
+  factory LinkRepoRequest({
+    RepoLink? link,
+  }) {
+    final $result = create();
+    if (link != null) {
+      $result.link = link;
+    }
+    return $result;
+  }
+  LinkRepoRequest._() : super();
+  factory LinkRepoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LinkRepoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkRepoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOM<RepoLink>(1, _omitFieldNames ? '' : 'link', subBuilder: RepoLink.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LinkRepoRequest clone() => LinkRepoRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LinkRepoRequest copyWith(void Function(LinkRepoRequest) updates) => super.copyWith((message) => updates(message as LinkRepoRequest)) as LinkRepoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkRepoRequest create() => LinkRepoRequest._();
+  LinkRepoRequest createEmptyInstance() => create();
+  static $pb.PbList<LinkRepoRequest> createRepeated() => $pb.PbList<LinkRepoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static LinkRepoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkRepoRequest>(create);
+  static LinkRepoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RepoLink get link => $_getN(0);
+  @$pb.TagNumber(1)
+  set link(RepoLink v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLink() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLink() => clearField(1);
+  @$pb.TagNumber(1)
+  RepoLink ensureLink() => $_ensure(0);
+}
+
+class LinkRepoResponse extends $pb.GeneratedMessage {
+  factory LinkRepoResponse({
+    $core.String? repoLinkId,
+  }) {
+    final $result = create();
+    if (repoLinkId != null) {
+      $result.repoLinkId = repoLinkId;
+    }
+    return $result;
+  }
+  LinkRepoResponse._() : super();
+  factory LinkRepoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LinkRepoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkRepoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'repoLinkId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LinkRepoResponse clone() => LinkRepoResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LinkRepoResponse copyWith(void Function(LinkRepoResponse) updates) => super.copyWith((message) => updates(message as LinkRepoResponse)) as LinkRepoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkRepoResponse create() => LinkRepoResponse._();
+  LinkRepoResponse createEmptyInstance() => create();
+  static $pb.PbList<LinkRepoResponse> createRepeated() => $pb.PbList<LinkRepoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LinkRepoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkRepoResponse>(create);
+  static LinkRepoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get repoLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set repoLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRepoLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRepoLinkId() => clearField(1);
+}
+
+class UnlinkRepoRequest extends $pb.GeneratedMessage {
+  factory UnlinkRepoRequest({
+    $core.String? repoLinkId,
+  }) {
+    final $result = create();
+    if (repoLinkId != null) {
+      $result.repoLinkId = repoLinkId;
+    }
+    return $result;
+  }
+  UnlinkRepoRequest._() : super();
+  factory UnlinkRepoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnlinkRepoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnlinkRepoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'repoLinkId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnlinkRepoRequest clone() => UnlinkRepoRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnlinkRepoRequest copyWith(void Function(UnlinkRepoRequest) updates) => super.copyWith((message) => updates(message as UnlinkRepoRequest)) as UnlinkRepoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnlinkRepoRequest create() => UnlinkRepoRequest._();
+  UnlinkRepoRequest createEmptyInstance() => create();
+  static $pb.PbList<UnlinkRepoRequest> createRepeated() => $pb.PbList<UnlinkRepoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnlinkRepoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnlinkRepoRequest>(create);
+  static UnlinkRepoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get repoLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set repoLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRepoLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRepoLinkId() => clearField(1);
+}
+
+class UnlinkRepoResponse extends $pb.GeneratedMessage {
+  factory UnlinkRepoResponse() => create();
+  UnlinkRepoResponse._() : super();
+  factory UnlinkRepoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnlinkRepoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnlinkRepoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnlinkRepoResponse clone() => UnlinkRepoResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnlinkRepoResponse copyWith(void Function(UnlinkRepoResponse) updates) => super.copyWith((message) => updates(message as UnlinkRepoResponse)) as UnlinkRepoResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnlinkRepoResponse create() => UnlinkRepoResponse._();
+  UnlinkRepoResponse createEmptyInstance() => create();
+  static $pb.PbList<UnlinkRepoResponse> createRepeated() => $pb.PbList<UnlinkRepoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnlinkRepoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnlinkRepoResponse>(create);
+  static UnlinkRepoResponse? _defaultInstance;
+}
+
+class ListRepoLinksRequest extends $pb.GeneratedMessage {
+  factory ListRepoLinksRequest() => create();
+  ListRepoLinksRequest._() : super();
+  factory ListRepoLinksRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRepoLinksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRepoLinksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRepoLinksRequest clone() => ListRepoLinksRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRepoLinksRequest copyWith(void Function(ListRepoLinksRequest) updates) => super.copyWith((message) => updates(message as ListRepoLinksRequest)) as ListRepoLinksRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRepoLinksRequest create() => ListRepoLinksRequest._();
+  ListRepoLinksRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRepoLinksRequest> createRepeated() => $pb.PbList<ListRepoLinksRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRepoLinksRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRepoLinksRequest>(create);
+  static ListRepoLinksRequest? _defaultInstance;
+}
+
+class ListRepoLinksResponse extends $pb.GeneratedMessage {
+  factory ListRepoLinksResponse({
+    $core.Iterable<RepoLink>? links,
+  }) {
+    final $result = create();
+    if (links != null) {
+      $result.links.addAll(links);
+    }
+    return $result;
+  }
+  ListRepoLinksResponse._() : super();
+  factory ListRepoLinksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRepoLinksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRepoLinksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..pc<RepoLink>(1, _omitFieldNames ? '' : 'links', $pb.PbFieldType.PM, subBuilder: RepoLink.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRepoLinksResponse clone() => ListRepoLinksResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRepoLinksResponse copyWith(void Function(ListRepoLinksResponse) updates) => super.copyWith((message) => updates(message as ListRepoLinksResponse)) as ListRepoLinksResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRepoLinksResponse create() => ListRepoLinksResponse._();
+  ListRepoLinksResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRepoLinksResponse> createRepeated() => $pb.PbList<ListRepoLinksResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRepoLinksResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRepoLinksResponse>(create);
+  static ListRepoLinksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<RepoLink> get links => $_getList(0);
+}
+
+class ListAppLinksRequest extends $pb.GeneratedMessage {
+  factory ListAppLinksRequest() => create();
+  ListAppLinksRequest._() : super();
+  factory ListAppLinksRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListAppLinksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppLinksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListAppLinksRequest clone() => ListAppLinksRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListAppLinksRequest copyWith(void Function(ListAppLinksRequest) updates) => super.copyWith((message) => updates(message as ListAppLinksRequest)) as ListAppLinksRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAppLinksRequest create() => ListAppLinksRequest._();
+  ListAppLinksRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAppLinksRequest> createRepeated() => $pb.PbList<ListAppLinksRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAppLinksRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAppLinksRequest>(create);
+  static ListAppLinksRequest? _defaultInstance;
+}
+
+/// represents a link between viam users / orgs and an external oauth app
+class AppLink extends $pb.GeneratedMessage {
+  factory AppLink({
+    $core.String? oauthAppLinkId,
+    $core.String? viamUser,
+    $core.String? externalUser,
+    $core.Iterable<$core.String>? orgIdOrNs,
+  }) {
+    final $result = create();
+    if (oauthAppLinkId != null) {
+      $result.oauthAppLinkId = oauthAppLinkId;
+    }
+    if (viamUser != null) {
+      $result.viamUser = viamUser;
+    }
+    if (externalUser != null) {
+      $result.externalUser = externalUser;
+    }
+    if (orgIdOrNs != null) {
+      $result.orgIdOrNs.addAll(orgIdOrNs);
+    }
+    return $result;
+  }
+  AppLink._() : super();
+  factory AppLink.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppLink.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppLink', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'oauthAppLinkId')
+    ..aOS(2, _omitFieldNames ? '' : 'viamUser')
+    ..aOS(3, _omitFieldNames ? '' : 'externalUser')
+    ..pPS(4, _omitFieldNames ? '' : 'orgIdOrNs')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppLink clone() => AppLink()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppLink copyWith(void Function(AppLink) updates) => super.copyWith((message) => updates(message as AppLink)) as AppLink;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppLink create() => AppLink._();
+  AppLink createEmptyInstance() => create();
+  static $pb.PbList<AppLink> createRepeated() => $pb.PbList<AppLink>();
+  @$core.pragma('dart2js:noInline')
+  static AppLink getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppLink>(create);
+  static AppLink? _defaultInstance;
+
+  /// viam internal ID which maps to an external oauth app
+  @$pb.TagNumber(1)
+  $core.String get oauthAppLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set oauthAppLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOauthAppLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOauthAppLinkId() => clearField(1);
+
+  /// email of the viam user that owns this
+  @$pb.TagNumber(2)
+  $core.String get viamUser => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set viamUser($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasViamUser() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearViamUser() => clearField(2);
+
+  /// username of the external user who created this
+  @$pb.TagNumber(3)
+  $core.String get externalUser => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set externalUser($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExternalUser() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalUser() => clearField(3);
+
+  /// list of org public namespace (where available) or org UUIDs attached to the external app
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get orgIdOrNs => $_getList(3);
+}
+
+class ListAppLinksResponse extends $pb.GeneratedMessage {
+  factory ListAppLinksResponse({
+    $core.Iterable<AppLink>? links,
+  }) {
+    final $result = create();
+    if (links != null) {
+      $result.links.addAll(links);
+    }
+    return $result;
+  }
+  ListAppLinksResponse._() : super();
+  factory ListAppLinksResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListAppLinksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppLinksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..pc<AppLink>(1, _omitFieldNames ? '' : 'links', $pb.PbFieldType.PM, subBuilder: AppLink.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListAppLinksResponse clone() => ListAppLinksResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListAppLinksResponse copyWith(void Function(ListAppLinksResponse) updates) => super.copyWith((message) => updates(message as ListAppLinksResponse)) as ListAppLinksResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAppLinksResponse create() => ListAppLinksResponse._();
+  ListAppLinksResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAppLinksResponse> createRepeated() => $pb.PbList<ListAppLinksResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAppLinksResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAppLinksResponse>(create);
+  static ListAppLinksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<AppLink> get links => $_getList(0);
+}
+
+class RemoveAppLinkRequest extends $pb.GeneratedMessage {
+  factory RemoveAppLinkRequest({
+    $core.String? oauthAppLinkId,
+  }) {
+    final $result = create();
+    if (oauthAppLinkId != null) {
+      $result.oauthAppLinkId = oauthAppLinkId;
+    }
+    return $result;
+  }
+  RemoveAppLinkRequest._() : super();
+  factory RemoveAppLinkRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveAppLinkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveAppLinkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'oauthAppLinkId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveAppLinkRequest clone() => RemoveAppLinkRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveAppLinkRequest copyWith(void Function(RemoveAppLinkRequest) updates) => super.copyWith((message) => updates(message as RemoveAppLinkRequest)) as RemoveAppLinkRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveAppLinkRequest create() => RemoveAppLinkRequest._();
+  RemoveAppLinkRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveAppLinkRequest> createRepeated() => $pb.PbList<RemoveAppLinkRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveAppLinkRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveAppLinkRequest>(create);
+  static RemoveAppLinkRequest? _defaultInstance;
+
+  /// viam internal ID which maps to an external oauth app
+  @$pb.TagNumber(1)
+  $core.String get oauthAppLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set oauthAppLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOauthAppLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOauthAppLinkId() => clearField(1);
+}
+
+class RemoveAppLinkResponse extends $pb.GeneratedMessage {
+  factory RemoveAppLinkResponse() => create();
+  RemoveAppLinkResponse._() : super();
+  factory RemoveAppLinkResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveAppLinkResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveAppLinkResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveAppLinkResponse clone() => RemoveAppLinkResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveAppLinkResponse copyWith(void Function(RemoveAppLinkResponse) updates) => super.copyWith((message) => updates(message as RemoveAppLinkResponse)) as RemoveAppLinkResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveAppLinkResponse create() => RemoveAppLinkResponse._();
+  RemoveAppLinkResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveAppLinkResponse> createRepeated() => $pb.PbList<RemoveAppLinkResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveAppLinkResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveAppLinkResponse>(create);
+  static RemoveAppLinkResponse? _defaultInstance;
+}
+
+class LinkOrgRequest extends $pb.GeneratedMessage {
+  factory LinkOrgRequest({
+    $core.String? oauthAppLinkId,
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (oauthAppLinkId != null) {
+      $result.oauthAppLinkId = oauthAppLinkId;
+    }
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  LinkOrgRequest._() : super();
+  factory LinkOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LinkOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'oauthAppLinkId')
+    ..aOS(2, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LinkOrgRequest clone() => LinkOrgRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LinkOrgRequest copyWith(void Function(LinkOrgRequest) updates) => super.copyWith((message) => updates(message as LinkOrgRequest)) as LinkOrgRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkOrgRequest create() => LinkOrgRequest._();
+  LinkOrgRequest createEmptyInstance() => create();
+  static $pb.PbList<LinkOrgRequest> createRepeated() => $pb.PbList<LinkOrgRequest>();
+  @$core.pragma('dart2js:noInline')
+  static LinkOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkOrgRequest>(create);
+  static LinkOrgRequest? _defaultInstance;
+
+  /// viam internal ID which maps to an external oauth app
+  @$pb.TagNumber(1)
+  $core.String get oauthAppLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set oauthAppLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOauthAppLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOauthAppLinkId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get orgId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set orgId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrgId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrgId() => clearField(2);
+}
+
+class LinkOrgResponse extends $pb.GeneratedMessage {
+  factory LinkOrgResponse() => create();
+  LinkOrgResponse._() : super();
+  factory LinkOrgResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LinkOrgResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LinkOrgResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LinkOrgResponse clone() => LinkOrgResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LinkOrgResponse copyWith(void Function(LinkOrgResponse) updates) => super.copyWith((message) => updates(message as LinkOrgResponse)) as LinkOrgResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkOrgResponse create() => LinkOrgResponse._();
+  LinkOrgResponse createEmptyInstance() => create();
+  static $pb.PbList<LinkOrgResponse> createRepeated() => $pb.PbList<LinkOrgResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LinkOrgResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LinkOrgResponse>(create);
+  static LinkOrgResponse? _defaultInstance;
+}
+
+class UnlinkOrgRequest extends $pb.GeneratedMessage {
+  factory UnlinkOrgRequest({
+    $core.String? oauthAppLinkId,
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (oauthAppLinkId != null) {
+      $result.oauthAppLinkId = oauthAppLinkId;
+    }
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  UnlinkOrgRequest._() : super();
+  factory UnlinkOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnlinkOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnlinkOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'oauthAppLinkId')
+    ..aOS(2, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnlinkOrgRequest clone() => UnlinkOrgRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnlinkOrgRequest copyWith(void Function(UnlinkOrgRequest) updates) => super.copyWith((message) => updates(message as UnlinkOrgRequest)) as UnlinkOrgRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnlinkOrgRequest create() => UnlinkOrgRequest._();
+  UnlinkOrgRequest createEmptyInstance() => create();
+  static $pb.PbList<UnlinkOrgRequest> createRepeated() => $pb.PbList<UnlinkOrgRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnlinkOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnlinkOrgRequest>(create);
+  static UnlinkOrgRequest? _defaultInstance;
+
+  /// viam internal ID which maps to an external oauth app
+  @$pb.TagNumber(1)
+  $core.String get oauthAppLinkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set oauthAppLinkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOauthAppLinkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOauthAppLinkId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get orgId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set orgId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrgId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrgId() => clearField(2);
+}
+
+class UnlinkOrgResponse extends $pb.GeneratedMessage {
+  factory UnlinkOrgResponse() => create();
+  UnlinkOrgResponse._() : super();
+  factory UnlinkOrgResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnlinkOrgResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnlinkOrgResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnlinkOrgResponse clone() => UnlinkOrgResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnlinkOrgResponse copyWith(void Function(UnlinkOrgResponse) updates) => super.copyWith((message) => updates(message as UnlinkOrgResponse)) as UnlinkOrgResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnlinkOrgResponse create() => UnlinkOrgResponse._();
+  UnlinkOrgResponse createEmptyInstance() => create();
+  static $pb.PbList<UnlinkOrgResponse> createRepeated() => $pb.PbList<UnlinkOrgResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnlinkOrgResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnlinkOrgResponse>(create);
+  static UnlinkOrgResponse? _defaultInstance;
 }
 
 

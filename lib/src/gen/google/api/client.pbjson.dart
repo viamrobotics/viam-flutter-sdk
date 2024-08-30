@@ -198,13 +198,26 @@ const PythonSettings$json = {
   '1': 'PythonSettings',
   '2': [
     {'1': 'common', '3': 1, '4': 1, '5': 11, '6': '.google.api.CommonLanguageSettings', '10': 'common'},
+    {'1': 'experimental_features', '3': 2, '4': 1, '5': 11, '6': '.google.api.PythonSettings.ExperimentalFeatures', '10': 'experimentalFeatures'},
+  ],
+  '3': [PythonSettings_ExperimentalFeatures$json],
+};
+
+@$core.Deprecated('Use pythonSettingsDescriptor instead')
+const PythonSettings_ExperimentalFeatures$json = {
+  '1': 'ExperimentalFeatures',
+  '2': [
+    {'1': 'rest_async_io_enabled', '3': 1, '4': 1, '5': 8, '10': 'restAsyncIoEnabled'},
   ],
 };
 
 /// Descriptor for `PythonSettings`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pythonSettingsDescriptor = $convert.base64Decode(
     'Cg5QeXRob25TZXR0aW5ncxI6CgZjb21tb24YASABKAsyIi5nb29nbGUuYXBpLkNvbW1vbkxhbm'
-    'd1YWdlU2V0dGluZ3NSBmNvbW1vbg==');
+    'd1YWdlU2V0dGluZ3NSBmNvbW1vbhJkChVleHBlcmltZW50YWxfZmVhdHVyZXMYAiABKAsyLy5n'
+    'b29nbGUuYXBpLlB5dGhvblNldHRpbmdzLkV4cGVyaW1lbnRhbEZlYXR1cmVzUhRleHBlcmltZW'
+    '50YWxGZWF0dXJlcxpJChRFeHBlcmltZW50YWxGZWF0dXJlcxIxChVyZXN0X2FzeW5jX2lvX2Vu'
+    'YWJsZWQYASABKAhSEnJlc3RBc3luY0lvRW5hYmxlZA==');
 
 @$core.Deprecated('Use nodeSettingsDescriptor instead')
 const NodeSettings$json = {

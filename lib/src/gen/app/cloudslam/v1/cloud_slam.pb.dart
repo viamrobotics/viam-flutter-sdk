@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $3;
-import '../../../google/protobuf/struct.pb.dart' as $1;
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
+import '../../../common/v1/common.pb.dart' as $13;
+import '../../../google/protobuf/struct.pb.dart' as $42;
+import '../../../google/protobuf/timestamp.pb.dart' as $43;
 import 'cloud_slam.pbenum.dart';
 
 export 'cloud_slam.pbenum.dart';
@@ -30,7 +30,7 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     $core.String? robotId,
     CaptureInterval? captureInterval,
     $core.Iterable<SensorInfo>? sensors,
-    $1.Struct? slamConfig,
+    $42.Struct? slamConfig,
     $core.String? existingMapVersion,
     Module? module,
   }) {
@@ -83,7 +83,7 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'robotId')
     ..aOM<CaptureInterval>(7, _omitFieldNames ? '' : 'captureInterval', subBuilder: CaptureInterval.create)
     ..pc<SensorInfo>(8, _omitFieldNames ? '' : 'sensors', $pb.PbFieldType.PM, subBuilder: SensorInfo.create)
-    ..aOM<$1.Struct>(10, _omitFieldNames ? '' : 'slamConfig', subBuilder: $1.Struct.create)
+    ..aOM<$42.Struct>(10, _omitFieldNames ? '' : 'slamConfig', subBuilder: $42.Struct.create)
     ..aOS(11, _omitFieldNames ? '' : 'existingMapVersion')
     ..aOM<Module>(12, _omitFieldNames ? '' : 'module', subBuilder: Module.create)
     ..hasRequiredFields = false
@@ -181,15 +181,15 @@ class StartMappingSessionRequest extends $pb.GeneratedMessage {
   $core.List<SensorInfo> get sensors => $_getList(7);
 
   @$pb.TagNumber(10)
-  $1.Struct get slamConfig => $_getN(8);
+  $42.Struct get slamConfig => $_getN(8);
   @$pb.TagNumber(10)
-  set slamConfig($1.Struct v) { setField(10, v); }
+  set slamConfig($42.Struct v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasSlamConfig() => $_has(8);
   @$pb.TagNumber(10)
   void clearSlamConfig() => clearField(10);
   @$pb.TagNumber(10)
-  $1.Struct ensureSlamConfig() => $_ensure(8);
+  $42.Struct ensureSlamConfig() => $_ensure(8);
 
   @$pb.TagNumber(11)
   $core.String get existingMapVersion => $_getSZ(9);
@@ -371,8 +371,8 @@ class SensorInfo extends $pb.GeneratedMessage {
 
 class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval({
-    $2.Timestamp? startTime,
-    $2.Timestamp? endTime,
+    $43.Timestamp? startTime,
+    $43.Timestamp? endTime,
   }) {
     final $result = create();
     if (startTime != null) {
@@ -388,8 +388,8 @@ class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureInterval', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
-    ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(2, _omitFieldNames ? '' : 'endTime', subBuilder: $2.Timestamp.create)
+    ..aOM<$43.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(2, _omitFieldNames ? '' : 'endTime', subBuilder: $43.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -415,27 +415,27 @@ class CaptureInterval extends $pb.GeneratedMessage {
   static CaptureInterval? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Timestamp get startTime => $_getN(0);
+  $43.Timestamp get startTime => $_getN(0);
   @$pb.TagNumber(1)
-  set startTime($2.Timestamp v) { setField(1, v); }
+  set startTime($43.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearStartTime() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Timestamp ensureStartTime() => $_ensure(0);
+  $43.Timestamp ensureStartTime() => $_ensure(0);
 
   /// if no end_time specified cloud slam will be run using live sensors
   @$pb.TagNumber(2)
-  $2.Timestamp get endTime => $_getN(1);
+  $43.Timestamp get endTime => $_getN(1);
   @$pb.TagNumber(2)
-  set endTime($2.Timestamp v) { setField(2, v); }
+  set endTime($43.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearEndTime() => clearField(2);
   @$pb.TagNumber(2)
-  $2.Timestamp ensureEndTime() => $_ensure(1);
+  $43.Timestamp ensureEndTime() => $_ensure(1);
 }
 
 class StartMappingSessionResponse extends $pb.GeneratedMessage {
@@ -642,7 +642,7 @@ class GetMappingSessionPointCloudRequest extends $pb.GeneratedMessage {
 class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
   factory GetMappingSessionPointCloudResponse({
     $core.String? mapUrl,
-    $3.Pose? pose,
+    $13.Pose? pose,
   }) {
     final $result = create();
     if (mapUrl != null) {
@@ -659,7 +659,7 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMappingSessionPointCloudResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mapUrl')
-    ..aOM<$3.Pose>(2, _omitFieldNames ? '' : 'pose', subBuilder: $3.Pose.create)
+    ..aOM<$13.Pose>(2, _omitFieldNames ? '' : 'pose', subBuilder: $13.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -696,15 +696,15 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
 
   /// Current position within the SLAM Map
   @$pb.TagNumber(2)
-  $3.Pose get pose => $_getN(1);
+  $13.Pose get pose => $_getN(1);
   @$pb.TagNumber(2)
-  set pose($3.Pose v) { setField(2, v); }
+  set pose($13.Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPose() => $_has(1);
   @$pb.TagNumber(2)
   void clearPose() => clearField(2);
   @$pb.TagNumber(2)
-  $3.Pose ensurePose() => $_ensure(1);
+  $13.Pose ensurePose() => $_ensure(1);
 }
 
 class ListMappingSessionsRequest extends $pb.GeneratedMessage {
@@ -1036,10 +1036,10 @@ class MappingMetadata extends $pb.GeneratedMessage {
     $core.String? orgId,
     $core.String? locationId,
     $core.String? robotId,
-    $2.Timestamp? timeStartSubmitted,
-    $2.Timestamp? timeCloudRunJobStarted,
-    $2.Timestamp? timeEndSubmitted,
-    $2.Timestamp? timeCloudRunJobEnded,
+    $43.Timestamp? timeStartSubmitted,
+    $43.Timestamp? timeCloudRunJobStarted,
+    $43.Timestamp? timeEndSubmitted,
+    $43.Timestamp? timeCloudRunJobEnded,
     EndStatus? endStatus,
     $core.String? cloudRunJobId,
     $core.String? viamServerVersion,
@@ -1101,10 +1101,10 @@ class MappingMetadata extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'orgId')
     ..aOS(2, _omitFieldNames ? '' : 'locationId')
     ..aOS(3, _omitFieldNames ? '' : 'robotId')
-    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'timeStartSubmitted', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'timeCloudRunJobStarted', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(6, _omitFieldNames ? '' : 'timeEndSubmitted', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(7, _omitFieldNames ? '' : 'timeCloudRunJobEnded', subBuilder: $2.Timestamp.create)
+    ..aOM<$43.Timestamp>(4, _omitFieldNames ? '' : 'timeStartSubmitted', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(5, _omitFieldNames ? '' : 'timeCloudRunJobStarted', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(6, _omitFieldNames ? '' : 'timeEndSubmitted', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(7, _omitFieldNames ? '' : 'timeCloudRunJobEnded', subBuilder: $43.Timestamp.create)
     ..e<EndStatus>(8, _omitFieldNames ? '' : 'endStatus', $pb.PbFieldType.OE, defaultOrMaker: EndStatus.END_STATUS_UNSPECIFIED, valueOf: EndStatus.valueOf, enumValues: EndStatus.values)
     ..aOS(9, _omitFieldNames ? '' : 'cloudRunJobId')
     ..aOS(10, _omitFieldNames ? '' : 'viamServerVersion')
@@ -1164,48 +1164,48 @@ class MappingMetadata extends $pb.GeneratedMessage {
   void clearRobotId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $2.Timestamp get timeStartSubmitted => $_getN(3);
+  $43.Timestamp get timeStartSubmitted => $_getN(3);
   @$pb.TagNumber(4)
-  set timeStartSubmitted($2.Timestamp v) { setField(4, v); }
+  set timeStartSubmitted($43.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeStartSubmitted() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeStartSubmitted() => clearField(4);
   @$pb.TagNumber(4)
-  $2.Timestamp ensureTimeStartSubmitted() => $_ensure(3);
+  $43.Timestamp ensureTimeStartSubmitted() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $2.Timestamp get timeCloudRunJobStarted => $_getN(4);
+  $43.Timestamp get timeCloudRunJobStarted => $_getN(4);
   @$pb.TagNumber(5)
-  set timeCloudRunJobStarted($2.Timestamp v) { setField(5, v); }
+  set timeCloudRunJobStarted($43.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimeCloudRunJobStarted() => $_has(4);
   @$pb.TagNumber(5)
   void clearTimeCloudRunJobStarted() => clearField(5);
   @$pb.TagNumber(5)
-  $2.Timestamp ensureTimeCloudRunJobStarted() => $_ensure(4);
+  $43.Timestamp ensureTimeCloudRunJobStarted() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $2.Timestamp get timeEndSubmitted => $_getN(5);
+  $43.Timestamp get timeEndSubmitted => $_getN(5);
   @$pb.TagNumber(6)
-  set timeEndSubmitted($2.Timestamp v) { setField(6, v); }
+  set timeEndSubmitted($43.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasTimeEndSubmitted() => $_has(5);
   @$pb.TagNumber(6)
   void clearTimeEndSubmitted() => clearField(6);
   @$pb.TagNumber(6)
-  $2.Timestamp ensureTimeEndSubmitted() => $_ensure(5);
+  $43.Timestamp ensureTimeEndSubmitted() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $2.Timestamp get timeCloudRunJobEnded => $_getN(6);
+  $43.Timestamp get timeCloudRunJobEnded => $_getN(6);
   @$pb.TagNumber(7)
-  set timeCloudRunJobEnded($2.Timestamp v) { setField(7, v); }
+  set timeCloudRunJobEnded($43.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasTimeCloudRunJobEnded() => $_has(6);
   @$pb.TagNumber(7)
   void clearTimeCloudRunJobEnded() => clearField(7);
   @$pb.TagNumber(7)
-  $2.Timestamp ensureTimeCloudRunJobEnded() => $_ensure(6);
+  $43.Timestamp ensureTimeCloudRunJobEnded() => $_ensure(6);
 
   @$pb.TagNumber(8)
   EndStatus get endStatus => $_getN(7);

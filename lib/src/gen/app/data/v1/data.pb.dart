@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $1;
-import '../../../google/protobuf/struct.pb.dart' as $3;
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
+import '../../../google/protobuf/any.pb.dart' as $44;
+import '../../../google/protobuf/struct.pb.dart' as $42;
+import '../../../google/protobuf/timestamp.pb.dart' as $43;
 import 'data.pbenum.dart';
 
 export 'data.pbenum.dart';
@@ -411,7 +411,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
     $core.String? componentType,
     $core.String? componentName,
     $core.String? methodName,
-    $core.Map<$core.String, $1.Any>? methodParameters,
+    $core.Map<$core.String, $44.Any>? methodParameters,
     $core.Iterable<$core.String>? tags,
     $core.String? mimeType,
   }) {
@@ -468,7 +468,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'componentType')
     ..aOS(9, _omitFieldNames ? '' : 'componentName')
     ..aOS(10, _omitFieldNames ? '' : 'methodName')
-    ..m<$core.String, $1.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $1.Any.create, valueDefaultOrMaker: $1.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
+    ..m<$core.String, $44.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $44.Any.create, valueDefaultOrMaker: $44.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
     ..pPS(12, _omitFieldNames ? '' : 'tags')
     ..aOS(13, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
@@ -577,7 +577,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   void clearMethodName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.Map<$core.String, $1.Any> get methodParameters => $_getMap(9);
+  $core.Map<$core.String, $44.Any> get methodParameters => $_getMap(9);
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get tags => $_getList(10);
@@ -595,8 +595,8 @@ class CaptureMetadata extends $pb.GeneratedMessage {
 /// CaptureInterval describes the start and end time of the capture in this file.
 class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval({
-    $2.Timestamp? start,
-    $2.Timestamp? end,
+    $43.Timestamp? start,
+    $43.Timestamp? end,
   }) {
     final $result = create();
     if (start != null) {
@@ -612,8 +612,8 @@ class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureInterval', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $2.Timestamp.create)
+    ..aOM<$43.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $43.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -639,26 +639,26 @@ class CaptureInterval extends $pb.GeneratedMessage {
   static CaptureInterval? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Timestamp get start => $_getN(0);
+  $43.Timestamp get start => $_getN(0);
   @$pb.TagNumber(1)
-  set start($2.Timestamp v) { setField(1, v); }
+  set start($43.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStart() => $_has(0);
   @$pb.TagNumber(1)
   void clearStart() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Timestamp ensureStart() => $_ensure(0);
+  $43.Timestamp ensureStart() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $2.Timestamp get end => $_getN(1);
+  $43.Timestamp get end => $_getN(1);
   @$pb.TagNumber(2)
-  set end($2.Timestamp v) { setField(2, v); }
+  set end($43.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEnd() => $_has(1);
   @$pb.TagNumber(2)
   void clearEnd() => clearField(2);
   @$pb.TagNumber(2)
-  $2.Timestamp ensureEnd() => $_ensure(1);
+  $43.Timestamp ensureEnd() => $_ensure(1);
 }
 
 /// TabularDataByFilterRequest requests tabular data based on filter values.
@@ -840,10 +840,10 @@ class TabularDataByFilterResponse extends $pb.GeneratedMessage {
 /// TabularData contains data and metadata associated with tabular data.
 class TabularData extends $pb.GeneratedMessage {
   factory TabularData({
-    $3.Struct? data,
+    $42.Struct? data,
     $core.int? metadataIndex,
-    $2.Timestamp? timeRequested,
-    $2.Timestamp? timeReceived,
+    $43.Timestamp? timeRequested,
+    $43.Timestamp? timeReceived,
   }) {
     final $result = create();
     if (data != null) {
@@ -865,10 +865,10 @@ class TabularData extends $pb.GeneratedMessage {
   factory TabularData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularData', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$3.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $3.Struct.create)
+    ..aOM<$42.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $42.Struct.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'metadataIndex', $pb.PbFieldType.OU3)
-    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $2.Timestamp.create)
+    ..aOM<$43.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $43.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -894,15 +894,15 @@ class TabularData extends $pb.GeneratedMessage {
   static TabularData? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $3.Struct get data => $_getN(0);
+  $42.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($3.Struct v) { setField(1, v); }
+  set data($42.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $3.Struct ensureData() => $_ensure(0);
+  $42.Struct ensureData() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.int get metadataIndex => $_getIZ(1);
@@ -914,26 +914,26 @@ class TabularData extends $pb.GeneratedMessage {
   void clearMetadataIndex() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get timeRequested => $_getN(2);
+  $43.Timestamp get timeRequested => $_getN(2);
   @$pb.TagNumber(3)
-  set timeRequested($2.Timestamp v) { setField(3, v); }
+  set timeRequested($43.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeRequested() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeRequested() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureTimeRequested() => $_ensure(2);
+  $43.Timestamp ensureTimeRequested() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $2.Timestamp get timeReceived => $_getN(3);
+  $43.Timestamp get timeReceived => $_getN(3);
   @$pb.TagNumber(4)
-  set timeReceived($2.Timestamp v) { setField(4, v); }
+  set timeReceived($43.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeReceived() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeReceived() => clearField(4);
   @$pb.TagNumber(4)
-  $2.Timestamp ensureTimeReceived() => $_ensure(3);
+  $43.Timestamp ensureTimeReceived() => $_ensure(3);
 }
 
 /// TabularDataBySQLRequest requests tabular data using a SQL query.
@@ -1007,7 +1007,7 @@ class TabularDataBySQLRequest extends $pb.GeneratedMessage {
 /// TabularDataBySQLResponse provides unified tabular data and metadata, queried with SQL.
 class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   factory TabularDataBySQLResponse({
-    $core.Iterable<$3.Struct>? data,
+    $core.Iterable<$42.Struct>? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -1020,7 +1020,7 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   factory TabularDataBySQLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataBySQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<$3.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $3.Struct.create)
+    ..pc<$42.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $42.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1046,7 +1046,7 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   static TabularDataBySQLResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$3.Struct> get data => $_getList(0);
+  $core.List<$42.Struct> get data => $_getList(0);
 }
 
 /// TabularDataByMQLRequest requests tabular data using an MQL query.
@@ -1114,7 +1114,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
 class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   factory TabularDataByMQLResponse({
-    $core.Iterable<$3.Struct>? data,
+    $core.Iterable<$42.Struct>? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -1127,7 +1127,7 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   factory TabularDataByMQLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<$3.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $3.Struct.create)
+    ..pc<$42.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $42.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1153,7 +1153,7 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   static TabularDataByMQLResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$3.Struct> get data => $_getList(0);
+  $core.List<$42.Struct> get data => $_getList(0);
 }
 
 /// BinaryData contains data and metadata associated with binary data.
@@ -1774,8 +1774,8 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   factory BinaryMetadata({
     $core.String? id,
     CaptureMetadata? captureMetadata,
-    $2.Timestamp? timeRequested,
-    $2.Timestamp? timeReceived,
+    $43.Timestamp? timeRequested,
+    $43.Timestamp? timeReceived,
     $core.String? fileName,
     $core.String? fileExt,
     $core.String? uri,
@@ -1819,8 +1819,8 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<CaptureMetadata>(2, _omitFieldNames ? '' : 'captureMetadata', subBuilder: CaptureMetadata.create)
-    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $2.Timestamp.create)
+    ..aOM<$43.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $43.Timestamp.create)
+    ..aOM<$43.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $43.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'fileName')
     ..aOS(6, _omitFieldNames ? '' : 'fileExt')
     ..aOS(7, _omitFieldNames ? '' : 'uri')
@@ -1871,26 +1871,26 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   CaptureMetadata ensureCaptureMetadata() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get timeRequested => $_getN(2);
+  $43.Timestamp get timeRequested => $_getN(2);
   @$pb.TagNumber(3)
-  set timeRequested($2.Timestamp v) { setField(3, v); }
+  set timeRequested($43.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeRequested() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeRequested() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureTimeRequested() => $_ensure(2);
+  $43.Timestamp ensureTimeRequested() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $2.Timestamp get timeReceived => $_getN(3);
+  $43.Timestamp get timeReceived => $_getN(3);
   @$pb.TagNumber(4)
-  set timeReceived($2.Timestamp v) { setField(4, v); }
+  set timeReceived($43.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeReceived() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeReceived() => clearField(4);
   @$pb.TagNumber(4)
-  $2.Timestamp ensureTimeReceived() => $_ensure(3);
+  $43.Timestamp ensureTimeReceived() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get fileName => $_getSZ(4);
@@ -2936,7 +2936,7 @@ class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
   void clearBboxId() => clearField(1);
 }
 
-/// RemoveBoundingBoxFromImageByIDRequest removes the bounding box with specified bbox ID for the file represented by the binary id.
+/// RemoveBoundingBoxFromImageByIDRequest removes the bounding box with specified bounding box ID for the file represented by the binary ID.
 class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   factory RemoveBoundingBoxFromImageByIDRequest({
     $core.String? bboxId,
@@ -3033,6 +3033,175 @@ class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static RemoveBoundingBoxFromImageByIDResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBoundingBoxFromImageByIDResponse>(create);
   static RemoveBoundingBoxFromImageByIDResponse? _defaultInstance;
+}
+
+/// UpdateBoundingBoxRequest updates the bounding box with specified bounding box ID for the file represented by the binary ID.
+class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
+  factory UpdateBoundingBoxRequest({
+    BinaryID? binaryId,
+    $core.String? bboxId,
+    $core.String? label,
+    $core.double? xMinNormalized,
+    $core.double? yMinNormalized,
+    $core.double? xMaxNormalized,
+    $core.double? yMaxNormalized,
+  }) {
+    final $result = create();
+    if (binaryId != null) {
+      $result.binaryId = binaryId;
+    }
+    if (bboxId != null) {
+      $result.bboxId = bboxId;
+    }
+    if (label != null) {
+      $result.label = label;
+    }
+    if (xMinNormalized != null) {
+      $result.xMinNormalized = xMinNormalized;
+    }
+    if (yMinNormalized != null) {
+      $result.yMinNormalized = yMinNormalized;
+    }
+    if (xMaxNormalized != null) {
+      $result.xMaxNormalized = xMaxNormalized;
+    }
+    if (yMaxNormalized != null) {
+      $result.yMaxNormalized = yMaxNormalized;
+    }
+    return $result;
+  }
+  UpdateBoundingBoxRequest._() : super();
+  factory UpdateBoundingBoxRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateBoundingBoxRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateBoundingBoxRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<BinaryID>(1, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'bboxId')
+    ..aOS(3, _omitFieldNames ? '' : 'label')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateBoundingBoxRequest clone() => UpdateBoundingBoxRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateBoundingBoxRequest copyWith(void Function(UpdateBoundingBoxRequest) updates) => super.copyWith((message) => updates(message as UpdateBoundingBoxRequest)) as UpdateBoundingBoxRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateBoundingBoxRequest create() => UpdateBoundingBoxRequest._();
+  UpdateBoundingBoxRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateBoundingBoxRequest> createRepeated() => $pb.PbList<UpdateBoundingBoxRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateBoundingBoxRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateBoundingBoxRequest>(create);
+  static UpdateBoundingBoxRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  BinaryID get binaryId => $_getN(0);
+  @$pb.TagNumber(1)
+  set binaryId(BinaryID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBinaryId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBinaryId() => clearField(1);
+  @$pb.TagNumber(1)
+  BinaryID ensureBinaryId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get bboxId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set bboxId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBboxId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBboxId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get label => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set label($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLabel() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get xMinNormalized => $_getN(3);
+  @$pb.TagNumber(4)
+  set xMinNormalized($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasXMinNormalized() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearXMinNormalized() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get yMinNormalized => $_getN(4);
+  @$pb.TagNumber(5)
+  set yMinNormalized($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasYMinNormalized() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearYMinNormalized() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get xMaxNormalized => $_getN(5);
+  @$pb.TagNumber(6)
+  set xMaxNormalized($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasXMaxNormalized() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearXMaxNormalized() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get yMaxNormalized => $_getN(6);
+  @$pb.TagNumber(7)
+  set yMaxNormalized($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasYMaxNormalized() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearYMaxNormalized() => clearField(7);
+}
+
+class UpdateBoundingBoxResponse extends $pb.GeneratedMessage {
+  factory UpdateBoundingBoxResponse() => create();
+  UpdateBoundingBoxResponse._() : super();
+  factory UpdateBoundingBoxResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateBoundingBoxResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateBoundingBoxResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateBoundingBoxResponse clone() => UpdateBoundingBoxResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateBoundingBoxResponse copyWith(void Function(UpdateBoundingBoxResponse) updates) => super.copyWith((message) => updates(message as UpdateBoundingBoxResponse)) as UpdateBoundingBoxResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateBoundingBoxResponse create() => UpdateBoundingBoxResponse._();
+  UpdateBoundingBoxResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateBoundingBoxResponse> createRepeated() => $pb.PbList<UpdateBoundingBoxResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateBoundingBoxResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateBoundingBoxResponse>(create);
+  static UpdateBoundingBoxResponse? _defaultInstance;
 }
 
 /// BoundingBoxLabelsByFilterRequest requests all the labels of the bounding boxes from files from a given filter.

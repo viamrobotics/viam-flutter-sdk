@@ -15,28 +15,28 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'signaling.pb.dart' as $0;
+import 'signaling.pb.dart' as $4;
 
 export 'signaling.pb.dart';
 
 @$pb.GrpcServiceName('proto.rpc.webrtc.v1.SignalingService')
 class SignalingServiceClient extends $grpc.Client {
-  static final _$call = $grpc.ClientMethod<$0.CallRequest, $0.CallResponse>(
+  static final _$call = $grpc.ClientMethod<$4.CallRequest, $4.CallResponse>(
       '/proto.rpc.webrtc.v1.SignalingService/Call',
-      ($0.CallRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.CallResponse.fromBuffer(value));
-  static final _$callUpdate = $grpc.ClientMethod<$0.CallUpdateRequest, $0.CallUpdateResponse>(
+      ($4.CallRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CallResponse.fromBuffer(value));
+  static final _$callUpdate = $grpc.ClientMethod<$4.CallUpdateRequest, $4.CallUpdateResponse>(
       '/proto.rpc.webrtc.v1.SignalingService/CallUpdate',
-      ($0.CallUpdateRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.CallUpdateResponse.fromBuffer(value));
-  static final _$answer = $grpc.ClientMethod<$0.AnswerResponse, $0.AnswerRequest>(
+      ($4.CallUpdateRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CallUpdateResponse.fromBuffer(value));
+  static final _$answer = $grpc.ClientMethod<$4.AnswerResponse, $4.AnswerRequest>(
       '/proto.rpc.webrtc.v1.SignalingService/Answer',
-      ($0.AnswerResponse value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AnswerRequest.fromBuffer(value));
-  static final _$optionalWebRTCConfig = $grpc.ClientMethod<$0.OptionalWebRTCConfigRequest, $0.OptionalWebRTCConfigResponse>(
+      ($4.AnswerResponse value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.AnswerRequest.fromBuffer(value));
+  static final _$optionalWebRTCConfig = $grpc.ClientMethod<$4.OptionalWebRTCConfigRequest, $4.OptionalWebRTCConfigResponse>(
       '/proto.rpc.webrtc.v1.SignalingService/OptionalWebRTCConfig',
-      ($0.OptionalWebRTCConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.OptionalWebRTCConfigResponse.fromBuffer(value));
+      ($4.OptionalWebRTCConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.OptionalWebRTCConfigResponse.fromBuffer(value));
 
   SignalingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -44,19 +44,19 @@ class SignalingServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseStream<$0.CallResponse> call($0.CallRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$4.CallResponse> call($4.CallRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$call, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$0.CallUpdateResponse> callUpdate($0.CallUpdateRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$4.CallUpdateResponse> callUpdate($4.CallUpdateRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$callUpdate, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.AnswerRequest> answer($async.Stream<$0.AnswerResponse> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$4.AnswerRequest> answer($async.Stream<$4.AnswerResponse> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$answer, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.OptionalWebRTCConfigResponse> optionalWebRTCConfig($0.OptionalWebRTCConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$4.OptionalWebRTCConfigResponse> optionalWebRTCConfig($4.OptionalWebRTCConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$optionalWebRTCConfig, request, options: options);
   }
 }
@@ -66,50 +66,50 @@ abstract class SignalingServiceBase extends $grpc.Service {
   $core.String get $name => 'proto.rpc.webrtc.v1.SignalingService';
 
   SignalingServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CallRequest, $0.CallResponse>(
+    $addMethod($grpc.ServiceMethod<$4.CallRequest, $4.CallResponse>(
         'Call',
         call_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $0.CallRequest.fromBuffer(value),
-        ($0.CallResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.CallUpdateRequest, $0.CallUpdateResponse>(
+        ($core.List<$core.int> value) => $4.CallRequest.fromBuffer(value),
+        ($4.CallResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CallUpdateRequest, $4.CallUpdateResponse>(
         'CallUpdate',
         callUpdate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.CallUpdateRequest.fromBuffer(value),
-        ($0.CallUpdateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.AnswerResponse, $0.AnswerRequest>(
+        ($core.List<$core.int> value) => $4.CallUpdateRequest.fromBuffer(value),
+        ($4.CallUpdateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.AnswerResponse, $4.AnswerRequest>(
         'Answer',
         answer,
         true,
         true,
-        ($core.List<$core.int> value) => $0.AnswerResponse.fromBuffer(value),
-        ($0.AnswerRequest value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.OptionalWebRTCConfigRequest, $0.OptionalWebRTCConfigResponse>(
+        ($core.List<$core.int> value) => $4.AnswerResponse.fromBuffer(value),
+        ($4.AnswerRequest value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.OptionalWebRTCConfigRequest, $4.OptionalWebRTCConfigResponse>(
         'OptionalWebRTCConfig',
         optionalWebRTCConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.OptionalWebRTCConfigRequest.fromBuffer(value),
-        ($0.OptionalWebRTCConfigResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $4.OptionalWebRTCConfigRequest.fromBuffer(value),
+        ($4.OptionalWebRTCConfigResponse value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$0.CallResponse> call_Pre($grpc.ServiceCall call, $async.Future<$0.CallRequest> request) async* {
+  $async.Stream<$4.CallResponse> call_Pre($grpc.ServiceCall call, $async.Future<$4.CallRequest> request) async* {
     yield* this.call(call, await request);
   }
 
-  $async.Future<$0.CallUpdateResponse> callUpdate_Pre($grpc.ServiceCall call, $async.Future<$0.CallUpdateRequest> request) async {
+  $async.Future<$4.CallUpdateResponse> callUpdate_Pre($grpc.ServiceCall call, $async.Future<$4.CallUpdateRequest> request) async {
     return callUpdate(call, await request);
   }
 
-  $async.Future<$0.OptionalWebRTCConfigResponse> optionalWebRTCConfig_Pre($grpc.ServiceCall call, $async.Future<$0.OptionalWebRTCConfigRequest> request) async {
+  $async.Future<$4.OptionalWebRTCConfigResponse> optionalWebRTCConfig_Pre($grpc.ServiceCall call, $async.Future<$4.OptionalWebRTCConfigRequest> request) async {
     return optionalWebRTCConfig(call, await request);
   }
 
-  $async.Stream<$0.CallResponse> call($grpc.ServiceCall call, $0.CallRequest request);
-  $async.Future<$0.CallUpdateResponse> callUpdate($grpc.ServiceCall call, $0.CallUpdateRequest request);
-  $async.Stream<$0.AnswerRequest> answer($grpc.ServiceCall call, $async.Stream<$0.AnswerResponse> request);
-  $async.Future<$0.OptionalWebRTCConfigResponse> optionalWebRTCConfig($grpc.ServiceCall call, $0.OptionalWebRTCConfigRequest request);
+  $async.Stream<$4.CallResponse> call($grpc.ServiceCall call, $4.CallRequest request);
+  $async.Future<$4.CallUpdateResponse> callUpdate($grpc.ServiceCall call, $4.CallUpdateRequest request);
+  $async.Stream<$4.AnswerRequest> answer($grpc.ServiceCall call, $async.Stream<$4.AnswerResponse> request);
+  $async.Future<$4.OptionalWebRTCConfigResponse> optionalWebRTCConfig($grpc.ServiceCall call, $4.OptionalWebRTCConfigRequest request);
 }

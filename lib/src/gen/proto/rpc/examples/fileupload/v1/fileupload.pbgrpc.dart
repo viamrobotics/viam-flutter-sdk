@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'fileupload.pb.dart' as $0;
+import 'fileupload.pb.dart' as $2;
 
 export 'fileupload.pb.dart';
 
 @$pb.GrpcServiceName('proto.rpc.examples.fileupload.v1.FileUploadService')
 class FileUploadServiceClient extends $grpc.Client {
-  static final _$uploadFile = $grpc.ClientMethod<$0.UploadFileRequest, $0.UploadFileResponse>(
+  static final _$uploadFile = $grpc.ClientMethod<$2.UploadFileRequest, $2.UploadFileResponse>(
       '/proto.rpc.examples.fileupload.v1.FileUploadService/UploadFile',
-      ($0.UploadFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.UploadFileResponse.fromBuffer(value));
+      ($2.UploadFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.UploadFileResponse.fromBuffer(value));
 
   FileUploadServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class FileUploadServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseStream<$0.UploadFileResponse> uploadFile($async.Stream<$0.UploadFileRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$2.UploadFileResponse> uploadFile($async.Stream<$2.UploadFileRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$uploadFile, request, options: options);
   }
 }
@@ -42,14 +42,14 @@ abstract class FileUploadServiceBase extends $grpc.Service {
   $core.String get $name => 'proto.rpc.examples.fileupload.v1.FileUploadService';
 
   FileUploadServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.UploadFileRequest, $0.UploadFileResponse>(
+    $addMethod($grpc.ServiceMethod<$2.UploadFileRequest, $2.UploadFileResponse>(
         'UploadFile',
         uploadFile,
         true,
         true,
-        ($core.List<$core.int> value) => $0.UploadFileRequest.fromBuffer(value),
-        ($0.UploadFileResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $2.UploadFileRequest.fromBuffer(value),
+        ($2.UploadFileResponse value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$0.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$0.UploadFileRequest> request);
+  $async.Stream<$2.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$2.UploadFileRequest> request);
 }

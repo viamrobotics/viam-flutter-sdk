@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../google/protobuf/duration.pb.dart' as $1;
-import '../../../../google/rpc/status.pb.dart' as $2;
+import '../../../../google/protobuf/duration.pb.dart' as $5;
+import '../../../../google/rpc/status.pb.dart' as $6;
 
 /// A PacketMessage is used to packetize large messages (> 64KiB) to be able to safely
 /// transmit over WebRTC data channels.
@@ -259,7 +259,7 @@ class RequestHeaders extends $pb.GeneratedMessage {
   factory RequestHeaders({
     $core.String? method,
     Metadata? metadata,
-    $1.Duration? timeout,
+    $5.Duration? timeout,
   }) {
     final $result = create();
     if (method != null) {
@@ -280,7 +280,7 @@ class RequestHeaders extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestHeaders', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'method')
     ..aOM<Metadata>(2, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
-    ..aOM<$1.Duration>(3, _omitFieldNames ? '' : 'timeout', subBuilder: $1.Duration.create)
+    ..aOM<$5.Duration>(3, _omitFieldNames ? '' : 'timeout', subBuilder: $5.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -326,15 +326,15 @@ class RequestHeaders extends $pb.GeneratedMessage {
   Metadata ensureMetadata() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $1.Duration get timeout => $_getN(2);
+  $5.Duration get timeout => $_getN(2);
   @$pb.TagNumber(3)
-  set timeout($1.Duration v) { setField(3, v); }
+  set timeout($5.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeout() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeout() => clearField(3);
   @$pb.TagNumber(3)
-  $1.Duration ensureTimeout() => $_ensure(2);
+  $5.Duration ensureTimeout() => $_ensure(2);
 }
 
 /// A RequestMessage contains individual gRPC messages and a potential
@@ -650,7 +650,7 @@ class ResponseMessage extends $pb.GeneratedMessage {
 /// ResponseTrailers contain the status of a response and any custom metadata.
 class ResponseTrailers extends $pb.GeneratedMessage {
   factory ResponseTrailers({
-    $2.Status? status,
+    $6.Status? status,
     Metadata? metadata,
   }) {
     final $result = create();
@@ -667,7 +667,7 @@ class ResponseTrailers extends $pb.GeneratedMessage {
   factory ResponseTrailers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseTrailers', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOM<$2.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $2.Status.create)
+    ..aOM<$6.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $6.Status.create)
     ..aOM<Metadata>(2, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
     ..hasRequiredFields = false
   ;
@@ -694,15 +694,15 @@ class ResponseTrailers extends $pb.GeneratedMessage {
   static ResponseTrailers? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Status get status => $_getN(0);
+  $6.Status get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status($2.Status v) { setField(1, v); }
+  set status($6.Status v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Status ensureStatus() => $_ensure(0);
+  $6.Status ensureStatus() => $_ensure(0);
 
   @$pb.TagNumber(2)
   Metadata get metadata => $_getN(1);

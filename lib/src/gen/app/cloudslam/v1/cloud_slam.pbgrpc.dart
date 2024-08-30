@@ -15,36 +15,36 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'cloud_slam.pb.dart' as $0;
+import 'cloud_slam.pb.dart' as $2;
 
 export 'cloud_slam.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.cloudslam.v1.CloudSLAMService')
 class CloudSLAMServiceClient extends $grpc.Client {
-  static final _$startMappingSession = $grpc.ClientMethod<$0.StartMappingSessionRequest, $0.StartMappingSessionResponse>(
+  static final _$startMappingSession = $grpc.ClientMethod<$2.StartMappingSessionRequest, $2.StartMappingSessionResponse>(
       '/viam.app.cloudslam.v1.CloudSLAMService/StartMappingSession',
-      ($0.StartMappingSessionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.StartMappingSessionResponse.fromBuffer(value));
-  static final _$getActiveMappingSessionsForRobot = $grpc.ClientMethod<$0.GetActiveMappingSessionsForRobotRequest, $0.GetActiveMappingSessionsForRobotResponse>(
+      ($2.StartMappingSessionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.StartMappingSessionResponse.fromBuffer(value));
+  static final _$getActiveMappingSessionsForRobot = $grpc.ClientMethod<$2.GetActiveMappingSessionsForRobotRequest, $2.GetActiveMappingSessionsForRobotResponse>(
       '/viam.app.cloudslam.v1.CloudSLAMService/GetActiveMappingSessionsForRobot',
-      ($0.GetActiveMappingSessionsForRobotRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetActiveMappingSessionsForRobotResponse.fromBuffer(value));
-  static final _$getMappingSessionPointCloud = $grpc.ClientMethod<$0.GetMappingSessionPointCloudRequest, $0.GetMappingSessionPointCloudResponse>(
+      ($2.GetActiveMappingSessionsForRobotRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetActiveMappingSessionsForRobotResponse.fromBuffer(value));
+  static final _$getMappingSessionPointCloud = $grpc.ClientMethod<$2.GetMappingSessionPointCloudRequest, $2.GetMappingSessionPointCloudResponse>(
       '/viam.app.cloudslam.v1.CloudSLAMService/GetMappingSessionPointCloud',
-      ($0.GetMappingSessionPointCloudRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetMappingSessionPointCloudResponse.fromBuffer(value));
-  static final _$listMappingSessions = $grpc.ClientMethod<$0.ListMappingSessionsRequest, $0.ListMappingSessionsResponse>(
+      ($2.GetMappingSessionPointCloudRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetMappingSessionPointCloudResponse.fromBuffer(value));
+  static final _$listMappingSessions = $grpc.ClientMethod<$2.ListMappingSessionsRequest, $2.ListMappingSessionsResponse>(
       '/viam.app.cloudslam.v1.CloudSLAMService/ListMappingSessions',
-      ($0.ListMappingSessionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.ListMappingSessionsResponse.fromBuffer(value));
-  static final _$stopMappingSession = $grpc.ClientMethod<$0.StopMappingSessionRequest, $0.StopMappingSessionResponse>(
+      ($2.ListMappingSessionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.ListMappingSessionsResponse.fromBuffer(value));
+  static final _$stopMappingSession = $grpc.ClientMethod<$2.StopMappingSessionRequest, $2.StopMappingSessionResponse>(
       '/viam.app.cloudslam.v1.CloudSLAMService/StopMappingSession',
-      ($0.StopMappingSessionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.StopMappingSessionResponse.fromBuffer(value));
-  static final _$getMappingSessionMetadataByID = $grpc.ClientMethod<$0.GetMappingSessionMetadataByIDRequest, $0.GetMappingSessionMetadataByIDResponse>(
+      ($2.StopMappingSessionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.StopMappingSessionResponse.fromBuffer(value));
+  static final _$getMappingSessionMetadataByID = $grpc.ClientMethod<$2.GetMappingSessionMetadataByIDRequest, $2.GetMappingSessionMetadataByIDResponse>(
       '/viam.app.cloudslam.v1.CloudSLAMService/GetMappingSessionMetadataByID',
-      ($0.GetMappingSessionMetadataByIDRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetMappingSessionMetadataByIDResponse.fromBuffer(value));
+      ($2.GetMappingSessionMetadataByIDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetMappingSessionMetadataByIDResponse.fromBuffer(value));
 
   CloudSLAMServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -52,27 +52,27 @@ class CloudSLAMServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.StartMappingSessionResponse> startMappingSession($0.StartMappingSessionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.StartMappingSessionResponse> startMappingSession($2.StartMappingSessionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$startMappingSession, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetActiveMappingSessionsForRobotResponse> getActiveMappingSessionsForRobot($0.GetActiveMappingSessionsForRobotRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.GetActiveMappingSessionsForRobotResponse> getActiveMappingSessionsForRobot($2.GetActiveMappingSessionsForRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getActiveMappingSessionsForRobot, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetMappingSessionPointCloudResponse> getMappingSessionPointCloud($0.GetMappingSessionPointCloudRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.GetMappingSessionPointCloudResponse> getMappingSessionPointCloud($2.GetMappingSessionPointCloudRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMappingSessionPointCloud, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ListMappingSessionsResponse> listMappingSessions($0.ListMappingSessionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.ListMappingSessionsResponse> listMappingSessions($2.ListMappingSessionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listMappingSessions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.StopMappingSessionResponse> stopMappingSession($0.StopMappingSessionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.StopMappingSessionResponse> stopMappingSession($2.StopMappingSessionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stopMappingSession, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetMappingSessionMetadataByIDResponse> getMappingSessionMetadataByID($0.GetMappingSessionMetadataByIDRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.GetMappingSessionMetadataByIDResponse> getMappingSessionMetadataByID($2.GetMappingSessionMetadataByIDRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMappingSessionMetadataByID, request, options: options);
   }
 }
@@ -82,78 +82,78 @@ abstract class CloudSLAMServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.cloudslam.v1.CloudSLAMService';
 
   CloudSLAMServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.StartMappingSessionRequest, $0.StartMappingSessionResponse>(
+    $addMethod($grpc.ServiceMethod<$2.StartMappingSessionRequest, $2.StartMappingSessionResponse>(
         'StartMappingSession',
         startMappingSession_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.StartMappingSessionRequest.fromBuffer(value),
-        ($0.StartMappingSessionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetActiveMappingSessionsForRobotRequest, $0.GetActiveMappingSessionsForRobotResponse>(
+        ($core.List<$core.int> value) => $2.StartMappingSessionRequest.fromBuffer(value),
+        ($2.StartMappingSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetActiveMappingSessionsForRobotRequest, $2.GetActiveMappingSessionsForRobotResponse>(
         'GetActiveMappingSessionsForRobot',
         getActiveMappingSessionsForRobot_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetActiveMappingSessionsForRobotRequest.fromBuffer(value),
-        ($0.GetActiveMappingSessionsForRobotResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetMappingSessionPointCloudRequest, $0.GetMappingSessionPointCloudResponse>(
+        ($core.List<$core.int> value) => $2.GetActiveMappingSessionsForRobotRequest.fromBuffer(value),
+        ($2.GetActiveMappingSessionsForRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetMappingSessionPointCloudRequest, $2.GetMappingSessionPointCloudResponse>(
         'GetMappingSessionPointCloud',
         getMappingSessionPointCloud_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetMappingSessionPointCloudRequest.fromBuffer(value),
-        ($0.GetMappingSessionPointCloudResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ListMappingSessionsRequest, $0.ListMappingSessionsResponse>(
+        ($core.List<$core.int> value) => $2.GetMappingSessionPointCloudRequest.fromBuffer(value),
+        ($2.GetMappingSessionPointCloudResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.ListMappingSessionsRequest, $2.ListMappingSessionsResponse>(
         'ListMappingSessions',
         listMappingSessions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ListMappingSessionsRequest.fromBuffer(value),
-        ($0.ListMappingSessionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StopMappingSessionRequest, $0.StopMappingSessionResponse>(
+        ($core.List<$core.int> value) => $2.ListMappingSessionsRequest.fromBuffer(value),
+        ($2.ListMappingSessionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.StopMappingSessionRequest, $2.StopMappingSessionResponse>(
         'StopMappingSession',
         stopMappingSession_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.StopMappingSessionRequest.fromBuffer(value),
-        ($0.StopMappingSessionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetMappingSessionMetadataByIDRequest, $0.GetMappingSessionMetadataByIDResponse>(
+        ($core.List<$core.int> value) => $2.StopMappingSessionRequest.fromBuffer(value),
+        ($2.StopMappingSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetMappingSessionMetadataByIDRequest, $2.GetMappingSessionMetadataByIDResponse>(
         'GetMappingSessionMetadataByID',
         getMappingSessionMetadataByID_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetMappingSessionMetadataByIDRequest.fromBuffer(value),
-        ($0.GetMappingSessionMetadataByIDResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $2.GetMappingSessionMetadataByIDRequest.fromBuffer(value),
+        ($2.GetMappingSessionMetadataByIDResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.StartMappingSessionResponse> startMappingSession_Pre($grpc.ServiceCall call, $async.Future<$0.StartMappingSessionRequest> request) async {
+  $async.Future<$2.StartMappingSessionResponse> startMappingSession_Pre($grpc.ServiceCall call, $async.Future<$2.StartMappingSessionRequest> request) async {
     return startMappingSession(call, await request);
   }
 
-  $async.Future<$0.GetActiveMappingSessionsForRobotResponse> getActiveMappingSessionsForRobot_Pre($grpc.ServiceCall call, $async.Future<$0.GetActiveMappingSessionsForRobotRequest> request) async {
+  $async.Future<$2.GetActiveMappingSessionsForRobotResponse> getActiveMappingSessionsForRobot_Pre($grpc.ServiceCall call, $async.Future<$2.GetActiveMappingSessionsForRobotRequest> request) async {
     return getActiveMappingSessionsForRobot(call, await request);
   }
 
-  $async.Future<$0.GetMappingSessionPointCloudResponse> getMappingSessionPointCloud_Pre($grpc.ServiceCall call, $async.Future<$0.GetMappingSessionPointCloudRequest> request) async {
+  $async.Future<$2.GetMappingSessionPointCloudResponse> getMappingSessionPointCloud_Pre($grpc.ServiceCall call, $async.Future<$2.GetMappingSessionPointCloudRequest> request) async {
     return getMappingSessionPointCloud(call, await request);
   }
 
-  $async.Future<$0.ListMappingSessionsResponse> listMappingSessions_Pre($grpc.ServiceCall call, $async.Future<$0.ListMappingSessionsRequest> request) async {
+  $async.Future<$2.ListMappingSessionsResponse> listMappingSessions_Pre($grpc.ServiceCall call, $async.Future<$2.ListMappingSessionsRequest> request) async {
     return listMappingSessions(call, await request);
   }
 
-  $async.Future<$0.StopMappingSessionResponse> stopMappingSession_Pre($grpc.ServiceCall call, $async.Future<$0.StopMappingSessionRequest> request) async {
+  $async.Future<$2.StopMappingSessionResponse> stopMappingSession_Pre($grpc.ServiceCall call, $async.Future<$2.StopMappingSessionRequest> request) async {
     return stopMappingSession(call, await request);
   }
 
-  $async.Future<$0.GetMappingSessionMetadataByIDResponse> getMappingSessionMetadataByID_Pre($grpc.ServiceCall call, $async.Future<$0.GetMappingSessionMetadataByIDRequest> request) async {
+  $async.Future<$2.GetMappingSessionMetadataByIDResponse> getMappingSessionMetadataByID_Pre($grpc.ServiceCall call, $async.Future<$2.GetMappingSessionMetadataByIDRequest> request) async {
     return getMappingSessionMetadataByID(call, await request);
   }
 
-  $async.Future<$0.StartMappingSessionResponse> startMappingSession($grpc.ServiceCall call, $0.StartMappingSessionRequest request);
-  $async.Future<$0.GetActiveMappingSessionsForRobotResponse> getActiveMappingSessionsForRobot($grpc.ServiceCall call, $0.GetActiveMappingSessionsForRobotRequest request);
-  $async.Future<$0.GetMappingSessionPointCloudResponse> getMappingSessionPointCloud($grpc.ServiceCall call, $0.GetMappingSessionPointCloudRequest request);
-  $async.Future<$0.ListMappingSessionsResponse> listMappingSessions($grpc.ServiceCall call, $0.ListMappingSessionsRequest request);
-  $async.Future<$0.StopMappingSessionResponse> stopMappingSession($grpc.ServiceCall call, $0.StopMappingSessionRequest request);
-  $async.Future<$0.GetMappingSessionMetadataByIDResponse> getMappingSessionMetadataByID($grpc.ServiceCall call, $0.GetMappingSessionMetadataByIDRequest request);
+  $async.Future<$2.StartMappingSessionResponse> startMappingSession($grpc.ServiceCall call, $2.StartMappingSessionRequest request);
+  $async.Future<$2.GetActiveMappingSessionsForRobotResponse> getActiveMappingSessionsForRobot($grpc.ServiceCall call, $2.GetActiveMappingSessionsForRobotRequest request);
+  $async.Future<$2.GetMappingSessionPointCloudResponse> getMappingSessionPointCloud($grpc.ServiceCall call, $2.GetMappingSessionPointCloudRequest request);
+  $async.Future<$2.ListMappingSessionsResponse> listMappingSessions($grpc.ServiceCall call, $2.ListMappingSessionsRequest request);
+  $async.Future<$2.StopMappingSessionResponse> stopMappingSession($grpc.ServiceCall call, $2.StopMappingSessionRequest request);
+  $async.Future<$2.GetMappingSessionMetadataByIDResponse> getMappingSessionMetadataByID($grpc.ServiceCall call, $2.GetMappingSessionMetadataByIDRequest request);
 }
