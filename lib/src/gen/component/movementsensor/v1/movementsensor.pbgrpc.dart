@@ -15,57 +15,57 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $1;
-import 'movementsensor.pb.dart' as $0;
+import '../../../common/v1/common.pb.dart' as $13;
+import 'movementsensor.pb.dart' as $24;
 
 export 'movementsensor.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.movementsensor.v1.MovementSensorService')
 class MovementSensorServiceClient extends $grpc.Client {
-  static final _$getLinearVelocity = $grpc.ClientMethod<$0.GetLinearVelocityRequest, $0.GetLinearVelocityResponse>(
+  static final _$getLinearVelocity = $grpc.ClientMethod<$24.GetLinearVelocityRequest, $24.GetLinearVelocityResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetLinearVelocity',
-      ($0.GetLinearVelocityRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetLinearVelocityResponse.fromBuffer(value));
-  static final _$getAngularVelocity = $grpc.ClientMethod<$0.GetAngularVelocityRequest, $0.GetAngularVelocityResponse>(
+      ($24.GetLinearVelocityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetLinearVelocityResponse.fromBuffer(value));
+  static final _$getAngularVelocity = $grpc.ClientMethod<$24.GetAngularVelocityRequest, $24.GetAngularVelocityResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetAngularVelocity',
-      ($0.GetAngularVelocityRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetAngularVelocityResponse.fromBuffer(value));
-  static final _$getCompassHeading = $grpc.ClientMethod<$0.GetCompassHeadingRequest, $0.GetCompassHeadingResponse>(
+      ($24.GetAngularVelocityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetAngularVelocityResponse.fromBuffer(value));
+  static final _$getCompassHeading = $grpc.ClientMethod<$24.GetCompassHeadingRequest, $24.GetCompassHeadingResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetCompassHeading',
-      ($0.GetCompassHeadingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetCompassHeadingResponse.fromBuffer(value));
-  static final _$getOrientation = $grpc.ClientMethod<$0.GetOrientationRequest, $0.GetOrientationResponse>(
+      ($24.GetCompassHeadingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetCompassHeadingResponse.fromBuffer(value));
+  static final _$getOrientation = $grpc.ClientMethod<$24.GetOrientationRequest, $24.GetOrientationResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetOrientation',
-      ($0.GetOrientationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetOrientationResponse.fromBuffer(value));
-  static final _$getPosition = $grpc.ClientMethod<$0.GetPositionRequest, $0.GetPositionResponse>(
+      ($24.GetOrientationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetOrientationResponse.fromBuffer(value));
+  static final _$getPosition = $grpc.ClientMethod<$24.GetPositionRequest, $24.GetPositionResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetPosition',
-      ($0.GetPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetPositionResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$0.GetPropertiesRequest, $0.GetPropertiesResponse>(
+      ($24.GetPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetPositionResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$24.GetPropertiesRequest, $24.GetPropertiesResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetProperties',
-      ($0.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetPropertiesResponse.fromBuffer(value));
-  static final _$getAccuracy = $grpc.ClientMethod<$0.GetAccuracyRequest, $0.GetAccuracyResponse>(
+      ($24.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetPropertiesResponse.fromBuffer(value));
+  static final _$getAccuracy = $grpc.ClientMethod<$24.GetAccuracyRequest, $24.GetAccuracyResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetAccuracy',
-      ($0.GetAccuracyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetAccuracyResponse.fromBuffer(value));
-  static final _$getLinearAcceleration = $grpc.ClientMethod<$0.GetLinearAccelerationRequest, $0.GetLinearAccelerationResponse>(
+      ($24.GetAccuracyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetAccuracyResponse.fromBuffer(value));
+  static final _$getLinearAcceleration = $grpc.ClientMethod<$24.GetLinearAccelerationRequest, $24.GetLinearAccelerationResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetLinearAcceleration',
-      ($0.GetLinearAccelerationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetLinearAccelerationResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+      ($24.GetLinearAccelerationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetLinearAccelerationResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/DoCommand',
-      ($1.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+      ($13.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetGeometries',
-      ($1.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetGeometriesResponse.fromBuffer(value));
-  static final _$getReadings = $grpc.ClientMethod<$1.GetReadingsRequest, $1.GetReadingsResponse>(
+      ($13.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetGeometriesResponse.fromBuffer(value));
+  static final _$getReadings = $grpc.ClientMethod<$13.GetReadingsRequest, $13.GetReadingsResponse>(
       '/viam.component.movementsensor.v1.MovementSensorService/GetReadings',
-      ($1.GetReadingsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetReadingsResponse.fromBuffer(value));
+      ($13.GetReadingsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetReadingsResponse.fromBuffer(value));
 
   MovementSensorServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -73,47 +73,47 @@ class MovementSensorServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.GetLinearVelocityResponse> getLinearVelocity($0.GetLinearVelocityRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetLinearVelocityResponse> getLinearVelocity($24.GetLinearVelocityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLinearVelocity, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetAngularVelocityResponse> getAngularVelocity($0.GetAngularVelocityRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetAngularVelocityResponse> getAngularVelocity($24.GetAngularVelocityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAngularVelocity, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetCompassHeadingResponse> getCompassHeading($0.GetCompassHeadingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetCompassHeadingResponse> getCompassHeading($24.GetCompassHeadingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getCompassHeading, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetOrientationResponse> getOrientation($0.GetOrientationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetOrientationResponse> getOrientation($24.GetOrientationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOrientation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetPositionResponse> getPosition($0.GetPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetPositionResponse> getPosition($24.GetPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetPropertiesResponse> getProperties($0.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetPropertiesResponse> getProperties($24.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetAccuracyResponse> getAccuracy($0.GetAccuracyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetAccuracyResponse> getAccuracy($24.GetAccuracyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAccuracy, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetLinearAccelerationResponse> getLinearAcceleration($0.GetLinearAccelerationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetLinearAccelerationResponse> getLinearAcceleration($24.GetLinearAccelerationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLinearAcceleration, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetGeometriesResponse> getGeometries($1.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetGeometriesResponse> getGeometries($13.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetReadingsResponse> getReadings($1.GetReadingsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetReadingsResponse> getReadings($13.GetReadingsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getReadings, request, options: options);
   }
 }
@@ -123,138 +123,138 @@ abstract class MovementSensorServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.movementsensor.v1.MovementSensorService';
 
   MovementSensorServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.GetLinearVelocityRequest, $0.GetLinearVelocityResponse>(
+    $addMethod($grpc.ServiceMethod<$24.GetLinearVelocityRequest, $24.GetLinearVelocityResponse>(
         'GetLinearVelocity',
         getLinearVelocity_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetLinearVelocityRequest.fromBuffer(value),
-        ($0.GetLinearVelocityResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetAngularVelocityRequest, $0.GetAngularVelocityResponse>(
+        ($core.List<$core.int> value) => $24.GetLinearVelocityRequest.fromBuffer(value),
+        ($24.GetLinearVelocityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetAngularVelocityRequest, $24.GetAngularVelocityResponse>(
         'GetAngularVelocity',
         getAngularVelocity_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetAngularVelocityRequest.fromBuffer(value),
-        ($0.GetAngularVelocityResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetCompassHeadingRequest, $0.GetCompassHeadingResponse>(
+        ($core.List<$core.int> value) => $24.GetAngularVelocityRequest.fromBuffer(value),
+        ($24.GetAngularVelocityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetCompassHeadingRequest, $24.GetCompassHeadingResponse>(
         'GetCompassHeading',
         getCompassHeading_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetCompassHeadingRequest.fromBuffer(value),
-        ($0.GetCompassHeadingResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetOrientationRequest, $0.GetOrientationResponse>(
+        ($core.List<$core.int> value) => $24.GetCompassHeadingRequest.fromBuffer(value),
+        ($24.GetCompassHeadingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetOrientationRequest, $24.GetOrientationResponse>(
         'GetOrientation',
         getOrientation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetOrientationRequest.fromBuffer(value),
-        ($0.GetOrientationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetPositionRequest, $0.GetPositionResponse>(
+        ($core.List<$core.int> value) => $24.GetOrientationRequest.fromBuffer(value),
+        ($24.GetOrientationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetPositionRequest, $24.GetPositionResponse>(
         'GetPosition',
         getPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetPositionRequest.fromBuffer(value),
-        ($0.GetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetPropertiesRequest, $0.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $24.GetPositionRequest.fromBuffer(value),
+        ($24.GetPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetPropertiesRequest, $24.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetPropertiesRequest.fromBuffer(value),
-        ($0.GetPropertiesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetAccuracyRequest, $0.GetAccuracyResponse>(
+        ($core.List<$core.int> value) => $24.GetPropertiesRequest.fromBuffer(value),
+        ($24.GetPropertiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetAccuracyRequest, $24.GetAccuracyResponse>(
         'GetAccuracy',
         getAccuracy_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetAccuracyRequest.fromBuffer(value),
-        ($0.GetAccuracyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetLinearAccelerationRequest, $0.GetLinearAccelerationResponse>(
+        ($core.List<$core.int> value) => $24.GetAccuracyRequest.fromBuffer(value),
+        ($24.GetAccuracyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetLinearAccelerationRequest, $24.GetLinearAccelerationResponse>(
         'GetLinearAcceleration',
         getLinearAcceleration_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetLinearAccelerationRequest.fromBuffer(value),
-        ($0.GetLinearAccelerationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+        ($core.List<$core.int> value) => $24.GetLinearAccelerationRequest.fromBuffer(value),
+        ($24.GetLinearAccelerationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.DoCommandRequest.fromBuffer(value),
-        ($1.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
+        ($13.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetGeometriesRequest.fromBuffer(value),
-        ($1.GetGeometriesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetReadingsRequest, $1.GetReadingsResponse>(
+        ($core.List<$core.int> value) => $13.GetGeometriesRequest.fromBuffer(value),
+        ($13.GetGeometriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetReadingsRequest, $13.GetReadingsResponse>(
         'GetReadings',
         getReadings_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetReadingsRequest.fromBuffer(value),
-        ($1.GetReadingsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $13.GetReadingsRequest.fromBuffer(value),
+        ($13.GetReadingsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.GetLinearVelocityResponse> getLinearVelocity_Pre($grpc.ServiceCall call, $async.Future<$0.GetLinearVelocityRequest> request) async {
+  $async.Future<$24.GetLinearVelocityResponse> getLinearVelocity_Pre($grpc.ServiceCall call, $async.Future<$24.GetLinearVelocityRequest> request) async {
     return getLinearVelocity(call, await request);
   }
 
-  $async.Future<$0.GetAngularVelocityResponse> getAngularVelocity_Pre($grpc.ServiceCall call, $async.Future<$0.GetAngularVelocityRequest> request) async {
+  $async.Future<$24.GetAngularVelocityResponse> getAngularVelocity_Pre($grpc.ServiceCall call, $async.Future<$24.GetAngularVelocityRequest> request) async {
     return getAngularVelocity(call, await request);
   }
 
-  $async.Future<$0.GetCompassHeadingResponse> getCompassHeading_Pre($grpc.ServiceCall call, $async.Future<$0.GetCompassHeadingRequest> request) async {
+  $async.Future<$24.GetCompassHeadingResponse> getCompassHeading_Pre($grpc.ServiceCall call, $async.Future<$24.GetCompassHeadingRequest> request) async {
     return getCompassHeading(call, await request);
   }
 
-  $async.Future<$0.GetOrientationResponse> getOrientation_Pre($grpc.ServiceCall call, $async.Future<$0.GetOrientationRequest> request) async {
+  $async.Future<$24.GetOrientationResponse> getOrientation_Pre($grpc.ServiceCall call, $async.Future<$24.GetOrientationRequest> request) async {
     return getOrientation(call, await request);
   }
 
-  $async.Future<$0.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$0.GetPositionRequest> request) async {
+  $async.Future<$24.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$24.GetPositionRequest> request) async {
     return getPosition(call, await request);
   }
 
-  $async.Future<$0.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$0.GetPropertiesRequest> request) async {
+  $async.Future<$24.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$24.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
-  $async.Future<$0.GetAccuracyResponse> getAccuracy_Pre($grpc.ServiceCall call, $async.Future<$0.GetAccuracyRequest> request) async {
+  $async.Future<$24.GetAccuracyResponse> getAccuracy_Pre($grpc.ServiceCall call, $async.Future<$24.GetAccuracyRequest> request) async {
     return getAccuracy(call, await request);
   }
 
-  $async.Future<$0.GetLinearAccelerationResponse> getLinearAcceleration_Pre($grpc.ServiceCall call, $async.Future<$0.GetLinearAccelerationRequest> request) async {
+  $async.Future<$24.GetLinearAccelerationResponse> getLinearAcceleration_Pre($grpc.ServiceCall call, $async.Future<$24.GetLinearAccelerationRequest> request) async {
     return getLinearAcceleration(call, await request);
   }
 
-  $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
+  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$1.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$1.GetGeometriesRequest> request) async {
+  $async.Future<$13.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$13.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$1.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$1.GetReadingsRequest> request) async {
+  $async.Future<$13.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$13.GetReadingsRequest> request) async {
     return getReadings(call, await request);
   }
 
-  $async.Future<$0.GetLinearVelocityResponse> getLinearVelocity($grpc.ServiceCall call, $0.GetLinearVelocityRequest request);
-  $async.Future<$0.GetAngularVelocityResponse> getAngularVelocity($grpc.ServiceCall call, $0.GetAngularVelocityRequest request);
-  $async.Future<$0.GetCompassHeadingResponse> getCompassHeading($grpc.ServiceCall call, $0.GetCompassHeadingRequest request);
-  $async.Future<$0.GetOrientationResponse> getOrientation($grpc.ServiceCall call, $0.GetOrientationRequest request);
-  $async.Future<$0.GetPositionResponse> getPosition($grpc.ServiceCall call, $0.GetPositionRequest request);
-  $async.Future<$0.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $0.GetPropertiesRequest request);
-  $async.Future<$0.GetAccuracyResponse> getAccuracy($grpc.ServiceCall call, $0.GetAccuracyRequest request);
-  $async.Future<$0.GetLinearAccelerationResponse> getLinearAcceleration($grpc.ServiceCall call, $0.GetLinearAccelerationRequest request);
-  $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
-  $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
-  $async.Future<$1.GetReadingsResponse> getReadings($grpc.ServiceCall call, $1.GetReadingsRequest request);
+  $async.Future<$24.GetLinearVelocityResponse> getLinearVelocity($grpc.ServiceCall call, $24.GetLinearVelocityRequest request);
+  $async.Future<$24.GetAngularVelocityResponse> getAngularVelocity($grpc.ServiceCall call, $24.GetAngularVelocityRequest request);
+  $async.Future<$24.GetCompassHeadingResponse> getCompassHeading($grpc.ServiceCall call, $24.GetCompassHeadingRequest request);
+  $async.Future<$24.GetOrientationResponse> getOrientation($grpc.ServiceCall call, $24.GetOrientationRequest request);
+  $async.Future<$24.GetPositionResponse> getPosition($grpc.ServiceCall call, $24.GetPositionRequest request);
+  $async.Future<$24.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $24.GetPropertiesRequest request);
+  $async.Future<$24.GetAccuracyResponse> getAccuracy($grpc.ServiceCall call, $24.GetAccuracyRequest request);
+  $async.Future<$24.GetLinearAccelerationResponse> getLinearAcceleration($grpc.ServiceCall call, $24.GetLinearAccelerationRequest request);
+  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
+  $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
+  $async.Future<$13.GetReadingsResponse> getReadings($grpc.ServiceCall call, $13.GetReadingsRequest request);
 }

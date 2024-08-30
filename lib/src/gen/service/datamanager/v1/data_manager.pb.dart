@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $2;
+import '../../../google/protobuf/struct.pb.dart' as $42;
 
 class SyncRequest extends $pb.GeneratedMessage {
   factory SyncRequest({
     $core.String? name,
-    $2.Struct? extra,
+    $42.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -35,7 +35,7 @@ class SyncRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$2.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $2.Struct.create)
+    ..aOM<$42.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $42.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -71,15 +71,15 @@ class SyncRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $2.Struct get extra => $_getN(1);
+  $42.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($2.Struct v) { setField(99, v); }
+  set extra($42.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $2.Struct ensureExtra() => $_ensure(1);
+  $42.Struct ensureExtra() => $_ensure(1);
 }
 
 class SyncResponse extends $pb.GeneratedMessage {

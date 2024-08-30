@@ -148,3 +148,201 @@ final $typed_data.Uint8List listJobsResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0Sm9ic1Jlc3BvbnNlEi4KBGpvYnMYASADKAsyGi52aWFtLmFwcC5idWlsZC52MS5Kb2'
     'JJbmZvUgRqb2Jz');
 
+@$core.Deprecated('Use repoLinkDescriptor instead')
+const RepoLink$json = {
+  '1': 'RepoLink',
+  '2': [
+    {'1': 'oauth_app_link_id', '3': 1, '4': 1, '5': 9, '10': 'oauthAppLinkId'},
+    {'1': 'org_id', '3': 2, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'namespace', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'namespace', '17': true},
+    {'1': 'module_name', '3': 4, '4': 1, '5': 9, '10': 'moduleName'},
+    {'1': 'repo', '3': 5, '4': 1, '5': 9, '10': 'repo'},
+    {'1': 'viam_user', '3': 6, '4': 1, '5': 9, '10': 'viamUser'},
+  ],
+  '8': [
+    {'1': '_namespace'},
+  ],
+};
+
+/// Descriptor for `RepoLink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List repoLinkDescriptor = $convert.base64Decode(
+    'CghSZXBvTGluaxIpChFvYXV0aF9hcHBfbGlua19pZBgBIAEoCVIOb2F1dGhBcHBMaW5rSWQSFQ'
+    'oGb3JnX2lkGAIgASgJUgVvcmdJZBIhCgluYW1lc3BhY2UYAyABKAlIAFIJbmFtZXNwYWNliAEB'
+    'Eh8KC21vZHVsZV9uYW1lGAQgASgJUgptb2R1bGVOYW1lEhIKBHJlcG8YBSABKAlSBHJlcG8SGw'
+    'oJdmlhbV91c2VyGAYgASgJUgh2aWFtVXNlckIMCgpfbmFtZXNwYWNl');
+
+@$core.Deprecated('Use linkRepoRequestDescriptor instead')
+const LinkRepoRequest$json = {
+  '1': 'LinkRepoRequest',
+  '2': [
+    {'1': 'link', '3': 1, '4': 1, '5': 11, '6': '.viam.app.build.v1.RepoLink', '10': 'link'},
+  ],
+};
+
+/// Descriptor for `LinkRepoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkRepoRequestDescriptor = $convert.base64Decode(
+    'Cg9MaW5rUmVwb1JlcXVlc3QSLwoEbGluaxgBIAEoCzIbLnZpYW0uYXBwLmJ1aWxkLnYxLlJlcG'
+    '9MaW5rUgRsaW5r');
+
+@$core.Deprecated('Use linkRepoResponseDescriptor instead')
+const LinkRepoResponse$json = {
+  '1': 'LinkRepoResponse',
+  '2': [
+    {'1': 'repo_link_id', '3': 1, '4': 1, '5': 9, '10': 'repoLinkId'},
+  ],
+};
+
+/// Descriptor for `LinkRepoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkRepoResponseDescriptor = $convert.base64Decode(
+    'ChBMaW5rUmVwb1Jlc3BvbnNlEiAKDHJlcG9fbGlua19pZBgBIAEoCVIKcmVwb0xpbmtJZA==');
+
+@$core.Deprecated('Use unlinkRepoRequestDescriptor instead')
+const UnlinkRepoRequest$json = {
+  '1': 'UnlinkRepoRequest',
+  '2': [
+    {'1': 'repo_link_id', '3': 1, '4': 1, '5': 9, '10': 'repoLinkId'},
+  ],
+};
+
+/// Descriptor for `UnlinkRepoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unlinkRepoRequestDescriptor = $convert.base64Decode(
+    'ChFVbmxpbmtSZXBvUmVxdWVzdBIgCgxyZXBvX2xpbmtfaWQYASABKAlSCnJlcG9MaW5rSWQ=');
+
+@$core.Deprecated('Use unlinkRepoResponseDescriptor instead')
+const UnlinkRepoResponse$json = {
+  '1': 'UnlinkRepoResponse',
+};
+
+/// Descriptor for `UnlinkRepoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unlinkRepoResponseDescriptor = $convert.base64Decode(
+    'ChJVbmxpbmtSZXBvUmVzcG9uc2U=');
+
+@$core.Deprecated('Use listRepoLinksRequestDescriptor instead')
+const ListRepoLinksRequest$json = {
+  '1': 'ListRepoLinksRequest',
+};
+
+/// Descriptor for `ListRepoLinksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRepoLinksRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0UmVwb0xpbmtzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listRepoLinksResponseDescriptor instead')
+const ListRepoLinksResponse$json = {
+  '1': 'ListRepoLinksResponse',
+  '2': [
+    {'1': 'links', '3': 1, '4': 3, '5': 11, '6': '.viam.app.build.v1.RepoLink', '10': 'links'},
+  ],
+};
+
+/// Descriptor for `ListRepoLinksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRepoLinksResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0UmVwb0xpbmtzUmVzcG9uc2USMQoFbGlua3MYASADKAsyGy52aWFtLmFwcC5idWlsZC'
+    '52MS5SZXBvTGlua1IFbGlua3M=');
+
+@$core.Deprecated('Use listAppLinksRequestDescriptor instead')
+const ListAppLinksRequest$json = {
+  '1': 'ListAppLinksRequest',
+};
+
+/// Descriptor for `ListAppLinksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAppLinksRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0QXBwTGlua3NSZXF1ZXN0');
+
+@$core.Deprecated('Use appLinkDescriptor instead')
+const AppLink$json = {
+  '1': 'AppLink',
+  '2': [
+    {'1': 'oauth_app_link_id', '3': 1, '4': 1, '5': 9, '10': 'oauthAppLinkId'},
+    {'1': 'viam_user', '3': 2, '4': 1, '5': 9, '10': 'viamUser'},
+    {'1': 'external_user', '3': 3, '4': 1, '5': 9, '10': 'externalUser'},
+    {'1': 'org_id_or_ns', '3': 4, '4': 3, '5': 9, '10': 'orgIdOrNs'},
+  ],
+};
+
+/// Descriptor for `AppLink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appLinkDescriptor = $convert.base64Decode(
+    'CgdBcHBMaW5rEikKEW9hdXRoX2FwcF9saW5rX2lkGAEgASgJUg5vYXV0aEFwcExpbmtJZBIbCg'
+    'l2aWFtX3VzZXIYAiABKAlSCHZpYW1Vc2VyEiMKDWV4dGVybmFsX3VzZXIYAyABKAlSDGV4dGVy'
+    'bmFsVXNlchIfCgxvcmdfaWRfb3JfbnMYBCADKAlSCW9yZ0lkT3JOcw==');
+
+@$core.Deprecated('Use listAppLinksResponseDescriptor instead')
+const ListAppLinksResponse$json = {
+  '1': 'ListAppLinksResponse',
+  '2': [
+    {'1': 'links', '3': 1, '4': 3, '5': 11, '6': '.viam.app.build.v1.AppLink', '10': 'links'},
+  ],
+};
+
+/// Descriptor for `ListAppLinksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAppLinksResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0QXBwTGlua3NSZXNwb25zZRIwCgVsaW5rcxgBIAMoCzIaLnZpYW0uYXBwLmJ1aWxkLn'
+    'YxLkFwcExpbmtSBWxpbmtz');
+
+@$core.Deprecated('Use removeAppLinkRequestDescriptor instead')
+const RemoveAppLinkRequest$json = {
+  '1': 'RemoveAppLinkRequest',
+  '2': [
+    {'1': 'oauth_app_link_id', '3': 1, '4': 1, '5': 9, '10': 'oauthAppLinkId'},
+  ],
+};
+
+/// Descriptor for `RemoveAppLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeAppLinkRequestDescriptor = $convert.base64Decode(
+    'ChRSZW1vdmVBcHBMaW5rUmVxdWVzdBIpChFvYXV0aF9hcHBfbGlua19pZBgBIAEoCVIOb2F1dG'
+    'hBcHBMaW5rSWQ=');
+
+@$core.Deprecated('Use removeAppLinkResponseDescriptor instead')
+const RemoveAppLinkResponse$json = {
+  '1': 'RemoveAppLinkResponse',
+};
+
+/// Descriptor for `RemoveAppLinkResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeAppLinkResponseDescriptor = $convert.base64Decode(
+    'ChVSZW1vdmVBcHBMaW5rUmVzcG9uc2U=');
+
+@$core.Deprecated('Use linkOrgRequestDescriptor instead')
+const LinkOrgRequest$json = {
+  '1': 'LinkOrgRequest',
+  '2': [
+    {'1': 'oauth_app_link_id', '3': 1, '4': 1, '5': 9, '10': 'oauthAppLinkId'},
+    {'1': 'org_id', '3': 2, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `LinkOrgRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkOrgRequestDescriptor = $convert.base64Decode(
+    'Cg5MaW5rT3JnUmVxdWVzdBIpChFvYXV0aF9hcHBfbGlua19pZBgBIAEoCVIOb2F1dGhBcHBMaW'
+    '5rSWQSFQoGb3JnX2lkGAIgASgJUgVvcmdJZA==');
+
+@$core.Deprecated('Use linkOrgResponseDescriptor instead')
+const LinkOrgResponse$json = {
+  '1': 'LinkOrgResponse',
+};
+
+/// Descriptor for `LinkOrgResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkOrgResponseDescriptor = $convert.base64Decode(
+    'Cg9MaW5rT3JnUmVzcG9uc2U=');
+
+@$core.Deprecated('Use unlinkOrgRequestDescriptor instead')
+const UnlinkOrgRequest$json = {
+  '1': 'UnlinkOrgRequest',
+  '2': [
+    {'1': 'oauth_app_link_id', '3': 1, '4': 1, '5': 9, '10': 'oauthAppLinkId'},
+    {'1': 'org_id', '3': 2, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `UnlinkOrgRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unlinkOrgRequestDescriptor = $convert.base64Decode(
+    'ChBVbmxpbmtPcmdSZXF1ZXN0EikKEW9hdXRoX2FwcF9saW5rX2lkGAEgASgJUg5vYXV0aEFwcE'
+    'xpbmtJZBIVCgZvcmdfaWQYAiABKAlSBW9yZ0lk');
+
+@$core.Deprecated('Use unlinkOrgResponseDescriptor instead')
+const UnlinkOrgResponse$json = {
+  '1': 'UnlinkOrgResponse',
+};
+
+/// Descriptor for `UnlinkOrgResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unlinkOrgResponseDescriptor = $convert.base64Decode(
+    'ChFVbmxpbmtPcmdSZXNwb25zZQ==');
+

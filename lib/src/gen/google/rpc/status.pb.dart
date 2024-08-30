@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../protobuf/any.pb.dart' as $1;
+import '../protobuf/any.pb.dart' as $9;
 
 ///  The `Status` type defines a logical error model that is suitable for
 ///  different programming environments, including REST APIs and RPC APIs. It is
@@ -26,7 +26,7 @@ class Status extends $pb.GeneratedMessage {
   factory Status({
     $core.int? code,
     $core.String? message,
-    $core.Iterable<$1.Any>? details,
+    $core.Iterable<$9.Any>? details,
   }) {
     final $result = create();
     if (code != null) {
@@ -47,7 +47,7 @@ class Status extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.O3)
     ..aOS(2, _omitFieldNames ? '' : 'message')
-    ..pc<$1.Any>(3, _omitFieldNames ? '' : 'details', $pb.PbFieldType.PM, subBuilder: $1.Any.create)
+    ..pc<$9.Any>(3, _omitFieldNames ? '' : 'details', $pb.PbFieldType.PM, subBuilder: $9.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -99,7 +99,7 @@ class Status extends $pb.GeneratedMessage {
   /// A list of messages that carry the error details.  There is a common set of
   /// message types for APIs to use.
   @$pb.TagNumber(3)
-  $core.List<$1.Any> get details => $_getList(2);
+  $core.List<$9.Any> get details => $_getList(2);
 }
 
 

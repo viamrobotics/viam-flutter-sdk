@@ -746,6 +746,47 @@ const RemoveBoundingBoxFromImageByIDResponse$json = {
 final $typed_data.Uint8List removeBoundingBoxFromImageByIDResponseDescriptor = $convert.base64Decode(
     'CiZSZW1vdmVCb3VuZGluZ0JveEZyb21JbWFnZUJ5SURSZXNwb25zZQ==');
 
+@$core.Deprecated('Use updateBoundingBoxRequestDescriptor instead')
+const UpdateBoundingBoxRequest$json = {
+  '1': 'UpdateBoundingBoxRequest',
+  '2': [
+    {'1': 'binary_id', '3': 1, '4': 1, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryId'},
+    {'1': 'bbox_id', '3': 2, '4': 1, '5': 9, '10': 'bboxId'},
+    {'1': 'label', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'label', '17': true},
+    {'1': 'x_min_normalized', '3': 4, '4': 1, '5': 1, '9': 1, '10': 'xMinNormalized', '17': true},
+    {'1': 'y_min_normalized', '3': 5, '4': 1, '5': 1, '9': 2, '10': 'yMinNormalized', '17': true},
+    {'1': 'x_max_normalized', '3': 6, '4': 1, '5': 1, '9': 3, '10': 'xMaxNormalized', '17': true},
+    {'1': 'y_max_normalized', '3': 7, '4': 1, '5': 1, '9': 4, '10': 'yMaxNormalized', '17': true},
+  ],
+  '8': [
+    {'1': '_label'},
+    {'1': '_x_min_normalized'},
+    {'1': '_y_min_normalized'},
+    {'1': '_x_max_normalized'},
+    {'1': '_y_max_normalized'},
+  ],
+};
+
+/// Descriptor for `UpdateBoundingBoxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateBoundingBoxRequestDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVCb3VuZGluZ0JveFJlcXVlc3QSNwoJYmluYXJ5X2lkGAEgASgLMhoudmlhbS5hcH'
+    'AuZGF0YS52MS5CaW5hcnlJRFIIYmluYXJ5SWQSFwoHYmJveF9pZBgCIAEoCVIGYmJveElkEhkK'
+    'BWxhYmVsGAMgASgJSABSBWxhYmVsiAEBEi0KEHhfbWluX25vcm1hbGl6ZWQYBCABKAFIAVIOeE'
+    '1pbk5vcm1hbGl6ZWSIAQESLQoQeV9taW5fbm9ybWFsaXplZBgFIAEoAUgCUg55TWluTm9ybWFs'
+    'aXplZIgBARItChB4X21heF9ub3JtYWxpemVkGAYgASgBSANSDnhNYXhOb3JtYWxpemVkiAEBEi'
+    '0KEHlfbWF4X25vcm1hbGl6ZWQYByABKAFIBFIOeU1heE5vcm1hbGl6ZWSIAQFCCAoGX2xhYmVs'
+    'QhMKEV94X21pbl9ub3JtYWxpemVkQhMKEV95X21pbl9ub3JtYWxpemVkQhMKEV94X21heF9ub3'
+    'JtYWxpemVkQhMKEV95X21heF9ub3JtYWxpemVk');
+
+@$core.Deprecated('Use updateBoundingBoxResponseDescriptor instead')
+const UpdateBoundingBoxResponse$json = {
+  '1': 'UpdateBoundingBoxResponse',
+};
+
+/// Descriptor for `UpdateBoundingBoxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateBoundingBoxResponseDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVCb3VuZGluZ0JveFJlc3BvbnNl');
+
 @$core.Deprecated('Use boundingBoxLabelsByFilterRequestDescriptor instead')
 const BoundingBoxLabelsByFilterRequest$json = {
   '1': 'BoundingBoxLabelsByFilterRequest',

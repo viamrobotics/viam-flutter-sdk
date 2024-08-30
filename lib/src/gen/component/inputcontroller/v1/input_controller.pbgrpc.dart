@@ -15,37 +15,37 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $1;
-import 'input_controller.pb.dart' as $0;
+import '../../../common/v1/common.pb.dart' as $13;
+import 'input_controller.pb.dart' as $22;
 
 export 'input_controller.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.inputcontroller.v1.InputControllerService')
 class InputControllerServiceClient extends $grpc.Client {
-  static final _$getControls = $grpc.ClientMethod<$0.GetControlsRequest, $0.GetControlsResponse>(
+  static final _$getControls = $grpc.ClientMethod<$22.GetControlsRequest, $22.GetControlsResponse>(
       '/viam.component.inputcontroller.v1.InputControllerService/GetControls',
-      ($0.GetControlsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetControlsResponse.fromBuffer(value));
-  static final _$getEvents = $grpc.ClientMethod<$0.GetEventsRequest, $0.GetEventsResponse>(
+      ($22.GetControlsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $22.GetControlsResponse.fromBuffer(value));
+  static final _$getEvents = $grpc.ClientMethod<$22.GetEventsRequest, $22.GetEventsResponse>(
       '/viam.component.inputcontroller.v1.InputControllerService/GetEvents',
-      ($0.GetEventsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetEventsResponse.fromBuffer(value));
-  static final _$streamEvents = $grpc.ClientMethod<$0.StreamEventsRequest, $0.StreamEventsResponse>(
+      ($22.GetEventsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $22.GetEventsResponse.fromBuffer(value));
+  static final _$streamEvents = $grpc.ClientMethod<$22.StreamEventsRequest, $22.StreamEventsResponse>(
       '/viam.component.inputcontroller.v1.InputControllerService/StreamEvents',
-      ($0.StreamEventsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.StreamEventsResponse.fromBuffer(value));
-  static final _$triggerEvent = $grpc.ClientMethod<$0.TriggerEventRequest, $0.TriggerEventResponse>(
+      ($22.StreamEventsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $22.StreamEventsResponse.fromBuffer(value));
+  static final _$triggerEvent = $grpc.ClientMethod<$22.TriggerEventRequest, $22.TriggerEventResponse>(
       '/viam.component.inputcontroller.v1.InputControllerService/TriggerEvent',
-      ($0.TriggerEventRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.TriggerEventResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+      ($22.TriggerEventRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $22.TriggerEventResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
       '/viam.component.inputcontroller.v1.InputControllerService/DoCommand',
-      ($1.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+      ($13.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
       '/viam.component.inputcontroller.v1.InputControllerService/GetGeometries',
-      ($1.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetGeometriesResponse.fromBuffer(value));
+      ($13.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetGeometriesResponse.fromBuffer(value));
 
   InputControllerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -53,27 +53,27 @@ class InputControllerServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.GetControlsResponse> getControls($0.GetControlsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$22.GetControlsResponse> getControls($22.GetControlsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getControls, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetEventsResponse> getEvents($0.GetEventsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$22.GetEventsResponse> getEvents($22.GetEventsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getEvents, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.StreamEventsResponse> streamEvents($0.StreamEventsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$22.StreamEventsResponse> streamEvents($22.StreamEventsRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$streamEvents, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$0.TriggerEventResponse> triggerEvent($0.TriggerEventRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$22.TriggerEventResponse> triggerEvent($22.TriggerEventRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$triggerEvent, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.DoCommandResponse> doCommand($1.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetGeometriesResponse> getGeometries($1.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetGeometriesResponse> getGeometries($13.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -83,78 +83,78 @@ abstract class InputControllerServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.inputcontroller.v1.InputControllerService';
 
   InputControllerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.GetControlsRequest, $0.GetControlsResponse>(
+    $addMethod($grpc.ServiceMethod<$22.GetControlsRequest, $22.GetControlsResponse>(
         'GetControls',
         getControls_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetControlsRequest.fromBuffer(value),
-        ($0.GetControlsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetEventsRequest, $0.GetEventsResponse>(
+        ($core.List<$core.int> value) => $22.GetControlsRequest.fromBuffer(value),
+        ($22.GetControlsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$22.GetEventsRequest, $22.GetEventsResponse>(
         'GetEvents',
         getEvents_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetEventsRequest.fromBuffer(value),
-        ($0.GetEventsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.StreamEventsRequest, $0.StreamEventsResponse>(
+        ($core.List<$core.int> value) => $22.GetEventsRequest.fromBuffer(value),
+        ($22.GetEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$22.StreamEventsRequest, $22.StreamEventsResponse>(
         'StreamEvents',
         streamEvents_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $0.StreamEventsRequest.fromBuffer(value),
-        ($0.StreamEventsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.TriggerEventRequest, $0.TriggerEventResponse>(
+        ($core.List<$core.int> value) => $22.StreamEventsRequest.fromBuffer(value),
+        ($22.StreamEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$22.TriggerEventRequest, $22.TriggerEventResponse>(
         'TriggerEvent',
         triggerEvent_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.TriggerEventRequest.fromBuffer(value),
-        ($0.TriggerEventResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.DoCommandRequest, $1.DoCommandResponse>(
+        ($core.List<$core.int> value) => $22.TriggerEventRequest.fromBuffer(value),
+        ($22.TriggerEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.DoCommandRequest.fromBuffer(value),
-        ($1.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetGeometriesRequest, $1.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
+        ($13.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetGeometriesRequest.fromBuffer(value),
-        ($1.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $13.GetGeometriesRequest.fromBuffer(value),
+        ($13.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.GetControlsResponse> getControls_Pre($grpc.ServiceCall call, $async.Future<$0.GetControlsRequest> request) async {
+  $async.Future<$22.GetControlsResponse> getControls_Pre($grpc.ServiceCall call, $async.Future<$22.GetControlsRequest> request) async {
     return getControls(call, await request);
   }
 
-  $async.Future<$0.GetEventsResponse> getEvents_Pre($grpc.ServiceCall call, $async.Future<$0.GetEventsRequest> request) async {
+  $async.Future<$22.GetEventsResponse> getEvents_Pre($grpc.ServiceCall call, $async.Future<$22.GetEventsRequest> request) async {
     return getEvents(call, await request);
   }
 
-  $async.Stream<$0.StreamEventsResponse> streamEvents_Pre($grpc.ServiceCall call, $async.Future<$0.StreamEventsRequest> request) async* {
+  $async.Stream<$22.StreamEventsResponse> streamEvents_Pre($grpc.ServiceCall call, $async.Future<$22.StreamEventsRequest> request) async* {
     yield* streamEvents(call, await request);
   }
 
-  $async.Future<$0.TriggerEventResponse> triggerEvent_Pre($grpc.ServiceCall call, $async.Future<$0.TriggerEventRequest> request) async {
+  $async.Future<$22.TriggerEventResponse> triggerEvent_Pre($grpc.ServiceCall call, $async.Future<$22.TriggerEventRequest> request) async {
     return triggerEvent(call, await request);
   }
 
-  $async.Future<$1.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$1.DoCommandRequest> request) async {
+  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$1.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$1.GetGeometriesRequest> request) async {
+  $async.Future<$13.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$13.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$0.GetControlsResponse> getControls($grpc.ServiceCall call, $0.GetControlsRequest request);
-  $async.Future<$0.GetEventsResponse> getEvents($grpc.ServiceCall call, $0.GetEventsRequest request);
-  $async.Stream<$0.StreamEventsResponse> streamEvents($grpc.ServiceCall call, $0.StreamEventsRequest request);
-  $async.Future<$0.TriggerEventResponse> triggerEvent($grpc.ServiceCall call, $0.TriggerEventRequest request);
-  $async.Future<$1.DoCommandResponse> doCommand($grpc.ServiceCall call, $1.DoCommandRequest request);
-  $async.Future<$1.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $1.GetGeometriesRequest request);
+  $async.Future<$22.GetControlsResponse> getControls($grpc.ServiceCall call, $22.GetControlsRequest request);
+  $async.Future<$22.GetEventsResponse> getEvents($grpc.ServiceCall call, $22.GetEventsRequest request);
+  $async.Stream<$22.StreamEventsResponse> streamEvents($grpc.ServiceCall call, $22.StreamEventsRequest request);
+  $async.Future<$22.TriggerEventResponse> triggerEvent($grpc.ServiceCall call, $22.TriggerEventRequest request);
+  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
+  $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
 }

@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../protobuf/timestamp.pb.dart' as $2;
+import '../protobuf/timestamp.pb.dart' as $6;
 
 ///  Represents a time interval, encoded as a Timestamp start (inclusive) and a
 ///  Timestamp end (exclusive).
@@ -23,8 +23,8 @@ import '../protobuf/timestamp.pb.dart' as $2;
 ///  When both start and end are unspecified, the interval matches any time.
 class Interval extends $pb.GeneratedMessage {
   factory Interval({
-    $2.Timestamp? startTime,
-    $2.Timestamp? endTime,
+    $6.Timestamp? startTime,
+    $6.Timestamp? endTime,
   }) {
     final $result = create();
     if (startTime != null) {
@@ -40,8 +40,8 @@ class Interval extends $pb.GeneratedMessage {
   factory Interval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Interval', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.type'), createEmptyInstance: create)
-    ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $2.Timestamp.create)
-    ..aOM<$2.Timestamp>(2, _omitFieldNames ? '' : 'endTime', subBuilder: $2.Timestamp.create)
+    ..aOM<$6.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $6.Timestamp.create)
+    ..aOM<$6.Timestamp>(2, _omitFieldNames ? '' : 'endTime', subBuilder: $6.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -71,30 +71,30 @@ class Interval extends $pb.GeneratedMessage {
   ///  If specified, a Timestamp matching this interval will have to be the same
   ///  or after the start.
   @$pb.TagNumber(1)
-  $2.Timestamp get startTime => $_getN(0);
+  $6.Timestamp get startTime => $_getN(0);
   @$pb.TagNumber(1)
-  set startTime($2.Timestamp v) { setField(1, v); }
+  set startTime($6.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearStartTime() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Timestamp ensureStartTime() => $_ensure(0);
+  $6.Timestamp ensureStartTime() => $_ensure(0);
 
   ///  Optional. Exclusive end of the interval.
   ///
   ///  If specified, a Timestamp matching this interval will have to be before the
   ///  end.
   @$pb.TagNumber(2)
-  $2.Timestamp get endTime => $_getN(1);
+  $6.Timestamp get endTime => $_getN(1);
   @$pb.TagNumber(2)
-  set endTime($2.Timestamp v) { setField(2, v); }
+  set endTime($6.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearEndTime() => clearField(2);
   @$pb.TagNumber(2)
-  $2.Timestamp ensureEndTime() => $_ensure(1);
+  $6.Timestamp ensureEndTime() => $_ensure(1);
 }
 
 

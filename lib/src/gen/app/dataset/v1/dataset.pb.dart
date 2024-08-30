@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
+import '../../../google/protobuf/timestamp.pb.dart' as $43;
 
 /// Dataset stores the metadata of a dataset.
 class Dataset extends $pb.GeneratedMessage {
@@ -21,7 +21,7 @@ class Dataset extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? organizationId,
-    $1.Timestamp? timeCreated,
+    $43.Timestamp? timeCreated,
   }) {
     final $result = create();
     if (id != null) {
@@ -46,7 +46,7 @@ class Dataset extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'organizationId')
-    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'timeCreated', subBuilder: $1.Timestamp.create)
+    ..aOM<$43.Timestamp>(4, _omitFieldNames ? '' : 'timeCreated', subBuilder: $43.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -99,15 +99,15 @@ class Dataset extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $1.Timestamp get timeCreated => $_getN(3);
+  $43.Timestamp get timeCreated => $_getN(3);
   @$pb.TagNumber(4)
-  set timeCreated($1.Timestamp v) { setField(4, v); }
+  set timeCreated($43.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeCreated() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeCreated() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Timestamp ensureTimeCreated() => $_ensure(3);
+  $43.Timestamp ensureTimeCreated() => $_ensure(3);
 }
 
 /// CreateDatasetRequest defines the name and organization ID of a dataset.

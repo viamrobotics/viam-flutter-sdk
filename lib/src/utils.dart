@@ -2,8 +2,8 @@ import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:logger/logger.dart';
 
-import 'gen/google/protobuf/struct.pb.dart';
 import 'gen/google/protobuf/duration.pb.dart' as grpc_duration;
+import 'gen/google/protobuf/struct.pb.dart';
 
 final _logger = Logger();
 
@@ -94,6 +94,6 @@ grpc_duration.Duration durationToProto(Duration duration) {
 
 String getVersionMetadata() {
   const String sdkVersion = 'v0.0.20';
-  const String apiTag = 'v0.1.328';
+  const String apiTag = 'v0.1.337';
   return 'flutter;$sdkVersion;$apiTag';
 }

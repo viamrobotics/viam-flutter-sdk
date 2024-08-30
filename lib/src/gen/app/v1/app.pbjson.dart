@@ -120,6 +120,7 @@ const RobotPart$json = {
     {'1': 'local_fqdn', '3': 11, '4': 1, '5': 9, '10': 'localFqdn'},
     {'1': 'created_on', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdOn'},
     {'1': 'secrets', '3': 14, '4': 3, '5': 11, '6': '.viam.app.v1.SharedSecret', '8': {}, '10': 'secrets'},
+    {'1': 'last_updated', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastUpdated'},
   ],
 };
 
@@ -142,7 +143,9 @@ final $typed_data.Uint8List robotPartDescriptor = $convert.base64Decode(
     'ZG4YCSABKAlSBGZxZG4SHQoKbG9jYWxfZnFkbhgLIAEoCVIJbG9jYWxGcWRuElEKCmNyZWF0ZW'
     'Rfb24YDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQhaahJ4DEWJzb246ImNyZWF0'
     'ZWRfb24iUgljcmVhdGVkT24SSAoHc2VjcmV0cxgOIAMoCzIZLnZpYW0uYXBwLnYxLlNoYXJlZF'
-    'NlY3JldEITmoSeAw5ic29uOiJzZWNyZXRzIlIHc2VjcmV0cw==');
+    'NlY3JldEITmoSeAw5ic29uOiJzZWNyZXRzIlIHc2VjcmV0cxJaCgxsYXN0X3VwZGF0ZWQYDyAB'
+    'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQhuahJ4DFmJzb246Imxhc3RfdXBkYXRlZF'
+    '9hdCJSC2xhc3RVcGRhdGVk');
 
 @$core.Deprecated('Use robotPartHistoryEntryDescriptor instead')
 const RobotPartHistoryEntry$json = {
@@ -1116,10 +1119,18 @@ const GetRobotPartLogsRequest$json = {
     {'1': 'filter', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'filter', '17': true},
     {'1': 'page_token', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'pageToken', '17': true},
     {'1': 'levels', '3': 5, '4': 3, '5': 9, '10': 'levels'},
+    {'1': 'start', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 2, '10': 'start', '17': true},
+    {'1': 'end', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 3, '10': 'end', '17': true},
+    {'1': 'limit', '3': 8, '4': 1, '5': 3, '9': 4, '10': 'limit', '17': true},
+    {'1': 'source', '3': 9, '4': 1, '5': 9, '9': 5, '10': 'source', '17': true},
   ],
   '8': [
     {'1': '_filter'},
     {'1': '_page_token'},
+    {'1': '_start'},
+    {'1': '_end'},
+    {'1': '_limit'},
+    {'1': '_source'},
   ],
 };
 
@@ -1128,7 +1139,11 @@ final $typed_data.Uint8List getRobotPartLogsRequestDescriptor = $convert.base64D
     'ChdHZXRSb2JvdFBhcnRMb2dzUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSIwoLZXJyb3JzX29ubH'
     'kYAiABKAhCAhgBUgplcnJvcnNPbmx5EhsKBmZpbHRlchgDIAEoCUgAUgZmaWx0ZXKIAQESIgoK'
     'cGFnZV90b2tlbhgEIAEoCUgBUglwYWdlVG9rZW6IAQESFgoGbGV2ZWxzGAUgAygJUgZsZXZlbH'
-    'NCCQoHX2ZpbHRlckINCgtfcGFnZV90b2tlbg==');
+    'MSNQoFc3RhcnQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSBXN0YXJ0iAEB'
+    'EjEKA2VuZBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIA1IDZW5kiAEBEhkKBW'
+    'xpbWl0GAggASgDSARSBWxpbWl0iAEBEhsKBnNvdXJjZRgJIAEoCUgFUgZzb3VyY2WIAQFCCQoH'
+    'X2ZpbHRlckINCgtfcGFnZV90b2tlbkIICgZfc3RhcnRCBgoEX2VuZEIICgZfbGltaXRCCQoHX3'
+    'NvdXJjZQ==');
 
 @$core.Deprecated('Use getRobotPartLogsResponseDescriptor instead')
 const GetRobotPartLogsResponse$json = {
@@ -1335,6 +1350,7 @@ const Fragment$json = {
     {'1': 'organization_count', '3': 10, '4': 1, '5': 5, '10': 'organizationCount'},
     {'1': 'only_used_by_owner', '3': 11, '4': 1, '5': 8, '10': 'onlyUsedByOwner'},
     {'1': 'visibility', '3': 12, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '10': 'visibility'},
+    {'1': 'last_updated', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastUpdated'},
   ],
 };
 
@@ -1352,7 +1368,8 @@ final $typed_data.Uint8List fragmentDescriptor = $convert.base64Decode(
     'VudBgJIAEoBVIOcm9ib3RQYXJ0Q291bnQSLQoSb3JnYW5pemF0aW9uX2NvdW50GAogASgFUhFv'
     'cmdhbml6YXRpb25Db3VudBIrChJvbmx5X3VzZWRfYnlfb3duZXIYCyABKAhSD29ubHlVc2VkQn'
     'lPd25lchI/Cgp2aXNpYmlsaXR5GAwgASgOMh8udmlhbS5hcHAudjEuRnJhZ21lbnRWaXNpYmls'
-    'aXR5Ugp2aXNpYmlsaXR5');
+    'aXR5Ugp2aXNpYmlsaXR5EloKDGxhc3RfdXBkYXRlZBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBCG5qEngMWYnNvbjoibGFzdF91cGRhdGVkX2F0IlILbGFzdFVwZGF0ZWQ=');
 
 @$core.Deprecated('Use fragmentHistoryEntryDescriptor instead')
 const FragmentHistoryEntry$json = {
@@ -1437,6 +1454,10 @@ const CreateFragmentRequest$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'config', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'config'},
     {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'visibility', '3': 4, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '9': 0, '10': 'visibility', '17': true},
+  ],
+  '8': [
+    {'1': '_visibility'},
   ],
 };
 
@@ -1444,7 +1465,8 @@ const CreateFragmentRequest$json = {
 final $typed_data.Uint8List createFragmentRequestDescriptor = $convert.base64Decode(
     'ChVDcmVhdGVGcmFnbWVudFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIvCgZjb25maWcYAi'
     'ABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgZjb25maWcSJwoPb3JnYW5pemF0aW9uX2lk'
-    'GAMgASgJUg5vcmdhbml6YXRpb25JZA==');
+    'GAMgASgJUg5vcmdhbml6YXRpb25JZBJECgp2aXNpYmlsaXR5GAQgASgOMh8udmlhbS5hcHAudj'
+    'EuRnJhZ21lbnRWaXNpYmlsaXR5SABSCnZpc2liaWxpdHmIAQFCDQoLX3Zpc2liaWxpdHk=');
 
 @$core.Deprecated('Use createFragmentResponseDescriptor instead')
 const CreateFragmentResponse$json = {

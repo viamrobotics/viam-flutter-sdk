@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../protobuf/any.pb.dart' as $3;
+import '../protobuf/any.pb.dart' as $9;
 
 ///  Message that represents an arbitrary HTTP body. It should only be used for
 ///  payload formats that can't be represented as JSON, such as raw binary or
@@ -62,7 +62,7 @@ class HttpBody extends $pb.GeneratedMessage {
   factory HttpBody({
     $core.String? contentType,
     $core.List<$core.int>? data,
-    $core.Iterable<$3.Any>? extensions,
+    $core.Iterable<$9.Any>? extensions,
   }) {
     final $result = create();
     if (contentType != null) {
@@ -83,7 +83,7 @@ class HttpBody extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HttpBody', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contentType')
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
-    ..pc<$3.Any>(3, _omitFieldNames ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $3.Any.create)
+    ..pc<$9.Any>(3, _omitFieldNames ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $9.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -131,7 +131,7 @@ class HttpBody extends $pb.GeneratedMessage {
   /// Application specific response metadata. Must be set in the first response
   /// for streaming APIs.
   @$pb.TagNumber(3)
-  $core.List<$3.Any> get extensions => $_getList(2);
+  $core.List<$9.Any> get extensions => $_getList(2);
 }
 
 
