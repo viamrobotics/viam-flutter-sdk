@@ -20,19 +20,19 @@ Logger _logger = Logger();
 /// The options that define the behavior of the [RobotClient].
 class RobotClientOptions {
   /// Options for connecting to the robot
-  final DialOptions dialOptions;
+  DialOptions dialOptions;
 
   /// The frequency (in seconds) at which to check if the robot is still connected. 0 (zero) signifies no connection checks
-  final checkConnectionInterval = 10;
+  int checkConnectionInterval = 10;
 
   /// The frequency (in seconds) at which to attempt to reconnect a disconnected robot. 0 (zero) signifies no reconnection attempts
-  final attemptReconnectInterval = 1;
+  int attemptReconnectInterval = 1;
 
   /// Whether sessions are enabled
-  final enableSessions = true;
+  bool enableSessions = true;
 
   /// The log level desired
-  final Level logLevel = Level.debug;
+  Level logLevel = Level.debug;
 
   RobotClientOptions() : dialOptions = DialOptions();
 
