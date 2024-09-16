@@ -30,7 +30,7 @@ abstract class Viam {
   /// A client to communicate with Viam's data and data sync services
   DataClient get dataClient;
 
-  /// A client to communicate with Viam's data and data sync services
+  /// A client to communicate with Viam's provisioning service
   ProvisioningClient get provisioningClient;
 
   /// Get a [RobotClient] connected to the provided [Robot]
