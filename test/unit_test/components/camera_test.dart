@@ -15,7 +15,7 @@ class FakeCamera extends Camera {
   String name;
   bool setFrameRate;
 
-  FakeCamera(this.name, {this.setFrameRate = true});
+  FakeCamera(this.name, {this.setFrameRate = false});
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
@@ -59,7 +59,7 @@ void main() {
     late FakeCamera frameRateCamera;
 
     setUp(() {
-      camera = FakeCamera(name, setFrameRate : false);
+      camera = FakeCamera(name);
       frameRateCamera = FakeCamera(name, setFrameRate : true);
     });
 
