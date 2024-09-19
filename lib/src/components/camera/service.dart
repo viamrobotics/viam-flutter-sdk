@@ -55,10 +55,10 @@ class CameraService extends CameraServiceBase {
       ..supportsPcd = properties.supportsPcd
       ..intrinsicParameters = properties.intrinsicParameters
       ..distortionParameters = properties.distortionParameters;
-      if (properties.frameRate != 0) {
-          response.frameRate = properties.frameRate;
-      }
-      return response;
+    if (properties.frameRate != 0) {
+      response.frameRate = properties.frameRate;
+    }
+    return response;
   }
 
   @override

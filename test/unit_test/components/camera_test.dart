@@ -45,10 +45,10 @@ class FakeCamera extends Camera {
       ..supportsPcd = true
       ..intrinsicParameters = (IntrinsicParameters()..widthPx = 10)
       ..distortionParameters = (DistortionParameters()..model = 'test');
-      if(setFrameRate){
-        properties.frameRate = 10.0;
-      }
-      return properties;
+    if (setFrameRate) {
+      properties.frameRate = 10.0;
+    }
+    return properties;
   }
 }
 
@@ -60,7 +60,7 @@ void main() {
 
     setUp(() {
       camera = FakeCamera(name);
-      frameRateCamera = FakeCamera(name, setFrameRate : true);
+      frameRateCamera = FakeCamera(name, setFrameRate: true);
     });
 
     test('image', () async {
@@ -102,7 +102,6 @@ void main() {
       final resp = await camera.doCommand(cmd);
       expect(resp['command'], cmd);
     });
-
   });
 
   group('Camera RPC Tests', () {
@@ -113,7 +112,7 @@ void main() {
     const String name = 'camera';
 
     setUp(() async {
-      camera = FakeCamera(name, setFrameRate : false);
+      camera = FakeCamera(name, setFrameRate: false);
       final port = generateTestingPortFromName(name);
       final manager = ResourceManager();
       manager.register(Camera.getResourceName(name), camera);
@@ -180,7 +179,6 @@ void main() {
           ..command = cmd.toStruct());
         expect(resp.result.toMap(), {'command': cmd});
       });
-      
     });
     group('Camera Client Tests', () {
       test('image', () async {
@@ -219,7 +217,6 @@ void main() {
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
       });
-
     });
   });
 
@@ -231,7 +228,7 @@ void main() {
     const String name = 'camera';
 
     setUp(() async {
-      camera = FakeCamera(name, setFrameRate : true);
+      camera = FakeCamera(name, setFrameRate: true);
       final port = generateTestingPortFromName(name);
       final manager = ResourceManager();
       manager.register(Camera.getResourceName(name), camera);
@@ -265,5 +262,4 @@ void main() {
       });
     });
   });
-
 }
