@@ -3,6 +3,7 @@ import '../../gen/component/movementsensor/v1/movementsensor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
 class Position {
   GeoPoint coordinates;
   double altitude;
