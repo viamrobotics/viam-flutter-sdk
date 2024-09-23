@@ -14,9 +14,11 @@ import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
 
+/// {@category Viam SDK}
 typedef CloudMetadata = GetCloudMetadataResponse;
 Logger _logger = Logger();
 
+/// {@category Viam SDK}
 /// The options that define the behavior of the [RobotClient].
 class RobotClientOptions {
   /// Options for connecting to the robot
@@ -50,6 +52,7 @@ class RobotClientOptions {
       : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
 }
 
+/// {@category Viam SDK}
 /// gRPC client for a Robot. This class should be used for all interactions with a robot.
 ///
 /// Obtain an instance of this client by using the function:

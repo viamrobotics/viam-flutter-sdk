@@ -3,15 +3,19 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../gen/common/v1/common.pb.dart';
 
+/// {@category Viam SDK}
 /// The standard namespace for Viam resources (rdk)
 const String resourceNamespaceRDK = 'rdk';
 
+/// {@category Viam SDK}
 /// The standard type for component resources (component)
 const String resourceTypeComponent = 'component';
 
+/// {@category Viam SDK}
 /// The standard type for service resources (service)
 const String resourceTypeService = 'service';
 
+/// {@category Viam SDK}
 /// [Subtype] defines a triplet of strings that correspond to a resource's specific API definition.
 class Subtype {
   /// The namespace of the subtype
@@ -61,6 +65,7 @@ class Subtype {
       namespace == other.namespace && resourceType == other.resourceType && resourceSubtype == other.resourceSubtype;
 }
 
+/// {@category Viam SDK}
 /// Abstract class that defines the base functionality for all [Resource] types
 abstract class Resource {
   abstract final String name;
@@ -77,6 +82,7 @@ abstract class Resource {
   }
 }
 
+/// {@category Viam SDK}
 /// Abstract class that defines the base functionality for all RPC clients for resources
 abstract class ResourceRPCClient<T extends Client> {
   abstract ClientChannelBase channel;

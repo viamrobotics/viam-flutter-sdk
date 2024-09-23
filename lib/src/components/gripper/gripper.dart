@@ -2,6 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
 /// Gripper represents a physical Gripper which can open and close.
 ///
 /// For more information, see [Gripper component](https://docs.viam.com/components/gripper/).

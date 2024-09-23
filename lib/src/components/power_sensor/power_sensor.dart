@@ -3,9 +3,13 @@ import '../../gen/component/powersensor/v1/powersensor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
 typedef Voltage = GetVoltageResponse;
+
+/// {@category Viam SDK}
 typedef Current = GetCurrentResponse;
 
+/// {@category Viam SDK}
 /// PowerSensor reports information about voltage, current, and power.
 ///
 /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).

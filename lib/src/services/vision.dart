@@ -8,6 +8,7 @@ import '../resource/base.dart';
 import '../robot/client.dart';
 import '../utils.dart';
 
+/// {@category Viam SDK}
 class VisionClient extends Resource implements ResourceRPCClient {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'vision');
 

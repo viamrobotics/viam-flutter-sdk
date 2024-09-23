@@ -5,10 +5,14 @@ import '../../gen/component/board/v1/board.pbgrpc.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
 /// Tick of a digital interrupt
 typedef Tick = StreamTicksResponse;
+
+/// {@category Viam SDK}
 typedef AnalogValue = ReadAnalogReaderResponse;
 
+/// {@category Viam SDK}
 /// Board represents a physical general purpose compute board that contains various
 /// components such as analog readers, and digital interrupts.
 ///

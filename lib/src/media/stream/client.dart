@@ -131,6 +131,7 @@ class StreamManager {
   }
 }
 
+/// {@category Viam SDK}
 /// A client to manage a camera's WebRTC stream.
 ///
 /// Use the [getStream] method to obtain a stream of [MediaStream] that can be used to display WebRTC video.

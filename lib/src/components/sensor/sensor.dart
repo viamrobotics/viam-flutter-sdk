@@ -2,6 +2,8 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
+
 /// Sensor represents a physical sensing device that can provide measurement readings.
 ///
 /// For more information, see [Sensor component](https://docs.viam.com/components/sensor/).
