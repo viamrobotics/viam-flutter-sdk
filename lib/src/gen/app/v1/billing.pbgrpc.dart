@@ -37,6 +37,10 @@ class BillingServiceClient extends $grpc.Client {
       '/viam.app.v1.BillingService/GetInvoicePdf',
       ($9.GetInvoicePdfRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.GetInvoicePdfResponse.fromBuffer(value));
+  static final _$sendPaymentRequiredEmail = $grpc.ClientMethod<$9.SendPaymentRequiredEmailRequest, $9.SendPaymentRequiredEmailResponse>(
+      '/viam.app.v1.BillingService/SendPaymentRequiredEmail',
+      ($9.SendPaymentRequiredEmailRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.SendPaymentRequiredEmailResponse.fromBuffer(value));
 
   BillingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class BillingServiceClient extends $grpc.Client {
 
   $grpc.ResponseStream<$9.GetInvoicePdfResponse> getInvoicePdf($9.GetInvoicePdfRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$getInvoicePdf, $async.Stream.fromIterable([request]), options: options);
+  }
+
+  $grpc.ResponseFuture<$9.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($9.SendPaymentRequiredEmailRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sendPaymentRequiredEmail, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class BillingServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $9.GetInvoicePdfRequest.fromBuffer(value),
         ($9.GetInvoicePdfResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.SendPaymentRequiredEmailRequest, $9.SendPaymentRequiredEmailResponse>(
+        'SendPaymentRequiredEmail',
+        sendPaymentRequiredEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.SendPaymentRequiredEmailRequest.fromBuffer(value),
+        ($9.SendPaymentRequiredEmailResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$9.GetCurrentMonthUsageResponse> getCurrentMonthUsage_Pre($grpc.ServiceCall call, $async.Future<$9.GetCurrentMonthUsageRequest> request) async {
@@ -112,8 +127,13 @@ abstract class BillingServiceBase extends $grpc.Service {
     yield* getInvoicePdf(call, await request);
   }
 
+  $async.Future<$9.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail_Pre($grpc.ServiceCall call, $async.Future<$9.SendPaymentRequiredEmailRequest> request) async {
+    return sendPaymentRequiredEmail(call, await request);
+  }
+
   $async.Future<$9.GetCurrentMonthUsageResponse> getCurrentMonthUsage($grpc.ServiceCall call, $9.GetCurrentMonthUsageRequest request);
   $async.Future<$9.GetOrgBillingInformationResponse> getOrgBillingInformation($grpc.ServiceCall call, $9.GetOrgBillingInformationRequest request);
   $async.Future<$9.GetInvoicesSummaryResponse> getInvoicesSummary($grpc.ServiceCall call, $9.GetInvoicesSummaryRequest request);
   $async.Stream<$9.GetInvoicePdfResponse> getInvoicePdf($grpc.ServiceCall call, $9.GetInvoicePdfRequest request);
+  $async.Future<$9.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($grpc.ServiceCall call, $9.SendPaymentRequiredEmailRequest request);
 }

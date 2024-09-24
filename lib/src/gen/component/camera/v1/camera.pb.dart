@@ -651,6 +651,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     IntrinsicParameters? intrinsicParameters,
     DistortionParameters? distortionParameters,
     $core.Iterable<$core.String>? mimeTypes,
+    $core.double? frameRate,
   }) {
     final $result = create();
     if (supportsPcd != null) {
@@ -665,6 +666,9 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     if (mimeTypes != null) {
       $result.mimeTypes.addAll(mimeTypes);
     }
+    if (frameRate != null) {
+      $result.frameRate = frameRate;
+    }
     return $result;
   }
   GetPropertiesResponse._() : super();
@@ -676,6 +680,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
     ..aOM<IntrinsicParameters>(2, _omitFieldNames ? '' : 'intrinsicParameters', subBuilder: IntrinsicParameters.create)
     ..aOM<DistortionParameters>(3, _omitFieldNames ? '' : 'distortionParameters', subBuilder: DistortionParameters.create)
     ..pPS(4, _omitFieldNames ? '' : 'mimeTypes')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'frameRate', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
@@ -741,6 +746,16 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
   /// Supported MIME types by the camera
   @$pb.TagNumber(4)
   $core.List<$core.String> get mimeTypes => $_getList(3);
+
+  /// Optional camera frame rate for image capture timing
+  @$pb.TagNumber(5)
+  $core.double get frameRate => $_getN(4);
+  @$pb.TagNumber(5)
+  set frameRate($core.double v) { $_setFloat(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFrameRate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFrameRate() => clearField(5);
 }
 
 class Webcams extends $pb.GeneratedMessage {

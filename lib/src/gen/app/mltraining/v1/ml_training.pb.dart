@@ -191,6 +191,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     $core.String? modelName,
     $core.String? modelVersion,
     $core.String? registryItemVersion,
+    $core.Map<$core.String, $core.String>? arguments,
   }) {
     final $result = create();
     if (datasetId != null) {
@@ -211,6 +212,9 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     if (registryItemVersion != null) {
       $result.registryItemVersion = registryItemVersion;
     }
+    if (arguments != null) {
+      $result.arguments.addAll(arguments);
+    }
     return $result;
   }
   SubmitCustomTrainingJobRequest._() : super();
@@ -224,6 +228,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'modelName')
     ..aOS(5, _omitFieldNames ? '' : 'modelVersion')
     ..aOS(6, _omitFieldNames ? '' : 'registryItemVersion')
+    ..m<$core.String, $core.String>(7, _omitFieldNames ? '' : 'arguments', entryClassName: 'SubmitCustomTrainingJobRequest.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -301,6 +306,9 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
   $core.bool hasRegistryItemVersion() => $_has(5);
   @$pb.TagNumber(6)
   void clearRegistryItemVersion() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.Map<$core.String, $core.String> get arguments => $_getMap(6);
 }
 
 class SubmitCustomTrainingJobResponse extends $pb.GeneratedMessage {
