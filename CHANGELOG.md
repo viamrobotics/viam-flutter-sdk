@@ -1,11 +1,15 @@
 # Changelog
 
-## [v0.0.20](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.20) (2024-08-26)
+## [v0.0.21](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.21) (2024-09-24)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.19...v0.0.20)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.20...v0.0.21)
 
 **Merged pull requests:**
 
+- make RobotClientOptions properties \*not\* final [\#260](https://github.com/viamrobotics/viam-flutter-sdk/pull/260) ([clintpurser](https://github.com/clintpurser))
+- fix documentation comment [\#259](https://github.com/viamrobotics/viam-flutter-sdk/pull/259) ([clintpurser](https://github.com/clintpurser))
+- Workflow/update protos [\#258](https://github.com/viamrobotics/viam-flutter-sdk/pull/258) ([njooma](https://github.com/njooma))
+- v0.0.20 [\#257](https://github.com/viamrobotics/viam-flutter-sdk/pull/257) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add shutdown function [\#256](https://github.com/viamrobotics/viam-flutter-sdk/pull/256) ([njooma](https://github.com/njooma))
 - RSDK-8607 - fix timeout generation bug [\#255](https://github.com/viamrobotics/viam-flutter-sdk/pull/255) ([stuqdog](https://github.com/stuqdog))
 - v0.0.19 [\#254](https://github.com/viamrobotics/viam-flutter-sdk/pull/254) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -156,6 +160,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.20](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.20) (2024-08-26)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.19...v0.0.20)
 
 ## [v0.0.19](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.19) (2024-08-12)
 
