@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'power_sensor.dart';
 
+/// {@category Components}
 /// gRPC Service for a [PowerSensor]
 class PowerSensorService extends PowerSensorServiceBase {
   final ResourceManager _manager;

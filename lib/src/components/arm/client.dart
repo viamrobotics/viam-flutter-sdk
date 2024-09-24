@@ -7,7 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'arm.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// gRPC client for an [Arm] component.
 ///
 /// Used to communicate with an existing [Arm] implementation over gRPC.

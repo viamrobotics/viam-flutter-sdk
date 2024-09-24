@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'generic.dart';
 
+/// {@category Components}
 /// gRPC Service for a generic [Generic]
 class GenericService extends GenericServiceBase {
   final ResourceManager _manager;

@@ -7,7 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'sensor.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// gRPC client for the [Sensor] component.
 class SensorClient extends Sensor implements ResourceRPCClient {
   @override

@@ -8,6 +8,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'camera.dart';
 
+/// {@category Components}
 /// gRPC Service for a generic [Camera]
 class CameraService extends CameraServiceBase {
   final ResourceManager _manager;

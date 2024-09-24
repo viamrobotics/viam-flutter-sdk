@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'base.dart';
 
+/// {@category Components}
 /// gRPC service for a robotic [Base]
 class BaseService extends BaseServiceBase {
   final ResourceManager _manager;

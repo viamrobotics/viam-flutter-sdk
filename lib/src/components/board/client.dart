@@ -12,7 +12,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'board.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// gRPC client for the [Board] component.
 class BoardClient extends Board implements ResourceRPCClient {
   @override

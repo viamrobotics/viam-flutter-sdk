@@ -7,7 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'power_sensor.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// gRPC client for the [PowerSensor] component.
 class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
   @override
