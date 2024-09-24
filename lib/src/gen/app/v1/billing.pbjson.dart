@@ -246,3 +246,27 @@ const GetInvoicePdfResponse$json = {
 final $typed_data.Uint8List getInvoicePdfResponseDescriptor = $convert.base64Decode(
     'ChVHZXRJbnZvaWNlUGRmUmVzcG9uc2USFAoFY2h1bmsYASABKAxSBWNodW5r');
 
+@$core.Deprecated('Use sendPaymentRequiredEmailRequestDescriptor instead')
+const SendPaymentRequiredEmailRequest$json = {
+  '1': 'SendPaymentRequiredEmailRequest',
+  '2': [
+    {'1': 'customer_org_id', '3': 1, '4': 1, '5': 9, '10': 'customerOrgId'},
+    {'1': 'billing_owner_org_id', '3': 2, '4': 1, '5': 9, '10': 'billingOwnerOrgId'},
+  ],
+};
+
+/// Descriptor for `SendPaymentRequiredEmailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendPaymentRequiredEmailRequestDescriptor = $convert.base64Decode(
+    'Ch9TZW5kUGF5bWVudFJlcXVpcmVkRW1haWxSZXF1ZXN0EiYKD2N1c3RvbWVyX29yZ19pZBgBIA'
+    'EoCVINY3VzdG9tZXJPcmdJZBIvChRiaWxsaW5nX293bmVyX29yZ19pZBgCIAEoCVIRYmlsbGlu'
+    'Z093bmVyT3JnSWQ=');
+
+@$core.Deprecated('Use sendPaymentRequiredEmailResponseDescriptor instead')
+const SendPaymentRequiredEmailResponse$json = {
+  '1': 'SendPaymentRequiredEmailResponse',
+};
+
+/// Descriptor for `SendPaymentRequiredEmailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendPaymentRequiredEmailResponseDescriptor = $convert.base64Decode(
+    'CiBTZW5kUGF5bWVudFJlcXVpcmVkRW1haWxSZXNwb25zZQ==');
+

@@ -51,12 +51,14 @@ const RobotConfig$json = {
     {'1': 'enable_web_profile', '3': 13, '4': 1, '5': 8, '10': 'enableWebProfile'},
     {'1': 'log', '3': 14, '4': 3, '5': 11, '6': '.viam.app.v1.LogPatternConfig', '10': 'log'},
     {'1': 'revision', '3': 15, '4': 1, '5': 9, '10': 'revision'},
+    {'1': 'maintenance', '3': 16, '4': 1, '5': 11, '6': '.viam.app.v1.MaintenanceConfig', '9': 4, '10': 'maintenance', '17': true},
   ],
   '8': [
     {'1': '_network'},
     {'1': '_auth'},
     {'1': '_debug'},
     {'1': '_disable_partial_start'},
+    {'1': '_maintenance'},
   ],
 };
 
@@ -76,8 +78,10 @@ final $typed_data.Uint8List robotConfigDescriptor = $convert.base64Decode(
     '1lbnRfc3RhdHVzGAwgAygLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IXb3Zl'
     'cndyaXRlRnJhZ21lbnRTdGF0dXMSLAoSZW5hYmxlX3dlYl9wcm9maWxlGA0gASgIUhBlbmFibG'
     'VXZWJQcm9maWxlEi8KA2xvZxgOIAMoCzIdLnZpYW0uYXBwLnYxLkxvZ1BhdHRlcm5Db25maWdS'
-    'A2xvZxIaCghyZXZpc2lvbhgPIAEoCVIIcmV2aXNpb25CCgoIX25ldHdvcmtCBwoFX2F1dGhCCA'
-    'oGX2RlYnVnQhgKFl9kaXNhYmxlX3BhcnRpYWxfc3RhcnQ=');
+    'A2xvZxIaCghyZXZpc2lvbhgPIAEoCVIIcmV2aXNpb24SRQoLbWFpbnRlbmFuY2UYECABKAsyHi'
+    '52aWFtLmFwcC52MS5NYWludGVuYW5jZUNvbmZpZ0gEUgttYWludGVuYW5jZYgBAUIKCghfbmV0'
+    'd29ya0IHCgVfYXV0aEIICgZfZGVidWdCGAoWX2Rpc2FibGVfcGFydGlhbF9zdGFydEIOCgxfbW'
+    'FpbnRlbmFuY2U=');
 
 @$core.Deprecated('Use logPatternConfigDescriptor instead')
 const LogPatternConfig$json = {
@@ -738,4 +742,19 @@ final $typed_data.Uint8List packageConfigDescriptor = $convert.base64Decode(
     'Cg1QYWNrYWdlQ29uZmlnEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHcGFja2FnZRgCIAEoCVIHcG'
     'Fja2FnZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEhIKBHR5cGUYBCABKAlSBHR5cGUSOAoG'
     'c3RhdHVzGAUgASgLMiAudmlhbS5hcHAudjEuQXBwVmFsaWRhdGlvblN0YXR1c1IGc3RhdHVz');
+
+@$core.Deprecated('Use maintenanceConfigDescriptor instead')
+const MaintenanceConfig$json = {
+  '1': 'MaintenanceConfig',
+  '2': [
+    {'1': 'sensor_name', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'sensorName'},
+    {'1': 'maintenance_allowed_key', '3': 2, '4': 1, '5': 9, '10': 'maintenanceAllowedKey'},
+  ],
+};
+
+/// Descriptor for `MaintenanceConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List maintenanceConfigDescriptor = $convert.base64Decode(
+    'ChFNYWludGVuYW5jZUNvbmZpZxI9CgtzZW5zb3JfbmFtZRgBIAEoCzIcLnZpYW0uY29tbW9uLn'
+    'YxLlJlc291cmNlTmFtZVIKc2Vuc29yTmFtZRI2ChdtYWludGVuYW5jZV9hbGxvd2VkX2tleRgC'
+    'IAEoCVIVbWFpbnRlbmFuY2VBbGxvd2VkS2V5');
 

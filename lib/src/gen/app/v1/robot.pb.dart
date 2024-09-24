@@ -37,6 +37,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.bool? enableWebProfile,
     $core.Iterable<LogPatternConfig>? log,
     $core.String? revision,
+    MaintenanceConfig? maintenance,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -84,6 +85,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (revision != null) {
       $result.revision = revision;
     }
+    if (maintenance != null) {
+      $result.maintenance = maintenance;
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -106,6 +110,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..aOB(13, _omitFieldNames ? '' : 'enableWebProfile')
     ..pc<LogPatternConfig>(14, _omitFieldNames ? '' : 'log', $pb.PbFieldType.PM, subBuilder: LogPatternConfig.create)
     ..aOS(15, _omitFieldNames ? '' : 'revision')
+    ..aOM<MaintenanceConfig>(16, _omitFieldNames ? '' : 'maintenance', subBuilder: MaintenanceConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -225,6 +230,17 @@ class RobotConfig extends $pb.GeneratedMessage {
   $core.bool hasRevision() => $_has(14);
   @$pb.TagNumber(15)
   void clearRevision() => clearField(15);
+
+  @$pb.TagNumber(16)
+  MaintenanceConfig get maintenance => $_getN(15);
+  @$pb.TagNumber(16)
+  set maintenance(MaintenanceConfig v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasMaintenance() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearMaintenance() => clearField(16);
+  @$pb.TagNumber(16)
+  MaintenanceConfig ensureMaintenance() => $_ensure(15);
 }
 
 /// LogPatternConfig allows you to specify a 2-tuple consisting
@@ -3602,6 +3618,72 @@ class PackageConfig extends $pb.GeneratedMessage {
   void clearStatus() => clearField(5);
   @$pb.TagNumber(5)
   AppValidationStatus ensureStatus() => $_ensure(4);
+}
+
+class MaintenanceConfig extends $pb.GeneratedMessage {
+  factory MaintenanceConfig({
+    $13.ResourceName? sensorName,
+    $core.String? maintenanceAllowedKey,
+  }) {
+    final $result = create();
+    if (sensorName != null) {
+      $result.sensorName = sensorName;
+    }
+    if (maintenanceAllowedKey != null) {
+      $result.maintenanceAllowedKey = maintenanceAllowedKey;
+    }
+    return $result;
+  }
+  MaintenanceConfig._() : super();
+  factory MaintenanceConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MaintenanceConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MaintenanceConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<$13.ResourceName>(1, _omitFieldNames ? '' : 'sensorName', subBuilder: $13.ResourceName.create)
+    ..aOS(2, _omitFieldNames ? '' : 'maintenanceAllowedKey')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MaintenanceConfig clone() => MaintenanceConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MaintenanceConfig copyWith(void Function(MaintenanceConfig) updates) => super.copyWith((message) => updates(message as MaintenanceConfig)) as MaintenanceConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MaintenanceConfig create() => MaintenanceConfig._();
+  MaintenanceConfig createEmptyInstance() => create();
+  static $pb.PbList<MaintenanceConfig> createRepeated() => $pb.PbList<MaintenanceConfig>();
+  @$core.pragma('dart2js:noInline')
+  static MaintenanceConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MaintenanceConfig>(create);
+  static MaintenanceConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $13.ResourceName get sensorName => $_getN(0);
+  @$pb.TagNumber(1)
+  set sensorName($13.ResourceName v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSensorName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSensorName() => clearField(1);
+  @$pb.TagNumber(1)
+  $13.ResourceName ensureSensorName() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get maintenanceAllowedKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set maintenanceAllowedKey($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaintenanceAllowedKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaintenanceAllowedKey() => clearField(2);
 }
 
 
