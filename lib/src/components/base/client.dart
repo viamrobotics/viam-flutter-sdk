@@ -8,6 +8,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'base.dart';
 
+/// {@category Viam SDK}
 /// gRPC client for the [Base] component.
 class BaseClient extends Base implements ResourceRPCClient {
   @override

@@ -3,8 +3,10 @@ import '../../gen/component/motor/v1/motor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
 typedef MotorProperties = GetPropertiesResponse;
 
+/// {@category Viam SDK}
 class PowerState {
   bool isOn;
   double powerPct;
@@ -16,6 +18,7 @@ class PowerState {
   }
 }
 
+/// {@category Viam SDK}
 /// Motor represents a physical motor.
 ///
 /// For more information, see [Motor component](https://docs.viam.com/components/motor/).

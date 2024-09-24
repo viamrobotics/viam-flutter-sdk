@@ -7,6 +7,8 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'servo.dart';
 
+/// {@category Viam SDK}
+
 /// gRPC client for the [Servo] component.
 class ServoClient extends Servo implements ResourceRPCClient {
   @override

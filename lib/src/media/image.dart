@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 
+/// {@category Viam SDK}
 /// Mime types supported by Viam
 class MimeType {
   final String _type;
@@ -89,6 +90,7 @@ class MimeType {
   }
 }
 
+/// {@category Viam SDK}
 /// A custom image type that contains the [MimeTYpe], raw image data, and lazily loads and caches an [img.Image].
 class ViamImage {
   /// The mimetype of the image

@@ -2,8 +2,10 @@ import 'dart:async';
 
 import '../gen/provisioning/v1/provisioning.pbgrpc.dart';
 
+/// {@category Viam SDK}
 enum NetworkType { wifi, wired }
 
+/// {@category Viam SDK}
 /// gRPC client for connecting to Viam's Provisioning Service
 ///
 /// All calls must be authenticated.

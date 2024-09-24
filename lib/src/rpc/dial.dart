@@ -25,6 +25,7 @@ Logger _newDialLogger(LogOutput? output) {
 
 var _logger = _newDialLogger(null);
 
+/// {@category Viam SDK}
 /// Describes the behavior for connecting to a robot
 class DialOptions {
   /// Whether the RPC connection is TLS based
@@ -67,6 +68,7 @@ class DialOptions {
   LogOutput? logOutput;
 }
 
+/// {@category Viam SDK}
 /// The credentials used for connecting to the robot
 class Credentials {
   /// The type of credential, e.g. 'robot-location-secret', 'api-key'
@@ -84,6 +86,7 @@ class Credentials {
   const Credentials.apiKey(this.payload) : type = 'api-key';
 }
 
+/// {@category Viam SDK}
 /// Options specific for connecting over WebRTC
 class DialWebRtcOptions {
   /// Whether to disable WebRTC.
@@ -120,6 +123,7 @@ class DialWebRtcOptions {
   String? signalingAccessToken;
 }
 
+/// {@category Viam SDK}
 /// Connect to a robot at the provided address with the given options
 Future<ClientChannelBase> dial(String address, DialOptions? options, String Function() sessionCallback) async {
   final opts = options ?? DialOptions();
@@ -567,6 +571,7 @@ Future<AuthenticatedChannel> _authenticatedChannel(String address, DialOptions o
   return AuthenticatedChannel(actual.host, actual.port, accessToken, options.insecure, sessionsCallback);
 }
 
+/// {@category Viam SDK}
 /// A channel that attaches an access token to gRPC metadata for every call
 class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
   final String accessToken;
