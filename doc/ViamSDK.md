@@ -1,3 +1,3 @@
 # Viam SDK Library
 
-Robots at your fingertips.
+Smart machines on smart devices.
