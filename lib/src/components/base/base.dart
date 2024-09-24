@@ -6,7 +6,7 @@ import '../../robot/client.dart';
 /// {@category Viam SDK}
 typedef BaseProperties = GetPropertiesResponse;
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Base represents a physical base of a robot.
 ///
 /// For more information, see [Base component](https://docs.viam.com/components/base/).

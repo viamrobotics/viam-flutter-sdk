@@ -8,7 +8,7 @@ import '../../robot/client.dart';
 /// The camera's supported features and settings
 typedef CameraProperties = GetPropertiesResponse;
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Camera represents any physical hardware that can capture frames.
 ///
 /// For more information, see [Camera component](https://docs.viam.com/components/camera/).

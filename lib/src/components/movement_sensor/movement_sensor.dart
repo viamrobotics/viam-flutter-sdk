@@ -17,7 +17,7 @@ typedef Properties = GetPropertiesResponse;
 /// {@category Viam SDK}
 typedef Accuracy = GetAccuracyResponse;
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// MovementSensor reports information about the robot's direction, position and speed.
 ///
 /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).

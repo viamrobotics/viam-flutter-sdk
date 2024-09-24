@@ -2,8 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// {@category Viam SDK}
-/// Generic represents a generic component that executes doCommand.
+/// {@category Components}/// Generic represents a generic component that executes doCommand.
 ///
 /// For more information, see [Generic component](https://docs.viam.com/components/generic/).
 abstract class Generic extends Resource {
