@@ -1118,6 +1118,102 @@ class GetInvoicePdfResponse extends $pb.GeneratedMessage {
   void clearChunk() => clearField(1);
 }
 
+class SendPaymentRequiredEmailRequest extends $pb.GeneratedMessage {
+  factory SendPaymentRequiredEmailRequest({
+    $core.String? customerOrgId,
+    $core.String? billingOwnerOrgId,
+  }) {
+    final $result = create();
+    if (customerOrgId != null) {
+      $result.customerOrgId = customerOrgId;
+    }
+    if (billingOwnerOrgId != null) {
+      $result.billingOwnerOrgId = billingOwnerOrgId;
+    }
+    return $result;
+  }
+  SendPaymentRequiredEmailRequest._() : super();
+  factory SendPaymentRequiredEmailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendPaymentRequiredEmailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendPaymentRequiredEmailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'customerOrgId')
+    ..aOS(2, _omitFieldNames ? '' : 'billingOwnerOrgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SendPaymentRequiredEmailRequest clone() => SendPaymentRequiredEmailRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SendPaymentRequiredEmailRequest copyWith(void Function(SendPaymentRequiredEmailRequest) updates) => super.copyWith((message) => updates(message as SendPaymentRequiredEmailRequest)) as SendPaymentRequiredEmailRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendPaymentRequiredEmailRequest create() => SendPaymentRequiredEmailRequest._();
+  SendPaymentRequiredEmailRequest createEmptyInstance() => create();
+  static $pb.PbList<SendPaymentRequiredEmailRequest> createRepeated() => $pb.PbList<SendPaymentRequiredEmailRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SendPaymentRequiredEmailRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendPaymentRequiredEmailRequest>(create);
+  static SendPaymentRequiredEmailRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get customerOrgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set customerOrgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCustomerOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCustomerOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get billingOwnerOrgId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set billingOwnerOrgId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBillingOwnerOrgId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillingOwnerOrgId() => clearField(2);
+}
+
+class SendPaymentRequiredEmailResponse extends $pb.GeneratedMessage {
+  factory SendPaymentRequiredEmailResponse() => create();
+  SendPaymentRequiredEmailResponse._() : super();
+  factory SendPaymentRequiredEmailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendPaymentRequiredEmailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendPaymentRequiredEmailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SendPaymentRequiredEmailResponse clone() => SendPaymentRequiredEmailResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SendPaymentRequiredEmailResponse copyWith(void Function(SendPaymentRequiredEmailResponse) updates) => super.copyWith((message) => updates(message as SendPaymentRequiredEmailResponse)) as SendPaymentRequiredEmailResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendPaymentRequiredEmailResponse create() => SendPaymentRequiredEmailResponse._();
+  SendPaymentRequiredEmailResponse createEmptyInstance() => create();
+  static $pb.PbList<SendPaymentRequiredEmailResponse> createRepeated() => $pb.PbList<SendPaymentRequiredEmailResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SendPaymentRequiredEmailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendPaymentRequiredEmailResponse>(create);
+  static SendPaymentRequiredEmailResponse? _defaultInstance;
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

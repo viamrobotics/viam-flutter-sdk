@@ -122,7 +122,19 @@ const SubmitCustomTrainingJobRequest$json = {
     {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'organizationId'},
     {'1': 'model_name', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
     {'1': 'model_version', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
+    {'1': 'arguments', '3': 7, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.SubmitCustomTrainingJobRequest.ArgumentsEntry', '10': 'arguments'},
   ],
+  '3': [SubmitCustomTrainingJobRequest_ArgumentsEntry$json],
+};
+
+@$core.Deprecated('Use submitCustomTrainingJobRequestDescriptor instead')
+const SubmitCustomTrainingJobRequest_ArgumentsEntry$json = {
+  '1': 'ArgumentsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `SubmitCustomTrainingJobRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -137,7 +149,10 @@ final $typed_data.Uint8List submitCustomTrainingJobRequestDescriptor = $convert.
     '9uX2lkIlIOb3JnYW5pemF0aW9uSWQSRwoKbW9kZWxfbmFtZRgEIAEoCUIomoSeAyNic29uOiJt'
     'b2RlbF9uYW1lIiBqc29uOiJtb2RlbF9uYW1lIlIJbW9kZWxOYW1lElMKDW1vZGVsX3ZlcnNpb2'
     '4YBSABKAlCLpqEngMpYnNvbjoibW9kZWxfdmVyc2lvbiIganNvbjoibW9kZWxfdmVyc2lvbiJS'
-    'DG1vZGVsVmVyc2lvbg==');
+    'DG1vZGVsVmVyc2lvbhJjCglhcmd1bWVudHMYByADKAsyRS52aWFtLmFwcC5tbHRyYWluaW5nLn'
+    'YxLlN1Ym1pdEN1c3RvbVRyYWluaW5nSm9iUmVxdWVzdC5Bcmd1bWVudHNFbnRyeVIJYXJndW1l'
+    'bnRzGjwKDkFyZ3VtZW50c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUg'
+    'V2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use submitCustomTrainingJobResponseDescriptor instead')
 const SubmitCustomTrainingJobResponse$json = {
