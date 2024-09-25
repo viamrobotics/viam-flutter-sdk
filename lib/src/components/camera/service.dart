@@ -51,10 +51,7 @@ class CameraService extends CameraServiceBase {
   Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
     final camera = _fromManager(request.name);
     final properties = await camera.properties();
-    return GetPropertiesResponse()
-      ..supportsPcd = properties.supportsPcd
-      ..intrinsicParameters = properties.intrinsicParameters
-      ..distortionParameters = properties.distortionParameters;
+    return properties;
   }
 
   @override
