@@ -1,11 +1,11 @@
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
-import 'package:viam_sdk/protos/app/data_sync.dart';
-import 'package:viam_sdk/protos/app/dataset.dart';
 
 import '../protos/app/app.dart';
 import '../protos/app/billing.dart';
 import '../protos/app/data.dart';
+import '../protos/app/data_sync.dart';
+import '../protos/app/dataset.dart';
 import '../protos/app/robot.dart';
 import '../protos/provisioning/provisioning.dart';
 import './app/app.dart';

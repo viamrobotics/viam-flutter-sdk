@@ -23,6 +23,8 @@ linter:
     - unnecessary_statements
     - unnecessary_await_in_return
     - prefer_final_locals
+    - directives_ordering
+    - prefer_relative_imports
 
 analyzer:
   errors:

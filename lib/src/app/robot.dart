@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:logger/logger.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 
 import '../gen/app/v1/robot.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
+import '../gen/google/protobuf/timestamp.pb.dart';
 
 /// {@category Viam SDK}
 /// gRPC client for connecting to app's RobotService.

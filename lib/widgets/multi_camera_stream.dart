@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
+import '../viam_sdk.dart';
 import './camera_stream.dart';
 
 /// A widget to display a WebRTC stream from a [Camera], and a dropdown to select which camera to view.

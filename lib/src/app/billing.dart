@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:viam_sdk/protos/app/billing.dart';
+import '../../protos/app/billing.dart';
 
 /// gRPC client for connecting to Viam's Billing Service
 ///

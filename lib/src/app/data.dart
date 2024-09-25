@@ -4,15 +4,15 @@ import 'dart:typed_data';
 import 'package:async/async.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
-import 'package:viam_sdk/protos/app/data.dart';
-import 'package:viam_sdk/src/gen/google/protobuf/any.pb.dart';
-import 'package:viam_sdk/src/utils.dart';
 
+import '../../protos/app/data.dart';
 import '../gen/app/data/v1/data.pbgrpc.dart';
 import '../gen/app/dataset/v1/dataset.pbgrpc.dart';
 import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
+import '../gen/google/protobuf/any.pb.dart';
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
+import '../utils.dart';
 
 /// {@category Viam SDK}
 typedef DatabaseConnection = GetDatabaseConnectionResponse;

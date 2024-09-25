@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../viam_sdk.dart';
 import '../button.dart';
 import '../multi_camera_stream.dart';
 

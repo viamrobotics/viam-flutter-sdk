@@ -5,9 +5,9 @@ import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../utils.dart';
 import '../../gen/google/protobuf/duration.pb.dart' as grpc_duration;
 import '../../gen/proto/rpc/webrtc/v1/grpc.pb.dart' as grpc;
+import '../../utils.dart';
 import 'web_rtc_client.dart';
 import 'web_rtc_transport_stream.dart';
 

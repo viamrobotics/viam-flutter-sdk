@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../viam_sdk.dart';
 import '../button.dart';
 
 /// A widget to control a [Board].

@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+
+import '../../viam_sdk.dart';
 
 /// A widget to control a [Motor].
 ///

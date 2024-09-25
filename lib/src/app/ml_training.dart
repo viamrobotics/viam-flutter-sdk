@@ -1,4 +1,4 @@
-import 'package:viam_sdk/protos/app/ml_training.dart';
+import '../../protos/app/ml_training.dart';
 
 /// gRPC client used for working with ML training jobs.
 ///
