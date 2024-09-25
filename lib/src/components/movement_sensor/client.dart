@@ -7,6 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'movement_sensor.dart';
 
+/// {@category Viam SDK}
 /// gRPC client for the [MovementSensor] component.
 class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
   @override

@@ -8,6 +8,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'camera.dart';
 
+/// {@category Viam SDK}
 /// gRPC client for the [Camera] component
 class CameraClient extends Camera implements ResourceRPCClient {
   @override

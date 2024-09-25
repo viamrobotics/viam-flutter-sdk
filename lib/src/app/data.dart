@@ -14,6 +14,7 @@ import '../gen/app/datasync/v1/data_sync.pbgrpc.dart' hide CaptureInterval;
 import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
 
+/// {@category Viam SDK}
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
 /// gRPC client used for retrieving, uploading, and modifying stored data from app.viam.com.
@@ -532,6 +533,7 @@ class DataClient {
   }
 }
 
+/// {@category Viam SDK}
 extension FilterUtils on Filter {
   /// Return a [Filter] with a [CaptureInterval] created by the provided start and end [DateTime] objects
   Filter withDateTimeCaptureInterval({DateTime? start, DateTime? end}) {

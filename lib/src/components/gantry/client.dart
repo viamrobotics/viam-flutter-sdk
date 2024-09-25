@@ -7,6 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'gantry.dart';
 
+/// {@category Viam SDK}
 /// gRPC client for the [Gantry] component.
 class GantryClient extends Gantry implements ResourceRPCClient {
   @override

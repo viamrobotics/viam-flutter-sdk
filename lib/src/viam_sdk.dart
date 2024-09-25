@@ -7,6 +7,7 @@ import './gen/app/v1/app.pbgrpc.dart';
 import './robot/client.dart';
 import './viam_sdk_impl.dart';
 
+/// {@category Viam SDK}
 /// An object to interact with the Viam app
 abstract class Viam {
   /// Create an authenticated Viam instance with the provided [accessToken]

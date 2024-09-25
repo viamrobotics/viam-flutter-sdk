@@ -1,5 +1,6 @@
 import '../gen/app/v1/app.pbgrpc.dart' as proto;
 
+/// {@category Viam SDK}
 enum AuthorizationId {
   organizationOwner,
   organizationOperator,
@@ -15,6 +16,7 @@ enum AuthorizationId {
   }
 }
 
+/// {@category Viam SDK}
 enum IdentityType {
   user,
   apiKey;
@@ -26,8 +28,10 @@ enum IdentityType {
   }
 }
 
+/// {@category Viam SDK}
 enum ResourceType { location, organization, robot }
 
+/// {@category Viam SDK}
 enum Permission {
   readOrganization,
   writeOrganization,
@@ -52,6 +56,7 @@ enum Permission {
   }
 }
 
+/// {@category Viam SDK}
 class ViamAuthorization {
   String authorizationType;
 

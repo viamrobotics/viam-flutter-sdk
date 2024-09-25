@@ -27,6 +27,7 @@ import '../components/servo/servo.dart';
 import '../resource/base.dart';
 import '../services/vision.dart';
 
+/// {@category Viam SDK}
 /// An object representing a resource to be registered.
 ///
 /// This object is generic over [Resource], and it includes various required functionality for the resource (e.g. creating an RPC client)
@@ -41,6 +42,7 @@ class ResourceRegistration<T extends Resource> {
   ResourceRegistration(this.subtype, this.rpcClientCreator);
 }
 
+/// {@category Viam SDK}
 /// The global registry of robot resources.
 ///
 /// **NB** The [Registry] should almost never be used directly.
