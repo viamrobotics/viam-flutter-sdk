@@ -62,7 +62,7 @@ class DialOptions {
   bool _usingMdns = false;
 
   /// Timeout is the timeout for dial.
-  Duration timeout = Duration(seconds: 10);
+  Duration timeout = const Duration(seconds: 10);
 
   /// If specified, a custom log output for dial logs.
   LogOutput? logOutput;
