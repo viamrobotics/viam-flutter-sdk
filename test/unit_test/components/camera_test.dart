@@ -13,9 +13,8 @@ class FakeCamera extends Camera {
 
   @override
   String name;
-  bool setFrameRate;
 
-  FakeCamera(this.name, {this.setFrameRate = false});
+  FakeCamera(this.name);
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
@@ -41,14 +40,10 @@ class FakeCamera extends Camera {
 
   @override
   Future<CameraProperties> properties() async {
-    final properties = CameraProperties()
+    return CameraProperties()
       ..supportsPcd = true
       ..intrinsicParameters = (IntrinsicParameters()..widthPx = 10)
       ..distortionParameters = (DistortionParameters()..model = 'test');
-    if (setFrameRate) {
-      properties.frameRate = 10.0;
-    }
-    return properties;
   }
 }
 
@@ -56,11 +51,9 @@ void main() {
   group('Camera Tests', () {
     const String name = 'camera';
     late FakeCamera camera;
-    late FakeCamera frameRateCamera;
 
     setUp(() {
       camera = FakeCamera(name);
-      frameRateCamera = FakeCamera(name, setFrameRate: true);
     });
 
     test('image', () async {
@@ -83,18 +76,10 @@ void main() {
       expect(actualPcd.raw, [0, 0, 0]);
     });
 
-    test('properties without frame rate', () async {
+    test('properties', () async {
       final actual = await camera.properties();
       expect(actual.distortionParameters.model, 'test');
       expect(actual.intrinsicParameters.widthPx, 10);
-      expect(actual.frameRate, 0);
-    });
-
-    test('properties with frame rate', () async {
-      final actual = await frameRateCamera.properties();
-      expect(actual.distortionParameters.model, 'test');
-      expect(actual.intrinsicParameters.widthPx, 10);
-      expect(actual.frameRate, 10.0);
     });
 
     test('doCommand', () async {
@@ -112,7 +97,7 @@ void main() {
     const String name = 'camera';
 
     setUp(() async {
-      camera = FakeCamera(name, setFrameRate: false);
+      camera = FakeCamera(name);
       final port = generateTestingPortFromName(name);
       final manager = ResourceManager();
       manager.register(Camera.getResourceName(name), camera);
@@ -163,12 +148,11 @@ void main() {
         expect(actualPcd.pointCloud, [0, 0, 0]);
       });
 
-      test('properties without frameRate', () async {
+      test('properties', () async {
         final client = CameraServiceClient(channel);
         final actual = await client.getProperties(GetPropertiesRequest()..name = name);
         expect(actual.distortionParameters.model, 'test');
         expect(actual.intrinsicParameters.widthPx, 10);
-        expect(actual.frameRate, 0);
       });
 
       test('doCommand', () async {
@@ -203,12 +187,11 @@ void main() {
         expect(actualPcd.raw, [0, 0, 0]);
       });
 
-      test('properties without frame rate', () async {
+      test('properties', () async {
         final client = CameraClient(name, channel);
         final actual = await client.properties();
         expect(actual.distortionParameters.model, 'test');
         expect(actual.intrinsicParameters.widthPx, 10);
-        expect(actual.frameRate, 0.0);
       });
 
       test('doCommand', () async {
@@ -216,49 +199,6 @@ void main() {
         final cmd = {'foo': 'bar'};
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
-      });
-    });
-  });
-
-  group('Camera RPC Tests with frame rate', () {
-    late ClientChannel channel;
-    late FakeCamera camera;
-    late CameraService service;
-    late Server server;
-    const String name = 'camera';
-
-    setUp(() async {
-      camera = FakeCamera(name, setFrameRate: true);
-      final port = generateTestingPortFromName(name);
-      final manager = ResourceManager();
-      manager.register(Camera.getResourceName(name), camera);
-      service = CameraService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
-      server = Server.create(services: [service]);
-      await server.serve(port: port);
-    });
-
-    tearDown(() async {
-      await channel.shutdown();
-      await server.shutdown();
-    });
-
-    group('Camera Service Tests', () {
-      test('properties with frameRate', () async {
-        final client = CameraServiceClient(channel);
-        final actual = await client.getProperties(GetPropertiesRequest()..name = name);
-        expect(actual.distortionParameters.model, 'test');
-        expect(actual.intrinsicParameters.widthPx, 10);
-        expect(actual.frameRate, 10.0);
-      });
-    });
-    group('Camera Client Tests', () {
-      test('properties with frameRate', () async {
-        final client = CameraClient(name, channel);
-        final actual = await client.properties();
-        expect(actual.distortionParameters.model, 'test');
-        expect(actual.intrinsicParameters.widthPx, 10);
-        expect(actual.frameRate, 10.0);
       });
     });
   });
