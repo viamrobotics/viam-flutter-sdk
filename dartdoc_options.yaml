@@ -6,7 +6,10 @@ dartdoc:
       markdown: doc/Services.md
     "Viam SDK":
       markdown: doc/ViamSDK.md
+    "Common":
+      markdown: doc/Common.md
     "Protobuf Definitions":
       markdown: doc/Protobuf.md
-  categoryOrder: ["Components", "Services", "Viam SDK", "Protobuf Definitions"]
+  categoryOrder:
+    ["Components", "Services", "Common", "Viam SDK", "Protobuf Definitions"]
   nodoc: ["**/di/**", "**/domain/**"]
