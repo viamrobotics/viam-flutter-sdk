@@ -43,7 +43,8 @@ class FakeCamera extends Camera {
     return CameraProperties()
       ..supportsPcd = true
       ..intrinsicParameters = (IntrinsicParameters()..widthPx = 10)
-      ..distortionParameters = (DistortionParameters()..model = 'test');
+      ..distortionParameters = (DistortionParameters()..model = 'test')
+      ..frameRate = 10.0;
   }
 }
 
@@ -80,6 +81,7 @@ void main() {
       final actual = await camera.properties();
       expect(actual.distortionParameters.model, 'test');
       expect(actual.intrinsicParameters.widthPx, 10);
+      expect(actual.frameRate, 10.0);
     });
 
     test('doCommand', () async {
