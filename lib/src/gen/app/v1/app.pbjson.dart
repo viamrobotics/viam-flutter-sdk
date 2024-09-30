@@ -72,13 +72,15 @@ const Visibility$json = {
     {'1': 'VISIBILITY_UNSPECIFIED', '2': 0},
     {'1': 'VISIBILITY_PRIVATE', '2': 1},
     {'1': 'VISIBILITY_PUBLIC', '2': 2},
+    {'1': 'VISIBILITY_PUBLIC_UNLISTED', '2': 3},
   ],
 };
 
 /// Descriptor for `Visibility`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List visibilityDescriptor = $convert.base64Decode(
     'CgpWaXNpYmlsaXR5EhoKFlZJU0lCSUxJVFlfVU5TUEVDSUZJRUQQABIWChJWSVNJQklMSVRZX1'
-    'BSSVZBVEUQARIVChFWSVNJQklMSVRZX1BVQkxJQxAC');
+    'BSSVZBVEUQARIVChFWSVNJQklMSVRZX1BVQkxJQxACEh4KGlZJU0lCSUxJVFlfUFVCTElDX1VO'
+    'TElTVEVEEAM=');
 
 @$core.Deprecated('Use robotDescriptor instead')
 const Robot$json = {
