@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
-import 'package:viam_sdk/src/robot/sessions_client.dart';
 
 import '../gen/common/v1/common.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart';
@@ -13,6 +12,7 @@ import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
+import 'sessions_client.dart';
 
 /// {@category Viam SDK}
 typedef CloudMetadata = GetCloudMetadataResponse;

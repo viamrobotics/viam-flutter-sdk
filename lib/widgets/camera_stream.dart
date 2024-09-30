@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:logger/logger.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+
+import '../viam_sdk.dart';
 
 /// A widget to display a WebRTC stream from a [Camera].
 class ViamCameraStreamView extends StatefulWidget {

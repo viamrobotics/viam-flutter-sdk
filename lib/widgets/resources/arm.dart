@@ -1,7 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/widgets.dart';
+
+import '../../viam_sdk.dart';
+import '../../widgets.dart';
 
 /// A widget to control an [Arm].
 class ViamArmWidget extends StatefulWidget {

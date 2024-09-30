@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../viam_sdk.dart';
 import '../joystick.dart';
 import '../multi_camera_stream.dart';
 

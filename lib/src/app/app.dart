@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:viam_sdk/protos/app/packages.dart';
-import 'package:viam_sdk/src/utils.dart';
-
+import '../../protos/app/packages.dart';
 import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
+import '../utils.dart';
 import 'permissions.dart';
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;

@@ -1,5 +1,4 @@
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
-
+import '../gen/common/v1/common.pb.dart';
 import 'base.dart';
 
 /// [ResourceManager] manages the state of all currently available resources of a robot

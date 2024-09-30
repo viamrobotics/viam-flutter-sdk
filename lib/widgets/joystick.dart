@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_joystick/flutter_joystick.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+
+import '../viam_sdk.dart';
 
 /// A [Joystick] to control a specific [Base]
 class ViamBaseJoystick extends StatefulWidget {
