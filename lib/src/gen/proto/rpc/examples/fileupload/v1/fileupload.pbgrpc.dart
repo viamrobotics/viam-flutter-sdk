@@ -32,8 +32,8 @@ class FileUploadServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseStream<$2.UploadFileResponse> uploadFile($async.Stream<$2.UploadFileRequest> request, {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$uploadFile, request, options: options);
+  $grpc.ResponseFuture<$2.UploadFileResponse> uploadFile($async.Stream<$2.UploadFileRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$uploadFile, request, options: options).single;
   }
 }
 
@@ -46,10 +46,10 @@ abstract class FileUploadServiceBase extends $grpc.Service {
         'UploadFile',
         uploadFile,
         true,
-        true,
+        false,
         ($core.List<$core.int> value) => $2.UploadFileRequest.fromBuffer(value),
         ($2.UploadFileResponse value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$2.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$2.UploadFileRequest> request);
+  $async.Future<$2.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$2.UploadFileRequest> request);
 }
