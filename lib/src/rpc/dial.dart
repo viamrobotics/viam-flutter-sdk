@@ -62,7 +62,7 @@ class DialOptions {
   bool _usingMdns = false;
 
   /// Timeout is the timeout for dial.
-  Duration timeout = Duration(seconds: 10);
+  Duration timeout = const Duration(seconds: 10);
 
   /// If specified, a custom log output for dial logs.
   LogOutput? logOutput;
@@ -328,8 +328,8 @@ Future<ClientChannelBase> _dialWebRtc(String address, DialOptions options, Strin
 
   int updateCalls = 0; // how many times we've sent an update to the sig. server
   int updateCallsFinished = 0; // how many update calls have finished
-  Duration totalCallUpdateDuration = Duration();
-  Duration maxCallUpdateDuration = Duration();
+  Duration totalCallUpdateDuration = const Duration();
+  Duration maxCallUpdateDuration = const Duration();
   bool iceConnectionCompleted = false;
 
   peerConnection.onIceConnectionState = (RTCIceConnectionState state) async {
