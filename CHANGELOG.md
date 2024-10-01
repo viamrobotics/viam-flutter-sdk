@@ -1,11 +1,20 @@
 # Changelog
 
-## [v0.0.21](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.21) (2024-09-24)
+## [v0.0.22](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.22) (2024-09-30)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.20...v0.0.21)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.21...v0.0.22)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#270](https://github.com/viamrobotics/viam-flutter-sdk/pull/270) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[refactor\] order imports & prefer local import [\#269](https://github.com/viamrobotics/viam-flutter-sdk/pull/269) ([clintpurser](https://github.com/clintpurser))
+- flyby fix lint suggesting const [\#268](https://github.com/viamrobotics/viam-flutter-sdk/pull/268) ([clintpurser](https://github.com/clintpurser))
+- Remove deprecated lints [\#267](https://github.com/viamrobotics/viam-flutter-sdk/pull/267) ([clintpurser](https://github.com/clintpurser))
+- Bump protos [\#265](https://github.com/viamrobotics/viam-flutter-sdk/pull/265) ([njooma](https://github.com/njooma))
+- \[hotfix\] Fix proto generation workflow [\#264](https://github.com/viamrobotics/viam-flutter-sdk/pull/264) ([njooma](https://github.com/njooma))
+- v0.0.21 [\#263](https://github.com/viamrobotics/viam-flutter-sdk/pull/263) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-7961: highlight viam sdk section [\#262](https://github.com/viamrobotics/viam-flutter-sdk/pull/262) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-8812: Add frame\_rate to flutter sdk [\#261](https://github.com/viamrobotics/viam-flutter-sdk/pull/261) ([jckras](https://github.com/jckras))
 - make RobotClientOptions properties \*not\* final [\#260](https://github.com/viamrobotics/viam-flutter-sdk/pull/260) ([clintpurser](https://github.com/clintpurser))
 - fix documentation comment [\#259](https://github.com/viamrobotics/viam-flutter-sdk/pull/259) ([clintpurser](https://github.com/clintpurser))
 - Workflow/update protos [\#258](https://github.com/viamrobotics/viam-flutter-sdk/pull/258) ([njooma](https://github.com/njooma))
@@ -160,6 +169,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.21](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.21) (2024-09-24)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.20...v0.0.21)
 
 ## [v0.0.20](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.20) (2024-08-26)
 
