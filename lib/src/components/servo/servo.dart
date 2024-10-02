@@ -11,6 +11,10 @@ abstract class Servo extends Resource {
 
   /// Move the [Servo] to the provided angle.
   ///
+  /// ```
+  /// await myServo.move(30);
+  /// ```
+  ///
   /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
   Future<void> move(int angle, {Map<String, dynamic>? extra});
 
