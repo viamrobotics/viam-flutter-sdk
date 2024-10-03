@@ -15,61 +15,61 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $13;
-import 'motor.pb.dart' as $23;
+import '../../../common/v1/common.pb.dart' as $14;
+import 'motor.pb.dart' as $24;
 
 export 'motor.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.motor.v1.MotorService')
 class MotorServiceClient extends $grpc.Client {
-  static final _$setPower = $grpc.ClientMethod<$23.SetPowerRequest, $23.SetPowerResponse>(
+  static final _$setPower = $grpc.ClientMethod<$24.SetPowerRequest, $24.SetPowerResponse>(
       '/viam.component.motor.v1.MotorService/SetPower',
-      ($23.SetPowerRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.SetPowerResponse.fromBuffer(value));
-  static final _$goFor = $grpc.ClientMethod<$23.GoForRequest, $23.GoForResponse>(
+      ($24.SetPowerRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.SetPowerResponse.fromBuffer(value));
+  static final _$goFor = $grpc.ClientMethod<$24.GoForRequest, $24.GoForResponse>(
       '/viam.component.motor.v1.MotorService/GoFor',
-      ($23.GoForRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.GoForResponse.fromBuffer(value));
-  static final _$goTo = $grpc.ClientMethod<$23.GoToRequest, $23.GoToResponse>(
+      ($24.GoForRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GoForResponse.fromBuffer(value));
+  static final _$goTo = $grpc.ClientMethod<$24.GoToRequest, $24.GoToResponse>(
       '/viam.component.motor.v1.MotorService/GoTo',
-      ($23.GoToRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.GoToResponse.fromBuffer(value));
-  static final _$setRPM = $grpc.ClientMethod<$23.SetRPMRequest, $23.SetRPMResponse>(
+      ($24.GoToRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GoToResponse.fromBuffer(value));
+  static final _$setRPM = $grpc.ClientMethod<$24.SetRPMRequest, $24.SetRPMResponse>(
       '/viam.component.motor.v1.MotorService/SetRPM',
-      ($23.SetRPMRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.SetRPMResponse.fromBuffer(value));
-  static final _$resetZeroPosition = $grpc.ClientMethod<$23.ResetZeroPositionRequest, $23.ResetZeroPositionResponse>(
+      ($24.SetRPMRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.SetRPMResponse.fromBuffer(value));
+  static final _$resetZeroPosition = $grpc.ClientMethod<$24.ResetZeroPositionRequest, $24.ResetZeroPositionResponse>(
       '/viam.component.motor.v1.MotorService/ResetZeroPosition',
-      ($23.ResetZeroPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.ResetZeroPositionResponse.fromBuffer(value));
-  static final _$getPosition = $grpc.ClientMethod<$23.GetPositionRequest, $23.GetPositionResponse>(
+      ($24.ResetZeroPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.ResetZeroPositionResponse.fromBuffer(value));
+  static final _$getPosition = $grpc.ClientMethod<$24.GetPositionRequest, $24.GetPositionResponse>(
       '/viam.component.motor.v1.MotorService/GetPosition',
-      ($23.GetPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.GetPositionResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$23.GetPropertiesRequest, $23.GetPropertiesResponse>(
+      ($24.GetPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetPositionResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$24.GetPropertiesRequest, $24.GetPropertiesResponse>(
       '/viam.component.motor.v1.MotorService/GetProperties',
-      ($23.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.GetPropertiesResponse.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$23.StopRequest, $23.StopResponse>(
+      ($24.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.GetPropertiesResponse.fromBuffer(value));
+  static final _$stop = $grpc.ClientMethod<$24.StopRequest, $24.StopResponse>(
       '/viam.component.motor.v1.MotorService/Stop',
-      ($23.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.StopResponse.fromBuffer(value));
-  static final _$isPowered = $grpc.ClientMethod<$23.IsPoweredRequest, $23.IsPoweredResponse>(
+      ($24.StopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.StopResponse.fromBuffer(value));
+  static final _$isPowered = $grpc.ClientMethod<$24.IsPoweredRequest, $24.IsPoweredResponse>(
       '/viam.component.motor.v1.MotorService/IsPowered',
-      ($23.IsPoweredRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.IsPoweredResponse.fromBuffer(value));
-  static final _$isMoving = $grpc.ClientMethod<$23.IsMovingRequest, $23.IsMovingResponse>(
+      ($24.IsPoweredRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.IsPoweredResponse.fromBuffer(value));
+  static final _$isMoving = $grpc.ClientMethod<$24.IsMovingRequest, $24.IsMovingResponse>(
       '/viam.component.motor.v1.MotorService/IsMoving',
-      ($23.IsMovingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $23.IsMovingResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
+      ($24.IsMovingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.IsMovingResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
       '/viam.component.motor.v1.MotorService/DoCommand',
-      ($13.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
+      ($14.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
       '/viam.component.motor.v1.MotorService/GetGeometries',
-      ($13.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.GetGeometriesResponse.fromBuffer(value));
+      ($14.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.GetGeometriesResponse.fromBuffer(value));
 
   MotorServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -77,51 +77,51 @@ class MotorServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$23.SetPowerResponse> setPower($23.SetPowerRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.SetPowerResponse> setPower($24.SetPowerRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setPower, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.GoForResponse> goFor($23.GoForRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GoForResponse> goFor($24.GoForRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$goFor, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.GoToResponse> goTo($23.GoToRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GoToResponse> goTo($24.GoToRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$goTo, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.SetRPMResponse> setRPM($23.SetRPMRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.SetRPMResponse> setRPM($24.SetRPMRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setRPM, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.ResetZeroPositionResponse> resetZeroPosition($23.ResetZeroPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.ResetZeroPositionResponse> resetZeroPosition($24.ResetZeroPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$resetZeroPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.GetPositionResponse> getPosition($23.GetPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetPositionResponse> getPosition($24.GetPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.GetPropertiesResponse> getProperties($23.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.GetPropertiesResponse> getProperties($24.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.StopResponse> stop($23.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.StopResponse> stop($24.StopRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.IsPoweredResponse> isPowered($23.IsPoweredRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.IsPoweredResponse> isPowered($24.IsPoweredRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isPowered, request, options: options);
   }
 
-  $grpc.ResponseFuture<$23.IsMovingResponse> isMoving($23.IsMovingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$24.IsMovingResponse> isMoving($24.IsMovingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isMoving, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.GetGeometriesResponse> getGeometries($13.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.GetGeometriesResponse> getGeometries($14.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -131,150 +131,150 @@ abstract class MotorServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.motor.v1.MotorService';
 
   MotorServiceBase() {
-    $addMethod($grpc.ServiceMethod<$23.SetPowerRequest, $23.SetPowerResponse>(
+    $addMethod($grpc.ServiceMethod<$24.SetPowerRequest, $24.SetPowerResponse>(
         'SetPower',
         setPower_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.SetPowerRequest.fromBuffer(value),
-        ($23.SetPowerResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.GoForRequest, $23.GoForResponse>(
+        ($core.List<$core.int> value) => $24.SetPowerRequest.fromBuffer(value),
+        ($24.SetPowerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GoForRequest, $24.GoForResponse>(
         'GoFor',
         goFor_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.GoForRequest.fromBuffer(value),
-        ($23.GoForResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.GoToRequest, $23.GoToResponse>(
+        ($core.List<$core.int> value) => $24.GoForRequest.fromBuffer(value),
+        ($24.GoForResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GoToRequest, $24.GoToResponse>(
         'GoTo',
         goTo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.GoToRequest.fromBuffer(value),
-        ($23.GoToResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.SetRPMRequest, $23.SetRPMResponse>(
+        ($core.List<$core.int> value) => $24.GoToRequest.fromBuffer(value),
+        ($24.GoToResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.SetRPMRequest, $24.SetRPMResponse>(
         'SetRPM',
         setRPM_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.SetRPMRequest.fromBuffer(value),
-        ($23.SetRPMResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.ResetZeroPositionRequest, $23.ResetZeroPositionResponse>(
+        ($core.List<$core.int> value) => $24.SetRPMRequest.fromBuffer(value),
+        ($24.SetRPMResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.ResetZeroPositionRequest, $24.ResetZeroPositionResponse>(
         'ResetZeroPosition',
         resetZeroPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.ResetZeroPositionRequest.fromBuffer(value),
-        ($23.ResetZeroPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.GetPositionRequest, $23.GetPositionResponse>(
+        ($core.List<$core.int> value) => $24.ResetZeroPositionRequest.fromBuffer(value),
+        ($24.ResetZeroPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetPositionRequest, $24.GetPositionResponse>(
         'GetPosition',
         getPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.GetPositionRequest.fromBuffer(value),
-        ($23.GetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.GetPropertiesRequest, $23.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $24.GetPositionRequest.fromBuffer(value),
+        ($24.GetPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.GetPropertiesRequest, $24.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.GetPropertiesRequest.fromBuffer(value),
-        ($23.GetPropertiesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.StopRequest, $23.StopResponse>(
+        ($core.List<$core.int> value) => $24.GetPropertiesRequest.fromBuffer(value),
+        ($24.GetPropertiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.StopRequest, $24.StopResponse>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.StopRequest.fromBuffer(value),
-        ($23.StopResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.IsPoweredRequest, $23.IsPoweredResponse>(
+        ($core.List<$core.int> value) => $24.StopRequest.fromBuffer(value),
+        ($24.StopResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.IsPoweredRequest, $24.IsPoweredResponse>(
         'IsPowered',
         isPowered_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.IsPoweredRequest.fromBuffer(value),
-        ($23.IsPoweredResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$23.IsMovingRequest, $23.IsMovingResponse>(
+        ($core.List<$core.int> value) => $24.IsPoweredRequest.fromBuffer(value),
+        ($24.IsPoweredResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$24.IsMovingRequest, $24.IsMovingResponse>(
         'IsMoving',
         isMoving_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $23.IsMovingRequest.fromBuffer(value),
-        ($23.IsMovingResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
+        ($core.List<$core.int> value) => $24.IsMovingRequest.fromBuffer(value),
+        ($24.IsMovingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
-        ($13.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
+        ($14.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.GetGeometriesRequest.fromBuffer(value),
-        ($13.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $14.GetGeometriesRequest.fromBuffer(value),
+        ($14.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$23.SetPowerResponse> setPower_Pre($grpc.ServiceCall call, $async.Future<$23.SetPowerRequest> request) async {
+  $async.Future<$24.SetPowerResponse> setPower_Pre($grpc.ServiceCall call, $async.Future<$24.SetPowerRequest> request) async {
     return setPower(call, await request);
   }
 
-  $async.Future<$23.GoForResponse> goFor_Pre($grpc.ServiceCall call, $async.Future<$23.GoForRequest> request) async {
+  $async.Future<$24.GoForResponse> goFor_Pre($grpc.ServiceCall call, $async.Future<$24.GoForRequest> request) async {
     return goFor(call, await request);
   }
 
-  $async.Future<$23.GoToResponse> goTo_Pre($grpc.ServiceCall call, $async.Future<$23.GoToRequest> request) async {
+  $async.Future<$24.GoToResponse> goTo_Pre($grpc.ServiceCall call, $async.Future<$24.GoToRequest> request) async {
     return goTo(call, await request);
   }
 
-  $async.Future<$23.SetRPMResponse> setRPM_Pre($grpc.ServiceCall call, $async.Future<$23.SetRPMRequest> request) async {
+  $async.Future<$24.SetRPMResponse> setRPM_Pre($grpc.ServiceCall call, $async.Future<$24.SetRPMRequest> request) async {
     return setRPM(call, await request);
   }
 
-  $async.Future<$23.ResetZeroPositionResponse> resetZeroPosition_Pre($grpc.ServiceCall call, $async.Future<$23.ResetZeroPositionRequest> request) async {
+  $async.Future<$24.ResetZeroPositionResponse> resetZeroPosition_Pre($grpc.ServiceCall call, $async.Future<$24.ResetZeroPositionRequest> request) async {
     return resetZeroPosition(call, await request);
   }
 
-  $async.Future<$23.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$23.GetPositionRequest> request) async {
+  $async.Future<$24.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$24.GetPositionRequest> request) async {
     return getPosition(call, await request);
   }
 
-  $async.Future<$23.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$23.GetPropertiesRequest> request) async {
+  $async.Future<$24.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$24.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
-  $async.Future<$23.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$23.StopRequest> request) async {
+  $async.Future<$24.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$24.StopRequest> request) async {
     return stop(call, await request);
   }
 
-  $async.Future<$23.IsPoweredResponse> isPowered_Pre($grpc.ServiceCall call, $async.Future<$23.IsPoweredRequest> request) async {
+  $async.Future<$24.IsPoweredResponse> isPowered_Pre($grpc.ServiceCall call, $async.Future<$24.IsPoweredRequest> request) async {
     return isPowered(call, await request);
   }
 
-  $async.Future<$23.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$23.IsMovingRequest> request) async {
+  $async.Future<$24.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$24.IsMovingRequest> request) async {
     return isMoving(call, await request);
   }
 
-  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
+  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$13.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$13.GetGeometriesRequest> request) async {
+  $async.Future<$14.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$14.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$23.SetPowerResponse> setPower($grpc.ServiceCall call, $23.SetPowerRequest request);
-  $async.Future<$23.GoForResponse> goFor($grpc.ServiceCall call, $23.GoForRequest request);
-  $async.Future<$23.GoToResponse> goTo($grpc.ServiceCall call, $23.GoToRequest request);
-  $async.Future<$23.SetRPMResponse> setRPM($grpc.ServiceCall call, $23.SetRPMRequest request);
-  $async.Future<$23.ResetZeroPositionResponse> resetZeroPosition($grpc.ServiceCall call, $23.ResetZeroPositionRequest request);
-  $async.Future<$23.GetPositionResponse> getPosition($grpc.ServiceCall call, $23.GetPositionRequest request);
-  $async.Future<$23.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $23.GetPropertiesRequest request);
-  $async.Future<$23.StopResponse> stop($grpc.ServiceCall call, $23.StopRequest request);
-  $async.Future<$23.IsPoweredResponse> isPowered($grpc.ServiceCall call, $23.IsPoweredRequest request);
-  $async.Future<$23.IsMovingResponse> isMoving($grpc.ServiceCall call, $23.IsMovingRequest request);
-  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
-  $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
+  $async.Future<$24.SetPowerResponse> setPower($grpc.ServiceCall call, $24.SetPowerRequest request);
+  $async.Future<$24.GoForResponse> goFor($grpc.ServiceCall call, $24.GoForRequest request);
+  $async.Future<$24.GoToResponse> goTo($grpc.ServiceCall call, $24.GoToRequest request);
+  $async.Future<$24.SetRPMResponse> setRPM($grpc.ServiceCall call, $24.SetRPMRequest request);
+  $async.Future<$24.ResetZeroPositionResponse> resetZeroPosition($grpc.ServiceCall call, $24.ResetZeroPositionRequest request);
+  $async.Future<$24.GetPositionResponse> getPosition($grpc.ServiceCall call, $24.GetPositionRequest request);
+  $async.Future<$24.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $24.GetPropertiesRequest request);
+  $async.Future<$24.StopResponse> stop($grpc.ServiceCall call, $24.StopRequest request);
+  $async.Future<$24.IsPoweredResponse> isPowered($grpc.ServiceCall call, $24.IsPoweredRequest request);
+  $async.Future<$24.IsMovingResponse> isMoving($grpc.ServiceCall call, $24.IsMovingRequest request);
+  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
+  $async.Future<$14.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $14.GetGeometriesRequest request);
 }

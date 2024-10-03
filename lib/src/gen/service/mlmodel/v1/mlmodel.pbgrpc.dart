@@ -15,20 +15,20 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'mlmodel.pb.dart' as $33;
+import 'mlmodel.pb.dart' as $34;
 
 export 'mlmodel.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.mlmodel.v1.MLModelService')
 class MLModelServiceClient extends $grpc.Client {
-  static final _$infer = $grpc.ClientMethod<$33.InferRequest, $33.InferResponse>(
+  static final _$infer = $grpc.ClientMethod<$34.InferRequest, $34.InferResponse>(
       '/viam.service.mlmodel.v1.MLModelService/Infer',
-      ($33.InferRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $33.InferResponse.fromBuffer(value));
-  static final _$metadata = $grpc.ClientMethod<$33.MetadataRequest, $33.MetadataResponse>(
+      ($34.InferRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.InferResponse.fromBuffer(value));
+  static final _$metadata = $grpc.ClientMethod<$34.MetadataRequest, $34.MetadataResponse>(
       '/viam.service.mlmodel.v1.MLModelService/Metadata',
-      ($33.MetadataRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $33.MetadataResponse.fromBuffer(value));
+      ($34.MetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.MetadataResponse.fromBuffer(value));
 
   MLModelServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,11 +36,11 @@ class MLModelServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$33.InferResponse> infer($33.InferRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$34.InferResponse> infer($34.InferRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$infer, request, options: options);
   }
 
-  $grpc.ResponseFuture<$33.MetadataResponse> metadata($33.MetadataRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$34.MetadataResponse> metadata($34.MetadataRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$metadata, request, options: options);
   }
 }
@@ -50,30 +50,30 @@ abstract class MLModelServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.mlmodel.v1.MLModelService';
 
   MLModelServiceBase() {
-    $addMethod($grpc.ServiceMethod<$33.InferRequest, $33.InferResponse>(
+    $addMethod($grpc.ServiceMethod<$34.InferRequest, $34.InferResponse>(
         'Infer',
         infer_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $33.InferRequest.fromBuffer(value),
-        ($33.InferResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$33.MetadataRequest, $33.MetadataResponse>(
+        ($core.List<$core.int> value) => $34.InferRequest.fromBuffer(value),
+        ($34.InferResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$34.MetadataRequest, $34.MetadataResponse>(
         'Metadata',
         metadata_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $33.MetadataRequest.fromBuffer(value),
-        ($33.MetadataResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $34.MetadataRequest.fromBuffer(value),
+        ($34.MetadataResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$33.InferResponse> infer_Pre($grpc.ServiceCall call, $async.Future<$33.InferRequest> request) async {
+  $async.Future<$34.InferResponse> infer_Pre($grpc.ServiceCall call, $async.Future<$34.InferRequest> request) async {
     return infer(call, await request);
   }
 
-  $async.Future<$33.MetadataResponse> metadata_Pre($grpc.ServiceCall call, $async.Future<$33.MetadataRequest> request) async {
+  $async.Future<$34.MetadataResponse> metadata_Pre($grpc.ServiceCall call, $async.Future<$34.MetadataRequest> request) async {
     return metadata(call, await request);
   }
 
-  $async.Future<$33.InferResponse> infer($grpc.ServiceCall call, $33.InferRequest request);
-  $async.Future<$33.MetadataResponse> metadata($grpc.ServiceCall call, $33.MetadataRequest request);
+  $async.Future<$34.InferResponse> infer($grpc.ServiceCall call, $34.InferRequest request);
+  $async.Future<$34.MetadataResponse> metadata($grpc.ServiceCall call, $34.MetadataRequest request);
 }

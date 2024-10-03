@@ -15,34 +15,34 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $13;
-import '../../../google/api/httpbody.pb.dart' as $15;
-import 'audioinput.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $14;
+import '../../../google/api/httpbody.pb.dart' as $16;
+import 'audioinput.pb.dart' as $15;
 
 export 'audioinput.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.audioinput.v1.AudioInputService')
 class AudioInputServiceClient extends $grpc.Client {
-  static final _$chunks = $grpc.ClientMethod<$14.ChunksRequest, $14.ChunksResponse>(
+  static final _$chunks = $grpc.ClientMethod<$15.ChunksRequest, $15.ChunksResponse>(
       '/viam.component.audioinput.v1.AudioInputService/Chunks',
-      ($14.ChunksRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.ChunksResponse.fromBuffer(value));
-  static final _$properties = $grpc.ClientMethod<$14.PropertiesRequest, $14.PropertiesResponse>(
+      ($15.ChunksRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.ChunksResponse.fromBuffer(value));
+  static final _$properties = $grpc.ClientMethod<$15.PropertiesRequest, $15.PropertiesResponse>(
       '/viam.component.audioinput.v1.AudioInputService/Properties',
-      ($14.PropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.PropertiesResponse.fromBuffer(value));
-  static final _$record = $grpc.ClientMethod<$14.RecordRequest, $15.HttpBody>(
+      ($15.PropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.PropertiesResponse.fromBuffer(value));
+  static final _$record = $grpc.ClientMethod<$15.RecordRequest, $16.HttpBody>(
       '/viam.component.audioinput.v1.AudioInputService/Record',
-      ($14.RecordRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $15.HttpBody.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
+      ($15.RecordRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.HttpBody.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
       '/viam.component.audioinput.v1.AudioInputService/DoCommand',
-      ($13.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
+      ($14.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
       '/viam.component.audioinput.v1.AudioInputService/GetGeometries',
-      ($13.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.GetGeometriesResponse.fromBuffer(value));
+      ($14.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.GetGeometriesResponse.fromBuffer(value));
 
   AudioInputServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -50,23 +50,23 @@ class AudioInputServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseStream<$14.ChunksResponse> chunks($14.ChunksRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$15.ChunksResponse> chunks($15.ChunksRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$chunks, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$14.PropertiesResponse> properties($14.PropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.PropertiesResponse> properties($15.PropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$properties, request, options: options);
   }
 
-  $grpc.ResponseFuture<$15.HttpBody> record($14.RecordRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$16.HttpBody> record($15.RecordRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$record, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.GetGeometriesResponse> getGeometries($13.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.GetGeometriesResponse> getGeometries($14.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -76,66 +76,66 @@ abstract class AudioInputServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.audioinput.v1.AudioInputService';
 
   AudioInputServiceBase() {
-    $addMethod($grpc.ServiceMethod<$14.ChunksRequest, $14.ChunksResponse>(
+    $addMethod($grpc.ServiceMethod<$15.ChunksRequest, $15.ChunksResponse>(
         'Chunks',
         chunks_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $14.ChunksRequest.fromBuffer(value),
-        ($14.ChunksResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.PropertiesRequest, $14.PropertiesResponse>(
+        ($core.List<$core.int> value) => $15.ChunksRequest.fromBuffer(value),
+        ($15.ChunksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.PropertiesRequest, $15.PropertiesResponse>(
         'Properties',
         properties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.PropertiesRequest.fromBuffer(value),
-        ($14.PropertiesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.RecordRequest, $15.HttpBody>(
+        ($core.List<$core.int> value) => $15.PropertiesRequest.fromBuffer(value),
+        ($15.PropertiesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.RecordRequest, $16.HttpBody>(
         'Record',
         record_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.RecordRequest.fromBuffer(value),
-        ($15.HttpBody value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
+        ($core.List<$core.int> value) => $15.RecordRequest.fromBuffer(value),
+        ($16.HttpBody value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
-        ($13.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
+        ($14.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.GetGeometriesRequest.fromBuffer(value),
-        ($13.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $14.GetGeometriesRequest.fromBuffer(value),
+        ($14.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$14.ChunksResponse> chunks_Pre($grpc.ServiceCall call, $async.Future<$14.ChunksRequest> request) async* {
+  $async.Stream<$15.ChunksResponse> chunks_Pre($grpc.ServiceCall call, $async.Future<$15.ChunksRequest> request) async* {
     yield* chunks(call, await request);
   }
 
-  $async.Future<$14.PropertiesResponse> properties_Pre($grpc.ServiceCall call, $async.Future<$14.PropertiesRequest> request) async {
+  $async.Future<$15.PropertiesResponse> properties_Pre($grpc.ServiceCall call, $async.Future<$15.PropertiesRequest> request) async {
     return properties(call, await request);
   }
 
-  $async.Future<$15.HttpBody> record_Pre($grpc.ServiceCall call, $async.Future<$14.RecordRequest> request) async {
+  $async.Future<$16.HttpBody> record_Pre($grpc.ServiceCall call, $async.Future<$15.RecordRequest> request) async {
     return record(call, await request);
   }
 
-  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
+  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$13.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$13.GetGeometriesRequest> request) async {
+  $async.Future<$14.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$14.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Stream<$14.ChunksResponse> chunks($grpc.ServiceCall call, $14.ChunksRequest request);
-  $async.Future<$14.PropertiesResponse> properties($grpc.ServiceCall call, $14.PropertiesRequest request);
-  $async.Future<$15.HttpBody> record($grpc.ServiceCall call, $14.RecordRequest request);
-  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
-  $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
+  $async.Stream<$15.ChunksResponse> chunks($grpc.ServiceCall call, $15.ChunksRequest request);
+  $async.Future<$15.PropertiesResponse> properties($grpc.ServiceCall call, $15.PropertiesRequest request);
+  $async.Future<$16.HttpBody> record($grpc.ServiceCall call, $15.RecordRequest request);
+  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
+  $async.Future<$14.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $14.GetGeometriesRequest request);
 }

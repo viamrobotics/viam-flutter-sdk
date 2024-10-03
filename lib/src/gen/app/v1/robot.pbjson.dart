@@ -702,6 +702,7 @@ const ModuleConfig$json = {
     {'1': 'module_id', '3': 5, '4': 1, '5': 9, '10': 'moduleId'},
     {'1': 'env', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleConfig.EnvEntry', '10': 'env'},
     {'1': 'status', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'status'},
+    {'1': 'first_run_timeout', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'firstRunTimeout'},
   ],
   '3': [ModuleConfig_EnvEntry$json],
 };
@@ -722,8 +723,9 @@ final $typed_data.Uint8List moduleConfigDescriptor = $convert.base64Decode(
     'sKCWxvZ19sZXZlbBgDIAEoCVIIbG9nTGV2ZWwSEgoEdHlwZRgEIAEoCVIEdHlwZRIbCgltb2R1'
     'bGVfaWQYBSABKAlSCG1vZHVsZUlkEjQKA2VudhgGIAMoCzIiLnZpYW0uYXBwLnYxLk1vZHVsZU'
     'NvbmZpZy5FbnZFbnRyeVIDZW52EjgKBnN0YXR1cxgHIAEoCzIgLnZpYW0uYXBwLnYxLkFwcFZh'
-    'bGlkYXRpb25TdGF0dXNSBnN0YXR1cxo2CghFbnZFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCg'
-    'V2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+    'bGlkYXRpb25TdGF0dXNSBnN0YXR1cxJFChFmaXJzdF9ydW5fdGltZW91dBgIIAEoCzIZLmdvb2'
+    'dsZS5wcm90b2J1Zi5EdXJhdGlvblIPZmlyc3RSdW5UaW1lb3V0GjYKCEVudkVudHJ5EhAKA2tl'
+    'eRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use packageConfigDescriptor instead')
 const PackageConfig$json = {

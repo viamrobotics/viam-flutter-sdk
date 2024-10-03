@@ -15,304 +15,304 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'app.pb.dart' as $8;
+import 'app.pb.dart' as $9;
 
 export 'app.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.v1.AppService')
 class AppServiceClient extends $grpc.Client {
-  static final _$getUserIDByEmail = $grpc.ClientMethod<$8.GetUserIDByEmailRequest, $8.GetUserIDByEmailResponse>(
+  static final _$getUserIDByEmail = $grpc.ClientMethod<$9.GetUserIDByEmailRequest, $9.GetUserIDByEmailResponse>(
       '/viam.app.v1.AppService/GetUserIDByEmail',
-      ($8.GetUserIDByEmailRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetUserIDByEmailResponse.fromBuffer(value));
-  static final _$createOrganization = $grpc.ClientMethod<$8.CreateOrganizationRequest, $8.CreateOrganizationResponse>(
+      ($9.GetUserIDByEmailRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetUserIDByEmailResponse.fromBuffer(value));
+  static final _$createOrganization = $grpc.ClientMethod<$9.CreateOrganizationRequest, $9.CreateOrganizationResponse>(
       '/viam.app.v1.AppService/CreateOrganization',
-      ($8.CreateOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateOrganizationResponse.fromBuffer(value));
-  static final _$listOrganizations = $grpc.ClientMethod<$8.ListOrganizationsRequest, $8.ListOrganizationsResponse>(
+      ($9.CreateOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateOrganizationResponse.fromBuffer(value));
+  static final _$listOrganizations = $grpc.ClientMethod<$9.ListOrganizationsRequest, $9.ListOrganizationsResponse>(
       '/viam.app.v1.AppService/ListOrganizations',
-      ($8.ListOrganizationsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListOrganizationsResponse.fromBuffer(value));
-  static final _$getOrganizationsWithAccessToLocation = $grpc.ClientMethod<$8.GetOrganizationsWithAccessToLocationRequest, $8.GetOrganizationsWithAccessToLocationResponse>(
+      ($9.ListOrganizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListOrganizationsResponse.fromBuffer(value));
+  static final _$getOrganizationsWithAccessToLocation = $grpc.ClientMethod<$9.GetOrganizationsWithAccessToLocationRequest, $9.GetOrganizationsWithAccessToLocationResponse>(
       '/viam.app.v1.AppService/GetOrganizationsWithAccessToLocation',
-      ($8.GetOrganizationsWithAccessToLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetOrganizationsWithAccessToLocationResponse.fromBuffer(value));
-  static final _$listOrganizationsByUser = $grpc.ClientMethod<$8.ListOrganizationsByUserRequest, $8.ListOrganizationsByUserResponse>(
+      ($9.GetOrganizationsWithAccessToLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetOrganizationsWithAccessToLocationResponse.fromBuffer(value));
+  static final _$listOrganizationsByUser = $grpc.ClientMethod<$9.ListOrganizationsByUserRequest, $9.ListOrganizationsByUserResponse>(
       '/viam.app.v1.AppService/ListOrganizationsByUser',
-      ($8.ListOrganizationsByUserRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListOrganizationsByUserResponse.fromBuffer(value));
-  static final _$getOrganization = $grpc.ClientMethod<$8.GetOrganizationRequest, $8.GetOrganizationResponse>(
+      ($9.ListOrganizationsByUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListOrganizationsByUserResponse.fromBuffer(value));
+  static final _$getOrganization = $grpc.ClientMethod<$9.GetOrganizationRequest, $9.GetOrganizationResponse>(
       '/viam.app.v1.AppService/GetOrganization',
-      ($8.GetOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetOrganizationResponse.fromBuffer(value));
-  static final _$getOrganizationNamespaceAvailability = $grpc.ClientMethod<$8.GetOrganizationNamespaceAvailabilityRequest, $8.GetOrganizationNamespaceAvailabilityResponse>(
+      ($9.GetOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetOrganizationResponse.fromBuffer(value));
+  static final _$getOrganizationNamespaceAvailability = $grpc.ClientMethod<$9.GetOrganizationNamespaceAvailabilityRequest, $9.GetOrganizationNamespaceAvailabilityResponse>(
       '/viam.app.v1.AppService/GetOrganizationNamespaceAvailability',
-      ($8.GetOrganizationNamespaceAvailabilityRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetOrganizationNamespaceAvailabilityResponse.fromBuffer(value));
-  static final _$updateOrganization = $grpc.ClientMethod<$8.UpdateOrganizationRequest, $8.UpdateOrganizationResponse>(
+      ($9.GetOrganizationNamespaceAvailabilityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetOrganizationNamespaceAvailabilityResponse.fromBuffer(value));
+  static final _$updateOrganization = $grpc.ClientMethod<$9.UpdateOrganizationRequest, $9.UpdateOrganizationResponse>(
       '/viam.app.v1.AppService/UpdateOrganization',
-      ($8.UpdateOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateOrganizationResponse.fromBuffer(value));
-  static final _$deleteOrganization = $grpc.ClientMethod<$8.DeleteOrganizationRequest, $8.DeleteOrganizationResponse>(
+      ($9.UpdateOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateOrganizationResponse.fromBuffer(value));
+  static final _$deleteOrganization = $grpc.ClientMethod<$9.DeleteOrganizationRequest, $9.DeleteOrganizationResponse>(
       '/viam.app.v1.AppService/DeleteOrganization',
-      ($8.DeleteOrganizationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteOrganizationResponse.fromBuffer(value));
-  static final _$listOrganizationMembers = $grpc.ClientMethod<$8.ListOrganizationMembersRequest, $8.ListOrganizationMembersResponse>(
+      ($9.DeleteOrganizationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteOrganizationResponse.fromBuffer(value));
+  static final _$listOrganizationMembers = $grpc.ClientMethod<$9.ListOrganizationMembersRequest, $9.ListOrganizationMembersResponse>(
       '/viam.app.v1.AppService/ListOrganizationMembers',
-      ($8.ListOrganizationMembersRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListOrganizationMembersResponse.fromBuffer(value));
-  static final _$createOrganizationInvite = $grpc.ClientMethod<$8.CreateOrganizationInviteRequest, $8.CreateOrganizationInviteResponse>(
+      ($9.ListOrganizationMembersRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListOrganizationMembersResponse.fromBuffer(value));
+  static final _$createOrganizationInvite = $grpc.ClientMethod<$9.CreateOrganizationInviteRequest, $9.CreateOrganizationInviteResponse>(
       '/viam.app.v1.AppService/CreateOrganizationInvite',
-      ($8.CreateOrganizationInviteRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateOrganizationInviteResponse.fromBuffer(value));
-  static final _$updateOrganizationInviteAuthorizations = $grpc.ClientMethod<$8.UpdateOrganizationInviteAuthorizationsRequest, $8.UpdateOrganizationInviteAuthorizationsResponse>(
+      ($9.CreateOrganizationInviteRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateOrganizationInviteResponse.fromBuffer(value));
+  static final _$updateOrganizationInviteAuthorizations = $grpc.ClientMethod<$9.UpdateOrganizationInviteAuthorizationsRequest, $9.UpdateOrganizationInviteAuthorizationsResponse>(
       '/viam.app.v1.AppService/UpdateOrganizationInviteAuthorizations',
-      ($8.UpdateOrganizationInviteAuthorizationsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateOrganizationInviteAuthorizationsResponse.fromBuffer(value));
-  static final _$deleteOrganizationMember = $grpc.ClientMethod<$8.DeleteOrganizationMemberRequest, $8.DeleteOrganizationMemberResponse>(
+      ($9.UpdateOrganizationInviteAuthorizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateOrganizationInviteAuthorizationsResponse.fromBuffer(value));
+  static final _$deleteOrganizationMember = $grpc.ClientMethod<$9.DeleteOrganizationMemberRequest, $9.DeleteOrganizationMemberResponse>(
       '/viam.app.v1.AppService/DeleteOrganizationMember',
-      ($8.DeleteOrganizationMemberRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteOrganizationMemberResponse.fromBuffer(value));
-  static final _$deleteOrganizationInvite = $grpc.ClientMethod<$8.DeleteOrganizationInviteRequest, $8.DeleteOrganizationInviteResponse>(
+      ($9.DeleteOrganizationMemberRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteOrganizationMemberResponse.fromBuffer(value));
+  static final _$deleteOrganizationInvite = $grpc.ClientMethod<$9.DeleteOrganizationInviteRequest, $9.DeleteOrganizationInviteResponse>(
       '/viam.app.v1.AppService/DeleteOrganizationInvite',
-      ($8.DeleteOrganizationInviteRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteOrganizationInviteResponse.fromBuffer(value));
-  static final _$resendOrganizationInvite = $grpc.ClientMethod<$8.ResendOrganizationInviteRequest, $8.ResendOrganizationInviteResponse>(
+      ($9.DeleteOrganizationInviteRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteOrganizationInviteResponse.fromBuffer(value));
+  static final _$resendOrganizationInvite = $grpc.ClientMethod<$9.ResendOrganizationInviteRequest, $9.ResendOrganizationInviteResponse>(
       '/viam.app.v1.AppService/ResendOrganizationInvite',
-      ($8.ResendOrganizationInviteRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ResendOrganizationInviteResponse.fromBuffer(value));
-  static final _$createLocation = $grpc.ClientMethod<$8.CreateLocationRequest, $8.CreateLocationResponse>(
+      ($9.ResendOrganizationInviteRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ResendOrganizationInviteResponse.fromBuffer(value));
+  static final _$createLocation = $grpc.ClientMethod<$9.CreateLocationRequest, $9.CreateLocationResponse>(
       '/viam.app.v1.AppService/CreateLocation',
-      ($8.CreateLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateLocationResponse.fromBuffer(value));
-  static final _$getLocation = $grpc.ClientMethod<$8.GetLocationRequest, $8.GetLocationResponse>(
+      ($9.CreateLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateLocationResponse.fromBuffer(value));
+  static final _$getLocation = $grpc.ClientMethod<$9.GetLocationRequest, $9.GetLocationResponse>(
       '/viam.app.v1.AppService/GetLocation',
-      ($8.GetLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetLocationResponse.fromBuffer(value));
-  static final _$updateLocation = $grpc.ClientMethod<$8.UpdateLocationRequest, $8.UpdateLocationResponse>(
+      ($9.GetLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetLocationResponse.fromBuffer(value));
+  static final _$updateLocation = $grpc.ClientMethod<$9.UpdateLocationRequest, $9.UpdateLocationResponse>(
       '/viam.app.v1.AppService/UpdateLocation',
-      ($8.UpdateLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateLocationResponse.fromBuffer(value));
-  static final _$deleteLocation = $grpc.ClientMethod<$8.DeleteLocationRequest, $8.DeleteLocationResponse>(
+      ($9.UpdateLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateLocationResponse.fromBuffer(value));
+  static final _$deleteLocation = $grpc.ClientMethod<$9.DeleteLocationRequest, $9.DeleteLocationResponse>(
       '/viam.app.v1.AppService/DeleteLocation',
-      ($8.DeleteLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteLocationResponse.fromBuffer(value));
-  static final _$listLocations = $grpc.ClientMethod<$8.ListLocationsRequest, $8.ListLocationsResponse>(
+      ($9.DeleteLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteLocationResponse.fromBuffer(value));
+  static final _$listLocations = $grpc.ClientMethod<$9.ListLocationsRequest, $9.ListLocationsResponse>(
       '/viam.app.v1.AppService/ListLocations',
-      ($8.ListLocationsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListLocationsResponse.fromBuffer(value));
-  static final _$shareLocation = $grpc.ClientMethod<$8.ShareLocationRequest, $8.ShareLocationResponse>(
+      ($9.ListLocationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListLocationsResponse.fromBuffer(value));
+  static final _$shareLocation = $grpc.ClientMethod<$9.ShareLocationRequest, $9.ShareLocationResponse>(
       '/viam.app.v1.AppService/ShareLocation',
-      ($8.ShareLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ShareLocationResponse.fromBuffer(value));
-  static final _$unshareLocation = $grpc.ClientMethod<$8.UnshareLocationRequest, $8.UnshareLocationResponse>(
+      ($9.ShareLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ShareLocationResponse.fromBuffer(value));
+  static final _$unshareLocation = $grpc.ClientMethod<$9.UnshareLocationRequest, $9.UnshareLocationResponse>(
       '/viam.app.v1.AppService/UnshareLocation',
-      ($8.UnshareLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UnshareLocationResponse.fromBuffer(value));
-  static final _$locationAuth = $grpc.ClientMethod<$8.LocationAuthRequest, $8.LocationAuthResponse>(
+      ($9.UnshareLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UnshareLocationResponse.fromBuffer(value));
+  static final _$locationAuth = $grpc.ClientMethod<$9.LocationAuthRequest, $9.LocationAuthResponse>(
       '/viam.app.v1.AppService/LocationAuth',
-      ($8.LocationAuthRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.LocationAuthResponse.fromBuffer(value));
-  static final _$createLocationSecret = $grpc.ClientMethod<$8.CreateLocationSecretRequest, $8.CreateLocationSecretResponse>(
+      ($9.LocationAuthRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.LocationAuthResponse.fromBuffer(value));
+  static final _$createLocationSecret = $grpc.ClientMethod<$9.CreateLocationSecretRequest, $9.CreateLocationSecretResponse>(
       '/viam.app.v1.AppService/CreateLocationSecret',
-      ($8.CreateLocationSecretRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateLocationSecretResponse.fromBuffer(value));
-  static final _$deleteLocationSecret = $grpc.ClientMethod<$8.DeleteLocationSecretRequest, $8.DeleteLocationSecretResponse>(
+      ($9.CreateLocationSecretRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateLocationSecretResponse.fromBuffer(value));
+  static final _$deleteLocationSecret = $grpc.ClientMethod<$9.DeleteLocationSecretRequest, $9.DeleteLocationSecretResponse>(
       '/viam.app.v1.AppService/DeleteLocationSecret',
-      ($8.DeleteLocationSecretRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteLocationSecretResponse.fromBuffer(value));
-  static final _$getRobot = $grpc.ClientMethod<$8.GetRobotRequest, $8.GetRobotResponse>(
+      ($9.DeleteLocationSecretRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteLocationSecretResponse.fromBuffer(value));
+  static final _$getRobot = $grpc.ClientMethod<$9.GetRobotRequest, $9.GetRobotResponse>(
       '/viam.app.v1.AppService/GetRobot',
-      ($8.GetRobotRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRobotResponse.fromBuffer(value));
-  static final _$getRoverRentalRobots = $grpc.ClientMethod<$8.GetRoverRentalRobotsRequest, $8.GetRoverRentalRobotsResponse>(
+      ($9.GetRobotRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRobotResponse.fromBuffer(value));
+  static final _$getRoverRentalRobots = $grpc.ClientMethod<$9.GetRoverRentalRobotsRequest, $9.GetRoverRentalRobotsResponse>(
       '/viam.app.v1.AppService/GetRoverRentalRobots',
-      ($8.GetRoverRentalRobotsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRoverRentalRobotsResponse.fromBuffer(value));
-  static final _$getRobotParts = $grpc.ClientMethod<$8.GetRobotPartsRequest, $8.GetRobotPartsResponse>(
+      ($9.GetRoverRentalRobotsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRoverRentalRobotsResponse.fromBuffer(value));
+  static final _$getRobotParts = $grpc.ClientMethod<$9.GetRobotPartsRequest, $9.GetRobotPartsResponse>(
       '/viam.app.v1.AppService/GetRobotParts',
-      ($8.GetRobotPartsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRobotPartsResponse.fromBuffer(value));
-  static final _$getRobotPart = $grpc.ClientMethod<$8.GetRobotPartRequest, $8.GetRobotPartResponse>(
+      ($9.GetRobotPartsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRobotPartsResponse.fromBuffer(value));
+  static final _$getRobotPart = $grpc.ClientMethod<$9.GetRobotPartRequest, $9.GetRobotPartResponse>(
       '/viam.app.v1.AppService/GetRobotPart',
-      ($8.GetRobotPartRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRobotPartResponse.fromBuffer(value));
-  static final _$getRobotPartLogs = $grpc.ClientMethod<$8.GetRobotPartLogsRequest, $8.GetRobotPartLogsResponse>(
+      ($9.GetRobotPartRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRobotPartResponse.fromBuffer(value));
+  static final _$getRobotPartLogs = $grpc.ClientMethod<$9.GetRobotPartLogsRequest, $9.GetRobotPartLogsResponse>(
       '/viam.app.v1.AppService/GetRobotPartLogs',
-      ($8.GetRobotPartLogsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRobotPartLogsResponse.fromBuffer(value));
-  static final _$tailRobotPartLogs = $grpc.ClientMethod<$8.TailRobotPartLogsRequest, $8.TailRobotPartLogsResponse>(
+      ($9.GetRobotPartLogsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRobotPartLogsResponse.fromBuffer(value));
+  static final _$tailRobotPartLogs = $grpc.ClientMethod<$9.TailRobotPartLogsRequest, $9.TailRobotPartLogsResponse>(
       '/viam.app.v1.AppService/TailRobotPartLogs',
-      ($8.TailRobotPartLogsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.TailRobotPartLogsResponse.fromBuffer(value));
-  static final _$getRobotPartHistory = $grpc.ClientMethod<$8.GetRobotPartHistoryRequest, $8.GetRobotPartHistoryResponse>(
+      ($9.TailRobotPartLogsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.TailRobotPartLogsResponse.fromBuffer(value));
+  static final _$getRobotPartHistory = $grpc.ClientMethod<$9.GetRobotPartHistoryRequest, $9.GetRobotPartHistoryResponse>(
       '/viam.app.v1.AppService/GetRobotPartHistory',
-      ($8.GetRobotPartHistoryRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRobotPartHistoryResponse.fromBuffer(value));
-  static final _$updateRobotPart = $grpc.ClientMethod<$8.UpdateRobotPartRequest, $8.UpdateRobotPartResponse>(
+      ($9.GetRobotPartHistoryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRobotPartHistoryResponse.fromBuffer(value));
+  static final _$updateRobotPart = $grpc.ClientMethod<$9.UpdateRobotPartRequest, $9.UpdateRobotPartResponse>(
       '/viam.app.v1.AppService/UpdateRobotPart',
-      ($8.UpdateRobotPartRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateRobotPartResponse.fromBuffer(value));
-  static final _$newRobotPart = $grpc.ClientMethod<$8.NewRobotPartRequest, $8.NewRobotPartResponse>(
+      ($9.UpdateRobotPartRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateRobotPartResponse.fromBuffer(value));
+  static final _$newRobotPart = $grpc.ClientMethod<$9.NewRobotPartRequest, $9.NewRobotPartResponse>(
       '/viam.app.v1.AppService/NewRobotPart',
-      ($8.NewRobotPartRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.NewRobotPartResponse.fromBuffer(value));
-  static final _$deleteRobotPart = $grpc.ClientMethod<$8.DeleteRobotPartRequest, $8.DeleteRobotPartResponse>(
+      ($9.NewRobotPartRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.NewRobotPartResponse.fromBuffer(value));
+  static final _$deleteRobotPart = $grpc.ClientMethod<$9.DeleteRobotPartRequest, $9.DeleteRobotPartResponse>(
       '/viam.app.v1.AppService/DeleteRobotPart',
-      ($8.DeleteRobotPartRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteRobotPartResponse.fromBuffer(value));
-  static final _$getRobotAPIKeys = $grpc.ClientMethod<$8.GetRobotAPIKeysRequest, $8.GetRobotAPIKeysResponse>(
+      ($9.DeleteRobotPartRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteRobotPartResponse.fromBuffer(value));
+  static final _$getRobotAPIKeys = $grpc.ClientMethod<$9.GetRobotAPIKeysRequest, $9.GetRobotAPIKeysResponse>(
       '/viam.app.v1.AppService/GetRobotAPIKeys',
-      ($8.GetRobotAPIKeysRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRobotAPIKeysResponse.fromBuffer(value));
-  static final _$markPartAsMain = $grpc.ClientMethod<$8.MarkPartAsMainRequest, $8.MarkPartAsMainResponse>(
+      ($9.GetRobotAPIKeysRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRobotAPIKeysResponse.fromBuffer(value));
+  static final _$markPartAsMain = $grpc.ClientMethod<$9.MarkPartAsMainRequest, $9.MarkPartAsMainResponse>(
       '/viam.app.v1.AppService/MarkPartAsMain',
-      ($8.MarkPartAsMainRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.MarkPartAsMainResponse.fromBuffer(value));
-  static final _$markPartForRestart = $grpc.ClientMethod<$8.MarkPartForRestartRequest, $8.MarkPartForRestartResponse>(
+      ($9.MarkPartAsMainRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.MarkPartAsMainResponse.fromBuffer(value));
+  static final _$markPartForRestart = $grpc.ClientMethod<$9.MarkPartForRestartRequest, $9.MarkPartForRestartResponse>(
       '/viam.app.v1.AppService/MarkPartForRestart',
-      ($8.MarkPartForRestartRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.MarkPartForRestartResponse.fromBuffer(value));
-  static final _$createRobotPartSecret = $grpc.ClientMethod<$8.CreateRobotPartSecretRequest, $8.CreateRobotPartSecretResponse>(
+      ($9.MarkPartForRestartRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.MarkPartForRestartResponse.fromBuffer(value));
+  static final _$createRobotPartSecret = $grpc.ClientMethod<$9.CreateRobotPartSecretRequest, $9.CreateRobotPartSecretResponse>(
       '/viam.app.v1.AppService/CreateRobotPartSecret',
-      ($8.CreateRobotPartSecretRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateRobotPartSecretResponse.fromBuffer(value));
-  static final _$deleteRobotPartSecret = $grpc.ClientMethod<$8.DeleteRobotPartSecretRequest, $8.DeleteRobotPartSecretResponse>(
+      ($9.CreateRobotPartSecretRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateRobotPartSecretResponse.fromBuffer(value));
+  static final _$deleteRobotPartSecret = $grpc.ClientMethod<$9.DeleteRobotPartSecretRequest, $9.DeleteRobotPartSecretResponse>(
       '/viam.app.v1.AppService/DeleteRobotPartSecret',
-      ($8.DeleteRobotPartSecretRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteRobotPartSecretResponse.fromBuffer(value));
-  static final _$listRobots = $grpc.ClientMethod<$8.ListRobotsRequest, $8.ListRobotsResponse>(
+      ($9.DeleteRobotPartSecretRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteRobotPartSecretResponse.fromBuffer(value));
+  static final _$listRobots = $grpc.ClientMethod<$9.ListRobotsRequest, $9.ListRobotsResponse>(
       '/viam.app.v1.AppService/ListRobots',
-      ($8.ListRobotsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListRobotsResponse.fromBuffer(value));
-  static final _$newRobot = $grpc.ClientMethod<$8.NewRobotRequest, $8.NewRobotResponse>(
+      ($9.ListRobotsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListRobotsResponse.fromBuffer(value));
+  static final _$newRobot = $grpc.ClientMethod<$9.NewRobotRequest, $9.NewRobotResponse>(
       '/viam.app.v1.AppService/NewRobot',
-      ($8.NewRobotRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.NewRobotResponse.fromBuffer(value));
-  static final _$updateRobot = $grpc.ClientMethod<$8.UpdateRobotRequest, $8.UpdateRobotResponse>(
+      ($9.NewRobotRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.NewRobotResponse.fromBuffer(value));
+  static final _$updateRobot = $grpc.ClientMethod<$9.UpdateRobotRequest, $9.UpdateRobotResponse>(
       '/viam.app.v1.AppService/UpdateRobot',
-      ($8.UpdateRobotRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateRobotResponse.fromBuffer(value));
-  static final _$deleteRobot = $grpc.ClientMethod<$8.DeleteRobotRequest, $8.DeleteRobotResponse>(
+      ($9.UpdateRobotRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateRobotResponse.fromBuffer(value));
+  static final _$deleteRobot = $grpc.ClientMethod<$9.DeleteRobotRequest, $9.DeleteRobotResponse>(
       '/viam.app.v1.AppService/DeleteRobot',
-      ($8.DeleteRobotRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteRobotResponse.fromBuffer(value));
-  static final _$listFragments = $grpc.ClientMethod<$8.ListFragmentsRequest, $8.ListFragmentsResponse>(
+      ($9.DeleteRobotRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteRobotResponse.fromBuffer(value));
+  static final _$listFragments = $grpc.ClientMethod<$9.ListFragmentsRequest, $9.ListFragmentsResponse>(
       '/viam.app.v1.AppService/ListFragments',
-      ($8.ListFragmentsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListFragmentsResponse.fromBuffer(value));
-  static final _$getFragment = $grpc.ClientMethod<$8.GetFragmentRequest, $8.GetFragmentResponse>(
+      ($9.ListFragmentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListFragmentsResponse.fromBuffer(value));
+  static final _$getFragment = $grpc.ClientMethod<$9.GetFragmentRequest, $9.GetFragmentResponse>(
       '/viam.app.v1.AppService/GetFragment',
-      ($8.GetFragmentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetFragmentResponse.fromBuffer(value));
-  static final _$createFragment = $grpc.ClientMethod<$8.CreateFragmentRequest, $8.CreateFragmentResponse>(
+      ($9.GetFragmentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetFragmentResponse.fromBuffer(value));
+  static final _$createFragment = $grpc.ClientMethod<$9.CreateFragmentRequest, $9.CreateFragmentResponse>(
       '/viam.app.v1.AppService/CreateFragment',
-      ($8.CreateFragmentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateFragmentResponse.fromBuffer(value));
-  static final _$updateFragment = $grpc.ClientMethod<$8.UpdateFragmentRequest, $8.UpdateFragmentResponse>(
+      ($9.CreateFragmentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateFragmentResponse.fromBuffer(value));
+  static final _$updateFragment = $grpc.ClientMethod<$9.UpdateFragmentRequest, $9.UpdateFragmentResponse>(
       '/viam.app.v1.AppService/UpdateFragment',
-      ($8.UpdateFragmentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateFragmentResponse.fromBuffer(value));
-  static final _$deleteFragment = $grpc.ClientMethod<$8.DeleteFragmentRequest, $8.DeleteFragmentResponse>(
+      ($9.UpdateFragmentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateFragmentResponse.fromBuffer(value));
+  static final _$deleteFragment = $grpc.ClientMethod<$9.DeleteFragmentRequest, $9.DeleteFragmentResponse>(
       '/viam.app.v1.AppService/DeleteFragment',
-      ($8.DeleteFragmentRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteFragmentResponse.fromBuffer(value));
-  static final _$listMachineFragments = $grpc.ClientMethod<$8.ListMachineFragmentsRequest, $8.ListMachineFragmentsResponse>(
+      ($9.DeleteFragmentRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteFragmentResponse.fromBuffer(value));
+  static final _$listMachineFragments = $grpc.ClientMethod<$9.ListMachineFragmentsRequest, $9.ListMachineFragmentsResponse>(
       '/viam.app.v1.AppService/ListMachineFragments',
-      ($8.ListMachineFragmentsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListMachineFragmentsResponse.fromBuffer(value));
-  static final _$getFragmentHistory = $grpc.ClientMethod<$8.GetFragmentHistoryRequest, $8.GetFragmentHistoryResponse>(
+      ($9.ListMachineFragmentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListMachineFragmentsResponse.fromBuffer(value));
+  static final _$getFragmentHistory = $grpc.ClientMethod<$9.GetFragmentHistoryRequest, $9.GetFragmentHistoryResponse>(
       '/viam.app.v1.AppService/GetFragmentHistory',
-      ($8.GetFragmentHistoryRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetFragmentHistoryResponse.fromBuffer(value));
-  static final _$addRole = $grpc.ClientMethod<$8.AddRoleRequest, $8.AddRoleResponse>(
+      ($9.GetFragmentHistoryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetFragmentHistoryResponse.fromBuffer(value));
+  static final _$addRole = $grpc.ClientMethod<$9.AddRoleRequest, $9.AddRoleResponse>(
       '/viam.app.v1.AppService/AddRole',
-      ($8.AddRoleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.AddRoleResponse.fromBuffer(value));
-  static final _$removeRole = $grpc.ClientMethod<$8.RemoveRoleRequest, $8.RemoveRoleResponse>(
+      ($9.AddRoleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.AddRoleResponse.fromBuffer(value));
+  static final _$removeRole = $grpc.ClientMethod<$9.RemoveRoleRequest, $9.RemoveRoleResponse>(
       '/viam.app.v1.AppService/RemoveRole',
-      ($8.RemoveRoleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.RemoveRoleResponse.fromBuffer(value));
-  static final _$changeRole = $grpc.ClientMethod<$8.ChangeRoleRequest, $8.ChangeRoleResponse>(
+      ($9.RemoveRoleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.RemoveRoleResponse.fromBuffer(value));
+  static final _$changeRole = $grpc.ClientMethod<$9.ChangeRoleRequest, $9.ChangeRoleResponse>(
       '/viam.app.v1.AppService/ChangeRole',
-      ($8.ChangeRoleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ChangeRoleResponse.fromBuffer(value));
-  static final _$listAuthorizations = $grpc.ClientMethod<$8.ListAuthorizationsRequest, $8.ListAuthorizationsResponse>(
+      ($9.ChangeRoleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ChangeRoleResponse.fromBuffer(value));
+  static final _$listAuthorizations = $grpc.ClientMethod<$9.ListAuthorizationsRequest, $9.ListAuthorizationsResponse>(
       '/viam.app.v1.AppService/ListAuthorizations',
-      ($8.ListAuthorizationsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListAuthorizationsResponse.fromBuffer(value));
-  static final _$checkPermissions = $grpc.ClientMethod<$8.CheckPermissionsRequest, $8.CheckPermissionsResponse>(
+      ($9.ListAuthorizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListAuthorizationsResponse.fromBuffer(value));
+  static final _$checkPermissions = $grpc.ClientMethod<$9.CheckPermissionsRequest, $9.CheckPermissionsResponse>(
       '/viam.app.v1.AppService/CheckPermissions',
-      ($8.CheckPermissionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CheckPermissionsResponse.fromBuffer(value));
-  static final _$getRegistryItem = $grpc.ClientMethod<$8.GetRegistryItemRequest, $8.GetRegistryItemResponse>(
+      ($9.CheckPermissionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CheckPermissionsResponse.fromBuffer(value));
+  static final _$getRegistryItem = $grpc.ClientMethod<$9.GetRegistryItemRequest, $9.GetRegistryItemResponse>(
       '/viam.app.v1.AppService/GetRegistryItem',
-      ($8.GetRegistryItemRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetRegistryItemResponse.fromBuffer(value));
-  static final _$createRegistryItem = $grpc.ClientMethod<$8.CreateRegistryItemRequest, $8.CreateRegistryItemResponse>(
+      ($9.GetRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetRegistryItemResponse.fromBuffer(value));
+  static final _$createRegistryItem = $grpc.ClientMethod<$9.CreateRegistryItemRequest, $9.CreateRegistryItemResponse>(
       '/viam.app.v1.AppService/CreateRegistryItem',
-      ($8.CreateRegistryItemRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateRegistryItemResponse.fromBuffer(value));
-  static final _$updateRegistryItem = $grpc.ClientMethod<$8.UpdateRegistryItemRequest, $8.UpdateRegistryItemResponse>(
+      ($9.CreateRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateRegistryItemResponse.fromBuffer(value));
+  static final _$updateRegistryItem = $grpc.ClientMethod<$9.UpdateRegistryItemRequest, $9.UpdateRegistryItemResponse>(
       '/viam.app.v1.AppService/UpdateRegistryItem',
-      ($8.UpdateRegistryItemRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateRegistryItemResponse.fromBuffer(value));
-  static final _$listRegistryItems = $grpc.ClientMethod<$8.ListRegistryItemsRequest, $8.ListRegistryItemsResponse>(
+      ($9.UpdateRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateRegistryItemResponse.fromBuffer(value));
+  static final _$listRegistryItems = $grpc.ClientMethod<$9.ListRegistryItemsRequest, $9.ListRegistryItemsResponse>(
       '/viam.app.v1.AppService/ListRegistryItems',
-      ($8.ListRegistryItemsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListRegistryItemsResponse.fromBuffer(value));
-  static final _$deleteRegistryItem = $grpc.ClientMethod<$8.DeleteRegistryItemRequest, $8.DeleteRegistryItemResponse>(
+      ($9.ListRegistryItemsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListRegistryItemsResponse.fromBuffer(value));
+  static final _$deleteRegistryItem = $grpc.ClientMethod<$9.DeleteRegistryItemRequest, $9.DeleteRegistryItemResponse>(
       '/viam.app.v1.AppService/DeleteRegistryItem',
-      ($8.DeleteRegistryItemRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteRegistryItemResponse.fromBuffer(value));
-  static final _$transferRegistryItem = $grpc.ClientMethod<$8.TransferRegistryItemRequest, $8.TransferRegistryItemResponse>(
+      ($9.DeleteRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteRegistryItemResponse.fromBuffer(value));
+  static final _$transferRegistryItem = $grpc.ClientMethod<$9.TransferRegistryItemRequest, $9.TransferRegistryItemResponse>(
       '/viam.app.v1.AppService/TransferRegistryItem',
-      ($8.TransferRegistryItemRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.TransferRegistryItemResponse.fromBuffer(value));
-  static final _$createModule = $grpc.ClientMethod<$8.CreateModuleRequest, $8.CreateModuleResponse>(
+      ($9.TransferRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.TransferRegistryItemResponse.fromBuffer(value));
+  static final _$createModule = $grpc.ClientMethod<$9.CreateModuleRequest, $9.CreateModuleResponse>(
       '/viam.app.v1.AppService/CreateModule',
-      ($8.CreateModuleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateModuleResponse.fromBuffer(value));
-  static final _$updateModule = $grpc.ClientMethod<$8.UpdateModuleRequest, $8.UpdateModuleResponse>(
+      ($9.CreateModuleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateModuleResponse.fromBuffer(value));
+  static final _$updateModule = $grpc.ClientMethod<$9.UpdateModuleRequest, $9.UpdateModuleResponse>(
       '/viam.app.v1.AppService/UpdateModule',
-      ($8.UpdateModuleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UpdateModuleResponse.fromBuffer(value));
-  static final _$uploadModuleFile = $grpc.ClientMethod<$8.UploadModuleFileRequest, $8.UploadModuleFileResponse>(
+      ($9.UpdateModuleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateModuleResponse.fromBuffer(value));
+  static final _$uploadModuleFile = $grpc.ClientMethod<$9.UploadModuleFileRequest, $9.UploadModuleFileResponse>(
       '/viam.app.v1.AppService/UploadModuleFile',
-      ($8.UploadModuleFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.UploadModuleFileResponse.fromBuffer(value));
-  static final _$getModule = $grpc.ClientMethod<$8.GetModuleRequest, $8.GetModuleResponse>(
+      ($9.UploadModuleFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UploadModuleFileResponse.fromBuffer(value));
+  static final _$getModule = $grpc.ClientMethod<$9.GetModuleRequest, $9.GetModuleResponse>(
       '/viam.app.v1.AppService/GetModule',
-      ($8.GetModuleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetModuleResponse.fromBuffer(value));
-  static final _$listModules = $grpc.ClientMethod<$8.ListModulesRequest, $8.ListModulesResponse>(
+      ($9.GetModuleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetModuleResponse.fromBuffer(value));
+  static final _$listModules = $grpc.ClientMethod<$9.ListModulesRequest, $9.ListModulesResponse>(
       '/viam.app.v1.AppService/ListModules',
-      ($8.ListModulesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListModulesResponse.fromBuffer(value));
-  static final _$createKey = $grpc.ClientMethod<$8.CreateKeyRequest, $8.CreateKeyResponse>(
+      ($9.ListModulesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListModulesResponse.fromBuffer(value));
+  static final _$createKey = $grpc.ClientMethod<$9.CreateKeyRequest, $9.CreateKeyResponse>(
       '/viam.app.v1.AppService/CreateKey',
-      ($8.CreateKeyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateKeyResponse.fromBuffer(value));
-  static final _$deleteKey = $grpc.ClientMethod<$8.DeleteKeyRequest, $8.DeleteKeyResponse>(
+      ($9.CreateKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateKeyResponse.fromBuffer(value));
+  static final _$deleteKey = $grpc.ClientMethod<$9.DeleteKeyRequest, $9.DeleteKeyResponse>(
       '/viam.app.v1.AppService/DeleteKey',
-      ($8.DeleteKeyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeleteKeyResponse.fromBuffer(value));
-  static final _$listKeys = $grpc.ClientMethod<$8.ListKeysRequest, $8.ListKeysResponse>(
+      ($9.DeleteKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteKeyResponse.fromBuffer(value));
+  static final _$listKeys = $grpc.ClientMethod<$9.ListKeysRequest, $9.ListKeysResponse>(
       '/viam.app.v1.AppService/ListKeys',
-      ($8.ListKeysRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.ListKeysResponse.fromBuffer(value));
-  static final _$renameKey = $grpc.ClientMethod<$8.RenameKeyRequest, $8.RenameKeyResponse>(
+      ($9.ListKeysRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListKeysResponse.fromBuffer(value));
+  static final _$renameKey = $grpc.ClientMethod<$9.RenameKeyRequest, $9.RenameKeyResponse>(
       '/viam.app.v1.AppService/RenameKey',
-      ($8.RenameKeyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.RenameKeyResponse.fromBuffer(value));
-  static final _$rotateKey = $grpc.ClientMethod<$8.RotateKeyRequest, $8.RotateKeyResponse>(
+      ($9.RenameKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.RenameKeyResponse.fromBuffer(value));
+  static final _$rotateKey = $grpc.ClientMethod<$9.RotateKeyRequest, $9.RotateKeyResponse>(
       '/viam.app.v1.AppService/RotateKey',
-      ($8.RotateKeyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.RotateKeyResponse.fromBuffer(value));
-  static final _$createKeyFromExistingKeyAuthorizations = $grpc.ClientMethod<$8.CreateKeyFromExistingKeyAuthorizationsRequest, $8.CreateKeyFromExistingKeyAuthorizationsResponse>(
+      ($9.RotateKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.RotateKeyResponse.fromBuffer(value));
+  static final _$createKeyFromExistingKeyAuthorizations = $grpc.ClientMethod<$9.CreateKeyFromExistingKeyAuthorizationsRequest, $9.CreateKeyFromExistingKeyAuthorizationsResponse>(
       '/viam.app.v1.AppService/CreateKeyFromExistingKeyAuthorizations',
-      ($8.CreateKeyFromExistingKeyAuthorizationsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.CreateKeyFromExistingKeyAuthorizationsResponse.fromBuffer(value));
+      ($9.CreateKeyFromExistingKeyAuthorizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateKeyFromExistingKeyAuthorizationsResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -320,295 +320,295 @@ class AppServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$8.GetUserIDByEmailResponse> getUserIDByEmail($8.GetUserIDByEmailRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetUserIDByEmailResponse> getUserIDByEmail($9.GetUserIDByEmailRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUserIDByEmail, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateOrganizationResponse> createOrganization($8.CreateOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateOrganizationResponse> createOrganization($9.CreateOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListOrganizationsResponse> listOrganizations($8.ListOrganizationsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListOrganizationsResponse> listOrganizations($9.ListOrganizationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOrganizations, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($8.GetOrganizationsWithAccessToLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($9.GetOrganizationsWithAccessToLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOrganizationsWithAccessToLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListOrganizationsByUserResponse> listOrganizationsByUser($8.ListOrganizationsByUserRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListOrganizationsByUserResponse> listOrganizationsByUser($9.ListOrganizationsByUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOrganizationsByUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetOrganizationResponse> getOrganization($8.GetOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetOrganizationResponse> getOrganization($9.GetOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($8.GetOrganizationNamespaceAvailabilityRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($9.GetOrganizationNamespaceAvailabilityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOrganizationNamespaceAvailability, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateOrganizationResponse> updateOrganization($8.UpdateOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateOrganizationResponse> updateOrganization($9.UpdateOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteOrganizationResponse> deleteOrganization($8.DeleteOrganizationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteOrganizationResponse> deleteOrganization($9.DeleteOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteOrganization, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListOrganizationMembersResponse> listOrganizationMembers($8.ListOrganizationMembersRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListOrganizationMembersResponse> listOrganizationMembers($9.ListOrganizationMembersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOrganizationMembers, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateOrganizationInviteResponse> createOrganizationInvite($8.CreateOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateOrganizationInviteResponse> createOrganizationInvite($9.CreateOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createOrganizationInvite, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($8.UpdateOrganizationInviteAuthorizationsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($9.UpdateOrganizationInviteAuthorizationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganizationInviteAuthorizations, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteOrganizationMemberResponse> deleteOrganizationMember($8.DeleteOrganizationMemberRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteOrganizationMemberResponse> deleteOrganizationMember($9.DeleteOrganizationMemberRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteOrganizationMember, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteOrganizationInviteResponse> deleteOrganizationInvite($8.DeleteOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteOrganizationInviteResponse> deleteOrganizationInvite($9.DeleteOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteOrganizationInvite, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ResendOrganizationInviteResponse> resendOrganizationInvite($8.ResendOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ResendOrganizationInviteResponse> resendOrganizationInvite($9.ResendOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$resendOrganizationInvite, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateLocationResponse> createLocation($8.CreateLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateLocationResponse> createLocation($9.CreateLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetLocationResponse> getLocation($8.GetLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetLocationResponse> getLocation($9.GetLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateLocationResponse> updateLocation($8.UpdateLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateLocationResponse> updateLocation($9.UpdateLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteLocationResponse> deleteLocation($8.DeleteLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteLocationResponse> deleteLocation($9.DeleteLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListLocationsResponse> listLocations($8.ListLocationsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListLocationsResponse> listLocations($9.ListLocationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listLocations, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ShareLocationResponse> shareLocation($8.ShareLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ShareLocationResponse> shareLocation($9.ShareLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$shareLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UnshareLocationResponse> unshareLocation($8.UnshareLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UnshareLocationResponse> unshareLocation($9.UnshareLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$unshareLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.LocationAuthResponse> locationAuth($8.LocationAuthRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.LocationAuthResponse> locationAuth($9.LocationAuthRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$locationAuth, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateLocationSecretResponse> createLocationSecret($8.CreateLocationSecretRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateLocationSecretResponse> createLocationSecret($9.CreateLocationSecretRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createLocationSecret, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteLocationSecretResponse> deleteLocationSecret($8.DeleteLocationSecretRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteLocationSecretResponse> deleteLocationSecret($9.DeleteLocationSecretRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteLocationSecret, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRobotResponse> getRobot($8.GetRobotRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRobotResponse> getRobot($9.GetRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobot, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRoverRentalRobotsResponse> getRoverRentalRobots($8.GetRoverRentalRobotsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRoverRentalRobotsResponse> getRoverRentalRobots($9.GetRoverRentalRobotsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRoverRentalRobots, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRobotPartsResponse> getRobotParts($8.GetRobotPartsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRobotPartsResponse> getRobotParts($9.GetRobotPartsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobotParts, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRobotPartResponse> getRobotPart($8.GetRobotPartRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRobotPartResponse> getRobotPart($9.GetRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobotPart, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRobotPartLogsResponse> getRobotPartLogs($8.GetRobotPartLogsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRobotPartLogsResponse> getRobotPartLogs($9.GetRobotPartLogsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobotPartLogs, request, options: options);
   }
 
-  $grpc.ResponseStream<$8.TailRobotPartLogsResponse> tailRobotPartLogs($8.TailRobotPartLogsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$9.TailRobotPartLogsResponse> tailRobotPartLogs($9.TailRobotPartLogsRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$tailRobotPartLogs, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRobotPartHistoryResponse> getRobotPartHistory($8.GetRobotPartHistoryRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRobotPartHistoryResponse> getRobotPartHistory($9.GetRobotPartHistoryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobotPartHistory, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateRobotPartResponse> updateRobotPart($8.UpdateRobotPartRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateRobotPartResponse> updateRobotPart($9.UpdateRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateRobotPart, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.NewRobotPartResponse> newRobotPart($8.NewRobotPartRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.NewRobotPartResponse> newRobotPart($9.NewRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$newRobotPart, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteRobotPartResponse> deleteRobotPart($8.DeleteRobotPartRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteRobotPartResponse> deleteRobotPart($9.DeleteRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRobotPart, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRobotAPIKeysResponse> getRobotAPIKeys($8.GetRobotAPIKeysRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRobotAPIKeysResponse> getRobotAPIKeys($9.GetRobotAPIKeysRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobotAPIKeys, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.MarkPartAsMainResponse> markPartAsMain($8.MarkPartAsMainRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.MarkPartAsMainResponse> markPartAsMain($9.MarkPartAsMainRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$markPartAsMain, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.MarkPartForRestartResponse> markPartForRestart($8.MarkPartForRestartRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.MarkPartForRestartResponse> markPartForRestart($9.MarkPartForRestartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$markPartForRestart, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateRobotPartSecretResponse> createRobotPartSecret($8.CreateRobotPartSecretRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateRobotPartSecretResponse> createRobotPartSecret($9.CreateRobotPartSecretRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createRobotPartSecret, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteRobotPartSecretResponse> deleteRobotPartSecret($8.DeleteRobotPartSecretRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteRobotPartSecretResponse> deleteRobotPartSecret($9.DeleteRobotPartSecretRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRobotPartSecret, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListRobotsResponse> listRobots($8.ListRobotsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListRobotsResponse> listRobots($9.ListRobotsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listRobots, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.NewRobotResponse> newRobot($8.NewRobotRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.NewRobotResponse> newRobot($9.NewRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$newRobot, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateRobotResponse> updateRobot($8.UpdateRobotRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateRobotResponse> updateRobot($9.UpdateRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateRobot, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteRobotResponse> deleteRobot($8.DeleteRobotRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteRobotResponse> deleteRobot($9.DeleteRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRobot, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListFragmentsResponse> listFragments($8.ListFragmentsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListFragmentsResponse> listFragments($9.ListFragmentsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFragments, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetFragmentResponse> getFragment($8.GetFragmentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetFragmentResponse> getFragment($9.GetFragmentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFragment, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateFragmentResponse> createFragment($8.CreateFragmentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateFragmentResponse> createFragment($9.CreateFragmentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFragment, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateFragmentResponse> updateFragment($8.UpdateFragmentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateFragmentResponse> updateFragment($9.UpdateFragmentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateFragment, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteFragmentResponse> deleteFragment($8.DeleteFragmentRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteFragmentResponse> deleteFragment($9.DeleteFragmentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteFragment, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListMachineFragmentsResponse> listMachineFragments($8.ListMachineFragmentsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListMachineFragmentsResponse> listMachineFragments($9.ListMachineFragmentsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listMachineFragments, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetFragmentHistoryResponse> getFragmentHistory($8.GetFragmentHistoryRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetFragmentHistoryResponse> getFragmentHistory($9.GetFragmentHistoryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFragmentHistory, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.AddRoleResponse> addRole($8.AddRoleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.AddRoleResponse> addRole($9.AddRoleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addRole, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.RemoveRoleResponse> removeRole($8.RemoveRoleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.RemoveRoleResponse> removeRole($9.RemoveRoleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeRole, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ChangeRoleResponse> changeRole($8.ChangeRoleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ChangeRoleResponse> changeRole($9.ChangeRoleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$changeRole, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListAuthorizationsResponse> listAuthorizations($8.ListAuthorizationsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListAuthorizationsResponse> listAuthorizations($9.ListAuthorizationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listAuthorizations, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CheckPermissionsResponse> checkPermissions($8.CheckPermissionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CheckPermissionsResponse> checkPermissions($9.CheckPermissionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$checkPermissions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetRegistryItemResponse> getRegistryItem($8.GetRegistryItemRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetRegistryItemResponse> getRegistryItem($9.GetRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRegistryItem, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateRegistryItemResponse> createRegistryItem($8.CreateRegistryItemRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateRegistryItemResponse> createRegistryItem($9.CreateRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createRegistryItem, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateRegistryItemResponse> updateRegistryItem($8.UpdateRegistryItemRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateRegistryItemResponse> updateRegistryItem($9.UpdateRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateRegistryItem, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListRegistryItemsResponse> listRegistryItems($8.ListRegistryItemsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListRegistryItemsResponse> listRegistryItems($9.ListRegistryItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listRegistryItems, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteRegistryItemResponse> deleteRegistryItem($8.DeleteRegistryItemRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteRegistryItemResponse> deleteRegistryItem($9.DeleteRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRegistryItem, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.TransferRegistryItemResponse> transferRegistryItem($8.TransferRegistryItemRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.TransferRegistryItemResponse> transferRegistryItem($9.TransferRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$transferRegistryItem, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateModuleResponse> createModule($8.CreateModuleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateModuleResponse> createModule($9.CreateModuleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createModule, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UpdateModuleResponse> updateModule($8.UpdateModuleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UpdateModuleResponse> updateModule($9.UpdateModuleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateModule, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.UploadModuleFileResponse> uploadModuleFile($async.Stream<$8.UploadModuleFileRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.UploadModuleFileResponse> uploadModuleFile($async.Stream<$9.UploadModuleFileRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$uploadModuleFile, request, options: options).single;
   }
 
-  $grpc.ResponseFuture<$8.GetModuleResponse> getModule($8.GetModuleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetModuleResponse> getModule($9.GetModuleRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getModule, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListModulesResponse> listModules($8.ListModulesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListModulesResponse> listModules($9.ListModulesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listModules, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateKeyResponse> createKey($8.CreateKeyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateKeyResponse> createKey($9.CreateKeyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createKey, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeleteKeyResponse> deleteKey($8.DeleteKeyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeleteKeyResponse> deleteKey($9.DeleteKeyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteKey, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.ListKeysResponse> listKeys($8.ListKeysRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.ListKeysResponse> listKeys($9.ListKeysRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listKeys, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.RenameKeyResponse> renameKey($8.RenameKeyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.RenameKeyResponse> renameKey($9.RenameKeyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$renameKey, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.RotateKeyResponse> rotateKey($8.RotateKeyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.RotateKeyResponse> rotateKey($9.RotateKeyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$rotateKey, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($8.CreateKeyFromExistingKeyAuthorizationsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($9.CreateKeyFromExistingKeyAuthorizationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createKeyFromExistingKeyAuthorizations, request, options: options);
   }
 }
@@ -618,878 +618,878 @@ abstract class AppServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.v1.AppService';
 
   AppServiceBase() {
-    $addMethod($grpc.ServiceMethod<$8.GetUserIDByEmailRequest, $8.GetUserIDByEmailResponse>(
+    $addMethod($grpc.ServiceMethod<$9.GetUserIDByEmailRequest, $9.GetUserIDByEmailResponse>(
         'GetUserIDByEmail',
         getUserIDByEmail_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetUserIDByEmailRequest.fromBuffer(value),
-        ($8.GetUserIDByEmailResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateOrganizationRequest, $8.CreateOrganizationResponse>(
+        ($core.List<$core.int> value) => $9.GetUserIDByEmailRequest.fromBuffer(value),
+        ($9.GetUserIDByEmailResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateOrganizationRequest, $9.CreateOrganizationResponse>(
         'CreateOrganization',
         createOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateOrganizationRequest.fromBuffer(value),
-        ($8.CreateOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListOrganizationsRequest, $8.ListOrganizationsResponse>(
+        ($core.List<$core.int> value) => $9.CreateOrganizationRequest.fromBuffer(value),
+        ($9.CreateOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListOrganizationsRequest, $9.ListOrganizationsResponse>(
         'ListOrganizations',
         listOrganizations_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListOrganizationsRequest.fromBuffer(value),
-        ($8.ListOrganizationsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetOrganizationsWithAccessToLocationRequest, $8.GetOrganizationsWithAccessToLocationResponse>(
+        ($core.List<$core.int> value) => $9.ListOrganizationsRequest.fromBuffer(value),
+        ($9.ListOrganizationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetOrganizationsWithAccessToLocationRequest, $9.GetOrganizationsWithAccessToLocationResponse>(
         'GetOrganizationsWithAccessToLocation',
         getOrganizationsWithAccessToLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetOrganizationsWithAccessToLocationRequest.fromBuffer(value),
-        ($8.GetOrganizationsWithAccessToLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListOrganizationsByUserRequest, $8.ListOrganizationsByUserResponse>(
+        ($core.List<$core.int> value) => $9.GetOrganizationsWithAccessToLocationRequest.fromBuffer(value),
+        ($9.GetOrganizationsWithAccessToLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListOrganizationsByUserRequest, $9.ListOrganizationsByUserResponse>(
         'ListOrganizationsByUser',
         listOrganizationsByUser_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListOrganizationsByUserRequest.fromBuffer(value),
-        ($8.ListOrganizationsByUserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetOrganizationRequest, $8.GetOrganizationResponse>(
+        ($core.List<$core.int> value) => $9.ListOrganizationsByUserRequest.fromBuffer(value),
+        ($9.ListOrganizationsByUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetOrganizationRequest, $9.GetOrganizationResponse>(
         'GetOrganization',
         getOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetOrganizationRequest.fromBuffer(value),
-        ($8.GetOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetOrganizationNamespaceAvailabilityRequest, $8.GetOrganizationNamespaceAvailabilityResponse>(
+        ($core.List<$core.int> value) => $9.GetOrganizationRequest.fromBuffer(value),
+        ($9.GetOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetOrganizationNamespaceAvailabilityRequest, $9.GetOrganizationNamespaceAvailabilityResponse>(
         'GetOrganizationNamespaceAvailability',
         getOrganizationNamespaceAvailability_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetOrganizationNamespaceAvailabilityRequest.fromBuffer(value),
-        ($8.GetOrganizationNamespaceAvailabilityResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateOrganizationRequest, $8.UpdateOrganizationResponse>(
+        ($core.List<$core.int> value) => $9.GetOrganizationNamespaceAvailabilityRequest.fromBuffer(value),
+        ($9.GetOrganizationNamespaceAvailabilityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateOrganizationRequest, $9.UpdateOrganizationResponse>(
         'UpdateOrganization',
         updateOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateOrganizationRequest.fromBuffer(value),
-        ($8.UpdateOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteOrganizationRequest, $8.DeleteOrganizationResponse>(
+        ($core.List<$core.int> value) => $9.UpdateOrganizationRequest.fromBuffer(value),
+        ($9.UpdateOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteOrganizationRequest, $9.DeleteOrganizationResponse>(
         'DeleteOrganization',
         deleteOrganization_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteOrganizationRequest.fromBuffer(value),
-        ($8.DeleteOrganizationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListOrganizationMembersRequest, $8.ListOrganizationMembersResponse>(
+        ($core.List<$core.int> value) => $9.DeleteOrganizationRequest.fromBuffer(value),
+        ($9.DeleteOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListOrganizationMembersRequest, $9.ListOrganizationMembersResponse>(
         'ListOrganizationMembers',
         listOrganizationMembers_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListOrganizationMembersRequest.fromBuffer(value),
-        ($8.ListOrganizationMembersResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateOrganizationInviteRequest, $8.CreateOrganizationInviteResponse>(
+        ($core.List<$core.int> value) => $9.ListOrganizationMembersRequest.fromBuffer(value),
+        ($9.ListOrganizationMembersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateOrganizationInviteRequest, $9.CreateOrganizationInviteResponse>(
         'CreateOrganizationInvite',
         createOrganizationInvite_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateOrganizationInviteRequest.fromBuffer(value),
-        ($8.CreateOrganizationInviteResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateOrganizationInviteAuthorizationsRequest, $8.UpdateOrganizationInviteAuthorizationsResponse>(
+        ($core.List<$core.int> value) => $9.CreateOrganizationInviteRequest.fromBuffer(value),
+        ($9.CreateOrganizationInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateOrganizationInviteAuthorizationsRequest, $9.UpdateOrganizationInviteAuthorizationsResponse>(
         'UpdateOrganizationInviteAuthorizations',
         updateOrganizationInviteAuthorizations_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateOrganizationInviteAuthorizationsRequest.fromBuffer(value),
-        ($8.UpdateOrganizationInviteAuthorizationsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteOrganizationMemberRequest, $8.DeleteOrganizationMemberResponse>(
+        ($core.List<$core.int> value) => $9.UpdateOrganizationInviteAuthorizationsRequest.fromBuffer(value),
+        ($9.UpdateOrganizationInviteAuthorizationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteOrganizationMemberRequest, $9.DeleteOrganizationMemberResponse>(
         'DeleteOrganizationMember',
         deleteOrganizationMember_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteOrganizationMemberRequest.fromBuffer(value),
-        ($8.DeleteOrganizationMemberResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteOrganizationInviteRequest, $8.DeleteOrganizationInviteResponse>(
+        ($core.List<$core.int> value) => $9.DeleteOrganizationMemberRequest.fromBuffer(value),
+        ($9.DeleteOrganizationMemberResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteOrganizationInviteRequest, $9.DeleteOrganizationInviteResponse>(
         'DeleteOrganizationInvite',
         deleteOrganizationInvite_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteOrganizationInviteRequest.fromBuffer(value),
-        ($8.DeleteOrganizationInviteResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ResendOrganizationInviteRequest, $8.ResendOrganizationInviteResponse>(
+        ($core.List<$core.int> value) => $9.DeleteOrganizationInviteRequest.fromBuffer(value),
+        ($9.DeleteOrganizationInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ResendOrganizationInviteRequest, $9.ResendOrganizationInviteResponse>(
         'ResendOrganizationInvite',
         resendOrganizationInvite_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ResendOrganizationInviteRequest.fromBuffer(value),
-        ($8.ResendOrganizationInviteResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateLocationRequest, $8.CreateLocationResponse>(
+        ($core.List<$core.int> value) => $9.ResendOrganizationInviteRequest.fromBuffer(value),
+        ($9.ResendOrganizationInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateLocationRequest, $9.CreateLocationResponse>(
         'CreateLocation',
         createLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateLocationRequest.fromBuffer(value),
-        ($8.CreateLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetLocationRequest, $8.GetLocationResponse>(
+        ($core.List<$core.int> value) => $9.CreateLocationRequest.fromBuffer(value),
+        ($9.CreateLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetLocationRequest, $9.GetLocationResponse>(
         'GetLocation',
         getLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetLocationRequest.fromBuffer(value),
-        ($8.GetLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateLocationRequest, $8.UpdateLocationResponse>(
+        ($core.List<$core.int> value) => $9.GetLocationRequest.fromBuffer(value),
+        ($9.GetLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateLocationRequest, $9.UpdateLocationResponse>(
         'UpdateLocation',
         updateLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateLocationRequest.fromBuffer(value),
-        ($8.UpdateLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteLocationRequest, $8.DeleteLocationResponse>(
+        ($core.List<$core.int> value) => $9.UpdateLocationRequest.fromBuffer(value),
+        ($9.UpdateLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteLocationRequest, $9.DeleteLocationResponse>(
         'DeleteLocation',
         deleteLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteLocationRequest.fromBuffer(value),
-        ($8.DeleteLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListLocationsRequest, $8.ListLocationsResponse>(
+        ($core.List<$core.int> value) => $9.DeleteLocationRequest.fromBuffer(value),
+        ($9.DeleteLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListLocationsRequest, $9.ListLocationsResponse>(
         'ListLocations',
         listLocations_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListLocationsRequest.fromBuffer(value),
-        ($8.ListLocationsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ShareLocationRequest, $8.ShareLocationResponse>(
+        ($core.List<$core.int> value) => $9.ListLocationsRequest.fromBuffer(value),
+        ($9.ListLocationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ShareLocationRequest, $9.ShareLocationResponse>(
         'ShareLocation',
         shareLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ShareLocationRequest.fromBuffer(value),
-        ($8.ShareLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UnshareLocationRequest, $8.UnshareLocationResponse>(
+        ($core.List<$core.int> value) => $9.ShareLocationRequest.fromBuffer(value),
+        ($9.ShareLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UnshareLocationRequest, $9.UnshareLocationResponse>(
         'UnshareLocation',
         unshareLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UnshareLocationRequest.fromBuffer(value),
-        ($8.UnshareLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.LocationAuthRequest, $8.LocationAuthResponse>(
+        ($core.List<$core.int> value) => $9.UnshareLocationRequest.fromBuffer(value),
+        ($9.UnshareLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.LocationAuthRequest, $9.LocationAuthResponse>(
         'LocationAuth',
         locationAuth_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.LocationAuthRequest.fromBuffer(value),
-        ($8.LocationAuthResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateLocationSecretRequest, $8.CreateLocationSecretResponse>(
+        ($core.List<$core.int> value) => $9.LocationAuthRequest.fromBuffer(value),
+        ($9.LocationAuthResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateLocationSecretRequest, $9.CreateLocationSecretResponse>(
         'CreateLocationSecret',
         createLocationSecret_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateLocationSecretRequest.fromBuffer(value),
-        ($8.CreateLocationSecretResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteLocationSecretRequest, $8.DeleteLocationSecretResponse>(
+        ($core.List<$core.int> value) => $9.CreateLocationSecretRequest.fromBuffer(value),
+        ($9.CreateLocationSecretResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteLocationSecretRequest, $9.DeleteLocationSecretResponse>(
         'DeleteLocationSecret',
         deleteLocationSecret_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteLocationSecretRequest.fromBuffer(value),
-        ($8.DeleteLocationSecretResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRobotRequest, $8.GetRobotResponse>(
+        ($core.List<$core.int> value) => $9.DeleteLocationSecretRequest.fromBuffer(value),
+        ($9.DeleteLocationSecretResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRobotRequest, $9.GetRobotResponse>(
         'GetRobot',
         getRobot_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRobotRequest.fromBuffer(value),
-        ($8.GetRobotResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRoverRentalRobotsRequest, $8.GetRoverRentalRobotsResponse>(
+        ($core.List<$core.int> value) => $9.GetRobotRequest.fromBuffer(value),
+        ($9.GetRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRoverRentalRobotsRequest, $9.GetRoverRentalRobotsResponse>(
         'GetRoverRentalRobots',
         getRoverRentalRobots_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRoverRentalRobotsRequest.fromBuffer(value),
-        ($8.GetRoverRentalRobotsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRobotPartsRequest, $8.GetRobotPartsResponse>(
+        ($core.List<$core.int> value) => $9.GetRoverRentalRobotsRequest.fromBuffer(value),
+        ($9.GetRoverRentalRobotsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRobotPartsRequest, $9.GetRobotPartsResponse>(
         'GetRobotParts',
         getRobotParts_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRobotPartsRequest.fromBuffer(value),
-        ($8.GetRobotPartsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRobotPartRequest, $8.GetRobotPartResponse>(
+        ($core.List<$core.int> value) => $9.GetRobotPartsRequest.fromBuffer(value),
+        ($9.GetRobotPartsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRobotPartRequest, $9.GetRobotPartResponse>(
         'GetRobotPart',
         getRobotPart_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRobotPartRequest.fromBuffer(value),
-        ($8.GetRobotPartResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRobotPartLogsRequest, $8.GetRobotPartLogsResponse>(
+        ($core.List<$core.int> value) => $9.GetRobotPartRequest.fromBuffer(value),
+        ($9.GetRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRobotPartLogsRequest, $9.GetRobotPartLogsResponse>(
         'GetRobotPartLogs',
         getRobotPartLogs_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRobotPartLogsRequest.fromBuffer(value),
-        ($8.GetRobotPartLogsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.TailRobotPartLogsRequest, $8.TailRobotPartLogsResponse>(
+        ($core.List<$core.int> value) => $9.GetRobotPartLogsRequest.fromBuffer(value),
+        ($9.GetRobotPartLogsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.TailRobotPartLogsRequest, $9.TailRobotPartLogsResponse>(
         'TailRobotPartLogs',
         tailRobotPartLogs_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $8.TailRobotPartLogsRequest.fromBuffer(value),
-        ($8.TailRobotPartLogsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRobotPartHistoryRequest, $8.GetRobotPartHistoryResponse>(
+        ($core.List<$core.int> value) => $9.TailRobotPartLogsRequest.fromBuffer(value),
+        ($9.TailRobotPartLogsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRobotPartHistoryRequest, $9.GetRobotPartHistoryResponse>(
         'GetRobotPartHistory',
         getRobotPartHistory_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRobotPartHistoryRequest.fromBuffer(value),
-        ($8.GetRobotPartHistoryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateRobotPartRequest, $8.UpdateRobotPartResponse>(
+        ($core.List<$core.int> value) => $9.GetRobotPartHistoryRequest.fromBuffer(value),
+        ($9.GetRobotPartHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateRobotPartRequest, $9.UpdateRobotPartResponse>(
         'UpdateRobotPart',
         updateRobotPart_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateRobotPartRequest.fromBuffer(value),
-        ($8.UpdateRobotPartResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.NewRobotPartRequest, $8.NewRobotPartResponse>(
+        ($core.List<$core.int> value) => $9.UpdateRobotPartRequest.fromBuffer(value),
+        ($9.UpdateRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.NewRobotPartRequest, $9.NewRobotPartResponse>(
         'NewRobotPart',
         newRobotPart_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.NewRobotPartRequest.fromBuffer(value),
-        ($8.NewRobotPartResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteRobotPartRequest, $8.DeleteRobotPartResponse>(
+        ($core.List<$core.int> value) => $9.NewRobotPartRequest.fromBuffer(value),
+        ($9.NewRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteRobotPartRequest, $9.DeleteRobotPartResponse>(
         'DeleteRobotPart',
         deleteRobotPart_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteRobotPartRequest.fromBuffer(value),
-        ($8.DeleteRobotPartResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRobotAPIKeysRequest, $8.GetRobotAPIKeysResponse>(
+        ($core.List<$core.int> value) => $9.DeleteRobotPartRequest.fromBuffer(value),
+        ($9.DeleteRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRobotAPIKeysRequest, $9.GetRobotAPIKeysResponse>(
         'GetRobotAPIKeys',
         getRobotAPIKeys_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRobotAPIKeysRequest.fromBuffer(value),
-        ($8.GetRobotAPIKeysResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.MarkPartAsMainRequest, $8.MarkPartAsMainResponse>(
+        ($core.List<$core.int> value) => $9.GetRobotAPIKeysRequest.fromBuffer(value),
+        ($9.GetRobotAPIKeysResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.MarkPartAsMainRequest, $9.MarkPartAsMainResponse>(
         'MarkPartAsMain',
         markPartAsMain_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.MarkPartAsMainRequest.fromBuffer(value),
-        ($8.MarkPartAsMainResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.MarkPartForRestartRequest, $8.MarkPartForRestartResponse>(
+        ($core.List<$core.int> value) => $9.MarkPartAsMainRequest.fromBuffer(value),
+        ($9.MarkPartAsMainResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.MarkPartForRestartRequest, $9.MarkPartForRestartResponse>(
         'MarkPartForRestart',
         markPartForRestart_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.MarkPartForRestartRequest.fromBuffer(value),
-        ($8.MarkPartForRestartResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateRobotPartSecretRequest, $8.CreateRobotPartSecretResponse>(
+        ($core.List<$core.int> value) => $9.MarkPartForRestartRequest.fromBuffer(value),
+        ($9.MarkPartForRestartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateRobotPartSecretRequest, $9.CreateRobotPartSecretResponse>(
         'CreateRobotPartSecret',
         createRobotPartSecret_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateRobotPartSecretRequest.fromBuffer(value),
-        ($8.CreateRobotPartSecretResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteRobotPartSecretRequest, $8.DeleteRobotPartSecretResponse>(
+        ($core.List<$core.int> value) => $9.CreateRobotPartSecretRequest.fromBuffer(value),
+        ($9.CreateRobotPartSecretResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteRobotPartSecretRequest, $9.DeleteRobotPartSecretResponse>(
         'DeleteRobotPartSecret',
         deleteRobotPartSecret_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteRobotPartSecretRequest.fromBuffer(value),
-        ($8.DeleteRobotPartSecretResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListRobotsRequest, $8.ListRobotsResponse>(
+        ($core.List<$core.int> value) => $9.DeleteRobotPartSecretRequest.fromBuffer(value),
+        ($9.DeleteRobotPartSecretResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListRobotsRequest, $9.ListRobotsResponse>(
         'ListRobots',
         listRobots_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListRobotsRequest.fromBuffer(value),
-        ($8.ListRobotsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.NewRobotRequest, $8.NewRobotResponse>(
+        ($core.List<$core.int> value) => $9.ListRobotsRequest.fromBuffer(value),
+        ($9.ListRobotsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.NewRobotRequest, $9.NewRobotResponse>(
         'NewRobot',
         newRobot_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.NewRobotRequest.fromBuffer(value),
-        ($8.NewRobotResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateRobotRequest, $8.UpdateRobotResponse>(
+        ($core.List<$core.int> value) => $9.NewRobotRequest.fromBuffer(value),
+        ($9.NewRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateRobotRequest, $9.UpdateRobotResponse>(
         'UpdateRobot',
         updateRobot_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateRobotRequest.fromBuffer(value),
-        ($8.UpdateRobotResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteRobotRequest, $8.DeleteRobotResponse>(
+        ($core.List<$core.int> value) => $9.UpdateRobotRequest.fromBuffer(value),
+        ($9.UpdateRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteRobotRequest, $9.DeleteRobotResponse>(
         'DeleteRobot',
         deleteRobot_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteRobotRequest.fromBuffer(value),
-        ($8.DeleteRobotResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListFragmentsRequest, $8.ListFragmentsResponse>(
+        ($core.List<$core.int> value) => $9.DeleteRobotRequest.fromBuffer(value),
+        ($9.DeleteRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListFragmentsRequest, $9.ListFragmentsResponse>(
         'ListFragments',
         listFragments_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListFragmentsRequest.fromBuffer(value),
-        ($8.ListFragmentsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetFragmentRequest, $8.GetFragmentResponse>(
+        ($core.List<$core.int> value) => $9.ListFragmentsRequest.fromBuffer(value),
+        ($9.ListFragmentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetFragmentRequest, $9.GetFragmentResponse>(
         'GetFragment',
         getFragment_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetFragmentRequest.fromBuffer(value),
-        ($8.GetFragmentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateFragmentRequest, $8.CreateFragmentResponse>(
+        ($core.List<$core.int> value) => $9.GetFragmentRequest.fromBuffer(value),
+        ($9.GetFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateFragmentRequest, $9.CreateFragmentResponse>(
         'CreateFragment',
         createFragment_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateFragmentRequest.fromBuffer(value),
-        ($8.CreateFragmentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateFragmentRequest, $8.UpdateFragmentResponse>(
+        ($core.List<$core.int> value) => $9.CreateFragmentRequest.fromBuffer(value),
+        ($9.CreateFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateFragmentRequest, $9.UpdateFragmentResponse>(
         'UpdateFragment',
         updateFragment_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateFragmentRequest.fromBuffer(value),
-        ($8.UpdateFragmentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteFragmentRequest, $8.DeleteFragmentResponse>(
+        ($core.List<$core.int> value) => $9.UpdateFragmentRequest.fromBuffer(value),
+        ($9.UpdateFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteFragmentRequest, $9.DeleteFragmentResponse>(
         'DeleteFragment',
         deleteFragment_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteFragmentRequest.fromBuffer(value),
-        ($8.DeleteFragmentResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListMachineFragmentsRequest, $8.ListMachineFragmentsResponse>(
+        ($core.List<$core.int> value) => $9.DeleteFragmentRequest.fromBuffer(value),
+        ($9.DeleteFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListMachineFragmentsRequest, $9.ListMachineFragmentsResponse>(
         'ListMachineFragments',
         listMachineFragments_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListMachineFragmentsRequest.fromBuffer(value),
-        ($8.ListMachineFragmentsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetFragmentHistoryRequest, $8.GetFragmentHistoryResponse>(
+        ($core.List<$core.int> value) => $9.ListMachineFragmentsRequest.fromBuffer(value),
+        ($9.ListMachineFragmentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetFragmentHistoryRequest, $9.GetFragmentHistoryResponse>(
         'GetFragmentHistory',
         getFragmentHistory_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetFragmentHistoryRequest.fromBuffer(value),
-        ($8.GetFragmentHistoryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.AddRoleRequest, $8.AddRoleResponse>(
+        ($core.List<$core.int> value) => $9.GetFragmentHistoryRequest.fromBuffer(value),
+        ($9.GetFragmentHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.AddRoleRequest, $9.AddRoleResponse>(
         'AddRole',
         addRole_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.AddRoleRequest.fromBuffer(value),
-        ($8.AddRoleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.RemoveRoleRequest, $8.RemoveRoleResponse>(
+        ($core.List<$core.int> value) => $9.AddRoleRequest.fromBuffer(value),
+        ($9.AddRoleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.RemoveRoleRequest, $9.RemoveRoleResponse>(
         'RemoveRole',
         removeRole_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.RemoveRoleRequest.fromBuffer(value),
-        ($8.RemoveRoleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ChangeRoleRequest, $8.ChangeRoleResponse>(
+        ($core.List<$core.int> value) => $9.RemoveRoleRequest.fromBuffer(value),
+        ($9.RemoveRoleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ChangeRoleRequest, $9.ChangeRoleResponse>(
         'ChangeRole',
         changeRole_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ChangeRoleRequest.fromBuffer(value),
-        ($8.ChangeRoleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListAuthorizationsRequest, $8.ListAuthorizationsResponse>(
+        ($core.List<$core.int> value) => $9.ChangeRoleRequest.fromBuffer(value),
+        ($9.ChangeRoleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListAuthorizationsRequest, $9.ListAuthorizationsResponse>(
         'ListAuthorizations',
         listAuthorizations_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListAuthorizationsRequest.fromBuffer(value),
-        ($8.ListAuthorizationsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CheckPermissionsRequest, $8.CheckPermissionsResponse>(
+        ($core.List<$core.int> value) => $9.ListAuthorizationsRequest.fromBuffer(value),
+        ($9.ListAuthorizationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CheckPermissionsRequest, $9.CheckPermissionsResponse>(
         'CheckPermissions',
         checkPermissions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CheckPermissionsRequest.fromBuffer(value),
-        ($8.CheckPermissionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetRegistryItemRequest, $8.GetRegistryItemResponse>(
+        ($core.List<$core.int> value) => $9.CheckPermissionsRequest.fromBuffer(value),
+        ($9.CheckPermissionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetRegistryItemRequest, $9.GetRegistryItemResponse>(
         'GetRegistryItem',
         getRegistryItem_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetRegistryItemRequest.fromBuffer(value),
-        ($8.GetRegistryItemResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateRegistryItemRequest, $8.CreateRegistryItemResponse>(
+        ($core.List<$core.int> value) => $9.GetRegistryItemRequest.fromBuffer(value),
+        ($9.GetRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateRegistryItemRequest, $9.CreateRegistryItemResponse>(
         'CreateRegistryItem',
         createRegistryItem_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateRegistryItemRequest.fromBuffer(value),
-        ($8.CreateRegistryItemResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateRegistryItemRequest, $8.UpdateRegistryItemResponse>(
+        ($core.List<$core.int> value) => $9.CreateRegistryItemRequest.fromBuffer(value),
+        ($9.CreateRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateRegistryItemRequest, $9.UpdateRegistryItemResponse>(
         'UpdateRegistryItem',
         updateRegistryItem_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateRegistryItemRequest.fromBuffer(value),
-        ($8.UpdateRegistryItemResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListRegistryItemsRequest, $8.ListRegistryItemsResponse>(
+        ($core.List<$core.int> value) => $9.UpdateRegistryItemRequest.fromBuffer(value),
+        ($9.UpdateRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListRegistryItemsRequest, $9.ListRegistryItemsResponse>(
         'ListRegistryItems',
         listRegistryItems_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListRegistryItemsRequest.fromBuffer(value),
-        ($8.ListRegistryItemsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteRegistryItemRequest, $8.DeleteRegistryItemResponse>(
+        ($core.List<$core.int> value) => $9.ListRegistryItemsRequest.fromBuffer(value),
+        ($9.ListRegistryItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteRegistryItemRequest, $9.DeleteRegistryItemResponse>(
         'DeleteRegistryItem',
         deleteRegistryItem_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteRegistryItemRequest.fromBuffer(value),
-        ($8.DeleteRegistryItemResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.TransferRegistryItemRequest, $8.TransferRegistryItemResponse>(
+        ($core.List<$core.int> value) => $9.DeleteRegistryItemRequest.fromBuffer(value),
+        ($9.DeleteRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.TransferRegistryItemRequest, $9.TransferRegistryItemResponse>(
         'TransferRegistryItem',
         transferRegistryItem_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.TransferRegistryItemRequest.fromBuffer(value),
-        ($8.TransferRegistryItemResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateModuleRequest, $8.CreateModuleResponse>(
+        ($core.List<$core.int> value) => $9.TransferRegistryItemRequest.fromBuffer(value),
+        ($9.TransferRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateModuleRequest, $9.CreateModuleResponse>(
         'CreateModule',
         createModule_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateModuleRequest.fromBuffer(value),
-        ($8.CreateModuleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UpdateModuleRequest, $8.UpdateModuleResponse>(
+        ($core.List<$core.int> value) => $9.CreateModuleRequest.fromBuffer(value),
+        ($9.CreateModuleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateModuleRequest, $9.UpdateModuleResponse>(
         'UpdateModule',
         updateModule_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.UpdateModuleRequest.fromBuffer(value),
-        ($8.UpdateModuleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.UploadModuleFileRequest, $8.UploadModuleFileResponse>(
+        ($core.List<$core.int> value) => $9.UpdateModuleRequest.fromBuffer(value),
+        ($9.UpdateModuleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UploadModuleFileRequest, $9.UploadModuleFileResponse>(
         'UploadModuleFile',
         uploadModuleFile,
         true,
         false,
-        ($core.List<$core.int> value) => $8.UploadModuleFileRequest.fromBuffer(value),
-        ($8.UploadModuleFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetModuleRequest, $8.GetModuleResponse>(
+        ($core.List<$core.int> value) => $9.UploadModuleFileRequest.fromBuffer(value),
+        ($9.UploadModuleFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetModuleRequest, $9.GetModuleResponse>(
         'GetModule',
         getModule_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetModuleRequest.fromBuffer(value),
-        ($8.GetModuleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListModulesRequest, $8.ListModulesResponse>(
+        ($core.List<$core.int> value) => $9.GetModuleRequest.fromBuffer(value),
+        ($9.GetModuleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListModulesRequest, $9.ListModulesResponse>(
         'ListModules',
         listModules_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListModulesRequest.fromBuffer(value),
-        ($8.ListModulesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateKeyRequest, $8.CreateKeyResponse>(
+        ($core.List<$core.int> value) => $9.ListModulesRequest.fromBuffer(value),
+        ($9.ListModulesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateKeyRequest, $9.CreateKeyResponse>(
         'CreateKey',
         createKey_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateKeyRequest.fromBuffer(value),
-        ($8.CreateKeyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeleteKeyRequest, $8.DeleteKeyResponse>(
+        ($core.List<$core.int> value) => $9.CreateKeyRequest.fromBuffer(value),
+        ($9.CreateKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteKeyRequest, $9.DeleteKeyResponse>(
         'DeleteKey',
         deleteKey_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeleteKeyRequest.fromBuffer(value),
-        ($8.DeleteKeyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.ListKeysRequest, $8.ListKeysResponse>(
+        ($core.List<$core.int> value) => $9.DeleteKeyRequest.fromBuffer(value),
+        ($9.DeleteKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListKeysRequest, $9.ListKeysResponse>(
         'ListKeys',
         listKeys_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.ListKeysRequest.fromBuffer(value),
-        ($8.ListKeysResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.RenameKeyRequest, $8.RenameKeyResponse>(
+        ($core.List<$core.int> value) => $9.ListKeysRequest.fromBuffer(value),
+        ($9.ListKeysResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.RenameKeyRequest, $9.RenameKeyResponse>(
         'RenameKey',
         renameKey_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.RenameKeyRequest.fromBuffer(value),
-        ($8.RenameKeyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.RotateKeyRequest, $8.RotateKeyResponse>(
+        ($core.List<$core.int> value) => $9.RenameKeyRequest.fromBuffer(value),
+        ($9.RenameKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.RotateKeyRequest, $9.RotateKeyResponse>(
         'RotateKey',
         rotateKey_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.RotateKeyRequest.fromBuffer(value),
-        ($8.RotateKeyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.CreateKeyFromExistingKeyAuthorizationsRequest, $8.CreateKeyFromExistingKeyAuthorizationsResponse>(
+        ($core.List<$core.int> value) => $9.RotateKeyRequest.fromBuffer(value),
+        ($9.RotateKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateKeyFromExistingKeyAuthorizationsRequest, $9.CreateKeyFromExistingKeyAuthorizationsResponse>(
         'CreateKeyFromExistingKeyAuthorizations',
         createKeyFromExistingKeyAuthorizations_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.CreateKeyFromExistingKeyAuthorizationsRequest.fromBuffer(value),
-        ($8.CreateKeyFromExistingKeyAuthorizationsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.CreateKeyFromExistingKeyAuthorizationsRequest.fromBuffer(value),
+        ($9.CreateKeyFromExistingKeyAuthorizationsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$8.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$8.GetUserIDByEmailRequest> request) async {
+  $async.Future<$9.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$9.GetUserIDByEmailRequest> request) async {
     return getUserIDByEmail(call, await request);
   }
 
-  $async.Future<$8.CreateOrganizationResponse> createOrganization_Pre($grpc.ServiceCall call, $async.Future<$8.CreateOrganizationRequest> request) async {
+  $async.Future<$9.CreateOrganizationResponse> createOrganization_Pre($grpc.ServiceCall call, $async.Future<$9.CreateOrganizationRequest> request) async {
     return createOrganization(call, await request);
   }
 
-  $async.Future<$8.ListOrganizationsResponse> listOrganizations_Pre($grpc.ServiceCall call, $async.Future<$8.ListOrganizationsRequest> request) async {
+  $async.Future<$9.ListOrganizationsResponse> listOrganizations_Pre($grpc.ServiceCall call, $async.Future<$9.ListOrganizationsRequest> request) async {
     return listOrganizations(call, await request);
   }
 
-  $async.Future<$8.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation_Pre($grpc.ServiceCall call, $async.Future<$8.GetOrganizationsWithAccessToLocationRequest> request) async {
+  $async.Future<$9.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation_Pre($grpc.ServiceCall call, $async.Future<$9.GetOrganizationsWithAccessToLocationRequest> request) async {
     return getOrganizationsWithAccessToLocation(call, await request);
   }
 
-  $async.Future<$8.ListOrganizationsByUserResponse> listOrganizationsByUser_Pre($grpc.ServiceCall call, $async.Future<$8.ListOrganizationsByUserRequest> request) async {
+  $async.Future<$9.ListOrganizationsByUserResponse> listOrganizationsByUser_Pre($grpc.ServiceCall call, $async.Future<$9.ListOrganizationsByUserRequest> request) async {
     return listOrganizationsByUser(call, await request);
   }
 
-  $async.Future<$8.GetOrganizationResponse> getOrganization_Pre($grpc.ServiceCall call, $async.Future<$8.GetOrganizationRequest> request) async {
+  $async.Future<$9.GetOrganizationResponse> getOrganization_Pre($grpc.ServiceCall call, $async.Future<$9.GetOrganizationRequest> request) async {
     return getOrganization(call, await request);
   }
 
-  $async.Future<$8.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability_Pre($grpc.ServiceCall call, $async.Future<$8.GetOrganizationNamespaceAvailabilityRequest> request) async {
+  $async.Future<$9.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability_Pre($grpc.ServiceCall call, $async.Future<$9.GetOrganizationNamespaceAvailabilityRequest> request) async {
     return getOrganizationNamespaceAvailability(call, await request);
   }
 
-  $async.Future<$8.UpdateOrganizationResponse> updateOrganization_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateOrganizationRequest> request) async {
+  $async.Future<$9.UpdateOrganizationResponse> updateOrganization_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateOrganizationRequest> request) async {
     return updateOrganization(call, await request);
   }
 
-  $async.Future<$8.DeleteOrganizationResponse> deleteOrganization_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteOrganizationRequest> request) async {
+  $async.Future<$9.DeleteOrganizationResponse> deleteOrganization_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteOrganizationRequest> request) async {
     return deleteOrganization(call, await request);
   }
 
-  $async.Future<$8.ListOrganizationMembersResponse> listOrganizationMembers_Pre($grpc.ServiceCall call, $async.Future<$8.ListOrganizationMembersRequest> request) async {
+  $async.Future<$9.ListOrganizationMembersResponse> listOrganizationMembers_Pre($grpc.ServiceCall call, $async.Future<$9.ListOrganizationMembersRequest> request) async {
     return listOrganizationMembers(call, await request);
   }
 
-  $async.Future<$8.CreateOrganizationInviteResponse> createOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$8.CreateOrganizationInviteRequest> request) async {
+  $async.Future<$9.CreateOrganizationInviteResponse> createOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$9.CreateOrganizationInviteRequest> request) async {
     return createOrganizationInvite(call, await request);
   }
 
-  $async.Future<$8.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateOrganizationInviteAuthorizationsRequest> request) async {
+  $async.Future<$9.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateOrganizationInviteAuthorizationsRequest> request) async {
     return updateOrganizationInviteAuthorizations(call, await request);
   }
 
-  $async.Future<$8.DeleteOrganizationMemberResponse> deleteOrganizationMember_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteOrganizationMemberRequest> request) async {
+  $async.Future<$9.DeleteOrganizationMemberResponse> deleteOrganizationMember_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteOrganizationMemberRequest> request) async {
     return deleteOrganizationMember(call, await request);
   }
 
-  $async.Future<$8.DeleteOrganizationInviteResponse> deleteOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteOrganizationInviteRequest> request) async {
+  $async.Future<$9.DeleteOrganizationInviteResponse> deleteOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteOrganizationInviteRequest> request) async {
     return deleteOrganizationInvite(call, await request);
   }
 
-  $async.Future<$8.ResendOrganizationInviteResponse> resendOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$8.ResendOrganizationInviteRequest> request) async {
+  $async.Future<$9.ResendOrganizationInviteResponse> resendOrganizationInvite_Pre($grpc.ServiceCall call, $async.Future<$9.ResendOrganizationInviteRequest> request) async {
     return resendOrganizationInvite(call, await request);
   }
 
-  $async.Future<$8.CreateLocationResponse> createLocation_Pre($grpc.ServiceCall call, $async.Future<$8.CreateLocationRequest> request) async {
+  $async.Future<$9.CreateLocationResponse> createLocation_Pre($grpc.ServiceCall call, $async.Future<$9.CreateLocationRequest> request) async {
     return createLocation(call, await request);
   }
 
-  $async.Future<$8.GetLocationResponse> getLocation_Pre($grpc.ServiceCall call, $async.Future<$8.GetLocationRequest> request) async {
+  $async.Future<$9.GetLocationResponse> getLocation_Pre($grpc.ServiceCall call, $async.Future<$9.GetLocationRequest> request) async {
     return getLocation(call, await request);
   }
 
-  $async.Future<$8.UpdateLocationResponse> updateLocation_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateLocationRequest> request) async {
+  $async.Future<$9.UpdateLocationResponse> updateLocation_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateLocationRequest> request) async {
     return updateLocation(call, await request);
   }
 
-  $async.Future<$8.DeleteLocationResponse> deleteLocation_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteLocationRequest> request) async {
+  $async.Future<$9.DeleteLocationResponse> deleteLocation_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteLocationRequest> request) async {
     return deleteLocation(call, await request);
   }
 
-  $async.Future<$8.ListLocationsResponse> listLocations_Pre($grpc.ServiceCall call, $async.Future<$8.ListLocationsRequest> request) async {
+  $async.Future<$9.ListLocationsResponse> listLocations_Pre($grpc.ServiceCall call, $async.Future<$9.ListLocationsRequest> request) async {
     return listLocations(call, await request);
   }
 
-  $async.Future<$8.ShareLocationResponse> shareLocation_Pre($grpc.ServiceCall call, $async.Future<$8.ShareLocationRequest> request) async {
+  $async.Future<$9.ShareLocationResponse> shareLocation_Pre($grpc.ServiceCall call, $async.Future<$9.ShareLocationRequest> request) async {
     return shareLocation(call, await request);
   }
 
-  $async.Future<$8.UnshareLocationResponse> unshareLocation_Pre($grpc.ServiceCall call, $async.Future<$8.UnshareLocationRequest> request) async {
+  $async.Future<$9.UnshareLocationResponse> unshareLocation_Pre($grpc.ServiceCall call, $async.Future<$9.UnshareLocationRequest> request) async {
     return unshareLocation(call, await request);
   }
 
-  $async.Future<$8.LocationAuthResponse> locationAuth_Pre($grpc.ServiceCall call, $async.Future<$8.LocationAuthRequest> request) async {
+  $async.Future<$9.LocationAuthResponse> locationAuth_Pre($grpc.ServiceCall call, $async.Future<$9.LocationAuthRequest> request) async {
     return locationAuth(call, await request);
   }
 
-  $async.Future<$8.CreateLocationSecretResponse> createLocationSecret_Pre($grpc.ServiceCall call, $async.Future<$8.CreateLocationSecretRequest> request) async {
+  $async.Future<$9.CreateLocationSecretResponse> createLocationSecret_Pre($grpc.ServiceCall call, $async.Future<$9.CreateLocationSecretRequest> request) async {
     return createLocationSecret(call, await request);
   }
 
-  $async.Future<$8.DeleteLocationSecretResponse> deleteLocationSecret_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteLocationSecretRequest> request) async {
+  $async.Future<$9.DeleteLocationSecretResponse> deleteLocationSecret_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteLocationSecretRequest> request) async {
     return deleteLocationSecret(call, await request);
   }
 
-  $async.Future<$8.GetRobotResponse> getRobot_Pre($grpc.ServiceCall call, $async.Future<$8.GetRobotRequest> request) async {
+  $async.Future<$9.GetRobotResponse> getRobot_Pre($grpc.ServiceCall call, $async.Future<$9.GetRobotRequest> request) async {
     return getRobot(call, await request);
   }
 
-  $async.Future<$8.GetRoverRentalRobotsResponse> getRoverRentalRobots_Pre($grpc.ServiceCall call, $async.Future<$8.GetRoverRentalRobotsRequest> request) async {
+  $async.Future<$9.GetRoverRentalRobotsResponse> getRoverRentalRobots_Pre($grpc.ServiceCall call, $async.Future<$9.GetRoverRentalRobotsRequest> request) async {
     return getRoverRentalRobots(call, await request);
   }
 
-  $async.Future<$8.GetRobotPartsResponse> getRobotParts_Pre($grpc.ServiceCall call, $async.Future<$8.GetRobotPartsRequest> request) async {
+  $async.Future<$9.GetRobotPartsResponse> getRobotParts_Pre($grpc.ServiceCall call, $async.Future<$9.GetRobotPartsRequest> request) async {
     return getRobotParts(call, await request);
   }
 
-  $async.Future<$8.GetRobotPartResponse> getRobotPart_Pre($grpc.ServiceCall call, $async.Future<$8.GetRobotPartRequest> request) async {
+  $async.Future<$9.GetRobotPartResponse> getRobotPart_Pre($grpc.ServiceCall call, $async.Future<$9.GetRobotPartRequest> request) async {
     return getRobotPart(call, await request);
   }
 
-  $async.Future<$8.GetRobotPartLogsResponse> getRobotPartLogs_Pre($grpc.ServiceCall call, $async.Future<$8.GetRobotPartLogsRequest> request) async {
+  $async.Future<$9.GetRobotPartLogsResponse> getRobotPartLogs_Pre($grpc.ServiceCall call, $async.Future<$9.GetRobotPartLogsRequest> request) async {
     return getRobotPartLogs(call, await request);
   }
 
-  $async.Stream<$8.TailRobotPartLogsResponse> tailRobotPartLogs_Pre($grpc.ServiceCall call, $async.Future<$8.TailRobotPartLogsRequest> request) async* {
+  $async.Stream<$9.TailRobotPartLogsResponse> tailRobotPartLogs_Pre($grpc.ServiceCall call, $async.Future<$9.TailRobotPartLogsRequest> request) async* {
     yield* tailRobotPartLogs(call, await request);
   }
 
-  $async.Future<$8.GetRobotPartHistoryResponse> getRobotPartHistory_Pre($grpc.ServiceCall call, $async.Future<$8.GetRobotPartHistoryRequest> request) async {
+  $async.Future<$9.GetRobotPartHistoryResponse> getRobotPartHistory_Pre($grpc.ServiceCall call, $async.Future<$9.GetRobotPartHistoryRequest> request) async {
     return getRobotPartHistory(call, await request);
   }
 
-  $async.Future<$8.UpdateRobotPartResponse> updateRobotPart_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateRobotPartRequest> request) async {
+  $async.Future<$9.UpdateRobotPartResponse> updateRobotPart_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateRobotPartRequest> request) async {
     return updateRobotPart(call, await request);
   }
 
-  $async.Future<$8.NewRobotPartResponse> newRobotPart_Pre($grpc.ServiceCall call, $async.Future<$8.NewRobotPartRequest> request) async {
+  $async.Future<$9.NewRobotPartResponse> newRobotPart_Pre($grpc.ServiceCall call, $async.Future<$9.NewRobotPartRequest> request) async {
     return newRobotPart(call, await request);
   }
 
-  $async.Future<$8.DeleteRobotPartResponse> deleteRobotPart_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteRobotPartRequest> request) async {
+  $async.Future<$9.DeleteRobotPartResponse> deleteRobotPart_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteRobotPartRequest> request) async {
     return deleteRobotPart(call, await request);
   }
 
-  $async.Future<$8.GetRobotAPIKeysResponse> getRobotAPIKeys_Pre($grpc.ServiceCall call, $async.Future<$8.GetRobotAPIKeysRequest> request) async {
+  $async.Future<$9.GetRobotAPIKeysResponse> getRobotAPIKeys_Pre($grpc.ServiceCall call, $async.Future<$9.GetRobotAPIKeysRequest> request) async {
     return getRobotAPIKeys(call, await request);
   }
 
-  $async.Future<$8.MarkPartAsMainResponse> markPartAsMain_Pre($grpc.ServiceCall call, $async.Future<$8.MarkPartAsMainRequest> request) async {
+  $async.Future<$9.MarkPartAsMainResponse> markPartAsMain_Pre($grpc.ServiceCall call, $async.Future<$9.MarkPartAsMainRequest> request) async {
     return markPartAsMain(call, await request);
   }
 
-  $async.Future<$8.MarkPartForRestartResponse> markPartForRestart_Pre($grpc.ServiceCall call, $async.Future<$8.MarkPartForRestartRequest> request) async {
+  $async.Future<$9.MarkPartForRestartResponse> markPartForRestart_Pre($grpc.ServiceCall call, $async.Future<$9.MarkPartForRestartRequest> request) async {
     return markPartForRestart(call, await request);
   }
 
-  $async.Future<$8.CreateRobotPartSecretResponse> createRobotPartSecret_Pre($grpc.ServiceCall call, $async.Future<$8.CreateRobotPartSecretRequest> request) async {
+  $async.Future<$9.CreateRobotPartSecretResponse> createRobotPartSecret_Pre($grpc.ServiceCall call, $async.Future<$9.CreateRobotPartSecretRequest> request) async {
     return createRobotPartSecret(call, await request);
   }
 
-  $async.Future<$8.DeleteRobotPartSecretResponse> deleteRobotPartSecret_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteRobotPartSecretRequest> request) async {
+  $async.Future<$9.DeleteRobotPartSecretResponse> deleteRobotPartSecret_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteRobotPartSecretRequest> request) async {
     return deleteRobotPartSecret(call, await request);
   }
 
-  $async.Future<$8.ListRobotsResponse> listRobots_Pre($grpc.ServiceCall call, $async.Future<$8.ListRobotsRequest> request) async {
+  $async.Future<$9.ListRobotsResponse> listRobots_Pre($grpc.ServiceCall call, $async.Future<$9.ListRobotsRequest> request) async {
     return listRobots(call, await request);
   }
 
-  $async.Future<$8.NewRobotResponse> newRobot_Pre($grpc.ServiceCall call, $async.Future<$8.NewRobotRequest> request) async {
+  $async.Future<$9.NewRobotResponse> newRobot_Pre($grpc.ServiceCall call, $async.Future<$9.NewRobotRequest> request) async {
     return newRobot(call, await request);
   }
 
-  $async.Future<$8.UpdateRobotResponse> updateRobot_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateRobotRequest> request) async {
+  $async.Future<$9.UpdateRobotResponse> updateRobot_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateRobotRequest> request) async {
     return updateRobot(call, await request);
   }
 
-  $async.Future<$8.DeleteRobotResponse> deleteRobot_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteRobotRequest> request) async {
+  $async.Future<$9.DeleteRobotResponse> deleteRobot_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteRobotRequest> request) async {
     return deleteRobot(call, await request);
   }
 
-  $async.Future<$8.ListFragmentsResponse> listFragments_Pre($grpc.ServiceCall call, $async.Future<$8.ListFragmentsRequest> request) async {
+  $async.Future<$9.ListFragmentsResponse> listFragments_Pre($grpc.ServiceCall call, $async.Future<$9.ListFragmentsRequest> request) async {
     return listFragments(call, await request);
   }
 
-  $async.Future<$8.GetFragmentResponse> getFragment_Pre($grpc.ServiceCall call, $async.Future<$8.GetFragmentRequest> request) async {
+  $async.Future<$9.GetFragmentResponse> getFragment_Pre($grpc.ServiceCall call, $async.Future<$9.GetFragmentRequest> request) async {
     return getFragment(call, await request);
   }
 
-  $async.Future<$8.CreateFragmentResponse> createFragment_Pre($grpc.ServiceCall call, $async.Future<$8.CreateFragmentRequest> request) async {
+  $async.Future<$9.CreateFragmentResponse> createFragment_Pre($grpc.ServiceCall call, $async.Future<$9.CreateFragmentRequest> request) async {
     return createFragment(call, await request);
   }
 
-  $async.Future<$8.UpdateFragmentResponse> updateFragment_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateFragmentRequest> request) async {
+  $async.Future<$9.UpdateFragmentResponse> updateFragment_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateFragmentRequest> request) async {
     return updateFragment(call, await request);
   }
 
-  $async.Future<$8.DeleteFragmentResponse> deleteFragment_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteFragmentRequest> request) async {
+  $async.Future<$9.DeleteFragmentResponse> deleteFragment_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteFragmentRequest> request) async {
     return deleteFragment(call, await request);
   }
 
-  $async.Future<$8.ListMachineFragmentsResponse> listMachineFragments_Pre($grpc.ServiceCall call, $async.Future<$8.ListMachineFragmentsRequest> request) async {
+  $async.Future<$9.ListMachineFragmentsResponse> listMachineFragments_Pre($grpc.ServiceCall call, $async.Future<$9.ListMachineFragmentsRequest> request) async {
     return listMachineFragments(call, await request);
   }
 
-  $async.Future<$8.GetFragmentHistoryResponse> getFragmentHistory_Pre($grpc.ServiceCall call, $async.Future<$8.GetFragmentHistoryRequest> request) async {
+  $async.Future<$9.GetFragmentHistoryResponse> getFragmentHistory_Pre($grpc.ServiceCall call, $async.Future<$9.GetFragmentHistoryRequest> request) async {
     return getFragmentHistory(call, await request);
   }
 
-  $async.Future<$8.AddRoleResponse> addRole_Pre($grpc.ServiceCall call, $async.Future<$8.AddRoleRequest> request) async {
+  $async.Future<$9.AddRoleResponse> addRole_Pre($grpc.ServiceCall call, $async.Future<$9.AddRoleRequest> request) async {
     return addRole(call, await request);
   }
 
-  $async.Future<$8.RemoveRoleResponse> removeRole_Pre($grpc.ServiceCall call, $async.Future<$8.RemoveRoleRequest> request) async {
+  $async.Future<$9.RemoveRoleResponse> removeRole_Pre($grpc.ServiceCall call, $async.Future<$9.RemoveRoleRequest> request) async {
     return removeRole(call, await request);
   }
 
-  $async.Future<$8.ChangeRoleResponse> changeRole_Pre($grpc.ServiceCall call, $async.Future<$8.ChangeRoleRequest> request) async {
+  $async.Future<$9.ChangeRoleResponse> changeRole_Pre($grpc.ServiceCall call, $async.Future<$9.ChangeRoleRequest> request) async {
     return changeRole(call, await request);
   }
 
-  $async.Future<$8.ListAuthorizationsResponse> listAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$8.ListAuthorizationsRequest> request) async {
+  $async.Future<$9.ListAuthorizationsResponse> listAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$9.ListAuthorizationsRequest> request) async {
     return listAuthorizations(call, await request);
   }
 
-  $async.Future<$8.CheckPermissionsResponse> checkPermissions_Pre($grpc.ServiceCall call, $async.Future<$8.CheckPermissionsRequest> request) async {
+  $async.Future<$9.CheckPermissionsResponse> checkPermissions_Pre($grpc.ServiceCall call, $async.Future<$9.CheckPermissionsRequest> request) async {
     return checkPermissions(call, await request);
   }
 
-  $async.Future<$8.GetRegistryItemResponse> getRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$8.GetRegistryItemRequest> request) async {
+  $async.Future<$9.GetRegistryItemResponse> getRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$9.GetRegistryItemRequest> request) async {
     return getRegistryItem(call, await request);
   }
 
-  $async.Future<$8.CreateRegistryItemResponse> createRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$8.CreateRegistryItemRequest> request) async {
+  $async.Future<$9.CreateRegistryItemResponse> createRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$9.CreateRegistryItemRequest> request) async {
     return createRegistryItem(call, await request);
   }
 
-  $async.Future<$8.UpdateRegistryItemResponse> updateRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateRegistryItemRequest> request) async {
+  $async.Future<$9.UpdateRegistryItemResponse> updateRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateRegistryItemRequest> request) async {
     return updateRegistryItem(call, await request);
   }
 
-  $async.Future<$8.ListRegistryItemsResponse> listRegistryItems_Pre($grpc.ServiceCall call, $async.Future<$8.ListRegistryItemsRequest> request) async {
+  $async.Future<$9.ListRegistryItemsResponse> listRegistryItems_Pre($grpc.ServiceCall call, $async.Future<$9.ListRegistryItemsRequest> request) async {
     return listRegistryItems(call, await request);
   }
 
-  $async.Future<$8.DeleteRegistryItemResponse> deleteRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteRegistryItemRequest> request) async {
+  $async.Future<$9.DeleteRegistryItemResponse> deleteRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteRegistryItemRequest> request) async {
     return deleteRegistryItem(call, await request);
   }
 
-  $async.Future<$8.TransferRegistryItemResponse> transferRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$8.TransferRegistryItemRequest> request) async {
+  $async.Future<$9.TransferRegistryItemResponse> transferRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$9.TransferRegistryItemRequest> request) async {
     return transferRegistryItem(call, await request);
   }
 
-  $async.Future<$8.CreateModuleResponse> createModule_Pre($grpc.ServiceCall call, $async.Future<$8.CreateModuleRequest> request) async {
+  $async.Future<$9.CreateModuleResponse> createModule_Pre($grpc.ServiceCall call, $async.Future<$9.CreateModuleRequest> request) async {
     return createModule(call, await request);
   }
 
-  $async.Future<$8.UpdateModuleResponse> updateModule_Pre($grpc.ServiceCall call, $async.Future<$8.UpdateModuleRequest> request) async {
+  $async.Future<$9.UpdateModuleResponse> updateModule_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateModuleRequest> request) async {
     return updateModule(call, await request);
   }
 
-  $async.Future<$8.GetModuleResponse> getModule_Pre($grpc.ServiceCall call, $async.Future<$8.GetModuleRequest> request) async {
+  $async.Future<$9.GetModuleResponse> getModule_Pre($grpc.ServiceCall call, $async.Future<$9.GetModuleRequest> request) async {
     return getModule(call, await request);
   }
 
-  $async.Future<$8.ListModulesResponse> listModules_Pre($grpc.ServiceCall call, $async.Future<$8.ListModulesRequest> request) async {
+  $async.Future<$9.ListModulesResponse> listModules_Pre($grpc.ServiceCall call, $async.Future<$9.ListModulesRequest> request) async {
     return listModules(call, await request);
   }
 
-  $async.Future<$8.CreateKeyResponse> createKey_Pre($grpc.ServiceCall call, $async.Future<$8.CreateKeyRequest> request) async {
+  $async.Future<$9.CreateKeyResponse> createKey_Pre($grpc.ServiceCall call, $async.Future<$9.CreateKeyRequest> request) async {
     return createKey(call, await request);
   }
 
-  $async.Future<$8.DeleteKeyResponse> deleteKey_Pre($grpc.ServiceCall call, $async.Future<$8.DeleteKeyRequest> request) async {
+  $async.Future<$9.DeleteKeyResponse> deleteKey_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteKeyRequest> request) async {
     return deleteKey(call, await request);
   }
 
-  $async.Future<$8.ListKeysResponse> listKeys_Pre($grpc.ServiceCall call, $async.Future<$8.ListKeysRequest> request) async {
+  $async.Future<$9.ListKeysResponse> listKeys_Pre($grpc.ServiceCall call, $async.Future<$9.ListKeysRequest> request) async {
     return listKeys(call, await request);
   }
 
-  $async.Future<$8.RenameKeyResponse> renameKey_Pre($grpc.ServiceCall call, $async.Future<$8.RenameKeyRequest> request) async {
+  $async.Future<$9.RenameKeyResponse> renameKey_Pre($grpc.ServiceCall call, $async.Future<$9.RenameKeyRequest> request) async {
     return renameKey(call, await request);
   }
 
-  $async.Future<$8.RotateKeyResponse> rotateKey_Pre($grpc.ServiceCall call, $async.Future<$8.RotateKeyRequest> request) async {
+  $async.Future<$9.RotateKeyResponse> rotateKey_Pre($grpc.ServiceCall call, $async.Future<$9.RotateKeyRequest> request) async {
     return rotateKey(call, await request);
   }
 
-  $async.Future<$8.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$8.CreateKeyFromExistingKeyAuthorizationsRequest> request) async {
+  $async.Future<$9.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations_Pre($grpc.ServiceCall call, $async.Future<$9.CreateKeyFromExistingKeyAuthorizationsRequest> request) async {
     return createKeyFromExistingKeyAuthorizations(call, await request);
   }
 
-  $async.Future<$8.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $8.GetUserIDByEmailRequest request);
-  $async.Future<$8.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $8.CreateOrganizationRequest request);
-  $async.Future<$8.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $8.ListOrganizationsRequest request);
-  $async.Future<$8.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($grpc.ServiceCall call, $8.GetOrganizationsWithAccessToLocationRequest request);
-  $async.Future<$8.ListOrganizationsByUserResponse> listOrganizationsByUser($grpc.ServiceCall call, $8.ListOrganizationsByUserRequest request);
-  $async.Future<$8.GetOrganizationResponse> getOrganization($grpc.ServiceCall call, $8.GetOrganizationRequest request);
-  $async.Future<$8.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $8.GetOrganizationNamespaceAvailabilityRequest request);
-  $async.Future<$8.UpdateOrganizationResponse> updateOrganization($grpc.ServiceCall call, $8.UpdateOrganizationRequest request);
-  $async.Future<$8.DeleteOrganizationResponse> deleteOrganization($grpc.ServiceCall call, $8.DeleteOrganizationRequest request);
-  $async.Future<$8.ListOrganizationMembersResponse> listOrganizationMembers($grpc.ServiceCall call, $8.ListOrganizationMembersRequest request);
-  $async.Future<$8.CreateOrganizationInviteResponse> createOrganizationInvite($grpc.ServiceCall call, $8.CreateOrganizationInviteRequest request);
-  $async.Future<$8.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($grpc.ServiceCall call, $8.UpdateOrganizationInviteAuthorizationsRequest request);
-  $async.Future<$8.DeleteOrganizationMemberResponse> deleteOrganizationMember($grpc.ServiceCall call, $8.DeleteOrganizationMemberRequest request);
-  $async.Future<$8.DeleteOrganizationInviteResponse> deleteOrganizationInvite($grpc.ServiceCall call, $8.DeleteOrganizationInviteRequest request);
-  $async.Future<$8.ResendOrganizationInviteResponse> resendOrganizationInvite($grpc.ServiceCall call, $8.ResendOrganizationInviteRequest request);
-  $async.Future<$8.CreateLocationResponse> createLocation($grpc.ServiceCall call, $8.CreateLocationRequest request);
-  $async.Future<$8.GetLocationResponse> getLocation($grpc.ServiceCall call, $8.GetLocationRequest request);
-  $async.Future<$8.UpdateLocationResponse> updateLocation($grpc.ServiceCall call, $8.UpdateLocationRequest request);
-  $async.Future<$8.DeleteLocationResponse> deleteLocation($grpc.ServiceCall call, $8.DeleteLocationRequest request);
-  $async.Future<$8.ListLocationsResponse> listLocations($grpc.ServiceCall call, $8.ListLocationsRequest request);
-  $async.Future<$8.ShareLocationResponse> shareLocation($grpc.ServiceCall call, $8.ShareLocationRequest request);
-  $async.Future<$8.UnshareLocationResponse> unshareLocation($grpc.ServiceCall call, $8.UnshareLocationRequest request);
-  $async.Future<$8.LocationAuthResponse> locationAuth($grpc.ServiceCall call, $8.LocationAuthRequest request);
-  $async.Future<$8.CreateLocationSecretResponse> createLocationSecret($grpc.ServiceCall call, $8.CreateLocationSecretRequest request);
-  $async.Future<$8.DeleteLocationSecretResponse> deleteLocationSecret($grpc.ServiceCall call, $8.DeleteLocationSecretRequest request);
-  $async.Future<$8.GetRobotResponse> getRobot($grpc.ServiceCall call, $8.GetRobotRequest request);
-  $async.Future<$8.GetRoverRentalRobotsResponse> getRoverRentalRobots($grpc.ServiceCall call, $8.GetRoverRentalRobotsRequest request);
-  $async.Future<$8.GetRobotPartsResponse> getRobotParts($grpc.ServiceCall call, $8.GetRobotPartsRequest request);
-  $async.Future<$8.GetRobotPartResponse> getRobotPart($grpc.ServiceCall call, $8.GetRobotPartRequest request);
-  $async.Future<$8.GetRobotPartLogsResponse> getRobotPartLogs($grpc.ServiceCall call, $8.GetRobotPartLogsRequest request);
-  $async.Stream<$8.TailRobotPartLogsResponse> tailRobotPartLogs($grpc.ServiceCall call, $8.TailRobotPartLogsRequest request);
-  $async.Future<$8.GetRobotPartHistoryResponse> getRobotPartHistory($grpc.ServiceCall call, $8.GetRobotPartHistoryRequest request);
-  $async.Future<$8.UpdateRobotPartResponse> updateRobotPart($grpc.ServiceCall call, $8.UpdateRobotPartRequest request);
-  $async.Future<$8.NewRobotPartResponse> newRobotPart($grpc.ServiceCall call, $8.NewRobotPartRequest request);
-  $async.Future<$8.DeleteRobotPartResponse> deleteRobotPart($grpc.ServiceCall call, $8.DeleteRobotPartRequest request);
-  $async.Future<$8.GetRobotAPIKeysResponse> getRobotAPIKeys($grpc.ServiceCall call, $8.GetRobotAPIKeysRequest request);
-  $async.Future<$8.MarkPartAsMainResponse> markPartAsMain($grpc.ServiceCall call, $8.MarkPartAsMainRequest request);
-  $async.Future<$8.MarkPartForRestartResponse> markPartForRestart($grpc.ServiceCall call, $8.MarkPartForRestartRequest request);
-  $async.Future<$8.CreateRobotPartSecretResponse> createRobotPartSecret($grpc.ServiceCall call, $8.CreateRobotPartSecretRequest request);
-  $async.Future<$8.DeleteRobotPartSecretResponse> deleteRobotPartSecret($grpc.ServiceCall call, $8.DeleteRobotPartSecretRequest request);
-  $async.Future<$8.ListRobotsResponse> listRobots($grpc.ServiceCall call, $8.ListRobotsRequest request);
-  $async.Future<$8.NewRobotResponse> newRobot($grpc.ServiceCall call, $8.NewRobotRequest request);
-  $async.Future<$8.UpdateRobotResponse> updateRobot($grpc.ServiceCall call, $8.UpdateRobotRequest request);
-  $async.Future<$8.DeleteRobotResponse> deleteRobot($grpc.ServiceCall call, $8.DeleteRobotRequest request);
-  $async.Future<$8.ListFragmentsResponse> listFragments($grpc.ServiceCall call, $8.ListFragmentsRequest request);
-  $async.Future<$8.GetFragmentResponse> getFragment($grpc.ServiceCall call, $8.GetFragmentRequest request);
-  $async.Future<$8.CreateFragmentResponse> createFragment($grpc.ServiceCall call, $8.CreateFragmentRequest request);
-  $async.Future<$8.UpdateFragmentResponse> updateFragment($grpc.ServiceCall call, $8.UpdateFragmentRequest request);
-  $async.Future<$8.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $8.DeleteFragmentRequest request);
-  $async.Future<$8.ListMachineFragmentsResponse> listMachineFragments($grpc.ServiceCall call, $8.ListMachineFragmentsRequest request);
-  $async.Future<$8.GetFragmentHistoryResponse> getFragmentHistory($grpc.ServiceCall call, $8.GetFragmentHistoryRequest request);
-  $async.Future<$8.AddRoleResponse> addRole($grpc.ServiceCall call, $8.AddRoleRequest request);
-  $async.Future<$8.RemoveRoleResponse> removeRole($grpc.ServiceCall call, $8.RemoveRoleRequest request);
-  $async.Future<$8.ChangeRoleResponse> changeRole($grpc.ServiceCall call, $8.ChangeRoleRequest request);
-  $async.Future<$8.ListAuthorizationsResponse> listAuthorizations($grpc.ServiceCall call, $8.ListAuthorizationsRequest request);
-  $async.Future<$8.CheckPermissionsResponse> checkPermissions($grpc.ServiceCall call, $8.CheckPermissionsRequest request);
-  $async.Future<$8.GetRegistryItemResponse> getRegistryItem($grpc.ServiceCall call, $8.GetRegistryItemRequest request);
-  $async.Future<$8.CreateRegistryItemResponse> createRegistryItem($grpc.ServiceCall call, $8.CreateRegistryItemRequest request);
-  $async.Future<$8.UpdateRegistryItemResponse> updateRegistryItem($grpc.ServiceCall call, $8.UpdateRegistryItemRequest request);
-  $async.Future<$8.ListRegistryItemsResponse> listRegistryItems($grpc.ServiceCall call, $8.ListRegistryItemsRequest request);
-  $async.Future<$8.DeleteRegistryItemResponse> deleteRegistryItem($grpc.ServiceCall call, $8.DeleteRegistryItemRequest request);
-  $async.Future<$8.TransferRegistryItemResponse> transferRegistryItem($grpc.ServiceCall call, $8.TransferRegistryItemRequest request);
-  $async.Future<$8.CreateModuleResponse> createModule($grpc.ServiceCall call, $8.CreateModuleRequest request);
-  $async.Future<$8.UpdateModuleResponse> updateModule($grpc.ServiceCall call, $8.UpdateModuleRequest request);
-  $async.Future<$8.UploadModuleFileResponse> uploadModuleFile($grpc.ServiceCall call, $async.Stream<$8.UploadModuleFileRequest> request);
-  $async.Future<$8.GetModuleResponse> getModule($grpc.ServiceCall call, $8.GetModuleRequest request);
-  $async.Future<$8.ListModulesResponse> listModules($grpc.ServiceCall call, $8.ListModulesRequest request);
-  $async.Future<$8.CreateKeyResponse> createKey($grpc.ServiceCall call, $8.CreateKeyRequest request);
-  $async.Future<$8.DeleteKeyResponse> deleteKey($grpc.ServiceCall call, $8.DeleteKeyRequest request);
-  $async.Future<$8.ListKeysResponse> listKeys($grpc.ServiceCall call, $8.ListKeysRequest request);
-  $async.Future<$8.RenameKeyResponse> renameKey($grpc.ServiceCall call, $8.RenameKeyRequest request);
-  $async.Future<$8.RotateKeyResponse> rotateKey($grpc.ServiceCall call, $8.RotateKeyRequest request);
-  $async.Future<$8.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $8.CreateKeyFromExistingKeyAuthorizationsRequest request);
+  $async.Future<$9.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $9.GetUserIDByEmailRequest request);
+  $async.Future<$9.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $9.CreateOrganizationRequest request);
+  $async.Future<$9.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $9.ListOrganizationsRequest request);
+  $async.Future<$9.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($grpc.ServiceCall call, $9.GetOrganizationsWithAccessToLocationRequest request);
+  $async.Future<$9.ListOrganizationsByUserResponse> listOrganizationsByUser($grpc.ServiceCall call, $9.ListOrganizationsByUserRequest request);
+  $async.Future<$9.GetOrganizationResponse> getOrganization($grpc.ServiceCall call, $9.GetOrganizationRequest request);
+  $async.Future<$9.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $9.GetOrganizationNamespaceAvailabilityRequest request);
+  $async.Future<$9.UpdateOrganizationResponse> updateOrganization($grpc.ServiceCall call, $9.UpdateOrganizationRequest request);
+  $async.Future<$9.DeleteOrganizationResponse> deleteOrganization($grpc.ServiceCall call, $9.DeleteOrganizationRequest request);
+  $async.Future<$9.ListOrganizationMembersResponse> listOrganizationMembers($grpc.ServiceCall call, $9.ListOrganizationMembersRequest request);
+  $async.Future<$9.CreateOrganizationInviteResponse> createOrganizationInvite($grpc.ServiceCall call, $9.CreateOrganizationInviteRequest request);
+  $async.Future<$9.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($grpc.ServiceCall call, $9.UpdateOrganizationInviteAuthorizationsRequest request);
+  $async.Future<$9.DeleteOrganizationMemberResponse> deleteOrganizationMember($grpc.ServiceCall call, $9.DeleteOrganizationMemberRequest request);
+  $async.Future<$9.DeleteOrganizationInviteResponse> deleteOrganizationInvite($grpc.ServiceCall call, $9.DeleteOrganizationInviteRequest request);
+  $async.Future<$9.ResendOrganizationInviteResponse> resendOrganizationInvite($grpc.ServiceCall call, $9.ResendOrganizationInviteRequest request);
+  $async.Future<$9.CreateLocationResponse> createLocation($grpc.ServiceCall call, $9.CreateLocationRequest request);
+  $async.Future<$9.GetLocationResponse> getLocation($grpc.ServiceCall call, $9.GetLocationRequest request);
+  $async.Future<$9.UpdateLocationResponse> updateLocation($grpc.ServiceCall call, $9.UpdateLocationRequest request);
+  $async.Future<$9.DeleteLocationResponse> deleteLocation($grpc.ServiceCall call, $9.DeleteLocationRequest request);
+  $async.Future<$9.ListLocationsResponse> listLocations($grpc.ServiceCall call, $9.ListLocationsRequest request);
+  $async.Future<$9.ShareLocationResponse> shareLocation($grpc.ServiceCall call, $9.ShareLocationRequest request);
+  $async.Future<$9.UnshareLocationResponse> unshareLocation($grpc.ServiceCall call, $9.UnshareLocationRequest request);
+  $async.Future<$9.LocationAuthResponse> locationAuth($grpc.ServiceCall call, $9.LocationAuthRequest request);
+  $async.Future<$9.CreateLocationSecretResponse> createLocationSecret($grpc.ServiceCall call, $9.CreateLocationSecretRequest request);
+  $async.Future<$9.DeleteLocationSecretResponse> deleteLocationSecret($grpc.ServiceCall call, $9.DeleteLocationSecretRequest request);
+  $async.Future<$9.GetRobotResponse> getRobot($grpc.ServiceCall call, $9.GetRobotRequest request);
+  $async.Future<$9.GetRoverRentalRobotsResponse> getRoverRentalRobots($grpc.ServiceCall call, $9.GetRoverRentalRobotsRequest request);
+  $async.Future<$9.GetRobotPartsResponse> getRobotParts($grpc.ServiceCall call, $9.GetRobotPartsRequest request);
+  $async.Future<$9.GetRobotPartResponse> getRobotPart($grpc.ServiceCall call, $9.GetRobotPartRequest request);
+  $async.Future<$9.GetRobotPartLogsResponse> getRobotPartLogs($grpc.ServiceCall call, $9.GetRobotPartLogsRequest request);
+  $async.Stream<$9.TailRobotPartLogsResponse> tailRobotPartLogs($grpc.ServiceCall call, $9.TailRobotPartLogsRequest request);
+  $async.Future<$9.GetRobotPartHistoryResponse> getRobotPartHistory($grpc.ServiceCall call, $9.GetRobotPartHistoryRequest request);
+  $async.Future<$9.UpdateRobotPartResponse> updateRobotPart($grpc.ServiceCall call, $9.UpdateRobotPartRequest request);
+  $async.Future<$9.NewRobotPartResponse> newRobotPart($grpc.ServiceCall call, $9.NewRobotPartRequest request);
+  $async.Future<$9.DeleteRobotPartResponse> deleteRobotPart($grpc.ServiceCall call, $9.DeleteRobotPartRequest request);
+  $async.Future<$9.GetRobotAPIKeysResponse> getRobotAPIKeys($grpc.ServiceCall call, $9.GetRobotAPIKeysRequest request);
+  $async.Future<$9.MarkPartAsMainResponse> markPartAsMain($grpc.ServiceCall call, $9.MarkPartAsMainRequest request);
+  $async.Future<$9.MarkPartForRestartResponse> markPartForRestart($grpc.ServiceCall call, $9.MarkPartForRestartRequest request);
+  $async.Future<$9.CreateRobotPartSecretResponse> createRobotPartSecret($grpc.ServiceCall call, $9.CreateRobotPartSecretRequest request);
+  $async.Future<$9.DeleteRobotPartSecretResponse> deleteRobotPartSecret($grpc.ServiceCall call, $9.DeleteRobotPartSecretRequest request);
+  $async.Future<$9.ListRobotsResponse> listRobots($grpc.ServiceCall call, $9.ListRobotsRequest request);
+  $async.Future<$9.NewRobotResponse> newRobot($grpc.ServiceCall call, $9.NewRobotRequest request);
+  $async.Future<$9.UpdateRobotResponse> updateRobot($grpc.ServiceCall call, $9.UpdateRobotRequest request);
+  $async.Future<$9.DeleteRobotResponse> deleteRobot($grpc.ServiceCall call, $9.DeleteRobotRequest request);
+  $async.Future<$9.ListFragmentsResponse> listFragments($grpc.ServiceCall call, $9.ListFragmentsRequest request);
+  $async.Future<$9.GetFragmentResponse> getFragment($grpc.ServiceCall call, $9.GetFragmentRequest request);
+  $async.Future<$9.CreateFragmentResponse> createFragment($grpc.ServiceCall call, $9.CreateFragmentRequest request);
+  $async.Future<$9.UpdateFragmentResponse> updateFragment($grpc.ServiceCall call, $9.UpdateFragmentRequest request);
+  $async.Future<$9.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $9.DeleteFragmentRequest request);
+  $async.Future<$9.ListMachineFragmentsResponse> listMachineFragments($grpc.ServiceCall call, $9.ListMachineFragmentsRequest request);
+  $async.Future<$9.GetFragmentHistoryResponse> getFragmentHistory($grpc.ServiceCall call, $9.GetFragmentHistoryRequest request);
+  $async.Future<$9.AddRoleResponse> addRole($grpc.ServiceCall call, $9.AddRoleRequest request);
+  $async.Future<$9.RemoveRoleResponse> removeRole($grpc.ServiceCall call, $9.RemoveRoleRequest request);
+  $async.Future<$9.ChangeRoleResponse> changeRole($grpc.ServiceCall call, $9.ChangeRoleRequest request);
+  $async.Future<$9.ListAuthorizationsResponse> listAuthorizations($grpc.ServiceCall call, $9.ListAuthorizationsRequest request);
+  $async.Future<$9.CheckPermissionsResponse> checkPermissions($grpc.ServiceCall call, $9.CheckPermissionsRequest request);
+  $async.Future<$9.GetRegistryItemResponse> getRegistryItem($grpc.ServiceCall call, $9.GetRegistryItemRequest request);
+  $async.Future<$9.CreateRegistryItemResponse> createRegistryItem($grpc.ServiceCall call, $9.CreateRegistryItemRequest request);
+  $async.Future<$9.UpdateRegistryItemResponse> updateRegistryItem($grpc.ServiceCall call, $9.UpdateRegistryItemRequest request);
+  $async.Future<$9.ListRegistryItemsResponse> listRegistryItems($grpc.ServiceCall call, $9.ListRegistryItemsRequest request);
+  $async.Future<$9.DeleteRegistryItemResponse> deleteRegistryItem($grpc.ServiceCall call, $9.DeleteRegistryItemRequest request);
+  $async.Future<$9.TransferRegistryItemResponse> transferRegistryItem($grpc.ServiceCall call, $9.TransferRegistryItemRequest request);
+  $async.Future<$9.CreateModuleResponse> createModule($grpc.ServiceCall call, $9.CreateModuleRequest request);
+  $async.Future<$9.UpdateModuleResponse> updateModule($grpc.ServiceCall call, $9.UpdateModuleRequest request);
+  $async.Future<$9.UploadModuleFileResponse> uploadModuleFile($grpc.ServiceCall call, $async.Stream<$9.UploadModuleFileRequest> request);
+  $async.Future<$9.GetModuleResponse> getModule($grpc.ServiceCall call, $9.GetModuleRequest request);
+  $async.Future<$9.ListModulesResponse> listModules($grpc.ServiceCall call, $9.ListModulesRequest request);
+  $async.Future<$9.CreateKeyResponse> createKey($grpc.ServiceCall call, $9.CreateKeyRequest request);
+  $async.Future<$9.DeleteKeyResponse> deleteKey($grpc.ServiceCall call, $9.DeleteKeyRequest request);
+  $async.Future<$9.ListKeysResponse> listKeys($grpc.ServiceCall call, $9.ListKeysRequest request);
+  $async.Future<$9.RenameKeyResponse> renameKey($grpc.ServiceCall call, $9.RenameKeyRequest request);
+  $async.Future<$9.RotateKeyResponse> rotateKey($grpc.ServiceCall call, $9.RotateKeyRequest request);
+  $async.Future<$9.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $9.CreateKeyFromExistingKeyAuthorizationsRequest request);
 }
