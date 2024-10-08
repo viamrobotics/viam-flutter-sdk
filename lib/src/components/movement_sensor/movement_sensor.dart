@@ -39,6 +39,8 @@ abstract class MovementSensor extends Resource {
   ///
   /// ```
   /// var position = await myMovementSensor.position();
+  /// var altitude = position.altitude;
+  /// var coordinates = position.coordinates;
   /// ```
   ///
   /// For more information, see [Movement Sensor component](https://docs.viam.com/components/movement-sensor/).
