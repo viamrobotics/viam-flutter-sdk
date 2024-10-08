@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $13;
-import '../../../google/protobuf/struct.pb.dart' as $42;
+import '../../../common/v1/common.pb.dart' as $14;
+import '../../../google/protobuf/struct.pb.dart' as $43;
 
 /// The sensors service messages are deprecated
 class GetSensorsRequest extends $pb.GeneratedMessage {
@@ -22,7 +22,7 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.String? name,
   @$core.Deprecated('This field is deprecated.')
-    $42.Struct? extra,
+    $43.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -41,7 +41,7 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSensorsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.sensors.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$42.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $42.Struct.create)
+    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -82,10 +82,10 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
   /// Additional arguments to the method
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
-  $42.Struct get extra => $_getN(1);
+  $43.Struct get extra => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
-  set extra($42.Struct v) { setField(99, v); }
+  set extra($43.Struct v) { setField(99, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
@@ -94,13 +94,13 @@ class GetSensorsRequest extends $pb.GeneratedMessage {
   void clearExtra() => clearField(99);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
-  $42.Struct ensureExtra() => $_ensure(1);
+  $43.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetSensorsResponse extends $pb.GeneratedMessage {
   factory GetSensorsResponse({
   @$core.Deprecated('This field is deprecated.')
-    $core.Iterable<$13.ResourceName>? sensorNames,
+    $core.Iterable<$14.ResourceName>? sensorNames,
   }) {
     final $result = create();
     if (sensorNames != null) {
@@ -114,7 +114,7 @@ class GetSensorsResponse extends $pb.GeneratedMessage {
   factory GetSensorsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSensorsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.sensors.v1'), createEmptyInstance: create)
-    ..pc<$13.ResourceName>(1, _omitFieldNames ? '' : 'sensorNames', $pb.PbFieldType.PM, subBuilder: $13.ResourceName.create)
+    ..pc<$14.ResourceName>(1, _omitFieldNames ? '' : 'sensorNames', $pb.PbFieldType.PM, subBuilder: $14.ResourceName.create)
     ..hasRequiredFields = false
   ;
 
@@ -141,7 +141,7 @@ class GetSensorsResponse extends $pb.GeneratedMessage {
 
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  $core.List<$13.ResourceName> get sensorNames => $_getList(0);
+  $core.List<$14.ResourceName> get sensorNames => $_getList(0);
 }
 
 class GetReadingsRequest extends $pb.GeneratedMessage {
@@ -149,9 +149,9 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.String? name,
   @$core.Deprecated('This field is deprecated.')
-    $core.Iterable<$13.ResourceName>? sensorNames,
+    $core.Iterable<$14.ResourceName>? sensorNames,
   @$core.Deprecated('This field is deprecated.')
-    $42.Struct? extra,
+    $43.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -174,8 +174,8 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.sensors.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pc<$13.ResourceName>(2, _omitFieldNames ? '' : 'sensorNames', $pb.PbFieldType.PM, subBuilder: $13.ResourceName.create)
-    ..aOM<$42.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $42.Struct.create)
+    ..pc<$14.ResourceName>(2, _omitFieldNames ? '' : 'sensorNames', $pb.PbFieldType.PM, subBuilder: $14.ResourceName.create)
+    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -215,15 +215,15 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $core.List<$13.ResourceName> get sensorNames => $_getList(1);
+  $core.List<$14.ResourceName> get sensorNames => $_getList(1);
 
   /// Additional arguments to the method
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
-  $42.Struct get extra => $_getN(2);
+  $43.Struct get extra => $_getN(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
-  set extra($42.Struct v) { setField(99, v); }
+  set extra($43.Struct v) { setField(99, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
@@ -232,15 +232,15 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
   void clearExtra() => clearField(99);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(99)
-  $42.Struct ensureExtra() => $_ensure(2);
+  $43.Struct ensureExtra() => $_ensure(2);
 }
 
 class Readings extends $pb.GeneratedMessage {
   factory Readings({
   @$core.Deprecated('This field is deprecated.')
-    $13.ResourceName? name,
+    $14.ResourceName? name,
   @$core.Deprecated('This field is deprecated.')
-    $core.Map<$core.String, $42.Value>? readings,
+    $core.Map<$core.String, $43.Value>? readings,
   }) {
     final $result = create();
     if (name != null) {
@@ -258,8 +258,8 @@ class Readings extends $pb.GeneratedMessage {
   factory Readings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Readings', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.sensors.v1'), createEmptyInstance: create)
-    ..aOM<$13.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $13.ResourceName.create)
-    ..m<$core.String, $42.Value>(2, _omitFieldNames ? '' : 'readings', entryClassName: 'Readings.ReadingsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $42.Value.create, valueDefaultOrMaker: $42.Value.getDefault, packageName: const $pb.PackageName('viam.service.sensors.v1'))
+    ..aOM<$14.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $14.ResourceName.create)
+    ..m<$core.String, $43.Value>(2, _omitFieldNames ? '' : 'readings', entryClassName: 'Readings.ReadingsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $43.Value.create, valueDefaultOrMaker: $43.Value.getDefault, packageName: const $pb.PackageName('viam.service.sensors.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -286,10 +286,10 @@ class Readings extends $pb.GeneratedMessage {
 
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  $13.ResourceName get name => $_getN(0);
+  $14.ResourceName get name => $_getN(0);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  set name($13.ResourceName v) { setField(1, v); }
+  set name($14.ResourceName v) { setField(1, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
@@ -298,11 +298,11 @@ class Readings extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
-  $13.ResourceName ensureName() => $_ensure(0);
+  $14.ResourceName ensureName() => $_ensure(0);
 
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $42.Value> get readings => $_getMap(1);
+  $core.Map<$core.String, $43.Value> get readings => $_getMap(1);
 }
 
 class GetReadingsResponse extends $pb.GeneratedMessage {

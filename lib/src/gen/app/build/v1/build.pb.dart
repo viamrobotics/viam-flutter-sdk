@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $43;
+import '../../../google/protobuf/timestamp.pb.dart' as $44;
 import 'build.pbenum.dart';
 
 export 'build.pbenum.dart';
@@ -25,6 +25,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? platforms,
     $core.String? moduleId,
     $core.String? moduleVersion,
+    $core.String? token,
   }) {
     final $result = create();
     if (repo != null) {
@@ -42,6 +43,9 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     if (moduleVersion != null) {
       $result.moduleVersion = moduleVersion;
     }
+    if (token != null) {
+      $result.token = token;
+    }
     return $result;
   }
   StartBuildRequest._() : super();
@@ -54,6 +58,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     ..pPS(3, _omitFieldNames ? '' : 'platforms')
     ..aOS(4, _omitFieldNames ? '' : 'moduleId')
     ..aOS(5, _omitFieldNames ? '' : 'moduleVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
@@ -122,6 +127,16 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   $core.bool hasModuleVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearModuleVersion() => clearField(5);
+
+  /// checkout token. provide this for private repos
+  @$pb.TagNumber(6)
+  $core.String get token => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set token($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasToken() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearToken() => clearField(6);
 }
 
 class StartBuildResponse extends $pb.GeneratedMessage {
@@ -312,8 +327,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $43.Timestamp? startTime,
-    $43.Timestamp? endTime,
+    $44.Timestamp? startTime,
+    $44.Timestamp? endTime,
   }) {
     final $result = create();
     if (buildId != null) {
@@ -345,8 +360,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$43.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $43.Timestamp.create)
-    ..aOM<$43.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $43.Timestamp.create)
+    ..aOM<$44.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $44.Timestamp.create)
+    ..aOM<$44.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $44.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -408,26 +423,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $43.Timestamp get startTime => $_getN(4);
+  $44.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($43.Timestamp v) { setField(5, v); }
+  set startTime($44.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $43.Timestamp ensureStartTime() => $_ensure(4);
+  $44.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $43.Timestamp get endTime => $_getN(5);
+  $44.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($43.Timestamp v) { setField(6, v); }
+  set endTime($44.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $43.Timestamp ensureEndTime() => $_ensure(5);
+  $44.Timestamp ensureEndTime() => $_ensure(5);
 }
 
 class ListJobsRequest extends $pb.GeneratedMessage {

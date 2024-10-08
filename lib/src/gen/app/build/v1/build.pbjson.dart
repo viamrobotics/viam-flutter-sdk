@@ -38,9 +38,11 @@ const StartBuildRequest$json = {
     {'1': 'platforms', '3': 3, '4': 3, '5': 9, '10': 'platforms'},
     {'1': 'module_id', '3': 4, '4': 1, '5': 9, '10': 'moduleId'},
     {'1': 'module_version', '3': 5, '4': 1, '5': 9, '10': 'moduleVersion'},
+    {'1': 'token', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'token', '17': true},
   ],
   '8': [
     {'1': '_ref'},
+    {'1': '_token'},
   ],
 };
 
@@ -48,8 +50,8 @@ const StartBuildRequest$json = {
 final $typed_data.Uint8List startBuildRequestDescriptor = $convert.base64Decode(
     'ChFTdGFydEJ1aWxkUmVxdWVzdBISCgRyZXBvGAEgASgJUgRyZXBvEhUKA3JlZhgCIAEoCUgAUg'
     'NyZWaIAQESHAoJcGxhdGZvcm1zGAMgAygJUglwbGF0Zm9ybXMSGwoJbW9kdWxlX2lkGAQgASgJ'
-    'Ughtb2R1bGVJZBIlCg5tb2R1bGVfdmVyc2lvbhgFIAEoCVINbW9kdWxlVmVyc2lvbkIGCgRfcm'
-    'Vm');
+    'Ughtb2R1bGVJZBIlCg5tb2R1bGVfdmVyc2lvbhgFIAEoCVINbW9kdWxlVmVyc2lvbhIZCgV0b2'
+    'tlbhgGIAEoCUgBUgV0b2tlbogBAUIGCgRfcmVmQggKBl90b2tlbg==');
 
 @$core.Deprecated('Use startBuildResponseDescriptor instead')
 const StartBuildResponse$json = {

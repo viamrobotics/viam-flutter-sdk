@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $44;
-import '../../../google/protobuf/struct.pb.dart' as $42;
-import '../../../google/protobuf/timestamp.pb.dart' as $43;
+import '../../../google/protobuf/any.pb.dart' as $45;
+import '../../../google/protobuf/struct.pb.dart' as $43;
+import '../../../google/protobuf/timestamp.pb.dart' as $44;
 import 'data_sync.pbenum.dart';
 
 export 'data_sync.pbenum.dart';
@@ -405,8 +405,8 @@ class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
 /// SensorMetadata contains the time the sensor data was requested and was received.
 class SensorMetadata extends $pb.GeneratedMessage {
   factory SensorMetadata({
-    $43.Timestamp? timeRequested,
-    $43.Timestamp? timeReceived,
+    $44.Timestamp? timeRequested,
+    $44.Timestamp? timeReceived,
   }) {
     final $result = create();
     if (timeRequested != null) {
@@ -422,8 +422,8 @@ class SensorMetadata extends $pb.GeneratedMessage {
   factory SensorMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SensorMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
-    ..aOM<$43.Timestamp>(1, _omitFieldNames ? '' : 'timeRequested', subBuilder: $43.Timestamp.create)
-    ..aOM<$43.Timestamp>(2, _omitFieldNames ? '' : 'timeReceived', subBuilder: $43.Timestamp.create)
+    ..aOM<$44.Timestamp>(1, _omitFieldNames ? '' : 'timeRequested', subBuilder: $44.Timestamp.create)
+    ..aOM<$44.Timestamp>(2, _omitFieldNames ? '' : 'timeReceived', subBuilder: $44.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -449,26 +449,26 @@ class SensorMetadata extends $pb.GeneratedMessage {
   static SensorMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $43.Timestamp get timeRequested => $_getN(0);
+  $44.Timestamp get timeRequested => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRequested($43.Timestamp v) { setField(1, v); }
+  set timeRequested($44.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRequested() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRequested() => clearField(1);
   @$pb.TagNumber(1)
-  $43.Timestamp ensureTimeRequested() => $_ensure(0);
+  $44.Timestamp ensureTimeRequested() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $43.Timestamp get timeReceived => $_getN(1);
+  $44.Timestamp get timeReceived => $_getN(1);
   @$pb.TagNumber(2)
-  set timeReceived($43.Timestamp v) { setField(2, v); }
+  set timeReceived($44.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeReceived() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimeReceived() => clearField(2);
   @$pb.TagNumber(2)
-  $43.Timestamp ensureTimeReceived() => $_ensure(1);
+  $44.Timestamp ensureTimeReceived() => $_ensure(1);
 }
 
 enum SensorData_Data {
@@ -481,7 +481,7 @@ enum SensorData_Data {
 class SensorData extends $pb.GeneratedMessage {
   factory SensorData({
     SensorMetadata? metadata,
-    $42.Struct? struct,
+    $43.Struct? struct,
     $core.List<$core.int>? binary,
   }) {
     final $result = create();
@@ -508,7 +508,7 @@ class SensorData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SensorData', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
     ..oo(0, [2, 3])
     ..aOM<SensorMetadata>(1, _omitFieldNames ? '' : 'metadata', subBuilder: SensorMetadata.create)
-    ..aOM<$42.Struct>(2, _omitFieldNames ? '' : 'struct', subBuilder: $42.Struct.create)
+    ..aOM<$43.Struct>(2, _omitFieldNames ? '' : 'struct', subBuilder: $43.Struct.create)
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'binary', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
@@ -549,15 +549,15 @@ class SensorData extends $pb.GeneratedMessage {
   SensorMetadata ensureMetadata() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $42.Struct get struct => $_getN(1);
+  $43.Struct get struct => $_getN(1);
   @$pb.TagNumber(2)
-  set struct($42.Struct v) { setField(2, v); }
+  set struct($43.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStruct() => $_has(1);
   @$pb.TagNumber(2)
   void clearStruct() => clearField(2);
   @$pb.TagNumber(2)
-  $42.Struct ensureStruct() => $_ensure(1);
+  $43.Struct ensureStruct() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.List<$core.int> get binary => $_getN(2);
@@ -629,7 +629,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
     $core.String? methodName,
     DataType? type,
     $core.String? fileName,
-    $core.Map<$core.String, $44.Any>? methodParameters,
+    $core.Map<$core.String, $45.Any>? methodParameters,
     $core.String? fileExtension,
     $core.Iterable<$core.String>? tags,
   }) {
@@ -674,7 +674,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'methodName')
     ..e<DataType>(6, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DataType.DATA_TYPE_UNSPECIFIED, valueOf: DataType.valueOf, enumValues: DataType.values)
     ..aOS(7, _omitFieldNames ? '' : 'fileName')
-    ..m<$core.String, $44.Any>(8, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'UploadMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $44.Any.create, valueDefaultOrMaker: $44.Any.getDefault, packageName: const $pb.PackageName('viam.app.datasync.v1'))
+    ..m<$core.String, $45.Any>(8, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'UploadMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $45.Any.create, valueDefaultOrMaker: $45.Any.getDefault, packageName: const $pb.PackageName('viam.app.datasync.v1'))
     ..aOS(9, _omitFieldNames ? '' : 'fileExtension')
     ..pPS(10, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
@@ -756,7 +756,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
   void clearFileName() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.Map<$core.String, $44.Any> get methodParameters => $_getMap(6);
+  $core.Map<$core.String, $45.Any> get methodParameters => $_getMap(6);
 
   @$pb.TagNumber(9)
   $core.String get fileExtension => $_getSZ(7);
@@ -774,8 +774,8 @@ class UploadMetadata extends $pb.GeneratedMessage {
 /// CaptureInterval specifies the start and end times of the data capture.
 class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval({
-    $43.Timestamp? start,
-    $43.Timestamp? end,
+    $44.Timestamp? start,
+    $44.Timestamp? end,
   }) {
     final $result = create();
     if (start != null) {
@@ -791,8 +791,8 @@ class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureInterval', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
-    ..aOM<$43.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $43.Timestamp.create)
-    ..aOM<$43.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $43.Timestamp.create)
+    ..aOM<$44.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $44.Timestamp.create)
+    ..aOM<$44.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $44.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -818,26 +818,26 @@ class CaptureInterval extends $pb.GeneratedMessage {
   static CaptureInterval? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $43.Timestamp get start => $_getN(0);
+  $44.Timestamp get start => $_getN(0);
   @$pb.TagNumber(1)
-  set start($43.Timestamp v) { setField(1, v); }
+  set start($44.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStart() => $_has(0);
   @$pb.TagNumber(1)
   void clearStart() => clearField(1);
   @$pb.TagNumber(1)
-  $43.Timestamp ensureStart() => $_ensure(0);
+  $44.Timestamp ensureStart() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $43.Timestamp get end => $_getN(1);
+  $44.Timestamp get end => $_getN(1);
   @$pb.TagNumber(2)
-  set end($43.Timestamp v) { setField(2, v); }
+  set end($44.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEnd() => $_has(1);
   @$pb.TagNumber(2)
   void clearEnd() => clearField(2);
   @$pb.TagNumber(2)
-  $43.Timestamp ensureEnd() => $_ensure(1);
+  $44.Timestamp ensureEnd() => $_ensure(1);
 }
 
 /// DataCaptureMetadata contains the metadata for data captured by collectors.
@@ -847,7 +847,7 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
     $core.String? componentName,
     $core.String? methodName,
     DataType? type,
-    $core.Map<$core.String, $44.Any>? methodParameters,
+    $core.Map<$core.String, $45.Any>? methodParameters,
     $core.String? fileExtension,
     $core.Iterable<$core.String>? tags,
   }) {
@@ -884,7 +884,7 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'componentName')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
     ..e<DataType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DataType.DATA_TYPE_UNSPECIFIED, valueOf: DataType.valueOf, enumValues: DataType.values)
-    ..m<$core.String, $44.Any>(6, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'DataCaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $44.Any.create, valueDefaultOrMaker: $44.Any.getDefault, packageName: const $pb.PackageName('viam.app.datasync.v1'))
+    ..m<$core.String, $45.Any>(6, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'DataCaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $45.Any.create, valueDefaultOrMaker: $45.Any.getDefault, packageName: const $pb.PackageName('viam.app.datasync.v1'))
     ..aOS(7, _omitFieldNames ? '' : 'fileExtension')
     ..pPS(8, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
@@ -948,7 +948,7 @@ class DataCaptureMetadata extends $pb.GeneratedMessage {
   void clearType() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.Map<$core.String, $44.Any> get methodParameters => $_getMap(4);
+  $core.Map<$core.String, $45.Any> get methodParameters => $_getMap(4);
 
   @$pb.TagNumber(7)
   $core.String get fileExtension => $_getSZ(5);

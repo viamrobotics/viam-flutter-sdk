@@ -15,49 +15,49 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $13;
-import 'arm.pb.dart' as $12;
+import '../../../common/v1/common.pb.dart' as $14;
+import 'arm.pb.dart' as $13;
 
 export 'arm.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.arm.v1.ArmService')
 class ArmServiceClient extends $grpc.Client {
-  static final _$getEndPosition = $grpc.ClientMethod<$12.GetEndPositionRequest, $12.GetEndPositionResponse>(
+  static final _$getEndPosition = $grpc.ClientMethod<$13.GetEndPositionRequest, $13.GetEndPositionResponse>(
       '/viam.component.arm.v1.ArmService/GetEndPosition',
-      ($12.GetEndPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetEndPositionResponse.fromBuffer(value));
-  static final _$moveToPosition = $grpc.ClientMethod<$12.MoveToPositionRequest, $12.MoveToPositionResponse>(
+      ($13.GetEndPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetEndPositionResponse.fromBuffer(value));
+  static final _$moveToPosition = $grpc.ClientMethod<$13.MoveToPositionRequest, $13.MoveToPositionResponse>(
       '/viam.component.arm.v1.ArmService/MoveToPosition',
-      ($12.MoveToPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.MoveToPositionResponse.fromBuffer(value));
-  static final _$getJointPositions = $grpc.ClientMethod<$12.GetJointPositionsRequest, $12.GetJointPositionsResponse>(
+      ($13.MoveToPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.MoveToPositionResponse.fromBuffer(value));
+  static final _$getJointPositions = $grpc.ClientMethod<$13.GetJointPositionsRequest, $13.GetJointPositionsResponse>(
       '/viam.component.arm.v1.ArmService/GetJointPositions',
-      ($12.GetJointPositionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.GetJointPositionsResponse.fromBuffer(value));
-  static final _$moveToJointPositions = $grpc.ClientMethod<$12.MoveToJointPositionsRequest, $12.MoveToJointPositionsResponse>(
+      ($13.GetJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.GetJointPositionsResponse.fromBuffer(value));
+  static final _$moveToJointPositions = $grpc.ClientMethod<$13.MoveToJointPositionsRequest, $13.MoveToJointPositionsResponse>(
       '/viam.component.arm.v1.ArmService/MoveToJointPositions',
-      ($12.MoveToJointPositionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.MoveToJointPositionsResponse.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$12.StopRequest, $12.StopResponse>(
+      ($13.MoveToJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.MoveToJointPositionsResponse.fromBuffer(value));
+  static final _$stop = $grpc.ClientMethod<$13.StopRequest, $13.StopResponse>(
       '/viam.component.arm.v1.ArmService/Stop',
-      ($12.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.StopResponse.fromBuffer(value));
-  static final _$isMoving = $grpc.ClientMethod<$12.IsMovingRequest, $12.IsMovingResponse>(
+      ($13.StopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.StopResponse.fromBuffer(value));
+  static final _$isMoving = $grpc.ClientMethod<$13.IsMovingRequest, $13.IsMovingResponse>(
       '/viam.component.arm.v1.ArmService/IsMoving',
-      ($12.IsMovingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.IsMovingResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
+      ($13.IsMovingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.IsMovingResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
       '/viam.component.arm.v1.ArmService/DoCommand',
-      ($13.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.DoCommandResponse.fromBuffer(value));
-  static final _$getKinematics = $grpc.ClientMethod<$13.GetKinematicsRequest, $13.GetKinematicsResponse>(
+      ($14.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
+  static final _$getKinematics = $grpc.ClientMethod<$14.GetKinematicsRequest, $14.GetKinematicsResponse>(
       '/viam.component.arm.v1.ArmService/GetKinematics',
-      ($13.GetKinematicsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.GetKinematicsResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
+      ($14.GetKinematicsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.GetKinematicsResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
       '/viam.component.arm.v1.ArmService/GetGeometries',
-      ($13.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.GetGeometriesResponse.fromBuffer(value));
+      ($14.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.GetGeometriesResponse.fromBuffer(value));
 
   ArmServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -65,39 +65,39 @@ class ArmServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$12.GetEndPositionResponse> getEndPosition($12.GetEndPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetEndPositionResponse> getEndPosition($13.GetEndPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getEndPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.MoveToPositionResponse> moveToPosition($12.MoveToPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.MoveToPositionResponse> moveToPosition($13.MoveToPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveToPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.GetJointPositionsResponse> getJointPositions($12.GetJointPositionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.GetJointPositionsResponse> getJointPositions($13.GetJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getJointPositions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.MoveToJointPositionsResponse> moveToJointPositions($12.MoveToJointPositionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.MoveToJointPositionsResponse> moveToJointPositions($13.MoveToJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveToJointPositions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.StopResponse> stop($12.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.StopResponse> stop($13.StopRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 
-  $grpc.ResponseFuture<$12.IsMovingResponse> isMoving($12.IsMovingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.IsMovingResponse> isMoving($13.IsMovingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isMoving, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.DoCommandResponse> doCommand($13.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.GetKinematicsResponse> getKinematics($13.GetKinematicsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.GetKinematicsResponse> getKinematics($14.GetKinematicsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getKinematics, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.GetGeometriesResponse> getGeometries($13.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.GetGeometriesResponse> getGeometries($14.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -107,114 +107,114 @@ abstract class ArmServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.arm.v1.ArmService';
 
   ArmServiceBase() {
-    $addMethod($grpc.ServiceMethod<$12.GetEndPositionRequest, $12.GetEndPositionResponse>(
+    $addMethod($grpc.ServiceMethod<$13.GetEndPositionRequest, $13.GetEndPositionResponse>(
         'GetEndPosition',
         getEndPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetEndPositionRequest.fromBuffer(value),
-        ($12.GetEndPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.MoveToPositionRequest, $12.MoveToPositionResponse>(
+        ($core.List<$core.int> value) => $13.GetEndPositionRequest.fromBuffer(value),
+        ($13.GetEndPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.MoveToPositionRequest, $13.MoveToPositionResponse>(
         'MoveToPosition',
         moveToPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.MoveToPositionRequest.fromBuffer(value),
-        ($12.MoveToPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.GetJointPositionsRequest, $12.GetJointPositionsResponse>(
+        ($core.List<$core.int> value) => $13.MoveToPositionRequest.fromBuffer(value),
+        ($13.MoveToPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.GetJointPositionsRequest, $13.GetJointPositionsResponse>(
         'GetJointPositions',
         getJointPositions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.GetJointPositionsRequest.fromBuffer(value),
-        ($12.GetJointPositionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.MoveToJointPositionsRequest, $12.MoveToJointPositionsResponse>(
+        ($core.List<$core.int> value) => $13.GetJointPositionsRequest.fromBuffer(value),
+        ($13.GetJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.MoveToJointPositionsRequest, $13.MoveToJointPositionsResponse>(
         'MoveToJointPositions',
         moveToJointPositions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.MoveToJointPositionsRequest.fromBuffer(value),
-        ($12.MoveToJointPositionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.StopRequest, $12.StopResponse>(
+        ($core.List<$core.int> value) => $13.MoveToJointPositionsRequest.fromBuffer(value),
+        ($13.MoveToJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.StopRequest, $13.StopResponse>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.StopRequest.fromBuffer(value),
-        ($12.StopResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$12.IsMovingRequest, $12.IsMovingResponse>(
+        ($core.List<$core.int> value) => $13.StopRequest.fromBuffer(value),
+        ($13.StopResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.IsMovingRequest, $13.IsMovingResponse>(
         'IsMoving',
         isMoving_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.IsMovingRequest.fromBuffer(value),
-        ($12.IsMovingResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.DoCommandRequest, $13.DoCommandResponse>(
+        ($core.List<$core.int> value) => $13.IsMovingRequest.fromBuffer(value),
+        ($13.IsMovingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.DoCommandRequest.fromBuffer(value),
-        ($13.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.GetKinematicsRequest, $13.GetKinematicsResponse>(
+        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
+        ($14.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.GetKinematicsRequest, $14.GetKinematicsResponse>(
         'GetKinematics',
         getKinematics_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.GetKinematicsRequest.fromBuffer(value),
-        ($13.GetKinematicsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.GetGeometriesRequest, $13.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $14.GetKinematicsRequest.fromBuffer(value),
+        ($14.GetKinematicsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.GetGeometriesRequest.fromBuffer(value),
-        ($13.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $14.GetGeometriesRequest.fromBuffer(value),
+        ($14.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$12.GetEndPositionResponse> getEndPosition_Pre($grpc.ServiceCall call, $async.Future<$12.GetEndPositionRequest> request) async {
+  $async.Future<$13.GetEndPositionResponse> getEndPosition_Pre($grpc.ServiceCall call, $async.Future<$13.GetEndPositionRequest> request) async {
     return getEndPosition(call, await request);
   }
 
-  $async.Future<$12.MoveToPositionResponse> moveToPosition_Pre($grpc.ServiceCall call, $async.Future<$12.MoveToPositionRequest> request) async {
+  $async.Future<$13.MoveToPositionResponse> moveToPosition_Pre($grpc.ServiceCall call, $async.Future<$13.MoveToPositionRequest> request) async {
     return moveToPosition(call, await request);
   }
 
-  $async.Future<$12.GetJointPositionsResponse> getJointPositions_Pre($grpc.ServiceCall call, $async.Future<$12.GetJointPositionsRequest> request) async {
+  $async.Future<$13.GetJointPositionsResponse> getJointPositions_Pre($grpc.ServiceCall call, $async.Future<$13.GetJointPositionsRequest> request) async {
     return getJointPositions(call, await request);
   }
 
-  $async.Future<$12.MoveToJointPositionsResponse> moveToJointPositions_Pre($grpc.ServiceCall call, $async.Future<$12.MoveToJointPositionsRequest> request) async {
+  $async.Future<$13.MoveToJointPositionsResponse> moveToJointPositions_Pre($grpc.ServiceCall call, $async.Future<$13.MoveToJointPositionsRequest> request) async {
     return moveToJointPositions(call, await request);
   }
 
-  $async.Future<$12.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$12.StopRequest> request) async {
+  $async.Future<$13.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$13.StopRequest> request) async {
     return stop(call, await request);
   }
 
-  $async.Future<$12.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$12.IsMovingRequest> request) async {
+  $async.Future<$13.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$13.IsMovingRequest> request) async {
     return isMoving(call, await request);
   }
 
-  $async.Future<$13.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$13.DoCommandRequest> request) async {
+  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$13.GetKinematicsResponse> getKinematics_Pre($grpc.ServiceCall call, $async.Future<$13.GetKinematicsRequest> request) async {
+  $async.Future<$14.GetKinematicsResponse> getKinematics_Pre($grpc.ServiceCall call, $async.Future<$14.GetKinematicsRequest> request) async {
     return getKinematics(call, await request);
   }
 
-  $async.Future<$13.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$13.GetGeometriesRequest> request) async {
+  $async.Future<$14.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$14.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$12.GetEndPositionResponse> getEndPosition($grpc.ServiceCall call, $12.GetEndPositionRequest request);
-  $async.Future<$12.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $12.MoveToPositionRequest request);
-  $async.Future<$12.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $12.GetJointPositionsRequest request);
-  $async.Future<$12.MoveToJointPositionsResponse> moveToJointPositions($grpc.ServiceCall call, $12.MoveToJointPositionsRequest request);
-  $async.Future<$12.StopResponse> stop($grpc.ServiceCall call, $12.StopRequest request);
-  $async.Future<$12.IsMovingResponse> isMoving($grpc.ServiceCall call, $12.IsMovingRequest request);
-  $async.Future<$13.DoCommandResponse> doCommand($grpc.ServiceCall call, $13.DoCommandRequest request);
-  $async.Future<$13.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $13.GetKinematicsRequest request);
-  $async.Future<$13.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $13.GetGeometriesRequest request);
+  $async.Future<$13.GetEndPositionResponse> getEndPosition($grpc.ServiceCall call, $13.GetEndPositionRequest request);
+  $async.Future<$13.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $13.MoveToPositionRequest request);
+  $async.Future<$13.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $13.GetJointPositionsRequest request);
+  $async.Future<$13.MoveToJointPositionsResponse> moveToJointPositions($grpc.ServiceCall call, $13.MoveToJointPositionsRequest request);
+  $async.Future<$13.StopResponse> stop($grpc.ServiceCall call, $13.StopRequest request);
+  $async.Future<$13.IsMovingResponse> isMoving($grpc.ServiceCall call, $13.IsMovingRequest request);
+  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
+  $async.Future<$14.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $14.GetKinematicsRequest request);
+  $async.Future<$14.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $14.GetGeometriesRequest request);
 }

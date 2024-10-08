@@ -1964,6 +1964,10 @@ const ModuleVersion$json = {
     {'1': 'files', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Uploads', '10': 'files'},
     {'1': 'models', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'first_run', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+  ],
+  '8': [
+    {'1': '_first_run'},
   ],
 };
 
@@ -1971,7 +1975,8 @@ const ModuleVersion$json = {
 final $typed_data.Uint8List moduleVersionDescriptor = $convert.base64Decode(
     'Cg1Nb2R1bGVWZXJzaW9uEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SKgoFZmlsZXMYAiADKA'
     'syFC52aWFtLmFwcC52MS5VcGxvYWRzUgVmaWxlcxIqCgZtb2RlbHMYAyADKAsyEi52aWFtLmFw'
-    'cC52MS5Nb2RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYBCABKAlSCmVudHJ5cG9pbnQ=');
+    'cC52MS5Nb2RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYBCABKAlSCmVudHJ5cG9pbnQSIAoJZm'
+    'lyc3RfcnVuGAUgASgJSABSCGZpcnN0UnVuiAEBQgwKCl9maXJzdF9ydW4=');
 
 @$core.Deprecated('Use moduleMetadataDescriptor instead')
 const ModuleMetadata$json = {
@@ -1980,6 +1985,10 @@ const ModuleMetadata$json = {
     {'1': 'models', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'versions', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleVersion', '10': 'versions'},
     {'1': 'entrypoint', '3': 3, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'first_run', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+  ],
+  '8': [
+    {'1': '_first_run'},
   ],
 };
 
@@ -1987,7 +1996,8 @@ const ModuleMetadata$json = {
 final $typed_data.Uint8List moduleMetadataDescriptor = $convert.base64Decode(
     'Cg5Nb2R1bGVNZXRhZGF0YRIqCgZtb2RlbHMYASADKAsyEi52aWFtLmFwcC52MS5Nb2RlbFIGbW'
     '9kZWxzEjYKCHZlcnNpb25zGAIgAygLMhoudmlhbS5hcHAudjEuTW9kdWxlVmVyc2lvblIIdmVy'
-    'c2lvbnMSHgoKZW50cnlwb2ludBgDIAEoCVIKZW50cnlwb2ludA==');
+    'c2lvbnMSHgoKZW50cnlwb2ludBgDIAEoCVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YBCABKA'
+    'lIAFIIZmlyc3RSdW6IAQFCDAoKX2ZpcnN0X3J1bg==');
 
 @$core.Deprecated('Use mLModelMetadataDescriptor instead')
 const MLModelMetadata$json = {
@@ -2298,6 +2308,10 @@ const UpdateModuleRequest$json = {
     {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
     {'1': 'models', '3': 5, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 6, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'first_run', '3': 7, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+  ],
+  '8': [
+    {'1': '_first_run'},
   ],
 };
 
@@ -2307,7 +2321,8 @@ final $typed_data.Uint8List updateModuleRequestDescriptor = $convert.base64Decod
     'lzaWJpbGl0eRgCIAEoDjIXLnZpYW0uYXBwLnYxLlZpc2liaWxpdHlSCnZpc2liaWxpdHkSEAoD'
     'dXJsGAMgASgJUgN1cmwSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEioKBm1vZG'
     'VscxgFIAMoCzISLnZpYW0uYXBwLnYxLk1vZGVsUgZtb2RlbHMSHgoKZW50cnlwb2ludBgGIAEo'
-    'CVIKZW50cnlwb2ludA==');
+    'CVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YByABKAlIAFIIZmlyc3RSdW6IAQFCDAoKX2Zpcn'
+    'N0X3J1bg==');
 
 @$core.Deprecated('Use updateModuleResponseDescriptor instead')
 const UpdateModuleResponse$json = {
@@ -2420,6 +2435,10 @@ const Module$json = {
     {'1': 'organization_id', '3': 10, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'entrypoint', '3': 11, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'public_namespace', '3': 12, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'first_run', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+  ],
+  '8': [
+    {'1': '_first_run'},
   ],
 };
 
@@ -2433,7 +2452,8 @@ final $typed_data.Uint8List moduleDescriptor = $convert.base64Decode(
     'JvYm90X3VzYWdlGAggASgDUg90b3RhbFJvYm90VXNhZ2USOAoYdG90YWxfb3JnYW5pemF0aW9u'
     'X3VzYWdlGAkgASgDUhZ0b3RhbE9yZ2FuaXphdGlvblVzYWdlEicKD29yZ2FuaXphdGlvbl9pZB'
     'gKIAEoCVIOb3JnYW5pemF0aW9uSWQSHgoKZW50cnlwb2ludBgLIAEoCVIKZW50cnlwb2ludBIp'
-    'ChBwdWJsaWNfbmFtZXNwYWNlGAwgASgJUg9wdWJsaWNOYW1lc3BhY2U=');
+    'ChBwdWJsaWNfbmFtZXNwYWNlGAwgASgJUg9wdWJsaWNOYW1lc3BhY2USIAoJZmlyc3RfcnVuGA'
+    '0gASgJSABSCGZpcnN0UnVuiAEBQgwKCl9maXJzdF9ydW4=');
 
 @$core.Deprecated('Use versionHistoryDescriptor instead')
 const VersionHistory$json = {
@@ -2443,6 +2463,10 @@ const VersionHistory$json = {
     {'1': 'files', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.Uploads', '10': 'files'},
     {'1': 'models', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'first_run', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+  ],
+  '8': [
+    {'1': '_first_run'},
   ],
 };
 
@@ -2450,7 +2474,8 @@ const VersionHistory$json = {
 final $typed_data.Uint8List versionHistoryDescriptor = $convert.base64Decode(
     'Cg5WZXJzaW9uSGlzdG9yeRIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEioKBWZpbGVzGAIgAy'
     'gLMhQudmlhbS5hcHAudjEuVXBsb2Fkc1IFZmlsZXMSKgoGbW9kZWxzGAMgAygLMhIudmlhbS5h'
-    'cHAudjEuTW9kZWxSBm1vZGVscxIeCgplbnRyeXBvaW50GAQgASgJUgplbnRyeXBvaW50');
+    'cHAudjEuTW9kZWxSBm1vZGVscxIeCgplbnRyeXBvaW50GAQgASgJUgplbnRyeXBvaW50EiAKCW'
+    'ZpcnN0X3J1bhgFIAEoCUgAUghmaXJzdFJ1bogBAUIMCgpfZmlyc3RfcnVu');
 
 @$core.Deprecated('Use uploadsDescriptor instead')
 const Uploads$json = {

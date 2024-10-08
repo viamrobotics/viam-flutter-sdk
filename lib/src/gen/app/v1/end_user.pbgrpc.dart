@@ -15,32 +15,32 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'end_user.pb.dart' as $10;
+import 'end_user.pb.dart' as $11;
 
 export 'end_user.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.v1.EndUserService')
 class EndUserServiceClient extends $grpc.Client {
-  static final _$isLegalAccepted = $grpc.ClientMethod<$10.IsLegalAcceptedRequest, $10.IsLegalAcceptedResponse>(
+  static final _$isLegalAccepted = $grpc.ClientMethod<$11.IsLegalAcceptedRequest, $11.IsLegalAcceptedResponse>(
       '/viam.app.v1.EndUserService/IsLegalAccepted',
-      ($10.IsLegalAcceptedRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.IsLegalAcceptedResponse.fromBuffer(value));
-  static final _$acceptLegal = $grpc.ClientMethod<$10.AcceptLegalRequest, $10.AcceptLegalResponse>(
+      ($11.IsLegalAcceptedRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.IsLegalAcceptedResponse.fromBuffer(value));
+  static final _$acceptLegal = $grpc.ClientMethod<$11.AcceptLegalRequest, $11.AcceptLegalResponse>(
       '/viam.app.v1.EndUserService/AcceptLegal',
-      ($10.AcceptLegalRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.AcceptLegalResponse.fromBuffer(value));
-  static final _$registerAuthApplication = $grpc.ClientMethod<$10.RegisterAuthApplicationRequest, $10.RegisterAuthApplicationResponse>(
+      ($11.AcceptLegalRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.AcceptLegalResponse.fromBuffer(value));
+  static final _$registerAuthApplication = $grpc.ClientMethod<$11.RegisterAuthApplicationRequest, $11.RegisterAuthApplicationResponse>(
       '/viam.app.v1.EndUserService/RegisterAuthApplication',
-      ($10.RegisterAuthApplicationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.RegisterAuthApplicationResponse.fromBuffer(value));
-  static final _$updateAuthApplication = $grpc.ClientMethod<$10.UpdateAuthApplicationRequest, $10.UpdateAuthApplicationResponse>(
+      ($11.RegisterAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.RegisterAuthApplicationResponse.fromBuffer(value));
+  static final _$updateAuthApplication = $grpc.ClientMethod<$11.UpdateAuthApplicationRequest, $11.UpdateAuthApplicationResponse>(
       '/viam.app.v1.EndUserService/UpdateAuthApplication',
-      ($10.UpdateAuthApplicationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.UpdateAuthApplicationResponse.fromBuffer(value));
-  static final _$getAuthApplication = $grpc.ClientMethod<$10.GetAuthApplicationRequest, $10.GetAuthApplicationResponse>(
+      ($11.UpdateAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.UpdateAuthApplicationResponse.fromBuffer(value));
+  static final _$getAuthApplication = $grpc.ClientMethod<$11.GetAuthApplicationRequest, $11.GetAuthApplicationResponse>(
       '/viam.app.v1.EndUserService/GetAuthApplication',
-      ($10.GetAuthApplicationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.GetAuthApplicationResponse.fromBuffer(value));
+      ($11.GetAuthApplicationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.GetAuthApplicationResponse.fromBuffer(value));
 
   EndUserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -48,23 +48,23 @@ class EndUserServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$10.IsLegalAcceptedResponse> isLegalAccepted($10.IsLegalAcceptedRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.IsLegalAcceptedResponse> isLegalAccepted($11.IsLegalAcceptedRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isLegalAccepted, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.AcceptLegalResponse> acceptLegal($10.AcceptLegalRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.AcceptLegalResponse> acceptLegal($11.AcceptLegalRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acceptLegal, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.RegisterAuthApplicationResponse> registerAuthApplication($10.RegisterAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.RegisterAuthApplicationResponse> registerAuthApplication($11.RegisterAuthApplicationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$registerAuthApplication, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.UpdateAuthApplicationResponse> updateAuthApplication($10.UpdateAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.UpdateAuthApplicationResponse> updateAuthApplication($11.UpdateAuthApplicationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateAuthApplication, request, options: options);
   }
 
-  $grpc.ResponseFuture<$10.GetAuthApplicationResponse> getAuthApplication($10.GetAuthApplicationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$11.GetAuthApplicationResponse> getAuthApplication($11.GetAuthApplicationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAuthApplication, request, options: options);
   }
 }
@@ -74,66 +74,66 @@ abstract class EndUserServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.v1.EndUserService';
 
   EndUserServiceBase() {
-    $addMethod($grpc.ServiceMethod<$10.IsLegalAcceptedRequest, $10.IsLegalAcceptedResponse>(
+    $addMethod($grpc.ServiceMethod<$11.IsLegalAcceptedRequest, $11.IsLegalAcceptedResponse>(
         'IsLegalAccepted',
         isLegalAccepted_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.IsLegalAcceptedRequest.fromBuffer(value),
-        ($10.IsLegalAcceptedResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.AcceptLegalRequest, $10.AcceptLegalResponse>(
+        ($core.List<$core.int> value) => $11.IsLegalAcceptedRequest.fromBuffer(value),
+        ($11.IsLegalAcceptedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.AcceptLegalRequest, $11.AcceptLegalResponse>(
         'AcceptLegal',
         acceptLegal_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.AcceptLegalRequest.fromBuffer(value),
-        ($10.AcceptLegalResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.RegisterAuthApplicationRequest, $10.RegisterAuthApplicationResponse>(
+        ($core.List<$core.int> value) => $11.AcceptLegalRequest.fromBuffer(value),
+        ($11.AcceptLegalResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.RegisterAuthApplicationRequest, $11.RegisterAuthApplicationResponse>(
         'RegisterAuthApplication',
         registerAuthApplication_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.RegisterAuthApplicationRequest.fromBuffer(value),
-        ($10.RegisterAuthApplicationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.UpdateAuthApplicationRequest, $10.UpdateAuthApplicationResponse>(
+        ($core.List<$core.int> value) => $11.RegisterAuthApplicationRequest.fromBuffer(value),
+        ($11.RegisterAuthApplicationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.UpdateAuthApplicationRequest, $11.UpdateAuthApplicationResponse>(
         'UpdateAuthApplication',
         updateAuthApplication_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.UpdateAuthApplicationRequest.fromBuffer(value),
-        ($10.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.GetAuthApplicationRequest, $10.GetAuthApplicationResponse>(
+        ($core.List<$core.int> value) => $11.UpdateAuthApplicationRequest.fromBuffer(value),
+        ($11.UpdateAuthApplicationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.GetAuthApplicationRequest, $11.GetAuthApplicationResponse>(
         'GetAuthApplication',
         getAuthApplication_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.GetAuthApplicationRequest.fromBuffer(value),
-        ($10.GetAuthApplicationResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $11.GetAuthApplicationRequest.fromBuffer(value),
+        ($11.GetAuthApplicationResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$10.IsLegalAcceptedResponse> isLegalAccepted_Pre($grpc.ServiceCall call, $async.Future<$10.IsLegalAcceptedRequest> request) async {
+  $async.Future<$11.IsLegalAcceptedResponse> isLegalAccepted_Pre($grpc.ServiceCall call, $async.Future<$11.IsLegalAcceptedRequest> request) async {
     return isLegalAccepted(call, await request);
   }
 
-  $async.Future<$10.AcceptLegalResponse> acceptLegal_Pre($grpc.ServiceCall call, $async.Future<$10.AcceptLegalRequest> request) async {
+  $async.Future<$11.AcceptLegalResponse> acceptLegal_Pre($grpc.ServiceCall call, $async.Future<$11.AcceptLegalRequest> request) async {
     return acceptLegal(call, await request);
   }
 
-  $async.Future<$10.RegisterAuthApplicationResponse> registerAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$10.RegisterAuthApplicationRequest> request) async {
+  $async.Future<$11.RegisterAuthApplicationResponse> registerAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$11.RegisterAuthApplicationRequest> request) async {
     return registerAuthApplication(call, await request);
   }
 
-  $async.Future<$10.UpdateAuthApplicationResponse> updateAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$10.UpdateAuthApplicationRequest> request) async {
+  $async.Future<$11.UpdateAuthApplicationResponse> updateAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$11.UpdateAuthApplicationRequest> request) async {
     return updateAuthApplication(call, await request);
   }
 
-  $async.Future<$10.GetAuthApplicationResponse> getAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$10.GetAuthApplicationRequest> request) async {
+  $async.Future<$11.GetAuthApplicationResponse> getAuthApplication_Pre($grpc.ServiceCall call, $async.Future<$11.GetAuthApplicationRequest> request) async {
     return getAuthApplication(call, await request);
   }
 
-  $async.Future<$10.IsLegalAcceptedResponse> isLegalAccepted($grpc.ServiceCall call, $10.IsLegalAcceptedRequest request);
-  $async.Future<$10.AcceptLegalResponse> acceptLegal($grpc.ServiceCall call, $10.AcceptLegalRequest request);
-  $async.Future<$10.RegisterAuthApplicationResponse> registerAuthApplication($grpc.ServiceCall call, $10.RegisterAuthApplicationRequest request);
-  $async.Future<$10.UpdateAuthApplicationResponse> updateAuthApplication($grpc.ServiceCall call, $10.UpdateAuthApplicationRequest request);
-  $async.Future<$10.GetAuthApplicationResponse> getAuthApplication($grpc.ServiceCall call, $10.GetAuthApplicationRequest request);
+  $async.Future<$11.IsLegalAcceptedResponse> isLegalAccepted($grpc.ServiceCall call, $11.IsLegalAcceptedRequest request);
+  $async.Future<$11.AcceptLegalResponse> acceptLegal($grpc.ServiceCall call, $11.AcceptLegalRequest request);
+  $async.Future<$11.RegisterAuthApplicationResponse> registerAuthApplication($grpc.ServiceCall call, $11.RegisterAuthApplicationRequest request);
+  $async.Future<$11.UpdateAuthApplicationResponse> updateAuthApplication($grpc.ServiceCall call, $11.UpdateAuthApplicationRequest request);
+  $async.Future<$11.GetAuthApplicationResponse> getAuthApplication($grpc.ServiceCall call, $11.GetAuthApplicationRequest request);
 }
