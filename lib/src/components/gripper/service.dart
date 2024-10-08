@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'gripper.dart';
 
+/// {@category Components}
 /// gRPC Service for a [Gripper]
 class GripperService extends GripperServiceBase {
   final ResourceManager _manager;

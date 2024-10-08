@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'gantry.dart';
 
+/// {@category Components}
 /// gRPC Service for a [Gantry]
 class GantryService extends GantryServiceBase {
   final ResourceManager _manager;

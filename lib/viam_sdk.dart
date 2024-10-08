@@ -1,4 +1,5 @@
 /// Robots at your fingertips.
+/// {@category Viam SDK}
 library viam_sdk;
 
 /// App Clients

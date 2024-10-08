@@ -7,7 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'motor.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// gRPC client for the [Motor] component.
 class MotorClient extends Motor implements ResourceRPCClient {
   @override

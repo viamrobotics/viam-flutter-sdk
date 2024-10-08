@@ -7,7 +7,7 @@ import '../../resource/base.dart';
 import '../../utils.dart';
 import 'gripper.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// gRPC client for the [Gripper] component.
 class GripperClient extends Gripper implements ResourceRPCClient {
   @override

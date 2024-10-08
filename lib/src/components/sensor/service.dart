@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'sensor.dart';
 
+/// {@category Components}
 /// gRPC Service for a generic [Sensor]
 class SensorService extends SensorServiceBase {
   final ResourceManager _manager;

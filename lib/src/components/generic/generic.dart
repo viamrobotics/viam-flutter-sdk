@@ -2,7 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Generic represents a generic component that executes doCommand.
 ///
 /// For more information, see [Generic component](https://docs.viam.com/components/generic/).

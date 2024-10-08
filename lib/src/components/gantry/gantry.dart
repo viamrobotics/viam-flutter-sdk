@@ -2,7 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
 ///
 /// For more information, see [Gantry component](https://docs.viam.com/components/gantry/).

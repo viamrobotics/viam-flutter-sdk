@@ -9,6 +9,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'board.dart';
 
+/// {@category Components}
 /// gRPC Service for a [Board]
 class BoardService extends BoardServiceBase {
   final ResourceManager _manager;

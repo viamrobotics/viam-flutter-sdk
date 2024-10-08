@@ -9,7 +9,7 @@ typedef Voltage = GetVoltageResponse;
 /// {@category Viam SDK}
 typedef Current = GetCurrentResponse;
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// PowerSensor reports information about voltage, current, and power.
 ///
 /// For more information, see [Power Sensor component](https://docs.viam.com/components/power-sensor/).

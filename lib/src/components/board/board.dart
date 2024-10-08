@@ -12,7 +12,7 @@ typedef Tick = StreamTicksResponse;
 /// {@category Viam SDK}
 typedef AnalogValue = ReadAnalogReaderResponse;
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Board represents a physical general purpose compute board that contains various
 /// components such as analog readers, and digital interrupts.
 ///

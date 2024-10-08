@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'servo.dart';
 
+/// {@category Components}
 /// gRPC Service for a [Servo]
 class ServoService extends ServoServiceBase {
   final ResourceManager _manager;

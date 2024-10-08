@@ -6,6 +6,7 @@ import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'arm.dart';
 
+/// {@category Components}
 /// gRPC Service for an [Arm]
 class ArmService extends ArmServiceBase {
   final ResourceManager _manager;

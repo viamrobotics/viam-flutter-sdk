@@ -2,7 +2,7 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Servo represents a physical servo.
 ///
 /// For more information, see [Servo component](https://docs.viam.com/components/servo/).

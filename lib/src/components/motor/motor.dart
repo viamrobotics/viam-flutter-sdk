@@ -18,7 +18,7 @@ class PowerState {
   }
 }
 
-/// {@category Viam SDK}
+/// {@category Components}
 /// Motor represents a physical motor.
 ///
 /// For more information, see [Motor component](https://docs.viam.com/components/motor/).
