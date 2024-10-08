@@ -72,76 +72,76 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">NavigationServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$35.GetModeRequest, $35.GetModeResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$36.GetModeRequest, $36.GetModeResponse&gt;(
       &#39;GetMode&#39;,
       getMode_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.GetModeRequest.fromBuffer(value),
-      ($35.GetModeResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.SetModeRequest, $35.SetModeResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.GetModeRequest.fromBuffer(value),
+      ($36.GetModeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.SetModeRequest, $36.SetModeResponse&gt;(
       &#39;SetMode&#39;,
       setMode_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.SetModeRequest.fromBuffer(value),
-      ($35.SetModeResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.GetLocationRequest, $35.GetLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.SetModeRequest.fromBuffer(value),
+      ($36.SetModeResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.GetLocationRequest, $36.GetLocationResponse&gt;(
       &#39;GetLocation&#39;,
       getLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.GetLocationRequest.fromBuffer(value),
-      ($35.GetLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.GetWaypointsRequest, $35.GetWaypointsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.GetLocationRequest.fromBuffer(value),
+      ($36.GetLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.GetWaypointsRequest, $36.GetWaypointsResponse&gt;(
       &#39;GetWaypoints&#39;,
       getWaypoints_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.GetWaypointsRequest.fromBuffer(value),
-      ($35.GetWaypointsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.AddWaypointRequest, $35.AddWaypointResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.GetWaypointsRequest.fromBuffer(value),
+      ($36.GetWaypointsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.AddWaypointRequest, $36.AddWaypointResponse&gt;(
       &#39;AddWaypoint&#39;,
       addWaypoint_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.AddWaypointRequest.fromBuffer(value),
-      ($35.AddWaypointResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.RemoveWaypointRequest, $35.RemoveWaypointResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.AddWaypointRequest.fromBuffer(value),
+      ($36.AddWaypointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.RemoveWaypointRequest, $36.RemoveWaypointResponse&gt;(
       &#39;RemoveWaypoint&#39;,
       removeWaypoint_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.RemoveWaypointRequest.fromBuffer(value),
-      ($35.RemoveWaypointResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.GetObstaclesRequest, $35.GetObstaclesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.RemoveWaypointRequest.fromBuffer(value),
+      ($36.RemoveWaypointResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.GetObstaclesRequest, $36.GetObstaclesResponse&gt;(
       &#39;GetObstacles&#39;,
       getObstacles_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.GetObstaclesRequest.fromBuffer(value),
-      ($35.GetObstaclesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.GetPathsRequest, $35.GetPathsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.GetObstaclesRequest.fromBuffer(value),
+      ($36.GetObstaclesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.GetPathsRequest, $36.GetPathsResponse&gt;(
       &#39;GetPaths&#39;,
       getPaths_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.GetPathsRequest.fromBuffer(value),
-      ($35.GetPathsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$35.GetPropertiesRequest, $35.GetPropertiesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.GetPathsRequest.fromBuffer(value),
+      ($36.GetPathsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$36.GetPropertiesRequest, $36.GetPropertiesResponse&gt;(
       &#39;GetProperties&#39;,
       getProperties_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $35.GetPropertiesRequest.fromBuffer(value),
-      ($35.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$13.DoCommandRequest, $13.DoCommandResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $36.GetPropertiesRequest.fromBuffer(value),
+      ($36.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$14.DoCommandRequest, $14.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $13.DoCommandRequest.fromBuffer(value),
-      ($13.DoCommandResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $14.DoCommandRequest.fromBuffer(value),
+      ($14.DoCommandResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

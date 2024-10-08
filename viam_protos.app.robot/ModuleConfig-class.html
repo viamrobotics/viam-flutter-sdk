@@ -99,7 +99,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="ModuleConfig" class="callable">
-          <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/ModuleConfig.html">ModuleConfig</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-path"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">path</span>, </span><span class="parameter" id="-param-logLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logLevel</span>, </span><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-moduleId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleId</span>, </span><span class="parameter" id="-param-env"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">env</span>, </span><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a>?</span> <span class="parameter-name">status</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/ModuleConfig.html">ModuleConfig</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-path"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">path</span>, </span><span class="parameter" id="-param-logLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logLevel</span>, </span><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-moduleId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">moduleId</span>, </span><span class="parameter" id="-param-env"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">env</span>, </span><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a>?</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-firstRunTimeout"><span class="type-annotation">Duration?</span> <span class="parameter-name">firstRunTimeout</span></span>})</span>
         </dt>
         <dd>
           
@@ -149,6 +149,18 @@
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="firstRunTimeout" class="property">
+  <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/firstRunTimeout.html">firstRunTimeout</a></span>
+  <span class="signature">&#8596; Duration</span>
+  
+
+</dt>
+<dd>
+  timeout for first_run script
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -357,6 +369,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearFirstRunTimeout" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/clearFirstRunTimeout.html">clearFirstRunTimeout</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearLogLevel" class="callable">
   <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/clearLogLevel.html">clearLogLevel</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -501,6 +526,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="ensureFirstRunTimeout" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/ensureFirstRunTimeout.html">ensureFirstRunTimeout</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Duration</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="ensureStatus" class="callable">
   <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/ensureStatus.html">ensureStatus</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a></span>
@@ -629,6 +667,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasFirstRunTimeout" class="callable">
+  <span class="name"><a href="../viam_protos.app.robot/ModuleConfig/hasFirstRunTimeout.html">hasFirstRunTimeout</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

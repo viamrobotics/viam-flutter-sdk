@@ -65,6 +65,7 @@
       <span class="name ">ModuleMetadata</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-models"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/Model-class.html">Model</a></span>&gt;</span>?</span> <span class="parameter-name">models</span>, </span></li>
 <li><span class="parameter" id="-param-versions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/ModuleVersion-class.html">ModuleVersion</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>, </span></li>
 <li><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span></li>
+<li><span class="parameter" id="-param-firstRun"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">firstRun</span>, </span></li>
 </ol>})
     </section>
 
@@ -78,6 +79,7 @@
   $core.Iterable&lt;Model&gt;? models,
   $core.Iterable&lt;ModuleVersion&gt;? versions,
   $core.String? entrypoint,
+  $core.String? firstRun,
 }) {
   final $result = create();
   if (models != null) {
@@ -88,6 +90,9 @@
   }
   if (entrypoint != null) {
     $result.entrypoint = entrypoint;
+  }
+  if (firstRun != null) {
+    $result.firstRun = firstRun;
   }
   return $result;
 }</code></pre>

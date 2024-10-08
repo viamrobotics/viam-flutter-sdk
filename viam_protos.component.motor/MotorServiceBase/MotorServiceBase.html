@@ -72,90 +72,90 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MotorServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$23.SetPowerRequest, $23.SetPowerResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$24.SetPowerRequest, $24.SetPowerResponse&gt;(
       &#39;SetPower&#39;,
       setPower_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.SetPowerRequest.fromBuffer(value),
-      ($23.SetPowerResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.GoForRequest, $23.GoForResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.SetPowerRequest.fromBuffer(value),
+      ($24.SetPowerResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.GoForRequest, $24.GoForResponse&gt;(
       &#39;GoFor&#39;,
       goFor_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.GoForRequest.fromBuffer(value),
-      ($23.GoForResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.GoToRequest, $23.GoToResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.GoForRequest.fromBuffer(value),
+      ($24.GoForResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.GoToRequest, $24.GoToResponse&gt;(
       &#39;GoTo&#39;,
       goTo_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.GoToRequest.fromBuffer(value),
-      ($23.GoToResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.SetRPMRequest, $23.SetRPMResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.GoToRequest.fromBuffer(value),
+      ($24.GoToResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.SetRPMRequest, $24.SetRPMResponse&gt;(
       &#39;SetRPM&#39;,
       setRPM_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.SetRPMRequest.fromBuffer(value),
-      ($23.SetRPMResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.ResetZeroPositionRequest, $23.ResetZeroPositionResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.SetRPMRequest.fromBuffer(value),
+      ($24.SetRPMResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.ResetZeroPositionRequest, $24.ResetZeroPositionResponse&gt;(
       &#39;ResetZeroPosition&#39;,
       resetZeroPosition_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.ResetZeroPositionRequest.fromBuffer(value),
-      ($23.ResetZeroPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.GetPositionRequest, $23.GetPositionResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.ResetZeroPositionRequest.fromBuffer(value),
+      ($24.ResetZeroPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.GetPositionRequest, $24.GetPositionResponse&gt;(
       &#39;GetPosition&#39;,
       getPosition_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.GetPositionRequest.fromBuffer(value),
-      ($23.GetPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.GetPropertiesRequest, $23.GetPropertiesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.GetPositionRequest.fromBuffer(value),
+      ($24.GetPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.GetPropertiesRequest, $24.GetPropertiesResponse&gt;(
       &#39;GetProperties&#39;,
       getProperties_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.GetPropertiesRequest.fromBuffer(value),
-      ($23.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.StopRequest, $23.StopResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.GetPropertiesRequest.fromBuffer(value),
+      ($24.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.StopRequest, $24.StopResponse&gt;(
       &#39;Stop&#39;,
       stop_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.StopRequest.fromBuffer(value),
-      ($23.StopResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.IsPoweredRequest, $23.IsPoweredResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.StopRequest.fromBuffer(value),
+      ($24.StopResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.IsPoweredRequest, $24.IsPoweredResponse&gt;(
       &#39;IsPowered&#39;,
       isPowered_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.IsPoweredRequest.fromBuffer(value),
-      ($23.IsPoweredResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$23.IsMovingRequest, $23.IsMovingResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.IsPoweredRequest.fromBuffer(value),
+      ($24.IsPoweredResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$24.IsMovingRequest, $24.IsMovingResponse&gt;(
       &#39;IsMoving&#39;,
       isMoving_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $23.IsMovingRequest.fromBuffer(value),
-      ($23.IsMovingResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$13.DoCommandRequest, $13.DoCommandResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $24.IsMovingRequest.fromBuffer(value),
+      ($24.IsMovingResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$14.DoCommandRequest, $14.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $13.DoCommandRequest.fromBuffer(value),
-      ($13.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$13.GetGeometriesRequest, $13.GetGeometriesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $14.DoCommandRequest.fromBuffer(value),
+      ($14.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$14.GetGeometriesRequest, $14.GetGeometriesResponse&gt;(
       &#39;GetGeometries&#39;,
       getGeometries_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $13.GetGeometriesRequest.fromBuffer(value),
-      ($13.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $14.GetGeometriesRequest.fromBuffer(value),
+      ($14.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
