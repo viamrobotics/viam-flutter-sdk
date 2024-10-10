@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../google/protobuf/timestamp.pb.dart' as $7;
-import '../../../../google/rpc/status.pb.dart' as $6;
+import '../../../../google/protobuf/timestamp.pb.dart' as $6;
+import '../../../../google/rpc/status.pb.dart' as $5;
 
 /// ICECandidate represents an ICE candidate.
 /// From https://github.com/pion/webrtc/blob/5f6baf73255598a7b4a7c9400bb0381acc9aa3dc/icecandidateinit.go
@@ -395,7 +395,7 @@ class CallUpdateRequest extends $pb.GeneratedMessage {
     $core.String? uuid,
     ICECandidate? candidate,
     $core.bool? done,
-    $6.Status? error,
+    $5.Status? error,
   }) {
     final $result = create();
     if (uuid != null) {
@@ -427,7 +427,7 @@ class CallUpdateRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'uuid')
     ..aOM<ICECandidate>(2, _omitFieldNames ? '' : 'candidate', subBuilder: ICECandidate.create)
     ..aOB(3, _omitFieldNames ? '' : 'done')
-    ..aOM<$6.Status>(4, _omitFieldNames ? '' : 'error', subBuilder: $6.Status.create)
+    ..aOM<$5.Status>(4, _omitFieldNames ? '' : 'error', subBuilder: $5.Status.create)
     ..hasRequiredFields = false
   ;
 
@@ -485,15 +485,15 @@ class CallUpdateRequest extends $pb.GeneratedMessage {
   void clearDone() => clearField(3);
 
   @$pb.TagNumber(4)
-  $6.Status get error => $_getN(3);
+  $5.Status get error => $_getN(3);
   @$pb.TagNumber(4)
-  set error($6.Status v) { setField(4, v); }
+  set error($5.Status v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasError() => $_has(3);
   @$pb.TagNumber(4)
   void clearError() => clearField(4);
   @$pb.TagNumber(4)
-  $6.Status ensureError() => $_ensure(3);
+  $5.Status ensureError() => $_ensure(3);
 }
 
 /// CallUpdateResponse contains nothing in response to a call update.
@@ -669,7 +669,7 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
   factory AnswerRequestInitStage({
     $core.String? sdp,
     WebRTCConfig? optionalConfig,
-    $7.Timestamp? deadline,
+    $6.Timestamp? deadline,
   }) {
     final $result = create();
     if (sdp != null) {
@@ -690,7 +690,7 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnswerRequestInitStage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sdp')
     ..aOM<WebRTCConfig>(2, _omitFieldNames ? '' : 'optionalConfig', subBuilder: WebRTCConfig.create)
-    ..aOM<$7.Timestamp>(3, _omitFieldNames ? '' : 'deadline', subBuilder: $7.Timestamp.create)
+    ..aOM<$6.Timestamp>(3, _omitFieldNames ? '' : 'deadline', subBuilder: $6.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -736,15 +736,15 @@ class AnswerRequestInitStage extends $pb.GeneratedMessage {
   WebRTCConfig ensureOptionalConfig() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $7.Timestamp get deadline => $_getN(2);
+  $6.Timestamp get deadline => $_getN(2);
   @$pb.TagNumber(3)
-  set deadline($7.Timestamp v) { setField(3, v); }
+  set deadline($6.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDeadline() => $_has(2);
   @$pb.TagNumber(3)
   void clearDeadline() => clearField(3);
   @$pb.TagNumber(3)
-  $7.Timestamp ensureDeadline() => $_ensure(2);
+  $6.Timestamp ensureDeadline() => $_ensure(2);
 }
 
 /// AnswerRequestUpdateStage is multiply used to trickle in ICE candidates to
@@ -837,7 +837,7 @@ class AnswerRequestDoneStage extends $pb.GeneratedMessage {
 /// AnswerRequestErrorStage indicates the exchange has failed with an error.
 class AnswerRequestErrorStage extends $pb.GeneratedMessage {
   factory AnswerRequestErrorStage({
-    $6.Status? status,
+    $5.Status? status,
   }) {
     final $result = create();
     if (status != null) {
@@ -850,7 +850,7 @@ class AnswerRequestErrorStage extends $pb.GeneratedMessage {
   factory AnswerRequestErrorStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnswerRequestErrorStage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOM<$6.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $6.Status.create)
+    ..aOM<$5.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $5.Status.create)
     ..hasRequiredFields = false
   ;
 
@@ -876,15 +876,48 @@ class AnswerRequestErrorStage extends $pb.GeneratedMessage {
   static AnswerRequestErrorStage? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.Status get status => $_getN(0);
+  $5.Status get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status($6.Status v) { setField(1, v); }
+  set status($5.Status v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
   @$pb.TagNumber(1)
-  $6.Status ensureStatus() => $_ensure(0);
+  $5.Status ensureStatus() => $_ensure(0);
+}
+
+/// AnswerRequestHeartbeatStage is sent periodically to verify liveness of answerer.
+class AnswerRequestHeartbeatStage extends $pb.GeneratedMessage {
+  factory AnswerRequestHeartbeatStage() => create();
+  AnswerRequestHeartbeatStage._() : super();
+  factory AnswerRequestHeartbeatStage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AnswerRequestHeartbeatStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnswerRequestHeartbeatStage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AnswerRequestHeartbeatStage clone() => AnswerRequestHeartbeatStage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AnswerRequestHeartbeatStage copyWith(void Function(AnswerRequestHeartbeatStage) updates) => super.copyWith((message) => updates(message as AnswerRequestHeartbeatStage)) as AnswerRequestHeartbeatStage;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnswerRequestHeartbeatStage create() => AnswerRequestHeartbeatStage._();
+  AnswerRequestHeartbeatStage createEmptyInstance() => create();
+  static $pb.PbList<AnswerRequestHeartbeatStage> createRepeated() => $pb.PbList<AnswerRequestHeartbeatStage>();
+  @$core.pragma('dart2js:noInline')
+  static AnswerRequestHeartbeatStage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnswerRequestHeartbeatStage>(create);
+  static AnswerRequestHeartbeatStage? _defaultInstance;
 }
 
 enum AnswerRequest_Stage {
@@ -892,6 +925,7 @@ enum AnswerRequest_Stage {
   update, 
   done, 
   error, 
+  heartbeat, 
   notSet
 }
 
@@ -904,6 +938,7 @@ class AnswerRequest extends $pb.GeneratedMessage {
     AnswerRequestUpdateStage? update,
     AnswerRequestDoneStage? done,
     AnswerRequestErrorStage? error,
+    AnswerRequestHeartbeatStage? heartbeat,
   }) {
     final $result = create();
     if (uuid != null) {
@@ -921,6 +956,9 @@ class AnswerRequest extends $pb.GeneratedMessage {
     if (error != null) {
       $result.error = error;
     }
+    if (heartbeat != null) {
+      $result.heartbeat = heartbeat;
+    }
     return $result;
   }
   AnswerRequest._() : super();
@@ -932,15 +970,17 @@ class AnswerRequest extends $pb.GeneratedMessage {
     3 : AnswerRequest_Stage.update,
     4 : AnswerRequest_Stage.done,
     5 : AnswerRequest_Stage.error,
+    6 : AnswerRequest_Stage.heartbeat,
     0 : AnswerRequest_Stage.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnswerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4, 5])
+    ..oo(0, [2, 3, 4, 5, 6])
     ..aOS(1, _omitFieldNames ? '' : 'uuid')
     ..aOM<AnswerRequestInitStage>(2, _omitFieldNames ? '' : 'init', subBuilder: AnswerRequestInitStage.create)
     ..aOM<AnswerRequestUpdateStage>(3, _omitFieldNames ? '' : 'update', subBuilder: AnswerRequestUpdateStage.create)
     ..aOM<AnswerRequestDoneStage>(4, _omitFieldNames ? '' : 'done', subBuilder: AnswerRequestDoneStage.create)
     ..aOM<AnswerRequestErrorStage>(5, _omitFieldNames ? '' : 'error', subBuilder: AnswerRequestErrorStage.create)
+    ..aOM<AnswerRequestHeartbeatStage>(6, _omitFieldNames ? '' : 'heartbeat', subBuilder: AnswerRequestHeartbeatStage.create)
     ..hasRequiredFields = false
   ;
 
@@ -1022,6 +1062,18 @@ class AnswerRequest extends $pb.GeneratedMessage {
   void clearError() => clearField(5);
   @$pb.TagNumber(5)
   AnswerRequestErrorStage ensureError() => $_ensure(4);
+
+  /// heartbeat is sent periodically to verify liveness of answerer
+  @$pb.TagNumber(6)
+  AnswerRequestHeartbeatStage get heartbeat => $_getN(5);
+  @$pb.TagNumber(6)
+  set heartbeat(AnswerRequestHeartbeatStage v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasHeartbeat() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHeartbeat() => clearField(6);
+  @$pb.TagNumber(6)
+  AnswerRequestHeartbeatStage ensureHeartbeat() => $_ensure(5);
 }
 
 /// AnswerResponseInitStage is the first and a one time stage that represents the
@@ -1166,7 +1218,7 @@ class AnswerResponseDoneStage extends $pb.GeneratedMessage {
 /// AnswerResponseErrorStage indicates the exchange has failed with an error.
 class AnswerResponseErrorStage extends $pb.GeneratedMessage {
   factory AnswerResponseErrorStage({
-    $6.Status? status,
+    $5.Status? status,
   }) {
     final $result = create();
     if (status != null) {
@@ -1179,7 +1231,7 @@ class AnswerResponseErrorStage extends $pb.GeneratedMessage {
   factory AnswerResponseErrorStage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnswerResponseErrorStage', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.rpc.webrtc.v1'), createEmptyInstance: create)
-    ..aOM<$6.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $6.Status.create)
+    ..aOM<$5.Status>(1, _omitFieldNames ? '' : 'status', subBuilder: $5.Status.create)
     ..hasRequiredFields = false
   ;
 
@@ -1205,15 +1257,15 @@ class AnswerResponseErrorStage extends $pb.GeneratedMessage {
   static AnswerResponseErrorStage? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.Status get status => $_getN(0);
+  $5.Status get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status($6.Status v) { setField(1, v); }
+  set status($5.Status v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
   @$pb.TagNumber(1)
-  $6.Status ensureStatus() => $_ensure(0);
+  $5.Status ensureStatus() => $_ensure(0);
 }
 
 enum AnswerResponse_Stage {

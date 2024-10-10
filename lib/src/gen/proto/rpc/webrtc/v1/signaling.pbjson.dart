@@ -211,6 +211,15 @@ final $typed_data.Uint8List answerRequestErrorStageDescriptor = $convert.base64D
     'ChdBbnN3ZXJSZXF1ZXN0RXJyb3JTdGFnZRIqCgZzdGF0dXMYASABKAsyEi5nb29nbGUucnBjLl'
     'N0YXR1c1IGc3RhdHVz');
 
+@$core.Deprecated('Use answerRequestHeartbeatStageDescriptor instead')
+const AnswerRequestHeartbeatStage$json = {
+  '1': 'AnswerRequestHeartbeatStage',
+};
+
+/// Descriptor for `AnswerRequestHeartbeatStage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List answerRequestHeartbeatStageDescriptor = $convert.base64Decode(
+    'ChtBbnN3ZXJSZXF1ZXN0SGVhcnRiZWF0U3RhZ2U=');
+
 @$core.Deprecated('Use answerRequestDescriptor instead')
 const AnswerRequest$json = {
   '1': 'AnswerRequest',
@@ -220,6 +229,7 @@ const AnswerRequest$json = {
     {'1': 'update', '3': 3, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.AnswerRequestUpdateStage', '9': 0, '10': 'update'},
     {'1': 'done', '3': 4, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.AnswerRequestDoneStage', '9': 0, '10': 'done'},
     {'1': 'error', '3': 5, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.AnswerRequestErrorStage', '9': 0, '10': 'error'},
+    {'1': 'heartbeat', '3': 6, '4': 1, '5': 11, '6': '.proto.rpc.webrtc.v1.AnswerRequestHeartbeatStage', '9': 0, '10': 'heartbeat'},
   ],
   '8': [
     {'1': 'stage'},
@@ -233,7 +243,9 @@ final $typed_data.Uint8List answerRequestDescriptor = $convert.base64Decode(
     'ZRgDIAEoCzItLnByb3RvLnJwYy53ZWJydGMudjEuQW5zd2VyUmVxdWVzdFVwZGF0ZVN0YWdlSA'
     'BSBnVwZGF0ZRJBCgRkb25lGAQgASgLMisucHJvdG8ucnBjLndlYnJ0Yy52MS5BbnN3ZXJSZXF1'
     'ZXN0RG9uZVN0YWdlSABSBGRvbmUSRAoFZXJyb3IYBSABKAsyLC5wcm90by5ycGMud2VicnRjLn'
-    'YxLkFuc3dlclJlcXVlc3RFcnJvclN0YWdlSABSBWVycm9yQgcKBXN0YWdl');
+    'YxLkFuc3dlclJlcXVlc3RFcnJvclN0YWdlSABSBWVycm9yElAKCWhlYXJ0YmVhdBgGIAEoCzIw'
+    'LnByb3RvLnJwYy53ZWJydGMudjEuQW5zd2VyUmVxdWVzdEhlYXJ0YmVhdFN0YWdlSABSCWhlYX'
+    'J0YmVhdEIHCgVzdGFnZQ==');
 
 @$core.Deprecated('Use answerResponseInitStageDescriptor instead')
 const AnswerResponseInitStage$json = {
