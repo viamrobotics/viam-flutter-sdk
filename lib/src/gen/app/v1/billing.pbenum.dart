@@ -28,5 +28,51 @@ class PaymentMethodType extends $pb.ProtobufEnum {
   const PaymentMethodType._($core.int v, $core.String n) : super(v, n);
 }
 
+class UsageCostType extends $pb.ProtobufEnum {
+  static const UsageCostType USAGE_COST_TYPE_UNSPECIFIED = UsageCostType._(0, _omitEnumNames ? '' : 'USAGE_COST_TYPE_UNSPECIFIED');
+  static const UsageCostType USAGE_COST_TYPE_DATA_UPLOAD = UsageCostType._(1, _omitEnumNames ? '' : 'USAGE_COST_TYPE_DATA_UPLOAD');
+  static const UsageCostType USAGE_COST_TYPE_DATA_EGRESS = UsageCostType._(2, _omitEnumNames ? '' : 'USAGE_COST_TYPE_DATA_EGRESS');
+  static const UsageCostType USAGE_COST_TYPE_REMOTE_CONTROL = UsageCostType._(3, _omitEnumNames ? '' : 'USAGE_COST_TYPE_REMOTE_CONTROL');
+  static const UsageCostType USAGE_COST_TYPE_STANDARD_COMPUTE = UsageCostType._(4, _omitEnumNames ? '' : 'USAGE_COST_TYPE_STANDARD_COMPUTE');
+  static const UsageCostType USAGE_COST_TYPE_CLOUD_STORAGE = UsageCostType._(5, _omitEnumNames ? '' : 'USAGE_COST_TYPE_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE = UsageCostType._(6, _omitEnumNames ? '' : 'USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_OTHER_CLOUD_STORAGE = UsageCostType._(7, _omitEnumNames ? '' : 'USAGE_COST_TYPE_OTHER_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_PER_MACHINE = UsageCostType._(8, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PER_MACHINE');
+
+  static const $core.List<UsageCostType> values = <UsageCostType> [
+    USAGE_COST_TYPE_UNSPECIFIED,
+    USAGE_COST_TYPE_DATA_UPLOAD,
+    USAGE_COST_TYPE_DATA_EGRESS,
+    USAGE_COST_TYPE_REMOTE_CONTROL,
+    USAGE_COST_TYPE_STANDARD_COMPUTE,
+    USAGE_COST_TYPE_CLOUD_STORAGE,
+    USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE,
+    USAGE_COST_TYPE_OTHER_CLOUD_STORAGE,
+    USAGE_COST_TYPE_PER_MACHINE,
+  ];
+
+  static final $core.Map<$core.int, UsageCostType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static UsageCostType? valueOf($core.int value) => _byValue[value];
+
+  const UsageCostType._($core.int v, $core.String n) : super(v, n);
+}
+
+class SourceType extends $pb.ProtobufEnum {
+  static const SourceType SOURCE_TYPE_UNSPECIFIED = SourceType._(0, _omitEnumNames ? '' : 'SOURCE_TYPE_UNSPECIFIED');
+  static const SourceType SOURCE_TYPE_ORG = SourceType._(1, _omitEnumNames ? '' : 'SOURCE_TYPE_ORG');
+  static const SourceType SOURCE_TYPE_FRAGMENT = SourceType._(2, _omitEnumNames ? '' : 'SOURCE_TYPE_FRAGMENT');
+
+  static const $core.List<SourceType> values = <SourceType> [
+    SOURCE_TYPE_UNSPECIFIED,
+    SOURCE_TYPE_ORG,
+    SOURCE_TYPE_FRAGMENT,
+  ];
+
+  static final $core.Map<$core.int, SourceType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SourceType? valueOf($core.int value) => _byValue[value];
+
+  const SourceType._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
