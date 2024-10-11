@@ -55,7 +55,7 @@ class RobotClientOptions {
 }
 
 /// {@category Viam SDK}
-/// Represents a discovery query in the SDK to query for components.
+/// Represents a discovery query in the SDK to query for discoverable components.
 class DiscoveryQuery {
   final String subtype;
   final String model;
@@ -280,10 +280,10 @@ class RobotClient {
     return await _client.getCloudMetadata(rpb.GetCloudMetadataRequest());
   }
 
-  /// Discover components connected to the robot using a more abstract SDK query.
+  /// Discover components that the robot can connect to, given specific query metadata.
   ///
   /// ```
-  /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'resolution': '1080p'})];
+  /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'username': 'admin', 'password': 'admin'})];
   /// var discoveredComponents = await machine.discoverComponents(queries);
   /// ```
   Future<rpb.DiscoverComponentsResponse> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
