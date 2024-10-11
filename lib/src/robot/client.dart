@@ -5,6 +5,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
+import '../gen/google/protobuf/struct.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../media/stream/client.dart';
 import '../resource/base.dart';
@@ -12,6 +13,7 @@ import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
+import '../utils.dart';
 import 'sessions_client.dart';
 
 /// {@category Viam SDK}
@@ -57,8 +59,11 @@ class RobotClientOptions {
 class DiscoveryQuery {
   final String subtype;
   final String model;
+  final Map<String, dynamic> extra;
 
-  DiscoveryQuery({required this.subtype, required this.model});
+  DiscoveryQuery({required this.subtype, required this.model, Map<String, dynamic>? extra}) : extra = extra ?? {};
+
+  Struct get extraStruct => extra.toStruct();
 }
 
 /// {@category Viam SDK}
@@ -278,14 +283,15 @@ class RobotClient {
   /// Discover components connected to the robot using a more abstract SDK query.
   ///
   /// ```
-  /// var queries = [DiscoveryQuerySDK(subtype: 'camera', model: 'webcam')];
+  /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'resolution': '1080p'})];
   /// var discoveredComponents = await machine.discoverComponents(queries);
   /// ```
   Future<rpb.DiscoverComponentsResponse> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
     final request = rpb.DiscoverComponentsRequest()
       ..queries.addAll(queries.map((sdkQuery) => rpb.DiscoveryQuery()
         ..subtype = sdkQuery.subtype
-        ..model = sdkQuery.model));
+        ..model = sdkQuery.model
+        ..extra = sdkQuery.extraStruct));
 
     return await _client.discoverComponents(request);
   }

@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'auth.pb.dart' as $3;
+import 'auth.pb.dart' as $2;
 
 export 'auth.pb.dart';
 
 @$pb.GrpcServiceName('proto.rpc.v1.AuthService')
 class AuthServiceClient extends $grpc.Client {
-  static final _$authenticate = $grpc.ClientMethod<$3.AuthenticateRequest, $3.AuthenticateResponse>(
+  static final _$authenticate = $grpc.ClientMethod<$2.AuthenticateRequest, $2.AuthenticateResponse>(
       '/proto.rpc.v1.AuthService/Authenticate',
-      ($3.AuthenticateRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.AuthenticateResponse.fromBuffer(value));
+      ($2.AuthenticateRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.AuthenticateResponse.fromBuffer(value));
 
   AuthServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class AuthServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$3.AuthenticateResponse> authenticate($3.AuthenticateRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.AuthenticateResponse> authenticate($2.AuthenticateRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$authenticate, request, options: options);
   }
 }
@@ -42,27 +42,27 @@ abstract class AuthServiceBase extends $grpc.Service {
   $core.String get $name => 'proto.rpc.v1.AuthService';
 
   AuthServiceBase() {
-    $addMethod($grpc.ServiceMethod<$3.AuthenticateRequest, $3.AuthenticateResponse>(
+    $addMethod($grpc.ServiceMethod<$2.AuthenticateRequest, $2.AuthenticateResponse>(
         'Authenticate',
         authenticate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $3.AuthenticateRequest.fromBuffer(value),
-        ($3.AuthenticateResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $2.AuthenticateRequest.fromBuffer(value),
+        ($2.AuthenticateResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall call, $async.Future<$3.AuthenticateRequest> request) async {
+  $async.Future<$2.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall call, $async.Future<$2.AuthenticateRequest> request) async {
     return authenticate(call, await request);
   }
 
-  $async.Future<$3.AuthenticateResponse> authenticate($grpc.ServiceCall call, $3.AuthenticateRequest request);
+  $async.Future<$2.AuthenticateResponse> authenticate($grpc.ServiceCall call, $2.AuthenticateRequest request);
 }
 @$pb.GrpcServiceName('proto.rpc.v1.ExternalAuthService')
 class ExternalAuthServiceClient extends $grpc.Client {
-  static final _$authenticateTo = $grpc.ClientMethod<$3.AuthenticateToRequest, $3.AuthenticateToResponse>(
+  static final _$authenticateTo = $grpc.ClientMethod<$2.AuthenticateToRequest, $2.AuthenticateToResponse>(
       '/proto.rpc.v1.ExternalAuthService/AuthenticateTo',
-      ($3.AuthenticateToRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.AuthenticateToResponse.fromBuffer(value));
+      ($2.AuthenticateToRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.AuthenticateToResponse.fromBuffer(value));
 
   ExternalAuthServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -70,7 +70,7 @@ class ExternalAuthServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$3.AuthenticateToResponse> authenticateTo($3.AuthenticateToRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.AuthenticateToResponse> authenticateTo($2.AuthenticateToRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$authenticateTo, request, options: options);
   }
 }
@@ -80,18 +80,18 @@ abstract class ExternalAuthServiceBase extends $grpc.Service {
   $core.String get $name => 'proto.rpc.v1.ExternalAuthService';
 
   ExternalAuthServiceBase() {
-    $addMethod($grpc.ServiceMethod<$3.AuthenticateToRequest, $3.AuthenticateToResponse>(
+    $addMethod($grpc.ServiceMethod<$2.AuthenticateToRequest, $2.AuthenticateToResponse>(
         'AuthenticateTo',
         authenticateTo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $3.AuthenticateToRequest.fromBuffer(value),
-        ($3.AuthenticateToResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $2.AuthenticateToRequest.fromBuffer(value),
+        ($2.AuthenticateToResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.AuthenticateToResponse> authenticateTo_Pre($grpc.ServiceCall call, $async.Future<$3.AuthenticateToRequest> request) async {
+  $async.Future<$2.AuthenticateToResponse> authenticateTo_Pre($grpc.ServiceCall call, $async.Future<$2.AuthenticateToRequest> request) async {
     return authenticateTo(call, await request);
   }
 
-  $async.Future<$3.AuthenticateToResponse> authenticateTo($grpc.ServiceCall call, $3.AuthenticateToRequest request);
+  $async.Future<$2.AuthenticateToResponse> authenticateTo($grpc.ServiceCall call, $2.AuthenticateToRequest request);
 }

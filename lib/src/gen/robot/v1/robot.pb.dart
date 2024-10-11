@@ -1237,6 +1237,7 @@ class DiscoveryQuery extends $pb.GeneratedMessage {
   factory DiscoveryQuery({
     $core.String? subtype,
     $core.String? model,
+    $43.Struct? extra,
   }) {
     final $result = create();
     if (subtype != null) {
@@ -1244,6 +1245,9 @@ class DiscoveryQuery extends $pb.GeneratedMessage {
     }
     if (model != null) {
       $result.model = model;
+    }
+    if (extra != null) {
+      $result.extra = extra;
     }
     return $result;
   }
@@ -1254,6 +1258,7 @@ class DiscoveryQuery extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DiscoveryQuery', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'subtype')
     ..aOS(2, _omitFieldNames ? '' : 'model')
+    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1295,6 +1300,17 @@ class DiscoveryQuery extends $pb.GeneratedMessage {
   $core.bool hasModel() => $_has(1);
   @$pb.TagNumber(2)
   void clearModel() => clearField(2);
+
+  @$pb.TagNumber(99)
+  $43.Struct get extra => $_getN(2);
+  @$pb.TagNumber(99)
+  set extra($43.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(2);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $43.Struct ensureExtra() => $_ensure(2);
 }
 
 class Discovery extends $pb.GeneratedMessage {
