@@ -26,6 +26,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     $core.String? moduleId,
     $core.String? moduleVersion,
     $core.String? token,
+    $core.String? workdir,
   }) {
     final $result = create();
     if (repo != null) {
@@ -46,6 +47,9 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     if (token != null) {
       $result.token = token;
     }
+    if (workdir != null) {
+      $result.workdir = workdir;
+    }
     return $result;
   }
   StartBuildRequest._() : super();
@@ -59,6 +63,7 @@ class StartBuildRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'moduleId')
     ..aOS(5, _omitFieldNames ? '' : 'moduleVersion')
     ..aOS(6, _omitFieldNames ? '' : 'token')
+    ..aOS(7, _omitFieldNames ? '' : 'workdir')
     ..hasRequiredFields = false
   ;
 
@@ -137,6 +142,16 @@ class StartBuildRequest extends $pb.GeneratedMessage {
   $core.bool hasToken() => $_has(5);
   @$pb.TagNumber(6)
   void clearToken() => clearField(6);
+
+  /// optional working directory. defaults to repo root.
+  @$pb.TagNumber(7)
+  $core.String get workdir => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set workdir($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasWorkdir() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWorkdir() => clearField(7);
 }
 
 class StartBuildResponse extends $pb.GeneratedMessage {

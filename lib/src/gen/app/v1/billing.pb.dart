@@ -144,274 +144,6 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   $44.Timestamp ensurePaidDate() => $_ensure(5);
 }
 
-class BillableResourceEvent extends $pb.GeneratedMessage {
-  factory BillableResourceEvent({
-    $core.String? id,
-    $core.String? type,
-    $core.double? usageQuantity,
-    $core.String? usageQuantityUnit,
-    $core.String? usageCost,
-    $44.Timestamp? occurredAt,
-    $core.String? userName,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    if (usageQuantity != null) {
-      $result.usageQuantity = usageQuantity;
-    }
-    if (usageQuantityUnit != null) {
-      $result.usageQuantityUnit = usageQuantityUnit;
-    }
-    if (usageCost != null) {
-      $result.usageCost = usageCost;
-    }
-    if (occurredAt != null) {
-      $result.occurredAt = occurredAt;
-    }
-    if (userName != null) {
-      $result.userName = userName;
-    }
-    return $result;
-  }
-  BillableResourceEvent._() : super();
-  factory BillableResourceEvent.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BillableResourceEvent.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BillableResourceEvent', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'type')
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'usageQuantity', $pb.PbFieldType.OD)
-    ..aOS(4, _omitFieldNames ? '' : 'usageQuantityUnit')
-    ..aOS(5, _omitFieldNames ? '' : 'usageCost')
-    ..aOM<$44.Timestamp>(6, _omitFieldNames ? '' : 'occurredAt', subBuilder: $44.Timestamp.create)
-    ..aOS(7, _omitFieldNames ? '' : 'userName')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  BillableResourceEvent clone() => BillableResourceEvent()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  BillableResourceEvent copyWith(void Function(BillableResourceEvent) updates) => super.copyWith((message) => updates(message as BillableResourceEvent)) as BillableResourceEvent;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static BillableResourceEvent create() => BillableResourceEvent._();
-  BillableResourceEvent createEmptyInstance() => create();
-  static $pb.PbList<BillableResourceEvent> createRepeated() => $pb.PbList<BillableResourceEvent>();
-  @$core.pragma('dart2js:noInline')
-  static BillableResourceEvent getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BillableResourceEvent>(create);
-  static BillableResourceEvent? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get type => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set type($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasType() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearType() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.double get usageQuantity => $_getN(2);
-  @$pb.TagNumber(3)
-  set usageQuantity($core.double v) { $_setDouble(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasUsageQuantity() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearUsageQuantity() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get usageQuantityUnit => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set usageQuantityUnit($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasUsageQuantityUnit() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearUsageQuantityUnit() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get usageCost => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set usageCost($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasUsageCost() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearUsageCost() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $44.Timestamp get occurredAt => $_getN(5);
-  @$pb.TagNumber(6)
-  set occurredAt($44.Timestamp v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasOccurredAt() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearOccurredAt() => clearField(6);
-  @$pb.TagNumber(6)
-  $44.Timestamp ensureOccurredAt() => $_ensure(5);
-
-  @$pb.TagNumber(7)
-  $core.String get userName => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set userName($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasUserName() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearUserName() => clearField(7);
-}
-
-class Invoice extends $pb.GeneratedMessage {
-  factory Invoice({
-    $core.String? id,
-    $44.Timestamp? invoiceDate,
-    $core.double? invoiceAmount,
-    $core.String? status,
-    $44.Timestamp? dueDate,
-    $core.Iterable<BillableResourceEvent>? items,
-    $core.String? emailedTo,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (invoiceDate != null) {
-      $result.invoiceDate = invoiceDate;
-    }
-    if (invoiceAmount != null) {
-      $result.invoiceAmount = invoiceAmount;
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    if (dueDate != null) {
-      $result.dueDate = dueDate;
-    }
-    if (items != null) {
-      $result.items.addAll(items);
-    }
-    if (emailedTo != null) {
-      $result.emailedTo = emailedTo;
-    }
-    return $result;
-  }
-  Invoice._() : super();
-  factory Invoice.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Invoice.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Invoice', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$44.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $44.Timestamp.create)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'invoiceAmount', $pb.PbFieldType.OD)
-    ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOM<$44.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $44.Timestamp.create)
-    ..pc<BillableResourceEvent>(6, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: BillableResourceEvent.create)
-    ..aOS(7, _omitFieldNames ? '' : 'emailedTo')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Invoice clone() => Invoice()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Invoice copyWith(void Function(Invoice) updates) => super.copyWith((message) => updates(message as Invoice)) as Invoice;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static Invoice create() => Invoice._();
-  Invoice createEmptyInstance() => create();
-  static $pb.PbList<Invoice> createRepeated() => $pb.PbList<Invoice>();
-  @$core.pragma('dart2js:noInline')
-  static Invoice getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Invoice>(create);
-  static Invoice? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $44.Timestamp get invoiceDate => $_getN(1);
-  @$pb.TagNumber(2)
-  set invoiceDate($44.Timestamp v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasInvoiceDate() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearInvoiceDate() => clearField(2);
-  @$pb.TagNumber(2)
-  $44.Timestamp ensureInvoiceDate() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.double get invoiceAmount => $_getN(2);
-  @$pb.TagNumber(3)
-  set invoiceAmount($core.double v) { $_setDouble(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasInvoiceAmount() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearInvoiceAmount() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get status => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set status($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasStatus() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearStatus() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $44.Timestamp get dueDate => $_getN(4);
-  @$pb.TagNumber(5)
-  set dueDate($44.Timestamp v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasDueDate() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearDueDate() => clearField(5);
-  @$pb.TagNumber(5)
-  $44.Timestamp ensureDueDate() => $_ensure(4);
-
-  @$pb.TagNumber(6)
-  $core.List<BillableResourceEvent> get items => $_getList(5);
-
-  @$pb.TagNumber(7)
-  $core.String get emailedTo => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set emailedTo($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasEmailedTo() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearEmailedTo() => clearField(7);
-}
-
 class PaymentMethodCard extends $pb.GeneratedMessage {
   factory PaymentMethodCard({
     $core.String? brand,
@@ -526,21 +258,264 @@ class GetCurrentMonthUsageRequest extends $pb.GeneratedMessage {
   void clearOrgId() => clearField(1);
 }
 
+class UsageCost extends $pb.GeneratedMessage {
+  factory UsageCost({
+    UsageCostType? resourceType,
+    $core.double? cost,
+  }) {
+    final $result = create();
+    if (resourceType != null) {
+      $result.resourceType = resourceType;
+    }
+    if (cost != null) {
+      $result.cost = cost;
+    }
+    return $result;
+  }
+  UsageCost._() : super();
+  factory UsageCost.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UsageCost.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UsageCost', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<UsageCostType>(1, _omitFieldNames ? '' : 'resourceType', $pb.PbFieldType.OE, defaultOrMaker: UsageCostType.USAGE_COST_TYPE_UNSPECIFIED, valueOf: UsageCostType.valueOf, enumValues: UsageCostType.values)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'cost', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UsageCost clone() => UsageCost()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UsageCost copyWith(void Function(UsageCost) updates) => super.copyWith((message) => updates(message as UsageCost)) as UsageCost;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UsageCost create() => UsageCost._();
+  UsageCost createEmptyInstance() => create();
+  static $pb.PbList<UsageCost> createRepeated() => $pb.PbList<UsageCost>();
+  @$core.pragma('dart2js:noInline')
+  static UsageCost getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UsageCost>(create);
+  static UsageCost? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  UsageCostType get resourceType => $_getN(0);
+  @$pb.TagNumber(1)
+  set resourceType(UsageCostType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResourceType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResourceType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get cost => $_getN(1);
+  @$pb.TagNumber(2)
+  set cost($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCost() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCost() => clearField(2);
+}
+
+class ResourceUsageCostsBySource extends $pb.GeneratedMessage {
+  factory ResourceUsageCostsBySource({
+    SourceType? sourceType,
+    ResourceUsageCosts? resourceUsageCosts,
+    $core.String? tierName,
+  }) {
+    final $result = create();
+    if (sourceType != null) {
+      $result.sourceType = sourceType;
+    }
+    if (resourceUsageCosts != null) {
+      $result.resourceUsageCosts = resourceUsageCosts;
+    }
+    if (tierName != null) {
+      $result.tierName = tierName;
+    }
+    return $result;
+  }
+  ResourceUsageCostsBySource._() : super();
+  factory ResourceUsageCostsBySource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResourceUsageCostsBySource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceUsageCostsBySource', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<SourceType>(1, _omitFieldNames ? '' : 'sourceType', $pb.PbFieldType.OE, defaultOrMaker: SourceType.SOURCE_TYPE_UNSPECIFIED, valueOf: SourceType.valueOf, enumValues: SourceType.values)
+    ..aOM<ResourceUsageCosts>(2, _omitFieldNames ? '' : 'resourceUsageCosts', subBuilder: ResourceUsageCosts.create)
+    ..aOS(3, _omitFieldNames ? '' : 'tierName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResourceUsageCostsBySource clone() => ResourceUsageCostsBySource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResourceUsageCostsBySource copyWith(void Function(ResourceUsageCostsBySource) updates) => super.copyWith((message) => updates(message as ResourceUsageCostsBySource)) as ResourceUsageCostsBySource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResourceUsageCostsBySource create() => ResourceUsageCostsBySource._();
+  ResourceUsageCostsBySource createEmptyInstance() => create();
+  static $pb.PbList<ResourceUsageCostsBySource> createRepeated() => $pb.PbList<ResourceUsageCostsBySource>();
+  @$core.pragma('dart2js:noInline')
+  static ResourceUsageCostsBySource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResourceUsageCostsBySource>(create);
+  static ResourceUsageCostsBySource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SourceType get sourceType => $_getN(0);
+  @$pb.TagNumber(1)
+  set sourceType(SourceType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSourceType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  ResourceUsageCosts get resourceUsageCosts => $_getN(1);
+  @$pb.TagNumber(2)
+  set resourceUsageCosts(ResourceUsageCosts v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResourceUsageCosts() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResourceUsageCosts() => clearField(2);
+  @$pb.TagNumber(2)
+  ResourceUsageCosts ensureResourceUsageCosts() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get tierName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set tierName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTierName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTierName() => clearField(3);
+}
+
+class ResourceUsageCosts extends $pb.GeneratedMessage {
+  factory ResourceUsageCosts({
+    $core.Iterable<UsageCost>? usageCosts,
+    $core.double? discount,
+    $core.double? totalWithDiscount,
+    $core.double? totalWithoutDiscount,
+  }) {
+    final $result = create();
+    if (usageCosts != null) {
+      $result.usageCosts.addAll(usageCosts);
+    }
+    if (discount != null) {
+      $result.discount = discount;
+    }
+    if (totalWithDiscount != null) {
+      $result.totalWithDiscount = totalWithDiscount;
+    }
+    if (totalWithoutDiscount != null) {
+      $result.totalWithoutDiscount = totalWithoutDiscount;
+    }
+    return $result;
+  }
+  ResourceUsageCosts._() : super();
+  factory ResourceUsageCosts.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResourceUsageCosts.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceUsageCosts', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<UsageCost>(1, _omitFieldNames ? '' : 'usageCosts', $pb.PbFieldType.PM, subBuilder: UsageCost.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'discount', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalWithDiscount', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalWithoutDiscount', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResourceUsageCosts clone() => ResourceUsageCosts()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResourceUsageCosts copyWith(void Function(ResourceUsageCosts) updates) => super.copyWith((message) => updates(message as ResourceUsageCosts)) as ResourceUsageCosts;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResourceUsageCosts create() => ResourceUsageCosts._();
+  ResourceUsageCosts createEmptyInstance() => create();
+  static $pb.PbList<ResourceUsageCosts> createRepeated() => $pb.PbList<ResourceUsageCosts>();
+  @$core.pragma('dart2js:noInline')
+  static ResourceUsageCosts getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResourceUsageCosts>(create);
+  static ResourceUsageCosts? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<UsageCost> get usageCosts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.double get discount => $_getN(1);
+  @$pb.TagNumber(2)
+  set discount($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDiscount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDiscount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get totalWithDiscount => $_getN(2);
+  @$pb.TagNumber(3)
+  set totalWithDiscount($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotalWithDiscount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalWithDiscount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get totalWithoutDiscount => $_getN(3);
+  @$pb.TagNumber(4)
+  set totalWithoutDiscount($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTotalWithoutDiscount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalWithoutDiscount() => clearField(4);
+}
+
 class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse({
     $44.Timestamp? startDate,
     $44.Timestamp? endDate,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? cloudStorageUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? dataUploadUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? dataEgresUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? remoteControlUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? standardComputeUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? discountAmount,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? totalUsageWithDiscount,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? totalUsageWithoutDiscount,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? perMachineUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? binaryDataCloudStorageUsageCost,
+  @$core.Deprecated('This field is deprecated.')
     $core.double? otherCloudStorageUsageCost,
+    $core.Iterable<ResourceUsageCostsBySource>? resourceUsageCostsBySource,
+    $core.double? subtotal,
   }) {
     final $result = create();
     if (startDate != null) {
@@ -550,37 +525,54 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
       $result.endDate = endDate;
     }
     if (cloudStorageUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.cloudStorageUsageCost = cloudStorageUsageCost;
     }
     if (dataUploadUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.dataUploadUsageCost = dataUploadUsageCost;
     }
     if (dataEgresUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.dataEgresUsageCost = dataEgresUsageCost;
     }
     if (remoteControlUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.remoteControlUsageCost = remoteControlUsageCost;
     }
     if (standardComputeUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.standardComputeUsageCost = standardComputeUsageCost;
     }
     if (discountAmount != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.discountAmount = discountAmount;
     }
     if (totalUsageWithDiscount != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.totalUsageWithDiscount = totalUsageWithDiscount;
     }
     if (totalUsageWithoutDiscount != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.totalUsageWithoutDiscount = totalUsageWithoutDiscount;
     }
     if (perMachineUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.perMachineUsageCost = perMachineUsageCost;
     }
     if (binaryDataCloudStorageUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryDataCloudStorageUsageCost = binaryDataCloudStorageUsageCost;
     }
     if (otherCloudStorageUsageCost != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.otherCloudStorageUsageCost = otherCloudStorageUsageCost;
+    }
+    if (resourceUsageCostsBySource != null) {
+      $result.resourceUsageCostsBySource.addAll(resourceUsageCostsBySource);
+    }
+    if (subtotal != null) {
+      $result.subtotal = subtotal;
     }
     return $result;
   }
@@ -602,6 +594,8 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
     ..a<$core.double>(11, _omitFieldNames ? '' : 'perMachineUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(12, _omitFieldNames ? '' : 'binaryDataCloudStorageUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(13, _omitFieldNames ? '' : 'otherCloudStorageUsageCost', $pb.PbFieldType.OD)
+    ..pc<ResourceUsageCostsBySource>(14, _omitFieldNames ? '' : 'resourceUsageCostsBySource', $pb.PbFieldType.PM, subBuilder: ResourceUsageCostsBySource.create)
+    ..a<$core.double>(15, _omitFieldNames ? '' : 'subtotal', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -648,104 +642,161 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $44.Timestamp ensureEndDate() => $_ensure(1);
 
+  /// all fields below are deprecated
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.double get cloudStorageUsageCost => $_getN(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set cloudStorageUsageCost($core.double v) { $_setDouble(2, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasCloudStorageUsageCost() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearCloudStorageUsageCost() => clearField(3);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.double get dataUploadUsageCost => $_getN(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   set dataUploadUsageCost($core.double v) { $_setDouble(3, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasDataUploadUsageCost() => $_has(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   void clearDataUploadUsageCost() => clearField(4);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.double get dataEgresUsageCost => $_getN(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   set dataEgresUsageCost($core.double v) { $_setDouble(4, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool hasDataEgresUsageCost() => $_has(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   void clearDataEgresUsageCost() => clearField(5);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.double get remoteControlUsageCost => $_getN(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   set remoteControlUsageCost($core.double v) { $_setDouble(5, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.bool hasRemoteControlUsageCost() => $_has(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   void clearRemoteControlUsageCost() => clearField(6);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.double get standardComputeUsageCost => $_getN(6);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   set standardComputeUsageCost($core.double v) { $_setDouble(6, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.bool hasStandardComputeUsageCost() => $_has(6);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   void clearStandardComputeUsageCost() => clearField(7);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   $core.double get discountAmount => $_getN(7);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   set discountAmount($core.double v) { $_setDouble(7, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   $core.bool hasDiscountAmount() => $_has(7);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   void clearDiscountAmount() => clearField(8);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   $core.double get totalUsageWithDiscount => $_getN(8);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   set totalUsageWithDiscount($core.double v) { $_setDouble(8, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   $core.bool hasTotalUsageWithDiscount() => $_has(8);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   void clearTotalUsageWithDiscount() => clearField(9);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.double get totalUsageWithoutDiscount => $_getN(9);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   set totalUsageWithoutDiscount($core.double v) { $_setDouble(9, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.bool hasTotalUsageWithoutDiscount() => $_has(9);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   void clearTotalUsageWithoutDiscount() => clearField(10);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(11)
   $core.double get perMachineUsageCost => $_getN(10);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(11)
   set perMachineUsageCost($core.double v) { $_setDouble(10, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(11)
   $core.bool hasPerMachineUsageCost() => $_has(10);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(11)
   void clearPerMachineUsageCost() => clearField(11);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(12)
   $core.double get binaryDataCloudStorageUsageCost => $_getN(11);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(12)
   set binaryDataCloudStorageUsageCost($core.double v) { $_setDouble(11, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(12)
   $core.bool hasBinaryDataCloudStorageUsageCost() => $_has(11);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(12)
   void clearBinaryDataCloudStorageUsageCost() => clearField(12);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(13)
   $core.double get otherCloudStorageUsageCost => $_getN(12);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(13)
   set otherCloudStorageUsageCost($core.double v) { $_setDouble(12, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(13)
   $core.bool hasOtherCloudStorageUsageCost() => $_has(12);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(13)
   void clearOtherCloudStorageUsageCost() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.List<ResourceUsageCostsBySource> get resourceUsageCostsBySource => $_getList(13);
+
+  @$pb.TagNumber(15)
+  $core.double get subtotal => $_getN(14);
+  @$pb.TagNumber(15)
+  set subtotal($core.double v) { $_setDouble(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasSubtotal() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearSubtotal() => clearField(15);
 }
 
 class GetOrgBillingInformationRequest extends $pb.GeneratedMessage {
