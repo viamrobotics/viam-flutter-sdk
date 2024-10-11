@@ -27,6 +27,47 @@ final $typed_data.Uint8List paymentMethodTypeDescriptor = $convert.base64Decode(
     'ChFQYXltZW50TWV0aG9kVHlwZRIjCh9QQVlNRU5UX01FVEhPRF9UWVBFX1VOU1BFQ0lGSUVEEA'
     'ASHAoYUEFZTUVOVF9NRVRIT0RfVFlQRV9DQVJEEAE=');
 
+@$core.Deprecated('Use usageCostTypeDescriptor instead')
+const UsageCostType$json = {
+  '1': 'UsageCostType',
+  '2': [
+    {'1': 'USAGE_COST_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'USAGE_COST_TYPE_DATA_UPLOAD', '2': 1},
+    {'1': 'USAGE_COST_TYPE_DATA_EGRESS', '2': 2},
+    {'1': 'USAGE_COST_TYPE_REMOTE_CONTROL', '2': 3},
+    {'1': 'USAGE_COST_TYPE_STANDARD_COMPUTE', '2': 4},
+    {'1': 'USAGE_COST_TYPE_CLOUD_STORAGE', '2': 5},
+    {'1': 'USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE', '2': 6},
+    {'1': 'USAGE_COST_TYPE_OTHER_CLOUD_STORAGE', '2': 7},
+    {'1': 'USAGE_COST_TYPE_PER_MACHINE', '2': 8},
+  ],
+};
+
+/// Descriptor for `UsageCostType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List usageCostTypeDescriptor = $convert.base64Decode(
+    'Cg1Vc2FnZUNvc3RUeXBlEh8KG1VTQUdFX0NPU1RfVFlQRV9VTlNQRUNJRklFRBAAEh8KG1VTQU'
+    'dFX0NPU1RfVFlQRV9EQVRBX1VQTE9BRBABEh8KG1VTQUdFX0NPU1RfVFlQRV9EQVRBX0VHUkVT'
+    'UxACEiIKHlVTQUdFX0NPU1RfVFlQRV9SRU1PVEVfQ09OVFJPTBADEiQKIFVTQUdFX0NPU1RfVF'
+    'lQRV9TVEFOREFSRF9DT01QVVRFEAQSIQodVVNBR0VfQ09TVF9UWVBFX0NMT1VEX1NUT1JBR0UQ'
+    'BRItCilVU0FHRV9DT1NUX1RZUEVfQklOQVJZX0RBVEFfQ0xPVURfU1RPUkFHRRAGEicKI1VTQU'
+    'dFX0NPU1RfVFlQRV9PVEhFUl9DTE9VRF9TVE9SQUdFEAcSHwobVVNBR0VfQ09TVF9UWVBFX1BF'
+    'Ul9NQUNISU5FEAg=');
+
+@$core.Deprecated('Use sourceTypeDescriptor instead')
+const SourceType$json = {
+  '1': 'SourceType',
+  '2': [
+    {'1': 'SOURCE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'SOURCE_TYPE_ORG', '2': 1},
+    {'1': 'SOURCE_TYPE_FRAGMENT', '2': 2},
+  ],
+};
+
+/// Descriptor for `SourceType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List sourceTypeDescriptor = $convert.base64Decode(
+    'CgpTb3VyY2VUeXBlEhsKF1NPVVJDRV9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPU09VUkNFX1RZUE'
+    'VfT1JHEAESGAoUU09VUkNFX1RZUEVfRlJBR01FTlQQAg==');
+
 @$core.Deprecated('Use invoiceSummaryDescriptor instead')
 const InvoiceSummary$json = {
   '1': 'InvoiceSummary',
@@ -47,51 +88,6 @@ final $typed_data.Uint8List invoiceSummaryDescriptor = $convert.base64Decode(
     'bnQYAyABKAFSDWludm9pY2VBbW91bnQSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSNQoIZHVlX2'
     'RhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdkdWVEYXRlEjcKCXBhaWRf'
     'ZGF0ZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCHBhaWREYXRl');
-
-@$core.Deprecated('Use billableResourceEventDescriptor instead')
-const BillableResourceEvent$json = {
-  '1': 'BillableResourceEvent',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'usage_quantity', '3': 3, '4': 1, '5': 1, '10': 'usageQuantity'},
-    {'1': 'usage_quantity_unit', '3': 4, '4': 1, '5': 9, '10': 'usageQuantityUnit'},
-    {'1': 'usage_cost', '3': 5, '4': 1, '5': 9, '10': 'usageCost'},
-    {'1': 'occurred_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'occurredAt'},
-    {'1': 'user_name', '3': 7, '4': 1, '5': 9, '10': 'userName'},
-  ],
-};
-
-/// Descriptor for `BillableResourceEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List billableResourceEventDescriptor = $convert.base64Decode(
-    'ChVCaWxsYWJsZVJlc291cmNlRXZlbnQSDgoCaWQYASABKAlSAmlkEhIKBHR5cGUYAiABKAlSBH'
-    'R5cGUSJQoOdXNhZ2VfcXVhbnRpdHkYAyABKAFSDXVzYWdlUXVhbnRpdHkSLgoTdXNhZ2VfcXVh'
-    'bnRpdHlfdW5pdBgEIAEoCVIRdXNhZ2VRdWFudGl0eVVuaXQSHQoKdXNhZ2VfY29zdBgFIAEoCV'
-    'IJdXNhZ2VDb3N0EjsKC29jY3VycmVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz'
-    'dGFtcFIKb2NjdXJyZWRBdBIbCgl1c2VyX25hbWUYByABKAlSCHVzZXJOYW1l');
-
-@$core.Deprecated('Use invoiceDescriptor instead')
-const Invoice$json = {
-  '1': 'Invoice',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'invoice_date', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'invoiceDate'},
-    {'1': 'invoice_amount', '3': 3, '4': 1, '5': 1, '10': 'invoiceAmount'},
-    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
-    {'1': 'due_date', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dueDate'},
-    {'1': 'items', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.BillableResourceEvent', '10': 'items'},
-    {'1': 'emailed_to', '3': 7, '4': 1, '5': 9, '10': 'emailedTo'},
-  ],
-};
-
-/// Descriptor for `Invoice`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List invoiceDescriptor = $convert.base64Decode(
-    'CgdJbnZvaWNlEg4KAmlkGAEgASgJUgJpZBI9CgxpbnZvaWNlX2RhdGUYAiABKAsyGi5nb29nbG'
-    'UucHJvdG9idWYuVGltZXN0YW1wUgtpbnZvaWNlRGF0ZRIlCg5pbnZvaWNlX2Ftb3VudBgDIAEo'
-    'AVINaW52b2ljZUFtb3VudBIWCgZzdGF0dXMYBCABKAlSBnN0YXR1cxI1CghkdWVfZGF0ZRgFIA'
-    'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2R1ZURhdGUSOAoFaXRlbXMYBiADKAsy'
-    'Ii52aWFtLmFwcC52MS5CaWxsYWJsZVJlc291cmNlRXZlbnRSBWl0ZW1zEh0KCmVtYWlsZWRfdG'
-    '8YByABKAlSCWVtYWlsZWRUbw==');
 
 @$core.Deprecated('Use paymentMethodCardDescriptor instead')
 const PaymentMethodCard$json = {
@@ -119,23 +115,151 @@ const GetCurrentMonthUsageRequest$json = {
 final $typed_data.Uint8List getCurrentMonthUsageRequestDescriptor = $convert.base64Decode(
     'ChtHZXRDdXJyZW50TW9udGhVc2FnZVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA==');
 
+@$core.Deprecated('Use usageCostDescriptor instead')
+const UsageCost$json = {
+  '1': 'UsageCost',
+  '2': [
+    {'1': 'resource_type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.UsageCostType', '10': 'resourceType'},
+    {'1': 'cost', '3': 2, '4': 1, '5': 1, '10': 'cost'},
+  ],
+};
+
+/// Descriptor for `UsageCost`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List usageCostDescriptor = $convert.base64Decode(
+    'CglVc2FnZUNvc3QSPwoNcmVzb3VyY2VfdHlwZRgBIAEoDjIaLnZpYW0uYXBwLnYxLlVzYWdlQ2'
+    '9zdFR5cGVSDHJlc291cmNlVHlwZRISCgRjb3N0GAIgASgBUgRjb3N0');
+
+@$core.Deprecated('Use resourceUsageCostsBySourceDescriptor instead')
+const ResourceUsageCostsBySource$json = {
+  '1': 'ResourceUsageCostsBySource',
+  '2': [
+    {'1': 'source_type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.SourceType', '10': 'sourceType'},
+    {'1': 'resource_usage_costs', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.ResourceUsageCosts', '10': 'resourceUsageCosts'},
+    {'1': 'tier_name', '3': 3, '4': 1, '5': 9, '10': 'tierName'},
+  ],
+};
+
+/// Descriptor for `ResourceUsageCostsBySource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resourceUsageCostsBySourceDescriptor = $convert.base64Decode(
+    'ChpSZXNvdXJjZVVzYWdlQ29zdHNCeVNvdXJjZRI4Cgtzb3VyY2VfdHlwZRgBIAEoDjIXLnZpYW'
+    '0uYXBwLnYxLlNvdXJjZVR5cGVSCnNvdXJjZVR5cGUSUQoUcmVzb3VyY2VfdXNhZ2VfY29zdHMY'
+    'AiABKAsyHy52aWFtLmFwcC52MS5SZXNvdXJjZVVzYWdlQ29zdHNSEnJlc291cmNlVXNhZ2VDb3'
+    'N0cxIbCgl0aWVyX25hbWUYAyABKAlSCHRpZXJOYW1l');
+
+@$core.Deprecated('Use resourceUsageCostsDescriptor instead')
+const ResourceUsageCosts$json = {
+  '1': 'ResourceUsageCosts',
+  '2': [
+    {'1': 'usage_costs', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.UsageCost', '10': 'usageCosts'},
+    {'1': 'discount', '3': 2, '4': 1, '5': 1, '10': 'discount'},
+    {'1': 'total_with_discount', '3': 3, '4': 1, '5': 1, '10': 'totalWithDiscount'},
+    {'1': 'total_without_discount', '3': 4, '4': 1, '5': 1, '10': 'totalWithoutDiscount'},
+  ],
+};
+
+/// Descriptor for `ResourceUsageCosts`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resourceUsageCostsDescriptor = $convert.base64Decode(
+    'ChJSZXNvdXJjZVVzYWdlQ29zdHMSNwoLdXNhZ2VfY29zdHMYASADKAsyFi52aWFtLmFwcC52MS'
+    '5Vc2FnZUNvc3RSCnVzYWdlQ29zdHMSGgoIZGlzY291bnQYAiABKAFSCGRpc2NvdW50Ei4KE3Rv'
+    'dGFsX3dpdGhfZGlzY291bnQYAyABKAFSEXRvdGFsV2l0aERpc2NvdW50EjQKFnRvdGFsX3dpdG'
+    'hvdXRfZGlzY291bnQYBCABKAFSFHRvdGFsV2l0aG91dERpc2NvdW50');
+
 @$core.Deprecated('Use getCurrentMonthUsageResponseDescriptor instead')
 const GetCurrentMonthUsageResponse$json = {
   '1': 'GetCurrentMonthUsageResponse',
   '2': [
     {'1': 'start_date', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startDate'},
     {'1': 'end_date', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endDate'},
-    {'1': 'cloud_storage_usage_cost', '3': 3, '4': 1, '5': 1, '10': 'cloudStorageUsageCost'},
-    {'1': 'data_upload_usage_cost', '3': 4, '4': 1, '5': 1, '10': 'dataUploadUsageCost'},
-    {'1': 'data_egres_usage_cost', '3': 5, '4': 1, '5': 1, '10': 'dataEgresUsageCost'},
-    {'1': 'remote_control_usage_cost', '3': 6, '4': 1, '5': 1, '10': 'remoteControlUsageCost'},
-    {'1': 'standard_compute_usage_cost', '3': 7, '4': 1, '5': 1, '10': 'standardComputeUsageCost'},
-    {'1': 'discount_amount', '3': 8, '4': 1, '5': 1, '10': 'discountAmount'},
-    {'1': 'total_usage_with_discount', '3': 9, '4': 1, '5': 1, '10': 'totalUsageWithDiscount'},
-    {'1': 'total_usage_without_discount', '3': 10, '4': 1, '5': 1, '10': 'totalUsageWithoutDiscount'},
-    {'1': 'per_machine_usage_cost', '3': 11, '4': 1, '5': 1, '10': 'perMachineUsageCost'},
-    {'1': 'binary_data_cloud_storage_usage_cost', '3': 12, '4': 1, '5': 1, '10': 'binaryDataCloudStorageUsageCost'},
-    {'1': 'other_cloud_storage_usage_cost', '3': 13, '4': 1, '5': 1, '10': 'otherCloudStorageUsageCost'},
+    {'1': 'resource_usage_costs_by_source', '3': 14, '4': 3, '5': 11, '6': '.viam.app.v1.ResourceUsageCostsBySource', '10': 'resourceUsageCostsBySource'},
+    {'1': 'subtotal', '3': 15, '4': 1, '5': 1, '10': 'subtotal'},
+    {
+      '1': 'cloud_storage_usage_cost',
+      '3': 3,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'cloudStorageUsageCost',
+    },
+    {
+      '1': 'data_upload_usage_cost',
+      '3': 4,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'dataUploadUsageCost',
+    },
+    {
+      '1': 'data_egres_usage_cost',
+      '3': 5,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'dataEgresUsageCost',
+    },
+    {
+      '1': 'remote_control_usage_cost',
+      '3': 6,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'remoteControlUsageCost',
+    },
+    {
+      '1': 'standard_compute_usage_cost',
+      '3': 7,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'standardComputeUsageCost',
+    },
+    {
+      '1': 'discount_amount',
+      '3': 8,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'discountAmount',
+    },
+    {
+      '1': 'total_usage_with_discount',
+      '3': 9,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'totalUsageWithDiscount',
+    },
+    {
+      '1': 'total_usage_without_discount',
+      '3': 10,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'totalUsageWithoutDiscount',
+    },
+    {
+      '1': 'per_machine_usage_cost',
+      '3': 11,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'perMachineUsageCost',
+    },
+    {
+      '1': 'binary_data_cloud_storage_usage_cost',
+      '3': 12,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'binaryDataCloudStorageUsageCost',
+    },
+    {
+      '1': 'other_cloud_storage_usage_cost',
+      '3': 13,
+      '4': 1,
+      '5': 1,
+      '8': {'3': true},
+      '10': 'otherCloudStorageUsageCost',
+    },
   ],
 };
 
@@ -143,19 +267,22 @@ const GetCurrentMonthUsageResponse$json = {
 final $typed_data.Uint8List getCurrentMonthUsageResponseDescriptor = $convert.base64Decode(
     'ChxHZXRDdXJyZW50TW9udGhVc2FnZVJlc3BvbnNlEjkKCnN0YXJ0X2RhdGUYASABKAsyGi5nb2'
     '9nbGUucHJvdG9idWYuVGltZXN0YW1wUglzdGFydERhdGUSNQoIZW5kX2RhdGUYAiABKAsyGi5n'
-    'b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdlbmREYXRlEjcKGGNsb3VkX3N0b3JhZ2VfdXNhZ2'
-    'VfY29zdBgDIAEoAVIVY2xvdWRTdG9yYWdlVXNhZ2VDb3N0EjMKFmRhdGFfdXBsb2FkX3VzYWdl'
-    'X2Nvc3QYBCABKAFSE2RhdGFVcGxvYWRVc2FnZUNvc3QSMQoVZGF0YV9lZ3Jlc191c2FnZV9jb3'
-    'N0GAUgASgBUhJkYXRhRWdyZXNVc2FnZUNvc3QSOQoZcmVtb3RlX2NvbnRyb2xfdXNhZ2VfY29z'
-    'dBgGIAEoAVIWcmVtb3RlQ29udHJvbFVzYWdlQ29zdBI9ChtzdGFuZGFyZF9jb21wdXRlX3VzYW'
-    'dlX2Nvc3QYByABKAFSGHN0YW5kYXJkQ29tcHV0ZVVzYWdlQ29zdBInCg9kaXNjb3VudF9hbW91'
-    'bnQYCCABKAFSDmRpc2NvdW50QW1vdW50EjkKGXRvdGFsX3VzYWdlX3dpdGhfZGlzY291bnQYCS'
-    'ABKAFSFnRvdGFsVXNhZ2VXaXRoRGlzY291bnQSPwocdG90YWxfdXNhZ2Vfd2l0aG91dF9kaXNj'
-    'b3VudBgKIAEoAVIZdG90YWxVc2FnZVdpdGhvdXREaXNjb3VudBIzChZwZXJfbWFjaGluZV91c2'
-    'FnZV9jb3N0GAsgASgBUhNwZXJNYWNoaW5lVXNhZ2VDb3N0Ek0KJGJpbmFyeV9kYXRhX2Nsb3Vk'
-    'X3N0b3JhZ2VfdXNhZ2VfY29zdBgMIAEoAVIfYmluYXJ5RGF0YUNsb3VkU3RvcmFnZVVzYWdlQ2'
-    '9zdBJCCh5vdGhlcl9jbG91ZF9zdG9yYWdlX3VzYWdlX2Nvc3QYDSABKAFSGm90aGVyQ2xvdWRT'
-    'dG9yYWdlVXNhZ2VDb3N0');
+    'b29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdlbmREYXRlEmsKHnJlc291cmNlX3VzYWdlX2Nvc3'
+    'RzX2J5X3NvdXJjZRgOIAMoCzInLnZpYW0uYXBwLnYxLlJlc291cmNlVXNhZ2VDb3N0c0J5U291'
+    'cmNlUhpyZXNvdXJjZVVzYWdlQ29zdHNCeVNvdXJjZRIaCghzdWJ0b3RhbBgPIAEoAVIIc3VidG'
+    '90YWwSOwoYY2xvdWRfc3RvcmFnZV91c2FnZV9jb3N0GAMgASgBQgIYAVIVY2xvdWRTdG9yYWdl'
+    'VXNhZ2VDb3N0EjcKFmRhdGFfdXBsb2FkX3VzYWdlX2Nvc3QYBCABKAFCAhgBUhNkYXRhVXBsb2'
+    'FkVXNhZ2VDb3N0EjUKFWRhdGFfZWdyZXNfdXNhZ2VfY29zdBgFIAEoAUICGAFSEmRhdGFFZ3Jl'
+    'c1VzYWdlQ29zdBI9ChlyZW1vdGVfY29udHJvbF91c2FnZV9jb3N0GAYgASgBQgIYAVIWcmVtb3'
+    'RlQ29udHJvbFVzYWdlQ29zdBJBChtzdGFuZGFyZF9jb21wdXRlX3VzYWdlX2Nvc3QYByABKAFC'
+    'AhgBUhhzdGFuZGFyZENvbXB1dGVVc2FnZUNvc3QSKwoPZGlzY291bnRfYW1vdW50GAggASgBQg'
+    'IYAVIOZGlzY291bnRBbW91bnQSPQoZdG90YWxfdXNhZ2Vfd2l0aF9kaXNjb3VudBgJIAEoAUIC'
+    'GAFSFnRvdGFsVXNhZ2VXaXRoRGlzY291bnQSQwocdG90YWxfdXNhZ2Vfd2l0aG91dF9kaXNjb3'
+    'VudBgKIAEoAUICGAFSGXRvdGFsVXNhZ2VXaXRob3V0RGlzY291bnQSNwoWcGVyX21hY2hpbmVf'
+    'dXNhZ2VfY29zdBgLIAEoAUICGAFSE3Blck1hY2hpbmVVc2FnZUNvc3QSUQokYmluYXJ5X2RhdG'
+    'FfY2xvdWRfc3RvcmFnZV91c2FnZV9jb3N0GAwgASgBQgIYAVIfYmluYXJ5RGF0YUNsb3VkU3Rv'
+    'cmFnZVVzYWdlQ29zdBJGCh5vdGhlcl9jbG91ZF9zdG9yYWdlX3VzYWdlX2Nvc3QYDSABKAFCAh'
+    'gBUhpvdGhlckNsb3VkU3RvcmFnZVVzYWdlQ29zdA==');
 
 @$core.Deprecated('Use getOrgBillingInformationRequestDescriptor instead')
 const GetOrgBillingInformationRequest$json = {
