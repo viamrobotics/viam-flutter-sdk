@@ -1,12 +1,19 @@
 {
   "dart.lineLength": 140,
   "[dart]": {
-    "editor.rulers": [140]
+    "editor.rulers": [
+      140
+    ]
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
-  "cSpell.words": ["proto", "Struct", "viam"],
-  "cmake.configureOnOpen": false
+  "cSpell.words": [
+    "proto",
+    "Struct",
+    "viam"
+  ],
+  "cmake.configureOnOpen": false,
+  "dart.flutterSdkPath": ".fvm/versions/3.19.6"
 }
