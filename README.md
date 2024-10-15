@@ -24,7 +24,7 @@ Make sure your project meets the minimum requirements:
 
 ## iOS Development
 
-To build iOS apps, Xcode 15 which can be downloaded [here](https://developer.apple.com/download/all/) with an Apple developer account or via [Xcodes](https://www.xcodes.app/). iOS development also requires Flutter 3.19.
+To build iOS apps, Xcode 15 - which can be downloaded [here](https://developer.apple.com/download/all/) with an Apple developer account or via [Xcodes](https://www.xcodes.app/) - is required. iOS development also requires Flutter 3.19.
 
 ## Installation
 
