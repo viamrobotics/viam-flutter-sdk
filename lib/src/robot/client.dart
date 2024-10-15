@@ -5,17 +5,19 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
-import '../gen/robot/v1/robot.pbgrpc.dart';
+import '../gen/google/protobuf/struct.pb.dart';
+import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../media/stream/client.dart';
 import '../resource/base.dart';
 import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
+import '../utils.dart';
 import 'sessions_client.dart';
 
 /// {@category Viam SDK}
-typedef CloudMetadata = GetCloudMetadataResponse;
+typedef CloudMetadata = rpb.GetCloudMetadataResponse;
 Logger _logger = Logger();
 
 /// {@category Viam SDK}
@@ -53,6 +55,18 @@ class RobotClientOptions {
 }
 
 /// {@category Viam SDK}
+/// Represents a discovery query in the SDK to query for discoverable components.
+class DiscoveryQuery {
+  final String subtype;
+  final String model;
+  final Map<String, dynamic> extra;
+
+  DiscoveryQuery({required this.subtype, required this.model, Map<String, dynamic>? extra}) : extra = extra ?? {};
+
+  Struct get extraStruct => extra.toStruct();
+}
+
+/// {@category Viam SDK}
 /// gRPC client for a Robot. This class should be used for all interactions with a robot.
 ///
 /// Obtain an instance of this client by using the function:
@@ -62,7 +76,7 @@ class RobotClient {
   late String _address;
   late RobotClientOptions _options;
   late ClientChannelBase _channel;
-  late RobotServiceClient _client;
+  late rpb.RobotServiceClient _client;
   late SessionsClient _sessionsClient;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
@@ -97,7 +111,7 @@ class RobotClient {
     client._options = options;
     client._channel = await dial(url, options.dialOptions, () => client._sessionsClient.metadata());
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions);
-    client._client = RobotServiceClient(client._channel);
+    client._client = rpb.RobotServiceClient(client._channel);
     client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
     await client.refresh();
     client._startCheckConnectionTask();
@@ -110,7 +124,7 @@ class RobotClient {
   /// await machine.refresh();
   /// ```
   Future<void> refresh() async {
-    final ResourceNamesResponse response = await _client.resourceNames(ResourceNamesRequest());
+    final rpb.ResourceNamesResponse response = await _client.resourceNames(rpb.ResourceNamesRequest());
     if (setEquals(response.resources.toSet(), resourceNames.toSet())) {
       resourceNames.forEach((element) {
         _resetResourceChannel(element);
@@ -166,7 +180,7 @@ class RobotClient {
     // Failure to grab resources could be for spurious, non-networking reasons. Try three times just to be safe.
     for (int i = 0; i < 3; i++) {
       try {
-        await _client.resourceNames(ResourceNamesRequest(), options: CallOptions(timeout: const Duration(seconds: 1)));
+        await _client.resourceNames(rpb.ResourceNamesRequest(), options: CallOptions(timeout: const Duration(seconds: 1)));
         _connected = true;
         break;
       } catch (e) {
@@ -195,8 +209,8 @@ class RobotClient {
       _sessionsClient.stop();
       try {
         final channel = await dial(_address, _options.dialOptions, () => _sessionsClient.metadata());
-        final client = RobotServiceClient(channel);
-        await client.resourceNames(ResourceNamesRequest());
+        final client = rpb.RobotServiceClient(channel);
+        await client.resourceNames(rpb.ResourceNamesRequest());
 
         _channel = channel;
         _streamManager.channel = _channel as WebRtcClientChannel;
@@ -263,6 +277,22 @@ class RobotClient {
   /// var metadata = await machine.getCloudMetadata();
   /// ```
   Future<CloudMetadata> getCloudMetadata() async {
-    return await _client.getCloudMetadata(GetCloudMetadataRequest());
+    return await _client.getCloudMetadata(rpb.GetCloudMetadataRequest());
+  }
+
+  /// Discover components that the robot can connect to, given specific query metadata.
+  ///
+  /// ```
+  /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'username': 'admin', 'password': 'admin'})];
+  /// var discoveredComponents = await machine.discoverComponents(queries);
+  /// ```
+  Future<rpb.DiscoverComponentsResponse> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
+    final request = rpb.DiscoverComponentsRequest()
+      ..queries.addAll(queries.map((sdkQuery) => rpb.DiscoveryQuery()
+        ..subtype = sdkQuery.subtype
+        ..model = sdkQuery.model
+        ..extra = sdkQuery.extraStruct));
+
+    return await _client.discoverComponents(request);
   }
 }
