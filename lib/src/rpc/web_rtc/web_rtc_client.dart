@@ -29,8 +29,11 @@ class WebRtcClientChannel extends ClientChannelBase {
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
-    if (!SessionsClient.unallowedMethods.contains(method.path)) {
-      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId()}));
+    final sessionMetadata = _sessionId();
+
+    // _sessionId will return '' empty if sessions are not enabled.
+    if (sessionMetadata.isNotEmpty && !SessionsClient.unallowedMethods.contains(method.path)) {
+      options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: sessionMetadata}));
     }
     options = options.mergedWith(CallOptions(metadata: {'viam_client': getVersionMetadata()}));
     return super.createCall(method, requests, options);
