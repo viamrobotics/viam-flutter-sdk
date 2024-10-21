@@ -1008,10 +1008,14 @@ class TabularDataBySQLRequest extends $pb.GeneratedMessage {
 class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   factory TabularDataBySQLResponse({
     $core.Iterable<$43.Struct>? data,
+    $core.Iterable<$core.List<$core.int>>? rawData,
   }) {
     final $result = create();
     if (data != null) {
       $result.data.addAll(data);
+    }
+    if (rawData != null) {
+      $result.rawData.addAll(rawData);
     }
     return $result;
   }
@@ -1021,6 +1025,7 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataBySQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<$43.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $43.Struct.create)
+    ..p<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'rawData', $pb.PbFieldType.PY)
     ..hasRequiredFields = false
   ;
 
@@ -1047,6 +1052,9 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<$43.Struct> get data => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.List<$core.int>> get rawData => $_getList(1);
 }
 
 /// TabularDataByMQLRequest requests tabular data using an MQL query.
@@ -1115,10 +1123,14 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
 class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   factory TabularDataByMQLResponse({
     $core.Iterable<$43.Struct>? data,
+    $core.Iterable<$core.List<$core.int>>? rawData,
   }) {
     final $result = create();
     if (data != null) {
       $result.data.addAll(data);
+    }
+    if (rawData != null) {
+      $result.rawData.addAll(rawData);
     }
     return $result;
   }
@@ -1128,6 +1140,7 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<$43.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $43.Struct.create)
+    ..p<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'rawData', $pb.PbFieldType.PY)
     ..hasRequiredFields = false
   ;
 
@@ -1154,6 +1167,9 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<$43.Struct> get data => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.List<$core.int>> get rawData => $_getList(1);
 }
 
 /// BinaryData contains data and metadata associated with binary data.
