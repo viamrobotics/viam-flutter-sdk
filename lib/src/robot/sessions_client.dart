@@ -4,6 +4,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 import 'package:viam_sdk/protos/robot/robot.dart';
 
+import '../gen/google/rpc/code.pbenum.dart';
 import '../resource/base.dart';
 
 final _logger = Logger();
@@ -32,16 +33,17 @@ class SessionsClient implements ResourceRPCClient {
 
   String _currentId = '';
   final bool _enabled;
-  bool _supported = false;
+  bool? _supported;
   late Duration _heartbeatInterval;
 
-  SessionsClient(this.channel, this._enabled) {
+  SessionsClient(this.channel, bool enabled) : _enabled = false {
     metadata();
   }
 
   /// Retrieve metadata associated with the session (e.g. whether sessions are supported, the current ID of the session)
   String metadata() {
     if (!_enabled) return '';
+    if (_supported == false) return '';
 
     if (_currentId != '') return _currentId;
 
@@ -60,9 +62,14 @@ class SessionsClient implements ResourceRPCClient {
           microseconds: response.heartbeatWindow.nanos ~/ 1.8,
         );
 
-        _heartbeatTask();
-
         return _currentId;
+      }, onError: (error, _) {
+        if (error is GrpcError && error.code == Code.UNIMPLEMENTED.value) {
+          _supported = false;
+        } else {
+          _logger.e('Error starting session: $error');
+        }
+        return '';
       });
     } catch (e) {
       _logger.e('Error starting session: $e');
@@ -76,15 +83,16 @@ class SessionsClient implements ResourceRPCClient {
   void reset() {
     _logger.d('Resetting current session with ID: $_currentId');
     _currentId = '';
-    _supported = false;
+    _supported = null;
     metadata();
+    _heartbeatTask();
   }
 
   /// Stop the session client and heartbeat tasks
   void stop() {
     _logger.d('Stopping SessionClient');
     _currentId = '';
-    _supported = false;
+    _supported = null;
   }
 
   /// Start the session client
@@ -93,14 +101,14 @@ class SessionsClient implements ResourceRPCClient {
   }
 
   Future<void> _heartbeatTask() async {
-    while (_supported) {
+    while (_supported == true) {
       await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
     }
   }
 
   Future<void> _heartbeatTick() async {
-    if (!_supported) return;
+    if (_supported == false) return;
 
     final request = SendSessionHeartbeatRequest()..id = _currentId;
 
