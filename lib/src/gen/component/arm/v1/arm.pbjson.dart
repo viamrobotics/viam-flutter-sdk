@@ -129,6 +129,37 @@ const MoveToJointPositionsResponse$json = {
 final $typed_data.Uint8List moveToJointPositionsResponseDescriptor = $convert.base64Decode(
     'ChxNb3ZlVG9Kb2ludFBvc2l0aW9uc1Jlc3BvbnNl');
 
+@$core.Deprecated('Use moveThroughJointPositionsRequestDescriptor instead')
+const MoveThroughJointPositionsRequest$json = {
+  '1': 'MoveThroughJointPositionsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'positions', '3': 2, '4': 3, '5': 11, '6': '.viam.component.arm.v1.JointPositions', '10': 'positions'},
+    {'1': 'options', '3': 3, '4': 1, '5': 11, '6': '.viam.component.arm.v1.MoveOptions', '9': 0, '10': 'options', '17': true},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+  '8': [
+    {'1': '_options'},
+  ],
+};
+
+/// Descriptor for `MoveThroughJointPositionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveThroughJointPositionsRequestDescriptor = $convert.base64Decode(
+    'CiBNb3ZlVGhyb3VnaEpvaW50UG9zaXRpb25zUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEk'
+    'MKCXBvc2l0aW9ucxgCIAMoCzIlLnZpYW0uY29tcG9uZW50LmFybS52MS5Kb2ludFBvc2l0aW9u'
+    'c1IJcG9zaXRpb25zEkEKB29wdGlvbnMYAyABKAsyIi52aWFtLmNvbXBvbmVudC5hcm0udjEuTW'
+    '92ZU9wdGlvbnNIAFIHb3B0aW9uc4gBARItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1'
+    'Zi5TdHJ1Y3RSBWV4dHJhQgoKCF9vcHRpb25z');
+
+@$core.Deprecated('Use moveThroughJointPositionsResponseDescriptor instead')
+const MoveThroughJointPositionsResponse$json = {
+  '1': 'MoveThroughJointPositionsResponse',
+};
+
+/// Descriptor for `MoveThroughJointPositionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveThroughJointPositionsResponseDescriptor = $convert.base64Decode(
+    'CiFNb3ZlVGhyb3VnaEpvaW50UG9zaXRpb25zUmVzcG9uc2U=');
+
 @$core.Deprecated('Use stopRequestDescriptor instead')
 const StopRequest$json = {
   '1': 'StopRequest',
@@ -192,4 +223,24 @@ const IsMovingResponse$json = {
 /// Descriptor for `IsMovingResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List isMovingResponseDescriptor = $convert.base64Decode(
     'ChBJc01vdmluZ1Jlc3BvbnNlEhsKCWlzX21vdmluZxgBIAEoCFIIaXNNb3Zpbmc=');
+
+@$core.Deprecated('Use moveOptionsDescriptor instead')
+const MoveOptions$json = {
+  '1': 'MoveOptions',
+  '2': [
+    {'1': 'max_vel_degs_per_sec', '3': 1, '4': 1, '5': 1, '9': 0, '10': 'maxVelDegsPerSec', '17': true},
+    {'1': 'max_acc_degs_per_sec2', '3': 2, '4': 1, '5': 1, '9': 1, '10': 'maxAccDegsPerSec2', '17': true},
+  ],
+  '8': [
+    {'1': '_max_vel_degs_per_sec'},
+    {'1': '_max_acc_degs_per_sec2'},
+  ],
+};
+
+/// Descriptor for `MoveOptions`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moveOptionsDescriptor = $convert.base64Decode(
+    'CgtNb3ZlT3B0aW9ucxIzChRtYXhfdmVsX2RlZ3NfcGVyX3NlYxgBIAEoAUgAUhBtYXhWZWxEZW'
+    'dzUGVyU2VjiAEBEjUKFW1heF9hY2NfZGVnc19wZXJfc2VjMhgCIAEoAUgBUhFtYXhBY2NEZWdz'
+    'UGVyU2VjMogBAUIXChVfbWF4X3ZlbF9kZWdzX3Blcl9zZWNCGAoWX21heF9hY2NfZGVnc19wZX'
+    'Jfc2VjMg==');
 
