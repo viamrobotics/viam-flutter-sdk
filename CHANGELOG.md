@@ -1,11 +1,16 @@
 # Changelog
 
-## [v0.0.23](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.23) (2024-10-21)
+## [v0.0.24](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.24) (2024-10-28)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.22...v0.0.23)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.23...v0.0.24)
 
 **Merged pull requests:**
 
+- Fix sending session client over webrtc [\#281](https://github.com/viamrobotics/viam-flutter-sdk/pull/281) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#280](https://github.com/viamrobotics/viam-flutter-sdk/pull/280) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.23 [\#279](https://github.com/viamrobotics/viam-flutter-sdk/pull/279) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update deps [\#278](https://github.com/viamrobotics/viam-flutter-sdk/pull/278) ([njooma](https://github.com/njooma))
+- Do not send empty session id when sessions disabled [\#277](https://github.com/viamrobotics/viam-flutter-sdk/pull/277) ([clintpurser](https://github.com/clintpurser))
 - Automated Protos Update [\#275](https://github.com/viamrobotics/viam-flutter-sdk/pull/275) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[RSDK-8920\] Add DiscoverComponents to robot client [\#274](https://github.com/viamrobotics/viam-flutter-sdk/pull/274) ([hexbabe](https://github.com/hexbabe))
 - DOCS-2951: Make updates from components QA [\#273](https://github.com/viamrobotics/viam-flutter-sdk/pull/273) ([sguequierre](https://github.com/sguequierre))
@@ -175,6 +180,10 @@
 - Fix where reconnection might've gotten stuck in a loop [\#101](https://github.com/viamrobotics/viam-flutter-sdk/pull/101) ([njooma](https://github.com/njooma))
 - RSDK-4580: Flutter SDK Base Properties [\#100](https://github.com/viamrobotics/viam-flutter-sdk/pull/100) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#97](https://github.com/viamrobotics/viam-flutter-sdk/pull/97) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.23](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.23) (2024-10-21)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.22...v0.0.23)
 
 ## [v0.0.22](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.22) (2024-09-30)
 
