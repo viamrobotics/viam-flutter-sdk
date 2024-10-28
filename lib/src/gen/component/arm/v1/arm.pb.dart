@@ -179,8 +179,7 @@ class JointPositions extends $pb.GeneratedMessage {
   static JointPositions? _defaultInstance;
 
   /// A list of joint positions. Rotations values are in degrees, translational values in mm.
-  /// The numbers are ordered spatially from the base toward the end effector
-  /// This is used in GetJointPositionsResponse and MoveToJointPositionsRequest
+  /// There should be 1 entry in the list per joint DOF, ordered spatially from the base toward the end effector of the arm
   @$pb.TagNumber(1)
   $core.List<$core.double> get values => $_getList(0);
 }
@@ -544,6 +543,132 @@ class MoveToJointPositionsResponse extends $pb.GeneratedMessage {
   static MoveToJointPositionsResponse? _defaultInstance;
 }
 
+class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsRequest({
+    $core.String? name,
+    $core.Iterable<JointPositions>? positions,
+    MoveOptions? options,
+    $43.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (positions != null) {
+      $result.positions.addAll(positions);
+    }
+    if (options != null) {
+      $result.options = options;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  MoveThroughJointPositionsRequest._() : super();
+  factory MoveThroughJointPositionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pc<JointPositions>(2, _omitFieldNames ? '' : 'positions', $pb.PbFieldType.PM, subBuilder: JointPositions.create)
+    ..aOM<MoveOptions>(3, _omitFieldNames ? '' : 'options', subBuilder: MoveOptions.create)
+    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsRequest clone() => MoveThroughJointPositionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsRequest copyWith(void Function(MoveThroughJointPositionsRequest) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsRequest)) as MoveThroughJointPositionsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsRequest create() => MoveThroughJointPositionsRequest._();
+  MoveThroughJointPositionsRequest createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsRequest> createRepeated() => $pb.PbList<MoveThroughJointPositionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsRequest>(create);
+  static MoveThroughJointPositionsRequest? _defaultInstance;
+
+  /// Name of an arm
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// A list of joint positions which will be moved to in the order they are specified
+  @$pb.TagNumber(2)
+  $core.List<JointPositions> get positions => $_getList(1);
+
+  /// optional specifications to be obeyed during the motion
+  @$pb.TagNumber(3)
+  MoveOptions get options => $_getN(2);
+  @$pb.TagNumber(3)
+  set options(MoveOptions v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOptions() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOptions() => clearField(3);
+  @$pb.TagNumber(3)
+  MoveOptions ensureOptions() => $_ensure(2);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $43.Struct get extra => $_getN(3);
+  @$pb.TagNumber(99)
+  set extra($43.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(3);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $43.Struct ensureExtra() => $_ensure(3);
+}
+
+class MoveThroughJointPositionsResponse extends $pb.GeneratedMessage {
+  factory MoveThroughJointPositionsResponse() => create();
+  MoveThroughJointPositionsResponse._() : super();
+  factory MoveThroughJointPositionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveThroughJointPositionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveThroughJointPositionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsResponse clone() => MoveThroughJointPositionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveThroughJointPositionsResponse copyWith(void Function(MoveThroughJointPositionsResponse) updates) => super.copyWith((message) => updates(message as MoveThroughJointPositionsResponse)) as MoveThroughJointPositionsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsResponse create() => MoveThroughJointPositionsResponse._();
+  MoveThroughJointPositionsResponse createEmptyInstance() => create();
+  static $pb.PbList<MoveThroughJointPositionsResponse> createRepeated() => $pb.PbList<MoveThroughJointPositionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MoveThroughJointPositionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveThroughJointPositionsResponse>(create);
+  static MoveThroughJointPositionsResponse? _defaultInstance;
+}
+
 class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
     $core.String? name,
@@ -824,6 +949,72 @@ class IsMovingResponse extends $pb.GeneratedMessage {
   $core.bool hasIsMoving() => $_has(0);
   @$pb.TagNumber(1)
   void clearIsMoving() => clearField(1);
+}
+
+class MoveOptions extends $pb.GeneratedMessage {
+  factory MoveOptions({
+    $core.double? maxVelDegsPerSec,
+    $core.double? maxAccDegsPerSec2,
+  }) {
+    final $result = create();
+    if (maxVelDegsPerSec != null) {
+      $result.maxVelDegsPerSec = maxVelDegsPerSec;
+    }
+    if (maxAccDegsPerSec2 != null) {
+      $result.maxAccDegsPerSec2 = maxAccDegsPerSec2;
+    }
+    return $result;
+  }
+  MoveOptions._() : super();
+  factory MoveOptions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MoveOptions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOptions', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'maxVelDegsPerSec', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'maxAccDegsPerSec2', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MoveOptions clone() => MoveOptions()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MoveOptions copyWith(void Function(MoveOptions) updates) => super.copyWith((message) => updates(message as MoveOptions)) as MoveOptions;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MoveOptions create() => MoveOptions._();
+  MoveOptions createEmptyInstance() => create();
+  static $pb.PbList<MoveOptions> createRepeated() => $pb.PbList<MoveOptions>();
+  @$core.pragma('dart2js:noInline')
+  static MoveOptions getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MoveOptions>(create);
+  static MoveOptions? _defaultInstance;
+
+  /// Maximum allowable velocity of an arm joint, in degrees per second
+  @$pb.TagNumber(1)
+  $core.double get maxVelDegsPerSec => $_getN(0);
+  @$pb.TagNumber(1)
+  set maxVelDegsPerSec($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMaxVelDegsPerSec() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMaxVelDegsPerSec() => clearField(1);
+
+  /// Maximum allowable acceleration of an arm joint, in degrees per second squared
+  @$pb.TagNumber(2)
+  $core.double get maxAccDegsPerSec2 => $_getN(1);
+  @$pb.TagNumber(2)
+  set maxAccDegsPerSec2($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaxAccDegsPerSec2() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaxAccDegsPerSec2() => clearField(2);
 }
 
 

@@ -2356,13 +2356,15 @@ const ModuleFileInfo$json = {
     {'1': 'module_id', '3': 1, '4': 1, '5': 9, '10': 'moduleId'},
     {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
     {'1': 'platform', '3': 3, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'platform_tags', '3': 5, '4': 3, '5': 9, '10': 'platformTags'},
   ],
 };
 
 /// Descriptor for `ModuleFileInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moduleFileInfoDescriptor = $convert.base64Decode(
     'Cg5Nb2R1bGVGaWxlSW5mbxIbCgltb2R1bGVfaWQYASABKAlSCG1vZHVsZUlkEhgKB3ZlcnNpb2'
-    '4YAiABKAlSB3ZlcnNpb24SGgoIcGxhdGZvcm0YAyABKAlSCHBsYXRmb3Jt');
+    '4YAiABKAlSB3ZlcnNpb24SGgoIcGxhdGZvcm0YAyABKAlSCHBsYXRmb3JtEiMKDXBsYXRmb3Jt'
+    'X3RhZ3MYBSADKAlSDHBsYXRmb3JtVGFncw==');
 
 @$core.Deprecated('Use uploadModuleFileRequestDescriptor instead')
 const UploadModuleFileRequest$json = {

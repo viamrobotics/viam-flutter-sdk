@@ -38,6 +38,10 @@ class ArmServiceClient extends $grpc.Client {
       '/viam.component.arm.v1.ArmService/MoveToJointPositions',
       ($13.MoveToJointPositionsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $13.MoveToJointPositionsResponse.fromBuffer(value));
+  static final _$moveThroughJointPositions = $grpc.ClientMethod<$13.MoveThroughJointPositionsRequest, $13.MoveThroughJointPositionsResponse>(
+      '/viam.component.arm.v1.ArmService/MoveThroughJointPositions',
+      ($13.MoveThroughJointPositionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.MoveThroughJointPositionsResponse.fromBuffer(value));
   static final _$stop = $grpc.ClientMethod<$13.StopRequest, $13.StopResponse>(
       '/viam.component.arm.v1.ArmService/Stop',
       ($13.StopRequest value) => value.writeToBuffer(),
@@ -79,6 +83,10 @@ class ArmServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$13.MoveToJointPositionsResponse> moveToJointPositions($13.MoveToJointPositionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveToJointPositions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$13.MoveThroughJointPositionsResponse> moveThroughJointPositions($13.MoveThroughJointPositionsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$moveThroughJointPositions, request, options: options);
   }
 
   $grpc.ResponseFuture<$13.StopResponse> stop($13.StopRequest request, {$grpc.CallOptions? options}) {
@@ -135,6 +143,13 @@ abstract class ArmServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $13.MoveToJointPositionsRequest.fromBuffer(value),
         ($13.MoveToJointPositionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$13.MoveThroughJointPositionsRequest, $13.MoveThroughJointPositionsResponse>(
+        'MoveThroughJointPositions',
+        moveThroughJointPositions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $13.MoveThroughJointPositionsRequest.fromBuffer(value),
+        ($13.MoveThroughJointPositionsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$13.StopRequest, $13.StopResponse>(
         'Stop',
         stop_Pre,
@@ -188,6 +203,10 @@ abstract class ArmServiceBase extends $grpc.Service {
     return moveToJointPositions(call, await request);
   }
 
+  $async.Future<$13.MoveThroughJointPositionsResponse> moveThroughJointPositions_Pre($grpc.ServiceCall call, $async.Future<$13.MoveThroughJointPositionsRequest> request) async {
+    return moveThroughJointPositions(call, await request);
+  }
+
   $async.Future<$13.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$13.StopRequest> request) async {
     return stop(call, await request);
   }
@@ -212,6 +231,7 @@ abstract class ArmServiceBase extends $grpc.Service {
   $async.Future<$13.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $13.MoveToPositionRequest request);
   $async.Future<$13.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $13.GetJointPositionsRequest request);
   $async.Future<$13.MoveToJointPositionsResponse> moveToJointPositions($grpc.ServiceCall call, $13.MoveToJointPositionsRequest request);
+  $async.Future<$13.MoveThroughJointPositionsResponse> moveThroughJointPositions($grpc.ServiceCall call, $13.MoveThroughJointPositionsRequest request);
   $async.Future<$13.StopResponse> stop($grpc.ServiceCall call, $13.StopRequest request);
   $async.Future<$13.IsMovingResponse> isMoving($grpc.ServiceCall call, $13.IsMovingRequest request);
   $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
