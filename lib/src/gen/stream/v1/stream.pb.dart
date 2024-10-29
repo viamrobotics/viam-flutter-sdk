@@ -259,6 +259,267 @@ class RemoveStreamResponse extends $pb.GeneratedMessage {
   static RemoveStreamResponse? _defaultInstance;
 }
 
+/// Resolution details the width and height of a stream.
+class Resolution extends $pb.GeneratedMessage {
+  factory Resolution({
+    $core.int? width,
+    $core.int? height,
+  }) {
+    final $result = create();
+    if (width != null) {
+      $result.width = width;
+    }
+    if (height != null) {
+      $result.height = height;
+    }
+    return $result;
+  }
+  Resolution._() : super();
+  factory Resolution.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Resolution.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resolution', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.stream.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'height', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Resolution clone() => Resolution()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Resolution copyWith(void Function(Resolution) updates) => super.copyWith((message) => updates(message as Resolution)) as Resolution;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Resolution create() => Resolution._();
+  Resolution createEmptyInstance() => create();
+  static $pb.PbList<Resolution> createRepeated() => $pb.PbList<Resolution>();
+  @$core.pragma('dart2js:noInline')
+  static Resolution getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Resolution>(create);
+  static Resolution? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get width => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set width($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWidth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWidth() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get height => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set height($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHeight() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHeight() => clearField(2);
+}
+
+/// GetStreamOptionsRequest requests the options for a particular stream.
+class GetStreamOptionsRequest extends $pb.GeneratedMessage {
+  factory GetStreamOptionsRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  GetStreamOptionsRequest._() : super();
+  factory GetStreamOptionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetStreamOptionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStreamOptionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.stream.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetStreamOptionsRequest clone() => GetStreamOptionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetStreamOptionsRequest copyWith(void Function(GetStreamOptionsRequest) updates) => super.copyWith((message) => updates(message as GetStreamOptionsRequest)) as GetStreamOptionsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetStreamOptionsRequest create() => GetStreamOptionsRequest._();
+  GetStreamOptionsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetStreamOptionsRequest> createRepeated() => $pb.PbList<GetStreamOptionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetStreamOptionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStreamOptionsRequest>(create);
+  static GetStreamOptionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+/// GetStreamOptionsResponse details the options for a particular stream.
+class GetStreamOptionsResponse extends $pb.GeneratedMessage {
+  factory GetStreamOptionsResponse({
+    $core.Iterable<Resolution>? resolutions,
+  }) {
+    final $result = create();
+    if (resolutions != null) {
+      $result.resolutions.addAll(resolutions);
+    }
+    return $result;
+  }
+  GetStreamOptionsResponse._() : super();
+  factory GetStreamOptionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetStreamOptionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStreamOptionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.stream.v1'), createEmptyInstance: create)
+    ..pc<Resolution>(1, _omitFieldNames ? '' : 'resolutions', $pb.PbFieldType.PM, subBuilder: Resolution.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetStreamOptionsResponse clone() => GetStreamOptionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetStreamOptionsResponse copyWith(void Function(GetStreamOptionsResponse) updates) => super.copyWith((message) => updates(message as GetStreamOptionsResponse)) as GetStreamOptionsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetStreamOptionsResponse create() => GetStreamOptionsResponse._();
+  GetStreamOptionsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetStreamOptionsResponse> createRepeated() => $pb.PbList<GetStreamOptionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetStreamOptionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStreamOptionsResponse>(create);
+  static GetStreamOptionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Resolution> get resolutions => $_getList(0);
+}
+
+/// SetStreamOptionsRequest sets the options for a particular stream.
+class SetStreamOptionsRequest extends $pb.GeneratedMessage {
+  factory SetStreamOptionsRequest({
+    $core.String? name,
+    Resolution? resolution,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (resolution != null) {
+      $result.resolution = resolution;
+    }
+    return $result;
+  }
+  SetStreamOptionsRequest._() : super();
+  factory SetStreamOptionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetStreamOptionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetStreamOptionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.stream.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<Resolution>(2, _omitFieldNames ? '' : 'resolution', subBuilder: Resolution.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetStreamOptionsRequest clone() => SetStreamOptionsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetStreamOptionsRequest copyWith(void Function(SetStreamOptionsRequest) updates) => super.copyWith((message) => updates(message as SetStreamOptionsRequest)) as SetStreamOptionsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetStreamOptionsRequest create() => SetStreamOptionsRequest._();
+  SetStreamOptionsRequest createEmptyInstance() => create();
+  static $pb.PbList<SetStreamOptionsRequest> createRepeated() => $pb.PbList<SetStreamOptionsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetStreamOptionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetStreamOptionsRequest>(create);
+  static SetStreamOptionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  Resolution get resolution => $_getN(1);
+  @$pb.TagNumber(2)
+  set resolution(Resolution v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResolution() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResolution() => clearField(2);
+  @$pb.TagNumber(2)
+  Resolution ensureResolution() => $_ensure(1);
+}
+
+/// SetStreamOptionsResponse is returned after a successful SetStreamOptionsRequest.
+class SetStreamOptionsResponse extends $pb.GeneratedMessage {
+  factory SetStreamOptionsResponse() => create();
+  SetStreamOptionsResponse._() : super();
+  factory SetStreamOptionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetStreamOptionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetStreamOptionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto.stream.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetStreamOptionsResponse clone() => SetStreamOptionsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetStreamOptionsResponse copyWith(void Function(SetStreamOptionsResponse) updates) => super.copyWith((message) => updates(message as SetStreamOptionsResponse)) as SetStreamOptionsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetStreamOptionsResponse create() => SetStreamOptionsResponse._();
+  SetStreamOptionsResponse createEmptyInstance() => create();
+  static $pb.PbList<SetStreamOptionsResponse> createRepeated() => $pb.PbList<SetStreamOptionsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetStreamOptionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetStreamOptionsResponse>(create);
+  static SetStreamOptionsResponse? _defaultInstance;
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

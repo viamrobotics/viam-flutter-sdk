@@ -81,4 +81,10 @@ class ArmService extends ArmServiceBase {
     // TODO: implement getKinematics
     throw UnimplementedError();
   }
+
+  @override
+  Future<MoveThroughJointPositionsResponse> moveThroughJointPositions(ServiceCall call, MoveThroughJointPositionsRequest request) {
+    // TODO: implement moveThroughJointPositions
+    throw UnimplementedError();
+  }
 }

@@ -9753,6 +9753,7 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
     $core.String? moduleId,
     $core.String? version,
     $core.String? platform,
+    $core.Iterable<$core.String>? platformTags,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -9764,6 +9765,9 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
+    if (platformTags != null) {
+      $result.platformTags.addAll(platformTags);
+    }
     return $result;
   }
   ModuleFileInfo._() : super();
@@ -9774,6 +9778,7 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOS(3, _omitFieldNames ? '' : 'platform')
+    ..pPS(5, _omitFieldNames ? '' : 'platformTags')
     ..hasRequiredFields = false
   ;
 
@@ -9827,6 +9832,12 @@ class ModuleFileInfo extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(2);
   @$pb.TagNumber(3)
   void clearPlatform() => clearField(3);
+
+  /// Platform tag constraints. When a robot requests its config, it uploads a platform and a list of
+  /// platform tags. The platform is checked against `platform` above, and the tags are checked against
+  /// this list.
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get platformTags => $_getList(3);
 }
 
 enum UploadModuleFileRequest_ModuleFile {

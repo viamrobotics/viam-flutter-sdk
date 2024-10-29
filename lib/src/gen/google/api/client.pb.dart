@@ -25,6 +25,7 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.String? referenceDocsUri,
     $core.Iterable<ClientLibraryDestination>? destinations,
+    SelectiveGapicGeneration? selectiveGapicGeneration,
   }) {
     final $result = create();
     if (referenceDocsUri != null) {
@@ -33,6 +34,9 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
     }
     if (destinations != null) {
       $result.destinations.addAll(destinations);
+    }
+    if (selectiveGapicGeneration != null) {
+      $result.selectiveGapicGeneration = selectiveGapicGeneration;
     }
     return $result;
   }
@@ -43,6 +47,7 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonLanguageSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'referenceDocsUri')
     ..pc<ClientLibraryDestination>(2, _omitFieldNames ? '' : 'destinations', $pb.PbFieldType.KE, valueOf: ClientLibraryDestination.valueOf, enumValues: ClientLibraryDestination.values, defaultEnumValue: ClientLibraryDestination.CLIENT_LIBRARY_DESTINATION_UNSPECIFIED)
+    ..aOM<SelectiveGapicGeneration>(3, _omitFieldNames ? '' : 'selectiveGapicGeneration', subBuilder: SelectiveGapicGeneration.create)
     ..hasRequiredFields = false
   ;
 
@@ -85,6 +90,18 @@ class CommonLanguageSettings extends $pb.GeneratedMessage {
   /// The destination where API teams want this client library to be published.
   @$pb.TagNumber(2)
   $core.List<ClientLibraryDestination> get destinations => $_getList(1);
+
+  /// Configuration for which RPCs should be generated in the GAPIC client.
+  @$pb.TagNumber(3)
+  SelectiveGapicGeneration get selectiveGapicGeneration => $_getN(2);
+  @$pb.TagNumber(3)
+  set selectiveGapicGeneration(SelectiveGapicGeneration v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSelectiveGapicGeneration() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSelectiveGapicGeneration() => clearField(3);
+  @$pb.TagNumber(3)
+  SelectiveGapicGeneration ensureSelectiveGapicGeneration() => $_ensure(2);
 }
 
 /// Details about how and where to publish client libraries.
@@ -1337,6 +1354,54 @@ class MethodSettings extends $pb.GeneratedMessage {
   ///         - request_id
   @$pb.TagNumber(3)
   $core.List<$core.String> get autoPopulatedFields => $_getList(2);
+}
+
+/// This message is used to configure the generation of a subset of the RPCs in
+/// a service for client libraries.
+class SelectiveGapicGeneration extends $pb.GeneratedMessage {
+  factory SelectiveGapicGeneration({
+    $core.Iterable<$core.String>? methods,
+  }) {
+    final $result = create();
+    if (methods != null) {
+      $result.methods.addAll(methods);
+    }
+    return $result;
+  }
+  SelectiveGapicGeneration._() : super();
+  factory SelectiveGapicGeneration.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SelectiveGapicGeneration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SelectiveGapicGeneration', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'methods')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SelectiveGapicGeneration clone() => SelectiveGapicGeneration()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SelectiveGapicGeneration copyWith(void Function(SelectiveGapicGeneration) updates) => super.copyWith((message) => updates(message as SelectiveGapicGeneration)) as SelectiveGapicGeneration;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SelectiveGapicGeneration create() => SelectiveGapicGeneration._();
+  SelectiveGapicGeneration createEmptyInstance() => create();
+  static $pb.PbList<SelectiveGapicGeneration> createRepeated() => $pb.PbList<SelectiveGapicGeneration>();
+  @$core.pragma('dart2js:noInline')
+  static SelectiveGapicGeneration getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SelectiveGapicGeneration>(create);
+  static SelectiveGapicGeneration? _defaultInstance;
+
+  /// An allowlist of the fully qualified names of RPCs that should be included
+  /// on public client surfaces.
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get methods => $_getList(0);
 }
 
 class Client {

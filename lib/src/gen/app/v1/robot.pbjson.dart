@@ -569,6 +569,7 @@ const AgentInfo$json = {
     {'1': 'version', '3': 4, '4': 1, '5': 9, '10': 'version'},
     {'1': 'git_revision', '3': 5, '4': 1, '5': 9, '10': 'gitRevision'},
     {'1': 'platform', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'platform', '17': true},
+    {'1': 'platform_tags', '3': 7, '4': 3, '5': 9, '10': 'platformTags'},
   ],
   '8': [
     {'1': '_platform'},
@@ -579,8 +580,8 @@ const AgentInfo$json = {
 final $typed_data.Uint8List agentInfoDescriptor = $convert.base64Decode(
     'CglBZ2VudEluZm8SEgoEaG9zdBgBIAEoCVIEaG9zdBIOCgJvcxgCIAEoCVICb3MSEAoDaXBzGA'
     'MgAygJUgNpcHMSGAoHdmVyc2lvbhgEIAEoCVIHdmVyc2lvbhIhCgxnaXRfcmV2aXNpb24YBSAB'
-    'KAlSC2dpdFJldmlzaW9uEh8KCHBsYXRmb3JtGAYgASgJSABSCHBsYXRmb3JtiAEBQgsKCV9wbG'
-    'F0Zm9ybQ==');
+    'KAlSC2dpdFJldmlzaW9uEh8KCHBsYXRmb3JtGAYgASgJSABSCHBsYXRmb3JtiAEBEiMKDXBsYX'
+    'Rmb3JtX3RhZ3MYByADKAlSDHBsYXRmb3JtVGFnc0ILCglfcGxhdGZvcm0=');
 
 @$core.Deprecated('Use configRequestDescriptor instead')
 const ConfigRequest$json = {

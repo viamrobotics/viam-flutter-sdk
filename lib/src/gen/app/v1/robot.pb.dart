@@ -2787,6 +2787,7 @@ class AgentInfo extends $pb.GeneratedMessage {
     $core.String? version,
     $core.String? gitRevision,
     $core.String? platform,
+    $core.Iterable<$core.String>? platformTags,
   }) {
     final $result = create();
     if (host != null) {
@@ -2807,6 +2808,9 @@ class AgentInfo extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
+    if (platformTags != null) {
+      $result.platformTags.addAll(platformTags);
+    }
     return $result;
   }
   AgentInfo._() : super();
@@ -2820,6 +2824,7 @@ class AgentInfo extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'version')
     ..aOS(5, _omitFieldNames ? '' : 'gitRevision')
     ..aOS(6, _omitFieldNames ? '' : 'platform')
+    ..pPS(7, _omitFieldNames ? '' : 'platformTags')
     ..hasRequiredFields = false
   ;
 
@@ -2894,6 +2899,10 @@ class AgentInfo extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(5);
   @$pb.TagNumber(6)
   void clearPlatform() => clearField(6);
+
+  /// Optional tags to further constrain which artifact is returned for modules.
+  @$pb.TagNumber(7)
+  $core.List<$core.String> get platformTags => $_getList(6);
 }
 
 class ConfigRequest extends $pb.GeneratedMessage {
