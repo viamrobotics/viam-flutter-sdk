@@ -59,6 +59,13 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('properties', () async {
+      final expected = GetPropertiesResponse(classificationsSupported: true);
+      when(serviceClient.getProperties(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await client.properties();
+      expect(response, equals(expected));
+    });
+
     test('getObjectPointClouds', () async {
       final expected = [
         PointCloudObject(

@@ -8,6 +8,10 @@ import '../resource/base.dart';
 import '../robot/client.dart';
 import '../utils.dart';
 
+/// {@category Viam SDK}
+/// The vision service's supported features and settings
+typedef VisionProperties = GetPropertiesResponse;
+
 /// {@category Services}
 class VisionClient extends Resource implements ResourceRPCClient {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'vision');
@@ -98,6 +102,21 @@ class VisionClient extends Resource implements ResourceRPCClient {
     final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
     final response = await client.getObjectPointClouds(request);
     return response.objects;
+  }
+
+  /// Get info about what vision methods the vision service provides.
+  /// Currently returns boolean values that state whether the service implements the
+  /// classification, detection, and/or 3D object segmentation methods.
+  ///
+  /// ```
+  /// // Example:
+  /// var properties = await myVisionService.properties();
+  /// properties.detections_supported       // returns true
+  /// properties.classifications_supported  // returns false
+  /// ```
+  Future<VisionProperties> properties({Map<String, dynamic>? extra}) async {
+    final request = GetPropertiesRequest(name: name, extra: extra?.toStruct());
+    return await client.getProperties(request);
   }
 
   @override
