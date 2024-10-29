@@ -36,7 +36,7 @@ class SessionsClient implements ResourceRPCClient {
   bool? _supported;
   late Duration _heartbeatInterval;
 
-  SessionsClient(this.channel, bool enabled) : _enabled = false {
+  SessionsClient(this.channel, this._enabled) {
     metadata();
   }
 
