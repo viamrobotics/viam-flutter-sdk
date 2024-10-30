@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:async/async.dart';
+import 'package:bson/bson.dart' hide Timestamp;
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
 
@@ -82,12 +83,14 @@ class DataClient {
   /// Obtain unified tabular data and metadata, queried with SQL.
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  // List<List<int>>
   Future<List<Map<String, dynamic>>> tabularDataBySql(String organizationId, String query) async {
     final request = TabularDataBySQLRequest()
       ..organizationId = organizationId
       ..sqlQuery = query;
     final response = await _dataClient.tabularDataBySQL(request);
-    return response.data.map((e) => e.toMap()).toList();
+    // return response.data.map((e) => e.toMap()).toList();
+    return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 
   /// Obtain unified tabular data and metadata, queried with MQL.
@@ -98,7 +101,8 @@ class DataClient {
       ..organizationId = organizationId
       ..mqlBinary.addAll(query);
     final response = await _dataClient.tabularDataByMQL(request);
-    return response.data.map((e) => e.toMap()).toList();
+    // return response.data.map((e) => e.toMap()).toList();
+    return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 
   /// Delete tabular data older than a provided number of days from an organization.

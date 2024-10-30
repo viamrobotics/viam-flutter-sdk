@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:bson/bson.dart' hide Timestamp;
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/src/client/call.dart';
@@ -13,7 +14,6 @@ import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/src/media/image.dart';
-import 'package:viam_sdk/src/utils.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -151,8 +151,8 @@ void main() {
           },
         ];
 
-        when(serviceClient.tabularDataBySQL(any))
-            .thenAnswer((_) => MockResponseFuture.value(TabularDataBySQLResponse()..data.addAll(data.map((e) => e.toStruct()))));
+        when(serviceClient.tabularDataBySQL(any)).thenAnswer(
+            (_) => MockResponseFuture.value(TabularDataBySQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
 
         final response = await dataClient.tabularDataBySql('some_org_id', 'some_query');
         expect(response, equals(data));
@@ -168,8 +168,8 @@ void main() {
           },
         ];
 
-        when(serviceClient.tabularDataByMQL(any))
-            .thenAnswer((_) => MockResponseFuture.value(TabularDataByMQLResponse()..data.addAll(data.map((e) => e.toStruct()))));
+        when(serviceClient.tabularDataByMQL(any)).thenAnswer(
+            (_) => MockResponseFuture.value(TabularDataByMQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
 
         final response = await dataClient.tabularDataByMql('some_org_id', [Uint8List.fromList('some_query'.codeUnits)]);
         expect(response, equals(data));
