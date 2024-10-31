@@ -89,7 +89,6 @@ class DataClient {
       ..organizationId = organizationId
       ..sqlQuery = query;
     final response = await _dataClient.tabularDataBySQL(request);
-    // return response.data.map((e) => e.toMap()).toList();
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 
@@ -101,7 +100,6 @@ class DataClient {
       ..organizationId = organizationId
       ..mqlBinary.addAll(query);
     final response = await _dataClient.tabularDataByMQL(request);
-    // return response.data.map((e) => e.toMap()).toList();
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 

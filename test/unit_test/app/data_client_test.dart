@@ -142,9 +142,10 @@ void main() {
       });
 
       test('tabularDataBySql', () async {
+        final startDate = DateTime.utc(2020, 12, 31);
         final List<Map<String, dynamic>> data = [
           {
-            'key1': 1,
+            'key1': startDate,
             'key2': '2',
             'key3': [1, 2, 3],
             'key4': {'key4sub1': 1}
@@ -155,13 +156,15 @@ void main() {
             (_) => MockResponseFuture.value(TabularDataBySQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
 
         final response = await dataClient.tabularDataBySql('some_org_id', 'some_query');
+        expect(response[0]['key1'], equals(data[0]['key1']));
         expect(response, equals(data));
       });
 
       test('tabularDataByMql', () async {
+        final startDate = DateTime.utc(2020, 12, 31);
         final List<Map<String, dynamic>> data = [
           {
-            'key1': 1,
+            'key1': startDate.toUtc(),
             'key2': '2',
             'key3': [1, 2, 3],
             'key4': {'key4sub1': 1}
@@ -172,6 +175,7 @@ void main() {
             (_) => MockResponseFuture.value(TabularDataByMQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
 
         final response = await dataClient.tabularDataByMql('some_org_id', [Uint8List.fromList('some_query'.codeUnits)]);
+        expect(response[0]['key1'], equals(data[0]['key1']));
         expect(response, equals(data));
       });
 
