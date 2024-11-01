@@ -177,6 +177,41 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $9.ResendOrganizationInviteRequest.fromBuffer(value),
       ($9.ResendOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.EnableBillingServiceRequest, $9.EnableBillingServiceResponse&gt;(
+      &#39;EnableBillingService&#39;,
+      enableBillingService_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.EnableBillingServiceRequest.fromBuffer(value),
+      ($9.EnableBillingServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.DisableBillingServiceRequest, $9.DisableBillingServiceResponse&gt;(
+      &#39;DisableBillingService&#39;,
+      disableBillingService_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.DisableBillingServiceRequest.fromBuffer(value),
+      ($9.DisableBillingServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.UpdateBillingServiceRequest, $9.UpdateBillingServiceResponse&gt;(
+      &#39;UpdateBillingService&#39;,
+      updateBillingService_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.UpdateBillingServiceRequest.fromBuffer(value),
+      ($9.UpdateBillingServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.OrganizationSetSupportEmailRequest, $9.OrganizationSetSupportEmailResponse&gt;(
+      &#39;OrganizationSetSupportEmail&#39;,
+      organizationSetSupportEmail_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.OrganizationSetSupportEmailRequest.fromBuffer(value),
+      ($9.OrganizationSetSupportEmailResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.OrganizationGetSupportEmailRequest, $9.OrganizationGetSupportEmailResponse&gt;(
+      &#39;OrganizationGetSupportEmail&#39;,
+      organizationGetSupportEmail_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.OrganizationGetSupportEmailRequest.fromBuffer(value),
+      ($9.OrganizationGetSupportEmailResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$9.CreateLocationRequest, $9.CreateLocationResponse&gt;(
       &#39;CreateLocation&#39;,
       createLocation_Pre,
