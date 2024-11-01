@@ -2197,6 +2197,600 @@ class DeleteOrganizationMemberResponse extends $pb.GeneratedMessage {
   static DeleteOrganizationMemberResponse? _defaultInstance;
 }
 
+class BillingAddress extends $pb.GeneratedMessage {
+  factory BillingAddress({
+    $core.String? addressLine1,
+    $core.String? addressLine2,
+    $core.String? city,
+    $core.String? state,
+    $core.String? zipcode,
+  }) {
+    final $result = create();
+    if (addressLine1 != null) {
+      $result.addressLine1 = addressLine1;
+    }
+    if (addressLine2 != null) {
+      $result.addressLine2 = addressLine2;
+    }
+    if (city != null) {
+      $result.city = city;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    if (zipcode != null) {
+      $result.zipcode = zipcode;
+    }
+    return $result;
+  }
+  BillingAddress._() : super();
+  factory BillingAddress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory BillingAddress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BillingAddress', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'addressLine1', protoName: 'address_line_1')
+    ..aOS(2, _omitFieldNames ? '' : 'addressLine2', protoName: 'address_line_2')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'state')
+    ..aOS(5, _omitFieldNames ? '' : 'zipcode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  BillingAddress clone() => BillingAddress()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  BillingAddress copyWith(void Function(BillingAddress) updates) => super.copyWith((message) => updates(message as BillingAddress)) as BillingAddress;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BillingAddress create() => BillingAddress._();
+  BillingAddress createEmptyInstance() => create();
+  static $pb.PbList<BillingAddress> createRepeated() => $pb.PbList<BillingAddress>();
+  @$core.pragma('dart2js:noInline')
+  static BillingAddress getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BillingAddress>(create);
+  static BillingAddress? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get addressLine1 => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set addressLine1($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAddressLine1() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAddressLine1() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get addressLine2 => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set addressLine2($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAddressLine2() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAddressLine2() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get state => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set state($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearState() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get zipcode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set zipcode($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasZipcode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearZipcode() => clearField(5);
+}
+
+class EnableBillingServiceRequest extends $pb.GeneratedMessage {
+  factory EnableBillingServiceRequest({
+    $core.String? orgId,
+    BillingAddress? billingAddress,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (billingAddress != null) {
+      $result.billingAddress = billingAddress;
+    }
+    return $result;
+  }
+  EnableBillingServiceRequest._() : super();
+  factory EnableBillingServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EnableBillingServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableBillingServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOM<BillingAddress>(2, _omitFieldNames ? '' : 'billingAddress', subBuilder: BillingAddress.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EnableBillingServiceRequest clone() => EnableBillingServiceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EnableBillingServiceRequest copyWith(void Function(EnableBillingServiceRequest) updates) => super.copyWith((message) => updates(message as EnableBillingServiceRequest)) as EnableBillingServiceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnableBillingServiceRequest create() => EnableBillingServiceRequest._();
+  EnableBillingServiceRequest createEmptyInstance() => create();
+  static $pb.PbList<EnableBillingServiceRequest> createRepeated() => $pb.PbList<EnableBillingServiceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EnableBillingServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnableBillingServiceRequest>(create);
+  static EnableBillingServiceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  BillingAddress get billingAddress => $_getN(1);
+  @$pb.TagNumber(2)
+  set billingAddress(BillingAddress v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBillingAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillingAddress() => clearField(2);
+  @$pb.TagNumber(2)
+  BillingAddress ensureBillingAddress() => $_ensure(1);
+}
+
+class EnableBillingServiceResponse extends $pb.GeneratedMessage {
+  factory EnableBillingServiceResponse() => create();
+  EnableBillingServiceResponse._() : super();
+  factory EnableBillingServiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EnableBillingServiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableBillingServiceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EnableBillingServiceResponse clone() => EnableBillingServiceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EnableBillingServiceResponse copyWith(void Function(EnableBillingServiceResponse) updates) => super.copyWith((message) => updates(message as EnableBillingServiceResponse)) as EnableBillingServiceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnableBillingServiceResponse create() => EnableBillingServiceResponse._();
+  EnableBillingServiceResponse createEmptyInstance() => create();
+  static $pb.PbList<EnableBillingServiceResponse> createRepeated() => $pb.PbList<EnableBillingServiceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EnableBillingServiceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnableBillingServiceResponse>(create);
+  static EnableBillingServiceResponse? _defaultInstance;
+}
+
+class UpdateBillingServiceRequest extends $pb.GeneratedMessage {
+  factory UpdateBillingServiceRequest({
+    $core.String? orgId,
+    BillingAddress? billingAddress,
+    $core.String? billingSupportEmail,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (billingAddress != null) {
+      $result.billingAddress = billingAddress;
+    }
+    if (billingSupportEmail != null) {
+      $result.billingSupportEmail = billingSupportEmail;
+    }
+    return $result;
+  }
+  UpdateBillingServiceRequest._() : super();
+  factory UpdateBillingServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateBillingServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateBillingServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOM<BillingAddress>(2, _omitFieldNames ? '' : 'billingAddress', subBuilder: BillingAddress.create)
+    ..aOS(3, _omitFieldNames ? '' : 'billingSupportEmail')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateBillingServiceRequest clone() => UpdateBillingServiceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateBillingServiceRequest copyWith(void Function(UpdateBillingServiceRequest) updates) => super.copyWith((message) => updates(message as UpdateBillingServiceRequest)) as UpdateBillingServiceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateBillingServiceRequest create() => UpdateBillingServiceRequest._();
+  UpdateBillingServiceRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateBillingServiceRequest> createRepeated() => $pb.PbList<UpdateBillingServiceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateBillingServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateBillingServiceRequest>(create);
+  static UpdateBillingServiceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  BillingAddress get billingAddress => $_getN(1);
+  @$pb.TagNumber(2)
+  set billingAddress(BillingAddress v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBillingAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillingAddress() => clearField(2);
+  @$pb.TagNumber(2)
+  BillingAddress ensureBillingAddress() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get billingSupportEmail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set billingSupportEmail($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBillingSupportEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBillingSupportEmail() => clearField(3);
+}
+
+class UpdateBillingServiceResponse extends $pb.GeneratedMessage {
+  factory UpdateBillingServiceResponse() => create();
+  UpdateBillingServiceResponse._() : super();
+  factory UpdateBillingServiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateBillingServiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateBillingServiceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateBillingServiceResponse clone() => UpdateBillingServiceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateBillingServiceResponse copyWith(void Function(UpdateBillingServiceResponse) updates) => super.copyWith((message) => updates(message as UpdateBillingServiceResponse)) as UpdateBillingServiceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateBillingServiceResponse create() => UpdateBillingServiceResponse._();
+  UpdateBillingServiceResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateBillingServiceResponse> createRepeated() => $pb.PbList<UpdateBillingServiceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateBillingServiceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateBillingServiceResponse>(create);
+  static UpdateBillingServiceResponse? _defaultInstance;
+}
+
+class DisableBillingServiceRequest extends $pb.GeneratedMessage {
+  factory DisableBillingServiceRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  DisableBillingServiceRequest._() : super();
+  factory DisableBillingServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DisableBillingServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableBillingServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DisableBillingServiceRequest clone() => DisableBillingServiceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DisableBillingServiceRequest copyWith(void Function(DisableBillingServiceRequest) updates) => super.copyWith((message) => updates(message as DisableBillingServiceRequest)) as DisableBillingServiceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DisableBillingServiceRequest create() => DisableBillingServiceRequest._();
+  DisableBillingServiceRequest createEmptyInstance() => create();
+  static $pb.PbList<DisableBillingServiceRequest> createRepeated() => $pb.PbList<DisableBillingServiceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DisableBillingServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DisableBillingServiceRequest>(create);
+  static DisableBillingServiceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
+class DisableBillingServiceResponse extends $pb.GeneratedMessage {
+  factory DisableBillingServiceResponse() => create();
+  DisableBillingServiceResponse._() : super();
+  factory DisableBillingServiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DisableBillingServiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableBillingServiceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DisableBillingServiceResponse clone() => DisableBillingServiceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DisableBillingServiceResponse copyWith(void Function(DisableBillingServiceResponse) updates) => super.copyWith((message) => updates(message as DisableBillingServiceResponse)) as DisableBillingServiceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DisableBillingServiceResponse create() => DisableBillingServiceResponse._();
+  DisableBillingServiceResponse createEmptyInstance() => create();
+  static $pb.PbList<DisableBillingServiceResponse> createRepeated() => $pb.PbList<DisableBillingServiceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DisableBillingServiceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DisableBillingServiceResponse>(create);
+  static DisableBillingServiceResponse? _defaultInstance;
+}
+
+class OrganizationSetSupportEmailRequest extends $pb.GeneratedMessage {
+  factory OrganizationSetSupportEmailRequest({
+    $core.String? orgId,
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
+  OrganizationSetSupportEmailRequest._() : super();
+  factory OrganizationSetSupportEmailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OrganizationSetSupportEmailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganizationSetSupportEmailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OrganizationSetSupportEmailRequest clone() => OrganizationSetSupportEmailRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationSetSupportEmailRequest copyWith(void Function(OrganizationSetSupportEmailRequest) updates) => super.copyWith((message) => updates(message as OrganizationSetSupportEmailRequest)) as OrganizationSetSupportEmailRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrganizationSetSupportEmailRequest create() => OrganizationSetSupportEmailRequest._();
+  OrganizationSetSupportEmailRequest createEmptyInstance() => create();
+  static $pb.PbList<OrganizationSetSupportEmailRequest> createRepeated() => $pb.PbList<OrganizationSetSupportEmailRequest>();
+  @$core.pragma('dart2js:noInline')
+  static OrganizationSetSupportEmailRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrganizationSetSupportEmailRequest>(create);
+  static OrganizationSetSupportEmailRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get email => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set email($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEmail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmail() => clearField(2);
+}
+
+class OrganizationSetSupportEmailResponse extends $pb.GeneratedMessage {
+  factory OrganizationSetSupportEmailResponse() => create();
+  OrganizationSetSupportEmailResponse._() : super();
+  factory OrganizationSetSupportEmailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OrganizationSetSupportEmailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganizationSetSupportEmailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OrganizationSetSupportEmailResponse clone() => OrganizationSetSupportEmailResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationSetSupportEmailResponse copyWith(void Function(OrganizationSetSupportEmailResponse) updates) => super.copyWith((message) => updates(message as OrganizationSetSupportEmailResponse)) as OrganizationSetSupportEmailResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrganizationSetSupportEmailResponse create() => OrganizationSetSupportEmailResponse._();
+  OrganizationSetSupportEmailResponse createEmptyInstance() => create();
+  static $pb.PbList<OrganizationSetSupportEmailResponse> createRepeated() => $pb.PbList<OrganizationSetSupportEmailResponse>();
+  @$core.pragma('dart2js:noInline')
+  static OrganizationSetSupportEmailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrganizationSetSupportEmailResponse>(create);
+  static OrganizationSetSupportEmailResponse? _defaultInstance;
+}
+
+class OrganizationGetSupportEmailRequest extends $pb.GeneratedMessage {
+  factory OrganizationGetSupportEmailRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  OrganizationGetSupportEmailRequest._() : super();
+  factory OrganizationGetSupportEmailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OrganizationGetSupportEmailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganizationGetSupportEmailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OrganizationGetSupportEmailRequest clone() => OrganizationGetSupportEmailRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationGetSupportEmailRequest copyWith(void Function(OrganizationGetSupportEmailRequest) updates) => super.copyWith((message) => updates(message as OrganizationGetSupportEmailRequest)) as OrganizationGetSupportEmailRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrganizationGetSupportEmailRequest create() => OrganizationGetSupportEmailRequest._();
+  OrganizationGetSupportEmailRequest createEmptyInstance() => create();
+  static $pb.PbList<OrganizationGetSupportEmailRequest> createRepeated() => $pb.PbList<OrganizationGetSupportEmailRequest>();
+  @$core.pragma('dart2js:noInline')
+  static OrganizationGetSupportEmailRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrganizationGetSupportEmailRequest>(create);
+  static OrganizationGetSupportEmailRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
+class OrganizationGetSupportEmailResponse extends $pb.GeneratedMessage {
+  factory OrganizationGetSupportEmailResponse({
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
+  OrganizationGetSupportEmailResponse._() : super();
+  factory OrganizationGetSupportEmailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OrganizationGetSupportEmailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrganizationGetSupportEmailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'email')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OrganizationGetSupportEmailResponse clone() => OrganizationGetSupportEmailResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OrganizationGetSupportEmailResponse copyWith(void Function(OrganizationGetSupportEmailResponse) updates) => super.copyWith((message) => updates(message as OrganizationGetSupportEmailResponse)) as OrganizationGetSupportEmailResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrganizationGetSupportEmailResponse create() => OrganizationGetSupportEmailResponse._();
+  OrganizationGetSupportEmailResponse createEmptyInstance() => create();
+  static $pb.PbList<OrganizationGetSupportEmailResponse> createRepeated() => $pb.PbList<OrganizationGetSupportEmailResponse>();
+  @$core.pragma('dart2js:noInline')
+  static OrganizationGetSupportEmailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OrganizationGetSupportEmailResponse>(create);
+  static OrganizationGetSupportEmailResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get email => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set email($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEmail() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEmail() => clearField(1);
+}
+
 /// Used for rendering an organization's information on the frontend (limited
 /// to id, name, or both).
 class OrganizationIdentity extends $pb.GeneratedMessage {
@@ -5643,6 +6237,158 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
   AuthenticatorInfo ensureEditedBy() => $_ensure(3);
 }
 
+class FragmentError extends $pb.GeneratedMessage {
+  factory FragmentError({
+    FragmentErrorType? errorType,
+    $core.String? fragmentId,
+    $core.String? detail,
+  }) {
+    final $result = create();
+    if (errorType != null) {
+      $result.errorType = errorType;
+    }
+    if (fragmentId != null) {
+      $result.fragmentId = fragmentId;
+    }
+    if (detail != null) {
+      $result.detail = detail;
+    }
+    return $result;
+  }
+  FragmentError._() : super();
+  factory FragmentError.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentError.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentError', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<FragmentErrorType>(1, _omitFieldNames ? '' : 'errorType', $pb.PbFieldType.OE, defaultOrMaker: FragmentErrorType.FRAGMENT_ERROR_TYPE_UNSPECIFIED, valueOf: FragmentErrorType.valueOf, enumValues: FragmentErrorType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'fragmentId')
+    ..aOS(3, _omitFieldNames ? '' : 'detail')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentError clone() => FragmentError()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentError copyWith(void Function(FragmentError) updates) => super.copyWith((message) => updates(message as FragmentError)) as FragmentError;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentError create() => FragmentError._();
+  FragmentError createEmptyInstance() => create();
+  static $pb.PbList<FragmentError> createRepeated() => $pb.PbList<FragmentError>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentError getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentError>(create);
+  static FragmentError? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  FragmentErrorType get errorType => $_getN(0);
+  @$pb.TagNumber(1)
+  set errorType(FragmentErrorType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasErrorType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearErrorType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get fragmentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set fragmentId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFragmentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFragmentId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get detail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set detail($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDetail() => clearField(3);
+}
+
+class FragmentTree extends $pb.GeneratedMessage {
+  factory FragmentTree({
+    $core.String? rootFragmentId,
+    $core.Iterable<$core.String>? fragmentMergeOrder,
+    FragmentError? error,
+  }) {
+    final $result = create();
+    if (rootFragmentId != null) {
+      $result.rootFragmentId = rootFragmentId;
+    }
+    if (fragmentMergeOrder != null) {
+      $result.fragmentMergeOrder.addAll(fragmentMergeOrder);
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    return $result;
+  }
+  FragmentTree._() : super();
+  factory FragmentTree.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentTree.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentTree', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'rootFragmentId')
+    ..pPS(2, _omitFieldNames ? '' : 'fragmentMergeOrder')
+    ..aOM<FragmentError>(3, _omitFieldNames ? '' : 'error', subBuilder: FragmentError.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentTree clone() => FragmentTree()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentTree copyWith(void Function(FragmentTree) updates) => super.copyWith((message) => updates(message as FragmentTree)) as FragmentTree;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentTree create() => FragmentTree._();
+  FragmentTree createEmptyInstance() => create();
+  static $pb.PbList<FragmentTree> createRepeated() => $pb.PbList<FragmentTree>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentTree getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentTree>(create);
+  static FragmentTree? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get rootFragmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set rootFragmentId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRootFragmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRootFragmentId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get fragmentMergeOrder => $_getList(1);
+
+  @$pb.TagNumber(3)
+  FragmentError get error => $_getN(2);
+  @$pb.TagNumber(3)
+  set error(FragmentError v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasError() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearError() => clearField(3);
+  @$pb.TagNumber(3)
+  FragmentError ensureError() => $_ensure(2);
+}
+
 class ListFragmentsRequest extends $pb.GeneratedMessage {
   factory ListFragmentsRequest({
     $core.String? organizationId,
@@ -6500,10 +7246,14 @@ class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
 class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
   factory ListMachineFragmentsResponse({
     $core.Iterable<Fragment>? fragments,
+    $core.Iterable<FragmentTree>? fragmentTrees,
   }) {
     final $result = create();
     if (fragments != null) {
       $result.fragments.addAll(fragments);
+    }
+    if (fragmentTrees != null) {
+      $result.fragmentTrees.addAll(fragmentTrees);
     }
     return $result;
   }
@@ -6513,6 +7263,7 @@ class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineFragmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<Fragment>(1, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: Fragment.create)
+    ..pc<FragmentTree>(2, _omitFieldNames ? '' : 'fragmentTrees', $pb.PbFieldType.PM, subBuilder: FragmentTree.create)
     ..hasRequiredFields = false
   ;
 
@@ -6539,6 +7290,9 @@ class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<Fragment> get fragments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<FragmentTree> get fragmentTrees => $_getList(1);
 }
 
 class ListRobotsResponse extends $pb.GeneratedMessage {

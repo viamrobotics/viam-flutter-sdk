@@ -49,6 +49,25 @@ final $typed_data.Uint8List fragmentVisibilityDescriptor = $convert.base64Decode
     'AAEh8KG0ZSQUdNRU5UX1ZJU0lCSUxJVFlfUFJJVkFURRABEh4KGkZSQUdNRU5UX1ZJU0lCSUxJ'
     'VFlfUFVCTElDEAISJwojRlJBR01FTlRfVklTSUJJTElUWV9QVUJMSUNfVU5MSVNURUQQAw==');
 
+@$core.Deprecated('Use fragmentErrorTypeDescriptor instead')
+const FragmentErrorType$json = {
+  '1': 'FragmentErrorType',
+  '2': [
+    {'1': 'FRAGMENT_ERROR_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'FRAGMENT_ERROR_TYPE_NO_ACCESS', '2': 1},
+    {'1': 'FRAGMENT_ERROR_TYPE_NESTING_LIMIT_EXCEEDED', '2': 2},
+    {'1': 'FRAGMENT_ERROR_TYPE_CHILD_ID_INVALID', '2': 3},
+    {'1': 'FRAGMENT_ERROR_TYPE_CYCLE_DETECTED', '2': 4},
+  ],
+};
+
+/// Descriptor for `FragmentErrorType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List fragmentErrorTypeDescriptor = $convert.base64Decode(
+    'ChFGcmFnbWVudEVycm9yVHlwZRIjCh9GUkFHTUVOVF9FUlJPUl9UWVBFX1VOU1BFQ0lGSUVEEA'
+    'ASIQodRlJBR01FTlRfRVJST1JfVFlQRV9OT19BQ0NFU1MQARIuCipGUkFHTUVOVF9FUlJPUl9U'
+    'WVBFX05FU1RJTkdfTElNSVRfRVhDRUVERUQQAhIoCiRGUkFHTUVOVF9FUlJPUl9UWVBFX0NISU'
+    'xEX0lEX0lOVkFMSUQQAxImCiJGUkFHTUVOVF9FUlJPUl9UWVBFX0NZQ0xFX0RFVEVDVEVEEAQ=');
+
 @$core.Deprecated('Use registryItemStatusDescriptor instead')
 const RegistryItemStatus$json = {
   '1': 'RegistryItemStatus',
@@ -578,6 +597,148 @@ const DeleteOrganizationMemberResponse$json = {
 /// Descriptor for `DeleteOrganizationMemberResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteOrganizationMemberResponseDescriptor = $convert.base64Decode(
     'CiBEZWxldGVPcmdhbml6YXRpb25NZW1iZXJSZXNwb25zZQ==');
+
+@$core.Deprecated('Use billingAddressDescriptor instead')
+const BillingAddress$json = {
+  '1': 'BillingAddress',
+  '2': [
+    {'1': 'address_line_1', '3': 1, '4': 1, '5': 9, '10': 'addressLine1'},
+    {'1': 'address_line_2', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'addressLine2', '17': true},
+    {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'state', '3': 4, '4': 1, '5': 9, '10': 'state'},
+    {'1': 'zipcode', '3': 5, '4': 1, '5': 9, '10': 'zipcode'},
+  ],
+  '8': [
+    {'1': '_address_line_2'},
+  ],
+};
+
+/// Descriptor for `BillingAddress`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List billingAddressDescriptor = $convert.base64Decode(
+    'Cg5CaWxsaW5nQWRkcmVzcxIkCg5hZGRyZXNzX2xpbmVfMRgBIAEoCVIMYWRkcmVzc0xpbmUxEi'
+    'kKDmFkZHJlc3NfbGluZV8yGAIgASgJSABSDGFkZHJlc3NMaW5lMogBARISCgRjaXR5GAMgASgJ'
+    'UgRjaXR5EhQKBXN0YXRlGAQgASgJUgVzdGF0ZRIYCgd6aXBjb2RlGAUgASgJUgd6aXBjb2RlQh'
+    'EKD19hZGRyZXNzX2xpbmVfMg==');
+
+@$core.Deprecated('Use enableBillingServiceRequestDescriptor instead')
+const EnableBillingServiceRequest$json = {
+  '1': 'EnableBillingServiceRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'billing_address', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.BillingAddress', '10': 'billingAddress'},
+  ],
+};
+
+/// Descriptor for `EnableBillingServiceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enableBillingServiceRequestDescriptor = $convert.base64Decode(
+    'ChtFbmFibGVCaWxsaW5nU2VydmljZVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBJECg'
+    '9iaWxsaW5nX2FkZHJlc3MYAiABKAsyGy52aWFtLmFwcC52MS5CaWxsaW5nQWRkcmVzc1IOYmls'
+    'bGluZ0FkZHJlc3M=');
+
+@$core.Deprecated('Use enableBillingServiceResponseDescriptor instead')
+const EnableBillingServiceResponse$json = {
+  '1': 'EnableBillingServiceResponse',
+};
+
+/// Descriptor for `EnableBillingServiceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enableBillingServiceResponseDescriptor = $convert.base64Decode(
+    'ChxFbmFibGVCaWxsaW5nU2VydmljZVJlc3BvbnNl');
+
+@$core.Deprecated('Use updateBillingServiceRequestDescriptor instead')
+const UpdateBillingServiceRequest$json = {
+  '1': 'UpdateBillingServiceRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'billing_address', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.BillingAddress', '10': 'billingAddress'},
+    {'1': 'billing_support_email', '3': 3, '4': 1, '5': 9, '10': 'billingSupportEmail'},
+  ],
+};
+
+/// Descriptor for `UpdateBillingServiceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateBillingServiceRequestDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVCaWxsaW5nU2VydmljZVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBJECg'
+    '9iaWxsaW5nX2FkZHJlc3MYAiABKAsyGy52aWFtLmFwcC52MS5CaWxsaW5nQWRkcmVzc1IOYmls'
+    'bGluZ0FkZHJlc3MSMgoVYmlsbGluZ19zdXBwb3J0X2VtYWlsGAMgASgJUhNiaWxsaW5nU3VwcG'
+    '9ydEVtYWls');
+
+@$core.Deprecated('Use updateBillingServiceResponseDescriptor instead')
+const UpdateBillingServiceResponse$json = {
+  '1': 'UpdateBillingServiceResponse',
+};
+
+/// Descriptor for `UpdateBillingServiceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateBillingServiceResponseDescriptor = $convert.base64Decode(
+    'ChxVcGRhdGVCaWxsaW5nU2VydmljZVJlc3BvbnNl');
+
+@$core.Deprecated('Use disableBillingServiceRequestDescriptor instead')
+const DisableBillingServiceRequest$json = {
+  '1': 'DisableBillingServiceRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `DisableBillingServiceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List disableBillingServiceRequestDescriptor = $convert.base64Decode(
+    'ChxEaXNhYmxlQmlsbGluZ1NlcnZpY2VSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQ=');
+
+@$core.Deprecated('Use disableBillingServiceResponseDescriptor instead')
+const DisableBillingServiceResponse$json = {
+  '1': 'DisableBillingServiceResponse',
+};
+
+/// Descriptor for `DisableBillingServiceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List disableBillingServiceResponseDescriptor = $convert.base64Decode(
+    'Ch1EaXNhYmxlQmlsbGluZ1NlcnZpY2VSZXNwb25zZQ==');
+
+@$core.Deprecated('Use organizationSetSupportEmailRequestDescriptor instead')
+const OrganizationSetSupportEmailRequest$json = {
+  '1': 'OrganizationSetSupportEmailRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+  ],
+};
+
+/// Descriptor for `OrganizationSetSupportEmailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationSetSupportEmailRequestDescriptor = $convert.base64Decode(
+    'CiJPcmdhbml6YXRpb25TZXRTdXBwb3J0RW1haWxSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3'
+    'JnSWQSFAoFZW1haWwYAiABKAlSBWVtYWls');
+
+@$core.Deprecated('Use organizationSetSupportEmailResponseDescriptor instead')
+const OrganizationSetSupportEmailResponse$json = {
+  '1': 'OrganizationSetSupportEmailResponse',
+};
+
+/// Descriptor for `OrganizationSetSupportEmailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationSetSupportEmailResponseDescriptor = $convert.base64Decode(
+    'CiNPcmdhbml6YXRpb25TZXRTdXBwb3J0RW1haWxSZXNwb25zZQ==');
+
+@$core.Deprecated('Use organizationGetSupportEmailRequestDescriptor instead')
+const OrganizationGetSupportEmailRequest$json = {
+  '1': 'OrganizationGetSupportEmailRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `OrganizationGetSupportEmailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationGetSupportEmailRequestDescriptor = $convert.base64Decode(
+    'CiJPcmdhbml6YXRpb25HZXRTdXBwb3J0RW1haWxSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3'
+    'JnSWQ=');
+
+@$core.Deprecated('Use organizationGetSupportEmailResponseDescriptor instead')
+const OrganizationGetSupportEmailResponse$json = {
+  '1': 'OrganizationGetSupportEmailResponse',
+  '2': [
+    {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
+  ],
+};
+
+/// Descriptor for `OrganizationGetSupportEmailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationGetSupportEmailResponseDescriptor = $convert.base64Decode(
+    'CiNPcmdhbml6YXRpb25HZXRTdXBwb3J0RW1haWxSZXNwb25zZRIUCgVlbWFpbBgBIAEoCVIFZW'
+    '1haWw=');
 
 @$core.Deprecated('Use organizationIdentityDescriptor instead')
 const OrganizationIdentity$json = {
@@ -1394,6 +1555,38 @@ final $typed_data.Uint8List fragmentHistoryEntryDescriptor = $convert.base64Deco
     'lhbS5hcHAudjEuQXV0aGVudGljYXRvckluZm9CJpqEngMhYnNvbjoiZWRpdGVkX2J5IiBqc29u'
     'OiJlZGl0ZWRfYnkiUghlZGl0ZWRCeQ==');
 
+@$core.Deprecated('Use fragmentErrorDescriptor instead')
+const FragmentError$json = {
+  '1': 'FragmentError',
+  '2': [
+    {'1': 'error_type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentErrorType', '10': 'errorType'},
+    {'1': 'fragment_id', '3': 2, '4': 1, '5': 9, '10': 'fragmentId'},
+    {'1': 'detail', '3': 3, '4': 1, '5': 9, '10': 'detail'},
+  ],
+};
+
+/// Descriptor for `FragmentError`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentErrorDescriptor = $convert.base64Decode(
+    'Cg1GcmFnbWVudEVycm9yEj0KCmVycm9yX3R5cGUYASABKA4yHi52aWFtLmFwcC52MS5GcmFnbW'
+    'VudEVycm9yVHlwZVIJZXJyb3JUeXBlEh8KC2ZyYWdtZW50X2lkGAIgASgJUgpmcmFnbWVudElk'
+    'EhYKBmRldGFpbBgDIAEoCVIGZGV0YWls');
+
+@$core.Deprecated('Use fragmentTreeDescriptor instead')
+const FragmentTree$json = {
+  '1': 'FragmentTree',
+  '2': [
+    {'1': 'root_fragment_id', '3': 1, '4': 1, '5': 9, '10': 'rootFragmentId'},
+    {'1': 'fragment_merge_order', '3': 2, '4': 3, '5': 9, '10': 'fragmentMergeOrder'},
+    {'1': 'error', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.FragmentError', '10': 'error'},
+  ],
+};
+
+/// Descriptor for `FragmentTree`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentTreeDescriptor = $convert.base64Decode(
+    'CgxGcmFnbWVudFRyZWUSKAoQcm9vdF9mcmFnbWVudF9pZBgBIAEoCVIOcm9vdEZyYWdtZW50SW'
+    'QSMAoUZnJhZ21lbnRfbWVyZ2Vfb3JkZXIYAiADKAlSEmZyYWdtZW50TWVyZ2VPcmRlchIwCgVl'
+    'cnJvchgDIAEoCzIaLnZpYW0uYXBwLnYxLkZyYWdtZW50RXJyb3JSBWVycm9y');
+
 @$core.Deprecated('Use listFragmentsRequestDescriptor instead')
 const ListFragmentsRequest$json = {
   '1': 'ListFragmentsRequest',
@@ -1608,13 +1801,15 @@ const ListMachineFragmentsResponse$json = {
   '1': 'ListMachineFragmentsResponse',
   '2': [
     {'1': 'fragments', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Fragment', '10': 'fragments'},
+    {'1': 'fragment_trees', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentTree', '10': 'fragmentTrees'},
   ],
 };
 
 /// Descriptor for `ListMachineFragmentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listMachineFragmentsResponseDescriptor = $convert.base64Decode(
     'ChxMaXN0TWFjaGluZUZyYWdtZW50c1Jlc3BvbnNlEjMKCWZyYWdtZW50cxgBIAMoCzIVLnZpYW'
-    '0uYXBwLnYxLkZyYWdtZW50UglmcmFnbWVudHM=');
+    '0uYXBwLnYxLkZyYWdtZW50UglmcmFnbWVudHMSQAoOZnJhZ21lbnRfdHJlZXMYAiADKAsyGS52'
+    'aWFtLmFwcC52MS5GcmFnbWVudFRyZWVSDWZyYWdtZW50VHJlZXM=');
 
 @$core.Deprecated('Use listRobotsResponseDescriptor instead')
 const ListRobotsResponse$json = {
