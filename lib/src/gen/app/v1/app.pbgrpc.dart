@@ -81,6 +81,26 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ResendOrganizationInvite',
       ($9.ResendOrganizationInviteRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.ResendOrganizationInviteResponse.fromBuffer(value));
+  static final _$enableBillingService = $grpc.ClientMethod<$9.EnableBillingServiceRequest, $9.EnableBillingServiceResponse>(
+      '/viam.app.v1.AppService/EnableBillingService',
+      ($9.EnableBillingServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.EnableBillingServiceResponse.fromBuffer(value));
+  static final _$disableBillingService = $grpc.ClientMethod<$9.DisableBillingServiceRequest, $9.DisableBillingServiceResponse>(
+      '/viam.app.v1.AppService/DisableBillingService',
+      ($9.DisableBillingServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DisableBillingServiceResponse.fromBuffer(value));
+  static final _$updateBillingService = $grpc.ClientMethod<$9.UpdateBillingServiceRequest, $9.UpdateBillingServiceResponse>(
+      '/viam.app.v1.AppService/UpdateBillingService',
+      ($9.UpdateBillingServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateBillingServiceResponse.fromBuffer(value));
+  static final _$organizationSetSupportEmail = $grpc.ClientMethod<$9.OrganizationSetSupportEmailRequest, $9.OrganizationSetSupportEmailResponse>(
+      '/viam.app.v1.AppService/OrganizationSetSupportEmail',
+      ($9.OrganizationSetSupportEmailRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.OrganizationSetSupportEmailResponse.fromBuffer(value));
+  static final _$organizationGetSupportEmail = $grpc.ClientMethod<$9.OrganizationGetSupportEmailRequest, $9.OrganizationGetSupportEmailResponse>(
+      '/viam.app.v1.AppService/OrganizationGetSupportEmail',
+      ($9.OrganizationGetSupportEmailRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.OrganizationGetSupportEmailResponse.fromBuffer(value));
   static final _$createLocation = $grpc.ClientMethod<$9.CreateLocationRequest, $9.CreateLocationResponse>(
       '/viam.app.v1.AppService/CreateLocation',
       ($9.CreateLocationRequest value) => value.writeToBuffer(),
@@ -378,6 +398,26 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$9.ResendOrganizationInviteResponse> resendOrganizationInvite($9.ResendOrganizationInviteRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$resendOrganizationInvite, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.EnableBillingServiceResponse> enableBillingService($9.EnableBillingServiceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$enableBillingService, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.DisableBillingServiceResponse> disableBillingService($9.DisableBillingServiceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$disableBillingService, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.UpdateBillingServiceResponse> updateBillingService($9.UpdateBillingServiceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateBillingService, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail($9.OrganizationSetSupportEmailRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$organizationSetSupportEmail, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.OrganizationGetSupportEmailResponse> organizationGetSupportEmail($9.OrganizationGetSupportEmailRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$organizationGetSupportEmail, request, options: options);
   }
 
   $grpc.ResponseFuture<$9.CreateLocationResponse> createLocation($9.CreateLocationRequest request, {$grpc.CallOptions? options}) {
@@ -723,6 +763,41 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $9.ResendOrganizationInviteRequest.fromBuffer(value),
         ($9.ResendOrganizationInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.EnableBillingServiceRequest, $9.EnableBillingServiceResponse>(
+        'EnableBillingService',
+        enableBillingService_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.EnableBillingServiceRequest.fromBuffer(value),
+        ($9.EnableBillingServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DisableBillingServiceRequest, $9.DisableBillingServiceResponse>(
+        'DisableBillingService',
+        disableBillingService_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.DisableBillingServiceRequest.fromBuffer(value),
+        ($9.DisableBillingServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateBillingServiceRequest, $9.UpdateBillingServiceResponse>(
+        'UpdateBillingService',
+        updateBillingService_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.UpdateBillingServiceRequest.fromBuffer(value),
+        ($9.UpdateBillingServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.OrganizationSetSupportEmailRequest, $9.OrganizationSetSupportEmailResponse>(
+        'OrganizationSetSupportEmail',
+        organizationSetSupportEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.OrganizationSetSupportEmailRequest.fromBuffer(value),
+        ($9.OrganizationSetSupportEmailResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.OrganizationGetSupportEmailRequest, $9.OrganizationGetSupportEmailResponse>(
+        'OrganizationGetSupportEmail',
+        organizationGetSupportEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.OrganizationGetSupportEmailRequest.fromBuffer(value),
+        ($9.OrganizationGetSupportEmailResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.CreateLocationRequest, $9.CreateLocationResponse>(
         'CreateLocation',
         createLocation_Pre,
@@ -1191,6 +1266,26 @@ abstract class AppServiceBase extends $grpc.Service {
     return resendOrganizationInvite(call, await request);
   }
 
+  $async.Future<$9.EnableBillingServiceResponse> enableBillingService_Pre($grpc.ServiceCall call, $async.Future<$9.EnableBillingServiceRequest> request) async {
+    return enableBillingService(call, await request);
+  }
+
+  $async.Future<$9.DisableBillingServiceResponse> disableBillingService_Pre($grpc.ServiceCall call, $async.Future<$9.DisableBillingServiceRequest> request) async {
+    return disableBillingService(call, await request);
+  }
+
+  $async.Future<$9.UpdateBillingServiceResponse> updateBillingService_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateBillingServiceRequest> request) async {
+    return updateBillingService(call, await request);
+  }
+
+  $async.Future<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail_Pre($grpc.ServiceCall call, $async.Future<$9.OrganizationSetSupportEmailRequest> request) async {
+    return organizationSetSupportEmail(call, await request);
+  }
+
+  $async.Future<$9.OrganizationGetSupportEmailResponse> organizationGetSupportEmail_Pre($grpc.ServiceCall call, $async.Future<$9.OrganizationGetSupportEmailRequest> request) async {
+    return organizationGetSupportEmail(call, await request);
+  }
+
   $async.Future<$9.CreateLocationResponse> createLocation_Pre($grpc.ServiceCall call, $async.Future<$9.CreateLocationRequest> request) async {
     return createLocation(call, await request);
   }
@@ -1434,6 +1529,11 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$9.DeleteOrganizationMemberResponse> deleteOrganizationMember($grpc.ServiceCall call, $9.DeleteOrganizationMemberRequest request);
   $async.Future<$9.DeleteOrganizationInviteResponse> deleteOrganizationInvite($grpc.ServiceCall call, $9.DeleteOrganizationInviteRequest request);
   $async.Future<$9.ResendOrganizationInviteResponse> resendOrganizationInvite($grpc.ServiceCall call, $9.ResendOrganizationInviteRequest request);
+  $async.Future<$9.EnableBillingServiceResponse> enableBillingService($grpc.ServiceCall call, $9.EnableBillingServiceRequest request);
+  $async.Future<$9.DisableBillingServiceResponse> disableBillingService($grpc.ServiceCall call, $9.DisableBillingServiceRequest request);
+  $async.Future<$9.UpdateBillingServiceResponse> updateBillingService($grpc.ServiceCall call, $9.UpdateBillingServiceRequest request);
+  $async.Future<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail($grpc.ServiceCall call, $9.OrganizationSetSupportEmailRequest request);
+  $async.Future<$9.OrganizationGetSupportEmailResponse> organizationGetSupportEmail($grpc.ServiceCall call, $9.OrganizationGetSupportEmailRequest request);
   $async.Future<$9.CreateLocationResponse> createLocation($grpc.ServiceCall call, $9.CreateLocationRequest request);
   $async.Future<$9.GetLocationResponse> getLocation($grpc.ServiceCall call, $9.GetLocationRequest request);
   $async.Future<$9.UpdateLocationResponse> updateLocation($grpc.ServiceCall call, $9.UpdateLocationRequest request);

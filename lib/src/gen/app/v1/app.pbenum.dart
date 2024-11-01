@@ -53,6 +53,27 @@ class FragmentVisibility extends $pb.ProtobufEnum {
   const FragmentVisibility._($core.int v, $core.String n) : super(v, n);
 }
 
+class FragmentErrorType extends $pb.ProtobufEnum {
+  static const FragmentErrorType FRAGMENT_ERROR_TYPE_UNSPECIFIED = FragmentErrorType._(0, _omitEnumNames ? '' : 'FRAGMENT_ERROR_TYPE_UNSPECIFIED');
+  static const FragmentErrorType FRAGMENT_ERROR_TYPE_NO_ACCESS = FragmentErrorType._(1, _omitEnumNames ? '' : 'FRAGMENT_ERROR_TYPE_NO_ACCESS');
+  static const FragmentErrorType FRAGMENT_ERROR_TYPE_NESTING_LIMIT_EXCEEDED = FragmentErrorType._(2, _omitEnumNames ? '' : 'FRAGMENT_ERROR_TYPE_NESTING_LIMIT_EXCEEDED');
+  static const FragmentErrorType FRAGMENT_ERROR_TYPE_CHILD_ID_INVALID = FragmentErrorType._(3, _omitEnumNames ? '' : 'FRAGMENT_ERROR_TYPE_CHILD_ID_INVALID');
+  static const FragmentErrorType FRAGMENT_ERROR_TYPE_CYCLE_DETECTED = FragmentErrorType._(4, _omitEnumNames ? '' : 'FRAGMENT_ERROR_TYPE_CYCLE_DETECTED');
+
+  static const $core.List<FragmentErrorType> values = <FragmentErrorType> [
+    FRAGMENT_ERROR_TYPE_UNSPECIFIED,
+    FRAGMENT_ERROR_TYPE_NO_ACCESS,
+    FRAGMENT_ERROR_TYPE_NESTING_LIMIT_EXCEEDED,
+    FRAGMENT_ERROR_TYPE_CHILD_ID_INVALID,
+    FRAGMENT_ERROR_TYPE_CYCLE_DETECTED,
+  ];
+
+  static final $core.Map<$core.int, FragmentErrorType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FragmentErrorType? valueOf($core.int value) => _byValue[value];
+
+  const FragmentErrorType._($core.int v, $core.String n) : super(v, n);
+}
+
 class RegistryItemStatus extends $pb.ProtobufEnum {
   static const RegistryItemStatus REGISTRY_ITEM_STATUS_UNSPECIFIED = RegistryItemStatus._(0, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_UNSPECIFIED');
   static const RegistryItemStatus REGISTRY_ITEM_STATUS_PUBLISHED = RegistryItemStatus._(1, _omitEnumNames ? '' : 'REGISTRY_ITEM_STATUS_PUBLISHED');
