@@ -1,11 +1,24 @@
 # Changelog
 
+## [v0.1.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.1.0) (2024-11-04)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.24...v0.1.0)
+
+**Merged pull requests:**
+
+- Automated Protos Update [\#287](https://github.com/viamrobotics/viam-flutter-sdk/pull/287) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-9180: Change TabularDataBySQL/MQL return type to raw BSON in Flutter SDK [\#286](https://github.com/viamrobotics/viam-flutter-sdk/pull/286) ([jckras](https://github.com/jckras))
+- \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
+- Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
 ## [v0.0.24](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.24) (2024-10-28)
 
 [Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.23...v0.0.24)
 
 **Merged pull requests:**
 
+- v0.0.24 [\#283](https://github.com/viamrobotics/viam-flutter-sdk/pull/283) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Fix sending session client over webrtc [\#281](https://github.com/viamrobotics/viam-flutter-sdk/pull/281) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#280](https://github.com/viamrobotics/viam-flutter-sdk/pull/280) ([github-actions[bot]](https://github.com/apps/github-actions))
 - v0.0.23 [\#279](https://github.com/viamrobotics/viam-flutter-sdk/pull/279) ([github-actions[bot]](https://github.com/apps/github-actions))
