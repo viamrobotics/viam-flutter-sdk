@@ -37,13 +37,17 @@ const ResourceName$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
     {'1': 'subtype', '3': 3, '4': 1, '5': 9, '10': 'subtype'},
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'remote_path', '3': 5, '4': 3, '5': 9, '10': 'remotePath'},
+    {'1': 'local_name', '3': 6, '4': 1, '5': 9, '10': 'localName'},
   ],
 };
 
 /// Descriptor for `ResourceName`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode(
     'CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIA'
-    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
+    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWUS'
+    'HwoLcmVtb3RlX3BhdGgYBSADKAlSCnJlbW90ZVBhdGgSHQoKbG9jYWxfbmFtZRgGIAEoCVIJbG'
+    '9jYWxOYW1l');
 
 @$core.Deprecated('Use poseDescriptor instead')
 const Pose$json = {

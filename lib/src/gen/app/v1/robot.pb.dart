@@ -883,6 +883,7 @@ class ProcessConfig extends $pb.GeneratedMessage {
     $core.int? stopSignal,
     $42.Duration? stopTimeout,
     $core.Map<$core.String, $core.String>? env,
+    $core.String? username,
   }) {
     final $result = create();
     if (id != null) {
@@ -912,6 +913,9 @@ class ProcessConfig extends $pb.GeneratedMessage {
     if (env != null) {
       $result.env.addAll(env);
     }
+    if (username != null) {
+      $result.username = username;
+    }
     return $result;
   }
   ProcessConfig._() : super();
@@ -928,6 +932,7 @@ class ProcessConfig extends $pb.GeneratedMessage {
     ..a<$core.int>(7, _omitFieldNames ? '' : 'stopSignal', $pb.PbFieldType.O3)
     ..aOM<$42.Duration>(8, _omitFieldNames ? '' : 'stopTimeout', subBuilder: $42.Duration.create)
     ..m<$core.String, $core.String>(9, _omitFieldNames ? '' : 'env', entryClassName: 'ProcessConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOS(10, _omitFieldNames ? '' : 'username')
     ..hasRequiredFields = false
   ;
 
@@ -1023,6 +1028,15 @@ class ProcessConfig extends $pb.GeneratedMessage {
   /// additional environment variables passed to the process
   @$pb.TagNumber(9)
   $core.Map<$core.String, $core.String> get env => $_getMap(8);
+
+  @$pb.TagNumber(10)
+  $core.String get username => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set username($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasUsername() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUsername() => clearField(10);
 }
 
 class ServiceConfig extends $pb.GeneratedMessage {
