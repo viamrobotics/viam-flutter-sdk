@@ -66,6 +66,8 @@
 <li><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span></li>
 <li><span class="parameter" id="-param-subtype"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">subtype</span>, </span></li>
 <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
+<li><span class="parameter" id="-param-remotePath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">remotePath</span>, </span></li>
+<li><span class="parameter" id="-param-localName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">localName</span>, </span></li>
 </ol>})
     </section>
 
@@ -80,6 +82,8 @@
   $core.String? type,
   $core.String? subtype,
   $core.String? name,
+  $core.Iterable&lt;$core.String&gt;? remotePath,
+  $core.String? localName,
 }) {
   final $result = create();
   if (namespace != null) {
@@ -93,6 +97,12 @@
   }
   if (name != null) {
     $result.name = name;
+  }
+  if (remotePath != null) {
+    $result.remotePath.addAll(remotePath);
+  }
+  if (localName != null) {
+    $result.localName = localName;
   }
   return $result;
 }</code></pre>
