@@ -6315,31 +6315,31 @@ class FragmentError extends $pb.GeneratedMessage {
   void clearDetail() => clearField(3);
 }
 
-class FragmentTree extends $pb.GeneratedMessage {
-  factory FragmentTree({
-    $core.String? rootFragmentId,
-    $core.Iterable<$core.String>? fragmentMergeOrder,
+class ResolvedFragment extends $pb.GeneratedMessage {
+  factory ResolvedFragment({
+    $core.String? fragmentId,
+    $43.Struct? resolvedConfig,
     FragmentError? error,
   }) {
     final $result = create();
-    if (rootFragmentId != null) {
-      $result.rootFragmentId = rootFragmentId;
+    if (fragmentId != null) {
+      $result.fragmentId = fragmentId;
     }
-    if (fragmentMergeOrder != null) {
-      $result.fragmentMergeOrder.addAll(fragmentMergeOrder);
+    if (resolvedConfig != null) {
+      $result.resolvedConfig = resolvedConfig;
     }
     if (error != null) {
       $result.error = error;
     }
     return $result;
   }
-  FragmentTree._() : super();
-  factory FragmentTree.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FragmentTree.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ResolvedFragment._() : super();
+  factory ResolvedFragment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResolvedFragment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentTree', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'rootFragmentId')
-    ..pPS(2, _omitFieldNames ? '' : 'fragmentMergeOrder')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResolvedFragment', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
+    ..aOM<$43.Struct>(2, _omitFieldNames ? '' : 'resolvedConfig', subBuilder: $43.Struct.create)
     ..aOM<FragmentError>(3, _omitFieldNames ? '' : 'error', subBuilder: FragmentError.create)
     ..hasRequiredFields = false
   ;
@@ -6348,34 +6348,42 @@ class FragmentTree extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  FragmentTree clone() => FragmentTree()..mergeFromMessage(this);
+  ResolvedFragment clone() => ResolvedFragment()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FragmentTree copyWith(void Function(FragmentTree) updates) => super.copyWith((message) => updates(message as FragmentTree)) as FragmentTree;
+  ResolvedFragment copyWith(void Function(ResolvedFragment) updates) => super.copyWith((message) => updates(message as ResolvedFragment)) as ResolvedFragment;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static FragmentTree create() => FragmentTree._();
-  FragmentTree createEmptyInstance() => create();
-  static $pb.PbList<FragmentTree> createRepeated() => $pb.PbList<FragmentTree>();
+  static ResolvedFragment create() => ResolvedFragment._();
+  ResolvedFragment createEmptyInstance() => create();
+  static $pb.PbList<ResolvedFragment> createRepeated() => $pb.PbList<ResolvedFragment>();
   @$core.pragma('dart2js:noInline')
-  static FragmentTree getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentTree>(create);
-  static FragmentTree? _defaultInstance;
+  static ResolvedFragment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResolvedFragment>(create);
+  static ResolvedFragment? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get rootFragmentId => $_getSZ(0);
+  $core.String get fragmentId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set rootFragmentId($core.String v) { $_setString(0, v); }
+  set fragmentId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasRootFragmentId() => $_has(0);
+  $core.bool hasFragmentId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearRootFragmentId() => clearField(1);
+  void clearFragmentId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get fragmentMergeOrder => $_getList(1);
+  $43.Struct get resolvedConfig => $_getN(1);
+  @$pb.TagNumber(2)
+  set resolvedConfig($43.Struct v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResolvedConfig() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResolvedConfig() => clearField(2);
+  @$pb.TagNumber(2)
+  $43.Struct ensureResolvedConfig() => $_ensure(1);
 
   @$pb.TagNumber(3)
   FragmentError get error => $_getN(2);
@@ -7246,14 +7254,14 @@ class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
 class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
   factory ListMachineFragmentsResponse({
     $core.Iterable<Fragment>? fragments,
-    $core.Iterable<FragmentTree>? fragmentTrees,
+    $core.Iterable<ResolvedFragment>? resolvedFragments,
   }) {
     final $result = create();
     if (fragments != null) {
       $result.fragments.addAll(fragments);
     }
-    if (fragmentTrees != null) {
-      $result.fragmentTrees.addAll(fragmentTrees);
+    if (resolvedFragments != null) {
+      $result.resolvedFragments.addAll(resolvedFragments);
     }
     return $result;
   }
@@ -7263,7 +7271,7 @@ class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineFragmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<Fragment>(1, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: Fragment.create)
-    ..pc<FragmentTree>(2, _omitFieldNames ? '' : 'fragmentTrees', $pb.PbFieldType.PM, subBuilder: FragmentTree.create)
+    ..pc<ResolvedFragment>(2, _omitFieldNames ? '' : 'resolvedFragments', $pb.PbFieldType.PM, subBuilder: ResolvedFragment.create)
     ..hasRequiredFields = false
   ;
 
@@ -7292,7 +7300,7 @@ class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
   $core.List<Fragment> get fragments => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<FragmentTree> get fragmentTrees => $_getList(1);
+  $core.List<ResolvedFragment> get resolvedFragments => $_getList(1);
 }
 
 class ListRobotsResponse extends $pb.GeneratedMessage {

@@ -25,6 +25,8 @@ class ResourceName extends $pb.GeneratedMessage {
     $core.String? type,
     $core.String? subtype,
     $core.String? name,
+    $core.Iterable<$core.String>? remotePath,
+    $core.String? localName,
   }) {
     final $result = create();
     if (namespace != null) {
@@ -39,6 +41,12 @@ class ResourceName extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
+    if (remotePath != null) {
+      $result.remotePath.addAll(remotePath);
+    }
+    if (localName != null) {
+      $result.localName = localName;
+    }
     return $result;
   }
   ResourceName._() : super();
@@ -50,6 +58,8 @@ class ResourceName extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aOS(3, _omitFieldNames ? '' : 'subtype')
     ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..pPS(5, _omitFieldNames ? '' : 'remotePath')
+    ..aOS(6, _omitFieldNames ? '' : 'localName')
     ..hasRequiredFields = false
   ;
 
@@ -109,6 +119,18 @@ class ResourceName extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get remotePath => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get localName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set localName($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLocalName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLocalName() => clearField(6);
 }
 
 ///  Pose is a combination of location and orientation.

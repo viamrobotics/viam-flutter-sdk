@@ -216,6 +216,7 @@ const ProcessConfig$json = {
     {'1': 'stop_signal', '3': 7, '4': 1, '5': 5, '10': 'stopSignal'},
     {'1': 'stop_timeout', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'stopTimeout'},
     {'1': 'env', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.ProcessConfig.EnvEntry', '10': 'env'},
+    {'1': 'username', '3': 10, '4': 1, '5': 9, '10': 'username'},
   ],
   '3': [ProcessConfig_EnvEntry$json],
 };
@@ -237,8 +238,8 @@ final $typed_data.Uint8List processConfigDescriptor = $convert.base64Decode(
     'ZVNob3QSEAoDbG9nGAYgASgIUgNsb2cSHwoLc3RvcF9zaWduYWwYByABKAVSCnN0b3BTaWduYW'
     'wSPAoMc3RvcF90aW1lb3V0GAggASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgtzdG9w'
     'VGltZW91dBI1CgNlbnYYCSADKAsyIy52aWFtLmFwcC52MS5Qcm9jZXNzQ29uZmlnLkVudkVudH'
-    'J5UgNlbnYaNgoIRW52RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZh'
-    'bHVlOgI4AQ==');
+    'J5UgNlbnYSGgoIdXNlcm5hbWUYCiABKAlSCHVzZXJuYW1lGjYKCEVudkVudHJ5EhAKA2tleRgB'
+    'IAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use serviceConfigDescriptor instead')
 const ServiceConfig$json = {
