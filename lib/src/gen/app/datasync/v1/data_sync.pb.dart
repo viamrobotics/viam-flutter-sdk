@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/any.pb.dart' as $45;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 import '../../../google/protobuf/timestamp.pb.dart' as $44;
+import '../../data/v1/data.pb.dart' as $3;
 import 'data_sync.pbenum.dart';
 
 export 'data_sync.pbenum.dart';
@@ -402,11 +403,14 @@ class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
   void clearFileId() => clearField(1);
 }
 
-/// SensorMetadata contains the time the sensor data was requested and was received.
+/// SensorMetadata contains the time the sensor data was requested and was
+/// received.
 class SensorMetadata extends $pb.GeneratedMessage {
   factory SensorMetadata({
     $44.Timestamp? timeRequested,
     $44.Timestamp? timeReceived,
+    MimeType? mimeType,
+    $3.Annotations? annotations,
   }) {
     final $result = create();
     if (timeRequested != null) {
@@ -414,6 +418,12 @@ class SensorMetadata extends $pb.GeneratedMessage {
     }
     if (timeReceived != null) {
       $result.timeReceived = timeReceived;
+    }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (annotations != null) {
+      $result.annotations = annotations;
     }
     return $result;
   }
@@ -424,6 +434,8 @@ class SensorMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SensorMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
     ..aOM<$44.Timestamp>(1, _omitFieldNames ? '' : 'timeRequested', subBuilder: $44.Timestamp.create)
     ..aOM<$44.Timestamp>(2, _omitFieldNames ? '' : 'timeReceived', subBuilder: $44.Timestamp.create)
+    ..e<MimeType>(3, _omitFieldNames ? '' : 'mimeType', $pb.PbFieldType.OE, defaultOrMaker: MimeType.MIME_TYPE_UNSPECIFIED, valueOf: MimeType.valueOf, enumValues: MimeType.values)
+    ..aOM<$3.Annotations>(4, _omitFieldNames ? '' : 'annotations', subBuilder: $3.Annotations.create)
     ..hasRequiredFields = false
   ;
 
@@ -469,6 +481,26 @@ class SensorMetadata extends $pb.GeneratedMessage {
   void clearTimeReceived() => clearField(2);
   @$pb.TagNumber(2)
   $44.Timestamp ensureTimeReceived() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  MimeType get mimeType => $_getN(2);
+  @$pb.TagNumber(3)
+  set mimeType(MimeType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMimeType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMimeType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $3.Annotations get annotations => $_getN(3);
+  @$pb.TagNumber(4)
+  set annotations($3.Annotations v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAnnotations() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAnnotations() => clearField(4);
+  @$pb.TagNumber(4)
+  $3.Annotations ensureAnnotations() => $_ensure(3);
 }
 
 enum SensorData_Data {

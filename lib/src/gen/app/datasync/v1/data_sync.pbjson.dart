@@ -13,6 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use mimeTypeDescriptor instead')
+const MimeType$json = {
+  '1': 'MimeType',
+  '2': [
+    {'1': 'MIME_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'MIME_TYPE_IMAGE_JPEG', '2': 1},
+    {'1': 'MIME_TYPE_IMAGE_PNG', '2': 2},
+    {'1': 'MIME_TYPE_APPLICATION_PCD', '2': 3},
+  ],
+};
+
+/// Descriptor for `MimeType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List mimeTypeDescriptor = $convert.base64Decode(
+    'CghNaW1lVHlwZRIZChVNSU1FX1RZUEVfVU5TUEVDSUZJRUQQABIYChRNSU1FX1RZUEVfSU1BR0'
+    'VfSlBFRxABEhcKE01JTUVfVFlQRV9JTUFHRV9QTkcQAhIdChlNSU1FX1RZUEVfQVBQTElDQVRJ'
+    'T05fUENEEAM=');
+
 @$core.Deprecated('Use dataTypeDescriptor instead')
 const DataType$json = {
   '1': 'DataType',
@@ -126,6 +143,8 @@ const SensorMetadata$json = {
   '2': [
     {'1': 'time_requested', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeRequested'},
     {'1': 'time_received', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeReceived'},
+    {'1': 'mime_type', '3': 3, '4': 1, '5': 14, '6': '.viam.app.datasync.v1.MimeType', '10': 'mimeType'},
+    {'1': 'annotations', '3': 4, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
   ],
 };
 
@@ -133,7 +152,9 @@ const SensorMetadata$json = {
 final $typed_data.Uint8List sensorMetadataDescriptor = $convert.base64Decode(
     'Cg5TZW5zb3JNZXRhZGF0YRJBCg50aW1lX3JlcXVlc3RlZBgBIAEoCzIaLmdvb2dsZS5wcm90b2'
     'J1Zi5UaW1lc3RhbXBSDXRpbWVSZXF1ZXN0ZWQSPwoNdGltZV9yZWNlaXZlZBgCIAEoCzIaLmdv'
-    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHRpbWVSZWNlaXZlZA==');
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHRpbWVSZWNlaXZlZBI7CgltaW1lX3R5cGUYAyABKA'
+    '4yHi52aWFtLmFwcC5kYXRhc3luYy52MS5NaW1lVHlwZVIIbWltZVR5cGUSPwoLYW5ub3RhdGlv'
+    'bnMYBCABKAsyHS52aWFtLmFwcC5kYXRhLnYxLkFubm90YXRpb25zUgthbm5vdGF0aW9ucw==');
 
 @$core.Deprecated('Use sensorDataDescriptor instead')
 const SensorData$json = {
