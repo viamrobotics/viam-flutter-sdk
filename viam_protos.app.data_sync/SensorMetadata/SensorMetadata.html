@@ -64,6 +64,8 @@
       
       <span class="name ">SensorMetadata</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-timeRequested"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">timeRequested</span>, </span></li>
 <li><span class="parameter" id="-param-timeReceived"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">timeReceived</span>, </span></li>
+<li><span class="parameter" id="-param-mimeType"><span class="type-annotation"><a href="../../viam_protos.app.data_sync/MimeType-class.html">MimeType</a>?</span> <span class="parameter-name">mimeType</span>, </span></li>
+<li><span class="parameter" id="-param-annotations"><span class="type-annotation"><a href="../../viam_protos.app.data/Annotations-class.html">Annotations</a>?</span> <span class="parameter-name">annotations</span>, </span></li>
 </ol>})
     </section>
 
@@ -76,6 +78,8 @@
   <pre class="language-dart"><code class="language-dart">factory SensorMetadata({
   $44.Timestamp? timeRequested,
   $44.Timestamp? timeReceived,
+  MimeType? mimeType,
+  $3.Annotations? annotations,
 }) {
   final $result = create();
   if (timeRequested != null) {
@@ -83,6 +87,12 @@
   }
   if (timeReceived != null) {
     $result.timeReceived = timeReceived;
+  }
+  if (mimeType != null) {
+    $result.mimeType = mimeType;
+  }
+  if (annotations != null) {
+    $result.annotations = annotations;
   }
   return $result;
 }</code></pre>
