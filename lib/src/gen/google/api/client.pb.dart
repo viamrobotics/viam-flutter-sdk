@@ -737,10 +737,14 @@ class PhpSettings extends $pb.GeneratedMessage {
 class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
   factory PythonSettings_ExperimentalFeatures({
     $core.bool? restAsyncIoEnabled,
+    $core.bool? protobufPythonicTypesEnabled,
   }) {
     final $result = create();
     if (restAsyncIoEnabled != null) {
       $result.restAsyncIoEnabled = restAsyncIoEnabled;
+    }
+    if (protobufPythonicTypesEnabled != null) {
+      $result.protobufPythonicTypesEnabled = protobufPythonicTypesEnabled;
     }
     return $result;
   }
@@ -750,6 +754,7 @@ class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PythonSettings.ExperimentalFeatures', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'restAsyncIoEnabled')
+    ..aOB(2, _omitFieldNames ? '' : 'protobufPythonicTypesEnabled')
     ..hasRequiredFields = false
   ;
 
@@ -786,6 +791,19 @@ class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
   $core.bool hasRestAsyncIoEnabled() => $_has(0);
   @$pb.TagNumber(1)
   void clearRestAsyncIoEnabled() => clearField(1);
+
+  /// Enables generation of protobuf code using new types that are more
+  /// Pythonic which are included in `protobuf>=5.29.x`. This feature will be
+  /// enabled by default 1 month after launching the feature in preview
+  /// packages.
+  @$pb.TagNumber(2)
+  $core.bool get protobufPythonicTypesEnabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set protobufPythonicTypesEnabled($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasProtobufPythonicTypesEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProtobufPythonicTypesEnabled() => clearField(2);
 }
 
 /// Settings for Python client libraries.

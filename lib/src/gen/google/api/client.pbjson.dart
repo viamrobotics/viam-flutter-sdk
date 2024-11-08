@@ -211,6 +211,7 @@ const PythonSettings_ExperimentalFeatures$json = {
   '1': 'ExperimentalFeatures',
   '2': [
     {'1': 'rest_async_io_enabled', '3': 1, '4': 1, '5': 8, '10': 'restAsyncIoEnabled'},
+    {'1': 'protobuf_pythonic_types_enabled', '3': 2, '4': 1, '5': 8, '10': 'protobufPythonicTypesEnabled'},
   ],
 };
 
@@ -219,8 +220,9 @@ final $typed_data.Uint8List pythonSettingsDescriptor = $convert.base64Decode(
     'Cg5QeXRob25TZXR0aW5ncxI6CgZjb21tb24YASABKAsyIi5nb29nbGUuYXBpLkNvbW1vbkxhbm'
     'd1YWdlU2V0dGluZ3NSBmNvbW1vbhJkChVleHBlcmltZW50YWxfZmVhdHVyZXMYAiABKAsyLy5n'
     'b29nbGUuYXBpLlB5dGhvblNldHRpbmdzLkV4cGVyaW1lbnRhbEZlYXR1cmVzUhRleHBlcmltZW'
-    '50YWxGZWF0dXJlcxpJChRFeHBlcmltZW50YWxGZWF0dXJlcxIxChVyZXN0X2FzeW5jX2lvX2Vu'
-    'YWJsZWQYASABKAhSEnJlc3RBc3luY0lvRW5hYmxlZA==');
+    '50YWxGZWF0dXJlcxqQAQoURXhwZXJpbWVudGFsRmVhdHVyZXMSMQoVcmVzdF9hc3luY19pb19l'
+    'bmFibGVkGAEgASgIUhJyZXN0QXN5bmNJb0VuYWJsZWQSRQofcHJvdG9idWZfcHl0aG9uaWNfdH'
+    'lwZXNfZW5hYmxlZBgCIAEoCFIccHJvdG9idWZQeXRob25pY1R5cGVzRW5hYmxlZA==');
 
 @$core.Deprecated('Use nodeSettingsDescriptor instead')
 const NodeSettings$json = {
