@@ -7,7 +7,7 @@ import 'package:grpc/src/client/call.dart';
 import 'package:grpc/src/client/common.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/data.dart';
-import 'package:viam_sdk/protos/app/data_sync.dart' hide CaptureInterval;
+import 'package:viam_sdk/protos/app/data_sync.dart' hide CaptureInterval, MimeType;
 import 'package:viam_sdk/protos/app/dataset.dart';
 import 'package:viam_sdk/src/app/data.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart';
