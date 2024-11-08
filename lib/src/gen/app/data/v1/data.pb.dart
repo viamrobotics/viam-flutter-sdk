@@ -1628,6 +1628,7 @@ class BoundingBox extends $pb.GeneratedMessage {
     $core.double? yMinNormalized,
     $core.double? xMaxNormalized,
     $core.double? yMaxNormalized,
+    $core.double? confidence,
   }) {
     final $result = create();
     if (id != null) {
@@ -1648,6 +1649,9 @@ class BoundingBox extends $pb.GeneratedMessage {
     if (yMaxNormalized != null) {
       $result.yMaxNormalized = yMaxNormalized;
     }
+    if (confidence != null) {
+      $result.confidence = confidence;
+    }
     return $result;
   }
   BoundingBox._() : super();
@@ -1661,6 +1665,7 @@ class BoundingBox extends $pb.GeneratedMessage {
     ..a<$core.double>(4, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -1738,16 +1743,96 @@ class BoundingBox extends $pb.GeneratedMessage {
   $core.bool hasYMaxNormalized() => $_has(5);
   @$pb.TagNumber(6)
   void clearYMaxNormalized() => clearField(6);
+
+  /// confidence is an optional range from 0 - 1
+  @$pb.TagNumber(7)
+  $core.double get confidence => $_getN(6);
+  @$pb.TagNumber(7)
+  set confidence($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasConfidence() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConfidence() => clearField(7);
+}
+
+/// Classification represents a confidence score with a label.
+class Classification extends $pb.GeneratedMessage {
+  factory Classification({
+    $core.String? label,
+    $core.double? confidence,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (confidence != null) {
+      $result.confidence = confidence;
+    }
+    return $result;
+  }
+  Classification._() : super();
+  factory Classification.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Classification.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Classification', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Classification clone() => Classification()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Classification copyWith(void Function(Classification) updates) => super.copyWith((message) => updates(message as Classification)) as Classification;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Classification create() => Classification._();
+  Classification createEmptyInstance() => create();
+  static $pb.PbList<Classification> createRepeated() => $pb.PbList<Classification>();
+  @$core.pragma('dart2js:noInline')
+  static Classification getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Classification>(create);
+  static Classification? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => clearField(1);
+
+  /// confidence is an optional range from 0 - 1
+  @$pb.TagNumber(2)
+  $core.double get confidence => $_getN(1);
+  @$pb.TagNumber(2)
+  set confidence($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasConfidence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConfidence() => clearField(2);
 }
 
 /// Annotations are data annotations used for machine learning.
 class Annotations extends $pb.GeneratedMessage {
   factory Annotations({
     $core.Iterable<BoundingBox>? bboxes,
+    $core.Iterable<Classification>? classifications,
   }) {
     final $result = create();
     if (bboxes != null) {
       $result.bboxes.addAll(bboxes);
+    }
+    if (classifications != null) {
+      $result.classifications.addAll(classifications);
     }
     return $result;
   }
@@ -1757,6 +1842,7 @@ class Annotations extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Annotations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<BoundingBox>(1, _omitFieldNames ? '' : 'bboxes', $pb.PbFieldType.PM, subBuilder: BoundingBox.create)
+    ..pc<Classification>(2, _omitFieldNames ? '' : 'classifications', $pb.PbFieldType.PM, subBuilder: Classification.create)
     ..hasRequiredFields = false
   ;
 
@@ -1783,6 +1869,9 @@ class Annotations extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<BoundingBox> get bboxes => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<Classification> get classifications => $_getList(1);
 }
 
 /// BinaryMetadata is the metadata associated with binary data.

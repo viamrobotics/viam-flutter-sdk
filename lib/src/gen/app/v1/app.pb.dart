@@ -2405,7 +2405,6 @@ class UpdateBillingServiceRequest extends $pb.GeneratedMessage {
   factory UpdateBillingServiceRequest({
     $core.String? orgId,
     BillingAddress? billingAddress,
-    $core.String? billingSupportEmail,
   }) {
     final $result = create();
     if (orgId != null) {
@@ -2413,9 +2412,6 @@ class UpdateBillingServiceRequest extends $pb.GeneratedMessage {
     }
     if (billingAddress != null) {
       $result.billingAddress = billingAddress;
-    }
-    if (billingSupportEmail != null) {
-      $result.billingSupportEmail = billingSupportEmail;
     }
     return $result;
   }
@@ -2426,7 +2422,6 @@ class UpdateBillingServiceRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateBillingServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'orgId')
     ..aOM<BillingAddress>(2, _omitFieldNames ? '' : 'billingAddress', subBuilder: BillingAddress.create)
-    ..aOS(3, _omitFieldNames ? '' : 'billingSupportEmail')
     ..hasRequiredFields = false
   ;
 
@@ -2470,15 +2465,6 @@ class UpdateBillingServiceRequest extends $pb.GeneratedMessage {
   void clearBillingAddress() => clearField(2);
   @$pb.TagNumber(2)
   BillingAddress ensureBillingAddress() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.String get billingSupportEmail => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set billingSupportEmail($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasBillingSupportEmail() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearBillingSupportEmail() => clearField(3);
 }
 
 class UpdateBillingServiceResponse extends $pb.GeneratedMessage {

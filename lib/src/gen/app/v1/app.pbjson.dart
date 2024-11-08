@@ -650,7 +650,6 @@ const UpdateBillingServiceRequest$json = {
   '2': [
     {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
     {'1': 'billing_address', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.BillingAddress', '10': 'billingAddress'},
-    {'1': 'billing_support_email', '3': 3, '4': 1, '5': 9, '10': 'billingSupportEmail'},
   ],
 };
 
@@ -658,8 +657,7 @@ const UpdateBillingServiceRequest$json = {
 final $typed_data.Uint8List updateBillingServiceRequestDescriptor = $convert.base64Decode(
     'ChtVcGRhdGVCaWxsaW5nU2VydmljZVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBJECg'
     '9iaWxsaW5nX2FkZHJlc3MYAiABKAsyGy52aWFtLmFwcC52MS5CaWxsaW5nQWRkcmVzc1IOYmls'
-    'bGluZ0FkZHJlc3MSMgoVYmlsbGluZ19zdXBwb3J0X2VtYWlsGAMgASgJUhNiaWxsaW5nU3VwcG'
-    '9ydEVtYWls');
+    'bGluZ0FkZHJlc3M=');
 
 @$core.Deprecated('Use updateBillingServiceResponseDescriptor instead')
 const UpdateBillingServiceResponse$json = {

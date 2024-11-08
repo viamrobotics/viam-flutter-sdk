@@ -402,6 +402,10 @@ const BoundingBox$json = {
     {'1': 'y_min_normalized', '3': 4, '4': 1, '5': 1, '10': 'yMinNormalized'},
     {'1': 'x_max_normalized', '3': 5, '4': 1, '5': 1, '10': 'xMaxNormalized'},
     {'1': 'y_max_normalized', '3': 6, '4': 1, '5': 1, '10': 'yMaxNormalized'},
+    {'1': 'confidence', '3': 7, '4': 1, '5': 1, '9': 0, '10': 'confidence', '17': true},
+  ],
+  '8': [
+    {'1': '_confidence'},
   ],
 };
 
@@ -410,20 +414,40 @@ final $typed_data.Uint8List boundingBoxDescriptor = $convert.base64Decode(
     'CgtCb3VuZGluZ0JveBIOCgJpZBgBIAEoCVICaWQSFAoFbGFiZWwYAiABKAlSBWxhYmVsEigKEH'
     'hfbWluX25vcm1hbGl6ZWQYAyABKAFSDnhNaW5Ob3JtYWxpemVkEigKEHlfbWluX25vcm1hbGl6'
     'ZWQYBCABKAFSDnlNaW5Ob3JtYWxpemVkEigKEHhfbWF4X25vcm1hbGl6ZWQYBSABKAFSDnhNYX'
-    'hOb3JtYWxpemVkEigKEHlfbWF4X25vcm1hbGl6ZWQYBiABKAFSDnlNYXhOb3JtYWxpemVk');
+    'hOb3JtYWxpemVkEigKEHlfbWF4X25vcm1hbGl6ZWQYBiABKAFSDnlNYXhOb3JtYWxpemVkEiMK'
+    'CmNvbmZpZGVuY2UYByABKAFIAFIKY29uZmlkZW5jZYgBAUINCgtfY29uZmlkZW5jZQ==');
+
+@$core.Deprecated('Use classificationDescriptor instead')
+const Classification$json = {
+  '1': 'Classification',
+  '2': [
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'confidence', '3': 2, '4': 1, '5': 1, '9': 0, '10': 'confidence', '17': true},
+  ],
+  '8': [
+    {'1': '_confidence'},
+  ],
+};
+
+/// Descriptor for `Classification`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List classificationDescriptor = $convert.base64Decode(
+    'Cg5DbGFzc2lmaWNhdGlvbhIUCgVsYWJlbBgBIAEoCVIFbGFiZWwSIwoKY29uZmlkZW5jZRgCIA'
+    'EoAUgAUgpjb25maWRlbmNliAEBQg0KC19jb25maWRlbmNl');
 
 @$core.Deprecated('Use annotationsDescriptor instead')
 const Annotations$json = {
   '1': 'Annotations',
   '2': [
     {'1': 'bboxes', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.BoundingBox', '10': 'bboxes'},
+    {'1': 'classifications', '3': 2, '4': 3, '5': 11, '6': '.viam.app.data.v1.Classification', '10': 'classifications'},
   ],
 };
 
 /// Descriptor for `Annotations`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List annotationsDescriptor = $convert.base64Decode(
     'CgtBbm5vdGF0aW9ucxI1CgZiYm94ZXMYASADKAsyHS52aWFtLmFwcC5kYXRhLnYxLkJvdW5kaW'
-    '5nQm94UgZiYm94ZXM=');
+    '5nQm94UgZiYm94ZXMSSgoPY2xhc3NpZmljYXRpb25zGAIgAygLMiAudmlhbS5hcHAuZGF0YS52'
+    'MS5DbGFzc2lmaWNhdGlvblIPY2xhc3NpZmljYXRpb25z');
 
 @$core.Deprecated('Use binaryMetadataDescriptor instead')
 const BinaryMetadata$json = {

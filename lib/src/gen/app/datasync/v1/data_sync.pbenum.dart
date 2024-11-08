@@ -13,6 +13,25 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class MimeType extends $pb.ProtobufEnum {
+  static const MimeType MIME_TYPE_UNSPECIFIED = MimeType._(0, _omitEnumNames ? '' : 'MIME_TYPE_UNSPECIFIED');
+  static const MimeType MIME_TYPE_IMAGE_JPEG = MimeType._(1, _omitEnumNames ? '' : 'MIME_TYPE_IMAGE_JPEG');
+  static const MimeType MIME_TYPE_IMAGE_PNG = MimeType._(2, _omitEnumNames ? '' : 'MIME_TYPE_IMAGE_PNG');
+  static const MimeType MIME_TYPE_APPLICATION_PCD = MimeType._(3, _omitEnumNames ? '' : 'MIME_TYPE_APPLICATION_PCD');
+
+  static const $core.List<MimeType> values = <MimeType> [
+    MIME_TYPE_UNSPECIFIED,
+    MIME_TYPE_IMAGE_JPEG,
+    MIME_TYPE_IMAGE_PNG,
+    MIME_TYPE_APPLICATION_PCD,
+  ];
+
+  static final $core.Map<$core.int, MimeType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static MimeType? valueOf($core.int value) => _byValue[value];
+
+  const MimeType._($core.int v, $core.String n) : super(v, n);
+}
+
 /// DataType specifies the type of data uploaded.
 class DataType extends $pb.ProtobufEnum {
   static const DataType DATA_TYPE_UNSPECIFIED = DataType._(0, _omitEnumNames ? '' : 'DATA_TYPE_UNSPECIFIED');
