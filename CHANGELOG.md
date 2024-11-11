@@ -1,11 +1,15 @@
 # Changelog
 
-## [v0.0.25](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.25) (2024-11-04)
+## [v0.0.26](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.26) (2024-11-11)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.25...v0.0.25)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.25...v0.0.26)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#292](https://github.com/viamrobotics/viam-flutter-sdk/pull/292) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#291](https://github.com/viamrobotics/viam-flutter-sdk/pull/291) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#290](https://github.com/viamrobotics/viam-flutter-sdk/pull/290) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.0.25 [\#289](https://github.com/viamrobotics/viam-flutter-sdk/pull/289) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#287](https://github.com/viamrobotics/viam-flutter-sdk/pull/287) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-9180: Change TabularDataBySQL/MQL return type to raw BSON in Flutter SDK [\#286](https://github.com/viamrobotics/viam-flutter-sdk/pull/286) ([jckras](https://github.com/jckras))
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
