@@ -208,6 +208,7 @@ void main() {
           'geopoint': Value(structValue: {'_type': 'geopoint', 'lat': 12.3, 'lng': 45.6}.toStruct()),
           'angular_velocity': Value(structValue: {'_type': 'angular_velocity', 'x': 1, 'y': 2, 'z': 3}.toStruct()),
           'euler': Value(structValue: {'_type': 'euler', 'roll': 1, 'pitch': 2, 'yaw': 3}.toStruct()),
+          'no_change': Value(numberValue: 182),
         };
         final response = GetReadingsResponse(readings: input);
         final output = response.toPrimitive();
@@ -215,6 +216,7 @@ void main() {
         expect(output['geopoint'], GeoPoint(latitude: 12.3, longitude: 45.6));
         expect(output['angular_velocity'], Vector3(x: 1, y: 2, z: 3));
         expect(output['euler'], Orientation_EulerAngles(roll: 1, pitch: 2, yaw: 3));
+        expect(output['no_change'], 182);
       });
     });
   });
