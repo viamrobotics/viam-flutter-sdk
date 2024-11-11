@@ -2,6 +2,8 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:viam_sdk/protos/app/robot.dart';
+import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/utils.dart';
 
@@ -196,6 +198,23 @@ void main() {
           final value = {'foo': 'bar'}.toValue();
           expect(value.structValue.fields.values.first.stringValue, 'bar');
         }
+      });
+    });
+
+    group('GetReadingsResponseUtils', () {
+      test('toPrimitive', () {
+        final input = {
+          'velocity': Value(structValue: {'_type': 'vector3', 'x': 1, 'y': 2, 'z': 3}.toStruct()),
+          'geopoint': Value(structValue: {'_type': 'geopoint', 'lat': 12.3, 'lng': 45.6}.toStruct()),
+          'angular_velocity': Value(structValue: {'_type': 'angular_velocity', 'x': 1, 'y': 2, 'z': 3}.toStruct()),
+          'euler': Value(structValue: {'_type': 'euler', 'roll': 1, 'pitch': 2, 'yaw': 3}.toStruct()),
+        };
+        final response = GetReadingsResponse(readings: input);
+        final output = response.toPrimitive();
+        expect(output['velocity'], Vector3(x: 1, y: 2, z: 3));
+        expect(output['geopoint'], GeoPoint(latitude: 12.3, longitude: 45.6));
+        expect(output['angular_velocity'], Vector3(x: 1, y: 2, z: 3));
+        expect(output['euler'], Orientation_EulerAngles(roll: 1, pitch: 2, yaw: 3));
       });
     });
   });
