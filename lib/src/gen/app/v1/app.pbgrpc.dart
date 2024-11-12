@@ -93,6 +93,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/UpdateBillingService',
       ($9.UpdateBillingServiceRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.UpdateBillingServiceResponse.fromBuffer(value));
+  static final _$getBillingServiceConfig = $grpc.ClientMethod<$9.GetBillingServiceConfigRequest, $9.GetBillingServiceConfigResponse>(
+      '/viam.app.v1.AppService/GetBillingServiceConfig',
+      ($9.GetBillingServiceConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetBillingServiceConfigResponse.fromBuffer(value));
   static final _$organizationSetSupportEmail = $grpc.ClientMethod<$9.OrganizationSetSupportEmailRequest, $9.OrganizationSetSupportEmailResponse>(
       '/viam.app.v1.AppService/OrganizationSetSupportEmail',
       ($9.OrganizationSetSupportEmailRequest value) => value.writeToBuffer(),
@@ -410,6 +414,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$9.UpdateBillingServiceResponse> updateBillingService($9.UpdateBillingServiceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateBillingService, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.GetBillingServiceConfigResponse> getBillingServiceConfig($9.GetBillingServiceConfigRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getBillingServiceConfig, request, options: options);
   }
 
   $grpc.ResponseFuture<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail($9.OrganizationSetSupportEmailRequest request, {$grpc.CallOptions? options}) {
@@ -784,6 +792,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $9.UpdateBillingServiceRequest.fromBuffer(value),
         ($9.UpdateBillingServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetBillingServiceConfigRequest, $9.GetBillingServiceConfigResponse>(
+        'GetBillingServiceConfig',
+        getBillingServiceConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.GetBillingServiceConfigRequest.fromBuffer(value),
+        ($9.GetBillingServiceConfigResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.OrganizationSetSupportEmailRequest, $9.OrganizationSetSupportEmailResponse>(
         'OrganizationSetSupportEmail',
         organizationSetSupportEmail_Pre,
@@ -1278,6 +1293,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return updateBillingService(call, await request);
   }
 
+  $async.Future<$9.GetBillingServiceConfigResponse> getBillingServiceConfig_Pre($grpc.ServiceCall call, $async.Future<$9.GetBillingServiceConfigRequest> request) async {
+    return getBillingServiceConfig(call, await request);
+  }
+
   $async.Future<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail_Pre($grpc.ServiceCall call, $async.Future<$9.OrganizationSetSupportEmailRequest> request) async {
     return organizationSetSupportEmail(call, await request);
   }
@@ -1532,6 +1551,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$9.EnableBillingServiceResponse> enableBillingService($grpc.ServiceCall call, $9.EnableBillingServiceRequest request);
   $async.Future<$9.DisableBillingServiceResponse> disableBillingService($grpc.ServiceCall call, $9.DisableBillingServiceRequest request);
   $async.Future<$9.UpdateBillingServiceResponse> updateBillingService($grpc.ServiceCall call, $9.UpdateBillingServiceRequest request);
+  $async.Future<$9.GetBillingServiceConfigResponse> getBillingServiceConfig($grpc.ServiceCall call, $9.GetBillingServiceConfigRequest request);
   $async.Future<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail($grpc.ServiceCall call, $9.OrganizationSetSupportEmailRequest request);
   $async.Future<$9.OrganizationGetSupportEmailResponse> organizationGetSupportEmail($grpc.ServiceCall call, $9.OrganizationGetSupportEmailRequest request);
   $async.Future<$9.CreateLocationResponse> createLocation($grpc.ServiceCall call, $9.CreateLocationRequest request);

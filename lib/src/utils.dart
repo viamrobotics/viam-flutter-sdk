@@ -94,7 +94,7 @@ grpc_duration.Duration durationToProto(Duration duration) {
 
 String getVersionMetadata() {
   const String sdkVersion = 'v0.0.26';
-  const String apiTag = 'v0.1.360';
+  const String apiTag = 'v0.1.361';
 
   return 'flutter;$sdkVersion;$apiTag';
 }

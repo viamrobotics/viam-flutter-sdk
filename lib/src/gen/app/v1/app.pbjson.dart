@@ -668,6 +668,37 @@ const UpdateBillingServiceResponse$json = {
 final $typed_data.Uint8List updateBillingServiceResponseDescriptor = $convert.base64Decode(
     'ChxVcGRhdGVCaWxsaW5nU2VydmljZVJlc3BvbnNl');
 
+@$core.Deprecated('Use getBillingServiceConfigRequestDescriptor instead')
+const GetBillingServiceConfigRequest$json = {
+  '1': 'GetBillingServiceConfigRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `GetBillingServiceConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBillingServiceConfigRequestDescriptor = $convert.base64Decode(
+    'Ch5HZXRCaWxsaW5nU2VydmljZUNvbmZpZ1JlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA'
+    '==');
+
+@$core.Deprecated('Use getBillingServiceConfigResponseDescriptor instead')
+const GetBillingServiceConfigResponse$json = {
+  '1': 'GetBillingServiceConfigResponse',
+  '2': [
+    {'1': 'billing_address', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.BillingAddress', '10': 'billingAddress'},
+    {'1': 'support_email', '3': 2, '4': 1, '5': 9, '10': 'supportEmail'},
+    {'1': 'logo_url', '3': 3, '4': 1, '5': 9, '10': 'logoUrl'},
+    {'1': 'billing_dashboard_url', '3': 4, '4': 1, '5': 9, '10': 'billingDashboardUrl'},
+  ],
+};
+
+/// Descriptor for `GetBillingServiceConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBillingServiceConfigResponseDescriptor = $convert.base64Decode(
+    'Ch9HZXRCaWxsaW5nU2VydmljZUNvbmZpZ1Jlc3BvbnNlEkQKD2JpbGxpbmdfYWRkcmVzcxgBIA'
+    'EoCzIbLnZpYW0uYXBwLnYxLkJpbGxpbmdBZGRyZXNzUg5iaWxsaW5nQWRkcmVzcxIjCg1zdXBw'
+    'b3J0X2VtYWlsGAIgASgJUgxzdXBwb3J0RW1haWwSGQoIbG9nb191cmwYAyABKAlSB2xvZ29Vcm'
+    'wSMgoVYmlsbGluZ19kYXNoYm9hcmRfdXJsGAQgASgJUhNiaWxsaW5nRGFzaGJvYXJkVXJs');
+
 @$core.Deprecated('Use disableBillingServiceRequestDescriptor instead')
 const DisableBillingServiceRequest$json = {
   '1': 'DisableBillingServiceRequest',

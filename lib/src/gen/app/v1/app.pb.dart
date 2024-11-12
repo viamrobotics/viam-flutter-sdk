@@ -2499,6 +2499,150 @@ class UpdateBillingServiceResponse extends $pb.GeneratedMessage {
   static UpdateBillingServiceResponse? _defaultInstance;
 }
 
+class GetBillingServiceConfigRequest extends $pb.GeneratedMessage {
+  factory GetBillingServiceConfigRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  GetBillingServiceConfigRequest._() : super();
+  factory GetBillingServiceConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetBillingServiceConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBillingServiceConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetBillingServiceConfigRequest clone() => GetBillingServiceConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetBillingServiceConfigRequest copyWith(void Function(GetBillingServiceConfigRequest) updates) => super.copyWith((message) => updates(message as GetBillingServiceConfigRequest)) as GetBillingServiceConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetBillingServiceConfigRequest create() => GetBillingServiceConfigRequest._();
+  GetBillingServiceConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<GetBillingServiceConfigRequest> createRepeated() => $pb.PbList<GetBillingServiceConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetBillingServiceConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBillingServiceConfigRequest>(create);
+  static GetBillingServiceConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
+class GetBillingServiceConfigResponse extends $pb.GeneratedMessage {
+  factory GetBillingServiceConfigResponse({
+    BillingAddress? billingAddress,
+    $core.String? supportEmail,
+    $core.String? logoUrl,
+    $core.String? billingDashboardUrl,
+  }) {
+    final $result = create();
+    if (billingAddress != null) {
+      $result.billingAddress = billingAddress;
+    }
+    if (supportEmail != null) {
+      $result.supportEmail = supportEmail;
+    }
+    if (logoUrl != null) {
+      $result.logoUrl = logoUrl;
+    }
+    if (billingDashboardUrl != null) {
+      $result.billingDashboardUrl = billingDashboardUrl;
+    }
+    return $result;
+  }
+  GetBillingServiceConfigResponse._() : super();
+  factory GetBillingServiceConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetBillingServiceConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBillingServiceConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<BillingAddress>(1, _omitFieldNames ? '' : 'billingAddress', subBuilder: BillingAddress.create)
+    ..aOS(2, _omitFieldNames ? '' : 'supportEmail')
+    ..aOS(3, _omitFieldNames ? '' : 'logoUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'billingDashboardUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetBillingServiceConfigResponse clone() => GetBillingServiceConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetBillingServiceConfigResponse copyWith(void Function(GetBillingServiceConfigResponse) updates) => super.copyWith((message) => updates(message as GetBillingServiceConfigResponse)) as GetBillingServiceConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetBillingServiceConfigResponse create() => GetBillingServiceConfigResponse._();
+  GetBillingServiceConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<GetBillingServiceConfigResponse> createRepeated() => $pb.PbList<GetBillingServiceConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetBillingServiceConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBillingServiceConfigResponse>(create);
+  static GetBillingServiceConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  BillingAddress get billingAddress => $_getN(0);
+  @$pb.TagNumber(1)
+  set billingAddress(BillingAddress v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBillingAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBillingAddress() => clearField(1);
+  @$pb.TagNumber(1)
+  BillingAddress ensureBillingAddress() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get supportEmail => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set supportEmail($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSupportEmail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSupportEmail() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get logoUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set logoUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLogoUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLogoUrl() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get billingDashboardUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set billingDashboardUrl($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBillingDashboardUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBillingDashboardUrl() => clearField(4);
+}
+
 class DisableBillingServiceRequest extends $pb.GeneratedMessage {
   factory DisableBillingServiceRequest({
     $core.String? orgId,
