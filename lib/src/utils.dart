@@ -2,6 +2,8 @@ import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:logger/logger.dart';
 
+import 'gen/app/v1/robot.pb.dart';
+import 'gen/common/v1/common.pb.dart';
 import 'gen/google/protobuf/duration.pb.dart' as grpc_duration;
 import 'gen/google/protobuf/struct.pb.dart';
 
@@ -90,6 +92,27 @@ grpc_duration.Duration durationToProto(Duration duration) {
   return grpc_duration.Duration()
     ..seconds = Int64(duration.inSeconds)
     ..nanos = micros * 1000;
+}
+
+extension GetReadingsResponseUtils on GetReadingsResponse {
+  Map<String, dynamic> toPrimitive() {
+    return readings.map((key, value) => MapEntry(key, value.toPrimitive())).map((key, value) {
+      if (value is Map<String, dynamic> && value.keys.contains('_type')) {
+        dynamic primValue;
+        switch (value['_type']) {
+          case 'euler':
+            primValue = Orientation_EulerAngles(roll: value['roll'], pitch: value['pitch'], yaw: value['yaw']);
+          case 'vector3':
+          case 'angular_velocity':
+            primValue = Vector3(x: value['x'], y: value['y'], z: value['z']);
+          case 'geopoint':
+            primValue = GeoPoint(latitude: value['lat'], longitude: value['lng']);
+        }
+        return MapEntry(key, primValue);
+      }
+      return MapEntry(key, value);
+    });
+  }
 }
 
 String getVersionMetadata() {

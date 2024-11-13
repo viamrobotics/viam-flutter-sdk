@@ -27,7 +27,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getReadings(request);
-    return response.readings.map((key, value) => MapEntry(key, value.toPrimitive()));
+    return response.toPrimitive();
   }
 
   @override
