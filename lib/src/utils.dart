@@ -103,7 +103,6 @@ extension GetReadingsResponseUtils on GetReadingsResponse {
           case 'euler':
             primValue = Orientation_EulerAngles(roll: value['roll'], pitch: value['pitch'], yaw: value['yaw']);
           case 'vector3':
-            primValue = Vector3(x: value['x'], y: value['y'], z: value['z']);
           case 'angular_velocity':
             primValue = Vector3(x: value['x'], y: value['y'], z: value['z']);
           case 'geopoint':
