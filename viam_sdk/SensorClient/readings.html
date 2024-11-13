@@ -93,7 +93,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? e
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
   final response = await client.getReadings(request);
-  return response.readings.map((key, value) =&gt; MapEntry(key, value.toPrimitive()));
+  return response.toPrimitive();
 }</code></pre>
 </section>
 
