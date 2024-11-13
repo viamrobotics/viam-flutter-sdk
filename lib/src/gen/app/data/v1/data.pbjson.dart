@@ -252,15 +252,18 @@ final $typed_data.Uint8List tabularDataBySQLRequestDescriptor = $convert.base64D
 const TabularDataBySQLResponse$json = {
   '1': 'TabularDataBySQLResponse',
   '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
     {'1': 'raw_data', '3': 2, '4': 3, '5': 12, '10': 'rawData'},
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['data'],
 };
 
 /// Descriptor for `TabularDataBySQLResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tabularDataBySQLResponseDescriptor = $convert.base64Decode(
-    'ChhUYWJ1bGFyRGF0YUJ5U1FMUmVzcG9uc2USKwoEZGF0YRgBIAMoCzIXLmdvb2dsZS5wcm90b2'
-    'J1Zi5TdHJ1Y3RSBGRhdGESGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGE=');
+    'ChhUYWJ1bGFyRGF0YUJ5U1FMUmVzcG9uc2USGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGFKBA'
+    'gBEAJSBGRhdGE=');
 
 @$core.Deprecated('Use tabularDataByMQLRequestDescriptor instead')
 const TabularDataByMQLRequest$json = {
@@ -285,15 +288,18 @@ final $typed_data.Uint8List tabularDataByMQLRequestDescriptor = $convert.base64D
 const TabularDataByMQLResponse$json = {
   '1': 'TabularDataByMQLResponse',
   '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
     {'1': 'raw_data', '3': 2, '4': 3, '5': 12, '10': 'rawData'},
   ],
+  '9': [
+    {'1': 1, '2': 2},
+  ],
+  '10': ['data'],
 };
 
 /// Descriptor for `TabularDataByMQLResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tabularDataByMQLResponseDescriptor = $convert.base64Decode(
-    'ChhUYWJ1bGFyRGF0YUJ5TVFMUmVzcG9uc2USKwoEZGF0YRgBIAMoCzIXLmdvb2dsZS5wcm90b2'
-    'J1Zi5TdHJ1Y3RSBGRhdGESGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGE=');
+    'ChhUYWJ1bGFyRGF0YUJ5TVFMUmVzcG9uc2USGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGFKBA'
+    'gBEAJSBGRhdGE=');
 
 @$core.Deprecated('Use binaryDataDescriptor instead')
 const BinaryData$json = {
