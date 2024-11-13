@@ -81,6 +81,7 @@ class SessionsClient implements ResourceRPCClient {
 
   /// Reset the current session and re-obtain metadata
   void reset() {
+    if (!_enabled) return;
     _logger.d('Resetting current session with ID: $_currentId');
     _currentId = '';
     _supported = null;
@@ -90,6 +91,7 @@ class SessionsClient implements ResourceRPCClient {
 
   /// Stop the session client and heartbeat tasks
   void stop() {
+    if (!_enabled) return;
     _logger.d('Stopping SessionClient');
     _currentId = '';
     _supported = null;
@@ -101,6 +103,7 @@ class SessionsClient implements ResourceRPCClient {
   }
 
   Future<void> _heartbeatTask() async {
+    if (!_enabled) return;
     while (_supported == true) {
       await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
@@ -108,6 +111,7 @@ class SessionsClient implements ResourceRPCClient {
   }
 
   Future<void> _heartbeatTick() async {
+    if (!_enabled) return;
     if (_supported == false) return;
 
     final request = SendSessionHeartbeatRequest()..id = _currentId;
