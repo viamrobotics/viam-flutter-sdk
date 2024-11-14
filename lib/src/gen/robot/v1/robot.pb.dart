@@ -2585,6 +2585,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
     $44.Timestamp? lastUpdated,
     $core.String? revision,
     $core.String? error,
+    GetCloudMetadataResponse? cloudMetadata,
   }) {
     final $result = create();
     if (name != null) {
@@ -2602,6 +2603,9 @@ class ResourceStatus extends $pb.GeneratedMessage {
     if (error != null) {
       $result.error = error;
     }
+    if (cloudMetadata != null) {
+      $result.cloudMetadata = cloudMetadata;
+    }
     return $result;
   }
   ResourceStatus._() : super();
@@ -2614,6 +2618,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
     ..aOM<$44.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $44.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'revision')
     ..aOS(5, _omitFieldNames ? '' : 'error')
+    ..aOM<GetCloudMetadataResponse>(6, _omitFieldNames ? '' : 'cloudMetadata', subBuilder: GetCloudMetadataResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2692,6 +2697,18 @@ class ResourceStatus extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(4);
   @$pb.TagNumber(5)
   void clearError() => clearField(5);
+
+  /// infomation about resource orgID, locationID and partID
+  @$pb.TagNumber(6)
+  GetCloudMetadataResponse get cloudMetadata => $_getN(5);
+  @$pb.TagNumber(6)
+  set cloudMetadata(GetCloudMetadataResponse v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCloudMetadata() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCloudMetadata() => clearField(6);
+  @$pb.TagNumber(6)
+  GetCloudMetadataResponse ensureCloudMetadata() => $_ensure(5);
 }
 
 class ConfigStatus extends $pb.GeneratedMessage {

@@ -1007,13 +1007,9 @@ class TabularDataBySQLRequest extends $pb.GeneratedMessage {
 /// TabularDataBySQLResponse provides unified tabular data and metadata, queried with SQL.
 class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   factory TabularDataBySQLResponse({
-    $core.Iterable<$43.Struct>? data,
     $core.Iterable<$core.List<$core.int>>? rawData,
   }) {
     final $result = create();
-    if (data != null) {
-      $result.data.addAll(data);
-    }
     if (rawData != null) {
       $result.rawData.addAll(rawData);
     }
@@ -1024,7 +1020,6 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   factory TabularDataBySQLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataBySQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<$43.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $43.Struct.create)
     ..p<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'rawData', $pb.PbFieldType.PY)
     ..hasRequiredFields = false
   ;
@@ -1050,11 +1045,8 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   static TabularDataBySQLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataBySQLResponse>(create);
   static TabularDataBySQLResponse? _defaultInstance;
 
-  @$pb.TagNumber(1)
-  $core.List<$43.Struct> get data => $_getList(0);
-
   @$pb.TagNumber(2)
-  $core.List<$core.List<$core.int>> get rawData => $_getList(1);
+  $core.List<$core.List<$core.int>> get rawData => $_getList(0);
 }
 
 /// TabularDataByMQLRequest requests tabular data using an MQL query.
@@ -1122,13 +1114,9 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
 class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   factory TabularDataByMQLResponse({
-    $core.Iterable<$43.Struct>? data,
     $core.Iterable<$core.List<$core.int>>? rawData,
   }) {
     final $result = create();
-    if (data != null) {
-      $result.data.addAll(data);
-    }
     if (rawData != null) {
       $result.rawData.addAll(rawData);
     }
@@ -1139,7 +1127,6 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   factory TabularDataByMQLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..pc<$43.Struct>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.PM, subBuilder: $43.Struct.create)
     ..p<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'rawData', $pb.PbFieldType.PY)
     ..hasRequiredFields = false
   ;
@@ -1165,11 +1152,8 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   static TabularDataByMQLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataByMQLResponse>(create);
   static TabularDataByMQLResponse? _defaultInstance;
 
-  @$pb.TagNumber(1)
-  $core.List<$43.Struct> get data => $_getList(0);
-
   @$pb.TagNumber(2)
-  $core.List<$core.List<$core.int>> get rawData => $_getList(1);
+  $core.List<$core.List<$core.int>> get rawData => $_getList(0);
 }
 
 /// BinaryData contains data and metadata associated with binary data.

@@ -681,8 +681,12 @@ const ResourceStatus$json = {
     {'1': 'last_updated', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
     {'1': 'revision', '3': 4, '4': 1, '5': 9, '10': 'revision'},
     {'1': 'error', '3': 5, '4': 1, '5': 9, '10': 'error'},
+    {'1': 'cloud_metadata', '3': 6, '4': 1, '5': 11, '6': '.viam.robot.v1.GetCloudMetadataResponse', '9': 0, '10': 'cloudMetadata', '17': true},
   ],
   '4': [ResourceStatus_State$json],
+  '8': [
+    {'1': '_cloud_metadata'},
+  ],
 };
 
 @$core.Deprecated('Use resourceStatusDescriptor instead')
@@ -704,9 +708,11 @@ final $typed_data.Uint8List resourceStatusDescriptor = $convert.base64Decode(
     'VOYW1lUgRuYW1lEjkKBXN0YXRlGAIgASgOMiMudmlhbS5yb2JvdC52MS5SZXNvdXJjZVN0YXR1'
     'cy5TdGF0ZVIFc3RhdGUSPQoMbGFzdF91cGRhdGVkGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
     'RpbWVzdGFtcFILbGFzdFVwZGF0ZWQSGgoIcmV2aXNpb24YBCABKAlSCHJldmlzaW9uEhQKBWVy'
-    'cm9yGAUgASgJUgVlcnJvciKHAQoFU3RhdGUSFQoRU1RBVEVfVU5TUEVDSUZJRUQQABIWChJTVE'
-    'FURV9VTkNPTkZJR1VSRUQQARIVChFTVEFURV9DT05GSUdVUklORxACEg8KC1NUQVRFX1JFQURZ'
-    'EAMSEgoOU1RBVEVfUkVNT1ZJTkcQBBITCg9TVEFURV9VTkhFQUxUSFkQBQ==');
+    'cm9yGAUgASgJUgVlcnJvchJTCg5jbG91ZF9tZXRhZGF0YRgGIAEoCzInLnZpYW0ucm9ib3Qudj'
+    'EuR2V0Q2xvdWRNZXRhZGF0YVJlc3BvbnNlSABSDWNsb3VkTWV0YWRhdGGIAQEihwEKBVN0YXRl'
+    'EhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfVU5DT05GSUdVUkVEEAESFQoRU1RBVE'
+    'VfQ09ORklHVVJJTkcQAhIPCgtTVEFURV9SRUFEWRADEhIKDlNUQVRFX1JFTU9WSU5HEAQSEwoP'
+    'U1RBVEVfVU5IRUFMVEhZEAVCEQoPX2Nsb3VkX21ldGFkYXRh');
 
 @$core.Deprecated('Use configStatusDescriptor instead')
 const ConfigStatus$json = {
