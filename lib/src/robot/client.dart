@@ -83,7 +83,7 @@ class Discovery {
     return Discovery(
       subtype: proto.query.subtype,
       model: proto.query.model,
-      results: proto.results.toMap(),
+      results: proto.results.toMap().unwrap(),
     );
   }
 

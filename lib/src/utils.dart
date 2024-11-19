@@ -39,6 +39,84 @@ extension StructUtils on Struct {
   }
 }
 
+extension UnwrapProtoMapUtils on Map<String, dynamic> {
+  /// Deeply unwraps a nested proto map structure by removing unnecessary proto wrappers and
+  /// converting all nested values to their primitive Dart types.
+  ///
+  /// Handles:
+  /// - Removes 'Kind' wrappers from proto Values
+  /// - Removes 'fields' wrappers from proto Structs
+  /// - Converts proto scalar types (String, Number, Bool, Null)
+  /// - Converts proto complex types (List, Struct)
+  /// - Preserves original structure minus wrappers
+  Map<String, dynamic> unwrap() {
+    final result = <String, dynamic>{};
+
+    // Core recursive function that processes each value in the structure
+    dynamic unwrapValue(dynamic value) {
+      // Handle maps - primary case for proto wrapper removal
+      if (value is Map) {
+        final mapValue = Map<String, dynamic>.from(value);
+
+        // Two main wrapper types to handle:
+
+        // 1. Kind wrapper (from proto Value)
+        if (mapValue.containsKey('Kind')) {
+          final kindValue = mapValue['Kind'];
+          if (kindValue is Map) {
+            final kindMap = Map<String, dynamic>.from(kindValue);
+
+            // Scalar types are direct conversions - base cases
+            if (kindMap.containsKey('StringValue')) return kindMap['StringValue'];
+            if (kindMap.containsKey('NumberValue')) return kindMap['NumberValue'];
+            if (kindMap.containsKey('BoolValue')) return kindMap['BoolValue'];
+            if (kindMap.containsKey('NullValue')) return null;
+
+            // Complex types need recursive handling - can be a base case when empty
+            if (kindMap.containsKey('ListValue')) {
+              final listValue = kindMap['ListValue'];
+              if (listValue is Map && listValue.containsKey('values')) {
+                return (listValue['values'] as List).map(unwrapValue).toList();
+              }
+              return [];
+            }
+
+            if (kindMap.containsKey('StructValue')) {
+              final structValue = kindMap['StructValue'];
+              if (structValue is Map && structValue.containsKey('fields')) {
+                return Map<String, dynamic>.from(structValue['fields']).unwrap();
+              }
+            }
+          }
+          return value;
+        }
+
+        // 2. Fields wrapper (from proto Struct)
+        if (mapValue.containsKey('fields')) {
+          return Map<String, dynamic>.from(mapValue['fields']).unwrap();
+        }
+
+        // Regular map - continue unwrapping all values
+        return mapValue.map((key, val) => MapEntry(key, unwrapValue(val)));
+      }
+
+      // Handle lists - unwrap each element
+      if (value is List) {
+        return value.map(unwrapValue).toList();
+      }
+
+      return value; // base case: primitive value
+    }
+
+    // Process each top-level key-value pair
+    forEach((key, value) {
+      result[key] = unwrapValue(value);
+    });
+
+    return result;
+  }
+}
+
 extension ListValueUtils<T> on List<T> {
   Value toValue() {
     final values = map((e) {
