@@ -93,6 +93,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $3.TabularDataByMQLRequest.fromBuffer(value),
       ($3.TabularDataByMQLResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.GetLatestTabularDataRequest, $3.GetLatestTabularDataResponse&gt;(
+      &#39;GetLatestTabularData&#39;,
+      getLatestTabularData_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.GetLatestTabularDataRequest.fromBuffer(value),
+      ($3.GetLatestTabularDataResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$3.BinaryDataByFilterRequest, $3.BinaryDataByFilterResponse&gt;(
       &#39;BinaryDataByFilter&#39;,
       binaryDataByFilter_Pre,
