@@ -63,7 +63,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/DiscoverComponentsResponse-class.html">DiscoverComponentsResponse</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_sdk/Discovery-class.html">Discovery</a></span>&gt;</span></span>&gt;</span></span>
 <span class="name ">discoverComponents</span>(<wbr>[<ol class="parameter-list single-line"> <li><span class="parameter" id="discoverComponents-param-queries"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_sdk/DiscoveryQuery-class.html">DiscoveryQuery</a></span>&gt;</span></span> <span class="parameter-name">queries</span> = <span class="default-value">const []</span></span></li>
 </ol>])
 
@@ -82,14 +82,15 @@ var discoveredComponents = await machine.discoverComponents(queries);
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;rpb.DiscoverComponentsResponse&gt; discoverComponents([List&lt;DiscoveryQuery&gt; queries = const []]) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Discovery&gt;&gt; discoverComponents([List&lt;DiscoveryQuery&gt; queries = const []]) async {
   final request = rpb.DiscoverComponentsRequest()
     ..queries.addAll(queries.map((sdkQuery) =&gt; rpb.DiscoveryQuery()
       ..subtype = sdkQuery.subtype
       ..model = sdkQuery.model
       ..extra = sdkQuery.extraStruct));
 
-  return await _client.discoverComponents(request);
+  final response = await _client.discoverComponents(request);
+  return response.discovery.map((d) =&gt; Discovery.fromProto(d)).toList();
 }</code></pre>
 </section>
 
