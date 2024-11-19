@@ -1156,6 +1156,171 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   $core.List<$core.List<$core.int>> get rawData => $_getList(0);
 }
 
+/// GetLatestTabularDataRequest requests the most recent tabular data captured from the specified data source.
+class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
+  factory GetLatestTabularDataRequest({
+    $core.String? partId,
+    $core.String? resourceName,
+    $core.String? methodName,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    return $result;
+  }
+  GetLatestTabularDataRequest._() : super();
+  factory GetLatestTabularDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLatestTabularDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestTabularDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'partId')
+    ..aOS(2, _omitFieldNames ? '' : 'resourceName')
+    ..aOS(3, _omitFieldNames ? '' : 'methodName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLatestTabularDataRequest clone() => GetLatestTabularDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLatestTabularDataRequest copyWith(void Function(GetLatestTabularDataRequest) updates) => super.copyWith((message) => updates(message as GetLatestTabularDataRequest)) as GetLatestTabularDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestTabularDataRequest create() => GetLatestTabularDataRequest._();
+  GetLatestTabularDataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLatestTabularDataRequest> createRepeated() => $pb.PbList<GetLatestTabularDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestTabularDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestTabularDataRequest>(create);
+  static GetLatestTabularDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get partId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set partId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPartId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPartId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resourceName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resourceName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResourceName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResourceName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get methodName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set methodName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMethodName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMethodName() => clearField(3);
+}
+
+/// GetLatestTabularDataResponse provides the data, time synced, and time captured of the most recent tabular data captured
+/// from the requested data source, as long as it was synced within the last year.
+class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
+  factory GetLatestTabularDataResponse({
+    $44.Timestamp? timeCaptured,
+    $44.Timestamp? timeSynced,
+    $43.Struct? payload,
+  }) {
+    final $result = create();
+    if (timeCaptured != null) {
+      $result.timeCaptured = timeCaptured;
+    }
+    if (timeSynced != null) {
+      $result.timeSynced = timeSynced;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
+  GetLatestTabularDataResponse._() : super();
+  factory GetLatestTabularDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLatestTabularDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestTabularDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<$44.Timestamp>(1, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $44.Timestamp.create)
+    ..aOM<$44.Timestamp>(2, _omitFieldNames ? '' : 'timeSynced', subBuilder: $44.Timestamp.create)
+    ..aOM<$43.Struct>(3, _omitFieldNames ? '' : 'payload', subBuilder: $43.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLatestTabularDataResponse clone() => GetLatestTabularDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLatestTabularDataResponse copyWith(void Function(GetLatestTabularDataResponse) updates) => super.copyWith((message) => updates(message as GetLatestTabularDataResponse)) as GetLatestTabularDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLatestTabularDataResponse create() => GetLatestTabularDataResponse._();
+  GetLatestTabularDataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLatestTabularDataResponse> createRepeated() => $pb.PbList<GetLatestTabularDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLatestTabularDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestTabularDataResponse>(create);
+  static GetLatestTabularDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $44.Timestamp get timeCaptured => $_getN(0);
+  @$pb.TagNumber(1)
+  set timeCaptured($44.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTimeCaptured() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTimeCaptured() => clearField(1);
+  @$pb.TagNumber(1)
+  $44.Timestamp ensureTimeCaptured() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $44.Timestamp get timeSynced => $_getN(1);
+  @$pb.TagNumber(2)
+  set timeSynced($44.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTimeSynced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimeSynced() => clearField(2);
+  @$pb.TagNumber(2)
+  $44.Timestamp ensureTimeSynced() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $43.Struct get payload => $_getN(2);
+  @$pb.TagNumber(3)
+  set payload($43.Struct v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPayload() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPayload() => clearField(3);
+  @$pb.TagNumber(3)
+  $43.Struct ensurePayload() => $_ensure(2);
+}
+
 /// BinaryData contains data and metadata associated with binary data.
 class BinaryData extends $pb.GeneratedMessage {
   factory BinaryData({

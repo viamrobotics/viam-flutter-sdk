@@ -301,6 +301,39 @@ final $typed_data.Uint8List tabularDataByMQLResponseDescriptor = $convert.base64
     'ChhUYWJ1bGFyRGF0YUJ5TVFMUmVzcG9uc2USGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGFKBA'
     'gBEAJSBGRhdGE=');
 
+@$core.Deprecated('Use getLatestTabularDataRequestDescriptor instead')
+const GetLatestTabularDataRequest$json = {
+  '1': 'GetLatestTabularDataRequest',
+  '2': [
+    {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
+    {'1': 'method_name', '3': 3, '4': 1, '5': 9, '10': 'methodName'},
+  ],
+};
+
+/// Descriptor for `GetLatestTabularDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestTabularDataRequestDescriptor = $convert.base64Decode(
+    'ChtHZXRMYXRlc3RUYWJ1bGFyRGF0YVJlcXVlc3QSFwoHcGFydF9pZBgBIAEoCVIGcGFydElkEi'
+    'MKDXJlc291cmNlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIfCgttZXRob2RfbmFtZRgDIAEo'
+    'CVIKbWV0aG9kTmFtZQ==');
+
+@$core.Deprecated('Use getLatestTabularDataResponseDescriptor instead')
+const GetLatestTabularDataResponse$json = {
+  '1': 'GetLatestTabularDataResponse',
+  '2': [
+    {'1': 'time_captured', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCaptured'},
+    {'1': 'time_synced', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeSynced'},
+    {'1': 'payload', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'payload'},
+  ],
+};
+
+/// Descriptor for `GetLatestTabularDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLatestTabularDataResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRMYXRlc3RUYWJ1bGFyRGF0YVJlc3BvbnNlEj8KDXRpbWVfY2FwdHVyZWQYASABKAsyGi'
+    '5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgx0aW1lQ2FwdHVyZWQSOwoLdGltZV9zeW5jZWQY'
+    'AiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp0aW1lU3luY2VkEjEKB3BheWxvYW'
+    'QYAyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgdwYXlsb2Fk');
+
 @$core.Deprecated('Use binaryDataDescriptor instead')
 const BinaryData$json = {
   '1': 'BinaryData',
