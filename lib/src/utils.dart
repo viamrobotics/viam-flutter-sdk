@@ -39,8 +39,8 @@ extension StructUtils on Struct {
   }
 }
 
-extension UnwrapProtoMapUtils on Map<String, dynamic> {
-  /// Deeply unwraps a nested proto map structure by removing unnecessary proto wrappers and
+extension ProtoMapUtils on Map<String, dynamic> {
+  /// Deeply unwraps a map derived from a proto struct by removing unnecessary proto wrappers and
   /// converting all nested values to their primitive Dart types.
   ///
   /// Handles:
@@ -81,6 +81,7 @@ extension UnwrapProtoMapUtils on Map<String, dynamic> {
               return [];
             }
 
+            // 2a. Fields wrapper (from proto Struct)
             if (kindMap.containsKey('StructValue')) {
               final structValue = kindMap['StructValue'];
               if (structValue is Map && structValue.containsKey('fields')) {
@@ -91,7 +92,7 @@ extension UnwrapProtoMapUtils on Map<String, dynamic> {
           return value;
         }
 
-        // 2. Fields wrapper (from proto Struct)
+        // 2b. Fields wrapper (from proto Struct)
         if (mapValue.containsKey('fields')) {
           return Map<String, dynamic>.from(mapValue['fields']).unwrap();
         }
