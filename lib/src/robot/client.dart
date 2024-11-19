@@ -67,6 +67,33 @@ class DiscoveryQuery {
 }
 
 /// {@category Viam SDK}
+/// Represents the result of a discovery query.
+class Discovery {
+  final String subtype;
+  final String model;
+  final Map<String, dynamic> results;
+
+  Discovery({
+    required this.subtype,
+    required this.model,
+    required this.results,
+  });
+
+  factory Discovery.fromProto(rpb.Discovery proto) {
+    return Discovery(
+      subtype: proto.query.subtype,
+      model: proto.query.model,
+      results: proto.results.toMap(),
+    );
+  }
+
+  @override
+  String toString() {
+    return 'Discovery(subtype: $subtype, model: $model, results: $results)';
+  }
+}
+
+/// {@category Viam SDK}
 /// gRPC client for a Robot. This class should be used for all interactions with a robot.
 ///
 /// Obtain an instance of this client by using the function:
@@ -287,13 +314,14 @@ class RobotClient {
   /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'username': 'admin', 'password': 'admin'})];
   /// var discoveredComponents = await machine.discoverComponents(queries);
   /// ```
-  Future<rpb.DiscoverComponentsResponse> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
+  Future<List<Discovery>> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
     final request = rpb.DiscoverComponentsRequest()
       ..queries.addAll(queries.map((sdkQuery) => rpb.DiscoveryQuery()
         ..subtype = sdkQuery.subtype
         ..model = sdkQuery.model
         ..extra = sdkQuery.extraStruct));
 
-    return await _client.discoverComponents(request);
+    final response = await _client.discoverComponents(request);
+    return response.discovery.map((d) => Discovery.fromProto(d)).toList();
   }
 }
