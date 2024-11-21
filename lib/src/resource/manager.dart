@@ -21,7 +21,18 @@ class ResourceManager {
 
   /// Get a resource with the given [ResourceName]
   T getResource<T>(ResourceName name) {
-    final resource = resources[name];
+    Resource? resource;
+    if (resources.containsKey(name)) {
+      resource = resources[name];
+    } else {
+      final resourcesWithoutRemotes = resources.map((rn, res) {
+        final rnWithoutRemote = rn
+          ..remotePath.clear()
+          ..name = rn.localName;
+        return MapEntry(rnWithoutRemote, res);
+      });
+      resource = resourcesWithoutRemotes[name];
+    }
     if (resource == null) throw Exception('Resource not found in manager');
     return resource as T;
   }
