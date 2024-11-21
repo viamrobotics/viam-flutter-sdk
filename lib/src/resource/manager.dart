@@ -1,3 +1,6 @@
+import 'package:protobuf/protobuf.dart';
+
+import '../exceptions.dart';
 import '../gen/common/v1/common.pb.dart';
 import 'base.dart';
 
@@ -5,31 +8,40 @@ import 'base.dart';
 class ResourceManager {
   /// The available resources
   Map<ResourceName, Resource> resources = {};
-  final Map<String, List<ResourceName>> _shortToLongName = {};
+  final Map<ResourceName, List<ResourceName>> _resourceNamesWithoutRemotes = {};
 
   /// Register a new [Resource] with the manager.
   void register(ResourceName name, Resource resource) {
     if (resources.containsKey(name)) {
-      throw Exception('Duplicate registration of resource in manager');
+      throw DuplicateResourceException(name);
     }
-    final shortName = name.name.split(':').last;
-    final names = _shortToLongName[shortName] ?? [];
+    final rnWithoutRemote = name.deepCopy()
+      ..remotePath.clear()
+      ..name = name.localName;
+    final names = _resourceNamesWithoutRemotes[rnWithoutRemote] ?? [];
     names.add(name);
-    _shortToLongName[shortName] = names;
+    _resourceNamesWithoutRemotes[rnWithoutRemote] = names;
     resources[name] = resource;
   }
 
   /// Get a resource with the given [ResourceName]
   T getResource<T>(ResourceName name) {
-    final resource = resources[name];
-    if (resource == null) throw Exception('Resource not found in manager');
+    Resource? resource;
+    if (resources.containsKey(name)) {
+      resource = resources[name];
+    } else {
+      final resourceNames = _resourceNamesWithoutRemotes[name] ?? [];
+      // If multiple ResourceNames map to this name-without-remotes,
+      // that means there are multiple remote resources with this same short name.
+      // Without any means to disambiguate, we should not select any.
+      if (resourceNames.length > 1) {
+        throw MultipleRemoteResourcesSameNameException(resourceNames);
+      }
+      if (resourceNames.length == 1) {
+        resource = resources[resourceNames.first];
+      }
+    }
+    if (resource == null) throw ResourceNotFoundException(name);
     return resource as T;
-  }
-
-  /// Get a resource by its name only
-  T getResourceByName<T>(String name) {
-    final names = _shortToLongName[name] ?? [];
-    if (names.isEmpty) throw Exception('Resource not found in manager');
-    return getResource(names.first);
   }
 }
