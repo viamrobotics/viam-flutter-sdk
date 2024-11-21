@@ -31,7 +31,7 @@ class ResourceManager {
       resource = resources[name];
     } else {
       final resourceNames = _resourceNamesWithoutRemotes[name] ?? [];
-      // If multiple name-without-remotes map to this resource name,
+      // If multiple ResourceNames map to this name-without-remotes,
       // that means there are multiple remote resources with this same short name.
       // Without any means to disambiguate, we should not select any.
       if (resourceNames.length > 1) {
