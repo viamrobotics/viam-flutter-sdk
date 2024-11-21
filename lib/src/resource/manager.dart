@@ -1,5 +1,6 @@
 import 'package:protobuf/protobuf.dart';
 
+import '../exceptions.dart';
 import '../gen/common/v1/common.pb.dart';
 import 'base.dart';
 
@@ -12,7 +13,7 @@ class ResourceManager {
   /// Register a new [Resource] with the manager.
   void register(ResourceName name, Resource resource) {
     if (resources.containsKey(name)) {
-      throw Exception('Duplicate registration of resource in manager');
+      throw DuplicateResourceException(name);
     }
     final rnWithoutRemote = name.deepCopy()
       ..remotePath.clear()
@@ -34,13 +35,13 @@ class ResourceManager {
       // that means there are multiple remote resources with this same short name.
       // Without any means to disambiguate, we should not select any.
       if (resourceNames.length > 1) {
-        throw Exception('Multiple remote resources with found with the name ${name.name}: $resourceNames');
+        throw MultipleRemoteResourcesSameNameException(resourceNames);
       }
       if (resourceNames.length == 1) {
         resource = resources[resourceNames.first];
       }
     }
-    if (resource == null) throw Exception('Resource not found in manager');
+    if (resource == null) throw ResourceNotFoundException(name);
     return resource as T;
   }
 }
