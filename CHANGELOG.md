@@ -1,12 +1,17 @@
 # Changelog
 
-## [v0.0.27](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.27) (2024-11-13)
+## [v0.0.28](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.28) (2024-11-21)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.26...v0.0.27)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.27...v0.0.28)
 
 **Merged pull requests:**
 
+- \[hotfix\] resource names [\#302](https://github.com/viamrobotics/viam-flutter-sdk/pull/302) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#300](https://github.com/viamrobotics/viam-flutter-sdk/pull/300) ([github-actions[bot]](https://github.com/apps/github-actions))
+- \[RSDK-9281\]   Add native type return to Flutter SDK DiscoverComponents [\#299](https://github.com/viamrobotics/viam-flutter-sdk/pull/299) ([hexbabe](https://github.com/hexbabe))
+- v0.0.27 [\#298](https://github.com/viamrobotics/viam-flutter-sdk/pull/298) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Shortcircuit if sessions disabled [\#297](https://github.com/viamrobotics/viam-flutter-sdk/pull/297) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#296](https://github.com/viamrobotics/viam-flutter-sdk/pull/296) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#295](https://github.com/viamrobotics/viam-flutter-sdk/pull/295) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Convert sensor reading values to types [\#294](https://github.com/viamrobotics/viam-flutter-sdk/pull/294) ([njooma](https://github.com/njooma))
 - v0.0.26 [\#293](https://github.com/viamrobotics/viam-flutter-sdk/pull/293) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -19,6 +24,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.27](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.27) (2024-11-13)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.26...v0.0.27)
 
 ## [v0.0.26](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.26) (2024-11-11)
 
