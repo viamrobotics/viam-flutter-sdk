@@ -24,9 +24,7 @@ class StreamManager {
     channel = _channel;
   }
 
-  StreamServiceClient get _client {
-    return StreamServiceClient(_channel);
-  }
+  StreamServiceClient get _client => StreamServiceClient(_channel);
 
   set channel(WebRtcClientChannel channel) {
     _errorHandler?.cancel();
@@ -50,12 +48,12 @@ class StreamManager {
           }
         });
       }
-
-      // Readd pre-existing streams (in the event of reconnection)
-      _streams.keys.forEach((element) {
-        _add(element);
-      });
     };
+
+    // Readd pre-existing streams (in the event of reconnection)
+    _streams.keys.forEach((element) {
+      _add(element);
+    });
   }
 
   /// Add a stream to internal state
