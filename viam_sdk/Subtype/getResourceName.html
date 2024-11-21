@@ -87,7 +87,9 @@ var resourceName = Sensor.getResourceName('my_sensor');
     ..namespace = namespace
     ..type = resourceType
     ..subtype = resourceSubtype
-    ..name = name;
+    ..remotePath.addAll(name.split(&#39;:&#39;)..removeLast())
+    ..name = name
+    ..localName = name.split(&#39;:&#39;).last;
 }</code></pre>
 </section>
 
