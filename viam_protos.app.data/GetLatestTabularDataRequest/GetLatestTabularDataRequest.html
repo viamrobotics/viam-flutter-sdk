@@ -65,6 +65,7 @@
       <span class="name ">GetLatestTabularDataRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-partId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partId</span>, </span></li>
 <li><span class="parameter" id="-param-resourceName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">resourceName</span>, </span></li>
 <li><span class="parameter" id="-param-methodName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">methodName</span>, </span></li>
+<li><span class="parameter" id="-param-resourceSubtype"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">resourceSubtype</span>, </span></li>
 </ol>})
     </section>
 
@@ -78,6 +79,7 @@
   $core.String? partId,
   $core.String? resourceName,
   $core.String? methodName,
+  $core.String? resourceSubtype,
 }) {
   final $result = create();
   if (partId != null) {
@@ -88,6 +90,9 @@
   }
   if (methodName != null) {
     $result.methodName = methodName;
+  }
+  if (resourceSubtype != null) {
+    $result.resourceSubtype = resourceSubtype;
   }
   return $result;
 }</code></pre>
