@@ -33,6 +33,10 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/TabularDataByMQL',
       ($3.TabularDataByMQLRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.TabularDataByMQLResponse.fromBuffer(value));
+  static final _$exportTabularData = $grpc.ClientMethod<$3.ExportTabularDataRequest, $3.ExportTabularDataResponse>(
+      '/viam.app.data.v1.DataService/ExportTabularData',
+      ($3.ExportTabularDataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.ExportTabularDataResponse.fromBuffer(value));
   static final _$getLatestTabularData = $grpc.ClientMethod<$3.GetLatestTabularDataRequest, $3.GetLatestTabularDataResponse>(
       '/viam.app.data.v1.DataService/GetLatestTabularData',
       ($3.GetLatestTabularDataRequest value) => value.writeToBuffer(),
@@ -126,6 +130,10 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.TabularDataByMQLResponse> tabularDataByMQL($3.TabularDataByMQLRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$tabularDataByMQL, request, options: options);
+  }
+
+  $grpc.ResponseStream<$3.ExportTabularDataResponse> exportTabularData($3.ExportTabularDataRequest request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$exportTabularData, $async.Stream.fromIterable([request]), options: options);
   }
 
   $grpc.ResponseFuture<$3.GetLatestTabularDataResponse> getLatestTabularData($3.GetLatestTabularDataRequest request, {$grpc.CallOptions? options}) {
@@ -231,6 +239,13 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.TabularDataByMQLRequest.fromBuffer(value),
         ($3.TabularDataByMQLResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.ExportTabularDataRequest, $3.ExportTabularDataResponse>(
+        'ExportTabularData',
+        exportTabularData_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $3.ExportTabularDataRequest.fromBuffer(value),
+        ($3.ExportTabularDataResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$3.GetLatestTabularDataRequest, $3.GetLatestTabularDataResponse>(
         'GetLatestTabularData',
         getLatestTabularData_Pre,
@@ -378,6 +393,10 @@ abstract class DataServiceBase extends $grpc.Service {
     return tabularDataByMQL(call, await request);
   }
 
+  $async.Stream<$3.ExportTabularDataResponse> exportTabularData_Pre($grpc.ServiceCall call, $async.Future<$3.ExportTabularDataRequest> request) async* {
+    yield* exportTabularData(call, await request);
+  }
+
   $async.Future<$3.GetLatestTabularDataResponse> getLatestTabularData_Pre($grpc.ServiceCall call, $async.Future<$3.GetLatestTabularDataRequest> request) async {
     return getLatestTabularData(call, await request);
   }
@@ -457,6 +476,7 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$3.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $3.TabularDataByFilterRequest request);
   $async.Future<$3.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $3.TabularDataBySQLRequest request);
   $async.Future<$3.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $3.TabularDataByMQLRequest request);
+  $async.Stream<$3.ExportTabularDataResponse> exportTabularData($grpc.ServiceCall call, $3.ExportTabularDataRequest request);
   $async.Future<$3.GetLatestTabularDataResponse> getLatestTabularData($grpc.ServiceCall call, $3.GetLatestTabularDataRequest request);
   $async.Future<$3.BinaryDataByFilterResponse> binaryDataByFilter($grpc.ServiceCall call, $3.BinaryDataByFilterRequest request);
   $async.Future<$3.BinaryDataByIDsResponse> binaryDataByIDs($grpc.ServiceCall call, $3.BinaryDataByIDsRequest request);

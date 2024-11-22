@@ -101,6 +101,77 @@ final $typed_data.Uint8List visibilityDescriptor = $convert.base64Decode(
     'BSSVZBVEUQARIVChFWSVNJQklMSVRZX1BVQkxJQxACEh4KGlZJU0lCSUxJVFlfUFVCTElDX1VO'
     'TElTVEVEEAM=');
 
+@$core.Deprecated('Use clientAuthenticationDescriptor instead')
+const ClientAuthentication$json = {
+  '1': 'ClientAuthentication',
+  '2': [
+    {'1': 'CLIENT_AUTHENTICATION_UNSPECIFIED', '2': 0},
+    {'1': 'CLIENT_AUTHENTICATION_REQUIRED', '2': 1},
+    {'1': 'CLIENT_AUTHENTICATION_NOT_REQUIRED', '2': 2},
+    {'1': 'CLIENT_AUTHENTICATION_NOT_REQUIRED_WHEN_USING_PKCE', '2': 3},
+  ],
+};
+
+/// Descriptor for `ClientAuthentication`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List clientAuthenticationDescriptor = $convert.base64Decode(
+    'ChRDbGllbnRBdXRoZW50aWNhdGlvbhIlCiFDTElFTlRfQVVUSEVOVElDQVRJT05fVU5TUEVDSU'
+    'ZJRUQQABIiCh5DTElFTlRfQVVUSEVOVElDQVRJT05fUkVRVUlSRUQQARImCiJDTElFTlRfQVVU'
+    'SEVOVElDQVRJT05fTk9UX1JFUVVJUkVEEAISNgoyQ0xJRU5UX0FVVEhFTlRJQ0FUSU9OX05PVF'
+    '9SRVFVSVJFRF9XSEVOX1VTSU5HX1BLQ0UQAw==');
+
+@$core.Deprecated('Use pKCEDescriptor instead')
+const PKCE$json = {
+  '1': 'PKCE',
+  '2': [
+    {'1': 'PKCE_UNSPECIFIED', '2': 0},
+    {'1': 'PKCE_REQUIRED', '2': 1},
+    {'1': 'PKCE_NOT_REQUIRED', '2': 2},
+    {'1': 'PKCE_NOT_REQUIRED_WHEN_USING_CLIENT_AUTHENTICATION', '2': 3},
+  ],
+};
+
+/// Descriptor for `PKCE`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List pKCEDescriptor = $convert.base64Decode(
+    'CgRQS0NFEhQKEFBLQ0VfVU5TUEVDSUZJRUQQABIRCg1QS0NFX1JFUVVJUkVEEAESFQoRUEtDRV'
+    '9OT1RfUkVRVUlSRUQQAhI2CjJQS0NFX05PVF9SRVFVSVJFRF9XSEVOX1VTSU5HX0NMSUVOVF9B'
+    'VVRIRU5USUNBVElPThAD');
+
+@$core.Deprecated('Use uRLValidationDescriptor instead')
+const URLValidation$json = {
+  '1': 'URLValidation',
+  '2': [
+    {'1': 'URL_VALIDATION_UNSPECIFIED', '2': 0},
+    {'1': 'URL_VALIDATION_EXACT_MATCH', '2': 1},
+    {'1': 'URL_VALIDATION_ALLOW_WILDCARDS', '2': 2},
+  ],
+};
+
+/// Descriptor for `URLValidation`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List uRLValidationDescriptor = $convert.base64Decode(
+    'Cg1VUkxWYWxpZGF0aW9uEh4KGlVSTF9WQUxJREFUSU9OX1VOU1BFQ0lGSUVEEAASHgoaVVJMX1'
+    'ZBTElEQVRJT05fRVhBQ1RfTUFUQ0gQARIiCh5VUkxfVkFMSURBVElPTl9BTExPV19XSUxEQ0FS'
+    'RFMQAg==');
+
+@$core.Deprecated('Use enabledGrantDescriptor instead')
+const EnabledGrant$json = {
+  '1': 'EnabledGrant',
+  '2': [
+    {'1': 'ENABLED_GRANT_UNSPECIFIED', '2': 0},
+    {'1': 'ENABLED_GRANT_AUTHORIZATION_CODE', '2': 1},
+    {'1': 'ENABLED_GRANT_IMPLICIT', '2': 2},
+    {'1': 'ENABLED_GRANT_PASSWORD', '2': 3},
+    {'1': 'ENABLED_GRANT_REFRESH_TOKEN', '2': 4},
+    {'1': 'ENABLED_GRANT_DEVICE_CODE', '2': 5},
+  ],
+};
+
+/// Descriptor for `EnabledGrant`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List enabledGrantDescriptor = $convert.base64Decode(
+    'CgxFbmFibGVkR3JhbnQSHQoZRU5BQkxFRF9HUkFOVF9VTlNQRUNJRklFRBAAEiQKIEVOQUJMRU'
+    'RfR1JBTlRfQVVUSE9SSVpBVElPTl9DT0RFEAESGgoWRU5BQkxFRF9HUkFOVF9JTVBMSUNJVBAC'
+    'EhoKFkVOQUJMRURfR1JBTlRfUEFTU1dPUkQQAxIfChtFTkFCTEVEX0dSQU5UX1JFRlJFU0hfVE'
+    '9LRU4QBBIdChlFTkFCTEVEX0dSQU5UX0RFVklDRV9DT0RFEAU=');
+
 @$core.Deprecated('Use robotDescriptor instead')
 const Robot$json = {
   '1': 'Robot',
@@ -2996,4 +3067,251 @@ const CreateKeyFromExistingKeyAuthorizationsResponse$json = {
 final $typed_data.Uint8List createKeyFromExistingKeyAuthorizationsResponseDescriptor = $convert.base64Decode(
     'Ci5DcmVhdGVLZXlGcm9tRXhpc3RpbmdLZXlBdXRob3JpemF0aW9uc1Jlc3BvbnNlEg4KAmlkGA'
     'EgASgJUgJpZBIQCgNrZXkYAiABKAlSA2tleQ==');
+
+@$core.Deprecated('Use organizationSetLogoRequestDescriptor instead')
+const OrganizationSetLogoRequest$json = {
+  '1': 'OrganizationSetLogoRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'logo', '3': 2, '4': 1, '5': 12, '10': 'logo'},
+  ],
+};
+
+/// Descriptor for `OrganizationSetLogoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationSetLogoRequestDescriptor = $convert.base64Decode(
+    'ChpPcmdhbml6YXRpb25TZXRMb2dvUmVxdWVzdBIVCgZvcmdfaWQYASABKAlSBW9yZ0lkEhIKBG'
+    'xvZ28YAiABKAxSBGxvZ28=');
+
+@$core.Deprecated('Use organizationSetLogoResponseDescriptor instead')
+const OrganizationSetLogoResponse$json = {
+  '1': 'OrganizationSetLogoResponse',
+};
+
+/// Descriptor for `OrganizationSetLogoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationSetLogoResponseDescriptor = $convert.base64Decode(
+    'ChtPcmdhbml6YXRpb25TZXRMb2dvUmVzcG9uc2U=');
+
+@$core.Deprecated('Use organizationGetLogoRequestDescriptor instead')
+const OrganizationGetLogoRequest$json = {
+  '1': 'OrganizationGetLogoRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `OrganizationGetLogoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationGetLogoRequestDescriptor = $convert.base64Decode(
+    'ChpPcmdhbml6YXRpb25HZXRMb2dvUmVxdWVzdBIVCgZvcmdfaWQYASABKAlSBW9yZ0lk');
+
+@$core.Deprecated('Use organizationGetLogoResponseDescriptor instead')
+const OrganizationGetLogoResponse$json = {
+  '1': 'OrganizationGetLogoResponse',
+  '2': [
+    {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `OrganizationGetLogoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List organizationGetLogoResponseDescriptor = $convert.base64Decode(
+    'ChtPcmdhbml6YXRpb25HZXRMb2dvUmVzcG9uc2USEAoDdXJsGAEgASgJUgN1cmw=');
+
+@$core.Deprecated('Use enableAuthServiceRequestDescriptor instead')
+const EnableAuthServiceRequest$json = {
+  '1': 'EnableAuthServiceRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `EnableAuthServiceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enableAuthServiceRequestDescriptor = $convert.base64Decode(
+    'ChhFbmFibGVBdXRoU2VydmljZVJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZA==');
+
+@$core.Deprecated('Use enableAuthServiceResponseDescriptor instead')
+const EnableAuthServiceResponse$json = {
+  '1': 'EnableAuthServiceResponse',
+};
+
+/// Descriptor for `EnableAuthServiceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enableAuthServiceResponseDescriptor = $convert.base64Decode(
+    'ChlFbmFibGVBdXRoU2VydmljZVJlc3BvbnNl');
+
+@$core.Deprecated('Use disableAuthServiceRequestDescriptor instead')
+const DisableAuthServiceRequest$json = {
+  '1': 'DisableAuthServiceRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `DisableAuthServiceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List disableAuthServiceRequestDescriptor = $convert.base64Decode(
+    'ChlEaXNhYmxlQXV0aFNlcnZpY2VSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQ=');
+
+@$core.Deprecated('Use disableAuthServiceResponseDescriptor instead')
+const DisableAuthServiceResponse$json = {
+  '1': 'DisableAuthServiceResponse',
+};
+
+/// Descriptor for `DisableAuthServiceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List disableAuthServiceResponseDescriptor = $convert.base64Decode(
+    'ChpEaXNhYmxlQXV0aFNlcnZpY2VSZXNwb25zZQ==');
+
+@$core.Deprecated('Use createOAuthAppRequestDescriptor instead')
+const CreateOAuthAppRequest$json = {
+  '1': 'CreateOAuthAppRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'client_name', '3': 2, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'oauth_config', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.OAuthConfig', '10': 'oauthConfig'},
+  ],
+};
+
+/// Descriptor for `CreateOAuthAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createOAuthAppRequestDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVPQXV0aEFwcFJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBIfCgtjbGllbn'
+    'RfbmFtZRgCIAEoCVIKY2xpZW50TmFtZRI7CgxvYXV0aF9jb25maWcYAyABKAsyGC52aWFtLmFw'
+    'cC52MS5PQXV0aENvbmZpZ1ILb2F1dGhDb25maWc=');
+
+@$core.Deprecated('Use createOAuthAppResponseDescriptor instead')
+const CreateOAuthAppResponse$json = {
+  '1': 'CreateOAuthAppResponse',
+  '2': [
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'client_secret', '3': 2, '4': 1, '5': 9, '10': 'clientSecret'},
+  ],
+};
+
+/// Descriptor for `CreateOAuthAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createOAuthAppResponseDescriptor = $convert.base64Decode(
+    'ChZDcmVhdGVPQXV0aEFwcFJlc3BvbnNlEhsKCWNsaWVudF9pZBgBIAEoCVIIY2xpZW50SWQSIw'
+    'oNY2xpZW50X3NlY3JldBgCIAEoCVIMY2xpZW50U2VjcmV0');
+
+@$core.Deprecated('Use readOAuthAppRequestDescriptor instead')
+const ReadOAuthAppRequest$json = {
+  '1': 'ReadOAuthAppRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '10': 'clientId'},
+  ],
+};
+
+/// Descriptor for `ReadOAuthAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readOAuthAppRequestDescriptor = $convert.base64Decode(
+    'ChNSZWFkT0F1dGhBcHBSZXF1ZXN0EhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQSGwoJY2xpZW50X2'
+    'lkGAIgASgJUghjbGllbnRJZA==');
+
+@$core.Deprecated('Use readOAuthAppResponseDescriptor instead')
+const ReadOAuthAppResponse$json = {
+  '1': 'ReadOAuthAppResponse',
+  '2': [
+    {'1': 'client_name', '3': 1, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'client_secret', '3': 2, '4': 1, '5': 9, '10': 'clientSecret'},
+    {'1': 'oauth_config', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.OAuthConfig', '10': 'oauthConfig'},
+  ],
+};
+
+/// Descriptor for `ReadOAuthAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readOAuthAppResponseDescriptor = $convert.base64Decode(
+    'ChRSZWFkT0F1dGhBcHBSZXNwb25zZRIfCgtjbGllbnRfbmFtZRgBIAEoCVIKY2xpZW50TmFtZR'
+    'IjCg1jbGllbnRfc2VjcmV0GAIgASgJUgxjbGllbnRTZWNyZXQSOwoMb2F1dGhfY29uZmlnGAMg'
+    'ASgLMhgudmlhbS5hcHAudjEuT0F1dGhDb25maWdSC29hdXRoQ29uZmln');
+
+@$core.Deprecated('Use updateOAuthAppRequestDescriptor instead')
+const UpdateOAuthAppRequest$json = {
+  '1': 'UpdateOAuthAppRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'client_name', '3': 3, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'oauth_config', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.OAuthConfig', '10': 'oauthConfig'},
+  ],
+};
+
+/// Descriptor for `UpdateOAuthAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOAuthAppRequestDescriptor = $convert.base64Decode(
+    'ChVVcGRhdGVPQXV0aEFwcFJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBIbCgljbGllbn'
+    'RfaWQYAiABKAlSCGNsaWVudElkEh8KC2NsaWVudF9uYW1lGAMgASgJUgpjbGllbnROYW1lEjsK'
+    'DG9hdXRoX2NvbmZpZxgEIAEoCzIYLnZpYW0uYXBwLnYxLk9BdXRoQ29uZmlnUgtvYXV0aENvbm'
+    'ZpZw==');
+
+@$core.Deprecated('Use updateOAuthAppResponseDescriptor instead')
+const UpdateOAuthAppResponse$json = {
+  '1': 'UpdateOAuthAppResponse',
+};
+
+/// Descriptor for `UpdateOAuthAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOAuthAppResponseDescriptor = $convert.base64Decode(
+    'ChZVcGRhdGVPQXV0aEFwcFJlc3BvbnNl');
+
+@$core.Deprecated('Use deleteOAuthAppRequestDescriptor instead')
+const DeleteOAuthAppRequest$json = {
+  '1': 'DeleteOAuthAppRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '10': 'clientId'},
+  ],
+};
+
+/// Descriptor for `DeleteOAuthAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteOAuthAppRequestDescriptor = $convert.base64Decode(
+    'ChVEZWxldGVPQXV0aEFwcFJlcXVlc3QSFQoGb3JnX2lkGAEgASgJUgVvcmdJZBIbCgljbGllbn'
+    'RfaWQYAiABKAlSCGNsaWVudElk');
+
+@$core.Deprecated('Use deleteOAuthAppResponseDescriptor instead')
+const DeleteOAuthAppResponse$json = {
+  '1': 'DeleteOAuthAppResponse',
+};
+
+/// Descriptor for `DeleteOAuthAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteOAuthAppResponseDescriptor = $convert.base64Decode(
+    'ChZEZWxldGVPQXV0aEFwcFJlc3BvbnNl');
+
+@$core.Deprecated('Use listOAuthAppsRequestDescriptor instead')
+const ListOAuthAppsRequest$json = {
+  '1': 'ListOAuthAppsRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `ListOAuthAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listOAuthAppsRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0T0F1dGhBcHBzUmVxdWVzdBIVCgZvcmdfaWQYASABKAlSBW9yZ0lk');
+
+@$core.Deprecated('Use listOAuthAppsResponseDescriptor instead')
+const ListOAuthAppsResponse$json = {
+  '1': 'ListOAuthAppsResponse',
+  '2': [
+    {'1': 'client_ids', '3': 1, '4': 3, '5': 9, '10': 'clientIds'},
+  ],
+};
+
+/// Descriptor for `ListOAuthAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listOAuthAppsResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0T0F1dGhBcHBzUmVzcG9uc2USHQoKY2xpZW50X2lkcxgBIAMoCVIJY2xpZW50SWRz');
+
+@$core.Deprecated('Use oAuthConfigDescriptor instead')
+const OAuthConfig$json = {
+  '1': 'OAuthConfig',
+  '2': [
+    {'1': 'client_authentication', '3': 1, '4': 1, '5': 14, '6': '.viam.app.v1.ClientAuthentication', '10': 'clientAuthentication'},
+    {'1': 'pkce', '3': 2, '4': 1, '5': 14, '6': '.viam.app.v1.PKCE', '10': 'pkce'},
+    {'1': 'url_validation', '3': 3, '4': 1, '5': 14, '6': '.viam.app.v1.URLValidation', '10': 'urlValidation'},
+    {'1': 'origin_uris', '3': 4, '4': 3, '5': 9, '10': 'originUris'},
+    {'1': 'redirect_uris', '3': 5, '4': 3, '5': 9, '10': 'redirectUris'},
+    {'1': 'logout_uri', '3': 6, '4': 1, '5': 9, '10': 'logoutUri'},
+    {'1': 'enabled_grants', '3': 7, '4': 3, '5': 14, '6': '.viam.app.v1.EnabledGrant', '10': 'enabledGrants'},
+  ],
+};
+
+/// Descriptor for `OAuthConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oAuthConfigDescriptor = $convert.base64Decode(
+    'CgtPQXV0aENvbmZpZxJWChVjbGllbnRfYXV0aGVudGljYXRpb24YASABKA4yIS52aWFtLmFwcC'
+    '52MS5DbGllbnRBdXRoZW50aWNhdGlvblIUY2xpZW50QXV0aGVudGljYXRpb24SJQoEcGtjZRgC'
+    'IAEoDjIRLnZpYW0uYXBwLnYxLlBLQ0VSBHBrY2USQQoOdXJsX3ZhbGlkYXRpb24YAyABKA4yGi'
+    '52aWFtLmFwcC52MS5VUkxWYWxpZGF0aW9uUg11cmxWYWxpZGF0aW9uEh8KC29yaWdpbl91cmlz'
+    'GAQgAygJUgpvcmlnaW5VcmlzEiMKDXJlZGlyZWN0X3VyaXMYBSADKAlSDHJlZGlyZWN0VXJpcx'
+    'IdCgpsb2dvdXRfdXJpGAYgASgJUglsb2dvdXRVcmkSQAoOZW5hYmxlZF9ncmFudHMYByADKA4y'
+    'GS52aWFtLmFwcC52MS5FbmFibGVkR3JhbnRSDWVuYWJsZWRHcmFudHM=');
 

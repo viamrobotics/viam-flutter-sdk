@@ -1156,12 +1156,333 @@ class TabularDataByMQLResponse extends $pb.GeneratedMessage {
   $core.List<$core.List<$core.int>> get rawData => $_getList(0);
 }
 
+/// ExportTabularDataRequest requests tabular data from the specified data source.
+class ExportTabularDataRequest extends $pb.GeneratedMessage {
+  factory ExportTabularDataRequest({
+    $core.String? partId,
+    $core.String? resourceName,
+    $core.String? resourceSubtype,
+    $core.String? methodName,
+    CaptureInterval? interval,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
+    }
+    if (resourceSubtype != null) {
+      $result.resourceSubtype = resourceSubtype;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    if (interval != null) {
+      $result.interval = interval;
+    }
+    return $result;
+  }
+  ExportTabularDataRequest._() : super();
+  factory ExportTabularDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExportTabularDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExportTabularDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'partId')
+    ..aOS(2, _omitFieldNames ? '' : 'resourceName')
+    ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
+    ..aOS(4, _omitFieldNames ? '' : 'methodName')
+    ..aOM<CaptureInterval>(5, _omitFieldNames ? '' : 'interval', subBuilder: CaptureInterval.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExportTabularDataRequest clone() => ExportTabularDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExportTabularDataRequest copyWith(void Function(ExportTabularDataRequest) updates) => super.copyWith((message) => updates(message as ExportTabularDataRequest)) as ExportTabularDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportTabularDataRequest create() => ExportTabularDataRequest._();
+  ExportTabularDataRequest createEmptyInstance() => create();
+  static $pb.PbList<ExportTabularDataRequest> createRepeated() => $pb.PbList<ExportTabularDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ExportTabularDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExportTabularDataRequest>(create);
+  static ExportTabularDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get partId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set partId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPartId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPartId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resourceName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resourceName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResourceName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResourceName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resourceSubtype => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resourceSubtype($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasResourceSubtype() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResourceSubtype() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get methodName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set methodName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMethodName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMethodName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  CaptureInterval get interval => $_getN(4);
+  @$pb.TagNumber(5)
+  set interval(CaptureInterval v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasInterval() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearInterval() => clearField(5);
+  @$pb.TagNumber(5)
+  CaptureInterval ensureInterval() => $_ensure(4);
+}
+
+/// ExportTabularDataResponse provides unified tabular data and metadata for a single data point from the specified data source.
+class ExportTabularDataResponse extends $pb.GeneratedMessage {
+  factory ExportTabularDataResponse({
+    $core.String? partId,
+    $core.String? componentName,
+    $core.String? componentType,
+    $core.String? methodName,
+    $44.Timestamp? timeCaptured,
+    $core.String? organizationId,
+    $core.String? locationId,
+    $core.String? robotName,
+    $core.String? robotId,
+    $core.String? partName,
+    $core.Map<$core.String, $45.Any>? methodParameters,
+    $core.Iterable<$core.String>? tags,
+    $43.Struct? payload,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (componentType != null) {
+      $result.componentType = componentType;
+    }
+    if (methodName != null) {
+      $result.methodName = methodName;
+    }
+    if (timeCaptured != null) {
+      $result.timeCaptured = timeCaptured;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (robotName != null) {
+      $result.robotName = robotName;
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    if (partName != null) {
+      $result.partName = partName;
+    }
+    if (methodParameters != null) {
+      $result.methodParameters.addAll(methodParameters);
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
+  ExportTabularDataResponse._() : super();
+  factory ExportTabularDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExportTabularDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExportTabularDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'partId')
+    ..aOS(2, _omitFieldNames ? '' : 'componentName')
+    ..aOS(3, _omitFieldNames ? '' : 'componentType')
+    ..aOS(4, _omitFieldNames ? '' : 'methodName')
+    ..aOM<$44.Timestamp>(5, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $44.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(7, _omitFieldNames ? '' : 'locationId')
+    ..aOS(8, _omitFieldNames ? '' : 'robotName')
+    ..aOS(9, _omitFieldNames ? '' : 'robotId')
+    ..aOS(10, _omitFieldNames ? '' : 'partName')
+    ..m<$core.String, $45.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'ExportTabularDataResponse.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $45.Any.create, valueDefaultOrMaker: $45.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
+    ..pPS(12, _omitFieldNames ? '' : 'tags')
+    ..aOM<$43.Struct>(13, _omitFieldNames ? '' : 'payload', subBuilder: $43.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExportTabularDataResponse clone() => ExportTabularDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExportTabularDataResponse copyWith(void Function(ExportTabularDataResponse) updates) => super.copyWith((message) => updates(message as ExportTabularDataResponse)) as ExportTabularDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportTabularDataResponse create() => ExportTabularDataResponse._();
+  ExportTabularDataResponse createEmptyInstance() => create();
+  static $pb.PbList<ExportTabularDataResponse> createRepeated() => $pb.PbList<ExportTabularDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ExportTabularDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExportTabularDataResponse>(create);
+  static ExportTabularDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get partId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set partId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPartId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPartId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get componentName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set componentName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasComponentName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearComponentName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get componentType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set componentType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasComponentType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearComponentType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get methodName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set methodName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMethodName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMethodName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $44.Timestamp get timeCaptured => $_getN(4);
+  @$pb.TagNumber(5)
+  set timeCaptured($44.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTimeCaptured() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTimeCaptured() => clearField(5);
+  @$pb.TagNumber(5)
+  $44.Timestamp ensureTimeCaptured() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get organizationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set organizationId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOrganizationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOrganizationId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get locationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set locationId($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLocationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLocationId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get robotName => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set robotName($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasRobotName() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRobotName() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get robotId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set robotId($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasRobotId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRobotId() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get partName => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set partName($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasPartName() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPartName() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.Map<$core.String, $45.Any> get methodParameters => $_getMap(10);
+
+  @$pb.TagNumber(12)
+  $core.List<$core.String> get tags => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $43.Struct get payload => $_getN(12);
+  @$pb.TagNumber(13)
+  set payload($43.Struct v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasPayload() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPayload() => clearField(13);
+  @$pb.TagNumber(13)
+  $43.Struct ensurePayload() => $_ensure(12);
+}
+
 /// GetLatestTabularDataRequest requests the most recent tabular data captured from the specified data source.
 class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
   factory GetLatestTabularDataRequest({
     $core.String? partId,
     $core.String? resourceName,
     $core.String? methodName,
+    $core.String? resourceSubtype,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1173,6 +1494,9 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     if (methodName != null) {
       $result.methodName = methodName;
     }
+    if (resourceSubtype != null) {
+      $result.resourceSubtype = resourceSubtype;
+    }
     return $result;
   }
   GetLatestTabularDataRequest._() : super();
@@ -1183,6 +1507,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'partId')
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..aOS(3, _omitFieldNames ? '' : 'methodName')
+    ..aOS(4, _omitFieldNames ? '' : 'resourceSubtype')
     ..hasRequiredFields = false
   ;
 
@@ -1233,6 +1558,15 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
   $core.bool hasMethodName() => $_has(2);
   @$pb.TagNumber(3)
   void clearMethodName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get resourceSubtype => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set resourceSubtype($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasResourceSubtype() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResourceSubtype() => clearField(4);
 }
 
 /// GetLatestTabularDataResponse provides the data, time synced, and time captured of the most recent tabular data captured
