@@ -110,6 +110,84 @@ class Visibility extends $pb.ProtobufEnum {
   const Visibility._($core.int v, $core.String n) : super(v, n);
 }
 
+class ClientAuthentication extends $pb.ProtobufEnum {
+  static const ClientAuthentication CLIENT_AUTHENTICATION_UNSPECIFIED = ClientAuthentication._(0, _omitEnumNames ? '' : 'CLIENT_AUTHENTICATION_UNSPECIFIED');
+  static const ClientAuthentication CLIENT_AUTHENTICATION_REQUIRED = ClientAuthentication._(1, _omitEnumNames ? '' : 'CLIENT_AUTHENTICATION_REQUIRED');
+  static const ClientAuthentication CLIENT_AUTHENTICATION_NOT_REQUIRED = ClientAuthentication._(2, _omitEnumNames ? '' : 'CLIENT_AUTHENTICATION_NOT_REQUIRED');
+  static const ClientAuthentication CLIENT_AUTHENTICATION_NOT_REQUIRED_WHEN_USING_PKCE = ClientAuthentication._(3, _omitEnumNames ? '' : 'CLIENT_AUTHENTICATION_NOT_REQUIRED_WHEN_USING_PKCE');
+
+  static const $core.List<ClientAuthentication> values = <ClientAuthentication> [
+    CLIENT_AUTHENTICATION_UNSPECIFIED,
+    CLIENT_AUTHENTICATION_REQUIRED,
+    CLIENT_AUTHENTICATION_NOT_REQUIRED,
+    CLIENT_AUTHENTICATION_NOT_REQUIRED_WHEN_USING_PKCE,
+  ];
+
+  static final $core.Map<$core.int, ClientAuthentication> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ClientAuthentication? valueOf($core.int value) => _byValue[value];
+
+  const ClientAuthentication._($core.int v, $core.String n) : super(v, n);
+}
+
+class PKCE extends $pb.ProtobufEnum {
+  static const PKCE PKCE_UNSPECIFIED = PKCE._(0, _omitEnumNames ? '' : 'PKCE_UNSPECIFIED');
+  static const PKCE PKCE_REQUIRED = PKCE._(1, _omitEnumNames ? '' : 'PKCE_REQUIRED');
+  static const PKCE PKCE_NOT_REQUIRED = PKCE._(2, _omitEnumNames ? '' : 'PKCE_NOT_REQUIRED');
+  static const PKCE PKCE_NOT_REQUIRED_WHEN_USING_CLIENT_AUTHENTICATION = PKCE._(3, _omitEnumNames ? '' : 'PKCE_NOT_REQUIRED_WHEN_USING_CLIENT_AUTHENTICATION');
+
+  static const $core.List<PKCE> values = <PKCE> [
+    PKCE_UNSPECIFIED,
+    PKCE_REQUIRED,
+    PKCE_NOT_REQUIRED,
+    PKCE_NOT_REQUIRED_WHEN_USING_CLIENT_AUTHENTICATION,
+  ];
+
+  static final $core.Map<$core.int, PKCE> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static PKCE? valueOf($core.int value) => _byValue[value];
+
+  const PKCE._($core.int v, $core.String n) : super(v, n);
+}
+
+class URLValidation extends $pb.ProtobufEnum {
+  static const URLValidation URL_VALIDATION_UNSPECIFIED = URLValidation._(0, _omitEnumNames ? '' : 'URL_VALIDATION_UNSPECIFIED');
+  static const URLValidation URL_VALIDATION_EXACT_MATCH = URLValidation._(1, _omitEnumNames ? '' : 'URL_VALIDATION_EXACT_MATCH');
+  static const URLValidation URL_VALIDATION_ALLOW_WILDCARDS = URLValidation._(2, _omitEnumNames ? '' : 'URL_VALIDATION_ALLOW_WILDCARDS');
+
+  static const $core.List<URLValidation> values = <URLValidation> [
+    URL_VALIDATION_UNSPECIFIED,
+    URL_VALIDATION_EXACT_MATCH,
+    URL_VALIDATION_ALLOW_WILDCARDS,
+  ];
+
+  static final $core.Map<$core.int, URLValidation> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static URLValidation? valueOf($core.int value) => _byValue[value];
+
+  const URLValidation._($core.int v, $core.String n) : super(v, n);
+}
+
+class EnabledGrant extends $pb.ProtobufEnum {
+  static const EnabledGrant ENABLED_GRANT_UNSPECIFIED = EnabledGrant._(0, _omitEnumNames ? '' : 'ENABLED_GRANT_UNSPECIFIED');
+  static const EnabledGrant ENABLED_GRANT_AUTHORIZATION_CODE = EnabledGrant._(1, _omitEnumNames ? '' : 'ENABLED_GRANT_AUTHORIZATION_CODE');
+  static const EnabledGrant ENABLED_GRANT_IMPLICIT = EnabledGrant._(2, _omitEnumNames ? '' : 'ENABLED_GRANT_IMPLICIT');
+  static const EnabledGrant ENABLED_GRANT_PASSWORD = EnabledGrant._(3, _omitEnumNames ? '' : 'ENABLED_GRANT_PASSWORD');
+  static const EnabledGrant ENABLED_GRANT_REFRESH_TOKEN = EnabledGrant._(4, _omitEnumNames ? '' : 'ENABLED_GRANT_REFRESH_TOKEN');
+  static const EnabledGrant ENABLED_GRANT_DEVICE_CODE = EnabledGrant._(5, _omitEnumNames ? '' : 'ENABLED_GRANT_DEVICE_CODE');
+
+  static const $core.List<EnabledGrant> values = <EnabledGrant> [
+    ENABLED_GRANT_UNSPECIFIED,
+    ENABLED_GRANT_AUTHORIZATION_CODE,
+    ENABLED_GRANT_IMPLICIT,
+    ENABLED_GRANT_PASSWORD,
+    ENABLED_GRANT_REFRESH_TOKEN,
+    ENABLED_GRANT_DEVICE_CODE,
+  ];
+
+  static final $core.Map<$core.int, EnabledGrant> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static EnabledGrant? valueOf($core.int value) => _byValue[value];
+
+  const EnabledGrant._($core.int v, $core.String n) : super(v, n);
+}
+
 class SharedSecret_State extends $pb.ProtobufEnum {
   static const SharedSecret_State STATE_UNSPECIFIED = SharedSecret_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
   static const SharedSecret_State STATE_ENABLED = SharedSecret_State._(1, _omitEnumNames ? '' : 'STATE_ENABLED');

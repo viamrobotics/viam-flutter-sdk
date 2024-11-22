@@ -186,6 +186,7 @@ const TabularDataByFilterRequest$json = {
     {'1': 'count_only', '3': 2, '4': 1, '5': 8, '10': 'countOnly'},
     {'1': 'include_internal_data', '3': 3, '4': 1, '5': 8, '10': 'includeInternalData'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `TabularDataByFilterRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -193,7 +194,7 @@ final $typed_data.Uint8List tabularDataByFilterRequestDescriptor = $convert.base
     'ChpUYWJ1bGFyRGF0YUJ5RmlsdGVyUmVxdWVzdBJACgxkYXRhX3JlcXVlc3QYASABKAsyHS52aW'
     'FtLmFwcC5kYXRhLnYxLkRhdGFSZXF1ZXN0UgtkYXRhUmVxdWVzdBIdCgpjb3VudF9vbmx5GAIg'
     'ASgIUgljb3VudE9ubHkSMgoVaW5jbHVkZV9pbnRlcm5hbF9kYXRhGAMgASgIUhNpbmNsdWRlSW'
-    '50ZXJuYWxEYXRh');
+    '50ZXJuYWxEYXRhOgIYAQ==');
 
 @$core.Deprecated('Use tabularDataByFilterResponseDescriptor instead')
 const TabularDataByFilterResponse$json = {
@@ -205,6 +206,7 @@ const TabularDataByFilterResponse$json = {
     {'1': 'last', '3': 4, '4': 1, '5': 9, '10': 'last'},
     {'1': 'total_size_bytes', '3': 5, '4': 1, '5': 4, '10': 'totalSizeBytes'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `TabularDataByFilterResponse`. Decode as a `google.protobuf.DescriptorProto`.
@@ -213,7 +215,7 @@ final $typed_data.Uint8List tabularDataByFilterResponseDescriptor = $convert.bas
     'FwcC5kYXRhLnYxLkNhcHR1cmVNZXRhZGF0YVIIbWV0YWRhdGESMQoEZGF0YRgCIAMoCzIdLnZp'
     'YW0uYXBwLmRhdGEudjEuVGFidWxhckRhdGFSBGRhdGESFAoFY291bnQYAyABKARSBWNvdW50Eh'
     'IKBGxhc3QYBCABKAlSBGxhc3QSKAoQdG90YWxfc2l6ZV9ieXRlcxgFIAEoBFIOdG90YWxTaXpl'
-    'Qnl0ZXM=');
+    'Qnl0ZXM6AhgB');
 
 @$core.Deprecated('Use tabularDataDescriptor instead')
 const TabularData$json = {
@@ -224,6 +226,7 @@ const TabularData$json = {
     {'1': 'time_requested', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeRequested'},
     {'1': 'time_received', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeReceived'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `TabularData`. Decode as a `google.protobuf.DescriptorProto`.
@@ -232,7 +235,7 @@ final $typed_data.Uint8List tabularDataDescriptor = $convert.base64Decode(
     'F0YRIlCg5tZXRhZGF0YV9pbmRleBgCIAEoDVINbWV0YWRhdGFJbmRleBJBCg50aW1lX3JlcXVl'
     'c3RlZBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDXRpbWVSZXF1ZXN0ZWQSPw'
     'oNdGltZV9yZWNlaXZlZBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHRpbWVS'
-    'ZWNlaXZlZA==');
+    'ZWNlaXZlZDoCGAE=');
 
 @$core.Deprecated('Use tabularDataBySQLRequestDescriptor instead')
 const TabularDataBySQLRequest$json = {
@@ -301,6 +304,72 @@ final $typed_data.Uint8List tabularDataByMQLResponseDescriptor = $convert.base64
     'ChhUYWJ1bGFyRGF0YUJ5TVFMUmVzcG9uc2USGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGFKBA'
     'gBEAJSBGRhdGE=');
 
+@$core.Deprecated('Use exportTabularDataRequestDescriptor instead')
+const ExportTabularDataRequest$json = {
+  '1': 'ExportTabularDataRequest',
+  '2': [
+    {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
+    {'1': 'resource_subtype', '3': 3, '4': 1, '5': 9, '10': 'resourceSubtype'},
+    {'1': 'method_name', '3': 4, '4': 1, '5': 9, '10': 'methodName'},
+    {'1': 'interval', '3': 5, '4': 1, '5': 11, '6': '.viam.app.data.v1.CaptureInterval', '10': 'interval'},
+  ],
+};
+
+/// Descriptor for `ExportTabularDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportTabularDataRequestDescriptor = $convert.base64Decode(
+    'ChhFeHBvcnRUYWJ1bGFyRGF0YVJlcXVlc3QSFwoHcGFydF9pZBgBIAEoCVIGcGFydElkEiMKDX'
+    'Jlc291cmNlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIpChByZXNvdXJjZV9zdWJ0eXBlGAMg'
+    'ASgJUg9yZXNvdXJjZVN1YnR5cGUSHwoLbWV0aG9kX25hbWUYBCABKAlSCm1ldGhvZE5hbWUSPQ'
+    'oIaW50ZXJ2YWwYBSABKAsyIS52aWFtLmFwcC5kYXRhLnYxLkNhcHR1cmVJbnRlcnZhbFIIaW50'
+    'ZXJ2YWw=');
+
+@$core.Deprecated('Use exportTabularDataResponseDescriptor instead')
+const ExportTabularDataResponse$json = {
+  '1': 'ExportTabularDataResponse',
+  '2': [
+    {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'component_name', '3': 2, '4': 1, '5': 9, '10': 'componentName'},
+    {'1': 'component_type', '3': 3, '4': 1, '5': 9, '10': 'componentType'},
+    {'1': 'method_name', '3': 4, '4': 1, '5': 9, '10': 'methodName'},
+    {'1': 'time_captured', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCaptured'},
+    {'1': 'organization_id', '3': 6, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'location_id', '3': 7, '4': 1, '5': 9, '10': 'locationId'},
+    {'1': 'robot_name', '3': 8, '4': 1, '5': 9, '10': 'robotName'},
+    {'1': 'robot_id', '3': 9, '4': 1, '5': 9, '10': 'robotId'},
+    {'1': 'part_name', '3': 10, '4': 1, '5': 9, '10': 'partName'},
+    {'1': 'method_parameters', '3': 11, '4': 3, '5': 11, '6': '.viam.app.data.v1.ExportTabularDataResponse.MethodParametersEntry', '10': 'methodParameters'},
+    {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'payload', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'payload'},
+  ],
+  '3': [ExportTabularDataResponse_MethodParametersEntry$json],
+};
+
+@$core.Deprecated('Use exportTabularDataResponseDescriptor instead')
+const ExportTabularDataResponse_MethodParametersEntry$json = {
+  '1': 'MethodParametersEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `ExportTabularDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportTabularDataResponseDescriptor = $convert.base64Decode(
+    'ChlFeHBvcnRUYWJ1bGFyRGF0YVJlc3BvbnNlEhcKB3BhcnRfaWQYASABKAlSBnBhcnRJZBIlCg'
+    '5jb21wb25lbnRfbmFtZRgCIAEoCVINY29tcG9uZW50TmFtZRIlCg5jb21wb25lbnRfdHlwZRgD'
+    'IAEoCVINY29tcG9uZW50VHlwZRIfCgttZXRob2RfbmFtZRgEIAEoCVIKbWV0aG9kTmFtZRI/Cg'
+    '10aW1lX2NhcHR1cmVkGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIMdGltZUNh'
+    'cHR1cmVkEicKD29yZ2FuaXphdGlvbl9pZBgGIAEoCVIOb3JnYW5pemF0aW9uSWQSHwoLbG9jYX'
+    'Rpb25faWQYByABKAlSCmxvY2F0aW9uSWQSHQoKcm9ib3RfbmFtZRgIIAEoCVIJcm9ib3ROYW1l'
+    'EhkKCHJvYm90X2lkGAkgASgJUgdyb2JvdElkEhsKCXBhcnRfbmFtZRgKIAEoCVIIcGFydE5hbW'
+    'USbgoRbWV0aG9kX3BhcmFtZXRlcnMYCyADKAsyQS52aWFtLmFwcC5kYXRhLnYxLkV4cG9ydFRh'
+    'YnVsYXJEYXRhUmVzcG9uc2UuTWV0aG9kUGFyYW1ldGVyc0VudHJ5UhBtZXRob2RQYXJhbWV0ZX'
+    'JzEhIKBHRhZ3MYDCADKAlSBHRhZ3MSMQoHcGF5bG9hZBgNIAEoCzIXLmdvb2dsZS5wcm90b2J1'
+    'Zi5TdHJ1Y3RSB3BheWxvYWQaWQoVTWV0aG9kUGFyYW1ldGVyc0VudHJ5EhAKA2tleRgBIAEoCV'
+    'IDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIFdmFsdWU6AjgB');
+
 @$core.Deprecated('Use getLatestTabularDataRequestDescriptor instead')
 const GetLatestTabularDataRequest$json = {
   '1': 'GetLatestTabularDataRequest',
@@ -308,6 +377,7 @@ const GetLatestTabularDataRequest$json = {
     {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
     {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
     {'1': 'method_name', '3': 3, '4': 1, '5': 9, '10': 'methodName'},
+    {'1': 'resource_subtype', '3': 4, '4': 1, '5': 9, '10': 'resourceSubtype'},
   ],
 };
 
@@ -315,7 +385,8 @@ const GetLatestTabularDataRequest$json = {
 final $typed_data.Uint8List getLatestTabularDataRequestDescriptor = $convert.base64Decode(
     'ChtHZXRMYXRlc3RUYWJ1bGFyRGF0YVJlcXVlc3QSFwoHcGFydF9pZBgBIAEoCVIGcGFydElkEi'
     'MKDXJlc291cmNlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIfCgttZXRob2RfbmFtZRgDIAEo'
-    'CVIKbWV0aG9kTmFtZQ==');
+    'CVIKbWV0aG9kTmFtZRIpChByZXNvdXJjZV9zdWJ0eXBlGAQgASgJUg9yZXNvdXJjZVN1YnR5cG'
+    'U=');
 
 @$core.Deprecated('Use getLatestTabularDataResponseDescriptor instead')
 const GetLatestTabularDataResponse$json = {

@@ -105,6 +105,42 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/OrganizationGetSupportEmail',
       ($9.OrganizationGetSupportEmailRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.OrganizationGetSupportEmailResponse.fromBuffer(value));
+  static final _$organizationSetLogo = $grpc.ClientMethod<$9.OrganizationSetLogoRequest, $9.OrganizationSetLogoResponse>(
+      '/viam.app.v1.AppService/OrganizationSetLogo',
+      ($9.OrganizationSetLogoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.OrganizationSetLogoResponse.fromBuffer(value));
+  static final _$organizationGetLogo = $grpc.ClientMethod<$9.OrganizationGetLogoRequest, $9.OrganizationGetLogoResponse>(
+      '/viam.app.v1.AppService/OrganizationGetLogo',
+      ($9.OrganizationGetLogoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.OrganizationGetLogoResponse.fromBuffer(value));
+  static final _$enableAuthService = $grpc.ClientMethod<$9.EnableAuthServiceRequest, $9.EnableAuthServiceResponse>(
+      '/viam.app.v1.AppService/EnableAuthService',
+      ($9.EnableAuthServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.EnableAuthServiceResponse.fromBuffer(value));
+  static final _$disableAuthService = $grpc.ClientMethod<$9.DisableAuthServiceRequest, $9.DisableAuthServiceResponse>(
+      '/viam.app.v1.AppService/DisableAuthService',
+      ($9.DisableAuthServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DisableAuthServiceResponse.fromBuffer(value));
+  static final _$createOAuthApp = $grpc.ClientMethod<$9.CreateOAuthAppRequest, $9.CreateOAuthAppResponse>(
+      '/viam.app.v1.AppService/CreateOAuthApp',
+      ($9.CreateOAuthAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.CreateOAuthAppResponse.fromBuffer(value));
+  static final _$readOAuthApp = $grpc.ClientMethod<$9.ReadOAuthAppRequest, $9.ReadOAuthAppResponse>(
+      '/viam.app.v1.AppService/ReadOAuthApp',
+      ($9.ReadOAuthAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ReadOAuthAppResponse.fromBuffer(value));
+  static final _$updateOAuthApp = $grpc.ClientMethod<$9.UpdateOAuthAppRequest, $9.UpdateOAuthAppResponse>(
+      '/viam.app.v1.AppService/UpdateOAuthApp',
+      ($9.UpdateOAuthAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.UpdateOAuthAppResponse.fromBuffer(value));
+  static final _$deleteOAuthApp = $grpc.ClientMethod<$9.DeleteOAuthAppRequest, $9.DeleteOAuthAppResponse>(
+      '/viam.app.v1.AppService/DeleteOAuthApp',
+      ($9.DeleteOAuthAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeleteOAuthAppResponse.fromBuffer(value));
+  static final _$listOAuthApps = $grpc.ClientMethod<$9.ListOAuthAppsRequest, $9.ListOAuthAppsResponse>(
+      '/viam.app.v1.AppService/ListOAuthApps',
+      ($9.ListOAuthAppsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.ListOAuthAppsResponse.fromBuffer(value));
   static final _$createLocation = $grpc.ClientMethod<$9.CreateLocationRequest, $9.CreateLocationResponse>(
       '/viam.app.v1.AppService/CreateLocation',
       ($9.CreateLocationRequest value) => value.writeToBuffer(),
@@ -426,6 +462,42 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$9.OrganizationGetSupportEmailResponse> organizationGetSupportEmail($9.OrganizationGetSupportEmailRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$organizationGetSupportEmail, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.OrganizationSetLogoResponse> organizationSetLogo($9.OrganizationSetLogoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$organizationSetLogo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.OrganizationGetLogoResponse> organizationGetLogo($9.OrganizationGetLogoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$organizationGetLogo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.EnableAuthServiceResponse> enableAuthService($9.EnableAuthServiceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$enableAuthService, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.DisableAuthServiceResponse> disableAuthService($9.DisableAuthServiceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$disableAuthService, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.CreateOAuthAppResponse> createOAuthApp($9.CreateOAuthAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createOAuthApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.ReadOAuthAppResponse> readOAuthApp($9.ReadOAuthAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$readOAuthApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.UpdateOAuthAppResponse> updateOAuthApp($9.UpdateOAuthAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateOAuthApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.DeleteOAuthAppResponse> deleteOAuthApp($9.DeleteOAuthAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteOAuthApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.ListOAuthAppsResponse> listOAuthApps($9.ListOAuthAppsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listOAuthApps, request, options: options);
   }
 
   $grpc.ResponseFuture<$9.CreateLocationResponse> createLocation($9.CreateLocationRequest request, {$grpc.CallOptions? options}) {
@@ -813,6 +885,69 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $9.OrganizationGetSupportEmailRequest.fromBuffer(value),
         ($9.OrganizationGetSupportEmailResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.OrganizationSetLogoRequest, $9.OrganizationSetLogoResponse>(
+        'OrganizationSetLogo',
+        organizationSetLogo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.OrganizationSetLogoRequest.fromBuffer(value),
+        ($9.OrganizationSetLogoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.OrganizationGetLogoRequest, $9.OrganizationGetLogoResponse>(
+        'OrganizationGetLogo',
+        organizationGetLogo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.OrganizationGetLogoRequest.fromBuffer(value),
+        ($9.OrganizationGetLogoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.EnableAuthServiceRequest, $9.EnableAuthServiceResponse>(
+        'EnableAuthService',
+        enableAuthService_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.EnableAuthServiceRequest.fromBuffer(value),
+        ($9.EnableAuthServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DisableAuthServiceRequest, $9.DisableAuthServiceResponse>(
+        'DisableAuthService',
+        disableAuthService_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.DisableAuthServiceRequest.fromBuffer(value),
+        ($9.DisableAuthServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.CreateOAuthAppRequest, $9.CreateOAuthAppResponse>(
+        'CreateOAuthApp',
+        createOAuthApp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.CreateOAuthAppRequest.fromBuffer(value),
+        ($9.CreateOAuthAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ReadOAuthAppRequest, $9.ReadOAuthAppResponse>(
+        'ReadOAuthApp',
+        readOAuthApp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.ReadOAuthAppRequest.fromBuffer(value),
+        ($9.ReadOAuthAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.UpdateOAuthAppRequest, $9.UpdateOAuthAppResponse>(
+        'UpdateOAuthApp',
+        updateOAuthApp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.UpdateOAuthAppRequest.fromBuffer(value),
+        ($9.UpdateOAuthAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeleteOAuthAppRequest, $9.DeleteOAuthAppResponse>(
+        'DeleteOAuthApp',
+        deleteOAuthApp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.DeleteOAuthAppRequest.fromBuffer(value),
+        ($9.DeleteOAuthAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.ListOAuthAppsRequest, $9.ListOAuthAppsResponse>(
+        'ListOAuthApps',
+        listOAuthApps_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.ListOAuthAppsRequest.fromBuffer(value),
+        ($9.ListOAuthAppsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.CreateLocationRequest, $9.CreateLocationResponse>(
         'CreateLocation',
         createLocation_Pre,
@@ -1305,6 +1440,42 @@ abstract class AppServiceBase extends $grpc.Service {
     return organizationGetSupportEmail(call, await request);
   }
 
+  $async.Future<$9.OrganizationSetLogoResponse> organizationSetLogo_Pre($grpc.ServiceCall call, $async.Future<$9.OrganizationSetLogoRequest> request) async {
+    return organizationSetLogo(call, await request);
+  }
+
+  $async.Future<$9.OrganizationGetLogoResponse> organizationGetLogo_Pre($grpc.ServiceCall call, $async.Future<$9.OrganizationGetLogoRequest> request) async {
+    return organizationGetLogo(call, await request);
+  }
+
+  $async.Future<$9.EnableAuthServiceResponse> enableAuthService_Pre($grpc.ServiceCall call, $async.Future<$9.EnableAuthServiceRequest> request) async {
+    return enableAuthService(call, await request);
+  }
+
+  $async.Future<$9.DisableAuthServiceResponse> disableAuthService_Pre($grpc.ServiceCall call, $async.Future<$9.DisableAuthServiceRequest> request) async {
+    return disableAuthService(call, await request);
+  }
+
+  $async.Future<$9.CreateOAuthAppResponse> createOAuthApp_Pre($grpc.ServiceCall call, $async.Future<$9.CreateOAuthAppRequest> request) async {
+    return createOAuthApp(call, await request);
+  }
+
+  $async.Future<$9.ReadOAuthAppResponse> readOAuthApp_Pre($grpc.ServiceCall call, $async.Future<$9.ReadOAuthAppRequest> request) async {
+    return readOAuthApp(call, await request);
+  }
+
+  $async.Future<$9.UpdateOAuthAppResponse> updateOAuthApp_Pre($grpc.ServiceCall call, $async.Future<$9.UpdateOAuthAppRequest> request) async {
+    return updateOAuthApp(call, await request);
+  }
+
+  $async.Future<$9.DeleteOAuthAppResponse> deleteOAuthApp_Pre($grpc.ServiceCall call, $async.Future<$9.DeleteOAuthAppRequest> request) async {
+    return deleteOAuthApp(call, await request);
+  }
+
+  $async.Future<$9.ListOAuthAppsResponse> listOAuthApps_Pre($grpc.ServiceCall call, $async.Future<$9.ListOAuthAppsRequest> request) async {
+    return listOAuthApps(call, await request);
+  }
+
   $async.Future<$9.CreateLocationResponse> createLocation_Pre($grpc.ServiceCall call, $async.Future<$9.CreateLocationRequest> request) async {
     return createLocation(call, await request);
   }
@@ -1554,6 +1725,15 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$9.GetBillingServiceConfigResponse> getBillingServiceConfig($grpc.ServiceCall call, $9.GetBillingServiceConfigRequest request);
   $async.Future<$9.OrganizationSetSupportEmailResponse> organizationSetSupportEmail($grpc.ServiceCall call, $9.OrganizationSetSupportEmailRequest request);
   $async.Future<$9.OrganizationGetSupportEmailResponse> organizationGetSupportEmail($grpc.ServiceCall call, $9.OrganizationGetSupportEmailRequest request);
+  $async.Future<$9.OrganizationSetLogoResponse> organizationSetLogo($grpc.ServiceCall call, $9.OrganizationSetLogoRequest request);
+  $async.Future<$9.OrganizationGetLogoResponse> organizationGetLogo($grpc.ServiceCall call, $9.OrganizationGetLogoRequest request);
+  $async.Future<$9.EnableAuthServiceResponse> enableAuthService($grpc.ServiceCall call, $9.EnableAuthServiceRequest request);
+  $async.Future<$9.DisableAuthServiceResponse> disableAuthService($grpc.ServiceCall call, $9.DisableAuthServiceRequest request);
+  $async.Future<$9.CreateOAuthAppResponse> createOAuthApp($grpc.ServiceCall call, $9.CreateOAuthAppRequest request);
+  $async.Future<$9.ReadOAuthAppResponse> readOAuthApp($grpc.ServiceCall call, $9.ReadOAuthAppRequest request);
+  $async.Future<$9.UpdateOAuthAppResponse> updateOAuthApp($grpc.ServiceCall call, $9.UpdateOAuthAppRequest request);
+  $async.Future<$9.DeleteOAuthAppResponse> deleteOAuthApp($grpc.ServiceCall call, $9.DeleteOAuthAppRequest request);
+  $async.Future<$9.ListOAuthAppsResponse> listOAuthApps($grpc.ServiceCall call, $9.ListOAuthAppsRequest request);
   $async.Future<$9.CreateLocationResponse> createLocation($grpc.ServiceCall call, $9.CreateLocationRequest request);
   $async.Future<$9.GetLocationResponse> getLocation($grpc.ServiceCall call, $9.GetLocationRequest request);
   $async.Future<$9.UpdateLocationResponse> updateLocation($grpc.ServiceCall call, $9.UpdateLocationRequest request);
