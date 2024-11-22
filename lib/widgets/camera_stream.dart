@@ -34,10 +34,17 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
   }
 
   @override
+  void didUpdateWidget(ViamCameraStreamView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.camera != widget.camera) {
+      _cleanupStream();
+      _startStream();
+    }
+  }
+
+  @override
   void dispose() {
-    _renderer.dispose();
-    _streamSub.cancel();
-    widget.streamClient.closeStream();
+    _cleanupStream();
     super.dispose();
   }
 
@@ -68,6 +75,12 @@ class _ViamCameraStreamViewState extends State<ViamCameraStreamView> {
         _error = error;
       });
     });
+  }
+
+  void _cleanupStream() {
+    _renderer.dispose();
+    _streamSub.cancel();
+    widget.streamClient.closeStream();
   }
 
   @override
