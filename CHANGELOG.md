@@ -1,12 +1,17 @@
 # Changelog
 
-## [v0.0.28](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.28) (2024-11-21)
+## [v0.0.29](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.29) (2024-11-26)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.27...v0.0.28)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.28...v0.0.29)
 
 **Merged pull requests:**
 
+- Add default local name and remote path [\#306](https://github.com/viamrobotics/viam-flutter-sdk/pull/306) ([njooma](https://github.com/njooma))
+- Reset stream in camera\_stream if camera changes [\#305](https://github.com/viamrobotics/viam-flutter-sdk/pull/305) ([kevin49999](https://github.com/kevin49999))
+- Update how streams are re-added [\#304](https://github.com/viamrobotics/viam-flutter-sdk/pull/304) ([njooma](https://github.com/njooma))
+- v0.0.28 [\#303](https://github.com/viamrobotics/viam-flutter-sdk/pull/303) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[hotfix\] resource names [\#302](https://github.com/viamrobotics/viam-flutter-sdk/pull/302) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#301](https://github.com/viamrobotics/viam-flutter-sdk/pull/301) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#300](https://github.com/viamrobotics/viam-flutter-sdk/pull/300) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[RSDK-9281\]   Add native type return to Flutter SDK DiscoverComponents [\#299](https://github.com/viamrobotics/viam-flutter-sdk/pull/299) ([hexbabe](https://github.com/hexbabe))
 - v0.0.27 [\#298](https://github.com/viamrobotics/viam-flutter-sdk/pull/298) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -24,6 +29,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.28](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.28) (2024-11-21)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.27...v0.0.28)
 
 ## [v0.0.27](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.27) (2024-11-13)
 
