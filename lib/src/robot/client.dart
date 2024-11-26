@@ -153,14 +153,23 @@ class RobotClient {
   /// ```
   Future<void> refresh() async {
     final rpb.ResourceNamesResponse response = await _client.resourceNames(rpb.ResourceNamesRequest());
-    if (setEquals(response.resources.toSet(), resourceNames.toSet())) {
+    final responseNames = response.resources.map((rn) {
+      if (rn.remotePath.isEmpty) {
+        rn.remotePath.addAll(rn.name.split(':')..removeLast());
+      }
+      if (rn.localName.isEmpty) {
+        rn.localName = rn.name.split(':').last;
+      }
+      return rn;
+    });
+    if (setEquals(responseNames.toSet(), resourceNames.toSet())) {
       resourceNames.forEach((element) {
         _resetResourceChannel(element);
       });
       return;
     }
     final manager = ResourceManager();
-    for (ResourceName name in response.resources) {
+    for (ResourceName name in responseNames) {
       if (![resourceTypeComponent, resourceTypeService].contains(name.type)) {
         continue;
       }
@@ -176,7 +185,7 @@ class RobotClient {
         continue;
       }
     }
-    resourceNames = response.resources;
+    resourceNames = responseNames.toList();
     if (_manager.resources != manager.resources) {
       _manager = manager;
     }
