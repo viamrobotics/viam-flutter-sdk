@@ -7,6 +7,7 @@ import 'package:logger/logger.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../gen/google/protobuf/struct.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
+import '../gen/stream/v1/stream.pbgrpc.dart';
 import '../media/stream/client.dart';
 import '../resource/base.dart';
 import '../resource/manager.dart';
@@ -297,6 +298,21 @@ class RobotClient {
   /// Get a WebRTC stream client with the given name.
   StreamClient getStream(String name) {
     return _streamManager.getStreamClient(name);
+  }
+
+  /// Get the stream options for a stream with the given name.
+  Future<List<Resolution>> getStreamOptions(String name) async {
+    return _streamManager.getStreamOptions(name);
+  }
+
+  /// Set the options for a stream with the given name.
+  Future<void> setStreamOptions(String name, int width, int height) {
+    return _streamManager.setStreamOptions(name, width, height);
+  }
+
+  // Reset the options for a stream with the given name.
+  Future<void> resetStreamOptions(String name) {
+    return _streamManager.resetStreamOptions(name);
   }
 
   /// Get app-related information about the machine.
