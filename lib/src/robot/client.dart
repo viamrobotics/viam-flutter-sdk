@@ -310,7 +310,7 @@ class RobotClient {
     return _streamManager.setStreamOptions(name, width, height);
   }
 
-  // Reset the options for a stream with the given name.
+  /// Reset the options for a stream with the given name.
   Future<void> resetStreamOptions(String name) {
     return _streamManager.resetStreamOptions(name);
   }
