@@ -294,6 +294,31 @@ void main() {
             .removeBinaryDataFromDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
         verify(serviceClient.removeBinaryDataFromDatasetByIDs(any)).called(1);
       });
+      test('getLatestTabularData', () async {
+        final timeCaptured = DateTime(2023, 1, 1);
+        final timeSynced = DateTime(2023, 1, 2);
+        final payload = Struct()..fields.addAll({'key': Value()..stringValue = 'value'});
+
+        when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()
+          ..timeCaptured = Timestamp.fromDateTime(timeCaptured)
+          ..timeSynced = Timestamp.fromDateTime(timeSynced)
+          ..payload = payload));
+
+        final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+
+        expect(response?.$1, equals(timeCaptured));
+        expect(response?.$2, equals(timeSynced));
+        expect(response?.$3, equals({'key': 'value'}));
+
+        verify(dataServiceClient.getLatestTabularData(any)).called(1);
+
+        // Test null response
+        when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
+
+        final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+
+        expect(nullResponse, isNull);
+      });
     });
 
     group('DataSync Tests', () {
@@ -409,34 +434,12 @@ void main() {
         final response = await dataClient.listDatasetsByIDs(['dataset-id']);
         expect(response, equals(expected));
       });
+
+
     });
   });
 
-  test('getLatestTabularData', () async {
-    final timeCaptured = DateTime(2023, 1, 1);
-    final timeSynced = DateTime(2023, 1, 2);
-    final payload = Struct()..fields.addAll({'key': Value()..stringValue = 'value'});
 
-    when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()
-      ..timeCaptured = Timestamp.fromDateTime(timeCaptured)
-      ..timeSynced = Timestamp.fromDateTime(timeSynced)
-      ..payload = payload));
-
-    final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
-
-    expect(response?.$1, equals(timeCaptured));
-    expect(response?.$2, equals(timeSynced));
-    expect(response?.$3, equals({'key': 'value'}));
-
-    verify(dataServiceClient.getLatestTabularData(any)).called(1);
-
-    // Test null response
-    when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
-
-    final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
-
-    expect(nullResponse, isNull);
-  });
 
   group('Filter Utils Tests', () {
     test('setDateTimeCaptureInterval', () {
