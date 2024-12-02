@@ -299,7 +299,7 @@ void main() {
         final timeSynced = DateTime(2023, 1, 2);
         final payload = Struct()..fields.addAll({'key': Value()..stringValue = 'value'});
 
-        when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()
+        when(serviceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()
           ..timeCaptured = Timestamp.fromDateTime(timeCaptured)
           ..timeSynced = Timestamp.fromDateTime(timeSynced)
           ..payload = payload));
@@ -310,12 +310,12 @@ void main() {
         expect(response?.$2, equals(timeSynced));
         expect(response?.$3, equals({'key': 'value'}));
 
-        verify(dataServiceClient.getLatestTabularData(any)).called(1);
+        verify(serviceClient.getLatestTabularData(any)).called(1);
 
         // Test null response
-        when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
+        when(serviceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
 
-        final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+        final nullResponse = await serviceClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
 
         expect(nullResponse, isNull);
       });
