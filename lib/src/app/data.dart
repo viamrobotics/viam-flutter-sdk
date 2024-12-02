@@ -562,7 +562,6 @@ class DataClient {
       response.payload.toStruct().toMap(),
     );
   }
-
 }
 
 /// {@category Viam SDK}

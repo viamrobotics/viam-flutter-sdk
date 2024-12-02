@@ -411,27 +411,18 @@ void main() {
       });
     });
   });
-  
+
   test('getLatestTabularData', () async {
     final timeCaptured = DateTime(2023, 1, 1);
     final timeSynced = DateTime(2023, 1, 2);
-    final payload = Struct()..fields.addAll({
-      'key': Value()..stringValue = 'value'
-    });
+    final payload = Struct()..fields.addAll({'key': Value()..stringValue = 'value'});
 
-    when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(
-      GetLatestTabularDataResponse()
-        ..timeCaptured = Timestamp.fromDateTime(timeCaptured)
-        ..timeSynced = Timestamp.fromDateTime(timeSynced)
-        ..payload = payload
-    ));
+    when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()
+      ..timeCaptured = Timestamp.fromDateTime(timeCaptured)
+      ..timeSynced = Timestamp.fromDateTime(timeSynced)
+      ..payload = payload));
 
-    final response = await dataClient.getLatestTabularData(
-      'part-id',
-      'resource-name', 
-      'resource-subtype',
-      'method-name'
-    );
+    final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
 
     expect(response?.$1, equals(timeCaptured));
     expect(response?.$2, equals(timeSynced));
@@ -440,15 +431,9 @@ void main() {
     verify(dataServiceClient.getLatestTabularData(any)).called(1);
 
     // Test null response
-    when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => 
-      MockResponseFuture.value(GetLatestTabularDataResponse()));
+    when(dataServiceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
 
-    final nullResponse = await dataClient.getLatestTabularData(
-      'part-id',
-      'resource-name',
-      'resource-subtype', 
-      'method-name'
-    );
+    final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
 
     expect(nullResponse, isNull);
   });
