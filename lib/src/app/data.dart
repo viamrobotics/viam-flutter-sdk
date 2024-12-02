@@ -533,6 +533,36 @@ class DataClient {
     final response = await _datasetClient.listDatasetsByIDs(request);
     return response.datasets;
   }
+
+  /// Gets the most recent tabular data captured from the specified data source,
+  /// as long as it was synced within the last year.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  Future<(DateTime, DateTime, Map<String, dynamic>)?> getLatestTabularData(
+    String partId,
+    String resourceName,
+    String resourceSubtype,
+    String methodName,
+  ) async {
+    final request = GetLatestTabularDataRequest()
+      ..partId = partId
+      ..resourceName = resourceName
+      ..resourceSubtype = resourceSubtype
+      ..methodName = methodName;
+
+    final response = await _dataClient.getLatestTabularData(request);
+
+    if (!response.hasPayload() || !response.hasTimeCaptured() || !response.hasTimeSynced()) {
+      return null;
+    }
+
+    return (
+      response.timeCaptured.toDateTime(),
+      response.timeSynced.toDateTime(),
+      response.payload.toStruct().toMap(),
+    );
+  }
+
 }
 
 /// {@category Viam SDK}
