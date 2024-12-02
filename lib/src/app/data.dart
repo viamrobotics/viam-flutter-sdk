@@ -559,7 +559,7 @@ class DataClient {
     return (
       response.timeCaptured.toDateTime(),
       response.timeSynced.toDateTime(),
-      response.payload.toStruct().toMap(),
+      response.payload.toMap(),
     );
   }
 }
