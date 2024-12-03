@@ -85,6 +85,43 @@ class StreamManager {
     return client;
   }
 
+  Future<List<Resolution>> getStreamOptions(String name) async {
+    final sanitizedName = _getValidSDPTrackName(name);
+    try {
+      final response = await _client.getStreamOptions(GetStreamOptionsRequest()..name = sanitizedName);
+      _logger.d('Got options for stream named $name');
+      return response.resolutions;
+    } catch (e) {
+      _logger.e('Failed to get options for stream named $name');
+      return [];
+    }
+  }
+
+  Future<void> setStreamOptions(String name, int width, int height) async {
+    final sanitizedName = _getValidSDPTrackName(name);
+    final resolution = Resolution()
+      ..width = width
+      ..height = height;
+    try {
+      await _client.setStreamOptions(SetStreamOptionsRequest()
+        ..name = sanitizedName
+        ..resolution = resolution);
+      _logger.d('Set options for stream named $name');
+    } catch (e) {
+      _logger.e('Failed to set options for stream named $name');
+    }
+  }
+
+  Future<void> resetStreamOptions(String name) async {
+    final sanitizedName = _getValidSDPTrackName(name);
+    try {
+      await _client.setStreamOptions(SetStreamOptionsRequest()..name = sanitizedName);
+      _logger.d('Reset options for stream named $name');
+    } catch (e) {
+      _logger.e('Failed to reset options for stream named $name');
+    }
+  }
+
   /// Request that a stream get added to the WebRTC channel
   Future<void> _add(String name) async {
     final sanitizedName = _getValidSDPTrackName(name);
