@@ -538,7 +538,7 @@ class DataClient {
   /// as long as it was synced within the last year.
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
-  Future<(DateTime, DateTime, Map<String, dynamic>)?> getLatestTabularData(
+  Future<({DateTime timeCaptured, DateTime timeSynced, Map<String, dynamic> payload})?> getLatestTabularData(
     String partId,
     String resourceName,
     String resourceSubtype,
@@ -557,9 +557,9 @@ class DataClient {
     }
 
     return (
-      response.timeCaptured.toDateTime(),
-      response.timeSynced.toDateTime(),
-      response.payload.toMap(),
+      timeCaptured: response.timeCaptured.toDateTime(),
+      timeSynced: response.timeSynced.toDateTime(),
+      payload: response.payload.toMap(),
     );
   }
 }
