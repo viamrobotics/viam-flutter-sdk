@@ -1269,8 +1269,8 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
 class ExportTabularDataResponse extends $pb.GeneratedMessage {
   factory ExportTabularDataResponse({
     $core.String? partId,
-    $core.String? componentName,
-    $core.String? componentType,
+    $core.String? resourceName,
+    $core.String? resourceSubtype,
     $core.String? methodName,
     $44.Timestamp? timeCaptured,
     $core.String? organizationId,
@@ -1278,7 +1278,7 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     $core.String? robotName,
     $core.String? robotId,
     $core.String? partName,
-    $core.Map<$core.String, $45.Any>? methodParameters,
+    $43.Struct? methodParameters,
     $core.Iterable<$core.String>? tags,
     $43.Struct? payload,
   }) {
@@ -1286,11 +1286,11 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     if (partId != null) {
       $result.partId = partId;
     }
-    if (componentName != null) {
-      $result.componentName = componentName;
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
     }
-    if (componentType != null) {
-      $result.componentType = componentType;
+    if (resourceSubtype != null) {
+      $result.resourceSubtype = resourceSubtype;
     }
     if (methodName != null) {
       $result.methodName = methodName;
@@ -1314,7 +1314,7 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
       $result.partName = partName;
     }
     if (methodParameters != null) {
-      $result.methodParameters.addAll(methodParameters);
+      $result.methodParameters = methodParameters;
     }
     if (tags != null) {
       $result.tags.addAll(tags);
@@ -1330,8 +1330,8 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExportTabularDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'partId')
-    ..aOS(2, _omitFieldNames ? '' : 'componentName')
-    ..aOS(3, _omitFieldNames ? '' : 'componentType')
+    ..aOS(2, _omitFieldNames ? '' : 'resourceName')
+    ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
     ..aOM<$44.Timestamp>(5, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $44.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'organizationId')
@@ -1339,7 +1339,7 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'robotName')
     ..aOS(9, _omitFieldNames ? '' : 'robotId')
     ..aOS(10, _omitFieldNames ? '' : 'partName')
-    ..m<$core.String, $45.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'ExportTabularDataResponse.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $45.Any.create, valueDefaultOrMaker: $45.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
+    ..aOM<$43.Struct>(11, _omitFieldNames ? '' : 'methodParameters', subBuilder: $43.Struct.create)
     ..pPS(12, _omitFieldNames ? '' : 'tags')
     ..aOM<$43.Struct>(13, _omitFieldNames ? '' : 'payload', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
@@ -1376,22 +1376,22 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
   void clearPartId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get componentName => $_getSZ(1);
+  $core.String get resourceName => $_getSZ(1);
   @$pb.TagNumber(2)
-  set componentName($core.String v) { $_setString(1, v); }
+  set resourceName($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasComponentName() => $_has(1);
+  $core.bool hasResourceName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearComponentName() => clearField(2);
+  void clearResourceName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get componentType => $_getSZ(2);
+  $core.String get resourceSubtype => $_getSZ(2);
   @$pb.TagNumber(3)
-  set componentType($core.String v) { $_setString(2, v); }
+  set resourceSubtype($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasComponentType() => $_has(2);
+  $core.bool hasResourceSubtype() => $_has(2);
   @$pb.TagNumber(3)
-  void clearComponentType() => clearField(3);
+  void clearResourceSubtype() => clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get methodName => $_getSZ(3);
@@ -1459,7 +1459,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
   void clearPartName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.Map<$core.String, $45.Any> get methodParameters => $_getMap(10);
+  $43.Struct get methodParameters => $_getN(10);
+  @$pb.TagNumber(11)
+  set methodParameters($43.Struct v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasMethodParameters() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMethodParameters() => clearField(11);
+  @$pb.TagNumber(11)
+  $43.Struct ensureMethodParameters() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get tags => $_getList(11);
