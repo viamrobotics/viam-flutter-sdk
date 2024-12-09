@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.0.29](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.29) (2024-11-26)
+## [v0.0.30](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.30) (2024-12-09)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.28...v0.0.29)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.29...v0.0.30)
 
 **Merged pull requests:**
 
+- \[RSDK-9250\] - Add stream options handlers [\#308](https://github.com/viamrobotics/viam-flutter-sdk/pull/308) ([seanavery](https://github.com/seanavery))
+- v0.0.29 [\#307](https://github.com/viamrobotics/viam-flutter-sdk/pull/307) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add default local name and remote path [\#306](https://github.com/viamrobotics/viam-flutter-sdk/pull/306) ([njooma](https://github.com/njooma))
 - Reset stream in camera\_stream if camera changes [\#305](https://github.com/viamrobotics/viam-flutter-sdk/pull/305) ([kevin49999](https://github.com/kevin49999))
 - Update how streams are re-added [\#304](https://github.com/viamrobotics/viam-flutter-sdk/pull/304) ([njooma](https://github.com/njooma))
@@ -29,6 +31,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.29](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.29) (2024-11-26)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.28...v0.0.29)
 
 ## [v0.0.28](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.28) (2024-11-21)
 
