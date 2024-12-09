@@ -1103,10 +1103,14 @@ class RubySettings extends $pb.GeneratedMessage {
 class GoSettings extends $pb.GeneratedMessage {
   factory GoSettings({
     CommonLanguageSettings? common,
+    $core.Map<$core.String, $core.String>? renamedServices,
   }) {
     final $result = create();
     if (common != null) {
       $result.common = common;
+    }
+    if (renamedServices != null) {
+      $result.renamedServices.addAll(renamedServices);
     }
     return $result;
   }
@@ -1116,6 +1120,7 @@ class GoSettings extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GoSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOM<CommonLanguageSettings>(1, _omitFieldNames ? '' : 'common', subBuilder: CommonLanguageSettings.create)
+    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'renamedServices', entryClassName: 'GoSettings.RenamedServicesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.api'))
     ..hasRequiredFields = false
   ;
 
@@ -1151,6 +1156,17 @@ class GoSettings extends $pb.GeneratedMessage {
   void clearCommon() => clearField(1);
   @$pb.TagNumber(1)
   CommonLanguageSettings ensureCommon() => $_ensure(0);
+
+  ///  Map of service names to renamed services. Keys are the package relative
+  ///  service names and values are the name to be used for the service client
+  ///  and call options.
+  ///
+  ///  publishing:
+  ///    go_settings:
+  ///      renamed_services:
+  ///        Publisher: TopicAdmin
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $core.String> get renamedServices => $_getMap(1);
 }
 
 /// Describes settings to use when generating API methods that use the
