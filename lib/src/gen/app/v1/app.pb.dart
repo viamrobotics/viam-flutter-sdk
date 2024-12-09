@@ -6445,6 +6445,98 @@ class FragmentError extends $pb.GeneratedMessage {
   void clearDetail() => clearField(3);
 }
 
+class FragmentUsage extends $pb.GeneratedMessage {
+  factory FragmentUsage({
+    $core.int? fragmentId,
+    $fixnum.Int64? organizations,
+    $fixnum.Int64? machines,
+    $fixnum.Int64? machinesInCurrentOrg,
+  }) {
+    final $result = create();
+    if (fragmentId != null) {
+      $result.fragmentId = fragmentId;
+    }
+    if (organizations != null) {
+      $result.organizations = organizations;
+    }
+    if (machines != null) {
+      $result.machines = machines;
+    }
+    if (machinesInCurrentOrg != null) {
+      $result.machinesInCurrentOrg = machinesInCurrentOrg;
+    }
+    return $result;
+  }
+  FragmentUsage._() : super();
+  factory FragmentUsage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentUsage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentUsage', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'fragmentId', $pb.PbFieldType.O3)
+    ..aInt64(2, _omitFieldNames ? '' : 'organizations')
+    ..aInt64(3, _omitFieldNames ? '' : 'machines')
+    ..aInt64(4, _omitFieldNames ? '' : 'machinesInCurrentOrg')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentUsage clone() => FragmentUsage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentUsage copyWith(void Function(FragmentUsage) updates) => super.copyWith((message) => updates(message as FragmentUsage)) as FragmentUsage;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentUsage create() => FragmentUsage._();
+  FragmentUsage createEmptyInstance() => create();
+  static $pb.PbList<FragmentUsage> createRepeated() => $pb.PbList<FragmentUsage>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentUsage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentUsage>(create);
+  static FragmentUsage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get fragmentId => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set fragmentId($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFragmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFragmentId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get organizations => $_getI64(1);
+  @$pb.TagNumber(2)
+  set organizations($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizations() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizations() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get machines => $_getI64(2);
+  @$pb.TagNumber(3)
+  set machines($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMachines() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMachines() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get machinesInCurrentOrg => $_getI64(3);
+  @$pb.TagNumber(4)
+  set machinesInCurrentOrg($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMachinesInCurrentOrg() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMachinesInCurrentOrg() => clearField(4);
+}
+
 class ResolvedFragment extends $pb.GeneratedMessage {
   factory ResolvedFragment({
     $core.String? fragmentId,
@@ -6602,10 +6694,14 @@ class ListFragmentsRequest extends $pb.GeneratedMessage {
 class ListFragmentsResponse extends $pb.GeneratedMessage {
   factory ListFragmentsResponse({
     $core.Iterable<Fragment>? fragments,
+    $core.Iterable<FragmentUsage>? fragmentUsages,
   }) {
     final $result = create();
     if (fragments != null) {
       $result.fragments.addAll(fragments);
+    }
+    if (fragmentUsages != null) {
+      $result.fragmentUsages.addAll(fragmentUsages);
     }
     return $result;
   }
@@ -6615,6 +6711,7 @@ class ListFragmentsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFragmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<Fragment>(1, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: Fragment.create)
+    ..pc<FragmentUsage>(2, _omitFieldNames ? '' : 'fragmentUsages', $pb.PbFieldType.PM, subBuilder: FragmentUsage.create)
     ..hasRequiredFields = false
   ;
 
@@ -6641,15 +6738,22 @@ class ListFragmentsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<Fragment> get fragments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<FragmentUsage> get fragmentUsages => $_getList(1);
 }
 
 class GetFragmentRequest extends $pb.GeneratedMessage {
   factory GetFragmentRequest({
     $core.String? id,
+    $core.String? currentOrganizationId,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
+    }
+    if (currentOrganizationId != null) {
+      $result.currentOrganizationId = currentOrganizationId;
     }
     return $result;
   }
@@ -6659,6 +6763,7 @@ class GetFragmentRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFragmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'currentOrganizationId')
     ..hasRequiredFields = false
   ;
 
@@ -6691,15 +6796,28 @@ class GetFragmentRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get currentOrganizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set currentOrganizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCurrentOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCurrentOrganizationId() => clearField(2);
 }
 
 class GetFragmentResponse extends $pb.GeneratedMessage {
   factory GetFragmentResponse({
     Fragment? fragment,
+    FragmentUsage? fragmentUsage,
   }) {
     final $result = create();
     if (fragment != null) {
       $result.fragment = fragment;
+    }
+    if (fragmentUsage != null) {
+      $result.fragmentUsage = fragmentUsage;
     }
     return $result;
   }
@@ -6709,6 +6827,7 @@ class GetFragmentResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFragmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOM<Fragment>(1, _omitFieldNames ? '' : 'fragment', subBuilder: Fragment.create)
+    ..aOM<FragmentUsage>(2, _omitFieldNames ? '' : 'fragmentUsage', subBuilder: FragmentUsage.create)
     ..hasRequiredFields = false
   ;
 
@@ -6743,6 +6862,17 @@ class GetFragmentResponse extends $pb.GeneratedMessage {
   void clearFragment() => clearField(1);
   @$pb.TagNumber(1)
   Fragment ensureFragment() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  FragmentUsage get fragmentUsage => $_getN(1);
+  @$pb.TagNumber(2)
+  set fragmentUsage(FragmentUsage v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFragmentUsage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFragmentUsage() => clearField(2);
+  @$pb.TagNumber(2)
+  FragmentUsage ensureFragmentUsage() => $_ensure(1);
 }
 
 class CreateFragmentRequest extends $pb.GeneratedMessage {
