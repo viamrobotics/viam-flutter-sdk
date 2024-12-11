@@ -14,6 +14,7 @@ import 'package:viam_sdk/src/gen/app/data/v1/data.pb.dart';
 import 'package:viam_sdk/src/gen/app/data/v1/data.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/timestamp.pb.dart';
 import 'package:viam_sdk/src/media/image.dart';
+import 'package:viam_sdk/src/utils.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -293,6 +294,31 @@ void main() {
         await dataClient
             .removeBinaryDataFromDatasetByIds([BinaryID(fileId: 'fileId', organizationId: 'orgId', locationId: 'locId')], 'dataset');
         verify(serviceClient.removeBinaryDataFromDatasetByIDs(any)).called(1);
+      });
+      test('getLatestTabularData', () async {
+        final timeCaptured = DateTime.utc(2023, 1, 1);
+        final timeSynced = DateTime.utc(2023, 1, 2);
+        final Map<String, dynamic> payload = {'key': 'value'};
+
+        when(serviceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse(
+            timeCaptured: Timestamp.fromDateTime(timeCaptured),
+            timeSynced: Timestamp.fromDateTime(timeSynced),
+            payload: payload.toStruct())));
+
+        final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+
+        expect(response?.timeCaptured, equals(timeCaptured));
+        expect(response?.timeSynced, equals(timeSynced));
+        expect(response?.payload, equals({'key': 'value'}));
+
+        verify(serviceClient.getLatestTabularData(any)).called(1);
+
+        // Test null response
+        when(serviceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
+
+        final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+
+        expect(nullResponse, isNull);
       });
     });
 
