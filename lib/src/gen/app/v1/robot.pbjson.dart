@@ -52,6 +52,7 @@ const RobotConfig$json = {
     {'1': 'log', '3': 14, '4': 3, '5': 11, '6': '.viam.app.v1.LogPatternConfig', '10': 'log'},
     {'1': 'revision', '3': 15, '4': 1, '5': 9, '10': 'revision'},
     {'1': 'maintenance', '3': 16, '4': 1, '5': 11, '6': '.viam.app.v1.MaintenanceConfig', '9': 4, '10': 'maintenance', '17': true},
+    {'1': 'disable_log_deduplication', '3': 17, '4': 1, '5': 8, '10': 'disableLogDeduplication'},
   ],
   '8': [
     {'1': '_network'},
@@ -79,9 +80,10 @@ final $typed_data.Uint8List robotConfigDescriptor = $convert.base64Decode(
     'cndyaXRlRnJhZ21lbnRTdGF0dXMSLAoSZW5hYmxlX3dlYl9wcm9maWxlGA0gASgIUhBlbmFibG'
     'VXZWJQcm9maWxlEi8KA2xvZxgOIAMoCzIdLnZpYW0uYXBwLnYxLkxvZ1BhdHRlcm5Db25maWdS'
     'A2xvZxIaCghyZXZpc2lvbhgPIAEoCVIIcmV2aXNpb24SRQoLbWFpbnRlbmFuY2UYECABKAsyHi'
-    '52aWFtLmFwcC52MS5NYWludGVuYW5jZUNvbmZpZ0gEUgttYWludGVuYW5jZYgBAUIKCghfbmV0'
-    'd29ya0IHCgVfYXV0aEIICgZfZGVidWdCGAoWX2Rpc2FibGVfcGFydGlhbF9zdGFydEIOCgxfbW'
-    'FpbnRlbmFuY2U=');
+    '52aWFtLmFwcC52MS5NYWludGVuYW5jZUNvbmZpZ0gEUgttYWludGVuYW5jZYgBARI6ChlkaXNh'
+    'YmxlX2xvZ19kZWR1cGxpY2F0aW9uGBEgASgIUhdkaXNhYmxlTG9nRGVkdXBsaWNhdGlvbkIKCg'
+    'hfbmV0d29ya0IHCgVfYXV0aEIICgZfZGVidWdCGAoWX2Rpc2FibGVfcGFydGlhbF9zdGFydEIO'
+    'CgxfbWFpbnRlbmFuY2U=');
 
 @$core.Deprecated('Use logPatternConfigDescriptor instead')
 const LogPatternConfig$json = {

@@ -303,13 +303,28 @@ const GoSettings$json = {
   '1': 'GoSettings',
   '2': [
     {'1': 'common', '3': 1, '4': 1, '5': 11, '6': '.google.api.CommonLanguageSettings', '10': 'common'},
+    {'1': 'renamed_services', '3': 2, '4': 3, '5': 11, '6': '.google.api.GoSettings.RenamedServicesEntry', '10': 'renamedServices'},
   ],
+  '3': [GoSettings_RenamedServicesEntry$json],
+};
+
+@$core.Deprecated('Use goSettingsDescriptor instead')
+const GoSettings_RenamedServicesEntry$json = {
+  '1': 'RenamedServicesEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `GoSettings`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List goSettingsDescriptor = $convert.base64Decode(
     'CgpHb1NldHRpbmdzEjoKBmNvbW1vbhgBIAEoCzIiLmdvb2dsZS5hcGkuQ29tbW9uTGFuZ3VhZ2'
-    'VTZXR0aW5nc1IGY29tbW9u');
+    'VTZXR0aW5nc1IGY29tbW9uElYKEHJlbmFtZWRfc2VydmljZXMYAiADKAsyKy5nb29nbGUuYXBp'
+    'LkdvU2V0dGluZ3MuUmVuYW1lZFNlcnZpY2VzRW50cnlSD3JlbmFtZWRTZXJ2aWNlcxpCChRSZW'
+    '5hbWVkU2VydmljZXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFs'
+    'dWU6AjgB');
 
 @$core.Deprecated('Use methodSettingsDescriptor instead')
 const MethodSettings$json = {

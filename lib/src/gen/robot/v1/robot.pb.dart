@@ -2522,6 +2522,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
   factory GetMachineStatusResponse({
     $core.Iterable<ResourceStatus>? resources,
     ConfigStatus? config,
+    GetMachineStatusResponse_State? state,
   }) {
     final $result = create();
     if (resources != null) {
@@ -2529,6 +2530,9 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     }
     if (config != null) {
       $result.config = config;
+    }
+    if (state != null) {
+      $result.state = state;
     }
     return $result;
   }
@@ -2539,6 +2543,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMachineStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..pc<ResourceStatus>(1, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: ResourceStatus.create)
     ..aOM<ConfigStatus>(2, _omitFieldNames ? '' : 'config', subBuilder: ConfigStatus.create)
+    ..e<GetMachineStatusResponse_State>(3, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: GetMachineStatusResponse_State.STATE_UNSPECIFIED, valueOf: GetMachineStatusResponse_State.valueOf, enumValues: GetMachineStatusResponse_State.values)
     ..hasRequiredFields = false
   ;
 
@@ -2576,6 +2581,15 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
   void clearConfig() => clearField(2);
   @$pb.TagNumber(2)
   ConfigStatus ensureConfig() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  GetMachineStatusResponse_State get state => $_getN(2);
+  @$pb.TagNumber(3)
+  set state(GetMachineStatusResponse_State v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => clearField(3);
 }
 
 class ResourceStatus extends $pb.GeneratedMessage {

@@ -329,8 +329,8 @@ const ExportTabularDataResponse$json = {
   '1': 'ExportTabularDataResponse',
   '2': [
     {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
-    {'1': 'component_name', '3': 2, '4': 1, '5': 9, '10': 'componentName'},
-    {'1': 'component_type', '3': 3, '4': 1, '5': 9, '10': 'componentType'},
+    {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
+    {'1': 'resource_subtype', '3': 3, '4': 1, '5': 9, '10': 'resourceSubtype'},
     {'1': 'method_name', '3': 4, '4': 1, '5': 9, '10': 'methodName'},
     {'1': 'time_captured', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timeCaptured'},
     {'1': 'organization_id', '3': 6, '4': 1, '5': 9, '10': 'organizationId'},
@@ -338,37 +338,24 @@ const ExportTabularDataResponse$json = {
     {'1': 'robot_name', '3': 8, '4': 1, '5': 9, '10': 'robotName'},
     {'1': 'robot_id', '3': 9, '4': 1, '5': 9, '10': 'robotId'},
     {'1': 'part_name', '3': 10, '4': 1, '5': 9, '10': 'partName'},
-    {'1': 'method_parameters', '3': 11, '4': 3, '5': 11, '6': '.viam.app.data.v1.ExportTabularDataResponse.MethodParametersEntry', '10': 'methodParameters'},
+    {'1': 'method_parameters', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'methodParameters'},
     {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
     {'1': 'payload', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'payload'},
   ],
-  '3': [ExportTabularDataResponse_MethodParametersEntry$json],
-};
-
-@$core.Deprecated('Use exportTabularDataResponseDescriptor instead')
-const ExportTabularDataResponse_MethodParametersEntry$json = {
-  '1': 'MethodParametersEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `ExportTabularDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List exportTabularDataResponseDescriptor = $convert.base64Decode(
-    'ChlFeHBvcnRUYWJ1bGFyRGF0YVJlc3BvbnNlEhcKB3BhcnRfaWQYASABKAlSBnBhcnRJZBIlCg'
-    '5jb21wb25lbnRfbmFtZRgCIAEoCVINY29tcG9uZW50TmFtZRIlCg5jb21wb25lbnRfdHlwZRgD'
-    'IAEoCVINY29tcG9uZW50VHlwZRIfCgttZXRob2RfbmFtZRgEIAEoCVIKbWV0aG9kTmFtZRI/Cg'
-    '10aW1lX2NhcHR1cmVkGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIMdGltZUNh'
-    'cHR1cmVkEicKD29yZ2FuaXphdGlvbl9pZBgGIAEoCVIOb3JnYW5pemF0aW9uSWQSHwoLbG9jYX'
-    'Rpb25faWQYByABKAlSCmxvY2F0aW9uSWQSHQoKcm9ib3RfbmFtZRgIIAEoCVIJcm9ib3ROYW1l'
-    'EhkKCHJvYm90X2lkGAkgASgJUgdyb2JvdElkEhsKCXBhcnRfbmFtZRgKIAEoCVIIcGFydE5hbW'
-    'USbgoRbWV0aG9kX3BhcmFtZXRlcnMYCyADKAsyQS52aWFtLmFwcC5kYXRhLnYxLkV4cG9ydFRh'
-    'YnVsYXJEYXRhUmVzcG9uc2UuTWV0aG9kUGFyYW1ldGVyc0VudHJ5UhBtZXRob2RQYXJhbWV0ZX'
-    'JzEhIKBHRhZ3MYDCADKAlSBHRhZ3MSMQoHcGF5bG9hZBgNIAEoCzIXLmdvb2dsZS5wcm90b2J1'
-    'Zi5TdHJ1Y3RSB3BheWxvYWQaWQoVTWV0aG9kUGFyYW1ldGVyc0VudHJ5EhAKA2tleRgBIAEoCV'
-    'IDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIFdmFsdWU6AjgB');
+    'ChlFeHBvcnRUYWJ1bGFyRGF0YVJlc3BvbnNlEhcKB3BhcnRfaWQYASABKAlSBnBhcnRJZBIjCg'
+    '1yZXNvdXJjZV9uYW1lGAIgASgJUgxyZXNvdXJjZU5hbWUSKQoQcmVzb3VyY2Vfc3VidHlwZRgD'
+    'IAEoCVIPcmVzb3VyY2VTdWJ0eXBlEh8KC21ldGhvZF9uYW1lGAQgASgJUgptZXRob2ROYW1lEj'
+    '8KDXRpbWVfY2FwdHVyZWQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgx0aW1l'
+    'Q2FwdHVyZWQSJwoPb3JnYW5pemF0aW9uX2lkGAYgASgJUg5vcmdhbml6YXRpb25JZBIfCgtsb2'
+    'NhdGlvbl9pZBgHIAEoCVIKbG9jYXRpb25JZBIdCgpyb2JvdF9uYW1lGAggASgJUglyb2JvdE5h'
+    'bWUSGQoIcm9ib3RfaWQYCSABKAlSB3JvYm90SWQSGwoJcGFydF9uYW1lGAogASgJUghwYXJ0Tm'
+    'FtZRJEChFtZXRob2RfcGFyYW1ldGVycxgLIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RS'
+    'EG1ldGhvZFBhcmFtZXRlcnMSEgoEdGFncxgMIAMoCVIEdGFncxIxCgdwYXlsb2FkGA0gASgLMh'
+    'cuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIHcGF5bG9hZA==');
 
 @$core.Deprecated('Use getLatestTabularDataRequestDescriptor instead')
 const GetLatestTabularDataRequest$json = {

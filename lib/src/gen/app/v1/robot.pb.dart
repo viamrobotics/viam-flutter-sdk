@@ -38,6 +38,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.Iterable<LogPatternConfig>? log,
     $core.String? revision,
     MaintenanceConfig? maintenance,
+    $core.bool? disableLogDeduplication,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -88,6 +89,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (maintenance != null) {
       $result.maintenance = maintenance;
     }
+    if (disableLogDeduplication != null) {
+      $result.disableLogDeduplication = disableLogDeduplication;
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -111,6 +115,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..pc<LogPatternConfig>(14, _omitFieldNames ? '' : 'log', $pb.PbFieldType.PM, subBuilder: LogPatternConfig.create)
     ..aOS(15, _omitFieldNames ? '' : 'revision')
     ..aOM<MaintenanceConfig>(16, _omitFieldNames ? '' : 'maintenance', subBuilder: MaintenanceConfig.create)
+    ..aOB(17, _omitFieldNames ? '' : 'disableLogDeduplication')
     ..hasRequiredFields = false
   ;
 
@@ -241,6 +246,17 @@ class RobotConfig extends $pb.GeneratedMessage {
   void clearMaintenance() => clearField(16);
   @$pb.TagNumber(16)
   MaintenanceConfig ensureMaintenance() => $_ensure(15);
+
+  /// Disables the robot's log deduplication (identical, noisy logs will still
+  /// be output individually instead of aggregated.)
+  @$pb.TagNumber(17)
+  $core.bool get disableLogDeduplication => $_getBF(16);
+  @$pb.TagNumber(17)
+  set disableLogDeduplication($core.bool v) { $_setBool(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasDisableLogDeduplication() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearDisableLogDeduplication() => clearField(17);
 }
 
 /// LogPatternConfig allows you to specify a 2-tuple consisting
