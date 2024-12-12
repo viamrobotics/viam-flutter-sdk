@@ -175,25 +175,35 @@ Future<String> _searchMdns(String address) async {
   const type = '_rpc._tcp';
   final discovery = BonsoirDiscovery(type: type);
   await discovery.ready;
-  await discovery.start();
 
-  // The duration of timeout was arbitrarily decided.
-  // 1 second seemed enough to allow the device to scan
-  // the local network for matches before moving on.
-  // The balance we are striking here is long enough to
-  // reliably scan the local network, but short enough to not
-  // noticeably lengthen the connection flow for the user.
-
-  const timeout = Duration(seconds: 1);
-  await for (final event in discovery.eventStream!.timeout(timeout)) {
+  String? localAddress;
+  discovery.eventStream!.listen((event) {
     if (event.type == BonsoirDiscoveryEventType.discoveryServiceFound) {
       unawaited(event.service!.resolve(discovery.serviceResolver));
     } else if (event.type == BonsoirDiscoveryEventType.discoveryServiceResolved) {
       final service = event.service! as ResolvedBonsoirService;
       if (service.name == targetName && service.host != null) {
         final host = service.host!.substring(0, service.host!.length - 1);
-        return ('$host:${service.port}');
+        localAddress = '$host:${service.port}';
       }
+    }
+  });
+
+  await discovery.start();
+  final startTime = DateTime.now();
+
+  // The duration of timeout was arbitrarily decided.
+  // 2 seconds seemed enough to allow the device to scan
+  // the local network for matches before moving on.
+  // The balance we are striking here is long enough to
+  // reliably scan the local network, but short enough to not
+  // noticeably lengthen the connection flow for the user.
+  const timeout = Duration(seconds: 2);
+  while (DateTime.now().difference(startTime) < timeout) {
+    await Future.delayed(const Duration(microseconds: 100));
+    if (localAddress != null) {
+      await discovery.stop();
+      return localAddress!;
     }
   }
 
