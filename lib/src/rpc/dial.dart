@@ -151,7 +151,6 @@ Future<ClientChannelBase> dial(String address, DialOptions? options, String Func
     }
     mdnsSW.stop();
     _logger.d('STATS: mDNS discovery took ${mdnsSW.elapsed}');
-    throw Error();
   }
 
   bool disableWebRtc = opts.webRtcOptions?.disable ?? false;
