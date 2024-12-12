@@ -38,6 +38,7 @@ class UsageCostType extends $pb.ProtobufEnum {
   static const UsageCostType USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE = UsageCostType._(6, _omitEnumNames ? '' : 'USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE');
   static const UsageCostType USAGE_COST_TYPE_OTHER_CLOUD_STORAGE = UsageCostType._(7, _omitEnumNames ? '' : 'USAGE_COST_TYPE_OTHER_CLOUD_STORAGE');
   static const UsageCostType USAGE_COST_TYPE_PER_MACHINE = UsageCostType._(8, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PER_MACHINE');
+  static const UsageCostType USAGE_COST_TYPE_TRIGGER_NOTIFICATION = UsageCostType._(9, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TRIGGER_NOTIFICATION');
 
   static const $core.List<UsageCostType> values = <UsageCostType> [
     USAGE_COST_TYPE_UNSPECIFIED,
@@ -49,6 +50,7 @@ class UsageCostType extends $pb.ProtobufEnum {
     USAGE_COST_TYPE_BINARY_DATA_CLOUD_STORAGE,
     USAGE_COST_TYPE_OTHER_CLOUD_STORAGE,
     USAGE_COST_TYPE_PER_MACHINE,
+    USAGE_COST_TYPE_TRIGGER_NOTIFICATION,
   ];
 
   static final $core.Map<$core.int, UsageCostType> _byValue = $pb.ProtobufEnum.initByValue(values);

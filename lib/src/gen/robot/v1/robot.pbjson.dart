@@ -663,6 +663,18 @@ const GetMachineStatusResponse$json = {
   '2': [
     {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.ResourceStatus', '10': 'resources'},
     {'1': 'config', '3': 2, '4': 1, '5': 11, '6': '.viam.robot.v1.ConfigStatus', '10': 'config'},
+    {'1': 'state', '3': 3, '4': 1, '5': 14, '6': '.viam.robot.v1.GetMachineStatusResponse.State', '10': 'state'},
+  ],
+  '4': [GetMachineStatusResponse_State$json],
+};
+
+@$core.Deprecated('Use getMachineStatusResponseDescriptor instead')
+const GetMachineStatusResponse_State$json = {
+  '1': 'State',
+  '2': [
+    {'1': 'STATE_UNSPECIFIED', '2': 0},
+    {'1': 'STATE_INITIALIZING', '2': 1},
+    {'1': 'STATE_RUNNING', '2': 2},
   ],
 };
 
@@ -670,7 +682,10 @@ const GetMachineStatusResponse$json = {
 final $typed_data.Uint8List getMachineStatusResponseDescriptor = $convert.base64Decode(
     'ChhHZXRNYWNoaW5lU3RhdHVzUmVzcG9uc2USOwoJcmVzb3VyY2VzGAEgAygLMh0udmlhbS5yb2'
     'JvdC52MS5SZXNvdXJjZVN0YXR1c1IJcmVzb3VyY2VzEjMKBmNvbmZpZxgCIAEoCzIbLnZpYW0u'
-    'cm9ib3QudjEuQ29uZmlnU3RhdHVzUgZjb25maWc=');
+    'cm9ib3QudjEuQ29uZmlnU3RhdHVzUgZjb25maWcSQwoFc3RhdGUYAyABKA4yLS52aWFtLnJvYm'
+    '90LnYxLkdldE1hY2hpbmVTdGF0dXNSZXNwb25zZS5TdGF0ZVIFc3RhdGUiSQoFU3RhdGUSFQoR'
+    'U1RBVEVfVU5TUEVDSUZJRUQQABIWChJTVEFURV9JTklUSUFMSVpJTkcQARIRCg1TVEFURV9SVU'
+    '5OSU5HEAI=');
 
 @$core.Deprecated('Use resourceStatusDescriptor instead')
 const ResourceStatus$json = {

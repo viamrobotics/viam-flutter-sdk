@@ -30,6 +30,23 @@ class PeerConnectionType extends $pb.ProtobufEnum {
   const PeerConnectionType._($core.int v, $core.String n) : super(v, n);
 }
 
+class GetMachineStatusResponse_State extends $pb.ProtobufEnum {
+  static const GetMachineStatusResponse_State STATE_UNSPECIFIED = GetMachineStatusResponse_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
+  static const GetMachineStatusResponse_State STATE_INITIALIZING = GetMachineStatusResponse_State._(1, _omitEnumNames ? '' : 'STATE_INITIALIZING');
+  static const GetMachineStatusResponse_State STATE_RUNNING = GetMachineStatusResponse_State._(2, _omitEnumNames ? '' : 'STATE_RUNNING');
+
+  static const $core.List<GetMachineStatusResponse_State> values = <GetMachineStatusResponse_State> [
+    STATE_UNSPECIFIED,
+    STATE_INITIALIZING,
+    STATE_RUNNING,
+  ];
+
+  static final $core.Map<$core.int, GetMachineStatusResponse_State> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static GetMachineStatusResponse_State? valueOf($core.int value) => _byValue[value];
+
+  const GetMachineStatusResponse_State._($core.int v, $core.String n) : super(v, n);
+}
+
 class ResourceStatus_State extends $pb.ProtobufEnum {
   static const ResourceStatus_State STATE_UNSPECIFIED = ResourceStatus_State._(0, _omitEnumNames ? '' : 'STATE_UNSPECIFIED');
   static const ResourceStatus_State STATE_UNCONFIGURED = ResourceStatus_State._(1, _omitEnumNames ? '' : 'STATE_UNCONFIGURED');
