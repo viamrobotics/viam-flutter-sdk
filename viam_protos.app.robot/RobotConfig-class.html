@@ -16,15 +16,11 @@
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
   <link rel="icon" href="../static-assets/favicon.png?v1">
-
   
 </head>
 
-
 <body data-base-href="../" data-using-base-href="false" class="light-theme">
-
 <div id="overlay-under-drawer"></div>
-
 <header id="title">
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
@@ -49,7 +45,6 @@
   </div>
 </header>
 <main>
-
 <div
     id="dartdoc-main-content"
     class="main-content"
@@ -79,11 +74,11 @@
         
 
 
-          <dt>Available Extensions</dt>
-          <dd><ul class="comma-separated clazz-relationships">
-              <li><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a></li>
-          </ul></dd>
-
+        
+  <dt>Available extensions</dt>
+  <dd><ul class="comma-separated clazz-relationships">
+      <li><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a></li>
+  </ul></dd>
         
 
 
@@ -93,7 +88,6 @@
     
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
-
     <dl class="constructor-summary-list">
         <dt id="RobotConfig" class="callable">
           <span class="name"><a href="../viam_protos.app.robot/RobotConfig/RobotConfig.html">RobotConfig</a></span><span class="signature">({<span class="parameter" id="-param-cloud"><span class="type-annotation"><a href="../viam_protos.app.robot/CloudConfig-class.html">CloudConfig</a>?</span> <span class="parameter-name">cloud</span>, </span><span class="parameter" id="-param-remotes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/RemoteConfig-class.html">RemoteConfig</a></span>&gt;</span>?</span> <span class="parameter-name">remotes</span>, </span><span class="parameter" id="-param-components"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/ComponentConfig-class.html">ComponentConfig</a></span>&gt;</span>?</span> <span class="parameter-name">components</span>, </span><span class="parameter" id="-param-processes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/ProcessConfig-class.html">ProcessConfig</a></span>&gt;</span>?</span> <span class="parameter-name">processes</span>, </span><span class="parameter" id="-param-services"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/ServiceConfig-class.html">ServiceConfig</a></span>&gt;</span>?</span> <span class="parameter-name">services</span>, </span><span class="parameter" id="-param-network"><span class="type-annotation"><a href="../viam_protos.app.robot/NetworkConfig-class.html">NetworkConfig</a>?</span> <span class="parameter-name">network</span>, </span><span class="parameter" id="-param-auth"><span class="type-annotation"><a href="../viam_protos.app.robot/AuthConfig-class.html">AuthConfig</a>?</span> <span class="parameter-name">auth</span>, </span><span class="parameter" id="-param-debug"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">debug</span>, </span><span class="parameter" id="-param-modules"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/ModuleConfig-class.html">ModuleConfig</a></span>&gt;</span>?</span> <span class="parameter-name">modules</span>, </span><span class="parameter" id="-param-disablePartialStart"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disablePartialStart</span>, </span><span class="parameter" id="-param-packages"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/PackageConfig-class.html">PackageConfig</a></span>&gt;</span>?</span> <span class="parameter-name">packages</span>, </span><span class="parameter" id="-param-overwriteFragmentStatus"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/AppValidationStatus-class.html">AppValidationStatus</a></span>&gt;</span>?</span> <span class="parameter-name">overwriteFragmentStatus</span>, </span><span class="parameter" id="-param-enableWebProfile"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">enableWebProfile</span>, </span><span class="parameter" id="-param-log"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.robot/LogPatternConfig-class.html">LogPatternConfig</a></span>&gt;</span>?</span> <span class="parameter-name">log</span>, </span><span class="parameter" id="-param-revision"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">revision</span>, </span><span class="parameter" id="-param-maintenance"><span class="type-annotation"><a href="../viam_protos.app.robot/MaintenanceConfig-class.html">MaintenanceConfig</a>?</span> <span class="parameter-name">maintenance</span></span>})</span>
@@ -391,6 +385,7 @@ to protobuf fields.
 
     </dl>
   </section>
+
     
   <section
       class="summary offset-anchor"
@@ -629,6 +624,23 @@ to protobuf fields.
 <dd class="inherited">
   Creates List implementing a mutable repeated field.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="deepCopy" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions/deepCopy.html">deepCopy</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+      <p class="from-extension">
+        <span>Available on T,
+        provided by the <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a> extension</span>
+      </p>
+  Returns a writable deep copy of this message.
+  
 
 </dd>
 
@@ -1037,6 +1049,23 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="rebuild" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions/rebuild.html">rebuild</a></span><span class="signature">(<wbr><span class="parameter" id="rebuild-param-updates"><span class="type-annotation">void</span> <span class="parameter-name">updates</span>(<span class="parameter" id="param-"><span class="type-annotation">T</span></span>)</span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+      <p class="from-extension">
+        <span>Available on T,
+        provided by the <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a> extension</span>
+      </p>
+  Apply <code>updates</code> to a copy of this message.
+  
+
+</dd>
+
         <dt id="setExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/setExtension.html">setExtension</a></span><span class="signature">(<wbr><span class="parameter" id="setExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span>, </span><span class="parameter" id="setExtension-param-value"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">value</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -1238,9 +1267,7 @@ default value if it is not set.
   </section>
     
 
-
   </div> <!-- /.main-content -->
-
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
@@ -1248,40 +1275,30 @@ default value if it is not set.
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
-
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">viam_sdk</a></li>
     <li><a href="../viam_protos.app.robot/viam_protos.app.robot-library.html">viam_protos.app.robot</a></li>
     <li class="self-crumb">RobotConfig class</li>
 </ol>
 
-
     <h5>viam_protos.app.robot library</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div>
-
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
-
 </main>
-
 <footer>
   <span class="no-break">
     viam_sdk
       0.0.30
   </span>
-
   
 </footer>
-
 
 
 <script src="../static-assets/highlight.pack.js?v1"></script>
 <script src="../static-assets/docs.dart.js"></script>
 
-
-
 </body>
-
 </html>
 
