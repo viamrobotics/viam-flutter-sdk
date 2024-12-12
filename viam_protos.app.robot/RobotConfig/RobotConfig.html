@@ -73,6 +73,7 @@
 <li><span class="parameter" id="-param-log"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/LogPatternConfig-class.html">LogPatternConfig</a></span>&gt;</span>?</span> <span class="parameter-name">log</span>, </span></li>
 <li><span class="parameter" id="-param-revision"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">revision</span>, </span></li>
 <li><span class="parameter" id="-param-maintenance"><span class="type-annotation"><a href="../../viam_protos.app.robot/MaintenanceConfig-class.html">MaintenanceConfig</a>?</span> <span class="parameter-name">maintenance</span>, </span></li>
+<li><span class="parameter" id="-param-disableLogDeduplication"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disableLogDeduplication</span>, </span></li>
 </ol>})
     </section>
     
@@ -98,6 +99,7 @@
   $core.Iterable&lt;LogPatternConfig&gt;? log,
   $core.String? revision,
   MaintenanceConfig? maintenance,
+  $core.bool? disableLogDeduplication,
 }) {
   final $result = create();
   if (cloud != null) {
@@ -147,6 +149,9 @@
   }
   if (maintenance != null) {
     $result.maintenance = maintenance;
+  }
+  if (disableLogDeduplication != null) {
+    $result.disableLogDeduplication = disableLogDeduplication;
   }
   return $result;
 }</code></pre>

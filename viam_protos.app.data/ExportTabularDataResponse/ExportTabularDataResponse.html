@@ -58,8 +58,8 @@
     <section class="multi-line-signature">
       
       <span class="name ">ExportTabularDataResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-partId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partId</span>, </span></li>
-<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
-<li><span class="parameter" id="-param-componentType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentType</span>, </span></li>
+<li><span class="parameter" id="-param-resourceName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">resourceName</span>, </span></li>
+<li><span class="parameter" id="-param-resourceSubtype"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">resourceSubtype</span>, </span></li>
 <li><span class="parameter" id="-param-methodName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">methodName</span>, </span></li>
 <li><span class="parameter" id="-param-timeCaptured"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">timeCaptured</span>, </span></li>
 <li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
@@ -67,7 +67,7 @@
 <li><span class="parameter" id="-param-robotName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotName</span>, </span></li>
 <li><span class="parameter" id="-param-robotId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotId</span>, </span></li>
 <li><span class="parameter" id="-param-partName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partName</span>, </span></li>
-<li><span class="parameter" id="-param-methodParameters"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">Any</span>&gt;</span>?</span> <span class="parameter-name">methodParameters</span>, </span></li>
+<li><span class="parameter" id="-param-methodParameters"><span class="type-annotation">Struct?</span> <span class="parameter-name">methodParameters</span>, </span></li>
 <li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>, </span></li>
 <li><span class="parameter" id="-param-payload"><span class="type-annotation">Struct?</span> <span class="parameter-name">payload</span>, </span></li>
 </ol>})
@@ -80,8 +80,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory ExportTabularDataResponse({
   $core.String? partId,
-  $core.String? componentName,
-  $core.String? componentType,
+  $core.String? resourceName,
+  $core.String? resourceSubtype,
   $core.String? methodName,
   $44.Timestamp? timeCaptured,
   $core.String? organizationId,
@@ -89,7 +89,7 @@
   $core.String? robotName,
   $core.String? robotId,
   $core.String? partName,
-  $core.Map&lt;$core.String, $45.Any&gt;? methodParameters,
+  $43.Struct? methodParameters,
   $core.Iterable&lt;$core.String&gt;? tags,
   $43.Struct? payload,
 }) {
@@ -97,11 +97,11 @@
   if (partId != null) {
     $result.partId = partId;
   }
-  if (componentName != null) {
-    $result.componentName = componentName;
+  if (resourceName != null) {
+    $result.resourceName = resourceName;
   }
-  if (componentType != null) {
-    $result.componentType = componentType;
+  if (resourceSubtype != null) {
+    $result.resourceSubtype = resourceSubtype;
   }
   if (methodName != null) {
     $result.methodName = methodName;
@@ -125,7 +125,7 @@
     $result.partName = partName;
   }
   if (methodParameters != null) {
-    $result.methodParameters.addAll(methodParameters);
+    $result.methodParameters = methodParameters;
   }
   if (tags != null) {
     $result.tags.addAll(tags);

@@ -58,6 +58,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">GetFragmentResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-fragment"><span class="type-annotation"><a href="../../viam_protos.app.app/Fragment-class.html">Fragment</a>?</span> <span class="parameter-name">fragment</span>, </span></li>
+<li><span class="parameter" id="-param-fragmentUsage"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentUsage-class.html">FragmentUsage</a>?</span> <span class="parameter-name">fragmentUsage</span>, </span></li>
 </ol>})
     </section>
     
@@ -68,10 +69,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory GetFragmentResponse({
   Fragment? fragment,
+  FragmentUsage? fragmentUsage,
 }) {
   final $result = create();
   if (fragment != null) {
     $result.fragment = fragment;
+  }
+  if (fragmentUsage != null) {
+    $result.fragmentUsage = fragmentUsage;
   }
   return $result;
 }</code></pre>
