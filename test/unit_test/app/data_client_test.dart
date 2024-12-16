@@ -180,6 +180,100 @@ void main() {
         expect(response, equals(data));
       });
 
+      test('exportTabularData', () async {
+        final timeCaptured1 = DateTime.utc(2023, 1, 1);
+        final timeCaptured2 = DateTime.utc(2023, 1, 2);
+        final Map<String, dynamic> methodParams1 = {};
+        final Map<String, dynamic> methodParams2 = {'key': 'method2'};
+        final Map<String, dynamic> payload1 = {'key': 'value1'};
+        final Map<String, dynamic> payload2 = {'key': 'value2'};
+
+        final List<TabularDataPoint> data = [
+          TabularDataPoint(
+            partId: 'partId1',
+            resourceName: 'resourceName1',
+            resourceSubtype: 'resourceSubtype1',
+            methodName: 'Readings',
+            timeCaptured: timeCaptured1,
+            organizationId: 'orgId1',
+            locationId: 'locationId1',
+            robotName: 'robot1',
+            robotId: 'robotId1',
+            partName: 'part1',
+            methodParameters: methodParams1,
+            tags: [],
+            payload: payload1,
+          ),
+          TabularDataPoint(
+            partId: 'partId1',
+            resourceName: 'resourceName1',
+            resourceSubtype: 'resourceSubtype1',
+            methodName: 'Readings',
+            timeCaptured: timeCaptured2,
+            organizationId: 'orgId1',
+            locationId: 'locationId1',
+            robotName: 'robot1',
+            robotId: 'robotId1',
+            partName: 'part1',
+            methodParameters: methodParams2,
+            tags: [],
+            payload: payload2,
+          ),
+        ];
+
+        when(serviceClient.exportTabularData(any)).thenAnswer((_) => MockResponseStream.list([
+              ExportTabularDataResponse(
+                partId: 'partId1',
+                resourceName: 'resourceName1',
+                resourceSubtype: 'resourceSubtype1',
+                methodName: 'Readings',
+                timeCaptured: Timestamp.fromDateTime(timeCaptured1),
+                organizationId: 'orgId1',
+                locationId: 'locationId1',
+                robotName: 'robot1',
+                robotId: 'robotId1',
+                partName: 'part1',
+                methodParameters: methodParams1.toStruct(),
+                tags: [],
+                payload: payload1.toStruct(),
+              ),
+              ExportTabularDataResponse(
+                partId: 'partId1',
+                resourceName: 'resourceName1',
+                resourceSubtype: 'resourceSubtype1',
+                methodName: 'Readings',
+                timeCaptured: Timestamp.fromDateTime(timeCaptured2),
+                organizationId: 'orgId1',
+                locationId: 'locationId1',
+                robotName: 'robot1',
+                robotId: 'robotId1',
+                partName: 'part1',
+                methodParameters: methodParams2.toStruct(),
+                tags: [],
+                payload: payload2.toStruct(),
+              ),
+            ]));
+
+        final response = dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null);
+        var index = 0;
+        await for (final point in response) {
+          expect(point.partId, equals(data[index].partId));
+          expect(point.resourceName, equals(data[index].resourceName));
+          expect(point.resourceSubtype, equals(data[index].resourceSubtype));
+          expect(point.methodName, equals(data[index].methodName));
+          expect(point.timeCaptured, equals(data[index].timeCaptured));
+          expect(point.organizationId, equals(data[index].organizationId));
+          expect(point.locationId, equals(data[index].locationId));
+          expect(point.robotName, equals(data[index].robotName));
+          expect(point.robotId, equals(data[index].robotId));
+          expect(point.partName, equals(data[index].partName));
+          expect(point.methodParameters, equals(data[index].methodParameters));
+          expect(point.tags, equals(data[index].tags));
+          expect(point.payload, equals(data[index].payload));
+          index++;
+        }
+      });
+
       test('deleteTabularData', () async {
         when(serviceClient.deleteTabularData(any))
             .thenAnswer((_) => MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(12)));
