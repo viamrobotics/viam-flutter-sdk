@@ -41,6 +41,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListOrganizationsByUser',
       ($9.ListOrganizationsByUserRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.ListOrganizationsByUserResponse.fromBuffer(value));
+  static final _$searchOrganizations = $grpc.ClientMethod<$9.SearchOrganizationsRequest, $9.SearchOrganizationsResponse>(
+      '/viam.app.v1.AppService/SearchOrganizations',
+      ($9.SearchOrganizationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.SearchOrganizationsResponse.fromBuffer(value));
   static final _$getOrganization = $grpc.ClientMethod<$9.GetOrganizationRequest, $9.GetOrganizationResponse>(
       '/viam.app.v1.AppService/GetOrganization',
       ($9.GetOrganizationRequest value) => value.writeToBuffer(),
@@ -398,6 +402,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$9.ListOrganizationsByUserResponse> listOrganizationsByUser($9.ListOrganizationsByUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOrganizationsByUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$9.SearchOrganizationsResponse> searchOrganizations($9.SearchOrganizationsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchOrganizations, request, options: options);
   }
 
   $grpc.ResponseFuture<$9.GetOrganizationResponse> getOrganization($9.GetOrganizationRequest request, {$grpc.CallOptions? options}) {
@@ -773,6 +781,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $9.ListOrganizationsByUserRequest.fromBuffer(value),
         ($9.ListOrganizationsByUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.SearchOrganizationsRequest, $9.SearchOrganizationsResponse>(
+        'SearchOrganizations',
+        searchOrganizations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $9.SearchOrganizationsRequest.fromBuffer(value),
+        ($9.SearchOrganizationsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$9.GetOrganizationRequest, $9.GetOrganizationResponse>(
         'GetOrganization',
         getOrganization_Pre,
@@ -1376,6 +1391,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return listOrganizationsByUser(call, await request);
   }
 
+  $async.Future<$9.SearchOrganizationsResponse> searchOrganizations_Pre($grpc.ServiceCall call, $async.Future<$9.SearchOrganizationsRequest> request) async {
+    return searchOrganizations(call, await request);
+  }
+
   $async.Future<$9.GetOrganizationResponse> getOrganization_Pre($grpc.ServiceCall call, $async.Future<$9.GetOrganizationRequest> request) async {
     return getOrganization(call, await request);
   }
@@ -1709,6 +1728,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$9.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $9.ListOrganizationsRequest request);
   $async.Future<$9.GetOrganizationsWithAccessToLocationResponse> getOrganizationsWithAccessToLocation($grpc.ServiceCall call, $9.GetOrganizationsWithAccessToLocationRequest request);
   $async.Future<$9.ListOrganizationsByUserResponse> listOrganizationsByUser($grpc.ServiceCall call, $9.ListOrganizationsByUserRequest request);
+  $async.Future<$9.SearchOrganizationsResponse> searchOrganizations($grpc.ServiceCall call, $9.SearchOrganizationsRequest request);
   $async.Future<$9.GetOrganizationResponse> getOrganization($grpc.ServiceCall call, $9.GetOrganizationRequest request);
   $async.Future<$9.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $9.GetOrganizationNamespaceAvailabilityRequest request);
   $async.Future<$9.UpdateOrganizationResponse> updateOrganization($grpc.ServiceCall call, $9.UpdateOrganizationRequest request);
