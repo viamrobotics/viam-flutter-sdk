@@ -165,17 +165,17 @@ class DataClient {
 
   /// Obtain unified tabular data and metadata from the specified data source.
   ///
-  /// Returns a stream of data points.
+  /// Returns a list of data points.
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
-  Stream<TabularDataPoint> exportTabularData(
+  Future<List<TabularDataPoint>> exportTabularData(
     String partId,
     String resourceName,
     String resourceSubtype,
     String methodName,
     DateTime? startTime,
     DateTime? endTime,
-  ) {
+  ) async {
     final interval = CaptureInterval();
     if (startTime != null) {
       interval.start = Timestamp.fromDateTime(startTime);
@@ -191,21 +191,24 @@ class DataClient {
       ..methodName = methodName
       ..interval = interval;
 
-    return _dataClient.exportTabularData(request).map((response) => TabularDataPoint(
-          partId: response.partId,
-          resourceName: response.resourceName,
-          resourceSubtype: response.resourceSubtype,
-          methodName: response.methodName,
-          timeCaptured: response.timeCaptured.toDateTime(),
-          organizationId: response.organizationId,
-          locationId: response.locationId,
-          robotName: response.robotName,
-          robotId: response.robotId,
-          partName: response.partName,
-          methodParameters: response.methodParameters.toMap(),
-          tags: response.tags,
-          payload: response.payload.toMap(),
-        ));
+    return _dataClient
+        .exportTabularData(request)
+        .map((response) => TabularDataPoint(
+              partId: response.partId,
+              resourceName: response.resourceName,
+              resourceSubtype: response.resourceSubtype,
+              methodName: response.methodName,
+              timeCaptured: response.timeCaptured.toDateTime(),
+              organizationId: response.organizationId,
+              locationId: response.locationId,
+              robotName: response.robotName,
+              robotId: response.robotId,
+              partName: response.partName,
+              methodParameters: response.methodParameters.toMap(),
+              tags: response.tags,
+              payload: response.payload.toMap(),
+            ))
+        .toList();
   }
 
   /// Delete tabular data older than a provided number of days from an organization.

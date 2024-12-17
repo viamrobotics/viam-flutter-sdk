@@ -254,9 +254,9 @@ void main() {
               ),
             ]));
 
-        final response = dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null);
+        final response = await dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null);
         var index = 0;
-        await for (final point in response) {
+        for (final point in response) {
           expect(point.partId, equals(data[index].partId));
           expect(point.resourceName, equals(data[index].resourceName));
           expect(point.resourceSubtype, equals(data[index].resourceSubtype));
