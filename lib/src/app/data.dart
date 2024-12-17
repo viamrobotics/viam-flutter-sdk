@@ -175,13 +175,13 @@ class DataClient {
     String methodName,
     DateTime? startTime,
     DateTime? endTime,
-  ) async* {
+  ) {
     final interval = CaptureInterval();
     if (startTime != null) {
-      interval.start = Timestamp()..seconds = Int64((startTime.millisecondsSinceEpoch / 1000).floor());
+      interval.start = Timestamp.fromDateTime(startTime);
     }
     if (endTime != null) {
-      interval.end = Timestamp()..seconds = Int64((endTime.millisecondsSinceEpoch / 1000).floor());
+      interval.end = Timestamp.fromDateTime(endTime);
     }
 
     final request = ExportTabularDataRequest()
@@ -190,25 +190,22 @@ class DataClient {
       ..resourceSubtype = resourceSubtype
       ..methodName = methodName
       ..interval = interval;
-    final responses = _dataClient.exportTabularData(request);
 
-    await for (var response in responses) {
-      yield TabularDataPoint(
-        partId: response.partId,
-        resourceName: response.resourceName,
-        resourceSubtype: response.resourceSubtype,
-        methodName: response.methodName,
-        timeCaptured: response.timeCaptured.toDateTime(),
-        organizationId: response.organizationId,
-        locationId: response.locationId,
-        robotName: response.robotName,
-        robotId: response.robotId,
-        partName: response.partName,
-        methodParameters: response.methodParameters.toMap(),
-        tags: response.tags,
-        payload: response.payload.toMap(),
-      );
-    }
+    return _dataClient.exportTabularData(request).map((response) => TabularDataPoint(
+          partId: response.partId,
+          resourceName: response.resourceName,
+          resourceSubtype: response.resourceSubtype,
+          methodName: response.methodName,
+          timeCaptured: response.timeCaptured.toDateTime(),
+          organizationId: response.organizationId,
+          locationId: response.locationId,
+          robotName: response.robotName,
+          robotId: response.robotId,
+          partName: response.partName,
+          methodParameters: response.methodParameters.toMap(),
+          tags: response.tags,
+          payload: response.payload.toMap(),
+        ));
   }
 
   /// Delete tabular data older than a provided number of days from an organization.
