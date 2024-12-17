@@ -165,7 +165,7 @@ class DataClient {
 
   /// Obtain unified tabular data and metadata from the specified data source.
   ///
-  /// Returns a list of data points.
+  /// Returns a list of unified tabular data and metadata.
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<TabularDataPoint>> exportTabularData(
