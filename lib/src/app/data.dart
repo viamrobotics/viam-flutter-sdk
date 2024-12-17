@@ -18,6 +18,66 @@ import '../utils.dart';
 /// {@category Viam SDK}
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
+/// Represents a tabular data point and its associated metadata.
+class TabularDataPoint {
+  /// The robot part ID
+  final String partId;
+
+  /// The resource name
+  final String resourceName;
+
+  /// The resource subtype
+  /// Example: `rdk:component:sensor`
+  final String resourceSubtype;
+
+  /// The method used for data capture
+  /// Example: `Readings`
+  final String methodName;
+
+  /// The time at which the data point was captured
+  final DateTime timeCaptured;
+
+  /// The organization ID
+  final String organizationId;
+
+  /// The location ID
+  final String locationId;
+
+  /// The robot name
+  final String robotName;
+
+  /// The robot ID
+  final String robotId;
+
+  /// The robot part name
+  final String partName;
+
+  /// Additional parameters associated with the data capture method
+  final dynamic methodParameters;
+
+  /// A list of tags associated with the data point
+  final List<String> tags;
+
+  /// The captured data
+  final Map<String, dynamic> payload;
+
+  TabularDataPoint({
+    required this.partId,
+    required this.resourceName,
+    required this.resourceSubtype,
+    required this.methodName,
+    required this.timeCaptured,
+    required this.organizationId,
+    required this.locationId,
+    required this.robotName,
+    required this.robotId,
+    required this.partName,
+    required this.methodParameters,
+    required this.tags,
+    required this.payload,
+  });
+}
+
 /// gRPC client used for retrieving, uploading, and modifying stored data from app.viam.com.
 ///
 /// All calls must be authenticated.
@@ -101,6 +161,54 @@ class DataClient {
       ..mqlBinary.addAll(query);
     final response = await _dataClient.tabularDataByMQL(request);
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
+  }
+
+  /// Obtain unified tabular data and metadata from the specified data source.
+  ///
+  /// Returns a list of unified tabular data and metadata.
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  Future<List<TabularDataPoint>> exportTabularData(
+    String partId,
+    String resourceName,
+    String resourceSubtype,
+    String methodName,
+    DateTime? startTime,
+    DateTime? endTime,
+  ) async {
+    final interval = CaptureInterval();
+    if (startTime != null) {
+      interval.start = Timestamp.fromDateTime(startTime);
+    }
+    if (endTime != null) {
+      interval.end = Timestamp.fromDateTime(endTime);
+    }
+
+    final request = ExportTabularDataRequest()
+      ..partId = partId
+      ..resourceName = resourceName
+      ..resourceSubtype = resourceSubtype
+      ..methodName = methodName
+      ..interval = interval;
+
+    return _dataClient
+        .exportTabularData(request)
+        .map((response) => TabularDataPoint(
+              partId: response.partId,
+              resourceName: response.resourceName,
+              resourceSubtype: response.resourceSubtype,
+              methodName: response.methodName,
+              timeCaptured: response.timeCaptured.toDateTime(),
+              organizationId: response.organizationId,
+              locationId: response.locationId,
+              robotName: response.robotName,
+              robotId: response.robotId,
+              partName: response.partName,
+              methodParameters: response.methodParameters.toMap(),
+              tags: response.tags,
+              payload: response.payload.toMap(),
+            ))
+        .toList();
   }
 
   /// Delete tabular data older than a provided number of days from an organization.
