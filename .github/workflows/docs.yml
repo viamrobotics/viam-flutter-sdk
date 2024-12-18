@@ -39,7 +39,7 @@ jobs:
         run: zip html-docs.zip ./doc/api -r
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: html-docs
           path: html-docs.zip
