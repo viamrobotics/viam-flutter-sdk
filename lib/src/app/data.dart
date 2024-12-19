@@ -92,7 +92,7 @@ class DataClient {
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
 
-  /// Obtain unified tabular data and metadata, queried with MQL.
+  /// Obtain unified tabular data and metadata, queried with MQL. The query should be of type List<Map<String, dynamic>>.
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, dynamic query) async {
