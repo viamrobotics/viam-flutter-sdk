@@ -12,7 +12,7 @@ on:
 
 jobs:
   generate-docs:
-    if: github.repository_owner == 'viamrobotics'
+    # if: github.repository_owner == 'viamrobotics'
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/cirruslabs/flutter:latest
@@ -26,14 +26,14 @@ jobs:
       - name: Generate docs
         run: dart doc
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/api
-          publish_branch: docs-gh_pages
-          cname: flutter.viam.dev
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: github.ref == 'refs/heads/main'
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: doc/api
+      #     publish_branch: docs-gh_pages
+      #     cname: flutter.viam.dev
 
       - name: Zip artifacts
         run: zip html-docs.zip ./doc/api -r
