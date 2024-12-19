@@ -162,6 +162,9 @@ void main() {
       });
 
       test('tabularDataByMql', () async {
+        final List<Map<String, dynamic>> query = [
+          {'key': 'value'}
+        ];
         final startDate = DateTime.utc(2020, 12, 31);
         final List<Map<String, dynamic>> data = [
           {
@@ -175,7 +178,7 @@ void main() {
         when(serviceClient.tabularDataByMQL(any)).thenAnswer(
             (_) => MockResponseFuture.value(TabularDataByMQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
 
-        final response = await dataClient.tabularDataByMql('some_org_id', [Uint8List.fromList('some_query'.codeUnits)]);
+        final response = await dataClient.tabularDataByMql('some_org_id', query);
         expect(response[0]['key1'], equals(data[0]['key1']));
         expect(response, equals(data));
       });
