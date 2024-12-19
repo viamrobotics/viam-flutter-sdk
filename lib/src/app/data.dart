@@ -95,10 +95,18 @@ class DataClient {
   /// Obtain unified tabular data and metadata, queried with MQL.
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
-  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, List<Uint8List> query) async {
+  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, dynamic query) async {
+    List<Uint8List> binary;
+    if (query is List<Map<String, dynamic>>) {
+      binary = query.map((q) => BsonCodec.serialize(q).byteList).toList();
+    } else if (query is List<Uint8List>) {
+      binary = query;
+    } else {
+      throw TypeError();
+    }
     final request = TabularDataByMQLRequest()
       ..organizationId = organizationId
-      ..mqlBinary.addAll(query);
+      ..mqlBinary.addAll(binary);
     final response = await _dataClient.tabularDataByMQL(request);
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
