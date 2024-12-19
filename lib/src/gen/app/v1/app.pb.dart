@@ -6447,10 +6447,10 @@ class FragmentError extends $pb.GeneratedMessage {
 
 class FragmentUsage extends $pb.GeneratedMessage {
   factory FragmentUsage({
-    $core.int? fragmentId,
-    $fixnum.Int64? organizations,
-    $fixnum.Int64? machines,
-    $fixnum.Int64? machinesInCurrentOrg,
+    $core.String? fragmentId,
+    $core.int? organizations,
+    $core.int? machines,
+    $core.int? machinesInCurrentOrg,
   }) {
     final $result = create();
     if (fragmentId != null) {
@@ -6472,10 +6472,10 @@ class FragmentUsage extends $pb.GeneratedMessage {
   factory FragmentUsage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentUsage', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'fragmentId', $pb.PbFieldType.O3)
-    ..aInt64(2, _omitFieldNames ? '' : 'organizations')
-    ..aInt64(3, _omitFieldNames ? '' : 'machines')
-    ..aInt64(4, _omitFieldNames ? '' : 'machinesInCurrentOrg')
+    ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'organizations', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'machines', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'machinesInCurrentOrg', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -6501,36 +6501,36 @@ class FragmentUsage extends $pb.GeneratedMessage {
   static FragmentUsage? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get fragmentId => $_getIZ(0);
+  $core.String get fragmentId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set fragmentId($core.int v) { $_setSignedInt32(0, v); }
+  set fragmentId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasFragmentId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFragmentId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get organizations => $_getI64(1);
+  $core.int get organizations => $_getIZ(1);
   @$pb.TagNumber(2)
-  set organizations($fixnum.Int64 v) { $_setInt64(1, v); }
+  set organizations($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasOrganizations() => $_has(1);
   @$pb.TagNumber(2)
   void clearOrganizations() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get machines => $_getI64(2);
+  $core.int get machines => $_getIZ(2);
   @$pb.TagNumber(3)
-  set machines($fixnum.Int64 v) { $_setInt64(2, v); }
+  set machines($core.int v) { $_setSignedInt32(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasMachines() => $_has(2);
   @$pb.TagNumber(3)
   void clearMachines() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get machinesInCurrentOrg => $_getI64(3);
+  $core.int get machinesInCurrentOrg => $_getIZ(3);
   @$pb.TagNumber(4)
-  set machinesInCurrentOrg($fixnum.Int64 v) { $_setInt64(3, v); }
+  set machinesInCurrentOrg($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasMachinesInCurrentOrg() => $_has(3);
   @$pb.TagNumber(4)
@@ -9692,10 +9692,14 @@ class RegistryItem extends $pb.GeneratedMessage {
 class GetRegistryItemRequest extends $pb.GeneratedMessage {
   factory GetRegistryItemRequest({
     $core.String? itemId,
+    $core.bool? includeMarkdownDocumentation,
   }) {
     final $result = create();
     if (itemId != null) {
       $result.itemId = itemId;
+    }
+    if (includeMarkdownDocumentation != null) {
+      $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
     }
     return $result;
   }
@@ -9705,6 +9709,7 @@ class GetRegistryItemRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOB(2, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
     ..hasRequiredFields = false
   ;
 
@@ -9737,6 +9742,15 @@ class GetRegistryItemRequest extends $pb.GeneratedMessage {
   $core.bool hasItemId() => $_has(0);
   @$pb.TagNumber(1)
   void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeMarkdownDocumentation => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeMarkdownDocumentation($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeMarkdownDocumentation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeMarkdownDocumentation() => clearField(2);
 }
 
 class GetRegistryItemResponse extends $pb.GeneratedMessage {
@@ -9904,6 +9918,13 @@ class CreateRegistryItemResponse extends $pb.GeneratedMessage {
   static CreateRegistryItemResponse? _defaultInstance;
 }
 
+enum UpdateRegistryItemRequest_Metadata {
+  moduleUpdateMetadata, 
+  mlModelUpdateMetadata, 
+  mlTrainingUpdateMetadata, 
+  notSet
+}
+
 class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   factory UpdateRegistryItemRequest({
     $core.String? itemId,
@@ -9911,6 +9932,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     $core.String? description,
     Visibility? visibility,
     $core.String? url,
+    UpdateModuleMetadata? moduleUpdateMetadata,
+    UpdateMLModelMetadata? mlModelUpdateMetadata,
+    UpdateMLTrainingMetadata? mlTrainingUpdateMetadata,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -9928,18 +9952,37 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     if (url != null) {
       $result.url = url;
     }
+    if (moduleUpdateMetadata != null) {
+      $result.moduleUpdateMetadata = moduleUpdateMetadata;
+    }
+    if (mlModelUpdateMetadata != null) {
+      $result.mlModelUpdateMetadata = mlModelUpdateMetadata;
+    }
+    if (mlTrainingUpdateMetadata != null) {
+      $result.mlTrainingUpdateMetadata = mlTrainingUpdateMetadata;
+    }
     return $result;
   }
   UpdateRegistryItemRequest._() : super();
   factory UpdateRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
+  static const $core.Map<$core.int, UpdateRegistryItemRequest_Metadata> _UpdateRegistryItemRequest_MetadataByTag = {
+    6 : UpdateRegistryItemRequest_Metadata.moduleUpdateMetadata,
+    7 : UpdateRegistryItemRequest_Metadata.mlModelUpdateMetadata,
+    8 : UpdateRegistryItemRequest_Metadata.mlTrainingUpdateMetadata,
+    0 : UpdateRegistryItemRequest_Metadata.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..oo(0, [6, 7, 8])
     ..aOS(1, _omitFieldNames ? '' : 'itemId')
     ..e<$8.PackageType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $8.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $8.PackageType.valueOf, enumValues: $8.PackageType.values)
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..e<Visibility>(4, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
     ..aOS(5, _omitFieldNames ? '' : 'url')
+    ..aOM<UpdateModuleMetadata>(6, _omitFieldNames ? '' : 'moduleUpdateMetadata', subBuilder: UpdateModuleMetadata.create)
+    ..aOM<UpdateMLModelMetadata>(7, _omitFieldNames ? '' : 'mlModelUpdateMetadata', subBuilder: UpdateMLModelMetadata.create)
+    ..aOM<UpdateMLTrainingMetadata>(8, _omitFieldNames ? '' : 'mlTrainingUpdateMetadata', subBuilder: UpdateMLTrainingMetadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -9963,6 +10006,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateRegistryItemRequest>(create);
   static UpdateRegistryItemRequest? _defaultInstance;
+
+  UpdateRegistryItemRequest_Metadata whichMetadata() => _UpdateRegistryItemRequest_MetadataByTag[$_whichOneof(0)]!;
+  void clearMetadata() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
   $core.String get itemId => $_getSZ(0);
@@ -10008,6 +10054,39 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   $core.bool hasUrl() => $_has(4);
   @$pb.TagNumber(5)
   void clearUrl() => clearField(5);
+
+  @$pb.TagNumber(6)
+  UpdateModuleMetadata get moduleUpdateMetadata => $_getN(5);
+  @$pb.TagNumber(6)
+  set moduleUpdateMetadata(UpdateModuleMetadata v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasModuleUpdateMetadata() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearModuleUpdateMetadata() => clearField(6);
+  @$pb.TagNumber(6)
+  UpdateModuleMetadata ensureModuleUpdateMetadata() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  UpdateMLModelMetadata get mlModelUpdateMetadata => $_getN(6);
+  @$pb.TagNumber(7)
+  set mlModelUpdateMetadata(UpdateMLModelMetadata v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasMlModelUpdateMetadata() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMlModelUpdateMetadata() => clearField(7);
+  @$pb.TagNumber(7)
+  UpdateMLModelMetadata ensureMlModelUpdateMetadata() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  UpdateMLTrainingMetadata get mlTrainingUpdateMetadata => $_getN(7);
+  @$pb.TagNumber(8)
+  set mlTrainingUpdateMetadata(UpdateMLTrainingMetadata v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasMlTrainingUpdateMetadata() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMlTrainingUpdateMetadata() => clearField(8);
+  @$pb.TagNumber(8)
+  UpdateMLTrainingMetadata ensureMlTrainingUpdateMetadata() => $_ensure(7);
 }
 
 class UpdateRegistryItemResponse extends $pb.GeneratedMessage {
@@ -10052,6 +10131,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     $core.String? searchTerm,
     $core.String? pageToken,
     $core.Iterable<$core.String>? publicNamespaces,
+    $core.bool? includeMarkdownDocumentation,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -10078,6 +10158,9 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     if (publicNamespaces != null) {
       $result.publicNamespaces.addAll(publicNamespaces);
     }
+    if (includeMarkdownDocumentation != null) {
+      $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
+    }
     return $result;
   }
   ListRegistryItemsRequest._() : super();
@@ -10093,6 +10176,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'searchTerm')
     ..aOS(7, _omitFieldNames ? '' : 'pageToken')
     ..pPS(8, _omitFieldNames ? '' : 'publicNamespaces')
+    ..aOB(9, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
     ..hasRequiredFields = false
   ;
 
@@ -10160,6 +10244,15 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
   /// One or more public namespaces to return results for.
   @$pb.TagNumber(8)
   $core.List<$core.String> get publicNamespaces => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.bool get includeMarkdownDocumentation => $_getBF(8);
+  @$pb.TagNumber(9)
+  set includeMarkdownDocumentation($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasIncludeMarkdownDocumentation() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIncludeMarkdownDocumentation() => clearField(9);
 }
 
 class ListRegistryItemsResponse extends $pb.GeneratedMessage {
@@ -10704,10 +10797,213 @@ class UpdateModuleResponse extends $pb.GeneratedMessage {
   void clearUrl() => clearField(1);
 }
 
+class UpdateModuleMetadata extends $pb.GeneratedMessage {
+  factory UpdateModuleMetadata({
+    $core.Iterable<Model>? models,
+    $core.String? entrypoint,
+  }) {
+    final $result = create();
+    if (models != null) {
+      $result.models.addAll(models);
+    }
+    if (entrypoint != null) {
+      $result.entrypoint = entrypoint;
+    }
+    return $result;
+  }
+  UpdateModuleMetadata._() : super();
+  factory UpdateModuleMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateModuleMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateModuleMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<Model>(1, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
+    ..aOS(2, _omitFieldNames ? '' : 'entrypoint')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateModuleMetadata clone() => UpdateModuleMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateModuleMetadata copyWith(void Function(UpdateModuleMetadata) updates) => super.copyWith((message) => updates(message as UpdateModuleMetadata)) as UpdateModuleMetadata;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateModuleMetadata create() => UpdateModuleMetadata._();
+  UpdateModuleMetadata createEmptyInstance() => create();
+  static $pb.PbList<UpdateModuleMetadata> createRepeated() => $pb.PbList<UpdateModuleMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateModuleMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateModuleMetadata>(create);
+  static UpdateModuleMetadata? _defaultInstance;
+
+  /// A list of models that are available in the module
+  @$pb.TagNumber(1)
+  $core.List<Model> get models => $_getList(0);
+
+  /// The executable to run to start the module program
+  @$pb.TagNumber(2)
+  $core.String get entrypoint => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entrypoint($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEntrypoint() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntrypoint() => clearField(2);
+}
+
+class UpdateMLModelMetadata extends $pb.GeneratedMessage {
+  factory UpdateMLModelMetadata({
+    $7.ModelType? modelType,
+    $7.ModelFramework? modelFramework,
+  }) {
+    final $result = create();
+    if (modelType != null) {
+      $result.modelType = modelType;
+    }
+    if (modelFramework != null) {
+      $result.modelFramework = modelFramework;
+    }
+    return $result;
+  }
+  UpdateMLModelMetadata._() : super();
+  factory UpdateMLModelMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMLModelMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<$7.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $7.ModelType.valueOf, enumValues: $7.ModelType.values)
+    ..e<$7.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $7.ModelFramework.valueOf, enumValues: $7.ModelFramework.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateMLModelMetadata clone() => UpdateMLModelMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateMLModelMetadata copyWith(void Function(UpdateMLModelMetadata) updates) => super.copyWith((message) => updates(message as UpdateMLModelMetadata)) as UpdateMLModelMetadata;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMLModelMetadata create() => UpdateMLModelMetadata._();
+  UpdateMLModelMetadata createEmptyInstance() => create();
+  static $pb.PbList<UpdateMLModelMetadata> createRepeated() => $pb.PbList<UpdateMLModelMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMLModelMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMLModelMetadata>(create);
+  static UpdateMLModelMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.ModelType get modelType => $_getN(0);
+  @$pb.TagNumber(1)
+  set modelType($7.ModelType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasModelType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModelType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $7.ModelFramework get modelFramework => $_getN(1);
+  @$pb.TagNumber(2)
+  set modelFramework($7.ModelFramework v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasModelFramework() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearModelFramework() => clearField(2);
+}
+
+class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
+  factory UpdateMLTrainingMetadata({
+    $7.ModelType? modelType,
+    $7.ModelFramework? modelFramework,
+    $core.bool? draft,
+  }) {
+    final $result = create();
+    if (modelType != null) {
+      $result.modelType = modelType;
+    }
+    if (modelFramework != null) {
+      $result.modelFramework = modelFramework;
+    }
+    if (draft != null) {
+      $result.draft = draft;
+    }
+    return $result;
+  }
+  UpdateMLTrainingMetadata._() : super();
+  factory UpdateMLTrainingMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMLTrainingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLTrainingMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..e<$7.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $7.ModelType.valueOf, enumValues: $7.ModelType.values)
+    ..e<$7.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $7.ModelFramework.valueOf, enumValues: $7.ModelFramework.values)
+    ..aOB(3, _omitFieldNames ? '' : 'draft')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateMLTrainingMetadata clone() => UpdateMLTrainingMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateMLTrainingMetadata copyWith(void Function(UpdateMLTrainingMetadata) updates) => super.copyWith((message) => updates(message as UpdateMLTrainingMetadata)) as UpdateMLTrainingMetadata;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMLTrainingMetadata create() => UpdateMLTrainingMetadata._();
+  UpdateMLTrainingMetadata createEmptyInstance() => create();
+  static $pb.PbList<UpdateMLTrainingMetadata> createRepeated() => $pb.PbList<UpdateMLTrainingMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMLTrainingMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMLTrainingMetadata>(create);
+  static UpdateMLTrainingMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.ModelType get modelType => $_getN(0);
+  @$pb.TagNumber(1)
+  set modelType($7.ModelType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasModelType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModelType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $7.ModelFramework get modelFramework => $_getN(1);
+  @$pb.TagNumber(2)
+  set modelFramework($7.ModelFramework v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasModelFramework() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearModelFramework() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get draft => $_getBF(2);
+  @$pb.TagNumber(3)
+  set draft($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDraft() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDraft() => clearField(3);
+}
+
 class Model extends $pb.GeneratedMessage {
   factory Model({
     $core.String? api,
     $core.String? model,
+    $core.String? markdownDocumentation,
   }) {
     final $result = create();
     if (api != null) {
@@ -10715,6 +11011,9 @@ class Model extends $pb.GeneratedMessage {
     }
     if (model != null) {
       $result.model = model;
+    }
+    if (markdownDocumentation != null) {
+      $result.markdownDocumentation = markdownDocumentation;
     }
     return $result;
   }
@@ -10725,6 +11024,7 @@ class Model extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Model', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'api')
     ..aOS(2, _omitFieldNames ? '' : 'model')
+    ..aOS(3, _omitFieldNames ? '' : 'markdownDocumentation')
     ..hasRequiredFields = false
   ;
 
@@ -10768,6 +11068,16 @@ class Model extends $pb.GeneratedMessage {
   $core.bool hasModel() => $_has(1);
   @$pb.TagNumber(2)
   void clearModel() => clearField(2);
+
+  /// The markdown content describing the usage of the model
+  @$pb.TagNumber(3)
+  $core.String get markdownDocumentation => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set markdownDocumentation($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMarkdownDocumentation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMarkdownDocumentation() => clearField(3);
 }
 
 class ModuleFileInfo extends $pb.GeneratedMessage {
@@ -10999,10 +11309,14 @@ class UploadModuleFileResponse extends $pb.GeneratedMessage {
 class GetModuleRequest extends $pb.GeneratedMessage {
   factory GetModuleRequest({
     $core.String? moduleId,
+    $core.bool? includeMarkdownDocumentation,
   }) {
     final $result = create();
     if (moduleId != null) {
       $result.moduleId = moduleId;
+    }
+    if (includeMarkdownDocumentation != null) {
+      $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
     }
     return $result;
   }
@@ -11012,6 +11326,7 @@ class GetModuleRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetModuleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'moduleId')
+    ..aOB(2, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
     ..hasRequiredFields = false
   ;
 
@@ -11045,6 +11360,15 @@ class GetModuleRequest extends $pb.GeneratedMessage {
   $core.bool hasModuleId() => $_has(0);
   @$pb.TagNumber(1)
   void clearModuleId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeMarkdownDocumentation => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeMarkdownDocumentation($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeMarkdownDocumentation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeMarkdownDocumentation() => clearField(2);
 }
 
 class GetModuleResponse extends $pb.GeneratedMessage {
@@ -11491,10 +11815,14 @@ class Uploads extends $pb.GeneratedMessage {
 class ListModulesRequest extends $pb.GeneratedMessage {
   factory ListModulesRequest({
     $core.String? organizationId,
+    $core.bool? includeMarkdownDocumentation,
   }) {
     final $result = create();
     if (organizationId != null) {
       $result.organizationId = organizationId;
+    }
+    if (includeMarkdownDocumentation != null) {
+      $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
     }
     return $result;
   }
@@ -11504,6 +11832,7 @@ class ListModulesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListModulesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOB(2, _omitFieldNames ? '' : 'includeMarkdownDocumentation')
     ..hasRequiredFields = false
   ;
 
@@ -11537,6 +11866,15 @@ class ListModulesRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeMarkdownDocumentation => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeMarkdownDocumentation($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeMarkdownDocumentation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeMarkdownDocumentation() => clearField(2);
 }
 
 class ListModulesResponse extends $pb.GeneratedMessage {
@@ -11738,6 +12076,8 @@ class OrgDetails extends $pb.GeneratedMessage {
   factory OrgDetails({
     $core.String? orgId,
     $core.String? orgName,
+    $core.String? orgCid,
+    $core.String? publicNamespace,
   }) {
     final $result = create();
     if (orgId != null) {
@@ -11745,6 +12085,12 @@ class OrgDetails extends $pb.GeneratedMessage {
     }
     if (orgName != null) {
       $result.orgName = orgName;
+    }
+    if (orgCid != null) {
+      $result.orgCid = orgCid;
+    }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
     }
     return $result;
   }
@@ -11755,6 +12101,8 @@ class OrgDetails extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OrgDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'orgId')
     ..aOS(2, _omitFieldNames ? '' : 'orgName')
+    ..aOS(3, _omitFieldNames ? '' : 'orgCid')
+    ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
     ..hasRequiredFields = false
   ;
 
@@ -11796,6 +12144,24 @@ class OrgDetails extends $pb.GeneratedMessage {
   $core.bool hasOrgName() => $_has(1);
   @$pb.TagNumber(2)
   void clearOrgName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get orgCid => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set orgCid($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrgCid() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrgCid() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get publicNamespace => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set publicNamespace($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPublicNamespace() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPublicNamespace() => clearField(4);
 }
 
 class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {
@@ -11840,6 +12206,142 @@ class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<OrgDetails> get orgs => $_getList(0);
+}
+
+class SearchOrganizationsRequest extends $pb.GeneratedMessage {
+  factory SearchOrganizationsRequest({
+    $core.String? orgId,
+    $core.String? orgName,
+    $core.String? cid,
+    $core.String? publicNamespace,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    if (orgName != null) {
+      $result.orgName = orgName;
+    }
+    if (cid != null) {
+      $result.cid = cid;
+    }
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    return $result;
+  }
+  SearchOrganizationsRequest._() : super();
+  factory SearchOrganizationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchOrganizationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchOrganizationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..aOS(2, _omitFieldNames ? '' : 'orgName')
+    ..aOS(3, _omitFieldNames ? '' : 'cid')
+    ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchOrganizationsRequest clone() => SearchOrganizationsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchOrganizationsRequest copyWith(void Function(SearchOrganizationsRequest) updates) => super.copyWith((message) => updates(message as SearchOrganizationsRequest)) as SearchOrganizationsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchOrganizationsRequest create() => SearchOrganizationsRequest._();
+  SearchOrganizationsRequest createEmptyInstance() => create();
+  static $pb.PbList<SearchOrganizationsRequest> createRepeated() => $pb.PbList<SearchOrganizationsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SearchOrganizationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchOrganizationsRequest>(create);
+  static SearchOrganizationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get orgName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set orgName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrgName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrgName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cid => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cid($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCid() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCid() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get publicNamespace => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set publicNamespace($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPublicNamespace() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPublicNamespace() => clearField(4);
+}
+
+class SearchOrganizationsResponse extends $pb.GeneratedMessage {
+  factory SearchOrganizationsResponse({
+    $core.Iterable<OrgDetails>? organizations,
+  }) {
+    final $result = create();
+    if (organizations != null) {
+      $result.organizations.addAll(organizations);
+    }
+    return $result;
+  }
+  SearchOrganizationsResponse._() : super();
+  factory SearchOrganizationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchOrganizationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchOrganizationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<OrgDetails>(1, _omitFieldNames ? '' : 'organizations', $pb.PbFieldType.PM, subBuilder: OrgDetails.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchOrganizationsResponse clone() => SearchOrganizationsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchOrganizationsResponse copyWith(void Function(SearchOrganizationsResponse) updates) => super.copyWith((message) => updates(message as SearchOrganizationsResponse)) as SearchOrganizationsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchOrganizationsResponse create() => SearchOrganizationsResponse._();
+  SearchOrganizationsResponse createEmptyInstance() => create();
+  static $pb.PbList<SearchOrganizationsResponse> createRepeated() => $pb.PbList<SearchOrganizationsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SearchOrganizationsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchOrganizationsResponse>(create);
+  static SearchOrganizationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<OrgDetails> get organizations => $_getList(0);
 }
 
 class CreateKeyRequest extends $pb.GeneratedMessage {
