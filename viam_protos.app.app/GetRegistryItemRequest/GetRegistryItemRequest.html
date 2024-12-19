@@ -58,6 +58,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">GetRegistryItemRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-itemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">itemId</span>, </span></li>
+<li><span class="parameter" id="-param-includeMarkdownDocumentation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">includeMarkdownDocumentation</span>, </span></li>
 </ol>})
     </section>
     
@@ -68,10 +69,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory GetRegistryItemRequest({
   $core.String? itemId,
+  $core.bool? includeMarkdownDocumentation,
 }) {
   final $result = create();
   if (itemId != null) {
     $result.itemId = itemId;
+  }
+  if (includeMarkdownDocumentation != null) {
+    $result.includeMarkdownDocumentation = includeMarkdownDocumentation;
   }
   return $result;
 }</code></pre>

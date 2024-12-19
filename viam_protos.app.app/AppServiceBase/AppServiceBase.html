@@ -101,6 +101,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $9.ListOrganizationsByUserRequest.fromBuffer(value),
       ($9.ListOrganizationsByUserResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$9.SearchOrganizationsRequest, $9.SearchOrganizationsResponse&gt;(
+      &#39;SearchOrganizations&#39;,
+      searchOrganizations_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $9.SearchOrganizationsRequest.fromBuffer(value),
+      ($9.SearchOrganizationsResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$9.GetOrganizationRequest, $9.GetOrganizationResponse&gt;(
       &#39;GetOrganization&#39;,
       getOrganization_Pre,

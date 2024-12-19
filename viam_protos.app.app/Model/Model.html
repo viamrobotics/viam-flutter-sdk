@@ -59,6 +59,7 @@
       
       <span class="name ">Model</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-api"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">api</span>, </span></li>
 <li><span class="parameter" id="-param-model"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">model</span>, </span></li>
+<li><span class="parameter" id="-param-markdownDocumentation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">markdownDocumentation</span>, </span></li>
 </ol>})
     </section>
     
@@ -70,6 +71,7 @@
   <pre class="language-dart"><code class="language-dart">factory Model({
   $core.String? api,
   $core.String? model,
+  $core.String? markdownDocumentation,
 }) {
   final $result = create();
   if (api != null) {
@@ -77,6 +79,9 @@
   }
   if (model != null) {
     $result.model = model;
+  }
+  if (markdownDocumentation != null) {
+    $result.markdownDocumentation = markdownDocumentation;
   }
   return $result;
 }</code></pre>

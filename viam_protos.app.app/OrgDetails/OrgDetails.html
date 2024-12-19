@@ -59,6 +59,8 @@
       
       <span class="name ">OrgDetails</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-orgId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">orgId</span>, </span></li>
 <li><span class="parameter" id="-param-orgName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">orgName</span>, </span></li>
+<li><span class="parameter" id="-param-orgCid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">orgCid</span>, </span></li>
+<li><span class="parameter" id="-param-publicNamespace"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">publicNamespace</span>, </span></li>
 </ol>})
     </section>
     
@@ -70,6 +72,8 @@
   <pre class="language-dart"><code class="language-dart">factory OrgDetails({
   $core.String? orgId,
   $core.String? orgName,
+  $core.String? orgCid,
+  $core.String? publicNamespace,
 }) {
   final $result = create();
   if (orgId != null) {
@@ -77,6 +81,12 @@
   }
   if (orgName != null) {
     $result.orgName = orgName;
+  }
+  if (orgCid != null) {
+    $result.orgCid = orgCid;
+  }
+  if (publicNamespace != null) {
+    $result.publicNamespace = publicNamespace;
   }
   return $result;
 }</code></pre>
