@@ -14,11 +14,11 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/common.pb.dart' as $14;
+import '../../common/v1/common.pb.dart' as $15;
 import '../../google/protobuf/struct.pb.dart' as $43;
 import '../../google/protobuf/timestamp.pb.dart' as $44;
-import '../mltraining/v1/ml_training.pbenum.dart' as $7;
-import '../packages/v1/packages.pbenum.dart' as $8;
+import '../mltraining/v1/ml_training.pbenum.dart' as $8;
+import '../packages/v1/packages.pbenum.dart' as $9;
 import 'app.pbenum.dart';
 
 export 'app.pbenum.dart';
@@ -5266,7 +5266,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory GetRobotPartLogsResponse({
-    $core.Iterable<$14.LogEntry>? logs,
+    $core.Iterable<$15.LogEntry>? logs,
     $core.String? nextPageToken,
   }) {
     final $result = create();
@@ -5283,7 +5283,7 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory GetRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<$14.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $14.LogEntry.create)
+    ..pc<$15.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $15.LogEntry.create)
     ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
@@ -5310,7 +5310,7 @@ class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
   static GetRobotPartLogsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$14.LogEntry> get logs => $_getList(0);
+  $core.List<$15.LogEntry> get logs => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get nextPageToken => $_getSZ(1);
@@ -5402,7 +5402,7 @@ class TailRobotPartLogsRequest extends $pb.GeneratedMessage {
 
 class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory TailRobotPartLogsResponse({
-    $core.Iterable<$14.LogEntry>? logs,
+    $core.Iterable<$15.LogEntry>? logs,
   }) {
     final $result = create();
     if (logs != null) {
@@ -5415,7 +5415,7 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   factory TailRobotPartLogsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TailRobotPartLogsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..pc<$14.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $14.LogEntry.create)
+    ..pc<$15.LogEntry>(1, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $15.LogEntry.create)
     ..hasRequiredFields = false
   ;
 
@@ -5441,7 +5441,7 @@ class TailRobotPartLogsResponse extends $pb.GeneratedMessage {
   static TailRobotPartLogsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$14.LogEntry> get logs => $_getList(0);
+  $core.List<$15.LogEntry> get logs => $_getList(0);
 }
 
 class GetRobotPartHistoryRequest extends $pb.GeneratedMessage {
@@ -9148,8 +9148,8 @@ class ModuleMetadata extends $pb.GeneratedMessage {
 class MLModelMetadata extends $pb.GeneratedMessage {
   factory MLModelMetadata({
     $core.Iterable<$core.String>? versions,
-    $7.ModelType? modelType,
-    $7.ModelFramework? modelFramework,
+    $8.ModelType? modelType,
+    $8.ModelFramework? modelFramework,
   }) {
     final $result = create();
     if (versions != null) {
@@ -9169,8 +9169,8 @@ class MLModelMetadata extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'versions')
-    ..e<$7.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $7.ModelType.valueOf, enumValues: $7.ModelType.values)
-    ..e<$7.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $7.ModelFramework.valueOf, enumValues: $7.ModelFramework.values)
+    ..e<$8.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $8.ModelType.valueOf, enumValues: $8.ModelType.values)
+    ..e<$8.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $8.ModelFramework.valueOf, enumValues: $8.ModelFramework.values)
     ..hasRequiredFields = false
   ;
 
@@ -9200,18 +9200,18 @@ class MLModelMetadata extends $pb.GeneratedMessage {
   $core.List<$core.String> get versions => $_getList(0);
 
   @$pb.TagNumber(2)
-  $7.ModelType get modelType => $_getN(1);
+  $8.ModelType get modelType => $_getN(1);
   @$pb.TagNumber(2)
-  set modelType($7.ModelType v) { setField(2, v); }
+  set modelType($8.ModelType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelType() => $_has(1);
   @$pb.TagNumber(2)
   void clearModelType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $7.ModelFramework get modelFramework => $_getN(2);
+  $8.ModelFramework get modelFramework => $_getN(2);
   @$pb.TagNumber(3)
-  set modelFramework($7.ModelFramework v) { setField(3, v); }
+  set modelFramework($8.ModelFramework v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasModelFramework() => $_has(2);
   @$pb.TagNumber(3)
@@ -9286,8 +9286,8 @@ class MLTrainingVersion extends $pb.GeneratedMessage {
 
 class MLTrainingMetadata extends $pb.GeneratedMessage {
   factory MLTrainingMetadata({
-    $7.ModelType? modelType,
-    $7.ModelFramework? modelFramework,
+    $8.ModelType? modelType,
+    $8.ModelFramework? modelFramework,
     $core.bool? draft,
     $core.Iterable<MLTrainingVersion>? versions,
   }) {
@@ -9311,8 +9311,8 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   factory MLTrainingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MLTrainingMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..e<$7.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $7.ModelType.valueOf, enumValues: $7.ModelType.values)
-    ..e<$7.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $7.ModelFramework.valueOf, enumValues: $7.ModelFramework.values)
+    ..e<$8.ModelType>(2, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $8.ModelType.valueOf, enumValues: $8.ModelType.values)
+    ..e<$8.ModelFramework>(3, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $8.ModelFramework.valueOf, enumValues: $8.ModelFramework.values)
     ..aOB(4, _omitFieldNames ? '' : 'draft')
     ..pc<MLTrainingVersion>(5, _omitFieldNames ? '' : 'versions', $pb.PbFieldType.PM, subBuilder: MLTrainingVersion.create)
     ..hasRequiredFields = false
@@ -9340,18 +9340,18 @@ class MLTrainingMetadata extends $pb.GeneratedMessage {
   static MLTrainingMetadata? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $7.ModelType get modelType => $_getN(0);
+  $8.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(2)
-  set modelType($7.ModelType v) { setField(2, v); }
+  set modelType($8.ModelType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelType() => $_has(0);
   @$pb.TagNumber(2)
   void clearModelType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $7.ModelFramework get modelFramework => $_getN(1);
+  $8.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(3)
-  set modelFramework($7.ModelFramework v) { setField(3, v); }
+  set modelFramework($8.ModelFramework v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(3)
@@ -9384,7 +9384,7 @@ class RegistryItem extends $pb.GeneratedMessage {
     $core.String? organizationId,
     $core.String? publicNamespace,
     $core.String? name,
-    $8.PackageType? type,
+    $9.PackageType? type,
     Visibility? visibility,
     $core.String? url,
     $core.String? description,
@@ -9468,7 +9468,7 @@ class RegistryItem extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..aOS(3, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..e<$8.PackageType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $8.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $8.PackageType.valueOf, enumValues: $8.PackageType.values)
+    ..e<$9.PackageType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $9.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $9.PackageType.valueOf, enumValues: $9.PackageType.values)
     ..e<Visibility>(6, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
     ..aOS(7, _omitFieldNames ? '' : 'url')
     ..aOS(8, _omitFieldNames ? '' : 'description')
@@ -9553,9 +9553,9 @@ class RegistryItem extends $pb.GeneratedMessage {
 
   /// The type of the item in the registry
   @$pb.TagNumber(5)
-  $8.PackageType get type => $_getN(4);
+  $9.PackageType get type => $_getN(4);
   @$pb.TagNumber(5)
-  set type($8.PackageType v) { setField(5, v); }
+  set type($9.PackageType v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasType() => $_has(4);
   @$pb.TagNumber(5)
@@ -9809,7 +9809,7 @@ class CreateRegistryItemRequest extends $pb.GeneratedMessage {
   factory CreateRegistryItemRequest({
     $core.String? organizationId,
     $core.String? name,
-    $8.PackageType? type,
+    $9.PackageType? type,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -9830,7 +9830,7 @@ class CreateRegistryItemRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..e<$8.PackageType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $8.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $8.PackageType.valueOf, enumValues: $8.PackageType.values)
+    ..e<$9.PackageType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $9.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $9.PackageType.valueOf, enumValues: $9.PackageType.values)
     ..hasRequiredFields = false
   ;
 
@@ -9877,9 +9877,9 @@ class CreateRegistryItemRequest extends $pb.GeneratedMessage {
 
   /// The type of the item in the registry
   @$pb.TagNumber(3)
-  $8.PackageType get type => $_getN(2);
+  $9.PackageType get type => $_getN(2);
   @$pb.TagNumber(3)
-  set type($8.PackageType v) { setField(3, v); }
+  set type($9.PackageType v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasType() => $_has(2);
   @$pb.TagNumber(3)
@@ -9928,7 +9928,7 @@ enum UpdateRegistryItemRequest_Metadata {
 class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   factory UpdateRegistryItemRequest({
     $core.String? itemId,
-    $8.PackageType? type,
+    $9.PackageType? type,
     $core.String? description,
     Visibility? visibility,
     $core.String? url,
@@ -9976,7 +9976,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..oo(0, [6, 7, 8])
     ..aOS(1, _omitFieldNames ? '' : 'itemId')
-    ..e<$8.PackageType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $8.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $8.PackageType.valueOf, enumValues: $8.PackageType.values)
+    ..e<$9.PackageType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $9.PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: $9.PackageType.valueOf, enumValues: $9.PackageType.values)
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..e<Visibility>(4, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
     ..aOS(5, _omitFieldNames ? '' : 'url')
@@ -10020,9 +10020,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   void clearItemId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $8.PackageType get type => $_getN(1);
+  $9.PackageType get type => $_getN(1);
   @$pb.TagNumber(2)
-  set type($8.PackageType v) { setField(2, v); }
+  set type($9.PackageType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
@@ -10124,7 +10124,7 @@ class UpdateRegistryItemResponse extends $pb.GeneratedMessage {
 class ListRegistryItemsRequest extends $pb.GeneratedMessage {
   factory ListRegistryItemsRequest({
     $core.String? organizationId,
-    $core.Iterable<$8.PackageType>? types,
+    $core.Iterable<$9.PackageType>? types,
     $core.Iterable<Visibility>? visibilities,
     $core.Iterable<$core.String>? platforms,
     $core.Iterable<RegistryItemStatus>? statuses,
@@ -10169,7 +10169,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegistryItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
-    ..pc<$8.PackageType>(2, _omitFieldNames ? '' : 'types', $pb.PbFieldType.KE, valueOf: $8.PackageType.valueOf, enumValues: $8.PackageType.values, defaultEnumValue: $8.PackageType.PACKAGE_TYPE_UNSPECIFIED)
+    ..pc<$9.PackageType>(2, _omitFieldNames ? '' : 'types', $pb.PbFieldType.KE, valueOf: $9.PackageType.valueOf, enumValues: $9.PackageType.values, defaultEnumValue: $9.PackageType.PACKAGE_TYPE_UNSPECIFIED)
     ..pc<Visibility>(3, _omitFieldNames ? '' : 'visibilities', $pb.PbFieldType.KE, valueOf: Visibility.valueOf, enumValues: Visibility.values, defaultEnumValue: Visibility.VISIBILITY_UNSPECIFIED)
     ..pPS(4, _omitFieldNames ? '' : 'platforms')
     ..pc<RegistryItemStatus>(5, _omitFieldNames ? '' : 'statuses', $pb.PbFieldType.KE, valueOf: RegistryItemStatus.valueOf, enumValues: RegistryItemStatus.values, defaultEnumValue: RegistryItemStatus.REGISTRY_ITEM_STATUS_UNSPECIFIED)
@@ -10212,7 +10212,7 @@ class ListRegistryItemsRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$8.PackageType> get types => $_getList(1);
+  $core.List<$9.PackageType> get types => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.List<Visibility> get visibilities => $_getList(2);
@@ -10859,8 +10859,8 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
 
 class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   factory UpdateMLModelMetadata({
-    $7.ModelType? modelType,
-    $7.ModelFramework? modelFramework,
+    $8.ModelType? modelType,
+    $8.ModelFramework? modelFramework,
   }) {
     final $result = create();
     if (modelType != null) {
@@ -10876,8 +10876,8 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   factory UpdateMLModelMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLModelMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..e<$7.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $7.ModelType.valueOf, enumValues: $7.ModelType.values)
-    ..e<$7.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $7.ModelFramework.valueOf, enumValues: $7.ModelFramework.values)
+    ..e<$8.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $8.ModelType.valueOf, enumValues: $8.ModelType.values)
+    ..e<$8.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $8.ModelFramework.valueOf, enumValues: $8.ModelFramework.values)
     ..hasRequiredFields = false
   ;
 
@@ -10903,18 +10903,18 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
   static UpdateMLModelMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.ModelType get modelType => $_getN(0);
+  $8.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(1)
-  set modelType($7.ModelType v) { setField(1, v); }
+  set modelType($8.ModelType v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasModelType() => $_has(0);
   @$pb.TagNumber(1)
   void clearModelType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $7.ModelFramework get modelFramework => $_getN(1);
+  $8.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(2)
-  set modelFramework($7.ModelFramework v) { setField(2, v); }
+  set modelFramework($8.ModelFramework v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(2)
@@ -10923,8 +10923,8 @@ class UpdateMLModelMetadata extends $pb.GeneratedMessage {
 
 class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   factory UpdateMLTrainingMetadata({
-    $7.ModelType? modelType,
-    $7.ModelFramework? modelFramework,
+    $8.ModelType? modelType,
+    $8.ModelFramework? modelFramework,
     $core.bool? draft,
   }) {
     final $result = create();
@@ -10944,8 +10944,8 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   factory UpdateMLTrainingMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMLTrainingMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..e<$7.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $7.ModelType.valueOf, enumValues: $7.ModelType.values)
-    ..e<$7.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $7.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $7.ModelFramework.valueOf, enumValues: $7.ModelFramework.values)
+    ..e<$8.ModelType>(1, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: $8.ModelType.valueOf, enumValues: $8.ModelType.values)
+    ..e<$8.ModelFramework>(2, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: $8.ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: $8.ModelFramework.valueOf, enumValues: $8.ModelFramework.values)
     ..aOB(3, _omitFieldNames ? '' : 'draft')
     ..hasRequiredFields = false
   ;
@@ -10972,18 +10972,18 @@ class UpdateMLTrainingMetadata extends $pb.GeneratedMessage {
   static UpdateMLTrainingMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.ModelType get modelType => $_getN(0);
+  $8.ModelType get modelType => $_getN(0);
   @$pb.TagNumber(1)
-  set modelType($7.ModelType v) { setField(1, v); }
+  set modelType($8.ModelType v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasModelType() => $_has(0);
   @$pb.TagNumber(1)
   void clearModelType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $7.ModelFramework get modelFramework => $_getN(1);
+  $8.ModelFramework get modelFramework => $_getN(1);
   @$pb.TagNumber(2)
-  set modelFramework($7.ModelFramework v) { setField(2, v); }
+  set modelFramework($8.ModelFramework v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasModelFramework() => $_has(1);
   @$pb.TagNumber(2)

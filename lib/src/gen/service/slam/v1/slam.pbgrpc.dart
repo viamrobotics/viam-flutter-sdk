@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import 'slam.pb.dart' as $39;
 
 export 'slam.pb.dart';
@@ -38,10 +38,10 @@ class SLAMServiceClient extends $grpc.Client {
       '/viam.service.slam.v1.SLAMService/GetProperties',
       ($39.GetPropertiesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $39.GetPropertiesResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+  static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.slam.v1.SLAMService/DoCommand',
-      ($14.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
+      ($15.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.DoCommandResponse.fromBuffer(value));
 
   SLAMServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -65,7 +65,7 @@ class SLAMServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
-  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.DoCommandResponse> doCommand($15.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 }
@@ -103,13 +103,13 @@ abstract class SLAMServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $39.GetPropertiesRequest.fromBuffer(value),
         ($39.GetPropertiesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+    $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
-        ($14.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $15.DoCommandRequest.fromBuffer(value),
+        ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$39.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$39.GetPositionRequest> request) async {
@@ -128,7 +128,7 @@ abstract class SLAMServiceBase extends $grpc.Service {
     return getProperties(call, await request);
   }
 
-  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
+  $async.Future<$15.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$15.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
@@ -136,5 +136,5 @@ abstract class SLAMServiceBase extends $grpc.Service {
   $async.Stream<$39.GetPointCloudMapResponse> getPointCloudMap($grpc.ServiceCall call, $39.GetPointCloudMapRequest request);
   $async.Stream<$39.GetInternalStateResponse> getInternalState($grpc.ServiceCall call, $39.GetInternalStateRequest request);
   $async.Future<$39.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $39.GetPropertiesRequest request);
-  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
+  $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }

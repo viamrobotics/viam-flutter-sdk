@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
-import '../../../component/camera/v1/camera.pb.dart' as $19;
+import '../../../common/v1/common.pb.dart' as $15;
+import '../../../component/camera/v1/camera.pb.dart' as $20;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 
 class GetDetectionsRequest extends $pb.GeneratedMessage {
@@ -937,7 +937,7 @@ class GetObjectPointCloudsRequest extends $pb.GeneratedMessage {
 class GetObjectPointCloudsResponse extends $pb.GeneratedMessage {
   factory GetObjectPointCloudsResponse({
     $core.String? mimeType,
-    $core.Iterable<$14.PointCloudObject>? objects,
+    $core.Iterable<$15.PointCloudObject>? objects,
   }) {
     final $result = create();
     if (mimeType != null) {
@@ -954,7 +954,7 @@ class GetObjectPointCloudsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetObjectPointCloudsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.vision.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mimeType')
-    ..pc<$14.PointCloudObject>(2, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $14.PointCloudObject.create)
+    ..pc<$15.PointCloudObject>(2, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $15.PointCloudObject.create)
     ..hasRequiredFields = false
   ;
 
@@ -991,7 +991,7 @@ class GetObjectPointCloudsResponse extends $pb.GeneratedMessage {
 
   /// List of objects in the scene
   @$pb.TagNumber(2)
-  $core.List<$14.PointCloudObject> get objects => $_getList(1);
+  $core.List<$15.PointCloudObject> get objects => $_getList(1);
 }
 
 class GetPropertiesRequest extends $pb.GeneratedMessage {
@@ -1206,10 +1206,10 @@ class CaptureAllFromCameraRequest extends $pb.GeneratedMessage {
 
 class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   factory CaptureAllFromCameraResponse({
-    $19.Image? image,
+    $20.Image? image,
     $core.Iterable<Detection>? detections,
     $core.Iterable<Classification>? classifications,
-    $core.Iterable<$14.PointCloudObject>? objects,
+    $core.Iterable<$15.PointCloudObject>? objects,
     $43.Struct? extra,
   }) {
     final $result = create();
@@ -1235,10 +1235,10 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   factory CaptureAllFromCameraResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureAllFromCameraResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.vision.v1'), createEmptyInstance: create)
-    ..aOM<$19.Image>(1, _omitFieldNames ? '' : 'image', subBuilder: $19.Image.create)
+    ..aOM<$20.Image>(1, _omitFieldNames ? '' : 'image', subBuilder: $20.Image.create)
     ..pc<Detection>(2, _omitFieldNames ? '' : 'detections', $pb.PbFieldType.PM, subBuilder: Detection.create)
     ..pc<Classification>(3, _omitFieldNames ? '' : 'classifications', $pb.PbFieldType.PM, subBuilder: Classification.create)
-    ..pc<$14.PointCloudObject>(4, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $14.PointCloudObject.create)
+    ..pc<$15.PointCloudObject>(4, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $15.PointCloudObject.create)
     ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -1265,15 +1265,15 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   static CaptureAllFromCameraResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $19.Image get image => $_getN(0);
+  $20.Image get image => $_getN(0);
   @$pb.TagNumber(1)
-  set image($19.Image v) { setField(1, v); }
+  set image($20.Image v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasImage() => $_has(0);
   @$pb.TagNumber(1)
   void clearImage() => clearField(1);
   @$pb.TagNumber(1)
-  $19.Image ensureImage() => $_ensure(0);
+  $20.Image ensureImage() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<Detection> get detections => $_getList(1);
@@ -1282,7 +1282,7 @@ class CaptureAllFromCameraResponse extends $pb.GeneratedMessage {
   $core.List<Classification> get classifications => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$14.PointCloudObject> get objects => $_getList(3);
+  $core.List<$15.PointCloudObject> get objects => $_getList(3);
 
   @$pb.TagNumber(99)
   $43.Struct get extra => $_getN(4);

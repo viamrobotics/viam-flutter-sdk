@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 import 'navigation.pbenum.dart';
 
@@ -252,7 +252,7 @@ class SetModeResponse extends $pb.GeneratedMessage {
 class Waypoint extends $pb.GeneratedMessage {
   factory Waypoint({
     $core.String? id,
-    $14.GeoPoint? location,
+    $15.GeoPoint? location,
   }) {
     final $result = create();
     if (id != null) {
@@ -269,7 +269,7 @@ class Waypoint extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Waypoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$14.GeoPoint>(2, _omitFieldNames ? '' : 'location', subBuilder: $14.GeoPoint.create)
+    ..aOM<$15.GeoPoint>(2, _omitFieldNames ? '' : 'location', subBuilder: $15.GeoPoint.create)
     ..hasRequiredFields = false
   ;
 
@@ -304,15 +304,15 @@ class Waypoint extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $14.GeoPoint get location => $_getN(1);
+  $15.GeoPoint get location => $_getN(1);
   @$pb.TagNumber(2)
-  set location($14.GeoPoint v) { setField(2, v); }
+  set location($15.GeoPoint v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLocation() => $_has(1);
   @$pb.TagNumber(2)
   void clearLocation() => clearField(2);
   @$pb.TagNumber(2)
-  $14.GeoPoint ensureLocation() => $_ensure(1);
+  $15.GeoPoint ensureLocation() => $_ensure(1);
 }
 
 class GetLocationRequest extends $pb.GeneratedMessage {
@@ -384,7 +384,7 @@ class GetLocationRequest extends $pb.GeneratedMessage {
 
 class GetLocationResponse extends $pb.GeneratedMessage {
   factory GetLocationResponse({
-    $14.GeoPoint? location,
+    $15.GeoPoint? location,
     $core.double? compassHeading,
   }) {
     final $result = create();
@@ -401,7 +401,7 @@ class GetLocationResponse extends $pb.GeneratedMessage {
   factory GetLocationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
-    ..aOM<$14.GeoPoint>(1, _omitFieldNames ? '' : 'location', subBuilder: $14.GeoPoint.create)
+    ..aOM<$15.GeoPoint>(1, _omitFieldNames ? '' : 'location', subBuilder: $15.GeoPoint.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'compassHeading', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
@@ -428,15 +428,15 @@ class GetLocationResponse extends $pb.GeneratedMessage {
   static GetLocationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $14.GeoPoint get location => $_getN(0);
+  $15.GeoPoint get location => $_getN(0);
   @$pb.TagNumber(1)
-  set location($14.GeoPoint v) { setField(1, v); }
+  set location($15.GeoPoint v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLocation() => $_has(0);
   @$pb.TagNumber(1)
   void clearLocation() => clearField(1);
   @$pb.TagNumber(1)
-  $14.GeoPoint ensureLocation() => $_ensure(0);
+  $15.GeoPoint ensureLocation() => $_ensure(0);
 
   /// A number from [0-360) where 0 is north
   /// 90 is east, 180 is south, 270 is west
@@ -564,7 +564,7 @@ class GetWaypointsResponse extends $pb.GeneratedMessage {
 class AddWaypointRequest extends $pb.GeneratedMessage {
   factory AddWaypointRequest({
     $core.String? name,
-    $14.GeoPoint? location,
+    $15.GeoPoint? location,
     $43.Struct? extra,
   }) {
     final $result = create();
@@ -585,7 +585,7 @@ class AddWaypointRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddWaypointRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$14.GeoPoint>(2, _omitFieldNames ? '' : 'location', subBuilder: $14.GeoPoint.create)
+    ..aOM<$15.GeoPoint>(2, _omitFieldNames ? '' : 'location', subBuilder: $15.GeoPoint.create)
     ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -621,15 +621,15 @@ class AddWaypointRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $14.GeoPoint get location => $_getN(1);
+  $15.GeoPoint get location => $_getN(1);
   @$pb.TagNumber(2)
-  set location($14.GeoPoint v) { setField(2, v); }
+  set location($15.GeoPoint v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLocation() => $_has(1);
   @$pb.TagNumber(2)
   void clearLocation() => clearField(2);
   @$pb.TagNumber(2)
-  $14.GeoPoint ensureLocation() => $_ensure(1);
+  $15.GeoPoint ensureLocation() => $_ensure(1);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
@@ -862,7 +862,7 @@ class GetObstaclesRequest extends $pb.GeneratedMessage {
 
 class GetObstaclesResponse extends $pb.GeneratedMessage {
   factory GetObstaclesResponse({
-    $core.Iterable<$14.GeoGeometry>? obstacles,
+    $core.Iterable<$15.GeoGeometry>? obstacles,
   }) {
     final $result = create();
     if (obstacles != null) {
@@ -875,7 +875,7 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
   factory GetObstaclesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetObstaclesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
-    ..pc<$14.GeoGeometry>(1, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $14.GeoGeometry.create)
+    ..pc<$15.GeoGeometry>(1, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $15.GeoGeometry.create)
     ..hasRequiredFields = false
   ;
 
@@ -902,7 +902,7 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
 
   /// List of all known geometries
   @$pb.TagNumber(1)
-  $core.List<$14.GeoGeometry> get obstacles => $_getList(0);
+  $core.List<$15.GeoGeometry> get obstacles => $_getList(0);
 }
 
 /// A user provided destination and the set of geopoints that
@@ -910,7 +910,7 @@ class GetObstaclesResponse extends $pb.GeneratedMessage {
 class Path extends $pb.GeneratedMessage {
   factory Path({
     $core.String? destinationWaypointId,
-    $core.Iterable<$14.GeoPoint>? geopoints,
+    $core.Iterable<$15.GeoPoint>? geopoints,
   }) {
     final $result = create();
     if (destinationWaypointId != null) {
@@ -927,7 +927,7 @@ class Path extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Path', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'destinationWaypointId')
-    ..pc<$14.GeoPoint>(2, _omitFieldNames ? '' : 'geopoints', $pb.PbFieldType.PM, subBuilder: $14.GeoPoint.create)
+    ..pc<$15.GeoPoint>(2, _omitFieldNames ? '' : 'geopoints', $pb.PbFieldType.PM, subBuilder: $15.GeoPoint.create)
     ..hasRequiredFields = false
   ;
 
@@ -965,7 +965,7 @@ class Path extends $pb.GeneratedMessage {
   /// List of geopoints that the motion planner output to reach the destination
   /// The first geopoint is the starting position of the robot for that path
   @$pb.TagNumber(2)
-  $core.List<$14.GeoPoint> get geopoints => $_getList(1);
+  $core.List<$15.GeoPoint> get geopoints => $_getList(1);
 }
 
 /// Returns all the paths known to the navigation service
