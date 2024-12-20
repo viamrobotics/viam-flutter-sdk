@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import 'slam.pbenum.dart';
 
 export 'slam.pbenum.dart';
@@ -71,7 +71,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
 class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse({
-    $14.Pose? pose,
+    $15.Pose? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -84,7 +84,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.slam.v1'), createEmptyInstance: create)
-    ..aOM<$14.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $14.Pose.create)
+    ..aOM<$15.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $15.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -111,15 +111,15 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 
   /// Current position of the specified component in the SLAM Map
   @$pb.TagNumber(1)
-  $14.Pose get pose => $_getN(0);
+  $15.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($14.Pose v) { setField(1, v); }
+  set pose($15.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Pose ensurePose() => $_ensure(0);
+  $15.Pose ensurePose() => $_ensure(0);
 }
 
 class GetPointCloudMapRequest extends $pb.GeneratedMessage {

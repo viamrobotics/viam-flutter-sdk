@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 import '../../../google/protobuf/timestamp.pb.dart' as $44;
 import 'cloud_slam.pbenum.dart';
@@ -642,7 +642,7 @@ class GetMappingSessionPointCloudRequest extends $pb.GeneratedMessage {
 class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
   factory GetMappingSessionPointCloudResponse({
     $core.String? mapUrl,
-    $14.Pose? pose,
+    $15.Pose? pose,
   }) {
     final $result = create();
     if (mapUrl != null) {
@@ -659,7 +659,7 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMappingSessionPointCloudResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.cloudslam.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mapUrl')
-    ..aOM<$14.Pose>(2, _omitFieldNames ? '' : 'pose', subBuilder: $14.Pose.create)
+    ..aOM<$15.Pose>(2, _omitFieldNames ? '' : 'pose', subBuilder: $15.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -696,15 +696,15 @@ class GetMappingSessionPointCloudResponse extends $pb.GeneratedMessage {
 
   /// Current position within the SLAM Map
   @$pb.TagNumber(2)
-  $14.Pose get pose => $_getN(1);
+  $15.Pose get pose => $_getN(1);
   @$pb.TagNumber(2)
-  set pose($14.Pose v) { setField(2, v); }
+  set pose($15.Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPose() => $_has(1);
   @$pb.TagNumber(2)
   void clearPose() => clearField(2);
   @$pb.TagNumber(2)
-  $14.Pose ensurePose() => $_ensure(1);
+  $15.Pose ensurePose() => $_ensure(1);
 }
 
 class ListMappingSessionsRequest extends $pb.GeneratedMessage {

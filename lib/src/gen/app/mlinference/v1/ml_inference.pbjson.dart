@@ -34,9 +34,15 @@ final $typed_data.Uint8List getInferenceRequestDescriptor = $convert.base64Decod
 @$core.Deprecated('Use getInferenceResponseDescriptor instead')
 const GetInferenceResponse$json = {
   '1': 'GetInferenceResponse',
+  '2': [
+    {'1': 'output_tensors', '3': 1, '4': 1, '5': 11, '6': '.viam.service.mlmodel.v1.FlatTensors', '10': 'outputTensors'},
+    {'1': 'annotations', '3': 2, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
+  ],
 };
 
 /// Descriptor for `GetInferenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getInferenceResponseDescriptor = $convert.base64Decode(
-    'ChRHZXRJbmZlcmVuY2VSZXNwb25zZQ==');
+    'ChRHZXRJbmZlcmVuY2VSZXNwb25zZRJLCg5vdXRwdXRfdGVuc29ycxgBIAEoCzIkLnZpYW0uc2'
+    'VydmljZS5tbG1vZGVsLnYxLkZsYXRUZW5zb3JzUg1vdXRwdXRUZW5zb3JzEj8KC2Fubm90YXRp'
+    'b25zGAIgASgLMh0udmlhbS5hcHAuZGF0YS52MS5Bbm5vdGF0aW9uc1ILYW5ub3RhdGlvbnM=');
 

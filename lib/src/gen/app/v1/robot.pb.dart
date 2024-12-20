@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/common.pb.dart' as $14;
+import '../../common/v1/common.pb.dart' as $15;
 import '../../google/protobuf/duration.pb.dart' as $42;
 import '../../google/protobuf/struct.pb.dart' as $43;
 import 'robot.pbenum.dart';
@@ -1616,7 +1616,7 @@ class Frame extends $pb.GeneratedMessage {
     $core.String? parent,
     Translation? translation,
     Orientation? orientation,
-    $14.Geometry? geometry,
+    $15.Geometry? geometry,
   }) {
     final $result = create();
     if (parent != null) {
@@ -1641,7 +1641,7 @@ class Frame extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'parent')
     ..aOM<Translation>(2, _omitFieldNames ? '' : 'translation', subBuilder: Translation.create)
     ..aOM<Orientation>(3, _omitFieldNames ? '' : 'orientation', subBuilder: Orientation.create)
-    ..aOM<$14.Geometry>(4, _omitFieldNames ? '' : 'geometry', subBuilder: $14.Geometry.create)
+    ..aOM<$15.Geometry>(4, _omitFieldNames ? '' : 'geometry', subBuilder: $15.Geometry.create)
     ..hasRequiredFields = false
   ;
 
@@ -1698,15 +1698,15 @@ class Frame extends $pb.GeneratedMessage {
   Orientation ensureOrientation() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $14.Geometry get geometry => $_getN(3);
+  $15.Geometry get geometry => $_getN(3);
   @$pb.TagNumber(4)
-  set geometry($14.Geometry v) { setField(4, v); }
+  set geometry($15.Geometry v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasGeometry() => $_has(3);
   @$pb.TagNumber(4)
   void clearGeometry() => clearField(4);
   @$pb.TagNumber(4)
-  $14.Geometry ensureGeometry() => $_ensure(3);
+  $15.Geometry ensureGeometry() => $_ensure(3);
 }
 
 class LogConfiguration extends $pb.GeneratedMessage {
@@ -3188,7 +3188,7 @@ class CertificateResponse extends $pb.GeneratedMessage {
 class LogRequest extends $pb.GeneratedMessage {
   factory LogRequest({
     $core.String? id,
-    $core.Iterable<$14.LogEntry>? logs,
+    $core.Iterable<$15.LogEntry>? logs,
   }) {
     final $result = create();
     if (id != null) {
@@ -3205,7 +3205,7 @@ class LogRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..pc<$14.LogEntry>(2, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $14.LogEntry.create)
+    ..pc<$15.LogEntry>(2, _omitFieldNames ? '' : 'logs', $pb.PbFieldType.PM, subBuilder: $15.LogEntry.create)
     ..hasRequiredFields = false
   ;
 
@@ -3241,7 +3241,7 @@ class LogRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$14.LogEntry> get logs => $_getList(1);
+  $core.List<$15.LogEntry> get logs => $_getList(1);
 }
 
 class LogResponse extends $pb.GeneratedMessage {
@@ -3678,7 +3678,7 @@ class PackageConfig extends $pb.GeneratedMessage {
 
 class MaintenanceConfig extends $pb.GeneratedMessage {
   factory MaintenanceConfig({
-    $14.ResourceName? sensorName,
+    $15.ResourceName? sensorName,
     $core.String? maintenanceAllowedKey,
   }) {
     final $result = create();
@@ -3695,7 +3695,7 @@ class MaintenanceConfig extends $pb.GeneratedMessage {
   factory MaintenanceConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MaintenanceConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$14.ResourceName>(1, _omitFieldNames ? '' : 'sensorName', subBuilder: $14.ResourceName.create)
+    ..aOM<$15.ResourceName>(1, _omitFieldNames ? '' : 'sensorName', subBuilder: $15.ResourceName.create)
     ..aOS(2, _omitFieldNames ? '' : 'maintenanceAllowedKey')
     ..hasRequiredFields = false
   ;
@@ -3722,15 +3722,15 @@ class MaintenanceConfig extends $pb.GeneratedMessage {
   static MaintenanceConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $14.ResourceName get sensorName => $_getN(0);
+  $15.ResourceName get sensorName => $_getN(0);
   @$pb.TagNumber(1)
-  set sensorName($14.ResourceName v) { setField(1, v); }
+  set sensorName($15.ResourceName v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSensorName() => $_has(0);
   @$pb.TagNumber(1)
   void clearSensorName() => clearField(1);
   @$pb.TagNumber(1)
-  $14.ResourceName ensureSensorName() => $_ensure(0);
+  $15.ResourceName ensureSensorName() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get maintenanceAllowedKey => $_getSZ(1);

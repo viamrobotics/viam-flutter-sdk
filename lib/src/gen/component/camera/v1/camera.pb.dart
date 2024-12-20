@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 import 'camera.pbenum.dart';
 
@@ -222,7 +222,7 @@ class GetImagesRequest extends $pb.GeneratedMessage {
 class GetImagesResponse extends $pb.GeneratedMessage {
   factory GetImagesResponse({
     $core.Iterable<Image>? images,
-    $14.ResponseMetadata? responseMetadata,
+    $15.ResponseMetadata? responseMetadata,
   }) {
     final $result = create();
     if (images != null) {
@@ -239,7 +239,7 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..pc<Image>(1, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: Image.create)
-    ..aOM<$14.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $14.ResponseMetadata.create)
+    ..aOM<$15.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $15.ResponseMetadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -270,15 +270,15 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 
   /// contains timestamp data
   @$pb.TagNumber(84260)
-  $14.ResponseMetadata get responseMetadata => $_getN(1);
+  $15.ResponseMetadata get responseMetadata => $_getN(1);
   @$pb.TagNumber(84260)
-  set responseMetadata($14.ResponseMetadata v) { setField(84260, v); }
+  set responseMetadata($15.ResponseMetadata v) { setField(84260, v); }
   @$pb.TagNumber(84260)
   $core.bool hasResponseMetadata() => $_has(1);
   @$pb.TagNumber(84260)
   void clearResponseMetadata() => clearField(84260);
   @$pb.TagNumber(84260)
-  $14.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
+  $15.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
 }
 
 class Image extends $pb.GeneratedMessage {

@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 
 class GetEndPositionRequest extends $pb.GeneratedMessage {
@@ -86,7 +86,7 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
 
 class GetEndPositionResponse extends $pb.GeneratedMessage {
   factory GetEndPositionResponse({
-    $14.Pose? pose,
+    $15.Pose? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -99,7 +99,7 @@ class GetEndPositionResponse extends $pb.GeneratedMessage {
   factory GetEndPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEndPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
-    ..aOM<$14.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $14.Pose.create)
+    ..aOM<$15.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $15.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -127,15 +127,15 @@ class GetEndPositionResponse extends $pb.GeneratedMessage {
   /// Returns 6d pose of the end effector relative to the base, represented by X,Y,Z coordinates which express
   /// millimeters and theta, ox, oy, oz coordinates which express an orientation vector
   @$pb.TagNumber(1)
-  $14.Pose get pose => $_getN(0);
+  $15.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($14.Pose v) { setField(1, v); }
+  set pose($15.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Pose ensurePose() => $_ensure(0);
+  $15.Pose ensurePose() => $_ensure(0);
 }
 
 class JointPositions extends $pb.GeneratedMessage {
@@ -311,7 +311,7 @@ class GetJointPositionsResponse extends $pb.GeneratedMessage {
 class MoveToPositionRequest extends $pb.GeneratedMessage {
   factory MoveToPositionRequest({
     $core.String? name,
-    $14.Pose? to,
+    $15.Pose? to,
     $43.Struct? extra,
   }) {
     final $result = create();
@@ -332,7 +332,7 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveToPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$14.Pose>(2, _omitFieldNames ? '' : 'to', subBuilder: $14.Pose.create)
+    ..aOM<$15.Pose>(2, _omitFieldNames ? '' : 'to', subBuilder: $15.Pose.create)
     ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -370,15 +370,15 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
 
   /// The destination to move the arm to; this is from the reference frame of the arm.
   @$pb.TagNumber(2)
-  $14.Pose get to => $_getN(1);
+  $15.Pose get to => $_getN(1);
   @$pb.TagNumber(2)
-  set to($14.Pose v) { setField(2, v); }
+  set to($15.Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTo() => $_has(1);
   @$pb.TagNumber(2)
   void clearTo() => clearField(2);
   @$pb.TagNumber(2)
-  $14.Pose ensureTo() => $_ensure(1);
+  $15.Pose ensureTo() => $_ensure(1);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
@@ -771,7 +771,7 @@ class StopResponse extends $pb.GeneratedMessage {
 
 class Status extends $pb.GeneratedMessage {
   factory Status({
-    $14.Pose? endPosition,
+    $15.Pose? endPosition,
     JointPositions? jointPositions,
     $core.bool? isMoving,
   }) {
@@ -792,7 +792,7 @@ class Status extends $pb.GeneratedMessage {
   factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
-    ..aOM<$14.Pose>(1, _omitFieldNames ? '' : 'endPosition', subBuilder: $14.Pose.create)
+    ..aOM<$15.Pose>(1, _omitFieldNames ? '' : 'endPosition', subBuilder: $15.Pose.create)
     ..aOM<JointPositions>(2, _omitFieldNames ? '' : 'jointPositions', subBuilder: JointPositions.create)
     ..aOB(3, _omitFieldNames ? '' : 'isMoving')
     ..hasRequiredFields = false
@@ -820,15 +820,15 @@ class Status extends $pb.GeneratedMessage {
   static Status? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $14.Pose get endPosition => $_getN(0);
+  $15.Pose get endPosition => $_getN(0);
   @$pb.TagNumber(1)
-  set endPosition($14.Pose v) { setField(1, v); }
+  set endPosition($15.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEndPosition() => $_has(0);
   @$pb.TagNumber(1)
   void clearEndPosition() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Pose ensureEndPosition() => $_ensure(0);
+  $15.Pose ensureEndPosition() => $_ensure(0);
 
   @$pb.TagNumber(2)
   JointPositions get jointPositions => $_getN(1);

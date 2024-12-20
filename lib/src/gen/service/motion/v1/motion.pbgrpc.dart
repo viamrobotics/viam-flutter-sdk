@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import 'motion.pb.dart' as $35;
 
 export 'motion.pb.dart';
@@ -50,10 +50,10 @@ class MotionServiceClient extends $grpc.Client {
       '/viam.service.motion.v1.MotionService/GetPlan',
       ($35.GetPlanRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $35.GetPlanResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+  static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.motion.v1.MotionService/DoCommand',
-      ($14.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
+      ($15.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.DoCommandResponse.fromBuffer(value));
 
   MotionServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -89,7 +89,7 @@ class MotionServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getPlan, request, options: options);
   }
 
-  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.DoCommandResponse> doCommand($15.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 }
@@ -148,13 +148,13 @@ abstract class MotionServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $35.GetPlanRequest.fromBuffer(value),
         ($35.GetPlanResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+    $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
-        ($14.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $15.DoCommandRequest.fromBuffer(value),
+        ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$35.MoveResponse> move_Pre($grpc.ServiceCall call, $async.Future<$35.MoveRequest> request) async {
@@ -185,7 +185,7 @@ abstract class MotionServiceBase extends $grpc.Service {
     return getPlan(call, await request);
   }
 
-  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
+  $async.Future<$15.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$15.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
@@ -196,5 +196,5 @@ abstract class MotionServiceBase extends $grpc.Service {
   $async.Future<$35.StopPlanResponse> stopPlan($grpc.ServiceCall call, $35.StopPlanRequest request);
   $async.Future<$35.ListPlanStatusesResponse> listPlanStatuses($grpc.ServiceCall call, $35.ListPlanStatusesRequest request);
   $async.Future<$35.GetPlanResponse> getPlan($grpc.ServiceCall call, $35.GetPlanRequest request);
-  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
+  $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }

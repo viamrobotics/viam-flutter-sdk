@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 
 class MoveStraightRequest extends $pb.GeneratedMessage {
@@ -380,8 +380,8 @@ class StopResponse extends $pb.GeneratedMessage {
 class SetPowerRequest extends $pb.GeneratedMessage {
   factory SetPowerRequest({
     $core.String? name,
-    $14.Vector3? linear,
-    $14.Vector3? angular,
+    $15.Vector3? linear,
+    $15.Vector3? angular,
     $43.Struct? extra,
   }) {
     final $result = create();
@@ -405,8 +405,8 @@ class SetPowerRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPowerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.base.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$14.Vector3>(2, _omitFieldNames ? '' : 'linear', subBuilder: $14.Vector3.create)
-    ..aOM<$14.Vector3>(3, _omitFieldNames ? '' : 'angular', subBuilder: $14.Vector3.create)
+    ..aOM<$15.Vector3>(2, _omitFieldNames ? '' : 'linear', subBuilder: $15.Vector3.create)
+    ..aOM<$15.Vector3>(3, _omitFieldNames ? '' : 'angular', subBuilder: $15.Vector3.create)
     ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -444,27 +444,27 @@ class SetPowerRequest extends $pb.GeneratedMessage {
 
   /// Desired linear power percentage as -1 -> 1
   @$pb.TagNumber(2)
-  $14.Vector3 get linear => $_getN(1);
+  $15.Vector3 get linear => $_getN(1);
   @$pb.TagNumber(2)
-  set linear($14.Vector3 v) { setField(2, v); }
+  set linear($15.Vector3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLinear() => $_has(1);
   @$pb.TagNumber(2)
   void clearLinear() => clearField(2);
   @$pb.TagNumber(2)
-  $14.Vector3 ensureLinear() => $_ensure(1);
+  $15.Vector3 ensureLinear() => $_ensure(1);
 
   /// Desired angular power percentage % as -1 -> 1
   @$pb.TagNumber(3)
-  $14.Vector3 get angular => $_getN(2);
+  $15.Vector3 get angular => $_getN(2);
   @$pb.TagNumber(3)
-  set angular($14.Vector3 v) { setField(3, v); }
+  set angular($15.Vector3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAngular() => $_has(2);
   @$pb.TagNumber(3)
   void clearAngular() => clearField(3);
   @$pb.TagNumber(3)
-  $14.Vector3 ensureAngular() => $_ensure(2);
+  $15.Vector3 ensureAngular() => $_ensure(2);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
@@ -514,8 +514,8 @@ class SetPowerResponse extends $pb.GeneratedMessage {
 class SetVelocityRequest extends $pb.GeneratedMessage {
   factory SetVelocityRequest({
     $core.String? name,
-    $14.Vector3? linear,
-    $14.Vector3? angular,
+    $15.Vector3? linear,
+    $15.Vector3? angular,
     $43.Struct? extra,
   }) {
     final $result = create();
@@ -539,8 +539,8 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetVelocityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.base.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$14.Vector3>(2, _omitFieldNames ? '' : 'linear', subBuilder: $14.Vector3.create)
-    ..aOM<$14.Vector3>(3, _omitFieldNames ? '' : 'angular', subBuilder: $14.Vector3.create)
+    ..aOM<$15.Vector3>(2, _omitFieldNames ? '' : 'linear', subBuilder: $15.Vector3.create)
+    ..aOM<$15.Vector3>(3, _omitFieldNames ? '' : 'angular', subBuilder: $15.Vector3.create)
     ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
     ..hasRequiredFields = false
   ;
@@ -578,27 +578,27 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
 
   /// Desired linear velocity in mm per second
   @$pb.TagNumber(2)
-  $14.Vector3 get linear => $_getN(1);
+  $15.Vector3 get linear => $_getN(1);
   @$pb.TagNumber(2)
-  set linear($14.Vector3 v) { setField(2, v); }
+  set linear($15.Vector3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLinear() => $_has(1);
   @$pb.TagNumber(2)
   void clearLinear() => clearField(2);
   @$pb.TagNumber(2)
-  $14.Vector3 ensureLinear() => $_ensure(1);
+  $15.Vector3 ensureLinear() => $_ensure(1);
 
   /// Desired angular velocity in degrees per second
   @$pb.TagNumber(3)
-  $14.Vector3 get angular => $_getN(2);
+  $15.Vector3 get angular => $_getN(2);
   @$pb.TagNumber(3)
-  set angular($14.Vector3 v) { setField(3, v); }
+  set angular($15.Vector3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAngular() => $_has(2);
   @$pb.TagNumber(3)
   void clearAngular() => clearField(3);
   @$pb.TagNumber(3)
-  $14.Vector3 ensureAngular() => $_ensure(2);
+  $15.Vector3 ensureAngular() => $_ensure(2);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)

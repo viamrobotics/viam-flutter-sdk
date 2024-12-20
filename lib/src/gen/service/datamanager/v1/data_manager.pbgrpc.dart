@@ -15,21 +15,21 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
-import 'data_manager.pb.dart' as $33;
+import '../../../common/v1/common.pb.dart' as $15;
+import 'data_manager.pb.dart' as $34;
 
 export 'data_manager.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.datamanager.v1.DataManagerService')
 class DataManagerServiceClient extends $grpc.Client {
-  static final _$sync = $grpc.ClientMethod<$33.SyncRequest, $33.SyncResponse>(
+  static final _$sync = $grpc.ClientMethod<$34.SyncRequest, $34.SyncResponse>(
       '/viam.service.datamanager.v1.DataManagerService/Sync',
-      ($33.SyncRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $33.SyncResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+      ($34.SyncRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.SyncResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.datamanager.v1.DataManagerService/DoCommand',
-      ($14.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
+      ($15.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.DoCommandResponse.fromBuffer(value));
 
   DataManagerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -37,11 +37,11 @@ class DataManagerServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$33.SyncResponse> sync($33.SyncRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$34.SyncResponse> sync($34.SyncRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sync, request, options: options);
   }
 
-  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.DoCommandResponse> doCommand($15.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 }
@@ -51,30 +51,30 @@ abstract class DataManagerServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.datamanager.v1.DataManagerService';
 
   DataManagerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$33.SyncRequest, $33.SyncResponse>(
+    $addMethod($grpc.ServiceMethod<$34.SyncRequest, $34.SyncResponse>(
         'Sync',
         sync_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $33.SyncRequest.fromBuffer(value),
-        ($33.SyncResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+        ($core.List<$core.int> value) => $34.SyncRequest.fromBuffer(value),
+        ($34.SyncResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
-        ($14.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $15.DoCommandRequest.fromBuffer(value),
+        ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$33.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$33.SyncRequest> request) async {
+  $async.Future<$34.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$34.SyncRequest> request) async {
     return sync(call, await request);
   }
 
-  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
+  $async.Future<$15.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$15.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$33.SyncResponse> sync($grpc.ServiceCall call, $33.SyncRequest request);
-  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
+  $async.Future<$34.SyncResponse> sync($grpc.ServiceCall call, $34.SyncRequest request);
+  $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }
