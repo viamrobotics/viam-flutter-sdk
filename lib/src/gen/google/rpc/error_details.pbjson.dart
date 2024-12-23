@@ -133,15 +133,18 @@ const BadRequest_FieldViolation$json = {
   '2': [
     {'1': 'field', '3': 1, '4': 1, '5': 9, '10': 'field'},
     {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'localized_message', '3': 4, '4': 1, '5': 11, '6': '.google.rpc.LocalizedMessage', '10': 'localizedMessage'},
   ],
 };
 
 /// Descriptor for `BadRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List badRequestDescriptor = $convert.base64Decode(
     'CgpCYWRSZXF1ZXN0ElAKEGZpZWxkX3Zpb2xhdGlvbnMYASADKAsyJS5nb29nbGUucnBjLkJhZF'
-    'JlcXVlc3QuRmllbGRWaW9sYXRpb25SD2ZpZWxkVmlvbGF0aW9ucxpICg5GaWVsZFZpb2xhdGlv'
-    'bhIUCgVmaWVsZBgBIAEoCVIFZmllbGQSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW'
-    '9u');
+    'JlcXVlc3QuRmllbGRWaW9sYXRpb25SD2ZpZWxkVmlvbGF0aW9ucxqrAQoORmllbGRWaW9sYXRp'
+    'b24SFAoFZmllbGQYASABKAlSBWZpZWxkEiAKC2Rlc2NyaXB0aW9uGAIgASgJUgtkZXNjcmlwdG'
+    'lvbhIWCgZyZWFzb24YAyABKAlSBnJlYXNvbhJJChFsb2NhbGl6ZWRfbWVzc2FnZRgEIAEoCzIc'
+    'Lmdvb2dsZS5ycGMuTG9jYWxpemVkTWVzc2FnZVIQbG9jYWxpemVkTWVzc2FnZQ==');
 
 @$core.Deprecated('Use requestInfoDescriptor instead')
 const RequestInfo$json = {

@@ -15,25 +15,25 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
-import 'pose_tracker.pb.dart' as $26;
+import '../../../common/v1/common.pb.dart' as $15;
+import 'pose_tracker.pb.dart' as $27;
 
 export 'pose_tracker.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.posetracker.v1.PoseTrackerService')
 class PoseTrackerServiceClient extends $grpc.Client {
-  static final _$getPoses = $grpc.ClientMethod<$26.GetPosesRequest, $26.GetPosesResponse>(
+  static final _$getPoses = $grpc.ClientMethod<$27.GetPosesRequest, $27.GetPosesResponse>(
       '/viam.component.posetracker.v1.PoseTrackerService/GetPoses',
-      ($26.GetPosesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $26.GetPosesResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+      ($27.GetPosesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $27.GetPosesResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.component.posetracker.v1.PoseTrackerService/DoCommand',
-      ($14.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.DoCommandResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
+      ($15.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.DoCommandResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$15.GetGeometriesRequest, $15.GetGeometriesResponse>(
       '/viam.component.posetracker.v1.PoseTrackerService/GetGeometries',
-      ($14.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.GetGeometriesResponse.fromBuffer(value));
+      ($15.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetGeometriesResponse.fromBuffer(value));
 
   PoseTrackerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -41,15 +41,15 @@ class PoseTrackerServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$26.GetPosesResponse> getPoses($26.GetPosesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$27.GetPosesResponse> getPoses($27.GetPosesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPoses, request, options: options);
   }
 
-  $grpc.ResponseFuture<$14.DoCommandResponse> doCommand($14.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.DoCommandResponse> doCommand($15.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$14.GetGeometriesResponse> getGeometries($14.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetGeometriesResponse> getGeometries($15.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -59,42 +59,42 @@ abstract class PoseTrackerServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.posetracker.v1.PoseTrackerService';
 
   PoseTrackerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$26.GetPosesRequest, $26.GetPosesResponse>(
+    $addMethod($grpc.ServiceMethod<$27.GetPosesRequest, $27.GetPosesResponse>(
         'GetPoses',
         getPoses_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $26.GetPosesRequest.fromBuffer(value),
-        ($26.GetPosesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.DoCommandRequest, $14.DoCommandResponse>(
+        ($core.List<$core.int> value) => $27.GetPosesRequest.fromBuffer(value),
+        ($27.GetPosesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.DoCommandRequest.fromBuffer(value),
-        ($14.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.GetGeometriesRequest, $14.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $15.DoCommandRequest.fromBuffer(value),
+        ($15.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetGeometriesRequest, $15.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.GetGeometriesRequest.fromBuffer(value),
-        ($14.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $15.GetGeometriesRequest.fromBuffer(value),
+        ($15.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$26.GetPosesResponse> getPoses_Pre($grpc.ServiceCall call, $async.Future<$26.GetPosesRequest> request) async {
+  $async.Future<$27.GetPosesResponse> getPoses_Pre($grpc.ServiceCall call, $async.Future<$27.GetPosesRequest> request) async {
     return getPoses(call, await request);
   }
 
-  $async.Future<$14.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$14.DoCommandRequest> request) async {
+  $async.Future<$15.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$15.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$14.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$14.GetGeometriesRequest> request) async {
+  $async.Future<$15.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$15.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$26.GetPosesResponse> getPoses($grpc.ServiceCall call, $26.GetPosesRequest request);
-  $async.Future<$14.DoCommandResponse> doCommand($grpc.ServiceCall call, $14.DoCommandRequest request);
-  $async.Future<$14.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $14.GetGeometriesRequest request);
+  $async.Future<$27.GetPosesResponse> getPoses($grpc.ServiceCall call, $27.GetPosesRequest request);
+  $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
+  $async.Future<$15.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $15.GetGeometriesRequest request);
 }

@@ -894,7 +894,8 @@ class AttributeContext_Resource extends $pb.GeneratedMessage {
   ///  may be set by external tools to store and retrieve arbitrary metadata.
   ///  They are not queryable and should be preserved when modifying objects.
   ///
-  ///  More info: https://kubernetes.io/docs/user-guide/annotations
+  ///  More info:
+  ///  https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   @$pb.TagNumber(6)
   $core.Map<$core.String, $core.String> get annotations => $_getMap(5);
 

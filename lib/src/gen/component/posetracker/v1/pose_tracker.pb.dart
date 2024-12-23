@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 
 class GetPosesRequest extends $pb.GeneratedMessage {
@@ -97,7 +97,7 @@ class GetPosesRequest extends $pb.GeneratedMessage {
 
 class GetPosesResponse extends $pb.GeneratedMessage {
   factory GetPosesResponse({
-    $core.Map<$core.String, $14.PoseInFrame>? bodyPoses,
+    $core.Map<$core.String, $15.PoseInFrame>? bodyPoses,
   }) {
     final $result = create();
     if (bodyPoses != null) {
@@ -110,7 +110,7 @@ class GetPosesResponse extends $pb.GeneratedMessage {
   factory GetPosesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPosesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
-    ..m<$core.String, $14.PoseInFrame>(1, _omitFieldNames ? '' : 'bodyPoses', entryClassName: 'GetPosesResponse.BodyPosesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $14.PoseInFrame.create, valueDefaultOrMaker: $14.PoseInFrame.getDefault, packageName: const $pb.PackageName('viam.component.posetracker.v1'))
+    ..m<$core.String, $15.PoseInFrame>(1, _omitFieldNames ? '' : 'bodyPoses', entryClassName: 'GetPosesResponse.BodyPosesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $15.PoseInFrame.create, valueDefaultOrMaker: $15.PoseInFrame.getDefault, packageName: const $pb.PackageName('viam.component.posetracker.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -137,7 +137,7 @@ class GetPosesResponse extends $pb.GeneratedMessage {
 
   /// Mapping of each body name to the pose representing the center of the body.
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $14.PoseInFrame> get bodyPoses => $_getMap(0);
+  $core.Map<$core.String, $15.PoseInFrame> get bodyPoses => $_getMap(0);
 }
 
 

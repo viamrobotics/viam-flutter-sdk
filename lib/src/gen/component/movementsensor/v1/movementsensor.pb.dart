@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $14;
+import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/protobuf/struct.pb.dart' as $43;
 
 class GetLinearVelocityRequest extends $pb.GeneratedMessage {
@@ -86,7 +86,7 @@ class GetLinearVelocityRequest extends $pb.GeneratedMessage {
 
 class GetLinearVelocityResponse extends $pb.GeneratedMessage {
   factory GetLinearVelocityResponse({
-    $14.Vector3? linearVelocity,
+    $15.Vector3? linearVelocity,
   }) {
     final $result = create();
     if (linearVelocity != null) {
@@ -99,7 +99,7 @@ class GetLinearVelocityResponse extends $pb.GeneratedMessage {
   factory GetLinearVelocityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLinearVelocityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
-    ..aOM<$14.Vector3>(1, _omitFieldNames ? '' : 'linearVelocity', subBuilder: $14.Vector3.create)
+    ..aOM<$15.Vector3>(1, _omitFieldNames ? '' : 'linearVelocity', subBuilder: $15.Vector3.create)
     ..hasRequiredFields = false
   ;
 
@@ -126,15 +126,15 @@ class GetLinearVelocityResponse extends $pb.GeneratedMessage {
 
   /// Linear velocity in m/s across x/y/z axes
   @$pb.TagNumber(1)
-  $14.Vector3 get linearVelocity => $_getN(0);
+  $15.Vector3 get linearVelocity => $_getN(0);
   @$pb.TagNumber(1)
-  set linearVelocity($14.Vector3 v) { setField(1, v); }
+  set linearVelocity($15.Vector3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLinearVelocity() => $_has(0);
   @$pb.TagNumber(1)
   void clearLinearVelocity() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Vector3 ensureLinearVelocity() => $_ensure(0);
+  $15.Vector3 ensureLinearVelocity() => $_ensure(0);
 }
 
 class GetAngularVelocityRequest extends $pb.GeneratedMessage {
@@ -207,7 +207,7 @@ class GetAngularVelocityRequest extends $pb.GeneratedMessage {
 
 class GetAngularVelocityResponse extends $pb.GeneratedMessage {
   factory GetAngularVelocityResponse({
-    $14.Vector3? angularVelocity,
+    $15.Vector3? angularVelocity,
   }) {
     final $result = create();
     if (angularVelocity != null) {
@@ -220,7 +220,7 @@ class GetAngularVelocityResponse extends $pb.GeneratedMessage {
   factory GetAngularVelocityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAngularVelocityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
-    ..aOM<$14.Vector3>(1, _omitFieldNames ? '' : 'angularVelocity', subBuilder: $14.Vector3.create)
+    ..aOM<$15.Vector3>(1, _omitFieldNames ? '' : 'angularVelocity', subBuilder: $15.Vector3.create)
     ..hasRequiredFields = false
   ;
 
@@ -247,15 +247,15 @@ class GetAngularVelocityResponse extends $pb.GeneratedMessage {
 
   /// Angular velocity in degrees/s across x/y/z axes
   @$pb.TagNumber(1)
-  $14.Vector3 get angularVelocity => $_getN(0);
+  $15.Vector3 get angularVelocity => $_getN(0);
   @$pb.TagNumber(1)
-  set angularVelocity($14.Vector3 v) { setField(1, v); }
+  set angularVelocity($15.Vector3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAngularVelocity() => $_has(0);
   @$pb.TagNumber(1)
   void clearAngularVelocity() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Vector3 ensureAngularVelocity() => $_ensure(0);
+  $15.Vector3 ensureAngularVelocity() => $_ensure(0);
 }
 
 class GetCompassHeadingRequest extends $pb.GeneratedMessage {
@@ -448,7 +448,7 @@ class GetOrientationRequest extends $pb.GeneratedMessage {
 
 class GetOrientationResponse extends $pb.GeneratedMessage {
   factory GetOrientationResponse({
-    $14.Orientation? orientation,
+    $15.Orientation? orientation,
   }) {
     final $result = create();
     if (orientation != null) {
@@ -461,7 +461,7 @@ class GetOrientationResponse extends $pb.GeneratedMessage {
   factory GetOrientationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrientationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
-    ..aOM<$14.Orientation>(1, _omitFieldNames ? '' : 'orientation', subBuilder: $14.Orientation.create)
+    ..aOM<$15.Orientation>(1, _omitFieldNames ? '' : 'orientation', subBuilder: $15.Orientation.create)
     ..hasRequiredFields = false
   ;
 
@@ -489,15 +489,15 @@ class GetOrientationResponse extends $pb.GeneratedMessage {
   /// Orientation is returned as an orientation message with
   /// OX OY OZ as unit-normalized components of the axis of the vector, and Theta in degrees
   @$pb.TagNumber(1)
-  $14.Orientation get orientation => $_getN(0);
+  $15.Orientation get orientation => $_getN(0);
   @$pb.TagNumber(1)
-  set orientation($14.Orientation v) { setField(1, v); }
+  set orientation($15.Orientation v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasOrientation() => $_has(0);
   @$pb.TagNumber(1)
   void clearOrientation() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Orientation ensureOrientation() => $_ensure(0);
+  $15.Orientation ensureOrientation() => $_ensure(0);
 }
 
 class GetPositionRequest extends $pb.GeneratedMessage {
@@ -570,7 +570,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
 class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse({
-    $14.GeoPoint? coordinate,
+    $15.GeoPoint? coordinate,
     $core.double? altitudeM,
   }) {
     final $result = create();
@@ -587,7 +587,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   factory GetPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
-    ..aOM<$14.GeoPoint>(1, _omitFieldNames ? '' : 'coordinate', subBuilder: $14.GeoPoint.create)
+    ..aOM<$15.GeoPoint>(1, _omitFieldNames ? '' : 'coordinate', subBuilder: $15.GeoPoint.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'altitudeM', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
@@ -616,15 +616,15 @@ class GetPositionResponse extends $pb.GeneratedMessage {
   /// Position is returned in a coordinate of latitute and longitude
   /// and an altidue in meters
   @$pb.TagNumber(1)
-  $14.GeoPoint get coordinate => $_getN(0);
+  $15.GeoPoint get coordinate => $_getN(0);
   @$pb.TagNumber(1)
-  set coordinate($14.GeoPoint v) { setField(1, v); }
+  set coordinate($15.GeoPoint v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCoordinate() => $_has(0);
   @$pb.TagNumber(1)
   void clearCoordinate() => clearField(1);
   @$pb.TagNumber(1)
-  $14.GeoPoint ensureCoordinate() => $_ensure(0);
+  $15.GeoPoint ensureCoordinate() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.double get altitudeM => $_getN(1);
@@ -1062,7 +1062,7 @@ class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
 
 class GetLinearAccelerationResponse extends $pb.GeneratedMessage {
   factory GetLinearAccelerationResponse({
-    $14.Vector3? linearAcceleration,
+    $15.Vector3? linearAcceleration,
   }) {
     final $result = create();
     if (linearAcceleration != null) {
@@ -1075,7 +1075,7 @@ class GetLinearAccelerationResponse extends $pb.GeneratedMessage {
   factory GetLinearAccelerationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLinearAccelerationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
-    ..aOM<$14.Vector3>(1, _omitFieldNames ? '' : 'linearAcceleration', subBuilder: $14.Vector3.create)
+    ..aOM<$15.Vector3>(1, _omitFieldNames ? '' : 'linearAcceleration', subBuilder: $15.Vector3.create)
     ..hasRequiredFields = false
   ;
 
@@ -1102,15 +1102,15 @@ class GetLinearAccelerationResponse extends $pb.GeneratedMessage {
 
   /// Linear acceleration in m/s across x/y/z axes
   @$pb.TagNumber(1)
-  $14.Vector3 get linearAcceleration => $_getN(0);
+  $15.Vector3 get linearAcceleration => $_getN(0);
   @$pb.TagNumber(1)
-  set linearAcceleration($14.Vector3 v) { setField(1, v); }
+  set linearAcceleration($15.Vector3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLinearAcceleration() => $_has(0);
   @$pb.TagNumber(1)
   void clearLinearAcceleration() => clearField(1);
   @$pb.TagNumber(1)
-  $14.Vector3 ensureLinearAcceleration() => $_ensure(0);
+  $15.Vector3 ensureLinearAcceleration() => $_ensure(0);
 }
 
 
