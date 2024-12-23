@@ -57,7 +57,9 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">GetInferenceResponse</span>(<wbr>)
+      <span class="name ">GetInferenceResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-outputTensors"><span class="type-annotation"><a href="../../viam_protos.service.mlmodel/FlatTensors-class.html">FlatTensors</a>?</span> <span class="parameter-name">outputTensors</span>, </span></li>
+<li><span class="parameter" id="-param-annotations"><span class="type-annotation"><a href="../../viam_protos.app.data/Annotations-class.html">Annotations</a>?</span> <span class="parameter-name">annotations</span>, </span></li>
+</ol>})
     </section>
     
 
@@ -65,7 +67,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory GetInferenceResponse() =&gt; create();</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory GetInferenceResponse({
+  $6.FlatTensors? outputTensors,
+  $3.Annotations? annotations,
+}) {
+  final $result = create();
+  if (outputTensors != null) {
+    $result.outputTensors = outputTensors;
+  }
+  if (annotations != null) {
+    $result.annotations = annotations;
+  }
+  return $result;
+}</code></pre>
 </section>
 
 
