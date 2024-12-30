@@ -11004,6 +11004,7 @@ class Model extends $pb.GeneratedMessage {
     $core.String? api,
     $core.String? model,
     $core.String? markdownDocumentation,
+    $core.String? description,
   }) {
     final $result = create();
     if (api != null) {
@@ -11015,6 +11016,9 @@ class Model extends $pb.GeneratedMessage {
     if (markdownDocumentation != null) {
       $result.markdownDocumentation = markdownDocumentation;
     }
+    if (description != null) {
+      $result.description = description;
+    }
     return $result;
   }
   Model._() : super();
@@ -11025,6 +11029,7 @@ class Model extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'api')
     ..aOS(2, _omitFieldNames ? '' : 'model')
     ..aOS(3, _omitFieldNames ? '' : 'markdownDocumentation')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
     ..hasRequiredFields = false
   ;
 
@@ -11078,6 +11083,16 @@ class Model extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDocumentation() => $_has(2);
   @$pb.TagNumber(3)
   void clearMarkdownDocumentation() => clearField(3);
+
+  /// A short description of the model that explains its purpose
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => clearField(4);
 }
 
 class ModuleFileInfo extends $pb.GeneratedMessage {

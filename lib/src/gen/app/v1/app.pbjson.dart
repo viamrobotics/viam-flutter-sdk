@@ -2729,17 +2729,20 @@ const Model$json = {
     {'1': 'api', '3': 1, '4': 1, '5': 9, '10': 'api'},
     {'1': 'model', '3': 2, '4': 1, '5': 9, '10': 'model'},
     {'1': 'markdown_documentation', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'markdownDocumentation', '17': true},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'description', '17': true},
   ],
   '8': [
     {'1': '_markdown_documentation'},
+    {'1': '_description'},
   ],
 };
 
 /// Descriptor for `Model`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List modelDescriptor = $convert.base64Decode(
     'CgVNb2RlbBIQCgNhcGkYASABKAlSA2FwaRIUCgVtb2RlbBgCIAEoCVIFbW9kZWwSOgoWbWFya2'
-    'Rvd25fZG9jdW1lbnRhdGlvbhgDIAEoCUgAUhVtYXJrZG93bkRvY3VtZW50YXRpb26IAQFCGQoX'
-    'X21hcmtkb3duX2RvY3VtZW50YXRpb24=');
+    'Rvd25fZG9jdW1lbnRhdGlvbhgDIAEoCUgAUhVtYXJrZG93bkRvY3VtZW50YXRpb26IAQESJQoL'
+    'ZGVzY3JpcHRpb24YBCABKAlIAVILZGVzY3JpcHRpb26IAQFCGQoXX21hcmtkb3duX2RvY3VtZW'
+    '50YXRpb25CDgoMX2Rlc2NyaXB0aW9u');
 
 @$core.Deprecated('Use moduleFileInfoDescriptor instead')
 const ModuleFileInfo$json = {
