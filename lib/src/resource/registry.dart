@@ -69,6 +69,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
     registerSubtype(ResourceRegistration(VisionClient.subtype, (name, channel) => VisionClient(name, channel)));
+    registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoverClient(name, channel)));
   }
 
   /// The [Subtype] available in the SDK

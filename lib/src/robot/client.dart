@@ -349,4 +349,14 @@ class RobotClient {
     final response = await _client.discoverComponents(request);
     return response.discovery.map((d) => Discovery.fromProto(d)).toList();
   }
+
+  /// GetModelsFromModules returns the list of models supported in modules on the machine.
+  ///
+  /// ```
+  /// var modelsFromModules = await machine.getModelsFromModules();
+  /// ```
+  Future<List<ModuleModel>> getModelsFromModules() async {
+    final response = await _client.getModelsFromModules(request);
+    return response.model.map((d) => ModuleModel.fromProto(d)).toList();
+  }
 }
