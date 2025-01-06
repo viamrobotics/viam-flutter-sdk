@@ -9,11 +9,6 @@ The Viam Flutter SDK allows you to build custom mobile applications to interact 
 **Website:** [viam.com](https://www.viam.com)
 **Documentation:** [docs.viam.com](https://docs.viam.com)
 
-## (In)stability Notice
-
-> **Warning**
-> This is a beta release of the Viam Flutter SDK. No guarantees are made to the stability of the API. All changes will be enumerated in the release notes.
-
 ## Getting started
 
 Make sure your project meets the minimum requirements:
