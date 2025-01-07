@@ -366,6 +366,45 @@ final $typed_data.Uint8List discoveryDescriptor = $convert.base64Decode(
     'J5UgVxdWVyeRIxCgdyZXN1bHRzGAIgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIHcmVz'
     'dWx0cw==');
 
+@$core.Deprecated('Use moduleModelDescriptor instead')
+const ModuleModel$json = {
+  '1': 'ModuleModel',
+  '2': [
+    {'1': 'module_name', '3': 1, '4': 1, '5': 9, '10': 'moduleName'},
+    {'1': 'model', '3': 2, '4': 1, '5': 9, '10': 'model'},
+    {'1': 'api', '3': 3, '4': 1, '5': 9, '10': 'api'},
+    {'1': 'from_local_module', '3': 4, '4': 1, '5': 8, '10': 'fromLocalModule'},
+  ],
+};
+
+/// Descriptor for `ModuleModel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List moduleModelDescriptor = $convert.base64Decode(
+    'CgtNb2R1bGVNb2RlbBIfCgttb2R1bGVfbmFtZRgBIAEoCVIKbW9kdWxlTmFtZRIUCgVtb2RlbB'
+    'gCIAEoCVIFbW9kZWwSEAoDYXBpGAMgASgJUgNhcGkSKgoRZnJvbV9sb2NhbF9tb2R1bGUYBCAB'
+    'KAhSD2Zyb21Mb2NhbE1vZHVsZQ==');
+
+@$core.Deprecated('Use getModelsFromModulesRequestDescriptor instead')
+const GetModelsFromModulesRequest$json = {
+  '1': 'GetModelsFromModulesRequest',
+};
+
+/// Descriptor for `GetModelsFromModulesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getModelsFromModulesRequestDescriptor = $convert.base64Decode(
+    'ChtHZXRNb2RlbHNGcm9tTW9kdWxlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getModelsFromModulesResponseDescriptor instead')
+const GetModelsFromModulesResponse$json = {
+  '1': 'GetModelsFromModulesResponse',
+  '2': [
+    {'1': 'models', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.ModuleModel', '10': 'models'},
+  ],
+};
+
+/// Descriptor for `GetModelsFromModulesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getModelsFromModulesResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRNb2RlbHNGcm9tTW9kdWxlc1Jlc3BvbnNlEjIKBm1vZGVscxgBIAMoCzIaLnZpYW0ucm'
+    '9ib3QudjEuTW9kdWxlTW9kZWxSBm1vZGVscw==');
+
 @$core.Deprecated('Use discoverComponentsRequestDescriptor instead')
 const DiscoverComponentsRequest$json = {
   '1': 'DiscoverComponentsRequest',
