@@ -31,7 +31,7 @@ void main() {
     test('discoverResources', () async {
       final expected = [ComponentConfig()];
       when(serviceClient.discoverResources(any))
-          .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discovery: expected)));
+          .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
       final response = await client.discoverResources('discoveryName');
       expect(response, equals(expected));
     });

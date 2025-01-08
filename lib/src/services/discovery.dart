@@ -32,7 +32,7 @@ class DiscoveryClient extends Resource implements ResourceRPCClient {
   Future<List<ComponentConfig>> discoverResources(String discoveryName, {Map<String, dynamic>? extra}) async {
     final request = DiscoverResourcesRequest(name: name, extra: extra?.toStruct());
     final response = await client.discoverResources(request);
-    return response.discovery;
+    return response.discoveries;
   }
 
   @override
