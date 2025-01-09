@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $43;
+import '../../../google/protobuf/struct.pb.dart' as $44;
 import 'encoder.pbenum.dart';
 
 export 'encoder.pbenum.dart';
@@ -22,7 +22,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   factory GetPositionRequest({
     $core.String? name,
     PositionType? positionType,
-    $43.Struct? extra,
+    $44.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -43,7 +43,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.encoder.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..e<PositionType>(2, _omitFieldNames ? '' : 'positionType', $pb.PbFieldType.OE, defaultOrMaker: PositionType.POSITION_TYPE_UNSPECIFIED, valueOf: PositionType.valueOf, enumValues: PositionType.values)
-    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -94,15 +94,15 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $43.Struct get extra => $_getN(2);
+  $44.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($43.Struct v) { setField(99, v); }
+  set extra($44.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $43.Struct ensureExtra() => $_ensure(2);
+  $44.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
@@ -172,7 +172,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 class ResetPositionRequest extends $pb.GeneratedMessage {
   factory ResetPositionRequest({
     $core.String? name,
-    $43.Struct? extra,
+    $44.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -189,7 +189,7 @@ class ResetPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResetPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.encoder.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -226,15 +226,15 @@ class ResetPositionRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $43.Struct get extra => $_getN(1);
+  $44.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($43.Struct v) { setField(99, v); }
+  set extra($44.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $43.Struct ensureExtra() => $_ensure(1);
+  $44.Struct ensureExtra() => $_ensure(1);
 }
 
 class ResetPositionResponse extends $pb.GeneratedMessage {
@@ -272,7 +272,7 @@ class ResetPositionResponse extends $pb.GeneratedMessage {
 class GetPropertiesRequest extends $pb.GeneratedMessage {
   factory GetPropertiesRequest({
     $core.String? name,
-    $43.Struct? extra,
+    $44.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -289,7 +289,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.encoder.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$43.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -326,15 +326,15 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $43.Struct get extra => $_getN(1);
+  $44.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($43.Struct v) { setField(99, v); }
+  set extra($44.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $43.Struct ensureExtra() => $_ensure(1);
+  $44.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {

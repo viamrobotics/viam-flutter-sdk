@@ -16,20 +16,20 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import 'sensors.pb.dart' as $37;
+import 'sensors.pb.dart' as $38;
 
 export 'sensors.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.sensors.v1.SensorsService')
 class SensorsServiceClient extends $grpc.Client {
-  static final _$getSensors = $grpc.ClientMethod<$37.GetSensorsRequest, $37.GetSensorsResponse>(
+  static final _$getSensors = $grpc.ClientMethod<$38.GetSensorsRequest, $38.GetSensorsResponse>(
       '/viam.service.sensors.v1.SensorsService/GetSensors',
-      ($37.GetSensorsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetSensorsResponse.fromBuffer(value));
-  static final _$getReadings = $grpc.ClientMethod<$37.GetReadingsRequest, $37.GetReadingsResponse>(
+      ($38.GetSensorsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $38.GetSensorsResponse.fromBuffer(value));
+  static final _$getReadings = $grpc.ClientMethod<$38.GetReadingsRequest, $38.GetReadingsResponse>(
       '/viam.service.sensors.v1.SensorsService/GetReadings',
-      ($37.GetReadingsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetReadingsResponse.fromBuffer(value));
+      ($38.GetReadingsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $38.GetReadingsResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.sensors.v1.SensorsService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -41,11 +41,11 @@ class SensorsServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$37.GetSensorsResponse> getSensors($37.GetSensorsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$38.GetSensorsResponse> getSensors($38.GetSensorsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSensors, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetReadingsResponse> getReadings($37.GetReadingsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$38.GetReadingsResponse> getReadings($38.GetReadingsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getReadings, request, options: options);
   }
 
@@ -59,20 +59,20 @@ abstract class SensorsServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.sensors.v1.SensorsService';
 
   SensorsServiceBase() {
-    $addMethod($grpc.ServiceMethod<$37.GetSensorsRequest, $37.GetSensorsResponse>(
+    $addMethod($grpc.ServiceMethod<$38.GetSensorsRequest, $38.GetSensorsResponse>(
         'GetSensors',
         getSensors_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetSensorsRequest.fromBuffer(value),
-        ($37.GetSensorsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetReadingsRequest, $37.GetReadingsResponse>(
+        ($core.List<$core.int> value) => $38.GetSensorsRequest.fromBuffer(value),
+        ($38.GetSensorsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$38.GetReadingsRequest, $38.GetReadingsResponse>(
         'GetReadings',
         getReadings_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetReadingsRequest.fromBuffer(value),
-        ($37.GetReadingsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $38.GetReadingsRequest.fromBuffer(value),
+        ($38.GetReadingsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -82,11 +82,11 @@ abstract class SensorsServiceBase extends $grpc.Service {
         ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$37.GetSensorsResponse> getSensors_Pre($grpc.ServiceCall call, $async.Future<$37.GetSensorsRequest> request) async {
+  $async.Future<$38.GetSensorsResponse> getSensors_Pre($grpc.ServiceCall call, $async.Future<$38.GetSensorsRequest> request) async {
     return getSensors(call, await request);
   }
 
-  $async.Future<$37.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$37.GetReadingsRequest> request) async {
+  $async.Future<$38.GetReadingsResponse> getReadings_Pre($grpc.ServiceCall call, $async.Future<$38.GetReadingsRequest> request) async {
     return getReadings(call, await request);
   }
 
@@ -94,7 +94,7 @@ abstract class SensorsServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$37.GetSensorsResponse> getSensors($grpc.ServiceCall call, $37.GetSensorsRequest request);
-  $async.Future<$37.GetReadingsResponse> getReadings($grpc.ServiceCall call, $37.GetReadingsRequest request);
+  $async.Future<$38.GetSensorsResponse> getSensors($grpc.ServiceCall call, $38.GetSensorsRequest request);
+  $async.Future<$38.GetReadingsResponse> getReadings($grpc.ServiceCall call, $38.GetReadingsRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }
