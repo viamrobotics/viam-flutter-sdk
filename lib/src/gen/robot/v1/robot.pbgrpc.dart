@@ -45,6 +45,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/BlockForOperation',
       ($31.BlockForOperationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $31.BlockForOperationResponse.fromBuffer(value));
+  static final _$getModelsFromModules = $grpc.ClientMethod<$31.GetModelsFromModulesRequest, $31.GetModelsFromModulesResponse>(
+      '/viam.robot.v1.RobotService/GetModelsFromModules',
+      ($31.GetModelsFromModulesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $31.GetModelsFromModulesResponse.fromBuffer(value));
   static final _$discoverComponents = $grpc.ClientMethod<$31.DiscoverComponentsRequest, $31.DiscoverComponentsResponse>(
       '/viam.robot.v1.RobotService/DiscoverComponents',
       ($31.DiscoverComponentsRequest value) => value.writeToBuffer(),
@@ -134,6 +138,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$31.BlockForOperationResponse> blockForOperation($31.BlockForOperationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$blockForOperation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$31.GetModelsFromModulesResponse> getModelsFromModules($31.GetModelsFromModulesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getModelsFromModules, request, options: options);
   }
 
   $grpc.ResponseFuture<$31.DiscoverComponentsResponse> discoverComponents($31.DiscoverComponentsRequest request, {$grpc.CallOptions? options}) {
@@ -244,6 +252,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $31.BlockForOperationRequest.fromBuffer(value),
         ($31.BlockForOperationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$31.GetModelsFromModulesRequest, $31.GetModelsFromModulesResponse>(
+        'GetModelsFromModules',
+        getModelsFromModules_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $31.GetModelsFromModulesRequest.fromBuffer(value),
+        ($31.GetModelsFromModulesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$31.DiscoverComponentsRequest, $31.DiscoverComponentsResponse>(
         'DiscoverComponents',
         discoverComponents_Pre,
@@ -375,6 +390,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return blockForOperation(call, await request);
   }
 
+  $async.Future<$31.GetModelsFromModulesResponse> getModelsFromModules_Pre($grpc.ServiceCall call, $async.Future<$31.GetModelsFromModulesRequest> request) async {
+    return getModelsFromModules(call, await request);
+  }
+
   $async.Future<$31.DiscoverComponentsResponse> discoverComponents_Pre($grpc.ServiceCall call, $async.Future<$31.DiscoverComponentsRequest> request) async {
     return discoverComponents(call, await request);
   }
@@ -441,6 +460,7 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$31.ResourceRPCSubtypesResponse> resourceRPCSubtypes($grpc.ServiceCall call, $31.ResourceRPCSubtypesRequest request);
   $async.Future<$31.CancelOperationResponse> cancelOperation($grpc.ServiceCall call, $31.CancelOperationRequest request);
   $async.Future<$31.BlockForOperationResponse> blockForOperation($grpc.ServiceCall call, $31.BlockForOperationRequest request);
+  $async.Future<$31.GetModelsFromModulesResponse> getModelsFromModules($grpc.ServiceCall call, $31.GetModelsFromModulesRequest request);
   $async.Future<$31.DiscoverComponentsResponse> discoverComponents($grpc.ServiceCall call, $31.DiscoverComponentsRequest request);
   $async.Future<$31.FrameSystemConfigResponse> frameSystemConfig($grpc.ServiceCall call, $31.FrameSystemConfigRequest request);
   $async.Future<$31.TransformPoseResponse> transformPose($grpc.ServiceCall call, $31.TransformPoseRequest request);

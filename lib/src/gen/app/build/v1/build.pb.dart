@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $44;
+import '../../../google/protobuf/timestamp.pb.dart' as $45;
 import 'build.pbenum.dart';
 
 export 'build.pbenum.dart';
@@ -342,8 +342,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $44.Timestamp? startTime,
-    $44.Timestamp? endTime,
+    $45.Timestamp? startTime,
+    $45.Timestamp? endTime,
   }) {
     final $result = create();
     if (buildId != null) {
@@ -375,8 +375,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$44.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $44.Timestamp.create)
-    ..aOM<$44.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $44.Timestamp.create)
+    ..aOM<$45.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $45.Timestamp.create)
+    ..aOM<$45.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $45.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -438,26 +438,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $44.Timestamp get startTime => $_getN(4);
+  $45.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($44.Timestamp v) { setField(5, v); }
+  set startTime($45.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $44.Timestamp ensureStartTime() => $_ensure(4);
+  $45.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $44.Timestamp get endTime => $_getN(5);
+  $45.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($44.Timestamp v) { setField(6, v); }
+  set endTime($45.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $44.Timestamp ensureEndTime() => $_ensure(5);
+  $45.Timestamp ensureEndTime() => $_ensure(5);
 }
 
 class ListJobsRequest extends $pb.GeneratedMessage {

@@ -1,11 +1,20 @@
 # Changelog
 
-## [v0.0.31](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.31) (2024-12-16)
+## [v0.1.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.1.0) (2025-01-06)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.30...v0.0.31)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.31...v0.1.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#323](https://github.com/viamrobotics/viam-flutter-sdk/pull/323) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Fix building example project for iOS [\#322](https://github.com/viamrobotics/viam-flutter-sdk/pull/322) ([kevin49999](https://github.com/kevin49999))
+- Automated Protos Update [\#320](https://github.com/viamrobotics/viam-flutter-sdk/pull/320) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#319](https://github.com/viamrobotics/viam-flutter-sdk/pull/319) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-9505: accept bson queries in mql function [\#318](https://github.com/viamrobotics/viam-flutter-sdk/pull/318) ([purplenicole730](https://github.com/purplenicole730))
+- RSDK-9518: upgrade upload artifact to v4 [\#317](https://github.com/viamrobotics/viam-flutter-sdk/pull/317) ([purplenicole730](https://github.com/purplenicole730))
+- DATA-3446 Add exportTabularData to DataClient [\#316](https://github.com/viamrobotics/viam-flutter-sdk/pull/316) ([katiepeters](https://github.com/katiepeters))
+- v0.0.31 [\#315](https://github.com/viamrobotics/viam-flutter-sdk/pull/315) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#313](https://github.com/viamrobotics/viam-flutter-sdk/pull/313) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Start mdns after setting listeners [\#312](https://github.com/viamrobotics/viam-flutter-sdk/pull/312) ([njooma](https://github.com/njooma))
 - v0.0.30 [\#311](https://github.com/viamrobotics/viam-flutter-sdk/pull/311) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#310](https://github.com/viamrobotics/viam-flutter-sdk/pull/310) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -35,6 +44,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.0.31](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.31) (2024-12-16)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.30...v0.0.31)
 
 ## [v0.0.30](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.30) (2024-12-09)
 

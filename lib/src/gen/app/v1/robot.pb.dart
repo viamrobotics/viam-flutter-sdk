@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../common/v1/common.pb.dart' as $15;
-import '../../google/protobuf/duration.pb.dart' as $42;
-import '../../google/protobuf/struct.pb.dart' as $43;
+import '../../google/protobuf/duration.pb.dart' as $43;
+import '../../google/protobuf/struct.pb.dart' as $44;
 import 'robot.pbenum.dart';
 
 export 'robot.pbenum.dart';
@@ -658,7 +658,7 @@ class ComponentConfig extends $pb.GeneratedMessage {
     Frame? frame,
     $core.Iterable<$core.String>? dependsOn,
     $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
-    $43.Struct? attributes,
+    $44.Struct? attributes,
     $core.String? api,
     LogConfiguration? logConfiguration,
   }) {
@@ -707,7 +707,7 @@ class ComponentConfig extends $pb.GeneratedMessage {
     ..aOM<Frame>(5, _omitFieldNames ? '' : 'frame', subBuilder: Frame.create)
     ..pPS(6, _omitFieldNames ? '' : 'dependsOn')
     ..pc<ResourceLevelServiceConfig>(7, _omitFieldNames ? '' : 'serviceConfigs', $pb.PbFieldType.PM, subBuilder: ResourceLevelServiceConfig.create)
-    ..aOM<$43.Struct>(8, _omitFieldNames ? '' : 'attributes', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(8, _omitFieldNames ? '' : 'attributes', subBuilder: $44.Struct.create)
     ..aOS(9, _omitFieldNames ? '' : 'api')
     ..aOM<LogConfiguration>(10, _omitFieldNames ? '' : 'logConfiguration', subBuilder: LogConfiguration.create)
     ..hasRequiredFields = false
@@ -788,15 +788,15 @@ class ComponentConfig extends $pb.GeneratedMessage {
   $core.List<ResourceLevelServiceConfig> get serviceConfigs => $_getList(6);
 
   @$pb.TagNumber(8)
-  $43.Struct get attributes => $_getN(7);
+  $44.Struct get attributes => $_getN(7);
   @$pb.TagNumber(8)
-  set attributes($43.Struct v) { setField(8, v); }
+  set attributes($44.Struct v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasAttributes() => $_has(7);
   @$pb.TagNumber(8)
   void clearAttributes() => clearField(8);
   @$pb.TagNumber(8)
-  $43.Struct ensureAttributes() => $_ensure(7);
+  $44.Struct ensureAttributes() => $_ensure(7);
 
   @$pb.TagNumber(9)
   $core.String get api => $_getSZ(8);
@@ -823,7 +823,7 @@ class ComponentConfig extends $pb.GeneratedMessage {
 class ResourceLevelServiceConfig extends $pb.GeneratedMessage {
   factory ResourceLevelServiceConfig({
     $core.String? type,
-    $43.Struct? attributes,
+    $44.Struct? attributes,
   }) {
     final $result = create();
     if (type != null) {
@@ -840,7 +840,7 @@ class ResourceLevelServiceConfig extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceLevelServiceConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'type')
-    ..aOM<$43.Struct>(2, _omitFieldNames ? '' : 'attributes', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(2, _omitFieldNames ? '' : 'attributes', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -876,15 +876,15 @@ class ResourceLevelServiceConfig extends $pb.GeneratedMessage {
 
   /// TODO(adam): Should this be move to a structured type as defined in the typescript frontend.
   @$pb.TagNumber(2)
-  $43.Struct get attributes => $_getN(1);
+  $44.Struct get attributes => $_getN(1);
   @$pb.TagNumber(2)
-  set attributes($43.Struct v) { setField(2, v); }
+  set attributes($44.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAttributes() => $_has(1);
   @$pb.TagNumber(2)
   void clearAttributes() => clearField(2);
   @$pb.TagNumber(2)
-  $43.Struct ensureAttributes() => $_ensure(1);
+  $44.Struct ensureAttributes() => $_ensure(1);
 }
 
 /// A ProcessConfig describes how to manage a system process.
@@ -897,7 +897,7 @@ class ProcessConfig extends $pb.GeneratedMessage {
     $core.bool? oneShot,
     $core.bool? log,
     $core.int? stopSignal,
-    $42.Duration? stopTimeout,
+    $43.Duration? stopTimeout,
     $core.Map<$core.String, $core.String>? env,
     $core.String? username,
   }) {
@@ -946,7 +946,7 @@ class ProcessConfig extends $pb.GeneratedMessage {
     ..aOB(5, _omitFieldNames ? '' : 'oneShot')
     ..aOB(6, _omitFieldNames ? '' : 'log')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'stopSignal', $pb.PbFieldType.O3)
-    ..aOM<$42.Duration>(8, _omitFieldNames ? '' : 'stopTimeout', subBuilder: $42.Duration.create)
+    ..aOM<$43.Duration>(8, _omitFieldNames ? '' : 'stopTimeout', subBuilder: $43.Duration.create)
     ..m<$core.String, $core.String>(9, _omitFieldNames ? '' : 'env', entryClassName: 'ProcessConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
     ..aOS(10, _omitFieldNames ? '' : 'username')
     ..hasRequiredFields = false
@@ -1031,15 +1031,15 @@ class ProcessConfig extends $pb.GeneratedMessage {
   void clearStopSignal() => clearField(7);
 
   @$pb.TagNumber(8)
-  $42.Duration get stopTimeout => $_getN(7);
+  $43.Duration get stopTimeout => $_getN(7);
   @$pb.TagNumber(8)
-  set stopTimeout($42.Duration v) { setField(8, v); }
+  set stopTimeout($43.Duration v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasStopTimeout() => $_has(7);
   @$pb.TagNumber(8)
   void clearStopTimeout() => clearField(8);
   @$pb.TagNumber(8)
-  $42.Duration ensureStopTimeout() => $_ensure(7);
+  $43.Duration ensureStopTimeout() => $_ensure(7);
 
   /// additional environment variables passed to the process
   @$pb.TagNumber(9)
@@ -1060,7 +1060,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? namespace,
     $core.String? type,
-    $43.Struct? attributes,
+    $44.Struct? attributes,
     $core.Iterable<$core.String>? dependsOn,
     $core.String? model,
     $core.String? api,
@@ -1105,7 +1105,7 @@ class ServiceConfig extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'namespace')
     ..aOS(3, _omitFieldNames ? '' : 'type')
-    ..aOM<$43.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $44.Struct.create)
     ..pPS(5, _omitFieldNames ? '' : 'dependsOn')
     ..aOS(6, _omitFieldNames ? '' : 'model')
     ..aOS(9, _omitFieldNames ? '' : 'api')
@@ -1163,15 +1163,15 @@ class ServiceConfig extends $pb.GeneratedMessage {
   void clearType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $43.Struct get attributes => $_getN(3);
+  $44.Struct get attributes => $_getN(3);
   @$pb.TagNumber(4)
-  set attributes($43.Struct v) { setField(4, v); }
+  set attributes($44.Struct v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAttributes() => $_has(3);
   @$pb.TagNumber(4)
   void clearAttributes() => clearField(4);
   @$pb.TagNumber(4)
-  $43.Struct ensureAttributes() => $_ensure(3);
+  $44.Struct ensureAttributes() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.List<$core.String> get dependsOn => $_getList(4);
@@ -1319,7 +1319,7 @@ class NetworkConfig extends $pb.GeneratedMessage {
 
 class SessionsConfig extends $pb.GeneratedMessage {
   factory SessionsConfig({
-    $42.Duration? heartbeatWindow,
+    $43.Duration? heartbeatWindow,
   }) {
     final $result = create();
     if (heartbeatWindow != null) {
@@ -1332,7 +1332,7 @@ class SessionsConfig extends $pb.GeneratedMessage {
   factory SessionsConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SessionsConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$42.Duration>(1, _omitFieldNames ? '' : 'heartbeatWindow', subBuilder: $42.Duration.create)
+    ..aOM<$43.Duration>(1, _omitFieldNames ? '' : 'heartbeatWindow', subBuilder: $43.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1358,15 +1358,15 @@ class SessionsConfig extends $pb.GeneratedMessage {
   static SessionsConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $42.Duration get heartbeatWindow => $_getN(0);
+  $43.Duration get heartbeatWindow => $_getN(0);
   @$pb.TagNumber(1)
-  set heartbeatWindow($42.Duration v) { setField(1, v); }
+  set heartbeatWindow($43.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeartbeatWindow() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeartbeatWindow() => clearField(1);
   @$pb.TagNumber(1)
-  $42.Duration ensureHeartbeatWindow() => $_ensure(0);
+  $43.Duration ensureHeartbeatWindow() => $_ensure(0);
 }
 
 class AuthConfig extends $pb.GeneratedMessage {
@@ -1439,7 +1439,7 @@ class AuthConfig extends $pb.GeneratedMessage {
 
 class JWKSFile extends $pb.GeneratedMessage {
   factory JWKSFile({
-    $43.Struct? json,
+    $44.Struct? json,
   }) {
     final $result = create();
     if (json != null) {
@@ -1452,7 +1452,7 @@ class JWKSFile extends $pb.GeneratedMessage {
   factory JWKSFile.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JWKSFile', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$43.Struct>(1, _omitFieldNames ? '' : 'json', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(1, _omitFieldNames ? '' : 'json', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1480,15 +1480,15 @@ class JWKSFile extends $pb.GeneratedMessage {
   /// JSON Web Keys (JWKS) file as arbitary json.
   /// See https://www.rfc-editor.org/rfc/rfc7517
   @$pb.TagNumber(1)
-  $43.Struct get json => $_getN(0);
+  $44.Struct get json => $_getN(0);
   @$pb.TagNumber(1)
-  set json($43.Struct v) { setField(1, v); }
+  set json($44.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasJson() => $_has(0);
   @$pb.TagNumber(1)
   void clearJson() => clearField(1);
   @$pb.TagNumber(1)
-  $43.Struct ensureJson() => $_ensure(0);
+  $44.Struct ensureJson() => $_ensure(0);
 }
 
 /// ExternalAuthConfig describes how a viam managed robot can accept
@@ -1548,7 +1548,7 @@ class ExternalAuthConfig extends $pb.GeneratedMessage {
 class AuthHandlerConfig extends $pb.GeneratedMessage {
   factory AuthHandlerConfig({
     CredentialsType? type,
-    $43.Struct? config,
+    $44.Struct? config,
   }) {
     final $result = create();
     if (type != null) {
@@ -1565,7 +1565,7 @@ class AuthHandlerConfig extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthHandlerConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..e<CredentialsType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: CredentialsType.CREDENTIALS_TYPE_UNSPECIFIED, valueOf: CredentialsType.valueOf, enumValues: CredentialsType.values)
-    ..aOM<$43.Struct>(5, _omitFieldNames ? '' : 'config', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(5, _omitFieldNames ? '' : 'config', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1600,15 +1600,15 @@ class AuthHandlerConfig extends $pb.GeneratedMessage {
   void clearType() => clearField(1);
 
   @$pb.TagNumber(5)
-  $43.Struct get config => $_getN(1);
+  $44.Struct get config => $_getN(1);
   @$pb.TagNumber(5)
-  set config($43.Struct v) { setField(5, v); }
+  set config($44.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasConfig() => $_has(1);
   @$pb.TagNumber(5)
   void clearConfig() => clearField(5);
   @$pb.TagNumber(5)
-  $43.Struct ensureConfig() => $_ensure(1);
+  $44.Struct ensureConfig() => $_ensure(1);
 }
 
 class Frame extends $pb.GeneratedMessage {
@@ -2503,8 +2503,8 @@ class RemoteConfig extends $pb.GeneratedMessage {
     RemoteAuth? auth,
     $core.String? managedBy,
     $core.bool? insecure,
-    $42.Duration? connectionCheckInterval,
-    $42.Duration? reconnectInterval,
+    $43.Duration? connectionCheckInterval,
+    $43.Duration? reconnectInterval,
     $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
     $core.String? secret,
   }) {
@@ -2552,8 +2552,8 @@ class RemoteConfig extends $pb.GeneratedMessage {
     ..aOM<RemoteAuth>(4, _omitFieldNames ? '' : 'auth', subBuilder: RemoteAuth.create)
     ..aOS(5, _omitFieldNames ? '' : 'managedBy')
     ..aOB(6, _omitFieldNames ? '' : 'insecure')
-    ..aOM<$42.Duration>(7, _omitFieldNames ? '' : 'connectionCheckInterval', subBuilder: $42.Duration.create)
-    ..aOM<$42.Duration>(8, _omitFieldNames ? '' : 'reconnectInterval', subBuilder: $42.Duration.create)
+    ..aOM<$43.Duration>(7, _omitFieldNames ? '' : 'connectionCheckInterval', subBuilder: $43.Duration.create)
+    ..aOM<$43.Duration>(8, _omitFieldNames ? '' : 'reconnectInterval', subBuilder: $43.Duration.create)
     ..pc<ResourceLevelServiceConfig>(9, _omitFieldNames ? '' : 'serviceConfigs', $pb.PbFieldType.PM, subBuilder: ResourceLevelServiceConfig.create)
     ..aOS(10, _omitFieldNames ? '' : 'secret')
     ..hasRequiredFields = false
@@ -2639,26 +2639,26 @@ class RemoteConfig extends $pb.GeneratedMessage {
   void clearInsecure() => clearField(6);
 
   @$pb.TagNumber(7)
-  $42.Duration get connectionCheckInterval => $_getN(6);
+  $43.Duration get connectionCheckInterval => $_getN(6);
   @$pb.TagNumber(7)
-  set connectionCheckInterval($42.Duration v) { setField(7, v); }
+  set connectionCheckInterval($43.Duration v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasConnectionCheckInterval() => $_has(6);
   @$pb.TagNumber(7)
   void clearConnectionCheckInterval() => clearField(7);
   @$pb.TagNumber(7)
-  $42.Duration ensureConnectionCheckInterval() => $_ensure(6);
+  $43.Duration ensureConnectionCheckInterval() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $42.Duration get reconnectInterval => $_getN(7);
+  $43.Duration get reconnectInterval => $_getN(7);
   @$pb.TagNumber(8)
-  set reconnectInterval($42.Duration v) { setField(8, v); }
+  set reconnectInterval($43.Duration v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasReconnectInterval() => $_has(7);
   @$pb.TagNumber(8)
   void clearReconnectInterval() => clearField(8);
   @$pb.TagNumber(8)
-  $42.Duration ensureReconnectInterval() => $_ensure(7);
+  $43.Duration ensureReconnectInterval() => $_ensure(7);
 
   @$pb.TagNumber(9)
   $core.List<ResourceLevelServiceConfig> get serviceConfigs => $_getList(8);
@@ -3331,7 +3331,7 @@ class NeedsRestartResponse extends $pb.GeneratedMessage {
   factory NeedsRestartResponse({
     $core.String? id,
     $core.bool? mustRestart,
-    $42.Duration? restartCheckInterval,
+    $43.Duration? restartCheckInterval,
   }) {
     final $result = create();
     if (id != null) {
@@ -3352,7 +3352,7 @@ class NeedsRestartResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NeedsRestartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOB(2, _omitFieldNames ? '' : 'mustRestart')
-    ..aOM<$42.Duration>(3, _omitFieldNames ? '' : 'restartCheckInterval', subBuilder: $42.Duration.create)
+    ..aOM<$43.Duration>(3, _omitFieldNames ? '' : 'restartCheckInterval', subBuilder: $43.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -3397,15 +3397,15 @@ class NeedsRestartResponse extends $pb.GeneratedMessage {
   void clearMustRestart() => clearField(2);
 
   @$pb.TagNumber(3)
-  $42.Duration get restartCheckInterval => $_getN(2);
+  $43.Duration get restartCheckInterval => $_getN(2);
   @$pb.TagNumber(3)
-  set restartCheckInterval($42.Duration v) { setField(3, v); }
+  set restartCheckInterval($43.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRestartCheckInterval() => $_has(2);
   @$pb.TagNumber(3)
   void clearRestartCheckInterval() => clearField(3);
   @$pb.TagNumber(3)
-  $42.Duration ensureRestartCheckInterval() => $_ensure(2);
+  $43.Duration ensureRestartCheckInterval() => $_ensure(2);
 }
 
 /// ModuleConfig is the configuration for a module.
@@ -3418,7 +3418,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
     $core.String? moduleId,
     $core.Map<$core.String, $core.String>? env,
     AppValidationStatus? status,
-    $42.Duration? firstRunTimeout,
+    $43.Duration? firstRunTimeout,
   }) {
     final $result = create();
     if (name != null) {
@@ -3459,7 +3459,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'moduleId')
     ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'env', entryClassName: 'ModuleConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
     ..aOM<AppValidationStatus>(7, _omitFieldNames ? '' : 'status', subBuilder: AppValidationStatus.create)
-    ..aOM<$42.Duration>(8, _omitFieldNames ? '' : 'firstRunTimeout', subBuilder: $42.Duration.create)
+    ..aOM<$43.Duration>(8, _omitFieldNames ? '' : 'firstRunTimeout', subBuilder: $43.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -3551,15 +3551,15 @@ class ModuleConfig extends $pb.GeneratedMessage {
 
   /// timeout for first_run script
   @$pb.TagNumber(8)
-  $42.Duration get firstRunTimeout => $_getN(7);
+  $43.Duration get firstRunTimeout => $_getN(7);
   @$pb.TagNumber(8)
-  set firstRunTimeout($42.Duration v) { setField(8, v); }
+  set firstRunTimeout($43.Duration v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasFirstRunTimeout() => $_has(7);
   @$pb.TagNumber(8)
   void clearFirstRunTimeout() => clearField(8);
   @$pb.TagNumber(8)
-  $42.Duration ensureFirstRunTimeout() => $_ensure(7);
+  $43.Duration ensureFirstRunTimeout() => $_ensure(7);
 }
 
 /// PackageConfig is the configration for deployed Packages.

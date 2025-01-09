@@ -39,6 +39,18 @@ class UsageCostType extends $pb.ProtobufEnum {
   static const UsageCostType USAGE_COST_TYPE_OTHER_CLOUD_STORAGE = UsageCostType._(7, _omitEnumNames ? '' : 'USAGE_COST_TYPE_OTHER_CLOUD_STORAGE');
   static const UsageCostType USAGE_COST_TYPE_PER_MACHINE = UsageCostType._(8, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PER_MACHINE');
   static const UsageCostType USAGE_COST_TYPE_TRIGGER_NOTIFICATION = UsageCostType._(9, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TRIGGER_NOTIFICATION');
+  static const UsageCostType USAGE_COST_TYPE_TABULAR_DATA_CLOUD_STORAGE = UsageCostType._(10, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TABULAR_DATA_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_CONFIG_HISTORY_CLOUD_STORAGE = UsageCostType._(11, _omitEnumNames ? '' : 'USAGE_COST_TYPE_CONFIG_HISTORY_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_LOGS_CLOUD_STORAGE = UsageCostType._(12, _omitEnumNames ? '' : 'USAGE_COST_TYPE_LOGS_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_TRAINING_LOGS_CLOUD_STORAGE = UsageCostType._(13, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TRAINING_LOGS_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_PACKAGES_CLOUD_STORAGE = UsageCostType._(14, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PACKAGES_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_BINARY_DATA_UPLOAD = UsageCostType._(15, _omitEnumNames ? '' : 'USAGE_COST_TYPE_BINARY_DATA_UPLOAD');
+  static const UsageCostType USAGE_COST_TYPE_TABULAR_DATA_UPLOAD = UsageCostType._(16, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TABULAR_DATA_UPLOAD');
+  static const UsageCostType USAGE_COST_TYPE_LOGS_UPLOAD = UsageCostType._(17, _omitEnumNames ? '' : 'USAGE_COST_TYPE_LOGS_UPLOAD');
+  static const UsageCostType USAGE_COST_TYPE_BINARY_DATA_EGRESS = UsageCostType._(18, _omitEnumNames ? '' : 'USAGE_COST_TYPE_BINARY_DATA_EGRESS');
+  static const UsageCostType USAGE_COST_TYPE_TABULAR_DATA_EGRESS = UsageCostType._(19, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TABULAR_DATA_EGRESS');
+  static const UsageCostType USAGE_COST_TYPE_LOGS_EGRESS = UsageCostType._(20, _omitEnumNames ? '' : 'USAGE_COST_TYPE_LOGS_EGRESS');
+  static const UsageCostType USAGE_COST_TYPE_ML_TRAINING_LOGS_EGRESS = UsageCostType._(21, _omitEnumNames ? '' : 'USAGE_COST_TYPE_ML_TRAINING_LOGS_EGRESS');
 
   static const $core.List<UsageCostType> values = <UsageCostType> [
     USAGE_COST_TYPE_UNSPECIFIED,
@@ -51,6 +63,18 @@ class UsageCostType extends $pb.ProtobufEnum {
     USAGE_COST_TYPE_OTHER_CLOUD_STORAGE,
     USAGE_COST_TYPE_PER_MACHINE,
     USAGE_COST_TYPE_TRIGGER_NOTIFICATION,
+    USAGE_COST_TYPE_TABULAR_DATA_CLOUD_STORAGE,
+    USAGE_COST_TYPE_CONFIG_HISTORY_CLOUD_STORAGE,
+    USAGE_COST_TYPE_LOGS_CLOUD_STORAGE,
+    USAGE_COST_TYPE_TRAINING_LOGS_CLOUD_STORAGE,
+    USAGE_COST_TYPE_PACKAGES_CLOUD_STORAGE,
+    USAGE_COST_TYPE_BINARY_DATA_UPLOAD,
+    USAGE_COST_TYPE_TABULAR_DATA_UPLOAD,
+    USAGE_COST_TYPE_LOGS_UPLOAD,
+    USAGE_COST_TYPE_BINARY_DATA_EGRESS,
+    USAGE_COST_TYPE_TABULAR_DATA_EGRESS,
+    USAGE_COST_TYPE_LOGS_EGRESS,
+    USAGE_COST_TYPE_ML_TRAINING_LOGS_EGRESS,
   ];
 
   static final $core.Map<$core.int, UsageCostType> _byValue = $pb.ProtobufEnum.initByValue(values);

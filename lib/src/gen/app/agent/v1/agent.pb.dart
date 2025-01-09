@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $42;
-import '../../../google/protobuf/struct.pb.dart' as $43;
+import '../../../google/protobuf/duration.pb.dart' as $43;
+import '../../../google/protobuf/struct.pb.dart' as $44;
 import 'agent.pbenum.dart';
 
 export 'agent.pbenum.dart';
@@ -100,7 +100,7 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
 class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
   factory DeviceAgentConfigResponse({
     $core.Map<$core.String, DeviceSubsystemConfig>? subsystemConfigs,
-    $42.Duration? checkInterval,
+    $43.Duration? checkInterval,
   }) {
     final $result = create();
     if (subsystemConfigs != null) {
@@ -117,7 +117,7 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceAgentConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
     ..m<$core.String, DeviceSubsystemConfig>(1, _omitFieldNames ? '' : 'subsystemConfigs', entryClassName: 'DeviceAgentConfigResponse.SubsystemConfigsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: DeviceSubsystemConfig.create, valueDefaultOrMaker: DeviceSubsystemConfig.getDefault, packageName: const $pb.PackageName('viam.app.agent.v1'))
-    ..aOM<$42.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $42.Duration.create)
+    ..aOM<$43.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $43.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -149,15 +149,15 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   /// how often this request should be repeated
   @$pb.TagNumber(2)
-  $42.Duration get checkInterval => $_getN(1);
+  $43.Duration get checkInterval => $_getN(1);
   @$pb.TagNumber(2)
-  set checkInterval($42.Duration v) { setField(2, v); }
+  set checkInterval($43.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCheckInterval() => $_has(1);
   @$pb.TagNumber(2)
   void clearCheckInterval() => clearField(2);
   @$pb.TagNumber(2)
-  $42.Duration ensureCheckInterval() => $_ensure(1);
+  $43.Duration ensureCheckInterval() => $_ensure(1);
 }
 
 class DeviceSubsystemConfig extends $pb.GeneratedMessage {
@@ -165,7 +165,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
     SubsystemUpdateInfo? updateInfo,
     $core.bool? disable,
     $core.bool? forceRestart,
-    $43.Struct? attributes,
+    $44.Struct? attributes,
   }) {
     final $result = create();
     if (updateInfo != null) {
@@ -190,7 +190,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
     ..aOM<SubsystemUpdateInfo>(1, _omitFieldNames ? '' : 'updateInfo', subBuilder: SubsystemUpdateInfo.create)
     ..aOB(2, _omitFieldNames ? '' : 'disable')
     ..aOB(3, _omitFieldNames ? '' : 'forceRestart')
-    ..aOM<$43.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $43.Struct.create)
+    ..aOM<$44.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -249,15 +249,15 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
 
   /// arbitrary config sections
   @$pb.TagNumber(4)
-  $43.Struct get attributes => $_getN(3);
+  $44.Struct get attributes => $_getN(3);
   @$pb.TagNumber(4)
-  set attributes($43.Struct v) { setField(4, v); }
+  set attributes($44.Struct v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAttributes() => $_has(3);
   @$pb.TagNumber(4)
   void clearAttributes() => clearField(4);
   @$pb.TagNumber(4)
-  $43.Struct ensureAttributes() => $_ensure(3);
+  $44.Struct ensureAttributes() => $_ensure(3);
 }
 
 class HostInfo extends $pb.GeneratedMessage {
