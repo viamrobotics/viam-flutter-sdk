@@ -3,6 +3,8 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../protos/common/common.dart';
 import '../../protos/service/discovery.dart';
+import '../gen/service/discovery/v1/discovery.pbgrpc.dart';
+import '../gen/app/v1/robot.pb.dart';
 import '../media/image.dart';
 import '../resource/base.dart';
 import '../robot/client.dart';
@@ -29,7 +31,7 @@ class DiscoveryClient extends Resource implements ResourceRPCClient {
   /// // Example:
   /// var resources = await myDiscoveryService.discoverResources('myWebcam');
   /// ```
-  Future<List<ComponentConfig>> discoverResources(String discoveryName, {Map<String, dynamic>? extra}) async {
+  Future<Iterable<ComponentConfig>> discoverResources(String discoveryName, {Map<String, dynamic>? extra}) async {
     final request = DiscoverResourcesRequest(name: name, extra: extra?.toStruct());
     final response = await client.discoverResources(request);
     return response.discoveries;

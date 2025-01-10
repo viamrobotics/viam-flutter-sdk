@@ -25,6 +25,7 @@ import '../components/sensor/sensor.dart';
 import '../components/servo/client.dart';
 import '../components/servo/servo.dart';
 import '../resource/base.dart';
+import '../services/discovery.dart';
 import '../services/vision.dart';
 
 /// {@category Viam SDK}
@@ -69,7 +70,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
     registerSubtype(ResourceRegistration(VisionClient.subtype, (name, channel) => VisionClient(name, channel)));
-    registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoverClient(name, channel)));
+    registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoveryClient(name, channel)));
   }
 
   /// The [Subtype] available in the SDK

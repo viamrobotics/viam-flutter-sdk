@@ -5,11 +5,13 @@ import 'package:viam_sdk/protos/service/discovery.dart';
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/src/gen/app/v1/robot.pb.dart';
 
+import '../../../lib/src/services/discovery.dart';
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
 
-class FakeDiscoveryClient extends DiscoverClient {
+class FakeDiscoveryClient extends DiscoveryClient {
   @override
   DiscoveryServiceClient get client => _client;
 

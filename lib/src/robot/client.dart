@@ -5,6 +5,7 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
+import '../gen/robot/v1/robot.pb.dart';
 import '../gen/google/protobuf/struct.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../gen/stream/v1/stream.pbgrpc.dart';
@@ -356,7 +357,8 @@ class RobotClient {
   /// var modelsFromModules = await machine.getModelsFromModules();
   /// ```
   Future<List<ModuleModel>> getModelsFromModules() async {
+    final request = rpb.GetModelsFromModulesRequest();
     final response = await _client.getModelsFromModules(request);
-    return response.model.map((d) => ModuleModel.fromProto(d)).toList();
+    return response.models;
   }
 }
