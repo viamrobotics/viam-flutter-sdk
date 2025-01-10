@@ -30,6 +30,10 @@ import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart'
     as _i16;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pb.dart' as _i9;
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart' as _i8;
+import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pb.dart'
+    as _i28;
+import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart'
+    as _i27;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pb.dart' as _i19;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart' as _i18;
 
@@ -5673,6 +5677,155 @@ class MockDatasetServiceClient extends _i1.Mock
                 ),
           )
           as _i4.ResponseFuture<_i26.ListDatasetsByIDsResponse>);
+
+  @override
+  _i3.ClientCall<Q, R> $createCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #$createCall,
+              [method, requests],
+              {#options: options},
+            ),
+            returnValue: _FakeClientCall_1<Q, R>(
+              this,
+              Invocation.method(
+                #$createCall,
+                [method, requests],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeClientCall_1<Q, R>(
+              this,
+              Invocation.method(
+                #$createCall,
+                [method, requests],
+                {#options: options},
+              ),
+            ),
+          )
+          as _i3.ClientCall<Q, R>);
+
+  @override
+  _i4.ResponseFuture<R> $createUnaryCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    Q? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #$createUnaryCall,
+              [method, request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<R>(
+              this,
+              Invocation.method(
+                #$createUnaryCall,
+                [method, request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<R>(
+              this,
+              Invocation.method(
+                #$createUnaryCall,
+                [method, request],
+                {#options: options},
+              ),
+            ),
+          )
+          as _i4.ResponseFuture<R>);
+
+  @override
+  _i4.ResponseStream<R> $createStreamingCall<Q, R>(
+    _i7.ClientMethod<Q, R>? method,
+    _i6.Stream<Q>? requests, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #$createStreamingCall,
+              [method, requests],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseStream_3<R>(
+              this,
+              Invocation.method(
+                #$createStreamingCall,
+                [method, requests],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseStream_3<R>(
+              this,
+              Invocation.method(
+                #$createStreamingCall,
+                [method, requests],
+                {#options: options},
+              ),
+            ),
+          )
+          as _i4.ResponseStream<R>);
+}
+
+/// A class which mocks [DiscoveryServiceClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDiscoveryServiceClient extends _i1.Mock
+    implements _i27.DiscoveryServiceClient {
+  @override
+  _i4.ResponseFuture<_i28.DiscoverResourcesResponse> discoverResources(
+    _i28.DiscoverResourcesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #discoverResources,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i28.DiscoverResourcesResponse>(
+              this,
+              Invocation.method(
+                #discoverResources,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i28.DiscoverResourcesResponse>(
+                  this,
+                  Invocation.method(
+                    #discoverResources,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i28.DiscoverResourcesResponse>);
+
+  @override
+  _i4.ResponseFuture<_i20.DoCommandResponse> doCommand(
+    _i20.DoCommandRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#doCommand, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i20.DoCommandResponse>(
+              this,
+              Invocation.method(#doCommand, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i20.DoCommandResponse>(
+                  this,
+                  Invocation.method(#doCommand, [request], {#options: options}),
+                ),
+          )
+          as _i4.ResponseFuture<_i20.DoCommandResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
