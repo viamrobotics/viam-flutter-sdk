@@ -5,7 +5,7 @@ import '../../robot/client.dart';
 /// {@category Components}
 /// Servo represents a physical servo.
 ///
-/// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+/// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/).
 abstract class Servo extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'servo');
 
@@ -15,7 +15,7 @@ abstract class Servo extends Resource {
   /// await myServo.move(30);
   /// ```
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#move).
   Future<void> move(int angle, {Map<String, dynamic>? extra});
 
   /// Get the current angle (degrees) of the [Servo].
@@ -24,7 +24,7 @@ abstract class Servo extends Resource {
   /// var angle = await myServo.position();
   /// ```
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#position).
   Future<int> position({Map<String, dynamic>? extra});
 
   /// Stop the [Servo]. It is assumed that the servo stops immediately.
@@ -33,7 +33,7 @@ abstract class Servo extends Resource {
   /// await myServo.stop();
   /// ```
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#stop).
   Future<void> stop({Map<String, dynamic>? extra});
 
   /// Get if the [Servo] is currently moving.
@@ -42,25 +42,28 @@ abstract class Servo extends Resource {
   /// var isItMoving = await myServo.isMoving();
   /// ```
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#ismoving).
   Future<bool> isMoving();
 
   /// Get the [ResourceName] for this [Servo] with the given [name].
   ///
   /// ```
   /// // Example:
-  /// var name = Servo.getResourceName('myServo');
+  /// var name = Servo.getResourceName('my_servo');
   /// ```
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/#getresourcename).
   static ResourceName getResourceName(String name) {
     return Servo.subtype.getResourceName(name);
   }
 
   /// Get the [Servo] named [name] from the provided robot.
   ///
-  /// For more information, see [Servo component](https://docs.viam.com/components/servo/).
+  /// ```
+  /// final myServo = Servo.fromRobot(myRobotClient, "my_servo");
+  /// ```
   ///
+  /// For more information, see [Servo component](https://docs.viam.com/dev/reference/apis/components/servo/).
   static Servo fromRobot(RobotClient robot, String name) {
     return robot.getResource(Servo.getResourceName(name));
   }

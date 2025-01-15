@@ -16,7 +16,7 @@ typedef AnalogValue = ReadAnalogReaderResponse;
 /// Board represents a physical general purpose compute board that contains various
 /// components such as analog readers, and digital interrupts.
 ///
-/// For more information, see [Board component](https://docs.viam.com/components/board/).
+/// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/).
 abstract class Board extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'board');
 
@@ -27,7 +27,7 @@ abstract class Board extends Resource {
   /// await myBoard.setGpioState('15', true);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#setgpio).
   Future<void> setGpioState(String pin, bool high, {Map<String, dynamic>? extra});
 
   /// Get the high/low state of the given pin of a board.
@@ -37,7 +37,7 @@ abstract class Board extends Resource {
   /// bool pinStateIsHigh = await myBoard.gpio('15');
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#getgpio).
   Future<bool> gpio(String pin, {Map<String, dynamic>? extra});
 
   /// Get the duty cycle of the given pin of a board.
@@ -47,7 +47,7 @@ abstract class Board extends Resource {
   /// var dutyCycle = await myBoard.pwm('15');
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#pwm).
   Future<double> pwm(String pin, {Map<String, dynamic>? extra});
 
   /// Set the duty cycle of the given pin of a board.
@@ -57,7 +57,7 @@ abstract class Board extends Resource {
   /// await myBoard.setPwm('13', 0.6);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#setpwm).
   Future<void> setPwm(String pin, double dutyCyclePct, {Map<String, dynamic>? extra});
 
   /// Get the PWM frequency of the given pin of a board.
@@ -67,7 +67,7 @@ abstract class Board extends Resource {
   /// var frequency = await myBoard.pwmFrequency('11');
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#pwmfrequency).
   Future<int> pwmFrequency(String pin, {Map<String, dynamic>? extra});
 
   /// Set the PWM frequency in hertz of the given pin of a board.
@@ -77,7 +77,7 @@ abstract class Board extends Resource {
   /// await myBoard.setPwmFrequency('15', 1600);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#setpwmfrequency).
   Future<void> setPwmFrequency(String pin, int frequencyHz, {Map<String, dynamic>? extra});
 
   /// Read the current value of an analog reader of a board.
@@ -87,7 +87,7 @@ abstract class Board extends Resource {
   /// var analogVal = await myBoard.analogReaderValue('my_example_analog');
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#readanalogreader).
   Future<AnalogValue> analogReaderValue(String analogReaderName, {Map<String, dynamic>? extra});
 
   /// Return the current value of the interrupt which is based on the type of Interrupt.
@@ -97,7 +97,7 @@ abstract class Board extends Resource {
   /// var interruptVal = await myBoard.digitalInterruptValue('my_example_digital_interrupt');
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#getdigitalinterruptvalue).
   Future<int> digitalInterruptValue(String digitalInterruptName, {Map<String, dynamic>? extra});
 
   /// Stream digital interrupts ticks.
@@ -108,7 +108,7 @@ abstract class Board extends Resource {
   /// Stream<Tick> tickStream = await myBoard.streamTicks(interrupts);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#streamticks).
   Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra});
 
   /// Add a listener for the digital interrupts.
@@ -120,7 +120,7 @@ abstract class Board extends Resource {
   /// await myBoard.addCallbacks(interrupts, tickQueue);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/).
   Future<void> addCallbacks(List<String> interrupts, Queue<Tick> tickQueue, {Map<String, dynamic>? extra});
 
   /// Set the board to the indicated power mode.
@@ -132,7 +132,7 @@ abstract class Board extends Resource {
   /// await myBoard.setPowerMode(powerMode, 60, 0);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#setpowermode).
   Future<void> setPowerMode(PowerMode powerMode, int seconds, int nanos, {Map<String, dynamic>? extra});
 
   /// Write analog value to pin.
@@ -142,19 +142,27 @@ abstract class Board extends Resource {
   /// await myBoard.writeAnalog('11', 48);
   /// ```
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#writeanalog).
   Future<void> writeAnalog(String pin, int value, {Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Board] with the given [name]
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// ```
+  /// final myBoardResourceName = myBoard.getResourceName("my_board");
+  /// ```
+  ///
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/#getresourcename).
   static common.ResourceName getResourceName(String name) {
     return Board.subtype.getResourceName(name);
   }
 
   /// Get the [Board] named [name] from the provided robot.
   ///
-  /// For more information, see [Board component](https://docs.viam.com/components/board/).
+  /// ```
+  /// final myBoard = Board.fromRobot(myRobotClient, "my_board");
+  /// ```
+  ///
+  /// For more information, see [Board component](https://docs.viam.com/dev/reference/apis/components/board/).
   static Board fromRobot(RobotClient robot, String name) {
     return robot.getResource(Board.getResourceName(name));
   }
