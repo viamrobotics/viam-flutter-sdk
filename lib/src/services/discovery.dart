@@ -2,6 +2,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../protos/common/common.dart';
+import '../gen/common/v1/common.pb.dart';
 import '../../protos/service/discovery.dart';
 import '../gen/service/discovery/v1/discovery.pbgrpc.dart';
 import '../gen/app/v1/robot.pb.dart';
