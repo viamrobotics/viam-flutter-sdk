@@ -20,21 +20,21 @@ class FakeDiscoveryClient extends DiscoveryClient {
 }
 
 void main() {
-  // late DiscoveryClient client;
-  // late MockDiscoveryServiceClient serviceClient;
+  late DiscoveryClient client;
+  late MockDiscoveryServiceClient serviceClient;
 
-  // setUp(() {
-  //   serviceClient = MockDiscoveryServiceClient();
-  //   client = FakeDiscoveryClient('discovery', MockClientChannelBase(), serviceClient);
-  // });
+  setUp(() {
+    serviceClient = MockDiscoveryServiceClient();
+    client = FakeDiscoveryClient('discovery', MockClientChannelBase(), serviceClient);
+  });
 
-  // group('Discovery RPC Client Tests', () {
-  //   test('discoverResources', () async {
-  //     final expected = [ComponentConfig()];
-  //     when(serviceClient.discoverResources(any))
-  //         .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
-  //     final response = await client.discoverResources('discoveryName');
-  //     expect(response, equals(expected));
-  //   });
-  // });
+  group('Discovery RPC Client Tests', () {
+    test('discoverResources', () async {
+      final expected = [ComponentConfig()];
+      when(serviceClient.discoverResources(any))
+          .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
+      final response = await client.discoverResources('discoveryName');
+      expect(response, equals(expected));
+    });
+  });
 }
