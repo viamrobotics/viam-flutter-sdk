@@ -1054,6 +1054,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   factory TabularDataByMQLRequest({
     $core.String? organizationId,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
+    $core.bool? useRecentData,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1061,6 +1062,9 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     }
     if (mqlBinary != null) {
       $result.mqlBinary.addAll(mqlBinary);
+    }
+    if (useRecentData != null) {
+      $result.useRecentData = useRecentData;
     }
     return $result;
   }
@@ -1071,6 +1075,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataByMQLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
+    ..aOB(4, _omitFieldNames ? '' : 'useRecentData')
     ..hasRequiredFields = false
   ;
 
@@ -1109,6 +1114,15 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   /// namespace, which holds the Viam organization's tabular data.
   @$pb.TagNumber(3)
   $core.List<$core.List<$core.int>> get mqlBinary => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $core.bool get useRecentData => $_getBF(2);
+  @$pb.TagNumber(4)
+  set useRecentData($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUseRecentData() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearUseRecentData() => clearField(4);
 }
 
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
