@@ -50,7 +50,7 @@ class UsageCostType extends $pb.ProtobufEnum {
   static const UsageCostType USAGE_COST_TYPE_BINARY_DATA_EGRESS = UsageCostType._(18, _omitEnumNames ? '' : 'USAGE_COST_TYPE_BINARY_DATA_EGRESS');
   static const UsageCostType USAGE_COST_TYPE_TABULAR_DATA_EGRESS = UsageCostType._(19, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TABULAR_DATA_EGRESS');
   static const UsageCostType USAGE_COST_TYPE_LOGS_EGRESS = UsageCostType._(20, _omitEnumNames ? '' : 'USAGE_COST_TYPE_LOGS_EGRESS');
-  static const UsageCostType USAGE_COST_TYPE_ML_TRAINING_LOGS_EGRESS = UsageCostType._(21, _omitEnumNames ? '' : 'USAGE_COST_TYPE_ML_TRAINING_LOGS_EGRESS');
+  static const UsageCostType USAGE_COST_TYPE_TRAINING_LOGS_EGRESS = UsageCostType._(21, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TRAINING_LOGS_EGRESS');
 
   static const $core.List<UsageCostType> values = <UsageCostType> [
     USAGE_COST_TYPE_UNSPECIFIED,
@@ -74,7 +74,7 @@ class UsageCostType extends $pb.ProtobufEnum {
     USAGE_COST_TYPE_BINARY_DATA_EGRESS,
     USAGE_COST_TYPE_TABULAR_DATA_EGRESS,
     USAGE_COST_TYPE_LOGS_EGRESS,
-    USAGE_COST_TYPE_ML_TRAINING_LOGS_EGRESS,
+    USAGE_COST_TYPE_TRAINING_LOGS_EGRESS,
   ];
 
   static final $core.Map<$core.int, UsageCostType> _byValue = $pb.ProtobufEnum.initByValue(values);
