@@ -58,6 +58,8 @@ class RobotClientOptions {
 
 /// {@category Viam SDK}
 /// Represents a discovery query in the SDK to query for discoverable components.
+///
+/// deprecated, remove on march 10th
 class DiscoveryQuery {
   final String subtype;
   final String model;
