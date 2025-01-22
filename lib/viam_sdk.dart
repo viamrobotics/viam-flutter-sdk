@@ -52,6 +52,7 @@ export 'src/robot/client.dart';
 export 'src/rpc/dial.dart';
 
 /// Services
+export 'src/services/discovery.dart';
 export 'src/services/vision.dart';
 
 /// Misc
