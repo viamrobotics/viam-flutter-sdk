@@ -147,7 +147,7 @@ void main() {
         });
 
         final response = await dataClient.binaryDataByIds(ids, includeBinary: true);
-        expect(response, equals(data));
+        expect(response.data, equals(data));
         expect(includeBinary, isTrue);
       });
 

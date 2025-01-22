@@ -135,12 +135,12 @@ class DataClient {
   /// Retrieve binary data by IDs
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
-  Future<List<BinaryData>> binaryDataByIds(List<BinaryID> binaryIds, {bool includeBinary = false}) async {
+  Future<BinaryDataByIDsResponse> binaryDataByIds(List<BinaryID> binaryIds, {bool includeBinary = false}) async {
     final request = BinaryDataByIDsRequest()
       ..binaryIds.addAll(binaryIds)
       ..includeBinary = includeBinary;
     final response = await _dataClient.binaryDataByIDs(request);
-    return response.data;
+    return response;
   }
 
   /// Obtain unified tabular data and metadata, queried with SQL.
