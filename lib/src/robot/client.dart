@@ -351,7 +351,7 @@ class RobotClient {
         ..model = sdkQuery.model
         ..extra = sdkQuery.extraStruct));
 
-    log("RobotClient.discoverComponents is deprecated. It will be removed on March 10 2025. Use the DiscoveryService APIs instead.");
+    _logger.w("RobotClient.discoverComponents is deprecated. It will be removed on March 10 2025. Use the DiscoveryService APIs instead.");
     final response = await _client.discoverComponents(request);
     return response.discovery.map((d) => Discovery.fromProto(d)).toList();
   }
