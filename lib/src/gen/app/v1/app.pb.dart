@@ -6275,6 +6275,8 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
     $45.Timestamp? editedOn,
     Fragment? old,
     AuthenticatorInfo? editedBy,
+    $core.String? revision,
+    $44.Struct? config,
   }) {
     final $result = create();
     if (fragment != null) {
@@ -6289,6 +6291,12 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
     if (editedBy != null) {
       $result.editedBy = editedBy;
     }
+    if (revision != null) {
+      $result.revision = revision;
+    }
+    if (config != null) {
+      $result.config = config;
+    }
     return $result;
   }
   FragmentHistoryEntry._() : super();
@@ -6300,6 +6308,8 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
     ..aOM<$45.Timestamp>(2, _omitFieldNames ? '' : 'editedOn', subBuilder: $45.Timestamp.create)
     ..aOM<Fragment>(3, _omitFieldNames ? '' : 'old', subBuilder: Fragment.create)
     ..aOM<AuthenticatorInfo>(4, _omitFieldNames ? '' : 'editedBy', subBuilder: AuthenticatorInfo.create)
+    ..aOS(5, _omitFieldNames ? '' : 'revision')
+    ..aOM<$44.Struct>(6, _omitFieldNames ? '' : 'config', subBuilder: $44.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -6365,6 +6375,26 @@ class FragmentHistoryEntry extends $pb.GeneratedMessage {
   void clearEditedBy() => clearField(4);
   @$pb.TagNumber(4)
   AuthenticatorInfo ensureEditedBy() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get revision => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set revision($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRevision() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRevision() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $44.Struct get config => $_getN(5);
+  @$pb.TagNumber(6)
+  set config($44.Struct v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasConfig() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearConfig() => clearField(6);
+  @$pb.TagNumber(6)
+  $44.Struct ensureConfig() => $_ensure(5);
 }
 
 class FragmentError extends $pb.GeneratedMessage {
