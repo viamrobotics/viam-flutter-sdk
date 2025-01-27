@@ -58,6 +58,8 @@ class RobotClientOptions {
 
 /// {@category Viam SDK}
 /// Represents a discovery query in the SDK to query for discoverable components.
+///
+/// deprecated, remove on march 10th
 class DiscoveryQuery {
   final String subtype;
   final String model;
@@ -334,6 +336,8 @@ class RobotClient {
     return await _client.getCloudMetadata(rpb.GetCloudMetadataRequest());
   }
 
+  /// Deprecated: use the Discovery Service APIs instead.
+  ///
   /// Discover components that the robot can connect to, given specific query metadata.
   ///
   /// ```
@@ -347,6 +351,7 @@ class RobotClient {
         ..model = sdkQuery.model
         ..extra = sdkQuery.extraStruct));
 
+    _logger.w("RobotClient.discoverComponents is deprecated. It will be removed on March 10 2025. Use the DiscoveryService APIs instead.");
     final response = await _client.discoverComponents(request);
     return response.discovery.map((d) => Discovery.fromProto(d)).toList();
   }
