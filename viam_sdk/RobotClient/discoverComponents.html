@@ -66,7 +66,8 @@
     </section>
     
 <section class="desc markdown">
-  <p>Discover components that the robot can connect to, given specific query metadata.</p>
+  <p>Deprecated: use the Discovery Service APIs instead.</p>
+<p>Discover components that the robot can connect to, given specific query metadata.</p>
 <pre class="language-dart"><code>var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'username': 'admin', 'password': 'admin'})];
 var discoveredComponents = await machine.discoverComponents(queries);
 </code></pre>
@@ -83,6 +84,7 @@ var discoveredComponents = await machine.discoverComponents(queries);
       ..model = sdkQuery.model
       ..extra = sdkQuery.extraStruct));
 
+  _logger.w(&quot;RobotClient.discoverComponents is deprecated. It will be removed on March 10 2025. Use the DiscoveryService APIs instead.&quot;);
   final response = await _client.discoverComponents(request);
   return response.discovery.map((d) =&gt; Discovery.fromProto(d)).toList();
 }</code></pre>
