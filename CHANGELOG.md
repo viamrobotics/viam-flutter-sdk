@@ -1,13 +1,24 @@
 # Changelog
 
-## [v0.1.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.1.0) (2025-01-06)
+## [v0.2.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.0) (2025-01-27)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.31...v0.1.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.1.0...v0.2.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#333](https://github.com/viamrobotics/viam-flutter-sdk/pull/333) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#332](https://github.com/viamrobotics/viam-flutter-sdk/pull/332) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-9636: Add deprecation warning with date the Discover Components will be deprecated to the flutter SDK [\#331](https://github.com/viamrobotics/viam-flutter-sdk/pull/331) ([martha-johnston](https://github.com/martha-johnston))
+- Add includeBinary to data funcs [\#330](https://github.com/viamrobotics/viam-flutter-sdk/pull/330) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#329](https://github.com/viamrobotics/viam-flutter-sdk/pull/329) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#328](https://github.com/viamrobotics/viam-flutter-sdk/pull/328) ([github-actions[bot]](https://github.com/apps/github-actions))
+- DOCS-3354: Add links for vision service methods [\#327](https://github.com/viamrobotics/viam-flutter-sdk/pull/327) ([JessamyT](https://github.com/JessamyT))
+- DOCS-3351: Update Flutter SDK component links [\#326](https://github.com/viamrobotics/viam-flutter-sdk/pull/326) ([JessamyT](https://github.com/JessamyT))
+- Automated Protos Update [\#325](https://github.com/viamrobotics/viam-flutter-sdk/pull/325) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.1.0 [\#324](https://github.com/viamrobotics/viam-flutter-sdk/pull/324) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#323](https://github.com/viamrobotics/viam-flutter-sdk/pull/323) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Fix building example project for iOS [\#322](https://github.com/viamrobotics/viam-flutter-sdk/pull/322) ([kevin49999](https://github.com/kevin49999))
+- RSDK-9622: Add Discover Service and GetModelsFromModules to Flutter [\#321](https://github.com/viamrobotics/viam-flutter-sdk/pull/321) ([martha-johnston](https://github.com/martha-johnston))
 - Automated Protos Update [\#320](https://github.com/viamrobotics/viam-flutter-sdk/pull/320) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#319](https://github.com/viamrobotics/viam-flutter-sdk/pull/319) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-9505: accept bson queries in mql function [\#318](https://github.com/viamrobotics/viam-flutter-sdk/pull/318) ([purplenicole730](https://github.com/purplenicole730))
@@ -44,6 +55,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.1.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.1.0) (2025-01-06)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.0.31...v0.1.0)
 
 ## [v0.0.31](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.0.31) (2024-12-16)
 
