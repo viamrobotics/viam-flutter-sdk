@@ -1,11 +1,9 @@
-import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/service/discovery.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
+import 'package:viam_sdk/src/gen/app/v1/robot.pb.dart';
 import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart';
 import 'package:viam_sdk/viam_sdk.dart';
-import 'package:viam_sdk/src/gen/app/v1/robot.pb.dart';
 
 import '../mocks/mock_response_future.dart';
 import '../mocks/service_clients_mocks.mocks.dart';
@@ -33,7 +31,7 @@ void main() {
       final expected = [ComponentConfig()];
       when(serviceClient.discoverResources(any))
           .thenAnswer((_) => MockResponseFuture.value(DiscoverResourcesResponse(discoveries: expected)));
-      final response = await client.discoverResources('discoveryName');
+      final response = await client.discoverResources();
       expect(response, equals(expected));
     });
   });
