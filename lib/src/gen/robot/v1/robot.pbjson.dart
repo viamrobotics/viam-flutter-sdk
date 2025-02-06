@@ -344,12 +344,14 @@ const DiscoveryQuery$json = {
     {'1': 'model', '3': 2, '4': 1, '5': 9, '10': 'model'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `DiscoveryQuery`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List discoveryQueryDescriptor = $convert.base64Decode(
     'Cg5EaXNjb3ZlcnlRdWVyeRIYCgdzdWJ0eXBlGAEgASgJUgdzdWJ0eXBlEhQKBW1vZGVsGAIgAS'
-    'gJUgVtb2RlbBItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+    'gJUgVtb2RlbBItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh'
+    'OgIYAQ==');
 
 @$core.Deprecated('Use discoveryDescriptor instead')
 const Discovery$json = {
@@ -358,13 +360,14 @@ const Discovery$json = {
     {'1': 'query', '3': 1, '4': 1, '5': 11, '6': '.viam.robot.v1.DiscoveryQuery', '10': 'query'},
     {'1': 'results', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'results'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `Discovery`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List discoveryDescriptor = $convert.base64Decode(
     'CglEaXNjb3ZlcnkSMwoFcXVlcnkYASABKAsyHS52aWFtLnJvYm90LnYxLkRpc2NvdmVyeVF1ZX'
     'J5UgVxdWVyeRIxCgdyZXN1bHRzGAIgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIHcmVz'
-    'dWx0cw==');
+    'dWx0czoCGAE=');
 
 @$core.Deprecated('Use moduleModelDescriptor instead')
 const ModuleModel$json = {
@@ -411,12 +414,13 @@ const DiscoverComponentsRequest$json = {
   '2': [
     {'1': 'queries', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.DiscoveryQuery', '10': 'queries'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `DiscoverComponentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List discoverComponentsRequestDescriptor = $convert.base64Decode(
     'ChlEaXNjb3ZlckNvbXBvbmVudHNSZXF1ZXN0EjcKB3F1ZXJpZXMYASADKAsyHS52aWFtLnJvYm'
-    '90LnYxLkRpc2NvdmVyeVF1ZXJ5UgdxdWVyaWVz');
+    '90LnYxLkRpc2NvdmVyeVF1ZXJ5UgdxdWVyaWVzOgIYAQ==');
 
 @$core.Deprecated('Use discoverComponentsResponseDescriptor instead')
 const DiscoverComponentsResponse$json = {
@@ -424,12 +428,13 @@ const DiscoverComponentsResponse$json = {
   '2': [
     {'1': 'discovery', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.Discovery', '10': 'discovery'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `DiscoverComponentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List discoverComponentsResponseDescriptor = $convert.base64Decode(
     'ChpEaXNjb3ZlckNvbXBvbmVudHNSZXNwb25zZRI2CglkaXNjb3ZlcnkYASADKAsyGC52aWFtLn'
-    'JvYm90LnYxLkRpc2NvdmVyeVIJZGlzY292ZXJ5');
+    'JvYm90LnYxLkRpc2NvdmVyeVIJZGlzY292ZXJ5OgIYAQ==');
 
 @$core.Deprecated('Use statusDescriptor instead')
 const Status$json = {

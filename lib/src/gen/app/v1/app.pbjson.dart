@@ -1642,6 +1642,8 @@ const FragmentHistoryEntry$json = {
     {'1': 'edited_on', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'editedOn'},
     {'1': 'old', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.Fragment', '8': {}, '10': 'old'},
     {'1': 'edited_by', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.AuthenticatorInfo', '8': {}, '10': 'editedBy'},
+    {'1': 'revision', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'revision'},
+    {'1': 'config', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '8': {}, '10': 'config'},
   ],
 };
 
@@ -1653,7 +1655,10 @@ final $typed_data.Uint8List fragmentHistoryEntryDescriptor = $convert.base64Deco
     'RpdGVkX29uIlIIZWRpdGVkT24SQwoDb2xkGAMgASgLMhUudmlhbS5hcHAudjEuRnJhZ21lbnRC'
     'GpqEngMVYnNvbjoib2xkIiBqc29uOiJvbGQiUgNvbGQSYwoJZWRpdGVkX2J5GAQgASgLMh4udm'
     'lhbS5hcHAudjEuQXV0aGVudGljYXRvckluZm9CJpqEngMhYnNvbjoiZWRpdGVkX2J5IiBqc29u'
-    'OiJlZGl0ZWRfYnkiUghlZGl0ZWRCeQ==');
+    'OiJlZGl0ZWRfYnkiUghlZGl0ZWRCeRJACghyZXZpc2lvbhgFIAEoCUIkmoSeAx9ic29uOiJyZX'
+    'Zpc2lvbiIganNvbjoicmV2aXNpb24iUghyZXZpc2lvbhJRCgZjb25maWcYBiABKAsyFy5nb29n'
+    'bGUucHJvdG9idWYuU3RydWN0QiCahJ4DG2Jzb246ImNvbmZpZyIganNvbjoiY29uZmlnIlIGY2'
+    '9uZmln');
 
 @$core.Deprecated('Use fragmentErrorDescriptor instead')
 const FragmentError$json = {

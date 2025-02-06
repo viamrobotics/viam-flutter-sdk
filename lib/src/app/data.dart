@@ -185,11 +185,12 @@ class DataClient {
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<BinaryDataByFilterResponse> binaryDataByFilter(
-      {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
+      {Filter? filter, int? limit, Order? sortOrder, String? last, bool countOnly = false, bool includeBinary = false}) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
     final request = BinaryDataByFilterRequest()
       ..dataRequest = dataRequest
-      ..countOnly = false;
+      ..countOnly = countOnly
+      ..includeBinary = includeBinary;
     return await _dataClient.binaryDataByFilter(request);
   }
 
@@ -223,11 +224,13 @@ class DataClient {
   ///  }
   /// ```
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<List<BinaryData>> binaryDataByIds(List<BinaryID> binaryIds) async {
-    final request = BinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
+  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  Future<BinaryDataByIDsResponse> binaryDataByIds(List<BinaryID> binaryIds, {bool includeBinary = false}) async {
+    final request = BinaryDataByIDsRequest()
+      ..binaryIds.addAll(binaryIds)
+      ..includeBinary = includeBinary;
     final response = await _dataClient.binaryDataByIDs(request);
-    return response.data;
+    return response;
   }
 
   /// Obtain unified tabular data and metadata, queried with SQL.

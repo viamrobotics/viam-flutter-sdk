@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:bson/bson.dart' hide Timestamp;
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -101,14 +99,20 @@ void main() {
         const limit = 10;
         const last = 'last';
         const sortOrder = Order.ORDER_ASCENDING;
+        bool includeBinary = false;
 
-        when(serviceClient.binaryDataByFilter(any)).thenAnswer((_) => MockResponseFuture.value(BinaryDataByFilterResponse()
-          ..count = Int64(limit)
-          ..last = last));
+        when(serviceClient.binaryDataByFilter(any)).thenAnswer((invocation) {
+          includeBinary = (invocation.positionalArguments[0] as BinaryDataByFilterRequest).includeBinary;
+          return MockResponseFuture.value(BinaryDataByFilterResponse()
+            ..count = Int64(limit)
+            ..last = last);
+        });
 
-        final response = await dataClient.binaryDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder, last: last);
+        final response =
+            await dataClient.binaryDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder, last: last, includeBinary: true);
         expect(response.count, equals(Int64(limit)));
         expect(response.last, equals(last));
+        expect(includeBinary, isTrue);
       });
 
       test('binaryDataByFilter_countOnly', () async {
@@ -135,11 +139,16 @@ void main() {
           BinaryData()..binary = [2, 3, 4, 5],
           BinaryData()..binary = [3, 4, 5, 6],
         ];
+        bool includeBinary = false;
 
-        when(serviceClient.binaryDataByIDs(any)).thenAnswer((_) => MockResponseFuture.value(BinaryDataByIDsResponse()..data.addAll(data)));
+        when(serviceClient.binaryDataByIDs(any)).thenAnswer((invocation) {
+          includeBinary = (invocation.positionalArguments[0] as BinaryDataByIDsRequest).includeBinary;
+          return MockResponseFuture.value(BinaryDataByIDsResponse()..data.addAll(data));
+        });
 
-        final response = await dataClient.binaryDataByIds(ids);
-        expect(response, equals(data));
+        final response = await dataClient.binaryDataByIds(ids, includeBinary: true);
+        expect(response.data, equals(data));
+        expect(includeBinary, isTrue);
       });
 
       test('tabularDataBySql', () async {
