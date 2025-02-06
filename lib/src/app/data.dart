@@ -210,10 +210,11 @@ class DataClient {
   ///   ];
   ///
   ///   final response = await dataClient.binaryDataByIds(
-  ///     binaryIDs
+  ///     binaryIDs,
+  ///     includeBinary: true
   ///   );
   ///
-  ///   for (var dataPoint in response) {
+  ///   for (var dataPoint in response.data) {
   ///     print(dataPoint.binary);
   ///     print(dataPoint.metadata);
   ///   }
