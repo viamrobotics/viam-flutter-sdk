@@ -15,10 +15,11 @@ import '../gen/google/protobuf/timestamp.pb.dart';
 import '../media/image.dart';
 import '../utils.dart';
 
-/// {@category Viam SDK}
+/// {@category App}
 typedef DatabaseConnection = GetDatabaseConnectionResponse;
 
 /// Represents a tabular data point and its associated metadata.
+/// {@category App}
 class TabularDataPoint {
   /// The robot part ID
   final String partId;
@@ -82,7 +83,8 @@ class TabularDataPoint {
 ///
 /// All calls must be authenticated.
 ///
-/// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+/// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+/// {@category App}
 class DataClient {
   final DataServiceClient _dataClient;
   final DataSyncServiceClient _dataSyncClient;
@@ -108,7 +110,39 @@ class DataClient {
   /// Filter and download tabular data. The data will be paginated into pages of `limit` items, and the last ID will be included in
   /// the returned response.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  ///  ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // Create a filter to target specific tabular data
+  ///   final filter = Filter(
+  ///    componentName: "arm-1",
+  ///   );
+  ///
+  ///   final response = await dataClient.tabularDataByFilter(
+  ///     filter: filter,
+  ///     limit: 10
+  ///   );
+  ///   print('Number of items: ${response.count.toInt()}');
+  ///   print('Total size: ${response.totalSizeBytes.toInt()}');
+  ///   for (var metadata in response.metadata) {
+  ///     print(metadata);
+  ///   }
+  ///   for (var data in response.data) {
+  ///     print(data);
+  ///   }
+  ///
+  ///   print('Successfully retrieved tabular data by filter');
+  ///  } catch (e) {
+  ///   print('Error retrieving tabular data by filter: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<TabularDataByFilterResponse> tabularDataByFilter(
       {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
@@ -121,7 +155,35 @@ class DataClient {
   /// Filter and download binary data. The data will be paginated into pages of `limit` items, and the last ID will be included in the
   /// returned response.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  ///  ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // Create a filter to target specific binary data
+  ///   final filter = Filter(
+  ///    componentName: "camera-1",
+  ///   );
+  ///
+  ///   final response = await dataClient.binaryDataByFilter(filter: filter, limit: 1);
+  ///
+  ///   print('Number of items: ${response.count.toInt()}');
+  ///   print('Total size: ${response.totalSizeBytes.toInt()} bytes');
+  ///   for (var dataPoint in response.data) {
+  ///     print(dataPoint.binary);
+  ///     print(dataPoint.metadata);
+  ///   }
+  ///
+  ///   print('Successfully retrieved binary data by filter');
+  ///  } catch (e) {
+  ///   print('Error retrieving binary data by filter: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<BinaryDataByFilterResponse> binaryDataByFilter(
       {Filter? filter, int? limit, Order? sortOrder, String? last, bool countOnly = false, bool includeBinary = false}) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
@@ -134,6 +196,35 @@ class DataClient {
 
   /// Retrieve binary data by IDs
   ///
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   final binaryIDs = [
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   ];
+  ///
+  ///   final response = await dataClient.binaryDataByIds(
+  ///     binaryIDs,
+  ///     includeBinary: true
+  ///   );
+  ///
+  ///   for (var dataPoint in response.data) {
+  ///     print(dataPoint.binary);
+  ///     print(dataPoint.metadata);
+  ///   }
+  ///
+  ///   print('Successfully retrieved binary data by IDs');
+  ///  } catch (e) {
+  ///   print('Error retrieving binary data by IDs: $e');
+  ///  }
+  /// ```
+  ///
   /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
   Future<BinaryDataByIDsResponse> binaryDataByIds(List<BinaryID> binaryIds, {bool includeBinary = false}) async {
     final request = BinaryDataByIDsRequest()
@@ -145,8 +236,25 @@ class DataClient {
 
   /// Obtain unified tabular data and metadata, queried with SQL.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
-  // List<List<int>>
+  /// ```
+  /// // List<Map<String, dynamic>>? _responseData;
+  ///
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  // Example SQL query
+  ///  final sqlQuery = "SELECT * FROM readings LIMIT 5";
+  ///
+  ///  _responseData = await dataClient.tabularDataBySql(
+  ///    "<YOUR-ORG-ID>",
+  ///    sqlQuery
+  ///  );
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataBySql(String organizationId, String query) async {
     final request = TabularDataBySQLRequest()
       ..organizationId = organizationId
@@ -157,7 +265,38 @@ class DataClient {
 
   /// Obtain unified tabular data and metadata, queried with MQL. The query should be of type List<Map<String, dynamic>>.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// // import 'package:bson/bson.dart';
+  ///
+  /// // List<Map<String, dynamic>>? _responseData;
+  ///
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  final query = BsonCodec.serialize({
+  ///   "\$match": {
+  ///      "location_id": "<YOUR-LOCATION-ID>",
+  ///   }
+  ///  });
+  ///
+  ///  final sort = BsonCodec.serialize({
+  ///    "\$sort": {"time_requested": -1}
+  ///    sqlQuery
+  ///  });
+  ///
+  ///  final limit = BsonCodec.serialize({"\$limit": 1});
+  ///
+  ///  final pipeline = [query.byteList, sort.byteList, limit.byteList];
+  ///  _responseData = await dataClient.tabularDataByMql(
+  ///   "<YOUR-ORG-ID>",
+  ///   pipeline
+  ///  );
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, dynamic query) async {
     List<Uint8List> binary;
     if (query is List<Map<String, dynamic>>) {
@@ -178,7 +317,40 @@ class DataClient {
   ///
   /// Returns a list of unified tabular data and metadata.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // Define date request times
+  ///   final startTime = DateTime(2025, 1, 23, 11);
+  ///   final endTime = DateTime(2025, 1, 23, 11, 0, 3);
+  ///
+  ///   final tabularData = await dataClient.exportTabularData(
+  ///     "<YOUR-PART-ID>",
+  ///     "movement_sensor-1",
+  ///     "rdk:component:movement_sensor",
+  ///     "Position",
+  ///     startTime,
+  ///     endTime
+  ///   );
+  ///
+  ///   for (var dataPoint in tabularData) {
+  ///     print(dataPoint.partId);
+  ///     print(dataPoint.resourceName);
+  ///     print(dataPoint.methodName);
+  ///     print(dataPoint.payload);
+  ///   }
+  ///
+  ///   print('Successfully exported tabular data');
+  ///  } catch (e) {
+  ///   print('Error exporting tabular data: $e');
+  ///  }
+  /// ```
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<TabularDataPoint>> exportTabularData(
     String partId,
     String resourceName,
@@ -226,7 +398,23 @@ class DataClient {
   ///
   /// Returns the number of pieces of data that were deleted.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  ///  ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    dataClient.deleteTabularData("<YOUR-ORG-ID>", 5);
+  ///
+  ///   print('Successfully deleted tabular data');
+  ///  } catch (e) {
+  ///   print('Error deleting tabular data: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<int> deleteTabularData(String organizationId, int olderThanDays) async {
     final request = DeleteTabularDataRequest()
       ..organizationId = organizationId
@@ -240,7 +428,29 @@ class DataClient {
   ///
   /// Returns the number of pieces of data that were deleted.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // Create a filter to target specific binary data. Must include at least one org ID.
+  ///   final filter = Filter(
+  ///    componentName: "camera-1",
+  ///    organizationIds: ["<YOUR-ORG-ID>"]
+  ///   );
+  ///
+  ///   final deletedCount = await dataClient.deleteBinaryDataByFilter(filter);
+  ///
+  ///   print('Successfully deleted binary data by filter: count $deletedCount');
+  ///  } catch (e) {
+  ///   print('Error deleting binary data by filter: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<int> deleteBinaryDataByFilter(Filter? filter, {bool includeInternalData = false}) async {
     final request = DeleteBinaryDataByFilterRequest()
       ..includeInternalData = includeInternalData
@@ -253,7 +463,28 @@ class DataClient {
   ///
   /// Returns the number of pieces of data that were deleted.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   final binaryIDs = [
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   ];
+  ///
+  ///   // Call the function to delete binary data
+  ///   await dataClient.deleteBinaryDataByIds(binaryIDs);
+  ///
+  ///   print('Successfully deleted binary data');
+  ///  } catch (e) {
+  ///   print('Error deleting binary data: $e');
+  ///  }
+  /// ```
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<int> deleteBinaryDataByIds(List<BinaryID> binaryIds) async {
     final request = DeleteBinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
     final response = await _dataClient.deleteBinaryDataByIDs(request);
@@ -262,7 +493,32 @@ class DataClient {
 
   /// Adds tags to binary data based on IDs.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // List of tags to add
+  ///   final List<String> tags = ['tag_1', 'tag_2'];
+  ///
+  ///   final binaryIDs = [
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   ];
+  ///
+  ///   // Call the function with both tags and IDs
+  ///   await dataClient.addTagsToBinaryDataByIds(tags, binaryIDs);
+  ///
+  ///   print('Successfully added tags to binary IDs');
+  ///  } catch (e) {
+  ///   print('Error adding tags: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> addTagsToBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
     final request = AddTagsToBinaryDataByIDsRequest()
       ..tags.addAll(tags)
@@ -273,7 +529,31 @@ class DataClient {
   /// Adds tags to binary data based on a filter.
   /// If no [filter] is provided, all binary data will be tagged.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // List of tags to add
+  ///   final List<String> tags = ['tag_1', 'tag_2'];
+  ///
+  ///   // Create a filter to target specific binary data
+  ///   final filter = Filter(
+  ///    componentName: "camera-1",
+  ///   );
+  ///
+  ///   await dataClient.addTagsToBinaryDataByFilter(tags, filter);
+  ///
+  ///   print('Successfully added tags to binary data by filter');
+  ///  } catch (e) {
+  ///   print('Error adding tags to binary data by filter: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> addTagsToBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = AddTagsToBinaryDataByFilterRequest()
       ..tags.addAll(tags)
@@ -286,7 +566,31 @@ class DataClient {
   ///
   /// Returns the number of tags deleted.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  ///  ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // List of tags to remove
+  ///   final List<String> tags = ['tag_1', 'tag_2'];
+  ///
+  ///   // Create a filter to target specific binary data
+  ///   final filter = Filter(
+  ///    componentName: "camera-1",
+  ///   );
+  ///
+  ///   await dataClient.removeTagsFromBinaryDataByFilter(tags, filter);
+  ///
+  ///   print('Successfully removed tags from binary data by filter');
+  ///  } catch (e) {
+  ///   print('Error removing tags from binary data by filter: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<int> removeTagsFromBinaryDataByFilter(List<String> tags, Filter? filter) async {
     final request = RemoveTagsFromBinaryDataByFilterRequest()
       ..tags.addAll(tags)
@@ -299,7 +603,32 @@ class DataClient {
   ///
   /// Returns the number of tags deleted.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  ///  _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///   // List of tags to remove
+  ///   final List<String> tags = ['tag_1', 'tag_2'];
+  ///
+  ///   final binaryIDs = [
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   ];
+  ///
+  ///   // Call the function with both tags and IDs
+  ///   await dataClient.removeTagsFromBinaryDataByIds(tags, binaryIDs);
+  ///
+  ///   print('Successfully removed tags from binary IDs');
+  ///  } catch (e) {
+  ///   print('Error removing tags: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
     final request = RemoveTagsFromBinaryDataByIDsRequest()
       ..tags.addAll(tags)
@@ -312,7 +641,32 @@ class DataClient {
   ///
   /// Returns the bounding box ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  /// // Example binary ID to add a bounding box to
+  /// final binaryId = BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>');
+  ///
+  /// try {
+  ///   await dataClient.addBoundingBoxToImageById(
+  ///     "label",
+  ///     binaryId,
+  ///     0,
+  ///    .1,
+  ///    .2,
+  ///    .3
+  ///   );
+  ///   print('Successfully added bounding box');
+  /// } catch (e) {
+  ///   print('Error adding bounding box: $e');
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> addBoundingBoxToImageById(
       String label, BinaryID binaryId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
     final request = AddBoundingBoxToImageByIDRequest()
@@ -328,7 +682,31 @@ class DataClient {
 
   /// Removes a bounding box from an image based on bbox ID and image ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  /// // Example binary ID to remove a bounding box from
+  /// final binaryId = BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>');
+  ///
+  /// // Example bbox ID (label)
+  /// final bboxId = "label";
+  /// try {
+  ///   await dataClient.removeBoundingBoxFromImageById(
+  ///     bboxId,
+  ///     binaryId,
+  ///   );
+  ///
+  ///   print('Successfully removed bounding box');
+  /// } catch (e) {
+  ///   print('Error removing bounding box: $e');
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> removeBoundingBoxFromImageById(String bboxId, BinaryID binaryId) async {
     final request = RemoveBoundingBoxFromImageByIDRequest()
       ..bboxId = bboxId
@@ -339,7 +717,29 @@ class DataClient {
   /// Returns a list of tags based on a filter.
   /// If no [filter] is provided, all tags will be returned.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  /// );
+  /// final dataClient = _viam.dataClient;
+  ///
+  /// try {
+  ///  // Create a filter to target specific binary data
+  ///  final filter = Filter(
+  ///    componentName: "camera-1",
+  ///  );
+  ///
+  ///  // Call the function to get tags by filter
+  ///  final tags = await dataClient.tagsByFilter(filter);
+  ///
+  ///  print('Successfully got tags: $tags');
+  /// } catch (e) {
+  ///  print('Error getting tags: $e');
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<String>> tagsByFilter(Filter? filter) async {
     final request = TagsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.tagsByFilter(request);
@@ -349,7 +749,29 @@ class DataClient {
   /// Returns a list of bounding box labels based on a filter.
   /// If no [filter] is provided, all labels will be returned.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  /// );
+  /// final dataClient = _viam.dataClient;
+  ///
+  /// try {
+  ///  // Create a filter to target specific binary data
+  ///  final filter = Filter(
+  ///    componentName: "camera-1",
+  ///  );
+  ///
+  ///  // Call the function to get bounding box labels by filter
+  ///  final labels = await dataClient.boundingBoxLabelsByFilter(filter);
+  ///
+  ///  print('Successfully got bounding box labels: $labels');
+  /// } catch (e) {
+  ///  print('Error getting bounding box labels: $e');
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<String>> boundingBoxLabelsByFilter(Filter? filter) async {
     final request = BoundingBoxLabelsByFilterRequest()..filter = filter ?? Filter();
     final response = await _dataClient.boundingBoxLabelsByFilter(request);
@@ -358,7 +780,28 @@ class DataClient {
 
   /// Returns a database connection to access a MongoDB Atlas Data Federation instance.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  /// );
+  /// final dataClient = _viam.dataClient;
+  ///
+  /// try {
+  ///  final String organizationId = "<YOUR-ORG-ID>";
+  ///  // Get the database connection
+  ///  final connection = await dataClient.getDatabaseConnection(organizationId);
+  ///
+  ///  final hostname = connection.hostname;
+  ///  final mongodbUri = connection.mongodbUri;
+  ///
+  ///  print('Successfully got database connection: with hostname $hostname and mongodbUri $mongodbUri');
+  /// } catch (e) {
+  ///  print('Error getting database connection: $e');
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<DatabaseConnection> getDatabaseConnection(String organizationId) async {
     final request = GetDatabaseConnectionRequest()..organizationId = organizationId;
     return await _dataClient.getDatabaseConnection(request);
@@ -366,7 +809,26 @@ class DataClient {
 
   /// Configures a database user for Viam's MongoDB Atlas Data Federation instance.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  /// );
+  /// final dataClient = _viam.dataClient;
+  ///
+  /// try {
+  ///  await dataClient.configureDatabaseUser(
+  ///    "<YOUR-ORG-ID>",
+  ///    "PasswordLikeThis1234",
+  ///  );
+  ///
+  ///  print('Successfully configured database user for this organization');
+  /// } catch (e) {
+  ///  print('Error configuring database user: $e');
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> configureDatabaseUser(String organizationId, String password) async {
     final request = ConfigureDatabaseUserRequest()
       ..password = password
@@ -376,7 +838,35 @@ class DataClient {
 
   /// Adds binary data to a dataset based on IDs.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  /// // Example binary IDs to add to the dataset
+  ///  final binaryIds = [
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///  ];
+  ///
+  ///  // Dataset ID where the binary data will be added
+  ///  const datasetId = '<YOUR-DATASET-ID>';
+  ///
+  ///  try {
+  ///    // Add the binary data to the dataset
+  ///    await dataClient.addBinaryDataToDatasetByIds(
+  ///      binaryIds,
+  ///      datasetId
+  ///  );
+  ///    print('Successfully added binary data to dataset');
+  ///  } catch (e) {
+  ///    print('Error adding binary data to dataset: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> addBinaryDataToDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
     final request = AddBinaryDataToDatasetByIDsRequest()
       ..binaryIds.addAll(binaryIds)
@@ -386,7 +876,35 @@ class DataClient {
 
   /// Removes binary data from a dataset based on IDs.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  /// // Example binary IDs to remove from the dataset
+  ///  final binaryIds = [
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
+  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///  ];
+  ///
+  ///  // Dataset ID where the binary data will be removed
+  ///  const datasetId = '<YOUR-DATASET-ID>';
+  ///
+  ///  try {
+  ///    // Remove the binary data from the dataset
+  ///    await dataClient.removeBinaryDataFromDatasetByIds(
+  ///      binaryIds,
+  ///      datasetId
+  ///  );
+  ///    print('Successfully removed binary data from dataset');
+  ///  } catch (e) {
+  ///    print('Error removing binary data from dataset: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> removeBinaryDataFromDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
     final request = RemoveBinaryDataFromDatasetByIDsRequest()
       ..binaryIds.addAll(binaryIds)
@@ -398,7 +916,76 @@ class DataClient {
   ///
   /// If no name is provided, the current timestamp will be used as the filename.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// import 'package:file_picker/file_picker.dart';
+  /// import 'package:image/image.dart' as img;
+  ///
+  /// Future<ViamImage> createViamImageFromFile() async {
+  ///   try {
+  ///     // Open file picker
+  ///     FilePickerResult? result = await FilePicker.platform.pickFiles(
+  ///       type: FileType.image,
+  ///       allowMultiple: false,
+  ///     );
+  ///
+  ///     if (result == null || result.files.isEmpty) {
+  ///       throw Exception('No file selected');
+  ///     }
+  ///
+  ///     // For mobile, we get the file path and read it
+  ///     final String? filePath = result.files.first.path;
+  ///     if (filePath == null) {
+  ///       throw Exception('Invalid file path');
+  ///     }
+  ///
+  ///     // Read the file as bytes
+  ///     final File file = File(filePath);
+  ///     final Uint8List bytes = await file.readAsBytes();
+  ///
+  ///     if (bytes.isEmpty) {
+  ///       throw Exception('File is empty');
+  ///     }
+  ///
+  ///     print('Successfully read file: ${bytes.length} bytes');
+  ///
+  ///     // Create ViamImage with the bytes
+  ///     return ViamImage(
+  ///       bytes,
+  ///       MimeType.jpeg, // or determine MIME type from file extension
+  ///      );
+  ///   } catch (e, stackTrace) {
+  ///     print('Error creating ViamImage: $e');
+  ///     print('Stack trace: $stackTrace');
+  ///     rethrow;
+  ///   }
+  /// }
+  /// void _uploadData() async {
+  ///   try {
+  ///     _viam = await Viam.withApiKey(
+  ///       dotenv.env['API_KEY_ID'] ?? '',
+  ///       dotenv.env['API_KEY'] ?? ''
+  ///     );
+  ///     final dataClient = _viam.dataClient;
+  ///
+  ///     try {
+  ///        ViamImage img = await createViamImageFromFile();
+  ///
+  ///        final fileId = await dataClient.uploadImage(
+  ///          img,
+  ///          "<YOUR-PART-ID>",
+  ///          fileName: "myUploadedImage.jpeg",
+  ///          componentType: "rdk:component:camera",
+  ///          componentName: "camera-1",
+  ///          methodName: "ReadImage"
+  ///        );
+  ///        print('Successfully uploaded image with fileId: $fileId');
+  ///       } catch (e) {
+  ///         print('Error uploading image: $e');
+  ///       }
+  ///     }
+  ///  }
+  /// ```
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> uploadImage(ViamImage image, String partId,
       {String? fileName,
       String? componentType,
@@ -430,7 +1017,52 @@ class DataClient {
   ///
   /// The file name can be overridden by providing the [fileName] parameter.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// import 'package:file_picker/file_picker.dart';
+  /// import 'package:cross_file/cross_file.dart';
+  ///
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  /// );
+  /// final dataClient = _viam.dataClient;
+  ///
+  /// // File picker function
+  /// Future<XFile?> pickTextFile() async {
+  ///   FilePickerResult? result = await FilePicker.platform.pickFiles(
+  ///     type: FileType.custom,
+  ///     allowedExtensions: ['txt', 'md', 'json', 'csv'],  // Add any other text file extensions you want to support
+  ///   );
+  ///  if (result != null) {
+  ///    return XFile(result.files.single.path!);
+  ///  }
+  ///    return null;
+  ///  }
+  ///
+  /// // Upload text file function. Call this in onPressed in a button in your application.
+  /// Future<void> uploadTextFile() async {
+  ///   final file = await pickTextFile();
+  ///   if (file == null) return;
+  ///
+  ///   try {
+  ///     // Get file name
+  ///     final fileName = file.name;
+  ///
+  ///     // Upload the file
+  ///     final result = await _viam.dataClient.uploadFile(
+  ///       file.path,
+  ///       fileName: fileName,
+  ///       "<YOUR-PART-ID>",
+  ///       tags: ["text_file", "document"]
+  ///     );
+  ///     print('Upload success: $result');
+  ///   } catch (e) {
+  ///     print('Upload error: $e');
+  ///   }
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> uploadFile(String path, String partId,
       {String? fileName,
       String? componentType,
@@ -476,7 +1108,37 @@ class DataClient {
   ///
   /// Returns the data's file ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    final imageBytes = getPNGasBytes(); // Replace with your image bytes getter
+  ///
+  ///    (DateTime, DateTime) dataRequestTimes = (
+  ///      DateTime(2025, 1, 15, 10, 30), // Start time
+  ///      DateTime(2025, 1, 15, 14, 45)  // End time
+  ///    );
+  ///
+  ///    final fileId = await dataClient.binaryDataCaptureUpload(
+  ///      imageBytes,
+  ///      "<YOUR-PART-ID>",
+  ///      ".png",
+  ///      componentType: "rdk:component:camera",
+  ///      componentName: "camera-1",
+  ///      methodName: "ReadImage",
+  ///      dataRequestTimes: dataRequestTimes);
+  ///
+  ///    print('Successfully uploaded binary data with fileId: $fileId');
+  ///  } catch (e) {
+  ///    print('Error uploading binary data: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> binaryDataCaptureUpload(List<int> binaryData, String partId, String fileExtension,
       {String? componentType,
       String? componentName,
@@ -520,7 +1182,45 @@ class DataClient {
   ///
   /// Returns the data's file ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///
+  ///  try {
+  ///    // Define tabular data
+  ///    final List<Map<String, dynamic>> tabularData;
+  ///    tabularData = [{
+  ///      'readings': {
+  ///        "altitude_m": 50.2,
+  ///        "coordinate": {
+  ///          "latitude": 40.5,
+  ///          "longitude": -72.98
+  ///       }
+  ///      }
+  ///    }];
+  ///
+  ///   // Define date request times
+  ///   final List<(DateTime, DateTime)> timeSpan = [(DateTime(2025, 1, 23, 11), DateTime(2025, 1, 23, 11, 0, 3))];
+  ///
+  ///   // Upload captured tabular data
+  ///   final fileId = await dataClient.tabularDataCaptureUpload(
+  ///     tabularData,
+  ///     "<YOUR-PART-ID>",
+  ///     componentType: "rdk:component:movement_sensor",
+  ///     componentName: "movement_sensor-1",
+  ///     methodName: "Position",
+  ///     dataRequestTimes: timeSpan,
+  ///     tags: ["tag_1", "tag_2"]
+  ///   );
+  ///    print('Successfully uploaded captured tabular data: $fileId');
+  ///  } catch (e) {
+  ///    print('Error uploading captured tabular data: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> tabularDataCaptureUpload(List<Map<String, dynamic>> tabularData, String partId,
       {String? componentType,
       String? componentName,
@@ -565,7 +1265,77 @@ class DataClient {
   ///
   /// Returns the data's file ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// import 'package:file_picker/file_picker.dart';
+  /// import 'dart:typed_data';
+  ///
+  /// Future<Uint8List> pickVideoAsBytes() async {
+  ///   try {
+  ///     // Open file picker
+  ///     FilePickerResult? result = await FilePicker.platform.pickFiles(
+  ///       type: FileType.video,
+  ///       allowMultiple: false,
+  ///     );
+  ///
+  ///     if (result == null || result.files.isEmpty) {
+  ///       throw Exception('No file selected');
+  ///     }
+  ///
+  ///     // For mobile, we get the file path and read it
+  ///     final String? filePath = result.files.first.path;
+  ///     if (filePath == null) {
+  ///       throw Exception('Invalid file path');
+  ///     }
+  ///
+  ///     // Read the file as bytes
+  ///     final File file = File(filePath);
+  ///     final Uint8List bytes = await file.readAsBytes();
+  ///
+  ///     if (bytes.isEmpty) {
+  ///       throw Exception('File is empty');
+  ///     }
+  ///
+  ///     print('Successfully read file: ${bytes.length} bytes');
+  ///
+  ///     return bytes;
+  ///   } catch (e, stackTrace) {
+  ///     print('Error picking video: $e');
+  ///     print('Stack trace: $stackTrace');
+  ///     rethrow;
+  ///   }
+  /// }
+  ///
+  /// void _uploadData() async {
+  ///   _viam = await Viam.withApiKey(
+  ///        dotenv.env['API_KEY_ID'] ?? '',
+  ///        dotenv.env['API_KEY'] ?? ''
+  ///    );
+  ///    final dataClient = _viam.dataClient;
+  ///
+  ///    try {
+  ///      Uint8List video = await pickVideoAsBytes();
+  ///
+  ///      (DateTime, DateTime) dataRequestTimes = (
+  ///        DateTime(2025, 1, 15, 10, 30), // Start time
+  ///        DateTime(2025, 1, 15, 14, 45)  // End time
+  ///      );
+  ///
+  ///      final fileId = await dataClient.streamingDataCaptureUpload(
+  ///        video,
+  ///        "<YOUR-PART-ID>",
+  ///        ".mp4", // Replace with your desired file format
+  ///        componentType: "rdk:component:camera",
+  ///        componentName: "camera-1",
+  ///        dataRequestTimes: dataRequestTimes);
+  ///
+  ///      print('Successfully uploaded streaming binary data with fileId: $fileId');
+  ///    } catch (e) {
+  ///      print('Error uploading streaming binary data: $e');
+  ///    }
+  /// }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> streamingDataCaptureUpload(List<int> bytes, String partId, String fileExtension,
       {String? componentType,
       String? componentName,
@@ -608,7 +1378,26 @@ class DataClient {
 
   /// Creates a new dataset, returning the new dataset's ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  // Org ID to create dataset in
+  ///  const orgId = '<YOUR-ORG-ID>';
+  ///
+  ///  try {
+  ///    // Create the dataset
+  ///    final datasetId = await dataClient.createDataset(orgId, "example-dataset");
+  ///    print('Successfully created dataset');
+  ///  } catch (e) {
+  ///    print('Error creating dataset: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> createDataset(String orgId, String name) async {
     final request = CreateDatasetRequest()
       ..organizationId = orgId
@@ -619,7 +1408,26 @@ class DataClient {
 
   /// Deletes a dataset.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  // Dataset ID to delete
+  ///  const datasetId = '<YOUR-DATASET-ID>';
+  ///
+  ///  try {
+  ///    // Delete the dataset
+  ///    await dataClient.deleteDataset(datasetId);
+  ///    print('Successfully deleted dataset');
+  ///  } catch (e) {
+  ///    print('Error deleting dataset: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> deleteDataset(String id) async {
     final request = DeleteDatasetRequest()..id = id;
     await _datasetClient.deleteDataset(request);
@@ -627,7 +1435,26 @@ class DataClient {
 
   /// Renames a dataset by ID.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  // Dataset ID to rename
+  ///  const datasetId = '<YOUR-DATASET-ID>';
+  ///
+  ///  try {
+  ///    // Rename the dataset
+  ///    await dataClient.renameDataset(datasetId, "new-name");
+  ///    print('Successfully renamed dataset');
+  ///  } catch (e) {
+  ///    print('Error renaming dataset: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<void> renameDataset(String id, String name) async {
     final request = RenameDatasetRequest()
       ..id = id
@@ -637,7 +1464,26 @@ class DataClient {
 
   /// Returns a list of datasets within a given organization.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  // Org ID to list datasets from
+  ///  const orgId = '<YOUR-ORG-ID>';
+  ///
+  ///  try {
+  ///    // List datasets from org
+  ///    final datasets = await dataClient.listDatasetsByOrganizationID(orgId);
+  ///    print('Successfully retrieved list of datasets: $datasets');
+  ///  } catch (e) {
+  ///    print('Error retrieving list of datasets: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<Dataset>> listDatasetsByOrganizationID(String orgId) async {
     final request = ListDatasetsByOrganizationIDRequest()..organizationId = orgId;
     final response = await _datasetClient.listDatasetsByOrganizationID(request);
@@ -646,7 +1492,25 @@ class DataClient {
 
   /// Looks up and returns a list of datasets by their IDs.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  const datasetIds = ["<YOUR-DATASET-ID>", "<YOUR-DATASET-ID-2>"];
+  ///
+  ///  try {
+  ///    // List datasets by ids
+  ///    final datasets = await dataClient.listDatasetsByIDs(datasetIds);
+  ///    print('Successfully listed datasets by ids: $datasets');
+  ///  } catch (e) {
+  ///    print('Error retrieving datasets by ids: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<List<Dataset>> listDatasetsByIDs(List<String> ids) async {
     final request = ListDatasetsByIDsRequest()..ids.addAll(ids);
     final response = await _datasetClient.listDatasetsByIDs(request);
@@ -656,7 +1520,28 @@ class DataClient {
   /// Gets the most recent tabular data captured from the specified data source,
   /// as long as it was synced within the last year.
   ///
-  /// For more information, see [Data Client API](https://docs.viam.com/appendix/apis/data-client/).
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    // Get latest tabular data
+  ///    final response = await dataClient.getLatestTabularData(
+  ///      "<YOUR-PART-ID>",
+  ///      "movement_sensor-1",
+  ///      "rdk:component:movement_sensor",
+  ///      "Position"
+  ///    );
+  ///    print('Successfully retrieved latest tabular data: $response');
+  ///  } catch (e) {
+  ///    print('Error retrieving latest tabular data: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<({DateTime timeCaptured, DateTime timeSynced, Map<String, dynamic> payload})?> getLatestTabularData(
     String partId,
     String resourceName,
@@ -683,7 +1568,7 @@ class DataClient {
   }
 }
 
-/// {@category Viam SDK}
+/// {@category App}
 extension FilterUtils on Filter {
   /// Return a [Filter] with a [CaptureInterval] created by the provided start and end [DateTime] objects
   Filter withDateTimeCaptureInterval({DateTime? start, DateTime? end}) {
