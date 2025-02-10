@@ -1395,10 +1395,14 @@ class MethodSettings extends $pb.GeneratedMessage {
 class SelectiveGapicGeneration extends $pb.GeneratedMessage {
   factory SelectiveGapicGeneration({
     $core.Iterable<$core.String>? methods,
+    $core.bool? generateOmittedAsInternal,
   }) {
     final $result = create();
     if (methods != null) {
       $result.methods.addAll(methods);
+    }
+    if (generateOmittedAsInternal != null) {
+      $result.generateOmittedAsInternal = generateOmittedAsInternal;
     }
     return $result;
   }
@@ -1408,6 +1412,7 @@ class SelectiveGapicGeneration extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SelectiveGapicGeneration', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'methods')
+    ..aOB(2, _omitFieldNames ? '' : 'generateOmittedAsInternal')
     ..hasRequiredFields = false
   ;
 
@@ -1436,6 +1441,21 @@ class SelectiveGapicGeneration extends $pb.GeneratedMessage {
   /// on public client surfaces.
   @$pb.TagNumber(1)
   $core.List<$core.String> get methods => $_getList(0);
+
+  /// Setting this to true indicates to the client generators that methods
+  /// that would be excluded from the generation should instead be generated
+  /// in a way that indicates these methods should not be consumed by
+  /// end users. How this is expressed is up to individual language
+  /// implementations to decide. Some examples may be: added annotations,
+  /// obfuscated identifiers, or other language idiomatic patterns.
+  @$pb.TagNumber(2)
+  $core.bool get generateOmittedAsInternal => $_getBF(1);
+  @$pb.TagNumber(2)
+  set generateOmittedAsInternal($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGenerateOmittedAsInternal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGenerateOmittedAsInternal() => clearField(2);
 }
 
 class Client {

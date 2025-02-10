@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../app/v1/robot.pb.dart' as $13;
-import '../../robot/v1/robot.pb.dart' as $31;
+import '../../robot/v1/robot.pb.dart' as $33;
 
 class AddResourceRequest extends $pb.GeneratedMessage {
   factory AddResourceRequest({
@@ -284,7 +284,7 @@ class RemoveResourceResponse extends $pb.GeneratedMessage {
 
 class HandlerDefinition extends $pb.GeneratedMessage {
   factory HandlerDefinition({
-    $31.ResourceRPCSubtype? subtype,
+    $33.ResourceRPCSubtype? subtype,
     $core.Iterable<$core.String>? models,
   }) {
     final $result = create();
@@ -301,7 +301,7 @@ class HandlerDefinition extends $pb.GeneratedMessage {
   factory HandlerDefinition.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HandlerDefinition', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
-    ..aOM<$31.ResourceRPCSubtype>(1, _omitFieldNames ? '' : 'subtype', subBuilder: $31.ResourceRPCSubtype.create)
+    ..aOM<$33.ResourceRPCSubtype>(1, _omitFieldNames ? '' : 'subtype', subBuilder: $33.ResourceRPCSubtype.create)
     ..pPS(2, _omitFieldNames ? '' : 'models')
     ..hasRequiredFields = false
   ;
@@ -328,15 +328,15 @@ class HandlerDefinition extends $pb.GeneratedMessage {
   static HandlerDefinition? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $31.ResourceRPCSubtype get subtype => $_getN(0);
+  $33.ResourceRPCSubtype get subtype => $_getN(0);
   @$pb.TagNumber(1)
-  set subtype($31.ResourceRPCSubtype v) { setField(1, v); }
+  set subtype($33.ResourceRPCSubtype v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSubtype() => $_has(0);
   @$pb.TagNumber(1)
   void clearSubtype() => clearField(1);
   @$pb.TagNumber(1)
-  $31.ResourceRPCSubtype ensureSubtype() => $_ensure(0);
+  $33.ResourceRPCSubtype ensureSubtype() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get models => $_getList(1);

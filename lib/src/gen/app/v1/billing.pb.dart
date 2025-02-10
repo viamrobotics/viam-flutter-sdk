@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $45;
+import '../../google/protobuf/timestamp.pb.dart' as $47;
 import 'billing.pbenum.dart';
 
 export 'billing.pbenum.dart';
@@ -21,11 +21,11 @@ export 'billing.pbenum.dart';
 class InvoiceSummary extends $pb.GeneratedMessage {
   factory InvoiceSummary({
     $core.String? id,
-    $45.Timestamp? invoiceDate,
+    $47.Timestamp? invoiceDate,
     $core.double? invoiceAmount,
     $core.String? status,
-    $45.Timestamp? dueDate,
-    $45.Timestamp? paidDate,
+    $47.Timestamp? dueDate,
+    $47.Timestamp? paidDate,
   }) {
     final $result = create();
     if (id != null) {
@@ -54,11 +54,11 @@ class InvoiceSummary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InvoiceSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$45.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $45.Timestamp.create)
+    ..aOM<$47.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $47.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'invoiceAmount', $pb.PbFieldType.OD)
     ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOM<$45.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $45.Timestamp.create)
-    ..aOM<$45.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $45.Timestamp.create)
+    ..aOM<$47.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $47.Timestamp.create)
+    ..aOM<$47.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $47.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -93,15 +93,15 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $45.Timestamp get invoiceDate => $_getN(1);
+  $47.Timestamp get invoiceDate => $_getN(1);
   @$pb.TagNumber(2)
-  set invoiceDate($45.Timestamp v) { setField(2, v); }
+  set invoiceDate($47.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasInvoiceDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearInvoiceDate() => clearField(2);
   @$pb.TagNumber(2)
-  $45.Timestamp ensureInvoiceDate() => $_ensure(1);
+  $47.Timestamp ensureInvoiceDate() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.double get invoiceAmount => $_getN(2);
@@ -122,26 +122,26 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $45.Timestamp get dueDate => $_getN(4);
+  $47.Timestamp get dueDate => $_getN(4);
   @$pb.TagNumber(5)
-  set dueDate($45.Timestamp v) { setField(5, v); }
+  set dueDate($47.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDueDate() => $_has(4);
   @$pb.TagNumber(5)
   void clearDueDate() => clearField(5);
   @$pb.TagNumber(5)
-  $45.Timestamp ensureDueDate() => $_ensure(4);
+  $47.Timestamp ensureDueDate() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $45.Timestamp get paidDate => $_getN(5);
+  $47.Timestamp get paidDate => $_getN(5);
   @$pb.TagNumber(6)
-  set paidDate($45.Timestamp v) { setField(6, v); }
+  set paidDate($47.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPaidDate() => $_has(5);
   @$pb.TagNumber(6)
   void clearPaidDate() => clearField(6);
   @$pb.TagNumber(6)
-  $45.Timestamp ensurePaidDate() => $_ensure(5);
+  $47.Timestamp ensurePaidDate() => $_ensure(5);
 }
 
 class PaymentMethodCard extends $pb.GeneratedMessage {
@@ -490,8 +490,8 @@ class ResourceUsageCosts extends $pb.GeneratedMessage {
 
 class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse({
-    $45.Timestamp? startDate,
-    $45.Timestamp? endDate,
+    $47.Timestamp? startDate,
+    $47.Timestamp? endDate,
   @$core.Deprecated('This field is deprecated.')
     $core.double? cloudStorageUsageCost,
   @$core.Deprecated('This field is deprecated.')
@@ -581,8 +581,8 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentMonthUsageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$45.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $45.Timestamp.create)
-    ..aOM<$45.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $45.Timestamp.create)
+    ..aOM<$47.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $47.Timestamp.create)
+    ..aOM<$47.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $47.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'cloudStorageUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'dataUploadUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'dataEgresUsageCost', $pb.PbFieldType.OD)
@@ -621,26 +621,26 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   static GetCurrentMonthUsageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $45.Timestamp get startDate => $_getN(0);
+  $47.Timestamp get startDate => $_getN(0);
   @$pb.TagNumber(1)
-  set startDate($45.Timestamp v) { setField(1, v); }
+  set startDate($47.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartDate() => $_has(0);
   @$pb.TagNumber(1)
   void clearStartDate() => clearField(1);
   @$pb.TagNumber(1)
-  $45.Timestamp ensureStartDate() => $_ensure(0);
+  $47.Timestamp ensureStartDate() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $45.Timestamp get endDate => $_getN(1);
+  $47.Timestamp get endDate => $_getN(1);
   @$pb.TagNumber(2)
-  set endDate($45.Timestamp v) { setField(2, v); }
+  set endDate($47.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearEndDate() => clearField(2);
   @$pb.TagNumber(2)
-  $45.Timestamp ensureEndDate() => $_ensure(1);
+  $47.Timestamp ensureEndDate() => $_ensure(1);
 
   /// all fields below are deprecated
   @$core.Deprecated('This field is deprecated.')

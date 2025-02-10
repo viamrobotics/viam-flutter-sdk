@@ -15,28 +15,28 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'testecho.pb.dart' as $30;
+import 'testecho.pb.dart' as $32;
 
 export 'testecho.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.testecho.v1.TestEchoService')
 class TestEchoServiceClient extends $grpc.Client {
-  static final _$echo = $grpc.ClientMethod<$30.EchoRequest, $30.EchoResponse>(
+  static final _$echo = $grpc.ClientMethod<$32.EchoRequest, $32.EchoResponse>(
       '/viam.component.testecho.v1.TestEchoService/Echo',
-      ($30.EchoRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.EchoResponse.fromBuffer(value));
-  static final _$echoMultiple = $grpc.ClientMethod<$30.EchoMultipleRequest, $30.EchoMultipleResponse>(
+      ($32.EchoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $32.EchoResponse.fromBuffer(value));
+  static final _$echoMultiple = $grpc.ClientMethod<$32.EchoMultipleRequest, $32.EchoMultipleResponse>(
       '/viam.component.testecho.v1.TestEchoService/EchoMultiple',
-      ($30.EchoMultipleRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.EchoMultipleResponse.fromBuffer(value));
-  static final _$echoBiDi = $grpc.ClientMethod<$30.EchoBiDiRequest, $30.EchoBiDiResponse>(
+      ($32.EchoMultipleRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $32.EchoMultipleResponse.fromBuffer(value));
+  static final _$echoBiDi = $grpc.ClientMethod<$32.EchoBiDiRequest, $32.EchoBiDiResponse>(
       '/viam.component.testecho.v1.TestEchoService/EchoBiDi',
-      ($30.EchoBiDiRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.EchoBiDiResponse.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$30.StopRequest, $30.StopResponse>(
+      ($32.EchoBiDiRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $32.EchoBiDiResponse.fromBuffer(value));
+  static final _$stop = $grpc.ClientMethod<$32.StopRequest, $32.StopResponse>(
       '/viam.component.testecho.v1.TestEchoService/Stop',
-      ($30.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $30.StopResponse.fromBuffer(value));
+      ($32.StopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $32.StopResponse.fromBuffer(value));
 
   TestEchoServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -44,19 +44,19 @@ class TestEchoServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$30.EchoResponse> echo($30.EchoRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$32.EchoResponse> echo($32.EchoRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$echo, request, options: options);
   }
 
-  $grpc.ResponseStream<$30.EchoMultipleResponse> echoMultiple($30.EchoMultipleRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$32.EchoMultipleResponse> echoMultiple($32.EchoMultipleRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$echoMultiple, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseStream<$30.EchoBiDiResponse> echoBiDi($async.Stream<$30.EchoBiDiRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$32.EchoBiDiResponse> echoBiDi($async.Stream<$32.EchoBiDiRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$echoBiDi, request, options: options);
   }
 
-  $grpc.ResponseFuture<$30.StopResponse> stop($30.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$32.StopResponse> stop($32.StopRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 }
@@ -66,50 +66,50 @@ abstract class TestEchoServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.testecho.v1.TestEchoService';
 
   TestEchoServiceBase() {
-    $addMethod($grpc.ServiceMethod<$30.EchoRequest, $30.EchoResponse>(
+    $addMethod($grpc.ServiceMethod<$32.EchoRequest, $32.EchoResponse>(
         'Echo',
         echo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.EchoRequest.fromBuffer(value),
-        ($30.EchoResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.EchoMultipleRequest, $30.EchoMultipleResponse>(
+        ($core.List<$core.int> value) => $32.EchoRequest.fromBuffer(value),
+        ($32.EchoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$32.EchoMultipleRequest, $32.EchoMultipleResponse>(
         'EchoMultiple',
         echoMultiple_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $30.EchoMultipleRequest.fromBuffer(value),
-        ($30.EchoMultipleResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.EchoBiDiRequest, $30.EchoBiDiResponse>(
+        ($core.List<$core.int> value) => $32.EchoMultipleRequest.fromBuffer(value),
+        ($32.EchoMultipleResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$32.EchoBiDiRequest, $32.EchoBiDiResponse>(
         'EchoBiDi',
         echoBiDi,
         true,
         true,
-        ($core.List<$core.int> value) => $30.EchoBiDiRequest.fromBuffer(value),
-        ($30.EchoBiDiResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$30.StopRequest, $30.StopResponse>(
+        ($core.List<$core.int> value) => $32.EchoBiDiRequest.fromBuffer(value),
+        ($32.EchoBiDiResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$32.StopRequest, $32.StopResponse>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $30.StopRequest.fromBuffer(value),
-        ($30.StopResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $32.StopRequest.fromBuffer(value),
+        ($32.StopResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$30.EchoResponse> echo_Pre($grpc.ServiceCall call, $async.Future<$30.EchoRequest> request) async {
+  $async.Future<$32.EchoResponse> echo_Pre($grpc.ServiceCall call, $async.Future<$32.EchoRequest> request) async {
     return echo(call, await request);
   }
 
-  $async.Stream<$30.EchoMultipleResponse> echoMultiple_Pre($grpc.ServiceCall call, $async.Future<$30.EchoMultipleRequest> request) async* {
+  $async.Stream<$32.EchoMultipleResponse> echoMultiple_Pre($grpc.ServiceCall call, $async.Future<$32.EchoMultipleRequest> request) async* {
     yield* echoMultiple(call, await request);
   }
 
-  $async.Future<$30.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$30.StopRequest> request) async {
+  $async.Future<$32.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$32.StopRequest> request) async {
     return stop(call, await request);
   }
 
-  $async.Future<$30.EchoResponse> echo($grpc.ServiceCall call, $30.EchoRequest request);
-  $async.Stream<$30.EchoMultipleResponse> echoMultiple($grpc.ServiceCall call, $30.EchoMultipleRequest request);
-  $async.Stream<$30.EchoBiDiResponse> echoBiDi($grpc.ServiceCall call, $async.Stream<$30.EchoBiDiRequest> request);
-  $async.Future<$30.StopResponse> stop($grpc.ServiceCall call, $30.StopRequest request);
+  $async.Future<$32.EchoResponse> echo($grpc.ServiceCall call, $32.EchoRequest request);
+  $async.Stream<$32.EchoMultipleResponse> echoMultiple($grpc.ServiceCall call, $32.EchoMultipleRequest request);
+  $async.Stream<$32.EchoBiDiResponse> echoBiDi($grpc.ServiceCall call, $async.Stream<$32.EchoBiDiRequest> request);
+  $async.Future<$32.StopResponse> stop($grpc.ServiceCall call, $32.StopRequest request);
 }

@@ -16,28 +16,28 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import 'servo.pb.dart' as $29;
+import 'servo.pb.dart' as $30;
 
 export 'servo.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.servo.v1.ServoService')
 class ServoServiceClient extends $grpc.Client {
-  static final _$move = $grpc.ClientMethod<$29.MoveRequest, $29.MoveResponse>(
+  static final _$move = $grpc.ClientMethod<$30.MoveRequest, $30.MoveResponse>(
       '/viam.component.servo.v1.ServoService/Move',
-      ($29.MoveRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $29.MoveResponse.fromBuffer(value));
-  static final _$getPosition = $grpc.ClientMethod<$29.GetPositionRequest, $29.GetPositionResponse>(
+      ($30.MoveRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $30.MoveResponse.fromBuffer(value));
+  static final _$getPosition = $grpc.ClientMethod<$30.GetPositionRequest, $30.GetPositionResponse>(
       '/viam.component.servo.v1.ServoService/GetPosition',
-      ($29.GetPositionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $29.GetPositionResponse.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$29.StopRequest, $29.StopResponse>(
+      ($30.GetPositionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $30.GetPositionResponse.fromBuffer(value));
+  static final _$stop = $grpc.ClientMethod<$30.StopRequest, $30.StopResponse>(
       '/viam.component.servo.v1.ServoService/Stop',
-      ($29.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $29.StopResponse.fromBuffer(value));
-  static final _$isMoving = $grpc.ClientMethod<$29.IsMovingRequest, $29.IsMovingResponse>(
+      ($30.StopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $30.StopResponse.fromBuffer(value));
+  static final _$isMoving = $grpc.ClientMethod<$30.IsMovingRequest, $30.IsMovingResponse>(
       '/viam.component.servo.v1.ServoService/IsMoving',
-      ($29.IsMovingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $29.IsMovingResponse.fromBuffer(value));
+      ($30.IsMovingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $30.IsMovingResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.component.servo.v1.ServoService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -53,19 +53,19 @@ class ServoServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$29.MoveResponse> move($29.MoveRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$30.MoveResponse> move($30.MoveRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$move, request, options: options);
   }
 
-  $grpc.ResponseFuture<$29.GetPositionResponse> getPosition($29.GetPositionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$30.GetPositionResponse> getPosition($30.GetPositionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPosition, request, options: options);
   }
 
-  $grpc.ResponseFuture<$29.StopResponse> stop($29.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$30.StopResponse> stop($30.StopRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 
-  $grpc.ResponseFuture<$29.IsMovingResponse> isMoving($29.IsMovingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$30.IsMovingResponse> isMoving($30.IsMovingRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$isMoving, request, options: options);
   }
 
@@ -83,34 +83,34 @@ abstract class ServoServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.servo.v1.ServoService';
 
   ServoServiceBase() {
-    $addMethod($grpc.ServiceMethod<$29.MoveRequest, $29.MoveResponse>(
+    $addMethod($grpc.ServiceMethod<$30.MoveRequest, $30.MoveResponse>(
         'Move',
         move_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $29.MoveRequest.fromBuffer(value),
-        ($29.MoveResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$29.GetPositionRequest, $29.GetPositionResponse>(
+        ($core.List<$core.int> value) => $30.MoveRequest.fromBuffer(value),
+        ($30.MoveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$30.GetPositionRequest, $30.GetPositionResponse>(
         'GetPosition',
         getPosition_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $29.GetPositionRequest.fromBuffer(value),
-        ($29.GetPositionResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$29.StopRequest, $29.StopResponse>(
+        ($core.List<$core.int> value) => $30.GetPositionRequest.fromBuffer(value),
+        ($30.GetPositionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$30.StopRequest, $30.StopResponse>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $29.StopRequest.fromBuffer(value),
-        ($29.StopResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$29.IsMovingRequest, $29.IsMovingResponse>(
+        ($core.List<$core.int> value) => $30.StopRequest.fromBuffer(value),
+        ($30.StopResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$30.IsMovingRequest, $30.IsMovingResponse>(
         'IsMoving',
         isMoving_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $29.IsMovingRequest.fromBuffer(value),
-        ($29.IsMovingResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $30.IsMovingRequest.fromBuffer(value),
+        ($30.IsMovingResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -127,19 +127,19 @@ abstract class ServoServiceBase extends $grpc.Service {
         ($15.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$29.MoveResponse> move_Pre($grpc.ServiceCall call, $async.Future<$29.MoveRequest> request) async {
+  $async.Future<$30.MoveResponse> move_Pre($grpc.ServiceCall call, $async.Future<$30.MoveRequest> request) async {
     return move(call, await request);
   }
 
-  $async.Future<$29.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$29.GetPositionRequest> request) async {
+  $async.Future<$30.GetPositionResponse> getPosition_Pre($grpc.ServiceCall call, $async.Future<$30.GetPositionRequest> request) async {
     return getPosition(call, await request);
   }
 
-  $async.Future<$29.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$29.StopRequest> request) async {
+  $async.Future<$30.StopResponse> stop_Pre($grpc.ServiceCall call, $async.Future<$30.StopRequest> request) async {
     return stop(call, await request);
   }
 
-  $async.Future<$29.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$29.IsMovingRequest> request) async {
+  $async.Future<$30.IsMovingResponse> isMoving_Pre($grpc.ServiceCall call, $async.Future<$30.IsMovingRequest> request) async {
     return isMoving(call, await request);
   }
 
@@ -151,10 +151,10 @@ abstract class ServoServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$29.MoveResponse> move($grpc.ServiceCall call, $29.MoveRequest request);
-  $async.Future<$29.GetPositionResponse> getPosition($grpc.ServiceCall call, $29.GetPositionRequest request);
-  $async.Future<$29.StopResponse> stop($grpc.ServiceCall call, $29.StopRequest request);
-  $async.Future<$29.IsMovingResponse> isMoving($grpc.ServiceCall call, $29.IsMovingRequest request);
+  $async.Future<$30.MoveResponse> move($grpc.ServiceCall call, $30.MoveRequest request);
+  $async.Future<$30.GetPositionResponse> getPosition($grpc.ServiceCall call, $30.GetPositionRequest request);
+  $async.Future<$30.StopResponse> stop($grpc.ServiceCall call, $30.StopRequest request);
+  $async.Future<$30.IsMovingResponse> isMoving($grpc.ServiceCall call, $30.IsMovingRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
   $async.Future<$15.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $15.GetGeometriesRequest request);
 }

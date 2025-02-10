@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $44;
-import '../../../google/protobuf/timestamp.pb.dart' as $45;
+import '../../../google/protobuf/struct.pb.dart' as $46;
+import '../../../google/protobuf/timestamp.pb.dart' as $47;
 
 class GetControlsRequest extends $pb.GeneratedMessage {
   factory GetControlsRequest({
     $core.String? controller,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (controller != null) {
@@ -36,7 +36,7 @@ class GetControlsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetControlsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'controller')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -73,15 +73,15 @@ class GetControlsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetControlsResponse extends $pb.GeneratedMessage {
@@ -133,7 +133,7 @@ class GetControlsResponse extends $pb.GeneratedMessage {
 class GetEventsRequest extends $pb.GeneratedMessage {
   factory GetEventsRequest({
     $core.String? controller,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (controller != null) {
@@ -150,7 +150,7 @@ class GetEventsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'controller')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -187,15 +187,15 @@ class GetEventsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetEventsResponse extends $pb.GeneratedMessage {
@@ -248,7 +248,7 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
   factory TriggerEventRequest({
     $core.String? controller,
     Event? event,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (controller != null) {
@@ -269,7 +269,7 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TriggerEventRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'controller')
     ..aOM<Event>(2, _omitFieldNames ? '' : 'event', subBuilder: Event.create)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -318,15 +318,15 @@ class TriggerEventRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class TriggerEventResponse extends $pb.GeneratedMessage {
@@ -363,7 +363,7 @@ class TriggerEventResponse extends $pb.GeneratedMessage {
 
 class Event extends $pb.GeneratedMessage {
   factory Event({
-    $45.Timestamp? time,
+    $47.Timestamp? time,
     $core.String? event,
     $core.String? control,
     $core.double? value,
@@ -388,7 +388,7 @@ class Event extends $pb.GeneratedMessage {
   factory Event.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Event', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
-    ..aOM<$45.Timestamp>(1, _omitFieldNames ? '' : 'time', subBuilder: $45.Timestamp.create)
+    ..aOM<$47.Timestamp>(1, _omitFieldNames ? '' : 'time', subBuilder: $47.Timestamp.create)
     ..aOS(2, _omitFieldNames ? '' : 'event')
     ..aOS(3, _omitFieldNames ? '' : 'control')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
@@ -418,15 +418,15 @@ class Event extends $pb.GeneratedMessage {
 
   /// Timestamp of event
   @$pb.TagNumber(1)
-  $45.Timestamp get time => $_getN(0);
+  $47.Timestamp get time => $_getN(0);
   @$pb.TagNumber(1)
-  set time($45.Timestamp v) { setField(1, v); }
+  set time($47.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearTime() => clearField(1);
   @$pb.TagNumber(1)
-  $45.Timestamp ensureTime() => $_ensure(0);
+  $47.Timestamp ensureTime() => $_ensure(0);
 
   /// An event type (eg: ButtonPress, ButtonRelease)
   @$pb.TagNumber(2)
@@ -533,7 +533,7 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
   factory StreamEventsRequest({
     $core.String? controller,
     $core.Iterable<StreamEventsRequest_Events>? events,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (controller != null) {
@@ -554,7 +554,7 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.inputcontroller.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'controller')
     ..pc<StreamEventsRequest_Events>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: StreamEventsRequest_Events.create)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -595,15 +595,15 @@ class StreamEventsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class StreamEventsResponse extends $pb.GeneratedMessage {

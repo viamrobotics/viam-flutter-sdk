@@ -14,12 +14,12 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import '../../../google/protobuf/struct.pb.dart' as $44;
+import '../../../google/protobuf/struct.pb.dart' as $46;
 
 class GetEndPositionRequest extends $pb.GeneratedMessage {
   factory GetEndPositionRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -36,7 +36,7 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEndPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -73,15 +73,15 @@ class GetEndPositionRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetEndPositionResponse extends $pb.GeneratedMessage {
@@ -187,7 +187,7 @@ class JointPositions extends $pb.GeneratedMessage {
 class GetJointPositionsRequest extends $pb.GeneratedMessage {
   factory GetJointPositionsRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -204,7 +204,7 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetJointPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -241,15 +241,15 @@ class GetJointPositionsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetJointPositionsResponse extends $pb.GeneratedMessage {
@@ -312,7 +312,7 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   factory MoveToPositionRequest({
     $core.String? name,
     $15.Pose? to,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -333,7 +333,7 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveToPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$15.Pose>(2, _omitFieldNames ? '' : 'to', subBuilder: $15.Pose.create)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -382,15 +382,15 @@ class MoveToPositionRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class MoveToPositionResponse extends $pb.GeneratedMessage {
@@ -429,7 +429,7 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   factory MoveToJointPositionsRequest({
     $core.String? name,
     JointPositions? positions,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -450,7 +450,7 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveToJointPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<JointPositions>(2, _omitFieldNames ? '' : 'positions', subBuilder: JointPositions.create)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -500,15 +500,15 @@ class MoveToJointPositionsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class MoveToJointPositionsResponse extends $pb.GeneratedMessage {
@@ -548,7 +548,7 @@ class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<JointPositions>? positions,
     MoveOptions? options,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -573,7 +573,7 @@ class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pc<JointPositions>(2, _omitFieldNames ? '' : 'positions', $pb.PbFieldType.PM, subBuilder: JointPositions.create)
     ..aOM<MoveOptions>(3, _omitFieldNames ? '' : 'options', subBuilder: MoveOptions.create)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -626,15 +626,15 @@ class MoveThroughJointPositionsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(3);
+  $46.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(3);
+  $46.Struct ensureExtra() => $_ensure(3);
 }
 
 class MoveThroughJointPositionsResponse extends $pb.GeneratedMessage {
@@ -672,7 +672,7 @@ class MoveThroughJointPositionsResponse extends $pb.GeneratedMessage {
 class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -689,7 +689,7 @@ class StopRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.arm.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -726,15 +726,15 @@ class StopRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class StopResponse extends $pb.GeneratedMessage {
