@@ -16,16 +16,16 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import 'discovery.pb.dart' as $35;
+import 'discovery.pb.dart' as $37;
 
 export 'discovery.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.discovery.v1.DiscoveryService')
 class DiscoveryServiceClient extends $grpc.Client {
-  static final _$discoverResources = $grpc.ClientMethod<$35.DiscoverResourcesRequest, $35.DiscoverResourcesResponse>(
+  static final _$discoverResources = $grpc.ClientMethod<$37.DiscoverResourcesRequest, $37.DiscoverResourcesResponse>(
       '/viam.service.discovery.v1.DiscoveryService/DiscoverResources',
-      ($35.DiscoverResourcesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $35.DiscoverResourcesResponse.fromBuffer(value));
+      ($37.DiscoverResourcesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $37.DiscoverResourcesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.discovery.v1.DiscoveryService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -37,7 +37,7 @@ class DiscoveryServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$35.DiscoverResourcesResponse> discoverResources($35.DiscoverResourcesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$37.DiscoverResourcesResponse> discoverResources($37.DiscoverResourcesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$discoverResources, request, options: options);
   }
 
@@ -51,13 +51,13 @@ abstract class DiscoveryServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.discovery.v1.DiscoveryService';
 
   DiscoveryServiceBase() {
-    $addMethod($grpc.ServiceMethod<$35.DiscoverResourcesRequest, $35.DiscoverResourcesResponse>(
+    $addMethod($grpc.ServiceMethod<$37.DiscoverResourcesRequest, $37.DiscoverResourcesResponse>(
         'DiscoverResources',
         discoverResources_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $35.DiscoverResourcesRequest.fromBuffer(value),
-        ($35.DiscoverResourcesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $37.DiscoverResourcesRequest.fromBuffer(value),
+        ($37.DiscoverResourcesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -67,7 +67,7 @@ abstract class DiscoveryServiceBase extends $grpc.Service {
         ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$35.DiscoverResourcesResponse> discoverResources_Pre($grpc.ServiceCall call, $async.Future<$35.DiscoverResourcesRequest> request) async {
+  $async.Future<$37.DiscoverResourcesResponse> discoverResources_Pre($grpc.ServiceCall call, $async.Future<$37.DiscoverResourcesRequest> request) async {
     return discoverResources(call, await request);
   }
 
@@ -75,6 +75,6 @@ abstract class DiscoveryServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$35.DiscoverResourcesResponse> discoverResources($grpc.ServiceCall call, $35.DiscoverResourcesRequest request);
+  $async.Future<$37.DiscoverResourcesResponse> discoverResources($grpc.ServiceCall call, $37.DiscoverResourcesRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }

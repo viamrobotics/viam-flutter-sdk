@@ -29,6 +29,32 @@ final $typed_data.Uint8List peerConnectionTypeDescriptor = $convert.base64Decode
     'QQABIdChlQRUVSX0NPTk5FQ1RJT05fVFlQRV9HUlBDEAESHwobUEVFUl9DT05ORUNUSU9OX1RZ'
     'UEVfV0VCUlRDEAI=');
 
+@$core.Deprecated('Use tunnelRequestDescriptor instead')
+const TunnelRequest$json = {
+  '1': 'TunnelRequest',
+  '2': [
+    {'1': 'destination_port', '3': 1, '4': 1, '5': 13, '10': 'destinationPort'},
+    {'1': 'data', '3': 2, '4': 1, '5': 12, '10': 'data'},
+  ],
+};
+
+/// Descriptor for `TunnelRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tunnelRequestDescriptor = $convert.base64Decode(
+    'Cg1UdW5uZWxSZXF1ZXN0EikKEGRlc3RpbmF0aW9uX3BvcnQYASABKA1SD2Rlc3RpbmF0aW9uUG'
+    '9ydBISCgRkYXRhGAIgASgMUgRkYXRh');
+
+@$core.Deprecated('Use tunnelResponseDescriptor instead')
+const TunnelResponse$json = {
+  '1': 'TunnelResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 1, '5': 12, '10': 'data'},
+  ],
+};
+
+/// Descriptor for `TunnelResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tunnelResponseDescriptor = $convert.base64Decode(
+    'Cg5UdW5uZWxSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRh');
+
 @$core.Deprecated('Use frameSystemConfigDescriptor instead')
 const FrameSystemConfig$json = {
   '1': 'FrameSystemConfig',

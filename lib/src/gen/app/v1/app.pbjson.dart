@@ -678,6 +678,7 @@ const BillingAddress$json = {
     {'1': 'city', '3': 3, '4': 1, '5': 9, '10': 'city'},
     {'1': 'state', '3': 4, '4': 1, '5': 9, '10': 'state'},
     {'1': 'zipcode', '3': 5, '4': 1, '5': 9, '10': 'zipcode'},
+    {'1': 'country', '3': 6, '4': 1, '5': 9, '10': 'country'},
   ],
   '8': [
     {'1': '_address_line_2'},
@@ -688,8 +689,8 @@ const BillingAddress$json = {
 final $typed_data.Uint8List billingAddressDescriptor = $convert.base64Decode(
     'Cg5CaWxsaW5nQWRkcmVzcxIkCg5hZGRyZXNzX2xpbmVfMRgBIAEoCVIMYWRkcmVzc0xpbmUxEi'
     'kKDmFkZHJlc3NfbGluZV8yGAIgASgJSABSDGFkZHJlc3NMaW5lMogBARISCgRjaXR5GAMgASgJ'
-    'UgRjaXR5EhQKBXN0YXRlGAQgASgJUgVzdGF0ZRIYCgd6aXBjb2RlGAUgASgJUgd6aXBjb2RlQh'
-    'EKD19hZGRyZXNzX2xpbmVfMg==');
+    'UgRjaXR5EhQKBXN0YXRlGAQgASgJUgVzdGF0ZRIYCgd6aXBjb2RlGAUgASgJUgd6aXBjb2RlEh'
+    'gKB2NvdW50cnkYBiABKAlSB2NvdW50cnlCEQoPX2FkZHJlc3NfbGluZV8y');
 
 @$core.Deprecated('Use enableBillingServiceRequestDescriptor instead')
 const EnableBillingServiceRequest$json = {
@@ -1614,6 +1615,7 @@ const Fragment$json = {
     {'1': 'only_used_by_owner', '3': 11, '4': 1, '5': 8, '10': 'onlyUsedByOwner'},
     {'1': 'visibility', '3': 12, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '10': 'visibility'},
     {'1': 'last_updated', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastUpdated'},
+    {'1': 'revision', '3': 14, '4': 1, '5': 9, '10': 'revision'},
   ],
 };
 
@@ -1632,7 +1634,8 @@ final $typed_data.Uint8List fragmentDescriptor = $convert.base64Decode(
     'cmdhbml6YXRpb25Db3VudBIrChJvbmx5X3VzZWRfYnlfb3duZXIYCyABKAhSD29ubHlVc2VkQn'
     'lPd25lchI/Cgp2aXNpYmlsaXR5GAwgASgOMh8udmlhbS5hcHAudjEuRnJhZ21lbnRWaXNpYmls'
     'aXR5Ugp2aXNpYmlsaXR5EloKDGxhc3RfdXBkYXRlZBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
-    '5UaW1lc3RhbXBCG5qEngMWYnNvbjoibGFzdF91cGRhdGVkX2F0IlILbGFzdFVwZGF0ZWQ=');
+    '5UaW1lc3RhbXBCG5qEngMWYnNvbjoibGFzdF91cGRhdGVkX2F0IlILbGFzdFVwZGF0ZWQSGgoI'
+    'cmV2aXNpb24YDiABKAlSCHJldmlzaW9u');
 
 @$core.Deprecated('Use fragmentHistoryEntryDescriptor instead')
 const FragmentHistoryEntry$json = {
@@ -1660,6 +1663,34 @@ final $typed_data.Uint8List fragmentHistoryEntryDescriptor = $convert.base64Deco
     'bGUucHJvdG9idWYuU3RydWN0QiCahJ4DG2Jzb246ImNvbmZpZyIganNvbjoiY29uZmlnIlIGY2'
     '9uZmln');
 
+@$core.Deprecated('Use fragmentRevisionDescriptor instead')
+const FragmentRevision$json = {
+  '1': 'FragmentRevision',
+  '2': [
+    {'1': 'revision', '3': 1, '4': 1, '5': 9, '10': 'revision'},
+    {'1': 'created_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `FragmentRevision`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentRevisionDescriptor = $convert.base64Decode(
+    'ChBGcmFnbWVudFJldmlzaW9uEhoKCHJldmlzaW9uGAEgASgJUghyZXZpc2lvbhI5CgpjcmVhdG'
+    'VkX2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use fragmentTagDescriptor instead')
+const FragmentTag$json = {
+  '1': 'FragmentTag',
+  '2': [
+    {'1': 'tag', '3': 1, '4': 1, '5': 9, '10': 'tag'},
+    {'1': 'revision', '3': 2, '4': 1, '5': 9, '10': 'revision'},
+  ],
+};
+
+/// Descriptor for `FragmentTag`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentTagDescriptor = $convert.base64Decode(
+    'CgtGcmFnbWVudFRhZxIQCgN0YWcYASABKAlSA3RhZxIaCghyZXZpc2lvbhgCIAEoCVIIcmV2aX'
+    'Npb24=');
+
 @$core.Deprecated('Use fragmentErrorDescriptor instead')
 const FragmentError$json = {
   '1': 'FragmentError',
@@ -1684,6 +1715,10 @@ const FragmentUsage$json = {
     {'1': 'organizations', '3': 2, '4': 1, '5': 5, '10': 'organizations'},
     {'1': 'machines', '3': 3, '4': 1, '5': 5, '10': 'machines'},
     {'1': 'machines_in_current_org', '3': 4, '4': 1, '5': 5, '10': 'machinesInCurrentOrg'},
+    {'1': 'version', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'version', '17': true},
+  ],
+  '8': [
+    {'1': '_version'},
   ],
 };
 
@@ -1692,7 +1727,7 @@ final $typed_data.Uint8List fragmentUsageDescriptor = $convert.base64Decode(
     'Cg1GcmFnbWVudFVzYWdlEh8KC2ZyYWdtZW50X2lkGAEgASgJUgpmcmFnbWVudElkEiQKDW9yZ2'
     'FuaXphdGlvbnMYAiABKAVSDW9yZ2FuaXphdGlvbnMSGgoIbWFjaGluZXMYAyABKAVSCG1hY2hp'
     'bmVzEjUKF21hY2hpbmVzX2luX2N1cnJlbnRfb3JnGAQgASgFUhRtYWNoaW5lc0luQ3VycmVudE'
-    '9yZw==');
+    '9yZxIdCgd2ZXJzaW9uGAUgASgJSABSB3ZlcnNpb26IAQFCCgoIX3ZlcnNpb24=');
 
 @$core.Deprecated('Use resolvedFragmentDescriptor instead')
 const ResolvedFragment$json = {
@@ -1749,13 +1784,18 @@ const GetFragmentRequest$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'current_organization_id', '3': 2, '4': 1, '5': 9, '10': 'currentOrganizationId'},
+    {'1': 'version', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'version', '17': true},
+  ],
+  '8': [
+    {'1': '_version'},
   ],
 };
 
 /// Descriptor for `GetFragmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getFragmentRequestDescriptor = $convert.base64Decode(
     'ChJHZXRGcmFnbWVudFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEjYKF2N1cnJlbnRfb3JnYW5pem'
-    'F0aW9uX2lkGAIgASgJUhVjdXJyZW50T3JnYW5pemF0aW9uSWQ=');
+    'F0aW9uX2lkGAIgASgJUhVjdXJyZW50T3JnYW5pemF0aW9uSWQSHQoHdmVyc2lvbhgDIAEoCUgA'
+    'Ugd2ZXJzaW9uiAEBQgoKCF92ZXJzaW9u');
 
 @$core.Deprecated('Use getFragmentResponseDescriptor instead')
 const GetFragmentResponse$json = {
@@ -1763,6 +1803,8 @@ const GetFragmentResponse$json = {
   '2': [
     {'1': 'fragment', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Fragment', '10': 'fragment'},
     {'1': 'fragment_usage', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.FragmentUsage', '10': 'fragmentUsage'},
+    {'1': 'revisions', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentRevision', '10': 'revisions'},
+    {'1': 'tags', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentTag', '10': 'tags'},
   ],
 };
 
@@ -1770,7 +1812,9 @@ const GetFragmentResponse$json = {
 final $typed_data.Uint8List getFragmentResponseDescriptor = $convert.base64Decode(
     'ChNHZXRGcmFnbWVudFJlc3BvbnNlEjEKCGZyYWdtZW50GAEgASgLMhUudmlhbS5hcHAudjEuRn'
     'JhZ21lbnRSCGZyYWdtZW50EkEKDmZyYWdtZW50X3VzYWdlGAIgASgLMhoudmlhbS5hcHAudjEu'
-    'RnJhZ21lbnRVc2FnZVINZnJhZ21lbnRVc2FnZQ==');
+    'RnJhZ21lbnRVc2FnZVINZnJhZ21lbnRVc2FnZRI7CglyZXZpc2lvbnMYAyADKAsyHS52aWFtLm'
+    'FwcC52MS5GcmFnbWVudFJldmlzaW9uUglyZXZpc2lvbnMSLAoEdGFncxgEIAMoCzIYLnZpYW0u'
+    'YXBwLnYxLkZyYWdtZW50VGFnUgR0YWdz');
 
 @$core.Deprecated('Use createFragmentRequestDescriptor instead')
 const CreateFragmentRequest$json = {
@@ -1898,6 +1942,87 @@ final $typed_data.Uint8List getFragmentHistoryResponseDescriptor = $convert.base
     'ChpHZXRGcmFnbWVudEhpc3RvcnlSZXNwb25zZRI7CgdoaXN0b3J5GAEgAygLMiEudmlhbS5hcH'
     'AudjEuRnJhZ21lbnRIaXN0b3J5RW50cnlSB2hpc3RvcnkSJgoPbmV4dF9wYWdlX3Rva2VuGAIg'
     'ASgJUg1uZXh0UGFnZVRva2Vu');
+
+@$core.Deprecated('Use getFragmentUsageRequestDescriptor instead')
+const GetFragmentUsageRequest$json = {
+  '1': 'GetFragmentUsageRequest',
+  '2': [
+    {'1': 'fragment_id', '3': 1, '4': 1, '5': 9, '10': 'fragmentId'},
+  ],
+};
+
+/// Descriptor for `GetFragmentUsageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFragmentUsageRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRGcmFnbWVudFVzYWdlUmVxdWVzdBIfCgtmcmFnbWVudF9pZBgBIAEoCVIKZnJhZ21lbn'
+    'RJZA==');
+
+@$core.Deprecated('Use getFragmentUsageResponseDescriptor instead')
+const GetFragmentUsageResponse$json = {
+  '1': 'GetFragmentUsageResponse',
+  '2': [
+    {'1': 'version_usages', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentUsage', '10': 'versionUsages'},
+  ],
+};
+
+/// Descriptor for `GetFragmentUsageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFragmentUsageResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRGcmFnbWVudFVzYWdlUmVzcG9uc2USQQoOdmVyc2lvbl91c2FnZXMYASADKAsyGi52aW'
+    'FtLmFwcC52MS5GcmFnbWVudFVzYWdlUg12ZXJzaW9uVXNhZ2Vz');
+
+@$core.Deprecated('Use setFragmentTagRequestDescriptor instead')
+const SetFragmentTagRequest$json = {
+  '1': 'SetFragmentTagRequest',
+  '2': [
+    {'1': 'fragment_id', '3': 1, '4': 1, '5': 9, '10': 'fragmentId'},
+    {'1': 'tag', '3': 2, '4': 1, '5': 9, '10': 'tag'},
+    {'1': 'revision', '3': 3, '4': 1, '5': 9, '10': 'revision'},
+  ],
+};
+
+/// Descriptor for `SetFragmentTagRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setFragmentTagRequestDescriptor = $convert.base64Decode(
+    'ChVTZXRGcmFnbWVudFRhZ1JlcXVlc3QSHwoLZnJhZ21lbnRfaWQYASABKAlSCmZyYWdtZW50SW'
+    'QSEAoDdGFnGAIgASgJUgN0YWcSGgoIcmV2aXNpb24YAyABKAlSCHJldmlzaW9u');
+
+@$core.Deprecated('Use setFragmentTagResponseDescriptor instead')
+const SetFragmentTagResponse$json = {
+  '1': 'SetFragmentTagResponse',
+  '2': [
+    {'1': 'tags', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentTag', '10': 'tags'},
+  ],
+};
+
+/// Descriptor for `SetFragmentTagResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setFragmentTagResponseDescriptor = $convert.base64Decode(
+    'ChZTZXRGcmFnbWVudFRhZ1Jlc3BvbnNlEiwKBHRhZ3MYASADKAsyGC52aWFtLmFwcC52MS5Gcm'
+    'FnbWVudFRhZ1IEdGFncw==');
+
+@$core.Deprecated('Use deleteFragmentTagRequestDescriptor instead')
+const DeleteFragmentTagRequest$json = {
+  '1': 'DeleteFragmentTagRequest',
+  '2': [
+    {'1': 'fragment_id', '3': 1, '4': 1, '5': 9, '10': 'fragmentId'},
+    {'1': 'tag', '3': 2, '4': 1, '5': 9, '10': 'tag'},
+  ],
+};
+
+/// Descriptor for `DeleteFragmentTagRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteFragmentTagRequestDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVGcmFnbWVudFRhZ1JlcXVlc3QSHwoLZnJhZ21lbnRfaWQYASABKAlSCmZyYWdtZW'
+    '50SWQSEAoDdGFnGAIgASgJUgN0YWc=');
+
+@$core.Deprecated('Use deleteFragmentTagResponseDescriptor instead')
+const DeleteFragmentTagResponse$json = {
+  '1': 'DeleteFragmentTagResponse',
+  '2': [
+    {'1': 'tags', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentTag', '10': 'tags'},
+  ],
+};
+
+/// Descriptor for `DeleteFragmentTagResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteFragmentTagResponseDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVGcmFnbWVudFRhZ1Jlc3BvbnNlEiwKBHRhZ3MYASADKAsyGC52aWFtLmFwcC52MS'
+    '5GcmFnbWVudFRhZ1IEdGFncw==');
 
 @$core.Deprecated('Use listRobotsRequestDescriptor instead')
 const ListRobotsRequest$json = {

@@ -365,10 +365,13 @@ const SelectiveGapicGeneration$json = {
   '1': 'SelectiveGapicGeneration',
   '2': [
     {'1': 'methods', '3': 1, '4': 3, '5': 9, '10': 'methods'},
+    {'1': 'generate_omitted_as_internal', '3': 2, '4': 1, '5': 8, '10': 'generateOmittedAsInternal'},
   ],
 };
 
 /// Descriptor for `SelectiveGapicGeneration`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List selectiveGapicGenerationDescriptor = $convert.base64Decode(
-    'ChhTZWxlY3RpdmVHYXBpY0dlbmVyYXRpb24SGAoHbWV0aG9kcxgBIAMoCVIHbWV0aG9kcw==');
+    'ChhTZWxlY3RpdmVHYXBpY0dlbmVyYXRpb24SGAoHbWV0aG9kcxgBIAMoCVIHbWV0aG9kcxI/Ch'
+    'xnZW5lcmF0ZV9vbWl0dGVkX2FzX2ludGVybmFsGAIgASgIUhlnZW5lcmF0ZU9taXR0ZWRBc0lu'
+    'dGVybmFs');
 

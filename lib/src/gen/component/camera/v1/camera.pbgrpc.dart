@@ -17,32 +17,32 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
 import '../../../google/api/httpbody.pb.dart' as $17;
-import 'camera.pb.dart' as $20;
+import 'camera.pb.dart' as $21;
 
 export 'camera.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.camera.v1.CameraService')
 class CameraServiceClient extends $grpc.Client {
-  static final _$getImage = $grpc.ClientMethod<$20.GetImageRequest, $20.GetImageResponse>(
+  static final _$getImage = $grpc.ClientMethod<$21.GetImageRequest, $21.GetImageResponse>(
       '/viam.component.camera.v1.CameraService/GetImage',
-      ($20.GetImageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $20.GetImageResponse.fromBuffer(value));
-  static final _$getImages = $grpc.ClientMethod<$20.GetImagesRequest, $20.GetImagesResponse>(
+      ($21.GetImageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.GetImageResponse.fromBuffer(value));
+  static final _$getImages = $grpc.ClientMethod<$21.GetImagesRequest, $21.GetImagesResponse>(
       '/viam.component.camera.v1.CameraService/GetImages',
-      ($20.GetImagesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $20.GetImagesResponse.fromBuffer(value));
-  static final _$renderFrame = $grpc.ClientMethod<$20.RenderFrameRequest, $17.HttpBody>(
+      ($21.GetImagesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.GetImagesResponse.fromBuffer(value));
+  static final _$renderFrame = $grpc.ClientMethod<$21.RenderFrameRequest, $17.HttpBody>(
       '/viam.component.camera.v1.CameraService/RenderFrame',
-      ($20.RenderFrameRequest value) => value.writeToBuffer(),
+      ($21.RenderFrameRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $17.HttpBody.fromBuffer(value));
-  static final _$getPointCloud = $grpc.ClientMethod<$20.GetPointCloudRequest, $20.GetPointCloudResponse>(
+  static final _$getPointCloud = $grpc.ClientMethod<$21.GetPointCloudRequest, $21.GetPointCloudResponse>(
       '/viam.component.camera.v1.CameraService/GetPointCloud',
-      ($20.GetPointCloudRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $20.GetPointCloudResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$20.GetPropertiesRequest, $20.GetPropertiesResponse>(
+      ($21.GetPointCloudRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.GetPointCloudResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$21.GetPropertiesRequest, $21.GetPropertiesResponse>(
       '/viam.component.camera.v1.CameraService/GetProperties',
-      ($20.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $20.GetPropertiesResponse.fromBuffer(value));
+      ($21.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.GetPropertiesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.component.camera.v1.CameraService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -58,23 +58,23 @@ class CameraServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$20.GetImageResponse> getImage($20.GetImageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.GetImageResponse> getImage($21.GetImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getImage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$20.GetImagesResponse> getImages($20.GetImagesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.GetImagesResponse> getImages($21.GetImagesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getImages, request, options: options);
   }
 
-  $grpc.ResponseFuture<$17.HttpBody> renderFrame($20.RenderFrameRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$17.HttpBody> renderFrame($21.RenderFrameRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$renderFrame, request, options: options);
   }
 
-  $grpc.ResponseFuture<$20.GetPointCloudResponse> getPointCloud($20.GetPointCloudRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.GetPointCloudResponse> getPointCloud($21.GetPointCloudRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPointCloud, request, options: options);
   }
 
-  $grpc.ResponseFuture<$20.GetPropertiesResponse> getProperties($20.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.GetPropertiesResponse> getProperties($21.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
@@ -92,41 +92,41 @@ abstract class CameraServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.camera.v1.CameraService';
 
   CameraServiceBase() {
-    $addMethod($grpc.ServiceMethod<$20.GetImageRequest, $20.GetImageResponse>(
+    $addMethod($grpc.ServiceMethod<$21.GetImageRequest, $21.GetImageResponse>(
         'GetImage',
         getImage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.GetImageRequest.fromBuffer(value),
-        ($20.GetImageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$20.GetImagesRequest, $20.GetImagesResponse>(
+        ($core.List<$core.int> value) => $21.GetImageRequest.fromBuffer(value),
+        ($21.GetImageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$21.GetImagesRequest, $21.GetImagesResponse>(
         'GetImages',
         getImages_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.GetImagesRequest.fromBuffer(value),
-        ($20.GetImagesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$20.RenderFrameRequest, $17.HttpBody>(
+        ($core.List<$core.int> value) => $21.GetImagesRequest.fromBuffer(value),
+        ($21.GetImagesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$21.RenderFrameRequest, $17.HttpBody>(
         'RenderFrame',
         renderFrame_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.RenderFrameRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $21.RenderFrameRequest.fromBuffer(value),
         ($17.HttpBody value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$20.GetPointCloudRequest, $20.GetPointCloudResponse>(
+    $addMethod($grpc.ServiceMethod<$21.GetPointCloudRequest, $21.GetPointCloudResponse>(
         'GetPointCloud',
         getPointCloud_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.GetPointCloudRequest.fromBuffer(value),
-        ($20.GetPointCloudResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$20.GetPropertiesRequest, $20.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $21.GetPointCloudRequest.fromBuffer(value),
+        ($21.GetPointCloudResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$21.GetPropertiesRequest, $21.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.GetPropertiesRequest.fromBuffer(value),
-        ($20.GetPropertiesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $21.GetPropertiesRequest.fromBuffer(value),
+        ($21.GetPropertiesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -143,23 +143,23 @@ abstract class CameraServiceBase extends $grpc.Service {
         ($15.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$20.GetImageResponse> getImage_Pre($grpc.ServiceCall call, $async.Future<$20.GetImageRequest> request) async {
+  $async.Future<$21.GetImageResponse> getImage_Pre($grpc.ServiceCall call, $async.Future<$21.GetImageRequest> request) async {
     return getImage(call, await request);
   }
 
-  $async.Future<$20.GetImagesResponse> getImages_Pre($grpc.ServiceCall call, $async.Future<$20.GetImagesRequest> request) async {
+  $async.Future<$21.GetImagesResponse> getImages_Pre($grpc.ServiceCall call, $async.Future<$21.GetImagesRequest> request) async {
     return getImages(call, await request);
   }
 
-  $async.Future<$17.HttpBody> renderFrame_Pre($grpc.ServiceCall call, $async.Future<$20.RenderFrameRequest> request) async {
+  $async.Future<$17.HttpBody> renderFrame_Pre($grpc.ServiceCall call, $async.Future<$21.RenderFrameRequest> request) async {
     return renderFrame(call, await request);
   }
 
-  $async.Future<$20.GetPointCloudResponse> getPointCloud_Pre($grpc.ServiceCall call, $async.Future<$20.GetPointCloudRequest> request) async {
+  $async.Future<$21.GetPointCloudResponse> getPointCloud_Pre($grpc.ServiceCall call, $async.Future<$21.GetPointCloudRequest> request) async {
     return getPointCloud(call, await request);
   }
 
-  $async.Future<$20.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$20.GetPropertiesRequest> request) async {
+  $async.Future<$21.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$21.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
@@ -171,11 +171,11 @@ abstract class CameraServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$20.GetImageResponse> getImage($grpc.ServiceCall call, $20.GetImageRequest request);
-  $async.Future<$20.GetImagesResponse> getImages($grpc.ServiceCall call, $20.GetImagesRequest request);
-  $async.Future<$17.HttpBody> renderFrame($grpc.ServiceCall call, $20.RenderFrameRequest request);
-  $async.Future<$20.GetPointCloudResponse> getPointCloud($grpc.ServiceCall call, $20.GetPointCloudRequest request);
-  $async.Future<$20.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $20.GetPropertiesRequest request);
+  $async.Future<$21.GetImageResponse> getImage($grpc.ServiceCall call, $21.GetImageRequest request);
+  $async.Future<$21.GetImagesResponse> getImages($grpc.ServiceCall call, $21.GetImagesRequest request);
+  $async.Future<$17.HttpBody> renderFrame($grpc.ServiceCall call, $21.RenderFrameRequest request);
+  $async.Future<$21.GetPointCloudResponse> getPointCloud($grpc.ServiceCall call, $21.GetPointCloudRequest request);
+  $async.Future<$21.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $21.GetPropertiesRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
   $async.Future<$15.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $15.GetGeometriesRequest request);
 }

@@ -16,16 +16,16 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import 'data_manager.pb.dart' as $34;
+import 'data_manager.pb.dart' as $36;
 
 export 'data_manager.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.datamanager.v1.DataManagerService')
 class DataManagerServiceClient extends $grpc.Client {
-  static final _$sync = $grpc.ClientMethod<$34.SyncRequest, $34.SyncResponse>(
+  static final _$sync = $grpc.ClientMethod<$36.SyncRequest, $36.SyncResponse>(
       '/viam.service.datamanager.v1.DataManagerService/Sync',
-      ($34.SyncRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.SyncResponse.fromBuffer(value));
+      ($36.SyncRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.SyncResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.datamanager.v1.DataManagerService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -37,7 +37,7 @@ class DataManagerServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$34.SyncResponse> sync($34.SyncRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$36.SyncResponse> sync($36.SyncRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sync, request, options: options);
   }
 
@@ -51,13 +51,13 @@ abstract class DataManagerServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.datamanager.v1.DataManagerService';
 
   DataManagerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$34.SyncRequest, $34.SyncResponse>(
+    $addMethod($grpc.ServiceMethod<$36.SyncRequest, $36.SyncResponse>(
         'Sync',
         sync_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $34.SyncRequest.fromBuffer(value),
-        ($34.SyncResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $36.SyncRequest.fromBuffer(value),
+        ($36.SyncResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -67,7 +67,7 @@ abstract class DataManagerServiceBase extends $grpc.Service {
         ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$34.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$34.SyncRequest> request) async {
+  $async.Future<$36.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$36.SyncRequest> request) async {
     return sync(call, await request);
   }
 
@@ -75,6 +75,6 @@ abstract class DataManagerServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$34.SyncResponse> sync($grpc.ServiceCall call, $34.SyncRequest request);
+  $async.Future<$36.SyncResponse> sync($grpc.ServiceCall call, $36.SyncRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }
