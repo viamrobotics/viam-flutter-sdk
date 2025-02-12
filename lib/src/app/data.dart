@@ -297,7 +297,7 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, dynamic query) async {
+  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, dynamic query, {bool useRecentData = false}) async {
     List<Uint8List> binary;
     if (query is List<Map<String, dynamic>>) {
       binary = query.map((q) => BsonCodec.serialize(q).byteList).toList();
@@ -308,7 +308,8 @@ class DataClient {
     }
     final request = TabularDataByMQLRequest()
       ..organizationId = organizationId
-      ..mqlBinary.addAll(binary);
+      ..mqlBinary.addAll(binary)
+      ..useRecentData = useRecentData;
     final response = await _dataClient.tabularDataByMQL(request);
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
