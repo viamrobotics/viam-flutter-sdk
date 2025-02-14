@@ -15,32 +15,32 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'stream.pb.dart' as $42;
+import 'stream.pb.dart' as $44;
 
 export 'stream.pb.dart';
 
 @$pb.GrpcServiceName('proto.stream.v1.StreamService')
 class StreamServiceClient extends $grpc.Client {
-  static final _$listStreams = $grpc.ClientMethod<$42.ListStreamsRequest, $42.ListStreamsResponse>(
+  static final _$listStreams = $grpc.ClientMethod<$44.ListStreamsRequest, $44.ListStreamsResponse>(
       '/proto.stream.v1.StreamService/ListStreams',
-      ($42.ListStreamsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $42.ListStreamsResponse.fromBuffer(value));
-  static final _$addStream = $grpc.ClientMethod<$42.AddStreamRequest, $42.AddStreamResponse>(
+      ($44.ListStreamsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $44.ListStreamsResponse.fromBuffer(value));
+  static final _$addStream = $grpc.ClientMethod<$44.AddStreamRequest, $44.AddStreamResponse>(
       '/proto.stream.v1.StreamService/AddStream',
-      ($42.AddStreamRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $42.AddStreamResponse.fromBuffer(value));
-  static final _$getStreamOptions = $grpc.ClientMethod<$42.GetStreamOptionsRequest, $42.GetStreamOptionsResponse>(
+      ($44.AddStreamRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $44.AddStreamResponse.fromBuffer(value));
+  static final _$getStreamOptions = $grpc.ClientMethod<$44.GetStreamOptionsRequest, $44.GetStreamOptionsResponse>(
       '/proto.stream.v1.StreamService/GetStreamOptions',
-      ($42.GetStreamOptionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $42.GetStreamOptionsResponse.fromBuffer(value));
-  static final _$setStreamOptions = $grpc.ClientMethod<$42.SetStreamOptionsRequest, $42.SetStreamOptionsResponse>(
+      ($44.GetStreamOptionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $44.GetStreamOptionsResponse.fromBuffer(value));
+  static final _$setStreamOptions = $grpc.ClientMethod<$44.SetStreamOptionsRequest, $44.SetStreamOptionsResponse>(
       '/proto.stream.v1.StreamService/SetStreamOptions',
-      ($42.SetStreamOptionsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $42.SetStreamOptionsResponse.fromBuffer(value));
-  static final _$removeStream = $grpc.ClientMethod<$42.RemoveStreamRequest, $42.RemoveStreamResponse>(
+      ($44.SetStreamOptionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $44.SetStreamOptionsResponse.fromBuffer(value));
+  static final _$removeStream = $grpc.ClientMethod<$44.RemoveStreamRequest, $44.RemoveStreamResponse>(
       '/proto.stream.v1.StreamService/RemoveStream',
-      ($42.RemoveStreamRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $42.RemoveStreamResponse.fromBuffer(value));
+      ($44.RemoveStreamRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $44.RemoveStreamResponse.fromBuffer(value));
 
   StreamServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -48,23 +48,23 @@ class StreamServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$42.ListStreamsResponse> listStreams($42.ListStreamsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$44.ListStreamsResponse> listStreams($44.ListStreamsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStreams, request, options: options);
   }
 
-  $grpc.ResponseFuture<$42.AddStreamResponse> addStream($42.AddStreamRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$44.AddStreamResponse> addStream($44.AddStreamRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addStream, request, options: options);
   }
 
-  $grpc.ResponseFuture<$42.GetStreamOptionsResponse> getStreamOptions($42.GetStreamOptionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$44.GetStreamOptionsResponse> getStreamOptions($44.GetStreamOptionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getStreamOptions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$42.SetStreamOptionsResponse> setStreamOptions($42.SetStreamOptionsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$44.SetStreamOptionsResponse> setStreamOptions($44.SetStreamOptionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setStreamOptions, request, options: options);
   }
 
-  $grpc.ResponseFuture<$42.RemoveStreamResponse> removeStream($42.RemoveStreamRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$44.RemoveStreamResponse> removeStream($44.RemoveStreamRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeStream, request, options: options);
   }
 }
@@ -74,66 +74,66 @@ abstract class StreamServiceBase extends $grpc.Service {
   $core.String get $name => 'proto.stream.v1.StreamService';
 
   StreamServiceBase() {
-    $addMethod($grpc.ServiceMethod<$42.ListStreamsRequest, $42.ListStreamsResponse>(
+    $addMethod($grpc.ServiceMethod<$44.ListStreamsRequest, $44.ListStreamsResponse>(
         'ListStreams',
         listStreams_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $42.ListStreamsRequest.fromBuffer(value),
-        ($42.ListStreamsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$42.AddStreamRequest, $42.AddStreamResponse>(
+        ($core.List<$core.int> value) => $44.ListStreamsRequest.fromBuffer(value),
+        ($44.ListStreamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$44.AddStreamRequest, $44.AddStreamResponse>(
         'AddStream',
         addStream_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $42.AddStreamRequest.fromBuffer(value),
-        ($42.AddStreamResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$42.GetStreamOptionsRequest, $42.GetStreamOptionsResponse>(
+        ($core.List<$core.int> value) => $44.AddStreamRequest.fromBuffer(value),
+        ($44.AddStreamResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$44.GetStreamOptionsRequest, $44.GetStreamOptionsResponse>(
         'GetStreamOptions',
         getStreamOptions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $42.GetStreamOptionsRequest.fromBuffer(value),
-        ($42.GetStreamOptionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$42.SetStreamOptionsRequest, $42.SetStreamOptionsResponse>(
+        ($core.List<$core.int> value) => $44.GetStreamOptionsRequest.fromBuffer(value),
+        ($44.GetStreamOptionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$44.SetStreamOptionsRequest, $44.SetStreamOptionsResponse>(
         'SetStreamOptions',
         setStreamOptions_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $42.SetStreamOptionsRequest.fromBuffer(value),
-        ($42.SetStreamOptionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$42.RemoveStreamRequest, $42.RemoveStreamResponse>(
+        ($core.List<$core.int> value) => $44.SetStreamOptionsRequest.fromBuffer(value),
+        ($44.SetStreamOptionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$44.RemoveStreamRequest, $44.RemoveStreamResponse>(
         'RemoveStream',
         removeStream_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $42.RemoveStreamRequest.fromBuffer(value),
-        ($42.RemoveStreamResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $44.RemoveStreamRequest.fromBuffer(value),
+        ($44.RemoveStreamResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$42.ListStreamsResponse> listStreams_Pre($grpc.ServiceCall call, $async.Future<$42.ListStreamsRequest> request) async {
+  $async.Future<$44.ListStreamsResponse> listStreams_Pre($grpc.ServiceCall call, $async.Future<$44.ListStreamsRequest> request) async {
     return listStreams(call, await request);
   }
 
-  $async.Future<$42.AddStreamResponse> addStream_Pre($grpc.ServiceCall call, $async.Future<$42.AddStreamRequest> request) async {
+  $async.Future<$44.AddStreamResponse> addStream_Pre($grpc.ServiceCall call, $async.Future<$44.AddStreamRequest> request) async {
     return addStream(call, await request);
   }
 
-  $async.Future<$42.GetStreamOptionsResponse> getStreamOptions_Pre($grpc.ServiceCall call, $async.Future<$42.GetStreamOptionsRequest> request) async {
+  $async.Future<$44.GetStreamOptionsResponse> getStreamOptions_Pre($grpc.ServiceCall call, $async.Future<$44.GetStreamOptionsRequest> request) async {
     return getStreamOptions(call, await request);
   }
 
-  $async.Future<$42.SetStreamOptionsResponse> setStreamOptions_Pre($grpc.ServiceCall call, $async.Future<$42.SetStreamOptionsRequest> request) async {
+  $async.Future<$44.SetStreamOptionsResponse> setStreamOptions_Pre($grpc.ServiceCall call, $async.Future<$44.SetStreamOptionsRequest> request) async {
     return setStreamOptions(call, await request);
   }
 
-  $async.Future<$42.RemoveStreamResponse> removeStream_Pre($grpc.ServiceCall call, $async.Future<$42.RemoveStreamRequest> request) async {
+  $async.Future<$44.RemoveStreamResponse> removeStream_Pre($grpc.ServiceCall call, $async.Future<$44.RemoveStreamRequest> request) async {
     return removeStream(call, await request);
   }
 
-  $async.Future<$42.ListStreamsResponse> listStreams($grpc.ServiceCall call, $42.ListStreamsRequest request);
-  $async.Future<$42.AddStreamResponse> addStream($grpc.ServiceCall call, $42.AddStreamRequest request);
-  $async.Future<$42.GetStreamOptionsResponse> getStreamOptions($grpc.ServiceCall call, $42.GetStreamOptionsRequest request);
-  $async.Future<$42.SetStreamOptionsResponse> setStreamOptions($grpc.ServiceCall call, $42.SetStreamOptionsRequest request);
-  $async.Future<$42.RemoveStreamResponse> removeStream($grpc.ServiceCall call, $42.RemoveStreamRequest request);
+  $async.Future<$44.ListStreamsResponse> listStreams($grpc.ServiceCall call, $44.ListStreamsRequest request);
+  $async.Future<$44.AddStreamResponse> addStream($grpc.ServiceCall call, $44.AddStreamRequest request);
+  $async.Future<$44.GetStreamOptionsResponse> getStreamOptions($grpc.ServiceCall call, $44.GetStreamOptionsRequest request);
+  $async.Future<$44.SetStreamOptionsResponse> setStreamOptions($grpc.ServiceCall call, $44.SetStreamOptionsRequest request);
+  $async.Future<$44.RemoveStreamResponse> removeStream($grpc.ServiceCall call, $44.RemoveStreamRequest request);
 }

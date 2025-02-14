@@ -16,48 +16,48 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import 'navigation.pb.dart' as $37;
+import 'navigation.pb.dart' as $39;
 
 export 'navigation.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.navigation.v1.NavigationService')
 class NavigationServiceClient extends $grpc.Client {
-  static final _$getMode = $grpc.ClientMethod<$37.GetModeRequest, $37.GetModeResponse>(
+  static final _$getMode = $grpc.ClientMethod<$39.GetModeRequest, $39.GetModeResponse>(
       '/viam.service.navigation.v1.NavigationService/GetMode',
-      ($37.GetModeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetModeResponse.fromBuffer(value));
-  static final _$setMode = $grpc.ClientMethod<$37.SetModeRequest, $37.SetModeResponse>(
+      ($39.GetModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetModeResponse.fromBuffer(value));
+  static final _$setMode = $grpc.ClientMethod<$39.SetModeRequest, $39.SetModeResponse>(
       '/viam.service.navigation.v1.NavigationService/SetMode',
-      ($37.SetModeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.SetModeResponse.fromBuffer(value));
-  static final _$getLocation = $grpc.ClientMethod<$37.GetLocationRequest, $37.GetLocationResponse>(
+      ($39.SetModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.SetModeResponse.fromBuffer(value));
+  static final _$getLocation = $grpc.ClientMethod<$39.GetLocationRequest, $39.GetLocationResponse>(
       '/viam.service.navigation.v1.NavigationService/GetLocation',
-      ($37.GetLocationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetLocationResponse.fromBuffer(value));
-  static final _$getWaypoints = $grpc.ClientMethod<$37.GetWaypointsRequest, $37.GetWaypointsResponse>(
+      ($39.GetLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetLocationResponse.fromBuffer(value));
+  static final _$getWaypoints = $grpc.ClientMethod<$39.GetWaypointsRequest, $39.GetWaypointsResponse>(
       '/viam.service.navigation.v1.NavigationService/GetWaypoints',
-      ($37.GetWaypointsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetWaypointsResponse.fromBuffer(value));
-  static final _$addWaypoint = $grpc.ClientMethod<$37.AddWaypointRequest, $37.AddWaypointResponse>(
+      ($39.GetWaypointsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetWaypointsResponse.fromBuffer(value));
+  static final _$addWaypoint = $grpc.ClientMethod<$39.AddWaypointRequest, $39.AddWaypointResponse>(
       '/viam.service.navigation.v1.NavigationService/AddWaypoint',
-      ($37.AddWaypointRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.AddWaypointResponse.fromBuffer(value));
-  static final _$removeWaypoint = $grpc.ClientMethod<$37.RemoveWaypointRequest, $37.RemoveWaypointResponse>(
+      ($39.AddWaypointRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.AddWaypointResponse.fromBuffer(value));
+  static final _$removeWaypoint = $grpc.ClientMethod<$39.RemoveWaypointRequest, $39.RemoveWaypointResponse>(
       '/viam.service.navigation.v1.NavigationService/RemoveWaypoint',
-      ($37.RemoveWaypointRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.RemoveWaypointResponse.fromBuffer(value));
-  static final _$getObstacles = $grpc.ClientMethod<$37.GetObstaclesRequest, $37.GetObstaclesResponse>(
+      ($39.RemoveWaypointRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.RemoveWaypointResponse.fromBuffer(value));
+  static final _$getObstacles = $grpc.ClientMethod<$39.GetObstaclesRequest, $39.GetObstaclesResponse>(
       '/viam.service.navigation.v1.NavigationService/GetObstacles',
-      ($37.GetObstaclesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetObstaclesResponse.fromBuffer(value));
-  static final _$getPaths = $grpc.ClientMethod<$37.GetPathsRequest, $37.GetPathsResponse>(
+      ($39.GetObstaclesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetObstaclesResponse.fromBuffer(value));
+  static final _$getPaths = $grpc.ClientMethod<$39.GetPathsRequest, $39.GetPathsResponse>(
       '/viam.service.navigation.v1.NavigationService/GetPaths',
-      ($37.GetPathsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetPathsResponse.fromBuffer(value));
-  static final _$getProperties = $grpc.ClientMethod<$37.GetPropertiesRequest, $37.GetPropertiesResponse>(
+      ($39.GetPathsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetPathsResponse.fromBuffer(value));
+  static final _$getProperties = $grpc.ClientMethod<$39.GetPropertiesRequest, $39.GetPropertiesResponse>(
       '/viam.service.navigation.v1.NavigationService/GetProperties',
-      ($37.GetPropertiesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.GetPropertiesResponse.fromBuffer(value));
+      ($39.GetPropertiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetPropertiesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.service.navigation.v1.NavigationService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -69,39 +69,39 @@ class NavigationServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$37.GetModeResponse> getMode($37.GetModeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetModeResponse> getMode($39.GetModeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMode, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.SetModeResponse> setMode($37.SetModeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.SetModeResponse> setMode($39.SetModeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setMode, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetLocationResponse> getLocation($37.GetLocationRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetLocationResponse> getLocation($39.GetLocationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLocation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetWaypointsResponse> getWaypoints($37.GetWaypointsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetWaypointsResponse> getWaypoints($39.GetWaypointsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getWaypoints, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.AddWaypointResponse> addWaypoint($37.AddWaypointRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.AddWaypointResponse> addWaypoint($39.AddWaypointRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addWaypoint, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.RemoveWaypointResponse> removeWaypoint($37.RemoveWaypointRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.RemoveWaypointResponse> removeWaypoint($39.RemoveWaypointRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeWaypoint, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetObstaclesResponse> getObstacles($37.GetObstaclesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetObstaclesResponse> getObstacles($39.GetObstaclesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getObstacles, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetPathsResponse> getPaths($37.GetPathsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetPathsResponse> getPaths($39.GetPathsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPaths, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.GetPropertiesResponse> getProperties($37.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetPropertiesResponse> getProperties($39.GetPropertiesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getProperties, request, options: options);
   }
 
@@ -115,69 +115,69 @@ abstract class NavigationServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.navigation.v1.NavigationService';
 
   NavigationServiceBase() {
-    $addMethod($grpc.ServiceMethod<$37.GetModeRequest, $37.GetModeResponse>(
+    $addMethod($grpc.ServiceMethod<$39.GetModeRequest, $39.GetModeResponse>(
         'GetMode',
         getMode_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetModeRequest.fromBuffer(value),
-        ($37.GetModeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.SetModeRequest, $37.SetModeResponse>(
+        ($core.List<$core.int> value) => $39.GetModeRequest.fromBuffer(value),
+        ($39.GetModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.SetModeRequest, $39.SetModeResponse>(
         'SetMode',
         setMode_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.SetModeRequest.fromBuffer(value),
-        ($37.SetModeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetLocationRequest, $37.GetLocationResponse>(
+        ($core.List<$core.int> value) => $39.SetModeRequest.fromBuffer(value),
+        ($39.SetModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetLocationRequest, $39.GetLocationResponse>(
         'GetLocation',
         getLocation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetLocationRequest.fromBuffer(value),
-        ($37.GetLocationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetWaypointsRequest, $37.GetWaypointsResponse>(
+        ($core.List<$core.int> value) => $39.GetLocationRequest.fromBuffer(value),
+        ($39.GetLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetWaypointsRequest, $39.GetWaypointsResponse>(
         'GetWaypoints',
         getWaypoints_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetWaypointsRequest.fromBuffer(value),
-        ($37.GetWaypointsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.AddWaypointRequest, $37.AddWaypointResponse>(
+        ($core.List<$core.int> value) => $39.GetWaypointsRequest.fromBuffer(value),
+        ($39.GetWaypointsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.AddWaypointRequest, $39.AddWaypointResponse>(
         'AddWaypoint',
         addWaypoint_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.AddWaypointRequest.fromBuffer(value),
-        ($37.AddWaypointResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.RemoveWaypointRequest, $37.RemoveWaypointResponse>(
+        ($core.List<$core.int> value) => $39.AddWaypointRequest.fromBuffer(value),
+        ($39.AddWaypointResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.RemoveWaypointRequest, $39.RemoveWaypointResponse>(
         'RemoveWaypoint',
         removeWaypoint_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.RemoveWaypointRequest.fromBuffer(value),
-        ($37.RemoveWaypointResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetObstaclesRequest, $37.GetObstaclesResponse>(
+        ($core.List<$core.int> value) => $39.RemoveWaypointRequest.fromBuffer(value),
+        ($39.RemoveWaypointResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetObstaclesRequest, $39.GetObstaclesResponse>(
         'GetObstacles',
         getObstacles_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetObstaclesRequest.fromBuffer(value),
-        ($37.GetObstaclesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetPathsRequest, $37.GetPathsResponse>(
+        ($core.List<$core.int> value) => $39.GetObstaclesRequest.fromBuffer(value),
+        ($39.GetObstaclesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetPathsRequest, $39.GetPathsResponse>(
         'GetPaths',
         getPaths_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetPathsRequest.fromBuffer(value),
-        ($37.GetPathsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.GetPropertiesRequest, $37.GetPropertiesResponse>(
+        ($core.List<$core.int> value) => $39.GetPathsRequest.fromBuffer(value),
+        ($39.GetPathsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetPropertiesRequest, $39.GetPropertiesResponse>(
         'GetProperties',
         getProperties_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.GetPropertiesRequest.fromBuffer(value),
-        ($37.GetPropertiesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $39.GetPropertiesRequest.fromBuffer(value),
+        ($39.GetPropertiesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -187,39 +187,39 @@ abstract class NavigationServiceBase extends $grpc.Service {
         ($15.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$37.GetModeResponse> getMode_Pre($grpc.ServiceCall call, $async.Future<$37.GetModeRequest> request) async {
+  $async.Future<$39.GetModeResponse> getMode_Pre($grpc.ServiceCall call, $async.Future<$39.GetModeRequest> request) async {
     return getMode(call, await request);
   }
 
-  $async.Future<$37.SetModeResponse> setMode_Pre($grpc.ServiceCall call, $async.Future<$37.SetModeRequest> request) async {
+  $async.Future<$39.SetModeResponse> setMode_Pre($grpc.ServiceCall call, $async.Future<$39.SetModeRequest> request) async {
     return setMode(call, await request);
   }
 
-  $async.Future<$37.GetLocationResponse> getLocation_Pre($grpc.ServiceCall call, $async.Future<$37.GetLocationRequest> request) async {
+  $async.Future<$39.GetLocationResponse> getLocation_Pre($grpc.ServiceCall call, $async.Future<$39.GetLocationRequest> request) async {
     return getLocation(call, await request);
   }
 
-  $async.Future<$37.GetWaypointsResponse> getWaypoints_Pre($grpc.ServiceCall call, $async.Future<$37.GetWaypointsRequest> request) async {
+  $async.Future<$39.GetWaypointsResponse> getWaypoints_Pre($grpc.ServiceCall call, $async.Future<$39.GetWaypointsRequest> request) async {
     return getWaypoints(call, await request);
   }
 
-  $async.Future<$37.AddWaypointResponse> addWaypoint_Pre($grpc.ServiceCall call, $async.Future<$37.AddWaypointRequest> request) async {
+  $async.Future<$39.AddWaypointResponse> addWaypoint_Pre($grpc.ServiceCall call, $async.Future<$39.AddWaypointRequest> request) async {
     return addWaypoint(call, await request);
   }
 
-  $async.Future<$37.RemoveWaypointResponse> removeWaypoint_Pre($grpc.ServiceCall call, $async.Future<$37.RemoveWaypointRequest> request) async {
+  $async.Future<$39.RemoveWaypointResponse> removeWaypoint_Pre($grpc.ServiceCall call, $async.Future<$39.RemoveWaypointRequest> request) async {
     return removeWaypoint(call, await request);
   }
 
-  $async.Future<$37.GetObstaclesResponse> getObstacles_Pre($grpc.ServiceCall call, $async.Future<$37.GetObstaclesRequest> request) async {
+  $async.Future<$39.GetObstaclesResponse> getObstacles_Pre($grpc.ServiceCall call, $async.Future<$39.GetObstaclesRequest> request) async {
     return getObstacles(call, await request);
   }
 
-  $async.Future<$37.GetPathsResponse> getPaths_Pre($grpc.ServiceCall call, $async.Future<$37.GetPathsRequest> request) async {
+  $async.Future<$39.GetPathsResponse> getPaths_Pre($grpc.ServiceCall call, $async.Future<$39.GetPathsRequest> request) async {
     return getPaths(call, await request);
   }
 
-  $async.Future<$37.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$37.GetPropertiesRequest> request) async {
+  $async.Future<$39.GetPropertiesResponse> getProperties_Pre($grpc.ServiceCall call, $async.Future<$39.GetPropertiesRequest> request) async {
     return getProperties(call, await request);
   }
 
@@ -227,14 +227,14 @@ abstract class NavigationServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$37.GetModeResponse> getMode($grpc.ServiceCall call, $37.GetModeRequest request);
-  $async.Future<$37.SetModeResponse> setMode($grpc.ServiceCall call, $37.SetModeRequest request);
-  $async.Future<$37.GetLocationResponse> getLocation($grpc.ServiceCall call, $37.GetLocationRequest request);
-  $async.Future<$37.GetWaypointsResponse> getWaypoints($grpc.ServiceCall call, $37.GetWaypointsRequest request);
-  $async.Future<$37.AddWaypointResponse> addWaypoint($grpc.ServiceCall call, $37.AddWaypointRequest request);
-  $async.Future<$37.RemoveWaypointResponse> removeWaypoint($grpc.ServiceCall call, $37.RemoveWaypointRequest request);
-  $async.Future<$37.GetObstaclesResponse> getObstacles($grpc.ServiceCall call, $37.GetObstaclesRequest request);
-  $async.Future<$37.GetPathsResponse> getPaths($grpc.ServiceCall call, $37.GetPathsRequest request);
-  $async.Future<$37.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $37.GetPropertiesRequest request);
+  $async.Future<$39.GetModeResponse> getMode($grpc.ServiceCall call, $39.GetModeRequest request);
+  $async.Future<$39.SetModeResponse> setMode($grpc.ServiceCall call, $39.SetModeRequest request);
+  $async.Future<$39.GetLocationResponse> getLocation($grpc.ServiceCall call, $39.GetLocationRequest request);
+  $async.Future<$39.GetWaypointsResponse> getWaypoints($grpc.ServiceCall call, $39.GetWaypointsRequest request);
+  $async.Future<$39.AddWaypointResponse> addWaypoint($grpc.ServiceCall call, $39.AddWaypointRequest request);
+  $async.Future<$39.RemoveWaypointResponse> removeWaypoint($grpc.ServiceCall call, $39.RemoveWaypointRequest request);
+  $async.Future<$39.GetObstaclesResponse> getObstacles($grpc.ServiceCall call, $39.GetObstaclesRequest request);
+  $async.Future<$39.GetPathsResponse> getPaths($grpc.ServiceCall call, $39.GetPathsRequest request);
+  $async.Future<$39.GetPropertiesResponse> getProperties($grpc.ServiceCall call, $39.GetPropertiesRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
 }

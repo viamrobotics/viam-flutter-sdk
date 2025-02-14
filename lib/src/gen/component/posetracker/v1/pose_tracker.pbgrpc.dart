@@ -16,16 +16,16 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import 'pose_tracker.pb.dart' as $27;
+import 'pose_tracker.pb.dart' as $28;
 
 export 'pose_tracker.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.posetracker.v1.PoseTrackerService')
 class PoseTrackerServiceClient extends $grpc.Client {
-  static final _$getPoses = $grpc.ClientMethod<$27.GetPosesRequest, $27.GetPosesResponse>(
+  static final _$getPoses = $grpc.ClientMethod<$28.GetPosesRequest, $28.GetPosesResponse>(
       '/viam.component.posetracker.v1.PoseTrackerService/GetPoses',
-      ($27.GetPosesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $27.GetPosesResponse.fromBuffer(value));
+      ($28.GetPosesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $28.GetPosesResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
       '/viam.component.posetracker.v1.PoseTrackerService/DoCommand',
       ($15.DoCommandRequest value) => value.writeToBuffer(),
@@ -41,7 +41,7 @@ class PoseTrackerServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$27.GetPosesResponse> getPoses($27.GetPosesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$28.GetPosesResponse> getPoses($28.GetPosesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPoses, request, options: options);
   }
 
@@ -59,13 +59,13 @@ abstract class PoseTrackerServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.posetracker.v1.PoseTrackerService';
 
   PoseTrackerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$27.GetPosesRequest, $27.GetPosesResponse>(
+    $addMethod($grpc.ServiceMethod<$28.GetPosesRequest, $28.GetPosesResponse>(
         'GetPoses',
         getPoses_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $27.GetPosesRequest.fromBuffer(value),
-        ($27.GetPosesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $28.GetPosesRequest.fromBuffer(value),
+        ($28.GetPosesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -82,7 +82,7 @@ abstract class PoseTrackerServiceBase extends $grpc.Service {
         ($15.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$27.GetPosesResponse> getPoses_Pre($grpc.ServiceCall call, $async.Future<$27.GetPosesRequest> request) async {
+  $async.Future<$28.GetPosesResponse> getPoses_Pre($grpc.ServiceCall call, $async.Future<$28.GetPosesRequest> request) async {
     return getPoses(call, await request);
   }
 
@@ -94,7 +94,7 @@ abstract class PoseTrackerServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$27.GetPosesResponse> getPoses($grpc.ServiceCall call, $27.GetPosesRequest request);
+  $async.Future<$28.GetPosesResponse> getPoses($grpc.ServiceCall call, $28.GetPosesRequest request);
   $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
   $async.Future<$15.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $15.GetGeometriesRequest request);
 }

@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: service/datamanager/v1/data_manager.proto
+//  source: component/button/v1/button.proto
 //
 // @dart = 2.12
 
@@ -15,8 +15,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/struct.pb.dart' as $46;
 
-class SyncRequest extends $pb.GeneratedMessage {
-  factory SyncRequest({
+class PushRequest extends $pb.GeneratedMessage {
+  factory PushRequest({
     $core.String? name,
     $46.Struct? extra,
   }) {
@@ -29,11 +29,11 @@ class SyncRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  SyncRequest._() : super();
-  factory SyncRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PushRequest._() : super();
+  factory PushRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PushRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.button.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
@@ -43,22 +43,22 @@ class SyncRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SyncRequest clone() => SyncRequest()..mergeFromMessage(this);
+  PushRequest clone() => PushRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SyncRequest copyWith(void Function(SyncRequest) updates) => super.copyWith((message) => updates(message as SyncRequest)) as SyncRequest;
+  PushRequest copyWith(void Function(PushRequest) updates) => super.copyWith((message) => updates(message as PushRequest)) as PushRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SyncRequest create() => SyncRequest._();
-  SyncRequest createEmptyInstance() => create();
-  static $pb.PbList<SyncRequest> createRepeated() => $pb.PbList<SyncRequest>();
+  static PushRequest create() => PushRequest._();
+  PushRequest createEmptyInstance() => create();
+  static $pb.PbList<PushRequest> createRepeated() => $pb.PbList<PushRequest>();
   @$core.pragma('dart2js:noInline')
-  static SyncRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncRequest>(create);
-  static SyncRequest? _defaultInstance;
+  static PushRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushRequest>(create);
+  static PushRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -69,7 +69,6 @@ class SyncRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
-  /// Additional arguments to the method
   @$pb.TagNumber(99)
   $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
@@ -82,13 +81,13 @@ class SyncRequest extends $pb.GeneratedMessage {
   $46.Struct ensureExtra() => $_ensure(1);
 }
 
-class SyncResponse extends $pb.GeneratedMessage {
-  factory SyncResponse() => create();
-  SyncResponse._() : super();
-  factory SyncResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class PushResponse extends $pb.GeneratedMessage {
+  factory PushResponse() => create();
+  PushResponse._() : super();
+  factory PushResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PushResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.button.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -96,22 +95,22 @@ class SyncResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SyncResponse clone() => SyncResponse()..mergeFromMessage(this);
+  PushResponse clone() => PushResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SyncResponse copyWith(void Function(SyncResponse) updates) => super.copyWith((message) => updates(message as SyncResponse)) as SyncResponse;
+  PushResponse copyWith(void Function(PushResponse) updates) => super.copyWith((message) => updates(message as PushResponse)) as PushResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SyncResponse create() => SyncResponse._();
-  SyncResponse createEmptyInstance() => create();
-  static $pb.PbList<SyncResponse> createRepeated() => $pb.PbList<SyncResponse>();
+  static PushResponse create() => PushResponse._();
+  PushResponse createEmptyInstance() => create();
+  static $pb.PbList<PushResponse> createRepeated() => $pb.PbList<PushResponse>();
   @$core.pragma('dart2js:noInline')
-  static SyncResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncResponse>(create);
-  static SyncResponse? _defaultInstance;
+  static PushResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushResponse>(create);
+  static PushResponse? _defaultInstance;
 }
 
 

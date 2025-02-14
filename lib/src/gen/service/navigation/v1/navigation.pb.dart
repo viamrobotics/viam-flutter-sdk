@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $15;
-import '../../../google/protobuf/struct.pb.dart' as $44;
+import '../../../google/protobuf/struct.pb.dart' as $46;
 import 'navigation.pbenum.dart';
 
 export 'navigation.pbenum.dart';
@@ -22,7 +22,7 @@ export 'navigation.pbenum.dart';
 class GetModeRequest extends $pb.GeneratedMessage {
   factory GetModeRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -39,7 +39,7 @@ class GetModeRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetModeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -75,15 +75,15 @@ class GetModeRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetModeResponse extends $pb.GeneratedMessage {
@@ -140,7 +140,7 @@ class SetModeRequest extends $pb.GeneratedMessage {
   factory SetModeRequest({
     $core.String? name,
     Mode? mode,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -161,7 +161,7 @@ class SetModeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetModeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..e<Mode>(2, _omitFieldNames ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: Mode.MODE_UNSPECIFIED, valueOf: Mode.valueOf, enumValues: Mode.values)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -206,15 +206,15 @@ class SetModeRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class SetModeResponse extends $pb.GeneratedMessage {
@@ -318,7 +318,7 @@ class Waypoint extends $pb.GeneratedMessage {
 class GetLocationRequest extends $pb.GeneratedMessage {
   factory GetLocationRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -335,7 +335,7 @@ class GetLocationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -371,15 +371,15 @@ class GetLocationRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetLocationResponse extends $pb.GeneratedMessage {
@@ -453,7 +453,7 @@ class GetLocationResponse extends $pb.GeneratedMessage {
 class GetWaypointsRequest extends $pb.GeneratedMessage {
   factory GetWaypointsRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -470,7 +470,7 @@ class GetWaypointsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWaypointsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -506,15 +506,15 @@ class GetWaypointsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetWaypointsResponse extends $pb.GeneratedMessage {
@@ -565,7 +565,7 @@ class AddWaypointRequest extends $pb.GeneratedMessage {
   factory AddWaypointRequest({
     $core.String? name,
     $15.GeoPoint? location,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -586,7 +586,7 @@ class AddWaypointRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddWaypointRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$15.GeoPoint>(2, _omitFieldNames ? '' : 'location', subBuilder: $15.GeoPoint.create)
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -633,15 +633,15 @@ class AddWaypointRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class AddWaypointResponse extends $pb.GeneratedMessage {
@@ -680,7 +680,7 @@ class RemoveWaypointRequest extends $pb.GeneratedMessage {
   factory RemoveWaypointRequest({
     $core.String? name,
     $core.String? id,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -701,7 +701,7 @@ class RemoveWaypointRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveWaypointRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'id')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -746,15 +746,15 @@ class RemoveWaypointRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(2);
+  $46.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(2);
+  $46.Struct ensureExtra() => $_ensure(2);
 }
 
 class RemoveWaypointResponse extends $pb.GeneratedMessage {
@@ -796,7 +796,7 @@ class RemoveWaypointResponse extends $pb.GeneratedMessage {
 class GetObstaclesRequest extends $pb.GeneratedMessage {
   factory GetObstaclesRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -813,7 +813,7 @@ class GetObstaclesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetObstaclesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -849,15 +849,15 @@ class GetObstaclesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetObstaclesResponse extends $pb.GeneratedMessage {
@@ -972,7 +972,7 @@ class Path extends $pb.GeneratedMessage {
 class GetPathsRequest extends $pb.GeneratedMessage {
   factory GetPathsRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -989,7 +989,7 @@ class GetPathsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPathsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.navigation.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1025,15 +1025,15 @@ class GetPathsRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetPathsResponse extends $pb.GeneratedMessage {

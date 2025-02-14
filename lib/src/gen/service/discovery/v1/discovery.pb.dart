@@ -14,12 +14,12 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../app/v1/robot.pb.dart' as $13;
-import '../../../google/protobuf/struct.pb.dart' as $44;
+import '../../../google/protobuf/struct.pb.dart' as $46;
 
 class DiscoverResourcesRequest extends $pb.GeneratedMessage {
   factory DiscoverResourcesRequest({
     $core.String? name,
-    $44.Struct? extra,
+    $46.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -36,7 +36,7 @@ class DiscoverResourcesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DiscoverResourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.discovery.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$44.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $44.Struct.create)
+    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -73,15 +73,15 @@ class DiscoverResourcesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $44.Struct get extra => $_getN(1);
+  $46.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($44.Struct v) { setField(99, v); }
+  set extra($46.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $44.Struct ensureExtra() => $_ensure(1);
+  $46.Struct ensureExtra() => $_ensure(1);
 }
 
 class DiscoverResourcesResponse extends $pb.GeneratedMessage {
