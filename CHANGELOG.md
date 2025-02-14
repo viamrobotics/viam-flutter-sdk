@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.2.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.0) (2025-01-27)
+## [v0.2.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.1) (2025-02-03)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.1.0...v0.2.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.2.0...v0.2.1)
 
 **Merged pull requests:**
 
+- RSDK-9622 FIX: fix discoverResources input parameters  [\#335](https://github.com/viamrobotics/viam-flutter-sdk/pull/335) ([martha-johnston](https://github.com/martha-johnston))
+- v0.2.0 [\#334](https://github.com/viamrobotics/viam-flutter-sdk/pull/334) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#333](https://github.com/viamrobotics/viam-flutter-sdk/pull/333) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#332](https://github.com/viamrobotics/viam-flutter-sdk/pull/332) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-9636: Add deprecation warning with date the Discover Components will be deprecated to the flutter SDK [\#331](https://github.com/viamrobotics/viam-flutter-sdk/pull/331) ([martha-johnston](https://github.com/martha-johnston))
@@ -55,6 +57,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.2.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.0) (2025-01-27)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.1.0...v0.2.0)
 
 ## [v0.1.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.1.0) (2025-01-06)
 
