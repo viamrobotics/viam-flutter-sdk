@@ -66,34 +66,34 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">SLAMServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$40.GetPositionRequest, $40.GetPositionResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$42.GetPositionRequest, $42.GetPositionResponse&gt;(
       &#39;GetPosition&#39;,
       getPosition_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetPositionRequest.fromBuffer(value),
-      ($40.GetPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.GetPointCloudMapRequest, $40.GetPointCloudMapResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $42.GetPositionRequest.fromBuffer(value),
+      ($42.GetPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$42.GetPointCloudMapRequest, $42.GetPointCloudMapResponse&gt;(
       &#39;GetPointCloudMap&#39;,
       getPointCloudMap_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetPointCloudMapRequest.fromBuffer(value),
-      ($40.GetPointCloudMapResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.GetInternalStateRequest, $40.GetInternalStateResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $42.GetPointCloudMapRequest.fromBuffer(value),
+      ($42.GetPointCloudMapResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$42.GetInternalStateRequest, $42.GetInternalStateResponse&gt;(
       &#39;GetInternalState&#39;,
       getInternalState_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetInternalStateRequest.fromBuffer(value),
-      ($40.GetInternalStateResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$40.GetPropertiesRequest, $40.GetPropertiesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $42.GetInternalStateRequest.fromBuffer(value),
+      ($42.GetInternalStateResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$42.GetPropertiesRequest, $42.GetPropertiesResponse&gt;(
       &#39;GetProperties&#39;,
       getProperties_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $40.GetPropertiesRequest.fromBuffer(value),
-      ($40.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $42.GetPropertiesRequest.fromBuffer(value),
+      ($42.GetPropertiesResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$15.DoCommandRequest, $15.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

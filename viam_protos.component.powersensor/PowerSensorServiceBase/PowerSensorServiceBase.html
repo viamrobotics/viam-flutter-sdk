@@ -66,27 +66,27 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">PowerSensorServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$28.GetVoltageRequest, $28.GetVoltageResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$29.GetVoltageRequest, $29.GetVoltageResponse&gt;(
       &#39;GetVoltage&#39;,
       getVoltage_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $28.GetVoltageRequest.fromBuffer(value),
-      ($28.GetVoltageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$28.GetCurrentRequest, $28.GetCurrentResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $29.GetVoltageRequest.fromBuffer(value),
+      ($29.GetVoltageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$29.GetCurrentRequest, $29.GetCurrentResponse&gt;(
       &#39;GetCurrent&#39;,
       getCurrent_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $28.GetCurrentRequest.fromBuffer(value),
-      ($28.GetCurrentResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$28.GetPowerRequest, $28.GetPowerResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $29.GetCurrentRequest.fromBuffer(value),
+      ($29.GetCurrentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$29.GetPowerRequest, $29.GetPowerResponse&gt;(
       &#39;GetPower&#39;,
       getPower_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $28.GetPowerRequest.fromBuffer(value),
-      ($28.GetPowerResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $29.GetPowerRequest.fromBuffer(value),
+      ($29.GetPowerResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$15.GetReadingsRequest, $15.GetReadingsResponse&gt;(
       &#39;GetReadings&#39;,
       getReadings_Pre,

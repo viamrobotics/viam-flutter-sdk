@@ -59,6 +59,7 @@
       
       <span class="name ">GetFragmentRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
 <li><span class="parameter" id="-param-currentOrganizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">currentOrganizationId</span>, </span></li>
+<li><span class="parameter" id="-param-version"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">version</span>, </span></li>
 </ol>})
     </section>
     
@@ -70,6 +71,7 @@
   <pre class="language-dart"><code class="language-dart">factory GetFragmentRequest({
   $core.String? id,
   $core.String? currentOrganizationId,
+  $core.String? version,
 }) {
   final $result = create();
   if (id != null) {
@@ -77,6 +79,9 @@
   }
   if (currentOrganizationId != null) {
     $result.currentOrganizationId = currentOrganizationId;
+  }
+  if (version != null) {
+    $result.version = version;
   }
   return $result;
 }</code></pre>

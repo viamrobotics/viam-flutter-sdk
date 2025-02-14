@@ -69,6 +69,7 @@
 <li><span class="parameter" id="-param-onlyUsedByOwner"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">onlyUsedByOwner</span>, </span></li>
 <li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentVisibility-class.html">FragmentVisibility</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
 <li><span class="parameter" id="-param-lastUpdated"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastUpdated</span>, </span></li>
+<li><span class="parameter" id="-param-revision"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">revision</span>, </span></li>
 </ol>})
     </section>
     
@@ -80,16 +81,17 @@
   <pre class="language-dart"><code class="language-dart">factory Fragment({
   $core.String? id,
   $core.String? name,
-  $44.Struct? fragment,
+  $46.Struct? fragment,
   $core.String? organizationOwner,
   $core.bool? public,
-  $45.Timestamp? createdOn,
+  $47.Timestamp? createdOn,
   $core.String? organizationName,
   $core.int? robotPartCount,
   $core.int? organizationCount,
   $core.bool? onlyUsedByOwner,
   FragmentVisibility? visibility,
-  $45.Timestamp? lastUpdated,
+  $47.Timestamp? lastUpdated,
+  $core.String? revision,
 }) {
   final $result = create();
   if (id != null) {
@@ -127,6 +129,9 @@
   }
   if (lastUpdated != null) {
     $result.lastUpdated = lastUpdated;
+  }
+  if (revision != null) {
+    $result.revision = revision;
   }
   return $result;
 }</code></pre>

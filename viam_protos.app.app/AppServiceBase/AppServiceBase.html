@@ -535,6 +535,27 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $10.GetFragmentHistoryRequest.fromBuffer(value),
       ($10.GetFragmentHistoryResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.GetFragmentUsageRequest, $10.GetFragmentUsageResponse&gt;(
+      &#39;GetFragmentUsage&#39;,
+      getFragmentUsage_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetFragmentUsageRequest.fromBuffer(value),
+      ($10.GetFragmentUsageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.SetFragmentTagRequest, $10.SetFragmentTagResponse&gt;(
+      &#39;SetFragmentTag&#39;,
+      setFragmentTag_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.SetFragmentTagRequest.fromBuffer(value),
+      ($10.SetFragmentTagResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.DeleteFragmentTagRequest, $10.DeleteFragmentTagResponse&gt;(
+      &#39;DeleteFragmentTag&#39;,
+      deleteFragmentTag_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteFragmentTagRequest.fromBuffer(value),
+      ($10.DeleteFragmentTagResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$10.AddRoleRequest, $10.AddRoleResponse&gt;(
       &#39;AddRole&#39;,
       addRole_Pre,
