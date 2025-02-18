@@ -12,7 +12,7 @@ buf:
 	rm -rf lib/src/gen
 	$(eval API_VERSION := $(shell grep 'const String apiTag' lib/src/utils.dart | awk -F "'" '{print $$2}'))
 	buf generate buf.build/viamrobotics/goutils
-	buf generate buf.build/viamrobotics/api:v0.1.395
+	buf generate buf.build/viamrobotics/api:${API_VERSION}
 	buf generate buf.build/googleapis/googleapis
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/any.proto
 	buf generate buf.build/protocolbuffers/wellknowntypes --path google/protobuf/duration.proto
