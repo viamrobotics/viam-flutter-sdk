@@ -24,8 +24,8 @@ buf:
 	$(SED) 's/yield\* call(call, await request);/yield\* this\.call(call, await request);/g' ./lib/src/gen/proto/rpc/webrtc/v1/signaling.pbgrpc.dart
 	#similarly, there's a an issue where protoc generates types named `switch`, not recognizing
 	# that it's a reserved keyword
-	find . -type f -name '*.dart' -exec sed -i '' -e 's/viam_protos.component.switch/viam_protos.component.nswitch/g' {} \;
-	find . -type f -name '*.dart' -exec sed -i '' -e 's/\/src\/gen\/component\/switch/\/src\/gen\/component\/nswitch/g' {} \;
+	find . -type f -name '*.dart' -exec $(SED) -e 's/viam_protos.component.switch/viam_protos.component.nswitch/g' {} \;
+	find . -type f -name '*.dart' -exec $(SED) -e 's/\/src\/gen\/component\/switch/\/src\/gen\/component\/nswitch/g' {} \;
 	dart run tool/export_protos.dart
 
 setup:
