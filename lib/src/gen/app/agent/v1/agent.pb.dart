@@ -24,7 +24,9 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
   factory DeviceAgentConfigRequest({
     $core.String? id,
     HostInfo? hostInfo,
+  @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, $core.String>? subsystemVersions,
+    VersionInfo? versionInfo,
   }) {
     final $result = create();
     if (id != null) {
@@ -34,7 +36,11 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
       $result.hostInfo = hostInfo;
     }
     if (subsystemVersions != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.subsystemVersions.addAll(subsystemVersions);
+    }
+    if (versionInfo != null) {
+      $result.versionInfo = versionInfo;
     }
     return $result;
   }
@@ -46,6 +52,7 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<HostInfo>(2, _omitFieldNames ? '' : 'hostInfo', subBuilder: HostInfo.create)
     ..m<$core.String, $core.String>(3, _omitFieldNames ? '' : 'subsystemVersions', entryClassName: 'DeviceAgentConfigRequest.SubsystemVersionsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.agent.v1'))
+    ..aOM<VersionInfo>(4, _omitFieldNames ? '' : 'versionInfo', subBuilder: VersionInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -93,21 +100,61 @@ class DeviceAgentConfigRequest extends $pb.GeneratedMessage {
   HostInfo ensureHostInfo() => $_ensure(1);
 
   /// current subsystems and versions
+  /// DEPRECATED in favor of version_info
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.Map<$core.String, $core.String> get subsystemVersions => $_getMap(2);
+
+  /// Currently installed versions for agent and viam-server
+  @$pb.TagNumber(4)
+  VersionInfo get versionInfo => $_getN(3);
+  @$pb.TagNumber(4)
+  set versionInfo(VersionInfo v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasVersionInfo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVersionInfo() => clearField(4);
+  @$pb.TagNumber(4)
+  VersionInfo ensureVersionInfo() => $_ensure(3);
 }
 
 class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
   factory DeviceAgentConfigResponse({
+  @$core.Deprecated('This field is deprecated.')
     $core.Map<$core.String, DeviceSubsystemConfig>? subsystemConfigs,
     $45.Duration? checkInterval,
+    UpdateInfo? agentUpdateInfo,
+    UpdateInfo? viamServerUpdateInfo,
+    $46.Struct? advancedSettings,
+    $46.Struct? networkConfiguration,
+    $46.Struct? additionalNetworks,
+    $46.Struct? systemConfiguration,
   }) {
     final $result = create();
     if (subsystemConfigs != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.subsystemConfigs.addAll(subsystemConfigs);
     }
     if (checkInterval != null) {
       $result.checkInterval = checkInterval;
+    }
+    if (agentUpdateInfo != null) {
+      $result.agentUpdateInfo = agentUpdateInfo;
+    }
+    if (viamServerUpdateInfo != null) {
+      $result.viamServerUpdateInfo = viamServerUpdateInfo;
+    }
+    if (advancedSettings != null) {
+      $result.advancedSettings = advancedSettings;
+    }
+    if (networkConfiguration != null) {
+      $result.networkConfiguration = networkConfiguration;
+    }
+    if (additionalNetworks != null) {
+      $result.additionalNetworks = additionalNetworks;
+    }
+    if (systemConfiguration != null) {
+      $result.systemConfiguration = systemConfiguration;
     }
     return $result;
   }
@@ -118,6 +165,12 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceAgentConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
     ..m<$core.String, DeviceSubsystemConfig>(1, _omitFieldNames ? '' : 'subsystemConfigs', entryClassName: 'DeviceAgentConfigResponse.SubsystemConfigsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: DeviceSubsystemConfig.create, valueDefaultOrMaker: DeviceSubsystemConfig.getDefault, packageName: const $pb.PackageName('viam.app.agent.v1'))
     ..aOM<$45.Duration>(2, _omitFieldNames ? '' : 'checkInterval', subBuilder: $45.Duration.create)
+    ..aOM<UpdateInfo>(3, _omitFieldNames ? '' : 'agentUpdateInfo', subBuilder: UpdateInfo.create)
+    ..aOM<UpdateInfo>(4, _omitFieldNames ? '' : 'viamServerUpdateInfo', subBuilder: UpdateInfo.create)
+    ..aOM<$46.Struct>(5, _omitFieldNames ? '' : 'advancedSettings', subBuilder: $46.Struct.create)
+    ..aOM<$46.Struct>(6, _omitFieldNames ? '' : 'networkConfiguration', subBuilder: $46.Struct.create)
+    ..aOM<$46.Struct>(7, _omitFieldNames ? '' : 'additionalNetworks', subBuilder: $46.Struct.create)
+    ..aOM<$46.Struct>(8, _omitFieldNames ? '' : 'systemConfiguration', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -144,6 +197,8 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
 
   /// subsystems to be installed/configured/updated
   /// note: previously installed subsystems will be removed from the system if removed from this list
+  /// DEPRECATED in favor of indidivual update_info and settings fields
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.Map<$core.String, DeviceSubsystemConfig> get subsystemConfigs => $_getMap(0);
 
@@ -158,11 +213,80 @@ class DeviceAgentConfigResponse extends $pb.GeneratedMessage {
   void clearCheckInterval() => clearField(2);
   @$pb.TagNumber(2)
   $45.Duration ensureCheckInterval() => $_ensure(1);
+
+  /// update info for agent and viam-server, parsed/processed in App
+  @$pb.TagNumber(3)
+  UpdateInfo get agentUpdateInfo => $_getN(2);
+  @$pb.TagNumber(3)
+  set agentUpdateInfo(UpdateInfo v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAgentUpdateInfo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAgentUpdateInfo() => clearField(3);
+  @$pb.TagNumber(3)
+  UpdateInfo ensureAgentUpdateInfo() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  UpdateInfo get viamServerUpdateInfo => $_getN(3);
+  @$pb.TagNumber(4)
+  set viamServerUpdateInfo(UpdateInfo v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasViamServerUpdateInfo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearViamServerUpdateInfo() => clearField(4);
+  @$pb.TagNumber(4)
+  UpdateInfo ensureViamServerUpdateInfo() => $_ensure(3);
+
+  /// various settings that are passed directly to device Agent
+  @$pb.TagNumber(5)
+  $46.Struct get advancedSettings => $_getN(4);
+  @$pb.TagNumber(5)
+  set advancedSettings($46.Struct v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAdvancedSettings() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAdvancedSettings() => clearField(5);
+  @$pb.TagNumber(5)
+  $46.Struct ensureAdvancedSettings() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $46.Struct get networkConfiguration => $_getN(5);
+  @$pb.TagNumber(6)
+  set networkConfiguration($46.Struct v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasNetworkConfiguration() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNetworkConfiguration() => clearField(6);
+  @$pb.TagNumber(6)
+  $46.Struct ensureNetworkConfiguration() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $46.Struct get additionalNetworks => $_getN(6);
+  @$pb.TagNumber(7)
+  set additionalNetworks($46.Struct v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAdditionalNetworks() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAdditionalNetworks() => clearField(7);
+  @$pb.TagNumber(7)
+  $46.Struct ensureAdditionalNetworks() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $46.Struct get systemConfiguration => $_getN(7);
+  @$pb.TagNumber(8)
+  set systemConfiguration($46.Struct v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSystemConfiguration() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSystemConfiguration() => clearField(8);
+  @$pb.TagNumber(8)
+  $46.Struct ensureSystemConfiguration() => $_ensure(7);
 }
 
+/// DEPRECATED as of January 2025
 class DeviceSubsystemConfig extends $pb.GeneratedMessage {
   factory DeviceSubsystemConfig({
-    SubsystemUpdateInfo? updateInfo,
+    UpdateInfo? updateInfo,
     $core.bool? disable,
     $core.bool? forceRestart,
     $46.Struct? attributes,
@@ -187,7 +311,7 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
   factory DeviceSubsystemConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceSubsystemConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
-    ..aOM<SubsystemUpdateInfo>(1, _omitFieldNames ? '' : 'updateInfo', subBuilder: SubsystemUpdateInfo.create)
+    ..aOM<UpdateInfo>(1, _omitFieldNames ? '' : 'updateInfo', subBuilder: UpdateInfo.create)
     ..aOB(2, _omitFieldNames ? '' : 'disable')
     ..aOB(3, _omitFieldNames ? '' : 'forceRestart')
     ..aOM<$46.Struct>(4, _omitFieldNames ? '' : 'attributes', subBuilder: $46.Struct.create)
@@ -217,15 +341,15 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
 
   /// data needed to download/validate the subsystem
   @$pb.TagNumber(1)
-  SubsystemUpdateInfo get updateInfo => $_getN(0);
+  UpdateInfo get updateInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set updateInfo(SubsystemUpdateInfo v) { setField(1, v); }
+  set updateInfo(UpdateInfo v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUpdateInfo() => $_has(0);
   @$pb.TagNumber(1)
   void clearUpdateInfo() => clearField(1);
   @$pb.TagNumber(1)
-  SubsystemUpdateInfo ensureUpdateInfo() => $_ensure(0);
+  UpdateInfo ensureUpdateInfo() => $_ensure(0);
 
   /// if this subsystem is disabled and should not be started by the agent
   @$pb.TagNumber(2)
@@ -258,6 +382,102 @@ class DeviceSubsystemConfig extends $pb.GeneratedMessage {
   void clearAttributes() => clearField(4);
   @$pb.TagNumber(4)
   $46.Struct ensureAttributes() => $_ensure(3);
+}
+
+class VersionInfo extends $pb.GeneratedMessage {
+  factory VersionInfo({
+    $core.String? agentRunning,
+    $core.String? agentInstalled,
+    $core.String? viamServerRunning,
+    $core.String? viamServerInstalled,
+  }) {
+    final $result = create();
+    if (agentRunning != null) {
+      $result.agentRunning = agentRunning;
+    }
+    if (agentInstalled != null) {
+      $result.agentInstalled = agentInstalled;
+    }
+    if (viamServerRunning != null) {
+      $result.viamServerRunning = viamServerRunning;
+    }
+    if (viamServerInstalled != null) {
+      $result.viamServerInstalled = viamServerInstalled;
+    }
+    return $result;
+  }
+  VersionInfo._() : super();
+  factory VersionInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VersionInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VersionInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'agentRunning')
+    ..aOS(2, _omitFieldNames ? '' : 'agentInstalled')
+    ..aOS(3, _omitFieldNames ? '' : 'viamServerRunning')
+    ..aOS(4, _omitFieldNames ? '' : 'viamServerInstalled')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  VersionInfo clone() => VersionInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  VersionInfo copyWith(void Function(VersionInfo) updates) => super.copyWith((message) => updates(message as VersionInfo)) as VersionInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VersionInfo create() => VersionInfo._();
+  VersionInfo createEmptyInstance() => create();
+  static $pb.PbList<VersionInfo> createRepeated() => $pb.PbList<VersionInfo>();
+  @$core.pragma('dart2js:noInline')
+  static VersionInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VersionInfo>(create);
+  static VersionInfo? _defaultInstance;
+
+  /// the version of agent currently running and making the request
+  @$pb.TagNumber(1)
+  $core.String get agentRunning => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set agentRunning($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAgentRunning() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAgentRunning() => clearField(1);
+
+  /// the version of agent installed (will run after restart if different)
+  @$pb.TagNumber(2)
+  $core.String get agentInstalled => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set agentInstalled($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAgentInstalled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAgentInstalled() => clearField(2);
+
+  /// the version of viam-server currently running
+  @$pb.TagNumber(3)
+  $core.String get viamServerRunning => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set viamServerRunning($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasViamServerRunning() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearViamServerRunning() => clearField(3);
+
+  /// the version of viam-server installed (will run after restart if different)
+  @$pb.TagNumber(4)
+  $core.String get viamServerInstalled => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set viamServerInstalled($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasViamServerInstalled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearViamServerInstalled() => clearField(4);
 }
 
 class HostInfo extends $pb.GeneratedMessage {
@@ -336,8 +556,8 @@ class HostInfo extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(2);
 }
 
-class SubsystemUpdateInfo extends $pb.GeneratedMessage {
-  factory SubsystemUpdateInfo({
+class UpdateInfo extends $pb.GeneratedMessage {
+  factory UpdateInfo({
     $core.String? filename,
     $core.String? url,
     $core.String? version,
@@ -362,11 +582,11 @@ class SubsystemUpdateInfo extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  SubsystemUpdateInfo._() : super();
-  factory SubsystemUpdateInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SubsystemUpdateInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  UpdateInfo._() : super();
+  factory UpdateInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubsystemUpdateInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.agent.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'filename')
     ..aOS(2, _omitFieldNames ? '' : 'url')
     ..aOS(3, _omitFieldNames ? '' : 'version')
@@ -379,22 +599,22 @@ class SubsystemUpdateInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SubsystemUpdateInfo clone() => SubsystemUpdateInfo()..mergeFromMessage(this);
+  UpdateInfo clone() => UpdateInfo()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SubsystemUpdateInfo copyWith(void Function(SubsystemUpdateInfo) updates) => super.copyWith((message) => updates(message as SubsystemUpdateInfo)) as SubsystemUpdateInfo;
+  UpdateInfo copyWith(void Function(UpdateInfo) updates) => super.copyWith((message) => updates(message as UpdateInfo)) as UpdateInfo;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SubsystemUpdateInfo create() => SubsystemUpdateInfo._();
-  SubsystemUpdateInfo createEmptyInstance() => create();
-  static $pb.PbList<SubsystemUpdateInfo> createRepeated() => $pb.PbList<SubsystemUpdateInfo>();
+  static UpdateInfo create() => UpdateInfo._();
+  UpdateInfo createEmptyInstance() => create();
+  static $pb.PbList<UpdateInfo> createRepeated() => $pb.PbList<UpdateInfo>();
   @$core.pragma('dart2js:noInline')
-  static SubsystemUpdateInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubsystemUpdateInfo>(create);
-  static SubsystemUpdateInfo? _defaultInstance;
+  static UpdateInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateInfo>(create);
+  static UpdateInfo? _defaultInstance;
 
   /// unpacked filename as it is expected on disk (regardless of url)
   @$pb.TagNumber(1)
