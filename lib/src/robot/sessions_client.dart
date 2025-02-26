@@ -30,17 +30,6 @@ class SessionsClient implements ResourceRPCClient {
     '/viam.component.motor.v1.MotorService/SetRPM',
     '/viam.component.servo.v1.ServoService/Move',
   };
-  static const unallowedMethods = {
-    '/grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo',
-    '/proto.rpc.webrtc.v1.SignalingService/Call',
-    '/proto.rpc.webrtc.v1.SignalingService/CallUpdate',
-    '/proto.rpc.webrtc.v1.SignalingService/OptionalWebRTCConfig',
-    '/proto.rpc.v1.AuthService/Authenticate',
-    '/viam.robot.v1.RobotService/ResourceNames',
-    '/viam.robot.v1.RobotService/ResourceRPCSubtypes',
-    '/viam.robot.v1.RobotService/StartSession',
-    '/viam.robot.v1.RobotService/SendSessionHeartbeat',
-  };
 
   @override
   ClientChannelBase channel;
