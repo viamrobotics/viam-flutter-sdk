@@ -1216,6 +1216,7 @@ class NetworkConfig extends $pb.GeneratedMessage {
     $core.String? tlsCertFile,
     $core.String? tlsKeyFile,
     SessionsConfig? sessions,
+    $core.Iterable<TrafficTunnelEndpoint>? trafficTunnelEndpoints,
   }) {
     final $result = create();
     if (fqdn != null) {
@@ -1233,6 +1234,9 @@ class NetworkConfig extends $pb.GeneratedMessage {
     if (sessions != null) {
       $result.sessions = sessions;
     }
+    if (trafficTunnelEndpoints != null) {
+      $result.trafficTunnelEndpoints.addAll(trafficTunnelEndpoints);
+    }
     return $result;
   }
   NetworkConfig._() : super();
@@ -1245,6 +1249,7 @@ class NetworkConfig extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'tlsCertFile')
     ..aOS(4, _omitFieldNames ? '' : 'tlsKeyFile')
     ..aOM<SessionsConfig>(5, _omitFieldNames ? '' : 'sessions', subBuilder: SessionsConfig.create)
+    ..pc<TrafficTunnelEndpoint>(6, _omitFieldNames ? '' : 'trafficTunnelEndpoints', $pb.PbFieldType.PM, subBuilder: TrafficTunnelEndpoint.create)
     ..hasRequiredFields = false
   ;
 
@@ -1315,6 +1320,9 @@ class NetworkConfig extends $pb.GeneratedMessage {
   void clearSessions() => clearField(5);
   @$pb.TagNumber(5)
   SessionsConfig ensureSessions() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.List<TrafficTunnelEndpoint> get trafficTunnelEndpoints => $_getList(5);
 }
 
 class SessionsConfig extends $pb.GeneratedMessage {
@@ -1367,6 +1375,72 @@ class SessionsConfig extends $pb.GeneratedMessage {
   void clearHeartbeatWindow() => clearField(1);
   @$pb.TagNumber(1)
   $45.Duration ensureHeartbeatWindow() => $_ensure(0);
+}
+
+class TrafficTunnelEndpoint extends $pb.GeneratedMessage {
+  factory TrafficTunnelEndpoint({
+    $core.int? port,
+    $45.Duration? connectionTimeout,
+  }) {
+    final $result = create();
+    if (port != null) {
+      $result.port = port;
+    }
+    if (connectionTimeout != null) {
+      $result.connectionTimeout = connectionTimeout;
+    }
+    return $result;
+  }
+  TrafficTunnelEndpoint._() : super();
+  factory TrafficTunnelEndpoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TrafficTunnelEndpoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TrafficTunnelEndpoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'port', $pb.PbFieldType.O3)
+    ..aOM<$45.Duration>(2, _omitFieldNames ? '' : 'connectionTimeout', subBuilder: $45.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TrafficTunnelEndpoint clone() => TrafficTunnelEndpoint()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TrafficTunnelEndpoint copyWith(void Function(TrafficTunnelEndpoint) updates) => super.copyWith((message) => updates(message as TrafficTunnelEndpoint)) as TrafficTunnelEndpoint;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TrafficTunnelEndpoint create() => TrafficTunnelEndpoint._();
+  TrafficTunnelEndpoint createEmptyInstance() => create();
+  static $pb.PbList<TrafficTunnelEndpoint> createRepeated() => $pb.PbList<TrafficTunnelEndpoint>();
+  @$core.pragma('dart2js:noInline')
+  static TrafficTunnelEndpoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TrafficTunnelEndpoint>(create);
+  static TrafficTunnelEndpoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get port => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set port($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPort() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPort() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $45.Duration get connectionTimeout => $_getN(1);
+  @$pb.TagNumber(2)
+  set connectionTimeout($45.Duration v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasConnectionTimeout() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConnectionTimeout() => clearField(2);
+  @$pb.TagNumber(2)
+  $45.Duration ensureConnectionTimeout() => $_ensure(1);
 }
 
 class AuthConfig extends $pb.GeneratedMessage {

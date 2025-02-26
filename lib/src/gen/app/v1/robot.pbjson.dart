@@ -279,6 +279,7 @@ const NetworkConfig$json = {
     {'1': 'tls_cert_file', '3': 3, '4': 1, '5': 9, '10': 'tlsCertFile'},
     {'1': 'tls_key_file', '3': 4, '4': 1, '5': 9, '10': 'tlsKeyFile'},
     {'1': 'sessions', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.SessionsConfig', '10': 'sessions'},
+    {'1': 'traffic_tunnel_endpoints', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.TrafficTunnelEndpoint', '10': 'trafficTunnelEndpoints'},
   ],
 };
 
@@ -287,7 +288,9 @@ final $typed_data.Uint8List networkConfigDescriptor = $convert.base64Decode(
     'Cg1OZXR3b3JrQ29uZmlnEhIKBGZxZG4YASABKAlSBGZxZG4SIQoMYmluZF9hZGRyZXNzGAIgAS'
     'gJUgtiaW5kQWRkcmVzcxIiCg10bHNfY2VydF9maWxlGAMgASgJUgt0bHNDZXJ0RmlsZRIgCgx0'
     'bHNfa2V5X2ZpbGUYBCABKAlSCnRsc0tleUZpbGUSNwoIc2Vzc2lvbnMYBSABKAsyGy52aWFtLm'
-    'FwcC52MS5TZXNzaW9uc0NvbmZpZ1IIc2Vzc2lvbnM=');
+    'FwcC52MS5TZXNzaW9uc0NvbmZpZ1IIc2Vzc2lvbnMSXAoYdHJhZmZpY190dW5uZWxfZW5kcG9p'
+    'bnRzGAYgAygLMiIudmlhbS5hcHAudjEuVHJhZmZpY1R1bm5lbEVuZHBvaW50UhZ0cmFmZmljVH'
+    'VubmVsRW5kcG9pbnRz');
 
 @$core.Deprecated('Use sessionsConfigDescriptor instead')
 const SessionsConfig$json = {
@@ -301,6 +304,21 @@ const SessionsConfig$json = {
 final $typed_data.Uint8List sessionsConfigDescriptor = $convert.base64Decode(
     'Cg5TZXNzaW9uc0NvbmZpZxJEChBoZWFydGJlYXRfd2luZG93GAEgASgLMhkuZ29vZ2xlLnByb3'
     'RvYnVmLkR1cmF0aW9uUg9oZWFydGJlYXRXaW5kb3c=');
+
+@$core.Deprecated('Use trafficTunnelEndpointDescriptor instead')
+const TrafficTunnelEndpoint$json = {
+  '1': 'TrafficTunnelEndpoint',
+  '2': [
+    {'1': 'port', '3': 1, '4': 1, '5': 5, '10': 'port'},
+    {'1': 'connection_timeout', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'connectionTimeout'},
+  ],
+};
+
+/// Descriptor for `TrafficTunnelEndpoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List trafficTunnelEndpointDescriptor = $convert.base64Decode(
+    'ChVUcmFmZmljVHVubmVsRW5kcG9pbnQSEgoEcG9ydBgBIAEoBVIEcG9ydBJIChJjb25uZWN0aW'
+    '9uX3RpbWVvdXQYAiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SEWNvbm5lY3Rpb25U'
+    'aW1lb3V0');
 
 @$core.Deprecated('Use authConfigDescriptor instead')
 const AuthConfig$json = {

@@ -61,6 +61,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteOrganization',
       ($10.DeleteOrganizationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.DeleteOrganizationResponse.fromBuffer(value));
+  static final _$getOrganizationMetadata = $grpc.ClientMethod<$10.GetOrganizationMetadataRequest, $10.GetOrganizationMetadataResponse>(
+      '/viam.app.v1.AppService/GetOrganizationMetadata',
+      ($10.GetOrganizationMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.GetOrganizationMetadataResponse.fromBuffer(value));
+  static final _$updateOrganizationMetadata = $grpc.ClientMethod<$10.UpdateOrganizationMetadataRequest, $10.UpdateOrganizationMetadataResponse>(
+      '/viam.app.v1.AppService/UpdateOrganizationMetadata',
+      ($10.UpdateOrganizationMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.UpdateOrganizationMetadataResponse.fromBuffer(value));
   static final _$listOrganizationMembers = $grpc.ClientMethod<$10.ListOrganizationMembersRequest, $10.ListOrganizationMembersResponse>(
       '/viam.app.v1.AppService/ListOrganizationMembers',
       ($10.ListOrganizationMembersRequest value) => value.writeToBuffer(),
@@ -161,6 +169,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteLocation',
       ($10.DeleteLocationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.DeleteLocationResponse.fromBuffer(value));
+  static final _$getLocationMetadata = $grpc.ClientMethod<$10.GetLocationMetadataRequest, $10.GetLocationMetadataResponse>(
+      '/viam.app.v1.AppService/GetLocationMetadata',
+      ($10.GetLocationMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.GetLocationMetadataResponse.fromBuffer(value));
+  static final _$updateLocationMetadata = $grpc.ClientMethod<$10.UpdateLocationMetadataRequest, $10.UpdateLocationMetadataResponse>(
+      '/viam.app.v1.AppService/UpdateLocationMetadata',
+      ($10.UpdateLocationMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.UpdateLocationMetadataResponse.fromBuffer(value));
   static final _$listLocations = $grpc.ClientMethod<$10.ListLocationsRequest, $10.ListLocationsResponse>(
       '/viam.app.v1.AppService/ListLocations',
       ($10.ListLocationsRequest value) => value.writeToBuffer(),
@@ -189,6 +205,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/GetRobot',
       ($10.GetRobotRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.GetRobotResponse.fromBuffer(value));
+  static final _$getRobotMetadata = $grpc.ClientMethod<$10.GetRobotMetadataRequest, $10.GetRobotMetadataResponse>(
+      '/viam.app.v1.AppService/GetRobotMetadata',
+      ($10.GetRobotMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.GetRobotMetadataResponse.fromBuffer(value));
+  static final _$updateRobotMetadata = $grpc.ClientMethod<$10.UpdateRobotMetadataRequest, $10.UpdateRobotMetadataResponse>(
+      '/viam.app.v1.AppService/UpdateRobotMetadata',
+      ($10.UpdateRobotMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.UpdateRobotMetadataResponse.fromBuffer(value));
   static final _$getRoverRentalRobots = $grpc.ClientMethod<$10.GetRoverRentalRobotsRequest, $10.GetRoverRentalRobotsResponse>(
       '/viam.app.v1.AppService/GetRoverRentalRobots',
       ($10.GetRoverRentalRobotsRequest value) => value.writeToBuffer(),
@@ -225,6 +249,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteRobotPart',
       ($10.DeleteRobotPartRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.DeleteRobotPartResponse.fromBuffer(value));
+  static final _$getRobotPartMetadata = $grpc.ClientMethod<$10.GetRobotPartMetadataRequest, $10.GetRobotPartMetadataResponse>(
+      '/viam.app.v1.AppService/GetRobotPartMetadata',
+      ($10.GetRobotPartMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.GetRobotPartMetadataResponse.fromBuffer(value));
+  static final _$updateRobotPartMetadata = $grpc.ClientMethod<$10.UpdateRobotPartMetadataRequest, $10.UpdateRobotPartMetadataResponse>(
+      '/viam.app.v1.AppService/UpdateRobotPartMetadata',
+      ($10.UpdateRobotPartMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.UpdateRobotPartMetadataResponse.fromBuffer(value));
   static final _$getRobotAPIKeys = $grpc.ClientMethod<$10.GetRobotAPIKeysRequest, $10.GetRobotAPIKeysResponse>(
       '/viam.app.v1.AppService/GetRobotAPIKeys',
       ($10.GetRobotAPIKeysRequest value) => value.writeToBuffer(),
@@ -436,6 +468,14 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteOrganization, request, options: options);
   }
 
+  $grpc.ResponseFuture<$10.GetOrganizationMetadataResponse> getOrganizationMetadata($10.GetOrganizationMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOrganizationMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.UpdateOrganizationMetadataResponse> updateOrganizationMetadata($10.UpdateOrganizationMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateOrganizationMetadata, request, options: options);
+  }
+
   $grpc.ResponseFuture<$10.ListOrganizationMembersResponse> listOrganizationMembers($10.ListOrganizationMembersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listOrganizationMembers, request, options: options);
   }
@@ -536,6 +576,14 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteLocation, request, options: options);
   }
 
+  $grpc.ResponseFuture<$10.GetLocationMetadataResponse> getLocationMetadata($10.GetLocationMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getLocationMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.UpdateLocationMetadataResponse> updateLocationMetadata($10.UpdateLocationMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateLocationMetadata, request, options: options);
+  }
+
   $grpc.ResponseFuture<$10.ListLocationsResponse> listLocations($10.ListLocationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listLocations, request, options: options);
   }
@@ -562,6 +610,14 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$10.GetRobotResponse> getRobot($10.GetRobotRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobot, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.GetRobotMetadataResponse> getRobotMetadata($10.GetRobotMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getRobotMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.UpdateRobotMetadataResponse> updateRobotMetadata($10.UpdateRobotMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateRobotMetadata, request, options: options);
   }
 
   $grpc.ResponseFuture<$10.GetRoverRentalRobotsResponse> getRoverRentalRobots($10.GetRoverRentalRobotsRequest request, {$grpc.CallOptions? options}) {
@@ -598,6 +654,14 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$10.DeleteRobotPartResponse> deleteRobotPart($10.DeleteRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRobotPart, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.GetRobotPartMetadataResponse> getRobotPartMetadata($10.GetRobotPartMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getRobotPartMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.UpdateRobotPartMetadataResponse> updateRobotPartMetadata($10.UpdateRobotPartMetadataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateRobotPartMetadata, request, options: options);
   }
 
   $grpc.ResponseFuture<$10.GetRobotAPIKeysResponse> getRobotAPIKeys($10.GetRobotAPIKeysRequest request, {$grpc.CallOptions? options}) {
@@ -840,6 +904,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $10.DeleteOrganizationRequest.fromBuffer(value),
         ($10.DeleteOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.GetOrganizationMetadataRequest, $10.GetOrganizationMetadataResponse>(
+        'GetOrganizationMetadata',
+        getOrganizationMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.GetOrganizationMetadataRequest.fromBuffer(value),
+        ($10.GetOrganizationMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.UpdateOrganizationMetadataRequest, $10.UpdateOrganizationMetadataResponse>(
+        'UpdateOrganizationMetadata',
+        updateOrganizationMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.UpdateOrganizationMetadataRequest.fromBuffer(value),
+        ($10.UpdateOrganizationMetadataResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$10.ListOrganizationMembersRequest, $10.ListOrganizationMembersResponse>(
         'ListOrganizationMembers',
         listOrganizationMembers_Pre,
@@ -1015,6 +1093,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $10.DeleteLocationRequest.fromBuffer(value),
         ($10.DeleteLocationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.GetLocationMetadataRequest, $10.GetLocationMetadataResponse>(
+        'GetLocationMetadata',
+        getLocationMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.GetLocationMetadataRequest.fromBuffer(value),
+        ($10.GetLocationMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.UpdateLocationMetadataRequest, $10.UpdateLocationMetadataResponse>(
+        'UpdateLocationMetadata',
+        updateLocationMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.UpdateLocationMetadataRequest.fromBuffer(value),
+        ($10.UpdateLocationMetadataResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$10.ListLocationsRequest, $10.ListLocationsResponse>(
         'ListLocations',
         listLocations_Pre,
@@ -1064,6 +1156,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $10.GetRobotRequest.fromBuffer(value),
         ($10.GetRobotResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.GetRobotMetadataRequest, $10.GetRobotMetadataResponse>(
+        'GetRobotMetadata',
+        getRobotMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.GetRobotMetadataRequest.fromBuffer(value),
+        ($10.GetRobotMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.UpdateRobotMetadataRequest, $10.UpdateRobotMetadataResponse>(
+        'UpdateRobotMetadata',
+        updateRobotMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.UpdateRobotMetadataRequest.fromBuffer(value),
+        ($10.UpdateRobotMetadataResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$10.GetRoverRentalRobotsRequest, $10.GetRoverRentalRobotsResponse>(
         'GetRoverRentalRobots',
         getRoverRentalRobots_Pre,
@@ -1127,6 +1233,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $10.DeleteRobotPartRequest.fromBuffer(value),
         ($10.DeleteRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.GetRobotPartMetadataRequest, $10.GetRobotPartMetadataResponse>(
+        'GetRobotPartMetadata',
+        getRobotPartMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.GetRobotPartMetadataRequest.fromBuffer(value),
+        ($10.GetRobotPartMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.UpdateRobotPartMetadataRequest, $10.UpdateRobotPartMetadataResponse>(
+        'UpdateRobotPartMetadata',
+        updateRobotPartMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.UpdateRobotPartMetadataRequest.fromBuffer(value),
+        ($10.UpdateRobotPartMetadataResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$10.GetRobotAPIKeysRequest, $10.GetRobotAPIKeysResponse>(
         'GetRobotAPIKeys',
         getRobotAPIKeys_Pre,
@@ -1456,6 +1576,14 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteOrganization(call, await request);
   }
 
+  $async.Future<$10.GetOrganizationMetadataResponse> getOrganizationMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.GetOrganizationMetadataRequest> request) async {
+    return getOrganizationMetadata(call, await request);
+  }
+
+  $async.Future<$10.UpdateOrganizationMetadataResponse> updateOrganizationMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.UpdateOrganizationMetadataRequest> request) async {
+    return updateOrganizationMetadata(call, await request);
+  }
+
   $async.Future<$10.ListOrganizationMembersResponse> listOrganizationMembers_Pre($grpc.ServiceCall call, $async.Future<$10.ListOrganizationMembersRequest> request) async {
     return listOrganizationMembers(call, await request);
   }
@@ -1556,6 +1684,14 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteLocation(call, await request);
   }
 
+  $async.Future<$10.GetLocationMetadataResponse> getLocationMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.GetLocationMetadataRequest> request) async {
+    return getLocationMetadata(call, await request);
+  }
+
+  $async.Future<$10.UpdateLocationMetadataResponse> updateLocationMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.UpdateLocationMetadataRequest> request) async {
+    return updateLocationMetadata(call, await request);
+  }
+
   $async.Future<$10.ListLocationsResponse> listLocations_Pre($grpc.ServiceCall call, $async.Future<$10.ListLocationsRequest> request) async {
     return listLocations(call, await request);
   }
@@ -1582,6 +1718,14 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$10.GetRobotResponse> getRobot_Pre($grpc.ServiceCall call, $async.Future<$10.GetRobotRequest> request) async {
     return getRobot(call, await request);
+  }
+
+  $async.Future<$10.GetRobotMetadataResponse> getRobotMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.GetRobotMetadataRequest> request) async {
+    return getRobotMetadata(call, await request);
+  }
+
+  $async.Future<$10.UpdateRobotMetadataResponse> updateRobotMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.UpdateRobotMetadataRequest> request) async {
+    return updateRobotMetadata(call, await request);
   }
 
   $async.Future<$10.GetRoverRentalRobotsResponse> getRoverRentalRobots_Pre($grpc.ServiceCall call, $async.Future<$10.GetRoverRentalRobotsRequest> request) async {
@@ -1618,6 +1762,14 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$10.DeleteRobotPartResponse> deleteRobotPart_Pre($grpc.ServiceCall call, $async.Future<$10.DeleteRobotPartRequest> request) async {
     return deleteRobotPart(call, await request);
+  }
+
+  $async.Future<$10.GetRobotPartMetadataResponse> getRobotPartMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.GetRobotPartMetadataRequest> request) async {
+    return getRobotPartMetadata(call, await request);
+  }
+
+  $async.Future<$10.UpdateRobotPartMetadataResponse> updateRobotPartMetadata_Pre($grpc.ServiceCall call, $async.Future<$10.UpdateRobotPartMetadataRequest> request) async {
+    return updateRobotPartMetadata(call, await request);
   }
 
   $async.Future<$10.GetRobotAPIKeysResponse> getRobotAPIKeys_Pre($grpc.ServiceCall call, $async.Future<$10.GetRobotAPIKeysRequest> request) async {
@@ -1790,6 +1942,8 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$10.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $10.GetOrganizationNamespaceAvailabilityRequest request);
   $async.Future<$10.UpdateOrganizationResponse> updateOrganization($grpc.ServiceCall call, $10.UpdateOrganizationRequest request);
   $async.Future<$10.DeleteOrganizationResponse> deleteOrganization($grpc.ServiceCall call, $10.DeleteOrganizationRequest request);
+  $async.Future<$10.GetOrganizationMetadataResponse> getOrganizationMetadata($grpc.ServiceCall call, $10.GetOrganizationMetadataRequest request);
+  $async.Future<$10.UpdateOrganizationMetadataResponse> updateOrganizationMetadata($grpc.ServiceCall call, $10.UpdateOrganizationMetadataRequest request);
   $async.Future<$10.ListOrganizationMembersResponse> listOrganizationMembers($grpc.ServiceCall call, $10.ListOrganizationMembersRequest request);
   $async.Future<$10.CreateOrganizationInviteResponse> createOrganizationInvite($grpc.ServiceCall call, $10.CreateOrganizationInviteRequest request);
   $async.Future<$10.UpdateOrganizationInviteAuthorizationsResponse> updateOrganizationInviteAuthorizations($grpc.ServiceCall call, $10.UpdateOrganizationInviteAuthorizationsRequest request);
@@ -1815,6 +1969,8 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$10.GetLocationResponse> getLocation($grpc.ServiceCall call, $10.GetLocationRequest request);
   $async.Future<$10.UpdateLocationResponse> updateLocation($grpc.ServiceCall call, $10.UpdateLocationRequest request);
   $async.Future<$10.DeleteLocationResponse> deleteLocation($grpc.ServiceCall call, $10.DeleteLocationRequest request);
+  $async.Future<$10.GetLocationMetadataResponse> getLocationMetadata($grpc.ServiceCall call, $10.GetLocationMetadataRequest request);
+  $async.Future<$10.UpdateLocationMetadataResponse> updateLocationMetadata($grpc.ServiceCall call, $10.UpdateLocationMetadataRequest request);
   $async.Future<$10.ListLocationsResponse> listLocations($grpc.ServiceCall call, $10.ListLocationsRequest request);
   $async.Future<$10.ShareLocationResponse> shareLocation($grpc.ServiceCall call, $10.ShareLocationRequest request);
   $async.Future<$10.UnshareLocationResponse> unshareLocation($grpc.ServiceCall call, $10.UnshareLocationRequest request);
@@ -1822,6 +1978,8 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$10.CreateLocationSecretResponse> createLocationSecret($grpc.ServiceCall call, $10.CreateLocationSecretRequest request);
   $async.Future<$10.DeleteLocationSecretResponse> deleteLocationSecret($grpc.ServiceCall call, $10.DeleteLocationSecretRequest request);
   $async.Future<$10.GetRobotResponse> getRobot($grpc.ServiceCall call, $10.GetRobotRequest request);
+  $async.Future<$10.GetRobotMetadataResponse> getRobotMetadata($grpc.ServiceCall call, $10.GetRobotMetadataRequest request);
+  $async.Future<$10.UpdateRobotMetadataResponse> updateRobotMetadata($grpc.ServiceCall call, $10.UpdateRobotMetadataRequest request);
   $async.Future<$10.GetRoverRentalRobotsResponse> getRoverRentalRobots($grpc.ServiceCall call, $10.GetRoverRentalRobotsRequest request);
   $async.Future<$10.GetRobotPartsResponse> getRobotParts($grpc.ServiceCall call, $10.GetRobotPartsRequest request);
   $async.Future<$10.GetRobotPartResponse> getRobotPart($grpc.ServiceCall call, $10.GetRobotPartRequest request);
@@ -1831,6 +1989,8 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$10.UpdateRobotPartResponse> updateRobotPart($grpc.ServiceCall call, $10.UpdateRobotPartRequest request);
   $async.Future<$10.NewRobotPartResponse> newRobotPart($grpc.ServiceCall call, $10.NewRobotPartRequest request);
   $async.Future<$10.DeleteRobotPartResponse> deleteRobotPart($grpc.ServiceCall call, $10.DeleteRobotPartRequest request);
+  $async.Future<$10.GetRobotPartMetadataResponse> getRobotPartMetadata($grpc.ServiceCall call, $10.GetRobotPartMetadataRequest request);
+  $async.Future<$10.UpdateRobotPartMetadataResponse> updateRobotPartMetadata($grpc.ServiceCall call, $10.UpdateRobotPartMetadataRequest request);
   $async.Future<$10.GetRobotAPIKeysResponse> getRobotAPIKeys($grpc.ServiceCall call, $10.GetRobotAPIKeysRequest request);
   $async.Future<$10.MarkPartAsMainResponse> markPartAsMain($grpc.ServiceCall call, $10.MarkPartAsMainRequest request);
   $async.Future<$10.MarkPartForRestartResponse> markPartForRestart($grpc.ServiceCall call, $10.MarkPartForRestartRequest request);
