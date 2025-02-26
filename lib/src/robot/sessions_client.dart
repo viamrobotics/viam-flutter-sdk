@@ -13,6 +13,23 @@ final _logger = Logger();
 /// and supports stopping actuating components when it's not.
 class SessionsClient implements ResourceRPCClient {
   static const sessionMetadataKey = 'viam-sid';
+  static const heartbeatMonitoredMethods = {
+    '/viam.component.arm.v1.ArmService/MoveToPosition',
+    '/viam.component.arm.v1.ArmService/MoveToJointPositions',
+    '/viam.component.arm.v1.ArmService/MoveThroughJointPositions',
+    '/viam.component.base.v1.BaseService/MoveStraight',
+    '/viam.component.base.v1.BaseService/Spin',
+    '/viam.component.base.v1.BaseService/SetPower',
+    '/viam.component.base.v1.BaseService/SetVelocity',
+    '/viam.component.gantry.v1.GantryService/MoveToPosition',
+    '/viam.component.gripper.v1.GripperService/Open',
+    '/viam.component.gripper.v1.GripperService/Grab',
+    '/viam.component.motor.v1.MotorService/SetPower',
+    '/viam.component.motor.v1.MotorService/GoFor',
+    '/viam.component.motor.v1.MotorService/GoTo',
+    '/viam.component.motor.v1.MotorService/SetRPM',
+    '/viam.component.servo.v1.ServoService/Move',
+  };
   static const unallowedMethods = {
     '/grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo',
     '/proto.rpc.webrtc.v1.SignalingService/Call',
