@@ -29,7 +29,7 @@ class WebRtcClientChannel extends ClientChannelBase {
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
-    if (!SessionsClient.unallowedMethods.contains(method.path) || SessionsClient.heartbeatMonitoredMethods.contains(method.path)) {
+    if (SessionsClient.heartbeatMonitoredMethods.contains(method.path)) {
       final sessionMetadata = _sessionId();
       if (sessionMetadata.isNotEmpty) {
         options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: sessionMetadata}));
