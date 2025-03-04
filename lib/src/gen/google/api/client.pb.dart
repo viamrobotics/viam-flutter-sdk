@@ -738,6 +738,7 @@ class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
   factory PythonSettings_ExperimentalFeatures({
     $core.bool? restAsyncIoEnabled,
     $core.bool? protobufPythonicTypesEnabled,
+    $core.bool? unversionedPackageDisabled,
   }) {
     final $result = create();
     if (restAsyncIoEnabled != null) {
@@ -745,6 +746,9 @@ class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
     }
     if (protobufPythonicTypesEnabled != null) {
       $result.protobufPythonicTypesEnabled = protobufPythonicTypesEnabled;
+    }
+    if (unversionedPackageDisabled != null) {
+      $result.unversionedPackageDisabled = unversionedPackageDisabled;
     }
     return $result;
   }
@@ -755,6 +759,7 @@ class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PythonSettings.ExperimentalFeatures', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.api'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'restAsyncIoEnabled')
     ..aOB(2, _omitFieldNames ? '' : 'protobufPythonicTypesEnabled')
+    ..aOB(3, _omitFieldNames ? '' : 'unversionedPackageDisabled')
     ..hasRequiredFields = false
   ;
 
@@ -804,6 +809,19 @@ class PythonSettings_ExperimentalFeatures extends $pb.GeneratedMessage {
   $core.bool hasProtobufPythonicTypesEnabled() => $_has(1);
   @$pb.TagNumber(2)
   void clearProtobufPythonicTypesEnabled() => clearField(2);
+
+  /// Disables generation of an unversioned Python package for this client
+  /// library. This means that the module names will need to be versioned in
+  /// import statements. For example `import google.cloud.library_v2` instead
+  /// of `import google.cloud.library`.
+  @$pb.TagNumber(3)
+  $core.bool get unversionedPackageDisabled => $_getBF(2);
+  @$pb.TagNumber(3)
+  set unversionedPackageDisabled($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUnversionedPackageDisabled() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUnversionedPackageDisabled() => clearField(3);
 }
 
 /// Settings for Python client libraries.

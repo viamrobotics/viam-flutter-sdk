@@ -37,7 +37,16 @@ const DeviceAgentConfigRequest$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'host_info', '3': 2, '4': 1, '5': 11, '6': '.viam.app.agent.v1.HostInfo', '10': 'hostInfo'},
-    {'1': 'subsystem_versions', '3': 3, '4': 3, '5': 11, '6': '.viam.app.agent.v1.DeviceAgentConfigRequest.SubsystemVersionsEntry', '10': 'subsystemVersions'},
+    {
+      '1': 'subsystem_versions',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.viam.app.agent.v1.DeviceAgentConfigRequest.SubsystemVersionsEntry',
+      '8': {'3': true},
+      '10': 'subsystemVersions',
+    },
+    {'1': 'version_info', '3': 4, '4': 1, '5': 11, '6': '.viam.app.agent.v1.VersionInfo', '10': 'versionInfo'},
   ],
   '3': [DeviceAgentConfigRequest_SubsystemVersionsEntry$json],
 };
@@ -55,18 +64,33 @@ const DeviceAgentConfigRequest_SubsystemVersionsEntry$json = {
 /// Descriptor for `DeviceAgentConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceAgentConfigRequestDescriptor = $convert.base64Decode(
     'ChhEZXZpY2VBZ2VudENvbmZpZ1JlcXVlc3QSDgoCaWQYASABKAlSAmlkEjgKCWhvc3RfaW5mbx'
-    'gCIAEoCzIbLnZpYW0uYXBwLmFnZW50LnYxLkhvc3RJbmZvUghob3N0SW5mbxJxChJzdWJzeXN0'
+    'gCIAEoCzIbLnZpYW0uYXBwLmFnZW50LnYxLkhvc3RJbmZvUghob3N0SW5mbxJ1ChJzdWJzeXN0'
     'ZW1fdmVyc2lvbnMYAyADKAsyQi52aWFtLmFwcC5hZ2VudC52MS5EZXZpY2VBZ2VudENvbmZpZ1'
-    'JlcXVlc3QuU3Vic3lzdGVtVmVyc2lvbnNFbnRyeVIRc3Vic3lzdGVtVmVyc2lvbnMaRAoWU3Vi'
-    'c3lzdGVtVmVyc2lvbnNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdm'
-    'FsdWU6AjgB');
+    'JlcXVlc3QuU3Vic3lzdGVtVmVyc2lvbnNFbnRyeUICGAFSEXN1YnN5c3RlbVZlcnNpb25zEkEK'
+    'DHZlcnNpb25faW5mbxgEIAEoCzIeLnZpYW0uYXBwLmFnZW50LnYxLlZlcnNpb25JbmZvUgt2ZX'
+    'JzaW9uSW5mbxpEChZTdWJzeXN0ZW1WZXJzaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQK'
+    'BXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use deviceAgentConfigResponseDescriptor instead')
 const DeviceAgentConfigResponse$json = {
   '1': 'DeviceAgentConfigResponse',
   '2': [
-    {'1': 'subsystem_configs', '3': 1, '4': 3, '5': 11, '6': '.viam.app.agent.v1.DeviceAgentConfigResponse.SubsystemConfigsEntry', '10': 'subsystemConfigs'},
+    {
+      '1': 'subsystem_configs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.viam.app.agent.v1.DeviceAgentConfigResponse.SubsystemConfigsEntry',
+      '8': {'3': true},
+      '10': 'subsystemConfigs',
+    },
     {'1': 'check_interval', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'checkInterval'},
+    {'1': 'agent_update_info', '3': 3, '4': 1, '5': 11, '6': '.viam.app.agent.v1.UpdateInfo', '10': 'agentUpdateInfo'},
+    {'1': 'viam_server_update_info', '3': 4, '4': 1, '5': 11, '6': '.viam.app.agent.v1.UpdateInfo', '10': 'viamServerUpdateInfo'},
+    {'1': 'advanced_settings', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'advancedSettings'},
+    {'1': 'network_configuration', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'networkConfiguration'},
+    {'1': 'additional_networks', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'additionalNetworks'},
+    {'1': 'system_configuration', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'systemConfiguration'},
   ],
   '3': [DeviceAgentConfigResponse_SubsystemConfigsEntry$json],
 };
@@ -83,30 +107,58 @@ const DeviceAgentConfigResponse_SubsystemConfigsEntry$json = {
 
 /// Descriptor for `DeviceAgentConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceAgentConfigResponseDescriptor = $convert.base64Decode(
-    'ChlEZXZpY2VBZ2VudENvbmZpZ1Jlc3BvbnNlEm8KEXN1YnN5c3RlbV9jb25maWdzGAEgAygLMk'
+    'ChlEZXZpY2VBZ2VudENvbmZpZ1Jlc3BvbnNlEnMKEXN1YnN5c3RlbV9jb25maWdzGAEgAygLMk'
     'IudmlhbS5hcHAuYWdlbnQudjEuRGV2aWNlQWdlbnRDb25maWdSZXNwb25zZS5TdWJzeXN0ZW1D'
-    'b25maWdzRW50cnlSEHN1YnN5c3RlbUNvbmZpZ3MSQAoOY2hlY2tfaW50ZXJ2YWwYAiABKAsyGS'
-    '5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SDWNoZWNrSW50ZXJ2YWwabQoVU3Vic3lzdGVtQ29u'
-    'Zmlnc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5Ej4KBXZhbHVlGAIgASgLMigudmlhbS5hcHAuYW'
-    'dlbnQudjEuRGV2aWNlU3Vic3lzdGVtQ29uZmlnUgV2YWx1ZToCOAE=');
+    'b25maWdzRW50cnlCAhgBUhBzdWJzeXN0ZW1Db25maWdzEkAKDmNoZWNrX2ludGVydmFsGAIgAS'
+    'gLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUg1jaGVja0ludGVydmFsEkkKEWFnZW50X3Vw'
+    'ZGF0ZV9pbmZvGAMgASgLMh0udmlhbS5hcHAuYWdlbnQudjEuVXBkYXRlSW5mb1IPYWdlbnRVcG'
+    'RhdGVJbmZvElQKF3ZpYW1fc2VydmVyX3VwZGF0ZV9pbmZvGAQgASgLMh0udmlhbS5hcHAuYWdl'
+    'bnQudjEuVXBkYXRlSW5mb1IUdmlhbVNlcnZlclVwZGF0ZUluZm8SRAoRYWR2YW5jZWRfc2V0dG'
+    'luZ3MYBSABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UhBhZHZhbmNlZFNldHRpbmdzEkwK'
+    'FW5ldHdvcmtfY29uZmlndXJhdGlvbhgGIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSFG'
+    '5ldHdvcmtDb25maWd1cmF0aW9uEkgKE2FkZGl0aW9uYWxfbmV0d29ya3MYByABKAsyFy5nb29n'
+    'bGUucHJvdG9idWYuU3RydWN0UhJhZGRpdGlvbmFsTmV0d29ya3MSSgoUc3lzdGVtX2NvbmZpZ3'
+    'VyYXRpb24YCCABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UhNzeXN0ZW1Db25maWd1cmF0'
+    'aW9uGm0KFVN1YnN5c3RlbUNvbmZpZ3NFbnRyeRIQCgNrZXkYASABKAlSA2tleRI+CgV2YWx1ZR'
+    'gCIAEoCzIoLnZpYW0uYXBwLmFnZW50LnYxLkRldmljZVN1YnN5c3RlbUNvbmZpZ1IFdmFsdWU6'
+    'AjgB');
 
 @$core.Deprecated('Use deviceSubsystemConfigDescriptor instead')
 const DeviceSubsystemConfig$json = {
   '1': 'DeviceSubsystemConfig',
   '2': [
-    {'1': 'update_info', '3': 1, '4': 1, '5': 11, '6': '.viam.app.agent.v1.SubsystemUpdateInfo', '10': 'updateInfo'},
+    {'1': 'update_info', '3': 1, '4': 1, '5': 11, '6': '.viam.app.agent.v1.UpdateInfo', '10': 'updateInfo'},
     {'1': 'disable', '3': 2, '4': 1, '5': 8, '10': 'disable'},
     {'1': 'force_restart', '3': 3, '4': 1, '5': 8, '10': 'forceRestart'},
     {'1': 'attributes', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'attributes'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `DeviceSubsystemConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceSubsystemConfigDescriptor = $convert.base64Decode(
-    'ChVEZXZpY2VTdWJzeXN0ZW1Db25maWcSRwoLdXBkYXRlX2luZm8YASABKAsyJi52aWFtLmFwcC'
-    '5hZ2VudC52MS5TdWJzeXN0ZW1VcGRhdGVJbmZvUgp1cGRhdGVJbmZvEhgKB2Rpc2FibGUYAiAB'
-    'KAhSB2Rpc2FibGUSIwoNZm9yY2VfcmVzdGFydBgDIAEoCFIMZm9yY2VSZXN0YXJ0EjcKCmF0dH'
-    'JpYnV0ZXMYBCABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgphdHRyaWJ1dGVz');
+    'ChVEZXZpY2VTdWJzeXN0ZW1Db25maWcSPgoLdXBkYXRlX2luZm8YASABKAsyHS52aWFtLmFwcC'
+    '5hZ2VudC52MS5VcGRhdGVJbmZvUgp1cGRhdGVJbmZvEhgKB2Rpc2FibGUYAiABKAhSB2Rpc2Fi'
+    'bGUSIwoNZm9yY2VfcmVzdGFydBgDIAEoCFIMZm9yY2VSZXN0YXJ0EjcKCmF0dHJpYnV0ZXMYBC'
+    'ABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgphdHRyaWJ1dGVzOgIYAQ==');
+
+@$core.Deprecated('Use versionInfoDescriptor instead')
+const VersionInfo$json = {
+  '1': 'VersionInfo',
+  '2': [
+    {'1': 'agent_running', '3': 1, '4': 1, '5': 9, '10': 'agentRunning'},
+    {'1': 'agent_installed', '3': 2, '4': 1, '5': 9, '10': 'agentInstalled'},
+    {'1': 'viam_server_running', '3': 3, '4': 1, '5': 9, '10': 'viamServerRunning'},
+    {'1': 'viam_server_installed', '3': 4, '4': 1, '5': 9, '10': 'viamServerInstalled'},
+  ],
+};
+
+/// Descriptor for `VersionInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List versionInfoDescriptor = $convert.base64Decode(
+    'CgtWZXJzaW9uSW5mbxIjCg1hZ2VudF9ydW5uaW5nGAEgASgJUgxhZ2VudFJ1bm5pbmcSJwoPYW'
+    'dlbnRfaW5zdGFsbGVkGAIgASgJUg5hZ2VudEluc3RhbGxlZBIuChN2aWFtX3NlcnZlcl9ydW5u'
+    'aW5nGAMgASgJUhF2aWFtU2VydmVyUnVubmluZxIyChV2aWFtX3NlcnZlcl9pbnN0YWxsZWQYBC'
+    'ABKAlSE3ZpYW1TZXJ2ZXJJbnN0YWxsZWQ=');
 
 @$core.Deprecated('Use hostInfoDescriptor instead')
 const HostInfo$json = {
@@ -123,9 +175,9 @@ final $typed_data.Uint8List hostInfoDescriptor = $convert.base64Decode(
     'CghIb3N0SW5mbxIaCghwbGF0Zm9ybRgBIAEoCVIIcGxhdGZvcm0SFgoGZGlzdHJvGAIgASgJUg'
     'ZkaXN0cm8SEgoEdGFncxgDIAMoCVIEdGFncw==');
 
-@$core.Deprecated('Use subsystemUpdateInfoDescriptor instead')
-const SubsystemUpdateInfo$json = {
-  '1': 'SubsystemUpdateInfo',
+@$core.Deprecated('Use updateInfoDescriptor instead')
+const UpdateInfo$json = {
+  '1': 'UpdateInfo',
   '2': [
     {'1': 'filename', '3': 1, '4': 1, '5': 9, '10': 'filename'},
     {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
@@ -135,10 +187,10 @@ const SubsystemUpdateInfo$json = {
   ],
 };
 
-/// Descriptor for `SubsystemUpdateInfo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List subsystemUpdateInfoDescriptor = $convert.base64Decode(
-    'ChNTdWJzeXN0ZW1VcGRhdGVJbmZvEhoKCGZpbGVuYW1lGAEgASgJUghmaWxlbmFtZRIQCgN1cm'
-    'wYAiABKAlSA3VybBIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEhYKBnNoYTI1NhgEIAEoDFIG'
-    'c2hhMjU2EjgKBmZvcm1hdBgFIAEoDjIgLnZpYW0uYXBwLmFnZW50LnYxLlBhY2thZ2VGb3JtYX'
-    'RSBmZvcm1hdA==');
+/// Descriptor for `UpdateInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateInfoDescriptor = $convert.base64Decode(
+    'CgpVcGRhdGVJbmZvEhoKCGZpbGVuYW1lGAEgASgJUghmaWxlbmFtZRIQCgN1cmwYAiABKAlSA3'
+    'VybBIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEhYKBnNoYTI1NhgEIAEoDFIGc2hhMjU2EjgK'
+    'BmZvcm1hdBgFIAEoDjIgLnZpYW0uYXBwLmFnZW50LnYxLlBhY2thZ2VGb3JtYXRSBmZvcm1hdA'
+    '==');
 

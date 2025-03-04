@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../common/v1/common.pb.dart' as $15;
+import '../../google/protobuf/any.pb.dart' as $48;
 import '../../google/protobuf/struct.pb.dart' as $46;
 import '../../google/protobuf/timestamp.pb.dart' as $47;
 import '../mltraining/v1/ml_training.pbenum.dart' as $8;
@@ -1499,6 +1500,190 @@ class DeleteOrganizationResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteOrganizationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteOrganizationResponse>(create);
   static DeleteOrganizationResponse? _defaultInstance;
+}
+
+class GetOrganizationMetadataRequest extends $pb.GeneratedMessage {
+  factory GetOrganizationMetadataRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
+  GetOrganizationMetadataRequest._() : super();
+  factory GetOrganizationMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOrganizationMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetOrganizationMetadataRequest clone() => GetOrganizationMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetOrganizationMetadataRequest copyWith(void Function(GetOrganizationMetadataRequest) updates) => super.copyWith((message) => updates(message as GetOrganizationMetadataRequest)) as GetOrganizationMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationMetadataRequest create() => GetOrganizationMetadataRequest._();
+  GetOrganizationMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetOrganizationMetadataRequest> createRepeated() => $pb.PbList<GetOrganizationMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrganizationMetadataRequest>(create);
+  static GetOrganizationMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+}
+
+class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
+  factory GetOrganizationMetadataResponse({
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  GetOrganizationMetadataResponse._() : super();
+  factory GetOrganizationMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOrganizationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetOrganizationMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetOrganizationMetadataResponse clone() => GetOrganizationMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetOrganizationMetadataResponse copyWith(void Function(GetOrganizationMetadataResponse) updates) => super.copyWith((message) => updates(message as GetOrganizationMetadataResponse)) as GetOrganizationMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationMetadataResponse create() => GetOrganizationMetadataResponse._();
+  GetOrganizationMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetOrganizationMetadataResponse> createRepeated() => $pb.PbList<GetOrganizationMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetOrganizationMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrganizationMetadataResponse>(create);
+  static GetOrganizationMetadataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+}
+
+class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
+  factory UpdateOrganizationMetadataRequest({
+    $core.String? organizationId,
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  UpdateOrganizationMetadataRequest._() : super();
+  factory UpdateOrganizationMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateOrganizationMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationMetadataRequest clone() => UpdateOrganizationMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationMetadataRequest copyWith(void Function(UpdateOrganizationMetadataRequest) updates) => super.copyWith((message) => updates(message as UpdateOrganizationMetadataRequest)) as UpdateOrganizationMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationMetadataRequest create() => UpdateOrganizationMetadataRequest._();
+  UpdateOrganizationMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationMetadataRequest> createRepeated() => $pb.PbList<UpdateOrganizationMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationMetadataRequest>(create);
+  static UpdateOrganizationMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+}
+
+class UpdateOrganizationMetadataResponse extends $pb.GeneratedMessage {
+  factory UpdateOrganizationMetadataResponse() => create();
+  UpdateOrganizationMetadataResponse._() : super();
+  factory UpdateOrganizationMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationMetadataResponse clone() => UpdateOrganizationMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationMetadataResponse copyWith(void Function(UpdateOrganizationMetadataResponse) updates) => super.copyWith((message) => updates(message as UpdateOrganizationMetadataResponse)) as UpdateOrganizationMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationMetadataResponse create() => UpdateOrganizationMetadataResponse._();
+  UpdateOrganizationMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationMetadataResponse> createRepeated() => $pb.PbList<UpdateOrganizationMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationMetadataResponse>(create);
+  static UpdateOrganizationMetadataResponse? _defaultInstance;
 }
 
 class ListOrganizationMembersRequest extends $pb.GeneratedMessage {
@@ -3211,6 +3396,7 @@ class Location extends $pb.GeneratedMessage {
     $core.Iterable<LocationOrganization>? organizations,
     $core.int? robotCount,
     StorageConfig? config,
+    OrganizationIdentity? primaryOrgIdentity,
   }) {
     final $result = create();
     if (id != null) {
@@ -3237,6 +3423,9 @@ class Location extends $pb.GeneratedMessage {
     if (config != null) {
       $result.config = config;
     }
+    if (primaryOrgIdentity != null) {
+      $result.primaryOrgIdentity = primaryOrgIdentity;
+    }
     return $result;
   }
   Location._() : super();
@@ -3252,6 +3441,7 @@ class Location extends $pb.GeneratedMessage {
     ..pc<LocationOrganization>(6, _omitFieldNames ? '' : 'organizations', $pb.PbFieldType.PM, subBuilder: LocationOrganization.create)
     ..a<$core.int>(7, _omitFieldNames ? '' : 'robotCount', $pb.PbFieldType.O3)
     ..aOM<StorageConfig>(8, _omitFieldNames ? '' : 'config', subBuilder: StorageConfig.create)
+    ..aOM<OrganizationIdentity>(9, _omitFieldNames ? '' : 'primaryOrgIdentity', subBuilder: OrganizationIdentity.create)
     ..hasRequiredFields = false
   ;
 
@@ -3354,6 +3544,18 @@ class Location extends $pb.GeneratedMessage {
   void clearConfig() => clearField(8);
   @$pb.TagNumber(8)
   StorageConfig ensureConfig() => $_ensure(7);
+
+  /// The organization that is the primary owner of the location.
+  @$pb.TagNumber(9)
+  OrganizationIdentity get primaryOrgIdentity => $_getN(8);
+  @$pb.TagNumber(9)
+  set primaryOrgIdentity(OrganizationIdentity v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPrimaryOrgIdentity() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPrimaryOrgIdentity() => clearField(9);
+  @$pb.TagNumber(9)
+  OrganizationIdentity ensurePrimaryOrgIdentity() => $_ensure(8);
 }
 
 /// SharedSecret is a secret used for LocationAuth and RobotParts.
@@ -3923,6 +4125,190 @@ class DeleteLocationResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteLocationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteLocationResponse>(create);
   static DeleteLocationResponse? _defaultInstance;
+}
+
+class GetLocationMetadataRequest extends $pb.GeneratedMessage {
+  factory GetLocationMetadataRequest({
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
+  GetLocationMetadataRequest._() : super();
+  factory GetLocationMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLocationMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'locationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLocationMetadataRequest clone() => GetLocationMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLocationMetadataRequest copyWith(void Function(GetLocationMetadataRequest) updates) => super.copyWith((message) => updates(message as GetLocationMetadataRequest)) as GetLocationMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLocationMetadataRequest create() => GetLocationMetadataRequest._();
+  GetLocationMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLocationMetadataRequest> createRepeated() => $pb.PbList<GetLocationMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLocationMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLocationMetadataRequest>(create);
+  static GetLocationMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get locationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set locationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocationId() => clearField(1);
+}
+
+class GetLocationMetadataResponse extends $pb.GeneratedMessage {
+  factory GetLocationMetadataResponse({
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  GetLocationMetadataResponse._() : super();
+  factory GetLocationMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLocationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetLocationMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLocationMetadataResponse clone() => GetLocationMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLocationMetadataResponse copyWith(void Function(GetLocationMetadataResponse) updates) => super.copyWith((message) => updates(message as GetLocationMetadataResponse)) as GetLocationMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLocationMetadataResponse create() => GetLocationMetadataResponse._();
+  GetLocationMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLocationMetadataResponse> createRepeated() => $pb.PbList<GetLocationMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLocationMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLocationMetadataResponse>(create);
+  static GetLocationMetadataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+}
+
+class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
+  factory UpdateLocationMetadataRequest({
+    $core.String? locationId,
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  UpdateLocationMetadataRequest._() : super();
+  factory UpdateLocationMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLocationMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLocationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'locationId')
+    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateLocationMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLocationMetadataRequest clone() => UpdateLocationMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLocationMetadataRequest copyWith(void Function(UpdateLocationMetadataRequest) updates) => super.copyWith((message) => updates(message as UpdateLocationMetadataRequest)) as UpdateLocationMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationMetadataRequest create() => UpdateLocationMetadataRequest._();
+  UpdateLocationMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateLocationMetadataRequest> createRepeated() => $pb.PbList<UpdateLocationMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLocationMetadataRequest>(create);
+  static UpdateLocationMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get locationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set locationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+}
+
+class UpdateLocationMetadataResponse extends $pb.GeneratedMessage {
+  factory UpdateLocationMetadataResponse() => create();
+  UpdateLocationMetadataResponse._() : super();
+  factory UpdateLocationMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLocationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLocationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLocationMetadataResponse clone() => UpdateLocationMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLocationMetadataResponse copyWith(void Function(UpdateLocationMetadataResponse) updates) => super.copyWith((message) => updates(message as UpdateLocationMetadataResponse)) as UpdateLocationMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationMetadataResponse create() => UpdateLocationMetadataResponse._();
+  UpdateLocationMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateLocationMetadataResponse> createRepeated() => $pb.PbList<UpdateLocationMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLocationMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLocationMetadataResponse>(create);
+  static UpdateLocationMetadataResponse? _defaultInstance;
 }
 
 class GetOrganizationsWithAccessToLocationRequest extends $pb.GeneratedMessage {
@@ -5848,6 +6234,190 @@ class DeleteRobotPartRequest extends $pb.GeneratedMessage {
   void clearPartId() => clearField(1);
 }
 
+class GetRobotPartMetadataRequest extends $pb.GeneratedMessage {
+  factory GetRobotPartMetadataRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  GetRobotPartMetadataRequest._() : super();
+  factory GetRobotPartMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotPartMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotPartMetadataRequest clone() => GetRobotPartMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotPartMetadataRequest copyWith(void Function(GetRobotPartMetadataRequest) updates) => super.copyWith((message) => updates(message as GetRobotPartMetadataRequest)) as GetRobotPartMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartMetadataRequest create() => GetRobotPartMetadataRequest._();
+  GetRobotPartMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetRobotPartMetadataRequest> createRepeated() => $pb.PbList<GetRobotPartMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotPartMetadataRequest>(create);
+  static GetRobotPartMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
+  factory GetRobotPartMetadataResponse({
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  GetRobotPartMetadataResponse._() : super();
+  factory GetRobotPartMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotPartMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetRobotPartMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotPartMetadataResponse clone() => GetRobotPartMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotPartMetadataResponse copyWith(void Function(GetRobotPartMetadataResponse) updates) => super.copyWith((message) => updates(message as GetRobotPartMetadataResponse)) as GetRobotPartMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartMetadataResponse create() => GetRobotPartMetadataResponse._();
+  GetRobotPartMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetRobotPartMetadataResponse> createRepeated() => $pb.PbList<GetRobotPartMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotPartMetadataResponse>(create);
+  static GetRobotPartMetadataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+}
+
+class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
+  factory UpdateRobotPartMetadataRequest({
+    $core.String? id,
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  UpdateRobotPartMetadataRequest._() : super();
+  factory UpdateRobotPartMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateRobotPartMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotPartMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateRobotPartMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateRobotPartMetadataRequest clone() => UpdateRobotPartMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateRobotPartMetadataRequest copyWith(void Function(UpdateRobotPartMetadataRequest) updates) => super.copyWith((message) => updates(message as UpdateRobotPartMetadataRequest)) as UpdateRobotPartMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotPartMetadataRequest create() => UpdateRobotPartMetadataRequest._();
+  UpdateRobotPartMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateRobotPartMetadataRequest> createRepeated() => $pb.PbList<UpdateRobotPartMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotPartMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateRobotPartMetadataRequest>(create);
+  static UpdateRobotPartMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+}
+
+class UpdateRobotPartMetadataResponse extends $pb.GeneratedMessage {
+  factory UpdateRobotPartMetadataResponse() => create();
+  UpdateRobotPartMetadataResponse._() : super();
+  factory UpdateRobotPartMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateRobotPartMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotPartMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateRobotPartMetadataResponse clone() => UpdateRobotPartMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateRobotPartMetadataResponse copyWith(void Function(UpdateRobotPartMetadataResponse) updates) => super.copyWith((message) => updates(message as UpdateRobotPartMetadataResponse)) as UpdateRobotPartMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotPartMetadataResponse create() => UpdateRobotPartMetadataResponse._();
+  UpdateRobotPartMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateRobotPartMetadataResponse> createRepeated() => $pb.PbList<UpdateRobotPartMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotPartMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateRobotPartMetadataResponse>(create);
+  static UpdateRobotPartMetadataResponse? _defaultInstance;
+}
+
 class GetRobotAPIKeysRequest extends $pb.GeneratedMessage {
   factory GetRobotAPIKeysRequest({
     $core.String? robotId,
@@ -6745,6 +7315,7 @@ class ResolvedFragment extends $pb.GeneratedMessage {
     $core.String? fragmentId,
     $46.Struct? resolvedConfig,
     FragmentError? error,
+    $core.String? revision,
   }) {
     final $result = create();
     if (fragmentId != null) {
@@ -6756,6 +7327,9 @@ class ResolvedFragment extends $pb.GeneratedMessage {
     if (error != null) {
       $result.error = error;
     }
+    if (revision != null) {
+      $result.revision = revision;
+    }
     return $result;
   }
   ResolvedFragment._() : super();
@@ -6766,6 +7340,7 @@ class ResolvedFragment extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
     ..aOM<$46.Struct>(2, _omitFieldNames ? '' : 'resolvedConfig', subBuilder: $46.Struct.create)
     ..aOM<FragmentError>(3, _omitFieldNames ? '' : 'error', subBuilder: FragmentError.create)
+    ..aOS(4, _omitFieldNames ? '' : 'revision')
     ..hasRequiredFields = false
   ;
 
@@ -6820,6 +7395,15 @@ class ResolvedFragment extends $pb.GeneratedMessage {
   void clearError() => clearField(3);
   @$pb.TagNumber(3)
   FragmentError ensureError() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get revision => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revision($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevision() => clearField(4);
 }
 
 class ListFragmentsRequest extends $pb.GeneratedMessage {
@@ -8006,10 +8590,75 @@ class ListRobotsRequest extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(1);
 }
 
+class AdditionalFragment extends $pb.GeneratedMessage {
+  factory AdditionalFragment({
+    $core.String? fragmentId,
+    $core.String? version,
+  }) {
+    final $result = create();
+    if (fragmentId != null) {
+      $result.fragmentId = fragmentId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    return $result;
+  }
+  AdditionalFragment._() : super();
+  factory AdditionalFragment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AdditionalFragment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AdditionalFragment', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AdditionalFragment clone() => AdditionalFragment()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AdditionalFragment copyWith(void Function(AdditionalFragment) updates) => super.copyWith((message) => updates(message as AdditionalFragment)) as AdditionalFragment;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdditionalFragment create() => AdditionalFragment._();
+  AdditionalFragment createEmptyInstance() => create();
+  static $pb.PbList<AdditionalFragment> createRepeated() => $pb.PbList<AdditionalFragment>();
+  @$core.pragma('dart2js:noInline')
+  static AdditionalFragment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AdditionalFragment>(create);
+  static AdditionalFragment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fragmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fragmentId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFragmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFragmentId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+}
+
 class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
   factory ListMachineFragmentsRequest({
     $core.String? machineId,
     $core.Iterable<$core.String>? additionalFragmentIds,
+    $core.Iterable<AdditionalFragment>? additionalFragments,
   }) {
     final $result = create();
     if (machineId != null) {
@@ -8017,6 +8666,9 @@ class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
     }
     if (additionalFragmentIds != null) {
       $result.additionalFragmentIds.addAll(additionalFragmentIds);
+    }
+    if (additionalFragments != null) {
+      $result.additionalFragments.addAll(additionalFragments);
     }
     return $result;
   }
@@ -8027,6 +8679,7 @@ class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineFragmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'machineId')
     ..pPS(2, _omitFieldNames ? '' : 'additionalFragmentIds')
+    ..pc<AdditionalFragment>(3, _omitFieldNames ? '' : 'additionalFragments', $pb.PbFieldType.PM, subBuilder: AdditionalFragment.create)
     ..hasRequiredFields = false
   ;
 
@@ -8062,10 +8715,14 @@ class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMachineId() => clearField(1);
 
-  /// additional fragment_ids to append to the response. useful when needing to view fragments that will be
-  /// provisionally added to the machine alongside existing fragments.
+  /// TODO(APP-7642): Mark this field as deprecated
   @$pb.TagNumber(2)
   $core.List<$core.String> get additionalFragmentIds => $_getList(1);
+
+  /// additional fragments to append to the response. useful when needing to view fragments that will be
+  /// provisionally added to the machine alongside existing fragments.
+  @$pb.TagNumber(3)
+  $core.List<AdditionalFragment> get additionalFragments => $_getList(2);
 }
 
 class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
@@ -8488,6 +9145,190 @@ class DeleteRobotResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteRobotResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteRobotResponse>(create);
   static DeleteRobotResponse? _defaultInstance;
+}
+
+class GetRobotMetadataRequest extends $pb.GeneratedMessage {
+  factory GetRobotMetadataRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  GetRobotMetadataRequest._() : super();
+  factory GetRobotMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotMetadataRequest clone() => GetRobotMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotMetadataRequest copyWith(void Function(GetRobotMetadataRequest) updates) => super.copyWith((message) => updates(message as GetRobotMetadataRequest)) as GetRobotMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotMetadataRequest create() => GetRobotMetadataRequest._();
+  GetRobotMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetRobotMetadataRequest> createRepeated() => $pb.PbList<GetRobotMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotMetadataRequest>(create);
+  static GetRobotMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class GetRobotMetadataResponse extends $pb.GeneratedMessage {
+  factory GetRobotMetadataResponse({
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  GetRobotMetadataResponse._() : super();
+  factory GetRobotMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetRobotMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotMetadataResponse clone() => GetRobotMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotMetadataResponse copyWith(void Function(GetRobotMetadataResponse) updates) => super.copyWith((message) => updates(message as GetRobotMetadataResponse)) as GetRobotMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotMetadataResponse create() => GetRobotMetadataResponse._();
+  GetRobotMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetRobotMetadataResponse> createRepeated() => $pb.PbList<GetRobotMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotMetadataResponse>(create);
+  static GetRobotMetadataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+}
+
+class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
+  factory UpdateRobotMetadataRequest({
+    $core.String? id,
+    $core.Map<$core.String, $48.Any>? data,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
+  UpdateRobotMetadataRequest._() : super();
+  factory UpdateRobotMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateRobotMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateRobotMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateRobotMetadataRequest clone() => UpdateRobotMetadataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateRobotMetadataRequest copyWith(void Function(UpdateRobotMetadataRequest) updates) => super.copyWith((message) => updates(message as UpdateRobotMetadataRequest)) as UpdateRobotMetadataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotMetadataRequest create() => UpdateRobotMetadataRequest._();
+  UpdateRobotMetadataRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateRobotMetadataRequest> createRepeated() => $pb.PbList<UpdateRobotMetadataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateRobotMetadataRequest>(create);
+  static UpdateRobotMetadataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+}
+
+class UpdateRobotMetadataResponse extends $pb.GeneratedMessage {
+  factory UpdateRobotMetadataResponse() => create();
+  UpdateRobotMetadataResponse._() : super();
+  factory UpdateRobotMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateRobotMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateRobotMetadataResponse clone() => UpdateRobotMetadataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateRobotMetadataResponse copyWith(void Function(UpdateRobotMetadataResponse) updates) => super.copyWith((message) => updates(message as UpdateRobotMetadataResponse)) as UpdateRobotMetadataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotMetadataResponse create() => UpdateRobotMetadataResponse._();
+  UpdateRobotMetadataResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateRobotMetadataResponse> createRepeated() => $pb.PbList<UpdateRobotMetadataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRobotMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateRobotMetadataResponse>(create);
+  static UpdateRobotMetadataResponse? _defaultInstance;
 }
 
 class MarkPartAsMainRequest extends $pb.GeneratedMessage {

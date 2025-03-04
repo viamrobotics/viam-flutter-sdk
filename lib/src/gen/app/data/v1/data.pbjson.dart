@@ -467,6 +467,7 @@ const BinaryDataByIDsRequest$json = {
   '2': [
     {'1': 'include_binary', '3': 2, '4': 1, '5': 8, '10': 'includeBinary'},
     {'1': 'binary_ids', '3': 3, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
+    {'1': 'binary_data_ids', '3': 4, '4': 3, '5': 9, '10': 'binaryDataIds'},
   ],
   '9': [
     {'1': 1, '2': 2},
@@ -478,7 +479,8 @@ const BinaryDataByIDsRequest$json = {
 final $typed_data.Uint8List binaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'ChZCaW5hcnlEYXRhQnlJRHNSZXF1ZXN0EiUKDmluY2x1ZGVfYmluYXJ5GAIgASgIUg1pbmNsdW'
     'RlQmluYXJ5EjkKCmJpbmFyeV9pZHMYAyADKAsyGi52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlE'
-    'UgliaW5hcnlJZHNKBAgBEAJSCGZpbGVfaWRz');
+    'UgliaW5hcnlJZHMSJgoPYmluYXJ5X2RhdGFfaWRzGAQgAygJUg1iaW5hcnlEYXRhSWRzSgQIAR'
+    'ACUghmaWxlX2lkcw==');
 
 @$core.Deprecated('Use binaryDataByIDsResponseDescriptor instead')
 const BinaryDataByIDsResponse$json = {
@@ -564,6 +566,7 @@ const BinaryMetadata$json = {
     {'1': 'uri', '3': 7, '4': 1, '5': 9, '10': 'uri'},
     {'1': 'annotations', '3': 8, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
     {'1': 'dataset_ids', '3': 9, '4': 3, '5': 9, '10': 'datasetIds'},
+    {'1': 'binary_data_id', '3': 10, '4': 1, '5': 9, '10': 'binaryDataId'},
   ],
 };
 
@@ -576,7 +579,8 @@ final $typed_data.Uint8List binaryMetadataDescriptor = $convert.base64Decode(
     'ZXN0YW1wUgx0aW1lUmVjZWl2ZWQSGwoJZmlsZV9uYW1lGAUgASgJUghmaWxlTmFtZRIZCghmaW'
     'xlX2V4dBgGIAEoCVIHZmlsZUV4dBIQCgN1cmkYByABKAlSA3VyaRI/Cgthbm5vdGF0aW9ucxgI'
     'IAEoCzIdLnZpYW0uYXBwLmRhdGEudjEuQW5ub3RhdGlvbnNSC2Fubm90YXRpb25zEh8KC2RhdG'
-    'FzZXRfaWRzGAkgAygJUgpkYXRhc2V0SWRz');
+    'FzZXRfaWRzGAkgAygJUgpkYXRhc2V0SWRzEiQKDmJpbmFyeV9kYXRhX2lkGAogASgJUgxiaW5h'
+    'cnlEYXRhSWQ=');
 
 @$core.Deprecated('Use deleteTabularDataRequestDescriptor instead')
 const DeleteTabularDataRequest$json = {
@@ -643,6 +647,7 @@ const DeleteBinaryDataByIDsRequest$json = {
   '1': 'DeleteBinaryDataByIDsRequest',
   '2': [
     {'1': 'binary_ids', '3': 2, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
+    {'1': 'binary_data_ids', '3': 3, '4': 3, '5': 9, '10': 'binaryDataIds'},
   ],
   '9': [
     {'1': 1, '2': 2},
@@ -653,7 +658,8 @@ const DeleteBinaryDataByIDsRequest$json = {
 /// Descriptor for `DeleteBinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteBinaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'ChxEZWxldGVCaW5hcnlEYXRhQnlJRHNSZXF1ZXN0EjkKCmJpbmFyeV9pZHMYAiADKAsyGi52aW'
-    'FtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHNKBAgBEAJSCGZpbGVfaWRz');
+    'FtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSJgoPYmluYXJ5X2RhdGFfaWRzGAMg'
+    'AygJUg1iaW5hcnlEYXRhSWRzSgQIARACUghmaWxlX2lkcw==');
 
 @$core.Deprecated('Use deleteBinaryDataByIDsResponseDescriptor instead')
 const DeleteBinaryDataByIDsResponse$json = {
@@ -677,6 +683,7 @@ const AddTagsToBinaryDataByIDsRequest$json = {
   '1': 'AddTagsToBinaryDataByIDsRequest',
   '2': [
     {'1': 'binary_ids', '3': 3, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
+    {'1': 'binary_data_ids', '3': 4, '4': 3, '5': 9, '10': 'binaryDataIds'},
     {'1': 'tags', '3': 2, '4': 3, '5': 9, '10': 'tags'},
   ],
   '9': [
@@ -688,8 +695,9 @@ const AddTagsToBinaryDataByIDsRequest$json = {
 /// Descriptor for `AddTagsToBinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addTagsToBinaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'Ch9BZGRUYWdzVG9CaW5hcnlEYXRhQnlJRHNSZXF1ZXN0EjkKCmJpbmFyeV9pZHMYAyADKAsyGi'
-    '52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSEgoEdGFncxgCIAMoCVIEdGFn'
-    'c0oECAEQAlIIZmlsZV9pZHM=');
+    '52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSJgoPYmluYXJ5X2RhdGFfaWRz'
+    'GAQgAygJUg1iaW5hcnlEYXRhSWRzEhIKBHRhZ3MYAiADKAlSBHRhZ3NKBAgBEAJSCGZpbGVfaW'
+    'Rz');
 
 @$core.Deprecated('Use addTagsToBinaryDataByIDsResponseDescriptor instead')
 const AddTagsToBinaryDataByIDsResponse$json = {
@@ -728,6 +736,7 @@ const RemoveTagsFromBinaryDataByIDsRequest$json = {
   '1': 'RemoveTagsFromBinaryDataByIDsRequest',
   '2': [
     {'1': 'binary_ids', '3': 3, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
+    {'1': 'binary_data_ids', '3': 4, '4': 3, '5': 9, '10': 'binaryDataIds'},
     {'1': 'tags', '3': 2, '4': 3, '5': 9, '10': 'tags'},
   ],
   '9': [
@@ -739,8 +748,9 @@ const RemoveTagsFromBinaryDataByIDsRequest$json = {
 /// Descriptor for `RemoveTagsFromBinaryDataByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeTagsFromBinaryDataByIDsRequestDescriptor = $convert.base64Decode(
     'CiRSZW1vdmVUYWdzRnJvbUJpbmFyeURhdGFCeUlEc1JlcXVlc3QSOQoKYmluYXJ5X2lkcxgDIA'
-    'MoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCWJpbmFyeUlkcxISCgR0YWdzGAIgAygJ'
-    'UgR0YWdzSgQIARACUghmaWxlX2lkcw==');
+    'MoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCWJpbmFyeUlkcxImCg9iaW5hcnlfZGF0'
+    'YV9pZHMYBCADKAlSDWJpbmFyeURhdGFJZHMSEgoEdGFncxgCIAMoCVIEdGFnc0oECAEQAlIIZm'
+    'lsZV9pZHM=');
 
 @$core.Deprecated('Use removeTagsFromBinaryDataByIDsResponseDescriptor instead')
 const RemoveTagsFromBinaryDataByIDsResponse$json = {
@@ -812,6 +822,7 @@ const AddBoundingBoxToImageByIDRequest$json = {
   '1': 'AddBoundingBoxToImageByIDRequest',
   '2': [
     {'1': 'binary_id', '3': 7, '4': 1, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryId'},
+    {'1': 'binary_data_id', '3': 8, '4': 1, '5': 9, '10': 'binaryDataId'},
     {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
     {'1': 'x_min_normalized', '3': 3, '4': 1, '5': 1, '10': 'xMinNormalized'},
     {'1': 'y_min_normalized', '3': 4, '4': 1, '5': 1, '10': 'yMinNormalized'},
@@ -827,11 +838,12 @@ const AddBoundingBoxToImageByIDRequest$json = {
 /// Descriptor for `AddBoundingBoxToImageByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addBoundingBoxToImageByIDRequestDescriptor = $convert.base64Decode(
     'CiBBZGRCb3VuZGluZ0JveFRvSW1hZ2VCeUlEUmVxdWVzdBI3CgliaW5hcnlfaWQYByABKAsyGi'
-    '52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUghiaW5hcnlJZBIUCgVsYWJlbBgCIAEoCVIFbGFi'
-    'ZWwSKAoQeF9taW5fbm9ybWFsaXplZBgDIAEoAVIOeE1pbk5vcm1hbGl6ZWQSKAoQeV9taW5fbm'
-    '9ybWFsaXplZBgEIAEoAVIOeU1pbk5vcm1hbGl6ZWQSKAoQeF9tYXhfbm9ybWFsaXplZBgFIAEo'
-    'AVIOeE1heE5vcm1hbGl6ZWQSKAoQeV9tYXhfbm9ybWFsaXplZBgGIAEoAVIOeU1heE5vcm1hbG'
-    'l6ZWRKBAgBEAJSB2ZpbGVfaWQ=');
+    '52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUghiaW5hcnlJZBIkCg5iaW5hcnlfZGF0YV9pZBgI'
+    'IAEoCVIMYmluYXJ5RGF0YUlkEhQKBWxhYmVsGAIgASgJUgVsYWJlbBIoChB4X21pbl9ub3JtYW'
+    'xpemVkGAMgASgBUg54TWluTm9ybWFsaXplZBIoChB5X21pbl9ub3JtYWxpemVkGAQgASgBUg55'
+    'TWluTm9ybWFsaXplZBIoChB4X21heF9ub3JtYWxpemVkGAUgASgBUg54TWF4Tm9ybWFsaXplZB'
+    'IoChB5X21heF9ub3JtYWxpemVkGAYgASgBUg55TWF4Tm9ybWFsaXplZEoECAEQAlIHZmlsZV9p'
+    'ZA==');
 
 @$core.Deprecated('Use addBoundingBoxToImageByIDResponseDescriptor instead')
 const AddBoundingBoxToImageByIDResponse$json = {
@@ -851,6 +863,7 @@ const RemoveBoundingBoxFromImageByIDRequest$json = {
   '1': 'RemoveBoundingBoxFromImageByIDRequest',
   '2': [
     {'1': 'binary_id', '3': 3, '4': 1, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryId'},
+    {'1': 'binary_data_id', '3': 4, '4': 1, '5': 9, '10': 'binaryDataId'},
     {'1': 'bbox_id', '3': 2, '4': 1, '5': 9, '10': 'bboxId'},
   ],
   '9': [
@@ -862,8 +875,9 @@ const RemoveBoundingBoxFromImageByIDRequest$json = {
 /// Descriptor for `RemoveBoundingBoxFromImageByIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeBoundingBoxFromImageByIDRequestDescriptor = $convert.base64Decode(
     'CiVSZW1vdmVCb3VuZGluZ0JveEZyb21JbWFnZUJ5SURSZXF1ZXN0EjcKCWJpbmFyeV9pZBgDIA'
-    'EoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCGJpbmFyeUlkEhcKB2Jib3hfaWQYAiAB'
-    'KAlSBmJib3hJZEoECAEQAlIHZmlsZV9pZA==');
+    'EoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCGJpbmFyeUlkEiQKDmJpbmFyeV9kYXRh'
+    'X2lkGAQgASgJUgxiaW5hcnlEYXRhSWQSFwoHYmJveF9pZBgCIAEoCVIGYmJveElkSgQIARACUg'
+    'dmaWxlX2lk');
 
 @$core.Deprecated('Use removeBoundingBoxFromImageByIDResponseDescriptor instead')
 const RemoveBoundingBoxFromImageByIDResponse$json = {
@@ -879,6 +893,7 @@ const UpdateBoundingBoxRequest$json = {
   '1': 'UpdateBoundingBoxRequest',
   '2': [
     {'1': 'binary_id', '3': 1, '4': 1, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryId'},
+    {'1': 'binary_data_id', '3': 8, '4': 1, '5': 9, '10': 'binaryDataId'},
     {'1': 'bbox_id', '3': 2, '4': 1, '5': 9, '10': 'bboxId'},
     {'1': 'label', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'label', '17': true},
     {'1': 'x_min_normalized', '3': 4, '4': 1, '5': 1, '9': 1, '10': 'xMinNormalized', '17': true},
@@ -898,13 +913,14 @@ const UpdateBoundingBoxRequest$json = {
 /// Descriptor for `UpdateBoundingBoxRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateBoundingBoxRequestDescriptor = $convert.base64Decode(
     'ChhVcGRhdGVCb3VuZGluZ0JveFJlcXVlc3QSNwoJYmluYXJ5X2lkGAEgASgLMhoudmlhbS5hcH'
-    'AuZGF0YS52MS5CaW5hcnlJRFIIYmluYXJ5SWQSFwoHYmJveF9pZBgCIAEoCVIGYmJveElkEhkK'
-    'BWxhYmVsGAMgASgJSABSBWxhYmVsiAEBEi0KEHhfbWluX25vcm1hbGl6ZWQYBCABKAFIAVIOeE'
-    '1pbk5vcm1hbGl6ZWSIAQESLQoQeV9taW5fbm9ybWFsaXplZBgFIAEoAUgCUg55TWluTm9ybWFs'
-    'aXplZIgBARItChB4X21heF9ub3JtYWxpemVkGAYgASgBSANSDnhNYXhOb3JtYWxpemVkiAEBEi'
-    '0KEHlfbWF4X25vcm1hbGl6ZWQYByABKAFIBFIOeU1heE5vcm1hbGl6ZWSIAQFCCAoGX2xhYmVs'
-    'QhMKEV94X21pbl9ub3JtYWxpemVkQhMKEV95X21pbl9ub3JtYWxpemVkQhMKEV94X21heF9ub3'
-    'JtYWxpemVkQhMKEV95X21heF9ub3JtYWxpemVk');
+    'AuZGF0YS52MS5CaW5hcnlJRFIIYmluYXJ5SWQSJAoOYmluYXJ5X2RhdGFfaWQYCCABKAlSDGJp'
+    'bmFyeURhdGFJZBIXCgdiYm94X2lkGAIgASgJUgZiYm94SWQSGQoFbGFiZWwYAyABKAlIAFIFbG'
+    'FiZWyIAQESLQoQeF9taW5fbm9ybWFsaXplZBgEIAEoAUgBUg54TWluTm9ybWFsaXplZIgBARIt'
+    'ChB5X21pbl9ub3JtYWxpemVkGAUgASgBSAJSDnlNaW5Ob3JtYWxpemVkiAEBEi0KEHhfbWF4X2'
+    '5vcm1hbGl6ZWQYBiABKAFIA1IOeE1heE5vcm1hbGl6ZWSIAQESLQoQeV9tYXhfbm9ybWFsaXpl'
+    'ZBgHIAEoAUgEUg55TWF4Tm9ybWFsaXplZIgBAUIICgZfbGFiZWxCEwoRX3hfbWluX25vcm1hbG'
+    'l6ZWRCEwoRX3lfbWluX25vcm1hbGl6ZWRCEwoRX3hfbWF4X25vcm1hbGl6ZWRCEwoRX3lfbWF4'
+    'X25vcm1hbGl6ZWQ=');
 
 @$core.Deprecated('Use updateBoundingBoxResponseDescriptor instead')
 const UpdateBoundingBoxResponse$json = {
@@ -998,6 +1014,7 @@ const AddBinaryDataToDatasetByIDsRequest$json = {
   '1': 'AddBinaryDataToDatasetByIDsRequest',
   '2': [
     {'1': 'binary_ids', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
+    {'1': 'binary_data_ids', '3': 3, '4': 3, '5': 9, '10': 'binaryDataIds'},
     {'1': 'dataset_id', '3': 2, '4': 1, '5': 9, '10': 'datasetId'},
   ],
 };
@@ -1005,8 +1022,9 @@ const AddBinaryDataToDatasetByIDsRequest$json = {
 /// Descriptor for `AddBinaryDataToDatasetByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addBinaryDataToDatasetByIDsRequestDescriptor = $convert.base64Decode(
     'CiJBZGRCaW5hcnlEYXRhVG9EYXRhc2V0QnlJRHNSZXF1ZXN0EjkKCmJpbmFyeV9pZHMYASADKA'
-    'syGi52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSHQoKZGF0YXNldF9pZBgC'
-    'IAEoCVIJZGF0YXNldElk');
+    'syGi52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUgliaW5hcnlJZHMSJgoPYmluYXJ5X2RhdGFf'
+    'aWRzGAMgAygJUg1iaW5hcnlEYXRhSWRzEh0KCmRhdGFzZXRfaWQYAiABKAlSCWRhdGFzZXRJZA'
+    '==');
 
 @$core.Deprecated('Use addBinaryDataToDatasetByIDsResponseDescriptor instead')
 const AddBinaryDataToDatasetByIDsResponse$json = {
@@ -1022,6 +1040,7 @@ const RemoveBinaryDataFromDatasetByIDsRequest$json = {
   '1': 'RemoveBinaryDataFromDatasetByIDsRequest',
   '2': [
     {'1': 'binary_ids', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryIds'},
+    {'1': 'binary_data_ids', '3': 3, '4': 3, '5': 9, '10': 'binaryDataIds'},
     {'1': 'dataset_id', '3': 2, '4': 1, '5': 9, '10': 'datasetId'},
   ],
 };
@@ -1029,8 +1048,9 @@ const RemoveBinaryDataFromDatasetByIDsRequest$json = {
 /// Descriptor for `RemoveBinaryDataFromDatasetByIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeBinaryDataFromDatasetByIDsRequestDescriptor = $convert.base64Decode(
     'CidSZW1vdmVCaW5hcnlEYXRhRnJvbURhdGFzZXRCeUlEc1JlcXVlc3QSOQoKYmluYXJ5X2lkcx'
-    'gBIAMoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCWJpbmFyeUlkcxIdCgpkYXRhc2V0'
-    'X2lkGAIgASgJUglkYXRhc2V0SWQ=');
+    'gBIAMoCzIaLnZpYW0uYXBwLmRhdGEudjEuQmluYXJ5SURSCWJpbmFyeUlkcxImCg9iaW5hcnlf'
+    'ZGF0YV9pZHMYAyADKAlSDWJpbmFyeURhdGFJZHMSHQoKZGF0YXNldF9pZBgCIAEoCVIJZGF0YX'
+    'NldElk');
 
 @$core.Deprecated('Use removeBinaryDataFromDatasetByIDsResponseDescriptor instead')
 const RemoveBinaryDataFromDatasetByIDsResponse$json = {

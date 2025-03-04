@@ -68,12 +68,14 @@ const DataCaptureUploadResponse$json = {
   '1': 'DataCaptureUploadResponse',
   '2': [
     {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    {'1': 'binary_data_id', '3': 2, '4': 1, '5': 9, '10': 'binaryDataId'},
   ],
 };
 
 /// Descriptor for `DataCaptureUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List dataCaptureUploadResponseDescriptor = $convert.base64Decode(
-    'ChlEYXRhQ2FwdHVyZVVwbG9hZFJlc3BvbnNlEhcKB2ZpbGVfaWQYASABKAlSBmZpbGVJZA==');
+    'ChlEYXRhQ2FwdHVyZVVwbG9hZFJlc3BvbnNlEhcKB2ZpbGVfaWQYASABKAlSBmZpbGVJZBIkCg'
+    '5iaW5hcnlfZGF0YV9pZBgCIAEoCVIMYmluYXJ5RGF0YUlk');
 
 @$core.Deprecated('Use fileUploadRequestDescriptor instead')
 const FileUploadRequest$json = {
@@ -99,12 +101,14 @@ const FileUploadResponse$json = {
   '1': 'FileUploadResponse',
   '2': [
     {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    {'1': 'binary_data_id', '3': 2, '4': 1, '5': 9, '10': 'binaryDataId'},
   ],
 };
 
 /// Descriptor for `FileUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fileUploadResponseDescriptor = $convert.base64Decode(
-    'ChJGaWxlVXBsb2FkUmVzcG9uc2USFwoHZmlsZV9pZBgBIAEoCVIGZmlsZUlk');
+    'ChJGaWxlVXBsb2FkUmVzcG9uc2USFwoHZmlsZV9pZBgBIAEoCVIGZmlsZUlkEiQKDmJpbmFyeV'
+    '9kYXRhX2lkGAIgASgJUgxiaW5hcnlEYXRhSWQ=');
 
 @$core.Deprecated('Use streamingDataCaptureUploadRequestDescriptor instead')
 const StreamingDataCaptureUploadRequest$json = {
@@ -129,13 +133,14 @@ const StreamingDataCaptureUploadResponse$json = {
   '1': 'StreamingDataCaptureUploadResponse',
   '2': [
     {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    {'1': 'binary_data_id', '3': 2, '4': 1, '5': 9, '10': 'binaryDataId'},
   ],
 };
 
 /// Descriptor for `StreamingDataCaptureUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List streamingDataCaptureUploadResponseDescriptor = $convert.base64Decode(
     'CiJTdHJlYW1pbmdEYXRhQ2FwdHVyZVVwbG9hZFJlc3BvbnNlEhcKB2ZpbGVfaWQYASABKAlSBm'
-    'ZpbGVJZA==');
+    'ZpbGVJZBIkCg5iaW5hcnlfZGF0YV9pZBgCIAEoCVIMYmluYXJ5RGF0YUlk');
 
 @$core.Deprecated('Use sensorMetadataDescriptor instead')
 const SensorMetadata$json = {

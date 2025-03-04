@@ -22,6 +22,7 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
     $core.String? registryItemVersion,
     $3.BinaryID? binaryId,
     $core.String? organizationId,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (registryItemId != null) {
@@ -36,6 +37,9 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
     if (organizationId != null) {
       $result.organizationId = organizationId;
     }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
+    }
     return $result;
   }
   GetInferenceRequest._() : super();
@@ -47,6 +51,7 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'registryItemVersion')
     ..aOM<$3.BinaryID>(3, _omitFieldNames ? '' : 'binaryId', subBuilder: $3.BinaryID.create)
     ..aOS(4, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(5, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -111,6 +116,15 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(3);
   @$pb.TagNumber(4)
   void clearOrganizationId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get binaryDataId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set binaryDataId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBinaryDataId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBinaryDataId() => clearField(5);
 }
 
 class GetInferenceResponse extends $pb.GeneratedMessage {

@@ -135,6 +135,148 @@ class TunnelResponse extends $pb.GeneratedMessage {
   void clearData() => clearField(1);
 }
 
+class ListTunnelsRequest extends $pb.GeneratedMessage {
+  factory ListTunnelsRequest() => create();
+  ListTunnelsRequest._() : super();
+  factory ListTunnelsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTunnelsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTunnelsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTunnelsRequest clone() => ListTunnelsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTunnelsRequest copyWith(void Function(ListTunnelsRequest) updates) => super.copyWith((message) => updates(message as ListTunnelsRequest)) as ListTunnelsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTunnelsRequest create() => ListTunnelsRequest._();
+  ListTunnelsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTunnelsRequest> createRepeated() => $pb.PbList<ListTunnelsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTunnelsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTunnelsRequest>(create);
+  static ListTunnelsRequest? _defaultInstance;
+}
+
+class ListTunnelsResponse extends $pb.GeneratedMessage {
+  factory ListTunnelsResponse({
+    $core.Iterable<Tunnel>? tunnels,
+  }) {
+    final $result = create();
+    if (tunnels != null) {
+      $result.tunnels.addAll(tunnels);
+    }
+    return $result;
+  }
+  ListTunnelsResponse._() : super();
+  factory ListTunnelsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTunnelsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTunnelsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..pc<Tunnel>(1, _omitFieldNames ? '' : 'tunnels', $pb.PbFieldType.PM, subBuilder: Tunnel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTunnelsResponse clone() => ListTunnelsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTunnelsResponse copyWith(void Function(ListTunnelsResponse) updates) => super.copyWith((message) => updates(message as ListTunnelsResponse)) as ListTunnelsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTunnelsResponse create() => ListTunnelsResponse._();
+  ListTunnelsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTunnelsResponse> createRepeated() => $pb.PbList<ListTunnelsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTunnelsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTunnelsResponse>(create);
+  static ListTunnelsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Tunnel> get tunnels => $_getList(0);
+}
+
+class Tunnel extends $pb.GeneratedMessage {
+  factory Tunnel({
+    $core.int? port,
+    $45.Duration? connectionTimeout,
+  }) {
+    final $result = create();
+    if (port != null) {
+      $result.port = port;
+    }
+    if (connectionTimeout != null) {
+      $result.connectionTimeout = connectionTimeout;
+    }
+    return $result;
+  }
+  Tunnel._() : super();
+  factory Tunnel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Tunnel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Tunnel', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU3)
+    ..aOM<$45.Duration>(2, _omitFieldNames ? '' : 'connectionTimeout', subBuilder: $45.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Tunnel clone() => Tunnel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Tunnel copyWith(void Function(Tunnel) updates) => super.copyWith((message) => updates(message as Tunnel)) as Tunnel;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Tunnel create() => Tunnel._();
+  Tunnel createEmptyInstance() => create();
+  static $pb.PbList<Tunnel> createRepeated() => $pb.PbList<Tunnel>();
+  @$core.pragma('dart2js:noInline')
+  static Tunnel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Tunnel>(create);
+  static Tunnel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get port => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set port($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPort() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPort() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $45.Duration get connectionTimeout => $_getN(1);
+  @$pb.TagNumber(2)
+  set connectionTimeout($45.Duration v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasConnectionTimeout() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConnectionTimeout() => clearField(2);
+  @$pb.TagNumber(2)
+  $45.Duration ensureConnectionTimeout() => $_ensure(1);
+}
+
 class FrameSystemConfig extends $pb.GeneratedMessage {
   factory FrameSystemConfig({
     $15.Transform? frame,

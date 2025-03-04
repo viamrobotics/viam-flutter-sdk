@@ -2010,6 +2010,7 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory BinaryDataByIDsRequest({
     $core.bool? includeBinary,
     $core.Iterable<BinaryID>? binaryIds,
+    $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (includeBinary != null) {
@@ -2017,6 +2018,9 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
     }
     if (binaryIds != null) {
       $result.binaryIds.addAll(binaryIds);
+    }
+    if (binaryDataIds != null) {
+      $result.binaryDataIds.addAll(binaryDataIds);
     }
     return $result;
   }
@@ -2027,6 +2031,7 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOB(2, _omitFieldNames ? '' : 'includeBinary')
     ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
+    ..pPS(4, _omitFieldNames ? '' : 'binaryDataIds')
     ..hasRequiredFields = false
   ;
 
@@ -2062,6 +2067,9 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<BinaryID> get binaryIds => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get binaryDataIds => $_getList(2);
 }
 
 /// BinaryDataByIDsResponse provides the data and metadata of binary (image + file) data when a filter is provided.
@@ -2391,6 +2399,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     $core.String? uri,
     Annotations? annotations,
     $core.Iterable<$core.String>? datasetIds,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (id != null) {
@@ -2420,6 +2429,9 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     if (datasetIds != null) {
       $result.datasetIds.addAll(datasetIds);
     }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
+    }
     return $result;
   }
   BinaryMetadata._() : super();
@@ -2436,6 +2448,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'uri')
     ..aOM<Annotations>(8, _omitFieldNames ? '' : 'annotations', subBuilder: Annotations.create)
     ..pPS(9, _omitFieldNames ? '' : 'datasetIds')
+    ..aOS(10, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -2542,6 +2555,15 @@ class BinaryMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(9)
   $core.List<$core.String> get datasetIds => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.String get binaryDataId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set binaryDataId($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasBinaryDataId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearBinaryDataId() => clearField(10);
 }
 
 /// DeleteTabularDataRequest deletes the data from the organization that is older than `delete_older_than_days`
@@ -2787,10 +2809,14 @@ class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
 class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory DeleteBinaryDataByIDsRequest({
     $core.Iterable<BinaryID>? binaryIds,
+    $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (binaryIds != null) {
       $result.binaryIds.addAll(binaryIds);
+    }
+    if (binaryDataIds != null) {
+      $result.binaryDataIds.addAll(binaryDataIds);
     }
     return $result;
   }
@@ -2800,6 +2826,7 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<BinaryID>(2, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
+    ..pPS(3, _omitFieldNames ? '' : 'binaryDataIds')
     ..hasRequiredFields = false
   ;
 
@@ -2826,6 +2853,9 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<BinaryID> get binaryIds => $_getList(0);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get binaryDataIds => $_getList(1);
 }
 
 /// DeleteBinaryDataByIDsResponse returns the number of binary files deleted when binary ids are provided.
@@ -2884,6 +2914,7 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory AddTagsToBinaryDataByIDsRequest({
     $core.Iterable<$core.String>? tags,
     $core.Iterable<BinaryID>? binaryIds,
+    $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (tags != null) {
@@ -2891,6 +2922,9 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
     }
     if (binaryIds != null) {
       $result.binaryIds.addAll(binaryIds);
+    }
+    if (binaryDataIds != null) {
+      $result.binaryDataIds.addAll(binaryDataIds);
     }
     return $result;
   }
@@ -2901,6 +2935,7 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddTagsToBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
+    ..pPS(4, _omitFieldNames ? '' : 'binaryDataIds')
     ..hasRequiredFields = false
   ;
 
@@ -2930,6 +2965,9 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<BinaryID> get binaryIds => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get binaryDataIds => $_getList(2);
 }
 
 class AddTagsToBinaryDataByIDsResponse extends $pb.GeneratedMessage {
@@ -3062,6 +3100,7 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory RemoveTagsFromBinaryDataByIDsRequest({
     $core.Iterable<$core.String>? tags,
     $core.Iterable<BinaryID>? binaryIds,
+    $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (tags != null) {
@@ -3069,6 +3108,9 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
     }
     if (binaryIds != null) {
       $result.binaryIds.addAll(binaryIds);
+    }
+    if (binaryDataIds != null) {
+      $result.binaryDataIds.addAll(binaryDataIds);
     }
     return $result;
   }
@@ -3079,6 +3121,7 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveTagsFromBinaryDataByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pPS(2, _omitFieldNames ? '' : 'tags')
     ..pc<BinaryID>(3, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
+    ..pPS(4, _omitFieldNames ? '' : 'binaryDataIds')
     ..hasRequiredFields = false
   ;
 
@@ -3108,6 +3151,9 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<BinaryID> get binaryIds => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get binaryDataIds => $_getList(2);
 }
 
 /// RemoveTagsFromBinaryDataByIDsResponse returns the number of binary files which had tags removed
@@ -3381,6 +3427,7 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
     $core.double? xMaxNormalized,
     $core.double? yMaxNormalized,
     BinaryID? binaryId,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (label != null) {
@@ -3401,6 +3448,9 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
     if (binaryId != null) {
       $result.binaryId = binaryId;
     }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
+    }
     return $result;
   }
   AddBoundingBoxToImageByIDRequest._() : super();
@@ -3414,6 +3464,7 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(5, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
     ..aOM<BinaryID>(7, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
+    ..aOS(8, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -3493,6 +3544,15 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   void clearBinaryId() => clearField(7);
   @$pb.TagNumber(7)
   BinaryID ensureBinaryId() => $_ensure(5);
+
+  @$pb.TagNumber(8)
+  $core.String get binaryDataId => $_getSZ(6);
+  @$pb.TagNumber(8)
+  set binaryDataId($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasBinaryDataId() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearBinaryDataId() => clearField(8);
 }
 
 /// AddBoundingBoxToImageByIDResponse returns the bounding box ID of the successfully added bounding box.
@@ -3551,6 +3611,7 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   factory RemoveBoundingBoxFromImageByIDRequest({
     $core.String? bboxId,
     BinaryID? binaryId,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (bboxId != null) {
@@ -3558,6 +3619,9 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
     }
     if (binaryId != null) {
       $result.binaryId = binaryId;
+    }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
     }
     return $result;
   }
@@ -3568,6 +3632,7 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveBoundingBoxFromImageByIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(2, _omitFieldNames ? '' : 'bboxId')
     ..aOM<BinaryID>(3, _omitFieldNames ? '' : 'binaryId', subBuilder: BinaryID.create)
+    ..aOS(4, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -3611,6 +3676,15 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   void clearBinaryId() => clearField(3);
   @$pb.TagNumber(3)
   BinaryID ensureBinaryId() => $_ensure(1);
+
+  @$pb.TagNumber(4)
+  $core.String get binaryDataId => $_getSZ(2);
+  @$pb.TagNumber(4)
+  set binaryDataId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBinaryDataId() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearBinaryDataId() => clearField(4);
 }
 
 class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
@@ -3655,6 +3729,7 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
     $core.double? yMinNormalized,
     $core.double? xMaxNormalized,
     $core.double? yMaxNormalized,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (binaryId != null) {
@@ -3678,6 +3753,9 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
     if (yMaxNormalized != null) {
       $result.yMaxNormalized = yMaxNormalized;
     }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
+    }
     return $result;
   }
   UpdateBoundingBoxRequest._() : super();
@@ -3692,6 +3770,7 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(5, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
+    ..aOS(8, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -3780,6 +3859,15 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
   $core.bool hasYMaxNormalized() => $_has(6);
   @$pb.TagNumber(7)
   void clearYMaxNormalized() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get binaryDataId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set binaryDataId($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasBinaryDataId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBinaryDataId() => clearField(8);
 }
 
 class UpdateBoundingBoxResponse extends $pb.GeneratedMessage {
@@ -4148,6 +4236,7 @@ class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
   factory AddBinaryDataToDatasetByIDsRequest({
     $core.Iterable<BinaryID>? binaryIds,
     $core.String? datasetId,
+    $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (binaryIds != null) {
@@ -4155,6 +4244,9 @@ class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
     }
     if (datasetId != null) {
       $result.datasetId = datasetId;
+    }
+    if (binaryDataIds != null) {
+      $result.binaryDataIds.addAll(binaryDataIds);
     }
     return $result;
   }
@@ -4165,6 +4257,7 @@ class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddBinaryDataToDatasetByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<BinaryID>(1, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..aOS(2, _omitFieldNames ? '' : 'datasetId')
+    ..pPS(3, _omitFieldNames ? '' : 'binaryDataIds')
     ..hasRequiredFields = false
   ;
 
@@ -4200,6 +4293,9 @@ class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
   $core.bool hasDatasetId() => $_has(1);
   @$pb.TagNumber(2)
   void clearDatasetId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get binaryDataIds => $_getList(2);
 }
 
 class AddBinaryDataToDatasetByIDsResponse extends $pb.GeneratedMessage {
@@ -4239,6 +4335,7 @@ class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
   factory RemoveBinaryDataFromDatasetByIDsRequest({
     $core.Iterable<BinaryID>? binaryIds,
     $core.String? datasetId,
+    $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (binaryIds != null) {
@@ -4246,6 +4343,9 @@ class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
     }
     if (datasetId != null) {
       $result.datasetId = datasetId;
+    }
+    if (binaryDataIds != null) {
+      $result.binaryDataIds.addAll(binaryDataIds);
     }
     return $result;
   }
@@ -4256,6 +4356,7 @@ class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveBinaryDataFromDatasetByIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..pc<BinaryID>(1, _omitFieldNames ? '' : 'binaryIds', $pb.PbFieldType.PM, subBuilder: BinaryID.create)
     ..aOS(2, _omitFieldNames ? '' : 'datasetId')
+    ..pPS(3, _omitFieldNames ? '' : 'binaryDataIds')
     ..hasRequiredFields = false
   ;
 
@@ -4291,6 +4392,9 @@ class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
   $core.bool hasDatasetId() => $_has(1);
   @$pb.TagNumber(2)
   void clearDatasetId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get binaryDataIds => $_getList(2);
 }
 
 class RemoveBinaryDataFromDatasetByIDsResponse extends $pb.GeneratedMessage {

@@ -113,6 +113,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/Tunnel',
       ($33.TunnelRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $33.TunnelResponse.fromBuffer(value));
+  static final _$listTunnels = $grpc.ClientMethod<$33.ListTunnelsRequest, $33.ListTunnelsResponse>(
+      '/viam.robot.v1.RobotService/ListTunnels',
+      ($33.ListTunnelsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $33.ListTunnelsResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -210,6 +214,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseStream<$33.TunnelResponse> tunnel($async.Stream<$33.TunnelRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$tunnel, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$33.ListTunnelsResponse> listTunnels($33.ListTunnelsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listTunnels, request, options: options);
   }
 }
 
@@ -379,6 +387,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $33.TunnelRequest.fromBuffer(value),
         ($33.TunnelResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$33.ListTunnelsRequest, $33.ListTunnelsResponse>(
+        'ListTunnels',
+        listTunnels_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $33.ListTunnelsRequest.fromBuffer(value),
+        ($33.ListTunnelsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$33.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$33.GetOperationsRequest> request) async {
@@ -469,6 +484,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return getVersion(call, await request);
   }
 
+  $async.Future<$33.ListTunnelsResponse> listTunnels_Pre($grpc.ServiceCall call, $async.Future<$33.ListTunnelsRequest> request) async {
+    return listTunnels(call, await request);
+  }
+
   $async.Future<$33.GetOperationsResponse> getOperations($grpc.ServiceCall call, $33.GetOperationsRequest request);
   $async.Future<$33.GetSessionsResponse> getSessions($grpc.ServiceCall call, $33.GetSessionsRequest request);
   $async.Future<$33.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $33.ResourceNamesRequest request);
@@ -492,4 +511,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$33.GetMachineStatusResponse> getMachineStatus($grpc.ServiceCall call, $33.GetMachineStatusRequest request);
   $async.Future<$33.GetVersionResponse> getVersion($grpc.ServiceCall call, $33.GetVersionRequest request);
   $async.Stream<$33.TunnelResponse> tunnel($grpc.ServiceCall call, $async.Stream<$33.TunnelRequest> request);
+  $async.Future<$33.ListTunnelsResponse> listTunnels($grpc.ServiceCall call, $33.ListTunnelsRequest request);
 }

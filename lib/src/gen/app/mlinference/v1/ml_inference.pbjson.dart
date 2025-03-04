@@ -20,6 +20,7 @@ const GetInferenceRequest$json = {
     {'1': 'registry_item_id', '3': 1, '4': 1, '5': 9, '10': 'registryItemId'},
     {'1': 'registry_item_version', '3': 2, '4': 1, '5': 9, '10': 'registryItemVersion'},
     {'1': 'binary_id', '3': 3, '4': 1, '5': 11, '6': '.viam.app.data.v1.BinaryID', '10': 'binaryId'},
+    {'1': 'binary_data_id', '3': 5, '4': 1, '5': 9, '10': 'binaryDataId'},
     {'1': 'organization_id', '3': 4, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
@@ -29,7 +30,8 @@ final $typed_data.Uint8List getInferenceRequestDescriptor = $convert.base64Decod
     'ChNHZXRJbmZlcmVuY2VSZXF1ZXN0EigKEHJlZ2lzdHJ5X2l0ZW1faWQYASABKAlSDnJlZ2lzdH'
     'J5SXRlbUlkEjIKFXJlZ2lzdHJ5X2l0ZW1fdmVyc2lvbhgCIAEoCVITcmVnaXN0cnlJdGVtVmVy'
     'c2lvbhI3CgliaW5hcnlfaWQYAyABKAsyGi52aWFtLmFwcC5kYXRhLnYxLkJpbmFyeUlEUghiaW'
-    '5hcnlJZBInCg9vcmdhbml6YXRpb25faWQYBCABKAlSDm9yZ2FuaXphdGlvbklk');
+    '5hcnlJZBIkCg5iaW5hcnlfZGF0YV9pZBgFIAEoCVIMYmluYXJ5RGF0YUlkEicKD29yZ2FuaXph'
+    'dGlvbl9pZBgEIAEoCVIOb3JnYW5pemF0aW9uSWQ=');
 
 @$core.Deprecated('Use getInferenceResponseDescriptor instead')
 const GetInferenceResponse$json = {

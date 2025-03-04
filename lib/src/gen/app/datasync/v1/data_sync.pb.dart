@@ -86,10 +86,14 @@ class DataCaptureUploadRequest extends $pb.GeneratedMessage {
 class DataCaptureUploadResponse extends $pb.GeneratedMessage {
   factory DataCaptureUploadResponse({
     $core.String? fileId,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (fileId != null) {
       $result.fileId = fileId;
+    }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
     }
     return $result;
   }
@@ -99,6 +103,7 @@ class DataCaptureUploadResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataCaptureUploadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..aOS(2, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -131,6 +136,15 @@ class DataCaptureUploadResponse extends $pb.GeneratedMessage {
   $core.bool hasFileId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get binaryDataId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set binaryDataId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBinaryDataId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBinaryDataId() => clearField(2);
 }
 
 enum FileUploadRequest_UploadPacket {
@@ -222,10 +236,14 @@ class FileUploadRequest extends $pb.GeneratedMessage {
 class FileUploadResponse extends $pb.GeneratedMessage {
   factory FileUploadResponse({
     $core.String? fileId,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (fileId != null) {
       $result.fileId = fileId;
+    }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
     }
     return $result;
   }
@@ -235,6 +253,7 @@ class FileUploadResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FileUploadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..aOS(2, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -267,6 +286,15 @@ class FileUploadResponse extends $pb.GeneratedMessage {
   $core.bool hasFileId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get binaryDataId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set binaryDataId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBinaryDataId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBinaryDataId() => clearField(2);
 }
 
 enum StreamingDataCaptureUploadRequest_UploadPacket {
@@ -356,10 +384,14 @@ class StreamingDataCaptureUploadRequest extends $pb.GeneratedMessage {
 class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
   factory StreamingDataCaptureUploadResponse({
     $core.String? fileId,
+    $core.String? binaryDataId,
   }) {
     final $result = create();
     if (fileId != null) {
       $result.fileId = fileId;
+    }
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
     }
     return $result;
   }
@@ -369,6 +401,7 @@ class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamingDataCaptureUploadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datasync.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fileId')
+    ..aOS(2, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
   ;
 
@@ -401,6 +434,15 @@ class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
   $core.bool hasFileId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get binaryDataId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set binaryDataId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBinaryDataId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBinaryDataId() => clearField(2);
 }
 
 /// SensorMetadata contains the time the sensor data was requested and was
