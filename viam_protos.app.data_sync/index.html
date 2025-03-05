@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="viam_protos.app.data_sync library API docs, for the Dart programming language.">
+  <title>viam_protos.app.data_sync library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">viam_sdk</a></li>
+    <li class="self-crumb">protos/app/data_sync.dart</li>
+  </ol>
+  <div class="self-name">viam_protos.app.data_sync</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="viam_protos.app.data_sync&#47;viam_protos.app.data_sync-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">protos/app/data_sync</span>
+        library 
+ 
+    <span class="category protobuf-definitions cp-5 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>The proto definitions for data_sync</p>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+      <dl>
+          <dt id="CaptureInterval">
+  <span class="name "><a href="../viam_protos.app.data_sync/CaptureInterval-class.html">CaptureInterval</a></span> 
+
+</dt>
+<dd>
+  CaptureInterval specifies the start and end times of the data capture.
+</dd>
+
+          <dt id="DataCaptureMetadata">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataCaptureMetadata-class.html">DataCaptureMetadata</a></span> 
+
+</dt>
+<dd>
+  DataCaptureMetadata contains the metadata for data captured by collectors.
+</dd>
+
+          <dt id="DataCaptureUploadMetadata">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataCaptureUploadMetadata-class.html">DataCaptureUploadMetadata</a></span> 
+
+</dt>
+<dd>
+  DataCaptureUploadMetadata contains the metadata for streaming binary (image + file) data.
+</dd>
+
+          <dt id="DataCaptureUploadRequest">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataCaptureUploadRequest-class.html">DataCaptureUploadRequest</a></span> 
+
+</dt>
+<dd>
+  DataCaptureUploadRequest requests to upload the contents and metadata for tabular data.
+</dd>
+
+          <dt id="DataCaptureUploadResponse">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataCaptureUploadResponse-class.html">DataCaptureUploadResponse</a></span> 
+
+</dt>
+<dd>
+  DataCaptureUploadResponse returns the file id of the uploaded contents and metadata for tabular data.
+</dd>
+
+          <dt id="DataSyncServiceBase">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataSyncServiceBase-class.html">DataSyncServiceBase</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DataSyncServiceClient">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataSyncServiceClient-class.html">DataSyncServiceClient</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DataType">
+  <span class="name "><a href="../viam_protos.app.data_sync/DataType-class.html">DataType</a></span> 
+
+</dt>
+<dd>
+  DataType specifies the type of data uploaded.
+</dd>
+
+          <dt id="FileData">
+  <span class="name "><a href="../viam_protos.app.data_sync/FileData-class.html">FileData</a></span> 
+
+</dt>
+<dd>
+  FileData contains the contents of binary (image + file) data.
+</dd>
+
+          <dt id="FileUploadRequest">
+  <span class="name "><a href="../viam_protos.app.data_sync/FileUploadRequest-class.html">FileUploadRequest</a></span> 
+
+</dt>
+<dd>
+  FileUploadRequest requests to upload the contents and metadata for binary (image + file) data.
+The first packet must be the UploadMetadata associated with the binary data.
+</dd>
+
+          <dt id="FileUploadResponse">
+  <span class="name "><a href="../viam_protos.app.data_sync/FileUploadResponse-class.html">FileUploadResponse</a></span> 
+
+</dt>
+<dd>
+  FileUploadResponse returns the file id of the uploaded contents and metadata for binary (image + file) data.
+</dd>
+
+          <dt id="MimeType">
+  <span class="name "><a href="../viam_protos.app.data_sync/MimeType-class.html">MimeType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="SensorData">
+  <span class="name "><a href="../viam_protos.app.data_sync/SensorData-class.html">SensorData</a></span> 
+
+</dt>
+<dd>
+  SensorData contains the contents and metadata for tabular data.
+</dd>
+
+          <dt id="SensorMetadata">
+  <span class="name "><a href="../viam_protos.app.data_sync/SensorMetadata-class.html">SensorMetadata</a></span> 
+
+</dt>
+<dd>
+  SensorMetadata contains the time the sensor data was requested and was
+received.
+</dd>
+
+          <dt id="StreamingDataCaptureUploadRequest">
+  <span class="name "><a href="../viam_protos.app.data_sync/StreamingDataCaptureUploadRequest-class.html">StreamingDataCaptureUploadRequest</a></span> 
+
+</dt>
+<dd>
+  StreamingDataCaptureUploadRequest requests to upload the contents and metadata for streaming binary (image + file) data.
+The first packet must be the DataCaptureUploadMetadata associated with the data.
+</dd>
+
+          <dt id="StreamingDataCaptureUploadResponse">
+  <span class="name "><a href="../viam_protos.app.data_sync/StreamingDataCaptureUploadResponse-class.html">StreamingDataCaptureUploadResponse</a></span> 
+
+</dt>
+<dd>
+  StreamingDataCaptureUploadResponse returns the file id of the uploaded contents and metadata for streaming binary (image + file) data.
+</dd>
+
+          <dt id="UploadMetadata">
+  <span class="name "><a href="../viam_protos.app.data_sync/UploadMetadata-class.html">UploadMetadata</a></span> 
+
+</dt>
+<dd>
+  UploadMetadata contains the metadata for binary (image + file) data.
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="enums">
+      <h2>Enums</h2>
+      <dl>
+          <dt id="FileUploadRequest_UploadPacket">
+  <span class="name "><a href="../viam_protos.app.data_sync/FileUploadRequest_UploadPacket.html">FileUploadRequest_UploadPacket</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="SensorData_Data">
+  <span class="name "><a href="../viam_protos.app.data_sync/SensorData_Data.html">SensorData_Data</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="StreamingDataCaptureUploadRequest_UploadPacket">
+  <span class="name "><a href="../viam_protos.app.data_sync/StreamingDataCaptureUploadRequest_UploadPacket.html">StreamingDataCaptureUploadRequest_UploadPacket</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+    <section class="summary offset-anchor" id="constants">
+      <h2>Constants</h2>
+      <dl class="properties">
+          <dt id="CaptureInterval$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/CaptureInterval$json-constant.html">CaptureInterval$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DataCaptureMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureMetadata$json-constant.html">DataCaptureMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DataCaptureMetadata_MethodParametersEntry$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureMetadata_MethodParametersEntry$json-constant.html">DataCaptureMetadata_MethodParametersEntry$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DataCaptureUploadMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureUploadMetadata$json-constant.html">DataCaptureUploadMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DataCaptureUploadRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureUploadRequest$json-constant.html">DataCaptureUploadRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DataCaptureUploadResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/DataCaptureUploadResponse$json-constant.html">DataCaptureUploadResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DataType$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/DataType$json-constant.html">DataType$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="FileData$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/FileData$json-constant.html">FileData$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="FileUploadRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/FileUploadRequest$json-constant.html">FileUploadRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="FileUploadResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/FileUploadResponse$json-constant.html">FileUploadResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="MimeType$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/MimeType$json-constant.html">MimeType$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="SensorData$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/SensorData$json-constant.html">SensorData$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="SensorMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/SensorMetadata$json-constant.html">SensorMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="StreamingDataCaptureUploadRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/StreamingDataCaptureUploadRequest$json-constant.html">StreamingDataCaptureUploadRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="StreamingDataCaptureUploadResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/StreamingDataCaptureUploadResponse$json-constant.html">StreamingDataCaptureUploadResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UploadMetadata$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/UploadMetadata$json-constant.html">UploadMetadata$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="UploadMetadata_MethodParametersEntry$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.data_sync/UploadMetadata_MethodParametersEntry$json-constant.html">UploadMetadata_MethodParametersEntry$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="properties">
+      <h2>Properties</h2>
+      <dl class="properties">
+          <dt id="captureIntervalDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/captureIntervalDescriptor.html">captureIntervalDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>CaptureInterval</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="dataCaptureMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/dataCaptureMetadataDescriptor.html">dataCaptureMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DataCaptureMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="dataCaptureUploadMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/dataCaptureUploadMetadataDescriptor.html">dataCaptureUploadMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DataCaptureUploadMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="dataCaptureUploadRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/dataCaptureUploadRequestDescriptor.html">dataCaptureUploadRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DataCaptureUploadRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="dataCaptureUploadResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/dataCaptureUploadResponseDescriptor.html">dataCaptureUploadResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DataCaptureUploadResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="dataTypeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/dataTypeDescriptor.html">dataTypeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DataType</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="fileDataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/fileDataDescriptor.html">fileDataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>FileData</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="fileUploadRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/fileUploadRequestDescriptor.html">fileUploadRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>FileUploadRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="fileUploadResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/fileUploadResponseDescriptor.html">fileUploadResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>FileUploadResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="mimeTypeDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/mimeTypeDescriptor.html">mimeTypeDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>MimeType</code>. Decode as a <code>google.protobuf.EnumDescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="sensorDataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/sensorDataDescriptor.html">sensorDataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>SensorData</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="sensorMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/sensorMetadataDescriptor.html">sensorMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>SensorMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="streamingDataCaptureUploadRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/streamingDataCaptureUploadRequestDescriptor.html">streamingDataCaptureUploadRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>StreamingDataCaptureUploadRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="streamingDataCaptureUploadResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/streamingDataCaptureUploadResponseDescriptor.html">streamingDataCaptureUploadResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>StreamingDataCaptureUploadResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="uploadMetadataDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.data_sync/uploadMetadataDescriptor.html">uploadMetadataDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>UploadMetadata</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">viam_sdk</a></li>
+    <li class="self-crumb">protos/app/data_sync.dart</li>
+</ol>
+
+    <h5><span class="package-name">viam_sdk</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Topics</li>
+        <li><a href="../topics/Components-topic.html">Components</a></li>
+        <li><a href="../topics/Services-topic.html">Services</a></li>
+        <li><a href="../topics/App-topic.html">App</a></li>
+        <li><a href="../topics/Common-topic.html">Common</a></li>
+        <li><a href="../topics/Viam SDK-topic.html">Viam&nbsp;SDK</a></li>
+        <li><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></li>
+      <li class="section-title">Libraries</li>
+      <li><a href="../widgets">widgets</a></li>
+      <li><a href="../widgets_button">widgets/button</a></li>
+      <li><a href="../widgets_camera_stream">widgets/camera_stream</a></li>
+      <li><a href="../widgets_joystick">widgets/joystick</a></li>
+      <li><a href="../widgets_multi_camera_stream">widgets/multi_camera_stream</a></li>
+      <li><a href="../widgets_refreshable_data_table">widgets/refreshable_data_table</a></li>
+      <li><a href="../widgets_resources_arm">widgets/resources/arm</a></li>
+      <li><a href="../widgets_resources_base">widgets/resources/base</a></li>
+      <li><a href="../widgets_resources_board">widgets/resources/board</a></li>
+      <li><a href="../widgets_resources_gripper">widgets/resources/gripper</a></li>
+      <li><a href="../widgets_resources_motor">widgets/resources/motor</a></li>
+      <li><a href="../widgets_resources_sensor">widgets/resources/sensor</a></li>
+      <li><a href="../widgets_resources_servo">widgets/resources/servo</a></li>
+      <li class="section-subtitle">Common</li>
+        <li class="section-subitem"><a href="../viam_protos.common.common">protos/common/common</a></li>
+      <li class="section-subtitle">Viam SDK</li>
+        <li class="section-subitem"><a href="../viam_sdk">viam_sdk</a></li>
+      <li class="section-subtitle">Protobuf Definitions</li>
+        <li class="section-subitem"><a href="../viam_protos.app.agent">protos/app/agent</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.app">protos/app/app</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.billing">protos/app/billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.build">protos/app/build</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam">protos/app/cloud_slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data">protos/app/data</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data_sync">protos/app/data_sync</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.dataset">protos/app/dataset</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.end_user">protos/app/end_user</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_inference">protos/app/ml_inference</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_training">protos/app/ml_training</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.packages">protos/app/packages</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.robot">protos/app/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.arm">protos/component/arm</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.audioinput">protos/component/audioinput</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.base">protos/component/base</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.board">protos/component/board</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.button">protos/component/button</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.camera">protos/component/camera</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.encoder">protos/component/encoder</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gantry">protos/component/gantry</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.generic">protos/component/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gripper">protos/component/gripper</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.input_controller">protos/component/input_controller</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.motor">protos/component/motor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.movementsensor">protos/component/movementsensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker">protos/component/pose_tracker</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.powersensor">protos/component/powersensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.sensor">protos/component/sensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.servo">protos/component/servo</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.nswitch">protos/component/switch</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.testecho">protos/component/testecho</a></li>
+        <li class="section-subitem"><a href="../viam_protos.module.module">protos/module/module</a></li>
+        <li class="section-subitem"><a href="../viam_protos.provisioning.provisioning">protos/provisioning/provisioning</a></li>
+        <li class="section-subitem"><a href="../viam_protos.robot.robot">protos/robot/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.data_manager">protos/service/data_manager</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.discovery">protos/service/discovery</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.generic">protos/service/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.mlmodel">protos/service/mlmodel</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.motion">protos/service/motion</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.navigation">protos/service/navigation</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.sensors">protos/service/sensors</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.shell">protos/service/shell</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.slam">protos/service/slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.vision">protos/service/vision</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>viam_protos.app.data_sync library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    viam_sdk
+      0.2.2
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

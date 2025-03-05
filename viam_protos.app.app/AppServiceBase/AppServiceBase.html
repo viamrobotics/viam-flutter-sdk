@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
+    <li><a href="../../viam_protos.app.app">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/AppServiceBase-class.html">AppServiceBase</a></li>
     <li class="self-crumb">AppServiceBase constructor</li>
   </ol>
@@ -136,6 +136,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteOrganizationRequest.fromBuffer(value),
       ($10.DeleteOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.GetOrganizationMetadataRequest, $10.GetOrganizationMetadataResponse&gt;(
+      &#39;GetOrganizationMetadata&#39;,
+      getOrganizationMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetOrganizationMetadataRequest.fromBuffer(value),
+      ($10.GetOrganizationMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.UpdateOrganizationMetadataRequest, $10.UpdateOrganizationMetadataResponse&gt;(
+      &#39;UpdateOrganizationMetadata&#39;,
+      updateOrganizationMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateOrganizationMetadataRequest.fromBuffer(value),
+      ($10.UpdateOrganizationMetadataResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$10.ListOrganizationMembersRequest, $10.ListOrganizationMembersResponse&gt;(
       &#39;ListOrganizationMembers&#39;,
       listOrganizationMembers_Pre,
@@ -311,6 +325,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteLocationRequest.fromBuffer(value),
       ($10.DeleteLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.GetLocationMetadataRequest, $10.GetLocationMetadataResponse&gt;(
+      &#39;GetLocationMetadata&#39;,
+      getLocationMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetLocationMetadataRequest.fromBuffer(value),
+      ($10.GetLocationMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.UpdateLocationMetadataRequest, $10.UpdateLocationMetadataResponse&gt;(
+      &#39;UpdateLocationMetadata&#39;,
+      updateLocationMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateLocationMetadataRequest.fromBuffer(value),
+      ($10.UpdateLocationMetadataResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$10.ListLocationsRequest, $10.ListLocationsResponse&gt;(
       &#39;ListLocations&#39;,
       listLocations_Pre,
@@ -360,6 +388,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotRequest.fromBuffer(value),
       ($10.GetRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotMetadataRequest, $10.GetRobotMetadataResponse&gt;(
+      &#39;GetRobotMetadata&#39;,
+      getRobotMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotMetadataRequest.fromBuffer(value),
+      ($10.GetRobotMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRobotMetadataRequest, $10.UpdateRobotMetadataResponse&gt;(
+      &#39;UpdateRobotMetadata&#39;,
+      updateRobotMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRobotMetadataRequest.fromBuffer(value),
+      ($10.UpdateRobotMetadataResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$10.GetRoverRentalRobotsRequest, $10.GetRoverRentalRobotsResponse&gt;(
       &#39;GetRoverRentalRobots&#39;,
       getRoverRentalRobots_Pre,
@@ -423,6 +465,20 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteRobotPartRequest.fromBuffer(value),
       ($10.DeleteRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotPartMetadataRequest, $10.GetRobotPartMetadataResponse&gt;(
+      &#39;GetRobotPartMetadata&#39;,
+      getRobotPartMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotPartMetadataRequest.fromBuffer(value),
+      ($10.GetRobotPartMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRobotPartMetadataRequest, $10.UpdateRobotPartMetadataResponse&gt;(
+      &#39;UpdateRobotPartMetadata&#39;,
+      updateRobotPartMetadata_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRobotPartMetadataRequest.fromBuffer(value),
+      ($10.UpdateRobotPartMetadataResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$10.GetRobotAPIKeysRequest, $10.GetRobotAPIKeysResponse&gt;(
       &#39;GetRobotAPIKeys&#39;,
       getRobotAPIKeys_Pre,
@@ -724,7 +780,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app">viam_protos.app.app</a></li>
     <li><a href="../../viam_protos.app.app/AppServiceBase-class.html">AppServiceBase</a></li>
     <li class="self-crumb">AppServiceBase constructor</li>
 </ol>

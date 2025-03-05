@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li><a href="../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
+    <li><a href="../viam_protos.app.agent">protos&#47;app&#47;agent.dart</a></li>
     <li class="self-crumb">DeviceAgentConfigRequest class</li>
   </ol>
   <div class="self-name">DeviceAgentConfigRequest</div>
@@ -93,7 +93,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="DeviceAgentConfigRequest" class="callable">
-          <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/DeviceAgentConfigRequest.html">DeviceAgentConfigRequest</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-hostInfo"><span class="type-annotation"><a href="../viam_protos.app.agent/HostInfo-class.html">HostInfo</a>?</span> <span class="parameter-name">hostInfo</span>, </span><span class="parameter" id="-param-subsystemVersions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemVersions</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/DeviceAgentConfigRequest.html">DeviceAgentConfigRequest</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-hostInfo"><span class="type-annotation"><a href="../viam_protos.app.agent/HostInfo-class.html">HostInfo</a>?</span> <span class="parameter-name">hostInfo</span>, </span><span class="parameter" id="-param-subsystemVersions"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemVersions</span>, </span><span class="parameter" id="-param-versionInfo"><span class="type-annotation"><a href="../viam_protos.app.agent/VersionInfo-class.html">VersionInfo</a>?</span> <span class="parameter-name">versionInfo</span></span>})</span>
         </dt>
         <dd>
           
@@ -207,13 +207,14 @@ to protobuf fields.
 </dd>
 
         <dt id="subsystemVersions" class="property">
-  <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/subsystemVersions.html">subsystemVersions</a></span>
+  <span class="name"><a class="deprecated" href="../viam_protos.app.agent/DeviceAgentConfigRequest/subsystemVersions.html">subsystemVersions</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
   
 
 </dt>
 <dd>
   current subsystems and versions
+DEPRECATED in favor of version_info
   <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
@@ -227,6 +228,18 @@ to protobuf fields.
 <dd class="inherited">
   
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="versionInfo" class="property">
+  <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/versionInfo.html">versionInfo</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.agent/VersionInfo-class.html">VersionInfo</a></span>
+  
+
+</dt>
+<dd>
+  Currently installed versions for agent and viam-server
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -330,6 +343,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearVersionInfo" class="callable">
+  <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/clearVersionInfo.html">clearVersionInfo</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clone" class="callable">
   <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.agent/DeviceAgentConfigRequest/clone.html">clone</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.agent/DeviceAgentConfigRequest-class.html">DeviceAgentConfigRequest</a></span>
@@ -416,6 +442,19 @@ to protobuf fields.
         <dt id="ensureHostInfo" class="callable">
   <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/ensureHostInfo.html">ensureHostInfo</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_protos.app.agent/HostInfo-class.html">HostInfo</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="ensureVersionInfo" class="callable">
+  <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/ensureVersionInfo.html">ensureVersionInfo</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.agent/VersionInfo-class.html">VersionInfo</a></span>
   </span>
   
 
@@ -580,6 +619,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasVersionInfo" class="callable">
+  <span class="name"><a href="../viam_protos.app.agent/DeviceAgentConfigRequest/hasVersionInfo.html">hasVersionInfo</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -929,7 +981,7 @@ default value if it is not set.
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li><a href="../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../viam_protos.app.agent">viam_protos.app.agent</a></li>
     <li class="self-crumb">DeviceAgentConfigRequest class</li>
 </ol>
 

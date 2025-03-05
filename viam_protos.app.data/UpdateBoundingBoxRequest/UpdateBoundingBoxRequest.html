@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">protos&#47;app&#47;data.dart</a></li>
+    <li><a href="../../viam_protos.app.data">protos&#47;app&#47;data.dart</a></li>
     <li><a href="../../viam_protos.app.data/UpdateBoundingBoxRequest-class.html">UpdateBoundingBoxRequest</a></li>
     <li class="self-crumb">UpdateBoundingBoxRequest factory constructor</li>
   </ol>
@@ -64,6 +64,7 @@
 <li><span class="parameter" id="-param-yMinNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMinNormalized</span>, </span></li>
 <li><span class="parameter" id="-param-xMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">xMaxNormalized</span>, </span></li>
 <li><span class="parameter" id="-param-yMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMaxNormalized</span>, </span></li>
+<li><span class="parameter" id="-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">binaryDataId</span>, </span></li>
 </ol>})
     </section>
     
@@ -80,6 +81,7 @@
   $core.double? yMinNormalized,
   $core.double? xMaxNormalized,
   $core.double? yMaxNormalized,
+  $core.String? binaryDataId,
 }) {
   final $result = create();
   if (binaryId != null) {
@@ -103,6 +105,9 @@
   if (yMaxNormalized != null) {
     $result.yMaxNormalized = yMaxNormalized;
   }
+  if (binaryDataId != null) {
+    $result.binaryDataId = binaryDataId;
+  }
   return $result;
 }</code></pre>
 </section>
@@ -118,7 +123,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data/viam_protos.app.data-library.html">viam_protos.app.data</a></li>
+    <li><a href="../../viam_protos.app.data">viam_protos.app.data</a></li>
     <li><a href="../../viam_protos.app.data/UpdateBoundingBoxRequest-class.html">UpdateBoundingBoxRequest</a></li>
     <li class="self-crumb">UpdateBoundingBoxRequest factory constructor</li>
 </ol>

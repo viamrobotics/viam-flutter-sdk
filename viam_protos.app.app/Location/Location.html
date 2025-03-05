@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
+    <li><a href="../../viam_protos.app.app">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/Location-class.html">Location</a></li>
     <li class="self-crumb">Location factory constructor</li>
   </ol>
@@ -65,6 +65,7 @@
 <li><span class="parameter" id="-param-organizations"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/LocationOrganization-class.html">LocationOrganization</a></span>&gt;</span>?</span> <span class="parameter-name">organizations</span>, </span></li>
 <li><span class="parameter" id="-param-robotCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">robotCount</span>, </span></li>
 <li><span class="parameter" id="-param-config"><span class="type-annotation"><a href="../../viam_protos.app.app/StorageConfig-class.html">StorageConfig</a>?</span> <span class="parameter-name">config</span>, </span></li>
+<li><span class="parameter" id="-param-primaryOrgIdentity"><span class="type-annotation"><a href="../../viam_protos.app.app/OrganizationIdentity-class.html">OrganizationIdentity</a>?</span> <span class="parameter-name">primaryOrgIdentity</span>, </span></li>
 </ol>})
     </section>
     
@@ -82,6 +83,7 @@
   $core.Iterable&lt;LocationOrganization&gt;? organizations,
   $core.int? robotCount,
   StorageConfig? config,
+  OrganizationIdentity? primaryOrgIdentity,
 }) {
   final $result = create();
   if (id != null) {
@@ -108,6 +110,9 @@
   if (config != null) {
     $result.config = config;
   }
+  if (primaryOrgIdentity != null) {
+    $result.primaryOrgIdentity = primaryOrgIdentity;
+  }
   return $result;
 }</code></pre>
 </section>
@@ -123,7 +128,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app">viam_protos.app.app</a></li>
     <li><a href="../../viam_protos.app.app/Location-class.html">Location</a></li>
     <li class="self-crumb">Location factory constructor</li>
 </ol>

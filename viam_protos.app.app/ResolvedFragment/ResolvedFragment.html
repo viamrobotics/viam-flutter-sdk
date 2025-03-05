@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">protos&#47;app&#47;app.dart</a></li>
+    <li><a href="../../viam_protos.app.app">protos&#47;app&#47;app.dart</a></li>
     <li><a href="../../viam_protos.app.app/ResolvedFragment-class.html">ResolvedFragment</a></li>
     <li class="self-crumb">ResolvedFragment factory constructor</li>
   </ol>
@@ -60,6 +60,7 @@
       <span class="name ">ResolvedFragment</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-fragmentId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fragmentId</span>, </span></li>
 <li><span class="parameter" id="-param-resolvedConfig"><span class="type-annotation">Struct?</span> <span class="parameter-name">resolvedConfig</span>, </span></li>
 <li><span class="parameter" id="-param-error"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentError-class.html">FragmentError</a>?</span> <span class="parameter-name">error</span>, </span></li>
+<li><span class="parameter" id="-param-revision"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">revision</span>, </span></li>
 </ol>})
     </section>
     
@@ -72,6 +73,7 @@
   $core.String? fragmentId,
   $46.Struct? resolvedConfig,
   FragmentError? error,
+  $core.String? revision,
 }) {
   final $result = create();
   if (fragmentId != null) {
@@ -82,6 +84,9 @@
   }
   if (error != null) {
     $result.error = error;
+  }
+  if (revision != null) {
+    $result.revision = revision;
   }
   return $result;
 }</code></pre>
@@ -98,7 +103,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.app/viam_protos.app.app-library.html">viam_protos.app.app</a></li>
+    <li><a href="../../viam_protos.app.app">viam_protos.app.app</a></li>
     <li><a href="../../viam_protos.app.app/ResolvedFragment-class.html">ResolvedFragment</a></li>
     <li class="self-crumb">ResolvedFragment factory constructor</li>
 </ol>

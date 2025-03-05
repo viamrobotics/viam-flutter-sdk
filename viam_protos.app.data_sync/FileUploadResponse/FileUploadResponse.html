@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">protos&#47;app&#47;data_sync.dart</a></li>
+    <li><a href="../../viam_protos.app.data_sync">protos&#47;app&#47;data_sync.dart</a></li>
     <li><a href="../../viam_protos.app.data_sync/FileUploadResponse-class.html">FileUploadResponse</a></li>
     <li class="self-crumb">FileUploadResponse factory constructor</li>
   </ol>
@@ -58,6 +58,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">FileUploadResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-fileId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fileId</span>, </span></li>
+<li><span class="parameter" id="-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">binaryDataId</span>, </span></li>
 </ol>})
     </section>
     
@@ -68,10 +69,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory FileUploadResponse({
   $core.String? fileId,
+  $core.String? binaryDataId,
 }) {
   final $result = create();
   if (fileId != null) {
     $result.fileId = fileId;
+  }
+  if (binaryDataId != null) {
+    $result.binaryDataId = binaryDataId;
   }
   return $result;
 }</code></pre>
@@ -88,7 +93,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.data_sync/viam_protos.app.data_sync-library.html">viam_protos.app.data_sync</a></li>
+    <li><a href="../../viam_protos.app.data_sync">viam_protos.app.data_sync</a></li>
     <li><a href="../../viam_protos.app.data_sync/FileUploadResponse-class.html">FileUploadResponse</a></li>
     <li class="self-crumb">FileUploadResponse factory constructor</li>
 </ol>

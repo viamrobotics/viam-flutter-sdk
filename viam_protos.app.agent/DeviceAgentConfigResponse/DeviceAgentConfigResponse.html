@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
+    <li><a href="../../viam_protos.app.agent">protos&#47;app&#47;agent.dart</a></li>
     <li><a href="../../viam_protos.app.agent/DeviceAgentConfigResponse-class.html">DeviceAgentConfigResponse</a></li>
     <li class="self-crumb">DeviceAgentConfigResponse factory constructor</li>
   </ol>
@@ -57,8 +57,14 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">DeviceAgentConfigResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-subsystemConfigs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../viam_protos.app.agent/DeviceSubsystemConfig-class.html">DeviceSubsystemConfig</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemConfigs</span>, </span></li>
+      <span class="name ">DeviceAgentConfigResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-subsystemConfigs"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../viam_protos.app.agent/DeviceSubsystemConfig-class.html">DeviceSubsystemConfig</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemConfigs</span>, </span></li>
 <li><span class="parameter" id="-param-checkInterval"><span class="type-annotation">Duration?</span> <span class="parameter-name">checkInterval</span>, </span></li>
+<li><span class="parameter" id="-param-agentUpdateInfo"><span class="type-annotation"><a href="../../viam_protos.app.agent/UpdateInfo-class.html">UpdateInfo</a>?</span> <span class="parameter-name">agentUpdateInfo</span>, </span></li>
+<li><span class="parameter" id="-param-viamServerUpdateInfo"><span class="type-annotation"><a href="../../viam_protos.app.agent/UpdateInfo-class.html">UpdateInfo</a>?</span> <span class="parameter-name">viamServerUpdateInfo</span>, </span></li>
+<li><span class="parameter" id="-param-advancedSettings"><span class="type-annotation">Struct?</span> <span class="parameter-name">advancedSettings</span>, </span></li>
+<li><span class="parameter" id="-param-networkConfiguration"><span class="type-annotation">Struct?</span> <span class="parameter-name">networkConfiguration</span>, </span></li>
+<li><span class="parameter" id="-param-additionalNetworks"><span class="type-annotation">Struct?</span> <span class="parameter-name">additionalNetworks</span>, </span></li>
+<li><span class="parameter" id="-param-systemConfiguration"><span class="type-annotation">Struct?</span> <span class="parameter-name">systemConfiguration</span>, </span></li>
 </ol>})
     </section>
     
@@ -68,15 +74,41 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory DeviceAgentConfigResponse({
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   $core.Map&lt;$core.String, DeviceSubsystemConfig&gt;? subsystemConfigs,
   $45.Duration? checkInterval,
+  UpdateInfo? agentUpdateInfo,
+  UpdateInfo? viamServerUpdateInfo,
+  $46.Struct? advancedSettings,
+  $46.Struct? networkConfiguration,
+  $46.Struct? additionalNetworks,
+  $46.Struct? systemConfiguration,
 }) {
   final $result = create();
   if (subsystemConfigs != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.subsystemConfigs.addAll(subsystemConfigs);
   }
   if (checkInterval != null) {
     $result.checkInterval = checkInterval;
+  }
+  if (agentUpdateInfo != null) {
+    $result.agentUpdateInfo = agentUpdateInfo;
+  }
+  if (viamServerUpdateInfo != null) {
+    $result.viamServerUpdateInfo = viamServerUpdateInfo;
+  }
+  if (advancedSettings != null) {
+    $result.advancedSettings = advancedSettings;
+  }
+  if (networkConfiguration != null) {
+    $result.networkConfiguration = networkConfiguration;
+  }
+  if (additionalNetworks != null) {
+    $result.additionalNetworks = additionalNetworks;
+  }
+  if (systemConfiguration != null) {
+    $result.systemConfiguration = systemConfiguration;
   }
   return $result;
 }</code></pre>
@@ -93,7 +125,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../../viam_protos.app.agent">viam_protos.app.agent</a></li>
     <li><a href="../../viam_protos.app.agent/DeviceAgentConfigResponse-class.html">DeviceAgentConfigResponse</a></li>
     <li class="self-crumb">DeviceAgentConfigResponse factory constructor</li>
 </ol>

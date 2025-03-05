@@ -25,9 +25,9 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
+    <li><a href="../../viam_protos.app.agent">protos&#47;app&#47;agent.dart</a></li>
     <li><a href="../../viam_protos.app.agent/DeviceAgentConfigResponse-class.html">DeviceAgentConfigResponse</a></li>
-    <li class="self-crumb">subsystemConfigs property</li>
+    <li class="self-crumb"><span class="deprecated">subsystemConfigs</span> property</li>
   </ol>
   <div class="self-name">subsystemConfigs</div>
   <form class="search navbar-right" role="search">
@@ -64,25 +64,28 @@
       
   <div>
     <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</li>
         <li>@<a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/TagNumber-class.html">TagNumber</a>(1)</li>
     </ol>
   </div>
       <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../viam_protos.app.agent/DeviceSubsystemConfig-class.html">DeviceSubsystemConfig</a></span>&gt;</span></span>
       get
-      <span class="name ">subsystemConfigs</span>
+      <span class="name deprecated">subsystemConfigs</span>
       
 
     </section>
     
 <section class="desc markdown">
   <p>subsystems to be installed/configured/updated
-note: previously installed subsystems will be removed from the system if removed from this list</p>
+note: previously installed subsystems will be removed from the system if removed from this list
+DEPRECATED in favor of indidivual update_info and settings fields</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@$pb.TagNumber(1)
+  <pre class="language-dart"><code class="language-dart">@$core.Deprecated(&#39;This field is deprecated.&#39;)
+@$pb.TagNumber(1)
 $core.Map&lt;$core.String, DeviceSubsystemConfig&gt; get subsystemConfigs =&gt; $_getMap(0);</code></pre>
 </section>
 
@@ -99,9 +102,9 @@ $core.Map&lt;$core.String, DeviceSubsystemConfig&gt; get subsystemConfigs =&gt; 
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../../viam_protos.app.agent">viam_protos.app.agent</a></li>
     <li><a href="../../viam_protos.app.agent/DeviceAgentConfigResponse-class.html">DeviceAgentConfigResponse</a></li>
-    <li class="self-crumb">subsystemConfigs property</li>
+    <li class="self-crumb"><span class="deprecated">subsystemConfigs</span> property</li>
 </ol>
 
   <h5>DeviceAgentConfigResponse class</h5>

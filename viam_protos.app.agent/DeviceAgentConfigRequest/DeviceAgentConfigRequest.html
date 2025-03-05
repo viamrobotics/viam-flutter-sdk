@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">protos&#47;app&#47;agent.dart</a></li>
+    <li><a href="../../viam_protos.app.agent">protos&#47;app&#47;agent.dart</a></li>
     <li><a href="../../viam_protos.app.agent/DeviceAgentConfigRequest-class.html">DeviceAgentConfigRequest</a></li>
     <li class="self-crumb">DeviceAgentConfigRequest factory constructor</li>
   </ol>
@@ -59,7 +59,8 @@
       
       <span class="name ">DeviceAgentConfigRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
 <li><span class="parameter" id="-param-hostInfo"><span class="type-annotation"><a href="../../viam_protos.app.agent/HostInfo-class.html">HostInfo</a>?</span> <span class="parameter-name">hostInfo</span>, </span></li>
-<li><span class="parameter" id="-param-subsystemVersions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemVersions</span>, </span></li>
+<li><span class="parameter" id="-param-subsystemVersions"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">subsystemVersions</span>, </span></li>
+<li><span class="parameter" id="-param-versionInfo"><span class="type-annotation"><a href="../../viam_protos.app.agent/VersionInfo-class.html">VersionInfo</a>?</span> <span class="parameter-name">versionInfo</span>, </span></li>
 </ol>})
     </section>
     
@@ -71,7 +72,9 @@
   <pre class="language-dart"><code class="language-dart">factory DeviceAgentConfigRequest({
   $core.String? id,
   HostInfo? hostInfo,
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   $core.Map&lt;$core.String, $core.String&gt;? subsystemVersions,
+  VersionInfo? versionInfo,
 }) {
   final $result = create();
   if (id != null) {
@@ -81,7 +84,11 @@
     $result.hostInfo = hostInfo;
   }
   if (subsystemVersions != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.subsystemVersions.addAll(subsystemVersions);
+  }
+  if (versionInfo != null) {
+    $result.versionInfo = versionInfo;
   }
   return $result;
 }</code></pre>
@@ -98,7 +105,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
-    <li><a href="../../viam_protos.app.agent/viam_protos.app.agent-library.html">viam_protos.app.agent</a></li>
+    <li><a href="../../viam_protos.app.agent">viam_protos.app.agent</a></li>
     <li><a href="../../viam_protos.app.agent/DeviceAgentConfigRequest-class.html">DeviceAgentConfigRequest</a></li>
     <li class="self-crumb">DeviceAgentConfigRequest factory constructor</li>
 </ol>

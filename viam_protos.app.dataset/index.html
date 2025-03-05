@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="viam_protos.app.dataset library API docs, for the Dart programming language.">
+  <title>viam_protos.app.dataset library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">viam_sdk</a></li>
+    <li class="self-crumb">protos/app/dataset.dart</li>
+  </ol>
+  <div class="self-name">viam_protos.app.dataset</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="viam_protos.app.dataset&#47;viam_protos.app.dataset-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">protos/app/dataset</span>
+        library 
+ 
+    <span class="category protobuf-definitions cp-5 linked" title="This is part of the Protobuf Definitions topic."><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></span>
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>The proto definitions for dataset</p>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+      <dl>
+          <dt id="CreateDatasetRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/CreateDatasetRequest-class.html">CreateDatasetRequest</a></span> 
+
+</dt>
+<dd>
+  CreateDatasetRequest defines the name and organization ID of a dataset.
+</dd>
+
+          <dt id="CreateDatasetResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/CreateDatasetResponse-class.html">CreateDatasetResponse</a></span> 
+
+</dt>
+<dd>
+  CreateDatasetResponse returns the dataset ID of the created dataset.
+</dd>
+
+          <dt id="Dataset">
+  <span class="name "><a href="../viam_protos.app.dataset/Dataset-class.html">Dataset</a></span> 
+
+</dt>
+<dd>
+  Dataset stores the metadata of a dataset.
+</dd>
+
+          <dt id="DatasetServiceBase">
+  <span class="name "><a href="../viam_protos.app.dataset/DatasetServiceBase-class.html">DatasetServiceBase</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DatasetServiceClient">
+  <span class="name "><a href="../viam_protos.app.dataset/DatasetServiceClient-class.html">DatasetServiceClient</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="DeleteDatasetRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/DeleteDatasetRequest-class.html">DeleteDatasetRequest</a></span> 
+
+</dt>
+<dd>
+  DeleteDatasetRequest deletes the dataset specified by the dataset ID.
+</dd>
+
+          <dt id="DeleteDatasetResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/DeleteDatasetResponse-class.html">DeleteDatasetResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ListDatasetsByIDsRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/ListDatasetsByIDsRequest-class.html">ListDatasetsByIDsRequest</a></span> 
+
+</dt>
+<dd>
+  ListDatasetsByIDsRequest requests all of the datasets by their dataset IDs.
+</dd>
+
+          <dt id="ListDatasetsByIDsResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/ListDatasetsByIDsResponse-class.html">ListDatasetsByIDsResponse</a></span> 
+
+</dt>
+<dd>
+  ListDatasetsByIDsResponse returns all the dataset metadata for the associated dataset IDs.
+</dd>
+
+          <dt id="ListDatasetsByOrganizationIDRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/ListDatasetsByOrganizationIDRequest-class.html">ListDatasetsByOrganizationIDRequest</a></span> 
+
+</dt>
+<dd>
+  ListDatasetsByOrganizationIDRequest requests all of the datasets for an organization.
+</dd>
+
+          <dt id="ListDatasetsByOrganizationIDResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/ListDatasetsByOrganizationIDResponse-class.html">ListDatasetsByOrganizationIDResponse</a></span> 
+
+</dt>
+<dd>
+  ListDatasetsByOrganizationIDResponse returns all the dataset metadata for the organization.
+</dd>
+
+          <dt id="RenameDatasetRequest">
+  <span class="name "><a href="../viam_protos.app.dataset/RenameDatasetRequest-class.html">RenameDatasetRequest</a></span> 
+
+</dt>
+<dd>
+  RenameDatasetRequest applies the new name to the dataset specified by the dataset ID.
+</dd>
+
+          <dt id="RenameDatasetResponse">
+  <span class="name "><a href="../viam_protos.app.dataset/RenameDatasetResponse-class.html">RenameDatasetResponse</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+
+    <section class="summary offset-anchor" id="constants">
+      <h2>Constants</h2>
+      <dl class="properties">
+          <dt id="CreateDatasetRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/CreateDatasetRequest$json-constant.html">CreateDatasetRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="CreateDatasetResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/CreateDatasetResponse$json-constant.html">CreateDatasetResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="Dataset$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/Dataset$json-constant.html">Dataset$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeleteDatasetRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/DeleteDatasetRequest$json-constant.html">DeleteDatasetRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="DeleteDatasetResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/DeleteDatasetResponse$json-constant.html">DeleteDatasetResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="ListDatasetsByIDsRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/ListDatasetsByIDsRequest$json-constant.html">ListDatasetsByIDsRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="ListDatasetsByIDsResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/ListDatasetsByIDsResponse$json-constant.html">ListDatasetsByIDsResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="ListDatasetsByOrganizationIDRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/ListDatasetsByOrganizationIDRequest$json-constant.html">ListDatasetsByOrganizationIDRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="ListDatasetsByOrganizationIDResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/ListDatasetsByOrganizationIDResponse$json-constant.html">ListDatasetsByOrganizationIDResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="RenameDatasetRequest$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/RenameDatasetRequest$json-constant.html">RenameDatasetRequest$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+          <dt id="RenameDatasetResponse$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.app.dataset/RenameDatasetResponse$json-constant.html">RenameDatasetResponse$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="properties">
+      <h2>Properties</h2>
+      <dl class="properties">
+          <dt id="createDatasetRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/createDatasetRequestDescriptor.html">createDatasetRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>CreateDatasetRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="createDatasetResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/createDatasetResponseDescriptor.html">createDatasetResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>CreateDatasetResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="datasetDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/datasetDescriptor.html">datasetDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>Dataset</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deleteDatasetRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/deleteDatasetRequestDescriptor.html">deleteDatasetRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeleteDatasetRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="deleteDatasetResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/deleteDatasetResponseDescriptor.html">deleteDatasetResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>DeleteDatasetResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="listDatasetsByIDsRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/listDatasetsByIDsRequestDescriptor.html">listDatasetsByIDsRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>ListDatasetsByIDsRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="listDatasetsByIDsResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/listDatasetsByIDsResponseDescriptor.html">listDatasetsByIDsResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>ListDatasetsByIDsResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="listDatasetsByOrganizationIDRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/listDatasetsByOrganizationIDRequestDescriptor.html">listDatasetsByOrganizationIDRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>ListDatasetsByOrganizationIDRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="listDatasetsByOrganizationIDResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/listDatasetsByOrganizationIDResponseDescriptor.html">listDatasetsByOrganizationIDResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>ListDatasetsByOrganizationIDResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="renameDatasetRequestDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/renameDatasetRequestDescriptor.html">renameDatasetRequestDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>RenameDatasetRequest</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+          <dt id="renameDatasetResponseDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.app.dataset/renameDatasetResponseDescriptor.html">renameDatasetResponseDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>RenameDatasetResponse</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">viam_sdk</a></li>
+    <li class="self-crumb">protos/app/dataset.dart</li>
+</ol>
+
+    <h5><span class="package-name">viam_sdk</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Topics</li>
+        <li><a href="../topics/Components-topic.html">Components</a></li>
+        <li><a href="../topics/Services-topic.html">Services</a></li>
+        <li><a href="../topics/App-topic.html">App</a></li>
+        <li><a href="../topics/Common-topic.html">Common</a></li>
+        <li><a href="../topics/Viam SDK-topic.html">Viam&nbsp;SDK</a></li>
+        <li><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></li>
+      <li class="section-title">Libraries</li>
+      <li><a href="../widgets">widgets</a></li>
+      <li><a href="../widgets_button">widgets/button</a></li>
+      <li><a href="../widgets_camera_stream">widgets/camera_stream</a></li>
+      <li><a href="../widgets_joystick">widgets/joystick</a></li>
+      <li><a href="../widgets_multi_camera_stream">widgets/multi_camera_stream</a></li>
+      <li><a href="../widgets_refreshable_data_table">widgets/refreshable_data_table</a></li>
+      <li><a href="../widgets_resources_arm">widgets/resources/arm</a></li>
+      <li><a href="../widgets_resources_base">widgets/resources/base</a></li>
+      <li><a href="../widgets_resources_board">widgets/resources/board</a></li>
+      <li><a href="../widgets_resources_gripper">widgets/resources/gripper</a></li>
+      <li><a href="../widgets_resources_motor">widgets/resources/motor</a></li>
+      <li><a href="../widgets_resources_sensor">widgets/resources/sensor</a></li>
+      <li><a href="../widgets_resources_servo">widgets/resources/servo</a></li>
+      <li class="section-subtitle">Common</li>
+        <li class="section-subitem"><a href="../viam_protos.common.common">protos/common/common</a></li>
+      <li class="section-subtitle">Viam SDK</li>
+        <li class="section-subitem"><a href="../viam_sdk">viam_sdk</a></li>
+      <li class="section-subtitle">Protobuf Definitions</li>
+        <li class="section-subitem"><a href="../viam_protos.app.agent">protos/app/agent</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.app">protos/app/app</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.billing">protos/app/billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.build">protos/app/build</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam">protos/app/cloud_slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data">protos/app/data</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data_sync">protos/app/data_sync</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.dataset">protos/app/dataset</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.end_user">protos/app/end_user</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_inference">protos/app/ml_inference</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_training">protos/app/ml_training</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.packages">protos/app/packages</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.robot">protos/app/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.arm">protos/component/arm</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.audioinput">protos/component/audioinput</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.base">protos/component/base</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.board">protos/component/board</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.button">protos/component/button</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.camera">protos/component/camera</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.encoder">protos/component/encoder</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gantry">protos/component/gantry</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.generic">protos/component/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gripper">protos/component/gripper</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.input_controller">protos/component/input_controller</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.motor">protos/component/motor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.movementsensor">protos/component/movementsensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker">protos/component/pose_tracker</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.powersensor">protos/component/powersensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.sensor">protos/component/sensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.servo">protos/component/servo</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.nswitch">protos/component/switch</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.testecho">protos/component/testecho</a></li>
+        <li class="section-subitem"><a href="../viam_protos.module.module">protos/module/module</a></li>
+        <li class="section-subitem"><a href="../viam_protos.provisioning.provisioning">protos/provisioning/provisioning</a></li>
+        <li class="section-subitem"><a href="../viam_protos.robot.robot">protos/robot/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.data_manager">protos/service/data_manager</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.discovery">protos/service/discovery</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.generic">protos/service/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.mlmodel">protos/service/mlmodel</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.motion">protos/service/motion</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.navigation">protos/service/navigation</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.sensors">protos/service/sensors</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.shell">protos/service/shell</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.slam">protos/service/slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.vision">protos/service/vision</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>viam_protos.app.dataset library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    viam_sdk
+      0.2.2
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
