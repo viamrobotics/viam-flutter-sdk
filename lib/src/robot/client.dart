@@ -336,26 +336,6 @@ class RobotClient {
     return await _client.getCloudMetadata(rpb.GetCloudMetadataRequest());
   }
 
-  /// Deprecated: use the Discovery Service APIs instead.
-  ///
-  /// Discover components that the robot can connect to, given specific query metadata.
-  ///
-  /// ```
-  /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'username': 'admin', 'password': 'admin'})];
-  /// var discoveredComponents = await machine.discoverComponents(queries);
-  /// ```
-  Future<List<Discovery>> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
-    final request = rpb.DiscoverComponentsRequest()
-      ..queries.addAll(queries.map((sdkQuery) => rpb.DiscoveryQuery()
-        ..subtype = sdkQuery.subtype
-        ..model = sdkQuery.model
-        ..extra = sdkQuery.extraStruct));
-
-    _logger.w("RobotClient.discoverComponents is deprecated. It will be removed on March 10 2025. Use the DiscoveryService APIs instead.");
-    final response = await _client.discoverComponents(request);
-    return response.discovery.map((d) => Discovery.fromProto(d)).toList();
-  }
-
   /// GetModelsFromModules returns the list of models supported in modules on the machine.
   ///
   /// ```
