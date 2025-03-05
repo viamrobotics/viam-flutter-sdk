@@ -55,6 +55,42 @@ const TunnelResponse$json = {
 final $typed_data.Uint8List tunnelResponseDescriptor = $convert.base64Decode(
     'Cg5UdW5uZWxSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRh');
 
+@$core.Deprecated('Use listTunnelsRequestDescriptor instead')
+const ListTunnelsRequest$json = {
+  '1': 'ListTunnelsRequest',
+};
+
+/// Descriptor for `ListTunnelsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTunnelsRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0VHVubmVsc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listTunnelsResponseDescriptor instead')
+const ListTunnelsResponse$json = {
+  '1': 'ListTunnelsResponse',
+  '2': [
+    {'1': 'tunnels', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.Tunnel', '10': 'tunnels'},
+  ],
+};
+
+/// Descriptor for `ListTunnelsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTunnelsResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0VHVubmVsc1Jlc3BvbnNlEi8KB3R1bm5lbHMYASADKAsyFS52aWFtLnJvYm90LnYxLl'
+    'R1bm5lbFIHdHVubmVscw==');
+
+@$core.Deprecated('Use tunnelDescriptor instead')
+const Tunnel$json = {
+  '1': 'Tunnel',
+  '2': [
+    {'1': 'port', '3': 1, '4': 1, '5': 13, '10': 'port'},
+    {'1': 'connection_timeout', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'connectionTimeout'},
+  ],
+};
+
+/// Descriptor for `Tunnel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tunnelDescriptor = $convert.base64Decode(
+    'CgZUdW5uZWwSEgoEcG9ydBgBIAEoDVIEcG9ydBJIChJjb25uZWN0aW9uX3RpbWVvdXQYAiABKA'
+    'syGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SEWNvbm5lY3Rpb25UaW1lb3V0');
+
 @$core.Deprecated('Use frameSystemConfigDescriptor instead')
 const FrameSystemConfig$json = {
   '1': 'FrameSystemConfig',
