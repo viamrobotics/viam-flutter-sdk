@@ -57,20 +57,6 @@ class RobotClientOptions {
 }
 
 /// {@category Viam SDK}
-/// Represents a discovery query in the SDK to query for discoverable components.
-///
-/// deprecated, remove on march 10th
-class DiscoveryQuery {
-  final String subtype;
-  final String model;
-  final Map<String, dynamic> extra;
-
-  DiscoveryQuery({required this.subtype, required this.model, Map<String, dynamic>? extra}) : extra = extra ?? {};
-
-  Struct get extraStruct => extra.toStruct();
-}
-
-/// {@category Viam SDK}
 /// Represents the result of a discovery query.
 class Discovery {
   final String subtype;
