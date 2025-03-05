@@ -5,6 +5,7 @@ import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
+import 'package:google_protobuf/google/protobuf/struct.pb.dart';
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;
 
@@ -745,7 +746,7 @@ class AppClient {
       String id, Map<String, dynamic> data) async {
     final request = UpdateOrganizationMetadataRequest()
       ..organizationId = id
-      ..data = data.toStruct();
+      ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
     return await _client.updateOrganizationMetadata(request);
   }
 
@@ -764,7 +765,7 @@ class AppClient {
       String id, Map<String, dynamic> data) async {
     final request = UpdateLocationMetadataRequest()
       ..locationId = id
-      ..data = data.toStruct();
+      ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
     return await _client.updateLocationMetadata(request);
   }
 
@@ -783,7 +784,7 @@ class AppClient {
       String id, Map<String, dynamic> data) async {
     final request = UpdateRobotMetadataRequest()
       ..id = id
-      ..data = data.toStruct();
+      ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
     return await _client.updateRobotMetadata(request);
   }
 
@@ -802,7 +803,7 @@ class AppClient {
       String id, Map<String, dynamic> data) async {
     final request = UpdateRobotPartMetadataRequest()
       ..id = id
-      ..data = data.toStruct();
+      ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
     return await _client.updateRobotPartMetadata(request);
   }
 }
