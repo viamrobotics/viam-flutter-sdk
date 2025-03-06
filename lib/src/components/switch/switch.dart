@@ -56,7 +56,7 @@ abstract class Switch extends Resource {
   /// ```
   ///
   /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
-  static Servo fromRobot(RobotClient robot, String name) {
+  static Switch fromRobot(RobotClient robot, String name) {
     return robot.getResource(Switch.getResourceName(name));
   }
 }

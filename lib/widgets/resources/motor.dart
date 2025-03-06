@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../viam_sdk.dart';
+import '../../viam_sdk.dart' hide Switch;
 
 /// A widget to control a [Motor].
 ///
@@ -66,9 +66,12 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
   SliderThemeData get _sliderTheme {
     return SliderThemeData(
       trackHeight: 10,
-      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10, disabledThumbRadius: 10),
-      activeTrackColor: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
-      inactiveTrackColor: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
+      thumbShape: const RoundSliderThumbShape(
+          enabledThumbRadius: 10, disabledThumbRadius: 10),
+      activeTrackColor:
+          Theme.of(context).colorScheme.secondary.withOpacity(0.25),
+      inactiveTrackColor:
+          Theme.of(context).colorScheme.secondary.withOpacity(0.25),
       trackShape: const RectangularSliderTrackShape(),
     );
   }
@@ -93,7 +96,8 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
                 }
                 return Colors.transparent;
               }),
-              trackOutlineColor: MaterialStatePropertyAll(Theme.of(context).colorScheme.secondary),
+              trackOutlineColor: MaterialStatePropertyAll(
+                  Theme.of(context).colorScheme.secondary),
               value: autoStop,
               onChanged: (value) => setState(() {
                 if (value) {
@@ -116,7 +120,8 @@ class _ViamMotorWidgetState extends State<ViamMotorWidget> {
               onChangeEnd: _handleSliderRelease,
             ),
           ),
-          if (error != null) Text('Error: $error', style: const TextStyle(color: Colors.red)),
+          if (error != null)
+            Text('Error: $error', style: const TextStyle(color: Colors.red)),
         ],
       ),
     );
