@@ -769,18 +769,18 @@ class AppClient {
     return await _client.updateLocationMetadata(request);
   }
 
-  /// Retrieves user-defined [Metadata] for a robot.
+  /// Retrieves user-defined [Metadata] for a machine.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetRobotMetadataResponse> getRobotMetadata(String id) async {
+  Future<GetRobotMetadataResponse> getMachineMetadata(String id) async {
     final request = GetRobotMetadataRequest()..id = id;
     return await _client.getRobotMetadata(request);
   }
 
-  /// Updates user-defined [Metadata] for a robot.
+  /// Updates user-defined [Metadata] for a machine.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateRobotMetadataResponse> updateRobotMetadata(
+  Future<UpdateRobotMetadataResponse> updateMachineMetadata(
       String id, Map<String, dynamic> data) async {
     final request = UpdateRobotMetadataRequest()
       ..id = id
@@ -788,18 +788,18 @@ class AppClient {
     return await _client.updateRobotMetadata(request);
   }
 
-  /// Retrieves user-defined [Metadata] for a robot part.
+  /// Retrieves user-defined [Metadata] for a machine part.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetRobotPartMetadataResponse> getRobotPartMetadata(String id) async {
+  Future<GetRobotPartMetadataResponse> getMachinePartMetadata(String id) async {
     final request = GetRobotPartMetadataRequest()..id = id;
     return await _client.getRobotPartMetadata(request);
   }
 
-  /// Updates user-defined [Metadata] for a robot part.
+  /// Updates user-defined [Metadata] for a machine part.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateRobotPartMetadataResponse> updateRobotPartMetadata(
+  Future<UpdateRobotPartMetadataResponse> updateMachinePartMetadata(
       String id, Map<String, dynamic> data) async {
     final request = UpdateRobotPartMetadataRequest()
       ..id = id
