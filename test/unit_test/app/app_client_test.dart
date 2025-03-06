@@ -756,8 +756,7 @@ void main() {
     });
 
     test('getOrganizationMetadata', () async {
-      final expected = GetOrganizationMetadataResponse()
-        ..metadata = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
+      final expected = GetOrganizationMetadataResponse()..metadata = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
       when(serviceClient.getOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected)); 
       final response = await appClient.getOrganizationMetadata('orgId');
       expect(response, equals(expected));
@@ -770,8 +769,7 @@ void main() {
     });
 
     test('getLocationMetadata', () async {
-      final expected = GetLocationMetadataResponse()
-        ..metadata = (Struct()..fields['locationKey'] = (Value()..stringValue = 'locationValue'));
+      final expected = GetLocationMetadataResponse()..metadata = (Struct()..fields['locationKey'] = (Value()..stringValue = 'locationValue'));
       when(serviceClient.getLocationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final response = await appClient.getLocationMetadata('locationId');
       expect(response, equals(expected));
@@ -784,8 +782,7 @@ void main() {
     });
 
     test('getMachineMetadata', () async {
-      final expected = GetRobotMetadataResponse()
-        ..metadata = (Struct()..fields['robotKey'] = (Value()..stringValue = 'robotValue'));
+      final expected = GetRobotMetadataResponse()..metadata = (Struct()..fields['robotKey'] = (Value()..stringValue = 'robotValue'));
       when(serviceClient.getMachineMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final response = await appClient.getMachineMetadata('robotId');
       expect(response, equals(expected));
@@ -798,8 +795,7 @@ void main() {
     });
 
     test('getMachinePartMetadata', () async {
-      final expected = GetRobotPartMetadataResponse()
-        ..metadata = (Struct()..fields['partKey'] = (Value()..stringValue = 'partValue'));
+      final expected = GetRobotPartMetadataResponse()..metadata = (Struct()..fields['partKey'] = (Value()..stringValue = 'partValue'));
       when(serviceClient.getMachinePartMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final response = await appClient.getMachinePartMetadata('partId');
       expect(response, equals(expected));
