@@ -596,7 +596,7 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
-    if (!SessionsClient.unallowedMethods.contains(method.path) && _sessionId != null) {
+    if ((SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) && _sessionId != null) {
       options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!()}));
     }
 
