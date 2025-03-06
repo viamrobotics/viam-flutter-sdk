@@ -82,7 +82,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 ClientCall&lt;Q, R&gt; createCall&lt;Q, R&gt;(ClientMethod&lt;Q, R&gt; method, Stream&lt;Q&gt; requests, CallOptions options) {
-  if (!SessionsClient.unallowedMethods.contains(method.path) &amp;&amp; _sessionId != null) {
+  if ((SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) &amp;&amp; _sessionId != null) {
     options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!()}));
   }
 
