@@ -5,6 +5,7 @@ import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
+import 'package:google_protobuf/google/protobuf/struct.pb.dart';
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;
 
@@ -728,5 +729,81 @@ class AppClient {
   Future<CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations(String id) async {
     final request = CreateKeyFromExistingKeyAuthorizationsRequest()..id = id;
     return await _client.createKeyFromExistingKeyAuthorizations(request);
+  }
+
+  /// Retrieves user-defined [Metadata] for an organization.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<GetOrganizationMetadataResponse> getOrganizationMetadata(String id) async {
+    final request = GetOrganizationMetadataRequest()..organizationId = id;
+    return await _client.getOrganizationMetadata(request);
+  }
+
+  /// Updates user-defined [Metadata] for an organization.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<UpdateOrganizationMetadataResponse> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
+    final request = UpdateOrganizationMetadataRequest()
+      ..organizationId = id
+      ..data = Struct()
+      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+    await _client.updateOrganizationMetadata(request);
+  }
+
+  /// Retrieves user-defined [Metadata] for a location.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<GetLocationMetadataResponse> getLocationMetadata(String id) async {
+    final request = GetLocationMetadataRequest()..locationId = id;
+    return await _client.getLocationMetadata(request);
+  }
+
+  /// Updates user-defined [Metadata] for a location.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
+    final request = UpdateLocationMetadataRequest()
+      ..locationId = id
+      ..data = Struct()
+      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+    await _client.updateLocationMetadata(request);
+  }
+
+  /// Retrieves user-defined [Metadata] for a machine.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<GetRobotMetadataResponse> getMachineMetadata(String id) async {
+    final request = GetRobotMetadataRequest()..id = id;
+    return await _client.getRobotMetadata(request);
+  }
+
+  /// Updates user-defined [Metadata] for a machine.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> updateMachineMetadata(String id, Map<String, dynamic> data) async {
+    final request = UpdateRobotMetadataRequest()
+      ..id = id
+      ..data = Struct()
+      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+    await _client.updateRobotMetadata(request);
+  }
+
+  /// Retrieves user-defined [Metadata] for a machine part.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<GetRobotPartMetadataResponse> getMachinePartMetadata(String id) async {
+    final request = GetRobotPartMetadataRequest()..id = id;
+    return await _client.getRobotPartMetadata(request);
+  }
+
+  /// Updates user-defined [Metadata] for a machine part.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<void> updateMachinePartMetadata(String id, Map<String, dynamic> data) async {
+    final request = UpdateRobotPartMetadataRequest()
+      ..id = id
+      ..data = Struct()
+      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+    await _client.updateRobotPartMetadata(request);
   }
 }
