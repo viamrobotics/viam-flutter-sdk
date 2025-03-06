@@ -5,8 +5,8 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
-import '../gen/robot/v1/robot.pb.dart';
 import '../gen/google/protobuf/struct.pb.dart';
+import '../gen/robot/v1/robot.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../gen/stream/v1/stream.pbgrpc.dart';
 import '../media/stream/client.dart';
@@ -140,7 +140,7 @@ class RobotClient {
     final client = RobotClient._();
     client._address = url;
     client._options = options;
-    client._channel = await dial(url, options.dialOptions, () => client._sessionsClient.metadata());
+    client._channel = await _dialInitial(url, options.dialOptions, () => client._sessionsClient.metadata());
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions);
     client._sessionsClient.start();
     client._client = rpb.RobotServiceClient(client._channel);
