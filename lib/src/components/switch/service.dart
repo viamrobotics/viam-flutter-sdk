@@ -22,35 +22,30 @@ class SwitchService extends SwitchServiceBase {
   }
 
   @override
-  Future<SetPositionResponse> setPosition(
-      ServiceCall call, SetPositionRequest request) async {
+  Future<SetPositionResponse> setPosition(ServiceCall call, SetPositionRequest request) async {
     final nswitch = _fromManager(request.name);
     await nswitch.setPosition(request.position, extra: request.extra.toMap());
     return SetPositionResponse();
   }
 
   @override
-  Future<DoCommandResponse> doCommand(
-      ServiceCall call, DoCommandRequest request) async {
+  Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
     final nswitch = _fromManager(request.name);
     final result = await nswitch.doCommand(request.command.toMap());
     return DoCommandResponse()..result = result.toStruct();
   }
 
   @override
-  Future<GetPositionResponse> getPosition(
-      ServiceCall call, GetPositionRequest request) async {
+  Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
     final nswitch = _fromManager(request.name);
     final position = await nswitch.getPosition(extra: request.extra.toMap());
     return GetPositionResponse()..position = position;
   }
 
   @override
-  Future<GetNumberOfPositionsResponse> getNumberOfPositions(
-      ServiceCall call, GetNumberOfPositionsRequest request) async {
+  Future<GetNumberOfPositionsResponse> getNumberOfPositions(ServiceCall call, GetNumberOfPositionsRequest request) async {
     final nswitch = _fromManager(request.name);
     final numberOfPositions = await nswitch.getNumberOfPositions();
-    return GetNumberOfPositionsResponse()
-      ..numberOfPositions = numberOfPositions;
+    return GetNumberOfPositionsResponse()..numberOfPositions = numberOfPositions;
   }
 }

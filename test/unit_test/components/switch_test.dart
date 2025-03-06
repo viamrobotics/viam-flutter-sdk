@@ -53,8 +53,7 @@ void main() {
       expect(nswitch.position, 0);
     });
 
-    test('getNumberOfPositions should return number of available positions',
-        () async {
+    test('getNumberOfPositions should return number of available positions', () async {
       final int testResult = await nswitch.getNumberOfPositions();
       expect(testResult, nswitch.numberOfPositions);
     });
@@ -102,16 +101,14 @@ void main() {
         port: port,
         options: ChannelOptions(
           credentials: const ChannelCredentials.insecure(),
-          codecRegistry:
-              CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+          codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
         ),
       );
 
       server = Server.create(
         services: [service],
         interceptors: const <Interceptor>[],
-        codecRegistry:
-            CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
+        codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
       );
       await server.serve(port: port);
     });
@@ -122,8 +119,7 @@ void main() {
     });
 
     group('Switch Service Tests', () {
-      test('setPosition should set the switch position to new given position',
-          () async {
+      test('setPosition should set the switch position to new given position', () async {
         final client = SwitchServiceClient(channel);
         await client.setPosition(SetPositionRequest()
           ..name = name
@@ -133,16 +129,13 @@ void main() {
 
       test('getPosition should return the switch current position', () async {
         final client = SwitchServiceClient(channel);
-        final response =
-            await client.getPosition(GetPositionRequest()..name = name);
+        final response = await client.getPosition(GetPositionRequest()..name = name);
         expect(response.position, nswitch.position);
       });
 
-      test('getNumberOfPositions should return number of available positions',
-          () async {
+      test('getNumberOfPositions should return number of available positions', () async {
         final client = SwitchServiceClient(channel);
-        final response = await client
-            .getNumberOfPositions(GetNumberOfPositionsRequest()..name = name);
+        final response = await client.getNumberOfPositions(GetNumberOfPositionsRequest()..name = name);
         expect(response.numberOfPositions, nswitch.numberOfPositions);
       });
 
@@ -157,8 +150,7 @@ void main() {
       });
     });
     group('Switch Client Tests', () {
-      test('setPosition should update the switch to new given position',
-          () async {
+      test('setPosition should update the switch to new given position', () async {
         final client = SwitchClient(nswitch.name, channel);
         await client.setPosition(testPosition);
         expect(nswitch.position, testPosition);
@@ -170,8 +162,7 @@ void main() {
         expect(response, nswitch.position);
       });
 
-      test('getNumberOfPositions should return number of available positions',
-          () async {
+      test('getNumberOfPositions should return number of available positions', () async {
         final client = SwitchClient(nswitch.name, channel);
         final response = await client.getNumberOfPositions();
         expect(response, nswitch.numberOfPositions);

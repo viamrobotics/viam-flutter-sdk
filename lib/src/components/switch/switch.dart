@@ -7,8 +7,7 @@ import '../../robot/client.dart';
 ///
 /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
 abstract class Switch extends Resource {
-  static const Subtype subtype =
-      Subtype(resourceNamespaceRDK, resourceTypeComponent, 'switch');
+  static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'switch');
 
   /// Update the [Switch] to the provided position.
   ///

@@ -8,8 +8,7 @@ class SwitchScreen extends StatelessWidget {
   final Switch nswitch;
   final ResourceName resourceName;
 
-  const SwitchScreen(
-      {super.key, required this.nswitch, required this.resourceName});
+  const SwitchScreen({super.key, required this.nswitch, required this.resourceName});
 
   @override
   Widget build(BuildContext context) {

@@ -65,12 +65,9 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
   SliderThemeData get _sliderTheme {
     return SliderThemeData(
       trackHeight: 10,
-      thumbShape: const RoundSliderThumbShape(
-          enabledThumbRadius: 10, disabledThumbRadius: 10),
-      activeTrackColor:
-          Theme.of(context).colorScheme.secondary.withValues(alpha: 0.25),
-      inactiveTrackColor:
-          Theme.of(context).colorScheme.secondary.withValues(alpha: 0.25),
+      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10, disabledThumbRadius: 10),
+      activeTrackColor: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.25),
+      inactiveTrackColor: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.25),
       trackShape: const RectangularSliderTrackShape(),
     );
   }
@@ -91,8 +88,7 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
             onChanged: (double value) => _setPosition(value.toInt()),
           ),
         ),
-        if (error != null)
-          Text('Error: $error', style: const TextStyle(color: Colors.red)),
+        if (error != null) Text('Error: $error', style: const TextStyle(color: Colors.red)),
       ],
     );
   }
