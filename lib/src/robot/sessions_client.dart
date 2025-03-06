@@ -2,9 +2,13 @@ import 'dart:async';
 
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
-import 'package:viam_sdk/protos/robot/robot.dart';
+import 'package:protobuf/protobuf.dart';
 
+import '../gen/common/v1/common.pb.dart';
+import '../gen/google/protobuf/descriptor.pb.dart';
 import '../gen/google/rpc/code.pbenum.dart';
+import '../gen/grpc/reflection/v1/reflection.pbgrpc.dart';
+import '../gen/robot/v1/robot.pbgrpc.dart';
 import '../resource/base.dart';
 
 final _logger = Logger();
@@ -13,23 +17,7 @@ final _logger = Logger();
 /// and supports stopping actuating components when it's not.
 class SessionsClient implements ResourceRPCClient {
   static const sessionMetadataKey = 'viam-sid';
-  static const heartbeatMonitoredMethods = {
-    '/viam.component.arm.v1.ArmService/MoveToPosition',
-    '/viam.component.arm.v1.ArmService/MoveToJointPositions',
-    '/viam.component.arm.v1.ArmService/MoveThroughJointPositions',
-    '/viam.component.base.v1.BaseService/MoveStraight',
-    '/viam.component.base.v1.BaseService/Spin',
-    '/viam.component.base.v1.BaseService/SetPower',
-    '/viam.component.base.v1.BaseService/SetVelocity',
-    '/viam.component.gantry.v1.GantryService/MoveToPosition',
-    '/viam.component.gripper.v1.GripperService/Open',
-    '/viam.component.gripper.v1.GripperService/Grab',
-    '/viam.component.motor.v1.MotorService/SetPower',
-    '/viam.component.motor.v1.MotorService/GoFor',
-    '/viam.component.motor.v1.MotorService/GoTo',
-    '/viam.component.motor.v1.MotorService/SetRPM',
-    '/viam.component.servo.v1.ServoService/Move',
-  };
+  static Map<String, bool> heartbeatMonitoredMethods = {};
 
   @override
   ClientChannelBase channel;
@@ -40,9 +28,10 @@ class SessionsClient implements ResourceRPCClient {
   String _currentId = '';
   final bool _enabled;
   bool? _supported;
-  late Duration _heartbeatInterval;
+  Duration _heartbeatInterval = Duration(seconds: 1);
+  final String _host;
 
-  SessionsClient(this.channel, this._enabled) {
+  SessionsClient(this.channel, this._enabled, this._host) {
     metadata();
   }
 
@@ -93,6 +82,7 @@ class SessionsClient implements ResourceRPCClient {
     _supported = null;
     metadata();
     _heartbeatTask();
+    _applyHeartbeatMonitoredMethods();
   }
 
   /// Stop the session client and heartbeat tasks
@@ -110,7 +100,7 @@ class SessionsClient implements ResourceRPCClient {
 
   Future<void> _heartbeatTask() async {
     if (!_enabled) return;
-    while (_supported == true) {
+    while (_supported != false) {
       await _heartbeatTick();
       await Future.delayed(_heartbeatInterval);
     }
@@ -118,7 +108,7 @@ class SessionsClient implements ResourceRPCClient {
 
   Future<void> _heartbeatTick() async {
     if (!_enabled) return;
-    if (_supported == false) return;
+    if (_supported != true) return;
 
     final request = SendSessionHeartbeatRequest()..id = _currentId;
 
@@ -128,5 +118,46 @@ class SessionsClient implements ResourceRPCClient {
       _logger.d('Session terminated: $e');
       reset();
     }
+  }
+
+  Future<void> _applyHeartbeatMonitoredMethods() async {
+    final reflectClient = ServerReflectionClient(channel);
+    final request = ServerReflectionRequest(host: _host, listServices: '');
+    final responseStream = reflectClient.serverReflectionInfo(
+      Stream.value(request),
+      options: CallOptions(timeout: Duration(seconds: 10)),
+    );
+    final serviceResponse = await responseStream.first;
+    final fdpRequests = serviceResponse.listServicesResponse.service
+        .map((service) => ServerReflectionRequest(host: _host, fileContainingSymbol: service.name));
+    final fdpResponseStream = reflectClient.serverReflectionInfo(
+      Stream.fromIterable(fdpRequests),
+      options: CallOptions(timeout: Duration(seconds: 10)),
+    );
+    final subscription = fdpResponseStream.listen((fdpResponse) {
+      for (final fdp in fdpResponse.fileDescriptorResponse.fileDescriptorProto) {
+        final protoFile = FileDescriptorProto.fromBuffer(fdp);
+        for (final service in protoFile.service) {
+          for (final method in service.method) {
+            final options = method.options;
+
+            // Manually parse the extension
+            final parsedOptions = ExtensionRegistry()..add(Common.safetyHeartbeatMonitored);
+            final parsedOptionsMessage = options.createEmptyInstance();
+            parsedOptionsMessage.mergeFromBuffer(options.writeToBuffer(), parsedOptions);
+
+            if (parsedOptionsMessage.hasExtension(Common.safetyHeartbeatMonitored)) {
+              final value = parsedOptionsMessage.getExtension(Common.safetyHeartbeatMonitored);
+              SessionsClient.heartbeatMonitoredMethods['/${protoFile.package}.${service.name}/${method.name}'] = value;
+            } else {
+              SessionsClient.heartbeatMonitoredMethods['/${protoFile.package}.${service.name}/${method.name}'] = false;
+            }
+          }
+        }
+      }
+    });
+    await Future.delayed(Duration(seconds: 9), () {
+      subscription.cancel();
+    });
   }
 }
