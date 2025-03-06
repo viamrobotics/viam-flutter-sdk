@@ -757,7 +757,7 @@ void main() {
 
     test('getOrganizationMetadata', () async {
       final expected = GetOrganizationMetadataResponse()..metadata = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
-      when(serviceClient.getOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected)); 
+      when(serviceClient.getOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final response = await appClient.getOrganizationMetadata('orgId');
       expect(response, equals(expected));
     });
