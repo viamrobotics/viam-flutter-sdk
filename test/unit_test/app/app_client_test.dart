@@ -769,7 +769,8 @@ void main() {
     });
 
     test('getLocationMetadata', () async {
-      final expected = GetLocationMetadataResponse()..metadata = (Struct()..fields['locationKey'] = (Value()..stringValue = 'locationValue'));
+      final expected = GetLocationMetadataResponse()
+        ..metadata = (Struct()..fields['locationKey'] = (Value()..stringValue = 'locationValue'));
       when(serviceClient.getLocationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
       final response = await appClient.getLocationMetadata('locationId');
       expect(response, equals(expected));
