@@ -742,12 +742,12 @@ class AppClient {
   /// Updates user-defined [Metadata] for an organization.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateOrganizationMetadataResponse> updateOrganizationMetadata(
+  Future<void> updateOrganizationMetadata(
       String id, Map<String, dynamic> data) async {
     final request = UpdateOrganizationMetadataRequest()
       ..organizationId = id
       ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
-    return await _client.updateOrganizationMetadata(request);
+    await _client.updateOrganizationMetadata(request);
   }
 
   /// Retrieves user-defined [Metadata] for a location.
@@ -761,12 +761,12 @@ class AppClient {
   /// Updates user-defined [Metadata] for a location.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateLocationMetadataResponse> updateLocationMetadata(
+  Future<void> updateLocationMetadata(
       String id, Map<String, dynamic> data) async {
     final request = UpdateLocationMetadataRequest()
       ..locationId = id
       ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
-    return await _client.updateLocationMetadata(request);
+    await _client.updateLocationMetadata(request);
   }
 
   /// Retrieves user-defined [Metadata] for a machine.
@@ -780,12 +780,12 @@ class AppClient {
   /// Updates user-defined [Metadata] for a machine.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateRobotMetadataResponse> updateMachineMetadata(
+  Future<void> updateMachineMetadata(
       String id, Map<String, dynamic> data) async {
     final request = UpdateRobotMetadataRequest()
       ..id = id
       ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
-    return await _client.updateRobotMetadata(request);
+    await _client.updateRobotMetadata(request);
   }
 
   /// Retrieves user-defined [Metadata] for a machine part.
@@ -799,11 +799,11 @@ class AppClient {
   /// Updates user-defined [Metadata] for a machine part.
   /// 
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateRobotPartMetadataResponse> updateMachinePartMetadata(
+  Future<void> updateMachinePartMetadata(
       String id, Map<String, dynamic> data) async {
     final request = UpdateRobotPartMetadataRequest()
       ..id = id
       ..data = Struct()..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
-    return await _client.updateRobotPartMetadata(request);
+    await _client.updateRobotPartMetadata(request);
   }
 }
