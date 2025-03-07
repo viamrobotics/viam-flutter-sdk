@@ -112,7 +112,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = generateTestingPortFromName(name);
+      final port = await getUnusedPort();
       gripper = FakeGripper(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Gripper.getResourceName(name), gripper);
