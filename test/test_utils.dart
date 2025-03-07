@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 Future<int> getUnusedPort() {
-    return ServerSocket.bind(InternetAddress.anyIPv4, 0).then((socket) {
+  return ServerSocket.bind(InternetAddress.loopbackIPv4, 0).then((socket) {
     final port = socket.port;
     socket.close();
     return port;
