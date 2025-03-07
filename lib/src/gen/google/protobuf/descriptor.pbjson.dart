@@ -808,8 +808,9 @@ const FeatureSet$json = {
     {'1': 'utf8_validation', '3': 4, '4': 1, '5': 14, '6': '.google.protobuf.FeatureSet.Utf8Validation', '8': {}, '10': 'utf8Validation'},
     {'1': 'message_encoding', '3': 5, '4': 1, '5': 14, '6': '.google.protobuf.FeatureSet.MessageEncoding', '8': {}, '10': 'messageEncoding'},
     {'1': 'json_format', '3': 6, '4': 1, '5': 14, '6': '.google.protobuf.FeatureSet.JsonFormat', '8': {}, '10': 'jsonFormat'},
+    {'1': 'enforce_naming_style', '3': 7, '4': 1, '5': 14, '6': '.google.protobuf.FeatureSet.EnforceNamingStyle', '8': {}, '10': 'enforceNamingStyle'},
   ],
-  '4': [FeatureSet_FieldPresence$json, FeatureSet_EnumType$json, FeatureSet_RepeatedFieldEncoding$json, FeatureSet_Utf8Validation$json, FeatureSet_MessageEncoding$json, FeatureSet_JsonFormat$json],
+  '4': [FeatureSet_FieldPresence$json, FeatureSet_EnumType$json, FeatureSet_RepeatedFieldEncoding$json, FeatureSet_Utf8Validation$json, FeatureSet_MessageEncoding$json, FeatureSet_JsonFormat$json, FeatureSet_EnforceNamingStyle$json],
   '5': [
     {'1': 1000, '2': 9995},
     {'1': 9995, '2': 10000},
@@ -884,6 +885,16 @@ const FeatureSet_JsonFormat$json = {
   ],
 };
 
+@$core.Deprecated('Use featureSetDescriptor instead')
+const FeatureSet_EnforceNamingStyle$json = {
+  '1': 'EnforceNamingStyle',
+  '2': [
+    {'1': 'ENFORCE_NAMING_STYLE_UNKNOWN', '2': 0},
+    {'1': 'STYLE2024', '2': 1},
+    {'1': 'STYLE_LEGACY', '2': 2},
+  ],
+};
+
 /// Descriptor for `FeatureSet`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List featureSetDescriptor = $convert.base64Decode(
     'CgpGZWF0dXJlU2V0EpEBCg5maWVsZF9wcmVzZW5jZRgBIAEoDjIpLmdvb2dsZS5wcm90b2J1Zi'
@@ -900,16 +911,21 @@ final $typed_data.Uint8List featureSetDescriptor = $convert.base64Decode(
     'Vzc2FnZUVuY29kaW5nQiaIAQGYAQSYAQGiARQSD0xFTkdUSF9QUkVGSVhFRBiEB7IBAwjoB1IP'
     'bWVzc2FnZUVuY29kaW5nEoIBCgtqc29uX2Zvcm1hdBgGIAEoDjImLmdvb2dsZS5wcm90b2J1Zi'
     '5GZWF0dXJlU2V0Lkpzb25Gb3JtYXRCOYgBAZgBA5gBBpgBAaIBFxISTEVHQUNZX0JFU1RfRUZG'
-    'T1JUGIQHogEKEgVBTExPVxjnB7IBAwjoB1IKanNvbkZvcm1hdCJcCg1GaWVsZFByZXNlbmNlEh'
-    'oKFkZJRUxEX1BSRVNFTkNFX1VOS05PV04QABIMCghFWFBMSUNJVBABEgwKCElNUExJQ0lUEAIS'
-    'EwoPTEVHQUNZX1JFUVVJUkVEEAMiNwoIRW51bVR5cGUSFQoRRU5VTV9UWVBFX1VOS05PV04QAB'
-    'IICgRPUEVOEAESCgoGQ0xPU0VEEAIiVgoVUmVwZWF0ZWRGaWVsZEVuY29kaW5nEiMKH1JFUEVB'
-    'VEVEX0ZJRUxEX0VOQ09ESU5HX1VOS05PV04QABIKCgZQQUNLRUQQARIMCghFWFBBTkRFRBACIk'
-    'kKDlV0ZjhWYWxpZGF0aW9uEhsKF1VURjhfVkFMSURBVElPTl9VTktOT1dOEAASCgoGVkVSSUZZ'
-    'EAISCAoETk9ORRADIgQIARABIlMKD01lc3NhZ2VFbmNvZGluZxIcChhNRVNTQUdFX0VOQ09ESU'
-    '5HX1VOS05PV04QABITCg9MRU5HVEhfUFJFRklYRUQQARINCglERUxJTUlURUQQAiJICgpKc29u'
-    'Rm9ybWF0EhcKE0pTT05fRk9STUFUX1VOS05PV04QABIJCgVBTExPVxABEhYKEkxFR0FDWV9CRV'
-    'NUX0VGRk9SVBACKgYI6AcQi04qBgiLThCQTioGCJBOEJFOSgYI5wcQ6Ac=');
+    'T1JUGIQHogEKEgVBTExPVxjnB7IBAwjoB1IKanNvbkZvcm1hdBKrAQoUZW5mb3JjZV9uYW1pbm'
+    'dfc3R5bGUYByABKA4yLi5nb29nbGUucHJvdG9idWYuRmVhdHVyZVNldC5FbmZvcmNlTmFtaW5n'
+    'U3R5bGVCSYgBApgBAZgBApgBA5gBBJgBBZgBBpgBB5gBCJgBCaIBERIMU1RZTEVfTEVHQUNZGI'
+    'QHogEOEglTVFlMRTIwMjQY6QeyAQMI6QdSEmVuZm9yY2VOYW1pbmdTdHlsZSJcCg1GaWVsZFBy'
+    'ZXNlbmNlEhoKFkZJRUxEX1BSRVNFTkNFX1VOS05PV04QABIMCghFWFBMSUNJVBABEgwKCElNUE'
+    'xJQ0lUEAISEwoPTEVHQUNZX1JFUVVJUkVEEAMiNwoIRW51bVR5cGUSFQoRRU5VTV9UWVBFX1VO'
+    'S05PV04QABIICgRPUEVOEAESCgoGQ0xPU0VEEAIiVgoVUmVwZWF0ZWRGaWVsZEVuY29kaW5nEi'
+    'MKH1JFUEVBVEVEX0ZJRUxEX0VOQ09ESU5HX1VOS05PV04QABIKCgZQQUNLRUQQARIMCghFWFBB'
+    'TkRFRBACIkkKDlV0ZjhWYWxpZGF0aW9uEhsKF1VURjhfVkFMSURBVElPTl9VTktOT1dOEAASCg'
+    'oGVkVSSUZZEAISCAoETk9ORRADIgQIARABIlMKD01lc3NhZ2VFbmNvZGluZxIcChhNRVNTQUdF'
+    'X0VOQ09ESU5HX1VOS05PV04QABITCg9MRU5HVEhfUFJFRklYRUQQARINCglERUxJTUlURUQQAi'
+    'JICgpKc29uRm9ybWF0EhcKE0pTT05fRk9STUFUX1VOS05PV04QABIJCgVBTExPVxABEhYKEkxF'
+    'R0FDWV9CRVNUX0VGRk9SVBACIlcKEkVuZm9yY2VOYW1pbmdTdHlsZRIgChxFTkZPUkNFX05BTU'
+    'lOR19TVFlMRV9VTktOT1dOEAASDQoJU1RZTEUyMDI0EAESEAoMU1RZTEVfTEVHQUNZEAIqBgjo'
+    'BxCLTioGCItOEJBOKgYIkE4QkU5KBgjnBxDoBw==');
 
 @$core.Deprecated('Use featureSetDefaultsDescriptor instead')
 const FeatureSetDefaults$json = {

@@ -357,6 +357,23 @@ class FeatureSet_JsonFormat extends $pb.ProtobufEnum {
   const FeatureSet_JsonFormat._($core.int v, $core.String n) : super(v, n);
 }
 
+class FeatureSet_EnforceNamingStyle extends $pb.ProtobufEnum {
+  static const FeatureSet_EnforceNamingStyle ENFORCE_NAMING_STYLE_UNKNOWN = FeatureSet_EnforceNamingStyle._(0, _omitEnumNames ? '' : 'ENFORCE_NAMING_STYLE_UNKNOWN');
+  static const FeatureSet_EnforceNamingStyle STYLE2024 = FeatureSet_EnforceNamingStyle._(1, _omitEnumNames ? '' : 'STYLE2024');
+  static const FeatureSet_EnforceNamingStyle STYLE_LEGACY = FeatureSet_EnforceNamingStyle._(2, _omitEnumNames ? '' : 'STYLE_LEGACY');
+
+  static const $core.List<FeatureSet_EnforceNamingStyle> values = <FeatureSet_EnforceNamingStyle> [
+    ENFORCE_NAMING_STYLE_UNKNOWN,
+    STYLE2024,
+    STYLE_LEGACY,
+  ];
+
+  static final $core.Map<$core.int, FeatureSet_EnforceNamingStyle> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FeatureSet_EnforceNamingStyle? valueOf($core.int value) => _byValue[value];
+
+  const FeatureSet_EnforceNamingStyle._($core.int v, $core.String n) : super(v, n);
+}
+
 /// Represents the identified object's effect on the element in the original
 /// .proto file.
 class GeneratedCodeInfo_Annotation_Semantic extends $pb.ProtobufEnum {

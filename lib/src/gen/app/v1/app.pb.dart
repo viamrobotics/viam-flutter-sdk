@@ -15,7 +15,6 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../common/v1/common.pb.dart' as $15;
-import '../../google/protobuf/any.pb.dart' as $48;
 import '../../google/protobuf/struct.pb.dart' as $46;
 import '../../google/protobuf/timestamp.pb.dart' as $47;
 import '../mltraining/v1/ml_training.pbenum.dart' as $8;
@@ -1554,11 +1553,11 @@ class GetOrganizationMetadataRequest extends $pb.GeneratedMessage {
 
 class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
   factory GetOrganizationMetadataResponse({
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -1567,7 +1566,7 @@ class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
   factory GetOrganizationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetOrganizationMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1593,20 +1592,28 @@ class GetOrganizationMetadataResponse extends $pb.GeneratedMessage {
   static GetOrganizationMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+  $46.Struct get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($46.Struct v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => clearField(1);
+  @$pb.TagNumber(1)
+  $46.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateOrganizationMetadataRequest({
     $core.String? organizationId,
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (organizationId != null) {
       $result.organizationId = organizationId;
     }
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -1616,7 +1623,7 @@ class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
-    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateOrganizationMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1651,7 +1658,15 @@ class UpdateOrganizationMetadataRequest extends $pb.GeneratedMessage {
   void clearOrganizationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+  $46.Struct get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($46.Struct v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
+  $46.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateOrganizationMetadataResponse extends $pb.GeneratedMessage {
@@ -4179,11 +4194,11 @@ class GetLocationMetadataRequest extends $pb.GeneratedMessage {
 
 class GetLocationMetadataResponse extends $pb.GeneratedMessage {
   factory GetLocationMetadataResponse({
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -4192,7 +4207,7 @@ class GetLocationMetadataResponse extends $pb.GeneratedMessage {
   factory GetLocationMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocationMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetLocationMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -4218,20 +4233,28 @@ class GetLocationMetadataResponse extends $pb.GeneratedMessage {
   static GetLocationMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+  $46.Struct get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($46.Struct v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => clearField(1);
+  @$pb.TagNumber(1)
+  $46.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateLocationMetadataRequest({
     $core.String? locationId,
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (locationId != null) {
       $result.locationId = locationId;
     }
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -4241,7 +4264,7 @@ class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLocationMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'locationId')
-    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateLocationMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -4276,7 +4299,15 @@ class UpdateLocationMetadataRequest extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+  $46.Struct get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($46.Struct v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
+  $46.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateLocationMetadataResponse extends $pb.GeneratedMessage {
@@ -6286,11 +6317,11 @@ class GetRobotPartMetadataRequest extends $pb.GeneratedMessage {
 
 class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotPartMetadataResponse({
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -6299,7 +6330,7 @@ class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotPartMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetRobotPartMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -6325,20 +6356,28 @@ class GetRobotPartMetadataResponse extends $pb.GeneratedMessage {
   static GetRobotPartMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+  $46.Struct get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($46.Struct v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => clearField(1);
+  @$pb.TagNumber(1)
+  $46.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateRobotPartMetadataRequest({
     $core.String? id,
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -6348,7 +6387,7 @@ class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotPartMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateRobotPartMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -6383,7 +6422,15 @@ class UpdateRobotPartMetadataRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+  $46.Struct get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($46.Struct v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
+  $46.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateRobotPartMetadataResponse extends $pb.GeneratedMessage {
@@ -9199,11 +9246,11 @@ class GetRobotMetadataRequest extends $pb.GeneratedMessage {
 
 class GetRobotMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotMetadataResponse({
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -9212,7 +9259,7 @@ class GetRobotMetadataResponse extends $pb.GeneratedMessage {
   factory GetRobotMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..m<$core.String, $48.Any>(1, _omitFieldNames ? '' : 'data', entryClassName: 'GetRobotMetadataResponse.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -9238,20 +9285,28 @@ class GetRobotMetadataResponse extends $pb.GeneratedMessage {
   static GetRobotMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(0);
+  $46.Struct get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($46.Struct v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => clearField(1);
+  @$pb.TagNumber(1)
+  $46.Struct ensureData() => $_ensure(0);
 }
 
 class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
   factory UpdateRobotMetadataRequest({
     $core.String? id,
-    $core.Map<$core.String, $48.Any>? data,
+    $46.Struct? data,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
     if (data != null) {
-      $result.data.addAll(data);
+      $result.data = data;
     }
     return $result;
   }
@@ -9261,7 +9316,7 @@ class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRobotMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..m<$core.String, $48.Any>(2, _omitFieldNames ? '' : 'data', entryClassName: 'UpdateRobotMetadataRequest.DataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Any.create, valueDefaultOrMaker: $48.Any.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..aOM<$46.Struct>(2, _omitFieldNames ? '' : 'data', subBuilder: $46.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -9296,7 +9351,15 @@ class UpdateRobotMetadataRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $48.Any> get data => $_getMap(1);
+  $46.Struct get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($46.Struct v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
+  $46.Struct ensureData() => $_ensure(1);
 }
 
 class UpdateRobotMetadataResponse extends $pb.GeneratedMessage {
