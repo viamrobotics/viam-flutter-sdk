@@ -9,3 +9,4 @@ export 'widgets/resources/gripper.dart';
 export 'widgets/resources/motor.dart';
 export 'widgets/resources/sensor.dart';
 export 'widgets/resources/servo.dart';
+export 'widgets/resources/switch.dart';

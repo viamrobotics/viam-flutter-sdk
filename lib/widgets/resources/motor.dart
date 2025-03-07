@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../viam_sdk.dart';
+import '../../viam_sdk.dart' hide Switch;
 
 /// A widget to control a [Motor].
 ///
