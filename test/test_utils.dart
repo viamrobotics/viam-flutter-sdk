@@ -3,10 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-Future<int> getUnusedPort(FutureOr<int> Function(int port) tryPort) async {
+Future<int> getUnusedPort() async {
   int? value;
   await Future.doWhile(() async {
-    value = await tryPort(await getUnsafeUnusedPort());
+    value = await ServerSocket.bind(InternetAddress.loopbackIPv4, await getUnsafeUnusedPort()).then((socket) {
+      final port = socket.port;
+      socket.close();
+      return port;
+    });
     return value == null;
   });
 
