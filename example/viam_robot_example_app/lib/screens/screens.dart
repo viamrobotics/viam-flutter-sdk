@@ -7,3 +7,4 @@ export 'power_sensor.dart';
 export 'sensor.dart';
 export 'servo.dart';
 export 'stream.dart';
+export 'switch.dart';

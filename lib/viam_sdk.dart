@@ -33,6 +33,8 @@ export 'src/components/sensor/client.dart';
 export 'src/components/sensor/sensor.dart';
 export 'src/components/servo/client.dart';
 export 'src/components/servo/servo.dart';
+export 'src/components/switch/client.dart';
+export 'src/components/switch/switch.dart';
 
 /// Necessary Protos
 export 'src/gen/common/v1/common.pb.dart'
