@@ -745,8 +745,7 @@ class AppClient {
   Future<UpdateOrganizationMetadataResponse> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateOrganizationMetadataRequest()
       ..organizationId = id
-      ..data = Struct()
-      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+      ..data = _mapToStruct(data);
     await _client.updateOrganizationMetadata(request);
   }
 
@@ -764,8 +763,7 @@ class AppClient {
   Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateLocationMetadataRequest()
       ..locationId = id
-      ..data = Struct()
-      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+      ..data = _mapToStruct(data);
     await _client.updateLocationMetadata(request);
   }
 
@@ -783,8 +781,7 @@ class AppClient {
   Future<void> updateMachineMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateRobotMetadataRequest()
       ..id = id
-      ..data = Struct()
-      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+      ..data = _mapToStruct(data);
     await _client.updateRobotMetadata(request);
   }
 
@@ -802,8 +799,33 @@ class AppClient {
   Future<void> updateMachinePartMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateRobotPartMetadataRequest()
       ..id = id
-      ..data = Struct()
-      ..fields.addAll(data.map((key, value) => MapEntry(key, Value()..stringValue = value.toString())));
+      ..data = _mapToStruct(data);
     await _client.updateRobotPartMetadata(request);
+  }
+  
+  /// Helper function to convert a Dart Map to a protobuf Struct.
+  Struct _mapToStruct(Map<String, dynamic> data) {
+    final struct = Struct();
+    struct.fields.addAll(data.map((key, value) => MapEntry(key, _convertValue(value))));
+    return struct;
+  }
+
+  /// Helper function to convert Dart values to protobuf Values.
+  Value _convertValue(dynamic value) {
+    final val = Value();
+    if (value is String) {
+      val.stringValue = value;
+    } else if (value is int) {
+      val.numberValue = value.toDouble();
+    } else if (value is double) {
+      val.numberValue = value;
+    } else if (value is bool) {
+      val.boolValue = value;
+    } else if (value is List) {
+      val.listValue = ListValue()..values.addAll(value.map(_convertValue));
+    } else if (value is Map<String, dynamic>) {
+      val.structValue = _mapToStruct(value);
+    }
+    return val;
   }
 }
