@@ -100,7 +100,7 @@ void main() {
 
     setUp(() async {
       camera = FakeCamera(name);
-      final port = generateTestingPortFromName(name);
+      final port = await getUnusedPort();
       final manager = ResourceManager();
       manager.register(Camera.getResourceName(name), camera);
       service = CameraService(manager);

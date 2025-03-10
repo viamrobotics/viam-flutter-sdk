@@ -202,7 +202,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = generateTestingPortFromName(name);
+      final port = await getUnusedPort();
       motor = FakeMotor(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Motor.getResourceName(name), motor);

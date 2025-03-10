@@ -141,7 +141,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = generateTestingPortFromName(name);
+      final port = await getUnusedPort();
       arm = FakeArm(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Arm.getResourceName(name), arm);

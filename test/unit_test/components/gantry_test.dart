@@ -137,7 +137,7 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = generateTestingPortFromName(name);
+      final port = await getUnusedPort();
       gantry = FakeGantry(name, lengths);
       final ResourceManager manager = ResourceManager();
       manager.register(Gantry.getResourceName(name), gantry);
