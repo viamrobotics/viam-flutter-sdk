@@ -61,6 +61,13 @@ class DialOptions {
   /// Whether the connection was made using mDNS
   bool _usingMdns = false;
 
+  /// The number of connection attempts to make when first dialing. If set to zero or a negative
+  /// integer, will attempt to reconnect forever.
+  int initialConnectionAttempts = 3;
+
+  // The timeout to use for initial connection attempts.
+  Duration initialConnectionAttemptTimeout = const Duration(seconds: 10);
+
   /// Timeout is the timeout for dial.
   Duration timeout = const Duration(seconds: 10);
 
@@ -121,6 +128,35 @@ class DialWebRtcOptions {
   /// If enabled, other auth options have no affect. Eg. [signalingAuthEntity], [signalingCredentials],
   /// [signalingExternalAuthAddress], [signalingExternalAuthToEntity]
   String? signalingAccessToken;
+}
+
+/// {@category Viam SDK}
+/// Initial connection to a robot at the provided address with the given options, allowing for specifying of initial connection attempt count and timeout
+Future<ClientChannelBase> dialInitial(String address, DialOptions? options, String Function() sessionCallback) async {
+  final opts = options ?? DialOptions();
+
+  int numAttempts = opts.initialConnectionAttempts;
+  if (numAttempts == 0) {
+    numAttempts = -1;
+  }
+
+  final timeout = opts.timeout;
+  opts.timeout = opts.initialConnectionAttemptTimeout;
+
+  while (numAttempts != 0) {
+    try {
+      final channel = await dial(address, opts, sessionCallback);
+      opts.timeout = timeout;
+      return channel;
+    } catch (e) {
+      numAttempts -= 1;
+      if (numAttempts == 0) {
+        rethrow;
+      }
+    }
+  }
+
+  throw Exception('unreachable');
 }
 
 /// {@category Viam SDK}
@@ -596,7 +632,7 @@ class AuthenticatedChannel extends ViamGrpcOrGrpcWebChannel {
 
   @override
   ClientCall<Q, R> createCall<Q, R>(ClientMethod<Q, R> method, Stream<Q> requests, CallOptions options) {
-    if (!SessionsClient.unallowedMethods.contains(method.path) && _sessionId != null) {
+    if ((SessionsClient.heartbeatMonitoredMethods[method.path] ?? false) && _sessionId != null) {
       options = options.mergedWith(CallOptions(metadata: {SessionsClient.sessionMetadataKey: _sessionId!()}));
     }
 

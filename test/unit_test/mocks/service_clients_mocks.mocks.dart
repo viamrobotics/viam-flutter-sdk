@@ -356,37 +356,6 @@ class MockRobotServiceClient extends _i1.Mock
           as _i4.ResponseFuture<_i9.GetModelsFromModulesResponse>);
 
   @override
-  _i4.ResponseFuture<_i9.DiscoverComponentsResponse> discoverComponents(
-    _i9.DiscoverComponentsRequest? request, {
-    _i3.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-            Invocation.method(
-              #discoverComponents,
-              [request],
-              {#options: options},
-            ),
-            returnValue: _FakeResponseFuture_2<_i9.DiscoverComponentsResponse>(
-              this,
-              Invocation.method(
-                #discoverComponents,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i9.DiscoverComponentsResponse>(
-                  this,
-                  Invocation.method(
-                    #discoverComponents,
-                    [request],
-                    {#options: options},
-                  ),
-                ),
-          )
-          as _i4.ResponseFuture<_i9.DiscoverComponentsResponse>);
-
-  @override
   _i4.ResponseFuture<_i9.FrameSystemConfigResponse> frameSystemConfig(
     _i9.FrameSystemConfigRequest? request, {
     _i3.CallOptions? options,

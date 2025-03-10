@@ -5,8 +5,8 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
-import '../gen/robot/v1/robot.pb.dart';
 import '../gen/google/protobuf/struct.pb.dart';
+import '../gen/robot/v1/robot.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../gen/stream/v1/stream.pbgrpc.dart';
 import '../media/stream/client.dart';
@@ -54,20 +54,6 @@ class RobotClientOptions {
   /// Convenience initializer for creating options with a robot location secret
   RobotClientOptions.withLocationSecret(String locationSecret)
       : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
-}
-
-/// {@category Viam SDK}
-/// Represents a discovery query in the SDK to query for discoverable components.
-///
-/// deprecated, remove on march 10th
-class DiscoveryQuery {
-  final String subtype;
-  final String model;
-  final Map<String, dynamic> extra;
-
-  DiscoveryQuery({required this.subtype, required this.model, Map<String, dynamic>? extra}) : extra = extra ?? {};
-
-  Struct get extraStruct => extra.toStruct();
 }
 
 /// {@category Viam SDK}
@@ -140,8 +126,8 @@ class RobotClient {
     final client = RobotClient._();
     client._address = url;
     client._options = options;
-    client._channel = await dial(url, options.dialOptions, () => client._sessionsClient.metadata());
-    client._sessionsClient = SessionsClient(client._channel, options.enableSessions);
+    client._channel = await dialInitial(url, options.dialOptions, () => client._sessionsClient.metadata());
+    client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
     client._sessionsClient.start();
     client._client = rpb.RobotServiceClient(client._channel);
     client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
@@ -256,7 +242,7 @@ class RobotClient {
         _channel = channel;
         _streamManager.channel = _channel as WebRtcClientChannel;
         _client = client;
-        _sessionsClient = SessionsClient(_channel, _options.enableSessions);
+        _sessionsClient = SessionsClient(_channel, _options.enableSessions, this._address);
         await refresh();
         _connected = true;
         _logger.i('Successfully reconnected to robot');
@@ -334,26 +320,6 @@ class RobotClient {
   /// ```
   Future<CloudMetadata> getCloudMetadata() async {
     return await _client.getCloudMetadata(rpb.GetCloudMetadataRequest());
-  }
-
-  /// Deprecated: use the Discovery Service APIs instead.
-  ///
-  /// Discover components that the robot can connect to, given specific query metadata.
-  ///
-  /// ```
-  /// var queries = [DiscoveryQuery(subtype: 'camera', model: 'webcam', extra: {'username': 'admin', 'password': 'admin'})];
-  /// var discoveredComponents = await machine.discoverComponents(queries);
-  /// ```
-  Future<List<Discovery>> discoverComponents([List<DiscoveryQuery> queries = const []]) async {
-    final request = rpb.DiscoverComponentsRequest()
-      ..queries.addAll(queries.map((sdkQuery) => rpb.DiscoveryQuery()
-        ..subtype = sdkQuery.subtype
-        ..model = sdkQuery.model
-        ..extra = sdkQuery.extraStruct));
-
-    _logger.w("RobotClient.discoverComponents is deprecated. It will be removed on March 10 2025. Use the DiscoveryService APIs instead.");
-    final response = await _client.discoverComponents(request);
-    return response.discovery.map((d) => Discovery.fromProto(d)).toList();
   }
 
   /// GetModelsFromModules returns the list of models supported in modules on the machine.

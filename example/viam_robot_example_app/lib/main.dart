@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Switch;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
@@ -95,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
       PowerSensor.subtype.resourceSubtype,
       Sensor.subtype.resourceSubtype,
       Servo.subtype.resourceSubtype,
+      Switch.subtype.resourceSubtype,
     ].contains(rname.subtype);
   }
 
@@ -130,6 +131,9 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     if (rname.subtype == Servo.subtype.resourceSubtype) {
       return ServoScreen(servo: Servo.fromRobot(_robot, rname.name), resourceName: rname);
+    }
+    if (rname.subtype == Switch.subtype.resourceSubtype) {
+      return SwitchScreen(nswitch: Switch.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == MovementSensor.subtype.resourceSubtype) {
       return MovementSensorScreen(movementSensor: MovementSensor.fromRobot(_robot, rname.name), resourceName: rname);
