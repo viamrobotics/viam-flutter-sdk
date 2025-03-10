@@ -516,55 +516,29 @@ final $typed_data.Uint8List getOrganizationMetadataRequestDescriptor = $convert.
 const GetOrganizationMetadataResponse$json = {
   '1': 'GetOrganizationMetadataResponse',
   '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.GetOrganizationMetadataResponse.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [GetOrganizationMetadataResponse_DataEntry$json],
-};
-
-@$core.Deprecated('Use getOrganizationMetadataResponseDescriptor instead')
-const GetOrganizationMetadataResponse_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `GetOrganizationMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getOrganizationMetadataResponseDescriptor = $convert.base64Decode(
-    'Ch9HZXRPcmdhbml6YXRpb25NZXRhZGF0YVJlc3BvbnNlEkoKBGRhdGEYASADKAsyNi52aWFtLm'
-    'FwcC52MS5HZXRPcmdhbml6YXRpb25NZXRhZGF0YVJlc3BvbnNlLkRhdGFFbnRyeVIEZGF0YRpN'
-    'CglEYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC5nb29nbGUucH'
-    'JvdG9idWYuQW55UgV2YWx1ZToCOAE=');
+    'Ch9HZXRPcmdhbml6YXRpb25NZXRhZGF0YVJlc3BvbnNlEisKBGRhdGEYASABKAsyFy5nb29nbG'
+    'UucHJvdG9idWYuU3RydWN0UgRkYXRh');
 
 @$core.Deprecated('Use updateOrganizationMetadataRequestDescriptor instead')
 const UpdateOrganizationMetadataRequest$json = {
   '1': 'UpdateOrganizationMetadataRequest',
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
-    {'1': 'data', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.UpdateOrganizationMetadataRequest.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [UpdateOrganizationMetadataRequest_DataEntry$json],
-};
-
-@$core.Deprecated('Use updateOrganizationMetadataRequestDescriptor instead')
-const UpdateOrganizationMetadataRequest_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `UpdateOrganizationMetadataRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateOrganizationMetadataRequestDescriptor = $convert.base64Decode(
     'CiFVcGRhdGVPcmdhbml6YXRpb25NZXRhZGF0YVJlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGA'
-    'EgASgJUg5vcmdhbml6YXRpb25JZBJMCgRkYXRhGAIgAygLMjgudmlhbS5hcHAudjEuVXBkYXRl'
-    'T3JnYW5pemF0aW9uTWV0YWRhdGFSZXF1ZXN0LkRhdGFFbnRyeVIEZGF0YRpNCglEYXRhRW50cn'
-    'kSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55'
-    'UgV2YWx1ZToCOAE=');
+    'EgASgJUg5vcmdhbml6YXRpb25JZBIrCgRkYXRhGAIgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0'
+    'cnVjdFIEZGF0YQ==');
 
 @$core.Deprecated('Use updateOrganizationMetadataResponseDescriptor instead')
 const UpdateOrganizationMetadataResponse$json = {
@@ -1175,54 +1149,28 @@ final $typed_data.Uint8List getLocationMetadataRequestDescriptor = $convert.base
 const GetLocationMetadataResponse$json = {
   '1': 'GetLocationMetadataResponse',
   '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.GetLocationMetadataResponse.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [GetLocationMetadataResponse_DataEntry$json],
-};
-
-@$core.Deprecated('Use getLocationMetadataResponseDescriptor instead')
-const GetLocationMetadataResponse_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `GetLocationMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getLocationMetadataResponseDescriptor = $convert.base64Decode(
-    'ChtHZXRMb2NhdGlvbk1ldGFkYXRhUmVzcG9uc2USRgoEZGF0YRgBIAMoCzIyLnZpYW0uYXBwLn'
-    'YxLkdldExvY2F0aW9uTWV0YWRhdGFSZXNwb25zZS5EYXRhRW50cnlSBGRhdGEaTQoJRGF0YUVu'
-    'dHJ5EhAKA2tleRgBIAEoCVIDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLk'
-    'FueVIFdmFsdWU6AjgB');
+    'ChtHZXRMb2NhdGlvbk1ldGFkYXRhUmVzcG9uc2USKwoEZGF0YRgBIAEoCzIXLmdvb2dsZS5wcm'
+    '90b2J1Zi5TdHJ1Y3RSBGRhdGE=');
 
 @$core.Deprecated('Use updateLocationMetadataRequestDescriptor instead')
 const UpdateLocationMetadataRequest$json = {
   '1': 'UpdateLocationMetadataRequest',
   '2': [
     {'1': 'location_id', '3': 1, '4': 1, '5': 9, '10': 'locationId'},
-    {'1': 'data', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.UpdateLocationMetadataRequest.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [UpdateLocationMetadataRequest_DataEntry$json],
-};
-
-@$core.Deprecated('Use updateLocationMetadataRequestDescriptor instead')
-const UpdateLocationMetadataRequest_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `UpdateLocationMetadataRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateLocationMetadataRequestDescriptor = $convert.base64Decode(
     'Ch1VcGRhdGVMb2NhdGlvbk1ldGFkYXRhUmVxdWVzdBIfCgtsb2NhdGlvbl9pZBgBIAEoCVIKbG'
-    '9jYXRpb25JZBJICgRkYXRhGAIgAygLMjQudmlhbS5hcHAudjEuVXBkYXRlTG9jYXRpb25NZXRh'
-    'ZGF0YVJlcXVlc3QuRGF0YUVudHJ5UgRkYXRhGk0KCURhdGFFbnRyeRIQCgNrZXkYASABKAlSA2'
-    'tleRIqCgV2YWx1ZRgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlSBXZhbHVlOgI4AQ==');
+    '9jYXRpb25JZBIrCgRkYXRhGAIgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIEZGF0YQ==');
 
 @$core.Deprecated('Use updateLocationMetadataResponseDescriptor instead')
 const UpdateLocationMetadataResponse$json = {
@@ -1721,54 +1669,28 @@ final $typed_data.Uint8List getRobotPartMetadataRequestDescriptor = $convert.bas
 const GetRobotPartMetadataResponse$json = {
   '1': 'GetRobotPartMetadataResponse',
   '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.GetRobotPartMetadataResponse.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [GetRobotPartMetadataResponse_DataEntry$json],
-};
-
-@$core.Deprecated('Use getRobotPartMetadataResponseDescriptor instead')
-const GetRobotPartMetadataResponse_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `GetRobotPartMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotPartMetadataResponseDescriptor = $convert.base64Decode(
-    'ChxHZXRSb2JvdFBhcnRNZXRhZGF0YVJlc3BvbnNlEkcKBGRhdGEYASADKAsyMy52aWFtLmFwcC'
-    '52MS5HZXRSb2JvdFBhcnRNZXRhZGF0YVJlc3BvbnNlLkRhdGFFbnRyeVIEZGF0YRpNCglEYXRh'
-    'RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC5nb29nbGUucHJvdG9idW'
-    'YuQW55UgV2YWx1ZToCOAE=');
+    'ChxHZXRSb2JvdFBhcnRNZXRhZGF0YVJlc3BvbnNlEisKBGRhdGEYASABKAsyFy5nb29nbGUucH'
+    'JvdG9idWYuU3RydWN0UgRkYXRh');
 
 @$core.Deprecated('Use updateRobotPartMetadataRequestDescriptor instead')
 const UpdateRobotPartMetadataRequest$json = {
   '1': 'UpdateRobotPartMetadataRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'data', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.UpdateRobotPartMetadataRequest.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [UpdateRobotPartMetadataRequest_DataEntry$json],
-};
-
-@$core.Deprecated('Use updateRobotPartMetadataRequestDescriptor instead')
-const UpdateRobotPartMetadataRequest_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `UpdateRobotPartMetadataRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateRobotPartMetadataRequestDescriptor = $convert.base64Decode(
-    'Ch5VcGRhdGVSb2JvdFBhcnRNZXRhZGF0YVJlcXVlc3QSDgoCaWQYASABKAlSAmlkEkkKBGRhdG'
-    'EYAiADKAsyNS52aWFtLmFwcC52MS5VcGRhdGVSb2JvdFBhcnRNZXRhZGF0YVJlcXVlc3QuRGF0'
-    'YUVudHJ5UgRkYXRhGk0KCURhdGFFbnRyeRIQCgNrZXkYASABKAlSA2tleRIqCgV2YWx1ZRgCIA'
-    'EoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlSBXZhbHVlOgI4AQ==');
+    'Ch5VcGRhdGVSb2JvdFBhcnRNZXRhZGF0YVJlcXVlc3QSDgoCaWQYASABKAlSAmlkEisKBGRhdG'
+    'EYAiABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgRkYXRh');
 
 @$core.Deprecated('Use updateRobotPartMetadataResponseDescriptor instead')
 const UpdateRobotPartMetadataResponse$json = {
@@ -2421,54 +2343,28 @@ final $typed_data.Uint8List getRobotMetadataRequestDescriptor = $convert.base64D
 const GetRobotMetadataResponse$json = {
   '1': 'GetRobotMetadataResponse',
   '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.GetRobotMetadataResponse.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [GetRobotMetadataResponse_DataEntry$json],
-};
-
-@$core.Deprecated('Use getRobotMetadataResponseDescriptor instead')
-const GetRobotMetadataResponse_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `GetRobotMetadataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRobotMetadataResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRSb2JvdE1ldGFkYXRhUmVzcG9uc2USQwoEZGF0YRgBIAMoCzIvLnZpYW0uYXBwLnYxLk'
-    'dldFJvYm90TWV0YWRhdGFSZXNwb25zZS5EYXRhRW50cnlSBGRhdGEaTQoJRGF0YUVudHJ5EhAK'
-    'A2tleRgBIAEoCVIDa2V5EioKBXZhbHVlGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIFdm'
-    'FsdWU6AjgB');
+    'ChhHZXRSb2JvdE1ldGFkYXRhUmVzcG9uc2USKwoEZGF0YRgBIAEoCzIXLmdvb2dsZS5wcm90b2'
+    'J1Zi5TdHJ1Y3RSBGRhdGE=');
 
 @$core.Deprecated('Use updateRobotMetadataRequestDescriptor instead')
 const UpdateRobotMetadataRequest$json = {
   '1': 'UpdateRobotMetadataRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'data', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.UpdateRobotMetadataRequest.DataEntry', '10': 'data'},
+    {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'data'},
   ],
-  '3': [UpdateRobotMetadataRequest_DataEntry$json],
-};
-
-@$core.Deprecated('Use updateRobotMetadataRequestDescriptor instead')
-const UpdateRobotMetadataRequest_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'value'},
-  ],
-  '7': {'7': true},
 };
 
 /// Descriptor for `UpdateRobotMetadataRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateRobotMetadataRequestDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVSb2JvdE1ldGFkYXRhUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSRQoEZGF0YRgCIA'
-    'MoCzIxLnZpYW0uYXBwLnYxLlVwZGF0ZVJvYm90TWV0YWRhdGFSZXF1ZXN0LkRhdGFFbnRyeVIE'
-    'ZGF0YRpNCglEYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC5nb2'
-    '9nbGUucHJvdG9idWYuQW55UgV2YWx1ZToCOAE=');
+    'ChpVcGRhdGVSb2JvdE1ldGFkYXRhUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSKwoEZGF0YRgCIA'
+    'EoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBGRhdGE=');
 
 @$core.Deprecated('Use updateRobotMetadataResponseDescriptor instead')
 const UpdateRobotMetadataResponse$json = {
