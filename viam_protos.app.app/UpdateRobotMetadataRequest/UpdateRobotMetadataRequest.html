@@ -58,7 +58,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">UpdateRobotMetadataRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span></li>
-<li><span class="parameter" id="-param-data"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">Any</span>&gt;</span>?</span> <span class="parameter-name">data</span>, </span></li>
+<li><span class="parameter" id="-param-data"><span class="type-annotation">Struct?</span> <span class="parameter-name">data</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,14 +69,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory UpdateRobotMetadataRequest({
   $core.String? id,
-  $core.Map&lt;$core.String, $48.Any&gt;? data,
+  $46.Struct? data,
 }) {
   final $result = create();
   if (id != null) {
     $result.id = id;
   }
   if (data != null) {
-    $result.data.addAll(data);
+    $result.data = data;
   }
   return $result;
 }</code></pre>
