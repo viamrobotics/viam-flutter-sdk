@@ -85,12 +85,20 @@ const Detection$json = {
     {'1': 'y_max', '3': 4, '4': 1, '5': 3, '9': 3, '10': 'yMax', '17': true},
     {'1': 'confidence', '3': 5, '4': 1, '5': 1, '10': 'confidence'},
     {'1': 'class_name', '3': 6, '4': 1, '5': 9, '10': 'className'},
+    {'1': 'x_min_normalized', '3': 7, '4': 1, '5': 1, '9': 4, '10': 'xMinNormalized', '17': true},
+    {'1': 'y_min_normalized', '3': 8, '4': 1, '5': 1, '9': 5, '10': 'yMinNormalized', '17': true},
+    {'1': 'x_max_normalized', '3': 9, '4': 1, '5': 1, '9': 6, '10': 'xMaxNormalized', '17': true},
+    {'1': 'y_max_normalized', '3': 10, '4': 1, '5': 1, '9': 7, '10': 'yMaxNormalized', '17': true},
   ],
   '8': [
     {'1': '_x_min'},
     {'1': '_y_min'},
     {'1': '_x_max'},
     {'1': '_y_max'},
+    {'1': '_x_min_normalized'},
+    {'1': '_y_min_normalized'},
+    {'1': '_x_max_normalized'},
+    {'1': '_y_max_normalized'},
   ],
 };
 
@@ -99,7 +107,12 @@ final $typed_data.Uint8List detectionDescriptor = $convert.base64Decode(
     'CglEZXRlY3Rpb24SGAoFeF9taW4YASABKANIAFIEeE1pbogBARIYCgV5X21pbhgCIAEoA0gBUg'
     'R5TWluiAEBEhgKBXhfbWF4GAMgASgDSAJSBHhNYXiIAQESGAoFeV9tYXgYBCABKANIA1IEeU1h'
     'eIgBARIeCgpjb25maWRlbmNlGAUgASgBUgpjb25maWRlbmNlEh0KCmNsYXNzX25hbWUYBiABKA'
-    'lSCWNsYXNzTmFtZUIICgZfeF9taW5CCAoGX3lfbWluQggKBl94X21heEIICgZfeV9tYXg=');
+    'lSCWNsYXNzTmFtZRItChB4X21pbl9ub3JtYWxpemVkGAcgASgBSARSDnhNaW5Ob3JtYWxpemVk'
+    'iAEBEi0KEHlfbWluX25vcm1hbGl6ZWQYCCABKAFIBVIOeU1pbk5vcm1hbGl6ZWSIAQESLQoQeF'
+    '9tYXhfbm9ybWFsaXplZBgJIAEoAUgGUg54TWF4Tm9ybWFsaXplZIgBARItChB5X21heF9ub3Jt'
+    'YWxpemVkGAogASgBSAdSDnlNYXhOb3JtYWxpemVkiAEBQggKBl94X21pbkIICgZfeV9taW5CCA'
+    'oGX3hfbWF4QggKBl95X21heEITChFfeF9taW5fbm9ybWFsaXplZEITChFfeV9taW5fbm9ybWFs'
+    'aXplZEITChFfeF9tYXhfbm9ybWFsaXplZEITChFfeV9tYXhfbm9ybWFsaXplZA==');
 
 @$core.Deprecated('Use getClassificationsRequestDescriptor instead')
 const GetClassificationsRequest$json = {
