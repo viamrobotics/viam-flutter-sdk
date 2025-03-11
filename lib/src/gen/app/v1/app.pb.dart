@@ -11380,9 +11380,9 @@ class CreateRegistryItemResponse extends $pb.GeneratedMessage {
 }
 
 enum UpdateRegistryItemRequest_Metadata {
-  moduleUpdateMetadata, 
-  mlModelUpdateMetadata, 
-  mlTrainingUpdateMetadata, 
+  updateModuleMetadata, 
+  updateMlModelMetadata, 
+  updateMlTrainingMetadata, 
   notSet
 }
 
@@ -11393,9 +11393,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     $core.String? description,
     Visibility? visibility,
     $core.String? url,
-    UpdateModuleMetadata? moduleUpdateMetadata,
-    UpdateMLModelMetadata? mlModelUpdateMetadata,
-    UpdateMLTrainingMetadata? mlTrainingUpdateMetadata,
+    UpdateModuleMetadata? updateModuleMetadata,
+    UpdateMLModelMetadata? updateMlModelMetadata,
+    UpdateMLTrainingMetadata? updateMlTrainingMetadata,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -11413,14 +11413,14 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     if (url != null) {
       $result.url = url;
     }
-    if (moduleUpdateMetadata != null) {
-      $result.moduleUpdateMetadata = moduleUpdateMetadata;
+    if (updateModuleMetadata != null) {
+      $result.updateModuleMetadata = updateModuleMetadata;
     }
-    if (mlModelUpdateMetadata != null) {
-      $result.mlModelUpdateMetadata = mlModelUpdateMetadata;
+    if (updateMlModelMetadata != null) {
+      $result.updateMlModelMetadata = updateMlModelMetadata;
     }
-    if (mlTrainingUpdateMetadata != null) {
-      $result.mlTrainingUpdateMetadata = mlTrainingUpdateMetadata;
+    if (updateMlTrainingMetadata != null) {
+      $result.updateMlTrainingMetadata = updateMlTrainingMetadata;
     }
     return $result;
   }
@@ -11429,9 +11429,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   factory UpdateRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static const $core.Map<$core.int, UpdateRegistryItemRequest_Metadata> _UpdateRegistryItemRequest_MetadataByTag = {
-    6 : UpdateRegistryItemRequest_Metadata.moduleUpdateMetadata,
-    7 : UpdateRegistryItemRequest_Metadata.mlModelUpdateMetadata,
-    8 : UpdateRegistryItemRequest_Metadata.mlTrainingUpdateMetadata,
+    6 : UpdateRegistryItemRequest_Metadata.updateModuleMetadata,
+    7 : UpdateRegistryItemRequest_Metadata.updateMlModelMetadata,
+    8 : UpdateRegistryItemRequest_Metadata.updateMlTrainingMetadata,
     0 : UpdateRegistryItemRequest_Metadata.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
@@ -11441,9 +11441,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..e<Visibility>(4, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: Visibility.VISIBILITY_UNSPECIFIED, valueOf: Visibility.valueOf, enumValues: Visibility.values)
     ..aOS(5, _omitFieldNames ? '' : 'url')
-    ..aOM<UpdateModuleMetadata>(6, _omitFieldNames ? '' : 'moduleUpdateMetadata', subBuilder: UpdateModuleMetadata.create)
-    ..aOM<UpdateMLModelMetadata>(7, _omitFieldNames ? '' : 'mlModelUpdateMetadata', subBuilder: UpdateMLModelMetadata.create)
-    ..aOM<UpdateMLTrainingMetadata>(8, _omitFieldNames ? '' : 'mlTrainingUpdateMetadata', subBuilder: UpdateMLTrainingMetadata.create)
+    ..aOM<UpdateModuleMetadata>(6, _omitFieldNames ? '' : 'updateModuleMetadata', subBuilder: UpdateModuleMetadata.create)
+    ..aOM<UpdateMLModelMetadata>(7, _omitFieldNames ? '' : 'updateMlModelMetadata', subBuilder: UpdateMLModelMetadata.create)
+    ..aOM<UpdateMLTrainingMetadata>(8, _omitFieldNames ? '' : 'updateMlTrainingMetadata', subBuilder: UpdateMLTrainingMetadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -11517,37 +11517,37 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   void clearUrl() => clearField(5);
 
   @$pb.TagNumber(6)
-  UpdateModuleMetadata get moduleUpdateMetadata => $_getN(5);
+  UpdateModuleMetadata get updateModuleMetadata => $_getN(5);
   @$pb.TagNumber(6)
-  set moduleUpdateMetadata(UpdateModuleMetadata v) { setField(6, v); }
+  set updateModuleMetadata(UpdateModuleMetadata v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasModuleUpdateMetadata() => $_has(5);
+  $core.bool hasUpdateModuleMetadata() => $_has(5);
   @$pb.TagNumber(6)
-  void clearModuleUpdateMetadata() => clearField(6);
+  void clearUpdateModuleMetadata() => clearField(6);
   @$pb.TagNumber(6)
-  UpdateModuleMetadata ensureModuleUpdateMetadata() => $_ensure(5);
+  UpdateModuleMetadata ensureUpdateModuleMetadata() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  UpdateMLModelMetadata get mlModelUpdateMetadata => $_getN(6);
+  UpdateMLModelMetadata get updateMlModelMetadata => $_getN(6);
   @$pb.TagNumber(7)
-  set mlModelUpdateMetadata(UpdateMLModelMetadata v) { setField(7, v); }
+  set updateMlModelMetadata(UpdateMLModelMetadata v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasMlModelUpdateMetadata() => $_has(6);
+  $core.bool hasUpdateMlModelMetadata() => $_has(6);
   @$pb.TagNumber(7)
-  void clearMlModelUpdateMetadata() => clearField(7);
+  void clearUpdateMlModelMetadata() => clearField(7);
   @$pb.TagNumber(7)
-  UpdateMLModelMetadata ensureMlModelUpdateMetadata() => $_ensure(6);
+  UpdateMLModelMetadata ensureUpdateMlModelMetadata() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  UpdateMLTrainingMetadata get mlTrainingUpdateMetadata => $_getN(7);
+  UpdateMLTrainingMetadata get updateMlTrainingMetadata => $_getN(7);
   @$pb.TagNumber(8)
-  set mlTrainingUpdateMetadata(UpdateMLTrainingMetadata v) { setField(8, v); }
+  set updateMlTrainingMetadata(UpdateMLTrainingMetadata v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasMlTrainingUpdateMetadata() => $_has(7);
+  $core.bool hasUpdateMlTrainingMetadata() => $_has(7);
   @$pb.TagNumber(8)
-  void clearMlTrainingUpdateMetadata() => clearField(8);
+  void clearUpdateMlTrainingMetadata() => clearField(8);
   @$pb.TagNumber(8)
-  UpdateMLTrainingMetadata ensureMlTrainingUpdateMetadata() => $_ensure(7);
+  UpdateMLTrainingMetadata ensureUpdateMlTrainingMetadata() => $_ensure(7);
 }
 
 class UpdateRegistryItemResponse extends $pb.GeneratedMessage {
@@ -12081,6 +12081,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     $core.Iterable<Model>? models,
     $core.String? entrypoint,
     $core.String? firstRun,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -12104,6 +12105,9 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     if (firstRun != null) {
       $result.firstRun = firstRun;
     }
+    if (apps != null) {
+      $result.apps.addAll(apps);
+    }
     return $result;
   }
   UpdateModuleRequest._() : super();
@@ -12118,6 +12122,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     ..pc<Model>(5, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aOS(6, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(7, _omitFieldNames ? '' : 'firstRun')
+    ..pc<App>(8, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -12205,6 +12210,91 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   $core.bool hasFirstRun() => $_has(6);
   @$pb.TagNumber(7)
   void clearFirstRun() => clearField(7);
+
+  /// A list of applications associated with the module
+  @$pb.TagNumber(8)
+  $core.List<App> get apps => $_getList(7);
+}
+
+class App extends $pb.GeneratedMessage {
+  factory App({
+    $core.String? name,
+    $core.String? type,
+    $core.String? entrypoint,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (entrypoint != null) {
+      $result.entrypoint = entrypoint;
+    }
+    return $result;
+  }
+  App._() : super();
+  factory App.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory App.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'App', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'type')
+    ..aOS(3, _omitFieldNames ? '' : 'entrypoint')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  App clone() => App()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  App copyWith(void Function(App) updates) => super.copyWith((message) => updates(message as App)) as App;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static App create() => App._();
+  App createEmptyInstance() => create();
+  static $pb.PbList<App> createRepeated() => $pb.PbList<App>();
+  @$core.pragma('dart2js:noInline')
+  static App getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<App>(create);
+  static App? _defaultInstance;
+
+  /// The name of the application
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// The type of the application
+  @$pb.TagNumber(2)
+  $core.String get type => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set type($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  /// The entrypoint of the application
+  @$pb.TagNumber(3)
+  $core.String get entrypoint => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entrypoint($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEntrypoint() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntrypoint() => clearField(3);
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
@@ -12466,6 +12556,7 @@ class Model extends $pb.GeneratedMessage {
     $core.String? model,
     $core.String? markdownDocumentation,
     $core.String? description,
+    $core.Iterable<$core.String>? supportedHardware,
   }) {
     final $result = create();
     if (api != null) {
@@ -12480,6 +12571,9 @@ class Model extends $pb.GeneratedMessage {
     if (description != null) {
       $result.description = description;
     }
+    if (supportedHardware != null) {
+      $result.supportedHardware.addAll(supportedHardware);
+    }
     return $result;
   }
   Model._() : super();
@@ -12491,6 +12585,7 @@ class Model extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'model')
     ..aOS(3, _omitFieldNames ? '' : 'markdownDocumentation')
     ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..pPS(5, _omitFieldNames ? '' : 'supportedHardware')
     ..hasRequiredFields = false
   ;
 
@@ -12554,6 +12649,10 @@ class Model extends $pb.GeneratedMessage {
   $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
   void clearDescription() => clearField(4);
+
+  /// A list of supported hardware names
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get supportedHardware => $_getList(4);
 }
 
 class ModuleFileInfo extends $pb.GeneratedMessage {
@@ -14638,6 +14737,120 @@ class CreateKeyFromExistingKeyAuthorizationsResponse extends $pb.GeneratedMessag
   $core.bool hasKey() => $_has(1);
   @$pb.TagNumber(2)
   void clearKey() => clearField(2);
+}
+
+class GetAppContentRequest extends $pb.GeneratedMessage {
+  factory GetAppContentRequest({
+    $core.String? publicNamespace,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  GetAppContentRequest._() : super();
+  factory GetAppContentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppContentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppContentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppContentRequest clone() => GetAppContentRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppContentRequest copyWith(void Function(GetAppContentRequest) updates) => super.copyWith((message) => updates(message as GetAppContentRequest)) as GetAppContentRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppContentRequest create() => GetAppContentRequest._();
+  GetAppContentRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAppContentRequest> createRepeated() => $pb.PbList<GetAppContentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppContentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppContentRequest>(create);
+  static GetAppContentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get publicNamespace => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set publicNamespace($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPublicNamespace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPublicNamespace() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+}
+
+class GetAppContentResponse extends $pb.GeneratedMessage {
+  factory GetAppContentResponse({
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
+  GetAppContentResponse._() : super();
+  factory GetAppContentResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppContentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppContentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'url')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppContentResponse clone() => GetAppContentResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppContentResponse copyWith(void Function(GetAppContentResponse) updates) => super.copyWith((message) => updates(message as GetAppContentResponse)) as GetAppContentResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppContentResponse create() => GetAppContentResponse._();
+  GetAppContentResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAppContentResponse> createRepeated() => $pb.PbList<GetAppContentResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppContentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppContentResponse>(create);
+  static GetAppContentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
 }
 
 class OrganizationSetLogoRequest extends $pb.GeneratedMessage {
