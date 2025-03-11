@@ -4,20 +4,17 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:grpc/grpc.dart';
 
-Future<ClientChannel> getChannelAndServeServerAtUnusedPort(Server server) async {
-  ClientChannel? chan;
+// Given a server, find a port to safely serve on and do so
+Future<void> serveServerAtUnusedPort(Server server) async {
   await Future.doWhile(() async {
     final port = await getUnsafeUnusedPort();
     try {
-      chan = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       await server.serve(port: port);
       return false;
     } catch (err) {
       return true;
     }
   });
-
-  return chan!;
 }
 
 Future<int> getUnsafeUnusedPort() async {

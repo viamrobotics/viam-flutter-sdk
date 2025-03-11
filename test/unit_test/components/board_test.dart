@@ -212,7 +212,8 @@ void main() {
       manager.register(Board.getResourceName(name), board);
       service = BoardService(manager);
       server = Server.create(services: [service]);
-      channel = await getChannelAndServeServerAtUnusedPort(server);
+      await serveServerAtUnusedPort(server);
+      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
     });
 
     tearDown(() async {
