@@ -141,14 +141,12 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = await getUnusedPort();
       arm = FakeArm(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Arm.getResourceName(name), arm);
       service = ArmService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server.create(services: [service]);
-      await server.serve(port: port);
+      channel = await getChannelAndServeServerAtUnusedPort(server);
     });
 
     tearDown(() async {

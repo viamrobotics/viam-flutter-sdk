@@ -112,14 +112,12 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = await getUnusedPort();
       gripper = FakeGripper(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Gripper.getResourceName(name), gripper);
       service = GripperService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server.create(services: [service]);
-      await server.serve(port: port);
+      channel = await getChannelAndServeServerAtUnusedPort(server);
     });
 
     tearDown(() async {

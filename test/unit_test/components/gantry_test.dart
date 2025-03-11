@@ -137,14 +137,12 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = await getUnusedPort();
       gantry = FakeGantry(name, lengths);
       final ResourceManager manager = ResourceManager();
       manager.register(Gantry.getResourceName(name), gantry);
       service = GantryService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server.create(services: [service]);
-      await server.serve(port: port);
+      channel = await getChannelAndServeServerAtUnusedPort(server);
     });
 
     tearDown(() async {

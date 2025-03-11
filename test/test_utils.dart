@@ -2,21 +2,22 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:grpc/grpc.dart';
 
-Future<int> getUnusedPort() async {
-  int? value;
+Future<ClientChannel> getChannelAndServeServerAtUnusedPort(Server server) async {
+  ClientChannel? chan;
   await Future.doWhile(() async {
-    value = await ServerSocket.bind(InternetAddress.loopbackIPv4, await getUnsafeUnusedPort()).then((socket) {
-      final port = socket.port;
-      socket.close();
-      return port;
-    });
-    return value == null;
+    final port = await getUnsafeUnusedPort();
+    try {
+      chan = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      await server.serve(port: port);
+      return false;
+    } catch (err) {
+      return true;
+    }
   });
 
-  // We need to set `value` to _something_ to appease typechecker, but in truth we'll never
-  // get here until `value` is non-null
-  return value ?? 54321;
+  return chan!;
 }
 
 Future<int> getUnsafeUnusedPort() async {

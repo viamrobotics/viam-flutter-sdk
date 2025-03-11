@@ -207,14 +207,12 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = await getUnusedPort();
       board = FakeBoard(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Board.getResourceName(name), board);
       service = BoardService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server.create(services: [service]);
-      await server.serve(port: port);
+      channel = await getChannelAndServeServerAtUnusedPort(server);
     });
 
     tearDown(() async {

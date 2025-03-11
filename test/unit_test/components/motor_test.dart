@@ -202,14 +202,12 @@ void main() {
     late Server server;
 
     setUp(() async {
-      final port = await getUnusedPort();
       motor = FakeMotor(name);
       final ResourceManager manager = ResourceManager();
       manager.register(Motor.getResourceName(name), motor);
       service = MotorService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server.create(services: [service]);
-      await server.serve(port: port);
+      channel = await getChannelAndServeServerAtUnusedPort(server);
     });
 
     tearDown(() async {
