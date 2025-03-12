@@ -5,6 +5,7 @@ import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
+import 'package:google_protobuf/google/protobuf/struct.pb.dart';
 
 typedef RobotPartLogPage = GetRobotPartLogsResponse;
 
@@ -728,5 +729,103 @@ class AppClient {
   Future<CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations(String id) async {
     final request = CreateKeyFromExistingKeyAuthorizationsRequest()..id = id;
     return await _client.createKeyFromExistingKeyAuthorizations(request);
+  }
+
+  /// Retrieves user-defined [Metadata] for an organization.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<GetOrganizationMetadataResponse> getOrganizationMetadata(String id) async {
+    final request = GetOrganizationMetadataRequest()..organizationId = id;
+    return await _client.getOrganizationMetadata(request);
+  }
+
+  // /// Updates user-defined [Metadata] for an organization.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<UpdateOrganizationMetadataResponse> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateOrganizationMetadataRequest()
+  //     ..organizationId = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateOrganizationMetadata(request);
+  // }
+
+  // /// Retrieves user-defined [Metadata] for a location.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<GetLocationMetadataResponse> getLocationMetadata(String id) async {
+  //   final request = GetLocationMetadataRequest()..locationId = id;
+  //   return await _client.getLocationMetadata(request);
+  // }
+
+  // /// Updates user-defined [Metadata] for a location.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateLocationMetadataRequest()
+  //     ..locationId = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateLocationMetadata(request);
+  // }
+
+  // /// Retrieves user-defined [Metadata] for a robot.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<GetRobotMetadataResponse> getRobotMetadata(String id) async {
+  //   final request = GetRobotMetadataRequest()..id = id;
+  //   return await _client.getRobotMetadata(request);
+  // }
+
+  // /// Updates user-defined [Metadata] for a robot.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<void> updateRobotMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateRobotMetadataRequest()
+  //     ..id = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateRobotMetadata(request);
+  // }
+
+  // /// Retrieves user-defined [Metadata] for a robot part.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<GetRobotPartMetadataResponse> getRobotPartMetadata(String id) async {
+  //   final request = GetRobotPartMetadataRequest()..id = id;
+  //   return await _client.getRobotPartMetadata(request);
+  // }
+
+  // /// Updates user-defined [Metadata] for a robot part.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<void> updateRobotPartMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateRobotPartMetadataRequest()
+  //     ..id = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateRobotPartMetadata(request);
+  // }
+  
+  /// Helper function to convert a Dart Map to a protobuf Struct.
+  Struct _mapToStruct(Map<String, dynamic> data) {
+    final struct = Struct();
+    struct.fields.addAll(data.map((key, value) => MapEntry(key, _convertValue(value))));
+    return struct;
+  }
+
+  /// Helper function to convert Dart values to protobuf Values.
+  Value _convertValue(dynamic value) {
+    final val = Value();
+    if (value is String) {
+      val.stringValue = value;
+    } else if (value is int) {
+      val.numberValue = value.toDouble();
+    } else if (value is double) {
+      val.numberValue = value;
+    } else if (value is bool) {
+      val.boolValue = value;
+    } else if (value is List) {
+      val.listValue = ListValue()..values.addAll(value.map(_convertValue));
+    } else if (value is Map<String, dynamic>) {
+      val.structValue = _mapToStruct(value);
+    }
+    return val;
   }
 }
