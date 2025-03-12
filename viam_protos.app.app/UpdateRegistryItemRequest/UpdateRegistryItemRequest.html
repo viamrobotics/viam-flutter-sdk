@@ -62,9 +62,9 @@
 <li><span class="parameter" id="-param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span></li>
 <li><span class="parameter" id="-param-visibility"><span class="type-annotation"><a href="../../viam_protos.app.app/Visibility-class.html">Visibility</a>?</span> <span class="parameter-name">visibility</span>, </span></li>
 <li><span class="parameter" id="-param-url"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">url</span>, </span></li>
-<li><span class="parameter" id="-param-moduleUpdateMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateModuleMetadata-class.html">UpdateModuleMetadata</a>?</span> <span class="parameter-name">moduleUpdateMetadata</span>, </span></li>
-<li><span class="parameter" id="-param-mlModelUpdateMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateMLModelMetadata-class.html">UpdateMLModelMetadata</a>?</span> <span class="parameter-name">mlModelUpdateMetadata</span>, </span></li>
-<li><span class="parameter" id="-param-mlTrainingUpdateMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateMLTrainingMetadata-class.html">UpdateMLTrainingMetadata</a>?</span> <span class="parameter-name">mlTrainingUpdateMetadata</span>, </span></li>
+<li><span class="parameter" id="-param-updateModuleMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateModuleMetadata-class.html">UpdateModuleMetadata</a>?</span> <span class="parameter-name">updateModuleMetadata</span>, </span></li>
+<li><span class="parameter" id="-param-updateMlModelMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateMLModelMetadata-class.html">UpdateMLModelMetadata</a>?</span> <span class="parameter-name">updateMlModelMetadata</span>, </span></li>
+<li><span class="parameter" id="-param-updateMlTrainingMetadata"><span class="type-annotation"><a href="../../viam_protos.app.app/UpdateMLTrainingMetadata-class.html">UpdateMLTrainingMetadata</a>?</span> <span class="parameter-name">updateMlTrainingMetadata</span>, </span></li>
 </ol>})
     </section>
     
@@ -79,9 +79,9 @@
   $core.String? description,
   Visibility? visibility,
   $core.String? url,
-  UpdateModuleMetadata? moduleUpdateMetadata,
-  UpdateMLModelMetadata? mlModelUpdateMetadata,
-  UpdateMLTrainingMetadata? mlTrainingUpdateMetadata,
+  UpdateModuleMetadata? updateModuleMetadata,
+  UpdateMLModelMetadata? updateMlModelMetadata,
+  UpdateMLTrainingMetadata? updateMlTrainingMetadata,
 }) {
   final $result = create();
   if (itemId != null) {
@@ -99,14 +99,14 @@
   if (url != null) {
     $result.url = url;
   }
-  if (moduleUpdateMetadata != null) {
-    $result.moduleUpdateMetadata = moduleUpdateMetadata;
+  if (updateModuleMetadata != null) {
+    $result.updateModuleMetadata = updateModuleMetadata;
   }
-  if (mlModelUpdateMetadata != null) {
-    $result.mlModelUpdateMetadata = mlModelUpdateMetadata;
+  if (updateMlModelMetadata != null) {
+    $result.updateMlModelMetadata = updateMlModelMetadata;
   }
-  if (mlTrainingUpdateMetadata != null) {
-    $result.mlTrainingUpdateMetadata = mlTrainingUpdateMetadata;
+  if (updateMlTrainingMetadata != null) {
+    $result.updateMlTrainingMetadata = updateMlTrainingMetadata;
   }
   return $result;
 }</code></pre>

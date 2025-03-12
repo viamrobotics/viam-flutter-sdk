@@ -90,7 +90,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="Detection" class="callable">
-          <span class="name"><a href="../viam_protos.service.vision/Detection/Detection.html">Detection</a></span><span class="signature">({<span class="parameter" id="-param-xMin"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">xMin</span>, </span><span class="parameter" id="-param-yMin"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">yMin</span>, </span><span class="parameter" id="-param-xMax"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">xMax</span>, </span><span class="parameter" id="-param-yMax"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">yMax</span>, </span><span class="parameter" id="-param-confidence"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">confidence</span>, </span><span class="parameter" id="-param-className"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">className</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.vision/Detection/Detection.html">Detection</a></span><span class="signature">({<span class="parameter" id="-param-xMin"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">xMin</span>, </span><span class="parameter" id="-param-yMin"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">yMin</span>, </span><span class="parameter" id="-param-xMax"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">xMax</span>, </span><span class="parameter" id="-param-yMax"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">yMax</span>, </span><span class="parameter" id="-param-confidence"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">confidence</span>, </span><span class="parameter" id="-param-className"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">className</span>, </span><span class="parameter" id="-param-xMinNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">xMinNormalized</span>, </span><span class="parameter" id="-param-yMinNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMinNormalized</span>, </span><span class="parameter" id="-param-xMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">xMaxNormalized</span>, </span><span class="parameter" id="-param-yMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMaxNormalized</span></span>})</span>
         </dt>
         <dd>
           
@@ -227,6 +227,18 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="xMaxNormalized" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/xMaxNormalized.html">xMaxNormalized</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="xMin" class="property">
   <span class="name"><a href="../viam_protos.service.vision/Detection/xMin.html">xMin</a></span>
   <span class="signature">&#8596; <a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a></span>
@@ -235,6 +247,18 @@ to protobuf fields.
 </dt>
 <dd>
   the four corners of the box
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="xMinNormalized" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/xMinNormalized.html">xMinNormalized</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  the four corners of the box, in proportion to the respective image dimension
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -251,9 +275,33 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="yMaxNormalized" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/yMaxNormalized.html">yMaxNormalized</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="yMin" class="property">
   <span class="name"><a href="../viam_protos.service.vision/Detection/yMin.html">yMin</a></span>
   <span class="signature">&#8596; <a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="yMinNormalized" class="property">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/yMinNormalized.html">yMinNormalized</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
   
 
 </dt>
@@ -376,8 +424,34 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearXMaxNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/clearXMaxNormalized.html">clearXMaxNormalized</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearXMin" class="callable">
   <span class="name"><a href="../viam_protos.service.vision/Detection/clearXMin.html">clearXMin</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearXMinNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/clearXMinNormalized.html">clearXMinNormalized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -402,8 +476,34 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearYMaxNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/clearYMaxNormalized.html">clearYMaxNormalized</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearYMin" class="callable">
   <span class="name"><a href="../viam_protos.service.vision/Detection/clearYMin.html">clearYMin</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearYMinNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/clearYMinNormalized.html">clearYMinNormalized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -668,8 +768,34 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasXMaxNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/hasXMaxNormalized.html">hasXMaxNormalized</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasXMin" class="callable">
   <span class="name"><a href="../viam_protos.service.vision/Detection/hasXMin.html">hasXMin</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasXMinNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/hasXMinNormalized.html">hasXMinNormalized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
@@ -694,8 +820,34 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasYMaxNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/hasYMaxNormalized.html">hasYMaxNormalized</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasYMin" class="callable">
   <span class="name"><a href="../viam_protos.service.vision/Detection/hasYMin.html">hasYMin</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasYMinNormalized" class="callable">
+  <span class="name"><a href="../viam_protos.service.vision/Detection/hasYMinNormalized.html">hasYMinNormalized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   
