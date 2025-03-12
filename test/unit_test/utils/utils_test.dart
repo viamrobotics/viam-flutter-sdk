@@ -10,18 +10,6 @@ import 'package:viam_sdk/src/utils.dart';
 import '../../test_utils.dart';
 
 void main() {
-  group('test utils', () {
-    test('generateTestingPortFromName', () {
-      final a = generateTestingPortFromName('a');
-      final b = generateTestingPortFromName('b');
-      expect((a != b), true);
-
-      final c1 = generateTestingPortFromName('c');
-      final c2 = generateTestingPortFromName('c');
-      expect((c1 == c2), true);
-    });
-  });
-
   group('utils', () {
     group('NullableStringUtils', () {
       const String? nullString = null;

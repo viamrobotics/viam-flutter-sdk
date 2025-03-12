@@ -1,6 +1,29 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:io';
 
-int generateTestingPortFromName(String name) => 50000 + (name.hashCode % 10000);
+import 'package:flutter/material.dart';
+import 'package:grpc/grpc.dart';
+
+// Given a server, find a port to safely serve on and do so
+Future<void> serveServerAtUnusedPort(Server server) async {
+  await Future.doWhile(() async {
+    final port = await getUnsafeUnusedPort();
+    try {
+      await server.serve(port: port);
+      return false;
+    } catch (err) {
+      return true;
+    }
+  });
+}
+
+Future<int> getUnsafeUnusedPort() async {
+  late int port;
+  final socket = await RawServerSocket.bind(InternetAddress.loopbackIPv4, 0);
+  port = socket.port;
+  await socket.close();
+  return port;
+}
 
 class TestableWidget extends StatelessWidget {
   const TestableWidget({

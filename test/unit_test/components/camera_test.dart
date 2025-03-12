@@ -100,13 +100,12 @@ void main() {
 
     setUp(() async {
       camera = FakeCamera(name);
-      final port = generateTestingPortFromName(name);
       final manager = ResourceManager();
       manager.register(Camera.getResourceName(name), camera);
       service = CameraService(manager);
-      channel = ClientChannel('localhost', port: port, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
       server = Server.create(services: [service]);
-      await server.serve(port: port);
+      await serveServerAtUnusedPort(server);
+      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
     });
 
     tearDown(() async {
