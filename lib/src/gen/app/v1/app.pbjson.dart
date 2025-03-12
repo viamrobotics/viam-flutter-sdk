@@ -2835,9 +2835,9 @@ const UpdateRegistryItemRequest$json = {
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'visibility', '3': 4, '4': 1, '5': 14, '6': '.viam.app.v1.Visibility', '10': 'visibility'},
     {'1': 'url', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'url', '17': true},
-    {'1': 'module_update_metadata', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateModuleMetadata', '9': 0, '10': 'moduleUpdateMetadata'},
-    {'1': 'ml_model_update_metadata', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateMLModelMetadata', '9': 0, '10': 'mlModelUpdateMetadata'},
-    {'1': 'ml_training_update_metadata', '3': 8, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateMLTrainingMetadata', '9': 0, '10': 'mlTrainingUpdateMetadata'},
+    {'1': 'update_module_metadata', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateModuleMetadata', '9': 0, '10': 'updateModuleMetadata'},
+    {'1': 'update_ml_model_metadata', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateMLModelMetadata', '9': 0, '10': 'updateMlModelMetadata'},
+    {'1': 'update_ml_training_metadata', '3': 8, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateMLTrainingMetadata', '9': 0, '10': 'updateMlTrainingMetadata'},
   ],
   '8': [
     {'1': 'metadata'},
@@ -2851,12 +2851,12 @@ final $typed_data.Uint8List updateRegistryItemRequestDescriptor = $convert.base6
     'R0eXBlGAIgASgOMiEudmlhbS5hcHAucGFja2FnZXMudjEuUGFja2FnZVR5cGVSBHR5cGUSIAoL'
     'ZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjcKCnZpc2liaWxpdHkYBCABKA4yFy52aW'
     'FtLmFwcC52MS5WaXNpYmlsaXR5Ugp2aXNpYmlsaXR5EhUKA3VybBgFIAEoCUgBUgN1cmyIAQES'
-    'WQoWbW9kdWxlX3VwZGF0ZV9tZXRhZGF0YRgGIAEoCzIhLnZpYW0uYXBwLnYxLlVwZGF0ZU1vZH'
-    'VsZU1ldGFkYXRhSABSFG1vZHVsZVVwZGF0ZU1ldGFkYXRhEl0KGG1sX21vZGVsX3VwZGF0ZV9t'
-    'ZXRhZGF0YRgHIAEoCzIiLnZpYW0uYXBwLnYxLlVwZGF0ZU1MTW9kZWxNZXRhZGF0YUgAUhVtbE'
-    '1vZGVsVXBkYXRlTWV0YWRhdGESZgobbWxfdHJhaW5pbmdfdXBkYXRlX21ldGFkYXRhGAggASgL'
-    'MiUudmlhbS5hcHAudjEuVXBkYXRlTUxUcmFpbmluZ01ldGFkYXRhSABSGG1sVHJhaW5pbmdVcG'
-    'RhdGVNZXRhZGF0YUIKCghtZXRhZGF0YUIGCgRfdXJs');
+    'WQoWdXBkYXRlX21vZHVsZV9tZXRhZGF0YRgGIAEoCzIhLnZpYW0uYXBwLnYxLlVwZGF0ZU1vZH'
+    'VsZU1ldGFkYXRhSABSFHVwZGF0ZU1vZHVsZU1ldGFkYXRhEl0KGHVwZGF0ZV9tbF9tb2RlbF9t'
+    'ZXRhZGF0YRgHIAEoCzIiLnZpYW0uYXBwLnYxLlVwZGF0ZU1MTW9kZWxNZXRhZGF0YUgAUhV1cG'
+    'RhdGVNbE1vZGVsTWV0YWRhdGESZgobdXBkYXRlX21sX3RyYWluaW5nX21ldGFkYXRhGAggASgL'
+    'MiUudmlhbS5hcHAudjEuVXBkYXRlTUxUcmFpbmluZ01ldGFkYXRhSABSGHVwZGF0ZU1sVHJhaW'
+    '5pbmdNZXRhZGF0YUIKCghtZXRhZGF0YUIGCgRfdXJs');
 
 @$core.Deprecated('Use updateRegistryItemResponseDescriptor instead')
 const UpdateRegistryItemResponse$json = {
@@ -2999,6 +2999,7 @@ const UpdateModuleRequest$json = {
     {'1': 'models', '3': 5, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 6, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 7, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+    {'1': 'apps', '3': 8, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
   ],
   '8': [
     {'1': '_first_run'},
@@ -3011,8 +3012,23 @@ final $typed_data.Uint8List updateModuleRequestDescriptor = $convert.base64Decod
     'lzaWJpbGl0eRgCIAEoDjIXLnZpYW0uYXBwLnYxLlZpc2liaWxpdHlSCnZpc2liaWxpdHkSEAoD'
     'dXJsGAMgASgJUgN1cmwSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEioKBm1vZG'
     'VscxgFIAMoCzISLnZpYW0uYXBwLnYxLk1vZGVsUgZtb2RlbHMSHgoKZW50cnlwb2ludBgGIAEo'
-    'CVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YByABKAlIAFIIZmlyc3RSdW6IAQFCDAoKX2Zpcn'
-    'N0X3J1bg==');
+    'CVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YByABKAlIAFIIZmlyc3RSdW6IAQESJAoEYXBwcx'
+    'gIIAMoCzIQLnZpYW0uYXBwLnYxLkFwcFIEYXBwc0IMCgpfZmlyc3RfcnVu');
+
+@$core.Deprecated('Use appDescriptor instead')
+const App$json = {
+  '1': 'App',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'entrypoint', '3': 3, '4': 1, '5': 9, '10': 'entrypoint'},
+  ],
+};
+
+/// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
+    'CgNBcHASEgoEbmFtZRgBIAEoCVIEbmFtZRISCgR0eXBlGAIgASgJUgR0eXBlEh4KCmVudHJ5cG'
+    '9pbnQYAyABKAlSCmVudHJ5cG9pbnQ=');
 
 @$core.Deprecated('Use updateModuleResponseDescriptor instead')
 const UpdateModuleResponse$json = {
@@ -3081,6 +3097,7 @@ const Model$json = {
     {'1': 'model', '3': 2, '4': 1, '5': 9, '10': 'model'},
     {'1': 'markdown_documentation', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'markdownDocumentation', '17': true},
     {'1': 'description', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'description', '17': true},
+    {'1': 'supported_hardware', '3': 5, '4': 3, '5': 9, '10': 'supportedHardware'},
   ],
   '8': [
     {'1': '_markdown_documentation'},
@@ -3092,8 +3109,9 @@ const Model$json = {
 final $typed_data.Uint8List modelDescriptor = $convert.base64Decode(
     'CgVNb2RlbBIQCgNhcGkYASABKAlSA2FwaRIUCgVtb2RlbBgCIAEoCVIFbW9kZWwSOgoWbWFya2'
     'Rvd25fZG9jdW1lbnRhdGlvbhgDIAEoCUgAUhVtYXJrZG93bkRvY3VtZW50YXRpb26IAQESJQoL'
-    'ZGVzY3JpcHRpb24YBCABKAlIAVILZGVzY3JpcHRpb26IAQFCGQoXX21hcmtkb3duX2RvY3VtZW'
-    '50YXRpb25CDgoMX2Rlc2NyaXB0aW9u');
+    'ZGVzY3JpcHRpb24YBCABKAlIAVILZGVzY3JpcHRpb26IAQESLQoSc3VwcG9ydGVkX2hhcmR3YX'
+    'JlGAUgAygJUhFzdXBwb3J0ZWRIYXJkd2FyZUIZChdfbWFya2Rvd25fZG9jdW1lbnRhdGlvbkIO'
+    'CgxfZGVzY3JpcHRpb24=');
 
 @$core.Deprecated('Use moduleFileInfoDescriptor instead')
 const ModuleFileInfo$json = {
@@ -3572,6 +3590,32 @@ const CreateKeyFromExistingKeyAuthorizationsResponse$json = {
 final $typed_data.Uint8List createKeyFromExistingKeyAuthorizationsResponseDescriptor = $convert.base64Decode(
     'Ci5DcmVhdGVLZXlGcm9tRXhpc3RpbmdLZXlBdXRob3JpemF0aW9uc1Jlc3BvbnNlEg4KAmlkGA'
     'EgASgJUgJpZBIQCgNrZXkYAiABKAlSA2tleQ==');
+
+@$core.Deprecated('Use getAppContentRequestDescriptor instead')
+const GetAppContentRequest$json = {
+  '1': 'GetAppContentRequest',
+  '2': [
+    {'1': 'public_namespace', '3': 1, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetAppContentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppContentRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRBcHBDb250ZW50UmVxdWVzdBIpChBwdWJsaWNfbmFtZXNwYWNlGAEgASgJUg9wdWJsaW'
+    'NOYW1lc3BhY2USEgoEbmFtZRgCIAEoCVIEbmFtZQ==');
+
+@$core.Deprecated('Use getAppContentResponseDescriptor instead')
+const GetAppContentResponse$json = {
+  '1': 'GetAppContentResponse',
+  '2': [
+    {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `GetAppContentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppContentResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRBcHBDb250ZW50UmVzcG9uc2USEAoDdXJsGAEgASgJUgN1cmw=');
 
 @$core.Deprecated('Use organizationSetLogoRequestDescriptor instead')
 const OrganizationSetLogoRequest$json = {

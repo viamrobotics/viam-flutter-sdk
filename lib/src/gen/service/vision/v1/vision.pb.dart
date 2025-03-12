@@ -326,6 +326,10 @@ class Detection extends $pb.GeneratedMessage {
     $fixnum.Int64? yMax,
     $core.double? confidence,
     $core.String? className,
+    $core.double? xMinNormalized,
+    $core.double? yMinNormalized,
+    $core.double? xMaxNormalized,
+    $core.double? yMaxNormalized,
   }) {
     final $result = create();
     if (xMin != null) {
@@ -346,6 +350,18 @@ class Detection extends $pb.GeneratedMessage {
     if (className != null) {
       $result.className = className;
     }
+    if (xMinNormalized != null) {
+      $result.xMinNormalized = xMinNormalized;
+    }
+    if (yMinNormalized != null) {
+      $result.yMinNormalized = yMinNormalized;
+    }
+    if (xMaxNormalized != null) {
+      $result.xMaxNormalized = xMaxNormalized;
+    }
+    if (yMaxNormalized != null) {
+      $result.yMaxNormalized = yMaxNormalized;
+    }
     return $result;
   }
   Detection._() : super();
@@ -359,6 +375,10 @@ class Detection extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'yMax')
     ..a<$core.double>(5, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
     ..aOS(6, _omitFieldNames ? '' : 'className')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'xMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'yMinNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'xMaxNormalized', $pb.PbFieldType.OD)
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'yMaxNormalized', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -439,6 +459,43 @@ class Detection extends $pb.GeneratedMessage {
   $core.bool hasClassName() => $_has(5);
   @$pb.TagNumber(6)
   void clearClassName() => clearField(6);
+
+  /// the four corners of the box, in proportion to the respective image dimension
+  @$pb.TagNumber(7)
+  $core.double get xMinNormalized => $_getN(6);
+  @$pb.TagNumber(7)
+  set xMinNormalized($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasXMinNormalized() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearXMinNormalized() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get yMinNormalized => $_getN(7);
+  @$pb.TagNumber(8)
+  set yMinNormalized($core.double v) { $_setDouble(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasYMinNormalized() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearYMinNormalized() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get xMaxNormalized => $_getN(8);
+  @$pb.TagNumber(9)
+  set xMaxNormalized($core.double v) { $_setDouble(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasXMaxNormalized() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearXMaxNormalized() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get yMaxNormalized => $_getN(9);
+  @$pb.TagNumber(10)
+  set yMaxNormalized($core.double v) { $_setDouble(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasYMaxNormalized() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearYMaxNormalized() => clearField(10);
 }
 
 class GetClassificationsRequest extends $pb.GeneratedMessage {
