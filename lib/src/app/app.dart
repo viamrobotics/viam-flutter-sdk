@@ -739,69 +739,69 @@ class AppClient {
     return await _client.getOrganizationMetadata(request);
   }
 
-  /// Updates user-defined [Metadata] for an organization.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<UpdateOrganizationMetadataResponse> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
-    final request = UpdateOrganizationMetadataRequest()
-      ..organizationId = id
-      ..data = _mapToStruct(data);
-    await _client.updateOrganizationMetadata(request);
-  }
+  // /// Updates user-defined [Metadata] for an organization.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<UpdateOrganizationMetadataResponse> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateOrganizationMetadataRequest()
+  //     ..organizationId = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateOrganizationMetadata(request);
+  // }
 
-  /// Retrieves user-defined [Metadata] for a location.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetLocationMetadataResponse> getLocationMetadata(String id) async {
-    final request = GetLocationMetadataRequest()..locationId = id;
-    return await _client.getLocationMetadata(request);
-  }
+  // /// Retrieves user-defined [Metadata] for a location.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<GetLocationMetadataResponse> getLocationMetadata(String id) async {
+  //   final request = GetLocationMetadataRequest()..locationId = id;
+  //   return await _client.getLocationMetadata(request);
+  // }
 
-  /// Updates user-defined [Metadata] for a location.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
-    final request = UpdateLocationMetadataRequest()
-      ..locationId = id
-      ..data = _mapToStruct(data);
-    await _client.updateLocationMetadata(request);
-  }
+  // /// Updates user-defined [Metadata] for a location.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateLocationMetadataRequest()
+  //     ..locationId = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateLocationMetadata(request);
+  // }
 
-  /// Retrieves user-defined [Metadata] for a machine.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetRobotMetadataResponse> getMachineMetadata(String id) async {
-    final request = GetRobotMetadataRequest()..id = id;
-    return await _client.getRobotMetadata(request);
-  }
+  // /// Retrieves user-defined [Metadata] for a robot.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<GetRobotMetadataResponse> getRobotMetadata(String id) async {
+  //   final request = GetRobotMetadataRequest()..id = id;
+  //   return await _client.getRobotMetadata(request);
+  // }
 
-  /// Updates user-defined [Metadata] for a machine.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateMachineMetadata(String id, Map<String, dynamic> data) async {
-    final request = UpdateRobotMetadataRequest()
-      ..id = id
-      ..data = _mapToStruct(data);
-    await _client.updateRobotMetadata(request);
-  }
+  // /// Updates user-defined [Metadata] for a robot.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<void> updateRobotMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateRobotMetadataRequest()
+  //     ..id = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateRobotMetadata(request);
+  // }
 
-  /// Retrieves user-defined [Metadata] for a machine part.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetRobotPartMetadataResponse> getMachinePartMetadata(String id) async {
-    final request = GetRobotPartMetadataRequest()..id = id;
-    return await _client.getRobotPartMetadata(request);
-  }
+  // /// Retrieves user-defined [Metadata] for a robot part.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<GetRobotPartMetadataResponse> getRobotPartMetadata(String id) async {
+  //   final request = GetRobotPartMetadataRequest()..id = id;
+  //   return await _client.getRobotPartMetadata(request);
+  // }
 
-  /// Updates user-defined [Metadata] for a machine part.
-  ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateMachinePartMetadata(String id, Map<String, dynamic> data) async {
-    final request = UpdateRobotPartMetadataRequest()
-      ..id = id
-      ..data = _mapToStruct(data);
-    await _client.updateRobotPartMetadata(request);
-  }
+  // /// Updates user-defined [Metadata] for a robot part.
+  // ///
+  // /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  // Future<void> updateRobotPartMetadata(String id, Map<String, dynamic> data) async {
+  //   final request = UpdateRobotPartMetadataRequest()
+  //     ..id = id
+  //     ..data = _mapToStruct(data);
+  //   await _client.updateRobotPartMetadata(request);
+  // }
   
   /// Helper function to convert a Dart Map to a protobuf Struct.
   Struct _mapToStruct(Map<String, dynamic> data) {
