@@ -729,4 +729,12 @@ class AppClient {
     final request = CreateKeyFromExistingKeyAuthorizationsRequest()..id = id;
     return await _client.createKeyFromExistingKeyAuthorizations(request);
   }
+
+  /// Retrieves user-defined [Metadata] for an organization.
+  ///
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
+  Future<GetOrganizationMetadataResponse> getOrganizationMetadata(String id) async {
+    final request = GetOrganizationMetadataRequest()..organizationId = id;
+    return await _client.getOrganizationMetadata(request);
+  }
 }

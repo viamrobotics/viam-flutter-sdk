@@ -754,5 +754,12 @@ void main() {
       final response = await appClient.createKeyFromExistingKeyAuthorizations('id');
       expect(response, equals(expected));
     });
+
+    test('getOrganizationMetadata', () async {
+      final expected = GetOrganizationMetadataResponse()..data = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
+      when(serviceClient.getOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.getOrganizationMetadata('orgId');
+      expect(response, equals(expected));
+    });
   });
 }
