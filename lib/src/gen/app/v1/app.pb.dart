@@ -8824,6 +8824,628 @@ class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
   $core.List<ResolvedFragment> get resolvedFragments => $_getList(1);
 }
 
+class ListMachineSummariesRequest extends $pb.GeneratedMessage {
+  factory ListMachineSummariesRequest({
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
+  ListMachineSummariesRequest._() : super();
+  factory ListMachineSummariesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMachineSummariesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineSummariesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMachineSummariesRequest clone() => ListMachineSummariesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMachineSummariesRequest copyWith(void Function(ListMachineSummariesRequest) updates) => super.copyWith((message) => updates(message as ListMachineSummariesRequest)) as ListMachineSummariesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMachineSummariesRequest create() => ListMachineSummariesRequest._();
+  ListMachineSummariesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMachineSummariesRequest> createRepeated() => $pb.PbList<ListMachineSummariesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMachineSummariesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMachineSummariesRequest>(create);
+  static ListMachineSummariesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+}
+
+class ListMachineSummariesResponse extends $pb.GeneratedMessage {
+  factory ListMachineSummariesResponse({
+    $core.Iterable<LocationSummary>? locationSummaries,
+  }) {
+    final $result = create();
+    if (locationSummaries != null) {
+      $result.locationSummaries.addAll(locationSummaries);
+    }
+    return $result;
+  }
+  ListMachineSummariesResponse._() : super();
+  factory ListMachineSummariesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMachineSummariesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineSummariesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<LocationSummary>(1, _omitFieldNames ? '' : 'locationSummaries', $pb.PbFieldType.PM, subBuilder: LocationSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMachineSummariesResponse clone() => ListMachineSummariesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMachineSummariesResponse copyWith(void Function(ListMachineSummariesResponse) updates) => super.copyWith((message) => updates(message as ListMachineSummariesResponse)) as ListMachineSummariesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMachineSummariesResponse create() => ListMachineSummariesResponse._();
+  ListMachineSummariesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMachineSummariesResponse> createRepeated() => $pb.PbList<ListMachineSummariesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMachineSummariesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMachineSummariesResponse>(create);
+  static ListMachineSummariesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<LocationSummary> get locationSummaries => $_getList(0);
+}
+
+class LocationSummary extends $pb.GeneratedMessage {
+  factory LocationSummary({
+    $core.String? locationId,
+    $core.String? locationName,
+    $core.Iterable<MachineSummary>? machineSummaries,
+  }) {
+    final $result = create();
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    if (locationName != null) {
+      $result.locationName = locationName;
+    }
+    if (machineSummaries != null) {
+      $result.machineSummaries.addAll(machineSummaries);
+    }
+    return $result;
+  }
+  LocationSummary._() : super();
+  factory LocationSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LocationSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LocationSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'locationId')
+    ..aOS(2, _omitFieldNames ? '' : 'locationName')
+    ..pc<MachineSummary>(3, _omitFieldNames ? '' : 'machineSummaries', $pb.PbFieldType.PM, subBuilder: MachineSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LocationSummary clone() => LocationSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LocationSummary copyWith(void Function(LocationSummary) updates) => super.copyWith((message) => updates(message as LocationSummary)) as LocationSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LocationSummary create() => LocationSummary._();
+  LocationSummary createEmptyInstance() => create();
+  static $pb.PbList<LocationSummary> createRepeated() => $pb.PbList<LocationSummary>();
+  @$core.pragma('dart2js:noInline')
+  static LocationSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LocationSummary>(create);
+  static LocationSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get locationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set locationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLocationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get locationName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set locationName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLocationName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLocationName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<MachineSummary> get machineSummaries => $_getList(2);
+}
+
+class MachineSummary extends $pb.GeneratedMessage {
+  factory MachineSummary({
+    $core.String? machineId,
+    $core.String? machineName,
+    $core.Iterable<PartSummary>? partSummaries,
+  }) {
+    final $result = create();
+    if (machineId != null) {
+      $result.machineId = machineId;
+    }
+    if (machineName != null) {
+      $result.machineName = machineName;
+    }
+    if (partSummaries != null) {
+      $result.partSummaries.addAll(partSummaries);
+    }
+    return $result;
+  }
+  MachineSummary._() : super();
+  factory MachineSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MachineSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MachineSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'machineId')
+    ..aOS(2, _omitFieldNames ? '' : 'machineName')
+    ..pc<PartSummary>(3, _omitFieldNames ? '' : 'partSummaries', $pb.PbFieldType.PM, subBuilder: PartSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MachineSummary clone() => MachineSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MachineSummary copyWith(void Function(MachineSummary) updates) => super.copyWith((message) => updates(message as MachineSummary)) as MachineSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MachineSummary create() => MachineSummary._();
+  MachineSummary createEmptyInstance() => create();
+  static $pb.PbList<MachineSummary> createRepeated() => $pb.PbList<MachineSummary>();
+  @$core.pragma('dart2js:noInline')
+  static MachineSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MachineSummary>(create);
+  static MachineSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get machineId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set machineId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachineId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachineId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get machineName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set machineName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMachineName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMachineName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<PartSummary> get partSummaries => $_getList(2);
+}
+
+class FragmentSummary extends $pb.GeneratedMessage {
+  factory FragmentSummary({
+    $core.String? id,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  FragmentSummary._() : super();
+  factory FragmentSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentSummary clone() => FragmentSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentSummary copyWith(void Function(FragmentSummary) updates) => super.copyWith((message) => updates(message as FragmentSummary)) as FragmentSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentSummary create() => FragmentSummary._();
+  FragmentSummary createEmptyInstance() => create();
+  static $pb.PbList<FragmentSummary> createRepeated() => $pb.PbList<FragmentSummary>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentSummary>(create);
+  static FragmentSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+}
+
+enum ViamServerVersion_Version {
+  major, 
+  minor, 
+  notSet
+}
+
+class ViamServerVersion extends $pb.GeneratedMessage {
+  factory ViamServerVersion({
+    $core.String? major,
+    $core.String? minor,
+  }) {
+    final $result = create();
+    if (major != null) {
+      $result.major = major;
+    }
+    if (minor != null) {
+      $result.minor = minor;
+    }
+    return $result;
+  }
+  ViamServerVersion._() : super();
+  factory ViamServerVersion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ViamServerVersion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, ViamServerVersion_Version> _ViamServerVersion_VersionByTag = {
+    1 : ViamServerVersion_Version.major,
+    2 : ViamServerVersion_Version.minor,
+    0 : ViamServerVersion_Version.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ViamServerVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOS(1, _omitFieldNames ? '' : 'major')
+    ..aOS(2, _omitFieldNames ? '' : 'minor')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ViamServerVersion clone() => ViamServerVersion()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ViamServerVersion copyWith(void Function(ViamServerVersion) updates) => super.copyWith((message) => updates(message as ViamServerVersion)) as ViamServerVersion;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ViamServerVersion create() => ViamServerVersion._();
+  ViamServerVersion createEmptyInstance() => create();
+  static $pb.PbList<ViamServerVersion> createRepeated() => $pb.PbList<ViamServerVersion>();
+  @$core.pragma('dart2js:noInline')
+  static ViamServerVersion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ViamServerVersion>(create);
+  static ViamServerVersion? _defaultInstance;
+
+  ViamServerVersion_Version whichVersion() => _ViamServerVersion_VersionByTag[$_whichOneof(0)]!;
+  void clearVersion() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  $core.String get major => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set major($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMajor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMajor() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get minor => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set minor($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMinor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinor() => clearField(2);
+}
+
+enum ViamAgentVersion_Version {
+  major, 
+  minor, 
+  notSet
+}
+
+class ViamAgentVersion extends $pb.GeneratedMessage {
+  factory ViamAgentVersion({
+    $core.String? major,
+    $core.String? minor,
+  }) {
+    final $result = create();
+    if (major != null) {
+      $result.major = major;
+    }
+    if (minor != null) {
+      $result.minor = minor;
+    }
+    return $result;
+  }
+  ViamAgentVersion._() : super();
+  factory ViamAgentVersion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ViamAgentVersion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, ViamAgentVersion_Version> _ViamAgentVersion_VersionByTag = {
+    1 : ViamAgentVersion_Version.major,
+    2 : ViamAgentVersion_Version.minor,
+    0 : ViamAgentVersion_Version.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ViamAgentVersion', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOS(1, _omitFieldNames ? '' : 'major')
+    ..aOS(2, _omitFieldNames ? '' : 'minor')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ViamAgentVersion clone() => ViamAgentVersion()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ViamAgentVersion copyWith(void Function(ViamAgentVersion) updates) => super.copyWith((message) => updates(message as ViamAgentVersion)) as ViamAgentVersion;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ViamAgentVersion create() => ViamAgentVersion._();
+  ViamAgentVersion createEmptyInstance() => create();
+  static $pb.PbList<ViamAgentVersion> createRepeated() => $pb.PbList<ViamAgentVersion>();
+  @$core.pragma('dart2js:noInline')
+  static ViamAgentVersion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ViamAgentVersion>(create);
+  static ViamAgentVersion? _defaultInstance;
+
+  ViamAgentVersion_Version whichVersion() => _ViamAgentVersion_VersionByTag[$_whichOneof(0)]!;
+  void clearVersion() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  $core.String get major => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set major($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMajor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMajor() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get minor => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set minor($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMinor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinor() => clearField(2);
+}
+
+class PartSummary extends $pb.GeneratedMessage {
+  factory PartSummary({
+    $core.String? partId,
+    $core.String? partName,
+    $47.Timestamp? lastOnline,
+    ViamServerVersion? viamServerVersion,
+    ViamAgentVersion? viamAgentVersion,
+    $core.String? os,
+    $core.String? platform,
+    $core.String? publicIpAddress,
+    $core.Iterable<FragmentSummary>? fragments,
+  }) {
+    final $result = create();
+    if (partId != null) {
+      $result.partId = partId;
+    }
+    if (partName != null) {
+      $result.partName = partName;
+    }
+    if (lastOnline != null) {
+      $result.lastOnline = lastOnline;
+    }
+    if (viamServerVersion != null) {
+      $result.viamServerVersion = viamServerVersion;
+    }
+    if (viamAgentVersion != null) {
+      $result.viamAgentVersion = viamAgentVersion;
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (publicIpAddress != null) {
+      $result.publicIpAddress = publicIpAddress;
+    }
+    if (fragments != null) {
+      $result.fragments.addAll(fragments);
+    }
+    return $result;
+  }
+  PartSummary._() : super();
+  factory PartSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PartSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PartSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'partId')
+    ..aOS(2, _omitFieldNames ? '' : 'partName')
+    ..aOM<$47.Timestamp>(3, _omitFieldNames ? '' : 'lastOnline', subBuilder: $47.Timestamp.create)
+    ..aOM<ViamServerVersion>(4, _omitFieldNames ? '' : 'viamServerVersion', subBuilder: ViamServerVersion.create)
+    ..aOM<ViamAgentVersion>(5, _omitFieldNames ? '' : 'viamAgentVersion', subBuilder: ViamAgentVersion.create)
+    ..aOS(6, _omitFieldNames ? '' : 'os')
+    ..aOS(7, _omitFieldNames ? '' : 'platform')
+    ..aOS(8, _omitFieldNames ? '' : 'publicIpAddress')
+    ..pc<FragmentSummary>(9, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: FragmentSummary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PartSummary clone() => PartSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PartSummary copyWith(void Function(PartSummary) updates) => super.copyWith((message) => updates(message as PartSummary)) as PartSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PartSummary create() => PartSummary._();
+  PartSummary createEmptyInstance() => create();
+  static $pb.PbList<PartSummary> createRepeated() => $pb.PbList<PartSummary>();
+  @$core.pragma('dart2js:noInline')
+  static PartSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PartSummary>(create);
+  static PartSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get partId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set partId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPartId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPartId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get partName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set partName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPartName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPartName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $47.Timestamp get lastOnline => $_getN(2);
+  @$pb.TagNumber(3)
+  set lastOnline($47.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLastOnline() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastOnline() => clearField(3);
+  @$pb.TagNumber(3)
+  $47.Timestamp ensureLastOnline() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  ViamServerVersion get viamServerVersion => $_getN(3);
+  @$pb.TagNumber(4)
+  set viamServerVersion(ViamServerVersion v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasViamServerVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearViamServerVersion() => clearField(4);
+  @$pb.TagNumber(4)
+  ViamServerVersion ensureViamServerVersion() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  ViamAgentVersion get viamAgentVersion => $_getN(4);
+  @$pb.TagNumber(5)
+  set viamAgentVersion(ViamAgentVersion v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasViamAgentVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearViamAgentVersion() => clearField(5);
+  @$pb.TagNumber(5)
+  ViamAgentVersion ensureViamAgentVersion() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get os => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set os($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOs() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOs() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get platform => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set platform($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPlatform() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPlatform() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get publicIpAddress => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set publicIpAddress($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPublicIpAddress() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPublicIpAddress() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<FragmentSummary> get fragments => $_getList(8);
+}
+
 class ListRobotsResponse extends $pb.GeneratedMessage {
   factory ListRobotsResponse({
     $core.Iterable<Robot>? robots,
