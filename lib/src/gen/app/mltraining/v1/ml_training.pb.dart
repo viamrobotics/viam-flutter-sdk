@@ -27,6 +27,7 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
     ModelType? modelType,
     $core.Iterable<$core.String>? tags,
     $core.String? datasetId,
+    ModelFramework? modelFramework,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -47,6 +48,9 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
     if (datasetId != null) {
       $result.datasetId = datasetId;
     }
+    if (modelFramework != null) {
+      $result.modelFramework = modelFramework;
+    }
     return $result;
   }
   SubmitTrainingJobRequest._() : super();
@@ -60,6 +64,7 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
     ..e<ModelType>(5, _omitFieldNames ? '' : 'modelType', $pb.PbFieldType.OE, defaultOrMaker: ModelType.MODEL_TYPE_UNSPECIFIED, valueOf: ModelType.valueOf, enumValues: ModelType.values)
     ..pPS(6, _omitFieldNames ? '' : 'tags')
     ..aOS(7, _omitFieldNames ? '' : 'datasetId')
+    ..e<ModelFramework>(8, _omitFieldNames ? '' : 'modelFramework', $pb.PbFieldType.OE, defaultOrMaker: ModelFramework.MODEL_FRAMEWORK_UNSPECIFIED, valueOf: ModelFramework.valueOf, enumValues: ModelFramework.values)
     ..hasRequiredFields = false
   ;
 
@@ -131,6 +136,15 @@ class SubmitTrainingJobRequest extends $pb.GeneratedMessage {
   $core.bool hasDatasetId() => $_has(5);
   @$pb.TagNumber(7)
   void clearDatasetId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  ModelFramework get modelFramework => $_getN(6);
+  @$pb.TagNumber(8)
+  set modelFramework(ModelFramework v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasModelFramework() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearModelFramework() => clearField(8);
 }
 
 class SubmitTrainingJobResponse extends $pb.GeneratedMessage {

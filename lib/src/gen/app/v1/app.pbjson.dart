@@ -2239,6 +2239,153 @@ final $typed_data.Uint8List listMachineFragmentsResponseDescriptor = $convert.ba
     '0uYXBwLnYxLkZyYWdtZW50UglmcmFnbWVudHMSTAoScmVzb2x2ZWRfZnJhZ21lbnRzGAIgAygL'
     'Mh0udmlhbS5hcHAudjEuUmVzb2x2ZWRGcmFnbWVudFIRcmVzb2x2ZWRGcmFnbWVudHM=');
 
+@$core.Deprecated('Use listMachineSummariesRequestDescriptor instead')
+const ListMachineSummariesRequest$json = {
+  '1': 'ListMachineSummariesRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+  ],
+};
+
+/// Descriptor for `ListMachineSummariesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMachineSummariesRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TWFjaGluZVN1bW1hcmllc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg'
+    '5vcmdhbml6YXRpb25JZA==');
+
+@$core.Deprecated('Use listMachineSummariesResponseDescriptor instead')
+const ListMachineSummariesResponse$json = {
+  '1': 'ListMachineSummariesResponse',
+  '2': [
+    {'1': 'location_summaries', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.LocationSummary', '10': 'locationSummaries'},
+  ],
+};
+
+/// Descriptor for `ListMachineSummariesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMachineSummariesResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TWFjaGluZVN1bW1hcmllc1Jlc3BvbnNlEksKEmxvY2F0aW9uX3N1bW1hcmllcxgBIA'
+    'MoCzIcLnZpYW0uYXBwLnYxLkxvY2F0aW9uU3VtbWFyeVIRbG9jYXRpb25TdW1tYXJpZXM=');
+
+@$core.Deprecated('Use locationSummaryDescriptor instead')
+const LocationSummary$json = {
+  '1': 'LocationSummary',
+  '2': [
+    {'1': 'location_id', '3': 1, '4': 1, '5': 9, '10': 'locationId'},
+    {'1': 'location_name', '3': 2, '4': 1, '5': 9, '10': 'locationName'},
+    {'1': 'machine_summaries', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.MachineSummary', '10': 'machineSummaries'},
+  ],
+};
+
+/// Descriptor for `LocationSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List locationSummaryDescriptor = $convert.base64Decode(
+    'Cg9Mb2NhdGlvblN1bW1hcnkSHwoLbG9jYXRpb25faWQYASABKAlSCmxvY2F0aW9uSWQSIwoNbG'
+    '9jYXRpb25fbmFtZRgCIAEoCVIMbG9jYXRpb25OYW1lEkgKEW1hY2hpbmVfc3VtbWFyaWVzGAMg'
+    'AygLMhsudmlhbS5hcHAudjEuTWFjaGluZVN1bW1hcnlSEG1hY2hpbmVTdW1tYXJpZXM=');
+
+@$core.Deprecated('Use machineSummaryDescriptor instead')
+const MachineSummary$json = {
+  '1': 'MachineSummary',
+  '2': [
+    {'1': 'machine_id', '3': 1, '4': 1, '5': 9, '10': 'machineId'},
+    {'1': 'machine_name', '3': 2, '4': 1, '5': 9, '10': 'machineName'},
+    {'1': 'part_summaries', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.PartSummary', '10': 'partSummaries'},
+  ],
+};
+
+/// Descriptor for `MachineSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List machineSummaryDescriptor = $convert.base64Decode(
+    'Cg5NYWNoaW5lU3VtbWFyeRIdCgptYWNoaW5lX2lkGAEgASgJUgltYWNoaW5lSWQSIQoMbWFjaG'
+    'luZV9uYW1lGAIgASgJUgttYWNoaW5lTmFtZRI/Cg5wYXJ0X3N1bW1hcmllcxgDIAMoCzIYLnZp'
+    'YW0uYXBwLnYxLlBhcnRTdW1tYXJ5Ug1wYXJ0U3VtbWFyaWVz');
+
+@$core.Deprecated('Use fragmentSummaryDescriptor instead')
+const FragmentSummary$json = {
+  '1': 'FragmentSummary',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+  ],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+};
+
+/// Descriptor for `FragmentSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentSummaryDescriptor = $convert.base64Decode(
+    'Cg9GcmFnbWVudFN1bW1hcnkSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAyABKAlSBG5hbWVKBA'
+    'gCEAM=');
+
+@$core.Deprecated('Use viamServerVersionDescriptor instead')
+const ViamServerVersion$json = {
+  '1': 'ViamServerVersion',
+  '2': [
+    {'1': 'major', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'major'},
+    {'1': 'minor', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'minor'},
+  ],
+  '8': [
+    {'1': 'version'},
+  ],
+};
+
+/// Descriptor for `ViamServerVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List viamServerVersionDescriptor = $convert.base64Decode(
+    'ChFWaWFtU2VydmVyVmVyc2lvbhIWCgVtYWpvchgBIAEoCUgAUgVtYWpvchIWCgVtaW5vchgCIA'
+    'EoCUgAUgVtaW5vckIJCgd2ZXJzaW9u');
+
+@$core.Deprecated('Use viamAgentVersionDescriptor instead')
+const ViamAgentVersion$json = {
+  '1': 'ViamAgentVersion',
+  '2': [
+    {'1': 'major', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'major'},
+    {'1': 'minor', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'minor'},
+  ],
+  '8': [
+    {'1': 'version'},
+  ],
+};
+
+/// Descriptor for `ViamAgentVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List viamAgentVersionDescriptor = $convert.base64Decode(
+    'ChBWaWFtQWdlbnRWZXJzaW9uEhYKBW1ham9yGAEgASgJSABSBW1ham9yEhYKBW1pbm9yGAIgAS'
+    'gJSABSBW1pbm9yQgkKB3ZlcnNpb24=');
+
+@$core.Deprecated('Use partSummaryDescriptor instead')
+const PartSummary$json = {
+  '1': 'PartSummary',
+  '2': [
+    {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
+    {'1': 'part_name', '3': 2, '4': 1, '5': 9, '10': 'partName'},
+    {'1': 'last_online', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastOnline', '17': true},
+    {'1': 'viam_server_version', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.ViamServerVersion', '9': 1, '10': 'viamServerVersion', '17': true},
+    {'1': 'viam_agent_version', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.ViamAgentVersion', '9': 2, '10': 'viamAgentVersion', '17': true},
+    {'1': 'os', '3': 6, '4': 1, '5': 9, '9': 3, '10': 'os', '17': true},
+    {'1': 'platform', '3': 7, '4': 1, '5': 9, '9': 4, '10': 'platform', '17': true},
+    {'1': 'public_ip_address', '3': 8, '4': 1, '5': 9, '9': 5, '10': 'publicIpAddress', '17': true},
+    {'1': 'fragments', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentSummary', '10': 'fragments'},
+  ],
+  '8': [
+    {'1': '_last_online'},
+    {'1': '_viam_server_version'},
+    {'1': '_viam_agent_version'},
+    {'1': '_os'},
+    {'1': '_platform'},
+    {'1': '_public_ip_address'},
+  ],
+};
+
+/// Descriptor for `PartSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List partSummaryDescriptor = $convert.base64Decode(
+    'CgtQYXJ0U3VtbWFyeRIXCgdwYXJ0X2lkGAEgASgJUgZwYXJ0SWQSGwoJcGFydF9uYW1lGAIgAS'
+    'gJUghwYXJ0TmFtZRJACgtsYXN0X29ubGluZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l'
+    'c3RhbXBIAFIKbGFzdE9ubGluZYgBARJTChN2aWFtX3NlcnZlcl92ZXJzaW9uGAQgASgLMh4udm'
+    'lhbS5hcHAudjEuVmlhbVNlcnZlclZlcnNpb25IAVIRdmlhbVNlcnZlclZlcnNpb26IAQESUAoS'
+    'dmlhbV9hZ2VudF92ZXJzaW9uGAUgASgLMh0udmlhbS5hcHAudjEuVmlhbUFnZW50VmVyc2lvbk'
+    'gCUhB2aWFtQWdlbnRWZXJzaW9uiAEBEhMKAm9zGAYgASgJSANSAm9ziAEBEh8KCHBsYXRmb3Jt'
+    'GAcgASgJSARSCHBsYXRmb3JtiAEBEi8KEXB1YmxpY19pcF9hZGRyZXNzGAggASgJSAVSD3B1Ym'
+    'xpY0lwQWRkcmVzc4gBARI6CglmcmFnbWVudHMYCSADKAsyHC52aWFtLmFwcC52MS5GcmFnbWVu'
+    'dFN1bW1hcnlSCWZyYWdtZW50c0IOCgxfbGFzdF9vbmxpbmVCFgoUX3ZpYW1fc2VydmVyX3Zlcn'
+    'Npb25CFQoTX3ZpYW1fYWdlbnRfdmVyc2lvbkIFCgNfb3NCCwoJX3BsYXRmb3JtQhQKEl9wdWJs'
+    'aWNfaXBfYWRkcmVzcw==');
+
 @$core.Deprecated('Use listRobotsResponseDescriptor instead')
 const ListRobotsResponse$json = {
   '1': 'ListRobotsResponse',

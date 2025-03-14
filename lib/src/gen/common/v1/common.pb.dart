@@ -691,10 +691,77 @@ class RectangularPrism extends $pb.GeneratedMessage {
   Vector3 ensureDimsMm() => $_ensure(0);
 }
 
+class Mesh extends $pb.GeneratedMessage {
+  factory Mesh({
+    $core.String? contentType,
+    $core.List<$core.int>? mesh,
+  }) {
+    final $result = create();
+    if (contentType != null) {
+      $result.contentType = contentType;
+    }
+    if (mesh != null) {
+      $result.mesh = mesh;
+    }
+    return $result;
+  }
+  Mesh._() : super();
+  factory Mesh.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Mesh.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Mesh', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentType')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'mesh', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Mesh clone() => Mesh()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Mesh copyWith(void Function(Mesh) updates) => super.copyWith((message) => updates(message as Mesh)) as Mesh;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Mesh create() => Mesh._();
+  Mesh createEmptyInstance() => create();
+  static $pb.PbList<Mesh> createRepeated() => $pb.PbList<Mesh>();
+  @$core.pragma('dart2js:noInline')
+  static Mesh getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Mesh>(create);
+  static Mesh? _defaultInstance;
+
+  /// Content type of mesh (e.g. ply)
+  @$pb.TagNumber(1)
+  $core.String get contentType => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentType($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasContentType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentType() => clearField(1);
+
+  /// Contents of mesh data in binary form defined by content_type
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get mesh => $_getN(1);
+  @$pb.TagNumber(2)
+  set mesh($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMesh() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMesh() => clearField(2);
+}
+
 enum Geometry_GeometryType {
   sphere, 
   box, 
   capsule, 
+  mesh, 
   notSet
 }
 
@@ -706,6 +773,7 @@ class Geometry extends $pb.GeneratedMessage {
     RectangularPrism? box,
     $core.String? label,
     Capsule? capsule,
+    Mesh? mesh,
   }) {
     final $result = create();
     if (center != null) {
@@ -723,6 +791,9 @@ class Geometry extends $pb.GeneratedMessage {
     if (capsule != null) {
       $result.capsule = capsule;
     }
+    if (mesh != null) {
+      $result.mesh = mesh;
+    }
     return $result;
   }
   Geometry._() : super();
@@ -733,15 +804,17 @@ class Geometry extends $pb.GeneratedMessage {
     2 : Geometry_GeometryType.sphere,
     3 : Geometry_GeometryType.box,
     5 : Geometry_GeometryType.capsule,
+    6 : Geometry_GeometryType.mesh,
     0 : Geometry_GeometryType.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Geometry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 5])
+    ..oo(0, [2, 3, 5, 6])
     ..aOM<Pose>(1, _omitFieldNames ? '' : 'center', subBuilder: Pose.create)
     ..aOM<Sphere>(2, _omitFieldNames ? '' : 'sphere', subBuilder: Sphere.create)
     ..aOM<RectangularPrism>(3, _omitFieldNames ? '' : 'box', subBuilder: RectangularPrism.create)
     ..aOS(4, _omitFieldNames ? '' : 'label')
     ..aOM<Capsule>(5, _omitFieldNames ? '' : 'capsule', subBuilder: Capsule.create)
+    ..aOM<Mesh>(6, _omitFieldNames ? '' : 'mesh', subBuilder: Mesh.create)
     ..hasRequiredFields = false
   ;
 
@@ -823,6 +896,17 @@ class Geometry extends $pb.GeneratedMessage {
   void clearCapsule() => clearField(5);
   @$pb.TagNumber(5)
   Capsule ensureCapsule() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  Mesh get mesh => $_getN(5);
+  @$pb.TagNumber(6)
+  set mesh(Mesh v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMesh() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMesh() => clearField(6);
+  @$pb.TagNumber(6)
+  Mesh ensureMesh() => $_ensure(5);
 }
 
 /// GeometriesinFrame contains the dimensions of a given geometry, pose of its center point, and the reference frame by which it was

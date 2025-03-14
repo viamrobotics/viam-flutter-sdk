@@ -317,6 +317,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListMachineFragments',
       ($10.ListMachineFragmentsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.ListMachineFragmentsResponse.fromBuffer(value));
+  static final _$listMachineSummaries = $grpc.ClientMethod<$10.ListMachineSummariesRequest, $10.ListMachineSummariesResponse>(
+      '/viam.app.v1.AppService/ListMachineSummaries',
+      ($10.ListMachineSummariesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.ListMachineSummariesResponse.fromBuffer(value));
   static final _$getFragmentHistory = $grpc.ClientMethod<$10.GetFragmentHistoryRequest, $10.GetFragmentHistoryResponse>(
       '/viam.app.v1.AppService/GetFragmentHistory',
       ($10.GetFragmentHistoryRequest value) => value.writeToBuffer(),
@@ -726,6 +730,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$10.ListMachineFragmentsResponse> listMachineFragments($10.ListMachineFragmentsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listMachineFragments, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.ListMachineSummariesResponse> listMachineSummaries($10.ListMachineSummariesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listMachineSummaries, request, options: options);
   }
 
   $grpc.ResponseFuture<$10.GetFragmentHistoryResponse> getFragmentHistory($10.GetFragmentHistoryRequest request, {$grpc.CallOptions? options}) {
@@ -1360,6 +1368,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $10.ListMachineFragmentsRequest.fromBuffer(value),
         ($10.ListMachineFragmentsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.ListMachineSummariesRequest, $10.ListMachineSummariesResponse>(
+        'ListMachineSummaries',
+        listMachineSummaries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.ListMachineSummariesRequest.fromBuffer(value),
+        ($10.ListMachineSummariesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$10.GetFragmentHistoryRequest, $10.GetFragmentHistoryResponse>(
         'GetFragmentHistory',
         getFragmentHistory_Pre,
@@ -1847,6 +1862,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return listMachineFragments(call, await request);
   }
 
+  $async.Future<$10.ListMachineSummariesResponse> listMachineSummaries_Pre($grpc.ServiceCall call, $async.Future<$10.ListMachineSummariesRequest> request) async {
+    return listMachineSummaries(call, await request);
+  }
+
   $async.Future<$10.GetFragmentHistoryResponse> getFragmentHistory_Pre($grpc.ServiceCall call, $async.Future<$10.GetFragmentHistoryRequest> request) async {
     return getFragmentHistory(call, await request);
   }
@@ -2025,6 +2044,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$10.UpdateFragmentResponse> updateFragment($grpc.ServiceCall call, $10.UpdateFragmentRequest request);
   $async.Future<$10.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $10.DeleteFragmentRequest request);
   $async.Future<$10.ListMachineFragmentsResponse> listMachineFragments($grpc.ServiceCall call, $10.ListMachineFragmentsRequest request);
+  $async.Future<$10.ListMachineSummariesResponse> listMachineSummaries($grpc.ServiceCall call, $10.ListMachineSummariesRequest request);
   $async.Future<$10.GetFragmentHistoryResponse> getFragmentHistory($grpc.ServiceCall call, $10.GetFragmentHistoryRequest request);
   $async.Future<$10.GetFragmentUsageResponse> getFragmentUsage($grpc.ServiceCall call, $10.GetFragmentUsageRequest request);
   $async.Future<$10.SetFragmentTagResponse> setFragmentTag($grpc.ServiceCall call, $10.SetFragmentTagRequest request);

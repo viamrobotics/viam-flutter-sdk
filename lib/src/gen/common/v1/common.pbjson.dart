@@ -152,6 +152,20 @@ final $typed_data.Uint8List rectangularPrismDescriptor = $convert.base64Decode(
     'ChBSZWN0YW5ndWxhclByaXNtEjAKB2RpbXNfbW0YASABKAsyFy52aWFtLmNvbW1vbi52MS5WZW'
     'N0b3IzUgZkaW1zTW0=');
 
+@$core.Deprecated('Use meshDescriptor instead')
+const Mesh$json = {
+  '1': 'Mesh',
+  '2': [
+    {'1': 'content_type', '3': 1, '4': 1, '5': 9, '10': 'contentType'},
+    {'1': 'mesh', '3': 2, '4': 1, '5': 12, '10': 'mesh'},
+  ],
+};
+
+/// Descriptor for `Mesh`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List meshDescriptor = $convert.base64Decode(
+    'CgRNZXNoEiEKDGNvbnRlbnRfdHlwZRgBIAEoCVILY29udGVudFR5cGUSEgoEbWVzaBgCIAEoDF'
+    'IEbWVzaA==');
+
 @$core.Deprecated('Use geometryDescriptor instead')
 const Geometry$json = {
   '1': 'Geometry',
@@ -160,6 +174,7 @@ const Geometry$json = {
     {'1': 'sphere', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Sphere', '9': 0, '10': 'sphere'},
     {'1': 'box', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.RectangularPrism', '9': 0, '10': 'box'},
     {'1': 'capsule', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.Capsule', '9': 0, '10': 'capsule'},
+    {'1': 'mesh', '3': 6, '4': 1, '5': 11, '6': '.viam.common.v1.Mesh', '9': 0, '10': 'mesh'},
     {'1': 'label', '3': 4, '4': 1, '5': 9, '10': 'label'},
   ],
   '8': [
@@ -172,8 +187,9 @@ final $typed_data.Uint8List geometryDescriptor = $convert.base64Decode(
     'CghHZW9tZXRyeRIsCgZjZW50ZXIYASABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgZjZW50ZX'
     'ISMAoGc3BoZXJlGAIgASgLMhYudmlhbS5jb21tb24udjEuU3BoZXJlSABSBnNwaGVyZRI0CgNi'
     'b3gYAyABKAsyIC52aWFtLmNvbW1vbi52MS5SZWN0YW5ndWxhclByaXNtSABSA2JveBIzCgdjYX'
-    'BzdWxlGAUgASgLMhcudmlhbS5jb21tb24udjEuQ2Fwc3VsZUgAUgdjYXBzdWxlEhQKBWxhYmVs'
-    'GAQgASgJUgVsYWJlbEIPCg1nZW9tZXRyeV90eXBl');
+    'BzdWxlGAUgASgLMhcudmlhbS5jb21tb24udjEuQ2Fwc3VsZUgAUgdjYXBzdWxlEioKBG1lc2gY'
+    'BiABKAsyFC52aWFtLmNvbW1vbi52MS5NZXNoSABSBG1lc2gSFAoFbGFiZWwYBCABKAlSBWxhYm'
+    'VsQg8KDWdlb21ldHJ5X3R5cGU=');
 
 @$core.Deprecated('Use geometriesInFrameDescriptor instead')
 const GeometriesInFrame$json = {

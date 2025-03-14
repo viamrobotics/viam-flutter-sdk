@@ -79,6 +79,7 @@ const SubmitTrainingJobRequest$json = {
     {'1': 'model_name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
     {'1': 'model_version', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
     {'1': 'model_type', '3': 5, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelType', '8': {}, '10': 'modelType'},
+    {'1': 'model_framework', '3': 8, '4': 1, '5': 14, '6': '.viam.app.mltraining.v1.ModelFramework', '8': {}, '10': 'modelFramework'},
     {'1': 'tags', '3': 6, '4': 3, '5': 9, '8': {}, '10': 'tags'},
   ],
   '9': [
@@ -97,8 +98,10 @@ final $typed_data.Uint8List submitTrainingJobRequestDescriptor = $convert.base64
     'JzaW9uGAQgASgJQi6ahJ4DKWJzb246Im1vZGVsX3ZlcnNpb24iIGpzb246Im1vZGVsX3ZlcnNp'
     'b24iUgxtb2RlbFZlcnNpb24SagoKbW9kZWxfdHlwZRgFIAEoDjIhLnZpYW0uYXBwLm1sdHJhaW'
     '5pbmcudjEuTW9kZWxUeXBlQiiahJ4DI2Jzb246Im1vZGVsX3R5cGUiIGpzb246Im1vZGVsX3R5'
-    'cGUiUgltb2RlbFR5cGUSMAoEdGFncxgGIAMoCUIcmoSeAxdic29uOiJ0YWdzIiBqc29uOiJ0YW'
-    'dzIlIEdGFnc0oECAEQAlIGZmlsdGVy');
+    'cGUiUgltb2RlbFR5cGUSgwEKD21vZGVsX2ZyYW1ld29yaxgIIAEoDjImLnZpYW0uYXBwLm1sdH'
+    'JhaW5pbmcudjEuTW9kZWxGcmFtZXdvcmtCMpqEngMtYnNvbjoibW9kZWxfZnJhbWV3b3JrIiBq'
+    'c29uOiJtb2RlbF9mcmFtZXdvcmsiUg5tb2RlbEZyYW1ld29yaxIwCgR0YWdzGAYgAygJQhyahJ'
+    '4DF2Jzb246InRhZ3MiIGpzb246InRhZ3MiUgR0YWdzSgQIARACUgZmaWx0ZXI=');
 
 @$core.Deprecated('Use submitTrainingJobResponseDescriptor instead')
 const SubmitTrainingJobResponse$json = {
