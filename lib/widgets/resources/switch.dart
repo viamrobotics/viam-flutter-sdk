@@ -66,8 +66,8 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
     return SliderThemeData(
       trackHeight: 10,
       thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10, disabledThumbRadius: 10),
-      activeTrackColor: Theme.of(context).colorScheme.secondary.withAlpha(64),
-      inactiveTrackColor: Theme.of(context).colorScheme.secondary.withAlpha(64),
+      activeTrackColor: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
+      inactiveTrackColor: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
       trackShape: const RectangularSliderTrackShape(),
     );
   }
