@@ -23,6 +23,37 @@ void main() {
   });
 
   group('App RPC Client Tests', () {
+    test('listMachineSummaries', () async {
+       final expected = [
+        LocationSummary()
+          ..locationId = 'id'
+          ..locationName = 'name'
+          ..machineSummaries.addAll([
+            MachineSummary()
+              ..machineId = 'machineId'
+              ..machineName = 'machineName'
+              ..partSummaries.addAll([
+                PartSummary()
+                  ..partId = 'partId'
+                  ..partName = 'partName'
+                  ..lastOnline = Timestamp.create()
+                  ..viamServerVersion = ViamServerVersion.create()
+                  ..viamAgentVersion = ViamAgentVersion.create()
+                  ..os = 'os'
+                  ..platform = 'platform'
+                  ..publicIpAddress = 'publicIpAddress'
+                  ..fragments.addAll([
+                    FragmentSummary()
+                      ..id = 'fragmentId'
+                      ..name = 'name'
+                  ])
+              ])
+          ])
+      ];
+      when(serviceClient.listMachineSummaries(any)).thenAnswer((_) => MockResponseFuture.value(ListMachineSummariesResponse()..locationSummaries.addAll(expected)));
+      final response = await appClient.listMachineSummaries('organizationId');
+      expect(response, equals(expected));
+    });
     test('getUserIDByEmail', () async {
       when(serviceClient.getUserIDByEmail(any)).thenAnswer((_) => MockResponseFuture.value(GetUserIDByEmailResponse()..userId = 'userId'));
       final response = await appClient.getUserIdByEmail('email');
