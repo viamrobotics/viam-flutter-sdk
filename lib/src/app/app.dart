@@ -18,6 +18,15 @@ class AppClient {
 
   AppClient(this._client);
 
+  /// List machine summaries for an organization
+  /// 
+  /// For more information, see [Fleet Management API] ](https://docs.viam.com/appendix/apis/fleet/).
+  Future<Iterable<LocationSummary>> listMachineSummaries(String organizationId) async {
+    final request = ListMachineSummariesRequest()..organizationId = organizationId;
+    final ListMachineSummariesResponse response = await _client.listMachineSummaries(request);
+    return response.locationSummaries;
+  }
+
   /// Get the id of the user with the email provided
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).

@@ -694,6 +694,48 @@ class MockRobotServiceClient extends _i1.Mock
           as _i4.ResponseFuture<_i9.GetVersionResponse>);
 
   @override
+  _i4.ResponseStream<_i9.TunnelResponse> tunnel(
+    _i6.Stream<_i9.TunnelRequest>? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#tunnel, [request], {#options: options}),
+            returnValue: _FakeResponseStream_3<_i9.TunnelResponse>(
+              this,
+              Invocation.method(#tunnel, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseStream_3<_i9.TunnelResponse>(
+                  this,
+                  Invocation.method(#tunnel, [request], {#options: options}),
+                ),
+          )
+          as _i4.ResponseStream<_i9.TunnelResponse>);
+
+  @override
+  _i4.ResponseFuture<_i9.ListTunnelsResponse> listTunnels(
+    _i9.ListTunnelsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#listTunnels, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i9.ListTunnelsResponse>(
+              this,
+              Invocation.method(#listTunnels, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i9.ListTunnelsResponse>(
+                  this,
+                  Invocation.method(
+                    #listTunnels,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i9.ListTunnelsResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -1293,6 +1335,72 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
                 ),
           )
           as _i4.ResponseFuture<_i13.DeleteOrganizationResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.GetOrganizationMetadataResponse>
+  getOrganizationMetadata(
+    _i13.GetOrganizationMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getOrganizationMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.GetOrganizationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getOrganizationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetOrganizationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getOrganizationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetOrganizationMetadataResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.UpdateOrganizationMetadataResponse>
+  updateOrganizationMetadata(
+    _i13.UpdateOrganizationMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #updateOrganizationMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.UpdateOrganizationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateOrganizationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.UpdateOrganizationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateOrganizationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.UpdateOrganizationMetadataResponse>);
 
   @override
   _i4.ResponseFuture<_i13.ListOrganizationMembersResponse>
@@ -2049,6 +2157,71 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.DeleteLocationResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.GetLocationMetadataResponse> getLocationMetadata(
+    _i13.GetLocationMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getLocationMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.GetLocationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getLocationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetLocationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getLocationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetLocationMetadataResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.UpdateLocationMetadataResponse>
+  updateLocationMetadata(
+    _i13.UpdateLocationMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #updateLocationMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.UpdateLocationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateLocationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.UpdateLocationMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateLocationMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.UpdateLocationMetadataResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.ListLocationsResponse> listLocations(
     _i13.ListLocationsRequest? request, {
     _i3.CallOptions? options,
@@ -2226,6 +2399,69 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
                 ),
           )
           as _i4.ResponseFuture<_i13.GetRobotResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.GetRobotMetadataResponse> getRobotMetadata(
+    _i13.GetRobotMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getRobotMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i13.GetRobotMetadataResponse>(
+              this,
+              Invocation.method(
+                #getRobotMetadata,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetRobotMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getRobotMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetRobotMetadataResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.UpdateRobotMetadataResponse> updateRobotMetadata(
+    _i13.UpdateRobotMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #updateRobotMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.UpdateRobotMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateRobotMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.UpdateRobotMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateRobotMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.UpdateRobotMetadataResponse>);
 
   @override
   _i4.ResponseFuture<_i13.GetRoverRentalRobotsResponse> getRoverRentalRobots(
@@ -2475,6 +2711,71 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
                 ),
           )
           as _i4.ResponseFuture<_i13.DeleteRobotPartResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.GetRobotPartMetadataResponse> getRobotPartMetadata(
+    _i13.GetRobotPartMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getRobotPartMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.GetRobotPartMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getRobotPartMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetRobotPartMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #getRobotPartMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetRobotPartMetadataResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.UpdateRobotPartMetadataResponse>
+  updateRobotPartMetadata(
+    _i13.UpdateRobotPartMetadataRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #updateRobotPartMetadata,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.UpdateRobotPartMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateRobotPartMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.UpdateRobotPartMetadataResponse>(
+                  this,
+                  Invocation.method(
+                    #updateRobotPartMetadata,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.UpdateRobotPartMetadataResponse>);
 
   @override
   _i4.ResponseFuture<_i13.GetRobotAPIKeysResponse> getRobotAPIKeys(
@@ -2873,6 +3174,38 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.ListMachineFragmentsResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.ListMachineSummariesResponse> listMachineSummaries(
+    _i13.ListMachineSummariesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #listMachineSummaries,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.ListMachineSummariesResponse>(
+                  this,
+                  Invocation.method(
+                    #listMachineSummaries,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.ListMachineSummariesResponse>(
+                  this,
+                  Invocation.method(
+                    #listMachineSummaries,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.ListMachineSummariesResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.GetFragmentHistoryResponse> getFragmentHistory(
     _i13.GetFragmentHistoryRequest? request, {
     _i3.CallOptions? options,
@@ -2902,6 +3235,95 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
                 ),
           )
           as _i4.ResponseFuture<_i13.GetFragmentHistoryResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.GetFragmentUsageResponse> getFragmentUsage(
+    _i13.GetFragmentUsageRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getFragmentUsage,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i13.GetFragmentUsageResponse>(
+              this,
+              Invocation.method(
+                #getFragmentUsage,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetFragmentUsageResponse>(
+                  this,
+                  Invocation.method(
+                    #getFragmentUsage,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetFragmentUsageResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.SetFragmentTagResponse> setFragmentTag(
+    _i13.SetFragmentTagRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#setFragmentTag, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i13.SetFragmentTagResponse>(
+              this,
+              Invocation.method(
+                #setFragmentTag,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.SetFragmentTagResponse>(
+                  this,
+                  Invocation.method(
+                    #setFragmentTag,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.SetFragmentTagResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.DeleteFragmentTagResponse> deleteFragmentTag(
+    _i13.DeleteFragmentTagRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #deleteFragmentTag,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i13.DeleteFragmentTagResponse>(
+              this,
+              Invocation.method(
+                #deleteFragmentTag,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.DeleteFragmentTagResponse>(
+                  this,
+                  Invocation.method(
+                    #deleteFragmentTag,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.DeleteFragmentTagResponse>);
 
   @override
   _i4.ResponseFuture<_i13.AddRoleResponse> addRole(
@@ -3463,6 +3885,29 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<
             _i13.CreateKeyFromExistingKeyAuthorizationsResponse
           >);
+
+  @override
+  _i4.ResponseFuture<_i13.GetAppContentResponse> getAppContent(
+    _i13.GetAppContentRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#getAppContent, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i13.GetAppContentResponse>(
+              this,
+              Invocation.method(#getAppContent, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetAppContentResponse>(
+                  this,
+                  Invocation.method(
+                    #getAppContent,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetAppContentResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
