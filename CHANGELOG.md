@@ -1,11 +1,22 @@
 # Changelog
 
-## [v0.2.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.2) (2025-02-18)
+## [v0.3.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.3.0) (2025-03-17)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.2.1...v0.2.2)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.2.2...v0.3.0)
 
 **Merged pull requests:**
 
+- RSDK-9901 - use git-access-token [\#354](https://github.com/viamrobotics/viam-flutter-sdk/pull/354) ([stuqdog](https://github.com/stuqdog))
+- Automated Protos Update [\#352](https://github.com/viamrobotics/viam-flutter-sdk/pull/352) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-9900 - always find unused port for testing [\#351](https://github.com/viamrobotics/viam-flutter-sdk/pull/351) ([stuqdog](https://github.com/stuqdog))
+- RSDK-9901 - run tests in proto workflow [\#350](https://github.com/viamrobotics/viam-flutter-sdk/pull/350) ([stuqdog](https://github.com/stuqdog))
+- Automated Protos Update [\#349](https://github.com/viamrobotics/viam-flutter-sdk/pull/349) ([github-actions[bot]](https://github.com/apps/github-actions))
+- feat: add Switch component, ViamSwitchWidget [\#348](https://github.com/viamrobotics/viam-flutter-sdk/pull/348) ([HipsterBrown](https://github.com/HipsterBrown))
+- RSDK-6157 - add initial connection options [\#347](https://github.com/viamrobotics/viam-flutter-sdk/pull/347) ([stuqdog](https://github.com/stuqdog))
+- \[RSDK-9633\] delete discover components [\#346](https://github.com/viamrobotics/viam-flutter-sdk/pull/346) ([JohnN193](https://github.com/JohnN193))
+- Add actuating methods as a check [\#344](https://github.com/viamrobotics/viam-flutter-sdk/pull/344) ([njooma](https://github.com/njooma))
+- Automated Protos Update [\#343](https://github.com/viamrobotics/viam-flutter-sdk/pull/343) ([github-actions[bot]](https://github.com/apps/github-actions))
+- v0.2.2 [\#342](https://github.com/viamrobotics/viam-flutter-sdk/pull/342) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-9898 - fix switch rename [\#341](https://github.com/viamrobotics/viam-flutter-sdk/pull/341) ([stuqdog](https://github.com/stuqdog))
 - DATA-3759:  Update TabularDataByMQL to have optional bool for useRecentData [\#340](https://github.com/viamrobotics/viam-flutter-sdk/pull/340) ([gloriacai01](https://github.com/gloriacai01))
 - RSDK-9904 - add job to notify slack of proto failure [\#339](https://github.com/viamrobotics/viam-flutter-sdk/pull/339) ([stuqdog](https://github.com/stuqdog))
@@ -63,6 +74,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.2.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.2) (2025-02-18)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.2.1...v0.2.2)
 
 ## [v0.2.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.1) (2025-02-03)
 
