@@ -5,7 +5,6 @@ import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
-import '../gen/google/protobuf/struct.pb.dart';
 import '../gen/robot/v1/robot.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
 import '../gen/stream/v1/stream.pbgrpc.dart';
@@ -15,7 +14,6 @@ import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
 import '../rpc/web_rtc/web_rtc_client.dart';
-import '../utils.dart';
 import 'sessions_client.dart';
 
 /// {@category Viam SDK}
@@ -54,33 +52,6 @@ class RobotClientOptions {
   /// Convenience initializer for creating options with a robot location secret
   RobotClientOptions.withLocationSecret(String locationSecret)
       : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
-}
-
-/// {@category Viam SDK}
-/// Represents the result of a discovery query.
-class Discovery {
-  final String subtype;
-  final String model;
-  final Map<String, dynamic> results;
-
-  Discovery({
-    required this.subtype,
-    required this.model,
-    required this.results,
-  });
-
-  factory Discovery.fromProto(rpb.Discovery proto) {
-    return Discovery(
-      subtype: proto.query.subtype,
-      model: proto.query.model,
-      results: proto.results.toMap(),
-    );
-  }
-
-  @override
-  String toString() {
-    return 'Discovery(subtype: $subtype, model: $model, results: $results)';
-  }
 }
 
 /// {@category Viam SDK}
