@@ -18,7 +18,7 @@ class AppClient {
 
   AppClient(this._client);
 
-  /// List LocationSummary objects which contain machine summaries within them for an organization
+  /// List all [MachineSummary]s for an organization grouped by Location
   ///
   /// For more information, see [Fleet Management API] ](https://docs.viam.com/appendix/apis/fleet/).
   Future<List<LocationSummary>> listMachineSummaries(String organizationId) async {
@@ -38,7 +38,7 @@ class AppClient {
 
   /// Create a new [Organization]
   ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Organization> createOrganization(String name) async {
     final request = CreateOrganizationRequest()..name = name;
     final CreateOrganizationResponse response = await _client.createOrganization(request);
