@@ -733,17 +733,17 @@ class AppClient {
   /// Retrieves user-defined [Metadata] for an organization.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetOrganizationMetadataResponse> getOrganizationMetadata(String id) async {
-    final request = GetOrganizationMetadataRequest()..organizationId = id;
+  Future<GetOrganizationMetadataResponse> getOrganizationMetadata(String organizationId) async {
+    final request = GetOrganizationMetadataRequest()..organizationId = organizationId;
     return await _client.getOrganizationMetadata(request);
   }
 
   /// Updates user-defined [Metadata] for an organization.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
+  Future<void> updateOrganizationMetadata(String organizationId, Map<String, dynamic> data) async {
     final request = UpdateOrganizationMetadataRequest()
-      ..organizationId = id
+      ..organizationId = organizationId
       ..data = data.toStruct();
     await _client.updateOrganizationMetadata(request);
   }
@@ -751,17 +751,17 @@ class AppClient {
   /// Retrieves user-defined [Metadata] for a location.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetLocationMetadataResponse> getLocationMetadata(String id) async {
-    final request = GetLocationMetadataRequest()..locationId = id;
+  Future<GetLocationMetadataResponse> getLocationMetadata(String locationId) async {
+    final request = GetLocationMetadataRequest()..locationId = locationId;
     return await _client.getLocationMetadata(request);
   }
 
   /// Updates user-defined [Metadata] for a location.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
+  Future<void> updateLocationMetadata(String locationId, Map<String, dynamic> data) async {
     final request = UpdateLocationMetadataRequest()
-      ..locationId = id
+      ..locationId = locationId
       ..data = data.toStruct();
     await _client.updateLocationMetadata(request);
   }
@@ -769,17 +769,17 @@ class AppClient {
   /// Retrieves user-defined [Metadata] for a robot.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetRobotMetadataResponse> getRobotMetadata(String id) async {
-    final request = GetRobotMetadataRequest()..id = id;
+  Future<GetRobotMetadataResponse> getRobotMetadata(String robotId) async {
+    final request = GetRobotMetadataRequest()..id = robotId;
     return await _client.getRobotMetadata(request);
   }
 
   /// Updates user-defined [Metadata] for a robot.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateRobotMetadata(String id, Map<String, dynamic> data) async {
+  Future<void> updateRobotMetadata(String robotId, Map<String, dynamic> data) async {
     final request = UpdateRobotMetadataRequest()
-      ..id = id
+      ..id = robotId
       ..data = data.toStruct();
     await _client.updateRobotMetadata(request);
   }
@@ -787,17 +787,17 @@ class AppClient {
   /// Retrieves user-defined [Metadata] for a robot part.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<GetRobotPartMetadataResponse> getRobotPartMetadata(String id) async {
-    final request = GetRobotPartMetadataRequest()..id = id;
+  Future<GetRobotPartMetadataResponse> getRobotPartMetadata(String robotPartId) async {
+    final request = GetRobotPartMetadataRequest()..id = robotPartId;
     return await _client.getRobotPartMetadata(request);
   }
 
   /// Updates user-defined [Metadata] for a robot part.
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<void> updateRobotPartMetadata(String id, Map<String, dynamic> data) async {
+  Future<void> updateRobotPartMetadata(String robotPartId, Map<String, dynamic> data) async {
     final request = UpdateRobotPartMetadataRequest()
-      ..id = id
+      ..id = robotPartId
       ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
   }
