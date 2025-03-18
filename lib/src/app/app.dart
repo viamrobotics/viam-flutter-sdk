@@ -18,6 +18,15 @@ class AppClient {
 
   AppClient(this._client);
 
+  /// List all [MachineSummary]s for an organization grouped by Location
+  ///
+  /// For more information, see [Fleet Management API] ](https://docs.viam.com/appendix/apis/fleet/).
+  Future<List<LocationSummary>> listMachineSummaries(String organizationId) async {
+    final request = ListMachineSummariesRequest()..organizationId = organizationId;
+    final ListMachineSummariesResponse response = await _client.listMachineSummaries(request);
+    return response.locationSummaries;
+  }
+
   /// Get the id of the user with the email provided
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
@@ -29,7 +38,7 @@ class AppClient {
 
   /// Create a new [Organization]
   ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  Future<Organization> createOrganization(String name) async {
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Organization> createOrganization(String name) async {
     final request = CreateOrganizationRequest()..name = name;
     final CreateOrganizationResponse response = await _client.createOrganization(request);
