@@ -63,6 +63,7 @@
 <li><span class="parameter" id="-param-modelType"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelType-class.html">ModelType</a>?</span> <span class="parameter-name">modelType</span>, </span></li>
 <li><span class="parameter" id="-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tags</span>, </span></li>
 <li><span class="parameter" id="-param-datasetId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">datasetId</span>, </span></li>
+<li><span class="parameter" id="-param-modelFramework"><span class="type-annotation"><a href="../../viam_protos.app.ml_training/ModelFramework-class.html">ModelFramework</a>?</span> <span class="parameter-name">modelFramework</span>, </span></li>
 </ol>})
     </section>
     
@@ -78,6 +79,7 @@
   ModelType? modelType,
   $core.Iterable&lt;$core.String&gt;? tags,
   $core.String? datasetId,
+  ModelFramework? modelFramework,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -97,6 +99,9 @@
   }
   if (datasetId != null) {
     $result.datasetId = datasetId;
+  }
+  if (modelFramework != null) {
+    $result.modelFramework = modelFramework;
   }
   return $result;
 }</code></pre>
