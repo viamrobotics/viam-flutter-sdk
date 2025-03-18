@@ -786,5 +786,57 @@ void main() {
       final response = await appClient.createKeyFromExistingKeyAuthorizations('id');
       expect(response, equals(expected));
     });
+
+    test('getOrganizationMetadata', () async {
+      final expected = GetOrganizationMetadataResponse()..data = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
+      when(serviceClient.getOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.getOrganizationMetadata('orgId');
+      expect(response, equals(expected));
+    });
+
+    test('updateOrganizationMetadata', () async {
+      when(serviceClient.updateOrganizationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationMetadataResponse()));
+      await appClient.updateOrganizationMetadata('orgId', {'key': 'value'});
+      verify(serviceClient.updateOrganizationMetadata(any)).called(1);
+    });
+
+    test('getLocationMetadata', () async {
+      final expected = GetLocationMetadataResponse()..data = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
+      when(serviceClient.getLocationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.getLocationMetadata('orgId');
+      expect(response, equals(expected));
+    });
+
+    test('updateLocationMetadata', () async {
+      when(serviceClient.updateLocationMetadata(any)).thenAnswer((_) => MockResponseFuture.value(UpdateLocationMetadataResponse()));
+      await appClient.updateLocationMetadata('orgId', {'key': 'value'});
+      verify(serviceClient.updateLocationMetadata(any)).called(1);
+    });
+
+    test('getRobotMetadata', () async {
+      final expected = GetRobotMetadataResponse()..data = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
+      when(serviceClient.getRobotMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.getRobotMetadata('orgId');
+      expect(response, equals(expected));
+    });
+
+    test('updateRobotMetadata', () async {
+      when(serviceClient.updateRobotMetadata(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotMetadataResponse()));
+      await appClient.updateRobotMetadata('orgId', {'key': 'value'});
+      verify(serviceClient.updateRobotMetadata(any)).called(1);
+    });
+
+    test('getRobotPartMetadata', () async {
+      final expected = GetRobotPartMetadataResponse()..data = (Struct()..fields['key'] = (Value()..stringValue = 'value'));
+      when(serviceClient.getRobotPartMetadata(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      final response = await appClient.getRobotPartMetadata('orgId');
+      expect(response, equals(expected));
+    });
+
+    test('updateRobotPartMetadata', () async {
+      when(serviceClient.updateRobotPartMetadata(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartMetadataResponse()));
+      await appClient.updateRobotPartMetadata('orgId', {'key': 'value'});
+      verify(serviceClient.updateRobotPartMetadata(any)).called(1);
+    });
   });
 }
