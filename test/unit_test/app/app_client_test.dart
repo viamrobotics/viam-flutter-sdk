@@ -24,7 +24,7 @@ void main() {
 
   group('App RPC Client Tests', () {
     test('listMachineSummaries', () async {
-       final expected = [
+      final expected = [
         LocationSummary()
           ..locationId = 'id'
           ..locationName = 'name'
@@ -50,7 +50,8 @@ void main() {
               ])
           ])
       ];
-      when(serviceClient.listMachineSummaries(any)).thenAnswer((_) => MockResponseFuture.value(ListMachineSummariesResponse()..locationSummaries.addAll(expected)));
+      when(serviceClient.listMachineSummaries(any))
+          .thenAnswer((_) => MockResponseFuture.value(ListMachineSummariesResponse()..locationSummaries.addAll(expected)));
       final response = await appClient.listMachineSummaries('organizationId');
       expect(response, equals(expected));
     });
