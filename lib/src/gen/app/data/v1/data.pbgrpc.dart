@@ -113,6 +113,26 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/RemoveBinaryDataFromDatasetByIDs',
       ($3.RemoveBinaryDataFromDatasetByIDsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.RemoveBinaryDataFromDatasetByIDsResponse.fromBuffer(value));
+  static final _$getDataPipeline = $grpc.ClientMethod<$3.GetDataPipelineRequest, $3.GetDataPipelineResponse>(
+      '/viam.app.data.v1.DataService/GetDataPipeline',
+      ($3.GetDataPipelineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.GetDataPipelineResponse.fromBuffer(value));
+  static final _$listDataPipelines = $grpc.ClientMethod<$3.ListDataPipelinesRequest, $3.ListDataPipelinesResponse>(
+      '/viam.app.data.v1.DataService/ListDataPipelines',
+      ($3.ListDataPipelinesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.ListDataPipelinesResponse.fromBuffer(value));
+  static final _$createDataPipeline = $grpc.ClientMethod<$3.CreateDataPipelineRequest, $3.CreateDataPipelineResponse>(
+      '/viam.app.data.v1.DataService/CreateDataPipeline',
+      ($3.CreateDataPipelineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.CreateDataPipelineResponse.fromBuffer(value));
+  static final _$updateDataPipeline = $grpc.ClientMethod<$3.UpdateDataPipelineRequest, $3.UpdateDataPipelineResponse>(
+      '/viam.app.data.v1.DataService/UpdateDataPipeline',
+      ($3.UpdateDataPipelineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.UpdateDataPipelineResponse.fromBuffer(value));
+  static final _$deleteDataPipeline = $grpc.ClientMethod<$3.DeleteDataPipelineRequest, $3.DeleteDataPipelineResponse>(
+      '/viam.app.data.v1.DataService/DeleteDataPipeline',
+      ($3.DeleteDataPipelineRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.DeleteDataPipelineResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -210,6 +230,26 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($3.RemoveBinaryDataFromDatasetByIDsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeBinaryDataFromDatasetByIDs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.GetDataPipelineResponse> getDataPipeline($3.GetDataPipelineRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getDataPipeline, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.ListDataPipelinesResponse> listDataPipelines($3.ListDataPipelinesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listDataPipelines, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.CreateDataPipelineResponse> createDataPipeline($3.CreateDataPipelineRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createDataPipeline, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.UpdateDataPipelineResponse> updateDataPipeline($3.UpdateDataPipelineRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateDataPipeline, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.DeleteDataPipelineResponse> deleteDataPipeline($3.DeleteDataPipelineRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteDataPipeline, request, options: options);
   }
 }
 
@@ -379,6 +419,41 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
         ($3.RemoveBinaryDataFromDatasetByIDsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.GetDataPipelineRequest, $3.GetDataPipelineResponse>(
+        'GetDataPipeline',
+        getDataPipeline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.GetDataPipelineRequest.fromBuffer(value),
+        ($3.GetDataPipelineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.ListDataPipelinesRequest, $3.ListDataPipelinesResponse>(
+        'ListDataPipelines',
+        listDataPipelines_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.ListDataPipelinesRequest.fromBuffer(value),
+        ($3.ListDataPipelinesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.CreateDataPipelineRequest, $3.CreateDataPipelineResponse>(
+        'CreateDataPipeline',
+        createDataPipeline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.CreateDataPipelineRequest.fromBuffer(value),
+        ($3.CreateDataPipelineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.UpdateDataPipelineRequest, $3.UpdateDataPipelineResponse>(
+        'UpdateDataPipeline',
+        updateDataPipeline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.UpdateDataPipelineRequest.fromBuffer(value),
+        ($3.UpdateDataPipelineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.DeleteDataPipelineRequest, $3.DeleteDataPipelineResponse>(
+        'DeleteDataPipeline',
+        deleteDataPipeline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.DeleteDataPipelineRequest.fromBuffer(value),
+        ($3.DeleteDataPipelineResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.TabularDataByFilterResponse> tabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$3.TabularDataByFilterRequest> request) async {
@@ -473,6 +548,26 @@ abstract class DataServiceBase extends $grpc.Service {
     return removeBinaryDataFromDatasetByIDs(call, await request);
   }
 
+  $async.Future<$3.GetDataPipelineResponse> getDataPipeline_Pre($grpc.ServiceCall call, $async.Future<$3.GetDataPipelineRequest> request) async {
+    return getDataPipeline(call, await request);
+  }
+
+  $async.Future<$3.ListDataPipelinesResponse> listDataPipelines_Pre($grpc.ServiceCall call, $async.Future<$3.ListDataPipelinesRequest> request) async {
+    return listDataPipelines(call, await request);
+  }
+
+  $async.Future<$3.CreateDataPipelineResponse> createDataPipeline_Pre($grpc.ServiceCall call, $async.Future<$3.CreateDataPipelineRequest> request) async {
+    return createDataPipeline(call, await request);
+  }
+
+  $async.Future<$3.UpdateDataPipelineResponse> updateDataPipeline_Pre($grpc.ServiceCall call, $async.Future<$3.UpdateDataPipelineRequest> request) async {
+    return updateDataPipeline(call, await request);
+  }
+
+  $async.Future<$3.DeleteDataPipelineResponse> deleteDataPipeline_Pre($grpc.ServiceCall call, $async.Future<$3.DeleteDataPipelineRequest> request) async {
+    return deleteDataPipeline(call, await request);
+  }
+
   $async.Future<$3.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $3.TabularDataByFilterRequest request);
   $async.Future<$3.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $3.TabularDataBySQLRequest request);
   $async.Future<$3.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $3.TabularDataByMQLRequest request);
@@ -496,4 +591,9 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$3.ConfigureDatabaseUserResponse> configureDatabaseUser($grpc.ServiceCall call, $3.ConfigureDatabaseUserRequest request);
   $async.Future<$3.AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs($grpc.ServiceCall call, $3.AddBinaryDataToDatasetByIDsRequest request);
   $async.Future<$3.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($grpc.ServiceCall call, $3.RemoveBinaryDataFromDatasetByIDsRequest request);
+  $async.Future<$3.GetDataPipelineResponse> getDataPipeline($grpc.ServiceCall call, $3.GetDataPipelineRequest request);
+  $async.Future<$3.ListDataPipelinesResponse> listDataPipelines($grpc.ServiceCall call, $3.ListDataPipelinesRequest request);
+  $async.Future<$3.CreateDataPipelineResponse> createDataPipeline($grpc.ServiceCall call, $3.CreateDataPipelineRequest request);
+  $async.Future<$3.UpdateDataPipelineResponse> updateDataPipeline($grpc.ServiceCall call, $3.UpdateDataPipelineRequest request);
+  $async.Future<$3.DeleteDataPipelineResponse> deleteDataPipeline($grpc.ServiceCall call, $3.DeleteDataPipelineRequest request);
 }
