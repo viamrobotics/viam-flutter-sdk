@@ -38,7 +38,7 @@ class AppClient {
 
   /// Create a new [Organization]
   ///
-  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  Future<Organization> createOrganization(String name) async {
+  /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).  
   Future<Organization> createOrganization(String name) async {
     final request = CreateOrganizationRequest()..name = name;
     final CreateOrganizationResponse response = await _client.createOrganization(request);
