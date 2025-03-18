@@ -744,7 +744,7 @@ class AppClient {
   Future<void> updateOrganizationMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateOrganizationMetadataRequest()
       ..organizationId = id
-      ..data = _mapToStruct(data);
+      ..data = data.toStruct();
     await _client.updateOrganizationMetadata(request);
   }
 
@@ -762,7 +762,7 @@ class AppClient {
   Future<void> updateLocationMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateLocationMetadataRequest()
       ..locationId = id
-      ..data = _mapToStruct(data);
+      ..data = data.toStruct();
     await _client.updateLocationMetadata(request);
   }
 
@@ -780,7 +780,7 @@ class AppClient {
   Future<void> updateRobotMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateRobotMetadataRequest()
       ..id = id
-      ..data = _mapToStruct(data);
+      ..data = data.toStruct();
     await _client.updateRobotMetadata(request);
   }
 
@@ -798,7 +798,7 @@ class AppClient {
   Future<void> updateRobotPartMetadata(String id, Map<String, dynamic> data) async {
     final request = UpdateRobotPartMetadataRequest()
       ..id = id
-      ..data = _mapToStruct(data);
+      ..data = data.toStruct();
     await _client.updateRobotPartMetadata(request);
   }
 }
