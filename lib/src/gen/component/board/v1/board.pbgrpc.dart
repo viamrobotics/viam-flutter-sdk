@@ -15,65 +15,65 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $15;
-import 'board.pb.dart' as $19;
+import '../../../common/v1/common.pb.dart' as $16;
+import 'board.pb.dart' as $20;
 
 export 'board.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.board.v1.BoardService')
 class BoardServiceClient extends $grpc.Client {
-  static final _$setGPIO = $grpc.ClientMethod<$19.SetGPIORequest, $19.SetGPIOResponse>(
+  static final _$setGPIO = $grpc.ClientMethod<$20.SetGPIORequest, $20.SetGPIOResponse>(
       '/viam.component.board.v1.BoardService/SetGPIO',
-      ($19.SetGPIORequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.SetGPIOResponse.fromBuffer(value));
-  static final _$getGPIO = $grpc.ClientMethod<$19.GetGPIORequest, $19.GetGPIOResponse>(
+      ($20.SetGPIORequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.SetGPIOResponse.fromBuffer(value));
+  static final _$getGPIO = $grpc.ClientMethod<$20.GetGPIORequest, $20.GetGPIOResponse>(
       '/viam.component.board.v1.BoardService/GetGPIO',
-      ($19.GetGPIORequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.GetGPIOResponse.fromBuffer(value));
-  static final _$pWM = $grpc.ClientMethod<$19.PWMRequest, $19.PWMResponse>(
+      ($20.GetGPIORequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.GetGPIOResponse.fromBuffer(value));
+  static final _$pWM = $grpc.ClientMethod<$20.PWMRequest, $20.PWMResponse>(
       '/viam.component.board.v1.BoardService/PWM',
-      ($19.PWMRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.PWMResponse.fromBuffer(value));
-  static final _$setPWM = $grpc.ClientMethod<$19.SetPWMRequest, $19.SetPWMResponse>(
+      ($20.PWMRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.PWMResponse.fromBuffer(value));
+  static final _$setPWM = $grpc.ClientMethod<$20.SetPWMRequest, $20.SetPWMResponse>(
       '/viam.component.board.v1.BoardService/SetPWM',
-      ($19.SetPWMRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.SetPWMResponse.fromBuffer(value));
-  static final _$pWMFrequency = $grpc.ClientMethod<$19.PWMFrequencyRequest, $19.PWMFrequencyResponse>(
+      ($20.SetPWMRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.SetPWMResponse.fromBuffer(value));
+  static final _$pWMFrequency = $grpc.ClientMethod<$20.PWMFrequencyRequest, $20.PWMFrequencyResponse>(
       '/viam.component.board.v1.BoardService/PWMFrequency',
-      ($19.PWMFrequencyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.PWMFrequencyResponse.fromBuffer(value));
-  static final _$setPWMFrequency = $grpc.ClientMethod<$19.SetPWMFrequencyRequest, $19.SetPWMFrequencyResponse>(
+      ($20.PWMFrequencyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.PWMFrequencyResponse.fromBuffer(value));
+  static final _$setPWMFrequency = $grpc.ClientMethod<$20.SetPWMFrequencyRequest, $20.SetPWMFrequencyResponse>(
       '/viam.component.board.v1.BoardService/SetPWMFrequency',
-      ($19.SetPWMFrequencyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.SetPWMFrequencyResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
+      ($20.SetPWMFrequencyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.SetPWMFrequencyResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
       '/viam.component.board.v1.BoardService/DoCommand',
-      ($15.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $15.DoCommandResponse.fromBuffer(value));
-  static final _$readAnalogReader = $grpc.ClientMethod<$19.ReadAnalogReaderRequest, $19.ReadAnalogReaderResponse>(
+      ($16.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+  static final _$readAnalogReader = $grpc.ClientMethod<$20.ReadAnalogReaderRequest, $20.ReadAnalogReaderResponse>(
       '/viam.component.board.v1.BoardService/ReadAnalogReader',
-      ($19.ReadAnalogReaderRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.ReadAnalogReaderResponse.fromBuffer(value));
-  static final _$writeAnalog = $grpc.ClientMethod<$19.WriteAnalogRequest, $19.WriteAnalogResponse>(
+      ($20.ReadAnalogReaderRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.ReadAnalogReaderResponse.fromBuffer(value));
+  static final _$writeAnalog = $grpc.ClientMethod<$20.WriteAnalogRequest, $20.WriteAnalogResponse>(
       '/viam.component.board.v1.BoardService/WriteAnalog',
-      ($19.WriteAnalogRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.WriteAnalogResponse.fromBuffer(value));
-  static final _$getDigitalInterruptValue = $grpc.ClientMethod<$19.GetDigitalInterruptValueRequest, $19.GetDigitalInterruptValueResponse>(
+      ($20.WriteAnalogRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.WriteAnalogResponse.fromBuffer(value));
+  static final _$getDigitalInterruptValue = $grpc.ClientMethod<$20.GetDigitalInterruptValueRequest, $20.GetDigitalInterruptValueResponse>(
       '/viam.component.board.v1.BoardService/GetDigitalInterruptValue',
-      ($19.GetDigitalInterruptValueRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.GetDigitalInterruptValueResponse.fromBuffer(value));
-  static final _$streamTicks = $grpc.ClientMethod<$19.StreamTicksRequest, $19.StreamTicksResponse>(
+      ($20.GetDigitalInterruptValueRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.GetDigitalInterruptValueResponse.fromBuffer(value));
+  static final _$streamTicks = $grpc.ClientMethod<$20.StreamTicksRequest, $20.StreamTicksResponse>(
       '/viam.component.board.v1.BoardService/StreamTicks',
-      ($19.StreamTicksRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.StreamTicksResponse.fromBuffer(value));
-  static final _$setPowerMode = $grpc.ClientMethod<$19.SetPowerModeRequest, $19.SetPowerModeResponse>(
+      ($20.StreamTicksRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.StreamTicksResponse.fromBuffer(value));
+  static final _$setPowerMode = $grpc.ClientMethod<$20.SetPowerModeRequest, $20.SetPowerModeResponse>(
       '/viam.component.board.v1.BoardService/SetPowerMode',
-      ($19.SetPowerModeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $19.SetPowerModeResponse.fromBuffer(value));
-  static final _$getGeometries = $grpc.ClientMethod<$15.GetGeometriesRequest, $15.GetGeometriesResponse>(
+      ($20.SetPowerModeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $20.SetPowerModeResponse.fromBuffer(value));
+  static final _$getGeometries = $grpc.ClientMethod<$16.GetGeometriesRequest, $16.GetGeometriesResponse>(
       '/viam.component.board.v1.BoardService/GetGeometries',
-      ($15.GetGeometriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $15.GetGeometriesResponse.fromBuffer(value));
+      ($16.GetGeometriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.GetGeometriesResponse.fromBuffer(value));
 
   BoardServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -81,55 +81,55 @@ class BoardServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$19.SetGPIOResponse> setGPIO($19.SetGPIORequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.SetGPIOResponse> setGPIO($20.SetGPIORequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setGPIO, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.GetGPIOResponse> getGPIO($19.GetGPIORequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.GetGPIOResponse> getGPIO($20.GetGPIORequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGPIO, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.PWMResponse> pWM($19.PWMRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.PWMResponse> pWM($20.PWMRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pWM, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.SetPWMResponse> setPWM($19.SetPWMRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.SetPWMResponse> setPWM($20.SetPWMRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setPWM, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.PWMFrequencyResponse> pWMFrequency($19.PWMFrequencyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.PWMFrequencyResponse> pWMFrequency($20.PWMFrequencyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pWMFrequency, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.SetPWMFrequencyResponse> setPWMFrequency($19.SetPWMFrequencyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.SetPWMFrequencyResponse> setPWMFrequency($20.SetPWMFrequencyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setPWMFrequency, request, options: options);
   }
 
-  $grpc.ResponseFuture<$15.DoCommandResponse> doCommand($15.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.ReadAnalogReaderResponse> readAnalogReader($19.ReadAnalogReaderRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.ReadAnalogReaderResponse> readAnalogReader($20.ReadAnalogReaderRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$readAnalogReader, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.WriteAnalogResponse> writeAnalog($19.WriteAnalogRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.WriteAnalogResponse> writeAnalog($20.WriteAnalogRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$writeAnalog, request, options: options);
   }
 
-  $grpc.ResponseFuture<$19.GetDigitalInterruptValueResponse> getDigitalInterruptValue($19.GetDigitalInterruptValueRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.GetDigitalInterruptValueResponse> getDigitalInterruptValue($20.GetDigitalInterruptValueRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDigitalInterruptValue, request, options: options);
   }
 
-  $grpc.ResponseStream<$19.StreamTicksResponse> streamTicks($19.StreamTicksRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$20.StreamTicksResponse> streamTicks($20.StreamTicksRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$streamTicks, $async.Stream.fromIterable([request]), options: options);
   }
 
-  $grpc.ResponseFuture<$19.SetPowerModeResponse> setPowerMode($19.SetPowerModeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$20.SetPowerModeResponse> setPowerMode($20.SetPowerModeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setPowerMode, request, options: options);
   }
 
-  $grpc.ResponseFuture<$15.GetGeometriesResponse> getGeometries($15.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$16.GetGeometriesResponse> getGeometries($16.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
   }
 }
@@ -139,162 +139,162 @@ abstract class BoardServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.board.v1.BoardService';
 
   BoardServiceBase() {
-    $addMethod($grpc.ServiceMethod<$19.SetGPIORequest, $19.SetGPIOResponse>(
+    $addMethod($grpc.ServiceMethod<$20.SetGPIORequest, $20.SetGPIOResponse>(
         'SetGPIO',
         setGPIO_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.SetGPIORequest.fromBuffer(value),
-        ($19.SetGPIOResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.GetGPIORequest, $19.GetGPIOResponse>(
+        ($core.List<$core.int> value) => $20.SetGPIORequest.fromBuffer(value),
+        ($20.SetGPIOResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.GetGPIORequest, $20.GetGPIOResponse>(
         'GetGPIO',
         getGPIO_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.GetGPIORequest.fromBuffer(value),
-        ($19.GetGPIOResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.PWMRequest, $19.PWMResponse>(
+        ($core.List<$core.int> value) => $20.GetGPIORequest.fromBuffer(value),
+        ($20.GetGPIOResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.PWMRequest, $20.PWMResponse>(
         'PWM',
         pWM_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.PWMRequest.fromBuffer(value),
-        ($19.PWMResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.SetPWMRequest, $19.SetPWMResponse>(
+        ($core.List<$core.int> value) => $20.PWMRequest.fromBuffer(value),
+        ($20.PWMResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.SetPWMRequest, $20.SetPWMResponse>(
         'SetPWM',
         setPWM_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.SetPWMRequest.fromBuffer(value),
-        ($19.SetPWMResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.PWMFrequencyRequest, $19.PWMFrequencyResponse>(
+        ($core.List<$core.int> value) => $20.SetPWMRequest.fromBuffer(value),
+        ($20.SetPWMResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.PWMFrequencyRequest, $20.PWMFrequencyResponse>(
         'PWMFrequency',
         pWMFrequency_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.PWMFrequencyRequest.fromBuffer(value),
-        ($19.PWMFrequencyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.SetPWMFrequencyRequest, $19.SetPWMFrequencyResponse>(
+        ($core.List<$core.int> value) => $20.PWMFrequencyRequest.fromBuffer(value),
+        ($20.PWMFrequencyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.SetPWMFrequencyRequest, $20.SetPWMFrequencyResponse>(
         'SetPWMFrequency',
         setPWMFrequency_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.SetPWMFrequencyRequest.fromBuffer(value),
-        ($19.SetPWMFrequencyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
+        ($core.List<$core.int> value) => $20.SetPWMFrequencyRequest.fromBuffer(value),
+        ($20.SetPWMFrequencyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $15.DoCommandRequest.fromBuffer(value),
-        ($15.DoCommandResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.ReadAnalogReaderRequest, $19.ReadAnalogReaderResponse>(
+        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
+        ($16.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.ReadAnalogReaderRequest, $20.ReadAnalogReaderResponse>(
         'ReadAnalogReader',
         readAnalogReader_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.ReadAnalogReaderRequest.fromBuffer(value),
-        ($19.ReadAnalogReaderResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.WriteAnalogRequest, $19.WriteAnalogResponse>(
+        ($core.List<$core.int> value) => $20.ReadAnalogReaderRequest.fromBuffer(value),
+        ($20.ReadAnalogReaderResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.WriteAnalogRequest, $20.WriteAnalogResponse>(
         'WriteAnalog',
         writeAnalog_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.WriteAnalogRequest.fromBuffer(value),
-        ($19.WriteAnalogResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.GetDigitalInterruptValueRequest, $19.GetDigitalInterruptValueResponse>(
+        ($core.List<$core.int> value) => $20.WriteAnalogRequest.fromBuffer(value),
+        ($20.WriteAnalogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.GetDigitalInterruptValueRequest, $20.GetDigitalInterruptValueResponse>(
         'GetDigitalInterruptValue',
         getDigitalInterruptValue_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.GetDigitalInterruptValueRequest.fromBuffer(value),
-        ($19.GetDigitalInterruptValueResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.StreamTicksRequest, $19.StreamTicksResponse>(
+        ($core.List<$core.int> value) => $20.GetDigitalInterruptValueRequest.fromBuffer(value),
+        ($20.GetDigitalInterruptValueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.StreamTicksRequest, $20.StreamTicksResponse>(
         'StreamTicks',
         streamTicks_Pre,
         false,
         true,
-        ($core.List<$core.int> value) => $19.StreamTicksRequest.fromBuffer(value),
-        ($19.StreamTicksResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$19.SetPowerModeRequest, $19.SetPowerModeResponse>(
+        ($core.List<$core.int> value) => $20.StreamTicksRequest.fromBuffer(value),
+        ($20.StreamTicksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$20.SetPowerModeRequest, $20.SetPowerModeResponse>(
         'SetPowerMode',
         setPowerMode_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $19.SetPowerModeRequest.fromBuffer(value),
-        ($19.SetPowerModeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$15.GetGeometriesRequest, $15.GetGeometriesResponse>(
+        ($core.List<$core.int> value) => $20.SetPowerModeRequest.fromBuffer(value),
+        ($20.SetPowerModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.GetGeometriesRequest, $16.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $15.GetGeometriesRequest.fromBuffer(value),
-        ($15.GetGeometriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $16.GetGeometriesRequest.fromBuffer(value),
+        ($16.GetGeometriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$19.SetGPIOResponse> setGPIO_Pre($grpc.ServiceCall call, $async.Future<$19.SetGPIORequest> request) async {
+  $async.Future<$20.SetGPIOResponse> setGPIO_Pre($grpc.ServiceCall call, $async.Future<$20.SetGPIORequest> request) async {
     return setGPIO(call, await request);
   }
 
-  $async.Future<$19.GetGPIOResponse> getGPIO_Pre($grpc.ServiceCall call, $async.Future<$19.GetGPIORequest> request) async {
+  $async.Future<$20.GetGPIOResponse> getGPIO_Pre($grpc.ServiceCall call, $async.Future<$20.GetGPIORequest> request) async {
     return getGPIO(call, await request);
   }
 
-  $async.Future<$19.PWMResponse> pWM_Pre($grpc.ServiceCall call, $async.Future<$19.PWMRequest> request) async {
+  $async.Future<$20.PWMResponse> pWM_Pre($grpc.ServiceCall call, $async.Future<$20.PWMRequest> request) async {
     return pWM(call, await request);
   }
 
-  $async.Future<$19.SetPWMResponse> setPWM_Pre($grpc.ServiceCall call, $async.Future<$19.SetPWMRequest> request) async {
+  $async.Future<$20.SetPWMResponse> setPWM_Pre($grpc.ServiceCall call, $async.Future<$20.SetPWMRequest> request) async {
     return setPWM(call, await request);
   }
 
-  $async.Future<$19.PWMFrequencyResponse> pWMFrequency_Pre($grpc.ServiceCall call, $async.Future<$19.PWMFrequencyRequest> request) async {
+  $async.Future<$20.PWMFrequencyResponse> pWMFrequency_Pre($grpc.ServiceCall call, $async.Future<$20.PWMFrequencyRequest> request) async {
     return pWMFrequency(call, await request);
   }
 
-  $async.Future<$19.SetPWMFrequencyResponse> setPWMFrequency_Pre($grpc.ServiceCall call, $async.Future<$19.SetPWMFrequencyRequest> request) async {
+  $async.Future<$20.SetPWMFrequencyResponse> setPWMFrequency_Pre($grpc.ServiceCall call, $async.Future<$20.SetPWMFrequencyRequest> request) async {
     return setPWMFrequency(call, await request);
   }
 
-  $async.Future<$15.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$15.DoCommandRequest> request) async {
+  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$19.ReadAnalogReaderResponse> readAnalogReader_Pre($grpc.ServiceCall call, $async.Future<$19.ReadAnalogReaderRequest> request) async {
+  $async.Future<$20.ReadAnalogReaderResponse> readAnalogReader_Pre($grpc.ServiceCall call, $async.Future<$20.ReadAnalogReaderRequest> request) async {
     return readAnalogReader(call, await request);
   }
 
-  $async.Future<$19.WriteAnalogResponse> writeAnalog_Pre($grpc.ServiceCall call, $async.Future<$19.WriteAnalogRequest> request) async {
+  $async.Future<$20.WriteAnalogResponse> writeAnalog_Pre($grpc.ServiceCall call, $async.Future<$20.WriteAnalogRequest> request) async {
     return writeAnalog(call, await request);
   }
 
-  $async.Future<$19.GetDigitalInterruptValueResponse> getDigitalInterruptValue_Pre($grpc.ServiceCall call, $async.Future<$19.GetDigitalInterruptValueRequest> request) async {
+  $async.Future<$20.GetDigitalInterruptValueResponse> getDigitalInterruptValue_Pre($grpc.ServiceCall call, $async.Future<$20.GetDigitalInterruptValueRequest> request) async {
     return getDigitalInterruptValue(call, await request);
   }
 
-  $async.Stream<$19.StreamTicksResponse> streamTicks_Pre($grpc.ServiceCall call, $async.Future<$19.StreamTicksRequest> request) async* {
+  $async.Stream<$20.StreamTicksResponse> streamTicks_Pre($grpc.ServiceCall call, $async.Future<$20.StreamTicksRequest> request) async* {
     yield* streamTicks(call, await request);
   }
 
-  $async.Future<$19.SetPowerModeResponse> setPowerMode_Pre($grpc.ServiceCall call, $async.Future<$19.SetPowerModeRequest> request) async {
+  $async.Future<$20.SetPowerModeResponse> setPowerMode_Pre($grpc.ServiceCall call, $async.Future<$20.SetPowerModeRequest> request) async {
     return setPowerMode(call, await request);
   }
 
-  $async.Future<$15.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$15.GetGeometriesRequest> request) async {
+  $async.Future<$16.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$16.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
 
-  $async.Future<$19.SetGPIOResponse> setGPIO($grpc.ServiceCall call, $19.SetGPIORequest request);
-  $async.Future<$19.GetGPIOResponse> getGPIO($grpc.ServiceCall call, $19.GetGPIORequest request);
-  $async.Future<$19.PWMResponse> pWM($grpc.ServiceCall call, $19.PWMRequest request);
-  $async.Future<$19.SetPWMResponse> setPWM($grpc.ServiceCall call, $19.SetPWMRequest request);
-  $async.Future<$19.PWMFrequencyResponse> pWMFrequency($grpc.ServiceCall call, $19.PWMFrequencyRequest request);
-  $async.Future<$19.SetPWMFrequencyResponse> setPWMFrequency($grpc.ServiceCall call, $19.SetPWMFrequencyRequest request);
-  $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
-  $async.Future<$19.ReadAnalogReaderResponse> readAnalogReader($grpc.ServiceCall call, $19.ReadAnalogReaderRequest request);
-  $async.Future<$19.WriteAnalogResponse> writeAnalog($grpc.ServiceCall call, $19.WriteAnalogRequest request);
-  $async.Future<$19.GetDigitalInterruptValueResponse> getDigitalInterruptValue($grpc.ServiceCall call, $19.GetDigitalInterruptValueRequest request);
-  $async.Stream<$19.StreamTicksResponse> streamTicks($grpc.ServiceCall call, $19.StreamTicksRequest request);
-  $async.Future<$19.SetPowerModeResponse> setPowerMode($grpc.ServiceCall call, $19.SetPowerModeRequest request);
-  $async.Future<$15.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $15.GetGeometriesRequest request);
+  $async.Future<$20.SetGPIOResponse> setGPIO($grpc.ServiceCall call, $20.SetGPIORequest request);
+  $async.Future<$20.GetGPIOResponse> getGPIO($grpc.ServiceCall call, $20.GetGPIORequest request);
+  $async.Future<$20.PWMResponse> pWM($grpc.ServiceCall call, $20.PWMRequest request);
+  $async.Future<$20.SetPWMResponse> setPWM($grpc.ServiceCall call, $20.SetPWMRequest request);
+  $async.Future<$20.PWMFrequencyResponse> pWMFrequency($grpc.ServiceCall call, $20.PWMFrequencyRequest request);
+  $async.Future<$20.SetPWMFrequencyResponse> setPWMFrequency($grpc.ServiceCall call, $20.SetPWMFrequencyRequest request);
+  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$20.ReadAnalogReaderResponse> readAnalogReader($grpc.ServiceCall call, $20.ReadAnalogReaderRequest request);
+  $async.Future<$20.WriteAnalogResponse> writeAnalog($grpc.ServiceCall call, $20.WriteAnalogRequest request);
+  $async.Future<$20.GetDigitalInterruptValueResponse> getDigitalInterruptValue($grpc.ServiceCall call, $20.GetDigitalInterruptValueRequest request);
+  $async.Stream<$20.StreamTicksResponse> streamTicks($grpc.ServiceCall call, $20.StreamTicksRequest request);
+  $async.Future<$20.SetPowerModeResponse> setPowerMode($grpc.ServiceCall call, $20.SetPowerModeRequest request);
+  $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);
 }

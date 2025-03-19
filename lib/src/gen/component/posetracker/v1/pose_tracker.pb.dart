@@ -13,14 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $15;
-import '../../../google/protobuf/struct.pb.dart' as $46;
+import '../../../common/v1/common.pb.dart' as $16;
+import '../../../google/protobuf/struct.pb.dart' as $47;
 
 class GetPosesRequest extends $pb.GeneratedMessage {
   factory GetPosesRequest({
     $core.String? name,
     $core.Iterable<$core.String>? bodyNames,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -41,7 +41,7 @@ class GetPosesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPosesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pPS(2, _omitFieldNames ? '' : 'bodyNames')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -84,20 +84,20 @@ class GetPosesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(2);
+  $47.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(2);
+  $47.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetPosesResponse extends $pb.GeneratedMessage {
   factory GetPosesResponse({
-    $core.Map<$core.String, $15.PoseInFrame>? bodyPoses,
+    $core.Map<$core.String, $16.PoseInFrame>? bodyPoses,
   }) {
     final $result = create();
     if (bodyPoses != null) {
@@ -110,7 +110,7 @@ class GetPosesResponse extends $pb.GeneratedMessage {
   factory GetPosesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPosesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.posetracker.v1'), createEmptyInstance: create)
-    ..m<$core.String, $15.PoseInFrame>(1, _omitFieldNames ? '' : 'bodyPoses', entryClassName: 'GetPosesResponse.BodyPosesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $15.PoseInFrame.create, valueDefaultOrMaker: $15.PoseInFrame.getDefault, packageName: const $pb.PackageName('viam.component.posetracker.v1'))
+    ..m<$core.String, $16.PoseInFrame>(1, _omitFieldNames ? '' : 'bodyPoses', entryClassName: 'GetPosesResponse.BodyPosesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $16.PoseInFrame.create, valueDefaultOrMaker: $16.PoseInFrame.getDefault, packageName: const $pb.PackageName('viam.component.posetracker.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -137,7 +137,7 @@ class GetPosesResponse extends $pb.GeneratedMessage {
 
   /// Mapping of each body name to the pose representing the center of the body.
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $15.PoseInFrame> get bodyPoses => $_getMap(0);
+  $core.Map<$core.String, $16.PoseInFrame> get bodyPoses => $_getMap(0);
 }
 
 

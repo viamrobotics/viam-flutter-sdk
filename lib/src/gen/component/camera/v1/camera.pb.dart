@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $15;
-import '../../../google/protobuf/struct.pb.dart' as $46;
+import '../../../common/v1/common.pb.dart' as $16;
+import '../../../google/protobuf/struct.pb.dart' as $47;
 import 'camera.pbenum.dart';
 
 export 'camera.pbenum.dart';
@@ -23,7 +23,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
   factory GetImageRequest({
     $core.String? name,
     $core.String? mimeType,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -44,7 +44,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'mimeType')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -91,15 +91,15 @@ class GetImageRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(2);
+  $47.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(2);
+  $47.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetImageResponse extends $pb.GeneratedMessage {
@@ -222,7 +222,7 @@ class GetImagesRequest extends $pb.GeneratedMessage {
 class GetImagesResponse extends $pb.GeneratedMessage {
   factory GetImagesResponse({
     $core.Iterable<Image>? images,
-    $15.ResponseMetadata? responseMetadata,
+    $16.ResponseMetadata? responseMetadata,
   }) {
     final $result = create();
     if (images != null) {
@@ -239,7 +239,7 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..pc<Image>(1, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: Image.create)
-    ..aOM<$15.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $15.ResponseMetadata.create)
+    ..aOM<$16.ResponseMetadata>(84260, _omitFieldNames ? '' : 'responseMetadata', subBuilder: $16.ResponseMetadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -270,15 +270,15 @@ class GetImagesResponse extends $pb.GeneratedMessage {
 
   /// contains timestamp data
   @$pb.TagNumber(84260)
-  $15.ResponseMetadata get responseMetadata => $_getN(1);
+  $16.ResponseMetadata get responseMetadata => $_getN(1);
   @$pb.TagNumber(84260)
-  set responseMetadata($15.ResponseMetadata v) { setField(84260, v); }
+  set responseMetadata($16.ResponseMetadata v) { setField(84260, v); }
   @$pb.TagNumber(84260)
   $core.bool hasResponseMetadata() => $_has(1);
   @$pb.TagNumber(84260)
   void clearResponseMetadata() => clearField(84260);
   @$pb.TagNumber(84260)
-  $15.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
+  $16.ResponseMetadata ensureResponseMetadata() => $_ensure(1);
 }
 
 class Image extends $pb.GeneratedMessage {
@@ -366,7 +366,7 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
   factory RenderFrameRequest({
     $core.String? name,
     $core.String? mimeType,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -387,7 +387,7 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenderFrameRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'mimeType')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -434,22 +434,22 @@ class RenderFrameRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(2);
+  $47.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(2);
+  $47.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetPointCloudRequest extends $pb.GeneratedMessage {
   factory GetPointCloudRequest({
     $core.String? name,
     $core.String? mimeType,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -470,7 +470,7 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'mimeType')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -517,15 +517,15 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(2);
+  $47.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(2);
+  $47.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetPointCloudResponse extends $pb.GeneratedMessage {
