@@ -66,20 +66,20 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">MLModelServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$6.InferRequest, $6.InferResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$7.InferRequest, $7.InferResponse&gt;(
       &#39;Infer&#39;,
       infer_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $6.InferRequest.fromBuffer(value),
-      ($6.InferResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$6.MetadataRequest, $6.MetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $7.InferRequest.fromBuffer(value),
+      ($7.InferResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$7.MetadataRequest, $7.MetadataResponse&gt;(
       &#39;Metadata&#39;,
       metadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $6.MetadataRequest.fromBuffer(value),
-      ($6.MetadataResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $7.MetadataRequest.fromBuffer(value),
+      ($7.MetadataResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

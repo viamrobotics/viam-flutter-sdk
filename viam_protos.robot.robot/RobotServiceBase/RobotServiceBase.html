@@ -66,167 +66,167 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">RobotServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$33.GetOperationsRequest, $33.GetOperationsResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$34.GetOperationsRequest, $34.GetOperationsResponse&gt;(
       &#39;GetOperations&#39;,
       getOperations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetOperationsRequest.fromBuffer(value),
-      ($33.GetOperationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.GetSessionsRequest, $33.GetSessionsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetOperationsRequest.fromBuffer(value),
+      ($34.GetOperationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.GetSessionsRequest, $34.GetSessionsResponse&gt;(
       &#39;GetSessions&#39;,
       getSessions_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetSessionsRequest.fromBuffer(value),
-      ($33.GetSessionsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.ResourceNamesRequest, $33.ResourceNamesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetSessionsRequest.fromBuffer(value),
+      ($34.GetSessionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.ResourceNamesRequest, $34.ResourceNamesResponse&gt;(
       &#39;ResourceNames&#39;,
       resourceNames_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.ResourceNamesRequest.fromBuffer(value),
-      ($33.ResourceNamesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.ResourceRPCSubtypesRequest, $33.ResourceRPCSubtypesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.ResourceNamesRequest.fromBuffer(value),
+      ($34.ResourceNamesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.ResourceRPCSubtypesRequest, $34.ResourceRPCSubtypesResponse&gt;(
       &#39;ResourceRPCSubtypes&#39;,
       resourceRPCSubtypes_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.ResourceRPCSubtypesRequest.fromBuffer(value),
-      ($33.ResourceRPCSubtypesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.CancelOperationRequest, $33.CancelOperationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.ResourceRPCSubtypesRequest.fromBuffer(value),
+      ($34.ResourceRPCSubtypesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.CancelOperationRequest, $34.CancelOperationResponse&gt;(
       &#39;CancelOperation&#39;,
       cancelOperation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.CancelOperationRequest.fromBuffer(value),
-      ($33.CancelOperationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.BlockForOperationRequest, $33.BlockForOperationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.CancelOperationRequest.fromBuffer(value),
+      ($34.CancelOperationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.BlockForOperationRequest, $34.BlockForOperationResponse&gt;(
       &#39;BlockForOperation&#39;,
       blockForOperation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.BlockForOperationRequest.fromBuffer(value),
-      ($33.BlockForOperationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.GetModelsFromModulesRequest, $33.GetModelsFromModulesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.BlockForOperationRequest.fromBuffer(value),
+      ($34.BlockForOperationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.GetModelsFromModulesRequest, $34.GetModelsFromModulesResponse&gt;(
       &#39;GetModelsFromModules&#39;,
       getModelsFromModules_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetModelsFromModulesRequest.fromBuffer(value),
-      ($33.GetModelsFromModulesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.FrameSystemConfigRequest, $33.FrameSystemConfigResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetModelsFromModulesRequest.fromBuffer(value),
+      ($34.GetModelsFromModulesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse&gt;(
       &#39;FrameSystemConfig&#39;,
       frameSystemConfig_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.FrameSystemConfigRequest.fromBuffer(value),
-      ($33.FrameSystemConfigResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.TransformPoseRequest, $33.TransformPoseResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.FrameSystemConfigRequest.fromBuffer(value),
+      ($34.FrameSystemConfigResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.TransformPoseRequest, $34.TransformPoseResponse&gt;(
       &#39;TransformPose&#39;,
       transformPose_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.TransformPoseRequest.fromBuffer(value),
-      ($33.TransformPoseResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.TransformPCDRequest, $33.TransformPCDResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.TransformPoseRequest.fromBuffer(value),
+      ($34.TransformPoseResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.TransformPCDRequest, $34.TransformPCDResponse&gt;(
       &#39;TransformPCD&#39;,
       transformPCD_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.TransformPCDRequest.fromBuffer(value),
-      ($33.TransformPCDResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.GetStatusRequest, $33.GetStatusResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.TransformPCDRequest.fromBuffer(value),
+      ($34.TransformPCDResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.GetStatusRequest, $34.GetStatusResponse&gt;(
       &#39;GetStatus&#39;,
       getStatus_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetStatusRequest.fromBuffer(value),
-      ($33.GetStatusResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.StreamStatusRequest, $33.StreamStatusResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetStatusRequest.fromBuffer(value),
+      ($34.GetStatusResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.StreamStatusRequest, $34.StreamStatusResponse&gt;(
       &#39;StreamStatus&#39;,
       streamStatus_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.StreamStatusRequest.fromBuffer(value),
-      ($33.StreamStatusResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.StopAllRequest, $33.StopAllResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.StreamStatusRequest.fromBuffer(value),
+      ($34.StreamStatusResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.StopAllRequest, $34.StopAllResponse&gt;(
       &#39;StopAll&#39;,
       stopAll_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.StopAllRequest.fromBuffer(value),
-      ($33.StopAllResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.StartSessionRequest, $33.StartSessionResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.StopAllRequest.fromBuffer(value),
+      ($34.StopAllResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.StartSessionRequest, $34.StartSessionResponse&gt;(
       &#39;StartSession&#39;,
       startSession_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.StartSessionRequest.fromBuffer(value),
-      ($33.StartSessionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.SendSessionHeartbeatRequest, $33.SendSessionHeartbeatResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.StartSessionRequest.fromBuffer(value),
+      ($34.StartSessionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.SendSessionHeartbeatRequest, $34.SendSessionHeartbeatResponse&gt;(
       &#39;SendSessionHeartbeat&#39;,
       sendSessionHeartbeat_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.SendSessionHeartbeatRequest.fromBuffer(value),
-      ($33.SendSessionHeartbeatResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.LogRequest, $33.LogResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.SendSessionHeartbeatRequest.fromBuffer(value),
+      ($34.SendSessionHeartbeatResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.LogRequest, $34.LogResponse&gt;(
       &#39;Log&#39;,
       log_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.LogRequest.fromBuffer(value),
-      ($33.LogResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.GetCloudMetadataRequest, $33.GetCloudMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.LogRequest.fromBuffer(value),
+      ($34.LogResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.GetCloudMetadataRequest, $34.GetCloudMetadataResponse&gt;(
       &#39;GetCloudMetadata&#39;,
       getCloudMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetCloudMetadataRequest.fromBuffer(value),
-      ($33.GetCloudMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.RestartModuleRequest, $33.RestartModuleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetCloudMetadataRequest.fromBuffer(value),
+      ($34.GetCloudMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.RestartModuleRequest, $34.RestartModuleResponse&gt;(
       &#39;RestartModule&#39;,
       restartModule_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.RestartModuleRequest.fromBuffer(value),
-      ($33.RestartModuleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.ShutdownRequest, $33.ShutdownResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.RestartModuleRequest.fromBuffer(value),
+      ($34.RestartModuleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.ShutdownRequest, $34.ShutdownResponse&gt;(
       &#39;Shutdown&#39;,
       shutdown_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.ShutdownRequest.fromBuffer(value),
-      ($33.ShutdownResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.GetMachineStatusRequest, $33.GetMachineStatusResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.ShutdownRequest.fromBuffer(value),
+      ($34.ShutdownResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.GetMachineStatusRequest, $34.GetMachineStatusResponse&gt;(
       &#39;GetMachineStatus&#39;,
       getMachineStatus_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetMachineStatusRequest.fromBuffer(value),
-      ($33.GetMachineStatusResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.GetVersionRequest, $33.GetVersionResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetMachineStatusRequest.fromBuffer(value),
+      ($34.GetMachineStatusResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.GetVersionRequest, $34.GetVersionResponse&gt;(
       &#39;GetVersion&#39;,
       getVersion_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.GetVersionRequest.fromBuffer(value),
-      ($33.GetVersionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.TunnelRequest, $33.TunnelResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.GetVersionRequest.fromBuffer(value),
+      ($34.GetVersionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.TunnelRequest, $34.TunnelResponse&gt;(
       &#39;Tunnel&#39;,
       tunnel,
       true,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.TunnelRequest.fromBuffer(value),
-      ($33.TunnelResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$33.ListTunnelsRequest, $33.ListTunnelsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.TunnelRequest.fromBuffer(value),
+      ($34.TunnelResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$34.ListTunnelsRequest, $34.ListTunnelsResponse&gt;(
       &#39;ListTunnels&#39;,
       listTunnels_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $33.ListTunnelsRequest.fromBuffer(value),
-      ($33.ListTunnelsResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $34.ListTunnelsRequest.fromBuffer(value),
+      ($34.ListTunnelsResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

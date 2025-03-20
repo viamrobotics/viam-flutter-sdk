@@ -66,720 +66,720 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">AppServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$10.GetUserIDByEmailRequest, $10.GetUserIDByEmailResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$11.GetUserIDByEmailRequest, $11.GetUserIDByEmailResponse&gt;(
       &#39;GetUserIDByEmail&#39;,
       getUserIDByEmail_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetUserIDByEmailRequest.fromBuffer(value),
-      ($10.GetUserIDByEmailResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateOrganizationRequest, $10.CreateOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetUserIDByEmailRequest.fromBuffer(value),
+      ($11.GetUserIDByEmailResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateOrganizationRequest, $11.CreateOrganizationResponse&gt;(
       &#39;CreateOrganization&#39;,
       createOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateOrganizationRequest.fromBuffer(value),
-      ($10.CreateOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListOrganizationsRequest, $10.ListOrganizationsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateOrganizationRequest.fromBuffer(value),
+      ($11.CreateOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListOrganizationsRequest, $11.ListOrganizationsResponse&gt;(
       &#39;ListOrganizations&#39;,
       listOrganizations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListOrganizationsRequest.fromBuffer(value),
-      ($10.ListOrganizationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetOrganizationsWithAccessToLocationRequest, $10.GetOrganizationsWithAccessToLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListOrganizationsRequest.fromBuffer(value),
+      ($11.ListOrganizationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetOrganizationsWithAccessToLocationRequest, $11.GetOrganizationsWithAccessToLocationResponse&gt;(
       &#39;GetOrganizationsWithAccessToLocation&#39;,
       getOrganizationsWithAccessToLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetOrganizationsWithAccessToLocationRequest.fromBuffer(value),
-      ($10.GetOrganizationsWithAccessToLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListOrganizationsByUserRequest, $10.ListOrganizationsByUserResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetOrganizationsWithAccessToLocationRequest.fromBuffer(value),
+      ($11.GetOrganizationsWithAccessToLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListOrganizationsByUserRequest, $11.ListOrganizationsByUserResponse&gt;(
       &#39;ListOrganizationsByUser&#39;,
       listOrganizationsByUser_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListOrganizationsByUserRequest.fromBuffer(value),
-      ($10.ListOrganizationsByUserResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.SearchOrganizationsRequest, $10.SearchOrganizationsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListOrganizationsByUserRequest.fromBuffer(value),
+      ($11.ListOrganizationsByUserResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.SearchOrganizationsRequest, $11.SearchOrganizationsResponse&gt;(
       &#39;SearchOrganizations&#39;,
       searchOrganizations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.SearchOrganizationsRequest.fromBuffer(value),
-      ($10.SearchOrganizationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetOrganizationRequest, $10.GetOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.SearchOrganizationsRequest.fromBuffer(value),
+      ($11.SearchOrganizationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetOrganizationRequest, $11.GetOrganizationResponse&gt;(
       &#39;GetOrganization&#39;,
       getOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetOrganizationRequest.fromBuffer(value),
-      ($10.GetOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetOrganizationNamespaceAvailabilityRequest, $10.GetOrganizationNamespaceAvailabilityResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetOrganizationRequest.fromBuffer(value),
+      ($11.GetOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetOrganizationNamespaceAvailabilityRequest, $11.GetOrganizationNamespaceAvailabilityResponse&gt;(
       &#39;GetOrganizationNamespaceAvailability&#39;,
       getOrganizationNamespaceAvailability_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetOrganizationNamespaceAvailabilityRequest.fromBuffer(value),
-      ($10.GetOrganizationNamespaceAvailabilityResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateOrganizationRequest, $10.UpdateOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetOrganizationNamespaceAvailabilityRequest.fromBuffer(value),
+      ($11.GetOrganizationNamespaceAvailabilityResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateOrganizationRequest, $11.UpdateOrganizationResponse&gt;(
       &#39;UpdateOrganization&#39;,
       updateOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateOrganizationRequest.fromBuffer(value),
-      ($10.UpdateOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteOrganizationRequest, $10.DeleteOrganizationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateOrganizationRequest.fromBuffer(value),
+      ($11.UpdateOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteOrganizationRequest, $11.DeleteOrganizationResponse&gt;(
       &#39;DeleteOrganization&#39;,
       deleteOrganization_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteOrganizationRequest.fromBuffer(value),
-      ($10.DeleteOrganizationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetOrganizationMetadataRequest, $10.GetOrganizationMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteOrganizationRequest.fromBuffer(value),
+      ($11.DeleteOrganizationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetOrganizationMetadataRequest, $11.GetOrganizationMetadataResponse&gt;(
       &#39;GetOrganizationMetadata&#39;,
       getOrganizationMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetOrganizationMetadataRequest.fromBuffer(value),
-      ($10.GetOrganizationMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateOrganizationMetadataRequest, $10.UpdateOrganizationMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetOrganizationMetadataRequest.fromBuffer(value),
+      ($11.GetOrganizationMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateOrganizationMetadataRequest, $11.UpdateOrganizationMetadataResponse&gt;(
       &#39;UpdateOrganizationMetadata&#39;,
       updateOrganizationMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateOrganizationMetadataRequest.fromBuffer(value),
-      ($10.UpdateOrganizationMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListOrganizationMembersRequest, $10.ListOrganizationMembersResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateOrganizationMetadataRequest.fromBuffer(value),
+      ($11.UpdateOrganizationMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListOrganizationMembersRequest, $11.ListOrganizationMembersResponse&gt;(
       &#39;ListOrganizationMembers&#39;,
       listOrganizationMembers_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListOrganizationMembersRequest.fromBuffer(value),
-      ($10.ListOrganizationMembersResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateOrganizationInviteRequest, $10.CreateOrganizationInviteResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListOrganizationMembersRequest.fromBuffer(value),
+      ($11.ListOrganizationMembersResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateOrganizationInviteRequest, $11.CreateOrganizationInviteResponse&gt;(
       &#39;CreateOrganizationInvite&#39;,
       createOrganizationInvite_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateOrganizationInviteRequest.fromBuffer(value),
-      ($10.CreateOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateOrganizationInviteAuthorizationsRequest, $10.UpdateOrganizationInviteAuthorizationsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateOrganizationInviteRequest.fromBuffer(value),
+      ($11.CreateOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateOrganizationInviteAuthorizationsRequest, $11.UpdateOrganizationInviteAuthorizationsResponse&gt;(
       &#39;UpdateOrganizationInviteAuthorizations&#39;,
       updateOrganizationInviteAuthorizations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateOrganizationInviteAuthorizationsRequest.fromBuffer(value),
-      ($10.UpdateOrganizationInviteAuthorizationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteOrganizationMemberRequest, $10.DeleteOrganizationMemberResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateOrganizationInviteAuthorizationsRequest.fromBuffer(value),
+      ($11.UpdateOrganizationInviteAuthorizationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteOrganizationMemberRequest, $11.DeleteOrganizationMemberResponse&gt;(
       &#39;DeleteOrganizationMember&#39;,
       deleteOrganizationMember_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteOrganizationMemberRequest.fromBuffer(value),
-      ($10.DeleteOrganizationMemberResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteOrganizationInviteRequest, $10.DeleteOrganizationInviteResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteOrganizationMemberRequest.fromBuffer(value),
+      ($11.DeleteOrganizationMemberResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteOrganizationInviteRequest, $11.DeleteOrganizationInviteResponse&gt;(
       &#39;DeleteOrganizationInvite&#39;,
       deleteOrganizationInvite_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteOrganizationInviteRequest.fromBuffer(value),
-      ($10.DeleteOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ResendOrganizationInviteRequest, $10.ResendOrganizationInviteResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteOrganizationInviteRequest.fromBuffer(value),
+      ($11.DeleteOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ResendOrganizationInviteRequest, $11.ResendOrganizationInviteResponse&gt;(
       &#39;ResendOrganizationInvite&#39;,
       resendOrganizationInvite_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ResendOrganizationInviteRequest.fromBuffer(value),
-      ($10.ResendOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.EnableBillingServiceRequest, $10.EnableBillingServiceResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ResendOrganizationInviteRequest.fromBuffer(value),
+      ($11.ResendOrganizationInviteResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.EnableBillingServiceRequest, $11.EnableBillingServiceResponse&gt;(
       &#39;EnableBillingService&#39;,
       enableBillingService_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.EnableBillingServiceRequest.fromBuffer(value),
-      ($10.EnableBillingServiceResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DisableBillingServiceRequest, $10.DisableBillingServiceResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.EnableBillingServiceRequest.fromBuffer(value),
+      ($11.EnableBillingServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DisableBillingServiceRequest, $11.DisableBillingServiceResponse&gt;(
       &#39;DisableBillingService&#39;,
       disableBillingService_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DisableBillingServiceRequest.fromBuffer(value),
-      ($10.DisableBillingServiceResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateBillingServiceRequest, $10.UpdateBillingServiceResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DisableBillingServiceRequest.fromBuffer(value),
+      ($11.DisableBillingServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateBillingServiceRequest, $11.UpdateBillingServiceResponse&gt;(
       &#39;UpdateBillingService&#39;,
       updateBillingService_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateBillingServiceRequest.fromBuffer(value),
-      ($10.UpdateBillingServiceResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetBillingServiceConfigRequest, $10.GetBillingServiceConfigResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateBillingServiceRequest.fromBuffer(value),
+      ($11.UpdateBillingServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetBillingServiceConfigRequest, $11.GetBillingServiceConfigResponse&gt;(
       &#39;GetBillingServiceConfig&#39;,
       getBillingServiceConfig_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetBillingServiceConfigRequest.fromBuffer(value),
-      ($10.GetBillingServiceConfigResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.OrganizationSetSupportEmailRequest, $10.OrganizationSetSupportEmailResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetBillingServiceConfigRequest.fromBuffer(value),
+      ($11.GetBillingServiceConfigResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.OrganizationSetSupportEmailRequest, $11.OrganizationSetSupportEmailResponse&gt;(
       &#39;OrganizationSetSupportEmail&#39;,
       organizationSetSupportEmail_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.OrganizationSetSupportEmailRequest.fromBuffer(value),
-      ($10.OrganizationSetSupportEmailResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.OrganizationGetSupportEmailRequest, $10.OrganizationGetSupportEmailResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.OrganizationSetSupportEmailRequest.fromBuffer(value),
+      ($11.OrganizationSetSupportEmailResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.OrganizationGetSupportEmailRequest, $11.OrganizationGetSupportEmailResponse&gt;(
       &#39;OrganizationGetSupportEmail&#39;,
       organizationGetSupportEmail_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.OrganizationGetSupportEmailRequest.fromBuffer(value),
-      ($10.OrganizationGetSupportEmailResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.OrganizationSetLogoRequest, $10.OrganizationSetLogoResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.OrganizationGetSupportEmailRequest.fromBuffer(value),
+      ($11.OrganizationGetSupportEmailResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.OrganizationSetLogoRequest, $11.OrganizationSetLogoResponse&gt;(
       &#39;OrganizationSetLogo&#39;,
       organizationSetLogo_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.OrganizationSetLogoRequest.fromBuffer(value),
-      ($10.OrganizationSetLogoResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.OrganizationGetLogoRequest, $10.OrganizationGetLogoResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.OrganizationSetLogoRequest.fromBuffer(value),
+      ($11.OrganizationSetLogoResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.OrganizationGetLogoRequest, $11.OrganizationGetLogoResponse&gt;(
       &#39;OrganizationGetLogo&#39;,
       organizationGetLogo_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.OrganizationGetLogoRequest.fromBuffer(value),
-      ($10.OrganizationGetLogoResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.EnableAuthServiceRequest, $10.EnableAuthServiceResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.OrganizationGetLogoRequest.fromBuffer(value),
+      ($11.OrganizationGetLogoResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.EnableAuthServiceRequest, $11.EnableAuthServiceResponse&gt;(
       &#39;EnableAuthService&#39;,
       enableAuthService_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.EnableAuthServiceRequest.fromBuffer(value),
-      ($10.EnableAuthServiceResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DisableAuthServiceRequest, $10.DisableAuthServiceResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.EnableAuthServiceRequest.fromBuffer(value),
+      ($11.EnableAuthServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DisableAuthServiceRequest, $11.DisableAuthServiceResponse&gt;(
       &#39;DisableAuthService&#39;,
       disableAuthService_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DisableAuthServiceRequest.fromBuffer(value),
-      ($10.DisableAuthServiceResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateOAuthAppRequest, $10.CreateOAuthAppResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DisableAuthServiceRequest.fromBuffer(value),
+      ($11.DisableAuthServiceResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateOAuthAppRequest, $11.CreateOAuthAppResponse&gt;(
       &#39;CreateOAuthApp&#39;,
       createOAuthApp_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateOAuthAppRequest.fromBuffer(value),
-      ($10.CreateOAuthAppResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ReadOAuthAppRequest, $10.ReadOAuthAppResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateOAuthAppRequest.fromBuffer(value),
+      ($11.CreateOAuthAppResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ReadOAuthAppRequest, $11.ReadOAuthAppResponse&gt;(
       &#39;ReadOAuthApp&#39;,
       readOAuthApp_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ReadOAuthAppRequest.fromBuffer(value),
-      ($10.ReadOAuthAppResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateOAuthAppRequest, $10.UpdateOAuthAppResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ReadOAuthAppRequest.fromBuffer(value),
+      ($11.ReadOAuthAppResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateOAuthAppRequest, $11.UpdateOAuthAppResponse&gt;(
       &#39;UpdateOAuthApp&#39;,
       updateOAuthApp_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateOAuthAppRequest.fromBuffer(value),
-      ($10.UpdateOAuthAppResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteOAuthAppRequest, $10.DeleteOAuthAppResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateOAuthAppRequest.fromBuffer(value),
+      ($11.UpdateOAuthAppResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteOAuthAppRequest, $11.DeleteOAuthAppResponse&gt;(
       &#39;DeleteOAuthApp&#39;,
       deleteOAuthApp_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteOAuthAppRequest.fromBuffer(value),
-      ($10.DeleteOAuthAppResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListOAuthAppsRequest, $10.ListOAuthAppsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteOAuthAppRequest.fromBuffer(value),
+      ($11.DeleteOAuthAppResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListOAuthAppsRequest, $11.ListOAuthAppsResponse&gt;(
       &#39;ListOAuthApps&#39;,
       listOAuthApps_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListOAuthAppsRequest.fromBuffer(value),
-      ($10.ListOAuthAppsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateLocationRequest, $10.CreateLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListOAuthAppsRequest.fromBuffer(value),
+      ($11.ListOAuthAppsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateLocationRequest, $11.CreateLocationResponse&gt;(
       &#39;CreateLocation&#39;,
       createLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateLocationRequest.fromBuffer(value),
-      ($10.CreateLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetLocationRequest, $10.GetLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateLocationRequest.fromBuffer(value),
+      ($11.CreateLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetLocationRequest, $11.GetLocationResponse&gt;(
       &#39;GetLocation&#39;,
       getLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetLocationRequest.fromBuffer(value),
-      ($10.GetLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateLocationRequest, $10.UpdateLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetLocationRequest.fromBuffer(value),
+      ($11.GetLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateLocationRequest, $11.UpdateLocationResponse&gt;(
       &#39;UpdateLocation&#39;,
       updateLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateLocationRequest.fromBuffer(value),
-      ($10.UpdateLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteLocationRequest, $10.DeleteLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateLocationRequest.fromBuffer(value),
+      ($11.UpdateLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteLocationRequest, $11.DeleteLocationResponse&gt;(
       &#39;DeleteLocation&#39;,
       deleteLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteLocationRequest.fromBuffer(value),
-      ($10.DeleteLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetLocationMetadataRequest, $10.GetLocationMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteLocationRequest.fromBuffer(value),
+      ($11.DeleteLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetLocationMetadataRequest, $11.GetLocationMetadataResponse&gt;(
       &#39;GetLocationMetadata&#39;,
       getLocationMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetLocationMetadataRequest.fromBuffer(value),
-      ($10.GetLocationMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateLocationMetadataRequest, $10.UpdateLocationMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetLocationMetadataRequest.fromBuffer(value),
+      ($11.GetLocationMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateLocationMetadataRequest, $11.UpdateLocationMetadataResponse&gt;(
       &#39;UpdateLocationMetadata&#39;,
       updateLocationMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateLocationMetadataRequest.fromBuffer(value),
-      ($10.UpdateLocationMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListLocationsRequest, $10.ListLocationsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateLocationMetadataRequest.fromBuffer(value),
+      ($11.UpdateLocationMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListLocationsRequest, $11.ListLocationsResponse&gt;(
       &#39;ListLocations&#39;,
       listLocations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListLocationsRequest.fromBuffer(value),
-      ($10.ListLocationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ShareLocationRequest, $10.ShareLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListLocationsRequest.fromBuffer(value),
+      ($11.ListLocationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ShareLocationRequest, $11.ShareLocationResponse&gt;(
       &#39;ShareLocation&#39;,
       shareLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ShareLocationRequest.fromBuffer(value),
-      ($10.ShareLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UnshareLocationRequest, $10.UnshareLocationResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ShareLocationRequest.fromBuffer(value),
+      ($11.ShareLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UnshareLocationRequest, $11.UnshareLocationResponse&gt;(
       &#39;UnshareLocation&#39;,
       unshareLocation_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UnshareLocationRequest.fromBuffer(value),
-      ($10.UnshareLocationResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.LocationAuthRequest, $10.LocationAuthResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UnshareLocationRequest.fromBuffer(value),
+      ($11.UnshareLocationResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.LocationAuthRequest, $11.LocationAuthResponse&gt;(
       &#39;LocationAuth&#39;,
       locationAuth_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.LocationAuthRequest.fromBuffer(value),
-      ($10.LocationAuthResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateLocationSecretRequest, $10.CreateLocationSecretResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.LocationAuthRequest.fromBuffer(value),
+      ($11.LocationAuthResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateLocationSecretRequest, $11.CreateLocationSecretResponse&gt;(
       &#39;CreateLocationSecret&#39;,
       createLocationSecret_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateLocationSecretRequest.fromBuffer(value),
-      ($10.CreateLocationSecretResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteLocationSecretRequest, $10.DeleteLocationSecretResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateLocationSecretRequest.fromBuffer(value),
+      ($11.CreateLocationSecretResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteLocationSecretRequest, $11.DeleteLocationSecretResponse&gt;(
       &#39;DeleteLocationSecret&#39;,
       deleteLocationSecret_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteLocationSecretRequest.fromBuffer(value),
-      ($10.DeleteLocationSecretResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotRequest, $10.GetRobotResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteLocationSecretRequest.fromBuffer(value),
+      ($11.DeleteLocationSecretResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotRequest, $11.GetRobotResponse&gt;(
       &#39;GetRobot&#39;,
       getRobot_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotRequest.fromBuffer(value),
-      ($10.GetRobotResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotMetadataRequest, $10.GetRobotMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotRequest.fromBuffer(value),
+      ($11.GetRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotMetadataRequest, $11.GetRobotMetadataResponse&gt;(
       &#39;GetRobotMetadata&#39;,
       getRobotMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotMetadataRequest.fromBuffer(value),
-      ($10.GetRobotMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRobotMetadataRequest, $10.UpdateRobotMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotMetadataRequest.fromBuffer(value),
+      ($11.GetRobotMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateRobotMetadataRequest, $11.UpdateRobotMetadataResponse&gt;(
       &#39;UpdateRobotMetadata&#39;,
       updateRobotMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRobotMetadataRequest.fromBuffer(value),
-      ($10.UpdateRobotMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRoverRentalRobotsRequest, $10.GetRoverRentalRobotsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateRobotMetadataRequest.fromBuffer(value),
+      ($11.UpdateRobotMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRoverRentalRobotsRequest, $11.GetRoverRentalRobotsResponse&gt;(
       &#39;GetRoverRentalRobots&#39;,
       getRoverRentalRobots_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRoverRentalRobotsRequest.fromBuffer(value),
-      ($10.GetRoverRentalRobotsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotPartsRequest, $10.GetRobotPartsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRoverRentalRobotsRequest.fromBuffer(value),
+      ($11.GetRoverRentalRobotsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartsRequest, $11.GetRobotPartsResponse&gt;(
       &#39;GetRobotParts&#39;,
       getRobotParts_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotPartsRequest.fromBuffer(value),
-      ($10.GetRobotPartsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotPartRequest, $10.GetRobotPartResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartsRequest.fromBuffer(value),
+      ($11.GetRobotPartsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartRequest, $11.GetRobotPartResponse&gt;(
       &#39;GetRobotPart&#39;,
       getRobotPart_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotPartRequest.fromBuffer(value),
-      ($10.GetRobotPartResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotPartLogsRequest, $10.GetRobotPartLogsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartRequest.fromBuffer(value),
+      ($11.GetRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartLogsRequest, $11.GetRobotPartLogsResponse&gt;(
       &#39;GetRobotPartLogs&#39;,
       getRobotPartLogs_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotPartLogsRequest.fromBuffer(value),
-      ($10.GetRobotPartLogsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.TailRobotPartLogsRequest, $10.TailRobotPartLogsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartLogsRequest.fromBuffer(value),
+      ($11.GetRobotPartLogsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.TailRobotPartLogsRequest, $11.TailRobotPartLogsResponse&gt;(
       &#39;TailRobotPartLogs&#39;,
       tailRobotPartLogs_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.TailRobotPartLogsRequest.fromBuffer(value),
-      ($10.TailRobotPartLogsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotPartHistoryRequest, $10.GetRobotPartHistoryResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.TailRobotPartLogsRequest.fromBuffer(value),
+      ($11.TailRobotPartLogsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartHistoryRequest, $11.GetRobotPartHistoryResponse&gt;(
       &#39;GetRobotPartHistory&#39;,
       getRobotPartHistory_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotPartHistoryRequest.fromBuffer(value),
-      ($10.GetRobotPartHistoryResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRobotPartRequest, $10.UpdateRobotPartResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartHistoryRequest.fromBuffer(value),
+      ($11.GetRobotPartHistoryResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateRobotPartRequest, $11.UpdateRobotPartResponse&gt;(
       &#39;UpdateRobotPart&#39;,
       updateRobotPart_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRobotPartRequest.fromBuffer(value),
-      ($10.UpdateRobotPartResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.NewRobotPartRequest, $10.NewRobotPartResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateRobotPartRequest.fromBuffer(value),
+      ($11.UpdateRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.NewRobotPartRequest, $11.NewRobotPartResponse&gt;(
       &#39;NewRobotPart&#39;,
       newRobotPart_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.NewRobotPartRequest.fromBuffer(value),
-      ($10.NewRobotPartResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteRobotPartRequest, $10.DeleteRobotPartResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.NewRobotPartRequest.fromBuffer(value),
+      ($11.NewRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteRobotPartRequest, $11.DeleteRobotPartResponse&gt;(
       &#39;DeleteRobotPart&#39;,
       deleteRobotPart_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteRobotPartRequest.fromBuffer(value),
-      ($10.DeleteRobotPartResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotPartMetadataRequest, $10.GetRobotPartMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteRobotPartRequest.fromBuffer(value),
+      ($11.DeleteRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartMetadataRequest, $11.GetRobotPartMetadataResponse&gt;(
       &#39;GetRobotPartMetadata&#39;,
       getRobotPartMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotPartMetadataRequest.fromBuffer(value),
-      ($10.GetRobotPartMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRobotPartMetadataRequest, $10.UpdateRobotPartMetadataResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartMetadataRequest.fromBuffer(value),
+      ($11.GetRobotPartMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateRobotPartMetadataRequest, $11.UpdateRobotPartMetadataResponse&gt;(
       &#39;UpdateRobotPartMetadata&#39;,
       updateRobotPartMetadata_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRobotPartMetadataRequest.fromBuffer(value),
-      ($10.UpdateRobotPartMetadataResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRobotAPIKeysRequest, $10.GetRobotAPIKeysResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateRobotPartMetadataRequest.fromBuffer(value),
+      ($11.UpdateRobotPartMetadataResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotAPIKeysRequest, $11.GetRobotAPIKeysResponse&gt;(
       &#39;GetRobotAPIKeys&#39;,
       getRobotAPIKeys_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRobotAPIKeysRequest.fromBuffer(value),
-      ($10.GetRobotAPIKeysResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.MarkPartAsMainRequest, $10.MarkPartAsMainResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotAPIKeysRequest.fromBuffer(value),
+      ($11.GetRobotAPIKeysResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.MarkPartAsMainRequest, $11.MarkPartAsMainResponse&gt;(
       &#39;MarkPartAsMain&#39;,
       markPartAsMain_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.MarkPartAsMainRequest.fromBuffer(value),
-      ($10.MarkPartAsMainResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.MarkPartForRestartRequest, $10.MarkPartForRestartResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.MarkPartAsMainRequest.fromBuffer(value),
+      ($11.MarkPartAsMainResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.MarkPartForRestartRequest, $11.MarkPartForRestartResponse&gt;(
       &#39;MarkPartForRestart&#39;,
       markPartForRestart_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.MarkPartForRestartRequest.fromBuffer(value),
-      ($10.MarkPartForRestartResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateRobotPartSecretRequest, $10.CreateRobotPartSecretResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.MarkPartForRestartRequest.fromBuffer(value),
+      ($11.MarkPartForRestartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateRobotPartSecretRequest, $11.CreateRobotPartSecretResponse&gt;(
       &#39;CreateRobotPartSecret&#39;,
       createRobotPartSecret_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateRobotPartSecretRequest.fromBuffer(value),
-      ($10.CreateRobotPartSecretResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteRobotPartSecretRequest, $10.DeleteRobotPartSecretResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateRobotPartSecretRequest.fromBuffer(value),
+      ($11.CreateRobotPartSecretResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteRobotPartSecretRequest, $11.DeleteRobotPartSecretResponse&gt;(
       &#39;DeleteRobotPartSecret&#39;,
       deleteRobotPartSecret_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteRobotPartSecretRequest.fromBuffer(value),
-      ($10.DeleteRobotPartSecretResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListRobotsRequest, $10.ListRobotsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteRobotPartSecretRequest.fromBuffer(value),
+      ($11.DeleteRobotPartSecretResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListRobotsRequest, $11.ListRobotsResponse&gt;(
       &#39;ListRobots&#39;,
       listRobots_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListRobotsRequest.fromBuffer(value),
-      ($10.ListRobotsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.NewRobotRequest, $10.NewRobotResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListRobotsRequest.fromBuffer(value),
+      ($11.ListRobotsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.NewRobotRequest, $11.NewRobotResponse&gt;(
       &#39;NewRobot&#39;,
       newRobot_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.NewRobotRequest.fromBuffer(value),
-      ($10.NewRobotResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRobotRequest, $10.UpdateRobotResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.NewRobotRequest.fromBuffer(value),
+      ($11.NewRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateRobotRequest, $11.UpdateRobotResponse&gt;(
       &#39;UpdateRobot&#39;,
       updateRobot_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRobotRequest.fromBuffer(value),
-      ($10.UpdateRobotResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteRobotRequest, $10.DeleteRobotResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateRobotRequest.fromBuffer(value),
+      ($11.UpdateRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteRobotRequest, $11.DeleteRobotResponse&gt;(
       &#39;DeleteRobot&#39;,
       deleteRobot_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteRobotRequest.fromBuffer(value),
-      ($10.DeleteRobotResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListFragmentsRequest, $10.ListFragmentsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteRobotRequest.fromBuffer(value),
+      ($11.DeleteRobotResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListFragmentsRequest, $11.ListFragmentsResponse&gt;(
       &#39;ListFragments&#39;,
       listFragments_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListFragmentsRequest.fromBuffer(value),
-      ($10.ListFragmentsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetFragmentRequest, $10.GetFragmentResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListFragmentsRequest.fromBuffer(value),
+      ($11.ListFragmentsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetFragmentRequest, $11.GetFragmentResponse&gt;(
       &#39;GetFragment&#39;,
       getFragment_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetFragmentRequest.fromBuffer(value),
-      ($10.GetFragmentResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateFragmentRequest, $10.CreateFragmentResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetFragmentRequest.fromBuffer(value),
+      ($11.GetFragmentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateFragmentRequest, $11.CreateFragmentResponse&gt;(
       &#39;CreateFragment&#39;,
       createFragment_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateFragmentRequest.fromBuffer(value),
-      ($10.CreateFragmentResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateFragmentRequest, $10.UpdateFragmentResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateFragmentRequest.fromBuffer(value),
+      ($11.CreateFragmentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateFragmentRequest, $11.UpdateFragmentResponse&gt;(
       &#39;UpdateFragment&#39;,
       updateFragment_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateFragmentRequest.fromBuffer(value),
-      ($10.UpdateFragmentResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteFragmentRequest, $10.DeleteFragmentResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateFragmentRequest.fromBuffer(value),
+      ($11.UpdateFragmentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteFragmentRequest, $11.DeleteFragmentResponse&gt;(
       &#39;DeleteFragment&#39;,
       deleteFragment_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteFragmentRequest.fromBuffer(value),
-      ($10.DeleteFragmentResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListMachineFragmentsRequest, $10.ListMachineFragmentsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteFragmentRequest.fromBuffer(value),
+      ($11.DeleteFragmentResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListMachineFragmentsRequest, $11.ListMachineFragmentsResponse&gt;(
       &#39;ListMachineFragments&#39;,
       listMachineFragments_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListMachineFragmentsRequest.fromBuffer(value),
-      ($10.ListMachineFragmentsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListMachineSummariesRequest, $10.ListMachineSummariesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListMachineFragmentsRequest.fromBuffer(value),
+      ($11.ListMachineFragmentsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListMachineSummariesRequest, $11.ListMachineSummariesResponse&gt;(
       &#39;ListMachineSummaries&#39;,
       listMachineSummaries_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListMachineSummariesRequest.fromBuffer(value),
-      ($10.ListMachineSummariesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetFragmentHistoryRequest, $10.GetFragmentHistoryResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListMachineSummariesRequest.fromBuffer(value),
+      ($11.ListMachineSummariesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetFragmentHistoryRequest, $11.GetFragmentHistoryResponse&gt;(
       &#39;GetFragmentHistory&#39;,
       getFragmentHistory_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetFragmentHistoryRequest.fromBuffer(value),
-      ($10.GetFragmentHistoryResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetFragmentUsageRequest, $10.GetFragmentUsageResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetFragmentHistoryRequest.fromBuffer(value),
+      ($11.GetFragmentHistoryResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetFragmentUsageRequest, $11.GetFragmentUsageResponse&gt;(
       &#39;GetFragmentUsage&#39;,
       getFragmentUsage_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetFragmentUsageRequest.fromBuffer(value),
-      ($10.GetFragmentUsageResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.SetFragmentTagRequest, $10.SetFragmentTagResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetFragmentUsageRequest.fromBuffer(value),
+      ($11.GetFragmentUsageResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.SetFragmentTagRequest, $11.SetFragmentTagResponse&gt;(
       &#39;SetFragmentTag&#39;,
       setFragmentTag_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.SetFragmentTagRequest.fromBuffer(value),
-      ($10.SetFragmentTagResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteFragmentTagRequest, $10.DeleteFragmentTagResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.SetFragmentTagRequest.fromBuffer(value),
+      ($11.SetFragmentTagResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteFragmentTagRequest, $11.DeleteFragmentTagResponse&gt;(
       &#39;DeleteFragmentTag&#39;,
       deleteFragmentTag_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteFragmentTagRequest.fromBuffer(value),
-      ($10.DeleteFragmentTagResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.AddRoleRequest, $10.AddRoleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteFragmentTagRequest.fromBuffer(value),
+      ($11.DeleteFragmentTagResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.AddRoleRequest, $11.AddRoleResponse&gt;(
       &#39;AddRole&#39;,
       addRole_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.AddRoleRequest.fromBuffer(value),
-      ($10.AddRoleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.RemoveRoleRequest, $10.RemoveRoleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.AddRoleRequest.fromBuffer(value),
+      ($11.AddRoleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.RemoveRoleRequest, $11.RemoveRoleResponse&gt;(
       &#39;RemoveRole&#39;,
       removeRole_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.RemoveRoleRequest.fromBuffer(value),
-      ($10.RemoveRoleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ChangeRoleRequest, $10.ChangeRoleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.RemoveRoleRequest.fromBuffer(value),
+      ($11.RemoveRoleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ChangeRoleRequest, $11.ChangeRoleResponse&gt;(
       &#39;ChangeRole&#39;,
       changeRole_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ChangeRoleRequest.fromBuffer(value),
-      ($10.ChangeRoleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListAuthorizationsRequest, $10.ListAuthorizationsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ChangeRoleRequest.fromBuffer(value),
+      ($11.ChangeRoleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListAuthorizationsRequest, $11.ListAuthorizationsResponse&gt;(
       &#39;ListAuthorizations&#39;,
       listAuthorizations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListAuthorizationsRequest.fromBuffer(value),
-      ($10.ListAuthorizationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CheckPermissionsRequest, $10.CheckPermissionsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListAuthorizationsRequest.fromBuffer(value),
+      ($11.ListAuthorizationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CheckPermissionsRequest, $11.CheckPermissionsResponse&gt;(
       &#39;CheckPermissions&#39;,
       checkPermissions_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CheckPermissionsRequest.fromBuffer(value),
-      ($10.CheckPermissionsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetRegistryItemRequest, $10.GetRegistryItemResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CheckPermissionsRequest.fromBuffer(value),
+      ($11.CheckPermissionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRegistryItemRequest, $11.GetRegistryItemResponse&gt;(
       &#39;GetRegistryItem&#39;,
       getRegistryItem_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetRegistryItemRequest.fromBuffer(value),
-      ($10.GetRegistryItemResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateRegistryItemRequest, $10.CreateRegistryItemResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRegistryItemRequest.fromBuffer(value),
+      ($11.GetRegistryItemResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateRegistryItemRequest, $11.CreateRegistryItemResponse&gt;(
       &#39;CreateRegistryItem&#39;,
       createRegistryItem_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateRegistryItemRequest.fromBuffer(value),
-      ($10.CreateRegistryItemResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateRegistryItemRequest, $10.UpdateRegistryItemResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateRegistryItemRequest.fromBuffer(value),
+      ($11.CreateRegistryItemResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateRegistryItemRequest, $11.UpdateRegistryItemResponse&gt;(
       &#39;UpdateRegistryItem&#39;,
       updateRegistryItem_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateRegistryItemRequest.fromBuffer(value),
-      ($10.UpdateRegistryItemResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListRegistryItemsRequest, $10.ListRegistryItemsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateRegistryItemRequest.fromBuffer(value),
+      ($11.UpdateRegistryItemResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListRegistryItemsRequest, $11.ListRegistryItemsResponse&gt;(
       &#39;ListRegistryItems&#39;,
       listRegistryItems_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListRegistryItemsRequest.fromBuffer(value),
-      ($10.ListRegistryItemsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteRegistryItemRequest, $10.DeleteRegistryItemResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListRegistryItemsRequest.fromBuffer(value),
+      ($11.ListRegistryItemsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteRegistryItemRequest, $11.DeleteRegistryItemResponse&gt;(
       &#39;DeleteRegistryItem&#39;,
       deleteRegistryItem_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteRegistryItemRequest.fromBuffer(value),
-      ($10.DeleteRegistryItemResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.TransferRegistryItemRequest, $10.TransferRegistryItemResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteRegistryItemRequest.fromBuffer(value),
+      ($11.DeleteRegistryItemResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.TransferRegistryItemRequest, $11.TransferRegistryItemResponse&gt;(
       &#39;TransferRegistryItem&#39;,
       transferRegistryItem_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.TransferRegistryItemRequest.fromBuffer(value),
-      ($10.TransferRegistryItemResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateModuleRequest, $10.CreateModuleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.TransferRegistryItemRequest.fromBuffer(value),
+      ($11.TransferRegistryItemResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateModuleRequest, $11.CreateModuleResponse&gt;(
       &#39;CreateModule&#39;,
       createModule_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateModuleRequest.fromBuffer(value),
-      ($10.CreateModuleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UpdateModuleRequest, $10.UpdateModuleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateModuleRequest.fromBuffer(value),
+      ($11.CreateModuleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UpdateModuleRequest, $11.UpdateModuleResponse&gt;(
       &#39;UpdateModule&#39;,
       updateModule_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UpdateModuleRequest.fromBuffer(value),
-      ($10.UpdateModuleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.UploadModuleFileRequest, $10.UploadModuleFileResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UpdateModuleRequest.fromBuffer(value),
+      ($11.UpdateModuleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.UploadModuleFileRequest, $11.UploadModuleFileResponse&gt;(
       &#39;UploadModuleFile&#39;,
       uploadModuleFile,
       true,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.UploadModuleFileRequest.fromBuffer(value),
-      ($10.UploadModuleFileResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetModuleRequest, $10.GetModuleResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.UploadModuleFileRequest.fromBuffer(value),
+      ($11.UploadModuleFileResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetModuleRequest, $11.GetModuleResponse&gt;(
       &#39;GetModule&#39;,
       getModule_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetModuleRequest.fromBuffer(value),
-      ($10.GetModuleResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListModulesRequest, $10.ListModulesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetModuleRequest.fromBuffer(value),
+      ($11.GetModuleResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListModulesRequest, $11.ListModulesResponse&gt;(
       &#39;ListModules&#39;,
       listModules_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListModulesRequest.fromBuffer(value),
-      ($10.ListModulesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateKeyRequest, $10.CreateKeyResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListModulesRequest.fromBuffer(value),
+      ($11.ListModulesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateKeyRequest, $11.CreateKeyResponse&gt;(
       &#39;CreateKey&#39;,
       createKey_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateKeyRequest.fromBuffer(value),
-      ($10.CreateKeyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.DeleteKeyRequest, $10.DeleteKeyResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateKeyRequest.fromBuffer(value),
+      ($11.CreateKeyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.DeleteKeyRequest, $11.DeleteKeyResponse&gt;(
       &#39;DeleteKey&#39;,
       deleteKey_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.DeleteKeyRequest.fromBuffer(value),
-      ($10.DeleteKeyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.ListKeysRequest, $10.ListKeysResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.DeleteKeyRequest.fromBuffer(value),
+      ($11.DeleteKeyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.ListKeysRequest, $11.ListKeysResponse&gt;(
       &#39;ListKeys&#39;,
       listKeys_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.ListKeysRequest.fromBuffer(value),
-      ($10.ListKeysResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.RenameKeyRequest, $10.RenameKeyResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.ListKeysRequest.fromBuffer(value),
+      ($11.ListKeysResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.RenameKeyRequest, $11.RenameKeyResponse&gt;(
       &#39;RenameKey&#39;,
       renameKey_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.RenameKeyRequest.fromBuffer(value),
-      ($10.RenameKeyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.RotateKeyRequest, $10.RotateKeyResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.RenameKeyRequest.fromBuffer(value),
+      ($11.RenameKeyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.RotateKeyRequest, $11.RotateKeyResponse&gt;(
       &#39;RotateKey&#39;,
       rotateKey_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.RotateKeyRequest.fromBuffer(value),
-      ($10.RotateKeyResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.CreateKeyFromExistingKeyAuthorizationsRequest, $10.CreateKeyFromExistingKeyAuthorizationsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.RotateKeyRequest.fromBuffer(value),
+      ($11.RotateKeyResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.CreateKeyFromExistingKeyAuthorizationsRequest, $11.CreateKeyFromExistingKeyAuthorizationsResponse&gt;(
       &#39;CreateKeyFromExistingKeyAuthorizations&#39;,
       createKeyFromExistingKeyAuthorizations_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.CreateKeyFromExistingKeyAuthorizationsRequest.fromBuffer(value),
-      ($10.CreateKeyFromExistingKeyAuthorizationsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$10.GetAppContentRequest, $10.GetAppContentResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.CreateKeyFromExistingKeyAuthorizationsRequest.fromBuffer(value),
+      ($11.CreateKeyFromExistingKeyAuthorizationsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetAppContentRequest, $11.GetAppContentResponse&gt;(
       &#39;GetAppContent&#39;,
       getAppContent_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $10.GetAppContentRequest.fromBuffer(value),
-      ($10.GetAppContentResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetAppContentRequest.fromBuffer(value),
+      ($11.GetAppContentResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 

@@ -66,76 +66,76 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">ArmServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$14.GetEndPositionRequest, $14.GetEndPositionResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$15.GetEndPositionRequest, $15.GetEndPositionResponse&gt;(
       &#39;GetEndPosition&#39;,
       getEndPosition_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.GetEndPositionRequest.fromBuffer(value),
-      ($14.GetEndPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$14.MoveToPositionRequest, $14.MoveToPositionResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.GetEndPositionRequest.fromBuffer(value),
+      ($15.GetEndPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$15.MoveToPositionRequest, $15.MoveToPositionResponse&gt;(
       &#39;MoveToPosition&#39;,
       moveToPosition_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.MoveToPositionRequest.fromBuffer(value),
-      ($14.MoveToPositionResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$14.GetJointPositionsRequest, $14.GetJointPositionsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.MoveToPositionRequest.fromBuffer(value),
+      ($15.MoveToPositionResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$15.GetJointPositionsRequest, $15.GetJointPositionsResponse&gt;(
       &#39;GetJointPositions&#39;,
       getJointPositions_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.GetJointPositionsRequest.fromBuffer(value),
-      ($14.GetJointPositionsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$14.MoveToJointPositionsRequest, $14.MoveToJointPositionsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.GetJointPositionsRequest.fromBuffer(value),
+      ($15.GetJointPositionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$15.MoveToJointPositionsRequest, $15.MoveToJointPositionsResponse&gt;(
       &#39;MoveToJointPositions&#39;,
       moveToJointPositions_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.MoveToJointPositionsRequest.fromBuffer(value),
-      ($14.MoveToJointPositionsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$14.MoveThroughJointPositionsRequest, $14.MoveThroughJointPositionsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.MoveToJointPositionsRequest.fromBuffer(value),
+      ($15.MoveToJointPositionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$15.MoveThroughJointPositionsRequest, $15.MoveThroughJointPositionsResponse&gt;(
       &#39;MoveThroughJointPositions&#39;,
       moveThroughJointPositions_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.MoveThroughJointPositionsRequest.fromBuffer(value),
-      ($14.MoveThroughJointPositionsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$14.StopRequest, $14.StopResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.MoveThroughJointPositionsRequest.fromBuffer(value),
+      ($15.MoveThroughJointPositionsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$15.StopRequest, $15.StopResponse&gt;(
       &#39;Stop&#39;,
       stop_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.StopRequest.fromBuffer(value),
-      ($14.StopResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$14.IsMovingRequest, $14.IsMovingResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.StopRequest.fromBuffer(value),
+      ($15.StopResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$15.IsMovingRequest, $15.IsMovingResponse&gt;(
       &#39;IsMoving&#39;,
       isMoving_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $14.IsMovingRequest.fromBuffer(value),
-      ($14.IsMovingResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$15.DoCommandRequest, $15.DoCommandResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $15.IsMovingRequest.fromBuffer(value),
+      ($15.IsMovingResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $15.DoCommandRequest.fromBuffer(value),
-      ($15.DoCommandResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$15.GetKinematicsRequest, $15.GetKinematicsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $16.DoCommandRequest.fromBuffer(value),
+      ($16.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$16.GetKinematicsRequest, $16.GetKinematicsResponse&gt;(
       &#39;GetKinematics&#39;,
       getKinematics_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $15.GetKinematicsRequest.fromBuffer(value),
-      ($15.GetKinematicsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$15.GetGeometriesRequest, $15.GetGeometriesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $16.GetKinematicsRequest.fromBuffer(value),
+      ($16.GetKinematicsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$16.GetGeometriesRequest, $16.GetGeometriesResponse&gt;(
       &#39;GetGeometries&#39;,
       getGeometries_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $15.GetGeometriesRequest.fromBuffer(value),
-      ($15.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $16.GetGeometriesRequest.fromBuffer(value),
+      ($16.GetGeometriesResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
