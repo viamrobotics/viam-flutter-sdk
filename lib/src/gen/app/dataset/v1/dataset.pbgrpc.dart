@@ -15,32 +15,32 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'dataset.pb.dart' as $4;
+import 'dataset.pb.dart' as $5;
 
 export 'dataset.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.dataset.v1.DatasetService')
 class DatasetServiceClient extends $grpc.Client {
-  static final _$createDataset = $grpc.ClientMethod<$4.CreateDatasetRequest, $4.CreateDatasetResponse>(
+  static final _$createDataset = $grpc.ClientMethod<$5.CreateDatasetRequest, $5.CreateDatasetResponse>(
       '/viam.app.dataset.v1.DatasetService/CreateDataset',
-      ($4.CreateDatasetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.CreateDatasetResponse.fromBuffer(value));
-  static final _$deleteDataset = $grpc.ClientMethod<$4.DeleteDatasetRequest, $4.DeleteDatasetResponse>(
+      ($5.CreateDatasetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.CreateDatasetResponse.fromBuffer(value));
+  static final _$deleteDataset = $grpc.ClientMethod<$5.DeleteDatasetRequest, $5.DeleteDatasetResponse>(
       '/viam.app.dataset.v1.DatasetService/DeleteDataset',
-      ($4.DeleteDatasetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.DeleteDatasetResponse.fromBuffer(value));
-  static final _$renameDataset = $grpc.ClientMethod<$4.RenameDatasetRequest, $4.RenameDatasetResponse>(
+      ($5.DeleteDatasetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.DeleteDatasetResponse.fromBuffer(value));
+  static final _$renameDataset = $grpc.ClientMethod<$5.RenameDatasetRequest, $5.RenameDatasetResponse>(
       '/viam.app.dataset.v1.DatasetService/RenameDataset',
-      ($4.RenameDatasetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.RenameDatasetResponse.fromBuffer(value));
-  static final _$listDatasetsByOrganizationID = $grpc.ClientMethod<$4.ListDatasetsByOrganizationIDRequest, $4.ListDatasetsByOrganizationIDResponse>(
+      ($5.RenameDatasetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.RenameDatasetResponse.fromBuffer(value));
+  static final _$listDatasetsByOrganizationID = $grpc.ClientMethod<$5.ListDatasetsByOrganizationIDRequest, $5.ListDatasetsByOrganizationIDResponse>(
       '/viam.app.dataset.v1.DatasetService/ListDatasetsByOrganizationID',
-      ($4.ListDatasetsByOrganizationIDRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ListDatasetsByOrganizationIDResponse.fromBuffer(value));
-  static final _$listDatasetsByIDs = $grpc.ClientMethod<$4.ListDatasetsByIDsRequest, $4.ListDatasetsByIDsResponse>(
+      ($5.ListDatasetsByOrganizationIDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.ListDatasetsByOrganizationIDResponse.fromBuffer(value));
+  static final _$listDatasetsByIDs = $grpc.ClientMethod<$5.ListDatasetsByIDsRequest, $5.ListDatasetsByIDsResponse>(
       '/viam.app.dataset.v1.DatasetService/ListDatasetsByIDs',
-      ($4.ListDatasetsByIDsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ListDatasetsByIDsResponse.fromBuffer(value));
+      ($5.ListDatasetsByIDsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.ListDatasetsByIDsResponse.fromBuffer(value));
 
   DatasetServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -48,23 +48,23 @@ class DatasetServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$4.CreateDatasetResponse> createDataset($4.CreateDatasetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.CreateDatasetResponse> createDataset($5.CreateDatasetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createDataset, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.DeleteDatasetResponse> deleteDataset($4.DeleteDatasetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.DeleteDatasetResponse> deleteDataset($5.DeleteDatasetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteDataset, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.RenameDatasetResponse> renameDataset($4.RenameDatasetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.RenameDatasetResponse> renameDataset($5.RenameDatasetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$renameDataset, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID($4.ListDatasetsByOrganizationIDRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID($5.ListDatasetsByOrganizationIDRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listDatasetsByOrganizationID, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.ListDatasetsByIDsResponse> listDatasetsByIDs($4.ListDatasetsByIDsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.ListDatasetsByIDsResponse> listDatasetsByIDs($5.ListDatasetsByIDsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listDatasetsByIDs, request, options: options);
   }
 }
@@ -74,66 +74,66 @@ abstract class DatasetServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.dataset.v1.DatasetService';
 
   DatasetServiceBase() {
-    $addMethod($grpc.ServiceMethod<$4.CreateDatasetRequest, $4.CreateDatasetResponse>(
+    $addMethod($grpc.ServiceMethod<$5.CreateDatasetRequest, $5.CreateDatasetResponse>(
         'CreateDataset',
         createDataset_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.CreateDatasetRequest.fromBuffer(value),
-        ($4.CreateDatasetResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.DeleteDatasetRequest, $4.DeleteDatasetResponse>(
+        ($core.List<$core.int> value) => $5.CreateDatasetRequest.fromBuffer(value),
+        ($5.CreateDatasetResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$5.DeleteDatasetRequest, $5.DeleteDatasetResponse>(
         'DeleteDataset',
         deleteDataset_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.DeleteDatasetRequest.fromBuffer(value),
-        ($4.DeleteDatasetResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.RenameDatasetRequest, $4.RenameDatasetResponse>(
+        ($core.List<$core.int> value) => $5.DeleteDatasetRequest.fromBuffer(value),
+        ($5.DeleteDatasetResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$5.RenameDatasetRequest, $5.RenameDatasetResponse>(
         'RenameDataset',
         renameDataset_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.RenameDatasetRequest.fromBuffer(value),
-        ($4.RenameDatasetResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListDatasetsByOrganizationIDRequest, $4.ListDatasetsByOrganizationIDResponse>(
+        ($core.List<$core.int> value) => $5.RenameDatasetRequest.fromBuffer(value),
+        ($5.RenameDatasetResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$5.ListDatasetsByOrganizationIDRequest, $5.ListDatasetsByOrganizationIDResponse>(
         'ListDatasetsByOrganizationID',
         listDatasetsByOrganizationID_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.ListDatasetsByOrganizationIDRequest.fromBuffer(value),
-        ($4.ListDatasetsByOrganizationIDResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListDatasetsByIDsRequest, $4.ListDatasetsByIDsResponse>(
+        ($core.List<$core.int> value) => $5.ListDatasetsByOrganizationIDRequest.fromBuffer(value),
+        ($5.ListDatasetsByOrganizationIDResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$5.ListDatasetsByIDsRequest, $5.ListDatasetsByIDsResponse>(
         'ListDatasetsByIDs',
         listDatasetsByIDs_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.ListDatasetsByIDsRequest.fromBuffer(value),
-        ($4.ListDatasetsByIDsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $5.ListDatasetsByIDsRequest.fromBuffer(value),
+        ($5.ListDatasetsByIDsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$4.CreateDatasetResponse> createDataset_Pre($grpc.ServiceCall call, $async.Future<$4.CreateDatasetRequest> request) async {
+  $async.Future<$5.CreateDatasetResponse> createDataset_Pre($grpc.ServiceCall call, $async.Future<$5.CreateDatasetRequest> request) async {
     return createDataset(call, await request);
   }
 
-  $async.Future<$4.DeleteDatasetResponse> deleteDataset_Pre($grpc.ServiceCall call, $async.Future<$4.DeleteDatasetRequest> request) async {
+  $async.Future<$5.DeleteDatasetResponse> deleteDataset_Pre($grpc.ServiceCall call, $async.Future<$5.DeleteDatasetRequest> request) async {
     return deleteDataset(call, await request);
   }
 
-  $async.Future<$4.RenameDatasetResponse> renameDataset_Pre($grpc.ServiceCall call, $async.Future<$4.RenameDatasetRequest> request) async {
+  $async.Future<$5.RenameDatasetResponse> renameDataset_Pre($grpc.ServiceCall call, $async.Future<$5.RenameDatasetRequest> request) async {
     return renameDataset(call, await request);
   }
 
-  $async.Future<$4.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID_Pre($grpc.ServiceCall call, $async.Future<$4.ListDatasetsByOrganizationIDRequest> request) async {
+  $async.Future<$5.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID_Pre($grpc.ServiceCall call, $async.Future<$5.ListDatasetsByOrganizationIDRequest> request) async {
     return listDatasetsByOrganizationID(call, await request);
   }
 
-  $async.Future<$4.ListDatasetsByIDsResponse> listDatasetsByIDs_Pre($grpc.ServiceCall call, $async.Future<$4.ListDatasetsByIDsRequest> request) async {
+  $async.Future<$5.ListDatasetsByIDsResponse> listDatasetsByIDs_Pre($grpc.ServiceCall call, $async.Future<$5.ListDatasetsByIDsRequest> request) async {
     return listDatasetsByIDs(call, await request);
   }
 
-  $async.Future<$4.CreateDatasetResponse> createDataset($grpc.ServiceCall call, $4.CreateDatasetRequest request);
-  $async.Future<$4.DeleteDatasetResponse> deleteDataset($grpc.ServiceCall call, $4.DeleteDatasetRequest request);
-  $async.Future<$4.RenameDatasetResponse> renameDataset($grpc.ServiceCall call, $4.RenameDatasetRequest request);
-  $async.Future<$4.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID($grpc.ServiceCall call, $4.ListDatasetsByOrganizationIDRequest request);
-  $async.Future<$4.ListDatasetsByIDsResponse> listDatasetsByIDs($grpc.ServiceCall call, $4.ListDatasetsByIDsRequest request);
+  $async.Future<$5.CreateDatasetResponse> createDataset($grpc.ServiceCall call, $5.CreateDatasetRequest request);
+  $async.Future<$5.DeleteDatasetResponse> deleteDataset($grpc.ServiceCall call, $5.DeleteDatasetRequest request);
+  $async.Future<$5.RenameDatasetResponse> renameDataset($grpc.ServiceCall call, $5.RenameDatasetRequest request);
+  $async.Future<$5.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID($grpc.ServiceCall call, $5.ListDatasetsByOrganizationIDRequest request);
+  $async.Future<$5.ListDatasetsByIDsResponse> listDatasetsByIDs($grpc.ServiceCall call, $5.ListDatasetsByIDsRequest request);
 }

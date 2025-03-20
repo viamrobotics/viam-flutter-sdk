@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/struct.pb.dart' as $46;
-import '../../google/protobuf/timestamp.pb.dart' as $47;
+import '../../google/protobuf/struct.pb.dart' as $47;
+import '../../google/protobuf/timestamp.pb.dart' as $48;
 import 'common.pbenum.dart';
 
 export 'common.pbenum.dart';
@@ -1366,7 +1366,7 @@ class ActuatorStatus extends $pb.GeneratedMessage {
 
 class ResponseMetadata extends $pb.GeneratedMessage {
   factory ResponseMetadata({
-    $47.Timestamp? capturedAt,
+    $48.Timestamp? capturedAt,
   }) {
     final $result = create();
     if (capturedAt != null) {
@@ -1379,7 +1379,7 @@ class ResponseMetadata extends $pb.GeneratedMessage {
   factory ResponseMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..aOM<$47.Timestamp>(1, _omitFieldNames ? '' : 'capturedAt', subBuilder: $47.Timestamp.create)
+    ..aOM<$48.Timestamp>(1, _omitFieldNames ? '' : 'capturedAt', subBuilder: $48.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1409,22 +1409,22 @@ class ResponseMetadata extends $pb.GeneratedMessage {
   /// Note: If correlating between other resources, be sure that the means
   /// of measuring the capture are similar enough such that comparison can be made between them.
   @$pb.TagNumber(1)
-  $47.Timestamp get capturedAt => $_getN(0);
+  $48.Timestamp get capturedAt => $_getN(0);
   @$pb.TagNumber(1)
-  set capturedAt($47.Timestamp v) { setField(1, v); }
+  set capturedAt($48.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCapturedAt() => $_has(0);
   @$pb.TagNumber(1)
   void clearCapturedAt() => clearField(1);
   @$pb.TagNumber(1)
-  $47.Timestamp ensureCapturedAt() => $_ensure(0);
+  $48.Timestamp ensureCapturedAt() => $_ensure(0);
 }
 
 /// DoCommandRequest represents a generic DoCommand input
 class DoCommandRequest extends $pb.GeneratedMessage {
   factory DoCommandRequest({
     $core.String? name,
-    $46.Struct? command,
+    $47.Struct? command,
   }) {
     final $result = create();
     if (name != null) {
@@ -1441,7 +1441,7 @@ class DoCommandRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$46.Struct>(2, _omitFieldNames ? '' : 'command', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(2, _omitFieldNames ? '' : 'command', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1476,21 +1476,21 @@ class DoCommandRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $46.Struct get command => $_getN(1);
+  $47.Struct get command => $_getN(1);
   @$pb.TagNumber(2)
-  set command($46.Struct v) { setField(2, v); }
+  set command($47.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCommand() => $_has(1);
   @$pb.TagNumber(2)
   void clearCommand() => clearField(2);
   @$pb.TagNumber(2)
-  $46.Struct ensureCommand() => $_ensure(1);
+  $47.Struct ensureCommand() => $_ensure(1);
 }
 
 /// DoCommandResponse represents a generic DoCommand output
 class DoCommandResponse extends $pb.GeneratedMessage {
   factory DoCommandResponse({
-    $46.Struct? result,
+    $47.Struct? result,
   }) {
     final $result = create();
     if (result != null) {
@@ -1503,7 +1503,7 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   factory DoCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..aOM<$46.Struct>(1, _omitFieldNames ? '' : 'result', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(1, _omitFieldNames ? '' : 'result', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1529,21 +1529,21 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   static DoCommandResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $46.Struct get result => $_getN(0);
+  $47.Struct get result => $_getN(0);
   @$pb.TagNumber(1)
-  set result($46.Struct v) { setField(1, v); }
+  set result($47.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasResult() => $_has(0);
   @$pb.TagNumber(1)
   void clearResult() => clearField(1);
   @$pb.TagNumber(1)
-  $46.Struct ensureResult() => $_ensure(0);
+  $47.Struct ensureResult() => $_ensure(0);
 }
 
 class GetKinematicsRequest extends $pb.GeneratedMessage {
   factory GetKinematicsRequest({
     $core.String? name,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1560,7 +1560,7 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetKinematicsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1597,15 +1597,15 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(1);
+  $47.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(1);
+  $47.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetKinematicsResponse extends $pb.GeneratedMessage {
@@ -1678,7 +1678,7 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
 class GetGeometriesRequest extends $pb.GeneratedMessage {
   factory GetGeometriesRequest({
     $core.String? name,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1695,7 +1695,7 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetGeometriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1732,15 +1732,15 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(1);
+  $47.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(1);
+  $47.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetGeometriesResponse extends $pb.GeneratedMessage {
@@ -1791,7 +1791,7 @@ class GetGeometriesResponse extends $pb.GeneratedMessage {
 class GetReadingsRequest extends $pb.GeneratedMessage {
   factory GetReadingsRequest({
     $core.String? name,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1808,7 +1808,7 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1845,20 +1845,20 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(1);
+  $47.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(1);
+  $47.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetReadingsResponse extends $pb.GeneratedMessage {
   factory GetReadingsResponse({
-    $core.Map<$core.String, $46.Value>? readings,
+    $core.Map<$core.String, $47.Value>? readings,
   }) {
     final $result = create();
     if (readings != null) {
@@ -1871,7 +1871,7 @@ class GetReadingsResponse extends $pb.GeneratedMessage {
   factory GetReadingsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..m<$core.String, $46.Value>(1, _omitFieldNames ? '' : 'readings', entryClassName: 'GetReadingsResponse.ReadingsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $46.Value.create, valueDefaultOrMaker: $46.Value.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
+    ..m<$core.String, $47.Value>(1, _omitFieldNames ? '' : 'readings', entryClassName: 'GetReadingsResponse.ReadingsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $47.Value.create, valueDefaultOrMaker: $47.Value.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -1897,19 +1897,19 @@ class GetReadingsResponse extends $pb.GeneratedMessage {
   static GetReadingsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $46.Value> get readings => $_getMap(0);
+  $core.Map<$core.String, $47.Value> get readings => $_getMap(0);
 }
 
 class LogEntry extends $pb.GeneratedMessage {
   factory LogEntry({
     $core.String? host,
     $core.String? level,
-    $47.Timestamp? time,
+    $48.Timestamp? time,
     $core.String? loggerName,
     $core.String? message,
-    $46.Struct? caller,
+    $47.Struct? caller,
     $core.String? stack,
-    $core.Iterable<$46.Struct>? fields,
+    $core.Iterable<$47.Struct>? fields,
   }) {
     final $result = create();
     if (host != null) {
@@ -1945,12 +1945,12 @@ class LogEntry extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'host')
     ..aOS(2, _omitFieldNames ? '' : 'level')
-    ..aOM<$47.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $47.Timestamp.create)
+    ..aOM<$48.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $48.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'loggerName')
     ..aOS(5, _omitFieldNames ? '' : 'message')
-    ..aOM<$46.Struct>(6, _omitFieldNames ? '' : 'caller', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(6, _omitFieldNames ? '' : 'caller', subBuilder: $47.Struct.create)
     ..aOS(7, _omitFieldNames ? '' : 'stack')
-    ..pc<$46.Struct>(8, _omitFieldNames ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $46.Struct.create)
+    ..pc<$47.Struct>(8, _omitFieldNames ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1994,15 +1994,15 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearLevel() => clearField(2);
 
   @$pb.TagNumber(3)
-  $47.Timestamp get time => $_getN(2);
+  $48.Timestamp get time => $_getN(2);
   @$pb.TagNumber(3)
-  set time($47.Timestamp v) { setField(3, v); }
+  set time($48.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearTime() => clearField(3);
   @$pb.TagNumber(3)
-  $47.Timestamp ensureTime() => $_ensure(2);
+  $48.Timestamp ensureTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get loggerName => $_getSZ(3);
@@ -2023,15 +2023,15 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearMessage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $46.Struct get caller => $_getN(5);
+  $47.Struct get caller => $_getN(5);
   @$pb.TagNumber(6)
-  set caller($46.Struct v) { setField(6, v); }
+  set caller($47.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCaller() => $_has(5);
   @$pb.TagNumber(6)
   void clearCaller() => clearField(6);
   @$pb.TagNumber(6)
-  $46.Struct ensureCaller() => $_ensure(5);
+  $47.Struct ensureCaller() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get stack => $_getSZ(6);
@@ -2043,7 +2043,7 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearStack() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$46.Struct> get fields => $_getList(7);
+  $core.List<$47.Struct> get fields => $_getList(7);
 }
 
 class Common {

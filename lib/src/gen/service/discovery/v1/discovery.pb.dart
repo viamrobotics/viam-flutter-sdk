@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../app/v1/robot.pb.dart' as $13;
-import '../../../google/protobuf/struct.pb.dart' as $46;
+import '../../../app/v1/robot.pb.dart' as $14;
+import '../../../google/protobuf/struct.pb.dart' as $47;
 
 class DiscoverResourcesRequest extends $pb.GeneratedMessage {
   factory DiscoverResourcesRequest({
     $core.String? name,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -36,7 +36,7 @@ class DiscoverResourcesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DiscoverResourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.discovery.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -73,20 +73,20 @@ class DiscoverResourcesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(1);
+  $47.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(1);
+  $47.Struct ensureExtra() => $_ensure(1);
 }
 
 class DiscoverResourcesResponse extends $pb.GeneratedMessage {
   factory DiscoverResourcesResponse({
-    $core.Iterable<$13.ComponentConfig>? discoveries,
+    $core.Iterable<$14.ComponentConfig>? discoveries,
   }) {
     final $result = create();
     if (discoveries != null) {
@@ -99,7 +99,7 @@ class DiscoverResourcesResponse extends $pb.GeneratedMessage {
   factory DiscoverResourcesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DiscoverResourcesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.discovery.v1'), createEmptyInstance: create)
-    ..pc<$13.ComponentConfig>(1, _omitFieldNames ? '' : 'discoveries', $pb.PbFieldType.PM, subBuilder: $13.ComponentConfig.create)
+    ..pc<$14.ComponentConfig>(1, _omitFieldNames ? '' : 'discoveries', $pb.PbFieldType.PM, subBuilder: $14.ComponentConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -126,7 +126,7 @@ class DiscoverResourcesResponse extends $pb.GeneratedMessage {
 
   /// list of ComponentConfigs that describe the components found by a discover service.
   @$pb.TagNumber(1)
-  $core.List<$13.ComponentConfig> get discoveries => $_getList(0);
+  $core.List<$14.ComponentConfig> get discoveries => $_getList(0);
 }
 
 

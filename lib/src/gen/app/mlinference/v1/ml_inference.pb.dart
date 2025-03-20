@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../service/mlmodel/v1/mlmodel.pb.dart' as $6;
+import '../../../service/mlmodel/v1/mlmodel.pb.dart' as $7;
 import '../../data/v1/data.pb.dart' as $3;
 
 class GetInferenceRequest extends $pb.GeneratedMessage {
@@ -129,7 +129,7 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
 
 class GetInferenceResponse extends $pb.GeneratedMessage {
   factory GetInferenceResponse({
-    $6.FlatTensors? outputTensors,
+    $7.FlatTensors? outputTensors,
     $3.Annotations? annotations,
   }) {
     final $result = create();
@@ -146,7 +146,7 @@ class GetInferenceResponse extends $pb.GeneratedMessage {
   factory GetInferenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInferenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mlinference.v1'), createEmptyInstance: create)
-    ..aOM<$6.FlatTensors>(1, _omitFieldNames ? '' : 'outputTensors', subBuilder: $6.FlatTensors.create)
+    ..aOM<$7.FlatTensors>(1, _omitFieldNames ? '' : 'outputTensors', subBuilder: $7.FlatTensors.create)
     ..aOM<$3.Annotations>(2, _omitFieldNames ? '' : 'annotations', subBuilder: $3.Annotations.create)
     ..hasRequiredFields = false
   ;
@@ -173,15 +173,15 @@ class GetInferenceResponse extends $pb.GeneratedMessage {
   static GetInferenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.FlatTensors get outputTensors => $_getN(0);
+  $7.FlatTensors get outputTensors => $_getN(0);
   @$pb.TagNumber(1)
-  set outputTensors($6.FlatTensors v) { setField(1, v); }
+  set outputTensors($7.FlatTensors v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasOutputTensors() => $_has(0);
   @$pb.TagNumber(1)
   void clearOutputTensors() => clearField(1);
   @$pb.TagNumber(1)
-  $6.FlatTensors ensureOutputTensors() => $_ensure(0);
+  $7.FlatTensors ensureOutputTensors() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $3.Annotations get annotations => $_getN(1);

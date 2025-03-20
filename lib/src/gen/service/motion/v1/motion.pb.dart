@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $15;
-import '../../../google/protobuf/struct.pb.dart' as $46;
-import '../../../google/protobuf/timestamp.pb.dart' as $47;
+import '../../../common/v1/common.pb.dart' as $16;
+import '../../../google/protobuf/struct.pb.dart' as $47;
+import '../../../google/protobuf/timestamp.pb.dart' as $48;
 import 'motion.pbenum.dart';
 
 export 'motion.pbenum.dart';
@@ -24,11 +24,11 @@ export 'motion.pbenum.dart';
 class MoveRequest extends $pb.GeneratedMessage {
   factory MoveRequest({
     $core.String? name,
-    $15.PoseInFrame? destination,
-    $15.ResourceName? componentName,
-    $15.WorldState? worldState,
+    $16.PoseInFrame? destination,
+    $16.ResourceName? componentName,
+    $16.WorldState? worldState,
     Constraints? constraints,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -57,11 +57,11 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$15.PoseInFrame>(2, _omitFieldNames ? '' : 'destination', subBuilder: $15.PoseInFrame.create)
-    ..aOM<$15.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
-    ..aOM<$15.WorldState>(4, _omitFieldNames ? '' : 'worldState', subBuilder: $15.WorldState.create)
+    ..aOM<$16.PoseInFrame>(2, _omitFieldNames ? '' : 'destination', subBuilder: $16.PoseInFrame.create)
+    ..aOM<$16.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
+    ..aOM<$16.WorldState>(4, _omitFieldNames ? '' : 'worldState', subBuilder: $16.WorldState.create)
     ..aOM<Constraints>(5, _omitFieldNames ? '' : 'constraints', subBuilder: Constraints.create)
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -98,40 +98,40 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   /// Destination to move to, which can a pose in the reference frame of any frame in the robot's frame system
   @$pb.TagNumber(2)
-  $15.PoseInFrame get destination => $_getN(1);
+  $16.PoseInFrame get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($15.PoseInFrame v) { setField(2, v); }
+  set destination($16.PoseInFrame v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
   void clearDestination() => clearField(2);
   @$pb.TagNumber(2)
-  $15.PoseInFrame ensureDestination() => $_ensure(1);
+  $16.PoseInFrame ensureDestination() => $_ensure(1);
 
   /// Component on the robot to move to the specified destination
   @$pb.TagNumber(3)
-  $15.ResourceName get componentName => $_getN(2);
+  $16.ResourceName get componentName => $_getN(2);
   @$pb.TagNumber(3)
-  set componentName($15.ResourceName v) { setField(3, v); }
+  set componentName($16.ResourceName v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasComponentName() => $_has(2);
   @$pb.TagNumber(3)
   void clearComponentName() => clearField(3);
   @$pb.TagNumber(3)
-  $15.ResourceName ensureComponentName() => $_ensure(2);
+  $16.ResourceName ensureComponentName() => $_ensure(2);
 
   /// Avoid obstacles by specifying their geometries in the world state
   /// Augment the frame system of the robot by specifying additional transforms to add to it for the duration of the Move
   @$pb.TagNumber(4)
-  $15.WorldState get worldState => $_getN(3);
+  $16.WorldState get worldState => $_getN(3);
   @$pb.TagNumber(4)
-  set worldState($15.WorldState v) { setField(4, v); }
+  set worldState($16.WorldState v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasWorldState() => $_has(3);
   @$pb.TagNumber(4)
   void clearWorldState() => clearField(4);
   @$pb.TagNumber(4)
-  $15.WorldState ensureWorldState() => $_ensure(3);
+  $16.WorldState ensureWorldState() => $_ensure(3);
 
   /// Constrain the way the robot will move
   @$pb.TagNumber(5)
@@ -147,15 +147,15 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(5);
+  $47.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(5);
+  $47.Struct ensureExtra() => $_ensure(5);
 }
 
 class MoveResponse extends $pb.GeneratedMessage {
@@ -211,12 +211,12 @@ class MoveResponse extends $pb.GeneratedMessage {
 class MoveOnMapRequest extends $pb.GeneratedMessage {
   factory MoveOnMapRequest({
     $core.String? name,
-    $15.Pose? destination,
-    $15.ResourceName? componentName,
-    $15.ResourceName? slamServiceName,
+    $16.Pose? destination,
+    $16.ResourceName? componentName,
+    $16.ResourceName? slamServiceName,
     MotionConfiguration? motionConfiguration,
-    $core.Iterable<$15.Geometry>? obstacles,
-    $46.Struct? extra,
+    $core.Iterable<$16.Geometry>? obstacles,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -248,12 +248,12 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnMapRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$15.Pose>(2, _omitFieldNames ? '' : 'destination', subBuilder: $15.Pose.create)
-    ..aOM<$15.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
-    ..aOM<$15.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceName', subBuilder: $15.ResourceName.create)
+    ..aOM<$16.Pose>(2, _omitFieldNames ? '' : 'destination', subBuilder: $16.Pose.create)
+    ..aOM<$16.ResourceName>(3, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
+    ..aOM<$16.ResourceName>(4, _omitFieldNames ? '' : 'slamServiceName', subBuilder: $16.ResourceName.create)
     ..aOM<MotionConfiguration>(5, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
-    ..pc<$15.Geometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $15.Geometry.create)
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..pc<$16.Geometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $16.Geometry.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -290,39 +290,39 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   /// Specify a destination to, which can be any pose with respect to the SLAM map's origin
   @$pb.TagNumber(2)
-  $15.Pose get destination => $_getN(1);
+  $16.Pose get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($15.Pose v) { setField(2, v); }
+  set destination($16.Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
   void clearDestination() => clearField(2);
   @$pb.TagNumber(2)
-  $15.Pose ensureDestination() => $_ensure(1);
+  $16.Pose ensureDestination() => $_ensure(1);
 
   /// Component on the robot to move to the specified destination
   @$pb.TagNumber(3)
-  $15.ResourceName get componentName => $_getN(2);
+  $16.ResourceName get componentName => $_getN(2);
   @$pb.TagNumber(3)
-  set componentName($15.ResourceName v) { setField(3, v); }
+  set componentName($16.ResourceName v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasComponentName() => $_has(2);
   @$pb.TagNumber(3)
   void clearComponentName() => clearField(3);
   @$pb.TagNumber(3)
-  $15.ResourceName ensureComponentName() => $_ensure(2);
+  $16.ResourceName ensureComponentName() => $_ensure(2);
 
   /// Name of the slam service from which the SLAM map is requested
   @$pb.TagNumber(4)
-  $15.ResourceName get slamServiceName => $_getN(3);
+  $16.ResourceName get slamServiceName => $_getN(3);
   @$pb.TagNumber(4)
-  set slamServiceName($15.ResourceName v) { setField(4, v); }
+  set slamServiceName($16.ResourceName v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSlamServiceName() => $_has(3);
   @$pb.TagNumber(4)
   void clearSlamServiceName() => clearField(4);
   @$pb.TagNumber(4)
-  $15.ResourceName ensureSlamServiceName() => $_ensure(3);
+  $16.ResourceName ensureSlamServiceName() => $_ensure(3);
 
   /// Optional set of motion configuration options
   @$pb.TagNumber(5)
@@ -338,19 +338,19 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
-  $core.List<$15.Geometry> get obstacles => $_getList(5);
+  $core.List<$16.Geometry> get obstacles => $_getList(5);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(6);
+  $47.Struct get extra => $_getN(6);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(6);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(6);
+  $47.Struct ensureExtra() => $_ensure(6);
 }
 
 class MoveOnMapResponse extends $pb.GeneratedMessage {
@@ -409,8 +409,8 @@ class MoveOnMapResponse extends $pb.GeneratedMessage {
 /// Pairs a vision service with a camera, informing the service about which camera it may use
 class ObstacleDetector extends $pb.GeneratedMessage {
   factory ObstacleDetector({
-    $15.ResourceName? visionService,
-    $15.ResourceName? camera,
+    $16.ResourceName? visionService,
+    $16.ResourceName? camera,
   }) {
     final $result = create();
     if (visionService != null) {
@@ -426,8 +426,8 @@ class ObstacleDetector extends $pb.GeneratedMessage {
   factory ObstacleDetector.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ObstacleDetector', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOM<$15.ResourceName>(1, _omitFieldNames ? '' : 'visionService', subBuilder: $15.ResourceName.create)
-    ..aOM<$15.ResourceName>(2, _omitFieldNames ? '' : 'camera', subBuilder: $15.ResourceName.create)
+    ..aOM<$16.ResourceName>(1, _omitFieldNames ? '' : 'visionService', subBuilder: $16.ResourceName.create)
+    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'camera', subBuilder: $16.ResourceName.create)
     ..hasRequiredFields = false
   ;
 
@@ -453,26 +453,26 @@ class ObstacleDetector extends $pb.GeneratedMessage {
   static ObstacleDetector? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $15.ResourceName get visionService => $_getN(0);
+  $16.ResourceName get visionService => $_getN(0);
   @$pb.TagNumber(1)
-  set visionService($15.ResourceName v) { setField(1, v); }
+  set visionService($16.ResourceName v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVisionService() => $_has(0);
   @$pb.TagNumber(1)
   void clearVisionService() => clearField(1);
   @$pb.TagNumber(1)
-  $15.ResourceName ensureVisionService() => $_ensure(0);
+  $16.ResourceName ensureVisionService() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $15.ResourceName get camera => $_getN(1);
+  $16.ResourceName get camera => $_getN(1);
   @$pb.TagNumber(2)
-  set camera($15.ResourceName v) { setField(2, v); }
+  set camera($16.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCamera() => $_has(1);
   @$pb.TagNumber(2)
   void clearCamera() => clearField(2);
   @$pb.TagNumber(2)
-  $15.ResourceName ensureCamera() => $_ensure(1);
+  $16.ResourceName ensureCamera() => $_ensure(1);
 }
 
 class MotionConfiguration extends $pb.GeneratedMessage {
@@ -598,14 +598,14 @@ class MotionConfiguration extends $pb.GeneratedMessage {
 class MoveOnGlobeRequest extends $pb.GeneratedMessage {
   factory MoveOnGlobeRequest({
     $core.String? name,
-    $15.GeoPoint? destination,
+    $16.GeoPoint? destination,
     $core.double? heading,
-    $15.ResourceName? componentName,
-    $15.ResourceName? movementSensorName,
-    $core.Iterable<$15.GeoGeometry>? obstacles,
+    $16.ResourceName? componentName,
+    $16.ResourceName? movementSensorName,
+    $core.Iterable<$16.GeoGeometry>? obstacles,
     MotionConfiguration? motionConfiguration,
-    $core.Iterable<$15.GeoGeometry>? boundingRegions,
-    $46.Struct? extra,
+    $core.Iterable<$16.GeoGeometry>? boundingRegions,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -643,14 +643,14 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MoveOnGlobeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$15.GeoPoint>(2, _omitFieldNames ? '' : 'destination', subBuilder: $15.GeoPoint.create)
+    ..aOM<$16.GeoPoint>(2, _omitFieldNames ? '' : 'destination', subBuilder: $16.GeoPoint.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'heading', $pb.PbFieldType.OD)
-    ..aOM<$15.ResourceName>(4, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
-    ..aOM<$15.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorName', subBuilder: $15.ResourceName.create)
-    ..pc<$15.GeoGeometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $15.GeoGeometry.create)
+    ..aOM<$16.ResourceName>(4, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
+    ..aOM<$16.ResourceName>(5, _omitFieldNames ? '' : 'movementSensorName', subBuilder: $16.ResourceName.create)
+    ..pc<$16.GeoGeometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $16.GeoGeometry.create)
     ..aOM<MotionConfiguration>(7, _omitFieldNames ? '' : 'motionConfiguration', subBuilder: MotionConfiguration.create)
-    ..pc<$15.GeoGeometry>(8, _omitFieldNames ? '' : 'boundingRegions', $pb.PbFieldType.PM, subBuilder: $15.GeoGeometry.create)
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..pc<$16.GeoGeometry>(8, _omitFieldNames ? '' : 'boundingRegions', $pb.PbFieldType.PM, subBuilder: $16.GeoGeometry.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -687,15 +687,15 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Destination, encoded as a GeoPoint
   @$pb.TagNumber(2)
-  $15.GeoPoint get destination => $_getN(1);
+  $16.GeoPoint get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($15.GeoPoint v) { setField(2, v); }
+  set destination($16.GeoPoint v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
   void clearDestination() => clearField(2);
   @$pb.TagNumber(2)
-  $15.GeoPoint ensureDestination() => $_ensure(1);
+  $16.GeoPoint ensureDestination() => $_ensure(1);
 
   /// Optional compass heading to achieve at the destination, in degrees [0-360)
   @$pb.TagNumber(3)
@@ -709,31 +709,31 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Component on the robot to move to the specified destination
   @$pb.TagNumber(4)
-  $15.ResourceName get componentName => $_getN(3);
+  $16.ResourceName get componentName => $_getN(3);
   @$pb.TagNumber(4)
-  set componentName($15.ResourceName v) { setField(4, v); }
+  set componentName($16.ResourceName v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasComponentName() => $_has(3);
   @$pb.TagNumber(4)
   void clearComponentName() => clearField(4);
   @$pb.TagNumber(4)
-  $15.ResourceName ensureComponentName() => $_ensure(3);
+  $16.ResourceName ensureComponentName() => $_ensure(3);
 
   /// Name of the movement sensor which will be used to check robot location
   @$pb.TagNumber(5)
-  $15.ResourceName get movementSensorName => $_getN(4);
+  $16.ResourceName get movementSensorName => $_getN(4);
   @$pb.TagNumber(5)
-  set movementSensorName($15.ResourceName v) { setField(5, v); }
+  set movementSensorName($16.ResourceName v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMovementSensorName() => $_has(4);
   @$pb.TagNumber(5)
   void clearMovementSensorName() => clearField(5);
   @$pb.TagNumber(5)
-  $15.ResourceName ensureMovementSensorName() => $_ensure(4);
+  $16.ResourceName ensureMovementSensorName() => $_ensure(4);
 
   /// Obstacles to be considered for motion planning
   @$pb.TagNumber(6)
-  $core.List<$15.GeoGeometry> get obstacles => $_getList(5);
+  $core.List<$16.GeoGeometry> get obstacles => $_getList(5);
 
   /// Optional set of motion configuration options
   @$pb.TagNumber(7)
@@ -749,19 +749,19 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Set of obstacles which the robot must remain within while navigating
   @$pb.TagNumber(8)
-  $core.List<$15.GeoGeometry> get boundingRegions => $_getList(7);
+  $core.List<$16.GeoGeometry> get boundingRegions => $_getList(7);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(8);
+  $47.Struct get extra => $_getN(8);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(8);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(8);
+  $47.Struct ensureExtra() => $_ensure(8);
 }
 
 class MoveOnGlobeResponse extends $pb.GeneratedMessage {
@@ -820,10 +820,10 @@ class MoveOnGlobeResponse extends $pb.GeneratedMessage {
 class GetPoseRequest extends $pb.GeneratedMessage {
   factory GetPoseRequest({
     $core.String? name,
-    $15.ResourceName? componentName,
+    $16.ResourceName? componentName,
     $core.String? destinationFrame,
-    $core.Iterable<$15.Transform>? supplementalTransforms,
-    $46.Struct? extra,
+    $core.Iterable<$16.Transform>? supplementalTransforms,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -849,10 +849,10 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPoseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$15.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
+    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'destinationFrame')
-    ..pc<$15.Transform>(4, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $15.Transform.create)
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..pc<$16.Transform>(4, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $16.Transform.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -888,15 +888,15 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 
   /// the component whose pose is being requested
   @$pb.TagNumber(2)
-  $15.ResourceName get componentName => $_getN(1);
+  $16.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
-  set componentName($15.ResourceName v) { setField(2, v); }
+  set componentName($16.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasComponentName() => $_has(1);
   @$pb.TagNumber(2)
   void clearComponentName() => clearField(2);
   @$pb.TagNumber(2)
-  $15.ResourceName ensureComponentName() => $_ensure(1);
+  $16.ResourceName ensureComponentName() => $_ensure(1);
 
   /// the reference frame in which the component's pose
   /// should be provided, if unset this defaults
@@ -913,24 +913,24 @@ class GetPoseRequest extends $pb.GeneratedMessage {
   /// pose information on any additional reference frames that are needed
   /// to compute the component's pose
   @$pb.TagNumber(4)
-  $core.List<$15.Transform> get supplementalTransforms => $_getList(3);
+  $core.List<$16.Transform> get supplementalTransforms => $_getList(3);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(4);
+  $47.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(4);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(4);
+  $47.Struct ensureExtra() => $_ensure(4);
 }
 
 class GetPoseResponse extends $pb.GeneratedMessage {
   factory GetPoseResponse({
-    $15.PoseInFrame? pose,
+    $16.PoseInFrame? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -943,7 +943,7 @@ class GetPoseResponse extends $pb.GeneratedMessage {
   factory GetPoseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPoseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOM<$15.PoseInFrame>(1, _omitFieldNames ? '' : 'pose', subBuilder: $15.PoseInFrame.create)
+    ..aOM<$16.PoseInFrame>(1, _omitFieldNames ? '' : 'pose', subBuilder: $16.PoseInFrame.create)
     ..hasRequiredFields = false
   ;
 
@@ -969,22 +969,22 @@ class GetPoseResponse extends $pb.GeneratedMessage {
   static GetPoseResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $15.PoseInFrame get pose => $_getN(0);
+  $16.PoseInFrame get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($15.PoseInFrame v) { setField(1, v); }
+  set pose($16.PoseInFrame v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $15.PoseInFrame ensurePose() => $_ensure(0);
+  $16.PoseInFrame ensurePose() => $_ensure(0);
 }
 
 class StopPlanRequest extends $pb.GeneratedMessage {
   factory StopPlanRequest({
     $core.String? name,
-    $15.ResourceName? componentName,
-    $46.Struct? extra,
+    $16.ResourceName? componentName,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1004,8 +1004,8 @@ class StopPlanRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$15.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1042,27 +1042,27 @@ class StopPlanRequest extends $pb.GeneratedMessage {
 
   /// The component of the currently executing plan to stop
   @$pb.TagNumber(2)
-  $15.ResourceName get componentName => $_getN(1);
+  $16.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
-  set componentName($15.ResourceName v) { setField(2, v); }
+  set componentName($16.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasComponentName() => $_has(1);
   @$pb.TagNumber(2)
   void clearComponentName() => clearField(2);
   @$pb.TagNumber(2)
-  $15.ResourceName ensureComponentName() => $_ensure(1);
+  $16.ResourceName ensureComponentName() => $_ensure(1);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(2);
+  $47.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(2);
+  $47.Struct ensureExtra() => $_ensure(2);
 }
 
 class StopPlanResponse extends $pb.GeneratedMessage {
@@ -1101,7 +1101,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   factory ListPlanStatusesRequest({
     $core.String? name,
     $core.bool? onlyActivePlans,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1122,7 +1122,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlanStatusesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOB(2, _omitFieldNames ? '' : 'onlyActivePlans')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1170,15 +1170,15 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(2);
+  $47.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(2);
+  $47.Struct ensureExtra() => $_ensure(2);
 }
 
 /// Status of all executed / executing plan statuses with associated IDs within the 24 hour TTL
@@ -1231,10 +1231,10 @@ class ListPlanStatusesResponse extends $pb.GeneratedMessage {
 class GetPlanRequest extends $pb.GeneratedMessage {
   factory GetPlanRequest({
     $core.String? name,
-    $15.ResourceName? componentName,
+    $16.ResourceName? componentName,
     $core.bool? lastPlanOnly,
     $core.String? executionId,
-    $46.Struct? extra,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1260,10 +1260,10 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPlanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$15.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
+    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
     ..aOB(3, _omitFieldNames ? '' : 'lastPlanOnly')
     ..aOS(4, _omitFieldNames ? '' : 'executionId')
-    ..aOM<$46.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1300,15 +1300,15 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 
   /// The name of the component which was requested to be moved.
   @$pb.TagNumber(2)
-  $15.ResourceName get componentName => $_getN(1);
+  $16.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
-  set componentName($15.ResourceName v) { setField(2, v); }
+  set componentName($16.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasComponentName() => $_has(1);
   @$pb.TagNumber(2)
   void clearComponentName() => clearField(2);
   @$pb.TagNumber(2)
-  $15.ResourceName ensureComponentName() => $_ensure(1);
+  $16.ResourceName ensureComponentName() => $_ensure(1);
 
   /// If supplied, the response will only return
   /// the the last plan for the component / execution
@@ -1333,15 +1333,15 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $46.Struct get extra => $_getN(4);
+  $47.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
-  set extra($46.Struct v) { setField(99, v); }
+  set extra($47.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(4);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $46.Struct ensureExtra() => $_ensure(4);
+  $47.Struct ensureExtra() => $_ensure(4);
 }
 
 class GetPlanResponse extends $pb.GeneratedMessage {
@@ -1788,7 +1788,7 @@ class PlanWithStatus extends $pb.GeneratedMessage {
 class PlanStatusWithID extends $pb.GeneratedMessage {
   factory PlanStatusWithID({
     $core.String? planId,
-    $15.ResourceName? componentName,
+    $16.ResourceName? componentName,
     $core.String? executionId,
     PlanStatus? status,
   }) {
@@ -1813,7 +1813,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatusWithID', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'planId')
-    ..aOM<$15.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
+    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'executionId')
     ..aOM<PlanStatus>(4, _omitFieldNames ? '' : 'status', subBuilder: PlanStatus.create)
     ..hasRequiredFields = false
@@ -1855,15 +1855,15 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
   /// NOTE: A plan may move more components than just the
   /// component_name.
   @$pb.TagNumber(2)
-  $15.ResourceName get componentName => $_getN(1);
+  $16.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
-  set componentName($15.ResourceName v) { setField(2, v); }
+  set componentName($16.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasComponentName() => $_has(1);
   @$pb.TagNumber(2)
   void clearComponentName() => clearField(2);
   @$pb.TagNumber(2)
-  $15.ResourceName ensureComponentName() => $_ensure(1);
+  $16.ResourceName ensureComponentName() => $_ensure(1);
 
   /// The unique ID which identifies the plan execution.
   /// Multiple plans will share the same execution_id if they were
@@ -1894,7 +1894,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
 class PlanStatus extends $pb.GeneratedMessage {
   factory PlanStatus({
     PlanState? state,
-    $47.Timestamp? timestamp,
+    $48.Timestamp? timestamp,
     $core.String? reason,
   }) {
     final $result = create();
@@ -1915,7 +1915,7 @@ class PlanStatus extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..e<PlanState>(1, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PlanState.PLAN_STATE_UNSPECIFIED, valueOf: PlanState.valueOf, enumValues: PlanState.values)
-    ..aOM<$47.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $47.Timestamp.create)
+    ..aOM<$48.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $48.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false
   ;
@@ -1953,15 +1953,15 @@ class PlanStatus extends $pb.GeneratedMessage {
 
   /// The time the executing plan transtioned to the state
   @$pb.TagNumber(2)
-  $47.Timestamp get timestamp => $_getN(1);
+  $48.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($47.Timestamp v) { setField(2, v); }
+  set timestamp($48.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $47.Timestamp ensureTimestamp() => $_ensure(1);
+  $48.Timestamp ensureTimestamp() => $_ensure(1);
 
   /// The reason for the state change. If motion plan failed
   /// this will return the error message.
@@ -1981,7 +1981,7 @@ class PlanStatus extends $pb.GeneratedMessage {
 class Plan extends $pb.GeneratedMessage {
   factory Plan({
     $core.String? id,
-    $15.ResourceName? componentName,
+    $16.ResourceName? componentName,
     $core.String? executionId,
     $core.Iterable<PlanStep>? steps,
   }) {
@@ -2006,7 +2006,7 @@ class Plan extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Plan', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$15.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $15.ResourceName.create)
+    ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentName', subBuilder: $16.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'executionId')
     ..pc<PlanStep>(4, _omitFieldNames ? '' : 'steps', $pb.PbFieldType.PM, subBuilder: PlanStep.create)
     ..hasRequiredFields = false
@@ -2048,15 +2048,15 @@ class Plan extends $pb.GeneratedMessage {
   /// NOTE: A plan may move more components than just the
   /// root component.
   @$pb.TagNumber(2)
-  $15.ResourceName get componentName => $_getN(1);
+  $16.ResourceName get componentName => $_getN(1);
   @$pb.TagNumber(2)
-  set componentName($15.ResourceName v) { setField(2, v); }
+  set componentName($16.ResourceName v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasComponentName() => $_has(1);
   @$pb.TagNumber(2)
   void clearComponentName() => clearField(2);
   @$pb.TagNumber(2)
-  $15.ResourceName ensureComponentName() => $_ensure(1);
+  $16.ResourceName ensureComponentName() => $_ensure(1);
 
   /// The unique ID which identifies the execution.
   /// Multiple plans will share the same execution_id if they were
@@ -2126,7 +2126,7 @@ class PlanStep extends $pb.GeneratedMessage {
 /// A pose
 class ComponentState extends $pb.GeneratedMessage {
   factory ComponentState({
-    $15.Pose? pose,
+    $16.Pose? pose,
   }) {
     final $result = create();
     if (pose != null) {
@@ -2139,7 +2139,7 @@ class ComponentState extends $pb.GeneratedMessage {
   factory ComponentState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComponentState', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
-    ..aOM<$15.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $15.Pose.create)
+    ..aOM<$16.Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $16.Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -2165,15 +2165,15 @@ class ComponentState extends $pb.GeneratedMessage {
   static ComponentState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $15.Pose get pose => $_getN(0);
+  $16.Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($15.Pose v) { setField(1, v); }
+  set pose($16.Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $15.Pose ensurePose() => $_ensure(0);
+  $16.Pose ensurePose() => $_ensure(0);
 }
 
 

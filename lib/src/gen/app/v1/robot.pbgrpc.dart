@@ -15,28 +15,28 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'robot.pb.dart' as $13;
+import 'robot.pb.dart' as $14;
 
 export 'robot.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.v1.RobotService')
 class RobotServiceClient extends $grpc.Client {
-  static final _$config = $grpc.ClientMethod<$13.ConfigRequest, $13.ConfigResponse>(
+  static final _$config = $grpc.ClientMethod<$14.ConfigRequest, $14.ConfigResponse>(
       '/viam.app.v1.RobotService/Config',
-      ($13.ConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.ConfigResponse.fromBuffer(value));
-  static final _$certificate = $grpc.ClientMethod<$13.CertificateRequest, $13.CertificateResponse>(
+      ($14.ConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.ConfigResponse.fromBuffer(value));
+  static final _$certificate = $grpc.ClientMethod<$14.CertificateRequest, $14.CertificateResponse>(
       '/viam.app.v1.RobotService/Certificate',
-      ($13.CertificateRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.CertificateResponse.fromBuffer(value));
-  static final _$log = $grpc.ClientMethod<$13.LogRequest, $13.LogResponse>(
+      ($14.CertificateRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.CertificateResponse.fromBuffer(value));
+  static final _$log = $grpc.ClientMethod<$14.LogRequest, $14.LogResponse>(
       '/viam.app.v1.RobotService/Log',
-      ($13.LogRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.LogResponse.fromBuffer(value));
-  static final _$needsRestart = $grpc.ClientMethod<$13.NeedsRestartRequest, $13.NeedsRestartResponse>(
+      ($14.LogRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.LogResponse.fromBuffer(value));
+  static final _$needsRestart = $grpc.ClientMethod<$14.NeedsRestartRequest, $14.NeedsRestartResponse>(
       '/viam.app.v1.RobotService/NeedsRestart',
-      ($13.NeedsRestartRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.NeedsRestartResponse.fromBuffer(value));
+      ($14.NeedsRestartRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.NeedsRestartResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -44,19 +44,19 @@ class RobotServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$13.ConfigResponse> config($13.ConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.ConfigResponse> config($14.ConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$config, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.CertificateResponse> certificate($13.CertificateRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.CertificateResponse> certificate($14.CertificateRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$certificate, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.LogResponse> log($13.LogRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.LogResponse> log($14.LogRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$log, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.NeedsRestartResponse> needsRestart($13.NeedsRestartRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.NeedsRestartResponse> needsRestart($14.NeedsRestartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$needsRestart, request, options: options);
   }
 }
@@ -66,54 +66,54 @@ abstract class RobotServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.v1.RobotService';
 
   RobotServiceBase() {
-    $addMethod($grpc.ServiceMethod<$13.ConfigRequest, $13.ConfigResponse>(
+    $addMethod($grpc.ServiceMethod<$14.ConfigRequest, $14.ConfigResponse>(
         'Config',
         config_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.ConfigRequest.fromBuffer(value),
-        ($13.ConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.CertificateRequest, $13.CertificateResponse>(
+        ($core.List<$core.int> value) => $14.ConfigRequest.fromBuffer(value),
+        ($14.ConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.CertificateRequest, $14.CertificateResponse>(
         'Certificate',
         certificate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.CertificateRequest.fromBuffer(value),
-        ($13.CertificateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.LogRequest, $13.LogResponse>(
+        ($core.List<$core.int> value) => $14.CertificateRequest.fromBuffer(value),
+        ($14.CertificateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.LogRequest, $14.LogResponse>(
         'Log',
         log_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.LogRequest.fromBuffer(value),
-        ($13.LogResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.NeedsRestartRequest, $13.NeedsRestartResponse>(
+        ($core.List<$core.int> value) => $14.LogRequest.fromBuffer(value),
+        ($14.LogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.NeedsRestartRequest, $14.NeedsRestartResponse>(
         'NeedsRestart',
         needsRestart_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.NeedsRestartRequest.fromBuffer(value),
-        ($13.NeedsRestartResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $14.NeedsRestartRequest.fromBuffer(value),
+        ($14.NeedsRestartResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$13.ConfigResponse> config_Pre($grpc.ServiceCall call, $async.Future<$13.ConfigRequest> request) async {
+  $async.Future<$14.ConfigResponse> config_Pre($grpc.ServiceCall call, $async.Future<$14.ConfigRequest> request) async {
     return config(call, await request);
   }
 
-  $async.Future<$13.CertificateResponse> certificate_Pre($grpc.ServiceCall call, $async.Future<$13.CertificateRequest> request) async {
+  $async.Future<$14.CertificateResponse> certificate_Pre($grpc.ServiceCall call, $async.Future<$14.CertificateRequest> request) async {
     return certificate(call, await request);
   }
 
-  $async.Future<$13.LogResponse> log_Pre($grpc.ServiceCall call, $async.Future<$13.LogRequest> request) async {
+  $async.Future<$14.LogResponse> log_Pre($grpc.ServiceCall call, $async.Future<$14.LogRequest> request) async {
     return log(call, await request);
   }
 
-  $async.Future<$13.NeedsRestartResponse> needsRestart_Pre($grpc.ServiceCall call, $async.Future<$13.NeedsRestartRequest> request) async {
+  $async.Future<$14.NeedsRestartResponse> needsRestart_Pre($grpc.ServiceCall call, $async.Future<$14.NeedsRestartRequest> request) async {
     return needsRestart(call, await request);
   }
 
-  $async.Future<$13.ConfigResponse> config($grpc.ServiceCall call, $13.ConfigRequest request);
-  $async.Future<$13.CertificateResponse> certificate($grpc.ServiceCall call, $13.CertificateRequest request);
-  $async.Future<$13.LogResponse> log($grpc.ServiceCall call, $13.LogRequest request);
-  $async.Future<$13.NeedsRestartResponse> needsRestart($grpc.ServiceCall call, $13.NeedsRestartRequest request);
+  $async.Future<$14.ConfigResponse> config($grpc.ServiceCall call, $14.ConfigRequest request);
+  $async.Future<$14.CertificateResponse> certificate($grpc.ServiceCall call, $14.CertificateRequest request);
+  $async.Future<$14.LogResponse> log($grpc.ServiceCall call, $14.LogRequest request);
+  $async.Future<$14.NeedsRestartResponse> needsRestart($grpc.ServiceCall call, $14.NeedsRestartRequest request);
 }

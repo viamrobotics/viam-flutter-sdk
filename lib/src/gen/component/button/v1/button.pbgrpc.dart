@@ -15,21 +15,21 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../common/v1/common.pb.dart' as $15;
-import 'button.pb.dart' as $20;
+import '../../../common/v1/common.pb.dart' as $16;
+import 'button.pb.dart' as $21;
 
 export 'button.pb.dart';
 
 @$pb.GrpcServiceName('viam.component.button.v1.ButtonService')
 class ButtonServiceClient extends $grpc.Client {
-  static final _$push = $grpc.ClientMethod<$20.PushRequest, $20.PushResponse>(
+  static final _$push = $grpc.ClientMethod<$21.PushRequest, $21.PushResponse>(
       '/viam.component.button.v1.ButtonService/Push',
-      ($20.PushRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $20.PushResponse.fromBuffer(value));
-  static final _$doCommand = $grpc.ClientMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
+      ($21.PushRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $21.PushResponse.fromBuffer(value));
+  static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
       '/viam.component.button.v1.ButtonService/DoCommand',
-      ($15.DoCommandRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $15.DoCommandResponse.fromBuffer(value));
+      ($16.DoCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
 
   ButtonServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -37,11 +37,11 @@ class ButtonServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$20.PushResponse> push($20.PushRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$21.PushResponse> push($21.PushRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$push, request, options: options);
   }
 
-  $grpc.ResponseFuture<$15.DoCommandResponse> doCommand($15.DoCommandRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 }
@@ -51,30 +51,30 @@ abstract class ButtonServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.component.button.v1.ButtonService';
 
   ButtonServiceBase() {
-    $addMethod($grpc.ServiceMethod<$20.PushRequest, $20.PushResponse>(
+    $addMethod($grpc.ServiceMethod<$21.PushRequest, $21.PushResponse>(
         'Push',
         push_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $20.PushRequest.fromBuffer(value),
-        ($20.PushResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$15.DoCommandRequest, $15.DoCommandResponse>(
+        ($core.List<$core.int> value) => $21.PushRequest.fromBuffer(value),
+        ($21.PushResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $15.DoCommandRequest.fromBuffer(value),
-        ($15.DoCommandResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
+        ($16.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$20.PushResponse> push_Pre($grpc.ServiceCall call, $async.Future<$20.PushRequest> request) async {
+  $async.Future<$21.PushResponse> push_Pre($grpc.ServiceCall call, $async.Future<$21.PushRequest> request) async {
     return push(call, await request);
   }
 
-  $async.Future<$15.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$15.DoCommandRequest> request) async {
+  $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
 
-  $async.Future<$20.PushResponse> push($grpc.ServiceCall call, $20.PushRequest request);
-  $async.Future<$15.DoCommandResponse> doCommand($grpc.ServiceCall call, $15.DoCommandRequest request);
+  $async.Future<$21.PushResponse> push($grpc.ServiceCall call, $21.PushRequest request);
+  $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
 }

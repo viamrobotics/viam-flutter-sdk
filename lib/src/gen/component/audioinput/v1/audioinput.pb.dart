@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $45;
+import '../../../google/protobuf/duration.pb.dart' as $46;
 import 'audioinput.pbenum.dart';
 
 export 'audioinput.pbenum.dart';
@@ -22,7 +22,7 @@ export 'audioinput.pbenum.dart';
 class RecordRequest extends $pb.GeneratedMessage {
   factory RecordRequest({
     $core.String? name,
-    $45.Duration? duration,
+    $46.Duration? duration,
   }) {
     final $result = create();
     if (name != null) {
@@ -39,7 +39,7 @@ class RecordRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$45.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $45.Duration.create)
+    ..aOM<$46.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $46.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -75,15 +75,15 @@ class RecordRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $45.Duration get duration => $_getN(1);
+  $46.Duration get duration => $_getN(1);
   @$pb.TagNumber(2)
-  set duration($45.Duration v) { setField(2, v); }
+  set duration($46.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDuration() => $_has(1);
   @$pb.TagNumber(2)
   void clearDuration() => clearField(2);
   @$pb.TagNumber(2)
-  $45.Duration ensureDuration() => $_ensure(1);
+  $46.Duration ensureDuration() => $_ensure(1);
 }
 
 class AudioChunkInfo extends $pb.GeneratedMessage {
@@ -436,7 +436,7 @@ class PropertiesRequest extends $pb.GeneratedMessage {
 class PropertiesResponse extends $pb.GeneratedMessage {
   factory PropertiesResponse({
     $core.int? channelCount,
-    $45.Duration? latency,
+    $46.Duration? latency,
     $core.int? sampleRate,
     $core.int? sampleSize,
     $core.bool? isBigEndian,
@@ -473,7 +473,7 @@ class PropertiesResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.audioinput.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'channelCount', $pb.PbFieldType.OU3)
-    ..aOM<$45.Duration>(2, _omitFieldNames ? '' : 'latency', subBuilder: $45.Duration.create)
+    ..aOM<$46.Duration>(2, _omitFieldNames ? '' : 'latency', subBuilder: $46.Duration.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'sampleRate', $pb.PbFieldType.OU3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'sampleSize', $pb.PbFieldType.OU3)
     ..aOB(5, _omitFieldNames ? '' : 'isBigEndian')
@@ -513,15 +513,15 @@ class PropertiesResponse extends $pb.GeneratedMessage {
   void clearChannelCount() => clearField(1);
 
   @$pb.TagNumber(2)
-  $45.Duration get latency => $_getN(1);
+  $46.Duration get latency => $_getN(1);
   @$pb.TagNumber(2)
-  set latency($45.Duration v) { setField(2, v); }
+  set latency($46.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLatency() => $_has(1);
   @$pb.TagNumber(2)
   void clearLatency() => clearField(2);
   @$pb.TagNumber(2)
-  $45.Duration ensureLatency() => $_ensure(1);
+  $46.Duration ensureLatency() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.int get sampleRate => $_getIZ(2);

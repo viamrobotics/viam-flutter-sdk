@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $46;
-import '../../../google/protobuf/timestamp.pb.dart' as $47;
+import '../../../google/protobuf/struct.pb.dart' as $47;
+import '../../../google/protobuf/timestamp.pb.dart' as $48;
 import 'packages.pbenum.dart';
 
 export 'packages.pbenum.dart';
@@ -105,7 +105,7 @@ class PackageInfo extends $pb.GeneratedMessage {
     $core.String? version,
     PackageType? type,
     $core.Iterable<FileInfo>? files,
-    $46.Struct? metadata,
+    $47.Struct? metadata,
     $core.String? platform,
   }) {
     final $result = create();
@@ -142,7 +142,7 @@ class PackageInfo extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<PackageType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PackageType.PACKAGE_TYPE_UNSPECIFIED, valueOf: PackageType.valueOf, enumValues: PackageType.values)
     ..pc<FileInfo>(5, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: FileInfo.create)
-    ..aOM<$46.Struct>(6, _omitFieldNames ? '' : 'metadata', subBuilder: $46.Struct.create)
+    ..aOM<$47.Struct>(6, _omitFieldNames ? '' : 'metadata', subBuilder: $47.Struct.create)
     ..aOS(7, _omitFieldNames ? '' : 'platform')
     ..hasRequiredFields = false
   ;
@@ -208,15 +208,15 @@ class PackageInfo extends $pb.GeneratedMessage {
   $core.List<FileInfo> get files => $_getList(4);
 
   @$pb.TagNumber(6)
-  $46.Struct get metadata => $_getN(5);
+  $47.Struct get metadata => $_getN(5);
   @$pb.TagNumber(6)
-  set metadata($46.Struct v) { setField(6, v); }
+  set metadata($47.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasMetadata() => $_has(5);
   @$pb.TagNumber(6)
   void clearMetadata() => clearField(6);
   @$pb.TagNumber(6)
-  $46.Struct ensureMetadata() => $_ensure(5);
+  $47.Struct ensureMetadata() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get platform => $_getSZ(6);
@@ -490,7 +490,7 @@ class Package extends $pb.GeneratedMessage {
   factory Package({
     PackageInfo? info,
     $core.String? url,
-    $47.Timestamp? createdOn,
+    $48.Timestamp? createdOn,
     $core.String? checksum,
     $core.String? id,
   }) {
@@ -519,7 +519,7 @@ class Package extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Package', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.packages.v1'), createEmptyInstance: create)
     ..aOM<PackageInfo>(1, _omitFieldNames ? '' : 'info', subBuilder: PackageInfo.create)
     ..aOS(2, _omitFieldNames ? '' : 'url')
-    ..aOM<$47.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $47.Timestamp.create)
+    ..aOM<$48.Timestamp>(3, _omitFieldNames ? '' : 'createdOn', subBuilder: $48.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'checksum')
     ..aOS(5, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
@@ -567,15 +567,15 @@ class Package extends $pb.GeneratedMessage {
   void clearUrl() => clearField(2);
 
   @$pb.TagNumber(3)
-  $47.Timestamp get createdOn => $_getN(2);
+  $48.Timestamp get createdOn => $_getN(2);
   @$pb.TagNumber(3)
-  set createdOn($47.Timestamp v) { setField(3, v); }
+  set createdOn($48.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedOn() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedOn() => clearField(3);
   @$pb.TagNumber(3)
-  $47.Timestamp ensureCreatedOn() => $_ensure(2);
+  $48.Timestamp ensureCreatedOn() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get checksum => $_getSZ(3);
