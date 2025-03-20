@@ -15,6 +15,8 @@ export 'src/components/base/base.dart';
 export 'src/components/base/client.dart';
 export 'src/components/board/board.dart';
 export 'src/components/board/client.dart';
+export 'src/components/button/button.dart';
+export 'src/components/button/client.dart'; 
 export 'src/components/camera/camera.dart';
 export 'src/components/camera/client.dart';
 export 'src/components/gantry/client.dart';
