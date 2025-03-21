@@ -104,14 +104,15 @@ void main() {
       test('doCommand', () async {
         final client = ButtonServiceClient(channel);
         final Map<String, String> command = {'command': 'args'};
-        final request = DoCommandRequest()
-          ..name = name
-          ..command = command.toStruct();
+        final request =
+            DoCommandRequest()
+              ..name = name
+              ..command = command.toStruct();
         final response = await client.doCommand(request);
         expect(response.result.toMap(), {'command': command});
       });
     });
-    
+
     group('Button Client Tests', () {
       test('push should update the button pushed state', () async {
         final client = ButtonClient(button.name, channel);
