@@ -15427,11 +15427,15 @@ class GetAppContentRequest extends $pb.GeneratedMessage {
 
 class GetAppContentResponse extends $pb.GeneratedMessage {
   factory GetAppContentResponse({
-    $core.String? url,
+    $core.String? blobPath,
+    $core.String? entrypoint,
   }) {
     final $result = create();
-    if (url != null) {
-      $result.url = url;
+    if (blobPath != null) {
+      $result.blobPath = blobPath;
+    }
+    if (entrypoint != null) {
+      $result.entrypoint = entrypoint;
     }
     return $result;
   }
@@ -15440,7 +15444,8 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
   factory GetAppContentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppContentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'url')
+    ..aOS(1, _omitFieldNames ? '' : 'blobPath')
+    ..aOS(2, _omitFieldNames ? '' : 'entrypoint')
     ..hasRequiredFields = false
   ;
 
@@ -15466,13 +15471,22 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
   static GetAppContentResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get url => $_getSZ(0);
+  $core.String get blobPath => $_getSZ(0);
   @$pb.TagNumber(1)
-  set url($core.String v) { $_setString(0, v); }
+  set blobPath($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasUrl() => $_has(0);
+  $core.bool hasBlobPath() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  void clearBlobPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entrypoint => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entrypoint($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEntrypoint() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntrypoint() => clearField(2);
 }
 
 class OrganizationSetLogoRequest extends $pb.GeneratedMessage {

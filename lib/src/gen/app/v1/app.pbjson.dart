@@ -3756,13 +3756,15 @@ final $typed_data.Uint8List getAppContentRequestDescriptor = $convert.base64Deco
 const GetAppContentResponse$json = {
   '1': 'GetAppContentResponse',
   '2': [
-    {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'blob_path', '3': 1, '4': 1, '5': 9, '10': 'blobPath'},
+    {'1': 'entrypoint', '3': 2, '4': 1, '5': 9, '10': 'entrypoint'},
   ],
 };
 
 /// Descriptor for `GetAppContentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAppContentResponseDescriptor = $convert.base64Decode(
-    'ChVHZXRBcHBDb250ZW50UmVzcG9uc2USEAoDdXJsGAEgASgJUgN1cmw=');
+    'ChVHZXRBcHBDb250ZW50UmVzcG9uc2USGwoJYmxvYl9wYXRoGAEgASgJUghibG9iUGF0aBIeCg'
+    'plbnRyeXBvaW50GAIgASgJUgplbnRyeXBvaW50');
 
 @$core.Deprecated('Use organizationSetLogoRequestDescriptor instead')
 const OrganizationSetLogoRequest$json = {

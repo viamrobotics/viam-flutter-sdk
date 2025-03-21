@@ -92,14 +92,18 @@ final $typed_data.Uint8List listDataPipelinesResponseDescriptor = $convert.base6
 const CreateDataPipelineRequest$json = {
   '1': 'CreateDataPipelineRequest',
   '2': [
-    {'1': 'data_pipeline', '3': 1, '4': 1, '5': 11, '6': '.viam.app.datapipelines.v1.DataPipeline', '10': 'dataPipeline'},
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
+    {'1': 'schedule', '3': 4, '4': 1, '5': 9, '10': 'schedule'},
   ],
 };
 
 /// Descriptor for `CreateDataPipelineRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createDataPipelineRequestDescriptor = $convert.base64Decode(
-    'ChlDcmVhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0EkwKDWRhdGFfcGlwZWxpbmUYASABKAsyJy52aW'
-    'FtLmFwcC5kYXRhcGlwZWxpbmVzLnYxLkRhdGFQaXBlbGluZVIMZGF0YVBpcGVsaW5l');
+    'ChlDcmVhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
+    'JnYW5pemF0aW9uSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIdCgptcWxfYmluYXJ5GAMgAygMUglt'
+    'cWxCaW5hcnkSGgoIc2NoZWR1bGUYBCABKAlSCHNjaGVkdWxl');
 
 @$core.Deprecated('Use createDataPipelineResponseDescriptor instead')
 const CreateDataPipelineResponse$json = {
@@ -118,27 +122,27 @@ const UpdateDataPipelineRequest$json = {
   '1': 'UpdateDataPipelineRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'data_pipeline', '3': 2, '4': 1, '5': 11, '6': '.viam.app.datapipelines.v1.DataPipeline', '10': 'dataPipeline'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
+    {'1': 'schedule', '3': 4, '4': 1, '5': 9, '10': 'schedule'},
+    {'1': 'enabled', '3': 5, '4': 1, '5': 8, '10': 'enabled'},
   ],
 };
 
 /// Descriptor for `UpdateDataPipelineRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateDataPipelineRequestDescriptor = $convert.base64Decode(
-    'ChlVcGRhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBJMCg1kYXRhX3BpcG'
-    'VsaW5lGAIgASgLMicudmlhbS5hcHAuZGF0YXBpcGVsaW5lcy52MS5EYXRhUGlwZWxpbmVSDGRh'
-    'dGFQaXBlbGluZQ==');
+    'ChlVcGRhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgAS'
+    'gJUgRuYW1lEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeRIaCghzY2hlZHVsZRgEIAEo'
+    'CVIIc2NoZWR1bGUSGAoHZW5hYmxlZBgFIAEoCFIHZW5hYmxlZA==');
 
 @$core.Deprecated('Use updateDataPipelineResponseDescriptor instead')
 const UpdateDataPipelineResponse$json = {
   '1': 'UpdateDataPipelineResponse',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-  ],
 };
 
 /// Descriptor for `UpdateDataPipelineResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateDataPipelineResponseDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVEYXRhUGlwZWxpbmVSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQ=');
+    'ChpVcGRhdGVEYXRhUGlwZWxpbmVSZXNwb25zZQ==');
 
 @$core.Deprecated('Use deleteDataPipelineRequestDescriptor instead')
 const DeleteDataPipelineRequest$json = {
