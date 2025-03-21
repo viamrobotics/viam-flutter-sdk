@@ -6,6 +6,8 @@ import '../components/base/base.dart';
 import '../components/base/client.dart';
 import '../components/board/board.dart';
 import '../components/board/client.dart';
+import '../components/button/button.dart';
+import '../components/button/client.dart';
 import '../components/camera/camera.dart';
 import '../components/camera/client.dart';
 import '../components/gantry/client.dart';
@@ -62,6 +64,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
     registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
     registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
+    registerSubtype(ResourceRegistration(Button.subtype, (name, channel) => ButtontClient(name, channel)));
     registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
     registerSubtype(ResourceRegistration(Gantry.subtype, (name, channel) => GantryClient(name, channel)));
     registerSubtype(ResourceRegistration(Generic.subtype, (name, channel) => GenericClient(name, channel)));
