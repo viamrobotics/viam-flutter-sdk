@@ -210,6 +210,7 @@ class GetDataPipelineRequest extends $pb.GeneratedMessage {
   static GetDataPipelineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDataPipelineRequest>(create);
   static GetDataPipelineRequest? _defaultInstance;
 
+  /// The ID of the data pipeline to retrieve.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -312,6 +313,7 @@ class ListDataPipelinesRequest extends $pb.GeneratedMessage {
   static ListDataPipelinesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDataPipelinesRequest>(create);
   static ListDataPipelinesRequest? _defaultInstance;
 
+  /// The associated Viam organization ID.
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -368,11 +370,23 @@ class ListDataPipelinesResponse extends $pb.GeneratedMessage {
 
 class CreateDataPipelineRequest extends $pb.GeneratedMessage {
   factory CreateDataPipelineRequest({
-    DataPipeline? dataPipeline,
+    $core.String? organizationId,
+    $core.String? name,
+    $core.Iterable<$core.List<$core.int>>? mqlBinary,
+    $core.String? schedule,
   }) {
     final $result = create();
-    if (dataPipeline != null) {
-      $result.dataPipeline = dataPipeline;
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mqlBinary != null) {
+      $result.mqlBinary.addAll(mqlBinary);
+    }
+    if (schedule != null) {
+      $result.schedule = schedule;
     }
     return $result;
   }
@@ -381,7 +395,10 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
   factory CreateDataPipelineRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateDataPipelineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
-    ..aOM<DataPipeline>(1, _omitFieldNames ? '' : 'dataPipeline', subBuilder: DataPipeline.create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
+    ..aOS(4, _omitFieldNames ? '' : 'schedule')
     ..hasRequiredFields = false
   ;
 
@@ -406,16 +423,41 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
   static CreateDataPipelineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDataPipelineRequest>(create);
   static CreateDataPipelineRequest? _defaultInstance;
 
+  /// The associated Viam organization ID.
   @$pb.TagNumber(1)
-  DataPipeline get dataPipeline => $_getN(0);
+  $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set dataPipeline(DataPipeline v) { setField(1, v); }
+  set organizationId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDataPipeline() => $_has(0);
+  $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDataPipeline() => clearField(1);
-  @$pb.TagNumber(1)
-  DataPipeline ensureDataPipeline() => $_ensure(0);
+  void clearOrganizationId() => clearField(1);
+
+  /// A unique identifier at the org level.
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  /// A MongoDB aggregation pipeline as a list of BSON documents, where
+  /// each document is one stage in the pipeline.
+  @$pb.TagNumber(3)
+  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(2);
+
+  /// A cron expression representing the expected execution schedule in UTC (note this also
+  /// defines the input time window; an hourly schedule would process 1 hour of data at a time).
+  @$pb.TagNumber(4)
+  $core.String get schedule => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set schedule($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSchedule() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSchedule() => clearField(4);
 }
 
 class CreateDataPipelineResponse extends $pb.GeneratedMessage {
@@ -458,6 +500,7 @@ class CreateDataPipelineResponse extends $pb.GeneratedMessage {
   static CreateDataPipelineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDataPipelineResponse>(create);
   static CreateDataPipelineResponse? _defaultInstance;
 
+  /// The ID of the newly created data pipeline.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -471,14 +514,26 @@ class CreateDataPipelineResponse extends $pb.GeneratedMessage {
 class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   factory UpdateDataPipelineRequest({
     $core.String? id,
-    DataPipeline? dataPipeline,
+    $core.String? name,
+    $core.Iterable<$core.List<$core.int>>? mqlBinary,
+    $core.String? schedule,
+    $core.bool? enabled,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
-    if (dataPipeline != null) {
-      $result.dataPipeline = dataPipeline;
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mqlBinary != null) {
+      $result.mqlBinary.addAll(mqlBinary);
+    }
+    if (schedule != null) {
+      $result.schedule = schedule;
+    }
+    if (enabled != null) {
+      $result.enabled = enabled;
     }
     return $result;
   }
@@ -488,7 +543,10 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDataPipelineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<DataPipeline>(2, _omitFieldNames ? '' : 'dataPipeline', subBuilder: DataPipeline.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
+    ..aOS(4, _omitFieldNames ? '' : 'schedule')
+    ..aOB(5, _omitFieldNames ? '' : 'enabled')
     ..hasRequiredFields = false
   ;
 
@@ -513,6 +571,7 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   static UpdateDataPipelineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDataPipelineRequest>(create);
   static UpdateDataPipelineRequest? _defaultInstance;
 
+  /// The ID of the data pipeline to update.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -522,34 +581,50 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// A unique identifier at the org level.
   @$pb.TagNumber(2)
-  DataPipeline get dataPipeline => $_getN(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set dataPipeline(DataPipeline v) { setField(2, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDataPipeline() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDataPipeline() => clearField(2);
-  @$pb.TagNumber(2)
-  DataPipeline ensureDataPipeline() => $_ensure(1);
+  void clearName() => clearField(2);
+
+  /// A MongoDB aggregation pipeline as a list of BSON documents, where
+  /// each document is one stage in the pipeline.
+  @$pb.TagNumber(3)
+  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(2);
+
+  /// A cron expression representing the expected execution schedule in UTC (note this also
+  /// defines the input time window; an hourly schedule would process 1 hour of data at a time).
+  @$pb.TagNumber(4)
+  $core.String get schedule => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set schedule($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSchedule() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSchedule() => clearField(4);
+
+  /// Whether or not the pipeline is enabled.
+  @$pb.TagNumber(5)
+  $core.bool get enabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set enabled($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnabled() => clearField(5);
 }
 
 class UpdateDataPipelineResponse extends $pb.GeneratedMessage {
-  factory UpdateDataPipelineResponse({
-    $core.String? id,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
-  }
+  factory UpdateDataPipelineResponse() => create();
   UpdateDataPipelineResponse._() : super();
   factory UpdateDataPipelineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateDataPipelineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDataPipelineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
@@ -573,15 +648,6 @@ class UpdateDataPipelineResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateDataPipelineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDataPipelineResponse>(create);
   static UpdateDataPipelineResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
 }
 
 class DeleteDataPipelineRequest extends $pb.GeneratedMessage {
@@ -624,6 +690,7 @@ class DeleteDataPipelineRequest extends $pb.GeneratedMessage {
   static DeleteDataPipelineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteDataPipelineRequest>(create);
   static DeleteDataPipelineRequest? _defaultInstance;
 
+  /// The ID of the data pipeline to delete.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
