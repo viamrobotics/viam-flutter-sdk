@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the ensureDataPipeline method from the UpdateDataPipelineRequest class, for the Dart programming language.">
-  <title>ensureDataPipeline method - UpdateDataPipelineRequest class - viam_protos.app.data_pipelines library - Dart API</title>
+  <meta name="description" content="API docs for the schedule property from the UpdateDataPipelineRequest class, for the Dart programming language.">
+  <title>schedule property - UpdateDataPipelineRequest class - viam_protos.app.data_pipelines library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_protos.app.data_pipelines">protos&#47;app&#47;data_pipelines.dart</a></li>
     <li><a href="../../viam_protos.app.data_pipelines/UpdateDataPipelineRequest-class.html">UpdateDataPipelineRequest</a></li>
-    <li class="self-crumb">ensureDataPipeline method</li>
+    <li class="self-crumb">schedule property</li>
   </ol>
-  <div class="self-name">ensureDataPipeline</div>
+  <div class="self-name">schedule</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -52,36 +52,72 @@
     data-above-sidebar="viam_protos.app.data_pipelines&#47;UpdateDataPipelineRequest-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">ensureDataPipeline</span> method 
+<h1><span class="kind-property">schedule</span> property 
 </h1></div>
 
+    
+
+    
+        
+  <section id="getter">
     <section class="multi-line-signature">
       
   <div>
     <ol class="annotation-list">
-        <li>@<a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/TagNumber-class.html">TagNumber</a>(2)</li>
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/TagNumber-class.html">TagNumber</a>(4)</li>
     </ol>
   </div>
-<span class="returntype"><a href="../../viam_protos.app.data_pipelines/DataPipeline-class.html">DataPipeline</a></span>
-<span class="name ">ensureDataPipeline</span>(<wbr>)
+      <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+      get
+      <span class="name ">schedule</span>
+      
 
+    </section>
+    
+<section class="desc markdown">
+  <p>A cron expression representing the expected execution schedule in UTC (note this also
+defines the input time window; an hourly schedule would process 1 hour of data at a time).</p>
+</section>
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@$pb.TagNumber(4)
+$core.String get schedule =&gt; $_getSZ(3);</code></pre>
+</section>
+
+  </section>
+
+
+        
+  <section id="setter">
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/TagNumber-class.html">TagNumber</a>(4)</li>
+    </ol>
+  </div>
+      set
+      <span class="name ">schedule</span>
+      <span class="signature">(<wbr><span class="parameter" id="schedule=-param-v"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">v</span></span>)</span>
       
 
     </section>
     
 
-
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@$pb.TagNumber(2)
-DataPipeline ensureDataPipeline() =&gt; $_ensure(1);</code></pre>
+  <pre class="language-dart"><code class="language-dart">@$pb.TagNumber(4)
+set schedule($core.String v) { $_setString(3, v); }</code></pre>
 </section>
 
+  </section>
 
-  </div> <!-- /.main-content -->
-  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+</div> <!-- /.main-content -->
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -91,13 +127,13 @@ DataPipeline ensureDataPipeline() =&gt; $_ensure(1);</code></pre>
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_protos.app.data_pipelines">viam_protos.app.data_pipelines</a></li>
     <li><a href="../../viam_protos.app.data_pipelines/UpdateDataPipelineRequest-class.html">UpdateDataPipelineRequest</a></li>
-    <li class="self-crumb">ensureDataPipeline method</li>
+    <li class="self-crumb">schedule property</li>
 </ol>
 
-    <h5>UpdateDataPipelineRequest class</h5>
-    <div id="dartdoc-sidebar-left-content"></div>
-  </div><!--/.sidebar-offcanvas-->
-  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  <h5>UpdateDataPipelineRequest class</h5>
+  <div id="dartdoc-sidebar-left-content"></div>
+</div><!--/.sidebar-offcanvas-->
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
 </main>
 <footer>
