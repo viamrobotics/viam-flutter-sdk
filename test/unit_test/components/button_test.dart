@@ -6,6 +6,8 @@ import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import '../../test_utils.dart';
+
 class FakeButton extends Button {
   bool pushed = false;
   Map<String, dynamic>? extra;
