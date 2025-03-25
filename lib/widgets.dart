@@ -5,6 +5,7 @@ export 'widgets/multi_camera_stream.dart';
 export 'widgets/refreshable_data_table.dart';
 export 'widgets/resources/base.dart';
 export 'widgets/resources/board.dart';
+export 'widgets/resources/button.dart';
 export 'widgets/resources/gripper.dart';
 export 'widgets/resources/motor.dart';
 export 'widgets/resources/sensor.dart';
