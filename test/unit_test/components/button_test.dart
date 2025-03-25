@@ -65,28 +65,14 @@ void main() {
     const name = 'button';
 
     setUp(() async {
-      final port = 50000 + (name.hashCode % 10000);
       button = FakeButton(name);
       final manager = ResourceManager();
       manager.register(Button.getResourceName(name), button);
-
       service = ButtonService(manager);
+      server = Server.create(services: [service]);
+      await serveServerAtUnusedPort(server);
 
-      channel = ClientChannel(
-        'localhost',
-        port: port,
-        options: ChannelOptions(
-          credentials: const ChannelCredentials.insecure(),
-          codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
-        ),
-      );
-
-      server = Server.create(
-        services: [service],
-        interceptors: const <Interceptor>[],
-        codecRegistry: CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
-      );
-      await server.serve(port: port);
+      channel = ClientChannel('localhost', port: server.port!, options: ChannelOptions(credentials: const ChannelCredentials.insecure()));
     });
 
     tearDown(() async {
