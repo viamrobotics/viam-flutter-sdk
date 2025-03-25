@@ -64,7 +64,7 @@ class Registry {
     registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
     registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
     registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
-    registerSubtype(ResourceRegistration(Button.subtype, (name, channel) => ButtontClient(name, channel)));
+    registerSubtype(ResourceRegistration(Button.subtype, (name, channel) => ButtonClient(name, channel)));
     registerSubtype(ResourceRegistration(Camera.subtype, (name, channel) => CameraClient(name, channel)));
     registerSubtype(ResourceRegistration(Gantry.subtype, (name, channel) => GantryClient(name, channel)));
     registerSubtype(ResourceRegistration(Generic.subtype, (name, channel) => GenericClient(name, channel)));

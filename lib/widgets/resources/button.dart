@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart' hide Button;
+import 'package:flutter/material.dart';
 
 import '../../viam_sdk.dart';
-import '../../widgets.dart';
+import '../button.dart';
 
 class ViamButtonWidget extends StatefulWidget {
   final Button button;
@@ -46,7 +46,7 @@ class _ViamButtonWidgetState extends State<ViamButtonWidget> {
           text: 'Push',
           onPressed: isLoading ? null : _pushButton,
         ),
-        if (error != null) 
+        if (error != null)
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Error: $error', style: const TextStyle(color: Colors.red)),
@@ -54,4 +54,4 @@ class _ViamButtonWidgetState extends State<ViamButtonWidget> {
       ],
     );
   }
-} 
+}
