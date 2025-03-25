@@ -38,7 +38,7 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
     } catch (e) {
       setState(() {
         error = e as Error;
-      })
+      });
     }
   }
 
@@ -49,7 +49,7 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
     } catch (e) {
       setState(() {
         error = e as Error;
-      })
+      });
     }
   }
 
