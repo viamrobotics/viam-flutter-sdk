@@ -1,12 +1,20 @@
 # Changelog
 
-## [v0.3.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.3.0) (2025-03-17)
+## [v0.4.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.4.0) (2025-03-25)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.2.2...v0.3.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.3.0...v0.4.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#364](https://github.com/viamrobotics/viam-flutter-sdk/pull/364) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#362](https://github.com/viamrobotics/viam-flutter-sdk/pull/362) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#361](https://github.com/viamrobotics/viam-flutter-sdk/pull/361) ([viambot](https://github.com/viambot))
+- \[RSDK-10127\] Add get and update metadata functions [\#360](https://github.com/viamrobotics/viam-flutter-sdk/pull/360) ([JosephBorodach](https://github.com/JosephBorodach))
+- \[CONSULT-940\] add listMachineSummaries to flutter sdk [\#359](https://github.com/viamrobotics/viam-flutter-sdk/pull/359) ([jckras](https://github.com/jckras))
+- finish discovery removal, change alpha setting for color [\#357](https://github.com/viamrobotics/viam-flutter-sdk/pull/357) ([stuqdog](https://github.com/stuqdog))
+- v0.3.0 [\#356](https://github.com/viamrobotics/viam-flutter-sdk/pull/356) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-9901 - use git-access-token [\#354](https://github.com/viamrobotics/viam-flutter-sdk/pull/354) ([stuqdog](https://github.com/stuqdog))
+- Automated Protos Update [\#353](https://github.com/viamrobotics/viam-flutter-sdk/pull/353) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#352](https://github.com/viamrobotics/viam-flutter-sdk/pull/352) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-9900 - always find unused port for testing [\#351](https://github.com/viamrobotics/viam-flutter-sdk/pull/351) ([stuqdog](https://github.com/stuqdog))
 - RSDK-9901 - run tests in proto workflow [\#350](https://github.com/viamrobotics/viam-flutter-sdk/pull/350) ([stuqdog](https://github.com/stuqdog))
@@ -74,6 +82,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.3.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.3.0) (2025-03-17)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.2.2...v0.3.0)
 
 ## [v0.2.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.2.2) (2025-02-18)
 
