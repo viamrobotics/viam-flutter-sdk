@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 import 'package:viam_sdk/widgets.dart';
 
+import 'screens/button.dart';
 import 'screens/screens.dart';
 
 void main() async {
@@ -115,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
       return BoardScreen(board: Board.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Button.subtype.resourceSubtype) {
-      return ButtonScreen(board: Button.fromRobot(_robot, rname.name), resourceName: rname);
+      return ButtonScreen(button: Button.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Camera.subtype.resourceSubtype) {
       return StreamScreen(camera: Camera.fromRobot(_robot, rname.name), client: _getStream(rname), resourceName: rname);
