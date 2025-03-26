@@ -472,13 +472,13 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   ///  try {
-  ///   final binaryIDs = [
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   final binaryDataIds = [
+  ///   '<YOUR-BINARY-DATA-ID>',
+  ///   '<YOUR-BINARY-DATA-ID>'
   ///   ];
   ///
   ///   // Call the function to delete binary data
-  ///   await dataClient.deleteBinaryDataByIds(binaryIDs);
+  ///   await dataClient.deleteBinaryDataByIds(binaryDataIds);
   ///
   ///   print('Successfully deleted binary data');
   ///  } catch (e) {
@@ -486,8 +486,8 @@ class DataClient {
   ///  }
   /// ```
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<int> deleteBinaryDataByIds(List<BinaryID> binaryIds) async {
-    final request = DeleteBinaryDataByIDsRequest()..binaryIds.addAll(binaryIds);
+  Future<int> deleteBinaryDataByIds(List<String> binaryDataIds) async {
+    final request = DeleteBinaryDataByIDsRequest()..binaryDataIds.addAll(binaryDataIds);
     final response = await _dataClient.deleteBinaryDataByIDs(request);
     return response.deletedCount.toInt();
   }
@@ -505,13 +505,13 @@ class DataClient {
   ///   // List of tags to add
   ///   final List<String> tags = ['tag_1', 'tag_2'];
   ///
-  ///   final binaryIDs = [
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   final binaryDataIds = [
+  ///   '<YOUR-BINARY-DATA-ID>',
+  ///   '<YOUR-BINARY-DATA-ID>'
   ///   ];
   ///
   ///   // Call the function with both tags and IDs
-  ///   await dataClient.addTagsToBinaryDataByIds(tags, binaryIDs);
+  ///   await dataClient.addTagsToBinaryDataByIds(tags, binaryDataIds);
   ///
   ///   print('Successfully added tags to binary IDs');
   ///  } catch (e) {
@@ -520,10 +520,10 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<void> addTagsToBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
+  Future<void> addTagsToBinaryDataByIds(List<String> tags, List<String> binaryDataIds) async {
     final request = AddTagsToBinaryDataByIDsRequest()
       ..tags.addAll(tags)
-      ..binaryIds.addAll(binaryIds);
+      ..binaryDataIds.addAll(binaryDataIds);
     await _dataClient.addTagsToBinaryDataByIDs(request);
   }
 
@@ -615,13 +615,13 @@ class DataClient {
   ///   // List of tags to remove
   ///   final List<String> tags = ['tag_1', 'tag_2'];
   ///
-  ///   final binaryIDs = [
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///   final binaryDataIds = [
+  ///   '<YOUR-BINARY-DATA-ID>',
+  ///   '<YOUR-BINARY-DATA-ID>'
   ///   ];
   ///
   ///   // Call the function with both tags and IDs
-  ///   await dataClient.removeTagsFromBinaryDataByIds(tags, binaryIDs);
+  ///   await dataClient.removeTagsFromBinaryDataByIds(tags, binaryDataIds);
   ///
   ///   print('Successfully removed tags from binary IDs');
   ///  } catch (e) {
@@ -630,10 +630,10 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<BinaryID> binaryIds) async {
+  Future<int> removeTagsFromBinaryDataByIds(List<String> tags, List<String> binaryDataIds) async {
     final request = RemoveTagsFromBinaryDataByIDsRequest()
       ..tags.addAll(tags)
-      ..binaryIds.addAll(binaryIds);
+      ..binaryDataIds.addAll(binaryDataIds);
     final response = await _dataClient.removeTagsFromBinaryDataByIDs(request);
     return response.deletedCount.toInt();
   }
@@ -650,12 +650,12 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   /// // Example binary ID to add a bounding box to
-  /// final binaryId = BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>');
+  /// final binaryDataId = '<YOUR-BINARY-DATA-ID>';
   ///
   /// try {
   ///   await dataClient.addBoundingBoxToImageById(
   ///     "label",
-  ///     binaryId,
+  ///     binaryDataId,
   ///     0,
   ///    .1,
   ///    .2,
@@ -669,10 +669,10 @@ class DataClient {
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> addBoundingBoxToImageById(
-      String label, BinaryID binaryId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
+      String label, String binaryDataId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
     final request = AddBoundingBoxToImageByIDRequest()
       ..label = label
-      ..binaryId = binaryId
+      ..binaryDataId = binaryDataId
       ..xMinNormalized = xMinNormalized
       ..yMinNormalized = yMinNormalized
       ..xMaxNormalized = xMaxNormalized
@@ -691,14 +691,14 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   /// // Example binary ID to remove a bounding box from
-  /// final binaryId = BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>');
+  /// final binaryDataId = '<YOUR-BINARY-DATA-ID>';
   ///
   /// // Example bbox ID (label)
   /// final bboxId = "label";
   /// try {
   ///   await dataClient.removeBoundingBoxFromImageById(
   ///     bboxId,
-  ///     binaryId,
+  ///     binaryDataId,
   ///   );
   ///
   ///   print('Successfully removed bounding box');
@@ -708,10 +708,10 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<void> removeBoundingBoxFromImageById(String bboxId, BinaryID binaryId) async {
+  Future<void> removeBoundingBoxFromImageById(String bboxId, String binaryDataId) async {
     final request = RemoveBoundingBoxFromImageByIDRequest()
       ..bboxId = bboxId
-      ..binaryId = binaryId;
+      ..binaryDataId = binaryDataId;
     await _dataClient.removeBoundingBoxFromImageByID(request);
   }
 
@@ -847,9 +847,9 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   /// // Example binary IDs to add to the dataset
-  ///  final binaryIds = [
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///  final binaryDataIds = [
+  ///   '<YOUR-BINARY-DATA-ID>',
+  ///   '<YOUR-BINARY-DATA-ID>'
   ///  ];
   ///
   ///  // Dataset ID where the binary data will be added
@@ -858,7 +858,7 @@ class DataClient {
   ///  try {
   ///    // Add the binary data to the dataset
   ///    await dataClient.addBinaryDataToDatasetByIds(
-  ///      binaryIds,
+  ///      binaryDataIds,
   ///      datasetId
   ///  );
   ///    print('Successfully added binary data to dataset');
@@ -868,9 +868,9 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<void> addBinaryDataToDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
+  Future<void> addBinaryDataToDatasetByIds(List<String> binaryDataIds, String datasetId) async {
     final request = AddBinaryDataToDatasetByIDsRequest()
-      ..binaryIds.addAll(binaryIds)
+      ..binaryDataIds.addAll(binaryDataIds)
       ..datasetId = datasetId;
     await _dataClient.addBinaryDataToDatasetByIDs(request);
   }
@@ -885,9 +885,9 @@ class DataClient {
   ///  final dataClient = _viam.dataClient;
   ///
   /// // Example binary IDs to remove from the dataset
-  ///  final binaryIds = [
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>'),
-  ///    BinaryID(fileId: '<YOUR-FILE-ID>', organizationId: '<YOUR-ORG-ID>', locationId: '<YOUR-LOCATION-ID>')
+  ///  final binaryDataIds = [
+  ///   '<YOUR-BINARY-DATA-ID>',
+  ///   '<YOUR-BINARY-DATA-ID>'
   ///  ];
   ///
   ///  // Dataset ID where the binary data will be removed
@@ -896,7 +896,7 @@ class DataClient {
   ///  try {
   ///    // Remove the binary data from the dataset
   ///    await dataClient.removeBinaryDataFromDatasetByIds(
-  ///      binaryIds,
+  ///      binaryDataIds,
   ///      datasetId
   ///  );
   ///    print('Successfully removed binary data from dataset');
@@ -906,9 +906,9 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<void> removeBinaryDataFromDatasetByIds(List<BinaryID> binaryIds, String datasetId) async {
+  Future<void> removeBinaryDataFromDatasetByIds(List<String> binaryDataIds, String datasetId) async {
     final request = RemoveBinaryDataFromDatasetByIDsRequest()
-      ..binaryIds.addAll(binaryIds)
+      ..binaryDataIds.addAll(binaryDataIds)
       ..datasetId = datasetId;
     await _dataClient.removeBinaryDataFromDatasetByIDs(request);
   }
@@ -971,7 +971,7 @@ class DataClient {
   ///     try {
   ///        ViamImage img = await createViamImageFromFile();
   ///
-  ///        final fileId = await dataClient.uploadImage(
+  ///        final binaryDataId = await dataClient.uploadImage(
   ///          img,
   ///          "<YOUR-PART-ID>",
   ///          fileName: "myUploadedImage.jpeg",
@@ -979,7 +979,7 @@ class DataClient {
   ///          componentName: "camera-1",
   ///          methodName: "ReadImage"
   ///        );
-  ///        print('Successfully uploaded image with fileId: $fileId');
+  ///        print('Successfully uploaded image with binaryDataId: $binaryDataId');
   ///       } catch (e) {
   ///         print('Error uploading image: $e');
   ///       }
@@ -1011,7 +1011,7 @@ class DataClient {
 
     final requestStream = Stream.fromIterable([metadataRequest, ...dataRequests]);
     final response = await _dataSyncClient.fileUpload(requestStream);
-    return response.fileId;
+    return response.binaryDataId;
   }
 
   /// Upload a file from its path to Viam's Data Manager
@@ -1099,7 +1099,7 @@ class DataClient {
           reader.readStream(file.lengthSync()).map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
       final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
       final response = await _dataSyncClient.fileUpload(requestStream);
-      return response.fileId;
+      return response.binaryDataId;
     } finally {
       await reader.cancel();
     }
@@ -1107,7 +1107,7 @@ class DataClient {
 
   /// Upload binary sensor data to Viam's Data Manager
   ///
-  /// Returns the data's file ID.
+  /// Returns the data's binary data ID.
   ///
   /// ```
   /// _viam = await Viam.withApiKey(
@@ -1133,7 +1133,7 @@ class DataClient {
   ///      methodName: "ReadImage",
   ///      dataRequestTimes: dataRequestTimes);
   ///
-  ///    print('Successfully uploaded binary data with fileId: $fileId');
+  ///    print('Successfully uploaded binary data with binaryDataId: $binaryDataId');
   ///  } catch (e) {
   ///    print('Error uploading binary data: $e');
   ///  }
@@ -1176,7 +1176,7 @@ class DataClient {
       ..metadata = metadata
       ..sensorContents.add(sensorContents);
     final response = await _dataSyncClient.dataCaptureUpload(request);
-    return response.fileId;
+    return response.binaryDataId;
   }
 
   /// Upload tabular sensor data to Viam's Data Manager
@@ -1264,7 +1264,7 @@ class DataClient {
 
   /// Uploads the metadata and contents of streaming binary data
   ///
-  /// Returns the data's file ID.
+  /// Returns the data's binary data ID.
   ///
   /// ```
   /// import 'package:file_picker/file_picker.dart';
@@ -1329,7 +1329,7 @@ class DataClient {
   ///        componentName: "camera-1",
   ///        dataRequestTimes: dataRequestTimes);
   ///
-  ///      print('Successfully uploaded streaming binary data with fileId: $fileId');
+  ///      print('Successfully uploaded streaming binary data with binaryDataId: $binaryDataId');
   ///    } catch (e) {
   ///      print('Error uploading streaming binary data: $e');
   ///    }
@@ -1374,7 +1374,7 @@ class DataClient {
     final bytesStream = Stream.value(StreamingDataCaptureUploadRequest()..data = bytes);
     final requestStream = StreamGroup.merge([metadataStream, bytesStream]);
     final response = await _dataSyncClient.streamingDataCaptureUpload(requestStream);
-    return response.fileId;
+    return response.binaryDataId;
   }
 
   /// Creates a new dataset, returning the new dataset's ID.
