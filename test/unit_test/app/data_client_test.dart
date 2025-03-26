@@ -26,7 +26,7 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
     final metadataRequest = request.first.then((value) => metadata = value.metadata);
     return MockResponseFuture.future(Future.microtask(() async {
       await metadataRequest;
-      return FileUploadResponse()..fileId = metadata?.fileName ?? 'some file id';
+      return FileUploadResponse()..binaryDataId = metadata?.fileName ?? 'some file id';
     }));
   }
 
@@ -36,14 +36,16 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
     final metadataRequest = request.first.then((value) => dataCaptureMetadata = value.metadata.uploadMetadata);
     return MockResponseFuture.future(Future.microtask(() async {
       await metadataRequest;
-      return StreamingDataCaptureUploadResponse()..fileId = metadata?.componentName ?? 'fileId';
+      return StreamingDataCaptureUploadResponse()..binaryDataId = metadata?.componentName ?? 'fileId';
     }));
   }
 
   @override
   ResponseFuture<DataCaptureUploadResponse> dataCaptureUpload(DataCaptureUploadRequest request, {CallOptions? options}) {
     return MockResponseFuture.future(Future.microtask(() async {
-      return DataCaptureUploadResponse()..fileId = 'fileId';
+      return DataCaptureUploadResponse()
+        ..binaryDataId = 'fileId'
+        ..fileId = 'fileId';
     }));
   }
 }
