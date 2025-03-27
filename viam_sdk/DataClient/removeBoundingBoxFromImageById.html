@@ -59,7 +59,7 @@
       
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
 <span class="name ">removeBoundingBoxFromImageById</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="removeBoundingBoxFromImageById-param-bboxId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">bboxId</span>, </span></li>
-<li><span class="parameter" id="removeBoundingBoxFromImageById-param-binaryId"><span class="type-annotation"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span> <span class="parameter-name">binaryId</span></span></li>
+<li><span class="parameter" id="removeBoundingBoxFromImageById-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">binaryDataId</span></span></li>
 </ol>)
 
       
@@ -75,14 +75,14 @@
  final dataClient = _viam.dataClient;
 
 // Example binary ID to remove a bounding box from
-final binaryId = BinaryID(fileId: '&lt;YOUR-FILE-ID&gt;', organizationId: '&lt;YOUR-ORG-ID&gt;', locationId: '&lt;YOUR-LOCATION-ID&gt;');
+final binaryDataId = '&lt;YOUR-BINARY-DATA-ID&gt;';
 
 // Example bbox ID (label)
 final bboxId = "label";
 try {
   await dataClient.removeBoundingBoxFromImageById(
     bboxId,
-    binaryId,
+    binaryDataId,
   );
 
   print('Successfully removed bounding box');
@@ -97,10 +97,10 @@ try {
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; removeBoundingBoxFromImageById(String bboxId, BinaryID binaryId) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; removeBoundingBoxFromImageById(String bboxId, String binaryDataId) async {
   final request = RemoveBoundingBoxFromImageByIDRequest()
     ..bboxId = bboxId
-    ..binaryId = binaryId;
+    ..binaryDataId = binaryDataId;
   await _dataClient.removeBoundingBoxFromImageByID(request);
 }</code></pre>
 </section>

@@ -75,7 +75,7 @@
     
 <section class="desc markdown">
   <p>Upload binary sensor data to Viam's Data Manager</p>
-<p>Returns the data's file ID.</p>
+<p>Returns the data's binary data ID.</p>
 <pre class="language-dart"><code>_viam = await Viam.withApiKey(
      dotenv.env['API_KEY_ID'] ?? '',
      dotenv.env['API_KEY'] ?? ''
@@ -99,7 +99,7 @@
      methodName: "ReadImage",
      dataRequestTimes: dataRequestTimes);
 
-   print('Successfully uploaded binary data with fileId: $fileId');
+   print('Successfully uploaded binary data with binaryDataId: $binaryDataId');
  } catch (e) {
    print('Error uploading binary data: $e');
  }
@@ -147,7 +147,7 @@
     ..metadata = metadata
     ..sensorContents.add(sensorContents);
   final response = await _dataSyncClient.dataCaptureUpload(request);
-  return response.fileId;
+  return response.binaryDataId;
 }</code></pre>
 </section>
 

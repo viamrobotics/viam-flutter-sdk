@@ -75,7 +75,7 @@
     
 <section class="desc markdown">
   <p>Uploads the metadata and contents of streaming binary data</p>
-<p>Returns the data's file ID.</p>
+<p>Returns the data's binary data ID.</p>
 <pre class="language-dart"><code>import 'package:file_picker/file_picker.dart';
 import 'dart:typed_data';
 
@@ -138,7 +138,7 @@ void _uploadData() async {
        componentName: "camera-1",
        dataRequestTimes: dataRequestTimes);
 
-     print('Successfully uploaded streaming binary data with fileId: $fileId');
+     print('Successfully uploaded streaming binary data with binaryDataId: $binaryDataId');
    } catch (e) {
      print('Error uploading streaming binary data: $e');
    }
@@ -188,7 +188,7 @@ void _uploadData() async {
   final bytesStream = Stream.value(StreamingDataCaptureUploadRequest()..data = bytes);
   final requestStream = StreamGroup.merge([metadataStream, bytesStream]);
   final response = await _dataSyncClient.streamingDataCaptureUpload(requestStream);
-  return response.fileId;
+  return response.binaryDataId;
 }</code></pre>
 </section>
 

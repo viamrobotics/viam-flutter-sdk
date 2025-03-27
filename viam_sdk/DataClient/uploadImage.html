@@ -128,7 +128,7 @@ void _uploadData() async {
     try {
        ViamImage img = await createViamImageFromFile();
 
-       final fileId = await dataClient.uploadImage(
+       final binaryDataId = await dataClient.uploadImage(
          img,
          "&lt;YOUR-PART-ID&gt;",
          fileName: "myUploadedImage.jpeg",
@@ -136,7 +136,7 @@ void _uploadData() async {
          componentName: "camera-1",
          methodName: "ReadImage"
        );
-       print('Successfully uploaded image with fileId: $fileId');
+       print('Successfully uploaded image with binaryDataId: $binaryDataId');
       } catch (e) {
         print('Error uploading image: $e');
       }
@@ -174,7 +174,7 @@ void _uploadData() async {
 
   final requestStream = Stream.fromIterable([metadataRequest, ...dataRequests]);
   final response = await _dataSyncClient.fileUpload(requestStream);
-  return response.fileId;
+  return response.binaryDataId;
 }</code></pre>
 </section>
 

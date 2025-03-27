@@ -59,7 +59,7 @@
       
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
 <span class="name ">addBoundingBoxToImageById</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="addBoundingBoxToImageById-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span>, </span></li>
-<li><span class="parameter" id="addBoundingBoxToImageById-param-binaryId"><span class="type-annotation"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span> <span class="parameter-name">binaryId</span>, </span></li>
+<li><span class="parameter" id="addBoundingBoxToImageById-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">binaryDataId</span>, </span></li>
 <li><span class="parameter" id="addBoundingBoxToImageById-param-xMinNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">xMinNormalized</span>, </span></li>
 <li><span class="parameter" id="addBoundingBoxToImageById-param-yMinNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">yMinNormalized</span>, </span></li>
 <li><span class="parameter" id="addBoundingBoxToImageById-param-xMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">xMaxNormalized</span>, </span></li>
@@ -80,12 +80,12 @@
  final dataClient = _viam.dataClient;
 
 // Example binary ID to add a bounding box to
-final binaryId = BinaryID(fileId: '&lt;YOUR-FILE-ID&gt;', organizationId: '&lt;YOUR-ORG-ID&gt;', locationId: '&lt;YOUR-LOCATION-ID&gt;');
+final binaryDataId = '&lt;YOUR-BINARY-DATA-ID&gt;';
 
 try {
   await dataClient.addBoundingBoxToImageById(
     "label",
-    binaryId,
+    binaryDataId,
     0,
    .1,
    .2,
@@ -104,10 +104,10 @@ try {
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;String&gt; addBoundingBoxToImageById(
-    String label, BinaryID binaryId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
+    String label, String binaryDataId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
   final request = AddBoundingBoxToImageByIDRequest()
     ..label = label
-    ..binaryId = binaryId
+    ..binaryDataId = binaryDataId
     ..xMinNormalized = xMinNormalized
     ..yMinNormalized = yMinNormalized
     ..xMaxNormalized = xMaxNormalized

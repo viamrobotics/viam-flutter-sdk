@@ -58,7 +58,7 @@
     <section class="multi-line-signature">
       
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">removeBinaryDataFromDatasetByIds</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="removeBinaryDataFromDatasetByIds-param-binaryIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span>&gt;</span></span> <span class="parameter-name">binaryIds</span>, </span></li>
+<span class="name ">removeBinaryDataFromDatasetByIds</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="removeBinaryDataFromDatasetByIds-param-binaryDataIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">binaryDataIds</span>, </span></li>
 <li><span class="parameter" id="removeBinaryDataFromDatasetByIds-param-datasetId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">datasetId</span></span></li>
 </ol>)
 
@@ -75,9 +75,9 @@
  final dataClient = _viam.dataClient;
 
 // Example binary IDs to remove from the dataset
- final binaryIds = [
-   BinaryID(fileId: '&lt;YOUR-FILE-ID&gt;', organizationId: '&lt;YOUR-ORG-ID&gt;', locationId: '&lt;YOUR-LOCATION-ID&gt;'),
-   BinaryID(fileId: '&lt;YOUR-FILE-ID&gt;', organizationId: '&lt;YOUR-ORG-ID&gt;', locationId: '&lt;YOUR-LOCATION-ID&gt;')
+ final binaryDataIds = [
+  '&lt;YOUR-BINARY-DATA-ID&gt;',
+  '&lt;YOUR-BINARY-DATA-ID&gt;'
  ];
 
  // Dataset ID where the binary data will be removed
@@ -86,7 +86,7 @@
  try {
    // Remove the binary data from the dataset
    await dataClient.removeBinaryDataFromDatasetByIds(
-     binaryIds,
+     binaryDataIds,
      datasetId
  );
    print('Successfully removed binary data from dataset');
@@ -101,9 +101,9 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; removeBinaryDataFromDatasetByIds(List&lt;BinaryID&gt; binaryIds, String datasetId) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; removeBinaryDataFromDatasetByIds(List&lt;String&gt; binaryDataIds, String datasetId) async {
   final request = RemoveBinaryDataFromDatasetByIDsRequest()
-    ..binaryIds.addAll(binaryIds)
+    ..binaryDataIds.addAll(binaryDataIds)
     ..datasetId = datasetId;
   await _dataClient.removeBinaryDataFromDatasetByIDs(request);
 }</code></pre>

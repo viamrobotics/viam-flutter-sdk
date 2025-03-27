@@ -160,7 +160,7 @@ Future&lt;void&gt; uploadTextFile() async {
         reader.readStream(file.lengthSync()).map((event) =&gt; FileUploadRequest()..fileContents = (FileData()..data = event));
     final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
     final response = await _dataSyncClient.fileUpload(requestStream);
-    return response.fileId;
+    return response.binaryDataId;
   } finally {
     await reader.cancel();
   }
