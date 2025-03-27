@@ -275,9 +275,11 @@ const TabularDataByMQLRequest$json = {
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
     {'1': 'use_recent_data', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'useRecentData', '17': true},
+    {'1': 'use_data_pipeline', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'useDataPipeline', '17': true},
   ],
   '8': [
     {'1': '_use_recent_data'},
+    {'1': '_use_data_pipeline'},
   ],
   '9': [
     {'1': 2, '2': 3},
@@ -289,8 +291,9 @@ const TabularDataByMQLRequest$json = {
 final $typed_data.Uint8List tabularDataByMQLRequestDescriptor = $convert.base64Decode(
     'ChdUYWJ1bGFyRGF0YUJ5TVFMUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
     'FuaXphdGlvbklkEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeRIrCg91c2VfcmVjZW50'
-    'X2RhdGEYBCABKAhIAFINdXNlUmVjZW50RGF0YYgBAUISChBfdXNlX3JlY2VudF9kYXRhSgQIAh'
-    'ADUgltcWxfcXVlcnk=');
+    'X2RhdGEYBCABKAhIAFINdXNlUmVjZW50RGF0YYgBARIvChF1c2VfZGF0YV9waXBlbGluZRgFIA'
+    'EoCUgBUg91c2VEYXRhUGlwZWxpbmWIAQFCEgoQX3VzZV9yZWNlbnRfZGF0YUIUChJfdXNlX2Rh'
+    'dGFfcGlwZWxpbmVKBAgCEANSCW1xbF9xdWVyeQ==');
 
 @$core.Deprecated('Use tabularDataByMQLResponseDescriptor instead')
 const TabularDataByMQLResponse$json = {

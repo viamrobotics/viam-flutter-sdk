@@ -1055,6 +1055,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     $core.String? organizationId,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.bool? useRecentData,
+    $core.String? useDataPipeline,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1066,6 +1067,9 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     if (useRecentData != null) {
       $result.useRecentData = useRecentData;
     }
+    if (useDataPipeline != null) {
+      $result.useDataPipeline = useDataPipeline;
+    }
     return $result;
   }
   TabularDataByMQLRequest._() : super();
@@ -1076,6 +1080,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOB(4, _omitFieldNames ? '' : 'useRecentData')
+    ..aOS(5, _omitFieldNames ? '' : 'useDataPipeline')
     ..hasRequiredFields = false
   ;
 
@@ -1123,6 +1128,17 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   $core.bool hasUseRecentData() => $_has(2);
   @$pb.TagNumber(4)
   void clearUseRecentData() => clearField(4);
+
+  /// if set, MQL query will target the sink collection for the data pipeline name
+  /// referenced by this value under the given organization.
+  @$pb.TagNumber(5)
+  $core.String get useDataPipeline => $_getSZ(3);
+  @$pb.TagNumber(5)
+  set useDataPipeline($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUseDataPipeline() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearUseDataPipeline() => clearField(5);
 }
 
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
