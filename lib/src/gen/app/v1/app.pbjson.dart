@@ -3488,10 +3488,12 @@ const OrgDetails$json = {
     {'1': 'org_name', '3': 2, '4': 1, '5': 9, '10': 'orgName'},
     {'1': 'org_cid', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'orgCid', '17': true},
     {'1': 'public_namespace', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'publicNamespace', '17': true},
+    {'1': 'billing_tier', '3': 5, '4': 1, '5': 9, '9': 2, '10': 'billingTier', '17': true},
   ],
   '8': [
     {'1': '_org_cid'},
     {'1': '_public_namespace'},
+    {'1': '_billing_tier'},
   ],
 };
 
@@ -3499,8 +3501,9 @@ const OrgDetails$json = {
 final $typed_data.Uint8List orgDetailsDescriptor = $convert.base64Decode(
     'CgpPcmdEZXRhaWxzEhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQSGQoIb3JnX25hbWUYAiABKAlSB2'
     '9yZ05hbWUSHAoHb3JnX2NpZBgDIAEoCUgAUgZvcmdDaWSIAQESLgoQcHVibGljX25hbWVzcGFj'
-    'ZRgEIAEoCUgBUg9wdWJsaWNOYW1lc3BhY2WIAQFCCgoIX29yZ19jaWRCEwoRX3B1YmxpY19uYW'
-    '1lc3BhY2U=');
+    'ZRgEIAEoCUgBUg9wdWJsaWNOYW1lc3BhY2WIAQESJgoMYmlsbGluZ190aWVyGAUgASgJSAJSC2'
+    'JpbGxpbmdUaWVyiAEBQgoKCF9vcmdfY2lkQhMKEV9wdWJsaWNfbmFtZXNwYWNlQg8KDV9iaWxs'
+    'aW5nX3RpZXI=');
 
 @$core.Deprecated('Use listOrganizationsByUserResponseDescriptor instead')
 const ListOrganizationsByUserResponse$json = {

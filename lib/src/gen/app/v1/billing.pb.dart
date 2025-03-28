@@ -1265,6 +1265,178 @@ class SendPaymentRequiredEmailResponse extends $pb.GeneratedMessage {
   static SendPaymentRequiredEmailResponse? _defaultInstance;
 }
 
+class GetAvailableBillingTiersRequest extends $pb.GeneratedMessage {
+  factory GetAvailableBillingTiersRequest() => create();
+  GetAvailableBillingTiersRequest._() : super();
+  factory GetAvailableBillingTiersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAvailableBillingTiersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAvailableBillingTiersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAvailableBillingTiersRequest clone() => GetAvailableBillingTiersRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAvailableBillingTiersRequest copyWith(void Function(GetAvailableBillingTiersRequest) updates) => super.copyWith((message) => updates(message as GetAvailableBillingTiersRequest)) as GetAvailableBillingTiersRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAvailableBillingTiersRequest create() => GetAvailableBillingTiersRequest._();
+  GetAvailableBillingTiersRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAvailableBillingTiersRequest> createRepeated() => $pb.PbList<GetAvailableBillingTiersRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAvailableBillingTiersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAvailableBillingTiersRequest>(create);
+  static GetAvailableBillingTiersRequest? _defaultInstance;
+}
+
+class GetAvailableBillingTiersResponse extends $pb.GeneratedMessage {
+  factory GetAvailableBillingTiersResponse({
+    $core.Iterable<$core.String>? tiers,
+  }) {
+    final $result = create();
+    if (tiers != null) {
+      $result.tiers.addAll(tiers);
+    }
+    return $result;
+  }
+  GetAvailableBillingTiersResponse._() : super();
+  factory GetAvailableBillingTiersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAvailableBillingTiersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAvailableBillingTiersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'tiers')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAvailableBillingTiersResponse clone() => GetAvailableBillingTiersResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAvailableBillingTiersResponse copyWith(void Function(GetAvailableBillingTiersResponse) updates) => super.copyWith((message) => updates(message as GetAvailableBillingTiersResponse)) as GetAvailableBillingTiersResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAvailableBillingTiersResponse create() => GetAvailableBillingTiersResponse._();
+  GetAvailableBillingTiersResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAvailableBillingTiersResponse> createRepeated() => $pb.PbList<GetAvailableBillingTiersResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAvailableBillingTiersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAvailableBillingTiersResponse>(create);
+  static GetAvailableBillingTiersResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get tiers => $_getList(0);
+}
+
+class UpdateOrganizationBillingTierRequest extends $pb.GeneratedMessage {
+  factory UpdateOrganizationBillingTierRequest({
+    $core.String? organizationId,
+    $core.String? billingTier,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (billingTier != null) {
+      $result.billingTier = billingTier;
+    }
+    return $result;
+  }
+  UpdateOrganizationBillingTierRequest._() : super();
+  factory UpdateOrganizationBillingTierRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationBillingTierRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationBillingTierRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'billingTier')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationBillingTierRequest clone() => UpdateOrganizationBillingTierRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationBillingTierRequest copyWith(void Function(UpdateOrganizationBillingTierRequest) updates) => super.copyWith((message) => updates(message as UpdateOrganizationBillingTierRequest)) as UpdateOrganizationBillingTierRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationBillingTierRequest create() => UpdateOrganizationBillingTierRequest._();
+  UpdateOrganizationBillingTierRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationBillingTierRequest> createRepeated() => $pb.PbList<UpdateOrganizationBillingTierRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationBillingTierRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationBillingTierRequest>(create);
+  static UpdateOrganizationBillingTierRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get billingTier => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set billingTier($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBillingTier() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillingTier() => clearField(2);
+}
+
+class UpdateOrganizationBillingTierResponse extends $pb.GeneratedMessage {
+  factory UpdateOrganizationBillingTierResponse() => create();
+  UpdateOrganizationBillingTierResponse._() : super();
+  factory UpdateOrganizationBillingTierResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationBillingTierResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationBillingTierResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationBillingTierResponse clone() => UpdateOrganizationBillingTierResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationBillingTierResponse copyWith(void Function(UpdateOrganizationBillingTierResponse) updates) => super.copyWith((message) => updates(message as UpdateOrganizationBillingTierResponse)) as UpdateOrganizationBillingTierResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationBillingTierResponse create() => UpdateOrganizationBillingTierResponse._();
+  UpdateOrganizationBillingTierResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationBillingTierResponse> createRepeated() => $pb.PbList<UpdateOrganizationBillingTierResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationBillingTierResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationBillingTierResponse>(create);
+  static UpdateOrganizationBillingTierResponse? _defaultInstance;
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

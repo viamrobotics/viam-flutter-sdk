@@ -14275,6 +14275,7 @@ class OrgDetails extends $pb.GeneratedMessage {
     $core.String? orgName,
     $core.String? orgCid,
     $core.String? publicNamespace,
+    $core.String? billingTier,
   }) {
     final $result = create();
     if (orgId != null) {
@@ -14289,6 +14290,9 @@ class OrgDetails extends $pb.GeneratedMessage {
     if (publicNamespace != null) {
       $result.publicNamespace = publicNamespace;
     }
+    if (billingTier != null) {
+      $result.billingTier = billingTier;
+    }
     return $result;
   }
   OrgDetails._() : super();
@@ -14300,6 +14304,7 @@ class OrgDetails extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'orgName')
     ..aOS(3, _omitFieldNames ? '' : 'orgCid')
     ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(5, _omitFieldNames ? '' : 'billingTier')
     ..hasRequiredFields = false
   ;
 
@@ -14359,6 +14364,15 @@ class OrgDetails extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(3);
   @$pb.TagNumber(4)
   void clearPublicNamespace() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get billingTier => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set billingTier($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBillingTier() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBillingTier() => clearField(5);
 }
 
 class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {
