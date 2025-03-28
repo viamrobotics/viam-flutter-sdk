@@ -1124,7 +1124,7 @@ class DataClient {
   ///      DateTime(2025, 1, 15, 14, 45)  // End time
   ///    );
   ///
-  ///    final fileId = await dataClient.binaryDataCaptureUpload(
+  ///    final binaryDataId = await dataClient.binaryDataCaptureUpload(
   ///      imageBytes,
   ///      "<YOUR-PART-ID>",
   ///      ".png",
