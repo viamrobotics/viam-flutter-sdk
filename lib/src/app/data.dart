@@ -1321,7 +1321,7 @@ class DataClient {
   ///        DateTime(2025, 1, 15, 14, 45)  // End time
   ///      );
   ///
-  ///      final fileId = await dataClient.streamingDataCaptureUpload(
+  ///      final binaryDataId = await dataClient.streamingDataCaptureUpload(
   ///        video,
   ///        "<YOUR-PART-ID>",
   ///        ".mp4", // Replace with your desired file format
