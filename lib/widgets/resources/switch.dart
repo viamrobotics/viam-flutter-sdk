@@ -36,7 +36,9 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
         });
       }
     } catch (e) {
-      error = e as Error;
+      setState(() {
+        error = e as Error;
+      });
     }
   }
 
@@ -45,7 +47,9 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
       await widget.nswitch.setPosition(position);
       await _getPosition();
     } catch (e) {
-      error = e as Error;
+      setState(() {
+        error = e as Error;
+      });
     }
   }
 
