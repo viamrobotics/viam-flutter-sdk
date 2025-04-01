@@ -61,6 +61,7 @@
 <li><span class="parameter" id="-param-versions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/ModuleVersion-class.html">ModuleVersion</a></span>&gt;</span>?</span> <span class="parameter-name">versions</span>, </span></li>
 <li><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span></li>
 <li><span class="parameter" id="-param-firstRun"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">firstRun</span>, </span></li>
+<li><span class="parameter" id="-param-markdownDescription"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">markdownDescription</span>, </span></li>
 </ol>})
     </section>
     
@@ -74,6 +75,7 @@
   $core.Iterable&lt;ModuleVersion&gt;? versions,
   $core.String? entrypoint,
   $core.String? firstRun,
+  $core.String? markdownDescription,
 }) {
   final $result = create();
   if (models != null) {
@@ -87,6 +89,9 @@
   }
   if (firstRun != null) {
     $result.firstRun = firstRun;
+  }
+  if (markdownDescription != null) {
+    $result.markdownDescription = markdownDescription;
   }
   return $result;
 }</code></pre>

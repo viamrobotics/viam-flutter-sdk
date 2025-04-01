@@ -61,6 +61,7 @@
 <li><span class="parameter" id="-param-orgName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">orgName</span>, </span></li>
 <li><span class="parameter" id="-param-orgCid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">orgCid</span>, </span></li>
 <li><span class="parameter" id="-param-publicNamespace"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">publicNamespace</span>, </span></li>
+<li><span class="parameter" id="-param-billingTier"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">billingTier</span>, </span></li>
 </ol>})
     </section>
     
@@ -74,6 +75,7 @@
   $core.String? orgName,
   $core.String? orgCid,
   $core.String? publicNamespace,
+  $core.String? billingTier,
 }) {
   final $result = create();
   if (orgId != null) {
@@ -87,6 +89,9 @@
   }
   if (publicNamespace != null) {
     $result.publicNamespace = publicNamespace;
+  }
+  if (billingTier != null) {
+    $result.billingTier = billingTier;
   }
   return $result;
 }</code></pre>
