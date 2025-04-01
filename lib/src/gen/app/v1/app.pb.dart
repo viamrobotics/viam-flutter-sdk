@@ -11149,6 +11149,7 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     $core.Iterable<ModuleVersion>? versions,
     $core.String? entrypoint,
     $core.String? firstRun,
+    $core.String? markdownDescription,
   }) {
     final $result = create();
     if (models != null) {
@@ -11163,6 +11164,9 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     if (firstRun != null) {
       $result.firstRun = firstRun;
     }
+    if (markdownDescription != null) {
+      $result.markdownDescription = markdownDescription;
+    }
     return $result;
   }
   ModuleMetadata._() : super();
@@ -11174,6 +11178,7 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     ..pc<ModuleVersion>(2, _omitFieldNames ? '' : 'versions', $pb.PbFieldType.PM, subBuilder: ModuleVersion.create)
     ..aOS(3, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(4, _omitFieldNames ? '' : 'firstRun')
+    ..aOS(5, _omitFieldNames ? '' : 'markdownDescription')
     ..hasRequiredFields = false
   ;
 
@@ -11226,6 +11231,16 @@ class ModuleMetadata extends $pb.GeneratedMessage {
   $core.bool hasFirstRun() => $_has(3);
   @$pb.TagNumber(4)
   void clearFirstRun() => clearField(4);
+
+  /// markdown content for the entire module
+  @$pb.TagNumber(5)
+  $core.String get markdownDescription => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set markdownDescription($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMarkdownDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMarkdownDescription() => clearField(5);
 }
 
 class MLModelMetadata extends $pb.GeneratedMessage {
@@ -12018,6 +12033,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     UpdateModuleMetadata? updateModuleMetadata,
     UpdateMLModelMetadata? updateMlModelMetadata,
     UpdateMLTrainingMetadata? updateMlTrainingMetadata,
+    $core.String? markdownDescription,
   }) {
     final $result = create();
     if (itemId != null) {
@@ -12044,6 +12060,9 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     if (updateMlTrainingMetadata != null) {
       $result.updateMlTrainingMetadata = updateMlTrainingMetadata;
     }
+    if (markdownDescription != null) {
+      $result.markdownDescription = markdownDescription;
+    }
     return $result;
   }
   UpdateRegistryItemRequest._() : super();
@@ -12066,6 +12085,7 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
     ..aOM<UpdateModuleMetadata>(6, _omitFieldNames ? '' : 'updateModuleMetadata', subBuilder: UpdateModuleMetadata.create)
     ..aOM<UpdateMLModelMetadata>(7, _omitFieldNames ? '' : 'updateMlModelMetadata', subBuilder: UpdateMLModelMetadata.create)
     ..aOM<UpdateMLTrainingMetadata>(8, _omitFieldNames ? '' : 'updateMlTrainingMetadata', subBuilder: UpdateMLTrainingMetadata.create)
+    ..aOS(9, _omitFieldNames ? '' : 'markdownDescription')
     ..hasRequiredFields = false
   ;
 
@@ -12170,6 +12190,15 @@ class UpdateRegistryItemRequest extends $pb.GeneratedMessage {
   void clearUpdateMlTrainingMetadata() => clearField(8);
   @$pb.TagNumber(8)
   UpdateMLTrainingMetadata ensureUpdateMlTrainingMetadata() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.String get markdownDescription => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set markdownDescription($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMarkdownDescription() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMarkdownDescription() => clearField(9);
 }
 
 class UpdateRegistryItemResponse extends $pb.GeneratedMessage {
@@ -12704,6 +12733,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     $core.String? entrypoint,
     $core.String? firstRun,
     $core.Iterable<App>? apps,
+    $core.String? markdownDescription,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -12730,6 +12760,9 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     if (apps != null) {
       $result.apps.addAll(apps);
     }
+    if (markdownDescription != null) {
+      $result.markdownDescription = markdownDescription;
+    }
     return $result;
   }
   UpdateModuleRequest._() : super();
@@ -12745,6 +12778,7 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(7, _omitFieldNames ? '' : 'firstRun')
     ..pc<App>(8, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..aOS(9, _omitFieldNames ? '' : 'markdownDescription')
     ..hasRequiredFields = false
   ;
 
@@ -12836,6 +12870,16 @@ class UpdateModuleRequest extends $pb.GeneratedMessage {
   /// A list of applications associated with the module
   @$pb.TagNumber(8)
   $core.List<App> get apps => $_getList(7);
+
+  /// longer documentation provided in markdown format
+  @$pb.TagNumber(9)
+  $core.String get markdownDescription => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set markdownDescription($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMarkdownDescription() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMarkdownDescription() => clearField(9);
 }
 
 class App extends $pb.GeneratedMessage {
@@ -13636,6 +13680,7 @@ class Module extends $pb.GeneratedMessage {
     $core.String? entrypoint,
     $core.String? publicNamespace,
     $core.String? firstRun,
+    $core.String? markdownDescription,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -13677,6 +13722,9 @@ class Module extends $pb.GeneratedMessage {
     if (firstRun != null) {
       $result.firstRun = firstRun;
     }
+    if (markdownDescription != null) {
+      $result.markdownDescription = markdownDescription;
+    }
     return $result;
   }
   Module._() : super();
@@ -13697,6 +13745,7 @@ class Module extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(12, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(13, _omitFieldNames ? '' : 'firstRun')
+    ..aOS(14, _omitFieldNames ? '' : 'markdownDescription')
     ..hasRequiredFields = false
   ;
 
@@ -13840,6 +13889,16 @@ class Module extends $pb.GeneratedMessage {
   $core.bool hasFirstRun() => $_has(12);
   @$pb.TagNumber(13)
   void clearFirstRun() => clearField(13);
+
+  /// Longer documentation provided in markdown format
+  @$pb.TagNumber(14)
+  $core.String get markdownDescription => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set markdownDescription($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasMarkdownDescription() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearMarkdownDescription() => clearField(14);
 }
 
 class VersionHistory extends $pb.GeneratedMessage {
@@ -13849,6 +13908,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     $core.Iterable<Model>? models,
     $core.String? entrypoint,
     $core.String? firstRun,
+    $core.String? markdownDescription,
   }) {
     final $result = create();
     if (version != null) {
@@ -13866,6 +13926,9 @@ class VersionHistory extends $pb.GeneratedMessage {
     if (firstRun != null) {
       $result.firstRun = firstRun;
     }
+    if (markdownDescription != null) {
+      $result.markdownDescription = markdownDescription;
+    }
     return $result;
   }
   VersionHistory._() : super();
@@ -13878,6 +13941,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     ..pc<Model>(3, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aOS(4, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
+    ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
     ..hasRequiredFields = false
   ;
 
@@ -13939,6 +14003,16 @@ class VersionHistory extends $pb.GeneratedMessage {
   $core.bool hasFirstRun() => $_has(4);
   @$pb.TagNumber(5)
   void clearFirstRun() => clearField(5);
+
+  /// The markdown documentation for this version of the module
+  @$pb.TagNumber(6)
+  $core.String get markdownDescription => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set markdownDescription($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMarkdownDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMarkdownDescription() => clearField(6);
 }
 
 class Uploads extends $pb.GeneratedMessage {
@@ -14275,6 +14349,7 @@ class OrgDetails extends $pb.GeneratedMessage {
     $core.String? orgName,
     $core.String? orgCid,
     $core.String? publicNamespace,
+    $core.String? billingTier,
   }) {
     final $result = create();
     if (orgId != null) {
@@ -14289,6 +14364,9 @@ class OrgDetails extends $pb.GeneratedMessage {
     if (publicNamespace != null) {
       $result.publicNamespace = publicNamespace;
     }
+    if (billingTier != null) {
+      $result.billingTier = billingTier;
+    }
     return $result;
   }
   OrgDetails._() : super();
@@ -14300,6 +14378,7 @@ class OrgDetails extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'orgName')
     ..aOS(3, _omitFieldNames ? '' : 'orgCid')
     ..aOS(4, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(5, _omitFieldNames ? '' : 'billingTier')
     ..hasRequiredFields = false
   ;
 
@@ -14359,6 +14438,15 @@ class OrgDetails extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(3);
   @$pb.TagNumber(4)
   void clearPublicNamespace() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get billingTier => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set billingTier($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBillingTier() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBillingTier() => clearField(5);
 }
 
 class ListOrganizationsByUserResponse extends $pb.GeneratedMessage {

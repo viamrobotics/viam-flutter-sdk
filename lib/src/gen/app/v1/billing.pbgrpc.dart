@@ -41,6 +41,14 @@ class BillingServiceClient extends $grpc.Client {
       '/viam.app.v1.BillingService/SendPaymentRequiredEmail',
       ($12.SendPaymentRequiredEmailRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.SendPaymentRequiredEmailResponse.fromBuffer(value));
+  static final _$getAvailableBillingTiers = $grpc.ClientMethod<$12.GetAvailableBillingTiersRequest, $12.GetAvailableBillingTiersResponse>(
+      '/viam.app.v1.BillingService/GetAvailableBillingTiers',
+      ($12.GetAvailableBillingTiersRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.GetAvailableBillingTiersResponse.fromBuffer(value));
+  static final _$updateOrganizationBillingTier = $grpc.ClientMethod<$12.UpdateOrganizationBillingTierRequest, $12.UpdateOrganizationBillingTierResponse>(
+      '/viam.app.v1.BillingService/UpdateOrganizationBillingTier',
+      ($12.UpdateOrganizationBillingTierRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierResponse.fromBuffer(value));
 
   BillingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -66,6 +74,14 @@ class BillingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($12.SendPaymentRequiredEmailRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sendPaymentRequiredEmail, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers($12.GetAvailableBillingTiersRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAvailableBillingTiers, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($12.UpdateOrganizationBillingTierRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateOrganizationBillingTier, request, options: options);
   }
 }
 
@@ -109,6 +125,20 @@ abstract class BillingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.SendPaymentRequiredEmailRequest.fromBuffer(value),
         ($12.SendPaymentRequiredEmailResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.GetAvailableBillingTiersRequest, $12.GetAvailableBillingTiersResponse>(
+        'GetAvailableBillingTiers',
+        getAvailableBillingTiers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.GetAvailableBillingTiersRequest.fromBuffer(value),
+        ($12.GetAvailableBillingTiersResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.UpdateOrganizationBillingTierRequest, $12.UpdateOrganizationBillingTierResponse>(
+        'UpdateOrganizationBillingTier',
+        updateOrganizationBillingTier_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierRequest.fromBuffer(value),
+        ($12.UpdateOrganizationBillingTierResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage_Pre($grpc.ServiceCall call, $async.Future<$12.GetCurrentMonthUsageRequest> request) async {
@@ -131,9 +161,19 @@ abstract class BillingServiceBase extends $grpc.Service {
     return sendPaymentRequiredEmail(call, await request);
   }
 
+  $async.Future<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers_Pre($grpc.ServiceCall call, $async.Future<$12.GetAvailableBillingTiersRequest> request) async {
+    return getAvailableBillingTiers(call, await request);
+  }
+
+  $async.Future<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier_Pre($grpc.ServiceCall call, $async.Future<$12.UpdateOrganizationBillingTierRequest> request) async {
+    return updateOrganizationBillingTier(call, await request);
+  }
+
   $async.Future<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage($grpc.ServiceCall call, $12.GetCurrentMonthUsageRequest request);
   $async.Future<$12.GetOrgBillingInformationResponse> getOrgBillingInformation($grpc.ServiceCall call, $12.GetOrgBillingInformationRequest request);
   $async.Future<$12.GetInvoicesSummaryResponse> getInvoicesSummary($grpc.ServiceCall call, $12.GetInvoicesSummaryRequest request);
   $async.Stream<$12.GetInvoicePdfResponse> getInvoicePdf($grpc.ServiceCall call, $12.GetInvoicePdfRequest request);
   $async.Future<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($grpc.ServiceCall call, $12.SendPaymentRequiredEmailRequest request);
+  $async.Future<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers($grpc.ServiceCall call, $12.GetAvailableBillingTiersRequest request);
+  $async.Future<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($grpc.ServiceCall call, $12.UpdateOrganizationBillingTierRequest request);
 }
