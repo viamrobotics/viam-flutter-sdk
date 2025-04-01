@@ -2804,9 +2804,11 @@ const ModuleMetadata$json = {
     {'1': 'versions', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleVersion', '10': 'versions'},
     {'1': 'entrypoint', '3': 3, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+    {'1': 'markdown_description', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
   ],
   '8': [
     {'1': '_first_run'},
+    {'1': '_markdown_description'},
   ],
 };
 
@@ -2815,7 +2817,9 @@ final $typed_data.Uint8List moduleMetadataDescriptor = $convert.base64Decode(
     'Cg5Nb2R1bGVNZXRhZGF0YRIqCgZtb2RlbHMYASADKAsyEi52aWFtLmFwcC52MS5Nb2RlbFIGbW'
     '9kZWxzEjYKCHZlcnNpb25zGAIgAygLMhoudmlhbS5hcHAudjEuTW9kdWxlVmVyc2lvblIIdmVy'
     'c2lvbnMSHgoKZW50cnlwb2ludBgDIAEoCVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YBCABKA'
-    'lIAFIIZmlyc3RSdW6IAQFCDAoKX2ZpcnN0X3J1bg==');
+    'lIAFIIZmlyc3RSdW6IAQESNgoUbWFya2Rvd25fZGVzY3JpcHRpb24YBSABKAlIAVITbWFya2Rv'
+    'd25EZXNjcmlwdGlvbogBAUIMCgpfZmlyc3RfcnVuQhcKFV9tYXJrZG93bl9kZXNjcmlwdGlvbg'
+    '==');
 
 @$core.Deprecated('Use mLModelMetadataDescriptor instead')
 const MLModelMetadata$json = {
@@ -2985,10 +2989,12 @@ const UpdateRegistryItemRequest$json = {
     {'1': 'update_module_metadata', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateModuleMetadata', '9': 0, '10': 'updateModuleMetadata'},
     {'1': 'update_ml_model_metadata', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateMLModelMetadata', '9': 0, '10': 'updateMlModelMetadata'},
     {'1': 'update_ml_training_metadata', '3': 8, '4': 1, '5': 11, '6': '.viam.app.v1.UpdateMLTrainingMetadata', '9': 0, '10': 'updateMlTrainingMetadata'},
+    {'1': 'markdown_description', '3': 9, '4': 1, '5': 9, '9': 2, '10': 'markdownDescription', '17': true},
   ],
   '8': [
     {'1': 'metadata'},
     {'1': '_url'},
+    {'1': '_markdown_description'},
   ],
 };
 
@@ -3003,7 +3009,9 @@ final $typed_data.Uint8List updateRegistryItemRequestDescriptor = $convert.base6
     'ZXRhZGF0YRgHIAEoCzIiLnZpYW0uYXBwLnYxLlVwZGF0ZU1MTW9kZWxNZXRhZGF0YUgAUhV1cG'
     'RhdGVNbE1vZGVsTWV0YWRhdGESZgobdXBkYXRlX21sX3RyYWluaW5nX21ldGFkYXRhGAggASgL'
     'MiUudmlhbS5hcHAudjEuVXBkYXRlTUxUcmFpbmluZ01ldGFkYXRhSABSGHVwZGF0ZU1sVHJhaW'
-    '5pbmdNZXRhZGF0YUIKCghtZXRhZGF0YUIGCgRfdXJs');
+    '5pbmdNZXRhZGF0YRI2ChRtYXJrZG93bl9kZXNjcmlwdGlvbhgJIAEoCUgCUhNtYXJrZG93bkRl'
+    'c2NyaXB0aW9uiAEBQgoKCG1ldGFkYXRhQgYKBF91cmxCFwoVX21hcmtkb3duX2Rlc2NyaXB0aW'
+    '9u');
 
 @$core.Deprecated('Use updateRegistryItemResponseDescriptor instead')
 const UpdateRegistryItemResponse$json = {
@@ -3147,9 +3155,11 @@ const UpdateModuleRequest$json = {
     {'1': 'entrypoint', '3': 6, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 7, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
     {'1': 'apps', '3': 8, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
+    {'1': 'markdown_description', '3': 9, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
   ],
   '8': [
     {'1': '_first_run'},
+    {'1': '_markdown_description'},
   ],
 };
 
@@ -3160,7 +3170,9 @@ final $typed_data.Uint8List updateModuleRequestDescriptor = $convert.base64Decod
     'dXJsGAMgASgJUgN1cmwSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEioKBm1vZG'
     'VscxgFIAMoCzISLnZpYW0uYXBwLnYxLk1vZGVsUgZtb2RlbHMSHgoKZW50cnlwb2ludBgGIAEo'
     'CVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YByABKAlIAFIIZmlyc3RSdW6IAQESJAoEYXBwcx'
-    'gIIAMoCzIQLnZpYW0uYXBwLnYxLkFwcFIEYXBwc0IMCgpfZmlyc3RfcnVu');
+    'gIIAMoCzIQLnZpYW0uYXBwLnYxLkFwcFIEYXBwcxI2ChRtYXJrZG93bl9kZXNjcmlwdGlvbhgJ'
+    'IAEoCUgBUhNtYXJrZG93bkRlc2NyaXB0aW9uiAEBQgwKCl9maXJzdF9ydW5CFwoVX21hcmtkb3'
+    'duX2Rlc2NyaXB0aW9u');
 
 @$core.Deprecated('Use appDescriptor instead')
 const App$json = {
@@ -3355,9 +3367,11 @@ const Module$json = {
     {'1': 'entrypoint', '3': 11, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'public_namespace', '3': 12, '4': 1, '5': 9, '10': 'publicNamespace'},
     {'1': 'first_run', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+    {'1': 'markdown_description', '3': 14, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
   ],
   '8': [
     {'1': '_first_run'},
+    {'1': '_markdown_description'},
   ],
 };
 
@@ -3372,7 +3386,9 @@ final $typed_data.Uint8List moduleDescriptor = $convert.base64Decode(
     'X3VzYWdlGAkgASgDUhZ0b3RhbE9yZ2FuaXphdGlvblVzYWdlEicKD29yZ2FuaXphdGlvbl9pZB'
     'gKIAEoCVIOb3JnYW5pemF0aW9uSWQSHgoKZW50cnlwb2ludBgLIAEoCVIKZW50cnlwb2ludBIp'
     'ChBwdWJsaWNfbmFtZXNwYWNlGAwgASgJUg9wdWJsaWNOYW1lc3BhY2USIAoJZmlyc3RfcnVuGA'
-    '0gASgJSABSCGZpcnN0UnVuiAEBQgwKCl9maXJzdF9ydW4=');
+    '0gASgJSABSCGZpcnN0UnVuiAEBEjYKFG1hcmtkb3duX2Rlc2NyaXB0aW9uGA4gASgJSAFSE21h'
+    'cmtkb3duRGVzY3JpcHRpb26IAQFCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd25fZGVzY3JpcH'
+    'Rpb24=');
 
 @$core.Deprecated('Use versionHistoryDescriptor instead')
 const VersionHistory$json = {
@@ -3383,9 +3399,11 @@ const VersionHistory$json = {
     {'1': 'models', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+    {'1': 'markdown_description', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
   ],
   '8': [
     {'1': '_first_run'},
+    {'1': '_markdown_description'},
   ],
 };
 
@@ -3394,7 +3412,9 @@ final $typed_data.Uint8List versionHistoryDescriptor = $convert.base64Decode(
     'Cg5WZXJzaW9uSGlzdG9yeRIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEioKBWZpbGVzGAIgAy'
     'gLMhQudmlhbS5hcHAudjEuVXBsb2Fkc1IFZmlsZXMSKgoGbW9kZWxzGAMgAygLMhIudmlhbS5h'
     'cHAudjEuTW9kZWxSBm1vZGVscxIeCgplbnRyeXBvaW50GAQgASgJUgplbnRyeXBvaW50EiAKCW'
-    'ZpcnN0X3J1bhgFIAEoCUgAUghmaXJzdFJ1bogBAUIMCgpfZmlyc3RfcnVu');
+    'ZpcnN0X3J1bhgFIAEoCUgAUghmaXJzdFJ1bogBARI2ChRtYXJrZG93bl9kZXNjcmlwdGlvbhgG'
+    'IAEoCUgBUhNtYXJrZG93bkRlc2NyaXB0aW9uiAEBQgwKCl9maXJzdF9ydW5CFwoVX21hcmtkb3'
+    'duX2Rlc2NyaXB0aW9u');
 
 @$core.Deprecated('Use uploadsDescriptor instead')
 const Uploads$json = {
@@ -3488,10 +3508,12 @@ const OrgDetails$json = {
     {'1': 'org_name', '3': 2, '4': 1, '5': 9, '10': 'orgName'},
     {'1': 'org_cid', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'orgCid', '17': true},
     {'1': 'public_namespace', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'publicNamespace', '17': true},
+    {'1': 'billing_tier', '3': 5, '4': 1, '5': 9, '9': 2, '10': 'billingTier', '17': true},
   ],
   '8': [
     {'1': '_org_cid'},
     {'1': '_public_namespace'},
+    {'1': '_billing_tier'},
   ],
 };
 
@@ -3499,8 +3521,9 @@ const OrgDetails$json = {
 final $typed_data.Uint8List orgDetailsDescriptor = $convert.base64Decode(
     'CgpPcmdEZXRhaWxzEhUKBm9yZ19pZBgBIAEoCVIFb3JnSWQSGQoIb3JnX25hbWUYAiABKAlSB2'
     '9yZ05hbWUSHAoHb3JnX2NpZBgDIAEoCUgAUgZvcmdDaWSIAQESLgoQcHVibGljX25hbWVzcGFj'
-    'ZRgEIAEoCUgBUg9wdWJsaWNOYW1lc3BhY2WIAQFCCgoIX29yZ19jaWRCEwoRX3B1YmxpY19uYW'
-    '1lc3BhY2U=');
+    'ZRgEIAEoCUgBUg9wdWJsaWNOYW1lc3BhY2WIAQESJgoMYmlsbGluZ190aWVyGAUgASgJSAJSC2'
+    'JpbGxpbmdUaWVyiAEBQgoKCF9vcmdfY2lkQhMKEV9wdWJsaWNfbmFtZXNwYWNlQg8KDV9iaWxs'
+    'aW5nX3RpZXI=');
 
 @$core.Deprecated('Use listOrganizationsByUserResponseDescriptor instead')
 const ListOrganizationsByUserResponse$json = {

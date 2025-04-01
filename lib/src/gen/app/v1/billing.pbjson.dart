@@ -440,3 +440,49 @@ const SendPaymentRequiredEmailResponse$json = {
 final $typed_data.Uint8List sendPaymentRequiredEmailResponseDescriptor = $convert.base64Decode(
     'CiBTZW5kUGF5bWVudFJlcXVpcmVkRW1haWxSZXNwb25zZQ==');
 
+@$core.Deprecated('Use getAvailableBillingTiersRequestDescriptor instead')
+const GetAvailableBillingTiersRequest$json = {
+  '1': 'GetAvailableBillingTiersRequest',
+};
+
+/// Descriptor for `GetAvailableBillingTiersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAvailableBillingTiersRequestDescriptor = $convert.base64Decode(
+    'Ch9HZXRBdmFpbGFibGVCaWxsaW5nVGllcnNSZXF1ZXN0');
+
+@$core.Deprecated('Use getAvailableBillingTiersResponseDescriptor instead')
+const GetAvailableBillingTiersResponse$json = {
+  '1': 'GetAvailableBillingTiersResponse',
+  '2': [
+    {'1': 'tiers', '3': 1, '4': 3, '5': 9, '10': 'tiers'},
+  ],
+};
+
+/// Descriptor for `GetAvailableBillingTiersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAvailableBillingTiersResponseDescriptor = $convert.base64Decode(
+    'CiBHZXRBdmFpbGFibGVCaWxsaW5nVGllcnNSZXNwb25zZRIUCgV0aWVycxgBIAMoCVIFdGllcn'
+    'M=');
+
+@$core.Deprecated('Use updateOrganizationBillingTierRequestDescriptor instead')
+const UpdateOrganizationBillingTierRequest$json = {
+  '1': 'UpdateOrganizationBillingTierRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'billing_tier', '3': 2, '4': 1, '5': 9, '10': 'billingTier'},
+  ],
+};
+
+/// Descriptor for `UpdateOrganizationBillingTierRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOrganizationBillingTierRequestDescriptor = $convert.base64Decode(
+    'CiRVcGRhdGVPcmdhbml6YXRpb25CaWxsaW5nVGllclJlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2'
+    'lkGAEgASgJUg5vcmdhbml6YXRpb25JZBIhCgxiaWxsaW5nX3RpZXIYAiABKAlSC2JpbGxpbmdU'
+    'aWVy');
+
+@$core.Deprecated('Use updateOrganizationBillingTierResponseDescriptor instead')
+const UpdateOrganizationBillingTierResponse$json = {
+  '1': 'UpdateOrganizationBillingTierResponse',
+};
+
+/// Descriptor for `UpdateOrganizationBillingTierResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOrganizationBillingTierResponseDescriptor = $convert.base64Decode(
+    'CiVVcGRhdGVPcmdhbml6YXRpb25CaWxsaW5nVGllclJlc3BvbnNl');
+
