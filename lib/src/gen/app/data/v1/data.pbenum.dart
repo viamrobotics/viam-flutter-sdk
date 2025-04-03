@@ -51,5 +51,25 @@ class TagsFilterType extends $pb.ProtobufEnum {
   const TagsFilterType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// TabularDataSourceType specifies the data source type for TabularDataByMQL queries.
+class TabularDataSourceType extends $pb.ProtobufEnum {
+  static const TabularDataSourceType TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED = TabularDataSourceType._(0, _omitEnumNames ? '' : 'TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED');
+  static const TabularDataSourceType TABULAR_DATA_SOURCE_TYPE_STANDARD = TabularDataSourceType._(1, _omitEnumNames ? '' : 'TABULAR_DATA_SOURCE_TYPE_STANDARD');
+  static const TabularDataSourceType TABULAR_DATA_SOURCE_TYPE_HOT_STORAGE = TabularDataSourceType._(2, _omitEnumNames ? '' : 'TABULAR_DATA_SOURCE_TYPE_HOT_STORAGE');
+  static const TabularDataSourceType TABULAR_DATA_SOURCE_TYPE_PIPELINE_SINK = TabularDataSourceType._(3, _omitEnumNames ? '' : 'TABULAR_DATA_SOURCE_TYPE_PIPELINE_SINK');
+
+  static const $core.List<TabularDataSourceType> values = <TabularDataSourceType> [
+    TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED,
+    TABULAR_DATA_SOURCE_TYPE_STANDARD,
+    TABULAR_DATA_SOURCE_TYPE_HOT_STORAGE,
+    TABULAR_DATA_SOURCE_TYPE_PIPELINE_SINK,
+  ];
+
+  static final $core.Map<$core.int, TabularDataSourceType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static TabularDataSourceType? valueOf($core.int value) => _byValue[value];
+
+  const TabularDataSourceType._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

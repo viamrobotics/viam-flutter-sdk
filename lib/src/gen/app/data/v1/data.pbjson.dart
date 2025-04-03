@@ -45,6 +45,24 @@ final $typed_data.Uint8List tagsFilterTypeDescriptor = $convert.base64Decode(
     'FHU19GSUxURVJfVFlQRV9NQVRDSF9CWV9PUhABEhsKF1RBR1NfRklMVEVSX1RZUEVfVEFHR0VE'
     'EAISHQoZVEFHU19GSUxURVJfVFlQRV9VTlRBR0dFRBAD');
 
+@$core.Deprecated('Use tabularDataSourceTypeDescriptor instead')
+const TabularDataSourceType$json = {
+  '1': 'TabularDataSourceType',
+  '2': [
+    {'1': 'TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'TABULAR_DATA_SOURCE_TYPE_STANDARD', '2': 1},
+    {'1': 'TABULAR_DATA_SOURCE_TYPE_HOT_STORAGE', '2': 2},
+    {'1': 'TABULAR_DATA_SOURCE_TYPE_PIPELINE_SINK', '2': 3},
+  ],
+};
+
+/// Descriptor for `TabularDataSourceType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List tabularDataSourceTypeDescriptor = $convert.base64Decode(
+    'ChVUYWJ1bGFyRGF0YVNvdXJjZVR5cGUSKAokVEFCVUxBUl9EQVRBX1NPVVJDRV9UWVBFX1VOU1'
+    'BFQ0lGSUVEEAASJQohVEFCVUxBUl9EQVRBX1NPVVJDRV9UWVBFX1NUQU5EQVJEEAESKAokVEFC'
+    'VUxBUl9EQVRBX1NPVVJDRV9UWVBFX0hPVF9TVE9SQUdFEAISKgomVEFCVUxBUl9EQVRBX1NPVV'
+    'JDRV9UWVBFX1BJUEVMSU5FX1NJTksQAw==');
+
 @$core.Deprecated('Use dataRequestDescriptor instead')
 const DataRequest$json = {
   '1': 'DataRequest',
@@ -268,6 +286,24 @@ final $typed_data.Uint8List tabularDataBySQLResponseDescriptor = $convert.base64
     'ChhUYWJ1bGFyRGF0YUJ5U1FMUmVzcG9uc2USGQoIcmF3X2RhdGEYAiADKAxSB3Jhd0RhdGFKBA'
     'gBEAJSBGRhdGE=');
 
+@$core.Deprecated('Use tabularDataSourceDescriptor instead')
+const TabularDataSource$json = {
+  '1': 'TabularDataSource',
+  '2': [
+    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.data.v1.TabularDataSourceType', '10': 'type'},
+    {'1': 'pipeline_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'pipelineId', '17': true},
+  ],
+  '8': [
+    {'1': '_pipeline_id'},
+  ],
+};
+
+/// Descriptor for `TabularDataSource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tabularDataSourceDescriptor = $convert.base64Decode(
+    'ChFUYWJ1bGFyRGF0YVNvdXJjZRI7CgR0eXBlGAEgASgOMicudmlhbS5hcHAuZGF0YS52MS5UYW'
+    'J1bGFyRGF0YVNvdXJjZVR5cGVSBHR5cGUSJAoLcGlwZWxpbmVfaWQYAiABKAlIAFIKcGlwZWxp'
+    'bmVJZIgBAUIOCgxfcGlwZWxpbmVfaWQ=');
+
 @$core.Deprecated('Use tabularDataByMQLRequestDescriptor instead')
 const TabularDataByMQLRequest$json = {
   '1': 'TabularDataByMQLRequest',
@@ -275,25 +311,27 @@ const TabularDataByMQLRequest$json = {
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
     {'1': 'use_recent_data', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'useRecentData', '17': true},
-    {'1': 'use_data_pipeline', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'useDataPipeline', '17': true},
+    {'1': 'data_source', '3': 6, '4': 1, '5': 11, '6': '.viam.app.data.v1.TabularDataSource', '9': 1, '10': 'dataSource', '17': true},
   ],
   '8': [
     {'1': '_use_recent_data'},
-    {'1': '_use_data_pipeline'},
+    {'1': '_data_source'},
   ],
   '9': [
     {'1': 2, '2': 3},
+    {'1': 5, '2': 6},
   ],
-  '10': ['mql_query'],
+  '10': ['mql_query', 'use_data_pipeline'],
 };
 
 /// Descriptor for `TabularDataByMQLRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tabularDataByMQLRequestDescriptor = $convert.base64Decode(
     'ChdUYWJ1bGFyRGF0YUJ5TVFMUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
     'FuaXphdGlvbklkEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeRIrCg91c2VfcmVjZW50'
-    'X2RhdGEYBCABKAhIAFINdXNlUmVjZW50RGF0YYgBARIvChF1c2VfZGF0YV9waXBlbGluZRgFIA'
-    'EoCUgBUg91c2VEYXRhUGlwZWxpbmWIAQFCEgoQX3VzZV9yZWNlbnRfZGF0YUIUChJfdXNlX2Rh'
-    'dGFfcGlwZWxpbmVKBAgCEANSCW1xbF9xdWVyeQ==');
+    'X2RhdGEYBCABKAhIAFINdXNlUmVjZW50RGF0YYgBARJJCgtkYXRhX3NvdXJjZRgGIAEoCzIjLn'
+    'ZpYW0uYXBwLmRhdGEudjEuVGFidWxhckRhdGFTb3VyY2VIAVIKZGF0YVNvdXJjZYgBAUISChBf'
+    'dXNlX3JlY2VudF9kYXRhQg4KDF9kYXRhX3NvdXJjZUoECAIQA0oECAUQBlIJbXFsX3F1ZXJ5Uh'
+    'F1c2VfZGF0YV9waXBlbGluZQ==');
 
 @$core.Deprecated('Use tabularDataByMQLResponseDescriptor instead')
 const TabularDataByMQLResponse$json = {

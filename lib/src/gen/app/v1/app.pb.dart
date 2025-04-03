@@ -11051,6 +11051,7 @@ class ModuleVersion extends $pb.GeneratedMessage {
     $core.Iterable<Model>? models,
     $core.String? entrypoint,
     $core.String? firstRun,
+    $core.String? markdownDescription,
   }) {
     final $result = create();
     if (version != null) {
@@ -11068,6 +11069,9 @@ class ModuleVersion extends $pb.GeneratedMessage {
     if (firstRun != null) {
       $result.firstRun = firstRun;
     }
+    if (markdownDescription != null) {
+      $result.markdownDescription = markdownDescription;
+    }
     return $result;
   }
   ModuleVersion._() : super();
@@ -11080,6 +11084,7 @@ class ModuleVersion extends $pb.GeneratedMessage {
     ..pc<Model>(3, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aOS(4, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
+    ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
     ..hasRequiredFields = false
   ;
 
@@ -11141,6 +11146,16 @@ class ModuleVersion extends $pb.GeneratedMessage {
   $core.bool hasFirstRun() => $_has(4);
   @$pb.TagNumber(5)
   void clearFirstRun() => clearField(5);
+
+  /// The markdown documentation for this version of the module
+  @$pb.TagNumber(6)
+  $core.String get markdownDescription => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set markdownDescription($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMarkdownDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMarkdownDescription() => clearField(6);
 }
 
 class ModuleMetadata extends $pb.GeneratedMessage {
