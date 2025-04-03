@@ -2783,9 +2783,11 @@ const ModuleVersion$json = {
     {'1': 'models', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
+    {'1': 'markdown_description', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
   ],
   '8': [
     {'1': '_first_run'},
+    {'1': '_markdown_description'},
   ],
 };
 
@@ -2794,7 +2796,9 @@ final $typed_data.Uint8List moduleVersionDescriptor = $convert.base64Decode(
     'Cg1Nb2R1bGVWZXJzaW9uEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SKgoFZmlsZXMYAiADKA'
     'syFC52aWFtLmFwcC52MS5VcGxvYWRzUgVmaWxlcxIqCgZtb2RlbHMYAyADKAsyEi52aWFtLmFw'
     'cC52MS5Nb2RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYBCABKAlSCmVudHJ5cG9pbnQSIAoJZm'
-    'lyc3RfcnVuGAUgASgJSABSCGZpcnN0UnVuiAEBQgwKCl9maXJzdF9ydW4=');
+    'lyc3RfcnVuGAUgASgJSABSCGZpcnN0UnVuiAEBEjYKFG1hcmtkb3duX2Rlc2NyaXB0aW9uGAYg'
+    'ASgJSAFSE21hcmtkb3duRGVzY3JpcHRpb26IAQFCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd2'
+    '5fZGVzY3JpcHRpb24=');
 
 @$core.Deprecated('Use moduleMetadataDescriptor instead')
 const ModuleMetadata$json = {
