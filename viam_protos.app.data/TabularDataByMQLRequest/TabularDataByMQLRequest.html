@@ -60,7 +60,7 @@
       <span class="name ">TabularDataByMQLRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
 <li><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span></li>
 <li><span class="parameter" id="-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">useRecentData</span>, </span></li>
-<li><span class="parameter" id="-param-useDataPipeline"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">useDataPipeline</span>, </span></li>
+<li><span class="parameter" id="-param-dataSource"><span class="type-annotation"><a href="../../viam_protos.app.data/TabularDataSource-class.html">TabularDataSource</a>?</span> <span class="parameter-name">dataSource</span>, </span></li>
 </ol>})
     </section>
     
@@ -73,7 +73,7 @@
   $core.String? organizationId,
   $core.Iterable&lt;$core.List&lt;$core.int&gt;&gt;? mqlBinary,
   $core.bool? useRecentData,
-  $core.String? useDataPipeline,
+  TabularDataSource? dataSource,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -85,8 +85,8 @@
   if (useRecentData != null) {
     $result.useRecentData = useRecentData;
   }
-  if (useDataPipeline != null) {
-    $result.useDataPipeline = useDataPipeline;
+  if (dataSource != null) {
+    $result.dataSource = dataSource;
   }
   return $result;
 }</code></pre>

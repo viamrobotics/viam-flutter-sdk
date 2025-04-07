@@ -93,7 +93,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="TabularDataByMQLRequest" class="callable">
-          <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/TabularDataByMQLRequest.html">TabularDataByMQLRequest</a></span><span class="signature">({<span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span><span class="parameter" id="-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">useRecentData</span>, </span><span class="parameter" id="-param-useDataPipeline"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">useDataPipeline</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/TabularDataByMQLRequest.html">TabularDataByMQLRequest</a></span><span class="signature">({<span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span><span class="parameter" id="-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">useRecentData</span>, </span><span class="parameter" id="-param-dataSource"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataSource-class.html">TabularDataSource</a>?</span> <span class="parameter-name">dataSource</span></span>})</span>
         </dt>
         <dd>
           
@@ -121,6 +121,19 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="dataSource" class="property">
+  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/dataSource.html">dataSource</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.data/TabularDataSource-class.html">TabularDataSource</a></span>
+  
+
+</dt>
+<dd>
+  data_source is an optional field that can be used to specify the data source for the query.
+If not specified, the query will run on "standard" storage.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="eventPlugin" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/eventPlugin.html">eventPlugin</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/EventPlugin-class.html">EventPlugin</a>?</span>
@@ -220,19 +233,6 @@ namespace, which holds the Viam organization's tabular data.
 
 </dd>
 
-        <dt id="useDataPipeline" class="property">
-  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/useDataPipeline.html">useDataPipeline</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-  
-
-</dt>
-<dd>
-  if set, MQL query will target the sink collection for the data pipeline name
-referenced by this value under the given organization.
-  <div class="features"><span class="feature">getter/setter pair</span></div>
-
-</dd>
-
         <dt id="useRecentData" class="property">
   <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/useRecentData.html">useRecentData</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -240,7 +240,7 @@ referenced by this value under the given organization.
 
 </dt>
 <dd>
-  
+  Deprecated, please use TABULAR_DATA_SOURCE_TYPE_HOT_STORAGE instead.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -293,6 +293,19 @@ referenced by this value under the given organization.
 
 </dd>
 
+        <dt id="clearDataSource" class="callable">
+  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/clearDataSource.html">clearDataSource</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/clearExtension.html">clearExtension</a></span><span class="signature">(<wbr><span class="parameter" id="clearExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -321,19 +334,6 @@ referenced by this value under the given organization.
 
         <dt id="clearOrganizationId" class="callable">
   <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/clearOrganizationId.html">clearOrganizationId</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; void</span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
-
-</dd>
-
-        <dt id="clearUseDataPipeline" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/clearUseDataPipeline.html">clearUseDataPipeline</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -441,6 +441,19 @@ referenced by this value under the given organization.
 
 </dd>
 
+        <dt id="ensureDataSource" class="callable">
+  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/ensureDataSource.html">ensureDataSource</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.data/TabularDataSource-class.html">TabularDataSource</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="extensionsAreInitialized" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/extensionsAreInitialized.html">extensionsAreInitialized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -533,6 +546,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasDataSource" class="callable">
+  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/hasDataSource.html">hasDataSource</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasExtension" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/hasExtension.html">hasExtension</a></span><span class="signature">(<wbr><span class="parameter" id="hasExtension-param-extension"><span class="type-annotation"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/Extension-class.html">Extension</a></span> <span class="parameter-name">extension</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -582,19 +608,6 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="hasUseDataPipeline" class="callable">
-  <span class="name"><a href="../viam_protos.app.data/TabularDataByMQLRequest/hasUseDataPipeline.html">hasUseDataPipeline</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  
 
 </dd>
 
