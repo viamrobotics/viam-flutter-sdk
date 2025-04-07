@@ -1049,13 +1049,80 @@ class TabularDataBySQLResponse extends $pb.GeneratedMessage {
   $core.List<$core.List<$core.int>> get rawData => $_getList(0);
 }
 
+/// TabularDataSource specifies the data source for user queries to execute on.
+class TabularDataSource extends $pb.GeneratedMessage {
+  factory TabularDataSource({
+    TabularDataSourceType? type,
+    $core.String? pipelineId,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (pipelineId != null) {
+      $result.pipelineId = pipelineId;
+    }
+    return $result;
+  }
+  TabularDataSource._() : super();
+  factory TabularDataSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TabularDataSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularDataSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..e<TabularDataSourceType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: TabularDataSourceType.valueOf, enumValues: TabularDataSourceType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'pipelineId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TabularDataSource clone() => TabularDataSource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TabularDataSource copyWith(void Function(TabularDataSource) updates) => super.copyWith((message) => updates(message as TabularDataSource)) as TabularDataSource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TabularDataSource create() => TabularDataSource._();
+  TabularDataSource createEmptyInstance() => create();
+  static $pb.PbList<TabularDataSource> createRepeated() => $pb.PbList<TabularDataSource>();
+  @$core.pragma('dart2js:noInline')
+  static TabularDataSource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TabularDataSource>(create);
+  static TabularDataSource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TabularDataSourceType get type => $_getN(0);
+  @$pb.TagNumber(1)
+  set type(TabularDataSourceType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  /// pipeline_id is the ID of the pipeline to query. Required when using
+  /// TABULAR_DATA_SOURCE_TYPE_PIPELINE_SINK.
+  @$pb.TagNumber(2)
+  $core.String get pipelineId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pipelineId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPipelineId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPipelineId() => clearField(2);
+}
+
 /// TabularDataByMQLRequest requests tabular data using an MQL query.
 class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   factory TabularDataByMQLRequest({
     $core.String? organizationId,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.bool? useRecentData,
-    $core.String? useDataPipeline,
+    TabularDataSource? dataSource,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1067,8 +1134,8 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     if (useRecentData != null) {
       $result.useRecentData = useRecentData;
     }
-    if (useDataPipeline != null) {
-      $result.useDataPipeline = useDataPipeline;
+    if (dataSource != null) {
+      $result.dataSource = dataSource;
     }
     return $result;
   }
@@ -1080,7 +1147,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOB(4, _omitFieldNames ? '' : 'useRecentData')
-    ..aOS(5, _omitFieldNames ? '' : 'useDataPipeline')
+    ..aOM<TabularDataSource>(6, _omitFieldNames ? '' : 'dataSource', subBuilder: TabularDataSource.create)
     ..hasRequiredFields = false
   ;
 
@@ -1120,6 +1187,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<$core.List<$core.int>> get mqlBinary => $_getList(1);
 
+  /// Deprecated, please use TABULAR_DATA_SOURCE_TYPE_HOT_STORAGE instead.
   @$pb.TagNumber(4)
   $core.bool get useRecentData => $_getBF(2);
   @$pb.TagNumber(4)
@@ -1129,16 +1197,18 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearUseRecentData() => clearField(4);
 
-  /// if set, MQL query will target the sink collection for the data pipeline name
-  /// referenced by this value under the given organization.
-  @$pb.TagNumber(5)
-  $core.String get useDataPipeline => $_getSZ(3);
-  @$pb.TagNumber(5)
-  set useDataPipeline($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasUseDataPipeline() => $_has(3);
-  @$pb.TagNumber(5)
-  void clearUseDataPipeline() => clearField(5);
+  /// data_source is an optional field that can be used to specify the data source for the query.
+  /// If not specified, the query will run on "standard" storage.
+  @$pb.TagNumber(6)
+  TabularDataSource get dataSource => $_getN(3);
+  @$pb.TagNumber(6)
+  set dataSource(TabularDataSource v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDataSource() => $_has(3);
+  @$pb.TagNumber(6)
+  void clearDataSource() => clearField(6);
+  @$pb.TagNumber(6)
+  TabularDataSource ensureDataSource() => $_ensure(3);
 }
 
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
