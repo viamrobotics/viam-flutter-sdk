@@ -2207,6 +2207,40 @@ final $typed_data.Uint8List additionalFragmentDescriptor = $convert.base64Decode
     'ChJBZGRpdGlvbmFsRnJhZ21lbnQSHwoLZnJhZ21lbnRfaWQYASABKAlSCmZyYWdtZW50SWQSHQ'
     'oHdmVyc2lvbhgCIAEoCUgAUgd2ZXJzaW9uiAEBQgoKCF92ZXJzaW9u');
 
+@$core.Deprecated('Use listNestedFragmentsRequestDescriptor instead')
+const ListNestedFragmentsRequest$json = {
+  '1': 'ListNestedFragmentsRequest',
+  '2': [
+    {'1': 'fragment_id', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'fragmentId', '17': true},
+    {'1': 'additional_fragments', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.AdditionalFragment', '10': 'additionalFragments'},
+  ],
+  '8': [
+    {'1': '_fragment_id'},
+  ],
+};
+
+/// Descriptor for `ListNestedFragmentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNestedFragmentsRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0TmVzdGVkRnJhZ21lbnRzUmVxdWVzdBIkCgtmcmFnbWVudF9pZBgBIAEoCUgAUgpmcm'
+    'FnbWVudElkiAEBElIKFGFkZGl0aW9uYWxfZnJhZ21lbnRzGAIgAygLMh8udmlhbS5hcHAudjEu'
+    'QWRkaXRpb25hbEZyYWdtZW50UhNhZGRpdGlvbmFsRnJhZ21lbnRzQg4KDF9mcmFnbWVudF9pZA'
+    '==');
+
+@$core.Deprecated('Use listNestedFragmentsResponseDescriptor instead')
+const ListNestedFragmentsResponse$json = {
+  '1': 'ListNestedFragmentsResponse',
+  '2': [
+    {'1': 'fragments', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Fragment', '10': 'fragments'},
+    {'1': 'resolved_fragments', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.ResolvedFragment', '10': 'resolvedFragments'},
+  ],
+};
+
+/// Descriptor for `ListNestedFragmentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNestedFragmentsResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0TmVzdGVkRnJhZ21lbnRzUmVzcG9uc2USMwoJZnJhZ21lbnRzGAEgAygLMhUudmlhbS'
+    '5hcHAudjEuRnJhZ21lbnRSCWZyYWdtZW50cxJMChJyZXNvbHZlZF9mcmFnbWVudHMYAiADKAsy'
+    'HS52aWFtLmFwcC52MS5SZXNvbHZlZEZyYWdtZW50UhFyZXNvbHZlZEZyYWdtZW50cw==');
+
 @$core.Deprecated('Use listMachineFragmentsRequestDescriptor instead')
 const ListMachineFragmentsRequest$json = {
   '1': 'ListMachineFragmentsRequest',
@@ -3095,6 +3129,33 @@ const DeleteRegistryItemResponse$json = {
 /// Descriptor for `DeleteRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteRegistryItemResponseDescriptor = $convert.base64Decode(
     'ChpEZWxldGVSZWdpc3RyeUl0ZW1SZXNwb25zZQ==');
+
+@$core.Deprecated('Use renameRegistryItemRequestDescriptor instead')
+const RenameRegistryItemRequest$json = {
+  '1': 'RenameRegistryItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'new_name', '3': 2, '4': 1, '5': 9, '10': 'newName'},
+  ],
+};
+
+/// Descriptor for `RenameRegistryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameRegistryItemRequestDescriptor = $convert.base64Decode(
+    'ChlSZW5hbWVSZWdpc3RyeUl0ZW1SZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBIZCg'
+    'huZXdfbmFtZRgCIAEoCVIHbmV3TmFtZQ==');
+
+@$core.Deprecated('Use renameRegistryItemResponseDescriptor instead')
+const RenameRegistryItemResponse$json = {
+  '1': 'RenameRegistryItemResponse',
+  '2': [
+    {'1': 'item', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.RegistryItem', '10': 'item'},
+  ],
+};
+
+/// Descriptor for `RenameRegistryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameRegistryItemResponseDescriptor = $convert.base64Decode(
+    'ChpSZW5hbWVSZWdpc3RyeUl0ZW1SZXNwb25zZRItCgRpdGVtGAEgASgLMhkudmlhbS5hcHAudj'
+    'EuUmVnaXN0cnlJdGVtUgRpdGVt');
 
 @$core.Deprecated('Use transferRegistryItemRequestDescriptor instead')
 const TransferRegistryItemRequest$json = {
