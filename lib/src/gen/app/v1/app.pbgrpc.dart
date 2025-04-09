@@ -313,6 +313,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteFragment',
       ($11.DeleteFragmentRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.DeleteFragmentResponse.fromBuffer(value));
+  static final _$listNestedFragments = $grpc.ClientMethod<$11.ListNestedFragmentsRequest, $11.ListNestedFragmentsResponse>(
+      '/viam.app.v1.AppService/ListNestedFragments',
+      ($11.ListNestedFragmentsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.ListNestedFragmentsResponse.fromBuffer(value));
   static final _$listMachineFragments = $grpc.ClientMethod<$11.ListMachineFragmentsRequest, $11.ListMachineFragmentsResponse>(
       '/viam.app.v1.AppService/ListMachineFragments',
       ($11.ListMachineFragmentsRequest value) => value.writeToBuffer(),
@@ -377,6 +381,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/DeleteRegistryItem',
       ($11.DeleteRegistryItemRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.DeleteRegistryItemResponse.fromBuffer(value));
+  static final _$renameRegistryItem = $grpc.ClientMethod<$11.RenameRegistryItemRequest, $11.RenameRegistryItemResponse>(
+      '/viam.app.v1.AppService/RenameRegistryItem',
+      ($11.RenameRegistryItemRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.RenameRegistryItemResponse.fromBuffer(value));
   static final _$transferRegistryItem = $grpc.ClientMethod<$11.TransferRegistryItemRequest, $11.TransferRegistryItemResponse>(
       '/viam.app.v1.AppService/TransferRegistryItem',
       ($11.TransferRegistryItemRequest value) => value.writeToBuffer(),
@@ -728,6 +736,10 @@ class AppServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteFragment, request, options: options);
   }
 
+  $grpc.ResponseFuture<$11.ListNestedFragmentsResponse> listNestedFragments($11.ListNestedFragmentsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listNestedFragments, request, options: options);
+  }
+
   $grpc.ResponseFuture<$11.ListMachineFragmentsResponse> listMachineFragments($11.ListMachineFragmentsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listMachineFragments, request, options: options);
   }
@@ -790,6 +802,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$11.DeleteRegistryItemResponse> deleteRegistryItem($11.DeleteRegistryItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteRegistryItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.RenameRegistryItemResponse> renameRegistryItem($11.RenameRegistryItemRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$renameRegistryItem, request, options: options);
   }
 
   $grpc.ResponseFuture<$11.TransferRegistryItemResponse> transferRegistryItem($11.TransferRegistryItemRequest request, {$grpc.CallOptions? options}) {
@@ -1361,6 +1377,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.DeleteFragmentRequest.fromBuffer(value),
         ($11.DeleteFragmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.ListNestedFragmentsRequest, $11.ListNestedFragmentsResponse>(
+        'ListNestedFragments',
+        listNestedFragments_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.ListNestedFragmentsRequest.fromBuffer(value),
+        ($11.ListNestedFragmentsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$11.ListMachineFragmentsRequest, $11.ListMachineFragmentsResponse>(
         'ListMachineFragments',
         listMachineFragments_Pre,
@@ -1473,6 +1496,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.DeleteRegistryItemRequest.fromBuffer(value),
         ($11.DeleteRegistryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.RenameRegistryItemRequest, $11.RenameRegistryItemResponse>(
+        'RenameRegistryItem',
+        renameRegistryItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.RenameRegistryItemRequest.fromBuffer(value),
+        ($11.RenameRegistryItemResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$11.TransferRegistryItemRequest, $11.TransferRegistryItemResponse>(
         'TransferRegistryItem',
         transferRegistryItem_Pre,
@@ -1858,6 +1888,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return deleteFragment(call, await request);
   }
 
+  $async.Future<$11.ListNestedFragmentsResponse> listNestedFragments_Pre($grpc.ServiceCall call, $async.Future<$11.ListNestedFragmentsRequest> request) async {
+    return listNestedFragments(call, await request);
+  }
+
   $async.Future<$11.ListMachineFragmentsResponse> listMachineFragments_Pre($grpc.ServiceCall call, $async.Future<$11.ListMachineFragmentsRequest> request) async {
     return listMachineFragments(call, await request);
   }
@@ -1920,6 +1954,10 @@ abstract class AppServiceBase extends $grpc.Service {
 
   $async.Future<$11.DeleteRegistryItemResponse> deleteRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$11.DeleteRegistryItemRequest> request) async {
     return deleteRegistryItem(call, await request);
+  }
+
+  $async.Future<$11.RenameRegistryItemResponse> renameRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$11.RenameRegistryItemRequest> request) async {
+    return renameRegistryItem(call, await request);
   }
 
   $async.Future<$11.TransferRegistryItemResponse> transferRegistryItem_Pre($grpc.ServiceCall call, $async.Future<$11.TransferRegistryItemRequest> request) async {
@@ -2043,6 +2081,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.CreateFragmentResponse> createFragment($grpc.ServiceCall call, $11.CreateFragmentRequest request);
   $async.Future<$11.UpdateFragmentResponse> updateFragment($grpc.ServiceCall call, $11.UpdateFragmentRequest request);
   $async.Future<$11.DeleteFragmentResponse> deleteFragment($grpc.ServiceCall call, $11.DeleteFragmentRequest request);
+  $async.Future<$11.ListNestedFragmentsResponse> listNestedFragments($grpc.ServiceCall call, $11.ListNestedFragmentsRequest request);
   $async.Future<$11.ListMachineFragmentsResponse> listMachineFragments($grpc.ServiceCall call, $11.ListMachineFragmentsRequest request);
   $async.Future<$11.ListMachineSummariesResponse> listMachineSummaries($grpc.ServiceCall call, $11.ListMachineSummariesRequest request);
   $async.Future<$11.GetFragmentHistoryResponse> getFragmentHistory($grpc.ServiceCall call, $11.GetFragmentHistoryRequest request);
@@ -2059,6 +2098,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.UpdateRegistryItemResponse> updateRegistryItem($grpc.ServiceCall call, $11.UpdateRegistryItemRequest request);
   $async.Future<$11.ListRegistryItemsResponse> listRegistryItems($grpc.ServiceCall call, $11.ListRegistryItemsRequest request);
   $async.Future<$11.DeleteRegistryItemResponse> deleteRegistryItem($grpc.ServiceCall call, $11.DeleteRegistryItemRequest request);
+  $async.Future<$11.RenameRegistryItemResponse> renameRegistryItem($grpc.ServiceCall call, $11.RenameRegistryItemRequest request);
   $async.Future<$11.TransferRegistryItemResponse> transferRegistryItem($grpc.ServiceCall call, $11.TransferRegistryItemRequest request);
   $async.Future<$11.CreateModuleResponse> createModule($grpc.ServiceCall call, $11.CreateModuleRequest request);
   $async.Future<$11.UpdateModuleResponse> updateModule($grpc.ServiceCall call, $11.UpdateModuleRequest request);

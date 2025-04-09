@@ -8701,6 +8701,116 @@ class AdditionalFragment extends $pb.GeneratedMessage {
   void clearVersion() => clearField(2);
 }
 
+class ListNestedFragmentsRequest extends $pb.GeneratedMessage {
+  factory ListNestedFragmentsRequest({
+    $core.String? fragmentId,
+    $core.Iterable<AdditionalFragment>? additionalFragments,
+  }) {
+    final $result = create();
+    if (fragmentId != null) {
+      $result.fragmentId = fragmentId;
+    }
+    if (additionalFragments != null) {
+      $result.additionalFragments.addAll(additionalFragments);
+    }
+    return $result;
+  }
+  ListNestedFragmentsRequest._() : super();
+  factory ListNestedFragmentsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNestedFragmentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNestedFragmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
+    ..pc<AdditionalFragment>(2, _omitFieldNames ? '' : 'additionalFragments', $pb.PbFieldType.PM, subBuilder: AdditionalFragment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListNestedFragmentsRequest clone() => ListNestedFragmentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListNestedFragmentsRequest copyWith(void Function(ListNestedFragmentsRequest) updates) => super.copyWith((message) => updates(message as ListNestedFragmentsRequest)) as ListNestedFragmentsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNestedFragmentsRequest create() => ListNestedFragmentsRequest._();
+  ListNestedFragmentsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListNestedFragmentsRequest> createRepeated() => $pb.PbList<ListNestedFragmentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListNestedFragmentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNestedFragmentsRequest>(create);
+  static ListNestedFragmentsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fragmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fragmentId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFragmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFragmentId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<AdditionalFragment> get additionalFragments => $_getList(1);
+}
+
+class ListNestedFragmentsResponse extends $pb.GeneratedMessage {
+  factory ListNestedFragmentsResponse({
+    $core.Iterable<Fragment>? fragments,
+    $core.Iterable<ResolvedFragment>? resolvedFragments,
+  }) {
+    final $result = create();
+    if (fragments != null) {
+      $result.fragments.addAll(fragments);
+    }
+    if (resolvedFragments != null) {
+      $result.resolvedFragments.addAll(resolvedFragments);
+    }
+    return $result;
+  }
+  ListNestedFragmentsResponse._() : super();
+  factory ListNestedFragmentsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNestedFragmentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNestedFragmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<Fragment>(1, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: Fragment.create)
+    ..pc<ResolvedFragment>(2, _omitFieldNames ? '' : 'resolvedFragments', $pb.PbFieldType.PM, subBuilder: ResolvedFragment.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListNestedFragmentsResponse clone() => ListNestedFragmentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListNestedFragmentsResponse copyWith(void Function(ListNestedFragmentsResponse) updates) => super.copyWith((message) => updates(message as ListNestedFragmentsResponse)) as ListNestedFragmentsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNestedFragmentsResponse create() => ListNestedFragmentsResponse._();
+  ListNestedFragmentsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListNestedFragmentsResponse> createRepeated() => $pb.PbList<ListNestedFragmentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListNestedFragmentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNestedFragmentsResponse>(create);
+  static ListNestedFragmentsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Fragment> get fragments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<ResolvedFragment> get resolvedFragments => $_getList(1);
+}
+
 class ListMachineFragmentsRequest extends $pb.GeneratedMessage {
   factory ListMachineFragmentsRequest({
     $core.String? machineId,
@@ -12507,6 +12617,122 @@ class DeleteRegistryItemResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteRegistryItemResponse>(create);
   static DeleteRegistryItemResponse? _defaultInstance;
+}
+
+class RenameRegistryItemRequest extends $pb.GeneratedMessage {
+  factory RenameRegistryItemRequest({
+    $core.String? itemId,
+    $core.String? newName,
+  }) {
+    final $result = create();
+    if (itemId != null) {
+      $result.itemId = itemId;
+    }
+    if (newName != null) {
+      $result.newName = newName;
+    }
+    return $result;
+  }
+  RenameRegistryItemRequest._() : super();
+  factory RenameRegistryItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RenameRegistryItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenameRegistryItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'newName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RenameRegistryItemRequest clone() => RenameRegistryItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RenameRegistryItemRequest copyWith(void Function(RenameRegistryItemRequest) updates) => super.copyWith((message) => updates(message as RenameRegistryItemRequest)) as RenameRegistryItemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RenameRegistryItemRequest create() => RenameRegistryItemRequest._();
+  RenameRegistryItemRequest createEmptyInstance() => create();
+  static $pb.PbList<RenameRegistryItemRequest> createRepeated() => $pb.PbList<RenameRegistryItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RenameRegistryItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenameRegistryItemRequest>(create);
+  static RenameRegistryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get newName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set newName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNewName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewName() => clearField(2);
+}
+
+class RenameRegistryItemResponse extends $pb.GeneratedMessage {
+  factory RenameRegistryItemResponse({
+    RegistryItem? item,
+  }) {
+    final $result = create();
+    if (item != null) {
+      $result.item = item;
+    }
+    return $result;
+  }
+  RenameRegistryItemResponse._() : super();
+  factory RenameRegistryItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RenameRegistryItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenameRegistryItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<RegistryItem>(1, _omitFieldNames ? '' : 'item', subBuilder: RegistryItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RenameRegistryItemResponse clone() => RenameRegistryItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RenameRegistryItemResponse copyWith(void Function(RenameRegistryItemResponse) updates) => super.copyWith((message) => updates(message as RenameRegistryItemResponse)) as RenameRegistryItemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RenameRegistryItemResponse create() => RenameRegistryItemResponse._();
+  RenameRegistryItemResponse createEmptyInstance() => create();
+  static $pb.PbList<RenameRegistryItemResponse> createRepeated() => $pb.PbList<RenameRegistryItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RenameRegistryItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenameRegistryItemResponse>(create);
+  static RenameRegistryItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RegistryItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(RegistryItem v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => clearField(1);
+  @$pb.TagNumber(1)
+  RegistryItem ensureItem() => $_ensure(0);
 }
 
 class TransferRegistryItemRequest extends $pb.GeneratedMessage {
