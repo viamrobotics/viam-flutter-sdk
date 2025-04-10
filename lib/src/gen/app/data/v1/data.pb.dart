@@ -2095,6 +2095,7 @@ class BinaryID extends $pb.GeneratedMessage {
 class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory BinaryDataByIDsRequest({
     $core.bool? includeBinary,
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<BinaryID>? binaryIds,
     $core.Iterable<$core.String>? binaryDataIds,
   }) {
@@ -2103,6 +2104,7 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
       $result.includeBinary = includeBinary;
     }
     if (binaryIds != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryIds.addAll(binaryIds);
     }
     if (binaryDataIds != null) {
@@ -2151,6 +2153,7 @@ class BinaryDataByIDsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearIncludeBinary() => clearField(2);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.List<BinaryID> get binaryIds => $_getList(1);
 
@@ -2476,6 +2479,7 @@ class Annotations extends $pb.GeneratedMessage {
 /// BinaryMetadata is the metadata associated with binary data.
 class BinaryMetadata extends $pb.GeneratedMessage {
   factory BinaryMetadata({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? id,
     CaptureMetadata? captureMetadata,
     $48.Timestamp? timeRequested,
@@ -2489,6 +2493,7 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   }) {
     final $result = create();
     if (id != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.id = id;
     }
     if (captureMetadata != null) {
@@ -2559,12 +2564,16 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   static BinaryMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BinaryMetadata>(create);
   static BinaryMetadata? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set id($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
@@ -2894,11 +2903,13 @@ class DeleteBinaryDataByFilterResponse extends $pb.GeneratedMessage {
 /// DeleteBinaryDataByIDsRequest deletes the data and metadata of binary data when binary ids are provided.
 class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory DeleteBinaryDataByIDsRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<BinaryID>? binaryIds,
     $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (binaryIds != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryIds.addAll(binaryIds);
     }
     if (binaryDataIds != null) {
@@ -2937,6 +2948,7 @@ class DeleteBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   static DeleteBinaryDataByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteBinaryDataByIDsRequest>(create);
   static DeleteBinaryDataByIDsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.List<BinaryID> get binaryIds => $_getList(0);
 
@@ -2999,6 +3011,7 @@ class DeleteBinaryDataByIDsResponse extends $pb.GeneratedMessage {
 class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory AddTagsToBinaryDataByIDsRequest({
     $core.Iterable<$core.String>? tags,
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<BinaryID>? binaryIds,
     $core.Iterable<$core.String>? binaryDataIds,
   }) {
@@ -3007,6 +3020,7 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
       $result.tags.addAll(tags);
     }
     if (binaryIds != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryIds.addAll(binaryIds);
     }
     if (binaryDataIds != null) {
@@ -3049,6 +3063,7 @@ class AddTagsToBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$core.String> get tags => $_getList(0);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.List<BinaryID> get binaryIds => $_getList(1);
 
@@ -3185,6 +3200,7 @@ class AddTagsToBinaryDataByFilterResponse extends $pb.GeneratedMessage {
 class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   factory RemoveTagsFromBinaryDataByIDsRequest({
     $core.Iterable<$core.String>? tags,
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<BinaryID>? binaryIds,
     $core.Iterable<$core.String>? binaryDataIds,
   }) {
@@ -3193,6 +3209,7 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
       $result.tags.addAll(tags);
     }
     if (binaryIds != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryIds.addAll(binaryIds);
     }
     if (binaryDataIds != null) {
@@ -3235,6 +3252,7 @@ class RemoveTagsFromBinaryDataByIDsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$core.String> get tags => $_getList(0);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.List<BinaryID> get binaryIds => $_getList(1);
 
@@ -3512,6 +3530,7 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
     $core.double? yMinNormalized,
     $core.double? xMaxNormalized,
     $core.double? yMaxNormalized,
+  @$core.Deprecated('This field is deprecated.')
     BinaryID? binaryId,
     $core.String? binaryDataId,
   }) {
@@ -3532,6 +3551,7 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
       $result.yMaxNormalized = yMaxNormalized;
     }
     if (binaryId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryId = binaryId;
     }
     if (binaryDataId != null) {
@@ -3620,14 +3640,19 @@ class AddBoundingBoxToImageByIDRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearYMaxNormalized() => clearField(6);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   BinaryID get binaryId => $_getN(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   set binaryId(BinaryID v) { setField(7, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.bool hasBinaryId() => $_has(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   void clearBinaryId() => clearField(7);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   BinaryID ensureBinaryId() => $_ensure(5);
 
@@ -3696,6 +3721,7 @@ class AddBoundingBoxToImageByIDResponse extends $pb.GeneratedMessage {
 class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   factory RemoveBoundingBoxFromImageByIDRequest({
     $core.String? bboxId,
+  @$core.Deprecated('This field is deprecated.')
     BinaryID? binaryId,
     $core.String? binaryDataId,
   }) {
@@ -3704,6 +3730,7 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
       $result.bboxId = bboxId;
     }
     if (binaryId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryId = binaryId;
     }
     if (binaryDataId != null) {
@@ -3752,14 +3779,19 @@ class RemoveBoundingBoxFromImageByIDRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBboxId() => clearField(2);
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   BinaryID get binaryId => $_getN(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set binaryId(BinaryID v) { setField(3, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasBinaryId() => $_has(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearBinaryId() => clearField(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   BinaryID ensureBinaryId() => $_ensure(1);
 
@@ -3808,6 +3840,7 @@ class RemoveBoundingBoxFromImageByIDResponse extends $pb.GeneratedMessage {
 /// UpdateBoundingBoxRequest updates the bounding box with specified bounding box ID for the file represented by the binary ID.
 class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
   factory UpdateBoundingBoxRequest({
+  @$core.Deprecated('This field is deprecated.')
     BinaryID? binaryId,
     $core.String? bboxId,
     $core.String? label,
@@ -3819,6 +3852,7 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
   }) {
     final $result = create();
     if (binaryId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryId = binaryId;
     }
     if (bboxId != null) {
@@ -3881,14 +3915,19 @@ class UpdateBoundingBoxRequest extends $pb.GeneratedMessage {
   static UpdateBoundingBoxRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateBoundingBoxRequest>(create);
   static UpdateBoundingBoxRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   BinaryID get binaryId => $_getN(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set binaryId(BinaryID v) { setField(1, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasBinaryId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearBinaryId() => clearField(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   BinaryID ensureBinaryId() => $_ensure(0);
 
@@ -4320,12 +4359,14 @@ class GetDatabaseConnectionResponse extends $pb.GeneratedMessage {
 /// AddBinaryDataToDatasetByIDsRequest adds the binary data with the given binary IDs to a dataset with dataset_id.
 class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
   factory AddBinaryDataToDatasetByIDsRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<BinaryID>? binaryIds,
     $core.String? datasetId,
     $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (binaryIds != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryIds.addAll(binaryIds);
     }
     if (datasetId != null) {
@@ -4368,6 +4409,7 @@ class AddBinaryDataToDatasetByIDsRequest extends $pb.GeneratedMessage {
   static AddBinaryDataToDatasetByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddBinaryDataToDatasetByIDsRequest>(create);
   static AddBinaryDataToDatasetByIDsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<BinaryID> get binaryIds => $_getList(0);
 
@@ -4419,12 +4461,14 @@ class AddBinaryDataToDatasetByIDsResponse extends $pb.GeneratedMessage {
 /// RemoveBinaryDataFromDatasetByIDsRequest removes the specified binary IDs from a dataset with dataset_id.
 class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
   factory RemoveBinaryDataFromDatasetByIDsRequest({
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<BinaryID>? binaryIds,
     $core.String? datasetId,
     $core.Iterable<$core.String>? binaryDataIds,
   }) {
     final $result = create();
     if (binaryIds != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.binaryIds.addAll(binaryIds);
     }
     if (datasetId != null) {
@@ -4467,6 +4511,7 @@ class RemoveBinaryDataFromDatasetByIDsRequest extends $pb.GeneratedMessage {
   static RemoveBinaryDataFromDatasetByIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBinaryDataFromDatasetByIDsRequest>(create);
   static RemoveBinaryDataFromDatasetByIDsRequest? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.List<BinaryID> get binaryIds => $_getList(0);
 
