@@ -235,11 +235,13 @@ class FileUploadRequest extends $pb.GeneratedMessage {
 /// FileUploadResponse returns the file id of the uploaded contents and metadata for binary (image + file) data.
 class FileUploadResponse extends $pb.GeneratedMessage {
   factory FileUploadResponse({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? fileId,
     $core.String? binaryDataId,
   }) {
     final $result = create();
     if (fileId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.fileId = fileId;
     }
     if (binaryDataId != null) {
@@ -278,12 +280,16 @@ class FileUploadResponse extends $pb.GeneratedMessage {
   static FileUploadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileUploadResponse>(create);
   static FileUploadResponse? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get fileId => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set fileId($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasFileId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
 
@@ -383,11 +389,13 @@ class StreamingDataCaptureUploadRequest extends $pb.GeneratedMessage {
 /// StreamingDataCaptureUploadResponse returns the file id of the uploaded contents and metadata for streaming binary (image + file) data.
 class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
   factory StreamingDataCaptureUploadResponse({
+  @$core.Deprecated('This field is deprecated.')
     $core.String? fileId,
     $core.String? binaryDataId,
   }) {
     final $result = create();
     if (fileId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.fileId = fileId;
     }
     if (binaryDataId != null) {
@@ -426,12 +434,16 @@ class StreamingDataCaptureUploadResponse extends $pb.GeneratedMessage {
   static StreamingDataCaptureUploadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamingDataCaptureUploadResponse>(create);
   static StreamingDataCaptureUploadResponse? _defaultInstance;
 
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.String get fileId => $_getSZ(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set fileId($core.String v) { $_setString(0, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasFileId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearFileId() => clearField(1);
 
