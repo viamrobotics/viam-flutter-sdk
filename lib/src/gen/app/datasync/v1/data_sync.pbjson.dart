@@ -100,15 +100,22 @@ final $typed_data.Uint8List fileUploadRequestDescriptor = $convert.base64Decode(
 const FileUploadResponse$json = {
   '1': 'FileUploadResponse',
   '2': [
-    {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    {
+      '1': 'file_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {'3': true},
+      '10': 'fileId',
+    },
     {'1': 'binary_data_id', '3': 2, '4': 1, '5': 9, '10': 'binaryDataId'},
   ],
 };
 
 /// Descriptor for `FileUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fileUploadResponseDescriptor = $convert.base64Decode(
-    'ChJGaWxlVXBsb2FkUmVzcG9uc2USFwoHZmlsZV9pZBgBIAEoCVIGZmlsZUlkEiQKDmJpbmFyeV'
-    '9kYXRhX2lkGAIgASgJUgxiaW5hcnlEYXRhSWQ=');
+    'ChJGaWxlVXBsb2FkUmVzcG9uc2USGwoHZmlsZV9pZBgBIAEoCUICGAFSBmZpbGVJZBIkCg5iaW'
+    '5hcnlfZGF0YV9pZBgCIAEoCVIMYmluYXJ5RGF0YUlk');
 
 @$core.Deprecated('Use streamingDataCaptureUploadRequestDescriptor instead')
 const StreamingDataCaptureUploadRequest$json = {
@@ -132,15 +139,22 @@ final $typed_data.Uint8List streamingDataCaptureUploadRequestDescriptor = $conve
 const StreamingDataCaptureUploadResponse$json = {
   '1': 'StreamingDataCaptureUploadResponse',
   '2': [
-    {'1': 'file_id', '3': 1, '4': 1, '5': 9, '10': 'fileId'},
+    {
+      '1': 'file_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': {'3': true},
+      '10': 'fileId',
+    },
     {'1': 'binary_data_id', '3': 2, '4': 1, '5': 9, '10': 'binaryDataId'},
   ],
 };
 
 /// Descriptor for `StreamingDataCaptureUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List streamingDataCaptureUploadResponseDescriptor = $convert.base64Decode(
-    'CiJTdHJlYW1pbmdEYXRhQ2FwdHVyZVVwbG9hZFJlc3BvbnNlEhcKB2ZpbGVfaWQYASABKAlSBm'
-    'ZpbGVJZBIkCg5iaW5hcnlfZGF0YV9pZBgCIAEoCVIMYmluYXJ5RGF0YUlk');
+    'CiJTdHJlYW1pbmdEYXRhQ2FwdHVyZVVwbG9hZFJlc3BvbnNlEhsKB2ZpbGVfaWQYASABKAlCAh'
+    'gBUgZmaWxlSWQSJAoOYmluYXJ5X2RhdGFfaWQYAiABKAlSDGJpbmFyeURhdGFJZA==');
 
 @$core.Deprecated('Use sensorMetadataDescriptor instead')
 const SensorMetadata$json = {
