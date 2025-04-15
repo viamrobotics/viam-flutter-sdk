@@ -62,7 +62,7 @@
 <li><span class="parameter" id="-param-yMinNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMinNormalized</span>, </span></li>
 <li><span class="parameter" id="-param-xMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">xMaxNormalized</span>, </span></li>
 <li><span class="parameter" id="-param-yMaxNormalized"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">yMaxNormalized</span>, </span></li>
-<li><span class="parameter" id="-param-binaryId"><span class="type-annotation"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a>?</span> <span class="parameter-name">binaryId</span>, </span></li>
+<li><span class="parameter" id="-param-binaryId"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a>?</span> <span class="parameter-name">binaryId</span>, </span></li>
 <li><span class="parameter" id="-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">binaryDataId</span>, </span></li>
 </ol>})
     </section>
@@ -78,6 +78,7 @@
   $core.double? yMinNormalized,
   $core.double? xMaxNormalized,
   $core.double? yMaxNormalized,
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   BinaryID? binaryId,
   $core.String? binaryDataId,
 }) {
@@ -98,6 +99,7 @@
     $result.yMaxNormalized = yMaxNormalized;
   }
   if (binaryId != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.binaryId = binaryId;
   }
   if (binaryDataId != null) {

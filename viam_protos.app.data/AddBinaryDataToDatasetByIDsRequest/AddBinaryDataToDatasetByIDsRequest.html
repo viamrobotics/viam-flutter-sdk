@@ -57,7 +57,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">AddBinaryDataToDatasetByIDsRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-binaryIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span>&gt;</span>?</span> <span class="parameter-name">binaryIds</span>, </span></li>
+      <span class="name ">AddBinaryDataToDatasetByIDsRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-binaryIds"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.data/BinaryID-class.html">BinaryID</a></span>&gt;</span>?</span> <span class="parameter-name">binaryIds</span>, </span></li>
 <li><span class="parameter" id="-param-datasetId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">datasetId</span>, </span></li>
 <li><span class="parameter" id="-param-binaryDataIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">binaryDataIds</span>, </span></li>
 </ol>})
@@ -69,12 +69,14 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory AddBinaryDataToDatasetByIDsRequest({
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   $core.Iterable&lt;BinaryID&gt;? binaryIds,
   $core.String? datasetId,
   $core.Iterable&lt;$core.String&gt;? binaryDataIds,
 }) {
   final $result = create();
   if (binaryIds != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.binaryIds.addAll(binaryIds);
   }
   if (datasetId != null) {

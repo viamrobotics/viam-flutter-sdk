@@ -57,7 +57,7 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">StreamingDataCaptureUploadResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-fileId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fileId</span>, </span></li>
+      <span class="name ">StreamingDataCaptureUploadResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-fileId"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fileId</span>, </span></li>
 <li><span class="parameter" id="-param-binaryDataId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">binaryDataId</span>, </span></li>
 </ol>})
     </section>
@@ -68,11 +68,13 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory StreamingDataCaptureUploadResponse({
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
   $core.String? fileId,
   $core.String? binaryDataId,
 }) {
   final $result = create();
   if (fileId != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
     $result.fileId = fileId;
   }
   if (binaryDataId != null) {
