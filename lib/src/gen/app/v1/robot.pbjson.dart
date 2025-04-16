@@ -280,6 +280,7 @@ const NetworkConfig$json = {
     {'1': 'tls_key_file', '3': 4, '4': 1, '5': 9, '10': 'tlsKeyFile'},
     {'1': 'sessions', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.SessionsConfig', '10': 'sessions'},
     {'1': 'traffic_tunnel_endpoints', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.TrafficTunnelEndpoint', '10': 'trafficTunnelEndpoints'},
+    {'1': 'no_tls', '3': 7, '4': 1, '5': 8, '10': 'noTls'},
   ],
 };
 
@@ -290,7 +291,7 @@ final $typed_data.Uint8List networkConfigDescriptor = $convert.base64Decode(
     'bHNfa2V5X2ZpbGUYBCABKAlSCnRsc0tleUZpbGUSNwoIc2Vzc2lvbnMYBSABKAsyGy52aWFtLm'
     'FwcC52MS5TZXNzaW9uc0NvbmZpZ1IIc2Vzc2lvbnMSXAoYdHJhZmZpY190dW5uZWxfZW5kcG9p'
     'bnRzGAYgAygLMiIudmlhbS5hcHAudjEuVHJhZmZpY1R1bm5lbEVuZHBvaW50UhZ0cmFmZmljVH'
-    'VubmVsRW5kcG9pbnRz');
+    'VubmVsRW5kcG9pbnRzEhUKBm5vX3RscxgHIAEoCFIFbm9UbHM=');
 
 @$core.Deprecated('Use sessionsConfigDescriptor instead')
 const SessionsConfig$json = {

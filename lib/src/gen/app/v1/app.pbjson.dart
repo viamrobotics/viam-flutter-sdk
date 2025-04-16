@@ -1593,6 +1593,10 @@ const UpdateRobotPartRequest$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'robot_config', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'robotConfig'},
+    {'1': 'last_known_update', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastKnownUpdate', '17': true},
+  ],
+  '8': [
+    {'1': '_last_known_update'},
   ],
 };
 
@@ -1600,7 +1604,8 @@ const UpdateRobotPartRequest$json = {
 final $typed_data.Uint8List updateRobotPartRequestDescriptor = $convert.base64Decode(
     'ChZVcGRhdGVSb2JvdFBhcnRSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUg'
     'RuYW1lEjoKDHJvYm90X2NvbmZpZxgDIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSC3Jv'
-    'Ym90Q29uZmln');
+    'Ym90Q29uZmlnEksKEWxhc3Rfa25vd25fdXBkYXRlGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcEgAUg9sYXN0S25vd25VcGRhdGWIAQFCFAoSX2xhc3Rfa25vd25fdXBkYXRl');
 
 @$core.Deprecated('Use updateRobotPartResponseDescriptor instead')
 const UpdateRobotPartResponse$json = {
@@ -2013,10 +2018,12 @@ const UpdateFragmentRequest$json = {
     {'1': 'config', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'config'},
     {'1': 'public', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'public', '17': true},
     {'1': 'visibility', '3': 5, '4': 1, '5': 14, '6': '.viam.app.v1.FragmentVisibility', '9': 1, '10': 'visibility', '17': true},
+    {'1': 'last_known_update', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 2, '10': 'lastKnownUpdate', '17': true},
   ],
   '8': [
     {'1': '_public'},
     {'1': '_visibility'},
+    {'1': '_last_known_update'},
   ],
 };
 
@@ -2025,8 +2032,9 @@ final $typed_data.Uint8List updateFragmentRequestDescriptor = $convert.base64Dec
     'ChVVcGRhdGVGcmFnbWVudFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG'
     '5hbWUSLwoGY29uZmlnGAMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIGY29uZmlnEhsK'
     'BnB1YmxpYxgEIAEoCEgAUgZwdWJsaWOIAQESRAoKdmlzaWJpbGl0eRgFIAEoDjIfLnZpYW0uYX'
-    'BwLnYxLkZyYWdtZW50VmlzaWJpbGl0eUgBUgp2aXNpYmlsaXR5iAEBQgkKB19wdWJsaWNCDQoL'
-    'X3Zpc2liaWxpdHk=');
+    'BwLnYxLkZyYWdtZW50VmlzaWJpbGl0eUgBUgp2aXNpYmlsaXR5iAEBEksKEWxhc3Rfa25vd25f'
+    'dXBkYXRlGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgCUg9sYXN0S25vd25VcG'
+    'RhdGWIAQFCCQoHX3B1YmxpY0INCgtfdmlzaWJpbGl0eUIUChJfbGFzdF9rbm93bl91cGRhdGU=');
 
 @$core.Deprecated('Use updateFragmentResponseDescriptor instead')
 const UpdateFragmentResponse$json = {

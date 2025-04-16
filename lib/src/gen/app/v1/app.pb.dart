@@ -5974,6 +5974,7 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $47.Struct? robotConfig,
+    $48.Timestamp? lastKnownUpdate,
   }) {
     final $result = create();
     if (id != null) {
@@ -5985,6 +5986,9 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
     if (robotConfig != null) {
       $result.robotConfig = robotConfig;
     }
+    if (lastKnownUpdate != null) {
+      $result.lastKnownUpdate = lastKnownUpdate;
+    }
     return $result;
   }
   UpdateRobotPartRequest._() : super();
@@ -5995,6 +5999,7 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOM<$47.Struct>(3, _omitFieldNames ? '' : 'robotConfig', subBuilder: $47.Struct.create)
+    ..aOM<$48.Timestamp>(4, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $48.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -6047,6 +6052,17 @@ class UpdateRobotPartRequest extends $pb.GeneratedMessage {
   void clearRobotConfig() => clearField(3);
   @$pb.TagNumber(3)
   $47.Struct ensureRobotConfig() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $48.Timestamp get lastKnownUpdate => $_getN(3);
+  @$pb.TagNumber(4)
+  set lastKnownUpdate($48.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLastKnownUpdate() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLastKnownUpdate() => clearField(4);
+  @$pb.TagNumber(4)
+  $48.Timestamp ensureLastKnownUpdate() => $_ensure(3);
 }
 
 class UpdateRobotPartResponse extends $pb.GeneratedMessage {
@@ -7892,6 +7908,7 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
     $47.Struct? config,
     $core.bool? public,
     FragmentVisibility? visibility,
+    $48.Timestamp? lastKnownUpdate,
   }) {
     final $result = create();
     if (id != null) {
@@ -7909,6 +7926,9 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
     if (visibility != null) {
       $result.visibility = visibility;
     }
+    if (lastKnownUpdate != null) {
+      $result.lastKnownUpdate = lastKnownUpdate;
+    }
     return $result;
   }
   UpdateFragmentRequest._() : super();
@@ -7921,6 +7941,7 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
     ..aOM<$47.Struct>(3, _omitFieldNames ? '' : 'config', subBuilder: $47.Struct.create)
     ..aOB(4, _omitFieldNames ? '' : 'public')
     ..e<FragmentVisibility>(5, _omitFieldNames ? '' : 'visibility', $pb.PbFieldType.OE, defaultOrMaker: FragmentVisibility.FRAGMENT_VISIBILITY_UNSPECIFIED, valueOf: FragmentVisibility.valueOf, enumValues: FragmentVisibility.values)
+    ..aOM<$48.Timestamp>(6, _omitFieldNames ? '' : 'lastKnownUpdate', subBuilder: $48.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -7991,6 +8012,17 @@ class UpdateFragmentRequest extends $pb.GeneratedMessage {
   $core.bool hasVisibility() => $_has(4);
   @$pb.TagNumber(5)
   void clearVisibility() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $48.Timestamp get lastKnownUpdate => $_getN(5);
+  @$pb.TagNumber(6)
+  set lastKnownUpdate($48.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLastKnownUpdate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastKnownUpdate() => clearField(6);
+  @$pb.TagNumber(6)
+  $48.Timestamp ensureLastKnownUpdate() => $_ensure(5);
 }
 
 class UpdateFragmentResponse extends $pb.GeneratedMessage {
