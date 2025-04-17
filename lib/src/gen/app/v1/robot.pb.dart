@@ -1217,6 +1217,7 @@ class NetworkConfig extends $pb.GeneratedMessage {
     $core.String? tlsKeyFile,
     SessionsConfig? sessions,
     $core.Iterable<TrafficTunnelEndpoint>? trafficTunnelEndpoints,
+    $core.bool? noTls,
   }) {
     final $result = create();
     if (fqdn != null) {
@@ -1237,6 +1238,9 @@ class NetworkConfig extends $pb.GeneratedMessage {
     if (trafficTunnelEndpoints != null) {
       $result.trafficTunnelEndpoints.addAll(trafficTunnelEndpoints);
     }
+    if (noTls != null) {
+      $result.noTls = noTls;
+    }
     return $result;
   }
   NetworkConfig._() : super();
@@ -1250,6 +1254,7 @@ class NetworkConfig extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'tlsKeyFile')
     ..aOM<SessionsConfig>(5, _omitFieldNames ? '' : 'sessions', subBuilder: SessionsConfig.create)
     ..pc<TrafficTunnelEndpoint>(6, _omitFieldNames ? '' : 'trafficTunnelEndpoints', $pb.PbFieldType.PM, subBuilder: TrafficTunnelEndpoint.create)
+    ..aOB(7, _omitFieldNames ? '' : 'noTls')
     ..hasRequiredFields = false
   ;
 
@@ -1323,6 +1328,15 @@ class NetworkConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<TrafficTunnelEndpoint> get trafficTunnelEndpoints => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.bool get noTls => $_getBF(6);
+  @$pb.TagNumber(7)
+  set noTls($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasNoTls() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNoTls() => clearField(7);
 }
 
 class SessionsConfig extends $pb.GeneratedMessage {

@@ -11,6 +11,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../protobuf/duration.pb.dart' as $4;
@@ -264,6 +265,12 @@ class QuotaFailure_Violation extends $pb.GeneratedMessage {
   factory QuotaFailure_Violation({
     $core.String? subject,
     $core.String? description,
+    $core.String? apiService,
+    $core.String? quotaMetric,
+    $core.String? quotaId,
+    $core.Map<$core.String, $core.String>? quotaDimensions,
+    $fixnum.Int64? quotaValue,
+    $fixnum.Int64? futureQuotaValue,
   }) {
     final $result = create();
     if (subject != null) {
@@ -271,6 +278,24 @@ class QuotaFailure_Violation extends $pb.GeneratedMessage {
     }
     if (description != null) {
       $result.description = description;
+    }
+    if (apiService != null) {
+      $result.apiService = apiService;
+    }
+    if (quotaMetric != null) {
+      $result.quotaMetric = quotaMetric;
+    }
+    if (quotaId != null) {
+      $result.quotaId = quotaId;
+    }
+    if (quotaDimensions != null) {
+      $result.quotaDimensions.addAll(quotaDimensions);
+    }
+    if (quotaValue != null) {
+      $result.quotaValue = quotaValue;
+    }
+    if (futureQuotaValue != null) {
+      $result.futureQuotaValue = futureQuotaValue;
     }
     return $result;
   }
@@ -281,6 +306,12 @@ class QuotaFailure_Violation extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuotaFailure.Violation', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'subject')
     ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..aOS(3, _omitFieldNames ? '' : 'apiService')
+    ..aOS(4, _omitFieldNames ? '' : 'quotaMetric')
+    ..aOS(5, _omitFieldNames ? '' : 'quotaId')
+    ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'quotaDimensions', entryClassName: 'QuotaFailure.Violation.QuotaDimensionsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('google.rpc'))
+    ..aInt64(7, _omitFieldNames ? '' : 'quotaValue')
+    ..aInt64(8, _omitFieldNames ? '' : 'futureQuotaValue')
     ..hasRequiredFields = false
   ;
 
@@ -332,6 +363,107 @@ class QuotaFailure_Violation extends $pb.GeneratedMessage {
   $core.bool hasDescription() => $_has(1);
   @$pb.TagNumber(2)
   void clearDescription() => clearField(2);
+
+  ///  The API Service from which the `QuotaFailure.Violation` orginates. In
+  ///  some cases, Quota issues originate from an API Service other than the one
+  ///  that was called. In other words, a dependency of the called API Service
+  ///  could be the cause of the `QuotaFailure`, and this field would have the
+  ///  dependency API service name.
+  ///
+  ///  For example, if the called API is Kubernetes Engine API
+  ///  (container.googleapis.com), and a quota violation occurs in the
+  ///  Kubernetes Engine API itself, this field would be
+  ///  "container.googleapis.com". On the other hand, if the quota violation
+  ///  occurs when the Kubernetes Engine API creates VMs in the Compute Engine
+  ///  API (compute.googleapis.com), this field would be
+  ///  "compute.googleapis.com".
+  @$pb.TagNumber(3)
+  $core.String get apiService => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set apiService($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasApiService() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearApiService() => clearField(3);
+
+  ///  The metric of the violated quota. A quota metric is a named counter to
+  ///  measure usage, such as API requests or CPUs. When an activity occurs in a
+  ///  service, such as Virtual Machine allocation, one or more quota metrics
+  ///  may be affected.
+  ///
+  ///  For example, "compute.googleapis.com/cpus_per_vm_family",
+  ///  "storage.googleapis.com/internet_egress_bandwidth".
+  @$pb.TagNumber(4)
+  $core.String get quotaMetric => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set quotaMetric($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasQuotaMetric() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuotaMetric() => clearField(4);
+
+  ///  The id of the violated quota. Also know as "limit name", this is the
+  ///  unique identifier of a quota in the context of an API service.
+  ///
+  ///  For example, "CPUS-PER-VM-FAMILY-per-project-region".
+  @$pb.TagNumber(5)
+  $core.String get quotaId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set quotaId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasQuotaId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQuotaId() => clearField(5);
+
+  ///  The dimensions of the violated quota. Every non-global quota is enforced
+  ///  on a set of dimensions. While quota metric defines what to count, the
+  ///  dimensions specify for what aspects the counter should be increased.
+  ///
+  ///  For example, the quota "CPUs per region per VM family" enforces a limit
+  ///  on the metric "compute.googleapis.com/cpus_per_vm_family" on dimensions
+  ///  "region" and "vm_family". And if the violation occurred in region
+  ///  "us-central1" and for VM family "n1", the quota_dimensions would be,
+  ///
+  ///  {
+  ///    "region": "us-central1",
+  ///    "vm_family": "n1",
+  ///  }
+  ///
+  ///  When a quota is enforced globally, the quota_dimensions would always be
+  ///  empty.
+  @$pb.TagNumber(6)
+  $core.Map<$core.String, $core.String> get quotaDimensions => $_getMap(5);
+
+  ///  The enforced quota value at the time of the `QuotaFailure`.
+  ///
+  ///  For example, if the enforced quota value at the time of the
+  ///  `QuotaFailure` on the number of CPUs is "10", then the value of this
+  ///  field would reflect this quantity.
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get quotaValue => $_getI64(6);
+  @$pb.TagNumber(7)
+  set quotaValue($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasQuotaValue() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuotaValue() => clearField(7);
+
+  ///  The new quota value being rolled out at the time of the violation. At the
+  ///  completion of the rollout, this value will be enforced in place of
+  ///  quota_value. If no rollout is in progress at the time of the violation,
+  ///  this field is not set.
+  ///
+  ///  For example, if at the time of the violation a rollout is in progress
+  ///  changing the number of CPUs quota from 10 to 20, 20 would be the value of
+  ///  this field.
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get futureQuotaValue => $_getI64(7);
+  @$pb.TagNumber(8)
+  set futureQuotaValue($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasFutureQuotaValue() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFutureQuotaValue() => clearField(8);
 }
 
 ///  Describes how a quota check failed.

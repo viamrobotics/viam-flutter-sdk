@@ -83,14 +83,41 @@ const QuotaFailure_Violation$json = {
   '2': [
     {'1': 'subject', '3': 1, '4': 1, '5': 9, '10': 'subject'},
     {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'api_service', '3': 3, '4': 1, '5': 9, '10': 'apiService'},
+    {'1': 'quota_metric', '3': 4, '4': 1, '5': 9, '10': 'quotaMetric'},
+    {'1': 'quota_id', '3': 5, '4': 1, '5': 9, '10': 'quotaId'},
+    {'1': 'quota_dimensions', '3': 6, '4': 3, '5': 11, '6': '.google.rpc.QuotaFailure.Violation.QuotaDimensionsEntry', '10': 'quotaDimensions'},
+    {'1': 'quota_value', '3': 7, '4': 1, '5': 3, '10': 'quotaValue'},
+    {'1': 'future_quota_value', '3': 8, '4': 1, '5': 3, '9': 0, '10': 'futureQuotaValue', '17': true},
   ],
+  '3': [QuotaFailure_Violation_QuotaDimensionsEntry$json],
+  '8': [
+    {'1': '_future_quota_value'},
+  ],
+};
+
+@$core.Deprecated('Use quotaFailureDescriptor instead')
+const QuotaFailure_Violation_QuotaDimensionsEntry$json = {
+  '1': 'QuotaDimensionsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `QuotaFailure`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List quotaFailureDescriptor = $convert.base64Decode(
     'CgxRdW90YUZhaWx1cmUSQgoKdmlvbGF0aW9ucxgBIAMoCzIiLmdvb2dsZS5ycGMuUXVvdGFGYW'
-    'lsdXJlLlZpb2xhdGlvblIKdmlvbGF0aW9ucxpHCglWaW9sYXRpb24SGAoHc3ViamVjdBgBIAEo'
-    'CVIHc3ViamVjdBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24=');
+    'lsdXJlLlZpb2xhdGlvblIKdmlvbGF0aW9ucxq5AwoJVmlvbGF0aW9uEhgKB3N1YmplY3QYASAB'
+    'KAlSB3N1YmplY3QSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEh8KC2FwaV9zZX'
+    'J2aWNlGAMgASgJUgphcGlTZXJ2aWNlEiEKDHF1b3RhX21ldHJpYxgEIAEoCVILcXVvdGFNZXRy'
+    'aWMSGQoIcXVvdGFfaWQYBSABKAlSB3F1b3RhSWQSYgoQcXVvdGFfZGltZW5zaW9ucxgGIAMoCz'
+    'I3Lmdvb2dsZS5ycGMuUXVvdGFGYWlsdXJlLlZpb2xhdGlvbi5RdW90YURpbWVuc2lvbnNFbnRy'
+    'eVIPcXVvdGFEaW1lbnNpb25zEh8KC3F1b3RhX3ZhbHVlGAcgASgDUgpxdW90YVZhbHVlEjEKEm'
+    'Z1dHVyZV9xdW90YV92YWx1ZRgIIAEoA0gAUhBmdXR1cmVRdW90YVZhbHVliAEBGkIKFFF1b3Rh'
+    'RGltZW5zaW9uc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZT'
+    'oCOAFCFQoTX2Z1dHVyZV9xdW90YV92YWx1ZQ==');
 
 @$core.Deprecated('Use preconditionFailureDescriptor instead')
 const PreconditionFailure$json = {
