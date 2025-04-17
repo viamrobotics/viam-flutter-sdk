@@ -63,6 +63,7 @@
 <li><span class="parameter" id="-param-tlsKeyFile"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">tlsKeyFile</span>, </span></li>
 <li><span class="parameter" id="-param-sessions"><span class="type-annotation"><a href="../../viam_protos.app.robot/SessionsConfig-class.html">SessionsConfig</a>?</span> <span class="parameter-name">sessions</span>, </span></li>
 <li><span class="parameter" id="-param-trafficTunnelEndpoints"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/TrafficTunnelEndpoint-class.html">TrafficTunnelEndpoint</a></span>&gt;</span>?</span> <span class="parameter-name">trafficTunnelEndpoints</span>, </span></li>
+<li><span class="parameter" id="-param-noTls"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">noTls</span>, </span></li>
 </ol>})
     </section>
     
@@ -78,6 +79,7 @@
   $core.String? tlsKeyFile,
   SessionsConfig? sessions,
   $core.Iterable&lt;TrafficTunnelEndpoint&gt;? trafficTunnelEndpoints,
+  $core.bool? noTls,
 }) {
   final $result = create();
   if (fqdn != null) {
@@ -97,6 +99,9 @@
   }
   if (trafficTunnelEndpoints != null) {
     $result.trafficTunnelEndpoints.addAll(trafficTunnelEndpoints);
+  }
+  if (noTls != null) {
+    $result.noTls = noTls;
   }
   return $result;
 }</code></pre>
