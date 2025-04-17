@@ -1419,6 +1419,122 @@ class UpdateOrganizationResponse extends $pb.GeneratedMessage {
   Organization ensureOrganization() => $_ensure(0);
 }
 
+class UpdateOrganizationNamespaceRequest extends $pb.GeneratedMessage {
+  factory UpdateOrganizationNamespaceRequest({
+    $core.String? organizationId,
+    $core.String? newPublicNamespace,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (newPublicNamespace != null) {
+      $result.newPublicNamespace = newPublicNamespace;
+    }
+    return $result;
+  }
+  UpdateOrganizationNamespaceRequest._() : super();
+  factory UpdateOrganizationNamespaceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationNamespaceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationNamespaceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'newPublicNamespace')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationNamespaceRequest clone() => UpdateOrganizationNamespaceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationNamespaceRequest copyWith(void Function(UpdateOrganizationNamespaceRequest) updates) => super.copyWith((message) => updates(message as UpdateOrganizationNamespaceRequest)) as UpdateOrganizationNamespaceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationNamespaceRequest create() => UpdateOrganizationNamespaceRequest._();
+  UpdateOrganizationNamespaceRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationNamespaceRequest> createRepeated() => $pb.PbList<UpdateOrganizationNamespaceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationNamespaceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationNamespaceRequest>(create);
+  static UpdateOrganizationNamespaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get newPublicNamespace => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set newPublicNamespace($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNewPublicNamespace() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewPublicNamespace() => clearField(2);
+}
+
+class UpdateOrganizationNamespaceResponse extends $pb.GeneratedMessage {
+  factory UpdateOrganizationNamespaceResponse({
+    Organization? organization,
+  }) {
+    final $result = create();
+    if (organization != null) {
+      $result.organization = organization;
+    }
+    return $result;
+  }
+  UpdateOrganizationNamespaceResponse._() : super();
+  factory UpdateOrganizationNamespaceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateOrganizationNamespaceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOrganizationNamespaceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<Organization>(1, _omitFieldNames ? '' : 'organization', subBuilder: Organization.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationNamespaceResponse clone() => UpdateOrganizationNamespaceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateOrganizationNamespaceResponse copyWith(void Function(UpdateOrganizationNamespaceResponse) updates) => super.copyWith((message) => updates(message as UpdateOrganizationNamespaceResponse)) as UpdateOrganizationNamespaceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationNamespaceResponse create() => UpdateOrganizationNamespaceResponse._();
+  UpdateOrganizationNamespaceResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateOrganizationNamespaceResponse> createRepeated() => $pb.PbList<UpdateOrganizationNamespaceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateOrganizationNamespaceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationNamespaceResponse>(create);
+  static UpdateOrganizationNamespaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Organization get organization => $_getN(0);
+  @$pb.TagNumber(1)
+  set organization(Organization v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganization() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganization() => clearField(1);
+  @$pb.TagNumber(1)
+  Organization ensureOrganization() => $_ensure(0);
+}
+
 class DeleteOrganizationRequest extends $pb.GeneratedMessage {
   factory DeleteOrganizationRequest({
     $core.String? organizationId,
