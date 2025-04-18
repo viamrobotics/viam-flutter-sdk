@@ -477,6 +477,37 @@ final $typed_data.Uint8List updateOrganizationResponseDescriptor = $convert.base
     'ChpVcGRhdGVPcmdhbml6YXRpb25SZXNwb25zZRI9Cgxvcmdhbml6YXRpb24YASABKAsyGS52aW'
     'FtLmFwcC52MS5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbg==');
 
+@$core.Deprecated('Use updateOrganizationNamespaceRequestDescriptor instead')
+const UpdateOrganizationNamespaceRequest$json = {
+  '1': 'UpdateOrganizationNamespaceRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'new_public_namespace', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'newPublicNamespace', '17': true},
+  ],
+  '8': [
+    {'1': '_new_public_namespace'},
+  ],
+};
+
+/// Descriptor for `UpdateOrganizationNamespaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOrganizationNamespaceRequestDescriptor = $convert.base64Decode(
+    'CiJVcGRhdGVPcmdhbml6YXRpb25OYW1lc3BhY2VSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZB'
+    'gBIAEoCVIOb3JnYW5pemF0aW9uSWQSNQoUbmV3X3B1YmxpY19uYW1lc3BhY2UYAiABKAlIAFIS'
+    'bmV3UHVibGljTmFtZXNwYWNliAEBQhcKFV9uZXdfcHVibGljX25hbWVzcGFjZQ==');
+
+@$core.Deprecated('Use updateOrganizationNamespaceResponseDescriptor instead')
+const UpdateOrganizationNamespaceResponse$json = {
+  '1': 'UpdateOrganizationNamespaceResponse',
+  '2': [
+    {'1': 'organization', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.Organization', '10': 'organization'},
+  ],
+};
+
+/// Descriptor for `UpdateOrganizationNamespaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateOrganizationNamespaceResponseDescriptor = $convert.base64Decode(
+    'CiNVcGRhdGVPcmdhbml6YXRpb25OYW1lc3BhY2VSZXNwb25zZRI9Cgxvcmdhbml6YXRpb24YAS'
+    'ABKAsyGS52aWFtLmFwcC52MS5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbg==');
+
 @$core.Deprecated('Use deleteOrganizationRequestDescriptor instead')
 const DeleteOrganizationRequest$json = {
   '1': 'DeleteOrganizationRequest',

@@ -57,6 +57,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/UpdateOrganization',
       ($11.UpdateOrganizationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.UpdateOrganizationResponse.fromBuffer(value));
+  static final _$updateOrganizationNamespace = $grpc.ClientMethod<$11.UpdateOrganizationNamespaceRequest, $11.UpdateOrganizationNamespaceResponse>(
+      '/viam.app.v1.AppService/UpdateOrganizationNamespace',
+      ($11.UpdateOrganizationNamespaceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.UpdateOrganizationNamespaceResponse.fromBuffer(value));
   static final _$deleteOrganization = $grpc.ClientMethod<$11.DeleteOrganizationRequest, $11.DeleteOrganizationResponse>(
       '/viam.app.v1.AppService/DeleteOrganization',
       ($11.DeleteOrganizationRequest value) => value.writeToBuffer(),
@@ -478,6 +482,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$11.UpdateOrganizationResponse> updateOrganization($11.UpdateOrganizationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganization, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.UpdateOrganizationNamespaceResponse> updateOrganizationNamespace($11.UpdateOrganizationNamespaceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateOrganizationNamespace, request, options: options);
   }
 
   $grpc.ResponseFuture<$11.DeleteOrganizationResponse> deleteOrganization($11.DeleteOrganizationRequest request, {$grpc.CallOptions? options}) {
@@ -929,6 +937,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.UpdateOrganizationRequest.fromBuffer(value),
         ($11.UpdateOrganizationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.UpdateOrganizationNamespaceRequest, $11.UpdateOrganizationNamespaceResponse>(
+        'UpdateOrganizationNamespace',
+        updateOrganizationNamespace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.UpdateOrganizationNamespaceRequest.fromBuffer(value),
+        ($11.UpdateOrganizationNamespaceResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$11.DeleteOrganizationRequest, $11.DeleteOrganizationResponse>(
         'DeleteOrganization',
         deleteOrganization_Pre,
@@ -1632,6 +1647,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return updateOrganization(call, await request);
   }
 
+  $async.Future<$11.UpdateOrganizationNamespaceResponse> updateOrganizationNamespace_Pre($grpc.ServiceCall call, $async.Future<$11.UpdateOrganizationNamespaceRequest> request) async {
+    return updateOrganizationNamespace(call, await request);
+  }
+
   $async.Future<$11.DeleteOrganizationResponse> deleteOrganization_Pre($grpc.ServiceCall call, $async.Future<$11.DeleteOrganizationRequest> request) async {
     return deleteOrganization(call, await request);
   }
@@ -2017,6 +2036,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.GetOrganizationResponse> getOrganization($grpc.ServiceCall call, $11.GetOrganizationRequest request);
   $async.Future<$11.GetOrganizationNamespaceAvailabilityResponse> getOrganizationNamespaceAvailability($grpc.ServiceCall call, $11.GetOrganizationNamespaceAvailabilityRequest request);
   $async.Future<$11.UpdateOrganizationResponse> updateOrganization($grpc.ServiceCall call, $11.UpdateOrganizationRequest request);
+  $async.Future<$11.UpdateOrganizationNamespaceResponse> updateOrganizationNamespace($grpc.ServiceCall call, $11.UpdateOrganizationNamespaceRequest request);
   $async.Future<$11.DeleteOrganizationResponse> deleteOrganization($grpc.ServiceCall call, $11.DeleteOrganizationRequest request);
   $async.Future<$11.GetOrganizationMetadataResponse> getOrganizationMetadata($grpc.ServiceCall call, $11.GetOrganizationMetadataRequest request);
   $async.Future<$11.UpdateOrganizationMetadataResponse> updateOrganizationMetadata($grpc.ServiceCall call, $11.UpdateOrganizationMetadataRequest request);
