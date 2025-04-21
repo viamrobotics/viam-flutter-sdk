@@ -482,18 +482,15 @@ const UpdateOrganizationNamespaceRequest$json = {
   '1': 'UpdateOrganizationNamespaceRequest',
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
-    {'1': 'new_public_namespace', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'newPublicNamespace', '17': true},
-  ],
-  '8': [
-    {'1': '_new_public_namespace'},
+    {'1': 'new_public_namespace', '3': 2, '4': 1, '5': 9, '10': 'newPublicNamespace'},
   ],
 };
 
 /// Descriptor for `UpdateOrganizationNamespaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateOrganizationNamespaceRequestDescriptor = $convert.base64Decode(
     'CiJVcGRhdGVPcmdhbml6YXRpb25OYW1lc3BhY2VSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZB'
-    'gBIAEoCVIOb3JnYW5pemF0aW9uSWQSNQoUbmV3X3B1YmxpY19uYW1lc3BhY2UYAiABKAlIAFIS'
-    'bmV3UHVibGljTmFtZXNwYWNliAEBQhcKFV9uZXdfcHVibGljX25hbWVzcGFjZQ==');
+    'gBIAEoCVIOb3JnYW5pemF0aW9uSWQSMAoUbmV3X3B1YmxpY19uYW1lc3BhY2UYAiABKAlSEm5l'
+    'd1B1YmxpY05hbWVzcGFjZQ==');
 
 @$core.Deprecated('Use updateOrganizationNamespaceResponseDescriptor instead')
 const UpdateOrganizationNamespaceResponse$json = {
