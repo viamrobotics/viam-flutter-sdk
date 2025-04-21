@@ -49,10 +49,10 @@ class DataPipelinesServiceClient extends $grpc.Client {
       '/viam.app.datapipelines.v1.DataPipelinesService/DisableDataPipeline',
       ($4.DisableDataPipelineRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.DisableDataPipelineResponse.fromBuffer(value));
-  static final _$listPipelineRuns = $grpc.ClientMethod<$4.ListPipelineRunsRequest, $4.ListPipelineRunsResponse>(
-      '/viam.app.datapipelines.v1.DataPipelinesService/ListPipelineRuns',
-      ($4.ListPipelineRunsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ListPipelineRunsResponse.fromBuffer(value));
+  static final _$listDataPipelineRuns = $grpc.ClientMethod<$4.ListDataPipelineRunsRequest, $4.ListDataPipelineRunsResponse>(
+      '/viam.app.datapipelines.v1.DataPipelinesService/ListDataPipelineRuns',
+      ($4.ListDataPipelineRunsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListDataPipelineRunsResponse.fromBuffer(value));
 
   DataPipelinesServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -88,8 +88,8 @@ class DataPipelinesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$disableDataPipeline, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.ListPipelineRunsResponse> listPipelineRuns($4.ListPipelineRunsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listPipelineRuns, request, options: options);
+  $grpc.ResponseFuture<$4.ListDataPipelineRunsResponse> listDataPipelineRuns($4.ListDataPipelineRunsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listDataPipelineRuns, request, options: options);
   }
 }
 
@@ -147,13 +147,13 @@ abstract class DataPipelinesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.DisableDataPipelineRequest.fromBuffer(value),
         ($4.DisableDataPipelineResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListPipelineRunsRequest, $4.ListPipelineRunsResponse>(
-        'ListPipelineRuns',
-        listPipelineRuns_Pre,
+    $addMethod($grpc.ServiceMethod<$4.ListDataPipelineRunsRequest, $4.ListDataPipelineRunsResponse>(
+        'ListDataPipelineRuns',
+        listDataPipelineRuns_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.ListPipelineRunsRequest.fromBuffer(value),
-        ($4.ListPipelineRunsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $4.ListDataPipelineRunsRequest.fromBuffer(value),
+        ($4.ListDataPipelineRunsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.GetDataPipelineResponse> getDataPipeline_Pre($grpc.ServiceCall call, $async.Future<$4.GetDataPipelineRequest> request) async {
@@ -184,8 +184,8 @@ abstract class DataPipelinesServiceBase extends $grpc.Service {
     return disableDataPipeline(call, await request);
   }
 
-  $async.Future<$4.ListPipelineRunsResponse> listPipelineRuns_Pre($grpc.ServiceCall call, $async.Future<$4.ListPipelineRunsRequest> request) async {
-    return listPipelineRuns(call, await request);
+  $async.Future<$4.ListDataPipelineRunsResponse> listDataPipelineRuns_Pre($grpc.ServiceCall call, $async.Future<$4.ListDataPipelineRunsRequest> request) async {
+    return listDataPipelineRuns(call, await request);
   }
 
   $async.Future<$4.GetDataPipelineResponse> getDataPipeline($grpc.ServiceCall call, $4.GetDataPipelineRequest request);
@@ -195,5 +195,5 @@ abstract class DataPipelinesServiceBase extends $grpc.Service {
   $async.Future<$4.DeleteDataPipelineResponse> deleteDataPipeline($grpc.ServiceCall call, $4.DeleteDataPipelineRequest request);
   $async.Future<$4.EnableDataPipelineResponse> enableDataPipeline($grpc.ServiceCall call, $4.EnableDataPipelineRequest request);
   $async.Future<$4.DisableDataPipelineResponse> disableDataPipeline($grpc.ServiceCall call, $4.DisableDataPipelineRequest request);
-  $async.Future<$4.ListPipelineRunsResponse> listPipelineRuns($grpc.ServiceCall call, $4.ListPipelineRunsRequest request);
+  $async.Future<$4.ListDataPipelineRunsResponse> listDataPipelineRuns($grpc.ServiceCall call, $4.ListDataPipelineRunsRequest request);
 }

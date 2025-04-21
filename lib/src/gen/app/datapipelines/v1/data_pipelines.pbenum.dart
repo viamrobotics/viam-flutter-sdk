@@ -13,25 +13,25 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class PipelineRunStatus extends $pb.ProtobufEnum {
-  static const PipelineRunStatus PIPELINE_RUN_STATUS_UNSPECIFIED = PipelineRunStatus._(0, _omitEnumNames ? '' : 'PIPELINE_RUN_STATUS_UNSPECIFIED');
-  static const PipelineRunStatus PIPELINE_RUN_STATUS_SCHEDULED = PipelineRunStatus._(1, _omitEnumNames ? '' : 'PIPELINE_RUN_STATUS_SCHEDULED');
-  static const PipelineRunStatus PIPELINE_RUN_STATUS_STARTED = PipelineRunStatus._(2, _omitEnumNames ? '' : 'PIPELINE_RUN_STATUS_STARTED');
-  static const PipelineRunStatus PIPELINE_RUN_STATUS_COMPLETED = PipelineRunStatus._(3, _omitEnumNames ? '' : 'PIPELINE_RUN_STATUS_COMPLETED');
-  static const PipelineRunStatus PIPELINE_RUN_STATUS_FAILED = PipelineRunStatus._(4, _omitEnumNames ? '' : 'PIPELINE_RUN_STATUS_FAILED');
+class DataPipelineRunStatus extends $pb.ProtobufEnum {
+  static const DataPipelineRunStatus DATA_PIPELINE_RUN_STATUS_UNSPECIFIED = DataPipelineRunStatus._(0, _omitEnumNames ? '' : 'DATA_PIPELINE_RUN_STATUS_UNSPECIFIED');
+  static const DataPipelineRunStatus DATA_PIPELINE_RUN_STATUS_SCHEDULED = DataPipelineRunStatus._(1, _omitEnumNames ? '' : 'DATA_PIPELINE_RUN_STATUS_SCHEDULED');
+  static const DataPipelineRunStatus DATA_PIPELINE_RUN_STATUS_STARTED = DataPipelineRunStatus._(2, _omitEnumNames ? '' : 'DATA_PIPELINE_RUN_STATUS_STARTED');
+  static const DataPipelineRunStatus DATA_PIPELINE_RUN_STATUS_COMPLETED = DataPipelineRunStatus._(3, _omitEnumNames ? '' : 'DATA_PIPELINE_RUN_STATUS_COMPLETED');
+  static const DataPipelineRunStatus DATA_PIPELINE_RUN_STATUS_FAILED = DataPipelineRunStatus._(4, _omitEnumNames ? '' : 'DATA_PIPELINE_RUN_STATUS_FAILED');
 
-  static const $core.List<PipelineRunStatus> values = <PipelineRunStatus> [
-    PIPELINE_RUN_STATUS_UNSPECIFIED,
-    PIPELINE_RUN_STATUS_SCHEDULED,
-    PIPELINE_RUN_STATUS_STARTED,
-    PIPELINE_RUN_STATUS_COMPLETED,
-    PIPELINE_RUN_STATUS_FAILED,
+  static const $core.List<DataPipelineRunStatus> values = <DataPipelineRunStatus> [
+    DATA_PIPELINE_RUN_STATUS_UNSPECIFIED,
+    DATA_PIPELINE_RUN_STATUS_SCHEDULED,
+    DATA_PIPELINE_RUN_STATUS_STARTED,
+    DATA_PIPELINE_RUN_STATUS_COMPLETED,
+    DATA_PIPELINE_RUN_STATUS_FAILED,
   ];
 
-  static final $core.Map<$core.int, PipelineRunStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static PipelineRunStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, DataPipelineRunStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static DataPipelineRunStatus? valueOf($core.int value) => _byValue[value];
 
-  const PipelineRunStatus._($core.int v, $core.String n) : super(v, n);
+  const DataPipelineRunStatus._($core.int v, $core.String n) : super(v, n);
 }
 
 

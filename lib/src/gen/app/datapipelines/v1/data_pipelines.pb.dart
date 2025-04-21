@@ -887,8 +887,8 @@ class DisableDataPipelineResponse extends $pb.GeneratedMessage {
   static DisableDataPipelineResponse? _defaultInstance;
 }
 
-class ListPipelineRunsRequest extends $pb.GeneratedMessage {
-  factory ListPipelineRunsRequest({
+class ListDataPipelineRunsRequest extends $pb.GeneratedMessage {
+  factory ListDataPipelineRunsRequest({
     $core.String? id,
     $core.int? pageSize,
     $core.String? pageToken,
@@ -905,11 +905,11 @@ class ListPipelineRunsRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ListPipelineRunsRequest._() : super();
-  factory ListPipelineRunsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListPipelineRunsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ListDataPipelineRunsRequest._() : super();
+  factory ListDataPipelineRunsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDataPipelineRunsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPipelineRunsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDataPipelineRunsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.OU3)
     ..aOS(3, _omitFieldNames ? '' : 'pageToken')
@@ -920,22 +920,22 @@ class ListPipelineRunsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListPipelineRunsRequest clone() => ListPipelineRunsRequest()..mergeFromMessage(this);
+  ListDataPipelineRunsRequest clone() => ListDataPipelineRunsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListPipelineRunsRequest copyWith(void Function(ListPipelineRunsRequest) updates) => super.copyWith((message) => updates(message as ListPipelineRunsRequest)) as ListPipelineRunsRequest;
+  ListDataPipelineRunsRequest copyWith(void Function(ListDataPipelineRunsRequest) updates) => super.copyWith((message) => updates(message as ListDataPipelineRunsRequest)) as ListDataPipelineRunsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListPipelineRunsRequest create() => ListPipelineRunsRequest._();
-  ListPipelineRunsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListPipelineRunsRequest> createRepeated() => $pb.PbList<ListPipelineRunsRequest>();
+  static ListDataPipelineRunsRequest create() => ListDataPipelineRunsRequest._();
+  ListDataPipelineRunsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListDataPipelineRunsRequest> createRepeated() => $pb.PbList<ListDataPipelineRunsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListPipelineRunsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPipelineRunsRequest>(create);
-  static ListPipelineRunsRequest? _defaultInstance;
+  static ListDataPipelineRunsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDataPipelineRunsRequest>(create);
+  static ListDataPipelineRunsRequest? _defaultInstance;
 
   /// The ID of the data pipeline to list runs for.
   @$pb.TagNumber(1)
@@ -967,10 +967,10 @@ class ListPipelineRunsRequest extends $pb.GeneratedMessage {
   void clearPageToken() => clearField(3);
 }
 
-class ListPipelineRunsResponse extends $pb.GeneratedMessage {
-  factory ListPipelineRunsResponse({
+class ListDataPipelineRunsResponse extends $pb.GeneratedMessage {
+  factory ListDataPipelineRunsResponse({
     $core.String? pipelineId,
-    $core.Iterable<PipelineRun>? runs,
+    $core.Iterable<DataPipelineRun>? runs,
     $core.String? nextPageToken,
   }) {
     final $result = create();
@@ -985,13 +985,13 @@ class ListPipelineRunsResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ListPipelineRunsResponse._() : super();
-  factory ListPipelineRunsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListPipelineRunsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ListDataPipelineRunsResponse._() : super();
+  factory ListDataPipelineRunsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDataPipelineRunsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPipelineRunsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDataPipelineRunsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'pipelineId')
-    ..pc<PipelineRun>(2, _omitFieldNames ? '' : 'runs', $pb.PbFieldType.PM, subBuilder: PipelineRun.create)
+    ..pc<DataPipelineRun>(2, _omitFieldNames ? '' : 'runs', $pb.PbFieldType.PM, subBuilder: DataPipelineRun.create)
     ..aOS(3, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false
   ;
@@ -1000,22 +1000,22 @@ class ListPipelineRunsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListPipelineRunsResponse clone() => ListPipelineRunsResponse()..mergeFromMessage(this);
+  ListDataPipelineRunsResponse clone() => ListDataPipelineRunsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListPipelineRunsResponse copyWith(void Function(ListPipelineRunsResponse) updates) => super.copyWith((message) => updates(message as ListPipelineRunsResponse)) as ListPipelineRunsResponse;
+  ListDataPipelineRunsResponse copyWith(void Function(ListDataPipelineRunsResponse) updates) => super.copyWith((message) => updates(message as ListDataPipelineRunsResponse)) as ListDataPipelineRunsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListPipelineRunsResponse create() => ListPipelineRunsResponse._();
-  ListPipelineRunsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListPipelineRunsResponse> createRepeated() => $pb.PbList<ListPipelineRunsResponse>();
+  static ListDataPipelineRunsResponse create() => ListDataPipelineRunsResponse._();
+  ListDataPipelineRunsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListDataPipelineRunsResponse> createRepeated() => $pb.PbList<ListDataPipelineRunsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListPipelineRunsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPipelineRunsResponse>(create);
-  static ListPipelineRunsResponse? _defaultInstance;
+  static ListDataPipelineRunsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDataPipelineRunsResponse>(create);
+  static ListDataPipelineRunsResponse? _defaultInstance;
 
   /// The ID of the data pipeline the runs are for.
   @$pb.TagNumber(1)
@@ -1029,7 +1029,7 @@ class ListPipelineRunsResponse extends $pb.GeneratedMessage {
 
   /// The runs that were run.
   @$pb.TagNumber(2)
-  $core.List<PipelineRun> get runs => $_getList(1);
+  $core.List<DataPipelineRun> get runs => $_getList(1);
 
   /// A token to retrieve the next page of results.
   @$pb.TagNumber(3)
@@ -1042,14 +1042,14 @@ class ListPipelineRunsResponse extends $pb.GeneratedMessage {
   void clearNextPageToken() => clearField(3);
 }
 
-class PipelineRun extends $pb.GeneratedMessage {
-  factory PipelineRun({
+class DataPipelineRun extends $pb.GeneratedMessage {
+  factory DataPipelineRun({
     $core.String? id,
     $48.Timestamp? startTime,
     $48.Timestamp? endTime,
     $48.Timestamp? dataStartTime,
     $48.Timestamp? dataEndTime,
-    PipelineRunStatus? status,
+    DataPipelineRunStatus? status,
   }) {
     final $result = create();
     if (id != null) {
@@ -1072,17 +1072,17 @@ class PipelineRun extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  PipelineRun._() : super();
-  factory PipelineRun.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PipelineRun.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  DataPipelineRun._() : super();
+  factory DataPipelineRun.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DataPipelineRun.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PipelineRun', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataPipelineRun', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<$48.Timestamp>(2, _omitFieldNames ? '' : 'startTime', subBuilder: $48.Timestamp.create)
     ..aOM<$48.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $48.Timestamp.create)
     ..aOM<$48.Timestamp>(4, _omitFieldNames ? '' : 'dataStartTime', subBuilder: $48.Timestamp.create)
     ..aOM<$48.Timestamp>(5, _omitFieldNames ? '' : 'dataEndTime', subBuilder: $48.Timestamp.create)
-    ..e<PipelineRunStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: PipelineRunStatus.PIPELINE_RUN_STATUS_UNSPECIFIED, valueOf: PipelineRunStatus.valueOf, enumValues: PipelineRunStatus.values)
+    ..e<DataPipelineRunStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DataPipelineRunStatus.DATA_PIPELINE_RUN_STATUS_UNSPECIFIED, valueOf: DataPipelineRunStatus.valueOf, enumValues: DataPipelineRunStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -1090,22 +1090,22 @@ class PipelineRun extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PipelineRun clone() => PipelineRun()..mergeFromMessage(this);
+  DataPipelineRun clone() => DataPipelineRun()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PipelineRun copyWith(void Function(PipelineRun) updates) => super.copyWith((message) => updates(message as PipelineRun)) as PipelineRun;
+  DataPipelineRun copyWith(void Function(DataPipelineRun) updates) => super.copyWith((message) => updates(message as DataPipelineRun)) as DataPipelineRun;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PipelineRun create() => PipelineRun._();
-  PipelineRun createEmptyInstance() => create();
-  static $pb.PbList<PipelineRun> createRepeated() => $pb.PbList<PipelineRun>();
+  static DataPipelineRun create() => DataPipelineRun._();
+  DataPipelineRun createEmptyInstance() => create();
+  static $pb.PbList<DataPipelineRun> createRepeated() => $pb.PbList<DataPipelineRun>();
   @$core.pragma('dart2js:noInline')
-  static PipelineRun getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PipelineRun>(create);
-  static PipelineRun? _defaultInstance;
+  static DataPipelineRun getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DataPipelineRun>(create);
+  static DataPipelineRun? _defaultInstance;
 
   /// The ID of the run.
   @$pb.TagNumber(1)
@@ -1167,9 +1167,9 @@ class PipelineRun extends $pb.GeneratedMessage {
 
   /// The status of the run.
   @$pb.TagNumber(6)
-  PipelineRunStatus get status => $_getN(5);
+  DataPipelineRunStatus get status => $_getN(5);
   @$pb.TagNumber(6)
-  set status(PipelineRunStatus v) { setField(6, v); }
+  set status(DataPipelineRunStatus v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
