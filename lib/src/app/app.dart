@@ -363,11 +363,12 @@ class AppClient {
   /// Update a specific [RobotPart] by ID
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<RobotPart> updateRobotPart(String partId, String name, Map<String, dynamic> robotConfig) async {
+  Future<RobotPart> updateRobotPart(String partId, String name, Map<String, dynamic> robotConfig, {DateTime? lastKnownUpdate}) async {
     final updateRobotPartRequest = UpdateRobotPartRequest()
       ..id = partId
       ..name = name
       ..robotConfig = robotConfig.toStruct();
+    if (lastKnownUpdate != null) updateRobotPartRequest.lastKnownUpdate = lastKnownUpdate;
     final response = await _client.updateRobotPart(updateRobotPartRequest);
     return response.part;
   }
@@ -513,13 +514,14 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config,
-      {bool? public, FragmentVisibility? visibility}) async {
+      {bool? public, FragmentVisibility? visibility, DateTime? lastKnownUpdate}) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
       ..config = config.toStruct();
     if (public != null) request.public = public;
     if (visibility != null) request.visibility = visibility;
+    if (lastKnownUpdate != null) request.lastKnownUpdate = lastKnownUpdate;
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
   }

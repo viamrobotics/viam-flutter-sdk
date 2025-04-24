@@ -385,7 +385,7 @@ void main() {
         ..name = 'name2';
       when(serviceClient.updateRobotPart(any)).thenAnswer((_) => MockResponseFuture.value(UpdateRobotPartResponse()..part = expected));
       final rc = {'robot': 'config'};
-      final response = await appClient.updateRobotPart('robot part', 'name2', rc);
+      final response = await appClient.updateRobotPart('robot part', 'name2', rc, lastKnownUpdate: DateTime.now());
       expect(response, equals(expected));
     });
 
@@ -547,7 +547,7 @@ void main() {
         ..organizationCount = 2
         ..onlyUsedByOwner = false;
       when(serviceClient.updateFragment(any)).thenAnswer((_) => MockResponseFuture.value(UpdateFragmentResponse()..fragment = expected));
-      final response = await appClient.updateFragment('id', 'name', {'config': 2}, public: false);
+      final response = await appClient.updateFragment('id', 'name', {'config': 2}, public: false, lastKnownUpdate: DateTime.now());
       expect(response, equals(expected));
     });
 
