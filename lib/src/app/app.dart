@@ -368,7 +368,7 @@ class AppClient {
       ..id = partId
       ..name = name
       ..robotConfig = robotConfig.toStruct();
-    if (lastKnownUpdate != null) updateRobotPartRequest.lastKnownUpdate = lastKnownUpdate;
+    if (lastKnownUpdate != null) updateRobotPartRequest.lastKnownUpdate = Timestamp.fromDateTime(lastKnownUpdate);
     final response = await _client.updateRobotPart(updateRobotPartRequest);
     return response.part;
   }
@@ -521,7 +521,7 @@ class AppClient {
       ..config = config.toStruct();
     if (public != null) request.public = public;
     if (visibility != null) request.visibility = visibility;
-    if (lastKnownUpdate != null) request.lastKnownUpdate = lastKnownUpdate;
+    if (lastKnownUpdate != null) request.lastKnownUpdate = Timestamp.fromDateTime(lastKnownUpdate);
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
   }
