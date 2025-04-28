@@ -3,6 +3,7 @@ import 'dart:async';
 import '../../protos/app/packages.dart';
 import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
+import '../gen/google/protobuf/timestamp.pb.dart';
 import '../utils.dart';
 import 'permissions.dart';
 
@@ -363,11 +364,12 @@ class AppClient {
   /// Update a specific [RobotPart] by ID
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<RobotPart> updateRobotPart(String partId, String name, Map<String, dynamic> robotConfig) async {
+  Future<RobotPart> updateRobotPart(String partId, String name, Map<String, dynamic> robotConfig, {DateTime? lastKnownUpdate}) async {
     final updateRobotPartRequest = UpdateRobotPartRequest()
       ..id = partId
       ..name = name
       ..robotConfig = robotConfig.toStruct();
+    if (lastKnownUpdate != null) updateRobotPartRequest.lastKnownUpdate = Timestamp.fromDateTime(lastKnownUpdate);
     final response = await _client.updateRobotPart(updateRobotPartRequest);
     return response.part;
   }
@@ -513,13 +515,14 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Fragment> updateFragment(String id, String name, Map<String, dynamic> config,
-      {bool? public, FragmentVisibility? visibility}) async {
+      {bool? public, FragmentVisibility? visibility, DateTime? lastKnownUpdate}) async {
     final request = UpdateFragmentRequest()
       ..id = id
       ..name = name
       ..config = config.toStruct();
     if (public != null) request.public = public;
     if (visibility != null) request.visibility = visibility;
+    if (lastKnownUpdate != null) request.lastKnownUpdate = Timestamp.fromDateTime(lastKnownUpdate);
     final UpdateFragmentResponse response = await _client.updateFragment(request);
     return response.fragment;
   }
