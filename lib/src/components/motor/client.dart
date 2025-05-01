@@ -9,7 +9,7 @@ import 'motor.dart';
 
 /// {@category Components}
 /// gRPC client for the [Motor] component.
-class MotorClient extends Motor implements ResourceRPCClient {
+class MotorClient extends Motor with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -27,7 +27,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
       ..name = name
       ..powerPct = powerPct
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setPower(request);
+    await client.setPower(request, options: callOptions);
   }
 
   @override
@@ -37,7 +37,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
       ..rpm = rpm
       ..revolutions = revolutions
       ..extra = extra?.toStruct() ?? Struct();
-    await client.goFor(request);
+    await client.goFor(request, options: callOptions);
   }
 
   @override
@@ -47,7 +47,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
       ..rpm = rpm
       ..positionRevolutions = positionRevolutions
       ..extra = extra?.toStruct() ?? Struct();
-    await client.goTo(request);
+    await client.goTo(request, options: callOptions);
   }
 
   @override
@@ -56,7 +56,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
       ..name = name
       ..rpm = rpm
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setRPM(request);
+    await client.setRPM(request, options: callOptions);
   }
 
   @override
@@ -65,7 +65,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
       ..name = name
       ..offset = offset
       ..extra = extra?.toStruct() ?? Struct();
-    await client.resetZeroPosition(request);
+    await client.resetZeroPosition(request, options: callOptions);
   }
 
   @override
@@ -73,7 +73,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
     final request = GetPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final result = await client.getPosition(request);
+    final result = await client.getPosition(request, options: callOptions);
     return result.position;
   }
 
@@ -82,7 +82,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
     final request = GetPropertiesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getProperties(request);
+    return await client.getProperties(request, options: callOptions);
   }
 
   @override
@@ -90,7 +90,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
     final request = StopRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.stop(request);
+    await client.stop(request, options: callOptions);
   }
 
   @override
@@ -98,14 +98,14 @@ class MotorClient extends Motor implements ResourceRPCClient {
     final request = IsPoweredRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final result = await client.isPowered(request);
+    final result = await client.isPowered(request, options: callOptions);
     return PowerState.fromProto(result);
   }
 
   @override
   Future<bool> isMoving({Map<String, dynamic>? extra}) async {
     final request = IsMovingRequest()..name = name;
-    final result = await client.isMoving(request);
+    final result = await client.isMoving(request, options: callOptions);
     return result.isMoving;
   }
 
@@ -114,7 +114,7 @@ class MotorClient extends Motor implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

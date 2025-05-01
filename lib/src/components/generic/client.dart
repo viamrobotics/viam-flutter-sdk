@@ -8,7 +8,7 @@ import 'generic.dart';
 
 /// {@category Components}
 /// gRPC client for the [Generic] component.
-class GenericClient extends Generic implements ResourceRPCClient {
+class GenericClient extends Generic with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -25,7 +25,7 @@ class GenericClient extends Generic implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }
