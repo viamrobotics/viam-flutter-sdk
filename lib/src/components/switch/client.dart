@@ -9,7 +9,7 @@ import 'switch.dart';
 
 /// {@category Components}
 /// gRPC client for the [Switch] component.
-class SwitchClient extends Switch implements ResourceRPCClient {
+class SwitchClient extends Switch with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -27,7 +27,7 @@ class SwitchClient extends Switch implements ResourceRPCClient {
       ..name = name
       ..position = position
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setPosition(request);
+    await client.setPosition(request, options: callOptions);
   }
 
   @override
@@ -35,7 +35,7 @@ class SwitchClient extends Switch implements ResourceRPCClient {
     final request = GetPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getPosition(request);
+    final response = await client.getPosition(request, options: callOptions);
     return response.position;
   }
 
@@ -44,7 +44,7 @@ class SwitchClient extends Switch implements ResourceRPCClient {
     final request = GetNumberOfPositionsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getNumberOfPositions(request);
+    final response = await client.getNumberOfPositions(request, options: callOptions);
     return response.numberOfPositions;
   }
 
@@ -53,7 +53,7 @@ class SwitchClient extends Switch implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

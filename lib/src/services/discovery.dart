@@ -10,7 +10,7 @@ import '../robot/client.dart';
 import '../utils.dart';
 
 /// {@category Services}
-class DiscoveryClient extends Resource implements ResourceRPCClient {
+class DiscoveryClient extends Resource with RPCDebugLoggerMixin implements ResourceRPCClient {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'discovery');
 
   @override
@@ -32,7 +32,7 @@ class DiscoveryClient extends Resource implements ResourceRPCClient {
   /// ```
   Future<List<ComponentConfig>> discoverResources({Map<String, dynamic>? extra}) async {
     final request = DiscoverResourcesRequest(name: name, extra: extra?.toStruct());
-    final response = await client.discoverResources(request);
+    final response = await client.discoverResources(request, options: callOptions);
     return response.discoveries;
   }
 
@@ -41,7 +41,7 @@ class DiscoveryClient extends Resource implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 

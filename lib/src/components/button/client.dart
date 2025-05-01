@@ -9,7 +9,7 @@ import 'button.dart';
 
 /// {@category Components}
 /// gRPC client for the [Button] component.
-class ButtonClient extends Button implements ResourceRPCClient {
+class ButtonClient extends Button with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -26,7 +26,7 @@ class ButtonClient extends Button implements ResourceRPCClient {
     final request = PushRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.push(request);
+    await client.push(request, options: callOptions);
   }
 
   @override
@@ -34,7 +34,7 @@ class ButtonClient extends Button implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

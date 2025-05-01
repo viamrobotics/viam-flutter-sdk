@@ -9,7 +9,7 @@ import 'movement_sensor.dart';
 
 /// {@category Components}
 /// gRPC client for the [MovementSensor] component.
-class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
+class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -26,7 +26,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetReadingsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getReadings(request);
+    final response = await client.getReadings(request, options: callOptions);
     return response.toPrimitive();
   }
 
@@ -35,7 +35,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getPosition(request);
+    final response = await client.getPosition(request, options: callOptions);
     return Position(response.coordinate, response.altitudeM);
   }
 
@@ -44,7 +44,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetLinearVelocityRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getLinearVelocity(request);
+    final response = await client.getLinearVelocity(request, options: callOptions);
     return response.linearVelocity;
   }
 
@@ -53,7 +53,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetAngularVelocityRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getAngularVelocity(request);
+    final response = await client.getAngularVelocity(request, options: callOptions);
     return response.angularVelocity;
   }
 
@@ -62,7 +62,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetLinearAccelerationRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getLinearAcceleration(request);
+    final response = await client.getLinearAcceleration(request, options: callOptions);
     return response.linearAcceleration;
   }
 
@@ -80,7 +80,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetOrientationRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getOrientation(request);
+    final response = await client.getOrientation(request, options: callOptions);
     return response.orientation;
   }
 
@@ -89,7 +89,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetPropertiesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getProperties(request);
+    return await client.getProperties(request, options: callOptions);
   }
 
   @override
@@ -97,7 +97,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = GetAccuracyRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getAccuracy(request);
+    return await client.getAccuracy(request, options: callOptions);
   }
 
   @override
@@ -105,7 +105,7 @@ class MovementSensorClient extends MovementSensor implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

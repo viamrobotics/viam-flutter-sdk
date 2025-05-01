@@ -9,7 +9,7 @@ import 'sensor.dart';
 
 /// {@category Components}
 /// gRPC client for the [Sensor] component.
-class SensorClient extends Sensor implements ResourceRPCClient {
+class SensorClient extends Sensor with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -26,7 +26,7 @@ class SensorClient extends Sensor implements ResourceRPCClient {
     final request = GetReadingsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getReadings(request);
+    final response = await client.getReadings(request, options: callOptions);
     return response.toPrimitive();
   }
 
@@ -35,7 +35,7 @@ class SensorClient extends Sensor implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

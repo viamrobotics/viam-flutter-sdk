@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math';
+
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
@@ -90,4 +93,29 @@ abstract class ResourceRPCClient<T extends Client> {
   abstract ClientChannelBase channel;
 
   T get client;
+}
+
+/// {@category Viam SDK}
+/// Mixin that provides debug logging functionality for gRPC calls
+mixin RPCDebugLoggerMixin {
+  CallOptions get callOptions => _callOptions;
+  CallOptions _callOptions = CallOptions();
+
+  /// Enable debug logging for gRPC calls by setting a trace key in the metadata.
+  /// If no trace key is provided, a random one will be generated.
+  void enableDebugLogging({String? traceKey}) {
+    traceKey ??= _generateRandomString();
+    _callOptions = CallOptions(metadata: {'dtname': traceKey});
+  }
+
+  /// Disable debug logging for gRPC calls by removing the trace key from the metadata.
+  void disableDebugLogging() {
+    _callOptions = CallOptions();
+  }
+
+  String _generateRandomString({int length = 6}) {
+    const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+    Random _rnd = Random();
+    return String.fromCharCodes(Iterable.generate(length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+  }
 }

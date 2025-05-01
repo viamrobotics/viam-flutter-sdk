@@ -10,7 +10,7 @@ import 'base.dart';
 
 /// {@category Components}
 /// gRPC client for the [Base] component.
-class BaseClient extends Base implements ResourceRPCClient {
+class BaseClient extends Base with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -25,7 +25,7 @@ class BaseClient extends Base implements ResourceRPCClient {
   @override
   Future<bool> isMoving() async {
     final request = IsMovingRequest()..name = name;
-    final response = await client.isMoving(request);
+    final response = await client.isMoving(request, options: callOptions);
     return response.isMoving;
   }
 
@@ -36,7 +36,7 @@ class BaseClient extends Base implements ResourceRPCClient {
       ..distanceMm = Int64(distance)
       ..mmPerSec = velocity
       ..extra = extra?.toStruct() ?? Struct();
-    await client.moveStraight(request);
+    await client.moveStraight(request, options: callOptions);
   }
 
   @override
@@ -46,7 +46,7 @@ class BaseClient extends Base implements ResourceRPCClient {
       ..linear = linear
       ..angular = angular
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setPower(request);
+    await client.setPower(request, options: callOptions);
   }
 
   @override
@@ -56,7 +56,7 @@ class BaseClient extends Base implements ResourceRPCClient {
       ..linear = linear
       ..angular = angular
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setVelocity(request);
+    await client.setVelocity(request, options: callOptions);
   }
 
   @override
@@ -66,7 +66,7 @@ class BaseClient extends Base implements ResourceRPCClient {
       ..angleDeg = angle
       ..degsPerSec = velocity
       ..extra = extra?.toStruct() ?? Struct();
-    await client.spin(request);
+    await client.spin(request, options: callOptions);
   }
 
   @override
@@ -74,7 +74,7 @@ class BaseClient extends Base implements ResourceRPCClient {
     final request = StopRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.stop(request);
+    await client.stop(request, options: callOptions);
   }
 
   @override
@@ -82,7 +82,7 @@ class BaseClient extends Base implements ResourceRPCClient {
     final request = GetPropertiesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getProperties(request);
+    return await client.getProperties(request, options: callOptions);
   }
 
   @override
@@ -90,7 +90,7 @@ class BaseClient extends Base implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

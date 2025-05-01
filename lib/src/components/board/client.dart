@@ -14,7 +14,7 @@ import 'board.dart';
 
 /// {@category Components}
 /// gRPC client for the [Board] component.
-class BoardClient extends Board implements ResourceRPCClient {
+class BoardClient extends Board with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -31,7 +31,7 @@ class BoardClient extends Board implements ResourceRPCClient {
     final request = common.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 
@@ -42,7 +42,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..pin = pin
       ..high = high
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setGPIO(request);
+    await client.setGPIO(request, options: callOptions);
   }
 
   @override
@@ -51,7 +51,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..name = name
       ..pin = pin
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getGPIO(request);
+    final response = await client.getGPIO(request, options: callOptions);
     return response.high;
   }
 
@@ -61,7 +61,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..name = name
       ..pin = pin
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.pWM(request);
+    final response = await client.pWM(request, options: callOptions);
     return response.dutyCyclePct;
   }
 
@@ -72,7 +72,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..pin = pin
       ..dutyCyclePct = dutyCyclePct
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setPWM(request);
+    await client.setPWM(request, options: callOptions);
   }
 
   @override
@@ -81,7 +81,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..name = name
       ..pin = pin
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.pWMFrequency(request);
+    final response = await client.pWMFrequency(request, options: callOptions);
     return response.frequencyHz.toInt();
   }
 
@@ -92,7 +92,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..pin = pin
       ..frequencyHz = Int64(frequencyHz)
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setPWMFrequency(request);
+    await client.setPWMFrequency(request, options: callOptions);
   }
 
   @override
@@ -101,7 +101,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..boardName = name
       ..analogReaderName = analogReaderName
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.readAnalogReader(request);
+    final response = await client.readAnalogReader(request, options: callOptions);
     return response;
   }
 
@@ -111,7 +111,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..boardName = name
       ..digitalInterruptName = digitalInterruptName
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getDigitalInterruptValue(request);
+    final response = await client.getDigitalInterruptValue(request, options: callOptions);
     return response.value.toInt();
   }
 
@@ -123,10 +123,12 @@ class BoardClient extends Board implements ResourceRPCClient {
 
   @override
   Stream<Tick> streamTicks(List<String> interrupts, {Map<String, dynamic>? extra}) {
-    final response = client.streamTicks(StreamTicksRequest()
-      ..name = name
-      ..pinNames.addAll(interrupts)
-      ..extra = extra?.toStruct() ?? Struct());
+    final response = client.streamTicks(
+        StreamTicksRequest()
+          ..name = name
+          ..pinNames.addAll(interrupts)
+          ..extra = extra?.toStruct() ?? Struct(),
+        options: callOptions);
 
     final stream = response.map((resp) => Tick(pinName: resp.pinName, high: resp.high, time: resp.time));
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
@@ -142,7 +144,7 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..powerMode = powerMode
       ..duration = duration
       ..extra = extra?.toStruct() ?? Struct();
-    await client.setPowerMode(request);
+    await client.setPowerMode(request, options: callOptions);
   }
 
   @override
@@ -152,6 +154,6 @@ class BoardClient extends Board implements ResourceRPCClient {
       ..pin = pin
       ..value = value
       ..extra = extra?.toStruct() ?? Struct();
-    await client.writeAnalog(request);
+    await client.writeAnalog(request, options: callOptions);
   }
 }

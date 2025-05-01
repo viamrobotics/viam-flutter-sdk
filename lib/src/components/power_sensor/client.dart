@@ -9,7 +9,7 @@ import 'power_sensor.dart';
 
 /// {@category Components}
 /// gRPC client for the [PowerSensor] component.
-class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
+class PowerSensorClient extends PowerSensor with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -26,7 +26,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = GetReadingsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getReadings(request);
+    final response = await client.getReadings(request, options: callOptions);
     return response.readings.map((key, value) => MapEntry(key, value.toPrimitive()));
   }
 
@@ -35,7 +35,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = GetVoltageRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getVoltage(request);
+    return await client.getVoltage(request, options: callOptions);
   }
 
   @override
@@ -43,7 +43,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = GetCurrentRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    return await client.getCurrent(request);
+    return await client.getCurrent(request, options: callOptions);
   }
 
   @override
@@ -51,7 +51,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = GetPowerRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getPower(request);
+    final response = await client.getPower(request, options: callOptions);
     return response.watts;
   }
 
@@ -60,7 +60,7 @@ class PowerSensorClient extends PowerSensor implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

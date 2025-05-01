@@ -10,7 +10,7 @@ import 'camera.dart';
 
 /// {@category Components}
 /// gRPC client for the [Camera] component
-class CameraClient extends Camera implements ResourceRPCClient {
+class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -28,7 +28,7 @@ class CameraClient extends Camera implements ResourceRPCClient {
       ..name = name
       ..mimeType = mimeType?.name ?? ''
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getImage(request);
+    final response = await client.getImage(request, options: callOptions);
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.image, actualMimeType);
   }
@@ -39,7 +39,7 @@ class CameraClient extends Camera implements ResourceRPCClient {
       ..name = name
       ..mimeType = MimeType.pcd.name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getPointCloud(request);
+    final response = await client.getPointCloud(request, options: callOptions);
     final actualMimeType = MimeType.fromString(response.mimeType);
     return ViamImage(response.pointCloud, actualMimeType);
   }
@@ -47,7 +47,7 @@ class CameraClient extends Camera implements ResourceRPCClient {
   @override
   Future<CameraProperties> properties() async {
     final request = GetPropertiesRequest()..name = name;
-    return await client.getProperties(request);
+    return await client.getProperties(request, options: callOptions);
   }
 
   @override
@@ -55,7 +55,7 @@ class CameraClient extends Camera implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

@@ -13,7 +13,7 @@ import '../utils.dart';
 typedef VisionProperties = GetPropertiesResponse;
 
 /// {@category Services}
-class VisionClient extends Resource implements ResourceRPCClient {
+class VisionClient extends Resource with RPCDebugLoggerMixin implements ResourceRPCClient {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeService, 'vision');
 
   @override
@@ -37,7 +37,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getdetectionsfromcamera).
   Future<List<Detection>> detectionsFromCamera(String cameraName, {Map<String, dynamic>? extra}) async {
     final request = GetDetectionsFromCameraRequest(name: name, cameraName: cameraName, extra: extra?.toStruct());
-    final response = await client.getDetectionsFromCamera(request);
+    final response = await client.getDetectionsFromCamera(request, options: callOptions);
     return response.detections;
   }
 
@@ -57,7 +57,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
         height: Int64(image.image?.height ?? 0),
         mimeType: image.mimeType.name,
         extra: extra?.toStruct());
-    final response = await client.getDetections(request);
+    final response = await client.getDetections(request, options: callOptions);
     return response.detections;
   }
 
@@ -72,7 +72,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getclassificationsfromcamera).
   Future<List<Classification>> classificationsFromCamera(String cameraName, int count, {Map<String, dynamic>? extra}) async {
     final request = GetClassificationsFromCameraRequest(name: name, cameraName: cameraName, n: count, extra: extra?.toStruct());
-    final response = await client.getClassificationsFromCamera(request);
+    final response = await client.getClassificationsFromCamera(request, options: callOptions);
     return response.classifications;
   }
 
@@ -95,7 +95,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
         mimeType: image.mimeType.name,
         n: count,
         extra: extra?.toStruct());
-    final response = await client.getClassifications(request);
+    final response = await client.getClassifications(request, options: callOptions);
     return response.classifications;
   }
 
@@ -109,7 +109,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getobjectpointclouds).
   Future<List<PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
     final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
-    final response = await client.getObjectPointClouds(request);
+    final response = await client.getObjectPointClouds(request, options: callOptions);
     return response.objects;
   }
 
@@ -127,7 +127,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getproperties).
   Future<VisionProperties> properties({Map<String, dynamic>? extra}) async {
     final request = GetPropertiesRequest(name: name, extra: extra?.toStruct());
-    return await client.getProperties(request);
+    return await client.getProperties(request, options: callOptions);
   }
 
   @override
@@ -135,7 +135,7 @@ class VisionClient extends Resource implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 
