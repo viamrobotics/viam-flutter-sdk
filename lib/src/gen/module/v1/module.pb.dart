@@ -585,10 +585,14 @@ class ValidateConfigRequest extends $pb.GeneratedMessage {
 class ValidateConfigResponse extends $pb.GeneratedMessage {
   factory ValidateConfigResponse({
     $core.Iterable<$core.String>? dependencies,
+    $core.Iterable<$core.String>? optionalDependencies,
   }) {
     final $result = create();
     if (dependencies != null) {
       $result.dependencies.addAll(dependencies);
+    }
+    if (optionalDependencies != null) {
+      $result.optionalDependencies.addAll(optionalDependencies);
     }
     return $result;
   }
@@ -598,6 +602,7 @@ class ValidateConfigResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ValidateConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.module.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'dependencies')
+    ..pPS(2, _omitFieldNames ? '' : 'optionalDependencies')
     ..hasRequiredFields = false
   ;
 
@@ -624,6 +629,9 @@ class ValidateConfigResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<$core.String> get dependencies => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get optionalDependencies => $_getList(1);
 }
 
 

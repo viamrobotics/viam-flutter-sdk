@@ -156,11 +156,13 @@ const ValidateConfigResponse$json = {
   '1': 'ValidateConfigResponse',
   '2': [
     {'1': 'dependencies', '3': 1, '4': 3, '5': 9, '10': 'dependencies'},
+    {'1': 'optional_dependencies', '3': 2, '4': 3, '5': 9, '10': 'optionalDependencies'},
   ],
 };
 
 /// Descriptor for `ValidateConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List validateConfigResponseDescriptor = $convert.base64Decode(
     'ChZWYWxpZGF0ZUNvbmZpZ1Jlc3BvbnNlEiIKDGRlcGVuZGVuY2llcxgBIAMoCVIMZGVwZW5kZW'
-    '5jaWVz');
+    '5jaWVzEjMKFW9wdGlvbmFsX2RlcGVuZGVuY2llcxgCIAMoCVIUb3B0aW9uYWxEZXBlbmRlbmNp'
+    'ZXM=');
 
