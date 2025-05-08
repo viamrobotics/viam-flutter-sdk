@@ -2854,6 +2854,7 @@ const ModuleVersion$json = {
     {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
     {'1': 'markdown_description', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
+    {'1': 'apps', '3': 7, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
   ],
   '8': [
     {'1': '_first_run'},
@@ -2867,8 +2868,8 @@ final $typed_data.Uint8List moduleVersionDescriptor = $convert.base64Decode(
     'syFC52aWFtLmFwcC52MS5VcGxvYWRzUgVmaWxlcxIqCgZtb2RlbHMYAyADKAsyEi52aWFtLmFw'
     'cC52MS5Nb2RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYBCABKAlSCmVudHJ5cG9pbnQSIAoJZm'
     'lyc3RfcnVuGAUgASgJSABSCGZpcnN0UnVuiAEBEjYKFG1hcmtkb3duX2Rlc2NyaXB0aW9uGAYg'
-    'ASgJSAFSE21hcmtkb3duRGVzY3JpcHRpb26IAQFCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd2'
-    '5fZGVzY3JpcHRpb24=');
+    'ASgJSAFSE21hcmtkb3duRGVzY3JpcHRpb26IAQESJAoEYXBwcxgHIAMoCzIQLnZpYW0uYXBwLn'
+    'YxLkFwcFIEYXBwc0IMCgpfZmlyc3RfcnVuQhcKFV9tYXJrZG93bl9kZXNjcmlwdGlvbg==');
 
 @$core.Deprecated('Use moduleMetadataDescriptor instead')
 const ModuleMetadata$json = {
@@ -2879,6 +2880,7 @@ const ModuleMetadata$json = {
     {'1': 'entrypoint', '3': 3, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
     {'1': 'markdown_description', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
+    {'1': 'apps', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
   ],
   '8': [
     {'1': '_first_run'},
@@ -2892,8 +2894,8 @@ final $typed_data.Uint8List moduleMetadataDescriptor = $convert.base64Decode(
     '9kZWxzEjYKCHZlcnNpb25zGAIgAygLMhoudmlhbS5hcHAudjEuTW9kdWxlVmVyc2lvblIIdmVy'
     'c2lvbnMSHgoKZW50cnlwb2ludBgDIAEoCVIKZW50cnlwb2ludBIgCglmaXJzdF9ydW4YBCABKA'
     'lIAFIIZmlyc3RSdW6IAQESNgoUbWFya2Rvd25fZGVzY3JpcHRpb24YBSABKAlIAVITbWFya2Rv'
-    'd25EZXNjcmlwdGlvbogBAUIMCgpfZmlyc3RfcnVuQhcKFV9tYXJrZG93bl9kZXNjcmlwdGlvbg'
-    '==');
+    'd25EZXNjcmlwdGlvbogBARIkCgRhcHBzGAYgAygLMhAudmlhbS5hcHAudjEuQXBwUgRhcHBzQg'
+    'wKCl9maXJzdF9ydW5CFwoVX21hcmtkb3duX2Rlc2NyaXB0aW9u');
 
 @$core.Deprecated('Use mLModelMetadataDescriptor instead')
 const MLModelMetadata$json = {
@@ -3308,13 +3310,15 @@ const UpdateModuleMetadata$json = {
   '2': [
     {'1': 'models', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Model', '10': 'models'},
     {'1': 'entrypoint', '3': 2, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'apps', '3': 3, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
   ],
 };
 
 /// Descriptor for `UpdateModuleMetadata`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateModuleMetadataDescriptor = $convert.base64Decode(
     'ChRVcGRhdGVNb2R1bGVNZXRhZGF0YRIqCgZtb2RlbHMYASADKAsyEi52aWFtLmFwcC52MS5Nb2'
-    'RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYAiABKAlSCmVudHJ5cG9pbnQ=');
+    'RlbFIGbW9kZWxzEh4KCmVudHJ5cG9pbnQYAiABKAlSCmVudHJ5cG9pbnQSJAoEYXBwcxgDIAMo'
+    'CzIQLnZpYW0uYXBwLnYxLkFwcFIEYXBwcw==');
 
 @$core.Deprecated('Use updateMLModelMetadataDescriptor instead')
 const UpdateMLModelMetadata$json = {
@@ -3469,6 +3473,7 @@ const Module$json = {
     {'1': 'public_namespace', '3': 12, '4': 1, '5': 9, '10': 'publicNamespace'},
     {'1': 'first_run', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
     {'1': 'markdown_description', '3': 14, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
+    {'1': 'apps', '3': 15, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
   ],
   '8': [
     {'1': '_first_run'},
@@ -3488,8 +3493,8 @@ final $typed_data.Uint8List moduleDescriptor = $convert.base64Decode(
     'gKIAEoCVIOb3JnYW5pemF0aW9uSWQSHgoKZW50cnlwb2ludBgLIAEoCVIKZW50cnlwb2ludBIp'
     'ChBwdWJsaWNfbmFtZXNwYWNlGAwgASgJUg9wdWJsaWNOYW1lc3BhY2USIAoJZmlyc3RfcnVuGA'
     '0gASgJSABSCGZpcnN0UnVuiAEBEjYKFG1hcmtkb3duX2Rlc2NyaXB0aW9uGA4gASgJSAFSE21h'
-    'cmtkb3duRGVzY3JpcHRpb26IAQFCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd25fZGVzY3JpcH'
-    'Rpb24=');
+    'cmtkb3duRGVzY3JpcHRpb26IAQESJAoEYXBwcxgPIAMoCzIQLnZpYW0uYXBwLnYxLkFwcFIEYX'
+    'Bwc0IMCgpfZmlyc3RfcnVuQhcKFV9tYXJrZG93bl9kZXNjcmlwdGlvbg==');
 
 @$core.Deprecated('Use versionHistoryDescriptor instead')
 const VersionHistory$json = {
@@ -3501,6 +3506,7 @@ const VersionHistory$json = {
     {'1': 'entrypoint', '3': 4, '4': 1, '5': 9, '10': 'entrypoint'},
     {'1': 'first_run', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'firstRun', '17': true},
     {'1': 'markdown_description', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'markdownDescription', '17': true},
+    {'1': 'apps', '3': 7, '4': 3, '5': 11, '6': '.viam.app.v1.App', '10': 'apps'},
   ],
   '8': [
     {'1': '_first_run'},
@@ -3514,8 +3520,8 @@ final $typed_data.Uint8List versionHistoryDescriptor = $convert.base64Decode(
     'gLMhQudmlhbS5hcHAudjEuVXBsb2Fkc1IFZmlsZXMSKgoGbW9kZWxzGAMgAygLMhIudmlhbS5h'
     'cHAudjEuTW9kZWxSBm1vZGVscxIeCgplbnRyeXBvaW50GAQgASgJUgplbnRyeXBvaW50EiAKCW'
     'ZpcnN0X3J1bhgFIAEoCUgAUghmaXJzdFJ1bogBARI2ChRtYXJrZG93bl9kZXNjcmlwdGlvbhgG'
-    'IAEoCUgBUhNtYXJrZG93bkRlc2NyaXB0aW9uiAEBQgwKCl9maXJzdF9ydW5CFwoVX21hcmtkb3'
-    'duX2Rlc2NyaXB0aW9u');
+    'IAEoCUgBUhNtYXJrZG93bkRlc2NyaXB0aW9uiAEBEiQKBGFwcHMYByADKAsyEC52aWFtLmFwcC'
+    '52MS5BcHBSBGFwcHNCDAoKX2ZpcnN0X3J1bkIXChVfbWFya2Rvd25fZGVzY3JpcHRpb24=');
 
 @$core.Deprecated('Use uploadsDescriptor instead')
 const Uploads$json = {
