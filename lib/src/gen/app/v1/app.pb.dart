@@ -11310,6 +11310,7 @@ class ModuleVersion extends $pb.GeneratedMessage {
     $core.String? entrypoint,
     $core.String? firstRun,
     $core.String? markdownDescription,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (version != null) {
@@ -11330,6 +11331,9 @@ class ModuleVersion extends $pb.GeneratedMessage {
     if (markdownDescription != null) {
       $result.markdownDescription = markdownDescription;
     }
+    if (apps != null) {
+      $result.apps.addAll(apps);
+    }
     return $result;
   }
   ModuleVersion._() : super();
@@ -11343,6 +11347,7 @@ class ModuleVersion extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
     ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
+    ..pc<App>(7, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -11414,6 +11419,10 @@ class ModuleVersion extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDescription() => $_has(5);
   @$pb.TagNumber(6)
   void clearMarkdownDescription() => clearField(6);
+
+  /// A list of applications associated with the module
+  @$pb.TagNumber(7)
+  $core.List<App> get apps => $_getList(6);
 }
 
 class ModuleMetadata extends $pb.GeneratedMessage {
@@ -11423,6 +11432,7 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     $core.String? entrypoint,
     $core.String? firstRun,
     $core.String? markdownDescription,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (models != null) {
@@ -11440,6 +11450,9 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     if (markdownDescription != null) {
       $result.markdownDescription = markdownDescription;
     }
+    if (apps != null) {
+      $result.apps.addAll(apps);
+    }
     return $result;
   }
   ModuleMetadata._() : super();
@@ -11452,6 +11465,7 @@ class ModuleMetadata extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(4, _omitFieldNames ? '' : 'firstRun')
     ..aOS(5, _omitFieldNames ? '' : 'markdownDescription')
+    ..pc<App>(6, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -11514,6 +11528,10 @@ class ModuleMetadata extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDescription() => $_has(4);
   @$pb.TagNumber(5)
   void clearMarkdownDescription() => clearField(5);
+
+  /// A list of applications associated with the module
+  @$pb.TagNumber(6)
+  $core.List<App> get apps => $_getList(5);
 }
 
 class MLModelMetadata extends $pb.GeneratedMessage {
@@ -13407,6 +13425,7 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
   factory UpdateModuleMetadata({
     $core.Iterable<Model>? models,
     $core.String? entrypoint,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (models != null) {
@@ -13414,6 +13433,9 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
     }
     if (entrypoint != null) {
       $result.entrypoint = entrypoint;
+    }
+    if (apps != null) {
+      $result.apps.addAll(apps);
     }
     return $result;
   }
@@ -13424,6 +13446,7 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateModuleMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..pc<Model>(1, _omitFieldNames ? '' : 'models', $pb.PbFieldType.PM, subBuilder: Model.create)
     ..aOS(2, _omitFieldNames ? '' : 'entrypoint')
+    ..pc<App>(3, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -13461,6 +13484,10 @@ class UpdateModuleMetadata extends $pb.GeneratedMessage {
   $core.bool hasEntrypoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearEntrypoint() => clearField(2);
+
+  /// A list of applications associated with the module
+  @$pb.TagNumber(3)
+  $core.List<App> get apps => $_getList(2);
 }
 
 class UpdateMLModelMetadata extends $pb.GeneratedMessage {
@@ -14070,6 +14097,7 @@ class Module extends $pb.GeneratedMessage {
     $core.String? publicNamespace,
     $core.String? firstRun,
     $core.String? markdownDescription,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -14114,6 +14142,9 @@ class Module extends $pb.GeneratedMessage {
     if (markdownDescription != null) {
       $result.markdownDescription = markdownDescription;
     }
+    if (apps != null) {
+      $result.apps.addAll(apps);
+    }
     return $result;
   }
   Module._() : super();
@@ -14135,6 +14166,7 @@ class Module extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(13, _omitFieldNames ? '' : 'firstRun')
     ..aOS(14, _omitFieldNames ? '' : 'markdownDescription')
+    ..pc<App>(15, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -14288,6 +14320,10 @@ class Module extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDescription() => $_has(13);
   @$pb.TagNumber(14)
   void clearMarkdownDescription() => clearField(14);
+
+  /// A list of applications associated with the module
+  @$pb.TagNumber(15)
+  $core.List<App> get apps => $_getList(14);
 }
 
 class VersionHistory extends $pb.GeneratedMessage {
@@ -14298,6 +14334,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     $core.String? entrypoint,
     $core.String? firstRun,
     $core.String? markdownDescription,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (version != null) {
@@ -14318,6 +14355,9 @@ class VersionHistory extends $pb.GeneratedMessage {
     if (markdownDescription != null) {
       $result.markdownDescription = markdownDescription;
     }
+    if (apps != null) {
+      $result.apps.addAll(apps);
+    }
     return $result;
   }
   VersionHistory._() : super();
@@ -14331,6 +14371,7 @@ class VersionHistory extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'entrypoint')
     ..aOS(5, _omitFieldNames ? '' : 'firstRun')
     ..aOS(6, _omitFieldNames ? '' : 'markdownDescription')
+    ..pc<App>(7, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -14402,6 +14443,10 @@ class VersionHistory extends $pb.GeneratedMessage {
   $core.bool hasMarkdownDescription() => $_has(5);
   @$pb.TagNumber(6)
   void clearMarkdownDescription() => clearField(6);
+
+  /// A list of applications associated with the module
+  @$pb.TagNumber(7)
+  $core.List<App> get apps => $_getList(6);
 }
 
 class Uploads extends $pb.GeneratedMessage {
