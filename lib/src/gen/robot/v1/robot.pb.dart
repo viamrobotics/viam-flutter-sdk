@@ -618,8 +618,8 @@ class TransformPCDRequest extends $pb.GeneratedMessage {
   static TransformPCDRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransformPCDRequest>(create);
   static TransformPCDRequest? _defaultInstance;
 
-  /// the point clouds to transform. This should be in the PCD format
-  /// encoded into bytes: https://pointclouds.org/documentation/tutorials/pcd_file_format.html
+  /// the point clouds to transform. This should be in the PCD format,
+  /// [encoded into bytes](https://pointclouds.org/documentation/tutorials/pcd_file_format.html).
   @$pb.TagNumber(1)
   $core.List<$core.int> get pointCloudPcd => $_getN(0);
   @$pb.TagNumber(1)
