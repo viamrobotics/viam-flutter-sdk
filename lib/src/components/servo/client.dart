@@ -9,7 +9,7 @@ import 'servo.dart';
 
 /// {@category Components}
 /// gRPC client for the [Servo] component.
-class ServoClient extends Servo implements ResourceRPCClient {
+class ServoClient extends Servo with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -35,7 +35,7 @@ class ServoClient extends Servo implements ResourceRPCClient {
     final request = GetPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getPosition(request);
+    final response = await client.getPosition(request, options: callOptions);
     return response.positionDeg;
   }
 
@@ -50,7 +50,7 @@ class ServoClient extends Servo implements ResourceRPCClient {
   @override
   Future<bool> isMoving({Map<String, dynamic>? extra}) async {
     final request = IsMovingRequest()..name = name;
-    final response = await client.isMoving(request);
+    final response = await client.isMoving(request, options: callOptions);
     return response.isMoving;
   }
 
@@ -59,7 +59,7 @@ class ServoClient extends Servo implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

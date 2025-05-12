@@ -9,7 +9,7 @@ import 'gantry.dart';
 
 /// {@category Components}
 /// gRPC client for the [Gantry] component.
-class GantryClient extends Gantry implements ResourceRPCClient {
+class GantryClient extends Gantry with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -33,7 +33,7 @@ class GantryClient extends Gantry implements ResourceRPCClient {
     final request = GetLengthsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getLengths(request);
+    final response = await client.getLengths(request, options: callOptions);
     return response.lengthsMm;
   }
 
@@ -42,7 +42,7 @@ class GantryClient extends Gantry implements ResourceRPCClient {
     final request = HomeRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.home(request);
+    final response = await client.home(request, options: callOptions);
     return response.homed;
   }
 
@@ -53,7 +53,7 @@ class GantryClient extends Gantry implements ResourceRPCClient {
       ..positionsMm.addAll(positions)
       ..speedsMmPerSec.addAll(speeds)
       ..extra = extra?.toStruct() ?? Struct();
-    await client.moveToPosition(request);
+    await client.moveToPosition(request, options: callOptions);
   }
 
   @override
@@ -61,7 +61,7 @@ class GantryClient extends Gantry implements ResourceRPCClient {
     final request = GetPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getPosition(request);
+    final response = await client.getPosition(request, options: callOptions);
     return response.positionsMm;
   }
 
@@ -70,7 +70,7 @@ class GantryClient extends Gantry implements ResourceRPCClient {
     final request = StopRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.stop(request);
+    await client.stop(request, options: callOptions);
   }
 
   @override
@@ -78,7 +78,7 @@ class GantryClient extends Gantry implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

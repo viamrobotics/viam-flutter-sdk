@@ -9,7 +9,7 @@ import 'gripper.dart';
 
 /// {@category Components}
 /// gRPC client for the [Gripper] component.
-class GripperClient extends Gripper implements ResourceRPCClient {
+class GripperClient extends Gripper with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -26,13 +26,13 @@ class GripperClient extends Gripper implements ResourceRPCClient {
     final request = GrabRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.grab(request);
+    await client.grab(request, options: callOptions);
   }
 
   @override
   Future<bool> isMoving() async {
     final request = IsMovingRequest()..name = name;
-    final response = await client.isMoving(request);
+    final response = await client.isMoving(request, options: callOptions);
     return response.isMoving;
   }
 
@@ -41,7 +41,7 @@ class GripperClient extends Gripper implements ResourceRPCClient {
     final request = OpenRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.open(request);
+    await client.open(request, options: callOptions);
   }
 
   @override
@@ -49,7 +49,7 @@ class GripperClient extends Gripper implements ResourceRPCClient {
     final request = StopRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.stop(request);
+    await client.stop(request, options: callOptions);
   }
 
   @override
@@ -57,7 +57,7 @@ class GripperClient extends Gripper implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

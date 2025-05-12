@@ -11,7 +11,7 @@ import 'arm.dart';
 /// gRPC client for an [Arm] component.
 ///
 /// Used to communicate with an existing [Arm] implementation over gRPC.
-class ArmClient extends Arm implements ResourceRPCClient {
+class ArmClient extends Arm with RPCDebugLoggerMixin implements ResourceRPCClient {
   @override
   final String name;
 
@@ -28,14 +28,14 @@ class ArmClient extends Arm implements ResourceRPCClient {
     final request = GetEndPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getEndPosition(request);
+    final response = await client.getEndPosition(request, options: callOptions);
     return response.pose;
   }
 
   @override
   Future<bool> isMoving() async {
     final request = IsMovingRequest()..name = name;
-    final response = await client.isMoving(request);
+    final response = await client.isMoving(request, options: callOptions);
     return response.isMoving;
   }
 
@@ -45,7 +45,7 @@ class ArmClient extends Arm implements ResourceRPCClient {
       ..name = name
       ..positions = (JointPositions()..values.addAll(positions))
       ..extra = extra?.toStruct() ?? Struct();
-    await client.moveToJointPositions(request);
+    await client.moveToJointPositions(request, options: callOptions);
   }
 
   @override
@@ -54,7 +54,7 @@ class ArmClient extends Arm implements ResourceRPCClient {
       ..name = name
       ..to = pose
       ..extra = extra?.toStruct() ?? Struct();
-    await client.moveToPosition(request);
+    await client.moveToPosition(request, options: callOptions);
   }
 
   @override
@@ -62,7 +62,7 @@ class ArmClient extends Arm implements ResourceRPCClient {
     final request = GetJointPositionsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getJointPositions(request);
+    final response = await client.getJointPositions(request, options: callOptions);
     return response.positions.values;
   }
 
@@ -71,7 +71,7 @@ class ArmClient extends Arm implements ResourceRPCClient {
     final request = StopRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    await client.stop(request);
+    await client.stop(request, options: callOptions);
   }
 
   @override
@@ -79,7 +79,7 @@ class ArmClient extends Arm implements ResourceRPCClient {
     final request = DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
-    final response = await client.doCommand(request);
+    final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
 }

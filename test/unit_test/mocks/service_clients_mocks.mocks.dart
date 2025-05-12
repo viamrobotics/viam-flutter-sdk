@@ -1306,6 +1306,39 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.UpdateOrganizationResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.UpdateOrganizationNamespaceResponse>
+  updateOrganizationNamespace(
+    _i13.UpdateOrganizationNamespaceRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #updateOrganizationNamespace,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.UpdateOrganizationNamespaceResponse>(
+                  this,
+                  Invocation.method(
+                    #updateOrganizationNamespace,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.UpdateOrganizationNamespaceResponse>(
+                  this,
+                  Invocation.method(
+                    #updateOrganizationNamespace,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.UpdateOrganizationNamespaceResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.DeleteOrganizationResponse> deleteOrganization(
     _i13.DeleteOrganizationRequest? request, {
     _i3.CallOptions? options,
@@ -3142,6 +3175,38 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.DeleteFragmentResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.ListNestedFragmentsResponse> listNestedFragments(
+    _i13.ListNestedFragmentsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #listNestedFragments,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.ListNestedFragmentsResponse>(
+                  this,
+                  Invocation.method(
+                    #listNestedFragments,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.ListNestedFragmentsResponse>(
+                  this,
+                  Invocation.method(
+                    #listNestedFragments,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.ListNestedFragmentsResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.ListMachineFragmentsResponse> listMachineFragments(
     _i13.ListMachineFragmentsRequest? request, {
     _i3.CallOptions? options,
@@ -3602,6 +3667,37 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
                 ),
           )
           as _i4.ResponseFuture<_i13.DeleteRegistryItemResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.RenameRegistryItemResponse> renameRegistryItem(
+    _i13.RenameRegistryItemRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #renameRegistryItem,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i13.RenameRegistryItemResponse>(
+              this,
+              Invocation.method(
+                #renameRegistryItem,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.RenameRegistryItemResponse>(
+                  this,
+                  Invocation.method(
+                    #renameRegistryItem,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.RenameRegistryItemResponse>);
 
   @override
   _i4.ResponseFuture<_i13.TransferRegistryItemResponse> transferRegistryItem(
@@ -5541,6 +5637,74 @@ class MockBillingServiceClient extends _i1.Mock
                 ),
           )
           as _i4.ResponseFuture<_i22.SendPaymentRequiredEmailResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.GetAvailableBillingTiersResponse>
+  getAvailableBillingTiers(
+    _i22.GetAvailableBillingTiersRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getAvailableBillingTiers,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i22.GetAvailableBillingTiersResponse>(
+                  this,
+                  Invocation.method(
+                    #getAvailableBillingTiers,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i22.GetAvailableBillingTiersResponse>(
+                  this,
+                  Invocation.method(
+                    #getAvailableBillingTiers,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i22.GetAvailableBillingTiersResponse>);
+
+  @override
+  _i4.ResponseFuture<_i22.UpdateOrganizationBillingTierResponse>
+  updateOrganizationBillingTier(
+    _i22.UpdateOrganizationBillingTierRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #updateOrganizationBillingTier,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+              _i22.UpdateOrganizationBillingTierResponse
+            >(
+              this,
+              Invocation.method(
+                #updateOrganizationBillingTier,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+              _i22.UpdateOrganizationBillingTierResponse
+            >(
+              this,
+              Invocation.method(
+                #updateOrganizationBillingTier,
+                [request],
+                {#options: options},
+              ),
+            ),
+          )
+          as _i4.ResponseFuture<_i22.UpdateOrganizationBillingTierResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
