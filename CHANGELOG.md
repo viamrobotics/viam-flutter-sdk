@@ -1,11 +1,21 @@
 # Changelog
 
-## [v0.5.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.5.1) (2025-04-15)
+## [v0.6.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.0) (2025-05-12)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.5.0...v0.5.1)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.5.1...v0.6.0)
 
 **Merged pull requests:**
 
+- Automated Protos Update [\#383](https://github.com/viamrobotics/viam-flutter-sdk/pull/383) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#382](https://github.com/viamrobotics/viam-flutter-sdk/pull/382) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#381](https://github.com/viamrobotics/viam-flutter-sdk/pull/381) ([viambot](https://github.com/viambot))
+- \[RSDK-9110\] Add trace debug logging [\#380](https://github.com/viamrobotics/viam-flutter-sdk/pull/380) ([njooma](https://github.com/njooma))
+- add last known update to updateRobotPart and updateFragment [\#379](https://github.com/viamrobotics/viam-flutter-sdk/pull/379) ([gmulz](https://github.com/gmulz))
+- Automated Protos Update [\#378](https://github.com/viamrobotics/viam-flutter-sdk/pull/378) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#377](https://github.com/viamrobotics/viam-flutter-sdk/pull/377) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#376](https://github.com/viamrobotics/viam-flutter-sdk/pull/376) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#375](https://github.com/viamrobotics/viam-flutter-sdk/pull/375) ([viambot](https://github.com/viambot))
+- v0.5.1 [\#374](https://github.com/viamrobotics/viam-flutter-sdk/pull/374) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#373](https://github.com/viamrobotics/viam-flutter-sdk/pull/373) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#372](https://github.com/viamrobotics/viam-flutter-sdk/pull/372) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#371](https://github.com/viamrobotics/viam-flutter-sdk/pull/371) ([viambot](https://github.com/viambot))
@@ -92,6 +102,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.5.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.5.1) (2025-04-15)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.5.0...v0.5.1)
 
 ## [v0.5.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.5.0) (2025-03-31)
 
