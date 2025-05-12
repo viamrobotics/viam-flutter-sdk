@@ -86,7 +86,7 @@ Future&lt;Pose&gt; endPosition({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetEndPositionRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getEndPosition(request);
+  final response = await client.getEndPosition(request, options: callOptions);
   return response.pose;
 }</code></pre>
 </section>

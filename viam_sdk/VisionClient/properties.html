@@ -83,7 +83,7 @@ properties.classifications_supported  // returns false
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;VisionProperties&gt; properties({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetPropertiesRequest(name: name, extra: extra?.toStruct());
-  return await client.getProperties(request);
+  return await client.getProperties(request, options: callOptions);
 }</code></pre>
 </section>
 

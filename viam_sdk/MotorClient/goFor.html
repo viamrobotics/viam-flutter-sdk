@@ -93,7 +93,7 @@ Future&lt;void&gt; goFor(double rpm, double revolutions, {Map&lt;String, dynamic
     ..rpm = rpm
     ..revolutions = revolutions
     ..extra = extra?.toStruct() ?? Struct();
-  await client.goFor(request);
+  await client.goFor(request, options: callOptions);
 }</code></pre>
 </section>
 

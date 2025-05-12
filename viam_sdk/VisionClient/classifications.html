@@ -90,7 +90,7 @@ var classifications = await myVisionService.classifications(latestImage, 2);
       mimeType: image.mimeType.name,
       n: count,
       extra: extra?.toStruct());
-  final response = await client.getClassifications(request);
+  final response = await client.getClassifications(request, options: callOptions);
   return response.classifications;
 }</code></pre>
 </section>

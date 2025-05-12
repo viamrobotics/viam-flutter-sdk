@@ -86,7 +86,7 @@ Future&lt;List&lt;double&gt;&gt; lengths({Map&lt;String, dynamic&gt;? extra}) as
   final request = GetLengthsRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getLengths(request);
+  final response = await client.getLengths(request, options: callOptions);
   return response.lengthsMm;
 }</code></pre>
 </section>

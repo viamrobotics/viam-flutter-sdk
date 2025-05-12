@@ -89,7 +89,7 @@ Future&lt;Voltage&gt; voltage({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetVoltageRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  return await client.getVoltage(request);
+  return await client.getVoltage(request, options: callOptions);
 }</code></pre>
 </section>
 

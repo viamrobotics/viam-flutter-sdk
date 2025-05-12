@@ -97,7 +97,7 @@ Future&lt;void&gt; setPowerMode(PowerMode powerMode, int seconds, int nanos, {Ma
     ..powerMode = powerMode
     ..duration = duration
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setPowerMode(request);
+  await client.setPowerMode(request, options: callOptions);
 }</code></pre>
 </section>
 

@@ -89,7 +89,7 @@ Future&lt;AnalogValue&gt; analogReaderValue(String analogReaderName, {Map&lt;Str
     ..boardName = name
     ..analogReaderName = analogReaderName
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.readAnalogReader(request);
+  final response = await client.readAnalogReader(request, options: callOptions);
   return response;
 }</code></pre>
 </section>

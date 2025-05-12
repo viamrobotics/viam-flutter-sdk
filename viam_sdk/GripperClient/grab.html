@@ -86,7 +86,7 @@ Future&lt;void&gt; grab({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GrabRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  await client.grab(request);
+  await client.grab(request, options: callOptions);
 }</code></pre>
 </section>
 

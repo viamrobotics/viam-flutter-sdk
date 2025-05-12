@@ -86,7 +86,7 @@ Future&lt;Vector3&gt; linearVelocity({Map&lt;String, dynamic&gt;? extra}) async 
   final request = GetLinearVelocityRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getLinearVelocity(request);
+  final response = await client.getLinearVelocity(request, options: callOptions);
   return response.linearVelocity;
 }</code></pre>
 </section>

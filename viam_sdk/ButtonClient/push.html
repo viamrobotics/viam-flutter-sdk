@@ -86,7 +86,7 @@ Future&lt;void&gt; push({Map&lt;String, dynamic&gt;? extra}) async {
   final request = PushRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  await client.push(request);
+  await client.push(request, options: callOptions);
 }</code></pre>
 </section>
 

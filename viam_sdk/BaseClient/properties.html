@@ -87,7 +87,7 @@ Future&lt;BaseProperties&gt; properties({Map&lt;String, dynamic&gt;? extra}) asy
   final request = GetPropertiesRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  return await client.getProperties(request);
+  return await client.getProperties(request, options: callOptions);
 }</code></pre>
 </section>
 

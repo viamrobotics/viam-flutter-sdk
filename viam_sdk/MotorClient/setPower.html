@@ -90,7 +90,7 @@ Future&lt;void&gt; setPower(double powerPct, {Map&lt;String, dynamic&gt;? extra}
     ..name = name
     ..powerPct = powerPct
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setPower(request);
+  await client.setPower(request, options: callOptions);
 }</code></pre>
 </section>
 

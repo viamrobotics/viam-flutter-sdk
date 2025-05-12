@@ -89,7 +89,7 @@ Future&lt;double&gt; pwm(String pin, {Map&lt;String, dynamic&gt;? extra}) async 
     ..name = name
     ..pin = pin
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.pWM(request);
+  final response = await client.pWM(request, options: callOptions);
   return response.dutyCyclePct;
 }</code></pre>
 </section>

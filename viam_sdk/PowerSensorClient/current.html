@@ -89,7 +89,7 @@ Future&lt;Current&gt; current({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetCurrentRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  return await client.getCurrent(request);
+  return await client.getCurrent(request, options: callOptions);
 }</code></pre>
 </section>
 

@@ -90,7 +90,7 @@ Future&lt;void&gt; setRPM(double rpm, {Map&lt;String, dynamic&gt;? extra}) async
     ..name = name
     ..rpm = rpm
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setRPM(request);
+  await client.setRPM(request, options: callOptions);
 }</code></pre>
 </section>
 

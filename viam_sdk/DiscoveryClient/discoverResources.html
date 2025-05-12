@@ -78,7 +78,7 @@ var resources = await myDiscoveryService.discoverResources('myWebcam');
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;ComponentConfig&gt;&gt; discoverResources({Map&lt;String, dynamic&gt;? extra}) async {
   final request = DiscoverResourcesRequest(name: name, extra: extra?.toStruct());
-  final response = await client.discoverResources(request);
+  final response = await client.discoverResources(request, options: callOptions);
   return response.discoveries;
 }</code></pre>
 </section>

@@ -86,7 +86,7 @@ Future&lt;int&gt; getNumberOfPositions({Map&lt;String, dynamic&gt;? extra}) asyn
   final request = GetNumberOfPositionsRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getNumberOfPositions(request);
+  final response = await client.getNumberOfPositions(request, options: callOptions);
   return response.numberOfPositions;
 }</code></pre>
 </section>

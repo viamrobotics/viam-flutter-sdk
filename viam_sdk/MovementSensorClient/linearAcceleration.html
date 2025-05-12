@@ -87,7 +87,7 @@ Future&lt;Vector3&gt; linearAcceleration({Map&lt;String, dynamic&gt;? extra}) as
   final request = GetLinearAccelerationRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getLinearAcceleration(request);
+  final response = await client.getLinearAcceleration(request, options: callOptions);
   return response.linearAcceleration;
 }</code></pre>
 </section>

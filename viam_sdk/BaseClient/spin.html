@@ -93,7 +93,7 @@ Future&lt;void&gt; spin(double angle, double velocity, {Map&lt;String, dynamic&g
     ..angleDeg = angle
     ..degsPerSec = velocity
     ..extra = extra?.toStruct() ?? Struct();
-  await client.spin(request);
+  await client.spin(request, options: callOptions);
 }</code></pre>
 </section>
 

@@ -87,7 +87,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; doCommand(Map&lt;String, dynamic&gt; co
   final request = common.DoCommandRequest()
     ..name = name
     ..command = command.toStruct();
-  final response = await client.doCommand(request);
+  final response = await client.doCommand(request, options: callOptions);
   return response.result.toMap();
 }</code></pre>
 </section>

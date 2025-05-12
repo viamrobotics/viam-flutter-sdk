@@ -86,7 +86,7 @@ Future&lt;Orientation&gt; orientation({Map&lt;String, dynamic&gt;? extra}) async
   final request = GetOrientationRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getOrientation(request);
+  final response = await client.getOrientation(request, options: callOptions);
   return response.orientation;
 }</code></pre>
 </section>

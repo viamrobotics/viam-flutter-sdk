@@ -83,6 +83,12 @@
     </ul>
   </dd>
         
+  <dt>Mixed-in types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="../viam_sdk/RPCDebugLoggerMixin-mixin.html">RPCDebugLoggerMixin</a></li>
+    </ul>
+  </dd>
 
 
         
@@ -110,6 +116,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="callOptions" class="property inherited">
+  <span class="name"><a href="../viam_sdk/RPCDebugLoggerMixin/callOptions.html">callOptions</a></span>
+  <span class="signature">&#8594; <a href="https://pub.dev/documentation/grpc/4.0.4/grpc/CallOptions-class.html">CallOptions</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="channel" class="property">
   <span class="name"><a href="../viam_sdk/ButtonClient/channel.html">channel</a></span>
   <span class="signature">&#8596; <a href="https://pub.dev/documentation/grpc/4.0.4/grpc_connection_interface/ClientChannelBase-class.html">ClientChannelBase</a></span>
@@ -179,6 +197,19 @@
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
+        <dt id="disableDebugLogging" class="callable inherited">
+  <span class="name"><a href="../viam_sdk/RPCDebugLoggerMixin/disableDebugLogging.html">disableDebugLogging</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Disable debug logging for gRPC calls by removing the trace key from the metadata.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="doCommand" class="callable">
   <span class="name"><a href="../viam_sdk/ButtonClient/doCommand.html">doCommand</a></span><span class="signature">(<wbr><span class="parameter" id="doCommand-param-command"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">command</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
@@ -189,6 +220,20 @@
 <dd>
   Send/Receive arbitrary commands to the <a href="../viam_sdk/Resource-class.html">Resource</a>
   <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="enableDebugLogging" class="callable inherited">
+  <span class="name"><a href="../viam_sdk/RPCDebugLoggerMixin/enableDebugLogging.html">enableDebugLogging</a></span><span class="signature">(<wbr>{<span class="parameter" id="enableDebugLogging-param-traceKey"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">traceKey</span></span>})
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Enable debug logging for gRPC calls by setting a trace key in the metadata.
+If no trace key is provided, a random one will be generated.
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 

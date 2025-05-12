@@ -92,7 +92,7 @@ Future&lt;void&gt; moveToPosition(Pose pose, {Map&lt;String, dynamic&gt;? extra}
     ..name = name
     ..to = pose
     ..extra = extra?.toStruct() ?? Struct();
-  await client.moveToPosition(request);
+  await client.moveToPosition(request, options: callOptions);
 }</code></pre>
 </section>
 

@@ -106,7 +106,7 @@ Future&lt;void&gt; setPower(Vector3 linear, Vector3 angular, {Map&lt;String, dyn
     ..linear = linear
     ..angular = angular
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setPower(request);
+  await client.setPower(request, options: callOptions);
 }</code></pre>
 </section>
 

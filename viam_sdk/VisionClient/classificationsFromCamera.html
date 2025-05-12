@@ -82,7 +82,7 @@ var classifications = await myVisionService.classificationsFromCamera('myWebcam'
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Classification&gt;&gt; classificationsFromCamera(String cameraName, int count, {Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetClassificationsFromCameraRequest(name: name, cameraName: cameraName, n: count, extra: extra?.toStruct());
-  final response = await client.getClassificationsFromCamera(request);
+  final response = await client.getClassificationsFromCamera(request, options: callOptions);
   return response.classifications;
 }</code></pre>
 </section>

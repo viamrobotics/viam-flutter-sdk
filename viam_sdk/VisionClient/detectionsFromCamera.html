@@ -80,7 +80,7 @@ var detections = await myVisionService.detectionsFromCamera('myWebcam');
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Detection&gt;&gt; detectionsFromCamera(String cameraName, {Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetDetectionsFromCameraRequest(name: name, cameraName: cameraName, extra: extra?.toStruct());
-  final response = await client.getDetectionsFromCamera(request);
+  final response = await client.getDetectionsFromCamera(request, options: callOptions);
   return response.detections;
 }</code></pre>
 </section>

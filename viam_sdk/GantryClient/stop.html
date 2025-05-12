@@ -86,7 +86,7 @@ Future&lt;void&gt; stop({Map&lt;String, dynamic&gt;? extra}) async {
   final request = StopRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  await client.stop(request);
+  await client.stop(request, options: callOptions);
 }</code></pre>
 </section>
 

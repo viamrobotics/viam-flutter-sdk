@@ -90,7 +90,7 @@ Future&lt;void&gt; moveToPosition(List&lt;double&gt; positions, List&lt;double&g
     ..positionsMm.addAll(positions)
     ..speedsMmPerSec.addAll(speeds)
     ..extra = extra?.toStruct() ?? Struct();
-  await client.moveToPosition(request);
+  await client.moveToPosition(request, options: callOptions);
 }</code></pre>
 </section>
 

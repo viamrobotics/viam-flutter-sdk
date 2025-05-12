@@ -85,7 +85,7 @@ var moving = await myMotor.isMoving();
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;bool&gt; isMoving({Map&lt;String, dynamic&gt;? extra}) async {
   final request = IsMovingRequest()..name = name;
-  final result = await client.isMoving(request);
+  final result = await client.isMoving(request, options: callOptions);
   return result.isMoving;
 }</code></pre>
 </section>

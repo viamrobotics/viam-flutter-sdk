@@ -83,7 +83,7 @@
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;CameraProperties&gt; properties() async {
   final request = GetPropertiesRequest()..name = name;
-  return await client.getProperties(request);
+  return await client.getProperties(request, options: callOptions);
 }</code></pre>
 </section>
 

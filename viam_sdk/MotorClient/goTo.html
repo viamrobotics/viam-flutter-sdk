@@ -94,7 +94,7 @@ Future&lt;void&gt; goTo(double rpm, double positionRevolutions, {Map&lt;String, 
     ..rpm = rpm
     ..positionRevolutions = positionRevolutions
     ..extra = extra?.toStruct() ?? Struct();
-  await client.goTo(request);
+  await client.goTo(request, options: callOptions);
 }</code></pre>
 </section>
 

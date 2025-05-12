@@ -94,7 +94,7 @@ Future&lt;void&gt; setVelocity(Vector3 linear, Vector3 angular, {Map&lt;String, 
     ..linear = linear
     ..angular = angular
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setVelocity(request);
+  await client.setVelocity(request, options: callOptions);
 }</code></pre>
 </section>
 

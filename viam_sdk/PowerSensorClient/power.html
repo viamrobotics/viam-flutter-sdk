@@ -86,7 +86,7 @@ Future&lt;double&gt; power({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetPowerRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getPower(request);
+  final response = await client.getPower(request, options: callOptions);
   return response.watts;
 }</code></pre>
 </section>

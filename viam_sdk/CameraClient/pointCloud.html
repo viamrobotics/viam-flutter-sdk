@@ -87,7 +87,7 @@ Future&lt;ViamImage&gt; pointCloud({Map&lt;String, dynamic&gt;? extra}) async {
     ..name = name
     ..mimeType = MimeType.pcd.name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getPointCloud(request);
+  final response = await client.getPointCloud(request, options: callOptions);
   final actualMimeType = MimeType.fromString(response.mimeType);
   return ViamImage(response.pointCloud, actualMimeType);
 }</code></pre>

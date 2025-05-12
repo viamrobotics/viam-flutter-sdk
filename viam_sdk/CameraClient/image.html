@@ -88,7 +88,7 @@ Future&lt;ViamImage&gt; image({MimeType? mimeType, Map&lt;String, dynamic&gt;? e
     ..name = name
     ..mimeType = mimeType?.name ?? &#39;&#39;
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getImage(request);
+  final response = await client.getImage(request, options: callOptions);
   final actualMimeType = MimeType.fromString(response.mimeType);
   return ViamImage(response.image, actualMimeType);
 }</code></pre>

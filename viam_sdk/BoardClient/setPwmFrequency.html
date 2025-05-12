@@ -91,7 +91,7 @@ Future&lt;void&gt; setPwmFrequency(String pin, int frequencyHz, {Map&lt;String, 
     ..pin = pin
     ..frequencyHz = Int64(frequencyHz)
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setPWMFrequency(request);
+  await client.setPWMFrequency(request, options: callOptions);
 }</code></pre>
 </section>
 

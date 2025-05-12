@@ -86,7 +86,7 @@ Future&lt;List&lt;double&gt;&gt; position({Map&lt;String, dynamic&gt;? extra}) a
   final request = GetPositionRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getPosition(request);
+  final response = await client.getPosition(request, options: callOptions);
   return response.positionsMm;
 }</code></pre>
 </section>

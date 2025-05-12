@@ -88,7 +88,7 @@ Future&lt;MotorProperties&gt; properties({Map&lt;String, dynamic&gt;? extra}) as
   final request = GetPropertiesRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  return await client.getProperties(request);
+  return await client.getProperties(request, options: callOptions);
 }</code></pre>
 </section>
 

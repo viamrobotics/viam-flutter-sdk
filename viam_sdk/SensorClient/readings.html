@@ -86,7 +86,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? e
   final request = GetReadingsRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getReadings(request);
+  final response = await client.getReadings(request, options: callOptions);
   return response.toPrimitive();
 }</code></pre>
 </section>

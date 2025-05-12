@@ -89,7 +89,7 @@ Future&lt;int&gt; digitalInterruptValue(String digitalInterruptName, {Map&lt;Str
     ..boardName = name
     ..digitalInterruptName = digitalInterruptName
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getDigitalInterruptValue(request);
+  final response = await client.getDigitalInterruptValue(request, options: callOptions);
   return response.value.toInt();
 }</code></pre>
 </section>

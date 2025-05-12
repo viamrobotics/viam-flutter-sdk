@@ -80,7 +80,7 @@ var ptCloud = await myVisionService.objectPointClouds('myCamera');
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;PointCloudObject&gt;&gt; objectPointClouds(String cameraName, {Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
-  final response = await client.getObjectPointClouds(request);
+  final response = await client.getObjectPointClouds(request, options: callOptions);
   return response.objects;
 }</code></pre>
 </section>

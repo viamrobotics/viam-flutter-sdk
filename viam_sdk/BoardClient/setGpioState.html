@@ -91,7 +91,7 @@ Future&lt;void&gt; setGpioState(String pin, bool high, {Map&lt;String, dynamic&g
     ..pin = pin
     ..high = high
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setGPIO(request);
+  await client.setGPIO(request, options: callOptions);
 }</code></pre>
 </section>
 

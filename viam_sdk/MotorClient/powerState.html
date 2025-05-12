@@ -93,7 +93,7 @@ Future&lt;PowerState&gt; powerState({Map&lt;String, dynamic&gt;? extra}) async {
   final request = IsPoweredRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final result = await client.isPowered(request);
+  final result = await client.isPowered(request, options: callOptions);
   return PowerState.fromProto(result);
 }</code></pre>
 </section>

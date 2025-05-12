@@ -87,7 +87,7 @@ Future&lt;Vector3&gt; angularVelocity({Map&lt;String, dynamic&gt;? extra}) async
   final request = GetAngularVelocityRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getAngularVelocity(request);
+  final response = await client.getAngularVelocity(request, options: callOptions);
   return response.angularVelocity;
 }</code></pre>
 </section>

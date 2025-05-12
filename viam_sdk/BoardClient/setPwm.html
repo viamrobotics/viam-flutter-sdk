@@ -91,7 +91,7 @@ Future&lt;void&gt; setPwm(String pin, double dutyCyclePct, {Map&lt;String, dynam
     ..pin = pin
     ..dutyCyclePct = dutyCyclePct
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setPWM(request);
+  await client.setPWM(request, options: callOptions);
 }</code></pre>
 </section>
 

@@ -89,7 +89,7 @@ Future&lt;bool&gt; gpio(String pin, {Map&lt;String, dynamic&gt;? extra}) async {
     ..name = name
     ..pin = pin
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getGPIO(request);
+  final response = await client.getGPIO(request, options: callOptions);
   return response.high;
 }</code></pre>
 </section>

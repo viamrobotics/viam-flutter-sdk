@@ -88,7 +88,7 @@ Future&lt;void&gt; setPosition(int position, {Map&lt;String, dynamic&gt;? extra}
     ..name = name
     ..position = position
     ..extra = extra?.toStruct() ?? Struct();
-  await client.setPosition(request);
+  await client.setPosition(request, options: callOptions);
 }</code></pre>
 </section>
 

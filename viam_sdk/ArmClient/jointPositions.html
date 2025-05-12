@@ -86,7 +86,7 @@ Future&lt;List&lt;double&gt;&gt; jointPositions({Map&lt;String, dynamic&gt;? ext
   final request = GetJointPositionsRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getJointPositions(request);
+  final response = await client.getJointPositions(request, options: callOptions);
   return response.positions.values;
 }</code></pre>
 </section>

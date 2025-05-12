@@ -89,7 +89,7 @@ Future&lt;void&gt; resetZeroPosition(double offset, {Map&lt;String, dynamic&gt;?
     ..name = name
     ..offset = offset
     ..extra = extra?.toStruct() ?? Struct();
-  await client.resetZeroPosition(request);
+  await client.resetZeroPosition(request, options: callOptions);
 }</code></pre>
 </section>
 

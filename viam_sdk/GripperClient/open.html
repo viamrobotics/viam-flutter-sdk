@@ -86,7 +86,7 @@ Future&lt;void&gt; open({Map&lt;String, dynamic&gt;? extra}) async {
   final request = OpenRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  await client.open(request);
+  await client.open(request, options: callOptions);
 }</code></pre>
 </section>
 

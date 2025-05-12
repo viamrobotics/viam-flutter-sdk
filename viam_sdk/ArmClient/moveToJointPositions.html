@@ -92,7 +92,7 @@ Future&lt;void&gt; moveToJointPositions(List&lt;double&gt; positions, {Map&lt;St
     ..name = name
     ..positions = (JointPositions()..values.addAll(positions))
     ..extra = extra?.toStruct() ?? Struct();
-  await client.moveToJointPositions(request);
+  await client.moveToJointPositions(request, options: callOptions);
 }</code></pre>
 </section>
 

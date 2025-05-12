@@ -91,7 +91,7 @@ Future&lt;void&gt; writeAnalog(String pin, int value, {Map&lt;String, dynamic&gt
     ..pin = pin
     ..value = value
     ..extra = extra?.toStruct() ?? Struct();
-  await client.writeAnalog(request);
+  await client.writeAnalog(request, options: callOptions);
 }</code></pre>
 </section>
 

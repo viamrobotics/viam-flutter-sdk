@@ -89,7 +89,7 @@ Future&lt;int&gt; pwmFrequency(String pin, {Map&lt;String, dynamic&gt;? extra}) 
     ..name = name
     ..pin = pin
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.pWMFrequency(request);
+  final response = await client.pWMFrequency(request, options: callOptions);
   return response.frequencyHz.toInt();
 }</code></pre>
 </section>
