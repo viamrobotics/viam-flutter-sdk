@@ -31,7 +31,14 @@ class ViamImpl implements Viam {
     _billingClient = BillingClient(BillingServiceClient(_clientChannelBase));
     _dataClient = DataClient(
         DataServiceClient(_clientChannelBase), DataSyncServiceClient(_clientChannelBase), DatasetServiceClient(_clientChannelBase));
-    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(ClientChannel('provisioning.viam', port: 4772)));
+
+    _provisioningClient = ProvisioningClient(ProvisioningServiceClient(
+      ClientChannel(
+        'viam.setup',
+        port: 4772,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      ),
+    ));
   }
 
   ViamImpl.withAccessToken(String accessToken, {String serviceHost = 'app.viam.com', int servicePort = 443})
