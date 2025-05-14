@@ -44,7 +44,7 @@ class ViamImpl implements Viam {
 
     _provisioningClient = ProvisioningClient(ProvisioningServiceClient(
       ClientChannel(
-        'viam.setup',
+        '10.42.0.1',
         port: 4772,
         options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
       ),
