@@ -75,6 +75,7 @@
 <li><span class="parameter" id="-param-isCustomJob"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isCustomJob</span>, </span></li>
 <li><span class="parameter" id="-param-registryItemId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">registryItemId</span>, </span></li>
 <li><span class="parameter" id="-param-registryItemVersion"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">registryItemVersion</span>, </span></li>
+<li><span class="parameter" id="-param-arguments"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">arguments</span>, </span></li>
 </ol>})
     </section>
     
@@ -102,6 +103,7 @@
   $core.bool? isCustomJob,
   $core.String? registryItemId,
   $core.String? registryItemVersion,
+  $core.Map&lt;$core.String, $core.String&gt;? arguments,
 }) {
   final $result = create();
   if (status != null) {
@@ -157,6 +159,9 @@
   }
   if (registryItemVersion != null) {
     $result.registryItemVersion = registryItemVersion;
+  }
+  if (arguments != null) {
+    $result.arguments.addAll(arguments);
   }
   return $result;
 }</code></pre>
