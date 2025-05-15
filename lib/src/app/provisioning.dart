@@ -7,8 +7,6 @@ enum NetworkType { wifi, wired }
 
 /// {@category Viam SDK}
 /// gRPC client for connecting to Viam's Provisioning Service
-///
-/// All calls must be authenticated.
 class ProvisioningClient {
   final ProvisioningServiceClient _client;
 
