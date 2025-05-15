@@ -244,12 +244,24 @@ const TrainingJobMetadata$json = {
     {'1': 'training_ended', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'trainingEnded'},
     {'1': 'synced_model_id', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'syncedModelId'},
     {'1': 'tags', '3': 16, '4': 3, '5': 9, '8': {}, '10': 'tags'},
+    {'1': 'arguments', '3': 21, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.TrainingJobMetadata.ArgumentsEntry', '8': {}, '10': 'arguments'},
   ],
+  '3': [TrainingJobMetadata_ArgumentsEntry$json],
   '9': [
     {'1': 1, '2': 2},
     {'1': 6, '2': 7},
   ],
   '10': ['request', 'user_email'],
+};
+
+@$core.Deprecated('Use trainingJobMetadataDescriptor instead')
+const TrainingJobMetadata_ArgumentsEntry$json = {
+  '1': 'ArgumentsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `TrainingJobMetadata`. Decode as a `google.protobuf.DescriptorProto`.
@@ -285,7 +297,11 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     'IGpzb246InRyYWluaW5nX2VuZGVkIlINdHJhaW5pbmdFbmRlZBJaCg9zeW5jZWRfbW9kZWxfaW'
     'QYBSABKAlCMpqEngMtYnNvbjoic3luY2VkX21vZGVsX2lkIiBqc29uOiJzeW5jZWRfbW9kZWxf'
     'aWQiUg1zeW5jZWRNb2RlbElkEjAKBHRhZ3MYECADKAlCHJqEngMXYnNvbjoidGFncyIganNvbj'
-    'oidGFncyJSBHRhZ3NKBAgBEAJKBAgGEAdSB3JlcXVlc3RSCnVzZXJfZW1haWw=');
+    'oidGFncyJSBHRhZ3MSgAEKCWFyZ3VtZW50cxgVIAMoCzI6LnZpYW0uYXBwLm1sdHJhaW5pbmcu'
+    'djEuVHJhaW5pbmdKb2JNZXRhZGF0YS5Bcmd1bWVudHNFbnRyeUImmoSeAyFic29uOiJhcmd1bW'
+    'VudHMiIGpzb246ImFyZ3VtZW50cyJSCWFyZ3VtZW50cxo8Cg5Bcmd1bWVudHNFbnRyeRIQCgNr'
+    'ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBSgQIARACSgQIBhAHUgdyZX'
+    'F1ZXN0Ugp1c2VyX2VtYWls');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {

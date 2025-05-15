@@ -605,6 +605,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $core.bool? isCustomJob,
     $core.String? registryItemId,
     $core.String? registryItemVersion,
+    $core.Map<$core.String, $core.String>? arguments,
   }) {
     final $result = create();
     if (status != null) {
@@ -661,6 +662,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (registryItemVersion != null) {
       $result.registryItemVersion = registryItemVersion;
     }
+    if (arguments != null) {
+      $result.arguments.addAll(arguments);
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -686,6 +690,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOB(18, _omitFieldNames ? '' : 'isCustomJob')
     ..aOS(19, _omitFieldNames ? '' : 'registryItemId')
     ..aOS(20, _omitFieldNames ? '' : 'registryItemVersion')
+    ..m<$core.String, $core.String>(21, _omitFieldNames ? '' : 'arguments', entryClassName: 'TrainingJobMetadata.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -875,6 +880,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
   $core.bool hasRegistryItemVersion() => $_has(17);
   @$pb.TagNumber(20)
   void clearRegistryItemVersion() => clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.Map<$core.String, $core.String> get arguments => $_getMap(18);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {
