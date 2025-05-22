@@ -8,8 +8,9 @@ import 'package:viam_sdk/src/gen/app/v1/billing.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/app/v1/robot.pbgrpc.dart' as app_robot;
 import 'package:viam_sdk/src/gen/provisioning/v1/provisioning.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/robot/v1/robot.pbgrpc.dart';
-import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
 import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/service/generic/v1/generic.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
 
 @GenerateNiceMocks([
   MockSpec<ClientChannelBase>(),
@@ -23,5 +24,6 @@ import 'package:viam_sdk/src/gen/service/discovery/v1/discovery.pbgrpc.dart';
   MockSpec<MLTrainingServiceClient>(),
   MockSpec<DatasetServiceClient>(),
   MockSpec<DiscoveryServiceClient>(),
+  MockSpec<GenericServiceClient>(as: Symbol('MockGenericServiceClient')),
 ])
 void main() {}
