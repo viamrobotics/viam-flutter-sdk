@@ -25,24 +25,21 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li><a href="../viam_protos.app.data">protos&#47;app&#47;data.dart</a></li>
+    <li><a href="../viam_protos.app.data/">protos&#47;app&#47;data.dart</a></li>
     <li class="self-crumb">Filter class</li>
   </ol>
   <div class="self-name">Filter</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
 </header>
 <main>
 <div
@@ -97,8 +94,8 @@ we return data from that <code>robot_id</code> of type <code>component_type</cod
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
-        <dt id="Filter" class="callable">
-          <span class="name"><a href="../viam_protos.app.data/Filter/Filter.html">Filter</a></span><span class="signature">({<span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-componentType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentType</span>, </span><span class="parameter" id="-param-method"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">method</span>, </span><span class="parameter" id="-param-robotName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotName</span>, </span><span class="parameter" id="-param-robotId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotId</span>, </span><span class="parameter" id="-param-partName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partName</span>, </span><span class="parameter" id="-param-partId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partId</span>, </span><span class="parameter" id="-param-locationIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">locationIds</span>, </span><span class="parameter" id="-param-organizationIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">organizationIds</span>, </span><span class="parameter" id="-param-mimeType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">mimeType</span>, </span><span class="parameter" id="-param-interval"><span class="type-annotation"><a href="../viam_protos.app.data/CaptureInterval-class.html">CaptureInterval</a>?</span> <span class="parameter-name">interval</span>, </span><span class="parameter" id="-param-tagsFilter"><span class="type-annotation"><a href="../viam_protos.app.data/TagsFilter-class.html">TagsFilter</a>?</span> <span class="parameter-name">tagsFilter</span>, </span><span class="parameter" id="-param-bboxLabels"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">bboxLabels</span>, </span><span class="parameter" id="-param-datasetId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">datasetId</span></span>})</span>
+        <dt id="Filter.new" class="callable">
+          <span class="name"><a href="../viam_protos.app.data/Filter/Filter.html">Filter.new</a></span><span class="signature">({<span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-componentType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentType</span>, </span><span class="parameter" id="-param-method"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">method</span>, </span><span class="parameter" id="-param-robotName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotName</span>, </span><span class="parameter" id="-param-robotId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">robotId</span>, </span><span class="parameter" id="-param-partName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partName</span>, </span><span class="parameter" id="-param-partId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">partId</span>, </span><span class="parameter" id="-param-locationIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">locationIds</span>, </span><span class="parameter" id="-param-organizationIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">organizationIds</span>, </span><span class="parameter" id="-param-mimeType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">mimeType</span>, </span><span class="parameter" id="-param-interval"><span class="type-annotation"><a href="../viam_protos.app.data/CaptureInterval-class.html">CaptureInterval</a>?</span> <span class="parameter-name">interval</span>, </span><span class="parameter" id="-param-tagsFilter"><span class="type-annotation"><a href="../viam_protos.app.data/TagsFilter-class.html">TagsFilter</a>?</span> <span class="parameter-name">tagsFilter</span>, </span><span class="parameter" id="-param-bboxLabels"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">bboxLabels</span>, </span><span class="parameter" id="-param-datasetId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">datasetId</span></span>})</span>
         </dt>
         <dd>
           
@@ -1321,7 +1318,7 @@ default value if it is not set.
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">viam_sdk</a></li>
-    <li><a href="../viam_protos.app.data">viam_protos.app.data</a></li>
+    <li><a href="../viam_protos.app.data/">viam_protos.app.data</a></li>
     <li class="self-crumb">Filter class</li>
 </ol>
 

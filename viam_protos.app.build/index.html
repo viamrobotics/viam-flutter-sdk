@@ -31,17 +31,14 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
 </header>
 <main>
 <div
@@ -901,72 +898,72 @@ response.
         <li><a href="../topics/Viam SDK-topic.html">Viam&nbsp;SDK</a></li>
         <li><a href="../topics/Protobuf Definitions-topic.html">Protobuf&nbsp;Definitions</a></li>
       <li class="section-title">Libraries</li>
-      <li><a href="../widgets">widgets</a></li>
-      <li><a href="../widgets_button">widgets/button</a></li>
-      <li><a href="../widgets_camera_stream">widgets/camera_stream</a></li>
-      <li><a href="../widgets_joystick">widgets/joystick</a></li>
-      <li><a href="../widgets_multi_camera_stream">widgets/multi_camera_stream</a></li>
-      <li><a href="../widgets_refreshable_data_table">widgets/refreshable_data_table</a></li>
-      <li><a href="../widgets_resources_arm">widgets/resources/arm</a></li>
-      <li><a href="../widgets_resources_base">widgets/resources/base</a></li>
-      <li><a href="../widgets_resources_board">widgets/resources/board</a></li>
-      <li><a href="../widgets_resources_button">widgets/resources/button</a></li>
-      <li><a href="../widgets_resources_gripper">widgets/resources/gripper</a></li>
-      <li><a href="../widgets_resources_motor">widgets/resources/motor</a></li>
-      <li><a href="../widgets_resources_sensor">widgets/resources/sensor</a></li>
-      <li><a href="../widgets_resources_servo">widgets/resources/servo</a></li>
-      <li><a href="../widgets_resources_switch">widgets/resources/switch</a></li>
+      <li><a href="../widgets/">widgets</a></li>
+      <li><a href="../widgets_button/">widgets/button</a></li>
+      <li><a href="../widgets_camera_stream/">widgets/camera_stream</a></li>
+      <li><a href="../widgets_joystick/">widgets/joystick</a></li>
+      <li><a href="../widgets_multi_camera_stream/">widgets/multi_camera_stream</a></li>
+      <li><a href="../widgets_refreshable_data_table/">widgets/refreshable_data_table</a></li>
+      <li><a href="../widgets_resources_arm/">widgets/resources/arm</a></li>
+      <li><a href="../widgets_resources_base/">widgets/resources/base</a></li>
+      <li><a href="../widgets_resources_board/">widgets/resources/board</a></li>
+      <li><a href="../widgets_resources_button/">widgets/resources/button</a></li>
+      <li><a href="../widgets_resources_gripper/">widgets/resources/gripper</a></li>
+      <li><a href="../widgets_resources_motor/">widgets/resources/motor</a></li>
+      <li><a href="../widgets_resources_sensor/">widgets/resources/sensor</a></li>
+      <li><a href="../widgets_resources_servo/">widgets/resources/servo</a></li>
+      <li><a href="../widgets_resources_switch/">widgets/resources/switch</a></li>
       <li class="section-subtitle">Common</li>
-        <li class="section-subitem"><a href="../viam_protos.common.common">protos/common/common</a></li>
+        <li class="section-subitem"><a href="../viam_protos.common.common/">protos/common/common</a></li>
       <li class="section-subtitle">Viam SDK</li>
-        <li class="section-subitem"><a href="../viam_sdk">viam_sdk</a></li>
+        <li class="section-subitem"><a href="../viam_sdk/">viam_sdk</a></li>
       <li class="section-subtitle">Protobuf Definitions</li>
-        <li class="section-subitem"><a href="../viam_protos.app.agent">protos/app/agent</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.app">protos/app/app</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.billing">protos/app/billing</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.build">protos/app/build</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam">protos/app/cloud_slam</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.data">protos/app/data</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.data_pipelines">protos/app/data_pipelines</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.data_sync">protos/app/data_sync</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.dataset">protos/app/dataset</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.end_user">protos/app/end_user</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.ml_inference">protos/app/ml_inference</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.ml_training">protos/app/ml_training</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.packages">protos/app/packages</a></li>
-        <li class="section-subitem"><a href="../viam_protos.app.robot">protos/app/robot</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.arm">protos/component/arm</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.audioinput">protos/component/audioinput</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.base">protos/component/base</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.board">protos/component/board</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.button">protos/component/button</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.camera">protos/component/camera</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.encoder">protos/component/encoder</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.gantry">protos/component/gantry</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.generic">protos/component/generic</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.gripper">protos/component/gripper</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.input_controller">protos/component/input_controller</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.motor">protos/component/motor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.movementsensor">protos/component/movementsensor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker">protos/component/pose_tracker</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.powersensor">protos/component/powersensor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.sensor">protos/component/sensor</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.servo">protos/component/servo</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.nswitch">protos/component/switch</a></li>
-        <li class="section-subitem"><a href="../viam_protos.component.testecho">protos/component/testecho</a></li>
-        <li class="section-subitem"><a href="../viam_protos.module.module">protos/module/module</a></li>
-        <li class="section-subitem"><a href="../viam_protos.provisioning.provisioning">protos/provisioning/provisioning</a></li>
-        <li class="section-subitem"><a href="../viam_protos.robot.robot">protos/robot/robot</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.data_manager">protos/service/data_manager</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.discovery">protos/service/discovery</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.generic">protos/service/generic</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.mlmodel">protos/service/mlmodel</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.motion">protos/service/motion</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.navigation">protos/service/navigation</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.sensors">protos/service/sensors</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.shell">protos/service/shell</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.slam">protos/service/slam</a></li>
-        <li class="section-subitem"><a href="../viam_protos.service.vision">protos/service/vision</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.agent/">protos/app/agent</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.app/">protos/app/app</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.billing/">protos/app/billing</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.build/">protos/app/build</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.cloud_slam/">protos/app/cloud_slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data/">protos/app/data</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data_pipelines/">protos/app/data_pipelines</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.data_sync/">protos/app/data_sync</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.dataset/">protos/app/dataset</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.end_user/">protos/app/end_user</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_inference/">protos/app/ml_inference</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.ml_training/">protos/app/ml_training</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.packages/">protos/app/packages</a></li>
+        <li class="section-subitem"><a href="../viam_protos.app.robot/">protos/app/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.arm/">protos/component/arm</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.audioinput/">protos/component/audioinput</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.base/">protos/component/base</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.board/">protos/component/board</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.button/">protos/component/button</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.camera/">protos/component/camera</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.encoder/">protos/component/encoder</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gantry/">protos/component/gantry</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.generic/">protos/component/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.gripper/">protos/component/gripper</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.input_controller/">protos/component/input_controller</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.motor/">protos/component/motor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.movementsensor/">protos/component/movementsensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.pose_tracker/">protos/component/pose_tracker</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.powersensor/">protos/component/powersensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.sensor/">protos/component/sensor</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.servo/">protos/component/servo</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.nswitch/">protos/component/switch</a></li>
+        <li class="section-subitem"><a href="../viam_protos.component.testecho/">protos/component/testecho</a></li>
+        <li class="section-subitem"><a href="../viam_protos.module.module/">protos/module/module</a></li>
+        <li class="section-subitem"><a href="../viam_protos.provisioning.provisioning/">protos/provisioning/provisioning</a></li>
+        <li class="section-subitem"><a href="../viam_protos.robot.robot/">protos/robot/robot</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.data_manager/">protos/service/data_manager</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.discovery/">protos/service/discovery</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.generic/">protos/service/generic</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.mlmodel/">protos/service/mlmodel</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.motion/">protos/service/motion</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.navigation/">protos/service/navigation</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.sensors/">protos/service/sensors</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.shell/">protos/service/shell</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.slam/">protos/service/slam</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.vision/">protos/service/vision</a></li>
 </ol>
 
   </div>
