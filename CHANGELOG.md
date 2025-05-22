@@ -1,11 +1,13 @@
 # Changelog
 
-## [v0.6.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.2) (2025-05-22)
+## [v0.6.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.3) (2025-05-22)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.1...v0.6.2)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.2...v0.6.3)
 
 **Merged pull requests:**
 
+- Add base methods [\#391](https://github.com/viamrobotics/viam-flutter-sdk/pull/391) ([njooma](https://github.com/njooma))
+- v0.6.2 [\#390](https://github.com/viamrobotics/viam-flutter-sdk/pull/390) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-10772 Add generic service client [\#389](https://github.com/viamrobotics/viam-flutter-sdk/pull/389) ([njooma](https://github.com/njooma))
 - v0.6.1 [\#387](https://github.com/viamrobotics/viam-flutter-sdk/pull/387) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#386](https://github.com/viamrobotics/viam-flutter-sdk/pull/386) ([viambot](https://github.com/viambot))
@@ -107,6 +109,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.6.2](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.2) (2025-05-22)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.1...v0.6.2)
 
 ## [v0.6.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.1) (2025-05-15)
 
