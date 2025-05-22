@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/generic/service.dart';
-import 'package:viam_sdk/src/gen/component/generic/v1/generic.pbgrpc.dart';
+import 'package:viam_sdk/src/gen/component/generic/v1/generic.pbgrpc.dart' as generic_pb;
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
@@ -61,7 +61,7 @@ void main() {
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
 
-        final client = GenericServiceClient(channel);
+        final client = generic_pb.GenericServiceClient(channel);
         final resp = await client.doCommand(DoCommandRequest()
           ..name = name
           ..command = cmd.toStruct());
