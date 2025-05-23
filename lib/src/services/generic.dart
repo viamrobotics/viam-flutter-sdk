@@ -1,6 +1,5 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../protos/common/common.dart';
 import '../gen/common/v1/common.pb.dart';
 import '../gen/service/generic/v1/generic.pbgrpc.dart' as generic_pb;
 import '../resource/base.dart';

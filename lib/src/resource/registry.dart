@@ -29,8 +29,8 @@ import '../components/servo/servo.dart';
 import '../components/switch/client.dart';
 import '../components/switch/switch.dart';
 import '../resource/base.dart';
-import '../services//generic.dart';
 import '../services/discovery.dart';
+import '../services/generic.dart';
 import '../services/vision.dart';
 
 /// {@category Viam SDK}
