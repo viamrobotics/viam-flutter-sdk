@@ -29,6 +29,7 @@ import '../components/servo/servo.dart';
 import '../components/switch/client.dart';
 import '../components/switch/switch.dart';
 import '../resource/base.dart';
+import '../services//generic.dart';
 import '../services/discovery.dart';
 import '../services/vision.dart';
 
@@ -75,8 +76,9 @@ class Registry {
     registerSubtype(ResourceRegistration(Sensor.subtype, (name, channel) => SensorClient(name, channel)));
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
     registerSubtype(ResourceRegistration(Switch.subtype, (name, channel) => SwitchClient(name, channel)));
-    registerSubtype(ResourceRegistration(VisionClient.subtype, (name, channel) => VisionClient(name, channel)));
     registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoveryClient(name, channel)));
+    registerSubtype(ResourceRegistration(GenericServiceClient.subtype, (name, channel) => GenericServiceClient(name, channel)));
+    registerSubtype(ResourceRegistration(VisionClient.subtype, (name, channel) => VisionClient(name, channel)));
   }
 
   /// The [Subtype] available in the SDK
