@@ -2305,6 +2305,7 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
   factory ResendOrganizationInviteRequest({
     $core.String? organizationId,
     $core.String? email,
+    $core.bool? sendEmailInvite,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -2312,6 +2313,9 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
     }
     if (email != null) {
       $result.email = email;
+    }
+    if (sendEmailInvite != null) {
+      $result.sendEmailInvite = sendEmailInvite;
     }
     return $result;
   }
@@ -2322,6 +2326,7 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResendOrganizationInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..aOB(3, _omitFieldNames ? '' : 'sendEmailInvite')
     ..hasRequiredFields = false
   ;
 
@@ -2363,6 +2368,17 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
   void clearEmail() => clearField(2);
+
+  /// Set to true (the default) to send an email to the recipient of an invite. The user must accept the email to be added to the associated authorizations.
+  /// When set to false, the user automatically receives the associated authorization on the next login of the user with the associated email address.
+  @$pb.TagNumber(3)
+  $core.bool get sendEmailInvite => $_getBF(2);
+  @$pb.TagNumber(3)
+  set sendEmailInvite($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSendEmailInvite() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSendEmailInvite() => clearField(3);
 }
 
 class ResendOrganizationInviteResponse extends $pb.GeneratedMessage {

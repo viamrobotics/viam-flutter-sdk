@@ -703,13 +703,19 @@ const ResendOrganizationInviteRequest$json = {
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'send_email_invite', '3': 3, '4': 1, '5': 8, '9': 0, '10': 'sendEmailInvite', '17': true},
+  ],
+  '8': [
+    {'1': '_send_email_invite'},
   ],
 };
 
 /// Descriptor for `ResendOrganizationInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resendOrganizationInviteRequestDescriptor = $convert.base64Decode(
     'Ch9SZXNlbmRPcmdhbml6YXRpb25JbnZpdGVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIA'
-    'EoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWls');
+    'EoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWlsEi8KEXNlbmRfZW1haWxf'
+    'aW52aXRlGAMgASgISABSD3NlbmRFbWFpbEludml0ZYgBAUIUChJfc2VuZF9lbWFpbF9pbnZpdG'
+    'U=');
 
 @$core.Deprecated('Use resendOrganizationInviteResponseDescriptor instead')
 const ResendOrganizationInviteResponse$json = {
