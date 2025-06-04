@@ -195,7 +195,7 @@ void main() {
         ..createdOn = Timestamp.create();
       when(serviceClient.resendOrganizationInvite(any))
           .thenAnswer((_) => MockResponseFuture.value(ResendOrganizationInviteResponse()..invite = expected));
-      final response = await appClient.resendOrganizationInvite('organizationId', 'email');
+      final response = await appClient.resendOrganizationInvite('organizationId', 'email', sendEmailInvite: true);
       expect(response, equals(expected));
     });
 
