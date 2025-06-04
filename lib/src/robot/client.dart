@@ -303,4 +303,15 @@ class RobotClient {
     final response = await _client.getModelsFromModules(request);
     return response.models;
   }
+
+  /// GetMachineStatus returns status of the machine and its resources.
+  ///
+  /// ```
+  /// var machineStatus = await machine.getMachineStatus();
+  /// ```
+  Future<GetMachineStatusResponse> getMachineStatus() async {
+    final request = rpb.GetMachineStatusRequest();
+    final response = await _client.getMachineStatus(request);
+    return response;
+  }
 }
