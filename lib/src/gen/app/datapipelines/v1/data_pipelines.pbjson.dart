@@ -44,6 +44,10 @@ const DataPipeline$json = {
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
     {'1': 'created_on', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
     {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'data_source_type', '3': 9, '4': 1, '5': 14, '6': '.viam.app.data.v1.TabularDataSourceType', '9': 0, '10': 'dataSourceType', '17': true},
+  ],
+  '8': [
+    {'1': '_data_source_type'},
   ],
 };
 
@@ -54,7 +58,9 @@ final $typed_data.Uint8List dataPipelineDescriptor = $convert.base64Decode(
     'UgltcWxCaW5hcnkSGgoIc2NoZWR1bGUYBSABKAlSCHNjaGVkdWxlEhgKB2VuYWJsZWQYBiABKA'
     'hSB2VuYWJsZWQSOQoKY3JlYXRlZF9vbhgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
     'bXBSCWNyZWF0ZWRPbhI5Cgp1cGRhdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
-    'VzdGFtcFIJdXBkYXRlZEF0');
+    'VzdGFtcFIJdXBkYXRlZEF0ElYKEGRhdGFfc291cmNlX3R5cGUYCSABKA4yJy52aWFtLmFwcC5k'
+    'YXRhLnYxLlRhYnVsYXJEYXRhU291cmNlVHlwZUgAUg5kYXRhU291cmNlVHlwZYgBAUITChFfZG'
+    'F0YV9zb3VyY2VfdHlwZQ==');
 
 @$core.Deprecated('Use getDataPipelineRequestDescriptor instead')
 const GetDataPipelineRequest$json = {
@@ -115,6 +121,12 @@ const CreateDataPipelineRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
     {'1': 'schedule', '3': 4, '4': 1, '5': 9, '10': 'schedule'},
+    {'1': 'enable_backfill', '3': 5, '4': 1, '5': 8, '9': 0, '10': 'enableBackfill', '17': true},
+    {'1': 'data_source_type', '3': 6, '4': 1, '5': 14, '6': '.viam.app.data.v1.TabularDataSourceType', '9': 1, '10': 'dataSourceType', '17': true},
+  ],
+  '8': [
+    {'1': '_enable_backfill'},
+    {'1': '_data_source_type'},
   ],
 };
 
@@ -122,7 +134,10 @@ const CreateDataPipelineRequest$json = {
 final $typed_data.Uint8List createDataPipelineRequestDescriptor = $convert.base64Decode(
     'ChlDcmVhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
     'JnYW5pemF0aW9uSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIdCgptcWxfYmluYXJ5GAMgAygMUglt'
-    'cWxCaW5hcnkSGgoIc2NoZWR1bGUYBCABKAlSCHNjaGVkdWxl');
+    'cWxCaW5hcnkSGgoIc2NoZWR1bGUYBCABKAlSCHNjaGVkdWxlEiwKD2VuYWJsZV9iYWNrZmlsbB'
+    'gFIAEoCEgAUg5lbmFibGVCYWNrZmlsbIgBARJWChBkYXRhX3NvdXJjZV90eXBlGAYgASgOMicu'
+    'dmlhbS5hcHAuZGF0YS52MS5UYWJ1bGFyRGF0YVNvdXJjZVR5cGVIAVIOZGF0YVNvdXJjZVR5cG'
+    'WIAQFCEgoQX2VuYWJsZV9iYWNrZmlsbEITChFfZGF0YV9zb3VyY2VfdHlwZQ==');
 
 @$core.Deprecated('Use createDataPipelineResponseDescriptor instead')
 const CreateDataPipelineResponse$json = {
@@ -144,6 +159,10 @@ const UpdateDataPipelineRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
     {'1': 'schedule', '3': 4, '4': 1, '5': 9, '10': 'schedule'},
+    {'1': 'data_source_type', '3': 5, '4': 1, '5': 14, '6': '.viam.app.data.v1.TabularDataSourceType', '9': 0, '10': 'dataSourceType', '17': true},
+  ],
+  '8': [
+    {'1': '_data_source_type'},
   ],
 };
 
@@ -151,7 +170,9 @@ const UpdateDataPipelineRequest$json = {
 final $typed_data.Uint8List updateDataPipelineRequestDescriptor = $convert.base64Decode(
     'ChlVcGRhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgAS'
     'gJUgRuYW1lEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeRIaCghzY2hlZHVsZRgEIAEo'
-    'CVIIc2NoZWR1bGU=');
+    'CVIIc2NoZWR1bGUSVgoQZGF0YV9zb3VyY2VfdHlwZRgFIAEoDjInLnZpYW0uYXBwLmRhdGEudj'
+    'EuVGFidWxhckRhdGFTb3VyY2VUeXBlSABSDmRhdGFTb3VyY2VUeXBliAEBQhMKEV9kYXRhX3Nv'
+    'dXJjZV90eXBl');
 
 @$core.Deprecated('Use updateDataPipelineResponseDescriptor instead')
 const UpdateDataPipelineResponse$json = {
