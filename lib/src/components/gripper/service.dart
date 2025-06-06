@@ -61,4 +61,13 @@ class GripperService extends GripperServiceBase {
     await gripper.stop(extra: request.extra.toMap());
     return StopResponse();
   }
+
+  @override
+  Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) async {
+    final gripper = _fromManager(request.name);
+    final response = await gripper.getKinematics(extra: request.extra.toMap());
+    return GetKinematicsResponse()
+      ..format = response.format
+      ..kinematicsData = response.raw;
+  }
 }
