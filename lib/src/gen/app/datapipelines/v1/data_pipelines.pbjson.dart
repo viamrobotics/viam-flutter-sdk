@@ -115,6 +115,10 @@ const CreateDataPipelineRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
     {'1': 'schedule', '3': 4, '4': 1, '5': 9, '10': 'schedule'},
+    {'1': 'enable_backfill', '3': 5, '4': 1, '5': 8, '9': 0, '10': 'enableBackfill', '17': true},
+  ],
+  '8': [
+    {'1': '_enable_backfill'},
   ],
 };
 
@@ -122,7 +126,8 @@ const CreateDataPipelineRequest$json = {
 final $typed_data.Uint8List createDataPipelineRequestDescriptor = $convert.base64Decode(
     'ChlDcmVhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
     'JnYW5pemF0aW9uSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIdCgptcWxfYmluYXJ5GAMgAygMUglt'
-    'cWxCaW5hcnkSGgoIc2NoZWR1bGUYBCABKAlSCHNjaGVkdWxl');
+    'cWxCaW5hcnkSGgoIc2NoZWR1bGUYBCABKAlSCHNjaGVkdWxlEiwKD2VuYWJsZV9iYWNrZmlsbB'
+    'gFIAEoCEgAUg5lbmFibGVCYWNrZmlsbIgBAUISChBfZW5hYmxlX2JhY2tmaWxs');
 
 @$core.Deprecated('Use createDataPipelineResponseDescriptor instead')
 const CreateDataPipelineResponse$json = {

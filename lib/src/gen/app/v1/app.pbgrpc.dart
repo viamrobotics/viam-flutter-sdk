@@ -229,6 +229,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/GetRobotPart',
       ($11.GetRobotPartRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.GetRobotPartResponse.fromBuffer(value));
+  static final _$getRobotPartByNameAndLocation = $grpc.ClientMethod<$11.GetRobotPartByNameAndLocationRequest, $11.GetRobotPartByNameAndLocationResponse>(
+      '/viam.app.v1.AppService/GetRobotPartByNameAndLocation',
+      ($11.GetRobotPartByNameAndLocationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.GetRobotPartByNameAndLocationResponse.fromBuffer(value));
   static final _$getRobotPartLogs = $grpc.ClientMethod<$11.GetRobotPartLogsRequest, $11.GetRobotPartLogsResponse>(
       '/viam.app.v1.AppService/GetRobotPartLogs',
       ($11.GetRobotPartLogsRequest value) => value.writeToBuffer(),
@@ -654,6 +658,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$11.GetRobotPartResponse> getRobotPart($11.GetRobotPartRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getRobotPart, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.GetRobotPartByNameAndLocationResponse> getRobotPartByNameAndLocation($11.GetRobotPartByNameAndLocationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getRobotPartByNameAndLocation, request, options: options);
   }
 
   $grpc.ResponseFuture<$11.GetRobotPartLogsResponse> getRobotPartLogs($11.GetRobotPartLogsRequest request, {$grpc.CallOptions? options}) {
@@ -1238,6 +1246,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.GetRobotPartRequest.fromBuffer(value),
         ($11.GetRobotPartResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.GetRobotPartByNameAndLocationRequest, $11.GetRobotPartByNameAndLocationResponse>(
+        'GetRobotPartByNameAndLocation',
+        getRobotPartByNameAndLocation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.GetRobotPartByNameAndLocationRequest.fromBuffer(value),
+        ($11.GetRobotPartByNameAndLocationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$11.GetRobotPartLogsRequest, $11.GetRobotPartLogsResponse>(
         'GetRobotPartLogs',
         getRobotPartLogs_Pre,
@@ -1819,6 +1834,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return getRobotPart(call, await request);
   }
 
+  $async.Future<$11.GetRobotPartByNameAndLocationResponse> getRobotPartByNameAndLocation_Pre($grpc.ServiceCall call, $async.Future<$11.GetRobotPartByNameAndLocationRequest> request) async {
+    return getRobotPartByNameAndLocation(call, await request);
+  }
+
   $async.Future<$11.GetRobotPartLogsResponse> getRobotPartLogs_Pre($grpc.ServiceCall call, $async.Future<$11.GetRobotPartLogsRequest> request) async {
     return getRobotPartLogs(call, await request);
   }
@@ -2079,6 +2098,7 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.GetRoverRentalRobotsResponse> getRoverRentalRobots($grpc.ServiceCall call, $11.GetRoverRentalRobotsRequest request);
   $async.Future<$11.GetRobotPartsResponse> getRobotParts($grpc.ServiceCall call, $11.GetRobotPartsRequest request);
   $async.Future<$11.GetRobotPartResponse> getRobotPart($grpc.ServiceCall call, $11.GetRobotPartRequest request);
+  $async.Future<$11.GetRobotPartByNameAndLocationResponse> getRobotPartByNameAndLocation($grpc.ServiceCall call, $11.GetRobotPartByNameAndLocationRequest request);
   $async.Future<$11.GetRobotPartLogsResponse> getRobotPartLogs($grpc.ServiceCall call, $11.GetRobotPartLogsRequest request);
   $async.Stream<$11.TailRobotPartLogsResponse> tailRobotPartLogs($grpc.ServiceCall call, $11.TailRobotPartLogsRequest request);
   $async.Future<$11.GetRobotPartHistoryResponse> getRobotPartHistory($grpc.ServiceCall call, $11.GetRobotPartHistoryRequest request);

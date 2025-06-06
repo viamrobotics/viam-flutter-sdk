@@ -2,6 +2,18 @@ import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
+/// {@category Viam SDK}
+class Kinematics {
+  KinematicsFileFormat format;
+  List<int> raw;
+
+  Kinematics(this.format, this.raw);
+
+  factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
+    return Kinematics(gkResponse.format, gkResponse.kinematicsData);
+  }
+}
+
 /// {@category Components}
 /// Gripper represents a physical Gripper which can open and close.
 ///
@@ -44,6 +56,15 @@ abstract class Gripper extends Resource {
   ///
   /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#ismoving).
   Future<bool> isMoving();
+
+  /// Get the kinematics data associated with the [Gripper]
+  ///
+  /// ```
+  /// var kinematics = await myGripper.getKinematics();
+  /// ```
+  ///
+  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getkinematics).
+  Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for the [Gripper] with the given [name]
   ///
