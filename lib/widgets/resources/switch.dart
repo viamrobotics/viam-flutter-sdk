@@ -17,7 +17,7 @@ class ViamSwitchWidget extends StatefulWidget {
 class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
   int position = 0;
   String newPosition = '0';
-  int numberOfPositions = 0;
+  int? numberOfPositions;
   Error? error;
 
   @override
@@ -78,6 +78,10 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (numberOfPositions == null) {
+      return const Text('Loading...');
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -85,9 +89,9 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
           data: _sliderTheme,
           child: Slider(
             value: position.toDouble(),
-            max: numberOfPositions - 1.0,
+            max: numberOfPositions! - 1.0,
             min: 0.0,
-            divisions: numberOfPositions - 1,
+            divisions: numberOfPositions! - 1,
             label: '$position',
             onChanged: (double value) => _setPosition(value.toInt()),
           ),
