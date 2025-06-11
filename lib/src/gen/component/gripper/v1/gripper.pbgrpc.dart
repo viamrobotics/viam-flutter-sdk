@@ -38,6 +38,10 @@ class GripperServiceClient extends $grpc.Client {
       '/viam.component.gripper.v1.GripperService/IsMoving',
       ($25.IsMovingRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $25.IsMovingResponse.fromBuffer(value));
+  static final _$isHoldingSomething = $grpc.ClientMethod<$25.IsHoldingSomethingRequest, $25.IsHoldingSomethingResponse>(
+      '/viam.component.gripper.v1.GripperService/IsHoldingSomething',
+      ($25.IsHoldingSomethingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $25.IsHoldingSomethingResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
       '/viam.component.gripper.v1.GripperService/DoCommand',
       ($16.DoCommandRequest value) => value.writeToBuffer(),
@@ -46,6 +50,10 @@ class GripperServiceClient extends $grpc.Client {
       '/viam.component.gripper.v1.GripperService/GetGeometries',
       ($16.GetGeometriesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $16.GetGeometriesResponse.fromBuffer(value));
+  static final _$getKinematics = $grpc.ClientMethod<$16.GetKinematicsRequest, $16.GetKinematicsResponse>(
+      '/viam.component.gripper.v1.GripperService/GetKinematics',
+      ($16.GetKinematicsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.GetKinematicsResponse.fromBuffer(value));
 
   GripperServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -69,12 +77,20 @@ class GripperServiceClient extends $grpc.Client {
     return $createUnaryCall(_$isMoving, request, options: options);
   }
 
+  $grpc.ResponseFuture<$25.IsHoldingSomethingResponse> isHoldingSomething($25.IsHoldingSomethingRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$isHoldingSomething, request, options: options);
+  }
+
   $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
   }
 
   $grpc.ResponseFuture<$16.GetGeometriesResponse> getGeometries($16.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$16.GetKinematicsResponse> getKinematics($16.GetKinematicsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getKinematics, request, options: options);
   }
 }
 
@@ -111,6 +127,13 @@ abstract class GripperServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $25.IsMovingRequest.fromBuffer(value),
         ($25.IsMovingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$25.IsHoldingSomethingRequest, $25.IsHoldingSomethingResponse>(
+        'IsHoldingSomething',
+        isHoldingSomething_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $25.IsHoldingSomethingRequest.fromBuffer(value),
+        ($25.IsHoldingSomethingResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -125,6 +148,13 @@ abstract class GripperServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $16.GetGeometriesRequest.fromBuffer(value),
         ($16.GetGeometriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.GetKinematicsRequest, $16.GetKinematicsResponse>(
+        'GetKinematics',
+        getKinematics_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $16.GetKinematicsRequest.fromBuffer(value),
+        ($16.GetKinematicsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$25.OpenResponse> open_Pre($grpc.ServiceCall call, $async.Future<$25.OpenRequest> request) async {
@@ -143,6 +173,10 @@ abstract class GripperServiceBase extends $grpc.Service {
     return isMoving(call, await request);
   }
 
+  $async.Future<$25.IsHoldingSomethingResponse> isHoldingSomething_Pre($grpc.ServiceCall call, $async.Future<$25.IsHoldingSomethingRequest> request) async {
+    return isHoldingSomething(call, await request);
+  }
+
   $async.Future<$16.DoCommandResponse> doCommand_Pre($grpc.ServiceCall call, $async.Future<$16.DoCommandRequest> request) async {
     return doCommand(call, await request);
   }
@@ -151,10 +185,16 @@ abstract class GripperServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
+  $async.Future<$16.GetKinematicsResponse> getKinematics_Pre($grpc.ServiceCall call, $async.Future<$16.GetKinematicsRequest> request) async {
+    return getKinematics(call, await request);
+  }
+
   $async.Future<$25.OpenResponse> open($grpc.ServiceCall call, $25.OpenRequest request);
   $async.Future<$25.GrabResponse> grab($grpc.ServiceCall call, $25.GrabRequest request);
   $async.Future<$25.StopResponse> stop($grpc.ServiceCall call, $25.StopRequest request);
   $async.Future<$25.IsMovingResponse> isMoving($grpc.ServiceCall call, $25.IsMovingRequest request);
+  $async.Future<$25.IsHoldingSomethingResponse> isHoldingSomething($grpc.ServiceCall call, $25.IsHoldingSomethingRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
   $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);
+  $async.Future<$16.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $16.GetKinematicsRequest request);
 }

@@ -417,13 +417,15 @@ const GetOrganizationNamespaceAvailabilityRequest$json = {
   '1': 'GetOrganizationNamespaceAvailabilityRequest',
   '2': [
     {'1': 'public_namespace', '3': 1, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
 
 /// Descriptor for `GetOrganizationNamespaceAvailabilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getOrganizationNamespaceAvailabilityRequestDescriptor = $convert.base64Decode(
     'CitHZXRPcmdhbml6YXRpb25OYW1lc3BhY2VBdmFpbGFiaWxpdHlSZXF1ZXN0EikKEHB1YmxpY1'
-    '9uYW1lc3BhY2UYASABKAlSD3B1YmxpY05hbWVzcGFjZQ==');
+    '9uYW1lc3BhY2UYASABKAlSD3B1YmxpY05hbWVzcGFjZRInCg9vcmdhbml6YXRpb25faWQYAiAB'
+    'KAlSDm9yZ2FuaXphdGlvbklk');
 
 @$core.Deprecated('Use getOrganizationNamespaceAvailabilityResponseDescriptor instead')
 const GetOrganizationNamespaceAvailabilityResponse$json = {
@@ -703,13 +705,19 @@ const ResendOrganizationInviteRequest$json = {
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'send_email_invite', '3': 3, '4': 1, '5': 8, '9': 0, '10': 'sendEmailInvite', '17': true},
+  ],
+  '8': [
+    {'1': '_send_email_invite'},
   ],
 };
 
 /// Descriptor for `ResendOrganizationInviteRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resendOrganizationInviteRequestDescriptor = $convert.base64Decode(
     'Ch9SZXNlbmRPcmdhbml6YXRpb25JbnZpdGVSZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIA'
-    'EoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWls');
+    'EoCVIOb3JnYW5pemF0aW9uSWQSFAoFZW1haWwYAiABKAlSBWVtYWlsEi8KEXNlbmRfZW1haWxf'
+    'aW52aXRlGAMgASgISABSD3NlbmRFbWFpbEludml0ZYgBAUIUChJfc2VuZF9lbWFpbF9pbnZpdG'
+    'U=');
 
 @$core.Deprecated('Use resendOrganizationInviteResponseDescriptor instead')
 const ResendOrganizationInviteResponse$json = {
@@ -1499,6 +1507,33 @@ const GetRobotPartResponse$json = {
 final $typed_data.Uint8List getRobotPartResponseDescriptor = $convert.base64Decode(
     'ChRHZXRSb2JvdFBhcnRSZXNwb25zZRIqCgRwYXJ0GAEgASgLMhYudmlhbS5hcHAudjEuUm9ib3'
     'RQYXJ0UgRwYXJ0Eh8KC2NvbmZpZ19qc29uGAIgASgJUgpjb25maWdKc29u');
+
+@$core.Deprecated('Use getRobotPartByNameAndLocationRequestDescriptor instead')
+const GetRobotPartByNameAndLocationRequest$json = {
+  '1': 'GetRobotPartByNameAndLocationRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'location_id', '3': 2, '4': 1, '5': 9, '10': 'locationId'},
+  ],
+};
+
+/// Descriptor for `GetRobotPartByNameAndLocationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRobotPartByNameAndLocationRequestDescriptor = $convert.base64Decode(
+    'CiRHZXRSb2JvdFBhcnRCeU5hbWVBbmRMb2NhdGlvblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbm'
+    'FtZRIfCgtsb2NhdGlvbl9pZBgCIAEoCVIKbG9jYXRpb25JZA==');
+
+@$core.Deprecated('Use getRobotPartByNameAndLocationResponseDescriptor instead')
+const GetRobotPartByNameAndLocationResponse$json = {
+  '1': 'GetRobotPartByNameAndLocationResponse',
+  '2': [
+    {'1': 'part', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.RobotPart', '10': 'part'},
+  ],
+};
+
+/// Descriptor for `GetRobotPartByNameAndLocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRobotPartByNameAndLocationResponseDescriptor = $convert.base64Decode(
+    'CiVHZXRSb2JvdFBhcnRCeU5hbWVBbmRMb2NhdGlvblJlc3BvbnNlEioKBHBhcnQYASABKAsyFi'
+    '52aWFtLmFwcC52MS5Sb2JvdFBhcnRSBHBhcnQ=');
 
 @$core.Deprecated('Use getRobotPartLogsRequestDescriptor instead')
 const GetRobotPartLogsRequest$json = {
@@ -2314,13 +2349,14 @@ const ListMachineSummariesRequest$json = {
   '1': 'ListMachineSummariesRequest',
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'fragment_ids', '3': 2, '4': 3, '5': 9, '10': 'fragmentIds'},
   ],
 };
 
 /// Descriptor for `ListMachineSummariesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listMachineSummariesRequestDescriptor = $convert.base64Decode(
     'ChtMaXN0TWFjaGluZVN1bW1hcmllc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg'
-    '5vcmdhbml6YXRpb25JZA==');
+    '5vcmdhbml6YXRpb25JZBIhCgxmcmFnbWVudF9pZHMYAiADKAlSC2ZyYWdtZW50SWRz');
 
 @$core.Deprecated('Use listMachineSummariesResponseDescriptor instead')
 const ListMachineSummariesResponse$json = {
