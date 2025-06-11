@@ -1163,10 +1163,14 @@ class GetOrganizationResponse extends $pb.GeneratedMessage {
 class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
   factory GetOrganizationNamespaceAvailabilityRequest({
     $core.String? publicNamespace,
+    $core.String? organizationId,
   }) {
     final $result = create();
     if (publicNamespace != null) {
       $result.publicNamespace = publicNamespace;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
     }
     return $result;
   }
@@ -1176,6 +1180,7 @@ class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationNamespaceAvailabilityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1208,6 +1213,15 @@ class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(0);
   @$pb.TagNumber(1)
   void clearPublicNamespace() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get organizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizationId() => clearField(2);
 }
 
 class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage {
@@ -2305,6 +2319,7 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
   factory ResendOrganizationInviteRequest({
     $core.String? organizationId,
     $core.String? email,
+    $core.bool? sendEmailInvite,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -2312,6 +2327,9 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
     }
     if (email != null) {
       $result.email = email;
+    }
+    if (sendEmailInvite != null) {
+      $result.sendEmailInvite = sendEmailInvite;
     }
     return $result;
   }
@@ -2322,6 +2340,7 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResendOrganizationInviteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..aOB(3, _omitFieldNames ? '' : 'sendEmailInvite')
     ..hasRequiredFields = false
   ;
 
@@ -2363,6 +2382,17 @@ class ResendOrganizationInviteRequest extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
   void clearEmail() => clearField(2);
+
+  /// Set to true (the default) to send an email to the recipient of an invite. The user must accept the email to be added to the associated authorizations.
+  /// When set to false, the user automatically receives the associated authorization on the next login of the user with the associated email address.
+  @$pb.TagNumber(3)
+  $core.bool get sendEmailInvite => $_getBF(2);
+  @$pb.TagNumber(3)
+  set sendEmailInvite($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSendEmailInvite() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSendEmailInvite() => clearField(3);
 }
 
 class ResendOrganizationInviteResponse extends $pb.GeneratedMessage {
@@ -5641,6 +5671,122 @@ class GetRobotPartResponse extends $pb.GeneratedMessage {
   $core.bool hasConfigJson() => $_has(1);
   @$pb.TagNumber(2)
   void clearConfigJson() => clearField(2);
+}
+
+class GetRobotPartByNameAndLocationRequest extends $pb.GeneratedMessage {
+  factory GetRobotPartByNameAndLocationRequest({
+    $core.String? name,
+    $core.String? locationId,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (locationId != null) {
+      $result.locationId = locationId;
+    }
+    return $result;
+  }
+  GetRobotPartByNameAndLocationRequest._() : super();
+  factory GetRobotPartByNameAndLocationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotPartByNameAndLocationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartByNameAndLocationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'locationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotPartByNameAndLocationRequest clone() => GetRobotPartByNameAndLocationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotPartByNameAndLocationRequest copyWith(void Function(GetRobotPartByNameAndLocationRequest) updates) => super.copyWith((message) => updates(message as GetRobotPartByNameAndLocationRequest)) as GetRobotPartByNameAndLocationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartByNameAndLocationRequest create() => GetRobotPartByNameAndLocationRequest._();
+  GetRobotPartByNameAndLocationRequest createEmptyInstance() => create();
+  static $pb.PbList<GetRobotPartByNameAndLocationRequest> createRepeated() => $pb.PbList<GetRobotPartByNameAndLocationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartByNameAndLocationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotPartByNameAndLocationRequest>(create);
+  static GetRobotPartByNameAndLocationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get locationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set locationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLocationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLocationId() => clearField(2);
+}
+
+class GetRobotPartByNameAndLocationResponse extends $pb.GeneratedMessage {
+  factory GetRobotPartByNameAndLocationResponse({
+    RobotPart? part,
+  }) {
+    final $result = create();
+    if (part != null) {
+      $result.part = part;
+    }
+    return $result;
+  }
+  GetRobotPartByNameAndLocationResponse._() : super();
+  factory GetRobotPartByNameAndLocationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetRobotPartByNameAndLocationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRobotPartByNameAndLocationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<RobotPart>(1, _omitFieldNames ? '' : 'part', subBuilder: RobotPart.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetRobotPartByNameAndLocationResponse clone() => GetRobotPartByNameAndLocationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetRobotPartByNameAndLocationResponse copyWith(void Function(GetRobotPartByNameAndLocationResponse) updates) => super.copyWith((message) => updates(message as GetRobotPartByNameAndLocationResponse)) as GetRobotPartByNameAndLocationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartByNameAndLocationResponse create() => GetRobotPartByNameAndLocationResponse._();
+  GetRobotPartByNameAndLocationResponse createEmptyInstance() => create();
+  static $pb.PbList<GetRobotPartByNameAndLocationResponse> createRepeated() => $pb.PbList<GetRobotPartByNameAndLocationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetRobotPartByNameAndLocationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetRobotPartByNameAndLocationResponse>(create);
+  static GetRobotPartByNameAndLocationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RobotPart get part => $_getN(0);
+  @$pb.TagNumber(1)
+  set part(RobotPart v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPart() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPart() => clearField(1);
+  @$pb.TagNumber(1)
+  RobotPart ensurePart() => $_ensure(0);
 }
 
 class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
@@ -9085,10 +9231,14 @@ class ListMachineFragmentsResponse extends $pb.GeneratedMessage {
 class ListMachineSummariesRequest extends $pb.GeneratedMessage {
   factory ListMachineSummariesRequest({
     $core.String? organizationId,
+    $core.Iterable<$core.String>? fragmentIds,
   }) {
     final $result = create();
     if (organizationId != null) {
       $result.organizationId = organizationId;
+    }
+    if (fragmentIds != null) {
+      $result.fragmentIds.addAll(fragmentIds);
     }
     return $result;
   }
@@ -9098,6 +9248,7 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineSummariesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..pPS(2, _omitFieldNames ? '' : 'fragmentIds')
     ..hasRequiredFields = false
   ;
 
@@ -9130,6 +9281,10 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
   $core.bool hasOrganizationId() => $_has(0);
   @$pb.TagNumber(1)
   void clearOrganizationId() => clearField(1);
+
+  /// Optional list of fragment IDs to filter machines that use any of these fragments
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get fragmentIds => $_getList(1);
 }
 
 class ListMachineSummariesResponse extends $pb.GeneratedMessage {
