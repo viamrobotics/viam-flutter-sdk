@@ -13,6 +13,70 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class ExitProvisioningRequest extends $pb.GeneratedMessage {
+  factory ExitProvisioningRequest() => create();
+  ExitProvisioningRequest._() : super();
+  factory ExitProvisioningRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExitProvisioningRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExitProvisioningRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.provisioning.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExitProvisioningRequest clone() => ExitProvisioningRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExitProvisioningRequest copyWith(void Function(ExitProvisioningRequest) updates) => super.copyWith((message) => updates(message as ExitProvisioningRequest)) as ExitProvisioningRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExitProvisioningRequest create() => ExitProvisioningRequest._();
+  ExitProvisioningRequest createEmptyInstance() => create();
+  static $pb.PbList<ExitProvisioningRequest> createRepeated() => $pb.PbList<ExitProvisioningRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ExitProvisioningRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExitProvisioningRequest>(create);
+  static ExitProvisioningRequest? _defaultInstance;
+}
+
+class ExitProvisioningResponse extends $pb.GeneratedMessage {
+  factory ExitProvisioningResponse() => create();
+  ExitProvisioningResponse._() : super();
+  factory ExitProvisioningResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExitProvisioningResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExitProvisioningResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.provisioning.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExitProvisioningResponse clone() => ExitProvisioningResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExitProvisioningResponse copyWith(void Function(ExitProvisioningResponse) updates) => super.copyWith((message) => updates(message as ExitProvisioningResponse)) as ExitProvisioningResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExitProvisioningResponse create() => ExitProvisioningResponse._();
+  ExitProvisioningResponse createEmptyInstance() => create();
+  static $pb.PbList<ExitProvisioningResponse> createRepeated() => $pb.PbList<ExitProvisioningResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ExitProvisioningResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExitProvisioningResponse>(create);
+  static ExitProvisioningResponse? _defaultInstance;
+}
+
 class GetSmartMachineStatusRequest extends $pb.GeneratedMessage {
   factory GetSmartMachineStatusRequest() => create();
   GetSmartMachineStatusRequest._() : super();
@@ -52,6 +116,7 @@ class GetSmartMachineStatusResponse extends $pb.GeneratedMessage {
     $core.bool? isOnline,
     NetworkInfo? latestConnectionAttempt,
     $core.Iterable<$core.String>? errors,
+    $core.String? agentVersion,
   }) {
     final $result = create();
     if (provisioningInfo != null) {
@@ -69,6 +134,9 @@ class GetSmartMachineStatusResponse extends $pb.GeneratedMessage {
     if (errors != null) {
       $result.errors.addAll(errors);
     }
+    if (agentVersion != null) {
+      $result.agentVersion = agentVersion;
+    }
     return $result;
   }
   GetSmartMachineStatusResponse._() : super();
@@ -81,6 +149,7 @@ class GetSmartMachineStatusResponse extends $pb.GeneratedMessage {
     ..aOB(3, _omitFieldNames ? '' : 'isOnline')
     ..aOM<NetworkInfo>(4, _omitFieldNames ? '' : 'latestConnectionAttempt', subBuilder: NetworkInfo.create)
     ..pPS(5, _omitFieldNames ? '' : 'errors')
+    ..aOS(6, _omitFieldNames ? '' : 'agentVersion')
     ..hasRequiredFields = false
   ;
 
@@ -147,6 +216,15 @@ class GetSmartMachineStatusResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<$core.String> get errors => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get agentVersion => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set agentVersion($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAgentVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAgentVersion() => clearField(6);
 }
 
 class SetNetworkCredentialsRequest extends $pb.GeneratedMessage {

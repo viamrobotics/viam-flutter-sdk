@@ -13,6 +13,24 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use exitProvisioningRequestDescriptor instead')
+const ExitProvisioningRequest$json = {
+  '1': 'ExitProvisioningRequest',
+};
+
+/// Descriptor for `ExitProvisioningRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exitProvisioningRequestDescriptor = $convert.base64Decode(
+    'ChdFeGl0UHJvdmlzaW9uaW5nUmVxdWVzdA==');
+
+@$core.Deprecated('Use exitProvisioningResponseDescriptor instead')
+const ExitProvisioningResponse$json = {
+  '1': 'ExitProvisioningResponse',
+};
+
+/// Descriptor for `ExitProvisioningResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exitProvisioningResponseDescriptor = $convert.base64Decode(
+    'ChhFeGl0UHJvdmlzaW9uaW5nUmVzcG9uc2U=');
+
 @$core.Deprecated('Use getSmartMachineStatusRequestDescriptor instead')
 const GetSmartMachineStatusRequest$json = {
   '1': 'GetSmartMachineStatusRequest',
@@ -31,6 +49,7 @@ const GetSmartMachineStatusResponse$json = {
     {'1': 'is_online', '3': 3, '4': 1, '5': 8, '10': 'isOnline'},
     {'1': 'latest_connection_attempt', '3': 4, '4': 1, '5': 11, '6': '.viam.provisioning.v1.NetworkInfo', '10': 'latestConnectionAttempt'},
     {'1': 'errors', '3': 5, '4': 3, '5': 9, '10': 'errors'},
+    {'1': 'agent_version', '3': 6, '4': 1, '5': 9, '10': 'agentVersion'},
   ],
 };
 
@@ -41,7 +60,8 @@ final $typed_data.Uint8List getSmartMachineStatusResponseDescriptor = $convert.b
     'Z0luZm8SQQodaGFzX3NtYXJ0X21hY2hpbmVfY3JlZGVudGlhbHMYAiABKAhSGmhhc1NtYXJ0TW'
     'FjaGluZUNyZWRlbnRpYWxzEhsKCWlzX29ubGluZRgDIAEoCFIIaXNPbmxpbmUSXQoZbGF0ZXN0'
     'X2Nvbm5lY3Rpb25fYXR0ZW1wdBgEIAEoCzIhLnZpYW0ucHJvdmlzaW9uaW5nLnYxLk5ldHdvcm'
-    'tJbmZvUhdsYXRlc3RDb25uZWN0aW9uQXR0ZW1wdBIWCgZlcnJvcnMYBSADKAlSBmVycm9ycw==');
+    'tJbmZvUhdsYXRlc3RDb25uZWN0aW9uQXR0ZW1wdBIWCgZlcnJvcnMYBSADKAlSBmVycm9ycxIj'
+    'Cg1hZ2VudF92ZXJzaW9uGAYgASgJUgxhZ2VudFZlcnNpb24=');
 
 @$core.Deprecated('Use setNetworkCredentialsRequestDescriptor instead')
 const SetNetworkCredentialsRequest$json = {

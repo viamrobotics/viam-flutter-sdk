@@ -37,6 +37,10 @@ class ProvisioningServiceClient extends $grpc.Client {
       '/viam.provisioning.v1.ProvisioningService/GetNetworkList',
       ($36.GetNetworkListRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $36.GetNetworkListResponse.fromBuffer(value));
+  static final _$exitProvisioning = $grpc.ClientMethod<$36.ExitProvisioningRequest, $36.ExitProvisioningResponse>(
+      '/viam.provisioning.v1.ProvisioningService/ExitProvisioning',
+      ($36.ExitProvisioningRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.ExitProvisioningResponse.fromBuffer(value));
 
   ProvisioningServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class ProvisioningServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$36.GetNetworkListResponse> getNetworkList($36.GetNetworkListRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getNetworkList, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$36.ExitProvisioningResponse> exitProvisioning($36.ExitProvisioningRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$exitProvisioning, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class ProvisioningServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $36.GetNetworkListRequest.fromBuffer(value),
         ($36.GetNetworkListResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$36.ExitProvisioningRequest, $36.ExitProvisioningResponse>(
+        'ExitProvisioning',
+        exitProvisioning_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $36.ExitProvisioningRequest.fromBuffer(value),
+        ($36.ExitProvisioningResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$36.GetSmartMachineStatusResponse> getSmartMachineStatus_Pre($grpc.ServiceCall call, $async.Future<$36.GetSmartMachineStatusRequest> request) async {
@@ -112,8 +127,13 @@ abstract class ProvisioningServiceBase extends $grpc.Service {
     return getNetworkList(call, await request);
   }
 
+  $async.Future<$36.ExitProvisioningResponse> exitProvisioning_Pre($grpc.ServiceCall call, $async.Future<$36.ExitProvisioningRequest> request) async {
+    return exitProvisioning(call, await request);
+  }
+
   $async.Future<$36.GetSmartMachineStatusResponse> getSmartMachineStatus($grpc.ServiceCall call, $36.GetSmartMachineStatusRequest request);
   $async.Future<$36.SetNetworkCredentialsResponse> setNetworkCredentials($grpc.ServiceCall call, $36.SetNetworkCredentialsRequest request);
   $async.Future<$36.SetSmartMachineCredentialsResponse> setSmartMachineCredentials($grpc.ServiceCall call, $36.SetSmartMachineCredentialsRequest request);
   $async.Future<$36.GetNetworkListResponse> getNetworkList($grpc.ServiceCall call, $36.GetNetworkListRequest request);
+  $async.Future<$36.ExitProvisioningResponse> exitProvisioning($grpc.ServiceCall call, $36.ExitProvisioningRequest request);
 }

@@ -377,6 +377,7 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.String? schedule,
+    $core.bool? enableBackfill,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -391,6 +392,9 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
     if (schedule != null) {
       $result.schedule = schedule;
     }
+    if (enableBackfill != null) {
+      $result.enableBackfill = enableBackfill;
+    }
     return $result;
   }
   CreateDataPipelineRequest._() : super();
@@ -402,6 +406,7 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOS(4, _omitFieldNames ? '' : 'schedule')
+    ..aOB(5, _omitFieldNames ? '' : 'enableBackfill')
     ..hasRequiredFields = false
   ;
 
@@ -461,6 +466,16 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
   $core.bool hasSchedule() => $_has(3);
   @$pb.TagNumber(4)
   void clearSchedule() => clearField(4);
+
+  /// When true, pipeline runs will be scheduled for the organization's past data.
+  @$pb.TagNumber(5)
+  $core.bool get enableBackfill => $_getBF(4);
+  @$pb.TagNumber(5)
+  set enableBackfill($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEnableBackfill() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnableBackfill() => clearField(5);
 }
 
 class CreateDataPipelineResponse extends $pb.GeneratedMessage {
