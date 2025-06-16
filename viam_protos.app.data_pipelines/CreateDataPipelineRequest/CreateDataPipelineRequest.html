@@ -58,6 +58,7 @@
 <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
 <li><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span></li>
 <li><span class="parameter" id="-param-schedule"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">schedule</span>, </span></li>
+<li><span class="parameter" id="-param-enableBackfill"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">enableBackfill</span>, </span></li>
 </ol>})
     </section>
     
@@ -71,6 +72,7 @@
   $core.String? name,
   $core.Iterable&lt;$core.List&lt;$core.int&gt;&gt;? mqlBinary,
   $core.String? schedule,
+  $core.bool? enableBackfill,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -84,6 +86,9 @@
   }
   if (schedule != null) {
     $result.schedule = schedule;
+  }
+  if (enableBackfill != null) {
+    $result.enableBackfill = enableBackfill;
   }
   return $result;
 }</code></pre>

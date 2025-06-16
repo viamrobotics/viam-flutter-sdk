@@ -427,6 +427,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartRequest.fromBuffer(value),
       ($11.GetRobotPartResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartByNameAndLocationRequest, $11.GetRobotPartByNameAndLocationResponse&gt;(
+      &#39;GetRobotPartByNameAndLocation&#39;,
+      getRobotPartByNameAndLocation_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $11.GetRobotPartByNameAndLocationRequest.fromBuffer(value),
+      ($11.GetRobotPartByNameAndLocationResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$11.GetRobotPartLogsRequest, $11.GetRobotPartLogsResponse&gt;(
       &#39;GetRobotPartLogs&#39;,
       getRobotPartLogs_Pre,

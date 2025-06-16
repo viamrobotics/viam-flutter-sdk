@@ -55,6 +55,7 @@
     <section class="multi-line-signature">
       
       <span class="name ">ListMachineSummariesRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
+<li><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span></li>
 </ol>})
     </section>
     
@@ -65,10 +66,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory ListMachineSummariesRequest({
   $core.String? organizationId,
+  $core.Iterable&lt;$core.String&gt;? fragmentIds,
 }) {
   final $result = create();
   if (organizationId != null) {
     $result.organizationId = organizationId;
+  }
+  if (fragmentIds != null) {
+    $result.fragmentIds.addAll(fragmentIds);
   }
   return $result;
 }</code></pre>
