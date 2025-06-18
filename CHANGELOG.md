@@ -1,11 +1,15 @@
 # Changelog
 
-## [v0.6.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.4) (2025-05-23)
+## [v0.6.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.5) (2025-06-18)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.3...v0.6.4)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.4...v0.6.5)
 
 **Merged pull requests:**
 
+- \[RSDK-10907\] Flutter SDK - Switch widget hits assert on first build [\#398](https://github.com/viamrobotics/viam-flutter-sdk/pull/398) ([Joyceku1020](https://github.com/Joyceku1020))
+- Add getKinematics to gripper  [\#397](https://github.com/viamrobotics/viam-flutter-sdk/pull/397) ([gabegottlob](https://github.com/gabegottlob))
+- Add GetMachineStatus to RobotClient [\#395](https://github.com/viamrobotics/viam-flutter-sdk/pull/395) ([kevin49999](https://github.com/kevin49999))
+- v0.6.4 [\#394](https://github.com/viamrobotics/viam-flutter-sdk/pull/394) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add generic service to registry [\#393](https://github.com/viamrobotics/viam-flutter-sdk/pull/393) ([njooma](https://github.com/njooma))
 - v0.6.3 [\#392](https://github.com/viamrobotics/viam-flutter-sdk/pull/392) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Add base methods [\#391](https://github.com/viamrobotics/viam-flutter-sdk/pull/391) ([njooma](https://github.com/njooma))
@@ -111,6 +115,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.6.4](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.4) (2025-05-23)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.3...v0.6.4)
 
 ## [v0.6.3](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.3) (2025-05-22)
 
