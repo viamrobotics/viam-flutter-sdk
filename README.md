@@ -51,7 +51,7 @@ import 'package:viam_sdk/viam_sdk.dart';
 // Connect to an existing machine (robot)
 // *NOTE* Get '<API KEY ID>' and '<API KEY>' from
 // your machine's "CONNECT" tab on app.viam.com
-final options = RobotClientOptions.withAPIKey('<API KEY ID>', '<API KEY>');
+final options = RobotClientOptions.withApiKey('<API KEY ID>', '<API KEY>');
 final robot = await RobotClient.atAddress('<LOCATION>', options);
 
 // Print the available resources
