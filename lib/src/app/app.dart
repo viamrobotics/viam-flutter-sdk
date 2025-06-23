@@ -186,10 +186,11 @@ class AppClient {
   /// Resend an invite to an [Organization]
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<OrganizationInvite> resendOrganizationInvite(String organizationId, String email) async {
+  Future<OrganizationInvite> resendOrganizationInvite(String organizationId, String email, {bool sendEmailInvite = true}) async {
     final request = ResendOrganizationInviteRequest()
       ..organizationId = organizationId
-      ..email = email;
+      ..email = email
+      ..sendEmailInvite = sendEmailInvite;
     final ResendOrganizationInviteResponse response = await _client.resendOrganizationInvite(request);
     return response.invite;
   }
