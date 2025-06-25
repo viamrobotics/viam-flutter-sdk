@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $48;
+import '../../data/v1/data.pbenum.dart' as $3;
 import 'data_pipelines.pbenum.dart';
 
 export 'data_pipelines.pbenum.dart';
@@ -28,6 +29,7 @@ class DataPipeline extends $pb.GeneratedMessage {
     $core.bool? enabled,
     $48.Timestamp? createdOn,
     $48.Timestamp? updatedAt,
+    $3.TabularDataSourceType? dataSourceType,
   }) {
     final $result = create();
     if (id != null) {
@@ -54,6 +56,9 @@ class DataPipeline extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       $result.updatedAt = updatedAt;
     }
+    if (dataSourceType != null) {
+      $result.dataSourceType = dataSourceType;
+    }
     return $result;
   }
   DataPipeline._() : super();
@@ -69,6 +74,7 @@ class DataPipeline extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'enabled')
     ..aOM<$48.Timestamp>(7, _omitFieldNames ? '' : 'createdOn', subBuilder: $48.Timestamp.create)
     ..aOM<$48.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt', subBuilder: $48.Timestamp.create)
+    ..e<$3.TabularDataSourceType>(9, _omitFieldNames ? '' : 'dataSourceType', $pb.PbFieldType.OE, defaultOrMaker: $3.TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: $3.TabularDataSourceType.valueOf, enumValues: $3.TabularDataSourceType.values)
     ..hasRequiredFields = false
   ;
 
@@ -171,6 +177,16 @@ class DataPipeline extends $pb.GeneratedMessage {
   void clearUpdatedAt() => clearField(8);
   @$pb.TagNumber(8)
   $48.Timestamp ensureUpdatedAt() => $_ensure(7);
+
+  /// The type of data source for the pipeline. If not specified, default is standard data storage.
+  @$pb.TagNumber(9)
+  $3.TabularDataSourceType get dataSourceType => $_getN(8);
+  @$pb.TagNumber(9)
+  set dataSourceType($3.TabularDataSourceType v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasDataSourceType() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDataSourceType() => clearField(9);
 }
 
 class GetDataPipelineRequest extends $pb.GeneratedMessage {
@@ -378,6 +394,7 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.String? schedule,
     $core.bool? enableBackfill,
+    $3.TabularDataSourceType? dataSourceType,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -395,6 +412,9 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
     if (enableBackfill != null) {
       $result.enableBackfill = enableBackfill;
     }
+    if (dataSourceType != null) {
+      $result.dataSourceType = dataSourceType;
+    }
     return $result;
   }
   CreateDataPipelineRequest._() : super();
@@ -407,6 +427,7 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOS(4, _omitFieldNames ? '' : 'schedule')
     ..aOB(5, _omitFieldNames ? '' : 'enableBackfill')
+    ..e<$3.TabularDataSourceType>(6, _omitFieldNames ? '' : 'dataSourceType', $pb.PbFieldType.OE, defaultOrMaker: $3.TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: $3.TabularDataSourceType.valueOf, enumValues: $3.TabularDataSourceType.values)
     ..hasRequiredFields = false
   ;
 
@@ -476,6 +497,16 @@ class CreateDataPipelineRequest extends $pb.GeneratedMessage {
   $core.bool hasEnableBackfill() => $_has(4);
   @$pb.TagNumber(5)
   void clearEnableBackfill() => clearField(5);
+
+  /// The type of data source for the pipeline. If not specified, default is standard data storage.
+  @$pb.TagNumber(6)
+  $3.TabularDataSourceType get dataSourceType => $_getN(5);
+  @$pb.TagNumber(6)
+  set dataSourceType($3.TabularDataSourceType v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDataSourceType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDataSourceType() => clearField(6);
 }
 
 class CreateDataPipelineResponse extends $pb.GeneratedMessage {
@@ -535,6 +566,7 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.String? schedule,
+    $3.TabularDataSourceType? dataSourceType,
   }) {
     final $result = create();
     if (id != null) {
@@ -549,6 +581,9 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
     if (schedule != null) {
       $result.schedule = schedule;
     }
+    if (dataSourceType != null) {
+      $result.dataSourceType = dataSourceType;
+    }
     return $result;
   }
   UpdateDataPipelineRequest._() : super();
@@ -560,6 +595,7 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOS(4, _omitFieldNames ? '' : 'schedule')
+    ..e<$3.TabularDataSourceType>(5, _omitFieldNames ? '' : 'dataSourceType', $pb.PbFieldType.OE, defaultOrMaker: $3.TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: $3.TabularDataSourceType.valueOf, enumValues: $3.TabularDataSourceType.values)
     ..hasRequiredFields = false
   ;
 
@@ -619,6 +655,16 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   $core.bool hasSchedule() => $_has(3);
   @$pb.TagNumber(4)
   void clearSchedule() => clearField(4);
+
+  /// The type of data source for the pipeline. If not specified, default is standard data storage.
+  @$pb.TagNumber(5)
+  $3.TabularDataSourceType get dataSourceType => $_getN(4);
+  @$pb.TagNumber(5)
+  set dataSourceType($3.TabularDataSourceType v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDataSourceType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDataSourceType() => clearField(5);
 }
 
 class UpdateDataPipelineResponse extends $pb.GeneratedMessage {
