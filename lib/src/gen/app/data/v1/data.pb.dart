@@ -1264,6 +1264,7 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     $core.String? resourceSubtype,
     $core.String? methodName,
     CaptureInterval? interval,
+    $47.Struct? additionalParameters,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1281,6 +1282,9 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     if (interval != null) {
       $result.interval = interval;
     }
+    if (additionalParameters != null) {
+      $result.additionalParameters = additionalParameters;
+    }
     return $result;
   }
   ExportTabularDataRequest._() : super();
@@ -1293,6 +1297,7 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
     ..aOM<CaptureInterval>(5, _omitFieldNames ? '' : 'interval', subBuilder: CaptureInterval.create)
+    ..aOM<$47.Struct>(6, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1363,6 +1368,17 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
   void clearInterval() => clearField(5);
   @$pb.TagNumber(5)
   CaptureInterval ensureInterval() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $47.Struct get additionalParameters => $_getN(5);
+  @$pb.TagNumber(6)
+  set additionalParameters($47.Struct v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAdditionalParameters() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAdditionalParameters() => clearField(6);
+  @$pb.TagNumber(6)
+  $47.Struct ensureAdditionalParameters() => $_ensure(5);
 }
 
 /// ExportTabularDataResponse provides unified tabular data and metadata for a single data point from the specified data source.
@@ -1591,6 +1607,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     $core.String? resourceName,
     $core.String? methodName,
     $core.String? resourceSubtype,
+    $47.Struct? additionalParameters,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1605,6 +1622,9 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     if (resourceSubtype != null) {
       $result.resourceSubtype = resourceSubtype;
     }
+    if (additionalParameters != null) {
+      $result.additionalParameters = additionalParameters;
+    }
     return $result;
   }
   GetLatestTabularDataRequest._() : super();
@@ -1616,6 +1636,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..aOS(3, _omitFieldNames ? '' : 'methodName')
     ..aOS(4, _omitFieldNames ? '' : 'resourceSubtype')
+    ..aOM<$47.Struct>(5, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1675,6 +1696,17 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
   $core.bool hasResourceSubtype() => $_has(3);
   @$pb.TagNumber(4)
   void clearResourceSubtype() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $47.Struct get additionalParameters => $_getN(4);
+  @$pb.TagNumber(5)
+  set additionalParameters($47.Struct v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAdditionalParameters() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAdditionalParameters() => clearField(5);
+  @$pb.TagNumber(5)
+  $47.Struct ensureAdditionalParameters() => $_ensure(4);
 }
 
 /// GetLatestTabularDataResponse provides the data, time synced, and time captured of the most recent tabular data captured

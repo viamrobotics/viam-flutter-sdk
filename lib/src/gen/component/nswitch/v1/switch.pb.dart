@@ -312,10 +312,14 @@ class GetNumberOfPositionsRequest extends $pb.GeneratedMessage {
 class GetNumberOfPositionsResponse extends $pb.GeneratedMessage {
   factory GetNumberOfPositionsResponse({
     $core.int? numberOfPositions,
+    $core.Iterable<$core.String>? labels,
   }) {
     final $result = create();
     if (numberOfPositions != null) {
       $result.numberOfPositions = numberOfPositions;
+    }
+    if (labels != null) {
+      $result.labels.addAll(labels);
     }
     return $result;
   }
@@ -325,6 +329,7 @@ class GetNumberOfPositionsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetNumberOfPositionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.switch.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'numberOfPositions', $pb.PbFieldType.OU3)
+    ..pPS(2, _omitFieldNames ? '' : 'labels')
     ..hasRequiredFields = false
   ;
 
@@ -357,6 +362,9 @@ class GetNumberOfPositionsResponse extends $pb.GeneratedMessage {
   $core.bool hasNumberOfPositions() => $_has(0);
   @$pb.TagNumber(1)
   void clearNumberOfPositions() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get labels => $_getList(1);
 }
 
 

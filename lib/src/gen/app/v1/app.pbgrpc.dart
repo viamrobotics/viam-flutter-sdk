@@ -445,6 +445,10 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/GetAppContent',
       ($11.GetAppContentRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.GetAppContentResponse.fromBuffer(value));
+  static final _$getAppBranding = $grpc.ClientMethod<$11.GetAppBrandingRequest, $11.GetAppBrandingResponse>(
+      '/viam.app.v1.AppService/GetAppBranding',
+      ($11.GetAppBrandingRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.GetAppBrandingResponse.fromBuffer(value));
 
   AppServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -874,6 +878,10 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$11.GetAppContentResponse> getAppContent($11.GetAppContentRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppContent, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.GetAppBrandingResponse> getAppBranding($11.GetAppBrandingRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAppBranding, request, options: options);
   }
 }
 
@@ -1624,6 +1632,13 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.GetAppContentRequest.fromBuffer(value),
         ($11.GetAppContentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.GetAppBrandingRequest, $11.GetAppBrandingResponse>(
+        'GetAppBranding',
+        getAppBranding_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.GetAppBrandingRequest.fromBuffer(value),
+        ($11.GetAppBrandingResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$11.GetUserIDByEmailResponse> getUserIDByEmail_Pre($grpc.ServiceCall call, $async.Future<$11.GetUserIDByEmailRequest> request) async {
@@ -2046,6 +2061,10 @@ abstract class AppServiceBase extends $grpc.Service {
     return getAppContent(call, await request);
   }
 
+  $async.Future<$11.GetAppBrandingResponse> getAppBranding_Pre($grpc.ServiceCall call, $async.Future<$11.GetAppBrandingRequest> request) async {
+    return getAppBranding(call, await request);
+  }
+
   $async.Future<$11.GetUserIDByEmailResponse> getUserIDByEmail($grpc.ServiceCall call, $11.GetUserIDByEmailRequest request);
   $async.Future<$11.CreateOrganizationResponse> createOrganization($grpc.ServiceCall call, $11.CreateOrganizationRequest request);
   $async.Future<$11.ListOrganizationsResponse> listOrganizations($grpc.ServiceCall call, $11.ListOrganizationsRequest request);
@@ -2152,4 +2171,5 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.RotateKeyResponse> rotateKey($grpc.ServiceCall call, $11.RotateKeyRequest request);
   $async.Future<$11.CreateKeyFromExistingKeyAuthorizationsResponse> createKeyFromExistingKeyAuthorizations($grpc.ServiceCall call, $11.CreateKeyFromExistingKeyAuthorizationsRequest request);
   $async.Future<$11.GetAppContentResponse> getAppContent($grpc.ServiceCall call, $11.GetAppContentRequest request);
+  $async.Future<$11.GetAppBrandingResponse> getAppBranding($grpc.ServiceCall call, $11.GetAppBrandingRequest request);
 }

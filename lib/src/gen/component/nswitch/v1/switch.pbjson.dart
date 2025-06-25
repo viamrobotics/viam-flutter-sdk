@@ -83,11 +83,12 @@ const GetNumberOfPositionsResponse$json = {
   '1': 'GetNumberOfPositionsResponse',
   '2': [
     {'1': 'number_of_positions', '3': 1, '4': 1, '5': 13, '10': 'numberOfPositions'},
+    {'1': 'labels', '3': 2, '4': 3, '5': 9, '10': 'labels'},
   ],
 };
 
 /// Descriptor for `GetNumberOfPositionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getNumberOfPositionsResponseDescriptor = $convert.base64Decode(
     'ChxHZXROdW1iZXJPZlBvc2l0aW9uc1Jlc3BvbnNlEi4KE251bWJlcl9vZl9wb3NpdGlvbnMYAS'
-    'ABKA1SEW51bWJlck9mUG9zaXRpb25z');
+    'ABKA1SEW51bWJlck9mUG9zaXRpb25zEhYKBmxhYmVscxgCIAMoCVIGbGFiZWxz');
 

@@ -359,6 +359,10 @@ const ExportTabularDataRequest$json = {
     {'1': 'resource_subtype', '3': 3, '4': 1, '5': 9, '10': 'resourceSubtype'},
     {'1': 'method_name', '3': 4, '4': 1, '5': 9, '10': 'methodName'},
     {'1': 'interval', '3': 5, '4': 1, '5': 11, '6': '.viam.app.data.v1.CaptureInterval', '10': 'interval'},
+    {'1': 'additional_parameters', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '9': 0, '10': 'additionalParameters', '17': true},
+  ],
+  '8': [
+    {'1': '_additional_parameters'},
   ],
 };
 
@@ -368,7 +372,9 @@ final $typed_data.Uint8List exportTabularDataRequestDescriptor = $convert.base64
     'Jlc291cmNlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIpChByZXNvdXJjZV9zdWJ0eXBlGAMg'
     'ASgJUg9yZXNvdXJjZVN1YnR5cGUSHwoLbWV0aG9kX25hbWUYBCABKAlSCm1ldGhvZE5hbWUSPQ'
     'oIaW50ZXJ2YWwYBSABKAsyIS52aWFtLmFwcC5kYXRhLnYxLkNhcHR1cmVJbnRlcnZhbFIIaW50'
-    'ZXJ2YWw=');
+    'ZXJ2YWwSUQoVYWRkaXRpb25hbF9wYXJhbWV0ZXJzGAYgASgLMhcuZ29vZ2xlLnByb3RvYnVmLl'
+    'N0cnVjdEgAUhRhZGRpdGlvbmFsUGFyYW1ldGVyc4gBAUIYChZfYWRkaXRpb25hbF9wYXJhbWV0'
+    'ZXJz');
 
 @$core.Deprecated('Use exportTabularDataResponseDescriptor instead')
 const ExportTabularDataResponse$json = {
@@ -411,6 +417,10 @@ const GetLatestTabularDataRequest$json = {
     {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
     {'1': 'method_name', '3': 3, '4': 1, '5': 9, '10': 'methodName'},
     {'1': 'resource_subtype', '3': 4, '4': 1, '5': 9, '10': 'resourceSubtype'},
+    {'1': 'additional_parameters', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '9': 0, '10': 'additionalParameters', '17': true},
+  ],
+  '8': [
+    {'1': '_additional_parameters'},
   ],
 };
 
@@ -419,7 +429,8 @@ final $typed_data.Uint8List getLatestTabularDataRequestDescriptor = $convert.bas
     'ChtHZXRMYXRlc3RUYWJ1bGFyRGF0YVJlcXVlc3QSFwoHcGFydF9pZBgBIAEoCVIGcGFydElkEi'
     'MKDXJlc291cmNlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIfCgttZXRob2RfbmFtZRgDIAEo'
     'CVIKbWV0aG9kTmFtZRIpChByZXNvdXJjZV9zdWJ0eXBlGAQgASgJUg9yZXNvdXJjZVN1YnR5cG'
-    'U=');
+    'USUQoVYWRkaXRpb25hbF9wYXJhbWV0ZXJzGAUgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVj'
+    'dEgAUhRhZGRpdGlvbmFsUGFyYW1ldGVyc4gBAUIYChZfYWRkaXRpb25hbF9wYXJhbWV0ZXJz');
 
 @$core.Deprecated('Use getLatestTabularDataResponseDescriptor instead')
 const GetLatestTabularDataResponse$json = {

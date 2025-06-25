@@ -53,6 +53,7 @@ const RobotConfig$json = {
     {'1': 'revision', '3': 15, '4': 1, '5': 9, '10': 'revision'},
     {'1': 'maintenance', '3': 16, '4': 1, '5': 11, '6': '.viam.app.v1.MaintenanceConfig', '9': 4, '10': 'maintenance', '17': true},
     {'1': 'disable_log_deduplication', '3': 17, '4': 1, '5': 8, '10': 'disableLogDeduplication'},
+    {'1': 'jobs', '3': 18, '4': 3, '5': 11, '6': '.viam.app.v1.JobConfig', '10': 'jobs'},
   ],
   '8': [
     {'1': '_network'},
@@ -81,9 +82,10 @@ final $typed_data.Uint8List robotConfigDescriptor = $convert.base64Decode(
     'VXZWJQcm9maWxlEi8KA2xvZxgOIAMoCzIdLnZpYW0uYXBwLnYxLkxvZ1BhdHRlcm5Db25maWdS'
     'A2xvZxIaCghyZXZpc2lvbhgPIAEoCVIIcmV2aXNpb24SRQoLbWFpbnRlbmFuY2UYECABKAsyHi'
     '52aWFtLmFwcC52MS5NYWludGVuYW5jZUNvbmZpZ0gEUgttYWludGVuYW5jZYgBARI6ChlkaXNh'
-    'YmxlX2xvZ19kZWR1cGxpY2F0aW9uGBEgASgIUhdkaXNhYmxlTG9nRGVkdXBsaWNhdGlvbkIKCg'
-    'hfbmV0d29ya0IHCgVfYXV0aEIICgZfZGVidWdCGAoWX2Rpc2FibGVfcGFydGlhbF9zdGFydEIO'
-    'CgxfbWFpbnRlbmFuY2U=');
+    'YmxlX2xvZ19kZWR1cGxpY2F0aW9uGBEgASgIUhdkaXNhYmxlTG9nRGVkdXBsaWNhdGlvbhIqCg'
+    'Rqb2JzGBIgAygLMhYudmlhbS5hcHAudjEuSm9iQ29uZmlnUgRqb2JzQgoKCF9uZXR3b3JrQgcK'
+    'BV9hdXRoQggKBl9kZWJ1Z0IYChZfZGlzYWJsZV9wYXJ0aWFsX3N0YXJ0Qg4KDF9tYWludGVuYW'
+    '5jZQ==');
 
 @$core.Deprecated('Use logPatternConfigDescriptor instead')
 const LogPatternConfig$json = {
@@ -98,6 +100,24 @@ const LogPatternConfig$json = {
 final $typed_data.Uint8List logPatternConfigDescriptor = $convert.base64Decode(
     'ChBMb2dQYXR0ZXJuQ29uZmlnEhgKB3BhdHRlcm4YASABKAlSB3BhdHRlcm4SFAoFbGV2ZWwYAi'
     'ABKAlSBWxldmVs');
+
+@$core.Deprecated('Use jobConfigDescriptor instead')
+const JobConfig$json = {
+  '1': 'JobConfig',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'schedule', '3': 2, '4': 1, '5': 9, '10': 'schedule'},
+    {'1': 'resource', '3': 3, '4': 1, '5': 9, '10': 'resource'},
+    {'1': 'method', '3': 4, '4': 1, '5': 9, '10': 'method'},
+    {'1': 'command', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'command'},
+  ],
+};
+
+/// Descriptor for `JobConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobConfigDescriptor = $convert.base64Decode(
+    'CglKb2JDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRIaCghzY2hlZHVsZRgCIAEoCVIIc2NoZW'
+    'R1bGUSGgoIcmVzb3VyY2UYAyABKAlSCHJlc291cmNlEhYKBm1ldGhvZBgEIAEoCVIGbWV0aG9k'
+    'EjEKB2NvbW1hbmQYBSABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0Ugdjb21tYW5k');
 
 @$core.Deprecated('Use locationSecretDescriptor instead')
 const LocationSecret$json = {
@@ -726,6 +746,7 @@ const ModuleConfig$json = {
     {'1': 'env', '3': 6, '4': 3, '5': 11, '6': '.viam.app.v1.ModuleConfig.EnvEntry', '10': 'env'},
     {'1': 'status', '3': 7, '4': 1, '5': 11, '6': '.viam.app.v1.AppValidationStatus', '10': 'status'},
     {'1': 'first_run_timeout', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'firstRunTimeout'},
+    {'1': 'tcp_mode', '3': 9, '4': 1, '5': 8, '10': 'tcpMode'},
   ],
   '3': [ModuleConfig_EnvEntry$json],
 };
@@ -747,8 +768,9 @@ final $typed_data.Uint8List moduleConfigDescriptor = $convert.base64Decode(
     'bGVfaWQYBSABKAlSCG1vZHVsZUlkEjQKA2VudhgGIAMoCzIiLnZpYW0uYXBwLnYxLk1vZHVsZU'
     'NvbmZpZy5FbnZFbnRyeVIDZW52EjgKBnN0YXR1cxgHIAEoCzIgLnZpYW0uYXBwLnYxLkFwcFZh'
     'bGlkYXRpb25TdGF0dXNSBnN0YXR1cxJFChFmaXJzdF9ydW5fdGltZW91dBgIIAEoCzIZLmdvb2'
-    'dsZS5wcm90b2J1Zi5EdXJhdGlvblIPZmlyc3RSdW5UaW1lb3V0GjYKCEVudkVudHJ5EhAKA2tl'
-    'eRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
+    'dsZS5wcm90b2J1Zi5EdXJhdGlvblIPZmlyc3RSdW5UaW1lb3V0EhkKCHRjcF9tb2RlGAkgASgI'
+    'Ugd0Y3BNb2RlGjYKCEVudkVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUg'
+    'V2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use packageConfigDescriptor instead')
 const PackageConfig$json = {

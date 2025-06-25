@@ -111,3 +111,32 @@ const IsMovingResponse$json = {
 final $typed_data.Uint8List isMovingResponseDescriptor = $convert.base64Decode(
     'ChBJc01vdmluZ1Jlc3BvbnNlEhsKCWlzX21vdmluZxgBIAEoCFIIaXNNb3Zpbmc=');
 
+@$core.Deprecated('Use isHoldingSomethingRequestDescriptor instead')
+const IsHoldingSomethingRequest$json = {
+  '1': 'IsHoldingSomethingRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `IsHoldingSomethingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List isHoldingSomethingRequestDescriptor = $convert.base64Decode(
+    'ChlJc0hvbGRpbmdTb21ldGhpbmdSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSLQoFZXh0cm'
+    'EYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
+
+@$core.Deprecated('Use isHoldingSomethingResponseDescriptor instead')
+const IsHoldingSomethingResponse$json = {
+  '1': 'IsHoldingSomethingResponse',
+  '2': [
+    {'1': 'is_holding_something', '3': 1, '4': 1, '5': 8, '10': 'isHoldingSomething'},
+    {'1': 'meta', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'meta'},
+  ],
+};
+
+/// Descriptor for `IsHoldingSomethingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List isHoldingSomethingResponseDescriptor = $convert.base64Decode(
+    'ChpJc0hvbGRpbmdTb21ldGhpbmdSZXNwb25zZRIwChRpc19ob2xkaW5nX3NvbWV0aGluZxgBIA'
+    'EoCFISaXNIb2xkaW5nU29tZXRoaW5nEisKBG1ldGEYYyABKAsyFy5nb29nbGUucHJvdG9idWYu'
+    'U3RydWN0UgRtZXRh');
+
