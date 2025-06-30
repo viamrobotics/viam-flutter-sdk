@@ -39,6 +39,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     $core.String? revision,
     MaintenanceConfig? maintenance,
     $core.bool? disableLogDeduplication,
+    $core.Iterable<JobConfig>? jobs,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -92,6 +93,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (disableLogDeduplication != null) {
       $result.disableLogDeduplication = disableLogDeduplication;
     }
+    if (jobs != null) {
+      $result.jobs.addAll(jobs);
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -116,6 +120,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..aOS(15, _omitFieldNames ? '' : 'revision')
     ..aOM<MaintenanceConfig>(16, _omitFieldNames ? '' : 'maintenance', subBuilder: MaintenanceConfig.create)
     ..aOB(17, _omitFieldNames ? '' : 'disableLogDeduplication')
+    ..pc<JobConfig>(18, _omitFieldNames ? '' : 'jobs', $pb.PbFieldType.PM, subBuilder: JobConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -257,6 +262,9 @@ class RobotConfig extends $pb.GeneratedMessage {
   $core.bool hasDisableLogDeduplication() => $_has(16);
   @$pb.TagNumber(17)
   void clearDisableLogDeduplication() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.List<JobConfig> get jobs => $_getList(17);
 }
 
 /// LogPatternConfig allows you to specify a 2-tuple consisting
@@ -323,6 +331,121 @@ class LogPatternConfig extends $pb.GeneratedMessage {
   $core.bool hasLevel() => $_has(1);
   @$pb.TagNumber(2)
   void clearLevel() => clearField(2);
+}
+
+class JobConfig extends $pb.GeneratedMessage {
+  factory JobConfig({
+    $core.String? name,
+    $core.String? schedule,
+    $core.String? resource,
+    $core.String? method,
+    $47.Struct? command,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (schedule != null) {
+      $result.schedule = schedule;
+    }
+    if (resource != null) {
+      $result.resource = resource;
+    }
+    if (method != null) {
+      $result.method = method;
+    }
+    if (command != null) {
+      $result.command = command;
+    }
+    return $result;
+  }
+  JobConfig._() : super();
+  factory JobConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JobConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JobConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'schedule')
+    ..aOS(3, _omitFieldNames ? '' : 'resource')
+    ..aOS(4, _omitFieldNames ? '' : 'method')
+    ..aOM<$47.Struct>(5, _omitFieldNames ? '' : 'command', subBuilder: $47.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JobConfig clone() => JobConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JobConfig copyWith(void Function(JobConfig) updates) => super.copyWith((message) => updates(message as JobConfig)) as JobConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobConfig create() => JobConfig._();
+  JobConfig createEmptyInstance() => create();
+  static $pb.PbList<JobConfig> createRepeated() => $pb.PbList<JobConfig>();
+  @$core.pragma('dart2js:noInline')
+  static JobConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JobConfig>(create);
+  static JobConfig? _defaultInstance;
+
+  /// unique name of the job.
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// a unix-cron string or a Golang-parsable duration string,
+  /// specifies the interval at which the job is run.
+  @$pb.TagNumber(2)
+  $core.String get schedule => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set schedule($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSchedule() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSchedule() => clearField(2);
+
+  /// the resource associated with this job.
+  @$pb.TagNumber(3)
+  $core.String get resource => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resource($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasResource() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResource() => clearField(3);
+
+  /// the gRPC request of this job's resource.
+  @$pb.TagNumber(4)
+  $core.String get method => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set method($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMethod() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMethod() => clearField(4);
+
+  /// in case method is "DoCommand", specifies the
+  /// command argument of the gRPC request.
+  @$pb.TagNumber(5)
+  $47.Struct get command => $_getN(4);
+  @$pb.TagNumber(5)
+  set command($47.Struct v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCommand() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCommand() => clearField(5);
+  @$pb.TagNumber(5)
+  $47.Struct ensureCommand() => $_ensure(4);
 }
 
 /// Valid location secret that can be used for authentication to the robot.
@@ -3507,6 +3630,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
     $core.Map<$core.String, $core.String>? env,
     AppValidationStatus? status,
     $46.Duration? firstRunTimeout,
+    $core.bool? tcpMode,
   }) {
     final $result = create();
     if (name != null) {
@@ -3533,6 +3657,9 @@ class ModuleConfig extends $pb.GeneratedMessage {
     if (firstRunTimeout != null) {
       $result.firstRunTimeout = firstRunTimeout;
     }
+    if (tcpMode != null) {
+      $result.tcpMode = tcpMode;
+    }
     return $result;
   }
   ModuleConfig._() : super();
@@ -3548,6 +3675,7 @@ class ModuleConfig extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'env', entryClassName: 'ModuleConfig.EnvEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
     ..aOM<AppValidationStatus>(7, _omitFieldNames ? '' : 'status', subBuilder: AppValidationStatus.create)
     ..aOM<$46.Duration>(8, _omitFieldNames ? '' : 'firstRunTimeout', subBuilder: $46.Duration.create)
+    ..aOB(9, _omitFieldNames ? '' : 'tcpMode')
     ..hasRequiredFields = false
   ;
 
@@ -3648,6 +3776,16 @@ class ModuleConfig extends $pb.GeneratedMessage {
   void clearFirstRunTimeout() => clearField(8);
   @$pb.TagNumber(8)
   $46.Duration ensureFirstRunTimeout() => $_ensure(7);
+
+  /// whether we are starting a module in TCP mode
+  @$pb.TagNumber(9)
+  $core.bool get tcpMode => $_getBF(8);
+  @$pb.TagNumber(9)
+  set tcpMode($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTcpMode() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTcpMode() => clearField(9);
 }
 
 /// PackageConfig is the configration for deployed Packages.

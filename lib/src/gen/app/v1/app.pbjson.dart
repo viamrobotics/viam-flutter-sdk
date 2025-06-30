@@ -317,9 +317,11 @@ const OrganizationMember$json = {
     {'1': 'emails', '3': 2, '4': 3, '5': 9, '10': 'emails'},
     {'1': 'date_added', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'dateAdded'},
     {'1': 'last_login', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastLogin', '17': true},
+    {'1': 'last_access', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 1, '10': 'lastAccess', '17': true},
   ],
   '8': [
     {'1': '_last_login'},
+    {'1': '_last_access'},
   ],
 };
 
@@ -328,7 +330,9 @@ final $typed_data.Uint8List organizationMemberDescriptor = $convert.base64Decode
     'ChJPcmdhbml6YXRpb25NZW1iZXISFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEhYKBmVtYWlscx'
     'gCIAMoCVIGZW1haWxzEjkKCmRhdGVfYWRkZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
     'ZXN0YW1wUglkYXRlQWRkZWQSPgoKbGFzdF9sb2dpbhgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
-    '5UaW1lc3RhbXBIAFIJbGFzdExvZ2luiAEBQg0KC19sYXN0X2xvZ2lu');
+    '5UaW1lc3RhbXBIAFIJbGFzdExvZ2luiAEBEkAKC2xhc3RfYWNjZXNzGAUgASgLMhouZ29vZ2xl'
+    'LnByb3RvYnVmLlRpbWVzdGFtcEgBUgpsYXN0QWNjZXNziAEBQg0KC19sYXN0X2xvZ2luQg4KDF'
+    '9sYXN0X2FjY2Vzcw==');
 
 @$core.Deprecated('Use listOrganizationsResponseDescriptor instead')
 const ListOrganizationsResponse$json = {
@@ -417,13 +421,15 @@ const GetOrganizationNamespaceAvailabilityRequest$json = {
   '1': 'GetOrganizationNamespaceAvailabilityRequest',
   '2': [
     {'1': 'public_namespace', '3': 1, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
   ],
 };
 
 /// Descriptor for `GetOrganizationNamespaceAvailabilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getOrganizationNamespaceAvailabilityRequestDescriptor = $convert.base64Decode(
     'CitHZXRPcmdhbml6YXRpb25OYW1lc3BhY2VBdmFpbGFiaWxpdHlSZXF1ZXN0EikKEHB1YmxpY1'
-    '9uYW1lc3BhY2UYASABKAlSD3B1YmxpY05hbWVzcGFjZQ==');
+    '9uYW1lc3BhY2UYASABKAlSD3B1YmxpY05hbWVzcGFjZRInCg9vcmdhbml6YXRpb25faWQYAiAB'
+    'KAlSDm9yZ2FuaXphdGlvbklk');
 
 @$core.Deprecated('Use getOrganizationNamespaceAvailabilityResponseDescriptor instead')
 const GetOrganizationNamespaceAvailabilityResponse$json = {
@@ -2348,13 +2354,20 @@ const ListMachineSummariesRequest$json = {
   '2': [
     {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
     {'1': 'fragment_ids', '3': 2, '4': 3, '5': 9, '10': 'fragmentIds'},
+    {'1': 'location_ids', '3': 3, '4': 3, '5': 9, '10': 'locationIds'},
+    {'1': 'limit', '3': 4, '4': 1, '5': 5, '9': 0, '10': 'limit', '17': true},
+  ],
+  '8': [
+    {'1': '_limit'},
   ],
 };
 
 /// Descriptor for `ListMachineSummariesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listMachineSummariesRequestDescriptor = $convert.base64Decode(
     'ChtMaXN0TWFjaGluZVN1bW1hcmllc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg'
-    '5vcmdhbml6YXRpb25JZBIhCgxmcmFnbWVudF9pZHMYAiADKAlSC2ZyYWdtZW50SWRz');
+    '5vcmdhbml6YXRpb25JZBIhCgxmcmFnbWVudF9pZHMYAiADKAlSC2ZyYWdtZW50SWRzEiEKDGxv'
+    'Y2F0aW9uX2lkcxgDIAMoCVILbG9jYXRpb25JZHMSGQoFbGltaXQYBCABKAVIAFIFbGltaXSIAQ'
+    'FCCAoGX2xpbWl0');
 
 @$core.Deprecated('Use listMachineSummariesResponseDescriptor instead')
 const ListMachineSummariesResponse$json = {
@@ -3318,13 +3331,22 @@ const App$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
     {'1': 'entrypoint', '3': 3, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'fragment_ids', '3': 4, '4': 3, '5': 9, '10': 'fragmentIds'},
+    {'1': 'logo_path', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'logoPath', '17': true},
+    {'1': 'customizations', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.AppCustomizations', '10': 'customizations'},
+  ],
+  '8': [
+    {'1': '_logo_path'},
   ],
 };
 
 /// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'CgNBcHASEgoEbmFtZRgBIAEoCVIEbmFtZRISCgR0eXBlGAIgASgJUgR0eXBlEh4KCmVudHJ5cG'
-    '9pbnQYAyABKAlSCmVudHJ5cG9pbnQ=');
+    '9pbnQYAyABKAlSCmVudHJ5cG9pbnQSIQoMZnJhZ21lbnRfaWRzGAQgAygJUgtmcmFnbWVudElk'
+    'cxIgCglsb2dvX3BhdGgYBSABKAlIAFIIbG9nb1BhdGiIAQESRgoOY3VzdG9taXphdGlvbnMYBi'
+    'ABKAsyHi52aWFtLmFwcC52MS5BcHBDdXN0b21pemF0aW9uc1IOY3VzdG9taXphdGlvbnNCDAoK'
+    'X2xvZ29fcGF0aA==');
 
 @$core.Deprecated('Use updateModuleResponseDescriptor instead')
 const UpdateModuleResponse$json = {
@@ -4176,4 +4198,108 @@ final $typed_data.Uint8List oAuthConfigDescriptor = $convert.base64Decode(
     'GAQgAygJUgpvcmlnaW5VcmlzEiMKDXJlZGlyZWN0X3VyaXMYBSADKAlSDHJlZGlyZWN0VXJpcx'
     'IdCgpsb2dvdXRfdXJpGAYgASgJUglsb2dvdXRVcmkSQAoOZW5hYmxlZF9ncmFudHMYByADKA4y'
     'GS52aWFtLmFwcC52MS5FbmFibGVkR3JhbnRSDWVuYWJsZWRHcmFudHM=');
+
+@$core.Deprecated('Use getAppBrandingRequestDescriptor instead')
+const GetAppBrandingRequest$json = {
+  '1': 'GetAppBrandingRequest',
+  '2': [
+    {'1': 'public_namespace', '3': 1, '4': 1, '5': 9, '10': 'publicNamespace'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `GetAppBrandingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppBrandingRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRBcHBCcmFuZGluZ1JlcXVlc3QSKQoQcHVibGljX25hbWVzcGFjZRgBIAEoCVIPcHVibG'
+    'ljTmFtZXNwYWNlEhIKBG5hbWUYAiABKAlSBG5hbWU=');
+
+@$core.Deprecated('Use textOverridesDescriptor instead')
+const TextOverrides$json = {
+  '1': 'TextOverrides',
+  '2': [
+    {'1': 'fields', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.TextOverrides.FieldsEntry', '10': 'fields'},
+  ],
+  '3': [TextOverrides_FieldsEntry$json],
+};
+
+@$core.Deprecated('Use textOverridesDescriptor instead')
+const TextOverrides_FieldsEntry$json = {
+  '1': 'FieldsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `TextOverrides`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List textOverridesDescriptor = $convert.base64Decode(
+    'Cg1UZXh0T3ZlcnJpZGVzEj4KBmZpZWxkcxgBIAMoCzImLnZpYW0uYXBwLnYxLlRleHRPdmVycm'
+    'lkZXMuRmllbGRzRW50cnlSBmZpZWxkcxo5CgtGaWVsZHNFbnRyeRIQCgNrZXkYASABKAlSA2tl'
+    'eRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+
+@$core.Deprecated('Use getAppBrandingResponseDescriptor instead')
+const GetAppBrandingResponse$json = {
+  '1': 'GetAppBrandingResponse',
+  '2': [
+    {'1': 'logo_path', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'logoPath', '17': true},
+    {'1': 'text_customizations', '3': 2, '4': 3, '5': 11, '6': '.viam.app.v1.GetAppBrandingResponse.TextCustomizationsEntry', '10': 'textCustomizations'},
+    {'1': 'fragment_ids', '3': 3, '4': 3, '5': 9, '10': 'fragmentIds'},
+  ],
+  '3': [GetAppBrandingResponse_TextCustomizationsEntry$json],
+  '8': [
+    {'1': '_logo_path'},
+  ],
+};
+
+@$core.Deprecated('Use getAppBrandingResponseDescriptor instead')
+const GetAppBrandingResponse_TextCustomizationsEntry$json = {
+  '1': 'TextCustomizationsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.app.v1.TextOverrides', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `GetAppBrandingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppBrandingResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRBcHBCcmFuZGluZ1Jlc3BvbnNlEiAKCWxvZ29fcGF0aBgBIAEoCUgAUghsb2dvUGF0aI'
+    'gBARJsChN0ZXh0X2N1c3RvbWl6YXRpb25zGAIgAygLMjsudmlhbS5hcHAudjEuR2V0QXBwQnJh'
+    'bmRpbmdSZXNwb25zZS5UZXh0Q3VzdG9taXphdGlvbnNFbnRyeVISdGV4dEN1c3RvbWl6YXRpb2'
+    '5zEiEKDGZyYWdtZW50X2lkcxgDIAMoCVILZnJhZ21lbnRJZHMaYQoXVGV4dEN1c3RvbWl6YXRp'
+    'b25zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSMAoFdmFsdWUYAiABKAsyGi52aWFtLmFwcC52MS'
+    '5UZXh0T3ZlcnJpZGVzUgV2YWx1ZToCOAFCDAoKX2xvZ29fcGF0aA==');
+
+@$core.Deprecated('Use appCustomizationsDescriptor instead')
+const AppCustomizations$json = {
+  '1': 'AppCustomizations',
+  '2': [
+    {'1': 'machine_picker', '3': 1, '4': 1, '5': 11, '6': '.viam.app.v1.MachinePickerCustomizations', '10': 'machinePicker'},
+  ],
+};
+
+/// Descriptor for `AppCustomizations`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appCustomizationsDescriptor = $convert.base64Decode(
+    'ChFBcHBDdXN0b21pemF0aW9ucxJPCg5tYWNoaW5lX3BpY2tlchgBIAEoCzIoLnZpYW0uYXBwLn'
+    'YxLk1hY2hpbmVQaWNrZXJDdXN0b21pemF0aW9uc1INbWFjaGluZVBpY2tlcg==');
+
+@$core.Deprecated('Use machinePickerCustomizationsDescriptor instead')
+const MachinePickerCustomizations$json = {
+  '1': 'MachinePickerCustomizations',
+  '2': [
+    {'1': 'heading', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'heading', '17': true},
+    {'1': 'subheading', '3': 2, '4': 1, '5': 9, '9': 1, '10': 'subheading', '17': true},
+  ],
+  '8': [
+    {'1': '_heading'},
+    {'1': '_subheading'},
+  ],
+};
+
+/// Descriptor for `MachinePickerCustomizations`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List machinePickerCustomizationsDescriptor = $convert.base64Decode(
+    'ChtNYWNoaW5lUGlja2VyQ3VzdG9taXphdGlvbnMSHQoHaGVhZGluZxgBIAEoCUgAUgdoZWFkaW'
+    '5niAEBEiMKCnN1YmhlYWRpbmcYAiABKAlIAVIKc3ViaGVhZGluZ4gBAUIKCghfaGVhZGluZ0IN'
+    'Cgtfc3ViaGVhZGluZw==');
 

@@ -740,6 +740,7 @@ class OrganizationMember extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? emails,
     $48.Timestamp? dateAdded,
     $48.Timestamp? lastLogin,
+    $48.Timestamp? lastAccess,
   }) {
     final $result = create();
     if (userId != null) {
@@ -754,6 +755,9 @@ class OrganizationMember extends $pb.GeneratedMessage {
     if (lastLogin != null) {
       $result.lastLogin = lastLogin;
     }
+    if (lastAccess != null) {
+      $result.lastAccess = lastAccess;
+    }
     return $result;
   }
   OrganizationMember._() : super();
@@ -765,6 +769,7 @@ class OrganizationMember extends $pb.GeneratedMessage {
     ..pPS(2, _omitFieldNames ? '' : 'emails')
     ..aOM<$48.Timestamp>(3, _omitFieldNames ? '' : 'dateAdded', subBuilder: $48.Timestamp.create)
     ..aOM<$48.Timestamp>(4, _omitFieldNames ? '' : 'lastLogin', subBuilder: $48.Timestamp.create)
+    ..aOM<$48.Timestamp>(5, _omitFieldNames ? '' : 'lastAccess', subBuilder: $48.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -822,6 +827,17 @@ class OrganizationMember extends $pb.GeneratedMessage {
   void clearLastLogin() => clearField(4);
   @$pb.TagNumber(4)
   $48.Timestamp ensureLastLogin() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $48.Timestamp get lastAccess => $_getN(4);
+  @$pb.TagNumber(5)
+  set lastAccess($48.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastAccess() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastAccess() => clearField(5);
+  @$pb.TagNumber(5)
+  $48.Timestamp ensureLastAccess() => $_ensure(4);
 }
 
 class ListOrganizationsResponse extends $pb.GeneratedMessage {
@@ -1163,10 +1179,14 @@ class GetOrganizationResponse extends $pb.GeneratedMessage {
 class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
   factory GetOrganizationNamespaceAvailabilityRequest({
     $core.String? publicNamespace,
+    $core.String? organizationId,
   }) {
     final $result = create();
     if (publicNamespace != null) {
       $result.publicNamespace = publicNamespace;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
     }
     return $result;
   }
@@ -1176,6 +1196,7 @@ class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrganizationNamespaceAvailabilityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
     ..hasRequiredFields = false
   ;
 
@@ -1208,6 +1229,15 @@ class GetOrganizationNamespaceAvailabilityRequest extends $pb.GeneratedMessage {
   $core.bool hasPublicNamespace() => $_has(0);
   @$pb.TagNumber(1)
   void clearPublicNamespace() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get organizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizationId() => clearField(2);
 }
 
 class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage {
@@ -9218,6 +9248,8 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
   factory ListMachineSummariesRequest({
     $core.String? organizationId,
     $core.Iterable<$core.String>? fragmentIds,
+    $core.Iterable<$core.String>? locationIds,
+    $core.int? limit,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -9225,6 +9257,12 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
     }
     if (fragmentIds != null) {
       $result.fragmentIds.addAll(fragmentIds);
+    }
+    if (locationIds != null) {
+      $result.locationIds.addAll(locationIds);
+    }
+    if (limit != null) {
+      $result.limit = limit;
     }
     return $result;
   }
@@ -9235,6 +9273,8 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMachineSummariesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'organizationId')
     ..pPS(2, _omitFieldNames ? '' : 'fragmentIds')
+    ..pPS(3, _omitFieldNames ? '' : 'locationIds')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'limit', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -9271,6 +9311,20 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
   /// Optional list of fragment IDs to filter machines that use any of these fragments
   @$pb.TagNumber(2)
   $core.List<$core.String> get fragmentIds => $_getList(1);
+
+  /// Optional list of location IDs to filter machines that are in any of these locations.
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get locationIds => $_getList(2);
+
+  /// Optional max number of machines to return; default to 100 if unset
+  @$pb.TagNumber(4)
+  $core.int get limit => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set limit($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLimit() => clearField(4);
 }
 
 class ListMachineSummariesResponse extends $pb.GeneratedMessage {
@@ -13435,6 +13489,9 @@ class App extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? type,
     $core.String? entrypoint,
+    $core.Iterable<$core.String>? fragmentIds,
+    $core.String? logoPath,
+    AppCustomizations? customizations,
   }) {
     final $result = create();
     if (name != null) {
@@ -13446,6 +13503,15 @@ class App extends $pb.GeneratedMessage {
     if (entrypoint != null) {
       $result.entrypoint = entrypoint;
     }
+    if (fragmentIds != null) {
+      $result.fragmentIds.addAll(fragmentIds);
+    }
+    if (logoPath != null) {
+      $result.logoPath = logoPath;
+    }
+    if (customizations != null) {
+      $result.customizations = customizations;
+    }
     return $result;
   }
   App._() : super();
@@ -13456,6 +13522,9 @@ class App extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aOS(3, _omitFieldNames ? '' : 'entrypoint')
+    ..pPS(4, _omitFieldNames ? '' : 'fragmentIds')
+    ..aOS(5, _omitFieldNames ? '' : 'logoPath')
+    ..aOM<AppCustomizations>(6, _omitFieldNames ? '' : 'customizations', subBuilder: AppCustomizations.create)
     ..hasRequiredFields = false
   ;
 
@@ -13509,6 +13578,32 @@ class App extends $pb.GeneratedMessage {
   $core.bool hasEntrypoint() => $_has(2);
   @$pb.TagNumber(3)
   void clearEntrypoint() => clearField(3);
+
+  /// Optional: fragment IDs to filter machines in the picker
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get fragmentIds => $_getList(3);
+
+  /// Optional: path to a custom logo for branding
+  @$pb.TagNumber(5)
+  $core.String get logoPath => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set logoPath($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLogoPath() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLogoPath() => clearField(5);
+
+  /// Optional: structured customizations for the app (e.g., machine picker headings)
+  @$pb.TagNumber(6)
+  AppCustomizations get customizations => $_getN(5);
+  @$pb.TagNumber(6)
+  set customizations(AppCustomizations v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCustomizations() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCustomizations() => clearField(6);
+  @$pb.TagNumber(6)
+  AppCustomizations ensureCustomizations() => $_ensure(5);
 }
 
 class UpdateModuleResponse extends $pb.GeneratedMessage {
@@ -17230,6 +17325,297 @@ class OAuthConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<EnabledGrant> get enabledGrants => $_getList(6);
+}
+
+/// Branding and customization for app machine picker
+class GetAppBrandingRequest extends $pb.GeneratedMessage {
+  factory GetAppBrandingRequest({
+    $core.String? publicNamespace,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (publicNamespace != null) {
+      $result.publicNamespace = publicNamespace;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  GetAppBrandingRequest._() : super();
+  factory GetAppBrandingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppBrandingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppBrandingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'publicNamespace')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppBrandingRequest clone() => GetAppBrandingRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppBrandingRequest copyWith(void Function(GetAppBrandingRequest) updates) => super.copyWith((message) => updates(message as GetAppBrandingRequest)) as GetAppBrandingRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppBrandingRequest create() => GetAppBrandingRequest._();
+  GetAppBrandingRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAppBrandingRequest> createRepeated() => $pb.PbList<GetAppBrandingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppBrandingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppBrandingRequest>(create);
+  static GetAppBrandingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get publicNamespace => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set publicNamespace($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPublicNamespace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPublicNamespace() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+}
+
+class TextOverrides extends $pb.GeneratedMessage {
+  factory TextOverrides({
+    $core.Map<$core.String, $core.String>? fields,
+  }) {
+    final $result = create();
+    if (fields != null) {
+      $result.fields.addAll(fields);
+    }
+    return $result;
+  }
+  TextOverrides._() : super();
+  factory TextOverrides.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TextOverrides.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TextOverrides', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..m<$core.String, $core.String>(1, _omitFieldNames ? '' : 'fields', entryClassName: 'TextOverrides.FieldsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TextOverrides clone() => TextOverrides()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TextOverrides copyWith(void Function(TextOverrides) updates) => super.copyWith((message) => updates(message as TextOverrides)) as TextOverrides;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TextOverrides create() => TextOverrides._();
+  TextOverrides createEmptyInstance() => create();
+  static $pb.PbList<TextOverrides> createRepeated() => $pb.PbList<TextOverrides>();
+  @$core.pragma('dart2js:noInline')
+  static TextOverrides getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TextOverrides>(create);
+  static TextOverrides? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, $core.String> get fields => $_getMap(0);
+}
+
+class GetAppBrandingResponse extends $pb.GeneratedMessage {
+  factory GetAppBrandingResponse({
+    $core.String? logoPath,
+    $core.Map<$core.String, TextOverrides>? textCustomizations,
+    $core.Iterable<$core.String>? fragmentIds,
+  }) {
+    final $result = create();
+    if (logoPath != null) {
+      $result.logoPath = logoPath;
+    }
+    if (textCustomizations != null) {
+      $result.textCustomizations.addAll(textCustomizations);
+    }
+    if (fragmentIds != null) {
+      $result.fragmentIds.addAll(fragmentIds);
+    }
+    return $result;
+  }
+  GetAppBrandingResponse._() : super();
+  factory GetAppBrandingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppBrandingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppBrandingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'logoPath')
+    ..m<$core.String, TextOverrides>(2, _omitFieldNames ? '' : 'textCustomizations', entryClassName: 'GetAppBrandingResponse.TextCustomizationsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: TextOverrides.create, valueDefaultOrMaker: TextOverrides.getDefault, packageName: const $pb.PackageName('viam.app.v1'))
+    ..pPS(3, _omitFieldNames ? '' : 'fragmentIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppBrandingResponse clone() => GetAppBrandingResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppBrandingResponse copyWith(void Function(GetAppBrandingResponse) updates) => super.copyWith((message) => updates(message as GetAppBrandingResponse)) as GetAppBrandingResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppBrandingResponse create() => GetAppBrandingResponse._();
+  GetAppBrandingResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAppBrandingResponse> createRepeated() => $pb.PbList<GetAppBrandingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppBrandingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppBrandingResponse>(create);
+  static GetAppBrandingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get logoPath => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set logoPath($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLogoPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLogoPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, TextOverrides> get textCustomizations => $_getMap(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get fragmentIds => $_getList(2);
+}
+
+class AppCustomizations extends $pb.GeneratedMessage {
+  factory AppCustomizations({
+    MachinePickerCustomizations? machinePicker,
+  }) {
+    final $result = create();
+    if (machinePicker != null) {
+      $result.machinePicker = machinePicker;
+    }
+    return $result;
+  }
+  AppCustomizations._() : super();
+  factory AppCustomizations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppCustomizations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppCustomizations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOM<MachinePickerCustomizations>(1, _omitFieldNames ? '' : 'machinePicker', subBuilder: MachinePickerCustomizations.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppCustomizations clone() => AppCustomizations()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppCustomizations copyWith(void Function(AppCustomizations) updates) => super.copyWith((message) => updates(message as AppCustomizations)) as AppCustomizations;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppCustomizations create() => AppCustomizations._();
+  AppCustomizations createEmptyInstance() => create();
+  static $pb.PbList<AppCustomizations> createRepeated() => $pb.PbList<AppCustomizations>();
+  @$core.pragma('dart2js:noInline')
+  static AppCustomizations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppCustomizations>(create);
+  static AppCustomizations? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MachinePickerCustomizations get machinePicker => $_getN(0);
+  @$pb.TagNumber(1)
+  set machinePicker(MachinePickerCustomizations v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachinePicker() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachinePicker() => clearField(1);
+  @$pb.TagNumber(1)
+  MachinePickerCustomizations ensureMachinePicker() => $_ensure(0);
+}
+
+class MachinePickerCustomizations extends $pb.GeneratedMessage {
+  factory MachinePickerCustomizations({
+    $core.String? heading,
+    $core.String? subheading,
+  }) {
+    final $result = create();
+    if (heading != null) {
+      $result.heading = heading;
+    }
+    if (subheading != null) {
+      $result.subheading = subheading;
+    }
+    return $result;
+  }
+  MachinePickerCustomizations._() : super();
+  factory MachinePickerCustomizations.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MachinePickerCustomizations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MachinePickerCustomizations', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'heading')
+    ..aOS(2, _omitFieldNames ? '' : 'subheading')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MachinePickerCustomizations clone() => MachinePickerCustomizations()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MachinePickerCustomizations copyWith(void Function(MachinePickerCustomizations) updates) => super.copyWith((message) => updates(message as MachinePickerCustomizations)) as MachinePickerCustomizations;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MachinePickerCustomizations create() => MachinePickerCustomizations._();
+  MachinePickerCustomizations createEmptyInstance() => create();
+  static $pb.PbList<MachinePickerCustomizations> createRepeated() => $pb.PbList<MachinePickerCustomizations>();
+  @$core.pragma('dart2js:noInline')
+  static MachinePickerCustomizations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MachinePickerCustomizations>(create);
+  static MachinePickerCustomizations? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get heading => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set heading($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeading() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeading() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get subheading => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set subheading($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSubheading() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSubheading() => clearField(2);
 }
 
 
