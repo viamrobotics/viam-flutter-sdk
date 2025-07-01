@@ -1,6 +1,8 @@
 import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/gripper/v1/gripper.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
+import '../../utils.dart';
 
 /// {@category Viam SDK}
 class Kinematics {
@@ -11,6 +13,20 @@ class Kinematics {
 
   factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
     return Kinematics(gkResponse.format, gkResponse.kinematicsData);
+  }
+}
+
+/// {@category Viam SDK}
+/// HoldingStatus represents whether the gripper is currently holding onto
+/// an object as well as any additional contextual information (stored in `Meta`).
+class HoldingStatus {
+  bool isHoldingSomething;
+  Map<String, dynamic> meta;
+
+  HoldingStatus(this.isHoldingSomething, this.meta);
+
+  factory HoldingStatus.fromProto(IsHoldingSomethingResponse pbResponse) {
+    return HoldingStatus(pbResponse.isHoldingSomething, pbResponse.meta.toMap());
   }
 }
 
@@ -56,6 +72,9 @@ abstract class Gripper extends Resource {
   ///
   /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#ismoving).
   Future<bool> isMoving();
+
+  /// Whether the [Gripper] is currently holding onto an object.
+  Future<HoldingStatus> isHoldingSomething({Map<String, dynamic>? extra});
 
   /// Get the kinematics data associated with the [Gripper]
   ///

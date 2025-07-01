@@ -54,6 +54,12 @@ class FakeGripper extends Gripper {
     this.extra = extra;
     return Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   }
+
+  @override
+  Future<HoldingStatus> isHoldingSomething({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return HoldingStatus(true, {'foo': 'bar'});
+  }
 }
 
 void main() {
@@ -114,6 +120,12 @@ void main() {
       expect(gripper.extra, null);
       await gripper.stop(extra: {'foo': 'bar'});
       expect(gripper.extra, {'foo': 'bar'});
+    });
+
+    test('isHoldingSomething', () async {
+      final response = await gripper.isHoldingSomething();
+      expect(response.isHoldingSomething, true);
+      expect(response.meta, {'foo': 'bar'});
     });
   });
 
@@ -189,6 +201,13 @@ void main() {
         expect(resp.kinematicsData, [1, 2, 3]);
       });
 
+      test('isHoldingSomething', () async {
+        final client = GripperServiceClient(channel);
+        final resp = await client.isHoldingSomething(IsHoldingSomethingRequest()..name = name);
+        expect(resp.isHoldingSomething, true);
+        expect(resp.meta.toMap(), {'foo': 'bar'});
+      });
+
       test('doCommand', () async {
         final cmd = {'foo': 'bar'};
 
@@ -248,6 +267,13 @@ void main() {
       });
 
       test('getKinematics', () async {
+        final client = GripperClient(name, channel);
+        final kd = await client.getKinematics();
+        expect(kd.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+        expect(kd.raw, [1, 2, 3]);
+      });
+
+      test('isHoldingSomething', () async {
         final client = GripperClient(name, channel);
         final kd = await client.getKinematics();
         expect(kd.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);

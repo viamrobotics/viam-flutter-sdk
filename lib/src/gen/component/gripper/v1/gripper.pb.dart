@@ -444,6 +444,138 @@ class IsMovingResponse extends $pb.GeneratedMessage {
   void clearIsMoving() => clearField(1);
 }
 
+class IsHoldingSomethingRequest extends $pb.GeneratedMessage {
+  factory IsHoldingSomethingRequest({
+    $core.String? name,
+    $47.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  IsHoldingSomethingRequest._() : super();
+  factory IsHoldingSomethingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IsHoldingSomethingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IsHoldingSomethingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IsHoldingSomethingRequest clone() => IsHoldingSomethingRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IsHoldingSomethingRequest copyWith(void Function(IsHoldingSomethingRequest) updates) => super.copyWith((message) => updates(message as IsHoldingSomethingRequest)) as IsHoldingSomethingRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IsHoldingSomethingRequest create() => IsHoldingSomethingRequest._();
+  IsHoldingSomethingRequest createEmptyInstance() => create();
+  static $pb.PbList<IsHoldingSomethingRequest> createRepeated() => $pb.PbList<IsHoldingSomethingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static IsHoldingSomethingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsHoldingSomethingRequest>(create);
+  static IsHoldingSomethingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(99)
+  $47.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($47.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $47.Struct ensureExtra() => $_ensure(1);
+}
+
+class IsHoldingSomethingResponse extends $pb.GeneratedMessage {
+  factory IsHoldingSomethingResponse({
+    $core.bool? isHoldingSomething,
+    $47.Struct? meta,
+  }) {
+    final $result = create();
+    if (isHoldingSomething != null) {
+      $result.isHoldingSomething = isHoldingSomething;
+    }
+    if (meta != null) {
+      $result.meta = meta;
+    }
+    return $result;
+  }
+  IsHoldingSomethingResponse._() : super();
+  factory IsHoldingSomethingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IsHoldingSomethingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IsHoldingSomethingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.gripper.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'isHoldingSomething')
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'meta', subBuilder: $47.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IsHoldingSomethingResponse clone() => IsHoldingSomethingResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IsHoldingSomethingResponse copyWith(void Function(IsHoldingSomethingResponse) updates) => super.copyWith((message) => updates(message as IsHoldingSomethingResponse)) as IsHoldingSomethingResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IsHoldingSomethingResponse create() => IsHoldingSomethingResponse._();
+  IsHoldingSomethingResponse createEmptyInstance() => create();
+  static $pb.PbList<IsHoldingSomethingResponse> createRepeated() => $pb.PbList<IsHoldingSomethingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static IsHoldingSomethingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsHoldingSomethingResponse>(create);
+  static IsHoldingSomethingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get isHoldingSomething => $_getBF(0);
+  @$pb.TagNumber(1)
+  set isHoldingSomething($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIsHoldingSomething() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIsHoldingSomething() => clearField(1);
+
+  @$pb.TagNumber(99)
+  $47.Struct get meta => $_getN(1);
+  @$pb.TagNumber(99)
+  set meta($47.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasMeta() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearMeta() => clearField(99);
+  @$pb.TagNumber(99)
+  $47.Struct ensureMeta() => $_ensure(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
