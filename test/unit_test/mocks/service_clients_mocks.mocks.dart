@@ -2577,6 +2577,41 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.GetRobotPartResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.GetRobotPartByNameAndLocationResponse>
+  getRobotPartByNameAndLocation(
+    _i13.GetRobotPartByNameAndLocationRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getRobotPartByNameAndLocation,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+              _i13.GetRobotPartByNameAndLocationResponse
+            >(
+              this,
+              Invocation.method(
+                #getRobotPartByNameAndLocation,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+              _i13.GetRobotPartByNameAndLocationResponse
+            >(
+              this,
+              Invocation.method(
+                #getRobotPartByNameAndLocation,
+                [request],
+                {#options: options},
+              ),
+            ),
+          )
+          as _i4.ResponseFuture<_i13.GetRobotPartByNameAndLocationResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.GetRobotPartLogsResponse> getRobotPartLogs(
     _i13.GetRobotPartLogsRequest? request, {
     _i3.CallOptions? options,
@@ -4008,6 +4043,33 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.GetAppContentResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.GetAppBrandingResponse> getAppBranding(
+    _i13.GetAppBrandingRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#getAppBranding, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i13.GetAppBrandingResponse>(
+              this,
+              Invocation.method(
+                #getAppBranding,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.GetAppBrandingResponse>(
+                  this,
+                  Invocation.method(
+                    #getAppBranding,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.GetAppBrandingResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -5061,6 +5123,37 @@ class MockProvisioningServiceClient extends _i1.Mock
                 ),
           )
           as _i4.ResponseFuture<_i17.GetNetworkListResponse>);
+
+  @override
+  _i4.ResponseFuture<_i17.ExitProvisioningResponse> exitProvisioning(
+    _i17.ExitProvisioningRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #exitProvisioning,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i17.ExitProvisioningResponse>(
+              this,
+              Invocation.method(
+                #exitProvisioning,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i17.ExitProvisioningResponse>(
+                  this,
+                  Invocation.method(
+                    #exitProvisioning,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i17.ExitProvisioningResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(

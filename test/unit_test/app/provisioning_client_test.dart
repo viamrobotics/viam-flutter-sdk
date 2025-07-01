@@ -43,5 +43,12 @@ void main() {
       await provisioningClient.getNetworkList();
       verify(serviceClient.getNetworkList(any)).called(1);
     });
+
+    test('exitProvisioning', () async {
+      final expected = ExitProvisioningResponse();
+      when(serviceClient.exitProvisioning(any)).thenAnswer((_) => MockResponseFuture.value(expected));
+      await provisioningClient.exitProvisioning();
+      verify(serviceClient.exitProvisioning(any)).called(1);
+    });
   });
 }
