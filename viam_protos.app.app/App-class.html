@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="App.new" class="callable">
-          <span class="name"><a href="../viam_protos.app.app/App/App.html">App.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.app/App/App.html">App.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span><span class="parameter" id="-param-logoPath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logoPath</span>, </span><span class="parameter" id="-param-customizations"><span class="type-annotation"><a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a>?</span> <span class="parameter-name">customizations</span></span>})</span>
         </dt>
         <dd>
           
@@ -115,6 +115,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="customizations" class="property">
+  <span class="name"><a href="../viam_protos.app.app/App/customizations.html">customizations</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a></span>
+  
+
+</dt>
+<dd>
+  Optional: structured customizations for the app (e.g., machine picker headings)
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="entrypoint" class="property">
   <span class="name"><a href="../viam_protos.app.app/App/entrypoint.html">entrypoint</a></span>
   <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
@@ -137,6 +149,18 @@
   Subclasses can override this getter to be notified of changes
 to protobuf fields.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="fragmentIds" class="property">
+  <span class="name"><a href="../viam_protos.app.app/App/fragmentIds.html">fragmentIds</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Optional: fragment IDs to filter machines in the picker
+  <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
 
@@ -173,6 +197,18 @@ to protobuf fields.
 <dd class="inherited">
   Returns <code>true</code> if this message is marked read-only. Otherwise <code>false</code>.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="logoPath" class="property">
+  <span class="name"><a href="../viam_protos.app.app/App/logoPath.html">logoPath</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Optional: path to a custom logo for branding
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -272,6 +308,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearCustomizations" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/clearCustomizations.html">clearCustomizations</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearEntrypoint" class="callable">
   <span class="name"><a href="../viam_protos.app.app/App/clearEntrypoint.html">clearEntrypoint</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -308,6 +357,19 @@ to protobuf fields.
 <dd class="inherited">
   Clears the contents of a given field.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearLogoPath" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/clearLogoPath.html">clearLogoPath</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -420,6 +482,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="ensureCustomizations" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/ensureCustomizations.html">ensureCustomizations</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="extensionsAreInitialized" class="callable inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/extensionsAreInitialized.html">extensionsAreInitialized</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -512,6 +587,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasCustomizations" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/hasCustomizations.html">hasCustomizations</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasEntrypoint" class="callable">
   <span class="name"><a href="../viam_protos.app.app/App/hasEntrypoint.html">hasEntrypoint</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -548,6 +636,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether this message has a field associated with <code>tagNumber</code>.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasLogoPath" class="callable">
+  <span class="name"><a href="../viam_protos.app.app/App/hasLogoPath.html">hasLogoPath</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

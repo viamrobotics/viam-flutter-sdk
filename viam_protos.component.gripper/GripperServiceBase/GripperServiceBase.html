@@ -91,6 +91,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $25.IsMovingRequest.fromBuffer(value),
       ($25.IsMovingResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$25.IsHoldingSomethingRequest, $25.IsHoldingSomethingResponse&gt;(
+      &#39;IsHoldingSomething&#39;,
+      isHoldingSomething_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $25.IsHoldingSomethingRequest.fromBuffer(value),
+      ($25.IsHoldingSomethingResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

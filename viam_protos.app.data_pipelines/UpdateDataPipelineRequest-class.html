@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="UpdateDataPipelineRequest.new" class="callable">
-          <span class="name"><a href="../viam_protos.app.data_pipelines/UpdateDataPipelineRequest/UpdateDataPipelineRequest.html">UpdateDataPipelineRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span><span class="parameter" id="-param-schedule"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">schedule</span></span>})</span>
+          <span class="name"><a href="../viam_protos.app.data_pipelines/UpdateDataPipelineRequest/UpdateDataPipelineRequest.html">UpdateDataPipelineRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span><span class="parameter" id="-param-schedule"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">schedule</span>, </span><span class="parameter" id="-param-dataSourceType"><span class="type-annotation"><a href="../viam_protos.app.data/TabularDataSourceType-class.html">TabularDataSourceType</a>?</span> <span class="parameter-name">dataSourceType</span></span>})</span>
         </dt>
         <dd>
           
@@ -115,6 +115,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="dataSourceType" class="property">
+  <span class="name"><a href="../viam_protos.app.data_pipelines/UpdateDataPipelineRequest/dataSourceType.html">dataSourceType</a></span>
+  <span class="signature">&#8596; <a href="../viam_protos.app.data/TabularDataSourceType-class.html">TabularDataSourceType</a></span>
+  
+
+</dt>
+<dd>
+  The type of data source for the pipeline. If not specified, default is standard data storage.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="eventPlugin" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessage/eventPlugin.html">eventPlugin</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/EventPlugin-class.html">EventPlugin</a>?</span>
@@ -283,6 +295,19 @@ defines the input time window; an hourly schedule would process 1 hour of data a
 <dd class="inherited">
   Clears all data that was set in this message.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="clearDataSourceType" class="callable">
+  <span class="name"><a href="../viam_protos.app.data_pipelines/UpdateDataPipelineRequest/clearDataSourceType.html">clearDataSourceType</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 
@@ -523,6 +548,19 @@ default value if it is not set.
 <dd class="inherited">
   
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasDataSourceType" class="callable">
+  <span class="name"><a href="../viam_protos.app.data_pipelines/UpdateDataPipelineRequest/hasDataSourceType.html">hasDataSourceType</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

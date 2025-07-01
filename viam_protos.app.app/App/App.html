@@ -57,6 +57,9 @@
       <span class="name ">App</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
 <li><span class="parameter" id="-param-type"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">type</span>, </span></li>
 <li><span class="parameter" id="-param-entrypoint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">entrypoint</span>, </span></li>
+<li><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span></li>
+<li><span class="parameter" id="-param-logoPath"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">logoPath</span>, </span></li>
+<li><span class="parameter" id="-param-customizations"><span class="type-annotation"><a href="../../viam_protos.app.app/AppCustomizations-class.html">AppCustomizations</a>?</span> <span class="parameter-name">customizations</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +72,9 @@
   $core.String? name,
   $core.String? type,
   $core.String? entrypoint,
+  $core.Iterable&lt;$core.String&gt;? fragmentIds,
+  $core.String? logoPath,
+  AppCustomizations? customizations,
 }) {
   final $result = create();
   if (name != null) {
@@ -79,6 +85,15 @@
   }
   if (entrypoint != null) {
     $result.entrypoint = entrypoint;
+  }
+  if (fragmentIds != null) {
+    $result.fragmentIds.addAll(fragmentIds);
+  }
+  if (logoPath != null) {
+    $result.logoPath = logoPath;
+  }
+  if (customizations != null) {
+    $result.customizations = customizations;
   }
   return $result;
 }</code></pre>

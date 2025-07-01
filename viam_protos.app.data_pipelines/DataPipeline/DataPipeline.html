@@ -62,6 +62,7 @@
 <li><span class="parameter" id="-param-enabled"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">enabled</span>, </span></li>
 <li><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span></li>
 <li><span class="parameter" id="-param-updatedAt"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">updatedAt</span>, </span></li>
+<li><span class="parameter" id="-param-dataSourceType"><span class="type-annotation"><a href="../../viam_protos.app.data/TabularDataSourceType-class.html">TabularDataSourceType</a>?</span> <span class="parameter-name">dataSourceType</span>, </span></li>
 </ol>})
     </section>
     
@@ -79,6 +80,7 @@
   $core.bool? enabled,
   $48.Timestamp? createdOn,
   $48.Timestamp? updatedAt,
+  $3.TabularDataSourceType? dataSourceType,
 }) {
   final $result = create();
   if (id != null) {
@@ -104,6 +106,9 @@
   }
   if (updatedAt != null) {
     $result.updatedAt = updatedAt;
+  }
+  if (dataSourceType != null) {
+    $result.dataSourceType = dataSourceType;
   }
   return $result;
 }</code></pre>

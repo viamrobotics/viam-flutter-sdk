@@ -56,6 +56,8 @@
       
       <span class="name ">ListMachineSummariesRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">organizationId</span>, </span></li>
 <li><span class="parameter" id="-param-fragmentIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">fragmentIds</span>, </span></li>
+<li><span class="parameter" id="-param-locationIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">locationIds</span>, </span></li>
+<li><span class="parameter" id="-param-limit"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">limit</span>, </span></li>
 </ol>})
     </section>
     
@@ -67,6 +69,8 @@
   <pre class="language-dart"><code class="language-dart">factory ListMachineSummariesRequest({
   $core.String? organizationId,
   $core.Iterable&lt;$core.String&gt;? fragmentIds,
+  $core.Iterable&lt;$core.String&gt;? locationIds,
+  $core.int? limit,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -74,6 +78,12 @@
   }
   if (fragmentIds != null) {
     $result.fragmentIds.addAll(fragmentIds);
+  }
+  if (locationIds != null) {
+    $result.locationIds.addAll(locationIds);
+  }
+  if (limit != null) {
+    $result.limit = limit;
   }
   return $result;
 }</code></pre>

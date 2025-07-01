@@ -58,6 +58,7 @@
 <li><span class="parameter" id="-param-resourceName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">resourceName</span>, </span></li>
 <li><span class="parameter" id="-param-methodName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">methodName</span>, </span></li>
 <li><span class="parameter" id="-param-resourceSubtype"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">resourceSubtype</span>, </span></li>
+<li><span class="parameter" id="-param-additionalParameters"><span class="type-annotation">Struct?</span> <span class="parameter-name">additionalParameters</span>, </span></li>
 </ol>})
     </section>
     
@@ -71,6 +72,7 @@
   $core.String? resourceName,
   $core.String? methodName,
   $core.String? resourceSubtype,
+  $47.Struct? additionalParameters,
 }) {
   final $result = create();
   if (partId != null) {
@@ -84,6 +86,9 @@
   }
   if (resourceSubtype != null) {
     $result.resourceSubtype = resourceSubtype;
+  }
+  if (additionalParameters != null) {
+    $result.additionalParameters = additionalParameters;
   }
   return $result;
 }</code></pre>
