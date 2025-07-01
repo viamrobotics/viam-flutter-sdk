@@ -70,4 +70,13 @@ class GripperService extends GripperServiceBase {
       ..format = response.format
       ..kinematicsData = response.raw;
   }
+
+  @override
+  Future<IsHoldingSomethingResponse> isHoldingSomething(ServiceCall call, IsHoldingSomethingRequest request) async {
+    final gripper = _fromManager(request.name);
+    final response = await gripper.isHoldingSomething(extra: request.extra.toMap());
+    return IsHoldingSomethingResponse()
+      ..isHoldingSomething = response.isHoldingSomething
+      ..meta = response.meta.toStruct();
+  }
 }

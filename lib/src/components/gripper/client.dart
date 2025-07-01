@@ -69,4 +69,13 @@ class GripperClient extends Gripper with RPCDebugLoggerMixin implements Resource
     final response = await client.getKinematics(request, options: callOptions);
     return Kinematics.fromProto(response);
   }
+
+  @override
+  Future<HoldingStatus> isHoldingSomething({Map<String, dynamic>? extra}) async {
+    final request = IsHoldingSomethingRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.isHoldingSomething(request, options: callOptions);
+    return HoldingStatus.fromProto(response);
+  }
 }
