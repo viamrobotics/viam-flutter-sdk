@@ -49,4 +49,10 @@ class ProvisioningClient {
     final response = await _client.getNetworkList(request);
     return response.networks;
   }
+
+  /// Exit the provisioning process.
+  Future<void> exitProvisioning() async {
+    final request = ExitProvisioningRequest();
+    await _client.exitProvisioning(request);
+  }
 }
