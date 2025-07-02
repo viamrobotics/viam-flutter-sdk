@@ -289,6 +289,14 @@ class AppServiceClient extends $grpc.Client {
       '/viam.app.v1.AppService/ListRobots',
       ($11.ListRobotsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $11.ListRobotsResponse.fromBuffer(value));
+  static final _$listRobotsForLocations = $grpc.ClientMethod<$11.ListRobotsForLocationsRequest, $11.ListRobotsForLocationsResponse>(
+      '/viam.app.v1.AppService/ListRobotsForLocations',
+      ($11.ListRobotsForLocationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.ListRobotsForLocationsResponse.fromBuffer(value));
+  static final _$listRobotsForOrg = $grpc.ClientMethod<$11.ListRobotsForOrgRequest, $11.ListRobotsForOrgResponse>(
+      '/viam.app.v1.AppService/ListRobotsForOrg',
+      ($11.ListRobotsForOrgRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.ListRobotsForOrgResponse.fromBuffer(value));
   static final _$newRobot = $grpc.ClientMethod<$11.NewRobotRequest, $11.NewRobotResponse>(
       '/viam.app.v1.AppService/NewRobot',
       ($11.NewRobotRequest value) => value.writeToBuffer(),
@@ -722,6 +730,14 @@ class AppServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$11.ListRobotsResponse> listRobots($11.ListRobotsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listRobots, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.ListRobotsForLocationsResponse> listRobotsForLocations($11.ListRobotsForLocationsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listRobotsForLocations, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$11.ListRobotsForOrgResponse> listRobotsForOrg($11.ListRobotsForOrgRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listRobotsForOrg, request, options: options);
   }
 
   $grpc.ResponseFuture<$11.NewRobotResponse> newRobot($11.NewRobotRequest request, {$grpc.CallOptions? options}) {
@@ -1359,6 +1375,20 @@ abstract class AppServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $11.ListRobotsRequest.fromBuffer(value),
         ($11.ListRobotsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.ListRobotsForLocationsRequest, $11.ListRobotsForLocationsResponse>(
+        'ListRobotsForLocations',
+        listRobotsForLocations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.ListRobotsForLocationsRequest.fromBuffer(value),
+        ($11.ListRobotsForLocationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$11.ListRobotsForOrgRequest, $11.ListRobotsForOrgResponse>(
+        'ListRobotsForOrg',
+        listRobotsForOrg_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $11.ListRobotsForOrgRequest.fromBuffer(value),
+        ($11.ListRobotsForOrgResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$11.NewRobotRequest, $11.NewRobotResponse>(
         'NewRobot',
         newRobot_Pre,
@@ -1909,6 +1939,14 @@ abstract class AppServiceBase extends $grpc.Service {
     return listRobots(call, await request);
   }
 
+  $async.Future<$11.ListRobotsForLocationsResponse> listRobotsForLocations_Pre($grpc.ServiceCall call, $async.Future<$11.ListRobotsForLocationsRequest> request) async {
+    return listRobotsForLocations(call, await request);
+  }
+
+  $async.Future<$11.ListRobotsForOrgResponse> listRobotsForOrg_Pre($grpc.ServiceCall call, $async.Future<$11.ListRobotsForOrgRequest> request) async {
+    return listRobotsForOrg(call, await request);
+  }
+
   $async.Future<$11.NewRobotResponse> newRobot_Pre($grpc.ServiceCall call, $async.Future<$11.NewRobotRequest> request) async {
     return newRobot(call, await request);
   }
@@ -2132,6 +2170,8 @@ abstract class AppServiceBase extends $grpc.Service {
   $async.Future<$11.CreateRobotPartSecretResponse> createRobotPartSecret($grpc.ServiceCall call, $11.CreateRobotPartSecretRequest request);
   $async.Future<$11.DeleteRobotPartSecretResponse> deleteRobotPartSecret($grpc.ServiceCall call, $11.DeleteRobotPartSecretRequest request);
   $async.Future<$11.ListRobotsResponse> listRobots($grpc.ServiceCall call, $11.ListRobotsRequest request);
+  $async.Future<$11.ListRobotsForLocationsResponse> listRobotsForLocations($grpc.ServiceCall call, $11.ListRobotsForLocationsRequest request);
+  $async.Future<$11.ListRobotsForOrgResponse> listRobotsForOrg($grpc.ServiceCall call, $11.ListRobotsForOrgRequest request);
   $async.Future<$11.NewRobotResponse> newRobot($grpc.ServiceCall call, $11.NewRobotRequest request);
   $async.Future<$11.UpdateRobotResponse> updateRobot($grpc.ServiceCall call, $11.UpdateRobotRequest request);
   $async.Future<$11.DeleteRobotResponse> deleteRobot($grpc.ServiceCall call, $11.DeleteRobotRequest request);

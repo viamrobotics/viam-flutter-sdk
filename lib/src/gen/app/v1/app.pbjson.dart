@@ -2265,6 +2265,31 @@ const ListRobotsRequest$json = {
 final $typed_data.Uint8List listRobotsRequestDescriptor = $convert.base64Decode(
     'ChFMaXN0Um9ib3RzUmVxdWVzdBIfCgtsb2NhdGlvbl9pZBgBIAEoCVIKbG9jYXRpb25JZA==');
 
+@$core.Deprecated('Use listRobotsForLocationsRequestDescriptor instead')
+const ListRobotsForLocationsRequest$json = {
+  '1': 'ListRobotsForLocationsRequest',
+  '2': [
+    {'1': 'location_ids', '3': 1, '4': 3, '5': 9, '10': 'locationIds'},
+  ],
+};
+
+/// Descriptor for `ListRobotsForLocationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRobotsForLocationsRequestDescriptor = $convert.base64Decode(
+    'Ch1MaXN0Um9ib3RzRm9yTG9jYXRpb25zUmVxdWVzdBIhCgxsb2NhdGlvbl9pZHMYASADKAlSC2'
+    'xvY2F0aW9uSWRz');
+
+@$core.Deprecated('Use listRobotsForOrgRequestDescriptor instead')
+const ListRobotsForOrgRequest$json = {
+  '1': 'ListRobotsForOrgRequest',
+  '2': [
+    {'1': 'org_id', '3': 1, '4': 1, '5': 9, '10': 'orgId'},
+  ],
+};
+
+/// Descriptor for `ListRobotsForOrgRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRobotsForOrgRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0Um9ib3RzRm9yT3JnUmVxdWVzdBIVCgZvcmdfaWQYASABKAlSBW9yZ0lk');
+
 @$core.Deprecated('Use additionalFragmentDescriptor instead')
 const AdditionalFragment$json = {
   '1': 'AdditionalFragment',
@@ -2515,6 +2540,32 @@ const ListRobotsResponse$json = {
 final $typed_data.Uint8List listRobotsResponseDescriptor = $convert.base64Decode(
     'ChJMaXN0Um9ib3RzUmVzcG9uc2USKgoGcm9ib3RzGAEgAygLMhIudmlhbS5hcHAudjEuUm9ib3'
     'RSBnJvYm90cw==');
+
+@$core.Deprecated('Use listRobotsForLocationsResponseDescriptor instead')
+const ListRobotsForLocationsResponse$json = {
+  '1': 'ListRobotsForLocationsResponse',
+  '2': [
+    {'1': 'robots', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Robot', '10': 'robots'},
+  ],
+};
+
+/// Descriptor for `ListRobotsForLocationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRobotsForLocationsResponseDescriptor = $convert.base64Decode(
+    'Ch5MaXN0Um9ib3RzRm9yTG9jYXRpb25zUmVzcG9uc2USKgoGcm9ib3RzGAEgAygLMhIudmlhbS'
+    '5hcHAudjEuUm9ib3RSBnJvYm90cw==');
+
+@$core.Deprecated('Use listRobotsForOrgResponseDescriptor instead')
+const ListRobotsForOrgResponse$json = {
+  '1': 'ListRobotsForOrgResponse',
+  '2': [
+    {'1': 'robots', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.Robot', '10': 'robots'},
+  ],
+};
+
+/// Descriptor for `ListRobotsForOrgResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRobotsForOrgResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0Um9ib3RzRm9yT3JnUmVzcG9uc2USKgoGcm9ib3RzGAEgAygLMhIudmlhbS5hcHAudj'
+    'EuUm9ib3RSBnJvYm90cw==');
 
 @$core.Deprecated('Use newRobotRequestDescriptor instead')
 const NewRobotRequest$json = {
