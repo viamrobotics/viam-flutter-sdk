@@ -8947,6 +8947,100 @@ class ListRobotsRequest extends $pb.GeneratedMessage {
   void clearLocationId() => clearField(1);
 }
 
+class ListRobotsForLocationsRequest extends $pb.GeneratedMessage {
+  factory ListRobotsForLocationsRequest({
+    $core.Iterable<$core.String>? locationIds,
+  }) {
+    final $result = create();
+    if (locationIds != null) {
+      $result.locationIds.addAll(locationIds);
+    }
+    return $result;
+  }
+  ListRobotsForLocationsRequest._() : super();
+  factory ListRobotsForLocationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRobotsForLocationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRobotsForLocationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'locationIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRobotsForLocationsRequest clone() => ListRobotsForLocationsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRobotsForLocationsRequest copyWith(void Function(ListRobotsForLocationsRequest) updates) => super.copyWith((message) => updates(message as ListRobotsForLocationsRequest)) as ListRobotsForLocationsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForLocationsRequest create() => ListRobotsForLocationsRequest._();
+  ListRobotsForLocationsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRobotsForLocationsRequest> createRepeated() => $pb.PbList<ListRobotsForLocationsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForLocationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRobotsForLocationsRequest>(create);
+  static ListRobotsForLocationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get locationIds => $_getList(0);
+}
+
+class ListRobotsForOrgRequest extends $pb.GeneratedMessage {
+  factory ListRobotsForOrgRequest({
+    $core.String? orgId,
+  }) {
+    final $result = create();
+    if (orgId != null) {
+      $result.orgId = orgId;
+    }
+    return $result;
+  }
+  ListRobotsForOrgRequest._() : super();
+  factory ListRobotsForOrgRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRobotsForOrgRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRobotsForOrgRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRobotsForOrgRequest clone() => ListRobotsForOrgRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRobotsForOrgRequest copyWith(void Function(ListRobotsForOrgRequest) updates) => super.copyWith((message) => updates(message as ListRobotsForOrgRequest)) as ListRobotsForOrgRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForOrgRequest create() => ListRobotsForOrgRequest._();
+  ListRobotsForOrgRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRobotsForOrgRequest> createRepeated() => $pb.PbList<ListRobotsForOrgRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForOrgRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRobotsForOrgRequest>(create);
+  static ListRobotsForOrgRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgId() => clearField(1);
+}
+
 class AdditionalFragment extends $pb.GeneratedMessage {
   factory AdditionalFragment({
     $core.String? fragmentId,
@@ -9938,6 +10032,94 @@ class ListRobotsResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListRobotsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRobotsResponse>(create);
   static ListRobotsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Robot> get robots => $_getList(0);
+}
+
+class ListRobotsForLocationsResponse extends $pb.GeneratedMessage {
+  factory ListRobotsForLocationsResponse({
+    $core.Iterable<Robot>? robots,
+  }) {
+    final $result = create();
+    if (robots != null) {
+      $result.robots.addAll(robots);
+    }
+    return $result;
+  }
+  ListRobotsForLocationsResponse._() : super();
+  factory ListRobotsForLocationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRobotsForLocationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRobotsForLocationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<Robot>(1, _omitFieldNames ? '' : 'robots', $pb.PbFieldType.PM, subBuilder: Robot.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRobotsForLocationsResponse clone() => ListRobotsForLocationsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRobotsForLocationsResponse copyWith(void Function(ListRobotsForLocationsResponse) updates) => super.copyWith((message) => updates(message as ListRobotsForLocationsResponse)) as ListRobotsForLocationsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForLocationsResponse create() => ListRobotsForLocationsResponse._();
+  ListRobotsForLocationsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRobotsForLocationsResponse> createRepeated() => $pb.PbList<ListRobotsForLocationsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForLocationsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRobotsForLocationsResponse>(create);
+  static ListRobotsForLocationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Robot> get robots => $_getList(0);
+}
+
+class ListRobotsForOrgResponse extends $pb.GeneratedMessage {
+  factory ListRobotsForOrgResponse({
+    $core.Iterable<Robot>? robots,
+  }) {
+    final $result = create();
+    if (robots != null) {
+      $result.robots.addAll(robots);
+    }
+    return $result;
+  }
+  ListRobotsForOrgResponse._() : super();
+  factory ListRobotsForOrgResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRobotsForOrgResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRobotsForOrgResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<Robot>(1, _omitFieldNames ? '' : 'robots', $pb.PbFieldType.PM, subBuilder: Robot.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRobotsForOrgResponse clone() => ListRobotsForOrgResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRobotsForOrgResponse copyWith(void Function(ListRobotsForOrgResponse) updates) => super.copyWith((message) => updates(message as ListRobotsForOrgResponse)) as ListRobotsForOrgResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForOrgResponse create() => ListRobotsForOrgResponse._();
+  ListRobotsForOrgResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRobotsForOrgResponse> createRepeated() => $pb.PbList<ListRobotsForOrgResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRobotsForOrgResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRobotsForOrgResponse>(create);
+  static ListRobotsForOrgResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<Robot> get robots => $_getList(0);
