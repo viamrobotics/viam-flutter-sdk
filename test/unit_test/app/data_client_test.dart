@@ -268,7 +268,7 @@ void main() {
               ),
             ]));
 
-        final response = await dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null);
+        final response = await dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null, null);
         var index = 0;
         for (final point in response) {
           expect(point.partId, equals(data[index].partId));
@@ -286,6 +286,75 @@ void main() {
           expect(point.payload, equals(data[index].payload));
           index++;
         }
+      });
+
+      test('exportTabularData_withAdditionalParams', () async {
+        final timeCaptured = DateTime.utc(2023, 1, 1);
+        final Map<String, dynamic> methodParams = {'param1': 'value1', 'param2': 42};
+        final Map<String, dynamic> payload = {'key': 'value'};
+        final Map<String, dynamic> additionalParams = {'filter': 'test', 'limit': 100, 'includeMetadata': true};
+
+        final data = TabularDataPoint(
+          partId: 'partId1',
+          resourceName: 'resourceName1',
+          resourceSubtype: 'resourceSubtype1',
+          methodName: 'Readings',
+          timeCaptured: timeCaptured,
+          organizationId: 'orgId1',
+          locationId: 'locationId1',
+          robotName: 'robot1',
+          robotId: 'robotId1',
+          partName: 'part1',
+          methodParameters: methodParams,
+          tags: [],
+          payload: payload,
+        );
+
+        when(serviceClient.exportTabularData(any)).thenAnswer((invocation) {
+          final request = invocation.positionalArguments[0] as ExportTabularDataRequest;
+          // Verify that additional parameters are passed correctly
+          expect(request.additionalParameters, isNotNull);
+          expect(request.additionalParameters!.fields['filter']!.stringValue, equals('test'));
+          expect(request.additionalParameters!.fields['limit']!.numberValue, equals(100));
+          expect(request.additionalParameters!.fields['includeMetadata']!.boolValue, equals(true));
+
+          return MockResponseStream.list([
+            ExportTabularDataResponse(
+              partId: 'partId1',
+              resourceName: 'resourceName1',
+              resourceSubtype: 'resourceSubtype1',
+              methodName: 'Readings',
+              timeCaptured: Timestamp.fromDateTime(timeCaptured),
+              organizationId: 'orgId1',
+              locationId: 'locationId1',
+              robotName: 'robot1',
+              robotId: 'robotId1',
+              partName: 'part1',
+              methodParameters: methodParams.toStruct(),
+              tags: [],
+              payload: payload.toStruct(),
+            ),
+          ]);
+        });
+
+        final response =
+            await dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null, additionalParams);
+
+        expect(response, hasLength(1));
+        final point = response.first;
+        expect(point.partId, equals(data.partId));
+        expect(point.resourceName, equals(data.resourceName));
+        expect(point.resourceSubtype, equals(data.resourceSubtype));
+        expect(point.methodName, equals(data.methodName));
+        expect(point.timeCaptured, equals(data.timeCaptured));
+        expect(point.organizationId, equals(data.organizationId));
+        expect(point.locationId, equals(data.locationId));
+        expect(point.robotName, equals(data.robotName));
+        expect(point.robotId, equals(data.robotId));
+        expect(point.partName, equals(data.partName));
+        expect(point.methodParameters, equals(data.methodParameters));
+        expect(point.tags, equals(data.tags));
+        expect(point.payload, equals(data.payload));
       });
 
       test('deleteTabularData', () async {
@@ -410,7 +479,7 @@ void main() {
             timeSynced: Timestamp.fromDateTime(timeSynced),
             payload: payload.toStruct())));
 
-        final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+        final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name', null);
 
         expect(response?.timeCaptured, equals(timeCaptured));
         expect(response?.timeSynced, equals(timeSynced));
@@ -421,7 +490,7 @@ void main() {
         // Test null response
         when(serviceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse()));
 
-        final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name');
+        final nullResponse = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name', null);
 
         expect(nullResponse, isNull);
       });

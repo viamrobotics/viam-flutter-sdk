@@ -359,6 +359,7 @@ class DataClient {
     String methodName,
     DateTime? startTime,
     DateTime? endTime,
+    Map<String, dynamic>? additionalParams,
   ) async {
     final interval = CaptureInterval();
     if (startTime != null) {
@@ -374,6 +375,9 @@ class DataClient {
       ..resourceSubtype = resourceSubtype
       ..methodName = methodName
       ..interval = interval;
+    if (additionalParams != null) {
+      request.additionalParameters = additionalParams.toStruct();
+    }
 
     return _dataClient
         .exportTabularData(request)
@@ -1548,12 +1552,16 @@ class DataClient {
     String resourceName,
     String resourceSubtype,
     String methodName,
+    Map<String, dynamic>? additionalParams,
   ) async {
     final request = GetLatestTabularDataRequest()
       ..partId = partId
       ..resourceName = resourceName
       ..resourceSubtype = resourceSubtype
       ..methodName = methodName;
+    if (additionalParams != null) {
+      request.additionalParameters = additionalParams.toStruct();
+    }
 
     final response = await _dataClient.getLatestTabularData(request);
 
