@@ -3094,6 +3094,153 @@ class GetVersionResponse extends $pb.GeneratedMessage {
   void clearApiVersion() => clearField(3);
 }
 
+class GetPoseRequest extends $pb.GeneratedMessage {
+  factory GetPoseRequest({
+    $core.String? componentName,
+    $core.String? destinationFrame,
+    $core.Iterable<$16.Transform>? supplementalTransforms,
+    $47.Struct? extra,
+  }) {
+    final $result = create();
+    if (componentName != null) {
+      $result.componentName = componentName;
+    }
+    if (destinationFrame != null) {
+      $result.destinationFrame = destinationFrame;
+    }
+    if (supplementalTransforms != null) {
+      $result.supplementalTransforms.addAll(supplementalTransforms);
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetPoseRequest._() : super();
+  factory GetPoseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPoseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPoseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'componentName')
+    ..aOS(2, _omitFieldNames ? '' : 'destinationFrame')
+    ..pc<$16.Transform>(3, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $16.Transform.create)
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPoseRequest clone() => GetPoseRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPoseRequest copyWith(void Function(GetPoseRequest) updates) => super.copyWith((message) => updates(message as GetPoseRequest)) as GetPoseRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPoseRequest create() => GetPoseRequest._();
+  GetPoseRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPoseRequest> createRepeated() => $pb.PbList<GetPoseRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPoseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPoseRequest>(create);
+  static GetPoseRequest? _defaultInstance;
+
+  /// the component whose pose is being requested
+  @$pb.TagNumber(1)
+  $core.String get componentName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set componentName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasComponentName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComponentName() => clearField(1);
+
+  /// the reference frame in which the component's pose
+  /// should be provided, if unset this defaults
+  /// to the "world" reference frame
+  @$pb.TagNumber(2)
+  $core.String get destinationFrame => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set destinationFrame($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDestinationFrame() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDestinationFrame() => clearField(2);
+
+  /// pose information on any additional reference frames that are needed
+  /// to compute the component's pose
+  @$pb.TagNumber(3)
+  $core.List<$16.Transform> get supplementalTransforms => $_getList(2);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $47.Struct get extra => $_getN(3);
+  @$pb.TagNumber(99)
+  set extra($47.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(3);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $47.Struct ensureExtra() => $_ensure(3);
+}
+
+class GetPoseResponse extends $pb.GeneratedMessage {
+  factory GetPoseResponse({
+    $16.PoseInFrame? pose,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    return $result;
+  }
+  GetPoseResponse._() : super();
+  factory GetPoseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPoseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPoseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOM<$16.PoseInFrame>(1, _omitFieldNames ? '' : 'pose', subBuilder: $16.PoseInFrame.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPoseResponse clone() => GetPoseResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPoseResponse copyWith(void Function(GetPoseResponse) updates) => super.copyWith((message) => updates(message as GetPoseResponse)) as GetPoseResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPoseResponse create() => GetPoseResponse._();
+  GetPoseResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPoseResponse> createRepeated() => $pb.PbList<GetPoseResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPoseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPoseResponse>(create);
+  static GetPoseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $16.PoseInFrame get pose => $_getN(0);
+  @$pb.TagNumber(1)
+  set pose($16.PoseInFrame v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPose() => clearField(1);
+  @$pb.TagNumber(1)
+  $16.PoseInFrame ensurePose() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

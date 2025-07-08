@@ -216,6 +216,7 @@ const GetPoseRequest$json = {
     {'1': 'supplemental_transforms', '3': 4, '4': 3, '5': 11, '6': '.viam.common.v1.Transform', '10': 'supplementalTransforms'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `GetPoseRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -225,7 +226,7 @@ final $typed_data.Uint8List getPoseRequestDescriptor = $convert.base64Decode(
     'c3RpbmF0aW9uX2ZyYW1lGAMgASgJUhBkZXN0aW5hdGlvbkZyYW1lElIKF3N1cHBsZW1lbnRhbF'
     '90cmFuc2Zvcm1zGAQgAygLMhkudmlhbS5jb21tb24udjEuVHJhbnNmb3JtUhZzdXBwbGVtZW50'
     'YWxUcmFuc2Zvcm1zEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZX'
-    'h0cmE=');
+    'h0cmE6AhgB');
 
 @$core.Deprecated('Use getPoseResponseDescriptor instead')
 const GetPoseResponse$json = {
@@ -233,12 +234,13 @@ const GetPoseResponse$json = {
   '2': [
     {'1': 'pose', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'pose'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `GetPoseResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPoseResponseDescriptor = $convert.base64Decode(
     'Cg9HZXRQb3NlUmVzcG9uc2USLwoEcG9zZRgBIAEoCzIbLnZpYW0uY29tbW9uLnYxLlBvc2VJbk'
-    'ZyYW1lUgRwb3Nl');
+    'ZyYW1lUgRwb3NlOgIYAQ==');
 
 @$core.Deprecated('Use stopPlanRequestDescriptor instead')
 const StopPlanRequest$json = {
