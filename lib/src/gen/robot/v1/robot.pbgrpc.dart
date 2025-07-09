@@ -49,18 +49,6 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/GetModelsFromModules',
       ($34.GetModelsFromModulesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $34.GetModelsFromModulesResponse.fromBuffer(value));
-  static final _$frameSystemConfig = $grpc.ClientMethod<$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse>(
-      '/viam.robot.v1.RobotService/FrameSystemConfig',
-      ($34.FrameSystemConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.FrameSystemConfigResponse.fromBuffer(value));
-  static final _$transformPose = $grpc.ClientMethod<$34.TransformPoseRequest, $34.TransformPoseResponse>(
-      '/viam.robot.v1.RobotService/TransformPose',
-      ($34.TransformPoseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.TransformPoseResponse.fromBuffer(value));
-  static final _$transformPCD = $grpc.ClientMethod<$34.TransformPCDRequest, $34.TransformPCDResponse>(
-      '/viam.robot.v1.RobotService/TransformPCD',
-      ($34.TransformPCDRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $34.TransformPCDResponse.fromBuffer(value));
   static final _$getStatus = $grpc.ClientMethod<$34.GetStatusRequest, $34.GetStatusResponse>(
       '/viam.robot.v1.RobotService/GetStatus',
       ($34.GetStatusRequest value) => value.writeToBuffer(),
@@ -113,6 +101,22 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/ListTunnels',
       ($34.ListTunnelsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $34.ListTunnelsResponse.fromBuffer(value));
+  static final _$frameSystemConfig = $grpc.ClientMethod<$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse>(
+      '/viam.robot.v1.RobotService/FrameSystemConfig',
+      ($34.FrameSystemConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.FrameSystemConfigResponse.fromBuffer(value));
+  static final _$getPose = $grpc.ClientMethod<$34.GetPoseRequest, $34.GetPoseResponse>(
+      '/viam.robot.v1.RobotService/GetPose',
+      ($34.GetPoseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.GetPoseResponse.fromBuffer(value));
+  static final _$transformPose = $grpc.ClientMethod<$34.TransformPoseRequest, $34.TransformPoseResponse>(
+      '/viam.robot.v1.RobotService/TransformPose',
+      ($34.TransformPoseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.TransformPoseResponse.fromBuffer(value));
+  static final _$transformPCD = $grpc.ClientMethod<$34.TransformPCDRequest, $34.TransformPCDResponse>(
+      '/viam.robot.v1.RobotService/TransformPCD',
+      ($34.TransformPCDRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $34.TransformPCDResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -146,18 +150,6 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$34.GetModelsFromModulesResponse> getModelsFromModules($34.GetModelsFromModulesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getModelsFromModules, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$34.FrameSystemConfigResponse> frameSystemConfig($34.FrameSystemConfigRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$frameSystemConfig, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$34.TransformPoseResponse> transformPose($34.TransformPoseRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$transformPose, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$34.TransformPCDResponse> transformPCD($34.TransformPCDRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$transformPCD, request, options: options);
   }
 
   $grpc.ResponseFuture<$34.GetStatusResponse> getStatus($34.GetStatusRequest request, {$grpc.CallOptions? options}) {
@@ -210,6 +202,22 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$34.ListTunnelsResponse> listTunnels($34.ListTunnelsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listTunnels, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$34.FrameSystemConfigResponse> frameSystemConfig($34.FrameSystemConfigRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$frameSystemConfig, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$34.GetPoseResponse> getPose($34.GetPoseRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getPose, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$34.TransformPoseResponse> transformPose($34.TransformPoseRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$transformPose, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$34.TransformPCDResponse> transformPCD($34.TransformPCDRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$transformPCD, request, options: options);
   }
 }
 
@@ -267,27 +275,6 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $34.GetModelsFromModulesRequest.fromBuffer(value),
         ($34.GetModelsFromModulesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse>(
-        'FrameSystemConfig',
-        frameSystemConfig_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $34.FrameSystemConfigRequest.fromBuffer(value),
-        ($34.FrameSystemConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.TransformPoseRequest, $34.TransformPoseResponse>(
-        'TransformPose',
-        transformPose_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $34.TransformPoseRequest.fromBuffer(value),
-        ($34.TransformPoseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$34.TransformPCDRequest, $34.TransformPCDResponse>(
-        'TransformPCD',
-        transformPCD_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $34.TransformPCDRequest.fromBuffer(value),
-        ($34.TransformPCDResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$34.GetStatusRequest, $34.GetStatusResponse>(
         'GetStatus',
         getStatus_Pre,
@@ -379,6 +366,34 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $34.ListTunnelsRequest.fromBuffer(value),
         ($34.ListTunnelsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$34.FrameSystemConfigRequest, $34.FrameSystemConfigResponse>(
+        'FrameSystemConfig',
+        frameSystemConfig_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $34.FrameSystemConfigRequest.fromBuffer(value),
+        ($34.FrameSystemConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$34.GetPoseRequest, $34.GetPoseResponse>(
+        'GetPose',
+        getPose_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $34.GetPoseRequest.fromBuffer(value),
+        ($34.GetPoseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$34.TransformPoseRequest, $34.TransformPoseResponse>(
+        'TransformPose',
+        transformPose_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $34.TransformPoseRequest.fromBuffer(value),
+        ($34.TransformPoseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$34.TransformPCDRequest, $34.TransformPCDResponse>(
+        'TransformPCD',
+        transformPCD_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $34.TransformPCDRequest.fromBuffer(value),
+        ($34.TransformPCDResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$34.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$34.GetOperationsRequest> request) async {
@@ -407,18 +422,6 @@ abstract class RobotServiceBase extends $grpc.Service {
 
   $async.Future<$34.GetModelsFromModulesResponse> getModelsFromModules_Pre($grpc.ServiceCall call, $async.Future<$34.GetModelsFromModulesRequest> request) async {
     return getModelsFromModules(call, await request);
-  }
-
-  $async.Future<$34.FrameSystemConfigResponse> frameSystemConfig_Pre($grpc.ServiceCall call, $async.Future<$34.FrameSystemConfigRequest> request) async {
-    return frameSystemConfig(call, await request);
-  }
-
-  $async.Future<$34.TransformPoseResponse> transformPose_Pre($grpc.ServiceCall call, $async.Future<$34.TransformPoseRequest> request) async {
-    return transformPose(call, await request);
-  }
-
-  $async.Future<$34.TransformPCDResponse> transformPCD_Pre($grpc.ServiceCall call, $async.Future<$34.TransformPCDRequest> request) async {
-    return transformPCD(call, await request);
   }
 
   $async.Future<$34.GetStatusResponse> getStatus_Pre($grpc.ServiceCall call, $async.Future<$34.GetStatusRequest> request) async {
@@ -469,6 +472,22 @@ abstract class RobotServiceBase extends $grpc.Service {
     return listTunnels(call, await request);
   }
 
+  $async.Future<$34.FrameSystemConfigResponse> frameSystemConfig_Pre($grpc.ServiceCall call, $async.Future<$34.FrameSystemConfigRequest> request) async {
+    return frameSystemConfig(call, await request);
+  }
+
+  $async.Future<$34.GetPoseResponse> getPose_Pre($grpc.ServiceCall call, $async.Future<$34.GetPoseRequest> request) async {
+    return getPose(call, await request);
+  }
+
+  $async.Future<$34.TransformPoseResponse> transformPose_Pre($grpc.ServiceCall call, $async.Future<$34.TransformPoseRequest> request) async {
+    return transformPose(call, await request);
+  }
+
+  $async.Future<$34.TransformPCDResponse> transformPCD_Pre($grpc.ServiceCall call, $async.Future<$34.TransformPCDRequest> request) async {
+    return transformPCD(call, await request);
+  }
+
   $async.Future<$34.GetOperationsResponse> getOperations($grpc.ServiceCall call, $34.GetOperationsRequest request);
   $async.Future<$34.GetSessionsResponse> getSessions($grpc.ServiceCall call, $34.GetSessionsRequest request);
   $async.Future<$34.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $34.ResourceNamesRequest request);
@@ -476,9 +495,6 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$34.CancelOperationResponse> cancelOperation($grpc.ServiceCall call, $34.CancelOperationRequest request);
   $async.Future<$34.BlockForOperationResponse> blockForOperation($grpc.ServiceCall call, $34.BlockForOperationRequest request);
   $async.Future<$34.GetModelsFromModulesResponse> getModelsFromModules($grpc.ServiceCall call, $34.GetModelsFromModulesRequest request);
-  $async.Future<$34.FrameSystemConfigResponse> frameSystemConfig($grpc.ServiceCall call, $34.FrameSystemConfigRequest request);
-  $async.Future<$34.TransformPoseResponse> transformPose($grpc.ServiceCall call, $34.TransformPoseRequest request);
-  $async.Future<$34.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $34.TransformPCDRequest request);
   $async.Future<$34.GetStatusResponse> getStatus($grpc.ServiceCall call, $34.GetStatusRequest request);
   $async.Stream<$34.StreamStatusResponse> streamStatus($grpc.ServiceCall call, $34.StreamStatusRequest request);
   $async.Future<$34.StopAllResponse> stopAll($grpc.ServiceCall call, $34.StopAllRequest request);
@@ -492,4 +508,8 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$34.GetVersionResponse> getVersion($grpc.ServiceCall call, $34.GetVersionRequest request);
   $async.Stream<$34.TunnelResponse> tunnel($grpc.ServiceCall call, $async.Stream<$34.TunnelRequest> request);
   $async.Future<$34.ListTunnelsResponse> listTunnels($grpc.ServiceCall call, $34.ListTunnelsRequest request);
+  $async.Future<$34.FrameSystemConfigResponse> frameSystemConfig($grpc.ServiceCall call, $34.FrameSystemConfigRequest request);
+  $async.Future<$34.GetPoseResponse> getPose($grpc.ServiceCall call, $34.GetPoseRequest request);
+  $async.Future<$34.TransformPoseResponse> transformPose($grpc.ServiceCall call, $34.TransformPoseRequest request);
+  $async.Future<$34.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $34.TransformPCDRequest request);
 }

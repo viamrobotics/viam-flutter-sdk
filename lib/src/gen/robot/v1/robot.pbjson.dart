@@ -812,3 +812,35 @@ final $typed_data.Uint8List getVersionResponseDescriptor = $convert.base64Decode
     'ChJHZXRWZXJzaW9uUmVzcG9uc2USGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEhgKB3Zlcn'
     'Npb24YAiABKAlSB3ZlcnNpb24SHwoLYXBpX3ZlcnNpb24YAyABKAlSCmFwaVZlcnNpb24=');
 
+@$core.Deprecated('Use getPoseRequestDescriptor instead')
+const GetPoseRequest$json = {
+  '1': 'GetPoseRequest',
+  '2': [
+    {'1': 'component_name', '3': 1, '4': 1, '5': 9, '10': 'componentName'},
+    {'1': 'destination_frame', '3': 2, '4': 1, '5': 9, '10': 'destinationFrame'},
+    {'1': 'supplemental_transforms', '3': 3, '4': 3, '5': 11, '6': '.viam.common.v1.Transform', '10': 'supplementalTransforms'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `GetPoseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPoseRequestDescriptor = $convert.base64Decode(
+    'Cg5HZXRQb3NlUmVxdWVzdBIlCg5jb21wb25lbnRfbmFtZRgBIAEoCVINY29tcG9uZW50TmFtZR'
+    'IrChFkZXN0aW5hdGlvbl9mcmFtZRgCIAEoCVIQZGVzdGluYXRpb25GcmFtZRJSChdzdXBwbGVt'
+    'ZW50YWxfdHJhbnNmb3JtcxgDIAMoCzIZLnZpYW0uY29tbW9uLnYxLlRyYW5zZm9ybVIWc3VwcG'
+    'xlbWVudGFsVHJhbnNmb3JtcxItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1'
+    'Y3RSBWV4dHJh');
+
+@$core.Deprecated('Use getPoseResponseDescriptor instead')
+const GetPoseResponse$json = {
+  '1': 'GetPoseResponse',
+  '2': [
+    {'1': 'pose', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'pose'},
+  ],
+};
+
+/// Descriptor for `GetPoseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPoseResponseDescriptor = $convert.base64Decode(
+    'Cg9HZXRQb3NlUmVzcG9uc2USLwoEcG9zZRgBIAEoCzIbLnZpYW0uY29tbW9uLnYxLlBvc2VJbk'
+    'ZyYW1lUgRwb3Nl');
+
