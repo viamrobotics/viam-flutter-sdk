@@ -59,6 +59,7 @@
 <li><span class="parameter" id="getLatestTabularData-param-resourceName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">resourceName</span>, </span></li>
 <li><span class="parameter" id="getLatestTabularData-param-resourceSubtype"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">resourceSubtype</span>, </span></li>
 <li><span class="parameter" id="getLatestTabularData-param-methodName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">methodName</span>, </span></li>
+<li><span class="parameter" id="getLatestTabularData-param-additionalParams"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">additionalParams</span>, </span></li>
 </ol>)
 
       
@@ -99,12 +100,16 @@ as long as it was synced within the last year.</p>
   String resourceName,
   String resourceSubtype,
   String methodName,
+  Map&lt;String, dynamic&gt;? additionalParams,
 ) async {
   final request = GetLatestTabularDataRequest()
     ..partId = partId
     ..resourceName = resourceName
     ..resourceSubtype = resourceSubtype
     ..methodName = methodName;
+  if (additionalParams != null) {
+    request.additionalParameters = additionalParams.toStruct();
+  }
 
   final response = await _dataClient.getLatestTabularData(request);
 

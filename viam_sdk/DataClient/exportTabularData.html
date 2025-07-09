@@ -61,6 +61,7 @@
 <li><span class="parameter" id="exportTabularData-param-methodName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">methodName</span>, </span></li>
 <li><span class="parameter" id="exportTabularData-param-startTime"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">startTime</span>, </span></li>
 <li><span class="parameter" id="exportTabularData-param-endTime"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">endTime</span>, </span></li>
+<li><span class="parameter" id="exportTabularData-param-additionalParams"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">additionalParams</span>, </span></li>
 </ol>)
 
       
@@ -116,6 +117,7 @@
   String methodName,
   DateTime? startTime,
   DateTime? endTime,
+  Map&lt;String, dynamic&gt;? additionalParams,
 ) async {
   final interval = CaptureInterval();
   if (startTime != null) {
@@ -131,6 +133,9 @@
     ..resourceSubtype = resourceSubtype
     ..methodName = methodName
     ..interval = interval;
+  if (additionalParams != null) {
+    request.additionalParameters = additionalParams.toStruct();
+  }
 
   return _dataClient
       .exportTabularData(request)
