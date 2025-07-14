@@ -1,11 +1,14 @@
 # Changelog
 
-## [v0.6.6](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.6) (2025-07-07)
+## [v0.7.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.7.0) (2025-07-14)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.5...v0.6.6)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.6...v0.7.0)
 
 **Merged pull requests:**
 
+- DATA-4295: SDK/CLI changes to support ExportTabularData and GetLatestTabularData [\#405](https://github.com/viamrobotics/viam-flutter-sdk/pull/405) ([Emerald-Z](https://github.com/Emerald-Z))
+- v0.6.6 [\#404](https://github.com/viamrobotics/viam-flutter-sdk/pull/404) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#403](https://github.com/viamrobotics/viam-flutter-sdk/pull/403) ([viambot](https://github.com/viambot))
 - \[APP-8732\] Add exitProvisioning\(\) wrapper to flutter SDK [\#402](https://github.com/viamrobotics/viam-flutter-sdk/pull/402) ([jckras](https://github.com/jckras))
 - Fix typo in documentation [\#401](https://github.com/viamrobotics/viam-flutter-sdk/pull/401) ([clintpurser](https://github.com/clintpurser))
 - v0.6.5 [\#400](https://github.com/viamrobotics/viam-flutter-sdk/pull/400) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -120,6 +123,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.6.6](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.6) (2025-07-07)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.5...v0.6.6)
 
 ## [v0.6.5](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.5) (2025-06-18)
 
