@@ -718,6 +718,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
     $core.Map<$core.String, $49.Any>? methodParameters,
     $core.String? fileExtension,
     $core.Iterable<$core.String>? tags,
+    $core.Iterable<$core.String>? datasetIds,
   }) {
     final $result = create();
     if (partId != null) {
@@ -747,6 +748,9 @@ class UploadMetadata extends $pb.GeneratedMessage {
     if (tags != null) {
       $result.tags.addAll(tags);
     }
+    if (datasetIds != null) {
+      $result.datasetIds.addAll(datasetIds);
+    }
     return $result;
   }
   UploadMetadata._() : super();
@@ -763,6 +767,7 @@ class UploadMetadata extends $pb.GeneratedMessage {
     ..m<$core.String, $49.Any>(8, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'UploadMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $49.Any.create, valueDefaultOrMaker: $49.Any.getDefault, packageName: const $pb.PackageName('viam.app.datasync.v1'))
     ..aOS(9, _omitFieldNames ? '' : 'fileExtension')
     ..pPS(10, _omitFieldNames ? '' : 'tags')
+    ..pPS(12, _omitFieldNames ? '' : 'datasetIds')
     ..hasRequiredFields = false
   ;
 
@@ -855,6 +860,9 @@ class UploadMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(10)
   $core.List<$core.String> get tags => $_getList(8);
+
+  @$pb.TagNumber(12)
+  $core.List<$core.String> get datasetIds => $_getList(9);
 }
 
 /// CaptureInterval specifies the start and end times of the data capture.

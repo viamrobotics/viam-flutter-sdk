@@ -219,6 +219,7 @@ const UploadMetadata$json = {
     {'1': 'method_parameters', '3': 8, '4': 3, '5': 11, '6': '.viam.app.datasync.v1.UploadMetadata.MethodParametersEntry', '10': 'methodParameters'},
     {'1': 'file_extension', '3': 9, '4': 1, '5': 9, '10': 'fileExtension'},
     {'1': 'tags', '3': 10, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'dataset_ids', '3': 12, '4': 3, '5': 9, '10': 'datasetIds'},
   ],
   '3': [UploadMetadata_MethodParametersEntry$json],
   '9': [
@@ -247,9 +248,10 @@ final $typed_data.Uint8List uploadMetadataDescriptor = $convert.base64Decode(
     'CVIIZmlsZU5hbWUSZwoRbWV0aG9kX3BhcmFtZXRlcnMYCCADKAsyOi52aWFtLmFwcC5kYXRhc3'
     'luYy52MS5VcGxvYWRNZXRhZGF0YS5NZXRob2RQYXJhbWV0ZXJzRW50cnlSEG1ldGhvZFBhcmFt'
     'ZXRlcnMSJQoOZmlsZV9leHRlbnNpb24YCSABKAlSDWZpbGVFeHRlbnNpb24SEgoEdGFncxgKIA'
-    'MoCVIEdGFncxpZChVNZXRob2RQYXJhbWV0ZXJzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoF'
-    'dmFsdWUYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UgV2YWx1ZToCOAFKBAgEEAVKBAgLEA'
-    'xSD2NvbXBvbmVudF9tb2RlbFIKc2Vzc2lvbl9pZA==');
+    'MoCVIEdGFncxIfCgtkYXRhc2V0X2lkcxgMIAMoCVIKZGF0YXNldElkcxpZChVNZXRob2RQYXJh'
+    'bWV0ZXJzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKgoFdmFsdWUYAiABKAsyFC5nb29nbGUucH'
+    'JvdG9idWYuQW55UgV2YWx1ZToCOAFKBAgEEAVKBAgLEAxSD2NvbXBvbmVudF9tb2RlbFIKc2Vz'
+    'c2lvbl9pZA==');
 
 @$core.Deprecated('Use captureIntervalDescriptor instead')
 const CaptureInterval$json = {
