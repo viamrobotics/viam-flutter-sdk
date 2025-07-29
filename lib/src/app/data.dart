@@ -997,12 +997,14 @@ class DataClient {
       String? componentName,
       String? methodName,
       Map<String, Any>? methodParameters,
+      Iterable<String> datasetIds = const [],
       Iterable<String> tags = const []}) async {
     final metadata = UploadMetadata()
       ..partId = partId
       ..type = DataType.DATA_TYPE_FILE
       ..fileName = fileName ?? DateTime.now().toIso8601String()
       ..fileExtension = '.${image.mimeType.type}'
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
@@ -1074,6 +1076,7 @@ class DataClient {
       String? componentName,
       String? methodName,
       Map<String, Any>? methodParameters,
+      Iterable<String> datasetIds = const[],
       Iterable<String> tags = const []}) async {
     final fileNameAndExt = path.split(Platform.pathSeparator).last;
     String fName, ext;
@@ -1089,6 +1092,7 @@ class DataClient {
       ..type = DataType.DATA_TYPE_FILE
       ..fileName = fileName ?? fName
       ..fileExtension = ext
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
@@ -1150,6 +1154,7 @@ class DataClient {
       String? methodName,
       Map<String, Any>? methodParameters,
       (DateTime, DateTime)? dataRequestTimes,
+      Iterable<String> datasetIds = const[],
       Iterable<String> tags = const []}) async {
     final sensorMetadata = SensorMetadata();
     if (dataRequestTimes != null) {
@@ -1163,6 +1168,7 @@ class DataClient {
       ..componentName = componentName ?? ''
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
@@ -1347,6 +1353,7 @@ class DataClient {
       String? methodName,
       Map<String, Any>? methodParameters,
       (DateTime, DateTime)? dataRequestTimes,
+      Iterable<String> datasetIds = const[],
       Iterable<String> tags = const []}) async {
     final uploadMetadata = UploadMetadata()
       ..partId = partId
@@ -1354,6 +1361,7 @@ class DataClient {
       ..componentName = componentName ?? ''
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (methodParameters != null) uploadMetadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
