@@ -553,7 +553,7 @@ void main() {
           ..partId = 'partId'
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'fileName'
-          ..datasetIds = ["datasetId"]
+          ..datasetIds.addAll(["datasetId"])
           ..fileExtension = '.jpeg';
         await dataClient.uploadImage(image, 'partId', fileName: 'fileName', datasetIds: ["datasetId"]);
         expect(syncServiceClient.metadata, expected);
@@ -567,7 +567,7 @@ void main() {
           ..partId = 'partId'
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'null'
-          ..datasetIds = ["datasetId"]
+          ..datasetIds.addAll(["datasetId"])
           ..fileExtension = '';
         await dataClient.uploadFile('/dev/null', 'partId', datasetIds: ["datasetId"]);
         expect(syncServiceClient.metadata, expected);
@@ -601,7 +601,7 @@ void main() {
           ..fileExtension = '.txt'
           ..methodName = ''
           ..componentType = ''
-          ..datasetIds = ["datasetId"]
+          ..datasetIds.addAll(["datasetId"])
           ..componentName = '';
         await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', datasetIds: ["datasetId"]);
         expect(syncServiceClient.dataCaptureMetadata, expected);
