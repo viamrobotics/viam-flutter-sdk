@@ -577,15 +577,8 @@ void main() {
       });
 
       test('binaryDataCaptureUpload', () async {
-        final response = await dataClient.binaryDataCaptureUpload(
-          [1],
-          'partId',
-          'fileExt',
-          componentType: 'type',
-          componentName: 'name',
-          methodName: 'name',
-          datasetIds: ["datasetId"]
-        );
+        final response = await dataClient.binaryDataCaptureUpload([1], 'partId', 'fileExt',
+            componentType: 'type', componentName: 'name', methodName: 'name', datasetIds: ["datasetId"]);
         expect(response, equals('fileId'));
       });
 
