@@ -24,29 +24,37 @@ class FakeDataSyncServiceClient extends Fake implements DataSyncServiceClient {
   @override
   ResponseFuture<FileUploadResponse> fileUpload(Stream<FileUploadRequest> request, {CallOptions? options}) {
     final metadataRequest = request.first.then((value) => metadata = value.metadata);
-    return MockResponseFuture.future(Future.microtask(() async {
-      await metadataRequest;
-      return FileUploadResponse()..binaryDataId = metadata?.fileName ?? 'some file id';
-    }));
+    return MockResponseFuture.future(
+      Future.microtask(() async {
+        await metadataRequest;
+        return FileUploadResponse()..binaryDataId = metadata?.fileName ?? 'some file id';
+      }),
+    );
   }
 
   @override
-  ResponseFuture<StreamingDataCaptureUploadResponse> streamingDataCaptureUpload(Stream<StreamingDataCaptureUploadRequest> request,
-      {CallOptions? options}) {
+  ResponseFuture<StreamingDataCaptureUploadResponse> streamingDataCaptureUpload(
+    Stream<StreamingDataCaptureUploadRequest> request, {
+    CallOptions? options,
+  }) {
     final metadataRequest = request.first.then((value) => dataCaptureMetadata = value.metadata.uploadMetadata);
-    return MockResponseFuture.future(Future.microtask(() async {
-      await metadataRequest;
-      return StreamingDataCaptureUploadResponse()..binaryDataId = metadata?.componentName ?? 'fileId';
-    }));
+    return MockResponseFuture.future(
+      Future.microtask(() async {
+        await metadataRequest;
+        return StreamingDataCaptureUploadResponse()..binaryDataId = metadata?.componentName ?? 'fileId';
+      }),
+    );
   }
 
   @override
   ResponseFuture<DataCaptureUploadResponse> dataCaptureUpload(DataCaptureUploadRequest request, {CallOptions? options}) {
-    return MockResponseFuture.future(Future.microtask(() async {
-      return DataCaptureUploadResponse()
-        ..binaryDataId = 'fileId'
-        ..fileId = 'fileId';
-    }));
+    return MockResponseFuture.future(
+      Future.microtask(() async {
+        return DataCaptureUploadResponse()
+          ..binaryDataId = 'fileId'
+          ..fileId = 'fileId';
+      }),
+    );
   }
 }
 
@@ -73,9 +81,13 @@ void main() {
         const last = 'last';
         const sortOrder = Order.ORDER_ASCENDING;
 
-        when(serviceClient.tabularDataByFilter(any)).thenAnswer((_) => MockResponseFuture.value(TabularDataByFilterResponse()
-          ..count = Int64(limit)
-          ..last = last));
+        when(serviceClient.tabularDataByFilter(any)).thenAnswer(
+          (_) => MockResponseFuture.value(
+            TabularDataByFilterResponse()
+              ..count = Int64(limit)
+              ..last = last,
+          ),
+        );
 
         final response = await dataClient.tabularDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder, last: last);
         expect(response.count, equals(Int64(limit)));
@@ -85,8 +97,9 @@ void main() {
       test('tabularDataByFilter_countOnly', () async {
         const count = 10;
 
-        when(serviceClient.tabularDataByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(TabularDataByFilterResponse()..count = Int64(count)));
+        when(
+          serviceClient.tabularDataByFilter(any),
+        ).thenAnswer((_) => MockResponseFuture.value(TabularDataByFilterResponse()..count = Int64(count)));
 
         final response = await dataClient.tabularDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
@@ -105,13 +118,20 @@ void main() {
 
         when(serviceClient.binaryDataByFilter(any)).thenAnswer((invocation) {
           includeBinary = (invocation.positionalArguments[0] as BinaryDataByFilterRequest).includeBinary;
-          return MockResponseFuture.value(BinaryDataByFilterResponse()
-            ..count = Int64(limit)
-            ..last = last);
+          return MockResponseFuture.value(
+            BinaryDataByFilterResponse()
+              ..count = Int64(limit)
+              ..last = last,
+          );
         });
 
-        final response =
-            await dataClient.binaryDataByFilter(filter: filter, limit: limit, sortOrder: sortOrder, last: last, includeBinary: true);
+        final response = await dataClient.binaryDataByFilter(
+          filter: filter,
+          limit: limit,
+          sortOrder: sortOrder,
+          last: last,
+          includeBinary: true,
+        );
         expect(response.count, equals(Int64(limit)));
         expect(response.last, equals(last));
         expect(includeBinary, isTrue);
@@ -120,8 +140,9 @@ void main() {
       test('binaryDataByFilter_countOnly', () async {
         const count = 10;
 
-        when(serviceClient.binaryDataByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(BinaryDataByFilterResponse()..count = Int64(count)));
+        when(
+          serviceClient.binaryDataByFilter(any),
+        ).thenAnswer((_) => MockResponseFuture.value(BinaryDataByFilterResponse()..count = Int64(count)));
 
         final response = await dataClient.binaryDataByFilter(countOnly: true);
         expect(response.count, equals(Int64(count)));
@@ -134,7 +155,7 @@ void main() {
           BinaryID()
             ..organizationId = 'orgid'
             ..locationId = 'locationid'
-            ..fileId = 'fileid'
+            ..fileId = 'fileid',
         ];
         final data = [
           BinaryData()..binary = [1, 2, 3, 4],
@@ -160,12 +181,13 @@ void main() {
             'key1': startDate,
             'key2': '2',
             'key3': [1, 2, 3],
-            'key4': {'key4sub1': 1}
+            'key4': {'key4sub1': 1},
           },
         ];
 
         when(serviceClient.tabularDataBySQL(any)).thenAnswer(
-            (_) => MockResponseFuture.value(TabularDataBySQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
+          (_) => MockResponseFuture.value(TabularDataBySQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))),
+        );
 
         final response = await dataClient.tabularDataBySql('some_org_id', 'some_query');
         expect(response[0]['key1'], equals(data[0]['key1']));
@@ -174,7 +196,7 @@ void main() {
 
       test('tabularDataByMql', () async {
         final List<Map<String, dynamic>> query = [
-          {'key': 'value'}
+          {'key': 'value'},
         ];
         final startDate = DateTime.utc(2020, 12, 31);
         final List<Map<String, dynamic>> data = [
@@ -182,12 +204,13 @@ void main() {
             'key1': startDate.toUtc(),
             'key2': '2',
             'key3': [1, 2, 3],
-            'key4': {'key4sub1': 1}
+            'key4': {'key4sub1': 1},
           },
         ];
 
         when(serviceClient.tabularDataByMQL(any)).thenAnswer(
-            (_) => MockResponseFuture.value(TabularDataByMQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))));
+          (_) => MockResponseFuture.value(TabularDataByMQLResponse()..rawData.addAll(data.map((e) => BsonCodec.serialize(e).byteList))),
+        );
 
         final response = await dataClient.tabularDataByMql('some_org_id', query);
         expect(response[0]['key1'], equals(data[0]['key1']));
@@ -235,38 +258,40 @@ void main() {
           ),
         ];
 
-        when(serviceClient.exportTabularData(any)).thenAnswer((_) => MockResponseStream.list([
-              ExportTabularDataResponse(
-                partId: 'partId1',
-                resourceName: 'resourceName1',
-                resourceSubtype: 'resourceSubtype1',
-                methodName: 'Readings',
-                timeCaptured: Timestamp.fromDateTime(timeCaptured1),
-                organizationId: 'orgId1',
-                locationId: 'locationId1',
-                robotName: 'robot1',
-                robotId: 'robotId1',
-                partName: 'part1',
-                methodParameters: methodParams1.toStruct(),
-                tags: [],
-                payload: payload1.toStruct(),
-              ),
-              ExportTabularDataResponse(
-                partId: 'partId1',
-                resourceName: 'resourceName1',
-                resourceSubtype: 'resourceSubtype1',
-                methodName: 'Readings',
-                timeCaptured: Timestamp.fromDateTime(timeCaptured2),
-                organizationId: 'orgId1',
-                locationId: 'locationId1',
-                robotName: 'robot1',
-                robotId: 'robotId1',
-                partName: 'part1',
-                methodParameters: methodParams2.toStruct(),
-                tags: [],
-                payload: payload2.toStruct(),
-              ),
-            ]));
+        when(serviceClient.exportTabularData(any)).thenAnswer(
+          (_) => MockResponseStream.list([
+            ExportTabularDataResponse(
+              partId: 'partId1',
+              resourceName: 'resourceName1',
+              resourceSubtype: 'resourceSubtype1',
+              methodName: 'Readings',
+              timeCaptured: Timestamp.fromDateTime(timeCaptured1),
+              organizationId: 'orgId1',
+              locationId: 'locationId1',
+              robotName: 'robot1',
+              robotId: 'robotId1',
+              partName: 'part1',
+              methodParameters: methodParams1.toStruct(),
+              tags: [],
+              payload: payload1.toStruct(),
+            ),
+            ExportTabularDataResponse(
+              partId: 'partId1',
+              resourceName: 'resourceName1',
+              resourceSubtype: 'resourceSubtype1',
+              methodName: 'Readings',
+              timeCaptured: Timestamp.fromDateTime(timeCaptured2),
+              organizationId: 'orgId1',
+              locationId: 'locationId1',
+              robotName: 'robot1',
+              robotId: 'robotId1',
+              partName: 'part1',
+              methodParameters: methodParams2.toStruct(),
+              tags: [],
+              payload: payload2.toStruct(),
+            ),
+          ]),
+        );
 
         final response = await dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null, null);
         var index = 0;
@@ -337,8 +362,15 @@ void main() {
           ]);
         });
 
-        final response =
-            await dataClient.exportTabularData('partId1', 'resourceName1', 'resourceSubtype1', 'methodName', null, null, additionalParams);
+        final response = await dataClient.exportTabularData(
+          'partId1',
+          'resourceName1',
+          'resourceSubtype1',
+          'methodName',
+          null,
+          null,
+          additionalParams,
+        );
 
         expect(response, hasLength(1));
         final point = response.first;
@@ -358,24 +390,27 @@ void main() {
       });
 
       test('deleteTabularData', () async {
-        when(serviceClient.deleteTabularData(any))
-            .thenAnswer((_) => MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(12)));
+        when(
+          serviceClient.deleteTabularData(any),
+        ).thenAnswer((_) => MockResponseFuture.value(DeleteTabularDataResponse()..deletedCount = Int64(12)));
 
         final response = await dataClient.deleteTabularData('some_org_id', 5);
         expect(response, equals(12));
       });
 
       test('deleteBinaryDataByFilter', () async {
-        when(serviceClient.deleteBinaryDataByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByFilterResponse()..deletedCount = Int64(12)));
+        when(
+          serviceClient.deleteBinaryDataByFilter(any),
+        ).thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByFilterResponse()..deletedCount = Int64(12)));
 
         final response = await dataClient.deleteBinaryDataByFilter(Filter(), includeInternalData: true);
         expect(response, equals(12));
       });
 
       test('deleteBinaryDataByIds', () async {
-        when(serviceClient.deleteBinaryDataByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByIDsResponse()..deletedCount = Int64(12)));
+        when(
+          serviceClient.deleteBinaryDataByIDs(any),
+        ).thenAnswer((_) => MockResponseFuture.value(DeleteBinaryDataByIDsResponse()..deletedCount = Int64(12)));
 
         final response = await dataClient.deleteBinaryDataByIds(['file']);
         expect(response, equals(12));
@@ -388,39 +423,44 @@ void main() {
       });
 
       test('addTagsToBinaryDataByFilter', () async {
-        when(serviceClient.addTagsToBinaryDataByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
+        when(
+          serviceClient.addTagsToBinaryDataByFilter(any),
+        ).thenAnswer((_) => MockResponseFuture.value(AddTagsToBinaryDataByFilterResponse()));
         await dataClient.addTagsToBinaryDataByFilter(['tags'], Filter());
         verify(serviceClient.addTagsToBinaryDataByFilter(any)).called(1);
       });
 
       test('removeTagsFromBinaryDataByFilter', () async {
-        when(serviceClient.removeTagsFromBinaryDataByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByFilterResponse(deletedCount: Int64(15))));
+        when(
+          serviceClient.removeTagsFromBinaryDataByFilter(any),
+        ).thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByFilterResponse(deletedCount: Int64(15))));
 
         final response = await dataClient.removeTagsFromBinaryDataByFilter(['tags'], Filter());
         expect(response, equals(15));
       });
 
       test('removeTagsFromBinaryDataByIds', () async {
-        when(serviceClient.removeTagsFromBinaryDataByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByIDsResponse(deletedCount: Int64(18))));
+        when(
+          serviceClient.removeTagsFromBinaryDataByIDs(any),
+        ).thenAnswer((_) => MockResponseFuture.value(RemoveTagsFromBinaryDataByIDsResponse(deletedCount: Int64(18))));
 
         final response = await dataClient.removeTagsFromBinaryDataByIds(['tags'], ['file']);
         expect(response, equals(18));
       });
 
       test('addBoundingBoxToImageById', () async {
-        when(serviceClient.addBoundingBoxToImageByID(any))
-            .thenAnswer((_) => MockResponseFuture.value(AddBoundingBoxToImageByIDResponse(bboxId: 'bboxId')));
+        when(
+          serviceClient.addBoundingBoxToImageByID(any),
+        ).thenAnswer((_) => MockResponseFuture.value(AddBoundingBoxToImageByIDResponse(bboxId: 'bboxId')));
 
         final response = await dataClient.addBoundingBoxToImageById('label', 'file', 0.1, 0.2, 0.3, 0.4);
         expect(response, equals('bboxId'));
       });
 
       test('removeBoundingBoxFromImageById', () async {
-        when(serviceClient.removeBoundingBoxFromImageByID(any))
-            .thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
+        when(
+          serviceClient.removeBoundingBoxFromImageByID(any),
+        ).thenAnswer((_) => MockResponseFuture.value(RemoveBoundingBoxFromImageByIDResponse()));
         await dataClient.removeBoundingBoxFromImageById('bboxId', 'file');
         verify(serviceClient.removeBoundingBoxFromImageByID(any)).called(1);
       });
@@ -433,16 +473,18 @@ void main() {
       });
 
       test('boundingBoxLabelsByFilter', () async {
-        when(serviceClient.boundingBoxLabelsByFilter(any))
-            .thenAnswer((_) => MockResponseFuture.value(BoundingBoxLabelsByFilterResponse(labels: ['label'])));
+        when(
+          serviceClient.boundingBoxLabelsByFilter(any),
+        ).thenAnswer((_) => MockResponseFuture.value(BoundingBoxLabelsByFilterResponse(labels: ['label'])));
 
         final response = await dataClient.boundingBoxLabelsByFilter(Filter());
         expect(response, equals(['label']));
       });
 
       test('getDatabaseConnection', () async {
-        when(serviceClient.getDatabaseConnection(any)).thenAnswer((_) =>
-            MockResponseFuture.value(GetDatabaseConnectionResponse(hostname: 'hostname', mongodbUri: 'mongo', hasDatabaseUser: true)));
+        when(serviceClient.getDatabaseConnection(any)).thenAnswer(
+          (_) => MockResponseFuture.value(GetDatabaseConnectionResponse(hostname: 'hostname', mongodbUri: 'mongo', hasDatabaseUser: true)),
+        );
 
         final response = await dataClient.getDatabaseConnection('orgId');
         expect(response.hostname, equals('hostname'));
@@ -457,15 +499,17 @@ void main() {
       });
 
       test('addBinaryDataToDatasetByIds', () async {
-        when(serviceClient.addBinaryDataToDatasetByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
+        when(
+          serviceClient.addBinaryDataToDatasetByIDs(any),
+        ).thenAnswer((_) => MockResponseFuture.value(AddBinaryDataToDatasetByIDsResponse()));
         await dataClient.addBinaryDataToDatasetByIds(['file'], 'dataset');
         verify(serviceClient.addBinaryDataToDatasetByIDs(any)).called(1);
       });
 
       test('removeBinaryDataFromDatasetByIds', () async {
-        when(serviceClient.removeBinaryDataFromDatasetByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
+        when(
+          serviceClient.removeBinaryDataFromDatasetByIDs(any),
+        ).thenAnswer((_) => MockResponseFuture.value(RemoveBinaryDataFromDatasetByIDsResponse()));
         await dataClient.removeBinaryDataFromDatasetByIds(['file'], 'dataset');
         verify(serviceClient.removeBinaryDataFromDatasetByIDs(any)).called(1);
       });
@@ -474,10 +518,15 @@ void main() {
         final timeSynced = DateTime.utc(2023, 1, 2);
         final Map<String, dynamic> payload = {'key': 'value'};
 
-        when(serviceClient.getLatestTabularData(any)).thenAnswer((_) => MockResponseFuture.value(GetLatestTabularDataResponse(
-            timeCaptured: Timestamp.fromDateTime(timeCaptured),
-            timeSynced: Timestamp.fromDateTime(timeSynced),
-            payload: payload.toStruct())));
+        when(serviceClient.getLatestTabularData(any)).thenAnswer(
+          (_) => MockResponseFuture.value(
+            GetLatestTabularDataResponse(
+              timeCaptured: Timestamp.fromDateTime(timeCaptured),
+              timeSynced: Timestamp.fromDateTime(timeSynced),
+              payload: payload.toStruct(),
+            ),
+          ),
+        );
 
         final response = await dataClient.getLatestTabularData('part-id', 'resource-name', 'resource-subtype', 'method-name', null);
 
@@ -504,8 +553,9 @@ void main() {
           ..partId = 'partId'
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'fileName'
+          ..datasetIds = ["datasetId"]
           ..fileExtension = '.jpeg';
-        await dataClient.uploadImage(image, 'partId', fileName: 'fileName');
+        await dataClient.uploadImage(image, 'partId', fileName: 'fileName', datasetIds: ["datasetId"]);
         expect(syncServiceClient.metadata, expected);
 
         await dataClient.uploadImage(image, 'partId');
@@ -517,24 +567,37 @@ void main() {
           ..partId = 'partId'
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'null'
+          ..datasetIds = ["datasetId"]
           ..fileExtension = '';
-        await dataClient.uploadFile('/dev/null', 'partId');
+        await dataClient.uploadFile('/dev/null', 'partId', datasetIds: ["datasetId"]);
         expect(syncServiceClient.metadata, expected);
 
-        await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName');
+        await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName', datasetIds: ["datasetId"]);
         expect(syncServiceClient.metadata?.fileName, equals('otherName'));
       });
 
       test('binaryDataCaptureUpload', () async {
-        final response = await dataClient
-            .binaryDataCaptureUpload([1], 'partId', 'fileExt', componentType: 'type', componentName: 'name', methodName: 'name');
+        final response = await dataClient.binaryDataCaptureUpload(
+          [1],
+          'partId',
+          'fileExt',
+          componentType: 'type',
+          componentName: 'name',
+          methodName: 'name',
+          datasetIds: ["datasetId"]
+        );
         expect(response, equals('fileId'));
       });
 
       test('tabularDataCaptureUpload', () async {
         final map = {'foo': 'bar', 'baz': false};
-        final response =
-            await dataClient.tabularDataCaptureUpload([map], 'partId', componentType: 'type', componentName: 'name', methodName: 'name');
+        final response = await dataClient.tabularDataCaptureUpload(
+          [map],
+          'partId',
+          componentType: 'type',
+          componentName: 'name',
+          methodName: 'name',
+        );
         expect(response, equals('fileId'));
       });
 
@@ -545,8 +608,9 @@ void main() {
           ..fileExtension = '.txt'
           ..methodName = ''
           ..componentType = ''
+          ..datasetIds = ["datasetId"]
           ..componentName = '';
-        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt');
+        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', datasetIds: ["datasetId"]);
         expect(syncServiceClient.dataCaptureMetadata, expected);
 
         await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', componentName: 'myCoolArm');
@@ -584,11 +648,12 @@ void main() {
             ..id = 'id'
             ..name = 'name'
             ..organizationId = 'orgId'
-            ..timeCreated = Timestamp()
+            ..timeCreated = Timestamp(),
         ];
 
-        when(datasetServiceClient.listDatasetsByOrganizationID(any))
-            .thenAnswer((_) => MockResponseFuture.value(ListDatasetsByOrganizationIDResponse()..datasets.addAll(expected)));
+        when(
+          datasetServiceClient.listDatasetsByOrganizationID(any),
+        ).thenAnswer((_) => MockResponseFuture.value(ListDatasetsByOrganizationIDResponse()..datasets.addAll(expected)));
 
         final response = await dataClient.listDatasetsByOrganizationID('orgId');
         expect(response, equals(expected));
@@ -600,11 +665,12 @@ void main() {
             ..id = 'id'
             ..name = 'name'
             ..organizationId = 'orgId'
-            ..timeCreated = Timestamp()
+            ..timeCreated = Timestamp(),
         ];
 
-        when(datasetServiceClient.listDatasetsByIDs(any))
-            .thenAnswer((_) => MockResponseFuture.value(ListDatasetsByIDsResponse()..datasets.addAll(expected)));
+        when(
+          datasetServiceClient.listDatasetsByIDs(any),
+        ).thenAnswer((_) => MockResponseFuture.value(ListDatasetsByIDsResponse()..datasets.addAll(expected)));
 
         final response = await dataClient.listDatasetsByIDs(['dataset-id']);
         expect(response, equals(expected));

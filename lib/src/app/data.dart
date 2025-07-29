@@ -1082,7 +1082,8 @@ class DataClient {
   ///       file.path,
   ///       fileName: fileName,
   ///       "<YOUR-PART-ID>",
-  ///       tags: ["text_file", "document"]
+  ///       tags: ["text_file", "document"],
+  ///       datasetIds: ["datasetId"]
   ///     );
   ///     print('Upload success: $result');
   ///   } catch (e) {
@@ -1128,9 +1129,8 @@ class DataClient {
     final file = File(path);
     final reader = ChunkedStreamReader(file.openRead());
     try {
-      final fileDataStream = reader
-          .readStream(file.lengthSync())
-          .map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
+      final fileDataStream =
+          reader.readStream(file.lengthSync()).map((event) => FileUploadRequest()..fileContents = (FileData()..data = event));
       final requestStream = StreamGroup.merge([metadataStream, fileDataStream]);
       final response = await _dataSyncClient.fileUpload(requestStream);
       return response.binaryDataId;
