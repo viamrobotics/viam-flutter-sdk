@@ -82,9 +82,8 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
   }
 
   ButtonStyle buttonStyle = ButtonStyle(
-    shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
-    foregroundColor: WidgetStateProperty.all(Colors.black)
-  );
+      shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+      foregroundColor: WidgetStateProperty.all(Colors.black));
 
   @override
   Widget build(BuildContext context) {
