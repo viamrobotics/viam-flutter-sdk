@@ -10,6 +10,7 @@ class FakeSwitch extends Switch {
   int position = 0;
   int numberOfPositions = 4;
   Map<String, dynamic>? extra;
+  List<String> labels = ['Off', 'Low', 'Medium', 'High'];
 
   @override
   String name;
@@ -31,6 +32,11 @@ class FakeSwitch extends Switch {
   @override
   Future<int> getNumberOfPositions({Map<String, dynamic>? extra}) async {
     return numberOfPositions;
+  }
+
+  @override
+  Future<List<String>> getLabels({Map<String, dynamic>? extra}) async {
+    return labels;
   }
 
   @override
@@ -71,6 +77,11 @@ void main() {
     test('getPosition should return the position', () async {
       final int testResult = await nswitch.getPosition();
       expect(testResult, nswitch.position);
+    });
+
+    test('getLabels should return the expected labels', () async {
+      final labels = await nswitch.getLabels();
+      expect(labels, nswitch.labels);
     });
 
     test('doCommand', () async {
