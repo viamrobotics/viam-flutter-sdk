@@ -219,7 +219,8 @@ Future<String> _searchMdns(String address) async {
     } else if (event.type == BonsoirDiscoveryEventType.discoveryServiceResolved) {
       final service = event.service! as ResolvedBonsoirService;
       if (service.name == targetName && service.host != null) {
-        localAddress = '${service.host!}:${service.port}';
+        final host = service.host!.endsWith('.') ? service.host!.substring(0, service.host!.length - 1) : service.host!;
+        localAddress = '$host:${service.port}';
       }
     }
   });
