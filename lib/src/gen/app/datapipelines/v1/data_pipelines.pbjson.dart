@@ -151,37 +151,28 @@ const CreateDataPipelineResponse$json = {
 final $typed_data.Uint8List createDataPipelineResponseDescriptor = $convert.base64Decode(
     'ChpDcmVhdGVEYXRhUGlwZWxpbmVSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQ=');
 
-@$core.Deprecated('Use updateDataPipelineRequestDescriptor instead')
-const UpdateDataPipelineRequest$json = {
-  '1': 'UpdateDataPipelineRequest',
+@$core.Deprecated('Use renameDataPipelineRequestDescriptor instead')
+const RenameDataPipelineRequest$json = {
+  '1': 'RenameDataPipelineRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
-    {'1': 'schedule', '3': 4, '4': 1, '5': 9, '10': 'schedule'},
-    {'1': 'data_source_type', '3': 5, '4': 1, '5': 14, '6': '.viam.app.data.v1.TabularDataSourceType', '9': 0, '10': 'dataSourceType', '17': true},
-  ],
-  '8': [
-    {'1': '_data_source_type'},
   ],
 };
 
-/// Descriptor for `UpdateDataPipelineRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateDataPipelineRequestDescriptor = $convert.base64Decode(
-    'ChlVcGRhdGVEYXRhUGlwZWxpbmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgAS'
-    'gJUgRuYW1lEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeRIaCghzY2hlZHVsZRgEIAEo'
-    'CVIIc2NoZWR1bGUSVgoQZGF0YV9zb3VyY2VfdHlwZRgFIAEoDjInLnZpYW0uYXBwLmRhdGEudj'
-    'EuVGFidWxhckRhdGFTb3VyY2VUeXBlSABSDmRhdGFTb3VyY2VUeXBliAEBQhMKEV9kYXRhX3Nv'
-    'dXJjZV90eXBl');
+/// Descriptor for `RenameDataPipelineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameDataPipelineRequestDescriptor = $convert.base64Decode(
+    'ChlSZW5hbWVEYXRhUGlwZWxpbmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgAS'
+    'gJUgRuYW1l');
 
-@$core.Deprecated('Use updateDataPipelineResponseDescriptor instead')
-const UpdateDataPipelineResponse$json = {
-  '1': 'UpdateDataPipelineResponse',
+@$core.Deprecated('Use renameDataPipelineResponseDescriptor instead')
+const RenameDataPipelineResponse$json = {
+  '1': 'RenameDataPipelineResponse',
 };
 
-/// Descriptor for `UpdateDataPipelineResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateDataPipelineResponseDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVEYXRhUGlwZWxpbmVSZXNwb25zZQ==');
+/// Descriptor for `RenameDataPipelineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List renameDataPipelineResponseDescriptor = $convert.base64Decode(
+    'ChpSZW5hbWVEYXRhUGlwZWxpbmVSZXNwb25zZQ==');
 
 @$core.Deprecated('Use deleteDataPipelineRequestDescriptor instead')
 const DeleteDataPipelineRequest$json = {
