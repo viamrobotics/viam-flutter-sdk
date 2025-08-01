@@ -143,8 +143,13 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<TabularDataByFilterResponse> tabularDataByFilter(
-      {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
+  Future<TabularDataByFilterResponse> tabularDataByFilter({
+    Filter? filter,
+    int? limit,
+    Order? sortOrder,
+    String? last,
+    countOnly = false,
+  }) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
     final request = TabularDataByFilterRequest()
       ..dataRequest = dataRequest
@@ -184,8 +189,14 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<BinaryDataByFilterResponse> binaryDataByFilter(
-      {Filter? filter, int? limit, Order? sortOrder, String? last, bool countOnly = false, bool includeBinary = false}) async {
+  Future<BinaryDataByFilterResponse> binaryDataByFilter({
+    Filter? filter,
+    int? limit,
+    Order? sortOrder,
+    String? last,
+    bool countOnly = false,
+    bool includeBinary = false,
+  }) async {
     final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
     final request = BinaryDataByFilterRequest()
       ..dataRequest = dataRequest
@@ -381,21 +392,23 @@ class DataClient {
 
     return _dataClient
         .exportTabularData(request)
-        .map((response) => TabularDataPoint(
-              partId: response.partId,
-              resourceName: response.resourceName,
-              resourceSubtype: response.resourceSubtype,
-              methodName: response.methodName,
-              timeCaptured: response.timeCaptured.toDateTime(),
-              organizationId: response.organizationId,
-              locationId: response.locationId,
-              robotName: response.robotName,
-              robotId: response.robotId,
-              partName: response.partName,
-              methodParameters: response.methodParameters.toMap(),
-              tags: response.tags,
-              payload: response.payload.toMap(),
-            ))
+        .map(
+          (response) => TabularDataPoint(
+            partId: response.partId,
+            resourceName: response.resourceName,
+            resourceSubtype: response.resourceSubtype,
+            methodName: response.methodName,
+            timeCaptured: response.timeCaptured.toDateTime(),
+            organizationId: response.organizationId,
+            locationId: response.locationId,
+            robotName: response.robotName,
+            robotId: response.robotId,
+            partName: response.partName,
+            methodParameters: response.methodParameters.toMap(),
+            tags: response.tags,
+            payload: response.payload.toMap(),
+          ),
+        )
         .toList();
   }
 
@@ -673,7 +686,13 @@ class DataClient {
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
   Future<String> addBoundingBoxToImageById(
-      String label, String binaryDataId, double xMinNormalized, double yMinNormalized, double xMaxNormalized, double yMaxNormalized) async {
+    String label,
+    String binaryDataId,
+    double xMinNormalized,
+    double yMinNormalized,
+    double xMaxNormalized,
+    double yMaxNormalized,
+  ) async {
     final request = AddBoundingBoxToImageByIDRequest()
       ..label = label
       ..binaryDataId = binaryDataId
@@ -991,18 +1010,23 @@ class DataClient {
   ///  }
   /// ```
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<String> uploadImage(ViamImage image, String partId,
-      {String? fileName,
-      String? componentType,
-      String? componentName,
-      String? methodName,
-      Map<String, Any>? methodParameters,
-      Iterable<String> tags = const []}) async {
+  Future<String> uploadImage(
+    ViamImage image,
+    String partId, {
+    String? fileName,
+    String? componentType,
+    String? componentName,
+    String? methodName,
+    Map<String, Any>? methodParameters,
+    Iterable<String> datasetIds = const [],
+    Iterable<String> tags = const [],
+  }) async {
     final metadata = UploadMetadata()
       ..partId = partId
       ..type = DataType.DATA_TYPE_FILE
       ..fileName = fileName ?? DateTime.now().toIso8601String()
       ..fileExtension = '.${image.mimeType.type}'
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
@@ -1058,7 +1082,8 @@ class DataClient {
   ///       file.path,
   ///       fileName: fileName,
   ///       "<YOUR-PART-ID>",
-  ///       tags: ["text_file", "document"]
+  ///       tags: ["text_file", "document"],
+  ///       datasetIds: ["datasetId"]
   ///     );
   ///     print('Upload success: $result');
   ///   } catch (e) {
@@ -1068,13 +1093,17 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<String> uploadFile(String path, String partId,
-      {String? fileName,
-      String? componentType,
-      String? componentName,
-      String? methodName,
-      Map<String, Any>? methodParameters,
-      Iterable<String> tags = const []}) async {
+  Future<String> uploadFile(
+    String path,
+    String partId, {
+    String? fileName,
+    String? componentType,
+    String? componentName,
+    String? methodName,
+    Map<String, Any>? methodParameters,
+    Iterable<String> datasetIds = const [],
+    Iterable<String> tags = const [],
+  }) async {
     final fileNameAndExt = path.split(Platform.pathSeparator).last;
     String fName, ext;
     if (fileNameAndExt.contains('.')) {
@@ -1089,6 +1118,7 @@ class DataClient {
       ..type = DataType.DATA_TYPE_FILE
       ..fileName = fileName ?? fName
       ..fileExtension = ext
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (componentType != null) metadata.componentType = componentType;
     if (componentName != null) metadata.componentName = componentName;
@@ -1144,13 +1174,18 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<String> binaryDataCaptureUpload(List<int> binaryData, String partId, String fileExtension,
-      {String? componentType,
-      String? componentName,
-      String? methodName,
-      Map<String, Any>? methodParameters,
-      (DateTime, DateTime)? dataRequestTimes,
-      Iterable<String> tags = const []}) async {
+  Future<String> binaryDataCaptureUpload(
+    List<int> binaryData,
+    String partId,
+    String fileExtension, {
+    String? componentType,
+    String? componentName,
+    String? methodName,
+    Map<String, Any>? methodParameters,
+    (DateTime, DateTime)? dataRequestTimes,
+    Iterable<String> datasetIds = const [],
+    Iterable<String> tags = const [],
+  }) async {
     final sensorMetadata = SensorMetadata();
     if (dataRequestTimes != null) {
       sensorMetadata.timeRequested = Timestamp.fromDateTime(dataRequestTimes.$1);
@@ -1163,6 +1198,7 @@ class DataClient {
       ..componentName = componentName ?? ''
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (methodParameters != null) metadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
@@ -1226,13 +1262,16 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<String> tabularDataCaptureUpload(List<Map<String, dynamic>> tabularData, String partId,
-      {String? componentType,
-      String? componentName,
-      String? methodName,
-      Map<String, Any>? methodParameters,
-      List<(DateTime, DateTime)>? dataRequestTimes,
-      Iterable<String> tags = const []}) async {
+  Future<String> tabularDataCaptureUpload(
+    List<Map<String, dynamic>> tabularData,
+    String partId, {
+    String? componentType,
+    String? componentName,
+    String? methodName,
+    Map<String, Any>? methodParameters,
+    List<(DateTime, DateTime)>? dataRequestTimes,
+    Iterable<String> tags = const [],
+  }) async {
     if (dataRequestTimes != null && dataRequestTimes.length != tabularData.length) {
       throw Exception('dataRequestTimes and tabularData lengths must be equal');
     }
@@ -1341,19 +1380,25 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<String> streamingDataCaptureUpload(List<int> bytes, String partId, String fileExtension,
-      {String? componentType,
-      String? componentName,
-      String? methodName,
-      Map<String, Any>? methodParameters,
-      (DateTime, DateTime)? dataRequestTimes,
-      Iterable<String> tags = const []}) async {
+  Future<String> streamingDataCaptureUpload(
+    List<int> bytes,
+    String partId,
+    String fileExtension, {
+    String? componentType,
+    String? componentName,
+    String? methodName,
+    Map<String, Any>? methodParameters,
+    (DateTime, DateTime)? dataRequestTimes,
+    Iterable<String> datasetIds = const [],
+    Iterable<String> tags = const [],
+  }) async {
     final uploadMetadata = UploadMetadata()
       ..partId = partId
       ..componentType = componentType ?? ''
       ..componentName = componentName ?? ''
       ..methodName = methodName ?? ''
       ..type = DataType.DATA_TYPE_BINARY_SENSOR
+      ..datasetIds.addAll(datasetIds)
       ..tags.addAll(tags);
     if (methodParameters != null) uploadMetadata.methodParameters.addAll(methodParameters);
     if (fileExtension.isEmpty) {
