@@ -115,13 +115,16 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;String&gt; tabularDataCaptureUpload(List&lt;Map&lt;String, dynamic&gt;&gt; tabularData, String partId,
-    {String? componentType,
-    String? componentName,
-    String? methodName,
-    Map&lt;String, Any&gt;? methodParameters,
-    List&lt;(DateTime, DateTime)&gt;? dataRequestTimes,
-    Iterable&lt;String&gt; tags = const []}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;String&gt; tabularDataCaptureUpload(
+  List&lt;Map&lt;String, dynamic&gt;&gt; tabularData,
+  String partId, {
+  String? componentType,
+  String? componentName,
+  String? methodName,
+  Map&lt;String, Any&gt;? methodParameters,
+  List&lt;(DateTime, DateTime)&gt;? dataRequestTimes,
+  Iterable&lt;String&gt; tags = const [],
+}) async {
   if (dataRequestTimes != null &amp;&amp; dataRequestTimes.length != tabularData.length) {
     throw Exception(&#39;dataRequestTimes and tabularData lengths must be equal&#39;);
   }

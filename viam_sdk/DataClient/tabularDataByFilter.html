@@ -106,8 +106,13 @@ try {
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;TabularDataByFilterResponse&gt; tabularDataByFilter(
-    {Filter? filter, int? limit, Order? sortOrder, String? last, countOnly = false}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;TabularDataByFilterResponse&gt; tabularDataByFilter({
+  Filter? filter,
+  int? limit,
+  Order? sortOrder,
+  String? last,
+  countOnly = false,
+}) async {
   final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
   final request = TabularDataByFilterRequest()
     ..dataRequest = dataRequest

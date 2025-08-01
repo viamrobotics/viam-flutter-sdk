@@ -103,8 +103,14 @@ try {
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;BinaryDataByFilterResponse&gt; binaryDataByFilter(
-    {Filter? filter, int? limit, Order? sortOrder, String? last, bool countOnly = false, bool includeBinary = false}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;BinaryDataByFilterResponse&gt; binaryDataByFilter({
+  Filter? filter,
+  int? limit,
+  Order? sortOrder,
+  String? last,
+  bool countOnly = false,
+  bool includeBinary = false,
+}) async {
   final dataRequest = _makeDataRequest(filter, limit, last, sortOrder);
   final request = BinaryDataByFilterRequest()
     ..dataRequest = dataRequest

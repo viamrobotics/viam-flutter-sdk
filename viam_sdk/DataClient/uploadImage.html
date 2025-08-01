@@ -62,6 +62,7 @@
 <li><span class="parameter" id="uploadImage-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
 <li><span class="parameter" id="uploadImage-param-methodName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">methodName</span>, </span></li>
 <li><span class="parameter" id="uploadImage-param-methodParameters"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">Any</span>&gt;</span>?</span> <span class="parameter-name">methodParameters</span>, </span></li>
+<li><span class="parameter" id="uploadImage-param-datasetIds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">datasetIds</span> = <span class="default-value">const []</span>, </span></li>
 <li><span class="parameter" id="uploadImage-param-tags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tags</span> = <span class="default-value">const []</span>, </span></li>
 </ol>})
 
@@ -147,18 +148,23 @@ void _uploadData() async {
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;String&gt; uploadImage(ViamImage image, String partId,
-    {String? fileName,
-    String? componentType,
-    String? componentName,
-    String? methodName,
-    Map&lt;String, Any&gt;? methodParameters,
-    Iterable&lt;String&gt; tags = const []}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;String&gt; uploadImage(
+  ViamImage image,
+  String partId, {
+  String? fileName,
+  String? componentType,
+  String? componentName,
+  String? methodName,
+  Map&lt;String, Any&gt;? methodParameters,
+  Iterable&lt;String&gt; datasetIds = const [],
+  Iterable&lt;String&gt; tags = const [],
+}) async {
   final metadata = UploadMetadata()
     ..partId = partId
     ..type = DataType.DATA_TYPE_FILE
     ..fileName = fileName ?? DateTime.now().toIso8601String()
     ..fileExtension = &#39;.${image.mimeType.type}&#39;
+    ..datasetIds.addAll(datasetIds)
     ..tags.addAll(tags);
   if (componentType != null) metadata.componentType = componentType;
   if (componentName != null) metadata.componentName = componentName;
