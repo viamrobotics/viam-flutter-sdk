@@ -30,11 +30,20 @@ abstract class Switch extends Resource {
   /// Get the number of available positions (int) of the [Switch].
   ///
   /// ```
-  /// await myServo.getNumberOfPositions();
+  /// await mySwitch.getNumberOfPositions();
   /// ```
   ///
   /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions).
   Future<int> getNumberOfPositions({Map<String, dynamic>? extra});
+
+  /// Get the list of labels associated with each position of the [Switch].
+  ///
+  /// ```
+  /// var labels = await mySwitch.getLabels();
+  /// ```
+  ///
+  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions).
+  Future<List<String>> getLabels({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Switch] with the given [name].
   ///

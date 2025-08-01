@@ -18,6 +18,7 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
   int position = 0;
   String newPosition = '0';
   int? numberOfPositions;
+  List<String>? labels;
   Error? error;
 
   @override
@@ -25,6 +26,7 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
     super.initState();
     _getPosition();
     _getNumberOfPositions();
+    _getLabels();
   }
 
   Future<void> _getPosition() async {
@@ -66,15 +68,23 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
     }
   }
 
-  SliderThemeData get _sliderTheme {
-    return SliderThemeData(
-      trackHeight: 10,
-      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10, disabledThumbRadius: 10),
-      activeTrackColor: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
-      inactiveTrackColor: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
-      trackShape: const RectangularSliderTrackShape(),
-    );
+  Future<void> _getLabels() async {
+    try {
+      final labels = await widget.nswitch.getLabels();
+      if (mounted) {
+        setState(() {
+          this.labels = labels;
+        });
+      }
+    } catch (e) {
+      error = e as Error;
+    }
   }
+
+  ButtonStyle buttonStyle = ButtonStyle(
+    shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+    foregroundColor: WidgetStateProperty.all(Colors.black)
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -82,19 +92,31 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
       return const Text('Loading...');
     }
 
+    final List<String> finalLabels = List.generate(
+      numberOfPositions!,
+      (index) => (labels != null && index < labels!.length) ? labels![index] : '$index',
+    );
+
+    final List<ButtonSegment<int>> segments = List.generate(numberOfPositions!, (index) {
+      return ButtonSegment<int>(
+        value: index,
+        label: Text(finalLabels[index]),
+      );
+    });
+
+    void updateSelected(Set<int> selected) {
+      _setPosition(selected.first);
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SliderTheme(
-          data: _sliderTheme,
-          child: Slider(
-            value: position.toDouble(),
-            max: numberOfPositions! - 1.0,
-            min: 0.0,
-            divisions: numberOfPositions! - 1,
-            label: '$position',
-            onChanged: (double value) => _setPosition(value.toInt()),
-          ),
+        SegmentedButton<int>(
+          segments: segments,
+          selected: {position},
+          onSelectionChanged: updateSelected,
+          showSelectedIcon: false,
+          style: buttonStyle,
         ),
         if (error != null) Text('Error: $error', style: const TextStyle(color: Colors.red)),
       ],
