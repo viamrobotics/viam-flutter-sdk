@@ -40,21 +40,12 @@ class SwitchClient extends Switch with RPCDebugLoggerMixin implements ResourceRP
   }
 
   @override
-  Future<int> getNumberOfPositions({Map<String, dynamic>? extra}) async {
+  Future<PositionsInfo> getNumberOfPositionsWithLabels({Map<String, dynamic>? extra}) async {
     final request = GetNumberOfPositionsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getNumberOfPositions(request, options: callOptions);
-    return response.numberOfPositions;
-  }
-
-  @override
-  Future<List<String>> getLabels({Map<String, dynamic>? extra}) async {
-    final request = GetNumberOfPositionsRequest()
-      ..name = name
-      ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getNumberOfPositions(request, options: callOptions);
-    return response.labels;
+    return PositionsInfo(numberOfPositions: response.numberOfPositions, labels: response.labels);
   }
 
   @override

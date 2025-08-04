@@ -6,6 +6,13 @@ import '../../robot/client.dart';
 /// Switch represents a set of finite positions.
 ///
 /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
+class PositionsInfo {
+  final int numberOfPositions;
+  final List<String>? labels;
+
+  PositionsInfo({required this.numberOfPositions, this.labels});
+}
+
 abstract class Switch extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'switch');
 
@@ -27,23 +34,14 @@ abstract class Switch extends Resource {
   /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/#position).
   Future<int> getPosition({Map<String, dynamic>? extra});
 
-  /// Get the number of available positions (int) of the [Switch].
+  /// Get the number of available positions (int) and the list of labels of the [Switch].
   ///
   /// ```
-  /// await mySwitch.getNumberOfPositions();
-  /// ```
-  ///
-  /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions).
-  Future<int> getNumberOfPositions({Map<String, dynamic>? extra});
-
-  /// Get the list of labels associated with each position of the [Switch].
-  ///
-  /// ```
-  /// var labels = await mySwitch.getLabels();
+  /// await mySwitch.getNumberOfPositionsWithLabels();
   /// ```
   ///
   /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions).
-  Future<List<String>> getLabels({Map<String, dynamic>? extra});
+  Future<PositionsInfo> getNumberOfPositionsWithLabels({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Switch] with the given [name].
   ///

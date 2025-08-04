@@ -57,10 +57,10 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
 
   Future<void> _getNumberOfPositions() async {
     try {
-      final numberOfPositions = await widget.nswitch.getNumberOfPositions();
+      final positionsInfo = await widget.nswitch.getNumberOfPositionsWithLabels();
       if (mounted) {
         setState(() {
-          this.numberOfPositions = numberOfPositions;
+          numberOfPositions = positionsInfo.numberOfPositions;
         });
       }
     } catch (e) {
@@ -70,10 +70,10 @@ class _ViamSwitchWidgetState extends State<ViamSwitchWidget> {
 
   Future<void> _getLabels() async {
     try {
-      final labels = await widget.nswitch.getLabels();
+      final positionsInfo = await widget.nswitch.getNumberOfPositionsWithLabels();
       if (mounted) {
         setState(() {
-          this.labels = labels;
+          labels = positionsInfo.labels;
         });
       }
     } catch (e) {
