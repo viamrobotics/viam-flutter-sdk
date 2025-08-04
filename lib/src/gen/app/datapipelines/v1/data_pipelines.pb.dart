@@ -560,13 +560,10 @@ class CreateDataPipelineResponse extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
-class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
-  factory UpdateDataPipelineRequest({
+class RenameDataPipelineRequest extends $pb.GeneratedMessage {
+  factory RenameDataPipelineRequest({
     $core.String? id,
     $core.String? name,
-    $core.Iterable<$core.List<$core.int>>? mqlBinary,
-    $core.String? schedule,
-    $3.TabularDataSourceType? dataSourceType,
   }) {
     final $result = create();
     if (id != null) {
@@ -575,27 +572,15 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (mqlBinary != null) {
-      $result.mqlBinary.addAll(mqlBinary);
-    }
-    if (schedule != null) {
-      $result.schedule = schedule;
-    }
-    if (dataSourceType != null) {
-      $result.dataSourceType = dataSourceType;
-    }
     return $result;
   }
-  UpdateDataPipelineRequest._() : super();
-  factory UpdateDataPipelineRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateDataPipelineRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  RenameDataPipelineRequest._() : super();
+  factory RenameDataPipelineRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RenameDataPipelineRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDataPipelineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenameDataPipelineRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
-    ..aOS(4, _omitFieldNames ? '' : 'schedule')
-    ..e<$3.TabularDataSourceType>(5, _omitFieldNames ? '' : 'dataSourceType', $pb.PbFieldType.OE, defaultOrMaker: $3.TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: $3.TabularDataSourceType.valueOf, enumValues: $3.TabularDataSourceType.values)
     ..hasRequiredFields = false
   ;
 
@@ -603,24 +588,24 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateDataPipelineRequest clone() => UpdateDataPipelineRequest()..mergeFromMessage(this);
+  RenameDataPipelineRequest clone() => RenameDataPipelineRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateDataPipelineRequest copyWith(void Function(UpdateDataPipelineRequest) updates) => super.copyWith((message) => updates(message as UpdateDataPipelineRequest)) as UpdateDataPipelineRequest;
+  RenameDataPipelineRequest copyWith(void Function(RenameDataPipelineRequest) updates) => super.copyWith((message) => updates(message as RenameDataPipelineRequest)) as RenameDataPipelineRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateDataPipelineRequest create() => UpdateDataPipelineRequest._();
-  UpdateDataPipelineRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateDataPipelineRequest> createRepeated() => $pb.PbList<UpdateDataPipelineRequest>();
+  static RenameDataPipelineRequest create() => RenameDataPipelineRequest._();
+  RenameDataPipelineRequest createEmptyInstance() => create();
+  static $pb.PbList<RenameDataPipelineRequest> createRepeated() => $pb.PbList<RenameDataPipelineRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateDataPipelineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDataPipelineRequest>(create);
-  static UpdateDataPipelineRequest? _defaultInstance;
+  static RenameDataPipelineRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenameDataPipelineRequest>(create);
+  static RenameDataPipelineRequest? _defaultInstance;
 
-  /// The ID of the data pipeline to update.
+  /// The ID of the data pipeline to rename.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -630,7 +615,7 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
-  /// A unique identifier at the org level.
+  /// A unique identifier at the organization level.
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -639,41 +624,15 @@ class UpdateDataPipelineRequest extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
-
-  /// A MongoDB aggregation pipeline as a list of BSON documents, where
-  /// each document is one stage in the pipeline.
-  @$pb.TagNumber(3)
-  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(2);
-
-  /// A cron expression representing the expected execution schedule in UTC (note this also
-  /// defines the input time window; an hourly schedule would process 1 hour of data at a time).
-  @$pb.TagNumber(4)
-  $core.String get schedule => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set schedule($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasSchedule() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSchedule() => clearField(4);
-
-  /// The type of data source for the pipeline. If not specified, default is standard data storage.
-  @$pb.TagNumber(5)
-  $3.TabularDataSourceType get dataSourceType => $_getN(4);
-  @$pb.TagNumber(5)
-  set dataSourceType($3.TabularDataSourceType v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasDataSourceType() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearDataSourceType() => clearField(5);
 }
 
-class UpdateDataPipelineResponse extends $pb.GeneratedMessage {
-  factory UpdateDataPipelineResponse() => create();
-  UpdateDataPipelineResponse._() : super();
-  factory UpdateDataPipelineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateDataPipelineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class RenameDataPipelineResponse extends $pb.GeneratedMessage {
+  factory RenameDataPipelineResponse() => create();
+  RenameDataPipelineResponse._() : super();
+  factory RenameDataPipelineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RenameDataPipelineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDataPipelineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RenameDataPipelineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -681,22 +640,22 @@ class UpdateDataPipelineResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateDataPipelineResponse clone() => UpdateDataPipelineResponse()..mergeFromMessage(this);
+  RenameDataPipelineResponse clone() => RenameDataPipelineResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateDataPipelineResponse copyWith(void Function(UpdateDataPipelineResponse) updates) => super.copyWith((message) => updates(message as UpdateDataPipelineResponse)) as UpdateDataPipelineResponse;
+  RenameDataPipelineResponse copyWith(void Function(RenameDataPipelineResponse) updates) => super.copyWith((message) => updates(message as RenameDataPipelineResponse)) as RenameDataPipelineResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateDataPipelineResponse create() => UpdateDataPipelineResponse._();
-  UpdateDataPipelineResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateDataPipelineResponse> createRepeated() => $pb.PbList<UpdateDataPipelineResponse>();
+  static RenameDataPipelineResponse create() => RenameDataPipelineResponse._();
+  RenameDataPipelineResponse createEmptyInstance() => create();
+  static $pb.PbList<RenameDataPipelineResponse> createRepeated() => $pb.PbList<RenameDataPipelineResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateDataPipelineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDataPipelineResponse>(create);
-  static UpdateDataPipelineResponse? _defaultInstance;
+  static RenameDataPipelineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RenameDataPipelineResponse>(create);
+  static RenameDataPipelineResponse? _defaultInstance;
 }
 
 class DeleteDataPipelineRequest extends $pb.GeneratedMessage {

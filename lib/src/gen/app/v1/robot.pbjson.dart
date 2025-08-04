@@ -559,6 +559,7 @@ const RemoteConfig$json = {
     {'1': 'reconnect_interval', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'reconnectInterval'},
     {'1': 'service_configs', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.ResourceLevelServiceConfig', '8': {}, '10': 'serviceConfigs'},
     {'1': 'secret', '3': 10, '4': 1, '5': 9, '10': 'secret'},
+    {'1': 'prefix', '3': 11, '4': 1, '5': 9, '10': 'prefix'},
   ],
 };
 
@@ -573,7 +574,7 @@ final $typed_data.Uint8List remoteConfigDescriptor = $convert.base64Decode(
     'b3RvYnVmLkR1cmF0aW9uUhFyZWNvbm5lY3RJbnRlcnZhbBJsCg9zZXJ2aWNlX2NvbmZpZ3MYCS'
     'ADKAsyJy52aWFtLmFwcC52MS5SZXNvdXJjZUxldmVsU2VydmljZUNvbmZpZ0IamoSeAxVqc29u'
     'OiJzZXJ2aWNlX2NvbmZpZyJSDnNlcnZpY2VDb25maWdzEhYKBnNlY3JldBgKIAEoCVIGc2Vjcm'
-    'V0');
+    'V0EhYKBnByZWZpeBgLIAEoCVIGcHJlZml4');
 
 @$core.Deprecated('Use remoteAuthDescriptor instead')
 const RemoteAuth$json = {
