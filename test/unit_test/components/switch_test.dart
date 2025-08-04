@@ -30,13 +30,11 @@ class FakeSwitch extends Switch {
   }
 
   @override
-  Future<int> getNumberOfPositions({Map<String, dynamic>? extra}) async {
-    return numberOfPositions;
-  }
-
-  @override
-  Future<List<String>> getLabels({Map<String, dynamic>? extra}) async {
-    return labels;
+  Future<PositionsInfo> getNumberOfPositionsWithLabels({Map<String, dynamic>? extra}) async {
+    return PositionsInfo(
+      numberOfPositions: numberOfPositions,
+      labels: labels,
+    );
   }
 
   @override
@@ -59,9 +57,10 @@ void main() {
       expect(nswitch.position, 0);
     });
 
-    test('getNumberOfPositions should return number of available positions', () async {
-      final int testResult = await nswitch.getNumberOfPositions();
-      expect(testResult, nswitch.numberOfPositions);
+    test('getNumberOfPositionsWithLabels should return number of available positions and labels', () async {
+      final testResult = await nswitch.getNumberOfPositionsWithLabels();
+      expect(testResult.numberOfPositions, nswitch.numberOfPositions);
+      expect(testResult.labels, nswitch.labels);
     });
 
     test('name should be constructed with the value passed in', () {
@@ -77,11 +76,6 @@ void main() {
     test('getPosition should return the position', () async {
       final int testResult = await nswitch.getPosition();
       expect(testResult, nswitch.position);
-    });
-
-    test('getLabels should return the expected labels', () async {
-      final labels = await nswitch.getLabels();
-      expect(labels, nswitch.labels);
     });
 
     test('doCommand', () async {
@@ -144,10 +138,11 @@ void main() {
         expect(response.position, nswitch.position);
       });
 
-      test('getNumberOfPositions should return number of available positions', () async {
+      test('getNumberOfPositionsWithLabels should return number of available positions and labels', () async {
         final client = SwitchServiceClient(channel);
         final response = await client.getNumberOfPositions(GetNumberOfPositionsRequest()..name = name);
         expect(response.numberOfPositions, nswitch.numberOfPositions);
+        expect(response.labels, nswitch.labels);
       });
 
       test('doCommand', () async {
@@ -173,10 +168,11 @@ void main() {
         expect(response, nswitch.position);
       });
 
-      test('getNumberOfPositions should return number of available positions', () async {
+      test('getNumberOfPositionsWithLabels should return number of available positions and labels', () async {
         final client = SwitchClient(nswitch.name, channel);
-        final response = await client.getNumberOfPositions();
-        expect(response, nswitch.numberOfPositions);
+        final response = await client.getNumberOfPositionsWithLabels();
+        expect(response.numberOfPositions, nswitch.numberOfPositions);
+        expect(response.labels, nswitch.labels);
       });
 
       test('doCommand', () async {
