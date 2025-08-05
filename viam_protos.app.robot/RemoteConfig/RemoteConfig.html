@@ -64,6 +64,7 @@
 <li><span class="parameter" id="-param-reconnectInterval"><span class="type-annotation">Duration?</span> <span class="parameter-name">reconnectInterval</span>, </span></li>
 <li><span class="parameter" id="-param-serviceConfigs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/ResourceLevelServiceConfig-class.html">ResourceLevelServiceConfig</a></span>&gt;</span>?</span> <span class="parameter-name">serviceConfigs</span>, </span></li>
 <li><span class="parameter" id="-param-secret"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">secret</span>, </span></li>
+<li><span class="parameter" id="-param-prefix"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefix</span>, </span></li>
 </ol>})
     </section>
     
@@ -83,6 +84,7 @@
   $46.Duration? reconnectInterval,
   $core.Iterable&lt;ResourceLevelServiceConfig&gt;? serviceConfigs,
   $core.String? secret,
+  $core.String? prefix,
 }) {
   final $result = create();
   if (name != null) {
@@ -114,6 +116,9 @@
   }
   if (secret != null) {
     $result.secret = secret;
+  }
+  if (prefix != null) {
+    $result.prefix = prefix;
   }
   return $result;
 }</code></pre>
