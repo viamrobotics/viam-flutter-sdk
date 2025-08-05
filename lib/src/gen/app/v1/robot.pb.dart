@@ -2718,6 +2718,7 @@ class RemoteConfig extends $pb.GeneratedMessage {
     $46.Duration? reconnectInterval,
     $core.Iterable<ResourceLevelServiceConfig>? serviceConfigs,
     $core.String? secret,
+    $core.String? prefix,
   }) {
     final $result = create();
     if (name != null) {
@@ -2750,6 +2751,9 @@ class RemoteConfig extends $pb.GeneratedMessage {
     if (secret != null) {
       $result.secret = secret;
     }
+    if (prefix != null) {
+      $result.prefix = prefix;
+    }
     return $result;
   }
   RemoteConfig._() : super();
@@ -2767,6 +2771,7 @@ class RemoteConfig extends $pb.GeneratedMessage {
     ..aOM<$46.Duration>(8, _omitFieldNames ? '' : 'reconnectInterval', subBuilder: $46.Duration.create)
     ..pc<ResourceLevelServiceConfig>(9, _omitFieldNames ? '' : 'serviceConfigs', $pb.PbFieldType.PM, subBuilder: ResourceLevelServiceConfig.create)
     ..aOS(10, _omitFieldNames ? '' : 'secret')
+    ..aOS(11, _omitFieldNames ? '' : 'prefix')
     ..hasRequiredFields = false
   ;
 
@@ -2883,6 +2888,16 @@ class RemoteConfig extends $pb.GeneratedMessage {
   $core.bool hasSecret() => $_has(9);
   @$pb.TagNumber(10)
   void clearSecret() => clearField(10);
+
+  /// A string with which to prefix all resource names fetched from this remote.
+  @$pb.TagNumber(11)
+  $core.String get prefix => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set prefix($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasPrefix() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPrefix() => clearField(11);
 }
 
 /// Credentials packages up both a type of credential along with its payload which
