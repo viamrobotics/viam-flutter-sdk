@@ -1,11 +1,16 @@
 # Changelog
 
-## [v0.7.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.7.0) (2025-07-14)
+## [v0.8.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.8.0) (2025-08-04)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.6...v0.7.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.7.0...v0.8.0)
 
 **Merged pull requests:**
 
+- RSDK-11510 - stop truncating mdns uri [\#412](https://github.com/viamrobotics/viam-flutter-sdk/pull/412) ([stuqdog](https://github.com/stuqdog))
+- DATA-4317: Added DatasetIDs as Input to data\_client [\#410](https://github.com/viamrobotics/viam-flutter-sdk/pull/410) ([etai-shuchatowitz](https://github.com/etai-shuchatowitz))
+- Automated Protos Update [\#408](https://github.com/viamrobotics/viam-flutter-sdk/pull/408) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#407](https://github.com/viamrobotics/viam-flutter-sdk/pull/407) ([viambot](https://github.com/viambot))
+- v0.7.0 [\#406](https://github.com/viamrobotics/viam-flutter-sdk/pull/406) ([github-actions[bot]](https://github.com/apps/github-actions))
 - DATA-4295: SDK/CLI changes to support ExportTabularData and GetLatestTabularData [\#405](https://github.com/viamrobotics/viam-flutter-sdk/pull/405) ([Emerald-Z](https://github.com/Emerald-Z))
 - v0.6.6 [\#404](https://github.com/viamrobotics/viam-flutter-sdk/pull/404) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Automated Protos Update [\#403](https://github.com/viamrobotics/viam-flutter-sdk/pull/403) ([viambot](https://github.com/viambot))
@@ -123,6 +128,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.7.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.7.0) (2025-07-14)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.6.6...v0.7.0)
 
 ## [v0.6.6](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.6.6) (2025-07-07)
 
