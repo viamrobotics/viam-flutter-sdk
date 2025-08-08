@@ -171,10 +171,14 @@ class GetImageResponse extends $pb.GeneratedMessage {
 class GetImagesRequest extends $pb.GeneratedMessage {
   factory GetImagesRequest({
     $core.String? name,
+    $47.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
     }
     return $result;
   }
@@ -184,6 +188,7 @@ class GetImagesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.camera.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -217,6 +222,18 @@ class GetImagesRequest extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $47.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($47.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $47.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetImagesResponse extends $pb.GeneratedMessage {

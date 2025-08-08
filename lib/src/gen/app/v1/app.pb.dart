@@ -16369,6 +16369,7 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
   factory GetAppContentResponse({
     $core.String? blobPath,
     $core.String? entrypoint,
+    AppType? appType,
   }) {
     final $result = create();
     if (blobPath != null) {
@@ -16376,6 +16377,9 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
     }
     if (entrypoint != null) {
       $result.entrypoint = entrypoint;
+    }
+    if (appType != null) {
+      $result.appType = appType;
     }
     return $result;
   }
@@ -16386,6 +16390,7 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppContentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'blobPath')
     ..aOS(2, _omitFieldNames ? '' : 'entrypoint')
+    ..e<AppType>(3, _omitFieldNames ? '' : 'appType', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..hasRequiredFields = false
   ;
 
@@ -16427,6 +16432,15 @@ class GetAppContentResponse extends $pb.GeneratedMessage {
   $core.bool hasEntrypoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearEntrypoint() => clearField(2);
+
+  @$pb.TagNumber(3)
+  AppType get appType => $_getN(2);
+  @$pb.TagNumber(3)
+  set appType(AppType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAppType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAppType() => clearField(3);
 }
 
 class OrganizationSetLogoRequest extends $pb.GeneratedMessage {

@@ -101,6 +101,21 @@ final $typed_data.Uint8List visibilityDescriptor = $convert.base64Decode(
     'BSSVZBVEUQARIVChFWSVNJQklMSVRZX1BVQkxJQxACEh4KGlZJU0lCSUxJVFlfUFVCTElDX1VO'
     'TElTVEVEEAM=');
 
+@$core.Deprecated('Use appTypeDescriptor instead')
+const AppType$json = {
+  '1': 'AppType',
+  '2': [
+    {'1': 'APP_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'APP_TYPE_SINGLE_MACHINE', '2': 1},
+    {'1': 'APP_TYPE_MULTI_MACHINE', '2': 2},
+  ],
+};
+
+/// Descriptor for `AppType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List appTypeDescriptor = $convert.base64Decode(
+    'CgdBcHBUeXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVEEAASGwoXQVBQX1RZUEVfU0lOR0xFX0'
+    '1BQ0hJTkUQARIaChZBUFBfVFlQRV9NVUxUSV9NQUNISU5FEAI=');
+
 @$core.Deprecated('Use clientAuthenticationDescriptor instead')
 const ClientAuthentication$json = {
   '1': 'ClientAuthentication',
@@ -3995,13 +4010,15 @@ const GetAppContentResponse$json = {
   '2': [
     {'1': 'blob_path', '3': 1, '4': 1, '5': 9, '10': 'blobPath'},
     {'1': 'entrypoint', '3': 2, '4': 1, '5': 9, '10': 'entrypoint'},
+    {'1': 'app_type', '3': 3, '4': 1, '5': 14, '6': '.viam.app.v1.AppType', '10': 'appType'},
   ],
 };
 
 /// Descriptor for `GetAppContentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAppContentResponseDescriptor = $convert.base64Decode(
     'ChVHZXRBcHBDb250ZW50UmVzcG9uc2USGwoJYmxvYl9wYXRoGAEgASgJUghibG9iUGF0aBIeCg'
-    'plbnRyeXBvaW50GAIgASgJUgplbnRyeXBvaW50');
+    'plbnRyeXBvaW50GAIgASgJUgplbnRyeXBvaW50Ei8KCGFwcF90eXBlGAMgASgOMhQudmlhbS5h'
+    'cHAudjEuQXBwVHlwZVIHYXBwVHlwZQ==');
 
 @$core.Deprecated('Use organizationSetLogoRequestDescriptor instead')
 const OrganizationSetLogoRequest$json = {

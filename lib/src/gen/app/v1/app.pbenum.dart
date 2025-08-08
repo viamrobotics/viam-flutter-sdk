@@ -110,6 +110,23 @@ class Visibility extends $pb.ProtobufEnum {
   const Visibility._($core.int v, $core.String n) : super(v, n);
 }
 
+class AppType extends $pb.ProtobufEnum {
+  static const AppType APP_TYPE_UNSPECIFIED = AppType._(0, _omitEnumNames ? '' : 'APP_TYPE_UNSPECIFIED');
+  static const AppType APP_TYPE_SINGLE_MACHINE = AppType._(1, _omitEnumNames ? '' : 'APP_TYPE_SINGLE_MACHINE');
+  static const AppType APP_TYPE_MULTI_MACHINE = AppType._(2, _omitEnumNames ? '' : 'APP_TYPE_MULTI_MACHINE');
+
+  static const $core.List<AppType> values = <AppType> [
+    APP_TYPE_UNSPECIFIED,
+    APP_TYPE_SINGLE_MACHINE,
+    APP_TYPE_MULTI_MACHINE,
+  ];
+
+  static final $core.Map<$core.int, AppType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AppType? valueOf($core.int value) => _byValue[value];
+
+  const AppType._($core.int v, $core.String n) : super(v, n);
+}
+
 class ClientAuthentication extends $pb.ProtobufEnum {
   static const ClientAuthentication CLIENT_AUTHENTICATION_UNSPECIFIED = ClientAuthentication._(0, _omitEnumNames ? '' : 'CLIENT_AUTHENTICATION_UNSPECIFIED');
   static const ClientAuthentication CLIENT_AUTHENTICATION_REQUIRED = ClientAuthentication._(1, _omitEnumNames ? '' : 'CLIENT_AUTHENTICATION_REQUIRED');
