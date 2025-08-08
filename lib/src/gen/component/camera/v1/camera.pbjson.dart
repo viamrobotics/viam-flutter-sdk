@@ -65,12 +65,14 @@ const GetImagesRequest$json = {
   '1': 'GetImagesRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetImagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getImagesRequestDescriptor = $convert.base64Decode(
-    'ChBHZXRJbWFnZXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWU=');
+    'ChBHZXRJbWFnZXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSLQoFZXh0cmEYYyABKAsyFy'
+    '5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
 
 @$core.Deprecated('Use getImagesResponseDescriptor instead')
 const GetImagesResponse$json = {
