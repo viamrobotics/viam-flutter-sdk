@@ -45,9 +45,6 @@ class SwitchService extends SwitchServiceBase {
   @override
   Future<GetNumberOfPositionsResponse> getNumberOfPositions(ServiceCall call, GetNumberOfPositionsRequest request) async {
     final nswitch = _fromManager(request.name);
-    final result = await nswitch.getNumberOfPositionsWithLabels();
-    return GetNumberOfPositionsResponse()
-      ..numberOfPositions = result.numberOfPositions
-      ..labels.addAll(result.labels ?? []);
+    return nswitch.getNumberOfPositionsWithLabels();
   }
 }

@@ -1,4 +1,5 @@
 import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/nswitch/v1/switch.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -6,12 +7,8 @@ import '../../robot/client.dart';
 /// Switch represents a set of finite positions.
 ///
 /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
-class PositionsInfo {
-  final int numberOfPositions;
-  final List<String>? labels;
 
-  PositionsInfo({required this.numberOfPositions, this.labels});
-}
+typedef PositionsInfo = GetNumberOfPositionsResponse;
 
 abstract class Switch extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'switch');

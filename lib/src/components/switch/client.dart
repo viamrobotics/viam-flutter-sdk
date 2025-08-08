@@ -44,8 +44,7 @@ class SwitchClient extends Switch with RPCDebugLoggerMixin implements ResourceRP
     final request = GetNumberOfPositionsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
-    final response = await client.getNumberOfPositions(request, options: callOptions);
-    return PositionsInfo(numberOfPositions: response.numberOfPositions, labels: response.labels);
+    return await client.getNumberOfPositions(request, options: callOptions);
   }
 
   @override
