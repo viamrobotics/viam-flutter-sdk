@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the getNumberOfPositions method from the SwitchClient class, for the Dart programming language.">
-  <title>getNumberOfPositions method - SwitchClient class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the getNumberOfPositionsWithLabels method from the SwitchClient class, for the Dart programming language.">
+  <title>getNumberOfPositionsWithLabels method - SwitchClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
     <li><a href="../../viam_sdk/SwitchClient-class.html">SwitchClient</a></li>
-    <li class="self-crumb">getNumberOfPositions method</li>
+    <li class="self-crumb">getNumberOfPositionsWithLabels method</li>
   </ol>
-  <div class="self-name">getNumberOfPositions</div>
+  <div class="self-name">getNumberOfPositionsWithLabels</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,7 +49,7 @@
     data-above-sidebar="viam_sdk&#47;SwitchClient-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">getNumberOfPositions</span> method 
+<h1><span class="kind-method">getNumberOfPositionsWithLabels</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
@@ -59,8 +59,8 @@
         <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
     </ol>
   </div>
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>
-<span class="name ">getNumberOfPositions</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getNumberOfPositions-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_sdk/PositionsInfo.html">PositionsInfo</a></span>&gt;</span></span>
+<span class="name ">getNumberOfPositionsWithLabels</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getNumberOfPositionsWithLabels-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
 
       <div class="features"><span class="feature">override</span></div>
@@ -68,8 +68,8 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get the number of available positions (int) of the <a href="../../viam_sdk/Switch-class.html">Switch</a>.</p>
-<pre class="language-dart"><code>await myServo.getNumberOfPositions();
+  <p>Get the number of available positions (int) and the list of labels of the <a href="../../viam_sdk/Switch-class.html">Switch</a>.</p>
+<pre class="language-dart"><code>await mySwitch.getNumberOfPositionsWithLabels();
 </code></pre>
 <p>For more information, see <a href="https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions">Switch component</a>.</p>
 </section>
@@ -79,12 +79,11 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;int&gt; getNumberOfPositions({Map&lt;String, dynamic&gt;? extra}) async {
+Future&lt;PositionsInfo&gt; getNumberOfPositionsWithLabels({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetNumberOfPositionsRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
-  final response = await client.getNumberOfPositions(request, options: callOptions);
-  return response.numberOfPositions;
+  return await client.getNumberOfPositions(request, options: callOptions);
 }</code></pre>
 </section>
 
@@ -101,7 +100,7 @@ Future&lt;int&gt; getNumberOfPositions({Map&lt;String, dynamic&gt;? extra}) asyn
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
     <li><a href="../../viam_sdk/SwitchClient-class.html">SwitchClient</a></li>
-    <li class="self-crumb">getNumberOfPositions method</li>
+    <li class="self-crumb">getNumberOfPositionsWithLabels method</li>
 </ol>
 
     <h5>SwitchClient class</h5>
@@ -113,7 +112,7 @@ Future&lt;int&gt; getNumberOfPositions({Map&lt;String, dynamic&gt;? extra}) asyn
 <footer>
   <span class="no-break">
     viam_sdk
-      0.8.0
+      0.9.0
   </span>
   
 </footer>
