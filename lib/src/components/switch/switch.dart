@@ -1,4 +1,5 @@
 import '../../gen/common/v1/common.pb.dart';
+import '../../gen/component/nswitch/v1/switch.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -6,6 +7,9 @@ import '../../robot/client.dart';
 /// Switch represents a set of finite positions.
 ///
 /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/).
+
+typedef PositionsInfo = GetNumberOfPositionsResponse;
+
 abstract class Switch extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'switch');
 
@@ -27,14 +31,14 @@ abstract class Switch extends Resource {
   /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/switch/#position).
   Future<int> getPosition({Map<String, dynamic>? extra});
 
-  /// Get the number of available positions (int) of the [Switch].
+  /// Get the number of available positions (int) and the list of labels of the [Switch].
   ///
   /// ```
-  /// await myServo.getNumberOfPositions();
+  /// await mySwitch.getNumberOfPositionsWithLabels();
   /// ```
   ///
   /// For more information, see [Switch component](https://docs.viam.com/dev/reference/apis/components/servo/#getnumberofpositions).
-  Future<int> getNumberOfPositions({Map<String, dynamic>? extra});
+  Future<PositionsInfo> getNumberOfPositionsWithLabels({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Switch] with the given [name].
   ///
