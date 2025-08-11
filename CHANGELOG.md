@@ -1,13 +1,19 @@
 # Changelog
 
-## [v0.8.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.8.0) (2025-08-04)
+## [v0.9.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.9.0) (2025-08-11)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.7.0...v0.8.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.8.0...v0.9.0)
 
 **Merged pull requests:**
 
+- fix branch name in ai-updater workflow [\#416](https://github.com/viamrobotics/viam-flutter-sdk/pull/416) ([gabegottlob](https://github.com/gabegottlob))
+- Automated Protos Update [\#415](https://github.com/viamrobotics/viam-flutter-sdk/pull/415) ([viambot](https://github.com/viambot))
+- v0.8.0 [\#414](https://github.com/viamrobotics/viam-flutter-sdk/pull/414) ([github-actions[bot]](https://github.com/apps/github-actions))
+- RSDK-11492: Add AI Updater Workflow [\#413](https://github.com/viamrobotics/viam-flutter-sdk/pull/413) ([gabegottlob](https://github.com/gabegottlob))
 - RSDK-11510 - stop truncating mdns uri [\#412](https://github.com/viamrobotics/viam-flutter-sdk/pull/412) ([stuqdog](https://github.com/stuqdog))
+- Add support for retrieving and displaying Switch labels [\#411](https://github.com/viamrobotics/viam-flutter-sdk/pull/411) ([Joyceku1020](https://github.com/Joyceku1020))
 - DATA-4317: Added DatasetIDs as Input to data\_client [\#410](https://github.com/viamrobotics/viam-flutter-sdk/pull/410) ([etai-shuchatowitz](https://github.com/etai-shuchatowitz))
+- Automated Protos Update [\#409](https://github.com/viamrobotics/viam-flutter-sdk/pull/409) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#408](https://github.com/viamrobotics/viam-flutter-sdk/pull/408) ([viambot](https://github.com/viambot))
 - Automated Protos Update [\#407](https://github.com/viamrobotics/viam-flutter-sdk/pull/407) ([viambot](https://github.com/viambot))
 - v0.7.0 [\#406](https://github.com/viamrobotics/viam-flutter-sdk/pull/406) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -128,6 +134,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.8.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.8.0) (2025-08-04)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.7.0...v0.8.0)
 
 ## [v0.7.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.7.0) (2025-07-14)
 
