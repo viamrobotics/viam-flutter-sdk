@@ -151,3 +151,31 @@ final $typed_data.Uint8List listDatasetsByIDsResponseDescriptor = $convert.base6
     'ChlMaXN0RGF0YXNldHNCeUlEc1Jlc3BvbnNlEjgKCGRhdGFzZXRzGAEgAygLMhwudmlhbS5hcH'
     'AuZGF0YXNldC52MS5EYXRhc2V0UghkYXRhc2V0cw==');
 
+@$core.Deprecated('Use mergeDatasetsRequestDescriptor instead')
+const MergeDatasetsRequest$json = {
+  '1': 'MergeDatasetsRequest',
+  '2': [
+    {'1': 'dataset_ids', '3': 1, '4': 3, '5': 9, '10': 'datasetIds'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'organization_id', '3': 3, '4': 1, '5': 9, '10': 'organizationId'},
+  ],
+};
+
+/// Descriptor for `MergeDatasetsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mergeDatasetsRequestDescriptor = $convert.base64Decode(
+    'ChRNZXJnZURhdGFzZXRzUmVxdWVzdBIfCgtkYXRhc2V0X2lkcxgBIAMoCVIKZGF0YXNldElkcx'
+    'ISCgRuYW1lGAIgASgJUgRuYW1lEicKD29yZ2FuaXphdGlvbl9pZBgDIAEoCVIOb3JnYW5pemF0'
+    'aW9uSWQ=');
+
+@$core.Deprecated('Use mergeDatasetsResponseDescriptor instead')
+const MergeDatasetsResponse$json = {
+  '1': 'MergeDatasetsResponse',
+  '2': [
+    {'1': 'dataset_id', '3': 1, '4': 1, '5': 9, '10': 'datasetId'},
+  ],
+};
+
+/// Descriptor for `MergeDatasetsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mergeDatasetsResponseDescriptor = $convert.base64Decode(
+    'ChVNZXJnZURhdGFzZXRzUmVzcG9uc2USHQoKZGF0YXNldF9pZBgBIAEoCVIJZGF0YXNldElk');
+

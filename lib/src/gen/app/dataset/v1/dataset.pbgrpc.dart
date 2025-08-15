@@ -41,6 +41,10 @@ class DatasetServiceClient extends $grpc.Client {
       '/viam.app.dataset.v1.DatasetService/ListDatasetsByIDs',
       ($5.ListDatasetsByIDsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.ListDatasetsByIDsResponse.fromBuffer(value));
+  static final _$mergeDatasets = $grpc.ClientMethod<$5.MergeDatasetsRequest, $5.MergeDatasetsResponse>(
+      '/viam.app.dataset.v1.DatasetService/MergeDatasets',
+      ($5.MergeDatasetsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.MergeDatasetsResponse.fromBuffer(value));
 
   DatasetServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -66,6 +70,10 @@ class DatasetServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$5.ListDatasetsByIDsResponse> listDatasetsByIDs($5.ListDatasetsByIDsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listDatasetsByIDs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$5.MergeDatasetsResponse> mergeDatasets($5.MergeDatasetsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$mergeDatasets, request, options: options);
   }
 }
 
@@ -109,6 +117,13 @@ abstract class DatasetServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $5.ListDatasetsByIDsRequest.fromBuffer(value),
         ($5.ListDatasetsByIDsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$5.MergeDatasetsRequest, $5.MergeDatasetsResponse>(
+        'MergeDatasets',
+        mergeDatasets_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $5.MergeDatasetsRequest.fromBuffer(value),
+        ($5.MergeDatasetsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$5.CreateDatasetResponse> createDataset_Pre($grpc.ServiceCall call, $async.Future<$5.CreateDatasetRequest> request) async {
@@ -131,9 +146,14 @@ abstract class DatasetServiceBase extends $grpc.Service {
     return listDatasetsByIDs(call, await request);
   }
 
+  $async.Future<$5.MergeDatasetsResponse> mergeDatasets_Pre($grpc.ServiceCall call, $async.Future<$5.MergeDatasetsRequest> request) async {
+    return mergeDatasets(call, await request);
+  }
+
   $async.Future<$5.CreateDatasetResponse> createDataset($grpc.ServiceCall call, $5.CreateDatasetRequest request);
   $async.Future<$5.DeleteDatasetResponse> deleteDataset($grpc.ServiceCall call, $5.DeleteDatasetRequest request);
   $async.Future<$5.RenameDatasetResponse> renameDataset($grpc.ServiceCall call, $5.RenameDatasetRequest request);
   $async.Future<$5.ListDatasetsByOrganizationIDResponse> listDatasetsByOrganizationID($grpc.ServiceCall call, $5.ListDatasetsByOrganizationIDRequest request);
   $async.Future<$5.ListDatasetsByIDsResponse> listDatasetsByIDs($grpc.ServiceCall call, $5.ListDatasetsByIDsRequest request);
+  $async.Future<$5.MergeDatasetsResponse> mergeDatasets($grpc.ServiceCall call, $5.MergeDatasetsRequest request);
 }

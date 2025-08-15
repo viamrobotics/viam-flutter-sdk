@@ -9393,6 +9393,7 @@ class ListMachineSummariesRequest extends $pb.GeneratedMessage {
   static ListMachineSummariesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMachineSummariesRequest>(create);
   static ListMachineSummariesRequest? _defaultInstance;
 
+  /// Optional organization ID. If no value is set it will search among all the organanizations the caller has access to
   @$pb.TagNumber(1)
   $core.String get organizationId => $_getSZ(0);
   @$pb.TagNumber(1)

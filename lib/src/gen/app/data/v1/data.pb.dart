@@ -2394,6 +2394,7 @@ class Classification extends $pb.GeneratedMessage {
   factory Classification({
     $core.String? label,
     $core.double? confidence,
+    $core.String? id,
   }) {
     final $result = create();
     if (label != null) {
@@ -2401,6 +2402,9 @@ class Classification extends $pb.GeneratedMessage {
     }
     if (confidence != null) {
       $result.confidence = confidence;
+    }
+    if (id != null) {
+      $result.id = id;
     }
     return $result;
   }
@@ -2411,6 +2415,7 @@ class Classification extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Classification', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'label')
     ..a<$core.double>(2, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
@@ -2453,6 +2458,15 @@ class Classification extends $pb.GeneratedMessage {
   $core.bool hasConfidence() => $_has(1);
   @$pb.TagNumber(2)
   void clearConfidence() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get id => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set id($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearId() => clearField(3);
 }
 
 /// Annotations are data annotations used for machine learning.
