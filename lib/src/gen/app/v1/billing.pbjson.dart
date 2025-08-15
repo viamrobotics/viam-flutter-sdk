@@ -488,3 +488,35 @@ const UpdateOrganizationBillingTierResponse$json = {
 final $typed_data.Uint8List updateOrganizationBillingTierResponseDescriptor = $convert.base64Decode(
     'CiVVcGRhdGVPcmdhbml6YXRpb25CaWxsaW5nVGllclJlc3BvbnNl');
 
+@$core.Deprecated('Use createInvoiceAndChargeImmediatelyRequestDescriptor instead')
+const CreateInvoiceAndChargeImmediatelyRequest$json = {
+  '1': 'CreateInvoiceAndChargeImmediatelyRequest',
+  '2': [
+    {'1': 'org_id_to_charge', '3': 1, '4': 1, '5': 9, '10': 'orgIdToCharge'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 1, '10': 'amount'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'description', '17': true},
+    {'1': 'org_id_for_branding', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'orgIdForBranding', '17': true},
+  ],
+  '8': [
+    {'1': '_description'},
+    {'1': '_org_id_for_branding'},
+  ],
+};
+
+/// Descriptor for `CreateInvoiceAndChargeImmediatelyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createInvoiceAndChargeImmediatelyRequestDescriptor = $convert.base64Decode(
+    'CihDcmVhdGVJbnZvaWNlQW5kQ2hhcmdlSW1tZWRpYXRlbHlSZXF1ZXN0EicKEG9yZ19pZF90b1'
+    '9jaGFyZ2UYASABKAlSDW9yZ0lkVG9DaGFyZ2USFgoGYW1vdW50GAIgASgBUgZhbW91bnQSJQoL'
+    'ZGVzY3JpcHRpb24YAyABKAlIAFILZGVzY3JpcHRpb26IAQESMgoTb3JnX2lkX2Zvcl9icmFuZG'
+    'luZxgEIAEoCUgBUhBvcmdJZEZvckJyYW5kaW5niAEBQg4KDF9kZXNjcmlwdGlvbkIWChRfb3Jn'
+    'X2lkX2Zvcl9icmFuZGluZw==');
+
+@$core.Deprecated('Use createInvoiceAndChargeImmediatelyResponseDescriptor instead')
+const CreateInvoiceAndChargeImmediatelyResponse$json = {
+  '1': 'CreateInvoiceAndChargeImmediatelyResponse',
+};
+
+/// Descriptor for `CreateInvoiceAndChargeImmediatelyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createInvoiceAndChargeImmediatelyResponseDescriptor = $convert.base64Decode(
+    'CilDcmVhdGVJbnZvaWNlQW5kQ2hhcmdlSW1tZWRpYXRlbHlSZXNwb25zZQ==');
+

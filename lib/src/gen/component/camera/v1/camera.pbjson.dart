@@ -65,14 +65,16 @@ const GetImagesRequest$json = {
   '1': 'GetImagesRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'filter_source_names', '3': 2, '4': 3, '5': 9, '10': 'filterSourceNames'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `GetImagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getImagesRequestDescriptor = $convert.base64Decode(
-    'ChBHZXRJbWFnZXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSLQoFZXh0cmEYYyABKAsyFy'
-    '5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
+    'ChBHZXRJbWFnZXNSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSLgoTZmlsdGVyX3NvdXJjZV'
+    '9uYW1lcxgCIAMoCVIRZmlsdGVyU291cmNlTmFtZXMSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUu'
+    'cHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
 
 @$core.Deprecated('Use getImagesResponseDescriptor instead')
 const GetImagesResponse$json = {
@@ -96,6 +98,7 @@ const Image$json = {
     {'1': 'source_name', '3': 1, '4': 1, '5': 9, '10': 'sourceName'},
     {'1': 'format', '3': 2, '4': 1, '5': 14, '6': '.viam.component.camera.v1.Format', '10': 'format'},
     {'1': 'image', '3': 3, '4': 1, '5': 12, '10': 'image'},
+    {'1': 'mime_type', '3': 4, '4': 1, '5': 9, '10': 'mimeType'},
   ],
 };
 
@@ -103,7 +106,7 @@ const Image$json = {
 final $typed_data.Uint8List imageDescriptor = $convert.base64Decode(
     'CgVJbWFnZRIfCgtzb3VyY2VfbmFtZRgBIAEoCVIKc291cmNlTmFtZRI4CgZmb3JtYXQYAiABKA'
     '4yIC52aWFtLmNvbXBvbmVudC5jYW1lcmEudjEuRm9ybWF0UgZmb3JtYXQSFAoFaW1hZ2UYAyAB'
-    'KAxSBWltYWdl');
+    'KAxSBWltYWdlEhsKCW1pbWVfdHlwZRgEIAEoCVIIbWltZVR5cGU=');
 
 @$core.Deprecated('Use renderFrameRequestDescriptor instead')
 const RenderFrameRequest$json = {

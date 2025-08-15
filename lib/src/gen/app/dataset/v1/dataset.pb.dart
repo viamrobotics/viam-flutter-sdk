@@ -592,6 +592,130 @@ class ListDatasetsByIDsResponse extends $pb.GeneratedMessage {
   $core.List<Dataset> get datasets => $_getList(0);
 }
 
+/// MergeDatasetsRequest merges multiple datasets specified by their dataset IDs into a new dataset.
+class MergeDatasetsRequest extends $pb.GeneratedMessage {
+  factory MergeDatasetsRequest({
+    $core.Iterable<$core.String>? datasetIds,
+    $core.String? name,
+    $core.String? organizationId,
+  }) {
+    final $result = create();
+    if (datasetIds != null) {
+      $result.datasetIds.addAll(datasetIds);
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    return $result;
+  }
+  MergeDatasetsRequest._() : super();
+  factory MergeDatasetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MergeDatasetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MergeDatasetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'datasetIds')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'organizationId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MergeDatasetsRequest clone() => MergeDatasetsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MergeDatasetsRequest copyWith(void Function(MergeDatasetsRequest) updates) => super.copyWith((message) => updates(message as MergeDatasetsRequest)) as MergeDatasetsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MergeDatasetsRequest create() => MergeDatasetsRequest._();
+  MergeDatasetsRequest createEmptyInstance() => create();
+  static $pb.PbList<MergeDatasetsRequest> createRepeated() => $pb.PbList<MergeDatasetsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static MergeDatasetsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MergeDatasetsRequest>(create);
+  static MergeDatasetsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get datasetIds => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get organizationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set organizationId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrganizationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrganizationId() => clearField(3);
+}
+
+/// MergeDatasetsResponse returns the dataset ID of the newly created merged dataset.
+class MergeDatasetsResponse extends $pb.GeneratedMessage {
+  factory MergeDatasetsResponse({
+    $core.String? datasetId,
+  }) {
+    final $result = create();
+    if (datasetId != null) {
+      $result.datasetId = datasetId;
+    }
+    return $result;
+  }
+  MergeDatasetsResponse._() : super();
+  factory MergeDatasetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MergeDatasetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MergeDatasetsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.dataset.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'datasetId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MergeDatasetsResponse clone() => MergeDatasetsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MergeDatasetsResponse copyWith(void Function(MergeDatasetsResponse) updates) => super.copyWith((message) => updates(message as MergeDatasetsResponse)) as MergeDatasetsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MergeDatasetsResponse create() => MergeDatasetsResponse._();
+  MergeDatasetsResponse createEmptyInstance() => create();
+  static $pb.PbList<MergeDatasetsResponse> createRepeated() => $pb.PbList<MergeDatasetsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static MergeDatasetsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MergeDatasetsResponse>(create);
+  static MergeDatasetsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get datasetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set datasetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDatasetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDatasetId() => clearField(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
