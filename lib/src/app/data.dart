@@ -1567,6 +1567,46 @@ class DataClient {
     return response.datasets;
   }
 
+  /// Merges multiple datasets specified by their dataset IDs into a new dataset.
+  ///
+  /// Returns the dataset ID of the newly created merged dataset.
+  ///
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  // Dataset IDs to merge
+  ///  final datasetIds = [
+  ///   '<YOUR-DATASET-ID-1>',
+  ///   '<YOUR-DATASET-ID-2>'
+  ///  ];
+  ///
+  ///  // Organization ID and name for the new merged dataset
+  ///  const orgId = '<YOUR-ORG-ID>';
+  ///  const newDatasetName = 'merged-dataset';
+  ///
+  ///  try {
+  ///    // Merge the datasets
+  ///    final mergedDatasetId = await dataClient.mergeDatasets(datasetIds, newDatasetName, orgId);
+  ///    print('Successfully merged datasets into new dataset with ID: $mergedDatasetId');
+  ///  } catch (e) {
+  ///    print('Error merging datasets: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  Future<String> mergeDatasets(List<String> datasetIds, String name, String organizationId) async {
+    final request = MergeDatasetsRequest()
+      ..datasetIds.addAll(datasetIds)
+      ..name = name
+      ..organizationId = organizationId;
+    final response = await _datasetClient.mergeDatasets(request);
+    return response.datasetId;
+  }
+
   /// Gets the most recent tabular data captured from the specified data source,
   /// as long as it was synced within the last year.
   ///

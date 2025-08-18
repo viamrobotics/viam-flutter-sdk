@@ -47,4 +47,20 @@ class BillingClient {
     final stream = response.map((event) => event.chunk);
     return stream.asBroadcastStream(onCancel: (_) => response.cancel());
   }
+
+  /// CreateInvoiceAndChargeImmediately creates an invoice and attempts to charge the organization's payment method.
+  ///
+  /// For more information, see [Billing Client API](https://docs.viam.com/appendix/apis/billing-client/).
+  Future<void> createInvoiceAndChargeImmediately(String orgIdToCharge, double amount, {String? description, String? orgIdForBranding}) async {
+    final request = CreateInvoiceAndChargeImmediatelyRequest()
+      ..orgIdToCharge = orgIdToCharge
+      ..amount = amount;
+    if (description != null) {
+      request.description = description;
+    }
+    if (orgIdForBranding != null) {
+      request.orgIdForBranding = orgIdForBranding;
+    }
+    await _client.createInvoiceAndChargeImmediately(request);
+  }
 }

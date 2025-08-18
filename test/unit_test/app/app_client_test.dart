@@ -42,6 +42,8 @@ void main() {
                   ..os = 'os'
                   ..platform = 'platform'
                   ..publicIpAddress = 'publicIpAddress'
+                  ..dnsName = 'dnsName'
+                  ..isMainPart = true
                   ..fragments.addAll([
                     FragmentSummary()
                       ..id = 'fragmentId'

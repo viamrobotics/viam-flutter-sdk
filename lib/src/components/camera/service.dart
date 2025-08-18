@@ -71,8 +71,9 @@ class CameraService extends CameraServiceBase {
   }
 
   @override
-  Future<GetImagesResponse> getImages(ServiceCall call, GetImagesRequest request) {
-    // TODO: implement getImages
-    throw UnimplementedError();
+  Future<GetImagesResponse> getImages(ServiceCall call, GetImagesRequest request) async {
+    final camera = _fromManager(request.name);
+    final images = await camera.getImages(filterSourceNames: request.filterSourceNames, extra: request.extra.toMap());
+    return GetImagesResponse()..images.addAll(images.map((e) => Image()..image = e.raw..mimeType = e.mimeType.name));
   }
 }

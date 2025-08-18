@@ -34,6 +34,17 @@ class FakeCamera extends Camera {
   }
 
   @override
+  Future<List<ViamImage>> getImages({Iterable<String> filterSourceNames = const [], Map<String, dynamic>? extra}) async {
+    // Simulate returning multiple images based on filterSourceNames
+    if (filterSourceNames.isNotEmpty) {
+      return filterSourceNames.map((name) => ViamImage([1, 2, 3], MimeType.jpeg)).toList();
+    } else if (extra != null && extra['returnPng'] == true) {
+      return [ViamImage([4, 5, 6], MimeType.png)];
+    }
+    return [ViamImage([7, 8, 9], MimeType.jpeg)];
+  }
+
+  @override
   Future<ViamImage> pointCloud({Map<String, dynamic>? extra}) async {
     return ViamImage([0, 0, 0], MimeType.pcd);
   }
@@ -164,6 +175,28 @@ void main() {
           ..command = cmd.toStruct());
         expect(resp.result.toMap(), {'command': cmd});
       });
+
+      test('getImages', () async {
+        final client = CameraServiceClient(channel);
+        final request = GetImagesRequest()
+          ..name = name
+          ..filterSourceNames.addAll(['sensor1', 'sensor2']);
+
+        final actual = await client.getImages(request);
+        expect(actual.images, hasLength(2));
+        expect(actual.images[0].image, [1, 2, 3]);
+        expect(actual.images[0].mimeType, MimeType.jpeg.name);
+        expect(actual.images[1].image, [1, 2, 3]);
+        expect(actual.images[1].mimeType, MimeType.jpeg.name);
+
+        final requestWithExtra = GetImagesRequest()
+          ..name = name
+          ..extra = {'returnPng': true}.toStruct();
+        final actualWithExtra = await client.getImages(requestWithExtra);
+        expect(actualWithExtra.images, hasLength(1));
+        expect(actualWithExtra.images[0].image, [4, 5, 6]);
+        expect(actualWithExtra.images[0].mimeType, MimeType.png.name);
+      });
     });
     group('Camera Client Tests', () {
       test('image', () async {
@@ -200,6 +233,21 @@ void main() {
         final cmd = {'foo': 'bar'};
         final resp = await client.doCommand(cmd);
         expect(resp['command'], cmd);
+      });
+
+      test('getImages', () async {
+        final client = CameraClient(name, channel);
+        final actual = await client.getImages(filterSourceNames: ['sensor1', 'sensor2']);
+        expect(actual, hasLength(2));
+        expect(actual[0].raw, [1, 2, 3]);
+        expect(actual[0].mimeType, MimeType.jpeg);
+        expect(actual[1].raw, [1, 2, 3]);
+        expect(actual[1].mimeType, MimeType.jpeg);
+
+        final actualWithExtra = await client.getImages(extra: {'returnPng': true});
+        expect(actualWithExtra, hasLength(1));
+        expect(actualWithExtra[0].raw, [4, 5, 6]);
+        expect(actualWithExtra[0].mimeType, MimeType.png);
       });
     });
   });

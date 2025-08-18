@@ -34,6 +34,16 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
   }
 
   @override
+  Future<List<ViamImage>> getImages({Iterable<String> filterSourceNames = const [], Map<String, dynamic>? extra}) async {
+    final request = GetImagesRequest()
+      ..name = name
+      ..filterSourceNames.addAll(filterSourceNames)
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getImages(request, options: callOptions);
+    return response.images.map((e) => ViamImage(e.image, MimeType.fromString(e.mimeType))).toList();
+  }
+
+  @override
   Future<ViamImage> pointCloud({Map<String, dynamic>? extra}) async {
     final request = GetPointCloudRequest()
       ..name = name

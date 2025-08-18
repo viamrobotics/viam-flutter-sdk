@@ -24,6 +24,15 @@ abstract class Camera extends Resource {
   /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getimage).
   Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra});
 
+  /// Get the next image from the camera.
+  ///
+  /// ```
+  /// var nextImages = await myCamera.getImages();
+  /// ```
+  ///
+  /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getimages).
+  Future<List<ViamImage>> getImages({Iterable<String> filterSourceNames = const [], Map<String, dynamic>? extra});
+
   /// Get the next point cloud from the camera.
   ///
   /// ```
