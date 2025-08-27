@@ -49,6 +49,10 @@ class BillingServiceClient extends $grpc.Client {
       '/viam.app.v1.BillingService/UpdateOrganizationBillingTier',
       ($12.UpdateOrganizationBillingTierRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierResponse.fromBuffer(value));
+  static final _$createInvoiceAndChargeImmediately = $grpc.ClientMethod<$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse>(
+      '/viam.app.v1.BillingService/CreateInvoiceAndChargeImmediately',
+      ($12.CreateInvoiceAndChargeImmediatelyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.CreateInvoiceAndChargeImmediatelyResponse.fromBuffer(value));
 
   BillingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -82,6 +86,10 @@ class BillingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($12.UpdateOrganizationBillingTierRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateOrganizationBillingTier, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($12.CreateInvoiceAndChargeImmediatelyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createInvoiceAndChargeImmediately, request, options: options);
   }
 }
 
@@ -139,6 +147,13 @@ abstract class BillingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $12.UpdateOrganizationBillingTierRequest.fromBuffer(value),
         ($12.UpdateOrganizationBillingTierResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.CreateInvoiceAndChargeImmediatelyRequest, $12.CreateInvoiceAndChargeImmediatelyResponse>(
+        'CreateInvoiceAndChargeImmediately',
+        createInvoiceAndChargeImmediately_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $12.CreateInvoiceAndChargeImmediatelyRequest.fromBuffer(value),
+        ($12.CreateInvoiceAndChargeImmediatelyResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage_Pre($grpc.ServiceCall call, $async.Future<$12.GetCurrentMonthUsageRequest> request) async {
@@ -169,6 +184,10 @@ abstract class BillingServiceBase extends $grpc.Service {
     return updateOrganizationBillingTier(call, await request);
   }
 
+  $async.Future<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately_Pre($grpc.ServiceCall call, $async.Future<$12.CreateInvoiceAndChargeImmediatelyRequest> request) async {
+    return createInvoiceAndChargeImmediately(call, await request);
+  }
+
   $async.Future<$12.GetCurrentMonthUsageResponse> getCurrentMonthUsage($grpc.ServiceCall call, $12.GetCurrentMonthUsageRequest request);
   $async.Future<$12.GetOrgBillingInformationResponse> getOrgBillingInformation($grpc.ServiceCall call, $12.GetOrgBillingInformationRequest request);
   $async.Future<$12.GetInvoicesSummaryResponse> getInvoicesSummary($grpc.ServiceCall call, $12.GetInvoicesSummaryRequest request);
@@ -176,4 +195,5 @@ abstract class BillingServiceBase extends $grpc.Service {
   $async.Future<$12.SendPaymentRequiredEmailResponse> sendPaymentRequiredEmail($grpc.ServiceCall call, $12.SendPaymentRequiredEmailRequest request);
   $async.Future<$12.GetAvailableBillingTiersResponse> getAvailableBillingTiers($grpc.ServiceCall call, $12.GetAvailableBillingTiersRequest request);
   $async.Future<$12.UpdateOrganizationBillingTierResponse> updateOrganizationBillingTier($grpc.ServiceCall call, $12.UpdateOrganizationBillingTierRequest request);
+  $async.Future<$12.CreateInvoiceAndChargeImmediatelyResponse> createInvoiceAndChargeImmediately($grpc.ServiceCall call, $12.CreateInvoiceAndChargeImmediatelyRequest request);
 }

@@ -343,6 +343,7 @@ const Constraints$json = {
     {'1': 'linear_constraint', '3': 1, '4': 3, '5': 11, '6': '.viam.service.motion.v1.LinearConstraint', '10': 'linearConstraint'},
     {'1': 'orientation_constraint', '3': 2, '4': 3, '5': 11, '6': '.viam.service.motion.v1.OrientationConstraint', '10': 'orientationConstraint'},
     {'1': 'collision_specification', '3': 3, '4': 3, '5': 11, '6': '.viam.service.motion.v1.CollisionSpecification', '10': 'collisionSpecification'},
+    {'1': 'pseudolinear_constraint', '3': 4, '4': 3, '5': 11, '6': '.viam.service.motion.v1.PseudolinearConstraint', '10': 'pseudolinearConstraint'},
   ],
 };
 
@@ -353,7 +354,9 @@ final $typed_data.Uint8List constraintsDescriptor = $convert.base64Decode(
     'dGlvbl9jb25zdHJhaW50GAIgAygLMi0udmlhbS5zZXJ2aWNlLm1vdGlvbi52MS5PcmllbnRhdG'
     'lvbkNvbnN0cmFpbnRSFW9yaWVudGF0aW9uQ29uc3RyYWludBJnChdjb2xsaXNpb25fc3BlY2lm'
     'aWNhdGlvbhgDIAMoCzIuLnZpYW0uc2VydmljZS5tb3Rpb24udjEuQ29sbGlzaW9uU3BlY2lmaW'
-    'NhdGlvblIWY29sbGlzaW9uU3BlY2lmaWNhdGlvbg==');
+    'NhdGlvblIWY29sbGlzaW9uU3BlY2lmaWNhdGlvbhJnChdwc2V1ZG9saW5lYXJfY29uc3RyYWlu'
+    'dBgEIAMoCzIuLnZpYW0uc2VydmljZS5tb3Rpb24udjEuUHNldWRvbGluZWFyQ29uc3RyYWludF'
+    'IWcHNldWRvbGluZWFyQ29uc3RyYWludA==');
 
 @$core.Deprecated('Use linearConstraintDescriptor instead')
 const LinearConstraint$json = {
@@ -374,6 +377,26 @@ final $typed_data.Uint8List linearConstraintDescriptor = $convert.base64Decode(
     'xlcmFuY2VNbYgBARJBChpvcmllbnRhdGlvbl90b2xlcmFuY2VfZGVncxgCIAEoAkgBUhhvcmll'
     'bnRhdGlvblRvbGVyYW5jZURlZ3OIAQFCFAoSX2xpbmVfdG9sZXJhbmNlX21tQh0KG19vcmllbn'
     'RhdGlvbl90b2xlcmFuY2VfZGVncw==');
+
+@$core.Deprecated('Use pseudolinearConstraintDescriptor instead')
+const PseudolinearConstraint$json = {
+  '1': 'PseudolinearConstraint',
+  '2': [
+    {'1': 'line_tolerance_factor', '3': 1, '4': 1, '5': 2, '9': 0, '10': 'lineToleranceFactor', '17': true},
+    {'1': 'orientation_tolerance_factor', '3': 2, '4': 1, '5': 2, '9': 1, '10': 'orientationToleranceFactor', '17': true},
+  ],
+  '8': [
+    {'1': '_line_tolerance_factor'},
+    {'1': '_orientation_tolerance_factor'},
+  ],
+};
+
+/// Descriptor for `PseudolinearConstraint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pseudolinearConstraintDescriptor = $convert.base64Decode(
+    'ChZQc2V1ZG9saW5lYXJDb25zdHJhaW50EjcKFWxpbmVfdG9sZXJhbmNlX2ZhY3RvchgBIAEoAk'
+    'gAUhNsaW5lVG9sZXJhbmNlRmFjdG9yiAEBEkUKHG9yaWVudGF0aW9uX3RvbGVyYW5jZV9mYWN0'
+    'b3IYAiABKAJIAVIab3JpZW50YXRpb25Ub2xlcmFuY2VGYWN0b3KIAQFCGAoWX2xpbmVfdG9sZX'
+    'JhbmNlX2ZhY3RvckIfCh1fb3JpZW50YXRpb25fdG9sZXJhbmNlX2ZhY3Rvcg==');
 
 @$core.Deprecated('Use orientationConstraintDescriptor instead')
 const OrientationConstraint$json = {

@@ -2306,6 +2306,7 @@ class FieldOptions extends $pb.GeneratedMessage {
     $core.bool? deprecated,
     $core.bool? lazy,
     FieldOptions_JSType? jstype,
+  @$core.Deprecated('This field is deprecated.')
     $core.bool? weak,
     $core.bool? unverifiedLazy,
     $core.bool? debugRedact,
@@ -2333,6 +2334,7 @@ class FieldOptions extends $pb.GeneratedMessage {
       $result.jstype = jstype;
     }
     if (weak != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.weak = weak;
     }
     if (unverifiedLazy != null) {
@@ -2500,13 +2502,18 @@ class FieldOptions extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearJstype() => clearField(6);
 
+  /// DEPRECATED. DO NOT USE!
   /// For Google-internal migration only. Do not use.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.bool get weak => $_getBF(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   set weak($core.bool v) { $_setBool(5, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.bool hasWeak() => $_has(5);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   void clearWeak() => clearField(10);
 

@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $48;
+import '../../../google/protobuf/timestamp.pb.dart' as $49;
 import '../../data/v1/data.pbenum.dart' as $3;
 import 'data_pipelines.pbenum.dart';
 
@@ -27,8 +27,8 @@ class DataPipeline extends $pb.GeneratedMessage {
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.String? schedule,
     $core.bool? enabled,
-    $48.Timestamp? createdOn,
-    $48.Timestamp? updatedAt,
+    $49.Timestamp? createdOn,
+    $49.Timestamp? updatedAt,
     $3.TabularDataSourceType? dataSourceType,
   }) {
     final $result = create();
@@ -72,8 +72,8 @@ class DataPipeline extends $pb.GeneratedMessage {
     ..p<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOS(5, _omitFieldNames ? '' : 'schedule')
     ..aOB(6, _omitFieldNames ? '' : 'enabled')
-    ..aOM<$48.Timestamp>(7, _omitFieldNames ? '' : 'createdOn', subBuilder: $48.Timestamp.create)
-    ..aOM<$48.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt', subBuilder: $48.Timestamp.create)
+    ..aOM<$49.Timestamp>(7, _omitFieldNames ? '' : 'createdOn', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt', subBuilder: $49.Timestamp.create)
     ..e<$3.TabularDataSourceType>(9, _omitFieldNames ? '' : 'dataSourceType', $pb.PbFieldType.OE, defaultOrMaker: $3.TabularDataSourceType.TABULAR_DATA_SOURCE_TYPE_UNSPECIFIED, valueOf: $3.TabularDataSourceType.valueOf, enumValues: $3.TabularDataSourceType.values)
     ..hasRequiredFields = false
   ;
@@ -156,27 +156,27 @@ class DataPipeline extends $pb.GeneratedMessage {
 
   /// The time the pipeline was created.
   @$pb.TagNumber(7)
-  $48.Timestamp get createdOn => $_getN(6);
+  $49.Timestamp get createdOn => $_getN(6);
   @$pb.TagNumber(7)
-  set createdOn($48.Timestamp v) { setField(7, v); }
+  set createdOn($49.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCreatedOn() => $_has(6);
   @$pb.TagNumber(7)
   void clearCreatedOn() => clearField(7);
   @$pb.TagNumber(7)
-  $48.Timestamp ensureCreatedOn() => $_ensure(6);
+  $49.Timestamp ensureCreatedOn() => $_ensure(6);
 
   /// The time the pipeline was last updated.
   @$pb.TagNumber(8)
-  $48.Timestamp get updatedAt => $_getN(7);
+  $49.Timestamp get updatedAt => $_getN(7);
   @$pb.TagNumber(8)
-  set updatedAt($48.Timestamp v) { setField(8, v); }
+  set updatedAt($49.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearUpdatedAt() => clearField(8);
   @$pb.TagNumber(8)
-  $48.Timestamp ensureUpdatedAt() => $_ensure(7);
+  $49.Timestamp ensureUpdatedAt() => $_ensure(7);
 
   /// The type of data source for the pipeline. If not specified, default is standard data storage.
   @$pb.TagNumber(9)
@@ -1065,11 +1065,12 @@ class ListDataPipelineRunsResponse extends $pb.GeneratedMessage {
 class DataPipelineRun extends $pb.GeneratedMessage {
   factory DataPipelineRun({
     $core.String? id,
-    $48.Timestamp? startTime,
-    $48.Timestamp? endTime,
-    $48.Timestamp? dataStartTime,
-    $48.Timestamp? dataEndTime,
+    $49.Timestamp? startTime,
+    $49.Timestamp? endTime,
+    $49.Timestamp? dataStartTime,
+    $49.Timestamp? dataEndTime,
     DataPipelineRunStatus? status,
+    $core.String? errorMessage,
   }) {
     final $result = create();
     if (id != null) {
@@ -1090,6 +1091,9 @@ class DataPipelineRun extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (errorMessage != null) {
+      $result.errorMessage = errorMessage;
+    }
     return $result;
   }
   DataPipelineRun._() : super();
@@ -1098,11 +1102,12 @@ class DataPipelineRun extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataPipelineRun', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.datapipelines.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$48.Timestamp>(2, _omitFieldNames ? '' : 'startTime', subBuilder: $48.Timestamp.create)
-    ..aOM<$48.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $48.Timestamp.create)
-    ..aOM<$48.Timestamp>(4, _omitFieldNames ? '' : 'dataStartTime', subBuilder: $48.Timestamp.create)
-    ..aOM<$48.Timestamp>(5, _omitFieldNames ? '' : 'dataEndTime', subBuilder: $48.Timestamp.create)
+    ..aOM<$49.Timestamp>(2, _omitFieldNames ? '' : 'startTime', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(4, _omitFieldNames ? '' : 'dataStartTime', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(5, _omitFieldNames ? '' : 'dataEndTime', subBuilder: $49.Timestamp.create)
     ..e<DataPipelineRunStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DataPipelineRunStatus.DATA_PIPELINE_RUN_STATUS_UNSPECIFIED, valueOf: DataPipelineRunStatus.valueOf, enumValues: DataPipelineRunStatus.values)
+    ..aOS(7, _omitFieldNames ? '' : 'errorMessage')
     ..hasRequiredFields = false
   ;
 
@@ -1139,51 +1144,51 @@ class DataPipelineRun extends $pb.GeneratedMessage {
 
   /// The time the run started.
   @$pb.TagNumber(2)
-  $48.Timestamp get startTime => $_getN(1);
+  $49.Timestamp get startTime => $_getN(1);
   @$pb.TagNumber(2)
-  set startTime($48.Timestamp v) { setField(2, v); }
+  set startTime($49.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStartTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearStartTime() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Timestamp ensureStartTime() => $_ensure(1);
+  $49.Timestamp ensureStartTime() => $_ensure(1);
 
   /// The time the run ended.
   @$pb.TagNumber(3)
-  $48.Timestamp get endTime => $_getN(2);
+  $49.Timestamp get endTime => $_getN(2);
   @$pb.TagNumber(3)
-  set endTime($48.Timestamp v) { setField(3, v); }
+  set endTime($49.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEndTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearEndTime() => clearField(3);
   @$pb.TagNumber(3)
-  $48.Timestamp ensureEndTime() => $_ensure(2);
+  $49.Timestamp ensureEndTime() => $_ensure(2);
 
   /// The start time of the data that was processed in the run.
   @$pb.TagNumber(4)
-  $48.Timestamp get dataStartTime => $_getN(3);
+  $49.Timestamp get dataStartTime => $_getN(3);
   @$pb.TagNumber(4)
-  set dataStartTime($48.Timestamp v) { setField(4, v); }
+  set dataStartTime($49.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDataStartTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearDataStartTime() => clearField(4);
   @$pb.TagNumber(4)
-  $48.Timestamp ensureDataStartTime() => $_ensure(3);
+  $49.Timestamp ensureDataStartTime() => $_ensure(3);
 
   /// The end time of the data that was processed in the run.
   @$pb.TagNumber(5)
-  $48.Timestamp get dataEndTime => $_getN(4);
+  $49.Timestamp get dataEndTime => $_getN(4);
   @$pb.TagNumber(5)
-  set dataEndTime($48.Timestamp v) { setField(5, v); }
+  set dataEndTime($49.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDataEndTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearDataEndTime() => clearField(5);
   @$pb.TagNumber(5)
-  $48.Timestamp ensureDataEndTime() => $_ensure(4);
+  $49.Timestamp ensureDataEndTime() => $_ensure(4);
 
   /// The status of the run.
   @$pb.TagNumber(6)
@@ -1194,6 +1199,16 @@ class DataPipelineRun extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
   void clearStatus() => clearField(6);
+
+  /// The error message if the run failed.
+  @$pb.TagNumber(7)
+  $core.String get errorMessage => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set errorMessage($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasErrorMessage() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearErrorMessage() => clearField(7);
 }
 
 

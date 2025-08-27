@@ -36,3 +36,33 @@ const SyncResponse$json = {
 final $typed_data.Uint8List syncResponseDescriptor = $convert.base64Decode(
     'CgxTeW5jUmVzcG9uc2U=');
 
+@$core.Deprecated('Use uploadBinaryDataToDatasetsRequestDescriptor instead')
+const UploadBinaryDataToDatasetsRequest$json = {
+  '1': 'UploadBinaryDataToDatasetsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'binary_data', '3': 2, '4': 1, '5': 12, '10': 'binaryData'},
+    {'1': 'tags', '3': 3, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'dataset_ids', '3': 4, '4': 3, '5': 9, '10': 'datasetIds'},
+    {'1': 'mime_type', '3': 5, '4': 1, '5': 14, '6': '.viam.app.datasync.v1.MimeType', '10': 'mimeType'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `UploadBinaryDataToDatasetsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadBinaryDataToDatasetsRequestDescriptor = $convert.base64Decode(
+    'CiFVcGxvYWRCaW5hcnlEYXRhVG9EYXRhc2V0c1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZR'
+    'IfCgtiaW5hcnlfZGF0YRgCIAEoDFIKYmluYXJ5RGF0YRISCgR0YWdzGAMgAygJUgR0YWdzEh8K'
+    'C2RhdGFzZXRfaWRzGAQgAygJUgpkYXRhc2V0SWRzEjsKCW1pbWVfdHlwZRgFIAEoDjIeLnZpYW'
+    '0uYXBwLmRhdGFzeW5jLnYxLk1pbWVUeXBlUghtaW1lVHlwZRItCgVleHRyYRhjIAEoCzIXLmdv'
+    'b2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+
+@$core.Deprecated('Use uploadBinaryDataToDatasetsResponseDescriptor instead')
+const UploadBinaryDataToDatasetsResponse$json = {
+  '1': 'UploadBinaryDataToDatasetsResponse',
+};
+
+/// Descriptor for `UploadBinaryDataToDatasetsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadBinaryDataToDatasetsResponseDescriptor = $convert.base64Decode(
+    'CiJVcGxvYWRCaW5hcnlEYXRhVG9EYXRhc2V0c1Jlc3BvbnNl');
+

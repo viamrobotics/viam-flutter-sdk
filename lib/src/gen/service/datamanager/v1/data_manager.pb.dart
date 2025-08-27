@@ -13,12 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $47;
+import '../../../app/datasync/v1/data_sync.pbenum.dart' as $6;
+import '../../../google/protobuf/struct.pb.dart' as $48;
 
 class SyncRequest extends $pb.GeneratedMessage {
   factory SyncRequest({
     $core.String? name,
-    $47.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -35,7 +36,7 @@ class SyncRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$47.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $47.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -71,15 +72,15 @@ class SyncRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $47.Struct get extra => $_getN(1);
+  $48.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($47.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $47.Struct ensureExtra() => $_ensure(1);
+  $48.Struct ensureExtra() => $_ensure(1);
 }
 
 class SyncResponse extends $pb.GeneratedMessage {
@@ -112,6 +113,149 @@ class SyncResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static SyncResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncResponse>(create);
   static SyncResponse? _defaultInstance;
+}
+
+class UploadBinaryDataToDatasetsRequest extends $pb.GeneratedMessage {
+  factory UploadBinaryDataToDatasetsRequest({
+    $core.String? name,
+    $core.List<$core.int>? binaryData,
+    $core.Iterable<$core.String>? tags,
+    $core.Iterable<$core.String>? datasetIds,
+    $6.MimeType? mimeType,
+    $48.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (binaryData != null) {
+      $result.binaryData = binaryData;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (datasetIds != null) {
+      $result.datasetIds.addAll(datasetIds);
+    }
+    if (mimeType != null) {
+      $result.mimeType = mimeType;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  UploadBinaryDataToDatasetsRequest._() : super();
+  factory UploadBinaryDataToDatasetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadBinaryDataToDatasetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadBinaryDataToDatasetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'binaryData', $pb.PbFieldType.OY)
+    ..pPS(3, _omitFieldNames ? '' : 'tags')
+    ..pPS(4, _omitFieldNames ? '' : 'datasetIds')
+    ..e<$6.MimeType>(5, _omitFieldNames ? '' : 'mimeType', $pb.PbFieldType.OE, defaultOrMaker: $6.MimeType.MIME_TYPE_UNSPECIFIED, valueOf: $6.MimeType.valueOf, enumValues: $6.MimeType.values)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadBinaryDataToDatasetsRequest clone() => UploadBinaryDataToDatasetsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadBinaryDataToDatasetsRequest copyWith(void Function(UploadBinaryDataToDatasetsRequest) updates) => super.copyWith((message) => updates(message as UploadBinaryDataToDatasetsRequest)) as UploadBinaryDataToDatasetsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadBinaryDataToDatasetsRequest create() => UploadBinaryDataToDatasetsRequest._();
+  UploadBinaryDataToDatasetsRequest createEmptyInstance() => create();
+  static $pb.PbList<UploadBinaryDataToDatasetsRequest> createRepeated() => $pb.PbList<UploadBinaryDataToDatasetsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UploadBinaryDataToDatasetsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadBinaryDataToDatasetsRequest>(create);
+  static UploadBinaryDataToDatasetsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get binaryData => $_getN(1);
+  @$pb.TagNumber(2)
+  set binaryData($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBinaryData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBinaryData() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get tags => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get datasetIds => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $6.MimeType get mimeType => $_getN(4);
+  @$pb.TagNumber(5)
+  set mimeType($6.MimeType v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMimeType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMimeType() => clearField(5);
+
+  /// Additional arguments to the method
+  @$pb.TagNumber(99)
+  $48.Struct get extra => $_getN(5);
+  @$pb.TagNumber(99)
+  set extra($48.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(5);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $48.Struct ensureExtra() => $_ensure(5);
+}
+
+class UploadBinaryDataToDatasetsResponse extends $pb.GeneratedMessage {
+  factory UploadBinaryDataToDatasetsResponse() => create();
+  UploadBinaryDataToDatasetsResponse._() : super();
+  factory UploadBinaryDataToDatasetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadBinaryDataToDatasetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadBinaryDataToDatasetsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadBinaryDataToDatasetsResponse clone() => UploadBinaryDataToDatasetsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadBinaryDataToDatasetsResponse copyWith(void Function(UploadBinaryDataToDatasetsResponse) updates) => super.copyWith((message) => updates(message as UploadBinaryDataToDatasetsResponse)) as UploadBinaryDataToDatasetsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadBinaryDataToDatasetsResponse create() => UploadBinaryDataToDatasetsResponse._();
+  UploadBinaryDataToDatasetsResponse createEmptyInstance() => create();
+  static $pb.PbList<UploadBinaryDataToDatasetsResponse> createRepeated() => $pb.PbList<UploadBinaryDataToDatasetsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UploadBinaryDataToDatasetsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadBinaryDataToDatasetsResponse>(create);
+  static UploadBinaryDataToDatasetsResponse? _defaultInstance;
 }
 
 
