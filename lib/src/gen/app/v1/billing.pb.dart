@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $48;
+import '../../google/protobuf/timestamp.pb.dart' as $49;
 import 'billing.pbenum.dart';
 
 export 'billing.pbenum.dart';
@@ -21,11 +21,11 @@ export 'billing.pbenum.dart';
 class InvoiceSummary extends $pb.GeneratedMessage {
   factory InvoiceSummary({
     $core.String? id,
-    $48.Timestamp? invoiceDate,
+    $49.Timestamp? invoiceDate,
     $core.double? invoiceAmount,
     $core.String? status,
-    $48.Timestamp? dueDate,
-    $48.Timestamp? paidDate,
+    $49.Timestamp? dueDate,
+    $49.Timestamp? paidDate,
   }) {
     final $result = create();
     if (id != null) {
@@ -54,11 +54,11 @@ class InvoiceSummary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InvoiceSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$48.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $48.Timestamp.create)
+    ..aOM<$49.Timestamp>(2, _omitFieldNames ? '' : 'invoiceDate', subBuilder: $49.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'invoiceAmount', $pb.PbFieldType.OD)
     ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOM<$48.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $48.Timestamp.create)
-    ..aOM<$48.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $48.Timestamp.create)
+    ..aOM<$49.Timestamp>(5, _omitFieldNames ? '' : 'dueDate', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(6, _omitFieldNames ? '' : 'paidDate', subBuilder: $49.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -93,15 +93,15 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $48.Timestamp get invoiceDate => $_getN(1);
+  $49.Timestamp get invoiceDate => $_getN(1);
   @$pb.TagNumber(2)
-  set invoiceDate($48.Timestamp v) { setField(2, v); }
+  set invoiceDate($49.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasInvoiceDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearInvoiceDate() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Timestamp ensureInvoiceDate() => $_ensure(1);
+  $49.Timestamp ensureInvoiceDate() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.double get invoiceAmount => $_getN(2);
@@ -122,26 +122,26 @@ class InvoiceSummary extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $48.Timestamp get dueDate => $_getN(4);
+  $49.Timestamp get dueDate => $_getN(4);
   @$pb.TagNumber(5)
-  set dueDate($48.Timestamp v) { setField(5, v); }
+  set dueDate($49.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDueDate() => $_has(4);
   @$pb.TagNumber(5)
   void clearDueDate() => clearField(5);
   @$pb.TagNumber(5)
-  $48.Timestamp ensureDueDate() => $_ensure(4);
+  $49.Timestamp ensureDueDate() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $48.Timestamp get paidDate => $_getN(5);
+  $49.Timestamp get paidDate => $_getN(5);
   @$pb.TagNumber(6)
-  set paidDate($48.Timestamp v) { setField(6, v); }
+  set paidDate($49.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPaidDate() => $_has(5);
   @$pb.TagNumber(6)
   void clearPaidDate() => clearField(6);
   @$pb.TagNumber(6)
-  $48.Timestamp ensurePaidDate() => $_ensure(5);
+  $49.Timestamp ensurePaidDate() => $_ensure(5);
 }
 
 class PaymentMethodCard extends $pb.GeneratedMessage {
@@ -490,8 +490,8 @@ class ResourceUsageCosts extends $pb.GeneratedMessage {
 
 class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse({
-    $48.Timestamp? startDate,
-    $48.Timestamp? endDate,
+    $49.Timestamp? startDate,
+    $49.Timestamp? endDate,
   @$core.Deprecated('This field is deprecated.')
     $core.double? cloudStorageUsageCost,
   @$core.Deprecated('This field is deprecated.')
@@ -581,8 +581,8 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   factory GetCurrentMonthUsageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCurrentMonthUsageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
-    ..aOM<$48.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $48.Timestamp.create)
-    ..aOM<$48.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $48.Timestamp.create)
+    ..aOM<$49.Timestamp>(1, _omitFieldNames ? '' : 'startDate', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(2, _omitFieldNames ? '' : 'endDate', subBuilder: $49.Timestamp.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'cloudStorageUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'dataUploadUsageCost', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'dataEgresUsageCost', $pb.PbFieldType.OD)
@@ -621,26 +621,26 @@ class GetCurrentMonthUsageResponse extends $pb.GeneratedMessage {
   static GetCurrentMonthUsageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $48.Timestamp get startDate => $_getN(0);
+  $49.Timestamp get startDate => $_getN(0);
   @$pb.TagNumber(1)
-  set startDate($48.Timestamp v) { setField(1, v); }
+  set startDate($49.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartDate() => $_has(0);
   @$pb.TagNumber(1)
   void clearStartDate() => clearField(1);
   @$pb.TagNumber(1)
-  $48.Timestamp ensureStartDate() => $_ensure(0);
+  $49.Timestamp ensureStartDate() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $48.Timestamp get endDate => $_getN(1);
+  $49.Timestamp get endDate => $_getN(1);
   @$pb.TagNumber(2)
-  set endDate($48.Timestamp v) { setField(2, v); }
+  set endDate($49.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEndDate() => $_has(1);
   @$pb.TagNumber(2)
   void clearEndDate() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Timestamp ensureEndDate() => $_ensure(1);
+  $49.Timestamp ensureEndDate() => $_ensure(1);
 
   /// all fields below are deprecated
   @$core.Deprecated('This field is deprecated.')
@@ -1435,6 +1435,130 @@ class UpdateOrganizationBillingTierResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateOrganizationBillingTierResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOrganizationBillingTierResponse>(create);
   static UpdateOrganizationBillingTierResponse? _defaultInstance;
+}
+
+class CreateInvoiceAndChargeImmediatelyRequest extends $pb.GeneratedMessage {
+  factory CreateInvoiceAndChargeImmediatelyRequest({
+    $core.String? orgIdToCharge,
+    $core.double? amount,
+    $core.String? description,
+    $core.String? orgIdForBranding,
+  }) {
+    final $result = create();
+    if (orgIdToCharge != null) {
+      $result.orgIdToCharge = orgIdToCharge;
+    }
+    if (amount != null) {
+      $result.amount = amount;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (orgIdForBranding != null) {
+      $result.orgIdForBranding = orgIdForBranding;
+    }
+    return $result;
+  }
+  CreateInvoiceAndChargeImmediatelyRequest._() : super();
+  factory CreateInvoiceAndChargeImmediatelyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateInvoiceAndChargeImmediatelyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateInvoiceAndChargeImmediatelyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orgIdToCharge')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OD)
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'orgIdForBranding')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateInvoiceAndChargeImmediatelyRequest clone() => CreateInvoiceAndChargeImmediatelyRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateInvoiceAndChargeImmediatelyRequest copyWith(void Function(CreateInvoiceAndChargeImmediatelyRequest) updates) => super.copyWith((message) => updates(message as CreateInvoiceAndChargeImmediatelyRequest)) as CreateInvoiceAndChargeImmediatelyRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateInvoiceAndChargeImmediatelyRequest create() => CreateInvoiceAndChargeImmediatelyRequest._();
+  CreateInvoiceAndChargeImmediatelyRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateInvoiceAndChargeImmediatelyRequest> createRepeated() => $pb.PbList<CreateInvoiceAndChargeImmediatelyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateInvoiceAndChargeImmediatelyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateInvoiceAndChargeImmediatelyRequest>(create);
+  static CreateInvoiceAndChargeImmediatelyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orgIdToCharge => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orgIdToCharge($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrgIdToCharge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrgIdToCharge() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get amount => $_getN(1);
+  @$pb.TagNumber(2)
+  set amount($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAmount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get orgIdForBranding => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set orgIdForBranding($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOrgIdForBranding() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrgIdForBranding() => clearField(4);
+}
+
+class CreateInvoiceAndChargeImmediatelyResponse extends $pb.GeneratedMessage {
+  factory CreateInvoiceAndChargeImmediatelyResponse() => create();
+  CreateInvoiceAndChargeImmediatelyResponse._() : super();
+  factory CreateInvoiceAndChargeImmediatelyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateInvoiceAndChargeImmediatelyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateInvoiceAndChargeImmediatelyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateInvoiceAndChargeImmediatelyResponse clone() => CreateInvoiceAndChargeImmediatelyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateInvoiceAndChargeImmediatelyResponse copyWith(void Function(CreateInvoiceAndChargeImmediatelyResponse) updates) => super.copyWith((message) => updates(message as CreateInvoiceAndChargeImmediatelyResponse)) as CreateInvoiceAndChargeImmediatelyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateInvoiceAndChargeImmediatelyResponse create() => CreateInvoiceAndChargeImmediatelyResponse._();
+  CreateInvoiceAndChargeImmediatelyResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateInvoiceAndChargeImmediatelyResponse> createRepeated() => $pb.PbList<CreateInvoiceAndChargeImmediatelyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateInvoiceAndChargeImmediatelyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateInvoiceAndChargeImmediatelyResponse>(create);
+  static CreateInvoiceAndChargeImmediatelyResponse? _defaultInstance;
 }
 
 

@@ -166,6 +166,18 @@ final $typed_data.Uint8List meshDescriptor = $convert.base64Decode(
     'CgRNZXNoEiEKDGNvbnRlbnRfdHlwZRgBIAEoCVILY29udGVudFR5cGUSEgoEbWVzaBgCIAEoDF'
     'IEbWVzaA==');
 
+@$core.Deprecated('Use pointCloudDescriptor instead')
+const PointCloud$json = {
+  '1': 'PointCloud',
+  '2': [
+    {'1': 'point_cloud', '3': 1, '4': 1, '5': 12, '10': 'pointCloud'},
+  ],
+};
+
+/// Descriptor for `PointCloud`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pointCloudDescriptor = $convert.base64Decode(
+    'CgpQb2ludENsb3VkEh8KC3BvaW50X2Nsb3VkGAEgASgMUgpwb2ludENsb3Vk');
+
 @$core.Deprecated('Use geometryDescriptor instead')
 const Geometry$json = {
   '1': 'Geometry',
@@ -175,6 +187,7 @@ const Geometry$json = {
     {'1': 'box', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.RectangularPrism', '9': 0, '10': 'box'},
     {'1': 'capsule', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.Capsule', '9': 0, '10': 'capsule'},
     {'1': 'mesh', '3': 6, '4': 1, '5': 11, '6': '.viam.common.v1.Mesh', '9': 0, '10': 'mesh'},
+    {'1': 'pointcloud', '3': 7, '4': 1, '5': 11, '6': '.viam.common.v1.PointCloud', '9': 0, '10': 'pointcloud'},
     {'1': 'label', '3': 4, '4': 1, '5': 9, '10': 'label'},
   ],
   '8': [
@@ -188,8 +201,9 @@ final $typed_data.Uint8List geometryDescriptor = $convert.base64Decode(
     'ISMAoGc3BoZXJlGAIgASgLMhYudmlhbS5jb21tb24udjEuU3BoZXJlSABSBnNwaGVyZRI0CgNi'
     'b3gYAyABKAsyIC52aWFtLmNvbW1vbi52MS5SZWN0YW5ndWxhclByaXNtSABSA2JveBIzCgdjYX'
     'BzdWxlGAUgASgLMhcudmlhbS5jb21tb24udjEuQ2Fwc3VsZUgAUgdjYXBzdWxlEioKBG1lc2gY'
-    'BiABKAsyFC52aWFtLmNvbW1vbi52MS5NZXNoSABSBG1lc2gSFAoFbGFiZWwYBCABKAlSBWxhYm'
-    'VsQg8KDWdlb21ldHJ5X3R5cGU=');
+    'BiABKAsyFC52aWFtLmNvbW1vbi52MS5NZXNoSABSBG1lc2gSPAoKcG9pbnRjbG91ZBgHIAEoCz'
+    'IaLnZpYW0uY29tbW9uLnYxLlBvaW50Q2xvdWRIAFIKcG9pbnRjbG91ZBIUCgVsYWJlbBgEIAEo'
+    'CVIFbGFiZWxCDwoNZ2VvbWV0cnlfdHlwZQ==');
 
 @$core.Deprecated('Use geometriesInFrameDescriptor instead')
 const GeometriesInFrame$json = {
@@ -257,9 +271,12 @@ const Transform$json = {
     {'1': 'reference_frame', '3': 1, '4': 1, '5': 9, '10': 'referenceFrame'},
     {'1': 'pose_in_observer_frame', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'poseInObserverFrame'},
     {'1': 'physical_object', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.Geometry', '9': 0, '10': 'physicalObject', '17': true},
+    {'1': 'uuid', '3': 4, '4': 1, '5': 12, '10': 'uuid'},
+    {'1': 'metadata', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '9': 1, '10': 'metadata', '17': true},
   ],
   '8': [
     {'1': '_physical_object'},
+    {'1': '_metadata'},
   ],
 };
 
@@ -268,8 +285,9 @@ final $typed_data.Uint8List transformDescriptor = $convert.base64Decode(
     'CglUcmFuc2Zvcm0SJwoPcmVmZXJlbmNlX2ZyYW1lGAEgASgJUg5yZWZlcmVuY2VGcmFtZRJQCh'
     'Zwb3NlX2luX29ic2VydmVyX2ZyYW1lGAIgASgLMhsudmlhbS5jb21tb24udjEuUG9zZUluRnJh'
     'bWVSE3Bvc2VJbk9ic2VydmVyRnJhbWUSRgoPcGh5c2ljYWxfb2JqZWN0GAMgASgLMhgudmlhbS'
-    '5jb21tb24udjEuR2VvbWV0cnlIAFIOcGh5c2ljYWxPYmplY3SIAQFCEgoQX3BoeXNpY2FsX29i'
-    'amVjdA==');
+    '5jb21tb24udjEuR2VvbWV0cnlIAFIOcGh5c2ljYWxPYmplY3SIAQESEgoEdXVpZBgEIAEoDFIE'
+    'dXVpZBI4CghtZXRhZGF0YRgFIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RIAVIIbWV0YW'
+    'RhdGGIAQFCEgoQX3BoeXNpY2FsX29iamVjdEILCglfbWV0YWRhdGE=');
 
 @$core.Deprecated('Use worldStateDescriptor instead')
 const WorldState$json = {

@@ -30,6 +30,10 @@ class DataManagerServiceClient extends $grpc.Client {
       '/viam.service.datamanager.v1.DataManagerService/DoCommand',
       ($16.DoCommandRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+  static final _$uploadBinaryDataToDatasets = $grpc.ClientMethod<$37.UploadBinaryDataToDatasetsRequest, $37.UploadBinaryDataToDatasetsResponse>(
+      '/viam.service.datamanager.v1.DataManagerService/UploadBinaryDataToDatasets',
+      ($37.UploadBinaryDataToDatasetsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $37.UploadBinaryDataToDatasetsResponse.fromBuffer(value));
 
   DataManagerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -43,6 +47,10 @@ class DataManagerServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$37.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets($37.UploadBinaryDataToDatasetsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$uploadBinaryDataToDatasets, request, options: options);
   }
 }
 
@@ -65,6 +73,13 @@ abstract class DataManagerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
         ($16.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$37.UploadBinaryDataToDatasetsRequest, $37.UploadBinaryDataToDatasetsResponse>(
+        'UploadBinaryDataToDatasets',
+        uploadBinaryDataToDatasets_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $37.UploadBinaryDataToDatasetsRequest.fromBuffer(value),
+        ($37.UploadBinaryDataToDatasetsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$37.SyncResponse> sync_Pre($grpc.ServiceCall call, $async.Future<$37.SyncRequest> request) async {
@@ -75,6 +90,11 @@ abstract class DataManagerServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
+  $async.Future<$37.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets_Pre($grpc.ServiceCall call, $async.Future<$37.UploadBinaryDataToDatasetsRequest> request) async {
+    return uploadBinaryDataToDatasets(call, await request);
+  }
+
   $async.Future<$37.SyncResponse> sync($grpc.ServiceCall call, $37.SyncRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$37.UploadBinaryDataToDatasetsResponse> uploadBinaryDataToDatasets($grpc.ServiceCall call, $37.UploadBinaryDataToDatasetsRequest request);
 }
