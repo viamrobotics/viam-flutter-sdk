@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as proto;
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../media/image.dart';
@@ -51,8 +51,45 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
   }
 
   @override
+  Future<GetImagesResult> getImages({
+    List<String>? filterSourceNames,
+    Map<String, dynamic>? extra,
+  }) async {
+    final request = GetImagesRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+
+    if (filterSourceNames != null && filterSourceNames.isNotEmpty) {
+      request.filterSourceNames.addAll(filterSourceNames);
+    }
+
+    final response = await client.getImages(request, options: callOptions);
+
+    final images = response.images.map((image) {
+      final mimeType = MimeType.fromFormat(image.format);
+      final viamImage = ViamImage(image.image, mimeType);
+      return NamedImage(
+        sourceName: image.sourceName,
+        image: viamImage,
+      );
+    }).toList();
+
+    ResponseMetadata? nativeMetadata;
+    if (response.hasResponseMetadata()) {
+      nativeMetadata = ResponseMetadata(
+        capturedAt: response.responseMetadata.capturedAt.toDateTime(),
+      );
+    }
+
+    return GetImagesResult(
+      images: images,
+      metadata: nativeMetadata,
+    );
+  }
+
+  @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final request = DoCommandRequest()
+    final request = proto.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);
