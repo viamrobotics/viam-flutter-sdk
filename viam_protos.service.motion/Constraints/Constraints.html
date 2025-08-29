@@ -57,6 +57,7 @@
       <span class="name ">Constraints</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-linearConstraint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.motion/LinearConstraint-class.html">LinearConstraint</a></span>&gt;</span>?</span> <span class="parameter-name">linearConstraint</span>, </span></li>
 <li><span class="parameter" id="-param-orientationConstraint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.motion/OrientationConstraint-class.html">OrientationConstraint</a></span>&gt;</span>?</span> <span class="parameter-name">orientationConstraint</span>, </span></li>
 <li><span class="parameter" id="-param-collisionSpecification"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.motion/CollisionSpecification-class.html">CollisionSpecification</a></span>&gt;</span>?</span> <span class="parameter-name">collisionSpecification</span>, </span></li>
+<li><span class="parameter" id="-param-pseudolinearConstraint"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.service.motion/PseudolinearConstraint-class.html">PseudolinearConstraint</a></span>&gt;</span>?</span> <span class="parameter-name">pseudolinearConstraint</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +70,7 @@
   $core.Iterable&lt;LinearConstraint&gt;? linearConstraint,
   $core.Iterable&lt;OrientationConstraint&gt;? orientationConstraint,
   $core.Iterable&lt;CollisionSpecification&gt;? collisionSpecification,
+  $core.Iterable&lt;PseudolinearConstraint&gt;? pseudolinearConstraint,
 }) {
   final $result = create();
   if (linearConstraint != null) {
@@ -79,6 +81,9 @@
   }
   if (collisionSpecification != null) {
     $result.collisionSpecification.addAll(collisionSpecification);
+  }
+  if (pseudolinearConstraint != null) {
+    $result.pseudolinearConstraint.addAll(pseudolinearConstraint);
   }
   return $result;
 }</code></pre>

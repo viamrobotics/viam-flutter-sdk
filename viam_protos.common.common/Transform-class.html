@@ -92,7 +92,7 @@ reference frame as observed within the second reference frame.</p>
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="Transform.new" class="callable">
-          <span class="name"><a href="../viam_protos.common.common/Transform/Transform.html">Transform.new</a></span><span class="signature">({<span class="parameter" id="-param-referenceFrame"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">referenceFrame</span>, </span><span class="parameter" id="-param-poseInObserverFrame"><span class="type-annotation"><a href="../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">poseInObserverFrame</span>, </span><span class="parameter" id="-param-physicalObject"><span class="type-annotation"><a href="../viam_protos.common.common/Geometry-class.html">Geometry</a>?</span> <span class="parameter-name">physicalObject</span></span>})</span>
+          <span class="name"><a href="../viam_protos.common.common/Transform/Transform.html">Transform.new</a></span><span class="signature">({<span class="parameter" id="-param-referenceFrame"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">referenceFrame</span>, </span><span class="parameter" id="-param-poseInObserverFrame"><span class="type-annotation"><a href="../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">poseInObserverFrame</span>, </span><span class="parameter" id="-param-physicalObject"><span class="type-annotation"><a href="../viam_protos.common.common/Geometry-class.html">Geometry</a>?</span> <span class="parameter-name">physicalObject</span>, </span><span class="parameter" id="-param-uuid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">uuid</span>, </span><span class="parameter" id="-param-metadata"><span class="type-annotation">Struct?</span> <span class="parameter-name">metadata</span></span>})</span>
         </dt>
         <dd>
           
@@ -169,6 +169,18 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="metadata" class="property">
+  <span class="name"><a href="../viam_protos.common.common/Transform/metadata.html">metadata</a></span>
+  <span class="signature">&#8596; Struct</span>
+  
+
+</dt>
+<dd>
+  Can hold information like color, opacity, points colors, collision_allowed, etc...
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
         <dt id="physicalObject" class="property">
   <span class="name"><a href="../viam_protos.common.common/Transform/physicalObject.html">physicalObject</a></span>
   <span class="signature">&#8596; <a href="../viam_protos.common.common/Geometry-class.html">Geometry</a></span>
@@ -226,6 +238,18 @@ to protobuf fields.
 <dd class="inherited">
   
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="uuid" class="property">
+  <span class="name"><a href="../viam_protos.common.common/Transform/uuid.html">uuid</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  The UUID of the transform
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
@@ -303,6 +327,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearMetadata" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/Transform/clearMetadata.html">clearMetadata</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearPhysicalObject" class="callable">
   <span class="name"><a href="../viam_protos.common.common/Transform/clearPhysicalObject.html">clearPhysicalObject</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -331,6 +368,19 @@ to protobuf fields.
 
         <dt id="clearReferenceFrame" class="callable">
   <span class="name"><a href="../viam_protos.common.common/Transform/clearReferenceFrame.html">clearReferenceFrame</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearUuid" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/Transform/clearUuid.html">clearUuid</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -421,6 +471,19 @@ to protobuf fields.
         provided by the <a href="https://pub.dev/documentation/protobuf/3.1.0/protobuf/GeneratedMessageGenericExtensions.html">GeneratedMessageGenericExtensions</a> extension</span>
       </p>
   Returns a writable deep copy of this message.
+  
+
+</dd>
+
+        <dt id="ensureMetadata" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/Transform/ensureMetadata.html">ensureMetadata</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Struct</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
   
 
 </dd>
@@ -569,6 +632,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasMetadata" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/Transform/hasMetadata.html">hasMetadata</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasPhysicalObject" class="callable">
   <span class="name"><a href="../viam_protos.common.common/Transform/hasPhysicalObject.html">hasPhysicalObject</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -618,6 +694,19 @@ default value if it is not set.
 <dd class="inherited">
   Whether the message has required fields.
   <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="hasUuid" class="callable">
+  <span class="name"><a href="../viam_protos.common.common/Transform/hasUuid.html">hasUuid</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
 
 </dd>
 

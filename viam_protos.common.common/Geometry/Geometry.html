@@ -60,6 +60,7 @@
 <li><span class="parameter" id="-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">label</span>, </span></li>
 <li><span class="parameter" id="-param-capsule"><span class="type-annotation"><a href="../../viam_protos.common.common/Capsule-class.html">Capsule</a>?</span> <span class="parameter-name">capsule</span>, </span></li>
 <li><span class="parameter" id="-param-mesh"><span class="type-annotation"><a href="../../viam_protos.common.common/Mesh-class.html">Mesh</a>?</span> <span class="parameter-name">mesh</span>, </span></li>
+<li><span class="parameter" id="-param-pointcloud"><span class="type-annotation"><a href="../../viam_protos.common.common/PointCloud-class.html">PointCloud</a>?</span> <span class="parameter-name">pointcloud</span>, </span></li>
 </ol>})
     </section>
     
@@ -75,6 +76,7 @@
   $core.String? label,
   Capsule? capsule,
   Mesh? mesh,
+  PointCloud? pointcloud,
 }) {
   final $result = create();
   if (center != null) {
@@ -94,6 +96,9 @@
   }
   if (mesh != null) {
     $result.mesh = mesh;
+  }
+  if (pointcloud != null) {
+    $result.pointcloud = pointcloud;
   }
   return $result;
 }</code></pre>

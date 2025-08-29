@@ -60,6 +60,7 @@
 <li><span class="parameter" id="-param-dataStartTime"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">dataStartTime</span>, </span></li>
 <li><span class="parameter" id="-param-dataEndTime"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">dataEndTime</span>, </span></li>
 <li><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../../viam_protos.app.data_pipelines/DataPipelineRunStatus-class.html">DataPipelineRunStatus</a>?</span> <span class="parameter-name">status</span>, </span></li>
+<li><span class="parameter" id="-param-errorMessage"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">errorMessage</span>, </span></li>
 </ol>})
     </section>
     
@@ -70,11 +71,12 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory DataPipelineRun({
   $core.String? id,
-  $48.Timestamp? startTime,
-  $48.Timestamp? endTime,
-  $48.Timestamp? dataStartTime,
-  $48.Timestamp? dataEndTime,
+  $49.Timestamp? startTime,
+  $49.Timestamp? endTime,
+  $49.Timestamp? dataStartTime,
+  $49.Timestamp? dataEndTime,
   DataPipelineRunStatus? status,
+  $core.String? errorMessage,
 }) {
   final $result = create();
   if (id != null) {
@@ -94,6 +96,9 @@
   }
   if (status != null) {
     $result.status = status;
+  }
+  if (errorMessage != null) {
+    $result.errorMessage = errorMessage;
   }
   return $result;
 }</code></pre>

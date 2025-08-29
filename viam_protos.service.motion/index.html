@@ -302,6 +302,17 @@ the status is associated with
 that have occured previously on that plan
 </dd>
 
+          <dt id="PseudolinearConstraint">
+  <span class="name "><a href="../viam_protos.service.motion/PseudolinearConstraint-class.html">PseudolinearConstraint</a></span> 
+
+</dt>
+<dd>
+  PseudolinearConstraint specifies that the component being moved should not deviate from the straight-line path to their goal by
+more than a factor proportional to the distance from start to goal.
+For example, if a component is moving 100mm, then a LineToleranceFactor of 1.0 means that the component will remain within a 100mm
+radius of the straight-line start-goal path.
+</dd>
+
           <dt id="StopPlanRequest">
   <span class="name "><a href="../viam_protos.service.motion/StopPlanRequest-class.html">StopPlanRequest</a></span> 
 
@@ -652,6 +663,18 @@ that have occured previously on that plan
 
 </dd>
 
+          <dt id="PseudolinearConstraint$json" class="constant">
+    <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/PseudolinearConstraint$json-constant.html">PseudolinearConstraint$json</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
           <dt id="StopPlanRequest$json" class="constant">
     <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/StopPlanRequest$json-constant.html">StopPlanRequest$json</a></span>
   <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span>&gt;</span></span>
@@ -982,6 +1005,18 @@ that have occured previously on that plan
 
 </dd>
 
+          <dt id="pseudolinearConstraintDescriptor" class="property">
+  <span class="name"><a href="../viam_protos.service.motion/pseudolinearConstraintDescriptor.html">pseudolinearConstraintDescriptor</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  
+
+</dt>
+<dd>
+  Descriptor for <code>PseudolinearConstraint</code>. Decode as a <code>google.protobuf.DescriptorProto</code>.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
           <dt id="stopPlanRequestDescriptor" class="property">
   <span class="name"><a href="../viam_protos.service.motion/stopPlanRequestDescriptor.html">stopPlanRequestDescriptor</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
@@ -1100,6 +1135,7 @@ that have occured previously on that plan
         <li class="section-subitem"><a href="../viam_protos.service.shell/">protos/service/shell</a></li>
         <li class="section-subitem"><a href="../viam_protos.service.slam/">protos/service/slam</a></li>
         <li class="section-subitem"><a href="../viam_protos.service.vision/">protos/service/vision</a></li>
+        <li class="section-subitem"><a href="../viam_protos.service.world_state_store/">protos/service/world_state_store</a></li>
 </ol>
 
   </div>

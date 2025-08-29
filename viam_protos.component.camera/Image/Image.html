@@ -57,6 +57,7 @@
       <span class="name ">Image</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-sourceName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">sourceName</span>, </span></li>
 <li><span class="parameter" id="-param-format"><span class="type-annotation"><a href="../../viam_protos.component.camera/Format-class.html">Format</a>?</span> <span class="parameter-name">format</span>, </span></li>
 <li><span class="parameter" id="-param-image"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">image</span>, </span></li>
+<li><span class="parameter" id="-param-mimeType"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">mimeType</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +70,7 @@
   $core.String? sourceName,
   Format? format,
   $core.List&lt;$core.int&gt;? image,
+  $core.String? mimeType,
 }) {
   final $result = create();
   if (sourceName != null) {
@@ -79,6 +81,9 @@
   }
   if (image != null) {
     $result.image = image;
+  }
+  if (mimeType != null) {
+    $result.mimeType = mimeType;
   }
   return $result;
 }</code></pre>
