@@ -668,6 +668,17 @@ void main() {
         final response = await dataClient.listDatasetsByIDs(['dataset-id']);
         expect(response, equals(expected));
       });
+
+      test('mergeDatasets', () async {
+        const expectedDatasetId = 'merged-dataset-id';
+        when(datasetServiceClient.mergeDatasets(any)).thenAnswer((_) => MockResponseFuture.value(MergeDatasetsResponse()..datasetId = expectedDatasetId));
+
+        final response = await dataClient.mergeDatasets(['id1', 'id2'], 'new-name', 'orgId');
+        expect(response, equals(expectedDatasetId));
+        verify(datasetServiceClient.mergeDatasets(argThat(predicate<MergeDatasetsRequest>((req) {
+          return req.datasetIds.contains('id1') && req.datasetIds.contains('id2') && req.name == 'new-name' && req.organizationId == 'orgId';
+        })))).called(1);
+      });
     });
   });
 

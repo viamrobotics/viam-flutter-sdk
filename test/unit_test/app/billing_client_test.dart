@@ -49,5 +49,14 @@ void main() {
             emitsDone
           ]));
     });
+
+    test('createInvoiceAndChargeImmediately', () async {
+      when(serviceClient.createInvoiceAndChargeImmediately(any))
+          .thenAnswer((_) => MockResponseFuture.value(CreateInvoiceAndChargeImmediatelyResponse()));
+      await billingClient.createInvoiceAndChargeImmediately('orgId', 100.0, description: 'test', orgIdForBranding: 'brandingOrgId');
+      verify(serviceClient.createInvoiceAndChargeImmediately(argThat(predicate<CreateInvoiceAndChargeImmediatelyRequest>((req) {
+        return req.orgIdToCharge == 'orgId' && req.amount == 100.0 && req.description == 'test' && req.orgIdForBranding == 'brandingOrgId';
+      })))).called(1);
+    });
   });
 }
