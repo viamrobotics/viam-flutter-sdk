@@ -5,6 +5,47 @@ import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// {@category Viam SDK}
+/// A ViamImage with its source name from the camera
+class NamedImage {
+  /// Name of the source where the image came from
+  final String sourceName;
+
+  /// ViamImage that contains the mime type and raw image data
+  final ViamImage image;
+
+  NamedImage({
+    required this.sourceName,
+    required this.image,
+  });
+}
+
+/// {@category Viam SDK}
+/// Metadata about a GetImages response
+class ResponseMetadata {
+  /// Timestamp of when the response was captured
+  final DateTime capturedAt;
+
+  ResponseMetadata({
+    required this.capturedAt,
+  });
+}
+
+/// {@category Viam SDK}
+/// Response from GetImages containing named images and metadata
+class GetImagesResult {
+  /// The list of named images from various sources
+  final List<NamedImage> images;
+
+  /// Metadata about the response
+  final ResponseMetadata? metadata;
+
+  GetImagesResult({
+    required this.images,
+    this.metadata,
+  });
+}
+
+/// {@category Viam SDK}
 /// The camera's supported features and settings
 typedef CameraProperties = GetPropertiesResponse;
 
@@ -41,6 +82,29 @@ abstract class Camera extends Resource {
   ///
   /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getproperties).
   Future<CameraProperties> properties();
+
+  /// Return a list of named images from a camera and metadata about the response.
+  ///
+  /// ```
+  /// const camera = new VIAM.CameraClient(machine, 'my_camera');
+  /// const images = await camera.getImages();
+  /// ```
+  ///
+  /// @example
+  /// ```
+  /// final images = await camera.getImages(
+  ///   filterSourceNames: ['color'],
+  ///   extra: {},
+  /// );
+  /// ```
+  ///
+  /// @param filterSourceNames - A list of source names to filter the images by.
+  ///                           If empty or undefined, all images will be returned.
+  /// @param extra - Extra parameters to pass to the camera.
+  Future<GetImagesResult> getImages({
+    List<String>? filterSourceNames,
+    Map<String, dynamic>? extra,
+  });
 
   /// Get the [ResourceName] for this [Camera] with the given [name]
   ///
