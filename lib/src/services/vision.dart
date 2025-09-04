@@ -120,8 +120,8 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   /// // Example:
   /// var properties = await myVisionService.properties();
-  /// properties.detections_supported       // returns true
-  /// properties.classifications_supported  // returns false
+  /// properties.detections_supported
+  /// properties.classifications_supported
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getproperties).
