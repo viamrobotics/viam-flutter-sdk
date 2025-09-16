@@ -34,7 +34,7 @@ class DialOptions {
   /// The entity to authenticate as
   String? authEntity;
 
-  /// Used to authenticate the request.
+  /// Used to authenticate the request. Can be left null if using [accessToken].
   Credentials? credentials;
 
   /// Options to control how WebRTC is utilized in a dial attempt
@@ -248,7 +248,7 @@ Future<String> _searchMdns(String address) async {
 
 Future<ClientChannelBase> _dialDirectGrpc(String address, DialOptions options, String Function() sessionCallback) async {
   _logger.d('Dialing direct GRPC to $address');
-  if (options.credentials == null) {
+  if (options.credentials == null && options.accessToken == null) {
     final host = _hostAndPort(address, options.insecure);
     return GrpcOrGrpcWebClientChannel.grpc(host.host,
         port: host.port,
