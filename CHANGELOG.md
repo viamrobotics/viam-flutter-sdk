@@ -1,11 +1,16 @@
 # Changelog
 
-## [v0.9.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.9.0) (2025-08-11)
+## [v0.10.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.0) (2025-09-08)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.8.0...v0.9.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.9.0...v0.10.0)
 
 **Merged pull requests:**
 
+- Update vision.dart [\#423](https://github.com/viamrobotics/viam-flutter-sdk/pull/423) ([npentrel](https://github.com/npentrel))
+- RSDK-11707    —     Update Flutter SDK with new GetImages signature [\#422](https://github.com/viamrobotics/viam-flutter-sdk/pull/422) ([hexbabe](https://github.com/hexbabe))
+- use viam repo [\#420](https://github.com/viamrobotics/viam-flutter-sdk/pull/420) ([stuqdog](https://github.com/stuqdog))
+- Automated Protos Update [\#418](https://github.com/viamrobotics/viam-flutter-sdk/pull/418) ([viambot](https://github.com/viambot))
+- v0.9.0 [\#417](https://github.com/viamrobotics/viam-flutter-sdk/pull/417) ([github-actions[bot]](https://github.com/apps/github-actions))
 - fix branch name in ai-updater workflow [\#416](https://github.com/viamrobotics/viam-flutter-sdk/pull/416) ([gabegottlob](https://github.com/gabegottlob))
 - Automated Protos Update [\#415](https://github.com/viamrobotics/viam-flutter-sdk/pull/415) ([viambot](https://github.com/viambot))
 - v0.8.0 [\#414](https://github.com/viamrobotics/viam-flutter-sdk/pull/414) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -134,6 +139,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.9.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.9.0) (2025-08-11)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.8.0...v0.9.0)
 
 ## [v0.8.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.8.0) (2025-08-04)
 
