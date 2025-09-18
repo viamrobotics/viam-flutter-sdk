@@ -333,12 +333,32 @@ class AppClient {
 
   /// Get a page of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
   ///
-  /// [filter] (string) (optional): Optional string to filter logs on.
-  /// [pageToken] (string) (optional): Optional string indicating which page of logs to query. Defaults to the most recent.
-  /// [levels] (string) (optional): Optional array of log levels to return. Defaults to returning all log levels.
-  /// [limit] (string) (optional): Number of log entries to return. Passing 0 returns all logs. Defaults to 100. All logs or the first
-  /// [startTime] (DateTime) (Optional): The time of the earliest logs to return. Should be earlier than [endTime].
-  /// [endTime] (DateTime) (Optional): The time of the latest logs to return. Should be later than [startTime].
+  /// Required Parameters:
+  ///
+  /// * [partId]: The ID for the robot part to query logs from.
+  ///
+  /// Optional Parameters:
+  /// * [filter]: String to filter logs on.
+  /// * [pageToken]: String indicating which page of logs to query. Defaults to the most recent. The response contains the token for the next page.
+  /// * [levels]: Optional array of log levels to return. Defaults to returning all log levels.
+  /// * [limit]: Number of log entries to return. Passing 0 returns all logs. Defaults to 100.
+  /// * [startTime]: The time of the earliest logs to return. Should be earlier than [endTime].
+  /// * [endTime]: The time of the latest logs to return. Should be later than [startTime].
+  /// * [source]: String to filter logs based on their source.
+  ///
+  /// It is highly suggested to send a [startTime] & [endTime] otherwise the API call will take significantly longer to process.
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// getLogs(
+  ///   partId,
+  ///   pageToken: pageToken,
+  ///   limit: 20,
+  ///   startTime: DateTime.now.subtract(Duration(hours: 12)),
+  ///   endTime: DateTime.now(),
+  /// );
+  /// ```
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<RobotPartLogPage> getLogs(
