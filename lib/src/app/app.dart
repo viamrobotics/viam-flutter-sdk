@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:fixnum/fixnum.dart';
+
 import '../../protos/app/packages.dart';
 import '../gen/app/v1/app.pbgrpc.dart';
 import '../gen/common/v1/common.pb.dart';
@@ -331,12 +333,61 @@ class AppClient {
 
   /// Get a page of [LogEntry] for a specific [RobotPart]. Logs are sorted by descending time (newest first)
   ///
+  /// Required Parameters:
+  ///
+  /// * [partId]: The ID for the robot part to query logs from.
+  ///
+  /// Optional Parameters:
+  /// * [filter]: String to filter logs on.
+  /// * [pageToken]: String indicating which page of logs to query. Defaults to the most recent. The response contains the token for the next page.
+  /// * [levels]: Optional array of log levels to return. Defaults to returning all log levels.
+  /// * [limit]: Number of log entries to return. Passing 0 returns all logs. Defaults to 100.
+  /// * [startTime]: The time of the earliest logs to return. Should be earlier than [endTime].
+  /// * [endTime]: The time of the latest logs to return. Should be later than [startTime].
+  /// * [source]: String to filter logs based on their source.
+  ///
+  /// It is highly suggested to send a [startTime] & [endTime] otherwise the API call will take significantly longer to process.
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// getLogs(
+  ///   partId,
+  ///   pageToken: pageToken,
+  ///   limit: 20,
+  ///   startTime: DateTime.now.subtract(Duration(hours: 12)),
+  ///   endTime: DateTime.now(),
+  /// );
+  /// ```
+  ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
-  Future<RobotPartLogPage> getLogs(String partId, {String? filter, String? pageToken}) async {
-    final request = GetRobotPartLogsRequest()
-      ..id = partId
-      ..filter = filter ?? '';
-    if (pageToken != null) request.pageToken = pageToken;
+  Future<RobotPartLogPage> getLogs(
+    String partId, {
+    String? filter,
+    String? pageToken,
+    Iterable<String>? levels,
+    int? limit,
+    DateTime? startTime,
+    DateTime? endTime,
+    String? source,
+  }) async {
+    final convertedLimit = (limit != null) ? Int64(limit) : null;
+    final start = (startTime != null) ? Timestamp.fromDateTime(startTime) : null;
+    final end = (endTime != null) ? Timestamp.fromDateTime(endTime) : null;
+
+    if (startTime != null && endTime != null) assert(endTime.isAfter(startTime), 'endTime must be later than startTime');
+
+    final request = GetRobotPartLogsRequest(
+      id: partId,
+      filter: filter,
+      pageToken: pageToken,
+      levels: levels,
+      start: start,
+      end: end,
+      limit: convertedLimit,
+      source: source,
+    );
+
     return await _client.getRobotPartLogs(request);
   }
 

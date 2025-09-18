@@ -1,3 +1,4 @@
+import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/app/app.dart';
@@ -347,9 +348,45 @@ void main() {
       final expected = RobotPartLogPage()
         ..logs.add(log)
         ..nextPageToken = 'nextPageToken';
-      when(serviceClient.getRobotPartLogs(any)).thenAnswer((_) => MockResponseFuture.value(expected));
-      final response = await appClient.getLogs('robotPart');
+
+      final now = DateTime.now();
+      final startTime = now.subtract(const Duration(days: 1));
+      final endTime = now;
+
+      when(serviceClient.getRobotPartLogs(argThat(
+        isA<GetRobotPartLogsRequest>()
+            .having((req) => req.id, 'id', 'robotPart')
+            .having((req) => req.filter, 'filter', 'myFilter')
+            .having((req) => req.pageToken, 'pageToken', 'myPageToken')
+            .having((req) => req.levels, 'levels', equals(['info', 'warn']))
+            .having((req) => req.limit, 'limit', Int64(10))
+            .having((req) => req.start, 'start', Timestamp.fromDateTime(startTime))
+            .having((req) => req.end, 'end', Timestamp.fromDateTime(endTime))
+            .having((req) => req.source, 'source', 'mySource'),
+      ))).thenAnswer((_) => MockResponseFuture.value(expected));
+
+      final response = await appClient.getLogs(
+        'robotPart',
+        filter: 'myFilter',
+        pageToken: 'myPageToken',
+        levels: ['info', 'warn'],
+        limit: 10,
+        startTime: startTime,
+        endTime: endTime,
+        source: 'mySource',
+      );
       expect(response, equals(expected));
+    });
+
+    test('getLogs throws assertion error if endTime is not after startTime', () {
+      expect(
+        () => appClient.getLogs(
+          'robotPart',
+          startTime: DateTime.now(),
+          endTime: DateTime.now().subtract(const Duration(seconds: 1)),
+        ),
+        throwsA(isA<AssertionError>()),
+      );
     });
 
     test('tailLogs', () async {
