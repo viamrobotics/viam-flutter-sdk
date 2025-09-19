@@ -16,10 +16,12 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class PaymentMethodType extends $pb.ProtobufEnum {
   static const PaymentMethodType PAYMENT_METHOD_TYPE_UNSPECIFIED = PaymentMethodType._(0, _omitEnumNames ? '' : 'PAYMENT_METHOD_TYPE_UNSPECIFIED');
   static const PaymentMethodType PAYMENT_METHOD_TYPE_CARD = PaymentMethodType._(1, _omitEnumNames ? '' : 'PAYMENT_METHOD_TYPE_CARD');
+  static const PaymentMethodType PAYMENT_METHOD_TYPE_USBANKACCOUNT = PaymentMethodType._(2, _omitEnumNames ? '' : 'PAYMENT_METHOD_TYPE_USBANKACCOUNT');
 
   static const $core.List<PaymentMethodType> values = <PaymentMethodType> [
     PAYMENT_METHOD_TYPE_UNSPECIFIED,
     PAYMENT_METHOD_TYPE_CARD,
+    PAYMENT_METHOD_TYPE_USBANKACCOUNT,
   ];
 
   static final $core.Map<$core.int, PaymentMethodType> _byValue = $pb.ProtobufEnum.initByValue(values);

@@ -11,6 +11,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $49;
@@ -206,6 +207,178 @@ class PaymentMethodCard extends $pb.GeneratedMessage {
   $core.bool hasLastFourDigits() => $_has(1);
   @$pb.TagNumber(2)
   void clearLastFourDigits() => clearField(2);
+}
+
+class VerificationInfo extends $pb.GeneratedMessage {
+  factory VerificationInfo({
+    $fixnum.Int64? arrivalDate,
+    $core.String? hostedVerificationPageUrl,
+  }) {
+    final $result = create();
+    if (arrivalDate != null) {
+      $result.arrivalDate = arrivalDate;
+    }
+    if (hostedVerificationPageUrl != null) {
+      $result.hostedVerificationPageUrl = hostedVerificationPageUrl;
+    }
+    return $result;
+  }
+  VerificationInfo._() : super();
+  factory VerificationInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VerificationInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerificationInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'arrivalDate')
+    ..aOS(2, _omitFieldNames ? '' : 'hostedVerificationPageUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  VerificationInfo clone() => VerificationInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  VerificationInfo copyWith(void Function(VerificationInfo) updates) => super.copyWith((message) => updates(message as VerificationInfo)) as VerificationInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerificationInfo create() => VerificationInfo._();
+  VerificationInfo createEmptyInstance() => create();
+  static $pb.PbList<VerificationInfo> createRepeated() => $pb.PbList<VerificationInfo>();
+  @$core.pragma('dart2js:noInline')
+  static VerificationInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerificationInfo>(create);
+  static VerificationInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get arrivalDate => $_getI64(0);
+  @$pb.TagNumber(1)
+  set arrivalDate($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasArrivalDate() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArrivalDate() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get hostedVerificationPageUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set hostedVerificationPageUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHostedVerificationPageUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHostedVerificationPageUrl() => clearField(2);
+}
+
+class PaymentMethodUSBankAccount extends $pb.GeneratedMessage {
+  factory PaymentMethodUSBankAccount({
+    $core.String? bankName,
+    $core.String? lastFourDigitsAccountNumber,
+    $core.String? routingNumber,
+    $core.String? accountType,
+    VerificationInfo? verificationInfo,
+  }) {
+    final $result = create();
+    if (bankName != null) {
+      $result.bankName = bankName;
+    }
+    if (lastFourDigitsAccountNumber != null) {
+      $result.lastFourDigitsAccountNumber = lastFourDigitsAccountNumber;
+    }
+    if (routingNumber != null) {
+      $result.routingNumber = routingNumber;
+    }
+    if (accountType != null) {
+      $result.accountType = accountType;
+    }
+    if (verificationInfo != null) {
+      $result.verificationInfo = verificationInfo;
+    }
+    return $result;
+  }
+  PaymentMethodUSBankAccount._() : super();
+  factory PaymentMethodUSBankAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PaymentMethodUSBankAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PaymentMethodUSBankAccount', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'bankName')
+    ..aOS(2, _omitFieldNames ? '' : 'lastFourDigitsAccountNumber')
+    ..aOS(3, _omitFieldNames ? '' : 'routingNumber')
+    ..aOS(4, _omitFieldNames ? '' : 'accountType')
+    ..aOM<VerificationInfo>(5, _omitFieldNames ? '' : 'verificationInfo', subBuilder: VerificationInfo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PaymentMethodUSBankAccount clone() => PaymentMethodUSBankAccount()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PaymentMethodUSBankAccount copyWith(void Function(PaymentMethodUSBankAccount) updates) => super.copyWith((message) => updates(message as PaymentMethodUSBankAccount)) as PaymentMethodUSBankAccount;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PaymentMethodUSBankAccount create() => PaymentMethodUSBankAccount._();
+  PaymentMethodUSBankAccount createEmptyInstance() => create();
+  static $pb.PbList<PaymentMethodUSBankAccount> createRepeated() => $pb.PbList<PaymentMethodUSBankAccount>();
+  @$core.pragma('dart2js:noInline')
+  static PaymentMethodUSBankAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PaymentMethodUSBankAccount>(create);
+  static PaymentMethodUSBankAccount? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get bankName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set bankName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBankName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBankName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get lastFourDigitsAccountNumber => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set lastFourDigitsAccountNumber($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLastFourDigitsAccountNumber() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLastFourDigitsAccountNumber() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get routingNumber => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set routingNumber($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRoutingNumber() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoutingNumber() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get accountType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set accountType($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAccountType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAccountType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  VerificationInfo get verificationInfo => $_getN(4);
+  @$pb.TagNumber(5)
+  set verificationInfo(VerificationInfo v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasVerificationInfo() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVerificationInfo() => clearField(5);
+  @$pb.TagNumber(5)
+  VerificationInfo ensureVerificationInfo() => $_ensure(4);
 }
 
 class GetCurrentMonthUsageRequest extends $pb.GeneratedMessage {
@@ -855,6 +1028,7 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
     $core.String? billingEmail,
     PaymentMethodCard? method,
     $core.String? billingTier,
+    PaymentMethodUSBankAccount? methodUsBankAccount,
   }) {
     final $result = create();
     if (type != null) {
@@ -869,6 +1043,9 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
     if (billingTier != null) {
       $result.billingTier = billingTier;
     }
+    if (methodUsBankAccount != null) {
+      $result.methodUsBankAccount = methodUsBankAccount;
+    }
     return $result;
   }
   GetOrgBillingInformationResponse._() : super();
@@ -880,6 +1057,7 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'billingEmail')
     ..aOM<PaymentMethodCard>(3, _omitFieldNames ? '' : 'method', subBuilder: PaymentMethodCard.create)
     ..aOS(4, _omitFieldNames ? '' : 'billingTier')
+    ..aOM<PaymentMethodUSBankAccount>(5, _omitFieldNames ? '' : 'methodUsBankAccount', subBuilder: PaymentMethodUSBankAccount.create)
     ..hasRequiredFields = false
   ;
 
@@ -943,6 +1121,18 @@ class GetOrgBillingInformationResponse extends $pb.GeneratedMessage {
   $core.bool hasBillingTier() => $_has(3);
   @$pb.TagNumber(4)
   void clearBillingTier() => clearField(4);
+
+  /// defined if type is PAYMENT_METHOD_TYPE_USBANKACCOUNT
+  @$pb.TagNumber(5)
+  PaymentMethodUSBankAccount get methodUsBankAccount => $_getN(4);
+  @$pb.TagNumber(5)
+  set methodUsBankAccount(PaymentMethodUSBankAccount v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMethodUsBankAccount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMethodUsBankAccount() => clearField(5);
+  @$pb.TagNumber(5)
+  PaymentMethodUSBankAccount ensureMethodUsBankAccount() => $_ensure(4);
 }
 
 class GetInvoicesSummaryRequest extends $pb.GeneratedMessage {
