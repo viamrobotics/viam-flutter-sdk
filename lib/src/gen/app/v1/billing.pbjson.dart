@@ -19,13 +19,15 @@ const PaymentMethodType$json = {
   '2': [
     {'1': 'PAYMENT_METHOD_TYPE_UNSPECIFIED', '2': 0},
     {'1': 'PAYMENT_METHOD_TYPE_CARD', '2': 1},
+    {'1': 'PAYMENT_METHOD_TYPE_USBANKACCOUNT', '2': 2},
   ],
 };
 
 /// Descriptor for `PaymentMethodType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List paymentMethodTypeDescriptor = $convert.base64Decode(
     'ChFQYXltZW50TWV0aG9kVHlwZRIjCh9QQVlNRU5UX01FVEhPRF9UWVBFX1VOU1BFQ0lGSUVEEA'
-    'ASHAoYUEFZTUVOVF9NRVRIT0RfVFlQRV9DQVJEEAE=');
+    'ASHAoYUEFZTUVOVF9NRVRIT0RfVFlQRV9DQVJEEAESJQohUEFZTUVOVF9NRVRIT0RfVFlQRV9V'
+    'U0JBTktBQ0NPVU5UEAI=');
 
 @$core.Deprecated('Use usageCostTypeDescriptor instead')
 const UsageCostType$json = {
@@ -147,6 +149,45 @@ const PaymentMethodCard$json = {
 final $typed_data.Uint8List paymentMethodCardDescriptor = $convert.base64Decode(
     'ChFQYXltZW50TWV0aG9kQ2FyZBIUCgVicmFuZBgBIAEoCVIFYnJhbmQSKAoQbGFzdF9mb3VyX2'
     'RpZ2l0cxgCIAEoCVIObGFzdEZvdXJEaWdpdHM=');
+
+@$core.Deprecated('Use verificationInfoDescriptor instead')
+const VerificationInfo$json = {
+  '1': 'VerificationInfo',
+  '2': [
+    {'1': 'arrival_date', '3': 1, '4': 1, '5': 3, '10': 'arrivalDate'},
+    {'1': 'hosted_verification_page_url', '3': 2, '4': 1, '5': 9, '10': 'hostedVerificationPageUrl'},
+  ],
+};
+
+/// Descriptor for `VerificationInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verificationInfoDescriptor = $convert.base64Decode(
+    'ChBWZXJpZmljYXRpb25JbmZvEiEKDGFycml2YWxfZGF0ZRgBIAEoA1ILYXJyaXZhbERhdGUSPw'
+    'ocaG9zdGVkX3ZlcmlmaWNhdGlvbl9wYWdlX3VybBgCIAEoCVIZaG9zdGVkVmVyaWZpY2F0aW9u'
+    'UGFnZVVybA==');
+
+@$core.Deprecated('Use paymentMethodUSBankAccountDescriptor instead')
+const PaymentMethodUSBankAccount$json = {
+  '1': 'PaymentMethodUSBankAccount',
+  '2': [
+    {'1': 'bank_name', '3': 1, '4': 1, '5': 9, '10': 'bankName'},
+    {'1': 'last_four_digits_account_number', '3': 2, '4': 1, '5': 9, '10': 'lastFourDigitsAccountNumber'},
+    {'1': 'routing_number', '3': 3, '4': 1, '5': 9, '10': 'routingNumber'},
+    {'1': 'account_type', '3': 4, '4': 1, '5': 9, '10': 'accountType'},
+    {'1': 'verification_info', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.VerificationInfo', '9': 0, '10': 'verificationInfo', '17': true},
+  ],
+  '8': [
+    {'1': '_verification_info'},
+  ],
+};
+
+/// Descriptor for `PaymentMethodUSBankAccount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List paymentMethodUSBankAccountDescriptor = $convert.base64Decode(
+    'ChpQYXltZW50TWV0aG9kVVNCYW5rQWNjb3VudBIbCgliYW5rX25hbWUYASABKAlSCGJhbmtOYW'
+    '1lEkQKH2xhc3RfZm91cl9kaWdpdHNfYWNjb3VudF9udW1iZXIYAiABKAlSG2xhc3RGb3VyRGln'
+    'aXRzQWNjb3VudE51bWJlchIlCg5yb3V0aW5nX251bWJlchgDIAEoCVINcm91dGluZ051bWJlch'
+    'IhCgxhY2NvdW50X3R5cGUYBCABKAlSC2FjY291bnRUeXBlEk8KEXZlcmlmaWNhdGlvbl9pbmZv'
+    'GAUgASgLMh0udmlhbS5hcHAudjEuVmVyaWZpY2F0aW9uSW5mb0gAUhB2ZXJpZmljYXRpb25Jbm'
+    'ZviAEBQhQKEl92ZXJpZmljYXRpb25faW5mbw==');
 
 @$core.Deprecated('Use getCurrentMonthUsageRequestDescriptor instead')
 const GetCurrentMonthUsageRequest$json = {
@@ -350,10 +391,12 @@ const GetOrgBillingInformationResponse$json = {
     {'1': 'billing_email', '3': 2, '4': 1, '5': 9, '10': 'billingEmail'},
     {'1': 'method', '3': 3, '4': 1, '5': 11, '6': '.viam.app.v1.PaymentMethodCard', '9': 0, '10': 'method', '17': true},
     {'1': 'billing_tier', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'billingTier', '17': true},
+    {'1': 'method_us_bank_account', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.PaymentMethodUSBankAccount', '9': 2, '10': 'methodUsBankAccount', '17': true},
   ],
   '8': [
     {'1': '_method'},
     {'1': '_billing_tier'},
+    {'1': '_method_us_bank_account'},
   ],
 };
 
@@ -363,7 +406,9 @@ final $typed_data.Uint8List getOrgBillingInformationResponseDescriptor = $conver
     '5hcHAudjEuUGF5bWVudE1ldGhvZFR5cGVSBHR5cGUSIwoNYmlsbGluZ19lbWFpbBgCIAEoCVIM'
     'YmlsbGluZ0VtYWlsEjsKBm1ldGhvZBgDIAEoCzIeLnZpYW0uYXBwLnYxLlBheW1lbnRNZXRob2'
     'RDYXJkSABSBm1ldGhvZIgBARImCgxiaWxsaW5nX3RpZXIYBCABKAlIAVILYmlsbGluZ1RpZXKI'
-    'AQFCCQoHX21ldGhvZEIPCg1fYmlsbGluZ190aWVy');
+    'AQESYQoWbWV0aG9kX3VzX2JhbmtfYWNjb3VudBgFIAEoCzInLnZpYW0uYXBwLnYxLlBheW1lbn'
+    'RNZXRob2RVU0JhbmtBY2NvdW50SAJSE21ldGhvZFVzQmFua0FjY291bnSIAQFCCQoHX21ldGhv'
+    'ZEIPCg1fYmlsbGluZ190aWVyQhkKF19tZXRob2RfdXNfYmFua19hY2NvdW50');
 
 @$core.Deprecated('Use getInvoicesSummaryRequestDescriptor instead')
 const GetInvoicesSummaryRequest$json = {

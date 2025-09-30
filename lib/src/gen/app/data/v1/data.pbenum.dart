@@ -71,5 +71,41 @@ class TabularDataSourceType extends $pb.ProtobufEnum {
   const TabularDataSourceType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// IndexableCollection specifies the types of collections available for custom indexes
+class IndexableCollection extends $pb.ProtobufEnum {
+  static const IndexableCollection INDEXABLE_COLLECTION_UNSPECIFIED = IndexableCollection._(0, _omitEnumNames ? '' : 'INDEXABLE_COLLECTION_UNSPECIFIED');
+  static const IndexableCollection INDEXABLE_COLLECTION_HOT_STORE = IndexableCollection._(1, _omitEnumNames ? '' : 'INDEXABLE_COLLECTION_HOT_STORE');
+  static const IndexableCollection INDEXABLE_COLLECTION_PIPELINE_SINK = IndexableCollection._(2, _omitEnumNames ? '' : 'INDEXABLE_COLLECTION_PIPELINE_SINK');
+
+  static const $core.List<IndexableCollection> values = <IndexableCollection> [
+    INDEXABLE_COLLECTION_UNSPECIFIED,
+    INDEXABLE_COLLECTION_HOT_STORE,
+    INDEXABLE_COLLECTION_PIPELINE_SINK,
+  ];
+
+  static final $core.Map<$core.int, IndexableCollection> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static IndexableCollection? valueOf($core.int value) => _byValue[value];
+
+  const IndexableCollection._($core.int v, $core.String n) : super(v, n);
+}
+
+/// IndexCreator specifies the entity that originally created the index
+class IndexCreator extends $pb.ProtobufEnum {
+  static const IndexCreator INDEX_CREATOR_UNSPECIFIED = IndexCreator._(0, _omitEnumNames ? '' : 'INDEX_CREATOR_UNSPECIFIED');
+  static const IndexCreator INDEX_CREATOR_VIAM = IndexCreator._(1, _omitEnumNames ? '' : 'INDEX_CREATOR_VIAM');
+  static const IndexCreator INDEX_CREATOR_CUSTOMER = IndexCreator._(2, _omitEnumNames ? '' : 'INDEX_CREATOR_CUSTOMER');
+
+  static const $core.List<IndexCreator> values = <IndexCreator> [
+    INDEX_CREATOR_UNSPECIFIED,
+    INDEX_CREATOR_VIAM,
+    INDEX_CREATOR_CUSTOMER,
+  ];
+
+  static final $core.Map<$core.int, IndexCreator> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static IndexCreator? valueOf($core.int value) => _byValue[value];
+
+  const IndexCreator._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
