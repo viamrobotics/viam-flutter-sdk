@@ -73,7 +73,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
             ..stream = headersRequest.stream
             ..message = (grpc.RequestMessage()
               ..hasMessage = true
-              ..eos = false
+              ..eos = true
               ..packetMessage = (grpc.PacketMessage()
                 ..data = data
                 ..eom = true))
@@ -83,7 +83,7 @@ class WebRtcTransportStream extends GrpcTransportStream {
           ..stream = headersRequest.stream
           ..message = (grpc.RequestMessage()
             ..hasMessage = true
-            ..eos = false
+            ..eos = index == chunks.length - 1
             ..packetMessage = (grpc.PacketMessage()
               ..data = chunk
               ..eom = index == chunks.length - 1)));
