@@ -1717,7 +1717,7 @@ class DataClient {
   ///    );
   ///    print('Successfully deleted index');
   ///  } catch (e) {
-  ///    print('Error creating index: $e');
+  ///    print('Error deleting index: $e');
   ///  }
   /// ```
   ///
