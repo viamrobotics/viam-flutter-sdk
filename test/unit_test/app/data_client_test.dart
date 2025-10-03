@@ -339,9 +339,9 @@ void main() {
           final request = invocation.positionalArguments[0] as ExportTabularDataRequest;
           // Verify that additional parameters are passed correctly
           expect(request.additionalParameters, isNotNull);
-          expect(request.additionalParameters!.fields['filter']!.stringValue, equals('test'));
-          expect(request.additionalParameters!.fields['limit']!.numberValue, equals(100));
-          expect(request.additionalParameters!.fields['includeMetadata']!.boolValue, equals(true));
+          expect(request.additionalParameters.fields['filter']!.stringValue, equals('test'));
+          expect(request.additionalParameters.fields['limit']!.numberValue, equals(100));
+          expect(request.additionalParameters.fields['includeMetadata']!.boolValue, equals(true));
 
           return MockResponseStream.list([
             ExportTabularDataResponse(
@@ -543,6 +543,37 @@ void main() {
 
         expect(nullResponse, isNull);
       });
+
+      test('createIndex', () async {
+        final orgId = 'orgId';
+        final collectionType = IndexableCollection.INDEXABLE_COLLECTION_HOT_STORE;
+        final indexSpec = {
+          'keys': {'field1': 1},
+          'options': {'priority': 1}
+        };
+        when(serviceClient.createIndex(any)).thenAnswer((_) => MockResponseFuture.value(CreateIndexResponse()));
+        await dataClient.createIndex(orgId, collectionType, indexSpec);
+        verify(serviceClient.createIndex(any)).called(1);
+      });
+
+      test('listIndexes', () async {
+        final orgId = 'orgId';
+        final collectionType = IndexableCollection.INDEXABLE_COLLECTION_HOT_STORE;
+        final indexes = [Index(indexName: 'index1'), Index(indexName: 'index2')];
+        when(serviceClient.listIndexes(any)).thenAnswer((_) => MockResponseFuture.value(ListIndexesResponse(indexes: indexes)));
+        final response = await dataClient.listIndexes(orgId, collectionType);
+        verify(serviceClient.listIndexes(any)).called(1);
+        expect(response, indexes);
+      });
+
+      test('deleteIndex', () async {
+        final orgId = 'orgId';
+        final collectionType = IndexableCollection.INDEXABLE_COLLECTION_HOT_STORE;
+        final indexName = 'indexName';
+        when(serviceClient.deleteIndex(any)).thenAnswer((_) => MockResponseFuture.value(DeleteIndexResponse()));
+        await dataClient.deleteIndex(orgId, collectionType, indexName);
+        verify(serviceClient.deleteIndex(any)).called(1);
+      });
     });
 
     group('DataSync Tests', () {
@@ -553,9 +584,9 @@ void main() {
           ..partId = 'partId'
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'fileName'
-          ..datasetIds.addAll(["datasetId"])
+          ..datasetIds.addAll(['datasetId'])
           ..fileExtension = '.jpeg';
-        await dataClient.uploadImage(image, 'partId', fileName: 'fileName', datasetIds: ["datasetId"]);
+        await dataClient.uploadImage(image, 'partId', fileName: 'fileName', datasetIds: ['datasetId']);
         expect(syncServiceClient.metadata, expected);
 
         await dataClient.uploadImage(image, 'partId');
@@ -567,18 +598,18 @@ void main() {
           ..partId = 'partId'
           ..type = DataType.DATA_TYPE_FILE
           ..fileName = 'null'
-          ..datasetIds.addAll(["datasetId"])
+          ..datasetIds.addAll(['datasetId'])
           ..fileExtension = '';
-        await dataClient.uploadFile('/dev/null', 'partId', datasetIds: ["datasetId"]);
+        await dataClient.uploadFile('/dev/null', 'partId', datasetIds: ['datasetId']);
         expect(syncServiceClient.metadata, expected);
 
-        await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName', datasetIds: ["datasetId"]);
+        await dataClient.uploadFile('/dev/null', 'partId', fileName: 'otherName', datasetIds: ['datasetId']);
         expect(syncServiceClient.metadata?.fileName, equals('otherName'));
       });
 
       test('binaryDataCaptureUpload', () async {
         final response = await dataClient.binaryDataCaptureUpload([1], 'partId', 'fileExt',
-            componentType: 'type', componentName: 'name', methodName: 'name', datasetIds: ["datasetId"]);
+            componentType: 'type', componentName: 'name', methodName: 'name', datasetIds: ['datasetId']);
         expect(response, equals('fileId'));
       });
 
@@ -601,9 +632,9 @@ void main() {
           ..fileExtension = '.txt'
           ..methodName = ''
           ..componentType = ''
-          ..datasetIds.addAll(["datasetId"])
+          ..datasetIds.addAll(['datasetId'])
           ..componentName = '';
-        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', datasetIds: ["datasetId"]);
+        await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', datasetIds: ['datasetId']);
         expect(syncServiceClient.dataCaptureMetadata, expected);
 
         await dataClient.streamingDataCaptureUpload([1, 2, 3], 'partId', '.txt', componentName: 'myCoolArm');

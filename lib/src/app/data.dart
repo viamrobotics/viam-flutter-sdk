@@ -308,7 +308,12 @@ class DataClient {
   /// ```
   ///
   /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
-  Future<List<Map<String, dynamic>>> tabularDataByMql(String organizationId, dynamic query, {bool useRecentData = false}) async {
+  Future<List<Map<String, dynamic>>> tabularDataByMql(
+    String organizationId,
+    dynamic query, {
+    bool useRecentData = false,
+    String? queryPrefixName,
+  }) async {
     List<Uint8List> binary;
     if (query is List<Map<String, dynamic>>) {
       binary = query.map((q) => BsonCodec.serialize(q).byteList).toList();
@@ -321,6 +326,9 @@ class DataClient {
       ..organizationId = organizationId
       ..mqlBinary.addAll(binary)
       ..useRecentData = useRecentData;
+    if (queryPrefixName != null) {
+      request.queryPrefixName = queryPrefixName;
+    }
     final response = await _dataClient.tabularDataByMQL(request);
     return response.rawData.map((e) => BsonCodec.deserialize(BsonBinary.from(e))).toList();
   }
@@ -1619,6 +1627,110 @@ class DataClient {
       timeSynced: response.timeSynced.toDateTime(),
       payload: response.payload.toMap(),
     );
+  }
+
+  /// CreateIndex starts a custom index build
+  ///
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    // Create index
+  ///    await this.createIndex(
+  ///      "<YOUR-ORG-ID>",
+  ///      IndexableCollection.INDEXABLE_COLLECTION_PIPELINE_SINK,
+  ///      {
+  ///        'keys': {'field1': 1}
+  ///      }
+  ///    );
+  ///    print('Successfully created index');
+  ///  } catch (e) {
+  ///    print('Error creating index: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  Future<void> createIndex(String organizationId, IndexableCollection collectionType, Map<String, dynamic> indexSpec,
+      {String? pipelineName}) async {
+    final request = CreateIndexRequest()
+      ..organizationId = organizationId
+      ..collectionType = collectionType
+      ..indexSpec.add(BsonCodec.serialize(indexSpec).byteList);
+    if (pipelineName != null) {
+      request.pipelineName = pipelineName;
+    }
+    await _dataClient.createIndex(request);
+  }
+
+  /// ListIndexes returns all the indexes for a given collection.
+  ///
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    // List indexes
+  ///    final indexes = await this.listIndexes(
+  ///      "<YOUR-ORG-ID>",
+  ///      IndexableCollection.INDEXABLE_COLLECTION_PIPELINE_SINK,
+  ///    );
+  ///    print('Successfully retrieved indexes: $indexes');
+  ///  } catch (e) {
+  ///    print('Error retrieving indexes: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  Future<List<Index>> listIndexes(String organizationId, IndexableCollection collectionType, {String? pipelineName}) async {
+    final request = ListIndexesRequest()
+      ..organizationId = organizationId
+      ..collectionType = collectionType;
+    if (pipelineName != null) {
+      request.pipelineName = pipelineName;
+    }
+    final resp = await _dataClient.listIndexes(request);
+    return resp.indexes;
+  }
+
+  /// DeleteIndex drops the specified custom index from a collection.
+  ///
+  /// ```
+  /// _viam = await Viam.withApiKey(
+  ///      dotenv.env['API_KEY_ID'] ?? '',
+  ///      dotenv.env['API_KEY'] ?? ''
+  ///  );
+  ///  final dataClient = _viam.dataClient;
+  ///
+  ///  try {
+  ///    // Delete index
+  ///    await this.deleteIndex(
+  ///      "<YOUR-ORG-ID>",
+  ///      IndexableCollection.INDEXABLE_COLLECTION_PIPELINE_SINK,
+  ///      "<YOUR-INDEX-NAME>"
+  ///    );
+  ///    print('Successfully deleted index');
+  ///  } catch (e) {
+  ///    print('Error creating index: $e');
+  ///  }
+  /// ```
+  ///
+  /// For more information, see [Data Client API](https://docs.viam.com/dev/reference/apis/data-client/).
+  Future<void> deleteIndex(String organizationId, IndexableCollection collectionType, String indexName, {String? pipelineName}) async {
+    final request = DeleteIndexRequest()
+      ..organizationId = organizationId
+      ..collectionType = collectionType
+      ..indexName = indexName;
+    if (pipelineName != null) {
+      request.pipelineName = pipelineName;
+    }
+    await _dataClient.deleteIndex(request);
   }
 }
 
