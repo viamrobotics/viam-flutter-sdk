@@ -90,7 +90,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="MoveRequest.new" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/MoveRequest/MoveRequest.html">MoveRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-worldState"><span class="type-annotation"><a href="../viam_protos.common.common/WorldState-class.html">WorldState</a>?</span> <span class="parameter-name">worldState</span>, </span><span class="parameter" id="-param-constraints"><span class="type-annotation"><a href="../viam_protos.service.motion/Constraints-class.html">Constraints</a>?</span> <span class="parameter-name">constraints</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.motion/MoveRequest/MoveRequest.html">MoveRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_sdk/PoseInFrame-class.html">PoseInFrame</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-componentNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentNameDeprecated</span>, </span><span class="parameter" id="-param-worldState"><span class="type-annotation"><a href="../viam_protos.common.common/WorldState-class.html">WorldState</a>?</span> <span class="parameter-name">worldState</span>, </span><span class="parameter" id="-param-constraints"><span class="type-annotation"><a href="../viam_protos.service.motion/Constraints-class.html">Constraints</a>?</span> <span class="parameter-name">constraints</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span></span>})</span>
         </dt>
         <dd>
           
@@ -120,12 +120,24 @@
     <dl class="properties">
         <dt id="componentName" class="property">
   <span class="name"><a href="../viam_protos.service.motion/MoveRequest/componentName.html">componentName</a></span>
-  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   Component on the robot to move to the specified destination
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="componentNameDeprecated" class="property">
+  <span class="name"><a class="deprecated" href="../viam_protos.service.motion/MoveRequest/componentNameDeprecated.html">componentNameDeprecated</a></span>
+  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  
+
+</dt>
+<dd>
+  Deprecated, use component_name field.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -325,6 +337,19 @@ Augment the frame system of the robot by specifying additional transforms to add
 
 </dd>
 
+        <dt id="clearComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveRequest/clearComponentNameDeprecated.html">clearComponentNameDeprecated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearConstraints" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/MoveRequest/clearConstraints.html">clearConstraints</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -499,8 +524,8 @@ Augment the frame system of the robot by specifying additional transforms to add
 
 </dd>
 
-        <dt id="ensureComponentName" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/MoveRequest/ensureComponentName.html">ensureComponentName</a></span><span class="signature">(<wbr>)
+        <dt id="ensureComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveRequest/ensureComponentNameDeprecated.html">ensureComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
   </span>
   
@@ -658,6 +683,19 @@ default value if it is not set.
 
         <dt id="hasComponentName" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/MoveRequest/hasComponentName.html">hasComponentName</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveRequest/hasComponentNameDeprecated.html">hasComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   

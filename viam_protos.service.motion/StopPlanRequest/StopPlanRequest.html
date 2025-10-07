@@ -55,7 +55,8 @@
     <section class="multi-line-signature">
       
       <span class="name ">StopPlanRequest</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span></li>
-<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
+<li><span class="parameter" id="-param-componentNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentNameDeprecated</span>, </span></li>
+<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
 <li><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
     </section>
@@ -67,12 +68,18 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory StopPlanRequest({
   $core.String? name,
-  $16.ResourceName? componentName,
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
+  $16.ResourceName? componentNameDeprecated,
+  $core.String? componentName,
   $48.Struct? extra,
 }) {
   final $result = create();
   if (name != null) {
     $result.name = name;
+  }
+  if (componentNameDeprecated != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
+    $result.componentNameDeprecated = componentNameDeprecated;
   }
   if (componentName != null) {
     $result.componentName = componentName;

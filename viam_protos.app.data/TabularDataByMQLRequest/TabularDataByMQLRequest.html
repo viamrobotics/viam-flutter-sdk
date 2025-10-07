@@ -58,6 +58,7 @@
 <li><span class="parameter" id="-param-mqlBinary"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span>?</span> <span class="parameter-name">mqlBinary</span>, </span></li>
 <li><span class="parameter" id="-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">useRecentData</span>, </span></li>
 <li><span class="parameter" id="-param-dataSource"><span class="type-annotation"><a href="../../viam_protos.app.data/TabularDataSource-class.html">TabularDataSource</a>?</span> <span class="parameter-name">dataSource</span>, </span></li>
+<li><span class="parameter" id="-param-queryPrefixName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">queryPrefixName</span>, </span></li>
 </ol>})
     </section>
     
@@ -71,6 +72,7 @@
   $core.Iterable&lt;$core.List&lt;$core.int&gt;&gt;? mqlBinary,
   $core.bool? useRecentData,
   TabularDataSource? dataSource,
+  $core.String? queryPrefixName,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -84,6 +86,9 @@
   }
   if (dataSource != null) {
     $result.dataSource = dataSource;
+  }
+  if (queryPrefixName != null) {
+    $result.queryPrefixName = queryPrefixName;
   }
   return $result;
 }</code></pre>

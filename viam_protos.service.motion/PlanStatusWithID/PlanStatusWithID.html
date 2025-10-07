@@ -55,9 +55,10 @@
     <section class="multi-line-signature">
       
       <span class="name ">PlanStatusWithID</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-planId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">planId</span>, </span></li>
-<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
+<li><span class="parameter" id="-param-componentNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentNameDeprecated</span>, </span></li>
 <li><span class="parameter" id="-param-executionId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">executionId</span>, </span></li>
 <li><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../../viam_protos.service.motion/PlanStatus-class.html">PlanStatus</a>?</span> <span class="parameter-name">status</span>, </span></li>
+<li><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span></li>
 </ol>})
     </section>
     
@@ -68,22 +69,28 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory PlanStatusWithID({
   $core.String? planId,
-  $16.ResourceName? componentName,
+@$core.Deprecated(&#39;This field is deprecated.&#39;)
+  $16.ResourceName? componentNameDeprecated,
   $core.String? executionId,
   PlanStatus? status,
+  $core.String? componentName,
 }) {
   final $result = create();
   if (planId != null) {
     $result.planId = planId;
   }
-  if (componentName != null) {
-    $result.componentName = componentName;
+  if (componentNameDeprecated != null) {
+    &#47;&#47; ignore: deprecated_member_use_from_same_package
+    $result.componentNameDeprecated = componentNameDeprecated;
   }
   if (executionId != null) {
     $result.executionId = executionId;
   }
   if (status != null) {
     $result.status = status;
+  }
+  if (componentName != null) {
+    $result.componentName = componentName;
   }
   return $result;
 }</code></pre>

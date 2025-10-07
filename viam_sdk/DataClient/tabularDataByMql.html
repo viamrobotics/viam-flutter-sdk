@@ -58,6 +58,7 @@
 <span class="name ">tabularDataByMql</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="tabularDataByMql-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">organizationId</span>, </span></li>
 <li><span class="parameter" id="tabularDataByMql-param-query"><span class="type-annotation">dynamic</span> <span class="parameter-name">query</span>, {</span></li>
 <li><span class="parameter" id="tabularDataByMql-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useRecentData</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="tabularDataByMql-param-queryPrefixName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">queryPrefixName</span>, </span></li>
 </ol>})
 
       
@@ -102,7 +103,12 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Map&lt;String, dynamic&gt;&gt;&gt; tabularDataByMql(String organizationId, dynamic query, {bool useRecentData = false}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Map&lt;String, dynamic&gt;&gt;&gt; tabularDataByMql(
+  String organizationId,
+  dynamic query, {
+  bool useRecentData = false,
+  String? queryPrefixName,
+}) async {
   List&lt;Uint8List&gt; binary;
   if (query is List&lt;Map&lt;String, dynamic&gt;&gt;) {
     binary = query.map((q) =&gt; BsonCodec.serialize(q).byteList).toList();
@@ -115,6 +121,9 @@
     ..organizationId = organizationId
     ..mqlBinary.addAll(binary)
     ..useRecentData = useRecentData;
+  if (queryPrefixName != null) {
+    request.queryPrefixName = queryPrefixName;
+  }
   final response = await _dataClient.tabularDataByMQL(request);
   return response.rawData.map((e) =&gt; BsonCodec.deserialize(BsonBinary.from(e))).toList();
 }</code></pre>

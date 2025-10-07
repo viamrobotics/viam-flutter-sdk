@@ -90,7 +90,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="Plan.new" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/Plan/Plan.html">Plan.new</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-executionId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">executionId</span>, </span><span class="parameter" id="-param-steps"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.motion/PlanStep-class.html">PlanStep</a></span>&gt;</span>?</span> <span class="parameter-name">steps</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.motion/Plan/Plan.html">Plan.new</a></span><span class="signature">({<span class="parameter" id="-param-id"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-componentNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentNameDeprecated</span>, </span><span class="parameter" id="-param-executionId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">executionId</span>, </span><span class="parameter" id="-param-steps"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.service.motion/PlanStep-class.html">PlanStep</a></span>&gt;</span>?</span> <span class="parameter-name">steps</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span></span>})</span>
         </dt>
         <dd>
           
@@ -120,7 +120,7 @@
     <dl class="properties">
         <dt id="componentName" class="property">
   <span class="name"><a href="../viam_protos.service.motion/Plan/componentName.html">componentName</a></span>
-  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
@@ -129,6 +129,18 @@
 Used for tracking &amp; stopping.
 NOTE: A plan may move more components than just the
 root component.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="componentNameDeprecated" class="property">
+  <span class="name"><a class="deprecated" href="../viam_protos.service.motion/Plan/componentNameDeprecated.html">componentNameDeprecated</a></span>
+  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  
+
+</dt>
+<dd>
+  Deprecated, use component_name field.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -305,6 +317,19 @@ generated due to replanning
 
 </dd>
 
+        <dt id="clearComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/Plan/clearComponentNameDeprecated.html">clearComponentNameDeprecated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearExecutionId" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/Plan/clearExecutionId.html">clearExecutionId</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -440,8 +465,8 @@ generated due to replanning
 
 </dd>
 
-        <dt id="ensureComponentName" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/Plan/ensureComponentName.html">ensureComponentName</a></span><span class="signature">(<wbr>)
+        <dt id="ensureComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/Plan/ensureComponentNameDeprecated.html">ensureComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
   </span>
   
@@ -547,6 +572,19 @@ default value if it is not set.
 
         <dt id="hasComponentName" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/Plan/hasComponentName.html">hasComponentName</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/Plan/hasComponentNameDeprecated.html">hasComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   

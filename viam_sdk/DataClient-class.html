@@ -246,6 +246,19 @@ If no <code>filter</code> is provided, all labels will be returned.
 
 </dd>
 
+        <dt id="createIndex" class="callable">
+  <span class="name"><a href="../viam_sdk/DataClient/createIndex.html">createIndex</a></span><span class="signature">(<wbr><span class="parameter" id="createIndex-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="createIndex-param-collectionType"><span class="type-annotation"><a href="../viam_protos.app.data/IndexableCollection-class.html">IndexableCollection</a></span> <span class="parameter-name">collectionType</span>, </span><span class="parameter" id="createIndex-param-indexSpec"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">indexSpec</span>, {</span><span class="parameter" id="createIndex-param-pipelineName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">pipelineName</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  CreateIndex starts a custom index build
+  
+
+</dd>
+
         <dt id="deleteBinaryDataByFilter" class="callable">
   <span class="name"><a href="../viam_sdk/DataClient/deleteBinaryDataByFilter.html">deleteBinaryDataByFilter</a></span><span class="signature">(<wbr><span class="parameter" id="deleteBinaryDataByFilter-param-filter"><span class="type-annotation"><a href="../viam_protos.app.data/Filter-class.html">Filter</a>?</span> <span class="parameter-name">filter</span>, {</span><span class="parameter" id="deleteBinaryDataByFilter-param-includeInternalData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">includeInternalData</span> = <span class="default-value">false</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>
@@ -282,6 +295,19 @@ If a <code>filter</code> is not provided, all data will be deleted.
 </dt>
 <dd>
   Deletes a dataset.
+  
+
+</dd>
+
+        <dt id="deleteIndex" class="callable">
+  <span class="name"><a href="../viam_sdk/DataClient/deleteIndex.html">deleteIndex</a></span><span class="signature">(<wbr><span class="parameter" id="deleteIndex-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="deleteIndex-param-collectionType"><span class="type-annotation"><a href="../viam_protos.app.data/IndexableCollection-class.html">IndexableCollection</a></span> <span class="parameter-name">collectionType</span>, </span><span class="parameter" id="deleteIndex-param-indexName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">indexName</span>, {</span><span class="parameter" id="deleteIndex-param-pipelineName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">pipelineName</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  DeleteIndex drops the specified custom index from a collection.
   
 
 </dd>
@@ -361,6 +387,19 @@ as long as it was synced within the last year.
 </dt>
 <dd>
   Returns a list of datasets within a given organization.
+  
+
+</dd>
+
+        <dt id="listIndexes" class="callable">
+  <span class="name"><a href="../viam_sdk/DataClient/listIndexes.html">listIndexes</a></span><span class="signature">(<wbr><span class="parameter" id="listIndexes-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="listIndexes-param-collectionType"><span class="type-annotation"><a href="../viam_protos.app.data/IndexableCollection-class.html">IndexableCollection</a></span> <span class="parameter-name">collectionType</span>, {</span><span class="parameter" id="listIndexes-param-pipelineName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">pipelineName</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.app.data/Index-class.html">Index</a></span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  ListIndexes returns all the indexes for a given collection.
   
 
 </dd>
@@ -472,7 +511,7 @@ the returned response.
 </dd>
 
         <dt id="tabularDataByMql" class="callable">
-  <span class="name"><a href="../viam_sdk/DataClient/tabularDataByMql.html">tabularDataByMql</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataByMql-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="tabularDataByMql-param-query"><span class="type-annotation">dynamic</span> <span class="parameter-name">query</span>, {</span><span class="parameter" id="tabularDataByMql-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useRecentData</span> = <span class="default-value">false</span></span>})
+  <span class="name"><a href="../viam_sdk/DataClient/tabularDataByMql.html">tabularDataByMql</a></span><span class="signature">(<wbr><span class="parameter" id="tabularDataByMql-param-organizationId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">organizationId</span>, </span><span class="parameter" id="tabularDataByMql-param-query"><span class="type-annotation">dynamic</span> <span class="parameter-name">query</span>, {</span><span class="parameter" id="tabularDataByMql-param-useRecentData"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useRecentData</span> = <span class="default-value">false</span>, </span><span class="parameter" id="tabularDataByMql-param-queryPrefixName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">queryPrefixName</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>&gt;</span></span>
   </span>
   

@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="GetPlanRequest.new" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/GetPlanRequest/GetPlanRequest.html">GetPlanRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-lastPlanOnly"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">lastPlanOnly</span>, </span><span class="parameter" id="-param-executionId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">executionId</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.motion/GetPlanRequest/GetPlanRequest.html">GetPlanRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-componentNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentNameDeprecated</span>, </span><span class="parameter" id="-param-lastPlanOnly"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">lastPlanOnly</span>, </span><span class="parameter" id="-param-executionId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">executionId</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span></span>})</span>
         </dt>
         <dd>
           
@@ -117,12 +117,24 @@
     <dl class="properties">
         <dt id="componentName" class="property">
   <span class="name"><a href="../viam_protos.service.motion/GetPlanRequest/componentName.html">componentName</a></span>
-  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   The name of the component which was requested to be moved.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="componentNameDeprecated" class="property">
+  <span class="name"><a class="deprecated" href="../viam_protos.service.motion/GetPlanRequest/componentNameDeprecated.html">componentNameDeprecated</a></span>
+  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  
+
+</dt>
+<dd>
+  Deprecated, use component_name field.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -310,6 +322,19 @@ the the last plan for the component / execution
 
 </dd>
 
+        <dt id="clearComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/GetPlanRequest/clearComponentNameDeprecated.html">clearComponentNameDeprecated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearExecutionId" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/GetPlanRequest/clearExecutionId.html">clearExecutionId</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -471,8 +496,8 @@ the the last plan for the component / execution
 
 </dd>
 
-        <dt id="ensureComponentName" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/GetPlanRequest/ensureComponentName.html">ensureComponentName</a></span><span class="signature">(<wbr>)
+        <dt id="ensureComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/GetPlanRequest/ensureComponentNameDeprecated.html">ensureComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
   </span>
   
@@ -591,6 +616,19 @@ default value if it is not set.
 
         <dt id="hasComponentName" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/GetPlanRequest/hasComponentName.html">hasComponentName</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/GetPlanRequest/hasComponentNameDeprecated.html">hasComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   

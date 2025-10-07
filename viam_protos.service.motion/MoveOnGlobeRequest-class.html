@@ -87,7 +87,7 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="MoveOnGlobeRequest.new" class="callable">
-          <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/MoveOnGlobeRequest.html">MoveOnGlobeRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorName</span>, </span><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span><span class="parameter" id="-param-boundingRegions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">boundingRegions</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span></span>})</span>
+          <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/MoveOnGlobeRequest.html">MoveOnGlobeRequest.new</a></span><span class="signature">({<span class="parameter" id="-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-destination"><span class="type-annotation"><a href="../viam_sdk/GeoPoint-class.html">GeoPoint</a>?</span> <span class="parameter-name">destination</span>, </span><span class="parameter" id="-param-heading"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">heading</span>, </span><span class="parameter" id="-param-componentNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">componentNameDeprecated</span>, </span><span class="parameter" id="-param-movementSensorNameDeprecated"><span>@<a href="https://api.flutter.dev/flutter/dart-core/Deprecated-class.html">Deprecated</a>(&#39;This field is deprecated.&#39;)</span> <span class="type-annotation"><a href="../viam_sdk/ResourceName-class.html">ResourceName</a>?</span> <span class="parameter-name">movementSensorNameDeprecated</span>, </span><span class="parameter" id="-param-obstacles"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">obstacles</span>, </span><span class="parameter" id="-param-motionConfiguration"><span class="type-annotation"><a href="../viam_protos.service.motion/MotionConfiguration-class.html">MotionConfiguration</a>?</span> <span class="parameter-name">motionConfiguration</span>, </span><span class="parameter" id="-param-boundingRegions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../viam_protos.common.common/GeoGeometry-class.html">GeoGeometry</a></span>&gt;</span>?</span> <span class="parameter-name">boundingRegions</span>, </span><span class="parameter" id="-param-componentName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">componentName</span>, </span><span class="parameter" id="-param-movementSensorName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">movementSensorName</span>, </span><span class="parameter" id="-param-extra"><span class="type-annotation">Struct?</span> <span class="parameter-name">extra</span></span>})</span>
         </dt>
         <dd>
           
@@ -129,12 +129,24 @@
 
         <dt id="componentName" class="property">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/componentName.html">componentName</a></span>
-  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   Component on the robot to move to the specified destination
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="componentNameDeprecated" class="property">
+  <span class="name"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/componentNameDeprecated.html">componentNameDeprecated</a></span>
+  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  
+
+</dt>
+<dd>
+  Deprecated, use component_name field.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -238,12 +250,24 @@ to protobuf fields.
 
         <dt id="movementSensorName" class="property">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/movementSensorName.html">movementSensorName</a></span>
-  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
   Name of the movement sensor which will be used to check robot location
+  <div class="features"><span class="feature">getter/setter pair</span></div>
+
+</dd>
+
+        <dt id="movementSensorNameDeprecated" class="property">
+  <span class="name"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/movementSensorNameDeprecated.html">movementSensorNameDeprecated</a></span>
+  <span class="signature">&#8596; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
+  
+
+</dt>
+<dd>
+  Deprecated, use movement_sensor_name field.
   <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
@@ -357,6 +381,19 @@ to protobuf fields.
 
 </dd>
 
+        <dt id="clearComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/clearComponentNameDeprecated.html">clearComponentNameDeprecated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="clearDestination" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/clearDestination.html">clearDestination</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
@@ -437,6 +474,19 @@ to protobuf fields.
 
         <dt id="clearMovementSensorName" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/clearMovementSensorName.html">clearMovementSensorName</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="clearMovementSensorNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/clearMovementSensorNameDeprecated.html">clearMovementSensorNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -544,8 +594,8 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="ensureComponentName" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/ensureComponentName.html">ensureComponentName</a></span><span class="signature">(<wbr>)
+        <dt id="ensureComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/ensureComponentNameDeprecated.html">ensureComponentNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
   </span>
   
@@ -596,8 +646,8 @@ to protobuf fields.
 
 </dd>
 
-        <dt id="ensureMovementSensorName" class="callable">
-  <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/ensureMovementSensorName.html">ensureMovementSensorName</a></span><span class="signature">(<wbr>)
+        <dt id="ensureMovementSensorNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/ensureMovementSensorNameDeprecated.html">ensureMovementSensorNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="../viam_sdk/ResourceName-class.html">ResourceName</a></span>
   </span>
   
@@ -714,6 +764,19 @@ default value if it is not set.
 
 </dd>
 
+        <dt id="hasComponentNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/hasComponentNameDeprecated.html">hasComponentNameDeprecated</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="hasDestination" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/hasDestination.html">hasDestination</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
@@ -794,6 +857,19 @@ default value if it is not set.
 
         <dt id="hasMovementSensorName" class="callable">
   <span class="name"><a href="../viam_protos.service.motion/MoveOnGlobeRequest/hasMovementSensorName.html">hasMovementSensorName</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="hasMovementSensorNameDeprecated" class="callable">
+  <span class="name deprecated"><a class="deprecated" href="../viam_protos.service.motion/MoveOnGlobeRequest/hasMovementSensorNameDeprecated.html">hasMovementSensorNameDeprecated</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
   </span>
   

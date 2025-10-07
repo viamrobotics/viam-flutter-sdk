@@ -224,6 +224,27 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $3.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
       ($3.RemoveBinaryDataFromDatasetByIDsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.CreateIndexRequest, $3.CreateIndexResponse&gt;(
+      &#39;CreateIndex&#39;,
+      createIndex_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.CreateIndexRequest.fromBuffer(value),
+      ($3.CreateIndexResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.ListIndexesRequest, $3.ListIndexesResponse&gt;(
+      &#39;ListIndexes&#39;,
+      listIndexes_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.ListIndexesRequest.fromBuffer(value),
+      ($3.ListIndexesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$3.DeleteIndexRequest, $3.DeleteIndexResponse&gt;(
+      &#39;DeleteIndex&#39;,
+      deleteIndex_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $3.DeleteIndexRequest.fromBuffer(value),
+      ($3.DeleteIndexResponse value) =&gt; value.writeToBuffer()));
 }</code></pre>
 </section>
 
