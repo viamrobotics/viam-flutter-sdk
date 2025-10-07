@@ -1,11 +1,16 @@
 # Changelog
 
-## [v0.10.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.0) (2025-09-08)
+## [v0.10.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.1) (2025-10-07)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.9.0...v0.10.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.10.0...v0.10.1)
 
 **Merged pull requests:**
 
+- Handle eos marker for gRPC over WebRTC requests [\#428](https://github.com/viamrobotics/viam-flutter-sdk/pull/428) ([seanavery](https://github.com/seanavery))
+- Automated Protos Update [\#427](https://github.com/viamrobotics/viam-flutter-sdk/pull/427) ([viambot](https://github.com/viambot))
+- APP-9242 - Improve Get Logs [\#426](https://github.com/viamrobotics/viam-flutter-sdk/pull/426) ([clintpurser](https://github.com/clintpurser))
+- Allow users to dial with only `accessToken` and no `credentials` [\#425](https://github.com/viamrobotics/viam-flutter-sdk/pull/425) ([clintpurser](https://github.com/clintpurser))
+- v0.10.0 [\#424](https://github.com/viamrobotics/viam-flutter-sdk/pull/424) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Update vision.dart [\#423](https://github.com/viamrobotics/viam-flutter-sdk/pull/423) ([npentrel](https://github.com/npentrel))
 - RSDK-11707    —     Update Flutter SDK with new GetImages signature [\#422](https://github.com/viamrobotics/viam-flutter-sdk/pull/422) ([hexbabe](https://github.com/hexbabe))
 - use viam repo [\#420](https://github.com/viamrobotics/viam-flutter-sdk/pull/420) ([stuqdog](https://github.com/stuqdog))
@@ -139,6 +144,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.10.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.0) (2025-09-08)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.9.0...v0.10.0)
 
 ## [v0.9.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.9.0) (2025-08-11)
 
