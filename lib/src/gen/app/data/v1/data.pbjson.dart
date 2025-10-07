@@ -63,6 +63,37 @@ final $typed_data.Uint8List tabularDataSourceTypeDescriptor = $convert.base64Dec
     'VUxBUl9EQVRBX1NPVVJDRV9UWVBFX0hPVF9TVE9SQUdFEAISKgomVEFCVUxBUl9EQVRBX1NPVV'
     'JDRV9UWVBFX1BJUEVMSU5FX1NJTksQAw==');
 
+@$core.Deprecated('Use indexableCollectionDescriptor instead')
+const IndexableCollection$json = {
+  '1': 'IndexableCollection',
+  '2': [
+    {'1': 'INDEXABLE_COLLECTION_UNSPECIFIED', '2': 0},
+    {'1': 'INDEXABLE_COLLECTION_HOT_STORE', '2': 1},
+    {'1': 'INDEXABLE_COLLECTION_PIPELINE_SINK', '2': 2},
+  ],
+};
+
+/// Descriptor for `IndexableCollection`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List indexableCollectionDescriptor = $convert.base64Decode(
+    'ChNJbmRleGFibGVDb2xsZWN0aW9uEiQKIElOREVYQUJMRV9DT0xMRUNUSU9OX1VOU1BFQ0lGSU'
+    'VEEAASIgoeSU5ERVhBQkxFX0NPTExFQ1RJT05fSE9UX1NUT1JFEAESJgoiSU5ERVhBQkxFX0NP'
+    'TExFQ1RJT05fUElQRUxJTkVfU0lOSxAC');
+
+@$core.Deprecated('Use indexCreatorDescriptor instead')
+const IndexCreator$json = {
+  '1': 'IndexCreator',
+  '2': [
+    {'1': 'INDEX_CREATOR_UNSPECIFIED', '2': 0},
+    {'1': 'INDEX_CREATOR_VIAM', '2': 1},
+    {'1': 'INDEX_CREATOR_CUSTOMER', '2': 2},
+  ],
+};
+
+/// Descriptor for `IndexCreator`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List indexCreatorDescriptor = $convert.base64Decode(
+    'CgxJbmRleENyZWF0b3ISHQoZSU5ERVhfQ1JFQVRPUl9VTlNQRUNJRklFRBAAEhYKEklOREVYX0'
+    'NSRUFUT1JfVklBTRABEhoKFklOREVYX0NSRUFUT1JfQ1VTVE9NRVIQAg==');
+
 @$core.Deprecated('Use dataRequestDescriptor instead')
 const DataRequest$json = {
   '1': 'DataRequest',
@@ -312,10 +343,12 @@ const TabularDataByMQLRequest$json = {
     {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
     {'1': 'use_recent_data', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'useRecentData', '17': true},
     {'1': 'data_source', '3': 6, '4': 1, '5': 11, '6': '.viam.app.data.v1.TabularDataSource', '9': 1, '10': 'dataSource', '17': true},
+    {'1': 'query_prefix_name', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'queryPrefixName', '17': true},
   ],
   '8': [
     {'1': '_use_recent_data'},
     {'1': '_data_source'},
+    {'1': '_query_prefix_name'},
   ],
   '9': [
     {'1': 2, '2': 3},
@@ -329,9 +362,10 @@ final $typed_data.Uint8List tabularDataByMQLRequestDescriptor = $convert.base64D
     'ChdUYWJ1bGFyRGF0YUJ5TVFMUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
     'FuaXphdGlvbklkEh0KCm1xbF9iaW5hcnkYAyADKAxSCW1xbEJpbmFyeRIrCg91c2VfcmVjZW50'
     'X2RhdGEYBCABKAhIAFINdXNlUmVjZW50RGF0YYgBARJJCgtkYXRhX3NvdXJjZRgGIAEoCzIjLn'
-    'ZpYW0uYXBwLmRhdGEudjEuVGFidWxhckRhdGFTb3VyY2VIAVIKZGF0YVNvdXJjZYgBAUISChBf'
-    'dXNlX3JlY2VudF9kYXRhQg4KDF9kYXRhX3NvdXJjZUoECAIQA0oECAUQBlIJbXFsX3F1ZXJ5Uh'
-    'F1c2VfZGF0YV9waXBlbGluZQ==');
+    'ZpYW0uYXBwLmRhdGEudjEuVGFidWxhckRhdGFTb3VyY2VIAVIKZGF0YVNvdXJjZYgBARIvChFx'
+    'dWVyeV9wcmVmaXhfbmFtZRgHIAEoCUgCUg9xdWVyeVByZWZpeE5hbWWIAQFCEgoQX3VzZV9yZW'
+    'NlbnRfZGF0YUIOCgxfZGF0YV9zb3VyY2VCFAoSX3F1ZXJ5X3ByZWZpeF9uYW1lSgQIAhADSgQI'
+    'BRAGUgltcWxfcXVlcnlSEXVzZV9kYXRhX3BpcGVsaW5l');
 
 @$core.Deprecated('Use tabularDataByMQLResponseDescriptor instead')
 const TabularDataByMQLResponse$json = {
@@ -1203,4 +1237,122 @@ const RemoveBinaryDataFromDatasetByIDsResponse$json = {
 /// Descriptor for `RemoveBinaryDataFromDatasetByIDsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeBinaryDataFromDatasetByIDsResponseDescriptor = $convert.base64Decode(
     'CihSZW1vdmVCaW5hcnlEYXRhRnJvbURhdGFzZXRCeUlEc1Jlc3BvbnNl');
+
+@$core.Deprecated('Use createIndexRequestDescriptor instead')
+const CreateIndexRequest$json = {
+  '1': 'CreateIndexRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'collection_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.data.v1.IndexableCollection', '10': 'collectionType'},
+    {'1': 'pipeline_name', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'pipelineName', '17': true},
+    {'1': 'index_spec', '3': 4, '4': 3, '5': 12, '10': 'indexSpec'},
+  ],
+  '8': [
+    {'1': '_pipeline_name'},
+  ],
+};
+
+/// Descriptor for `CreateIndexRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createIndexRequestDescriptor = $convert.base64Decode(
+    'ChJDcmVhdGVJbmRleFJlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcmdhbml6YX'
+    'Rpb25JZBJOCg9jb2xsZWN0aW9uX3R5cGUYAiABKA4yJS52aWFtLmFwcC5kYXRhLnYxLkluZGV4'
+    'YWJsZUNvbGxlY3Rpb25SDmNvbGxlY3Rpb25UeXBlEigKDXBpcGVsaW5lX25hbWUYAyABKAlIAF'
+    'IMcGlwZWxpbmVOYW1liAEBEh0KCmluZGV4X3NwZWMYBCADKAxSCWluZGV4U3BlY0IQCg5fcGlw'
+    'ZWxpbmVfbmFtZQ==');
+
+@$core.Deprecated('Use createIndexResponseDescriptor instead')
+const CreateIndexResponse$json = {
+  '1': 'CreateIndexResponse',
+};
+
+/// Descriptor for `CreateIndexResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createIndexResponseDescriptor = $convert.base64Decode(
+    'ChNDcmVhdGVJbmRleFJlc3BvbnNl');
+
+@$core.Deprecated('Use deleteIndexRequestDescriptor instead')
+const DeleteIndexRequest$json = {
+  '1': 'DeleteIndexRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'collection_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.data.v1.IndexableCollection', '10': 'collectionType'},
+    {'1': 'pipeline_name', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'pipelineName', '17': true},
+    {'1': 'index_name', '3': 4, '4': 1, '5': 9, '10': 'indexName'},
+  ],
+  '8': [
+    {'1': '_pipeline_name'},
+  ],
+};
+
+/// Descriptor for `DeleteIndexRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteIndexRequestDescriptor = $convert.base64Decode(
+    'ChJEZWxldGVJbmRleFJlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcmdhbml6YX'
+    'Rpb25JZBJOCg9jb2xsZWN0aW9uX3R5cGUYAiABKA4yJS52aWFtLmFwcC5kYXRhLnYxLkluZGV4'
+    'YWJsZUNvbGxlY3Rpb25SDmNvbGxlY3Rpb25UeXBlEigKDXBpcGVsaW5lX25hbWUYAyABKAlIAF'
+    'IMcGlwZWxpbmVOYW1liAEBEh0KCmluZGV4X25hbWUYBCABKAlSCWluZGV4TmFtZUIQCg5fcGlw'
+    'ZWxpbmVfbmFtZQ==');
+
+@$core.Deprecated('Use deleteIndexResponseDescriptor instead')
+const DeleteIndexResponse$json = {
+  '1': 'DeleteIndexResponse',
+};
+
+/// Descriptor for `DeleteIndexResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteIndexResponseDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVJbmRleFJlc3BvbnNl');
+
+@$core.Deprecated('Use listIndexesRequestDescriptor instead')
+const ListIndexesRequest$json = {
+  '1': 'ListIndexesRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'collection_type', '3': 2, '4': 1, '5': 14, '6': '.viam.app.data.v1.IndexableCollection', '10': 'collectionType'},
+    {'1': 'pipeline_name', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'pipelineName', '17': true},
+  ],
+  '8': [
+    {'1': '_pipeline_name'},
+  ],
+};
+
+/// Descriptor for `ListIndexesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIndexesRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0SW5kZXhlc1JlcXVlc3QSJwoPb3JnYW5pemF0aW9uX2lkGAEgASgJUg5vcmdhbml6YX'
+    'Rpb25JZBJOCg9jb2xsZWN0aW9uX3R5cGUYAiABKA4yJS52aWFtLmFwcC5kYXRhLnYxLkluZGV4'
+    'YWJsZUNvbGxlY3Rpb25SDmNvbGxlY3Rpb25UeXBlEigKDXBpcGVsaW5lX25hbWUYAyABKAlIAF'
+    'IMcGlwZWxpbmVOYW1liAEBQhAKDl9waXBlbGluZV9uYW1l');
+
+@$core.Deprecated('Use listIndexesResponseDescriptor instead')
+const ListIndexesResponse$json = {
+  '1': 'ListIndexesResponse',
+  '2': [
+    {'1': 'indexes', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.Index', '10': 'indexes'},
+  ],
+};
+
+/// Descriptor for `ListIndexesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIndexesResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0SW5kZXhlc1Jlc3BvbnNlEjEKB2luZGV4ZXMYASADKAsyFy52aWFtLmFwcC5kYXRhLn'
+    'YxLkluZGV4UgdpbmRleGVz');
+
+@$core.Deprecated('Use indexDescriptor instead')
+const Index$json = {
+  '1': 'Index',
+  '2': [
+    {'1': 'collection_type', '3': 1, '4': 1, '5': 14, '6': '.viam.app.data.v1.IndexableCollection', '10': 'collectionType'},
+    {'1': 'pipeline_name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'pipelineName', '17': true},
+    {'1': 'index_name', '3': 3, '4': 1, '5': 9, '10': 'indexName'},
+    {'1': 'index_spec', '3': 4, '4': 3, '5': 12, '10': 'indexSpec'},
+    {'1': 'created_by', '3': 5, '4': 1, '5': 14, '6': '.viam.app.data.v1.IndexCreator', '10': 'createdBy'},
+  ],
+  '8': [
+    {'1': '_pipeline_name'},
+  ],
+};
+
+/// Descriptor for `Index`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List indexDescriptor = $convert.base64Decode(
+    'CgVJbmRleBJOCg9jb2xsZWN0aW9uX3R5cGUYASABKA4yJS52aWFtLmFwcC5kYXRhLnYxLkluZG'
+    'V4YWJsZUNvbGxlY3Rpb25SDmNvbGxlY3Rpb25UeXBlEigKDXBpcGVsaW5lX25hbWUYAiABKAlI'
+    'AFIMcGlwZWxpbmVOYW1liAEBEh0KCmluZGV4X25hbWUYAyABKAlSCWluZGV4TmFtZRIdCgppbm'
+    'RleF9zcGVjGAQgAygMUglpbmRleFNwZWMSPQoKY3JlYXRlZF9ieRgFIAEoDjIeLnZpYW0uYXBw'
+    'LmRhdGEudjEuSW5kZXhDcmVhdG9yUgljcmVhdGVkQnlCEAoOX3BpcGVsaW5lX25hbWU=');
 

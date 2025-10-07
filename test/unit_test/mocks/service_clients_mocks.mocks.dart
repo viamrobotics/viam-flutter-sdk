@@ -358,83 +358,6 @@ class MockRobotServiceClient extends _i1.Mock
           as _i4.ResponseFuture<_i9.GetModelsFromModulesResponse>);
 
   @override
-  _i4.ResponseFuture<_i9.FrameSystemConfigResponse> frameSystemConfig(
-    _i9.FrameSystemConfigRequest? request, {
-    _i3.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-            Invocation.method(
-              #frameSystemConfig,
-              [request],
-              {#options: options},
-            ),
-            returnValue: _FakeResponseFuture_2<_i9.FrameSystemConfigResponse>(
-              this,
-              Invocation.method(
-                #frameSystemConfig,
-                [request],
-                {#options: options},
-              ),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i9.FrameSystemConfigResponse>(
-                  this,
-                  Invocation.method(
-                    #frameSystemConfig,
-                    [request],
-                    {#options: options},
-                  ),
-                ),
-          )
-          as _i4.ResponseFuture<_i9.FrameSystemConfigResponse>);
-
-  @override
-  _i4.ResponseFuture<_i9.TransformPoseResponse> transformPose(
-    _i9.TransformPoseRequest? request, {
-    _i3.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-            Invocation.method(#transformPose, [request], {#options: options}),
-            returnValue: _FakeResponseFuture_2<_i9.TransformPoseResponse>(
-              this,
-              Invocation.method(#transformPose, [request], {#options: options}),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i9.TransformPoseResponse>(
-                  this,
-                  Invocation.method(
-                    #transformPose,
-                    [request],
-                    {#options: options},
-                  ),
-                ),
-          )
-          as _i4.ResponseFuture<_i9.TransformPoseResponse>);
-
-  @override
-  _i4.ResponseFuture<_i9.TransformPCDResponse> transformPCD(
-    _i9.TransformPCDRequest? request, {
-    _i3.CallOptions? options,
-  }) =>
-      (super.noSuchMethod(
-            Invocation.method(#transformPCD, [request], {#options: options}),
-            returnValue: _FakeResponseFuture_2<_i9.TransformPCDResponse>(
-              this,
-              Invocation.method(#transformPCD, [request], {#options: options}),
-            ),
-            returnValueForMissingStub:
-                _FakeResponseFuture_2<_i9.TransformPCDResponse>(
-                  this,
-                  Invocation.method(
-                    #transformPCD,
-                    [request],
-                    {#options: options},
-                  ),
-                ),
-          )
-          as _i4.ResponseFuture<_i9.TransformPCDResponse>);
-
-  @override
   _i4.ResponseFuture<_i9.GetStatusResponse> getStatus(
     _i9.GetStatusRequest? request, {
     _i3.CallOptions? options,
@@ -736,6 +659,102 @@ class MockRobotServiceClient extends _i1.Mock
                 ),
           )
           as _i4.ResponseFuture<_i9.ListTunnelsResponse>);
+
+  @override
+  _i4.ResponseFuture<_i9.FrameSystemConfigResponse> frameSystemConfig(
+    _i9.FrameSystemConfigRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #frameSystemConfig,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i9.FrameSystemConfigResponse>(
+              this,
+              Invocation.method(
+                #frameSystemConfig,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i9.FrameSystemConfigResponse>(
+                  this,
+                  Invocation.method(
+                    #frameSystemConfig,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i9.FrameSystemConfigResponse>);
+
+  @override
+  _i4.ResponseFuture<_i9.GetPoseResponse> getPose(
+    _i9.GetPoseRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#getPose, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i9.GetPoseResponse>(
+              this,
+              Invocation.method(#getPose, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i9.GetPoseResponse>(
+                  this,
+                  Invocation.method(#getPose, [request], {#options: options}),
+                ),
+          )
+          as _i4.ResponseFuture<_i9.GetPoseResponse>);
+
+  @override
+  _i4.ResponseFuture<_i9.TransformPoseResponse> transformPose(
+    _i9.TransformPoseRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#transformPose, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i9.TransformPoseResponse>(
+              this,
+              Invocation.method(#transformPose, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i9.TransformPoseResponse>(
+                  this,
+                  Invocation.method(
+                    #transformPose,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i9.TransformPoseResponse>);
+
+  @override
+  _i4.ResponseFuture<_i9.TransformPCDResponse> transformPCD(
+    _i9.TransformPCDRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#transformPCD, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i9.TransformPCDResponse>(
+              this,
+              Invocation.method(#transformPCD, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i9.TransformPCDResponse>(
+                  this,
+                  Invocation.method(
+                    #transformPCD,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i9.TransformPCDResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
@@ -3020,6 +3039,70 @@ class MockAppServiceClient extends _i1.Mock implements _i12.AppServiceClient {
           as _i4.ResponseFuture<_i13.ListRobotsResponse>);
 
   @override
+  _i4.ResponseFuture<_i13.ListRobotsForLocationsResponse>
+  listRobotsForLocations(
+    _i13.ListRobotsForLocationsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #listRobotsForLocations,
+              [request],
+              {#options: options},
+            ),
+            returnValue:
+                _FakeResponseFuture_2<_i13.ListRobotsForLocationsResponse>(
+                  this,
+                  Invocation.method(
+                    #listRobotsForLocations,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.ListRobotsForLocationsResponse>(
+                  this,
+                  Invocation.method(
+                    #listRobotsForLocations,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.ListRobotsForLocationsResponse>);
+
+  @override
+  _i4.ResponseFuture<_i13.ListRobotsForOrgResponse> listRobotsForOrg(
+    _i13.ListRobotsForOrgRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #listRobotsForOrg,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<_i13.ListRobotsForOrgResponse>(
+              this,
+              Invocation.method(
+                #listRobotsForOrg,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i13.ListRobotsForOrgResponse>(
+                  this,
+                  Invocation.method(
+                    #listRobotsForOrg,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i13.ListRobotsForOrgResponse>);
+
+  @override
   _i4.ResponseFuture<_i13.NewRobotResponse> newRobot(
     _i13.NewRobotRequest? request, {
     _i3.CallOptions? options,
@@ -4902,6 +4985,75 @@ class MockDataServiceClient extends _i1.Mock implements _i14.DataServiceClient {
           as _i4.ResponseFuture<_i15.RemoveBinaryDataFromDatasetByIDsResponse>);
 
   @override
+  _i4.ResponseFuture<_i15.CreateIndexResponse> createIndex(
+    _i15.CreateIndexRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#createIndex, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i15.CreateIndexResponse>(
+              this,
+              Invocation.method(#createIndex, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i15.CreateIndexResponse>(
+                  this,
+                  Invocation.method(
+                    #createIndex,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i15.CreateIndexResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.ListIndexesResponse> listIndexes(
+    _i15.ListIndexesRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#listIndexes, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i15.ListIndexesResponse>(
+              this,
+              Invocation.method(#listIndexes, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i15.ListIndexesResponse>(
+                  this,
+                  Invocation.method(
+                    #listIndexes,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i15.ListIndexesResponse>);
+
+  @override
+  _i4.ResponseFuture<_i15.DeleteIndexResponse> deleteIndex(
+    _i15.DeleteIndexRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#deleteIndex, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i15.DeleteIndexResponse>(
+              this,
+              Invocation.method(#deleteIndex, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i15.DeleteIndexResponse>(
+                  this,
+                  Invocation.method(
+                    #deleteIndex,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i15.DeleteIndexResponse>);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -5802,6 +5954,43 @@ class MockBillingServiceClient extends _i1.Mock
           as _i4.ResponseFuture<_i22.UpdateOrganizationBillingTierResponse>);
 
   @override
+  _i4.ResponseFuture<_i22.CreateInvoiceAndChargeImmediatelyResponse>
+  createInvoiceAndChargeImmediately(
+    _i22.CreateInvoiceAndChargeImmediatelyRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #createInvoiceAndChargeImmediately,
+              [request],
+              {#options: options},
+            ),
+            returnValue: _FakeResponseFuture_2<
+              _i22.CreateInvoiceAndChargeImmediatelyResponse
+            >(
+              this,
+              Invocation.method(
+                #createInvoiceAndChargeImmediately,
+                [request],
+                {#options: options},
+              ),
+            ),
+            returnValueForMissingStub: _FakeResponseFuture_2<
+              _i22.CreateInvoiceAndChargeImmediatelyResponse
+            >(
+              this,
+              Invocation.method(
+                #createInvoiceAndChargeImmediately,
+                [request],
+                {#options: options},
+              ),
+            ),
+          )
+          as _i4.ResponseFuture<
+            _i22.CreateInvoiceAndChargeImmediatelyResponse
+          >);
+
+  @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
     _i7.ClientMethod<Q, R>? method,
     _i6.Stream<Q>? requests, {
@@ -6350,6 +6539,29 @@ class MockDatasetServiceClient extends _i1.Mock
                 ),
           )
           as _i4.ResponseFuture<_i26.ListDatasetsByIDsResponse>);
+
+  @override
+  _i4.ResponseFuture<_i26.MergeDatasetsResponse> mergeDatasets(
+    _i26.MergeDatasetsRequest? request, {
+    _i3.CallOptions? options,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#mergeDatasets, [request], {#options: options}),
+            returnValue: _FakeResponseFuture_2<_i26.MergeDatasetsResponse>(
+              this,
+              Invocation.method(#mergeDatasets, [request], {#options: options}),
+            ),
+            returnValueForMissingStub:
+                _FakeResponseFuture_2<_i26.MergeDatasetsResponse>(
+                  this,
+                  Invocation.method(
+                    #mergeDatasets,
+                    [request],
+                    {#options: options},
+                  ),
+                ),
+          )
+          as _i4.ResponseFuture<_i26.MergeDatasetsResponse>);
 
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(

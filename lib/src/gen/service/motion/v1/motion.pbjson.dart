@@ -37,9 +37,18 @@ const MoveRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.PoseInFrame', '10': 'destination'},
-    {'1': 'component_name', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
     {'1': 'world_state', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.WorldState', '9': 0, '10': 'worldState', '17': true},
     {'1': 'constraints', '3': 5, '4': 1, '5': 11, '6': '.viam.service.motion.v1.Constraints', '9': 1, '10': 'constraints', '17': true},
+    {'1': 'component_name', '3': 6, '4': 1, '5': 9, '10': 'componentName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': [
@@ -51,12 +60,14 @@ const MoveRequest$json = {
 /// Descriptor for `MoveRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moveRequestDescriptor = $convert.base64Decode(
     'CgtNb3ZlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEj0KC2Rlc3RpbmF0aW9uGAIgASgLMh'
-    'sudmlhbS5jb21tb24udjEuUG9zZUluRnJhbWVSC2Rlc3RpbmF0aW9uEkMKDmNvbXBvbmVudF9u'
-    'YW1lGAMgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lUg1jb21wb25lbnROYW1lEk'
-    'AKC3dvcmxkX3N0YXRlGAQgASgLMhoudmlhbS5jb21tb24udjEuV29ybGRTdGF0ZUgAUgp3b3Js'
-    'ZFN0YXRliAEBEkoKC2NvbnN0cmFpbnRzGAUgASgLMiMudmlhbS5zZXJ2aWNlLm1vdGlvbi52MS'
-    '5Db25zdHJhaW50c0gBUgtjb25zdHJhaW50c4gBARItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5w'
-    'cm90b2J1Zi5TdHJ1Y3RSBWV4dHJhQg4KDF93b3JsZF9zdGF0ZUIOCgxfY29uc3RyYWludHM=');
+    'sudmlhbS5jb21tb24udjEuUG9zZUluRnJhbWVSC2Rlc3RpbmF0aW9uElwKGWNvbXBvbmVudF9u'
+    'YW1lX2RlcHJlY2F0ZWQYAyABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVCAhgBUh'
+    'djb21wb25lbnROYW1lRGVwcmVjYXRlZBJACgt3b3JsZF9zdGF0ZRgEIAEoCzIaLnZpYW0uY29t'
+    'bW9uLnYxLldvcmxkU3RhdGVIAFIKd29ybGRTdGF0ZYgBARJKCgtjb25zdHJhaW50cxgFIAEoCz'
+    'IjLnZpYW0uc2VydmljZS5tb3Rpb24udjEuQ29uc3RyYWludHNIAVILY29uc3RyYWludHOIAQES'
+    'JQoOY29tcG9uZW50X25hbWUYBiABKAlSDWNvbXBvbmVudE5hbWUSLQoFZXh0cmEYYyABKAsyFy'
+    '5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYUIOCgxfd29ybGRfc3RhdGVCDgoMX2NvbnN0'
+    'cmFpbnRz');
 
 @$core.Deprecated('Use moveResponseDescriptor instead')
 const MoveResponse$json = {
@@ -76,10 +87,28 @@ const MoveOnMapRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Pose', '10': 'destination'},
-    {'1': 'component_name', '3': 3, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
-    {'1': 'slam_service_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'slamServiceName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
+    {
+      '1': 'slam_service_name_deprecated',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'slamServiceNameDeprecated',
+    },
     {'1': 'motion_configuration', '3': 5, '4': 1, '5': 11, '6': '.viam.service.motion.v1.MotionConfiguration', '9': 0, '10': 'motionConfiguration', '17': true},
     {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.Geometry', '10': 'obstacles'},
+    {'1': 'component_name', '3': 7, '4': 1, '5': 9, '10': 'componentName'},
+    {'1': 'slam_service_name', '3': 8, '4': 1, '5': 9, '10': 'slamServiceName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': [
@@ -90,14 +119,16 @@ const MoveOnMapRequest$json = {
 /// Descriptor for `MoveOnMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List moveOnMapRequestDescriptor = $convert.base64Decode(
     'ChBNb3ZlT25NYXBSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSNgoLZGVzdGluYXRpb24YAi'
-    'ABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgtkZXN0aW5hdGlvbhJDCg5jb21wb25lbnRfbmFt'
-    'ZRgDIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZRJICh'
-    'FzbGFtX3NlcnZpY2VfbmFtZRgEIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVIP'
-    'c2xhbVNlcnZpY2VOYW1lEmMKFG1vdGlvbl9jb25maWd1cmF0aW9uGAUgASgLMisudmlhbS5zZX'
-    'J2aWNlLm1vdGlvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSABSE21vdGlvbkNvbmZpZ3VyYXRp'
-    'b26IAQESNgoJb2JzdGFjbGVzGAYgAygLMhgudmlhbS5jb21tb24udjEuR2VvbWV0cnlSCW9ic3'
-    'RhY2xlcxItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJhQhcK'
-    'FV9tb3Rpb25fY29uZmlndXJhdGlvbg==');
+    'ABKAsyFC52aWFtLmNvbW1vbi52MS5Qb3NlUgtkZXN0aW5hdGlvbhJcChljb21wb25lbnRfbmFt'
+    'ZV9kZXByZWNhdGVkGAMgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lQgIYAVIXY2'
+    '9tcG9uZW50TmFtZURlcHJlY2F0ZWQSYQocc2xhbV9zZXJ2aWNlX25hbWVfZGVwcmVjYXRlZBgE'
+    'IAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZUICGAFSGXNsYW1TZXJ2aWNlTmFtZU'
+    'RlcHJlY2F0ZWQSYwoUbW90aW9uX2NvbmZpZ3VyYXRpb24YBSABKAsyKy52aWFtLnNlcnZpY2Uu'
+    'bW90aW9uLnYxLk1vdGlvbkNvbmZpZ3VyYXRpb25IAFITbW90aW9uQ29uZmlndXJhdGlvbogBAR'
+    'I2CglvYnN0YWNsZXMYBiADKAsyGC52aWFtLmNvbW1vbi52MS5HZW9tZXRyeVIJb2JzdGFjbGVz'
+    'EiUKDmNvbXBvbmVudF9uYW1lGAcgASgJUg1jb21wb25lbnROYW1lEioKEXNsYW1fc2VydmljZV'
+    '9uYW1lGAggASgJUg9zbGFtU2VydmljZU5hbWUSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJv'
+    'dG9idWYuU3RydWN0UgVleHRyYUIXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
 
 @$core.Deprecated('Use moveOnMapResponseDescriptor instead')
 const MoveOnMapResponse$json = {
@@ -115,16 +146,36 @@ final $typed_data.Uint8List moveOnMapResponseDescriptor = $convert.base64Decode(
 const ObstacleDetector$json = {
   '1': 'ObstacleDetector',
   '2': [
-    {'1': 'vision_service', '3': 1, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'visionService'},
-    {'1': 'camera', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'camera'},
+    {
+      '1': 'vision_service_deprecated',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'visionServiceDeprecated',
+    },
+    {
+      '1': 'camera_deprecated',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'cameraDeprecated',
+    },
+    {'1': 'vision_service', '3': 3, '4': 1, '5': 9, '10': 'visionService'},
+    {'1': 'camera', '3': 4, '4': 1, '5': 9, '10': 'camera'},
   ],
 };
 
 /// Descriptor for `ObstacleDetector`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List obstacleDetectorDescriptor = $convert.base64Decode(
-    'ChBPYnN0YWNsZURldGVjdG9yEkMKDnZpc2lvbl9zZXJ2aWNlGAEgASgLMhwudmlhbS5jb21tb2'
-    '4udjEuUmVzb3VyY2VOYW1lUg12aXNpb25TZXJ2aWNlEjQKBmNhbWVyYRgCIAEoCzIcLnZpYW0u'
-    'Y29tbW9uLnYxLlJlc291cmNlTmFtZVIGY2FtZXJh');
+    'ChBPYnN0YWNsZURldGVjdG9yElwKGXZpc2lvbl9zZXJ2aWNlX2RlcHJlY2F0ZWQYASABKAsyHC'
+    '52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVCAhgBUhd2aXNpb25TZXJ2aWNlRGVwcmVjYXRl'
+    'ZBJNChFjYW1lcmFfZGVwcmVjYXRlZBgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTm'
+    'FtZUICGAFSEGNhbWVyYURlcHJlY2F0ZWQSJQoOdmlzaW9uX3NlcnZpY2UYAyABKAlSDXZpc2lv'
+    'blNlcnZpY2USFgoGY2FtZXJhGAQgASgJUgZjYW1lcmE=');
 
 @$core.Deprecated('Use motionConfigurationDescriptor instead')
 const MotionConfiguration$json = {
@@ -166,11 +217,29 @@ const MoveOnGlobeRequest$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.GeoPoint', '10': 'destination'},
     {'1': 'heading', '3': 3, '4': 1, '5': 1, '9': 0, '10': 'heading', '17': true},
-    {'1': 'component_name', '3': 4, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
-    {'1': 'movement_sensor_name', '3': 5, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'movementSensorName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
+    {
+      '1': 'movement_sensor_name_deprecated',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'movementSensorNameDeprecated',
+    },
     {'1': 'obstacles', '3': 6, '4': 3, '5': 11, '6': '.viam.common.v1.GeoGeometry', '10': 'obstacles'},
     {'1': 'motion_configuration', '3': 7, '4': 1, '5': 11, '6': '.viam.service.motion.v1.MotionConfiguration', '9': 1, '10': 'motionConfiguration', '17': true},
     {'1': 'bounding_regions', '3': 8, '4': 3, '5': 11, '6': '.viam.common.v1.GeoGeometry', '10': 'boundingRegions'},
+    {'1': 'component_name', '3': 9, '4': 1, '5': 9, '10': 'componentName'},
+    {'1': 'movement_sensor_name', '3': 10, '4': 1, '5': 9, '10': 'movementSensorName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': [
@@ -183,15 +252,18 @@ const MoveOnGlobeRequest$json = {
 final $typed_data.Uint8List moveOnGlobeRequestDescriptor = $convert.base64Decode(
     'ChJNb3ZlT25HbG9iZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRI6CgtkZXN0aW5hdGlvbh'
     'gCIAEoCzIYLnZpYW0uY29tbW9uLnYxLkdlb1BvaW50UgtkZXN0aW5hdGlvbhIdCgdoZWFkaW5n'
-    'GAMgASgBSABSB2hlYWRpbmeIAQESQwoOY29tcG9uZW50X25hbWUYBCABKAsyHC52aWFtLmNvbW'
-    '1vbi52MS5SZXNvdXJjZU5hbWVSDWNvbXBvbmVudE5hbWUSTgoUbW92ZW1lbnRfc2Vuc29yX25h'
-    'bWUYBSABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVSEm1vdmVtZW50U2Vuc29yTm'
-    'FtZRI5CglvYnN0YWNsZXMYBiADKAsyGy52aWFtLmNvbW1vbi52MS5HZW9HZW9tZXRyeVIJb2Jz'
-    'dGFjbGVzEmMKFG1vdGlvbl9jb25maWd1cmF0aW9uGAcgASgLMisudmlhbS5zZXJ2aWNlLm1vdG'
-    'lvbi52MS5Nb3Rpb25Db25maWd1cmF0aW9uSAFSE21vdGlvbkNvbmZpZ3VyYXRpb26IAQESRgoQ'
-    'Ym91bmRpbmdfcmVnaW9ucxgIIAMoCzIbLnZpYW0uY29tbW9uLnYxLkdlb0dlb21ldHJ5Ug9ib3'
-    'VuZGluZ1JlZ2lvbnMSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVl'
-    'eHRyYUIKCghfaGVhZGluZ0IXChVfbW90aW9uX2NvbmZpZ3VyYXRpb24=');
+    'GAMgASgBSABSB2hlYWRpbmeIAQESXAoZY29tcG9uZW50X25hbWVfZGVwcmVjYXRlZBgEIAEoCz'
+    'IcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZUICGAFSF2NvbXBvbmVudE5hbWVEZXByZWNh'
+    'dGVkEmcKH21vdmVtZW50X3NlbnNvcl9uYW1lX2RlcHJlY2F0ZWQYBSABKAsyHC52aWFtLmNvbW'
+    '1vbi52MS5SZXNvdXJjZU5hbWVCAhgBUhxtb3ZlbWVudFNlbnNvck5hbWVEZXByZWNhdGVkEjkK'
+    'CW9ic3RhY2xlcxgGIAMoCzIbLnZpYW0uY29tbW9uLnYxLkdlb0dlb21ldHJ5UglvYnN0YWNsZX'
+    'MSYwoUbW90aW9uX2NvbmZpZ3VyYXRpb24YByABKAsyKy52aWFtLnNlcnZpY2UubW90aW9uLnYx'
+    'Lk1vdGlvbkNvbmZpZ3VyYXRpb25IAVITbW90aW9uQ29uZmlndXJhdGlvbogBARJGChBib3VuZG'
+    'luZ19yZWdpb25zGAggAygLMhsudmlhbS5jb21tb24udjEuR2VvR2VvbWV0cnlSD2JvdW5kaW5n'
+    'UmVnaW9ucxIlCg5jb21wb25lbnRfbmFtZRgJIAEoCVINY29tcG9uZW50TmFtZRIwChRtb3ZlbW'
+    'VudF9zZW5zb3JfbmFtZRgKIAEoCVISbW92ZW1lbnRTZW5zb3JOYW1lEi0KBWV4dHJhGGMgASgL'
+    'MhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmFCCgoIX2hlYWRpbmdCFwoVX21vdGlvbl'
+    '9jb25maWd1cmF0aW9u');
 
 @$core.Deprecated('Use moveOnGlobeResponseDescriptor instead')
 const MoveOnGlobeResponse$json = {
@@ -211,9 +283,18 @@ const GetPoseRequest$json = {
   '1': 'GetPoseRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
     {'1': 'destination_frame', '3': 3, '4': 1, '5': 9, '10': 'destinationFrame'},
     {'1': 'supplemental_transforms', '3': 4, '4': 3, '5': 11, '6': '.viam.common.v1.Transform', '10': 'supplementalTransforms'},
+    {'1': 'component_name', '3': 5, '4': 1, '5': 9, '10': 'componentName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '7': {'3': true},
@@ -221,12 +302,13 @@ const GetPoseRequest$json = {
 
 /// Descriptor for `GetPoseRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPoseRequestDescriptor = $convert.base64Decode(
-    'Cg5HZXRQb3NlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEkMKDmNvbXBvbmVudF9uYW1lGA'
-    'IgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lUg1jb21wb25lbnROYW1lEisKEWRl'
-    'c3RpbmF0aW9uX2ZyYW1lGAMgASgJUhBkZXN0aW5hdGlvbkZyYW1lElIKF3N1cHBsZW1lbnRhbF'
-    '90cmFuc2Zvcm1zGAQgAygLMhkudmlhbS5jb21tb24udjEuVHJhbnNmb3JtUhZzdXBwbGVtZW50'
-    'YWxUcmFuc2Zvcm1zEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZX'
-    'h0cmE6AhgB');
+    'Cg5HZXRQb3NlUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lElwKGWNvbXBvbmVudF9uYW1lX2'
+    'RlcHJlY2F0ZWQYAiABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVCAhgBUhdjb21w'
+    'b25lbnROYW1lRGVwcmVjYXRlZBIrChFkZXN0aW5hdGlvbl9mcmFtZRgDIAEoCVIQZGVzdGluYX'
+    'Rpb25GcmFtZRJSChdzdXBwbGVtZW50YWxfdHJhbnNmb3JtcxgEIAMoCzIZLnZpYW0uY29tbW9u'
+    'LnYxLlRyYW5zZm9ybVIWc3VwcGxlbWVudGFsVHJhbnNmb3JtcxIlCg5jb21wb25lbnRfbmFtZR'
+    'gFIAEoCVINY29tcG9uZW50TmFtZRItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5T'
+    'dHJ1Y3RSBWV4dHJhOgIYAQ==');
 
 @$core.Deprecated('Use getPoseResponseDescriptor instead')
 const GetPoseResponse$json = {
@@ -247,16 +329,26 @@ const StopPlanRequest$json = {
   '1': 'StopPlanRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
+    {'1': 'component_name', '3': 3, '4': 1, '5': 9, '10': 'componentName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
 };
 
 /// Descriptor for `StopPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stopPlanRequestDescriptor = $convert.base64Decode(
-    'Cg9TdG9wUGxhblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRJDCg5jb21wb25lbnRfbmFtZR'
-    'gCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZRItCgVl'
-    'eHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+    'Cg9TdG9wUGxhblJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRJcChljb21wb25lbnRfbmFtZV'
+    '9kZXByZWNhdGVkGAIgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lQgIYAVIXY29t'
+    'cG9uZW50TmFtZURlcHJlY2F0ZWQSJQoOY29tcG9uZW50X25hbWUYAyABKAlSDWNvbXBvbmVudE'
+    '5hbWUSLQoFZXh0cmEYYyABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0UgVleHRyYQ==');
 
 @$core.Deprecated('Use stopPlanResponseDescriptor instead')
 const StopPlanResponse$json = {
@@ -302,9 +394,18 @@ const GetPlanRequest$json = {
   '1': 'GetPlanRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
     {'1': 'last_plan_only', '3': 3, '4': 1, '5': 8, '10': 'lastPlanOnly'},
     {'1': 'execution_id', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'executionId', '17': true},
+    {'1': 'component_name', '3': 5, '4': 1, '5': 9, '10': 'componentName'},
     {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
   ],
   '8': [
@@ -314,11 +415,12 @@ const GetPlanRequest$json = {
 
 /// Descriptor for `GetPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPlanRequestDescriptor = $convert.base64Decode(
-    'Cg5HZXRQbGFuUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEkMKDmNvbXBvbmVudF9uYW1lGA'
-    'IgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lUg1jb21wb25lbnROYW1lEiQKDmxh'
-    'c3RfcGxhbl9vbmx5GAMgASgIUgxsYXN0UGxhbk9ubHkSJgoMZXhlY3V0aW9uX2lkGAQgASgJSA'
-    'BSC2V4ZWN1dGlvbklkiAEBEi0KBWV4dHJhGGMgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVj'
-    'dFIFZXh0cmFCDwoNX2V4ZWN1dGlvbl9pZA==');
+    'Cg5HZXRQbGFuUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lElwKGWNvbXBvbmVudF9uYW1lX2'
+    'RlcHJlY2F0ZWQYAiABKAsyHC52aWFtLmNvbW1vbi52MS5SZXNvdXJjZU5hbWVCAhgBUhdjb21w'
+    'b25lbnROYW1lRGVwcmVjYXRlZBIkCg5sYXN0X3BsYW5fb25seRgDIAEoCFIMbGFzdFBsYW5Pbm'
+    'x5EiYKDGV4ZWN1dGlvbl9pZBgEIAEoCUgAUgtleGVjdXRpb25JZIgBARIlCg5jb21wb25lbnRf'
+    'bmFtZRgFIAEoCVINY29tcG9uZW50TmFtZRItCgVleHRyYRhjIAEoCzIXLmdvb2dsZS5wcm90b2'
+    'J1Zi5TdHJ1Y3RSBWV4dHJhQg8KDV9leGVjdXRpb25faWQ=');
 
 @$core.Deprecated('Use getPlanResponseDescriptor instead')
 const GetPlanResponse$json = {
@@ -462,18 +564,28 @@ const PlanStatusWithID$json = {
   '1': 'PlanStatusWithID',
   '2': [
     {'1': 'plan_id', '3': 1, '4': 1, '5': 9, '10': 'planId'},
-    {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
     {'1': 'execution_id', '3': 3, '4': 1, '5': 9, '10': 'executionId'},
     {'1': 'status', '3': 4, '4': 1, '5': 11, '6': '.viam.service.motion.v1.PlanStatus', '10': 'status'},
+    {'1': 'component_name', '3': 5, '4': 1, '5': 9, '10': 'componentName'},
   ],
 };
 
 /// Descriptor for `PlanStatusWithID`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List planStatusWithIDDescriptor = $convert.base64Decode(
-    'ChBQbGFuU3RhdHVzV2l0aElEEhcKB3BsYW5faWQYASABKAlSBnBsYW5JZBJDCg5jb21wb25lbn'
-    'RfbmFtZRgCIAEoCzIcLnZpYW0uY29tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFt'
-    'ZRIhCgxleGVjdXRpb25faWQYAyABKAlSC2V4ZWN1dGlvbklkEjoKBnN0YXR1cxgEIAEoCzIiLn'
-    'ZpYW0uc2VydmljZS5tb3Rpb24udjEuUGxhblN0YXR1c1IGc3RhdHVz');
+    'ChBQbGFuU3RhdHVzV2l0aElEEhcKB3BsYW5faWQYASABKAlSBnBsYW5JZBJcChljb21wb25lbn'
+    'RfbmFtZV9kZXByZWNhdGVkGAIgASgLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lQgIY'
+    'AVIXY29tcG9uZW50TmFtZURlcHJlY2F0ZWQSIQoMZXhlY3V0aW9uX2lkGAMgASgJUgtleGVjdX'
+    'Rpb25JZBI6CgZzdGF0dXMYBCABKAsyIi52aWFtLnNlcnZpY2UubW90aW9uLnYxLlBsYW5TdGF0'
+    'dXNSBnN0YXR1cxIlCg5jb21wb25lbnRfbmFtZRgFIAEoCVINY29tcG9uZW50TmFtZQ==');
 
 @$core.Deprecated('Use planStatusDescriptor instead')
 const PlanStatus$json = {
@@ -500,18 +612,28 @@ const Plan$json = {
   '1': 'Plan',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'component_name', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.ResourceName', '10': 'componentName'},
+    {
+      '1': 'component_name_deprecated',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.viam.common.v1.ResourceName',
+      '8': {'3': true},
+      '10': 'componentNameDeprecated',
+    },
     {'1': 'execution_id', '3': 3, '4': 1, '5': 9, '10': 'executionId'},
     {'1': 'steps', '3': 4, '4': 3, '5': 11, '6': '.viam.service.motion.v1.PlanStep', '10': 'steps'},
+    {'1': 'component_name', '3': 5, '4': 1, '5': 9, '10': 'componentName'},
   ],
 };
 
 /// Descriptor for `Plan`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List planDescriptor = $convert.base64Decode(
-    'CgRQbGFuEg4KAmlkGAEgASgJUgJpZBJDCg5jb21wb25lbnRfbmFtZRgCIAEoCzIcLnZpYW0uY2'
-    '9tbW9uLnYxLlJlc291cmNlTmFtZVINY29tcG9uZW50TmFtZRIhCgxleGVjdXRpb25faWQYAyAB'
-    'KAlSC2V4ZWN1dGlvbklkEjYKBXN0ZXBzGAQgAygLMiAudmlhbS5zZXJ2aWNlLm1vdGlvbi52MS'
-    '5QbGFuU3RlcFIFc3RlcHM=');
+    'CgRQbGFuEg4KAmlkGAEgASgJUgJpZBJcChljb21wb25lbnRfbmFtZV9kZXByZWNhdGVkGAIgAS'
+    'gLMhwudmlhbS5jb21tb24udjEuUmVzb3VyY2VOYW1lQgIYAVIXY29tcG9uZW50TmFtZURlcHJl'
+    'Y2F0ZWQSIQoMZXhlY3V0aW9uX2lkGAMgASgJUgtleGVjdXRpb25JZBI2CgVzdGVwcxgEIAMoCz'
+    'IgLnZpYW0uc2VydmljZS5tb3Rpb24udjEuUGxhblN0ZXBSBXN0ZXBzEiUKDmNvbXBvbmVudF9u'
+    'YW1lGAUgASgJUg1jb21wb25lbnROYW1l');
 
 @$core.Deprecated('Use planStepDescriptor instead')
 const PlanStep$json = {

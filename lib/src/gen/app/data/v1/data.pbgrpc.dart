@@ -113,6 +113,18 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/RemoveBinaryDataFromDatasetByIDs',
       ($3.RemoveBinaryDataFromDatasetByIDsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.RemoveBinaryDataFromDatasetByIDsResponse.fromBuffer(value));
+  static final _$createIndex = $grpc.ClientMethod<$3.CreateIndexRequest, $3.CreateIndexResponse>(
+      '/viam.app.data.v1.DataService/CreateIndex',
+      ($3.CreateIndexRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.CreateIndexResponse.fromBuffer(value));
+  static final _$listIndexes = $grpc.ClientMethod<$3.ListIndexesRequest, $3.ListIndexesResponse>(
+      '/viam.app.data.v1.DataService/ListIndexes',
+      ($3.ListIndexesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.ListIndexesResponse.fromBuffer(value));
+  static final _$deleteIndex = $grpc.ClientMethod<$3.DeleteIndexRequest, $3.DeleteIndexResponse>(
+      '/viam.app.data.v1.DataService/DeleteIndex',
+      ($3.DeleteIndexRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.DeleteIndexResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -210,6 +222,18 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($3.RemoveBinaryDataFromDatasetByIDsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeBinaryDataFromDatasetByIDs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.CreateIndexResponse> createIndex($3.CreateIndexRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createIndex, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.ListIndexesResponse> listIndexes($3.ListIndexesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listIndexes, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.DeleteIndexResponse> deleteIndex($3.DeleteIndexRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteIndex, request, options: options);
   }
 }
 
@@ -379,6 +403,27 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.RemoveBinaryDataFromDatasetByIDsRequest.fromBuffer(value),
         ($3.RemoveBinaryDataFromDatasetByIDsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.CreateIndexRequest, $3.CreateIndexResponse>(
+        'CreateIndex',
+        createIndex_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.CreateIndexRequest.fromBuffer(value),
+        ($3.CreateIndexResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.ListIndexesRequest, $3.ListIndexesResponse>(
+        'ListIndexes',
+        listIndexes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.ListIndexesRequest.fromBuffer(value),
+        ($3.ListIndexesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.DeleteIndexRequest, $3.DeleteIndexResponse>(
+        'DeleteIndex',
+        deleteIndex_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.DeleteIndexRequest.fromBuffer(value),
+        ($3.DeleteIndexResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.TabularDataByFilterResponse> tabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$3.TabularDataByFilterRequest> request) async {
@@ -473,6 +518,18 @@ abstract class DataServiceBase extends $grpc.Service {
     return removeBinaryDataFromDatasetByIDs(call, await request);
   }
 
+  $async.Future<$3.CreateIndexResponse> createIndex_Pre($grpc.ServiceCall call, $async.Future<$3.CreateIndexRequest> request) async {
+    return createIndex(call, await request);
+  }
+
+  $async.Future<$3.ListIndexesResponse> listIndexes_Pre($grpc.ServiceCall call, $async.Future<$3.ListIndexesRequest> request) async {
+    return listIndexes(call, await request);
+  }
+
+  $async.Future<$3.DeleteIndexResponse> deleteIndex_Pre($grpc.ServiceCall call, $async.Future<$3.DeleteIndexRequest> request) async {
+    return deleteIndex(call, await request);
+  }
+
   $async.Future<$3.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $3.TabularDataByFilterRequest request);
   $async.Future<$3.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $3.TabularDataBySQLRequest request);
   $async.Future<$3.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $3.TabularDataByMQLRequest request);
@@ -496,4 +553,7 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$3.ConfigureDatabaseUserResponse> configureDatabaseUser($grpc.ServiceCall call, $3.ConfigureDatabaseUserRequest request);
   $async.Future<$3.AddBinaryDataToDatasetByIDsResponse> addBinaryDataToDatasetByIDs($grpc.ServiceCall call, $3.AddBinaryDataToDatasetByIDsRequest request);
   $async.Future<$3.RemoveBinaryDataFromDatasetByIDsResponse> removeBinaryDataFromDatasetByIDs($grpc.ServiceCall call, $3.RemoveBinaryDataFromDatasetByIDsRequest request);
+  $async.Future<$3.CreateIndexResponse> createIndex($grpc.ServiceCall call, $3.CreateIndexRequest request);
+  $async.Future<$3.ListIndexesResponse> listIndexes($grpc.ServiceCall call, $3.ListIndexesRequest request);
+  $async.Future<$3.DeleteIndexResponse> deleteIndex($grpc.ServiceCall call, $3.DeleteIndexRequest request);
 }
