@@ -1123,6 +1123,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.List<$core.int>>? mqlBinary,
     $core.bool? useRecentData,
     TabularDataSource? dataSource,
+    $core.String? queryPrefixName,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1137,6 +1138,9 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     if (dataSource != null) {
       $result.dataSource = dataSource;
     }
+    if (queryPrefixName != null) {
+      $result.queryPrefixName = queryPrefixName;
+    }
     return $result;
   }
   TabularDataByMQLRequest._() : super();
@@ -1148,6 +1152,7 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
     ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
     ..aOB(4, _omitFieldNames ? '' : 'useRecentData')
     ..aOM<TabularDataSource>(6, _omitFieldNames ? '' : 'dataSource', subBuilder: TabularDataSource.create)
+    ..aOS(7, _omitFieldNames ? '' : 'queryPrefixName')
     ..hasRequiredFields = false
   ;
 
@@ -1209,6 +1214,16 @@ class TabularDataByMQLRequest extends $pb.GeneratedMessage {
   void clearDataSource() => clearField(6);
   @$pb.TagNumber(6)
   TabularDataSource ensureDataSource() => $_ensure(3);
+
+  /// query_prefix_name is an optional field that can be used to specify a saved query to run
+  @$pb.TagNumber(7)
+  $core.String get queryPrefixName => $_getSZ(4);
+  @$pb.TagNumber(7)
+  set queryPrefixName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasQueryPrefixName() => $_has(4);
+  @$pb.TagNumber(7)
+  void clearQueryPrefixName() => clearField(7);
 }
 
 /// TabularDataByMQLResponse provides unified tabular data and metadata, queried with MQL.
@@ -4604,6 +4619,475 @@ class RemoveBinaryDataFromDatasetByIDsResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static RemoveBinaryDataFromDatasetByIDsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveBinaryDataFromDatasetByIDsResponse>(create);
   static RemoveBinaryDataFromDatasetByIDsResponse? _defaultInstance;
+}
+
+/// CreateIndexRequest starts a custom index build
+class CreateIndexRequest extends $pb.GeneratedMessage {
+  factory CreateIndexRequest({
+    $core.String? organizationId,
+    IndexableCollection? collectionType,
+    $core.String? pipelineName,
+    $core.Iterable<$core.List<$core.int>>? indexSpec,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (collectionType != null) {
+      $result.collectionType = collectionType;
+    }
+    if (pipelineName != null) {
+      $result.pipelineName = pipelineName;
+    }
+    if (indexSpec != null) {
+      $result.indexSpec.addAll(indexSpec);
+    }
+    return $result;
+  }
+  CreateIndexRequest._() : super();
+  factory CreateIndexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateIndexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateIndexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..e<IndexableCollection>(2, _omitFieldNames ? '' : 'collectionType', $pb.PbFieldType.OE, defaultOrMaker: IndexableCollection.INDEXABLE_COLLECTION_UNSPECIFIED, valueOf: IndexableCollection.valueOf, enumValues: IndexableCollection.values)
+    ..aOS(3, _omitFieldNames ? '' : 'pipelineName')
+    ..p<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'indexSpec', $pb.PbFieldType.PY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateIndexRequest clone() => CreateIndexRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateIndexRequest copyWith(void Function(CreateIndexRequest) updates) => super.copyWith((message) => updates(message as CreateIndexRequest)) as CreateIndexRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateIndexRequest create() => CreateIndexRequest._();
+  CreateIndexRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateIndexRequest> createRepeated() => $pb.PbList<CreateIndexRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateIndexRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateIndexRequest>(create);
+  static CreateIndexRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  IndexableCollection get collectionType => $_getN(1);
+  @$pb.TagNumber(2)
+  set collectionType(IndexableCollection v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCollectionType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCollectionType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pipelineName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pipelineName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPipelineName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPipelineName() => clearField(3);
+
+  /// index_spec accepts a MongoDB index specification defined in JSON format
+  @$pb.TagNumber(4)
+  $core.List<$core.List<$core.int>> get indexSpec => $_getList(3);
+}
+
+class CreateIndexResponse extends $pb.GeneratedMessage {
+  factory CreateIndexResponse() => create();
+  CreateIndexResponse._() : super();
+  factory CreateIndexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateIndexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateIndexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateIndexResponse clone() => CreateIndexResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateIndexResponse copyWith(void Function(CreateIndexResponse) updates) => super.copyWith((message) => updates(message as CreateIndexResponse)) as CreateIndexResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateIndexResponse create() => CreateIndexResponse._();
+  CreateIndexResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateIndexResponse> createRepeated() => $pb.PbList<CreateIndexResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateIndexResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateIndexResponse>(create);
+  static CreateIndexResponse? _defaultInstance;
+}
+
+/// DeleteIndexRequest drops the specified custom index from a collection
+class DeleteIndexRequest extends $pb.GeneratedMessage {
+  factory DeleteIndexRequest({
+    $core.String? organizationId,
+    IndexableCollection? collectionType,
+    $core.String? pipelineName,
+    $core.String? indexName,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (collectionType != null) {
+      $result.collectionType = collectionType;
+    }
+    if (pipelineName != null) {
+      $result.pipelineName = pipelineName;
+    }
+    if (indexName != null) {
+      $result.indexName = indexName;
+    }
+    return $result;
+  }
+  DeleteIndexRequest._() : super();
+  factory DeleteIndexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteIndexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteIndexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..e<IndexableCollection>(2, _omitFieldNames ? '' : 'collectionType', $pb.PbFieldType.OE, defaultOrMaker: IndexableCollection.INDEXABLE_COLLECTION_UNSPECIFIED, valueOf: IndexableCollection.valueOf, enumValues: IndexableCollection.values)
+    ..aOS(3, _omitFieldNames ? '' : 'pipelineName')
+    ..aOS(4, _omitFieldNames ? '' : 'indexName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteIndexRequest clone() => DeleteIndexRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteIndexRequest copyWith(void Function(DeleteIndexRequest) updates) => super.copyWith((message) => updates(message as DeleteIndexRequest)) as DeleteIndexRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteIndexRequest create() => DeleteIndexRequest._();
+  DeleteIndexRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteIndexRequest> createRepeated() => $pb.PbList<DeleteIndexRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteIndexRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteIndexRequest>(create);
+  static DeleteIndexRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  IndexableCollection get collectionType => $_getN(1);
+  @$pb.TagNumber(2)
+  set collectionType(IndexableCollection v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCollectionType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCollectionType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pipelineName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pipelineName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPipelineName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPipelineName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get indexName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set indexName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIndexName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIndexName() => clearField(4);
+}
+
+class DeleteIndexResponse extends $pb.GeneratedMessage {
+  factory DeleteIndexResponse() => create();
+  DeleteIndexResponse._() : super();
+  factory DeleteIndexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteIndexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteIndexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteIndexResponse clone() => DeleteIndexResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteIndexResponse copyWith(void Function(DeleteIndexResponse) updates) => super.copyWith((message) => updates(message as DeleteIndexResponse)) as DeleteIndexResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteIndexResponse create() => DeleteIndexResponse._();
+  DeleteIndexResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteIndexResponse> createRepeated() => $pb.PbList<DeleteIndexResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteIndexResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteIndexResponse>(create);
+  static DeleteIndexResponse? _defaultInstance;
+}
+
+/// ListIndexesRequest returns all the indexes for a given collection
+class ListIndexesRequest extends $pb.GeneratedMessage {
+  factory ListIndexesRequest({
+    $core.String? organizationId,
+    IndexableCollection? collectionType,
+    $core.String? pipelineName,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (collectionType != null) {
+      $result.collectionType = collectionType;
+    }
+    if (pipelineName != null) {
+      $result.pipelineName = pipelineName;
+    }
+    return $result;
+  }
+  ListIndexesRequest._() : super();
+  factory ListIndexesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListIndexesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListIndexesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..e<IndexableCollection>(2, _omitFieldNames ? '' : 'collectionType', $pb.PbFieldType.OE, defaultOrMaker: IndexableCollection.INDEXABLE_COLLECTION_UNSPECIFIED, valueOf: IndexableCollection.valueOf, enumValues: IndexableCollection.values)
+    ..aOS(3, _omitFieldNames ? '' : 'pipelineName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListIndexesRequest clone() => ListIndexesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListIndexesRequest copyWith(void Function(ListIndexesRequest) updates) => super.copyWith((message) => updates(message as ListIndexesRequest)) as ListIndexesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIndexesRequest create() => ListIndexesRequest._();
+  ListIndexesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListIndexesRequest> createRepeated() => $pb.PbList<ListIndexesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListIndexesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListIndexesRequest>(create);
+  static ListIndexesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  IndexableCollection get collectionType => $_getN(1);
+  @$pb.TagNumber(2)
+  set collectionType(IndexableCollection v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCollectionType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCollectionType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pipelineName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pipelineName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPipelineName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPipelineName() => clearField(3);
+}
+
+class ListIndexesResponse extends $pb.GeneratedMessage {
+  factory ListIndexesResponse({
+    $core.Iterable<Index>? indexes,
+  }) {
+    final $result = create();
+    if (indexes != null) {
+      $result.indexes.addAll(indexes);
+    }
+    return $result;
+  }
+  ListIndexesResponse._() : super();
+  factory ListIndexesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListIndexesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListIndexesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<Index>(1, _omitFieldNames ? '' : 'indexes', $pb.PbFieldType.PM, subBuilder: Index.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListIndexesResponse clone() => ListIndexesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListIndexesResponse copyWith(void Function(ListIndexesResponse) updates) => super.copyWith((message) => updates(message as ListIndexesResponse)) as ListIndexesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIndexesResponse create() => ListIndexesResponse._();
+  ListIndexesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListIndexesResponse> createRepeated() => $pb.PbList<ListIndexesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListIndexesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListIndexesResponse>(create);
+  static ListIndexesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Index> get indexes => $_getList(0);
+}
+
+class Index extends $pb.GeneratedMessage {
+  factory Index({
+    IndexableCollection? collectionType,
+    $core.String? pipelineName,
+    $core.String? indexName,
+    $core.Iterable<$core.List<$core.int>>? indexSpec,
+    IndexCreator? createdBy,
+  }) {
+    final $result = create();
+    if (collectionType != null) {
+      $result.collectionType = collectionType;
+    }
+    if (pipelineName != null) {
+      $result.pipelineName = pipelineName;
+    }
+    if (indexName != null) {
+      $result.indexName = indexName;
+    }
+    if (indexSpec != null) {
+      $result.indexSpec.addAll(indexSpec);
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    return $result;
+  }
+  Index._() : super();
+  factory Index.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Index.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Index', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..e<IndexableCollection>(1, _omitFieldNames ? '' : 'collectionType', $pb.PbFieldType.OE, defaultOrMaker: IndexableCollection.INDEXABLE_COLLECTION_UNSPECIFIED, valueOf: IndexableCollection.valueOf, enumValues: IndexableCollection.values)
+    ..aOS(2, _omitFieldNames ? '' : 'pipelineName')
+    ..aOS(3, _omitFieldNames ? '' : 'indexName')
+    ..p<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'indexSpec', $pb.PbFieldType.PY)
+    ..e<IndexCreator>(5, _omitFieldNames ? '' : 'createdBy', $pb.PbFieldType.OE, defaultOrMaker: IndexCreator.INDEX_CREATOR_UNSPECIFIED, valueOf: IndexCreator.valueOf, enumValues: IndexCreator.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Index clone() => Index()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Index copyWith(void Function(Index) updates) => super.copyWith((message) => updates(message as Index)) as Index;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Index create() => Index._();
+  Index createEmptyInstance() => create();
+  static $pb.PbList<Index> createRepeated() => $pb.PbList<Index>();
+  @$core.pragma('dart2js:noInline')
+  static Index getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Index>(create);
+  static Index? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IndexableCollection get collectionType => $_getN(0);
+  @$pb.TagNumber(1)
+  set collectionType(IndexableCollection v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCollectionType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCollectionType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pipelineName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pipelineName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPipelineName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPipelineName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get indexName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set indexName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIndexName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIndexName() => clearField(3);
+
+  /// index_spec defines a MongoDB index in JSON format
+  @$pb.TagNumber(4)
+  $core.List<$core.List<$core.int>> get indexSpec => $_getList(3);
+
+  @$pb.TagNumber(5)
+  IndexCreator get createdBy => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdBy(IndexCreator v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedBy() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedBy() => clearField(5);
 }
 
 
