@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../viam_sdk.dart';
 
+final size = 300.0;
+
 /// A widget to control an [Arm].
-class ViamArmWidgetNew extends StatefulWidget {
+class ViamArmWidgetNew extends StatelessWidget {
   /// The [Arm]
   final Arm arm;
 
@@ -12,11 +14,6 @@ class ViamArmWidgetNew extends StatefulWidget {
     required this.arm,
   });
 
-  @override
-  State<ViamArmWidgetNew> createState() => _ViamArmWidgetNewState();
-}
-
-class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,19 +29,19 @@ class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
         Stack(
           children: [
             SlantedArrowPad(
-              // TO DO: add functions for arrow functionality
+              // TODO: add functions for arrow functionality
               onUp: () {},
               onDown: () {},
               onLeft: () {},
               onRight: () {},
             ),
-            _buildCornerButton(
+            _BuildCornerButton(
               alignment: Alignment.topLeft,
               direction: ArrowDirection.up,
               label: 'Z+',
               onPressed: () {},
             ),
-            _buildCornerButton(
+            _BuildCornerButton(
               alignment: Alignment.topRight,
               direction: ArrowDirection.down,
               label: 'Z-',
@@ -55,13 +52,23 @@ class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
       ],
     );
   }
+}
 
-  Widget _buildCornerButton({
-    required Alignment alignment,
-    required ArrowDirection direction,
-    required String label,
-    required VoidCallback onPressed,
-  }) {
+class _BuildCornerButton extends StatelessWidget {
+  final Alignment alignment;
+  final ArrowDirection direction;
+  final String label;
+  final VoidCallback onPressed;
+
+  const _BuildCornerButton({
+    required this.alignment,
+    required this.direction,
+    required this.label,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Align(
       alignment: alignment,
       child: Padding(
@@ -165,9 +172,6 @@ class SlantedArrowPad extends StatelessWidget {
   final VoidCallback? onDown;
   final VoidCallback? onLeft;
   final VoidCallback? onRight;
-  final double size;
-  final Color buttonColor;
-  final double iconSize;
 
   const SlantedArrowPad({
     super.key,
@@ -175,9 +179,6 @@ class SlantedArrowPad extends StatelessWidget {
     this.onDown,
     this.onLeft,
     this.onRight,
-    this.size = 300.0,
-    this.buttonColor = Colors.black,
-    this.iconSize = 40.0,
   });
 
   @override
@@ -193,18 +194,33 @@ class SlantedArrowPad extends StatelessWidget {
           width: size,
           child: Stack(
             children: [
-              _buildArrowButton(Alignment.topCenter, ArrowDirection.up, onUp, label: 'X-'),
-              _buildArrowButton(Alignment.bottomCenter, ArrowDirection.down, onDown, label: 'X+'),
-              _buildArrowButton(Alignment.centerLeft, ArrowDirection.left, onLeft, label: 'Y-'),
-              _buildArrowButton(Alignment.centerRight, ArrowDirection.right, onRight, label: 'Y+'),
+              _BuildArrowButton(alignment: Alignment.topCenter, direction: ArrowDirection.up, onPressed: onUp, label: 'X-'),
+              _BuildArrowButton(alignment: Alignment.bottomCenter, direction: ArrowDirection.down, onPressed: onDown, label: 'X+'),
+              _BuildArrowButton(alignment: Alignment.centerLeft, direction: ArrowDirection.left, onPressed: onLeft, label: 'Y-'),
+              _BuildArrowButton(alignment: Alignment.centerRight, direction: ArrowDirection.right, onPressed: onRight, label: 'Y+'),
             ],
           ),
         ),
       ),
     );
   }
+}
 
-  Widget _buildArrowButton(Alignment alignment, ArrowDirection direction, VoidCallback? onPressed, {required String label}) {
+class _BuildArrowButton extends StatelessWidget {
+  final Alignment alignment;
+  final ArrowDirection direction;
+  final String label;
+  final VoidCallback? onPressed;
+
+  const _BuildArrowButton({
+    required this.alignment,
+    required this.direction,
+    required this.onPressed,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Align(
       alignment: alignment,
       child: SizedBox(
@@ -215,7 +231,7 @@ class SlantedArrowPad extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               CustomPaint(
-                painter: _LinearArrowPainter(direction: direction, color: buttonColor),
+                painter: _LinearArrowPainter(direction: direction, color: Colors.black),
                 child: const SizedBox.expand(),
               ),
               Text(
