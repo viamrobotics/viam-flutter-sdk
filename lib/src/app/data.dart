@@ -1660,8 +1660,12 @@ class DataClient {
       ..organizationId = organizationId
       ..collectionType = collectionType
       ..indexSpec.add(BsonCodec.serialize(keys).byteList);
-    if (options != null) {
-      request.indexSpec.add(BsonCodec.serialize(options).byteList);
+    if (!indexSpec.containsKey('keys')) {
+      throw ArgumentError('indexSpec must contain a "keys" field');
+    }
+    request.indexSpec.add(BsonCodec.serialize(indexSpec['keys']).byteList);
+    if (indexSpec.containsKey('options')) {
+      request.indexSpec.add(BsonCodec.serialize(indexSpec['options']).byteList);
     }
     if (pipelineName != null) {
       request.pipelineName = pipelineName;
