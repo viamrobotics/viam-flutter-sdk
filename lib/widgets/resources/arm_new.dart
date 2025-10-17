@@ -28,7 +28,7 @@ class ViamArmWidgetNew extends StatelessWidget {
         Divider(),
         Stack(
           children: [
-            SlantedArrowPad(
+            _SlantedArrowPad(
               // TODO: add functions for arrow functionality
               onUp: () {},
               onDown: () {},
@@ -167,13 +167,13 @@ class _LinearArrowPainter extends CustomPainter {
   bool shouldRepaint(covariant _LinearArrowPainter oldDelegate) => false;
 }
 
-class SlantedArrowPad extends StatelessWidget {
+class _SlantedArrowPad extends StatelessWidget {
   final VoidCallback? onUp;
   final VoidCallback? onDown;
   final VoidCallback? onLeft;
   final VoidCallback? onRight;
 
-  const SlantedArrowPad({
+  const _SlantedArrowPad({
     super.key,
     this.onUp,
     this.onDown,
