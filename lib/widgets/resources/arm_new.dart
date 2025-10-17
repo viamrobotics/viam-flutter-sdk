@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../viam_sdk.dart';
 
+/// A widget to control an [Arm].
 class ViamArmWidgetNew extends StatefulWidget {
+  /// The [Arm]
   final Arm arm;
-  const ViamArmWidgetNew({super.key, required this.arm});
+
+  const ViamArmWidgetNew({
+    super.key,
+    required this.arm,
+  });
 
   @override
   State<ViamArmWidgetNew> createState() => _ViamArmWidgetNewState();
@@ -13,28 +19,38 @@ class ViamArmWidgetNew extends StatefulWidget {
 class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
       children: [
-        Center(
-          child: SlantedArrowPad(
-            // TO DO: add functions for arrow functionality
-            onUp: () {},
-            onDown: () {},
-            onLeft: () {},
-            onRight: () {},
+        Divider(),
+        Text(
+          'End-effector Position',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),
         ),
-        _buildCornerButton(
-          alignment: Alignment.topLeft,
-          direction: ArrowDirection.up,
-          label: '+z',
-          onPressed: () {},
-        ),
-        _buildCornerButton(
-          alignment: Alignment.topRight,
-          direction: ArrowDirection.down,
-          label: '-z',
-          onPressed: () {},
+        Divider(),
+        Stack(
+          children: [
+            SlantedArrowPad(
+              // TO DO: add functions for arrow functionality
+              onUp: () {},
+              onDown: () {},
+              onLeft: () {},
+              onRight: () {},
+            ),
+            _buildCornerButton(
+              alignment: Alignment.topLeft,
+              direction: ArrowDirection.up,
+              label: 'Z+',
+              onPressed: () {},
+            ),
+            _buildCornerButton(
+              alignment: Alignment.topRight,
+              direction: ArrowDirection.down,
+              label: 'Z-',
+              onPressed: () {},
+            ),
+          ],
         ),
       ],
     );
@@ -51,14 +67,14 @@ class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: SizedBox(
-          width: 60,
-          height: 60,
+          width: 100,
+          height: 100,
           child: IconButton(
             icon: Stack(
               alignment: Alignment.center,
               children: [
                 CustomPaint(
-                  painter: _ArrowPainter(direction: direction, color: Colors.black),
+                  painter: _LinearArrowPainter(direction: direction, color: Colors.black),
                   child: const SizedBox.expand(),
                 ),
                 Text(
@@ -81,11 +97,11 @@ class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
 
 enum ArrowDirection { up, down, left, right }
 
-class _ArrowPainter extends CustomPainter {
+class _LinearArrowPainter extends CustomPainter {
   final ArrowDirection direction;
   final Color color;
 
-  _ArrowPainter({required this.direction, required this.color});
+  _LinearArrowPainter({required this.direction, required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -141,7 +157,7 @@ class _ArrowPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _ArrowPainter oldDelegate) => false;
+  bool shouldRepaint(covariant _LinearArrowPainter oldDelegate) => false;
 }
 
 class SlantedArrowPad extends StatelessWidget {
@@ -159,7 +175,7 @@ class SlantedArrowPad extends StatelessWidget {
     this.onDown,
     this.onLeft,
     this.onRight,
-    this.size = 220.0,
+    this.size = 300.0,
     this.buttonColor = Colors.black,
     this.iconSize = 40.0,
   });
@@ -177,10 +193,10 @@ class SlantedArrowPad extends StatelessWidget {
           width: size,
           child: Stack(
             children: [
-              _buildArrowButton(Alignment.topCenter, ArrowDirection.up, onUp, label: '+y'),
-              _buildArrowButton(Alignment.bottomCenter, ArrowDirection.down, onDown, label: '-y'),
-              _buildArrowButton(Alignment.centerLeft, ArrowDirection.left, onLeft, label: '-x'),
-              _buildArrowButton(Alignment.centerRight, ArrowDirection.right, onRight, label: '+x'),
+              _buildArrowButton(Alignment.topCenter, ArrowDirection.up, onUp, label: 'X-'),
+              _buildArrowButton(Alignment.bottomCenter, ArrowDirection.down, onDown, label: 'X+'),
+              _buildArrowButton(Alignment.centerLeft, ArrowDirection.left, onLeft, label: 'Y-'),
+              _buildArrowButton(Alignment.centerRight, ArrowDirection.right, onRight, label: 'Y+'),
             ],
           ),
         ),
@@ -199,7 +215,7 @@ class SlantedArrowPad extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               CustomPaint(
-                painter: _ArrowPainter(direction: direction, color: buttonColor),
+                painter: _LinearArrowPainter(direction: direction, color: buttonColor),
                 child: const SizedBox.expand(),
               ),
               Text(
