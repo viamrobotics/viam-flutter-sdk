@@ -1659,7 +1659,10 @@ class DataClient {
     final request = CreateIndexRequest()
       ..organizationId = organizationId
       ..collectionType = collectionType
-      ..indexSpec.add(BsonCodec.serialize(indexSpec).byteList);
+      ..indexSpec.add(BsonCodec.serialize(keys).byteList);
+    if (options != null) {
+      request.indexSpec.add(BsonCodec.serialize(options).byteList);
+    }
     if (pipelineName != null) {
       request.pipelineName = pipelineName;
     }
