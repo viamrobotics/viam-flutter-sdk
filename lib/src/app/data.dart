@@ -1658,8 +1658,7 @@ class DataClient {
       {String? pipelineName}) async {
     final request = CreateIndexRequest()
       ..organizationId = organizationId
-      ..collectionType = collectionType
-      ..indexSpec.add(BsonCodec.serialize(keys).byteList);
+      ..collectionType = collectionType;
     if (!indexSpec.containsKey('keys')) {
       throw ArgumentError('indexSpec must contain a "keys" field');
     }
