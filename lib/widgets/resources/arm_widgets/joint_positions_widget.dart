@@ -11,25 +11,72 @@ class JointPositionsWidget extends StatefulWidget {
 }
 
 class _JointPositionsWidgetState extends State<JointPositionsWidget> {
-  static const double _minPosition = 0.0;
-  static const double _maxPosition = 180.0;
-
-  late List<double> _jointValues = [];
-  late List<TextEditingController> _textControllers;
+  List<double> _startJointValues = [];
 
   @override
   void initState() {
-    init();
     super.initState();
+    _getJointInfo();
   }
 
-  Future<void> init() async {
-    _jointValues = await widget.arm.jointPositions();
+  Future<void> _getJointInfo() async {
+    _startJointValues = await widget.arm.jointPositions();
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Divider(),
+        Text(
+          'Joint Angles',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Divider(),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: _startJointValues.isEmpty
+                ? [CircularProgressIndicator.adaptive()]
+                : List.generate(_startJointValues.length, (index) {
+                    return _BuildJointControlRow(index: index, arm: widget.arm, startJointValues: _startJointValues);
+                  }),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _BuildJointControlRow extends StatefulWidget {
+  final int index;
+  final Arm arm;
+  final List<double> startJointValues;
+  const _BuildJointControlRow({required this.index, required this.arm, required this.startJointValues});
+
+  @override
+  State<_BuildJointControlRow> createState() => _BuildJointControlRowState();
+}
+
+class _BuildJointControlRowState extends State<_BuildJointControlRow> {
+  static const double _minPosition = 0.0;
+  static const double _maxPosition = 180.0;
+
+  List<double> _jointValues = [];
+  List<TextEditingController> _textControllers = [];
+
+  @override
+  void initState() {
+    _jointValues = widget.startJointValues;
     _textControllers = List.generate(
       _jointValues.length,
       (index) => TextEditingController(text: _jointValues[index].toStringAsFixed(1)),
     );
-    setState(() {});
+    super.initState();
   }
 
   @override
@@ -57,30 +104,6 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Divider(),
-        Text(
-          'Joint Angles',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Divider(),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: List.generate(_jointValues.length, (index) {
-              return _buildJointControlRow(index);
-            }),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildJointControlRow(int index) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -88,7 +111,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
           SizedBox(
             width: 30,
             child: Text(
-              'J${index + 1}',
+              'J${widget.index + 1}',
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
@@ -102,18 +125,18 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
                 showValueIndicator: ShowValueIndicator.never,
               ),
               child: Slider(
-                value: _jointValues[index],
+                value: _jointValues[widget.index],
                 min: _minPosition,
                 max: _maxPosition,
                 divisions: (_maxPosition - _minPosition).toInt(),
-                onChanged: (newValue) => _updateJointValue(index, newValue),
+                onChanged: (newValue) => _updateJointValue(widget.index, newValue),
               ),
             ),
           ),
           SizedBox(
             width: 70,
             child: TextField(
-              controller: _textControllers[index],
+              controller: _textControllers[widget.index],
               textAlign: TextAlign.center,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               inputFormatters: [
@@ -129,8 +152,8 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
                 contentPadding: EdgeInsets.symmetric(horizontal: 8),
               ),
               onSubmitted: (newValue) {
-                final parsedValue = double.tryParse(newValue) ?? _jointValues[index];
-                _updateJointValue(index, parsedValue);
+                final parsedValue = double.tryParse(newValue) ?? _jointValues[widget.index];
+                _updateJointValue(widget.index, parsedValue);
               },
             ),
           ),
@@ -138,13 +161,13 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
           IconButton(
             icon: const Icon(Icons.remove),
             onPressed: () {
-              _updateJointValue(index, _jointValues[index] - 1.0);
+              _updateJointValue(widget.index, _jointValues[widget.index] - 1.0);
             },
           ),
           IconButton(
             icon: const Icon(Icons.add),
             onPressed: () {
-              _updateJointValue(index, _jointValues[index] + 1.0);
+              _updateJointValue(widget.index, _jointValues[widget.index] + 1.0);
             },
           ),
         ],
