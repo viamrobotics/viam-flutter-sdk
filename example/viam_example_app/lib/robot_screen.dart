@@ -5,6 +5,7 @@
 /// and send commands to them.
 
 import 'package:flutter/material.dart';
+import 'package:viam_example_app/resources/arm_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -81,6 +82,7 @@ class _RobotScreenState extends State<RobotScreen> {
     final availableResourceSubtypes = [
       Camera.subtype.resourceSubtype,
       Motor.subtype.resourceSubtype,
+      Arm.subtype.resourceSubtype,
     ];
     return availableResourceSubtypes.contains(rn.subtype);
   }
@@ -116,27 +118,52 @@ class _RobotScreenState extends State<RobotScreen> {
       // Similar to camera above, get the motor from the robot client.
       final motor = Motor.fromRobot(client, rn.name);
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => MotorScreen(motor)));
+    } else if (rn.subtype == Arm.subtype.resourceSubtype) {
+      final arm = Arm.fromRobot(client, rn.name);
+      Navigator.of(context).push(MaterialPageRoute(builder: (_) => ViamArmWidgetNew(arm: arm)));
     }
+  }
+
+  Widget getResourceWidget(ResourceName rName) {
+    if (rName.subtype == Arm.subtype.resourceSubtype) {
+      return Padding(padding: EdgeInsets.all(4), child: ViamArmWidgetNew(arm: Arm.fromRobot(client, rName.name)));
+    }
+    return const Text(
+      'No screen selected!',
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(widget.robot.name)),
-        body: _isLoading
-            ? const Center(child: CircularProgressIndicator.adaptive())
-            : ListView.builder(
-                itemCount: client.resourceNames.length,
-                itemBuilder: (_, index) {
-                  final resourceName = _sortedResourceNames[index];
-                  return ListTile(
-                    title: Text(resourceName.name),
-                    subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}'),
-                    // We only want to navigate to a resource if that resource is one that we implemented
-                    onTap: _isNavigable(resourceName) ? () => _navigateToResource(resourceName) : null,
-                    // Similarly, we only want to show the navigation icon if the resource is implemented
-                    trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
-                  );
-                }));
+      appBar: AppBar(
+        title: Text(widget.robot.name),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            for (int i = 0; i < _sortedResourceNames.length; i++)
+              _isNavigable(_sortedResourceNames[i])
+                  ? ExpansionTile(
+                      title: Text(_sortedResourceNames[i].name),
+                      subtitle:
+                          Text('${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
+                      children: [
+                        Container(
+                          color: Theme.of(context).colorScheme.surface,
+                          child: getResourceWidget(_sortedResourceNames[i]),
+                        )
+                      ],
+                    )
+                  : ListTile(
+                      title: Text(_sortedResourceNames[i].name),
+                      subtitle:
+                          Text('${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
+                      enabled: false,
+                    )
+          ],
+        ),
+      ),
+    );
   }
 }
