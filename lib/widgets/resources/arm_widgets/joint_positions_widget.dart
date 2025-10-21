@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+
+import '../../../viam_sdk.dart';
 
 class JointPositionsWidget extends StatefulWidget {
   final Arm arm;
