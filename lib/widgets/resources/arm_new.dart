@@ -6,7 +6,7 @@ import 'arm_widgets/linear_arrows_widget.dart';
 
 /// A widget to control an [Arm].
 class ViamArmWidgetNew extends StatelessWidget {
-  /// The [Arm]Expand commentComment on line R9ResolvedCode has comments. Press enter to view.
+  /// The [Arm]
   final Arm arm;
 
   const ViamArmWidgetNew({
