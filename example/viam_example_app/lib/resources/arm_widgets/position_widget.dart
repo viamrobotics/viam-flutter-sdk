@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/viam_sdk.dart' as viam;
 
 class PositionWidget extends StatefulWidget {
-  final Arm arm;
+  final viam.Arm arm;
   const PositionWidget({super.key, required this.arm});
 
   @override
@@ -14,6 +14,7 @@ class _ArmControlWidgetState extends State<PositionWidget> {
   static const double _minPosition = -10000;
   static const double _maxPosition = 10000;
   final _controlCount = 3;
+  bool _isLive = false;
 
   List<double> _controlValues = [];
 
@@ -72,7 +73,7 @@ class _ArmControlWidgetState extends State<PositionWidget> {
         ),
         Divider(),
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           child: _controlValues.isEmpty
               ? CircularProgressIndicator.adaptive()
               : Column(
@@ -105,6 +106,43 @@ class _ArmControlWidgetState extends State<PositionWidget> {
                   ],
                 ),
         ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 20.0),
+          child: Row(
+            spacing: 8,
+            children: [
+              Switch(
+                value: _isLive,
+                activeColor: Colors.green,
+                inactiveTrackColor: Colors.transparent,
+                onChanged: (newValue) {
+                  setState(() {
+                    _isLive = newValue;
+                  });
+                },
+              ),
+              Text(
+                "Live",
+                style: TextStyle(color: Colors.black),
+              ),
+              Spacer(),
+              OutlinedButtonTheme(
+                data: OutlinedButtonThemeData(
+                  style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      iconColor: Colors.black,
+                      overlayColor: Colors.grey,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
+                ),
+                child: OutlinedButton.icon(
+                  onPressed: _isLive ? null : () {},
+                  label: Text("Execute"),
+                  icon: Icon(Icons.play_arrow),
+                ),
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -133,9 +171,8 @@ class _BuildJointControlRow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         children: [
-          // Control Label
           SizedBox(
-            width: 70,
+            width: 30,
             child: Text(
               label,
               style: Theme.of(context).textTheme.titleMedium,

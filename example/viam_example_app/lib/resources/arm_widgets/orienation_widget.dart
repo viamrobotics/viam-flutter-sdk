@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/viam_sdk.dart' as viam;
 
 class OrientationWidget extends StatefulWidget {
-  final Arm arm;
+  final viam.Arm arm;
   const OrientationWidget({super.key, required this.arm});
 
   @override
@@ -14,6 +14,7 @@ class _ArmControlWidgetState extends State<OrientationWidget> {
   static const double _minOrientation = -1.0;
   static const double _maxOrientation = 1.0;
   final _controlCount = 4;
+  bool _isLive = false;
 
   static const double _minTheta = -180;
   static const double _maxTheta = 180;
@@ -129,6 +130,43 @@ class _ArmControlWidgetState extends State<OrientationWidget> {
                     ),
                   ],
                 ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 20.0),
+          child: Row(
+            spacing: 8,
+            children: [
+              Switch(
+                value: _isLive,
+                activeColor: Colors.green,
+                inactiveTrackColor: Colors.transparent,
+                onChanged: (newValue) {
+                  setState(() {
+                    _isLive = newValue;
+                  });
+                },
+              ),
+              Text(
+                "Live",
+                style: TextStyle(color: Colors.black),
+              ),
+              Spacer(),
+              OutlinedButtonTheme(
+                data: OutlinedButtonThemeData(
+                  style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      iconColor: Colors.black,
+                      overlayColor: Colors.grey,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
+                ),
+                child: OutlinedButton.icon(
+                  onPressed: _isLive ? null : () {},
+                  label: Text("Execute"),
+                  icon: Icon(Icons.play_arrow),
+                ),
+              )
+            ],
+          ),
         ),
       ],
     );

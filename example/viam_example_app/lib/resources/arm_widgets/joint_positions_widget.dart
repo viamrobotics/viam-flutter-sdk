@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:viam_sdk/viam_sdk.dart';
+import 'package:viam_sdk/viam_sdk.dart' as viam;
 
 class JointPositionsWidget extends StatefulWidget {
-  final Arm arm;
+  final viam.Arm arm;
   const JointPositionsWidget({super.key, required this.arm});
 
   @override
@@ -12,6 +12,7 @@ class JointPositionsWidget extends StatefulWidget {
 
 class _JointPositionsWidgetState extends State<JointPositionsWidget> {
   List<double> _startJointValues = [];
+  bool _isLive = false;
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
         ),
         Divider(),
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: _startJointValues.isEmpty
@@ -50,6 +51,43 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
                   }),
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 20.0),
+          child: Row(
+            spacing: 8,
+            children: [
+              Switch(
+                value: _isLive,
+                activeColor: Colors.green,
+                inactiveTrackColor: Colors.transparent,
+                onChanged: (newValue) {
+                  setState(() {
+                    _isLive = newValue;
+                  });
+                },
+              ),
+              Text(
+                "Live",
+                style: TextStyle(color: Colors.black),
+              ),
+              Spacer(),
+              OutlinedButtonTheme(
+                data: OutlinedButtonThemeData(
+                  style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      iconColor: Colors.black,
+                      overlayColor: Colors.grey,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
+                ),
+                child: OutlinedButton.icon(
+                  onPressed: _isLive ? null : () {},
+                  label: Text("Execute"),
+                  icon: Icon(Icons.play_arrow),
+                ),
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -57,7 +95,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
 
 class _BuildJointControlRow extends StatefulWidget {
   final int index;
-  final Arm arm;
+  final viam.Arm arm;
   final List<double> startJointValues;
   const _BuildJointControlRow({required this.index, required this.arm, required this.startJointValues});
 
