@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:viam_example_app/resources/arm_widgets/joint_positions_widget.dart';
-import 'package:viam_example_app/resources/arm_widgets/linear_arrows_widget.dart';
 import 'package:viam_example_app/resources/arm_widgets/orienation_widget.dart';
 import 'package:viam_example_app/resources/arm_widgets/position_widget.dart';
 import 'package:viam_sdk/viam_sdk.dart';
@@ -20,7 +19,7 @@ class ViamArmWidgetNew extends StatelessWidget {
     return Column(
       children: [
         JointPositionsWidget(arm: arm),
-        LinearArrowsWidget(),
+        // LinearArrowsWidget(),
         PositionWidget(arm: arm),
         // AngularArrowsWidget(),
         // JointPositionsWidget(arm: arm),
