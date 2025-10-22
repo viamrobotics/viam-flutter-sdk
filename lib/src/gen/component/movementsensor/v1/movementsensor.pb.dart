@@ -14,12 +14,12 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $48;
+import '../../../google/protobuf/struct.pb.dart' as $50;
 
 class GetLinearVelocityRequest extends $pb.GeneratedMessage {
   factory GetLinearVelocityRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -36,7 +36,7 @@ class GetLinearVelocityRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLinearVelocityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -73,15 +73,15 @@ class GetLinearVelocityRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetLinearVelocityResponse extends $pb.GeneratedMessage {
@@ -140,7 +140,7 @@ class GetLinearVelocityResponse extends $pb.GeneratedMessage {
 class GetAngularVelocityRequest extends $pb.GeneratedMessage {
   factory GetAngularVelocityRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -157,7 +157,7 @@ class GetAngularVelocityRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAngularVelocityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -194,15 +194,15 @@ class GetAngularVelocityRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetAngularVelocityResponse extends $pb.GeneratedMessage {
@@ -261,7 +261,7 @@ class GetAngularVelocityResponse extends $pb.GeneratedMessage {
 class GetCompassHeadingRequest extends $pb.GeneratedMessage {
   factory GetCompassHeadingRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -278,7 +278,7 @@ class GetCompassHeadingRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompassHeadingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -315,15 +315,15 @@ class GetCompassHeadingRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetCompassHeadingResponse extends $pb.GeneratedMessage {
@@ -381,7 +381,7 @@ class GetCompassHeadingResponse extends $pb.GeneratedMessage {
 class GetOrientationRequest extends $pb.GeneratedMessage {
   factory GetOrientationRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -398,7 +398,7 @@ class GetOrientationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrientationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -435,15 +435,15 @@ class GetOrientationRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetOrientationResponse extends $pb.GeneratedMessage {
@@ -503,7 +503,7 @@ class GetOrientationResponse extends $pb.GeneratedMessage {
 class GetPositionRequest extends $pb.GeneratedMessage {
   factory GetPositionRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -520,7 +520,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -557,15 +557,15 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
@@ -639,7 +639,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 class GetPropertiesRequest extends $pb.GeneratedMessage {
   factory GetPropertiesRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -656,7 +656,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -693,15 +693,15 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {
@@ -827,7 +827,7 @@ class GetPropertiesResponse extends $pb.GeneratedMessage {
 class GetAccuracyRequest extends $pb.GeneratedMessage {
   factory GetAccuracyRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -844,7 +844,7 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAccuracyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -881,15 +881,15 @@ class GetAccuracyRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetAccuracyResponse extends $pb.GeneratedMessage {
@@ -995,7 +995,7 @@ class GetAccuracyResponse extends $pb.GeneratedMessage {
 class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
   factory GetLinearAccelerationRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1012,7 +1012,7 @@ class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLinearAccelerationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.movementsensor.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1049,15 +1049,15 @@ class GetLinearAccelerationRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetLinearAccelerationResponse extends $pb.GeneratedMessage {
