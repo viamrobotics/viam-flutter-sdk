@@ -1,14 +1,14 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/base/v1/base.pbgrpc.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/component/base/v1/base.pbgrpc.dart' as base_pb;
 import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'base.dart';
 
 /// {@category Components}
 /// gRPC service for a robotic [Base]
-class BaseService extends BaseServiceBase {
+class BaseService extends base_pb.BaseServiceBase {
   final ResourceManager _manager;
 
   BaseService(this._manager);
@@ -22,65 +22,65 @@ class BaseService extends BaseServiceBase {
   }
 
   @override
-  Future<MoveStraightResponse> moveStraight(ServiceCall call, MoveStraightRequest request) async {
+  Future<base_pb.MoveStraightResponse> moveStraight(ServiceCall call, base_pb.MoveStraightRequest request) async {
     final base = _fromManager(request.name);
     await base.moveStraight(request.distanceMm.toInt(), request.mmPerSec, extra: request.extra.toMap());
-    return MoveStraightResponse();
+    return base_pb.MoveStraightResponse();
   }
 
   @override
-  Future<SpinResponse> spin(ServiceCall call, SpinRequest request) async {
+  Future<base_pb.SpinResponse> spin(ServiceCall call, base_pb.SpinRequest request) async {
     final base = _fromManager(request.name);
     await base.spin(request.angleDeg, request.degsPerSec, extra: request.extra.toMap());
-    return SpinResponse();
+    return base_pb.SpinResponse();
   }
 
   @override
-  Future<SetPowerResponse> setPower(ServiceCall call, SetPowerRequest request) async {
+  Future<base_pb.SetPowerResponse> setPower(ServiceCall call, base_pb.SetPowerRequest request) async {
     final base = _fromManager(request.name);
     await base.setPower(request.linear, request.angular, extra: request.extra.toMap());
-    return SetPowerResponse();
+    return base_pb.SetPowerResponse();
   }
 
   @override
-  Future<SetVelocityResponse> setVelocity(ServiceCall call, SetVelocityRequest request) async {
+  Future<base_pb.SetVelocityResponse> setVelocity(ServiceCall call, base_pb.SetVelocityRequest request) async {
     final base = _fromManager(request.name);
     await base.setVelocity(request.linear, request.angular, extra: request.extra.toMap());
-    return SetVelocityResponse();
+    return base_pb.SetVelocityResponse();
   }
 
   @override
-  Future<StopResponse> stop(ServiceCall call, StopRequest request) async {
+  Future<base_pb.StopResponse> stop(ServiceCall call, base_pb.StopRequest request) async {
     final base = _fromManager(request.name);
     await base.stop(extra: request.extra.toMap());
-    return StopResponse();
+    return base_pb.StopResponse();
   }
 
   @override
-  Future<IsMovingResponse> isMoving(ServiceCall call, IsMovingRequest request) async {
+  Future<base_pb.IsMovingResponse> isMoving(ServiceCall call, base_pb.IsMovingRequest request) async {
     final base = _fromManager(request.name);
     final result = await base.isMoving();
-    return IsMovingResponse()..isMoving = result;
+    return base_pb.IsMovingResponse()..isMoving = result;
   }
 
   @override
-  Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
+  Future<common_pb.DoCommandResponse> doCommand(ServiceCall call, common_pb.DoCommandRequest request) async {
     final base = _fromManager(request.name);
     final result = await base.doCommand(request.command.toMap());
-    return DoCommandResponse()..result = result.toStruct();
+    return common_pb.DoCommandResponse()..result = result.toStruct();
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
 
   @override
-  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
+  Future<base_pb.GetPropertiesResponse> getProperties(ServiceCall call, base_pb.GetPropertiesRequest request) async {
     final base = _fromManager(request.name);
     final properties = await base.properties(extra: request.extra.toMap());
-    return GetPropertiesResponse()
+    return base_pb.GetPropertiesResponse()
       ..turningRadiusMeters = properties.turningRadiusMeters
       ..widthMeters = properties.widthMeters
       ..wheelCircumferenceMeters = properties.wheelCircumferenceMeters;

@@ -1,5 +1,5 @@
-import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/camera/v1/camera.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/component/camera/v1/camera.pb.dart' as camera_pb;
 import '../../media/image.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
@@ -47,7 +47,7 @@ class GetImagesResult {
 
 /// {@category Viam SDK}
 /// The camera's supported features and settings
-typedef CameraProperties = GetPropertiesResponse;
+typedef CameraProperties = camera_pb.GetPropertiesResponse;
 
 /// {@category Components}
 /// Camera represents any physical hardware that can capture frames.
@@ -113,7 +113,7 @@ abstract class Camera extends Resource {
   /// ```
   ///
   /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);
   }
 
