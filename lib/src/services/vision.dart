@@ -108,7 +108,8 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getobjectpointclouds).
   Future<List<common_pb.PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
-    final request = vision_pb.GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
+    final request =
+        vision_pb.GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
     final response = await client.getObjectPointClouds(request, options: callOptions);
     return response.objects;
   }
