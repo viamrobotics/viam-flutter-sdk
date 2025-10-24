@@ -54,9 +54,7 @@ class Subtype {
       ..namespace = namespace
       ..type = resourceType
       ..subtype = resourceSubtype
-      ..remotePath.addAll(name.split(':')..removeLast())
-      ..name = name
-      ..localName = name.split(':').last;
+      ..name = name;
   }
 
   @override

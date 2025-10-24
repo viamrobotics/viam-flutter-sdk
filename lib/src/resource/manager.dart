@@ -15,9 +15,7 @@ class ResourceManager {
     if (resources.containsKey(name)) {
       throw DuplicateResourceException(name);
     }
-    final rnWithoutRemote = name.deepCopy()
-      ..remotePath.clear()
-      ..name = name.localName;
+    final rnWithoutRemote = name.deepCopy()..name = name.name.split(':').last;
     final names = _resourceNamesWithoutRemotes[rnWithoutRemote] ?? [];
     names.add(name);
     _resourceNamesWithoutRemotes[rnWithoutRemote] = names;
