@@ -55,7 +55,6 @@ const ListOperationsRequest$json = {
     {'1': 'filter', '3': 1, '4': 1, '5': 9, '10': 'filter'},
     {'1': 'page_size', '3': 2, '4': 1, '5': 5, '10': 'pageSize'},
     {'1': 'page_token', '3': 3, '4': 1, '5': 9, '10': 'pageToken'},
-    {'1': 'return_partial_success', '3': 5, '4': 1, '5': 8, '10': 'returnPartialSuccess'},
   ],
 };
 
@@ -63,8 +62,7 @@ const ListOperationsRequest$json = {
 final $typed_data.Uint8List listOperationsRequestDescriptor = $convert.base64Decode(
     'ChVMaXN0T3BlcmF0aW9uc1JlcXVlc3QSEgoEbmFtZRgEIAEoCVIEbmFtZRIWCgZmaWx0ZXIYAS'
     'ABKAlSBmZpbHRlchIbCglwYWdlX3NpemUYAiABKAVSCHBhZ2VTaXplEh0KCnBhZ2VfdG9rZW4Y'
-    'AyABKAlSCXBhZ2VUb2tlbhI0ChZyZXR1cm5fcGFydGlhbF9zdWNjZXNzGAUgASgIUhRyZXR1cm'
-    '5QYXJ0aWFsU3VjY2Vzcw==');
+    'AyABKAlSCXBhZ2VUb2tlbg==');
 
 @$core.Deprecated('Use listOperationsResponseDescriptor instead')
 const ListOperationsResponse$json = {
@@ -72,7 +70,6 @@ const ListOperationsResponse$json = {
   '2': [
     {'1': 'operations', '3': 1, '4': 3, '5': 11, '6': '.google.longrunning.Operation', '10': 'operations'},
     {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
-    {'1': 'unreachable', '3': 3, '4': 3, '5': 9, '8': {}, '10': 'unreachable'},
   ],
 };
 
@@ -80,8 +77,7 @@ const ListOperationsResponse$json = {
 final $typed_data.Uint8List listOperationsResponseDescriptor = $convert.base64Decode(
     'ChZMaXN0T3BlcmF0aW9uc1Jlc3BvbnNlEj0KCm9wZXJhdGlvbnMYASADKAsyHS5nb29nbGUubG'
     '9uZ3J1bm5pbmcuT3BlcmF0aW9uUgpvcGVyYXRpb25zEiYKD25leHRfcGFnZV90b2tlbhgCIAEo'
-    'CVINbmV4dFBhZ2VUb2tlbhIlCgt1bnJlYWNoYWJsZRgDIAMoCUID4EEGUgt1bnJlYWNoYWJsZQ'
-    '==');
+    'CVINbmV4dFBhZ2VUb2tlbg==');
 
 @$core.Deprecated('Use cancelOperationRequestDescriptor instead')
 const CancelOperationRequest$json = {

@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $49;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/duration.pb.dart' as $47;
+import '../../../google/protobuf/struct.pb.dart' as $48;
 import 'board.pbenum.dart';
 
 export 'board.pbenum.dart';
@@ -77,7 +77,7 @@ class SetGPIORequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? pin,
     $core.bool? high,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -102,7 +102,7 @@ class SetGPIORequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
     ..aOB(3, _omitFieldNames ? '' : 'high')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -156,15 +156,15 @@ class SetGPIORequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SetGPIOResponse extends $pb.GeneratedMessage {
@@ -203,7 +203,7 @@ class GetGPIORequest extends $pb.GeneratedMessage {
   factory GetGPIORequest({
     $core.String? name,
     $core.String? pin,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -224,7 +224,7 @@ class GetGPIORequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetGPIORequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -269,15 +269,15 @@ class GetGPIORequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetGPIOResponse extends $pb.GeneratedMessage {
@@ -334,7 +334,7 @@ class PWMRequest extends $pb.GeneratedMessage {
   factory PWMRequest({
     $core.String? name,
     $core.String? pin,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -355,7 +355,7 @@ class PWMRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PWMRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -400,15 +400,15 @@ class PWMRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 class PWMResponse extends $pb.GeneratedMessage {
@@ -466,7 +466,7 @@ class SetPWMRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? pin,
     $core.double? dutyCyclePct,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -491,7 +491,7 @@ class SetPWMRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
     ..a<$core.double>(3, _omitFieldNames ? '' : 'dutyCyclePct', $pb.PbFieldType.OD)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -545,15 +545,15 @@ class SetPWMRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SetPWMResponse extends $pb.GeneratedMessage {
@@ -592,7 +592,7 @@ class PWMFrequencyRequest extends $pb.GeneratedMessage {
   factory PWMFrequencyRequest({
     $core.String? name,
     $core.String? pin,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -613,7 +613,7 @@ class PWMFrequencyRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PWMFrequencyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -658,15 +658,15 @@ class PWMFrequencyRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 class PWMFrequencyResponse extends $pb.GeneratedMessage {
@@ -724,7 +724,7 @@ class SetPWMFrequencyRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? pin,
     $fixnum.Int64? frequencyHz,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -749,7 +749,7 @@ class SetPWMFrequencyRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'frequencyHz', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -803,15 +803,15 @@ class SetPWMFrequencyRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SetPWMFrequencyResponse extends $pb.GeneratedMessage {
@@ -850,7 +850,7 @@ class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
   factory ReadAnalogReaderRequest({
     $core.String? boardName,
     $core.String? analogReaderName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (boardName != null) {
@@ -871,7 +871,7 @@ class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadAnalogReaderRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'boardName')
     ..aOS(2, _omitFieldNames ? '' : 'analogReaderName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -916,15 +916,15 @@ class ReadAnalogReaderRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 class ReadAnalogReaderResponse extends $pb.GeneratedMessage {
@@ -1024,7 +1024,7 @@ class WriteAnalogRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? pin,
     $core.int? value,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1049,7 +1049,7 @@ class WriteAnalogRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'pin')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'value', $pb.PbFieldType.O3)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1103,15 +1103,15 @@ class WriteAnalogRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class WriteAnalogResponse extends $pb.GeneratedMessage {
@@ -1150,7 +1150,7 @@ class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
   factory GetDigitalInterruptValueRequest({
     $core.String? boardName,
     $core.String? digitalInterruptName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (boardName != null) {
@@ -1171,7 +1171,7 @@ class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDigitalInterruptValueRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'boardName')
     ..aOS(2, _omitFieldNames ? '' : 'digitalInterruptName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1216,15 +1216,15 @@ class GetDigitalInterruptValueRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetDigitalInterruptValueResponse extends $pb.GeneratedMessage {
@@ -1281,7 +1281,7 @@ class StreamTicksRequest extends $pb.GeneratedMessage {
   factory StreamTicksRequest({
     $core.String? name,
     $core.Iterable<$core.String>? pinNames,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1302,7 +1302,7 @@ class StreamTicksRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamTicksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pPS(2, _omitFieldNames ? '' : 'pinNames')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1343,15 +1343,15 @@ class StreamTicksRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 class StreamTicksResponse extends $pb.GeneratedMessage {
@@ -1439,8 +1439,8 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
   factory SetPowerModeRequest({
     $core.String? name,
     PowerMode? powerMode,
-    $49.Duration? duration,
-    $50.Struct? extra,
+    $47.Duration? duration,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1464,8 +1464,8 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPowerModeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.board.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..e<PowerMode>(2, _omitFieldNames ? '' : 'powerMode', $pb.PbFieldType.OE, defaultOrMaker: PowerMode.POWER_MODE_UNSPECIFIED, valueOf: PowerMode.valueOf, enumValues: PowerMode.values)
-    ..aOM<$49.Duration>(3, _omitFieldNames ? '' : 'duration', subBuilder: $49.Duration.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$47.Duration>(3, _omitFieldNames ? '' : 'duration', subBuilder: $47.Duration.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1512,27 +1512,27 @@ class SetPowerModeRequest extends $pb.GeneratedMessage {
 
   /// Requested duration to stay in `power_mode`
   @$pb.TagNumber(3)
-  $49.Duration get duration => $_getN(2);
+  $47.Duration get duration => $_getN(2);
   @$pb.TagNumber(3)
-  set duration($49.Duration v) { setField(3, v); }
+  set duration($47.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDuration() => $_has(2);
   @$pb.TagNumber(3)
   void clearDuration() => clearField(3);
   @$pb.TagNumber(3)
-  $49.Duration ensureDuration() => $_ensure(2);
+  $47.Duration ensureDuration() => $_ensure(2);
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SetPowerModeResponse extends $pb.GeneratedMessage {

@@ -13,14 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../service/mlmodel/v1/mlmodel.pb.dart' as $8;
-import '../../data/v1/data.pb.dart' as $4;
+import '../../../service/mlmodel/v1/mlmodel.pb.dart' as $7;
+import '../../data/v1/data.pb.dart' as $3;
 
 class GetInferenceRequest extends $pb.GeneratedMessage {
   factory GetInferenceRequest({
     $core.String? registryItemId,
     $core.String? registryItemVersion,
-    $4.BinaryID? binaryId,
+    $3.BinaryID? binaryId,
     $core.String? organizationId,
     $core.String? binaryDataId,
   }) {
@@ -49,7 +49,7 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInferenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mlinference.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'registryItemId')
     ..aOS(2, _omitFieldNames ? '' : 'registryItemVersion')
-    ..aOM<$4.BinaryID>(3, _omitFieldNames ? '' : 'binaryId', subBuilder: $4.BinaryID.create)
+    ..aOM<$3.BinaryID>(3, _omitFieldNames ? '' : 'binaryId', subBuilder: $3.BinaryID.create)
     ..aOS(4, _omitFieldNames ? '' : 'organizationId')
     ..aOS(5, _omitFieldNames ? '' : 'binaryDataId')
     ..hasRequiredFields = false
@@ -98,15 +98,15 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
   void clearRegistryItemVersion() => clearField(2);
 
   @$pb.TagNumber(3)
-  $4.BinaryID get binaryId => $_getN(2);
+  $3.BinaryID get binaryId => $_getN(2);
   @$pb.TagNumber(3)
-  set binaryId($4.BinaryID v) { setField(3, v); }
+  set binaryId($3.BinaryID v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasBinaryId() => $_has(2);
   @$pb.TagNumber(3)
   void clearBinaryId() => clearField(3);
   @$pb.TagNumber(3)
-  $4.BinaryID ensureBinaryId() => $_ensure(2);
+  $3.BinaryID ensureBinaryId() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get organizationId => $_getSZ(3);
@@ -129,8 +129,8 @@ class GetInferenceRequest extends $pb.GeneratedMessage {
 
 class GetInferenceResponse extends $pb.GeneratedMessage {
   factory GetInferenceResponse({
-    $8.FlatTensors? outputTensors,
-    $4.Annotations? annotations,
+    $7.FlatTensors? outputTensors,
+    $3.Annotations? annotations,
   }) {
     final $result = create();
     if (outputTensors != null) {
@@ -146,8 +146,8 @@ class GetInferenceResponse extends $pb.GeneratedMessage {
   factory GetInferenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInferenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mlinference.v1'), createEmptyInstance: create)
-    ..aOM<$8.FlatTensors>(1, _omitFieldNames ? '' : 'outputTensors', subBuilder: $8.FlatTensors.create)
-    ..aOM<$4.Annotations>(2, _omitFieldNames ? '' : 'annotations', subBuilder: $4.Annotations.create)
+    ..aOM<$7.FlatTensors>(1, _omitFieldNames ? '' : 'outputTensors', subBuilder: $7.FlatTensors.create)
+    ..aOM<$3.Annotations>(2, _omitFieldNames ? '' : 'annotations', subBuilder: $3.Annotations.create)
     ..hasRequiredFields = false
   ;
 
@@ -173,26 +173,26 @@ class GetInferenceResponse extends $pb.GeneratedMessage {
   static GetInferenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.FlatTensors get outputTensors => $_getN(0);
+  $7.FlatTensors get outputTensors => $_getN(0);
   @$pb.TagNumber(1)
-  set outputTensors($8.FlatTensors v) { setField(1, v); }
+  set outputTensors($7.FlatTensors v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasOutputTensors() => $_has(0);
   @$pb.TagNumber(1)
   void clearOutputTensors() => clearField(1);
   @$pb.TagNumber(1)
-  $8.FlatTensors ensureOutputTensors() => $_ensure(0);
+  $7.FlatTensors ensureOutputTensors() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $4.Annotations get annotations => $_getN(1);
+  $3.Annotations get annotations => $_getN(1);
   @$pb.TagNumber(2)
-  set annotations($4.Annotations v) { setField(2, v); }
+  set annotations($3.Annotations v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAnnotations() => $_has(1);
   @$pb.TagNumber(2)
   void clearAnnotations() => clearField(2);
   @$pb.TagNumber(2)
-  $4.Annotations ensureAnnotations() => $_ensure(1);
+  $3.Annotations ensureAnnotations() => $_ensure(1);
 }
 
 

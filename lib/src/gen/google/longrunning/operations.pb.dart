@@ -226,7 +226,6 @@ class ListOperationsRequest extends $pb.GeneratedMessage {
     $core.int? pageSize,
     $core.String? pageToken,
     $core.String? name,
-    $core.bool? returnPartialSuccess,
   }) {
     final $result = create();
     if (filter != null) {
@@ -241,9 +240,6 @@ class ListOperationsRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (returnPartialSuccess != null) {
-      $result.returnPartialSuccess = returnPartialSuccess;
-    }
     return $result;
   }
   ListOperationsRequest._() : super();
@@ -255,7 +251,6 @@ class ListOperationsRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
     ..aOS(3, _omitFieldNames ? '' : 'pageToken')
     ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..aOB(5, _omitFieldNames ? '' : 'returnPartialSuccess')
     ..hasRequiredFields = false
   ;
 
@@ -319,25 +314,6 @@ class ListOperationsRequest extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
-
-  ///  When set to `true`, operations that are reachable are returned as normal,
-  ///  and those that are unreachable are returned in the
-  ///  [ListOperationsResponse.unreachable] field.
-  ///
-  ///  This can only be `true` when reading across collections e.g. when `parent`
-  ///  is set to `"projects/example/locations/-"`.
-  ///
-  ///  This field is not by default supported and will result in an
-  ///  `UNIMPLEMENTED` error if set unless explicitly documented otherwise in
-  ///  service or product specific documentation.
-  @$pb.TagNumber(5)
-  $core.bool get returnPartialSuccess => $_getBF(4);
-  @$pb.TagNumber(5)
-  set returnPartialSuccess($core.bool v) { $_setBool(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasReturnPartialSuccess() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearReturnPartialSuccess() => clearField(5);
 }
 
 /// The response message for
@@ -346,7 +322,6 @@ class ListOperationsResponse extends $pb.GeneratedMessage {
   factory ListOperationsResponse({
     $core.Iterable<Operation>? operations,
     $core.String? nextPageToken,
-    $core.Iterable<$core.String>? unreachable,
   }) {
     final $result = create();
     if (operations != null) {
@@ -354,9 +329,6 @@ class ListOperationsResponse extends $pb.GeneratedMessage {
     }
     if (nextPageToken != null) {
       $result.nextPageToken = nextPageToken;
-    }
-    if (unreachable != null) {
-      $result.unreachable.addAll(unreachable);
     }
     return $result;
   }
@@ -367,7 +339,6 @@ class ListOperationsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOperationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.longrunning'), createEmptyInstance: create)
     ..pc<Operation>(1, _omitFieldNames ? '' : 'operations', $pb.PbFieldType.PM, subBuilder: Operation.create)
     ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
-    ..pPS(3, _omitFieldNames ? '' : 'unreachable')
     ..hasRequiredFields = false
   ;
 
@@ -405,13 +376,6 @@ class ListOperationsResponse extends $pb.GeneratedMessage {
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
   void clearNextPageToken() => clearField(2);
-
-  /// Unordered list. Unreachable resources. Populated when the request sets
-  /// `ListOperationsRequest.return_partial_success` and reads across
-  /// collections e.g. when attempting to list all resources across all supported
-  /// locations.
-  @$pb.TagNumber(3)
-  $core.List<$core.String> get unreachable => $_getList(2);
 }
 
 /// The request message for

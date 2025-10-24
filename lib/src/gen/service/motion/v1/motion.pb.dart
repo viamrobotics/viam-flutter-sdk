@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
-import '../../../google/protobuf/timestamp.pb.dart' as $51;
+import '../../../google/protobuf/struct.pb.dart' as $48;
+import '../../../google/protobuf/timestamp.pb.dart' as $49;
 import 'motion.pbenum.dart';
 
 export 'motion.pbenum.dart';
@@ -30,7 +30,7 @@ class MoveRequest extends $pb.GeneratedMessage {
     $16.WorldState? worldState,
     Constraints? constraints,
     $core.String? componentName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -68,7 +68,7 @@ class MoveRequest extends $pb.GeneratedMessage {
     ..aOM<$16.WorldState>(4, _omitFieldNames ? '' : 'worldState', subBuilder: $16.WorldState.create)
     ..aOM<Constraints>(5, _omitFieldNames ? '' : 'constraints', subBuilder: Constraints.create)
     ..aOS(6, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -169,15 +169,15 @@ class MoveRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(6);
+  $48.Struct get extra => $_getN(6);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(6);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(6);
+  $48.Struct ensureExtra() => $_ensure(6);
 }
 
 class MoveResponse extends $pb.GeneratedMessage {
@@ -242,7 +242,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     $core.Iterable<$16.Geometry>? obstacles,
     $core.String? componentName,
     $core.String? slamServiceName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -289,7 +289,7 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
     ..pc<$16.Geometry>(6, _omitFieldNames ? '' : 'obstacles', $pb.PbFieldType.PM, subBuilder: $16.Geometry.create)
     ..aOS(7, _omitFieldNames ? '' : 'componentName')
     ..aOS(8, _omitFieldNames ? '' : 'slamServiceName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -408,15 +408,15 @@ class MoveOnMapRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(8);
+  $48.Struct get extra => $_getN(8);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(8);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(8);
+  $48.Struct ensureExtra() => $_ensure(8);
 }
 
 class MoveOnMapResponse extends $pb.GeneratedMessage {
@@ -717,7 +717,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
     $core.Iterable<$16.GeoGeometry>? boundingRegions,
     $core.String? componentName,
     $core.String? movementSensorName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -772,7 +772,7 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
     ..pc<$16.GeoGeometry>(8, _omitFieldNames ? '' : 'boundingRegions', $pb.PbFieldType.PM, subBuilder: $16.GeoGeometry.create)
     ..aOS(9, _omitFieldNames ? '' : 'componentName')
     ..aOS(10, _omitFieldNames ? '' : 'movementSensorName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -905,15 +905,15 @@ class MoveOnGlobeRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(10);
+  $48.Struct get extra => $_getN(10);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(10);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(10);
+  $48.Struct ensureExtra() => $_ensure(10);
 }
 
 class MoveOnGlobeResponse extends $pb.GeneratedMessage {
@@ -977,7 +977,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
     $core.String? destinationFrame,
     $core.Iterable<$16.Transform>? supplementalTransforms,
     $core.String? componentName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1011,7 +1011,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'destinationFrame')
     ..pc<$16.Transform>(4, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $16.Transform.create)
     ..aOS(5, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1091,15 +1091,15 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(5);
+  $48.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(5);
+  $48.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetPoseResponse extends $pb.GeneratedMessage {
@@ -1160,7 +1160,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $16.ResourceName? componentNameDeprecated,
     $core.String? componentName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1186,7 +1186,7 @@ class StopPlanRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$16.ResourceName>(2, _omitFieldNames ? '' : 'componentNameDeprecated', subBuilder: $16.ResourceName.create)
     ..aOS(3, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1250,15 +1250,15 @@ class StopPlanRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class StopPlanResponse extends $pb.GeneratedMessage {
@@ -1297,7 +1297,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   factory ListPlanStatusesRequest({
     $core.String? name,
     $core.bool? onlyActivePlans,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1318,7 +1318,7 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPlanStatusesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOB(2, _omitFieldNames ? '' : 'onlyActivePlans')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1366,15 +1366,15 @@ class ListPlanStatusesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $48.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $48.Struct ensureExtra() => $_ensure(2);
 }
 
 /// Status of all executed / executing plan statuses with associated IDs within the 24 hour TTL
@@ -1432,7 +1432,7 @@ class GetPlanRequest extends $pb.GeneratedMessage {
     $core.bool? lastPlanOnly,
     $core.String? executionId,
     $core.String? componentName,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1466,7 +1466,7 @@ class GetPlanRequest extends $pb.GeneratedMessage {
     ..aOB(3, _omitFieldNames ? '' : 'lastPlanOnly')
     ..aOS(4, _omitFieldNames ? '' : 'executionId')
     ..aOS(5, _omitFieldNames ? '' : 'componentName')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1551,15 +1551,15 @@ class GetPlanRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(5);
+  $48.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(5);
+  $48.Struct ensureExtra() => $_ensure(5);
 }
 
 class GetPlanResponse extends $pb.GeneratedMessage {
@@ -2210,7 +2210,7 @@ class PlanStatusWithID extends $pb.GeneratedMessage {
 class PlanStatus extends $pb.GeneratedMessage {
   factory PlanStatus({
     PlanState? state,
-    $51.Timestamp? timestamp,
+    $49.Timestamp? timestamp,
     $core.String? reason,
   }) {
     final $result = create();
@@ -2231,7 +2231,7 @@ class PlanStatus extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlanStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.motion.v1'), createEmptyInstance: create)
     ..e<PlanState>(1, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: PlanState.PLAN_STATE_UNSPECIFIED, valueOf: PlanState.valueOf, enumValues: PlanState.values)
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $51.Timestamp.create)
+    ..aOM<$49.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $49.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false
   ;
@@ -2269,15 +2269,15 @@ class PlanStatus extends $pb.GeneratedMessage {
 
   /// The time the executing plan transtioned to the state
   @$pb.TagNumber(2)
-  $51.Timestamp get timestamp => $_getN(1);
+  $49.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($51.Timestamp v) { setField(2, v); }
+  set timestamp($49.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureTimestamp() => $_ensure(1);
+  $49.Timestamp ensureTimestamp() => $_ensure(1);
 
   /// The reason for the state change. If motion plan failed
   /// this will return the error message.

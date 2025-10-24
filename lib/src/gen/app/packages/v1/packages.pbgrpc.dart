@@ -15,28 +15,28 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'packages.pb.dart' as $1;
+import 'packages.pb.dart' as $10;
 
 export 'packages.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.packages.v1.PackageService')
 class PackageServiceClient extends $grpc.Client {
-  static final _$createPackage = $grpc.ClientMethod<$1.CreatePackageRequest, $1.CreatePackageResponse>(
+  static final _$createPackage = $grpc.ClientMethod<$10.CreatePackageRequest, $10.CreatePackageResponse>(
       '/viam.app.packages.v1.PackageService/CreatePackage',
-      ($1.CreatePackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.CreatePackageResponse.fromBuffer(value));
-  static final _$deletePackage = $grpc.ClientMethod<$1.DeletePackageRequest, $1.DeletePackageResponse>(
+      ($10.CreatePackageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.CreatePackageResponse.fromBuffer(value));
+  static final _$deletePackage = $grpc.ClientMethod<$10.DeletePackageRequest, $10.DeletePackageResponse>(
       '/viam.app.packages.v1.PackageService/DeletePackage',
-      ($1.DeletePackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.DeletePackageResponse.fromBuffer(value));
-  static final _$getPackage = $grpc.ClientMethod<$1.GetPackageRequest, $1.GetPackageResponse>(
+      ($10.DeletePackageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.DeletePackageResponse.fromBuffer(value));
+  static final _$getPackage = $grpc.ClientMethod<$10.GetPackageRequest, $10.GetPackageResponse>(
       '/viam.app.packages.v1.PackageService/GetPackage',
-      ($1.GetPackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetPackageResponse.fromBuffer(value));
-  static final _$listPackages = $grpc.ClientMethod<$1.ListPackagesRequest, $1.ListPackagesResponse>(
+      ($10.GetPackageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.GetPackageResponse.fromBuffer(value));
+  static final _$listPackages = $grpc.ClientMethod<$10.ListPackagesRequest, $10.ListPackagesResponse>(
       '/viam.app.packages.v1.PackageService/ListPackages',
-      ($1.ListPackagesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.ListPackagesResponse.fromBuffer(value));
+      ($10.ListPackagesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.ListPackagesResponse.fromBuffer(value));
 
   PackageServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -44,19 +44,19 @@ class PackageServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$1.CreatePackageResponse> createPackage($async.Stream<$1.CreatePackageRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.CreatePackageResponse> createPackage($async.Stream<$10.CreatePackageRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$createPackage, request, options: options).single;
   }
 
-  $grpc.ResponseFuture<$1.DeletePackageResponse> deletePackage($1.DeletePackageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.DeletePackageResponse> deletePackage($10.DeletePackageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deletePackage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetPackageResponse> getPackage($1.GetPackageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.GetPackageResponse> getPackage($10.GetPackageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPackage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.ListPackagesResponse> listPackages($1.ListPackagesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.ListPackagesResponse> listPackages($10.ListPackagesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listPackages, request, options: options);
   }
 }
@@ -66,50 +66,50 @@ abstract class PackageServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.packages.v1.PackageService';
 
   PackageServiceBase() {
-    $addMethod($grpc.ServiceMethod<$1.CreatePackageRequest, $1.CreatePackageResponse>(
+    $addMethod($grpc.ServiceMethod<$10.CreatePackageRequest, $10.CreatePackageResponse>(
         'CreatePackage',
         createPackage,
         true,
         false,
-        ($core.List<$core.int> value) => $1.CreatePackageRequest.fromBuffer(value),
-        ($1.CreatePackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.DeletePackageRequest, $1.DeletePackageResponse>(
+        ($core.List<$core.int> value) => $10.CreatePackageRequest.fromBuffer(value),
+        ($10.CreatePackageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.DeletePackageRequest, $10.DeletePackageResponse>(
         'DeletePackage',
         deletePackage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.DeletePackageRequest.fromBuffer(value),
-        ($1.DeletePackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetPackageRequest, $1.GetPackageResponse>(
+        ($core.List<$core.int> value) => $10.DeletePackageRequest.fromBuffer(value),
+        ($10.DeletePackageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.GetPackageRequest, $10.GetPackageResponse>(
         'GetPackage',
         getPackage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetPackageRequest.fromBuffer(value),
-        ($1.GetPackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.ListPackagesRequest, $1.ListPackagesResponse>(
+        ($core.List<$core.int> value) => $10.GetPackageRequest.fromBuffer(value),
+        ($10.GetPackageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.ListPackagesRequest, $10.ListPackagesResponse>(
         'ListPackages',
         listPackages_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.ListPackagesRequest.fromBuffer(value),
-        ($1.ListPackagesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $10.ListPackagesRequest.fromBuffer(value),
+        ($10.ListPackagesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$1.DeletePackageResponse> deletePackage_Pre($grpc.ServiceCall call, $async.Future<$1.DeletePackageRequest> request) async {
+  $async.Future<$10.DeletePackageResponse> deletePackage_Pre($grpc.ServiceCall call, $async.Future<$10.DeletePackageRequest> request) async {
     return deletePackage(call, await request);
   }
 
-  $async.Future<$1.GetPackageResponse> getPackage_Pre($grpc.ServiceCall call, $async.Future<$1.GetPackageRequest> request) async {
+  $async.Future<$10.GetPackageResponse> getPackage_Pre($grpc.ServiceCall call, $async.Future<$10.GetPackageRequest> request) async {
     return getPackage(call, await request);
   }
 
-  $async.Future<$1.ListPackagesResponse> listPackages_Pre($grpc.ServiceCall call, $async.Future<$1.ListPackagesRequest> request) async {
+  $async.Future<$10.ListPackagesResponse> listPackages_Pre($grpc.ServiceCall call, $async.Future<$10.ListPackagesRequest> request) async {
     return listPackages(call, await request);
   }
 
-  $async.Future<$1.CreatePackageResponse> createPackage($grpc.ServiceCall call, $async.Stream<$1.CreatePackageRequest> request);
-  $async.Future<$1.DeletePackageResponse> deletePackage($grpc.ServiceCall call, $1.DeletePackageRequest request);
-  $async.Future<$1.GetPackageResponse> getPackage($grpc.ServiceCall call, $1.GetPackageRequest request);
-  $async.Future<$1.ListPackagesResponse> listPackages($grpc.ServiceCall call, $1.ListPackagesRequest request);
+  $async.Future<$10.CreatePackageResponse> createPackage($grpc.ServiceCall call, $async.Stream<$10.CreatePackageRequest> request);
+  $async.Future<$10.DeletePackageResponse> deletePackage($grpc.ServiceCall call, $10.DeletePackageRequest request);
+  $async.Future<$10.GetPackageResponse> getPackage($grpc.ServiceCall call, $10.GetPackageRequest request);
+  $async.Future<$10.ListPackagesResponse> listPackages($grpc.ServiceCall call, $10.ListPackagesRequest request);
 }

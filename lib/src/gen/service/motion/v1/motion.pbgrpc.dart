@@ -16,40 +16,40 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import 'motion.pb.dart' as $41;
+import 'motion.pb.dart' as $39;
 
 export 'motion.pb.dart';
 
 @$pb.GrpcServiceName('viam.service.motion.v1.MotionService')
 class MotionServiceClient extends $grpc.Client {
-  static final _$move = $grpc.ClientMethod<$41.MoveRequest, $41.MoveResponse>(
+  static final _$move = $grpc.ClientMethod<$39.MoveRequest, $39.MoveResponse>(
       '/viam.service.motion.v1.MotionService/Move',
-      ($41.MoveRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.MoveResponse.fromBuffer(value));
-  static final _$moveOnMap = $grpc.ClientMethod<$41.MoveOnMapRequest, $41.MoveOnMapResponse>(
+      ($39.MoveRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.MoveResponse.fromBuffer(value));
+  static final _$moveOnMap = $grpc.ClientMethod<$39.MoveOnMapRequest, $39.MoveOnMapResponse>(
       '/viam.service.motion.v1.MotionService/MoveOnMap',
-      ($41.MoveOnMapRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.MoveOnMapResponse.fromBuffer(value));
-  static final _$moveOnGlobe = $grpc.ClientMethod<$41.MoveOnGlobeRequest, $41.MoveOnGlobeResponse>(
+      ($39.MoveOnMapRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.MoveOnMapResponse.fromBuffer(value));
+  static final _$moveOnGlobe = $grpc.ClientMethod<$39.MoveOnGlobeRequest, $39.MoveOnGlobeResponse>(
       '/viam.service.motion.v1.MotionService/MoveOnGlobe',
-      ($41.MoveOnGlobeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.MoveOnGlobeResponse.fromBuffer(value));
-  static final _$getPose = $grpc.ClientMethod<$41.GetPoseRequest, $41.GetPoseResponse>(
+      ($39.MoveOnGlobeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.MoveOnGlobeResponse.fromBuffer(value));
+  static final _$getPose = $grpc.ClientMethod<$39.GetPoseRequest, $39.GetPoseResponse>(
       '/viam.service.motion.v1.MotionService/GetPose',
-      ($41.GetPoseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.GetPoseResponse.fromBuffer(value));
-  static final _$stopPlan = $grpc.ClientMethod<$41.StopPlanRequest, $41.StopPlanResponse>(
+      ($39.GetPoseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetPoseResponse.fromBuffer(value));
+  static final _$stopPlan = $grpc.ClientMethod<$39.StopPlanRequest, $39.StopPlanResponse>(
       '/viam.service.motion.v1.MotionService/StopPlan',
-      ($41.StopPlanRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.StopPlanResponse.fromBuffer(value));
-  static final _$listPlanStatuses = $grpc.ClientMethod<$41.ListPlanStatusesRequest, $41.ListPlanStatusesResponse>(
+      ($39.StopPlanRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.StopPlanResponse.fromBuffer(value));
+  static final _$listPlanStatuses = $grpc.ClientMethod<$39.ListPlanStatusesRequest, $39.ListPlanStatusesResponse>(
       '/viam.service.motion.v1.MotionService/ListPlanStatuses',
-      ($41.ListPlanStatusesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.ListPlanStatusesResponse.fromBuffer(value));
-  static final _$getPlan = $grpc.ClientMethod<$41.GetPlanRequest, $41.GetPlanResponse>(
+      ($39.ListPlanStatusesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.ListPlanStatusesResponse.fromBuffer(value));
+  static final _$getPlan = $grpc.ClientMethod<$39.GetPlanRequest, $39.GetPlanResponse>(
       '/viam.service.motion.v1.MotionService/GetPlan',
-      ($41.GetPlanRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $41.GetPlanResponse.fromBuffer(value));
+      ($39.GetPlanRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $39.GetPlanResponse.fromBuffer(value));
   static final _$doCommand = $grpc.ClientMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
       '/viam.service.motion.v1.MotionService/DoCommand',
       ($16.DoCommandRequest value) => value.writeToBuffer(),
@@ -61,31 +61,31 @@ class MotionServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$41.MoveResponse> move($41.MoveRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.MoveResponse> move($39.MoveRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$move, request, options: options);
   }
 
-  $grpc.ResponseFuture<$41.MoveOnMapResponse> moveOnMap($41.MoveOnMapRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.MoveOnMapResponse> moveOnMap($39.MoveOnMapRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveOnMap, request, options: options);
   }
 
-  $grpc.ResponseFuture<$41.MoveOnGlobeResponse> moveOnGlobe($41.MoveOnGlobeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.MoveOnGlobeResponse> moveOnGlobe($39.MoveOnGlobeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$moveOnGlobe, request, options: options);
   }
 
-  $grpc.ResponseFuture<$41.GetPoseResponse> getPose($41.GetPoseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetPoseResponse> getPose($39.GetPoseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPose, request, options: options);
   }
 
-  $grpc.ResponseFuture<$41.StopPlanResponse> stopPlan($41.StopPlanRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.StopPlanResponse> stopPlan($39.StopPlanRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$stopPlan, request, options: options);
   }
 
-  $grpc.ResponseFuture<$41.ListPlanStatusesResponse> listPlanStatuses($41.ListPlanStatusesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.ListPlanStatusesResponse> listPlanStatuses($39.ListPlanStatusesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listPlanStatuses, request, options: options);
   }
 
-  $grpc.ResponseFuture<$41.GetPlanResponse> getPlan($41.GetPlanRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$39.GetPlanResponse> getPlan($39.GetPlanRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPlan, request, options: options);
   }
 
@@ -99,55 +99,55 @@ abstract class MotionServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.service.motion.v1.MotionService';
 
   MotionServiceBase() {
-    $addMethod($grpc.ServiceMethod<$41.MoveRequest, $41.MoveResponse>(
+    $addMethod($grpc.ServiceMethod<$39.MoveRequest, $39.MoveResponse>(
         'Move',
         move_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.MoveRequest.fromBuffer(value),
-        ($41.MoveResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$41.MoveOnMapRequest, $41.MoveOnMapResponse>(
+        ($core.List<$core.int> value) => $39.MoveRequest.fromBuffer(value),
+        ($39.MoveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.MoveOnMapRequest, $39.MoveOnMapResponse>(
         'MoveOnMap',
         moveOnMap_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.MoveOnMapRequest.fromBuffer(value),
-        ($41.MoveOnMapResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$41.MoveOnGlobeRequest, $41.MoveOnGlobeResponse>(
+        ($core.List<$core.int> value) => $39.MoveOnMapRequest.fromBuffer(value),
+        ($39.MoveOnMapResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.MoveOnGlobeRequest, $39.MoveOnGlobeResponse>(
         'MoveOnGlobe',
         moveOnGlobe_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.MoveOnGlobeRequest.fromBuffer(value),
-        ($41.MoveOnGlobeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$41.GetPoseRequest, $41.GetPoseResponse>(
+        ($core.List<$core.int> value) => $39.MoveOnGlobeRequest.fromBuffer(value),
+        ($39.MoveOnGlobeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetPoseRequest, $39.GetPoseResponse>(
         'GetPose',
         getPose_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.GetPoseRequest.fromBuffer(value),
-        ($41.GetPoseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$41.StopPlanRequest, $41.StopPlanResponse>(
+        ($core.List<$core.int> value) => $39.GetPoseRequest.fromBuffer(value),
+        ($39.GetPoseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.StopPlanRequest, $39.StopPlanResponse>(
         'StopPlan',
         stopPlan_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.StopPlanRequest.fromBuffer(value),
-        ($41.StopPlanResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$41.ListPlanStatusesRequest, $41.ListPlanStatusesResponse>(
+        ($core.List<$core.int> value) => $39.StopPlanRequest.fromBuffer(value),
+        ($39.StopPlanResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.ListPlanStatusesRequest, $39.ListPlanStatusesResponse>(
         'ListPlanStatuses',
         listPlanStatuses_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.ListPlanStatusesRequest.fromBuffer(value),
-        ($41.ListPlanStatusesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$41.GetPlanRequest, $41.GetPlanResponse>(
+        ($core.List<$core.int> value) => $39.ListPlanStatusesRequest.fromBuffer(value),
+        ($39.ListPlanStatusesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$39.GetPlanRequest, $39.GetPlanResponse>(
         'GetPlan',
         getPlan_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $41.GetPlanRequest.fromBuffer(value),
-        ($41.GetPlanResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $39.GetPlanRequest.fromBuffer(value),
+        ($39.GetPlanResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.DoCommandRequest, $16.DoCommandResponse>(
         'DoCommand',
         doCommand_Pre,
@@ -157,31 +157,31 @@ abstract class MotionServiceBase extends $grpc.Service {
         ($16.DoCommandResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$41.MoveResponse> move_Pre($grpc.ServiceCall call, $async.Future<$41.MoveRequest> request) async {
+  $async.Future<$39.MoveResponse> move_Pre($grpc.ServiceCall call, $async.Future<$39.MoveRequest> request) async {
     return move(call, await request);
   }
 
-  $async.Future<$41.MoveOnMapResponse> moveOnMap_Pre($grpc.ServiceCall call, $async.Future<$41.MoveOnMapRequest> request) async {
+  $async.Future<$39.MoveOnMapResponse> moveOnMap_Pre($grpc.ServiceCall call, $async.Future<$39.MoveOnMapRequest> request) async {
     return moveOnMap(call, await request);
   }
 
-  $async.Future<$41.MoveOnGlobeResponse> moveOnGlobe_Pre($grpc.ServiceCall call, $async.Future<$41.MoveOnGlobeRequest> request) async {
+  $async.Future<$39.MoveOnGlobeResponse> moveOnGlobe_Pre($grpc.ServiceCall call, $async.Future<$39.MoveOnGlobeRequest> request) async {
     return moveOnGlobe(call, await request);
   }
 
-  $async.Future<$41.GetPoseResponse> getPose_Pre($grpc.ServiceCall call, $async.Future<$41.GetPoseRequest> request) async {
+  $async.Future<$39.GetPoseResponse> getPose_Pre($grpc.ServiceCall call, $async.Future<$39.GetPoseRequest> request) async {
     return getPose(call, await request);
   }
 
-  $async.Future<$41.StopPlanResponse> stopPlan_Pre($grpc.ServiceCall call, $async.Future<$41.StopPlanRequest> request) async {
+  $async.Future<$39.StopPlanResponse> stopPlan_Pre($grpc.ServiceCall call, $async.Future<$39.StopPlanRequest> request) async {
     return stopPlan(call, await request);
   }
 
-  $async.Future<$41.ListPlanStatusesResponse> listPlanStatuses_Pre($grpc.ServiceCall call, $async.Future<$41.ListPlanStatusesRequest> request) async {
+  $async.Future<$39.ListPlanStatusesResponse> listPlanStatuses_Pre($grpc.ServiceCall call, $async.Future<$39.ListPlanStatusesRequest> request) async {
     return listPlanStatuses(call, await request);
   }
 
-  $async.Future<$41.GetPlanResponse> getPlan_Pre($grpc.ServiceCall call, $async.Future<$41.GetPlanRequest> request) async {
+  $async.Future<$39.GetPlanResponse> getPlan_Pre($grpc.ServiceCall call, $async.Future<$39.GetPlanRequest> request) async {
     return getPlan(call, await request);
   }
 
@@ -189,12 +189,12 @@ abstract class MotionServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
-  $async.Future<$41.MoveResponse> move($grpc.ServiceCall call, $41.MoveRequest request);
-  $async.Future<$41.MoveOnMapResponse> moveOnMap($grpc.ServiceCall call, $41.MoveOnMapRequest request);
-  $async.Future<$41.MoveOnGlobeResponse> moveOnGlobe($grpc.ServiceCall call, $41.MoveOnGlobeRequest request);
-  $async.Future<$41.GetPoseResponse> getPose($grpc.ServiceCall call, $41.GetPoseRequest request);
-  $async.Future<$41.StopPlanResponse> stopPlan($grpc.ServiceCall call, $41.StopPlanRequest request);
-  $async.Future<$41.ListPlanStatusesResponse> listPlanStatuses($grpc.ServiceCall call, $41.ListPlanStatusesRequest request);
-  $async.Future<$41.GetPlanResponse> getPlan($grpc.ServiceCall call, $41.GetPlanRequest request);
+  $async.Future<$39.MoveResponse> move($grpc.ServiceCall call, $39.MoveRequest request);
+  $async.Future<$39.MoveOnMapResponse> moveOnMap($grpc.ServiceCall call, $39.MoveOnMapRequest request);
+  $async.Future<$39.MoveOnGlobeResponse> moveOnGlobe($grpc.ServiceCall call, $39.MoveOnGlobeRequest request);
+  $async.Future<$39.GetPoseResponse> getPose($grpc.ServiceCall call, $39.GetPoseRequest request);
+  $async.Future<$39.StopPlanResponse> stopPlan($grpc.ServiceCall call, $39.StopPlanRequest request);
+  $async.Future<$39.ListPlanStatusesResponse> listPlanStatuses($grpc.ServiceCall call, $39.ListPlanStatusesRequest request);
+  $async.Future<$39.GetPlanResponse> getPlan($grpc.ServiceCall call, $39.GetPlanRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
 }
