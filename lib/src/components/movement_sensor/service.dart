@@ -1,14 +1,14 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart' as ms_pb;
 import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'movement_sensor.dart';
 
 /// {@category Components}
 /// gRPC Service for a [MovementSensor]
-class MovementSensorService extends MovementSensorServiceBase {
+class MovementSensorService extends ms_pb.MovementSensorServiceBase {
   final ResourceManager _manager;
 
   MovementSensorService(this._manager);
@@ -22,74 +22,74 @@ class MovementSensorService extends MovementSensorServiceBase {
   }
 
   @override
-  Future<GetReadingsResponse> getReadings(ServiceCall call, GetReadingsRequest request) async {
+  Future<common_pb.GetReadingsResponse> getReadings(ServiceCall call, common_pb.GetReadingsRequest request) async {
     final movementSensor = _fromManager(request.name);
     final result = await movementSensor.readings(extra: request.extra.toMap());
-    return GetReadingsResponse()..readings.addAll(result.toStruct().fields);
+    return common_pb.GetReadingsResponse()..readings.addAll(result.toStruct().fields);
   }
 
   @override
-  Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
+  Future<common_pb.DoCommandResponse> doCommand(ServiceCall call, common_pb.DoCommandRequest request) async {
     final movementSensor = _fromManager(request.name);
     final result = await movementSensor.doCommand(request.command.toMap());
-    return DoCommandResponse()..result = result.toStruct();
+    return common_pb.DoCommandResponse()..result = result.toStruct();
   }
 
   @override
-  Future<GetAccuracyResponse> getAccuracy(ServiceCall call, GetAccuracyRequest request) async {
+  Future<ms_pb.GetAccuracyResponse> getAccuracy(ServiceCall call, ms_pb.GetAccuracyRequest request) async {
     final movementSensor = _fromManager(request.name);
     return movementSensor.accuracy(extra: request.extra.toMap());
   }
 
   @override
-  Future<GetAngularVelocityResponse> getAngularVelocity(ServiceCall call, GetAngularVelocityRequest request) async {
+  Future<ms_pb.GetAngularVelocityResponse> getAngularVelocity(ServiceCall call, ms_pb.GetAngularVelocityRequest request) async {
     final movementSensor = _fromManager(request.name);
     final angularVelocity = await movementSensor.angularVelocity(extra: request.extra.toMap());
-    return GetAngularVelocityResponse()..angularVelocity = angularVelocity;
+    return ms_pb.GetAngularVelocityResponse()..angularVelocity = angularVelocity;
   }
 
   @override
-  Future<GetCompassHeadingResponse> getCompassHeading(ServiceCall call, GetCompassHeadingRequest request) async {
+  Future<ms_pb.GetCompassHeadingResponse> getCompassHeading(ServiceCall call, ms_pb.GetCompassHeadingRequest request) async {
     final movementSensor = _fromManager(request.name);
     final value = await movementSensor.compassHeading(extra: request.extra.toMap());
-    return GetCompassHeadingResponse()..value = value;
+    return ms_pb.GetCompassHeadingResponse()..value = value;
   }
 
   @override
-  Future<GetLinearAccelerationResponse> getLinearAcceleration(ServiceCall call, GetLinearAccelerationRequest request) async {
+  Future<ms_pb.GetLinearAccelerationResponse> getLinearAcceleration(ServiceCall call, ms_pb.GetLinearAccelerationRequest request) async {
     final movementSensor = _fromManager(request.name);
     final linearAcceleration = await movementSensor.linearAcceleration(extra: request.extra.toMap());
-    return GetLinearAccelerationResponse()..linearAcceleration = linearAcceleration;
+    return ms_pb.GetLinearAccelerationResponse()..linearAcceleration = linearAcceleration;
   }
 
   @override
-  Future<GetLinearVelocityResponse> getLinearVelocity(ServiceCall call, GetLinearVelocityRequest request) async {
+  Future<ms_pb.GetLinearVelocityResponse> getLinearVelocity(ServiceCall call, ms_pb.GetLinearVelocityRequest request) async {
     final movementSensor = _fromManager(request.name);
     final linearVelocity = await movementSensor.linearVelocity(extra: request.extra.toMap());
-    return GetLinearVelocityResponse()..linearVelocity = linearVelocity;
+    return ms_pb.GetLinearVelocityResponse()..linearVelocity = linearVelocity;
   }
 
   @override
-  Future<GetOrientationResponse> getOrientation(ServiceCall call, GetOrientationRequest request) async {
+  Future<ms_pb.GetOrientationResponse> getOrientation(ServiceCall call, ms_pb.GetOrientationRequest request) async {
     final movementSensor = _fromManager(request.name);
     final orientation = await movementSensor.orientation(extra: request.extra.toMap());
-    return GetOrientationResponse()..orientation = orientation;
+    return ms_pb.GetOrientationResponse()..orientation = orientation;
   }
 
   @override
-  Future<GetPositionResponse> getPosition(ServiceCall call, GetPositionRequest request) async {
+  Future<ms_pb.GetPositionResponse> getPosition(ServiceCall call, ms_pb.GetPositionRequest request) async {
     final movementSensor = _fromManager(request.name);
     final position = await movementSensor.position(extra: request.extra.toMap());
-    return GetPositionResponse()
+    return ms_pb.GetPositionResponse()
       ..coordinate = position.coordinates
       ..altitudeM = position.altitude;
   }
 
   @override
-  Future<GetPropertiesResponse> getProperties(ServiceCall call, GetPropertiesRequest request) async {
+  Future<ms_pb.GetPropertiesResponse> getProperties(ServiceCall call, ms_pb.GetPropertiesRequest request) async {
     final movementSensor = _fromManager(request.name);
     final properties = await movementSensor.properties(extra: request.extra.toMap());
-    return GetPropertiesResponse()
+    return ms_pb.GetPropertiesResponse()
       ..linearVelocitySupported = properties.linearVelocitySupported
       ..angularVelocitySupported = properties.angularVelocitySupported
       ..orientationSupported = properties.orientationSupported
@@ -99,7 +99,7 @@ class MovementSensorService extends MovementSensorServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }

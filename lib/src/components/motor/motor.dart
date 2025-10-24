@@ -1,10 +1,10 @@
-import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/motor/v1/motor.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/component/motor/v1/motor.pb.dart' as motor_pb;
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// {@category Viam SDK}
-typedef MotorProperties = GetPropertiesResponse;
+typedef MotorProperties = motor_pb.GetPropertiesResponse;
 
 /// {@category Viam SDK}
 class PowerState {
@@ -13,7 +13,7 @@ class PowerState {
 
   PowerState(this.isOn, this.powerPct);
 
-  factory PowerState.fromProto(IsPoweredResponse pbResponse) {
+  factory PowerState.fromProto(motor_pb.IsPoweredResponse pbResponse) {
     return PowerState(pbResponse.isOn, pbResponse.powerPct);
   }
 }
@@ -148,7 +148,7 @@ abstract class Motor extends Resource {
   /// ```
   ///
   /// For more information, see [Motor component](https://docs.viam.com/dev/reference/apis/components/motor/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return Motor.subtype.getResourceName(name);
   }
 
