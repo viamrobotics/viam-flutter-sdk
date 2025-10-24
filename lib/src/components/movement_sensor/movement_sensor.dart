@@ -1,5 +1,5 @@
 import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/movementsensor/v1/movementsensor.pb.dart';
+import '../../gen/component/movementsensor/v1/movementsensor.pb.dart' as ms_proto;
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
@@ -12,10 +12,10 @@ class Position {
 }
 
 /// {@category Viam SDK}
-typedef Properties = GetPropertiesResponse;
+typedef Properties = ms_proto.GetPropertiesResponse;
 
 /// {@category Viam SDK}
-typedef Accuracy = GetAccuracyResponse;
+typedef Accuracy = ms_proto.GetAccuracyResponse;
 
 /// {@category Components}
 /// MovementSensor reports information about the robot's direction, position and speed.

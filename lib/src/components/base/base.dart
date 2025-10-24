@@ -1,10 +1,10 @@
 import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/base/v1/base.pb.dart';
+import '../../gen/component/base/v1/base.pb.dart' as base_pb;
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// {@category Viam SDK}
-typedef BaseProperties = GetPropertiesResponse;
+typedef BaseProperties = base_pb.GetPropertiesResponse;
 
 /// {@category Components}
 /// Base represents a physical base of a robot.
