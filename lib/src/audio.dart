@@ -34,7 +34,4 @@ class AudioCodec {
 
   /// FLAC audio codec
   static const String flac = 'flac';
-
-  /// WAV audio codec
-  static const String wav = 'wav';
 }
