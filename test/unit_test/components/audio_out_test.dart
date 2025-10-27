@@ -73,10 +73,7 @@ void main() {
 
     test('play with minimal parameters', () async {
       const audioData = [10, 20, 30];
-      final audioInfo = AudioInfo()
-        ..codec = AudioCodec.pcm16;
-
-
+      final audioInfo = AudioInfo()..codec = AudioCodec.pcm16;
 
       await audioOut.play(
         audioData: audioData,

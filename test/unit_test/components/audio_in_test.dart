@@ -8,7 +8,6 @@ import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/component/audioin/v1/audioin.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
-inport 'package:'
 import 'package:viam_sdk/viam_sdk.dart';
 
 class FakeAudioIn extends AudioIn {
