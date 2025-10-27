@@ -1,11 +1,14 @@
 # Changelog
 
-## [v0.10.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.1) (2025-10-07)
+## [v0.11.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.11.0) (2025-10-27)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.10.0...v0.10.1)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.10.1...v0.11.0)
 
 **Merged pull requests:**
 
+- RSDK-12421 - Remove remote\_path and local\_name [\#437](https://github.com/viamrobotics/viam-flutter-sdk/pull/437) ([cheukt](https://github.com/cheukt))
+- \[APP-9875\] Add new buttons for linear movement [\#432](https://github.com/viamrobotics/viam-flutter-sdk/pull/432) ([martha-johnston](https://github.com/martha-johnston))
+- v0.10.1 [\#430](https://github.com/viamrobotics/viam-flutter-sdk/pull/430) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Handle eos marker for gRPC over WebRTC requests [\#428](https://github.com/viamrobotics/viam-flutter-sdk/pull/428) ([seanavery](https://github.com/seanavery))
 - Automated Protos Update [\#427](https://github.com/viamrobotics/viam-flutter-sdk/pull/427) ([viambot](https://github.com/viambot))
 - APP-9242 - Improve Get Logs [\#426](https://github.com/viamrobotics/viam-flutter-sdk/pull/426) ([clintpurser](https://github.com/clintpurser))
@@ -144,6 +147,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.10.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.1) (2025-10-07)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.10.0...v0.10.1)
 
 ## [v0.10.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.0) (2025-09-08)
 
