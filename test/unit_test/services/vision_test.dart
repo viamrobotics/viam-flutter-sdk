@@ -2,7 +2,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:viam_sdk/protos/service/vision.dart';
-import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
+import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' as common_pb;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -69,12 +69,12 @@ void main() {
 
     test('getObjectPointClouds', () async {
       final expected = [
-        PointCloudObject(
+        common_pb.PointCloudObject(
           pointCloud: [1, 2, 3, 4, 5, 6],
-          geometries: GeometriesInFrame(
+          geometries: common_pb.GeometriesInFrame(
             referenceFrame: 'ref-frame',
             geometries: [
-              Geometry(
+              common_pb.Geometry(
                 center: Pose(x: 1, y: 2, z: 3, oX: 4, oY: 5, oZ: 6, theta: 7),
               ),
             ],
