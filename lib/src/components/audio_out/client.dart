@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart';
@@ -22,7 +24,7 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
 
   @override
   Future<PlayResponse> play({
-    required List<int> audioData,
+    required Uint8List audioData,
     required AudioInfo audioInfo,
     Map<String, dynamic>? extra,
   }) async {

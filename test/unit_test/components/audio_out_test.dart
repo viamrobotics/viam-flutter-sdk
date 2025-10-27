@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
 import 'package:viam_sdk/src/components/audio_out/service.dart';
@@ -8,7 +10,7 @@ import 'package:viam_sdk/src/utils.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 class FakeAudioOut extends AudioOut {
-  List<int>? audioData;
+  Uint8List? audioData;
   AudioInfo? audioInfo;
   Map<String, dynamic>? extra;
   Map<String, dynamic>? propertiesExtra;
@@ -25,8 +27,8 @@ class FakeAudioOut extends AudioOut {
 
   @override
   Future<PlayResponse> play({
-    required List<int> audioData,
-    AudioInfo? audioInfo,
+    required Uint8List audioData,
+    required AudioInfo audioInfo,
     Map<String, dynamic>? extra,
   }) async {
     this.audioData = audioData;
@@ -52,7 +54,7 @@ void main() {
     });
 
     test('play with all parameters', () async {
-      const audioData = [1, 2, 3, 4, 5];
+      final audioData = Uint8List.fromList([1, 2, 3, 4, 5]);
       final audioInfo = AudioInfo()
         ..codec = AudioCodec.mp3
         ..numChannels = 2
@@ -72,7 +74,7 @@ void main() {
     });
 
     test('play with minimal parameters', () async {
-      const audioData = [10, 20, 30];
+      final audioData = Uint8List.fromList([10, 20, 30]);
       final audioInfo = AudioInfo()..codec = AudioCodec.pcm16;
 
       await audioOut.play(
@@ -130,7 +132,7 @@ void main() {
 
     group('AudioOut Service Tests', () {
       test('play', () async {
-        const audioData = [100, 200, 300];
+        final audioData = Uint8List.fromList([100, 200, 250]);
         final audioInfo = AudioInfo()
           ..codec = AudioCodec.opus
           ..numChannels = 1
@@ -179,7 +181,7 @@ void main() {
 
     group('AudioOut Client Tests', () {
       test('play', () async {
-        const audioData = [7, 8, 9];
+        final audioData = Uint8List.fromList([7, 8, 9]);
         final audioInfo = AudioInfo()
           ..codec = AudioCodec.aac
           ..numChannels = 2

@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:grpc/grpc.dart';
 
 import '../../gen/common/v1/common.pb.dart';
@@ -23,8 +25,9 @@ class AudioOutService extends AudioOutServiceBase {
   @override
   Future<PlayResponse> play(ServiceCall call, PlayRequest request) {
     final audioOut = _fromManager(request.name);
+    final audioData = request.audioData;
     return audioOut.play(
-      audioData: request.audioData,
+      audioData: audioData is Uint8List ? audioData : Uint8List.fromList(audioData),
       audioInfo: request.audioInfo,
       extra: request.hasExtra() ? request.extra.toMap() : null,
     );

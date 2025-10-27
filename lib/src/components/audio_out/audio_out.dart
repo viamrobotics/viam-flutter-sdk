@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/audioout/v1/audioout.pb.dart';
 import '../../resource/base.dart';
@@ -11,7 +13,7 @@ abstract class AudioOut extends Resource {
 
   /// Play audio data on this audio output device
   Future<PlayResponse> play({
-    required List<int> audioData,
+    required Uint8List audioData,
     required AudioInfo audioInfo,
     Map<String, dynamic>? extra,
   });
