@@ -155,7 +155,7 @@ void main() {
         final client = AudioOutServiceClient(channel);
         final result = await client.getProperties(GetPropertiesRequest()..name = name);
         expect(result, isA<GetPropertiesResponse>());
-        expect(result.supportedCodecs, ['mp3', 'pcm16', 'wav']);
+        expect(result.supportedCodecs, [AudioCodec.mp3, AudioCodec.pcm16, AudioCodec.aac]);
       });
 
       test('getProperties with extra', () async {
@@ -205,7 +205,7 @@ void main() {
         final client = AudioOutClient(name, channel);
         final result = await client.getProperties();
         expect(result, isA<GetPropertiesResponse>());
-        expect(result.supportedCodecs, ['mp3', 'pcm16', 'wav']);
+        expect(result.supportedCodecs, [AudioCodec.mp3, AudioCodec.pcm16, AudioCodec.aac]);
       });
 
       test('getProperties with extra', () async {
