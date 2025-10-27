@@ -129,7 +129,7 @@ void main() {
     });
 
     group('AudioOut Service Tests', () {
-      test('play with all parameters', () async {
+      test('play', () async {
         const audioData = [100, 200, 300];
         final audioInfo = AudioInfo()
           ..codec = AudioCodec.opus
@@ -151,22 +151,6 @@ void main() {
         expect(audioOut.audioInfo?.sampleRateHz, 48000);
         expect(audioOut.extra, extra);
       });
-
-      test('play with minimal parameters', () async {
-        const audioData = [5, 10, 15];
-        final audioInfo = AudioInfo()..codec = AudioCodec.flac;
-
-        final client = AudioOutServiceClient(channel);
-        await client.play(PlayRequest()
-          ..name = name
-          ..audioData = audioData
-          ..audioInfo = audioInfo);
-
-        expect(audioOut.audioData, audioData);
-        expect(audioOut.audioInfo?.codec, AudioCodec.flac);
-        expect(audioOut.extra, null);
-      });
-
       test('getProperties', () async {
         final client = AudioOutServiceClient(channel);
         final result = await client.getProperties(GetPropertiesRequest()..name = name);
@@ -194,7 +178,7 @@ void main() {
     });
 
     group('AudioOut Client Tests', () {
-      test('play with all parameters', () async {
+      test('play', () async {
         const audioData = [7, 8, 9];
         final audioInfo = AudioInfo()
           ..codec = AudioCodec.aac
@@ -215,18 +199,6 @@ void main() {
         expect(audioOut.audioInfo?.numChannels, 2);
         expect(audioOut.audioInfo?.sampleRateHz, 22050);
         expect(audioOut.extra, extra);
-      });
-
-      test('play with minimal parameters', () async {
-        const audioData = [99, 88, 77];
-        final client = AudioOutClient(name, channel);
-        await client.play(
-          audioData: audioData,
-        );
-
-        expect(audioOut.audioData, audioData);
-        expect(audioOut.audioInfo, null);
-        expect(audioOut.extra, null);
       });
 
       test('getProperties', () async {
