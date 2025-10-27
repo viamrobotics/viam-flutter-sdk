@@ -115,12 +115,6 @@ class RobotClient {
   Future<void> refresh() async {
     final rpb.ResourceNamesResponse response = await _client.resourceNames(rpb.ResourceNamesRequest());
     final responseNames = response.resources.map((rn) {
-      if (rn.remotePath.isEmpty) {
-        rn.remotePath.addAll(rn.name.split(':')..removeLast());
-      }
-      if (rn.localName.isEmpty) {
-        rn.localName = rn.name.split(':').last;
-      }
       return rn;
     });
     if (setEquals(responseNames.toSet(), resourceNames.toSet())) {

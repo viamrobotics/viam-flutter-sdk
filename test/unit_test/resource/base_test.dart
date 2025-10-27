@@ -10,9 +10,7 @@ void main() {
       expect(localRN.namespace, Sensor.subtype.namespace);
       expect(localRN.type, Sensor.subtype.resourceType);
       expect(localRN.subtype, Sensor.subtype.resourceSubtype);
-      expect(localRN.remotePath, []);
       expect(localRN.name, localName);
-      expect(localRN.localName, localName);
 
       // Remote
       final remoteName = 'my-sensor';
@@ -22,9 +20,7 @@ void main() {
       expect(remoteRN.namespace, Sensor.subtype.namespace);
       expect(remoteRN.type, Sensor.subtype.resourceType);
       expect(remoteRN.subtype, Sensor.subtype.resourceSubtype);
-      expect(remoteRN.remotePath, remotePath.split(':'));
       expect(remoteRN.name, fullRemoteName);
-      expect(remoteRN.localName, remoteName);
     });
   });
 }
