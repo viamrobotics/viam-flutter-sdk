@@ -1,5 +1,6 @@
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../gen/common/v1/common.pb.dart';
 import '../../gen/component/audioin/v1/audioin.pbgrpc.dart';
@@ -28,9 +29,11 @@ class AudioInClient extends AudioIn implements ResourceRPCClient {
     Int64? previousTimestampNanoseconds,
     Map<String, dynamic>? extra,
   }) {
+    final uuid = Uuid();
     final request = GetAudioRequest()
       ..name = name
-      ..codec = codec;
+      ..codec = codec
+      ..requestId = uuid.v4();
     if (durationSeconds != null) {
       request.durationSeconds = durationSeconds;
     }

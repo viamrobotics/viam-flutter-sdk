@@ -23,12 +23,21 @@ class AudioInService extends AudioInServiceBase {
   @override
   Stream<GetAudioResponse> getAudio(ServiceCall call, GetAudioRequest request) {
     final audioIn = _fromManager(request.name);
-    return audioIn.getAudio(
+    final requestId = request.hasRequestId() ? request.requestId : '';
+
+    return audioIn
+        .getAudio(
       codec: request.codec,
       durationSeconds: request.hasDurationSeconds() ? request.durationSeconds : null,
       previousTimestampNanoseconds: request.hasPreviousTimestampNanoseconds() ? request.previousTimestampNanoseconds : null,
       extra: request.hasExtra() ? request.extra.toMap() : null,
-    );
+    )
+        .map((response) {
+      if (requestId.isNotEmpty) {
+        response.requestId = requestId;
+      }
+      return response;
+    });
   }
 
   @override
