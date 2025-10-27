@@ -1,7 +1,7 @@
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../protos/common/common.dart';
+import '../../protos/common/common.dart' as common_pb;
 import '../../protos/service/vision.dart';
 import '../media/image.dart';
 import '../resource/base.dart';
@@ -107,7 +107,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getobjectpointclouds).
-  Future<List<PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
+  Future<List<common_pb.PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
     final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
     final response = await client.getObjectPointClouds(request, options: callOptions);
     return response.objects;
@@ -132,7 +132,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final request = DoCommandRequest()
+    final request = common_pb.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);
@@ -146,7 +146,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return VisionClient.subtype.getResourceName(name);
   }
 

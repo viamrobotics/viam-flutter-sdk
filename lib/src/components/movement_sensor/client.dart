@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
 import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
@@ -23,7 +23,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<Map<String, dynamic>> readings({Map<String, dynamic>? extra}) async {
-    final request = GetReadingsRequest()
+    final request = common_pb.GetReadingsRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getReadings(request, options: callOptions);
@@ -40,7 +40,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
   }
 
   @override
-  Future<Vector3> linearVelocity({Map<String, dynamic>? extra}) async {
+  Future<common_pb.Vector3> linearVelocity({Map<String, dynamic>? extra}) async {
     final request = GetLinearVelocityRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
@@ -49,7 +49,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
   }
 
   @override
-  Future<Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
+  Future<common_pb.Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
     final request = GetAngularVelocityRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
@@ -58,7 +58,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
   }
 
   @override
-  Future<Vector3> linearAcceleration({Map<String, dynamic>? extra}) async {
+  Future<common_pb.Vector3> linearAcceleration({Map<String, dynamic>? extra}) async {
     final request = GetLinearAccelerationRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
@@ -76,7 +76,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
   }
 
   @override
-  Future<Orientation> orientation({Map<String, dynamic>? extra}) async {
+  Future<common_pb.Orientation> orientation({Map<String, dynamic>? extra}) async {
     final request = GetOrientationRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
@@ -102,7 +102,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final request = DoCommandRequest()
+    final request = common_pb.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);

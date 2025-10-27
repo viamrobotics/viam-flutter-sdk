@@ -2,6 +2,10 @@ import 'package:grpc/grpc_connection_interface.dart';
 
 import '../components/arm/arm.dart';
 import '../components/arm/client.dart';
+import '../components/audio_in/audio_in.dart';
+import '../components/audio_in/client.dart';
+import '../components/audio_out/audio_out.dart';
+import '../components/audio_out/client.dart';
 import '../components/base/base.dart';
 import '../components/base/client.dart';
 import '../components/board/board.dart';
@@ -63,6 +67,8 @@ class Registry {
   Registry._() {
     // Register built-in types
     registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
+    registerSubtype(ResourceRegistration(AudioIn.subtype, (name, channel) => AudioInClient(name, channel)));
+    registerSubtype(ResourceRegistration(AudioOut.subtype, (name, channel) => AudioOutClient(name, channel)));
     registerSubtype(ResourceRegistration(Board.subtype, (name, channel) => BoardClient(name, channel)));
     registerSubtype(ResourceRegistration(Base.subtype, (name, channel) => BaseClient(name, channel)));
     registerSubtype(ResourceRegistration(Button.subtype, (name, channel) => ButtonClient(name, channel)));

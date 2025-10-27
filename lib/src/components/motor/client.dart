@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
 import '../../gen/component/motor/v1/motor.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
@@ -111,7 +111,7 @@ class MotorClient extends Motor with RPCDebugLoggerMixin implements ResourceRPCC
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final request = DoCommandRequest()
+    final request = common_pb.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);

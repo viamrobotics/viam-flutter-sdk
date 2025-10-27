@@ -21,6 +21,7 @@ dependencies:
   async: ^2.11.0
   bonsoir: ^5.1.8
   bson: ^5.0.5
+  uuid: ^4.0.0
 
 dev_dependencies:
   flutter_test:
