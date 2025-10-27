@@ -1,5 +1,5 @@
 import '../../gen/common/v1/common.pb.dart' as common_pb;
-import '../../gen/component/camera/v1/camera.pb.dart' as camera_pb;
+import '../../gen/component/camera/v1/camera.pb.dart';
 import '../../media/image.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
@@ -47,7 +47,7 @@ class GetImagesResult {
 
 /// {@category Viam SDK}
 /// The camera's supported features and settings
-typedef CameraProperties = camera_pb.GetPropertiesResponse;
+typedef CameraProperties = GetPropertiesResponse;
 
 /// {@category Components}
 /// Camera represents any physical hardware that can capture frames.

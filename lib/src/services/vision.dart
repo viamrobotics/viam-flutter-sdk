@@ -1,8 +1,8 @@
 import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../gen/common/v1/common.pb.dart' as common_pb;
-import '../gen/service/vision/v1/vision.pbgrpc.dart' as vision_pb;
+import '../../protos/common/common.dart' as common_pb;
+import '../../protos/service/vision.dart';
 import '../media/image.dart';
 import '../resource/base.dart';
 import '../robot/client.dart';
@@ -10,7 +10,7 @@ import '../utils.dart';
 
 /// {@category Viam SDK}
 /// The vision service's supported features and settings
-typedef VisionProperties = vision_pb.GetPropertiesResponse;
+typedef VisionProperties = GetPropertiesResponse;
 
 /// {@category Services}
 class VisionClient extends Resource with RPCDebugLoggerMixin implements ResourceRPCClient {
@@ -23,7 +23,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   ClientChannelBase channel;
 
   @override
-  vision_pb.VisionServiceClient get client => vision_pb.VisionServiceClient(channel);
+  VisionServiceClient get client => VisionServiceClient(channel);
 
   VisionClient(this.name, this.channel);
 
@@ -35,8 +35,8 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getdetectionsfromcamera).
-  Future<List<vision_pb.Detection>> detectionsFromCamera(String cameraName, {Map<String, dynamic>? extra}) async {
-    final request = vision_pb.GetDetectionsFromCameraRequest(name: name, cameraName: cameraName, extra: extra?.toStruct());
+  Future<List<Detection>> detectionsFromCamera(String cameraName, {Map<String, dynamic>? extra}) async {
+    final request = GetDetectionsFromCameraRequest(name: name, cameraName: cameraName, extra: extra?.toStruct());
     final response = await client.getDetectionsFromCamera(request, options: callOptions);
     return response.detections;
   }
@@ -49,8 +49,8 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// var detections = await myVisionService.detections(latestImage);
   /// ```
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getdetections).
-  Future<List<vision_pb.Detection>> detections(ViamImage image, {Map<String, dynamic>? extra}) async {
-    final request = vision_pb.GetDetectionsRequest(
+  Future<List<Detection>> detections(ViamImage image, {Map<String, dynamic>? extra}) async {
+    final request = GetDetectionsRequest(
         name: name,
         image: image.raw,
         width: Int64(image.image?.width ?? 0),
@@ -70,8 +70,8 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getclassificationsfromcamera).
-  Future<List<vision_pb.Classification>> classificationsFromCamera(String cameraName, int count, {Map<String, dynamic>? extra}) async {
-    final request = vision_pb.GetClassificationsFromCameraRequest(name: name, cameraName: cameraName, n: count, extra: extra?.toStruct());
+  Future<List<Classification>> classificationsFromCamera(String cameraName, int count, {Map<String, dynamic>? extra}) async {
+    final request = GetClassificationsFromCameraRequest(name: name, cameraName: cameraName, n: count, extra: extra?.toStruct());
     final response = await client.getClassificationsFromCamera(request, options: callOptions);
     return response.classifications;
   }
@@ -86,8 +86,8 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   /// ```
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getclassifications).
-  Future<List<vision_pb.Classification>> classifications(ViamImage image, int count, {Map<String, dynamic>? extra}) async {
-    final request = vision_pb.GetClassificationsRequest(
+  Future<List<Classification>> classifications(ViamImage image, int count, {Map<String, dynamic>? extra}) async {
+    final request = GetClassificationsRequest(
         name: name,
         image: image.raw,
         width: image.image?.width,
@@ -108,8 +108,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getobjectpointclouds).
   Future<List<common_pb.PointCloudObject>> objectPointClouds(String cameraName, {Map<String, dynamic>? extra}) async {
-    final request =
-        vision_pb.GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
+    final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
     final response = await client.getObjectPointClouds(request, options: callOptions);
     return response.objects;
   }
@@ -127,7 +126,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
   ///
   /// For more information, see the [vision service docs](https://docs.viam.com/dev/reference/apis/services/vision/#getproperties).
   Future<VisionProperties> properties({Map<String, dynamic>? extra}) async {
-    final request = vision_pb.GetPropertiesRequest(name: name, extra: extra?.toStruct());
+    final request = GetPropertiesRequest(name: name, extra: extra?.toStruct());
     return await client.getProperties(request, options: callOptions);
   }
 

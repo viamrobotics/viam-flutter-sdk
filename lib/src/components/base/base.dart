@@ -1,10 +1,10 @@
-import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/base/v1/base.pb.dart' as base_pb;
+import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/component/base/v1/base.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// {@category Viam SDK}
-typedef BaseProperties = base_pb.GetPropertiesResponse;
+typedef BaseProperties = GetPropertiesResponse;
 
 /// {@category Components}
 /// Base represents a physical base of a robot.
@@ -64,7 +64,7 @@ abstract class Base extends Resource {
   /// ```
   ///
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#setpower).
-  Future<void> setPower(Vector3 linear, Vector3 angular, {Map<String, dynamic>? extra});
+  Future<void> setPower(common_pb.Vector3 linear, common_pb.Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Set the linear and angular velocities of the base, expressed as
   /// mm/sec and degrees/sec vectors.
@@ -77,7 +77,7 @@ abstract class Base extends Resource {
   /// ```
   ///
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#setvelocity).
-  Future<void> setVelocity(Vector3 linear, Vector3 angular, {Map<String, dynamic>? extra});
+  Future<void> setVelocity(common_pb.Vector3 linear, common_pb.Vector3 angular, {Map<String, dynamic>? extra});
 
   /// Stop the base.
   ///
@@ -100,7 +100,7 @@ abstract class Base extends Resource {
   /// Get the [ResourceName] for this [Base] with the given [name]
   ///
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return Base.subtype.getResourceName(name);
   }
 

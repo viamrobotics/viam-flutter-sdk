@@ -1,10 +1,10 @@
 import '../../gen/common/v1/common.pb.dart' as common_pb;
-import '../../gen/component/motor/v1/motor.pb.dart' as motor_pb;
+import '../../gen/component/motor/v1/motor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// {@category Viam SDK}
-typedef MotorProperties = motor_pb.GetPropertiesResponse;
+typedef MotorProperties = GetPropertiesResponse;
 
 /// {@category Viam SDK}
 class PowerState {
@@ -13,7 +13,7 @@ class PowerState {
 
   PowerState(this.isOn, this.powerPct);
 
-  factory PowerState.fromProto(motor_pb.IsPoweredResponse pbResponse) {
+  factory PowerState.fromProto(IsPoweredResponse pbResponse) {
     return PowerState(pbResponse.isOn, pbResponse.powerPct);
   }
 }

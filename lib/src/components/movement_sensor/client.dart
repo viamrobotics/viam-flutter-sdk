@@ -1,7 +1,7 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
 import '../../gen/common/v1/common.pb.dart' as common_pb;
-import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart' as ms_pb;
+import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
@@ -17,7 +17,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
   ClientChannelBase channel;
 
   @override
-  ms_pb.MovementSensorServiceClient get client => ms_pb.MovementSensorServiceClient(channel);
+  MovementSensorServiceClient get client => MovementSensorServiceClient(channel);
 
   MovementSensorClient(this.name, this.channel);
 
@@ -32,7 +32,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<Position> position({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetPositionRequest()
+    final request = GetPositionRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getPosition(request, options: callOptions);
@@ -41,7 +41,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<common_pb.Vector3> linearVelocity({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetLinearVelocityRequest()
+    final request = GetLinearVelocityRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getLinearVelocity(request, options: callOptions);
@@ -50,7 +50,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<common_pb.Vector3> angularVelocity({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetAngularVelocityRequest()
+    final request = GetAngularVelocityRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getAngularVelocity(request, options: callOptions);
@@ -59,7 +59,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<common_pb.Vector3> linearAcceleration({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetLinearAccelerationRequest()
+    final request = GetLinearAccelerationRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getLinearAcceleration(request, options: callOptions);
@@ -68,7 +68,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<double> compassHeading({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetCompassHeadingRequest()
+    final request = GetCompassHeadingRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getCompassHeading(request);
@@ -77,7 +77,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<common_pb.Orientation> orientation({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetOrientationRequest()
+    final request = GetOrientationRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     final response = await client.getOrientation(request, options: callOptions);
@@ -86,7 +86,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<Properties> properties({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetPropertiesRequest()
+    final request = GetPropertiesRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     return await client.getProperties(request, options: callOptions);
@@ -94,7 +94,7 @@ class MovementSensorClient extends MovementSensor with RPCDebugLoggerMixin imple
 
   @override
   Future<Accuracy> accuracy({Map<String, dynamic>? extra}) async {
-    final request = ms_pb.GetAccuracyRequest()
+    final request = GetAccuracyRequest()
       ..name = name
       ..extra = extra?.toStruct() ?? Struct();
     return await client.getAccuracy(request, options: callOptions);

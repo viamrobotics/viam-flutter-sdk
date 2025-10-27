@@ -1,21 +1,21 @@
-import '../../gen/common/v1/common.pb.dart';
-import '../../gen/component/movementsensor/v1/movementsensor.pb.dart' as ms_proto;
+import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/component/movementsensor/v1/movementsensor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
 /// {@category Viam SDK}
 class Position {
-  GeoPoint coordinates;
+  common_pb.GeoPoint coordinates;
   double altitude;
 
   Position(this.coordinates, this.altitude);
 }
 
 /// {@category Viam SDK}
-typedef Properties = ms_proto.GetPropertiesResponse;
+typedef Properties = GetPropertiesResponse;
 
 /// {@category Viam SDK}
-typedef Accuracy = ms_proto.GetAccuracyResponse;
+typedef Accuracy = GetAccuracyResponse;
 
 /// {@category Components}
 /// MovementSensor reports information about the robot's direction, position and speed.
@@ -53,7 +53,7 @@ abstract class MovementSensor extends Resource {
   /// ```
   ///
   /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getlinearvelocity).
-  Future<Vector3> linearVelocity({Map<String, dynamic>? extra});
+  Future<common_pb.Vector3> linearVelocity({Map<String, dynamic>? extra});
 
   /// Get the current angular velocity as a [Vector3] with
   /// x, y, and z axes represented in radians per second.
@@ -63,7 +63,7 @@ abstract class MovementSensor extends Resource {
   /// ```
   ///
   /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getangularvelocity).
-  Future<Vector3> angularVelocity({Map<String, dynamic>? extra});
+  Future<common_pb.Vector3> angularVelocity({Map<String, dynamic>? extra});
 
   /// Get the current linear acceleration as a [Vector3] with
   /// x, y, and z axes represented in mm/sec^2.
@@ -73,7 +73,7 @@ abstract class MovementSensor extends Resource {
   /// ```
   ///
   /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getlinearacceleration).
-  Future<Vector3> linearAcceleration({Map<String, dynamic>? extra});
+  Future<common_pb.Vector3> linearAcceleration({Map<String, dynamic>? extra});
 
   /// Get the current compass heading in degrees.
   ///
@@ -91,7 +91,7 @@ abstract class MovementSensor extends Resource {
   /// ```
   ///
   /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getorientation).
-  Future<Orientation> orientation({Map<String, dynamic>? extra});
+  Future<common_pb.Orientation> orientation({Map<String, dynamic>? extra});
 
   /// Get the supported properties of this sensor.
   ///
@@ -120,7 +120,7 @@ abstract class MovementSensor extends Resource {
   /// ```
   ///
   /// For more information, see [Movement Sensor component](https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return MovementSensor.subtype.getResourceName(name);
   }
 

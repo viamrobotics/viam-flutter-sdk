@@ -1,6 +1,6 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
-import '../../gen/common/v1/common.pb.dart' as common_pb;
+import '../../gen/common/v1/common.pb.dart' as proto;
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../media/image.dart';
@@ -89,7 +89,7 @@ class CameraClient extends Camera with RPCDebugLoggerMixin implements ResourceRP
 
   @override
   Future<Map<String, dynamic>> doCommand(Map<String, dynamic> command) async {
-    final request = common_pb.DoCommandRequest()
+    final request = proto.DoCommandRequest()
       ..name = name
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);
