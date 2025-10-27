@@ -5,7 +5,7 @@ import '../../robot/client.dart';
 
 export '../../audio.dart';
 
-/// AudioOut represents a speaker or other audio output device that can play audio.
+/// AudioOut represents a device that can play audio.
 abstract class AudioOut extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'audio_out');
 

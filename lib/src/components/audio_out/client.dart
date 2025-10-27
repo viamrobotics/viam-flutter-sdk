@@ -29,10 +29,8 @@ class AudioOutClient extends AudioOut implements ResourceRPCClient {
     final request = PlayRequest()
       ..name = name
       ..audioData = audioData
-      ..audioInfo = audioInfo;
-    if (extra != null) {
-      request.extra = extra.toStruct();
-    }
+      ..audioInfo = audioInfo
+      ..extra = extra?.toStruct() ?? Struct();
     return await client.play(request);
   }
 

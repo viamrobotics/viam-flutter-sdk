@@ -8,6 +8,7 @@ import 'package:viam_sdk/src/gen/common/v1/common.pb.dart';
 import 'package:viam_sdk/src/gen/component/audioin/v1/audioin.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
 import 'package:viam_sdk/src/utils.dart';
+inport 'package:'
 import 'package:viam_sdk/viam_sdk.dart';
 
 class FakeAudioIn extends AudioIn {
@@ -30,7 +31,7 @@ class FakeAudioIn extends AudioIn {
   @override
   Stream<GetAudioResponse> getAudio({
     required String codec,
-    required double durationSeconds,
+    double? durationSeconds,
     Int64? previousTimestampNanoseconds,
     Map<String, dynamic>? extra,
   }) {
@@ -73,7 +74,7 @@ void main() {
     });
 
     test('getAudio with all parameters', () async {
-      final codec = 'mp3';
+      final codec = AudioCodec.mp3;
       final durationSeconds = 5.0;
       final previousTimestamp = Int64(1000000);
       final extra = {'foo': 'bar'};
@@ -96,11 +97,11 @@ void main() {
     });
 
     test('getAudio with minimal parameters', () async {
-      final stream = audioIn.getAudio(codec: 'pcm16', durationSeconds: 0.0);
+      final stream = audioIn.getAudio(codec: AudioCodec.mp3);
       final chunks = await stream.toList();
       expect(chunks.length, 2);
-      expect(audioIn.codec, 'pcm16');
-      expect(audioIn.durationSeconds, 0.0);
+      expect(audioIn.codec, AudioCodec.mp3);
+      expect(audioIn.durationSeconds, null);
       expect(audioIn.previousTimestampNanoseconds, null);
       expect(audioIn.extra, null);
     });
@@ -149,7 +150,7 @@ void main() {
 
     group('AudioIn Service Tests', () {
       test('getAudio with all parameters', () async {
-        final codec = 'pcm16';
+        final codec = AudioCodec.pcm16;
         final durationSeconds = 10.0;
         final previousTimestamp = Int64(5000000);
         final extra = {'key': 'value'};
@@ -176,13 +177,12 @@ void main() {
         final client = AudioInServiceClient(channel);
         final stream = client.getAudio(GetAudioRequest()
           ..name = name
-          ..codec = 'mp3'
-          ..durationSeconds = 1.0);
+          ..codec = 'mp3');
 
         final chunks = await stream.toList();
         expect(chunks.length, 2);
         expect(audioIn.codec, 'mp3');
-        expect(audioIn.durationSeconds, 1.0);
+        expect(audioIn.durationSeconds, null);
         expect(audioIn.previousTimestampNanoseconds, null);
       });
 
@@ -238,12 +238,12 @@ void main() {
 
       test('getAudio with only required parameters', () async {
         final client = AudioInClient(name, channel);
-        final stream = client.getAudio(codec: 'pcm16', durationSeconds: 2.0);
+        final stream = client.getAudio(codec: AudioCodec.pcm16);
 
         final chunks = await stream.toList();
         expect(chunks.length, 2);
-        expect(audioIn.codec, 'pcm16');
-        expect(audioIn.durationSeconds, 2.0);
+        expect(audioIn.codec, AudioCodec.pcm16);
+        expect(audioIn.durationSeconds, null);
         expect(audioIn.previousTimestampNanoseconds, null);
         expect(audioIn.extra, null);
       });

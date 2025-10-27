@@ -7,19 +7,19 @@ import '../../robot/client.dart';
 
 export '../../audio.dart';
 
-/// AudioIn represents a microphone or other audio input device that can capture audio.
+/// AudioIn represents a device that can capture audio.
 abstract class AudioIn extends Resource {
   static const Subtype subtype = Subtype(resourceNamespaceRDK, resourceTypeComponent, 'audio_in');
 
-  /// Stream audio from this audio input device
+  /// Stream audio from this device
   Stream<GetAudioResponse> getAudio({
     required String codec,
-    required double durationSeconds,
+    double? durationSeconds,
     Int64? previousTimestampNanoseconds,
     Map<String, dynamic>? extra,
   });
 
-  /// Get the audio properties of this audio input device
+  /// Get the audio properties of this audio in device
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [AudioIn] with the given [name]

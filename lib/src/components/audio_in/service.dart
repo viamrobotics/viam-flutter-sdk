@@ -25,7 +25,7 @@ class AudioInService extends AudioInServiceBase {
     final audioIn = _fromManager(request.name);
     return audioIn.getAudio(
       codec: request.codec,
-      durationSeconds: request.durationSeconds,
+      durationSeconds: request.hasDurationSeconds() ? request.durationSeconds : null,
       previousTimestampNanoseconds: request.hasPreviousTimestampNanoseconds() ? request.previousTimestampNanoseconds : null,
       extra: request.hasExtra() ? request.extra.toMap() : null,
     );

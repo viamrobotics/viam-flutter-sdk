@@ -26,7 +26,7 @@ class FakeAudioOut extends AudioOut {
   @override
   Future<PlayResponse> play({
     required List<int> audioData,
-    required AudioInfo audioInfo,
+    AudioInfo? audioInfo,
     Map<String, dynamic>? extra,
   }) async {
     this.audioData = audioData;
@@ -38,7 +38,7 @@ class FakeAudioOut extends AudioOut {
   @override
   Future<GetPropertiesResponse> getProperties({Map<String, dynamic>? extra}) async {
     propertiesExtra = extra;
-    return GetPropertiesResponse()..supportedCodecs.addAll(['mp3', 'pcm16', 'wav']);
+    return GetPropertiesResponse()..supportedCodecs.addAll([AudioCodec.mp3, AudioCodec.pcm16, AudioCodec.aac]);
   }
 }
 
@@ -73,7 +73,10 @@ void main() {
 
     test('play with minimal parameters', () async {
       const audioData = [10, 20, 30];
-      final audioInfo = AudioInfo()..codec = AudioCodec.pcm16;
+      final audioInfo = AudioInfo()
+        ..codec = AudioCodec.pcm16;
+
+
 
       await audioOut.play(
         audioData: audioData,
@@ -88,7 +91,7 @@ void main() {
     test('getProperties', () async {
       final result = await audioOut.getProperties();
       expect(result, isA<GetPropertiesResponse>());
-      expect(result.supportedCodecs, ['mp3', 'pcm16', 'wav']);
+      expect(result.supportedCodecs, [AudioCodec.mp3, AudioCodec.pcm16, AudioCodec.aac]);
       expect(audioOut.propertiesExtra, null);
     });
 
@@ -219,19 +222,13 @@ void main() {
 
       test('play with minimal parameters', () async {
         const audioData = [99, 88, 77];
-        final audioInfo = AudioInfo()
-          ..codec = AudioCodec.wav
-          ..numChannels = 1;
-
         final client = AudioOutClient(name, channel);
         await client.play(
           audioData: audioData,
-          audioInfo: audioInfo,
         );
 
         expect(audioOut.audioData, audioData);
-        expect(audioOut.audioInfo?.codec, AudioCodec.wav);
-        expect(audioOut.audioInfo?.numChannels, 1);
+        expect(audioOut.audioInfo, null);
         expect(audioOut.extra, null);
       });
 

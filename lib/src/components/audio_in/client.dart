@@ -24,14 +24,16 @@ class AudioInClient extends AudioIn implements ResourceRPCClient {
   @override
   Stream<GetAudioResponse> getAudio({
     required String codec,
-    required double durationSeconds,
+    double? durationSeconds,
     Int64? previousTimestampNanoseconds,
     Map<String, dynamic>? extra,
   }) {
     final request = GetAudioRequest()
       ..name = name
-      ..codec = codec
-      ..durationSeconds = durationSeconds;
+      ..codec = codec;
+    if (durationSeconds != null) {
+      request.durationSeconds = durationSeconds;
+    }
     if (previousTimestampNanoseconds != null) {
       request.previousTimestampNanoseconds = previousTimestampNanoseconds;
     }
