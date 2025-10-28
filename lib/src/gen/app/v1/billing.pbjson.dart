@@ -541,6 +541,7 @@ const CreateInvoiceAndChargeImmediatelyRequest$json = {
     {'1': 'amount', '3': 2, '4': 1, '5': 1, '10': 'amount'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'description', '17': true},
     {'1': 'org_id_for_branding', '3': 4, '4': 1, '5': 9, '9': 1, '10': 'orgIdForBranding', '17': true},
+    {'1': 'disable_email', '3': 5, '4': 1, '5': 8, '10': 'disableEmail'},
   ],
   '8': [
     {'1': '_description'},
@@ -553,8 +554,8 @@ final $typed_data.Uint8List createInvoiceAndChargeImmediatelyRequestDescriptor =
     'CihDcmVhdGVJbnZvaWNlQW5kQ2hhcmdlSW1tZWRpYXRlbHlSZXF1ZXN0EicKEG9yZ19pZF90b1'
     '9jaGFyZ2UYASABKAlSDW9yZ0lkVG9DaGFyZ2USFgoGYW1vdW50GAIgASgBUgZhbW91bnQSJQoL'
     'ZGVzY3JpcHRpb24YAyABKAlIAFILZGVzY3JpcHRpb26IAQESMgoTb3JnX2lkX2Zvcl9icmFuZG'
-    'luZxgEIAEoCUgBUhBvcmdJZEZvckJyYW5kaW5niAEBQg4KDF9kZXNjcmlwdGlvbkIWChRfb3Jn'
-    'X2lkX2Zvcl9icmFuZGluZw==');
+    'luZxgEIAEoCUgBUhBvcmdJZEZvckJyYW5kaW5niAEBEiMKDWRpc2FibGVfZW1haWwYBSABKAhS'
+    'DGRpc2FibGVFbWFpbEIOCgxfZGVzY3JpcHRpb25CFgoUX29yZ19pZF9mb3JfYnJhbmRpbmc=');
 
 @$core.Deprecated('Use createInvoiceAndChargeImmediatelyResponseDescriptor instead')
 const CreateInvoiceAndChargeImmediatelyResponse$json = {
