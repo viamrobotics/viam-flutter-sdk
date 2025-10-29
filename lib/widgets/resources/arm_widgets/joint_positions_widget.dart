@@ -11,19 +11,24 @@ class JointPositionsWidget extends StatefulWidget {
   State<JointPositionsWidget> createState() => _JointPositionsWidgetState();
 }
 
+bool _isLive = false;
+
 class _JointPositionsWidgetState extends State<JointPositionsWidget> {
   List<double> _jointValues = [];
-  bool _isLive = false;
 
   @override
   void initState() {
     super.initState();
-    _getJointInfo();
+    _getJointPositions();
   }
 
-  Future<void> _getJointInfo() async {
+  Future<void> _getJointPositions() async {
     _jointValues = await widget.arm.jointPositions();
     setState(() {});
+  }
+
+  Future<void> _setJointPositions() async {
+    await widget.arm.moveToJointPositions(_jointValues);
   }
 
   @override
@@ -32,7 +37,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
       children: [
         Divider(),
         Text(
-          'Joint Angles',
+          'Joint Positions',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -78,7 +83,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
                 ),
                 child: OutlinedButton.icon(
-                  onPressed: _isLive ? null : () {},
+                  onPressed: _isLive ? null : _setJointPositions,
                   label: Text("Execute"),
                   icon: Icon(Icons.play_arrow),
                 ),
@@ -139,6 +144,10 @@ class _BuildJointControlRowState extends State<_BuildJointControlRow> {
         );
       }
     });
+
+    if (_isLive) {
+      widget.arm.moveToJointPositions(_jointValues);
+    }
   }
 
   @override
