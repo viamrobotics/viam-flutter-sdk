@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grpc/grpc.dart';
 
+import '../../../protos/common/common.dart';
+import '../../../src/utils.dart';
 import '../../../viam_sdk.dart' as viam;
 
 class PoseWidget extends StatefulWidget {
@@ -11,6 +14,9 @@ class PoseWidget extends StatefulWidget {
   State<PoseWidget> createState() => _PoseWidgetState();
 }
 
+bool _isLive = false;
+bool _isGoingToPose = false;
+
 class _PoseWidgetState extends State<PoseWidget> {
   static const double _minOrientation = -1.0;
   static const double _maxOrientation = 1.0;
@@ -19,7 +25,6 @@ class _PoseWidgetState extends State<PoseWidget> {
   static const double _minPosition = 0.0;
   static const double _maxPosition = 1000.0;
 
-  bool _isLive = false;
   List<double> _controlValues = [];
 
   late final List<TextEditingController> _textControllers;
@@ -30,14 +35,42 @@ class _PoseWidgetState extends State<PoseWidget> {
     _getStartPose();
   }
 
+  Pose controlValuesToPose() {
+    return Pose(
+      x: _controlValues[0],
+      y: _controlValues[1],
+      z: _controlValues[2],
+      oX: _controlValues[3],
+      oY: _controlValues[4],
+      oZ: _controlValues[5],
+      theta: _controlValues[6],
+    );
+  }
+
   Future<void> _getStartPose() async {
     final startPose = await widget.arm.endPosition();
-    _controlValues = [startPose.x, startPose.y, startPose.z, startPose.oX, startPose.oY, startPose.oZ, startPose.theta];
+    _controlValues = [
+      startPose.x.roundToDouble(),
+      startPose.y.roundToDouble(),
+      startPose.z.roundToDouble(),
+      startPose.oX.roundToDouble(),
+      startPose.oY.roundToDouble(),
+      startPose.oZ.roundToDouble(),
+      startPose.theta.roundToDouble(),
+    ];
     _textControllers = List.generate(
       _controlValues.length,
       (index) => TextEditingController(text: _controlValues[index].toStringAsFixed(1)),
     );
     setState(() {});
+  }
+
+  Future<void> _updatePose() async {
+    try {
+      await widget.arm.moveToPosition(controlValuesToPose());
+    } on GrpcError catch (e) {
+      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.message);
+    }
   }
 
   @override
@@ -48,7 +81,7 @@ class _PoseWidgetState extends State<PoseWidget> {
     super.dispose();
   }
 
-  void _updateControlValue(int index, double value) {
+  Future<void> _updateControlValue(int index, double value) async {
     setState(() {
       _controlValues[index] = value;
 
@@ -60,6 +93,21 @@ class _PoseWidgetState extends State<PoseWidget> {
         );
       }
     });
+    if (_isLive) {
+      try {
+        if (!_isGoingToPose) {
+          setState(() {
+            _isGoingToPose = true;
+          });
+          await widget.arm.moveToPosition(controlValuesToPose());
+          setState(() {
+            _isGoingToPose = false;
+          });
+        }
+      } on GrpcError catch (e) {
+        if (mounted) await showErrorDialog(context, title: 'An error occured', error: e.message);
+      }
+    }
   }
 
   @override
@@ -157,7 +205,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                 },
               ),
               Text(
-                "Live",
+                'Live',
                 style: TextStyle(color: Colors.black),
               ),
               Spacer(),
@@ -170,8 +218,8 @@ class _PoseWidgetState extends State<PoseWidget> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
                 ),
                 child: OutlinedButton.icon(
-                  onPressed: _isLive ? null : () {},
-                  label: Text("Execute"),
+                  onPressed: _isLive ? null : _updatePose,
+                  label: Text('Execute'),
                   icon: Icon(Icons.play_arrow),
                 ),
               )
@@ -261,11 +309,11 @@ class _BuildJointControlRow extends StatelessWidget {
           const SizedBox(width: 8),
           IconButton(
             icon: const Icon(Icons.remove),
-            onPressed: () => onValueChanged(value - 0.1),
+            onPressed: () => onValueChanged(value - (max == 1 ? 0.1 : 1.0)),
           ),
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () => onValueChanged(value + 0.1),
+            onPressed: () => onValueChanged(value + (max == 1 ? 0.1 : 1.0)),
           ),
         ],
       ),
