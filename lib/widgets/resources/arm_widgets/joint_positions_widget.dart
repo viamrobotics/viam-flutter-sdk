@@ -32,7 +32,7 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
       children: [
         Divider(),
         Text(
-          'Joint Angles',
+          'Joint Positions',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
