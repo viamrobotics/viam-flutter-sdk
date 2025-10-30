@@ -148,8 +148,6 @@ class _PoseWidgetState extends State<PoseWidget> {
             children: [
               Switch(
                 value: _isLive,
-                activeColor: Colors.green,
-                inactiveTrackColor: Colors.transparent,
                 onChanged: (newValue) {
                   setState(() {
                     _isLive = newValue;
@@ -158,23 +156,13 @@ class _PoseWidgetState extends State<PoseWidget> {
               ),
               Text(
                 "Live",
-                style: TextStyle(color: Colors.black),
               ),
               Spacer(),
-              OutlinedButtonTheme(
-                data: OutlinedButtonThemeData(
-                  style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      iconColor: Colors.black,
-                      overlayColor: Colors.grey,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
-                ),
-                child: OutlinedButton.icon(
-                  onPressed: _isLive ? null : () {},
-                  label: Text("Execute"),
-                  icon: Icon(Icons.play_arrow),
-                ),
-              )
+              OutlinedButton.icon(
+                onPressed: _isLive ? null : () {},
+                label: Text("Execute"),
+                icon: Icon(Icons.play_arrow),
+              ),
             ],
           ),
         ),
@@ -214,23 +202,12 @@ class _BuildJointControlRow extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: SliderTheme(
-              data: SliderThemeData(
-                activeTrackColor: Colors.black,
-                inactiveTrackColor: Colors.grey,
-                thumbColor: Colors.black,
-                overlayColor: Colors.transparent,
-                showValueIndicator: ShowValueIndicator.never,
-              ),
-              child: Slider(
-                value: value,
-                min: min,
-                max: max,
-                label: value.toStringAsFixed(1),
-                onChanged: onValueChanged,
-                activeColor: Colors.black,
-                overlayColor: WidgetStateProperty.all(Colors.transparent),
-              ),
+            child: Slider(
+              value: value,
+              min: min,
+              max: max,
+              label: value.toStringAsFixed(1),
+              onChanged: onValueChanged,
             ),
           ),
           const SizedBox(width: 16),
@@ -243,15 +220,6 @@ class _BuildJointControlRow extends StatelessWidget {
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^-?\d+\.?\d{0,1}')),
               ],
-              style: const TextStyle(color: Colors.black),
-              cursorColor: Colors.black,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 8),
-              ),
               onSubmitted: (newValue) {
                 final parsedValue = double.tryParse(newValue) ?? value;
                 onValueChanged(parsedValue);
