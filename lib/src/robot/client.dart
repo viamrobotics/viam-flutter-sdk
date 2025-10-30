@@ -50,8 +50,7 @@ class RobotClientOptions {
           ..authEntity = apiKeyID;
 
   /// Convenience initializer for creating options with a robot secret
-  RobotClientOptions.withRobotSecret(String robotSecret)
-      : dialOptions = DialOptions()..credentials = Credentials.robotSecret(robotSecret);
+  RobotClientOptions.withRobotSecret(String robotSecret) : dialOptions = DialOptions()..credentials = Credentials.robotSecret(robotSecret);
 }
 
 /// {@category Viam SDK}
