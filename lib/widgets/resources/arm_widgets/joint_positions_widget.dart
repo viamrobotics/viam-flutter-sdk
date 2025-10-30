@@ -61,8 +61,6 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
             children: [
               Switch(
                 value: _isLive,
-                activeColor: Colors.green,
-                inactiveTrackColor: Colors.transparent,
                 onChanged: (newValue) {
                   setState(() {
                     _isLive = newValue;
@@ -70,24 +68,14 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
                 },
               ),
               Text(
-                "Live",
-                style: TextStyle(color: Colors.black),
+                'Live',
               ),
               Spacer(),
-              OutlinedButtonTheme(
-                data: OutlinedButtonThemeData(
-                  style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      iconColor: Colors.black,
-                      overlayColor: Colors.grey,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4)))),
-                ),
-                child: OutlinedButton.icon(
-                  onPressed: _isLive ? null : _setJointPositions,
-                  label: Text("Execute"),
-                  icon: Icon(Icons.play_arrow),
-                ),
-              )
+              OutlinedButton.icon(
+                onPressed: _isLive ? null : _setJointPositions,
+                label: Text('Execute'),
+                icon: Icon(Icons.play_arrow),
+              ),
             ],
           ),
         ),
@@ -164,21 +152,12 @@ class _BuildJointControlRowState extends State<_BuildJointControlRow> {
             ),
           ),
           Expanded(
-            child: SliderTheme(
-              data: SliderThemeData(
-                activeTrackColor: Colors.black,
-                inactiveTrackColor: Colors.grey,
-                thumbColor: Colors.black,
-                overlayColor: Colors.transparent,
-                showValueIndicator: ShowValueIndicator.never,
-              ),
-              child: Slider(
-                value: _jointValues[widget.index],
-                min: _minPosition,
-                max: _maxPosition,
-                divisions: (_maxPosition - _minPosition).toInt(),
-                onChanged: (newValue) => _updateJointValue(widget.index, newValue),
-              ),
+            child: Slider(
+              value: _jointValues[widget.index],
+              min: _minPosition,
+              max: _maxPosition,
+              divisions: (_maxPosition - _minPosition).toInt(),
+              onChanged: (newValue) => _updateJointValue(widget.index, newValue),
             ),
           ),
           SizedBox(
@@ -190,15 +169,6 @@ class _BuildJointControlRowState extends State<_BuildJointControlRow> {
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,1}')),
               ],
-              style: const TextStyle(color: Colors.black),
-              cursorColor: Colors.black,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 8),
-              ),
               onSubmitted: (newValue) {
                 final parsedValue = double.tryParse(newValue) ?? _jointValues[widget.index];
                 _updateJointValue(widget.index, parsedValue);
