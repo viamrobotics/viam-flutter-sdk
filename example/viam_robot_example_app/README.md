@@ -16,14 +16,7 @@ API_KEY_ID=<API KEY ID>
 API_KEY=<API KEY>
 ```
 
-or using location secrets (deprecated, please prefer using API keys!):
-
-```
-ROBOT_LOCATION=<ROBOT_LOCATION_URI>
-LOCATION_SECRET=<ROBOT_LOCATION_SECRET>
-```
-
-Both these fields can be obtained from your robot's `Code Sample` tab on [app.viam.com](https://app.viam.com).
+These fields can be obtained from your robot's `Code Sample` tab on [app.viam.com](https://app.viam.com).
 
 ## Run
 

@@ -49,9 +49,8 @@ class RobotClientOptions {
           ..credentials = Credentials.apiKey(apiKey)
           ..authEntity = apiKeyID;
 
-  /// Convenience initializer for creating options with a robot location secret
-  RobotClientOptions.withLocationSecret(String locationSecret)
-      : dialOptions = DialOptions()..credentials = Credentials.locationSecret(locationSecret);
+  /// Convenience initializer for creating options with a robot secret
+  RobotClientOptions.withRobotSecret(String robotSecret) : dialOptions = DialOptions()..credentials = Credentials.robotSecret(robotSecret);
 }
 
 /// {@category Viam SDK}

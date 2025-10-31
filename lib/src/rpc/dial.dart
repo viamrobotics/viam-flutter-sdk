@@ -78,7 +78,7 @@ class DialOptions {
 /// {@category Viam SDK}
 /// The credentials used for connecting to the robot
 class Credentials {
-  /// The type of credential, e.g. 'robot-location-secret', 'api-key'
+  /// The type of credential, e.g. 'robot-secret', 'api-key'
   final String type;
 
   /// The payload of the credential
@@ -86,8 +86,8 @@ class Credentials {
 
   const Credentials(this.type, this.payload);
 
-  /// Convenience initializer for creating credentials of type 'robot-location-secret' with the provided payload.
-  const Credentials.locationSecret(this.payload) : type = 'robot-location-secret';
+  /// Convenience initializer for creating credentials of type 'robot-secret' with the provided payload.
+  const Credentials.robotSecret(this.payload) : type = 'robot-secret';
 
   /// Convenience initializer for creating credentials of type 'api-key' with the provided key as payload.
   const Credentials.apiKey(this.payload) : type = 'api-key';
