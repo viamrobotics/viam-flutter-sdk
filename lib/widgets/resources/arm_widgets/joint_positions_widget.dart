@@ -95,8 +95,8 @@ class _BuildJointControlRow extends StatefulWidget {
 }
 
 class _BuildJointControlRowState extends State<_BuildJointControlRow> {
-  static const double _minPosition = 0.0;
-  static const double _maxPosition = 180.0;
+  static const double _minPosition = -359.0;
+  static const double _maxPosition = 359.0;
 
   List<double> _jointValues = [];
   List<TextEditingController> _textControllers = [];
