@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grpc/grpc.dart';
 
+import '../../../protos/common/common.dart';
+import '../../../src/utils.dart';
 import '../../../viam_sdk.dart' as viam;
+
+class _TextControlStruct {
+  TextEditingController x;
+  TextEditingController y;
+  TextEditingController z;
+  TextEditingController oX;
+  TextEditingController oY;
+  TextEditingController oZ;
+  TextEditingController theta;
+
+  _TextControlStruct(this.x, this.y, this.z, this.oX, this.oY, this.oZ, this.theta);
+}
 
 class PoseWidget extends StatefulWidget {
   final viam.Arm arm;
@@ -14,15 +29,16 @@ class PoseWidget extends StatefulWidget {
 class _PoseWidgetState extends State<PoseWidget> {
   static const double _minOrientation = -1.0;
   static const double _maxOrientation = 1.0;
-  static const double _minTheta = -180.0;
-  static const double _maxTheta = 180.0;
-  static const double _minPosition = 0.0;
+  static const double _minTheta = -359.0;
+  static const double _maxTheta = 359.0;
+  static const double _minPosition = -1000;
   static const double _maxPosition = 1000.0;
 
   bool _isLive = false;
-  List<double> _controlValues = [];
+  bool _isGoingToPose = false;
+  Pose _controlValues = Pose();
 
-  late final List<TextEditingController> _textControllers;
+  late final _TextControlStruct _textControllers;
 
   @override
   void initState() {
@@ -30,33 +46,73 @@ class _PoseWidgetState extends State<PoseWidget> {
     _getStartPose();
   }
 
+  @override
+  void dispose() {
+    _textControllers.x.dispose();
+    _textControllers.y.dispose();
+    _textControllers.z.dispose();
+    _textControllers.oX.dispose();
+    _textControllers.oY.dispose();
+    _textControllers.oZ.dispose();
+    _textControllers.theta.dispose();
+    super.dispose();
+  }
+
   Future<void> _getStartPose() async {
     final startPose = await widget.arm.endPosition();
-    _controlValues = [startPose.x, startPose.y, startPose.z, startPose.oX, startPose.oY, startPose.oZ, startPose.theta];
-    _textControllers = List.generate(
-      _controlValues.length,
-      (index) => TextEditingController(text: _controlValues[index].toStringAsFixed(1)),
+    _controlValues = startPose;
+    _textControllers = _TextControlStruct(
+      TextEditingController(text: _controlValues.x.toStringAsFixed(1)),
+      TextEditingController(text: _controlValues.y.toStringAsFixed(1)),
+      TextEditingController(text: _controlValues.z.toStringAsFixed(1)),
+      TextEditingController(text: _controlValues.oX.toStringAsFixed(1)),
+      TextEditingController(text: _controlValues.oY.toStringAsFixed(1)),
+      TextEditingController(text: _controlValues.oZ.toStringAsFixed(1)),
+      TextEditingController(text: _controlValues.theta.toStringAsFixed(1)),
     );
     setState(() {});
   }
 
-  @override
-  void dispose() {
-    for (final controller in _textControllers) {
-      controller.dispose();
+  Future<void> _updatePose() async {
+    try {
+      if (!_isGoingToPose) {
+        setState(() {
+          _isGoingToPose = true;
+        });
+        await widget.arm.moveToPosition(_controlValues);
+        setState(() {
+          _isGoingToPose = false;
+        });
+      }
+    } on GrpcError catch (e) {
+      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.message);
     }
-    super.dispose();
   }
 
-  void _updateControlValue(int index, double value) {
+  void _updateControlValue(String index, TextEditingController textController, double value) {
     setState(() {
-      _controlValues[index] = value;
+      switch (index) {
+        case 'x':
+          _controlValues.x = value;
+        case 'y':
+          _controlValues.y = value;
+        case 'z':
+          _controlValues.z = value;
+        case 'oX':
+          _controlValues.oX = value;
+        case 'oY':
+          _controlValues.oY = value;
+        case 'oZ':
+          _controlValues.oZ = value;
+        case 'theta':
+          _controlValues.theta = value;
+      }
 
       final formattedValue = value.toStringAsFixed(1);
-      if (_textControllers[index].text != formattedValue) {
-        _textControllers[index].text = formattedValue;
-        _textControllers[index].selection = TextSelection.fromPosition(
-          TextPosition(offset: _textControllers[index].text.length),
+      if (textController.text != formattedValue) {
+        textController.text = formattedValue;
+        textController.selection = TextSelection.fromPosition(
+          TextPosition(offset: textController.text.length),
         );
       }
     });
@@ -64,7 +120,6 @@ class _PoseWidgetState extends State<PoseWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (_controlValues.length != 7) _controlValues = [];
     return Column(
       children: [
         Divider(),
@@ -77,69 +132,102 @@ class _PoseWidgetState extends State<PoseWidget> {
         Divider(),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: _controlValues.isEmpty
-              ? CircularProgressIndicator.adaptive()
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _BuildJointControlRow(
-                      label: 'X',
-                      value: _controlValues[0],
-                      controller: _textControllers[0],
-                      min: _minPosition,
-                      max: _maxPosition,
-                      onValueChanged: (newValue) => _updateControlValue(0, newValue.clamp(_minPosition, _maxPosition)),
-                    ),
-                    _BuildJointControlRow(
-                      label: 'Y',
-                      value: _controlValues[1],
-                      controller: _textControllers[1],
-                      min: _minPosition,
-                      max: _maxPosition,
-                      onValueChanged: (newValue) => _updateControlValue(1, newValue.clamp(_minPosition, _maxPosition)),
-                    ),
-                    _BuildJointControlRow(
-                      label: 'Z',
-                      value: _controlValues[2],
-                      controller: _textControllers[2],
-                      min: _minPosition,
-                      max: _maxPosition,
-                      onValueChanged: (newValue) => _updateControlValue(2, newValue.clamp(_minPosition, _maxPosition)),
-                    ),
-                    _BuildJointControlRow(
-                      label: 'OX',
-                      value: _controlValues[3],
-                      controller: _textControllers[3],
-                      min: _minOrientation,
-                      max: _maxOrientation,
-                      onValueChanged: (newValue) => _updateControlValue(3, newValue.clamp(_minOrientation, _maxOrientation)),
-                    ),
-                    _BuildJointControlRow(
-                      label: 'OY',
-                      value: _controlValues[4],
-                      controller: _textControllers[4],
-                      min: _minOrientation,
-                      max: _maxOrientation,
-                      onValueChanged: (newValue) => _updateControlValue(4, newValue.clamp(_minOrientation, _maxOrientation)),
-                    ),
-                    _BuildJointControlRow(
-                      label: 'OZ',
-                      value: _controlValues[5],
-                      controller: _textControllers[5],
-                      min: _minOrientation,
-                      max: _maxOrientation,
-                      onValueChanged: (newValue) => _updateControlValue(5, newValue.clamp(_minOrientation, _maxOrientation)),
-                    ),
-                    _BuildJointControlRow(
-                      label: 'Theta',
-                      value: _controlValues[6],
-                      controller: _textControllers[6],
-                      min: _minTheta,
-                      max: _maxTheta,
-                      onValueChanged: (newValue) => _updateControlValue(6, newValue.clamp(_minTheta, _maxTheta)),
-                    ),
-                  ],
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _BuildJointControlRow(
+                label: 'X',
+                value: _controlValues.x.roundToDouble(),
+                controller: _textControllers.x,
+                min: _minPosition,
+                max: _maxPosition,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'x',
+                  _textControllers.x,
+                  newValue.clamp(_minPosition, _maxPosition),
                 ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+              _BuildJointControlRow(
+                label: 'Y',
+                value: _controlValues.y.roundToDouble(),
+                controller: _textControllers.y,
+                min: _minPosition,
+                max: _maxPosition,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'y',
+                  _textControllers.y,
+                  newValue.clamp(_minPosition, _maxPosition),
+                ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+              _BuildJointControlRow(
+                label: 'Z',
+                value: _controlValues.z.roundToDouble(),
+                controller: _textControllers.z,
+                min: _minPosition,
+                max: _maxPosition,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'z',
+                  _textControllers.z,
+                  newValue.clamp(_minPosition, _maxPosition),
+                ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+              _BuildJointControlRow(
+                label: 'OX',
+                value: _controlValues.oX.roundToDouble(),
+                controller: _textControllers.oX,
+                min: _minOrientation,
+                max: _maxOrientation,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'oX',
+                  _textControllers.oX,
+                  newValue.clamp(_minOrientation, _maxOrientation),
+                ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+              _BuildJointControlRow(
+                label: 'OY',
+                value: _controlValues.oY.roundToDouble(),
+                controller: _textControllers.oY,
+                min: _minOrientation,
+                max: _maxOrientation,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'oY',
+                  _textControllers.oY,
+                  newValue.clamp(_minOrientation, _maxOrientation),
+                ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+              _BuildJointControlRow(
+                label: 'OZ',
+                value: _controlValues.oZ.roundToDouble(),
+                controller: _textControllers.oZ,
+                min: _minOrientation,
+                max: _maxOrientation,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'oZ',
+                  _textControllers.oZ,
+                  newValue.clamp(_minOrientation, _maxOrientation),
+                ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+              _BuildJointControlRow(
+                label: 'Theta',
+                value: _controlValues.theta.roundToDouble(),
+                controller: _textControllers.theta,
+                min: _minTheta,
+                max: _maxTheta,
+                onValueChanged: (newValue) => _updateControlValue(
+                  'theta',
+                  _textControllers.theta,
+                  newValue.clamp(_minTheta, _maxTheta),
+                ),
+                onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+              ),
+            ],
+          ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 20.0),
@@ -157,9 +245,16 @@ class _PoseWidgetState extends State<PoseWidget> {
               Text(
                 "Live",
               ),
+              Tooltip(
+                message: "In Live mode, pose will update \non release of the slider",
+                textAlign: TextAlign.center,
+                triggerMode: TooltipTriggerMode.tap,
+                preferBelow: false,
+                child: Icon(Icons.info_outline),
+              ),
               Spacer(),
               OutlinedButton.icon(
-                onPressed: _isLive ? null : () {},
+                onPressed: _isLive ? null : _updatePose,
                 label: Text("Execute"),
                 icon: Icon(Icons.play_arrow),
               ),
@@ -178,6 +273,7 @@ class _BuildJointControlRow extends StatelessWidget {
   final double min;
   final double max;
   final ValueChanged<double> onValueChanged;
+  final ValueChanged<void> onValueChangedEnd;
 
   const _BuildJointControlRow({
     required this.label,
@@ -186,6 +282,7 @@ class _BuildJointControlRow extends StatelessWidget {
     required this.min,
     required this.max,
     required this.onValueChanged,
+    required this.onValueChangedEnd,
   });
 
   @override
@@ -208,6 +305,7 @@ class _BuildJointControlRow extends StatelessWidget {
               max: max,
               label: value.toStringAsFixed(1),
               onChanged: onValueChanged,
+              onChangeEnd: onValueChangedEnd,
             ),
           ),
           const SizedBox(width: 16),
@@ -223,17 +321,24 @@ class _BuildJointControlRow extends StatelessWidget {
               onSubmitted: (newValue) {
                 final parsedValue = double.tryParse(newValue) ?? value;
                 onValueChanged(parsedValue);
+                onValueChangedEnd(parsedValue);
               },
             ),
           ),
           const SizedBox(width: 8),
           IconButton(
             icon: const Icon(Icons.remove),
-            onPressed: () => onValueChanged(value - 0.1),
+            onPressed: () async {
+              onValueChanged(value - (max == 1 ? 0.1 : 1.0));
+              onValueChangedEnd(value);
+            },
           ),
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () => onValueChanged(value + 0.1),
+            onPressed: () async {
+              onValueChanged(value + (max == 1 ? 0.1 : 1.0));
+              onValueChangedEnd(value);
+            },
           ),
         ],
       ),
