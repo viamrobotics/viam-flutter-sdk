@@ -13,15 +13,20 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.1
-  viam_sdk: ^0.10.0
-  viam_flutter_hotspot_provisioning_widget:
-    path: ../../
+  # These are declared as published versions to maintain clean dependency structure.
+  # Use dependency_overrides below to test with local versions during development.
+  viam_sdk: ^0.11.0
+  viam_flutter_hotspot_provisioning_widget: ^0.0.21
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^5.0.0
+
+dependency_overrides:
+  viam_sdk:
+    path: ../../
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
