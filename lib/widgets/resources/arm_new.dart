@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../viam_sdk.dart';
 import 'arm_widgets/joint_positions_widget.dart';
+import 'arm_widgets/pose_widget.dart';
 
 /// A widget to control an [Arm].
 class ViamArmWidgetNew extends StatelessWidget {
@@ -18,6 +19,7 @@ class ViamArmWidgetNew extends StatelessWidget {
     return Column(
       children: [
         JointPositionsWidget(arm: arm),
+        PoseWidget(arm: arm),
       ],
     );
   }
