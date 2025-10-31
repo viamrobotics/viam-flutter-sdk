@@ -1,0 +1,2 @@
+/Users/juliekras/viam/viam_flutter_hotspot_provisioning_widget/example/hotspot_provisioning/android/app/.cxx/Debug/47316xz1/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/juliekras/viam/viam_flutter_hotspot_provisioning_widget/example/hotspot_provisioning/android/app/.cxx/Debug/47316xz1/armeabi-v7a/CMakeFiles/rebuild_cache.dir
