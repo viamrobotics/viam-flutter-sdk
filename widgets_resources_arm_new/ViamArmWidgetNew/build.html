@@ -111,37 +111,7 @@ and</li>
 Widget build(BuildContext context) {
   return Column(
     children: [
-      Divider(),
-      Text(
-        &#39;End-effector Position&#39;,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      Divider(),
-      Stack(
-        children: [
-          _SlantedArrowPad(
-            &#47;&#47; TODO: add functions for arrow functionality
-            onUp: () {},
-            onDown: () {},
-            onLeft: () {},
-            onRight: () {},
-          ),
-          _BuildCornerButton(
-            alignment: Alignment.topLeft,
-            direction: ArrowDirection.up,
-            label: &#39;Z+&#39;,
-            onPressed: () {},
-          ),
-          _BuildCornerButton(
-            alignment: Alignment.topRight,
-            direction: ArrowDirection.down,
-            label: &#39;Z-&#39;,
-            onPressed: () {},
-          ),
-        ],
-      ),
+      PoseWidget(arm: arm),
     ],
   );
 }</code></pre>
