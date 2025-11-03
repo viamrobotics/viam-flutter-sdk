@@ -1,34 +1,82 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../../../viam_sdk.dart' as viam;
+
+import '../arm_new.dart';
 
 class JointPositionsWidget extends StatefulWidget {
   final viam.Arm arm;
-  const JointPositionsWidget({super.key, required this.arm});
+  final ArmNotifier updateNotifier;
+  const JointPositionsWidget({
+    super.key,
+    required this.arm,
+    required this.updateNotifier,
+  });
 
   @override
   State<JointPositionsWidget> createState() => _JointPositionsWidgetState();
 }
 
-bool _isLive = false;
-
 class _JointPositionsWidgetState extends State<JointPositionsWidget> {
   List<double> _jointValues = [];
+  bool _isLive = false;
+  List<TextEditingController> _textControllers = [];
 
   @override
   void initState() {
     super.initState();
+    widget.updateNotifier.addListener(_getJointPositions);
     _getJointPositions();
   }
 
+  @override
+  void dispose() {
+    widget.updateNotifier.removeListener(_getJointPositions);
+    for (final controller in _textControllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   Future<void> _getJointPositions() async {
+    for (final controller in _textControllers) {
+      controller.dispose();
+    }
+
     _jointValues = await widget.arm.jointPositions();
-    setState(() {});
+    _textControllers = List.generate(
+      _jointValues.length,
+      (index) => TextEditingController(text: _jointValues[index].toStringAsFixed(1)),
+    );
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  void _updateJointValue(int index, double value) {
+    const double minPosition = -359.0;
+    const double maxPosition = 359.0;
+    final clampedValue = value.clamp(minPosition, maxPosition);
+
+    setState(() {
+      _jointValues[index] = clampedValue;
+      final formattedValue = clampedValue.toStringAsFixed(1);
+      if (_textControllers[index].text != formattedValue) {
+        _textControllers[index].text = formattedValue;
+        _textControllers[index].selection = TextSelection.fromPosition(
+          TextPosition(offset: _textControllers[index].text.length),
+        );
+      }
+    });
+
+    if (_isLive) {
+      _setJointPositions();
+    }
   }
 
   Future<void> _setJointPositions() async {
     await widget.arm.moveToJointPositions(_jointValues);
+    widget.updateNotifier.armHasMoved();
   }
 
   @override
@@ -50,7 +98,18 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
             children: _jointValues.isEmpty
                 ? [CircularProgressIndicator.adaptive()]
                 : List.generate(_jointValues.length, (index) {
-                    return _BuildJointControlRow(index: index, arm: widget.arm, startJointValues: _jointValues);
+                    return _BuildJointControlRow(
+                      index: index,
+                      value: _jointValues[index],
+                      controller: _textControllers[index],
+                      onSliderChanged: (newValue) => _updateJointValue(index, newValue),
+                      onSubmitted: (newValue) {
+                        final parsedValue = double.tryParse(newValue) ?? _jointValues[index];
+                        _updateJointValue(index, parsedValue);
+                      },
+                      onDecrement: () => _updateJointValue(index, _jointValues[index] - 1.0),
+                      onIncrement: () => _updateJointValue(index, _jointValues[index] + 1.0),
+                    );
                   }),
           ),
         ),
@@ -84,59 +143,27 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
   }
 }
 
-class _BuildJointControlRow extends StatefulWidget {
-  final int index;
-  final viam.Arm arm;
-  final List<double> startJointValues;
-  const _BuildJointControlRow({required this.index, required this.arm, required this.startJointValues});
-
-  @override
-  State<_BuildJointControlRow> createState() => _BuildJointControlRowState();
-}
-
-class _BuildJointControlRowState extends State<_BuildJointControlRow> {
+class _BuildJointControlRow extends StatelessWidget {
   static const double _minPosition = -359.0;
   static const double _maxPosition = 359.0;
 
-  List<double> _jointValues = [];
-  List<TextEditingController> _textControllers = [];
+  final int index;
+  final double value;
+  final TextEditingController controller;
+  final ValueChanged<double> onSliderChanged;
+  final ValueChanged<String> onSubmitted;
+  final VoidCallback onIncrement;
+  final VoidCallback onDecrement;
 
-  @override
-  void initState() {
-    _jointValues = widget.startJointValues;
-    _textControllers = List.generate(
-      _jointValues.length,
-      (index) => TextEditingController(text: _jointValues[index].toStringAsFixed(1)),
-    );
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    for (final controller in _textControllers) {
-      controller.dispose();
-    }
-    super.dispose();
-  }
-
-  void _updateJointValue(int index, double value) {
-    final clampedValue = value.clamp(_minPosition, _maxPosition);
-
-    setState(() {
-      _jointValues[index] = clampedValue;
-      final formattedValue = clampedValue.toStringAsFixed(1);
-      if (_textControllers[index].text != formattedValue) {
-        _textControllers[index].text = formattedValue;
-        _textControllers[index].selection = TextSelection.fromPosition(
-          TextPosition(offset: _textControllers[index].text.length),
-        );
-      }
-    });
-
-    if (_isLive) {
-      widget.arm.moveToJointPositions(_jointValues);
-    }
-  }
+  const _BuildJointControlRow({
+    required this.index,
+    required this.value,
+    required this.controller,
+    required this.onSliderChanged,
+    required this.onSubmitted,
+    required this.onIncrement,
+    required this.onDecrement,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -147,46 +174,39 @@ class _BuildJointControlRowState extends State<_BuildJointControlRow> {
           SizedBox(
             width: 30,
             child: Text(
-              'J${widget.index + 1}',
+              'J${index + 1}',
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Expanded(
             child: Slider(
-              value: _jointValues[widget.index],
+              value: value,
               min: _minPosition,
               max: _maxPosition,
-              divisions: (_maxPosition - _minPosition).toInt(),
-              onChanged: (newValue) => _updateJointValue(widget.index, newValue),
+              divisions: (_maxPosition - _minPosition).round(),
+              onChanged: onSliderChanged,
             ),
           ),
           SizedBox(
             width: 70,
             child: TextField(
-              controller: _textControllers[widget.index],
+              controller: controller,
               textAlign: TextAlign.center,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,1}')),
               ],
-              onSubmitted: (newValue) {
-                final parsedValue = double.tryParse(newValue) ?? _jointValues[widget.index];
-                _updateJointValue(widget.index, parsedValue);
-              },
+              onSubmitted: onSubmitted,
             ),
           ),
           const SizedBox(width: 8),
           IconButton(
             icon: const Icon(Icons.remove),
-            onPressed: () {
-              _updateJointValue(widget.index, _jointValues[widget.index] - 1.0);
-            },
+            onPressed: onDecrement,
           ),
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () {
-              _updateJointValue(widget.index, _jointValues[widget.index] + 1.0);
-            },
+            onPressed: onIncrement,
           ),
         ],
       ),
