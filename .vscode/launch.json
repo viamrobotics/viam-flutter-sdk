@@ -23,6 +23,18 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        }
+        },
+        {
+            "name": "viam_robot_example_app",
+            "cwd": "example/viam_robot_example_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "hotspot_provisioning_example_app",
+            "cwd": "example/hotspot_provisioning_example_app",
+            "request": "launch",
+            "type": "dart"
+        },
     ]
 }
