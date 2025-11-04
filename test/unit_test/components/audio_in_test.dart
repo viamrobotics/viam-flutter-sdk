@@ -185,6 +185,32 @@ void main() {
         expect(audioIn.previousTimestampNanoseconds, null);
       });
 
+      test('getAudio with request_id returns it in all responses', () async {
+        final requestId = 'test-request-id-123';
+        final client = AudioInServiceClient(channel);
+        final stream = client.getAudio(GetAudioRequest()
+          ..name = name
+          ..codec = AudioCodec.pcm16
+          ..requestId = requestId);
+
+        final chunks = await stream.toList();
+        expect(chunks.length, 2);
+        expect(chunks[0].requestId, requestId);
+        expect(chunks[1].requestId, requestId);
+      });
+
+      test('getAudio without request_id returns empty request_id', () async {
+        final client = AudioInServiceClient(channel);
+        final stream = client.getAudio(GetAudioRequest()
+          ..name = name
+          ..codec = AudioCodec.pcm16);
+
+        final chunks = await stream.toList();
+        expect(chunks.length, 2);
+        expect(chunks[0].requestId, '');
+        expect(chunks[1].requestId, '');
+      });
+
       test('getProperties', () async {
         final client = AudioInServiceClient(channel);
         final result = await client.getProperties(GetPropertiesRequest()..name = name);
@@ -245,6 +271,21 @@ void main() {
         expect(audioIn.durationSeconds, null);
         expect(audioIn.previousTimestampNanoseconds, null);
         expect(audioIn.extra, null);
+      });
+
+      test('getAudio automatically generates request_id', () async {
+        final client = AudioInClient(name, channel);
+        final stream = client.getAudio(codec: AudioCodec.pcm16);
+
+        final chunks = await stream.toList();
+        expect(chunks.length, 2);
+
+        // Verify request_id is present and not empty
+        expect(chunks[0].requestId, isNotEmpty);
+        expect(chunks[1].requestId, isNotEmpty);
+
+        // Verify all chunks have the same request_id
+        expect(chunks[0].requestId, chunks[1].requestId);
       });
 
       test('getProperties', () async {

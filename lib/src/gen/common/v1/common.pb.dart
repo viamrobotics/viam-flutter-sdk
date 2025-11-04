@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/struct.pb.dart' as $48;
-import '../../google/protobuf/timestamp.pb.dart' as $49;
+import '../../google/protobuf/struct.pb.dart' as $50;
+import '../../google/protobuf/timestamp.pb.dart' as $51;
 import 'common.pbenum.dart';
 
 export 'common.pbenum.dart';
@@ -25,8 +25,6 @@ class ResourceName extends $pb.GeneratedMessage {
     $core.String? type,
     $core.String? subtype,
     $core.String? name,
-    $core.Iterable<$core.String>? remotePath,
-    $core.String? localName,
   }) {
     final $result = create();
     if (namespace != null) {
@@ -41,12 +39,6 @@ class ResourceName extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (remotePath != null) {
-      $result.remotePath.addAll(remotePath);
-    }
-    if (localName != null) {
-      $result.localName = localName;
-    }
     return $result;
   }
   ResourceName._() : super();
@@ -58,8 +50,6 @@ class ResourceName extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aOS(3, _omitFieldNames ? '' : 'subtype')
     ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..pPS(5, _omitFieldNames ? '' : 'remotePath')
-    ..aOS(6, _omitFieldNames ? '' : 'localName')
     ..hasRequiredFields = false
   ;
 
@@ -119,18 +109,6 @@ class ResourceName extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
   void clearName() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.List<$core.String> get remotePath => $_getList(4);
-
-  @$pb.TagNumber(6)
-  $core.String get localName => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set localName($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasLocalName() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearLocalName() => clearField(6);
 }
 
 ///  Pose is a combination of location and orientation.
@@ -1245,7 +1223,7 @@ class Transform extends $pb.GeneratedMessage {
     PoseInFrame? poseInObserverFrame,
     Geometry? physicalObject,
     $core.List<$core.int>? uuid,
-    $48.Struct? metadata,
+    $50.Struct? metadata,
   }) {
     final $result = create();
     if (referenceFrame != null) {
@@ -1274,7 +1252,7 @@ class Transform extends $pb.GeneratedMessage {
     ..aOM<PoseInFrame>(2, _omitFieldNames ? '' : 'poseInObserverFrame', subBuilder: PoseInFrame.create)
     ..aOM<Geometry>(3, _omitFieldNames ? '' : 'physicalObject', subBuilder: Geometry.create)
     ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'uuid', $pb.PbFieldType.OY)
-    ..aOM<$48.Struct>(5, _omitFieldNames ? '' : 'metadata', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(5, _omitFieldNames ? '' : 'metadata', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1344,15 +1322,15 @@ class Transform extends $pb.GeneratedMessage {
 
   /// Can hold information like color, opacity, points colors, collision_allowed, etc...
   @$pb.TagNumber(5)
-  $48.Struct get metadata => $_getN(4);
+  $50.Struct get metadata => $_getN(4);
   @$pb.TagNumber(5)
-  set metadata($48.Struct v) { setField(5, v); }
+  set metadata($50.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMetadata() => $_has(4);
   @$pb.TagNumber(5)
   void clearMetadata() => clearField(5);
   @$pb.TagNumber(5)
-  $48.Struct ensureMetadata() => $_ensure(4);
+  $50.Struct ensureMetadata() => $_ensure(4);
 }
 
 /// WorldState contains information about the physical environment around a given robot. All of the fields within this message are optional,
@@ -1466,7 +1444,7 @@ class ActuatorStatus extends $pb.GeneratedMessage {
 
 class ResponseMetadata extends $pb.GeneratedMessage {
   factory ResponseMetadata({
-    $49.Timestamp? capturedAt,
+    $51.Timestamp? capturedAt,
   }) {
     final $result = create();
     if (capturedAt != null) {
@@ -1479,7 +1457,7 @@ class ResponseMetadata extends $pb.GeneratedMessage {
   factory ResponseMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..aOM<$49.Timestamp>(1, _omitFieldNames ? '' : 'capturedAt', subBuilder: $49.Timestamp.create)
+    ..aOM<$51.Timestamp>(1, _omitFieldNames ? '' : 'capturedAt', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1509,22 +1487,22 @@ class ResponseMetadata extends $pb.GeneratedMessage {
   /// Note: If correlating between other resources, be sure that the means
   /// of measuring the capture are similar enough such that comparison can be made between them.
   @$pb.TagNumber(1)
-  $49.Timestamp get capturedAt => $_getN(0);
+  $51.Timestamp get capturedAt => $_getN(0);
   @$pb.TagNumber(1)
-  set capturedAt($49.Timestamp v) { setField(1, v); }
+  set capturedAt($51.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCapturedAt() => $_has(0);
   @$pb.TagNumber(1)
   void clearCapturedAt() => clearField(1);
   @$pb.TagNumber(1)
-  $49.Timestamp ensureCapturedAt() => $_ensure(0);
+  $51.Timestamp ensureCapturedAt() => $_ensure(0);
 }
 
 /// DoCommandRequest represents a generic DoCommand input
 class DoCommandRequest extends $pb.GeneratedMessage {
   factory DoCommandRequest({
     $core.String? name,
-    $48.Struct? command,
+    $50.Struct? command,
   }) {
     final $result = create();
     if (name != null) {
@@ -1541,7 +1519,7 @@ class DoCommandRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(2, _omitFieldNames ? '' : 'command', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'command', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1576,21 +1554,21 @@ class DoCommandRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $48.Struct get command => $_getN(1);
+  $50.Struct get command => $_getN(1);
   @$pb.TagNumber(2)
-  set command($48.Struct v) { setField(2, v); }
+  set command($50.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCommand() => $_has(1);
   @$pb.TagNumber(2)
   void clearCommand() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Struct ensureCommand() => $_ensure(1);
+  $50.Struct ensureCommand() => $_ensure(1);
 }
 
 /// DoCommandResponse represents a generic DoCommand output
 class DoCommandResponse extends $pb.GeneratedMessage {
   factory DoCommandResponse({
-    $48.Struct? result,
+    $50.Struct? result,
   }) {
     final $result = create();
     if (result != null) {
@@ -1603,7 +1581,7 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   factory DoCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..aOM<$48.Struct>(1, _omitFieldNames ? '' : 'result', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'result', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1629,21 +1607,21 @@ class DoCommandResponse extends $pb.GeneratedMessage {
   static DoCommandResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $48.Struct get result => $_getN(0);
+  $50.Struct get result => $_getN(0);
   @$pb.TagNumber(1)
-  set result($48.Struct v) { setField(1, v); }
+  set result($50.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasResult() => $_has(0);
   @$pb.TagNumber(1)
   void clearResult() => clearField(1);
   @$pb.TagNumber(1)
-  $48.Struct ensureResult() => $_ensure(0);
+  $50.Struct ensureResult() => $_ensure(0);
 }
 
 class GetKinematicsRequest extends $pb.GeneratedMessage {
   factory GetKinematicsRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1660,7 +1638,7 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetKinematicsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1697,15 +1675,15 @@ class GetKinematicsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetKinematicsResponse extends $pb.GeneratedMessage {
@@ -1778,7 +1756,7 @@ class GetKinematicsResponse extends $pb.GeneratedMessage {
 class GetGeometriesRequest extends $pb.GeneratedMessage {
   factory GetGeometriesRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1795,7 +1773,7 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetGeometriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1832,15 +1810,15 @@ class GetGeometriesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetGeometriesResponse extends $pb.GeneratedMessage {
@@ -1891,7 +1869,7 @@ class GetGeometriesResponse extends $pb.GeneratedMessage {
 class GetReadingsRequest extends $pb.GeneratedMessage {
   factory GetReadingsRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -1908,7 +1886,7 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1945,20 +1923,20 @@ class GetReadingsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetReadingsResponse extends $pb.GeneratedMessage {
   factory GetReadingsResponse({
-    $core.Map<$core.String, $48.Value>? readings,
+    $core.Map<$core.String, $50.Value>? readings,
   }) {
     final $result = create();
     if (readings != null) {
@@ -1971,7 +1949,7 @@ class GetReadingsResponse extends $pb.GeneratedMessage {
   factory GetReadingsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
-    ..m<$core.String, $48.Value>(1, _omitFieldNames ? '' : 'readings', entryClassName: 'GetReadingsResponse.ReadingsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $48.Value.create, valueDefaultOrMaker: $48.Value.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
+    ..m<$core.String, $50.Value>(1, _omitFieldNames ? '' : 'readings', entryClassName: 'GetReadingsResponse.ReadingsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $50.Value.create, valueDefaultOrMaker: $50.Value.getDefault, packageName: const $pb.PackageName('viam.common.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -1997,19 +1975,19 @@ class GetReadingsResponse extends $pb.GeneratedMessage {
   static GetReadingsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.String, $48.Value> get readings => $_getMap(0);
+  $core.Map<$core.String, $50.Value> get readings => $_getMap(0);
 }
 
 class LogEntry extends $pb.GeneratedMessage {
   factory LogEntry({
     $core.String? host,
     $core.String? level,
-    $49.Timestamp? time,
+    $51.Timestamp? time,
     $core.String? loggerName,
     $core.String? message,
-    $48.Struct? caller,
+    $50.Struct? caller,
     $core.String? stack,
-    $core.Iterable<$48.Struct>? fields,
+    $core.Iterable<$50.Struct>? fields,
   }) {
     final $result = create();
     if (host != null) {
@@ -2045,12 +2023,12 @@ class LogEntry extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'host')
     ..aOS(2, _omitFieldNames ? '' : 'level')
-    ..aOM<$49.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $49.Timestamp.create)
+    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'time', subBuilder: $51.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'loggerName')
     ..aOS(5, _omitFieldNames ? '' : 'message')
-    ..aOM<$48.Struct>(6, _omitFieldNames ? '' : 'caller', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(6, _omitFieldNames ? '' : 'caller', subBuilder: $50.Struct.create)
     ..aOS(7, _omitFieldNames ? '' : 'stack')
-    ..pc<$48.Struct>(8, _omitFieldNames ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $48.Struct.create)
+    ..pc<$50.Struct>(8, _omitFieldNames ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -2094,15 +2072,15 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearLevel() => clearField(2);
 
   @$pb.TagNumber(3)
-  $49.Timestamp get time => $_getN(2);
+  $51.Timestamp get time => $_getN(2);
   @$pb.TagNumber(3)
-  set time($49.Timestamp v) { setField(3, v); }
+  set time($51.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearTime() => clearField(3);
   @$pb.TagNumber(3)
-  $49.Timestamp ensureTime() => $_ensure(2);
+  $51.Timestamp ensureTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get loggerName => $_getSZ(3);
@@ -2123,15 +2101,15 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearMessage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $48.Struct get caller => $_getN(5);
+  $50.Struct get caller => $_getN(5);
   @$pb.TagNumber(6)
-  set caller($48.Struct v) { setField(6, v); }
+  set caller($50.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCaller() => $_has(5);
   @$pb.TagNumber(6)
   void clearCaller() => clearField(6);
   @$pb.TagNumber(6)
-  $48.Struct ensureCaller() => $_ensure(5);
+  $50.Struct ensureCaller() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get stack => $_getSZ(6);
@@ -2143,7 +2121,231 @@ class LogEntry extends $pb.GeneratedMessage {
   void clearStack() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$48.Struct> get fields => $_getList(7);
+  $core.List<$50.Struct> get fields => $_getList(7);
+}
+
+/// Information about an audio stream or device.
+class AudioInfo extends $pb.GeneratedMessage {
+  factory AudioInfo({
+    $core.String? codec,
+    $core.int? sampleRateHz,
+    $core.int? numChannels,
+  }) {
+    final $result = create();
+    if (codec != null) {
+      $result.codec = codec;
+    }
+    if (sampleRateHz != null) {
+      $result.sampleRateHz = sampleRateHz;
+    }
+    if (numChannels != null) {
+      $result.numChannels = numChannels;
+    }
+    return $result;
+  }
+  AudioInfo._() : super();
+  factory AudioInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AudioInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AudioInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'codec')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'sampleRateHz', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'numChannels', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AudioInfo clone() => AudioInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AudioInfo copyWith(void Function(AudioInfo) updates) => super.copyWith((message) => updates(message as AudioInfo)) as AudioInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AudioInfo create() => AudioInfo._();
+  AudioInfo createEmptyInstance() => create();
+  static $pb.PbList<AudioInfo> createRepeated() => $pb.PbList<AudioInfo>();
+  @$core.pragma('dart2js:noInline')
+  static AudioInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AudioInfo>(create);
+  static AudioInfo? _defaultInstance;
+
+  /// Audio codec used for the stream or device (e.g., "pcm16", "pcm32float", "mp3")
+  @$pb.TagNumber(1)
+  $core.String get codec => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set codec($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCodec() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCodec() => clearField(1);
+
+  /// Sample rate of the audio in Hz
+  @$pb.TagNumber(2)
+  $core.int get sampleRateHz => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set sampleRateHz($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSampleRateHz() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSampleRateHz() => clearField(2);
+
+  /// Number of audio channels in the recording or playback
+  @$pb.TagNumber(3)
+  $core.int get numChannels => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set numChannels($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNumChannels() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNumChannels() => clearField(3);
+}
+
+/// Shared properties for AudioIn and AudioOut components.
+class GetPropertiesRequest extends $pb.GeneratedMessage {
+  factory GetPropertiesRequest({
+    $core.String? name,
+    $50.Struct? extra,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (extra != null) {
+      $result.extra = extra;
+    }
+    return $result;
+  }
+  GetPropertiesRequest._() : super();
+  factory GetPropertiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest clone() => GetPropertiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesRequest copyWith(void Function(GetPropertiesRequest) updates) => super.copyWith((message) => updates(message as GetPropertiesRequest)) as GetPropertiesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest create() => GetPropertiesRequest._();
+  GetPropertiesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesRequest> createRepeated() => $pb.PbList<GetPropertiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesRequest>(create);
+  static GetPropertiesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(99)
+  $50.Struct get extra => $_getN(1);
+  @$pb.TagNumber(99)
+  set extra($50.Struct v) { setField(99, v); }
+  @$pb.TagNumber(99)
+  $core.bool hasExtra() => $_has(1);
+  @$pb.TagNumber(99)
+  void clearExtra() => clearField(99);
+  @$pb.TagNumber(99)
+  $50.Struct ensureExtra() => $_ensure(1);
+}
+
+class GetPropertiesResponse extends $pb.GeneratedMessage {
+  factory GetPropertiesResponse({
+    $core.Iterable<$core.String>? supportedCodecs,
+    $core.int? sampleRateHz,
+    $core.int? numChannels,
+  }) {
+    final $result = create();
+    if (supportedCodecs != null) {
+      $result.supportedCodecs.addAll(supportedCodecs);
+    }
+    if (sampleRateHz != null) {
+      $result.sampleRateHz = sampleRateHz;
+    }
+    if (numChannels != null) {
+      $result.numChannels = numChannels;
+    }
+    return $result;
+  }
+  GetPropertiesResponse._() : super();
+  factory GetPropertiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetPropertiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.common.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'supportedCodecs')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'sampleRateHz', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'numChannels', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse clone() => GetPropertiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetPropertiesResponse copyWith(void Function(GetPropertiesResponse) updates) => super.copyWith((message) => updates(message as GetPropertiesResponse)) as GetPropertiesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse create() => GetPropertiesResponse._();
+  GetPropertiesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetPropertiesResponse> createRepeated() => $pb.PbList<GetPropertiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetPropertiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPropertiesResponse>(create);
+  static GetPropertiesResponse? _defaultInstance;
+
+  /// List of audio codecs supported by the system (e.g., "mp3", "pcm16", "pcm32float")
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get supportedCodecs => $_getList(0);
+
+  /// current sample rate in Hz
+  @$pb.TagNumber(2)
+  $core.int get sampleRateHz => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set sampleRateHz($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSampleRateHz() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSampleRateHz() => clearField(2);
+
+  /// Maximum number of audio channels supported (e.g., 1 for mono, 2 for stereo)
+  @$pb.TagNumber(3)
+  $core.int get numChannels => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set numChannels($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNumChannels() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNumChannels() => clearField(3);
 }
 
 class Common {

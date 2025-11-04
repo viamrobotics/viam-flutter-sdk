@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $48;
-import '../../../google/protobuf/timestamp.pb.dart' as $49;
+import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/timestamp.pb.dart' as $51;
 import 'shell.pbenum.dart';
 
 export 'shell.pbenum.dart';
@@ -24,7 +24,7 @@ class ShellRequest extends $pb.GeneratedMessage {
   factory ShellRequest({
     $core.String? name,
     $core.String? dataIn,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -45,7 +45,7 @@ class ShellRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ShellRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.shell.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'dataIn')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -90,15 +90,15 @@ class ShellRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(2);
+  $50.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(2);
+  $50.Struct ensureExtra() => $_ensure(2);
 }
 
 class ShellResponse extends $pb.GeneratedMessage {
@@ -195,7 +195,7 @@ class FileData extends $pb.GeneratedMessage {
     $core.bool? isDir,
     $core.List<$core.int>? data,
     $core.bool? eof,
-    $49.Timestamp? modTime,
+    $51.Timestamp? modTime,
     $core.int? mode,
   }) {
     final $result = create();
@@ -232,7 +232,7 @@ class FileData extends $pb.GeneratedMessage {
     ..aOB(3, _omitFieldNames ? '' : 'isDir')
     ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
     ..aOB(5, _omitFieldNames ? '' : 'eof')
-    ..aOM<$49.Timestamp>(6, _omitFieldNames ? '' : 'modTime', subBuilder: $49.Timestamp.create)
+    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'modTime', subBuilder: $51.Timestamp.create)
     ..a<$core.int>(7, _omitFieldNames ? '' : 'mode', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -305,15 +305,15 @@ class FileData extends $pb.GeneratedMessage {
 
   /// Note(erd): maybe support access time in the future if needed
   @$pb.TagNumber(6)
-  $49.Timestamp get modTime => $_getN(5);
+  $51.Timestamp get modTime => $_getN(5);
   @$pb.TagNumber(6)
-  set modTime($49.Timestamp v) { setField(6, v); }
+  set modTime($51.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasModTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearModTime() => clearField(6);
   @$pb.TagNumber(6)
-  $49.Timestamp ensureModTime() => $_ensure(5);
+  $51.Timestamp ensureModTime() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.int get mode => $_getIZ(6);
@@ -331,7 +331,7 @@ class CopyFilesToMachineRequestMetadata extends $pb.GeneratedMessage {
     CopyFilesSourceType? sourceType,
     $core.String? destination,
     $core.bool? preserve,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -360,7 +360,7 @@ class CopyFilesToMachineRequestMetadata extends $pb.GeneratedMessage {
     ..e<CopyFilesSourceType>(2, _omitFieldNames ? '' : 'sourceType', $pb.PbFieldType.OE, defaultOrMaker: CopyFilesSourceType.COPY_FILES_SOURCE_TYPE_UNSPECIFIED, valueOf: CopyFilesSourceType.valueOf, enumValues: CopyFilesSourceType.values)
     ..aOS(3, _omitFieldNames ? '' : 'destination')
     ..aOB(4, _omitFieldNames ? '' : 'preserve')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -429,15 +429,15 @@ class CopyFilesToMachineRequestMetadata extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(4);
+  $50.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(4);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(4);
+  $50.Struct ensureExtra() => $_ensure(4);
 }
 
 enum CopyFilesToMachineRequest_Request {
@@ -584,7 +584,7 @@ class CopyFilesFromMachineRequestMetadata extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? paths,
     $core.bool? allowRecursion,
     $core.bool? preserve,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -613,7 +613,7 @@ class CopyFilesFromMachineRequestMetadata extends $pb.GeneratedMessage {
     ..pPS(2, _omitFieldNames ? '' : 'paths')
     ..aOB(3, _omitFieldNames ? '' : 'allowRecursion')
     ..aOB(4, _omitFieldNames ? '' : 'preserve')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -676,15 +676,15 @@ class CopyFilesFromMachineRequestMetadata extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(4);
+  $50.Struct get extra => $_getN(4);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(4);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(4);
+  $50.Struct ensureExtra() => $_ensure(4);
 }
 
 enum CopyFilesFromMachineRequest_Request {

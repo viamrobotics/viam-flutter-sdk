@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../app/datasync/v1/data_sync.pbenum.dart' as $6;
-import '../../../google/protobuf/struct.pb.dart' as $48;
+import '../../../app/datasync/v1/data_sync.pbenum.dart' as $7;
+import '../../../google/protobuf/struct.pb.dart' as $50;
 
 class SyncRequest extends $pb.GeneratedMessage {
   factory SyncRequest({
     $core.String? name,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -36,7 +36,7 @@ class SyncRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.datamanager.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -72,15 +72,15 @@ class SyncRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(1);
+  $50.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(1);
+  $50.Struct ensureExtra() => $_ensure(1);
 }
 
 class SyncResponse extends $pb.GeneratedMessage {
@@ -121,8 +121,8 @@ class UploadBinaryDataToDatasetsRequest extends $pb.GeneratedMessage {
     $core.List<$core.int>? binaryData,
     $core.Iterable<$core.String>? tags,
     $core.Iterable<$core.String>? datasetIds,
-    $6.MimeType? mimeType,
-    $48.Struct? extra,
+    $7.MimeType? mimeType,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -154,8 +154,8 @@ class UploadBinaryDataToDatasetsRequest extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'binaryData', $pb.PbFieldType.OY)
     ..pPS(3, _omitFieldNames ? '' : 'tags')
     ..pPS(4, _omitFieldNames ? '' : 'datasetIds')
-    ..e<$6.MimeType>(5, _omitFieldNames ? '' : 'mimeType', $pb.PbFieldType.OE, defaultOrMaker: $6.MimeType.MIME_TYPE_UNSPECIFIED, valueOf: $6.MimeType.valueOf, enumValues: $6.MimeType.values)
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..e<$7.MimeType>(5, _omitFieldNames ? '' : 'mimeType', $pb.PbFieldType.OE, defaultOrMaker: $7.MimeType.MIME_TYPE_UNSPECIFIED, valueOf: $7.MimeType.valueOf, enumValues: $7.MimeType.values)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -205,9 +205,9 @@ class UploadBinaryDataToDatasetsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get datasetIds => $_getList(3);
 
   @$pb.TagNumber(5)
-  $6.MimeType get mimeType => $_getN(4);
+  $7.MimeType get mimeType => $_getN(4);
   @$pb.TagNumber(5)
-  set mimeType($6.MimeType v) { setField(5, v); }
+  set mimeType($7.MimeType v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMimeType() => $_has(4);
   @$pb.TagNumber(5)
@@ -215,15 +215,15 @@ class UploadBinaryDataToDatasetsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(5);
+  $50.Struct get extra => $_getN(5);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(5);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(5);
+  $50.Struct ensureExtra() => $_ensure(5);
 }
 
 class UploadBinaryDataToDatasetsResponse extends $pb.GeneratedMessage {
