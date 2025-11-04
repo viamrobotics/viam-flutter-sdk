@@ -1,4 +1,4 @@
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
 import '../../gen/component/motor/v1/motor.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
@@ -141,14 +141,14 @@ abstract class Motor extends Resource {
   /// For more information, see [Motor component](https://docs.viam.com/dev/reference/apis/components/motor/#ismoving).
   Future<bool> isMoving({Map<String, dynamic>? extra});
 
-  /// Get the [ResourceName] for this [Motor] with the given [name].
+  /// Get the [common_pb.ResourceName] for this [Motor] with the given [name].
   ///
   /// ```
   /// var name = Motor.getResourceName('myMotor');
   /// ```
   ///
   /// For more information, see [Motor component](https://docs.viam.com/dev/reference/apis/components/motor/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return Motor.subtype.getResourceName(name);
   }
 

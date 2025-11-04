@@ -1,6 +1,6 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
 import '../../gen/component/base/v1/base.pbgrpc.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -64,14 +64,14 @@ class BaseService extends BaseServiceBase {
   }
 
   @override
-  Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
+  Future<common_pb.DoCommandResponse> doCommand(ServiceCall call, common_pb.DoCommandRequest request) async {
     final base = _fromManager(request.name);
     final result = await base.doCommand(request.command.toMap());
-    return DoCommandResponse()..result = result.toStruct();
+    return common_pb.DoCommandResponse()..result = result.toStruct();
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }

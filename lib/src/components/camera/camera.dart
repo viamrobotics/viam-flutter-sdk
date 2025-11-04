@@ -1,4 +1,4 @@
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
 import '../../gen/component/camera/v1/camera.pb.dart';
 import '../../media/image.dart';
 import '../../resource/base.dart';
@@ -106,14 +106,14 @@ abstract class Camera extends Resource {
     Map<String, dynamic>? extra,
   });
 
-  /// Get the [ResourceName] for this [Camera] with the given [name]
+  /// Get the [common_pb.ResourceName] for this [Camera] with the given [name]
   ///
   /// ```
   /// final myCameraResourceName = myCamera.getResourceName("my_camera");
   /// ```
   ///
   /// For more information, see [Camera component](https://docs.viam.com/dev/reference/apis/components/camera/#getresourcename).
-  static ResourceName getResourceName(String name) {
+  static common_pb.ResourceName getResourceName(String name) {
     return Camera.subtype.getResourceName(name);
   }
 
