@@ -1,6 +1,6 @@
 import 'package:grpc/grpc.dart';
 
-import '../../gen/common/v1/common.pb.dart';
+import '../../gen/common/v1/common.pb.dart' as common_pb;
 import '../../gen/component/movementsensor/v1/movementsensor.pbgrpc.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
@@ -22,17 +22,17 @@ class MovementSensorService extends MovementSensorServiceBase {
   }
 
   @override
-  Future<GetReadingsResponse> getReadings(ServiceCall call, GetReadingsRequest request) async {
+  Future<common_pb.GetReadingsResponse> getReadings(ServiceCall call, common_pb.GetReadingsRequest request) async {
     final movementSensor = _fromManager(request.name);
     final result = await movementSensor.readings(extra: request.extra.toMap());
-    return GetReadingsResponse()..readings.addAll(result.toStruct().fields);
+    return common_pb.GetReadingsResponse()..readings.addAll(result.toStruct().fields);
   }
 
   @override
-  Future<DoCommandResponse> doCommand(ServiceCall call, DoCommandRequest request) async {
+  Future<common_pb.DoCommandResponse> doCommand(ServiceCall call, common_pb.DoCommandRequest request) async {
     final movementSensor = _fromManager(request.name);
     final result = await movementSensor.doCommand(request.command.toMap());
-    return DoCommandResponse()..result = result.toStruct();
+    return common_pb.DoCommandResponse()..result = result.toStruct();
   }
 
   @override
@@ -99,7 +99,7 @@ class MovementSensorService extends MovementSensorServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
+  Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
