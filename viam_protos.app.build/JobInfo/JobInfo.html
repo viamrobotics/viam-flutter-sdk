@@ -60,6 +60,7 @@
 <li><span class="parameter" id="-param-status"><span class="type-annotation"><a href="../../viam_protos.app.build/JobStatus-class.html">JobStatus</a>?</span> <span class="parameter-name">status</span>, </span></li>
 <li><span class="parameter" id="-param-startTime"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">startTime</span>, </span></li>
 <li><span class="parameter" id="-param-endTime"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">endTime</span>, </span></li>
+<li><span class="parameter" id="-param-buildStep"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">buildStep</span>, </span></li>
 </ol>})
     </section>
     
@@ -73,8 +74,9 @@
   $core.String? platform,
   $core.String? version,
   JobStatus? status,
-  $49.Timestamp? startTime,
-  $49.Timestamp? endTime,
+  $51.Timestamp? startTime,
+  $51.Timestamp? endTime,
+  $core.String? buildStep,
 }) {
   final $result = create();
   if (buildId != null) {
@@ -94,6 +96,9 @@
   }
   if (endTime != null) {
     $result.endTime = endTime;
+  }
+  if (buildStep != null) {
+    $result.buildStep = buildStep;
   }
   return $result;
 }</code></pre>

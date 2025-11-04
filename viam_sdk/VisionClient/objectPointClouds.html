@@ -64,7 +64,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get a list of <a href="../../viam_protos.common.common/PointCloudObject-class.html">PointCloudObject</a>s from the camera named <code>cameraName</code>.</p>
+  <p>Get a list of <a href="../../viam_protos.common.common/PointCloudObject-class.html">common_pb.PointCloudObject</a>s from the camera named <code>cameraName</code>.</p>
 <pre class="language-dart"><code>// Example:
 var ptCloud = await myVisionService.objectPointClouds('myCamera');
 </code></pre>
@@ -75,7 +75,7 @@ var ptCloud = await myVisionService.objectPointClouds('myCamera');
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;PointCloudObject&gt;&gt; objectPointClouds(String cameraName, {Map&lt;String, dynamic&gt;? extra}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;common_pb.PointCloudObject&gt;&gt; objectPointClouds(String cameraName, {Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetObjectPointCloudsRequest(name: name, cameraName: cameraName, mimeType: MimeType.pcd.name, extra: extra?.toStruct());
   final response = await client.getObjectPointClouds(request, options: callOptions);
   return response.objects;

@@ -68,7 +68,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get the current linear velocity as a <a href="../../viam_sdk/Vector3-class.html">Vector3</a> with x, y, and z axes represented in mm/sec.</p>
+  <p>Get the current linear velocity as a <a href="../../viam_sdk/Vector3-class.html">common_pb.Vector3</a> with x, y, and z axes represented in mm/sec.</p>
 <pre class="language-dart"><code>var linVel = await myMovementSensor.linearVelocity();
 </code></pre>
 <p>For more information, see <a href="https://docs.viam.com/dev/reference/apis/components/movement-sensor/#getlinearvelocity">Movement Sensor component</a>.</p>
@@ -79,7 +79,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;Vector3&gt; linearVelocity({Map&lt;String, dynamic&gt;? extra}) async {
+Future&lt;common_pb.Vector3&gt; linearVelocity({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetLinearVelocityRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();

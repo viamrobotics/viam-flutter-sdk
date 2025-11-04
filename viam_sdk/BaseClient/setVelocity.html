@@ -85,7 +85,7 @@ await myBase.setVelocity(Vector3(0, 50, 0), Vector3(0, 0, 15));
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;void&gt; setVelocity(Vector3 linear, Vector3 angular, {Map&lt;String, dynamic&gt;? extra}) async {
+Future&lt;void&gt; setVelocity(common_pb.Vector3 linear, common_pb.Vector3 angular, {Map&lt;String, dynamic&gt;? extra}) async {
   final request = SetVelocityRequest()
     ..name = name
     ..linear = linear

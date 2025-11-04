@@ -63,27 +63,27 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">ShellServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$42.ShellRequest, $42.ShellResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$44.ShellRequest, $44.ShellResponse&gt;(
       &#39;Shell&#39;,
       shell,
       true,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $42.ShellRequest.fromBuffer(value),
-      ($42.ShellResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$42.CopyFilesToMachineRequest, $42.CopyFilesToMachineResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $44.ShellRequest.fromBuffer(value),
+      ($44.ShellResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$44.CopyFilesToMachineRequest, $44.CopyFilesToMachineResponse&gt;(
       &#39;CopyFilesToMachine&#39;,
       copyFilesToMachine,
       true,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $42.CopyFilesToMachineRequest.fromBuffer(value),
-      ($42.CopyFilesToMachineResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$42.CopyFilesFromMachineRequest, $42.CopyFilesFromMachineResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $44.CopyFilesToMachineRequest.fromBuffer(value),
+      ($44.CopyFilesToMachineResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$44.CopyFilesFromMachineRequest, $44.CopyFilesFromMachineResponse&gt;(
       &#39;CopyFilesFromMachine&#39;,
       copyFilesFromMachine,
       true,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $42.CopyFilesFromMachineRequest.fromBuffer(value),
-      ($42.CopyFilesFromMachineResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $44.CopyFilesFromMachineRequest.fromBuffer(value),
+      ($44.CopyFilesFromMachineResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

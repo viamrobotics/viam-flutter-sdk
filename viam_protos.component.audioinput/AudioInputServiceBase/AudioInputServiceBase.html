@@ -63,27 +63,27 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">AudioInputServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$17.ChunksRequest, $17.ChunksResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$18.ChunksRequest, $18.ChunksResponse&gt;(
       &#39;Chunks&#39;,
       chunks_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $17.ChunksRequest.fromBuffer(value),
-      ($17.ChunksResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$17.PropertiesRequest, $17.PropertiesResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $18.ChunksRequest.fromBuffer(value),
+      ($18.ChunksResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$18.PropertiesRequest, $18.PropertiesResponse&gt;(
       &#39;Properties&#39;,
       properties_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $17.PropertiesRequest.fromBuffer(value),
-      ($17.PropertiesResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$17.RecordRequest, $18.HttpBody&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $18.PropertiesRequest.fromBuffer(value),
+      ($18.PropertiesResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$18.RecordRequest, $19.HttpBody&gt;(
       &#39;Record&#39;,
       record_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $17.RecordRequest.fromBuffer(value),
-      ($18.HttpBody value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $18.RecordRequest.fromBuffer(value),
+      ($19.HttpBody value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

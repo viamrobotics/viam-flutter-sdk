@@ -63,34 +63,34 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">InputControllerServiceBase() {
-  $addMethod($grpc.ServiceMethod&lt;$26.GetControlsRequest, $26.GetControlsResponse&gt;(
+  $addMethod($grpc.ServiceMethod&lt;$28.GetControlsRequest, $28.GetControlsResponse&gt;(
       &#39;GetControls&#39;,
       getControls_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $26.GetControlsRequest.fromBuffer(value),
-      ($26.GetControlsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$26.GetEventsRequest, $26.GetEventsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.GetControlsRequest.fromBuffer(value),
+      ($28.GetControlsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$28.GetEventsRequest, $28.GetEventsResponse&gt;(
       &#39;GetEvents&#39;,
       getEvents_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $26.GetEventsRequest.fromBuffer(value),
-      ($26.GetEventsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$26.StreamEventsRequest, $26.StreamEventsResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.GetEventsRequest.fromBuffer(value),
+      ($28.GetEventsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$28.StreamEventsRequest, $28.StreamEventsResponse&gt;(
       &#39;StreamEvents&#39;,
       streamEvents_Pre,
       false,
       true,
-      ($core.List&lt;$core.int&gt; value) =&gt; $26.StreamEventsRequest.fromBuffer(value),
-      ($26.StreamEventsResponse value) =&gt; value.writeToBuffer()));
-  $addMethod($grpc.ServiceMethod&lt;$26.TriggerEventRequest, $26.TriggerEventResponse&gt;(
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.StreamEventsRequest.fromBuffer(value),
+      ($28.StreamEventsResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$28.TriggerEventRequest, $28.TriggerEventResponse&gt;(
       &#39;TriggerEvent&#39;,
       triggerEvent_Pre,
       false,
       false,
-      ($core.List&lt;$core.int&gt; value) =&gt; $26.TriggerEventRequest.fromBuffer(value),
-      ($26.TriggerEventResponse value) =&gt; value.writeToBuffer()));
+      ($core.List&lt;$core.int&gt; value) =&gt; $28.TriggerEventRequest.fromBuffer(value),
+      ($28.TriggerEventResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.DoCommandRequest, $16.DoCommandResponse&gt;(
       &#39;DoCommand&#39;,
       doCommand_Pre,

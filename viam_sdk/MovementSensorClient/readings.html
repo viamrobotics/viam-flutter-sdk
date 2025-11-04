@@ -82,7 +82,7 @@ it will not appear in the readings dictionary.</p>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;Map&lt;String, dynamic&gt;&gt; readings({Map&lt;String, dynamic&gt;? extra}) async {
-  final request = GetReadingsRequest()
+  final request = common_pb.GetReadingsRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
   final response = await client.getReadings(request, options: callOptions);

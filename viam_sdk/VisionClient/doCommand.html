@@ -81,7 +81,7 @@ var result = myArm.doCommand(command);
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;Map&lt;String, dynamic&gt;&gt; doCommand(Map&lt;String, dynamic&gt; command) async {
-  final request = DoCommandRequest()
+  final request = common_pb.DoCommandRequest()
     ..name = name
     ..command = command.toStruct();
   final response = await client.doCommand(request, options: callOptions);

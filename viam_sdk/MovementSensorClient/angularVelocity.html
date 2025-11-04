@@ -68,7 +68,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get the current angular velocity as a <a href="../../viam_sdk/Vector3-class.html">Vector3</a> with
+  <p>Get the current angular velocity as a <a href="../../viam_sdk/Vector3-class.html">common_pb.Vector3</a> with
 x, y, and z axes represented in radians per second.</p>
 <pre class="language-dart"><code>var angVel = await myMovementSensor.angularVelocity();
 </code></pre>
@@ -80,7 +80,7 @@ x, y, and z axes represented in radians per second.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;Vector3&gt; angularVelocity({Map&lt;String, dynamic&gt;? extra}) async {
+Future&lt;common_pb.Vector3&gt; angularVelocity({Map&lt;String, dynamic&gt;? extra}) async {
   final request = GetAngularVelocityRequest()
     ..name = name
     ..extra = extra?.toStruct() ?? Struct();
