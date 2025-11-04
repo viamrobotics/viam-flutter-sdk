@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_webrtc: ^0.12.1+hotfix.1
-  grpc: ^4.0.1
+  grpc: ^4.1.0
   protobuf: ^3.0.0
   image: ^4.0.16
   logger: ^2.0.1

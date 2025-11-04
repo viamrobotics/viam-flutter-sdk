@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viam_example_app/resources/arm_widgets/imu_widget.dart';
 import 'package:viam_example_app/resources/arm_widgets/joint_positions_widget.dart';
 import 'package:viam_example_app/resources/arm_widgets/orienation_widget.dart';
 import 'package:viam_example_app/resources/arm_widgets/position_widget.dart';
@@ -24,7 +25,17 @@ class ViamArmWidgetNew extends StatelessWidget {
         // AngularArrowsWidget(),
         // JointPositionsWidget(arm: arm),
         OrientationWidget(arm: arm),
+        ImuWidget(arm: arm, updateNotifier: ArmNotifier()),
       ],
     );
+  }
+}
+
+// need real arm notifier from martha
+class ArmNotifier extends ChangeNotifier {
+  ArmNotifier();
+
+  void update() {
+    notifyListeners();
   }
 }

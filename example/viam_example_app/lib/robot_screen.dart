@@ -5,6 +5,7 @@
 /// and send commands to them.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:viam_example_app/resources/arm_screen.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
@@ -35,7 +36,7 @@ class _RobotScreenState extends State<RobotScreen> {
   ///
   /// This is initialized late because it requires an asynchronous
   /// network call to establish the connection.
-  late RobotClient client;
+  RobotClient? client;
 
   @override
   void initState() {
@@ -49,7 +50,7 @@ class _RobotScreenState extends State<RobotScreen> {
     // You should always close the [RobotClient] to free up resources.
     // Calling [RobotClient.close] will clean up any tasks and
     // resources created by Viam.
-    client.close();
+    client?.close();
     super.dispose();
   }
 
@@ -59,7 +60,10 @@ class _RobotScreenState extends State<RobotScreen> {
     // Using the authenticated [Viam] the received as a parameter,
     // we can obtain a connection to the Robot.
     // There is a helpful convenience method on the [Viam] instance for this.
-    final robotClient = await widget._viam.getRobotClient(widget.robot);
+    // final robotClient = await widget._viam.getRobotClient(widget.robot);
+    final options = RobotClientOptions.withApiKey(dotenv.env['API_KEY_ID']!, dotenv.env['API_KEY']!);
+    options.dialOptions.attemptMdns = false;
+    final robotClient = await RobotClient.atAddress(dotenv.env['ROBOT_LOCATION']!, options);
     setState(() {
       client = robotClient;
       _isLoading = false;
@@ -69,7 +73,8 @@ class _RobotScreenState extends State<RobotScreen> {
   /// A computed variable that returns the available [ResourceName]s of
   /// this robot in an alphabetically sorted list.
   List<ResourceName> get _sortedResourceNames {
-    return client.resourceNames..sort((a, b) => a.name.compareTo(b.name));
+    return client?.resourceNames ?? []
+      ..sort((a, b) => a.name.compareTo(b.name));
   }
 
   /// For this example, we have control screens for only these specific resource subtypes:
@@ -106,27 +111,27 @@ class _RobotScreenState extends State<RobotScreen> {
       // [RobotClient.getResource<t>(ResourceName)]
       // to get a resource directly from a [RobotClient].
       // e.g. client.getResource<Camera>(rn)
-      final camera = Camera.fromRobot(client, rn.name);
+      final camera = Camera.fromRobot(client!, rn.name);
 
       // A [StreamClient] is a WebRTC stream that allows you to view
       // a live stream from the camera. This requires that the connection
       // to the smart machine be through WebRTC (the default option).
       // If the connection is not using WebRTC, then this will error.
-      final stream = client.getStream(rn.name);
+      final stream = client!.getStream(rn.name);
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => CameraScreen(camera, stream)));
     } else if (rn.subtype == Motor.subtype.resourceSubtype) {
       // Similar to camera above, get the motor from the robot client.
-      final motor = Motor.fromRobot(client, rn.name);
+      final motor = Motor.fromRobot(client!, rn.name);
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => MotorScreen(motor)));
     } else if (rn.subtype == Arm.subtype.resourceSubtype) {
-      final arm = Arm.fromRobot(client, rn.name);
+      final arm = Arm.fromRobot(client!, rn.name);
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => ViamArmWidgetNew(arm: arm)));
     }
   }
 
   Widget getResourceWidget(ResourceName rName) {
     if (rName.subtype == Arm.subtype.resourceSubtype) {
-      return Padding(padding: EdgeInsets.all(4), child: ViamArmWidgetNew(arm: Arm.fromRobot(client, rName.name)));
+      return Padding(padding: EdgeInsets.all(4), child: ViamArmWidgetNew(arm: Arm.fromRobot(client!, rName.name)));
     }
     return const Text(
       'No screen selected!',
@@ -139,31 +144,33 @@ class _RobotScreenState extends State<RobotScreen> {
       appBar: AppBar(
         title: Text(widget.robot.name),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            for (int i = 0; i < _sortedResourceNames.length; i++)
-              _isNavigable(_sortedResourceNames[i])
-                  ? ExpansionTile(
-                      title: Text(_sortedResourceNames[i].name),
-                      subtitle:
-                          Text('${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
-                      children: [
-                        Container(
-                          color: Theme.of(context).colorScheme.surface,
-                          child: getResourceWidget(_sortedResourceNames[i]),
-                        )
-                      ],
-                    )
-                  : ListTile(
-                      title: Text(_sortedResourceNames[i].name),
-                      subtitle:
-                          Text('${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
-                      enabled: false,
-                    )
-          ],
-        ),
-      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              child: Column(
+                children: [
+                  for (int i = 0; i < _sortedResourceNames.length; i++)
+                    _isNavigable(_sortedResourceNames[i])
+                        ? ExpansionTile(
+                            title: Text(_sortedResourceNames[i].name),
+                            subtitle: Text(
+                                '${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
+                            children: [
+                              Container(
+                                color: Theme.of(context).colorScheme.surface,
+                                child: getResourceWidget(_sortedResourceNames[i]),
+                              )
+                            ],
+                          )
+                        : ListTile(
+                            title: Text(_sortedResourceNames[i].name),
+                            subtitle: Text(
+                                '${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
+                            enabled: false,
+                          )
+                ],
+              ),
+            ),
     );
   }
 }
