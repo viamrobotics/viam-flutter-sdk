@@ -87,7 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool _isNavigable(ResourceName rname) {
     return [
-      AudioIn.subtype.resourceSubtype,
       Base.subtype.resourceSubtype,
       Board.subtype.resourceSubtype,
       Button.subtype.resourceSubtype,
@@ -105,9 +104,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget? _getScreen(ResourceName rname) {
     if (!_isNavigable(rname)) {
       return null;
-    }
-    if (rname.subtype == AudioIn.subtype.resourceSubtype) {
-      return AudioInScreen(audioIn: AudioIn.fromRobot(_robot, rname.name), resourceName: rname);
     }
     if (rname.subtype == Base.subtype.resourceSubtype && _cameraName != null) {
       return BaseScreen(

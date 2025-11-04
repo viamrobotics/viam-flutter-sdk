@@ -15,14 +15,14 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/struct.pb.dart' as $48;
 
 class MoveStraightRequest extends $pb.GeneratedMessage {
   factory MoveStraightRequest({
     $core.String? name,
     $fixnum.Int64? distanceMm,
     $core.double? mmPerSec,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -47,7 +47,7 @@ class MoveStraightRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aInt64(2, _omitFieldNames ? '' : 'distanceMm')
     ..a<$core.double>(3, _omitFieldNames ? '' : 'mmPerSec', $pb.PbFieldType.OD)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -104,15 +104,15 @@ class MoveStraightRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class MoveStraightResponse extends $pb.GeneratedMessage {
@@ -152,7 +152,7 @@ class SpinRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.double? angleDeg,
     $core.double? degsPerSec,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -177,7 +177,7 @@ class SpinRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$core.double>(2, _omitFieldNames ? '' : 'angleDeg', $pb.PbFieldType.OD)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'degsPerSec', $pb.PbFieldType.OD)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -234,15 +234,15 @@ class SpinRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SpinResponse extends $pb.GeneratedMessage {
@@ -280,7 +280,7 @@ class SpinResponse extends $pb.GeneratedMessage {
 class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -297,7 +297,7 @@ class StopRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.base.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -334,15 +334,15 @@ class StopRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $48.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $48.Struct ensureExtra() => $_ensure(1);
 }
 
 class StopResponse extends $pb.GeneratedMessage {
@@ -382,7 +382,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $16.Vector3? linear,
     $16.Vector3? angular,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -407,7 +407,7 @@ class SetPowerRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$16.Vector3>(2, _omitFieldNames ? '' : 'linear', subBuilder: $16.Vector3.create)
     ..aOM<$16.Vector3>(3, _omitFieldNames ? '' : 'angular', subBuilder: $16.Vector3.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -468,15 +468,15 @@ class SetPowerRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SetPowerResponse extends $pb.GeneratedMessage {
@@ -516,7 +516,7 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $16.Vector3? linear,
     $16.Vector3? angular,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -541,7 +541,7 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOM<$16.Vector3>(2, _omitFieldNames ? '' : 'linear', subBuilder: $16.Vector3.create)
     ..aOM<$16.Vector3>(3, _omitFieldNames ? '' : 'angular', subBuilder: $16.Vector3.create)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -602,15 +602,15 @@ class SetVelocityRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(3);
+  $48.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(3);
+  $48.Struct ensureExtra() => $_ensure(3);
 }
 
 class SetVelocityResponse extends $pb.GeneratedMessage {
@@ -748,7 +748,7 @@ class IsMovingResponse extends $pb.GeneratedMessage {
 class GetPropertiesRequest extends $pb.GeneratedMessage {
   factory GetPropertiesRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $48.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -765,7 +765,7 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPropertiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.base.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -801,15 +801,15 @@ class GetPropertiesRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $48.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($48.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $48.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetPropertiesResponse extends $pb.GeneratedMessage {

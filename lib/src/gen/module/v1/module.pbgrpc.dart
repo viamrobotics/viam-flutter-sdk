@@ -15,32 +15,32 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'module.pb.dart' as $37;
+import 'module.pb.dart' as $35;
 
 export 'module.pb.dart';
 
 @$pb.GrpcServiceName('viam.module.v1.ModuleService')
 class ModuleServiceClient extends $grpc.Client {
-  static final _$addResource = $grpc.ClientMethod<$37.AddResourceRequest, $37.AddResourceResponse>(
+  static final _$addResource = $grpc.ClientMethod<$35.AddResourceRequest, $35.AddResourceResponse>(
       '/viam.module.v1.ModuleService/AddResource',
-      ($37.AddResourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.AddResourceResponse.fromBuffer(value));
-  static final _$reconfigureResource = $grpc.ClientMethod<$37.ReconfigureResourceRequest, $37.ReconfigureResourceResponse>(
+      ($35.AddResourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $35.AddResourceResponse.fromBuffer(value));
+  static final _$reconfigureResource = $grpc.ClientMethod<$35.ReconfigureResourceRequest, $35.ReconfigureResourceResponse>(
       '/viam.module.v1.ModuleService/ReconfigureResource',
-      ($37.ReconfigureResourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.ReconfigureResourceResponse.fromBuffer(value));
-  static final _$removeResource = $grpc.ClientMethod<$37.RemoveResourceRequest, $37.RemoveResourceResponse>(
+      ($35.ReconfigureResourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $35.ReconfigureResourceResponse.fromBuffer(value));
+  static final _$removeResource = $grpc.ClientMethod<$35.RemoveResourceRequest, $35.RemoveResourceResponse>(
       '/viam.module.v1.ModuleService/RemoveResource',
-      ($37.RemoveResourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.RemoveResourceResponse.fromBuffer(value));
-  static final _$ready = $grpc.ClientMethod<$37.ReadyRequest, $37.ReadyResponse>(
+      ($35.RemoveResourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $35.RemoveResourceResponse.fromBuffer(value));
+  static final _$ready = $grpc.ClientMethod<$35.ReadyRequest, $35.ReadyResponse>(
       '/viam.module.v1.ModuleService/Ready',
-      ($37.ReadyRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.ReadyResponse.fromBuffer(value));
-  static final _$validateConfig = $grpc.ClientMethod<$37.ValidateConfigRequest, $37.ValidateConfigResponse>(
+      ($35.ReadyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $35.ReadyResponse.fromBuffer(value));
+  static final _$validateConfig = $grpc.ClientMethod<$35.ValidateConfigRequest, $35.ValidateConfigResponse>(
       '/viam.module.v1.ModuleService/ValidateConfig',
-      ($37.ValidateConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $37.ValidateConfigResponse.fromBuffer(value));
+      ($35.ValidateConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $35.ValidateConfigResponse.fromBuffer(value));
 
   ModuleServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -48,23 +48,23 @@ class ModuleServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$37.AddResourceResponse> addResource($37.AddResourceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$35.AddResourceResponse> addResource($35.AddResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addResource, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.ReconfigureResourceResponse> reconfigureResource($37.ReconfigureResourceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$35.ReconfigureResourceResponse> reconfigureResource($35.ReconfigureResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$reconfigureResource, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.RemoveResourceResponse> removeResource($37.RemoveResourceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$35.RemoveResourceResponse> removeResource($35.RemoveResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeResource, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.ReadyResponse> ready($37.ReadyRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$35.ReadyResponse> ready($35.ReadyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$ready, request, options: options);
   }
 
-  $grpc.ResponseFuture<$37.ValidateConfigResponse> validateConfig($37.ValidateConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$35.ValidateConfigResponse> validateConfig($35.ValidateConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$validateConfig, request, options: options);
   }
 }
@@ -74,66 +74,66 @@ abstract class ModuleServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.module.v1.ModuleService';
 
   ModuleServiceBase() {
-    $addMethod($grpc.ServiceMethod<$37.AddResourceRequest, $37.AddResourceResponse>(
+    $addMethod($grpc.ServiceMethod<$35.AddResourceRequest, $35.AddResourceResponse>(
         'AddResource',
         addResource_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.AddResourceRequest.fromBuffer(value),
-        ($37.AddResourceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.ReconfigureResourceRequest, $37.ReconfigureResourceResponse>(
+        ($core.List<$core.int> value) => $35.AddResourceRequest.fromBuffer(value),
+        ($35.AddResourceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$35.ReconfigureResourceRequest, $35.ReconfigureResourceResponse>(
         'ReconfigureResource',
         reconfigureResource_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.ReconfigureResourceRequest.fromBuffer(value),
-        ($37.ReconfigureResourceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.RemoveResourceRequest, $37.RemoveResourceResponse>(
+        ($core.List<$core.int> value) => $35.ReconfigureResourceRequest.fromBuffer(value),
+        ($35.ReconfigureResourceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$35.RemoveResourceRequest, $35.RemoveResourceResponse>(
         'RemoveResource',
         removeResource_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.RemoveResourceRequest.fromBuffer(value),
-        ($37.RemoveResourceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.ReadyRequest, $37.ReadyResponse>(
+        ($core.List<$core.int> value) => $35.RemoveResourceRequest.fromBuffer(value),
+        ($35.RemoveResourceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$35.ReadyRequest, $35.ReadyResponse>(
         'Ready',
         ready_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.ReadyRequest.fromBuffer(value),
-        ($37.ReadyResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$37.ValidateConfigRequest, $37.ValidateConfigResponse>(
+        ($core.List<$core.int> value) => $35.ReadyRequest.fromBuffer(value),
+        ($35.ReadyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$35.ValidateConfigRequest, $35.ValidateConfigResponse>(
         'ValidateConfig',
         validateConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $37.ValidateConfigRequest.fromBuffer(value),
-        ($37.ValidateConfigResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $35.ValidateConfigRequest.fromBuffer(value),
+        ($35.ValidateConfigResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$37.AddResourceResponse> addResource_Pre($grpc.ServiceCall call, $async.Future<$37.AddResourceRequest> request) async {
+  $async.Future<$35.AddResourceResponse> addResource_Pre($grpc.ServiceCall call, $async.Future<$35.AddResourceRequest> request) async {
     return addResource(call, await request);
   }
 
-  $async.Future<$37.ReconfigureResourceResponse> reconfigureResource_Pre($grpc.ServiceCall call, $async.Future<$37.ReconfigureResourceRequest> request) async {
+  $async.Future<$35.ReconfigureResourceResponse> reconfigureResource_Pre($grpc.ServiceCall call, $async.Future<$35.ReconfigureResourceRequest> request) async {
     return reconfigureResource(call, await request);
   }
 
-  $async.Future<$37.RemoveResourceResponse> removeResource_Pre($grpc.ServiceCall call, $async.Future<$37.RemoveResourceRequest> request) async {
+  $async.Future<$35.RemoveResourceResponse> removeResource_Pre($grpc.ServiceCall call, $async.Future<$35.RemoveResourceRequest> request) async {
     return removeResource(call, await request);
   }
 
-  $async.Future<$37.ReadyResponse> ready_Pre($grpc.ServiceCall call, $async.Future<$37.ReadyRequest> request) async {
+  $async.Future<$35.ReadyResponse> ready_Pre($grpc.ServiceCall call, $async.Future<$35.ReadyRequest> request) async {
     return ready(call, await request);
   }
 
-  $async.Future<$37.ValidateConfigResponse> validateConfig_Pre($grpc.ServiceCall call, $async.Future<$37.ValidateConfigRequest> request) async {
+  $async.Future<$35.ValidateConfigResponse> validateConfig_Pre($grpc.ServiceCall call, $async.Future<$35.ValidateConfigRequest> request) async {
     return validateConfig(call, await request);
   }
 
-  $async.Future<$37.AddResourceResponse> addResource($grpc.ServiceCall call, $37.AddResourceRequest request);
-  $async.Future<$37.ReconfigureResourceResponse> reconfigureResource($grpc.ServiceCall call, $37.ReconfigureResourceRequest request);
-  $async.Future<$37.RemoveResourceResponse> removeResource($grpc.ServiceCall call, $37.RemoveResourceRequest request);
-  $async.Future<$37.ReadyResponse> ready($grpc.ServiceCall call, $37.ReadyRequest request);
-  $async.Future<$37.ValidateConfigResponse> validateConfig($grpc.ServiceCall call, $37.ValidateConfigRequest request);
+  $async.Future<$35.AddResourceResponse> addResource($grpc.ServiceCall call, $35.AddResourceRequest request);
+  $async.Future<$35.ReconfigureResourceResponse> reconfigureResource($grpc.ServiceCall call, $35.ReconfigureResourceRequest request);
+  $async.Future<$35.RemoveResourceResponse> removeResource($grpc.ServiceCall call, $35.RemoveResourceRequest request);
+  $async.Future<$35.ReadyResponse> ready($grpc.ServiceCall call, $35.ReadyRequest request);
+  $async.Future<$35.ValidateConfigResponse> validateConfig($grpc.ServiceCall call, $35.ValidateConfigRequest request);
 }

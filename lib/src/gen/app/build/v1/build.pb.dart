@@ -13,8 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $51;
-import '../../packages/v1/packages.pb.dart' as $1;
+import '../../../google/protobuf/timestamp.pb.dart' as $49;
 import 'build.pbenum.dart';
 
 export 'build.pbenum.dart';
@@ -269,220 +268,6 @@ class GetLogsRequest extends $pb.GeneratedMessage {
   void clearPlatform() => clearField(2);
 }
 
-class ReloadBuildInfo extends $pb.GeneratedMessage {
-  factory ReloadBuildInfo({
-    $core.String? platform,
-    $core.String? workdir,
-    $core.String? moduleId,
-  }) {
-    final $result = create();
-    if (platform != null) {
-      $result.platform = platform;
-    }
-    if (workdir != null) {
-      $result.workdir = workdir;
-    }
-    if (moduleId != null) {
-      $result.moduleId = moduleId;
-    }
-    return $result;
-  }
-  ReloadBuildInfo._() : super();
-  factory ReloadBuildInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReloadBuildInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReloadBuildInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'platform')
-    ..aOS(2, _omitFieldNames ? '' : 'workdir')
-    ..aOS(3, _omitFieldNames ? '' : 'moduleId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ReloadBuildInfo clone() => ReloadBuildInfo()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ReloadBuildInfo copyWith(void Function(ReloadBuildInfo) updates) => super.copyWith((message) => updates(message as ReloadBuildInfo)) as ReloadBuildInfo;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ReloadBuildInfo create() => ReloadBuildInfo._();
-  ReloadBuildInfo createEmptyInstance() => create();
-  static $pb.PbList<ReloadBuildInfo> createRepeated() => $pb.PbList<ReloadBuildInfo>();
-  @$core.pragma('dart2js:noInline')
-  static ReloadBuildInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReloadBuildInfo>(create);
-  static ReloadBuildInfo? _defaultInstance;
-
-  /// platform to build the reload module for
-  @$pb.TagNumber(1)
-  $core.String get platform => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set platform($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPlatform() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPlatform() => clearField(1);
-
-  /// optional working directory. defaults to repo root
-  @$pb.TagNumber(2)
-  $core.String get workdir => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set workdir($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasWorkdir() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearWorkdir() => clearField(2);
-
-  /// org ID for the module
-  @$pb.TagNumber(3)
-  $core.String get moduleId => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set moduleId($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasModuleId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearModuleId() => clearField(3);
-}
-
-enum StartReloadBuildRequest_CloudBuild {
-  package, 
-  buildInfo, 
-  notSet
-}
-
-class StartReloadBuildRequest extends $pb.GeneratedMessage {
-  factory StartReloadBuildRequest({
-    $1.CreatePackageRequest? package,
-    ReloadBuildInfo? buildInfo,
-  }) {
-    final $result = create();
-    if (package != null) {
-      $result.package = package;
-    }
-    if (buildInfo != null) {
-      $result.buildInfo = buildInfo;
-    }
-    return $result;
-  }
-  StartReloadBuildRequest._() : super();
-  factory StartReloadBuildRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StartReloadBuildRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static const $core.Map<$core.int, StartReloadBuildRequest_CloudBuild> _StartReloadBuildRequest_CloudBuildByTag = {
-    1 : StartReloadBuildRequest_CloudBuild.package,
-    2 : StartReloadBuildRequest_CloudBuild.buildInfo,
-    0 : StartReloadBuildRequest_CloudBuild.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartReloadBuildRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2])
-    ..aOM<$1.CreatePackageRequest>(1, _omitFieldNames ? '' : 'package', subBuilder: $1.CreatePackageRequest.create)
-    ..aOM<ReloadBuildInfo>(2, _omitFieldNames ? '' : 'buildInfo', subBuilder: ReloadBuildInfo.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  StartReloadBuildRequest clone() => StartReloadBuildRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  StartReloadBuildRequest copyWith(void Function(StartReloadBuildRequest) updates) => super.copyWith((message) => updates(message as StartReloadBuildRequest)) as StartReloadBuildRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static StartReloadBuildRequest create() => StartReloadBuildRequest._();
-  StartReloadBuildRequest createEmptyInstance() => create();
-  static $pb.PbList<StartReloadBuildRequest> createRepeated() => $pb.PbList<StartReloadBuildRequest>();
-  @$core.pragma('dart2js:noInline')
-  static StartReloadBuildRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartReloadBuildRequest>(create);
-  static StartReloadBuildRequest? _defaultInstance;
-
-  StartReloadBuildRequest_CloudBuild whichCloudBuild() => _StartReloadBuildRequest_CloudBuildByTag[$_whichOneof(0)]!;
-  void clearCloudBuild() => clearField($_whichOneof(0));
-
-  @$pb.TagNumber(1)
-  $1.CreatePackageRequest get package => $_getN(0);
-  @$pb.TagNumber(1)
-  set package($1.CreatePackageRequest v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPackage() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPackage() => clearField(1);
-  @$pb.TagNumber(1)
-  $1.CreatePackageRequest ensurePackage() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  ReloadBuildInfo get buildInfo => $_getN(1);
-  @$pb.TagNumber(2)
-  set buildInfo(ReloadBuildInfo v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasBuildInfo() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearBuildInfo() => clearField(2);
-  @$pb.TagNumber(2)
-  ReloadBuildInfo ensureBuildInfo() => $_ensure(1);
-}
-
-class StartReloadBuildResponse extends $pb.GeneratedMessage {
-  factory StartReloadBuildResponse({
-    $core.String? buildId,
-  }) {
-    final $result = create();
-    if (buildId != null) {
-      $result.buildId = buildId;
-    }
-    return $result;
-  }
-  StartReloadBuildResponse._() : super();
-  factory StartReloadBuildResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StartReloadBuildResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartReloadBuildResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.build.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'buildId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  StartReloadBuildResponse clone() => StartReloadBuildResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  StartReloadBuildResponse copyWith(void Function(StartReloadBuildResponse) updates) => super.copyWith((message) => updates(message as StartReloadBuildResponse)) as StartReloadBuildResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static StartReloadBuildResponse create() => StartReloadBuildResponse._();
-  StartReloadBuildResponse createEmptyInstance() => create();
-  static $pb.PbList<StartReloadBuildResponse> createRepeated() => $pb.PbList<StartReloadBuildResponse>();
-  @$core.pragma('dart2js:noInline')
-  static StartReloadBuildResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartReloadBuildResponse>(create);
-  static StartReloadBuildResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get buildId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set buildId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBuildId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBuildId() => clearField(1);
-}
-
 /// GetLogsResponse is a streaming endpoint that may have multiple messages that belong
 /// to the same build_step if there are too many bytes to fit into a single gRPC
 /// response.
@@ -557,8 +342,8 @@ class JobInfo extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? version,
     JobStatus? status,
-    $51.Timestamp? startTime,
-    $51.Timestamp? endTime,
+    $49.Timestamp? startTime,
+    $49.Timestamp? endTime,
   }) {
     final $result = create();
     if (buildId != null) {
@@ -590,8 +375,8 @@ class JobInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..e<JobStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JobStatus.JOB_STATUS_UNSPECIFIED, valueOf: JobStatus.valueOf, enumValues: JobStatus.values)
-    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $51.Timestamp.create)
+    ..aOM<$49.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $49.Timestamp.create)
+    ..aOM<$49.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $49.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -653,26 +438,26 @@ class JobInfo extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $51.Timestamp get startTime => $_getN(4);
+  $49.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($51.Timestamp v) { setField(5, v); }
+  set startTime($49.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Timestamp ensureStartTime() => $_ensure(4);
+  $49.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $51.Timestamp get endTime => $_getN(5);
+  $49.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($51.Timestamp v) { setField(6, v); }
+  set endTime($49.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $51.Timestamp ensureEndTime() => $_ensure(5);
+  $49.Timestamp ensureEndTime() => $_ensure(5);
 }
 
 class ListJobsRequest extends $pb.GeneratedMessage {

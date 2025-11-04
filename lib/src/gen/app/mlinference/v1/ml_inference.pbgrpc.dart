@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'ml_inference.pb.dart' as $9;
+import 'ml_inference.pb.dart' as $8;
 
 export 'ml_inference.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.mlinference.v1.MLInferenceService')
 class MLInferenceServiceClient extends $grpc.Client {
-  static final _$getInference = $grpc.ClientMethod<$9.GetInferenceRequest, $9.GetInferenceResponse>(
+  static final _$getInference = $grpc.ClientMethod<$8.GetInferenceRequest, $8.GetInferenceResponse>(
       '/viam.app.mlinference.v1.MLInferenceService/GetInference',
-      ($9.GetInferenceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $9.GetInferenceResponse.fromBuffer(value));
+      ($8.GetInferenceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $8.GetInferenceResponse.fromBuffer(value));
 
   MLInferenceServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class MLInferenceServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$9.GetInferenceResponse> getInference($9.GetInferenceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$8.GetInferenceResponse> getInference($8.GetInferenceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getInference, request, options: options);
   }
 }
@@ -42,18 +42,18 @@ abstract class MLInferenceServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.mlinference.v1.MLInferenceService';
 
   MLInferenceServiceBase() {
-    $addMethod($grpc.ServiceMethod<$9.GetInferenceRequest, $9.GetInferenceResponse>(
+    $addMethod($grpc.ServiceMethod<$8.GetInferenceRequest, $8.GetInferenceResponse>(
         'GetInference',
         getInference_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $9.GetInferenceRequest.fromBuffer(value),
-        ($9.GetInferenceResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $8.GetInferenceRequest.fromBuffer(value),
+        ($8.GetInferenceResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$9.GetInferenceResponse> getInference_Pre($grpc.ServiceCall call, $async.Future<$9.GetInferenceRequest> request) async {
+  $async.Future<$8.GetInferenceResponse> getInference_Pre($grpc.ServiceCall call, $async.Future<$8.GetInferenceRequest> request) async {
     return getInference(call, await request);
   }
 
-  $async.Future<$9.GetInferenceResponse> getInference($grpc.ServiceCall call, $9.GetInferenceRequest request);
+  $async.Future<$8.GetInferenceResponse> getInference($grpc.ServiceCall call, $8.GetInferenceRequest request);
 }

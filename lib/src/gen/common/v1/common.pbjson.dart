@@ -37,13 +37,17 @@ const ResourceName$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
     {'1': 'subtype', '3': 3, '4': 1, '5': 9, '10': 'subtype'},
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'remote_path', '3': 5, '4': 3, '5': 9, '10': 'remotePath'},
+    {'1': 'local_name', '3': 6, '4': 1, '5': 9, '10': 'localName'},
   ],
 };
 
 /// Descriptor for `ResourceName`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceNameDescriptor = $convert.base64Decode(
     'CgxSZXNvdXJjZU5hbWUSHAoJbmFtZXNwYWNlGAEgASgJUgluYW1lc3BhY2USEgoEdHlwZRgCIA'
-    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWU=');
+    'EoCVIEdHlwZRIYCgdzdWJ0eXBlGAMgASgJUgdzdWJ0eXBlEhIKBG5hbWUYBCABKAlSBG5hbWUS'
+    'HwoLcmVtb3RlX3BhdGgYBSADKAlSCnJlbW90ZVBhdGgSHQoKbG9jYWxfbmFtZRgGIAEoCVIJbG'
+    '9jYWxOYW1l');
 
 @$core.Deprecated('Use poseDescriptor instead')
 const Pose$json = {
@@ -474,49 +478,4 @@ final $typed_data.Uint8List logEntryDescriptor = $convert.base64Decode(
     'xlchgGIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBmNhbGxlchIUCgVzdGFjaxgHIAEo'
     'CVIFc3RhY2sSLwoGZmllbGRzGAggAygLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIGZmllbG'
     'Rz');
-
-@$core.Deprecated('Use audioInfoDescriptor instead')
-const AudioInfo$json = {
-  '1': 'AudioInfo',
-  '2': [
-    {'1': 'codec', '3': 1, '4': 1, '5': 9, '10': 'codec'},
-    {'1': 'sample_rate_hz', '3': 2, '4': 1, '5': 5, '10': 'sampleRateHz'},
-    {'1': 'num_channels', '3': 3, '4': 1, '5': 5, '10': 'numChannels'},
-  ],
-};
-
-/// Descriptor for `AudioInfo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List audioInfoDescriptor = $convert.base64Decode(
-    'CglBdWRpb0luZm8SFAoFY29kZWMYASABKAlSBWNvZGVjEiQKDnNhbXBsZV9yYXRlX2h6GAIgAS'
-    'gFUgxzYW1wbGVSYXRlSHoSIQoMbnVtX2NoYW5uZWxzGAMgASgFUgtudW1DaGFubmVscw==');
-
-@$core.Deprecated('Use getPropertiesRequestDescriptor instead')
-const GetPropertiesRequest$json = {
-  '1': 'GetPropertiesRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
-  ],
-};
-
-/// Descriptor for `GetPropertiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPropertiesRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRQcm9wZXJ0aWVzUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEi0KBWV4dHJhGGMgAS'
-    'gLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdFIFZXh0cmE=');
-
-@$core.Deprecated('Use getPropertiesResponseDescriptor instead')
-const GetPropertiesResponse$json = {
-  '1': 'GetPropertiesResponse',
-  '2': [
-    {'1': 'supported_codecs', '3': 1, '4': 3, '5': 9, '10': 'supportedCodecs'},
-    {'1': 'sample_rate_hz', '3': 2, '4': 1, '5': 5, '10': 'sampleRateHz'},
-    {'1': 'num_channels', '3': 3, '4': 1, '5': 5, '10': 'numChannels'},
-  ],
-};
-
-/// Descriptor for `GetPropertiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPropertiesResponseDescriptor = $convert.base64Decode(
-    'ChVHZXRQcm9wZXJ0aWVzUmVzcG9uc2USKQoQc3VwcG9ydGVkX2NvZGVjcxgBIAMoCVIPc3VwcG'
-    '9ydGVkQ29kZWNzEiQKDnNhbXBsZV9yYXRlX2h6GAIgASgFUgxzYW1wbGVSYXRlSHoSIQoMbnVt'
-    'X2NoYW5uZWxzGAMgASgFUgtudW1DaGFubmVscw==');
 
