@@ -258,8 +258,8 @@ class _ImuWidgetState extends State<ImuWidget> {
     _isProcessingQueue = true;
 
     while (_poseQueue.isNotEmpty) {
-      // Only execute every 10th pose
-      if (_poseCounter % 10 == 0) {
+      // Only execute every 20th pose
+      if (_poseCounter % 20 == 0) {
         // Get the latest pose from the queue (skip intermediate ones)
         final poseToExecute = _poseQueue.last;
         _poseQueue.clear(); // Clear all accumulated poses
