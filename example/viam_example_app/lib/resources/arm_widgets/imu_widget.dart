@@ -32,9 +32,9 @@ class _ImuWidgetState extends State<ImuWidget> {
 
   // Arm movement control variables
   DateTime? _lastArmCommandTime;
-  static const Duration _armCommandInterval = Duration(milliseconds: 200); // Rate limit: 10 commands/sec
+  static const Duration _armCommandInterval = Duration(milliseconds: 200); // Rate limit: 5 commands/sec
 
-  // Scale factor: 300mm/meter = 300mm of arm movement per meter of phone movement
+  // Scale factor: 1000mm/meter = 1000mm of arm movement per meter of phone movement
   static const double _positionScale = 1000.0;
 
   static const double _velocityDecay = 0.90; // Decay factor to prevent drift
@@ -58,9 +58,9 @@ class _ImuWidgetState extends State<ImuWidget> {
   DateTime? _lastIntegrationTime;
 
   // Orientation (radians)
-  double _orientationX = 0.0; // Roll (rotation around X-axis, in radians)
-  double _orientationY = 0.0; // Pitch (rotation around Y-axis, in radians)
-  double _orientationZ = 0.0; // Yaw (rotation around Z-axis, in radians)
+  double _orientationX = 0.0; // Roll
+  double _orientationY = 0.0; // Pitch
+  double _orientationZ = 0.0; // Yaw
   DateTime? _lastGyroIntegrationTime;
 
   // Arm position in the world when we set the reference. set once when you press "set reference" and stays constant.
@@ -73,8 +73,7 @@ class _ImuWidgetState extends State<ImuWidget> {
     _streamSubscriptions.add(
       userAccelerometerEventStream(samplingPeriod: sensorInterval).listen(
         (UserAccelerometerEvent event) {
-          // Move arm based on accelerometer data
-          _moveArmFromImu(event);
+          _createPoseFromImu(event);
         },
         onError: (e) {
           showDialog(
@@ -152,10 +151,17 @@ class _ImuWidgetState extends State<ImuWidget> {
     _orientationZ *= 0.999;
   }
 
-  /// Move the arm based on IMU accelerometer data using acceleration to get position
-  /// we do this by taking integral of acceleration to get velocity, and then integral of velocity to get position.
-  Future<void> _moveArmFromImu(UserAccelerometerEvent event) async {
-    // event is the accelerometer data from the phone ^^
+  /// Create a pose based on IMU accelerometer data using acceleration to get position
+  /// The pose is added to a queue for sequential processing.
+  Future<void> _createPoseFromImu(UserAccelerometerEvent event) async {
+    if (!_isReferenceSet || _referenceArmPose == null) {
+      return;
+    }
+
+    if (_isMovingArm) {
+      return;
+    }
+
     final now = DateTime.now();
 
     // Initialize integration time on first run
@@ -165,88 +171,59 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
 
     // Calculate time delta between now and last integration time (in seconds)
-    // why? b/c we need to know how much time has passed, aka how long have we been accelerating for?
     // tldr: to get velocity, we need acceleration * time.
     final dt = now.difference(_lastIntegrationTime!).inMilliseconds / 1000.0;
     _lastIntegrationTime = now;
 
     // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
     // if (dt > 0.5) {
-    //   // this number might be too small
     //   return;
     // }
 
-    // Apply dead zone to acceleration
-    // peoples hands are shaky, phone sensors are jittery, this helps filter out the noise.
+    // Apply dead zone to acceleration to filter out noise
     final accelX = event.x.abs() > _deadZone ? event.x : 0.0;
     final accelY = event.y.abs() > _deadZone ? event.y : 0.0;
     final accelZ = event.z.abs() > _deadZone ? event.z : 0.0;
-    // print('eventz: ${event.z}');
     if (accelX == 0.0 && accelY == 0.0 && accelZ == 0.0) {
       _velocityX = 0.0;
       _velocityY = 0.0;
       _velocityZ = 0.0;
-      // return;
     }
 
-    // STEP 1: Calculate velocity. velocity is the integral of acceleration wrt time. (v = v0 + a*dt)
+    // Calculate velocity
     _velocityX += accelX * dt;
     _velocityY += accelY * dt;
     _velocityZ += accelZ * dt;
 
     // Apply decay to prevent drift when stationary
-    // we are multiply velocity by 0.95 so that we reduce it by 5%.
     _velocityX *= _velocityDecay;
     _velocityY *= _velocityDecay;
     _velocityZ *= _velocityDecay;
 
-    // STEP 2: Caluclate position. position is the integral of velocity wrt time. (p = p0 + v*dt)
+    // Calculate position
     _positionX += _velocityX * dt;
-    // print('positionX: $_positionX');
     _positionY += _velocityY * dt;
-    // print('positionY: $_positionY');
     _positionZ += _velocityZ * dt;
-    print('positionZ: $_positionZ');
 
     // Rate limiting, don't send arm commands too frequently.
-    // this prevents us from sending too many commands to the arm too quickly.
     if (_lastArmCommandTime != null) {
       final timeSinceLastCommand = now.difference(_lastArmCommandTime!);
       if (timeSinceLastCommand < _armCommandInterval) {
-        return; // Too soon, skip this update
+        return;
       }
     }
 
-    // Don't send new command if previous one is still executing
-    if (_isMovingArm) {
-      return;
-    }
-
-    // // Don't move arm if reference point hasn't been set
-    if (!_isReferenceSet || _referenceArmPose == null) {
-      return;
-    }
-
-    // ready to move the arm!
-    // mark that we are about to send a command.
-    // save the current time (for rate limiting next time)
-    // set the "busy" flag to true
+    // Ready to create and queue the pose
     _lastArmCommandTime = now;
     _isMovingArm = true;
 
     try {
-      // 3. Calculate new target position based on reference + phone displacement
-      // Reference arm position + (phone displacement * scale factor)
-      // remeber: referenceArmPose is the arm's position in the real world when we set the reference.
-      // positionScale = 50mm/meter, so if we move the phone 1 meter, the arm will move 50mm.
-      final newX = _referenceArmPose!.x + (_positionY * _positionScale); // flipped x and y
-      final newY = (_referenceArmPose!.y + (_positionX * _positionScale)) * -1; // flipped y
-      final newZ = (_referenceArmPose!.z + (_positionZ * _positionScale)); // flipped z
+      // Calculate new target position based on reference + phone displacement
+      // referenceArmPose is the arm's position in the real world when we set the reference
+      final newX = _referenceArmPose!.x + (_positionY * _positionScale);
+      final newY = (_referenceArmPose!.y + (_positionX * _positionScale)) * -1;
+      final newZ = (_referenceArmPose!.z + (_positionZ * _positionScale));
 
-      // TODO: convert euler angles to orientation vector using spatial math package
-
-      // final quaternion = vector_math.Quaternion.euler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
-      // final quaternion = math.Quaternion(_orientationZ, _orientationY, _orientationX, 0.0);
       final quaternion = vector_math.Quaternion.identity();
       quaternion.setEuler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
       final orientationVector = quatToOV(quaternion);
@@ -254,17 +231,11 @@ class _ImuWidgetState extends State<ImuWidget> {
       final newOrientationY = _referenceArmPose!.oY + orientationVector.y;
       final newOrientationZ = _referenceArmPose!.oZ + orientationVector.z;
 
-      // 4. Create new pose with position and orientation
-      // positions are what we calculated right above
-      // orientations are calculated from the reference plus the orientation changes from the gyroscope.
       final newPose = Pose(
-        x: newX, // flipped x and y
+        x: newX,
         y: newY,
         z: newZ,
         theta: _referenceArmPose!.theta, // Keep theta from reference
-        // oX: _referenceArmPose!.oX + _orientationX, // these are probs wrong bc we are adding orientation vector values + ueler values
-        // oY: _referenceArmPose!.oY + _orientationY,
-        // oZ: _referenceArmPose!.oZ + _orientationZ,
         oX: newOrientationX,
         oY: newOrientationY,
         oZ: newOrientationZ,
@@ -288,7 +259,6 @@ class _ImuWidgetState extends State<ImuWidget> {
         _processQueueSequentially();
       }
     } catch (e) {
-      // Handle errors gracefully
       setState(() {
         _lastError = e.toString();
       });
@@ -297,13 +267,13 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
   }
 
-  /// Process pose queue sequentially, executing every 5th pose
+  /// Process pose queue sequentially, executing every 10th pose
   Future<void> _processQueueSequentially() async {
     _isProcessingQueue = true;
 
     while (_poseQueue.isNotEmpty) {
-      // Only execute every 5th pose
-      if (_poseCounter % 5 == 0) {
+      // Only execute every 10th pose
+      if (_poseCounter % 10 == 0) {
         // Get the latest pose from the queue (skip intermediate ones)
         final poseToExecute = _poseQueue.last;
         _poseQueue.clear(); // Clear all accumulated poses
