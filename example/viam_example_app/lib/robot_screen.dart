@@ -60,10 +60,7 @@ class _RobotScreenState extends State<RobotScreen> {
     // Using the authenticated [Viam] the received as a parameter,
     // we can obtain a connection to the Robot.
     // There is a helpful convenience method on the [Viam] instance for this.
-    // final robotClient = await widget._viam.getRobotClient(widget.robot);
-    final options = RobotClientOptions.withApiKey(dotenv.env['API_KEY_ID']!, dotenv.env['API_KEY']!);
-    options.dialOptions.attemptMdns = false;
-    final robotClient = await RobotClient.atAddress(dotenv.env['ROBOT_LOCATION']!, options);
+    final robotClient = await widget._viam.getRobotClient(widget.robot);
     setState(() {
       client = robotClient;
       _isLoading = false;
