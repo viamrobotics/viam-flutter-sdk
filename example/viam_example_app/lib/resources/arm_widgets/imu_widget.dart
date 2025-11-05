@@ -30,32 +30,35 @@ class _ImuWidgetState extends State<ImuWidget> {
   // Arm movement control variables
   DateTime? _lastArmCommandTime;
   static const Duration _armCommandInterval = Duration(milliseconds: 100); // Rate limit: 10 commands/sec
-  static const double _positionScale = 50.0; // Scale factor: mm of arm movement per meter of phone movement
+  
+  // Scale factor: 50mm/meter = 50mm of arm movement per meter of phone movement
+  static const double _positionScale = 50.0;
+
   static const double _velocityDecay = 0.95; // Decay factor to prevent drift
   static const double _deadZone = 0.5; // Ignore small accelerations
   bool _isMovingArm = false;
   String? _lastError;
 
-  // Position tracking via integration
+  // Velocity (meters per second)
   double _velocityX = 0.0;
   double _velocityY = 0.0;
   double _velocityZ = 0.0;
-  double _positionX = 0.0; // Accumulated phone displacement in meters from reference
+  // Position (meters)
+  double _positionX = 0.0;
   double _positionY = 0.0;
   double _positionZ = 0.0;
   DateTime? _lastIntegrationTime;
 
-  // Orientation tracking via gyroscope integration
+  // Orientation (radians)
   double _orientationX = 0.0; // Roll (rotation around X-axis, in radians)
   double _orientationY = 0.0; // Pitch (rotation around Y-axis, in radians)
   double _orientationZ = 0.0; // Yaw (rotation around Z-axis, in radians)
   DateTime? _lastGyroIntegrationTime;
 
-  // Reference positions (set when "Set Reference" is pressed)
-  Pose? _referenceArmPose; // Arm position when reference was set
+  // Arm position in the world when we set the reference. set once when you press "set reference" and stays constant.
+  Pose? _referenceArmPose;
   bool _isReferenceSet = false;
-
-  // Current arm position (for display)
+  // the latest postion of the arm, updates everytime the arm moves. used to display the arm's position.
   Pose? _currentArmPose;
 
   _initAccelerometer() {
@@ -100,47 +103,10 @@ class _ImuWidgetState extends State<ImuWidget> {
     );
   }
 
-  /// Update orientation by integrating gyroscope angular velocity
-  void _updateOrientationFromGyroscope(GyroscopeEvent event) {
-    final now = DateTime.now();
-
-    // Initialize integration time on first run
-    if (_lastGyroIntegrationTime == null) {
-      _lastGyroIntegrationTime = now;
-      return;
-    }
-
-    // Calculate time delta for integration (in seconds)
-    final dt = now.difference(_lastGyroIntegrationTime!).inMilliseconds / 1000.0;
-    _lastGyroIntegrationTime = now;
-
-    // Skip if dt is too large (indicates pause or first run)
-    if (dt > 0.5) {
-      return;
-    }
-
-    // Don't update orientation if reference point hasn't been set
-    if (!_isReferenceSet) {
-      return;
-    }
-
-    // Integrate angular velocity to get orientation change
-    // Gyroscope values are in radians/second
-    // event.x = rotation rate around X-axis (roll)
-    // event.y = rotation rate around Y-axis (pitch)
-    // event.z = rotation rate around Z-axis (yaw)
-    _orientationX += event.x * dt;
-    _orientationY += event.y * dt;
-    _orientationZ += event.z * dt;
-
-    // Optional: Apply small decay to prevent drift
-    _orientationX *= 0.999;
-    _orientationY *= 0.999;
-    _orientationZ *= 0.999;
-  }
-
-  /// Move the arm based on IMU accelerometer data by integrating acceleration to position
+  /// Move the arm based on IMU accelerometer data using acceleration to get position
+  /// we do this by taking integral of acceleration to get velocity, and then integral of velocity to get position.
   Future<void> _moveArmFromImu(UserAccelerometerEvent event) async {
+    // event is the accelerometer data from the phone ^^
     final now = DateTime.now();
 
     // Initialize integration time on first run
@@ -149,36 +115,42 @@ class _ImuWidgetState extends State<ImuWidget> {
       return;
     }
 
-    // Calculate time delta for integration (in seconds)
+    // Calculate time delta between now and last integration time (in seconds)
+    // why? b/c we need to know how much time has passed, aka how long have we been accelerating for?
+    // tldr: to get velocity, we need acceleration * time.
     final dt = now.difference(_lastIntegrationTime!).inMilliseconds / 1000.0;
     _lastIntegrationTime = now;
 
-    // Skip if dt is too large (indicates pause or first run)
+    // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
     if (dt > 0.5) {
+      // this number might be too small
       return;
     }
 
     // Apply dead zone to acceleration
+    // peoples hands are shaky, phone sensors are jittery, this helps filter out the noise.
     final accelX = event.x.abs() > _deadZone ? event.x : 0.0;
     final accelY = event.y.abs() > _deadZone ? event.y : 0.0;
     final accelZ = event.z.abs() > _deadZone ? event.z : 0.0;
 
-    // STEP 1: Integrate acceleration to get velocity (v = v0 + a*dt)
+    // STEP 1: Calculate velocity. velocity is the integral of acceleration wrt time. (v = v0 + a*dt)
     _velocityX += accelX * dt;
     _velocityY += accelY * dt;
     _velocityZ += accelZ * dt;
 
     // Apply decay to prevent drift when stationary
+    // we are multiply velocity by 0.95 so that we reduce it by 5%.
     _velocityX *= _velocityDecay;
     _velocityY *= _velocityDecay;
     _velocityZ *= _velocityDecay;
 
-    // STEP 2: Integrate velocity to get position (p = p0 + v*dt)
+    // STEP 2: Caluclate position. position is the integral of velocity wrt time. (p = p0 + v*dt)
     _positionX += _velocityX * dt;
     _positionY += _velocityY * dt;
     _positionZ += _velocityZ * dt;
 
-    // Rate limiting: don't send arm commands too frequently
+    // Rate limiting, don't send arm commands too frequently.
+    // this prevents us from sending too many commands to the arm too quickly.
     if (_lastArmCommandTime != null) {
       final timeSinceLastCommand = now.difference(_lastArmCommandTime!);
       if (timeSinceLastCommand < _armCommandInterval) {
@@ -196,19 +168,25 @@ class _ImuWidgetState extends State<ImuWidget> {
       return;
     }
 
+    // ready to move the arm!
+    // mark that we are about to send a command.
+    // save the current time (for rate limiting next time)
+    // set the "busy" flag to true
     _lastArmCommandTime = now;
     _isMovingArm = true;
 
     try {
       // 3. Calculate new target position based on reference + phone displacement
       // Reference arm position + (phone displacement * scale factor)
-      // Phone displacement is in meters, arm position is in mm, so scale appropriately
+      // remeber: referenceArmPose is the arm's position in the real world when we set the reference.
+      // positionScale = 50mm/meter, so if we move the phone 1 meter, the arm will move 50mm.
       final newX = _referenceArmPose!.x + (_positionX * _positionScale);
       final newY = _referenceArmPose!.y + (_positionY * _positionScale);
       final newZ = _referenceArmPose!.z + (_positionZ * _positionScale);
 
-      // 4. Create new pose with orientation from gyroscope
-      // Combine reference orientation with the accumulated orientation changes
+      // 4. Create new pose with position and orientation
+      // positions are what we calculated right above
+      // orientations are calculated from the reference plus the orientation changes from the gyroscope.
       final newPose = Pose(
         x: newX,
         y: newY,
@@ -236,14 +214,57 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
   }
 
-  /// Set reference point: links current phone position to current arm position
+  /// Update orientation by integrating gyroscope angular velocity
+  void _updateOrientationFromGyroscope(GyroscopeEvent event) {
+    final now = DateTime.now();
+
+    // Initialize integration time on first run
+    if (_lastGyroIntegrationTime == null) {
+      _lastGyroIntegrationTime = now;
+      return;
+    }
+
+    // Calculate time delta between now and last integration time (in seconds) so we know how long we've been rotating for.
+    // tldr: to get orientation, we need angular velocity * time.
+    final dt = now.difference(_lastGyroIntegrationTime!).inMilliseconds / 1000.0;
+    _lastGyroIntegrationTime = now;
+
+    // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
+    if (dt > 0.5) {
+      return;
+    }
+
+    // Don't update orientation if reference point hasn't been set
+    if (!_isReferenceSet) {
+      return;
+    }
+
+    // Calucluate orientation change: integrate angular velocity over time to get orientation (angle).
+    // Gyroscope values are in radians/second
+    // event.x = rotation rate around X-axis (roll)
+    // event.y = rotation rate around Y-axis (pitch)
+    // event.z = rotation rate around Z-axis (yaw)
+    _orientationX += event.x * dt;
+    _orientationY += event.y * dt;
+    _orientationZ += event.z * dt;
+
+    // Apply small decay to prevent drift
+    // the 0.999 is aritrary for now
+    _orientationX *= 0.999;
+    _orientationY *= 0.999;
+    _orientationZ *= 0.999;
+  }
+
+  /// Set reference point
+  /// Gets the arm's current position in the real world and stores it as the reference.
+  /// Clears position and orientation tracking so the phone starts at (0,0,0) relative to this reference.
   Future<void> _setReference() async {
     try {
       // Get the current arm position
       final currentArmPose = await widget.arm.endPosition();
 
       setState(() {
-        // Zero out the phone position tracking (this is the new starting point)
+        // Zero out the phone position tracking
         _positionX = 0.0;
         _positionY = 0.0;
         _positionZ = 0.0;
