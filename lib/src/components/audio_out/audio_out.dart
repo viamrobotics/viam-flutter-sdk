@@ -5,7 +5,7 @@ import '../../gen/component/audioout/v1/audioout.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-export '../../audio.dart';
+export '../../media/audio.dart';
 
 /// AudioOut represents a device that can play audio.
 abstract class AudioOut extends Resource {

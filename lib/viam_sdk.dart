@@ -11,7 +11,7 @@ export 'src/app/robot.dart';
 /// Components
 export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
-export 'src/audio.dart';
+export 'src/media/audio.dart';
 export 'src/components/audio_in/audio_in.dart';
 export 'src/components/audio_in/client.dart';
 export 'src/components/audio_out/audio_out.dart';

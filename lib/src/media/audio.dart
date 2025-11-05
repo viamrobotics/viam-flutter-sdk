@@ -14,6 +14,8 @@ library;
 /// );
 /// ```
 class AudioCodec {
+  const AudioCodec._();
+
   static const String mp3 = 'mp3';
   static const String pcm16 = 'pcm16';
   static const String pcm32 = 'pcm32';

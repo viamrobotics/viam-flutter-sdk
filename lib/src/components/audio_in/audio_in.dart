@@ -5,7 +5,7 @@ import '../../gen/component/audioin/v1/audioin.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
 
-export '../../audio.dart';
+export '../../media/audio.dart';
 
 /// AudioIn represents a device that can capture audio.
 abstract class AudioIn extends Resource {
