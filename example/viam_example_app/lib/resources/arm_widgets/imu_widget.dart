@@ -35,12 +35,17 @@ class _ImuWidgetState extends State<ImuWidget> {
   static const Duration _armCommandInterval = Duration(milliseconds: 200); // Rate limit: 10 commands/sec
 
   // Scale factor: 300mm/meter = 300mm of arm movement per meter of phone movement
-  static const double _positionScale = 300.0;
+  static const double _positionScale = 1000.0;
 
   static const double _velocityDecay = 0.90; // Decay factor to prevent drift
   static const double _deadZone = 0.3; // Ignore small accelerations
   bool _isMovingArm = false;
   String? _lastError;
+
+  // Pose queue for batching arm movements
+  final List<Pose> _poseQueue = [];
+  int _poseCounter = 0;
+  bool _isProcessingQueue = false;
 
   // Velocity (meters per second)
   double _velocityX = 0.0;
@@ -274,14 +279,14 @@ class _ImuWidgetState extends State<ImuWidget> {
         return;
       }
 
-      // 5. Move the arm to the new position
-      // if (!await widget.arm.isMoving()) {
-      await widget.arm.moveToPosition(newPose);
-      setState(() {
-        _lastError = null;
-        _currentArmPose = newPose; // Store for display
-      });
-      // }
+      // Add pose to queue
+      _poseQueue.add(newPose);
+      _poseCounter++;
+
+      // Start processing queue if not already processing
+      if (!_isProcessingQueue) {
+        _processQueueSequentially();
+      }
     } catch (e) {
       // Handle errors gracefully
       setState(() {
@@ -290,6 +295,40 @@ class _ImuWidgetState extends State<ImuWidget> {
     } finally {
       _isMovingArm = false;
     }
+  }
+
+  /// Process pose queue sequentially, executing every 5th pose
+  Future<void> _processQueueSequentially() async {
+    _isProcessingQueue = true;
+
+    while (_poseQueue.isNotEmpty) {
+      // Only execute every 5th pose
+      if (_poseCounter % 5 == 0) {
+        // Get the latest pose from the queue (skip intermediate ones)
+        final poseToExecute = _poseQueue.last;
+        _poseQueue.clear(); // Clear all accumulated poses
+
+        try {
+          await widget.arm.moveToPosition(poseToExecute);
+          setState(() {
+            _lastError = null;
+            _currentArmPose = poseToExecute; // Store for display
+          });
+        } catch (e) {
+          setState(() {
+            _lastError = e.toString();
+          });
+        }
+      } else {
+        // Skip this batch, just clear the queue
+        _poseQueue.clear();
+      }
+
+      // Small delay to allow new poses to accumulate
+      await Future.delayed(const Duration(milliseconds: 50));
+    }
+
+    _isProcessingQueue = false;
   }
 
   /// Set reference point
@@ -315,6 +354,10 @@ class _ImuWidgetState extends State<ImuWidget> {
         _orientationY = 0.0;
         _orientationZ = 0.0;
         _lastGyroIntegrationTime = null;
+
+        // Clear pose queue and reset counter
+        _poseQueue.clear();
+        _poseCounter = 0;
 
         // Store the current arm position as the reference
         _referenceArmPose = currentArmPose;
@@ -387,6 +430,8 @@ class _ImuWidgetState extends State<ImuWidget> {
     for (final subscription in _streamSubscriptions) {
       subscription.cancel();
     }
+    // Clear pose queue on dispose
+    _poseQueue.clear();
   }
 
   /// Converts a unit quaternion (q) to an OrientationVector.
