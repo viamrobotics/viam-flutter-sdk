@@ -30,11 +30,10 @@ class _ImuWidgetState extends State<ImuWidget> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
   Duration sensorInterval = SensorInterval.normalInterval;
 
-  // Arm movement control variables
   DateTime? _lastArmCommandTime;
-  static const Duration _armCommandInterval = Duration(milliseconds: 200); // Rate limit: 5 commands/sec
-
-  // Scale factor: 1000mm/meter = 1000mm of arm movement per meter of phone movement
+  // Rate limit: 5 commands/sec
+  static const Duration _armCommandInterval = Duration(milliseconds: 200);
+  // Scale factor: 1000mm/meter for 1:1 scale
   static const double _positionScale = 1000.0;
 
   static const double _velocityDecay = 0.90; // Decay factor to prevent drift
@@ -69,43 +68,30 @@ class _ImuWidgetState extends State<ImuWidget> {
   // the latest postion of the arm, updates everytime the arm moves. used to display the arm's position.
   Pose? _currentArmPose;
 
-  _initAccelerometer() {
+  void _initAccelerometer() {
     _streamSubscriptions.add(
       userAccelerometerEventStream(samplingPeriod: sensorInterval).listen(
-        (UserAccelerometerEvent event) {
-          _createPoseFromImu(event);
-        },
-        onError: (e) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return const AlertDialog(
-                  title: Text("Sensor Not Found"),
-                  content: Text("It seems that your device doesn't support User Accelerometer Sensor"),
-                );
-              });
-        },
+        _createPoseFromImu,
+        onError: (_) => _showSensorError("User Accelerometer"),
         cancelOnError: true,
       ),
     );
 
     _streamSubscriptions.add(
       gyroscopeEventStream(samplingPeriod: sensorInterval).listen(
-        (GyroscopeEvent event) {
-          // Update orientation based on gyroscope data
-          _updateOrientationFromGyroscope(event);
-        },
-        onError: (e) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return const AlertDialog(
-                  title: Text("Sensor Not Found"),
-                  content: Text("It seems that your device doesn't support Gyroscope Sensor"),
-                );
-              });
-        },
+        _updateOrientationFromGyroscope,
+        onError: (_) => _showSensorError("Gyroscope"),
         cancelOnError: true,
+      ),
+    );
+  }
+
+  void _showSensorError(String sensorName) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text("Sensor Not Found"),
+        content: Text("It seems that your device doesn't support $sensorName Sensor"),
       ),
     );
   }
@@ -135,12 +121,12 @@ class _ImuWidgetState extends State<ImuWidget> {
       return;
     }
 
-    // Calucluate orientation change: integrate angular velocity over time to get orientation (angle).
+    // Calucluate orientation change: integrate angular velocity over time to get orientation.
     // Gyroscope values are in radians/second
     // event.x = rotation rate around X-axis (roll)
     // event.y = rotation rate around Y-axis (pitch)
     // event.z = rotation rate around Z-axis (yaw)
-    _orientationX += event.x * dt;
+    _orientationX += event.x * dt; 
     _orientationY += event.y * dt;
     _orientationZ += event.z * dt;
 
@@ -176,9 +162,9 @@ class _ImuWidgetState extends State<ImuWidget> {
     _lastIntegrationTime = now;
 
     // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
-    // if (dt > 0.5) {
-    //   return;
-    // }
+    if (dt > 0.5) {
+      return;
+    }
 
     // Apply dead zone to acceleration to filter out noise
     final accelX = event.x.abs() > _deadZone ? event.x : 0.0;
