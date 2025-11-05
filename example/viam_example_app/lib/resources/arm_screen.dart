@@ -21,8 +21,6 @@ class ViamArmWidgetNew extends StatelessWidget {
     );
   }
 }
-
-// need real arm notifier from martha
 class ArmNotifier extends ChangeNotifier {
   ArmNotifier();
 
