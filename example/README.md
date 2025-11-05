@@ -6,3 +6,7 @@ This directory contains examples on how to use the Viam Flutter SDK.
   - Start using the Viam SDK from scratch! This example will walk you through the canonical way of using the SDK, using API Keys with a fully documented example app.
 - [Viam Robot Example App](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/viam_robot_example_app)
   - This example uses Location secrets to connect to a robot. It has a bit more customization, but is not as well documented.
+ 
+- [Hotspot Provisioning Example App](https://github.com/viamrobotics/viam-flutter-sdk/tree/main/example/hotspot_provisioning_example_app)
+  - This example demonstrates how to use the Hotspot Provisioning Widget to provision new machines, reconnect existing machines to new networks, and replace hardware while preserving machine configurations.
+ 
