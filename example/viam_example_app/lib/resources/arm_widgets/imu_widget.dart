@@ -41,7 +41,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   bool _isMovingArm = false;
   String? _lastError;
 
-  // Pose queue for batching arm movements
+  // Pose queue for batching arm movements to reduce lag
   final List<Pose> _poseQueue = [];
   int _poseCounter = 0;
   bool _isProcessingQueue = false;
@@ -62,10 +62,9 @@ class _ImuWidgetState extends State<ImuWidget> {
   double _orientationZ = 0.0; // Yaw
   DateTime? _lastGyroIntegrationTime;
 
-  // Arm position in the world when we set the reference. set once when you press "set reference" and stays constant.
-  Pose? _referenceArmPose;
+  Pose? _referenceArmPose; // arm position set once when you press "set reference"
   bool _isReferenceSet = false;
-  // the latest postion of the arm, updates everytime the arm moves. used to display the arm's position.
+  Pose? _targetArmPose;
   Pose? _currentArmPose;
 
   void _initAccelerometer() {
@@ -126,12 +125,11 @@ class _ImuWidgetState extends State<ImuWidget> {
     // event.x = rotation rate around X-axis (roll)
     // event.y = rotation rate around Y-axis (pitch)
     // event.z = rotation rate around Z-axis (yaw)
-    _orientationX += event.x * dt; 
+    _orientationX += event.x * dt;
     _orientationY += event.y * dt;
     _orientationZ += event.z * dt;
 
     // Apply small decay to prevent drift
-    // the 0.999 is aritrary for now
     _orientationX *= 0.999;
     _orientationY *= 0.999;
     _orientationZ *= 0.999;
@@ -235,6 +233,9 @@ class _ImuWidgetState extends State<ImuWidget> {
           newPose.oZ == _currentArmPose!.oZ) {
         return;
       }
+      setState(() {
+        _targetArmPose = newPose;
+      });
 
       // Add pose to queue
       _poseQueue.add(newPose);
@@ -253,7 +254,9 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
   }
 
-  /// Process pose queue sequentially, executing every 10th pose
+  /// Process pose queue sequentially, executing every 20th pose
+  /// Instead of sending every pose immediately (which causes lag), we queue them
+  /// and only execute every Nth pose, using the latest position from the queue
   Future<void> _processQueueSequentially() async {
     _isProcessingQueue = true;
 
@@ -268,7 +271,7 @@ class _ImuWidgetState extends State<ImuWidget> {
           await widget.arm.moveToPosition(poseToExecute);
           setState(() {
             _lastError = null;
-            _currentArmPose = poseToExecute; // Store for display
+            _currentArmPose = poseToExecute;
           });
         } catch (e) {
           setState(() {
@@ -317,7 +320,8 @@ class _ImuWidgetState extends State<ImuWidget> {
 
         // Store the current arm position as the reference
         _referenceArmPose = currentArmPose;
-        _currentArmPose = currentArmPose; // Also store for display
+        _targetArmPose = currentArmPose; // Initialize target pose
+        _currentArmPose = currentArmPose; // Initialize current pose
         _isReferenceSet = true;
         _lastError = null;
       });
@@ -333,19 +337,28 @@ class _ImuWidgetState extends State<ImuWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Arm Position (Real World)", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-        const SizedBox(height: 20),
-        if (_currentArmPose != null) ...[
-          Text("X: ${_currentArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 16)),
-          Text("Y: ${_currentArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 16)),
-          Text("Z: ${_currentArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 16)),
-          const SizedBox(height: 15),
-          const Text("Orientation:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-          Text("oX (Roll): ${_currentArmPose!.oX.toStringAsFixed(3)} rad", style: const TextStyle(fontSize: 14)),
-          Text("oY (Pitch): ${_currentArmPose!.oY.toStringAsFixed(3)} rad", style: const TextStyle(fontSize: 14)),
-          Text("oZ (Yaw): ${_currentArmPose!.oZ.toStringAsFixed(3)} rad", style: const TextStyle(fontSize: 14)),
+        const Text("Target Position", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.blue)),
+        const SizedBox(height: 10),
+        if (_targetArmPose != null) ...[
+          Text("X: ${_targetArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+          Text("Y: ${_targetArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+          Text("Z: ${_targetArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
         ] else
-          const Text("No position data yet", style: TextStyle(fontSize: 14, color: Colors.grey)),
+          const Text("No target yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
+        const SizedBox(height: 20),
+        const Text("Current Position", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.green)),
+        const SizedBox(height: 10),
+        if (_currentArmPose != null) ...[
+          Text("X: ${_currentArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+          Text("Y: ${_currentArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+          Text("Z: ${_currentArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+          const SizedBox(height: 10),
+          const Text("Orientation:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+          Text("oX (Roll): ${_currentArmPose!.oX.toStringAsFixed(3)} rad", style: const TextStyle(fontSize: 12)),
+          Text("oY (Pitch): ${_currentArmPose!.oY.toStringAsFixed(3)} rad", style: const TextStyle(fontSize: 12)),
+          Text("oZ (Yaw): ${_currentArmPose!.oZ.toStringAsFixed(3)} rad", style: const TextStyle(fontSize: 12)),
+        ] else
+          const Text("No position data yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
         const SizedBox(height: 30),
         ElevatedButton(
           onPressed: _setReference,
@@ -380,20 +393,9 @@ class _ImuWidgetState extends State<ImuWidget> {
     );
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    for (final subscription in _streamSubscriptions) {
-      subscription.cancel();
-    }
-    // Clear pose queue on dispose
-    _poseQueue.clear();
-  }
-
   /// Converts a unit quaternion (q) to an OrientationVector.
   ///
-  /// q: The input rotation quaternion. (Dart: (x, y, z, w) = (Imag, Jmag, Kmag, Real))
-  /// Converted from go code to flutter using gemini
+  /// Converted from go code to flutter using gemin
   Orientation_OrientationVectorRadians quatToOV(vector_math.Quaternion q) {
     double orientationVectorPoleRadius = 0.0001;
     double defaultAngleEpsilon = 1e-4;
@@ -489,5 +491,14 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
 
     return ov;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    for (final subscription in _streamSubscriptions) {
+      subscription.cancel();
+    }
+    _poseQueue.clear();
   }
 }
