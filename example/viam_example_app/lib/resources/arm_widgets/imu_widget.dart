@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
+import 'package:vector_math/vector_math.dart' as vector_math;
 import 'package:viam_example_app/resources/arm_screen.dart';
+import 'package:viam_sdk/protos/app/robot.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 class ImuWidget extends StatefulWidget {
@@ -29,13 +32,13 @@ class _ImuWidgetState extends State<ImuWidget> {
 
   // Arm movement control variables
   DateTime? _lastArmCommandTime;
-  static const Duration _armCommandInterval = Duration(milliseconds: 100); // Rate limit: 10 commands/sec
-  
-  // Scale factor: 50mm/meter = 50mm of arm movement per meter of phone movement
-  static const double _positionScale = 50.0;
+  static const Duration _armCommandInterval = Duration(milliseconds: 200); // Rate limit: 10 commands/sec
 
-  static const double _velocityDecay = 0.95; // Decay factor to prevent drift
-  static const double _deadZone = 0.5; // Ignore small accelerations
+  // Scale factor: 300mm/meter = 300mm of arm movement per meter of phone movement
+  static const double _positionScale = 300.0;
+
+  static const double _velocityDecay = 0.90; // Decay factor to prevent drift
+  static const double _deadZone = 0.3; // Ignore small accelerations
   bool _isMovingArm = false;
   String? _lastError;
 
@@ -103,117 +106,6 @@ class _ImuWidgetState extends State<ImuWidget> {
     );
   }
 
-  /// Move the arm based on IMU accelerometer data using acceleration to get position
-  /// we do this by taking integral of acceleration to get velocity, and then integral of velocity to get position.
-  Future<void> _moveArmFromImu(UserAccelerometerEvent event) async {
-    // event is the accelerometer data from the phone ^^
-    final now = DateTime.now();
-
-    // Initialize integration time on first run
-    if (_lastIntegrationTime == null) {
-      _lastIntegrationTime = now;
-      return;
-    }
-
-    // Calculate time delta between now and last integration time (in seconds)
-    // why? b/c we need to know how much time has passed, aka how long have we been accelerating for?
-    // tldr: to get velocity, we need acceleration * time.
-    final dt = now.difference(_lastIntegrationTime!).inMilliseconds / 1000.0;
-    _lastIntegrationTime = now;
-
-    // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
-    if (dt > 0.5) {
-      // this number might be too small
-      return;
-    }
-
-    // Apply dead zone to acceleration
-    // peoples hands are shaky, phone sensors are jittery, this helps filter out the noise.
-    final accelX = event.x.abs() > _deadZone ? event.x : 0.0;
-    final accelY = event.y.abs() > _deadZone ? event.y : 0.0;
-    final accelZ = event.z.abs() > _deadZone ? event.z : 0.0;
-
-    // STEP 1: Calculate velocity. velocity is the integral of acceleration wrt time. (v = v0 + a*dt)
-    _velocityX += accelX * dt;
-    _velocityY += accelY * dt;
-    _velocityZ += accelZ * dt;
-
-    // Apply decay to prevent drift when stationary
-    // we are multiply velocity by 0.95 so that we reduce it by 5%.
-    _velocityX *= _velocityDecay;
-    _velocityY *= _velocityDecay;
-    _velocityZ *= _velocityDecay;
-
-    // STEP 2: Caluclate position. position is the integral of velocity wrt time. (p = p0 + v*dt)
-    _positionX += _velocityX * dt;
-    _positionY += _velocityY * dt;
-    _positionZ += _velocityZ * dt;
-
-    // Rate limiting, don't send arm commands too frequently.
-    // this prevents us from sending too many commands to the arm too quickly.
-    if (_lastArmCommandTime != null) {
-      final timeSinceLastCommand = now.difference(_lastArmCommandTime!);
-      if (timeSinceLastCommand < _armCommandInterval) {
-        return; // Too soon, skip this update
-      }
-    }
-
-    // Don't send new command if previous one is still executing
-    if (_isMovingArm) {
-      return;
-    }
-
-    // Don't move arm if reference point hasn't been set
-    if (!_isReferenceSet || _referenceArmPose == null) {
-      return;
-    }
-
-    // ready to move the arm!
-    // mark that we are about to send a command.
-    // save the current time (for rate limiting next time)
-    // set the "busy" flag to true
-    _lastArmCommandTime = now;
-    _isMovingArm = true;
-
-    try {
-      // 3. Calculate new target position based on reference + phone displacement
-      // Reference arm position + (phone displacement * scale factor)
-      // remeber: referenceArmPose is the arm's position in the real world when we set the reference.
-      // positionScale = 50mm/meter, so if we move the phone 1 meter, the arm will move 50mm.
-      final newX = _referenceArmPose!.x + (_positionX * _positionScale);
-      final newY = _referenceArmPose!.y + (_positionY * _positionScale);
-      final newZ = _referenceArmPose!.z + (_positionZ * _positionScale);
-
-      // 4. Create new pose with position and orientation
-      // positions are what we calculated right above
-      // orientations are calculated from the reference plus the orientation changes from the gyroscope.
-      final newPose = Pose(
-        x: newX,
-        y: newY,
-        z: newZ,
-        theta: _referenceArmPose!.theta, // Keep theta from reference
-        oX: _referenceArmPose!.oX + _orientationX,
-        oY: _referenceArmPose!.oY + _orientationY,
-        oZ: _referenceArmPose!.oZ + _orientationZ,
-      );
-
-      // 5. Move the arm to the new position
-      await widget.arm.moveToPosition(newPose);
-
-      setState(() {
-        _lastError = null;
-        _currentArmPose = newPose; // Store for display
-      });
-    } catch (e) {
-      // Handle errors gracefully
-      setState(() {
-        _lastError = e.toString();
-      });
-    } finally {
-      _isMovingArm = false;
-    }
-  }
-
   /// Update orientation by integrating gyroscope angular velocity
   void _updateOrientationFromGyroscope(GyroscopeEvent event) {
     final now = DateTime.now();
@@ -253,6 +145,151 @@ class _ImuWidgetState extends State<ImuWidget> {
     _orientationX *= 0.999;
     _orientationY *= 0.999;
     _orientationZ *= 0.999;
+  }
+
+  /// Move the arm based on IMU accelerometer data using acceleration to get position
+  /// we do this by taking integral of acceleration to get velocity, and then integral of velocity to get position.
+  Future<void> _moveArmFromImu(UserAccelerometerEvent event) async {
+    // event is the accelerometer data from the phone ^^
+    final now = DateTime.now();
+
+    // Initialize integration time on first run
+    if (_lastIntegrationTime == null) {
+      _lastIntegrationTime = now;
+      return;
+    }
+
+    // Calculate time delta between now and last integration time (in seconds)
+    // why? b/c we need to know how much time has passed, aka how long have we been accelerating for?
+    // tldr: to get velocity, we need acceleration * time.
+    final dt = now.difference(_lastIntegrationTime!).inMilliseconds / 1000.0;
+    _lastIntegrationTime = now;
+
+    // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
+    // if (dt > 0.5) {
+    //   // this number might be too small
+    //   return;
+    // }
+
+    // Apply dead zone to acceleration
+    // peoples hands are shaky, phone sensors are jittery, this helps filter out the noise.
+    final accelX = event.x.abs() > _deadZone ? event.x : 0.0;
+    final accelY = event.y.abs() > _deadZone ? event.y : 0.0;
+    final accelZ = event.z.abs() > _deadZone ? event.z : 0.0;
+    // print('eventz: ${event.z}');
+    if (accelX == 0.0 && accelY == 0.0 && accelZ == 0.0) {
+      _velocityX = 0.0;
+      _velocityY = 0.0;
+      _velocityZ = 0.0;
+      // return;
+    }
+
+    // STEP 1: Calculate velocity. velocity is the integral of acceleration wrt time. (v = v0 + a*dt)
+    _velocityX += accelX * dt;
+    _velocityY += accelY * dt;
+    _velocityZ += accelZ * dt;
+
+    // Apply decay to prevent drift when stationary
+    // we are multiply velocity by 0.95 so that we reduce it by 5%.
+    _velocityX *= _velocityDecay;
+    _velocityY *= _velocityDecay;
+    _velocityZ *= _velocityDecay;
+
+    // STEP 2: Caluclate position. position is the integral of velocity wrt time. (p = p0 + v*dt)
+    _positionX += _velocityX * dt;
+    // print('positionX: $_positionX');
+    _positionY += _velocityY * dt;
+    // print('positionY: $_positionY');
+    _positionZ += _velocityZ * dt;
+    print('positionZ: $_positionZ');
+
+    // Rate limiting, don't send arm commands too frequently.
+    // this prevents us from sending too many commands to the arm too quickly.
+    if (_lastArmCommandTime != null) {
+      final timeSinceLastCommand = now.difference(_lastArmCommandTime!);
+      if (timeSinceLastCommand < _armCommandInterval) {
+        return; // Too soon, skip this update
+      }
+    }
+
+    // Don't send new command if previous one is still executing
+    if (_isMovingArm) {
+      return;
+    }
+
+    // // Don't move arm if reference point hasn't been set
+    if (!_isReferenceSet || _referenceArmPose == null) {
+      return;
+    }
+
+    // ready to move the arm!
+    // mark that we are about to send a command.
+    // save the current time (for rate limiting next time)
+    // set the "busy" flag to true
+    _lastArmCommandTime = now;
+    _isMovingArm = true;
+
+    try {
+      // 3. Calculate new target position based on reference + phone displacement
+      // Reference arm position + (phone displacement * scale factor)
+      // remeber: referenceArmPose is the arm's position in the real world when we set the reference.
+      // positionScale = 50mm/meter, so if we move the phone 1 meter, the arm will move 50mm.
+      final newX = _referenceArmPose!.x + (_positionY * _positionScale); // flipped x and y
+      final newY = (_referenceArmPose!.y + (_positionX * _positionScale)) * -1; // flipped y
+      final newZ = (_referenceArmPose!.z + (_positionZ * _positionScale)); // flipped z
+
+      // TODO: convert euler angles to orientation vector using spatial math package
+
+      // final quaternion = vector_math.Quaternion.euler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
+      // final quaternion = math.Quaternion(_orientationZ, _orientationY, _orientationX, 0.0);
+      final quaternion = vector_math.Quaternion.identity();
+      quaternion.setEuler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
+      final orientationVector = quatToOV(quaternion);
+      final newOrientationX = _referenceArmPose!.oX + orientationVector.x;
+      final newOrientationY = _referenceArmPose!.oY + orientationVector.y;
+      final newOrientationZ = _referenceArmPose!.oZ + orientationVector.z;
+
+      // 4. Create new pose with position and orientation
+      // positions are what we calculated right above
+      // orientations are calculated from the reference plus the orientation changes from the gyroscope.
+      final newPose = Pose(
+        x: newX, // flipped x and y
+        y: newY,
+        z: newZ,
+        theta: _referenceArmPose!.theta, // Keep theta from reference
+        // oX: _referenceArmPose!.oX + _orientationX, // these are probs wrong bc we are adding orientation vector values + ueler values
+        // oY: _referenceArmPose!.oY + _orientationY,
+        // oZ: _referenceArmPose!.oZ + _orientationZ,
+        oX: newOrientationX,
+        oY: newOrientationY,
+        oZ: newOrientationZ,
+      );
+
+      if (newPose.x == _currentArmPose!.x &&
+          newPose.y == _currentArmPose!.y &&
+          newPose.z == _currentArmPose!.z &&
+          newPose.oX == _currentArmPose!.oX &&
+          newPose.oY == _currentArmPose!.oY &&
+          newPose.oZ == _currentArmPose!.oZ) {
+        return;
+      }
+
+      // 5. Move the arm to the new position
+      // if (!await widget.arm.isMoving()) {
+      await widget.arm.moveToPosition(newPose);
+      setState(() {
+        _lastError = null;
+        _currentArmPose = newPose; // Store for display
+      });
+      // }
+    } catch (e) {
+      // Handle errors gracefully
+      setState(() {
+        _lastError = e.toString();
+      });
+    } finally {
+      _isMovingArm = false;
+    }
   }
 
   /// Set reference point
@@ -350,5 +387,106 @@ class _ImuWidgetState extends State<ImuWidget> {
     for (final subscription in _streamSubscriptions) {
       subscription.cancel();
     }
+  }
+
+  /// Converts a unit quaternion (q) to an OrientationVector.
+  ///
+  /// q: The input rotation quaternion. (Dart: (x, y, z, w) = (Imag, Jmag, Kmag, Real))
+  /// Converted from go code to flutter using gemini
+  Orientation_OrientationVectorRadians quatToOV(vector_math.Quaternion q) {
+    double orientationVectorPoleRadius = 0.0001;
+    double defaultAngleEpsilon = 1e-4;
+    // Define initial axes as pure quaternions (Real/W=0)
+    // xAxis: (0, -1, 0, 0) -> x=-1, y=0, z=0, w=0
+    final vector_math.Quaternion xAxis = vector_math.Quaternion(0.0, -1.0, 0.0, 0.0);
+    // zAxis: (0, 0, 0, 1) -> x=0, y=0, z=1, w=0
+    final vector_math.Quaternion zAxis = vector_math.Quaternion(0.0, 0.0, 0.0, 1.0);
+
+    final ov = Orientation_OrientationVectorRadians();
+
+    // 1. Get the transform of our +X and +Z points (Quaternion rotation formula: q * v * q_conj)
+    final vector_math.Quaternion newX = q * xAxis * q.conjugated();
+    final vector_math.Quaternion newZ = q * zAxis * q.conjugated();
+
+    // Set the direction vector (OX, OY, OZ) from the rotated Z-axis (Imag, Jmag, Kmag components)
+    ov.x = newZ.x;
+    ov.y = newZ.y;
+    ov.z = newZ.z;
+
+    // 2. Calculate the roll angle (Theta)
+
+    // Check if we are near the poles (i.e., newZ.z/Kmag is close to 1 or -1)
+    if (1 - (ov.z.abs()) > orientationVectorPoleRadius) {
+      // --- General Case: Not Near the Pole ---
+
+      // Vector3 versions of the rotated axes
+      final vector_math.Vector3 v1 = vector_math.Vector3(newZ.x, newZ.y, newZ.z); // Local Z
+      final vector_math.Vector3 v2 = vector_math.Vector3(newX.x, newX.y, newX.z); // Local X
+      final vector_math.Vector3 globalZ = vector_math.Vector3(0.0, 0.0, 1.0); // Global Z
+
+      // Normal to the local-x, local-z plane
+      final vector_math.Vector3 norm1 = v1.cross(v2);
+
+      // Normal to the global-z, local-z plane
+      final vector_math.Vector3 norm2 = v1.cross(globalZ);
+
+      // Find the angle (theta) between the two planes (using the angle between their normals)
+      final double denominator = norm1.length * norm2.length;
+      final double cosTheta = denominator != 0.0 ? norm1.dot(norm2) / denominator : 1.0; // Avoid division by zero, default to 1 (0 angle)
+
+      // Clamp for float error
+      double clampedCosTheta = cosTheta.clamp(-1.0, 1.0);
+
+      final double theta = math.acos(clampedCosTheta);
+
+      if (theta.abs() > orientationVectorPoleRadius) {
+        // Determine directionality of the angle (sign of theta)
+
+        // Axis is the new Z-axis (ov.OX, ov.OY, ov.OZ)
+        final vector_math.Vector3 axis = vector_math.Vector3(ov.x, ov.y, ov.z);
+        // Create a rotation quaternion for rotation by -theta around the new Z-axis
+        final vector_math.Quaternion q2 = vector_math.Quaternion.axisAngle(axis, -theta);
+
+        // Apply q2 rotation to the original Z-axis (0, 0, 0, 1)
+        final vector_math.Quaternion testZQuat = q2 * zAxis * q2.conjugated();
+        final vector_math.Vector3 testZVector = vector_math.Vector3(testZQuat.x, testZQuat.y, testZQuat.z);
+
+        // Find the normal of the plane defined by v1 (local Z) and testZ
+        final vector_math.Vector3 norm3 = v1.cross(testZVector);
+
+        final double norm1Len = norm1.length;
+        final double norm3Len = norm3.length;
+
+        final double cosTest = (norm1Len * norm3Len) != 0.0 ? norm1.dot(norm3) / (norm1Len * norm3Len) : 1.0;
+
+        // Check if norm1 and norm3 are coplanar (angle close to 0)
+        if (1.0 - cosTest.abs() < defaultAngleEpsilon * defaultAngleEpsilon) {
+          ov.theta = -theta;
+        } else {
+          ov.theta = theta;
+        }
+      } else {
+        ov.theta = 0.0;
+      }
+    } else {
+      // --- Special Case: Near the Pole (Z-axis is up or down) ---
+
+      // Use Atan2 on the rotated X-axis components (Jmag and Imag, or y and x in Dart)
+      // -math.Atan2(newX.Jmag, -newX.Imag) -> Dart: -math.atan2(newX.y, -newX.x)
+      ov.theta = -math.atan2(newX.y, -newX.x);
+
+      if (newZ.z < 0) {
+        // If pointing along the negative Z-axis (ov.OZ < 0)
+        // -math.Atan2(newX.Jmag, newX.Imag) -> Dart: -math.atan2(newX.y, newX.x)
+        ov.theta = -math.atan2(newX.y, newX.x);
+      }
+    }
+
+    // Handle IEEE -0.0 for consistency
+    if (ov.theta == -0.0) {
+      ov.theta = 0.0;
+    }
+
+    return ov;
   }
 }
