@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flutter_dotenv: ^5.1.0
   sensors_plus: ^7.0.0
+  vector_math: ^2.2.0
   viam_sdk:
     path: ../../
 

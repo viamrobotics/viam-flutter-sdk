@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:viam_example_app/resources/arm_widgets/imu_widget.dart';
-import 'package:viam_example_app/resources/arm_widgets/joint_positions_widget.dart';
-import 'package:viam_example_app/resources/arm_widgets/orienation_widget.dart';
-import 'package:viam_example_app/resources/arm_widgets/position_widget.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 /// A widget to control an [Arm].
@@ -19,12 +16,6 @@ class ViamArmWidgetNew extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        JointPositionsWidget(arm: arm),
-        // LinearArrowsWidget(),
-        PositionWidget(arm: arm),
-        // AngularArrowsWidget(),
-        // JointPositionsWidget(arm: arm),
-        OrientationWidget(arm: arm),
         ImuWidget(arm: arm, updateNotifier: ArmNotifier()),
       ],
     );
