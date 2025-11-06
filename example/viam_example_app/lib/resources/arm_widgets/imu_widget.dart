@@ -303,7 +303,7 @@ class _ImuWidgetState extends State<ImuWidget> {
         // _orientationX = 0.0;
         // _orientationY = 0.0;
         // _orientationZ = 0.0;
-        _lastGyroIntegrationTime = null;
+        // _lastGyroIntegrationTime = null;
 
         // Clear pose queue and reset counter
         _poseQueue.clear();
