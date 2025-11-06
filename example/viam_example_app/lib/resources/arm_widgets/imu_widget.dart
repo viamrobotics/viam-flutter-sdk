@@ -23,7 +23,7 @@ class ImuWidget extends StatefulWidget {
 class _ImuWidgetState extends State<ImuWidget> {
   @override
   void initState() {
-    _initAccelerometer();
+    _initImu();
     super.initState();
   }
 
@@ -67,7 +67,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   Pose? _targetArmPose;
   Pose? _currentArmPose;
 
-  void _initAccelerometer() {
+  void _initImu() {
     _streamSubscriptions.add(
       userAccelerometerEventStream(samplingPeriod: sensorInterval).listen(
         _createPoseFromImu,
@@ -262,7 +262,7 @@ class _ImuWidgetState extends State<ImuWidget> {
 
     while (_poseQueue.isNotEmpty) {
       // Only execute every 20th pose
-      if (_poseCounter % 20 == 0) {
+      if (_poseCounter % 5 == 0) {
         // Get the latest pose from the queue (skip intermediate ones)
         final poseToExecute = _poseQueue.last;
         _poseQueue.clear(); // Clear all accumulated poses
@@ -392,6 +392,7 @@ class _ImuWidgetState extends State<ImuWidget> {
             "Move your phone through space!",
             style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
           ),
+        TextButton(onPressed: () async => await widget.arm.moveToPosition(_targetArmPose!), child: Text("Execute"))
       ],
     );
   }
