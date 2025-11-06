@@ -31,11 +31,11 @@ class _ImuWidgetState extends State<ImuWidget> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
   Duration sensorInterval = SensorInterval.uiInterval;
 
-  static const double _positionScale = 300.0;
+  static const double _positionScale = 600.0;
 
   static const double _velocityDecay = 0.99;
 
-  static const double _deadZoneZ = 0.3;
+  static const double _deadZoneZ = 0.5;
   static const double _deadZoneXY = 0.1;
   static const double _velocityThreshold = 0.01; // Threshold below which velocity is considered zero
   bool _isMovingArm = false;
@@ -57,9 +57,9 @@ class _ImuWidgetState extends State<ImuWidget> {
   DateTime? _lastIntegrationTime;
 
   // Orientation (radians)
-  double _orientationX = 0.0; // Roll
-  double _orientationY = 0.0; // Pitch
-  double _orientationZ = 0.0; // Yaw
+  // double _orientationX = 0.0; // Roll
+  // double _orientationY = 0.0; // Pitch
+  // double _orientationZ = 0.0; // Yaw
   DateTime? _lastGyroIntegrationTime;
 
   Pose? _referenceArmPose; // arm position set once when you press "set reference"
@@ -76,13 +76,14 @@ class _ImuWidgetState extends State<ImuWidget> {
       ),
     );
 
-    _streamSubscriptions.add(
-      gyroscopeEventStream(samplingPeriod: sensorInterval).listen(
-        _updateOrientationFromGyroscope,
-        onError: (_) => _showSensorError("Gyroscope"),
-        cancelOnError: true,
-      ),
-    );
+    /// Note: Orientation logic is commented out because we cannot convert to orientation vector without the spatial math package.
+    // _streamSubscriptions.add(
+    //   gyroscopeEventStream(samplingPeriod: sensorInterval).listen(
+    //     _updateOrientationFromGyroscope,
+    //     onError: (_) => _showSensorError("Gyroscope"),
+    //     cancelOnError: true,
+    //   ),
+    // );
   }
 
   void _showSensorError(String sensorName) {
@@ -96,44 +97,42 @@ class _ImuWidgetState extends State<ImuWidget> {
   }
 
   /// Update orientation by integrating gyroscope angular velocity
-  void _updateOrientationFromGyroscope(GyroscopeEvent event) {
-    final now = DateTime.now();
+  // void _updateOrientationFromGyroscope(GyroscopeEvent event) {
+  //   final now = DateTime.now();
 
-    // Initialize integration time on first run
-    if (_lastGyroIntegrationTime == null) {
-      _lastGyroIntegrationTime = now;
-      return;
-    }
+  //   // Initialize integration time on first run
+  //   if (_lastGyroIntegrationTime == null) {
+  //     _lastGyroIntegrationTime = now;
+  //     return;
+  //   }
 
-    // Calculate time delta between now and last integration time (in seconds) so we know how long we've been rotating for.
-    // tldr: to get orientation, we need angular velocity * time.
-    final dt = now.difference(_lastGyroIntegrationTime!).inMilliseconds / 1000.0;
-    _lastGyroIntegrationTime = now;
+  //   // Calculate time delta between now and last integration time (in seconds) so we know how long we've been rotating for.
+  //   // tldr: to get orientation, we need angular velocity * time.
+  //   final dt = now.difference(_lastGyroIntegrationTime!).inMilliseconds / 1000.0;
+  //   _lastGyroIntegrationTime = now;
 
-    // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
-    if (dt > 0.5) {
-      return;
-    }
+  //   // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
+  //   if (dt > 0.5) {
+  //     return;
+  //   }
 
-    // Don't update orientation if reference point hasn't been set
-    if (!_isReferenceSet) {
-      return;
-    }
+  //   // Don't update orientation if reference point hasn't been set
+  //   if (!_isReferenceSet) {
+  //     return;
+  //   }
 
-    // Calucluate orientation change: integrate angular velocity over time to get orientation.
-    // Gyroscope values are in radians/second
-    // event.x = rotation rate around X-axis (roll)
-    // event.y = rotation rate around Y-axis (pitch)
-    // event.z = rotation rate around Z-axis (yaw)
-    _orientationX += event.x * dt;
-    _orientationY += event.y * dt;
-    _orientationZ += event.z * dt;
+  //   // Calucluate orientation change: integrate angular velocity over time to get orientation.
+  //   // Gyroscope values are in radians/second
 
-    // Apply small decay to prevent drift
-    _orientationX *= 0.999;
-    _orientationY *= 0.999;
-    _orientationZ *= 0.999;
-  }
+  //   _orientationX += event.x * dt; // roll
+  //   _orientationY += event.y * dt; // pitch
+  //   _orientationZ += event.z * dt; // yaw
+
+  //   // Apply small decay to prevent drift
+  //   _orientationX *= 0.999;
+  //   _orientationY *= 0.999;
+  //   _orientationZ *= 0.999;
+  // }
 
   /// Create a pose based on IMU accelerometer data using acceleration to get position
   /// The pose is added to a queue for sequential processing.
@@ -195,25 +194,29 @@ class _ImuWidgetState extends State<ImuWidget> {
     try {
       // Calculate new target position based on reference + phone displacement
       // referenceArmPose is the arm's position in the real world when we set the reference
-      final newX = _referenceArmPose!.x + (_positionX * _positionScale);
-      final newY = _referenceArmPose!.y + (_positionY * _positionScale);
+      final newX = _referenceArmPose!.x + (_positionY * _positionScale);
+      final newY = _referenceArmPose!.y + ((-_positionX) * _positionScale);
       final newZ = _referenceArmPose!.z + (_positionZ * _positionScale);
 
-      final quaternion = vector_math.Quaternion.identity();
-      quaternion.setEuler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
-      final orientationVector = quatToOV(quaternion);
-      final newOrientationX = _referenceArmPose!.oX + orientationVector.x;
-      final newOrientationY = _referenceArmPose!.oY + orientationVector.y;
-      final newOrientationZ = _referenceArmPose!.oZ + orientationVector.z;
+      // Attempted to convert orientation values from angular velocities (yaw pitch roll) to orientation vectors
+      // Then convert orientation vectors to quaternions and multiply them to get the new arm orientation quaternion
+      // final phoneQuaternion = vector_math.Quaternion.identity();
+      // phoneQuaternion.setEuler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
+      // final armQuaternion = ovToQuat(_referenceArmPose!.oZ, _referenceArmPose!.oY, _referenceArmPose!.oX, _referenceArmPose!.theta);
+      // final newArmQuaternion = armQuaternion * phoneQuaternion;
+      // final newOrientationVector = quatToOV(newArmQuaternion);
+      // final newOrientationX = newOrientationVector.x;
+      // final newOrientationY = newOrientationVector.y;
+      // final newOrientationZ = newOrientationVector.z;
 
       final newPose = Pose(
         x: newX,
         y: newY,
         z: newZ,
-        theta: _referenceArmPose!.theta, // Keep theta from reference
-        oX: newOrientationX,
-        oY: newOrientationY,
-        oZ: newOrientationZ,
+        theta: _referenceArmPose!.theta,
+        oX: _referenceArmPose!.oX, // would be newOrientationX if math was correct
+        oY: _referenceArmPose!.oY,
+        oZ: _referenceArmPose!.oZ,
       );
 
       if (_poseQueue.isNotEmpty) {
@@ -273,6 +276,7 @@ class _ImuWidgetState extends State<ImuWidget> {
         _isMovingArm = false;
       }
     }
+    debugPrint("queue is empty");
     _isProcessingQueue = false;
     _poseCounter = 0;
   }
@@ -296,9 +300,9 @@ class _ImuWidgetState extends State<ImuWidget> {
         _lastIntegrationTime = null;
 
         // Zero out orientation tracking
-        _orientationX = 0.0;
-        _orientationY = 0.0;
-        _orientationZ = 0.0;
+        // _orientationX = 0.0;
+        // _orientationY = 0.0;
+        // _orientationZ = 0.0;
         _lastGyroIntegrationTime = null;
 
         // Clear pose queue and reset counter
@@ -381,16 +385,11 @@ class _ImuWidgetState extends State<ImuWidget> {
           ),
         TextButton(
           onPressed: () async {
-            await widget.arm.moveToPosition(_targetArmPose!);
-            debugPrint("finished move to position");
-            _setReference();
-          },
-          child: Text("Execute"),
-        ),
-        TextButton(
-          onPressed: () async {
+            await widget.arm.stop();
             setState(() {
               _isReferenceSet = false;
+              _poseQueue.clear();
+              _poseCounter = 0;
             });
           },
           child: Text("Stop"),
@@ -399,9 +398,68 @@ class _ImuWidgetState extends State<ImuWidget> {
     );
   }
 
-  /// Converts a unit quaternion (q) to an OrientationVector.
+  /// Converts an OrientationVector to a quaternion.
   ///
-  /// Converted from go code to flutter using gemin
+  /// Translated from Go spatialmath code - OrientationVector.Quaternion()
+  /// OX, OY, OZ represent a point on the unit sphere where the end effector is pointing
+  /// Theta is rotation around that pointing axis
+  vector_math.Quaternion ovToQuat(double oX, double oY, double oZ, double theta) {
+    const double defaultAngleEpsilon = 1e-4;
+
+    // Normalize the orientation vector
+    final norm = math.sqrt(oX * oX + oY * oY + oZ * oZ);
+    double normOX = oX;
+    double normOY = oY;
+    double normOZ = oZ;
+
+    if (norm == 0.0) {
+      // Default orientation: pointing up along Z axis
+      normOX = 0.0;
+      normOY = 0.0;
+      normOZ = -1.0;
+    } else {
+      normOX /= norm;
+      normOY /= norm;
+      normOZ /= norm;
+    }
+
+    // acos(OZ) ranges from 0 (north pole) to pi (south pole)
+    final lat = math.acos(normOZ.clamp(-1.0, 1.0));
+
+    // If we're pointing at the Z axis then lon is 0, theta is the OV theta
+    double lon = 0.0;
+
+    if (1 - normOZ.abs() > defaultAngleEpsilon) {
+      // If we are not at a pole, we need the longitude
+      lon = math.atan2(normOY, normOX);
+    }
+
+    // Use ZYZ Euler angles to create quaternion
+    // This matches: mgl64.AnglesToQuat(lon, lat, theta, mgl64.ZYZ)
+    return _eulerZYZToQuat(lon, lat, theta);
+  }
+
+  /// Convert ZYZ Euler angles to quaternion
+  /// Manually composing Q1(Z by z1) * Q2(Y by y) * Q3(Z by z2)
+  vector_math.Quaternion _eulerZYZToQuat(double z1, double y, double z2) {
+    // Create three rotation quaternions and compose them
+    // Q1: Rotation around Z axis by z1
+    final q1 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 0, 1), z1);
+
+    // Q2: Rotation around Y axis by y
+    final q2 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 1, 0), y);
+
+    // Q3: Rotation around Z axis by z2
+    final q3 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 0, 1), z2);
+
+    // Compose: Q = Q1 * Q2 * Q3 (intrinsic rotations)
+    final result = q1 * q2 * q3;
+
+    return result;
+  }
+
+  /// Converts a unit quaternion (q) to an OrientationVector.
+  /// Converted from go code to flutter using Gemini
   Orientation_OrientationVectorRadians quatToOV(vector_math.Quaternion q) {
     double orientationVectorPoleRadius = 0.0001;
     double defaultAngleEpsilon = 1e-4;
@@ -413,7 +471,7 @@ class _ImuWidgetState extends State<ImuWidget> {
 
     final ov = Orientation_OrientationVectorRadians();
 
-    // 1. Get the transform of our +X and +Z points (Quaternion rotation formula: q * v * q_conj)
+    // Get the transform of our +X and +Z points (Quaternion rotation formula: q * v * q_conj)
     final vector_math.Quaternion newX = q * xAxis * q.conjugated();
     final vector_math.Quaternion newZ = q * zAxis * q.conjugated();
 
@@ -422,11 +480,11 @@ class _ImuWidgetState extends State<ImuWidget> {
     ov.y = newZ.y;
     ov.z = newZ.z;
 
-    // 2. Calculate the roll angle (Theta)
+    // Calculate the roll angle (Theta)
 
     // Check if we are near the poles (i.e., newZ.z/Kmag is close to 1 or -1)
     if (1 - (ov.z.abs()) > orientationVectorPoleRadius) {
-      // --- General Case: Not Near the Pole ---
+      // General Case: Not Near the Pole
 
       // Vector3 versions of the rotated axes
       final vector_math.Vector3 v1 = vector_math.Vector3(newZ.x, newZ.y, newZ.z); // Local Z
@@ -441,7 +499,7 @@ class _ImuWidgetState extends State<ImuWidget> {
 
       // Find the angle (theta) between the two planes (using the angle between their normals)
       final double denominator = norm1.length * norm2.length;
-      final double cosTheta = denominator != 0.0 ? norm1.dot(norm2) / denominator : 1.0; // Avoid division by zero, default to 1 (0 angle)
+      final double cosTheta = norm1.dot(norm2) / denominator; // Avoid division by zero, default to 1 (0 angle)
 
       // Clamp for float error
       double clampedCosTheta = cosTheta.clamp(-1.0, 1.0);
@@ -466,10 +524,10 @@ class _ImuWidgetState extends State<ImuWidget> {
         final double norm1Len = norm1.length;
         final double norm3Len = norm3.length;
 
-        final double cosTest = (norm1Len * norm3Len) != 0.0 ? norm1.dot(norm3) / (norm1Len * norm3Len) : 1.0;
+        final double cosTest = norm1.dot(norm3) / (norm1Len * norm3Len);
 
         // Check if norm1 and norm3 are coplanar (angle close to 0)
-        if (1.0 - cosTest.abs() < defaultAngleEpsilon * defaultAngleEpsilon) {
+        if (1.0 - cosTest < defaultAngleEpsilon * defaultAngleEpsilon) {
           ov.theta = -theta;
         } else {
           ov.theta = theta;
@@ -478,7 +536,7 @@ class _ImuWidgetState extends State<ImuWidget> {
         ov.theta = 0.0;
       }
     } else {
-      // --- Special Case: Near the Pole (Z-axis is up or down) ---
+      // Special Case: Near the Pole (Z-axis is up or down)
 
       // Use Atan2 on the rotated X-axis components (Jmag and Imag, or y and x in Dart)
       // -math.Atan2(newX.Jmag, -newX.Imag) -> Dart: -math.atan2(newX.y, -newX.x)
@@ -495,7 +553,6 @@ class _ImuWidgetState extends State<ImuWidget> {
     if (ov.theta == -0.0) {
       ov.theta = 0.0;
     }
-
     return ov;
   }
 
