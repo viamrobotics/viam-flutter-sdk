@@ -30,9 +30,6 @@ class _ImuWidgetState extends State<ImuWidget> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
   Duration sensorInterval = SensorInterval.uiInterval;
 
-  DateTime? _lastArmCommandTime;
-  // Rate limit: 5 commands/sec
-  static const Duration _armCommandInterval = Duration(milliseconds: 200);
   static const double _positionScale = 300.0;
 
   static const double _velocityDecay = 0.99;
@@ -170,17 +167,12 @@ class _ImuWidgetState extends State<ImuWidget> {
     final accelX = event.x.abs() > _deadZoneXY ? event.x : 0.0;
     final accelY = event.y.abs() > _deadZoneXY ? event.y : 0.0;
     final accelZ = event.z.abs() > _deadZoneZ ? event.z : 0.0;
-    print("event.x: ${event.x}, event.y: ${event.y}, event.z: ${event.z}");
 
-    // final accelX = event.x;
-    // final accelY = event.y;
-    // final accelZ = event.z;
     if (accelX == 0.0 && accelY == 0.0 && accelZ == 0.0) {
-      // Phone is stationary, reset velocity to prevent drift from sensor noise
       _velocityX = 0.0;
       _velocityY = 0.0;
       _velocityZ = 0.0;
-      return; // Don't update position
+      return; 
     }
 
     // Calculate velocity
@@ -193,7 +185,7 @@ class _ImuWidgetState extends State<ImuWidget> {
     _velocityY *= _velocityDecay;
     _velocityZ *= _velocityDecay;
 
-    // Clamp very small velocities to zero to prevent creep
+    // Filter out very small velocities to prevent drift
     if (_velocityX.abs() < _velocityThreshold) _velocityX = 0.0;
     if (_velocityY.abs() < _velocityThreshold) _velocityY = 0.0;
     if (_velocityZ.abs() < _velocityThreshold) _velocityZ = 0.0;
@@ -204,7 +196,6 @@ class _ImuWidgetState extends State<ImuWidget> {
     _positionZ += _velocityZ * dt;
 
     // Ready to create and queue the pose
-    _lastArmCommandTime = now;
     _isMovingArm = true;
 
     try {
