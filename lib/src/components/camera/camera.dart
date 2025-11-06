@@ -106,7 +106,7 @@ abstract class Camera extends Resource {
     Map<String, dynamic>? extra,
   });
 
-  /// Get the [ResourceName] for this [Camera] with the given [name]
+  /// Get the [common_pb.ResourceName] for this [Camera] with the given [name]
   ///
   /// ```
   /// final myCameraResourceName = myCamera.getResourceName("my_camera");

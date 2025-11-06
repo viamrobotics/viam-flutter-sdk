@@ -99,7 +99,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
     return response.classifications;
   }
 
-  /// Get a list of [PointCloudObject]s from the camera named [cameraName].
+  /// Get a list of [common_pb.PointCloudObject]s from the camera named [cameraName].
   ///
   /// ```
   /// // Example:
@@ -139,7 +139,7 @@ class VisionClient extends Resource with RPCDebugLoggerMixin implements Resource
     return response.result.toMap();
   }
 
-  /// Get the [ResourceName] for this [VisionClient] with the given [name]
+  /// Get the [common_pb.ResourceName] for this [VisionClient] with the given [name]
   ///
   /// ```
   /// final myVisionServiceResourceName = myVisionService.getResourceName("my_vision_service");

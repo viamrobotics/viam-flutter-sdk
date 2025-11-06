@@ -141,7 +141,7 @@ abstract class Motor extends Resource {
   /// For more information, see [Motor component](https://docs.viam.com/dev/reference/apis/components/motor/#ismoving).
   Future<bool> isMoving({Map<String, dynamic>? extra});
 
-  /// Get the [ResourceName] for this [Motor] with the given [name].
+  /// Get the [common_pb.ResourceName] for this [Motor] with the given [name].
   ///
   /// ```
   /// var name = Motor.getResourceName('myMotor');

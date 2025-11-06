@@ -97,7 +97,7 @@ abstract class Base extends Resource {
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#ismoving).
   Future<bool> isMoving();
 
-  /// Get the [ResourceName] for this [Base] with the given [name]
+  /// Get the [common_pb.ResourceName] for this [Base] with the given [name]
   ///
   /// For more information, see [Base component](https://docs.viam.com/dev/reference/apis/components/base/#getresourcename).
   static common_pb.ResourceName getResourceName(String name) {

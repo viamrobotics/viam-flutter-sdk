@@ -15,24 +15,24 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'data_sync.pb.dart' as $6;
+import 'data_sync.pb.dart' as $7;
 
 export 'data_sync.pb.dart';
 
 @$pb.GrpcServiceName('viam.app.datasync.v1.DataSyncService')
 class DataSyncServiceClient extends $grpc.Client {
-  static final _$dataCaptureUpload = $grpc.ClientMethod<$6.DataCaptureUploadRequest, $6.DataCaptureUploadResponse>(
+  static final _$dataCaptureUpload = $grpc.ClientMethod<$7.DataCaptureUploadRequest, $7.DataCaptureUploadResponse>(
       '/viam.app.datasync.v1.DataSyncService/DataCaptureUpload',
-      ($6.DataCaptureUploadRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.DataCaptureUploadResponse.fromBuffer(value));
-  static final _$fileUpload = $grpc.ClientMethod<$6.FileUploadRequest, $6.FileUploadResponse>(
+      ($7.DataCaptureUploadRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.DataCaptureUploadResponse.fromBuffer(value));
+  static final _$fileUpload = $grpc.ClientMethod<$7.FileUploadRequest, $7.FileUploadResponse>(
       '/viam.app.datasync.v1.DataSyncService/FileUpload',
-      ($6.FileUploadRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.FileUploadResponse.fromBuffer(value));
-  static final _$streamingDataCaptureUpload = $grpc.ClientMethod<$6.StreamingDataCaptureUploadRequest, $6.StreamingDataCaptureUploadResponse>(
+      ($7.FileUploadRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.FileUploadResponse.fromBuffer(value));
+  static final _$streamingDataCaptureUpload = $grpc.ClientMethod<$7.StreamingDataCaptureUploadRequest, $7.StreamingDataCaptureUploadResponse>(
       '/viam.app.datasync.v1.DataSyncService/StreamingDataCaptureUpload',
-      ($6.StreamingDataCaptureUploadRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.StreamingDataCaptureUploadResponse.fromBuffer(value));
+      ($7.StreamingDataCaptureUploadRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.StreamingDataCaptureUploadResponse.fromBuffer(value));
 
   DataSyncServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -40,15 +40,15 @@ class DataSyncServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$6.DataCaptureUploadResponse> dataCaptureUpload($6.DataCaptureUploadRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.DataCaptureUploadResponse> dataCaptureUpload($7.DataCaptureUploadRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$dataCaptureUpload, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.FileUploadResponse> fileUpload($async.Stream<$6.FileUploadRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.FileUploadResponse> fileUpload($async.Stream<$7.FileUploadRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$fileUpload, request, options: options).single;
   }
 
-  $grpc.ResponseFuture<$6.StreamingDataCaptureUploadResponse> streamingDataCaptureUpload($async.Stream<$6.StreamingDataCaptureUploadRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.StreamingDataCaptureUploadResponse> streamingDataCaptureUpload($async.Stream<$7.StreamingDataCaptureUploadRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$streamingDataCaptureUpload, request, options: options).single;
   }
 }
@@ -58,34 +58,34 @@ abstract class DataSyncServiceBase extends $grpc.Service {
   $core.String get $name => 'viam.app.datasync.v1.DataSyncService';
 
   DataSyncServiceBase() {
-    $addMethod($grpc.ServiceMethod<$6.DataCaptureUploadRequest, $6.DataCaptureUploadResponse>(
+    $addMethod($grpc.ServiceMethod<$7.DataCaptureUploadRequest, $7.DataCaptureUploadResponse>(
         'DataCaptureUpload',
         dataCaptureUpload_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.DataCaptureUploadRequest.fromBuffer(value),
-        ($6.DataCaptureUploadResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.FileUploadRequest, $6.FileUploadResponse>(
+        ($core.List<$core.int> value) => $7.DataCaptureUploadRequest.fromBuffer(value),
+        ($7.DataCaptureUploadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$7.FileUploadRequest, $7.FileUploadResponse>(
         'FileUpload',
         fileUpload,
         true,
         false,
-        ($core.List<$core.int> value) => $6.FileUploadRequest.fromBuffer(value),
-        ($6.FileUploadResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.StreamingDataCaptureUploadRequest, $6.StreamingDataCaptureUploadResponse>(
+        ($core.List<$core.int> value) => $7.FileUploadRequest.fromBuffer(value),
+        ($7.FileUploadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$7.StreamingDataCaptureUploadRequest, $7.StreamingDataCaptureUploadResponse>(
         'StreamingDataCaptureUpload',
         streamingDataCaptureUpload,
         true,
         false,
-        ($core.List<$core.int> value) => $6.StreamingDataCaptureUploadRequest.fromBuffer(value),
-        ($6.StreamingDataCaptureUploadResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $7.StreamingDataCaptureUploadRequest.fromBuffer(value),
+        ($7.StreamingDataCaptureUploadResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$6.DataCaptureUploadResponse> dataCaptureUpload_Pre($grpc.ServiceCall call, $async.Future<$6.DataCaptureUploadRequest> request) async {
+  $async.Future<$7.DataCaptureUploadResponse> dataCaptureUpload_Pre($grpc.ServiceCall call, $async.Future<$7.DataCaptureUploadRequest> request) async {
     return dataCaptureUpload(call, await request);
   }
 
-  $async.Future<$6.DataCaptureUploadResponse> dataCaptureUpload($grpc.ServiceCall call, $6.DataCaptureUploadRequest request);
-  $async.Future<$6.FileUploadResponse> fileUpload($grpc.ServiceCall call, $async.Stream<$6.FileUploadRequest> request);
-  $async.Future<$6.StreamingDataCaptureUploadResponse> streamingDataCaptureUpload($grpc.ServiceCall call, $async.Stream<$6.StreamingDataCaptureUploadRequest> request);
+  $async.Future<$7.DataCaptureUploadResponse> dataCaptureUpload($grpc.ServiceCall call, $7.DataCaptureUploadRequest request);
+  $async.Future<$7.FileUploadResponse> fileUpload($grpc.ServiceCall call, $async.Stream<$7.FileUploadRequest> request);
+  $async.Future<$7.StreamingDataCaptureUploadResponse> streamingDataCaptureUpload($grpc.ServiceCall call, $async.Stream<$7.StreamingDataCaptureUploadRequest> request);
 }
