@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   String? _lastError;
 
   // Pose queue for batching arm movements to reduce lag
-  final List<Pose> _poseQueue = [];
+  final Queue<Pose> _poseQueue = Queue();
   int _poseCounter = 0;
   bool _isProcessingQueue = false;
 
@@ -141,10 +142,6 @@ class _ImuWidgetState extends State<ImuWidget> {
       return;
     }
 
-    if (_isMovingArm) {
-      return;
-    }
-
     final now = DateTime.now();
 
     // Initialize integration time on first run
@@ -172,7 +169,7 @@ class _ImuWidgetState extends State<ImuWidget> {
       _velocityX = 0.0;
       _velocityY = 0.0;
       _velocityZ = 0.0;
-      return; 
+      return;
     }
 
     // Calculate velocity
@@ -194,9 +191,6 @@ class _ImuWidgetState extends State<ImuWidget> {
     _positionX += _velocityX * dt;
     _positionY += _velocityY * dt;
     _positionZ += _velocityZ * dt;
-
-    // Ready to create and queue the pose
-    _isMovingArm = true;
 
     try {
       // Calculate new target position based on reference + phone displacement
@@ -237,61 +231,50 @@ class _ImuWidgetState extends State<ImuWidget> {
       });
 
       // Add pose to queue
-      _poseQueue.add(newPose);
-      debugPrint("new pose added to queue: ${newPose.x}, ${newPose.y}, ${newPose.z}");
-      _poseCounter++;
+      _addPoseToQueue(newPose, 5);
 
-      // Start processing queue if not already processing
-      // if (!_isProcessingQueue) {
-      //   _processQueueSequentially();
-      // }
+      if (!_isProcessingQueue) {
+        _executePoseFromQueue();
+      }
     } catch (e) {
       setState(() {
         _lastError = e.toString();
       });
-    } finally {
-      _isMovingArm = false;
     }
   }
 
-  /// Process pose queue sequentially, executing every 20th pose
-  /// Instead of sending every pose immediately (which causes lag), we queue them
-  /// and only execute every Nth pose, using the latest position from the queue
-  ///
-  ///
-  /// only add every 5th pose to the queue, seperate from the execution logic
-  /// exuection logic just runs first pose in the queue
-  Future<void> _processQueueSequentially() async {
+  // Add every nth pose to the queue,
+  void _addPoseToQueue(Pose pose, int n) {
+    if (n == 0 || _poseCounter % n == 0) {
+      _poseQueue.addLast(pose);
+      debugPrint("new pose added to queue: ${pose.x}, ${pose.y}, ${pose.z}");
+    }
+    _poseCounter++;
+  }
+
+  void _executePoseFromQueue() async {
     _isProcessingQueue = true;
-
     while (_poseQueue.isNotEmpty) {
-      // Only execute every 20th pose
-      if (_poseCounter % 5 == 0) {
-        // Get the latest pose from the queue (skip intermediate ones)
-        final poseToExecute = _poseQueue.last;
-        _poseQueue.clear(); // Clear all accumulated poses
-
+      if (!_isMovingArm) {
+        final poseToExecute = _poseQueue.first;
+        _poseQueue.removeFirst();
+        _isMovingArm = true;
         try {
           await widget.arm.moveToPosition(poseToExecute);
           setState(() {
-            _lastError = null;
             _currentArmPose = poseToExecute;
+            _lastError = null;
           });
         } catch (e) {
           setState(() {
             _lastError = e.toString();
           });
         }
-      } else {
-        // Skip this batch, just clear the queue
-        _poseQueue.clear();
+        _isMovingArm = false;
       }
-
-      // Small delay to allow new poses to accumulate
-      await Future.delayed(const Duration(milliseconds: 50));
     }
-
     _isProcessingQueue = false;
+    _poseCounter = 0;
   }
 
   /// Set reference point
@@ -403,6 +386,14 @@ class _ImuWidgetState extends State<ImuWidget> {
             _setReference();
           },
           child: Text("Execute"),
+        ),
+        TextButton(
+          onPressed: () async {
+            setState(() {
+              _isReferenceSet = false;
+            });
+          },
+          child: Text("Stop"),
         )
       ],
     );
