@@ -28,16 +28,18 @@ class _ImuWidgetState extends State<ImuWidget> {
   }
 
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
-  Duration sensorInterval = SensorInterval.normalInterval;
+  Duration sensorInterval = SensorInterval.uiInterval;
 
   DateTime? _lastArmCommandTime;
   // Rate limit: 5 commands/sec
   static const Duration _armCommandInterval = Duration(milliseconds: 200);
-  // Scale factor: 1000mm/meter for 1:1 scale
-  static const double _positionScale = 1000.0;
+  static const double _positionScale = 300.0;
 
-  static const double _velocityDecay = 0.90; // Decay factor to prevent drift
-  static const double _deadZone = 0.3; // Ignore small accelerations
+  static const double _velocityDecay = 0.99;
+
+  static const double _deadZoneZ = 0.3;
+  static const double _deadZoneXY = 0.1;
+  static const double _velocityThreshold = 0.01; // Threshold below which velocity is considered zero
   bool _isMovingArm = false;
   String? _lastError;
 
@@ -165,13 +167,20 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
 
     // Apply dead zone to acceleration to filter out noise
-    final accelX = event.x.abs() > _deadZone ? event.x : 0.0;
-    final accelY = event.y.abs() > _deadZone ? event.y : 0.0;
-    final accelZ = event.z.abs() > _deadZone ? event.z : 0.0;
+    final accelX = event.x.abs() > _deadZoneXY ? event.x : 0.0;
+    final accelY = event.y.abs() > _deadZoneXY ? event.y : 0.0;
+    final accelZ = event.z.abs() > _deadZoneZ ? event.z : 0.0;
+    print("event.x: ${event.x}, event.y: ${event.y}, event.z: ${event.z}");
+
+    // final accelX = event.x;
+    // final accelY = event.y;
+    // final accelZ = event.z;
     if (accelX == 0.0 && accelY == 0.0 && accelZ == 0.0) {
+      // Phone is stationary, reset velocity to prevent drift from sensor noise
       _velocityX = 0.0;
       _velocityY = 0.0;
       _velocityZ = 0.0;
+      return; // Don't update position
     }
 
     // Calculate velocity
@@ -184,18 +193,15 @@ class _ImuWidgetState extends State<ImuWidget> {
     _velocityY *= _velocityDecay;
     _velocityZ *= _velocityDecay;
 
+    // Clamp very small velocities to zero to prevent creep
+    if (_velocityX.abs() < _velocityThreshold) _velocityX = 0.0;
+    if (_velocityY.abs() < _velocityThreshold) _velocityY = 0.0;
+    if (_velocityZ.abs() < _velocityThreshold) _velocityZ = 0.0;
+
     // Calculate position
     _positionX += _velocityX * dt;
     _positionY += _velocityY * dt;
     _positionZ += _velocityZ * dt;
-
-    // Rate limiting, don't send arm commands too frequently.
-    if (_lastArmCommandTime != null) {
-      final timeSinceLastCommand = now.difference(_lastArmCommandTime!);
-      if (timeSinceLastCommand < _armCommandInterval) {
-        return;
-      }
-    }
 
     // Ready to create and queue the pose
     _lastArmCommandTime = now;
@@ -204,9 +210,9 @@ class _ImuWidgetState extends State<ImuWidget> {
     try {
       // Calculate new target position based on reference + phone displacement
       // referenceArmPose is the arm's position in the real world when we set the reference
-      final newX = _referenceArmPose!.x + (_positionY * _positionScale);
-      final newY = (_referenceArmPose!.y + (_positionX * _positionScale)) * -1;
-      final newZ = (_referenceArmPose!.z + (_positionZ * _positionScale));
+      final newX = _referenceArmPose!.x + (_positionX * _positionScale);
+      final newY = _referenceArmPose!.y + (_positionY * _positionScale);
+      final newZ = _referenceArmPose!.z + (_positionZ * _positionScale);
 
       final quaternion = vector_math.Quaternion.identity();
       quaternion.setEuler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
@@ -225,13 +231,15 @@ class _ImuWidgetState extends State<ImuWidget> {
         oZ: newOrientationZ,
       );
 
-      if (newPose.x == _currentArmPose!.x &&
-          newPose.y == _currentArmPose!.y &&
-          newPose.z == _currentArmPose!.z &&
-          newPose.oX == _currentArmPose!.oX &&
-          newPose.oY == _currentArmPose!.oY &&
-          newPose.oZ == _currentArmPose!.oZ) {
-        return;
+      if (_poseQueue.isNotEmpty) {
+        if (newPose.x == _poseQueue.last.x &&
+            newPose.y == _poseQueue.last.y &&
+            newPose.z == _poseQueue.last.z &&
+            newPose.oX == _poseQueue.last.oX &&
+            newPose.oY == _poseQueue.last.oY &&
+            newPose.oZ == _poseQueue.last.oZ) {
+          return;
+        }
       }
       setState(() {
         _targetArmPose = newPose;
@@ -239,12 +247,13 @@ class _ImuWidgetState extends State<ImuWidget> {
 
       // Add pose to queue
       _poseQueue.add(newPose);
+      debugPrint("new pose added to queue: ${newPose.x}, ${newPose.y}, ${newPose.z}");
       _poseCounter++;
 
       // Start processing queue if not already processing
-      if (!_isProcessingQueue) {
-        _processQueueSequentially();
-      }
+      // if (!_isProcessingQueue) {
+      //   _processQueueSequentially();
+      // }
     } catch (e) {
       setState(() {
         _lastError = e.toString();
@@ -257,6 +266,10 @@ class _ImuWidgetState extends State<ImuWidget> {
   /// Process pose queue sequentially, executing every 20th pose
   /// Instead of sending every pose immediately (which causes lag), we queue them
   /// and only execute every Nth pose, using the latest position from the queue
+  ///
+  ///
+  /// only add every 5th pose to the queue, seperate from the execution logic
+  /// exuection logic just runs first pose in the queue
   Future<void> _processQueueSequentially() async {
     _isProcessingQueue = true;
 
@@ -392,7 +405,14 @@ class _ImuWidgetState extends State<ImuWidget> {
             "Move your phone through space!",
             style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
           ),
-        TextButton(onPressed: () async => await widget.arm.moveToPosition(_targetArmPose!), child: Text("Execute"))
+        TextButton(
+          onPressed: () async {
+            await widget.arm.moveToPosition(_targetArmPose!);
+            debugPrint("finished move to position");
+            _setReference();
+          },
+          child: Text("Execute"),
+        )
       ],
     );
   }
