@@ -16,6 +16,7 @@ class FakeArm extends Arm {
     ..y = 0
     ..z = 0;
   Map<String, dynamic>? extra;
+  Map<String, Mesh> arm3DModels = {};
 
   @override
   String name;
@@ -64,6 +65,12 @@ class FakeArm extends Arm {
     armEndPosition = pose;
     isStopped = false;
   }
+
+  @override
+  Future<Map<String, Mesh>> get3DModels({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return arm3DModels;
+  }
 }
 
 void main() {
@@ -83,6 +90,13 @@ void main() {
     test('jointPositions', () async {
       final jointPositions = await arm.jointPositions();
       expect(jointPositions, arm.armJointPositions);
+    });
+
+    test('get3DModels', () async {
+      final expectedModels = {'model1': Mesh()..contentType = 'ply'};
+      arm.arm3DModels = expectedModels;
+      final models = await arm.get3DModels();
+      expect(models, expectedModels);
     });
 
     test('moveToJointPositions', () async {
@@ -170,6 +184,15 @@ void main() {
         expect(response.positions.values, arm.armJointPositions);
       });
 
+      test('get3DModels', () async {
+        final client = ArmServiceClient(channel);
+        final expectedModels = {'model1': Mesh()..contentType = 'ply'};
+        arm.arm3DModels = expectedModels;
+        final request = Get3DModelsRequest()..name = name;
+        final response = await client.get3DModels(request);
+        expect(response.models, expectedModels);
+      });
+
       test('moveToJointPositions', () async {
         final client = ArmServiceClient(channel);
         final expected = [1.0, 1.0, 1.0];
@@ -253,6 +276,14 @@ void main() {
         final client = ArmClient(name, channel);
         final jointPositions = await client.jointPositions();
         expect(jointPositions, arm.armJointPositions);
+      });
+
+      test('get3DModels', () async {
+        final client = ArmClient(name, channel);
+        final expectedModels = {'model1': Mesh()..contentType = 'ply'};
+        arm.arm3DModels = expectedModels;
+        final models = await client.get3DModels();
+        expect(models, expectedModels);
       });
 
       test('moveToJointPositions', () async {

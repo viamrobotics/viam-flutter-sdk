@@ -1,6 +1,7 @@
 import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
+import '../../common/mesh.dart';
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
@@ -52,6 +53,15 @@ abstract class Arm extends Resource {
   ///
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getjointpositions).
   Future<List<double>> jointPositions({Map<String, dynamic>? extra});
+
+  /// Get the [Map] of 3D models associated with the component.
+  ///
+  /// ```
+  /// final models = await myArm.get3DModels();
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#get3dmodels).
+  Future<Map<String, Mesh>> get3DModels({Map<String, dynamic>? extra});
 
   /// Stop all motion of the arm. It is assumed that the arm stops immediately.
   ///

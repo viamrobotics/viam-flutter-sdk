@@ -67,6 +67,15 @@ class ArmClient extends Arm with RPCDebugLoggerMixin implements ResourceRPCClien
   }
 
   @override
+  Future<Map<String, Mesh>> get3DModels({Map<String, dynamic>? extra}) async {
+    final request = Get3DModelsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.get3DModels(request, options: callOptions);
+    return response.models;
+  }
+
+  @override
   Future<void> stop({Map<String, dynamic>? extra}) async {
     final request = StopRequest()
       ..name = name
