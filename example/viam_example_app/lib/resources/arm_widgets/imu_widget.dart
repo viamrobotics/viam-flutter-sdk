@@ -60,7 +60,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   // double _orientationX = 0.0; // Roll
   // double _orientationY = 0.0; // Pitch
   // double _orientationZ = 0.0; // Yaw
-  DateTime? _lastGyroIntegrationTime;
+  // DateTime? _lastGyroIntegrationTime;
 
   Pose? _referenceArmPose; // arm position set once when you press "set reference"
   bool _isReferenceSet = false;
