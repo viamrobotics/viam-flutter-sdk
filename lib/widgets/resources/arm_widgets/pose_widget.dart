@@ -5,7 +5,7 @@ import 'package:grpc/grpc.dart';
 import '../../../protos/common/common.dart';
 import '../../../src/utils.dart';
 import '../../../viam_sdk.dart' as viam;
-import '../arm_new.dart';
+import '../arm.dart';
 
 class _TextControlStruct {
   TextEditingController x;
