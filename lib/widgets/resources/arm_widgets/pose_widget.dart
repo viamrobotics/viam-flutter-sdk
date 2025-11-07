@@ -19,18 +19,6 @@ class _TextControlStruct {
   _TextControlStruct(this.x, this.y, this.z, this.oX, this.oY, this.oZ, this.theta);
 }
 
-class _TextControlStruct {
-  TextEditingController x;
-  TextEditingController y;
-  TextEditingController z;
-  TextEditingController oX;
-  TextEditingController oY;
-  TextEditingController oZ;
-  TextEditingController theta;
-
-  _TextControlStruct(this.x, this.y, this.z, this.oX, this.oY, this.oZ, this.theta);
-}
-
 class PoseWidget extends StatefulWidget {
   final viam.Arm arm;
   final ArmNotifier updateNotifier;
@@ -277,10 +265,10 @@ class _PoseWidgetState extends State<PoseWidget> {
                       },
                     ),
                     Text(
-                      "Live",
+                      'Live',
                     ),
                     Tooltip(
-                      message: "In Live mode, pose will update \non release of the slider",
+                      message: 'In Live mode, pose will update \non release of the slider',
                       textAlign: TextAlign.center,
                       triggerMode: TooltipTriggerMode.tap,
                       preferBelow: false,
@@ -289,7 +277,7 @@ class _PoseWidgetState extends State<PoseWidget> {
                     Spacer(),
                     OutlinedButton.icon(
                       onPressed: _isLive ? null : _updatePose,
-                      label: Text("Execute"),
+                      label: Text('Execute'),
                       icon: Icon(Icons.play_arrow),
                     ),
                   ],
