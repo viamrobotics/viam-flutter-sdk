@@ -311,56 +311,64 @@ class _BuildJointControlRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
+      child: Column(
         children: [
-          SizedBox(
-            width: 50,
-            child: Text(
-              label,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
+          Row(
+            children: [
+              SizedBox(
+                width: 55,
+                child: Text(
+                  label,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+              SizedBox(
+                width: 70,
+                child: TextField(
+                  controller: controller,
+                  textAlign: TextAlign.center,
+                  keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(r'^-?\d+\.?\d{0,1}')),
+                  ],
+                  onSubmitted: (newValue) {
+                    final parsedValue = double.tryParse(newValue) ?? value;
+                    onValueChanged(parsedValue);
+                    onValueChangedEnd(parsedValue);
+                  },
+                ),
+              ),
+              Spacer(),
+              IconButton(
+                icon: const Icon(Icons.remove),
+                onPressed: () async {
+                  onValueChanged(value - (max == 1 ? 0.1 : 1.0));
+                  onValueChangedEnd(value);
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () async {
+                  onValueChanged(value + (max == 1 ? 0.1 : 1.0));
+                  onValueChangedEnd(value);
+                },
+              ),
+            ],
           ),
-          Expanded(
-            child: Slider(
-              value: value,
-              min: min,
-              max: max,
-              label: value.toStringAsFixed(1),
-              onChanged: onValueChanged,
-              onChangeEnd: onValueChangedEnd,
-            ),
-          ),
-          const SizedBox(width: 16),
-          SizedBox(
-            width: 70,
-            child: TextField(
-              controller: controller,
-              textAlign: TextAlign.center,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^-?\d+\.?\d{0,1}')),
-              ],
-              onSubmitted: (newValue) {
-                final parsedValue = double.tryParse(newValue) ?? value;
-                onValueChanged(parsedValue);
-                onValueChangedEnd(parsedValue);
-              },
-            ),
-          ),
-          const SizedBox(width: 8),
-          IconButton(
-            icon: const Icon(Icons.remove),
-            onPressed: () async {
-              onValueChanged(value - (max == 1 ? 0.1 : 1.0));
-              onValueChangedEnd(value);
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () async {
-              onValueChanged(value + (max == 1 ? 0.1 : 1.0));
-              onValueChangedEnd(value);
-            },
+          Row(
+            children: [
+              SizedBox(width: 35),
+              Expanded(
+                child: Slider(
+                  value: value,
+                  min: min,
+                  max: max,
+                  label: value.toStringAsFixed(1),
+                  onChanged: onValueChanged,
+                  onChangeEnd: onValueChangedEnd,
+                ),
+              ),
+            ],
           ),
         ],
       ),
