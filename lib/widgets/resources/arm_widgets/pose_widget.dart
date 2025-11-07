@@ -91,13 +91,12 @@ class _PoseWidgetState extends State<PoseWidget> {
 
   Future<void> _updatePose() async {
     try {
-      if (!_isGoingToPose) {
-        setState(() {
-          _isGoingToPose = true;
-        });
-        await widget.arm.moveToPosition(_controlValues);
-        widget.updateNotifier.armHasMoved();
-      }
+      if (_isGoingToPose) return;
+      setState(() {
+        _isGoingToPose = true;
+      });
+      await widget.arm.moveToPosition(_controlValues);
+      widget.updateNotifier.armHasMoved();
     } on GrpcError catch (e) {
       if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.message);
     } finally {
@@ -109,9 +108,9 @@ class _PoseWidgetState extends State<PoseWidget> {
     }
   }
 
-  void _updateControlValue(String index, TextEditingController textController, double value) {
+  void _updateControlValue(String axis, TextEditingController textController, double value) {
     setState(() {
-      switch (index) {
+      switch (axis) {
         case 'x':
           _controlValues.x = value;
         case 'y':
