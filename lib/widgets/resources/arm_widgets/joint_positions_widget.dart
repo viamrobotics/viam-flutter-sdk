@@ -169,44 +169,53 @@ class _BuildJointControlRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
+      child: Column(
         children: [
-          SizedBox(
-            width: 30,
-            child: Text(
-              'J${index + 1}',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
+          Row(
+            children: [
+              SizedBox(
+                width: 35,
+                child: Text(
+                  'J${index + 1}',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+              SizedBox(
+                width: 70,
+                child: TextField(
+                  controller: controller,
+                  textAlign: TextAlign.center,
+                  keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,1}')),
+                  ],
+                  onSubmitted: onSubmitted,
+                ),
+              ),
+              Spacer(),
+              IconButton(
+                icon: const Icon(Icons.remove),
+                onPressed: onDecrement,
+              ),
+              IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: onIncrement,
+              ),
+            ],
           ),
-          Expanded(
-            child: Slider(
-              value: value,
-              min: _minPosition,
-              max: _maxPosition,
-              divisions: (_maxPosition - _minPosition).round(),
-              onChanged: onSliderChanged,
-            ),
-          ),
-          SizedBox(
-            width: 70,
-            child: TextField(
-              controller: controller,
-              textAlign: TextAlign.center,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,1}')),
-              ],
-              onSubmitted: onSubmitted,
-            ),
-          ),
-          const SizedBox(width: 8),
-          IconButton(
-            icon: const Icon(Icons.remove),
-            onPressed: onDecrement,
-          ),
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: onIncrement,
+          Row(
+            children: [
+              SizedBox(width: 15),
+              Expanded(
+                child: Slider(
+                  value: value,
+                  min: _minPosition,
+                  max: _maxPosition,
+                  divisions: (_maxPosition - _minPosition).round(),
+                  onChanged: onSliderChanged,
+                ),
+              ),
+            ],
           ),
         ],
       ),
