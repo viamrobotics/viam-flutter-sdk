@@ -44,5 +44,5 @@ class MultipleRemoteResourcesSameNameException implements Exception {
   const MultipleRemoteResourcesSameNameException(this.names);
 
   @override
-  String toString() => 'Multiple remote resources found with the name ${names.first.localName}: $names';
+  String toString() => 'Multiple remote resources found with the name ${names.first.name}: $names';
 }

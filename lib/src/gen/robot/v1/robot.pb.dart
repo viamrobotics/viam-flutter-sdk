@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../common/v1/common.pb.dart' as $16;
-import '../../google/protobuf/duration.pb.dart' as $47;
-import '../../google/protobuf/struct.pb.dart' as $48;
-import '../../google/protobuf/timestamp.pb.dart' as $49;
+import '../../google/protobuf/duration.pb.dart' as $49;
+import '../../google/protobuf/struct.pb.dart' as $50;
+import '../../google/protobuf/timestamp.pb.dart' as $51;
 import 'robot.pbenum.dart';
 
 export 'robot.pbenum.dart';
@@ -214,7 +214,7 @@ class ListTunnelsResponse extends $pb.GeneratedMessage {
 class Tunnel extends $pb.GeneratedMessage {
   factory Tunnel({
     $core.int? port,
-    $47.Duration? connectionTimeout,
+    $49.Duration? connectionTimeout,
   }) {
     final $result = create();
     if (port != null) {
@@ -231,7 +231,7 @@ class Tunnel extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Tunnel', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU3)
-    ..aOM<$47.Duration>(2, _omitFieldNames ? '' : 'connectionTimeout', subBuilder: $47.Duration.create)
+    ..aOM<$49.Duration>(2, _omitFieldNames ? '' : 'connectionTimeout', subBuilder: $49.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -266,21 +266,21 @@ class Tunnel extends $pb.GeneratedMessage {
   void clearPort() => clearField(1);
 
   @$pb.TagNumber(2)
-  $47.Duration get connectionTimeout => $_getN(1);
+  $49.Duration get connectionTimeout => $_getN(1);
   @$pb.TagNumber(2)
-  set connectionTimeout($47.Duration v) { setField(2, v); }
+  set connectionTimeout($49.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasConnectionTimeout() => $_has(1);
   @$pb.TagNumber(2)
   void clearConnectionTimeout() => clearField(2);
   @$pb.TagNumber(2)
-  $47.Duration ensureConnectionTimeout() => $_ensure(1);
+  $49.Duration ensureConnectionTimeout() => $_ensure(1);
 }
 
 class FrameSystemConfig extends $pb.GeneratedMessage {
   factory FrameSystemConfig({
     $16.Transform? frame,
-    $48.Struct? kinematics,
+    $50.Struct? kinematics,
   }) {
     final $result = create();
     if (frame != null) {
@@ -297,7 +297,7 @@ class FrameSystemConfig extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FrameSystemConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOM<$16.Transform>(1, _omitFieldNames ? '' : 'frame', subBuilder: $16.Transform.create)
-    ..aOM<$48.Struct>(2, _omitFieldNames ? '' : 'kinematics', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'kinematics', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -335,15 +335,15 @@ class FrameSystemConfig extends $pb.GeneratedMessage {
   $16.Transform ensureFrame() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $48.Struct get kinematics => $_getN(1);
+  $50.Struct get kinematics => $_getN(1);
   @$pb.TagNumber(2)
-  set kinematics($48.Struct v) { setField(2, v); }
+  set kinematics($50.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasKinematics() => $_has(1);
   @$pb.TagNumber(2)
   void clearKinematics() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Struct ensureKinematics() => $_ensure(1);
+  $50.Struct ensureKinematics() => $_ensure(1);
 }
 
 class FrameSystemConfigRequest extends $pb.GeneratedMessage {
@@ -924,8 +924,8 @@ class Operation extends $pb.GeneratedMessage {
   factory Operation({
     $core.String? id,
     $core.String? method,
-    $48.Struct? arguments,
-    $49.Timestamp? started,
+    $50.Struct? arguments,
+    $51.Timestamp? started,
     $core.String? sessionId,
   }) {
     final $result = create();
@@ -953,8 +953,8 @@ class Operation extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Operation', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'method')
-    ..aOM<$48.Struct>(3, _omitFieldNames ? '' : 'arguments', subBuilder: $48.Struct.create)
-    ..aOM<$49.Timestamp>(4, _omitFieldNames ? '' : 'started', subBuilder: $49.Timestamp.create)
+    ..aOM<$50.Struct>(3, _omitFieldNames ? '' : 'arguments', subBuilder: $50.Struct.create)
+    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'started', subBuilder: $51.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'sessionId')
     ..hasRequiredFields = false
   ;
@@ -999,26 +999,26 @@ class Operation extends $pb.GeneratedMessage {
   void clearMethod() => clearField(2);
 
   @$pb.TagNumber(3)
-  $48.Struct get arguments => $_getN(2);
+  $50.Struct get arguments => $_getN(2);
   @$pb.TagNumber(3)
-  set arguments($48.Struct v) { setField(3, v); }
+  set arguments($50.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasArguments() => $_has(2);
   @$pb.TagNumber(3)
   void clearArguments() => clearField(3);
   @$pb.TagNumber(3)
-  $48.Struct ensureArguments() => $_ensure(2);
+  $50.Struct ensureArguments() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $49.Timestamp get started => $_getN(3);
+  $51.Timestamp get started => $_getN(3);
   @$pb.TagNumber(4)
-  set started($49.Timestamp v) { setField(4, v); }
+  set started($51.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasStarted() => $_has(3);
   @$pb.TagNumber(4)
   void clearStarted() => clearField(4);
   @$pb.TagNumber(4)
-  $49.Timestamp ensureStarted() => $_ensure(3);
+  $51.Timestamp ensureStarted() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get sessionId => $_getSZ(4);
@@ -1661,8 +1661,8 @@ class GetModelsFromModulesResponse extends $pb.GeneratedMessage {
 class Status extends $pb.GeneratedMessage {
   factory Status({
     $16.ResourceName? name,
-    $48.Struct? status,
-    $49.Timestamp? lastReconfigured,
+    $50.Struct? status,
+    $51.Timestamp? lastReconfigured,
   }) {
     final $result = create();
     if (name != null) {
@@ -1682,8 +1682,8 @@ class Status extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOM<$16.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $16.ResourceName.create)
-    ..aOM<$48.Struct>(2, _omitFieldNames ? '' : 'status', subBuilder: $48.Struct.create)
-    ..aOM<$49.Timestamp>(3, _omitFieldNames ? '' : 'lastReconfigured', subBuilder: $49.Timestamp.create)
+    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'status', subBuilder: $50.Struct.create)
+    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'lastReconfigured', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1720,26 +1720,26 @@ class Status extends $pb.GeneratedMessage {
   $16.ResourceName ensureName() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $48.Struct get status => $_getN(1);
+  $50.Struct get status => $_getN(1);
   @$pb.TagNumber(2)
-  set status($48.Struct v) { setField(2, v); }
+  set status($50.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Struct ensureStatus() => $_ensure(1);
+  $50.Struct ensureStatus() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $49.Timestamp get lastReconfigured => $_getN(2);
+  $51.Timestamp get lastReconfigured => $_getN(2);
   @$pb.TagNumber(3)
-  set lastReconfigured($49.Timestamp v) { setField(3, v); }
+  set lastReconfigured($51.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLastReconfigured() => $_has(2);
   @$pb.TagNumber(3)
   void clearLastReconfigured() => clearField(3);
   @$pb.TagNumber(3)
-  $49.Timestamp ensureLastReconfigured() => $_ensure(2);
+  $51.Timestamp ensureLastReconfigured() => $_ensure(2);
 }
 
 class GetStatusRequest extends $pb.GeneratedMessage {
@@ -1833,7 +1833,7 @@ class GetStatusResponse extends $pb.GeneratedMessage {
 class StreamStatusRequest extends $pb.GeneratedMessage {
   factory StreamStatusRequest({
     $core.Iterable<$16.ResourceName>? resourceNames,
-    $47.Duration? every,
+    $49.Duration? every,
   }) {
     final $result = create();
     if (resourceNames != null) {
@@ -1850,7 +1850,7 @@ class StreamStatusRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..pc<$16.ResourceName>(1, _omitFieldNames ? '' : 'resourceNames', $pb.PbFieldType.PM, subBuilder: $16.ResourceName.create)
-    ..aOM<$47.Duration>(2, _omitFieldNames ? '' : 'every', subBuilder: $47.Duration.create)
+    ..aOM<$49.Duration>(2, _omitFieldNames ? '' : 'every', subBuilder: $49.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1879,15 +1879,15 @@ class StreamStatusRequest extends $pb.GeneratedMessage {
   $core.List<$16.ResourceName> get resourceNames => $_getList(0);
 
   @$pb.TagNumber(2)
-  $47.Duration get every => $_getN(1);
+  $49.Duration get every => $_getN(1);
   @$pb.TagNumber(2)
-  set every($47.Duration v) { setField(2, v); }
+  set every($49.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEvery() => $_has(1);
   @$pb.TagNumber(2)
   void clearEvery() => clearField(2);
   @$pb.TagNumber(2)
-  $47.Duration ensureEvery() => $_ensure(1);
+  $49.Duration ensureEvery() => $_ensure(1);
 }
 
 class StreamStatusResponse extends $pb.GeneratedMessage {
@@ -1937,7 +1937,7 @@ class StreamStatusResponse extends $pb.GeneratedMessage {
 class StopExtraParameters extends $pb.GeneratedMessage {
   factory StopExtraParameters({
     $16.ResourceName? name,
-    $48.Struct? params,
+    $50.Struct? params,
   }) {
     final $result = create();
     if (name != null) {
@@ -1954,7 +1954,7 @@ class StopExtraParameters extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopExtraParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOM<$16.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $16.ResourceName.create)
-    ..aOM<$48.Struct>(2, _omitFieldNames ? '' : 'params', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(2, _omitFieldNames ? '' : 'params', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1991,15 +1991,15 @@ class StopExtraParameters extends $pb.GeneratedMessage {
   $16.ResourceName ensureName() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $48.Struct get params => $_getN(1);
+  $50.Struct get params => $_getN(1);
   @$pb.TagNumber(2)
-  set params($48.Struct v) { setField(2, v); }
+  set params($50.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasParams() => $_has(1);
   @$pb.TagNumber(2)
   void clearParams() => clearField(2);
   @$pb.TagNumber(2)
-  $48.Struct ensureParams() => $_ensure(1);
+  $50.Struct ensureParams() => $_ensure(1);
 }
 
 class StopAllRequest extends $pb.GeneratedMessage {
@@ -2133,7 +2133,7 @@ class StartSessionRequest extends $pb.GeneratedMessage {
 class StartSessionResponse extends $pb.GeneratedMessage {
   factory StartSessionResponse({
     $core.String? id,
-    $47.Duration? heartbeatWindow,
+    $49.Duration? heartbeatWindow,
   }) {
     final $result = create();
     if (id != null) {
@@ -2150,7 +2150,7 @@ class StartSessionResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$47.Duration>(2, _omitFieldNames ? '' : 'heartbeatWindow', subBuilder: $47.Duration.create)
+    ..aOM<$49.Duration>(2, _omitFieldNames ? '' : 'heartbeatWindow', subBuilder: $49.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -2185,15 +2185,15 @@ class StartSessionResponse extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $47.Duration get heartbeatWindow => $_getN(1);
+  $49.Duration get heartbeatWindow => $_getN(1);
   @$pb.TagNumber(2)
-  set heartbeatWindow($47.Duration v) { setField(2, v); }
+  set heartbeatWindow($49.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasHeartbeatWindow() => $_has(1);
   @$pb.TagNumber(2)
   void clearHeartbeatWindow() => clearField(2);
   @$pb.TagNumber(2)
-  $47.Duration ensureHeartbeatWindow() => $_ensure(1);
+  $49.Duration ensureHeartbeatWindow() => $_ensure(1);
 }
 
 class SendSessionHeartbeatRequest extends $pb.GeneratedMessage {
@@ -2785,7 +2785,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
   factory ResourceStatus({
     $16.ResourceName? name,
     ResourceStatus_State? state,
-    $49.Timestamp? lastUpdated,
+    $51.Timestamp? lastUpdated,
     $core.String? revision,
     $core.String? error,
     GetCloudMetadataResponse? cloudMetadata,
@@ -2818,7 +2818,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResourceStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOM<$16.ResourceName>(1, _omitFieldNames ? '' : 'name', subBuilder: $16.ResourceName.create)
     ..e<ResourceStatus_State>(2, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: ResourceStatus_State.STATE_UNSPECIFIED, valueOf: ResourceStatus_State.valueOf, enumValues: ResourceStatus_State.values)
-    ..aOM<$49.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $49.Timestamp.create)
+    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $51.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'revision')
     ..aOS(5, _omitFieldNames ? '' : 'error')
     ..aOM<GetCloudMetadataResponse>(6, _omitFieldNames ? '' : 'cloudMetadata', subBuilder: GetCloudMetadataResponse.create)
@@ -2870,15 +2870,15 @@ class ResourceStatus extends $pb.GeneratedMessage {
 
   /// state transition timestamp.
   @$pb.TagNumber(3)
-  $49.Timestamp get lastUpdated => $_getN(2);
+  $51.Timestamp get lastUpdated => $_getN(2);
   @$pb.TagNumber(3)
-  set lastUpdated($49.Timestamp v) { setField(3, v); }
+  set lastUpdated($51.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLastUpdated() => $_has(2);
   @$pb.TagNumber(3)
   void clearLastUpdated() => clearField(3);
   @$pb.TagNumber(3)
-  $49.Timestamp ensureLastUpdated() => $_ensure(2);
+  $51.Timestamp ensureLastUpdated() => $_ensure(2);
 
   /// revision of the last config that successfully updated this resource.
   @$pb.TagNumber(4)
@@ -2917,7 +2917,7 @@ class ResourceStatus extends $pb.GeneratedMessage {
 class ConfigStatus extends $pb.GeneratedMessage {
   factory ConfigStatus({
     $core.String? revision,
-    $49.Timestamp? lastUpdated,
+    $51.Timestamp? lastUpdated,
   }) {
     final $result = create();
     if (revision != null) {
@@ -2934,7 +2934,7 @@ class ConfigStatus extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConfigStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'revision')
-    ..aOM<$49.Timestamp>(2, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $49.Timestamp.create)
+    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $51.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -2971,15 +2971,15 @@ class ConfigStatus extends $pb.GeneratedMessage {
 
   /// config ingestion timestamp.
   @$pb.TagNumber(2)
-  $49.Timestamp get lastUpdated => $_getN(1);
+  $51.Timestamp get lastUpdated => $_getN(1);
   @$pb.TagNumber(2)
-  set lastUpdated($49.Timestamp v) { setField(2, v); }
+  set lastUpdated($51.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLastUpdated() => $_has(1);
   @$pb.TagNumber(2)
   void clearLastUpdated() => clearField(2);
   @$pb.TagNumber(2)
-  $49.Timestamp ensureLastUpdated() => $_ensure(1);
+  $51.Timestamp ensureLastUpdated() => $_ensure(1);
 }
 
 class GetVersionRequest extends $pb.GeneratedMessage {
@@ -3099,7 +3099,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
     $core.String? componentName,
     $core.String? destinationFrame,
     $core.Iterable<$16.Transform>? supplementalTransforms,
-    $48.Struct? extra,
+    $50.Struct? extra,
   }) {
     final $result = create();
     if (componentName != null) {
@@ -3124,7 +3124,7 @@ class GetPoseRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'componentName')
     ..aOS(2, _omitFieldNames ? '' : 'destinationFrame')
     ..pc<$16.Transform>(3, _omitFieldNames ? '' : 'supplementalTransforms', $pb.PbFieldType.PM, subBuilder: $16.Transform.create)
-    ..aOM<$48.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $48.Struct.create)
+    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -3178,15 +3178,15 @@ class GetPoseRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $48.Struct get extra => $_getN(3);
+  $50.Struct get extra => $_getN(3);
   @$pb.TagNumber(99)
-  set extra($48.Struct v) { setField(99, v); }
+  set extra($50.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(3);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $48.Struct ensureExtra() => $_ensure(3);
+  $50.Struct ensureExtra() => $_ensure(3);
 }
 
 class GetPoseResponse extends $pb.GeneratedMessage {

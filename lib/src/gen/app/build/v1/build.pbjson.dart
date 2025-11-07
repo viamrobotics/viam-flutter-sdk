@@ -82,6 +82,56 @@ final $typed_data.Uint8List getLogsRequestDescriptor = $convert.base64Decode(
     'Cg5HZXRMb2dzUmVxdWVzdBIZCghidWlsZF9pZBgBIAEoCVIHYnVpbGRJZBIaCghwbGF0Zm9ybR'
     'gCIAEoCVIIcGxhdGZvcm0=');
 
+@$core.Deprecated('Use reloadBuildInfoDescriptor instead')
+const ReloadBuildInfo$json = {
+  '1': 'ReloadBuildInfo',
+  '2': [
+    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'workdir', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'workdir', '17': true},
+    {'1': 'module_id', '3': 3, '4': 1, '5': 9, '10': 'moduleId'},
+  ],
+  '8': [
+    {'1': '_workdir'},
+  ],
+};
+
+/// Descriptor for `ReloadBuildInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reloadBuildInfoDescriptor = $convert.base64Decode(
+    'Cg9SZWxvYWRCdWlsZEluZm8SGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEh0KB3dvcmtkaX'
+    'IYAiABKAlIAFIHd29ya2RpcogBARIbCgltb2R1bGVfaWQYAyABKAlSCG1vZHVsZUlkQgoKCF93'
+    'b3JrZGly');
+
+@$core.Deprecated('Use startReloadBuildRequestDescriptor instead')
+const StartReloadBuildRequest$json = {
+  '1': 'StartReloadBuildRequest',
+  '2': [
+    {'1': 'package', '3': 1, '4': 1, '5': 11, '6': '.viam.app.packages.v1.CreatePackageRequest', '9': 0, '10': 'package'},
+    {'1': 'build_info', '3': 2, '4': 1, '5': 11, '6': '.viam.app.build.v1.ReloadBuildInfo', '9': 0, '10': 'buildInfo'},
+  ],
+  '8': [
+    {'1': 'cloud_build'},
+  ],
+};
+
+/// Descriptor for `StartReloadBuildRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startReloadBuildRequestDescriptor = $convert.base64Decode(
+    'ChdTdGFydFJlbG9hZEJ1aWxkUmVxdWVzdBJGCgdwYWNrYWdlGAEgASgLMioudmlhbS5hcHAucG'
+    'Fja2FnZXMudjEuQ3JlYXRlUGFja2FnZVJlcXVlc3RIAFIHcGFja2FnZRJDCgpidWlsZF9pbmZv'
+    'GAIgASgLMiIudmlhbS5hcHAuYnVpbGQudjEuUmVsb2FkQnVpbGRJbmZvSABSCWJ1aWxkSW5mb0'
+    'INCgtjbG91ZF9idWlsZA==');
+
+@$core.Deprecated('Use startReloadBuildResponseDescriptor instead')
+const StartReloadBuildResponse$json = {
+  '1': 'StartReloadBuildResponse',
+  '2': [
+    {'1': 'build_id', '3': 1, '4': 1, '5': 9, '10': 'buildId'},
+  ],
+};
+
+/// Descriptor for `StartReloadBuildResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startReloadBuildResponseDescriptor = $convert.base64Decode(
+    'ChhTdGFydFJlbG9hZEJ1aWxkUmVzcG9uc2USGQoIYnVpbGRfaWQYASABKAlSB2J1aWxkSWQ=');
+
 @$core.Deprecated('Use getLogsResponseDescriptor instead')
 const GetLogsResponse$json = {
   '1': 'GetLogsResponse',
@@ -106,9 +156,11 @@ const JobInfo$json = {
     {'1': 'status', '3': 4, '4': 1, '5': 14, '6': '.viam.app.build.v1.JobStatus', '10': 'status'},
     {'1': 'start_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
     {'1': 'end_time', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'endTime', '17': true},
+    {'1': 'build_step', '3': 7, '4': 1, '5': 9, '9': 1, '10': 'buildStep', '17': true},
   ],
   '8': [
     {'1': '_end_time'},
+    {'1': '_build_step'},
   ],
 };
 
@@ -118,7 +170,8 @@ final $typed_data.Uint8List jobInfoDescriptor = $convert.base64Decode(
     'hwbGF0Zm9ybRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEjQKBnN0YXR1cxgEIAEoDjIcLnZp'
     'YW0uYXBwLmJ1aWxkLnYxLkpvYlN0YXR1c1IGc3RhdHVzEjkKCnN0YXJ0X3RpbWUYBSABKAsyGi'
     '5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglzdGFydFRpbWUSOgoIZW5kX3RpbWUYBiABKAsy'
-    'Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSB2VuZFRpbWWIAQFCCwoJX2VuZF90aW1l');
+    'Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSB2VuZFRpbWWIAQESIgoKYnVpbGRfc3RlcB'
+    'gHIAEoCUgBUglidWlsZFN0ZXCIAQFCCwoJX2VuZF90aW1lQg0KC19idWlsZF9zdGVw');
 
 @$core.Deprecated('Use listJobsRequestDescriptor instead')
 const ListJobsRequest$json = {

@@ -3,8 +3,21 @@ import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
 
 import '../../../protos/common/common.dart';
+import '../../../src/utils.dart';
 import '../../../viam_sdk.dart' as viam;
 import '../arm_new.dart';
+
+class _TextControlStruct {
+  TextEditingController x;
+  TextEditingController y;
+  TextEditingController z;
+  TextEditingController oX;
+  TextEditingController oY;
+  TextEditingController oZ;
+  TextEditingController theta;
+
+  _TextControlStruct(this.x, this.y, this.z, this.oX, this.oY, this.oZ, this.theta);
+}
 
 class _TextControlStruct {
   TextEditingController x;
@@ -98,7 +111,7 @@ class _PoseWidgetState extends State<PoseWidget> {
         widget.updateNotifier.armHasMoved();
       }
     } on GrpcError catch (e) {
-      debugPrint('An error occurred updating pose: $e');
+      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.message);
     } finally {
       if (mounted) {
         setState(() {
