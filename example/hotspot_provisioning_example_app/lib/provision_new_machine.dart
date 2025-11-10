@@ -87,7 +87,7 @@ class _ProvisionNewMachineScreenState extends State<ProvisionNewMachineScreen> {
             robot: robot,
             viam: viam,
             mainPart: mainPart,
-            hotspotPrefix: null, // set to null, because we receiving these credentials from the user
+            hotspotPrefix: null, // set to null, because we receive these credentials from the user
             hotspotPassword: null,
             fragmentId: null, // Optional, if null, the fragmentId will be read from the device.
             promptForCredentials: true,
