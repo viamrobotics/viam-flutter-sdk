@@ -2,9 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:viam_flutter_hotspot_provisioning_widget/viam_flutter_hotspot_provisioning_widget.dart';
+
+import 'consts.dart';
 import 'offline_screen.dart';
 import 'online_screen.dart';
-import 'consts.dart';
 
 class ProvisionNewMachineScreen extends StatefulWidget {
   const ProvisionNewMachineScreen({
@@ -86,6 +87,8 @@ class _ProvisionNewMachineScreenState extends State<ProvisionNewMachineScreen> {
             robot: robot,
             viam: viam,
             mainPart: mainPart,
+            hotspotPrefix: null, // set to null, because we receive these credentials from the user
+            hotspotPassword: null,
             fragmentId: null, // Optional, if null, the fragmentId will be read from the device.
             promptForCredentials: true,
             overrideFragment: true, // Override fragment for new machine provisioning

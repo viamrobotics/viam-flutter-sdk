@@ -16,7 +16,7 @@ dependencies:
   # These are declared as published versions to maintain clean dependency structure.
   # Use dependency_overrides below to test with local versions during development.
   viam_sdk: ^0.11.0
-  viam_flutter_hotspot_provisioning_widget: ^0.0.21
+  viam_flutter_hotspot_provisioning_widget: ^0.0.23
 
 dev_dependencies:
   flutter_test:
