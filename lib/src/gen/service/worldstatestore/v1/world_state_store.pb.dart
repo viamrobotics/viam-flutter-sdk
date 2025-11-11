@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../common/v1/common.pb.dart' as $16;
-import '../../../google/protobuf/field_mask.pb.dart' as $54;
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/field_mask.pb.dart' as $55;
+import '../../../google/protobuf/struct.pb.dart' as $51;
 import 'world_state_store.pbenum.dart';
 
 export 'world_state_store.pbenum.dart';
@@ -23,7 +23,7 @@ export 'world_state_store.pbenum.dart';
 class ListUUIDsRequest extends $pb.GeneratedMessage {
   factory ListUUIDsRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $51.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -40,7 +40,7 @@ class ListUUIDsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUUIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.worldstatestore.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -77,15 +77,15 @@ class ListUUIDsRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $51.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($51.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $51.Struct ensureExtra() => $_ensure(1);
 }
 
 class ListUUIDsResponse extends $pb.GeneratedMessage {
@@ -136,7 +136,7 @@ class GetTransformRequest extends $pb.GeneratedMessage {
   factory GetTransformRequest({
     $core.String? name,
     $core.List<$core.int>? uuid,
-    $50.Struct? extra,
+    $51.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -157,7 +157,7 @@ class GetTransformRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTransformRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.worldstatestore.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'uuid', $pb.PbFieldType.OY)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -203,15 +203,15 @@ class GetTransformRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $51.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($51.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $51.Struct ensureExtra() => $_ensure(2);
 }
 
 class GetTransformResponse extends $pb.GeneratedMessage {
@@ -269,7 +269,7 @@ class GetTransformResponse extends $pb.GeneratedMessage {
 class StreamTransformChangesRequest extends $pb.GeneratedMessage {
   factory StreamTransformChangesRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $51.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -286,7 +286,7 @@ class StreamTransformChangesRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamTransformChangesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.worldstatestore.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -323,22 +323,22 @@ class StreamTransformChangesRequest extends $pb.GeneratedMessage {
 
   /// Additional arguments to the method
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $51.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($51.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $51.Struct ensureExtra() => $_ensure(1);
 }
 
 class StreamTransformChangesResponse extends $pb.GeneratedMessage {
   factory StreamTransformChangesResponse({
     TransformChangeType? changeType,
     $16.Transform? transform,
-    $54.FieldMask? updatedFields,
+    $55.FieldMask? updatedFields,
   }) {
     final $result = create();
     if (changeType != null) {
@@ -359,7 +359,7 @@ class StreamTransformChangesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamTransformChangesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.service.worldstatestore.v1'), createEmptyInstance: create)
     ..e<TransformChangeType>(1, _omitFieldNames ? '' : 'changeType', $pb.PbFieldType.OE, defaultOrMaker: TransformChangeType.TRANSFORM_CHANGE_TYPE_UNSPECIFIED, valueOf: TransformChangeType.valueOf, enumValues: TransformChangeType.values)
     ..aOM<$16.Transform>(2, _omitFieldNames ? '' : 'transform', subBuilder: $16.Transform.create)
-    ..aOM<$54.FieldMask>(3, _omitFieldNames ? '' : 'updatedFields', subBuilder: $54.FieldMask.create)
+    ..aOM<$55.FieldMask>(3, _omitFieldNames ? '' : 'updatedFields', subBuilder: $55.FieldMask.create)
     ..hasRequiredFields = false
   ;
 
@@ -408,15 +408,15 @@ class StreamTransformChangesResponse extends $pb.GeneratedMessage {
   /// transforms, this will be the fields that have changed. For removed transforms, this will be the transform's UUID
   /// path.
   @$pb.TagNumber(3)
-  $54.FieldMask get updatedFields => $_getN(2);
+  $55.FieldMask get updatedFields => $_getN(2);
   @$pb.TagNumber(3)
-  set updatedFields($54.FieldMask v) { setField(3, v); }
+  set updatedFields($55.FieldMask v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdatedFields() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdatedFields() => clearField(3);
   @$pb.TagNumber(3)
-  $54.FieldMask ensureUpdatedFields() => $_ensure(2);
+  $55.FieldMask ensureUpdatedFields() => $_ensure(2);
 }
 
 

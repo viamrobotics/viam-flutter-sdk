@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/struct.pb.dart' as $50;
+import '../../../google/protobuf/struct.pb.dart' as $51;
 
 class SetPositionRequest extends $pb.GeneratedMessage {
   factory SetPositionRequest({
     $core.String? name,
     $core.int? position,
-    $50.Struct? extra,
+    $51.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -40,7 +40,7 @@ class SetPositionRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.switch.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'position', $pb.PbFieldType.OU3)
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -84,15 +84,15 @@ class SetPositionRequest extends $pb.GeneratedMessage {
   void clearPosition() => clearField(2);
 
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(2);
+  $51.Struct get extra => $_getN(2);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($51.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(2);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(2);
+  $51.Struct ensureExtra() => $_ensure(2);
 }
 
 class SetPositionResponse extends $pb.GeneratedMessage {
@@ -130,7 +130,7 @@ class SetPositionResponse extends $pb.GeneratedMessage {
 class GetPositionRequest extends $pb.GeneratedMessage {
   factory GetPositionRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $51.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -147,7 +147,7 @@ class GetPositionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.switch.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -182,15 +182,15 @@ class GetPositionRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $51.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($51.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $51.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetPositionResponse extends $pb.GeneratedMessage {
@@ -246,7 +246,7 @@ class GetPositionResponse extends $pb.GeneratedMessage {
 class GetNumberOfPositionsRequest extends $pb.GeneratedMessage {
   factory GetNumberOfPositionsRequest({
     $core.String? name,
-    $50.Struct? extra,
+    $51.Struct? extra,
   }) {
     final $result = create();
     if (name != null) {
@@ -263,7 +263,7 @@ class GetNumberOfPositionsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetNumberOfPositionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.component.switch.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$50.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(99, _omitFieldNames ? '' : 'extra', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -298,15 +298,15 @@ class GetNumberOfPositionsRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(99)
-  $50.Struct get extra => $_getN(1);
+  $51.Struct get extra => $_getN(1);
   @$pb.TagNumber(99)
-  set extra($50.Struct v) { setField(99, v); }
+  set extra($51.Struct v) { setField(99, v); }
   @$pb.TagNumber(99)
   $core.bool hasExtra() => $_has(1);
   @$pb.TagNumber(99)
   void clearExtra() => clearField(99);
   @$pb.TagNumber(99)
-  $50.Struct ensureExtra() => $_ensure(1);
+  $51.Struct ensureExtra() => $_ensure(1);
 }
 
 class GetNumberOfPositionsResponse extends $pb.GeneratedMessage {

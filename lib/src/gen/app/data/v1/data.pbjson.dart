@@ -1356,3 +1356,149 @@ final $typed_data.Uint8List indexDescriptor = $convert.base64Decode(
     'RleF9zcGVjGAQgAygMUglpbmRleFNwZWMSPQoKY3JlYXRlZF9ieRgFIAEoDjIeLnZpYW0uYXBw'
     'LmRhdGEudjEuSW5kZXhDcmVhdG9yUgljcmVhdGVkQnlCEAoOX3BpcGVsaW5lX25hbWU=');
 
+@$core.Deprecated('Use createSavedQueryRequestDescriptor instead')
+const CreateSavedQueryRequest$json = {
+  '1': 'CreateSavedQueryRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
+  ],
+};
+
+/// Descriptor for `CreateSavedQueryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSavedQueryRequestDescriptor = $convert.base64Decode(
+    'ChdDcmVhdGVTYXZlZFF1ZXJ5UmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
+    'FuaXphdGlvbklkEhIKBG5hbWUYAiABKAlSBG5hbWUSHQoKbXFsX2JpbmFyeRgDIAMoDFIJbXFs'
+    'QmluYXJ5');
+
+@$core.Deprecated('Use createSavedQueryResponseDescriptor instead')
+const CreateSavedQueryResponse$json = {
+  '1': 'CreateSavedQueryResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateSavedQueryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSavedQueryResponseDescriptor = $convert.base64Decode(
+    'ChhDcmVhdGVTYXZlZFF1ZXJ5UmVzcG9uc2USDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use queryDescriptor instead')
+const Query$json = {
+  '1': 'Query',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'organization_id', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'mql_binary', '3': 4, '4': 3, '5': 12, '10': 'mqlBinary'},
+    {'1': 'created_on', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdOn'},
+    {'1': 'updated_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+  ],
+};
+
+/// Descriptor for `Query`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryDescriptor = $convert.base64Decode(
+    'CgVRdWVyeRIOCgJpZBgBIAEoCVICaWQSJwoPb3JnYW5pemF0aW9uX2lkGAIgASgJUg5vcmdhbm'
+    'l6YXRpb25JZBISCgRuYW1lGAMgASgJUgRuYW1lEh0KCm1xbF9iaW5hcnkYBCADKAxSCW1xbEJp'
+    'bmFyeRI5CgpjcmVhdGVkX29uGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3'
+    'JlYXRlZE9uEjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w'
+    'Ugl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use deleteSavedQueryRequestDescriptor instead')
+const DeleteSavedQueryRequest$json = {
+  '1': 'DeleteSavedQueryRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteSavedQueryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSavedQueryRequestDescriptor = $convert.base64Decode(
+    'ChdEZWxldGVTYXZlZFF1ZXJ5UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use deleteSavedQueryResponseDescriptor instead')
+const DeleteSavedQueryResponse$json = {
+  '1': 'DeleteSavedQueryResponse',
+};
+
+/// Descriptor for `DeleteSavedQueryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSavedQueryResponseDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVTYXZlZFF1ZXJ5UmVzcG9uc2U=');
+
+@$core.Deprecated('Use getSavedQueryRequestDescriptor instead')
+const GetSavedQueryRequest$json = {
+  '1': 'GetSavedQueryRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetSavedQueryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSavedQueryRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRTYXZlZFF1ZXJ5UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getSavedQueryResponseDescriptor instead')
+const GetSavedQueryResponse$json = {
+  '1': 'GetSavedQueryResponse',
+  '2': [
+    {'1': 'saved_query', '3': 1, '4': 1, '5': 11, '6': '.viam.app.data.v1.Query', '10': 'savedQuery'},
+  ],
+};
+
+/// Descriptor for `GetSavedQueryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSavedQueryResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRTYXZlZFF1ZXJ5UmVzcG9uc2USOAoLc2F2ZWRfcXVlcnkYASABKAsyFy52aWFtLmFwcC'
+    '5kYXRhLnYxLlF1ZXJ5UgpzYXZlZFF1ZXJ5');
+
+@$core.Deprecated('Use updateSavedQueryRequestDescriptor instead')
+const UpdateSavedQueryRequest$json = {
+  '1': 'UpdateSavedQueryRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'mql_binary', '3': 3, '4': 3, '5': 12, '10': 'mqlBinary'},
+  ],
+};
+
+/// Descriptor for `UpdateSavedQueryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSavedQueryRequestDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVTYXZlZFF1ZXJ5UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCV'
+    'IEbmFtZRIdCgptcWxfYmluYXJ5GAMgAygMUgltcWxCaW5hcnk=');
+
+@$core.Deprecated('Use updateSavedQueryResponseDescriptor instead')
+const UpdateSavedQueryResponse$json = {
+  '1': 'UpdateSavedQueryResponse',
+};
+
+/// Descriptor for `UpdateSavedQueryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSavedQueryResponseDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVTYXZlZFF1ZXJ5UmVzcG9uc2U=');
+
+@$core.Deprecated('Use listSavedQueriesRequestDescriptor instead')
+const ListSavedQueriesRequest$json = {
+  '1': 'ListSavedQueriesRequest',
+  '2': [
+    {'1': 'organization_id', '3': 1, '4': 1, '5': 9, '10': 'organizationId'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 3, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListSavedQueriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSavedQueriesRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0U2F2ZWRRdWVyaWVzUmVxdWVzdBInCg9vcmdhbml6YXRpb25faWQYASABKAlSDm9yZ2'
+    'FuaXphdGlvbklkEhQKBWxpbWl0GAIgASgDUgVsaW1pdA==');
+
+@$core.Deprecated('Use listSavedQueriesResponseDescriptor instead')
+const ListSavedQueriesResponse$json = {
+  '1': 'ListSavedQueriesResponse',
+  '2': [
+    {'1': 'queries', '3': 1, '4': 3, '5': 11, '6': '.viam.app.data.v1.Query', '10': 'queries'},
+  ],
+};
+
+/// Descriptor for `ListSavedQueriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSavedQueriesResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0U2F2ZWRRdWVyaWVzUmVzcG9uc2USMQoHcXVlcmllcxgBIAMoCzIXLnZpYW0uYXBwLm'
+    'RhdGEudjEuUXVlcnlSB3F1ZXJpZXM=');
+

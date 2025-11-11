@@ -125,6 +125,26 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/DeleteIndex',
       ($4.DeleteIndexRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.DeleteIndexResponse.fromBuffer(value));
+  static final _$createSavedQuery = $grpc.ClientMethod<$4.CreateSavedQueryRequest, $4.CreateSavedQueryResponse>(
+      '/viam.app.data.v1.DataService/CreateSavedQuery',
+      ($4.CreateSavedQueryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateSavedQueryResponse.fromBuffer(value));
+  static final _$updateSavedQuery = $grpc.ClientMethod<$4.UpdateSavedQueryRequest, $4.UpdateSavedQueryResponse>(
+      '/viam.app.data.v1.DataService/UpdateSavedQuery',
+      ($4.UpdateSavedQueryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UpdateSavedQueryResponse.fromBuffer(value));
+  static final _$getSavedQuery = $grpc.ClientMethod<$4.GetSavedQueryRequest, $4.GetSavedQueryResponse>(
+      '/viam.app.data.v1.DataService/GetSavedQuery',
+      ($4.GetSavedQueryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetSavedQueryResponse.fromBuffer(value));
+  static final _$deleteSavedQuery = $grpc.ClientMethod<$4.DeleteSavedQueryRequest, $4.DeleteSavedQueryResponse>(
+      '/viam.app.data.v1.DataService/DeleteSavedQuery',
+      ($4.DeleteSavedQueryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DeleteSavedQueryResponse.fromBuffer(value));
+  static final _$listSavedQueries = $grpc.ClientMethod<$4.ListSavedQueriesRequest, $4.ListSavedQueriesResponse>(
+      '/viam.app.data.v1.DataService/ListSavedQueries',
+      ($4.ListSavedQueriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListSavedQueriesResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -234,6 +254,26 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.DeleteIndexResponse> deleteIndex($4.DeleteIndexRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteIndex, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.CreateSavedQueryResponse> createSavedQuery($4.CreateSavedQueryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createSavedQuery, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateSavedQueryResponse> updateSavedQuery($4.UpdateSavedQueryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateSavedQuery, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetSavedQueryResponse> getSavedQuery($4.GetSavedQueryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getSavedQuery, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.DeleteSavedQueryResponse> deleteSavedQuery($4.DeleteSavedQueryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteSavedQuery, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ListSavedQueriesResponse> listSavedQueries($4.ListSavedQueriesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listSavedQueries, request, options: options);
   }
 }
 
@@ -424,6 +464,41 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.DeleteIndexRequest.fromBuffer(value),
         ($4.DeleteIndexResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateSavedQueryRequest, $4.CreateSavedQueryResponse>(
+        'CreateSavedQuery',
+        createSavedQuery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.CreateSavedQueryRequest.fromBuffer(value),
+        ($4.CreateSavedQueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateSavedQueryRequest, $4.UpdateSavedQueryResponse>(
+        'UpdateSavedQuery',
+        updateSavedQuery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.UpdateSavedQueryRequest.fromBuffer(value),
+        ($4.UpdateSavedQueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetSavedQueryRequest, $4.GetSavedQueryResponse>(
+        'GetSavedQuery',
+        getSavedQuery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetSavedQueryRequest.fromBuffer(value),
+        ($4.GetSavedQueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.DeleteSavedQueryRequest, $4.DeleteSavedQueryResponse>(
+        'DeleteSavedQuery',
+        deleteSavedQuery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.DeleteSavedQueryRequest.fromBuffer(value),
+        ($4.DeleteSavedQueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListSavedQueriesRequest, $4.ListSavedQueriesResponse>(
+        'ListSavedQueries',
+        listSavedQueries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.ListSavedQueriesRequest.fromBuffer(value),
+        ($4.ListSavedQueriesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.TabularDataByFilterResponse> tabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$4.TabularDataByFilterRequest> request) async {
@@ -530,6 +605,26 @@ abstract class DataServiceBase extends $grpc.Service {
     return deleteIndex(call, await request);
   }
 
+  $async.Future<$4.CreateSavedQueryResponse> createSavedQuery_Pre($grpc.ServiceCall call, $async.Future<$4.CreateSavedQueryRequest> request) async {
+    return createSavedQuery(call, await request);
+  }
+
+  $async.Future<$4.UpdateSavedQueryResponse> updateSavedQuery_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateSavedQueryRequest> request) async {
+    return updateSavedQuery(call, await request);
+  }
+
+  $async.Future<$4.GetSavedQueryResponse> getSavedQuery_Pre($grpc.ServiceCall call, $async.Future<$4.GetSavedQueryRequest> request) async {
+    return getSavedQuery(call, await request);
+  }
+
+  $async.Future<$4.DeleteSavedQueryResponse> deleteSavedQuery_Pre($grpc.ServiceCall call, $async.Future<$4.DeleteSavedQueryRequest> request) async {
+    return deleteSavedQuery(call, await request);
+  }
+
+  $async.Future<$4.ListSavedQueriesResponse> listSavedQueries_Pre($grpc.ServiceCall call, $async.Future<$4.ListSavedQueriesRequest> request) async {
+    return listSavedQueries(call, await request);
+  }
+
   $async.Future<$4.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $4.TabularDataByFilterRequest request);
   $async.Future<$4.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $4.TabularDataBySQLRequest request);
   $async.Future<$4.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $4.TabularDataByMQLRequest request);
@@ -556,4 +651,9 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$4.CreateIndexResponse> createIndex($grpc.ServiceCall call, $4.CreateIndexRequest request);
   $async.Future<$4.ListIndexesResponse> listIndexes($grpc.ServiceCall call, $4.ListIndexesRequest request);
   $async.Future<$4.DeleteIndexResponse> deleteIndex($grpc.ServiceCall call, $4.DeleteIndexRequest request);
+  $async.Future<$4.CreateSavedQueryResponse> createSavedQuery($grpc.ServiceCall call, $4.CreateSavedQueryRequest request);
+  $async.Future<$4.UpdateSavedQueryResponse> updateSavedQuery($grpc.ServiceCall call, $4.UpdateSavedQueryRequest request);
+  $async.Future<$4.GetSavedQueryResponse> getSavedQuery($grpc.ServiceCall call, $4.GetSavedQueryRequest request);
+  $async.Future<$4.DeleteSavedQueryResponse> deleteSavedQuery($grpc.ServiceCall call, $4.DeleteSavedQueryRequest request);
+  $async.Future<$4.ListSavedQueriesResponse> listSavedQueries($grpc.ServiceCall call, $4.ListSavedQueriesRequest request);
 }

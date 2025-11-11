@@ -62,6 +62,10 @@ class ArmServiceClient extends $grpc.Client {
       '/viam.component.arm.v1.ArmService/GetGeometries',
       ($16.GetGeometriesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $16.GetGeometriesResponse.fromBuffer(value));
+  static final _$get3DModels = $grpc.ClientMethod<$16.Get3DModelsRequest, $16.Get3DModelsResponse>(
+      '/viam.component.arm.v1.ArmService/Get3DModels',
+      ($16.Get3DModelsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.Get3DModelsResponse.fromBuffer(value));
 
   ArmServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -107,6 +111,10 @@ class ArmServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$16.GetGeometriesResponse> getGeometries($16.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGeometries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$16.Get3DModelsResponse> get3DModels($16.Get3DModelsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$get3DModels, request, options: options);
   }
 }
 
@@ -185,6 +193,13 @@ abstract class ArmServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $16.GetGeometriesRequest.fromBuffer(value),
         ($16.GetGeometriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.Get3DModelsRequest, $16.Get3DModelsResponse>(
+        'Get3DModels',
+        get3DModels_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $16.Get3DModelsRequest.fromBuffer(value),
+        ($16.Get3DModelsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$15.GetEndPositionResponse> getEndPosition_Pre($grpc.ServiceCall call, $async.Future<$15.GetEndPositionRequest> request) async {
@@ -227,6 +242,10 @@ abstract class ArmServiceBase extends $grpc.Service {
     return getGeometries(call, await request);
   }
 
+  $async.Future<$16.Get3DModelsResponse> get3DModels_Pre($grpc.ServiceCall call, $async.Future<$16.Get3DModelsRequest> request) async {
+    return get3DModels(call, await request);
+  }
+
   $async.Future<$15.GetEndPositionResponse> getEndPosition($grpc.ServiceCall call, $15.GetEndPositionRequest request);
   $async.Future<$15.MoveToPositionResponse> moveToPosition($grpc.ServiceCall call, $15.MoveToPositionRequest request);
   $async.Future<$15.GetJointPositionsResponse> getJointPositions($grpc.ServiceCall call, $15.GetJointPositionsRequest request);
@@ -237,4 +256,5 @@ abstract class ArmServiceBase extends $grpc.Service {
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
   $async.Future<$16.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $16.GetKinematicsRequest request);
   $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);
+  $async.Future<$16.Get3DModelsResponse> get3DModels($grpc.ServiceCall call, $16.Get3DModelsRequest request);
 }
