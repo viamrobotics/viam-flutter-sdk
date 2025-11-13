@@ -665,10 +665,10 @@ packages:
     dependency: "direct main"
     description:
       name: viam_flutter_hotspot_provisioning_widget
-      sha256: "2ccf98d128d4d7995165a01afdf1b25dcd8ffa38ab9eb4a8606b39c5c71564b4"
+      sha256: "25850d7ed9e8af57d59a9ba9e3a163ff824f3ab6026343f669c4141e2699bd03"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.23"
+    version: "0.0.24"
   viam_sdk:
     dependency: "direct main"
     description:
