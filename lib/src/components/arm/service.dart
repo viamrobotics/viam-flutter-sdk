@@ -57,6 +57,13 @@ class ArmService extends ArmServiceBase {
   }
 
   @override
+  Future<Get3DModelsResponse> get3DModels(ServiceCall call, Get3DModelsRequest request) async {
+    final arm = _armFromManager(request.name);
+    final models = await arm.get3DModels(extra: request.extra.toMap());
+    return Get3DModelsResponse()..models.addAll(models);
+  }
+
+  @override
   Future<MoveToJointPositionsResponse> moveToJointPositions(ServiceCall call, MoveToJointPositionsRequest request) async {
     final arm = _armFromManager(request.name);
     await arm.moveToJointPositions(request.positions.values, extra: request.extra.toMap());
