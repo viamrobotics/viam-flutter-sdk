@@ -11,20 +11,20 @@ class ArmNotifier extends ChangeNotifier {
 }
 
 /// A widget to control an [Arm].
-class ViamArmWidgetNew extends StatefulWidget {
+class ViamArmWidget extends StatefulWidget {
   /// The [Arm]
   final Arm arm;
 
-  const ViamArmWidgetNew({
+  const ViamArmWidget({
     super.key,
     required this.arm,
   });
 
   @override
-  State<ViamArmWidgetNew> createState() => _ViamArmWidgetNewState();
+  State<ViamArmWidget> createState() => _ViamArmWidgetState();
 }
 
-class _ViamArmWidgetNewState extends State<ViamArmWidgetNew> {
+class _ViamArmWidgetState extends State<ViamArmWidget> {
   final ArmNotifier _armNotifier = ArmNotifier();
 
   @override
