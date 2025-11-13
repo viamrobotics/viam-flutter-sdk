@@ -411,6 +411,46 @@ final $typed_data.Uint8List getGeometriesResponseDescriptor = $convert.base64Dec
     'ChVHZXRHZW9tZXRyaWVzUmVzcG9uc2USOAoKZ2VvbWV0cmllcxgBIAMoCzIYLnZpYW0uY29tbW'
     '9uLnYxLkdlb21ldHJ5UgpnZW9tZXRyaWVz');
 
+@$core.Deprecated('Use get3DModelsRequestDescriptor instead')
+const Get3DModelsRequest$json = {
+  '1': 'Get3DModelsRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'extra', '3': 99, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'extra'},
+  ],
+};
+
+/// Descriptor for `Get3DModelsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List get3DModelsRequestDescriptor = $convert.base64Decode(
+    'ChJHZXQzRE1vZGVsc1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRItCgVleHRyYRhjIAEoCz'
+    'IXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RSBWV4dHJh');
+
+@$core.Deprecated('Use get3DModelsResponseDescriptor instead')
+const Get3DModelsResponse$json = {
+  '1': 'Get3DModelsResponse',
+  '2': [
+    {'1': 'models', '3': 1, '4': 3, '5': 11, '6': '.viam.common.v1.Get3DModelsResponse.ModelsEntry', '10': 'models'},
+  ],
+  '3': [Get3DModelsResponse_ModelsEntry$json],
+};
+
+@$core.Deprecated('Use get3DModelsResponseDescriptor instead')
+const Get3DModelsResponse_ModelsEntry$json = {
+  '1': 'ModelsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.common.v1.Mesh', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `Get3DModelsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List get3DModelsResponseDescriptor = $convert.base64Decode(
+    'ChNHZXQzRE1vZGVsc1Jlc3BvbnNlEkcKBm1vZGVscxgBIAMoCzIvLnZpYW0uY29tbW9uLnYxLk'
+    'dldDNETW9kZWxzUmVzcG9uc2UuTW9kZWxzRW50cnlSBm1vZGVscxpPCgtNb2RlbHNFbnRyeRIQ'
+    'CgNrZXkYASABKAlSA2tleRIqCgV2YWx1ZRgCIAEoCzIULnZpYW0uY29tbW9uLnYxLk1lc2hSBX'
+    'ZhbHVlOgI4AQ==');
+
 @$core.Deprecated('Use getReadingsRequestDescriptor instead')
 const GetReadingsRequest$json = {
   '1': 'GetReadingsRequest',

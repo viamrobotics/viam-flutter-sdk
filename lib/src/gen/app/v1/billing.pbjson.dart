@@ -560,9 +560,13 @@ final $typed_data.Uint8List createInvoiceAndChargeImmediatelyRequestDescriptor =
 @$core.Deprecated('Use createInvoiceAndChargeImmediatelyResponseDescriptor instead')
 const CreateInvoiceAndChargeImmediatelyResponse$json = {
   '1': 'CreateInvoiceAndChargeImmediatelyResponse',
+  '2': [
+    {'1': 'invoice_id', '3': 1, '4': 1, '5': 9, '10': 'invoiceId'},
+  ],
 };
 
 /// Descriptor for `CreateInvoiceAndChargeImmediatelyResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createInvoiceAndChargeImmediatelyResponseDescriptor = $convert.base64Decode(
-    'CilDcmVhdGVJbnZvaWNlQW5kQ2hhcmdlSW1tZWRpYXRlbHlSZXNwb25zZQ==');
+    'CilDcmVhdGVJbnZvaWNlQW5kQ2hhcmdlSW1tZWRpYXRlbHlSZXNwb25zZRIdCgppbnZvaWNlX2'
+    'lkGAEgASgJUglpbnZvaWNlSWQ=');
 

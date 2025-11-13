@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $52;
-import '../../../google/protobuf/struct.pb.dart' as $50;
-import '../../../google/protobuf/timestamp.pb.dart' as $51;
+import '../../../google/protobuf/any.pb.dart' as $53;
+import '../../../google/protobuf/struct.pb.dart' as $51;
+import '../../../google/protobuf/timestamp.pb.dart' as $52;
 import 'data.pbenum.dart';
 
 export 'data.pbenum.dart';
@@ -411,7 +411,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
     $core.String? componentType,
     $core.String? componentName,
     $core.String? methodName,
-    $core.Map<$core.String, $52.Any>? methodParameters,
+    $core.Map<$core.String, $53.Any>? methodParameters,
     $core.Iterable<$core.String>? tags,
     $core.String? mimeType,
   }) {
@@ -468,7 +468,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'componentType')
     ..aOS(9, _omitFieldNames ? '' : 'componentName')
     ..aOS(10, _omitFieldNames ? '' : 'methodName')
-    ..m<$core.String, $52.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $52.Any.create, valueDefaultOrMaker: $52.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
+    ..m<$core.String, $53.Any>(11, _omitFieldNames ? '' : 'methodParameters', entryClassName: 'CaptureMetadata.MethodParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.Any.create, valueDefaultOrMaker: $53.Any.getDefault, packageName: const $pb.PackageName('viam.app.data.v1'))
     ..pPS(12, _omitFieldNames ? '' : 'tags')
     ..aOS(13, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false
@@ -577,7 +577,7 @@ class CaptureMetadata extends $pb.GeneratedMessage {
   void clearMethodName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.Map<$core.String, $52.Any> get methodParameters => $_getMap(9);
+  $core.Map<$core.String, $53.Any> get methodParameters => $_getMap(9);
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get tags => $_getList(10);
@@ -595,8 +595,8 @@ class CaptureMetadata extends $pb.GeneratedMessage {
 /// CaptureInterval describes the start and end time of the capture in this file.
 class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval({
-    $51.Timestamp? start,
-    $51.Timestamp? end,
+    $52.Timestamp? start,
+    $52.Timestamp? end,
   }) {
     final $result = create();
     if (start != null) {
@@ -612,8 +612,8 @@ class CaptureInterval extends $pb.GeneratedMessage {
   factory CaptureInterval.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureInterval', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$51.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $51.Timestamp.create)
+    ..aOM<$52.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $52.Timestamp.create)
+    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $52.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -639,26 +639,26 @@ class CaptureInterval extends $pb.GeneratedMessage {
   static CaptureInterval? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $51.Timestamp get start => $_getN(0);
+  $52.Timestamp get start => $_getN(0);
   @$pb.TagNumber(1)
-  set start($51.Timestamp v) { setField(1, v); }
+  set start($52.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStart() => $_has(0);
   @$pb.TagNumber(1)
   void clearStart() => clearField(1);
   @$pb.TagNumber(1)
-  $51.Timestamp ensureStart() => $_ensure(0);
+  $52.Timestamp ensureStart() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $51.Timestamp get end => $_getN(1);
+  $52.Timestamp get end => $_getN(1);
   @$pb.TagNumber(2)
-  set end($51.Timestamp v) { setField(2, v); }
+  set end($52.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEnd() => $_has(1);
   @$pb.TagNumber(2)
   void clearEnd() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureEnd() => $_ensure(1);
+  $52.Timestamp ensureEnd() => $_ensure(1);
 }
 
 /// TabularDataByFilterRequest requests tabular data based on filter values.
@@ -840,10 +840,10 @@ class TabularDataByFilterResponse extends $pb.GeneratedMessage {
 /// TabularData contains data and metadata associated with tabular data.
 class TabularData extends $pb.GeneratedMessage {
   factory TabularData({
-    $50.Struct? data,
+    $51.Struct? data,
     $core.int? metadataIndex,
-    $51.Timestamp? timeRequested,
-    $51.Timestamp? timeReceived,
+    $52.Timestamp? timeRequested,
+    $52.Timestamp? timeReceived,
   }) {
     final $result = create();
     if (data != null) {
@@ -865,10 +865,10 @@ class TabularData extends $pb.GeneratedMessage {
   factory TabularData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TabularData', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$50.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $51.Struct.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'metadataIndex', $pb.PbFieldType.OU3)
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $51.Timestamp.create)
+    ..aOM<$52.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $52.Timestamp.create)
+    ..aOM<$52.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $52.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -894,15 +894,15 @@ class TabularData extends $pb.GeneratedMessage {
   static TabularData? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $50.Struct get data => $_getN(0);
+  $51.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($50.Struct v) { setField(1, v); }
+  set data($51.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $50.Struct ensureData() => $_ensure(0);
+  $51.Struct ensureData() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.int get metadataIndex => $_getIZ(1);
@@ -914,26 +914,26 @@ class TabularData extends $pb.GeneratedMessage {
   void clearMetadataIndex() => clearField(2);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get timeRequested => $_getN(2);
+  $52.Timestamp get timeRequested => $_getN(2);
   @$pb.TagNumber(3)
-  set timeRequested($51.Timestamp v) { setField(3, v); }
+  set timeRequested($52.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeRequested() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeRequested() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureTimeRequested() => $_ensure(2);
+  $52.Timestamp ensureTimeRequested() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $51.Timestamp get timeReceived => $_getN(3);
+  $52.Timestamp get timeReceived => $_getN(3);
   @$pb.TagNumber(4)
-  set timeReceived($51.Timestamp v) { setField(4, v); }
+  set timeReceived($52.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeReceived() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeReceived() => clearField(4);
   @$pb.TagNumber(4)
-  $51.Timestamp ensureTimeReceived() => $_ensure(3);
+  $52.Timestamp ensureTimeReceived() => $_ensure(3);
 }
 
 /// TabularDataBySQLRequest requests tabular data using a SQL query.
@@ -1279,7 +1279,7 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     $core.String? resourceSubtype,
     $core.String? methodName,
     CaptureInterval? interval,
-    $50.Struct? additionalParameters,
+    $51.Struct? additionalParameters,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1312,7 +1312,7 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
     ..aOM<CaptureInterval>(5, _omitFieldNames ? '' : 'interval', subBuilder: CaptureInterval.create)
-    ..aOM<$50.Struct>(6, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(6, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1385,15 +1385,15 @@ class ExportTabularDataRequest extends $pb.GeneratedMessage {
   CaptureInterval ensureInterval() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $50.Struct get additionalParameters => $_getN(5);
+  $51.Struct get additionalParameters => $_getN(5);
   @$pb.TagNumber(6)
-  set additionalParameters($50.Struct v) { setField(6, v); }
+  set additionalParameters($51.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasAdditionalParameters() => $_has(5);
   @$pb.TagNumber(6)
   void clearAdditionalParameters() => clearField(6);
   @$pb.TagNumber(6)
-  $50.Struct ensureAdditionalParameters() => $_ensure(5);
+  $51.Struct ensureAdditionalParameters() => $_ensure(5);
 }
 
 /// ExportTabularDataResponse provides unified tabular data and metadata for a single data point from the specified data source.
@@ -1403,15 +1403,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     $core.String? resourceName,
     $core.String? resourceSubtype,
     $core.String? methodName,
-    $51.Timestamp? timeCaptured,
+    $52.Timestamp? timeCaptured,
     $core.String? organizationId,
     $core.String? locationId,
     $core.String? robotName,
     $core.String? robotId,
     $core.String? partName,
-    $50.Struct? methodParameters,
+    $51.Struct? methodParameters,
     $core.Iterable<$core.String>? tags,
-    $50.Struct? payload,
+    $51.Struct? payload,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1464,15 +1464,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..aOS(3, _omitFieldNames ? '' : 'resourceSubtype')
     ..aOS(4, _omitFieldNames ? '' : 'methodName')
-    ..aOM<$51.Timestamp>(5, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $51.Timestamp.create)
+    ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $52.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'organizationId')
     ..aOS(7, _omitFieldNames ? '' : 'locationId')
     ..aOS(8, _omitFieldNames ? '' : 'robotName')
     ..aOS(9, _omitFieldNames ? '' : 'robotId')
     ..aOS(10, _omitFieldNames ? '' : 'partName')
-    ..aOM<$50.Struct>(11, _omitFieldNames ? '' : 'methodParameters', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(11, _omitFieldNames ? '' : 'methodParameters', subBuilder: $51.Struct.create)
     ..pPS(12, _omitFieldNames ? '' : 'tags')
-    ..aOM<$50.Struct>(13, _omitFieldNames ? '' : 'payload', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(13, _omitFieldNames ? '' : 'payload', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1534,15 +1534,15 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
   void clearMethodName() => clearField(4);
 
   @$pb.TagNumber(5)
-  $51.Timestamp get timeCaptured => $_getN(4);
+  $52.Timestamp get timeCaptured => $_getN(4);
   @$pb.TagNumber(5)
-  set timeCaptured($51.Timestamp v) { setField(5, v); }
+  set timeCaptured($52.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimeCaptured() => $_has(4);
   @$pb.TagNumber(5)
   void clearTimeCaptured() => clearField(5);
   @$pb.TagNumber(5)
-  $51.Timestamp ensureTimeCaptured() => $_ensure(4);
+  $52.Timestamp ensureTimeCaptured() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get organizationId => $_getSZ(5);
@@ -1590,29 +1590,29 @@ class ExportTabularDataResponse extends $pb.GeneratedMessage {
   void clearPartName() => clearField(10);
 
   @$pb.TagNumber(11)
-  $50.Struct get methodParameters => $_getN(10);
+  $51.Struct get methodParameters => $_getN(10);
   @$pb.TagNumber(11)
-  set methodParameters($50.Struct v) { setField(11, v); }
+  set methodParameters($51.Struct v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasMethodParameters() => $_has(10);
   @$pb.TagNumber(11)
   void clearMethodParameters() => clearField(11);
   @$pb.TagNumber(11)
-  $50.Struct ensureMethodParameters() => $_ensure(10);
+  $51.Struct ensureMethodParameters() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $core.List<$core.String> get tags => $_getList(11);
 
   @$pb.TagNumber(13)
-  $50.Struct get payload => $_getN(12);
+  $51.Struct get payload => $_getN(12);
   @$pb.TagNumber(13)
-  set payload($50.Struct v) { setField(13, v); }
+  set payload($51.Struct v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasPayload() => $_has(12);
   @$pb.TagNumber(13)
   void clearPayload() => clearField(13);
   @$pb.TagNumber(13)
-  $50.Struct ensurePayload() => $_ensure(12);
+  $51.Struct ensurePayload() => $_ensure(12);
 }
 
 /// GetLatestTabularDataRequest requests the most recent tabular data captured from the specified data source.
@@ -1622,7 +1622,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     $core.String? resourceName,
     $core.String? methodName,
     $core.String? resourceSubtype,
-    $50.Struct? additionalParameters,
+    $51.Struct? additionalParameters,
   }) {
     final $result = create();
     if (partId != null) {
@@ -1651,7 +1651,7 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..aOS(3, _omitFieldNames ? '' : 'methodName')
     ..aOS(4, _omitFieldNames ? '' : 'resourceSubtype')
-    ..aOM<$50.Struct>(5, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $50.Struct.create)
+    ..aOM<$51.Struct>(5, _omitFieldNames ? '' : 'additionalParameters', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1713,24 +1713,24 @@ class GetLatestTabularDataRequest extends $pb.GeneratedMessage {
   void clearResourceSubtype() => clearField(4);
 
   @$pb.TagNumber(5)
-  $50.Struct get additionalParameters => $_getN(4);
+  $51.Struct get additionalParameters => $_getN(4);
   @$pb.TagNumber(5)
-  set additionalParameters($50.Struct v) { setField(5, v); }
+  set additionalParameters($51.Struct v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAdditionalParameters() => $_has(4);
   @$pb.TagNumber(5)
   void clearAdditionalParameters() => clearField(5);
   @$pb.TagNumber(5)
-  $50.Struct ensureAdditionalParameters() => $_ensure(4);
+  $51.Struct ensureAdditionalParameters() => $_ensure(4);
 }
 
 /// GetLatestTabularDataResponse provides the data, time synced, and time captured of the most recent tabular data captured
 /// from the requested data source, as long as it was synced within the last year.
 class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
   factory GetLatestTabularDataResponse({
-    $51.Timestamp? timeCaptured,
-    $51.Timestamp? timeSynced,
-    $50.Struct? payload,
+    $52.Timestamp? timeCaptured,
+    $52.Timestamp? timeSynced,
+    $51.Struct? payload,
   }) {
     final $result = create();
     if (timeCaptured != null) {
@@ -1749,9 +1749,9 @@ class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
   factory GetLatestTabularDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLatestTabularDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
-    ..aOM<$51.Timestamp>(1, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(2, _omitFieldNames ? '' : 'timeSynced', subBuilder: $51.Timestamp.create)
-    ..aOM<$50.Struct>(3, _omitFieldNames ? '' : 'payload', subBuilder: $50.Struct.create)
+    ..aOM<$52.Timestamp>(1, _omitFieldNames ? '' : 'timeCaptured', subBuilder: $52.Timestamp.create)
+    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'timeSynced', subBuilder: $52.Timestamp.create)
+    ..aOM<$51.Struct>(3, _omitFieldNames ? '' : 'payload', subBuilder: $51.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -1777,37 +1777,37 @@ class GetLatestTabularDataResponse extends $pb.GeneratedMessage {
   static GetLatestTabularDataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $51.Timestamp get timeCaptured => $_getN(0);
+  $52.Timestamp get timeCaptured => $_getN(0);
   @$pb.TagNumber(1)
-  set timeCaptured($51.Timestamp v) { setField(1, v); }
+  set timeCaptured($52.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeCaptured() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeCaptured() => clearField(1);
   @$pb.TagNumber(1)
-  $51.Timestamp ensureTimeCaptured() => $_ensure(0);
+  $52.Timestamp ensureTimeCaptured() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $51.Timestamp get timeSynced => $_getN(1);
+  $52.Timestamp get timeSynced => $_getN(1);
   @$pb.TagNumber(2)
-  set timeSynced($51.Timestamp v) { setField(2, v); }
+  set timeSynced($52.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeSynced() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimeSynced() => clearField(2);
   @$pb.TagNumber(2)
-  $51.Timestamp ensureTimeSynced() => $_ensure(1);
+  $52.Timestamp ensureTimeSynced() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $50.Struct get payload => $_getN(2);
+  $51.Struct get payload => $_getN(2);
   @$pb.TagNumber(3)
-  set payload($50.Struct v) { setField(3, v); }
+  set payload($51.Struct v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasPayload() => $_has(2);
   @$pb.TagNumber(3)
   void clearPayload() => clearField(3);
   @$pb.TagNumber(3)
-  $50.Struct ensurePayload() => $_ensure(2);
+  $51.Struct ensurePayload() => $_ensure(2);
 }
 
 /// BinaryData contains data and metadata associated with binary data.
@@ -2543,8 +2543,8 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.String? id,
     CaptureMetadata? captureMetadata,
-    $51.Timestamp? timeRequested,
-    $51.Timestamp? timeReceived,
+    $52.Timestamp? timeRequested,
+    $52.Timestamp? timeReceived,
     $core.String? fileName,
     $core.String? fileExt,
     $core.String? uri,
@@ -2593,8 +2593,8 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BinaryMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<CaptureMetadata>(2, _omitFieldNames ? '' : 'captureMetadata', subBuilder: CaptureMetadata.create)
-    ..aOM<$51.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $51.Timestamp.create)
-    ..aOM<$51.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $51.Timestamp.create)
+    ..aOM<$52.Timestamp>(3, _omitFieldNames ? '' : 'timeRequested', subBuilder: $52.Timestamp.create)
+    ..aOM<$52.Timestamp>(4, _omitFieldNames ? '' : 'timeReceived', subBuilder: $52.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'fileName')
     ..aOS(6, _omitFieldNames ? '' : 'fileExt')
     ..aOS(7, _omitFieldNames ? '' : 'uri')
@@ -2650,26 +2650,26 @@ class BinaryMetadata extends $pb.GeneratedMessage {
   CaptureMetadata ensureCaptureMetadata() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $51.Timestamp get timeRequested => $_getN(2);
+  $52.Timestamp get timeRequested => $_getN(2);
   @$pb.TagNumber(3)
-  set timeRequested($51.Timestamp v) { setField(3, v); }
+  set timeRequested($52.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeRequested() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeRequested() => clearField(3);
   @$pb.TagNumber(3)
-  $51.Timestamp ensureTimeRequested() => $_ensure(2);
+  $52.Timestamp ensureTimeRequested() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $51.Timestamp get timeReceived => $_getN(3);
+  $52.Timestamp get timeReceived => $_getN(3);
   @$pb.TagNumber(4)
-  set timeReceived($51.Timestamp v) { setField(4, v); }
+  set timeReceived($52.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeReceived() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeReceived() => clearField(4);
   @$pb.TagNumber(4)
-  $51.Timestamp ensureTimeReceived() => $_ensure(3);
+  $52.Timestamp ensureTimeReceived() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get fileName => $_getSZ(4);
@@ -5088,6 +5088,647 @@ class Index extends $pb.GeneratedMessage {
   $core.bool hasCreatedBy() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedBy() => clearField(5);
+}
+
+/// CreateSavedQueryRequest saves a mql query.
+class CreateSavedQueryRequest extends $pb.GeneratedMessage {
+  factory CreateSavedQueryRequest({
+    $core.String? organizationId,
+    $core.String? name,
+    $core.Iterable<$core.List<$core.int>>? mqlBinary,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mqlBinary != null) {
+      $result.mqlBinary.addAll(mqlBinary);
+    }
+    return $result;
+  }
+  CreateSavedQueryRequest._() : super();
+  factory CreateSavedQueryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSavedQueryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSavedQueryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSavedQueryRequest clone() => CreateSavedQueryRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSavedQueryRequest copyWith(void Function(CreateSavedQueryRequest) updates) => super.copyWith((message) => updates(message as CreateSavedQueryRequest)) as CreateSavedQueryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSavedQueryRequest create() => CreateSavedQueryRequest._();
+  CreateSavedQueryRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSavedQueryRequest> createRepeated() => $pb.PbList<CreateSavedQueryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSavedQueryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSavedQueryRequest>(create);
+  static CreateSavedQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(2);
+}
+
+class CreateSavedQueryResponse extends $pb.GeneratedMessage {
+  factory CreateSavedQueryResponse({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  CreateSavedQueryResponse._() : super();
+  factory CreateSavedQueryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSavedQueryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSavedQueryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSavedQueryResponse clone() => CreateSavedQueryResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSavedQueryResponse copyWith(void Function(CreateSavedQueryResponse) updates) => super.copyWith((message) => updates(message as CreateSavedQueryResponse)) as CreateSavedQueryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSavedQueryResponse create() => CreateSavedQueryResponse._();
+  CreateSavedQueryResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSavedQueryResponse> createRepeated() => $pb.PbList<CreateSavedQueryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSavedQueryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSavedQueryResponse>(create);
+  static CreateSavedQueryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class Query extends $pb.GeneratedMessage {
+  factory Query({
+    $core.String? id,
+    $core.String? organizationId,
+    $core.String? name,
+    $core.Iterable<$core.List<$core.int>>? mqlBinary,
+    $52.Timestamp? createdOn,
+    $52.Timestamp? updatedAt,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mqlBinary != null) {
+      $result.mqlBinary.addAll(mqlBinary);
+    }
+    if (createdOn != null) {
+      $result.createdOn = createdOn;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    return $result;
+  }
+  Query._() : super();
+  factory Query.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Query.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Query', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'organizationId')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..p<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
+    ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'createdOn', subBuilder: $52.Timestamp.create)
+    ..aOM<$52.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $52.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Query clone() => Query()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Query copyWith(void Function(Query) updates) => super.copyWith((message) => updates(message as Query)) as Query;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Query create() => Query._();
+  Query createEmptyInstance() => create();
+  static $pb.PbList<Query> createRepeated() => $pb.PbList<Query>();
+  @$core.pragma('dart2js:noInline')
+  static Query getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Query>(create);
+  static Query? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get organizationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organizationId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrganizationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganizationId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $52.Timestamp get createdOn => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdOn($52.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedOn() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedOn() => clearField(5);
+  @$pb.TagNumber(5)
+  $52.Timestamp ensureCreatedOn() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $52.Timestamp get updatedAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set updatedAt($52.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUpdatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUpdatedAt() => clearField(6);
+  @$pb.TagNumber(6)
+  $52.Timestamp ensureUpdatedAt() => $_ensure(5);
+}
+
+/// DeleteSavedQuery deletes a saved query based on the given id.
+class DeleteSavedQueryRequest extends $pb.GeneratedMessage {
+  factory DeleteSavedQueryRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  DeleteSavedQueryRequest._() : super();
+  factory DeleteSavedQueryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSavedQueryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSavedQueryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSavedQueryRequest clone() => DeleteSavedQueryRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSavedQueryRequest copyWith(void Function(DeleteSavedQueryRequest) updates) => super.copyWith((message) => updates(message as DeleteSavedQueryRequest)) as DeleteSavedQueryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryRequest create() => DeleteSavedQueryRequest._();
+  DeleteSavedQueryRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteSavedQueryRequest> createRepeated() => $pb.PbList<DeleteSavedQueryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSavedQueryRequest>(create);
+  static DeleteSavedQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class DeleteSavedQueryResponse extends $pb.GeneratedMessage {
+  factory DeleteSavedQueryResponse() => create();
+  DeleteSavedQueryResponse._() : super();
+  factory DeleteSavedQueryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSavedQueryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSavedQueryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSavedQueryResponse clone() => DeleteSavedQueryResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSavedQueryResponse copyWith(void Function(DeleteSavedQueryResponse) updates) => super.copyWith((message) => updates(message as DeleteSavedQueryResponse)) as DeleteSavedQueryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryResponse create() => DeleteSavedQueryResponse._();
+  DeleteSavedQueryResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteSavedQueryResponse> createRepeated() => $pb.PbList<DeleteSavedQueryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSavedQueryResponse>(create);
+  static DeleteSavedQueryResponse? _defaultInstance;
+}
+
+/// GetSavedQuery retrieves a saved query by id.
+class GetSavedQueryRequest extends $pb.GeneratedMessage {
+  factory GetSavedQueryRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  GetSavedQueryRequest._() : super();
+  factory GetSavedQueryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSavedQueryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSavedQueryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSavedQueryRequest clone() => GetSavedQueryRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSavedQueryRequest copyWith(void Function(GetSavedQueryRequest) updates) => super.copyWith((message) => updates(message as GetSavedQueryRequest)) as GetSavedQueryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSavedQueryRequest create() => GetSavedQueryRequest._();
+  GetSavedQueryRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSavedQueryRequest> createRepeated() => $pb.PbList<GetSavedQueryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSavedQueryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSavedQueryRequest>(create);
+  static GetSavedQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class GetSavedQueryResponse extends $pb.GeneratedMessage {
+  factory GetSavedQueryResponse({
+    Query? savedQuery,
+  }) {
+    final $result = create();
+    if (savedQuery != null) {
+      $result.savedQuery = savedQuery;
+    }
+    return $result;
+  }
+  GetSavedQueryResponse._() : super();
+  factory GetSavedQueryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSavedQueryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSavedQueryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOM<Query>(1, _omitFieldNames ? '' : 'savedQuery', subBuilder: Query.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSavedQueryResponse clone() => GetSavedQueryResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSavedQueryResponse copyWith(void Function(GetSavedQueryResponse) updates) => super.copyWith((message) => updates(message as GetSavedQueryResponse)) as GetSavedQueryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSavedQueryResponse create() => GetSavedQueryResponse._();
+  GetSavedQueryResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSavedQueryResponse> createRepeated() => $pb.PbList<GetSavedQueryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSavedQueryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSavedQueryResponse>(create);
+  static GetSavedQueryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Query get savedQuery => $_getN(0);
+  @$pb.TagNumber(1)
+  set savedQuery(Query v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSavedQuery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSavedQuery() => clearField(1);
+  @$pb.TagNumber(1)
+  Query ensureSavedQuery() => $_ensure(0);
+}
+
+/// UpdateSavedQuery updates the saved query with the given id.
+class UpdateSavedQueryRequest extends $pb.GeneratedMessage {
+  factory UpdateSavedQueryRequest({
+    $core.String? id,
+    $core.String? name,
+    $core.Iterable<$core.List<$core.int>>? mqlBinary,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (mqlBinary != null) {
+      $result.mqlBinary.addAll(mqlBinary);
+    }
+    return $result;
+  }
+  UpdateSavedQueryRequest._() : super();
+  factory UpdateSavedQueryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSavedQueryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSavedQueryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..p<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'mqlBinary', $pb.PbFieldType.PY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSavedQueryRequest clone() => UpdateSavedQueryRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSavedQueryRequest copyWith(void Function(UpdateSavedQueryRequest) updates) => super.copyWith((message) => updates(message as UpdateSavedQueryRequest)) as UpdateSavedQueryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSavedQueryRequest create() => UpdateSavedQueryRequest._();
+  UpdateSavedQueryRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSavedQueryRequest> createRepeated() => $pb.PbList<UpdateSavedQueryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSavedQueryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSavedQueryRequest>(create);
+  static UpdateSavedQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.List<$core.int>> get mqlBinary => $_getList(2);
+}
+
+class UpdateSavedQueryResponse extends $pb.GeneratedMessage {
+  factory UpdateSavedQueryResponse() => create();
+  UpdateSavedQueryResponse._() : super();
+  factory UpdateSavedQueryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSavedQueryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSavedQueryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSavedQueryResponse clone() => UpdateSavedQueryResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSavedQueryResponse copyWith(void Function(UpdateSavedQueryResponse) updates) => super.copyWith((message) => updates(message as UpdateSavedQueryResponse)) as UpdateSavedQueryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSavedQueryResponse create() => UpdateSavedQueryResponse._();
+  UpdateSavedQueryResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSavedQueryResponse> createRepeated() => $pb.PbList<UpdateSavedQueryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSavedQueryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSavedQueryResponse>(create);
+  static UpdateSavedQueryResponse? _defaultInstance;
+}
+
+/// ListSavedQueries lists saved queries for a given organization.
+class ListSavedQueriesRequest extends $pb.GeneratedMessage {
+  factory ListSavedQueriesRequest({
+    $core.String? organizationId,
+    $fixnum.Int64? limit,
+  }) {
+    final $result = create();
+    if (organizationId != null) {
+      $result.organizationId = organizationId;
+    }
+    if (limit != null) {
+      $result.limit = limit;
+    }
+    return $result;
+  }
+  ListSavedQueriesRequest._() : super();
+  factory ListSavedQueriesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSavedQueriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSavedQueriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'organizationId')
+    ..aInt64(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSavedQueriesRequest clone() => ListSavedQueriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSavedQueriesRequest copyWith(void Function(ListSavedQueriesRequest) updates) => super.copyWith((message) => updates(message as ListSavedQueriesRequest)) as ListSavedQueriesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesRequest create() => ListSavedQueriesRequest._();
+  ListSavedQueriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSavedQueriesRequest> createRepeated() => $pb.PbList<ListSavedQueriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSavedQueriesRequest>(create);
+  static ListSavedQueriesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get organizationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set organizationId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOrganizationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrganizationId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get limit => $_getI64(1);
+  @$pb.TagNumber(2)
+  set limit($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => clearField(2);
+}
+
+class ListSavedQueriesResponse extends $pb.GeneratedMessage {
+  factory ListSavedQueriesResponse({
+    $core.Iterable<Query>? queries,
+  }) {
+    final $result = create();
+    if (queries != null) {
+      $result.queries.addAll(queries);
+    }
+    return $result;
+  }
+  ListSavedQueriesResponse._() : super();
+  factory ListSavedQueriesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSavedQueriesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSavedQueriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..pc<Query>(1, _omitFieldNames ? '' : 'queries', $pb.PbFieldType.PM, subBuilder: Query.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSavedQueriesResponse clone() => ListSavedQueriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSavedQueriesResponse copyWith(void Function(ListSavedQueriesResponse) updates) => super.copyWith((message) => updates(message as ListSavedQueriesResponse)) as ListSavedQueriesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesResponse create() => ListSavedQueriesResponse._();
+  ListSavedQueriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSavedQueriesResponse> createRepeated() => $pb.PbList<ListSavedQueriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSavedQueriesResponse>(create);
+  static ListSavedQueriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Query> get queries => $_getList(0);
 }
 
 
