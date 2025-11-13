@@ -1,7 +1,6 @@
 import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
-import '../../common/mesh.dart';
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
