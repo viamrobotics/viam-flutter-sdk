@@ -31,12 +31,14 @@ class _ImuWidgetState extends State<ImuWidget> {
   final _streamSubscriptions = <StreamSubscription<dynamic>>[];
   Duration sensorInterval = SensorInterval.uiInterval;
 
-  static const double _positionScale = 600.0;
+  static const double _positionScale = 800.0;
 
   static const double _velocityDecay = 0.99;
 
   static const double _deadZoneZ = 0.5;
-  static const double _deadZoneXY = 0.1;
+  // static const double _deadZoneXY = 0.1;
+  static const double _deadZoneX = 0.18; 
+  static const double _deadZoneY = 0.22; 
   static const double _velocityThreshold = 0.01; // Threshold below which velocity is considered zero
   bool _isMovingArm = false;
   String? _lastError;
@@ -66,6 +68,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   bool _isReferenceSet = false;
   Pose? _targetArmPose;
   Pose? _currentArmPose;
+  bool stillPressed = false;
 
   void _initImu() {
     _streamSubscriptions.add(
@@ -160,15 +163,19 @@ class _ImuWidgetState extends State<ImuWidget> {
     }
 
     // Apply dead zone to acceleration to filter out noise
-    final accelX = event.x.abs() > _deadZoneXY ? event.x : 0.0;
-    final accelY = event.y.abs() > _deadZoneXY ? event.y : 0.0;
+    final accelX = event.x.abs() > _deadZoneX ? event.x : 0.0;
+    final accelY = event.y.abs() > _deadZoneY ? event.y : 0.0;
     final accelZ = event.z.abs() > _deadZoneZ ? event.z : 0.0;
+    print("accelX: ${event.x}, accelY: ${event.y}, accelZ: ${event.z}");
 
-    if (accelX == 0.0 && accelY == 0.0 && accelZ == 0.0) {
+    if (stillPressed) {
+      // if (accelX == 0.0 && accelY == 0.0 && accelZ == 0.0) {
+      print("still pressed and accel is 0");
       _velocityX = 0.0;
       _velocityY = 0.0;
       _velocityZ = 0.0;
       return;
+      // }
     }
 
     // Calculate velocity
@@ -234,7 +241,7 @@ class _ImuWidgetState extends State<ImuWidget> {
       });
 
       // Add pose to queue
-      _addPoseToQueue(newPose, 5);
+      _addPoseToQueue(newPose, 0);
 
       if (!_isProcessingQueue) {
         _executePoseFromQueue();
@@ -250,7 +257,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   void _addPoseToQueue(Pose pose, int n) {
     if (n == 0 || _poseCounter % n == 0) {
       _poseQueue.addLast(pose);
-      debugPrint("new pose added to queue: ${pose.x}, ${pose.y}, ${pose.z}");
+      // debugPrint("new pose added to queue: ${pose.x}, ${pose.y}, ${pose.z}");
     }
     _poseCounter++;
   }
@@ -276,7 +283,7 @@ class _ImuWidgetState extends State<ImuWidget> {
         _isMovingArm = false;
       }
     }
-    debugPrint("queue is empty");
+    // debugPrint("queue is empty");
     _isProcessingQueue = false;
     _poseCounter = 0;
   }
@@ -286,6 +293,7 @@ class _ImuWidgetState extends State<ImuWidget> {
   /// Clears position and orientation tracking so the phone starts at (0,0,0) relative to this reference.
   Future<void> _setReference() async {
     try {
+      stillPressed = false;
       // Get the current arm position
       final currentArmPose = await widget.arm.endPosition();
 
@@ -383,6 +391,12 @@ class _ImuWidgetState extends State<ImuWidget> {
             "Move your phone through space!",
             style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
           ),
+        TextButton(
+          onPressed: () async {
+            stillPressed = true;
+          },
+          child: Text("Still"),
+        ),
         TextButton(
           onPressed: () async {
             await widget.arm.stop();
