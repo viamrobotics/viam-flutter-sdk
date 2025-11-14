@@ -11,6 +11,11 @@ export 'src/app/robot.dart';
 /// Components
 export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
+export 'src/media/audio.dart';
+export 'src/components/audio_in/audio_in.dart';
+export 'src/components/audio_in/client.dart';
+export 'src/components/audio_out/audio_out.dart';
+export 'src/components/audio_out/client.dart';
 export 'src/components/base/base.dart';
 export 'src/components/base/client.dart';
 export 'src/components/board/board.dart';
