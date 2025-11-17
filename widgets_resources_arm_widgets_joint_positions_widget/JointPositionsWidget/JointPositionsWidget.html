@@ -56,6 +56,7 @@
       const
       <span class="name ">JointPositionsWidget</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
 <li><span class="parameter" id="-param-arm"><span>required</span> <span class="type-annotation"><a href="../../viam_sdk/Arm-class.html">Arm</a></span> <span class="parameter-name">arm</span>, </span></li>
+<li><span class="parameter" id="-param-updateNotifier"><span>required</span> <span class="type-annotation"><a href="../../widgets_resources_arm/ArmNotifier-class.html">ArmNotifier</a></span> <span class="parameter-name">updateNotifier</span>, </span></li>
 </ol>})
     </section>
     
@@ -64,7 +65,11 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const JointPositionsWidget({super.key, required this.arm});</code></pre>
+  <pre class="language-dart"><code class="language-dart">const JointPositionsWidget({
+  super.key,
+  required this.arm,
+  required this.updateNotifier,
+});</code></pre>
 </section>
 
 
