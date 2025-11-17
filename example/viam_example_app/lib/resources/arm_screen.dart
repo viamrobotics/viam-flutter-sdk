@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viam_example_app/resources/arm_widgets/arkit_widget.dart';
 import 'package:viam_example_app/resources/arm_widgets/imu_widget.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
@@ -16,7 +17,8 @@ class ViamArmWidgetNew extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ImuWidget(arm: arm, updateNotifier: ArmNotifier()),
+        // ImuWidget(arm: arm, updateNotifier: ArmNotifier()),
+        ARKitArmWidget(arm: arm, updateNotifier: ArmNotifier()),
       ],
     );
   }

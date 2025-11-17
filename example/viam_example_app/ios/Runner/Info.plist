@@ -10,6 +10,10 @@
 	</array>
 	<key>NSMotionUsageDescription</key>
 	<string>This app requires access to the barometer to provide altitude information.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires camera access for AR functionality.</string>
+	<key>NSARKitUsageDescription</key>
+	<string>This app uses ARKit to track your phone's position in space.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>

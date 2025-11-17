@@ -1,13 +1,12 @@
 import 'dart:async';
 import 'dart:collection';
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
-import 'package:vector_math/vector_math.dart' as vector_math;
 import 'package:viam_example_app/resources/arm_screen.dart';
-import 'package:viam_sdk/protos/app/robot.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import '../../spatialmath/spatial_math.dart';
 
 class ImuWidget extends StatefulWidget {
   final Arm arm;
@@ -37,8 +36,8 @@ class _ImuWidgetState extends State<ImuWidget> {
 
   static const double _deadZoneZ = 0.5;
   // static const double _deadZoneXY = 0.1;
-  static const double _deadZoneX = 0.18; 
-  static const double _deadZoneY = 0.22; 
+  static const double _deadZoneX = 0.18;
+  static const double _deadZoneY = 0.22;
   static const double _velocityThreshold = 0.01; // Threshold below which velocity is considered zero
   bool _isMovingArm = false;
   String? _lastError;
@@ -59,10 +58,10 @@ class _ImuWidgetState extends State<ImuWidget> {
   DateTime? _lastIntegrationTime;
 
   // Orientation (radians)
-  // double _orientationX = 0.0; // Roll
-  // double _orientationY = 0.0; // Pitch
-  // double _orientationZ = 0.0; // Yaw
-  // DateTime? _lastGyroIntegrationTime;
+  double _orientationX = 0.0; // Roll
+  double _orientationY = 0.0; // Pitch
+  double _orientationZ = 0.0; // Yaw
+  DateTime? _lastGyroIntegrationTime;
 
   Pose? _referenceArmPose; // arm position set once when you press "set reference"
   bool _isReferenceSet = false;
@@ -80,13 +79,13 @@ class _ImuWidgetState extends State<ImuWidget> {
     );
 
     /// Note: Orientation logic is commented out because we cannot convert to orientation vector without the spatial math package.
-    // _streamSubscriptions.add(
-    //   gyroscopeEventStream(samplingPeriod: sensorInterval).listen(
-    //     _updateOrientationFromGyroscope,
-    //     onError: (_) => _showSensorError("Gyroscope"),
-    //     cancelOnError: true,
-    //   ),
-    // );
+    _streamSubscriptions.add(
+      gyroscopeEventStream(samplingPeriod: sensorInterval).listen(
+        _updateOrientationFromGyroscope,
+        onError: (_) => _showSensorError("Gyroscope"),
+        cancelOnError: true,
+      ),
+    );
   }
 
   void _showSensorError(String sensorName) {
@@ -100,42 +99,42 @@ class _ImuWidgetState extends State<ImuWidget> {
   }
 
   /// Update orientation by integrating gyroscope angular velocity
-  // void _updateOrientationFromGyroscope(GyroscopeEvent event) {
-  //   final now = DateTime.now();
+  void _updateOrientationFromGyroscope(GyroscopeEvent event) {
+    final now = DateTime.now();
 
-  //   // Initialize integration time on first run
-  //   if (_lastGyroIntegrationTime == null) {
-  //     _lastGyroIntegrationTime = now;
-  //     return;
-  //   }
+    // Initialize integration time on first run
+    if (_lastGyroIntegrationTime == null) {
+      _lastGyroIntegrationTime = now;
+      return;
+    }
 
-  //   // Calculate time delta between now and last integration time (in seconds) so we know how long we've been rotating for.
-  //   // tldr: to get orientation, we need angular velocity * time.
-  //   final dt = now.difference(_lastGyroIntegrationTime!).inMilliseconds / 1000.0;
-  //   _lastGyroIntegrationTime = now;
+    // Calculate time delta between now and last integration time (in seconds) so we know how long we've been rotating for.
+    // tldr: to get orientation, we need angular velocity * time.
+    final dt = now.difference(_lastGyroIntegrationTime!).inMilliseconds / 1000.0;
+    _lastGyroIntegrationTime = now;
 
-  //   // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
-  //   if (dt > 0.5) {
-  //     return;
-  //   }
+    // Skip if dt is too large, meaning the phone has been stationary for too long in between movements.
+    if (dt > 0.5) {
+      return;
+    }
 
-  //   // Don't update orientation if reference point hasn't been set
-  //   if (!_isReferenceSet) {
-  //     return;
-  //   }
+    // Don't update orientation if reference point hasn't been set
+    if (!_isReferenceSet) {
+      return;
+    }
 
-  //   // Calucluate orientation change: integrate angular velocity over time to get orientation.
-  //   // Gyroscope values are in radians/second
+    // Calucluate orientation change: integrate angular velocity over time to get orientation.
+    // Gyroscope values are in radians/second
+    // 1. angular velocity to angular position (euler angles) w integration
+    _orientationX += event.x * dt; // roll
+    _orientationY += event.y * dt; // pitch
+    _orientationZ += event.z * dt; // yaw
 
-  //   _orientationX += event.x * dt; // roll
-  //   _orientationY += event.y * dt; // pitch
-  //   _orientationZ += event.z * dt; // yaw
-
-  //   // Apply small decay to prevent drift
-  //   _orientationX *= 0.999;
-  //   _orientationY *= 0.999;
-  //   _orientationZ *= 0.999;
-  // }
+    // Apply small decay to prevent drift
+    _orientationX *= 0.999;
+    _orientationY *= 0.999;
+    _orientationZ *= 0.999;
+  }
 
   /// Create a pose based on IMU accelerometer data using acceleration to get position
   /// The pose is added to a queue for sequential processing.
@@ -197,6 +196,7 @@ class _ImuWidgetState extends State<ImuWidget> {
     _positionX += _velocityX * dt;
     _positionY += _velocityY * dt;
     _positionZ += _velocityZ * dt;
+    // print("positionX: $_positionX, positionY: $_positionY, positionZ: $_positionZ");
 
     try {
       // Calculate new target position based on reference + phone displacement
@@ -207,23 +207,42 @@ class _ImuWidgetState extends State<ImuWidget> {
 
       // Attempted to convert orientation values from angular velocities (yaw pitch roll) to orientation vectors
       // Then convert orientation vectors to quaternions and multiply them to get the new arm orientation quaternion
-      // final phoneQuaternion = vector_math.Quaternion.identity();
-      // phoneQuaternion.setEuler(_orientationZ, _orientationY, _orientationX); // Yaw, Pitch, Roll
-      // final armQuaternion = ovToQuat(_referenceArmPose!.oZ, _referenceArmPose!.oY, _referenceArmPose!.oX, _referenceArmPose!.theta);
-      // final newArmQuaternion = armQuaternion * phoneQuaternion;
-      // final newOrientationVector = quatToOV(newArmQuaternion);
-      // final newOrientationX = newOrientationVector.x;
-      // final newOrientationY = newOrientationVector.y;
-      // final newOrientationZ = newOrientationVector.z;
+      // 2. convert euler angles to quaternion
+      final phoneEulerAngles = EulerAngles(
+          _orientationX, // roll
+          _orientationY, // pitch
+          _orientationZ // yaw
+          );
+      final phoneQuaternion = phoneEulerAngles.toQuaternion();
 
+      // 3: Convert latest pose to quaternion
+      final armOrientationVector =
+          OrientationVector(_referenceArmPose!.theta, _referenceArmPose!.oX, _referenceArmPose!.oY, _referenceArmPose!.oZ);
+      final armQuaternion = armOrientationVector.toQuaternion();
+
+      // 4: add quaternions (which is actually multiplying them which there is now a function for)
+      final newArmQuaternion = armQuaternion.mul(phoneQuaternion);
+
+      // 5. convert the new quaternion back to orientation vector
+      final newOrientationVector = newArmQuaternion.toOrientationVectorRadians();
+      final newOrientationX = newOrientationVector.ox;
+      final newOrientationY = newOrientationVector.oy;
+      final newOrientationZ = newOrientationVector.oz;
+      final newTheta = newOrientationVector.theta;
+      print("theta: $newTheta");
+      // print("newOrientationX: $newOrientationX, newOrientationY: $newOrientationY, newOrientationZ: $newOrientationZ, newTheta: $newTheta");
+      // 6. add pose to queue
       final newPose = Pose(
-        x: newX,
-        y: newY,
-        z: newZ,
-        theta: _referenceArmPose!.theta,
-        oX: _referenceArmPose!.oX, // would be newOrientationX if math was correct
-        oY: _referenceArmPose!.oY,
-        oZ: _referenceArmPose!.oZ,
+        // x: newX,
+        // y: newY,
+        // z: newZ,
+        x: _referenceArmPose!.x,
+        y: _referenceArmPose!.y,
+        z: _referenceArmPose!.z,
+        theta: newTheta,
+        oX: newOrientationX,
+        oY: newOrientationY,
+        oZ: newOrientationZ,
       );
 
       if (_poseQueue.isNotEmpty) {
@@ -241,7 +260,7 @@ class _ImuWidgetState extends State<ImuWidget> {
       });
 
       // Add pose to queue
-      _addPoseToQueue(newPose, 0);
+      _addPoseToQueue(newPose, 5);
 
       if (!_isProcessingQueue) {
         _executePoseFromQueue();
@@ -308,10 +327,10 @@ class _ImuWidgetState extends State<ImuWidget> {
         _lastIntegrationTime = null;
 
         // Zero out orientation tracking
-        // _orientationX = 0.0;
-        // _orientationY = 0.0;
-        // _orientationZ = 0.0;
-        // _lastGyroIntegrationTime = null;
+        _orientationX = 0.0;
+        _orientationY = 0.0;
+        _orientationZ = 0.0;
+        _lastGyroIntegrationTime = null;
 
         // Clear pose queue and reset counter
         _poseQueue.clear();
@@ -407,7 +426,14 @@ class _ImuWidgetState extends State<ImuWidget> {
             });
           },
           child: Text("Stop"),
-        )
+        ),
+        ElevatedButton(
+          onPressed: () async {
+            await widget.arm.moveToJointPositions([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
+            await widget.arm.moveToPosition(Pose(x: 300, y: 0, z: 100, oX: 0, oY: 0, oZ: -1, theta: 0));
+          },
+          child: Text("reset position"),
+        ),
       ],
     );
   }
@@ -417,158 +443,158 @@ class _ImuWidgetState extends State<ImuWidget> {
   /// Translated from Go spatialmath code - OrientationVector.Quaternion()
   /// OX, OY, OZ represent a point on the unit sphere where the end effector is pointing
   /// Theta is rotation around that pointing axis
-  vector_math.Quaternion ovToQuat(double oX, double oY, double oZ, double theta) {
-    const double defaultAngleEpsilon = 1e-4;
+  // vector_math.Quaternion ovToQuat(double oX, double oY, double oZ, double theta) {
+  //   const double defaultAngleEpsilon = 1e-4;
 
-    // Normalize the orientation vector
-    final norm = math.sqrt(oX * oX + oY * oY + oZ * oZ);
-    double normOX = oX;
-    double normOY = oY;
-    double normOZ = oZ;
+  //   // Normalize the orientation vector
+  //   final norm = math.sqrt(oX * oX + oY * oY + oZ * oZ);
+  //   double normOX = oX;
+  //   double normOY = oY;
+  //   double normOZ = oZ;
 
-    if (norm == 0.0) {
-      // Default orientation: pointing up along Z axis
-      normOX = 0.0;
-      normOY = 0.0;
-      normOZ = -1.0;
-    } else {
-      normOX /= norm;
-      normOY /= norm;
-      normOZ /= norm;
-    }
+  //   if (norm == 0.0) {
+  //     // Default orientation: pointing up along Z axis
+  //     normOX = 0.0;
+  //     normOY = 0.0;
+  //     normOZ = -1.0;
+  //   } else {
+  //     normOX /= norm;
+  //     normOY /= norm;
+  //     normOZ /= norm;
+  //   }
 
-    // acos(OZ) ranges from 0 (north pole) to pi (south pole)
-    final lat = math.acos(normOZ.clamp(-1.0, 1.0));
+  //   // acos(OZ) ranges from 0 (north pole) to pi (south pole)
+  //   final lat = math.acos(normOZ.clamp(-1.0, 1.0));
 
-    // If we're pointing at the Z axis then lon is 0, theta is the OV theta
-    double lon = 0.0;
+  //   // If we're pointing at the Z axis then lon is 0, theta is the OV theta
+  //   double lon = 0.0;
 
-    if (1 - normOZ.abs() > defaultAngleEpsilon) {
-      // If we are not at a pole, we need the longitude
-      lon = math.atan2(normOY, normOX);
-    }
+  //   if (1 - normOZ.abs() > defaultAngleEpsilon) {
+  //     // If we are not at a pole, we need the longitude
+  //     lon = math.atan2(normOY, normOX);
+  //   }
 
-    // Use ZYZ Euler angles to create quaternion
-    // This matches: mgl64.AnglesToQuat(lon, lat, theta, mgl64.ZYZ)
-    return _eulerZYZToQuat(lon, lat, theta);
-  }
+  //   // Use ZYZ Euler angles to create quaternion
+  //   // This matches: mgl64.AnglesToQuat(lon, lat, theta, mgl64.ZYZ)
+  //   return _eulerZYZToQuat(lon, lat, theta);
+  // }
 
-  /// Convert ZYZ Euler angles to quaternion
-  /// Manually composing Q1(Z by z1) * Q2(Y by y) * Q3(Z by z2)
-  vector_math.Quaternion _eulerZYZToQuat(double z1, double y, double z2) {
-    // Create three rotation quaternions and compose them
-    // Q1: Rotation around Z axis by z1
-    final q1 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 0, 1), z1);
+  // /// Convert ZYZ Euler angles to quaternion
+  // /// Manually composing Q1(Z by z1) * Q2(Y by y) * Q3(Z by z2)
+  // vector_math.Quaternion _eulerZYZToQuat(double z1, double y, double z2) {
+  //   // Create three rotation quaternions and compose them
+  //   // Q1: Rotation around Z axis by z1
+  //   final q1 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 0, 1), z1);
 
-    // Q2: Rotation around Y axis by y
-    final q2 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 1, 0), y);
+  //   // Q2: Rotation around Y axis by y
+  //   final q2 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 1, 0), y);
 
-    // Q3: Rotation around Z axis by z2
-    final q3 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 0, 1), z2);
+  //   // Q3: Rotation around Z axis by z2
+  //   final q3 = vector_math.Quaternion.axisAngle(vector_math.Vector3(0, 0, 1), z2);
 
-    // Compose: Q = Q1 * Q2 * Q3 (intrinsic rotations)
-    final result = q1 * q2 * q3;
+  //   // Compose: Q = Q1 * Q2 * Q3 (intrinsic rotations)
+  //   final result = q1 * q2 * q3;
 
-    return result;
-  }
+  //   return result;
+  // }
 
-  /// Converts a unit quaternion (q) to an OrientationVector.
-  /// Converted from go code to flutter using Gemini
-  Orientation_OrientationVectorRadians quatToOV(vector_math.Quaternion q) {
-    double orientationVectorPoleRadius = 0.0001;
-    double defaultAngleEpsilon = 1e-4;
-    // Define initial axes as pure quaternions (Real/W=0)
-    // xAxis: (0, -1, 0, 0) -> x=-1, y=0, z=0, w=0
-    final vector_math.Quaternion xAxis = vector_math.Quaternion(0.0, -1.0, 0.0, 0.0);
-    // zAxis: (0, 0, 0, 1) -> x=0, y=0, z=1, w=0
-    final vector_math.Quaternion zAxis = vector_math.Quaternion(0.0, 0.0, 0.0, 1.0);
+  // /// Converts a unit quaternion (q) to an OrientationVector.
+  // /// Converted from go code to flutter using Gemini
+  // Orientation_OrientationVectorRadians quatToOV(vector_math.Quaternion q) {
+  //   double orientationVectorPoleRadius = 0.0001;
+  //   double defaultAngleEpsilon = 1e-4;
+  //   // Define initial axes as pure quaternions (Real/W=0)
+  //   // xAxis: (0, -1, 0, 0) -> x=-1, y=0, z=0, w=0
+  //   final vector_math.Quaternion xAxis = vector_math.Quaternion(0.0, -1.0, 0.0, 0.0);
+  //   // zAxis: (0, 0, 0, 1) -> x=0, y=0, z=1, w=0
+  //   final vector_math.Quaternion zAxis = vector_math.Quaternion(0.0, 0.0, 0.0, 1.0);
 
-    final ov = Orientation_OrientationVectorRadians();
+  //   final ov = Orientation_OrientationVectorRadians();
 
-    // Get the transform of our +X and +Z points (Quaternion rotation formula: q * v * q_conj)
-    final vector_math.Quaternion newX = q * xAxis * q.conjugated();
-    final vector_math.Quaternion newZ = q * zAxis * q.conjugated();
+  //   // Get the transform of our +X and +Z points (Quaternion rotation formula: q * v * q_conj)
+  //   final vector_math.Quaternion newX = q * xAxis * q.conjugated();
+  //   final vector_math.Quaternion newZ = q * zAxis * q.conjugated();
 
-    // Set the direction vector (OX, OY, OZ) from the rotated Z-axis (Imag, Jmag, Kmag components)
-    ov.x = newZ.x;
-    ov.y = newZ.y;
-    ov.z = newZ.z;
+  //   // Set the direction vector (OX, OY, OZ) from the rotated Z-axis (Imag, Jmag, Kmag components)
+  //   ov.x = newZ.x;
+  //   ov.y = newZ.y;
+  //   ov.z = newZ.z;
 
-    // Calculate the roll angle (Theta)
+  //   // Calculate the roll angle (Theta)
 
-    // Check if we are near the poles (i.e., newZ.z/Kmag is close to 1 or -1)
-    if (1 - (ov.z.abs()) > orientationVectorPoleRadius) {
-      // General Case: Not Near the Pole
+  //   // Check if we are near the poles (i.e., newZ.z/Kmag is close to 1 or -1)
+  //   if (1 - (ov.z.abs()) > orientationVectorPoleRadius) {
+  //     // General Case: Not Near the Pole
 
-      // Vector3 versions of the rotated axes
-      final vector_math.Vector3 v1 = vector_math.Vector3(newZ.x, newZ.y, newZ.z); // Local Z
-      final vector_math.Vector3 v2 = vector_math.Vector3(newX.x, newX.y, newX.z); // Local X
-      final vector_math.Vector3 globalZ = vector_math.Vector3(0.0, 0.0, 1.0); // Global Z
+  //     // Vector3 versions of the rotated axes
+  //     final vector_math.Vector3 v1 = vector_math.Vector3(newZ.x, newZ.y, newZ.z); // Local Z
+  //     final vector_math.Vector3 v2 = vector_math.Vector3(newX.x, newX.y, newX.z); // Local X
+  //     final vector_math.Vector3 globalZ = vector_math.Vector3(0.0, 0.0, 1.0); // Global Z
 
-      // Normal to the local-x, local-z plane
-      final vector_math.Vector3 norm1 = v1.cross(v2);
+  //     // Normal to the local-x, local-z plane
+  //     final vector_math.Vector3 norm1 = v1.cross(v2);
 
-      // Normal to the global-z, local-z plane
-      final vector_math.Vector3 norm2 = v1.cross(globalZ);
+  //     // Normal to the global-z, local-z plane
+  //     final vector_math.Vector3 norm2 = v1.cross(globalZ);
 
-      // Find the angle (theta) between the two planes (using the angle between their normals)
-      final double denominator = norm1.length * norm2.length;
-      final double cosTheta = norm1.dot(norm2) / denominator; // Avoid division by zero, default to 1 (0 angle)
+  //     // Find the angle (theta) between the two planes (using the angle between their normals)
+  //     final double denominator = norm1.length * norm2.length;
+  //     final double cosTheta = norm1.dot(norm2) / denominator; // Avoid division by zero, default to 1 (0 angle)
 
-      // Clamp for float error
-      double clampedCosTheta = cosTheta.clamp(-1.0, 1.0);
+  //     // Clamp for float error
+  //     double clampedCosTheta = cosTheta.clamp(-1.0, 1.0);
 
-      final double theta = math.acos(clampedCosTheta);
+  //     final double theta = math.acos(clampedCosTheta);
 
-      if (theta.abs() > orientationVectorPoleRadius) {
-        // Determine directionality of the angle (sign of theta)
+  //     if (theta.abs() > orientationVectorPoleRadius) {
+  //       // Determine directionality of the angle (sign of theta)
 
-        // Axis is the new Z-axis (ov.OX, ov.OY, ov.OZ)
-        final vector_math.Vector3 axis = vector_math.Vector3(ov.x, ov.y, ov.z);
-        // Create a rotation quaternion for rotation by -theta around the new Z-axis
-        final vector_math.Quaternion q2 = vector_math.Quaternion.axisAngle(axis, -theta);
+  //       // Axis is the new Z-axis (ov.OX, ov.OY, ov.OZ)
+  //       final vector_math.Vector3 axis = vector_math.Vector3(ov.x, ov.y, ov.z);
+  //       // Create a rotation quaternion for rotation by -theta around the new Z-axis
+  //       final vector_math.Quaternion q2 = vector_math.Quaternion.axisAngle(axis, -theta);
 
-        // Apply q2 rotation to the original Z-axis (0, 0, 0, 1)
-        final vector_math.Quaternion testZQuat = q2 * zAxis * q2.conjugated();
-        final vector_math.Vector3 testZVector = vector_math.Vector3(testZQuat.x, testZQuat.y, testZQuat.z);
+  //       // Apply q2 rotation to the original Z-axis (0, 0, 0, 1)
+  //       final vector_math.Quaternion testZQuat = q2 * zAxis * q2.conjugated();
+  //       final vector_math.Vector3 testZVector = vector_math.Vector3(testZQuat.x, testZQuat.y, testZQuat.z);
 
-        // Find the normal of the plane defined by v1 (local Z) and testZ
-        final vector_math.Vector3 norm3 = v1.cross(testZVector);
+  //       // Find the normal of the plane defined by v1 (local Z) and testZ
+  //       final vector_math.Vector3 norm3 = v1.cross(testZVector);
 
-        final double norm1Len = norm1.length;
-        final double norm3Len = norm3.length;
+  //       final double norm1Len = norm1.length;
+  //       final double norm3Len = norm3.length;
 
-        final double cosTest = norm1.dot(norm3) / (norm1Len * norm3Len);
+  //       final double cosTest = norm1.dot(norm3) / (norm1Len * norm3Len);
 
-        // Check if norm1 and norm3 are coplanar (angle close to 0)
-        if (1.0 - cosTest < defaultAngleEpsilon * defaultAngleEpsilon) {
-          ov.theta = -theta;
-        } else {
-          ov.theta = theta;
-        }
-      } else {
-        ov.theta = 0.0;
-      }
-    } else {
-      // Special Case: Near the Pole (Z-axis is up or down)
+  //       // Check if norm1 and norm3 are coplanar (angle close to 0)
+  //       if (1.0 - cosTest < defaultAngleEpsilon * defaultAngleEpsilon) {
+  //         ov.theta = -theta;
+  //       } else {
+  //         ov.theta = theta;
+  //       }
+  //     } else {
+  //       ov.theta = 0.0;
+  //     }
+  //   } else {
+  //     // Special Case: Near the Pole (Z-axis is up or down)
 
-      // Use Atan2 on the rotated X-axis components (Jmag and Imag, or y and x in Dart)
-      // -math.Atan2(newX.Jmag, -newX.Imag) -> Dart: -math.atan2(newX.y, -newX.x)
-      ov.theta = -math.atan2(newX.y, -newX.x);
+  //     // Use Atan2 on the rotated X-axis components (Jmag and Imag, or y and x in Dart)
+  //     // -math.Atan2(newX.Jmag, -newX.Imag) -> Dart: -math.atan2(newX.y, -newX.x)
+  //     ov.theta = -math.atan2(newX.y, -newX.x);
 
-      if (newZ.z < 0) {
-        // If pointing along the negative Z-axis (ov.OZ < 0)
-        // -math.Atan2(newX.Jmag, newX.Imag) -> Dart: -math.atan2(newX.y, newX.x)
-        ov.theta = -math.atan2(newX.y, newX.x);
-      }
-    }
+  //     if (newZ.z < 0) {
+  //       // If pointing along the negative Z-axis (ov.OZ < 0)
+  //       // -math.Atan2(newX.Jmag, newX.Imag) -> Dart: -math.atan2(newX.y, newX.x)
+  //       ov.theta = -math.atan2(newX.y, newX.x);
+  //     }
+  //   }
 
-    // Handle IEEE -0.0 for consistency
-    if (ov.theta == -0.0) {
-      ov.theta = 0.0;
-    }
-    return ov;
-  }
+  //   // Handle IEEE -0.0 for consistency
+  //   if (ov.theta == -0.0) {
+  //     ov.theta = 0.0;
+  //   }
+  //   return ov;
+  // }
 
   @override
   void dispose() {
