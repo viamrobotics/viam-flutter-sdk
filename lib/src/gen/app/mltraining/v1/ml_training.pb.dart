@@ -206,6 +206,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     $core.String? modelVersion,
     $core.String? registryItemVersion,
     $core.Map<$core.String, $core.String>? arguments,
+    $core.String? containerVersion,
   }) {
     final $result = create();
     if (datasetId != null) {
@@ -229,6 +230,9 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     if (arguments != null) {
       $result.arguments.addAll(arguments);
     }
+    if (containerVersion != null) {
+      $result.containerVersion = containerVersion;
+    }
     return $result;
   }
   SubmitCustomTrainingJobRequest._() : super();
@@ -243,6 +247,7 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'modelVersion')
     ..aOS(6, _omitFieldNames ? '' : 'registryItemVersion')
     ..m<$core.String, $core.String>(7, _omitFieldNames ? '' : 'arguments', entryClassName: 'SubmitCustomTrainingJobRequest.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
+    ..aOS(8, _omitFieldNames ? '' : 'containerVersion')
     ..hasRequiredFields = false
   ;
 
@@ -323,6 +328,15 @@ class SubmitCustomTrainingJobRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.Map<$core.String, $core.String> get arguments => $_getMap(6);
+
+  @$pb.TagNumber(8)
+  $core.String get containerVersion => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set containerVersion($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasContainerVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearContainerVersion() => clearField(8);
 }
 
 class SubmitCustomTrainingJobResponse extends $pb.GeneratedMessage {
@@ -606,6 +620,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     $core.String? registryItemId,
     $core.String? registryItemVersion,
     $core.Map<$core.String, $core.String>? arguments,
+    $core.String? containerVersion,
   }) {
     final $result = create();
     if (status != null) {
@@ -665,6 +680,9 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     if (arguments != null) {
       $result.arguments.addAll(arguments);
     }
+    if (containerVersion != null) {
+      $result.containerVersion = containerVersion;
+    }
     return $result;
   }
   TrainingJobMetadata._() : super();
@@ -691,6 +709,7 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
     ..aOS(19, _omitFieldNames ? '' : 'registryItemId')
     ..aOS(20, _omitFieldNames ? '' : 'registryItemVersion')
     ..m<$core.String, $core.String>(21, _omitFieldNames ? '' : 'arguments', entryClassName: 'TrainingJobMetadata.ArgumentsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
+    ..aOS(22, _omitFieldNames ? '' : 'containerVersion')
     ..hasRequiredFields = false
   ;
 
@@ -883,6 +902,15 @@ class TrainingJobMetadata extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(21)
   $core.Map<$core.String, $core.String> get arguments => $_getMap(18);
+
+  @$pb.TagNumber(22)
+  $core.String get containerVersion => $_getSZ(19);
+  @$pb.TagNumber(22)
+  set containerVersion($core.String v) { $_setString(19, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasContainerVersion() => $_has(19);
+  @$pb.TagNumber(22)
+  void clearContainerVersion() => clearField(22);
 }
 
 class CancelTrainingJobRequest extends $pb.GeneratedMessage {
@@ -1249,6 +1277,190 @@ class GetTrainingJobLogsResponse extends $pb.GeneratedMessage {
   $core.bool hasNextPageToken() => $_has(1);
   @$pb.TagNumber(2)
   void clearNextPageToken() => clearField(2);
+}
+
+class ListSupportedContainersRequest extends $pb.GeneratedMessage {
+  factory ListSupportedContainersRequest() => create();
+  ListSupportedContainersRequest._() : super();
+  factory ListSupportedContainersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSupportedContainersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupportedContainersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSupportedContainersRequest clone() => ListSupportedContainersRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSupportedContainersRequest copyWith(void Function(ListSupportedContainersRequest) updates) => super.copyWith((message) => updates(message as ListSupportedContainersRequest)) as ListSupportedContainersRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSupportedContainersRequest create() => ListSupportedContainersRequest._();
+  ListSupportedContainersRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSupportedContainersRequest> createRepeated() => $pb.PbList<ListSupportedContainersRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSupportedContainersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupportedContainersRequest>(create);
+  static ListSupportedContainersRequest? _defaultInstance;
+}
+
+class ListSupportedContainersResponse extends $pb.GeneratedMessage {
+  factory ListSupportedContainersResponse({
+    $core.Map<$core.String, Container>? containerMap,
+  }) {
+    final $result = create();
+    if (containerMap != null) {
+      $result.containerMap.addAll(containerMap);
+    }
+    return $result;
+  }
+  ListSupportedContainersResponse._() : super();
+  factory ListSupportedContainersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSupportedContainersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupportedContainersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..m<$core.String, Container>(1, _omitFieldNames ? '' : 'containerMap', entryClassName: 'ListSupportedContainersResponse.ContainerMapEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Container.create, valueDefaultOrMaker: Container.getDefault, packageName: const $pb.PackageName('viam.app.mltraining.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSupportedContainersResponse clone() => ListSupportedContainersResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSupportedContainersResponse copyWith(void Function(ListSupportedContainersResponse) updates) => super.copyWith((message) => updates(message as ListSupportedContainersResponse)) as ListSupportedContainersResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSupportedContainersResponse create() => ListSupportedContainersResponse._();
+  ListSupportedContainersResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSupportedContainersResponse> createRepeated() => $pb.PbList<ListSupportedContainersResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSupportedContainersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupportedContainersResponse>(create);
+  static ListSupportedContainersResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, Container> get containerMap => $_getMap(0);
+}
+
+class Container extends $pb.GeneratedMessage {
+  factory Container({
+    $core.String? key,
+    $core.String? uri,
+    $core.String? framework,
+    $core.String? description,
+    $52.Timestamp? eol,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (uri != null) {
+      $result.uri = uri;
+    }
+    if (framework != null) {
+      $result.framework = framework;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (eol != null) {
+      $result.eol = eol;
+    }
+    return $result;
+  }
+  Container._() : super();
+  factory Container.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Container.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Container', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.mltraining.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'uri')
+    ..aOS(3, _omitFieldNames ? '' : 'framework')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'eol', subBuilder: $52.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Container clone() => Container()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Container copyWith(void Function(Container) updates) => super.copyWith((message) => updates(message as Container)) as Container;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Container create() => Container._();
+  Container createEmptyInstance() => create();
+  static $pb.PbList<Container> createRepeated() => $pb.PbList<Container>();
+  @$core.pragma('dart2js:noInline')
+  static Container getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Container>(create);
+  static Container? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get uri => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set uri($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUri() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUri() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get framework => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set framework($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFramework() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFramework() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $52.Timestamp get eol => $_getN(4);
+  @$pb.TagNumber(5)
+  set eol($52.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEol() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEol() => clearField(5);
+  @$pb.TagNumber(5)
+  $52.Timestamp ensureEol() => $_ensure(4);
 }
 
 
