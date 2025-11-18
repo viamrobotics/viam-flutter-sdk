@@ -709,6 +709,7 @@ const GetMachineStatusResponse$json = {
     {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.viam.robot.v1.ResourceStatus', '10': 'resources'},
     {'1': 'config', '3': 2, '4': 1, '5': 11, '6': '.viam.robot.v1.ConfigStatus', '10': 'config'},
     {'1': 'state', '3': 3, '4': 1, '5': 14, '6': '.viam.robot.v1.GetMachineStatusResponse.State', '10': 'state'},
+    {'1': 'job_statuses', '3': 4, '4': 3, '5': 11, '6': '.viam.robot.v1.JobStatus', '10': 'jobStatuses'},
   ],
   '4': [GetMachineStatusResponse_State$json],
 };
@@ -728,9 +729,27 @@ final $typed_data.Uint8List getMachineStatusResponseDescriptor = $convert.base64
     'ChhHZXRNYWNoaW5lU3RhdHVzUmVzcG9uc2USOwoJcmVzb3VyY2VzGAEgAygLMh0udmlhbS5yb2'
     'JvdC52MS5SZXNvdXJjZVN0YXR1c1IJcmVzb3VyY2VzEjMKBmNvbmZpZxgCIAEoCzIbLnZpYW0u'
     'cm9ib3QudjEuQ29uZmlnU3RhdHVzUgZjb25maWcSQwoFc3RhdGUYAyABKA4yLS52aWFtLnJvYm'
-    '90LnYxLkdldE1hY2hpbmVTdGF0dXNSZXNwb25zZS5TdGF0ZVIFc3RhdGUiSQoFU3RhdGUSFQoR'
-    'U1RBVEVfVU5TUEVDSUZJRUQQABIWChJTVEFURV9JTklUSUFMSVpJTkcQARIRCg1TVEFURV9SVU'
-    '5OSU5HEAI=');
+    '90LnYxLkdldE1hY2hpbmVTdGF0dXNSZXNwb25zZS5TdGF0ZVIFc3RhdGUSOwoMam9iX3N0YXR1'
+    'c2VzGAQgAygLMhgudmlhbS5yb2JvdC52MS5Kb2JTdGF0dXNSC2pvYlN0YXR1c2VzIkkKBVN0YX'
+    'RlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfSU5JVElBTElaSU5HEAESEQoNU1RB'
+    'VEVfUlVOTklORxAC');
+
+@$core.Deprecated('Use jobStatusDescriptor instead')
+const JobStatus$json = {
+  '1': 'JobStatus',
+  '2': [
+    {'1': 'job_name', '3': 1, '4': 1, '5': 9, '10': 'jobName'},
+    {'1': 'recent_successful_runs', '3': 2, '4': 3, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'recentSuccessfulRuns'},
+    {'1': 'recent_failed_runs', '3': 3, '4': 3, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'recentFailedRuns'},
+  ],
+};
+
+/// Descriptor for `JobStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jobStatusDescriptor = $convert.base64Decode(
+    'CglKb2JTdGF0dXMSGQoIam9iX25hbWUYASABKAlSB2pvYk5hbWUSUAoWcmVjZW50X3N1Y2Nlc3'
+    'NmdWxfcnVucxgCIAMoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSFHJlY2VudFN1Y2Nl'
+    'c3NmdWxSdW5zEkgKEnJlY2VudF9mYWlsZWRfcnVucxgDIAMoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBSEHJlY2VudEZhaWxlZFJ1bnM=');
 
 @$core.Deprecated('Use resourceStatusDescriptor instead')
 const ResourceStatus$json = {
