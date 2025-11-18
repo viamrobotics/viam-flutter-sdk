@@ -1,11 +1,14 @@
 import 'dart:async';
 import 'dart:collection';
+import 'dart:math' as math;
 
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector_math;
 import 'package:viam_example_app/resources/arm_screen.dart';
 import 'package:viam_sdk/viam_sdk.dart';
+
+import '../../spatialmath/spatial_math.dart';
 
 class ARKitArmWidget extends StatefulWidget {
   final Arm arm;
@@ -38,14 +41,20 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
   // Phone position from ARKit (in meters)
   vector_math.Vector3 _phonePosition = vector_math.Vector3.zero();
 
-  // Reference positions
+  // Phone orientation from ARKit (as rotation matrix)
+  vector_math.Matrix3 _phoneRotation = vector_math.Matrix3.identity();
+
+  // Reference positions and orientations
   Pose? _referenceArmPose; // arm position when reference is set
   vector_math.Vector3? _referencePhonePosition; // phone position when reference is set
+  vector_math.Matrix3? _referencePhoneRotation; // phone rotation when reference is set (raw rotation matrix)
   bool _isReferenceSet = false;
 
   Pose? _targetArmPose;
   Pose? _currentArmPose;
   bool _stillPressed = false;
+  vector_math.Matrix3? translatedPhoneRotation;
+  vector_math.Matrix3? translatedReferenceRotation;
 
   @override
   void dispose() {
@@ -74,17 +83,43 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       arkitController!.updateAtTime = (time) {
         if (!_isReferenceSet || _stillPressed || arkitController == null) return;
 
-        // Use non-blocking approach - get transform without await
         arkitController!.pointOfViewTransform().then((transform) {
           if (transform != null && mounted) {
             try {
               // Extract position from transform matrix (4th column)
-              // negate X
               _phonePosition = vector_math.Vector3(
                 transform[12],
                 transform[13],
                 transform[14],
               );
+
+              // Extract orientation from transform matrix (upper-left 3x3 rotation matrix)
+              _phoneRotation = vector_math.Matrix3(
+                transform[0],
+                transform[1],
+                transform[2],
+                transform[4],
+                transform[5],
+                transform[6],
+                transform[8],
+                transform[9],
+                transform[10],
+              );
+              // print("phoneRotation!!!: ${_phoneRotation[0]}, ${_phoneRotation[1]}, ${_phoneRotation[2]}, ${_phoneRotation[3]}, ${_phoneRotation[4]}, ${_phoneRotation[5]}, ${_phoneRotation[6]}, ${_phoneRotation[7]}, ${_phoneRotation[8]}");
+
+              // final vector_math.Matrix3 R = vector_math.Matrix3(
+              //   0,
+              //   0,
+              //   -1,
+              //   -1,
+              //   0,
+              //   0,
+              //   0,
+              //   1,
+              //   0,
+              // );
+              // final vector_math.Matrix3 R = vector_math.Matrix3(-1, 0, 0, 0, 1, 0, 0, 0, -1);
+              // translatedPhoneRotation = R * _phoneRotation;
 
               // Create pose and send to arm
               _createPoseFromARKit();
@@ -112,9 +147,9 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
     }
   }
 
-  /// Create a pose based on ARKit camera position
+  /// Create a pose based on ARKit camera position and orientation
   void _createPoseFromARKit() {
-    if (_referenceArmPose == null || _referencePhonePosition == null) {
+    if (_referenceArmPose == null || _referencePhonePosition == null || _referencePhoneRotation == null) {
       return;
     }
     try {
@@ -125,19 +160,110 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       // Convert meters to millimeters and scale appropriately
       // ARKit coordinate system: X (right), Y (up), Z (towards user)
       // Mapping: ARKit X -> Arm Y, ARKit Y -> Arm Z, ARKit Z -> -Arm X
+      // CONSIDER: using latest pose in the queue instead of reference arm pose
       final newX = _referenceArmPose!.x + (-positionDelta.z * _positionScale);
-      final newY = _referenceArmPose!.y + ((-positionDelta.x) * _positionScale); 
+      final newY = _referenceArmPose!.y + ((-positionDelta.x) * _positionScale);
       final newZ = _referenceArmPose!.z + (positionDelta.y * _positionScale);
-     
+
+// we need to convert our values into the correct coordinate/frame system, and then from there we should convert to orientation vector
+
+// convert matrix to euler angles
+// final eulerAngles = getEulerAnglesZYX(_referencePhoneRotation!);
+// print("eulerAngles: ${eulerAngles[0]}, ${eulerAngles[1]}, ${eulerAngles[2]}");
+// // we can convert roll pitch yaw to the expected frame system
+// final translatedEulerAngles = // something??
+// we can convert to quatnerion
+// add together
+// and then orientation vector
+
+      // Calculate orientation change - all conversions happen here
+      // 1. Convert reference rotation matrix to quaternion
+      // final vmRefQuat = vector_math.Quaternion.fromRotation(_referencePhoneRotation!); // reference rotation matrix
+      // final refPhoneQuat = Quaternion(vmRefQuat.w, vmRefQuat.x, vmRefQuat.y, vmRefQuat.z);
+      // we want reference rotation matrix to be from the orientation vector
+      // rotation matrix to orientation vector??
+      // is it 0 0 -1 when i first start??
+      // as soon as we get the reference point
+      // final referenceQuaternion = vector_math.Quaternion.fromRotation(_referencePhoneRotation!);
+
+      // // convert vector math quat to spatial math quat
+      // final spatialMathQuat = Quaternion(referenceQuaternion.w, referenceQuaternion.x, referenceQuaternion.y, referenceQuaternion.z);
+      // print("spatialMathQuat: ${spatialMathQuat.real}, ${spatialMathQuat.imag}, ${spatialMathQuat.jmag}, ${spatialMathQuat.kmag}");
+      // // final referenceOrientationVector = spatialMathQuat.toOrientationVectorRadians();
+      // // print("referenceOrientationVector: ${referenceOrientationVector.ox}, ${referenceOrientationVector.oy}, ${referenceOrientationVector.oz}, ${referenceOrientationVector.theta}"); // is it 0 0 -1 when i first start??
+
+      // // the diff between phone quaternion when we start it and what the quaternion lokos ilke when the oriention is 0,0,-1
+      // final zeroZeronegativeOneOrientationVector = OrientationVector(0, 0, 0, -1);
+      // final zeroZernegativeOneQuaternion = zeroZeronegativeOneOrientationVector.toQuaternion();
+      // print(
+      //     "zeroZernegativeOneQuaternion: ${zeroZernegativeOneQuaternion.real}, ${zeroZernegativeOneQuaternion.imag}, ${zeroZernegativeOneQuaternion.jmag}, ${zeroZernegativeOneQuaternion.kmag}");
+      // 1. convert translated phone rotation to quaternion
+      // *** WORKED ON W MARTHA ****
+      // final referenceQuaternion = vector_math.Quaternion.fromRotation(translatedReferenceRotation!);
+      // final smReferenceQuaternion = Quaternion(referenceQuaternion.w, referenceQuaternion.x, referenceQuaternion.y, referenceQuaternion.z);
+      // final referenceOrientationVector = smReferenceQuaternion.toOrientationVectorRadians();
+      // print(
+      //     "smReferenceQuaternion: ${smReferenceQuaternion.real}, ${smReferenceQuaternion.imag}, ${smReferenceQuaternion.jmag}, ${smReferenceQuaternion.kmag}");
+      // print(
+      //     "referenceOrientationVector: ${referenceOrientationVector.ox}, ${referenceOrientationVector.oy}, ${referenceOrientationVector.oz}, ${referenceOrientationVector.theta}");
+
+      // // 2. convert latest pose to quaternion
+      // final vmCurrentQuat = vector_math.Quaternion.fromRotation(translatedPhoneRotation!);
+      // final currentPhoneQuat = Quaternion(vmCurrentQuat.w, vmCurrentQuat.x, vmCurrentQuat.y, vmCurrentQuat.z);
+      // print("currentPhoneQuat: ${currentPhoneQuat.real}, ${currentPhoneQuat.imag}, ${currentPhoneQuat.jmag}, ${currentPhoneQuat.kmag}");
+      // // 3. add quaternions
+      // final newQuaternion = smReferenceQuaternion.mul(currentPhoneQuat);
+      // // 4. convert the new quaternion back to orientation vector
+      // final newOrientationVector = newQuaternion.toOrientationVectorRadians();
+      // print(
+      //     "newOrientationVector: ${newOrientationVector.ox}, ${newOrientationVector.oy}, ${newOrientationVector.oz}, ${newOrientationVector.theta}");
+      // *** WORKED ON W MARTHA ****
+
+      // we have rotation matrix, is this the expected qauternion? --> YES
+
+      // we have these quaternions WITHOUT any transformations, is this the orientation vector we expect to be getting? --> YES this confirms that the quaternion.ToOrientationVectorRadians() function is working.
+
+      // once we confirm these are correct, then we add the transformation?
+
+      final phoneQuat = vector_math.Quaternion.fromRotation(_phoneRotation);
+      print(
+          "_phoneRotation: ${_phoneRotation[0]}, ${_phoneRotation[1]}, ${_phoneRotation[2]}, ${_phoneRotation[3]}, ${_phoneRotation[4]}, ${_phoneRotation[5]}, ${_phoneRotation[6]}, ${_phoneRotation[7]}, ${_phoneRotation[8]}");
+      print("phoneQuat: ${phoneQuat.w}, ${phoneQuat.x}, ${phoneQuat.y}, ${phoneQuat.z}");
+      final smPhoneQuat = Quaternion(phoneQuat.w, phoneQuat.x, phoneQuat.y, phoneQuat.z);
+      print("smPhoneQuat: ${smPhoneQuat.real}, ${smPhoneQuat.imag}, ${smPhoneQuat.jmag}, ${smPhoneQuat.kmag}");
+      final phoneOrientationVector = smPhoneQuat.toOrientationVectorRadians();
+      print(
+          "phoneOrientationVector: ${phoneOrientationVector.ox}, ${phoneOrientationVector.oy}, ${phoneOrientationVector.oz}, ${phoneOrientationVector.theta}");
+
+      final referenceQuat = vector_math.Quaternion.fromRotation(_referencePhoneRotation!);
+      final smReferenceQuat = Quaternion(referenceQuat.w, referenceQuat.x, referenceQuat.y, referenceQuat.z);
+      print("smReferenceQuat: ${smReferenceQuat.real}, ${smReferenceQuat.imag}, ${smReferenceQuat.jmag}, ${smReferenceQuat.kmag}");
+      final referenceOrientationVector = smReferenceQuat.toOrientationVectorRadians();
+      print(
+          "referenceOrientationVector: ${referenceOrientationVector.ox}, ${referenceOrientationVector.oy}, ${referenceOrientationVector.oz}, ${referenceOrientationVector.theta}");
+
+      // final newQuaternion = smReferenceQuat.mul(smPhoneQuat);
+      final newQuaternion = smPhoneQuat.mul(smReferenceQuat);
+      final newOrientationVector = newQuaternion.toOrientationVectorRadians();
+      print(
+          "newOrientationVector: ${newOrientationVector.ox}, ${newOrientationVector.oy}, ${newOrientationVector.oz}, ${newOrientationVector.theta}");
+
       final newPose = Pose(
-        x: newX,
-        y: newY,
-        z: newZ,
-        // Keep reference orientation unchanged for now
-        theta: _referenceArmPose!.theta,
-        oX: _referenceArmPose!.oX,
-        oY: _referenceArmPose!.oY,
-        oZ: _referenceArmPose!.oZ,
+        // x: newX,
+        // y: newY,
+        // z: newZ,
+        x: _referenceArmPose!.x,
+        y: _referenceArmPose!.y,
+        z: _referenceArmPose!.z,
+        theta: newOrientationVector.theta,
+        // oX: -newOrientationVector.oz,
+        // oY: -newOrientationVector.ox,
+        oX: newOrientationVector.ox,
+        oY: newOrientationVector.oy,
+        oZ: -newOrientationVector.oz,
+        // oX: newOrientationVector.ox,
+        // oY: newOrientationVector.oy,
+        // oZ: newOrientationVector.oz,
       );
 
       // Skip if pose hasn't changed significantly
@@ -214,7 +340,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
 
       // Get current ARKit camera position
       final transform = await arkitController!.pointOfViewTransform();
-      debugPrint("transformX: ${transform?[12]}, transformY: ${transform?[13]}, transformZ: ${transform?[14]}");
 
       if (transform == null) {
         setState(() {
@@ -224,14 +349,37 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       }
 
       // Extract position (4th column of transform matrix)
-      // Apply same transformation as IMU: flip X and Y, negate X
       final currentPhonePosition = vector_math.Vector3(
-        // transform[13], // x uses Y
-        transform[12], // y uses negative X
-        // transform[12],
-        transform[13],
+        transform[12], // X
+        transform[13], // Y
         transform[14], // Z
       );
+
+      // Extract orientation from transform matrix (upper-left 3x3 rotation matrix)
+      final currentPhoneRotation = vector_math.Matrix3(
+        transform[0],
+        transform[1],
+        transform[2],
+        transform[4],
+        transform[5],
+        transform[6],
+        transform[8],
+        transform[9],
+        transform[10],
+      );
+      // final vector_math.Matrix3 R = vector_math.Matrix3(
+      //   0,
+      //   0,
+      //   -1,
+      //   -1,
+      //   0,
+      //   0,
+      //   0,
+      //   1,
+      //   0,
+      // );
+      // final vector_math.Matrix3 R = vector_math.Matrix3(-1, 0, 0, 0, 1, 0, 0, 0, -1);
+      // translatedReferenceRotation = R * currentPhoneRotation;
 
       setState(() {
         // Clear pose queue and reset counter
@@ -241,6 +389,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         // Store references
         _referenceArmPose = currentArmPose;
         _referencePhonePosition = currentPhonePosition;
+        _referencePhoneRotation = currentPhoneRotation;
 
         _targetArmPose = currentArmPose;
         _currentArmPose = currentArmPose;
@@ -269,6 +418,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                   onARKitViewCreated: onARKitViewCreated,
                   enableTapRecognizer: false,
                   showStatistics: false,
+                  showWorldOrigin: true,
                 ),
                 if (!_isARKitInitialized)
                   Container(
@@ -326,6 +476,10 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                     Text("X: ${_targetArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
                     Text("Y: ${_targetArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
                     Text("Z: ${_targetArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("oX: ${_targetArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oY: ${_targetArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oZ: ${_targetArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("Theta: ${_targetArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
                   ] else
                     const Text("No target yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
                   const SizedBox(height: 20),
@@ -335,6 +489,10 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                     Text("X: ${_currentArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
                     Text("Y: ${_currentArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
                     Text("Z: ${_currentArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("oX: ${_currentArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oY: ${_currentArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oZ: ${_currentArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("Theta: ${_currentArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
                   ] else
                     const Text("No position data yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
                   const SizedBox(height: 30),
@@ -406,4 +564,21 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       ),
     );
   }
+}
+
+vector_math.Vector3 getEulerAnglesZYX(vector_math.Matrix3 rotation) {
+  double pitch = math.asin(-rotation[2]); // -m02
+  double yaw;
+  double roll;
+
+  if (math.cos(pitch).abs() > 0.00001) {
+    yaw = math.atan2(rotation[1], rotation[0]); // m01, m00
+    roll = math.atan2(rotation[5], rotation[8]); // m12, m22
+  } else {
+    // Gimbal lock case
+    yaw = math.atan2(-rotation[3], rotation[4]); // -m10, m11
+    roll = 0;
+  }
+
+  return vector_math.Vector3(roll, pitch, yaw);
 }
