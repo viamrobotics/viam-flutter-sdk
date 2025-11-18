@@ -2712,6 +2712,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     $core.Iterable<ResourceStatus>? resources,
     ConfigStatus? config,
     GetMachineStatusResponse_State? state,
+    $core.Iterable<JobStatus>? jobStatuses,
   }) {
     final $result = create();
     if (resources != null) {
@@ -2723,6 +2724,9 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     if (state != null) {
       $result.state = state;
     }
+    if (jobStatuses != null) {
+      $result.jobStatuses.addAll(jobStatuses);
+    }
     return $result;
   }
   GetMachineStatusResponse._() : super();
@@ -2733,6 +2737,7 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
     ..pc<ResourceStatus>(1, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: ResourceStatus.create)
     ..aOM<ConfigStatus>(2, _omitFieldNames ? '' : 'config', subBuilder: ConfigStatus.create)
     ..e<GetMachineStatusResponse_State>(3, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: GetMachineStatusResponse_State.STATE_UNSPECIFIED, valueOf: GetMachineStatusResponse_State.valueOf, enumValues: GetMachineStatusResponse_State.values)
+    ..pc<JobStatus>(4, _omitFieldNames ? '' : 'jobStatuses', $pb.PbFieldType.PM, subBuilder: JobStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -2779,6 +2784,75 @@ class GetMachineStatusResponse extends $pb.GeneratedMessage {
   $core.bool hasState() => $_has(2);
   @$pb.TagNumber(3)
   void clearState() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<JobStatus> get jobStatuses => $_getList(3);
+}
+
+class JobStatus extends $pb.GeneratedMessage {
+  factory JobStatus({
+    $core.String? jobName,
+    $core.Iterable<$52.Timestamp>? recentSuccessfulRuns,
+    $core.Iterable<$52.Timestamp>? recentFailedRuns,
+  }) {
+    final $result = create();
+    if (jobName != null) {
+      $result.jobName = jobName;
+    }
+    if (recentSuccessfulRuns != null) {
+      $result.recentSuccessfulRuns.addAll(recentSuccessfulRuns);
+    }
+    if (recentFailedRuns != null) {
+      $result.recentFailedRuns.addAll(recentFailedRuns);
+    }
+    return $result;
+  }
+  JobStatus._() : super();
+  factory JobStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JobStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JobStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'jobName')
+    ..pc<$52.Timestamp>(2, _omitFieldNames ? '' : 'recentSuccessfulRuns', $pb.PbFieldType.PM, subBuilder: $52.Timestamp.create)
+    ..pc<$52.Timestamp>(3, _omitFieldNames ? '' : 'recentFailedRuns', $pb.PbFieldType.PM, subBuilder: $52.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JobStatus clone() => JobStatus()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JobStatus copyWith(void Function(JobStatus) updates) => super.copyWith((message) => updates(message as JobStatus)) as JobStatus;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JobStatus create() => JobStatus._();
+  JobStatus createEmptyInstance() => create();
+  static $pb.PbList<JobStatus> createRepeated() => $pb.PbList<JobStatus>();
+  @$core.pragma('dart2js:noInline')
+  static JobStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JobStatus>(create);
+  static JobStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get jobName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set jobName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasJobName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJobName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$52.Timestamp> get recentSuccessfulRuns => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$52.Timestamp> get recentFailedRuns => $_getList(2);
 }
 
 class ResourceStatus extends $pb.GeneratedMessage {
