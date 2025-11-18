@@ -57,6 +57,7 @@
       <span class="name ">GetMachineStatusResponse</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-resources"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/ResourceStatus-class.html">ResourceStatus</a></span>&gt;</span>?</span> <span class="parameter-name">resources</span>, </span></li>
 <li><span class="parameter" id="-param-config"><span class="type-annotation"><a href="../../viam_protos.robot.robot/ConfigStatus-class.html">ConfigStatus</a>?</span> <span class="parameter-name">config</span>, </span></li>
 <li><span class="parameter" id="-param-state"><span class="type-annotation"><a href="../../viam_protos.robot.robot/GetMachineStatusResponse_State-class.html">GetMachineStatusResponse_State</a>?</span> <span class="parameter-name">state</span>, </span></li>
+<li><span class="parameter" id="-param-jobStatuses"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.robot.robot/JobStatus-class.html">JobStatus</a></span>&gt;</span>?</span> <span class="parameter-name">jobStatuses</span>, </span></li>
 </ol>})
     </section>
     
@@ -69,6 +70,7 @@
   $core.Iterable&lt;ResourceStatus&gt;? resources,
   ConfigStatus? config,
   GetMachineStatusResponse_State? state,
+  $core.Iterable&lt;JobStatus&gt;? jobStatuses,
 }) {
   final $result = create();
   if (resources != null) {
@@ -79,6 +81,9 @@
   }
   if (state != null) {
     $result.state = state;
+  }
+  if (jobStatuses != null) {
+    $result.jobStatuses.addAll(jobStatuses);
   }
   return $result;
 }</code></pre>
