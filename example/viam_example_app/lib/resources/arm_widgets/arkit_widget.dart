@@ -5,19 +5,16 @@ import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector_math;
-import 'package:viam_example_app/resources/arm_screen.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 import '../../spatialmath/spatial_math.dart';
 
 class ARKitArmWidget extends StatefulWidget {
   final Arm arm;
-  final ArmNotifier updateNotifier;
 
   const ARKitArmWidget({
     super.key,
     required this.arm,
-    required this.updateNotifier,
   });
 
   @override
