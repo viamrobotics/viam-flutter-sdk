@@ -191,8 +191,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           _referenceArmPose!.oZ,
         );
       } else {
-
-        // Step 4: Convert rotation delta from ARKit frame to Viam frame 
+        // Step 4: Convert rotation delta from ARKit frame to Viam frame
         final rotationDeltaViam = _arkitToViamFrameTransform * rotationDeltaARKit * inverseARKitToViamFrameTransform;
 
         // Step 5: Apply delta to reference arm orientation.
@@ -418,39 +417,24 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
               child: Column(
                 children: [
                   const Text("Target Position"),
-                  if (targetArmPose != null) ...[
-                    Text("X: ${targetArmPose!.x.toStringAsFixed(1)} mm"),
-                    Text("Y: ${targetArmPose!.y.toStringAsFixed(1)} mm"),
-                    Text("Z: ${targetArmPose!.z.toStringAsFixed(1)} mm"),
-                    Text("oX: ${targetArmPose!.oX.toStringAsFixed(2)}"),
-                    Text("oY: ${targetArmPose!.oY.toStringAsFixed(2)}"),
-                    Text("oZ: ${targetArmPose!.oZ.toStringAsFixed(2)}"),
-                    Text("Theta: ${targetArmPose!.theta.toStringAsFixed(2)}"),
-                  ] else
-                    const Text("No target yet"),
+                  Text("X: ${(targetArmPose?.x ?? 0.0).toStringAsFixed(1)} mm"),
+                  Text("Y: ${(targetArmPose?.y ?? 0.0).toStringAsFixed(1)} mm"),
+                  Text("Z: ${(targetArmPose?.z ?? 0.0).toStringAsFixed(1)} mm"),
+                  Text("oX: ${(targetArmPose?.oX ?? 0.0).toStringAsFixed(2)}"),
+                  Text("oY: ${(targetArmPose?.oY ?? 0.0).toStringAsFixed(2)}"),
+                  Text("oZ: ${(targetArmPose?.oZ ?? 0.0).toStringAsFixed(2)}"),
+                  Text("Theta: ${(targetArmPose?.theta ?? 0.0).toStringAsFixed(2)}"),
                   const Text("Current Position"),
-                  if (currentArmPose != null) ...[
-                    Text("X: ${currentArmPose!.x.toStringAsFixed(1)} mm"),
-                    Text("Y: ${currentArmPose!.y.toStringAsFixed(1)} mm"),
-                    Text("Z: ${currentArmPose!.z.toStringAsFixed(1)} mm"),
-                    Text("oX: ${currentArmPose!.oX.toStringAsFixed(2)}"),
-                    Text("oY: ${currentArmPose!.oY.toStringAsFixed(2)}"),
-                    Text("oZ: ${currentArmPose!.oZ.toStringAsFixed(2)}"),
-                    Text("Theta: ${currentArmPose!.theta.toStringAsFixed(2)}"),
-                  ] else
-                    const Text("No position data yet"),
-                  TextButton(
-                    onPressed: _isARKitInitialized ? _setReference : null,
-                    child: Text(_isReferenceSet ? "Reset Reference" : "Set Reference Point"),
-                  ),
-                  Text("Status: ${!_isReferenceSet ? 'Waiting for reference...' : _isMovingArm ? 'Moving...' : 'Ready'}"),
-                  if (_lastError != null) Text("Error: $_lastError"),
-                  if (!_isReferenceSet)
-                    const Text("Press 'Set Reference Point' to begin")
-                  else
-                    const Text("Move your phone through space!"),
-                  TextButton(
-                    onPressed: () async {
+                  Text("X: ${(currentArmPose?.x ?? 0.0).toStringAsFixed(1)} mm"),
+                  Text("Y: ${(currentArmPose?.y ?? 0.0).toStringAsFixed(1)} mm"),
+                  Text("Z: ${(currentArmPose?.z ?? 0.0).toStringAsFixed(1)} mm"),
+                  Text("oX: ${(currentArmPose?.oX ?? 0.0).toStringAsFixed(2)}"),
+                  Text("oY: ${(currentArmPose?.oY ?? 0.0).toStringAsFixed(2)}"),
+                  Text("oZ: ${(currentArmPose?.oZ ?? 0.0).toStringAsFixed(2)}"),
+                  Text("Theta: ${(currentArmPose?.theta ?? 0.0).toStringAsFixed(2)}"),
+                  GestureDetector(
+                    onLongPressDown: _isARKitInitialized ? (_) => _setReference() : null,
+                    onLongPressUp: () async {
                       await widget.arm.stop();
                       setState(() {
                         _isReferenceSet = false;
@@ -458,8 +442,25 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                         _poseCounter = 0;
                       });
                     },
-                    child: const Text("Stop"),
+                    onLongPressCancel: () async {
+                      await widget.arm.stop();
+                      setState(() {
+                        _isReferenceSet = false;
+                        _poseQueue.clear();
+                        _poseCounter = 0;
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        border: Border.all(),
+                      ),
+                      child: Text(_isReferenceSet ? "CONTROLLING" : "PRESS AND HOLD"),
+                    ),
                   ),
+                  Text("Status: ${!_isReferenceSet ? 'Ready' : _isMovingArm ? 'Moving...' : 'Active'}"),
+                  if (_lastError != null) Text("Error: $_lastError"),
+                  if (!_isReferenceSet) const Text("Press and hold button to control") else const Text("Move your phone - Release to stop"),
                   TextButton(
                     onPressed: () async {
                       await widget.arm.moveToJointPositions([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
