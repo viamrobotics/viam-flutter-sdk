@@ -50,6 +50,10 @@ class GantryServiceClient extends $grpc.Client {
       '/viam.component.gantry.v1.GantryService/DoCommand',
       ($16.DoCommandRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $16.DoCommandResponse.fromBuffer(value));
+  static final _$getKinematics = $grpc.ClientMethod<$16.GetKinematicsRequest, $16.GetKinematicsResponse>(
+      '/viam.component.gantry.v1.GantryService/GetKinematics',
+      ($16.GetKinematicsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $16.GetKinematicsResponse.fromBuffer(value));
   static final _$getGeometries = $grpc.ClientMethod<$16.GetGeometriesRequest, $16.GetGeometriesResponse>(
       '/viam.component.gantry.v1.GantryService/GetGeometries',
       ($16.GetGeometriesRequest value) => value.writeToBuffer(),
@@ -87,6 +91,10 @@ class GantryServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$16.DoCommandResponse> doCommand($16.DoCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$doCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$16.GetKinematicsResponse> getKinematics($16.GetKinematicsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getKinematics, request, options: options);
   }
 
   $grpc.ResponseFuture<$16.GetGeometriesResponse> getGeometries($16.GetGeometriesRequest request, {$grpc.CallOptions? options}) {
@@ -148,6 +156,13 @@ abstract class GantryServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $16.DoCommandRequest.fromBuffer(value),
         ($16.DoCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$16.GetKinematicsRequest, $16.GetKinematicsResponse>(
+        'GetKinematics',
+        getKinematics_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $16.GetKinematicsRequest.fromBuffer(value),
+        ($16.GetKinematicsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$16.GetGeometriesRequest, $16.GetGeometriesResponse>(
         'GetGeometries',
         getGeometries_Pre,
@@ -185,6 +200,10 @@ abstract class GantryServiceBase extends $grpc.Service {
     return doCommand(call, await request);
   }
 
+  $async.Future<$16.GetKinematicsResponse> getKinematics_Pre($grpc.ServiceCall call, $async.Future<$16.GetKinematicsRequest> request) async {
+    return getKinematics(call, await request);
+  }
+
   $async.Future<$16.GetGeometriesResponse> getGeometries_Pre($grpc.ServiceCall call, $async.Future<$16.GetGeometriesRequest> request) async {
     return getGeometries(call, await request);
   }
@@ -196,5 +215,6 @@ abstract class GantryServiceBase extends $grpc.Service {
   $async.Future<$26.StopResponse> stop($grpc.ServiceCall call, $26.StopRequest request);
   $async.Future<$26.IsMovingResponse> isMoving($grpc.ServiceCall call, $26.IsMovingRequest request);
   $async.Future<$16.DoCommandResponse> doCommand($grpc.ServiceCall call, $16.DoCommandRequest request);
+  $async.Future<$16.GetKinematicsResponse> getKinematics($grpc.ServiceCall call, $16.GetKinematicsRequest request);
   $async.Future<$16.GetGeometriesResponse> getGeometries($grpc.ServiceCall call, $16.GetGeometriesRequest request);
 }
