@@ -72,6 +72,13 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
     // rotX is applied before rotZ
     return rotZ * rotX;
   }();
+  // *TEST TMWR* Moved this, previously it was right above initalizing final newArmQuaternionViam
+  late final vector_math.Quaternion inverseARKitToViamFrameTransform = vector_math.Quaternion(
+    -_arkitToViamFrameTransform.x,
+    -_arkitToViamFrameTransform.y,
+    -_arkitToViamFrameTransform.z,
+    _arkitToViamFrameTransform.w,
+  );
 
   @override
   void dispose() {
@@ -160,7 +167,8 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       final newY = _referenceArmPose!.y + ((-positionDelta.x) * _positionScale);
       final newZ = _referenceArmPose!.z + (positionDelta.y * _positionScale);
 
-      // Step 1: Calculate rotation delta between current and reference phone rotation. To find the difference between two quaternions, we can multiply the current quaternion by the inverse of the other quaternion
+      // Step 1: Calculate rotation delta between current and reference phone rotation.
+      // To find the difference between two quaternions, we can multiply the current quaternion by the inverse of the other quaternion
       // 1a: Convert current phone rotation to quaternion
       // 1b: Convert reference phone rotation to quaternion
       // 1c: Calculate inverse of reference phone rotation
@@ -175,46 +183,43 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       );
       final rotationDeltaARKit = currentRotationQuaternionARKit * inverseReferencePhoneQuaternion;
 
-      // Calculate rotation angle to apply deadband filter
-      // For a quaternion q = (x, y, z, w), the rotation angle is: theta = 2 * acos(w)
+      // Step 2: Convert the rotation delta quaternion to an angle in radians
       double rotationAngle = 2 * math.acos(rotationDeltaARKit.w.clamp(-1.0, 1.0));
 
-      // Apply deadband: if rotation is too small, use reference orientation (no change)
+      // Step 3: Apply deadband filter, if rotation is too small, use reference orientation
       final OrientationVector newOrientationVector;
       if (rotationAngle > _rotationDeadbandRad) {
-        // Rotation is significant, apply it
-
-        // === STEP 3: Apply delta to REFERENCE arm orientation (both in ARKit frame) ===
-        final referenceArmOrientationVector = OrientationVector(
+        // Step 4: Apply delta to reference arm orientation.
+        // 4a: Convert orientation values from reference pose to orientation vector
+        // 4b: Convert orientation vector to quaternion
+        // 4c: Apply delta to rotation quaternion to get new rotation quaternion
+        final referenceRotationOrientationVector = OrientationVector(
           _referenceArmPose!.theta,
           _referenceArmPose!.oX,
           _referenceArmPose!.oY,
           _referenceArmPose!.oZ,
         );
-        final referenceArmQuaternion = referenceArmOrientationVector.toQuaternion();
-        final referenceArmQuaternionVM = vector_math.Quaternion(
-          referenceArmQuaternion.imag,
-          referenceArmQuaternion.jmag,
-          referenceArmQuaternion.kmag,
-          referenceArmQuaternion.real,
+        final referenceRotationQuaternion = referenceRotationOrientationVector.toQuaternion();
+        // *TEST TMWR*: I argue we don't need this bc the line above makes a quaternion >>>
+        final referenceRotationQuaternionViam = vector_math.Quaternion(
+          referenceRotationQuaternion.imag,
+          referenceRotationQuaternion.jmag,
+          referenceRotationQuaternion.kmag,
+          referenceRotationQuaternion.real,
         );
 
-        // Apply: NewOrientation (ARKit frame) = ReferenceArmOrientation * Delta
-        final newArmQuaternionARKit = referenceArmQuaternionVM * rotationDeltaARKit;
+        final newRotationQuaternion = referenceRotationQuaternionViam * rotationDeltaARKit;
 
-        // === STEP 4: Transform final orientation from ARKit frame to Viam frame ===
-        final inverseARKitToViamFrameTransform = vector_math.Quaternion(
-          -_arkitToViamFrameTransform.x,
-          -_arkitToViamFrameTransform.y,
-          -_arkitToViamFrameTransform.z,
-          _arkitToViamFrameTransform.w,
-        );
-        final newArmQuaternionViam = _arkitToViamFrameTransform * newArmQuaternionARKit * inverseARKitToViamFrameTransform;
+        // Step 5: Convert the new rotation quaternion to the Viam frame system
+        final newRotationQuaternionViam = _arkitToViamFrameTransform * newRotationQuaternion * inverseARKitToViamFrameTransform;
 
-        // Convert to spatial math quaternion and then to orientation vector
-        final newArmQuaternionSM =
-            Quaternion(newArmQuaternionViam.w, newArmQuaternionViam.x, newArmQuaternionViam.y, newArmQuaternionViam.z);
-        newOrientationVector = newArmQuaternionSM.toOrientationVectorRadians();
+        // Step 6: Convert quaternions back to orientation vector to be used for the new pose
+        // 6a: Convert the new rotation quaternion to a spatial math quaternion
+        // 6b: Convert the spatial math quaternion to an orientation vector
+        final newRotationQuaternionSpatialMath =
+            Quaternion(newRotationQuaternionViam.w, newRotationQuaternionViam.x, newRotationQuaternionViam.y, newRotationQuaternionViam.z);
+        newOrientationVector = newRotationQuaternionSpatialMath.toOrientationVectorRadians();
+
         // we need to map the y axis from arkit to the x axis in viam
       } else {
         // Rotation is too small, keep reference orientation (filtered out)
