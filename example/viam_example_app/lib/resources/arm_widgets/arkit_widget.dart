@@ -27,32 +27,29 @@ class ARKitArmWidget extends StatefulWidget {
 class _ARKitArmWidgetState extends State<ARKitArmWidget> {
   ARKitController? arkitController;
 
-  static const double _positionScale = 800.0;
-  static const double _rotationDeadbandRad = 0.25; // ~1.1 degrees - ignore rotations smaller than this
+  static const double _positionScale = 800.0; // 1m phone movement to 800mm (0.8m) arm movement
+  static const double _rotationDeadbandRad = 0.25;
 
   bool _isMovingArm = false;
   bool _isARKitInitialized = false;
   String? _lastError;
 
-  // Pose queue for batching arm movements to reduce lag
+  // Queue for batching arm movements to reduce lag
   final Queue<Pose> _poseQueue = Queue();
   int _poseCounter = 0;
   bool _isProcessingQueue = false;
 
-  // Phone position from ARKit (in meters)
-  vector_math.Vector3 _phonePosition = vector_math.Vector3.zero();
+  vector_math.Vector3 _currentPhonePositionARKit = vector_math.Vector3.zero();
+  vector_math.Matrix3 _currentPhoneRotationARKit = vector_math.Matrix3.identity();
 
-  // Phone orientation from ARKit (as rotation matrix)
-  vector_math.Matrix3 _currentPhoneRotation = vector_math.Matrix3.identity();
-
-  // Reference positions and orientations
-  Pose? _referenceArmPose; // arm position when reference is set
-  vector_math.Vector3? _referencePhonePosition; // phone position when reference is set
-  vector_math.Matrix3? _referencePhoneRotation; // phone rotation when reference is set
+  // Store the starting states from the phone and arm
+  Pose? _referenceArmPose;
+  vector_math.Vector3? _referencePhonePositionARKit;
+  vector_math.Matrix3? _referencePhoneRotationARKit;
   bool _isReferenceSet = false;
 
-  Pose? _targetArmPose;
-  Pose? _currentArmPose;
+  Pose? targetArmPose; // where we are trying to go
+  Pose? currentArmPose; // where we actually are
 
   // Frame transformation from ARKit to Viam
   // Viam Frame: X+ Forward, Y+ Left, Z+ Up
@@ -82,7 +79,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         arkitController!.dispose();
       }
     } catch (e) {
-      print('Error disposing ARKit controller: $e');
+      debugPrint('Error disposing ARKit controller: $e');
     }
     _poseQueue.clear();
     super.dispose();
@@ -105,14 +102,14 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           if (transform != null && mounted) {
             try {
               // Extract position from transform matrix (4th column)
-              _phonePosition = vector_math.Vector3(
+              _currentPhonePositionARKit = vector_math.Vector3(
                 transform[12],
                 transform[13],
                 transform[14],
               );
 
               // Extract orientation from transform matrix (upper-left 3x3 rotation matrix)
-              _currentPhoneRotation = vector_math.Matrix3(
+              _currentPhoneRotationARKit = vector_math.Matrix3(
                 transform[0],
                 transform[1],
                 transform[2],
@@ -151,20 +148,20 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
 
   /// Create a pose based on ARKit camera position and orientation
   void _createPoseFromARKit() {
-    if (_referenceArmPose == null || _referencePhonePosition == null || _referencePhoneRotation == null) {
+    if (_referenceArmPose == null || _referencePhonePositionARKit == null || _referencePhoneRotationARKit == null) {
       return;
     }
     try {
       // === STEP 1: Calculate position delta from REFERENCE (same as before) ===
-      final positionDelta = _phonePosition - _referencePhonePosition!;
+      final positionDelta = _currentPhonePositionARKit - _referencePhonePositionARKit!;
       final newX = _referenceArmPose!.x + (-positionDelta.z * _positionScale);
       final newY = _referenceArmPose!.y + ((-positionDelta.x) * _positionScale);
       final newZ = _referenceArmPose!.z + (positionDelta.y * _positionScale);
 
       // === STEP 2: Calculate rotation delta from REFERENCE (like position!) ===
       // Convert current and reference phone rotations to quaternions
-      final currentPhoneQuaternion = vector_math.Quaternion.fromRotation(_currentPhoneRotation); // this is in ARKit frame
-      final referencePhoneQuaternion = vector_math.Quaternion.fromRotation(_referencePhoneRotation!); // this is also in ARKit frame
+      final currentPhoneQuaternion = vector_math.Quaternion.fromRotation(_currentPhoneRotationARKit); // this is in ARKit frame
+      final referencePhoneQuaternion = vector_math.Quaternion.fromRotation(_referencePhoneRotationARKit!); // this is also in ARKit frame
 
       // Calculate delta from reference: Delta = Current * Inverse(Reference)
       final inverseReferencePhoneQuaternion = vector_math.Quaternion(
@@ -225,7 +222,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           _referenceArmPose!.oY,
           _referenceArmPose!.oZ,
         );
-        // No log for filtered values
       }
 
       final newPose = Pose(
@@ -247,7 +243,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       }
 
       setState(() {
-        _targetArmPose = newPose;
+        targetArmPose = newPose;
       });
 
       // Add pose to queue (every 5th pose to reduce load)
@@ -280,7 +276,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         try {
           await widget.arm.moveToPosition(poseToExecute);
           setState(() {
-            _currentArmPose = poseToExecute;
+            currentArmPose = poseToExecute;
             _lastError = null;
           });
         } catch (e) {
@@ -305,9 +301,8 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
     }
 
     try {
-      // Get the current arm position
-      final currentArmPose = await widget.arm.endPosition();
-
+      // Get the current arm position and store it as the reference
+      final currentPoseSetRef = await widget.arm.endPosition();
       // Get current ARKit camera position
       final transform = await arkitController!.pointOfViewTransform();
 
@@ -319,14 +314,14 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       }
 
       // Extract position (4th column of transform matrix)
-      final currentPhonePosition = vector_math.Vector3(
+      final positionVector = vector_math.Vector3(
         transform[12], // X
         transform[13], // Y
         transform[14], // Z
       );
 
-      // Extract orientation from transform matrix (upper-left 3x3 rotation matrix)
-      final currentPhoneRotation = vector_math.Matrix3(
+      // Extract orientation (upper-left 3x3 submatrix from transform matrix)
+      final rotationMatrix = vector_math.Matrix3(
         transform[0],
         transform[1],
         transform[2],
@@ -339,17 +334,15 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       );
 
       setState(() {
-        // Clear pose queue and reset counter
         _poseQueue.clear();
         _poseCounter = 0;
 
-        // Store references (both position and rotation)
-        _referenceArmPose = currentArmPose;
-        _referencePhonePosition = currentPhonePosition;
-        _referencePhoneRotation = currentPhoneRotation; // Store reference rotation
+        _referenceArmPose = currentPoseSetRef;
+        _referencePhonePositionARKit = positionVector;
+        _referencePhoneRotationARKit = rotationMatrix;
 
-        _targetArmPose = currentArmPose;
-        _currentArmPose = currentArmPose;
+        targetArmPose = currentPoseSetRef;
+        currentArmPose = currentPoseSetRef;
         _isReferenceSet = true;
         _lastError = null;
       });
@@ -366,7 +359,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       height: MediaQuery.of(context).size.height,
       child: Column(
         children: [
-          // AR View
           Expanded(
             flex: 2,
             child: Stack(
@@ -408,9 +400,12 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                         children: [
                           const Text('Phone Position (m)',
                               style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
-                          Text('X: ${_phonePosition.x.toStringAsFixed(3)}', style: const TextStyle(color: Colors.white, fontSize: 10)),
-                          Text('Y: ${_phonePosition.y.toStringAsFixed(3)}', style: const TextStyle(color: Colors.white, fontSize: 10)),
-                          Text('Z: ${_phonePosition.z.toStringAsFixed(3)}', style: const TextStyle(color: Colors.white, fontSize: 10)),
+                          Text('X: ${_currentPhonePositionARKit.x.toStringAsFixed(3)}',
+                              style: const TextStyle(color: Colors.white, fontSize: 10)),
+                          Text('Y: ${_currentPhonePositionARKit.y.toStringAsFixed(3)}',
+                              style: const TextStyle(color: Colors.white, fontSize: 10)),
+                          Text('Z: ${_currentPhonePositionARKit.z.toStringAsFixed(3)}',
+                              style: const TextStyle(color: Colors.white, fontSize: 10)),
                         ],
                       ),
                     ),
@@ -428,27 +423,27 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                 children: [
                   const Text("Target Position", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.blue)),
                   const SizedBox(height: 10),
-                  if (_targetArmPose != null) ...[
-                    Text("X: ${_targetArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Y: ${_targetArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Z: ${_targetArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("oX: ${_targetArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oY: ${_targetArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oZ: ${_targetArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("Theta: ${_targetArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                  if (targetArmPose != null) ...[
+                    Text("X: ${targetArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("Y: ${targetArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("Z: ${targetArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("oX: ${targetArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oY: ${targetArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oZ: ${targetArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("Theta: ${targetArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
                   ] else
                     const Text("No target yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
                   const SizedBox(height: 20),
                   const Text("Current Position", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.green)),
                   const SizedBox(height: 10),
-                  if (_currentArmPose != null) ...[
-                    Text("X: ${_currentArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Y: ${_currentArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Z: ${_currentArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("oX: ${_currentArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oY: ${_currentArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oZ: ${_currentArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("Theta: ${_currentArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                  if (currentArmPose != null) ...[
+                    Text("X: ${currentArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("Y: ${currentArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("Z: ${currentArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
+                    Text("oX: ${currentArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oY: ${currentArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("oZ: ${currentArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("Theta: ${currentArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
                   ] else
                     const Text("No position data yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
                   const SizedBox(height: 30),
