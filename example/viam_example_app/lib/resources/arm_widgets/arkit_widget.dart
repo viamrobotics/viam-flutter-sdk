@@ -53,7 +53,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
 
   Pose? _targetArmPose;
   Pose? _currentArmPose;
-  bool _stillPressed = false;
 
   // Frame transformation from ARKit to Viam
   // Viam Frame: X+ Forward, Y+ Left, Z+ Up
@@ -100,7 +99,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
 
       // Called every frame (~60fps) - get camera transform and update position
       arkitController!.updateAtTime = (time) {
-        if (!_isReferenceSet || _stillPressed || arkitController == null) return;
+        if (!_isReferenceSet || arkitController == null) return;
 
         arkitController!.pointOfViewTransform().then((transform) {
           if (transform != null && mounted) {
@@ -124,22 +123,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                 transform[9],
                 transform[10],
               );
-              // print("phoneRotation!!!: ${_currentPhoneRotation[0]}, ${_currentPhoneRotation[1]}, ${_currentPhoneRotation[2]}, ${_currentPhoneRotation[3]}, ${_currentPhoneRotation[4]}, ${_currentPhoneRotation[5]}, ${_currentPhoneRotation[6]}, ${_currentPhoneRotation[7]}, ${_currentPhoneRotation[8]}");
-
-              // final vector_math.Matrix3 R = vector_math.Matrix3(
-              //   0,
-              //   0,
-              //   -1,
-              //   -1,
-              //   0,
-              //   0,
-              //   0,
-              //   1,
-              //   0,
-              // );
-              // final vector_math.Matrix3 R = vector_math.Matrix3(-1, 0, 0, 0, 1, 0, 0, 0, -1);
-              // translatedPhoneRotation = R * _phoneRotation;
-
               // Create pose and send to arm
               _createPoseFromARKit();
             } catch (e) {
@@ -232,9 +215,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         final newArmQuaternionSM =
             Quaternion(newArmQuaternionViam.w, newArmQuaternionViam.x, newArmQuaternionViam.y, newArmQuaternionViam.z);
         newOrientationVector = newArmQuaternionSM.toOrientationVectorRadians();
-// we need to map the y axis from arkit to the x axis in viam
-        print(
-            "Rotation: ${(rotationAngle * 180 / math.pi).toStringAsFixed(1)}° -> Orientation: ox=${newOrientationVector.ox.toStringAsFixed(3)}, oy=${newOrientationVector.oy.toStringAsFixed(3)}, oz=${newOrientationVector.oz.toStringAsFixed(3)}, theta=${newOrientationVector.theta.toStringAsFixed(3)}");
+        // we need to map the y axis from arkit to the x axis in viam
       } else {
         // Rotation is too small, keep reference orientation (filtered out)
         // NEED TO CHECK THIS!!! DOESNT MAKE SENSE RN
@@ -248,12 +229,9 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       }
 
       final newPose = Pose(
-        // x: newX,
-        // y: newY,
-        // z: newZ,
-        x: _referenceArmPose!.x,
-        y: _referenceArmPose!.y,
-        z: _referenceArmPose!.z,
+        x: newX,
+        y: newY,
+        z: newZ,
         theta: newOrientationVector.theta,
         oX: newOrientationVector.ox,
         oY: newOrientationVector.oy,
@@ -273,7 +251,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       });
 
       // Add pose to queue (every 5th pose to reduce load)
-      _addPoseToQueue(newPose, 0);
+      _addPoseToQueue(newPose, 5);
 
       if (!_isProcessingQueue) {
         _executePoseFromQueue();
@@ -296,8 +274,8 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
     _isProcessingQueue = true;
     while (_poseQueue.isNotEmpty) {
       if (!_isMovingArm) {
-        final poseToExecute = _poseQueue.first;
-        _poseQueue.removeFirst();
+        final poseToExecute = _poseQueue.last;
+        _poseQueue.removeLast();
         _isMovingArm = true;
         try {
           await widget.arm.moveToPosition(poseToExecute);
@@ -327,8 +305,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
     }
 
     try {
-      _stillPressed = false;
-
       // Get the current arm position
       final currentArmPose = await widget.arm.endPosition();
 
@@ -361,19 +337,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         transform[9],
         transform[10],
       );
-      // final vector_math.Matrix3 R = vector_math.Matrix3(
-      //   0,
-      //   0,
-      //   -1,
-      //   -1,
-      //   0,
-      //   0,
-      //   0,
-      //   1,
-      //   0,
-      // );
-      // final vector_math.Matrix3 R = vector_math.Matrix3(-1, 0, 0, 0, 1, 0, 0, 0, -1);
-      // translatedReferenceRotation = R * currentPhoneRotation;
 
       setState(() {
         // Clear pose queue and reset counter
@@ -412,7 +375,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                   onARKitViewCreated: onARKitViewCreated,
                   enableTapRecognizer: false,
                   showStatistics: false,
-                  showWorldOrigin: true,
                 ),
                 if (!_isARKitInitialized)
                   Container(
@@ -522,14 +484,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            _stillPressed = true;
-                          });
-                        },
-                        child: const Text("Still"),
-                      ),
                       TextButton(
                         onPressed: () async {
                           await widget.arm.stop();
