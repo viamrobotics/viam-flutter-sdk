@@ -81,4 +81,13 @@ class GantryClient extends Gantry with RPCDebugLoggerMixin implements ResourceRP
     final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
   }
+
+  @override
+  Future<KinematicsFileFormat> getKinematics({Map<String, dynamic>? extra}) async {
+    final request = GetKinematicsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getKinematics(request, options: callOptions);
+    return response.format;
+  }
 }
