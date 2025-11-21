@@ -186,9 +186,16 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       // Step 2: Convert the rotation delta quaternion to an angle in radians
       double rotationAngle = 2 * math.acos(rotationDeltaARKit.w.clamp(-1.0, 1.0));
 
-      // Step 3: Apply deadband filter, if rotation is too small, use reference orientation
-      final OrientationVector newOrientationVector;
-      if (rotationAngle > _rotationDeadbandRad) {
+      // Step 3: Apply deadband filter, skip small rotations to reduce jitter
+      final OrientationVector newRotationOV;
+      if (rotationAngle < _rotationDeadbandRad) {
+        newRotationOV = OrientationVector(
+          _referenceArmPose!.theta,
+          _referenceArmPose!.oX,
+          _referenceArmPose!.oY,
+          _referenceArmPose!.oZ,
+        );
+      } else {
         // Step 4: Apply delta to reference arm orientation.
         // 4a: Convert orientation values from reference pose to orientation vector
         // 4b: Convert orientation vector to quaternion
@@ -207,7 +214,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           referenceRotationQuaternion.kmag,
           referenceRotationQuaternion.real,
         );
-
         final newRotationQuaternion = referenceRotationQuaternionViam * rotationDeltaARKit;
 
         // Step 5: Convert the new rotation quaternion to the Viam frame system
@@ -218,28 +224,18 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         // 6b: Convert the spatial math quaternion to an orientation vector
         final newRotationQuaternionSpatialMath =
             Quaternion(newRotationQuaternionViam.w, newRotationQuaternionViam.x, newRotationQuaternionViam.y, newRotationQuaternionViam.z);
-        newOrientationVector = newRotationQuaternionSpatialMath.toOrientationVectorRadians();
-
-        // we need to map the y axis from arkit to the x axis in viam
-      } else {
-        // Rotation is too small, keep reference orientation (filtered out)
-        // NEED TO CHECK THIS!!! DOESNT MAKE SENSE RN
-        newOrientationVector = OrientationVector(
-          _referenceArmPose!.theta,
-          _referenceArmPose!.oX,
-          _referenceArmPose!.oY,
-          _referenceArmPose!.oZ,
-        );
+        newRotationOV = newRotationQuaternionSpatialMath.toOrientationVectorRadians();
       }
-
+      
+      // Step 7: Create the new pose with the new rotation and position values
       final newPose = Pose(
         x: newX,
         y: newY,
         z: newZ,
-        theta: newOrientationVector.theta,
-        oX: newOrientationVector.ox,
-        oY: newOrientationVector.oy,
-        oZ: newOrientationVector.oz,
+        theta: newRotationOV.theta,
+        oX: newRotationOV.ox,
+        oY: newRotationOV.oy,
+        oZ: newRotationOV.oz,
       );
 
       // Skip if pose hasn't changed significantly
