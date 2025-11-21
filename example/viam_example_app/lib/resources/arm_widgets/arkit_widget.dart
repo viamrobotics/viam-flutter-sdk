@@ -52,22 +52,24 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
   Pose? currentArmPose; // where we actually are
 
   // Frame transformation from ARKit to Viam
-  // Viam Frame: X+ Forward, Y+ Left, Z+ Up
-  // ARKit Frame: X+ Right, Y+ Up, Z+ Back (towards user)
+  // Viam Frame: Right-handed Z is up (X+ Forward, Y+ Left, Z+ Up)
+  // ARKit Frame: Right-handed Y is up (X+ Right, Y+ Up, Z+ Back (towards user))
   // Full mapping: ARKit(X,Y,Z) → Viam(-Y,X,Z) rotated
-  // This requires: First rotate -90° around Z, then -90° around X
+  // First rotate -90° around Z, then -90° around X
   late final vector_math.Quaternion _arkitToViamFrameTransform = () {
-    // Step 1: Rotate -90° around Z-axis (swaps X and Y)
+    // 1: Rotate -90° around Z-axis (swaps X and Y)
     final rotZ = vector_math.Quaternion.axisAngle(
       vector_math.Vector3(0.0, 0.0, 1.0),
       -math.pi / 2,
     );
-    // Step 2: Rotate -90° around X-axis (makes Y → Z)
+    // 2: Rotate -90° around X-axis (makes Y → Z)
     final rotX = vector_math.Quaternion.axisAngle(
       vector_math.Vector3(1.0, 0.0, 0.0),
       -math.pi / 2,
     );
-    // Combine: apply rotX first, then rotZ
+    // Apply rotX first, then rotZ
+    // Quaternion multiplication is performed right to left,
+    // rotX is applied before rotZ
     return rotZ * rotX;
   }();
 
@@ -152,25 +154,26 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
       return;
     }
     try {
-      // === STEP 1: Calculate position delta from REFERENCE (same as before) ===
+      // Calculate new position in Viam frame
       final positionDelta = _currentPhonePositionARKit - _referencePhonePositionARKit!;
       final newX = _referenceArmPose!.x + (-positionDelta.z * _positionScale);
       final newY = _referenceArmPose!.y + ((-positionDelta.x) * _positionScale);
       final newZ = _referenceArmPose!.z + (positionDelta.y * _positionScale);
 
-      // === STEP 2: Calculate rotation delta from REFERENCE (like position!) ===
-      // Convert current and reference phone rotations to quaternions
-      final currentPhoneQuaternion = vector_math.Quaternion.fromRotation(_currentPhoneRotationARKit); // this is in ARKit frame
-      final referencePhoneQuaternion = vector_math.Quaternion.fromRotation(_referencePhoneRotationARKit!); // this is also in ARKit frame
-
-      // Calculate delta from reference: Delta = Current * Inverse(Reference)
+      // Step 1: Calculate rotation delta between current and reference phone rotation. To find the difference between two quaternions, we can multiply the current quaternion by the inverse of the other quaternion
+      // 1a: Convert current phone rotation to quaternion
+      // 1b: Convert reference phone rotation to quaternion
+      // 1c: Calculate inverse of reference phone rotation
+      // 1d: Delta = Current * Inverse(Reference)
+      final currentRotationQuaternionARKit = vector_math.Quaternion.fromRotation(_currentPhoneRotationARKit);
+      final referenceRotationQuaternionARKit = vector_math.Quaternion.fromRotation(_referencePhoneRotationARKit!);
       final inverseReferencePhoneQuaternion = vector_math.Quaternion(
-        -referencePhoneQuaternion.x,
-        -referencePhoneQuaternion.y,
-        -referencePhoneQuaternion.z,
-        referencePhoneQuaternion.w,
+        -referenceRotationQuaternionARKit.x,
+        -referenceRotationQuaternionARKit.y,
+        -referenceRotationQuaternionARKit.z,
+        referenceRotationQuaternionARKit.w,
       );
-      final rotationDeltaARKit = currentPhoneQuaternion * inverseReferencePhoneQuaternion; // Delta in ARKit frame
+      final rotationDeltaARKit = currentRotationQuaternionARKit * inverseReferencePhoneQuaternion;
 
       // Calculate rotation angle to apply deadband filter
       // For a quaternion q = (x, y, z, w), the rotation angle is: theta = 2 * acos(w)
@@ -246,7 +249,6 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
         targetArmPose = newPose;
       });
 
-      // Add pose to queue (every 5th pose to reduce load)
       _addPoseToQueue(newPose, 5);
 
       if (!_isProcessingQueue) {
