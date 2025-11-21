@@ -214,6 +214,16 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           referenceRotationQuaternion.kmag,
           referenceRotationQuaternion.real,
         );
+
+        // // *TEST TMWR*: I am not sure what the frame system of the new rotationQuaternion is bc we are mixing frames here...
+        // // *TEST TMWR* Converting the rotation delta to viam frame system first...?
+        // // Convert rotation delta from ARKit frame to Viam frame using sandwich transformation
+        // final rotationDeltaViam = _arkitToViamFrameTransform * rotationDeltaARKit * inverseARKitToViamFrameTransform;
+        // // *TEST TMWR*: Now both quaternions are in Viam frame, safe to multiply!
+        // final newRotationQuaternionViam = referenceRotationQuaternionViam * rotationDeltaViam;
+        // // *TEST TMWR*: Result is already in Viam frame - no additional transformation needed!
+        // // **END of what i want to play w for converting
+
         final newRotationQuaternion = referenceRotationQuaternionViam * rotationDeltaARKit;
 
         // Step 5: Convert the new rotation quaternion to the Viam frame system
@@ -226,7 +236,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
             Quaternion(newRotationQuaternionViam.w, newRotationQuaternionViam.x, newRotationQuaternionViam.y, newRotationQuaternionViam.z);
         newRotationOV = newRotationQuaternionSpatialMath.toOrientationVectorRadians();
       }
-      
+
       // Step 7: Create the new pose with the new rotation and position values
       final newPose = Pose(
         x: newX,
@@ -373,7 +383,7 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
                 ),
                 if (!_isARKitInitialized)
                   Container(
-                    color: Colors.black.withOpacity(0.8),
+                    color: Colors.black.withValues(alpha: 0.8),
                     child: const Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -416,86 +426,55 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
               ],
             ),
           ),
-
-          // Control Panel
           Expanded(
             flex: 1,
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  const Text("Target Position", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.blue)),
-                  const SizedBox(height: 10),
+                  const Text("Target Position"),
                   if (targetArmPose != null) ...[
-                    Text("X: ${targetArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Y: ${targetArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Z: ${targetArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("oX: ${targetArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oY: ${targetArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oZ: ${targetArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("Theta: ${targetArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("X: ${targetArmPose!.x.toStringAsFixed(1)} mm"),
+                    Text("Y: ${targetArmPose!.y.toStringAsFixed(1)} mm"),
+                    Text("Z: ${targetArmPose!.z.toStringAsFixed(1)} mm"),
+                    Text("oX: ${targetArmPose!.oX.toStringAsFixed(2)}"),
+                    Text("oY: ${targetArmPose!.oY.toStringAsFixed(2)}"),
+                    Text("oZ: ${targetArmPose!.oZ.toStringAsFixed(2)}"),
+                    Text("Theta: ${targetArmPose!.theta.toStringAsFixed(2)}"),
                   ] else
-                    const Text("No target yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
-                  const SizedBox(height: 20),
-                  const Text("Current Position", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.green)),
-                  const SizedBox(height: 10),
+                    const Text("No target yet"),
+                  const Text("Current Position"),
                   if (currentArmPose != null) ...[
-                    Text("X: ${currentArmPose!.x.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Y: ${currentArmPose!.y.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("Z: ${currentArmPose!.z.toStringAsFixed(1)} mm", style: const TextStyle(fontSize: 14)),
-                    Text("oX: ${currentArmPose!.oX.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oY: ${currentArmPose!.oY.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("oZ: ${currentArmPose!.oZ.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
-                    Text("Theta: ${currentArmPose!.theta.toStringAsFixed(2)}", style: const TextStyle(fontSize: 14)),
+                    Text("X: ${currentArmPose!.x.toStringAsFixed(1)} mm"),
+                    Text("Y: ${currentArmPose!.y.toStringAsFixed(1)} mm"),
+                    Text("Z: ${currentArmPose!.z.toStringAsFixed(1)} mm"),
+                    Text("oX: ${currentArmPose!.oX.toStringAsFixed(2)}"),
+                    Text("oY: ${currentArmPose!.oY.toStringAsFixed(2)}"),
+                    Text("oZ: ${currentArmPose!.oZ.toStringAsFixed(2)}"),
+                    Text("Theta: ${currentArmPose!.theta.toStringAsFixed(2)}"),
                   ] else
-                    const Text("No position data yet", style: TextStyle(fontSize: 12, color: Colors.grey)),
-                  const SizedBox(height: 30),
-                  ElevatedButton(
+                    const Text("No position data yet"),
+                  TextButton(
                     onPressed: _isARKitInitialized ? _setReference : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: _isReferenceSet ? Colors.green : Colors.blue,
-                    ),
                     child: Text(_isReferenceSet ? "Reset Reference" : "Set Reference Point"),
                   ),
-                  const SizedBox(height: 15),
                   Text("Status: ${!_isReferenceSet ? 'Waiting for reference...' : _isMovingArm ? 'Moving...' : 'Ready'}"),
-                  if (_lastError != null)
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "Error: $_lastError",
-                        style: const TextStyle(color: Colors.red, fontSize: 10),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  const SizedBox(height: 15),
+                  if (_lastError != null) Text("Error: $_lastError"),
                   if (!_isReferenceSet)
-                    const Text(
-                      "Press 'Set Reference Point' to begin",
-                      style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic, color: Colors.orange),
-                    )
+                    const Text("Press 'Set Reference Point' to begin")
                   else
-                    const Text(
-                      "Move your phone through space!",
-                      style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
-                    ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      TextButton(
-                        onPressed: () async {
-                          await widget.arm.stop();
-                          setState(() {
-                            _isReferenceSet = false;
-                            _poseQueue.clear();
-                            _poseCounter = 0;
-                          });
-                        },
-                        child: const Text("Stop"),
-                      ),
-                    ],
+                    const Text("Move your phone through space!"),
+                  TextButton(
+                    onPressed: () async {
+                      await widget.arm.stop();
+                      setState(() {
+                        _isReferenceSet = false;
+                        _poseQueue.clear();
+                        _poseCounter = 0;
+                      });
+                    },
+                    child: const Text("Stop"),
                   ),
-                  ElevatedButton(
+                  TextButton(
                     onPressed: () async {
                       await widget.arm.moveToJointPositions([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
                       await widget.arm.moveToPosition(Pose(x: 300, y: 0, z: 100, oX: 0, oY: 0, oZ: -1, theta: 0));
