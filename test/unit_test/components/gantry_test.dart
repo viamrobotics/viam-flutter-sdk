@@ -57,6 +57,12 @@ class FakeGantry extends Gantry {
   Future<List<double>> position({Map<String, dynamic>? extra}) async {
     return positions;
   }
+
+  @override
+  Future<KinematicsFileFormat> getKinematics({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return KinematicsFileFormat.KINEMATICS_FILE_FORMAT_URDF;
+  }
 }
 
 void main() {
@@ -125,6 +131,10 @@ void main() {
       expect(gantry.extra, null);
       await gantry.stop(extra: {'foo': 'bar'});
       expect(gantry.extra, {'foo': 'bar'});
+    });
+
+    test('getKinematics', () async {
+      expect(await gantry.getKinematics(), KinematicsFileFormat.KINEMATICS_FILE_FORMAT_URDF);
     });
   });
 
@@ -233,6 +243,12 @@ void main() {
           ..extra = {'foo': 'bar'}.toStruct());
         expect(gantry.extra, {'foo': 'bar'});
       });
+
+      test('getKinematics', () async {
+        final client = GantryServiceClient(channel);
+        final resp = await client.getKinematics(GetKinematicsRequest()..name = name);
+        expect(resp.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_URDF);
+      });
     });
     group('Gantry Client Tests', () {
       test('position', () async {
@@ -291,6 +307,11 @@ void main() {
         final client = GantryClient(name, channel);
         await client.stop(extra: {'foo': 'bar'});
         expect(gantry.extra, {'foo': 'bar'});
+      });
+
+      test('getKinematics', () async {
+        final client = GantryClient(name, channel);
+        expect(await client.getKinematics(), KinematicsFileFormat.KINEMATICS_FILE_FORMAT_URDF);
       });
     });
   });

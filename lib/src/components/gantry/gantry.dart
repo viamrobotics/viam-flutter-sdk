@@ -1,6 +1,7 @@
 import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
+import 'package:viam_sdk/src/gen/component/gantry/v1/gantry.pb.dart';
 
 /// {@category Components}
 /// Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
@@ -62,6 +63,15 @@ abstract class Gantry extends Resource {
   ///
   /// For more information, see [Gantry component](https://docs.viam.com/dev/reference/apis/components/gantry/#ismoving).
   Future<bool> isMoving();
+
+  /// Get the KinematicFileFormat of the gantry.
+  ///
+  /// ```
+  /// var format = await myGantry.getKinematics();
+  /// ```
+  ///
+  /// For more information, see [Gantry component](https://docs.viam.com/dev/reference/apis/components/gantry/#getkinematics).
+  Future<KinematicsFileFormat> getKinematics({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Gantry] with the given [name]
   ///
