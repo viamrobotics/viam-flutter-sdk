@@ -52,24 +52,22 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
   // Viam Frame: Right-handed Z is up (X+ Forward, Y+ Left, Z+ Up)
   // ARKit Frame: Right-handed Y is up (X+ Right, Y+ Up, Z+ Back (towards user))
   // Full mapping: ARKit(X,Y,Z) → Viam(-Y,X,Z) rotated
-  // First rotate -90° around Z, then -90° around X
   late final vector_math.Quaternion _arkitToViamFrameTransform = () {
-    // 1: Rotate -90° around Z-axis (swaps X and Y)
+    // 1: Rotate +90° around Z-axis (swaps X and Y)
     final rotZ = vector_math.Quaternion.axisAngle(
       vector_math.Vector3(0.0, 0.0, 1.0),
-      -math.pi / 2,
+      math.pi / 2,
     );
     // 2: Rotate -90° around X-axis (makes Y → Z)
     final rotX = vector_math.Quaternion.axisAngle(
       vector_math.Vector3(1.0, 0.0, 0.0),
       -math.pi / 2,
     );
+    // Quaternion multiplication is performed right to left
     // Apply rotX first, then rotZ
-    // Quaternion multiplication is performed right to left,
-    // rotX is applied before rotZ
     return rotZ * rotX;
   }();
-  // *TEST TMWR* Moved this, previously it was right above initalizing final newArmQuaternionViam
+
   late final vector_math.Quaternion inverseARKitToViamFrameTransform = vector_math.Quaternion(
     -_arkitToViamFrameTransform.x,
     -_arkitToViamFrameTransform.y,
@@ -193,10 +191,14 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           _referenceArmPose!.oZ,
         );
       } else {
-        // Step 4: Apply delta to reference arm orientation.
-        // 4a: Convert orientation values from reference pose to orientation vector
-        // 4b: Convert orientation vector to quaternion
-        // 4c: Apply delta to rotation quaternion to get new rotation quaternion
+
+        // Step 4: Convert rotation delta from ARKit frame to Viam frame 
+        final rotationDeltaViam = _arkitToViamFrameTransform * rotationDeltaARKit * inverseARKitToViamFrameTransform;
+
+        // Step 5: Apply delta to reference arm orientation.
+        // 5a: Convert orientation values from reference pose to orientation vector
+        // 5b: Convert orientation vector to quaternion
+        // 5c: Apply delta to rotation quaternion to get new rotation quaternion
         final referenceRotationOrientationVector = OrientationVector(
           _referenceArmPose!.theta,
           _referenceArmPose!.oX,
@@ -204,27 +206,14 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
           _referenceArmPose!.oZ,
         );
         final referenceRotationQuaternion = referenceRotationOrientationVector.toQuaternion();
-        // *TEST TMWR*: I argue we don't need this bc the line above makes a quaternion >>>
+        // Convert spatial_math Quaternion to vector_math Quaternion for multiplication
         final referenceRotationQuaternionViam = vector_math.Quaternion(
           referenceRotationQuaternion.imag,
           referenceRotationQuaternion.jmag,
           referenceRotationQuaternion.kmag,
           referenceRotationQuaternion.real,
         );
-
-        // // *TEST TMWR*: I am not sure what the frame system of the new rotationQuaternion is bc we are mixing frames here...
-        // // *TEST TMWR* Converting the rotation delta to viam frame system first...?
-        // // Convert rotation delta from ARKit frame to Viam frame using sandwich transformation
-        // final rotationDeltaViam = _arkitToViamFrameTransform * rotationDeltaARKit * inverseARKitToViamFrameTransform;
-        // // *TEST TMWR*: Now both quaternions are in Viam frame, safe to multiply!
-        // final newRotationQuaternionViam = referenceRotationQuaternionViam * rotationDeltaViam;
-        // // *TEST TMWR*: Result is already in Viam frame - no additional transformation needed!
-        // // **END of what i want to play w for converting
-
-        final newRotationQuaternion = referenceRotationQuaternionViam * rotationDeltaARKit;
-
-        // Step 5: Convert the new rotation quaternion to the Viam frame system
-        final newRotationQuaternionViam = _arkitToViamFrameTransform * newRotationQuaternion * inverseARKitToViamFrameTransform;
+        final newRotationQuaternionViam = referenceRotationQuaternionViam * rotationDeltaViam;
 
         // Step 6: Convert quaternions back to orientation vector to be used for the new pose
         // 6a: Convert the new rotation quaternion to a spatial math quaternion
