@@ -353,127 +353,71 @@ class _ARKitArmWidgetState extends State<ARKitArmWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Stack(
-              children: [
-                ARKitSceneView(
-                  onARKitViewCreated: onARKitViewCreated,
-                  enableTapRecognizer: false,
-                  showStatistics: false,
-                ),
-                if (!_isARKitInitialized)
-                  Container(
-                    color: Colors.black.withValues(alpha: 0.8),
-                    child: const Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircularProgressIndicator(color: Colors.white),
-                          SizedBox(height: 20),
-                          Text(
-                            'Initializing ARKit...',
-                            style: TextStyle(color: Colors.white, fontSize: 16),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                if (_isReferenceSet)
-                  Positioned(
-                    top: 10,
-                    left: 10,
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Phone Position (m)',
-                              style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
-                          Text('X: ${_currentPhonePositionARKit.x.toStringAsFixed(3)}',
-                              style: const TextStyle(color: Colors.white, fontSize: 10)),
-                          Text('Y: ${_currentPhonePositionARKit.y.toStringAsFixed(3)}',
-                              style: const TextStyle(color: Colors.white, fontSize: 10)),
-                          Text('Z: ${_currentPhonePositionARKit.z.toStringAsFixed(3)}',
-                              style: const TextStyle(color: Colors.white, fontSize: 10)),
-                        ],
-                      ),
-                    ),
-                  ),
-              ],
-            ),
+    return Column(
+      children: [
+        SizedBox(
+          height: 100,
+          width: 100,
+          child: ARKitSceneView(
+            onARKitViewCreated: onARKitViewCreated,
+            enableTapRecognizer: false,
+            showStatistics: false,
           ),
-          Expanded(
-            flex: 1,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const Text("Target Position"),
-                  Text("X: ${(targetArmPose?.x ?? 0.0).toStringAsFixed(1)} mm"),
-                  Text("Y: ${(targetArmPose?.y ?? 0.0).toStringAsFixed(1)} mm"),
-                  Text("Z: ${(targetArmPose?.z ?? 0.0).toStringAsFixed(1)} mm"),
-                  Text("oX: ${(targetArmPose?.oX ?? 0.0).toStringAsFixed(2)}"),
-                  Text("oY: ${(targetArmPose?.oY ?? 0.0).toStringAsFixed(2)}"),
-                  Text("oZ: ${(targetArmPose?.oZ ?? 0.0).toStringAsFixed(2)}"),
-                  Text("Theta: ${(targetArmPose?.theta ?? 0.0).toStringAsFixed(2)}"),
-                  const Text("Current Position"),
-                  Text("X: ${(currentArmPose?.x ?? 0.0).toStringAsFixed(1)} mm"),
-                  Text("Y: ${(currentArmPose?.y ?? 0.0).toStringAsFixed(1)} mm"),
-                  Text("Z: ${(currentArmPose?.z ?? 0.0).toStringAsFixed(1)} mm"),
-                  Text("oX: ${(currentArmPose?.oX ?? 0.0).toStringAsFixed(2)}"),
-                  Text("oY: ${(currentArmPose?.oY ?? 0.0).toStringAsFixed(2)}"),
-                  Text("oZ: ${(currentArmPose?.oZ ?? 0.0).toStringAsFixed(2)}"),
-                  Text("Theta: ${(currentArmPose?.theta ?? 0.0).toStringAsFixed(2)}"),
-                  GestureDetector(
-                    onLongPressDown: _isARKitInitialized ? (_) => _setReference() : null,
-                    onLongPressUp: () async {
-                      await widget.arm.stop();
-                      setState(() {
-                        _isReferenceSet = false;
-                        _poseQueue.clear();
-                        _poseCounter = 0;
-                      });
-                    },
-                    onLongPressCancel: () async {
-                      await widget.arm.stop();
-                      setState(() {
-                        _isReferenceSet = false;
-                        _poseQueue.clear();
-                        _poseCounter = 0;
-                      });
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        border: Border.all(),
-                      ),
-                      child: Text(_isReferenceSet ? "CONTROLLING" : "PRESS AND HOLD"),
-                    ),
-                  ),
-                  Text("Status: ${!_isReferenceSet ? 'Ready' : _isMovingArm ? 'Moving...' : 'Active'}"),
-                  if (_lastError != null) Text("Error: $_lastError"),
-                  if (!_isReferenceSet) const Text("Press and hold button to control") else const Text("Move your phone - Release to stop"),
-                  TextButton(
-                    onPressed: () async {
-                      await widget.arm.moveToJointPositions([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
-                      await widget.arm.moveToPosition(Pose(x: 300, y: 0, z: 100, oX: 0, oY: 0, oZ: -1, theta: 0));
-                    },
-                    child: const Text("Reset Position"),
-                  ),
-                ],
-              ),
+        ),
+        const Text("Target Position"),
+        Text("X: ${(targetArmPose?.x ?? 0.0).toStringAsFixed(1)} mm"),
+        Text("Y: ${(targetArmPose?.y ?? 0.0).toStringAsFixed(1)} mm"),
+        Text("Z: ${(targetArmPose?.z ?? 0.0).toStringAsFixed(1)} mm"),
+        Text("oX: ${(targetArmPose?.oX ?? 0.0).toStringAsFixed(2)}"),
+        Text("oY: ${(targetArmPose?.oY ?? 0.0).toStringAsFixed(2)}"),
+        Text("oZ: ${(targetArmPose?.oZ ?? 0.0).toStringAsFixed(2)}"),
+        Text("Theta: ${(targetArmPose?.theta ?? 0.0).toStringAsFixed(2)}"),
+        const Text("Current Position"),
+        Text("X: ${(currentArmPose?.x ?? 0.0).toStringAsFixed(1)} mm"),
+        Text("Y: ${(currentArmPose?.y ?? 0.0).toStringAsFixed(1)} mm"),
+        Text("Z: ${(currentArmPose?.z ?? 0.0).toStringAsFixed(1)} mm"),
+        Text("oX: ${(currentArmPose?.oX ?? 0.0).toStringAsFixed(2)}"),
+        Text("oY: ${(currentArmPose?.oY ?? 0.0).toStringAsFixed(2)}"),
+        Text("oZ: ${(currentArmPose?.oZ ?? 0.0).toStringAsFixed(2)}"),
+        Text("Theta: ${(currentArmPose?.theta ?? 0.0).toStringAsFixed(2)}"),
+        const SizedBox(height: 10),
+        Text("Status: ${!_isReferenceSet ? 'Ready' : _isMovingArm ? 'Moving...' : 'Active'}"),
+        if (_lastError != null) Text("Error: $_lastError"),
+        const SizedBox(height: 10),
+        GestureDetector(
+          onLongPressDown: _isARKitInitialized ? (_) => _setReference() : null,
+          onLongPressUp: () async {
+            await widget.arm.stop();
+            setState(() {
+              _isReferenceSet = false;
+              _poseQueue.clear();
+              _poseCounter = 0;
+            });
+          },
+          onLongPressCancel: () async {
+            await widget.arm.stop();
+            setState(() {
+              _isReferenceSet = false;
+              _poseQueue.clear();
+              _poseCounter = 0;
+            });
+          },
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              border: Border.all(),
             ),
+            child: Text(_isReferenceSet ? "CONTROLLING - RELEASE TO STOP" : "HOLD TO CONTROL"),
           ),
-        ],
-      ),
+        ),
+        TextButton(
+          onPressed: () async {
+            await widget.arm.moveToJointPositions([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
+            await widget.arm.moveToPosition(Pose(x: 300, y: 0, z: 100, oX: 0, oY: 0, oZ: -1, theta: 0));
+          },
+          child: const Text("Reset Position"),
+        ),
+      ],
     );
   }
 }
