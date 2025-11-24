@@ -5,6 +5,7 @@ import '../../gen/component/arm/v1/arm.pbgrpc.dart';
 import '../../gen/google/protobuf/struct.pb.dart';
 import '../../resource/base.dart';
 import '../../utils.dart';
+import '../gripper/gripper.dart';
 import 'arm.dart';
 
 /// {@category Components}
@@ -90,5 +91,14 @@ class ArmClient extends Arm with RPCDebugLoggerMixin implements ResourceRPCClien
       ..command = command.toStruct();
     final response = await client.doCommand(request, options: callOptions);
     return response.result.toMap();
+  }
+
+  @override
+  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+    final request = GetKinematicsRequest()
+      ..name = name
+      ..extra = extra?.toStruct() ?? Struct();
+    final response = await client.getKinematics(request, options: callOptions);
+    return Kinematics.fromProto(response);
   }
 }

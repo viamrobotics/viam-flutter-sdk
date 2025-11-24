@@ -1,6 +1,5 @@
+import '../../../viam_sdk.dart';
 import '../../gen/common/v1/common.pb.dart';
-import '../../resource/base.dart';
-import '../../robot/client.dart';
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
@@ -79,6 +78,15 @@ abstract class Arm extends Resource {
   ///
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#ismoving).
   Future<bool> isMoving();
+
+  /// Get the kinematics data associated with the [Gripper]
+  ///
+  /// ```
+  /// var kinematics = await myGripper.getKinematics();
+  /// ```
+  ///
+  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getkinematics).
+  Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Arm] with the given [name].
   ///
