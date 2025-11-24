@@ -1,6 +1,6 @@
 name: viam_sdk
 description: Viam Robotics Flutter SDK. Connect to your Viam robots using WebRTC or gRPC, and control your robots remotely.
-version: 0.11.0
+version: 0.11.1
 homepage: https://github.com/viamrobotics/viam-flutter-sdk/
 
 environment:
