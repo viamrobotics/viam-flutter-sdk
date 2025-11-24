@@ -145,6 +145,10 @@ class DataServiceClient extends $grpc.Client {
       '/viam.app.data.v1.DataService/ListSavedQueries',
       ($4.ListSavedQueriesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.ListSavedQueriesResponse.fromBuffer(value));
+  static final _$createBinaryDataSignedURL = $grpc.ClientMethod<$4.CreateBinaryDataSignedURLRequest, $4.CreateBinaryDataSignedURLResponse>(
+      '/viam.app.data.v1.DataService/CreateBinaryDataSignedURL',
+      ($4.CreateBinaryDataSignedURLRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateBinaryDataSignedURLResponse.fromBuffer(value));
 
   DataServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -274,6 +278,10 @@ class DataServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.ListSavedQueriesResponse> listSavedQueries($4.ListSavedQueriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listSavedQueries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.CreateBinaryDataSignedURLResponse> createBinaryDataSignedURL($4.CreateBinaryDataSignedURLRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createBinaryDataSignedURL, request, options: options);
   }
 }
 
@@ -499,6 +507,13 @@ abstract class DataServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.ListSavedQueriesRequest.fromBuffer(value),
         ($4.ListSavedQueriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateBinaryDataSignedURLRequest, $4.CreateBinaryDataSignedURLResponse>(
+        'CreateBinaryDataSignedURL',
+        createBinaryDataSignedURL_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.CreateBinaryDataSignedURLRequest.fromBuffer(value),
+        ($4.CreateBinaryDataSignedURLResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.TabularDataByFilterResponse> tabularDataByFilter_Pre($grpc.ServiceCall call, $async.Future<$4.TabularDataByFilterRequest> request) async {
@@ -625,6 +640,10 @@ abstract class DataServiceBase extends $grpc.Service {
     return listSavedQueries(call, await request);
   }
 
+  $async.Future<$4.CreateBinaryDataSignedURLResponse> createBinaryDataSignedURL_Pre($grpc.ServiceCall call, $async.Future<$4.CreateBinaryDataSignedURLRequest> request) async {
+    return createBinaryDataSignedURL(call, await request);
+  }
+
   $async.Future<$4.TabularDataByFilterResponse> tabularDataByFilter($grpc.ServiceCall call, $4.TabularDataByFilterRequest request);
   $async.Future<$4.TabularDataBySQLResponse> tabularDataBySQL($grpc.ServiceCall call, $4.TabularDataBySQLRequest request);
   $async.Future<$4.TabularDataByMQLResponse> tabularDataByMQL($grpc.ServiceCall call, $4.TabularDataByMQLRequest request);
@@ -656,4 +675,5 @@ abstract class DataServiceBase extends $grpc.Service {
   $async.Future<$4.GetSavedQueryResponse> getSavedQuery($grpc.ServiceCall call, $4.GetSavedQueryRequest request);
   $async.Future<$4.DeleteSavedQueryResponse> deleteSavedQuery($grpc.ServiceCall call, $4.DeleteSavedQueryRequest request);
   $async.Future<$4.ListSavedQueriesResponse> listSavedQueries($grpc.ServiceCall call, $4.ListSavedQueriesRequest request);
+  $async.Future<$4.CreateBinaryDataSignedURLResponse> createBinaryDataSignedURL($grpc.ServiceCall call, $4.CreateBinaryDataSignedURLRequest request);
 }

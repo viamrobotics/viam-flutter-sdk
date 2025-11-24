@@ -110,6 +110,7 @@ const JobConfig$json = {
     {'1': 'resource', '3': 3, '4': 1, '5': 9, '10': 'resource'},
     {'1': 'method', '3': 4, '4': 1, '5': 9, '10': 'method'},
     {'1': 'command', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Struct', '10': 'command'},
+    {'1': 'log_configuration', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.LogConfiguration', '10': 'logConfiguration'},
   ],
 };
 
@@ -117,7 +118,9 @@ const JobConfig$json = {
 final $typed_data.Uint8List jobConfigDescriptor = $convert.base64Decode(
     'CglKb2JDb25maWcSEgoEbmFtZRgBIAEoCVIEbmFtZRIaCghzY2hlZHVsZRgCIAEoCVIIc2NoZW'
     'R1bGUSGgoIcmVzb3VyY2UYAyABKAlSCHJlc291cmNlEhYKBm1ldGhvZBgEIAEoCVIGbWV0aG9k'
-    'EjEKB2NvbW1hbmQYBSABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0Ugdjb21tYW5k');
+    'EjEKB2NvbW1hbmQYBSABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0Ugdjb21tYW5kEkoKEW'
+    'xvZ19jb25maWd1cmF0aW9uGAYgASgLMh0udmlhbS5hcHAudjEuTG9nQ29uZmlndXJhdGlvblIQ'
+    'bG9nQ29uZmlndXJhdGlvbg==');
 
 @$core.Deprecated('Use locationSecretDescriptor instead')
 const LocationSecret$json = {

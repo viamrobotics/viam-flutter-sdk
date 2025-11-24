@@ -5731,6 +5731,141 @@ class ListSavedQueriesResponse extends $pb.GeneratedMessage {
   $core.List<Query> get queries => $_getList(0);
 }
 
+class CreateBinaryDataSignedURLRequest extends $pb.GeneratedMessage {
+  factory CreateBinaryDataSignedURLRequest({
+    $core.String? binaryDataId,
+    $core.int? expirationMinutes,
+  }) {
+    final $result = create();
+    if (binaryDataId != null) {
+      $result.binaryDataId = binaryDataId;
+    }
+    if (expirationMinutes != null) {
+      $result.expirationMinutes = expirationMinutes;
+    }
+    return $result;
+  }
+  CreateBinaryDataSignedURLRequest._() : super();
+  factory CreateBinaryDataSignedURLRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateBinaryDataSignedURLRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateBinaryDataSignedURLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'binaryDataId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'expirationMinutes', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateBinaryDataSignedURLRequest clone() => CreateBinaryDataSignedURLRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateBinaryDataSignedURLRequest copyWith(void Function(CreateBinaryDataSignedURLRequest) updates) => super.copyWith((message) => updates(message as CreateBinaryDataSignedURLRequest)) as CreateBinaryDataSignedURLRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateBinaryDataSignedURLRequest create() => CreateBinaryDataSignedURLRequest._();
+  CreateBinaryDataSignedURLRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateBinaryDataSignedURLRequest> createRepeated() => $pb.PbList<CreateBinaryDataSignedURLRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateBinaryDataSignedURLRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateBinaryDataSignedURLRequest>(create);
+  static CreateBinaryDataSignedURLRequest? _defaultInstance;
+
+  /// The binary data ID of the file to create a signed URL for.
+  @$pb.TagNumber(1)
+  $core.String get binaryDataId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set binaryDataId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBinaryDataId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBinaryDataId() => clearField(1);
+
+  /// Expiration time in minutes. Defaults to 15 minutes if not specified.
+  /// Maximum allowed is 10080 minutes (7 days).
+  @$pb.TagNumber(2)
+  $core.int get expirationMinutes => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set expirationMinutes($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasExpirationMinutes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpirationMinutes() => clearField(2);
+}
+
+class CreateBinaryDataSignedURLResponse extends $pb.GeneratedMessage {
+  factory CreateBinaryDataSignedURLResponse({
+    $core.String? signedUrl,
+    $52.Timestamp? expiresAt,
+  }) {
+    final $result = create();
+    if (signedUrl != null) {
+      $result.signedUrl = signedUrl;
+    }
+    if (expiresAt != null) {
+      $result.expiresAt = expiresAt;
+    }
+    return $result;
+  }
+  CreateBinaryDataSignedURLResponse._() : super();
+  factory CreateBinaryDataSignedURLResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateBinaryDataSignedURLResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateBinaryDataSignedURLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.data.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'signedUrl')
+    ..aOM<$52.Timestamp>(2, _omitFieldNames ? '' : 'expiresAt', subBuilder: $52.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateBinaryDataSignedURLResponse clone() => CreateBinaryDataSignedURLResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateBinaryDataSignedURLResponse copyWith(void Function(CreateBinaryDataSignedURLResponse) updates) => super.copyWith((message) => updates(message as CreateBinaryDataSignedURLResponse)) as CreateBinaryDataSignedURLResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateBinaryDataSignedURLResponse create() => CreateBinaryDataSignedURLResponse._();
+  CreateBinaryDataSignedURLResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateBinaryDataSignedURLResponse> createRepeated() => $pb.PbList<CreateBinaryDataSignedURLResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateBinaryDataSignedURLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateBinaryDataSignedURLResponse>(create);
+  static CreateBinaryDataSignedURLResponse? _defaultInstance;
+
+  /// The signed URL for the binary data file.
+  @$pb.TagNumber(1)
+  $core.String get signedUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set signedUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSignedUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSignedUrl() => clearField(1);
+
+  /// Expiration time of the signed URL token.
+  @$pb.TagNumber(2)
+  $52.Timestamp get expiresAt => $_getN(1);
+  @$pb.TagNumber(2)
+  set expiresAt($52.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasExpiresAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpiresAt() => clearField(2);
+  @$pb.TagNumber(2)
+  $52.Timestamp ensureExpiresAt() => $_ensure(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

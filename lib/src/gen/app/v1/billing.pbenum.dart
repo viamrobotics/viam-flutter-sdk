@@ -56,6 +56,8 @@ class UsageCostType extends $pb.ProtobufEnum {
   static const UsageCostType USAGE_COST_TYPE_TABULAR_DATA_DATABASE_CLOUD_STORAGE = UsageCostType._(22, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TABULAR_DATA_DATABASE_CLOUD_STORAGE');
   static const UsageCostType USAGE_COST_TYPE_TABULAR_DATA_DATABASE_COMPUTE = UsageCostType._(23, _omitEnumNames ? '' : 'USAGE_COST_TYPE_TABULAR_DATA_DATABASE_COMPUTE');
   static const UsageCostType USAGE_COST_TYPE_BINARY_DATA_CROSS_REGION_EGRESS = UsageCostType._(24, _omitEnumNames ? '' : 'USAGE_COST_TYPE_BINARY_DATA_CROSS_REGION_EGRESS');
+  static const UsageCostType USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE = UsageCostType._(25, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE');
+  static const UsageCostType USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE = UsageCostType._(26, _omitEnumNames ? '' : 'USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE');
 
   static const $core.List<UsageCostType> values = <UsageCostType> [
     USAGE_COST_TYPE_UNSPECIFIED,
@@ -83,6 +85,8 @@ class UsageCostType extends $pb.ProtobufEnum {
     USAGE_COST_TYPE_TABULAR_DATA_DATABASE_CLOUD_STORAGE,
     USAGE_COST_TYPE_TABULAR_DATA_DATABASE_COMPUTE,
     USAGE_COST_TYPE_BINARY_DATA_CROSS_REGION_EGRESS,
+    USAGE_COST_TYPE_PIPELINE_SINK_CLOUD_STORAGE,
+    USAGE_COST_TYPE_PIPELINE_SINK_COMPUTE,
   ];
 
   static final $core.Map<$core.int, UsageCostType> _byValue = $pb.ProtobufEnum.initByValue(values);

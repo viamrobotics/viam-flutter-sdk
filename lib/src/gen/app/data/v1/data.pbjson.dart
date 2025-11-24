@@ -1502,3 +1502,36 @@ final $typed_data.Uint8List listSavedQueriesResponseDescriptor = $convert.base64
     'ChhMaXN0U2F2ZWRRdWVyaWVzUmVzcG9uc2USMQoHcXVlcmllcxgBIAMoCzIXLnZpYW0uYXBwLm'
     'RhdGEudjEuUXVlcnlSB3F1ZXJpZXM=');
 
+@$core.Deprecated('Use createBinaryDataSignedURLRequestDescriptor instead')
+const CreateBinaryDataSignedURLRequest$json = {
+  '1': 'CreateBinaryDataSignedURLRequest',
+  '2': [
+    {'1': 'binary_data_id', '3': 1, '4': 1, '5': 9, '10': 'binaryDataId'},
+    {'1': 'expiration_minutes', '3': 2, '4': 1, '5': 13, '9': 0, '10': 'expirationMinutes', '17': true},
+  ],
+  '8': [
+    {'1': '_expiration_minutes'},
+  ],
+};
+
+/// Descriptor for `CreateBinaryDataSignedURLRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createBinaryDataSignedURLRequestDescriptor = $convert.base64Decode(
+    'CiBDcmVhdGVCaW5hcnlEYXRhU2lnbmVkVVJMUmVxdWVzdBIkCg5iaW5hcnlfZGF0YV9pZBgBIA'
+    'EoCVIMYmluYXJ5RGF0YUlkEjIKEmV4cGlyYXRpb25fbWludXRlcxgCIAEoDUgAUhFleHBpcmF0'
+    'aW9uTWludXRlc4gBAUIVChNfZXhwaXJhdGlvbl9taW51dGVz');
+
+@$core.Deprecated('Use createBinaryDataSignedURLResponseDescriptor instead')
+const CreateBinaryDataSignedURLResponse$json = {
+  '1': 'CreateBinaryDataSignedURLResponse',
+  '2': [
+    {'1': 'signed_url', '3': 1, '4': 1, '5': 9, '10': 'signedUrl'},
+    {'1': 'expires_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
+  ],
+};
+
+/// Descriptor for `CreateBinaryDataSignedURLResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createBinaryDataSignedURLResponseDescriptor = $convert.base64Decode(
+    'CiFDcmVhdGVCaW5hcnlEYXRhU2lnbmVkVVJMUmVzcG9uc2USHQoKc2lnbmVkX3VybBgBIAEoCV'
+    'IJc2lnbmVkVXJsEjkKCmV4cGlyZXNfYXQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
+    'YW1wUglleHBpcmVzQXQ=');
+
