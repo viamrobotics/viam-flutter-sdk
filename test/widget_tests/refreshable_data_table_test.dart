@@ -10,7 +10,7 @@ void main() {
     testWidgets('displays data', (tester) async {
       final widget = TestableWidget(child: ViamRefreshableDataTable(getData: FakeSensor('sensor').readings));
       await tester.pumpWidget(widget);
-      await tester.pump(); // Wait for async getReadings() to complete
+      await tester.pumpAndSettle();
 
       final dataTable = find.byType(DataTable);
 
