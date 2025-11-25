@@ -1,13 +1,27 @@
 # Changelog
 
-## [v0.11.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.11.0) (2025-10-27)
+## [v0.12.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.12.0) (2025-11-17)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.10.1...v0.11.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.11.0...v0.12.0)
 
 **Merged pull requests:**
 
+- Bump hotspot provisioning widget version to 0.0.24 [\#452](https://github.com/viamrobotics/viam-flutter-sdk/pull/452) ([jckras](https://github.com/jckras))
+- \[APP-9896\] fix example app for android in flutter sdk [\#451](https://github.com/viamrobotics/viam-flutter-sdk/pull/451) ([martha-johnston](https://github.com/martha-johnston))
+- Bump hotspot provisioning widget version [\#450](https://github.com/viamrobotics/viam-flutter-sdk/pull/450) ([jckras](https://github.com/jckras))
+- AI update based on proto changes [\#448](https://github.com/viamrobotics/viam-flutter-sdk/pull/448) ([viambot](https://github.com/viambot))
+- Automated Protos Update [\#447](https://github.com/viamrobotics/viam-flutter-sdk/pull/447) ([viambot](https://github.com/viambot))
+- \[APP-10023\] Update joint positions when pose changes and vice versa  [\#445](https://github.com/viamrobotics/viam-flutter-sdk/pull/445) ([martha-johnston](https://github.com/martha-johnston))
+- Update flutter\_sdk example to include hotspot provisioning widget [\#444](https://github.com/viamrobotics/viam-flutter-sdk/pull/444) ([jckras](https://github.com/jckras))
+- RSDK-12361 - remove location secret code [\#443](https://github.com/viamrobotics/viam-flutter-sdk/pull/443) ([stuqdog](https://github.com/stuqdog))
+- \[APP-9877\] Implement button functionality \(pose\) [\#442](https://github.com/viamrobotics/viam-flutter-sdk/pull/442) ([martha-johnston](https://github.com/martha-johnston))
+- \[APP-9877\] Add pose sliders [\#440](https://github.com/viamrobotics/viam-flutter-sdk/pull/440) ([martha-johnston](https://github.com/martha-johnston))
+- \[APP-9878\] Add joint angles [\#439](https://github.com/viamrobotics/viam-flutter-sdk/pull/439) ([martha-johnston](https://github.com/martha-johnston))
+- v0.11.0 [\#438](https://github.com/viamrobotics/viam-flutter-sdk/pull/438) ([github-actions[bot]](https://github.com/apps/github-actions))
 - RSDK-12421 - Remove remote\_path and local\_name [\#437](https://github.com/viamrobotics/viam-flutter-sdk/pull/437) ([cheukt](https://github.com/cheukt))
+- RSDK-12154 RSDK-12155 Audio component wrappers  [\#436](https://github.com/viamrobotics/viam-flutter-sdk/pull/436) ([oliviamiller](https://github.com/oliviamiller))
 - \[APP-9875\] Add new buttons for linear movement [\#432](https://github.com/viamrobotics/viam-flutter-sdk/pull/432) ([martha-johnston](https://github.com/martha-johnston))
+- Automated Protos Update [\#431](https://github.com/viamrobotics/viam-flutter-sdk/pull/431) ([viambot](https://github.com/viambot))
 - v0.10.1 [\#430](https://github.com/viamrobotics/viam-flutter-sdk/pull/430) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Handle eos marker for gRPC over WebRTC requests [\#428](https://github.com/viamrobotics/viam-flutter-sdk/pull/428) ([seanavery](https://github.com/seanavery))
 - Automated Protos Update [\#427](https://github.com/viamrobotics/viam-flutter-sdk/pull/427) ([viambot](https://github.com/viambot))
@@ -147,6 +161,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.11.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.11.0) (2025-10-27)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.10.1...v0.11.0)
 
 ## [v0.10.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.10.1) (2025-10-07)
 
