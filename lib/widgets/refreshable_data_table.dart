@@ -114,7 +114,10 @@ class _ViamRefreshableDataTableState extends State<ViamRefreshableDataTable> {
                             child: Align(
                               alignment: Alignment.centerLeft,
                               child: SingleChildScrollView(
-                                child: Text(readings[e].toString()),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(readings[e].toString()),
+                                ),
                               ),
                             ),
                           ),
