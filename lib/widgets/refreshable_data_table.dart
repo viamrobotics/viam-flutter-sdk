@@ -101,7 +101,23 @@ class _ViamRefreshableDataTableState extends State<ViamRefreshableDataTable> {
       children: [
         DataTable(
             columns: const <DataColumn>[DataColumn(label: Text('Reading')), DataColumn(label: Text('Value'))],
-            rows: readings.keys.map((e) => DataRow(cells: [DataCell(Text(e)), DataCell(Text(readings[e].toString()))])).toList()),
+            rows: readings.keys
+                .map((e) => DataRow(cells: [
+                      DataCell(Text(e)),
+                      DataCell(
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 120,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: SingleChildScrollView(
+                              child: Text(readings[e].toString()),
+                            ),
+                          ),
+                        ),
+                      )
+                    ]))
+                .toList()),
         if (widget.showLastRefreshed && lastRefreshed != null)
           Column(children: [
             const SizedBox(height: 8),
