@@ -42,6 +42,7 @@ class _PoseWidgetState extends State<PoseWidget> {
 
   bool _isLive = false;
   bool _isGoingToPose = false;
+  bool _isLoading = false;
   Pose _controlValues = Pose();
 
   _TextControlStruct? _textControllers;
@@ -69,24 +70,46 @@ class _PoseWidgetState extends State<PoseWidget> {
       _textControllers!.oY.dispose();
       _textControllers!.oZ.dispose();
       _textControllers!.theta.dispose();
+      _textControllers = null;
     }
   }
 
   Future<void> _getStartPose() async {
-    _disposeControllers();
+    if (_isLoading) return;
+    _isLoading = true;
+    try {
+      final startPose = await widget.arm.endPosition();
+      if (mounted) {
+        _controlValues = startPose;
 
-    final startPose = await widget.arm.endPosition();
-    _controlValues = startPose;
-    _textControllers = _TextControlStruct(
-      TextEditingController(text: _controlValues.x.toStringAsFixed(1)),
-      TextEditingController(text: _controlValues.y.toStringAsFixed(1)),
-      TextEditingController(text: _controlValues.z.toStringAsFixed(1)),
-      TextEditingController(text: _controlValues.oX.toStringAsFixed(1)),
-      TextEditingController(text: _controlValues.oY.toStringAsFixed(1)),
-      TextEditingController(text: _controlValues.oZ.toStringAsFixed(1)),
-      TextEditingController(text: _controlValues.theta.toStringAsFixed(1)),
-    );
-    setState(() {});
+        if (_textControllers == null) {
+          _textControllers = _TextControlStruct(
+            TextEditingController(text: _controlValues.x.toStringAsFixed(1)),
+            TextEditingController(text: _controlValues.y.toStringAsFixed(1)),
+            TextEditingController(text: _controlValues.z.toStringAsFixed(1)),
+            TextEditingController(text: _controlValues.oX.toStringAsFixed(1)),
+            TextEditingController(text: _controlValues.oY.toStringAsFixed(1)),
+            TextEditingController(text: _controlValues.oZ.toStringAsFixed(1)),
+            TextEditingController(text: _controlValues.theta.toStringAsFixed(1)),
+          );
+        } else {
+          _textControllers!.x.text = _controlValues.x.toStringAsFixed(1);
+          _textControllers!.y.text = _controlValues.y.toStringAsFixed(1);
+          _textControllers!.z.text = _controlValues.z.toStringAsFixed(1);
+          _textControllers!.oX.text = _controlValues.oX.toStringAsFixed(1);
+          _textControllers!.oY.text = _controlValues.oY.toStringAsFixed(1);
+          _textControllers!.oZ.text = _controlValues.oZ.toStringAsFixed(1);
+          _textControllers!.theta.text = _controlValues.theta.toStringAsFixed(1);
+        }
+        setState(() {});
+      }
+    } catch (e) {
+      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.toString());
+    } finally {
+      if (mounted) {
+        _isLoading = false;
+      }
+    }
   }
 
   Future<void> _updatePose() async {
@@ -109,6 +132,8 @@ class _PoseWidgetState extends State<PoseWidget> {
   }
 
   void _updateControlValue(String axis, TextEditingController textController, double value) {
+    if (!mounted || _textControllers == null) return;
+
     setState(() {
       switch (axis) {
         case 'x':
@@ -162,12 +187,16 @@ class _PoseWidgetState extends State<PoseWidget> {
                       controller: _textControllers!.x,
                       min: _minPosition,
                       max: _maxPosition,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'x',
-                        _textControllers!.x,
-                        newValue.clamp(_minPosition, _maxPosition),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'x',
+                          _textControllers!.x,
+                          newValue.clamp(_minPosition, _maxPosition),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                     _BuildJointControlRow(
                       label: 'Y',
@@ -175,12 +204,16 @@ class _PoseWidgetState extends State<PoseWidget> {
                       controller: _textControllers!.y,
                       min: _minPosition,
                       max: _maxPosition,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'y',
-                        _textControllers!.y,
-                        newValue.clamp(_minPosition, _maxPosition),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'y',
+                          _textControllers!.y,
+                          newValue.clamp(_minPosition, _maxPosition),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                     _BuildJointControlRow(
                       label: 'Z',
@@ -188,51 +221,67 @@ class _PoseWidgetState extends State<PoseWidget> {
                       controller: _textControllers!.z,
                       min: _minPosition,
                       max: _maxPosition,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'z',
-                        _textControllers!.z,
-                        newValue.clamp(_minPosition, _maxPosition),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'z',
+                          _textControllers!.z,
+                          newValue.clamp(_minPosition, _maxPosition),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                     _BuildJointControlRow(
                       label: 'OX',
-                      value: _controlValues.oX.roundToDouble(),
+                      value: _controlValues.oX,
                       controller: _textControllers!.oX,
                       min: _minOrientation,
                       max: _maxOrientation,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'oX',
-                        _textControllers!.oX,
-                        newValue.clamp(_minOrientation, _maxOrientation),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'oX',
+                          _textControllers!.oX,
+                          newValue.clamp(_minOrientation, _maxOrientation),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                     _BuildJointControlRow(
                       label: 'OY',
-                      value: _controlValues.oY.roundToDouble(),
+                      value: _controlValues.oY,
                       controller: _textControllers!.oY,
                       min: _minOrientation,
                       max: _maxOrientation,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'oY',
-                        _textControllers!.oY,
-                        newValue.clamp(_minOrientation, _maxOrientation),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'oY',
+                          _textControllers!.oY,
+                          newValue.clamp(_minOrientation, _maxOrientation),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                     _BuildJointControlRow(
                       label: 'OZ',
-                      value: _controlValues.oZ.roundToDouble(),
+                      value: _controlValues.oZ,
                       controller: _textControllers!.oZ,
                       min: _minOrientation,
                       max: _maxOrientation,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'oZ',
-                        _textControllers!.oZ,
-                        newValue.clamp(_minOrientation, _maxOrientation),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'oZ',
+                          _textControllers!.oZ,
+                          newValue.clamp(_minOrientation, _maxOrientation),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                     _BuildJointControlRow(
                       label: 'Theta',
@@ -240,12 +289,16 @@ class _PoseWidgetState extends State<PoseWidget> {
                       controller: _textControllers!.theta,
                       min: _minTheta,
                       max: _maxTheta,
-                      onValueChanged: (newValue) => _updateControlValue(
-                        'theta',
-                        _textControllers!.theta,
-                        newValue.clamp(_minTheta, _maxTheta),
-                      ),
-                      onValueChangedEnd: (newValue) async => _isLive ? _updatePose() : () {},
+                      onValueChanged: (newValue) {
+                        _updateControlValue(
+                          'theta',
+                          _textControllers!.theta,
+                          newValue.clamp(_minTheta, _maxTheta),
+                        );
+                        if (_isLive) {
+                          _updatePose();
+                        }
+                      },
                     ),
                   ],
                 ),
@@ -265,13 +318,6 @@ class _PoseWidgetState extends State<PoseWidget> {
                     ),
                     Text(
                       'Live',
-                    ),
-                    Tooltip(
-                      message: 'In Live mode, pose will update \non release of the slider',
-                      textAlign: TextAlign.center,
-                      triggerMode: TooltipTriggerMode.tap,
-                      preferBelow: false,
-                      child: Icon(Icons.info_outline),
                     ),
                     Spacer(),
                     OutlinedButton.icon(
@@ -294,7 +340,6 @@ class _BuildJointControlRow extends StatelessWidget {
   final double min;
   final double max;
   final ValueChanged<double> onValueChanged;
-  final ValueChanged<double> onValueChangedEnd;
 
   const _BuildJointControlRow({
     required this.label,
@@ -303,7 +348,6 @@ class _BuildJointControlRow extends StatelessWidget {
     required this.min,
     required this.max,
     required this.onValueChanged,
-    required this.onValueChangedEnd,
   });
 
   @override
@@ -328,28 +372,25 @@ class _BuildJointControlRow extends StatelessWidget {
                   textAlign: TextAlign.center,
                   keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
                   inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(r'^-?\d+\.?\d{0,1}')),
+                    FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*')),
                   ],
                   onSubmitted: (newValue) {
                     final parsedValue = double.tryParse(newValue) ?? value;
                     onValueChanged(parsedValue);
-                    onValueChangedEnd(parsedValue);
                   },
                 ),
               ),
               Spacer(),
               IconButton(
                 icon: const Icon(Icons.remove),
-                onPressed: () async {
+                onPressed: () {
                   onValueChanged(value - (max == 1 ? 0.1 : 1.0));
-                  onValueChangedEnd(value);
                 },
               ),
               IconButton(
                 icon: const Icon(Icons.add),
-                onPressed: () async {
+                onPressed: () {
                   onValueChanged(value + (max == 1 ? 0.1 : 1.0));
-                  onValueChangedEnd(value);
                 },
               ),
             ],
@@ -359,12 +400,10 @@ class _BuildJointControlRow extends StatelessWidget {
               SizedBox(width: 35),
               Expanded(
                 child: Slider(
-                  value: value,
+                  value: value.clamp(min, max),
                   min: min,
                   max: max,
-                  label: value.toStringAsFixed(1),
                   onChanged: onValueChanged,
-                  onChangeEnd: onValueChangedEnd,
                 ),
               ),
             ],
