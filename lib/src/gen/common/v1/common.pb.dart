@@ -356,7 +356,7 @@ class Orientation extends $pb.GeneratedMessage {
   void clearTheta() => clearField(4);
 }
 
-/// PoseInFrame contains a pose and the and the reference frame in which it was observed
+/// PoseInFrame contains a pose and the reference frame in which it was observed
 class PoseInFrame extends $pb.GeneratedMessage {
   factory PoseInFrame({
     $core.String? referenceFrame,

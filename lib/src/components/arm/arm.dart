@@ -79,13 +79,13 @@ abstract class Arm extends Resource {
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#ismoving).
   Future<bool> isMoving();
 
-  /// Get the kinematics data associated with the [Gripper]
+  /// Get the kinematics data associated with the [Arm]
   ///
   /// ```
-  /// var kinematics = await myGripper.getKinematics();
+  /// var kinematics = await myArm.getKinematics();
   /// ```
   ///
-  /// For more information, see [Gripper component](https://docs.viam.com/dev/reference/apis/components/gripper/#getkinematics).
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getkinematics).
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Arm] with the given [name].

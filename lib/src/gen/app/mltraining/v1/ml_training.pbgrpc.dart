@@ -49,6 +49,10 @@ class MLTrainingServiceClient extends $grpc.Client {
       '/viam.app.mltraining.v1.MLTrainingService/GetTrainingJobLogs',
       ($10.GetTrainingJobLogsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $10.GetTrainingJobLogsResponse.fromBuffer(value));
+  static final _$listSupportedContainers = $grpc.ClientMethod<$10.ListSupportedContainersRequest, $10.ListSupportedContainersResponse>(
+      '/viam.app.mltraining.v1.MLTrainingService/ListSupportedContainers',
+      ($10.ListSupportedContainersRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.ListSupportedContainersResponse.fromBuffer(value));
 
   MLTrainingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -82,6 +86,10 @@ class MLTrainingServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$10.GetTrainingJobLogsResponse> getTrainingJobLogs($10.GetTrainingJobLogsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTrainingJobLogs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$10.ListSupportedContainersResponse> listSupportedContainers($10.ListSupportedContainersRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listSupportedContainers, request, options: options);
   }
 }
 
@@ -139,6 +147,13 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $10.GetTrainingJobLogsRequest.fromBuffer(value),
         ($10.GetTrainingJobLogsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.ListSupportedContainersRequest, $10.ListSupportedContainersResponse>(
+        'ListSupportedContainers',
+        listSupportedContainers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $10.ListSupportedContainersRequest.fromBuffer(value),
+        ($10.ListSupportedContainersResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$10.SubmitTrainingJobResponse> submitTrainingJob_Pre($grpc.ServiceCall call, $async.Future<$10.SubmitTrainingJobRequest> request) async {
@@ -169,6 +184,10 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
     return getTrainingJobLogs(call, await request);
   }
 
+  $async.Future<$10.ListSupportedContainersResponse> listSupportedContainers_Pre($grpc.ServiceCall call, $async.Future<$10.ListSupportedContainersRequest> request) async {
+    return listSupportedContainers(call, await request);
+  }
+
   $async.Future<$10.SubmitTrainingJobResponse> submitTrainingJob($grpc.ServiceCall call, $10.SubmitTrainingJobRequest request);
   $async.Future<$10.SubmitCustomTrainingJobResponse> submitCustomTrainingJob($grpc.ServiceCall call, $10.SubmitCustomTrainingJobRequest request);
   $async.Future<$10.GetTrainingJobResponse> getTrainingJob($grpc.ServiceCall call, $10.GetTrainingJobRequest request);
@@ -176,4 +195,5 @@ abstract class MLTrainingServiceBase extends $grpc.Service {
   $async.Future<$10.CancelTrainingJobResponse> cancelTrainingJob($grpc.ServiceCall call, $10.CancelTrainingJobRequest request);
   $async.Future<$10.DeleteCompletedTrainingJobResponse> deleteCompletedTrainingJob($grpc.ServiceCall call, $10.DeleteCompletedTrainingJobRequest request);
   $async.Future<$10.GetTrainingJobLogsResponse> getTrainingJobLogs($grpc.ServiceCall call, $10.GetTrainingJobLogsRequest request);
+  $async.Future<$10.ListSupportedContainersResponse> listSupportedContainers($grpc.ServiceCall call, $10.ListSupportedContainersRequest request);
 }

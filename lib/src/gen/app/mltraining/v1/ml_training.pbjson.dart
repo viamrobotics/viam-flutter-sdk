@@ -126,6 +126,7 @@ const SubmitCustomTrainingJobRequest$json = {
     {'1': 'model_name', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'modelName'},
     {'1': 'model_version', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'modelVersion'},
     {'1': 'arguments', '3': 7, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.SubmitCustomTrainingJobRequest.ArgumentsEntry', '10': 'arguments'},
+    {'1': 'container_version', '3': 8, '4': 1, '5': 9, '10': 'containerVersion'},
   ],
   '3': [SubmitCustomTrainingJobRequest_ArgumentsEntry$json],
 };
@@ -154,8 +155,8 @@ final $typed_data.Uint8List submitCustomTrainingJobRequestDescriptor = $convert.
     '4YBSABKAlCLpqEngMpYnNvbjoibW9kZWxfdmVyc2lvbiIganNvbjoibW9kZWxfdmVyc2lvbiJS'
     'DG1vZGVsVmVyc2lvbhJjCglhcmd1bWVudHMYByADKAsyRS52aWFtLmFwcC5tbHRyYWluaW5nLn'
     'YxLlN1Ym1pdEN1c3RvbVRyYWluaW5nSm9iUmVxdWVzdC5Bcmd1bWVudHNFbnRyeVIJYXJndW1l'
-    'bnRzGjwKDkFyZ3VtZW50c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUg'
-    'V2YWx1ZToCOAE=');
+    'bnRzEisKEWNvbnRhaW5lcl92ZXJzaW9uGAggASgJUhBjb250YWluZXJWZXJzaW9uGjwKDkFyZ3'
+    'VtZW50c0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use submitCustomTrainingJobResponseDescriptor instead')
 const SubmitCustomTrainingJobResponse$json = {
@@ -245,6 +246,7 @@ const TrainingJobMetadata$json = {
     {'1': 'synced_model_id', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'syncedModelId'},
     {'1': 'tags', '3': 16, '4': 3, '5': 9, '8': {}, '10': 'tags'},
     {'1': 'arguments', '3': 21, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.TrainingJobMetadata.ArgumentsEntry', '8': {}, '10': 'arguments'},
+    {'1': 'container_version', '3': 22, '4': 1, '5': 9, '8': {}, '10': 'containerVersion'},
   ],
   '3': [TrainingJobMetadata_ArgumentsEntry$json],
   '9': [
@@ -299,9 +301,11 @@ final $typed_data.Uint8List trainingJobMetadataDescriptor = $convert.base64Decod
     'aWQiUg1zeW5jZWRNb2RlbElkEjAKBHRhZ3MYECADKAlCHJqEngMXYnNvbjoidGFncyIganNvbj'
     'oidGFncyJSBHRhZ3MSgAEKCWFyZ3VtZW50cxgVIAMoCzI6LnZpYW0uYXBwLm1sdHJhaW5pbmcu'
     'djEuVHJhaW5pbmdKb2JNZXRhZGF0YS5Bcmd1bWVudHNFbnRyeUImmoSeAyFic29uOiJhcmd1bW'
-    'VudHMiIGpzb246ImFyZ3VtZW50cyJSCWFyZ3VtZW50cxo8Cg5Bcmd1bWVudHNFbnRyeRIQCgNr'
-    'ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBSgQIARACSgQIBhAHUgdyZX'
-    'F1ZXN0Ugp1c2VyX2VtYWls');
+    'VudHMiIGpzb246ImFyZ3VtZW50cyJSCWFyZ3VtZW50cxJjChFjb250YWluZXJfdmVyc2lvbhgW'
+    'IAEoCUI2moSeAzFic29uOiJjb250YWluZXJfdmVyc2lvbiIganNvbjoiY29udGFpbmVyX3Zlcn'
+    'Npb24iUhBjb250YWluZXJWZXJzaW9uGjwKDkFyZ3VtZW50c0VudHJ5EhAKA2tleRgBIAEoCVID'
+    'a2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAFKBAgBEAJKBAgGEAdSB3JlcXVlc3RSCnVzZX'
+    'JfZW1haWw=');
 
 @$core.Deprecated('Use cancelTrainingJobRequestDescriptor instead')
 const CancelTrainingJobRequest$json = {
@@ -392,4 +396,58 @@ final $typed_data.Uint8List getTrainingJobLogsResponseDescriptor = $convert.base
     'ChpHZXRUcmFpbmluZ0pvYkxvZ3NSZXNwb25zZRI/CgRsb2dzGAEgAygLMisudmlhbS5hcHAubW'
     'x0cmFpbmluZy52MS5UcmFpbmluZ0pvYkxvZ0VudHJ5UgRsb2dzEiYKD25leHRfcGFnZV90b2tl'
     'bhgCIAEoCVINbmV4dFBhZ2VUb2tlbg==');
+
+@$core.Deprecated('Use listSupportedContainersRequestDescriptor instead')
+const ListSupportedContainersRequest$json = {
+  '1': 'ListSupportedContainersRequest',
+};
+
+/// Descriptor for `ListSupportedContainersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSupportedContainersRequestDescriptor = $convert.base64Decode(
+    'Ch5MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listSupportedContainersResponseDescriptor instead')
+const ListSupportedContainersResponse$json = {
+  '1': 'ListSupportedContainersResponse',
+  '2': [
+    {'1': 'container_map', '3': 1, '4': 3, '5': 11, '6': '.viam.app.mltraining.v1.ListSupportedContainersResponse.ContainerMapEntry', '10': 'containerMap'},
+  ],
+  '3': [ListSupportedContainersResponse_ContainerMapEntry$json],
+};
+
+@$core.Deprecated('Use listSupportedContainersResponseDescriptor instead')
+const ListSupportedContainersResponse_ContainerMapEntry$json = {
+  '1': 'ContainerMapEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.viam.app.mltraining.v1.Container', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `ListSupportedContainersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSupportedContainersResponseDescriptor = $convert.base64Decode(
+    'Ch9MaXN0U3VwcG9ydGVkQ29udGFpbmVyc1Jlc3BvbnNlEm4KDWNvbnRhaW5lcl9tYXAYASADKA'
+    'sySS52aWFtLmFwcC5tbHRyYWluaW5nLnYxLkxpc3RTdXBwb3J0ZWRDb250YWluZXJzUmVzcG9u'
+    'c2UuQ29udGFpbmVyTWFwRW50cnlSDGNvbnRhaW5lck1hcBpiChFDb250YWluZXJNYXBFbnRyeR'
+    'IQCgNrZXkYASABKAlSA2tleRI3CgV2YWx1ZRgCIAEoCzIhLnZpYW0uYXBwLm1sdHJhaW5pbmcu'
+    'djEuQ29udGFpbmVyUgV2YWx1ZToCOAE=');
+
+@$core.Deprecated('Use containerDescriptor instead')
+const Container$json = {
+  '1': 'Container',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'uri', '3': 2, '4': 1, '5': 9, '10': 'uri'},
+    {'1': 'framework', '3': 3, '4': 1, '5': 9, '10': 'framework'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'eol', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'eol'},
+  ],
+};
+
+/// Descriptor for `Container`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List containerDescriptor = $convert.base64Decode(
+    'CglDb250YWluZXISEAoDa2V5GAEgASgJUgNrZXkSEAoDdXJpGAIgASgJUgN1cmkSHAoJZnJhbW'
+    'V3b3JrGAMgASgJUglmcmFtZXdvcmsSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9u'
+    'EiwKA2VvbBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2VvbA==');
 
