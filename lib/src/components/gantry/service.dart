@@ -75,4 +75,10 @@ class GantryService extends GantryServiceBase {
     // TODO: implement getGeometries
     throw UnimplementedError();
   }
+
+  @override
+  Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) {
+    // TODO: implement getKinematics
+    throw UnimplementedError();
+  }
 }
