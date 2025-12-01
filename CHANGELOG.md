@@ -1,11 +1,14 @@
 # Changelog
 
-## [v0.12.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.12.0) (2025-11-17)
+## [v0.12.1](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.12.1) (2025-12-01)
 
-[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.11.0...v0.12.0)
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.12.0...v0.12.1)
 
 **Merged pull requests:**
 
+- \[APP-9815\] Part 2: Viam Mobile - Displaying sensor data improvements [\#457](https://github.com/viamrobotics/viam-flutter-sdk/pull/457) ([jckras](https://github.com/jckras))
+- v0.12.0 [\#454](https://github.com/viamrobotics/viam-flutter-sdk/pull/454) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Automated Protos Update [\#453](https://github.com/viamrobotics/viam-flutter-sdk/pull/453) ([viambot](https://github.com/viambot))
 - Bump hotspot provisioning widget version to 0.0.24 [\#452](https://github.com/viamrobotics/viam-flutter-sdk/pull/452) ([jckras](https://github.com/jckras))
 - \[APP-9896\] fix example app for android in flutter sdk [\#451](https://github.com/viamrobotics/viam-flutter-sdk/pull/451) ([martha-johnston](https://github.com/martha-johnston))
 - Bump hotspot provisioning widget version [\#450](https://github.com/viamrobotics/viam-flutter-sdk/pull/450) ([jckras](https://github.com/jckras))
@@ -161,6 +164,10 @@
 - \[RSDK-7568\] Add get properties to vision [\#285](https://github.com/viamrobotics/viam-flutter-sdk/pull/285) ([njooma](https://github.com/njooma))
 - Improved error handling in sessions [\#284](https://github.com/viamrobotics/viam-flutter-sdk/pull/284) ([njooma](https://github.com/njooma))
 - Automated Protos Update [\#282](https://github.com/viamrobotics/viam-flutter-sdk/pull/282) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [v0.12.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.12.0) (2025-11-17)
+
+[Full Changelog](https://github.com/viamrobotics/viam-flutter-sdk/compare/v0.11.0...v0.12.0)
 
 ## [v0.11.0](https://github.com/viamrobotics/viam-flutter-sdk/tree/v0.11.0) (2025-10-27)
 
