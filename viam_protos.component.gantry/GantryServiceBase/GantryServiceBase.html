@@ -112,6 +112,13 @@
       false,
       ($core.List&lt;$core.int&gt; value) =&gt; $16.DoCommandRequest.fromBuffer(value),
       ($16.DoCommandResponse value) =&gt; value.writeToBuffer()));
+  $addMethod($grpc.ServiceMethod&lt;$16.GetKinematicsRequest, $16.GetKinematicsResponse&gt;(
+      &#39;GetKinematics&#39;,
+      getKinematics_Pre,
+      false,
+      false,
+      ($core.List&lt;$core.int&gt; value) =&gt; $16.GetKinematicsRequest.fromBuffer(value),
+      ($16.GetKinematicsResponse value) =&gt; value.writeToBuffer()));
   $addMethod($grpc.ServiceMethod&lt;$16.GetGeometriesRequest, $16.GetGeometriesResponse&gt;(
       &#39;GetGeometries&#39;,
       getGeometries_Pre,
