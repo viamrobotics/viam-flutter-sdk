@@ -340,6 +340,7 @@ class JobConfig extends $pb.GeneratedMessage {
     $core.String? resource,
     $core.String? method,
     $51.Struct? command,
+    LogConfiguration? logConfiguration,
   }) {
     final $result = create();
     if (name != null) {
@@ -357,6 +358,9 @@ class JobConfig extends $pb.GeneratedMessage {
     if (command != null) {
       $result.command = command;
     }
+    if (logConfiguration != null) {
+      $result.logConfiguration = logConfiguration;
+    }
     return $result;
   }
   JobConfig._() : super();
@@ -369,6 +373,7 @@ class JobConfig extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'resource')
     ..aOS(4, _omitFieldNames ? '' : 'method')
     ..aOM<$51.Struct>(5, _omitFieldNames ? '' : 'command', subBuilder: $51.Struct.create)
+    ..aOM<LogConfiguration>(6, _omitFieldNames ? '' : 'logConfiguration', subBuilder: LogConfiguration.create)
     ..hasRequiredFields = false
   ;
 
@@ -446,6 +451,18 @@ class JobConfig extends $pb.GeneratedMessage {
   void clearCommand() => clearField(5);
   @$pb.TagNumber(5)
   $51.Struct ensureCommand() => $_ensure(4);
+
+  /// configuration for this job's logger.
+  @$pb.TagNumber(6)
+  LogConfiguration get logConfiguration => $_getN(5);
+  @$pb.TagNumber(6)
+  set logConfiguration(LogConfiguration v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLogConfiguration() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLogConfiguration() => clearField(6);
+  @$pb.TagNumber(6)
+  LogConfiguration ensureLogConfiguration() => $_ensure(5);
 }
 
 /// Valid location secret that can be used for authentication to the robot.
