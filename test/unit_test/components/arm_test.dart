@@ -18,6 +18,7 @@ class FakeArm extends Arm {
     ..z = 0;
   Map<String, dynamic>? extra;
   Map<String, Mesh> arm3DModels = {};
+  Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
 
   @override
   String name;
@@ -71,6 +72,12 @@ class FakeArm extends Arm {
   Future<Map<String, Mesh>> get3DModels({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return arm3DModels;
+  }
+
+  @override
+  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return armKinematics;
   }
 }
 
@@ -145,6 +152,12 @@ void main() {
       expect(arm.extra, null);
       await arm.stop(extra: {'foo': 'bar'});
       expect(arm.extra, {'foo': 'bar'});
+    });
+
+    test('getKinematics', () async {
+      final kinematics = await arm.getKinematics();
+      expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+      expect(kinematics.raw, [1, 2, 3]);
     });
   });
 
@@ -264,6 +277,14 @@ void main() {
           ..extra = {'foo': 'bar'}.toStruct());
         expect(arm.extra, {'foo': 'bar'});
       });
+
+      test('getKinematics', () async {
+        final client = ArmServiceClient(channel);
+        final request = GetKinematicsRequest()..name = name;
+        final response = await client.getKinematics(request);
+        expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+        expect(response.kinematicsData, [1, 2, 3]);
+      });
     });
 
     group('Arm Client Tests', () {
@@ -337,6 +358,12 @@ void main() {
         await client.stop(extra: {'foo': 'bar'});
         expect(arm.extra, {'foo': 'bar'});
       });
+    });
+    test('getKinematics', () async {
+      final client = ArmClient(name, channel);
+      final kinematics = await client.getKinematics();
+      expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+      expect(kinematics.raw, [1, 2, 3]);
     });
   });
 }

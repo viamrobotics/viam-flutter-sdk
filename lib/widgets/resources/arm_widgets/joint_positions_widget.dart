@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../../src/utils.dart';
 import '../../../viam_sdk.dart' as viam;
 import '../arm.dart';
 
@@ -20,6 +21,7 @@ class JointPositionsWidget extends StatefulWidget {
 class _JointPositionsWidgetState extends State<JointPositionsWidget> {
   List<double> _jointValues = [];
   bool _isLive = false;
+  bool _isLoading = false;
   List<TextEditingController> _textControllers = [];
 
   @override
@@ -39,21 +41,39 @@ class _JointPositionsWidgetState extends State<JointPositionsWidget> {
   }
 
   Future<void> _getJointPositions() async {
-    for (final controller in _textControllers) {
-      controller.dispose();
-    }
+    if (_isLoading) return;
+    _isLoading = true;
+    try {
+      _jointValues = await widget.arm.jointPositions();
 
-    _jointValues = await widget.arm.jointPositions();
-    _textControllers = List.generate(
-      _jointValues.length,
-      (index) => TextEditingController(text: _jointValues[index].toStringAsFixed(1)),
-    );
-    if (mounted) {
-      setState(() {});
+      if (mounted) {
+        if (_textControllers.isEmpty || _textControllers.length != _jointValues.length) {
+          for (final controller in _textControllers) {
+            controller.dispose();
+          }
+          _textControllers = List.generate(
+            _jointValues.length,
+            (index) => TextEditingController(text: _jointValues[index].toStringAsFixed(1)),
+          );
+        } else {
+          for (int i = 0; i < _jointValues.length; i++) {
+            _textControllers[i].text = _jointValues[i].toStringAsFixed(1);
+          }
+        }
+        setState(() {});
+      }
+    } catch (e) {
+      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.toString());
+    } finally {
+      if (mounted) {
+        _isLoading = false;
+      }
     }
   }
 
   void _updateJointValue(int index, double value) {
+    if (!mounted || _textControllers.isEmpty || index >= _textControllers.length) return;
+
     const double minPosition = -359.0;
     const double maxPosition = 359.0;
     final clampedValue = value.clamp(minPosition, maxPosition);
@@ -187,7 +207,7 @@ class _BuildJointControlRow extends StatelessWidget {
                   textAlign: TextAlign.center,
                   keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
                   inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,1}')),
+                    FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*')),
                   ],
                   onSubmitted: onSubmitted,
                 ),
