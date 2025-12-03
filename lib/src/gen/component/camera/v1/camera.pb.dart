@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../app/data/v1/data.pb.dart' as $4;
 import '../../../common/v1/common.pb.dart' as $16;
 import '../../../google/protobuf/struct.pb.dart' as $51;
 import 'camera.pbenum.dart';
@@ -314,6 +315,7 @@ class Image extends $pb.GeneratedMessage {
     Format? format,
     $core.List<$core.int>? image,
     $core.String? mimeType,
+    $4.Annotations? annotations,
   }) {
     final $result = create();
     if (sourceName != null) {
@@ -328,6 +330,9 @@ class Image extends $pb.GeneratedMessage {
     if (mimeType != null) {
       $result.mimeType = mimeType;
     }
+    if (annotations != null) {
+      $result.annotations = annotations;
+    }
     return $result;
   }
   Image._() : super();
@@ -339,6 +344,7 @@ class Image extends $pb.GeneratedMessage {
     ..e<Format>(2, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: Format.FORMAT_UNSPECIFIED, valueOf: Format.valueOf, enumValues: Format.values)
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'image', $pb.PbFieldType.OY)
     ..aOS(4, _omitFieldNames ? '' : 'mimeType')
+    ..aOM<$4.Annotations>(5, _omitFieldNames ? '' : 'annotations', subBuilder: $4.Annotations.create)
     ..hasRequiredFields = false
   ;
 
@@ -402,6 +408,18 @@ class Image extends $pb.GeneratedMessage {
   $core.bool hasMimeType() => $_has(3);
   @$pb.TagNumber(4)
   void clearMimeType() => clearField(4);
+
+  /// annotations can be used to store additional information about the image
+  @$pb.TagNumber(5)
+  $4.Annotations get annotations => $_getN(4);
+  @$pb.TagNumber(5)
+  set annotations($4.Annotations v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAnnotations() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAnnotations() => clearField(5);
+  @$pb.TagNumber(5)
+  $4.Annotations ensureAnnotations() => $_ensure(4);
 }
 
 class RenderFrameRequest extends $pb.GeneratedMessage {

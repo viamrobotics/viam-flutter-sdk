@@ -1574,6 +1574,7 @@ const GetRobotPartLogsRequest$json = {
     {'1': 'end', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 3, '10': 'end', '17': true},
     {'1': 'limit', '3': 8, '4': 1, '5': 3, '9': 4, '10': 'limit', '17': true},
     {'1': 'source', '3': 9, '4': 1, '5': 9, '9': 5, '10': 'source', '17': true},
+    {'1': 'user_facing_only', '3': 10, '4': 1, '5': 8, '9': 6, '10': 'userFacingOnly', '17': true},
   ],
   '8': [
     {'1': '_filter'},
@@ -1582,6 +1583,7 @@ const GetRobotPartLogsRequest$json = {
     {'1': '_end'},
     {'1': '_limit'},
     {'1': '_source'},
+    {'1': '_user_facing_only'},
   ],
 };
 
@@ -1592,9 +1594,10 @@ final $typed_data.Uint8List getRobotPartLogsRequestDescriptor = $convert.base64D
     'cGFnZV90b2tlbhgEIAEoCUgBUglwYWdlVG9rZW6IAQESFgoGbGV2ZWxzGAUgAygJUgZsZXZlbH'
     'MSNQoFc3RhcnQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSBXN0YXJ0iAEB'
     'EjEKA2VuZBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIA1IDZW5kiAEBEhkKBW'
-    'xpbWl0GAggASgDSARSBWxpbWl0iAEBEhsKBnNvdXJjZRgJIAEoCUgFUgZzb3VyY2WIAQFCCQoH'
-    'X2ZpbHRlckINCgtfcGFnZV90b2tlbkIICgZfc3RhcnRCBgoEX2VuZEIICgZfbGltaXRCCQoHX3'
-    'NvdXJjZQ==');
+    'xpbWl0GAggASgDSARSBWxpbWl0iAEBEhsKBnNvdXJjZRgJIAEoCUgFUgZzb3VyY2WIAQESLQoQ'
+    'dXNlcl9mYWNpbmdfb25seRgKIAEoCEgGUg51c2VyRmFjaW5nT25seYgBAUIJCgdfZmlsdGVyQg'
+    '0KC19wYWdlX3Rva2VuQggKBl9zdGFydEIGCgRfZW5kQggKBl9saW1pdEIJCgdfc291cmNlQhMK'
+    'EV91c2VyX2ZhY2luZ19vbmx5');
 
 @$core.Deprecated('Use getRobotPartLogsResponseDescriptor instead')
 const GetRobotPartLogsResponse$json = {
