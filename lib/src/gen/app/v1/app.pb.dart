@@ -5817,6 +5817,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     $52.Timestamp? end,
     $fixnum.Int64? limit,
     $core.String? source,
+    $core.bool? userFacingOnly,
   }) {
     final $result = create();
     if (id != null) {
@@ -5847,6 +5848,9 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     if (source != null) {
       $result.source = source;
     }
+    if (userFacingOnly != null) {
+      $result.userFacingOnly = userFacingOnly;
+    }
     return $result;
   }
   GetRobotPartLogsRequest._() : super();
@@ -5863,6 +5867,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     ..aOM<$52.Timestamp>(7, _omitFieldNames ? '' : 'end', subBuilder: $52.Timestamp.create)
     ..aInt64(8, _omitFieldNames ? '' : 'limit')
     ..aOS(9, _omitFieldNames ? '' : 'source')
+    ..aOB(10, _omitFieldNames ? '' : 'userFacingOnly')
     ..hasRequiredFields = false
   ;
 
@@ -5971,6 +5976,15 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   $core.bool hasSource() => $_has(8);
   @$pb.TagNumber(9)
   void clearSource() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get userFacingOnly => $_getBF(9);
+  @$pb.TagNumber(10)
+  set userFacingOnly($core.bool v) { $_setBool(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasUserFacingOnly() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUserFacingOnly() => clearField(10);
 }
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
