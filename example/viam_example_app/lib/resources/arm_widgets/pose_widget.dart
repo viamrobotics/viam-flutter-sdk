@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
-
-import '../../../protos/common/common.dart';
-import '../../../src/utils.dart';
-import '../../../viam_sdk.dart' as viam;
-import '../arm.dart';
+import 'package:viam_example_app/resources/arm_screen.dart';
+import 'package:viam_sdk/protos/common/common.dart';
+import 'package:viam_sdk/viam_sdk.dart' as viam;
 
 class _TextControlStruct {
   TextEditingController x;
@@ -37,12 +35,13 @@ class _PoseWidgetState extends State<PoseWidget> {
   static const double _maxOrientation = 1.0;
   static const double _minTheta = -359.0;
   static const double _maxTheta = 359.0;
+  static const double _minPosition = -1000;
+  static const double _maxPosition = 1000.0;
 
   bool _isLive = false;
   bool _isGoingToPose = false;
   bool _isLoading = false;
   Pose _controlValues = Pose();
-  double _maxReach = 0.0;
 
   _TextControlStruct? _textControllers;
 
@@ -50,7 +49,6 @@ class _PoseWidgetState extends State<PoseWidget> {
   void initState() {
     super.initState();
     widget.updateNotifier.addListener(_getStartPose);
-    _getMaxReach();
     _getStartPose();
   }
 
@@ -72,10 +70,6 @@ class _PoseWidgetState extends State<PoseWidget> {
       _textControllers!.theta.dispose();
       _textControllers = null;
     }
-  }
-
-  Future<void> _getMaxReach() async {
-    _maxReach = await calculateMaxReach(widget.arm);
   }
 
   Future<void> _getStartPose() async {
@@ -108,7 +102,7 @@ class _PoseWidgetState extends State<PoseWidget> {
         setState(() {});
       }
     } catch (e) {
-      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.toString());
+      // if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.toString());
     } finally {
       if (mounted) {
         _isLoading = false;
@@ -125,7 +119,7 @@ class _PoseWidgetState extends State<PoseWidget> {
       await widget.arm.moveToPosition(_controlValues);
       widget.updateNotifier.armHasMoved();
     } on GrpcError catch (e) {
-      if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.message);
+      // if (mounted) await showErrorDialog(context, title: 'An error occurred', error: e.message);
     } finally {
       if (mounted) {
         setState(() {
@@ -189,13 +183,13 @@ class _PoseWidgetState extends State<PoseWidget> {
                       label: 'X',
                       value: _controlValues.x.roundToDouble(),
                       controller: _textControllers!.x,
-                      min: -_maxReach,
-                      max: _maxReach,
+                      min: _minPosition,
+                      max: _maxPosition,
                       onValueChanged: (newValue) {
                         _updateControlValue(
                           'x',
                           _textControllers!.x,
-                          newValue.clamp(-_maxReach, _maxReach),
+                          newValue.clamp(_minPosition, _maxPosition),
                         );
                         if (_isLive) {
                           _updatePose();
@@ -206,13 +200,13 @@ class _PoseWidgetState extends State<PoseWidget> {
                       label: 'Y',
                       value: _controlValues.y.roundToDouble(),
                       controller: _textControllers!.y,
-                      min: -_maxReach,
-                      max: _maxReach,
+                      min: _minPosition,
+                      max: _maxPosition,
                       onValueChanged: (newValue) {
                         _updateControlValue(
                           'y',
                           _textControllers!.y,
-                          newValue.clamp(-_maxReach, _maxReach),
+                          newValue.clamp(_minPosition, _maxPosition),
                         );
                         if (_isLive) {
                           _updatePose();
@@ -223,13 +217,13 @@ class _PoseWidgetState extends State<PoseWidget> {
                       label: 'Z',
                       value: _controlValues.z.roundToDouble(),
                       controller: _textControllers!.z,
-                      min: -_maxReach,
-                      max: _maxReach,
+                      min: _minPosition,
+                      max: _maxPosition,
                       onValueChanged: (newValue) {
                         _updateControlValue(
                           'z',
                           _textControllers!.z,
-                          newValue.clamp(-_maxReach, _maxReach),
+                          newValue.clamp(_minPosition, _maxPosition),
                         );
                         if (_isLive) {
                           _updatePose();

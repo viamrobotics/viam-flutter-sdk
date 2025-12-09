@@ -5,9 +5,11 @@
 /// and send commands to them.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
+import 'resources/arm_screen.dart';
 import 'resources/camera_screen.dart';
 import 'resources/motor_screen.dart';
 
@@ -58,11 +60,29 @@ class _RobotScreenState extends State<RobotScreen> {
     // Using the authenticated [Viam] the received as a parameter,
     // we can obtain a connection to the Robot.
     // There is a helpful convenience method on the [Viam] instance for this.
-    final robotClient = await widget._viam.getRobotClient(widget.robot);
-    setState(() {
-      client = robotClient;
-      _isLoading = false;
-    });
+    int retryCount = 0;
+    final maxRetries = 20;
+    while (retryCount < maxRetries) {
+      try {
+        final options = RobotClientOptions.withApiKey(dotenv.env['API_KEY_ID']!, dotenv.env['API_KEY']!);
+        options.dialOptions.attemptMdns = false;
+        final robotClient = await RobotClient.atAddress(dotenv.env['ROBOT_LOCATION']!, options);
+        setState(() {
+          client = robotClient;
+          _isLoading = false;
+        });
+      } catch (e) {
+        retryCount++;
+        await Future.delayed(Duration(seconds: 2));
+      }
+    }
+    // try {
+    //   final robotClient = await widget._viam.getRobotClient(widget.robot);
+    //   setState(() {
+    //     client = robotClient;
+    //     _isLoading = false;
+    //   });
+    // } catch (e) {}
   }
 
   /// A computed variable that returns the available [ResourceName]s of
@@ -81,6 +101,7 @@ class _RobotScreenState extends State<RobotScreen> {
     final availableResourceSubtypes = [
       Camera.subtype.resourceSubtype,
       Motor.subtype.resourceSubtype,
+      Arm.subtype.resourceSubtype,
     ];
     return availableResourceSubtypes.contains(rn.subtype);
   }
@@ -116,27 +137,52 @@ class _RobotScreenState extends State<RobotScreen> {
       // Similar to camera above, get the motor from the robot client.
       final motor = Motor.fromRobot(client, rn.name);
       Navigator.of(context).push(MaterialPageRoute(builder: (_) => MotorScreen(motor)));
+    } else if (rn.subtype == Arm.subtype.resourceSubtype) {
+      final arm = Arm.fromRobot(client, rn.name);
+      Navigator.of(context).push(MaterialPageRoute(builder: (_) => ViamArmWidget(arm: arm)));
     }
+  }
+
+  Widget getResourceWidget(ResourceName rName) {
+    if (rName.subtype == Arm.subtype.resourceSubtype) {
+      return Padding(padding: EdgeInsets.all(4), child: ViamArmWidget(arm: Arm.fromRobot(client, rName.name)));
+    }
+    return const Text(
+      'No screen selected!',
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(widget.robot.name)),
-        body: _isLoading
-            ? const Center(child: CircularProgressIndicator.adaptive())
-            : ListView.builder(
-                itemCount: client.resourceNames.length,
-                itemBuilder: (_, index) {
-                  final resourceName = _sortedResourceNames[index];
-                  return ListTile(
-                    title: Text(resourceName.name),
-                    subtitle: Text('${resourceName.namespace}:${resourceName.type}:${resourceName.subtype}'),
-                    // We only want to navigate to a resource if that resource is one that we implemented
-                    onTap: _isNavigable(resourceName) ? () => _navigateToResource(resourceName) : null,
-                    // Similarly, we only want to show the navigation icon if the resource is implemented
-                    trailing: _isNavigable(resourceName) ? const Icon(Icons.chevron_right) : null,
-                  );
-                }));
+      appBar: AppBar(
+        title: Text(widget.robot.name),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            for (int i = 0; i < _sortedResourceNames.length; i++)
+              _isNavigable(_sortedResourceNames[i])
+                  ? ExpansionTile(
+                      title: Text(_sortedResourceNames[i].name),
+                      subtitle:
+                          Text('${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
+                      children: [
+                        Container(
+                          color: Theme.of(context).colorScheme.surface,
+                          child: getResourceWidget(_sortedResourceNames[i]),
+                        )
+                      ],
+                    )
+                  : ListTile(
+                      title: Text(_sortedResourceNames[i].name),
+                      subtitle:
+                          Text('${_sortedResourceNames[i].namespace}:${_sortedResourceNames[i].type}:${_sortedResourceNames[i].subtype}'),
+                      enabled: false,
+                    )
+          ],
+        ),
+      ),
+    );
   }
 }
