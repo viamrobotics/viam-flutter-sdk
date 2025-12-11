@@ -99,6 +99,7 @@ const Image$json = {
     {'1': 'format', '3': 2, '4': 1, '5': 14, '6': '.viam.component.camera.v1.Format', '10': 'format'},
     {'1': 'image', '3': 3, '4': 1, '5': 12, '10': 'image'},
     {'1': 'mime_type', '3': 4, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'annotations', '3': 5, '4': 1, '5': 11, '6': '.viam.app.data.v1.Annotations', '10': 'annotations'},
   ],
 };
 
@@ -106,7 +107,8 @@ const Image$json = {
 final $typed_data.Uint8List imageDescriptor = $convert.base64Decode(
     'CgVJbWFnZRIfCgtzb3VyY2VfbmFtZRgBIAEoCVIKc291cmNlTmFtZRI4CgZmb3JtYXQYAiABKA'
     '4yIC52aWFtLmNvbXBvbmVudC5jYW1lcmEudjEuRm9ybWF0UgZmb3JtYXQSFAoFaW1hZ2UYAyAB'
-    'KAxSBWltYWdlEhsKCW1pbWVfdHlwZRgEIAEoCVIIbWltZVR5cGU=');
+    'KAxSBWltYWdlEhsKCW1pbWVfdHlwZRgEIAEoCVIIbWltZVR5cGUSPwoLYW5ub3RhdGlvbnMYBS'
+    'ABKAsyHS52aWFtLmFwcC5kYXRhLnYxLkFubm90YXRpb25zUgthbm5vdGF0aW9ucw==');
 
 @$core.Deprecated('Use renderFrameRequestDescriptor instead')
 const RenderFrameRequest$json = {

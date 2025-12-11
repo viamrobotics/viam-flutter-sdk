@@ -17,9 +17,86 @@ import '../../common/v1/common.pb.dart' as $16;
 import '../../google/protobuf/duration.pb.dart' as $50;
 import '../../google/protobuf/struct.pb.dart' as $51;
 import '../../google/protobuf/timestamp.pb.dart' as $52;
+import '../../opentelemetry/proto/trace/v1/trace.pb.dart' as $57;
 import 'robot.pbenum.dart';
 
 export 'robot.pbenum.dart';
+
+class SendTracesRequest extends $pb.GeneratedMessage {
+  factory SendTracesRequest({
+    $core.Iterable<$57.ResourceSpans>? resourceSpans,
+  }) {
+    final $result = create();
+    if (resourceSpans != null) {
+      $result.resourceSpans.addAll(resourceSpans);
+    }
+    return $result;
+  }
+  SendTracesRequest._() : super();
+  factory SendTracesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendTracesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendTracesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..pc<$57.ResourceSpans>(1, _omitFieldNames ? '' : 'resourceSpans', $pb.PbFieldType.PM, subBuilder: $57.ResourceSpans.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SendTracesRequest clone() => SendTracesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SendTracesRequest copyWith(void Function(SendTracesRequest) updates) => super.copyWith((message) => updates(message as SendTracesRequest)) as SendTracesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendTracesRequest create() => SendTracesRequest._();
+  SendTracesRequest createEmptyInstance() => create();
+  static $pb.PbList<SendTracesRequest> createRepeated() => $pb.PbList<SendTracesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SendTracesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendTracesRequest>(create);
+  static SendTracesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$57.ResourceSpans> get resourceSpans => $_getList(0);
+}
+
+class SendTracesResponse extends $pb.GeneratedMessage {
+  factory SendTracesResponse() => create();
+  SendTracesResponse._() : super();
+  factory SendTracesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendTracesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendTracesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.robot.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SendTracesResponse clone() => SendTracesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SendTracesResponse copyWith(void Function(SendTracesResponse) updates) => super.copyWith((message) => updates(message as SendTracesResponse)) as SendTracesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SendTracesResponse create() => SendTracesResponse._();
+  SendTracesResponse createEmptyInstance() => create();
+  static $pb.PbList<SendTracesResponse> createRepeated() => $pb.PbList<SendTracesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SendTracesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendTracesResponse>(create);
+  static SendTracesResponse? _defaultInstance;
+}
 
 class TunnelRequest extends $pb.GeneratedMessage {
   factory TunnelRequest({

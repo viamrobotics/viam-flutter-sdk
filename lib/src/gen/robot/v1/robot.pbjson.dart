@@ -29,6 +29,28 @@ final $typed_data.Uint8List peerConnectionTypeDescriptor = $convert.base64Decode
     'QQABIdChlQRUVSX0NPTk5FQ1RJT05fVFlQRV9HUlBDEAESHwobUEVFUl9DT05ORUNUSU9OX1RZ'
     'UEVfV0VCUlRDEAI=');
 
+@$core.Deprecated('Use sendTracesRequestDescriptor instead')
+const SendTracesRequest$json = {
+  '1': 'SendTracesRequest',
+  '2': [
+    {'1': 'resource_spans', '3': 1, '4': 3, '5': 11, '6': '.opentelemetry.proto.trace.v1.ResourceSpans', '10': 'resourceSpans'},
+  ],
+};
+
+/// Descriptor for `SendTracesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendTracesRequestDescriptor = $convert.base64Decode(
+    'ChFTZW5kVHJhY2VzUmVxdWVzdBJSCg5yZXNvdXJjZV9zcGFucxgBIAMoCzIrLm9wZW50ZWxlbW'
+    'V0cnkucHJvdG8udHJhY2UudjEuUmVzb3VyY2VTcGFuc1INcmVzb3VyY2VTcGFucw==');
+
+@$core.Deprecated('Use sendTracesResponseDescriptor instead')
+const SendTracesResponse$json = {
+  '1': 'SendTracesResponse',
+};
+
+/// Descriptor for `SendTracesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendTracesResponseDescriptor = $convert.base64Decode(
+    'ChJTZW5kVHJhY2VzUmVzcG9uc2U=');
+
 @$core.Deprecated('Use tunnelRequestDescriptor instead')
 const TunnelRequest$json = {
   '1': 'TunnelRequest',

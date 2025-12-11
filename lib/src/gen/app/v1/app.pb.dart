@@ -30,6 +30,8 @@ class Robot extends $pb.GeneratedMessage {
     $core.String? location,
     $52.Timestamp? lastAccess,
     $52.Timestamp? createdOn,
+    OnlineState? onlineState,
+    $fixnum.Int64? secondsSinceOnline,
   }) {
     final $result = create();
     if (id != null) {
@@ -47,6 +49,12 @@ class Robot extends $pb.GeneratedMessage {
     if (createdOn != null) {
       $result.createdOn = createdOn;
     }
+    if (onlineState != null) {
+      $result.onlineState = onlineState;
+    }
+    if (secondsSinceOnline != null) {
+      $result.secondsSinceOnline = secondsSinceOnline;
+    }
     return $result;
   }
   Robot._() : super();
@@ -59,6 +67,8 @@ class Robot extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'location')
     ..aOM<$52.Timestamp>(4, _omitFieldNames ? '' : 'lastAccess', subBuilder: $52.Timestamp.create)
     ..aOM<$52.Timestamp>(5, _omitFieldNames ? '' : 'createdOn', subBuilder: $52.Timestamp.create)
+    ..e<OnlineState>(6, _omitFieldNames ? '' : 'onlineState', $pb.PbFieldType.OE, defaultOrMaker: OnlineState.ONLINE_STATE_UNSPECIFIED, valueOf: OnlineState.valueOf, enumValues: OnlineState.values)
+    ..aInt64(7, _omitFieldNames ? '' : 'secondsSinceOnline')
     ..hasRequiredFields = false
   ;
 
@@ -131,6 +141,24 @@ class Robot extends $pb.GeneratedMessage {
   void clearCreatedOn() => clearField(5);
   @$pb.TagNumber(5)
   $52.Timestamp ensureCreatedOn() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  OnlineState get onlineState => $_getN(5);
+  @$pb.TagNumber(6)
+  set onlineState(OnlineState v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOnlineState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOnlineState() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get secondsSinceOnline => $_getI64(6);
+  @$pb.TagNumber(7)
+  set secondsSinceOnline($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSecondsSinceOnline() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSecondsSinceOnline() => clearField(7);
 }
 
 class RobotPart extends $pb.GeneratedMessage {
@@ -150,6 +178,8 @@ class RobotPart extends $pb.GeneratedMessage {
     $52.Timestamp? createdOn,
     $core.Iterable<SharedSecret>? secrets,
     $52.Timestamp? lastUpdated,
+    OnlineState? onlineState,
+    $fixnum.Int64? secondsSinceOnline,
   }) {
     final $result = create();
     if (id != null) {
@@ -197,6 +227,12 @@ class RobotPart extends $pb.GeneratedMessage {
     if (lastUpdated != null) {
       $result.lastUpdated = lastUpdated;
     }
+    if (onlineState != null) {
+      $result.onlineState = onlineState;
+    }
+    if (secondsSinceOnline != null) {
+      $result.secondsSinceOnline = secondsSinceOnline;
+    }
     return $result;
   }
   RobotPart._() : super();
@@ -219,6 +255,8 @@ class RobotPart extends $pb.GeneratedMessage {
     ..aOM<$52.Timestamp>(13, _omitFieldNames ? '' : 'createdOn', subBuilder: $52.Timestamp.create)
     ..pc<SharedSecret>(14, _omitFieldNames ? '' : 'secrets', $pb.PbFieldType.PM, subBuilder: SharedSecret.create)
     ..aOM<$52.Timestamp>(15, _omitFieldNames ? '' : 'lastUpdated', subBuilder: $52.Timestamp.create)
+    ..e<OnlineState>(16, _omitFieldNames ? '' : 'onlineState', $pb.PbFieldType.OE, defaultOrMaker: OnlineState.ONLINE_STATE_UNSPECIFIED, valueOf: OnlineState.valueOf, enumValues: OnlineState.values)
+    ..aInt64(17, _omitFieldNames ? '' : 'secondsSinceOnline')
     ..hasRequiredFields = false
   ;
 
@@ -386,6 +424,24 @@ class RobotPart extends $pb.GeneratedMessage {
   void clearLastUpdated() => clearField(15);
   @$pb.TagNumber(15)
   $52.Timestamp ensureLastUpdated() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  OnlineState get onlineState => $_getN(15);
+  @$pb.TagNumber(16)
+  set onlineState(OnlineState v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasOnlineState() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearOnlineState() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $fixnum.Int64 get secondsSinceOnline => $_getI64(16);
+  @$pb.TagNumber(17)
+  set secondsSinceOnline($fixnum.Int64 v) { $_setInt64(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasSecondsSinceOnline() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearSecondsSinceOnline() => clearField(17);
 }
 
 class RobotPartHistoryEntry extends $pb.GeneratedMessage {
@@ -5817,6 +5873,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     $52.Timestamp? end,
     $fixnum.Int64? limit,
     $core.String? source,
+    $core.bool? userFacingOnly,
   }) {
     final $result = create();
     if (id != null) {
@@ -5847,6 +5904,9 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     if (source != null) {
       $result.source = source;
     }
+    if (userFacingOnly != null) {
+      $result.userFacingOnly = userFacingOnly;
+    }
     return $result;
   }
   GetRobotPartLogsRequest._() : super();
@@ -5863,6 +5923,7 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
     ..aOM<$52.Timestamp>(7, _omitFieldNames ? '' : 'end', subBuilder: $52.Timestamp.create)
     ..aInt64(8, _omitFieldNames ? '' : 'limit')
     ..aOS(9, _omitFieldNames ? '' : 'source')
+    ..aOB(10, _omitFieldNames ? '' : 'userFacingOnly')
     ..hasRequiredFields = false
   ;
 
@@ -5971,6 +6032,15 @@ class GetRobotPartLogsRequest extends $pb.GeneratedMessage {
   $core.bool hasSource() => $_has(8);
   @$pb.TagNumber(9)
   void clearSource() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get userFacingOnly => $_getBF(9);
+  @$pb.TagNumber(10)
+  set userFacingOnly($core.bool v) { $_setBool(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasUserFacingOnly() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUserFacingOnly() => clearField(10);
 }
 
 class GetRobotPartLogsResponse extends $pb.GeneratedMessage {
@@ -9845,6 +9915,9 @@ class PartSummary extends $pb.GeneratedMessage {
     $core.Iterable<FragmentSummary>? fragments,
     $core.String? dnsName,
     $core.bool? isMainPart,
+    OnlineState? onlineState,
+    $fixnum.Int64? secondsSinceOnline,
+    $52.Timestamp? lastAccess,
   }) {
     final $result = create();
     if (partId != null) {
@@ -9880,6 +9953,15 @@ class PartSummary extends $pb.GeneratedMessage {
     if (isMainPart != null) {
       $result.isMainPart = isMainPart;
     }
+    if (onlineState != null) {
+      $result.onlineState = onlineState;
+    }
+    if (secondsSinceOnline != null) {
+      $result.secondsSinceOnline = secondsSinceOnline;
+    }
+    if (lastAccess != null) {
+      $result.lastAccess = lastAccess;
+    }
     return $result;
   }
   PartSummary._() : super();
@@ -9898,6 +9980,9 @@ class PartSummary extends $pb.GeneratedMessage {
     ..pc<FragmentSummary>(9, _omitFieldNames ? '' : 'fragments', $pb.PbFieldType.PM, subBuilder: FragmentSummary.create)
     ..aOS(10, _omitFieldNames ? '' : 'dnsName')
     ..aOB(11, _omitFieldNames ? '' : 'isMainPart')
+    ..e<OnlineState>(12, _omitFieldNames ? '' : 'onlineState', $pb.PbFieldType.OE, defaultOrMaker: OnlineState.ONLINE_STATE_UNSPECIFIED, valueOf: OnlineState.valueOf, enumValues: OnlineState.values)
+    ..aInt64(13, _omitFieldNames ? '' : 'secondsSinceOnline')
+    ..aOM<$52.Timestamp>(14, _omitFieldNames ? '' : 'lastAccess', subBuilder: $52.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -10020,6 +10105,35 @@ class PartSummary extends $pb.GeneratedMessage {
   $core.bool hasIsMainPart() => $_has(10);
   @$pb.TagNumber(11)
   void clearIsMainPart() => clearField(11);
+
+  @$pb.TagNumber(12)
+  OnlineState get onlineState => $_getN(11);
+  @$pb.TagNumber(12)
+  set onlineState(OnlineState v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasOnlineState() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearOnlineState() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get secondsSinceOnline => $_getI64(12);
+  @$pb.TagNumber(13)
+  set secondsSinceOnline($fixnum.Int64 v) { $_setInt64(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasSecondsSinceOnline() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearSecondsSinceOnline() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $52.Timestamp get lastAccess => $_getN(13);
+  @$pb.TagNumber(14)
+  set lastAccess($52.Timestamp v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasLastAccess() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLastAccess() => clearField(14);
+  @$pb.TagNumber(14)
+  $52.Timestamp ensureLastAccess() => $_ensure(13);
 }
 
 class ListRobotsResponse extends $pb.GeneratedMessage {

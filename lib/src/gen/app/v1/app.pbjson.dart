@@ -13,6 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use onlineStateDescriptor instead')
+const OnlineState$json = {
+  '1': 'OnlineState',
+  '2': [
+    {'1': 'ONLINE_STATE_UNSPECIFIED', '2': 0},
+    {'1': 'ONLINE_STATE_ONLINE', '2': 1},
+    {'1': 'ONLINE_STATE_OFFLINE', '2': 2},
+    {'1': 'ONLINE_STATE_AWAITING_SETUP', '2': 3},
+  ],
+};
+
+/// Descriptor for `OnlineState`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onlineStateDescriptor = $convert.base64Decode(
+    'CgtPbmxpbmVTdGF0ZRIcChhPTkxJTkVfU1RBVEVfVU5TUEVDSUZJRUQQABIXChNPTkxJTkVfU1'
+    'RBVEVfT05MSU5FEAESGAoUT05MSU5FX1NUQVRFX09GRkxJTkUQAhIfChtPTkxJTkVfU1RBVEVf'
+    'QVdBSVRJTkdfU0VUVVAQAw==');
+
 @$core.Deprecated('Use authenticationTypeDescriptor instead')
 const AuthenticationType$json = {
   '1': 'AuthenticationType',
@@ -196,6 +213,8 @@ const Robot$json = {
     {'1': 'location', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'location'},
     {'1': 'last_access', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastAccess'},
     {'1': 'created_on', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdOn'},
+    {'1': 'online_state', '3': 6, '4': 1, '5': 14, '6': '.viam.app.v1.OnlineState', '8': {}, '10': 'onlineState'},
+    {'1': 'seconds_since_online', '3': 7, '4': 1, '5': 3, '8': {}, '10': 'secondsSinceOnline'},
   ],
 };
 
@@ -207,7 +226,11 @@ final $typed_data.Uint8List robotDescriptor = $convert.base64Decode(
     'IIbG9jYXRpb24SZwoLbGFzdF9hY2Nlc3MYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
     'YW1wQiqahJ4DJWJzb246Imxhc3RfYWNjZXNzIiBqc29uOiJsYXN0X2FjY2VzcyJSCmxhc3RBY2'
     'Nlc3MSUQoKY3JlYXRlZF9vbhgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCFpqE'
-    'ngMRYnNvbjoiY3JlYXRlZF9vbiJSCWNyZWF0ZWRPbg==');
+    'ngMRYnNvbjoiY3JlYXRlZF9vbiJSCWNyZWF0ZWRPbhJzCgxvbmxpbmVfc3RhdGUYBiABKA4yGC'
+    '52aWFtLmFwcC52MS5PbmxpbmVTdGF0ZUI2moSeAzFic29uOiJvbmxpbmVfc3RhdGUiIGpzb246'
+    'Im9ubGluZV9zdGF0ZSxvbWl0ZW1wdHkiUgtvbmxpbmVTdGF0ZRJ4ChRzZWNvbmRzX3NpbmNlX2'
+    '9ubGluZRgHIAEoA0JGmoSeA0Fic29uOiJzZWNvbmRzX3NpbmNlX29ubGluZSIganNvbjoic2Vj'
+    'b25kc19zaW5jZV9vbmxpbmUsb21pdGVtcHR5IlISc2Vjb25kc1NpbmNlT25saW5l');
 
 @$core.Deprecated('Use robotPartDescriptor instead')
 const RobotPart$json = {
@@ -228,6 +251,8 @@ const RobotPart$json = {
     {'1': 'created_on', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'createdOn'},
     {'1': 'secrets', '3': 14, '4': 3, '5': 11, '6': '.viam.app.v1.SharedSecret', '8': {}, '10': 'secrets'},
     {'1': 'last_updated', '3': 15, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': {}, '10': 'lastUpdated'},
+    {'1': 'online_state', '3': 16, '4': 1, '5': 14, '6': '.viam.app.v1.OnlineState', '8': {}, '10': 'onlineState'},
+    {'1': 'seconds_since_online', '3': 17, '4': 1, '5': 3, '8': {}, '10': 'secondsSinceOnline'},
   ],
 };
 
@@ -252,7 +277,11 @@ final $typed_data.Uint8List robotPartDescriptor = $convert.base64Decode(
     'ZWRfb24iUgljcmVhdGVkT24SSAoHc2VjcmV0cxgOIAMoCzIZLnZpYW0uYXBwLnYxLlNoYXJlZF'
     'NlY3JldEITmoSeAw5ic29uOiJzZWNyZXRzIlIHc2VjcmV0cxJaCgxsYXN0X3VwZGF0ZWQYDyAB'
     'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQhuahJ4DFmJzb246Imxhc3RfdXBkYXRlZF'
-    '9hdCJSC2xhc3RVcGRhdGVk');
+    '9hdCJSC2xhc3RVcGRhdGVkEnMKDG9ubGluZV9zdGF0ZRgQIAEoDjIYLnZpYW0uYXBwLnYxLk9u'
+    'bGluZVN0YXRlQjaahJ4DMWJzb246Im9ubGluZV9zdGF0ZSIganNvbjoib25saW5lX3N0YXRlLG'
+    '9taXRlbXB0eSJSC29ubGluZVN0YXRlEngKFHNlY29uZHNfc2luY2Vfb25saW5lGBEgASgDQkaa'
+    'hJ4DQWJzb246InNlY29uZHNfc2luY2Vfb25saW5lIiBqc29uOiJzZWNvbmRzX3NpbmNlX29ubG'
+    'luZSxvbWl0ZW1wdHkiUhJzZWNvbmRzU2luY2VPbmxpbmU=');
 
 @$core.Deprecated('Use robotPartHistoryEntryDescriptor instead')
 const RobotPartHistoryEntry$json = {
@@ -1574,6 +1603,7 @@ const GetRobotPartLogsRequest$json = {
     {'1': 'end', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 3, '10': 'end', '17': true},
     {'1': 'limit', '3': 8, '4': 1, '5': 3, '9': 4, '10': 'limit', '17': true},
     {'1': 'source', '3': 9, '4': 1, '5': 9, '9': 5, '10': 'source', '17': true},
+    {'1': 'user_facing_only', '3': 10, '4': 1, '5': 8, '9': 6, '10': 'userFacingOnly', '17': true},
   ],
   '8': [
     {'1': '_filter'},
@@ -1582,6 +1612,7 @@ const GetRobotPartLogsRequest$json = {
     {'1': '_end'},
     {'1': '_limit'},
     {'1': '_source'},
+    {'1': '_user_facing_only'},
   ],
 };
 
@@ -1592,9 +1623,10 @@ final $typed_data.Uint8List getRobotPartLogsRequestDescriptor = $convert.base64D
     'cGFnZV90b2tlbhgEIAEoCUgBUglwYWdlVG9rZW6IAQESFgoGbGV2ZWxzGAUgAygJUgZsZXZlbH'
     'MSNQoFc3RhcnQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSBXN0YXJ0iAEB'
     'EjEKA2VuZBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIA1IDZW5kiAEBEhkKBW'
-    'xpbWl0GAggASgDSARSBWxpbWl0iAEBEhsKBnNvdXJjZRgJIAEoCUgFUgZzb3VyY2WIAQFCCQoH'
-    'X2ZpbHRlckINCgtfcGFnZV90b2tlbkIICgZfc3RhcnRCBgoEX2VuZEIICgZfbGltaXRCCQoHX3'
-    'NvdXJjZQ==');
+    'xpbWl0GAggASgDSARSBWxpbWl0iAEBEhsKBnNvdXJjZRgJIAEoCUgFUgZzb3VyY2WIAQESLQoQ'
+    'dXNlcl9mYWNpbmdfb25seRgKIAEoCEgGUg51c2VyRmFjaW5nT25seYgBAUIJCgdfZmlsdGVyQg'
+    '0KC19wYWdlX3Rva2VuQggKBl9zdGFydEIGCgRfZW5kQggKBl9saW1pdEIJCgdfc291cmNlQhMK'
+    'EV91c2VyX2ZhY2luZ19vbmx5');
 
 @$core.Deprecated('Use getRobotPartLogsResponseDescriptor instead')
 const GetRobotPartLogsResponse$json = {
@@ -2512,16 +2544,20 @@ const PartSummary$json = {
     {'1': 'part_id', '3': 1, '4': 1, '5': 9, '10': 'partId'},
     {'1': 'part_name', '3': 2, '4': 1, '5': 9, '10': 'partName'},
     {'1': 'is_main_part', '3': 11, '4': 1, '5': 8, '10': 'isMainPart'},
-    {'1': 'last_online', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastOnline', '17': true},
-    {'1': 'viam_server_version', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.ViamServerVersion', '9': 1, '10': 'viamServerVersion', '17': true},
-    {'1': 'viam_agent_version', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.ViamAgentVersion', '9': 2, '10': 'viamAgentVersion', '17': true},
-    {'1': 'os', '3': 6, '4': 1, '5': 9, '9': 3, '10': 'os', '17': true},
-    {'1': 'platform', '3': 7, '4': 1, '5': 9, '9': 4, '10': 'platform', '17': true},
-    {'1': 'public_ip_address', '3': 8, '4': 1, '5': 9, '9': 5, '10': 'publicIpAddress', '17': true},
-    {'1': 'dns_name', '3': 10, '4': 1, '5': 9, '9': 6, '10': 'dnsName', '17': true},
+    {'1': 'online_state', '3': 12, '4': 1, '5': 14, '6': '.viam.app.v1.OnlineState', '10': 'onlineState'},
+    {'1': 'seconds_since_online', '3': 13, '4': 1, '5': 3, '10': 'secondsSinceOnline'},
+    {'1': 'last_access', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'lastAccess', '17': true},
+    {'1': 'last_online', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 1, '10': 'lastOnline', '17': true},
+    {'1': 'viam_server_version', '3': 4, '4': 1, '5': 11, '6': '.viam.app.v1.ViamServerVersion', '9': 2, '10': 'viamServerVersion', '17': true},
+    {'1': 'viam_agent_version', '3': 5, '4': 1, '5': 11, '6': '.viam.app.v1.ViamAgentVersion', '9': 3, '10': 'viamAgentVersion', '17': true},
+    {'1': 'os', '3': 6, '4': 1, '5': 9, '9': 4, '10': 'os', '17': true},
+    {'1': 'platform', '3': 7, '4': 1, '5': 9, '9': 5, '10': 'platform', '17': true},
+    {'1': 'public_ip_address', '3': 8, '4': 1, '5': 9, '9': 6, '10': 'publicIpAddress', '17': true},
+    {'1': 'dns_name', '3': 10, '4': 1, '5': 9, '9': 7, '10': 'dnsName', '17': true},
     {'1': 'fragments', '3': 9, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentSummary', '10': 'fragments'},
   ],
   '8': [
+    {'1': '_last_access'},
     {'1': '_last_online'},
     {'1': '_viam_server_version'},
     {'1': '_viam_agent_version'},
@@ -2535,17 +2571,21 @@ const PartSummary$json = {
 /// Descriptor for `PartSummary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List partSummaryDescriptor = $convert.base64Decode(
     'CgtQYXJ0U3VtbWFyeRIXCgdwYXJ0X2lkGAEgASgJUgZwYXJ0SWQSGwoJcGFydF9uYW1lGAIgAS'
-    'gJUghwYXJ0TmFtZRIgCgxpc19tYWluX3BhcnQYCyABKAhSCmlzTWFpblBhcnQSQAoLbGFzdF9v'
-    'bmxpbmUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSCmxhc3RPbmxpbmWIAQ'
-    'ESUwoTdmlhbV9zZXJ2ZXJfdmVyc2lvbhgEIAEoCzIeLnZpYW0uYXBwLnYxLlZpYW1TZXJ2ZXJW'
-    'ZXJzaW9uSAFSEXZpYW1TZXJ2ZXJWZXJzaW9uiAEBElAKEnZpYW1fYWdlbnRfdmVyc2lvbhgFIA'
-    'EoCzIdLnZpYW0uYXBwLnYxLlZpYW1BZ2VudFZlcnNpb25IAlIQdmlhbUFnZW50VmVyc2lvbogB'
-    'ARITCgJvcxgGIAEoCUgDUgJvc4gBARIfCghwbGF0Zm9ybRgHIAEoCUgEUghwbGF0Zm9ybYgBAR'
-    'IvChFwdWJsaWNfaXBfYWRkcmVzcxgIIAEoCUgFUg9wdWJsaWNJcEFkZHJlc3OIAQESHgoIZG5z'
-    'X25hbWUYCiABKAlIBlIHZG5zTmFtZYgBARI6CglmcmFnbWVudHMYCSADKAsyHC52aWFtLmFwcC'
-    '52MS5GcmFnbWVudFN1bW1hcnlSCWZyYWdtZW50c0IOCgxfbGFzdF9vbmxpbmVCFgoUX3ZpYW1f'
-    'c2VydmVyX3ZlcnNpb25CFQoTX3ZpYW1fYWdlbnRfdmVyc2lvbkIFCgNfb3NCCwoJX3BsYXRmb3'
-    'JtQhQKEl9wdWJsaWNfaXBfYWRkcmVzc0ILCglfZG5zX25hbWU=');
+    'gJUghwYXJ0TmFtZRIgCgxpc19tYWluX3BhcnQYCyABKAhSCmlzTWFpblBhcnQSOwoMb25saW5l'
+    'X3N0YXRlGAwgASgOMhgudmlhbS5hcHAudjEuT25saW5lU3RhdGVSC29ubGluZVN0YXRlEjAKFH'
+    'NlY29uZHNfc2luY2Vfb25saW5lGA0gASgDUhJzZWNvbmRzU2luY2VPbmxpbmUSQAoLbGFzdF9h'
+    'Y2Nlc3MYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSCmxhc3RBY2Nlc3OIAQ'
+    'ESQAoLbGFzdF9vbmxpbmUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAFSCmxh'
+    'c3RPbmxpbmWIAQESUwoTdmlhbV9zZXJ2ZXJfdmVyc2lvbhgEIAEoCzIeLnZpYW0uYXBwLnYxLl'
+    'ZpYW1TZXJ2ZXJWZXJzaW9uSAJSEXZpYW1TZXJ2ZXJWZXJzaW9uiAEBElAKEnZpYW1fYWdlbnRf'
+    'dmVyc2lvbhgFIAEoCzIdLnZpYW0uYXBwLnYxLlZpYW1BZ2VudFZlcnNpb25IA1IQdmlhbUFnZW'
+    '50VmVyc2lvbogBARITCgJvcxgGIAEoCUgEUgJvc4gBARIfCghwbGF0Zm9ybRgHIAEoCUgFUghw'
+    'bGF0Zm9ybYgBARIvChFwdWJsaWNfaXBfYWRkcmVzcxgIIAEoCUgGUg9wdWJsaWNJcEFkZHJlc3'
+    'OIAQESHgoIZG5zX25hbWUYCiABKAlIB1IHZG5zTmFtZYgBARI6CglmcmFnbWVudHMYCSADKAsy'
+    'HC52aWFtLmFwcC52MS5GcmFnbWVudFN1bW1hcnlSCWZyYWdtZW50c0IOCgxfbGFzdF9hY2Nlc3'
+    'NCDgoMX2xhc3Rfb25saW5lQhYKFF92aWFtX3NlcnZlcl92ZXJzaW9uQhUKE192aWFtX2FnZW50'
+    'X3ZlcnNpb25CBQoDX29zQgsKCV9wbGF0Zm9ybUIUChJfcHVibGljX2lwX2FkZHJlc3NCCwoJX2'
+    'Ruc19uYW1l');
 
 @$core.Deprecated('Use listRobotsResponseDescriptor instead')
 const ListRobotsResponse$json = {

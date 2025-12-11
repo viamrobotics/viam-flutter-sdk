@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../protobuf/duration.pb.dart' as $4;
+import '../protobuf/duration.pb.dart' as $6;
 
 ///  Describes the cause of the error with structured details.
 ///
@@ -147,7 +147,7 @@ class ErrorInfo extends $pb.GeneratedMessage {
 ///  reached.
 class RetryInfo extends $pb.GeneratedMessage {
   factory RetryInfo({
-    $4.Duration? retryDelay,
+    $6.Duration? retryDelay,
   }) {
     final $result = create();
     if (retryDelay != null) {
@@ -160,7 +160,7 @@ class RetryInfo extends $pb.GeneratedMessage {
   factory RetryInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetryInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'google.rpc'), createEmptyInstance: create)
-    ..aOM<$4.Duration>(1, _omitFieldNames ? '' : 'retryDelay', subBuilder: $4.Duration.create)
+    ..aOM<$6.Duration>(1, _omitFieldNames ? '' : 'retryDelay', subBuilder: $6.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -187,15 +187,15 @@ class RetryInfo extends $pb.GeneratedMessage {
 
   /// Clients should wait at least this long between retrying the same request.
   @$pb.TagNumber(1)
-  $4.Duration get retryDelay => $_getN(0);
+  $6.Duration get retryDelay => $_getN(0);
   @$pb.TagNumber(1)
-  set retryDelay($4.Duration v) { setField(1, v); }
+  set retryDelay($6.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRetryDelay() => $_has(0);
   @$pb.TagNumber(1)
   void clearRetryDelay() => clearField(1);
   @$pb.TagNumber(1)
-  $4.Duration ensureRetryDelay() => $_ensure(0);
+  $6.Duration ensureRetryDelay() => $_ensure(0);
 }
 
 /// Describes additional debugging info.

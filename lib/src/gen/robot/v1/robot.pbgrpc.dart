@@ -117,6 +117,10 @@ class RobotServiceClient extends $grpc.Client {
       '/viam.robot.v1.RobotService/TransformPCD',
       ($36.TransformPCDRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $36.TransformPCDResponse.fromBuffer(value));
+  static final _$sendTraces = $grpc.ClientMethod<$36.SendTracesRequest, $36.SendTracesResponse>(
+      '/viam.robot.v1.RobotService/SendTraces',
+      ($36.SendTracesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $36.SendTracesResponse.fromBuffer(value));
 
   RobotServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -218,6 +222,10 @@ class RobotServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$36.TransformPCDResponse> transformPCD($36.TransformPCDRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$transformPCD, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$36.SendTracesResponse> sendTraces($36.SendTracesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sendTraces, request, options: options);
   }
 }
 
@@ -394,6 +402,13 @@ abstract class RobotServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $36.TransformPCDRequest.fromBuffer(value),
         ($36.TransformPCDResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$36.SendTracesRequest, $36.SendTracesResponse>(
+        'SendTraces',
+        sendTraces_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $36.SendTracesRequest.fromBuffer(value),
+        ($36.SendTracesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$36.GetOperationsResponse> getOperations_Pre($grpc.ServiceCall call, $async.Future<$36.GetOperationsRequest> request) async {
@@ -488,6 +503,10 @@ abstract class RobotServiceBase extends $grpc.Service {
     return transformPCD(call, await request);
   }
 
+  $async.Future<$36.SendTracesResponse> sendTraces_Pre($grpc.ServiceCall call, $async.Future<$36.SendTracesRequest> request) async {
+    return sendTraces(call, await request);
+  }
+
   $async.Future<$36.GetOperationsResponse> getOperations($grpc.ServiceCall call, $36.GetOperationsRequest request);
   $async.Future<$36.GetSessionsResponse> getSessions($grpc.ServiceCall call, $36.GetSessionsRequest request);
   $async.Future<$36.ResourceNamesResponse> resourceNames($grpc.ServiceCall call, $36.ResourceNamesRequest request);
@@ -512,4 +531,5 @@ abstract class RobotServiceBase extends $grpc.Service {
   $async.Future<$36.GetPoseResponse> getPose($grpc.ServiceCall call, $36.GetPoseRequest request);
   $async.Future<$36.TransformPoseResponse> transformPose($grpc.ServiceCall call, $36.TransformPoseRequest request);
   $async.Future<$36.TransformPCDResponse> transformPCD($grpc.ServiceCall call, $36.TransformPCDRequest request);
+  $async.Future<$36.SendTracesResponse> sendTraces($grpc.ServiceCall call, $36.SendTracesRequest request);
 }
