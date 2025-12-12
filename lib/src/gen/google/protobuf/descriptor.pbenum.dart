@@ -21,6 +21,7 @@ class Edition extends $pb.ProtobufEnum {
   static const Edition EDITION_PROTO3 = Edition._(999, _omitEnumNames ? '' : 'EDITION_PROTO3');
   static const Edition EDITION_2023 = Edition._(1000, _omitEnumNames ? '' : 'EDITION_2023');
   static const Edition EDITION_2024 = Edition._(1001, _omitEnumNames ? '' : 'EDITION_2024');
+  static const Edition EDITION_UNSTABLE = Edition._(9999, _omitEnumNames ? '' : 'EDITION_UNSTABLE');
   static const Edition EDITION_1_TEST_ONLY = Edition._(1, _omitEnumNames ? '' : 'EDITION_1_TEST_ONLY');
   static const Edition EDITION_2_TEST_ONLY = Edition._(2, _omitEnumNames ? '' : 'EDITION_2_TEST_ONLY');
   static const Edition EDITION_99997_TEST_ONLY = Edition._(99997, _omitEnumNames ? '' : 'EDITION_99997_TEST_ONLY');
@@ -35,6 +36,7 @@ class Edition extends $pb.ProtobufEnum {
     EDITION_PROTO3,
     EDITION_2023,
     EDITION_2024,
+    EDITION_UNSTABLE,
     EDITION_1_TEST_ONLY,
     EDITION_2_TEST_ONLY,
     EDITION_99997_TEST_ONLY,

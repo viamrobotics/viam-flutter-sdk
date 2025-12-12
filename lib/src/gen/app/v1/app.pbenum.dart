@@ -13,6 +13,25 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class OnlineState extends $pb.ProtobufEnum {
+  static const OnlineState ONLINE_STATE_UNSPECIFIED = OnlineState._(0, _omitEnumNames ? '' : 'ONLINE_STATE_UNSPECIFIED');
+  static const OnlineState ONLINE_STATE_ONLINE = OnlineState._(1, _omitEnumNames ? '' : 'ONLINE_STATE_ONLINE');
+  static const OnlineState ONLINE_STATE_OFFLINE = OnlineState._(2, _omitEnumNames ? '' : 'ONLINE_STATE_OFFLINE');
+  static const OnlineState ONLINE_STATE_AWAITING_SETUP = OnlineState._(3, _omitEnumNames ? '' : 'ONLINE_STATE_AWAITING_SETUP');
+
+  static const $core.List<OnlineState> values = <OnlineState> [
+    ONLINE_STATE_UNSPECIFIED,
+    ONLINE_STATE_ONLINE,
+    ONLINE_STATE_OFFLINE,
+    ONLINE_STATE_AWAITING_SETUP,
+  ];
+
+  static final $core.Map<$core.int, OnlineState> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static OnlineState? valueOf($core.int value) => _byValue[value];
+
+  const OnlineState._($core.int v, $core.String n) : super(v, n);
+}
+
 class AuthenticationType extends $pb.ProtobufEnum {
   static const AuthenticationType AUTHENTICATION_TYPE_UNSPECIFIED = AuthenticationType._(0, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_UNSPECIFIED');
   static const AuthenticationType AUTHENTICATION_TYPE_WEB_OAUTH = AuthenticationType._(1, _omitEnumNames ? '' : 'AUTHENTICATION_TYPE_WEB_OAUTH');

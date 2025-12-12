@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../protobuf/wrappers.pb.dart' as $16;
+import '../protobuf/wrappers.pb.dart' as $21;
 
 ///  Represents a color in the RGBA color space. This representation is designed
 ///  for simplicity of conversion to/from color representations in various
@@ -144,7 +144,7 @@ class Color extends $pb.GeneratedMessage {
     $core.double? red,
     $core.double? green,
     $core.double? blue,
-    $16.FloatValue? alpha,
+    $21.FloatValue? alpha,
   }) {
     final $result = create();
     if (red != null) {
@@ -169,7 +169,7 @@ class Color extends $pb.GeneratedMessage {
     ..a<$core.double>(1, _omitFieldNames ? '' : 'red', $pb.PbFieldType.OF)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'green', $pb.PbFieldType.OF)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'blue', $pb.PbFieldType.OF)
-    ..aOM<$16.FloatValue>(4, _omitFieldNames ? '' : 'alpha', subBuilder: $16.FloatValue.create)
+    ..aOM<$21.FloatValue>(4, _omitFieldNames ? '' : 'alpha', subBuilder: $21.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -236,15 +236,15 @@ class Color extends $pb.GeneratedMessage {
   ///  If omitted, this color object is rendered as a solid color
   ///  (as if the alpha value had been explicitly given a value of 1.0).
   @$pb.TagNumber(4)
-  $16.FloatValue get alpha => $_getN(3);
+  $21.FloatValue get alpha => $_getN(3);
   @$pb.TagNumber(4)
-  set alpha($16.FloatValue v) { setField(4, v); }
+  set alpha($21.FloatValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAlpha() => $_has(3);
   @$pb.TagNumber(4)
   void clearAlpha() => clearField(4);
   @$pb.TagNumber(4)
-  $16.FloatValue ensureAlpha() => $_ensure(3);
+  $21.FloatValue ensureAlpha() => $_ensure(3);
 }
 
 
