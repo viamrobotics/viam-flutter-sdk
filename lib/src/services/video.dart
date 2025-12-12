@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../protos/common/common.dart' as common_pb;
 import '../../protos/service/video.dart';
@@ -34,7 +35,8 @@ class VideoClient extends Resource with RPCDebugLoggerMixin implements ResourceR
   /// [startTimestamp] and [endTimestamp] define the time range for the video retrieval.
   /// [videoCodec] specifies the codec for the video (e.g., "h264", "h265").
   /// [videoContainer] specifies the container format (e.g., "mp4", "fmp4").
-  /// [requestId] is an optional ID to match requests to responses.
+  ///
+  /// A unique requestId is automatically generated for each request to match responses.
   ///
   /// ```
   /// // Example:
@@ -54,9 +56,9 @@ class VideoClient extends Resource with RPCDebugLoggerMixin implements ResourceR
     DateTime? endTimestamp,
     String? videoCodec,
     String? videoContainer,
-    String? requestId,
     Map<String, dynamic>? extra,
   }) {
+    final requestId = const Uuid().v4();
     final request = GetVideoRequest(
       name: name,
       videoCodec: videoCodec,

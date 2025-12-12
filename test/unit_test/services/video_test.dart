@@ -39,7 +39,6 @@ void main() {
       final stream = client.getVideo(
         videoCodec: 'h264',
         videoContainer: 'mp4',
-        requestId: 'test-1',
       );
 
       expect(
@@ -65,7 +64,6 @@ void main() {
         endTimestamp: endTime,
         videoCodec: 'h265',
         videoContainer: 'fmp4',
-        requestId: 'test-2',
       );
 
       expect(stream, emitsInOrder([predicate<GetVideoResponse>((r) => r.videoContainer == 'fmp4'), emitsDone]));
@@ -76,9 +74,25 @@ void main() {
       expect(request.name, equals('video'));
       expect(request.videoCodec, equals('h265'));
       expect(request.videoContainer, equals('fmp4'));
-      expect(request.requestId, equals('test-2'));
+      expect(request.hasRequestId(), isTrue); // requestId is auto-generated
       expect(request.hasStartTimestamp(), isTrue);
       expect(request.hasEndTimestamp(), isTrue);
+    });
+
+    test('getVideo generates unique requestId', () async {
+      when(serviceClient.getVideo(any, options: anyNamed('options'))).thenAnswer((_) => MockResponseStream.list([]));
+
+      // Make two calls
+      client.getVideo();
+      client.getVideo();
+
+      // Verify two different requestIds were generated
+      final captured = verify(serviceClient.getVideo(captureAny, options: anyNamed('options'))).captured;
+      final request1 = captured[0] as GetVideoRequest;
+      final request2 = captured[1] as GetVideoRequest;
+      expect(request1.requestId, isNotEmpty);
+      expect(request2.requestId, isNotEmpty);
+      expect(request1.requestId, isNot(equals(request2.requestId)));
     });
 
     test('getVideo handles empty stream', () async {
