@@ -59,6 +59,8 @@
 <li><span class="parameter" id="-param-location"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">location</span>, </span></li>
 <li><span class="parameter" id="-param-lastAccess"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastAccess</span>, </span></li>
 <li><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span></li>
+<li><span class="parameter" id="-param-onlineState"><span class="type-annotation"><a href="../../viam_protos.app.app/OnlineState-class.html">OnlineState</a>?</span> <span class="parameter-name">onlineState</span>, </span></li>
+<li><span class="parameter" id="-param-secondsSinceOnline"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">secondsSinceOnline</span>, </span></li>
 </ol>})
     </section>
     
@@ -73,6 +75,8 @@
   $core.String? location,
   $52.Timestamp? lastAccess,
   $52.Timestamp? createdOn,
+  OnlineState? onlineState,
+  $fixnum.Int64? secondsSinceOnline,
 }) {
   final $result = create();
   if (id != null) {
@@ -89,6 +93,12 @@
   }
   if (createdOn != null) {
     $result.createdOn = createdOn;
+  }
+  if (onlineState != null) {
+    $result.onlineState = onlineState;
+  }
+  if (secondsSinceOnline != null) {
+    $result.secondsSinceOnline = secondsSinceOnline;
   }
   return $result;
 }</code></pre>

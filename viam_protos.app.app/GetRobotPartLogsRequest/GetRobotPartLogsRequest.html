@@ -63,6 +63,7 @@
 <li><span class="parameter" id="-param-end"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">end</span>, </span></li>
 <li><span class="parameter" id="-param-limit"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">limit</span>, </span></li>
 <li><span class="parameter" id="-param-source"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">source</span>, </span></li>
+<li><span class="parameter" id="-param-userFacingOnly"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">userFacingOnly</span>, </span></li>
 </ol>})
     </section>
     
@@ -82,6 +83,7 @@
   $52.Timestamp? end,
   $fixnum.Int64? limit,
   $core.String? source,
+  $core.bool? userFacingOnly,
 }) {
   final $result = create();
   if (id != null) {
@@ -111,6 +113,9 @@
   }
   if (source != null) {
     $result.source = source;
+  }
+  if (userFacingOnly != null) {
+    $result.userFacingOnly = userFacingOnly;
   }
   return $result;
 }</code></pre>

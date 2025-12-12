@@ -69,6 +69,8 @@
 <li><span class="parameter" id="-param-createdOn"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">createdOn</span>, </span></li>
 <li><span class="parameter" id="-param-secrets"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.app/SharedSecret-class.html">SharedSecret</a></span>&gt;</span>?</span> <span class="parameter-name">secrets</span>, </span></li>
 <li><span class="parameter" id="-param-lastUpdated"><span class="type-annotation">Timestamp?</span> <span class="parameter-name">lastUpdated</span>, </span></li>
+<li><span class="parameter" id="-param-onlineState"><span class="type-annotation"><a href="../../viam_protos.app.app/OnlineState-class.html">OnlineState</a>?</span> <span class="parameter-name">onlineState</span>, </span></li>
+<li><span class="parameter" id="-param-secondsSinceOnline"><span class="type-annotation"><a href="https://pub.dev/documentation/fixnum/1.1.1/fixnum/Int64-class.html">Int64</a>?</span> <span class="parameter-name">secondsSinceOnline</span>, </span></li>
 </ol>})
     </section>
     
@@ -93,6 +95,8 @@
   $52.Timestamp? createdOn,
   $core.Iterable&lt;SharedSecret&gt;? secrets,
   $52.Timestamp? lastUpdated,
+  OnlineState? onlineState,
+  $fixnum.Int64? secondsSinceOnline,
 }) {
   final $result = create();
   if (id != null) {
@@ -139,6 +143,12 @@
   }
   if (lastUpdated != null) {
     $result.lastUpdated = lastUpdated;
+  }
+  if (onlineState != null) {
+    $result.onlineState = onlineState;
+  }
+  if (secondsSinceOnline != null) {
+    $result.secondsSinceOnline = secondsSinceOnline;
   }
   return $result;
 }</code></pre>
