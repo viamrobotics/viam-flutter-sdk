@@ -28,6 +28,9 @@ class MockResponseStream<T> extends Mock implements ResponseStream<T> {
   MockResponseStream.futures(List<Future<T>> futures) : stream = Stream.fromFutures(futures);
 
   @override
+  bool get isBroadcast => stream.isBroadcast;
+
+  @override
   StreamSubscription<T> listen(void Function(T value)? onData, {Function? onError, void Function()? onDone, bool? cancelOnError}) {
     return stream.listen(onData, onError: onError, onDone: onDone, cancelOnError: cancelOnError);
   }
