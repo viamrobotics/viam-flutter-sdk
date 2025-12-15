@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
+import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/components/gantry/service.dart';
 import 'package:viam_sdk/src/gen/component/gantry/v1/gantry.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';
@@ -14,6 +15,8 @@ class FakeGantry extends Gantry {
   List<double> mLengths;
   bool isStopped = true;
   Map<String, dynamic>? extra;
+  Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
+  List<Geometry> gantryGeometries = [Geometry()..type = GeometryType.GEOMETRY_TYPE_BOX..dimensions = [1, 2, 3]];
 
   @override
   String name;
@@ -56,6 +59,18 @@ class FakeGantry extends Gantry {
   @override
   Future<List<double>> position({Map<String, dynamic>? extra}) async {
     return positions;
+  }
+
+  @override
+  Future<Kinematics> getKinematics({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return gantryKinematics;
+  }
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return gantryGeometries;
   }
 }
 
@@ -125,6 +140,18 @@ void main() {
       expect(gantry.extra, null);
       await gantry.stop(extra: {'foo': 'bar'});
       expect(gantry.extra, {'foo': 'bar'});
+    });
+
+    test('getKinematics', () async {
+      final kinematics = await gantry.getKinematics();
+      expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+      expect(kinematics.raw, [1, 2, 3]);
+    });
+
+    test('getGeometries', () async {
+      final geometries = await gantry.getGeometries();
+      expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
+      expect(geometries[0].dimensions, [1, 2, 3]);
     });
   });
 
@@ -233,6 +260,22 @@ void main() {
           ..extra = {'foo': 'bar'}.toStruct());
         expect(gantry.extra, {'foo': 'bar'});
       });
+
+      test('getKinematics', () async {
+        final client = GantryServiceClient(channel);
+        final request = GetKinematicsRequest()..name = name;
+        final response = await client.getKinematics(request);
+        expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+        expect(response.kinematicsData, [1, 2, 3]);
+      });
+
+      test('getGeometries', () async {
+        final client = GantryServiceClient(channel);
+        final request = GetGeometriesRequest()..name = name;
+        final response = await client.getGeometries(request);
+        expect(response.geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
+        expect(response.geometries[0].dimensions, [1, 2, 3]);
+      });
     });
     group('Gantry Client Tests', () {
       test('position', () async {
@@ -291,6 +334,20 @@ void main() {
         final client = GantryClient(name, channel);
         await client.stop(extra: {'foo': 'bar'});
         expect(gantry.extra, {'foo': 'bar'});
+      });
+
+      test('getKinematics', () async {
+        final client = GantryClient(name, channel);
+        final kinematics = await client.getKinematics();
+        expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
+        expect(kinematics.raw, [1, 2, 3]);
+      });
+
+      test('getGeometries', () async {
+        final client = GantryClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
+        expect(geometries[0].dimensions, [1, 2, 3]);
       });
     });
   });

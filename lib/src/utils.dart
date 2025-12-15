@@ -11,6 +11,17 @@ import 'gen/google/protobuf/struct.pb.dart';
 
 final _logger = Logger();
 
+class Kinematics {
+  KinematicsFileFormat format;
+  List<int> raw;
+
+  Kinematics(this.format, this.raw);
+
+  factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
+    return Kinematics(gkResponse.format, gkResponse.kinematicsData);
+  }
+}
+
 extension NullableStringUtils on String? {
   bool get isNullOrEmpty {
     return this?.isEmpty ?? true;

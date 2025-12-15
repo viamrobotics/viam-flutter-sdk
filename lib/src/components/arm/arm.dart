@@ -88,6 +88,15 @@ abstract class Arm extends Resource {
   /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getkinematics).
   Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
 
+  /// Get all geometries associated with the [Arm]
+  ///
+  /// ```
+  /// final geometries = await myArm.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Arm component](https://docs.viam.com/dev/reference/apis/components/arm/#getgeometries).
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
+
   /// Get the [ResourceName] for this [Arm] with the given [name].
   ///
   /// ```

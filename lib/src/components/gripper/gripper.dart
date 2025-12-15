@@ -5,18 +5,6 @@ import '../../robot/client.dart';
 import '../../utils.dart';
 
 /// {@category Viam SDK}
-class Kinematics {
-  KinematicsFileFormat format;
-  List<int> raw;
-
-  Kinematics(this.format, this.raw);
-
-  factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
-    return Kinematics(gkResponse.format, gkResponse.kinematicsData);
-  }
-}
-
-/// {@category Viam SDK}
 /// HoldingStatus represents whether the gripper is currently holding onto
 /// an object as well as any additional contextual information (stored in `Meta`).
 class HoldingStatus {

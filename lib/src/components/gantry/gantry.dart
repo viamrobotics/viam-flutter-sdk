@@ -1,6 +1,7 @@
 import '../../gen/common/v1/common.pb.dart';
 import '../../resource/base.dart';
 import '../../robot/client.dart';
+import '../../utils.dart';
 
 /// {@category Components}
 /// Gantry represents a physical Gantry and can be used for controlling gantries of N axes.
@@ -62,6 +63,24 @@ abstract class Gantry extends Resource {
   ///
   /// For more information, see [Gantry component](https://docs.viam.com/dev/reference/apis/components/gantry/#ismoving).
   Future<bool> isMoving();
+
+  /// Get the kinematics data associated with the [Gantry]
+  ///
+  /// ```
+  /// var kinematics = await myGantry.getKinematics();
+  /// ```
+  ///
+  /// For more information, see [Gantry component](https://docs.viam.com/dev/reference/apis/components/gantry/#getkinematics).
+  Future<Kinematics> getKinematics({Map<String, dynamic>? extra});
+
+  /// Get all geometries associated with the [Gantry]
+  ///
+  /// ```
+  /// final geometries = await myGantry.getGeometries();
+  /// ```
+  ///
+  /// For more information, see [Gantry component](https://docs.viam.com/dev/reference/apis/components/gantry/#getgeometries).
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [Gantry] with the given [name]
   ///

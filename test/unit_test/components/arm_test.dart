@@ -19,7 +19,7 @@ class FakeArm extends Arm {
   Map<String, dynamic>? extra;
   Map<String, Mesh> arm3DModels = {};
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
-
+  List<Geometry> armGeometries = [Geometry()..type = GeometryType.GEOMETRY_TYPE_BOX..dimensions = [1, 2, 3]];
   @override
   String name;
 
@@ -72,6 +72,12 @@ class FakeArm extends Arm {
   Future<Map<String, Mesh>> get3DModels({Map<String, dynamic>? extra}) async {
     this.extra = extra;
     return arm3DModels;
+  }
+
+  @override
+  Future<List<Geometry>> getGeometries({Map<String, dynamic>? extra}) async {
+    this.extra = extra;
+    return armGeometries;
   }
 
   @override
@@ -152,6 +158,12 @@ void main() {
       expect(arm.extra, null);
       await arm.stop(extra: {'foo': 'bar'});
       expect(arm.extra, {'foo': 'bar'});
+    });
+
+    test('getGeometries', () async {
+      final geometries = await arm.getGeometries();
+      expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
+      expect(geometries[0].dimensions, [1, 2, 3]);
     });
 
     test('getKinematics', () async {
@@ -285,6 +297,14 @@ void main() {
         expect(response.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
         expect(response.kinematicsData, [1, 2, 3]);
       });
+
+      test('getGeometries', () async {
+        final client = ArmServiceClient(channel);
+        final request = GetGeometriesRequest()..name = name;
+        final response = await client.getGeometries(request);
+        expect(response.geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
+        expect(response.geometries[0].dimensions, [1, 2, 3]);
+      });
     });
 
     group('Arm Client Tests', () {
@@ -364,6 +384,13 @@ void main() {
       final kinematics = await client.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+
+      test('getGeometries', () async {
+        final client = ArmClient(name, channel);
+        final geometries = await client.getGeometries();
+        expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
+        expect(geometries[0].dimensions, [1, 2, 3]);
+      });
     });
   });
 }
