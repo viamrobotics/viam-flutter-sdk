@@ -1,5 +1,6 @@
 import '../../../viam_sdk.dart';
 import '../../gen/common/v1/common.pb.dart';
+import '../../utils.dart';
 
 /// {@category Components}
 /// Arm represents a physical robot arm that exists in three-dimensional space.
