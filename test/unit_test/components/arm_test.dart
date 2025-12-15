@@ -19,7 +19,11 @@ class FakeArm extends Arm {
   Map<String, dynamic>? extra;
   Map<String, Mesh> arm3DModels = {};
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
-  List<Geometry> armGeometries = [Geometry()..type = GeometryType.GEOMETRY_TYPE_BOX..dimensions = [1, 2, 3]];
+  List<Geometry> armGeometries = [
+    Geometry()
+      ..type = GeometryType.GEOMETRY_TYPE_BOX
+      ..dimensions = [1, 2, 3],
+  ];
   @override
   String name;
 

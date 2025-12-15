@@ -16,7 +16,11 @@ class FakeGantry extends Gantry {
   bool isStopped = true;
   Map<String, dynamic>? extra;
   Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
-  List<Geometry> gantryGeometries = [Geometry()..type = GeometryType.GEOMETRY_TYPE_BOX..dimensions = [1, 2, 3]];
+  List<Geometry> gantryGeometries = [
+    Geometry()
+      ..type = GeometryType.GEOMETRY_TYPE_BOX
+      ..dimensions = [1, 2, 3],
+  ];
 
   @override
   String name;
