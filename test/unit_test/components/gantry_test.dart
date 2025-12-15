@@ -18,8 +18,11 @@ class FakeGantry extends Gantry {
   Kinematics gantryKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   List<Geometry> gantryGeometries = [
     Geometry()
-      ..type = GeometryType.GEOMETRY_TYPE_BOX
-      ..dimensions = [1, 2, 3],
+      ..box = (RectangularPrism()
+        ..dimsMm = (Vector3()
+          ..x = 1
+          ..y = 2
+          ..z = 3)),
   ];
 
   @override
@@ -154,8 +157,10 @@ void main() {
 
     test('getGeometries', () async {
       final geometries = await gantry.getGeometries();
-      expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
-      expect(geometries[0].dimensions, [1, 2, 3]);
+      expect(geometries[0].whichGeometryType(), Geometry_GeometryType.box);
+      expect(geometries[0].box.dimsMm.x, 1);
+      expect(geometries[0].box.dimsMm.y, 2);
+      expect(geometries[0].box.dimsMm.z, 3);
     });
   });
 
@@ -174,7 +179,11 @@ void main() {
       service = GantryService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -249,9 +258,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = GantryServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -259,9 +270,11 @@ void main() {
         expect(gantry.extra, null);
 
         final client = GantryServiceClient(channel);
-        await client.stop(StopRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.stop(
+          StopRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(gantry.extra, {'foo': 'bar'});
       });
 
@@ -277,8 +290,10 @@ void main() {
         final client = GantryServiceClient(channel);
         final request = GetGeometriesRequest()..name = name;
         final response = await client.getGeometries(request);
-        expect(response.geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
-        expect(response.geometries[0].dimensions, [1, 2, 3]);
+        expect(response.geometries[0].whichGeometryType(), Geometry_GeometryType.box);
+        expect(response.geometries[0].box.dimsMm.x, 1);
+        expect(response.geometries[0].box.dimsMm.y, 2);
+        expect(response.geometries[0].box.dimsMm.z, 3);
       });
     });
     group('Gantry Client Tests', () {
@@ -350,8 +365,10 @@ void main() {
       test('getGeometries', () async {
         final client = GantryClient(name, channel);
         final geometries = await client.getGeometries();
-        expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
-        expect(geometries[0].dimensions, [1, 2, 3]);
+        expect(geometries[0].whichGeometryType(), Geometry_GeometryType.box);
+        expect(geometries[0].box.dimsMm.x, 1);
+        expect(geometries[0].box.dimsMm.y, 2);
+        expect(geometries[0].box.dimsMm.z, 3);
       });
     });
   });

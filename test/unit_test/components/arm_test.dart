@@ -21,8 +21,11 @@ class FakeArm extends Arm {
   Kinematics armKinematics = Kinematics(KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA, [1, 2, 3]);
   List<Geometry> armGeometries = [
     Geometry()
-      ..type = GeometryType.GEOMETRY_TYPE_BOX
-      ..dimensions = [1, 2, 3],
+      ..box = (RectangularPrism()
+        ..dimsMm = (Vector3()
+          ..x = 1
+          ..y = 2
+          ..z = 3)),
   ];
   @override
   String name;
@@ -166,8 +169,10 @@ void main() {
 
     test('getGeometries', () async {
       final geometries = await arm.getGeometries();
-      expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
-      expect(geometries[0].dimensions, [1, 2, 3]);
+      expect(geometries[0].whichGeometryType(), Geometry_GeometryType.box);
+      expect(geometries[0].box.dimsMm.x, 1);
+      expect(geometries[0].box.dimsMm.y, 2);
+      expect(geometries[0].box.dimsMm.z, 3);
     });
 
     test('getKinematics', () async {
@@ -191,7 +196,11 @@ void main() {
       service = ArmService(manager);
       server = Server.create(services: [service]);
       await serveServerAtUnusedPort(server);
-      channel = ClientChannel('localhost', port: server.port!, options: const ChannelOptions(credentials: ChannelCredentials.insecure()));
+      channel = ClientChannel(
+        'localhost',
+        port: server.port!,
+        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
+      );
     });
 
     tearDown(() async {
@@ -278,9 +287,11 @@ void main() {
         final cmd = {'foo': 'bar'};
 
         final client = ArmServiceClient(channel);
-        final resp = await client.doCommand(DoCommandRequest()
-          ..name = name
-          ..command = cmd.toStruct());
+        final resp = await client.doCommand(
+          DoCommandRequest()
+            ..name = name
+            ..command = cmd.toStruct(),
+        );
         expect(resp.result.toMap()['command'], cmd);
       });
 
@@ -288,9 +299,11 @@ void main() {
         expect(arm.extra, null);
 
         final client = ArmServiceClient(channel);
-        await client.stop(StopRequest()
-          ..name = name
-          ..extra = {'foo': 'bar'}.toStruct());
+        await client.stop(
+          StopRequest()
+            ..name = name
+            ..extra = {'foo': 'bar'}.toStruct(),
+        );
         expect(arm.extra, {'foo': 'bar'});
       });
 
@@ -306,8 +319,10 @@ void main() {
         final client = ArmServiceClient(channel);
         final request = GetGeometriesRequest()..name = name;
         final response = await client.getGeometries(request);
-        expect(response.geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
-        expect(response.geometries[0].dimensions, [1, 2, 3]);
+        expect(response.geometries[0].whichGeometryType(), Geometry_GeometryType.box);
+        expect(response.geometries[0].box.dimsMm.x, 1);
+        expect(response.geometries[0].box.dimsMm.y, 2);
+        expect(response.geometries[0].box.dimsMm.z, 3);
       });
     });
 
@@ -388,13 +403,15 @@ void main() {
       final kinematics = await client.getKinematics();
       expect(kinematics.format, KinematicsFileFormat.KINEMATICS_FILE_FORMAT_SVA);
       expect(kinematics.raw, [1, 2, 3]);
+    });
 
-      test('getGeometries', () async {
-        final client = ArmClient(name, channel);
-        final geometries = await client.getGeometries();
-        expect(geometries[0].type, GeometryType.GEOMETRY_TYPE_BOX);
-        expect(geometries[0].dimensions, [1, 2, 3]);
-      });
+    test('getGeometries', () async {
+      final client = ArmClient(name, channel);
+      final geometries = await client.getGeometries();
+      expect(geometries[0].whichGeometryType(), Geometry_GeometryType.box);
+      expect(geometries[0].box.dimsMm.x, 1);
+      expect(geometries[0].box.dimsMm.y, 2);
+      expect(geometries[0].box.dimsMm.z, 3);
     });
   });
 }
