@@ -1,19 +1,16 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
+import 'package:collection/collection.dart';
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:logger/logger.dart';
 
 import '../gen/common/v1/common.pb.dart';
 import '../gen/robot/v1/robot.pb.dart';
 import '../gen/robot/v1/robot.pbgrpc.dart' as rpb;
-import '../gen/stream/v1/stream.pbgrpc.dart';
-import '../media/stream/client.dart';
 import '../resource/base.dart';
 import '../resource/manager.dart';
 import '../resource/registry.dart';
 import '../rpc/dial.dart';
-import '../rpc/web_rtc/web_rtc_client.dart';
 import 'sessions_client.dart';
 
 /// {@category Viam SDK}
@@ -67,7 +64,7 @@ class RobotClient {
   late SessionsClient _sessionsClient;
   List<ResourceName> resourceNames = [];
   ResourceManager _manager = ResourceManager();
-  late final StreamManager _streamManager;
+
   Timer? _checkConnectionTask;
   bool _shouldAttemptReconnection = true;
 
@@ -100,7 +97,7 @@ class RobotClient {
     client._sessionsClient = SessionsClient(client._channel, options.enableSessions, url);
     client._sessionsClient.start();
     client._client = rpb.RobotServiceClient(client._channel);
-    client._streamManager = StreamManager(client._channel as WebRtcClientChannel);
+
     await client.refresh();
     client._startCheckConnectionTask();
     return client;
@@ -116,7 +113,7 @@ class RobotClient {
     final responseNames = response.resources.map((rn) {
       return rn;
     });
-    if (setEquals(responseNames.toSet(), resourceNames.toSet())) {
+    if (const SetEquality().equals(responseNames.toSet(), resourceNames.toSet())) {
       resourceNames.forEach((element) {
         _resetResourceChannel(element);
       });
@@ -204,7 +201,7 @@ class RobotClient {
         await client.resourceNames(rpb.ResourceNamesRequest());
 
         _channel = channel;
-        _streamManager.channel = _channel as WebRtcClientChannel;
+
         _client = client;
         _sessionsClient = SessionsClient(_channel, _options.enableSessions, this._address);
         await refresh();
@@ -239,12 +236,7 @@ class RobotClient {
     try {
       _checkConnectionTask?.cancel();
       _shouldAttemptReconnection = false;
-      try {
-        await _streamManager.closeAll();
-      } catch (_) {
-        // Do nothing -- we don't care if this fails,
-        // the server should clean up disconnected streams automatically.
-      }
+
       _sessionsClient.stop();
       await _channel.shutdown();
     } catch (e) {
@@ -255,26 +247,6 @@ class RobotClient {
   /// Get a connected resource by its [ResourceName].
   T getResource<T>(ResourceName name) {
     return _manager.getResource<T>(name);
-  }
-
-  /// Get a WebRTC stream client with the given name.
-  StreamClient getStream(String name) {
-    return _streamManager.getStreamClient(name);
-  }
-
-  /// Get the stream options for a stream with the given name.
-  Future<List<Resolution>> getStreamOptions(String name) async {
-    return _streamManager.getStreamOptions(name);
-  }
-
-  /// Set the options for a stream with the given name.
-  Future<void> setStreamOptions(String name, int width, int height) {
-    return _streamManager.setStreamOptions(name, width, height);
-  }
-
-  /// Reset the options for a stream with the given name.
-  Future<void> resetStreamOptions(String name) {
-    return _streamManager.resetStreamOptions(name);
   }
 
   /// Get app-related information about the machine.

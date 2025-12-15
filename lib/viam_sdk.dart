@@ -50,7 +50,6 @@ export 'src/media/audio.dart';
 
 /// Media & Streams
 export 'src/media/image.dart';
-export 'src/media/stream/client.dart' hide StreamManager;
 
 /// Robot, Resource, and Registry
 export 'src/resource/base.dart';

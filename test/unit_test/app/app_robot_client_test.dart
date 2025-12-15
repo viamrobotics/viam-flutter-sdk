@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:mockito/mockito.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/src/gen/app/v1/robot.pbgrpc.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
