@@ -1,8 +1,8 @@
 import 'dart:collection';
 
 import 'package:fixnum/fixnum.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/src/components/board/service.dart';
 import 'package:viam_sdk/src/gen/component/board/v1/board.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';

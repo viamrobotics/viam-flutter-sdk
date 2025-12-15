@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/src/components/generic/service.dart';
 import 'package:viam_sdk/src/gen/component/generic/v1/generic.pbgrpc.dart' as generic_pb;
 import 'package:viam_sdk/src/resource/manager.dart';

@@ -11,7 +11,6 @@ export 'src/app/robot.dart';
 /// Components
 export 'src/components/arm/arm.dart';
 export 'src/components/arm/client.dart';
-export 'src/media/audio.dart';
 export 'src/components/audio_in/audio_in.dart';
 export 'src/components/audio_in/client.dart';
 export 'src/components/audio_out/audio_out.dart';
@@ -47,6 +46,7 @@ export 'src/components/switch/switch.dart';
 export 'src/gen/common/v1/common.pb.dart'
     show ResourceName, Pose, Orientation, PoseInFrame, Vector3, GeoPoint, DoCommandRequest, DoCommandResponse;
 export 'src/gen/provisioning/v1/provisioning.pb.dart';
+export 'src/media/audio.dart';
 
 /// Media & Streams
 export 'src/media/image.dart';

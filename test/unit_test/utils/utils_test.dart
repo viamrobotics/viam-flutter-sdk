@@ -1,13 +1,11 @@
 // ignore_for_file: unnecessary_nullable_for_final_variable_declarations
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc_connection_interface.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/protos/app/robot.dart';
 import 'package:viam_sdk/protos/common/common.dart';
 import 'package:viam_sdk/src/gen/google/protobuf/struct.pb.dart';
 import 'package:viam_sdk/src/utils.dart';
-
-import '../../test_utils.dart';
 
 void main() {
   group('utils', () {

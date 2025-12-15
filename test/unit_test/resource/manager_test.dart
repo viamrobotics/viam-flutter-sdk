@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/src/components/sensor/sensor.dart';
 import 'package:viam_sdk/src/exceptions.dart';
 import 'package:viam_sdk/src/resource/manager.dart';

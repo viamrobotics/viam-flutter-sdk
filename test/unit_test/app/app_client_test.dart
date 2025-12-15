@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/protos/app/app.dart';
 import 'package:viam_sdk/protos/app/packages.dart';
 import 'package:viam_sdk/protos/common/common.dart';

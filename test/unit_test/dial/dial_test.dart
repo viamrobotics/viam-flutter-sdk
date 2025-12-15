@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:logger/logger.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/viam_sdk.dart';
 
 class TestLogOutput extends LogOutput {

@@ -1,8 +1,8 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/src/client/http2_channel.dart';
 import 'package:grpc/src/client/options.dart';
 import 'package:grpc/src/client/transport/http2_credentials.dart';
 import 'package:grpc/src/server/server.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/src/components/power_sensor/client.dart';
 import 'package:viam_sdk/src/components/power_sensor/power_sensor.dart';
 import 'package:viam_sdk/src/components/power_sensor/service.dart';

@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:grpc/grpc.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/src/components/camera/service.dart';
 import 'package:viam_sdk/src/gen/component/camera/v1/camera.pbgrpc.dart';
 import 'package:viam_sdk/src/resource/manager.dart';

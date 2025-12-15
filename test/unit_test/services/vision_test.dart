@@ -1,6 +1,6 @@
 import 'package:fixnum/fixnum.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:test/test.dart';
 import 'package:viam_sdk/protos/service/vision.dart';
 import 'package:viam_sdk/src/gen/common/v1/common.pb.dart' as common_pb;
 import 'package:viam_sdk/src/gen/service/vision/v1/vision.pbgrpc.dart';
