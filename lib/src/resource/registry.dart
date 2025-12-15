@@ -1,5 +1,7 @@
 import 'package:grpc/grpc_connection_interface.dart';
 
+import '../../protos/app/robot.dart';
+import '../../protos/common/common.dart';
 import '../components/arm/arm.dart';
 import '../components/arm/client.dart';
 import '../components/audio_in/audio_in.dart';
@@ -34,8 +36,42 @@ import '../components/switch/client.dart';
 import '../components/switch/switch.dart';
 import '../resource/base.dart';
 import '../services/discovery.dart';
-import '../services/generic.dart';
+import '../services/generic/client.dart' as GenericServiceClientLib;
+import '../services/generic/generic.dart' as GenericService;
 import '../services/vision.dart';
+
+/// One of the key parts of a [Resource]
+class ResourceModel {
+  final ResourceName _name;
+
+  const ResourceModel(this._name);
+
+  /// Create a [ResourceModel] from a string
+  factory ResourceModel.fromString(String model) {
+    // model string is usually "namespace:family:name"
+    final parts = model.split(':');
+    if (parts.length != 3) {
+      throw Exception('Invalid model string: $model');
+    }
+    return ResourceModel(ResourceName(namespace: parts[0], type: parts[1], subtype: parts[2], name: ''));
+  }
+
+  /// Create a [ResourceModel] from parts
+  factory ResourceModel.fromParts(String namespace, String family, String name) {
+    return ResourceModel(ResourceName(namespace: namespace, type: family, subtype: name, name: ''));
+  }
+
+  String get name => '${_name.namespace}:${_name.type}:${_name.subtype}';
+
+  @override
+  String toString() => name;
+
+  @override
+  bool operator ==(Object other) => other is ResourceModel && other.name == name;
+
+  @override
+  int get hashCode => name.hashCode;
+}
 
 /// {@category Viam SDK}
 /// An object representing a resource to be registered.
@@ -54,16 +90,24 @@ class ResourceRegistration<T extends Resource> {
 
 /// {@category Viam SDK}
 /// The global registry of robot resources.
-///
-/// **NB** The [Registry] should almost never be used directly.
-///
-/// The [Registry] keeps track of the various [Subtype] that are available on robots using this SDK. All Viam-provided resources are
-/// pre-registered (e.g. [Arm], [Motor], [MovementSensor]).
-///
-/// If you create a new resource [Subtype] that is not an extension of any existing resources, you must register the resource using
-/// [registerSubtype]
+/// An object representing a resource creator to be registered.
+class ResourceCreatorRegistration {
+  /// A method to create a [Resource] implementation
+  final Resource Function(ResourceName name, ComponentConfig config, Map<ResourceName, Resource> dependencies) creator;
+
+  /// A method to validate a configuration
+  final List<String> Function(ComponentConfig config)? validator;
+
+  ResourceCreatorRegistration(this.creator, [this.validator]);
+}
+
+/// {@category Viam SDK}
+/// [Registry] holds all the [ResourceRegistration]s and [ResourceCreatorRegistration]s
 class Registry {
   static final Registry instance = Registry._();
+  final Map<Subtype, ResourceRegistration> _apis = {};
+  final Map<String, ResourceCreatorRegistration> _creators = {};
+
   Registry._() {
     // Register built-in types
     registerSubtype(ResourceRegistration(Arm.subtype, (name, channel) => ArmClient(name, channel)));
@@ -83,26 +127,62 @@ class Registry {
     registerSubtype(ResourceRegistration(Servo.subtype, (name, channel) => ServoClient(name, channel)));
     registerSubtype(ResourceRegistration(Switch.subtype, (name, channel) => SwitchClient(name, channel)));
     registerSubtype(ResourceRegistration(DiscoveryClient.subtype, (name, channel) => DiscoveryClient(name, channel)));
-    registerSubtype(ResourceRegistration(GenericServiceClient.subtype, (name, channel) => GenericServiceClient(name, channel)));
+    registerSubtype(
+        ResourceRegistration(GenericService.Generic.subtype, (name, channel) => GenericServiceClientLib.GenericClient(name, channel)));
     registerSubtype(ResourceRegistration(VisionClient.subtype, (name, channel) => VisionClient(name, channel)));
   }
 
   /// The [Subtype] available in the SDK
-  final Map<Subtype, ResourceRegistration> subtypes = {};
+  Map<Subtype, ResourceRegistration> get registeredSubtypes => _apis;
+
+  /// The registered creators
+  Map<String, ResourceCreatorRegistration> get registeredResourceCreators => _creators;
 
   /// Register a new resource with the SDK
   void registerSubtype(ResourceRegistration registration) {
-    if (subtypes.containsKey(registration.subtype)) {
+    if (_apis.containsKey(registration.subtype)) {
       throw Exception('Duplicate registration of subtype in registry');
     }
-    subtypes[registration.subtype] = registration;
+    _apis[registration.subtype] = registration;
   }
 
   /// Retrieve a [Subtype]'s registration information
   ResourceRegistration lookupSubtype(Subtype subtype) {
-    if (!subtypes.containsKey(subtype)) {
-      throw Exception('Subtype not registered in registry');
+    if (!_apis.containsKey(subtype)) {
+      throw Exception('Subtype ${subtype.resourceSubtype} not registered in registry');
     }
-    return subtypes[subtype]!;
+    return _apis[subtype]!;
+  }
+
+  /// Register a specific [ResourceModel] and [ResourceCreatorRegistration]
+  void registerResourceCreator(Subtype subtype, ResourceModel model, ResourceCreatorRegistration registration) {
+    final key = '${subtype.toString()}/${model.name}';
+    if (_creators.containsKey(key)) {
+      throw Exception('Duplicate registration of resource creator: $key');
+    }
+    _creators[key] = registration;
+  }
+
+  /// Lookup a [ResourceCreatorRegistration]
+  ResourceCreatorRegistration lookupResourceCreator(Subtype subtype, ResourceModel model) {
+    // Try full match
+    final key = '${subtype.toString()}/${model.name}';
+    if (_creators.containsKey(key)) {
+      return _creators[key]!;
+    }
+    throw Exception('Resource creator not found for $key');
+  }
+
+  /// Lookup a validator
+  List<String> Function(ComponentConfig config) lookupValidator(Subtype subtype, ResourceModel model) {
+    try {
+      final registration = lookupResourceCreator(subtype, model);
+      if (registration.validator != null) {
+        return registration.validator!;
+      }
+    } catch (e) {
+      // ignore
+    }
+    return (config) => [];
   }
 }

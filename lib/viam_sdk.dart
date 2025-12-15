@@ -61,7 +61,8 @@ export 'src/rpc/dial.dart';
 
 /// Services
 export 'src/services/discovery.dart';
-export 'src/services/generic.dart';
+export 'src/services/generic/client.dart' hide GenericClient;
+export 'src/services/generic/generic.dart' hide Generic;
 export 'src/services/vision.dart';
 
 /// Misc
