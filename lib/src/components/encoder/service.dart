@@ -59,8 +59,8 @@ class EncoderService extends EncoderServiceBase {
 
   @override
   Future<common_pb.GetGeometriesResponse> getGeometries(ServiceCall call, common_pb.GetGeometriesRequest request) async {
-    final arm = _fromManager(request.name);
-    final geometries = await arm.getGeometries(extra: request.extra.toMap());
+    final encoder = _fromManager(request.name);
+    final geometries = await encoder.getGeometries(extra: request.extra.toMap());
     return common_pb.GetGeometriesResponse()..geometries.addAll(geometries);
   }
 }
