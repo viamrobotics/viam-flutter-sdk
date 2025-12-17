@@ -1,14 +1,9 @@
-import 'dart:convert';
-import 'dart:math';
-
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:grpc/grpc.dart';
 import 'package:logger/logger.dart';
 
-import 'components/arm/arm.dart';
 import 'gen/app/v1/robot.pb.dart';
 import 'gen/common/v1/common.pb.dart';
 import 'gen/google/protobuf/duration.pb.dart' as grpc_duration;
@@ -143,45 +138,4 @@ Future<void> showErrorDialog(BuildContext context, {String title = 'An Error Occ
               )
             ],
           ));
-}
-
-/// Calculates the maximum reach of an arm by summing all link lengths.
-/// Returns the max reach in mm.
-// calculateMaxReach written with Cursor.
-Future<double> calculateMaxReach(Arm arm) async {
-  final kinematics = await arm.getKinematics();
-  final bytes = Uint8List.fromList(kinematics.raw);
-  final jsonString = utf8.decode(bytes);
-  final jsonObj = jsonDecode(jsonString);
-
-  if (jsonObj is! Map<String, dynamic> || !jsonObj.containsKey('links')) {
-    return 0.0;
-  }
-
-  final links = jsonObj['links'] as List<dynamic>;
-
-  // Calculate max reach by summing arm link lengths (excluding base and gripper)
-  double maxReach = 0.0;
-  for (final link in links) {
-    final linkMap = link as Map<String, dynamic>;
-    final linkId = linkMap['id'] as String? ?? '';
-    final translation = linkMap['translation'] as Map<String, dynamic>?;
-
-    // Skip base and gripper links - they don't contribute to arm reach
-    if (linkId.contains('base') || linkId.contains('gripper')) {
-      continue;
-    }
-
-    if (translation != null) {
-      final tx = (translation['x'] as num?)?.toDouble() ?? 0.0;
-      final ty = (translation['y'] as num?)?.toDouble() ?? 0.0;
-      final tz = (translation['z'] as num?)?.toDouble() ?? 0.0;
-      final linkLength = sqrt(tx * tx + ty * ty + tz * tz);
-      if (linkLength > 0) {
-        maxReach += linkLength;
-      }
-    }
-  }
-
-  return maxReach;
 }

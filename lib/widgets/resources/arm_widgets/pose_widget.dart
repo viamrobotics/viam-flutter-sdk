@@ -75,7 +75,7 @@ class _PoseWidgetState extends State<PoseWidget> {
   }
 
   Future<void> _getMaxReach() async {
-    _maxReach = await calculateMaxReach(widget.arm);
+    _maxReach = await widget.arm.calculateMaxReach(widget.arm);
   }
 
   Future<void> _getStartPose() async {
