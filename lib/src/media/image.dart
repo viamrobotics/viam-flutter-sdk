@@ -3,8 +3,6 @@ import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 
-import '../gen/component/camera/v1/camera.pbenum.dart';
-
 /// {@category Viam SDK}
 /// Mime types supported by Viam
 class MimeType {
@@ -55,21 +53,6 @@ class MimeType {
   /// Whether the provided String representation of a [MimeType] is supported
   static bool isSupported(String mimeType) {
     return _map.containsKey(mimeType);
-  }
-
-  /// Create a [MimeType] from a protobuf [Format] enum.
-  /// Returns [MimeType.unsupported] if the provided format is not supported
-  static MimeType fromFormat(Format format) {
-    switch (format) {
-      case Format.FORMAT_JPEG:
-        return MimeType.jpeg;
-      case Format.FORMAT_PNG:
-        return MimeType.png;
-      case Format.FORMAT_RAW_RGBA:
-        return MimeType.viamRgba;
-      default:
-        return MimeType.unsupported(format.toString());
-    }
   }
 
   @override

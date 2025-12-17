@@ -76,9 +76,8 @@ class CameraService extends CameraServiceBase {
     for (final namedImage in result.images) {
       final protoImage = Image()
         ..sourceName = namedImage.sourceName
-        ..image = namedImage.image.raw;
-
-      protoImage.mimeType = namedImage.image.mimeType.name;
+        ..image = namedImage.image.raw
+        ..mimeType = namedImage.image.mimeType.name;
 
       response.images.add(protoImage);
     }
