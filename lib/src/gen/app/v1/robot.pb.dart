@@ -40,6 +40,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     MaintenanceConfig? maintenance,
     $core.bool? disableLogDeduplication,
     $core.Iterable<JobConfig>? jobs,
+    TracingConfig? tracing,
   }) {
     final $result = create();
     if (cloud != null) {
@@ -96,6 +97,9 @@ class RobotConfig extends $pb.GeneratedMessage {
     if (jobs != null) {
       $result.jobs.addAll(jobs);
     }
+    if (tracing != null) {
+      $result.tracing = tracing;
+    }
     return $result;
   }
   RobotConfig._() : super();
@@ -121,6 +125,7 @@ class RobotConfig extends $pb.GeneratedMessage {
     ..aOM<MaintenanceConfig>(16, _omitFieldNames ? '' : 'maintenance', subBuilder: MaintenanceConfig.create)
     ..aOB(17, _omitFieldNames ? '' : 'disableLogDeduplication')
     ..pc<JobConfig>(18, _omitFieldNames ? '' : 'jobs', $pb.PbFieldType.PM, subBuilder: JobConfig.create)
+    ..aOM<TracingConfig>(19, _omitFieldNames ? '' : 'tracing', subBuilder: TracingConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -265,6 +270,17 @@ class RobotConfig extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(18)
   $core.List<JobConfig> get jobs => $_getList(17);
+
+  @$pb.TagNumber(19)
+  TracingConfig get tracing => $_getN(18);
+  @$pb.TagNumber(19)
+  set tracing(TracingConfig v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasTracing() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearTracing() => clearField(19);
+  @$pb.TagNumber(19)
+  TracingConfig ensureTracing() => $_ensure(18);
 }
 
 /// LogPatternConfig allows you to specify a 2-tuple consisting
@@ -463,6 +479,104 @@ class JobConfig extends $pb.GeneratedMessage {
   void clearLogConfiguration() => clearField(6);
   @$pb.TagNumber(6)
   LogConfiguration ensureLogConfiguration() => $_ensure(5);
+}
+
+/// TracingConfig configures whether viam-server will record traces and if so
+/// where it will export them.
+class TracingConfig extends $pb.GeneratedMessage {
+  factory TracingConfig({
+    $core.bool? enabled,
+    $core.bool? disk,
+    $core.bool? console,
+    $core.String? otlpEndpoint,
+  }) {
+    final $result = create();
+    if (enabled != null) {
+      $result.enabled = enabled;
+    }
+    if (disk != null) {
+      $result.disk = disk;
+    }
+    if (console != null) {
+      $result.console = console;
+    }
+    if (otlpEndpoint != null) {
+      $result.otlpEndpoint = otlpEndpoint;
+    }
+    return $result;
+  }
+  TracingConfig._() : super();
+  factory TracingConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TracingConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TracingConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'enabled')
+    ..aOB(2, _omitFieldNames ? '' : 'disk')
+    ..aOB(3, _omitFieldNames ? '' : 'console')
+    ..aOS(4, _omitFieldNames ? '' : 'otlpEndpoint')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TracingConfig clone() => TracingConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TracingConfig copyWith(void Function(TracingConfig) updates) => super.copyWith((message) => updates(message as TracingConfig)) as TracingConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TracingConfig create() => TracingConfig._();
+  TracingConfig createEmptyInstance() => create();
+  static $pb.PbList<TracingConfig> createRepeated() => $pb.PbList<TracingConfig>();
+  @$core.pragma('dart2js:noInline')
+  static TracingConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TracingConfig>(create);
+  static TracingConfig? _defaultInstance;
+
+  /// Globally enable or disable tracing support.
+  @$pb.TagNumber(1)
+  $core.bool get enabled => $_getBF(0);
+  @$pb.TagNumber(1)
+  set enabled($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEnabled() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnabled() => clearField(1);
+
+  /// Save trace spans to a file on disk.
+  @$pb.TagNumber(2)
+  $core.bool get disk => $_getBF(1);
+  @$pb.TagNumber(2)
+  set disk($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDisk() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisk() => clearField(2);
+
+  /// Print trace spans to the console.
+  @$pb.TagNumber(3)
+  $core.bool get console => $_getBF(2);
+  @$pb.TagNumber(3)
+  set console($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasConsole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConsole() => clearField(3);
+
+  /// Send trace spans to an OTLP gRPC endpoint.
+  @$pb.TagNumber(4)
+  $core.String get otlpEndpoint => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set otlpEndpoint($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOtlpEndpoint() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOtlpEndpoint() => clearField(4);
 }
 
 /// Valid location secret that can be used for authentication to the robot.

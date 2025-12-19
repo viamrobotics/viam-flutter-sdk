@@ -54,6 +54,7 @@ const RobotConfig$json = {
     {'1': 'maintenance', '3': 16, '4': 1, '5': 11, '6': '.viam.app.v1.MaintenanceConfig', '9': 4, '10': 'maintenance', '17': true},
     {'1': 'disable_log_deduplication', '3': 17, '4': 1, '5': 8, '10': 'disableLogDeduplication'},
     {'1': 'jobs', '3': 18, '4': 3, '5': 11, '6': '.viam.app.v1.JobConfig', '10': 'jobs'},
+    {'1': 'tracing', '3': 19, '4': 1, '5': 11, '6': '.viam.app.v1.TracingConfig', '9': 5, '10': 'tracing', '17': true},
   ],
   '8': [
     {'1': '_network'},
@@ -61,6 +62,7 @@ const RobotConfig$json = {
     {'1': '_debug'},
     {'1': '_disable_partial_start'},
     {'1': '_maintenance'},
+    {'1': '_tracing'},
   ],
 };
 
@@ -83,9 +85,10 @@ final $typed_data.Uint8List robotConfigDescriptor = $convert.base64Decode(
     'A2xvZxIaCghyZXZpc2lvbhgPIAEoCVIIcmV2aXNpb24SRQoLbWFpbnRlbmFuY2UYECABKAsyHi'
     '52aWFtLmFwcC52MS5NYWludGVuYW5jZUNvbmZpZ0gEUgttYWludGVuYW5jZYgBARI6ChlkaXNh'
     'YmxlX2xvZ19kZWR1cGxpY2F0aW9uGBEgASgIUhdkaXNhYmxlTG9nRGVkdXBsaWNhdGlvbhIqCg'
-    'Rqb2JzGBIgAygLMhYudmlhbS5hcHAudjEuSm9iQ29uZmlnUgRqb2JzQgoKCF9uZXR3b3JrQgcK'
-    'BV9hdXRoQggKBl9kZWJ1Z0IYChZfZGlzYWJsZV9wYXJ0aWFsX3N0YXJ0Qg4KDF9tYWludGVuYW'
-    '5jZQ==');
+    'Rqb2JzGBIgAygLMhYudmlhbS5hcHAudjEuSm9iQ29uZmlnUgRqb2JzEjkKB3RyYWNpbmcYEyAB'
+    'KAsyGi52aWFtLmFwcC52MS5UcmFjaW5nQ29uZmlnSAVSB3RyYWNpbmeIAQFCCgoIX25ldHdvcm'
+    'tCBwoFX2F1dGhCCAoGX2RlYnVnQhgKFl9kaXNhYmxlX3BhcnRpYWxfc3RhcnRCDgoMX21haW50'
+    'ZW5hbmNlQgoKCF90cmFjaW5n');
 
 @$core.Deprecated('Use logPatternConfigDescriptor instead')
 const LogPatternConfig$json = {
@@ -121,6 +124,23 @@ final $typed_data.Uint8List jobConfigDescriptor = $convert.base64Decode(
     'EjEKB2NvbW1hbmQYBSABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0Ugdjb21tYW5kEkoKEW'
     'xvZ19jb25maWd1cmF0aW9uGAYgASgLMh0udmlhbS5hcHAudjEuTG9nQ29uZmlndXJhdGlvblIQ'
     'bG9nQ29uZmlndXJhdGlvbg==');
+
+@$core.Deprecated('Use tracingConfigDescriptor instead')
+const TracingConfig$json = {
+  '1': 'TracingConfig',
+  '2': [
+    {'1': 'enabled', '3': 1, '4': 1, '5': 8, '10': 'enabled'},
+    {'1': 'disk', '3': 2, '4': 1, '5': 8, '10': 'disk'},
+    {'1': 'console', '3': 3, '4': 1, '5': 8, '10': 'console'},
+    {'1': 'otlp_endpoint', '3': 4, '4': 1, '5': 9, '10': 'otlpEndpoint'},
+  ],
+};
+
+/// Descriptor for `TracingConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tracingConfigDescriptor = $convert.base64Decode(
+    'Cg1UcmFjaW5nQ29uZmlnEhgKB2VuYWJsZWQYASABKAhSB2VuYWJsZWQSEgoEZGlzaxgCIAEoCF'
+    'IEZGlzaxIYCgdjb25zb2xlGAMgASgIUgdjb25zb2xlEiMKDW90bHBfZW5kcG9pbnQYBCABKAlS'
+    'DG90bHBFbmRwb2ludA==');
 
 @$core.Deprecated('Use locationSecretDescriptor instead')
 const LocationSecret$json = {
