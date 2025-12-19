@@ -71,14 +71,18 @@ class GantryService extends GantryServiceBase {
   }
 
   @override
-  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) {
-    // TODO: implement getGeometries
-    throw UnimplementedError();
+  Future<GetGeometriesResponse> getGeometries(ServiceCall call, GetGeometriesRequest request) async {
+    final gantry = _fromManager(request.name);
+    final geometries = await gantry.getGeometries(extra: request.extra.toMap());
+    return GetGeometriesResponse()..geometries.addAll(geometries);
   }
 
   @override
-  Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) {
-    // TODO: implement getKinematics
-    throw UnimplementedError();
+  Future<GetKinematicsResponse> getKinematics(ServiceCall call, GetKinematicsRequest request) async {
+    final gantry = _fromManager(request.name);
+    final response = await gantry.getKinematics(extra: request.extra.toMap());
+    return GetKinematicsResponse()
+      ..format = response.format
+      ..kinematicsData = response.raw;
   }
 }
