@@ -72,6 +72,7 @@
 <li><span class="parameter" id="-param-maintenance"><span class="type-annotation"><a href="../../viam_protos.app.robot/MaintenanceConfig-class.html">MaintenanceConfig</a>?</span> <span class="parameter-name">maintenance</span>, </span></li>
 <li><span class="parameter" id="-param-disableLogDeduplication"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">disableLogDeduplication</span>, </span></li>
 <li><span class="parameter" id="-param-jobs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.app.robot/JobConfig-class.html">JobConfig</a></span>&gt;</span>?</span> <span class="parameter-name">jobs</span>, </span></li>
+<li><span class="parameter" id="-param-tracing"><span class="type-annotation"><a href="../../viam_protos.app.robot/TracingConfig-class.html">TracingConfig</a>?</span> <span class="parameter-name">tracing</span>, </span></li>
 </ol>})
     </section>
     
@@ -99,6 +100,7 @@
   MaintenanceConfig? maintenance,
   $core.bool? disableLogDeduplication,
   $core.Iterable&lt;JobConfig&gt;? jobs,
+  TracingConfig? tracing,
 }) {
   final $result = create();
   if (cloud != null) {
@@ -154,6 +156,9 @@
   }
   if (jobs != null) {
     $result.jobs.addAll(jobs);
+  }
+  if (tracing != null) {
+    $result.tracing = tracing;
   }
   return $result;
 }</code></pre>
