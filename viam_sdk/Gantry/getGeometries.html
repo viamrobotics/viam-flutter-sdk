@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the getKinematics method from the Gripper class, for the Dart programming language.">
-  <title>getKinematics method - Gripper class - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the getGeometries method from the Gantry class, for the Dart programming language.">
+  <title>getGeometries method - Gantry class - viam_sdk library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
-    <li><a href="../../viam_sdk/Gripper-class.html">Gripper</a></li>
-    <li class="self-crumb">getKinematics abstract method</li>
+    <li><a href="../../viam_sdk/Gantry-class.html">Gantry</a></li>
+    <li class="self-crumb">getGeometries abstract method</li>
   </ol>
-  <div class="self-name">getKinematics</div>
+  <div class="self-name">getGeometries</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,16 +46,16 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="viam_sdk&#47;Gripper-class-sidebar.html"
+    data-above-sidebar="viam_sdk&#47;Gantry-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">getKinematics</span> abstract method 
+<h1><span class="kind-method">getGeometries</span> abstract method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">Kinematics</span>&gt;</span></span>
-<span class="name ">getKinematics</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getKinematics-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/Geometry-class.html">Geometry</a></span>&gt;</span></span>&gt;</span></span>
+<span class="name ">getGeometries</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getGeometries-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
 </ol>})
 
       
@@ -63,17 +63,17 @@
     </section>
     
 <section class="desc markdown">
-  <p>Get the kinematics data associated with the <a href="../../viam_sdk/Gripper-class.html">Gripper</a></p>
-<pre class="language-dart"><code>var kinematics = await myGripper.getKinematics();
+  <p>Get all geometries associated with the <a href="../../viam_sdk/Gantry-class.html">Gantry</a></p>
+<pre class="language-dart"><code>final geometries = await myGantry.getGeometries();
 </code></pre>
-<p>For more information, see <a href="https://docs.viam.com/dev/reference/apis/components/gripper/#getkinematics">Gripper component</a>.</p>
+<p>For more information, see <a href="https://docs.viam.com/dev/reference/apis/components/gantry/#getgeometries">Gantry component</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;Kinematics&gt; getKinematics({Map&lt;String, dynamic&gt;? extra});</code></pre>
+  <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;Geometry&gt;&gt; getGeometries({Map&lt;String, dynamic&gt;? extra});</code></pre>
 </section>
 
 
@@ -88,11 +88,11 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
-    <li><a href="../../viam_sdk/Gripper-class.html">Gripper</a></li>
-    <li class="self-crumb">getKinematics abstract method</li>
+    <li><a href="../../viam_sdk/Gantry-class.html">Gantry</a></li>
+    <li class="self-crumb">getGeometries abstract method</li>
 </ol>
 
-    <h5>Gripper class</h5>
+    <h5>Gantry class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

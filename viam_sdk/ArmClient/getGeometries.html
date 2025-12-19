@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the Kinematics.fromProto constructor from Class Kinematics from the viam_sdk library, for the Dart programming language.">
-  <title>Kinematics.fromProto constructor - Kinematics - viam_sdk library - Dart API</title>
+  <meta name="description" content="API docs for the getGeometries method from the ArmClient class, for the Dart programming language.">
+  <title>getGeometries method - ArmClient class - viam_sdk library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
-    <li><a href="../../viam_sdk/Kinematics-class.html">Kinematics</a></li>
-    <li class="self-crumb">Kinematics.fromProto factory constructor</li>
+    <li><a href="../../viam_sdk/ArmClient-class.html">ArmClient</a></li>
+    <li class="self-crumb">getGeometries method</li>
   </ol>
-  <div class="self-name">Kinematics.fromProto</div>
+  <div class="self-name">getGeometries</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -43,28 +43,48 @@
   </button>
 </header>
 <main>
-  <div
-      id="dartdoc-main-content"
-      class="main-content"
-      data-above-sidebar="viam_sdk&#47;Kinematics-class-sidebar.html"
-      data-below-sidebar="">
-      <div>
-<h1><span class="kind-constructor">Kinematics.fromProto</span> constructor 
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="viam_sdk&#47;ArmClient-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">getGeometries</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-      <span class="name ">Kinematics.fromProto</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="fromProto-param-gkResponse"><span class="type-annotation"><a href="../../viam_protos.common.common/GetKinematicsResponse-class.html">GetKinematicsResponse</a></span> <span class="parameter-name">gkResponse</span></span></li>
-</ol>)
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../viam_protos.common.common/Geometry-class.html">Geometry</a></span>&gt;</span></span>&gt;</span></span>
+<span class="name ">getGeometries</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="getGeometries-param-extra"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">extra</span>, </span></li>
+</ol>})
+
+      <div class="features"><span class="feature">override</span></div>
+
     </section>
     
+<section class="desc markdown">
+  <p>Get all geometries associated with the <a href="../../viam_sdk/Arm-class.html">Arm</a></p>
+<pre class="language-dart"><code>final geometries = await myArm.getGeometries();
+</code></pre>
+<p>For more information, see <a href="https://docs.viam.com/dev/reference/apis/components/arm/#getgeometries">Arm component</a>.</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">factory Kinematics.fromProto(GetKinematicsResponse gkResponse) {
-  return Kinematics(gkResponse.format, gkResponse.kinematicsData);
+  <pre class="language-dart"><code class="language-dart">@override
+Future&lt;List&lt;Geometry&gt;&gt; getGeometries({Map&lt;String, dynamic&gt;? extra}) async {
+  final request = GetGeometriesRequest()
+    ..name = name
+    ..extra = extra?.toStruct() ?? Struct();
+  final response = await client.getGeometries(request, options: callOptions);
+  return response.geometries;
 }</code></pre>
 </section>
 
@@ -80,15 +100,15 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">viam_sdk</a></li>
     <li><a href="../../viam_sdk/">viam_sdk</a></li>
-    <li><a href="../../viam_sdk/Kinematics-class.html">Kinematics</a></li>
-    <li class="self-crumb">Kinematics.fromProto factory constructor</li>
+    <li><a href="../../viam_sdk/ArmClient-class.html">ArmClient</a></li>
+    <li class="self-crumb">getGeometries method</li>
 </ol>
 
-    <h5>Kinematics class</h5>
+    <h5>ArmClient class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
-  </div><!--/.sidebar-offcanvas-left-->
-  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
 </main>
 <footer>
   <span class="no-break">
