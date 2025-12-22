@@ -97,12 +97,15 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Organization> updateOrganization(String organizationId,
-      {String? name, String? publicNamespace, String? region, String? cid}) async {
+      {String? name, String? publicNamespace, String? region, String? cid, List<FragmentImport>? fragmentImports}) async {
     final request = UpdateOrganizationRequest()..organizationId = organizationId;
     if (name != null) request.name = name;
     if (publicNamespace != null) request.publicNamespace = publicNamespace;
     if (region != null) request.region = region;
     if (cid != null) request.cid = cid;
+    if (fragmentImports != null) {
+      request.fragmentImports = FragmentImportList()..imports.addAll(fragmentImports);
+    }
     final UpdateOrganizationResponse response = await _client.updateOrganization(request);
     return response.organization;
   }
@@ -299,7 +302,7 @@ class AppClient {
   ///
   /// For more information, see [Fleet Management API](https://docs.viam.com/appendix/apis/fleet/).
   Future<Robot> getRobot(String robotId) async {
-    final getRobotRequest = GetRobotRequest()..id = robotId;
+    final getRobotRequest = GetRobotRequest()..robotId = robotId;
     final GetRobotResponse response = await _client.getRobot(getRobotRequest);
     return response.robot;
   }
