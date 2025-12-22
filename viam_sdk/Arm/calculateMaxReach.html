@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the calculateMaxReach method from the Arm class, for the Dart programming language.">
+  <title>calculateMaxReach method - Arm class - viam_sdk library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/">viam_sdk.dart</a></li>
+    <li><a href="../../viam_sdk/Arm-class.html">Arm</a></li>
+    <li class="self-crumb">calculateMaxReach method</li>
+  </ol>
+  <div class="self-name">calculateMaxReach</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="viam_sdk&#47;Arm-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">calculateMaxReach</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>&gt;</span></span>
+<span class="name ">calculateMaxReach</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="calculateMaxReach-param-arm"><span class="type-annotation"><a href="../../viam_sdk/Arm-class.html">Arm</a></span> <span class="parameter-name">arm</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Calculates the maximum reach of an arm by summing all link lengths.
+Returns the max reach in mm.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">&#47;&#47; calculateMaxReach written with Cursor.
+Future&lt;double&gt; calculateMaxReach(Arm arm) async {
+  final kinematics = await arm.getKinematics();
+  final bytes = Uint8List.fromList(kinematics.raw);
+  final jsonString = utf8.decode(bytes);
+  final jsonObj = jsonDecode(jsonString);
+
+  if (jsonObj is! Map&lt;String, dynamic&gt; || !jsonObj.containsKey(&#39;links&#39;)) {
+    return 0.0;
+  }
+
+  final links = jsonObj[&#39;links&#39;] as List&lt;dynamic&gt;;
+
+  &#47;&#47; Calculate max reach by summing arm link lengths (excluding base and gripper)
+  double maxReach = 0.0;
+  for (final link in links) {
+    final linkMap = link as Map&lt;String, dynamic&gt;;
+    final linkId = linkMap[&#39;id&#39;] as String? ?? &#39;&#39;;
+    final translation = linkMap[&#39;translation&#39;] as Map&lt;String, dynamic&gt;?;
+
+    &#47;&#47; Skip base and gripper links - they don&#39;t contribute to arm reach
+    if (linkId.contains(&#39;base&#39;) || linkId.contains(&#39;gripper&#39;)) {
+      continue;
+    }
+
+    if (translation != null) {
+      final tx = (translation[&#39;x&#39;] as num?)?.toDouble() ?? 0.0;
+      final ty = (translation[&#39;y&#39;] as num?)?.toDouble() ?? 0.0;
+      final tz = (translation[&#39;z&#39;] as num?)?.toDouble() ?? 0.0;
+      final linkLength = sqrt(tx * tx + ty * ty + tz * tz);
+      if (linkLength &gt; 0) {
+        maxReach += linkLength;
+      }
+    }
+  }
+
+  return maxReach;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/">viam_sdk</a></li>
+    <li><a href="../../viam_sdk/Arm-class.html">Arm</a></li>
+    <li class="self-crumb">calculateMaxReach method</li>
+</ol>
+
+    <h5>Arm class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    viam_sdk
+      0.13.1
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
