@@ -139,6 +139,32 @@ void main() {
       expect(response, equals(expected));
     });
 
+    test('updateOrganization with fragmentImports', () async {
+      final fragmentImport = FragmentImport()
+        ..id = 'fragmentId'
+        ..name = 'fragmentName'
+        ..version = '1.0.0';
+      final fragmentImportList = FragmentImportList()..imports.add(fragmentImport);
+      final expected = Organization()
+        ..id = 'id'
+        ..name = 'name'
+        ..createdOn = Timestamp.create()
+        ..fragmentImports.add(fragmentImport);
+
+      when(serviceClient.updateOrganization(any)).thenAnswer((_) => MockResponseFuture.value(UpdateOrganizationResponse()..organization = expected));
+
+      final response = await appClient.updateOrganization('organizationId', fragmentImports: fragmentImportList);
+
+      expect(response, equals(expected));
+      verify(serviceClient.updateOrganization(argThat(
+        isA<UpdateOrganizationRequest>().having(
+          (req) => req.fragmentImports,
+          'fragmentImports',
+          equals(fragmentImportList),
+        ),
+      ))).called(1);
+    });
+
     test('deleteOrganization', () async {
       when(serviceClient.deleteOrganization(any)).thenAnswer((_) => MockResponseFuture.value(DeleteOrganizationResponse()));
       await appClient.deleteOrganization('organizationId');
