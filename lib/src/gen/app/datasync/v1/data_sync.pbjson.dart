@@ -21,6 +21,7 @@ const MimeType$json = {
     {'1': 'MIME_TYPE_IMAGE_JPEG', '2': 1},
     {'1': 'MIME_TYPE_IMAGE_PNG', '2': 2},
     {'1': 'MIME_TYPE_APPLICATION_PCD', '2': 3},
+    {'1': 'MIME_TYPE_VIDEO_MP4', '2': 4},
   ],
 };
 
@@ -28,7 +29,7 @@ const MimeType$json = {
 final $typed_data.Uint8List mimeTypeDescriptor = $convert.base64Decode(
     'CghNaW1lVHlwZRIZChVNSU1FX1RZUEVfVU5TUEVDSUZJRUQQABIYChRNSU1FX1RZUEVfSU1BR0'
     'VfSlBFRxABEhcKE01JTUVfVFlQRV9JTUFHRV9QTkcQAhIdChlNSU1FX1RZUEVfQVBQTElDQVRJ'
-    'T05fUENEEAM=');
+    'T05fUENEEAMSFwoTTUlNRV9UWVBFX1ZJREVPX01QNBAE');
 
 @$core.Deprecated('Use dataTypeDescriptor instead')
 const DataType$json = {

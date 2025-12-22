@@ -18,12 +18,14 @@ class MimeType extends $pb.ProtobufEnum {
   static const MimeType MIME_TYPE_IMAGE_JPEG = MimeType._(1, _omitEnumNames ? '' : 'MIME_TYPE_IMAGE_JPEG');
   static const MimeType MIME_TYPE_IMAGE_PNG = MimeType._(2, _omitEnumNames ? '' : 'MIME_TYPE_IMAGE_PNG');
   static const MimeType MIME_TYPE_APPLICATION_PCD = MimeType._(3, _omitEnumNames ? '' : 'MIME_TYPE_APPLICATION_PCD');
+  static const MimeType MIME_TYPE_VIDEO_MP4 = MimeType._(4, _omitEnumNames ? '' : 'MIME_TYPE_VIDEO_MP4');
 
   static const $core.List<MimeType> values = <MimeType> [
     MIME_TYPE_UNSPECIFIED,
     MIME_TYPE_IMAGE_JPEG,
     MIME_TYPE_IMAGE_PNG,
     MIME_TYPE_APPLICATION_PCD,
+    MIME_TYPE_VIDEO_MP4,
   ];
 
   static final $core.Map<$core.int, MimeType> _byValue = $pb.ProtobufEnum.initByValue(values);
