@@ -488,6 +488,19 @@ final $typed_data.Uint8List getOrganizationNamespaceAvailabilityResponseDescript
     'CixHZXRPcmdhbml6YXRpb25OYW1lc3BhY2VBdmFpbGFiaWxpdHlSZXNwb25zZRIcCglhdmFpbG'
     'FibGUYASABKAhSCWF2YWlsYWJsZQ==');
 
+@$core.Deprecated('Use fragmentImportListDescriptor instead')
+const FragmentImportList$json = {
+  '1': 'FragmentImportList',
+  '2': [
+    {'1': 'imports', '3': 1, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentImport', '10': 'imports'},
+  ],
+};
+
+/// Descriptor for `FragmentImportList`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentImportListDescriptor = $convert.base64Decode(
+    'ChJGcmFnbWVudEltcG9ydExpc3QSNQoHaW1wb3J0cxgBIAMoCzIbLnZpYW0uYXBwLnYxLkZyYW'
+    'dtZW50SW1wb3J0UgdpbXBvcnRz');
+
 @$core.Deprecated('Use updateOrganizationRequestDescriptor instead')
 const UpdateOrganizationRequest$json = {
   '1': 'UpdateOrganizationRequest',
@@ -497,12 +510,14 @@ const UpdateOrganizationRequest$json = {
     {'1': 'public_namespace', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'publicNamespace', '17': true},
     {'1': 'region', '3': 4, '4': 1, '5': 9, '9': 2, '10': 'region', '17': true},
     {'1': 'cid', '3': 5, '4': 1, '5': 9, '9': 3, '10': 'cid', '17': true},
+    {'1': 'fragment_imports', '3': 6, '4': 1, '5': 11, '6': '.viam.app.v1.FragmentImportList', '9': 4, '10': 'fragmentImports', '17': true},
   ],
   '8': [
     {'1': '_name'},
     {'1': '_public_namespace'},
     {'1': '_region'},
     {'1': '_cid'},
+    {'1': '_fragment_imports'},
   ],
 };
 
@@ -511,8 +526,10 @@ final $typed_data.Uint8List updateOrganizationRequestDescriptor = $convert.base6
     'ChlVcGRhdGVPcmdhbml6YXRpb25SZXF1ZXN0EicKD29yZ2FuaXphdGlvbl9pZBgBIAEoCVIOb3'
     'JnYW5pemF0aW9uSWQSFwoEbmFtZRgCIAEoCUgAUgRuYW1liAEBEi4KEHB1YmxpY19uYW1lc3Bh'
     'Y2UYAyABKAlIAVIPcHVibGljTmFtZXNwYWNliAEBEhsKBnJlZ2lvbhgEIAEoCUgCUgZyZWdpb2'
-    '6IAQESFQoDY2lkGAUgASgJSANSA2NpZIgBAUIHCgVfbmFtZUITChFfcHVibGljX25hbWVzcGFj'
-    'ZUIJCgdfcmVnaW9uQgYKBF9jaWQ=');
+    '6IAQESFQoDY2lkGAUgASgJSANSA2NpZIgBARJPChBmcmFnbWVudF9pbXBvcnRzGAYgASgLMh8u'
+    'dmlhbS5hcHAudjEuRnJhZ21lbnRJbXBvcnRMaXN0SARSD2ZyYWdtZW50SW1wb3J0c4gBAUIHCg'
+    'VfbmFtZUITChFfcHVibGljX25hbWVzcGFjZUIJCgdfcmVnaW9uQgYKBF9jaWRCEwoRX2ZyYWdt'
+    'ZW50X2ltcG9ydHM=');
 
 @$core.Deprecated('Use updateOrganizationResponseDescriptor instead')
 const UpdateOrganizationResponse$json = {
@@ -2000,6 +2017,39 @@ final $typed_data.Uint8List fragmentUsageDescriptor = $convert.base64Decode(
     'FuaXphdGlvbnMYAiABKAVSDW9yZ2FuaXphdGlvbnMSGgoIbWFjaGluZXMYAyABKAVSCG1hY2hp'
     'bmVzEjUKF21hY2hpbmVzX2luX2N1cnJlbnRfb3JnGAQgASgFUhRtYWNoaW5lc0luQ3VycmVudE'
     '9yZxIdCgd2ZXJzaW9uGAUgASgJSABSB3ZlcnNpb26IAQFCCgoIX3ZlcnNpb24=');
+
+@$core.Deprecated('Use fragmentImportDescriptor instead')
+const FragmentImport$json = {
+  '1': 'FragmentImport',
+  '2': [
+    {'1': 'fragment_id', '3': 1, '4': 1, '5': 9, '10': 'fragmentId'},
+    {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'prefix', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'prefix', '17': true},
+    {'1': 'variables', '3': 4, '4': 3, '5': 11, '6': '.viam.app.v1.FragmentImport.VariablesEntry', '10': 'variables'},
+  ],
+  '3': [FragmentImport_VariablesEntry$json],
+  '8': [
+    {'1': '_prefix'},
+  ],
+};
+
+@$core.Deprecated('Use fragmentImportDescriptor instead')
+const FragmentImport_VariablesEntry$json = {
+  '1': 'VariablesEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `FragmentImport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fragmentImportDescriptor = $convert.base64Decode(
+    'Cg5GcmFnbWVudEltcG9ydBIfCgtmcmFnbWVudF9pZBgBIAEoCVIKZnJhZ21lbnRJZBIYCgd2ZX'
+    'JzaW9uGAIgASgJUgd2ZXJzaW9uEhsKBnByZWZpeBgDIAEoCUgAUgZwcmVmaXiIAQESSAoJdmFy'
+    'aWFibGVzGAQgAygLMioudmlhbS5hcHAudjEuRnJhZ21lbnRJbXBvcnQuVmFyaWFibGVzRW50cn'
+    'lSCXZhcmlhYmxlcxo8Cg5WYXJpYWJsZXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1'
+    'ZRgCIAEoCVIFdmFsdWU6AjgBQgkKB19wcmVmaXg=');
 
 @$core.Deprecated('Use resolvedFragmentDescriptor instead')
 const ResolvedFragment$json = {
