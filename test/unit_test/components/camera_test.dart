@@ -26,18 +26,6 @@ class FakeCamera extends Camera {
   }
 
   @override
-  Future<ViamImage> image({MimeType? mimeType, Map<String, dynamic>? extra}) async {
-    if (mimeType == null) {
-      throw const GrpcError.invalidArgument('invalid mimetype');
-    }
-    if (extra != null && extra['forcePng'] == true) {
-      mimeType = MimeType.png;
-    }
-
-    return ViamImage([0, 0, 0], mimeType);
-  }
-
-  @override
   Future<ViamImage> pointCloud({Map<String, dynamic>? extra}) async {
     return ViamImage([0, 0, 0], MimeType.pcd);
   }
@@ -87,20 +75,6 @@ void main() {
 
     setUp(() {
       camera = FakeCamera(name);
-    });
-
-    test('image', () async {
-      final actualJpeg = await camera.image(mimeType: MimeType.jpeg);
-      expect(actualJpeg.mimeType, MimeType.jpeg);
-      expect(actualJpeg.raw, [0, 0, 0]);
-
-      final actualPng = await camera.image(mimeType: MimeType.png);
-      expect(actualPng.mimeType, MimeType.png);
-      expect(actualPng.raw, [0, 0, 0]);
-
-      final actualPngForce = await camera.image(mimeType: MimeType.jpeg, extra: {'forcePng': true});
-      expect(actualPngForce.mimeType, MimeType.png);
-      expect(actualPngForce.raw, [0, 0, 0]);
     });
 
     test('pointCloud', () async {
@@ -171,34 +145,6 @@ void main() {
     });
 
     group('Camera Service Tests', () {
-      test('image', () async {
-        final client = CameraServiceClient(channel);
-        final jpegRequest = GetImageRequest()
-          ..name = name
-          ..mimeType = 'jpeg';
-
-        final actualJpeg = await client.getImage(jpegRequest);
-        expect(actualJpeg.mimeType, 'jpeg');
-        expect(actualJpeg.image, [0, 0, 0]);
-
-        final pngRequest = GetImageRequest()
-          ..name = name
-          ..mimeType = 'png';
-
-        final actualPng = await client.getImage(pngRequest);
-        expect(actualPng.mimeType, 'png');
-        expect(actualPng.image, [0, 0, 0]);
-
-        final forcePngRequest = GetImageRequest()
-          ..name = name
-          ..mimeType = 'jpeg'
-          ..extra = {'forcePng': true}.toStruct();
-
-        final actualPngForce = await client.getImage(forcePngRequest);
-        expect(actualPngForce.mimeType, 'image/png');
-        expect(actualPngForce.image, [0, 0, 0]);
-      });
-
       test('pointCloud', () async {
         final client = CameraServiceClient(channel);
         final actualPcd = await client.getPointCloud(GetPointCloudRequest()..name = name);
@@ -263,21 +209,6 @@ void main() {
       });
     });
     group('Camera Client Tests', () {
-      test('image', () async {
-        final client = CameraClient(name, channel);
-        final actualJpeg = await client.image(mimeType: MimeType.jpeg);
-        expect(actualJpeg.mimeType, MimeType.jpeg);
-        expect(actualJpeg.raw, [0, 0, 0]);
-
-        final actualPng = await client.image(mimeType: MimeType.png);
-        expect(actualPng.mimeType, MimeType.png);
-        expect(actualPng.raw, [0, 0, 0]);
-
-        final actualPngForce = await client.image(mimeType: MimeType.jpeg, extra: {'forcePng': true});
-        expect(actualPngForce.mimeType, MimeType.png);
-        expect(actualPngForce.raw, [0, 0, 0]);
-      });
-
       test('pointCloud', () async {
         final client = CameraClient(name, channel);
         final actualPcd = await client.pointCloud();

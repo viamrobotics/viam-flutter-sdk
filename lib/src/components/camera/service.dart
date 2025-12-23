@@ -4,7 +4,6 @@ import '../../gen/common/v1/common.pb.dart' as proto;
 import '../../gen/component/camera/v1/camera.pbgrpc.dart';
 import '../../gen/google/api/httpbody.pb.dart';
 import '../../gen/google/protobuf/timestamp.pb.dart';
-import '../../media/image.dart';
 import '../../resource/manager.dart';
 import '../../utils.dart';
 import 'camera.dart';
@@ -33,11 +32,8 @@ class CameraService extends CameraServiceBase {
 
   @override
   Future<GetImageResponse> getImage(ServiceCall call, GetImageRequest request) async {
-    final camera = _fromManager(request.name);
-    final image = await camera.image(mimeType: MimeType.fromString(request.mimeType), extra: request.extra.toMap());
-    return GetImageResponse()
-      ..mimeType = image.mimeType.name
-      ..image = image.raw;
+    // Deprecated: Use getImages instead.
+    throw UnimplementedError();
   }
 
   @override
@@ -58,11 +54,8 @@ class CameraService extends CameraServiceBase {
 
   @override
   Future<HttpBody> renderFrame(ServiceCall call, RenderFrameRequest request) async {
-    final camera = _fromManager(request.name);
-    final image = await camera.image(mimeType: MimeType.fromString(request.mimeType));
-    return HttpBody()
-      ..data = image.raw
-      ..contentType = image.mimeType.toString();
+    // Deprecated: Use getImages instead.
+    throw UnimplementedError();
   }
 
   @override
@@ -83,25 +76,8 @@ class CameraService extends CameraServiceBase {
     for (final namedImage in result.images) {
       final protoImage = Image()
         ..sourceName = namedImage.sourceName
-        ..image = namedImage.image.raw;
-
-      // Set format based on mime type
-      // TODO(RSDK-11730): Remove format field and use mime type only
-      switch (namedImage.image.mimeType.type) {
-        case 'jpeg':
-          protoImage.format = Format.FORMAT_JPEG;
-          break;
-        case 'png':
-          protoImage.format = Format.FORMAT_PNG;
-          break;
-        case 'viamRgba':
-          protoImage.format = Format.FORMAT_RAW_RGBA;
-          break;
-        default:
-          protoImage.format = Format.FORMAT_UNSPECIFIED;
-      }
-
-      protoImage.mimeType = namedImage.image.mimeType.name;
+        ..image = namedImage.image.raw
+        ..mimeType = namedImage.image.mimeType.name;
 
       response.images.add(protoImage);
     }
