@@ -41,25 +41,26 @@ abstract class InputController extends Resource {
   /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#triggerevent).
   Future<void> triggerEvent(Event event, {Map<String, dynamic>? extra});
 
-  /// Get the geometries associated with the input controller.
-  ///
-  /// ```
-  /// final geometries = await myInputController.getGeometries();
-  /// ```
-  ///
-  /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/#getgeometries).
-  Future<GetGeometriesResponse> getGeometries({Map<String, dynamic>? extra});
-
   /// Register a callback function to be called when control events occur.
   ///
+  /// [control] is the name of the control (e.g., "ButtonSouth", "AbsoluteX").
+  /// [triggers] is a list of event types to listen for (e.g., ["ButtonPress", "ButtonRelease"]).
+  /// If "ButtonChange" is included, it will register callbacks for both "ButtonPress" and "ButtonRelease".
+  /// [callback] is the function to call when matching events occur. If null, the callbacks for those triggers will be unregistered.
+  ///
   /// ```
-  /// await myInputController.registerControlCallback((Event event) {
-  ///   print('Control event: ${event.control}, value: ${event.value}');
-  /// });
+  /// await myInputController.registerControlCallback(
+  ///   "ButtonSouth",
+  ///   ["ButtonPress", "ButtonRelease"],
+  ///   (Event event) {
+  ///     print('Control event: ${event.control}, value: ${event.value}');
+  ///   },
+  /// );
   /// ```
   ///
   /// For more information, see [InputController component](https://docs.viam.com/dev/reference/apis/components/input-controller/).
-  Future<void> registerControlCallback(void Function(Event) callback, {Map<String, dynamic>? extra});
+  Future<void> registerControlCallback(String control, List<String> triggers, void Function(Event)? callback,
+      {Map<String, dynamic>? extra});
 
   /// Get the [ResourceName] for this [InputController] with the given [name]
   ///

@@ -61,29 +61,40 @@ class InputControllerService extends InputControllerServiceBase {
   Stream<StreamEventsResponse> streamEvents(ServiceCall call, StreamEventsRequest request) async* {
     final inputController = _fromManager(request.controller);
 
-    // Create a stream controller to bridge between the callback-based interface
-    // and the gRPC streaming interface. This allows the actual implementation
-    // to use registerControlCallback to provide events, which we then stream
-    // over gRPC.
     final eventController = StreamController<Event>.broadcast();
-    bool streamClosed = false;
 
-    await inputController.registerControlCallback((Event event) {
-      if (!streamClosed && !eventController.isClosed) {
-        eventController.add(event);
+    void ctrlFunc(Event eventIn) {
+      if (!eventController.isClosed) {
+        eventController.add(eventIn);
       }
-    }, extra: request.extra.toMap());
+    }
+
+    for (final ev in request.events) {
+      if (ev.events.isNotEmpty) {
+        await inputController.registerControlCallback(
+          ev.control,
+          ev.events,
+          ctrlFunc,
+          extra: request.extra.toMap(),
+        );
+      }
+
+      if (ev.cancelledEvents.isNotEmpty) {
+        await inputController.registerControlCallback(
+          ev.control,
+          ev.cancelledEvents,
+          null, // null callback to unregister
+          extra: request.extra.toMap(),
+        );
+      }
+    }
 
     try {
-      // Stream events from the controller to the gRPC client
+      // Stream events from the controller
       await for (final event in eventController.stream) {
         yield StreamEventsResponse()..event = event;
       }
-    } catch (e) {
-      streamClosed = true;
-      rethrow;
     } finally {
-      streamClosed = true;
       await eventController.close();
     }
   }
