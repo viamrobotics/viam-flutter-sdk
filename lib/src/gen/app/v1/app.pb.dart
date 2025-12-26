@@ -1346,6 +1346,50 @@ class GetOrganizationNamespaceAvailabilityResponse extends $pb.GeneratedMessage 
   void clearAvailable() => clearField(1);
 }
 
+class FragmentImportList extends $pb.GeneratedMessage {
+  factory FragmentImportList({
+    $core.Iterable<FragmentImport>? imports,
+  }) {
+    final $result = create();
+    if (imports != null) {
+      $result.imports.addAll(imports);
+    }
+    return $result;
+  }
+  FragmentImportList._() : super();
+  factory FragmentImportList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentImportList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentImportList', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..pc<FragmentImport>(1, _omitFieldNames ? '' : 'imports', $pb.PbFieldType.PM, subBuilder: FragmentImport.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentImportList clone() => FragmentImportList()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentImportList copyWith(void Function(FragmentImportList) updates) => super.copyWith((message) => updates(message as FragmentImportList)) as FragmentImportList;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentImportList create() => FragmentImportList._();
+  FragmentImportList createEmptyInstance() => create();
+  static $pb.PbList<FragmentImportList> createRepeated() => $pb.PbList<FragmentImportList>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentImportList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentImportList>(create);
+  static FragmentImportList? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<FragmentImport> get imports => $_getList(0);
+}
+
 class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   factory UpdateOrganizationRequest({
     $core.String? organizationId,
@@ -1353,6 +1397,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     $core.String? publicNamespace,
     $core.String? region,
     $core.String? cid,
+    FragmentImportList? fragmentImports,
   }) {
     final $result = create();
     if (organizationId != null) {
@@ -1370,6 +1415,9 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     if (cid != null) {
       $result.cid = cid;
     }
+    if (fragmentImports != null) {
+      $result.fragmentImports = fragmentImports;
+    }
     return $result;
   }
   UpdateOrganizationRequest._() : super();
@@ -1382,6 +1430,7 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'publicNamespace')
     ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOS(5, _omitFieldNames ? '' : 'cid')
+    ..aOM<FragmentImportList>(6, _omitFieldNames ? '' : 'fragmentImports', subBuilder: FragmentImportList.create)
     ..hasRequiredFields = false
   ;
 
@@ -1451,6 +1500,17 @@ class UpdateOrganizationRequest extends $pb.GeneratedMessage {
   $core.bool hasCid() => $_has(4);
   @$pb.TagNumber(5)
   void clearCid() => clearField(5);
+
+  @$pb.TagNumber(6)
+  FragmentImportList get fragmentImports => $_getN(5);
+  @$pb.TagNumber(6)
+  set fragmentImports(FragmentImportList v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasFragmentImports() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFragmentImports() => clearField(6);
+  @$pb.TagNumber(6)
+  FragmentImportList ensureFragmentImports() => $_ensure(5);
 }
 
 class UpdateOrganizationResponse extends $pb.GeneratedMessage {
@@ -7719,6 +7779,92 @@ class FragmentUsage extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearVersion() => clearField(5);
+}
+
+class FragmentImport extends $pb.GeneratedMessage {
+  factory FragmentImport({
+    $core.String? fragmentId,
+    $core.String? version,
+    $core.String? prefix,
+    $core.Map<$core.String, $core.String>? variables,
+  }) {
+    final $result = create();
+    if (fragmentId != null) {
+      $result.fragmentId = fragmentId;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (prefix != null) {
+      $result.prefix = prefix;
+    }
+    if (variables != null) {
+      $result.variables.addAll(variables);
+    }
+    return $result;
+  }
+  FragmentImport._() : super();
+  factory FragmentImport.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FragmentImport.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FragmentImport', package: const $pb.PackageName(_omitMessageNames ? '' : 'viam.app.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fragmentId')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'prefix')
+    ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'variables', entryClassName: 'FragmentImport.VariablesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('viam.app.v1'))
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FragmentImport clone() => FragmentImport()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FragmentImport copyWith(void Function(FragmentImport) updates) => super.copyWith((message) => updates(message as FragmentImport)) as FragmentImport;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FragmentImport create() => FragmentImport._();
+  FragmentImport createEmptyInstance() => create();
+  static $pb.PbList<FragmentImport> createRepeated() => $pb.PbList<FragmentImport>();
+  @$core.pragma('dart2js:noInline')
+  static FragmentImport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FragmentImport>(create);
+  static FragmentImport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fragmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fragmentId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFragmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFragmentId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get prefix => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set prefix($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPrefix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrefix() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.Map<$core.String, $core.String> get variables => $_getMap(3);
 }
 
 class ResolvedFragment extends $pb.GeneratedMessage {
