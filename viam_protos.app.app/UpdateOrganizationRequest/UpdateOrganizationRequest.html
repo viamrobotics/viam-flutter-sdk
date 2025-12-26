@@ -59,6 +59,7 @@
 <li><span class="parameter" id="-param-publicNamespace"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">publicNamespace</span>, </span></li>
 <li><span class="parameter" id="-param-region"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">region</span>, </span></li>
 <li><span class="parameter" id="-param-cid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cid</span>, </span></li>
+<li><span class="parameter" id="-param-fragmentImports"><span class="type-annotation"><a href="../../viam_protos.app.app/FragmentImportList-class.html">FragmentImportList</a>?</span> <span class="parameter-name">fragmentImports</span>, </span></li>
 </ol>})
     </section>
     
@@ -73,6 +74,7 @@
   $core.String? publicNamespace,
   $core.String? region,
   $core.String? cid,
+  FragmentImportList? fragmentImports,
 }) {
   final $result = create();
   if (organizationId != null) {
@@ -89,6 +91,9 @@
   }
   if (cid != null) {
     $result.cid = cid;
+  }
+  if (fragmentImports != null) {
+    $result.fragmentImports = fragmentImports;
   }
   return $result;
 }</code></pre>
